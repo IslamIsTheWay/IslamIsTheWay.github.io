@@ -838,7 +838,7 @@ const COMPANIONS = [
       "Sahih al-Bukhari — 'He never said to me \"why did you do this\" or \"why didn't you do that\"'",
       "Sahih Muslim — thousands of hadith narrated through him"
     ]
-  }
+  },
   {
     id: "ubayy",
     name: "Ubayy ibn Ka'b",
@@ -1021,181 +1021,210 @@ const QURAN_QUOTES = [
   }
 ];
 
-// ---------- Hadith Collection (mainly Sahih al-Bukhari) ----------
+// ---------- Hadith Collection (mainly Sahih al-Bukhari & Sahih Muslim) ----------
 const HADITHS = [
   {
     text: "Actions are judged by intentions, so each person will be rewarded according to what they intended.",
     narrator: "Umar ibn al-Khattab",
     ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
-    topic: "Sincerity"
+    topic: "Sincerity",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "None of you truly believes until he loves for his brother what he loves for himself.",
     narrator: "Anas ibn Malik",
-    ref: "Sahih al-Bukhari, Book of Faith",
-    topic: "Brotherhood"
+    ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
+    topic: "Brotherhood",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The best among you are those who have the best manners and character.",
     narrator: "Abdullah ibn Amr",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
-    topic: "Character"
+    topic: "Character",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Whoever believes in Allah and the Last Day should speak good or remain silent.",
     narrator: "Abu Hurairah",
-    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
-    topic: "Speech"
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Sahih Muslim",
+    topic: "Speech",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Smiling at your brother is an act of charity.",
     narrator: "Abu Dharr al-Ghifari",
     ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
-    topic: "Kindness"
+    topic: "Kindness",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The strong believer is not the one who overcomes people through strength, but the one who controls himself when angry.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
-    topic: "Self-Control"
+    topic: "Self-Control",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "None of you will believe until he loves for his neighbor what he loves for himself.",
     narrator: "Anas ibn Malik",
-    ref: "Sahih al-Bukhari, Book of Faith",
-    topic: "Neighbors"
+    ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
+    topic: "Neighbors",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The most beloved deeds to Allah are those done consistently, even if they are small.",
     narrator: "Aisha bint Abu Bakr",
-    ref: "Sahih al-Bukhari, Book of Faith",
-    topic: "Consistency"
+    ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
+    topic: "Consistency",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "He who eats and drinks moderately and shares with others is among the best of people.",
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Food and Drink",
-    topic: "Generosity"
+    topic: "Generosity",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Seeking knowledge is an obligation upon every Muslim.",
     narrator: "Anas ibn Malik",
     ref: "Sunan Ibn Majah, Book of the Sunnah",
-    topic: "Knowledge"
+    topic: "Knowledge",
+    strength: "Hasan (Good) — graded Sahih by some scholars"
   },
   {
     text: "The believer who mixes with people and is patient with their faults is better than the one who avoids people and is impatient with them.",
     narrator: "Ibn Umar",
-    ref: "Sunan Ibn Majah, Book of Asceticism",
-    topic: "Patience"
+    ref: "Sunan Ibn Majah, Book of Asceticism; also in Musnad Ahmad",
+    topic: "Patience",
+    strength: "Sahih (Authentic) — authenticated by Al-Albani"
   },
   {
     text: "Whoever guarantees me what is between his jaws and what is between his legs, I guarantee him Paradise.",
     narrator: "Sahl ibn Sa'd",
     ref: "Sahih al-Bukhari, Book of Limits and Punishments",
-    topic: "Guarding the Tongue"
+    topic: "Guarding the Tongue",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The best of people are those most beneficial to people.",
     narrator: "Jabir ibn Abdullah",
-    ref: "Al-Mu'jam al-Awsat, Tabarani",
-    topic: "Service"
+    ref: "Al-Mu'jam al-Awsat, Tabarani; graded Hasan by Al-Albani",
+    topic: "Service",
+    strength: "Hasan (Good)"
   },
   {
     text: "Take advantage of five before five: your youth before your old age, your health before your sickness, your wealth before your poverty, your free time before your busyness, and your life before your death.",
     narrator: "Ibn Abbas",
-    ref: "Mustadrak al-Hakim",
-    topic: "Time"
+    ref: "Mustadrak al-Hakim; graded Sahih by Al-Hakim and Al-Albani",
+    topic: "Time",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Verily, Allah does not look at your appearances or your wealth, but He looks at your hearts and your deeds.",
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Righteousness",
-    topic: "Sincerity"
+    topic: "Sincerity",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Make things easy and do not make them difficult, and give good tidings and do not drive people away.",
     narrator: "Anas ibn Malik",
-    ref: "Sahih al-Bukhari, Book of Knowledge",
-    topic: "Ease"
+    ref: "Sahih al-Bukhari, Book of Knowledge; Sahih Muslim",
+    topic: "Ease",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Whoever treads a path seeking knowledge, Allah will make easy for him a path to Paradise.",
     narrator: "Abu Hurairah",
-    ref: "Sahih Muslim, Book of Remembrance",
-    topic: "Knowledge"
+    ref: "Sahih Muslim, Book of Remembrance, Hadith 2699",
+    topic: "Knowledge",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The Muslim does not slander, curse, speak obscenely, or speak rudely.",
     narrator: "Abdullah ibn Mas'ud",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); also Jami at-Tirmidhi",
-    topic: "Speech"
+    topic: "Speech",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Be in this world as though you were a stranger or a traveler.",
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Heart Softeners",
-    topic: "Worldliness"
+    topic: "Worldliness",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The merciful are shown mercy by the Most Merciful. Show mercy to those on earth, and the One above the heavens will show mercy to you.",
     narrator: "Abdullah ibn Amr",
-    ref: "Sunan Abu Dawud, Book of Good Manners; also Jami at-Tirmidhi (authenticated)",
-    topic: "Mercy"
+    ref: "Sunan Abu Dawud; Jami at-Tirmidhi (graded Sahih by Al-Albani)",
+    topic: "Mercy",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Whoever removes a hardship from a believer in this world, Allah will remove a hardship from him on the Day of Resurrection.",
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
-    topic: "Helping Others"
+    topic: "Helping Others",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Allah will not show mercy to the one who does not show mercy to people.",
     narrator: "Jarir ibn Abdullah",
     ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
-    topic: "Mercy"
+    topic: "Mercy",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "The best of you is the one who learns the Quran and teaches it.",
     narrator: "Uthman ibn Affan",
     ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
-    topic: "Quran"
+    topic: "Quran",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "A man is upon the religion of his close friend, so let one of you look at whom he befriends.",
     narrator: "Abu Hurairah",
-    ref: "Sunan Abu Dawud; Jami at-Tirmidhi (graded Hasan)",
-    topic: "Friendship"
+    ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
+    topic: "Friendship",
+    strength: "Hasan (Good)"
   },
   {
     text: "The two feet of the son of Adam will not move on the Day of Judgment until he is asked about his life and how he spent it, his knowledge and what he did with it, his wealth and how he earned it and spent it, and his body and how he used it.",
     narrator: "Abu Barzah al-Aslami",
-    ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment (graded Sahih)",
-    topic: "Accountability"
+    ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment",
+    topic: "Accountability",
+    strength: "Sahih (Authentic) — graded Sahih by At-Tirmidhi"
   },
   {
     text: "Richness is not having many possessions, but richness is the richness of the soul.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
-    topic: "Contentment"
+    topic: "Contentment",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Part of the perfection of a person's Islam is leaving that which does not concern him.",
     narrator: "Abu Hurairah",
-    ref: "Jami at-Tirmidhi, Book of Asceticism (graded Hasan); also in Muwatta Imam Malik",
-    topic: "Discipline"
+    ref: "Jami at-Tirmidhi, Book of Asceticism; also in Muwatta Imam Malik",
+    topic: "Discipline",
+    strength: "Hasan (Good)"
   },
   {
     text: "Do not be angry, do not be angry, do not be angry.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
-    topic: "Self-Control"
+    topic: "Self-Control",
+    strength: "Sahih (Authentic)"
   },
   {
     text: "Modesty brings nothing but goodness.",
     narrator: "Imran ibn Husayn",
     ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",
-    topic: "Modesty"
+    topic: "Modesty",
+    strength: "Sahih (Authentic)"
   }
 ];
 

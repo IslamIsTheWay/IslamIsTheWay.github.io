@@ -328,6 +328,7 @@
       card.className = "hadith-card";
       card.innerHTML = `
         <span class="topic-tag">${h.topic}</span>
+        <span class="topic-tag" style="background:${h.strength.startsWith('Sahih') ? '#e6f4ea' : '#fff8e1'};color:${h.strength.startsWith('Sahih') ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
         <p class="hadith-text">"${h.text}"</p>
         <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
       `;
