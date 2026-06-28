@@ -61,8 +61,11 @@
     </div>
   </div>
 
-  <section class="pattern-bg">
+  <section>
     <div class="container">
+      <div class="search-row" style="max-width:600px;margin:0 auto 32px;">
+        <input type="text" id="companionSearch" placeholder="Search by name (e.g. Khalid, Aisha)..." style="width:100%;padding:14px 20px;border:1px solid #ddd;border-radius:10px;font-size:1rem;">
+      </div>
       <div class="people-grid" id="companionsGrid"></div>
     </div>
   </section>
@@ -101,25 +104,32 @@
   <script src="js/data.js"></script>
   <script>
     const grid = document.getElementById("companionsGrid");
-    COMPANIONS.forEach(p => {
-      const card = document.createElement("div");
-      card.className = "person-card";
-      card.innerHTML = `
-        <div class="person-head">
-          <h3>${p.name}</h3>
-          <div class="arabic-name">${p.arabic}</div>
-          <div class="title-tag">${p.title}</div>
-        </div>
-        <div class="person-body">
-          <p>${p.summary}</p>
-          <div class="refs">
-            <strong>References:</strong>
-            <ul>${p.refs.map(r => `<li>${r}</li>`).join("")}</ul>
-          </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
+    function renderCompanions(filter = "") {
+      grid.innerHTML = "";
+      const q = filter.toLowerCase();
+      COMPANIONS.filter(p => !q || p.name.toLowerCase().includes(q) || p.arabic.includes(q) || p.title.toLowerCase().includes(q))
+        .forEach(p => {
+          const card = document.createElement("div");
+          card.className = "person-card";
+          card.innerHTML = `
+            <div class="person-head">
+              <h3>${p.name}</h3>
+              <div class="arabic-name">${p.arabic}</div>
+              <div class="title-tag">${p.title}</div>
+            </div>
+            <div class="person-body">
+              <p>${p.summary}</p>
+              <div class="refs">
+                <strong>References:</strong>
+                <ul>${p.refs.map(r => `<li>${r}</li>`).join("")}</ul>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+    }
+    renderCompanions();
+    document.getElementById("companionSearch").addEventListener("input", e => renderCompanions(e.target.value));
   </script>
   <script src="js/main.js"></script>
 </body>

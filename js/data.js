@@ -610,7 +610,7 @@ const COMPANIONS = [
       "Historical accounts of the Battle of Uhud (3 AH) and his martyrdom",
       "Sira accounts of his acceptance of Islam and defense of the Muslims in Makkah"
     ]
-  }
+  },
   {
     id: "zubayr",
     name: "Az-Zubayr ibn al-Awwam",
