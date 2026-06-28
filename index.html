@@ -16,24 +16,62 @@
   <header class="site-header">
     <div class="nav-wrap">
       <a href="index.html" class="brand">
-        <svg class="logo-mosque" viewBox="0 0 80 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="logo-mosque" viewBox="0 0 100 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#f8e3a0"/>
+              <stop offset="50%" stop-color="#d4a82a"/>
               <stop offset="100%" stop-color="#c9a227"/>
             </linearGradient>
+            <linearGradient id="goldDark" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#d4a82a"/>
+              <stop offset="100%" stop-color="#a67c1a"/>
+            </linearGradient>
           </defs>
-          <rect x="4" y="14" width="6" height="40" fill="url(#goldGrad)"/>
-          <path d="M3 14 L11 14 L7 4 Z" fill="url(#goldGrad)"/>
-          <circle cx="7" cy="2" r="2" fill="url(#goldGrad)"/>
-          <rect x="70" y="14" width="6" height="40" fill="url(#goldGrad)"/>
-          <path d="M69 14 L77 14 L73 4 Z" fill="url(#goldGrad)"/>
-          <circle cx="73" cy="2" r="2" fill="url(#goldGrad)"/>
-          <rect x="14" y="38" width="52" height="16" fill="url(#goldGrad)"/>
-          <path d="M19 38 A21 21 0 0 1 61 38 Z" fill="url(#goldGrad)"/>
-          <line x1="40" y1="17" x2="40" y2="9" stroke="url(#goldGrad)" stroke-width="2"/>
-          <circle cx="40" cy="6" r="2.5" fill="url(#goldGrad)"/>
-          <path d="M36 54 L36 47 A4 4 0 0 1 44 47 L44 54 Z" fill="#ffffff"/>
+          <!-- Base platform -->
+          <rect x="8" y="60" width="84" height="6" rx="2" fill="url(#goldGrad)"/>
+          <!-- Main building body -->
+          <rect x="18" y="40" width="64" height="20" rx="1" fill="url(#goldGrad)"/>
+          <!-- Building facade details - arched windows -->
+          <path d="M26 60 L26 52 A4 4 0 0 1 34 52 L34 60" fill="#fff" opacity=".9"/>
+          <path d="M40 60 L40 52 A4 4 0 0 1 48 52 L48 60" fill="#fff" opacity=".9"/>
+          <path d="M54 60 L54 52 A4 4 0 0 1 62 52 L62 60" fill="#fff" opacity=".9"/>
+          <path d="M66 60 L66 52 A4 4 0 0 1 74 52 L74 60" fill="#fff" opacity=".9"/>
+          <!-- Decorative band -->
+          <rect x="18" y="40" width="64" height="3" rx="1" fill="url(#goldDark)"/>
+          <!-- Central large dome -->
+          <ellipse cx="50" cy="38" rx="22" ry="18" fill="url(#goldGrad)"/>
+          <ellipse cx="50" cy="38" rx="19" ry="15" fill="url(#goldDark)" opacity=".15"/>
+          <!-- Dome crescent finial -->
+          <line x1="50" y1="20" x2="50" y2="12" stroke="url(#goldGrad)" stroke-width="2"/>
+          <path d="M48 9 A3.5 3.5 0 1 0 48 15 A2.5 2.5 0 1 1 48 9 Z" fill="url(#goldGrad)"/>
+          <circle cx="53" cy="8" r="1" fill="url(#goldGrad)"/>
+          <!-- Left minaret -->
+          <rect x="6" y="22" width="7" height="38" rx="1" fill="url(#goldGrad)"/>
+          <rect x="5" y="36" width="9" height="2.5" rx="1" fill="url(#goldDark)"/>
+          <rect x="5" y="46" width="9" height="2.5" rx="1" fill="url(#goldDark)"/>
+          <ellipse cx="9.5" cy="22" rx="5" ry="4" fill="url(#goldGrad)"/>
+          <line x1="9.5" y1="18" x2="9.5" y2="11" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <path d="M8 8.5 A2.5 2.5 0 1 0 8 13 A1.8 1.8 0 1 1 8 8.5 Z" fill="url(#goldGrad)" transform="scale(.6) translate(4,4)"/>
+          <circle cx="11.5" cy="7.5" r=".8" fill="url(#goldGrad)"/>
+          <!-- Right minaret -->
+          <rect x="87" y="22" width="7" height="38" rx="1" fill="url(#goldGrad)"/>
+          <rect x="86" y="36" width="9" height="2.5" rx="1" fill="url(#goldDark)"/>
+          <rect x="86" y="46" width="9" height="2.5" rx="1" fill="url(#goldDark)"/>
+          <ellipse cx="90.5" cy="22" rx="5" ry="4" fill="url(#goldGrad)"/>
+          <line x1="90.5" y1="18" x2="90.5" y2="11" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <path d="M89 8.5 A2.5 2.5 0 1 0 89 13 A1.8 1.8 0 1 1 89 8.5 Z" fill="url(#goldGrad)" transform="scale(.6) translate(60,4)"/>
+          <circle cx="92.5" cy="7.5" r=".8" fill="url(#goldGrad)"/>
+          <!-- Small side domes -->
+          <ellipse cx="28" cy="40" rx="9" ry="7" fill="url(#goldGrad)"/>
+          <line x1="28" y1="33" x2="28" y2="30" stroke="url(#goldGrad)" stroke-width="1.2"/>
+          <circle cx="28" cy="29" r="1.2" fill="url(#goldGrad)"/>
+          <ellipse cx="72" cy="40" rx="9" ry="7" fill="url(#goldGrad)"/>
+          <line x1="72" y1="33" x2="72" y2="30" stroke="url(#goldGrad)" stroke-width="1.2"/>
+          <circle cx="72" cy="29" r="1.2" fill="url(#goldGrad)"/>
+          <!-- Central door arch -->
+          <path d="M44 60 L44 50 A6 6 0 0 1 56 50 L56 60 Z" fill="#fff"/>
+          <path d="M45.5 60 L45.5 51 A4.5 4.5 0 0 1 54.5 51 L54.5 60 Z" fill="url(#goldDark)" opacity=".12"/>
         </svg>
         Islam Is The Way
       </a>

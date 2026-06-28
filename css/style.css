@@ -103,8 +103,8 @@ header.site-header {
 }
 
 .brand .logo-mosque {
-  width: 42px;
-  height: 36px;
+  width: 48px;
+  height: 38px;
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }
