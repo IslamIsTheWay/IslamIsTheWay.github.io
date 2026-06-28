@@ -1125,7 +1125,7 @@ const HADITHS = [
     narrator: "Jabir ibn Abdullah",
     ref: "Al-Mu'jam al-Awsat by at-Tabarani",
     topic: "Service",
-    strength: "Hasan — Narrated by at-Tabarani; graded Hasan by al-Albani"
+    strength: "Strong — Narrated by at-Tabarani; graded Strong by al-Albani"
   },
   {
     arabic: "اغْتَنِمْ خَمْسًا قَبْلَ خَمْسٍ: شَبَابَكَ قَبْلَ هَرَمِكَ، وَصِحَّتَكَ قَبْلَ سَقَمِكَ، وَغِنَاكَ قَبْلَ فَقْرِكَ، وَفَرَاغَكَ قَبْلَ شُغْلِكَ، وَحَيَاتَكَ قَبْلَ مَوْتِكَ",
@@ -1213,7 +1213,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Friendship",
-    strength: "Hasan — Narrated by Abu Dawud and at-Tirmidhi; graded Hasan by an-Nawawi"
+    strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi"
   },
   {
     arabic: "لَا تَزُولُ قَدَمَا عَبْدٍ يَوْمَ الْقِيَامَةِ حَتَّى يُسْأَلَ عَنْ عُمُرِهِ فِيمَا أَفْنَاهُ وَعَنْ عِلْمِهِ فِيمَا فَعَلَ وَعَنْ مَالِهِ مِنْ أَيْنَ اكْتَسَبَهُ وَفِيمَا أَنْفَقَهُ وَعَنْ جِسْمِهِ فِيمَا أَبْلَاهُ",
@@ -1237,7 +1237,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Jami at-Tirmidhi, Book of Asceticism; Muwatta Imam Malik",
     topic: "Discipline",
-    strength: "Hasan — Narrated by at-Tirmidhi and Malik; graded Hasan by at-Tirmidhi and an-Nawawi"
+    strength: "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi"
   },
   {
     arabic: "لَا تَغْضَبْ، لَا تَغْضَبْ، لَا تَغْضَبْ",
