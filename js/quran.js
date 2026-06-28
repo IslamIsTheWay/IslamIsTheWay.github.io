@@ -19,12 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const q = searchInput.value.trim().toLowerCase();
     const place = placeFilter.value;
 
+    const rawQ = searchInput.value.trim();
     const filtered = SURAHS.filter(s => {
       const matchesQuery =
         !q ||
         s.name.toLowerCase().includes(q) ||
         s.meaning.toLowerCase().includes(q) ||
-        String(s.n) === q;
+        String(s.n) === q ||
+        s.arabic.includes(rawQ);
       const matchesPlace = place === "all" || s.place === place;
       return matchesQuery && matchesPlace;
     });

@@ -4,10 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hadith Collection | Islam Is The Way</title>
-  <meta name="description" content="A curated collection of authentic hadith, primarily from Sahih al-Bukhari, with narrators and references." />
+  <meta name="description" content="Complete Sahih al-Bukhari and Sahih Muslim collections with Arabic text, English translation, and search." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .collection-tabs { display:flex; gap:12px; justify-content:center; margin-bottom:28px; flex-wrap:wrap; }
+    .collection-tabs button { padding:12px 28px; border:2px solid var(--green); background:transparent; color:var(--green); border-radius:10px; font-size:1rem; font-weight:600; cursor:pointer; transition:all .2s; }
+    .collection-tabs button.active { background:var(--green); color:#fff; }
+    .collection-tabs button:hover:not(.active) { background:var(--green-light); }
+    .chapter-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; margin-bottom:32px; }
+    .chapter-btn { padding:16px; border:1px solid var(--border); border-radius:10px; background:#fff; text-align:left; cursor:pointer; transition:all .2s; }
+    .chapter-btn:hover { border-color:var(--green); background:var(--green-light); }
+    .chapter-btn .ch-num { font-size:.85rem; color:var(--gold); font-weight:700; }
+    .chapter-btn .ch-name { font-size:1rem; color:var(--green-dark); font-weight:600; margin-top:4px; }
+    .chapter-btn .ch-count { font-size:.8rem; color:var(--text-muted); margin-top:2px; }
+    .back-btn { display:inline-flex; align-items:center; gap:6px; padding:10px 20px; border:1px solid var(--border); border-radius:8px; background:#fff; cursor:pointer; font-size:.95rem; color:var(--green); margin-bottom:20px; }
+    .back-btn:hover { background:var(--green-light); }
+    .full-hadith-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:16px; }
+    .full-hadith-card .h-number { font-size:.85rem; color:var(--gold); font-weight:700; margin-bottom:8px; }
+    .full-hadith-card .h-arabic { font-family:'Amiri',serif; font-size:1.25rem; line-height:2; direction:rtl; text-align:right; color:var(--green-dark); margin-bottom:14px; padding:12px; background:var(--green-pale); border-radius:8px; }
+    .full-hadith-card .h-english { font-size:.95rem; line-height:1.7; color:var(--text); }
+    .loading-msg { text-align:center; padding:40px; color:var(--text-muted); font-size:1.1rem; }
+    .search-info { text-align:center; color:var(--text-muted); margin-bottom:16px; font-size:.9rem; }
+    .hadith-search-box { max-width:700px; margin:0 auto 24px; position:relative; }
+    .hadith-search-box input { width:100%; padding:14px 20px; border:1px solid #ddd; border-radius:10px; font-size:1rem; }
+    .hadith-search-box input::placeholder { color:#aaa; }
+    .pagination { display:flex; justify-content:center; gap:8px; margin-top:24px; flex-wrap:wrap; }
+    .pagination button { padding:8px 16px; border:1px solid var(--border); border-radius:6px; background:#fff; cursor:pointer; }
+    .pagination button.active { background:var(--green); color:#fff; border-color:var(--green); }
+    .pagination button:hover:not(.active) { background:var(--green-light); }
+    .curated-section { margin-bottom:40px; }
+    .section-toggle { text-align:center; margin-bottom:24px; }
+    .section-toggle button { padding:10px 24px; border:1px solid var(--green); border-radius:8px; background:transparent; color:var(--green); cursor:pointer; font-size:.95rem; }
+    .section-toggle button:hover { background:var(--green-light); }
+  </style>
 </head>
 <body>
 
@@ -57,19 +88,26 @@
   <div class="page-hero">
     <div class="container">
       <h1>Hadith Collection</h1>
-      <p>A curated selection of authentic sayings of Prophet Muhammad ﷺ, drawn primarily from Sahih al-Bukhari — widely regarded as the most authentic collection of hadith — alongside other trusted sources.</p>
+      <p>The complete Sahih al-Bukhari (~7,563 hadith) and Sahih Muslim (~7,500 hadith) — the two most authentic collections of the sayings of Prophet Muhammad ﷺ. Browse by chapter or search in Arabic and English.</p>
     </div>
   </div>
 
   <section>
     <div class="container">
-      <div class="surah-toolbar">
-        <input type="text" id="hadithSearch" placeholder="Search hadith by keyword, topic, or narrator (e.g. patience, Abu Hurairah)..." />
-        <select id="topicFilter">
-          <option value="all">All Topics</option>
-        </select>
+      <div class="hadith-search-box">
+        <input type="text" id="hadithSearch" placeholder="ابحث بالعربية أو Search in English..." dir="auto" />
       </div>
-      <div class="hadith-grid" id="hadithGrid"></div>
+      <div id="searchInfo" class="search-info" style="display:none;"></div>
+
+      <div class="collection-tabs" id="collectionTabs">
+        <button class="active" data-col="curated">Highlights</button>
+        <button data-col="bukhari">Sahih al-Bukhari</button>
+        <button data-col="muslim">Sahih Muslim</button>
+      </div>
+
+      <div id="contentArea">
+        <div class="loading-msg" id="loadingMsg" style="display:none;">Loading hadith collection... Please wait.</div>
+      </div>
     </div>
   </section>
 
@@ -106,57 +144,236 @@
 
   <script src="js/data.js"></script>
   <script>
-    const grid = document.getElementById("hadithGrid");
+    const API_BASE = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions";
+    const contentArea = document.getElementById("contentArea");
+    const loadingMsg = document.getElementById("loadingMsg");
     const searchInput = document.getElementById("hadithSearch");
-    const topicFilter = document.getElementById("topicFilter");
+    const searchInfo = document.getElementById("searchInfo");
+    const tabs = document.querySelectorAll("#collectionTabs button");
 
-    const topics = [...new Set(HADITHS.map(h => h.topic))].sort();
-    topics.forEach(t => {
-      const opt = document.createElement("option");
-      opt.value = t;
-      opt.textContent = t;
-      topicFilter.appendChild(opt);
+    let cache = {};
+    let currentCollection = "curated";
+    let currentView = "chapters";
+    let searchTimeout = null;
+
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabs.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCollection = btn.dataset.col;
+        searchInput.value = "";
+        searchInfo.style.display = "none";
+        if (currentCollection === "curated") {
+          renderCurated();
+        } else {
+          currentView = "chapters";
+          loadCollection(currentCollection);
+        }
+      });
     });
 
-    function renderHadiths(list) {
-      grid.innerHTML = "";
-      if (list.length === 0) {
-        grid.innerHTML = `<div class="no-results">No hadith match your search.</div>`;
-        return;
-      }
-      list.forEach(h => {
-        const card = document.createElement("div");
-        card.className = "hadith-card";
-        card.innerHTML = `
+    searchInput.addEventListener("input", () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        const q = searchInput.value.trim();
+        if (q.length < 2) {
+          searchInfo.style.display = "none";
+          if (currentCollection === "curated") renderCurated();
+          else if (currentView === "chapters") renderChapters(currentCollection);
+          return;
+        }
+        searchHadith(q);
+      }, 400);
+    });
+
+    function renderCurated() {
+      let html = '<div class="hadith-grid">';
+      HADITHS.forEach(h => {
+        const isSahih = h.strength.startsWith("Sahih");
+        html += `<div class="hadith-card">
           <span class="topic-tag">${h.topic}</span>
-          <span class="topic-tag" style="background:${h.strength.startsWith('Sahih') ? '#e6f4ea' : '#fff8e1'};color:${h.strength.startsWith('Sahih') ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
+          <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
           <p class="hadith-text">"${h.text}"</p>
           <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
-        `;
-        grid.appendChild(card);
+        </div>`;
       });
+      html += '</div>';
+      contentArea.innerHTML = html;
     }
 
-    function applyFilters() {
-      const q = searchInput.value.trim().toLowerCase();
-      const topic = topicFilter.value;
-      const filtered = HADITHS.filter(h => {
-        const matchesQuery =
-          !q ||
-          h.text.toLowerCase().includes(q) ||
-          h.narrator.toLowerCase().includes(q) ||
-          h.topic.toLowerCase().includes(q) ||
-          h.ref.toLowerCase().includes(q);
-        const matchesTopic = topic === "all" || h.topic === topic;
-        return matchesQuery && matchesTopic;
-      });
-      renderHadiths(filtered);
+    async function fetchJSON(url) {
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error("Failed to fetch: " + url);
+      return resp.json();
     }
 
-    searchInput.addEventListener("input", applyFilters);
-    topicFilter.addEventListener("change", applyFilters);
+    async function loadCollection(name) {
+      if (cache[name]) {
+        renderChapters(name);
+        return;
+      }
+      loadingMsg.style.display = "block";
+      contentArea.innerHTML = "";
+      contentArea.appendChild(loadingMsg);
+      try {
+        const [engData, araData] = await Promise.all([
+          fetchJSON(`${API_BASE}/eng-${name}.min.json`),
+          fetchJSON(`${API_BASE}/ara-${name}.min.json`)
+        ]);
+        const araMap = {};
+        araData.hadiths.forEach(h => { araMap[h.hadithnumber] = h.text; });
+        cache[name] = {
+          metadata: engData.metadata,
+          hadiths: engData.hadiths.map(h => ({
+            number: h.hadithnumber,
+            arabicNumber: h.arabicnumber,
+            english: h.text,
+            arabic: araMap[h.hadithnumber] || "",
+            book: h.reference.book,
+            hadithInBook: h.reference.hadith
+          }))
+        };
+        loadingMsg.style.display = "none";
+        renderChapters(name);
+      } catch (err) {
+        loadingMsg.textContent = "Failed to load collection. Please check your connection and try again.";
+      }
+    }
 
-    renderHadiths(HADITHS);
+    function renderChapters(name) {
+      currentView = "chapters";
+      const data = cache[name];
+      const sections = data.metadata.sections;
+      const details = data.metadata.section_details;
+      const displayName = name === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim";
+
+      let html = `<h2 class="section-title" style="margin-bottom:8px;">${displayName}</h2>
+        <p class="section-sub" style="margin-bottom:24px;">${data.hadiths.length.toLocaleString()} hadith across ${Object.keys(sections).length} chapters. Click any chapter to read.</p>
+        <div class="chapter-grid">`;
+
+      for (const [num, secName] of Object.entries(sections)) {
+        if (num === "0") continue;
+        const det = details[num];
+        const count = det ? (det.hadithnumber_last - det.hadithnumber_first + 1) : "";
+        html += `<button class="chapter-btn" onclick="openChapter('${name}', ${num})">
+          <div class="ch-num">Chapter ${num}</div>
+          <div class="ch-name">${secName}</div>
+          ${count ? `<div class="ch-count">${count} hadith</div>` : ""}
+        </button>`;
+      }
+      html += '</div>';
+      contentArea.innerHTML = html;
+    }
+
+    window.openChapter = function(name, chapterNum) {
+      currentView = "hadith";
+      const data = cache[name];
+      const chapterName = data.metadata.sections[chapterNum];
+      const displayName = name === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim";
+      const chapterHadith = data.hadiths.filter(h => h.book === Number(chapterNum));
+
+      let html = `<button class="back-btn" onclick="renderChapters('${name}')">← Back to Chapters</button>
+        <h2 class="section-title" style="margin-bottom:4px;">${chapterName}</h2>
+        <p class="section-sub" style="margin-bottom:24px;">${displayName} — Chapter ${chapterNum} — ${chapterHadith.length} hadith</p>`;
+
+      const perPage = 20;
+      const totalPages = Math.ceil(chapterHadith.length / perPage);
+      window._chapterHadith = chapterHadith;
+      window._chapterMeta = { name, chapterNum, chapterName, displayName, perPage, totalPages };
+
+      html += '<div id="hadithListArea"></div>';
+      if (totalPages > 1) {
+        html += '<div class="pagination" id="paginationArea"></div>';
+      }
+      contentArea.innerHTML = html;
+      renderPage(1);
+    };
+
+    window.renderPage = function(page) {
+      const { perPage, totalPages, displayName } = window._chapterMeta;
+      const hadithSlice = window._chapterHadith.slice((page - 1) * perPage, page * perPage);
+      const listArea = document.getElementById("hadithListArea");
+
+      let html = "";
+      hadithSlice.forEach(h => {
+        html += `<div class="full-hadith-card">
+          <div class="h-number">${displayName} — Hadith #${h.number}</div>
+          ${h.arabic ? `<div class="h-arabic">${h.arabic}</div>` : ""}
+          <div class="h-english">${h.english}</div>
+        </div>`;
+      });
+      listArea.innerHTML = html;
+
+      if (totalPages > 1) {
+        let pagHtml = "";
+        for (let i = 1; i <= totalPages; i++) {
+          pagHtml += `<button class="${i === page ? 'active' : ''}" onclick="renderPage(${i})">${i}</button>`;
+        }
+        document.getElementById("paginationArea").innerHTML = pagHtml;
+      }
+      window.scrollTo({ top: document.getElementById("hadithListArea").offsetTop - 100, behavior: "smooth" });
+    };
+
+    async function searchHadith(query) {
+      const q = query.toLowerCase();
+      let results = [];
+      const collections = ["bukhari", "muslim"];
+
+      for (const col of collections) {
+        if (!cache[col]) {
+          searchInfo.style.display = "block";
+          searchInfo.textContent = `Loading ${col === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim"} for search...`;
+          await loadCollection(col);
+        }
+        const displayName = col === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim";
+        const matches = cache[col].hadiths.filter(h =>
+          h.english.toLowerCase().includes(q) || h.arabic.includes(query)
+        ).slice(0, 50).map(h => ({ ...h, source: displayName }));
+        results = results.concat(matches);
+      }
+
+      if (currentCollection === "curated") {
+        const curatedMatches = HADITHS.filter(h =>
+          h.text.toLowerCase().includes(q) || h.narrator.toLowerCase().includes(q) || h.topic.toLowerCase().includes(q)
+        );
+        if (curatedMatches.length > 0) {
+          let curHtml = curatedMatches.map(h => {
+            const isSahih = h.strength.startsWith("Sahih");
+            return `<div class="hadith-card">
+              <span class="topic-tag">${h.topic}</span>
+              <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
+              <p class="hadith-text">"${h.text}"</p>
+              <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
+            </div>`;
+          }).join("");
+          results.unshift({ _curatedHtml: curHtml, _count: curatedMatches.length });
+        }
+      }
+
+      searchInfo.style.display = "block";
+      const totalCount = results.reduce((n, r) => n + (r._count || 1), 0);
+      searchInfo.textContent = `Found ${totalCount} result${totalCount !== 1 ? 's' : ''} for "${query}"`;
+
+      let html = "";
+      results.forEach(h => {
+        if (h._curatedHtml) {
+          html += `<h3 style="margin:16px 0 12px;color:var(--green-dark);">Curated Highlights</h3><div class="hadith-grid">${h._curatedHtml}</div>`;
+          return;
+        }
+        html += `<div class="full-hadith-card">
+          <div class="h-number">${h.source} — Hadith #${h.number}</div>
+          ${h.arabic ? `<div class="h-arabic">${h.arabic}</div>` : ""}
+          <div class="h-english">${h.english}</div>
+        </div>`;
+      });
+
+      if (results.length === 0) {
+        html = '<div class="no-results">No hadith match your search. Try different keywords in Arabic or English.</div>';
+      }
+      contentArea.innerHTML = html;
+    }
+
+    renderCurated();
   </script>
   <script src="js/main.js"></script>
 </body>

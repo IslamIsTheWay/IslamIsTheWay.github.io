@@ -64,7 +64,7 @@
   <section>
     <div class="container">
       <div class="search-row" style="max-width:600px;margin:0 auto 32px;">
-        <input type="text" id="prophetSearch" placeholder="Search by name (e.g. Musa, Ibrahim)..." style="width:100%;padding:14px 20px;border:1px solid #ddd;border-radius:10px;font-size:1rem;">
+        <input type="text" id="prophetSearch" placeholder="ابحث بالعربية أو Search by name (e.g. Musa, إبراهيم)..." dir="auto" style="width:100%;padding:14px 20px;border:1px solid #ddd;border-radius:10px;font-size:1rem;">
       </div>
       <div class="people-grid" id="prophetsGrid"></div>
     </div>
@@ -107,7 +107,8 @@
     function renderProphets(filter = "") {
       grid.innerHTML = "";
       const q = filter.toLowerCase();
-      PROPHETS.filter(p => !q || p.name.toLowerCase().includes(q) || p.arabic.includes(q) || p.title.toLowerCase().includes(q))
+      const raw = filter.trim();
+      PROPHETS.filter(p => !q || p.name.toLowerCase().includes(q) || p.arabic.includes(raw) || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q))
         .forEach(p => {
           const card = document.createElement("div");
           card.className = "person-card";

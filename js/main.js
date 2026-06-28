@@ -43,7 +43,8 @@ function runPersonSearch(query) {
       person.name.toLowerCase().includes(q) ||
       person.title.toLowerCase().includes(q) ||
       person.summary.toLowerCase().includes(q) ||
-      person.id.toLowerCase().includes(q)
+      person.id.toLowerCase().includes(q) ||
+      person.arabic.includes(query.trim())
     );
   });
 
