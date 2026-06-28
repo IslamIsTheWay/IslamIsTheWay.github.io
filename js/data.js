@@ -1024,6 +1024,7 @@ const QURAN_QUOTES = [
 // ---------- Hadith Collection (mainly Sahih al-Bukhari & Sahih Muslim) ----------
 const HADITHS = [
   {
+    arabic: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
     text: "Actions are judged by intentions, so each person will be rewarded according to what they intended.",
     narrator: "Umar ibn al-Khattab",
     ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
@@ -1031,6 +1032,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
     text: "None of you truly believes until he loves for his brother what he loves for himself.",
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
@@ -1038,6 +1040,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "إِنَّ مِنْ خِيَارِكُمْ أَحْسَنَكُمْ أَخْلَاقًا",
     text: "The best among you are those who have the best manners and character.",
     narrator: "Abdullah ibn Amr",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
@@ -1045,6 +1048,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
     text: "Whoever believes in Allah and the Last Day should speak good or remain silent.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Sahih Muslim",
@@ -1052,6 +1056,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
     text: "Smiling at your brother is an act of charity.",
     narrator: "Abu Dharr al-Ghifari",
     ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
@@ -1059,6 +1064,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
     text: "The strong believer is not the one who overcomes people through strength, but the one who controls himself when angry.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
@@ -1066,6 +1072,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِجَارِهِ مَا يُحِبُّ لِنَفْسِهِ",
     text: "None of you will believe until he loves for his neighbor what he loves for himself.",
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
@@ -1073,6 +1080,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
     text: "The most beloved deeds to Allah are those done consistently, even if they are small.",
     narrator: "Aisha bint Abu Bakr",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
@@ -1080,6 +1088,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "خَيْرُ النَّاسِ مَنْ أَطْعَمَ الطَّعَامَ",
     text: "He who eats and drinks moderately and shares with others is among the best of people.",
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Food and Drink",
@@ -1087,6 +1096,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
     text: "Seeking knowledge is an obligation upon every Muslim.",
     narrator: "Anas ibn Malik",
     ref: "Sunan Ibn Majah, Book of the Sunnah",
@@ -1094,6 +1104,7 @@ const HADITHS = [
     strength: "Hasan (Good) — graded Sahih by some scholars"
   },
   {
+    arabic: "الْمُؤْمِنُ الَّذِي يُخَالِطُ النَّاسَ وَيَصْبِرُ عَلَى أَذَاهُمْ خَيْرٌ مِنَ الَّذِي لَا يُخَالِطُ النَّاسَ وَلَا يَصْبِرُ عَلَى أَذَاهُمْ",
     text: "The believer who mixes with people and is patient with their faults is better than the one who avoids people and is impatient with them.",
     narrator: "Ibn Umar",
     ref: "Sunan Ibn Majah, Book of Asceticism; also in Musnad Ahmad",
@@ -1101,6 +1112,7 @@ const HADITHS = [
     strength: "Sahih (Authentic) — authenticated by Al-Albani"
   },
   {
+    arabic: "مَنْ يَضْمَنْ لِي مَا بَيْنَ لَحْيَيْهِ وَمَا بَيْنَ رِجْلَيْهِ أَضْمَنْ لَهُ الْجَنَّةَ",
     text: "Whoever guarantees me what is between his jaws and what is between his legs, I guarantee him Paradise.",
     narrator: "Sahl ibn Sa'd",
     ref: "Sahih al-Bukhari, Book of Limits and Punishments",
@@ -1108,6 +1120,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ",
     text: "The best of people are those most beneficial to people.",
     narrator: "Jabir ibn Abdullah",
     ref: "Al-Mu'jam al-Awsat, Tabarani; graded Hasan by Al-Albani",
@@ -1115,6 +1128,7 @@ const HADITHS = [
     strength: "Hasan (Good)"
   },
   {
+    arabic: "اغْتَنِمْ خَمْسًا قَبْلَ خَمْسٍ: شَبَابَكَ قَبْلَ هَرَمِكَ، وَصِحَّتَكَ قَبْلَ سَقَمِكَ، وَغِنَاكَ قَبْلَ فَقْرِكَ، وَفَرَاغَكَ قَبْلَ شُغْلِكَ، وَحَيَاتَكَ قَبْلَ مَوْتِكَ",
     text: "Take advantage of five before five: your youth before your old age, your health before your sickness, your wealth before your poverty, your free time before your busyness, and your life before your death.",
     narrator: "Ibn Abbas",
     ref: "Mustadrak al-Hakim; graded Sahih by Al-Hakim and Al-Albani",
@@ -1122,6 +1136,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "إِنَّ اللَّهَ لَا يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
     text: "Verily, Allah does not look at your appearances or your wealth, but He looks at your hearts and your deeds.",
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Righteousness",
@@ -1129,6 +1144,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "يَسِّرُوا وَلَا تُعَسِّرُوا وَبَشِّرُوا وَلَا تُنَفِّرُوا",
     text: "Make things easy and do not make them difficult, and give good tidings and do not drive people away.",
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Knowledge; Sahih Muslim",
@@ -1136,6 +1152,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
     text: "Whoever treads a path seeking knowledge, Allah will make easy for him a path to Paradise.",
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance, Hadith 2699",
@@ -1143,6 +1160,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "لَيْسَ الْمُؤْمِنُ بِالطَّعَّانِ وَلَا اللَّعَّانِ وَلَا الْفَاحِشِ وَلَا الْبَذِيءِ",
     text: "The Muslim does not slander, curse, speak obscenely, or speak rudely.",
     narrator: "Abdullah ibn Mas'ud",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); also Jami at-Tirmidhi",
@@ -1150,6 +1168,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ أَوْ عَابِرُ سَبِيلٍ",
     text: "Be in this world as though you were a stranger or a traveler.",
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Heart Softeners",
@@ -1157,6 +1176,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
     text: "The merciful are shown mercy by the Most Merciful. Show mercy to those on earth, and the One above the heavens will show mercy to you.",
     narrator: "Abdullah ibn Amr",
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi (graded Sahih by Al-Albani)",
@@ -1164,6 +1184,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ",
     text: "Whoever removes a hardship from a believer in this world, Allah will remove a hardship from him on the Day of Resurrection.",
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
@@ -1171,6 +1192,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "لَا يَرْحَمُ اللَّهُ مَنْ لَا يَرْحَمُ النَّاسَ",
     text: "Allah will not show mercy to the one who does not show mercy to people.",
     narrator: "Jarir ibn Abdullah",
     ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
@@ -1178,6 +1200,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
     text: "The best of you is the one who learns the Quran and teaches it.",
     narrator: "Uthman ibn Affan",
     ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
@@ -1185,6 +1208,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "الرَّجُلُ عَلَى دِينِ خَلِيلِهِ فَلْيَنْظُرْ أَحَدُكُمْ مَنْ يُخَالِلُ",
     text: "A man is upon the religion of his close friend, so let one of you look at whom he befriends.",
     narrator: "Abu Hurairah",
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
@@ -1192,6 +1216,7 @@ const HADITHS = [
     strength: "Hasan (Good)"
   },
   {
+    arabic: "لَا تَزُولُ قَدَمَا عَبْدٍ يَوْمَ الْقِيَامَةِ حَتَّى يُسْأَلَ عَنْ عُمُرِهِ فِيمَا أَفْنَاهُ وَعَنْ عِلْمِهِ فِيمَا فَعَلَ وَعَنْ مَالِهِ مِنْ أَيْنَ اكْتَسَبَهُ وَفِيمَا أَنْفَقَهُ وَعَنْ جِسْمِهِ فِيمَا أَبْلَاهُ",
     text: "The two feet of the son of Adam will not move on the Day of Judgment until he is asked about his life and how he spent it, his knowledge and what he did with it, his wealth and how he earned it and spent it, and his body and how he used it.",
     narrator: "Abu Barzah al-Aslami",
     ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment",
@@ -1199,6 +1224,7 @@ const HADITHS = [
     strength: "Sahih (Authentic) — graded Sahih by At-Tirmidhi"
   },
   {
+    arabic: "لَيْسَ الْغِنَى عَنْ كَثْرَةِ الْعَرَضِ وَلَكِنَّ الْغِنَى غِنَى النَّفْسِ",
     text: "Richness is not having many possessions, but richness is the richness of the soul.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
@@ -1206,6 +1232,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",
     text: "Part of the perfection of a person's Islam is leaving that which does not concern him.",
     narrator: "Abu Hurairah",
     ref: "Jami at-Tirmidhi, Book of Asceticism; also in Muwatta Imam Malik",
@@ -1213,6 +1240,7 @@ const HADITHS = [
     strength: "Hasan (Good)"
   },
   {
+    arabic: "لَا تَغْضَبْ، لَا تَغْضَبْ، لَا تَغْضَبْ",
     text: "Do not be angry, do not be angry, do not be angry.",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
@@ -1220,6 +1248,7 @@ const HADITHS = [
     strength: "Sahih (Authentic)"
   },
   {
+    arabic: "الْحَيَاءُ لَا يَأْتِي إِلَّا بِخَيْرٍ",
     text: "Modesty brings nothing but goodness.",
     narrator: "Imran ibn Husayn",
     ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",

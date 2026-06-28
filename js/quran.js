@@ -82,9 +82,10 @@ async function openSurah(surah) {
   overlay.classList.add("open");
 
   try {
-    const [arabicRes, translationRes] = await Promise.all([
+    const [arabicRes, translationRes, audioRes] = await Promise.all([
       fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/quran-uthmani`),
-      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`)
+      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`),
+      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/ar.alafasy`)
     ]);
 
     if (!arabicRes.ok || !translationRes.ok) throw new Error("Network response was not ok");
@@ -94,13 +95,20 @@ async function openSurah(surah) {
 
     const arabicAyahs = arabicData.data.ayahs;
     const translationAyahs = translationData.data.ayahs;
+    const audioAyahs = audioRes.ok ? (await audioRes.json()).data.ayahs : [];
 
-    let html = "";
+    let html = `<div style="margin-bottom:18px;text-align:center;">
+      <button onclick="playAllAyahs()" style="padding:10px 24px;border:1px solid #1e7e45;border-radius:8px;background:#e6f4ea;color:#1e7e45;cursor:pointer;font-size:.95rem;">🔊 Play Full Surah Recitation</button>
+      <button onclick="stopAudio()" style="padding:10px 24px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;font-size:.95rem;margin-left:8px;">⏹ Stop</button>
+    </div>`;
+    window._ayahAudios = audioAyahs.map(a => a.audio);
+
     arabicAyahs.forEach((ayah, i) => {
       const translation = translationAyahs[i] ? translationAyahs[i].text : "";
+      const audioUrl = audioAyahs[i] ? audioAyahs[i].audio : "";
       html += `
         <div class="ayah-block">
-          <div class="arabic-text">${ayah.text}</div>
+          <div class="arabic-text">${ayah.text}${audioUrl ? ` <button onclick="playAyah('${audioUrl}')" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen">🔊</button>` : ""}</div>
           <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
         </div>
       `;
@@ -118,5 +126,41 @@ async function openSurah(surah) {
 }
 
 function closeModal() {
+  stopAudio();
   document.getElementById("surahModal").classList.remove("open");
+}
+
+let currentAudioEl = null;
+let ayahPlayIndex = 0;
+
+function playAyah(url) {
+  stopAudio();
+  currentAudioEl = new Audio(url);
+  currentAudioEl.play();
+}
+
+function playAllAyahs() {
+  if (!window._ayahAudios || window._ayahAudios.length === 0) return;
+  ayahPlayIndex = 0;
+  playNextAyah();
+}
+
+function playNextAyah() {
+  if (ayahPlayIndex >= window._ayahAudios.length) return;
+  stopAudio();
+  currentAudioEl = new Audio(window._ayahAudios[ayahPlayIndex]);
+  currentAudioEl.addEventListener("ended", () => {
+    ayahPlayIndex++;
+    playNextAyah();
+  });
+  currentAudioEl.play();
+}
+
+function stopAudio() {
+  if (currentAudioEl) {
+    currentAudioEl.pause();
+    currentAudioEl.currentTime = 0;
+    currentAudioEl = null;
+  }
+  window.speechSynthesis && window.speechSynthesis.cancel();
 }

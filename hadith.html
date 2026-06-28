@@ -188,12 +188,13 @@
 
     function renderCurated() {
       let html = '<div class="hadith-grid">';
-      HADITHS.forEach(h => {
+      HADITHS.forEach((h, i) => {
         const isSahih = h.strength.startsWith("Sahih");
         html += `<div class="hadith-card">
           <span class="topic-tag">${h.topic}</span>
           <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
-          <p class="hadith-text">"${h.text}"</p>
+          ${h.arabic ? `<p style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2;direction:rtl;text-align:right;color:var(--green-dark);margin-bottom:10px;">${h.arabic} <button onclick="speakText('${h.arabic.replace(/'/g,"\\'")}','ar')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in Arabic">🔊</button></p>` : ""}
+          <p class="hadith-text">"${h.text}" <button onclick="speakText(\`${h.text.replace(/`/g,"")}\`,'en')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in English">🔊</button></p>
           <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
         </div>`;
       });
@@ -298,8 +299,8 @@
       hadithSlice.forEach(h => {
         html += `<div class="full-hadith-card">
           <div class="h-number">${displayName} — Hadith #${h.number}</div>
-          ${h.arabic ? `<div class="h-arabic">${h.arabic}</div>` : ""}
-          <div class="h-english">${h.english}</div>
+          ${h.arabic ? `<div class="h-arabic">${h.arabic} <button onclick="speakText(this.parentElement.textContent,'ar')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;float:left;" title="Listen in Arabic">🔊</button></div>` : ""}
+          <div class="h-english">${h.english} <button onclick="speakText(this.parentElement.textContent,'en')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in English">🔊</button></div>
         </div>`;
       });
       listArea.innerHTML = html;
@@ -362,8 +363,8 @@
         }
         html += `<div class="full-hadith-card">
           <div class="h-number">${h.source} — Hadith #${h.number}</div>
-          ${h.arabic ? `<div class="h-arabic">${h.arabic}</div>` : ""}
-          <div class="h-english">${h.english}</div>
+          ${h.arabic ? `<div class="h-arabic">${h.arabic} <button onclick="speakText(this.parentElement.textContent,'ar')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;float:left;" title="Listen in Arabic">🔊</button></div>` : ""}
+          <div class="h-english">${h.english} <button onclick="speakText(this.parentElement.textContent,'en')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in English">🔊</button></div>
         </div>`;
       });
 
@@ -372,6 +373,15 @@
       }
       contentArea.innerHTML = html;
     }
+
+    function speakText(text, lang) {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = lang === "ar" ? "ar-SA" : "en-US";
+      utter.rate = lang === "ar" ? 0.85 : 0.95;
+      window.speechSynthesis.speak(utter);
+    }
+    window.speakText = speakText;
 
     renderCurated();
   </script>
