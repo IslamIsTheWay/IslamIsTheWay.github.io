@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | Islam Is The Way</title>
+  <meta name="description" content="Structured learning paths in Quranic Arabic, Quranic Sciences, Islamic Studies, and Hadith Sciences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="topbar">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ — In the name of Allah, the Most Gracious, the Most Merciful</div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <svg class="logo-mosque" viewBox="0 0 80 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f8e3a0"/>
+              <stop offset="100%" stop-color="#c9a227"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="14" width="6" height="40" fill="url(#goldGrad)"/>
+          <path d="M3 14 L11 14 L7 4 Z" fill="url(#goldGrad)"/>
+          <circle cx="7" cy="2" r="2" fill="url(#goldGrad)"/>
+          <rect x="70" y="14" width="6" height="40" fill="url(#goldGrad)"/>
+          <path d="M69 14 L77 14 L73 4 Z" fill="url(#goldGrad)"/>
+          <circle cx="73" cy="2" r="2" fill="url(#goldGrad)"/>
+          <rect x="14" y="38" width="52" height="16" fill="url(#goldGrad)"/>
+          <path d="M19 38 A21 21 0 0 1 61 38 Z" fill="url(#goldGrad)"/>
+          <line x1="40" y1="17" x2="40" y2="9" stroke="url(#goldGrad)" stroke-width="2"/>
+          <circle cx="40" cy="6" r="2.5" fill="url(#goldGrad)"/>
+          <path d="M36 54 L36 47 A4 4 0 0 1 44 47 L44 54 Z" fill="#ffffff"/>
+        </svg>
+        Islam Is The Way
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="quran.html">Quran</a>
+        <a href="prophets.html">Prophets</a>
+        <a href="companions.html">Companions</a>
+        <a href="hadith.html">Hadith</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="courses.html">Courses</a>
+        <a href="search.html">Search</a>
+        <a href="login.html" class="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Learning Paths &amp; Courses</h1>
+      <p>Structured educational courses designed to guide you from foundational Arabic to a deeper comprehension of the Quranic and Islamic sciences. Enroll to get started with live sessions and guided study.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="course-grid" id="courseGrid"></div>
+    </div>
+  </section>
+
+  <section class="pattern-bg">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Not Ready to Enroll?</h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:18px;">All of our free resources — the Quran Library, Prophet and Companion profiles, Hadith collection, and Guidance pages — remain open to everyone, no account required.</p>
+      <a href="index.html" class="btn btn-outline">Explore Free Resources</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Islam Is The Way</h4>
+          <p>A resource for learning the Quran, the Prophets, and the Companions of Prophet Muhammad ﷺ — built to inform, inspire, and guide.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="quran.html">Quran Library</a></li>
+            <li><a href="prophets.html">Prophets in Islam</a></li>
+            <li><a href="companions.html">Companions</a></li>
+            <li><a href="hadith.html">Hadith</a></li>
+            <li><a href="guidance.html">Guidance</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>contact@islamistheway.com</li>
+            <li>Islamic Wisdom for Every Heart</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Islam Is The Way. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>
+    const grid = document.getElementById("courseGrid");
+    COURSES.forEach(c => {
+      const card = document.createElement("div");
+      card.className = "course-card";
+      card.innerHTML = `
+        <div class="course-head">
+          <div class="level">${c.level}</div>
+          <h3>${c.title}</h3>
+          <div class="price">${c.price}</div>
+        </div>
+        <div class="course-body">
+          <p>${c.description}</p>
+          <ul>${c.includes.map(i => `<li>${i}</li>`).join("")}</ul>
+          <a href="login.html" class="btn btn-primary" style="text-align:center;">Enroll Now</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

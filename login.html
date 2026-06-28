@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Islam Is The Way</title>
+  <meta name="description" content="Staff login or continue as a guest to browse and enroll in courses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="topbar">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ — In the name of Allah, the Most Gracious, the Most Merciful</div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <svg class="logo-mosque" viewBox="0 0 80 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f8e3a0"/>
+              <stop offset="100%" stop-color="#c9a227"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="14" width="6" height="40" fill="url(#goldGrad)"/>
+          <path d="M3 14 L11 14 L7 4 Z" fill="url(#goldGrad)"/>
+          <circle cx="7" cy="2" r="2" fill="url(#goldGrad)"/>
+          <rect x="70" y="14" width="6" height="40" fill="url(#goldGrad)"/>
+          <path d="M69 14 L77 14 L73 4 Z" fill="url(#goldGrad)"/>
+          <circle cx="73" cy="2" r="2" fill="url(#goldGrad)"/>
+          <rect x="14" y="38" width="52" height="16" fill="url(#goldGrad)"/>
+          <path d="M19 38 A21 21 0 0 1 61 38 Z" fill="url(#goldGrad)"/>
+          <line x1="40" y1="17" x2="40" y2="9" stroke="url(#goldGrad)" stroke-width="2"/>
+          <circle cx="40" cy="6" r="2.5" fill="url(#goldGrad)"/>
+          <path d="M36 54 L36 47 A4 4 0 0 1 44 47 L44 54 Z" fill="#ffffff"/>
+        </svg>
+        Islam Is The Way
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="quran.html">Quran</a>
+        <a href="prophets.html">Prophets</a>
+        <a href="companions.html">Companions</a>
+        <a href="hadith.html">Hadith</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="courses.html">Courses</a>
+        <a href="search.html">Search</a>
+        <a href="login.html" class="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Welcome Back</h1>
+      <p>Staff members can sign in below to manage content. Everyone else is welcome to continue without an account — all learning resources are open to visitors.</p>
+    </div>
+  </div>
+
+  <section class="pattern-bg">
+    <div class="container">
+      <div class="login-wrap">
+        <div class="login-card">
+          <div class="icon-circle">🔐</div>
+          <h3>Staff Login</h3>
+          <p>For site administrators and instructors only.</p>
+          <form id="staffForm">
+            <label for="staffUser">Username</label>
+            <input type="text" id="staffUser" autocomplete="username" required />
+            <label for="staffPass">Password</label>
+            <input type="password" id="staffPass" autocomplete="current-password" required />
+            <button type="submit" class="btn btn-primary">Sign In</button>
+          </form>
+          <div class="login-message" id="staffMessage"></div>
+        </div>
+
+        <div class="login-card">
+          <div class="icon-circle">🌙</div>
+          <h3>Visitors &amp; Students</h3>
+          <p>No password needed. Browse the Quran, Prophets, Companions, Hadith, and Guidance freely, or enroll in a course.</p>
+          <a href="index.html" class="btn btn-outline" style="margin-bottom:12px;">Continue without an Account</a>
+          <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+        </div>
+      </div>
+
+      <div class="context-note" style="max-width: 980px; margin: 40px auto 0;">
+        <strong>Note:</strong> This staff login is a front-end check for convenience. The credentials are stored in the page's JavaScript, so anyone who views the page source can read them — it keeps casual visitors out, but it is not secure for sensitive data. For real protection, connect this form to a backend with encrypted authentication.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Islam Is The Way</h4>
+          <p>A resource for learning the Quran, the Prophets, and the Companions of Prophet Muhammad ﷺ — built to inform, inspire, and guide.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="quran.html">Quran Library</a></li>
+            <li><a href="prophets.html">Prophets in Islam</a></li>
+            <li><a href="companions.html">Companions</a></li>
+            <li><a href="hadith.html">Hadith</a></li>
+            <li><a href="guidance.html">Guidance</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>contact@islamistheway.com</li>
+            <li>Islamic Wisdom for Every Heart</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Islam Is The Way. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>
+    const STAFF_USERNAME = "Islam.younis.2026";
+    const STAFF_PASSWORD = "NoorAmmarTamimA'sem";
+
+    document.getElementById("staffForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const msg = document.getElementById("staffMessage");
+      const user = document.getElementById("staffUser").value.trim();
+      const pass = document.getElementById("staffPass").value;
+
+      if (user === STAFF_USERNAME && pass === STAFF_PASSWORD) {
+        msg.textContent = "Welcome back! Redirecting to the staff area...";
+        msg.className = "login-message success";
+        sessionStorage.setItem("islamIsTheWayStaff", "true");
+        setTimeout(() => { window.location.href = "staff.html"; }, 800);
+      } else {
+        msg.textContent = "Incorrect username or password. Please try again.";
+        msg.className = "login-message error";
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

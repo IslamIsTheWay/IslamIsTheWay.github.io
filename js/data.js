@@ -1,0 +1,1105 @@
+/* ============================================
+   Islam Is The Way — Data
+   Surahs of the Quran, Prophets, and Companions
+   ============================================ */
+
+// ---------- The 114 Surahs of the Quran ----------
+const SURAHS = [
+  { n: 1, name: "Al-Fatihah", arabic: "الفاتحة", meaning: "The Opening", verses: 7, place: "Meccan" },
+  { n: 2, name: "Al-Baqarah", arabic: "البقرة", meaning: "The Cow", verses: 286, place: "Medinan" },
+  { n: 3, name: "Ali 'Imran", arabic: "آل عمران", meaning: "The Family of Imran", verses: 200, place: "Medinan" },
+  { n: 4, name: "An-Nisa", arabic: "النساء", meaning: "The Women", verses: 176, place: "Medinan" },
+  { n: 5, name: "Al-Ma'idah", arabic: "المائدة", meaning: "The Table Spread", verses: 120, place: "Medinan" },
+  { n: 6, name: "Al-An'am", arabic: "الأنعام", meaning: "The Cattle", verses: 165, place: "Meccan" },
+  { n: 7, name: "Al-A'raf", arabic: "الأعراف", meaning: "The Heights", verses: 206, place: "Meccan" },
+  { n: 8, name: "Al-Anfal", arabic: "الأنفال", meaning: "The Spoils of War", verses: 75, place: "Medinan" },
+  { n: 9, name: "At-Tawbah", arabic: "التوبة", meaning: "The Repentance", verses: 129, place: "Medinan" },
+  { n: 10, name: "Yunus", arabic: "يونس", meaning: "Jonah", verses: 109, place: "Meccan" },
+  { n: 11, name: "Hud", arabic: "هود", meaning: "Hud", verses: 123, place: "Meccan" },
+  { n: 12, name: "Yusuf", arabic: "يوسف", meaning: "Joseph", verses: 111, place: "Meccan" },
+  { n: 13, name: "Ar-Ra'd", arabic: "الرعد", meaning: "The Thunder", verses: 43, place: "Medinan" },
+  { n: 14, name: "Ibrahim", arabic: "ابراهيم", meaning: "Abraham", verses: 52, place: "Meccan" },
+  { n: 15, name: "Al-Hijr", arabic: "الحجر", meaning: "The Rocky Tract", verses: 99, place: "Meccan" },
+  { n: 16, name: "An-Nahl", arabic: "النحل", meaning: "The Bee", verses: 128, place: "Meccan" },
+  { n: 17, name: "Al-Isra", arabic: "الإسراء", meaning: "The Night Journey", verses: 111, place: "Meccan" },
+  { n: 18, name: "Al-Kahf", arabic: "الكهف", meaning: "The Cave", verses: 110, place: "Meccan" },
+  { n: 19, name: "Maryam", arabic: "مريم", meaning: "Mary", verses: 98, place: "Meccan" },
+  { n: 20, name: "Ta-Ha", arabic: "طه", meaning: "Ta-Ha", verses: 135, place: "Meccan" },
+  { n: 21, name: "Al-Anbiya", arabic: "الأنبياء", meaning: "The Prophets", verses: 112, place: "Meccan" },
+  { n: 22, name: "Al-Hajj", arabic: "الحج", meaning: "The Pilgrimage", verses: 78, place: "Medinan" },
+  { n: 23, name: "Al-Mu'minun", arabic: "المؤمنون", meaning: "The Believers", verses: 118, place: "Meccan" },
+  { n: 24, name: "An-Nur", arabic: "النور", meaning: "The Light", verses: 64, place: "Medinan" },
+  { n: 25, name: "Al-Furqan", arabic: "الفرقان", meaning: "The Criterion", verses: 77, place: "Meccan" },
+  { n: 26, name: "Ash-Shu'ara", arabic: "الشعراء", meaning: "The Poets", verses: 227, place: "Meccan" },
+  { n: 27, name: "An-Naml", arabic: "النمل", meaning: "The Ants", verses: 93, place: "Meccan" },
+  { n: 28, name: "Al-Qasas", arabic: "القصص", meaning: "The Narration", verses: 88, place: "Meccan" },
+  { n: 29, name: "Al-Ankabut", arabic: "العنكبوت", meaning: "The Spider", verses: 69, place: "Meccan" },
+  { n: 30, name: "Ar-Rum", arabic: "الروم", meaning: "The Romans", verses: 60, place: "Meccan" },
+  { n: 31, name: "Luqman", arabic: "لقمان", meaning: "Luqman", verses: 34, place: "Meccan" },
+  { n: 32, name: "As-Sajdah", arabic: "السجدة", meaning: "The Prostration", verses: 30, place: "Meccan" },
+  { n: 33, name: "Al-Ahzab", arabic: "الأحزاب", meaning: "The Combined Forces", verses: 73, place: "Medinan" },
+  { n: 34, name: "Saba", arabic: "سبأ", meaning: "Sheba", verses: 54, place: "Meccan" },
+  { n: 35, name: "Fatir", arabic: "فاطر", meaning: "Originator", verses: 45, place: "Meccan" },
+  { n: 36, name: "Ya-Sin", arabic: "يس", meaning: "Ya Sin", verses: 83, place: "Meccan" },
+  { n: 37, name: "As-Saffat", arabic: "الصافات", meaning: "Those Ranged in Ranks", verses: 182, place: "Meccan" },
+  { n: 38, name: "Sad", arabic: "ص", meaning: "The Letter Sad", verses: 88, place: "Meccan" },
+  { n: 39, name: "Az-Zumar", arabic: "الزمر", meaning: "The Troops", verses: 75, place: "Meccan" },
+  { n: 40, name: "Ghafir", arabic: "غافر", meaning: "The Forgiver", verses: 85, place: "Meccan" },
+  { n: 41, name: "Fussilat", arabic: "فصلت", meaning: "Explained in Detail", verses: 54, place: "Meccan" },
+  { n: 42, name: "Ash-Shuraa", arabic: "الشورى", meaning: "The Consultation", verses: 53, place: "Meccan" },
+  { n: 43, name: "Az-Zukhruf", arabic: "الزخرف", meaning: "The Ornaments of Gold", verses: 89, place: "Meccan" },
+  { n: 44, name: "Ad-Dukhan", arabic: "الدخان", meaning: "The Smoke", verses: 59, place: "Meccan" },
+  { n: 45, name: "Al-Jathiyah", arabic: "الجاثية", meaning: "The Crouching", verses: 37, place: "Meccan" },
+  { n: 46, name: "Al-Ahqaf", arabic: "الأحقاف", meaning: "The Wind-Curved Sandhills", verses: 35, place: "Meccan" },
+  { n: 47, name: "Muhammad", arabic: "محمد", meaning: "Muhammad", verses: 38, place: "Medinan" },
+  { n: 48, name: "Al-Fath", arabic: "الفتح", meaning: "The Victory", verses: 29, place: "Medinan" },
+  { n: 49, name: "Al-Hujurat", arabic: "الحجرات", meaning: "The Rooms", verses: 18, place: "Medinan" },
+  { n: 50, name: "Qaf", arabic: "ق", meaning: "The Letter Qaf", verses: 45, place: "Meccan" },
+  { n: 51, name: "Adh-Dhariyat", arabic: "الذاريات", meaning: "The Winnowing Winds", verses: 60, place: "Meccan" },
+  { n: 52, name: "At-Tur", arabic: "الطور", meaning: "The Mount", verses: 49, place: "Meccan" },
+  { n: 53, name: "An-Najm", arabic: "النجم", meaning: "The Star", verses: 62, place: "Meccan" },
+  { n: 54, name: "Al-Qamar", arabic: "القمر", meaning: "The Moon", verses: 55, place: "Meccan" },
+  { n: 55, name: "Ar-Rahman", arabic: "الرحمن", meaning: "The Most Merciful", verses: 78, place: "Medinan" },
+  { n: 56, name: "Al-Waqi'ah", arabic: "الواقعة", meaning: "The Inevitable", verses: 96, place: "Meccan" },
+  { n: 57, name: "Al-Hadid", arabic: "الحديد", meaning: "The Iron", verses: 29, place: "Medinan" },
+  { n: 58, name: "Al-Mujadila", arabic: "المجادلة", meaning: "The Pleading Woman", verses: 22, place: "Medinan" },
+  { n: 59, name: "Al-Hashr", arabic: "الحشر", meaning: "The Exile", verses: 24, place: "Medinan" },
+  { n: 60, name: "Al-Mumtahanah", arabic: "الممتحنة", meaning: "The Woman to be Examined", verses: 13, place: "Medinan" },
+  { n: 61, name: "As-Saff", arabic: "الصف", meaning: "The Ranks", verses: 14, place: "Medinan" },
+  { n: 62, name: "Al-Jumu'ah", arabic: "الجمعة", meaning: "Friday", verses: 11, place: "Medinan" },
+  { n: 63, name: "Al-Munafiqun", arabic: "المنافقون", meaning: "The Hypocrites", verses: 11, place: "Medinan" },
+  { n: 64, name: "At-Taghabun", arabic: "التغابن", meaning: "The Mutual Disillusion", verses: 18, place: "Medinan" },
+  { n: 65, name: "At-Talaq", arabic: "الطلاق", meaning: "The Divorce", verses: 12, place: "Medinan" },
+  { n: 66, name: "At-Tahrim", arabic: "التحريم", meaning: "The Prohibition", verses: 12, place: "Medinan" },
+  { n: 67, name: "Al-Mulk", arabic: "الملك", meaning: "The Sovereignty", verses: 30, place: "Meccan" },
+  { n: 68, name: "Al-Qalam", arabic: "القلم", meaning: "The Pen", verses: 52, place: "Meccan" },
+  { n: 69, name: "Al-Haqqah", arabic: "الحاقة", meaning: "The Reality", verses: 52, place: "Meccan" },
+  { n: 70, name: "Al-Ma'arij", arabic: "المعارج", meaning: "The Ascending Stairways", verses: 44, place: "Meccan" },
+  { n: 71, name: "Nuh", arabic: "نوح", meaning: "Noah", verses: 28, place: "Meccan" },
+  { n: 72, name: "Al-Jinn", arabic: "الجن", meaning: "The Jinn", verses: 28, place: "Meccan" },
+  { n: 73, name: "Al-Muzzammil", arabic: "المزمل", meaning: "The Enshrouded One", verses: 20, place: "Meccan" },
+  { n: 74, name: "Al-Muddaththir", arabic: "المدثر", meaning: "The Cloaked One", verses: 56, place: "Meccan" },
+  { n: 75, name: "Al-Qiyamah", arabic: "القيامة", meaning: "The Resurrection", verses: 40, place: "Meccan" },
+  { n: 76, name: "Al-Insan", arabic: "الانسان", meaning: "Man", verses: 31, place: "Medinan" },
+  { n: 77, name: "Al-Mursalat", arabic: "المرسلات", meaning: "The Emissaries", verses: 50, place: "Meccan" },
+  { n: 78, name: "An-Naba", arabic: "النبأ", meaning: "The Tidings", verses: 40, place: "Meccan" },
+  { n: 79, name: "An-Naziat", arabic: "النازعات", meaning: "Those who Drag Forth", verses: 46, place: "Meccan" },
+  { n: 80, name: "Abasa", arabic: "عبس", meaning: "He Frowned", verses: 42, place: "Meccan" },
+  { n: 81, name: "At-Takwir", arabic: "التكوير", meaning: "The Overthrowing", verses: 29, place: "Meccan" },
+  { n: 82, name: "Al-Infitar", arabic: "الإنفطار", meaning: "The Cleaving", verses: 19, place: "Meccan" },
+  { n: 83, name: "Al-Mutaffifin", arabic: "المطففين", meaning: "The Defrauding", verses: 36, place: "Meccan" },
+  { n: 84, name: "Al-Inshiqaq", arabic: "الإنشقاق", meaning: "The Sundering", verses: 25, place: "Meccan" },
+  { n: 85, name: "Al-Buruj", arabic: "البروج", meaning: "The Constellations", verses: 22, place: "Meccan" },
+  { n: 86, name: "At-Tariq", arabic: "الطارق", meaning: "The Morning Star", verses: 17, place: "Meccan" },
+  { n: 87, name: "Al-A'la", arabic: "الأعلى", meaning: "The Most High", verses: 19, place: "Meccan" },
+  { n: 88, name: "Al-Ghashiyah", arabic: "الغاشية", meaning: "The Overwhelming", verses: 26, place: "Meccan" },
+  { n: 89, name: "Al-Fajr", arabic: "الفجر", meaning: "The Dawn", verses: 30, place: "Meccan" },
+  { n: 90, name: "Al-Balad", arabic: "البلد", meaning: "The City", verses: 20, place: "Meccan" },
+  { n: 91, name: "Ash-Shams", arabic: "الشمس", meaning: "The Sun", verses: 15, place: "Meccan" },
+  { n: 92, name: "Al-Layl", arabic: "الليل", meaning: "The Night", verses: 21, place: "Meccan" },
+  { n: 93, name: "Ad-Duhaa", arabic: "الضحى", meaning: "The Morning Hours", verses: 11, place: "Meccan" },
+  { n: 94, name: "Ash-Sharh", arabic: "الشرح", meaning: "The Relief", verses: 8, place: "Meccan" },
+  { n: 95, name: "At-Tin", arabic: "التين", meaning: "The Fig", verses: 8, place: "Meccan" },
+  { n: 96, name: "Al-Alaq", arabic: "العلق", meaning: "The Clot", verses: 19, place: "Meccan" },
+  { n: 97, name: "Al-Qadr", arabic: "القدر", meaning: "The Power", verses: 5, place: "Meccan" },
+  { n: 98, name: "Al-Bayyinah", arabic: "البينة", meaning: "The Clear Proof", verses: 8, place: "Medinan" },
+  { n: 99, name: "Az-Zalzalah", arabic: "الزلزلة", meaning: "The Earthquake", verses: 8, place: "Medinan" },
+  { n: 100, name: "Al-Adiyat", arabic: "العاديات", meaning: "The Courser", verses: 11, place: "Meccan" },
+  { n: 101, name: "Al-Qari'ah", arabic: "القارعة", meaning: "The Calamity", verses: 11, place: "Meccan" },
+  { n: 102, name: "At-Takathur", arabic: "التكاثر", meaning: "The Rivalry in World Increase", verses: 8, place: "Meccan" },
+  { n: 103, name: "Al-Asr", arabic: "العصر", meaning: "The Declining Day", verses: 3, place: "Meccan" },
+  { n: 104, name: "Al-Humazah", arabic: "الهمزة", meaning: "The Traducer", verses: 9, place: "Meccan" },
+  { n: 105, name: "Al-Fil", arabic: "الفيل", meaning: "The Elephant", verses: 5, place: "Meccan" },
+  { n: 106, name: "Quraysh", arabic: "قريش", meaning: "Quraysh", verses: 4, place: "Meccan" },
+  { n: 107, name: "Al-Ma'un", arabic: "الماعون", meaning: "The Small Kindnesses", verses: 7, place: "Meccan" },
+  { n: 108, name: "Al-Kawthar", arabic: "الكوثر", meaning: "The Abundance", verses: 3, place: "Meccan" },
+  { n: 109, name: "Al-Kafirun", arabic: "الكافرون", meaning: "The Disbelievers", verses: 6, place: "Meccan" },
+  { n: 110, name: "An-Nasr", arabic: "النصر", meaning: "The Divine Support", verses: 3, place: "Medinan" },
+  { n: 111, name: "Al-Masad", arabic: "المسد", meaning: "The Palm Fiber", verses: 5, place: "Meccan" },
+  { n: 112, name: "Al-Ikhlas", arabic: "الإخلاص", meaning: "The Sincerity", verses: 4, place: "Meccan" },
+  { n: 113, name: "Al-Falaq", arabic: "الفلق", meaning: "The Daybreak", verses: 5, place: "Meccan" },
+  { n: 114, name: "An-Nas", arabic: "الناس", meaning: "Mankind", verses: 6, place: "Meccan" }
+];
+
+// ---------- Prophets in Islam ----------
+const PROPHETS = [
+  {
+    id: "adam",
+    name: "Adam",
+    arabic: "آدم",
+    title: "Father of Mankind",
+    category: "prophet",
+    summary: "The first human being and the first prophet of Islam, created by Allah from clay and honored with the breath of life. He and his wife Hawwa (Eve) were placed in Paradise, then sent to Earth, where Adam became the first to receive revelation and divine guidance.",
+    refs: [
+      "Surah Al-Baqarah (2:30-39) — the creation of Adam and the angels' prostration",
+      "Surah Al-A'raf (7:11-25) — the story of Adam, Iblis, and the Garden",
+      "Surah Ta-Ha (20:115-123) — Adam's repentance and Allah's forgiveness"
+    ]
+  },
+  {
+    id: "idris",
+    name: "Idris",
+    arabic: "إدريس",
+    title: "The Truthful Prophet",
+    category: "prophet",
+    summary: "Often identified with the figure known as Enoch, Idris is described in the Quran as a man of truth and patience who was raised to a high station by Allah.",
+    refs: [
+      "Surah Maryam (19:56-57) — Idris was a man of truth, raised to a high station",
+      "Surah Al-Anbiya (21:85) — mentioned among the patient ones"
+    ]
+  },
+  {
+    id: "nuh",
+    name: "Nuh (Noah)",
+    arabic: "نوح",
+    title: "The Patient Caller",
+    category: "prophet",
+    summary: "Nuh called his people to worship Allah alone for nearly a thousand years, but most rejected him. Allah commanded him to build an ark, and a great flood destroyed the disbelievers while Nuh, his believing family, and pairs of animals were saved.",
+    refs: [
+      "Surah Nuh (71) — an entire chapter devoted to his story and supplication",
+      "Surah Hud (11:25-49) — the flood and the ark",
+      "Surah Al-Ankabut (29:14) — he remained among his people 1,000 years less fifty"
+    ]
+  },
+  {
+    id: "hud",
+    name: "Hud",
+    arabic: "هود",
+    title: "Prophet to the People of 'Ad",
+    category: "prophet",
+    summary: "Hud was sent to the ancient people of 'Ad, a powerful civilization in southern Arabia, who worshipped idols and were proud of their strength. When they rejected his call, Allah destroyed them with a furious wind that lasted for days.",
+    refs: [
+      "Surah Hud (11:50-60) — Hud's call and the fate of 'Ad",
+      "Surah Al-A'raf (7:65-72) — his warning and their rejection",
+      "Surah Al-Haqqah (69:6-8) — the howling wind that destroyed them"
+    ]
+  },
+  {
+    id: "salih",
+    name: "Salih",
+    arabic: "صالح",
+    title: "Prophet to the People of Thamud",
+    category: "prophet",
+    summary: "Salih was sent to the people of Thamud, who carved magnificent homes into the mountains. Allah sent them a miraculous she-camel as a sign, but they defied the warning and hamstrung it, and were destroyed by a mighty blast.",
+    refs: [
+      "Surah Hud (11:61-68) — Salih and the she-camel",
+      "Surah Ash-Shams (91:11-15) — the hamstringing and the punishment",
+      "Surah Al-A'raf (7:73-79) — the sign of the she-camel"
+    ]
+  },
+  {
+    id: "ibrahim",
+    name: "Ibrahim (Abraham)",
+    arabic: "إبراهيم",
+    title: "Khalil-Allah (Friend of Allah)",
+    category: "prophet",
+    summary: "Known as the father of the prophets, Ibrahim broke his people's idols, was thrown into a fire and saved by Allah, and was tested with the command to sacrifice his son Ismail. Together with Ismail, he rebuilt the Kaaba in Makkah as a house of worship for Allah alone.",
+    refs: [
+      "Surah Al-Anbiya (21:51-73) — Ibrahim and the idols",
+      "Surah As-Saffat (37:99-111) — the trial of sacrificing his son",
+      "Surah Al-Baqarah (2:124-129) — raising the foundations of the Kaaba",
+      "Surah Ibrahim (14) — named after him, containing his supplications"
+    ]
+  },
+  {
+    id: "lut",
+    name: "Lut (Lot)",
+    arabic: "لوط",
+    title: "The Righteous Nephew of Ibrahim",
+    category: "prophet",
+    summary: "A nephew and follower of Ibrahim, Lut was sent to the people of Sodom, who committed grave sins. When they refused to repent, Allah sent angels to rescue Lut and his believing family, then destroyed the cities with a rain of stones.",
+    refs: [
+      "Surah Hud (11:77-83) — the angels' visit and the cities' destruction",
+      "Surah Al-A'raf (7:80-84) — Lut's warning to his people",
+      "Surah Ash-Shu'ara (26:160-175) — his mission and the punishment"
+    ]
+  },
+  {
+    id: "ismail",
+    name: "Ismail (Ishmael)",
+    arabic: "إسماعيل",
+    title: "The Patient Son",
+    category: "prophet",
+    summary: "The eldest son of Ibrahim, Ismail submitted willingly when his father told him of the command to sacrifice him, and Allah ransomed him with a great sacrifice. He helped his father build the Kaaba and is honored for his truthfulness and patience.",
+    refs: [
+      "Surah As-Saffat (37:101-107) — Ismail's submission and the ransom",
+      "Surah Al-Baqarah (2:127) — raising the foundations of the House",
+      "Surah Maryam (19:54) — described as true to his promise"
+    ]
+  },
+  {
+    id: "ishaq",
+    name: "Ishaq (Isaac)",
+    arabic: "إسحاق",
+    title: "Son of the Promise",
+    category: "prophet",
+    summary: "The second son of Ibrahim, born to Sarah in their old age as glad tidings from Allah. Ishaq was blessed with prophethood, and from his lineage came many later prophets, including Yaqub.",
+    refs: [
+      "Surah As-Saffat (37:112-113) — the glad tidings of Ishaq's birth",
+      "Surah Hud (11:71-73) — the angels' announcement to Ibrahim and Sarah"
+    ]
+  },
+  {
+    id: "yaqub",
+    name: "Yaqub (Jacob)",
+    arabic: "يعقوب",
+    title: "Israel",
+    category: "prophet",
+    summary: "The son of Ishaq and father of twelve sons including Yusuf, Yaqub (also called Israel) endured years of grief over the loss of his son Yusuf, yet never lost hope in Allah's mercy, and was eventually reunited with him in Egypt.",
+    refs: [
+      "Surah Yusuf (12) — Yaqub's patience throughout his son's story",
+      "Surah Al-Baqarah (2:132-133) — his advice to his sons before passing away"
+    ]
+  },
+  {
+    id: "yusuf",
+    name: "Yusuf (Joseph)",
+    arabic: "يوسف",
+    title: "The Truthful, Trustworthy One",
+    category: "prophet",
+    summary: "Sold into slavery by his jealous brothers, Yusuf rose from a prison cell to become a trusted minister in Egypt. His story — described as 'the best of stories' — illustrates patience, forgiveness, and unwavering trust in Allah's plan.",
+    refs: [
+      "Surah Yusuf (12) — the complete narrative, called 'the best of stories' (12:3)",
+      "Surah Yusuf (12:90) — forgiveness of his brothers"
+    ]
+  },
+  {
+    id: "ayyub",
+    name: "Ayyub (Job)",
+    arabic: "أيوب",
+    title: "The Patient One",
+    category: "prophet",
+    summary: "Ayyub was afflicted with severe illness and loss of wealth and family, yet he never ceased to praise Allah. His patience became proverbial, and Allah ultimately restored his health, family, and fortune in reward for his steadfastness.",
+    refs: [
+      "Surah Al-Anbiya (21:83-84) — his supplication and Allah's healing",
+      "Surah Sad (38:41-44) — his patience under affliction"
+    ]
+  },
+  {
+    id: "shuayb",
+    name: "Shuayb",
+    arabic: "شعيب",
+    title: "The Eloquent Preacher",
+    category: "prophet",
+    summary: "Shuayb was sent to the people of Madyan, who were known for cheating in trade and weights and measures. He called them to honesty and the worship of Allah alone, but most rejected him and were destroyed.",
+    refs: [
+      "Surah Al-A'raf (7:85-93) — Shuayb's call to the people of Madyan",
+      "Surah Hud (11:84-95) — honesty in trade and measures"
+    ]
+  },
+  {
+    id: "musa",
+    name: "Musa (Moses)",
+    arabic: "موسى",
+    title: "Kalim-Allah (One Who Spoke with Allah)",
+    category: "prophet",
+    summary: "Raised in Pharaoh's palace, Musa was sent back to confront Pharaoh and free the Children of Israel from oppression. He received the Torah, witnessed numerous miracles, and is the most frequently mentioned prophet in the Quran.",
+    refs: [
+      "Surah Al-Baqarah (2:49-57) — the Exodus and miracles",
+      "Surah Ta-Ha (20:9-98) — his calling and confrontation with Pharaoh",
+      "Surah Al-Qasas (28:1-43) — his early life and journey to Madyan"
+    ]
+  },
+  {
+    id: "harun",
+    name: "Harun (Aaron)",
+    arabic: "هارون",
+    title: "The Eloquent Helper",
+    category: "prophet",
+    summary: "The brother of Musa, Harun was appointed by Allah as a helper and minister to support Musa in conveying the message to Pharaoh and guiding the Children of Israel.",
+    refs: [
+      "Surah Ta-Ha (20:29-36) — Musa's request for Harun as a helper",
+      "Surah Al-Anbiya (21:48) — Musa and Harun given the Scripture"
+    ]
+  },
+  {
+    id: "dawud",
+    name: "Dawud (David)",
+    arabic: "داود",
+    title: "The Grateful King",
+    category: "prophet",
+    summary: "Dawud was given kingship, wisdom, and the ability to recite the Zabur (Psalms) with such beauty that even mountains and birds joined his praise. He was also granted skill in crafting iron armor.",
+    refs: [
+      "Surah Al-Anbiya (21:78-80) — wisdom in judgment and armor-making",
+      "Surah Saba (34:10-11) — softening of iron and praise alongside the birds",
+      "Surah Al-Isra (17:55) — the giving of the Zabur"
+    ]
+  },
+  {
+    id: "sulaiman",
+    name: "Sulaiman (Solomon)",
+    arabic: "سليمان",
+    title: "The Wise King",
+    category: "prophet",
+    summary: "Son of Dawud, Sulaiman inherited prophethood and a vast kingdom, and was given control over the wind, the jinn, and the ability to understand the language of birds and animals. His story with the Queen of Sheba (Bilqis) shows his wisdom and devotion to Allah.",
+    refs: [
+      "Surah An-Naml (27:15-44) — Sulaiman, the hoopoe bird, and the Queen of Sheba",
+      "Surah Saba (34:12-14) — dominion over the jinn and the wind",
+      "Surah Sad (38:30-40) — his repentance and restored kingdom"
+    ]
+  },
+  {
+    id: "ilyas",
+    name: "Ilyas (Elijah)",
+    arabic: "إلياس",
+    title: "The Devoted Caller",
+    category: "prophet",
+    summary: "Ilyas was sent to the people of Baal (an idol cult) to call them back to the worship of Allah alone. He is praised in the Quran as one of the righteous messengers.",
+    refs: [
+      "Surah As-Saffat (37:123-132) — Ilyas and the worship of Baal",
+      "Surah Al-An'am (6:85) — listed among the righteous"
+    ]
+  },
+  {
+    id: "al-yasa",
+    name: "Al-Yasa (Elisha)",
+    arabic: "اليسع",
+    title: "The Favored Prophet",
+    category: "prophet",
+    summary: "Al-Yasa is mentioned in the Quran as a prophet favored by Allah and counted among the righteous and patient. He is believed to have succeeded Ilyas in guiding the Children of Israel.",
+    refs: [
+      "Surah Sad (38:48) — mentioned alongside Ismail and Dhul-Kifl among the best",
+      "Surah Al-An'am (6:86) — listed among those favored above all people"
+    ]
+  },
+  {
+    id: "dhul-kifl",
+    name: "Dhul-Kifl",
+    arabic: "ذو الكفل",
+    title: "The One of the Pledge",
+    category: "prophet",
+    summary: "Dhul-Kifl is mentioned in the Quran among the patient and righteous. Scholars have different views on his identity, but he is honored as one who fulfilled his covenant and was counted among the good.",
+    refs: [
+      "Surah Al-Anbiya (21:85-86) — mentioned alongside Ismail and Idris among the patient",
+      "Surah Sad (38:48) — mentioned among the best and chosen"
+    ]
+  },
+  {
+    id: "yunus",
+    name: "Yunus (Jonah)",
+    arabic: "يونس",
+    title: "Dhul-Nun (The One of the Whale)",
+    category: "prophet",
+    summary: "Yunus left his people in frustration before receiving Allah's permission and was swallowed by a great fish. In the darkness of the whale's belly, he called out in repentance, and Allah saved him, after which his people came to believe.",
+    refs: [
+      "Surah As-Saffat (37:139-148) — Yunus and the great fish",
+      "Surah Al-Anbiya (21:87-88) — his supplication 'La ilaha illa Anta...'",
+      "Surah Al-Qalam (68:48-50) — lessons in patience"
+    ]
+  },
+  {
+    id: "zakariya",
+    name: "Zakariya (Zechariah)",
+    arabic: "زكريا",
+    title: "The Devoted Guardian",
+    category: "prophet",
+    summary: "An elderly prophet and guardian of Maryam (Mary), Zakariya prayed earnestly for a son despite his old age and his wife's barrenness. Allah answered his prayer with the birth of Yahya (John).",
+    refs: [
+      "Surah Maryam (19:2-15) — Zakariya's prayer and the glad tidings of Yahya",
+      "Surah Ali 'Imran (3:37-41) — his guardianship of Maryam"
+    ]
+  },
+  {
+    id: "yahya",
+    name: "Yahya (John the Baptist)",
+    arabic: "يحيى",
+    title: "The Pure Youth",
+    category: "prophet",
+    summary: "The son of Zakariya, Yahya was given wisdom from a young age, was dutiful to his parents, and lived a life of purity and devotion to Allah.",
+    refs: [
+      "Surah Maryam (19:12-15) — Yahya's wisdom, mercy, and purity",
+      "Surah Al-Anbiya (21:90) — mentioned alongside Zakariya"
+    ]
+  },
+  {
+    id: "isa",
+    name: "Isa (Jesus)",
+    arabic: "عيسى",
+    title: "Al-Masih (The Messiah), son of Maryam",
+    category: "prophet",
+    summary: "Born miraculously to the virgin Maryam, Isa was granted the Gospel (Injil) and performed many miracles by Allah's permission, including healing the sick and speaking as an infant in defense of his mother's honor. Islam teaches that he was raised to Allah and was not crucified.",
+    refs: [
+      "Surah Maryam (19:16-34) — the miraculous birth of Isa",
+      "Surah Al-Imran (3:45-49) — his miracles by Allah's leave",
+      "Surah An-Nisa (4:157-158) — Allah raised him to Himself"
+    ]
+  },
+  {
+    id: "muhammad",
+    name: "Muhammad ﷺ",
+    arabic: "محمد",
+    title: "The Final Messenger, Seal of the Prophets",
+    category: "prophet",
+    summary: "Born in Makkah in the Year of the Elephant, Muhammad ﷺ received the first revelation of the Quran at age 40 through the angel Jibril in the cave of Hira. Over 23 years he conveyed the final message of Islam, established the first Muslim community in Madinah, and is described in the Quran as a mercy to all of creation and the seal of the prophets.",
+    refs: [
+      "Surah Al-Ahzab (33:40) — the Seal of the Prophets",
+      "Surah Al-Anbiya (21:107) — sent as a mercy to all worlds",
+      "Surah Al-Alaq (96:1-5) — the first verses revealed in the cave of Hira",
+      "Surah Al-Isra (17:1) — the Night Journey (Isra and Mi'raj)"
+    ]
+  }
+];
+
+// ---------- Companions (Sahaba) of Prophet Muhammad ﷺ ----------
+const COMPANIONS = [
+  {
+    id: "abu-bakr",
+    name: "Abu Bakr As-Siddiq",
+    arabic: "أبو بكر الصديق",
+    title: "First Caliph, As-Siddiq (The Truthful)",
+    category: "companion",
+    summary: "The closest friend of the Prophet ﷺ and the first adult male to accept Islam outside the Prophet's household. He earned the title 'As-Siddiq' for immediately believing the account of the Night Journey. He accompanied the Prophet ﷺ on the migration to Madinah and became the first Caliph after the Prophet's death.",
+    refs: [
+      "Surah At-Tawbah (9:40) — companionship in the cave during the migration",
+      "Sahih al-Bukhari — narrations on his unwavering belief and leadership",
+      "Historical sira accounts of the first Caliphate (632-634 CE)"
+    ]
+  },
+  {
+    id: "umar",
+    name: "Umar ibn al-Khattab",
+    arabic: "عمر بن الخطاب",
+    title: "Second Caliph, Al-Farooq (The Distinguisher)",
+    category: "companion",
+    summary: "Once a fierce opponent of Islam, Umar's conversion strengthened the early Muslim community. As the second Caliph, he oversaw vast territorial expansion, established the Islamic calendar, and was renowned for his justice, humility, and strict accountability — even of himself.",
+    refs: [
+      "Sahih al-Bukhari & Sahih Muslim — numerous narrations on his justice and piety",
+      "Historical accounts of the Caliphate (634-644 CE) and administrative reforms"
+    ]
+  },
+  {
+    id: "uthman",
+    name: "Uthman ibn Affan",
+    arabic: "عثمان بن عفان",
+    title: "Third Caliph, Dhun-Nurayn (Possessor of Two Lights)",
+    category: "companion",
+    summary: "Known for his immense generosity, modesty, and his role in compiling the Quran into a single standardized text during his Caliphate. He married two of the Prophet's daughters, earning the title 'possessor of two lights'.",
+    refs: [
+      "Sahih al-Bukhari — narrations on the compilation of the Quran",
+      "Historical accounts of the Caliphate (644-656 CE)"
+    ]
+  },
+  {
+    id: "ali",
+    name: "Ali ibn Abi Talib",
+    arabic: "علي بن أبي طالب",
+    title: "Fourth Caliph, Cousin and Son-in-Law of the Prophet ﷺ",
+    category: "companion",
+    summary: "Raised in the Prophet's household and one of the first to embrace Islam, Ali was known for his courage in battle, deep knowledge, and eloquence. He married the Prophet's daughter Fatimah and became the fourth Caliph.",
+    refs: [
+      "Sahih al-Bukhari & Sahih Muslim — narrations on his knowledge and courage",
+      "Historical accounts of the Caliphate (656-661 CE)"
+    ]
+  },
+  {
+    id: "khadijah",
+    name: "Khadijah bint Khuwaylid",
+    arabic: "خديجة بنت خويلد",
+    title: "Mother of the Believers, First Wife of the Prophet ﷺ",
+    category: "companion",
+    summary: "A successful and respected merchant of Makkah, Khadijah was the first person to believe in the Prophet's mission, comforting and supporting him after the first revelation. She remained his devoted wife until her death, and the Prophet ﷺ always remembered her with deep love and honor.",
+    refs: [
+      "Sahih al-Bukhari — the account of the first revelation and Khadijah's support",
+      "Sira accounts describing her as one of the four greatest women in Islam"
+    ]
+  },
+  {
+    id: "aisha",
+    name: "Aisha bint Abu Bakr",
+    arabic: "عائشة بنت أبي بكر",
+    title: "Mother of the Believers, Scholar of Islam",
+    category: "companion",
+    summary: "The daughter of Abu Bakr and wife of the Prophet ﷺ, Aisha became one of the most important sources of hadith and Islamic jurisprudence, narrating thousands of traditions and teaching both men and women after the Prophet's death.",
+    refs: [
+      "Sahih al-Bukhari & Sahih Muslim — thousands of hadith narrated through her",
+      "Historical accounts of her role as a teacher and jurist in Madinah"
+    ]
+  },
+  {
+    id: "fatimah",
+    name: "Fatimah bint Muhammad",
+    arabic: "فاطمة بنت محمد",
+    title: "Sayyidat Nisa al-Jannah (Leader of the Women of Paradise)",
+    category: "companion",
+    summary: "The youngest daughter of the Prophet ﷺ and wife of Ali ibn Abi Talib, Fatimah was known for her piety, patience, and closeness to her father. The Prophet ﷺ described her as one of the leading women of Paradise.",
+    refs: [
+      "Sahih al-Bukhari — narrations describing her status and closeness to the Prophet ﷺ",
+      "Sira accounts of her life in Madinah"
+    ]
+  },
+  {
+    id: "bilal",
+    name: "Bilal ibn Rabah",
+    arabic: "بلال بن رباح",
+    title: "The First Muezzin of Islam",
+    category: "companion",
+    summary: "A formerly enslaved Abyssinian man, Bilal endured severe persecution for accepting Islam but never renounced his faith, repeating 'Ahad, Ahad' (One, One) under torture. He was freed and became the first person to call the adhan (call to prayer) in Islam.",
+    refs: [
+      "Sira accounts of his persecution and steadfastness in early Makkah",
+      "Sahih al-Bukhari — narrations on his role as the Prophet's muezzin"
+    ]
+  },
+  {
+    id: "khalid",
+    name: "Khalid ibn al-Walid",
+    arabic: "خالد بن الوليد",
+    title: "Sayf-Allah (The Sword of Allah)",
+    category: "companion",
+    summary: "A brilliant military commander who, after embracing Islam, led Muslim armies to numerous victories without ever losing a battle. The Prophet ﷺ gave him the title 'Sword of Allah'.",
+    refs: [
+      "Sahih al-Bukhari — the title 'Sword of Allah' given by the Prophet ﷺ",
+      "Historical accounts of the Battles of Mu'tah, Yamamah, and the conquests of Syria and Iraq"
+    ]
+  },
+  {
+    id: "abu-hurairah",
+    name: "Abu Hurairah",
+    arabic: "أبو هريرة",
+    title: "The Most Prolific Narrator of Hadith",
+    category: "companion",
+    summary: "Despite accepting Islam relatively late, Abu Hurairah devoted himself to staying close to the Prophet ﷺ to memorize his sayings, becoming the most prolific narrator of hadith in Islamic history.",
+    refs: [
+      "Sahih al-Bukhari & Sahih Muslim — thousands of hadith attributed to him",
+      "Biographical accounts of his dedication to learning from the Prophet ﷺ"
+    ]
+  },
+  {
+    id: "salman",
+    name: "Salman al-Farisi",
+    arabic: "سلمان الفارسي",
+    title: "Salman the Seeker of Truth",
+    category: "companion",
+    summary: "A Persian seeker of truth who traveled widely searching for the true religion before finding Islam. He suggested the strategy of digging a trench during the Battle of the Trench, a pivotal moment in early Islamic history.",
+    refs: [
+      "Sira accounts of his long journey to find the truth before meeting the Prophet ﷺ",
+      "Historical accounts of the Battle of the Trench (Khandaq), 5 AH"
+    ]
+  },
+  {
+    id: "ibn-abbas",
+    name: "Abdullah ibn Abbas",
+    arabic: "عبد الله بن عباس",
+    title: "The Scholar of the Ummah",
+    category: "companion",
+    summary: "A cousin of the Prophet ﷺ, Ibn Abbas was known from a young age for his sharp intellect and deep knowledge of Quranic interpretation (tafsir), becoming one of the foremost scholars among the companions.",
+    refs: [
+      "Sahih al-Bukhari — narrations highlighting his closeness to the Prophet ﷺ and knowledge",
+      "Classical tafsir literature, much of which traces back to his explanations"
+    ]
+  },
+  {
+    id: "umm-salamah",
+    name: "Umm Salamah",
+    arabic: "أم سلمة",
+    title: "Mother of the Believers",
+    category: "companion",
+    summary: "Known for her wisdom and sound judgment, Umm Salamah was one of the wives of the Prophet ﷺ and offered valuable advice during difficult moments, including at the Treaty of Hudaybiyyah.",
+    refs: [
+      "Sahih al-Bukhari — her advice during the events of Hudaybiyyah",
+      "Sira accounts of her early migration to Abyssinia and later to Madinah"
+    ]
+  },
+  {
+    id: "hamza",
+    name: "Hamza ibn Abdul-Muttalib",
+    arabic: "حمزة بن عبد المطلب",
+    title: "Asadullah (The Lion of Allah), Sayyid ash-Shuhada",
+    category: "companion",
+    summary: "The uncle of the Prophet ﷺ and a courageous defender of Islam in its early years, Hamza was martyred at the Battle of Uhud and is honored with the title 'Chief of the Martyrs'.",
+    refs: [
+      "Historical accounts of the Battle of Uhud (3 AH) and his martyrdom",
+      "Sira accounts of his acceptance of Islam and defense of the Muslims in Makkah"
+    ]
+  }
+  {
+    id: "zubayr",
+    name: "Az-Zubayr ibn al-Awwam",
+    arabic: "الزبير بن العوام",
+    title: "Disciple of the Prophet ﷺ, One of the Ten Promised Paradise",
+    category: "companion",
+    summary: "A cousin of the Prophet ﷺ and one of the first to embrace Islam, Az-Zubayr was known for his bravery and was one of the ten companions given glad tidings of Paradise during their lifetimes.",
+    refs: [
+      "Sahih al-Bukhari — narrations on his courage and dedication",
+      "Sira accounts of his role in the Battles of Badr, Uhud, and beyond"
+    ]
+  },
+  {
+    id: "talha",
+    name: "Talha ibn Ubaydullah",
+    arabic: "طلحة بن عبيد الله",
+    title: "The Generous, One of the Ten Promised Paradise",
+    category: "companion",
+    summary: "Renowned for his generosity and bravery, Talha shielded the Prophet ﷺ with his own body during the Battle of Uhud, suffering numerous wounds. He is one of the ten promised Paradise.",
+    refs: [
+      "Sahih al-Bukhari — narrations on his sacrifices at Uhud",
+      "Historical accounts of his generosity in spending for the sake of Islam"
+    ]
+  },
+  {
+    id: "saad-waqqas",
+    name: "Sa'd ibn Abi Waqqas",
+    arabic: "سعد بن أبي وقاص",
+    title: "Conqueror of Persia, One of the Ten Promised Paradise",
+    category: "companion",
+    summary: "One of the earliest Muslims and one of the ten promised Paradise, Sa'd was the military commander who led the decisive Battle of Al-Qadisiyyah, opening Persia to Islam. The Prophet ﷺ prayed that his supplications would always be answered.",
+    refs: [
+      "Sahih Muslim — the Prophet's prayer for Sa'd's supplication to be answered",
+      "Historical accounts of the Battle of Al-Qadisiyyah (636 CE)"
+    ]
+  },
+  {
+    id: "abu-ubaidah",
+    name: "Abu Ubaidah ibn al-Jarrah",
+    arabic: "أبو عبيدة بن الجراح",
+    title: "Amin al-Ummah (Trustee of the Nation), One of the Ten Promised Paradise",
+    category: "companion",
+    summary: "The Prophet ﷺ called him the most trustworthy person of this Ummah. Abu Ubaidah served as supreme commander of the Muslim armies in the Levant and was known for his humility despite holding great authority.",
+    refs: [
+      "Sahih al-Bukhari — the title 'Trustee of the Nation'",
+      "Historical accounts of the conquest of Syria and his governance"
+    ]
+  },
+  {
+    id: "abdur-rahman",
+    name: "Abdur-Rahman ibn Awf",
+    arabic: "عبد الرحمن بن عوف",
+    title: "The Generous Trader, One of the Ten Promised Paradise",
+    category: "companion",
+    summary: "One of the wealthiest companions, Abdur-Rahman gave away vast amounts for the sake of Islam. After migrating to Madinah with nothing, he rebuilt his fortune through honest trade and remained one of the most generous supporters of the Muslim community.",
+    refs: [
+      "Sahih al-Bukhari — his generosity and his brotherhood with Sa'd ibn ar-Rabi",
+      "Sira accounts of his donations during the expedition of Tabuk"
+    ]
+  },
+  {
+    id: "said-ibn-zayd",
+    name: "Sa'id ibn Zayd",
+    arabic: "سعيد بن زيد",
+    title: "One of the Ten Promised Paradise",
+    category: "companion",
+    summary: "Sa'id was among the earliest Muslims and one of the ten promised Paradise. His father Zayd ibn Amr was already a monotheist before Islam, and Sa'id embraced the Prophet's message without hesitation.",
+    refs: [
+      "Jami at-Tirmidhi — the hadith listing the ten promised Paradise",
+      "Sira accounts of his early acceptance of Islam"
+    ]
+  },
+  {
+    id: "musab",
+    name: "Mus'ab ibn Umayr",
+    arabic: "مصعب بن عمير",
+    title: "The First Ambassador of Islam",
+    category: "companion",
+    summary: "Once the wealthiest and most stylish youth of Makkah, Mus'ab gave up his luxurious life for Islam. The Prophet ﷺ sent him to Madinah as the first teacher and ambassador, and he was martyred at Uhud so poor that his burial cloth was not long enough to cover him.",
+    refs: [
+      "Sahih al-Bukhari — the account of his burial at Uhud",
+      "Sira accounts of his role as the first envoy to Madinah"
+    ]
+  },
+  {
+    id: "ammar",
+    name: "Ammar ibn Yasir",
+    arabic: "عمار بن ياسر",
+    title: "The Steadfast Martyr",
+    category: "companion",
+    summary: "Ammar and his parents Yasir and Sumayya were among the first to accept Islam and the first to endure persecution. His mother Sumayya was the first martyr in Islam. The Prophet ﷺ said that Paradise yearns for Ammar.",
+    refs: [
+      "Sahih al-Bukhari — 'Paradise yearns for three: Ali, Ammar, and Salman'",
+      "Sira accounts of the persecution of the family of Yasir"
+    ]
+  },
+  {
+    id: "abu-dharr",
+    name: "Abu Dharr al-Ghifari",
+    arabic: "أبو ذر الغفاري",
+    title: "The Truthful Ascetic",
+    category: "companion",
+    summary: "One of the earliest converts to Islam outside Makkah, Abu Dharr was known for his extreme truthfulness and ascetic lifestyle. The Prophet ﷺ compared his truthfulness to that of Isa ibn Maryam in his community.",
+    refs: [
+      "Sahih Muslim — 'The earth has not carried nor the sky covered a man more truthful than Abu Dharr'",
+      "Sira accounts of his early conversion and asceticism"
+    ]
+  },
+  {
+    id: "zaid",
+    name: "Zaid ibn Harithah",
+    arabic: "زيد بن حارثة",
+    title: "The Beloved of the Prophet ﷺ",
+    category: "companion",
+    summary: "A freed slave who was adopted by the Prophet ﷺ before Islam and loved like a son, Zaid is the only companion mentioned by name in the Quran. He was martyred leading the Muslim army at the Battle of Mu'tah.",
+    refs: [
+      "Surah Al-Ahzab (33:37) — the only companion named in the Quran",
+      "Historical accounts of the Battle of Mu'tah (629 CE) and his martyrdom"
+    ]
+  },
+  {
+    id: "jafar",
+    name: "Ja'far ibn Abi Talib",
+    arabic: "جعفر بن أبي طالب",
+    title: "Ja'far the Flyer (Dhul-Janahayn)",
+    category: "companion",
+    summary: "The brother of Ali and cousin of the Prophet ﷺ, Ja'far led the first migration to Abyssinia and delivered a famous speech before the Negus. He was martyred at the Battle of Mu'tah, and the Prophet ﷺ said Allah replaced his arms with wings in Paradise.",
+    refs: [
+      "Sira accounts of his speech before the Negus of Abyssinia",
+      "Sahih al-Bukhari — his martyrdom at Mu'tah and the title 'the Flyer'"
+    ]
+  },
+  {
+    id: "muadh",
+    name: "Muadh ibn Jabal",
+    arabic: "معاذ بن جبل",
+    title: "The Most Knowledgeable of Halal and Haram",
+    category: "companion",
+    summary: "The Prophet ﷺ described Muadh as the most knowledgeable of the community in matters of what is lawful and unlawful. He was sent to Yemen as a judge and teacher, and the Prophet's farewell to him is one of the most moving scenes recorded in the sira.",
+    refs: [
+      "Sahih al-Bukhari — his appointment as judge of Yemen",
+      "Jami at-Tirmidhi — 'the most knowledgeable of halal and haram'"
+    ]
+  },
+  {
+    id: "hafsa",
+    name: "Hafsa bint Umar",
+    arabic: "حفصة بنت عمر",
+    title: "Mother of the Believers, Guardian of the Quran",
+    category: "companion",
+    summary: "The daughter of Umar ibn al-Khattab and wife of the Prophet ﷺ, Hafsa was known for her knowledge and devotion to worship. After the compilation of the Quran under Abu Bakr, the manuscript was entrusted to her safekeeping.",
+    refs: [
+      "Sahih al-Bukhari — the Quran manuscript entrusted to Hafsa",
+      "Sira accounts of her dedication to fasting and night prayer"
+    ]
+  },
+  {
+    id: "sumayya",
+    name: "Sumayya bint Khayyat",
+    arabic: "سمية بنت خياط",
+    title: "The First Martyr of Islam",
+    category: "companion",
+    summary: "The mother of Ammar ibn Yasir, Sumayya was the first person to give her life for Islam. She refused to renounce her faith under severe torture and was killed by Abu Jahl, becoming the first shaheed (martyr) in Islamic history.",
+    refs: [
+      "Sira accounts of the early persecution in Makkah",
+      "The Prophet ﷺ passed by the family of Yasir and said 'Patience, O family of Yasir, for your appointment is Paradise'"
+    ]
+  },
+  {
+    id: "anas",
+    name: "Anas ibn Malik",
+    arabic: "أنس بن مالك",
+    title: "The Servant of the Prophet ﷺ",
+    category: "companion",
+    summary: "Anas served the Prophet ﷺ from the age of ten for about ten years, and the Prophet ﷺ never once scolded him. He became one of the most prolific narrators of hadith and lived to be over one hundred years old.",
+    refs: [
+      "Sahih al-Bukhari — 'He never said to me \"why did you do this\" or \"why didn't you do that\"'",
+      "Sahih Muslim — thousands of hadith narrated through him"
+    ]
+  }
+];
+
+// Combine for global search
+const ALL_PEOPLE = [...PROPHETS, ...COMPANIONS];
+
+// ---------- Featured Quran Verses (for homepage rotating quotes) ----------
+const QURAN_QUOTES = [
+  {
+    arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+    text: "So verily, with hardship comes ease.",
+    ref: "Surah Ash-Sharh (94:6)"
+  },
+  {
+    arabic: "وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+    text: "And whoever relies upon Allah — then He is sufficient for him.",
+    ref: "Surah At-Talaq (65:3)"
+  },
+  {
+    arabic: "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+    text: "Verily, in the remembrance of Allah do hearts find rest.",
+    ref: "Surah Ar-Ra'd (13:28)"
+  },
+  {
+    arabic: "وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ",
+    text: "And your Lord says: Call upon Me, I will respond to you.",
+    ref: "Surah Ghafir (40:60)"
+  },
+  {
+    arabic: "فَاذْكُرُونِي أَذْكُرْكُمْ",
+    text: "So remember Me; I will remember you.",
+    ref: "Surah Al-Baqarah (2:152)"
+  },
+  {
+    arabic: "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+    text: "Indeed, Allah is with the patient.",
+    ref: "Surah Al-Baqarah (2:153)"
+  },
+  {
+    arabic: "وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ",
+    text: "And your Lord is going to give you, and you will be satisfied.",
+    ref: "Surah Ad-Duha (93:5)"
+  },
+  {
+    arabic: "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+    text: "Indeed, with hardship comes ease.",
+    ref: "Surah Ash-Sharh (94:5)"
+  },
+  {
+    arabic: "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ",
+    text: "And We have not sent you except as a mercy to the worlds.",
+    ref: "Surah Al-Anbiya (21:107)"
+  },
+  {
+    arabic: "رَبِّ زِدْنِي عِلْمًا",
+    text: "My Lord, increase me in knowledge.",
+    ref: "Surah Ta-Ha (20:114)"
+  },
+  {
+    arabic: "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+    text: "Allah does not burden a soul beyond that it can bear.",
+    ref: "Surah Al-Baqarah (2:286)"
+  },
+  {
+    arabic: "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ",
+    text: "And We are closer to him than his jugular vein.",
+    ref: "Surah Qaf (50:16)"
+  },
+  {
+    arabic: "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ",
+    text: "Indeed, Allah will not change the condition of a people until they change what is in themselves.",
+    ref: "Surah Ar-Ra'd (13:11)"
+  }
+];
+
+// ---------- Hadith Collection (mainly Sahih al-Bukhari) ----------
+const HADITHS = [
+  {
+    text: "Actions are judged by intentions, so each person will be rewarded according to what they intended.",
+    narrator: "Umar ibn al-Khattab",
+    ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
+    topic: "Sincerity"
+  },
+  {
+    text: "None of you truly believes until he loves for his brother what he loves for himself.",
+    narrator: "Anas ibn Malik",
+    ref: "Sahih al-Bukhari, Book of Faith",
+    topic: "Brotherhood"
+  },
+  {
+    text: "The best among you are those who have the best manners and character.",
+    narrator: "Abdullah ibn Amr",
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
+    topic: "Character"
+  },
+  {
+    text: "Whoever believes in Allah and the Last Day should speak good or remain silent.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
+    topic: "Speech"
+  },
+  {
+    text: "Smiling at your brother is an act of charity.",
+    narrator: "Abu Dharr al-Ghifari",
+    ref: "Jami at-Tirmidhi, Book of Righteousness and Maintaining Good Relations with Relatives",
+    topic: "Kindness"
+  },
+  {
+    text: "The strong believer is not the one who overcomes people through strength, but the one who controls himself when angry.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
+    topic: "Self-Control"
+  },
+  {
+    text: "None of you will believe until he loves for his neighbor what he loves for himself.",
+    narrator: "Anas ibn Malik",
+    ref: "Sahih al-Bukhari, Book of Faith",
+    topic: "Neighbors"
+  },
+  {
+    text: "The most beloved deeds to Allah are those done consistently, even if they are small.",
+    narrator: "Aisha bint Abu Bakr",
+    ref: "Sahih al-Bukhari, Book of Faith",
+    topic: "Consistency"
+  },
+  {
+    text: "He who eats and drinks moderately and shares with others is among the best of people.",
+    narrator: "Abdullah ibn Umar",
+    ref: "Sahih al-Bukhari, Book of Food and Drink",
+    topic: "Generosity"
+  },
+  {
+    text: "Seeking knowledge is an obligation upon every Muslim.",
+    narrator: "Anas ibn Malik",
+    ref: "Sunan Ibn Majah, Book of the Sunnah",
+    topic: "Knowledge"
+  },
+  {
+    text: "The believer who mixes with people and is patient with their faults is better than the one who avoids people and is impatient with them.",
+    narrator: "Ibn Umar",
+    ref: "Sunan Ibn Majah, Book of Asceticism",
+    topic: "Patience"
+  },
+  {
+    text: "Whoever guarantees me what is between his jaws and what is between his legs, I guarantee him Paradise.",
+    narrator: "Sahl ibn Sa'd",
+    ref: "Sahih al-Bukhari, Book of Limits and Punishments",
+    topic: "Guarding the Tongue"
+  },
+  {
+    text: "The best of people are those most beneficial to people.",
+    narrator: "Jabir ibn Abdullah",
+    ref: "Al-Mu'jam al-Awsat, Tabarani",
+    topic: "Service"
+  },
+  {
+    text: "Take advantage of five before five: your youth before your old age, your health before your sickness, your wealth before your poverty, your free time before your busyness, and your life before your death.",
+    narrator: "Ibn Abbas",
+    ref: "Mustadrak al-Hakim",
+    topic: "Time"
+  },
+  {
+    text: "Verily, Allah does not look at your appearances or your wealth, but He looks at your hearts and your deeds.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Book of Righteousness",
+    topic: "Sincerity"
+  },
+  {
+    text: "Make things easy and do not make them difficult, and give good tidings and do not drive people away.",
+    narrator: "Anas ibn Malik",
+    ref: "Sahih al-Bukhari, Book of Knowledge",
+    topic: "Ease"
+  },
+  {
+    text: "Whoever treads a path seeking knowledge, Allah will make easy for him a path to Paradise.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Book of Remembrance",
+    topic: "Knowledge"
+  },
+  {
+    text: "The Muslim does not slander, curse, speak obscenely, or speak rudely.",
+    narrator: "Abdullah ibn Mas'ud",
+    ref: "Jami at-Tirmidhi, Book of Righteousness",
+    topic: "Speech"
+  },
+  {
+    text: "Be in this world as though you were a stranger or a traveler.",
+    narrator: "Abdullah ibn Umar",
+    ref: "Sahih al-Bukhari, Book of Heart Softeners",
+    topic: "Worldliness"
+  },
+  {
+    text: "The merciful are shown mercy by the Most Merciful. Show mercy to those on earth, and the One above the heavens will show mercy to you.",
+    narrator: "Abdullah ibn Amr",
+    ref: "Sunan Abu Dawud, Book of Good Manners",
+    topic: "Mercy"
+  }
+];
+
+// ---------- Guidance: Deeds & Consequences according to the Quran ----------
+// Presented for informational and reflective purposes. Readers are encouraged
+// to study each verse in its full surah context, alongside trusted tafsir.
+const PARADISE_THEMES = [
+  {
+    title: "Faith and Righteous Deeds",
+    description: "Those who believe and do righteous deeds are promised gardens beneath which rivers flow, to dwell therein forever.",
+    refs: ["Surah Al-Baqarah (2:25)", "Surah Al-Kahf (18:107-108)"]
+  },
+  {
+    title: "Patience, Gratitude, and Trust in Allah",
+    description: "Those who restrain anger, forgive others, and spend in charity in times of ease and hardship are described among the righteous prepared for Paradise.",
+    refs: ["Surah Ali 'Imran (3:133-136)"]
+  },
+  {
+    title: "Humility and Good Character",
+    description: "The 'servants of the Most Merciful' are described as walking humbly, responding to ill-treatment with peace, spending the night in prayer, and avoiding excess — their reward is the highest chambers of Paradise.",
+    refs: ["Surah Al-Furqan (25:63-76)"]
+  },
+  {
+    title: "Honesty, Charity, and Kindness to Others",
+    description: "Feeding the needy, freeing captives, and caring for orphans and the poor out of love for Allah are highlighted as paths that lead away from hardship and toward reward.",
+    refs: ["Surah Al-Insan (76:8-12)", "Surah Al-Balad (90:11-18)"]
+  },
+  {
+    title: "Repentance and Seeking Forgiveness",
+    description: "Allah's door of repentance is always open. Those who repent sincerely and mend their ways are promised forgiveness and a transformed record of deeds.",
+    refs: ["Surah Az-Zumar (39:53)", "Surah Al-Furqan (25:70)"]
+  },
+  {
+    title: "Remembrance of Allah and Prayer",
+    description: "Regular remembrance of Allah (dhikr) and establishing prayer are described as the means by which hearts find rest and souls find protection from indecency and wrongdoing.",
+    refs: ["Surah Ar-Ra'd (13:28)", "Surah Al-Ankabut (29:45)"]
+  },
+  {
+    title: "Justice and Fairness",
+    description: "Standing firmly for justice, even against oneself or one's own family, is commanded as a fundamental duty of the believer.",
+    refs: ["Surah An-Nisa (4:135)", "Surah Al-Ma'idah (5:8)"]
+  }
+];
+
+const WARNING_THEMES = [
+  {
+    title: "Consuming Wealth Unjustly",
+    description: "Those who wrongfully consume the property of orphans are warned of a severe consequence in the Hereafter.",
+    refs: ["Surah An-Nisa (4:10)"]
+  },
+  {
+    title: "Dealing in Riba (Usury/Interest)",
+    description: "Those who persist in dealing with riba after guidance has come to them are given a strong warning in the Quran.",
+    refs: ["Surah Al-Baqarah (2:275-276)"]
+  },
+  {
+    title: "Neglecting Prayer and the Needy",
+    description: "Denying the Day of Judgment is linked with mistreating orphans, failing to feed the poor, and being neglectful in prayer.",
+    refs: ["Surah Al-Ma'un (107:1-7)"]
+  },
+  {
+    title: "Suspicion, Backbiting, and Mockery",
+    description: "Believers are instructed to avoid excessive suspicion, spying on one another, and backbiting — described as something one would find detestable if likened to its true nature.",
+    refs: ["Surah Al-Hujurat (49:11-12)"]
+  },
+  {
+    title: "Arrogance and Injustice",
+    description: "Walking the earth with arrogance and dealing unjustly with others is repeatedly condemned, while humility before Allah and people is praised.",
+    refs: ["Surah Al-Isra (17:37)", "Surah Luqman (31:18)"]
+  },
+  {
+    title: "Lying and Breaking Oaths",
+    description: "Hypocrisy, lying, and breaking promises are described as traits that lead to the lowest depths of the Fire, and believers are urged to be truthful in all matters.",
+    refs: ["Surah An-Nisa (4:145)", "Surah As-Saff (61:2-3)"]
+  },
+  {
+    title: "Hoarding and Withholding Charity",
+    description: "Those who hoard gold and silver and do not spend in the path of Allah are warned of a painful punishment on the Day of Judgment.",
+    refs: ["Surah At-Tawbah (9:34-35)"]
+  }
+];
+
+// ---------- Courses (paid learning paths) ----------
+const COURSES = [
+  {
+    id: "quranic-arabic",
+    title: "Quranic Arabic",
+    level: "Beginner → Intermediate",
+    price: "$29 / month",
+    description: "Master the foundational Arabic script, vocabulary, and grammar needed to read and begin understanding the Quran in its original language.",
+    includes: ["Arabic alphabet & pronunciation", "Core grammar (Nahw & Sarf)", "Quranic vocabulary building", "Weekly live sessions"]
+  },
+  {
+    id: "quranic-sciences",
+    title: "Quranic Sciences",
+    level: "Intermediate",
+    price: "$39 / month",
+    description: "Explore the linguistic structure, historical context, and methods of interpretation (tafsir) used to understand the meanings of the Quran.",
+    includes: ["Introduction to Tafsir", "Occasions of revelation (Asbab an-Nuzul)", "Themes across the Quran", "Guided verse-by-verse study"]
+  },
+  {
+    id: "islamic-studies",
+    title: "Islamic Studies",
+    level: "All Levels",
+    price: "$25 / month",
+    description: "A comprehensive look at Islamic history, theology, and ethics — including the lives of the Prophets and the Companions, for a holistic understanding of the faith.",
+    includes: ["History of Prophethood", "Lives of the Sahaba", "Islamic ethics & character", "Q&A with instructors"]
+  },
+  {
+    id: "hadith-studies",
+    title: "Introduction to Hadith Sciences",
+    level: "Intermediate → Advanced",
+    price: "$35 / month",
+    description: "Learn the methodology behind hadith collection and authentication, with a focused study of Sahih al-Bukhari and Sahih Muslim.",
+    includes: ["Hadith terminology", "Study of Sahih al-Bukhari highlights", "Chains of narration (Sanad)", "Practical application of hadith"]
+  }
+];
