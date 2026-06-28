@@ -425,6 +425,54 @@ const PROPHETS = [
     ]
   },
   {
+    id: "shith",
+    name: "Shith (Seth)",
+    arabic: "شيث",
+    title: "Son of Adam",
+    category: "prophet",
+    summary: "Shith is identified in Islamic tradition as a son of Adam and a prophet who received scriptures from Allah. After the death of Adam, Shith continued to guide humanity according to the teachings of his father.",
+    refs: [
+      "Ibn Kathir, Al-Bidaya wan-Nihaya — the story of Shith after Adam",
+      "Mentioned in the hadith of the Night Journey (Isra and Mi'raj) — Sahih al-Bukhari"
+    ]
+  },
+  {
+    id: "yusha",
+    name: "Yusha ibn Nun (Joshua)",
+    arabic: "يوشع بن نون",
+    title: "Successor of Musa",
+    category: "prophet",
+    summary: "Yusha ibn Nun was the young attendant of Musa mentioned in the Quran in the story of Al-Khidr. In hadith tradition, he succeeded Musa as leader and prophet of the Children of Israel and led them into the Holy Land.",
+    refs: [
+      "Surah Al-Kahf (18:60-62) — 'his young attendant' (identified as Yusha in hadith)",
+      "Sahih Muslim, Book of Jihad — the Prophet ﷺ identified the young man of Musa as Yusha ibn Nun"
+    ]
+  },
+  {
+    id: "samuel",
+    name: "Shamwil (Samuel)",
+    arabic: "شمويل",
+    title: "The Prophet Who Appointed Talut (Saul)",
+    category: "prophet",
+    summary: "Shamwil is the prophet referenced in the Quran who was asked by the Children of Israel to appoint a king to lead them in battle. He appointed Talut (Saul) by Allah's command and foretold the Ark of the Covenant as a sign of his kingship.",
+    refs: [
+      "Surah Al-Baqarah (2:246-251) — the prophet who appointed Talut as king",
+      "Ibn Kathir, Stories of the Prophets — identified as Shamwil (Samuel)"
+    ]
+  },
+  {
+    id: "danyal",
+    name: "Danyal (Daniel)",
+    arabic: "دانيال",
+    title: "The Prophet of Babylon",
+    category: "prophet",
+    summary: "Danyal is mentioned in Islamic tradition as a prophet among the Children of Israel who lived during the Babylonian exile. When his grave was discovered during the conquest of Tustar, the Caliph Umar ordered that he be reburied in a hidden location to prevent veneration.",
+    refs: [
+      "Musannaf Ibn Abi Shaybah — account of the discovery of Danyal's body during Umar's caliphate",
+      "Ibn Kathir, Al-Bidaya wan-Nihaya — his mention among the prophets of Israel"
+    ]
+  },
+  {
     id: "muhammad",
     name: "Muhammad ﷺ",
     arabic: "محمد",
@@ -791,6 +839,114 @@ const COMPANIONS = [
       "Sahih Muslim — thousands of hadith narrated through him"
     ]
   }
+  {
+    id: "ubayy",
+    name: "Ubayy ibn Ka'b",
+    arabic: "أبي بن كعب",
+    title: "Master of Quran Recitation",
+    category: "companion",
+    summary: "The Prophet ﷺ said that Ubayy was the best reciter of the Quran among the companions. He was one of the scribes of revelation and a leading scholar of the Quran in Madinah.",
+    refs: [
+      "Sahih al-Bukhari, Book of Virtues of the Quran — 'The best reciter among you is Ubayy ibn Ka'b'",
+      "Sahih Muslim — his status as a leading Quranic authority"
+    ]
+  },
+  {
+    id: "abu-musa",
+    name: "Abu Musa al-Ash'ari",
+    arabic: "أبو موسى الأشعري",
+    title: "The Beautiful Voice",
+    category: "companion",
+    summary: "Known for his exceptionally beautiful Quran recitation, the Prophet ﷺ said he had been given a voice like the flutes of the family of Dawud. He served as governor of Basra and Kufa and was a respected judge.",
+    refs: [
+      "Sahih al-Bukhari, Book of Virtues of the Quran — 'given a flute from the flutes of Dawud'",
+      "Sahih Muslim — his role as governor and judge"
+    ]
+  },
+  {
+    id: "abu-said",
+    name: "Abu Sa'id al-Khudri",
+    arabic: "أبو سعيد الخدري",
+    title: "The Young Scholar of Madinah",
+    category: "companion",
+    summary: "One of the most prolific narrators of hadith from among the Ansar (helpers of Madinah), Abu Sa'id was known for his knowledge and his willingness to speak the truth and enjoin good even before rulers.",
+    refs: [
+      "Sahih al-Bukhari — numerous hadith narrated through him",
+      "Sahih Muslim — his narrations on prayer, charity, and the Day of Judgment"
+    ]
+  },
+  {
+    id: "saad-ubadah",
+    name: "Sa'd ibn Ubadah",
+    arabic: "سعد بن عبادة",
+    title: "Chief of the Khazraj",
+    category: "companion",
+    summary: "The leader of the Khazraj tribe in Madinah and one of the chiefs of the Ansar who pledged allegiance to the Prophet ﷺ at Aqabah. He was known for his extraordinary generosity — his family would call out invitations to travelers every evening.",
+    refs: [
+      "Sahih al-Bukhari — narrations on his generosity and leadership",
+      "Sira accounts of the Pledge of Aqabah and his role among the Ansar"
+    ]
+  },
+  {
+    id: "abu-ayyub",
+    name: "Abu Ayyub al-Ansari",
+    arabic: "أبو أيوب الأنصاري",
+    title: "Host of the Prophet ﷺ in Madinah",
+    category: "companion",
+    summary: "When the Prophet ﷺ arrived in Madinah during the Hijrah, his camel stopped at Abu Ayyub's house, and Abu Ayyub had the honor of hosting the Prophet ﷺ until the mosque and quarters were built. He continued fighting in the path of Allah until old age.",
+    refs: [
+      "Sahih al-Bukhari — the Prophet's arrival and stay at his home",
+      "Historical accounts of his participation in battles until the siege of Constantinople"
+    ]
+  },
+  {
+    id: "umm-ayman",
+    name: "Umm Ayman (Barakah)",
+    arabic: "أم أيمن (بركة)",
+    title: "The Prophet's Second Mother",
+    category: "companion",
+    summary: "Umm Ayman cared for the Prophet ﷺ from his childhood after the death of his mother Aminah. The Prophet ﷺ called her 'my mother after my mother' and said she was from the people of Paradise. She was among the earliest Muslims.",
+    refs: [
+      "Sahih Muslim — the Prophet's love and respect for Umm Ayman",
+      "Sira accounts of her care for the Prophet ﷺ from childhood"
+    ]
+  },
+  {
+    id: "abdullah-masud",
+    name: "Abdullah ibn Mas'ud",
+    arabic: "عبد الله بن مسعود",
+    title: "First to Recite Quran Publicly in Makkah",
+    category: "companion",
+    summary: "One of the earliest Muslims, Ibn Mas'ud was the first person to recite the Quran publicly in Makkah. The Prophet ﷺ told the companions to learn the Quran from four people, naming Ibn Mas'ud first. He became one of the greatest scholars of tafsir and fiqh.",
+    refs: [
+      "Sahih al-Bukhari, Book of Virtues of the Companions — 'Learn the Quran from four: Abdullah ibn Mas'ud...'",
+      "Sahih Muslim — his deep knowledge and early conversion"
+    ]
+  },
+  {
+    id: "khabbab",
+    name: "Khabbab ibn al-Aratt",
+    arabic: "خباب بن الأرت",
+    title: "The Patient Endurer",
+    category: "companion",
+    summary: "A blacksmith and one of the earliest Muslims, Khabbab endured some of the worst torture in Makkah — his masters would press hot iron onto his back. He remained steadfast, and the Prophet ﷺ prayed for him.",
+    refs: [
+      "Sahih al-Bukhari, Book of Merits of the Companions — his complaint of suffering and the Prophet's response",
+      "Sira accounts of the persecution of early Muslims in Makkah"
+    ]
+  },
+  {
+    id: "suhayb",
+    name: "Suhayb ar-Rumi",
+    arabic: "صهيب الرومي",
+    title: "The Profit of the Trade",
+    category: "companion",
+    summary: "A Roman-raised Arab who gave up all his wealth to the Quraysh in exchange for being allowed to migrate to Madinah. When the Prophet ﷺ heard of this, he said 'Suhayb has profited! Suhayb has profited!' — and the verse 'And among people is he who sells himself seeking the pleasure of Allah' was revealed about him.",
+    refs: [
+      "Sahih Muslim — the account of his migration and sacrifice",
+      "Surah Al-Baqarah (2:207) — 'sells himself seeking the pleasure of Allah' (identified as referring to Suhayb in tafsir)"
+    ]
+  }
 ];
 
 // Combine for global search
@@ -894,7 +1050,7 @@ const HADITHS = [
   {
     text: "Smiling at your brother is an act of charity.",
     narrator: "Abu Dharr al-Ghifari",
-    ref: "Jami at-Tirmidhi, Book of Righteousness and Maintaining Good Relations with Relatives",
+    ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
     topic: "Kindness"
   },
   {
@@ -972,7 +1128,7 @@ const HADITHS = [
   {
     text: "The Muslim does not slander, curse, speak obscenely, or speak rudely.",
     narrator: "Abdullah ibn Mas'ud",
-    ref: "Jami at-Tirmidhi, Book of Righteousness",
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); also Jami at-Tirmidhi",
     topic: "Speech"
   },
   {
@@ -984,8 +1140,62 @@ const HADITHS = [
   {
     text: "The merciful are shown mercy by the Most Merciful. Show mercy to those on earth, and the One above the heavens will show mercy to you.",
     narrator: "Abdullah ibn Amr",
-    ref: "Sunan Abu Dawud, Book of Good Manners",
+    ref: "Sunan Abu Dawud, Book of Good Manners; also Jami at-Tirmidhi (authenticated)",
     topic: "Mercy"
+  },
+  {
+    text: "Whoever removes a hardship from a believer in this world, Allah will remove a hardship from him on the Day of Resurrection.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
+    topic: "Helping Others"
+  },
+  {
+    text: "Allah will not show mercy to the one who does not show mercy to people.",
+    narrator: "Jarir ibn Abdullah",
+    ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
+    topic: "Mercy"
+  },
+  {
+    text: "The best of you is the one who learns the Quran and teaches it.",
+    narrator: "Uthman ibn Affan",
+    ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
+    topic: "Quran"
+  },
+  {
+    text: "A man is upon the religion of his close friend, so let one of you look at whom he befriends.",
+    narrator: "Abu Hurairah",
+    ref: "Sunan Abu Dawud; Jami at-Tirmidhi (graded Hasan)",
+    topic: "Friendship"
+  },
+  {
+    text: "The two feet of the son of Adam will not move on the Day of Judgment until he is asked about his life and how he spent it, his knowledge and what he did with it, his wealth and how he earned it and spent it, and his body and how he used it.",
+    narrator: "Abu Barzah al-Aslami",
+    ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment (graded Sahih)",
+    topic: "Accountability"
+  },
+  {
+    text: "Richness is not having many possessions, but richness is the richness of the soul.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
+    topic: "Contentment"
+  },
+  {
+    text: "Part of the perfection of a person's Islam is leaving that which does not concern him.",
+    narrator: "Abu Hurairah",
+    ref: "Jami at-Tirmidhi, Book of Asceticism (graded Hasan); also in Muwatta Imam Malik",
+    topic: "Discipline"
+  },
+  {
+    text: "Do not be angry, do not be angry, do not be angry.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
+    topic: "Self-Control"
+  },
+  {
+    text: "Modesty brings nothing but goodness.",
+    narrator: "Imran ibn Husayn",
+    ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",
+    topic: "Modesty"
   }
 ];
 
