@@ -1029,7 +1029,7 @@ const HADITHS = [
     narrator: "Umar ibn al-Khattab",
     ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
     topic: "Sincerity",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
@@ -1037,7 +1037,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Brotherhood",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "إِنَّ مِنْ خِيَارِكُمْ أَحْسَنَكُمْ أَخْلَاقًا",
@@ -1045,7 +1045,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Amr",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Character",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
@@ -1053,7 +1053,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Sahih Muslim",
     topic: "Speech",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
@@ -1061,7 +1061,7 @@ const HADITHS = [
     narrator: "Abu Dharr al-Ghifari",
     ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
     topic: "Kindness",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by Muslim; also at-Tirmidhi"
   },
   {
     arabic: "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
@@ -1069,7 +1069,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Self-Control",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِجَارِهِ مَا يُحِبُّ لِنَفْسِهِ",
@@ -1077,7 +1077,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Neighbors",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
@@ -1085,7 +1085,7 @@ const HADITHS = [
     narrator: "Aisha bint Abu Bakr",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Consistency",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "خَيْرُ النَّاسِ مَنْ أَطْعَمَ الطَّعَامَ",
@@ -1093,7 +1093,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Food and Drink",
     topic: "Generosity",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
@@ -1101,15 +1101,15 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sunan Ibn Majah, Book of the Sunnah",
     topic: "Knowledge",
-    strength: "Hasan (Good) — graded Sahih by some scholars"
+    strength: "Sahih — Narrated by Ibn Majah; authenticated by as-Suyuti and al-Albani"
   },
   {
     arabic: "الْمُؤْمِنُ الَّذِي يُخَالِطُ النَّاسَ وَيَصْبِرُ عَلَى أَذَاهُمْ خَيْرٌ مِنَ الَّذِي لَا يُخَالِطُ النَّاسَ وَلَا يَصْبِرُ عَلَى أَذَاهُمْ",
     text: "The believer who mixes with people and is patient with their faults is better than the one who avoids people and is impatient with them.",
     narrator: "Ibn Umar",
-    ref: "Sunan Ibn Majah, Book of Asceticism; also in Musnad Ahmad",
+    ref: "Sunan Ibn Majah, Book of Asceticism; Musnad Ahmad",
     topic: "Patience",
-    strength: "Sahih (Authentic) — authenticated by Al-Albani"
+    strength: "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani"
   },
   {
     arabic: "مَنْ يَضْمَنْ لِي مَا بَيْنَ لَحْيَيْهِ وَمَا بَيْنَ رِجْلَيْهِ أَضْمَنْ لَهُ الْجَنَّةَ",
@@ -1117,23 +1117,23 @@ const HADITHS = [
     narrator: "Sahl ibn Sa'd",
     ref: "Sahih al-Bukhari, Book of Limits and Punishments",
     topic: "Guarding the Tongue",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ",
     text: "The best of people are those most beneficial to people.",
     narrator: "Jabir ibn Abdullah",
-    ref: "Al-Mu'jam al-Awsat, Tabarani; graded Hasan by Al-Albani",
+    ref: "Al-Mu'jam al-Awsat by at-Tabarani",
     topic: "Service",
-    strength: "Hasan (Good)"
+    strength: "Hasan — Narrated by at-Tabarani; graded Hasan by al-Albani"
   },
   {
     arabic: "اغْتَنِمْ خَمْسًا قَبْلَ خَمْسٍ: شَبَابَكَ قَبْلَ هَرَمِكَ، وَصِحَّتَكَ قَبْلَ سَقَمِكَ، وَغِنَاكَ قَبْلَ فَقْرِكَ، وَفَرَاغَكَ قَبْلَ شُغْلِكَ، وَحَيَاتَكَ قَبْلَ مَوْتِكَ",
     text: "Take advantage of five before five: your youth before your old age, your health before your sickness, your wealth before your poverty, your free time before your busyness, and your life before your death.",
     narrator: "Ibn Abbas",
-    ref: "Mustadrak al-Hakim; graded Sahih by Al-Hakim and Al-Albani",
+    ref: "Mustadrak al-Hakim",
     topic: "Time",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani"
   },
   {
     arabic: "إِنَّ اللَّهَ لَا يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
@@ -1141,7 +1141,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Righteousness",
     topic: "Sincerity",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by Muslim"
   },
   {
     arabic: "يَسِّرُوا وَلَا تُعَسِّرُوا وَبَشِّرُوا وَلَا تُنَفِّرُوا",
@@ -1149,7 +1149,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Knowledge; Sahih Muslim",
     topic: "Ease",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
@@ -1157,15 +1157,15 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance, Hadith 2699",
     topic: "Knowledge",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by Muslim"
   },
   {
     arabic: "لَيْسَ الْمُؤْمِنُ بِالطَّعَّانِ وَلَا اللَّعَّانِ وَلَا الْفَاحِشِ وَلَا الْبَذِيءِ",
     text: "The Muslim does not slander, curse, speak obscenely, or speak rudely.",
     narrator: "Abdullah ibn Mas'ud",
-    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); also Jami at-Tirmidhi",
+    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Jami at-Tirmidhi",
     topic: "Speech",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari and at-Tirmidhi"
   },
   {
     arabic: "كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ أَوْ عَابِرُ سَبِيلٍ",
@@ -1173,15 +1173,15 @@ const HADITHS = [
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Heart Softeners",
     topic: "Worldliness",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
     text: "The merciful are shown mercy by the Most Merciful. Show mercy to those on earth, and the One above the heavens will show mercy to you.",
     narrator: "Abdullah ibn Amr",
-    ref: "Sunan Abu Dawud; Jami at-Tirmidhi (graded Sahih by Al-Albani)",
+    ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Mercy",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by Abu Dawud and at-Tirmidhi; authenticated by al-Albani"
   },
   {
     arabic: "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ",
@@ -1189,7 +1189,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
     topic: "Helping Others",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by Muslim"
   },
   {
     arabic: "لَا يَرْحَمُ اللَّهُ مَنْ لَا يَرْحَمُ النَّاسَ",
@@ -1197,7 +1197,7 @@ const HADITHS = [
     narrator: "Jarir ibn Abdullah",
     ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
     topic: "Mercy",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
@@ -1205,7 +1205,7 @@ const HADITHS = [
     narrator: "Uthman ibn Affan",
     ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
     topic: "Quran",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "الرَّجُلُ عَلَى دِينِ خَلِيلِهِ فَلْيَنْظُرْ أَحَدُكُمْ مَنْ يُخَالِلُ",
@@ -1213,7 +1213,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Friendship",
-    strength: "Hasan (Good)"
+    strength: "Hasan — Narrated by Abu Dawud and at-Tirmidhi; graded Hasan by an-Nawawi"
   },
   {
     arabic: "لَا تَزُولُ قَدَمَا عَبْدٍ يَوْمَ الْقِيَامَةِ حَتَّى يُسْأَلَ عَنْ عُمُرِهِ فِيمَا أَفْنَاهُ وَعَنْ عِلْمِهِ فِيمَا فَعَلَ وَعَنْ مَالِهِ مِنْ أَيْنَ اكْتَسَبَهُ وَفِيمَا أَنْفَقَهُ وَعَنْ جِسْمِهِ فِيمَا أَبْلَاهُ",
@@ -1221,7 +1221,7 @@ const HADITHS = [
     narrator: "Abu Barzah al-Aslami",
     ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment",
     topic: "Accountability",
-    strength: "Sahih (Authentic) — graded Sahih by At-Tirmidhi"
+    strength: "Sahih — Narrated by at-Tirmidhi; graded Sahih by at-Tirmidhi and al-Albani"
   },
   {
     arabic: "لَيْسَ الْغِنَى عَنْ كَثْرَةِ الْعَرَضِ وَلَكِنَّ الْغِنَى غِنَى النَّفْسِ",
@@ -1229,15 +1229,15 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
     topic: "Contentment",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
     arabic: "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",
     text: "Part of the perfection of a person's Islam is leaving that which does not concern him.",
     narrator: "Abu Hurairah",
-    ref: "Jami at-Tirmidhi, Book of Asceticism; also in Muwatta Imam Malik",
+    ref: "Jami at-Tirmidhi, Book of Asceticism; Muwatta Imam Malik",
     topic: "Discipline",
-    strength: "Hasan (Good)"
+    strength: "Hasan — Narrated by at-Tirmidhi and Malik; graded Hasan by at-Tirmidhi and an-Nawawi"
   },
   {
     arabic: "لَا تَغْضَبْ، لَا تَغْضَبْ، لَا تَغْضَبْ",
@@ -1245,7 +1245,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
     topic: "Self-Control",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Narrated by al-Bukhari"
   },
   {
     arabic: "الْحَيَاءُ لَا يَأْتِي إِلَّا بِخَيْرٍ",
@@ -1253,7 +1253,7 @@ const HADITHS = [
     narrator: "Imran ibn Husayn",
     ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",
     topic: "Modesty",
-    strength: "Sahih (Authentic)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   }
 ];
 
@@ -1339,35 +1339,127 @@ const WARNING_THEMES = [
 // ---------- Courses (paid learning paths) ----------
 const COURSES = [
   {
-    id: "quranic-arabic",
-    title: "Quranic Arabic",
-    level: "Beginner → Intermediate",
-    price: "$29 / month",
-    description: "Master the foundational Arabic script, vocabulary, and grammar needed to read and begin understanding the Quran in its original language.",
-    includes: ["Arabic alphabet & pronunciation", "Core grammar (Nahw & Sarf)", "Quranic vocabulary building", "Weekly live sessions"]
+    id: "tafsir",
+    title: "Tafsir — Verse-by-Verse Quran Explanation",
+    level: "All Levels",
+    price: "$45 / month",
+    description: "Deep dive into the meaning of the Quran, verse by verse. Learn why each ayah was revealed (Asbab an-Nuzul), its historical context, the story behind it, and how scholars from Ibn Kathir to as-Sa'di explained its meaning. Choose between simplified or advanced explanation levels.",
+    includes: [
+      "Verse-by-verse explanation of each surah",
+      "Asbab an-Nuzul — the occasions and stories behind each revelation",
+      "Word-by-word meaning in context (without losing the broader meaning)",
+      "Toggle between simplified and scholarly-level explanation",
+      "References from Ibn Kathir, at-Tabari, al-Qurtubi, and as-Sa'di",
+      "Weekly live sessions with a qualified teacher",
+      "Downloadable study notes for each surah"
+    ]
   },
   {
-    id: "quranic-sciences",
-    title: "Quranic Sciences",
-    level: "Intermediate",
+    id: "quran-recitation",
+    title: "Quran Recitation — Learn to Read from A to Z",
+    level: "Beginner → Advanced",
+    price: "$35 / month",
+    description: "Start from the Arabic alphabet and progress to fluent Quran recitation. A qualified teacher guides you through Nooraniyah rules, Tajweed, and proper pronunciation (Makharij al-Huruf) until you can recite any surah confidently.",
+    includes: [
+      "Arabic alphabet and letter connections",
+      "Nooraniyyah foundation course",
+      "Full Tajweed rules with practical application",
+      "Makharij al-Huruf — correct pronunciation of each letter",
+      "1-on-1 live sessions with a certified Quran teacher",
+      "Practice recitation with teacher feedback",
+      "Progress tracking and level assessments"
+    ]
+  },
+  {
+    id: "hifz",
+    title: "Hifz — Quran Memorization & Testing",
+    level: "All Levels",
+    price: "$40 / month",
+    description: "Memorize the Quran with a structured plan and a dedicated teacher who tests your memorization regularly. Includes revision schedules, memorization techniques, and certification upon completion of each Juz.",
+    includes: [
+      "Personalized memorization plan (daily/weekly targets)",
+      "1-on-1 memorization sessions with a Hafiz teacher",
+      "Regular testing and revision (Muraja'ah) sessions",
+      "Memorization techniques and tips for long-term retention",
+      "Juz-by-juz certification upon successful testing",
+      "Support for both new memorization and revision of old portions",
+      "Progress dashboard to track surahs memorized"
+    ]
+  },
+  {
+    id: "hadith-explanation",
+    title: "Hadith Studies — Explanation, Context & Authentication",
+    level: "Intermediate → Advanced",
     price: "$39 / month",
-    description: "Explore the linguistic structure, historical context, and methods of interpretation (tafsir) used to understand the meanings of the Quran.",
-    includes: ["Introduction to Tafsir", "Occasions of revelation (Asbab an-Nuzul)", "Themes across the Quran", "Guided verse-by-verse study"]
+    description: "Study the major hadith collections — Sahih al-Bukhari, Sahih Muslim, Sunan Abu Dawud, Jami at-Tirmidhi, Sunan an-Nasa'i, and Sunan Ibn Majah. Learn the story and context behind each hadith, when and why the Prophet ﷺ said it, and how scholars classify its authenticity.",
+    includes: [
+      "Book-by-book study of Sahih al-Bukhari and Sahih Muslim",
+      "Context and story behind each hadith (Asbab al-Wurud)",
+      "Hadith authentication methodology — Sahih, Hasan, Da'if explained",
+      "Chains of narration (Isnad) and narrator criticism ('Ilm ar-Rijal)",
+      "Explanation of hadith rulings and how scholars derive Fiqh from them",
+      "Simplified vs. advanced explanation modes",
+      "Live Q&A with hadith scholars"
+    ]
+  },
+  {
+    id: "quranic-arabic",
+    title: "Quranic Arabic — Understand the Language of the Quran",
+    level: "Beginner → Intermediate",
+    price: "$29 / month",
+    description: "Learn the Arabic grammar (Nahw and Sarf) and vocabulary you need to understand the Quran directly, without relying on translation. Each lesson ties grammar to real Quranic verses so you see it in context.",
+    includes: [
+      "Arabic alphabet, script, and pronunciation",
+      "Core grammar: Nahw (syntax) and Sarf (morphology)",
+      "Quranic vocabulary — the 300 most frequent words in the Quran",
+      "I'rab — grammatical analysis of Quranic verses",
+      "Weekly live sessions with grammar exercises",
+      "Quizzes and tests after each module"
+    ]
   },
   {
     id: "islamic-studies",
-    title: "Islamic Studies",
+    title: "Islamic Studies — History, Theology & Ethics",
     level: "All Levels",
     price: "$25 / month",
-    description: "A comprehensive look at Islamic history, theology, and ethics — including the lives of the Prophets and the Companions, for a holistic understanding of the faith.",
-    includes: ["History of Prophethood", "Lives of the Sahaba", "Islamic ethics & character", "Q&A with instructors"]
+    description: "A comprehensive journey through Islamic history from the Prophets to the Sahaba, the foundations of Islamic belief ('Aqeedah), and the ethics and character that Islam teaches — designed for both new and lifelong learners.",
+    includes: [
+      "Seerah — the life of Prophet Muhammad ﷺ in detail",
+      "Stories of the Prophets with Quranic and hadith references",
+      "Lives of the Companions (Sahaba) and Tabi'in",
+      "'Aqeedah — foundations of Islamic belief",
+      "Islamic ethics, manners, and daily life guidance",
+      "Q&A sessions with instructors"
+    ]
   },
   {
-    id: "hadith-studies",
-    title: "Introduction to Hadith Sciences",
-    level: "Intermediate → Advanced",
+    id: "fiqh",
+    title: "Fiqh — Islamic Jurisprudence",
+    level: "Intermediate",
     price: "$35 / month",
-    description: "Learn the methodology behind hadith collection and authentication, with a focused study of Sahih al-Bukhari and Sahih Muslim.",
-    includes: ["Hadith terminology", "Study of Sahih al-Bukhari highlights", "Chains of narration (Sanad)", "Practical application of hadith"]
+    description: "Learn the practical rulings of Islam — prayer, fasting, Zakat, Hajj, transactions, and family law — based on the Quran and Sunnah, with an overview of the four major schools of thought (Hanafi, Maliki, Shafi'i, Hanbali).",
+    includes: [
+      "Fiqh of worship: Salah, Sawm, Zakat, Hajj",
+      "Fiqh of daily life: food, dress, transactions",
+      "Comparative Fiqh across the four Madhahib",
+      "Evidence-based approach (Quran, Sunnah, Ijma', Qiyas)",
+      "Case studies and practical application",
+      "Live sessions with a Fiqh instructor"
+    ]
+  },
+  {
+    id: "private-tutor",
+    title: "Private 1-on-1 Tutor — Personalized Islamic Education",
+    level: "All Levels",
+    price: "$55 / month",
+    description: "A personal tutor matched to your level and goals — whether you want to learn Quran from scratch, improve your recitation, deepen your understanding of hadith, prepare for an exam, or have any specific Islamic learning need. Sessions are fully customized to you.",
+    includes: [
+      "1-on-1 live sessions (2-4 per week, flexible scheduling)",
+      "Custom curriculum tailored to your goals",
+      "Quran, Hadith, Arabic, Fiqh, Tafsir — any subject",
+      "Progress reports and personalized feedback",
+      "Access to all course materials across the platform",
+      "Priority support and scheduling"
+    ]
   }
 ];
