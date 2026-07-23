@@ -130,6 +130,7 @@ const PROPHETS = [
     title: "Father of Mankind",
     category: "prophet",
     summary: "The first human being and the first prophet of Islam, created by Allah from clay and honored with the breath of life. He and his wife Hawwa (Eve) were placed in Paradise, then sent to Earth, where Adam became the first to receive revelation and divine guidance.",
+    summaryAr: "أبو البشر وأول الأنبياء، خلقه الله من طين ونفخ فيه من روحه، وأسجد له الملائكة، ثم أُهبط إلى الأرض فتاب الله عليه وهداه.",
     refs: [
       "Surah Al-Baqarah (2:30-39) — the creation of Adam and the angels' prostration",
       "Surah Al-A'raf (7:11-25) — the story of Adam, Iblis, and the Garden",
@@ -143,6 +144,7 @@ const PROPHETS = [
     title: "The Truthful Prophet",
     category: "prophet",
     summary: "Often identified with the figure known as Enoch, Idris is described in the Quran as a man of truth and patience who was raised to a high station by Allah.",
+    summaryAr: "نبي صدّيق صابر، أثنى الله عليه في القرآن ورفعه مكاناً عليّاً.",
     refs: [
       "Surah Maryam (19:56-57) — Idris was a man of truth, raised to a high station",
       "Surah Al-Anbiya (21:85) — mentioned among the patient ones"
@@ -155,6 +157,7 @@ const PROPHETS = [
     title: "The Patient Caller",
     category: "prophet",
     summary: "Nuh called his people to worship Allah alone for nearly a thousand years, but most rejected him. Allah commanded him to build an ark, and a great flood destroyed the disbelievers while Nuh, his believing family, and pairs of animals were saved.",
+    summaryAr: "دعا قومه إلى عبادة الله وحده قرابة ألف سنة، فلما كذبوه أمره الله ببناء السفينة، فأنجاه والمؤمنين وأغرق الكافرين بالطوفان.",
     refs: [
       "Surah Nuh (71) — an entire chapter devoted to his story and supplication",
       "Surah Hud (11:25-49) — the flood and the ark",
@@ -168,6 +171,7 @@ const PROPHETS = [
     title: "Prophet to the People of 'Ad",
     category: "prophet",
     summary: "Hud was sent to the ancient people of 'Ad, a powerful civilization in southern Arabia, who worshipped idols and were proud of their strength. When they rejected his call, Allah destroyed them with a furious wind that lasted for days.",
+    summaryAr: "أُرسل إلى قوم عاد أصحاب القوة والبنيان، فلما كذبوه أهلكهم الله بريح صرصر عاتية.",
     refs: [
       "Surah Hud (11:50-60) — Hud's call and the fate of 'Ad",
       "Surah Al-A'raf (7:65-72) — his warning and their rejection",
@@ -181,6 +185,7 @@ const PROPHETS = [
     title: "Prophet to the People of Thamud",
     category: "prophet",
     summary: "Salih was sent to the people of Thamud, who carved magnificent homes into the mountains. Allah sent them a miraculous she-camel as a sign, but they defied the warning and hamstrung it, and were destroyed by a mighty blast.",
+    summaryAr: "أُرسل إلى قوم ثمود الذين نحتوا الجبال بيوتاً، وجاءهم بآية الناقة، فعقروها فأخذتهم الصيحة.",
     refs: [
       "Surah Hud (11:61-68) — Salih and the she-camel",
       "Surah Ash-Shams (91:11-15) — the hamstringing and the punishment",
@@ -194,6 +199,7 @@ const PROPHETS = [
     title: "Khalil-Allah (Friend of Allah)",
     category: "prophet",
     summary: "Known as the father of the prophets, Ibrahim broke his people's idols, was thrown into a fire and saved by Allah, and was tested with the command to sacrifice his son Ismail. Together with Ismail, he rebuilt the Kaaba in Makkah as a house of worship for Allah alone.",
+    summaryAr: "خليل الله وأبو الأنبياء، حطّم أصنام قومه ونجّاه الله من النار، وابتُلي بذبح ابنه فصدق، ورفع القواعد من البيت الحرام مع إسماعيل.",
     refs: [
       "Surah Al-Anbiya (21:51-73) — Ibrahim and the idols",
       "Surah As-Saffat (37:99-111) — the trial of sacrificing his son",
@@ -208,6 +214,7 @@ const PROPHETS = [
     title: "The Righteous Nephew of Ibrahim",
     category: "prophet",
     summary: "A nephew and follower of Ibrahim, Lut was sent to the people of Sodom, who committed grave sins. When they refused to repent, Allah sent angels to rescue Lut and his believing family, then destroyed the cities with a rain of stones.",
+    summaryAr: "ابن أخي إبراهيم، أُرسل إلى قوم سدوم ينهاهم عن الفاحشة، فلما أبوا أنجاه الله وأهله وأمطر عليهم حجارة من سجيل.",
     refs: [
       "Surah Hud (11:77-83) — the angels' visit and the cities' destruction",
       "Surah Al-A'raf (7:80-84) — Lut's warning to his people",
@@ -221,6 +228,7 @@ const PROPHETS = [
     title: "The Patient Son",
     category: "prophet",
     summary: "The eldest son of Ibrahim, Ismail submitted willingly when his father told him of the command to sacrifice him, and Allah ransomed him with a great sacrifice. He helped his father build the Kaaba and is honored for his truthfulness and patience.",
+    summaryAr: "الابن الأكبر لإبراهيم، استسلم لأمر الله بالذبح ففداه الله بذبح عظيم، وساعد أباه في بناء الكعبة، ووُصف بأنه صادق الوعد.",
     refs: [
       "Surah As-Saffat (37:101-107) — Ismail's submission and the ransom",
       "Surah Al-Baqarah (2:127) — raising the foundations of the House",
@@ -234,6 +242,7 @@ const PROPHETS = [
     title: "Son of the Promise",
     category: "prophet",
     summary: "The second son of Ibrahim, born to Sarah in their old age as glad tidings from Allah. Ishaq was blessed with prophethood, and from his lineage came many later prophets, including Yaqub.",
+    summaryAr: "ابن إبراهيم من سارة، بشّرت به الملائكة على الكبر، ومن ذريته جاء كثير من الأنبياء.",
     refs: [
       "Surah As-Saffat (37:112-113) — the glad tidings of Ishaq's birth",
       "Surah Hud (11:71-73) — the angels' announcement to Ibrahim and Sarah"
@@ -246,6 +255,7 @@ const PROPHETS = [
     title: "Israel",
     category: "prophet",
     summary: "The son of Ishaq and father of twelve sons including Yusuf, Yaqub (also called Israel) endured years of grief over the loss of his son Yusuf, yet never lost hope in Allah's mercy, and was eventually reunited with him in Egypt.",
+    summaryAr: "ابن إسحاق وأبو الأسباط، ويسمى إسرائيل، صبر على فقد يوسف صبراً جميلاً حتى جمعهما الله في مصر.",
     refs: [
       "Surah Yusuf (12) — Yaqub's patience throughout his son's story",
       "Surah Al-Baqarah (2:132-133) — his advice to his sons before passing away"
@@ -258,6 +268,7 @@ const PROPHETS = [
     title: "The Truthful, Trustworthy One",
     category: "prophet",
     summary: "Sold into slavery by his jealous brothers, Yusuf rose from a prison cell to become a trusted minister in Egypt. His story — described as 'the best of stories' — illustrates patience, forgiveness, and unwavering trust in Allah's plan.",
+    summaryAr: "ألقاه إخوته في البئر ثم بيع عبداً في مصر، فرفعه الله من السجن إلى خزائن الأرض، وقصته أحسن القصص في الصبر والعفو.",
     refs: [
       "Surah Yusuf (12) — the complete narrative, called 'the best of stories' (12:3)",
       "Surah Yusuf (12:90) — forgiveness of his brothers"
@@ -270,6 +281,7 @@ const PROPHETS = [
     title: "The Patient One",
     category: "prophet",
     summary: "Ayyub was afflicted with severe illness and loss of wealth and family, yet he never ceased to praise Allah. His patience became proverbial, and Allah ultimately restored his health, family, and fortune in reward for his steadfastness.",
+    summaryAr: "ضُرب به المثل في الصبر، ابتُلي في جسده وماله وأهله فما زاد إلا حمداً، فكشف الله ضره وردّ عليه أهله وماله.",
     refs: [
       "Surah Al-Anbiya (21:83-84) — his supplication and Allah's healing",
       "Surah Sad (38:41-44) — his patience under affliction"
@@ -282,6 +294,7 @@ const PROPHETS = [
     title: "The Eloquent Preacher",
     category: "prophet",
     summary: "Shuayb was sent to the people of Madyan, who were known for cheating in trade and weights and measures. He called them to honesty and the worship of Allah alone, but most rejected him and were destroyed.",
+    summaryAr: "خطيب الأنبياء، أُرسل إلى أهل مدين ينهاهم عن بخس المكيال والميزان، فلما كذبوه أخذتهم الرجفة.",
     refs: [
       "Surah Al-A'raf (7:85-93) — Shuayb's call to the people of Madyan",
       "Surah Hud (11:84-95) — honesty in trade and measures"
@@ -294,6 +307,7 @@ const PROPHETS = [
     title: "Kalim-Allah (One Who Spoke with Allah)",
     category: "prophet",
     summary: "Raised in Pharaoh's palace, Musa was sent back to confront Pharaoh and free the Children of Israel from oppression. He received the Torah, witnessed numerous miracles, and is the most frequently mentioned prophet in the Quran.",
+    summaryAr: "كليم الله، نشأ في قصر فرعون ثم أُرسل إليه بالآيات، وأنجى الله به بني إسرائيل وأنزل عليه التوراة، وهو أكثر الأنبياء ذكراً في القرآن.",
     refs: [
       "Surah Al-Baqarah (2:49-57) — the Exodus and miracles",
       "Surah Ta-Ha (20:9-98) — his calling and confrontation with Pharaoh",
@@ -307,6 +321,7 @@ const PROPHETS = [
     title: "The Eloquent Helper",
     category: "prophet",
     summary: "The brother of Musa, Harun was appointed by Allah as a helper and minister to support Musa in conveying the message to Pharaoh and guiding the Children of Israel.",
+    summaryAr: "أخو موسى ووزيره، أرسله الله معه إلى فرعون فصيحاً معيناً على تبليغ الرسالة.",
     refs: [
       "Surah Ta-Ha (20:29-36) — Musa's request for Harun as a helper",
       "Surah Al-Anbiya (21:48) — Musa and Harun given the Scripture"
@@ -319,6 +334,7 @@ const PROPHETS = [
     title: "The Grateful King",
     category: "prophet",
     summary: "Dawud was given kingship, wisdom, and the ability to recite the Zabur (Psalms) with such beauty that even mountains and birds joined his praise. He was also granted skill in crafting iron armor.",
+    summaryAr: "آتاه الله الملك والحكمة والزبور، وسخّر معه الجبال والطير يسبّحن، وألان له الحديد.",
     refs: [
       "Surah Al-Anbiya (21:78-80) — wisdom in judgment and armor-making",
       "Surah Saba (34:10-11) — softening of iron and praise alongside the birds",
@@ -332,6 +348,7 @@ const PROPHETS = [
     title: "The Wise King",
     category: "prophet",
     summary: "Son of Dawud, Sulaiman inherited prophethood and a vast kingdom, and was given control over the wind, the jinn, and the ability to understand the language of birds and animals. His story with the Queen of Sheba (Bilqis) shows his wisdom and devotion to Allah.",
+    summaryAr: "ابن داود، ورث النبوة والملك، وسخّر الله له الريح والجن ومنطق الطير، وقصته مع ملكة سبأ شاهدة على حكمته.",
     refs: [
       "Surah An-Naml (27:15-44) — Sulaiman, the hoopoe bird, and the Queen of Sheba",
       "Surah Saba (34:12-14) — dominion over the jinn and the wind",
@@ -345,6 +362,7 @@ const PROPHETS = [
     title: "The Devoted Caller",
     category: "prophet",
     summary: "Ilyas was sent to the people of Baal (an idol cult) to call them back to the worship of Allah alone. He is praised in the Quran as one of the righteous messengers.",
+    summaryAr: "أُرسل إلى قوم يعبدون بعلاً فدعاهم إلى الله وحده، وأثنى الله عليه في المرسلين.",
     refs: [
       "Surah As-Saffat (37:123-132) — Ilyas and the worship of Baal",
       "Surah Al-An'am (6:85) — listed among the righteous"
@@ -357,6 +375,7 @@ const PROPHETS = [
     title: "The Favored Prophet",
     category: "prophet",
     summary: "Al-Yasa is mentioned in the Quran as a prophet favored by Allah and counted among the righteous and patient. He is believed to have succeeded Ilyas in guiding the Children of Israel.",
+    summaryAr: "من الأنبياء الأخيار الذين فضّلهم الله على العالمين، خلف إلياس في هداية بني إسرائيل.",
     refs: [
       "Surah Sad (38:48) — mentioned alongside Ismail and Dhul-Kifl among the best",
       "Surah Al-An'am (6:86) — listed among those favored above all people"
@@ -369,6 +388,7 @@ const PROPHETS = [
     title: "The One of the Pledge",
     category: "prophet",
     summary: "Dhul-Kifl is mentioned in the Quran among the patient and righteous. Scholars have different views on his identity, but he is honored as one who fulfilled his covenant and was counted among the good.",
+    summaryAr: "ذكره الله مع الصابرين الأخيار، ووفى بما التزم به فكان من المحسنين.",
     refs: [
       "Surah Al-Anbiya (21:85-86) — mentioned alongside Ismail and Idris among the patient",
       "Surah Sad (38:48) — mentioned among the best and chosen"
@@ -381,6 +401,7 @@ const PROPHETS = [
     title: "Dhul-Nun (The One of the Whale)",
     category: "prophet",
     summary: "Yunus left his people in frustration before receiving Allah's permission and was swallowed by a great fish. In the darkness of the whale's belly, he called out in repentance, and Allah saved him, after which his people came to believe.",
+    summaryAr: "صاحب الحوت، خرج من قومه مغاضباً فالتقمه الحوت، فنادى في الظلمات: لا إله إلا أنت سبحانك إني كنت من الظالمين، فنجّاه الله وآمن قومه.",
     refs: [
       "Surah As-Saffat (37:139-148) — Yunus and the great fish",
       "Surah Al-Anbiya (21:87-88) — his supplication 'La ilaha illa Anta...'",
@@ -394,6 +415,7 @@ const PROPHETS = [
     title: "The Devoted Guardian",
     category: "prophet",
     summary: "An elderly prophet and guardian of Maryam (Mary), Zakariya prayed earnestly for a son despite his old age and his wife's barrenness. Allah answered his prayer with the birth of Yahya (John).",
+    summaryAr: "كفل مريم ودعا ربه على الكبر أن يهبه ولداً، فبشّره الله بيحيى.",
     refs: [
       "Surah Maryam (19:2-15) — Zakariya's prayer and the glad tidings of Yahya",
       "Surah Ali 'Imran (3:37-41) — his guardianship of Maryam"
@@ -406,6 +428,7 @@ const PROPHETS = [
     title: "The Pure Youth",
     category: "prophet",
     summary: "The son of Zakariya, Yahya was given wisdom from a young age, was dutiful to his parents, and lived a life of purity and devotion to Allah.",
+    summaryAr: "ابن زكريا، آتاه الله الحكم صبياً، وكان براً بوالديه تقياً نقياً.",
     refs: [
       "Surah Maryam (19:12-15) — Yahya's wisdom, mercy, and purity",
       "Surah Al-Anbiya (21:90) — mentioned alongside Zakariya"
@@ -418,6 +441,7 @@ const PROPHETS = [
     title: "Al-Masih (The Messiah), son of Maryam",
     category: "prophet",
     summary: "Born miraculously to the virgin Maryam, Isa was granted the Gospel (Injil) and performed many miracles by Allah's permission, including healing the sick and speaking as an infant in defense of his mother's honor. Islam teaches that he was raised to Allah and was not crucified.",
+    summaryAr: "المسيح ابن مريم، وُلد بمعجزة من غير أب، وتكلم في المهد، وأحيا الموتى وأبرأ المرضى بإذن الله، ورفعه الله إليه ولم يُصلب.",
     refs: [
       "Surah Maryam (19:16-34) — the miraculous birth of Isa",
       "Surah Al-Imran (3:45-49) — his miracles by Allah's leave",
@@ -431,6 +455,7 @@ const PROPHETS = [
     title: "Son of Adam",
     category: "prophet",
     summary: "Shith is identified in Islamic tradition as a son of Adam and a prophet who received scriptures from Allah. After the death of Adam, Shith continued to guide humanity according to the teachings of his father.",
+    summaryAr: "ابن آدم عليه السلام، أنزل الله عليه صحفاً وواصل هداية الناس بعد أبيه.",
     refs: [
       "Ibn Kathir, Al-Bidaya wan-Nihaya — the story of Shith after Adam",
       "Mentioned in the hadith of the Night Journey (Isra and Mi'raj) — Sahih al-Bukhari"
@@ -443,6 +468,7 @@ const PROPHETS = [
     title: "Successor of Musa",
     category: "prophet",
     summary: "Yusha ibn Nun was the young attendant of Musa mentioned in the Quran in the story of Al-Khidr. In hadith tradition, he succeeded Musa as leader and prophet of the Children of Israel and led them into the Holy Land.",
+    summaryAr: "فتى موسى المذكور في سورة الكهف، خلفه في قيادة بني إسرائيل ودخل بهم الأرض المقدسة.",
     refs: [
       "Surah Al-Kahf (18:60-62) — 'his young attendant' (identified as Yusha in hadith)",
       "Sahih Muslim, Book of Jihad — the Prophet ﷺ identified the young man of Musa as Yusha ibn Nun"
@@ -455,6 +481,7 @@ const PROPHETS = [
     title: "The Prophet Who Appointed Talut (Saul)",
     category: "prophet",
     summary: "Shamwil is the prophet referenced in the Quran who was asked by the Children of Israel to appoint a king to lead them in battle. He appointed Talut (Saul) by Allah's command and foretold the Ark of the Covenant as a sign of his kingship.",
+    summaryAr: "النبي الذي طلب منه بنو إسرائيل تعيين ملك يقاتلون معه، فعيّن لهم طالوت بأمر الله.",
     refs: [
       "Surah Al-Baqarah (2:246-251) — the prophet who appointed Talut as king",
       "Ibn Kathir, Stories of the Prophets — identified as Shamwil (Samuel)"
@@ -467,6 +494,7 @@ const PROPHETS = [
     title: "The Prophet of Babylon",
     category: "prophet",
     summary: "Danyal is mentioned in Islamic tradition as a prophet among the Children of Israel who lived during the Babylonian exile. When his grave was discovered during the conquest of Tustar, the Caliph Umar ordered that he be reburied in a hidden location to prevent veneration.",
+    summaryAr: "من أنبياء بني إسرائيل في زمن السبي البابلي، وُجد جسده في فتوح تستر فأمر عمر بدفنه سراً.",
     refs: [
       "Musannaf Ibn Abi Shaybah — account of the discovery of Danyal's body during Umar's caliphate",
       "Ibn Kathir, Al-Bidaya wan-Nihaya — his mention among the prophets of Israel"
@@ -479,6 +507,7 @@ const PROPHETS = [
     title: "The Final Messenger, Seal of the Prophets",
     category: "prophet",
     summary: "Born in Makkah in the Year of the Elephant, Muhammad ﷺ received the first revelation of the Quran at age 40 through the angel Jibril in the cave of Hira. Over 23 years he conveyed the final message of Islam, established the first Muslim community in Madinah, and is described in the Quran as a mercy to all of creation and the seal of the prophets.",
+    summaryAr: "خاتم النبيين ورحمة الله للعالمين ﷺ، نزل عليه القرآن في غار حراء، وبلّغ الرسالة ثلاثاً وعشرين سنة، وأقام أول مجتمع مسلم في المدينة.",
     refs: [
       "Surah Al-Ahzab (33:40) — the Seal of the Prophets",
       "Surah Al-Anbiya (21:107) — sent as a mercy to all worlds",

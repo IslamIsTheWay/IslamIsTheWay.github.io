@@ -93,7 +93,7 @@
       grid.innerHTML = "";
       const q = filter.toLowerCase();
       const raw = filter.trim();
-      PROPHETS.filter(p => !q || p.name.toLowerCase().includes(q) || p.arabic.includes(raw) || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q))
+      PROPHETS.filter(p => !q || p.name.toLowerCase().includes(q) || p.arabic.includes(raw) || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q) || (p.summaryAr && p.summaryAr.includes(raw)))
         .forEach(p => {
           const card = document.createElement("div");
           card.className = "person-card";
@@ -105,6 +105,7 @@
             </div>
             <div class="person-body">
               <p>${p.summary}</p>
+              ${p.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.08rem;line-height:1.9;color:var(--green-dark);text-align:right;background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:14px;">${p.summaryAr}</p>` : ""}
               <div class="refs">
                 <strong>References:</strong>
                 <ul>${p.refs.map(r => `<li>${r}</li>`).join("")}</ul>
