@@ -111,8 +111,10 @@
 
   <script src="js/data.js"></script>
   <script>
-    const STAFF_USERNAME = "Islam.younis.2026";
-    const STAFF_PASSWORD = "NoorAmmarTamimA'sem";
+    const STAFF_ACCOUNTS = [
+      { username: "Islam.younis.2026", password: "NoorAmmarTamimA'sem" },
+      { username: "Teacher.IITW.2026", password: "Bayan#Huda_2026!Teach" }
+    ];
 
     document.getElementById("staffForm").addEventListener("submit", e => {
       e.preventDefault();
@@ -120,7 +122,7 @@
       const user = document.getElementById("staffUser").value.trim();
       const pass = document.getElementById("staffPass").value;
 
-      if (user === STAFF_USERNAME && pass === STAFF_PASSWORD) {
+      if (STAFF_ACCOUNTS.some(a => a.username === user && a.password === pass)) {
         msg.textContent = "Welcome back! Redirecting to the staff area...";
         msg.className = "login-message success";
         sessionStorage.setItem("islamIsTheWayStaff", "true");

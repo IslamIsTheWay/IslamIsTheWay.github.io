@@ -110,6 +110,8 @@
         <textarea id="cDesc" placeholder="What the course covers..."></textarea>
         <label>What's included (one item per line)</label>
         <textarea id="cIncludes" placeholder="Weekly live sessions&#10;Certificate&#10;..."></textarea>
+        <label>Course intro video link (optional — YouTube etc., shown to everyone as a preview)</label>
+        <input type="text" id="cVideo" placeholder="https://..." />
         <button class="btn btn-primary btn-small" onclick="addCourse()">Add Course</button>
         <div class="item-list" id="courseList"></div>
       </div>
@@ -181,10 +183,23 @@
     let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, contact: { phone: "", whatsapp: "", demoUrl: "" }, videos: [], meetings: [], extraCourses: [] };
 
     async function loadConfig() {
+      // Load from the GitHub API (always the latest saved version) so we never
+      // overwrite recent changes with a stale cached copy. Falls back to the
+      // public file if the API is unreachable.
       try {
-        const r = await fetch("data/site-config.json?t=" + Date.now());
-        if (r.ok) cfg = await r.json();
-      } catch (e) {}
+        const r = await fetch(REPO_API + "?t=" + Date.now(), { headers: { "Accept": "application/vnd.github+json" } });
+        if (r.ok) {
+          const j = await r.json();
+          cfg = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, "")))));
+        } else {
+          throw new Error("api unavailable");
+        }
+      } catch (e) {
+        try {
+          const r2 = await fetch("data/site-config.json?t=" + Date.now());
+          if (r2.ok) cfg = await r2.json();
+        } catch (e2) {}
+      }
       if (!cfg.payment) cfg.payment = {};
       if (!cfg.contact) cfg.contact = {};
       if (!cfg.videos) cfg.videos = [];
@@ -217,9 +232,10 @@
         level: document.getElementById("cLevel").value.trim() || "All Levels",
         price: document.getElementById("cPrice").value.trim() || "Contact us",
         description: document.getElementById("cDesc").value.trim(),
-        includes: document.getElementById("cIncludes").value.split("\n").map(s => s.trim()).filter(Boolean)
+        includes: document.getElementById("cIncludes").value.split("\n").map(s => s.trim()).filter(Boolean),
+        videoUrl: document.getElementById("cVideo").value.trim()
       });
-      ["cTitle","cLevel","cPrice","cDesc","cIncludes"].forEach(id => document.getElementById(id).value = "");
+      ["cTitle","cLevel","cPrice","cDesc","cIncludes","cVideo"].forEach(id => document.getElementById(id).value = "");
       renderLists();
     }
 
