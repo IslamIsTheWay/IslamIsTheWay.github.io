@@ -497,6 +497,7 @@ const COMPANIONS = [
     title: "First Caliph, As-Siddiq (The Truthful)",
     category: "companion",
     summary: "The closest friend of the Prophet ﷺ and the first adult male to accept Islam outside the Prophet's household. He earned the title 'As-Siddiq' for immediately believing the account of the Night Journey. He accompanied the Prophet ﷺ on the migration to Madinah and became the first Caliph after the Prophet's death.",
+    summaryAr: "أقرب أصحاب النبي ﷺ وأول من آمن به من الرجال، لُقّب بالصدّيق لتصديقه حادثة الإسراء، ورافق النبي ﷺ في الهجرة وأصبح أول الخلفاء الراشدين.",
     refs: [
       "Surah At-Tawbah (9:40) — companionship in the cave during the migration",
       "Sahih al-Bukhari — narrations on his unwavering belief and leadership",
@@ -510,6 +511,7 @@ const COMPANIONS = [
     title: "Second Caliph, Al-Farooq (The Distinguisher)",
     category: "companion",
     summary: "Once a fierce opponent of Islam, Umar's conversion strengthened the early Muslim community. As the second Caliph, he oversaw vast territorial expansion, established the Islamic calendar, and was renowned for his justice, humility, and strict accountability — even of himself.",
+    summaryAr: "أسلم فقوّى الله به الإسلام، وكان ثاني الخلفاء الراشدين، اشتهر بعدله وزهده، وفي عهده اتسعت الفتوحات ووُضع التقويم الهجري.",
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — numerous narrations on his justice and piety",
       "Historical accounts of the Caliphate (634-644 CE) and administrative reforms"
@@ -522,6 +524,7 @@ const COMPANIONS = [
     title: "Third Caliph, Dhun-Nurayn (Possessor of Two Lights)",
     category: "companion",
     summary: "Known for his immense generosity, modesty, and his role in compiling the Quran into a single standardized text during his Caliphate. He married two of the Prophet's daughters, earning the title 'possessor of two lights'.",
+    summaryAr: "ذو النورين، تزوج ابنتي النبي ﷺ، عُرف بحيائه وكرمه العظيم، وفي خلافته جُمع القرآن على مصحف واحد.",
     refs: [
       "Sahih al-Bukhari — narrations on the compilation of the Quran",
       "Historical accounts of the Caliphate (644-656 CE)"
@@ -534,6 +537,7 @@ const COMPANIONS = [
     title: "Fourth Caliph, Cousin and Son-in-Law of the Prophet ﷺ",
     category: "companion",
     summary: "Raised in the Prophet's household and one of the first to embrace Islam, Ali was known for his courage in battle, deep knowledge, and eloquence. He married the Prophet's daughter Fatimah and became the fourth Caliph.",
+    summaryAr: "ابن عم النبي ﷺ وزوج ابنته فاطمة، من أوائل من أسلم، اشتهر بشجاعته وعلمه وفصاحته، وهو رابع الخلفاء الراشدين.",
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — narrations on his knowledge and courage",
       "Historical accounts of the Caliphate (656-661 CE)"
@@ -546,6 +550,7 @@ const COMPANIONS = [
     title: "Mother of the Believers, First Wife of the Prophet ﷺ",
     category: "companion",
     summary: "A successful and respected merchant of Makkah, Khadijah was the first person to believe in the Prophet's mission, comforting and supporting him after the first revelation. She remained his devoted wife until her death, and the Prophet ﷺ always remembered her with deep love and honor.",
+    summaryAr: "أم المؤمنين وأول من آمن بالنبي ﷺ، ساندته بمالها ونفسها بعد نزول الوحي، وبقيت زوجته الوحيدة حتى وفاتها.",
     refs: [
       "Sahih al-Bukhari — the account of the first revelation and Khadijah's support",
       "Sira accounts describing her as one of the four greatest women in Islam"
@@ -558,6 +563,7 @@ const COMPANIONS = [
     title: "Mother of the Believers, Scholar of Islam",
     category: "companion",
     summary: "The daughter of Abu Bakr and wife of the Prophet ﷺ, Aisha became one of the most important sources of hadith and Islamic jurisprudence, narrating thousands of traditions and teaching both men and women after the Prophet's death.",
+    summaryAr: "أم المؤمنين بنت أبي بكر، من أعلم الناس بالحديث والفقه، روت آلاف الأحاديث وعلّمت الرجال والنساء بعد وفاة النبي ﷺ.",
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — thousands of hadith narrated through her",
       "Historical accounts of her role as a teacher and jurist in Madinah"
@@ -570,6 +576,7 @@ const COMPANIONS = [
     title: "Sayyidat Nisa al-Jannah (Leader of the Women of Paradise)",
     category: "companion",
     summary: "The youngest daughter of the Prophet ﷺ and wife of Ali ibn Abi Talib, Fatimah was known for her piety, patience, and closeness to her father. The Prophet ﷺ described her as one of the leading women of Paradise.",
+    summaryAr: "ابنة النبي ﷺ الصغرى وزوجة علي بن أبي طالب، سيدة نساء أهل الجنة، عُرفت بتقواها وصبرها وقربها من أبيها.",
     refs: [
       "Sahih al-Bukhari — narrations describing her status and closeness to the Prophet ﷺ",
       "Sira accounts of her life in Madinah"
@@ -582,6 +589,7 @@ const COMPANIONS = [
     title: "The First Muezzin of Islam",
     category: "companion",
     summary: "A formerly enslaved Abyssinian man, Bilal endured severe persecution for accepting Islam but never renounced his faith, repeating 'Ahad, Ahad' (One, One) under torture. He was freed and became the first person to call the adhan (call to prayer) in Islam.",
+    summaryAr: "مؤذن الإسلام الأول، عُذّب في مكة ليترك دينه فثبت قائلاً: أحدٌ أحد، فأعتقه أبو بكر وأصبح مؤذن النبي ﷺ.",
     refs: [
       "Sira accounts of his persecution and steadfastness in early Makkah",
       "Sahih al-Bukhari — narrations on his role as the Prophet's muezzin"
@@ -594,6 +602,7 @@ const COMPANIONS = [
     title: "Sayf-Allah (The Sword of Allah)",
     category: "companion",
     summary: "A brilliant military commander who, after embracing Islam, led Muslim armies to numerous victories without ever losing a battle. The Prophet ﷺ gave him the title 'Sword of Allah'.",
+    summaryAr: "قائد عسكري فذّ لم يُهزم في معركة قط، لقّبه النبي ﷺ بسيف الله المسلول.",
     refs: [
       "Sahih al-Bukhari — the title 'Sword of Allah' given by the Prophet ﷺ",
       "Historical accounts of the Battles of Mu'tah, Yamamah, and the conquests of Syria and Iraq"
@@ -606,6 +615,7 @@ const COMPANIONS = [
     title: "The Most Prolific Narrator of Hadith",
     category: "companion",
     summary: "Despite accepting Islam relatively late, Abu Hurairah devoted himself to staying close to the Prophet ﷺ to memorize his sayings, becoming the most prolific narrator of hadith in Islamic history.",
+    summaryAr: "أكثر الصحابة رواية للحديث، لازم النبي ﷺ ليحفظ أقواله رغم إسلامه المتأخر.",
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — thousands of hadith attributed to him",
       "Biographical accounts of his dedication to learning from the Prophet ﷺ"
@@ -618,6 +628,7 @@ const COMPANIONS = [
     title: "Salman the Seeker of Truth",
     category: "companion",
     summary: "A Persian seeker of truth who traveled widely searching for the true religion before finding Islam. He suggested the strategy of digging a trench during the Battle of the Trench, a pivotal moment in early Islamic history.",
+    summaryAr: "الباحث الفارسي عن الحق، سافر طويلاً حتى وجد الإسلام، وأشار بحفر الخندق في غزوة الأحزاب.",
     refs: [
       "Sira accounts of his long journey to find the truth before meeting the Prophet ﷺ",
       "Historical accounts of the Battle of the Trench (Khandaq), 5 AH"
@@ -630,6 +641,7 @@ const COMPANIONS = [
     title: "The Scholar of the Ummah",
     category: "companion",
     summary: "A cousin of the Prophet ﷺ, Ibn Abbas was known from a young age for his sharp intellect and deep knowledge of Quranic interpretation (tafsir), becoming one of the foremost scholars among the companions.",
+    summaryAr: "حبر الأمة وترجمان القرآن، ابن عم النبي ﷺ، دعا له النبي بالفقه في الدين وعلم التأويل.",
     refs: [
       "Sahih al-Bukhari — narrations highlighting his closeness to the Prophet ﷺ and knowledge",
       "Classical tafsir literature, much of which traces back to his explanations"
@@ -642,6 +654,7 @@ const COMPANIONS = [
     title: "Mother of the Believers",
     category: "companion",
     summary: "Known for her wisdom and sound judgment, Umm Salamah was one of the wives of the Prophet ﷺ and offered valuable advice during difficult moments, including at the Treaty of Hudaybiyyah.",
+    summaryAr: "أم المؤمنين، عُرفت برجاحة عقلها وحكمتها، وأشارت على النبي ﷺ برأي سديد يوم الحديبية.",
     refs: [
       "Sahih al-Bukhari — her advice during the events of Hudaybiyyah",
       "Sira accounts of her early migration to Abyssinia and later to Madinah"
@@ -654,6 +667,7 @@ const COMPANIONS = [
     title: "Asadullah (The Lion of Allah), Sayyid ash-Shuhada",
     category: "companion",
     summary: "The uncle of the Prophet ﷺ and a courageous defender of Islam in its early years, Hamza was martyred at the Battle of Uhud and is honored with the title 'Chief of the Martyrs'.",
+    summaryAr: "عم النبي ﷺ وأسد الله، دافع عن الإسلام في مكة واستشهد يوم أحد، فسُمّي سيد الشهداء.",
     refs: [
       "Historical accounts of the Battle of Uhud (3 AH) and his martyrdom",
       "Sira accounts of his acceptance of Islam and defense of the Muslims in Makkah"
@@ -666,6 +680,7 @@ const COMPANIONS = [
     title: "Disciple of the Prophet ﷺ, One of the Ten Promised Paradise",
     category: "companion",
     summary: "A cousin of the Prophet ﷺ and one of the first to embrace Islam, Az-Zubayr was known for his bravery and was one of the ten companions given glad tidings of Paradise during their lifetimes.",
+    summaryAr: "حواريّ النبي ﷺ وابن عمته، من العشرة المبشرين بالجنة، عُرف بشجاعته في بدر وأحد وغيرهما.",
     refs: [
       "Sahih al-Bukhari — narrations on his courage and dedication",
       "Sira accounts of his role in the Battles of Badr, Uhud, and beyond"
@@ -678,6 +693,7 @@ const COMPANIONS = [
     title: "The Generous, One of the Ten Promised Paradise",
     category: "companion",
     summary: "Renowned for his generosity and bravery, Talha shielded the Prophet ﷺ with his own body during the Battle of Uhud, suffering numerous wounds. He is one of the ten promised Paradise.",
+    summaryAr: "من العشرة المبشرين بالجنة، وقى النبيَّ ﷺ بجسده يوم أحد حتى شُلّت يده، واشتهر بجوده وكرمه.",
     refs: [
       "Sahih al-Bukhari — narrations on his sacrifices at Uhud",
       "Historical accounts of his generosity in spending for the sake of Islam"
@@ -690,6 +706,7 @@ const COMPANIONS = [
     title: "Conqueror of Persia, One of the Ten Promised Paradise",
     category: "companion",
     summary: "One of the earliest Muslims and one of the ten promised Paradise, Sa'd was the military commander who led the decisive Battle of Al-Qadisiyyah, opening Persia to Islam. The Prophet ﷺ prayed that his supplications would always be answered.",
+    summaryAr: "من العشرة المبشرين بالجنة، مجاب الدعوة، قاد المسلمين في القادسية ففُتحت بلاد فارس.",
     refs: [
       "Sahih Muslim — the Prophet's prayer for Sa'd's supplication to be answered",
       "Historical accounts of the Battle of Al-Qadisiyyah (636 CE)"
@@ -702,6 +719,7 @@ const COMPANIONS = [
     title: "Amin al-Ummah (Trustee of the Nation), One of the Ten Promised Paradise",
     category: "companion",
     summary: "The Prophet ﷺ called him the most trustworthy person of this Ummah. Abu Ubaidah served as supreme commander of the Muslim armies in the Levant and was known for his humility despite holding great authority.",
+    summaryAr: "أمين هذه الأمة، من العشرة المبشرين بالجنة، قاد جيوش المسلمين في الشام وعُرف بتواضعه.",
     refs: [
       "Sahih al-Bukhari — the title 'Trustee of the Nation'",
       "Historical accounts of the conquest of Syria and his governance"
@@ -714,6 +732,7 @@ const COMPANIONS = [
     title: "The Generous Trader, One of the Ten Promised Paradise",
     category: "companion",
     summary: "One of the wealthiest companions, Abdur-Rahman gave away vast amounts for the sake of Islam. After migrating to Madinah with nothing, he rebuilt his fortune through honest trade and remained one of the most generous supporters of the Muslim community.",
+    summaryAr: "من العشرة المبشرين بالجنة، تاجر أمين هاجر بلا شيء ثم أنفق أمواله العظيمة في سبيل الله.",
     refs: [
       "Sahih al-Bukhari — his generosity and his brotherhood with Sa'd ibn ar-Rabi",
       "Sira accounts of his donations during the expedition of Tabuk"
@@ -726,6 +745,7 @@ const COMPANIONS = [
     title: "One of the Ten Promised Paradise",
     category: "companion",
     summary: "Sa'id was among the earliest Muslims and one of the ten promised Paradise. His father Zayd ibn Amr was already a monotheist before Islam, and Sa'id embraced the Prophet's message without hesitation.",
+    summaryAr: "من العشرة المبشرين بالجنة ومن السابقين إلى الإسلام، وكان أبوه موحّداً قبل البعثة.",
     refs: [
       "Jami at-Tirmidhi — the hadith listing the ten promised Paradise",
       "Sira accounts of his early acceptance of Islam"
@@ -738,6 +758,7 @@ const COMPANIONS = [
     title: "The First Ambassador of Islam",
     category: "companion",
     summary: "Once the wealthiest and most stylish youth of Makkah, Mus'ab gave up his luxurious life for Islam. The Prophet ﷺ sent him to Madinah as the first teacher and ambassador, and he was martyred at Uhud so poor that his burial cloth was not long enough to cover him.",
+    summaryAr: "أول سفير في الإسلام، ترك حياة الترف في مكة، وعلّم أهل المدينة القرآن، واستشهد يوم أحد.",
     refs: [
       "Sahih al-Bukhari — the account of his burial at Uhud",
       "Sira accounts of his role as the first envoy to Madinah"
@@ -750,6 +771,7 @@ const COMPANIONS = [
     title: "The Steadfast Martyr",
     category: "companion",
     summary: "Ammar and his parents Yasir and Sumayya were among the first to accept Islam and the first to endure persecution. His mother Sumayya was the first martyr in Islam. The Prophet ﷺ said that Paradise yearns for Ammar.",
+    summaryAr: "من أوائل المسلمين، عُذّب هو وأبواه في مكة، وقال النبي ﷺ إن الجنة تشتاق إليه.",
     refs: [
       "Sahih al-Bukhari — 'Paradise yearns for three: Ali, Ammar, and Salman'",
       "Sira accounts of the persecution of the family of Yasir"
@@ -762,6 +784,7 @@ const COMPANIONS = [
     title: "The Truthful Ascetic",
     category: "companion",
     summary: "One of the earliest converts to Islam outside Makkah, Abu Dharr was known for his extreme truthfulness and ascetic lifestyle. The Prophet ﷺ compared his truthfulness to that of Isa ibn Maryam in his community.",
+    summaryAr: "من أوائل المسلمين، اشتهر بصدقه وزهده حتى قال النبي ﷺ: ما أظلّت الخضراء ولا أقلّت الغبراء أصدق من أبي ذر.",
     refs: [
       "Sahih Muslim — 'The earth has not carried nor the sky covered a man more truthful than Abu Dharr'",
       "Sira accounts of his early conversion and asceticism"
@@ -774,6 +797,7 @@ const COMPANIONS = [
     title: "The Beloved of the Prophet ﷺ",
     category: "companion",
     summary: "A freed slave who was adopted by the Prophet ﷺ before Islam and loved like a son, Zaid is the only companion mentioned by name in the Quran. He was martyred leading the Muslim army at the Battle of Mu'tah.",
+    summaryAr: "حِبّ رسول الله ﷺ، الصحابي الوحيد المذكور باسمه في القرآن، استشهد قائداً في غزوة مؤتة.",
     refs: [
       "Surah Al-Ahzab (33:37) — the only companion named in the Quran",
       "Historical accounts of the Battle of Mu'tah (629 CE) and his martyrdom"
@@ -786,6 +810,7 @@ const COMPANIONS = [
     title: "Ja'far the Flyer (Dhul-Janahayn)",
     category: "companion",
     summary: "The brother of Ali and cousin of the Prophet ﷺ, Ja'far led the first migration to Abyssinia and delivered a famous speech before the Negus. He was martyred at the Battle of Mu'tah, and the Prophet ﷺ said Allah replaced his arms with wings in Paradise.",
+    summaryAr: "ابن عم النبي ﷺ، قائد الهجرة إلى الحبشة وخطيبها أمام النجاشي، استشهد في مؤتة فلُقّب بذي الجناحين.",
     refs: [
       "Sira accounts of his speech before the Negus of Abyssinia",
       "Sahih al-Bukhari — his martyrdom at Mu'tah and the title 'the Flyer'"
@@ -798,6 +823,7 @@ const COMPANIONS = [
     title: "The Most Knowledgeable of Halal and Haram",
     category: "companion",
     summary: "The Prophet ﷺ described Muadh as the most knowledgeable of the community in matters of what is lawful and unlawful. He was sent to Yemen as a judge and teacher, and the Prophet's farewell to him is one of the most moving scenes recorded in the sira.",
+    summaryAr: "أعلم الأمة بالحلال والحرام، بعثه النبي ﷺ قاضياً ومعلماً إلى اليمن.",
     refs: [
       "Sahih al-Bukhari — his appointment as judge of Yemen",
       "Jami at-Tirmidhi — 'the most knowledgeable of halal and haram'"
@@ -810,6 +836,7 @@ const COMPANIONS = [
     title: "Mother of the Believers, Guardian of the Quran",
     category: "companion",
     summary: "The daughter of Umar ibn al-Khattab and wife of the Prophet ﷺ, Hafsa was known for her knowledge and devotion to worship. After the compilation of the Quran under Abu Bakr, the manuscript was entrusted to her safekeeping.",
+    summaryAr: "أم المؤمنين بنت عمر بن الخطاب، عُرفت بعبادتها وصيامها، وحُفظ عندها مصحف القرآن بعد جمعه.",
     refs: [
       "Sahih al-Bukhari — the Quran manuscript entrusted to Hafsa",
       "Sira accounts of her dedication to fasting and night prayer"
@@ -822,6 +849,7 @@ const COMPANIONS = [
     title: "The First Martyr of Islam",
     category: "companion",
     summary: "The mother of Ammar ibn Yasir, Sumayya was the first person to give her life for Islam. She refused to renounce her faith under severe torture and was killed by Abu Jahl, becoming the first shaheed (martyr) in Islamic history.",
+    summaryAr: "أول شهيدة في الإسلام، ثبتت على دينها تحت التعذيب حتى قتلها أبو جهل.",
     refs: [
       "Sira accounts of the early persecution in Makkah",
       "The Prophet ﷺ passed by the family of Yasir and said 'Patience, O family of Yasir, for your appointment is Paradise'"
@@ -834,6 +862,7 @@ const COMPANIONS = [
     title: "The Servant of the Prophet ﷺ",
     category: "companion",
     summary: "Anas served the Prophet ﷺ from the age of ten for about ten years, and the Prophet ﷺ never once scolded him. He became one of the most prolific narrators of hadith and lived to be over one hundred years old.",
+    summaryAr: "خادم النبي ﷺ عشر سنين، لم يعاتبه النبي قط، ومن أكثر الصحابة رواية للحديث.",
     refs: [
       "Sahih al-Bukhari — 'He never said to me \"why did you do this\" or \"why didn't you do that\"'",
       "Sahih Muslim — thousands of hadith narrated through him"
@@ -846,6 +875,7 @@ const COMPANIONS = [
     title: "Master of Quran Recitation",
     category: "companion",
     summary: "The Prophet ﷺ said that Ubayy was the best reciter of the Quran among the companions. He was one of the scribes of revelation and a leading scholar of the Quran in Madinah.",
+    summaryAr: "سيد القراء ومن كتبة الوحي، أمره الله أن يُقرأ عليه القرآن كما أخبر النبي ﷺ.",
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Quran — 'The best reciter among you is Ubayy ibn Ka'b'",
       "Sahih Muslim — his status as a leading Quranic authority"
@@ -858,6 +888,7 @@ const COMPANIONS = [
     title: "The Beautiful Voice",
     category: "companion",
     summary: "Known for his exceptionally beautiful Quran recitation, the Prophet ﷺ said he had been given a voice like the flutes of the family of Dawud. He served as governor of Basra and Kufa and was a respected judge.",
+    summaryAr: "صاحب الصوت الجميل بالقرآن، قال عنه النبي ﷺ إنه أوتي مزماراً من مزامير آل داود.",
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Quran — 'given a flute from the flutes of Dawud'",
       "Sahih Muslim — his role as governor and judge"
@@ -870,6 +901,7 @@ const COMPANIONS = [
     title: "The Young Scholar of Madinah",
     category: "companion",
     summary: "One of the most prolific narrators of hadith from among the Ansar (helpers of Madinah), Abu Sa'id was known for his knowledge and his willingness to speak the truth and enjoin good even before rulers.",
+    summaryAr: "من علماء الأنصار الشباب، ومن المكثرين في رواية الحديث عن النبي ﷺ.",
     refs: [
       "Sahih al-Bukhari — numerous hadith narrated through him",
       "Sahih Muslim — his narrations on prayer, charity, and the Day of Judgment"
@@ -882,6 +914,7 @@ const COMPANIONS = [
     title: "Chief of the Khazraj",
     category: "companion",
     summary: "The leader of the Khazraj tribe in Madinah and one of the chiefs of the Ansar who pledged allegiance to the Prophet ﷺ at Aqabah. He was known for his extraordinary generosity — his family would call out invitations to travelers every evening.",
+    summaryAr: "سيد الخزرج وأحد نقباء الأنصار ليلة العقبة، اشتهر بكرمه العظيم.",
     refs: [
       "Sahih al-Bukhari — narrations on his generosity and leadership",
       "Sira accounts of the Pledge of Aqabah and his role among the Ansar"
@@ -894,6 +927,7 @@ const COMPANIONS = [
     title: "Host of the Prophet ﷺ in Madinah",
     category: "companion",
     summary: "When the Prophet ﷺ arrived in Madinah during the Hijrah, his camel stopped at Abu Ayyub's house, and Abu Ayyub had the honor of hosting the Prophet ﷺ until the mosque and quarters were built. He continued fighting in the path of Allah until old age.",
+    summaryAr: "مضيف النبي ﷺ عند قدومه المدينة، ظل مجاهداً حتى توفي عند أسوار القسطنطينية.",
     refs: [
       "Sahih al-Bukhari — the Prophet's arrival and stay at his home",
       "Historical accounts of his participation in battles until the siege of Constantinople"
@@ -906,6 +940,7 @@ const COMPANIONS = [
     title: "The Prophet's Second Mother",
     category: "companion",
     summary: "Umm Ayman cared for the Prophet ﷺ from his childhood after the death of his mother Aminah. The Prophet ﷺ called her 'my mother after my mother' and said she was from the people of Paradise. She was among the earliest Muslims.",
+    summaryAr: "حاضنة النبي ﷺ منذ صغره، قال عنها: أم أيمن أمي بعد أمي، وبشّرها بالجنة.",
     refs: [
       "Sahih Muslim — the Prophet's love and respect for Umm Ayman",
       "Sira accounts of her care for the Prophet ﷺ from childhood"
@@ -918,6 +953,7 @@ const COMPANIONS = [
     title: "First to Recite Quran Publicly in Makkah",
     category: "companion",
     summary: "One of the earliest Muslims, Ibn Mas'ud was the first person to recite the Quran publicly in Makkah. The Prophet ﷺ told the companions to learn the Quran from four people, naming Ibn Mas'ud first. He became one of the greatest scholars of tafsir and fiqh.",
+    summaryAr: "أول من جهر بالقرآن في مكة، ومن كبار علماء التفسير والفقه، أمر النبي ﷺ بأخذ القرآن عنه.",
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Companions — 'Learn the Quran from four: Abdullah ibn Mas'ud...'",
       "Sahih Muslim — his deep knowledge and early conversion"
@@ -930,6 +966,7 @@ const COMPANIONS = [
     title: "The Patient Endurer",
     category: "companion",
     summary: "A blacksmith and one of the earliest Muslims, Khabbab endured some of the worst torture in Makkah — his masters would press hot iron onto his back. He remained steadfast, and the Prophet ﷺ prayed for him.",
+    summaryAr: "من السابقين إلى الإسلام، عُذّب في مكة بالحديد المحمّى فصبر واحتسب أجره عند الله.",
     refs: [
       "Sahih al-Bukhari, Book of Merits of the Companions — his complaint of suffering and the Prophet's response",
       "Sira accounts of the persecution of early Muslims in Makkah"
@@ -942,9 +979,335 @@ const COMPANIONS = [
     title: "The Profit of the Trade",
     category: "companion",
     summary: "A Roman-raised Arab who gave up all his wealth to the Quraysh in exchange for being allowed to migrate to Madinah. When the Prophet ﷺ heard of this, he said 'Suhayb has profited! Suhayb has profited!' — and the verse 'And among people is he who sells himself seeking the pleasure of Allah' was revealed about him.",
+    summaryAr: "ترك ماله كله لقريش ليهاجر إلى الله ورسوله، فقال النبي ﷺ: ربح صهيب، ربح صهيب.",
     refs: [
       "Sahih Muslim — the account of his migration and sacrifice",
       "Surah Al-Baqarah (2:207) — 'sells himself seeking the pleasure of Allah' (identified as referring to Suhayb in tafsir)"
+    ]
+  },
+  {
+    id: "zayd-thabit",
+    name: "Zayd ibn Thabit",
+    arabic: "زيد بن ثابت",
+    title: "Scribe of Revelation, Compiler of the Quran",
+    category: "companion",
+    summary: "The Prophet's ﷺ chief scribe of revelation, who learned Hebrew and Syriac on his command. He led the compilation of the Quran under Abu Bakr and again under Uthman, and was a leading scholar of inheritance law.",
+    summaryAr: "كاتب الوحي الأول للنبي ﷺ، تولى جمع القرآن في عهد أبي بكر ثم في عهد عثمان، وكان من أعلم الصحابة بالفرائض.",
+    refs: [
+      "Sahih al-Bukhari, Book of Virtues of the Quran — the compilation of the Quran",
+      "Historical accounts of the standardization of the Mushaf under Uthman"
+    ]
+  },
+  {
+    id: "amr-ibn-alas",
+    name: "Amr ibn al-As",
+    arabic: "عمرو بن العاص",
+    title: "Conqueror of Egypt",
+    category: "companion",
+    summary: "A shrewd statesman and commander who embraced Islam before the conquest of Makkah. He led the Muslim conquest of Egypt and founded the city of Fustat, and the Prophet ﷺ used him for important missions.",
+    summaryAr: "داهية العرب وقائدها المحنّك، أسلم قبل فتح مكة، وقاد فتح مصر وأسّس مدينة الفسطاط.",
+    refs: [
+      "Sahih Muslim — narrations on his acceptance of Islam",
+      "Historical accounts of the conquest of Egypt (640-642 CE)"
+    ]
+  },
+  {
+    id: "usama",
+    name: "Usama ibn Zayd",
+    arabic: "أسامة بن زيد",
+    title: "The Beloved, Son of the Beloved",
+    category: "companion",
+    summary: "The son of Zayd ibn Harithah, deeply loved by the Prophet ﷺ, who appointed him commander of an army at about eighteen years old — the youngest commander over senior companions.",
+    summaryAr: "الحِبّ ابن الحِبّ، ابن زيد بن حارثة، أمّره النبي ﷺ على جيش فيه كبار الصحابة وهو ابن ثماني عشرة سنة.",
+    refs: [
+      "Sahih al-Bukhari — the Prophet's love for Usama and his appointment as commander",
+      "Sira accounts of the expedition of Usama"
+    ]
+  },
+  {
+    id: "hudhayfa",
+    name: "Hudhayfa ibn al-Yaman",
+    arabic: "حذيفة بن اليمان",
+    title: "Keeper of the Prophet's Secret",
+    category: "companion",
+    summary: "The Prophet ﷺ entrusted him alone with the names of the hypocrites, so he was called the Keeper of the Secret. He asked the Prophet about evil and tribulations while others asked about good, to protect himself and the Ummah.",
+    summaryAr: "صاحب سرّ النبي ﷺ، ائتمنه على أسماء المنافقين، وكان يسأل عن الشر مخافة أن يدركه.",
+    refs: [
+      "Sahih al-Bukhari, Book of Tribulations — his questions about evil and trials",
+      "Sahih Muslim — his role as keeper of the secret"
+    ]
+  },
+  {
+    id: "saad-muadh",
+    name: "Sa'd ibn Mu'adh",
+    arabic: "سعد بن معاذ",
+    title: "Chief of Aws — the Throne Shook for His Death",
+    category: "companion",
+    summary: "The chief of the Aws tribe whose acceptance of Islam brought his whole tribe to the faith. He was fatally wounded at the Battle of the Trench, and the Prophet ﷺ said the Throne of the Most Merciful shook at his death.",
+    summaryAr: "سيد الأوس، أسلم فأسلم بإسلامه قومه، وقال النبي ﷺ: اهتز عرش الرحمن لموت سعد بن معاذ.",
+    refs: [
+      "Sahih al-Bukhari & Sahih Muslim — 'The Throne of the Most Merciful shook at the death of Sa'd'",
+      "Sira accounts of the Battle of the Trench and his judgment on Banu Qurayza"
+    ]
+  },
+  {
+    id: "abu-darda",
+    name: "Abu ad-Darda",
+    arabic: "أبو الدرداء",
+    title: "The Wise Worshipper",
+    category: "companion",
+    summary: "A companion known for wisdom, asceticism, and deep worship, who devoted himself to knowledge after embracing Islam. He became the judge of Damascus and a teacher of the Quran.",
+    summaryAr: "حكيم هذه الأمة، عُرف بالزهد والعبادة، وتولى قضاء دمشق وتعليم الناس القرآن.",
+    refs: [
+      "Sahih al-Bukhari — his brotherhood with Salman al-Farisi and lessons in balance",
+      "Sira accounts of his role as judge and teacher in Damascus"
+    ]
+  },
+  {
+    id: "ubada",
+    name: "Ubada ibn as-Samit",
+    arabic: "عبادة بن الصامت",
+    title: "Teacher of the Quran, Witness of the Pledges",
+    category: "companion",
+    summary: "One of the leaders of the Ansar who witnessed all the pledges of Aqabah and Badr. He taught the Quran to the People of the Suffa and later spread Quranic learning in Syria.",
+    summaryAr: "من نقباء الأنصار، شهد بيعتي العقبة وبدراً، وعلّم أهل الصُّفَّة القرآن ونشر علمه في الشام.",
+    refs: [
+      "Sahih al-Bukhari — his narrations of the pledge of Aqabah",
+      "Sahih Muslim — his hadith on the virtue of teaching the Quran"
+    ]
+  },
+  {
+    id: "hassan-thabit",
+    name: "Hassan ibn Thabit",
+    arabic: "حسان بن ثابت",
+    title: "Poet of the Prophet ﷺ",
+    category: "companion",
+    summary: "The official poet of Islam who defended the Prophet ﷺ with his poetry. The Prophet ﷺ prayed for him to be supported by the Holy Spirit (Jibril) as he responded to the poets of Quraysh.",
+    summaryAr: "شاعر النبي ﷺ، دافع عن الإسلام بشعره، ودعا له النبي أن يؤيده روح القدس.",
+    refs: [
+      "Sahih al-Bukhari — 'O Allah, support him with the Holy Spirit'",
+      "Sira accounts of his poetry in defense of Islam"
+    ]
+  },
+  {
+    id: "ibn-rawaha",
+    name: "Abdullah ibn Rawaha",
+    arabic: "عبد الله بن رواحة",
+    title: "Poet and Martyr of Mu'tah",
+    category: "companion",
+    summary: "A poet of the Ansar and one of the three commanders appointed at Mu'tah, where he was martyred after Zayd and Ja'far. Known for his emotional recitation of poetry in the path of Allah.",
+    summaryAr: "شاعر الأنصار وثالث الأمراء في غزوة مؤتة، استشهد فيها بعد زيد وجعفر.",
+    refs: [
+      "Sahih al-Bukhari — the account of the three commanders of Mu'tah",
+      "Sira accounts of his poetry and martyrdom"
+    ]
+  },
+  {
+    id: "kab-malik",
+    name: "Ka'b ibn Malik",
+    arabic: "كعب بن مالك",
+    title: "The Companion of the Accepted Repentance",
+    category: "companion",
+    summary: "One of the three companions who stayed behind from Tabuk without excuse and spoke the truth about it. After fifty days of boycott, Allah revealed verses accepting their repentance — one of the greatest lessons in honesty.",
+    summaryAr: "أحد الثلاثة الذين خُلِّفوا في غزوة تبوك فصدقوا، فأنزل الله توبتهم في القرآن.",
+    refs: [
+      "Sahih al-Bukhari & Sahih Muslim — the full story of his repentance",
+      "Surah At-Tawbah (9:118) — the acceptance of the repentance of the three"
+    ]
+  },
+  {
+    id: "abu-talha",
+    name: "Abu Talha al-Ansari",
+    arabic: "أبو طلحة الأنصاري",
+    title: "The Generous Defender of Uhud",
+    category: "companion",
+    summary: "A skilled archer who shielded the Prophet ﷺ at Uhud, and one of the wealthiest of the Ansar. When the verse 'You will never attain righteousness until you spend from what you love' was revealed, he gave away his most beloved garden.",
+    summaryAr: "رامي النبي ﷺ يوم أحد، تصدق بأحب أمواله بستان بيرحاء لما نزلت: لن تنالوا البر حتى تنفقوا مما تحبون.",
+    refs: [
+      "Sahih al-Bukhari — the story of the garden of Bayruha",
+      "Sahih Muslim — his defense of the Prophet ﷺ at Uhud"
+    ]
+  },
+  {
+    id: "umm-sulaym",
+    name: "Umm Sulaym",
+    arabic: "أم سليم",
+    title: "Mother of Anas, Woman of Paradise",
+    category: "companion",
+    summary: "The mother of Anas ibn Malik, who made her son's service to the Prophet ﷺ her gift, and whose dowry from Abu Talha was his acceptance of Islam. The Prophet ﷺ said he heard her footsteps in Paradise.",
+    summaryAr: "أم أنس بن مالك، جعلت مهرها إسلام أبي طلحة، وقال النبي ﷺ إنه سمع خشف قدميها في الجنة.",
+    refs: [
+      "Sahih Muslim — the Prophet heard her footsteps in Paradise",
+      "Sahih al-Bukhari — her patience at the death of her child"
+    ]
+  },
+  {
+    id: "umm-ammara",
+    name: "Nusayba bint Ka'b (Umm Ammara)",
+    arabic: "نسيبة بنت كعب (أم عمارة)",
+    title: "The Warrior of Uhud",
+    category: "companion",
+    summary: "A woman of the Ansar who fought with sword and shield to defend the Prophet ﷺ at Uhud when others fled, suffering many wounds. The Prophet ﷺ said that wherever he turned that day, he saw her defending him.",
+    summaryAr: "المجاهدة التي دافعت عن النبي ﷺ يوم أحد بالسيف والترس، فقال: ما التفتُّ يميناً ولا شمالاً إلا وأراها تقاتل دوني.",
+    refs: [
+      "Sira accounts of the Battle of Uhud and her defense of the Prophet ﷺ",
+      "Historical accounts of her role at the Battle of Yamamah"
+    ]
+  },
+  {
+    id: "asma",
+    name: "Asma bint Abu Bakr",
+    arabic: "أسماء بنت أبي بكر",
+    title: "Dhat an-Nitaqayn (She of the Two Belts)",
+    category: "companion",
+    summary: "The daughter of Abu Bakr who secretly carried food to the Prophet ﷺ and her father in the cave during the Hijrah, tearing her belt in two to tie the provisions — earning her famous title from the Prophet ﷺ.",
+    summaryAr: "ذات النطاقين، حملت الطعام سراً إلى النبي ﷺ وأبيها في غار ثور، وشقّت نطاقها نصفين لتربط به الزاد.",
+    refs: [
+      "Sahih al-Bukhari — the story of the two belts during the Hijrah",
+      "Sira accounts of her long life and firmness upon truth"
+    ]
+  },
+  {
+    id: "ibn-zubayr",
+    name: "Abdullah ibn az-Zubayr",
+    arabic: "عبد الله بن الزبير",
+    title: "First Child Born to the Muhajirin in Madinah",
+    category: "companion",
+    summary: "The son of az-Zubayr and Asma bint Abu Bakr, and the first child born to the emigrants in Madinah, whose birth the Muslims celebrated. He grew to be a devoted worshipper and brave leader.",
+    summaryAr: "أول مولود للمهاجرين في المدينة، فرح المسلمون بمولده، ونشأ عابداً شجاعاً فصيحاً.",
+    refs: [
+      "Sahih al-Bukhari — the joy of the Muslims at his birth",
+      "Historical accounts of his worship and courage"
+    ]
+  },
+  {
+    id: "ibn-mazun",
+    name: "Uthman ibn Maz'un",
+    arabic: "عثمان بن مظعون",
+    title: "The Early Ascetic",
+    category: "companion",
+    summary: "One of the earliest converts, known for his devotion and asceticism even before Islam — he had forbidden alcohol upon himself in Jahiliyyah. He was the first of the Muhajirin to die in Madinah.",
+    summaryAr: "من السابقين إلى الإسلام، حرّم الخمر على نفسه في الجاهلية، وهو أول المهاجرين وفاة في المدينة.",
+    refs: [
+      "Sahih al-Bukhari — the Prophet's words at his death",
+      "Sira accounts of his asceticism and early conversion"
+    ]
+  },
+  {
+    id: "abdullah-amr",
+    name: "Abdullah ibn Amr ibn al-As",
+    arabic: "عبد الله بن عمرو بن العاص",
+    title: "The Scribe of Hadith",
+    category: "companion",
+    summary: "One of the few companions who wrote down hadith with the Prophet's permission in a collection he called 'As-Sahifa as-Sadiqa'. Known for his intense worship, fasting, and night prayer.",
+    summaryAr: "من قلائل الصحابة الذين كتبوا الحديث بإذن النبي ﷺ في صحيفته الصادقة، وعُرف بكثرة العبادة والصيام.",
+    refs: [
+      "Sunan Abu Dawud — permission to write the hadith (As-Sahifa as-Sadiqa)",
+      "Sahih al-Bukhari — the Prophet's guidance to him on moderation in worship"
+    ]
+  },
+  {
+    id: "thabit-qays",
+    name: "Thabit ibn Qays",
+    arabic: "ثابت بن قيس",
+    title: "Orator of the Prophet ﷺ",
+    category: "companion",
+    summary: "The official speaker of the Prophet ﷺ who answered delegations on his behalf. He feared his loud voice had doomed him when verses against raising voices were revealed, but the Prophet ﷺ gave him glad tidings of Paradise.",
+    summaryAr: "خطيب النبي ﷺ، خاف لما نزل النهي عن رفع الصوت، فبشّره النبي بالجنة، واستشهد يوم اليمامة.",
+    refs: [
+      "Sahih al-Bukhari — the glad tidings given to Thabit",
+      "Sahih Muslim — 'He is from the people of Paradise'"
+    ]
+  },
+  {
+    id: "salim-mawla",
+    name: "Salim, Mawla of Abu Hudhayfa",
+    arabic: "سالم مولى أبي حذيفة",
+    title: "Master Reciter of the Quran",
+    category: "companion",
+    summary: "A freed slave whom the Prophet ﷺ named among the four from whom the Quran should be learned. He led the emigrants in prayer before the Hijrah because he knew the most Quran, and was martyred at Yamamah.",
+    summaryAr: "أحد الأربعة الذين أمر النبي ﷺ بأخذ القرآن عنهم، أمّ المهاجرين في الصلاة لكثرة حفظه، واستشهد يوم اليمامة.",
+    refs: [
+      "Sahih al-Bukhari — 'Take the Quran from four: ... and Salim'",
+      "Sira accounts of his leading the prayer and martyrdom at Yamamah"
+    ]
+  },
+  {
+    id: "zaynab-jahsh",
+    name: "Zaynab bint Jahsh",
+    arabic: "زينب بنت جحش",
+    title: "Mother of the Believers, the Charitable",
+    category: "companion",
+    summary: "A wife of the Prophet ﷺ whose marriage was decreed in the Quran itself. Known for her worship, honesty, and generosity — Aisha described her as the best of women in piety and charity.",
+    summaryAr: "أم المؤمنين التي زوّجها الله لنبيه من فوق سبع سماوات، وكانت أطولهن يداً بالصدقة والعطاء.",
+    refs: [
+      "Surah Al-Ahzab (33:37) — her marriage decreed by Allah",
+      "Sahih Muslim — Aisha's praise of her piety and charity"
+    ]
+  },
+  {
+    id: "safiyya",
+    name: "Safiyya bint Huyayy",
+    arabic: "صفية بنت حيي",
+    title: "Mother of the Believers",
+    category: "companion",
+    summary: "A noblewoman descended from Harun (Aaron) who became a wife of the Prophet ﷺ after Khaybar. The Prophet ﷺ defended her honor and reminded her of her noble prophetic lineage.",
+    summaryAr: "أم المؤمنين من نسل هارون عليه السلام، تزوجها النبي ﷺ بعد خيبر وأكرمها ودافع عنها.",
+    refs: [
+      "Sahih al-Bukhari — her marriage to the Prophet ﷺ after Khaybar",
+      "Jami at-Tirmidhi — 'You are the daughter of a prophet, your uncle is a prophet...'"
+    ]
+  },
+  {
+    id: "juwayriya",
+    name: "Juwayriya bint al-Harith",
+    arabic: "جويرية بنت الحارث",
+    title: "Mother of the Believers, Blessing to Her People",
+    category: "companion",
+    summary: "When the Prophet ﷺ married her, the Muslims freed a hundred families of her tribe out of respect, so Aisha said no woman brought more blessing to her people than Juwayriya.",
+    summaryAr: "أم المؤمنين التي أُعتق بزواجها مئة بيت من قومها، فقالت عائشة: ما امرأة أعظم بركة على قومها منها.",
+    refs: [
+      "Sunan Abu Dawud — the freeing of her people upon her marriage",
+      "Sahih Muslim — her long remembrance of Allah after Fajr"
+    ]
+  },
+  {
+    id: "sawda",
+    name: "Sawda bint Zam'a",
+    arabic: "سودة بنت زمعة",
+    title: "Mother of the Believers",
+    category: "companion",
+    summary: "The first woman the Prophet ﷺ married after Khadijah's death, comforting his household in its hardest years. Known for her kindness, humor, and giving her allotted day to Aisha in her old age.",
+    summaryAr: "أول من تزوجها النبي ﷺ بعد خديجة، فآنست بيته في أصعب سنواته، وعُرفت بطيب قلبها ودعابتها.",
+    refs: [
+      "Sahih al-Bukhari — her giving her day to Aisha",
+      "Sira accounts of her early Islam and migration to Abyssinia"
+    ]
+  },
+  {
+    id: "maymuna",
+    name: "Maymuna bint al-Harith",
+    arabic: "ميمونة بنت الحارث",
+    title: "Mother of the Believers",
+    category: "companion",
+    summary: "The last woman the Prophet ﷺ married. Aisha described her as among the most fearful of Allah and the most devoted to keeping ties of kinship.",
+    summaryAr: "آخر أمهات المؤمنين زواجاً من النبي ﷺ، قالت عنها عائشة: كانت من أتقانا لله وأوصلنا للرحم.",
+    refs: [
+      "Sahih Muslim — narrations of her piety",
+      "Sira accounts of her marriage in the year of Qada' Umrah"
+    ]
+  },
+  {
+    id: "abu-dujana",
+    name: "Abu Dujana",
+    arabic: "أبو دجانة",
+    title: "The Warrior of the Red Band",
+    category: "companion",
+    summary: "The Ansari hero who took the Prophet's sword at Uhud when he asked who would take it with its right, wearing his famous red band of war and shielding the Prophet ﷺ with his own back from arrows.",
+    summaryAr: "بطل الأنصار الذي أخذ سيف النبي ﷺ بحقه يوم أحد، وجعل ظهره درعاً للنبي من السهام.",
+    refs: [
+      "Sahih Muslim — taking the sword of the Prophet ﷺ with its right",
+      "Sira accounts of his red band and bravery at Uhud"
     ]
   }
 ];

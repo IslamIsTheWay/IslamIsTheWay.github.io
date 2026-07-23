@@ -126,8 +126,15 @@
         <textarea id="vDesc" placeholder="What the video explains..."></textarea>
         <label>Price</label>
         <input type="text" id="vPrice" placeholder="e.g. $5" />
-        <label>Video link (YouTube unlisted / Google Drive — kept hidden from users)</label>
-        <input type="text" id="vUrl" placeholder="https://..." />
+        <label>Upload the video file from your laptop (up to ~45 MB)</label>
+        <input type="file" id="vFile" accept="video/*" />
+        <div style="display:flex;align-items:center;gap:12px;margin-top:8px;">
+          <button class="btn btn-outline btn-small" type="button" onclick="uploadVideoFile()">⬆ Upload Video File</button>
+          <span id="vUpMsg" style="font-size:.85rem;font-weight:600;"></span>
+        </div>
+        <p style="font-size:.8rem;color:var(--text-muted);margin-top:6px;">Tip: paste your GitHub token in the bar at the bottom first — the upload uses it. For videos larger than 45 MB, upload to YouTube (unlisted) instead and paste the link below.</p>
+        <label>OR paste a video link (YouTube unlisted / Google Drive — kept hidden from users)</label>
+        <input type="text" id="vUrl" placeholder="https://... (filled automatically after upload)" />
         <label>Access code (you give this to users after they pay)</label>
         <input type="text" id="vCode" placeholder="e.g. TAFSIR18-A" />
         <button class="btn btn-primary btn-small" onclick="addVideo()">Add Video</button>
@@ -266,6 +273,42 @@
       ["mTitle","mCourse","mTime"].forEach(id => document.getElementById(id).value = "");
       renderLists();
       alert("Meeting created!\n\nCode for users: " + code + "\n\nRemember to press Publish Changes, then share this code only with the users who paid for the course.");
+    }
+
+    async function uploadVideoFile() {
+      const msg = document.getElementById("vUpMsg");
+      const token = document.getElementById("ghToken").value.trim();
+      if (!token) { msg.textContent = "Paste your GitHub token in the bottom bar first."; msg.style.color = "#8a3d1f"; return; }
+      const fileInput = document.getElementById("vFile");
+      const file = fileInput.files[0];
+      if (!file) { msg.textContent = "Choose a video file first."; msg.style.color = "#8a3d1f"; return; }
+      if (file.size > 45 * 1024 * 1024) {
+        msg.textContent = "File is larger than 45 MB — upload it to YouTube (unlisted) and paste the link instead.";
+        msg.style.color = "#8a3d1f";
+        return;
+      }
+      msg.textContent = "Uploading... please wait (do not close the page)."; msg.style.color = "var(--text-muted)";
+      try {
+        const base64 = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result.split(",")[1]);
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+        const path = "media/" + Date.now() + "-" + safeName;
+        const resp = await fetch("https://api.github.com/repos/IslamIsTheWay/IslamIsTheWay.github.io/contents/" + path, {
+          method: "PUT",
+          headers: { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json", "Content-Type": "application/json" },
+          body: JSON.stringify({ message: "Upload course video " + safeName, content: base64 })
+        });
+        if (!resp.ok) throw new Error("GitHub returned " + resp.status);
+        document.getElementById("vUrl").value = "https://islamistheway.github.io/" + path;
+        msg.textContent = "✓ Uploaded! The link was filled in below — now press Add Video."; msg.style.color = "var(--green-dark)";
+        fileInput.value = "";
+      } catch (err) {
+        msg.textContent = "Upload failed: " + err.message; msg.style.color = "#8a3d1f";
+      }
     }
 
     function genCode(prefix) {

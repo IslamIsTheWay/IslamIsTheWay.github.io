@@ -44,7 +44,8 @@ function runPersonSearch(query) {
       person.title.toLowerCase().includes(q) ||
       person.summary.toLowerCase().includes(q) ||
       person.id.toLowerCase().includes(q) ||
-      person.arabic.includes(query.trim())
+      person.arabic.includes(query.trim()) ||
+      (person.summaryAr && person.summaryAr.includes(query.trim()))
     );
   });
 
@@ -64,6 +65,7 @@ function runPersonSearch(query) {
       <h3>${person.name} <span style="font-family:'Amiri',serif; color: var(--green); font-size:1.1rem;">${person.arabic}</span></h3>
       <p style="color: var(--gold); font-weight:600; font-size:0.85rem; margin-bottom: 8px;">${person.title}</p>
       <p>${person.summary}</p>
+      ${person.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif; font-size:1.05rem; line-height:1.9; color: var(--green-dark); text-align:right; background: var(--green-pale); border-radius:8px; padding:10px 14px; margin-bottom:12px;">${person.summaryAr}</p>` : ""}
       <div class="refs">
         <strong>References:</strong>
         <ul>${person.refs.map(r => `<li>${r}</li>`).join("")}</ul>
