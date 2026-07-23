@@ -52,7 +52,52 @@
     </div>
   </section>
 
+  <section class="pattern-bg" id="videosSection" style="display:none;">
+    <div class="container">
+      <h2 class="section-title">🎬 Premium Video Lessons</h2>
+      <p class="section-sub">Recorded lessons by our teachers. Pay for a video, receive its access code, and watch any time.</p>
+      <div class="divider"></div>
+      <br>
+      <div class="grid" id="videoGrid"></div>
+      <div id="paymentInfo" style="max-width:640px;margin:36px auto 0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow);display:none;">
+        <h3 style="color:var(--green-dark);margin-bottom:10px;">💳 How to Pay</h3>
+        <p id="payAccountLine" style="margin-bottom:8px;"></p>
+        <p id="payInstructionsLine" style="color:var(--text-muted);font-size:.92rem;margin-bottom:12px;"></p>
+        <img id="payQrImg" src="" alt="Payment QR code" style="max-width:200px;border-radius:10px;display:none;" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:640px;text-align:center;">
+      <h2 class="section-title">📹 Join a Live Class</h2>
+      <p class="section-sub">Enrolled in a course? Your teacher gave you a meeting code — enter it to join your live session with recording and live translated captions (Arabic, English, Urdu, Indonesian, Bengali).</p>
+      <div class="divider"></div>
+      <br>
+      <div style="display:flex;gap:10px;max-width:420px;margin:0 auto;">
+        <input type="text" id="joinCode" placeholder="IITW-______" style="flex:1;padding:13px 16px;border:1px solid var(--border);border-radius:10px;font-family:monospace;text-transform:uppercase;font-size:1rem;text-align:center;" />
+        <button class="btn btn-primary" onclick="location.href='meeting.html?code='+encodeURIComponent(document.getElementById('joinCode').value.trim())">Join</button>
+      </div>
+    </div>
+  </section>
+
   <section class="pattern-bg">
+    <div class="container" style="max-width:640px;">
+      <h2 class="section-title">💬 Tell Us What You Think</h2>
+      <p class="section-sub">Found a problem? Have an idea to improve the website? Send it to our team — we read every message.</p>
+      <div class="divider"></div>
+      <br>
+      <form onsubmit="sendFeedback(event)" style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow);">
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;">Your name (optional)</label>
+        <input type="text" id="fbName" style="width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:14px;" />
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;">Your message</label>
+        <textarea id="fbMsg" required style="width:100%;min-height:110px;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;resize:vertical;" placeholder="Describe the problem or your suggestion..."></textarea>
+        <button type="submit" class="btn btn-primary" style="margin-top:14px;">Send Feedback</button>
+      </form>
+    </div>
+  </section>
+
+  <section>
     <div class="container" style="text-align:center;">
       <h2 class="section-title">Not Ready to Enroll?</h2>
       <div class="divider"></div>
@@ -95,7 +140,8 @@
   <script src="js/data.js"></script>
   <script>
     const grid = document.getElementById("courseGrid");
-    COURSES.forEach(c => {
+
+    function renderCourse(c) {
       const card = document.createElement("div");
       card.className = "course-card";
       card.innerHTML = `
@@ -106,12 +152,81 @@
         </div>
         <div class="course-body">
           <p>${c.description}</p>
-          <ul>${c.includes.map(i => `<li>${i}</li>`).join("")}</ul>
+          <ul>${(c.includes || []).map(i => `<li>${i}</li>`).join("")}</ul>
           <a href="login.html" class="btn btn-primary" style="text-align:center;">Enroll Now</a>
         </div>
       `;
       grid.appendChild(card);
-    });
+    }
+
+    COURSES.forEach(renderCourse);
+
+    async function loadSiteConfig() {
+      try {
+        const r = await fetch("data/site-config.json?t=" + Date.now());
+        if (!r.ok) return;
+        const cfg = await r.json();
+
+        (cfg.extraCourses || []).forEach(renderCourse);
+
+        const videos = cfg.videos || [];
+        if (videos.length > 0) {
+          document.getElementById("videosSection").style.display = "";
+          const vg = document.getElementById("videoGrid");
+          videos.forEach((v, idx) => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `
+              <div class="icon">🎬</div>
+              <h3>${v.title}</h3>
+              <p>${v.description || ""}</p>
+              <p style="font-weight:700;color:var(--gold);font-size:1.1rem;margin:10px 0;">${v.price}</p>
+              <div style="display:flex;gap:8px;">
+                <input type="text" id="vc${idx}" placeholder="Access code" style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;" />
+                <button class="btn btn-primary btn-small" onclick="unlockVideo(${idx})">Watch</button>
+              </div>
+              <p id="vmsg${idx}" style="font-size:.82rem;color:#8a3d1f;min-height:1.2em;margin-top:6px;"></p>
+            `;
+            vg.appendChild(card);
+          });
+          window._videos = videos;
+
+          const pay = cfg.payment || {};
+          if (pay.account || pay.qrUrl) {
+            document.getElementById("paymentInfo").style.display = "";
+            document.getElementById("payAccountLine").innerHTML = pay.account ? "<strong>Payment account:</strong> " + pay.account : "";
+            document.getElementById("payInstructionsLine").textContent = pay.instructions || "";
+            if (pay.qrUrl) {
+              const img = document.getElementById("payQrImg");
+              img.src = pay.qrUrl;
+              img.style.display = "";
+            }
+          }
+        }
+      } catch (e) {}
+    }
+
+    function unlockVideo(idx) {
+      const v = window._videos[idx];
+      const entered = document.getElementById("vc" + idx).value.trim().toUpperCase();
+      const msg = document.getElementById("vmsg" + idx);
+      if (entered && v.code && entered === v.code.toUpperCase()) {
+        if (v.url) { window.open(v.url, "_blank"); msg.textContent = ""; }
+        else msg.textContent = "Video link not set yet — please contact the staff.";
+      } else {
+        msg.textContent = "Wrong code. Pay for this video and the staff will send you the code.";
+      }
+    }
+
+    function sendFeedback(e) {
+      e.preventDefault();
+      const name = document.getElementById("fbName").value.trim();
+      const body = document.getElementById("fbMsg").value.trim();
+      const subject = "Islam Is The Way — Feedback" + (name ? " from " + name : "");
+      window.location.href = "mailto:ammarwalidyounis@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    loadSiteConfig();
   </script>
   <script src="js/main.js"></script>
 </body>

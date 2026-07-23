@@ -8,6 +8,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
+    .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
+    .staff-panel .panel-sub { color:var(--text-muted); font-size:.9rem; margin-bottom:18px; }
+    .staff-panel label { display:block; font-size:.85rem; font-weight:600; margin:12px 0 4px; color:var(--text-dark); }
+    .staff-panel input, .staff-panel textarea, .staff-panel select { width:100%; padding:11px 14px; border:1px solid var(--border); border-radius:8px; font-family:inherit; font-size:.95rem; }
+    .staff-panel textarea { min-height:70px; resize:vertical; }
+    .staff-panel .btn { margin-top:14px; }
+    .item-list { margin-top:16px; }
+    .item-row { display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--green-pale); border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin-bottom:8px; font-size:.9rem; }
+    .item-row .del { background:#fbe9e0; color:#8a3d1f; border:none; border-radius:6px; padding:6px 12px; cursor:pointer; font-weight:600; }
+    .meeting-code { font-family:monospace; font-weight:700; color:var(--green-dark); background:var(--green-light); padding:2px 8px; border-radius:6px; }
+    .publish-bar { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--green); padding:16px 24px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; box-shadow:0 -4px 20px rgba(0,0,0,.08); z-index:50; }
+    .publish-bar input { flex:1; min-width:220px; padding:11px 14px; border:1px solid var(--border); border-radius:8px; }
+    #publishMsg { font-size:.9rem; font-weight:600; }
+    #publishMsg.ok { color:var(--green-dark); }
+    #publishMsg.err { color:#8a3d1f; }
+    .status-note { background:var(--green-light); border-radius:8px; padding:12px 16px; font-size:.85rem; margin-bottom:20px; }
+  </style>
 </head>
 <body>
 
@@ -41,32 +60,94 @@
 
   <div class="page-hero">
     <div class="container">
-      <h1>Staff Area</h1>
-      <p>Welcome back. This space is reserved for site administrators and instructors.</p>
+      <h1>Staff Dashboard</h1>
+      <p>Manage courses, paid videos, payment details, and live meetings. Changes go live for all visitors after you click "Publish Changes".</p>
     </div>
   </div>
 
   <section>
-    <div class="container">
-      <div class="grid">
-        <div class="card">
-          <div class="icon">📝</div>
-          <h3>Manage Content</h3>
-          <p>Edit Prophet, Companion, and Hadith entries by updating <code>js/data.js</code>. A future update could connect this to a real content management system.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🎓</div>
-          <h3>Course Enrollments</h3>
-          <p>View and manage student enrollments for Quranic Arabic, Quranic Sciences, Islamic Studies, and Hadith Sciences once a backend is connected.</p>
-        </div>
-        <div class="card">
-          <div class="icon">💬</div>
-          <h3>Community Reflections</h3>
-          <p>Review and approve community submissions before they are published on the homepage.</p>
-        </div>
+    <div class="container" style="max-width:900px;">
+
+      <div class="status-note">
+        <strong>How it works:</strong> Fill in any of the panels below, then scroll down and press <strong>Publish Changes</strong> with your GitHub token. Everything is saved to the live website for all users.
       </div>
+
+      <!-- Payment settings -->
+      <div class="staff-panel">
+        <h3>💳 Payment Details</h3>
+        <p class="panel-sub">Shown to users when they want to unlock a paid video or enroll in a course.</p>
+        <label>Account number / IBAN / payment address</label>
+        <input type="text" id="payAccount" placeholder="e.g. Bank account, Vodafone Cash, PayPal..." />
+        <label>QR code image link (optional — upload your QR image anywhere and paste its link)</label>
+        <input type="text" id="payQr" placeholder="https://..." />
+        <label>Payment instructions for users</label>
+        <textarea id="payInstructions" placeholder="e.g. After paying, send your receipt on WhatsApp +20... to receive access."></textarea>
+      </div>
+
+      <!-- Add course -->
+      <div class="staff-panel">
+        <h3>🎓 Add a New Course</h3>
+        <p class="panel-sub">Appears on the Courses page next to the existing courses.</p>
+        <label>Course title</label>
+        <input type="text" id="cTitle" placeholder="e.g. Qira'at & Tajweed Mastery" />
+        <label>Level</label>
+        <input type="text" id="cLevel" placeholder="e.g. Beginner → Advanced" />
+        <label>Price</label>
+        <input type="text" id="cPrice" placeholder="e.g. $30 / month" />
+        <label>Description</label>
+        <textarea id="cDesc" placeholder="What the course covers..."></textarea>
+        <label>What's included (one item per line)</label>
+        <textarea id="cIncludes" placeholder="Weekly live sessions&#10;Certificate&#10;..."></textarea>
+        <button class="btn btn-primary btn-small" onclick="addCourse()">Add Course</button>
+        <div class="item-list" id="courseList"></div>
+      </div>
+
+      <!-- Add video -->
+      <div class="staff-panel">
+        <h3>🎬 Add a Paid Video Lesson</h3>
+        <p class="panel-sub">Users see the title and price; they get the video link after they pay and you confirm.</p>
+        <label>Video title</label>
+        <input type="text" id="vTitle" placeholder="e.g. Tafsir of Surah Al-Kahf — Part 1" />
+        <label>Description</label>
+        <textarea id="vDesc" placeholder="What the video explains..."></textarea>
+        <label>Price</label>
+        <input type="text" id="vPrice" placeholder="e.g. $5" />
+        <label>Video link (YouTube unlisted / Google Drive — kept hidden from users)</label>
+        <input type="text" id="vUrl" placeholder="https://..." />
+        <label>Access code (you give this to users after they pay)</label>
+        <input type="text" id="vCode" placeholder="e.g. TAFSIR18-A" />
+        <button class="btn btn-primary btn-small" onclick="addVideo()">Add Video</button>
+        <div class="item-list" id="videoList"></div>
+      </div>
+
+      <!-- Create meeting -->
+      <div class="staff-panel">
+        <h3>📹 Create a Live Meeting</h3>
+        <p class="panel-sub">Generates a unique meeting code. Only users you give the code to can join. Meetings support recording and live translated captions (Arabic, English, Urdu, Indonesian, Bengali).</p>
+        <label>Meeting title</label>
+        <input type="text" id="mTitle" placeholder="e.g. Quran Recitation Class — Group A" />
+        <label>Related course (optional)</label>
+        <input type="text" id="mCourse" placeholder="e.g. Quran Recitation A to Z" />
+        <label>Date &amp; time</label>
+        <input type="datetime-local" id="mTime" />
+        <button class="btn btn-primary btn-small" onclick="addMeeting()">Create Meeting &amp; Generate Code</button>
+        <div class="item-list" id="meetingList"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="staff-panel">
+        <h3>💬 User Feedback</h3>
+        <p class="panel-sub">Feedback that users send from the site arrives at the site email inbox: <strong>ammarwalidyounis@gmail.com</strong>. Check it there and reply directly.</p>
+      </div>
+
     </div>
   </section>
+
+  <div class="publish-bar">
+    <input type="password" id="ghToken" placeholder="Paste your GitHub token here to publish (kept only in this tab)" />
+    <button class="btn btn-primary" onclick="publishChanges()">Publish Changes</button>
+    <span id="publishMsg"></span>
+  </div>
 
   <footer>
     <div class="container">
@@ -78,12 +159,117 @@
     if (sessionStorage.getItem("islamIsTheWayStaff") !== "true") {
       window.location.href = "login.html";
     }
-
     document.getElementById("logoutLink").addEventListener("click", e => {
       e.preventDefault();
       sessionStorage.removeItem("islamIsTheWayStaff");
       window.location.href = "login.html";
     });
+
+    const REPO_API = "https://api.github.com/repos/IslamIsTheWay/IslamIsTheWay.github.io/contents/data/site-config.json";
+    let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, videos: [], meetings: [], extraCourses: [] };
+
+    async function loadConfig() {
+      try {
+        const r = await fetch("data/site-config.json?t=" + Date.now());
+        if (r.ok) cfg = await r.json();
+      } catch (e) {}
+      document.getElementById("payAccount").value = cfg.payment.account || "";
+      document.getElementById("payQr").value = cfg.payment.qrUrl || "";
+      document.getElementById("payInstructions").value = cfg.payment.instructions || "";
+      renderLists();
+    }
+
+    function renderLists() {
+      document.getElementById("courseList").innerHTML = cfg.extraCourses.map((c, i) =>
+        `<div class="item-row"><span>${c.title} — ${c.price}</span><button class="del" onclick="cfg.extraCourses.splice(${i},1);renderLists()">Delete</button></div>`).join("");
+      document.getElementById("videoList").innerHTML = cfg.videos.map((v, i) =>
+        `<div class="item-row"><span>${v.title} — ${v.price} — code: <span class="meeting-code">${v.code}</span></span><button class="del" onclick="cfg.videos.splice(${i},1);renderLists()">Delete</button></div>`).join("");
+      document.getElementById("meetingList").innerHTML = cfg.meetings.map((m, i) =>
+        `<div class="item-row"><span>${m.title}${m.time ? " — " + new Date(m.time).toLocaleString() : ""} — code: <span class="meeting-code">${m.code}</span></span><button class="del" onclick="cfg.meetings.splice(${i},1);renderLists()">Delete</button></div>`).join("");
+    }
+
+    function addCourse() {
+      const title = document.getElementById("cTitle").value.trim();
+      if (!title) { alert("Please enter a course title."); return; }
+      cfg.extraCourses.push({
+        id: "custom-" + Date.now(),
+        title,
+        level: document.getElementById("cLevel").value.trim() || "All Levels",
+        price: document.getElementById("cPrice").value.trim() || "Contact us",
+        description: document.getElementById("cDesc").value.trim(),
+        includes: document.getElementById("cIncludes").value.split("\n").map(s => s.trim()).filter(Boolean)
+      });
+      ["cTitle","cLevel","cPrice","cDesc","cIncludes"].forEach(id => document.getElementById(id).value = "");
+      renderLists();
+    }
+
+    function addVideo() {
+      const title = document.getElementById("vTitle").value.trim();
+      if (!title) { alert("Please enter a video title."); return; }
+      cfg.videos.push({
+        title,
+        description: document.getElementById("vDesc").value.trim(),
+        price: document.getElementById("vPrice").value.trim() || "Contact us",
+        url: document.getElementById("vUrl").value.trim(),
+        code: document.getElementById("vCode").value.trim() || genCode("VID")
+      });
+      ["vTitle","vDesc","vPrice","vUrl","vCode"].forEach(id => document.getElementById(id).value = "");
+      renderLists();
+    }
+
+    function addMeeting() {
+      const title = document.getElementById("mTitle").value.trim();
+      if (!title) { alert("Please enter a meeting title."); return; }
+      const code = genCode("IITW");
+      cfg.meetings.push({
+        title,
+        course: document.getElementById("mCourse").value.trim(),
+        time: document.getElementById("mTime").value,
+        code
+      });
+      ["mTitle","mCourse","mTime"].forEach(id => document.getElementById(id).value = "");
+      renderLists();
+      alert("Meeting created!\n\nCode for users: " + code + "\n\nRemember to press Publish Changes, then share this code only with the users who paid for the course.");
+    }
+
+    function genCode(prefix) {
+      const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+      let s = "";
+      for (let i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
+      return prefix + "-" + s;
+    }
+
+    async function publishChanges() {
+      const msg = document.getElementById("publishMsg");
+      const token = document.getElementById("ghToken").value.trim();
+      if (!token) { msg.textContent = "Paste your GitHub token first."; msg.className = "err"; return; }
+
+      cfg.payment = {
+        account: document.getElementById("payAccount").value.trim(),
+        qrUrl: document.getElementById("payQr").value.trim(),
+        instructions: document.getElementById("payInstructions").value.trim()
+      };
+
+      msg.textContent = "Publishing..."; msg.className = "";
+      try {
+        const headers = { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" };
+        const getResp = await fetch(REPO_API, { headers });
+        let sha;
+        if (getResp.ok) sha = (await getResp.json()).sha;
+        const content = btoa(unescape(encodeURIComponent(JSON.stringify(cfg, null, 2))));
+        const putResp = await fetch(REPO_API, {
+          method: "PUT",
+          headers: { ...headers, "Content-Type": "application/json" },
+          body: JSON.stringify({ message: "Update site content from staff dashboard", content, sha })
+        });
+        if (!putResp.ok) throw new Error("GitHub returned " + putResp.status);
+        msg.textContent = "✓ Published! Live on the site in 1-2 minutes."; msg.className = "ok";
+      } catch (err) {
+        msg.textContent = "Failed: " + err.message + " — check that your token is valid and has repo access."; msg.className = "err";
+      }
+    }
+
+    loadConfig();
   </script>
   <script src="js/main.js"></script>
 </body>
