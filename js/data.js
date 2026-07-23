@@ -1403,6 +1403,36 @@ const COURSES = [
     ]
   },
   {
+    id: "qiraat",
+    title: "Qira'at — The Ten Recitations of the Quran",
+    level: "Advanced",
+    price: "$45 / month",
+    description: "Study the authentic Qira'at (canonical recitations) of the Quran — Hafs 'an 'Asim, Warsh 'an Nafi', and the rest of the ten — with their chains of transmission and the differences in pronunciation and rules between them.",
+    includes: [
+      "Introduction to the science of Qira'at and its history",
+      "Hafs 'an 'Asim — the most widespread recitation",
+      "Warsh, Qalun, and the other canonical readings",
+      "Advanced Tajweed rules applied across recitations",
+      "1-on-1 recitation practice with an Ijazah-certified teacher",
+      "Path toward Ijazah (certified chain of transmission)"
+    ]
+  },
+  {
+    id: "nour-albayan",
+    title: "Nour al-Bayan & Nooraniyah — Reading Foundations",
+    level: "Children & Beginners",
+    price: "$20 / month",
+    description: "The famous Nour al-Bayan and Qaida Nooraniyah methods used across the Muslim world to teach children and new learners how to read Arabic and the Quran correctly from zero — letters, harakat, and joining, step by step.",
+    includes: [
+      "Arabic letters with correct pronunciation (Makharij)",
+      "Harakat, tanween, madd, and sukoon step by step",
+      "Qaida Nooraniyah lessons in order",
+      "Nour al-Bayan method for young children",
+      "Fun, patient 1-on-1 sessions designed for kids",
+      "Progress certificate at the end of the program"
+    ]
+  },
+  {
     id: "quranic-arabic",
     title: "Quranic Arabic — Understand the Language of the Quran",
     level: "Beginner → Intermediate",

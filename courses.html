@@ -46,6 +46,16 @@
     </div>
   </div>
 
+  <section style="padding:40px 0 0;">
+    <div class="container" style="text-align:center;">
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" id="trialBtn" href="mailto:ammarwalidyounis@gmail.com?subject=Free%20Trial%20Session%20Request&body=Assalamu%20alaikum%2C%20I%20would%20like%20to%20book%20a%20free%20trial%20session.">🎁 Book a Free Trial Session</a>
+        <a class="btn btn-outline" id="demoBtn" href="#" target="_blank" rel="noopener" style="display:none;">🎥 Watch a Demo Lesson</a>
+      </div>
+      <p id="contactLine" style="margin-top:16px;color:var(--text-muted);font-size:.95rem;"></p>
+    </div>
+  </section>
+
   <section>
     <div class="container">
       <div class="course-grid" id="courseGrid"></div>
@@ -168,6 +178,21 @@
         const cfg = await r.json();
 
         (cfg.extraCourses || []).forEach(renderCourse);
+
+        const contact = cfg.contact || {};
+        if (contact.demoUrl) {
+          const demoBtn = document.getElementById("demoBtn");
+          demoBtn.href = contact.demoUrl;
+          demoBtn.style.display = "";
+        }
+        if (contact.whatsapp) {
+          document.getElementById("trialBtn").href =
+            "https://wa.me/" + contact.whatsapp + "?text=" + encodeURIComponent("Assalamu alaikum, I would like to book a free trial session.");
+        }
+        const contactParts = [];
+        if (contact.phone) contactParts.push("📞 " + contact.phone);
+        if (contact.whatsapp) contactParts.push("WhatsApp: +" + contact.whatsapp);
+        if (contactParts.length) document.getElementById("contactLine").textContent = "Contact us: " + contactParts.join("  •  ");
 
         const videos = cfg.videos || [];
         if (videos.length > 0) {

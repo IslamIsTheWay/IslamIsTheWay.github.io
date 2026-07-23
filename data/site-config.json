@@ -4,6 +4,11 @@
     "instructions": "Contact us after payment with your receipt to get access.",
     "qrUrl": ""
   },
+  "contact": {
+    "phone": "",
+    "whatsapp": "",
+    "demoUrl": ""
+  },
   "videos": [],
   "meetings": [],
   "extraCourses": []

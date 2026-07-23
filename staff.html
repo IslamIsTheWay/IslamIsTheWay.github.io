@@ -84,6 +84,18 @@
         <textarea id="payInstructions" placeholder="e.g. After paying, send your receipt on WhatsApp +20... to receive access."></textarea>
       </div>
 
+      <!-- Contact & trial -->
+      <div class="staff-panel">
+        <h3>📞 Contact Numbers, Demo &amp; Free Trial</h3>
+        <p class="panel-sub">Shown to users on the Courses page. The Free Trial button opens WhatsApp (or email if no WhatsApp number is set), and the Demo button plays your demo lesson.</p>
+        <label>Phone number (with country code)</label>
+        <input type="text" id="contactPhone" placeholder="e.g. +20 10 1234 5678" />
+        <label>WhatsApp number (digits only, with country code)</label>
+        <input type="text" id="contactWhatsapp" placeholder="e.g. 201012345678" />
+        <label>Demo lesson video link (YouTube etc. — leave empty to hide the Demo button)</label>
+        <input type="text" id="demoUrl" placeholder="https://..." />
+      </div>
+
       <!-- Add course -->
       <div class="staff-panel">
         <h3>🎓 Add a New Course</h3>
@@ -166,16 +178,24 @@
     });
 
     const REPO_API = "https://api.github.com/repos/IslamIsTheWay/IslamIsTheWay.github.io/contents/data/site-config.json";
-    let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, videos: [], meetings: [], extraCourses: [] };
+    let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, contact: { phone: "", whatsapp: "", demoUrl: "" }, videos: [], meetings: [], extraCourses: [] };
 
     async function loadConfig() {
       try {
         const r = await fetch("data/site-config.json?t=" + Date.now());
         if (r.ok) cfg = await r.json();
       } catch (e) {}
+      if (!cfg.payment) cfg.payment = {};
+      if (!cfg.contact) cfg.contact = {};
+      if (!cfg.videos) cfg.videos = [];
+      if (!cfg.meetings) cfg.meetings = [];
+      if (!cfg.extraCourses) cfg.extraCourses = [];
       document.getElementById("payAccount").value = cfg.payment.account || "";
       document.getElementById("payQr").value = cfg.payment.qrUrl || "";
       document.getElementById("payInstructions").value = cfg.payment.instructions || "";
+      document.getElementById("contactPhone").value = cfg.contact.phone || "";
+      document.getElementById("contactWhatsapp").value = cfg.contact.whatsapp || "";
+      document.getElementById("demoUrl").value = cfg.contact.demoUrl || "";
       renderLists();
     }
 
@@ -248,6 +268,11 @@
         account: document.getElementById("payAccount").value.trim(),
         qrUrl: document.getElementById("payQr").value.trim(),
         instructions: document.getElementById("payInstructions").value.trim()
+      };
+      cfg.contact = {
+        phone: document.getElementById("contactPhone").value.trim(),
+        whatsapp: document.getElementById("contactWhatsapp").value.trim().replace(/[^0-9]/g, ""),
+        demoUrl: document.getElementById("demoUrl").value.trim()
       };
 
       msg.textContent = "Publishing..."; msg.className = "";
