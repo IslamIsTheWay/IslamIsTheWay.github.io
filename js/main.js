@@ -2,6 +2,38 @@
    Islam Is The Way — Shared Site Behaviour
    ============================================ */
 
+/* ---------- Anonymous visit analytics ----------
+   Counts total visits, per-page visits, and which nav sections are clicked,
+   using a free public counter service. No personal data is collected. The
+   numbers are read back only inside the admin analytics panel. Everything is
+   wrapped in try/catch so a counter outage can never break the site. */
+(function () {
+  const NS = "iitw-islamistheway-2026";
+  function bump(key) {
+    try { fetch("https://abacus.jasoncameron.dev/hit/" + NS + "/" + key).catch(() => {}); } catch (e) {}
+  }
+  try {
+    let page = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    page = page.replace(".html", "") || "index";
+    // Count each visitor once per browser session to reflect real people.
+    if (!sessionStorage.getItem("iitw-session")) {
+      bump("total");
+      sessionStorage.setItem("iitw-session", "1");
+    }
+    if (!sessionStorage.getItem("iitw-pv-" + page)) {
+      bump("page-" + page);
+      sessionStorage.setItem("iitw-pv-" + page, "1");
+    }
+    document.addEventListener("click", function (e) {
+      const a = e.target.closest("nav.main-nav a");
+      if (a) {
+        const label = (a.textContent || "").trim().toLowerCase().replace(/[^a-z]/g, "");
+        if (label) bump("nav-" + label);
+      }
+    });
+  } catch (e) {}
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("nav.main-nav");

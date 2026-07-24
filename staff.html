@@ -72,6 +72,27 @@
         <strong>How it works:</strong> Fill in any of the panels below, then scroll down and press <strong>Publish Changes</strong> with your GitHub token. Everything is saved to the live website for all users.
       </div>
 
+      <!-- Admin-only analytics (visible only to the main admin account) -->
+      <div class="staff-panel" id="analyticsPanel" style="display:none;border:2px solid var(--green);">
+        <h3>📊 Website Analytics <span style="font-size:.7rem;background:var(--gold);color:#fff;padding:2px 8px;border-radius:999px;vertical-align:middle;">Admin only</span></h3>
+        <p class="panel-sub">How many people opened the website, which pages they visited, and which sections they clicked. Counts every visitor across the whole site (updates live).</p>
+        <div style="text-align:center;background:linear-gradient(135deg,#0d3a1a,#1a5c32);color:#fff;border-radius:12px;padding:22px;margin-bottom:16px;">
+          <div style="font-size:2.6rem;font-weight:800;" id="statTotal">…</div>
+          <div style="font-size:.85rem;opacity:.85;">Total visits to the website</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <strong style="color:var(--green-dark);">Pages opened</strong>
+            <div id="statPages" style="margin-top:8px;font-size:.88rem;"></div>
+          </div>
+          <div>
+            <strong style="color:var(--green-dark);">Sections clicked</strong>
+            <div id="statClicks" style="margin-top:8px;font-size:.88rem;"></div>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-small" style="margin-top:14px;" onclick="loadAnalytics()">🔄 Refresh Numbers</button>
+      </div>
+
       <!-- Payment settings -->
       <div class="staff-panel">
         <h3>💳 Payment Details</h3>
@@ -143,16 +164,19 @@
 
       <!-- Create meeting -->
       <div class="staff-panel">
-        <h3>📹 Create a Live Meeting</h3>
-        <p class="panel-sub">Generates a unique meeting code. Only users you give the code to can join. Meetings support recording and live translated captions (Arabic, English, Urdu, Indonesian, Bengali).</p>
+        <h3>📹 Live Meetings &amp; Class Recording</h3>
+        <p class="panel-sub"><strong>How it works:</strong> 1) Fill the meeting title below and press <em>Create Meeting</em> — the site makes a unique code. &nbsp; 2) Press <em>Publish Changes</em> at the bottom so the code becomes active. &nbsp; 3) Send the code to your students. &nbsp; 4) When it's time, press <em>▶ Start &amp; Host</em> to open the room yourself first — students then join with the code. You can record the class and turn on live translated captions inside the room.</p>
         <label>Meeting title</label>
         <input type="text" id="mTitle" placeholder="e.g. Quran Recitation Class — Group A" />
         <label>Related course (optional)</label>
         <input type="text" id="mCourse" placeholder="e.g. Quran Recitation A to Z" />
-        <label>Date &amp; time</label>
+        <label>Date &amp; time (optional)</label>
         <input type="datetime-local" id="mTime" />
         <button class="btn btn-primary btn-small" onclick="addMeeting()">Create Meeting &amp; Generate Code</button>
         <div class="item-list" id="meetingList"></div>
+        <div style="background:var(--green-light);border-radius:8px;padding:12px 16px;font-size:.82rem;margin-top:14px;">
+          <strong>Just want to record a lesson (no students)?</strong> Create a meeting named e.g. "Recording — Tafsir 1", publish, press ▶ Start &amp; Host, use the <strong>⏺ Record</strong> button in the room, then upload the saved file in the "Add a Paid Video" panel above.
+        </div>
       </div>
 
       <!-- Feedback -->
@@ -183,8 +207,49 @@
     document.getElementById("logoutLink").addEventListener("click", e => {
       e.preventDefault();
       sessionStorage.removeItem("islamIsTheWayStaff");
+      sessionStorage.removeItem("islamIsTheWayStaffUser");
       window.location.href = "login.html";
     });
+
+    // Analytics panel is only for the main admin account.
+    const ADMIN_USER = "Islam.younis.2026";
+    const ANALYTICS_NS = "iitw-islamistheway-2026";
+    const TRACKED_PAGES = ["index","quran","prophets","companions","hadith","guidance","courses","search","login","meeting"];
+    const TRACKED_NAV = ["home","quran","prophets","companions","hadith","guidance","courses","search","login"];
+
+    if (sessionStorage.getItem("islamIsTheWayStaffUser") === ADMIN_USER) {
+      document.getElementById("analyticsPanel").style.display = "";
+      loadAnalytics();
+    }
+
+    async function readCount(key) {
+      try {
+        const r = await fetch("https://abacus.jasoncameron.dev/get/" + ANALYTICS_NS + "/" + key);
+        if (r.ok) { const j = await r.json(); return (typeof j.value === "number") ? j.value : 0; }
+      } catch (e) {}
+      return 0;
+    }
+
+    async function loadAnalytics() {
+      const total = await readCount("total");
+      document.getElementById("statTotal").textContent = total.toLocaleString();
+
+      const pageRows = await Promise.all(TRACKED_PAGES.map(async p => {
+        const n = await readCount("page-" + p);
+        return { label: p === "index" ? "Home" : p.charAt(0).toUpperCase() + p.slice(1), n };
+      }));
+      document.getElementById("statPages").innerHTML = pageRows
+        .sort((a, b) => b.n - a.n)
+        .map(r => `<div style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--border);padding:4px 0;"><span>${r.label}</span><strong>${r.n.toLocaleString()}</strong></div>`).join("");
+
+      const clickRows = await Promise.all(TRACKED_NAV.map(async c => {
+        const n = await readCount("nav-" + c);
+        return { label: c.charAt(0).toUpperCase() + c.slice(1), n };
+      }));
+      document.getElementById("statClicks").innerHTML = clickRows
+        .sort((a, b) => b.n - a.n)
+        .map(r => `<div style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--border);padding:4px 0;"><span>${r.label}</span><strong>${r.n.toLocaleString()}</strong></div>`).join("");
+    }
 
     const REPO_API = "https://api.github.com/repos/IslamIsTheWay/IslamIsTheWay.github.io/contents/data/site-config.json";
     let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, contact: { phone: "", whatsapp: "", demoUrl: "" }, videos: [], meetings: [], extraCourses: [] };
@@ -227,7 +292,14 @@
       document.getElementById("videoList").innerHTML = cfg.videos.map((v, i) =>
         `<div class="item-row"><span>${v.title} — ${v.price} — code: <span class="meeting-code">${v.code}</span></span><button class="del" onclick="cfg.videos.splice(${i},1);renderLists()">Delete</button></div>`).join("");
       document.getElementById("meetingList").innerHTML = cfg.meetings.map((m, i) =>
-        `<div class="item-row"><span>${m.title}${m.time ? " — " + new Date(m.time).toLocaleString() : ""} — code: <span class="meeting-code">${m.code}</span></span><button class="del" onclick="cfg.meetings.splice(${i},1);renderLists()">Delete</button></div>`).join("");
+        `<div class="item-row" style="flex-wrap:wrap;">
+           <span style="flex:1;min-width:160px;">${m.title}${m.time ? " — " + new Date(m.time).toLocaleString() : ""}<br>code: <span class="meeting-code">${m.code}</span></span>
+           <span style="display:flex;gap:6px;flex-wrap:wrap;">
+             <a class="btn btn-primary btn-small" style="text-decoration:none;" href="meeting.html?code=${encodeURIComponent(m.code)}&host=1" target="_blank" rel="noopener">▶ Start &amp; Host</a>
+             <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="copyCode('${m.code}')">Copy Code</button>
+             <button class="del" onclick="cfg.meetings.splice(${i},1);renderLists()">Delete</button>
+           </span>
+         </div>`).join("");
     }
 
     function addCourse() {
@@ -272,7 +344,14 @@
       });
       ["mTitle","mCourse","mTime"].forEach(id => document.getElementById(id).value = "");
       renderLists();
-      alert("Meeting created!\n\nCode for users: " + code + "\n\nRemember to press Publish Changes, then share this code only with the users who paid for the course.");
+      alert("Meeting created!\n\nCode for users: " + code + "\n\nNext steps:\n1. Press \"Publish Changes\" at the bottom so the code becomes active.\n2. Send this code to your students.\n3. When it's time, press \"▶ Start & Host\" next to the meeting to open the room.");
+    }
+
+    function copyCode(code) {
+      navigator.clipboard.writeText(code).then(
+        () => alert("Copied: " + code),
+        () => prompt("Copy this code:", code)
+      );
     }
 
     async function uploadVideoFile() {

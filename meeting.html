@@ -27,6 +27,13 @@
     .gate-card { max-width:460px; margin:0 auto; background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:36px; text-align:center; box-shadow:var(--shadow); }
     .gate-card input { width:100%; padding:13px 16px; border:1px solid var(--border); border-radius:8px; font-size:1rem; text-align:center; font-family:monospace; text-transform:uppercase; margin:16px 0; }
     .gate-msg { min-height:1.4em; font-size:.9rem; font-weight:600; color:#8a3d1f; margin-top:10px; }
+    .host-bar { background:linear-gradient(135deg,#0d3a1a,#1a5c32); color:#fff; border-radius:var(--radius); padding:16px 20px; margin-bottom:16px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+    .host-bar .code-big { font-family:monospace; font-size:1.3rem; font-weight:800; background:rgba(255,255,255,.15); padding:6px 14px; border-radius:8px; letter-spacing:1px; }
+    .host-bar button { border:none; border-radius:8px; padding:9px 16px; font-weight:600; cursor:pointer; font-family:inherit; }
+    .host-bar .copy-btn { background:#fff; color:var(--green-dark); }
+    .host-bar .rec-btn { background:#c0392b; color:#fff; }
+    .host-bar .rec-btn.recording { background:#7a1c12; }
+    .user-note { background:#e6f4ea; border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:.88rem; margin-bottom:16px; color:var(--green-dark); }
     .rec-note { background:#fff8e1; border:1px solid #e8d48a; border-radius:8px; padding:10px 14px; font-size:.8rem; margin-top:12px; color:#7a6210; }
   </style>
 </head>
@@ -70,40 +77,59 @@
   <section>
     <div class="container">
 
-      <!-- Code gate -->
+      <!-- Code gate (for students) -->
       <div class="gate-card" id="gateCard">
         <div class="icon-circle" style="width:64px;height:64px;border-radius:50%;background:var(--green-light);font-size:1.8rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">🔑</div>
         <h3 style="color:var(--green-dark);">Enter Meeting Code</h3>
-        <p style="color:var(--text-muted);font-size:.92rem;">Your teacher gave you a code like <strong>IITW-XXXXXX</strong>. Enter it to join the live session.</p>
-        <input type="text" id="codeInput" placeholder="IITW-______" maxlength="12" />
+        <p style="color:var(--text-muted);font-size:.92rem;">Your teacher gave you a code like <strong>IITW-XXXXXX</strong>. Enter it to join the live class.</p>
+        <input type="text" id="codeInput" placeholder="IITW-______" maxlength="14" />
         <button class="btn btn-primary" style="width:100%;" onclick="checkCode()">Join Meeting</button>
         <div class="gate-msg" id="gateMsg"></div>
       </div>
 
       <!-- Meeting room -->
-      <div class="meeting-wrap" id="meetingRoom" style="display:none;">
-        <div>
-          <div class="meeting-frame"><iframe id="jitsiFrame" allow="camera; microphone; fullscreen; display-capture; autoplay"></iframe></div>
-          <div class="rec-note"><strong>Recording:</strong> the host can record from inside the meeting — open the menu (⋮) → "Start recording". The recording can be shared with students afterwards.</div>
+      <div id="meetingRoom" style="display:none;">
+
+        <!-- Host bar (staff only) -->
+        <div class="host-bar" id="hostBar" style="display:none;">
+          <div>
+            <div style="font-size:.8rem;opacity:.85;">You are the host. Share this code with your students:</div>
+            <span class="code-big" id="hostCode"></span>
+          </div>
+          <button class="copy-btn" onclick="copyHostCode()">📋 Copy Code</button>
+          <button class="rec-btn" id="recBtn" onclick="toggleRecording()">⏺ Record Class</button>
+          <span id="recStatus" style="font-size:.85rem;"></span>
         </div>
-        <div class="caption-panel">
-          <h3>🌐 Live Translated Captions</h3>
-          <p class="small">Turn on captions and this panel will listen to the class through your microphone, then translate each sentence instantly.</p>
-          <label>Language being spoken</label>
-          <select id="srcLang">
-            <option value="ar-SA" data-mm="ar">Arabic — العربية</option>
-            <option value="en-US" data-mm="en">English</option>
-          </select>
-          <label>Translate into</label>
-          <select id="dstLang">
-            <option value="en">English</option>
-            <option value="ar">Arabic — العربية</option>
-            <option value="ur">Urdu — اردو (Pakistan)</option>
-            <option value="id">Indonesian — Bahasa (Indonesia)</option>
-            <option value="bn">Bengali — বাংলা</option>
-          </select>
-          <button class="btn btn-primary btn-small" id="capBtn" onclick="toggleCaptions()">▶ Start Captions</button>
-          <div id="captionBox"><em style="color:var(--text-muted);font-size:.85rem;">Captions will appear here...</em></div>
+
+        <!-- Student note -->
+        <div class="user-note" id="userNote">
+          ✅ You're in. When the video loads, click <strong>"Join meeting"</strong> and allow your <strong>camera 🎥</strong> and <strong>microphone 🎤</strong> when the browser asks. You can turn them on or off any time using the buttons at the bottom of the video.
+        </div>
+
+        <div class="meeting-wrap">
+          <div>
+            <div class="meeting-frame"><iframe id="jitsiFrame" allow="camera; microphone; fullscreen; display-capture; autoplay"></iframe></div>
+            <div class="rec-note" id="hostRecNote" style="display:none;"><strong>Recording tip:</strong> when you press "⏺ Record Class", choose to share <strong>"This Tab"</strong> and tick <strong>"Share tab audio"</strong> so the students' voices are captured too. When you stop, the video downloads to your computer — then upload it in the staff dashboard as a paid video.</div>
+          </div>
+          <div class="caption-panel">
+            <h3>🌐 Live Translated Captions</h3>
+            <p class="small">Turn this on and it listens through your microphone and translates each sentence instantly.</p>
+            <label>Language being spoken</label>
+            <select id="srcLang">
+              <option value="ar-SA" data-mm="ar">Arabic — العربية</option>
+              <option value="en-US" data-mm="en">English</option>
+            </select>
+            <label>Translate into</label>
+            <select id="dstLang">
+              <option value="en">English</option>
+              <option value="ar">Arabic — العربية</option>
+              <option value="ur">Urdu — اردو (Pakistan)</option>
+              <option value="id">Indonesian — Bahasa (Indonesia)</option>
+              <option value="bn">Bengali — বাংলা</option>
+            </select>
+            <button class="btn btn-primary btn-small" id="capBtn" onclick="toggleCaptions()">▶ Start Captions</button>
+            <div id="captionBox"><em style="color:var(--text-muted);font-size:.85rem;">Captions will appear here...</em></div>
+          </div>
         </div>
       </div>
 
@@ -119,16 +145,20 @@
   <script>
     let meetings = [];
     let currentMeeting = null;
+    const params = new URLSearchParams(location.search);
+    const isHost = params.get("host") === "1";
 
     async function loadMeetings() {
       try {
         const r = await fetch("data/site-config.json?t=" + Date.now());
         if (r.ok) meetings = (await r.json()).meetings || [];
       } catch (e) {}
-      const urlCode = new URLSearchParams(location.search).get("code");
+      const urlCode = params.get("code");
       if (urlCode) {
         document.getElementById("codeInput").value = urlCode;
-        checkCode();
+        // Host may start before publishing, so let hosts through with the URL code.
+        if (isHost) openRoom({ code: urlCode.toUpperCase(), title: "Live Class", course: "", time: "" }, true);
+        else checkCode();
       }
     }
 
@@ -140,12 +170,99 @@
         msg.textContent = "Invalid code. Please check with your teacher and try again.";
         return;
       }
+      openRoom(m, false);
+    }
+
+    function openRoom(m, asHost) {
       currentMeeting = m;
       document.getElementById("gateCard").style.display = "none";
-      document.getElementById("meetingRoom").style.display = "grid";
-      document.getElementById("meetingTitle").textContent = m.title;
-      document.getElementById("meetingSub").textContent = (m.course ? m.course + " — " : "") + (m.time ? new Date(m.time).toLocaleString() : "");
-      document.getElementById("jitsiFrame").src = "https://meet.jit.si/IslamIsTheWay-" + m.code + "#userInfo.displayName=%22Student%22";
+      document.getElementById("meetingRoom").style.display = "block";
+      document.getElementById("meetingTitle").textContent = m.title || "Live Class";
+      document.getElementById("meetingSub").textContent = (m.course ? m.course + " — " : "") + (m.time ? new Date(m.time).toLocaleString() : (asHost ? "You are hosting" : "Live now"));
+
+      if (asHost) {
+        document.getElementById("hostBar").style.display = "flex";
+        document.getElementById("hostRecNote").style.display = "block";
+        document.getElementById("userNote").style.display = "none";
+        document.getElementById("hostCode").textContent = m.code;
+      }
+
+      const displayName = asHost ? "Teacher (Host)" : "Student";
+      const room = "IslamIsTheWay-" + m.code;
+      // prejoinPageEnabled shows a camera/mic preview before entering the room.
+      document.getElementById("jitsiFrame").src =
+        "https://meet.jit.si/" + room +
+        "#config.prejoinPageEnabled=true" +
+        "&config.disableDeepLinking=true" +
+        "&userInfo.displayName=%22" + encodeURIComponent(displayName) + "%22";
+    }
+
+    function copyHostCode() {
+      const code = document.getElementById("hostCode").textContent;
+      navigator.clipboard.writeText(code).then(
+        () => { document.getElementById("recStatus").textContent = "Code copied!"; setTimeout(() => document.getElementById("recStatus").textContent = "", 2000); },
+        () => prompt("Copy this code:", code)
+      );
+    }
+
+    /* ---------- Host recording (screen + audio) ---------- */
+    let mediaRecorder = null, recordedChunks = [], recording = false;
+
+    function pickMime() {
+      const types = ["video/webm;codecs=vp9,opus", "video/webm;codecs=vp8,opus", "video/webm"];
+      for (const t of types) { if (window.MediaRecorder && MediaRecorder.isTypeSupported(t)) return t; }
+      return "video/webm";
+    }
+
+    async function toggleRecording() {
+      const btn = document.getElementById("recBtn");
+      const status = document.getElementById("recStatus");
+      if (recording) {
+        if (mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+        return;
+      }
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+        alert("Recording needs a desktop Chrome or Edge browser.");
+        return;
+      }
+      try {
+        const screen = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+        let stream = screen;
+        try {
+          const mic = await navigator.mediaDevices.getUserMedia({ audio: true });
+          stream = new MediaStream([...screen.getVideoTracks(), ...screen.getAudioTracks(), ...mic.getAudioTracks()]);
+        } catch (e) { /* mic optional */ }
+
+        recordedChunks = [];
+        mediaRecorder = new MediaRecorder(stream, { mimeType: pickMime() });
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) recordedChunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          recording = false;
+          btn.classList.remove("recording");
+          btn.textContent = "⏺ Record Class";
+          status.textContent = "Saving...";
+          const blob = new Blob(recordedChunks, { type: recordedChunks[0] ? recordedChunks[0].type : "video/webm" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "class-recording-" + Date.now() + ".webm";
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 4000);
+          screen.getTracks().forEach(t => t.stop());
+          status.textContent = "✓ Recording saved to your Downloads.";
+        };
+        // If the host stops sharing from the browser bar, stop cleanly.
+        screen.getVideoTracks()[0].addEventListener("ended", () => {
+          if (mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+        });
+        mediaRecorder.start();
+        recording = true;
+        btn.classList.add("recording");
+        btn.textContent = "⏹ Stop Recording";
+        status.textContent = "● Recording...";
+      } catch (e) {
+        status.textContent = "Recording cancelled.";
+      }
     }
 
     /* ---------- Live captions + instant translation ---------- */

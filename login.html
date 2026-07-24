@@ -126,6 +126,7 @@
         msg.textContent = "Welcome back! Redirecting to the staff area...";
         msg.className = "login-message success";
         sessionStorage.setItem("islamIsTheWayStaff", "true");
+        sessionStorage.setItem("islamIsTheWayStaffUser", user);
         setTimeout(() => { window.location.href = "staff.html"; }, 800);
       } else {
         msg.textContent = "Incorrect username or password. Please try again.";
