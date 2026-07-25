@@ -176,10 +176,11 @@
       HADITHS.forEach((h, i) => {
         const isSahih = h.strength.startsWith("Sahih");
         html += `<div class="hadith-card">
+          ${h.title ? `<div style="font-weight:700;color:var(--green-dark);font-size:1.05rem;margin-bottom:8px;">${h.title}</div>` : ""}
           <span class="topic-tag">${h.topic}</span>
           <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
-          ${h.arabic ? `<p style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2;direction:rtl;text-align:right;color:var(--green-dark);margin-bottom:10px;">${h.arabic} <button onclick="speakText('${h.arabic.replace(/'/g,"\\'")}','ar')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in Arabic">🔊</button></p>` : ""}
-          <p class="hadith-text">"${h.text}" <button onclick="speakText(\`${h.text.replace(/`/g,"")}\`,'en')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in English">🔊</button></p>
+          ${h.arabic ? `<p style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2;direction:rtl;text-align:right;color:var(--green-dark);margin:8px 0 10px;">${h.arabic} <button onclick="speakText(${JSON.stringify(h.arabic)},'ar')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in Arabic">🔊</button></p>` : ""}
+          <p class="hadith-text">"${h.text}" <button onclick="speakText(${JSON.stringify(h.text)},'en')" style="border:none;background:none;cursor:pointer;font-size:1.1rem;" title="Listen in English">🔊</button></p>
           <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
         </div>`;
       });
@@ -300,11 +301,76 @@
       window.scrollTo({ top: document.getElementById("hadithListArea").offsetTop - 100, behavior: "smooth" });
     };
 
-    async function searchHadith(query) {
-      const q = query.toLowerCase();
-      let results = [];
-      const collections = ["bukhari", "muslim"];
+    // Words too common to help a search.
+    const STOPWORDS = new Set(["the","and","for","with","his","her","him","its","was","who","that","this","are","from","you","your","she","they","them","not","does","did","will","would","when","what","which","about","says","said"]);
+    // Irregular plural/synonym pairs so "man" also finds "men", etc.
+    const SYN = {
+      man:["men","male","gentleman"], men:["man","male"], male:["man","men"],
+      woman:["women","female","lady"], women:["woman","female"], female:["woman","women"],
+      wear:["clothes","clothing","dress","garment","attire"], wears:["clothes","dress","garment"],
+      dress:["clothes","garment","wear","attire"], clothes:["dress","garment","wear"],
+      imitate:["resemble","similitude","assume","copy","like"], imitating:["resemble","similitude","assume"],
+      resemble:["imitate","similitude","assume"],
+      curse:["cursed","damn"], cursed:["curse"],
+      lie:["lying","false","falsehood","untruth"], lying:["lie","false"],
+      steal:["theft","stealing","robbery"], theft:["steal","stealing"],
+      alcohol:["wine","khamr","intoxicant","drink"], wine:["alcohol","khamr","intoxicant"],
+      parent:["parents","mother","father"], parents:["mother","father"],
+      prayer:["salah","salat","pray"], pray:["prayer","salah","salat"],
+      charity:["sadaqah","zakat","giving","alms"], neighbour:["neighbor","neighbours"], neighbor:["neighbour"],
+      anger:["angry","rage"], angry:["anger"], patience:["patient","sabr"], patient:["patience","sabr"],
+      knowledge:["learn","learning","ilm","study"], mercy:["merciful","compassion"],
+      intention:["niyyah","intent"], honesty:["honest","truthful","truth"], honest:["honesty","truthful"]
+    };
 
+    function tokenize(str) {
+      return (str || "").toLowerCase().replace(/[^a-z؀-ۿ\s]/g, " ").split(/\s+/).filter(w => w.length >= 3 && !STOPWORDS.has(w));
+    }
+
+    // How well does a hadith text match the query words? Returns a score.
+    function scoreMatch(haystackLower, queryWords) {
+      let score = 0;
+      for (const w of queryWords) {
+        const terms = [w];
+        if (w.endsWith("s")) terms.push(w.slice(0, -1));
+        if (SYN[w]) terms.push(...SYN[w]);
+        if (terms.some(t => t.length >= 3 && haystackLower.includes(t))) score++;
+      }
+      return score;
+    }
+
+    async function searchHadith(query) {
+      const qLower = query.toLowerCase();
+      const qWords = tokenize(query);
+      const qArabic = query.replace(/[a-zA-Z0-9]/g, "").trim();
+      let results = [];
+
+      // --- Curated highlights (searched by text, title, topic, narrator) ---
+      const curatedScored = HADITHS.map(h => {
+        const hay = (h.text + " " + (h.title || "") + " " + h.topic + " " + h.narrator).toLowerCase();
+        let s = scoreMatch(hay, qWords);
+        if (qArabic && h.arabic && h.arabic.includes(qArabic)) s += 2;
+        if (hay.includes(qLower)) s += 2;
+        return { h, s };
+      }).filter(x => x.s > 0).sort((a, b) => b.s - a.s);
+
+      if (curatedScored.length > 0) {
+        const curHtml = curatedScored.map(({ h }) => {
+          const isSahih = h.strength.startsWith("Sahih");
+          return `<div class="hadith-card">
+            ${h.title ? `<div style="font-weight:700;color:var(--green-dark);font-size:1.02rem;margin-bottom:8px;">${h.title}</div>` : ""}
+            <span class="topic-tag">${h.topic}</span>
+            <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
+            ${h.arabic ? `<p style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2;direction:rtl;text-align:right;color:var(--green-dark);margin:8px 0;">${h.arabic} <button onclick="speakText(${JSON.stringify(h.arabic)},'ar')" style="border:none;background:none;cursor:pointer;font-size:1.05rem;" title="Listen in Arabic">🔊</button></p>` : ""}
+            <p class="hadith-text">"${h.text}" <button onclick="speakText(${JSON.stringify(h.text)},'en')" style="border:none;background:none;cursor:pointer;font-size:1.05rem;" title="Listen in English">🔊</button></p>
+            <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
+          </div>`;
+        }).join("");
+        results.unshift({ _curatedHtml: curHtml, _count: curatedScored.length });
+      }
+
+      // --- Full Bukhari + Muslim collections (word-scored) ---
+      const collections = ["bukhari", "muslim"];
       for (const col of collections) {
         if (!cache[col]) {
           searchInfo.style.display = "block";
@@ -312,28 +378,19 @@
           await loadCollection(col);
         }
         const displayName = col === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim";
-        const matches = cache[col].hadiths.filter(h =>
-          h.english.toLowerCase().includes(q) || h.arabic.includes(query)
-        ).slice(0, 50).map(h => ({ ...h, source: displayName }));
-        results = results.concat(matches);
-      }
-
-      if (currentCollection === "curated") {
-        const curatedMatches = HADITHS.filter(h =>
-          h.text.toLowerCase().includes(q) || h.narrator.toLowerCase().includes(q) || h.topic.toLowerCase().includes(q)
-        );
-        if (curatedMatches.length > 0) {
-          let curHtml = curatedMatches.map(h => {
-            const isSahih = h.strength.startsWith("Sahih");
-            return `<div class="hadith-card">
-              <span class="topic-tag">${h.topic}</span>
-              <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
-              <p class="hadith-text">"${h.text}"</p>
-              <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
-            </div>`;
-          }).join("");
-          results.unshift({ _curatedHtml: curHtml, _count: curatedMatches.length });
+        const scored = [];
+        for (const h of cache[col].hadiths) {
+          const hay = h.english.toLowerCase();
+          let s = scoreMatch(hay, qWords);
+          if (qArabic && h.arabic && h.arabic.includes(qArabic)) s += 3;
+          // Require a meaningful match: most query words, or an exact phrase.
+          const needed = Math.max(1, Math.ceil(qWords.length * 0.6));
+          if ((qWords.length > 0 && s >= needed) || (qArabic && h.arabic && h.arabic.includes(qArabic)) || hay.includes(qLower)) {
+            scored.push({ h: { ...h, source: displayName }, s: s + (hay.includes(qLower) ? 3 : 0) });
+          }
         }
+        scored.sort((a, b) => b.s - a.s || a.h.english.length - b.h.english.length);
+        results = results.concat(scored.slice(0, 40).map(x => x.h));
       }
 
       searchInfo.style.display = "block";
@@ -343,7 +400,7 @@
       let html = "";
       results.forEach(h => {
         if (h._curatedHtml) {
-          html += `<h3 style="margin:16px 0 12px;color:var(--green-dark);">Curated Highlights</h3><div class="hadith-grid">${h._curatedHtml}</div>`;
+          html += `<h3 style="margin:16px 0 12px;color:var(--green-dark);">Best Matches — Curated Highlights</h3><div class="hadith-grid">${h._curatedHtml}</div><h3 style="margin:24px 0 12px;color:var(--green-dark);">From the Full Collections</h3>`;
           return;
         }
         html += `<div class="full-hadith-card">
@@ -353,20 +410,14 @@
         </div>`;
       });
 
-      if (results.length === 0) {
-        html = '<div class="no-results">No hadith match your search. Try different keywords in Arabic or English.</div>';
+      if (results.length === 0 || (results.length === 1 && results[0]._curatedHtml && curatedScored.length === 0)) {
+        html = '<div class="no-results">No hadith match your search. Try a situation or keyword — for example: "anger", "neighbour", "lying", "imitating women", "parents".</div>';
       }
       contentArea.innerHTML = html;
     }
 
-    function speakText(text, lang) {
-      window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = lang === "ar" ? "ar-SA" : "en-US";
-      utter.rate = lang === "ar" ? 0.85 : 0.95;
-      window.speechSynthesis.speak(utter);
-    }
-    window.speakText = speakText;
+    // speakText is provided globally by js/main.js (strips the 🔊 emoji and
+    // prefers a male Arabic voice).
 
     renderCurated();
   </script>

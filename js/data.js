@@ -1421,6 +1421,7 @@ const HADITHS = [
     narrator: "Umar ibn al-Khattab",
     ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
     topic: "Sincerity",
+    title: "Every deed depends on its intention (Niyyah)",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1429,6 +1430,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Brotherhood",
+    title: "Loving for your brother what you love for yourself",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1437,6 +1439,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Amr",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Character",
+    title: "The best people are those with the best manners",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1445,6 +1448,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Sahih Muslim",
     topic: "Speech",
+    title: "Say something good or stay silent",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1453,6 +1457,7 @@ const HADITHS = [
     narrator: "Abu Dharr al-Ghifari",
     ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
     topic: "Kindness",
+    title: "Smiling at others is an act of charity",
     strength: "Sahih — Narrated by Muslim; also at-Tirmidhi"
   },
   {
@@ -1461,6 +1466,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Self-Control",
+    title: "True strength is controlling yourself when angry",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1469,6 +1475,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Neighbors",
+    title: "Wanting good for your neighbour",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1477,6 +1484,7 @@ const HADITHS = [
     narrator: "Aisha bint Abu Bakr",
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Consistency",
+    title: "Small, consistent deeds are the most beloved to Allah",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1485,6 +1493,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Food and Drink",
     topic: "Generosity",
+    title: "Sharing food, eating in moderation",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1493,6 +1502,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sunan Ibn Majah, Book of the Sunnah",
     topic: "Knowledge",
+    title: "Seeking knowledge is a duty on every Muslim",
     strength: "Sahih — Narrated by Ibn Majah; authenticated by as-Suyuti and al-Albani"
   },
   {
@@ -1501,6 +1511,7 @@ const HADITHS = [
     narrator: "Ibn Umar",
     ref: "Sunan Ibn Majah, Book of Asceticism; Musnad Ahmad",
     topic: "Patience",
+    title: "Mixing with people and bearing their harm with patience",
     strength: "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani"
   },
   {
@@ -1509,6 +1520,7 @@ const HADITHS = [
     narrator: "Sahl ibn Sa'd",
     ref: "Sahih al-Bukhari, Book of Limits and Punishments",
     topic: "Guarding the Tongue",
+    title: "Guard your tongue and chastity, and earn Paradise",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1517,6 +1529,7 @@ const HADITHS = [
     narrator: "Jabir ibn Abdullah",
     ref: "Al-Mu'jam al-Awsat by at-Tabarani",
     topic: "Service",
+    title: "The best people are those who benefit others most",
     strength: "Strong — Narrated by at-Tabarani; graded Strong by al-Albani"
   },
   {
@@ -1525,6 +1538,7 @@ const HADITHS = [
     narrator: "Ibn Abbas",
     ref: "Mustadrak al-Hakim",
     topic: "Time",
+    title: "Use five before five: youth, health, wealth, free time, life",
     strength: "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani"
   },
   {
@@ -1533,6 +1547,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Righteousness",
     topic: "Sincerity",
+    title: "Allah looks at your heart and deeds, not your looks or wealth",
     strength: "Sahih — Narrated by Muslim"
   },
   {
@@ -1541,6 +1556,7 @@ const HADITHS = [
     narrator: "Anas ibn Malik",
     ref: "Sahih al-Bukhari, Book of Knowledge; Sahih Muslim",
     topic: "Ease",
+    title: "Make matters easy, do not make them hard",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1549,6 +1565,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance, Hadith 2699",
     topic: "Knowledge",
+    title: "Seeking knowledge is a path to Paradise",
     strength: "Sahih — Narrated by Muslim"
   },
   {
@@ -1557,6 +1574,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Mas'ud",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Jami at-Tirmidhi",
     topic: "Speech",
+    title: "A believer does not slander, curse, or speak obscenely",
     strength: "Sahih — Narrated by al-Bukhari and at-Tirmidhi"
   },
   {
@@ -1565,6 +1583,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Umar",
     ref: "Sahih al-Bukhari, Book of Heart Softeners",
     topic: "Worldliness",
+    title: "Live in this world like a stranger or a traveller",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1573,6 +1592,7 @@ const HADITHS = [
     narrator: "Abdullah ibn Amr",
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Mercy",
+    title: "Show mercy to those on earth and you will be shown mercy",
     strength: "Sahih — Narrated by Abu Dawud and at-Tirmidhi; authenticated by al-Albani"
   },
   {
@@ -1581,6 +1601,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
     topic: "Helping Others",
+    title: "Relieving a fellow believer's hardship",
     strength: "Sahih — Narrated by Muslim"
   },
   {
@@ -1589,6 +1610,7 @@ const HADITHS = [
     narrator: "Jarir ibn Abdullah",
     ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
     topic: "Mercy",
+    title: "Allah does not show mercy to those who show no mercy",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1597,6 +1619,7 @@ const HADITHS = [
     narrator: "Uthman ibn Affan",
     ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
     topic: "Quran",
+    title: "The best of you learns the Quran and teaches it",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1605,6 +1628,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Friendship",
+    title: "Choose your friends carefully — you follow their way",
     strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi"
   },
   {
@@ -1613,6 +1637,7 @@ const HADITHS = [
     narrator: "Abu Barzah al-Aslami",
     ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment",
     topic: "Accountability",
+    title: "You will be questioned about your life, knowledge, wealth and body",
     strength: "Sahih — Narrated by at-Tirmidhi; graded Sahih by at-Tirmidhi and al-Albani"
   },
   {
@@ -1621,6 +1646,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
     topic: "Contentment",
+    title: "True richness is the contentment of the heart",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   },
   {
@@ -1629,6 +1655,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Jami at-Tirmidhi, Book of Asceticism; Muwatta Imam Malik",
     topic: "Discipline",
+    title: "Part of good Islam is leaving what does not concern you",
     strength: "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi"
   },
   {
@@ -1637,6 +1664,7 @@ const HADITHS = [
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
     topic: "Self-Control",
+    title: "Do not become angry",
     strength: "Sahih — Narrated by al-Bukhari"
   },
   {
@@ -1645,6 +1673,7 @@ const HADITHS = [
     narrator: "Imran ibn Husayn",
     ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",
     topic: "Modesty",
+    title: "Modesty brings nothing but good",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
   }
 ];
