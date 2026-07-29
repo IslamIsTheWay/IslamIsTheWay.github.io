@@ -261,26 +261,40 @@
         }
       });
 
-      // Plain word overlap, weighted by how rare the word is. Matching
-      // "imitate" is worth a lot; matching "woman" or "prophet" is worth
-      // almost nothing, because they appear in nearly every entry.
+      // Plain word overlap, weighted by how rare the word is.
       let bestRarity = 0;
+      let distinctHits = 0;
       queryTokens.forEach(q => {
         const qs = stem(q);
         if (qs.length < 3) return;
         const hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") || hay.includes(qs);
         if (!hit) return;
-        const w = idf(q);
+        const generic = GENERIC.has(qs) || GENERIC.has(q);
+        const w = generic ? 0.2 : idf(q);
         score += w * 1.6;
-        if (w > bestRarity) bestRarity = w;
+        if (!generic && w >= 2.5) { distinctHits++; if (w > bestRarity) bestRarity = w; }
       });
 
       lastBestRarity = bestRarity;
+      lastDistinctHits = distinctHits;
       return score;
     }
 
-    // Rarity of the most distinctive word matched by the last scoreContent call.
+    /* Words that are semantically generic even when they are statistically
+       rare in this collection. Matching only these is never real relevance —
+       this is what made "a man wearing women's clothes" return the biography
+       of any companion whose story happens to mention a woman. */
+    const GENERIC = new Set([
+      "man","men","male","woman","women","female","lady","people","person","human","boy","girl",
+      "thing","things","someone","somebody","anyone","everyone","one","other","others",
+      "prophet","messenger","allah","god","islam","muslim","muslims","said","say","says","told",
+      "came","come","went","give","given","took","take","made","make","day","days","time","year",
+      "years","life","live","world","great","good","bad","very","also","first","second","story"
+    ]);
+
+    // Set by the last scoreContent call.
     let lastBestRarity = 0;
+    let lastDistinctHits = 0;
 
     function personCardHtml(p) {
       return `<div class="theme-card" style="margin-bottom:14px;">
@@ -338,16 +352,17 @@
          before it is shown. Without this, searching "a man wearing women's
          clothes" pulled in any companion whose story merely contains the word
          "woman" — which is not real relevance. */
-      const RARITY_FLOOR = 2.5;   // roughly: the word appears in <10% of entries
-      const PERSON_MIN   = 4;
+      const RARITY_FLOOR = 2.5;   // the matched word must be genuinely uncommon
+      const PERSON_MIN   = 6;
+      const MIN_DISTINCT = 2;     // and a life story must match on TWO real words
 
       function scorePeople(list, keyName) {
         return list.map(item => {
           const s = scoreContent(qt, raw, null,
             [item.name, item.title, item.summary, item.summaryAr].join(" "));
-          return { [keyName]: item, item, s, rarity: lastBestRarity };
+          return { [keyName]: item, item, s, rarity: lastBestRarity, distinct: lastDistinctHits };
         })
-        .filter(x => x.s >= PERSON_MIN && x.rarity >= RARITY_FLOOR)
+        .filter(x => x.s >= PERSON_MIN && x.rarity >= RARITY_FLOOR && x.distinct >= MIN_DISTINCT)
         .sort((a, b) => b.s - a.s)
         .slice(0, 3);
       }
