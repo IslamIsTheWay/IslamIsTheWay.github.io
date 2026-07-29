@@ -193,14 +193,10 @@
       return resp.json();
     }
 
-    async function loadCollection(name) {
-      if (cache[name]) {
-        renderChapters(name);
-        return;
-      }
-      loadingMsg.style.display = "block";
-      contentArea.innerHTML = "";
-      contentArea.appendChild(loadingMsg);
+    /* Downloads a collection into the cache. Deliberately does NOT touch the
+       page, so a search in progress never has its results wiped out. */
+    async function ensureCollection(name) {
+      if (cache[name]) return true;
       try {
         const [engData, araData] = await Promise.all([
           fetchJSON(`${API_BASE}/eng-${name}.min.json`),
@@ -219,11 +215,25 @@
             hadithInBook: h.reference.hadith
           }))
         };
-        loadingMsg.style.display = "none";
-        renderChapters(name);
+        return true;
       } catch (err) {
-        loadingMsg.textContent = "Failed to load collection. Please check your connection and try again.";
+        return false;
       }
+    }
+
+    // Used by the collection tabs: load, then show the chapter list.
+    async function loadCollection(name) {
+      if (cache[name]) { renderChapters(name); return; }
+      loadingMsg.style.display = "block";
+      contentArea.innerHTML = "";
+      contentArea.appendChild(loadingMsg);
+      const ok = await ensureCollection(name);
+      if (!ok) {
+        loadingMsg.textContent = "Failed to load collection. Please check your connection and try again.";
+        return;
+      }
+      loadingMsg.style.display = "none";
+      renderChapters(name);
     }
 
     function renderChapters(name) {
@@ -370,14 +380,28 @@
         results.unshift({ _curatedHtml: curHtml, _count: curatedScored.length });
       }
 
+      // Show the curated matches straight away, so the reader sees results
+      // instantly instead of waiting for the full collections to download.
+      if (curatedScored.length > 0) {
+        searchInfo.style.display = "block";
+        searchInfo.textContent = `Found ${curatedScored.length} highlighted result${curatedScored.length !== 1 ? "s" : ""} for "${query}" — also searching the full collections…`;
+        contentArea.innerHTML =
+          `<h3 style="margin:16px 0 12px;color:var(--green-dark);">Best Matches — Curated Highlights</h3>` +
+          `<div class="hadith-grid">${results[0]._curatedHtml}</div>` +
+          `<p style="text-align:center;color:var(--text-muted);margin-top:18px;">Searching all of Sahih al-Bukhari and Sahih Muslim…</p>`;
+      }
+
       // --- Full Bukhari + Muslim collections (word-scored) ---
       const collections = ["bukhari", "muslim"];
       for (const col of collections) {
         if (!cache[col]) {
           searchInfo.style.display = "block";
-          searchInfo.textContent = `Loading ${col === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim"} for search...`;
-          await loadCollection(col);
+          searchInfo.textContent = `Loading ${col === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim"} for search…`;
+          const ok = await ensureCollection(col);
+          if (!ok) continue;
         }
+        // A newer keystroke may have started another search while we waited.
+        if (searchInput.value.trim() !== query.trim()) return;
         const displayName = col === "bukhari" ? "Sahih al-Bukhari" : "Sahih Muslim";
         const scored = [];
         for (const h of cache[col].hadiths) {
