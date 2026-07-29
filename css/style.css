@@ -177,14 +177,22 @@ header.site-header {
 }
 
 /* Scroll reveal — content fades/rises in when the band enters the screen,
-   and fades back out when it leaves. */
+   and fades back out when it leaves.
+   FAIL-SAFE: content is visible by default. It is only hidden once the script
+   has confirmed it can animate (html.js-reveal), so a JS error, a blocked
+   script or an old browser can never leave the text invisible. */
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.reveal.in-view {
+html.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+html.js-reveal .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
@@ -199,7 +207,7 @@ header.site-header {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  html.js-reveal .reveal { opacity: 1; transform: none; transition: none; }
   .photo-band { background-attachment: scroll; }
 }
 

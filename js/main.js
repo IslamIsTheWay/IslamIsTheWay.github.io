@@ -88,17 +88,31 @@ window.speakText = speakText;
    view, and fades back out once it leaves — the effect the photos use. */
 document.addEventListener("DOMContentLoaded", () => {
   const targets = document.querySelectorAll(".reveal");
-  if (!targets.length) return;
-  if (!("IntersectionObserver" in window)) {
-    targets.forEach(el => el.classList.add("in-view"));
-    return;
-  }
+  if (!targets.length || !("IntersectionObserver" in window)) return;
+
+  const root = document.documentElement;
+  let fired = false;
+
   const io = new IntersectionObserver(entries => {
+    fired = true;
     entries.forEach(entry => {
       entry.target.classList.toggle("in-view", entry.isIntersecting);
     });
   }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+
+  // Only now do we allow the hidden state, so the text is never invisible
+  // unless the animation is genuinely running.
+  root.classList.add("js-reveal");
   targets.forEach(el => io.observe(el));
+
+  // Safety net: if the observer never reports anything (unusual browsers,
+  // embedded webviews), drop the effect entirely and show all the content.
+  setTimeout(() => {
+    if (!fired) {
+      io.disconnect();
+      root.classList.remove("js-reveal");
+    }
+  }, 1500);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
