@@ -346,7 +346,9 @@
 
       // --- Curated highlights (searched by text, title, topic, narrator) ---
       const curatedScored = HADITHS.map(h => {
-        const hay = (h.text + " " + (h.title || "") + " " + h.topic + " " + h.narrator).toLowerCase();
+        // The keyword list is included so natural phrasings like
+        // "a man wearing women's clothes" reach the right hadith.
+        const hay = (h.text + " " + (h.title || "") + " " + h.topic + " " + h.narrator + " " + (h.keys || []).join(" ")).toLowerCase();
         let s = scoreMatch(hay, qWords);
         if (qArabic && h.arabic && h.arabic.includes(qArabic)) s += 2;
         if (hay.includes(qLower)) s += 2;
