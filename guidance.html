@@ -191,16 +191,79 @@
         .trim();
     }
 
-    function scoreAgainstKeys(text, keys) {
-      const hay = " " + normalize(text) + " ";
+    // Words too common to be useful for matching.
+    const STOP = new Set(["the","and","for","with","his","her","him","its","was","who","that","this","are","from","you","your","she","they","them","not","does","did","will","would","when","what","which","about","says","said","have","has","had","been","were","there","their","then","than","some","any","can","could","should","just","like","very","really","been","because","into","over","also","only","other","such","being","between","while","after","before","how","why","get","got","one","two"]);
+
+    // Cut common English endings so "womens"→"women", "clothes"→"cloth",
+    // "wearing"→"wear". Arabic is handled by normAr above.
+    function stem(w) {
+      return w.replace(/(ings|ing|ies|ied|ers|er|ed|es|s)$/i, "") || w;
+    }
+
+    function tokens(s) {
+      return normalize(s).split(" ").filter(w => w.length >= 3 && !STOP.has(w));
+    }
+
+    /* Score a query against a piece of content.
+       - an explicit keyword from `keys` is the strongest signal
+       - a multi-word keyword phrase counts more than a single word
+       - otherwise we fall back to word/stem overlap with the text itself */
+    function scoreContent(queryTokens, rawQuery, keys, text) {
+      const hay = " " + normalize(text || "") + " ";
+      const hayStem = " " + normalize(text || "").split(" ").map(stem).join(" ") + " ";
       let score = 0;
-      const hits = [];
+
       (keys || []).forEach(k => {
         const kn = normalize(k);
         if (kn.length < 3) return;
-        if (hay.includes(" " + kn + " ") || hay.includes(kn)) { score += kn.includes(" ") ? 3 : 2; hits.push(k); }
+        const isPhrase = kn.includes(" ");
+        if (normalize(rawQuery).includes(kn)) {
+          score += isPhrase ? 8 : 5;                 // query literally contains the keyword
+        } else if (!isPhrase) {
+          const ks = stem(kn);
+          if (queryTokens.some(q => stem(q) === ks)) score += 4;
+        } else {
+          // phrase keyword: count how many of its words the query has
+          const parts = kn.split(" ").filter(p => p.length >= 3);
+          const got = parts.filter(p => queryTokens.some(q => stem(q) === stem(p))).length;
+          if (parts.length && got === parts.length) score += 6;
+          else if (got >= 2) score += 3;
+        }
       });
-      return { score, hits };
+
+      queryTokens.forEach(q => {
+        const qs = stem(q);
+        if (qs.length < 3) return;
+        if (hay.includes(" " + q + " ")) score += 2;
+        else if (hayStem.includes(" " + qs + " ")) score += 2;
+        else if (hay.includes(qs)) score += 1;
+      });
+
+      return score;
+    }
+
+    function personCardHtml(p) {
+      return `<div class="theme-card" style="margin-bottom:14px;">
+        <h3>${p.name} <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${p.arabic || ""}</span></h3>
+        ${p.title ? `<p style="color:var(--gold);font-weight:600;font-size:.82rem;margin-bottom:6px;">${p.title}</p>` : ""}
+        <p>${p.summary}</p>
+        ${p.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${p.summaryAr}</p>` : ""}
+        <div class="refs">${(p.refs || []).map(r => `<span>${r}</span>`).join("")}</div>
+      </div>`;
+    }
+
+    function hadithCardHtml(h) {
+      const isSahih = (h.strength || "").startsWith("Sahih");
+      return `<div class="theme-card" style="margin-bottom:14px;border-left-color:var(--gold);">
+        ${h.title ? `<h3>${h.title}</h3>` : ""}
+        <div style="margin-bottom:8px;">
+          <span class="topic-tag">${h.topic}</span>
+          <span class="topic-tag" style="background:${isSahih ? "#e6f4ea" : "#fff8e1"};color:${isSahih ? "#1e7e45" : "#b8860b"};">${h.strength}</span>
+        </div>
+        ${h.arabic ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${h.arabic} <button onclick="speakText(${JSON.stringify(h.arabic)},'ar')" style="border:none;background:none;cursor:pointer;font-size:1rem;" title="Listen">🔊</button></p>` : ""}
+        <p style="font-style:italic;">"${h.text}" <button onclick="speakText(${JSON.stringify(h.text)},'en')" style="border:none;background:none;cursor:pointer;font-size:1rem;" title="Listen">🔊</button></p>
+        <div class="refs"><span>Narrated by ${h.narrator}</span><span>${h.ref}</span></div>
+      </div>`;
     }
 
     function findGuidance() {
@@ -211,63 +274,142 @@
         return;
       }
 
-      const scoredThemes = [];
+      const qt = tokens(raw);
+
+      // 1) The Prophet's ﷺ own words — shown first, as the clearest guidance.
+      const hadiths = (typeof HADITHS !== "undefined" ? HADITHS : []).map(h => ({
+        h,
+        s: scoreContent(qt, raw, h.keys, [h.title, h.text, h.topic, h.arabic, h.narrator].join(" "))
+      })).filter(x => x.s >= 4).sort((a, b) => b.s - a.s).slice(0, 6);
+
+      // 2) Quranic themes
+      const themes = [];
       PARADISE_THEMES.forEach(t => {
-        const r = scoreAgainstKeys(raw, t.keys);
-        if (r.score > 0) scoredThemes.push({ t, ...r, kind: "paradise" });
+        const s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "));
+        if (s >= 4) themes.push({ t, s, kind: "paradise" });
       });
       WARNING_THEMES.forEach(t => {
-        const r = scoreAgainstKeys(raw, t.keys);
-        if (r.score > 0) scoredThemes.push({ t, ...r, kind: "warning" });
+        const s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "));
+        if (s >= 4) themes.push({ t, s, kind: "warning" });
       });
-      scoredThemes.sort((a, b) => b.score - a.score);
+      themes.sort((a, b) => b.s - a.s);
 
-      // Match Prophets' stories by their own words (English + Arabic summaries).
-      const words = normalize(raw).split(" ").filter(w => w.length >= 4);
-      const scoredProphets = (typeof PROPHETS !== "undefined" ? PROPHETS : []).map(p => {
-        const hay = normalize((p.summary || "") + " " + (p.summaryAr || "") + " " + (p.title || ""));
-        let s = 0;
-        words.forEach(w => { if (hay.includes(w)) s++; });
+      // 3) Prophets — Prophet Muhammad ﷺ is given priority, as his life is the
+      //    fullest example for every situation.
+      const prophets = (typeof PROPHETS !== "undefined" ? PROPHETS : []).map(p => {
+        let s = scoreContent(qt, raw, null, [p.name, p.title, p.summary, p.summaryAr].join(" "));
+        if (p.id === "muhammad" && s > 0) s += 6;
         return { p, s };
-      }).filter(x => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 3);
+      }).filter(x => x.s >= 3).sort((a, b) => b.s - a.s).slice(0, 3);
 
-      if (scoredThemes.length === 0 && scoredProphets.length === 0) {
+      // 4) Situations from the lives of the Companions
+      const companions = (typeof COMPANIONS !== "undefined" ? COMPANIONS : []).map(c => ({
+        c,
+        s: scoreContent(qt, raw, null, [c.name, c.title, c.summary, c.summaryAr].join(" "))
+      })).filter(x => x.s >= 3).sort((a, b) => b.s - a.s).slice(0, 3);
+
+      const total = hadiths.length + themes.length + prophets.length + companions.length;
+      if (total === 0) {
         out.innerHTML = `<div class="no-results">
-          We could not find a matching theme for those words. Try describing the feeling or action simply — for example: <em>anger, anxiety, debt, backbiting, repentance, orphan, patience</em>.
-          <br><span dir="rtl" style="font-family:'Amiri',serif;">لم نجد معنى مطابقاً. جرّب وصف الشعور أو الفعل ببساطة — مثل: غضب، قلق، دين، غيبة، توبة، يتيم، صبر.</span>
+          We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.
+          <br><span dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة بعد. جرّب وصف الفعل أو الشعور ببساطة — مثل: غضب، قلق، دين، غيبة، خمر، الوالدين، الجار، غش، تشبه، توبة.</span>
+          <br><br>You can also search the complete Sahih al-Bukhari and Sahih Muslim below.
+          <br><button class="btn btn-outline btn-small" style="margin-top:10px;" onclick="deepSearch()">🔍 Search all of Bukhari &amp; Muslim — ابحث في البخاري ومسلم كاملين</button>
+          <div id="deepResults"></div>
         </div>`;
         return;
       }
 
       let html = `<div class="guidance-results-head">
         <h3>Guidance related to your situation <span dir="rtl" style="font-family:'Amiri',serif;">— توجيه يتعلق بحالتك</span></h3>
-        <p>Read each verse in its full surah. These are pointers for reflection, not rulings. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة. هذه إشارات للتدبر لا أحكام.</span></p>
+        <p>Read each verse in its full surah and each hadith with its reference. These are pointers for reflection, not rulings. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة وكل حديث بمرجعه. هذه إشارات للتدبر لا أحكام.</span></p>
       </div>`;
 
-      scoredThemes.slice(0, 5).forEach(({ t, kind }) => {
-        const warn = kind === "warning";
-        html += `<div class="theme-card ${warn ? "warning" : ""}" style="margin-bottom:14px;">
-          <div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:${warn ? "#8a3d1f" : "var(--green)"};margin-bottom:6px;">
-            ${warn ? "⚠️ A warning to reflect on — تحذير للتدبر" : "🌿 A path of good — طريق خير"}
-          </div>
-          ${themeCardHtml(t, warn)}
-        </div>`;
-      });
+      if (hadiths.length) {
+        html += `<h3 style="margin:8px 0 12px;color:var(--green-dark);">🕌 From the words of Prophet Muhammad ﷺ <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من أقوال النبي ﷺ</span></h3>`;
+        hadiths.forEach(({ h }) => { html += hadithCardHtml(h); });
+      }
 
-      if (scoredProphets.length) {
-        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">From the lives of the Prophets <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من سِيَر الأنبياء</span></h3>`;
-        scoredProphets.forEach(({ p }) => {
-          html += `<div class="theme-card" style="margin-bottom:14px;">
-            <h3>${p.name} <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${p.arabic}</span></h3>
-            <p>${p.summary}</p>
-            ${p.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${p.summaryAr}</p>` : ""}
-            <div class="refs">${(p.refs || []).map(r => `<span>${r}</span>`).join("")}</div>
+      if (themes.length) {
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">📖 From the Quran <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من القرآن الكريم</span></h3>`;
+        themes.slice(0, 5).forEach(({ t, kind }) => {
+          const warn = kind === "warning";
+          html += `<div class="theme-card ${warn ? "warning" : ""}" style="margin-bottom:14px;">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:${warn ? "#8a3d1f" : "var(--green)"};margin-bottom:6px;">
+              ${warn ? "⚠️ A warning to reflect on — تحذير للتدبر" : "🌿 A path of good — طريق خير"}
+            </div>
+            ${themeCardHtml(t, warn)}
           </div>`;
         });
       }
 
+      if (prophets.length) {
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">🕊️ From the lives of the Prophets <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من سِيَر الأنبياء</span></h3>`;
+        prophets.forEach(({ p }) => { html += personCardHtml(p); });
+      }
+
+      if (companions.length) {
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">🤝 From the Companions <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من سِيَر الصحابة</span></h3>`;
+        companions.forEach(({ c }) => { html += personCardHtml(c); });
+      }
+
+      html += `<div style="text-align:center;margin-top:22px;">
+        <button class="btn btn-outline btn-small" onclick="deepSearch()">🔍 Also search all of Bukhari &amp; Muslim — ابحث في البخاري ومسلم كاملين</button>
+        <div id="deepResults"></div>
+      </div>`;
+
       out.innerHTML = html;
       out.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    /* Deep search across the complete Sahih al-Bukhari and Sahih Muslim.
+       Loaded only when asked, because it downloads the full collections. */
+    let deepCache = null;
+    async function deepSearch() {
+      const box = document.getElementById("deepResults");
+      const raw = document.getElementById("situationInput").value.trim();
+      if (!raw) return;
+      box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Loading the full collections… this can take a moment. — جارٍ تحميل المجموعات كاملة…</p>`;
+
+      try {
+        if (!deepCache) {
+          const base = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions";
+          const [be, ba, me, ma] = await Promise.all([
+            fetch(base + "/eng-bukhari.min.json").then(r => r.json()),
+            fetch(base + "/ara-bukhari.min.json").then(r => r.json()),
+            fetch(base + "/eng-muslim.min.json").then(r => r.json()),
+            fetch(base + "/ara-muslim.min.json").then(r => r.json())
+          ]);
+          const arMapB = {}; ba.hadiths.forEach(h => arMapB[h.hadithnumber] = h.text);
+          const arMapM = {}; ma.hadiths.forEach(h => arMapM[h.hadithnumber] = h.text);
+          deepCache = [
+            ...be.hadiths.map(h => ({ n: h.hadithnumber, en: h.text, ar: arMapB[h.hadithnumber] || "", src: "Sahih al-Bukhari" })),
+            ...me.hadiths.map(h => ({ n: h.hadithnumber, en: h.text, ar: arMapM[h.hadithnumber] || "", src: "Sahih Muslim" }))
+          ];
+        }
+
+        const qt = tokens(raw);
+        const need = Math.max(2, Math.ceil(qt.length * 0.5));
+        const hits = [];
+        for (const h of deepCache) {
+          const s = scoreContent(qt, raw, null, h.en + " " + h.ar);
+          if (s >= need * 2) hits.push({ h, s });
+        }
+        hits.sort((a, b) => b.s - a.s || a.h.en.length - b.h.en.length);
+
+        if (!hits.length) {
+          box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Nothing found in the full collections for those words. — لم نجد شيئاً في المجموعات الكاملة.</p>`;
+          return;
+        }
+        box.innerHTML = `<h3 style="margin:24px 0 12px;color:var(--green-dark);text-align:left;">📚 From the complete collections <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من المجموعات الكاملة</span></h3>` +
+          hits.slice(0, 12).map(({ h }) => `<div class="theme-card" style="margin-bottom:14px;text-align:left;">
+            <div style="font-size:.8rem;color:var(--gold);font-weight:700;margin-bottom:6px;">${h.src} — Hadith #${h.n}</div>
+            ${h.ar ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.12rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${h.ar}</p>` : ""}
+            <p>${h.en}</p>
+          </div>`).join("");
+      } catch (e) {
+        box.innerHTML = `<p style="margin-top:14px;color:#8a3d1f;">Could not load the full collections. Please check your connection and try again. — تعذّر تحميل المجموعات، تحقق من الاتصال.</p>`;
+      }
     }
 
     function clearGuidance() {

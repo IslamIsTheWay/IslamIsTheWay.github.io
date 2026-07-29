@@ -1675,6 +1675,146 @@ const HADITHS = [
     topic: "Modesty",
     title: "Modesty brings nothing but good",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+  },
+  {
+    arabic: "لَعَنَ رَسُولُ اللَّهِ ﷺ الْمُتَشَبِّهِينَ مِنَ الرِّجَالِ بِالنِّسَاءِ وَالْمُتَشَبِّهَاتِ مِنَ النِّسَاءِ بِالرِّجَالِ",
+    text: "The Messenger of Allah ﷺ cursed the men who imitate women and the women who imitate men.",
+    narrator: "Abdullah ibn Abbas",
+    ref: "Sahih al-Bukhari, Book of Dress (Al-Libas), Hadith 5885",
+    topic: "Dress & Imitation",
+    title: "Men imitating women, and women imitating men",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["imitate","imitating","imitation","resemble","men wearing women","woman clothes","women's clothes","man wearing","dress like","clothing","clothes","dress","attire","garment","cross dress","تشبه","المتشبهين","لبس","ملابس","ثياب","زي","رجل يلبس","تشبه بالنساء"]
+  },
+  {
+    arabic: "جَاءَ رَجُلٌ إِلَى رَسُولِ اللَّهِ ﷺ فَقَالَ: مَنْ أَحَقُّ النَّاسِ بِحُسْنِ صَحَابَتِي؟ قَالَ: أُمُّكَ، قَالَ: ثُمَّ مَنْ؟ قَالَ: ثُمَّ أُمُّكَ، قَالَ: ثُمَّ مَنْ؟ قَالَ: ثُمَّ أُمُّكَ، قَالَ: ثُمَّ مَنْ؟ قَالَ: ثُمَّ أَبُوكَ",
+    text: "A man asked the Messenger of Allah ﷺ: 'Who is most deserving of my good company?' He said: 'Your mother.' He asked: 'Then who?' He said: 'Your mother.' He asked again: 'Then who?' He said: 'Your mother.' He asked: 'Then who?' He said: 'Then your father.'",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Hadith 5971; Sahih Muslim, Hadith 2548",
+    topic: "Parents",
+    title: "Your mother, then your mother, then your mother, then your father",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["mother","father","parents","parent","family","mom","dad","dutiful","obey parents","أم","أمي","أب","والدين","بر الوالدين","عقوق","أهل"]
+  },
+  {
+    arabic: "مَنْ غَشَّنَا فَلَيْسَ مِنَّا",
+    text: "Whoever cheats us is not one of us.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Book of Faith, Hadith 102",
+    topic: "Honesty in Trade",
+    title: "Cheating in business or selling",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["cheat","cheating","fraud","deceive","scam","business","trade","sell","selling","buy","customer","work","job","exam","copy","غش","خداع","تدليس","تجارة","بيع","عمل","امتحان","نصب"]
+  },
+  {
+    arabic: "لَا يَدْخُلُ الْجَنَّةَ قَاطِعُ رَحِمٍ",
+    text: "The one who severs the ties of kinship will not enter Paradise.",
+    narrator: "Jubayr ibn Mut'im",
+    ref: "Sahih al-Bukhari, Hadith 5984; Sahih Muslim, Hadith 2556",
+    topic: "Family Ties",
+    title: "Cutting off relatives and family ties",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["family","relative","relatives","kinship","brother","sister","uncle","aunt","cousin","cut off","not speaking","estranged","quarrel","قطيعة","رحم","صلة الرحم","أقارب","أخي","أختي","خصام","هجر"]
+  },
+  {
+    arabic: "خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ وَأَنَا خَيْرُكُمْ لِأَهْلِي",
+    text: "The best of you is the one who is best to his family, and I am the best of you to my family.",
+    narrator: "Aisha bint Abu Bakr",
+    ref: "Jami at-Tirmidhi, Hadith 3895; Sunan Ibn Majah",
+    topic: "Marriage & Family",
+    title: "Treating your wife and family well",
+    strength: "Sahih — Narrated by at-Tirmidhi; authenticated by al-Albani",
+    keys: ["wife","husband","marriage","married","spouse","family","home","argue with wife","divorce","زوجة","زوج","زواج","أهلي","بيت","طلاق","خلاف"]
+  },
+  {
+    arabic: "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+    text: "The Muslim is the one from whose tongue and hand other Muslims are safe.",
+    narrator: "Abdullah ibn Amr",
+    ref: "Sahih al-Bukhari, Hadith 10; Sahih Muslim, Hadith 40",
+    topic: "Harming Others",
+    title: "Not harming people with your tongue or hand",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["harm","hurt","hit","fight","fighting","bully","abuse","insult","violence","shout","swear","لسان","أذى","ضرب","شتم","سب","عنف","إيذاء","خصام"]
+  },
+  {
+    arabic: "كُلُّ مُسْكِرٍ خَمْرٌ وَكُلُّ خَمْرٍ حَرَامٌ",
+    text: "Every intoxicant is khamr, and every khamr is forbidden.",
+    narrator: "Abdullah ibn Umar",
+    ref: "Sahih Muslim, Book of Drinks, Hadith 2003",
+    topic: "Intoxicants",
+    title: "Alcohol, drugs and every intoxicant",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["alcohol","drink","drinking","drunk","wine","beer","drug","drugs","weed","smoking","intoxicant","addiction","خمر","مسكر","شرب","مخدرات","إدمان","تدخين"]
+  },
+  {
+    arabic: "الظُّلْمُ ظُلُمَاتٌ يَوْمَ الْقِيَامَةِ",
+    text: "Oppression will be darkness upon darkness on the Day of Resurrection.",
+    narrator: "Abdullah ibn Umar",
+    ref: "Sahih al-Bukhari, Hadith 2447; Sahih Muslim, Hadith 2579",
+    topic: "Oppression",
+    title: "Wronging or oppressing another person",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["oppress","oppression","wrong someone","unfair","injustice","abuse","tyrant","took my right","ظلم","اعتداء","حق","جور","استبداد"]
+  },
+  {
+    arabic: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ جَارَهُ",
+    text: "Whoever believes in Allah and the Last Day, let him be generous to his neighbour.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Hadith 6018; Sahih Muslim, Hadith 47",
+    topic: "Neighbors",
+    title: "How to treat your neighbour",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["neighbour","neighbor","neighbours","next door","building","jar","جار","جيران","سكن","بيت الجيران"]
+  },
+  {
+    arabic: "مَنْ سَتَرَ مُسْلِمًا سَتَرَهُ اللَّهُ فِي الدُّنْيَا وَالْآخِرَةِ",
+    text: "Whoever conceals the faults of a Muslim, Allah will conceal his faults in this world and the next.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Hadith 2699",
+    topic: "Concealing Faults",
+    title: "Covering someone's fault instead of exposing it",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["expose","exposing","secret","scandal","shame someone","spread","reveal","conceal","cover fault","ستر","فضح","سر","عيب","نشر","تشهير"]
+  },
+  {
+    arabic: "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ",
+    text: "Fear Allah wherever you are, follow a bad deed with a good deed and it will erase it, and treat people with good character.",
+    narrator: "Abu Dharr al-Ghifari",
+    ref: "Jami at-Tirmidhi, Hadith 1987",
+    topic: "Repentance & Character",
+    title: "Erasing a bad deed with a good deed",
+    strength: "Strong — Narrated by at-Tirmidhi; graded Strong by at-Tirmidhi",
+    keys: ["bad deed","mistake","sin","fix","make up","redeem","erase","guilt","character","سيئة","حسنة","ذنب","تكفير","إصلاح","خلق"]
+  },
+  {
+    arabic: "لَا ضَرَرَ وَلَا ضِرَارَ",
+    text: "There should be neither harming nor reciprocating harm.",
+    narrator: "Abu Sa'id al-Khudri",
+    ref: "Sunan Ibn Majah, Hadith 2341; Muwatta Imam Malik",
+    topic: "Harming Others",
+    title: "No harming, and no answering harm with harm",
+    strength: "Strong — Narrated by Ibn Majah and Malik; authenticated by al-Albani",
+    keys: ["revenge","payback","harm","damage","retaliate","get back at","dispute","ضرر","انتقام","إضرار","خصومة","ثأر"]
+  },
+  {
+    arabic: "الدِّينُ النَّصِيحَةُ",
+    text: "The religion is sincere good counsel.",
+    narrator: "Tamim ad-Dari",
+    ref: "Sahih Muslim, Book of Faith, Hadith 55",
+    topic: "Sincere Advice",
+    title: "Advising others sincerely, not exposing them",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["advice","advise","counsel","correct someone","friend doing wrong","help friend","نصيحة","نصح","إرشاد","توجيه","صديق"]
+  },
+  {
+    arabic: "نَفْسُ الْمُؤْمِنِ مُعَلَّقَةٌ بِدَيْنِهِ حَتَّى يُقْضَى عَنْهُ",
+    text: "The soul of the believer remains attached to his debt until it is settled for him.",
+    narrator: "Abu Hurairah",
+    ref: "Jami at-Tirmidhi, Hadith 1078",
+    topic: "Debt",
+    title: "Owing money and repaying debts",
+    strength: "Strong — Narrated by at-Tirmidhi; graded Strong by al-Albani",
+    keys: ["debt","owe","owed","borrow","borrowed","loan","money i owe","repay","pay back","دين","ديون","اقتراض","سداد","استدانة"]
   }
 ];
 
@@ -1737,6 +1877,38 @@ const PARADISE_THEMES = [
     descriptionAr: "القيام بالقسط شهادةً لله ولو على النفس أو الوالدين والأقربين، واجب أصيل على المؤمن.",
     keys: ["justice","just","fair","fairness","testimony","witness","dispute","conflict","court","rights","bias","عدل","إنصاف","قسط","شهادة","خصومة","نزاع","حق","حقوق","محاباة","ظلم"],
     refs: ["Surah An-Nisa (4:135)", "Surah Al-Ma'idah (5:8)"]
+  },
+  {
+    title: "Modesty, Dress and Lowering the Gaze",
+    titleAr: "الحياء واللباس وغض البصر",
+    description: "Believing men and women are told to lower their gaze and guard their modesty. The Quran describes clothing as both a covering and an adornment — and says the garment of righteousness (taqwa) is the best garment of all.",
+    descriptionAr: "أُمر المؤمنون والمؤمنات بغض البصر وحفظ الفروج، ووصف القرآن اللباس بأنه ستر وزينة، وبيّن أن لباس التقوى هو خير لباس.",
+    keys: ["modesty","modest","dress","clothes","clothing","garment","wear","wearing","cover","hijab","veil","awrah","gaze","look","lower gaze","imitate","imitating","appearance","adornment","حياء","لباس","ملابس","ثياب","ستر","حجاب","عورة","غض البصر","نظر","زينة","تشبه","مظهر"],
+    refs: ["Surah An-Nur (24:30-31)", "Surah Al-A'raf (7:26)", "Surah Al-Ahzab (33:59)"]
+  },
+  {
+    title: "Kindness to Parents",
+    titleAr: "الإحسان إلى الوالدين",
+    description: "Allah joins worship of Him with kindness to parents — commanding that they never be spoken to harshly, and that one lower the wing of humility and mercy to them in their old age.",
+    descriptionAr: "قرن الله عبادته بالإحسان إلى الوالدين، ونهى عن التأفف منهما، وأمر بخفض جناح الذل من الرحمة لهما عند الكبر.",
+    keys: ["parents","parent","mother","father","mom","dad","family","old age","elderly","obey","disobey","ungrateful","والدين","أم","أب","بر","عقوق","كبر","أهل"],
+    refs: ["Surah Al-Isra (17:23-24)", "Surah Luqman (31:14)"]
+  },
+  {
+    title: "Love and Mercy Between Spouses",
+    titleAr: "المودة والرحمة بين الزوجين",
+    description: "Among Allah's signs is that He created spouses for one another and placed love and mercy between them; believers are commanded to live with their spouses in kindness.",
+    descriptionAr: "من آيات الله أن خلق للناس أزواجاً وجعل بينهم مودة ورحمة، وأمر المؤمنين أن يعاشروا أزواجهم بالمعروف.",
+    keys: ["marriage","married","wife","husband","spouse","divorce","argue","fight with wife","love","relationship","زواج","زوجة","زوج","طلاق","مودة","رحمة","خلاف","معاشرة"],
+    refs: ["Surah Ar-Rum (30:21)", "Surah An-Nisa (4:19)"]
+  },
+  {
+    title: "Keeping Trusts and Promises",
+    titleAr: "أداء الأمانات والوفاء بالعهد",
+    description: "Allah commands that trusts be returned to their rightful owners and that promises be fulfilled — for every covenant will be asked about.",
+    descriptionAr: "أمر الله بأداء الأمانات إلى أهلها والوفاء بالعهد، فإن العهد كان مسؤولاً.",
+    keys: ["trust","amanah","promise","covenant","oath","borrowed","responsibility","duty","secret","أمانة","عهد","وعد","مسؤولية","حفظ السر"],
+    refs: ["Surah An-Nisa (4:58)", "Surah Al-Isra (17:34)"]
   }
 ];
 
@@ -1796,6 +1968,22 @@ const WARNING_THEMES = [
     descriptionAr: "الذين يكنزون الذهب والفضة ولا ينفقونها في سبيل الله تُوعّدوا بعذاب أليم يوم القيامة.",
     keys: ["hoard","hoarding","stingy","greed","greedy","miser","zakat","withhold","selfish","كنز","بخل","شح","طمع","زكاة","منع","أنانية"],
     refs: ["Surah At-Tawbah (9:34-35)"]
+  },
+  {
+    title: "Intoxicants and Gambling",
+    titleAr: "الخمر والميسر",
+    description: "Intoxicants and gambling are described as defilement from the work of Satan, which sow enmity and hatred and turn people away from the remembrance of Allah and from prayer.",
+    descriptionAr: "الخمر والميسر رجس من عمل الشيطان، يوقعان العداوة والبغضاء ويصدّان عن ذكر الله وعن الصلاة.",
+    keys: ["alcohol","drink","drunk","wine","beer","drug","drugs","gambling","bet","betting","lottery","casino","addiction","smoking","خمر","مسكر","شرب","ميسر","قمار","مراهنة","مخدرات","إدمان"],
+    refs: ["Surah Al-Ma'idah (5:90-91)"]
+  },
+  {
+    title: "Cheating in Weights and Measures",
+    titleAr: "التطفيف في الكيل والميزان",
+    description: "Woe is declared to those who take full measure from people but give less when they measure or weigh for them — a warning against every form of cheating in dealings.",
+    descriptionAr: "ويلٌ للمطففين الذين يستوفون حقهم من الناس ويبخسونهم إذا كالوهم أو وزنوهم — تحذير من كل صور الغش في المعاملات.",
+    keys: ["cheat","cheating","fraud","scam","short change","weigh","measure","business","trade","customer","deceive","exam","copy","تطفيف","غش","كيل","ميزان","خداع","تجارة","بخس","نصب"],
+    refs: ["Surah Al-Mutaffifin (83:1-3)", "Surah Ar-Rahman (55:9)"]
   }
 ];
 
