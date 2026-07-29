@@ -204,6 +204,36 @@
       return normalize(s).split(" ").filter(w => w.length >= 3 && !STOP.has(w));
     }
 
+    /* ---------- Word rarity (IDF) ----------
+       Words like "man", "woman", "prophet" or "Allah" appear in almost every
+       entry, so matching them means nothing. Words like "imitate", "riba" or
+       "خمر" are rare and therefore meaningful. We measure this once across all
+       the site's content and weight matches by how rare the word is. */
+    let IDF = null;
+    function buildIdf() {
+      const docs = [];
+      (typeof HADITHS !== "undefined" ? HADITHS : []).forEach(h =>
+        docs.push([h.title, h.text, h.topic, h.arabic, (h.keys || []).join(" ")].join(" ")));
+      (typeof PROPHETS !== "undefined" ? PROPHETS : []).forEach(p =>
+        docs.push([p.name, p.title, p.summary, p.summaryAr].join(" ")));
+      (typeof COMPANIONS !== "undefined" ? COMPANIONS : []).forEach(c =>
+        docs.push([c.name, c.title, c.summary, c.summaryAr].join(" ")));
+      [...PARADISE_THEMES, ...WARNING_THEMES].forEach(t =>
+        docs.push([t.title, t.description, t.titleAr, t.descriptionAr, (t.keys || []).join(" ")].join(" ")));
+
+      const df = Object.create(null);
+      docs.forEach(d => {
+        new Set(tokens(d).map(stem)).forEach(w => { df[w] = (df[w] || 0) + 1; });
+      });
+      IDF = { N: docs.length, df };
+    }
+
+    function idf(word) {
+      if (!IDF) buildIdf();
+      const d = IDF.df[stem(word)] || 0;
+      return Math.log((IDF.N + 1) / (d + 1));   // common word -> near 0
+    }
+
     /* Score a query against a piece of content.
        - an explicit keyword from `keys` is the strongest signal
        - a multi-word keyword phrase counts more than a single word
@@ -231,16 +261,26 @@
         }
       });
 
+      // Plain word overlap, weighted by how rare the word is. Matching
+      // "imitate" is worth a lot; matching "woman" or "prophet" is worth
+      // almost nothing, because they appear in nearly every entry.
+      let bestRarity = 0;
       queryTokens.forEach(q => {
         const qs = stem(q);
         if (qs.length < 3) return;
-        if (hay.includes(" " + q + " ")) score += 2;
-        else if (hayStem.includes(" " + qs + " ")) score += 2;
-        else if (hay.includes(qs)) score += 1;
+        const hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") || hay.includes(qs);
+        if (!hit) return;
+        const w = idf(q);
+        score += w * 1.6;
+        if (w > bestRarity) bestRarity = w;
       });
 
+      lastBestRarity = bestRarity;
       return score;
     }
+
+    // Rarity of the most distinctive word matched by the last scoreContent call.
+    let lastBestRarity = 0;
 
     function personCardHtml(p) {
       return `<div class="theme-card" style="margin-bottom:14px;">
@@ -294,19 +334,31 @@
       });
       themes.sort((a, b) => b.s - a.s);
 
-      // 3) Prophets — Prophet Muhammad ﷺ is given priority, as his life is the
-      //    fullest example for every situation.
-      const prophets = (typeof PROPHETS !== "undefined" ? PROPHETS : []).map(p => {
-        let s = scoreContent(qt, raw, null, [p.name, p.title, p.summary, p.summaryAr].join(" "));
-        if (p.id === "muhammad" && s > 0) s += 6;
-        return { p, s };
-      }).filter(x => x.s >= 3).sort((a, b) => b.s - a.s).slice(0, 3);
+      /* 3 & 4) People. A biography must match on a genuinely distinctive word
+         before it is shown. Without this, searching "a man wearing women's
+         clothes" pulled in any companion whose story merely contains the word
+         "woman" — which is not real relevance. */
+      const RARITY_FLOOR = 2.5;   // roughly: the word appears in <10% of entries
+      const PERSON_MIN   = 4;
 
-      // 4) Situations from the lives of the Companions
-      const companions = (typeof COMPANIONS !== "undefined" ? COMPANIONS : []).map(c => ({
-        c,
-        s: scoreContent(qt, raw, null, [c.name, c.title, c.summary, c.summaryAr].join(" "))
-      })).filter(x => x.s >= 3).sort((a, b) => b.s - a.s).slice(0, 3);
+      function scorePeople(list, keyName) {
+        return list.map(item => {
+          const s = scoreContent(qt, raw, null,
+            [item.name, item.title, item.summary, item.summaryAr].join(" "));
+          return { [keyName]: item, item, s, rarity: lastBestRarity };
+        })
+        .filter(x => x.s >= PERSON_MIN && x.rarity >= RARITY_FLOOR)
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 3);
+      }
+
+      // Prophet Muhammad ﷺ is given priority, as his life is the fullest
+      // example — but only once he genuinely matches the situation.
+      const prophets = scorePeople(typeof PROPHETS !== "undefined" ? PROPHETS : [], "p")
+        .map(x => (x.item.id === "muhammad" ? { ...x, s: x.s + 6 } : x))
+        .sort((a, b) => b.s - a.s);
+
+      const companions = scorePeople(typeof COMPANIONS !== "undefined" ? COMPANIONS : [], "c");
 
       const total = hadiths.length + themes.length + prophets.length + companions.length;
       if (total === 0) {
