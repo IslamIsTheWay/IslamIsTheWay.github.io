@@ -83,6 +83,24 @@ function speakText(text, lang) {
 }
 window.speakText = speakText;
 
+/* ---------- Scroll reveal ----------
+   Anything with class="reveal" fades and rises into place as it scrolls into
+   view, and fades back out once it leaves — the effect the photos use. */
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".reveal");
+  if (!targets.length) return;
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(el => el.classList.add("in-view"));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("in-view", entry.isIntersecting);
+    });
+  }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+  targets.forEach(el => io.observe(el));
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("nav.main-nav");

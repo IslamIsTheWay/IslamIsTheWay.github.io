@@ -6,11 +6,62 @@
    surah is opened.
    ============================================ */
 
+/* ---------- Reciters ----------
+   Per-ayah audio comes from everyayah.com, where each file is named
+   {surah3}{ayah3}.mp3 — e.g. 002255.mp3 is Ayat al-Kursi. Every folder below
+   was checked to be live before being listed here. */
+const RECITERS = [
+  { id: "Alafasy_128kbps",                    name: "Mishary Rashid Alafasy",   ar: "مشاري راشد العفاسي" },
+  { id: "Yasser_Ad-Dussary_128kbps",          name: "Yasser Al-Dossary",        ar: "ياسر الدوسري" },
+  { id: "Abdurrahmaan_As-Sudais_192kbps",     name: "Abdurrahman As-Sudais",    ar: "عبد الرحمن السديس" },
+  { id: "Maher_AlMuaiqly_64kbps",             name: "Maher Al-Muaiqly",         ar: "ماهر المعيقلي" },
+  { id: "Abdul_Basit_Murattal_64kbps",        name: "Abdul Basit (Murattal)",   ar: "عبد الباسط عبد الصمد" },
+  { id: "Husary_128kbps",                     name: "Mahmoud Al-Husary",        ar: "محمود خليل الحصري" },
+  { id: "Minshawy_Murattal_128kbps",          name: "Al-Minshawi (Murattal)",   ar: "محمد صديق المنشاوي" },
+  { id: "Saood_ash-Shuraym_128kbps",          name: "Saud Ash-Shuraim",         ar: "سعود الشريم" },
+  { id: "Ghamadi_40kbps",                     name: "Saad Al-Ghamdi",           ar: "سعد الغامدي" },
+  { id: "Hudhaify_128kbps",                   name: "Ali Al-Hudhaify",          ar: "علي الحذيفي" },
+  { id: "Abdullaah_3awwaad_Al-Juhaynee_128kbps", name: "Abdullah Al-Juhany",    ar: "عبد الله الجهني" },
+  { id: "Nasser_Alqatami_128kbps",            name: "Nasser Al-Qatami",         ar: "ناصر القطامي" },
+  { id: "Salah_Al_Budair_128kbps",            name: "Salah Al-Budair",          ar: "صلاح البدير" },
+  { id: "Muhammad_Ayyoub_128kbps",            name: "Muhammad Ayyoub",          ar: "محمد أيوب" },
+  { id: "Ali_Jaber_64kbps",                   name: "Ali Jaber",                ar: "علي جابر" },
+  { id: "Fares_Abbad_64kbps",                 name: "Fares Abbad",              ar: "فارس عباد" }
+];
+
+const RECITER_KEY = "iitw-reciter";
+
+function getReciter() {
+  const saved = localStorage.getItem(RECITER_KEY);
+  return RECITERS.some(r => r.id === saved) ? saved : RECITERS[0].id;
+}
+
+function pad3(n) { return String(n).padStart(3, "0"); }
+
+function ayahAudioUrl(surahNum, ayahNumInSurah) {
+  return "https://everyayah.com/data/" + getReciter() + "/" + pad3(surahNum) + pad3(ayahNumInSurah) + ".mp3";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("surahGrid");
   if (!grid) return;
 
   renderSurahGrid(SURAHS);
+
+  // Build the reciter dropdown
+  const recSel = document.getElementById("reciterSelect");
+  if (recSel) {
+    recSel.innerHTML = RECITERS
+      .map(r => `<option value="${r.id}">${r.name} — ${r.ar}</option>`)
+      .join("");
+    recSel.value = getReciter();
+    recSel.addEventListener("change", () => {
+      localStorage.setItem(RECITER_KEY, recSel.value);
+      stopAudio();
+      // If a surah is open, rebuild its audio links for the new reciter.
+      if (window._openSurah) openSurah(window._openSurah);
+    });
+  }
 
   const searchInput = document.getElementById("surahSearch");
   const placeFilter = document.getElementById("placeFilter");
@@ -76,16 +127,16 @@ async function openSurah(surah) {
   const arabicTitle = document.getElementById("modalArabicTitle");
   const body = document.getElementById("modalBody");
 
+  window._openSurah = surah;
   title.textContent = `${surah.n}. ${surah.name} — ${surah.meaning}`;
   arabicTitle.textContent = surah.arabic;
   body.innerHTML = `<div class="loading">Loading verses…</div>`;
   overlay.classList.add("open");
 
   try {
-    const [arabicRes, translationRes, audioRes] = await Promise.all([
+    const [arabicRes, translationRes] = await Promise.all([
       fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/quran-uthmani`),
-      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`),
-      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/ar.alafasy`)
+      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`)
     ]);
 
     if (!arabicRes.ok || !translationRes.ok) throw new Error("Network response was not ok");
@@ -95,20 +146,26 @@ async function openSurah(surah) {
 
     const arabicAyahs = arabicData.data.ayahs;
     const translationAyahs = translationData.data.ayahs;
-    const audioAyahs = audioRes.ok ? (await audioRes.json()).data.ayahs : [];
 
-    let html = `<div style="margin-bottom:18px;text-align:center;">
-      <button onclick="playAllAyahs()" style="padding:10px 24px;border:1px solid #1e7e45;border-radius:8px;background:#e6f4ea;color:#1e7e45;cursor:pointer;font-size:.95rem;">🔊 Play Full Surah Recitation</button>
-      <button onclick="stopAudio()" style="padding:10px 24px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;font-size:.95rem;margin-left:8px;">⏹ Stop</button>
+    const current = RECITERS.find(r => r.id === getReciter()) || RECITERS[0];
+
+    let html = `<div class="reciter-bar">
+      <div class="reciter-now">🎧 Reciter: <strong>${current.name}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">${current.ar}</span></div>
+      <div>
+        <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ Play Full Surah</button>
+        <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ Stop</button>
+      </div>
     </div>`;
-    window._ayahAudios = audioAyahs.map(a => a.audio);
+
+    // Per-ayah audio URLs are built directly from the chosen reciter.
+    window._ayahAudios = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));
 
     arabicAyahs.forEach((ayah, i) => {
       const translation = translationAyahs[i] ? translationAyahs[i].text : "";
-      const audioUrl = audioAyahs[i] ? audioAyahs[i].audio : "";
+      const audioUrl = ayahAudioUrl(surah.n, ayah.numberInSurah);
       html += `
         <div class="ayah-block">
-          <div class="arabic-text">${ayah.text}${audioUrl ? ` <button onclick="playAyah('${audioUrl}')" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen">🔊</button>` : ""}</div>
+          <div class="arabic-text">${ayah.text} <button onclick="playAyah('${audioUrl}')" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
           <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
         </div>
       `;

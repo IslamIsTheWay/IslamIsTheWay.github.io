@@ -1684,37 +1684,58 @@ const HADITHS = [
 const PARADISE_THEMES = [
   {
     title: "Faith and Righteous Deeds",
+    titleAr: "الإيمان والعمل الصالح",
     description: "Those who believe and do righteous deeds are promised gardens beneath which rivers flow, to dwell therein forever.",
+    descriptionAr: "الذين آمنوا وعملوا الصالحات وُعدوا بجنات تجري من تحتها الأنهار خالدين فيها أبداً.",
+    keys: ["faith","belief","iman","good deeds","righteous","paradise","jannah","reward","إيمان","عمل صالح","الصالحات","الجنة","أجر","ثواب"],
     refs: ["Surah Al-Baqarah (2:25)", "Surah Al-Kahf (18:107-108)"]
   },
   {
     title: "Patience, Gratitude, and Trust in Allah",
+    titleAr: "الصبر والشكر والتوكل على الله",
     description: "Those who restrain anger, forgive others, and spend in charity in times of ease and hardship are described among the righteous prepared for Paradise.",
+    descriptionAr: "الذين يكظمون الغيظ ويعفون عن الناس وينفقون في السراء والضراء وُصفوا بالمحسنين الذين أُعدت لهم الجنة.",
+    keys: ["patience","patient","anger","angry","forgive","forgiveness","gratitude","trust","hardship","difficulty","stress","struggle","test","calm","صبر","غضب","كظم الغيظ","عفو","شكر","توكل","شدة","ضيق","ابتلاء","مصيبة","تعب"],
     refs: ["Surah Ali 'Imran (3:133-136)"]
   },
   {
     title: "Humility and Good Character",
+    titleAr: "التواضع وحسن الخلق",
     description: "The 'servants of the Most Merciful' are described as walking humbly, responding to ill-treatment with peace, spending the night in prayer, and avoiding excess — their reward is the highest chambers of Paradise.",
+    descriptionAr: "عباد الرحمن يمشون على الأرض هوناً، وإذا خاطبهم الجاهلون قالوا سلاماً، ويقومون الليل، ولا يسرفون — وجزاؤهم الغرف العالية في الجنة.",
+    keys: ["humility","humble","character","manners","akhlaq","gentle","insult","ill-treatment","argue","moderation","تواضع","أخلاق","حسن الخلق","لين","سفه","جدال","اعتدال","إسراف"],
     refs: ["Surah Al-Furqan (25:63-76)"]
   },
   {
     title: "Honesty, Charity, and Kindness to Others",
+    titleAr: "الصدق والصدقة والإحسان إلى الناس",
     description: "Feeding the needy, freeing captives, and caring for orphans and the poor out of love for Allah are highlighted as paths that lead away from hardship and toward reward.",
+    descriptionAr: "إطعام المسكين وفكّ الرقاب ورعاية اليتيم والفقير حباً في الله من أعظم ما يُنجي ويقرّب إلى الأجر.",
+    keys: ["charity","sadaqah","kindness","poor","needy","orphan","hungry","feed","help","give","honesty","صدقة","إحسان","فقير","مسكين","يتيم","جائع","إطعام","مساعدة","عطاء","صدق"],
     refs: ["Surah Al-Insan (76:8-12)", "Surah Al-Balad (90:11-18)"]
   },
   {
     title: "Repentance and Seeking Forgiveness",
+    titleAr: "التوبة والاستغفار",
     description: "Allah's door of repentance is always open. Those who repent sincerely and mend their ways are promised forgiveness and a transformed record of deeds.",
+    descriptionAr: "باب التوبة مفتوح دائماً، ومن تاب صادقاً وأصلح عمله وُعد بالمغفرة وتبديل سيئاته حسنات.",
+    keys: ["sin","sins","repent","repentance","tawbah","forgiveness","guilt","regret","mistake","shame","despair","hopeless","relapse","ذنب","ذنوب","توبة","استغفار","معصية","ندم","خطأ","يأس","قنوط","تقصير"],
     refs: ["Surah Az-Zumar (39:53)", "Surah Al-Furqan (25:70)"]
   },
   {
     title: "Remembrance of Allah and Prayer",
+    titleAr: "ذكر الله والصلاة",
     description: "Regular remembrance of Allah (dhikr) and establishing prayer are described as the means by which hearts find rest and souls find protection from indecency and wrongdoing.",
+    descriptionAr: "بذكر الله تطمئن القلوب، وإقامة الصلاة تنهى عن الفحشاء والمنكر وتحفظ النفس.",
+    keys: ["prayer","salah","salat","dhikr","remembrance","anxious","anxiety","worried","worry","sad","sadness","depressed","depression","fear","lonely","peace","heart","صلاة","ذكر","قلق","خوف","حزن","اكتئاب","وحدة","طمأنينة","قلب","راحة"],
     refs: ["Surah Ar-Ra'd (13:28)", "Surah Al-Ankabut (29:45)"]
   },
   {
     title: "Justice and Fairness",
+    titleAr: "العدل والإنصاف",
     description: "Standing firmly for justice, even against oneself or one's own family, is commanded as a fundamental duty of the believer.",
+    descriptionAr: "القيام بالقسط شهادةً لله ولو على النفس أو الوالدين والأقربين، واجب أصيل على المؤمن.",
+    keys: ["justice","just","fair","fairness","testimony","witness","dispute","conflict","court","rights","bias","عدل","إنصاف","قسط","شهادة","خصومة","نزاع","حق","حقوق","محاباة","ظلم"],
     refs: ["Surah An-Nisa (4:135)", "Surah Al-Ma'idah (5:8)"]
   }
 ];
@@ -1722,37 +1743,58 @@ const PARADISE_THEMES = [
 const WARNING_THEMES = [
   {
     title: "Consuming Wealth Unjustly",
+    titleAr: "أكل الأموال بالباطل",
     description: "Those who wrongfully consume the property of orphans are warned of a severe consequence in the Hereafter.",
+    descriptionAr: "الذين يأكلون أموال اليتامى ظلماً حُذّروا من عاقبة شديدة في الآخرة.",
+    keys: ["orphan","orphans","wealth","money","property","inheritance","steal","unjust","cheat","يتيم","يتامى","مال","أموال","ميراث","سرقة","ظلم","غش","باطل"],
     refs: ["Surah An-Nisa (4:10)"]
   },
   {
     title: "Dealing in Riba (Usury/Interest)",
+    titleAr: "التعامل بالربا",
     description: "Those who persist in dealing with riba after guidance has come to them are given a strong warning in the Quran.",
+    descriptionAr: "من أصرّ على التعامل بالربا بعد أن جاءه البيان، جاء في حقه وعيد شديد في القرآن.",
+    keys: ["riba","interest","usury","loan","bank","mortgage","credit","debt","ربا","فائدة","قرض","بنك","دين","قرض ربوي","تمويل"],
     refs: ["Surah Al-Baqarah (2:275-276)"]
   },
   {
     title: "Neglecting Prayer and the Needy",
+    titleAr: "التهاون في الصلاة وإهمال المحتاج",
     description: "Denying the Day of Judgment is linked with mistreating orphans, failing to feed the poor, and being neglectful in prayer.",
+    descriptionAr: "التكذيب بيوم الدين قُرن بدفع اليتيم وعدم الحضّ على طعام المسكين والسهو عن الصلاة.",
+    keys: ["miss prayer","missing prayer","lazy","neglect","ignore poor","showing off","riya","تهاون","ترك الصلاة","سهو","إهمال","رياء","دفع اليتيم","منع الماعون"],
     refs: ["Surah Al-Ma'un (107:1-7)"]
   },
   {
     title: "Suspicion, Backbiting, and Mockery",
+    titleAr: "الظن والغيبة والسخرية",
     description: "Believers are instructed to avoid excessive suspicion, spying on one another, and backbiting — described as something one would find detestable if likened to its true nature.",
+    descriptionAr: "نُهي المؤمنون عن كثير من الظن والتجسس والغيبة، وشُبّهت الغيبة بما تكرهه النفس أشد الكراهية.",
+    keys: ["backbite","backbiting","gossip","rumor","mock","mockery","insult","suspicion","spy","nickname","bully","غيبة","نميمة","سخرية","استهزاء","ظن","تجسس","تنابز","ألقاب","إهانة"],
     refs: ["Surah Al-Hujurat (49:11-12)"]
   },
   {
     title: "Arrogance and Injustice",
+    titleAr: "الكِبر والظلم",
     description: "Walking the earth with arrogance and dealing unjustly with others is repeatedly condemned, while humility before Allah and people is praised.",
+    descriptionAr: "المشي في الأرض مرحاً والتعالي على الناس وظلمهم مذموم في القرآن، والتواضع ممدوح.",
+    keys: ["arrogance","arrogant","pride","proud","boast","oppress","oppression","injustice","look down","كبر","تكبر","غرور","خيلاء","تفاخر","ظلم","استعلاء","احتقار"],
     refs: ["Surah Al-Isra (17:37)", "Surah Luqman (31:18)"]
   },
   {
     title: "Lying and Breaking Oaths",
+    titleAr: "الكذب ونقض العهود",
     description: "Hypocrisy, lying, and breaking promises are described as traits that lead to the lowest depths of the Fire, and believers are urged to be truthful in all matters.",
+    descriptionAr: "النفاق والكذب وإخلاف الوعد من صفات المنافقين الذين توعّدهم الله بالدرك الأسفل من النار، والمؤمن مأمور بالصدق.",
+    keys: ["lie","lying","liar","dishonest","promise","oath","betray","hypocrisy","hypocrite","cheat","broken word","كذب","نفاق","منافق","وعد","عهد","خيانة","إخلاف","غدر"],
     refs: ["Surah An-Nisa (4:145)", "Surah As-Saff (61:2-3)"]
   },
   {
     title: "Hoarding and Withholding Charity",
+    titleAr: "كنز المال ومنع الزكاة",
     description: "Those who hoard gold and silver and do not spend in the path of Allah are warned of a painful punishment on the Day of Judgment.",
+    descriptionAr: "الذين يكنزون الذهب والفضة ولا ينفقونها في سبيل الله تُوعّدوا بعذاب أليم يوم القيامة.",
+    keys: ["hoard","hoarding","stingy","greed","greedy","miser","zakat","withhold","selfish","كنز","بخل","شح","طمع","زكاة","منع","أنانية"],
     refs: ["Surah At-Tawbah (9:34-35)"]
   }
 ];

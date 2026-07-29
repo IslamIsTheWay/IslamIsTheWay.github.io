@@ -111,27 +111,96 @@ header.site-header {
 }
 
 .brand .logo-mosque {
-  width: 40px;
-  height: 34px;
+  width: 46px;
+  height: 46px;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(184, 148, 30, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .brand:hover .logo-mosque {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(184, 148, 30, 0.4);
 }
 
-/* ============ Hero Mosque Illustration ============ */
-.mosque-illustration {
+/* ============ Photo bands (parallax + scroll reveal) ============ */
+.photo-band {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 90px 24px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Dark scrim keeps text fully readable over any photo */
+.photo-band::before {
+  content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
-  color: var(--gold);
-  opacity: 0.16;
-  z-index: 0;
-  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 40, 20, 0.72) 0%, rgba(8, 40, 20, 0.58) 50%, rgba(8, 40, 20, 0.74) 100%);
+}
+
+.photo-band .band-inner {
+  position: relative;
+  max-width: 760px;
+  color: #fff;
+}
+
+.photo-band .band-arabic {
+  font-family: 'Amiri', serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  color: #f0d98a;
+  direction: rtl;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.photo-band h2 {
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  margin-bottom: 12px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.photo-band p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Scroll reveal — content fades/rises in when the band enters the screen,
+   and fades back out when it leaves. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fixed backgrounds are unreliable/janky on touch devices */
+@media (max-width: 900px) {
+  .photo-band {
+    background-attachment: scroll;
+    padding: 70px 20px;
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .photo-band { background-attachment: scroll; }
 }
 
 nav.main-nav {
@@ -242,35 +311,32 @@ nav.main-nav a.nav-login.active::after {
 }
 
 /* ============ Hero ============ */
+/* Home hero — real mosque photo (morning) behind the words, with a light
+   scrim so the dark green text stays perfectly readable. */
 .hero {
-  background: linear-gradient(160deg, #f0f9f2 0%, #e8f5ec 30%, #ffffff 70%, #faf8f0 100%);
-  padding: 100px 0 90px;
+  padding: 120px 0 110px;
   text-align: center;
   border-bottom: none;
   position: relative;
   overflow: hidden;
-}
-
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(30,126,69,0.06) 0%, transparent 70%);
+  background-image: url("../img/mosque-morning.jpg");
+  background-size: cover;
+  background-position: center 62%;
+  background-attachment: fixed;
 }
 
 .hero::before {
-  width: 500px;
-  height: 500px;
-  top: -200px;
-  left: -150px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.78) 45%, rgba(244,250,246,0.90) 100%);
 }
 
-.hero::after {
-  width: 400px;
-  height: 400px;
-  bottom: -180px;
-  right: -100px;
+@media (max-width: 900px) {
+  .hero {
+    background-attachment: scroll;
+    padding: 80px 0 70px;
+  }
 }
 
 .hero h1 {
@@ -301,9 +367,11 @@ nav.main-nav a.nav-login.active::after {
 
 .page-hero {
   background: linear-gradient(135deg, #0d3a1a 0%, var(--green-dark) 40%, #1a5c32 100%);
+  background-size: cover;
+  background-position: center;
   color: var(--white);
   text-align: center;
-  padding: 70px 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
@@ -314,6 +382,19 @@ nav.main-nav a.nav-login.active::after {
   inset: 0;
   background: radial-gradient(ellipse at 50% 120%, rgba(201,162,39,0.08) 0%, transparent 60%);
 }
+
+/* Page headers with a real mosque photo behind them. The dark gradient scrim
+   is baked in first so the white heading text always stays readable. */
+.page-hero.ph-photo::before { background: none; }
+
+.page-hero.ph-quran      { background-image: linear-gradient(rgba(8,40,20,.78), rgba(8,40,20,.68)), url("../img/mosque-inside.jpg"); }
+.page-hero.ph-hadith     { background-image: linear-gradient(rgba(8,30,55,.76), rgba(8,40,20,.72)), url("../img/mosque-night-main.jpg"); }
+.page-hero.ph-prophets   { background-image: linear-gradient(rgba(8,40,20,.72), rgba(8,40,20,.70)), url("../img/mosque-sunset.jpg"); }
+.page-hero.ph-companions { background-image: linear-gradient(rgba(8,30,55,.76), rgba(8,40,20,.72)), url("../img/mosque-blue-4.jpg"); }
+.page-hero.ph-guidance   { background-image: linear-gradient(rgba(8,30,55,.74), rgba(8,40,20,.74)), url("../img/mosque-night.jpg"); }
+.page-hero.ph-courses    { background-image: linear-gradient(rgba(8,40,20,.74), rgba(8,40,20,.70)), url("../img/mosque-beach.jpg"); }
+.page-hero.ph-search     { background-image: linear-gradient(rgba(8,40,20,.76), rgba(8,40,20,.70)), url("../img/mosque-white-1.jpg"); }
+.page-hero.ph-login      { background-image: linear-gradient(rgba(8,40,20,.78), rgba(8,40,20,.72)), url("../img/mosque-side.jpg"); }
 
 .page-hero h1 {
   font-size: clamp(2rem, 4vw, 2.8rem);
@@ -672,6 +753,57 @@ section {
   min-width: 220px;
 }
 
+/* Reciter picker + player bar */
+#reciterSelect {
+  min-width: 230px;
+  max-width: 100%;
+}
+
+.reciter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+}
+
+.reciter-bar .reciter-now {
+  font-size: 0.9rem;
+  color: var(--green-dark);
+}
+
+.rq-btn {
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.rq-play {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: #fff;
+}
+
+.rq-play:hover { background: var(--green-dark); }
+
+.rq-stop {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+.rq-stop:hover { background: #f3f3f3; }
+
 .surah-grid {
   display: grid;
   gap: 16px;
@@ -835,12 +967,21 @@ section {
 
 /* ============ Ayah Quote Banner ============ */
 .ayah-banner {
-  background: linear-gradient(135deg, #0d3a1a 0%, var(--green-dark) 50%, #1a5c32 100%);
+  background-image:
+    linear-gradient(rgba(6, 28, 50, 0.80), rgba(8, 40, 20, 0.82)),
+    url("../img/mosque-night-main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--white);
   text-align: center;
-  padding: 70px 24px;
+  padding: 84px 24px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .ayah-banner { background-attachment: scroll; }
 }
 
 .ayah-banner::before {
@@ -1013,6 +1154,130 @@ section {
 
 .theme-card.warning .refs span {
   background: #fbe9e0;
+}
+
+/* ============ Situation guidance box (Guidance page) ============ */
+.situation-box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow-lg);
+}
+
+.situation-box h2 {
+  color: var(--green-dark);
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  margin-bottom: 8px;
+}
+
+.situation-box .sit-sub {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.sit-input-wrap {
+  position: relative;
+}
+
+.sit-input-wrap textarea {
+  width: 100%;
+  padding: 15px 62px 15px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.7;
+  resize: vertical;
+  min-height: 96px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sit-input-wrap textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(30, 126, 69, 0.12);
+}
+
+.mic-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--green-light);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mic-btn:hover {
+  background: var(--green);
+  transform: scale(1.06);
+}
+
+.mic-btn.listening {
+  background: #c0392b;
+  border-color: #c0392b;
+  animation: micPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.55); }
+  50%      { box-shadow: 0 0 0 12px rgba(192, 57, 43, 0); }
+}
+
+.sit-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.sit-controls select {
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: #fff;
+}
+
+.mic-status {
+  min-height: 1.3em;
+  margin-top: 10px;
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+.guidance-results-head {
+  margin: 28px 0 16px;
+  padding-top: 20px;
+  border-top: 2px solid var(--green-light);
+}
+
+.guidance-results-head h3 {
+  color: var(--green-dark);
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.guidance-results-head p {
+  color: var(--text-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .situation-box { padding: 22px 18px; }
 }
 
 .context-note {

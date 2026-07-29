@@ -7,6 +7,8 @@
   <meta name="description" content="Themes from the Quran on righteous deeds leading to Paradise and warnings about deeds that lead to Hellfire, with verse references." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/logo-emblem.png" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -16,10 +18,7 @@
   <header class="site-header">
     <div class="nav-wrap">
       <a href="index.html" class="brand">
-        <svg class="logo-mosque" viewBox="0 0 56 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#e8c94a"/><stop offset="100%" stop-color="#b8941e"/></linearGradient></defs>
-          <g fill="url(#goldGrad)"><rect x="4" y="30" width="48" height="2" rx="1"/><rect x="8" y="32" width="40" height="14" rx="1.5"/><path d="M14 46 L14 39 A4 4 0 0 1 22 39 L22 46" fill="#fff"/><path d="M24 46 L24 38 A4 4 0 0 1 32 38 L32 46" fill="#fff"/><path d="M34 46 L34 39 A4 4 0 0 1 42 39 L42 46" fill="#fff"/><path d="M13 30 Q28 12 43 30"/><line x1="28" y1="11" x2="28" y2="5" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round"/><path d="M26.5 3.5 A2 2 0 1 0 26.5 7 A1.4 1.4 0 1 1 26.5 3.5"/><circle cx="29.5" cy="3" r=".7"/><rect x="1" y="12" width="4" height="34" rx="2"/><ellipse cx="3" cy="12" rx="3" ry="2.5"/><line x1="3" y1="9.5" x2="3" y2="4" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round"/><circle cx="3" cy="3" r="1"/><rect x="51" y="12" width="4" height="34" rx="2"/><ellipse cx="53" cy="12" rx="3" ry="2.5"/><line x1="53" y1="9.5" x2="53" y2="4" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round"/><circle cx="53" cy="3" r="1"/></g>
-        </svg>
+        <img class="logo-mosque" src="img/logo-emblem.png" alt="Islam Is The Way" width="46" height="46" />
         Islam Is The Way
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation">
@@ -39,27 +38,65 @@
     </div>
   </header>
 
-  <div class="page-hero">
+  <div class="page-hero ph-photo ph-guidance">
     <div class="container">
       <h1>Guidance &amp; Reflection</h1>
       <p>The Quran repeatedly describes the qualities and deeds that lead toward Allah's mercy and Paradise, as well as behaviors it warns against. Below are some recurring themes, with references for further study.</p>
+      <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;margin-top:10px;">يذكر القرآن الكريم الصفات والأعمال التي تقود إلى رحمة الله وجنته، ويحذّر من أعمال أخرى. وفيما يلي أبرز هذه المعاني مع مراجعها للاستزادة.</p>
     </div>
   </div>
 
+  <!-- ===== Ask for guidance about your situation ===== -->
   <section>
+    <div class="container">
+      <div class="situation-box">
+        <h2>🤲 Ask About Your Situation <span dir="rtl">— اسأل عن حالتك</span></h2>
+        <p class="sit-sub">
+          Describe what you are going through, in Arabic or English, and we will show you the Quranic themes and Prophets' stories that relate to it — each with its full reference so you can read it in context.
+          <br><span dir="rtl" style="font-family:'Amiri',serif;">اكتب ما تمر به بالعربية أو الإنجليزية، وسنعرض لك المعاني القرآنية وقصص الأنبياء المتعلقة بحالتك، مع المرجع كاملاً لتقرأه في سياقه.</span>
+        </p>
+
+        <div class="sit-input-wrap">
+          <textarea id="situationInput" dir="auto" rows="3"
+            placeholder="e.g. I am struggling with anger and I hurt someone I love…  |  مثال: أشعر بالقلق ولا أستطيع النوم…"></textarea>
+          <button type="button" id="micBtn" class="mic-btn" title="Speak instead of typing — تحدث بدل الكتابة">🎤</button>
+        </div>
+
+        <div class="sit-controls">
+          <select id="micLang" aria-label="Speaking language">
+            <option value="ar-SA">🎤 أتحدث بالعربية</option>
+            <option value="en-US">🎤 I speak English</option>
+          </select>
+          <button class="btn btn-primary" type="button" onclick="findGuidance()">Find Guidance — ابحث عن التوجيه</button>
+          <button class="btn btn-outline btn-small" type="button" onclick="clearGuidance()">Clear</button>
+        </div>
+        <div id="micStatus" class="mic-status"></div>
+
+        <div class="context-note" style="margin:18px 0 0;">
+          <strong>Important — مهم:</strong> This tool only points you to verses and stories that are already on this site, always with their full reference. It is <strong>not a fatwa</strong> and does not judge you or your situation. Please read each verse within its complete surah and consult a qualified scholar for personal rulings.
+          <br><span dir="rtl" style="font-family:'Amiri',serif;">هذه الأداة تدلّك فقط على آيات وقصص موجودة في الموقع مع مراجعها كاملة. وهي <strong>ليست فتوى</strong> ولا تحكم عليك أو على حالتك. اقرأ كل آية في سياق سورتها كاملة، واستشر أهل العلم في المسائل الخاصة.</span>
+        </div>
+
+        <div id="guidanceResults"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pattern-bg">
     <div class="container">
       <div class="context-note">
         <strong>A note on context:</strong> Each theme below is a brief summary intended to encourage reflection and further study — not a complete ruling or judgment on any individual. The Quran's verses should always be read within their full surah, alongside trusted tafsir (commentary) and scholarship, rather than in isolation.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">ملاحظة عن السياق: كل معنى مذكور أدناه هو ملخّص موجز للتذكير والتدبر، وليس حكماً كاملاً على أحد. وينبغي قراءة الآيات ضمن سورتها كاملة مع تفسير موثوق وأهل العلم، لا منفردة عن سياقها.</span>
       </div>
 
       <div class="themes-columns">
         <div class="themes-col">
-          <h2>🌿 The Path Toward Paradise</h2>
+          <h2>🌿 The Path Toward Paradise <span dir="rtl" style="font-family:'Amiri',serif;">— طريق الجنة</span></h2>
           <p class="col-sub">Qualities and deeds the Quran associates with Allah's mercy and the reward of Paradise (Jannah).</p>
           <div id="paradiseList"></div>
         </div>
         <div class="themes-col warning">
-          <h2>⚠️ Warnings to Reflect Upon</h2>
+          <h2>⚠️ Warnings to Reflect Upon <span dir="rtl" style="font-family:'Amiri',serif;">— تحذيرات للتدبر</span></h2>
           <p class="col-sub">Behaviors the Quran warns against, associated with the consequence of the Hellfire (Jahannam) if persisted in without repentance.</p>
           <div id="warningList"></div>
         </div>
@@ -108,15 +145,21 @@
 
   <script src="js/data.js"></script>
   <script>
+    /* ---------- Render the two theme columns (English + Arabic) ---------- */
+    function themeCardHtml(t, isWarning) {
+      return `
+        <h3>${t.title}${t.titleAr ? ` <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${t.titleAr}</span>` : ""}</h3>
+        <p>${t.description}</p>
+        ${t.descriptionAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:${isWarning ? "#8a3d1f" : "var(--green-dark)"};background:${isWarning ? "#fdf1ea" : "var(--green-pale)"};border-radius:8px;padding:10px 14px;margin-bottom:10px;">${t.descriptionAr}</p>` : ""}
+        <div class="refs">${t.refs.map(r => `<span>${r}</span>`).join("")}</div>
+      `;
+    }
+
     const paradiseList = document.getElementById("paradiseList");
     PARADISE_THEMES.forEach(t => {
       const card = document.createElement("div");
       card.className = "theme-card";
-      card.innerHTML = `
-        <h3>${t.title}</h3>
-        <p>${t.description}</p>
-        <div class="refs">${t.refs.map(r => `<span>${r}</span>`).join("")}</div>
-      `;
+      card.innerHTML = themeCardHtml(t, false);
       paradiseList.appendChild(card);
     });
 
@@ -124,12 +167,166 @@
     WARNING_THEMES.forEach(t => {
       const card = document.createElement("div");
       card.className = "theme-card warning";
-      card.innerHTML = `
-        <h3>${t.title}</h3>
-        <p>${t.description}</p>
-        <div class="refs">${t.refs.map(r => `<span>${r}</span>`).join("")}</div>
-      `;
+      card.innerHTML = themeCardHtml(t, true);
       warningList.appendChild(card);
+    });
+
+    /* ---------- Situation → guidance matcher ----------
+       Scores the user's description against each theme's keywords (Arabic and
+       English) and against the Prophets' stories already stored on this site.
+       It only surfaces existing referenced material — it never invents rulings. */
+
+    // Light Arabic normalisation so "الصلاه"/"الصلاة" and أ/إ/آ all match.
+    function normAr(s) {
+      return s
+        .replace(/[ً-ْـ]/g, "")   // harakat + tatweel
+        .replace(/[أإآ]/g, "ا")
+        .replace(/ى/g, "ي")
+        .replace(/ة/g, "ه");
+    }
+    function normalize(s) {
+      return normAr(String(s || "").toLowerCase())
+        .replace(/[^\p{L}\p{N}\s]/gu, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function scoreAgainstKeys(text, keys) {
+      const hay = " " + normalize(text) + " ";
+      let score = 0;
+      const hits = [];
+      (keys || []).forEach(k => {
+        const kn = normalize(k);
+        if (kn.length < 3) return;
+        if (hay.includes(" " + kn + " ") || hay.includes(kn)) { score += kn.includes(" ") ? 3 : 2; hits.push(k); }
+      });
+      return { score, hits };
+    }
+
+    function findGuidance() {
+      const raw = document.getElementById("situationInput").value.trim();
+      const out = document.getElementById("guidanceResults");
+      if (raw.length < 3) {
+        out.innerHTML = `<div class="no-results">Please describe your situation first. — من فضلك اكتب حالتك أولاً.</div>`;
+        return;
+      }
+
+      const scoredThemes = [];
+      PARADISE_THEMES.forEach(t => {
+        const r = scoreAgainstKeys(raw, t.keys);
+        if (r.score > 0) scoredThemes.push({ t, ...r, kind: "paradise" });
+      });
+      WARNING_THEMES.forEach(t => {
+        const r = scoreAgainstKeys(raw, t.keys);
+        if (r.score > 0) scoredThemes.push({ t, ...r, kind: "warning" });
+      });
+      scoredThemes.sort((a, b) => b.score - a.score);
+
+      // Match Prophets' stories by their own words (English + Arabic summaries).
+      const words = normalize(raw).split(" ").filter(w => w.length >= 4);
+      const scoredProphets = (typeof PROPHETS !== "undefined" ? PROPHETS : []).map(p => {
+        const hay = normalize((p.summary || "") + " " + (p.summaryAr || "") + " " + (p.title || ""));
+        let s = 0;
+        words.forEach(w => { if (hay.includes(w)) s++; });
+        return { p, s };
+      }).filter(x => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 3);
+
+      if (scoredThemes.length === 0 && scoredProphets.length === 0) {
+        out.innerHTML = `<div class="no-results">
+          We could not find a matching theme for those words. Try describing the feeling or action simply — for example: <em>anger, anxiety, debt, backbiting, repentance, orphan, patience</em>.
+          <br><span dir="rtl" style="font-family:'Amiri',serif;">لم نجد معنى مطابقاً. جرّب وصف الشعور أو الفعل ببساطة — مثل: غضب، قلق، دين، غيبة، توبة، يتيم، صبر.</span>
+        </div>`;
+        return;
+      }
+
+      let html = `<div class="guidance-results-head">
+        <h3>Guidance related to your situation <span dir="rtl" style="font-family:'Amiri',serif;">— توجيه يتعلق بحالتك</span></h3>
+        <p>Read each verse in its full surah. These are pointers for reflection, not rulings. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة. هذه إشارات للتدبر لا أحكام.</span></p>
+      </div>`;
+
+      scoredThemes.slice(0, 5).forEach(({ t, kind }) => {
+        const warn = kind === "warning";
+        html += `<div class="theme-card ${warn ? "warning" : ""}" style="margin-bottom:14px;">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:${warn ? "#8a3d1f" : "var(--green)"};margin-bottom:6px;">
+            ${warn ? "⚠️ A warning to reflect on — تحذير للتدبر" : "🌿 A path of good — طريق خير"}
+          </div>
+          ${themeCardHtml(t, warn)}
+        </div>`;
+      });
+
+      if (scoredProphets.length) {
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">From the lives of the Prophets <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من سِيَر الأنبياء</span></h3>`;
+        scoredProphets.forEach(({ p }) => {
+          html += `<div class="theme-card" style="margin-bottom:14px;">
+            <h3>${p.name} <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${p.arabic}</span></h3>
+            <p>${p.summary}</p>
+            ${p.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${p.summaryAr}</p>` : ""}
+            <div class="refs">${(p.refs || []).map(r => `<span>${r}</span>`).join("")}</div>
+          </div>`;
+        });
+      }
+
+      out.innerHTML = html;
+      out.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function clearGuidance() {
+      document.getElementById("situationInput").value = "";
+      document.getElementById("guidanceResults").innerHTML = "";
+      document.getElementById("micStatus").textContent = "";
+    }
+
+    /* ---------- Microphone input (speak instead of typing) ---------- */
+    let sitRecognition = null, sitListening = false;
+
+    document.getElementById("micBtn").addEventListener("click", () => {
+      const btn = document.getElementById("micBtn");
+      const status = document.getElementById("micStatus");
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      if (!SR) {
+        status.textContent = "Voice input needs Chrome or Edge. Please type instead. — الإدخال الصوتي يحتاج متصفح Chrome أو Edge، فاكتب من فضلك.";
+        return;
+      }
+      if (sitListening) {
+        sitListening = false;
+        if (sitRecognition) sitRecognition.stop();
+        return;
+      }
+
+      sitRecognition = new SR();
+      sitRecognition.lang = document.getElementById("micLang").value;
+      sitRecognition.interimResults = false;
+      sitRecognition.continuous = false;
+
+      sitRecognition.onstart = () => {
+        sitListening = true;
+        btn.classList.add("listening");
+        status.textContent = "● Listening… speak now — أستمع إليك… تفضل بالكلام";
+      };
+      sitRecognition.onresult = e => {
+        let said = "";
+        for (let i = 0; i < e.results.length; i++) said += e.results[i][0].transcript;
+        const box = document.getElementById("situationInput");
+        box.value = (box.value ? box.value.trim() + " " : "") + said.trim();
+        status.textContent = "✓ Got it — تم التقاط كلامك";
+      };
+      sitRecognition.onerror = e => {
+        sitListening = false;
+        btn.classList.remove("listening");
+        status.textContent = e.error === "not-allowed"
+          ? "Microphone blocked. Please allow it in your browser. — تم منع الميكروفون، اسمح به من المتصفح."
+          : "Could not hear anything. Please try again. — لم نسمع شيئاً، حاول مرة أخرى.";
+      };
+      sitRecognition.onend = () => {
+        sitListening = false;
+        btn.classList.remove("listening");
+      };
+      sitRecognition.start();
+    });
+
+    document.getElementById("situationInput").addEventListener("keydown", e => {
+      if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) findGuidance();
     });
   </script>
   <script src="js/main.js"></script>
