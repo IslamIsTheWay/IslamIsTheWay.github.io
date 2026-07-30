@@ -60,14 +60,76 @@ function _iitwVoiceList() {
   return window.speechSynthesis ? (window.speechSynthesis.getVoices() || []) : [];
 }
 
+const IITW_AR_VOICE_KEY = "iitw-ar-voice";
+
+function _iitwArabicVoices() {
+  return _iitwVoiceList().filter(v => (v.lang || "").toLowerCase().startsWith("ar"));
+}
+
 function _iitwPickVoice(langPrefix) {
   const voices = _iitwVoiceList().filter(v => (v.lang || "").toLowerCase().startsWith(langPrefix));
   if (!voices.length) return null;
+
+  // For Arabic, honour the reader's own choice first.
+  if (langPrefix === "ar") {
+    const chosen = localStorage.getItem(IITW_AR_VOICE_KEY);
+    const match = voices.find(v => v.name === chosen);
+    if (match) return match;
+  }
+
   const malePattern = langPrefix === "ar" ? _MALE_AR : _MALE_EN;
   return voices.find(v => malePattern.test(v.name))          // a known man's voice
       || voices.find(v => !_FEMALE.test(v.name))              // anything not known-female
       || voices[0];
 }
+
+/* A small panel letting the reader choose which Arabic voice is used, and
+   telling them plainly what to do if their device has none. Browser speech
+   cannot recite classical Arabic the way a qualified reciter does — this at
+   least puts the choice of voice in the reader's hands. */
+function iitwBuildVoiceBar() {
+  const host = document.getElementById("arVoiceBar");
+  if (!host) return;
+  const voices = _iitwArabicVoices();
+
+  if (!voices.length) {
+    host.innerHTML = `<div class="voice-bar voice-bar-warn">
+      <strong>No Arabic voice is installed on this device.</strong>
+      The 🔊 button for Arabic is disabled, because reading Arabic with an English voice mispronounces it badly.
+      To enable it on Windows: <em>Settings → Time &amp; language → Language &amp; region → add Arabic → Language options → Speech</em>, then reload this page. The Arabic voice <strong>Naayf</strong> is a man's voice.
+      <br><span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد صوت عربي على هذا الجهاز. أضف حزمة اللغة العربية من إعدادات النظام ثم أعد تحميل الصفحة، وصوت «نايف» صوت رجل.</span>
+    </div>`;
+    return;
+  }
+
+  const current = _iitwPickVoice("ar");
+  host.innerHTML = `<div class="voice-bar">
+    <label for="arVoiceSelect">🎙 Arabic voice <span dir="rtl">— الصوت العربي</span>:</label>
+    <select id="arVoiceSelect">
+      ${voices.map(v => `<option value="${v.name.replace(/"/g, "&quot;")}"${current && v.name === current.name ? " selected" : ""}>${v.name}${_FEMALE.test(v.name) ? " (female)" : _MALE_AR.test(v.name) ? " (male)" : ""}</option>`).join("")}
+    </select>
+    <button type="button" class="voice-test">▶ Test</button>
+    <span class="voice-hint">Pick a male voice if your device has one.</span>
+  </div>`;
+
+  host.querySelector("#arVoiceSelect").addEventListener("change", e => {
+    localStorage.setItem(IITW_AR_VOICE_KEY, e.target.value);
+  });
+  host.querySelector(".voice-test").addEventListener("click", () => {
+    speakText("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ", "ar");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  iitwBuildVoiceBar();
+  // Voices often arrive after first paint.
+  if (window.speechSynthesis) {
+    window.speechSynthesis.addEventListener("voiceschanged", () => {
+      _iitwLoadVoices();
+      iitwBuildVoiceBar();
+    });
+  }
+});
 
 // Small on-screen note, used when speech genuinely cannot work.
 function _iitwToast(msg) {
@@ -99,9 +161,10 @@ function speakText(text, lang) {
 
   if (lang === "ar") {
     clean = clean.replace(/[A-Za-z0-9]/g, " ");
-    // Speech engines read plain Arabic far better than fully vowelled text,
-    // so remove the harakat and tatweel before speaking.
-    clean = clean.replace(/[ً-ْٰـۖ-ۭ]/g, "");
+    // Keep the tashkeel (harakat). It tells the engine which vowel to use, so
+    // words like شَمْس and ابْن come out right; stripping it forces the engine
+    // to guess and mispronounce. Only the tatweel stretch mark is removed.
+    clean = clean.replace(/ـ/g, "");
   } else {
     clean = clean.replace(/[؀-ۿݐ-ݿ]/g, " ");
   }

@@ -1054,5 +1054,403 @@ const SUNNAH = [
     ref: "Sahih al-Bukhari, Hadith 6490; Sahih Muslim, Hadith 2963",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["envy","jealous","comparison","gratitude","content","social media","الحسد","المقارنة","الشكر","القناعة","النعمة"]
+  },
+
+  /* ================= ADDITIONAL PRACTICES ================= */
+  {
+    cat: "dhikr",
+    title: "The morning and evening remembrance",
+    titleAr: "أذكار الصباح والمساء",
+    detail: "The Prophet ﷺ taught saying morning and evening: 'O Allah, by You we have reached the morning…', along with Ayat al-Kursi, the three protective surahs, and 'SubhanAllah wa bihamdih' a hundred times — whoever says the latter has his sins forgiven though they be like the foam of the sea.",
+    detailAr: "علّم النبي ﷺ أن يُقال صباحاً ومساءً: «اللَّهُمَّ بِكَ أَصْبَحْنَا...»، مع آية الكرسي والمعوذات، و«سُبْحَانَ اللَّهِ وَبِحَمْدِهِ» مائة مرة — فمن قالها غُفرت ذنوبه وإن كانت مثل زبد البحر.",
+    ref: "Sunan Abu Dawud, Hadith 5068; Sahih al-Bukhari, Hadith 6405",
+    strength: "Sahih — established in the collections",
+    keys: ["morning","evening","adhkar","daily dhikr","protection","hundred times","أذكار الصباح","المساء","الأذكار اليومية","حفظ","مائة مرة"]
+  },
+  {
+    cat: "dhikr",
+    title: "The best word after the Quran, and the tree in Paradise",
+    titleAr: "الباقيات الصالحات",
+    detail: "The Prophet ﷺ said the most beloved words to Allah are: SubhanAllah, Alhamdulillah, La ilaha illa Allah and Allahu Akbar, and that each of them plants a tree for the servant in Paradise.",
+    detailAr: "قال النبي ﷺ إن أحب الكلام إلى الله: سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر، وأن كل واحدة منها تُغرس للعبد شجرة في الجنة.",
+    ref: "Sahih Muslim, Hadith 2137; Jami at-Tirmidhi, Hadith 3462",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["tasbih","tahmid","takbir","best words","tree in paradise","easy good deeds","الباقيات الصالحات","سبحان الله","الحمد لله","الله أكبر","شجرة في الجنة"]
+  },
+  {
+    cat: "dhikr",
+    title: "The dua of Yunus for every difficulty",
+    titleAr: "دعوة ذي النون",
+    detail: "The Prophet ﷺ said the supplication of Yunus in the belly of the whale — 'There is no god but You, glory to You, indeed I was among the wrongdoers' — is such that no Muslim supplicates with it for anything except that Allah answers him.",
+    detailAr: "قال النبي ﷺ إن دعوة ذي النون في بطن الحوت: «لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ» ما دعا بها مسلم في شيء إلا استجاب الله له.",
+    arabic: "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+    ref: "Jami at-Tirmidhi, Hadith 3505; Musnad Ahmad",
+    strength: "Sahih — authenticated by al-Albani",
+    keys: ["yunus","dua","difficulty","answered","trouble","problem","help","ذو النون","يونس","الدعاء","الاستجابة","الشدة","المشكلة"]
+  },
+  {
+    cat: "manners",
+    title: "Shake hands when you meet",
+    titleAr: "المصافحة عند اللقاء",
+    detail: "The Prophet ﷺ taught that when two Muslims meet and shake hands, they are forgiven before they part. He would never withdraw his hand first from anyone who shook it.",
+    detailAr: "علّم النبي ﷺ أن المسلمين إذا التقيا وتصافحا غُفر لهما قبل أن يفترقا. وكان لا ينزع يده من يد من صافحه حتى ينزعها الآخر.",
+    ref: "Sunan Abu Dawud, Hadith 5212; Jami at-Tirmidhi, Hadith 2490",
+    strength: "Strong — authenticated by al-Albani",
+    keys: ["handshake","shake hands","meeting","greeting","forgiven","المصافحة","اللقاء","السلام","المغفرة"]
+  },
+  {
+    cat: "manners",
+    title: "Let the young greet the elder, and the rider the walker",
+    titleAr: "من يبدأ بالسلام",
+    detail: "The Prophet ﷺ taught the order of greeting: the rider greets the one walking, the walker greets the one sitting, and the smaller group greets the larger.",
+    detailAr: "علّم النبي ﷺ ترتيب السلام: يسلّم الراكب على الماشي، والماشي على القاعد، والقليل على الكثير.",
+    ref: "Sahih al-Bukhari, Book of Manners, Hadith 6233",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["greeting order","salam","rider","walking","elder","young","group","السلام","الراكب","الماشي","القاعد","الكثير"]
+  },
+  {
+    cat: "manners",
+    title: "Do not sit between two people without permission",
+    titleAr: "لا يجلس بين اثنين إلا بإذنهما",
+    detail: "The Prophet ﷺ said it is not permitted for a man to separate two people already sitting together except with their permission, and that no one should be made to stand so another may sit in his place.",
+    detailAr: "قال النبي ﷺ لا يحل لرجل أن يفرّق بين اثنين إلا بإذنهما، ولا يُقام أحد من مجلسه ليجلس فيه غيره.",
+    ref: "Sunan Abu Dawud, Hadith 4844; Sahih al-Bukhari, Hadith 6269",
+    strength: "Sahih — established in the collections",
+    keys: ["sitting","gathering","seat","majlis","manners","permission","المجلس","الجلوس","المكان","الأدب","الإذن"]
+  },
+  {
+    cat: "character",
+    title: "He ﷺ would repeat a word three times to be understood",
+    titleAr: "كان يعيد الكلمة ثلاثاً ليُفهم",
+    detail: "When the Prophet ﷺ spoke he spoke clearly and unhurriedly, and would repeat a sentence three times so it was understood. Aisha said his speech was distinct, such that anyone listening could count it.",
+    detailAr: "كان النبي ﷺ إذا تكلّم تكلّم كلاماً بيّناً غير مستعجل، وكان يعيد الكلمة ثلاثاً لتُفهم. وقالت عائشة: كان كلامه فصلاً يفهمه كل من سمعه.",
+    ref: "Sahih al-Bukhari, Hadith 95; Sunan Abu Dawud, Hadith 4839",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["speech","clear","teaching","explain","repeat","communication","الكلام","البيان","التعليم","الإفهام","التكرار"]
+  },
+  {
+    cat: "character",
+    title: "He ﷺ never turned away from someone speaking to him",
+    titleAr: "كان يُقبل على محدّثه",
+    detail: "The Prophet ﷺ gave his full attention to whoever spoke with him, turning his whole face toward them, and did not pull his hand or face away first. He treated each person as though they were the most important to him.",
+    detailAr: "كان النبي ﷺ يُقبل بكله على من يحدثه، ويوجه إليه وجهه كاملاً، ولا ينصرف عنه أولاً، ويُشعر كل من جلس إليه أنه أكرم الناس عليه.",
+    ref: "Jami at-Tirmidhi, Book of Virtues; Sunan Abu Dawud",
+    strength: "Strong — established in the collections",
+    keys: ["listening","attention","respect","conversation","kindness","الإقبال","الاستماع","الاحترام","المجالسة","حسن المعاملة"]
+  },
+  {
+    cat: "food",
+    title: "He ﷺ liked dates, milk and simple food",
+    titleAr: "من طعامه ﷺ",
+    detail: "Among the foods he ﷺ liked were dates, milk, honey, barley bread and vinegar with oil. He said a house without dates is a hungry house, and he praised simple wholesome food.",
+    detailAr: "من الطعام الذي أحبه ﷺ: التمر واللبن والعسل وخبز الشعير والخل والزيت. وقال: بيت لا تمر فيه جياع أهله، وأثنى على الطعام البسيط الطيب.",
+    ref: "Sahih Muslim, Hadith 2046 (dates); Sahih al-Bukhari, Book of Food and Drink",
+    strength: "Sahih — established in the collections",
+    keys: ["dates","milk","honey","bread","food he ate","simple","التمر","اللبن","العسل","الخبز","طعامه","البسيط"]
+  },
+  {
+    cat: "sleep",
+    title: "The Qaylulah — a short rest in the day",
+    titleAr: "القيلولة",
+    detail: "A brief midday rest was part of the practice of the Prophet ﷺ and his Companions, taken after Dhuhr, and it was a means of strength for worship at night.",
+    detailAr: "كانت القيلولة من هدي النبي ﷺ وأصحابه، تُؤخذ بعد الظهر، وكانت عوناً على قيام الليل والعبادة.",
+    ref: "Sahih al-Bukhari, Book of Permission (on the midday rest); established in the Sunnah",
+    strength: "Sahih — established in the collections",
+    keys: ["nap","qaylulah","rest","midday","afternoon","tired","القيلولة","النوم نهارا","الراحة","بعد الظهر"]
+  },
+  {
+    cat: "purity",
+    title: "Rinse your mouth after milk, and after eating",
+    titleAr: "المضمضة بعد اللبن والطعام",
+    detail: "After drinking milk the Prophet ﷺ rinsed his mouth, saying it has fat in it. He also washed his hands before and after eating.",
+    detailAr: "شرب النبي ﷺ لبناً ثم تمضمض وقال: إن له دسماً. وكان يغسل يديه قبل الطعام وبعده.",
+    ref: "Sahih al-Bukhari, Hadith 211; Jami at-Tirmidhi (washing hands)",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["rinse mouth","milk","wash hands","after eating","clean","المضمضة","اللبن","غسل اليدين","بعد الطعام","النظافة"]
+  },
+  {
+    cat: "mosque",
+    title: "Do not raise your voice or trade in the mosque",
+    titleAr: "حرمة المسجد",
+    detail: "The Prophet ﷺ taught that the mosque is for prayer and remembrance — he forbade buying and selling in it, calling out for lost property, and raising voices. He also disliked coming to the mosque with an offensive smell.",
+    detailAr: "علّم النبي ﷺ أن المسجد للصلاة والذكر — فنهى عن البيع والشراء فيه، وعن إنشاد الضالة، ورفع الأصوات. وكره أن يأتي المسجد من به ريح كريهة.",
+    ref: "Sunan Abu Dawud, Hadith 1079; Sahih Muslim, Hadith 568",
+    strength: "Sahih — established in the collections",
+    keys: ["mosque manners","voice","selling","smell","garlic","respect","أدب المسجد","الصوت","البيع","الريح","احترام"]
+  },
+  {
+    cat: "quran",
+    title: "Do not let the Quran be forgotten — review it",
+    titleAr: "معاهدة القرآن",
+    detail: "The Prophet ﷺ likened memorised Quran to a tethered camel: if its owner keeps hold of it he keeps it, and if he lets go it escapes. He urged constant review of what one has memorised.",
+    detailAr: "شبّه النبي ﷺ حافظ القرآن بصاحب الإبل المعقّلة: إن عاهد عليها أمسكها، وإن أطلقها ذهبت. وحثّ على مداومة مراجعة المحفوظ.",
+    ref: "Sahih al-Bukhari, Hadith 5031; Sahih Muslim, Hadith 789",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["memorise","hifz","forget","review","revision","quran memorisation","الحفظ","المراجعة","النسيان","معاهدة القرآن","التثبيت"]
+  },
+  {
+    cat: "fasting",
+    title: "Fasting is a shield — guard your tongue while fasting",
+    titleAr: "الصيام جُنّة",
+    detail: "The Prophet ﷺ said fasting is a shield, so the fasting person should not be obscene or quarrel; if someone abuses him he should say 'I am fasting'. He warned that Allah does not want mere abstention from food if one abandons falsehood.",
+    detailAr: "قال النبي ﷺ: الصيام جُنّة، فلا يرفث الصائم ولا يجهل، وإن سابّه أحد فليقل: إني صائم. وحذّر أن من لم يدع قول الزور فليس لله حاجة في تركه طعامه.",
+    ref: "Sahih al-Bukhari, Hadith 1894 and 1903; Sahih Muslim",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["fasting","ramadan","tongue","argue","anger while fasting","الصيام","رمضان","اللسان","الخصام","قول الزور"]
+  },
+  {
+    cat: "health",
+    title: "There is no blame in seeking a cure, but no charms or superstition",
+    titleAr: "التداوي بلا تعليق أو تطيّر",
+    detail: "The Prophet ﷺ commanded seeking treatment but forbade amulets, charms and superstition, saying there is no contagion in the way people imagined it and no evil omens — and he liked a good word.",
+    detailAr: "أمر النبي ﷺ بالتداوي ونهى عن التمائم والتعليق والتطيّر، وقال: لا عدوى ولا طيرة، وكان يعجبه الفأل الحسن.",
+    ref: "Sahih al-Bukhari, Hadith 5707; Sahih Muslim, Hadith 2220",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["amulet","charm","superstition","evil eye","treatment","medicine","omen","التمائم","التطير","الحسد","العدوى","التداوي","الفأل"]
+  },
+  {
+    cat: "home",
+    title: "Teach your family and pray with them",
+    titleAr: "تعليم الأهل والصلاة معهم",
+    detail: "The Prophet ﷺ would wake his family for prayer in the night, taught them the Quran and adhkar, and said the best of you are those best to their families. He instructed teaching children the prayer as they grow.",
+    detailAr: "كان النبي ﷺ يوقظ أهله لصلاة الليل، ويعلّمهم القرآن والأذكار، وقال: خيركم خيركم لأهله. وأمر بتعليم الأولاد الصلاة عند بلوغهم سنّها.",
+    ref: "Sahih al-Bukhari, Hadith 1129; Sunan Abu Dawud, Hadith 495",
+    strength: "Sahih — established in the collections",
+    keys: ["family","teach","children prayer","wake up","tarbiyah","upbringing","الأهل","التعليم","تعليم الصلاة","الإيقاظ","التربية"]
+  },
+  {
+    cat: "manners",
+    title: "Return a gift, or at least pray for the giver",
+    titleAr: "المكافأة على الهدية والدعاء للمُهدي",
+    detail: "The Prophet ﷺ accepted gifts and would repay them. He said whoever is given a favour and cannot repay it should pray for the giver, saying 'JazakAllahu khayran' — for he has then fully thanked him.",
+    detailAr: "كان النبي ﷺ يقبل الهدية ويكافئ عليها. وقال: من صُنع إليه معروف فلم يستطع المكافأة فليدعُ لصاحبه ويقل: «جزاك الله خيراً»، فقد أبلغ في الثناء.",
+    ref: "Jami at-Tirmidhi, Hadith 2035; Sahih al-Bukhari, Hadith 2585 (accepting gifts)",
+    strength: "Sahih — authenticated by al-Albani",
+    keys: ["gift","thank","favour","jazakallah","gratitude","repay","الهدية","الشكر","المعروف","جزاك الله خيرا","المكافأة"]
+  },
+  {
+    cat: "death",
+    title: "Charity that continues after death",
+    titleAr: "الصدقة الجارية",
+    detail: "The Prophet ﷺ said that when a person dies his deeds end except three: ongoing charity, knowledge that continues to benefit, and a righteous child who prays for him.",
+    detailAr: "قال النبي ﷺ: إذا مات الإنسان انقطع عمله إلا من ثلاث: صدقة جارية، وعلم يُنتفع به، وولد صالح يدعو له.",
+    arabic: "إِذَا مَاتَ الْإِنْسَانُ انْقَطَعَ عَمَلُهُ إِلَّا مِنْ ثَلَاثٍ: صَدَقَةٍ جَارِيَةٍ، وَعِلْمٍ يُنْتَفَعُ بِهِ، وَوَلَدٍ صَالِحٍ يَدْعُو لَهُ",
+    ref: "Sahih Muslim, Book of Bequests, Hadith 1631",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["sadaqah jariyah","legacy","after death","charity","knowledge","righteous child","الصدقة الجارية","بعد الموت","العلم","الولد الصالح","الأثر"]
+  },
+
+  /* ================= FURTHER PRACTICES ================= */
+  {
+    cat: "prayer",
+    title: "Pray as you have seen me pray",
+    titleAr: "صلوا كما رأيتموني أصلي",
+    detail: "The Prophet ﷺ said: pray as you have seen me pray. He taught the prayer by demonstration — standing, reciting, bowing, prostrating and sitting — so the community would follow his exact manner.",
+    detailAr: "قال النبي ﷺ: صلوا كما رأيتموني أصلي. وعلّم الصلاة بالفعل — قياماً وقراءة وركوعاً وسجوداً وجلوساً — لتقتدي به الأمة في هيئتها.",
+    arabic: "صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 631",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["how to pray","learn prayer","method","imitate","salah steps","كيف أصلي","تعلم الصلاة","صفة الصلاة","الاقتداء"]
+  },
+  {
+    cat: "prayer",
+    title: "Take a sutrah — something in front of you when you pray",
+    titleAr: "السترة في الصلاة",
+    detail: "The Prophet ﷺ would place something in front of him when praying — a spear, a stick, or the back of his saddle — and instructed that one pray toward a sutrah so people do not pass directly in front.",
+    detailAr: "كان النبي ﷺ يجعل بين يديه شيئاً في الصلاة — عنزة أو عصا أو رحل — وأمر أن يصلي الرجل إلى سترة حتى لا يمرّ أحد بين يديه.",
+    ref: "Sahih al-Bukhari, Hadith 501; Sahih Muslim, Hadith 501",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["sutrah","in front","passing","praying alone","barrier","السترة","المرور","أمام المصلي","الصلاة منفردا"]
+  },
+  {
+    cat: "prayer",
+    title: "The prayer of repentance and of need",
+    titleAr: "صلاة التوبة وصلاة الحاجة",
+    detail: "The Prophet ﷺ taught that whoever commits a sin, then performs wudu and prays two rak'ahs and seeks Allah's forgiveness, is forgiven. He also taught praying two rak'ahs and seeking guidance when facing any decision.",
+    detailAr: "علّم النبي ﷺ أن من أذنب ثم توضأ وصلى ركعتين واستغفر الله غُفر له. وعلّم أن يصلي المرء ركعتين ويستخير الله عند كل أمر يهمّه.",
+    ref: "Jami at-Tirmidhi, Hadith 406; Sahih al-Bukhari, Hadith 1162",
+    strength: "Sahih — established in the collections",
+    keys: ["repentance prayer","salat tawbah","istikharah","decision","sin","forgiveness","صلاة التوبة","الاستخارة","القرار","الذنب","المغفرة"]
+  },
+  {
+    cat: "purity",
+    title: "Wudu erases sins with every limb washed",
+    titleAr: "الوضوء يحطّ الخطايا",
+    detail: "The Prophet ﷺ said that when a servant makes wudu, the sins of his face fall away with the water, then those of his hands, then his feet — until he emerges cleansed of sin.",
+    detailAr: "قال النبي ﷺ إن العبد إذا توضأ خرجت خطايا وجهه مع الماء، ثم خطايا يديه، ثم رجليه، حتى يخرج نقياً من الذنوب.",
+    ref: "Sahih Muslim, Book of Purification, Hadith 244",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["wudu reward","sins","purification","cleansing","virtue of wudu","فضل الوضوء","الخطايا","التطهر","الذنوب"]
+  },
+  {
+    cat: "purity",
+    title: "Say the shahadah after completing wudu",
+    titleAr: "الذكر بعد الوضوء",
+    detail: "The Prophet ﷺ said whoever completes wudu then testifies that there is no god but Allah and that Muhammad is His Messenger, the eight gates of Paradise are opened for him to enter by whichever he wishes.",
+    detailAr: "قال النبي ﷺ: من توضأ فأحسن الوضوء ثم شهد أن لا إله إلا الله وأن محمداً رسول الله، فُتحت له أبواب الجنة الثمانية يدخل من أيها شاء.",
+    ref: "Sahih Muslim, Book of Purification, Hadith 234",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["after wudu","shahadah","dua after wudu","gates of paradise","بعد الوضوء","الشهادة","دعاء الوضوء","أبواب الجنة"]
+  },
+  {
+    cat: "dress",
+    title: "The dua when wearing a new garment",
+    titleAr: "دعاء لبس الثوب الجديد",
+    detail: "On wearing a new garment the Prophet ﷺ would name it and say: 'O Allah, praise is Yours; You clothed me with it. I ask You for its good and the good for which it was made.'",
+    detailAr: "كان النبي ﷺ إذا لبس ثوباً جديداً سمّاه وقال: «اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ، أَسْأَلُكَ مِنْ خَيْرِهِ وَخَيْرِ مَا صُنِعَ لَهُ».",
+    ref: "Sunan Abu Dawud, Hadith 4020; Jami at-Tirmidhi, Hadith 1767",
+    strength: "Strong — authenticated by al-Albani",
+    keys: ["new clothes","garment","dua","wearing","shopping","الثوب الجديد","لبس","دعاء اللباس","الشراء"]
+  },
+  {
+    cat: "manners",
+    title: "Lower your gaze and guard your glance",
+    titleAr: "غض البصر",
+    detail: "The Prophet ﷺ warned against following the first glance with a second, and taught that the eye has its own share of accountability. Believing men and women are commanded in the Quran to lower the gaze.",
+    detailAr: "حذّر النبي ﷺ من إعادة النظر بعد النظرة الأولى، وبيّن أن للعين نصيبها من الحساب. وأُمر المؤمنون والمؤمنات في القرآن بغض البصر.",
+    ref: "Sunan Abu Dawud, Hadith 2149; Surah An-Nur (24:30-31)",
+    strength: "Sahih — established in the collections",
+    keys: ["gaze","looking","eyes","glance","modesty","haram looking","phone","غض البصر","النظر","العين","الحياء","النظرة"]
+  },
+  {
+    cat: "manners",
+    title: "Do not enter a house without permission or look inside",
+    titleAr: "النهي عن الاطلاع في البيوت",
+    detail: "The Prophet ﷺ forbade looking into people's houses without permission, and taught that seeking permission exists precisely because of the gaze. Privacy of the home is protected.",
+    detailAr: "نهى النبي ﷺ عن الاطلاع في بيوت الناس بغير إذن، وبيّن أن الاستئذان جُعل من أجل النظر. وحُرمة البيت مصونة.",
+    ref: "Sahih al-Bukhari, Hadith 6241; Sahih Muslim, Hadith 2158",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["privacy","house","looking in","permission","neighbours","الخصوصية","البيوت","الاطلاع","الاستئذان","الجيران"]
+  },
+  {
+    cat: "character",
+    title: "Keep good company and avoid harmful company",
+    titleAr: "مثل الجليس الصالح",
+    detail: "The Prophet ﷺ likened the righteous companion to a seller of musk — you either receive some or at least a pleasant scent — and the bad companion to a blacksmith's bellows that burns or leaves you with a foul smell.",
+    detailAr: "شبّه النبي ﷺ الجليس الصالح بحامل المسك — إما أن يحذيك أو تجد منه ريحاً طيبة — والجليس السوء بنافخ الكير يحرقك أو تجد منه ريحاً خبيثة.",
+    ref: "Sahih al-Bukhari, Hadith 5534; Sahih Muslim, Hadith 2628",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["friends","company","companion","bad friends","influence","musk","الأصدقاء","الجليس","الصحبة","رفقة السوء","التأثير"]
+  },
+  {
+    cat: "character",
+    title: "Be trustworthy — the signs of hypocrisy to avoid",
+    titleAr: "علامات المنافق التي يُحذر منها",
+    detail: "The Prophet ﷺ described three signs to avoid: lying when speaking, breaking a promise, and betraying a trust. He said whoever has them has a share of hypocrisy even if he prays and fasts.",
+    detailAr: "ذكر النبي ﷺ ثلاث علامات يُحذر منها: إذا حدّث كذب، وإذا وعد أخلف، وإذا اؤتمن خان. ومن كانت فيه فله نصيب من النفاق وإن صلى وصام.",
+    ref: "Sahih al-Bukhari, Hadith 34; Sahih Muslim, Hadith 58",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["trust","promise","lying","hypocrisy","betray","reliable","الأمانة","الوعد","الكذب","النفاق","الخيانة"]
+  },
+  {
+    cat: "hardship",
+    title: "No fatigue or sorrow befalls you without reward",
+    titleAr: "ما يصيب المؤمن من نصب إلا كُفّر به",
+    detail: "The Prophet ﷺ said no fatigue, illness, worry, grief or harm reaches a Muslim — even the prick of a thorn — without Allah wiping away some of his sins by it. Hardship is never wasted.",
+    detailAr: "قال النبي ﷺ: ما يصيب المسلم من نصب ولا وصب ولا هم ولا حزن ولا أذى، حتى الشوكة يُشاكها، إلا كفّر الله بها من خطاياه. فلا يذهب التعب سُدى.",
+    ref: "Sahih al-Bukhari, Hadith 5641; Sahih Muslim, Hadith 2573",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["hardship","tired","exhausted","grief","reward","trial","suffering","التعب","النصب","الحزن","الأجر","الابتلاء","الهم"]
+  },
+  {
+    cat: "hardship",
+    title: "Remember that relief is near",
+    titleAr: "بشارة قرب الفرج",
+    detail: "The Prophet ﷺ taught wonder at the believer's state: if good comes he is grateful and rewarded, and if hardship comes he is patient and rewarded — so all his affairs are good.",
+    detailAr: "علّم النبي ﷺ العجب من أمر المؤمن: إن أصابته سرّاء شكر فكان خيراً له، وإن أصابته ضرّاء صبر فكان خيراً له، فكل أمره خير.",
+    ref: "Sahih Muslim, Book of Asceticism, Hadith 2999",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["patience","gratitude","hope","relief","hardship","optimism","الصبر","الشكر","الرجاء","الفرج","التفاؤل"]
+  },
+  {
+    cat: "travel",
+    title: "The traveller's supplication is answered",
+    titleAr: "دعوة المسافر مستجابة",
+    detail: "The Prophet ﷺ mentioned that three supplications are not refused: that of a parent, of a fasting person, and of a traveller. He also urged appointing a leader among a travelling group.",
+    detailAr: "ذكر النبي ﷺ أن ثلاث دعوات لا تُرد: دعوة الوالد، ودعوة الصائم، ودعوة المسافر. وأمر بتأمير أحدهم إذا خرج جماعة في سفر.",
+    ref: "Sunan al-Bayhaqi; Sunan Abu Dawud, Hadith 2608 (appointing a leader)",
+    strength: "Strong — established in the collections",
+    keys: ["traveller dua","journey","answered dua","group travel","leader","دعاء المسافر","السفر","الاستجابة","الرفقة","الأمير"]
+  },
+  {
+    cat: "friday",
+    title: "The best day the sun rises upon",
+    titleAr: "خير يوم طلعت عليه الشمس",
+    detail: "The Prophet ﷺ said the best day on which the sun rises is Friday: on it Adam was created, on it he entered Paradise and was brought out of it, and the Hour will occur on it.",
+    detailAr: "قال النبي ﷺ: خير يوم طلعت عليه الشمس يوم الجمعة، فيه خُلق آدم، وفيه أُدخل الجنة، وفيه أُخرج منها، وفيه تقوم الساعة.",
+    ref: "Sahih Muslim, Book of Jumu'ah, Hadith 854",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["friday","best day","jumuah","virtue","الجمعة","خير يوم","فضل الجمعة"]
+  },
+  {
+    cat: "quran",
+    title: "Al-Fatihah, and the greatest verse",
+    titleAr: "الفاتحة وأعظم آية",
+    detail: "The Prophet ﷺ called Al-Fatihah the greatest surah and taught that there is no prayer without it. He asked Ubayy which verse of the Book is greatest, and affirmed it was Ayat al-Kursi.",
+    detailAr: "سمّى النبي ﷺ الفاتحة أعظم سورة، وبيّن أن لا صلاة إلا بها. وسأل أُبيّاً: أي آية في كتاب الله أعظم؟ فأقرّه على أنها آية الكرسي.",
+    ref: "Sahih al-Bukhari, Hadith 4474; Sahih Muslim, Hadith 810",
+    strength: "Sahih — established in the collections",
+    keys: ["fatihah","ayat al kursi","greatest verse","surah","prayer recitation","الفاتحة","آية الكرسي","أعظم آية","الصلاة"]
+  },
+  {
+    cat: "dhikr",
+    title: "Seek refuge for your children as Ibrahim did",
+    titleAr: "التعويذ للأبناء",
+    detail: "The Prophet ﷺ would seek Allah's protection for Hasan and Husayn with the words: 'I seek refuge for you both in the perfect words of Allah from every devil and vermin, and from every harmful eye.'",
+    detailAr: "كان النبي ﷺ يعوّذ الحسن والحسين فيقول: «أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ، وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ».",
+    arabic: "أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ",
+    ref: "Sahih al-Bukhari, Book of Prophets, Hadith 3371",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["children protection","evil eye","ruqyah for kids","baby","hasan","husayn","تعويذ الأبناء","العين","الحفظ","الأطفال","الرقية"]
+  },
+  {
+    cat: "animals",
+    title: "Feeding animals and plants is charity",
+    titleAr: "الأجر في سقي الزرع وإطعام الدابة",
+    detail: "The Prophet ﷺ said that whoever plants a tree or sows a field from which a person, bird or animal eats, it is charity for him — and he urged planting even at the end of time.",
+    detailAr: "قال النبي ﷺ: من غرس شجراً أو زرع زرعاً فأكل منه إنسان أو طائر أو دابة كان له به صدقة، وحثّ على الغرس حتى في آخر الزمان.",
+    ref: "Sahih Muslim, Hadith 1552; Musnad Ahmad",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["planting","tree","environment","charity","birds","farming","الزرع","الغرس","الشجرة","البيئة","الصدقة","الطيور"]
+  },
+  {
+    cat: "food",
+    title: "Share food with your neighbour",
+    titleAr: "إهداء الطعام للجار",
+    detail: "The Prophet ﷺ told Abu Dharr that when he cooks a stew, he should add extra water and give some to his neighbour. He warned that one is not a believer who sleeps full while his neighbour beside him is hungry.",
+    detailAr: "قال النبي ﷺ لأبي ذر: إذا طبخت مرقة فأكثر ماءها وتعاهد جيرانك. وحذّر: ليس المؤمن الذي يشبع وجاره جائع إلى جنبه.",
+    ref: "Sahih Muslim, Hadith 2625; al-Bayhaqi (the second narration)",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["neighbour","food","share","hungry","cooking","الجار","الطعام","المشاركة","الجائع","الطبخ"]
+  },
+  {
+    cat: "manners",
+    title: "Smiling and a good word are charity",
+    titleAr: "الكلمة الطيبة والتبسم صدقة",
+    detail: "The Prophet ﷺ said every act of goodness is charity — a smile toward your brother, removing a harm from the road, guiding someone who is lost, and even a good word.",
+    detailAr: "قال النبي ﷺ: كل معروف صدقة — تبسّمك في وجه أخيك، وإماطة الأذى عن الطريق، وإرشاد التائه، والكلمة الطيبة.",
+    ref: "Jami at-Tirmidhi, Hadith 1956; Sahih al-Bukhari, Hadith 2989",
+    strength: "Sahih — established in the collections",
+    keys: ["smile","good word","charity","kindness","help","road","small deeds","التبسم","الكلمة الطيبة","الصدقة","المعروف","إماطة الأذى"]
+  },
+  {
+    cat: "character",
+    title: "Modesty is a branch of faith",
+    titleAr: "الحياء شعبة من الإيمان",
+    detail: "The Prophet ﷺ said faith has many branches and modesty is one of them; he also said that modesty and faith are joined together, so when one goes the other follows.",
+    detailAr: "قال النبي ﷺ: الإيمان شُعب، والحياء شعبة من الإيمان. وقال: الحياء والإيمان قُرناء، فإذا ذهب أحدهما تبعه الآخر.",
+    ref: "Sahih al-Bukhari, Hadith 9; Sahih Muslim, Hadith 35",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["modesty","haya","shyness","shame","faith","الحياء","الإيمان","العفة","الخجل"]
+  },
+  {
+    cat: "home",
+    title: "Do not sleep angry with one another",
+    titleAr: "الإصلاح قبل النوم",
+    detail: "The Prophet ﷺ urged reconciliation and warned that abandoning a fellow Muslim beyond three days is not permitted; the better of two is the one who greets first. Deeds are presented to Allah, and the one bearing enmity is left aside.",
+    detailAr: "حثّ النبي ﷺ على الإصلاح وحذّر من الهجر فوق ثلاث، وخيرهما الذي يبدأ بالسلام. وتُعرض الأعمال على الله فيُترك المتشاحنان حتى يصطلحا.",
+    ref: "Sahih Muslim, Hadith 2565; Sunan Abu Dawud, Hadith 4912",
+    strength: "Sahih — established in the collections",
+    keys: ["argument","fight","reconcile","angry","three days","family dispute","الخصام","الهجر","الإصلاح","المصالحة","ثلاثة أيام"]
   }
 ];

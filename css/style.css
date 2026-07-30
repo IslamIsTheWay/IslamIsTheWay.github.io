@@ -108,6 +108,9 @@ header.site-header {
   display: flex;
   align-items: center;
   gap: 10px;
+  /* The name must never break into one word per line when the menu is wide. */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand .logo-mosque {
@@ -214,7 +217,7 @@ html.js-reveal .reveal.in-view {
 nav.main-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
 }
 
 nav.main-nav a {
@@ -1623,6 +1626,57 @@ footer {
   color: rgba(230,244,234,0.7);
 }
 
+/* ============ Arabic voice chooser ============ */
+.voice-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 auto 20px;
+  max-width: 760px;
+  font-size: 0.88rem;
+}
+
+.voice-bar label { font-weight: 600; color: var(--green-dark); }
+
+.voice-bar select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.86rem;
+  max-width: 260px;
+  background: #fff;
+}
+
+.voice-bar .voice-test {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.voice-bar .voice-test:hover { background: var(--green-dark); }
+.voice-bar .voice-hint { color: var(--text-muted); font-size: 0.8rem; }
+
+.voice-bar-warn {
+  display: block;
+  text-align: left;
+  background: #fff8e1;
+  border-color: #e8d48a;
+  color: #7a6210;
+  line-height: 1.7;
+}
+
 /* ============ Sunnah page ============ */
 .page-hero.ph-sunnah {
   background-image: linear-gradient(rgba(8,40,20,.56), rgba(8,40,20,.50)), url("../img/mosque-inside.jpg");
@@ -1840,7 +1894,9 @@ html:not(.lang-ar) .ar-only { display: none; }
 html.lang-ar .en-only { display: none; }
 
 /* ============ Responsive ============ */
-@media (max-width: 820px) {
+/* The menu now has ten links plus the language switch, so it needs to collapse
+   into the hamburger earlier — otherwise it squeezes the site name. */
+@media (max-width: 1150px) {
   nav.main-nav {
     position: absolute;
     top: 100%;
