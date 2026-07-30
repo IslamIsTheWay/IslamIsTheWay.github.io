@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607301131" />
+  <link rel="stylesheet" href="css/style.css?v=202607301134" />
 </head>
 <body>
 
@@ -112,7 +112,7 @@
     </div>
   </footer>
 
-  <script src="js/sunnah.js?v=202607301131"></script>
+  <script src="js/sunnah.js?v=202607301134"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -159,10 +159,18 @@
     }
 
     function scoreEntry(entry, qTokens, rawQuery) {
-      const hay = " " + norm([entry.title, entry.titleAr, entry.detail, entry.detailAr, entry.arabic, entry.ref].join(" ")) + " ";
-      const hayStem = " " + norm([entry.title, entry.detail].join(" ")).split(" ").map(stem).join(" ") + " ";
+      const c = catLabel(entry.cat);
+      // The category name is searchable too, so "I want to pray" reaches
+      // everything under Prayer even if no keyword says "pray" on its own.
+      const hay = " " + norm([entry.title, entry.titleAr, entry.detail, entry.detailAr,
+                              entry.arabic, entry.ref, c.en, c.ar].join(" ")) + " ";
+      const hayStem = " " + norm([entry.title, entry.detail, c.en].join(" ")).split(" ").map(stem).join(" ") + " ";
       const rawN = norm(rawQuery);
       let score = 0;
+
+      // A query word matching this entry's category is a strong signal.
+      const catWords = norm(c.en + " " + c.ar).split(" ").filter(w => w.length >= 3);
+      if (qTokens.some(q => catWords.some(cw => expand(q).includes(stem(cw)) || expand(q).includes(cw)))) score += 5;
 
       (entry.keys || []).forEach(k => {
         const kn = norm(k);
@@ -171,7 +179,9 @@
         if (rawN.includes(kn)) score += phrase ? 10 : 6;
         else if (!phrase && qTokens.some(q => expand(q).includes(stem(kn)) || expand(q).includes(kn))) score += 5;
         else if (phrase) {
-          const parts = kn.split(" ").filter(p => p.length >= 3);
+          // Ignore filler words inside the phrase ("before prayer" -> "prayer"),
+          // so a phrase key still matches on its meaningful words.
+          const parts = kn.split(" ").filter(p => p.length >= 3 && !STOP.has(p));
           const got = parts.filter(p => qTokens.some(q => expand(q).includes(stem(p)))).length;
           if (parts.length && got === parts.length) score += 7;
           else if (got >= 2) score += 3;
@@ -306,7 +316,7 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/main.js?v=202607301131"></script>
+  <script src="js/main.js?v=202607301134"></script>
   <script src="js/i18n.js"></script>
 </body>
 </html>
