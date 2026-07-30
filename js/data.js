@@ -1338,6 +1338,32 @@ const COMPANIONS = [
       "Sahih Muslim — taking the sword of the Prophet ﷺ with its right",
       "Sira accounts of his red band and bravery at Uhud"
     ]
+  },
+  {
+    id: "umm-habibah",
+    name: "Umm Habibah (Ramlah bint Abi Sufyan)",
+    arabic: "أم حبيبة (رملة بنت أبي سفيان)",
+    title: "Mother of the Believers",
+    category: "companion",
+    summary: "The daughter of Abu Sufyan, who accepted Islam early while her father was still its fiercest opponent. She migrated to Abyssinia, lost her husband there, and was later married to the Prophet ﷺ. She is remembered for holding to her faith against her own family's opposition.",
+    summaryAr: "أم المؤمنين بنت أبي سفيان، أسلمت مبكراً وأبوها بعد على كفره، وهاجرت إلى الحبشة وفقدت زوجها هناك، ثم تزوجها النبي ﷺ. وتُذكر بثباتها على دينها في مواجهة قومها.",
+    refs: [
+      "Sahih Muslim — narrations transmitted through her",
+      "Sira accounts of the migration to Abyssinia and her marriage to the Prophet ﷺ"
+    ]
+  },
+  {
+    id: "zaynab-khuzaymah",
+    name: "Zaynab bint Khuzaymah",
+    arabic: "زينب بنت خزيمة",
+    title: "Umm al-Masakin — Mother of the Poor",
+    category: "companion",
+    summary: "Known as 'Mother of the Poor' for her constant feeding of the needy even before Islam. She was a wife of the Prophet ﷺ and passed away only a few months after their marriage — one of only two wives to die during his lifetime.",
+    summaryAr: "لُقّبت بأم المساكين لكثرة إطعامها الفقراء حتى قبل الإسلام. تزوجها النبي ﷺ وتوفيت بعد أشهر قليلة من زواجها، وهي إحدى زوجتين توفيتا في حياته ﷺ.",
+    refs: [
+      "Sira accounts of her generosity and title 'Umm al-Masakin'",
+      "Historical accounts of the Mothers of the Believers"
+    ]
   }
 ];
 

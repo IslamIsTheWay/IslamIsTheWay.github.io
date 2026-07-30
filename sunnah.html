@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607301128" />
+  <link rel="stylesheet" href="css/style.css?v=202607301131" />
 </head>
 <body>
 
@@ -112,7 +112,7 @@
     </div>
   </footer>
 
-  <script src="js/sunnah.js?v=202607301128"></script>
+  <script src="js/sunnah.js?v=202607301131"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -127,6 +127,28 @@
       return normAr(String(s || "").toLowerCase()).replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim();
     }
     function stem(w) { return w.replace(/(ings|ing|ies|ied|ers|er|ed|es|s)$/i, "") || w; }
+
+    /* Irregular plurals and close synonyms that simple stemming cannot join,
+       so "my child" still finds entries written about "children". */
+    const SYN = {
+      child: ["children","kids","son","daughter"], children: ["child","kids"], kid: ["child","children"],
+      wife: ["wives","spouse","marriage"], wives: ["wife","spouse"], husband: ["spouse","marriage"],
+      man: ["men"], men: ["man"], woman: ["women"], women: ["woman"],
+      foot: ["feet"], feet: ["foot"], tooth: ["teeth","miswak"], teeth: ["tooth","miswak"],
+      pray: ["prayer","salah","salat"], prayer: ["pray","salah","salat"],
+      sad: ["sadness","grief","distress","worry"], worried: ["worry","anxiety","distress"],
+      angry: ["anger","rage"], anger: ["angry"],
+      money: ["wealth","provision","rizq","earning"], sick: ["illness","sickness","ill"],
+      sleep: ["sleeping","bed","night"], eat: ["eating","food","meal"], food: ["eat","eating","meal"],
+      wash: ["wudu","ablution","purity"], clean: ["cleanliness","hygiene","purity"],
+      travel: ["journey","trip"], parent: ["parents","mother","father"], parents: ["mother","father"]
+    };
+
+    function expand(tok) {
+      const out = new Set([tok, stem(tok)]);
+      (SYN[tok] || []).forEach(s => { out.add(s); out.add(stem(s)); });
+      return [...out];
+    }
 
     // Words that carry no search meaning here. "prophet", "did", "do" etc. appear
     // in nearly every entry, so matching them tells us nothing.
@@ -147,19 +169,22 @@
         if (kn.length < 3) return;
         const phrase = kn.includes(" ");
         if (rawN.includes(kn)) score += phrase ? 10 : 6;
-        else if (!phrase && qTokens.some(q => stem(q) === stem(kn))) score += 5;
+        else if (!phrase && qTokens.some(q => expand(q).includes(stem(kn)) || expand(q).includes(kn))) score += 5;
         else if (phrase) {
           const parts = kn.split(" ").filter(p => p.length >= 3);
-          const got = parts.filter(p => qTokens.some(q => stem(q) === stem(p))).length;
+          const got = parts.filter(p => qTokens.some(q => expand(q).includes(stem(p)))).length;
           if (parts.length && got === parts.length) score += 7;
           else if (got >= 2) score += 3;
         }
       });
 
       qTokens.forEach(q => {
-        const qs = stem(q);
-        if (hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ")) score += 2;
-        else if (hay.includes(qs)) score += 1;
+        let hit = false;
+        for (const form of expand(q)) {
+          if (form.length < 3) continue;
+          if (hay.includes(" " + form + " ") || hayStem.includes(" " + form + " ")) { score += 2; hit = true; break; }
+        }
+        if (!hit && hay.includes(stem(q))) score += 1;
       });
 
       return score;
@@ -281,7 +306,7 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/main.js?v=202607301128"></script>
+  <script src="js/main.js?v=202607301131"></script>
   <script src="js/i18n.js"></script>
 </body>
 </html>
