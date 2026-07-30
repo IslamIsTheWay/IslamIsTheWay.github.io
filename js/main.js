@@ -163,7 +163,11 @@ function runPersonSearch(query) {
   });
 
   if (matches.length === 0) {
-    resultsEl.innerHTML = `<div class="no-results">No results found for "<strong>${escapeHtml(query)}</strong>". Try names like "Musa", "Ibrahim", "Abu Bakr", or "Aisha".</div>`;
+    resultsEl.innerHTML = `<div class="no-results">
+      No results found for "<strong>${escapeHtml(query)}</strong>". This page searches <em>people</em> — try a name like "Musa", "Ibrahim", "Abu Bakr", "عائشة".
+      <br><br>Describing a <strong>situation</strong> instead? The <a href="guidance.html" style="color:var(--green);text-decoration:underline;">Guidance page</a> matches your situation to verses and hadith.
+      <br><span dir="rtl" style="font-family:'Amiri',serif;">هذه الصفحة للبحث عن الأشخاص. إن كنت تصف حالة، فصفحة التوجيه تعرض لك الآيات والأحاديث المتعلقة بها.</span>
+    </div>`;
     return;
   }
 
