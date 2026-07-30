@@ -192,6 +192,7 @@
     }
 
     COURSES.forEach(renderCourse);
+    if (window.applyI18n) setTimeout(window.applyI18n, 0);
 
     async function loadSiteConfig() {
       try {
@@ -276,5 +277,6 @@
     loadSiteConfig();
   </script>
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

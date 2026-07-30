@@ -1623,6 +1623,75 @@ footer {
   color: rgba(230,244,234,0.7);
 }
 
+/* ============ Language switch & Arabic (RTL) layout ============ */
+.lang-toggle {
+  border: 1px solid var(--green);
+  background: transparent;
+  color: var(--green);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-toggle:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Arabic reads right-to-left and looks best in the Amiri face. */
+html.lang-ar body {
+  font-family: 'Amiri', 'Segoe UI', serif;
+  font-size: 1.06rem;
+}
+
+html.lang-ar .hadith-card p.hadith-text,
+html.lang-ar .theme-card p,
+html.lang-ar .person-card .person-body p,
+html.lang-ar .card p,
+html.lang-ar .section-sub,
+html.lang-ar .page-hero p,
+html.lang-ar .hero p.lead {
+  line-height: 2;
+}
+
+/* Keep these left-to-right even in Arabic mode: they are Latin/numeric. */
+html.lang-ar .surah-number,
+html.lang-ar .ayah-num,
+html.lang-ar .meeting-code,
+html.lang-ar code,
+html.lang-ar input[type="datetime-local"],
+html.lang-ar #reciterSelect {
+  direction: ltr;
+}
+
+/* Mirror the few things that are visually anchored to one side. */
+html.lang-ar .person-card .refs li,
+html.lang-ar .course-card .course-body li {
+  padding-left: 0;
+  padding-right: 22px;
+}
+
+html.lang-ar .person-card .refs li::before,
+html.lang-ar .course-card .course-body li::before {
+  left: auto;
+  right: 0;
+}
+
+html.lang-ar .hadith-card::before { left: auto; right: 14px; }
+html.lang-ar .result-card { border-left: 1px solid var(--border); border-right: 5px solid var(--green); }
+html.lang-ar .theme-card { border-left: 1px solid var(--border); border-right: 5px solid var(--green); }
+html.lang-ar .theme-card.warning { border-right-color: #b5541f; }
+html.lang-ar .mic-btn { right: auto; left: 10px; }
+html.lang-ar .sit-input-wrap textarea { padding: 15px 18px 15px 62px; }
+
+/* Show the right language of the content itself. */
+html:not(.lang-ar) .ar-only { display: none; }
+html.lang-ar .en-only { display: none; }
+
 /* ============ Responsive ============ */
 @media (max-width: 820px) {
   nav.main-nav {
