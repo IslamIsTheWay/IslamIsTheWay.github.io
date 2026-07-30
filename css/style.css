@@ -1623,6 +1623,153 @@ footer {
   color: rgba(230,244,234,0.7);
 }
 
+/* ============ Sunnah page ============ */
+.page-hero.ph-sunnah {
+  background-image: linear-gradient(rgba(8,40,20,.56), rgba(8,40,20,.50)), url("../img/mosque-inside.jpg");
+}
+
+.sunnah-search-wrap {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto 10px;
+}
+
+.sunnah-search-wrap input {
+  width: 100%;
+  padding: 16px 64px 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.sunnah-search-wrap input:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(30,126,69,.12);
+}
+
+.sunnah-search-wrap .mic-btn { top: 8px; right: 8px; }
+
+.sunnah-examples {
+  text-align: center;
+  margin: 8px 0 22px;
+  font-size: .86rem;
+  color: var(--text-muted);
+}
+
+.sunnah-examples button {
+  border: 1px solid var(--border);
+  background: var(--green-pale);
+  color: var(--green-dark);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin: 4px;
+  font-family: inherit;
+  font-size: .84rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sunnah-examples button:hover { background: var(--green); color: #fff; }
+
+.cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.cat-chips .chip {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-dark);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: .84rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cat-chips .chip:hover { border-color: var(--green); background: var(--green-pale); }
+.cat-chips .chip.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+.sunnah-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.sunnah-card {
+  background: #fff;
+  border: 1px solid rgba(216,232,221,.6);
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.sunnah-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+.sunnah-card-top { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+
+.sunnah-card h3 {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.sunnah-card .sunnah-title-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.16rem;
+  color: var(--green);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.sunnah-card .sunnah-hadith {
+  font-family: 'Amiri', serif;
+  font-size: 1.18rem;
+  line-height: 2.1;
+  color: var(--green-dark);
+  background: var(--green-pale);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.sunnah-card p { color: var(--text-muted); font-size: .94rem; margin-bottom: 10px; }
+
+.sunnah-card .sunnah-detail-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--text-dark);
+}
+
+.sunnah-card .refs {
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+  font-size: .8rem;
+}
+
+.sunnah-card .refs span {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+html.lang-ar .sunnah-card { border-left: 1px solid rgba(216,232,221,.6); border-right: 5px solid var(--gold); }
+html.lang-ar .sunnah-search-wrap input { padding: 16px 20px 16px 64px; }
+html.lang-ar .sunnah-search-wrap .mic-btn { right: auto; left: 8px; }
+
 /* ============ Language switch & Arabic (RTL) layout ============ */
 .lang-toggle {
   border: 1px solid var(--green);

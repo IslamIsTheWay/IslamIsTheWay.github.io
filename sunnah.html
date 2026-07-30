@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sunnah — How the Prophet ﷺ Lived | Islam Is The Way</title>
+  <meta name="description" content="The practical Sunnah of Prophet Muhammad ﷺ — how he prayed, slept, ate, travelled, treated his family and people. Searchable in Arabic and English with references." />
+  <link rel="canonical" href="https://islamistheway.github.io/sunnah.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/logo-emblem.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="topbar">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ — In the name of Allah, the Most Gracious, the Most Merciful</div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <img class="logo-mosque" src="img/logo-emblem.png" alt="Islam Is The Way" width="46" height="46" />
+        Islam Is The Way
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="quran.html">Quran</a>
+        <a href="prophets.html">Prophets</a>
+        <a href="companions.html">Companions</a>
+        <a href="hadith.html">Hadith</a>
+        <a href="sunnah.html">Sunnah</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="courses.html">Courses</a>
+        <a href="search.html">Search</a>
+        <a href="login.html" class="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero ph-photo ph-sunnah">
+    <div class="container">
+      <h1>The Sunnah of the Prophet ﷺ</h1>
+      <p>How the Prophet Muhammad ﷺ actually lived — how he prayed, slept, ate, washed, travelled, and treated his family and everyone around him. Every practice here carries its source.</p>
+      <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;margin-top:10px;">هدي النبي ﷺ العملي — كيف كان يصلي وينام ويأكل ويتطهر ويسافر، وكيف كان يعامل أهله والناس. كل سنة مذكورة بمرجعها.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+
+      <div class="sunnah-search-wrap">
+        <input type="text" id="sunnahSearch" dir="auto"
+          placeholder="Ask anything — e.g. what did the Prophet ﷺ do before sleeping?  |  ماذا كان يفعل النبي ﷺ قبل النوم؟" />
+        <button type="button" id="sunnahMic" class="mic-btn" title="Speak instead of typing — تحدث بدل الكتابة">🎤</button>
+      </div>
+      <div id="sunnahMicStatus" class="mic-status" style="text-align:center;"></div>
+
+      <div class="sunnah-examples">
+        <span>Try:</span>
+        <button type="button" onclick="quickSunnah('before sleeping')">before sleeping</button>
+        <button type="button" onclick="quickSunnah('how to make wudu')">how to make wudu</button>
+        <button type="button" onclick="quickSunnah('eating')">eating</button>
+        <button type="button" onclick="quickSunnah('entering the mosque')">entering the mosque</button>
+        <button type="button" onclick="quickSunnah('when I am sad')">when I am sad</button>
+        <button type="button" onclick="quickSunnah('قبل النوم')">قبل النوم</button>
+        <button type="button" onclick="quickSunnah('السفر')">السفر</button>
+      </div>
+
+      <div class="cat-chips" id="catChips"></div>
+      <div id="sunnahInfo" class="search-info" style="display:none;"></div>
+      <div id="sunnahList"></div>
+
+      <div class="context-note" style="max-width:900px;margin:32px auto 0;">
+        <strong>A note:</strong> These are summaries of the Prophet's ﷺ practice with their sources, gathered for learning and reflection. They are not a substitute for a qualified teacher, and the details of worship are best learned from a scholar.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">هذه ملخصات من هدي النبي ﷺ مع مراجعها للتعلّم والتدبر، وليست بديلاً عن أهل العلم، وتفاصيل العبادات تُتعلّم من عالم موثوق.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Islam Is The Way</h4>
+          <p>A resource for learning the Quran, the Prophets, and the Companions of Prophet Muhammad ﷺ — built to inform, inspire, and guide.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="quran.html">Quran Library</a></li>
+            <li><a href="prophets.html">Prophets in Islam</a></li>
+            <li><a href="companions.html">Companions</a></li>
+            <li><a href="hadith.html">Hadith</a></li>
+            <li><a href="sunnah.html">Sunnah</a></li>
+            <li><a href="guidance.html">Guidance</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>contact@islamistheway.com</li>
+            <li>Islamic Wisdom for Every Heart</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Islam Is The Way. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/sunnah.js"></script>
+  <script>
+    const listEl = document.getElementById("sunnahList");
+    const infoEl = document.getElementById("sunnahInfo");
+    const searchEl = document.getElementById("sunnahSearch");
+    let activeCat = "all";
+
+    /* ---------- text helpers (Arabic-aware) ---------- */
+    function normAr(s) {
+      return s.replace(/[ً-ْٰـۖ-ۭ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+    }
+    function norm(s) {
+      return normAr(String(s || "").toLowerCase()).replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim();
+    }
+    function stem(w) { return w.replace(/(ings|ing|ies|ied|ers|er|ed|es|s)$/i, "") || w; }
+
+    // Words that carry no search meaning here. "prophet", "did", "do" etc. appear
+    // in nearly every entry, so matching them tells us nothing.
+    const STOP = new Set(["the","and","for","with","his","her","him","its","was","who","that","this","are","from","you","your","she","they","them","not","does","did","will","would","when","what","which","about","says","said","have","has","had","were","there","their","then","than","can","could","should","just","like","very","really","because","into","over","also","only","other","such","being","between","while","after","before","how","why","get","got","one","two","prophet","messenger","muhammad","allah","islam","muslim","sunnah","hadith","صلى","عليه","وسلم","النبي","الرسول","محمد","الله","كان","يفعل","ماذا","كيف","عند","في","من","على","هل","ما"]);
+
+    function tokens(s) {
+      return norm(s).split(" ").filter(w => w.length >= 3 && !STOP.has(w));
+    }
+
+    function scoreEntry(entry, qTokens, rawQuery) {
+      const hay = " " + norm([entry.title, entry.titleAr, entry.detail, entry.detailAr, entry.arabic, entry.ref].join(" ")) + " ";
+      const hayStem = " " + norm([entry.title, entry.detail].join(" ")).split(" ").map(stem).join(" ") + " ";
+      const rawN = norm(rawQuery);
+      let score = 0;
+
+      (entry.keys || []).forEach(k => {
+        const kn = norm(k);
+        if (kn.length < 3) return;
+        const phrase = kn.includes(" ");
+        if (rawN.includes(kn)) score += phrase ? 10 : 6;
+        else if (!phrase && qTokens.some(q => stem(q) === stem(kn))) score += 5;
+        else if (phrase) {
+          const parts = kn.split(" ").filter(p => p.length >= 3);
+          const got = parts.filter(p => qTokens.some(q => stem(q) === stem(p))).length;
+          if (parts.length && got === parts.length) score += 7;
+          else if (got >= 2) score += 3;
+        }
+      });
+
+      qTokens.forEach(q => {
+        const qs = stem(q);
+        if (hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ")) score += 2;
+        else if (hay.includes(qs)) score += 1;
+      });
+
+      return score;
+    }
+
+    function catLabel(id) {
+      const c = SUNNAH_CATEGORIES.find(c => c.id === id);
+      return c ? c : { en: id, ar: id };
+    }
+
+    function cardHtml(s) {
+      const c = catLabel(s.cat);
+      const isSahih = (s.strength || "").startsWith("Sahih");
+      return `<article class="sunnah-card">
+        <div class="sunnah-card-top">
+          <span class="topic-tag">${c.en} <span dir="rtl">— ${c.ar}</span></span>
+          <span class="topic-tag" style="background:${isSahih ? "#e6f4ea" : "#fff8e1"};color:${isSahih ? "#1e7e45" : "#b8860b"};">${s.strength}</span>
+        </div>
+        <h3>${s.title}</h3>
+        <h3 dir="rtl" class="sunnah-title-ar">${s.titleAr}</h3>
+        ${s.arabic ? `<div class="sunnah-hadith" dir="rtl" data-speak>${s.arabic}
+            <button class="speak-btn" data-lang="ar" title="Listen in Arabic">🔊</button></div>` : ""}
+        <p class="en-only" data-speak>${s.detail}
+          <button class="speak-btn" data-lang="en" title="Listen in English">🔊</button></p>
+        <p dir="rtl" class="sunnah-detail-ar">${s.detailAr}</p>
+        <div class="refs"><span>${s.ref}</span></div>
+      </article>`;
+    }
+
+    function render(list, note) {
+      if (!list.length) {
+        listEl.innerHTML = `<div class="no-results">
+          Nothing found for that yet. Try simpler words — for example: <em>sleep, wudu, eating, mosque, travel, sad, friday, fasting</em>.
+          <br><span dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة. جرّب كلمات أبسط — مثل: النوم، الوضوء، الطعام، المسجد، السفر، الحزن، الجمعة، الصيام.</span>
+        </div>`;
+      } else {
+        listEl.innerHTML = `<div class="sunnah-grid">${list.map(cardHtml).join("")}</div>`;
+      }
+      infoEl.style.display = note ? "block" : "none";
+      infoEl.textContent = note || "";
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function currentList() {
+      return activeCat === "all" ? SUNNAH : SUNNAH.filter(s => s.cat === activeCat);
+    }
+
+    function runSearch() {
+      const raw = searchEl.value.trim();
+      if (raw.length < 2) { render(currentList(), ""); return; }
+      const qt = tokens(raw);
+      const scored = SUNNAH.map(s => ({ s, v: scoreEntry(s, qt, raw) }))
+        .filter(x => x.v >= 4)
+        .sort((a, b) => b.v - a.v);
+      render(scored.map(x => x.s),
+        `Found ${scored.length} practice${scored.length !== 1 ? "s" : ""} for "${raw}"`);
+    }
+
+    function quickSunnah(q) {
+      searchEl.value = q;
+      activeCat = "all";
+      buildChips();
+      runSearch();
+      searchEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function buildChips() {
+      const chips = document.getElementById("catChips");
+      const total = SUNNAH.length;
+      let html = `<button class="chip ${activeCat === "all" ? "active" : ""}" onclick="setCat('all')">All <span dir="rtl">— الكل</span> (${total})</button>`;
+      SUNNAH_CATEGORIES.forEach(c => {
+        const n = SUNNAH.filter(s => s.cat === c.id).length;
+        if (!n) return;
+        html += `<button class="chip ${activeCat === c.id ? "active" : ""}" onclick="setCat('${c.id}')">${c.en} <span dir="rtl">— ${c.ar}</span> (${n})</button>`;
+      });
+      chips.innerHTML = html;
+    }
+
+    function setCat(id) {
+      activeCat = id;
+      searchEl.value = "";
+      buildChips();
+      render(currentList(), "");
+    }
+
+    let t = null;
+    searchEl.addEventListener("input", () => { clearTimeout(t); t = setTimeout(runSearch, 300); });
+
+    /* ---------- microphone ---------- */
+    let rec = null, listening = false;
+    document.getElementById("sunnahMic").addEventListener("click", () => {
+      const btn = document.getElementById("sunnahMic");
+      const status = document.getElementById("sunnahMicStatus");
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SR) { status.textContent = "Voice input needs Chrome or Edge — الإدخال الصوتي يحتاج Chrome أو Edge"; return; }
+      if (listening) { listening = false; rec && rec.stop(); return; }
+      rec = new SR();
+      // Accept either language; Arabic first since the content is Arabic-rich.
+      rec.lang = /[؀-ۿ]/.test(searchEl.value) ? "ar-SA" : "ar-SA";
+      rec.interimResults = false;
+      rec.onstart = () => { listening = true; btn.classList.add("listening"); status.textContent = "● Listening… — أستمع إليك…"; };
+      rec.onresult = e => {
+        let said = "";
+        for (let i = 0; i < e.results.length; i++) said += e.results[i][0].transcript;
+        searchEl.value = said.trim();
+        status.textContent = "✓ " + said.trim();
+        runSearch();
+      };
+      rec.onerror = e => {
+        listening = false; btn.classList.remove("listening");
+        status.textContent = e.error === "not-allowed"
+          ? "Microphone blocked — تم منع الميكروفون"
+          : "Did not catch that, please try again — لم نسمع، حاول مرة أخرى";
+      };
+      rec.onend = () => { listening = false; btn.classList.remove("listening"); };
+      rec.start();
+    });
+
+    buildChips();
+    render(SUNNAH, "");
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

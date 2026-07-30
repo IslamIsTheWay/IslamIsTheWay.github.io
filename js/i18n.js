@@ -136,8 +136,60 @@ const AR = {
 
   // ---- Search page ----
   "Search a Prophet or Companion": "ابحث عن نبي أو صحابي",
-  "Try:": "جرّب:"
+  "Try:": "جرّب:",
+
+  // ---- Sunnah page ----
+  "Sunnah": "السنة",
+  "The Sunnah of the Prophet ﷺ": "سنة النبي ﷺ",
+  "How the Prophet Muhammad ﷺ actually lived — how he prayed, slept, ate, washed, travelled, and treated his family and everyone around him. Every practice here carries its source.":
+    "هدي النبي محمد ﷺ العملي — كيف كان يصلي وينام ويأكل ويتطهر ويسافر، وكيف كان يعامل أهله والناس. كل سنة مذكورة بمرجعها.",
+  "before sleeping": "قبل النوم",
+  "how to make wudu": "كيف أتوضأ",
+  "eating": "الطعام",
+  "entering the mosque": "دخول المسجد",
+  "when I am sad": "عند الحزن",
+  "All": "الكل"
 };
+
+/* Reference lines like "Sahih al-Bukhari, Book of Wudu, Hadith 247" or
+   "Surah Al-Baqarah (2:25)" are built from a few repeating pieces. Translating
+   those pieces covers every reference on the site without listing them all. */
+const AR_PARTS = [
+  [/\bSurah\b/g, "سورة"],
+  [/\bSahih al-Bukhari\b/g, "صحيح البخاري"],
+  [/\bSahih Muslim\b/g, "صحيح مسلم"],
+  [/\bJami at-Tirmidhi\b/g, "جامع الترمذي"],
+  [/\bSunan Abu Dawud\b/g, "سنن أبي داود"],
+  [/\bSunan an-Nasa'i\b/g, "سنن النسائي"],
+  [/\bSunan Ibn Majah\b/g, "سنن ابن ماجه"],
+  [/\bMusnad Ahmad\b/g, "مسند أحمد"],
+  [/\bMuwatta Imam Malik\b/g, "موطأ الإمام مالك"],
+  [/\bMustadrak al-Hakim\b/g, "مستدرك الحاكم"],
+  [/\bAl-Mu'jam al-Awsat\b/g, "المعجم الأوسط"],
+  [/\bBook of\b/g, "كتاب"],
+  [/\bHadith\b/g, "حديث"],
+  [/\bNarrated by\b/g, "رواه"],
+  [/\bAgreed upon\b/g, "متفق عليه"],
+  [/\bauthenticated by\b/g, "صححه"],
+  [/\bgraded Strong by\b/g, "حسّنه"],
+  [/\bgraded Sahih by\b/g, "صححه"],
+  [/\bestablished in the collections\b/g, "ثابت في كتب السنة"],
+  [/\bthe scholars of hadith\b/g, "أهل الحديث"],
+  [/\bStrong\b/g, "قوي"],
+  [/\bReferences:/g, "المراجع:"],
+  [/\bReference:/g, "المرجع:"],
+  [/\bal-Albani\b/g, "الألباني"],
+  [/\bat-Tirmidhi\b/g, "الترمذي"],
+  [/\bal-Bukhari\b/g, "البخاري"],
+  [/\bMuslim\b/g, "مسلم"],
+  [/\band\b/g, "و"]
+];
+
+function iitwTranslateReference(text) {
+  let out = text;
+  AR_PARTS.forEach(([re, rep]) => { out = out.replace(re, rep); });
+  return out;
+}
 
 function iitwGetLang() {
   return localStorage.getItem(IITW_LANG_KEY) === "ar" ? "ar" : "en";
@@ -168,7 +220,12 @@ function iitwTranslateDom(lang) {
     const key = original.trim();
     if (lang === "ar") {
       const t = AR[key];
-      if (t) node.nodeValue = original.replace(key, t);
+      if (t) {
+        node.nodeValue = original.replace(key, t);
+      } else if (node.parentElement.closest(".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs")) {
+        // Source lines ("Sahih al-Bukhari, Book of…", "Surah Al-Baqarah (2:25)")
+        node.nodeValue = original.replace(key, iitwTranslateReference(key));
+      }
     } else {
       node.nodeValue = original;
     }
