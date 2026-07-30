@@ -616,7 +616,7 @@ const SUNNAH = [
     detailAr: "كان ﷺ يقول عند الكرب: «لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ...»، وعلّم: «حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ».",
     ref: "Sahih al-Bukhari, Hadith 6346; Sahih Muslim, Hadith 2730",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
-    keys: ["distress","worry","anxiety","sadness","hardship","stress","grief","dua","الكرب","الهم","القلق","الحزن","الشدة","دعاء الفرج"]
+    keys: ["distress","worry","worried","anxiety","anxious","sad","sadness","upset","depressed","depression","hardship","stress","grief","lonely","alone","overwhelmed","dua","الكرب","الهم","القلق","الحزن","الشدة","ضيق","اكتئاب","وحدة","دعاء الفرج"]
   },
   {
     cat: "hardship",
@@ -715,5 +715,344 @@ const SUNNAH = [
     ref: "Sahih Muslim, Book of Funerals, Hadith 918",
     strength: "Sahih — Narrated by Muslim",
     keys: ["death","calamity","loss","grief","inna lillah","condolence","الموت","المصيبة","الفقد","الحزن","إنا لله","العزاء"]
+  },
+
+  /* ================= MORE: SPEECH & GATHERINGS ================= */
+  {
+    cat: "manners",
+    title: "What to say when someone sneezes",
+    titleAr: "ما يُقال عند العطاس",
+    detail: "When one sneezes he says 'Alhamdulillah'; the one who hears replies 'Yarhamukallah' (may Allah have mercy on you), and the sneezer answers 'Yahdikumullah wa yuslih balakum'.",
+    detailAr: "إذا عطس أحدكم فليقل: «الحمد لله»، وليقل له من سمعه: «يرحمك الله»، فيرد عليه: «يهديكم الله ويصلح بالكم».",
+    arabic: "إِذَا عَطَسَ أَحَدُكُمْ فَلْيَقُلْ: الْحَمْدُ لِلَّهِ، وَلْيَقُلْ لَهُ أَخُوهُ: يَرْحَمُكَ اللَّهُ",
+    ref: "Sahih al-Bukhari, Book of Manners, Hadith 6224",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["sneeze","sneezing","alhamdulillah","yarhamukallah","bless you","عطاس","العطس","الحمد لله","يرحمك الله"]
+  },
+  {
+    cat: "manners",
+    title: "Yawning — cover your mouth",
+    titleAr: "كف الفم عند التثاؤب",
+    detail: "The Prophet ﷺ taught that when yawning one should place his hand over his mouth, and he disliked the raised voice of yawning.",
+    detailAr: "علّم النبي ﷺ أن من تثاءب فليضع يده على فيه، وكره الصوت المرتفع في التثاؤب.",
+    ref: "Sahih Muslim, Book of Manners, Hadith 2995",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["yawn","yawning","mouth","cover","tired","التثاؤب","كف الفم","التعب"]
+  },
+  {
+    cat: "manners",
+    title: "The dua for leaving a gathering",
+    titleAr: "كفارة المجلس",
+    detail: "The Prophet ﷺ taught that whoever sits in a gathering and says before leaving: 'Glory to You O Allah and praise, there is no god but You, I seek Your forgiveness and turn to You' — is forgiven what occurred in it.",
+    detailAr: "علّم النبي ﷺ أن من جلس مجلساً فقال قبل أن يقوم: «سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، لَا إِلَهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ» — غُفر له ما كان في مجلسه.",
+    arabic: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، لَا إِلَهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ",
+    ref: "Jami at-Tirmidhi, Hadith 3433; Sunan Abu Dawud",
+    strength: "Sahih — authenticated by al-Albani",
+    keys: ["gathering","majlis","meeting","leaving","kaffarah","sitting","المجلس","كفارة المجلس","الاجتماع","القيام"]
+  },
+  {
+    cat: "manners",
+    title: "Speak well, or keep silent",
+    titleAr: "قل خيراً أو اصمت",
+    detail: "The Prophet ﷺ said whoever believes in Allah and the Last Day should speak good or remain silent, and warned that a person may be thrown far into the Fire because of a word he did not weigh.",
+    detailAr: "قال النبي ﷺ: من كان يؤمن بالله واليوم الآخر فليقل خيراً أو ليصمت، وحذّر أن العبد قد يُلقى في النار بكلمة لم يُلقِ لها بالاً.",
+    ref: "Sahih al-Bukhari, Hadith 6018 and 6478; Sahih Muslim",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["speech","talking","silence","words","tongue","gossip","الكلام","الصمت","اللسان","الكلمة","حفظ اللسان"]
+  },
+  {
+    cat: "manners",
+    title: "Do not turn away a beggar empty-handed if you can give",
+    titleAr: "الإحسان إلى السائل",
+    detail: "The Prophet ﷺ was never asked for something and said no. He gave generously and taught that charity does not decrease wealth, and that a kind word is itself charity.",
+    detailAr: "ما سُئل النبي ﷺ شيئاً فقال: لا. وكان يعطي بسخاء، وعلّم أن الصدقة لا تنقص المال، وأن الكلمة الطيبة صدقة.",
+    ref: "Sahih al-Bukhari, Hadith 6034; Sahih Muslim, Hadith 2588",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["beggar","charity","give","sadaqah","generous","poor","help","السائل","الصدقة","العطاء","الكرم","الفقير"]
+  },
+
+  /* ================= MORE: WORK & WEALTH ================= */
+  {
+    cat: "manners",
+    title: "The best earnings are from the work of one's own hand",
+    titleAr: "خير الكسب عمل اليد",
+    detail: "The Prophet ﷺ said no food is better than what a man earns with his own hand, and that the Prophet Dawud ate from the work of his hands. He praised honest labour over dependence.",
+    detailAr: "قال النبي ﷺ ما أكل أحد طعاماً خيراً من عمل يده، وأن نبي الله داود كان يأكل من عمل يده. وأثنى على الكسب الحلال بدل السؤال.",
+    ref: "Sahih al-Bukhari, Book of Sales, Hadith 2072",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["work","job","earning","income","halal earning","labour","business","العمل","الكسب","الرزق","اليد","الوظيفة"]
+  },
+  {
+    cat: "manners",
+    title: "Pay the worker his wage without delay",
+    titleAr: "إعطاء الأجير أجره",
+    detail: "The Prophet ﷺ commanded that a worker be given his wage before his sweat dries, and warned severely against withholding the pay of one who has laboured.",
+    detailAr: "أمر النبي ﷺ أن يُعطى الأجير أجره قبل أن يجف عرقه، وحذّر بشدة من منع أجر من عمل.",
+    ref: "Sunan Ibn Majah, Hadith 2443; Sahih al-Bukhari, Hadith 2270 (on withholding)",
+    strength: "Sahih — authenticated by al-Albani",
+    keys: ["worker","wage","salary","pay","employee","delay","الأجير","الأجرة","الراتب","العامل","تأخير"]
+  },
+
+  /* ================= MORE: KNOWLEDGE ================= */
+  {
+    cat: "manners",
+    title: "Seeking knowledge is a path to Paradise",
+    titleAr: "طلب العلم طريق إلى الجنة",
+    detail: "The Prophet ﷺ said whoever travels a path seeking knowledge, Allah makes easy for him a path to Paradise, and that the angels lower their wings for the seeker of knowledge.",
+    detailAr: "قال النبي ﷺ: من سلك طريقاً يلتمس فيه علماً سهّل الله له طريقاً إلى الجنة، وأن الملائكة تضع أجنحتها لطالب العلم.",
+    ref: "Sahih Muslim, Hadith 2699; Sunan Abu Dawud, Hadith 3641",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["knowledge","study","learn","student","school","teacher","العلم","التعلم","الدراسة","طالب العلم","المعلم"]
+  },
+  {
+    cat: "dhikr",
+    title: "The dua for beneficial knowledge and memory",
+    titleAr: "الدعاء بالعلم النافع",
+    detail: "The Prophet ﷺ would ask: 'O Allah, benefit me with what You have taught me, teach me what benefits me, and increase me in knowledge.' He was also commanded in the Quran to say: 'My Lord, increase me in knowledge.'",
+    detailAr: "كان ﷺ يدعو: «اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي، وَعَلِّمْنِي مَا يَنْفَعُنِي، وَزِدْنِي عِلْمًا»، وأُمر في القرآن أن يقول: «رَبِّ زِدْنِي عِلْمًا».",
+    ref: "Sunan Ibn Majah, Hadith 251; Jami at-Tirmidhi",
+    strength: "Strong — authenticated by al-Albani",
+    keys: ["knowledge dua","memory","exam","study","learning","forget","دعاء العلم","الحفظ","الامتحان","المذاكرة","النسيان"]
+  },
+
+  /* ================= MORE: ANGER & FORGIVENESS ================= */
+  {
+    cat: "character",
+    title: "What to do when you become angry",
+    titleAr: "ما يفعله الغاضب",
+    detail: "The Prophet ﷺ advised seeking refuge in Allah from Satan when angry, and that if a man is angry standing he should sit, and if sitting he should lie down. He said the strong one is he who controls himself in anger.",
+    detailAr: "أرشد النبي ﷺ الغاضب أن يستعيذ بالله من الشيطان، وإن كان قائماً فليجلس، وإن كان جالساً فليتّكئ. وقال: الشديد من يملك نفسه عند الغضب.",
+    ref: "Sunan Abu Dawud, Hadith 4782; Sahih al-Bukhari, Hadith 6114",
+    strength: "Sahih — established in the collections",
+    keys: ["anger","angry","rage","temper","control","calm","fight","الغضب","الغاضب","الحلم","السيطرة","الهدوء"]
+  },
+  {
+    cat: "character",
+    title: "Pardon, and Allah will raise you",
+    titleAr: "العفو يرفع صاحبه",
+    detail: "The Prophet ﷺ said charity does not decrease wealth, no one pardons another except that Allah raises him in honour, and no one is humble for Allah's sake except that Allah elevates him.",
+    detailAr: "قال النبي ﷺ: ما نقصت صدقة من مال، وما عفا رجل عن مظلمة إلا رفعه الله بها، وما تواضع أحد لله إلا رفعه الله.",
+    ref: "Sahih Muslim, Book of Righteousness, Hadith 2588",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["forgive","pardon","forgiveness","humble","revenge","argument","العفو","الصفح","التواضع","الانتقام","الخصام"]
+  },
+
+  /* ================= MORE: RAIN, MOON, NATURE ================= */
+  {
+    cat: "dhikr",
+    title: "When it rains",
+    titleAr: "الدعاء عند المطر",
+    detail: "When rain fell the Prophet ﷺ would say: 'O Allah, a beneficial rain.' He would also uncover part of his body to let the rain touch him, saying it had just come from his Lord.",
+    detailAr: "كان النبي ﷺ إذا رأى المطر قال: «اللَّهُمَّ صَيِّبًا نَافِعًا»، وكان يكشف عن بعض جسده ليصيبه المطر ويقول إنه حديث عهد بربه.",
+    arabic: "اللَّهُمَّ صَيِّبًا نَافِعًا",
+    ref: "Sahih al-Bukhari, Hadith 1032; Sahih Muslim, Hadith 898",
+    strength: "Sahih — established in the collections",
+    keys: ["rain","weather","storm","water","المطر","الغيث","الجو","دعاء المطر"]
+  },
+  {
+    cat: "dhikr",
+    title: "On seeing the new moon",
+    titleAr: "الدعاء عند رؤية الهلال",
+    detail: "On seeing the new crescent the Prophet ﷺ would say: 'O Allah, bring it upon us with blessing and faith, safety and Islam.'",
+    detailAr: "كان النبي ﷺ إذا رأى الهلال قال: «اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ».",
+    ref: "Jami at-Tirmidhi, Hadith 3451",
+    strength: "Strong — authenticated by al-Albani",
+    keys: ["moon","crescent","hilal","new month","ramadan start","الهلال","القمر","الشهر","رمضان"]
+  },
+  {
+    cat: "animals",
+    title: "Do not overburden or brand an animal on the face",
+    titleAr: "النهي عن تحميل الحيوان ما لا يطيق",
+    detail: "The Prophet ﷺ forbade striking or branding animals on the face, told those who ride not to make animals' backs into chairs, and commanded kindness in slaughter — sharpening the blade and being merciful.",
+    detailAr: "نهى النبي ﷺ عن ضرب الحيوان أو وسمه في الوجه، وأمر ألا تُتخذ ظهور الدواب مجالس، وأمر بالإحسان في الذبح بإحداد الشفرة والرحمة.",
+    ref: "Sahih Muslim, Hadith 2116 and 1955",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["animal","burden","branding","slaughter","kindness","riding","الحيوان","الدابة","الوسم","الذبح","الإحسان","الرحمة"]
+  },
+
+  /* ================= MORE: HEALTH ================= */
+  {
+    cat: "health",
+    title: "Honey, black seed, and seeking treatment",
+    titleAr: "العسل والحبة السوداء والتداوي",
+    detail: "The Prophet ﷺ encouraged seeking treatment, saying Allah has not sent down a disease without sending down its cure. He mentioned honey as healing and black seed (habbat as-sawda) as a remedy for many ailments.",
+    detailAr: "حثّ النبي ﷺ على التداوي وقال: ما أنزل الله داءً إلا أنزل له شفاءً. وذكر العسل شفاءً، والحبة السوداء دواءً لكثير من الأمراض.",
+    ref: "Sahih al-Bukhari, Hadith 5678 (cure), 5684 (black seed), 5683 (honey)",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["honey","black seed","medicine","treatment","cure","doctor","remedy","العسل","الحبة السوداء","التداوي","الدواء","الشفاء","الطبيب"]
+  },
+  {
+    cat: "health",
+    title: "Moderation and physical strength",
+    titleAr: "القوة والاعتدال",
+    detail: "The Prophet ﷺ said the strong believer is more beloved to Allah than the weak one, encouraged teaching children swimming, riding and archery, and himself raced and wrestled.",
+    detailAr: "قال النبي ﷺ: المؤمن القوي أحب إلى الله من المؤمن الضعيف، وحثّ على تعليم الأبناء السباحة والرمي والفروسية، وكان يسابق ويصارع.",
+    ref: "Sahih Muslim, Hadith 2664; Sunan al-Bayhaqi (on teaching children)",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["strength","strong","exercise","sport","swimming","archery","health","fitness","القوة","الرياضة","السباحة","الرمي","الصحة","اللياقة"]
+  },
+
+  /* ================= MORE: PRAYER DETAIL ================= */
+  {
+    cat: "prayer",
+    title: "The opening dua and what he ﷺ recited in prayer",
+    titleAr: "دعاء الاستفتاح والقراءة في الصلاة",
+    detail: "He ﷺ opened the prayer with takbir, then a dua of praise such as 'Subhanaka Allahumma…', sought refuge from Satan, and recited Al-Fatihah in every rak'ah followed by another passage in the first two.",
+    detailAr: "كان ﷺ يفتتح الصلاة بالتكبير ثم دعاء الاستفتاح مثل: «سبحانك اللهم...»، ويستعيذ من الشيطان، ويقرأ الفاتحة في كل ركعة وسورة بعدها في الأوليين.",
+    ref: "Sahih Muslim, Hadith 399; Sahih al-Bukhari, Hadith 756",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["opening dua","istiftah","fatihah","recitation","takbir","how to pray","دعاء الاستفتاح","التكبير","الفاتحة","القراءة","كيف أصلي"]
+  },
+  {
+    cat: "prayer",
+    title: "The best supplication is in prostration",
+    titleAr: "أقرب ما يكون العبد في السجود",
+    detail: "The Prophet ﷺ said the closest a servant is to his Lord is while prostrating, so make much supplication then. He also said the dua between the adhan and iqamah is not refused.",
+    detailAr: "قال النبي ﷺ: أقرب ما يكون العبد من ربه وهو ساجد، فأكثروا الدعاء. وقال إن الدعاء بين الأذان والإقامة لا يُرد.",
+    ref: "Sahih Muslim, Hadith 482; Jami at-Tirmidhi, Hadith 212",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["dua in sujood","prostration","best time for dua","accepted dua","adhan","الدعاء في السجود","السجود","استجابة الدعاء","بين الأذان والإقامة"]
+  },
+  {
+    cat: "prayer",
+    title: "Do not leave the two rak'ahs before Fajr",
+    titleAr: "المحافظة على ركعتي الفجر",
+    detail: "The Prophet ﷺ said the two rak'ahs before Fajr are better than the world and everything in it, and he never left them, even while travelling.",
+    detailAr: "قال النبي ﷺ: ركعتا الفجر خير من الدنيا وما فيها، وكان لا يتركهما حتى في السفر.",
+    arabic: "رَكْعَتَا الْفَجْرِ خَيْرٌ مِنَ الدُّنْيَا وَمَا فِيهَا",
+    ref: "Sahih Muslim, Book of Travellers' Prayer, Hadith 725",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["fajr sunnah","two rakah","before fajr","morning prayer","سنة الفجر","ركعتا الفجر","قبل الفجر"]
+  },
+  {
+    cat: "prayer",
+    title: "End the night with Witr",
+    titleAr: "اجعلوا آخر صلاتكم بالليل وتراً",
+    detail: "The Prophet ﷺ instructed making the Witr the last prayer of the night. He would pray it in an odd number, and never abandoned it.",
+    detailAr: "أمر النبي ﷺ أن تكون آخر صلاة الليل وتراً، وكان يصليه عدداً فردياً ولا يتركه.",
+    ref: "Sahih al-Bukhari, Hadith 998; Sahih Muslim, Hadith 751",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["witr","night prayer","odd","last prayer","الوتر","آخر الليل","صلاة الليل"]
+  },
+
+  /* ================= MORE: HOME & MARRIAGE ================= */
+  {
+    cat: "home",
+    title: "Choosing a spouse for character and faith",
+    titleAr: "اختيار الزوج والزوجة للدين والخلق",
+    detail: "The Prophet ﷺ taught that a woman is sought for four things but advised choosing for religion, and told guardians to accept a man of faith and character. He said the best provision of this world is a righteous spouse.",
+    detailAr: "علّم النبي ﷺ أن المرأة تُنكح لأربع وأرشد إلى اختيار ذات الدين، وأمر الأولياء بتزويج صاحب الدين والخلق. وقال إن خير متاع الدنيا الزوجة الصالحة.",
+    ref: "Sahih al-Bukhari, Hadith 5090; Sahih Muslim, Hadith 1467",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["marriage","spouse","wife","husband","choosing","proposal","engagement","الزواج","اختيار الزوجة","الزوج","الخطبة","الدين والخلق"]
+  },
+  {
+    cat: "home",
+    title: "Be just between your children",
+    titleAr: "العدل بين الأولاد",
+    detail: "When a father wished to give one son a gift, the Prophet ﷺ asked whether he had given the same to all his children, and told him to be just, saying: do not make me a witness to injustice.",
+    detailAr: "لما أراد أب أن يخصّ ابناً بعطية سأله النبي ﷺ: أكل ولدك أعطيت مثله؟ وأمره بالعدل وقال: لا تُشهدني على جور.",
+    ref: "Sahih al-Bukhari, Hadith 2587; Sahih Muslim, Hadith 1623",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["children","justice","fair","gift","favouritism","sons","daughters","الأولاد","العدل","العطية","التفريق","الأبناء"]
+  },
+  {
+    cat: "home",
+    title: "Raising daughters is a shield from the Fire",
+    titleAr: "من عال جاريتين",
+    detail: "The Prophet ﷺ said whoever is tested with daughters and is patient and good to them, they will be a screen for him from the Fire; and whoever raises two girls until they mature will be with him closely on the Day of Judgment.",
+    detailAr: "قال النبي ﷺ: من ابتُلي بالبنات فصبر وأحسن إليهن كنّ له ستراً من النار، ومن عال جاريتين حتى تبلغا جاء يوم القيامة قريباً منه.",
+    ref: "Sahih Muslim, Hadith 2631; Sahih al-Bukhari, Hadith 1418",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["daughters","girls","children","raising","patience","father","البنات","الجاريتين","التربية","الصبر","الأب"]
+  },
+
+  /* ================= MORE: FRIDAY & TIME ================= */
+  {
+    cat: "friday",
+    title: "The hour of answered dua on Friday",
+    titleAr: "ساعة الاستجابة يوم الجمعة",
+    detail: "The Prophet ﷺ mentioned that in Friday there is an hour in which a servant's supplication is not refused, and urged seeking it — many scholars place it in the last part of the day before Maghrib.",
+    detailAr: "ذكر النبي ﷺ أن في الجمعة ساعة لا يُرد فيها دعاء العبد، وحثّ على تحرّيها، وذهب كثير من العلماء إلى أنها في آخر النهار قبل المغرب.",
+    ref: "Sahih Muslim, Book of Jumu'ah, Hadith 853",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["friday hour","dua accepted","last hour","jumuah","ساعة الجمعة","استجابة","آخر النهار","الدعاء"]
+  },
+  {
+    cat: "character",
+    title: "Value your time — two blessings people waste",
+    titleAr: "نعمتان مغبون فيهما كثير من الناس",
+    detail: "The Prophet ﷺ said there are two blessings many people squander: good health and free time. He urged acting before old age, illness, poverty and death arrive.",
+    detailAr: "قال النبي ﷺ: نعمتان مغبون فيهما كثير من الناس: الصحة والفراغ. وحثّ على العمل قبل الهرم والمرض والفقر والموت.",
+    arabic: "نِعْمَتَانِ مَغْبُونٌ فِيهِمَا كَثِيرٌ مِنَ النَّاسِ: الصِّحَّةُ وَالْفَرَاغُ",
+    ref: "Sahih al-Bukhari, Book of Heart Softeners, Hadith 6412",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["time","free time","health","waste","youth","procrastination","الوقت","الفراغ","الصحة","الشباب","التسويف"]
+  },
+
+  /* ================= MORE: PURITY ================= */
+  {
+    cat: "purity",
+    title: "Do not waste water, even in wudu",
+    titleAr: "عدم الإسراف في ماء الوضوء",
+    detail: "The Prophet ﷺ performed wudu with a small amount of water and disliked extravagance in it, teaching restraint even in an act of worship.",
+    detailAr: "كان النبي ﷺ يتوضأ بالماء القليل وكره الإسراف فيه، تعليماً للاقتصاد حتى في العبادة.",
+    ref: "Sahih al-Bukhari, Hadith 201; Sunan Ibn Majah, Hadith 425",
+    strength: "Sahih — established in the collections",
+    keys: ["water","waste","wudu","extravagance","save water","الماء","الإسراف","الوضوء","الاقتصاد"]
+  },
+  {
+    cat: "purity",
+    title: "Ghusl on Friday and cleanliness of the body",
+    titleAr: "الغسل يوم الجمعة والنظافة",
+    detail: "The Prophet ﷺ said the Friday bath is a duty upon every adult, and he taught general cleanliness of body, clothing and mouth as part of faith.",
+    detailAr: "قال النبي ﷺ: غسل الجمعة واجب على كل محتلم، وعلّم نظافة البدن والثوب والفم من الدين.",
+    ref: "Sahih al-Bukhari, Hadith 879; Sahih Muslim, Hadith 846",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["ghusl","bath","shower","friday","clean","hygiene","الغسل","الاستحمام","الجمعة","النظافة"]
+  },
+
+  /* ================= MORE: FOOD ================= */
+  {
+    cat: "food",
+    title: "He ﷺ never filled himself, and disliked leaning while eating",
+    titleAr: "لم يشبع ﷺ ولم يأكل متكئاً",
+    detail: "The Prophet ﷺ did not eat reclining, and his household would pass months without much bread. He taught contentment with little and thankfulness for it.",
+    detailAr: "لم يكن النبي ﷺ يأكل متكئاً، وكان بيته يمضي الشهر دون كثير من الخبز. وعلّم القناعة بالقليل والشكر عليه.",
+    ref: "Sahih al-Bukhari, Hadith 5398 and 5416",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["eating","reclining","full","hunger","contentment","simple food","الأكل","متكئا","الشبع","القناعة","الطعام البسيط"]
+  },
+  {
+    cat: "food",
+    title: "Do not waste food — even a fallen morsel",
+    titleAr: "عدم إضاعة الطعام",
+    detail: "The Prophet ﷺ instructed that if a morsel falls, one should remove any dirt and eat it rather than leave it for Satan, and that the fingers and dish be wiped clean.",
+    detailAr: "أمر النبي ﷺ أن من سقطت لقمته فليمسح ما بها من أذى وليأكلها ولا يدعها للشيطان، وأمر بلعق الأصابع ومسح القصعة.",
+    ref: "Sahih Muslim, Book of Drinks, Hadith 2033",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["waste food","leftovers","morsel","plate","fingers","israf","إضاعة الطعام","اللقمة","القصعة","الأصابع","الإسراف"]
+  },
+
+  /* ================= MORE: HARDSHIP & TRUST ================= */
+  {
+    cat: "hardship",
+    title: "Tie your camel and trust in Allah",
+    titleAr: "التوكل مع الأخذ بالأسباب",
+    detail: "The Prophet ﷺ taught genuine reliance on Allah joined with practical effort — a man was told to tie his camel and then trust, and he ﷺ said that if people relied on Allah truly, they would be provided like the birds.",
+    detailAr: "علّم النبي ﷺ التوكل الحق مع الأخذ بالأسباب — فقيل للرجل: اعقلها وتوكّل، وقال ﷺ: لو أنكم توكلتم على الله حق توكله لرزقكم كما يرزق الطير.",
+    ref: "Jami at-Tirmidhi, Hadith 2517 (tie it) and 2344 (the birds)",
+    strength: "Strong — authenticated by al-Albani",
+    keys: ["trust","tawakkul","effort","provision","rizq","worry about money","التوكل","الأسباب","الرزق","القلق","العمل"]
+  },
+  {
+    cat: "hardship",
+    title: "Look at those below you, not above you",
+    titleAr: "انظر إلى من هو أسفل منك",
+    detail: "The Prophet ﷺ said: when one of you looks at someone given more in wealth and appearance, let him also look at one who has less — so he does not belittle Allah's favour upon him.",
+    detailAr: "قال النبي ﷺ: إذا نظر أحدكم إلى من فُضّل عليه في المال والخَلْق فلينظر إلى من هو أسفل منه، حتى لا يزدري نعمة الله عليه.",
+    ref: "Sahih al-Bukhari, Hadith 6490; Sahih Muslim, Hadith 2963",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["envy","jealous","comparison","gratitude","content","social media","الحسد","المقارنة","الشكر","القناعة","النعمة"]
   }
 ];
