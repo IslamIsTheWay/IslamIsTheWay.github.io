@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607312350" />
+  <link rel="stylesheet" href="css/style.css?v=202608010015" />
 </head>
 <body>
 
@@ -297,7 +297,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202607312350"></script>
+  <script src="js/data.js?v=202608010015"></script>
   <script>
     const quote = QURAN_QUOTES[Math.floor(Math.random() * QURAN_QUOTES.length)];
     document.getElementById("ayahArabic").textContent = quote.arabic;
@@ -320,7 +320,7 @@
       hadithPreview.appendChild(card);
     });
   </script>
-  <script src="js/main.js?v=202607312350"></script>
+  <script src="js/main.js?v=202608010015"></script>
   <script>
     /* ---------- Recommended recitations ----------
        Reads what the admin published in data/site-config.json. Runs after
@@ -345,27 +345,37 @@
       const items = list.filter(r => r && iitwParseVideo(r.url));
       if (!items.length) return;
 
+      // If any one is a Short, the whole row goes tall so the cards line up.
+      const anyVertical = items.some(r => {
+        const v = iitwParseVideo(r.url);
+        return r.vertical === true || (r.vertical !== false && v.vertical);
+      });
+      grid.classList.toggle("rec-vertical", anyVertical);
+
       grid.innerHTML = items.map(r => {
         const v = iitwParseVideo(r.url);
         const ref = iitwRecitationRef(r);
         const refAr = iitwRecitationRefAr(r);
         const poster = v.kind === "youtube"
-          ? `<img src="${iitwEsc(v.thumb)}" alt="" loading="lazy" />`
+          ? `<img src="${iitwEsc(v.thumb)}" alt="" loading="lazy"
+                  onerror="this.onerror=null;this.src='${iitwEsc(v.thumbFallback)}';" />`
           : `<div class="rec-noposter">▶</div>`;
         return `<article class="rec-card">
-          <h3 class="rec-title">${iitwEsc(r.title || "Recitation")}</h3>
-          ${r.titleAr ? `<div class="rec-title-ar" dir="rtl">${iitwEsc(r.titleAr)}</div>` : ""}
+          <div class="rec-heading">
+            <h3 class="rec-title">${iitwEsc(r.title || "Recitation")}</h3>
+            ${r.titleAr ? `<div class="rec-title-ar" dir="rtl">${iitwEsc(r.titleAr)}</div>` : ""}
+          </div>
           <div class="rec-player" data-embed="${iitwEsc(v.embed)}" data-kind="${v.kind}" role="button" tabindex="0"
                aria-label="Play: ${iitwEsc(r.title || "recitation")}">
             ${poster}
             <span class="rec-play" aria-hidden="true">▶</span>
           </div>
           <div class="rec-meta">
-            ${r.reciter ? `<div class="rec-reciter">🎙 ${iitwEsc(r.reciter)}${r.reciterAr ? ` <span dir="rtl">— ${iitwEsc(r.reciterAr)}</span>` : ""}</div>` : ""}
+            ${r.reciter ? `<div class="rec-reciter">🎙 ${iitwEsc(r.reciter)}${r.reciterAr ? `<span class="rec-reciter-ar" dir="rtl">${iitwEsc(r.reciterAr)}</span>` : ""}</div>` : ""}
             ${ref ? `<div class="rec-ref">${iitwEsc(ref)}</div>` : ""}
             ${refAr ? `<div class="rec-ref-ar" dir="rtl">${iitwEsc(refAr)}</div>` : ""}
             ${r.note ? `<p class="rec-note">${iitwEsc(r.note)}</p>` : ""}
-            ${r.noteAr ? `<p class="rec-note" dir="rtl">${iitwEsc(r.noteAr)}</p>` : ""}
+            ${r.noteAr ? `<p class="rec-note rec-note-ar" dir="rtl">${iitwEsc(r.noteAr)}</p>` : ""}
           </div>
         </article>`;
       }).join("");
@@ -393,6 +403,6 @@
       if (window.applyI18n) window.applyI18n();
     })();
   </script>
-  <script src="js/i18n.js?v=202607312350"></script>
+  <script src="js/i18n.js?v=202608010015"></script>
 </body>
 </html>

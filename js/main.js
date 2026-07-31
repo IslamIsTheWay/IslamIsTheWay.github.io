@@ -17,18 +17,172 @@ function iitwParseVideo(url) {
     return {
       kind: "youtube",
       id,
-      // nocookie + rel=0: no tracking cookie before play, and no unrelated
-      // videos suggested afterwards on a site about the Quran.
-      embed: "https://www.youtube-nocookie.com/embed/" + id + "?rel=0&modestbranding=1&playsinline=1",
-      thumb: "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg",
+      // A Shorts link is a tall video, so the card is made tall to match.
+      vertical: /youtube\.com\/shorts\//i.test(raw),
+      /* nocookie: no tracking cookie before play. rel=0: no unrelated videos
+         suggested afterwards on a site about the Quran. modestbranding and
+         iv_load_policy strip the title bar and the annotation overlay, so the
+         card reads as a video on this site rather than a YouTube page. The
+         logo in the control bar cannot be removed — that is YouTube's. */
+      embed: "https://www.youtube-nocookie.com/embed/" + id +
+             "?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&color=white",
+      // maxres is sharp when it exists; the caller falls back to hq on error.
+      thumb: "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg",
+      thumbFallback: "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg",
       watch: "https://www.youtube.com/watch?v=" + id
     };
   }
 
   if (/^https?:\/\//i.test(raw) && /\.(mp4|webm|ogg|ogv|m4v)(\?.*)?$/i.test(raw)) {
-    return { kind: "file", id: raw, embed: raw, thumb: "", watch: raw };
+    return { kind: "file", id: raw, vertical: false, embed: raw, thumb: "", thumbFallback: "", watch: raw };
   }
   return null;
+}
+
+/* ---------- Reading what a video says about itself ----------
+   YouTube's oEmbed endpoint is free, needs no key and allows cross-origin
+   requests. It returns the video's own title and channel name. It does NOT
+   describe the content — so everything derived from it is offered to the admin
+   as a suggestion to accept or overwrite, never written silently. */
+async function iitwFetchVideoInfo(url) {
+  const v = iitwParseVideo(url);
+  if (!v || v.kind !== "youtube") return null;
+  try {
+    const r = await fetch("https://www.youtube.com/oembed?format=json&url=" +
+      encodeURIComponent("https://www.youtube.com/watch?v=" + v.id));
+    if (!r.ok) return null;
+    const j = await r.json();
+    return { title: j.title || "", author: j.author_name || "" };
+  } catch (e) { return null; }
+}
+
+// Strip harakat, hamza forms and separators so "الحاقّة" and "Al-Haqqah" match.
+function iitwLoose(s) {
+  return String(s || "")
+    .replace(/[ً-ْٰـ]/g, "")
+    .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه")
+    .toLowerCase()
+    .replace(/\b(surah?|sura|سورة|سوره)\b/g, " ")
+    .replace(/[^a-z؀-ۿ0-9]+/g, "");
+}
+
+/* Find which surah a video title is talking about, in either language.
+   Needs SURAHS from data.js; returns null if that is not loaded. */
+function iitwDetectSurah(text) {
+  if (typeof SURAHS === "undefined" || !text) return null;
+  const hay = iitwLoose(text);
+  let best = null;
+  SURAHS.forEach(s => {
+    [s.name, s.arabic].forEach(label => {
+      const k = iitwLoose(label);
+      // Short names like "Nas" match inside other words, so require length.
+      if (k.length >= 3 && hay.includes(k) && (!best || k.length > best.keyLen)) {
+        best = { n: s.n, name: s.name, arabic: s.arabic, meaning: s.meaning, keyLen: k.length };
+      }
+    });
+  });
+  return best;
+}
+
+// "29-33", "29 - 33", "الآيات 29 إلى 33", "verses 29 to 33", or a single number.
+function iitwDetectAyahs(text) {
+  const t = String(text || "").replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d));
+  let m = t.match(/(\d{1,3})\s*(?:-|–|—|to|إلى|الى)\s*(\d{1,3})/);
+  if (m) return { from: +m[1], to: +m[2] };
+  m = t.match(/(?:ayah?|ayat|verse[s]?|الآيات|الآية|اية|آية)\s*[:\-]?\s*(\d{1,3})/i);
+  if (m) return { from: +m[1], to: +m[1] };
+  return null;
+}
+
+/* ---------- Suggested notes for the listener ----------
+   Grouped by what the surah is about, so the admin gets a sensible starting
+   point instead of a blank box. These are gentle reminders for reflection,
+   never rulings — the same standard as the rest of the site. */
+const IITW_NOTE_THEMES = [
+  {
+    // The Hour, the Reckoning, Paradise and the Fire
+    surahs: [56,69,75,77,78,79,80,81,82,83,84,88,99,100,101,102,104],
+    notes: [
+      { en: "Listen slowly, then read the whole surah — it describes the Day of Judgement from beginning to end.",
+        ar: "استمع بتأنٍّ ثم اقرأ السورة كاملة، فهي تصف يوم القيامة من أوله إلى آخره." },
+      { en: "A reminder to guard your time: none of us knows when our own hour will come.",
+        ar: "تذكير بحفظ الوقت، فما منّا أحد يعلم متى تأتيه ساعته." },
+      { en: "Let these verses move you to leave what you fear would harm you on that Day.",
+        ar: "لتحملك هذه الآيات على ترك ما تخشى أن يضرّك في ذلك اليوم." }
+    ]
+  },
+  {
+    // Mercy, relief, hope
+    surahs: [55,93,94,105,106,108,110],
+    notes: [
+      { en: "A reminder of how much has been given to us, and how little we stop to notice it.",
+        ar: "تذكير بعظيم ما أُعطينا، وقلّة وقوفنا عنده شكراً." },
+      { en: "If you are going through something hard, sit with these verses — relief is promised after difficulty.",
+        ar: "إن كنت تمرّ بضيق فاجلس مع هذه الآيات، فإنّ مع العسر يسراً." }
+    ]
+  },
+  {
+    // Tawhid and sincerity
+    surahs: [1,109,112],
+    notes: [
+      { en: "Short, and the whole of belief rests on it. Repeat it until the meaning settles in the heart.",
+        ar: "قصيرة، وعليها يقوم أصل الاعتقاد. ردّدها حتى يستقرّ المعنى في القلب." }
+    ]
+  },
+  {
+    // Refuge and protection
+    surahs: [113,114],
+    notes: [
+      { en: "Recite these morning and evening, and before sleeping, as the Prophet ﷺ did.",
+        ar: "اقرأها صباحاً ومساءً وقبل النوم، كما كان النبي ﷺ يفعل." }
+    ]
+  },
+  {
+    // The stories of the Prophets
+    surahs: [11,12,14,18,19,21,26,28,37,71],
+    notes: [
+      { en: "A story told for those who came after — read it looking for what it asks of you.",
+        ar: "قصّة سيقت لمن بعدهم، فاقرأها متأملاً ما تطلبه منك." },
+      { en: "Patience is the thread running through this passage. Notice how long it was tested.",
+        ar: "الصبر هو الخيط الجامع في هذه الآيات، وتأمّل كم طال الابتلاء." }
+    ]
+  }
+];
+
+const IITW_NOTE_GENERAL = [
+  { en: "Listen with an unhurried heart, then read the passage within its full surah.",
+    ar: "استمع بقلبٍ حاضر، ثم اقرأ الآيات في سياق سورتها كاملة." },
+  { en: "Beautiful recitation is a door — the aim is to understand and act, not only to be moved.",
+    ar: "حُسن التلاوة بابٌ، والمقصود الفهم والعمل لا مجرّد التأثر." }
+];
+
+function iitwSuggestNotes(surahNum) {
+  const n = parseInt(surahNum, 10);
+  const themed = IITW_NOTE_THEMES.filter(t => t.surahs.includes(n)).flatMap(t => t.notes);
+  return themed.concat(IITW_NOTE_GENERAL);
+}
+
+/* ---------- Translate one line, for the dashboard's speak-once fields ----
+   Uses the same free MyMemory service the meeting captions use. It is machine
+   translation: good enough to save typing, NOT good enough to publish
+   unchecked. Anything it produces is flagged in the UI for review. */
+async function iitwTranslate(text, from, to) {
+  const s = String(text || "").trim();
+  if (!s) return "";
+  try {
+    const r = await fetch("https://api.mymemory.translated.net/get?q=" +
+      encodeURIComponent(s.slice(0, 480)) + "&langpair=" + from + "|" + to);
+    if (!r.ok) return "";
+    const j = await r.json();
+    const out = j && j.responseData && j.responseData.translatedText;
+    if (!out || /MYMEMORY WARNING|INVALID/i.test(out)) return "";
+    return out;
+  } catch (e) { return ""; }
+}
+
+// Which language was actually spoken, judged from the script that came back.
+function iitwIsArabicText(s) {
+  return /[؀-ۿ]/.test(String(s || ""));
 }
 
 // Text from the dashboard is escaped before it ever reaches innerHTML.

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607312350" />
+  <link rel="stylesheet" href="css/style.css?v=202608010015" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -34,6 +34,19 @@
     .staff-tabs button.active { background:var(--green); color:#fff; border-color:var(--green); }
     .staff-section { display:none; }
     .staff-section.active { display:block; }
+    /* Recitations: mic + suggestion chips */
+    .rec-field-head { display:flex; justify-content:space-between; align-items:flex-end; gap:10px; flex-wrap:wrap; margin:14px 0 4px; }
+    .rec-mic-group { display:flex; gap:6px; align-items:center; }
+    .rec-mic-lang { width:auto !important; padding:6px 8px !important; font-size:.8rem !important; border-radius:6px !important; }
+    .rec-mic { border:1px solid var(--green); background:var(--green-pale); color:var(--green-dark); border-radius:999px; padding:7px 14px; font-family:inherit; font-size:.82rem; font-weight:600; cursor:pointer; white-space:nowrap; }
+    .rec-mic:hover { background:var(--green-light); }
+    .rec-mic.listening { background:#b3261e; color:#fff; border-color:#b3261e; }
+    .rec-hint { font-size:.79rem; color:var(--text-muted); margin-top:5px; min-height:1em; }
+    .rec-hint.warn { color:#8a3d1f; font-weight:600; }
+    .rec-suggestions { display:flex; flex-wrap:wrap; gap:7px; margin:8px 0 4px; }
+    .rec-chip { border:1px solid var(--border); background:#fff; color:var(--text-dark); border-radius:8px; padding:7px 11px; font-family:inherit; font-size:.79rem; cursor:pointer; text-align:left; max-width:100%; line-height:1.45; }
+    .rec-chip:hover { border-color:var(--green); background:var(--green-pale); }
+    .rec-chip small { display:block; color:var(--text-muted); font-family:'Amiri',serif; font-size:.85rem; direction:rtl; }
   </style>
 </head>
 <body>
@@ -264,20 +277,39 @@
           <div style="font-weight:700;color:var(--green-dark);margin-bottom:10px;">Is this the video you want?</div>
           <div id="recPreview" style="max-width:520px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#0d2b1c;"></div>
 
-          <label>2) Title — what these verses are about</label>
-          <input type="text" id="recTitle" placeholder="e.g. The verses describing the Day of Judgement" />
-          <label>Title in Arabic (optional)</label>
-          <input type="text" id="recTitleAr" dir="rtl" placeholder="مثال: آيات تصف يوم القيامة" />
+          <div id="recFromVideo" style="display:none;background:#fff;border:1px dashed var(--green);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:.88rem;"></div>
 
-          <label>3) Reciter</label>
-          <input type="text" id="recReciter" placeholder="e.g. Ahmad Al-Nufais" />
-          <label>Reciter in Arabic (optional)</label>
-          <input type="text" id="recReciterAr" dir="rtl" placeholder="مثال: أحمد النفيس" />
+          <div class="rec-field-head">
+            <label style="margin:0;">2) Title — what these verses are about</label>
+            <span class="rec-mic-group">
+              <select class="rec-mic-lang" id="micLangTitle" aria-label="Language you will speak">
+                <option value="ar-SA">عربي</option>
+                <option value="en-US">English</option>
+              </select>
+              <button type="button" class="rec-mic" onclick="speakFill('title')" title="Say it once — both boxes are filled">🎤 Speak</button>
+            </span>
+          </div>
+          <input type="text" id="recTitle" placeholder="English — e.g. The verses describing the Day of Judgement" />
+          <input type="text" id="recTitleAr" dir="rtl" placeholder="بالعربية — مثال: آيات تصف يوم القيامة" style="margin-top:8px;" />
+          <div class="rec-hint" id="titleHint"></div>
 
-          <label>4) Surah name</label>
-          <input type="text" id="recSurah" placeholder="e.g. Al-Haqqah" />
-          <label>Surah name in Arabic (optional)</label>
-          <input type="text" id="recSurahAr" dir="rtl" placeholder="مثال: الحاقة" />
+          <div class="rec-field-head">
+            <label style="margin:0;">3) Reciter</label>
+            <span class="rec-mic-group">
+              <select class="rec-mic-lang" id="micLangReciter" aria-label="Language you will speak">
+                <option value="ar-SA">عربي</option>
+                <option value="en-US">English</option>
+              </select>
+              <button type="button" class="rec-mic" onclick="speakFill('reciter')" title="Say the name once">🎤 Speak</button>
+            </span>
+          </div>
+          <input type="text" id="recReciter" placeholder="English — e.g. Islam Sobhi" />
+          <input type="text" id="recReciterAr" dir="rtl" placeholder="بالعربية — مثال: إسلام صبحي" style="margin-top:8px;" />
+          <div class="rec-hint" id="reciterHint"></div>
+
+          <label>4) Surah</label>
+          <input type="text" id="recSurah" placeholder="English — e.g. Al-Haqqah" />
+          <input type="text" id="recSurahAr" dir="rtl" placeholder="بالعربية — مثال: الحاقة" style="margin-top:8px;" />
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
             <div><label>Surah number</label><input type="number" id="recSurahNum" min="1" max="114" placeholder="69" /></div>
             <div><label>From verse</label><input type="number" id="recFrom" min="1" placeholder="29" /></div>
@@ -285,10 +317,27 @@
           </div>
           <div id="recRefPreview" style="margin-top:10px;font-size:.9rem;color:var(--green-dark);font-weight:600;"></div>
 
-          <label>5) A short note for the listener (optional)</label>
-          <textarea id="recNote" placeholder="e.g. Read the whole surah afterwards — it describes the Day of Judgement from beginning to end."></textarea>
-          <label>The same note in Arabic (optional)</label>
-          <textarea id="recNoteAr" dir="rtl" placeholder="مثال: اقرأ السورة كاملة بعد الاستماع."></textarea>
+          <div class="rec-field-head">
+            <label style="margin:0;">5) A short note for the listener</label>
+            <span class="rec-mic-group">
+              <select class="rec-mic-lang" id="micLangNote" aria-label="Language you will speak">
+                <option value="ar-SA">عربي</option>
+                <option value="en-US">English</option>
+              </select>
+              <button type="button" class="rec-mic" onclick="speakFill('note')" title="Say it once — both boxes are filled">🎤 Speak</button>
+            </span>
+          </div>
+          <div id="recNoteSuggestions" class="rec-suggestions"></div>
+          <textarea id="recNote" placeholder="English — a sentence or two inviting people to reflect"></textarea>
+          <textarea id="recNoteAr" dir="rtl" placeholder="بالعربية — جملة أو جملتان للتدبر" style="margin-top:8px;"></textarea>
+          <div class="rec-hint" id="noteHint"></div>
+
+          <label>Video shape</label>
+          <select id="recVertical">
+            <option value="auto">Detect automatically (Shorts links become tall)</option>
+            <option value="yes">Tall — a Short / vertical video</option>
+            <option value="no">Wide — a normal video</option>
+          </select>
 
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
             <button class="btn btn-primary" type="button" onclick="addRecitation()">✔ Yes — add it to the home page</button>
@@ -320,10 +369,12 @@
     </div>
   </footer>
 
-  <!-- main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
+  <!-- data.js gives SURAHS, used to recognise which surah a video's title names.
+       main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
-       It has no top-level DOM access, so loading it earlier is safe. -->
-  <script src="js/main.js?v=202607312350"></script>
+       Neither touches the DOM at load, so this order is safe. -->
+  <script src="js/data.js?v=202608010015"></script>
+  <script src="js/main.js?v=202608010015"></script>
   <script>
     if (sessionStorage.getItem("islamIsTheWayStaff") !== "true") {
       window.location.href = "login.html";
@@ -439,6 +490,151 @@
        approved here is exactly what visitors get. */
     let recPending = null;
 
+    /* Speak once, fill both boxes. The spoken language is taken from the little
+       selector, the other side is machine-translated. Machine translation is
+       never good enough to publish unread, so the box it fills is flagged. */
+    const SPEAK_FIELDS = {
+      title:   { en: "recTitle",    ar: "recTitleAr",    hint: "titleHint" },
+      reciter: { en: "recReciter",  ar: "recReciterAr",  hint: "reciterHint" },
+      note:    { en: "recNote",     ar: "recNoteAr",     hint: "noteHint" }
+    };
+    let recActiveRecognition = null;
+
+    function speakFill(which) {
+      const f = SPEAK_FIELDS[which];
+      const hint = document.getElementById(f.hint);
+      const btn = document.querySelector(`.rec-mic[onclick*="'${which}'"]`);
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SR) {
+        hint.className = "rec-hint warn";
+        hint.textContent = "This browser cannot listen. Use Chrome or Edge, or just type it.";
+        return;
+      }
+      if (recActiveRecognition) { try { recActiveRecognition.stop(); } catch (e) {} recActiveRecognition = null; }
+
+      const langSel = document.getElementById("micLang" + which.charAt(0).toUpperCase() + which.slice(1));
+      const lang = langSel ? langSel.value : "ar-SA";
+      const rec = new SR();
+      recActiveRecognition = rec;
+      rec.lang = lang;
+      rec.interimResults = false;
+      rec.maxAlternatives = 1;
+
+      btn.classList.add("listening");
+      btn.textContent = "● Listening…";
+      hint.className = "rec-hint";
+      hint.textContent = lang === "ar-SA" ? "تكلّم الآن…" : "Speak now…";
+
+      const done = () => { btn.classList.remove("listening"); btn.textContent = "🎤 Speak"; recActiveRecognition = null; };
+
+      rec.onerror = e => {
+        done();
+        hint.className = "rec-hint warn";
+        hint.textContent = e.error === "not-allowed"
+          ? "The microphone is blocked. Allow it in the address bar, then try again."
+          : "Could not hear anything. Try again, or type it.";
+      };
+      rec.onend = done;
+
+      rec.onresult = async e => {
+        const said = (e.results[0] && e.results[0][0] && e.results[0][0].transcript || "").trim();
+        if (!said) return;
+        // Trust the script that came back over the selector, in case of a slip.
+        const spokeArabic = iitwIsArabicText(said) || (lang === "ar-SA" && !/[a-z]/i.test(said));
+        const sameId = spokeArabic ? f.ar : f.en;
+        const otherId = spokeArabic ? f.en : f.ar;
+        document.getElementById(sameId).value = said;
+
+        hint.className = "rec-hint";
+        hint.textContent = "Heard it. Translating the other box…";
+        const translated = await iitwTranslate(said, spokeArabic ? "ar" : "en", spokeArabic ? "en" : "ar");
+        if (translated) {
+          document.getElementById(otherId).value = translated;
+          hint.className = "rec-hint warn";
+          hint.textContent = spokeArabic
+            ? "The English box was translated automatically — please read it before publishing."
+            : "The Arabic box was translated automatically — please read it before publishing, it is machine translation.";
+        } else {
+          hint.className = "rec-hint warn";
+          hint.textContent = "Could not translate just now — please fill the other box yourself.";
+        }
+        updateRecRefPreview();
+      };
+
+      try { rec.start(); } catch (e) { done(); }
+    }
+
+    /* Offer a starting point for the note, based on which surah was detected.
+       These are reminders for reflection, not rulings. */
+    function renderNoteSuggestions() {
+      const host = document.getElementById("recNoteSuggestions");
+      const num = parseInt(document.getElementById("recSurahNum").value, 10);
+      const list = iitwSuggestNotes(num).slice(0, 5);
+      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">Suggestions — click one to use it, then edit freely:</span>` +
+        list.map((n, i) => `<button type="button" class="rec-chip" onclick="useNoteSuggestion(${i})">
+            ${iitwEsc(n.en)}<small>${iitwEsc(n.ar)}</small>
+          </button>`).join("");
+      host._list = list;
+    }
+    function useNoteSuggestion(i) {
+      const host = document.getElementById("recNoteSuggestions");
+      const n = host._list && host._list[i];
+      if (!n) return;
+      document.getElementById("recNote").value = n.en;
+      document.getElementById("recNoteAr").value = n.ar;
+      const hint = document.getElementById("noteHint");
+      hint.className = "rec-hint";
+      hint.textContent = "Filled from a suggestion — change any of it to suit the video.";
+    }
+
+    /* Read what the video says about itself and offer it. YouTube gives us the
+       video's own title and channel; the surah and verse numbers are pulled out
+       of that title where they appear. Nothing is written without the admin
+       seeing it — every piece is a button. */
+    async function loadVideoSuggestions(url) {
+      const box = document.getElementById("recFromVideo");
+      box.style.display = "";
+      box.innerHTML = "Reading the video's details…";
+      const info = await iitwFetchVideoInfo(url);
+      if (!info) {
+        box.innerHTML = `<strong>Could not read the video's own details.</strong> Fill the boxes in yourself — everything below still works.`;
+        return;
+      }
+      const surah = iitwDetectSurah(info.title);
+      const ayahs = iitwDetectAyahs(info.title);
+      const bits = [`<div style="margin-bottom:8px;"><strong>The video calls itself:</strong> “${iitwEsc(info.title)}”${info.author ? ` &nbsp;·&nbsp; channel: <strong>${iitwEsc(info.author)}</strong>` : ""}</div>`];
+
+      bits.push(`<div class="rec-suggestions">`);
+      bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('titleEn', ${JSON.stringify(info.title).replace(/"/g, "&quot;")})">Use as the English title</button>`);
+      if (info.author) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('reciter', ${JSON.stringify(info.author).replace(/"/g, "&quot;")})">Use “${iitwEsc(info.author)}” as the reciter</button>`);
+      if (surah) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('surah', ${JSON.stringify(surah).replace(/"/g, "&quot;")})">Set surah: <strong>${iitwEsc(surah.name)}</strong> (${surah.n}) — <span dir="rtl">${iitwEsc(surah.arabic)}</span></button>`);
+      if (ayahs) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('ayahs', ${JSON.stringify(ayahs).replace(/"/g, "&quot;")})">Set verses: <strong>${ayahs.from}${ayahs.to !== ayahs.from ? "-" + ayahs.to : ""}</strong></button>`);
+      bits.push(`</div>`);
+      if (!surah) bits.push(`<div style="color:var(--text-muted);font-size:.82rem;">The surah is not named in the video's title, so please type it below.</div>`);
+      box.innerHTML = bits.join("");
+
+      // Fill the obvious ones straight away; they are all still editable.
+      if (surah) applySuggestion("surah", surah);
+      if (ayahs) applySuggestion("ayahs", ayahs);
+      if (info.author && !document.getElementById("recReciter").value) applySuggestion("reciter", info.author);
+    }
+
+    function applySuggestion(what, value) {
+      if (what === "titleEn") document.getElementById("recTitle").value = value;
+      if (what === "reciter") document.getElementById("recReciter").value = value;
+      if (what === "surah") {
+        document.getElementById("recSurah").value = value.name;
+        document.getElementById("recSurahAr").value = value.arabic;
+        document.getElementById("recSurahNum").value = value.n;
+      }
+      if (what === "ayahs") {
+        document.getElementById("recFrom").value = value.from;
+        document.getElementById("recTo").value = value.to;
+      }
+      updateRecRefPreview();
+      renderNoteSuggestions();
+    }
+
     function checkRecitation() {
       const msg = document.getElementById("recCheckMsg");
       const url = document.getElementById("recUrl").value.trim();
@@ -463,7 +659,10 @@
         : `<video src="${v.embed}" controls style="width:100%;height:100%;"></video>`;
       wrap.style.display = "";
       document.getElementById("recAddMsg").textContent = "";
+      document.getElementById("recVertical").value = "auto";
       updateRecRefPreview();
+      renderNoteSuggestions();
+      loadVideoSuggestions(url);     // reads the video's own title and channel
       wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
@@ -519,7 +718,13 @@
         reciter: f.reciter, reciterAr: f.reciterAr,
         surah: f.surah, surahAr: f.surahAr,
         surahNum: num || "", ayahFrom: from || "", ayahTo: to || "",
-        note: f.note, noteAr: f.noteAr
+        note: f.note, noteAr: f.noteAr,
+        // "auto" is stored as undefined so the home page falls back to the
+        // link itself (a /shorts/ URL is treated as tall).
+        vertical: (function () {
+          const mode = document.getElementById("recVertical").value;
+          return mode === "yes" ? true : mode === "no" ? false : undefined;
+        })()
       });
       cancelRecitation();
       renderLists();
@@ -536,6 +741,13 @@
         .forEach(id => { document.getElementById(id).value = ""; });
       document.getElementById("recCheckMsg").textContent = "";
       document.getElementById("recAddMsg").textContent = "";
+      document.getElementById("recFromVideo").style.display = "none";
+      document.getElementById("recNoteSuggestions").innerHTML = "";
+      ["titleHint","reciterHint","noteHint"].forEach(id => {
+        const h = document.getElementById(id);
+        h.className = "rec-hint"; h.textContent = "";
+      });
+      if (recActiveRecognition) { try { recActiveRecognition.stop(); } catch (e) {} recActiveRecognition = null; }
     }
 
     function moveRecitation(i, dir) {
@@ -755,6 +967,6 @@
 
     loadConfig();
   </script>
-  <script src="js/i18n.js?v=202607312350"></script>
+  <script src="js/i18n.js?v=202608010015"></script>
 </body>
 </html>
