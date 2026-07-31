@@ -38,6 +38,11 @@ function getReciter() {
 
 function pad3(n) { return String(n).padStart(3, "0"); }
 
+// ١٢٣ — the ayah number as it appears in a printed mushaf.
+function toArabicDigits(n) {
+  return String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[+d]);
+}
+
 function ayahAudioUrl(surahNum, ayahNumInSurah) {
   return "https://everyayah.com/data/" + getReciter() + "/" + pad3(surahNum) + pad3(ayahNumInSurah) + ".mp3";
 }
@@ -160,13 +165,19 @@ async function openSurah(surah) {
     // Per-ayah audio URLs are built directly from the chosen reciter.
     window._ayahAudios = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));
 
+    /* Each verse carries its number on the Arabic line (in the traditional
+       end-of-ayah marker) AND its full surah:ayah reference underneath.
+       Without the reference you cannot find a verse again — reading "2:255"
+       is what lets someone look it up or quote it correctly. */
     arabicAyahs.forEach((ayah, i) => {
       const translation = translationAyahs[i] ? translationAyahs[i].text : "";
       const audioUrl = ayahAudioUrl(surah.n, ayah.numberInSurah);
+      const cite = surah.n + ":" + ayah.numberInSurah;
       html += `
-        <div class="ayah-block">
-          <div class="arabic-text">${ayah.text} <button onclick="playAyah('${audioUrl}')" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
+        <div class="ayah-block" id="ayah-${ayah.numberInSurah}">
+          <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}')" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
           <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
+          <div class="ayah-cite">Surah ${surah.name} — <strong>${cite}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
         </div>
       `;
     });

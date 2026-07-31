@@ -1730,7 +1730,11 @@ const HADITHS = [
     topic: "Honesty in Trade",
     title: "Cheating in business or selling",
     strength: "Sahih — Narrated by Muslim",
-    keys: ["cheat","cheating","fraud","deceive","scam","business","trade","sell","selling","buy","customer","work","job","exam","copy","غش","خداع","تدليس","تجارة","بيع","عمل","امتحان","نصب"]
+    /* "work", "job", "exam" and "copy" used to sit here as bare words, so
+       "I lost my job and cannot pay the rent" matched this hadith and told a
+       worried person that whoever cheats us is not one of us. They are phrases
+       now, so they need the actual sense of cheating to be present. */
+    keys: ["cheat","cheating","fraud","deceive","scam","business","trade","sell","selling","buy","customer","cheat at work","cheating at work","cheat in exam","cheating in exam","copy in exam","غش","خداع","تدليس","تجارة","بيع","غش في العمل","الغش في الامتحان","نصب"]
   },
   {
     arabic: "لَا يَدْخُلُ الْجَنَّةَ قَاطِعُ رَحِمٍ",
@@ -1935,6 +1939,30 @@ const PARADISE_THEMES = [
     descriptionAr: "أمر الله بأداء الأمانات إلى أهلها والوفاء بالعهد، فإن العهد كان مسؤولاً.",
     keys: ["trust","amanah","promise","covenant","oath","borrowed","responsibility","duty","secret","أمانة","عهد","وعد","مسؤولية","حفظ السر"],
     refs: ["Surah An-Nisa (4:58)", "Surah Al-Isra (17:34)"]
+  },
+  {
+    title: "Provision Is From Allah — Rizq and Reliance",
+    titleAr: "الرزق بيد الله والتوكل عليه",
+    description: "There is no creature on the earth but that its provision is upon Allah. Whoever is mindful of Allah, He makes a way out for him and provides for him from where he never expected — and whoever relies upon Allah, He is sufficient for him.",
+    descriptionAr: "ما من دابّة في الأرض إلا على الله رزقها. ومن يتّقِ الله يجعل له مخرجاً ويرزقه من حيث لا يحتسب، ومن يتوكّل على الله فهو حسبه.",
+    keys: ["money","provision","rizq","sustenance","income","salary","wage","job","work","unemployed","bills","rent","expenses","afford","poverty","poor","need","worried about money","financial","reliance","tawakkul","depend","sufficient","رزق","مال","معيشة","راتب","وظيفة","عمل","فقر","فقير","حاجة","ضيق","مصاريف","إيجار","توكل","كفاية","قلق من المال","ضيق مالي"],
+    refs: ["Surah Hud (11:6)", "Surah At-Talaq (65:2-3)", "Surah Al-Ankabut (29:60)"]
+  },
+  {
+    title: "Ease After Hardship",
+    titleAr: "إنّ مع العسر يسراً",
+    description: "Allah does not burden a soul beyond what it can bear. With hardship comes ease — stated twice — and Allah will bring about ease after difficulty.",
+    descriptionAr: "لا يكلّف الله نفساً إلا وسعها. وإنّ مع العسر يسراً، وقد تكرّرت البشرى مرتين، وسيجعل الله بعد عسرٍ يسراً.",
+    keys: ["hardship","difficulty","difficult","struggle","struggling","suffering","distress","crisis","stuck","trapped","overwhelmed","cannot cope","exhausted","tired","burden","too much","relief","ease","hope","hopeless","give up","way out","worried","worry","anxious","scared","afraid","fear","sick","illness","pain","problem","problems","عسر","يسر","شدة","ضيق","كرب","مصيبة","تعب","إرهاق","فرج","مخرج","أمل","يأس","صعوبة","قلق","خوف","مرض","ألم","مشكلة"],
+    refs: ["Surah Ash-Sharh (94:5-6)", "Surah Al-Baqarah (2:286)", "Surah At-Talaq (65:7)"]
+  },
+  {
+    title: "Contentment, and Not Envying What Others Have",
+    titleAr: "القناعة وعدم النظر إلى ما مُتِّع به الآخرون",
+    description: "Do not strain your eyes toward the enjoyment We have given to some of them — the provision of your Lord is better and more lasting. Let neither wealth nor children distract you from the remembrance of Allah.",
+    descriptionAr: "لا تمدّنّ عينيك إلى ما متّعنا به أزواجاً منهم، ورزقُ ربك خيرٌ وأبقى. ولا تُلهِكم أموالكم ولا أولادكم عن ذكر الله.",
+    keys: ["envy","jealous","jealousy","compare","comparing","rich","richer","wealthy","show off","social media","content","contentment","satisfied","enough","greed","want more","ungrateful","حسد","غيرة","مقارنة","قناعة","رضا","غنى","ثراء","طمع","كفاف","تباهي"],
+    refs: ["Surah Ta-Ha (20:131)", "Surah Al-Munafiqun (63:9)", "Surah At-Takathur (102:1-2)"]
   }
 ];
 

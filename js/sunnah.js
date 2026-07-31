@@ -1452,5 +1452,121 @@ const SUNNAH = [
     ref: "Sahih Muslim, Hadith 2565; Sunan Abu Dawud, Hadith 4912",
     strength: "Sahih — established in the collections",
     keys: ["argument","fight","reconcile","angry","three days","family dispute","الخصام","الهجر","الإصلاح","المصالحة","ثلاثة أيام"]
+  },
+
+  /* ---- Added after locating each one in the text of al-Bukhari and Muslim ----
+     Every entry below was found in the source collection first and the Arabic
+     copied from it. Bukhari numbers are given because they match the standard
+     numbering; for Muslim the book is named without a number, because the
+     numbering differs between printings and a guessed number is worse than
+     none. */
+  {
+    cat: "health",
+    title: "Ruqyah with the earth of the ground for a pain, a sore or a wound",
+    titleAr: "الرُّقية بتُربة الأرض عند الوجع أو القُرحة أو الجُرح",
+    detail: "When a person complained of pain, or had a sore or a wound, the Prophet ﷺ would place his index finger on the ground, lift it, and say these words over the place that hurt. It is a prophetic supplication, not a charm — healing is asked of Allah alone, and it does not replace seeking treatment.",
+    detailAr: "كان النبي ﷺ إذا اشتكى الإنسانُ شيئًا أو كانت به قُرحة أو جُرح وضع سبَّابته على الأرض ثم رفعها وقال هذا الدعاء على موضع الألم. وهي رقية نبوية لا تميمة؛ فالشفاء يُطلب من الله وحده، ولا تُغني عن التداوي.",
+    arabic: "بِسْمِ اللَّهِ، تُرْبَةُ أَرْضِنَا، بِرِيقَةِ بَعْضِنَا، يُشْفَى سَقِيمُنَا بِإِذْنِ رَبِّنَا",
+    ref: "Sahih al-Bukhari, Book of Medicine, Hadith 5745; Sahih Muslim, Book of Greetings (Kitab as-Salam)",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["pain","hurt","wound","sore","injury","ruqyah","healing","finger","earth","dust","soil","ground","sick","ill","رقية","تربة","الأرض","جرح","قرحة","ألم","وجع","شفاء","السبابة","مريض"]
+  },
+  {
+    cat: "purity",
+    title: "Use the siwak when you rise in the night",
+    titleAr: "السِّواك عند القيام من الليل",
+    detail: "Whenever the Prophet ﷺ got up in the night to pray, he would clean his mouth thoroughly with the siwak before beginning. Hudhayfah described it with the word yashusu — scrubbing the mouth, not a light touch.",
+    detailAr: "كان النبي ﷺ إذا قام من الليل يَشُوصُ فاه بالسِّواك، أي يدلكه ويُنقِّيه قبل أن يشرع في صلاته، ووصفه حذيفة رضي الله عنه بالشَّوص وهو الدَّلك البالغ لا مجرَّد الإمرار.",
+    arabic: "كَانَ النَّبِيُّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ إِذَا قَامَ مِنَ اللَّيْلِ يَشُوصُ فَاهُ بِالسِّوَاكِ",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 245; Sahih Muslim, Book of Purification (Kitab at-Taharah)",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["siwak","miswak","tooth stick","night","wake","tahajjud","teeth","mouth","سواك","مسواك","الليل","قيام الليل","الأسنان","الفم","يشوص"]
+  },
+  {
+    cat: "home",
+    title: "The first thing he ﷺ did on entering his home was the siwak",
+    titleAr: "كان أوَّل ما يبدأ به إذا دخل بيته السِّواك",
+    detail: "Aishah رضي الله عنها was asked what the Prophet ﷺ began with when he came into his house. She answered in one word: the siwak. A small habit at the door of the home, and a sunnah most people have never heard of.",
+    detailAr: "سُئلت عائشة رضي الله عنها: بأيِّ شيء كان يبدأ النبي ﷺ إذا دخل بيته؟ قالت: بالسِّواك. سنَّةٌ يسيرة عند باب البيت، وقد غفل عنها كثير من الناس.",
+    arabic: "كَانَ النَّبِيُّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ إِذَا دَخَلَ بَيْتَهُ بَدَأَ بِالسِّوَاكِ",
+    ref: "Sahih Muslim, Book of Purification (Kitab at-Taharah)",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["siwak","miswak","enter","home","house","coming home","teeth","سواك","مسواك","دخول البيت","المنزل","الأسنان"]
+  },
+  {
+    cat: "purity",
+    title: "He ﷺ urged the siwak so often that he said so himself",
+    titleAr: "قوله ﷺ: أكثرتُ عليكم في السِّواك",
+    detail: "Anas رضي الله عنه reported the Prophet ﷺ saying that he had urged them about the siwak again and again. It shows how strongly he emphasised it — a forgotten sunnah he repeated until his companions noticed the repetition.",
+    detailAr: "روى أنس رضي الله عنه أن النبي ﷺ قال: «أكثرتُ عليكم في السِّواك»، وفي هذا بيان شدَّة عنايته ﷺ به وتكراره الوصية به حتى لاحظ الصحابة كثرة تكراره.",
+    arabic: "أَكْثَرْتُ عَلَيْكُمْ فِي السِّوَاكِ",
+    ref: "Sahih al-Bukhari, Book of Jumu'ah, Hadith 888",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["siwak","miswak","emphasis","repeatedly","teeth","clean","سواك","مسواك","الحث","التأكيد","الأسنان","نظافة"]
+  },
+  {
+    cat: "manners",
+    title: "Hand the siwak to the elder of the two first",
+    titleAr: "تقديم الأكبر سنًّا بالسِّواك",
+    detail: "The Prophet ﷺ described using a siwak when two men came to him, one older than the other. He offered it to the younger, and was told: give it to the elder. He then handed it to the older man. From this the scholars drew the general adab of beginning with the eldest.",
+    detailAr: "ذكر النبي ﷺ أنه رأى نفسه يستاك، فجاءه رجلان أحدهما أكبر من الآخر، فناول السِّواك الأصغر، فقيل له: كبِّر، فدفعه إلى الأكبر منهما. ومن هذا أخذ العلماء أدب تقديم الأكبر سنًّا في المجالس وغيرها.",
+    arabic: "أَرَانِي أَتَسَوَّكُ بِسِوَاكٍ، فَجَاءَنِي رَجُلَانِ أَحَدُهُمَا أَكْبَرُ مِنَ الْآخَرِ، فَنَاوَلْتُ السِّوَاكَ الْأَصْغَرَ مِنْهُمَا، فَقِيلَ لِي: كَبِّرْ، فَدَفَعْتُهُ إِلَى الْأَكْبَرِ مِنْهُمَا",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 246",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["elder","older","respect","age","siwak","give","serve","adab","الأكبر","السن","الاحترام","تقديم","سواك","أدب"]
+  },
+  {
+    cat: "health",
+    title: "Talbina — a barley dish for the sick and the grieving",
+    titleAr: "التَّلبينة للمريض والمحزون",
+    detail: "Talbina is a thin broth made from ground barley. Aishah رضي الله عنها used to prepare it for the sick and for anyone grieving over someone who had died, and would tell them to eat, quoting the Prophet ﷺ that it gives rest to the heart of the ill person and takes away part of the sorrow.",
+    detailAr: "التَّلبينة حساءٌ يُصنع من دقيق الشعير. وكانت عائشة رضي الله عنها تأمر بها للمريض وللمحزون على الميت وتقول: كُلْنَ منها، وتروي عن النبي ﷺ أنها تُريح فؤاد المريض وتذهب ببعض الحزن.",
+    arabic: "التَّلْبِينَةُ مَجَمَّةٌ لِفُؤَادِ الْمَرِيضِ، تَذْهَبُ بِبَعْضِ الْحُزْنِ",
+    ref: "Sahih al-Bukhari, Book of Food, Hadith 5417; and Book of Medicine, Hadith 5689",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["talbina","barley","sick","grief","sad","sorrow","mourning","food","comfort","تلبينة","الشعير","المريض","الحزن","الحزين","طعام","عزاء"]
+  },
+  {
+    cat: "mosque",
+    title: "The angels ask forgiveness for you while you stay in your place of prayer",
+    titleAr: "دعاء الملائكة للعبد ما دام في مُصلَّاه",
+    detail: "The Prophet ﷺ said the angels keep asking Allah to forgive and have mercy on a person for as long as he remains in the spot where he prayed, so long as he does not break his wudu. A reason not to leave the moment the prayer ends.",
+    detailAr: "قال النبي ﷺ إن الملائكة تدعو للعبد بالمغفرة والرحمة ما دام في مُصلَّاه الذي صلَّى فيه ما لم يُحدِث. وفي هذا حثٌّ على المكث بعد الصلاة وعدم الانصراف عقبها مباشرة.",
+    arabic: "الْمَلَائِكَةُ تُصَلِّي عَلَى أَحَدِكُمْ مَا دَامَ فِي مُصَلَّاهُ الَّذِي صَلَّى فِيهِ، مَا لَمْ يُحْدِثْ، تَقُولُ: اللَّهُمَّ اغْفِرْ لَهُ، اللَّهُمَّ ارْحَمْهُ",
+    ref: "Sahih al-Bukhari, Book of Salat, Hadith 445",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["angels","after prayer","stay","sitting","mosque","forgiveness","musalla","الملائكة","بعد الصلاة","المكث","المسجد","المغفرة"]
+  },
+  {
+    cat: "friday",
+    title: "Listen silently to the khutbah, and do not step between two people",
+    titleAr: "الإنصات للخطبة وترك التفريق بين اثنين",
+    detail: "Whoever bathes on Friday, purifies himself as best he can, uses oil or perfume from his home, then goes out and does not separate two people sitting together, prays what is written for him, and stays silent when the imam speaks — his sins between that Friday and the next are forgiven.",
+    detailAr: "من اغتسل يوم الجمعة وتطهَّر ما استطاع، ثم ادَّهن أو مسَّ من طيب بيته، ثم خرج فلم يُفرِّق بين اثنين، ثم صلَّى ما كُتب له، ثم أنصت إذا تكلَّم الإمام — غُفر له ما بينه وبين الجمعة الأخرى.",
+    ref: "Sahih al-Bukhari, Book of Jumu'ah, Hadith 883",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["friday","jumuah","khutbah","silence","listen","quiet","talking","imam","الجمعة","الخطبة","الإنصات","السكوت","الكلام","التفريق","الإمام"]
+  },
+  {
+    cat: "animals",
+    title: "A woman was punished over a cat she confined",
+    titleAr: "المرأة التي عُذِّبت في هرَّة حبستها",
+    detail: "The Prophet ﷺ said a woman was punished because of a cat she had tied up: she neither fed it nor let it go free to eat from the creatures of the earth. Keeping an animal means feeding it — or releasing it.",
+    detailAr: "أخبر النبي ﷺ أن امرأة عُذِّبت في هرَّة ربطتها، فلا هي أطعمتها ولا هي تركتها تأكل من خشاش الأرض. فمن حبس حيوانًا لزمه إطعامه، وإلا أطلقه.",
+    arabic: "دَخَلَتِ امْرَأَةٌ النَّارَ فِي هِرَّةٍ رَبَطَتْهَا، فَلَمْ تُطْعِمْهَا، وَلَمْ تَدَعْهَا تَأْكُلُ مِنْ خِشَاشِ الْأَرْضِ",
+    ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3318",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["cat","animal","pet","cruelty","feed","cage","confine","mercy","هرة","قطة","حيوان","إطعام","حبس","الرفق","قسوة"]
+  },
+  {
+    cat: "hardship",
+    title: "Pray Istikharah before deciding anything",
+    titleAr: "صلاة الاستخارة عند الهمِّ بالأمر",
+    detail: "Jabir رضي الله عنه said the Prophet ﷺ taught them Istikharah for every matter, the way he taught them a surah of the Quran: when you intend something, pray two rak'ahs, then make this supplication, naming the matter you want.",
+    detailAr: "قال جابر رضي الله عنه: كان النبي ﷺ يعلِّمنا الاستخارة في الأمور كلِّها كما يعلِّمنا السورة من القرآن: إذا همَّ أحدكم بالأمر فليركع ركعتين ثم يقول هذا الدعاء، ويُسمِّي حاجته.",
+    arabic: "اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ، فَإِنَّكَ تَقْدِرُ وَلَا أَقْدِرُ، وَتَعْلَمُ وَلَا أَعْلَمُ، وَأَنْتَ عَلَّامُ الْغُيُوبِ، اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاقْدُرْهُ لِي، وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ، وَاقْدُرْ لِيَ الْخَيْرَ حَيْثُ كَانَ، ثُمَّ رَضِّنِي بِهِ",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6382; and Book of Tahajjud, Hadith 1166",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["istikhara","decision","choose","confused","guidance","marriage","job","which","استخارة","قرار","حيرة","اختيار","الزواج","العمل","المشورة"]
   }
 ];

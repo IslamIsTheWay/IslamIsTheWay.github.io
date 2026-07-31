@@ -51,9 +51,89 @@ if (window.speechSynthesis) {
 
 // Male voices we know about, per platform. Listed first so a man's voice is
 // always preferred over a woman's, in both languages.
-const _MALE_AR = /naayf|nayef|maged|majed|tarik|hamed|fahd|salim|khalid|ahmed|omar|hattab/i;
-const _MALE_EN = /david|george|mark|guy|ryan|james|christopher|eric|daniel|alex|fred|male/i;
-const _FEMALE  = /hoda|salma|zeina|laila|amira|hazel|susan|zira|female|linda|heera|catherine|samantha|victoria|karen|moira|tessa|aria|jenny|michelle/i;
+/* Matched on whole words, not substrings. Modern voices are named in CamelCase
+   ("HamedNeural", "ZariyahNeural"), so the name is split on both punctuation
+   and case changes before comparing — a plain \b boundary never fires between
+   "Hamed" and "Neural", which silently lost the owner's requested male voice. */
+const _iitwNameTokens = n => String(n || "")
+  .replace(/([a-z])([A-Z])/g, "$1 $2")
+  .toLowerCase().split(/[^a-z]+/).filter(Boolean);
+
+const _MALE_AR_NAMES = new Set(["naayf","nayef","maged","majed","tarik","hattab","hamed",
+  "hamdan","shakir","bassel","taim","fahed","fahd","layth","laith","jamal","abdullah",
+  "moaz","hedi","saleh","ismael","ali","omar","salim","khalid","ahmed"]);
+const _MALE_EN_NAMES = new Set(["david","george","mark","guy","ryan","james","christopher",
+  "eric","daniel","alex","fred","male","brian","andrew","roger","steffan"]);
+const _FEMALE_NAMES = new Set(["hoda","salma","zariyah","amina","fatima","noura","iman",
+  "sana","rana","amal","layla","maryam","zeina","aysha","reem","laila","amira","hazel",
+  "susan","zira","linda","heera","catherine","samantha","victoria","karen","moira",
+  "tessa","aria","jenny","michelle","emma","ava","female"]);
+
+const _iitwIsMale   = (v, ar) => _iitwNameTokens(v.name)
+  .some(t => (ar ? _MALE_AR_NAMES : _MALE_EN_NAMES).has(t));
+const _iitwIsFemale = v => _iitwNameTokens(v.name).some(t => _FEMALE_NAMES.has(t));
+
+/* ---------- Classical Arabic (فصحى) vs regional dialect ----------
+   The owner's complaint: certain letters come out wrong — ق swallowed into a
+   hamza, ج turned into an English "g", ث ذ ظ flattened into س ز. That is not a
+   defect in the engine; it is what a DIALECT voice is supposed to do. The
+   dialect is carried in the voice's locale tag, and the old picker ignored it
+   entirely, so an Egyptian voice ranked exactly the same as a Saudi one.
+
+   Every letter must be articulated, so classical locales are now preferred by a
+   wide margin and marked dialects are pushed to the bottom. */
+const _AR_LOCALE_TIER = {
+  // Classical / Modern Standard — every letter pronounced as written.
+  "ar-sa": 100, "ar-xa": 100, "ar-001": 100, "ar": 96,
+  // Gulf and Jordanian: read formal text close to فصحى; ق and ج survive.
+  "ar-ae": 70, "ar-kw": 68, "ar-qa": 68, "ar-bh": 68, "ar-om": 66,
+  "ar-jo": 62, "ar-ye": 60,
+  // Marked dialects: these are the ones that alter or drop letters.
+  "ar-iq": 34, "ar-sd": 32, "ar-ly": 30,
+  "ar-eg": 26,                       // ق→ء, ج→g, ث→س, ذ→ز, ظ→ز
+  "ar-ps": 24, "ar-sy": 22, "ar-lb": 20,   // ق→ء, ث→ت
+  // Maghrebi: vowels compressed, hardest to follow for classical text.
+  "ar-tn": 14, "ar-dz": 12, "ar-ma": 10
+};
+
+const _AR_LOCALE_NAME = {
+  "ar-sa": "فصحى — Classical (Saudi)", "ar-xa": "فصحى — Classical (Google)",
+  "ar-001": "فصحى — Classical", "ar": "فصحى — Classical",
+  "ar-ae": "Gulf (UAE)", "ar-kw": "Gulf (Kuwait)", "ar-qa": "Gulf (Qatar)",
+  "ar-bh": "Gulf (Bahrain)", "ar-om": "Gulf (Oman)", "ar-jo": "Jordanian",
+  "ar-ye": "Yemeni", "ar-iq": "Iraqi dialect", "ar-sd": "Sudanese dialect",
+  "ar-ly": "Libyan dialect", "ar-eg": "Egyptian dialect — ق and ج change",
+  "ar-ps": "Palestinian dialect", "ar-sy": "Syrian dialect",
+  "ar-lb": "Lebanese dialect — ق becomes ء", "ar-tn": "Tunisian dialect",
+  "ar-dz": "Algerian dialect", "ar-ma": "Moroccan dialect"
+};
+
+const _iitwArLocale = v => (v.lang || "").toLowerCase().replace(/_/g, "-");
+const _iitwArTier   = v => _AR_LOCALE_TIER[_iitwArLocale(v)] ?? 45;
+// 60 is the cut-off: at or above it the voice reads classical text letter by
+// letter as written; below it, letters are altered.
+const _iitwIsClassical = v => _iitwArTier(v) >= 60;
+const _iitwArDialectName = v => _AR_LOCALE_NAME[_iitwArLocale(v)] || v.lang || "";
+// Neural / natural voices articulate ق ح ع خ ط ص ض ظ far more completely than
+// the old offline formant voices, which is where letters get lost entirely.
+const _iitwIsNatural = v =>
+  v.localService === false || /google|natural|neural|online|enhanced|premium/i.test(v.name || "");
+
+/* How suitable an Arabic voice is for classical text. The dialect dominates:
+   a polished Egyptian voice still says ق as a hamza and ج as an English "g",
+   so it is worse here than a plainer Saudi voice that pronounces every letter.
+   Quality comes next (it decides whether the heavy letters are articulated at
+   all), and a man's voice breaks the tie, as the owner asked. */
+function _iitwArScore(v) {
+  let s = _iitwArTier(v) * 4;
+  if (v.localService === false) s += 12;
+  if (/natural|neural/i.test(v.name)) s += 10;
+  if (/google/i.test(v.name)) s += 8;
+  if (/online|enhanced|premium/i.test(v.name)) s += 4;
+  if (_iitwIsMale(v, true)) s += 3;
+  else if (!_iitwIsFemale(v)) s += 1;
+  return s;
+}
 
 function _iitwVoiceList() {
   if (_iitwVoices.length) return _iitwVoices;
@@ -77,18 +157,16 @@ function _iitwPickVoice(langPrefix) {
     if (match) return match;
   }
 
-  const malePattern = langPrefix === "ar" ? _MALE_AR : _MALE_EN;
+  const isAr = langPrefix === "ar";
 
-  /* Quality first, then gender. Google's network voices (the same family
-     Google Translate uses) pronounce Arabic letters like خ ح ع ق and the word
-     الله far better than the offline system voices, so they are preferred. */
   const score = v => {
+    if (isAr) return _iitwArScore(v);
     let s = 0;
-    if (v.localService === false) s += 4;          // network voice — best quality
-    if (/google/i.test(v.name)) s += 4;            // Google's own voice
+    if (v.localService === false) s += 4;
+    if (/google/i.test(v.name)) s += 4;
     if (/natural|neural|online|enhanced|premium/i.test(v.name)) s += 3;
-    if (malePattern.test(v.name)) s += 2;          // a man's voice
-    else if (!_FEMALE.test(v.name)) s += 1;
+    if (_iitwIsMale(v, isAr)) s += 2;
+    else if (!_iitwIsFemale(v)) s += 1;
     return s;
   };
 
@@ -115,32 +193,48 @@ function iitwBuildVoiceBar() {
   }
 
   const current = _iitwPickVoice("ar");
-  const hasGoogle = voices.some(v => /google/i.test(v.name) || v.localService === false);
+
+  /* Classical and dialect voices are separated, because the difference is not a
+     matter of taste — a dialect voice changes which letters are pronounced. */
+  const byBest    = (a, b) => _iitwArScore(b) - _iitwArScore(a);
+  const classical = voices.filter(_iitwIsClassical).sort(byBest);
+  const dialect   = voices.filter(v => !_iitwIsClassical(v)).sort(byBest);
+  const hasClassical = classical.length > 0;
 
   const label = v => {
-    const bits = [];
-    if (/google/i.test(v.name) || v.localService === false) bits.push("best quality");
-    if (_MALE_AR.test(v.name)) bits.push("male");
-    else if (_FEMALE.test(v.name)) bits.push("female");
-    return v.name + (bits.length ? " — " + bits.join(", ") : "");
+    const bits = [_iitwArDialectName(v)];
+    if (_iitwIsNatural(v)) bits.push("best quality");
+    if (_iitwIsMale(v, true)) bits.push("male");
+    else if (_iitwIsFemale(v)) bits.push("female");
+    return v.name + " — " + bits.join(", ");
   };
+  const opt = v => `<option value="${v.name.replace(/"/g, "&quot;")}"${current && v.name === current.name ? " selected" : ""}>${label(v)}</option>`;
+  const group = (name, list) => list.length ? `<optgroup label="${name}">${list.map(opt).join("")}</optgroup>` : "";
 
   host.innerHTML = `<div class="voice-bar">
     <label for="arVoiceSelect">🎙 Arabic voice <span dir="rtl">— الصوت العربي</span>:</label>
     <select id="arVoiceSelect">
-      ${voices.map(v => `<option value="${v.name.replace(/"/g, "&quot;")}"${current && v.name === current.name ? " selected" : ""}>${label(v)}</option>`).join("")}
+      ${group("Classical Arabic (فصحى) — recommended", classical)}
+      ${group("Regional dialects — some letters change", dialect)}
     </select>
-    <button type="button" class="voice-test">▶ Test</button>
-    <span class="voice-hint">${hasGoogle
-      ? "Voices marked “best quality” are Google’s own — the same ones Google Translate uses."
-      : "For much better Arabic pronunciation, open this site in <strong>Google Chrome</strong>: it provides Google’s Arabic voice, the same one Google Translate uses."}</span>
+    <button type="button" class="voice-test">▶ Test the letters</button>
+    <span class="voice-hint">${hasClassical
+      ? "Classical (فصحى) voices pronounce every letter as written. A dialect voice will change ق, ج, ث, ذ and ظ — that is the dialect, not a fault."
+      : "<strong>Only dialect voices are installed</strong>, so ق, ج, ث, ذ and ظ will be altered. For classical Arabic add the <em>Arabic (Saudi Arabia)</em> speech pack in Windows settings, or open this site in <strong>Microsoft Edge</strong>, which provides Google/Microsoft online Arabic voices."}</span>
   </div>`;
 
   host.querySelector("#arVoiceSelect").addEventListener("change", e => {
     localStorage.setItem(IITW_AR_VOICE_KEY, e.target.value);
   });
+  /* A pronunciation drill, deliberately NOT a Quranic verse: the Quran is only
+     ever recited on this site by a real human reciter. These are the letters a
+     dialect voice alters or swallows, so the reader can judge a voice in one
+     click — قاف, جيم, ثاء, ذال, ظاء and the heavy letters. */
   host.querySelector(".voice-test").addEventListener("click", () => {
-    speakText("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ", "ar");
+    speakText(
+      "هَٰذَا اخْتِبَارُ النُّطْقِ. قَافٌ، جِيمٌ، ثَاءٌ، ذَالٌ، ظَاءٌ، " +
+      "حَاءٌ، عَيْنٌ، خَاءٌ، غَيْنٌ، طَاءٌ، صَادٌ، ضَادٌ، هَمْزَةٌ. " +
+      "الْقَمَرُ، الْجَبَلُ، الثَّلْجُ، الذَّهَبُ، الظِّلُّ.", "ar");
   });
 }
 
@@ -172,9 +266,70 @@ function _iitwToast(msg) {
   el._t = setTimeout(() => { el.style.display = "none"; }, 9000);
 }
 
+/* Prepare Arabic so the engine has nothing left to guess at or choke on.
+
+   The harakat are KEPT — they are what tell the engine which vowel to use, and
+   removing them was the original mistake. What is removed here is the layer
+   ABOVE the harakat: Quranic recitation marks (ۖ ۗ ۘ ۙ ۚ ۛ, the sajdah and
+   hizb signs). Those are instructions to a human reciter, not letters. Speech
+   engines do not know them, and an unknown character mid-word makes the engine
+   abandon the rest of the word — which is exactly how a letter goes missing. */
+function _iitwPrepArabic(s) {
+  return s
+    // Ligatures spelled out, otherwise they are skipped silently.
+    .replace(/ﷺ/g, " صَلَّى اللهُ عَلَيْهِ وَسَلَّم ")   // ﷺ
+    .replace(/ﷻ/g, " جَلَّ جَلَالُهُ ")                    // ﷻ
+    .replace(/ﷲ/g, " اللَّه ")                             // ﷲ
+    .replace(/﷽/g, " بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ") // ﷽
+    .replace(/﴾|﴿/g, " ")                             // ﴾ ﴿ ornate brackets
+    // Small high dotless head of khah is a Quranic sukoon — convert, don't drop.
+    .replace(/ۡ/g, "ْ")
+    // Waqf / sajdah / hizb marks: not letters, not harakat.
+    .replace(/[ۖ-۝۞-۠ۢ-ۤۥ-ۭ]/g, "")
+    // Alef wasla trips several engines; a plain alef is read correctly.
+    .replace(/ٱ/g, "ا")
+    .replace(/ـ/g, "");                                          // tatweel only
+}
+
+/* Split into short pieces at natural pauses. Chrome and Edge silently truncate
+   a long utterance (the well-known ~15 second cut-off), which drops the end of
+   a hadith mid-word. Short pieces spoken in sequence never hit it, and the
+   pause at each comma also makes the reading easier to follow. */
+function _iitwChunk(s, max) {
+  // Split at sentence punctuation, keeping each mark with the phrase it ends.
+  // Deliberately no look-behind: older Safari cannot parse it, and a regex
+  // syntax error here would break the whole of main.js, not just the speech.
+  const bits = s.split(/([.!?؟،؛:۔])/);
+  const pieces = [];
+  for (let i = 0; i < bits.length; i += 2) {
+    const seg = ((bits[i] || "") + (bits[i + 1] || "")).trim();
+    if (seg) pieces.push(seg);
+  }
+
+  const out = [];
+  let buf = "";
+  const flush = () => { if (buf) { out.push(buf); buf = ""; } };
+
+  for (let piece of (pieces.length ? pieces : [s.trim()])) {
+    // A phrase longer than the limit is broken at the last space that fits.
+    while (piece.length > max) {
+      flush();
+      let cut = piece.lastIndexOf(" ", max);
+      if (cut <= 0) cut = max;
+      out.push(piece.slice(0, cut).trim());
+      piece = piece.slice(cut).trim();
+    }
+    if (!piece) continue;
+    if (buf && (buf + " " + piece).length > max) flush();
+    buf = buf ? buf + " " + piece : piece;
+  }
+  flush();
+  return out.filter(Boolean);
+}
+
 function speakText(text, lang) {
   if (!window.speechSynthesis) {
-    _iitwToast("Your browser cannot read text aloud. Please try Chrome or Edge.");
+    _iitwToast("Your browser cannot read text aloud. Please try Edge or Chrome.");
     return;
   }
   window.speechSynthesis.cancel();
@@ -185,10 +340,7 @@ function speakText(text, lang) {
 
   if (lang === "ar") {
     clean = clean.replace(/[A-Za-z0-9]/g, " ");
-    // Keep the tashkeel (harakat). It tells the engine which vowel to use, so
-    // words like شَمْس and ابْن come out right; stripping it forces the engine
-    // to guess and mispronounce. Only the tatweel stretch mark is removed.
-    clean = clean.replace(/ـ/g, "");
+    clean = _iitwPrepArabic(clean);
   } else {
     clean = clean.replace(/[؀-ۿݐ-ݿ]/g, " ");
   }
@@ -209,14 +361,39 @@ function speakText(text, lang) {
     return;
   }
 
-  const u = new SpeechSynthesisUtterance(clean);
-  u.lang = lang === "ar" ? (voice ? voice.lang : "ar-SA") : "en-US";
-  // Arabic is read slowly so the harakat and the heavier letters (خ ح ع ق ط)
-  // are articulated rather than rushed.
-  u.rate = lang === "ar" ? 0.7 : 0.95;
-  u.pitch = 0.9;                       // a slightly lower, more masculine tone
-  if (voice) u.voice = voice;
-  window.speechSynthesis.speak(u);
+  // Say once, plainly, when the only Arabic voice available speaks a dialect.
+  // No code can make a dialect voice pronounce ق and ج classically.
+  if (lang === "ar" && voice && !_iitwIsClassical(voice) && !sessionStorage.getItem("iitw-dialect-warned")) {
+    sessionStorage.setItem("iitw-dialect-warned", "1");
+    _iitwToast(
+      "<strong>This device only has a dialect Arabic voice (" + _iitwArDialectName(voice) + ").</strong><br>" +
+      "It will change some letters — ق, ج, ث, ذ and ظ — because that is how the dialect is spoken.<br>" +
+      "For classical Arabic (فصحى), add the <em>Arabic (Saudi Arabia)</em> speech pack in Windows settings, or open the site in Microsoft Edge.<br>" +
+      "<span dir='rtl' style='font-family:Amiri,serif'>هذا الجهاز لا يحتوي إلا على صوت بلهجة محلية، وسيغيّر نطق بعض الحروف. أضف صوت العربية السعودية للنطق الفصيح.</span>"
+    );
+  }
+
+  const natural = voice ? _iitwIsNatural(voice) : false;
+  /* Arabic is read slowly so the harakat and the heavier letters (خ ح ع ق ط)
+     are articulated rather than rushed. But neural voices slur and drop endings
+     when pushed as low as 0.7 — they need a gentler slowdown than the old
+     offline voices do. Pitch is left alone on neural voices for the same
+     reason: shifting it smears the consonants. */
+  const rate  = lang === "ar" ? (natural ? 0.82 : 0.7) : 0.95;
+  const pitch = natural ? 1 : 0.9;
+
+  const chunks = _iitwChunk(clean, lang === "ar" ? 120 : 200);
+  chunks.forEach((part, i) => {
+    const u = new SpeechSynthesisUtterance(part);
+    u.lang  = lang === "ar" ? (voice ? voice.lang : "ar-SA") : "en-US";
+    u.rate  = rate;
+    u.pitch = pitch;
+    if (voice) u.voice = voice;
+    // A short breath between pieces, so the last letter of one is not clipped
+    // by the first letter of the next.
+    if (i < chunks.length - 1) u.text = part + " ";
+    window.speechSynthesis.speak(u);
+  });
 }
 window.speakText = speakText;
 

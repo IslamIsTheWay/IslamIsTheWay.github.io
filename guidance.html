@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607311414" />
+  <link rel="stylesheet" href="css/style.css?v=202607312316" />
 </head>
 <body>
 
@@ -146,7 +146,10 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202607311414"></script>
+  <script src="js/data.js?v=202607312316"></script>
+  <!-- The Sunnah belongs in guidance too: someone describing a situation needs
+       the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
+  <script src="js/sunnah.js?v=202607312316"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -198,14 +201,67 @@
     // Words too common to be useful for matching.
     const STOP = new Set(["the","and","for","with","his","her","him","its","was","who","that","this","are","from","you","your","she","they","them","not","does","did","will","would","when","what","which","about","says","said","have","has","had","been","were","there","their","then","than","some","any","can","could","should","just","like","very","really","been","because","into","over","also","only","other","such","being","between","while","after","before","how","why","get","got","one","two"]);
 
-    // Cut common English endings so "womens"→"women", "clothes"→"cloth",
-    // "wearing"→"wear". Arabic is handled by normAr above.
+    /* Cut common English endings so "womens"→"women", "clothes"→"cloth",
+       "wearing"→"wear". The -ies/-ied case needs the "y" put back, otherwise
+       "worried" became "worr" while "worry" stayed "worry" — the two never
+       matched each other, so "worried about money" missed every entry keyed on
+       "worry". Arabic is handled by normAr above. */
     function stem(w) {
-      return w.replace(/(ings|ing|ies|ied|ers|er|ed|es|s)$/i, "") || w;
+      if (/[^aeiou](ies|ied)$/i.test(w)) return w.replace(/(ies|ied)$/i, "y");
+      return w.replace(/(ings|ing|ers|er|ed|es|s)$/i, "") || w;
     }
 
     function tokens(s) {
       return normalize(s).split(" ").filter(w => w.length >= 3 && !STOP.has(w));
+    }
+
+    /* ---------- Everyday words → the vocabulary the content actually uses ----
+       People describe a situation in ordinary words ("worried about money",
+       "I lost my job", "مضايق من الدين"), but the themes are written in the
+       language of the Quran ("provision", "hardship", "رزق", "عسر"). Without a
+       bridge the search matches on the wrong word entirely: "worried for money"
+       used to return the warning against devouring orphans' wealth, because
+       "money" was the only word it recognised. Each group below is treated as
+       one concept; matching through the group scores lower than matching the
+       word itself, so it helps without taking over. */
+    const CONCEPT_GROUPS = [
+      ["money","provision","rizq","sustenance","income","salary","wage","paid","job","work","unemployed","bills","rent","expenses","afford","financial","broke","مال","رزق","معيشة","راتب","وظيفة","عمل","مصاريف","إيجار","ضيق مالي"],
+      ["poor","poverty","need","needy","hungry","nothing","cannot afford","فقر","فقير","حاجة","محتاج","جوع"],
+      ["debt","loan","borrow","owe","owed","credit","instalment","دين","قرض","مدين","أقساط","سداد"],
+      ["worried","worry","anxious","anxiety","stress","stressed","tense","afraid","scared","fear","frightened","panic","nervous","overthinking","قلق","خوف","خائف","هم","توتر","وسواس"],
+      ["sad","sadness","depressed","depression","grief","grieving","crying","broken","heartbroken","miserable","حزن","حزين","اكتئاب","بكاء","كآبة"],
+      ["hopeless","despair","give up","no way out","pointless","yeas","يأس","قنوط","لا فائدة","استسلام"],
+      ["hardship","difficulty","struggle","struggling","suffering","crisis","trouble","stuck","trapped","overwhelmed","exhausted","tired","burden","عسر","شدة","ضيق","كرب","مصيبة","تعب","إرهاق","بلاء"],
+      ["sick","ill","illness","disease","pain","hurt","wound","hospital","cancer","مرض","مريض","ألم","وجع","شفاء","مستشفى"],
+      ["lonely","alone","isolated","no one","abandoned","وحيد","وحدة","الوحدة","مهجور"],
+      ["angry","anger","rage","furious","temper","غضب","غاضب","انفعال","عصبية"],
+      ["sin","sins","guilt","guilty","ashamed","shame","regret","mistake","wrong","ذنب","ذنوب","معصية","ندم","خطأ","خجل"],
+      ["parents","mother","father","mum","mom","dad","والدين","أم","أب","أمي","أبي"],
+      ["wife","husband","spouse","marriage","married","divorce","زوجة","زوج","زواج","طلاق"],
+      ["child","children","son","daughter","kids","ولد","أولاد","ابن","ابنة","أطفال"],
+      ["exam","study","school","university","test","fail","failed","امتحان","دراسة","جامعة","مدرسة","رسوب"],
+      ["death","died","dead","funeral","loss","lost someone","موت","وفاة","مات","جنازة","فقد"]
+    ];
+    const CONCEPT = Object.create(null);
+    CONCEPT_GROUPS.forEach(group => {
+      const stems = group.map(w => stem(normalize(w)));
+      group.forEach((w, i) => {
+        const k = stems[i];
+        if (!k) return;
+        (CONCEPT[k] = CONCEPT[k] || new Set());
+        stems.forEach(s => { if (s && s !== k) CONCEPT[k].add(s); });
+      });
+    });
+
+    // Every related word implied by the query, as stems.
+    function expandQuery(queryTokens) {
+      const out = new Set();
+      queryTokens.forEach(q => {
+        const rel = CONCEPT[stem(q)];
+        if (rel) rel.forEach(r => out.add(r));
+      });
+      queryTokens.forEach(q => out.delete(stem(q)));   // keep only the additions
+      return out;
     }
 
     /* ---------- Word rarity (IDF) ----------
@@ -242,10 +298,18 @@
        - an explicit keyword from `keys` is the strongest signal
        - a multi-word keyword phrase counts more than a single word
        - otherwise we fall back to word/stem overlap with the text itself */
-    function scoreContent(queryTokens, rawQuery, keys, text) {
+    function scoreContent(queryTokens, rawQuery, keys, text, expanded) {
       const hay = " " + normalize(text || "") + " ";
       const hayStem = " " + normalize(text || "").split(" ").map(stem).join(" ") + " ";
+      const exp = expanded || EMPTY_SET;
       let score = 0;
+      /* Points earned only through a related word. These are kept apart and
+         added at the end, because expansion must never conjure a match out of
+         nothing: "money" is related to "job", and "job" is a keyword on the
+         hadith about cheating at work — so without this, someone worried about
+         money was told that whoever cheats us is not one of us. Expansion now
+         only sharpens the order of entries that already matched a real word. */
+      let expScore = 0;
 
       (keys || []).forEach(k => {
         const kn = normalize(k);
@@ -256,6 +320,8 @@
         } else if (!isPhrase) {
           const ks = stem(kn);
           if (queryTokens.some(q => stem(q) === ks)) score += 4;
+          // Reached through a related word rather than the word itself.
+          else if (exp.has(ks)) expScore += 2.5;
         } else {
           // phrase keyword: count how many of its words the query has
           const parts = kn.split(" ").filter(p => p.length >= 3);
@@ -281,7 +347,9 @@
 
       lastBestRarity = bestRarity;
       lastDistinctHits = distinctHits;
-      return score;
+      // Related words only count for something that already matched directly,
+      // and they are capped so they can refine an order but never dominate it.
+      return score > 0 ? score + Math.min(expScore, 4) : 0;
     }
 
     /* Words that are semantically generic even when they are statistically
@@ -299,6 +367,31 @@
     // Set by the last scoreContent call.
     let lastBestRarity = 0;
     let lastDistinctHits = 0;
+    const EMPTY_SET = new Set();
+
+    /* ---------- Is the reader suffering something, or admitting to it? -------
+       "I am worried about money" and "I took money that was not mine" share the
+       word money but need opposite answers. Someone in distress should be met
+       with provision, patience and relief — not handed a warning against
+       devouring orphans' wealth, which reads as an accusation. So when the
+       words are those of someone struggling, and there is no admission of
+       wrongdoing, the warning themes are pushed well down. They are not removed:
+       a strong, specific match (debt + riba + interest) still comes through. */
+    const DISTRESS = new Set(["worried","worry","anxious","anxiety","stress","stressed","afraid",
+      "scared","fear","frightened","panic","nervous","sad","sadness","depressed","depression",
+      "grief","crying","broken","heartbroken","hopeless","despair","tired","exhausted","struggling",
+      "struggle","suffering","hardship","difficulty","stuck","trapped","overwhelmed","lonely",
+      "alone","lost","hurt","pain","sick","ill","poor","poverty","need","debt","cannot","help",
+      "قلق","خوف","خائف","حزن","حزين","هم","ضيق","كرب","تعب","مرهق","وحيد","مريض","فقير","دين",
+      "يأس","مصيبة","بلاء","محتاج","لا أستطيع","تعبان"]);
+
+    // Words in which the reader is describing their OWN wrongdoing.
+    const CONFESSION = /\b(i (stole|took|cheated|lied|drank|gambled|betrayed|backbit|missed|broke|hurt|wronged)|i am (lying|cheating|stealing|drinking|gambling)|is it (haram|forbidden|a sin)|am i (sinning|wrong))\b|سرقت|كذبت|غششت|شربت|ظلمت|ارتكبت|أذنبت|هل يجوز|هل هو حرام/i;
+
+    function isDistress(queryTokens, rawQuery) {
+      if (CONFESSION.test(rawQuery)) return false;
+      return queryTokens.some(q => DISTRESS.has(q) || DISTRESS.has(stem(q)));
+    }
 
     function personCardHtml(p) {
       return `<div class="theme-card" style="margin-bottom:14px;">
@@ -333,24 +426,37 @@
       }
 
       const qt = tokens(raw);
+      const qx = expandQuery(qt);
+      const distress = isDistress(qt, raw);
 
       // 1) The Prophet's ﷺ own words — shown first, as the clearest guidance.
       const hadiths = (typeof HADITHS !== "undefined" ? HADITHS : []).map(h => ({
         h,
-        s: scoreContent(qt, raw, h.keys, [h.title, h.text, h.topic, h.arabic, h.narrator].join(" "))
+        s: scoreContent(qt, raw, h.keys, [h.title, h.text, h.topic, h.arabic, h.narrator].join(" "), qx)
       })).filter(x => x.s >= 4).sort((a, b) => b.s - a.s).slice(0, 6);
 
       // 2) Quranic themes
       const themes = [];
       PARADISE_THEMES.forEach(t => {
-        const s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "));
+        const s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "), qx);
         if (s >= 4) themes.push({ t, s, kind: "paradise" });
       });
       WARNING_THEMES.forEach(t => {
-        const s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "));
+        let s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "), qx);
+        // Someone describing their own suffering is not asking to be warned.
+        if (distress) s *= 0.45;
         if (s >= 4) themes.push({ t, s, kind: "warning" });
       });
       themes.sort((a, b) => b.s - a.s);
+
+      /* 2b) What the Prophet ﷺ actually DID about it. Someone describing a
+         situation wants the practice, not only the principle — so all 143
+         Sunnah entries are searched here as well. */
+      const sunnah = (typeof SUNNAH !== "undefined" ? SUNNAH : []).map(s => ({
+        s,
+        score: scoreContent(qt, raw, s.keys,
+          [s.title, s.titleAr, s.detail, s.detailAr, s.arabic || "", s.ref].join(" "), qx)
+      })).filter(x => x.score >= 4).sort((a, b) => b.score - a.score).slice(0, 5);
 
       /* 3 & 4) People. A biography must match on a genuinely distinctive word
          before it is shown. Without this, searching "a man wearing women's
@@ -363,7 +469,7 @@
       function scorePeople(list, keyName) {
         return list.map(item => {
           const s = scoreContent(qt, raw, null,
-            [item.name, item.title, item.summary, item.summaryAr].join(" "));
+            [item.name, item.title, item.summary, item.summaryAr].join(" "), qx);
           return { [keyName]: item, item, s, rarity: lastBestRarity, distinct: lastDistinctHits };
         })
         .filter(x => x.s >= PERSON_MIN && x.rarity >= RARITY_FLOOR && x.distinct >= MIN_DISTINCT)
@@ -379,7 +485,7 @@
 
       const companions = scorePeople(typeof COMPANIONS !== "undefined" ? COMPANIONS : [], "c");
 
-      const total = hadiths.length + themes.length + prophets.length + companions.length;
+      const total = hadiths.length + themes.length + sunnah.length + prophets.length + companions.length;
       if (total === 0) {
         out.innerHTML = `<div class="no-results">
           We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.
@@ -410,8 +516,14 @@
               ${warn ? "⚠️ A warning to reflect on — تحذير للتدبر" : "🌿 A path of good — طريق خير"}
             </div>
             ${themeCardHtml(t, warn)}
+            <div class="verse-slot" data-refs='${JSON.stringify(t.refs).replace(/'/g, "&#39;")}'></div>
           </div>`;
         });
+      }
+
+      if (sunnah.length) {
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">🌙 What the Prophet ﷺ did — from the Sunnah <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من السنة النبوية</span></h3>`;
+        sunnah.forEach(({ s }) => { html += sunnahCardHtml(s); });
       }
 
       if (prophets.length) {
@@ -424,24 +536,97 @@
         companions.forEach(({ c }) => { html += personCardHtml(c); });
       }
 
-      html += `<div style="text-align:center;margin-top:22px;">
-        <button class="btn btn-outline btn-small" onclick="deepSearch()">🔍 Also search all of Bukhari &amp; Muslim — ابحث في البخاري ومسلم كاملين</button>
-        <div id="deepResults"></div>
-      </div>`;
+      // The complete collections are searched every time now, not on request.
+      // The curated results above appear instantly; these arrive underneath.
+      html += `<div id="deepResults" style="text-align:left;"></div>`;
 
       out.innerHTML = html;
       if (window.applyI18n) window.applyI18n();
       out.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      deepSearch();          // ~15,000 hadith, in the background
+      fillThemeVerses();     // the actual ayat behind each theme reference
+    }
+
+    /* A Sunnah practice, shown the same way the Sunnah page shows it, with its
+       reference and grading so nothing is quoted without its source. */
+    function sunnahCardHtml(s) {
+      return `<div class="theme-card" style="margin-bottom:14px;">
+        <h3>${s.title}${s.titleAr ? ` <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${s.titleAr}</span>` : ""}</h3>
+        ${s.arabic ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.12rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;" data-speak>${s.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>` : ""}
+        <p class="en-only">${s.detail}</p>
+        ${s.detailAr ? `<p dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${s.detailAr}</p>` : ""}
+        <div class="refs"><span>${s.ref}</span><span>${s.strength}</span></div>
+      </div>`;
+    }
+
+    /* ---------- The actual verses behind each theme reference ----------
+       A theme card used to show only "Surah Hud (11:6)". That is a pointer, not
+       guidance — the reader still had to go and look it up. The verse itself is
+       fetched here, in Arabic and English, and shown with its full surah:ayah
+       reference so it is never read detached from where it belongs. */
+    const verseCache = {};
+    async function fetchVerse(surah, ayah) {
+      const key = surah + ":" + ayah;
+      if (verseCache[key] !== undefined) return verseCache[key];
+      try {
+        const r = await fetch(`https://api.alquran.cloud/v1/ayah/${surah}:${ayah}/editions/quran-uthmani,en.sahih`);
+        const j = await r.json();
+        if (j.code !== 200 || !j.data || !j.data.length) throw new Error("no data");
+        verseCache[key] = { ar: j.data[0].text, en: j.data[1].text, surahName: j.data[0].surah.englishName, surahAr: j.data[0].surah.name };
+      } catch (e) {
+        verseCache[key] = null;      // offline or blocked — the reference still shows
+      }
+      return verseCache[key];
+    }
+
+    // "Surah Hud (11:6)" / "Surah At-Talaq (65:2-3)" -> [{s,a}, …]
+    function parseRef(ref) {
+      const m = String(ref).match(/\((\d+):(\d+)(?:\s*-\s*(\d+))?\)/);
+      if (!m) return [];
+      const s = +m[1], from = +m[2], to = m[3] ? +m[3] : +m[2];
+      const out = [];
+      for (let a = from; a <= to && out.length < 3; a++) out.push({ s, a });
+      return out;
+    }
+
+    async function fillThemeVerses() {
+      const slots = document.querySelectorAll("#guidanceResults .verse-slot:not([data-done])");
+      for (const slot of slots) {
+        slot.setAttribute("data-done", "1");
+        const refs = JSON.parse(slot.getAttribute("data-refs") || "[]");
+        const pieces = [];
+        for (const ref of refs) {
+          for (const { s, a } of parseRef(ref)) {
+            const v = await fetchVerse(s, a);
+            if (!v) continue;
+            pieces.push(`<div style="margin-bottom:10px;">
+              <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;line-height:2.1;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:12px 15px;margin:0 0 6px;" data-speak>${v.ar} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
+              <p style="font-style:italic;margin:0 0 4px;">"${v.en}"</p>
+              <div class="refs"><span>Surah ${v.surahName} (${s}:${a})</span></div>
+            </div>`);
+          }
+        }
+        if (pieces.length) {
+          slot.innerHTML = `<div style="margin-top:10px;border-top:1px dashed var(--green-pale);padding-top:10px;">
+            ${pieces.join("")}
+            <p style="font-size:.78rem;color:var(--text-muted);margin:2px 0 0;">Please read each verse within its complete surah. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ الآية في سياق سورتها كاملة.</span></p>
+          </div>`;
+          if (window.applyI18n) window.applyI18n();
+        }
+      }
     }
 
     /* Deep search across the complete Sahih al-Bukhari and Sahih Muslim.
-       Loaded only when asked, because it downloads the full collections. */
+       Runs automatically after every search now: the owner found the hadith he
+       wanted on the Hadith page but not here, because these ~15,000 sat behind
+       a button. The curated results render first so nothing feels slow. */
     let deepCache = null;
     async function deepSearch() {
       const box = document.getElementById("deepResults");
       const raw = document.getElementById("situationInput").value.trim();
-      if (!raw) return;
-      box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Loading the full collections… this can take a moment. — جارٍ تحميل المجموعات كاملة…</p>`;
+      if (!raw || !box) return;
+      box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Searching all of Sahih al-Bukhari and Sahih Muslim… <span dir="rtl" style="font-family:'Amiri',serif;">جارٍ البحث في البخاري ومسلم كاملين…</span></p>`;
 
       try {
         if (!deepCache) {
@@ -460,12 +645,18 @@
           ];
         }
 
+        /* The old threshold scaled with the length of the query, so describing
+           a situation in a full sentence made it almost impossible to reach —
+           which is why searching for the hadith about people no longer caring
+           whether their money is halal or haram returned nothing here, while
+           the Hadith page found it at once. A hadith now qualifies on two
+           genuinely distinctive words, regardless of how long the query is. */
         const qt = tokens(raw);
-        const need = Math.max(2, Math.ceil(qt.length * 0.5));
+        const qx = expandQuery(qt);
         const hits = [];
         for (const h of deepCache) {
-          const s = scoreContent(qt, raw, null, h.en + " " + h.ar);
-          if (s >= need * 2) hits.push({ h, s });
+          const s = scoreContent(qt, raw, null, h.en + " " + h.ar, qx);
+          if (s >= 6 && lastDistinctHits >= 2) hits.push({ h, s });
         }
         hits.sort((a, b) => b.s - a.s || a.h.en.length - b.h.en.length);
 
@@ -543,7 +734,7 @@
       if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) findGuidance();
     });
   </script>
-  <script src="js/main.js?v=202607311414"></script>
-  <script src="js/i18n.js?v=202607311414"></script>
+  <script src="js/main.js?v=202607312316"></script>
+  <script src="js/i18n.js?v=202607312316"></script>
 </body>
 </html>
