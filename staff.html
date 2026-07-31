@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607301944" />
+  <link rel="stylesheet" href="css/style.css?v=202607311414" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -28,6 +28,12 @@
     #publishMsg.ok { color:var(--green-dark); }
     #publishMsg.err { color:#8a3d1f; }
     .status-note { background:var(--green-light); border-radius:8px; padding:12px 16px; font-size:.85rem; margin-bottom:20px; }
+    .staff-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+    .staff-tabs button { border:1px solid var(--border); background:#fff; color:var(--text-dark); border-radius:999px; padding:10px 18px; font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer; transition:all .2s; }
+    .staff-tabs button:hover { border-color:var(--green); background:var(--green-pale); }
+    .staff-tabs button.active { background:var(--green); color:#fff; border-color:var(--green); }
+    .staff-section { display:none; }
+    .staff-section.active { display:block; }
   </style>
 </head>
 <body>
@@ -69,10 +75,43 @@
     <div class="container" style="max-width:900px;">
 
       <div class="status-note">
-        <strong>How it works:</strong> Fill in any of the panels below, then scroll down and press <strong>Publish Changes</strong> with your GitHub token. Everything is saved to the live website for all users.
+        <strong>How it works:</strong> Pick a section below, fill it in, then press <strong>Publish Changes</strong> at the bottom with your GitHub token. Everything is saved to the live website for all users.
+      </div>
+
+      <!-- Section tabs -->
+      <nav class="staff-tabs" id="staffTabs">
+        <button type="button" data-sec="meetings" class="active">📹 Meetings</button>
+        <button type="button" data-sec="courses">🎓 Courses</button>
+        <button type="button" data-sec="videos">🎬 Videos</button>
+        <button type="button" data-sec="payment">💳 Payment</button>
+        <button type="button" data-sec="contact">📞 Contact</button>
+        <button type="button" data-sec="feedback">💬 Feedback</button>
+        <button type="button" data-sec="analytics" id="tabAnalytics" style="display:none;">📊 Analytics</button>
+      </nav>
+
+      <!-- ===== MEETINGS ===== -->
+      <div class="staff-section" data-sec="meetings">
+        <div class="staff-panel" style="border:2px solid var(--green);">
+          <h3>▶ Start a Meeting Right Now</h3>
+          <p class="panel-sub">One click: the site creates the code, activates it for your students, and opens the room with you as host. Use this when you just want to teach or record straight away.</p>
+          <label>Meeting name (optional)</label>
+          <input type="text" id="instantTitle" placeholder="e.g. Tafsir class — Tuesday" />
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px;">
+            <button class="btn btn-primary" type="button" onclick="startInstantMeeting()">▶ Start Meeting Now</button>
+            <span id="instantMsg" style="font-size:.88rem;font-weight:600;"></span>
+          </div>
+          <div id="instantResult" style="display:none;margin-top:14px;background:var(--green-light);border-radius:10px;padding:14px 16px;">
+            <div style="font-size:.85rem;color:var(--green-dark);">Give this code to your students:</div>
+            <div style="font-family:monospace;font-size:1.4rem;font-weight:800;color:var(--green-dark);margin:6px 0;" id="instantCode"></div>
+            <button class="btn btn-outline btn-small" type="button" onclick="copyCode(document.getElementById('instantCode').textContent)">📋 Copy Code</button>
+            <a class="btn btn-primary btn-small" id="instantJoin" href="#" target="_blank" rel="noopener" style="text-decoration:none;">▶ Open the Room</a>
+          </div>
+          <p style="font-size:.8rem;color:var(--text-muted);margin-top:10px;">Needs your GitHub token in the bar at the bottom, so the code can be activated for students.</p>
+        </div>
       </div>
 
       <!-- Admin-only analytics (visible only to the main admin account) -->
+      <div class="staff-section" data-sec="analytics">
       <div class="staff-panel" id="analyticsPanel" style="display:none;border:2px solid var(--green);">
         <h3>📊 Website Analytics <span style="font-size:.7rem;background:var(--gold);color:#fff;padding:2px 8px;border-radius:999px;vertical-align:middle;">Admin only</span></h3>
         <p class="panel-sub">How many people opened the website, which pages they visited, and which sections they clicked. Counts every visitor across the whole site (updates live).</p>
@@ -92,7 +131,9 @@
         </div>
         <button class="btn btn-outline btn-small" style="margin-top:14px;" onclick="loadAnalytics()">🔄 Refresh Numbers</button>
       </div>
+      </div>
 
+      <div class="staff-section" data-sec="payment">
       <!-- Payment settings -->
       <div class="staff-panel">
         <h3>💳 Payment Details</h3>
@@ -105,6 +146,9 @@
         <textarea id="payInstructions" placeholder="e.g. After paying, send your receipt on WhatsApp +20... to receive access."></textarea>
       </div>
 
+      </div>
+
+      <div class="staff-section" data-sec="contact">
       <!-- Contact & trial -->
       <div class="staff-panel">
         <h3>📞 Contact Numbers, Demo &amp; Free Trial</h3>
@@ -117,6 +161,9 @@
         <input type="text" id="demoUrl" placeholder="https://..." />
       </div>
 
+      </div>
+
+      <div class="staff-section" data-sec="courses">
       <!-- Add course -->
       <div class="staff-panel">
         <h3>🎓 Add a New Course</h3>
@@ -137,6 +184,9 @@
         <div class="item-list" id="courseList"></div>
       </div>
 
+      </div>
+
+      <div class="staff-section" data-sec="videos">
       <!-- Add video -->
       <div class="staff-panel">
         <h3>🎬 Add a Paid Video Lesson</h3>
@@ -162,6 +212,9 @@
         <div class="item-list" id="videoList"></div>
       </div>
 
+      </div>
+
+      <div class="staff-section" data-sec="meetings">
       <!-- Create meeting -->
       <div class="staff-panel">
         <h3>📹 Live Meetings &amp; Class Recording</h3>
@@ -179,10 +232,14 @@
         </div>
       </div>
 
+      </div>
+
+      <div class="staff-section" data-sec="feedback">
       <!-- Feedback -->
       <div class="staff-panel">
         <h3>💬 User Feedback</h3>
         <p class="panel-sub">Feedback that users send from the site arrives at the site email inbox: <strong>ammarwalidyounis@gmail.com</strong>. Check it there and reply directly.</p>
+      </div>
       </div>
 
     </div>
@@ -219,6 +276,7 @@
 
     if (sessionStorage.getItem("islamIsTheWayStaffUser") === ADMIN_USER) {
       document.getElementById("analyticsPanel").style.display = "";
+      document.getElementById("tabAnalytics").style.display = "";   // reveal the tab too
       loadAnalytics();
     }
 
@@ -347,6 +405,53 @@
       alert("Meeting created!\n\nCode for users: " + code + "\n\nNext steps:\n1. Press \"Publish Changes\" at the bottom so the code becomes active.\n2. Send this code to your students.\n3. When it's time, press \"▶ Start & Host\" next to the meeting to open the room.");
     }
 
+    /* ---------- Section tabs ---------- */
+    function showSection(sec) {
+      document.querySelectorAll(".staff-section").forEach(el => {
+        el.classList.toggle("active", el.dataset.sec === sec);
+      });
+      document.querySelectorAll("#staffTabs button").forEach(b => {
+        b.classList.toggle("active", b.dataset.sec === sec);
+      });
+      localStorage.setItem("iitw-staff-tab", sec);
+    }
+    document.querySelectorAll("#staffTabs button").forEach(b => {
+      b.addEventListener("click", () => showSection(b.dataset.sec));
+    });
+    showSection(localStorage.getItem("iitw-staff-tab") || "meetings");
+
+    /* ---------- Start a meeting in one click ----------
+       Creates the code, publishes it so students can actually join, and opens
+       the room with the host flag set. */
+    async function startInstantMeeting() {
+      const msg = document.getElementById("instantMsg");
+      const token = document.getElementById("ghToken").value.trim();
+      const code = genCode("IITW");
+      const title = document.getElementById("instantTitle").value.trim() || "Live Class";
+
+      cfg.meetings.push({ title, course: "", time: new Date().toISOString().slice(0, 16), code });
+      renderLists();
+
+      const roomUrl = "meeting.html?code=" + encodeURIComponent(code) + "&host=1";
+      document.getElementById("instantCode").textContent = code;
+      document.getElementById("instantJoin").href = roomUrl;
+      document.getElementById("instantResult").style.display = "block";
+
+      if (!token) {
+        msg.style.color = "#8a3d1f";
+        msg.textContent = "Room ready — but paste your GitHub token below and press Publish so students can join.";
+      } else {
+        msg.style.color = "var(--text-muted)";
+        msg.textContent = "Activating the code for students…";
+        const ok = await publishChanges(true);
+        msg.style.color = ok ? "var(--green-dark)" : "#8a3d1f";
+        msg.textContent = ok
+          ? "✓ Code is active — students can join now."
+          : "Could not activate the code. Check your token, then press Publish Changes.";
+      }
+      window.open(roomUrl, "_blank");
+    }
+
     function copyCode(code) {
       navigator.clipboard.writeText(code).then(
         () => alert("Copied: " + code),
@@ -397,10 +502,12 @@
       return prefix + "-" + s;
     }
 
-    async function publishChanges() {
+    // Returns true when the save succeeded, so callers (like the instant
+    // meeting) can react to the result.
+    async function publishChanges(quiet) {
       const msg = document.getElementById("publishMsg");
       const token = document.getElementById("ghToken").value.trim();
-      if (!token) { msg.textContent = "Paste your GitHub token first."; msg.className = "err"; return; }
+      if (!token) { msg.textContent = "Paste your GitHub token first."; msg.className = "err"; return false; }
 
       cfg.payment = {
         account: document.getElementById("payAccount").value.trim(),
@@ -427,14 +534,16 @@
         });
         if (!putResp.ok) throw new Error("GitHub returned " + putResp.status);
         msg.textContent = "✓ Published! Live on the site in 1-2 minutes."; msg.className = "ok";
+        return true;
       } catch (err) {
         msg.textContent = "Failed: " + err.message + " — check that your token is valid and has repo access."; msg.className = "err";
+        return false;
       }
     }
 
     loadConfig();
   </script>
-  <script src="js/main.js?v=202607301944"></script>
-  <script src="js/i18n.js?v=202607301944"></script>
+  <script src="js/main.js?v=202607311414"></script>
+  <script src="js/i18n.js?v=202607311414"></script>
 </body>
 </html>

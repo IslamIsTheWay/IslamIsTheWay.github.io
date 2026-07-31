@@ -78,9 +78,21 @@ function _iitwPickVoice(langPrefix) {
   }
 
   const malePattern = langPrefix === "ar" ? _MALE_AR : _MALE_EN;
-  return voices.find(v => malePattern.test(v.name))          // a known man's voice
-      || voices.find(v => !_FEMALE.test(v.name))              // anything not known-female
-      || voices[0];
+
+  /* Quality first, then gender. Google's network voices (the same family
+     Google Translate uses) pronounce Arabic letters like خ ح ع ق and the word
+     الله far better than the offline system voices, so they are preferred. */
+  const score = v => {
+    let s = 0;
+    if (v.localService === false) s += 4;          // network voice — best quality
+    if (/google/i.test(v.name)) s += 4;            // Google's own voice
+    if (/natural|neural|online|enhanced|premium/i.test(v.name)) s += 3;
+    if (malePattern.test(v.name)) s += 2;          // a man's voice
+    else if (!_FEMALE.test(v.name)) s += 1;
+    return s;
+  };
+
+  return voices.slice().sort((a, b) => score(b) - score(a))[0];
 }
 
 /* A small panel letting the reader choose which Arabic voice is used, and
@@ -103,13 +115,25 @@ function iitwBuildVoiceBar() {
   }
 
   const current = _iitwPickVoice("ar");
+  const hasGoogle = voices.some(v => /google/i.test(v.name) || v.localService === false);
+
+  const label = v => {
+    const bits = [];
+    if (/google/i.test(v.name) || v.localService === false) bits.push("best quality");
+    if (_MALE_AR.test(v.name)) bits.push("male");
+    else if (_FEMALE.test(v.name)) bits.push("female");
+    return v.name + (bits.length ? " — " + bits.join(", ") : "");
+  };
+
   host.innerHTML = `<div class="voice-bar">
     <label for="arVoiceSelect">🎙 Arabic voice <span dir="rtl">— الصوت العربي</span>:</label>
     <select id="arVoiceSelect">
-      ${voices.map(v => `<option value="${v.name.replace(/"/g, "&quot;")}"${current && v.name === current.name ? " selected" : ""}>${v.name}${_FEMALE.test(v.name) ? " (female)" : _MALE_AR.test(v.name) ? " (male)" : ""}</option>`).join("")}
+      ${voices.map(v => `<option value="${v.name.replace(/"/g, "&quot;")}"${current && v.name === current.name ? " selected" : ""}>${label(v)}</option>`).join("")}
     </select>
     <button type="button" class="voice-test">▶ Test</button>
-    <span class="voice-hint">Pick a male voice if your device has one.</span>
+    <span class="voice-hint">${hasGoogle
+      ? "Voices marked “best quality” are Google’s own — the same ones Google Translate uses."
+      : "For much better Arabic pronunciation, open this site in <strong>Google Chrome</strong>: it provides Google’s Arabic voice, the same one Google Translate uses."}</span>
   </div>`;
 
   host.querySelector("#arVoiceSelect").addEventListener("change", e => {
@@ -187,7 +211,9 @@ function speakText(text, lang) {
 
   const u = new SpeechSynthesisUtterance(clean);
   u.lang = lang === "ar" ? (voice ? voice.lang : "ar-SA") : "en-US";
-  u.rate = lang === "ar" ? 0.78 : 0.95;
+  // Arabic is read slowly so the harakat and the heavier letters (خ ح ع ق ط)
+  // are articulated rather than rushed.
+  u.rate = lang === "ar" ? 0.7 : 0.95;
   u.pitch = 0.9;                       // a slightly lower, more masculine tone
   if (voice) u.voice = voice;
   window.speechSynthesis.speak(u);
