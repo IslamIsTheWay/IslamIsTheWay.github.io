@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202607312316" />
+  <link rel="stylesheet" href="css/style.css?v=202607312350" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -86,6 +86,7 @@
         <button type="button" data-sec="payment">💳 Payment</button>
         <button type="button" data-sec="contact">📞 Contact</button>
         <button type="button" data-sec="feedback">💬 Feedback</button>
+        <button type="button" data-sec="recitations" id="tabRecitations" style="display:none;">🎧 Recitations</button>
         <button type="button" data-sec="analytics" id="tabAnalytics" style="display:none;">📊 Analytics</button>
       </nav>
 
@@ -242,6 +243,68 @@
       </div>
       </div>
 
+      <!-- ===== RECOMMENDED RECITATIONS (admin only) ===== -->
+      <div class="staff-section" data-sec="recitations">
+      <div class="staff-panel" style="border:2px solid var(--green);">
+        <h3>🎧 Recommended Recitations on the Home Page</h3>
+        <p class="panel-sub">
+          Paste a video link, <strong>watch the preview to be sure it is the right one</strong>, then fill in the details and add it.
+          Nothing appears on the website until you press <strong>Publish Changes</strong> at the bottom.
+          They show three across, just above the “Get in Touch” section on the home page.
+        </p>
+
+        <label>1) Video link — YouTube (normal or Shorts) or a direct .mp4 link</label>
+        <input type="text" id="recUrl" placeholder="https://www.youtube.com/watch?v=…  ·  https://youtu.be/…  ·  https://…/clip.mp4" />
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="btn btn-outline" type="button" onclick="checkRecitation()">👁 Check this video</button>
+          <span id="recCheckMsg" style="font-size:.88rem;font-weight:600;"></span>
+        </div>
+
+        <div id="recPreviewWrap" style="display:none;margin-top:16px;background:var(--green-pale);border-radius:12px;padding:16px;">
+          <div style="font-weight:700;color:var(--green-dark);margin-bottom:10px;">Is this the video you want?</div>
+          <div id="recPreview" style="max-width:520px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#0d2b1c;"></div>
+
+          <label>2) Title — what these verses are about</label>
+          <input type="text" id="recTitle" placeholder="e.g. The verses describing the Day of Judgement" />
+          <label>Title in Arabic (optional)</label>
+          <input type="text" id="recTitleAr" dir="rtl" placeholder="مثال: آيات تصف يوم القيامة" />
+
+          <label>3) Reciter</label>
+          <input type="text" id="recReciter" placeholder="e.g. Ahmad Al-Nufais" />
+          <label>Reciter in Arabic (optional)</label>
+          <input type="text" id="recReciterAr" dir="rtl" placeholder="مثال: أحمد النفيس" />
+
+          <label>4) Surah name</label>
+          <input type="text" id="recSurah" placeholder="e.g. Al-Haqqah" />
+          <label>Surah name in Arabic (optional)</label>
+          <input type="text" id="recSurahAr" dir="rtl" placeholder="مثال: الحاقة" />
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+            <div><label>Surah number</label><input type="number" id="recSurahNum" min="1" max="114" placeholder="69" /></div>
+            <div><label>From verse</label><input type="number" id="recFrom" min="1" placeholder="29" /></div>
+            <div><label>To verse</label><input type="number" id="recTo" min="1" placeholder="33" /></div>
+          </div>
+          <div id="recRefPreview" style="margin-top:10px;font-size:.9rem;color:var(--green-dark);font-weight:600;"></div>
+
+          <label>5) A short note for the listener (optional)</label>
+          <textarea id="recNote" placeholder="e.g. Read the whole surah afterwards — it describes the Day of Judgement from beginning to end."></textarea>
+          <label>The same note in Arabic (optional)</label>
+          <textarea id="recNoteAr" dir="rtl" placeholder="مثال: اقرأ السورة كاملة بعد الاستماع."></textarea>
+
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <button class="btn btn-primary" type="button" onclick="addRecitation()">✔ Yes — add it to the home page</button>
+            <button class="btn btn-outline btn-small" type="button" onclick="cancelRecitation()">✕ No — wrong video</button>
+            <span id="recAddMsg" style="font-size:.88rem;font-weight:600;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="staff-panel">
+        <h3>On the home page now</h3>
+        <p class="panel-sub">The order here is the order visitors see. Three fit on a row, so three or six looks best.</p>
+        <div id="recList"></div>
+      </div>
+      </div>
+
     </div>
   </section>
 
@@ -257,6 +320,10 @@
     </div>
   </footer>
 
+  <!-- main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
+       so the recitation preview matches exactly what the home page renders.
+       It has no top-level DOM access, so loading it earlier is safe. -->
+  <script src="js/main.js?v=202607312350"></script>
   <script>
     if (sessionStorage.getItem("islamIsTheWayStaff") !== "true") {
       window.location.href = "login.html";
@@ -274,9 +341,12 @@
     const TRACKED_PAGES = ["index","quran","prophets","companions","hadith","guidance","courses","search","login","meeting"];
     const TRACKED_NAV = ["home","quran","prophets","companions","hadith","guidance","courses","search","login"];
 
-    if (sessionStorage.getItem("islamIsTheWayStaffUser") === ADMIN_USER) {
+    // Analytics and the home-page recitations are for the main admin only.
+    const IS_ADMIN = sessionStorage.getItem("islamIsTheWayStaffUser") === ADMIN_USER;
+    if (IS_ADMIN) {
       document.getElementById("analyticsPanel").style.display = "";
       document.getElementById("tabAnalytics").style.display = "";   // reveal the tab too
+      document.getElementById("tabRecitations").style.display = "";
       loadAnalytics();
     }
 
@@ -335,6 +405,7 @@
       if (!cfg.videos) cfg.videos = [];
       if (!cfg.meetings) cfg.meetings = [];
       if (!cfg.extraCourses) cfg.extraCourses = [];
+      if (!cfg.recitations) cfg.recitations = [];
       document.getElementById("payAccount").value = cfg.payment.account || "";
       document.getElementById("payQr").value = cfg.payment.qrUrl || "";
       document.getElementById("payInstructions").value = cfg.payment.instructions || "";
@@ -358,6 +429,147 @@
              <button class="del" onclick="cfg.meetings.splice(${i},1);renderLists()">Delete</button>
            </span>
          </div>`).join("");
+      renderRecitationList();
+    }
+
+    /* ---------- Recommended recitations ----------
+       Deliberately a two-step flow: the link is previewed and confirmed before
+       any details are entered, so a wrong video can never reach the home page.
+       Parsing uses the same iitwParseVideo the home page uses, so what is
+       approved here is exactly what visitors get. */
+    let recPending = null;
+
+    function checkRecitation() {
+      const msg = document.getElementById("recCheckMsg");
+      const url = document.getElementById("recUrl").value.trim();
+      const wrap = document.getElementById("recPreviewWrap");
+      const v = iitwParseVideo(url);
+
+      if (!v) {
+        wrap.style.display = "none";
+        recPending = null;
+        msg.style.color = "#b3261e";
+        msg.textContent = url
+          ? "That link is not a YouTube video or a direct .mp4 file. Copy the link from the address bar of the video."
+          : "Paste a video link first.";
+        return;
+      }
+
+      recPending = { url, v };
+      msg.style.color = "var(--green-dark)";
+      msg.textContent = v.kind === "youtube" ? "Found a YouTube video — check it below." : "Found a video file — check it below.";
+      document.getElementById("recPreview").innerHTML = v.kind === "youtube"
+        ? `<iframe src="${v.embed}" title="Preview" style="width:100%;height:100%;border:0;" allowfullscreen></iframe>`
+        : `<video src="${v.embed}" controls style="width:100%;height:100%;"></video>`;
+      wrap.style.display = "";
+      document.getElementById("recAddMsg").textContent = "";
+      updateRecRefPreview();
+      wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    // Show the reference exactly as it will read on the home page.
+    function updateRecRefPreview() {
+      const r = readRecitationFields();
+      const ref = iitwRecitationRef(r);
+      const refAr = iitwRecitationRefAr(r);
+      document.getElementById("recRefPreview").innerHTML = ref || refAr
+        ? `Will show as: <span style="background:var(--green-light);border-radius:999px;padding:2px 10px;">${ref || "—"}</span>${refAr ? ` &nbsp; <span dir="rtl" style="font-family:'Amiri',serif;">${refAr}</span>` : ""}`
+        : "";
+    }
+    ["recSurah","recSurahAr","recSurahNum","recFrom","recTo"].forEach(id => {
+      document.addEventListener("input", e => { if (e.target && e.target.id === id) updateRecRefPreview(); });
+    });
+
+    function readRecitationFields() {
+      const val = id => document.getElementById(id).value.trim();
+      return {
+        title: val("recTitle"), titleAr: val("recTitleAr"),
+        reciter: val("recReciter"), reciterAr: val("recReciterAr"),
+        surah: val("recSurah"), surahAr: val("recSurahAr"), surahNum: val("recSurahNum"),
+        ayahFrom: val("recFrom"), ayahTo: val("recTo"),
+        note: val("recNote"), noteAr: val("recNoteAr")
+      };
+    }
+
+    function addRecitation() {
+      const msg = document.getElementById("recAddMsg");
+      if (!recPending) { msg.style.color = "#b3261e"; msg.textContent = "Check a video link first."; return; }
+      const f = readRecitationFields();
+      if (!f.title) { msg.style.color = "#b3261e"; msg.textContent = "Please write a title so people know what the verses are about."; return; }
+      if (!f.reciter) { msg.style.color = "#b3261e"; msg.textContent = "Please write the reciter's name."; return; }
+      if (!f.surah) { msg.style.color = "#b3261e"; msg.textContent = "Please write which surah this is."; return; }
+
+      const num = f.surahNum ? parseInt(f.surahNum, 10) : 0;
+      if (f.surahNum && (isNaN(num) || num < 1 || num > 114)) {
+        msg.style.color = "#b3261e"; msg.textContent = "The surah number must be between 1 and 114."; return;
+      }
+      const from = f.ayahFrom ? parseInt(f.ayahFrom, 10) : 0;
+      const to = f.ayahTo ? parseInt(f.ayahTo, 10) : 0;
+      if (from && to && to < from) {
+        msg.style.color = "#b3261e"; msg.textContent = "The last verse cannot come before the first one."; return;
+      }
+      if (cfg.recitations.some(r => iitwParseVideo(r.url) && iitwParseVideo(r.url).id === recPending.v.id)) {
+        msg.style.color = "#b3261e"; msg.textContent = "That video is already on the home page."; return;
+      }
+
+      cfg.recitations.push({
+        id: "rec-" + Date.now(),
+        url: recPending.url,
+        title: f.title, titleAr: f.titleAr,
+        reciter: f.reciter, reciterAr: f.reciterAr,
+        surah: f.surah, surahAr: f.surahAr,
+        surahNum: num || "", ayahFrom: from || "", ayahTo: to || "",
+        note: f.note, noteAr: f.noteAr
+      });
+      cancelRecitation();
+      renderLists();
+      const done = document.getElementById("recCheckMsg");
+      done.style.color = "var(--green-dark)";
+      done.textContent = "Added. Press Publish Changes at the bottom to put it on the website.";
+    }
+
+    function cancelRecitation() {
+      recPending = null;
+      document.getElementById("recPreview").innerHTML = "";       // stops playback
+      document.getElementById("recPreviewWrap").style.display = "none";
+      ["recUrl","recTitle","recTitleAr","recReciter","recReciterAr","recSurah","recSurahAr","recSurahNum","recFrom","recTo","recNote","recNoteAr"]
+        .forEach(id => { document.getElementById(id).value = ""; });
+      document.getElementById("recCheckMsg").textContent = "";
+      document.getElementById("recAddMsg").textContent = "";
+    }
+
+    function moveRecitation(i, dir) {
+      const j = i + dir;
+      if (j < 0 || j >= cfg.recitations.length) return;
+      const [item] = cfg.recitations.splice(i, 1);
+      cfg.recitations.splice(j, 0, item);
+      renderLists();
+    }
+
+    function renderRecitationList() {
+      const host = document.getElementById("recList");
+      if (!host) return;
+      if (!cfg.recitations || !cfg.recitations.length) {
+        host.innerHTML = `<p style="color:var(--text-muted);font-size:.9rem;">Nothing yet. Add one above and the section will appear on the home page. Until then the home page simply does not show it.</p>`;
+        return;
+      }
+      host.innerHTML = cfg.recitations.map((r, i) => {
+        const v = iitwParseVideo(r.url);
+        const ref = iitwRecitationRef(r);
+        return `<div class="item-row" style="flex-wrap:wrap;align-items:flex-start;">
+          <span style="flex:1;min-width:200px;">
+            <strong>${iitwEsc(r.title)}</strong><br>
+            <span style="color:var(--text-muted);font-size:.86rem;">🎙 ${iitwEsc(r.reciter)}${ref ? " · " + iitwEsc(ref) : ""}</span><br>
+            <a href="${iitwEsc(v ? v.watch : r.url)}" target="_blank" rel="noopener" style="font-size:.8rem;">open the video ↗</a>
+            ${v ? "" : `<span style="color:#b3261e;font-size:.8rem;"> — this link can no longer be played</span>`}
+          </span>
+          <span style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="moveRecitation(${i},-1)" ${i === 0 ? "disabled" : ""}>↑</button>
+            <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="moveRecitation(${i},1)" ${i === cfg.recitations.length - 1 ? "disabled" : ""}>↓</button>
+            <button class="del" onclick="if(confirm('Remove this recitation from the home page?')){cfg.recitations.splice(${i},1);renderLists();}">Delete</button>
+          </span>
+        </div>`;
+      }).join("");
     }
 
     function addCourse() {
@@ -543,7 +755,6 @@
 
     loadConfig();
   </script>
-  <script src="js/main.js?v=202607312316"></script>
-  <script src="js/i18n.js?v=202607312316"></script>
+  <script src="js/i18n.js?v=202607312350"></script>
 </body>
 </html>

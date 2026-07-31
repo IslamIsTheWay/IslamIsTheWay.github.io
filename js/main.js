@@ -2,6 +2,63 @@
    Islam Is The Way — Shared Site Behaviour
    ============================================ */
 
+/* ---------- Recommended recitations: one shared video parser ----------
+   Used by BOTH the staff preview and the home page, deliberately. If the two
+   parsed a link differently, the admin could approve one video and publish
+   another — so there is exactly one implementation. */
+function iitwParseVideo(url) {
+  const raw = String(url || "").trim();
+  if (!raw) return null;
+
+  // youtu.be/ID · youtube.com/watch?v=ID · /shorts/ID · /embed/ID · /live/ID
+  const yt = raw.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/|v\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  if (yt) {
+    const id = yt[1];
+    return {
+      kind: "youtube",
+      id,
+      // nocookie + rel=0: no tracking cookie before play, and no unrelated
+      // videos suggested afterwards on a site about the Quran.
+      embed: "https://www.youtube-nocookie.com/embed/" + id + "?rel=0&modestbranding=1&playsinline=1",
+      thumb: "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg",
+      watch: "https://www.youtube.com/watch?v=" + id
+    };
+  }
+
+  if (/^https?:\/\//i.test(raw) && /\.(mp4|webm|ogg|ogv|m4v)(\?.*)?$/i.test(raw)) {
+    return { kind: "file", id: raw, embed: raw, thumb: "", watch: raw };
+  }
+  return null;
+}
+
+// Text from the dashboard is escaped before it ever reaches innerHTML.
+function iitwEsc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+// "Surah Al-Haqqah 69:29-33" — built from whatever fields are filled in.
+function iitwRecitationRef(r) {
+  const name = r.surah ? "Surah " + r.surah : "";
+  const num = r.surahNum ? String(r.surahNum) : "";
+  const from = r.ayahFrom ? String(r.ayahFrom) : "";
+  const to = r.ayahTo && String(r.ayahTo) !== from ? "-" + r.ayahTo : "";
+  const cite = num && from ? " " + num + ":" + from + to : (from ? " — verses " + from + to.replace("-", "–") : "");
+  return (name + cite).trim();
+}
+/* Only shown when the Arabic surah name was actually given — "سورة Al-Haqqah"
+   reads badly, so no Arabic name means no Arabic line. */
+function iitwRecitationRefAr(r) {
+  if (!r.surahAr) return "";
+  const ar = n => String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[+d]);
+  const name = "سورة " + r.surahAr;
+  const from = r.ayahFrom ? String(r.ayahFrom) : "";
+  if (!from) return name;
+  const single = !r.ayahTo || String(r.ayahTo) === from;
+  return name + (single ? " — الآية " + ar(from) : " — الآيات " + ar(from) + "-" + ar(r.ayahTo));
+}
+
 /* ---------- Anonymous visit analytics ----------
    Counts total visits, per-page visits, and which nav sections are clicked,
    using a free public counter service. No personal data is collected. The
