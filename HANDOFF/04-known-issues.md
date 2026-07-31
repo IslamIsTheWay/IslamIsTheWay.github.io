@@ -1,26 +1,25 @@
 # Open work, and honest limitations
 
-## Needs testing (changed but not yet verified live)
+## Verified working (tested live at the end of the last session)
 
-These were edited at the very end of the last session. **Test them first.**
+1. **Staff dashboard tabs** — 7 tabs, each showing only its own panels.
+   Meetings shows both "Start a Meeting Right Now" and "Live Meetings & Class
+   Recording". Analytics tab appears only for `Islam.younis.2026`. No console
+   errors. Selected tab is remembered in `localStorage` (`iitw-staff-tab`).
 
-1. **Staff dashboard tabs** — `staff.html` was split into `.staff-section`
-   blocks with a `.staff-tabs` nav. Div balance was checked (47 open / 47 close)
-   but the tabs were **never opened in a browser**. Verify:
-   - every tab shows its panel and only its panel
-   - the Meetings tab contains both "Start a Meeting Right Now" and the older
-     "Live Meetings & Class Recording" panel (there are two sections with
-     `data-sec="meetings"` — confirm both display)
-   - the Analytics tab only appears for `Islam.younis.2026`
-     (note: `#tabAnalytics` is hidden by default and must be un-hidden in the
-     admin check — **confirm this wiring exists**, it may be missing)
+2. **"Start Meeting Now"** — verified: generates a valid code
+   (`IITW-XXXXXX`), adds it to the config, shows the code panel, and opens
+   `meeting.html?code=…&host=1`. Without a token it correctly warns that the code
+   still needs publishing before students can join.
+   *Not yet tested with a real token* — i.e. the auto-publish path
+   (`publishChanges(true)`) has not been exercised end-to-end. Worth confirming
+   once with a real `ghp_` token.
 
-2. **"Start Meeting Now"** — `startInstantMeeting()` in `staff.html`. It creates
-   a code, calls `publishChanges(true)`, and opens the host room. Verify the code
-   actually reaches `site-config.json` so a student can join.
+## Needs a device with an Arabic voice to judge
 
-3. **Arabic voice quality changes** — now prefers Google/network voices, rate
-   0.7, keeps tashkeel. Needs a device with an Arabic voice to judge.
+3. **Arabic voice quality** — now prefers Google/network voices, rate 0.7, and
+   **keeps the tashkeel** (removing it was the original mistake). Cannot be
+   judged on a machine with no Arabic voice installed.
 
 ## Requested but not built
 
