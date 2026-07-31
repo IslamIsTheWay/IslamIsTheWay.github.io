@@ -56,32 +56,140 @@ async function iitwFetchVideoInfo(url) {
   } catch (e) { return null; }
 }
 
-// Strip harakat, hamza forms and separators so "الحاقّة" and "Al-Haqqah" match.
-function iitwLoose(s) {
-  return String(s || "")
-    .replace(/[ً-ْٰـ]/g, "")
-    .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه")
-    .toLowerCase()
-    .replace(/\b(surah?|sura|سورة|سوره)\b/g, " ")
-    .replace(/[^a-z؀-ۿ0-9]+/g, "");
+/* ---------- Recognising which surah a title names ----------
+   This was wrong before, and wrong in the worst way: it matched surah names as
+   substrings of the whole title with the spaces removed, so "Sad recitation
+   that made everyone cry" was reported as Surah Sad. Names are now matched as
+   WHOLE WORDS, and 36 of the 114 are short enough to collide with ordinary
+   words (Sad, Nuh, Hud, Qaf, Tin, Fil, Asr, Nas, Nur, Rum, Fath, Layl…), so
+   those are only accepted when the title actually says "Surah" before them.
+   When nothing is certain, nothing is suggested. */
+
+// Common spellings people actually type. Without these, "Yaseen" found nothing.
+const IITW_SURAH_ALIASES = {
+  1:["fatiha","fatihah","faatiha"], 2:["baqara","baqarah","bakara","baqrah"],
+  3:["imran","ali imran","aal imran","al imran"], 4:["nisa","nisaa"],
+  5:["maida","maidah","maaida"], 6:["anam","anaam"], 7:["araf","aaraf"],
+  8:["anfal"], 9:["tawba","tawbah","tauba","taubah","baraah"], 10:["yunus","younus"],
+  11:["hud","hood"], 12:["yusuf","yousuf","yousef","yusof"], 13:["rad","raad"],
+  14:["ibrahim","ibraheem"], 15:["hijr"], 16:["nahl"], 17:["isra","israa","bani israil"],
+  18:["kahf","kahaf"], 19:["maryam","mariam","maryem"], 20:["taha","ta ha"],
+  21:["anbiya","anbiyaa"], 22:["hajj"], 23:["muminun","mominoon","muminoon"],
+  24:["nur","noor"], 25:["furqan","furqaan"], 26:["shuara","shuaraa"], 27:["naml"],
+  28:["qasas"], 29:["ankabut","ankaboot"], 30:["rum","room"], 31:["luqman","luqmaan"],
+  32:["sajda","sajdah"], 33:["ahzab","ahzaab"], 34:["saba"], 35:["fatir"],
+  36:["yasin","ya sin","yaseen","yaaseen","yasseen"], 37:["saffat","saaffat"],
+  38:["sad","saad"], 39:["zumar"], 40:["ghafir","mumin","momin"],
+  41:["fussilat","fusilat"], 42:["shura","shoora"], 43:["zukhruf"], 44:["dukhan"],
+  45:["jathiya","jathiyah"], 46:["ahqaf"], 47:["muhammad"], 48:["fath","fatah"],
+  49:["hujurat","hujuraat"], 50:["qaf","qaaf"], 51:["dhariyat","zariyat"],
+  52:["tur","toor"], 53:["najm"], 54:["qamar"], 55:["rahman","rehman","rahmaan"],
+  56:["waqia","waqiah","waqiya","waaqia"], 57:["hadid","hadeed"], 58:["mujadila","mujadala"],
+  59:["hashr"], 60:["mumtahina","mumtahanah"], 61:["saff"], 62:["jumua","jumuah","juma"],
+  63:["munafiqun","munafiqoon"], 64:["taghabun"], 65:["talaq"], 66:["tahrim"],
+  67:["mulk"], 68:["qalam"], 69:["haqqa","haqqah","haaqqa"], 70:["maarij","maaarij"],
+  71:["nuh","nooh","noah"], 72:["jinn"], 73:["muzzammil","muzammil"],
+  74:["muddaththir","muddathir","mudathir"], 75:["qiyama","qiyamah","qiyamat"],
+  76:["insan","dahr"], 77:["mursalat"], 78:["naba","nabaa"], 79:["naziat","naziaat"],
+  80:["abasa"], 81:["takwir"], 82:["infitar"], 83:["mutaffifin","tatfif"],
+  84:["inshiqaq"], 85:["buruj","burooj"], 86:["tariq","taariq"], 87:["ala","aala"],
+  88:["ghashiya","ghashiyah"], 89:["fajr"], 90:["balad"], 91:["shams"],
+  92:["layl","lail","lail"], 93:["duha","dhuha"], 94:["sharh","inshirah","alam nashrah"],
+  95:["tin","teen"], 96:["alaq","alaqq"], 97:["qadr","qadar"], 98:["bayyina","bayyinah"],
+  99:["zalzala","zalzalah","zilzal"], 100:["adiyat","aadiyat"], 101:["qaria","qariah"],
+  102:["takathur"], 103:["asr"], 104:["humaza","humazah"], 105:["fil","feel"],
+  106:["quraysh","quraish"], 107:["maun","maaun"], 108:["kawthar","kauthar"],
+  109:["kafirun","kafiroon"], 110:["nasr"], 111:["masad","lahab"],
+  112:["ikhlas","ikhlaas","tawhid"], 113:["falaq"], 114:["nas","naas"]
+};
+
+// Words that mean "the following words are a surah name".
+const IITW_SURAH_MARKER = /^(surah|surat|surah|sura|suratul|surahs|سورة|سوره|سورت|السورة)$/i;
+
+function iitwNormWord(s) {
+  let t = String(s || "").toLowerCase()
+    .replace(/[ً-ٰٟـ]/g, "")                       // Arabic harakat + tatweel
+    .replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه")
+    .replace(/[^a-zء-ي ]+/g, " ")
+    .replace(/\s+/g, " ").trim();
+  // Drop the definite article, English transliterated or Arabic.
+  t = t.replace(/^(al|ash|as|ar|an|at|ad|az|adh|ath|el)\s+/, "");
+  t = t.replace(/^ال/, "");
+  return t;
 }
 
-/* Find which surah a video title is talking about, in either language.
-   Needs SURAHS from data.js; returns null if that is not loaded. */
-function iitwDetectSurah(text) {
-  if (typeof SURAHS === "undefined" || !text) return null;
-  const hay = iitwLoose(text);
-  let best = null;
+// Split a title into comparable words, keeping Arabic and Latin separately.
+function iitwWords(text) {
+  return String(text || "")
+    .replace(/[ً-ٰٟـ]/g, "")
+    .split(/[^A-Za-zء-ي]+/)
+    .filter(Boolean);
+}
+
+let _iitwSurahIndex = null;
+function iitwSurahIndex() {
+  if (_iitwSurahIndex || typeof SURAHS === "undefined") return _iitwSurahIndex;
+  const map = new Map();
+  const add = (key, s) => {
+    const k = iitwNormWord(key);
+    if (!k) return;
+    if (!map.has(k)) map.set(k, s);
+  };
   SURAHS.forEach(s => {
-    [s.name, s.arabic].forEach(label => {
-      const k = iitwLoose(label);
-      // Short names like "Nas" match inside other words, so require length.
-      if (k.length >= 3 && hay.includes(k) && (!best || k.length > best.keyLen)) {
-        best = { n: s.n, name: s.name, arabic: s.arabic, meaning: s.meaning, keyLen: k.length };
-      }
-    });
+    add(s.name, s);
+    add(s.arabic, s);
+    (IITW_SURAH_ALIASES[s.n] || []).forEach(a => add(a, s));
   });
-  return best;
+  _iitwSurahIndex = map;
+  return map;
+}
+
+/* Surahs named after a person, a people or an everyday word. On their own these
+   are not evidence of anything — "Maryam Hospital charity appeal" is not a
+   recitation of Surah Maryam — so they also need the word "Surah" in front. */
+const IITW_NEEDS_MARKER = new Set([3,10,11,12,14,19,31,34,40,47,71,76,87,94,106,112]);
+
+/* A name is "weak" when it is short enough, or common enough, to appear in an
+   ordinary sentence. Weak names count only when the title says "Surah" first. */
+function iitwIsWeakName(key, surahNum) {
+  if (IITW_NEEDS_MARKER.has(surahNum)) return true;
+  return key.replace(/\s/g, "").length <= 4;
+}
+
+/* Returns { n, name, arabic, confident, ambiguous } or null.
+   `confident` means the title said "Surah <name>" outright. */
+function iitwDetectSurah(text) {
+  const index = iitwSurahIndex();
+  if (!index || !text) return null;
+  const words = iitwWords(text);
+  const found = [];
+
+  for (let i = 0; i < words.length; i++) {
+    const markerBefore = i > 0 && IITW_SURAH_MARKER.test(words[i - 1]);
+    // Try the longest phrase first: three words, then two, then one.
+    for (let len = 3; len >= 1; len--) {
+      if (i + len > words.length) continue;
+      const phrase = words.slice(i, i + len).join(" ");
+      const key = iitwNormWord(phrase);
+      if (!key) continue;
+      const hit = index.get(key);
+      if (!hit) continue;
+      const weak = iitwIsWeakName(key, hit.n);
+      // A short name only counts when the title actually says "Surah" first.
+      if (weak && !markerBefore) continue;
+      found.push({ n: hit.n, name: hit.name, arabic: hit.arabic, meaning: hit.meaning,
+                   confident: markerBefore, at: i });
+      i += len - 1;
+      break;
+    }
+  }
+
+  if (!found.length) return null;
+  const distinct = [...new Set(found.map(f => f.n))];
+  // Prefer one the title explicitly labelled "Surah …".
+  const best = found.find(f => f.confident) || found[0];
+  return { ...best, ambiguous: distinct.length > 1,
+           alsoFound: distinct.filter(n => n !== best.n) };
 }
 
 // "29-33", "29 - 33", "الآيات 29 إلى 33", "verses 29 to 33", or a single number.

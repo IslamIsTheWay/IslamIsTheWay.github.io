@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608010015" />
+  <link rel="stylesheet" href="css/style.css?v=202608010029" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -373,8 +373,8 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202608010015"></script>
-  <script src="js/main.js?v=202608010015"></script>
+  <script src="js/data.js?v=202608010029"></script>
+  <script src="js/main.js?v=202608010029"></script>
   <script>
     if (sessionStorage.getItem("islamIsTheWayStaff") !== "true") {
       window.location.href = "login.html";
@@ -610,11 +610,24 @@
       if (surah) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('surah', ${JSON.stringify(surah).replace(/"/g, "&quot;")})">Set surah: <strong>${iitwEsc(surah.name)}</strong> (${surah.n}) — <span dir="rtl">${iitwEsc(surah.arabic)}</span></button>`);
       if (ayahs) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('ayahs', ${JSON.stringify(ayahs).replace(/"/g, "&quot;")})">Set verses: <strong>${ayahs.from}${ayahs.to !== ayahs.from ? "-" + ayahs.to : ""}</strong></button>`);
       bits.push(`</div>`);
-      if (!surah) bits.push(`<div style="color:var(--text-muted);font-size:.82rem;">The surah is not named in the video's title, so please type it below.</div>`);
+
+      /* Only a title that actually says "Surah <name>" is treated as certain
+         and filled in. A bare mention is offered but left for the admin to
+         accept, and more than one surah named is always flagged — the surah
+         must never be filled in wrongly without anyone noticing. */
+      if (!surah) {
+        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">The surah is not clearly named in the video's title — please type it in yourself below.</div>`);
+      } else if (surah.ambiguous) {
+        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">⚠ More than one surah is named in this title. Nothing was filled in — please choose and check it yourself.</div>`);
+      } else if (!surah.confident) {
+        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">The title mentions “${iitwEsc(surah.name)}” but does not say “Surah”, so nothing was filled in. Press the button above only if it is right.</div>`);
+      } else {
+        bits.push(`<div style="color:var(--green-dark);font-size:.82rem;">Surah filled in from the video's title — please still check it.</div>`);
+      }
       box.innerHTML = bits.join("");
 
-      // Fill the obvious ones straight away; they are all still editable.
-      if (surah) applySuggestion("surah", surah);
+      // Fill in only what is certain; everything else waits for a click.
+      if (surah && surah.confident && !surah.ambiguous) applySuggestion("surah", surah);
       if (ayahs) applySuggestion("ayahs", ayahs);
       if (info.author && !document.getElementById("recReciter").value) applySuggestion("reciter", info.author);
     }
@@ -967,6 +980,6 @@
 
     loadConfig();
   </script>
-  <script src="js/i18n.js?v=202608010015"></script>
+  <script src="js/i18n.js?v=202608010029"></script>
 </body>
 </html>
