@@ -12,5 +12,21 @@
   "videos": [],
   "meetings": [],
   "extraCourses": [],
-  "recitations": []
+  "recitations": [
+    {
+      "id": "rec-1785595893325",
+      "url": "https://www.youtube.com/watch?v=eXGeVahbG8w&list=PPSV",
+      "title": "And remind, for indeed, reminders benefit the believers",
+      "titleAr": "وذكر فإن الذكرى تنفع المؤمنين",
+      "reciter": "متدبر",
+      "reciterAr": "",
+      "surah": "Al-Haqqah",
+      "surahAr": "الحاقة",
+      "surahNum": "",
+      "ayahFrom": "",
+      "ayahTo": "",
+      "note": "Beautiful recitation is a door — the aim is to understand and act, not only to be moved.",
+      "noteAr": "حُسن التلاوة بابٌ، والمقصود الفهم والعمل لا مجرّد التأثر."
+    }
+  ]
 }
