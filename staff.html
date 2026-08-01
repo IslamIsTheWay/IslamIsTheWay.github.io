@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608012220" />
+  <link rel="stylesheet" href="css/style.css?v=202608012246" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -366,8 +366,9 @@
           </select>
 
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-            <button class="btn btn-primary" type="button" onclick="addRecitation()">✔ Yes — add it to the home page</button>
-            <button class="btn btn-outline btn-small" type="button" onclick="cancelRecitation()">✕ No — wrong video</button>
+            <button class="btn btn-primary" type="button" onclick="addAndPublish()" style="font-size:1.02rem;">✔ Put it on the home page now</button>
+            <button class="btn btn-outline btn-small" type="button" onclick="addRecitation()">Add to the list only</button>
+            <button class="btn btn-outline btn-small" type="button" onclick="cancelRecitation()">✕ Wrong video</button>
             <span id="recAddMsg" style="font-size:.88rem;font-weight:600;"></span>
           </div>
         </div>
@@ -406,8 +407,8 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202608012220"></script>
-  <script src="js/main.js?v=202608012220"></script>
+  <script src="js/data.js?v=202608012246"></script>
+  <script src="js/main.js?v=202608012246"></script>
   <script>
     const STAFF_USER = iitwStaffUser();
     if (!STAFF_USER) window.location.href = "login.html";
@@ -867,25 +868,35 @@
       };
     }
 
+    /* Returns true only if the recitation really went into the list.
+       Every refusal is now an alert as well as a message: three publishes
+       saved nothing because this step failed quietly in a small grey line
+       and the Publish button then cheerfully saved an empty list. */
     function addRecitation() {
       const msg = document.getElementById("recAddMsg");
-      if (!recPending) { msg.style.color = "#b3261e"; msg.textContent = "Check a video link first."; return; }
+      const stop = text => {
+        msg.style.color = "#b3261e";
+        msg.textContent = text;
+        alert("NOT added yet:\n\n" + text);
+        return false;
+      };
+      if (!recPending) return stop("Paste a video link and press “Check this video” first.");
       const f = readRecitationFields();
-      if (!f.title) { msg.style.color = "#b3261e"; msg.textContent = "Please write a title so people know what the verses are about."; return; }
-      if (!f.reciter) { msg.style.color = "#b3261e"; msg.textContent = "Please write the reciter's name."; return; }
-      if (!f.surah) { msg.style.color = "#b3261e"; msg.textContent = "Please write which surah this is."; return; }
+      if (!f.title) return stop("Please write a title so people know what the verses are about.");
+      if (!f.reciter) return stop("Please write the reciter's name.");
+      if (!f.surah) return stop("Please write which surah this is.");
 
       const num = f.surahNum ? parseInt(f.surahNum, 10) : 0;
       if (f.surahNum && (isNaN(num) || num < 1 || num > 114)) {
-        msg.style.color = "#b3261e"; msg.textContent = "The surah number must be between 1 and 114."; return;
+        return stop("The surah number must be between 1 and 114.");
       }
       const from = f.ayahFrom ? parseInt(f.ayahFrom, 10) : 0;
       const to = f.ayahTo ? parseInt(f.ayahTo, 10) : 0;
       if (from && to && to < from) {
-        msg.style.color = "#b3261e"; msg.textContent = "The last verse cannot come before the first one."; return;
+        return stop("The last verse cannot come before the first one.");
       }
       if (cfg.recitations.some(r => iitwParseVideo(r.url) && iitwParseVideo(r.url).id === recPending.v.id)) {
-        msg.style.color = "#b3261e"; msg.textContent = "That video is already on the home page."; return;
+        return stop("That video is already on the home page.");
       }
 
       cfg.recitations.push({
@@ -907,7 +918,20 @@
       renderLists();
       const done = document.getElementById("recCheckMsg");
       done.style.color = "var(--green-dark)";
-      done.textContent = "Added. Press Publish Changes at the bottom to put it on the website.";
+      done.textContent = "Added to the list below.";
+      return true;
+    }
+
+    /* One button that does the whole job. The two-step version was the whole
+       problem: the add could fail quietly and Publish would then save an empty
+       list and report success. Now nothing is published unless the add worked. */
+    async function addAndPublish() {
+      if (!addRecitation()) return;          // it already said why, loudly
+      const ok = await publishChanges();
+      if (ok) {
+        alert("Saved to the website.\n\nWait about a minute, then open the home page — " +
+              "the recitation section is at the very bottom.");
+      }
     }
 
     function cancelRecitation() {
@@ -940,10 +964,14 @@
       const host = document.getElementById("recList");
       if (!host) return;
       if (!cfg.recitations || !cfg.recitations.length) {
-        host.innerHTML = `<p style="color:var(--text-muted);font-size:.9rem;">Nothing yet. Add one above and the section will appear on the home page. Until then the home page simply does not show it.</p>`;
+        host.innerHTML = `<p style="background:#fdece7;border:2px solid #e0a090;border-radius:8px;padding:12px 16px;color:#8a3d1f;font-weight:600;">
+          The list is EMPTY — nothing will appear on the home page.<br>
+          <span style="font-weight:400;font-size:.88rem;">A video playing in the box above is only a preview. It counts only once it appears here in this list.</span>
+        </p>`;
         return;
       }
-      host.innerHTML = cfg.recitations.map((r, i) => {
+      host.innerHTML = `<p style="color:var(--green-dark);font-weight:700;margin-bottom:10px;">${cfg.recitations.length} recitation(s) will be on the home page:</p>`
+        + cfg.recitations.map((r, i) => {
         const v = iitwParseVideo(r.url);
         const ref = iitwRecitationRef(r);
         return `<div class="item-row" style="flex-wrap:wrap;align-items:flex-start;">
@@ -1156,7 +1184,21 @@
         demoUrl: document.getElementById("demoUrl").value.trim()
       };
 
-      msg.textContent = "Publishing..."; msg.className = "";
+      /* If a video is sitting in the form, unadded, publishing now would save
+         an empty list and claim success — which is exactly what happened three
+         times. Stop and say so. */
+      if (recPending && document.getElementById("recPreviewWrap").style.display !== "none") {
+        const warn = "The video in the form has NOT been added to the list yet.\n\n" +
+                     "Press “✔ Put it on the home page now” instead — that adds it and saves it in one go.\n\n" +
+                     "Publishing right now would save the website WITHOUT that video.";
+        msg.innerHTML = "<strong>Stopped.</strong> The video in the form was never added — press “✔ Put it on the home page now”.";
+        msg.className = "err";
+        alert(warn);
+        return false;
+      }
+
+      const nRec = (cfg.recitations || []).length;
+      msg.textContent = "Publishing " + nRec + " recitation(s)…"; msg.className = "";
       try {
         const headers = { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" };
         const getResp = await fetch(REPO_API, { headers });
@@ -1187,10 +1229,16 @@
         publishedSnapshot = JSON.stringify(cfg);
         try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
         updateUnpublishedBanner();
-        msg.innerHTML = "<strong>✓ Saved to the website.</strong> Wait about a minute, then " +
+        msg.innerHTML = "<strong>✓ Saved " + nRec + " recitation(s) to the website.</strong> Wait about a minute, then " +
           "<a href='index.html' target='_blank' rel='noopener' style='text-decoration:underline;'>open the home page</a>. " +
-          "Your token is remembered — you will not be asked for it again.";
+          "Your token is remembered — you will not be asked for it again." +
+          (nRec === 0 ? "<br><strong style='color:#8a3d1f;'>Note: the list was empty, so no video was saved.</strong>" : "");
         msg.className = "ok";
+        if (nRec === 0) {
+          alert("WARNING: the recitation list was empty, so nothing was added to the home page.\n\n" +
+                "Paste the video link, press “Check this video”, fill the boxes, then press\n" +
+                "“✔ Put it on the home page now”.");
+        }
         return true;
       } catch (err) {
         // A failure must be impossible to miss — this is what went wrong before.
@@ -1206,6 +1254,6 @@
     loadSavedToken();
     loadConfig();
   </script>
-  <script src="js/i18n.js?v=202608012220"></script>
+  <script src="js/i18n.js?v=202608012246"></script>
 </body>
 </html>
