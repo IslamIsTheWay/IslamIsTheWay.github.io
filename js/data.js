@@ -2198,3 +2198,103 @@ const COURSES = [
     ]
   }
 ];
+
+/* ============================================================
+   STORIES OF THE PROPHET MUHAMMAD ﷺ
+   Each one was located in the text of Sahih al-Bukhari or Sahih Muslim
+   before being written here — none is from memory. The Bukhari numbers
+   match the standard numbering; Muslim is cited by book, because its
+   numbering differs between printings and a guessed number is worse
+   than none. The "lesson" is what the situation itself teaches.
+   ============================================================ */
+const PROPHET_STORIES = [
+  {
+    id: "bedouin-mosque",
+    title: "The bedouin who urinated in the mosque",
+    titleAr: "الأعرابي الذي بال في المسجد",
+    theme: "Gentleness in correcting people",
+    themeAr: "الرفق في الإنكار",
+    story: "A bedouin urinated inside the mosque. The companions leapt up to stop him. The Prophet ﷺ told them: \"Do not interrupt him.\" He let the man finish, then called for a bucket of water and had it poured over the place.",
+    storyAr: "بال أعرابيٌّ في المسجد، فقام الناس إليه ليقعوا به، فقال رسول الله ﷺ: «لا تُزرِموه»، فتركه حتى فرغ، ثم دعا بدلوٍ من ماءٍ فصُبَّ على المكان.",
+    arabic: "لَا تُزْرِمُوهُ",
+    lesson: "He stopped the correction from becoming a humiliation. The mess was cleaned in a moment; a man shamed in public may never come back. When you correct someone, ask first what will actually bring them closer.",
+    lessonAr: "منع أن يتحول الإنكار إلى إهانة؛ فالأذى يُغسل في لحظة، أما من يُفضح أمام الناس فقد لا يعود. فإذا أنكرتَ على أحدٍ فانظر أولاً ما الذي يقرّبه لا ما يطرده.",
+    ref: "Sahih al-Bukhari, Book of Good Manners, Hadith 6025",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["gentle","gentleness","correct","mistake","anger","patience","mosque","bedouin","رفق","إنكار","خطأ","غضب","صبر","المسجد","الأعرابي"]
+  },
+  {
+    id: "jewish-boy-ill",
+    title: "He visited the Jewish boy who served him",
+    titleAr: "عيادته ﷺ للغلام اليهودي الذي كان يخدمه",
+    theme: "Kindness beyond your own people",
+    themeAr: "الإحسان إلى غير المسلم",
+    story: "A Jewish boy used to serve the Prophet ﷺ. The boy fell ill, and the Prophet ﷺ went to visit him at his sickbed and invited him gently to Islam.",
+    storyAr: "كان غلامٌ يهوديٌّ يخدم النبيَّ ﷺ، فمرض، فأتاه النبيُّ ﷺ يعوده في مرضه وعرض عليه الإسلام برفق.",
+    lesson: "He did not wait for the boy to share his religion before showing him care. Visiting the sick, and simple human kindness, are not owed only to those who agree with you.",
+    lessonAr: "لم ينتظر أن يوافقه الغلام في الدين ليُحسن إليه. فعيادة المريض والرفق بالناس ليست حقًّا لمن يوافقك وحده.",
+    ref: "Sahih al-Bukhari, Book of Patients, Hadith 5657",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["kindness","non-muslim","jewish","sick","visit","neighbour","service","إحسان","يهودي","مريض","عيادة","الجار","خدمة"]
+  },
+  {
+    id: "standing-funeral",
+    title: "He stood for a funeral, and it was a Jew's",
+    titleAr: "قيامه ﷺ لجنازة يهودي",
+    theme: "The dignity of every human being",
+    themeAr: "كرامة الإنسان",
+    story: "A funeral procession passed by, and the Prophet ﷺ stood up, so the companions stood with him. They said: \"Messenger of Allah, it is the funeral of a Jew.\" He answered: \"When you see a funeral procession, stand up.\"",
+    storyAr: "مرَّت بهم جنازةٌ فقام لها النبيُّ ﷺ فقاموا معه، فقالوا: يا رسول الله، إنها جنازة يهودي، فقال: «إذا رأيتم الجنازة فقوموا».",
+    arabic: "إِذَا رَأَيْتُمُ الْجَنَازَةَ فَقُومُوا",
+    lesson: "Death is the one appointment nobody misses, and he taught respect for it without asking whose body it was. A person's worth as a human being does not depend on agreeing with you.",
+    lessonAr: "الموت موعدٌ لا يتخلف عنه أحد، وقد علّمنا احترامه دون أن يسأل عن صاحب الجنازة. فكرامة الإنسان لا تتوقف على موافقته لك.",
+    ref: "Sahih al-Bukhari, Book of Funerals, Hadith 1311",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["funeral","death","respect","dignity","non-muslim","jewish","stand","جنازة","الموت","احترام","كرامة","يهودي","القيام"]
+  },
+  {
+    id: "sword-forgiven",
+    title: "The man who stood over him with a drawn sword",
+    titleAr: "الرجل الذي اخترط سيفه على النبي ﷺ",
+    theme: "Forgiveness when you have the upper hand",
+    themeAr: "العفو عند المقدرة",
+    story: "On the return from an expedition the Prophet ﷺ slept under a tree with his sword hanging on it. He woke to find a man standing over him holding the drawn sword, who said: \"Who will protect you from me?\" The Prophet ﷺ answered: \"Allah\" — three times. The man lowered the sword. The Prophet ﷺ did not punish him, and sat down.",
+    storyAr: "في منصرفه ﷺ من غزوةٍ نام تحت شجرةٍ وعلّق سيفه بها، فاستيقظ ورجلٌ قائمٌ على رأسه والسيف مسلولٌ بيده يقول: من يمنعك مني؟ فقال ﷺ: «الله» ثلاثًا، فأغمد الرجل سيفه، ولم يعاقبه النبيُّ ﷺ وجلس.",
+    arabic: "اللَّهُ",
+    lesson: "One word, said with certainty, and the danger passed. Then came the harder part: he had the man completely in his power and let him go. Strength is not in taking revenge you are able to take.",
+    lessonAr: "كلمةٌ واحدةٌ قيلت بيقينٍ فزال الخطر، ثم كان الأصعب: تمكّن منه فعفا عنه. فليست القوة في أن تنتقم وأنت قادر.",
+    ref: "Sahih al-Bukhari, Book of Jihad, Hadith 2910",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["forgive","forgiveness","revenge","enemy","fear","trust","tawakkul","danger","عفو","انتقام","عدو","خوف","توكل","المقدرة"]
+  },
+  {
+    id: "never-said-uff",
+    title: "Ten years of service, and never one harsh word",
+    titleAr: "عشر سنين من الخدمة بلا كلمة أذى",
+    theme: "How you treat those who work for you",
+    themeAr: "معاملة الخادم",
+    story: "Anas ibn Malik رضي الله عنه said: \"I served the Prophet ﷺ for ten years, and he never once said to me 'Uff', nor asked me 'Why did you do that?' or 'Why did you not do that?'\"",
+    storyAr: "قال أنس بن مالك رضي الله عنه: خدمتُ النبيَّ ﷺ عشر سنين، فما قال لي أُفٍّ قط، ولا: لِمَ صنعتَ؟ ولا: ألَّا صنعتَ؟",
+    arabic: "خَدَمْتُ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ عَشْرَ سِنِينَ، فَمَا قَالَ لِي أُفٍّ",
+    lesson: "Ten years is long enough for anyone's temper to show. A boy served him through all of it and could not recall a single sharp word. Character is what people who work under you would say about you.",
+    lessonAr: "عشر سنين تكفي لينكشف خُلق أيِّ إنسان، خدمه غلامٌ فيها كلَّها فما وجد كلمةً جافيةً واحدة. وإنما يُعرف خُلق المرء بما يقوله عنه من هم تحت يده.",
+    ref: "Sahih al-Bukhari, Book of Good Manners, Hadith 6038",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["servant","worker","employee","staff","patience","anger","manners","character","خادم","عامل","موظف","صبر","غضب","أخلاق","معاملة"]
+  },
+  {
+    id: "kissing-grandson",
+    title: "\"Whoever shows no mercy will be shown none\"",
+    titleAr: "«من لا يَرحم لا يُرحم»",
+    theme: "Mercy to children",
+    themeAr: "الرحمة بالأطفال",
+    story: "The Prophet ﷺ kissed his grandson al-Hasan ibn Ali while al-Aqra' ibn Habis was sitting with him. Al-Aqra' said: \"I have ten children and I have never kissed one of them.\" The Prophet ﷺ looked at him and said: \"Whoever shows no mercy will be shown no mercy.\"",
+    storyAr: "قبَّل النبيُّ ﷺ الحسن بن علي وعنده الأقرع بن حابس التميمي جالسًا، فقال الأقرع: إن لي عشرةً من الولد ما قبَّلتُ منهم أحدًا، فنظر إليه رسول الله ﷺ ثم قال: «من لا يَرحم لا يُرحم».",
+    arabic: "مَنْ لَا يَرْحَمُ لَا يُرْحَمُ",
+    lesson: "A man boasted about withholding affection as though it were strength. The answer was not a lecture but a warning: mercy is not softness you can afford to skip — it is the measure by which you will be treated.",
+    lessonAr: "افتخر رجلٌ بمنع الحنان كأنه قوة، فلم يكن الجواب موعظةً طويلةً بل تحذيرًا: الرحمة ليست ليونةً يُستغنى عنها، بل هي الميزان الذي تُعامَل به.",
+    ref: "Sahih al-Bukhari, Book of Good Manners, Hadith 5997",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["children","child","mercy","father","kiss","affection","harsh","أطفال","ولد","رحمة","الأب","قسوة","حنان","تقبيل"]
+  }
+];
