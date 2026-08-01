@@ -1,8 +1,8 @@
 {
   "payment": {
     "account": "",
-    "instructions": "Contact us after payment with your receipt to get access.",
-    "qrUrl": ""
+    "qrUrl": "",
+    "instructions": "Contact us after payment with your receipt to get access."
   },
   "contact": {
     "phone": "",
