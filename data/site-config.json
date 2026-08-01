@@ -42,7 +42,8 @@
       "ayahFrom": 66,
       "ayahTo": 70,
       "note": "Don't forget your afterlife and turn back to the Quran",
-      "noteAr": "لا تنسى آخرتك وأرجع للقرآن"
+      "noteAr": "لا تنسى آخرتك وأرجع للقرآن",
+      "vertical": true
     }
   ]
 }
