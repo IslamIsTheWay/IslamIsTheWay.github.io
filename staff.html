@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608010029" />
+  <link rel="stylesheet" href="css/style.css?v=202608012159" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -85,10 +85,20 @@
   </div>
 
   <section>
-    <div class="container" style="max-width:900px;">
+    <div class="container" style="max-width:1180px;">
 
       <div class="status-note">
         <strong>How it works:</strong> Pick a section below, fill it in, then press <strong>Publish Changes</strong> at the bottom with your GitHub token. Everything is saved to the live website for all users.
+      </div>
+
+      <!-- Shown whenever something has been added but not yet published. -->
+      <div id="unpublishedBanner" style="display:none;background:#fff4e5;border:2px solid #c9a227;border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+        <strong style="color:#8a5a00;">⚠ You have changes that are NOT on the website yet.</strong>
+        <div style="font-size:.88rem;margin-top:4px;">
+          They are saved in this browser, so you can leave this page and come back — but visitors will not see them until you press
+          <strong>Publish Changes</strong> at the bottom with your GitHub token.
+          <br><span dir="rtl" style="font-family:'Amiri',serif;">لديك تغييرات لم تُنشر بعد. محفوظة في المتصفح، ولن يراها الزوار حتى تضغط «Publish Changes» بالأسفل.</span>
+        </div>
       </div>
 
       <!-- Section tabs -->
@@ -289,9 +299,11 @@
               <button type="button" class="rec-mic" onclick="speakFill('title')" title="Say it once — both boxes are filled">🎤 Speak</button>
             </span>
           </div>
+          <div id="recTitleSuggestions" class="rec-suggestions"></div>
           <input type="text" id="recTitle" placeholder="English — e.g. The verses describing the Day of Judgement" />
           <input type="text" id="recTitleAr" dir="rtl" placeholder="بالعربية — مثال: آيات تصف يوم القيامة" style="margin-top:8px;" />
           <div class="rec-hint" id="titleHint"></div>
+          <div id="titleAlts" class="rec-suggestions"></div>
 
           <div class="rec-field-head">
             <label style="margin:0;">3) Reciter</label>
@@ -306,10 +318,22 @@
           <input type="text" id="recReciter" placeholder="English — e.g. Islam Sobhi" />
           <input type="text" id="recReciterAr" dir="rtl" placeholder="بالعربية — مثال: إسلام صبحي" style="margin-top:8px;" />
           <div class="rec-hint" id="reciterHint"></div>
+          <div id="reciterAlts" class="rec-suggestions"></div>
 
-          <label>4) Surah</label>
+          <div class="rec-field-head">
+            <label style="margin:0;">4) Surah</label>
+            <span class="rec-mic-group">
+              <select class="rec-mic-lang" id="micLangSurah" aria-label="Language you will speak">
+                <option value="ar-SA">عربي</option>
+                <option value="en-US">English</option>
+              </select>
+              <button type="button" class="rec-mic" onclick="speakFill('surah')" title="Say the surah name">🎤 Speak</button>
+            </span>
+          </div>
           <input type="text" id="recSurah" placeholder="English — e.g. Al-Haqqah" />
           <input type="text" id="recSurahAr" dir="rtl" placeholder="بالعربية — مثال: الحاقة" style="margin-top:8px;" />
+          <div class="rec-hint" id="surahHint"></div>
+          <div id="surahAlts" class="rec-suggestions"></div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
             <div><label>Surah number</label><input type="number" id="recSurahNum" min="1" max="114" placeholder="69" /></div>
             <div><label>From verse</label><input type="number" id="recFrom" min="1" placeholder="29" /></div>
@@ -331,6 +355,7 @@
           <textarea id="recNote" placeholder="English — a sentence or two inviting people to reflect"></textarea>
           <textarea id="recNoteAr" dir="rtl" placeholder="بالعربية — جملة أو جملتان للتدبر" style="margin-top:8px;"></textarea>
           <div class="rec-hint" id="noteHint"></div>
+          <div id="noteAlts" class="rec-suggestions"></div>
 
           <label>Video shape</label>
           <select id="recVertical">
@@ -373,16 +398,16 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202608010029"></script>
-  <script src="js/main.js?v=202608010029"></script>
+  <script src="js/data.js?v=202608012159"></script>
+  <script src="js/main.js?v=202608012159"></script>
   <script>
-    if (sessionStorage.getItem("islamIsTheWayStaff") !== "true") {
-      window.location.href = "login.html";
-    }
+    const STAFF_USER = iitwStaffUser();
+    if (!STAFF_USER) window.location.href = "login.html";
     document.getElementById("logoutLink").addEventListener("click", e => {
       e.preventDefault();
-      sessionStorage.removeItem("islamIsTheWayStaff");
-      sessionStorage.removeItem("islamIsTheWayStaffUser");
+      if (hasUnpublished() && !confirm("You have changes that are not published yet. Log out and lose them?")) return;
+      iitwStaffLogout();
+      localStorage.removeItem(DRAFT_KEY);
       window.location.href = "login.html";
     });
 
@@ -393,7 +418,7 @@
     const TRACKED_NAV = ["home","quran","prophets","companions","hadith","guidance","courses","search","login"];
 
     // Analytics and the home-page recitations are for the main admin only.
-    const IS_ADMIN = sessionStorage.getItem("islamIsTheWayStaffUser") === ADMIN_USER;
+    const IS_ADMIN = STAFF_USER === ADMIN_USER;
     if (IS_ADMIN) {
       document.getElementById("analyticsPanel").style.display = "";
       document.getElementById("tabAnalytics").style.display = "";   // reveal the tab too
@@ -430,6 +455,30 @@
         .map(r => `<div style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--border);padding:4px 0;"><span>${r.label}</span><strong>${r.n.toLocaleString()}</strong></div>`).join("");
     }
 
+    /* ---------- Never lose unpublished work ----------
+       The owner added a recitation, went to look at the home page, came back
+       and everything was gone. Every change is now kept in the browser until
+       it is published, and a banner says plainly that it is not live yet. */
+    const DRAFT_KEY = "iitw-staff-draft";
+    let publishedSnapshot = "";
+
+    function saveDraft() {
+      try { localStorage.setItem(DRAFT_KEY, JSON.stringify(cfg)); } catch (e) {}
+      updateUnpublishedBanner();
+    }
+    function hasUnpublished() {
+      try { return JSON.stringify(cfg) !== publishedSnapshot; } catch (e) { return false; }
+    }
+    function updateUnpublishedBanner() {
+      const el = document.getElementById("unpublishedBanner");
+      if (!el) return;
+      el.style.display = hasUnpublished() ? "" : "none";
+    }
+    // A last guard if they navigate away with work that is not live.
+    window.addEventListener("beforeunload", e => {
+      if (hasUnpublished()) { e.preventDefault(); e.returnValue = ""; }
+    });
+
     const REPO_API = "https://api.github.com/repos/IslamIsTheWay/IslamIsTheWay.github.io/contents/data/site-config.json";
     let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, contact: { phone: "", whatsapp: "", demoUrl: "" }, videos: [], meetings: [], extraCourses: [] };
 
@@ -457,6 +506,22 @@
       if (!cfg.meetings) cfg.meetings = [];
       if (!cfg.extraCourses) cfg.extraCourses = [];
       if (!cfg.recitations) cfg.recitations = [];
+
+      /* What is live right now, for comparison. Then restore anything the staff
+         member had typed but not yet published, so coming back to this page
+         picks up exactly where they left off. */
+      publishedSnapshot = JSON.stringify(cfg);
+      try {
+        const draft = localStorage.getItem(DRAFT_KEY);
+        if (draft) {
+          const d = JSON.parse(draft);
+          if (d && JSON.stringify(d) !== publishedSnapshot) {
+            cfg = d;
+            if (!cfg.recitations) cfg.recitations = [];
+          }
+        }
+      } catch (e) {}
+
       document.getElementById("payAccount").value = cfg.payment.account || "";
       document.getElementById("payQr").value = cfg.payment.qrUrl || "";
       document.getElementById("payInstructions").value = cfg.payment.instructions || "";
@@ -464,6 +529,7 @@
       document.getElementById("contactWhatsapp").value = cfg.contact.whatsapp || "";
       document.getElementById("demoUrl").value = cfg.contact.demoUrl || "";
       renderLists();
+      updateUnpublishedBanner();
     }
 
     function renderLists() {
@@ -481,6 +547,7 @@
            </span>
          </div>`).join("");
       renderRecitationList();
+      saveDraft();          // keep the work safe on every change
     }
 
     /* ---------- Recommended recitations ----------
@@ -494,11 +561,62 @@
        selector, the other side is machine-translated. Machine translation is
        never good enough to publish unread, so the box it fills is flagged. */
     const SPEAK_FIELDS = {
-      title:   { en: "recTitle",    ar: "recTitleAr",    hint: "titleHint" },
-      reciter: { en: "recReciter",  ar: "recReciterAr",  hint: "reciterHint" },
-      note:    { en: "recNote",     ar: "recNoteAr",     hint: "noteHint" }
+      title:   { en: "recTitle",    ar: "recTitleAr",    hint: "titleHint",   alts: "titleAlts" },
+      reciter: { en: "recReciter",  ar: "recReciterAr",  hint: "reciterHint", alts: "reciterAlts" },
+      surah:   { en: "recSurah",    ar: "recSurahAr",    hint: "surahHint",   alts: "surahAlts" },
+      note:    { en: "recNote",     ar: "recNoteAr",     hint: "noteHint",    alts: "noteAlts" }
     };
     let recActiveRecognition = null;
+
+    /* Arabic words that differ by one letter and are constantly confused by
+       speech recognition. The owner said "وَذَكِّرْ فَإِنَّ الذِّكْرَى تَنْفَعُ الْمُؤْمِنِينَ"
+       and it wrote ذكر (male) instead of الذكرى (the reminder). The engine's
+       own alternatives are offered, and these pairs are offered on top, so the
+       right word is one click away instead of being retyped. */
+    const IITW_AR_CONFUSABLE = [
+      ["ذكر", "الذكرى"], ["الذكر", "الذكرى"], ["ذكرى", "الذكرى"],
+      ["المؤمنين", "المؤمنون"], ["مؤمنين", "المؤمنين"],
+      ["اية", "آية"], ["ايات", "آيات"], ["سوره", "سورة"],
+      ["الرحمن", "الرحمٰن"], ["اللهم", "اللَّهم"],
+      ["قيامه", "القيامة"], ["الحاقه", "الحاقة"], ["الواقعه", "الواقعة"]
+    ];
+
+    function iitwArabicFixes(said) {
+      const out = [];
+      IITW_AR_CONFUSABLE.forEach(([a, b]) => {
+        if (said.includes(a) && !said.includes(b)) out.push(said.split(a).join(b));
+        if (said.includes(b) && !said.includes(a)) out.push(said.split(b).join(a));
+      });
+      return [...new Set(out)].filter(s => s !== said).slice(0, 4);
+    }
+
+    /* Show what else was heard, so a wrong word can be corrected in one click. */
+    function showAlternatives(which, spokeArabic, alternatives) {
+      const f = SPEAK_FIELDS[which];
+      const host = document.getElementById(f.alts);
+      if (!host) return;
+      if (!alternatives.length) { host.innerHTML = ""; return; }
+      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">Not what you said? Pick the right one:</span>` +
+        alternatives.map((a, i) => `<button type="button" class="rec-chip" onclick="pickAlternative('${which}', ${spokeArabic}, ${i})">${iitwEsc(a)}</button>`).join("");
+      host._alts = alternatives;
+    }
+
+    async function pickAlternative(which, spokeArabic, i) {
+      const f = SPEAK_FIELDS[which];
+      const host = document.getElementById(f.alts);
+      const text = host._alts && host._alts[i];
+      if (!text) return;
+      document.getElementById(spokeArabic ? f.ar : f.en).value = text;
+      const hint = document.getElementById(f.hint);
+      hint.className = "rec-hint";
+      hint.textContent = "Corrected. Translating the other box…";
+      const other = await iitwTranslate(text, spokeArabic ? "ar" : "en", spokeArabic ? "en" : "ar");
+      if (other) document.getElementById(spokeArabic ? f.en : f.ar).value = other;
+      hint.className = "rec-hint warn";
+      hint.textContent = "Please read both boxes before publishing.";
+      host.innerHTML = "";
+      updateRecRefPreview();
+    }
 
     function speakFill(which) {
       const f = SPEAK_FIELDS[which];
@@ -518,7 +636,9 @@
       recActiveRecognition = rec;
       rec.lang = lang;
       rec.interimResults = false;
-      rec.maxAlternatives = 1;
+      // Ask for several readings, not one — Arabic words that differ by a
+      // single letter are routinely picked wrongly on the first guess.
+      rec.maxAlternatives = 5;
 
       btn.classList.add("listening");
       btn.textContent = "● Listening…";
@@ -537,8 +657,16 @@
       rec.onend = done;
 
       rec.onresult = async e => {
-        const said = (e.results[0] && e.results[0][0] && e.results[0][0].transcript || "").trim();
+        const r0 = e.results[0] || [];
+        const said = (r0[0] && r0[0].transcript || "").trim();
         if (!said) return;
+        // Everything else the engine considered, plus known Arabic look-alikes.
+        const heard = [];
+        for (let k = 1; k < r0.length; k++) {
+          const t = (r0[k] && r0[k].transcript || "").trim();
+          if (t && t !== said) heard.push(t);
+        }
+        const alternatives = [...new Set(heard.concat(iitwArabicFixes(said)))].slice(0, 6);
         // Trust the script that came back over the selector, in case of a slip.
         const spokeArabic = iitwIsArabicText(said) || (lang === "ar-SA" && !/[a-z]/i.test(said));
         const sameId = spokeArabic ? f.ar : f.en;
@@ -558,7 +686,9 @@
           hint.className = "rec-hint warn";
           hint.textContent = "Could not translate just now — please fill the other box yourself.";
         }
+        showAlternatives(which, spokeArabic, alternatives);
         updateRecRefPreview();
+        if (which === "surah") renderTitleSuggestions();
       };
 
       try { rec.start(); } catch (e) { done(); }
@@ -576,6 +706,30 @@
           </button>`).join("");
       host._list = list;
     }
+    /* Title suggestions, shaped by the surah once it is known. */
+    function renderTitleSuggestions() {
+      const host = document.getElementById("recTitleSuggestions");
+      if (!host) return;
+      const num = document.getElementById("recSurahNum").value;
+      const list = iitwSuggestTitles(num, document.getElementById("recSurah").value,
+                                     document.getElementById("recSurahAr").value).slice(0, 5);
+      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">Suggestions — click one, then change it freely:</span>` +
+        list.map((t, i) => `<button type="button" class="rec-chip" onclick="useTitleSuggestion(${i})">
+            ${iitwEsc(t.en)}<small>${iitwEsc(t.ar)}</small>
+          </button>`).join("");
+      host._list = list;
+    }
+    function useTitleSuggestion(i) {
+      const host = document.getElementById("recTitleSuggestions");
+      const t = host._list && host._list[i];
+      if (!t) return;
+      document.getElementById("recTitle").value = t.en;
+      document.getElementById("recTitleAr").value = t.ar;
+      const hint = document.getElementById("titleHint");
+      hint.className = "rec-hint";
+      hint.textContent = "Filled from a suggestion — change it to suit the video.";
+    }
+
     function useNoteSuggestion(i) {
       const host = document.getElementById("recNoteSuggestions");
       const n = host._list && host._list[i];
@@ -646,6 +800,7 @@
       }
       updateRecRefPreview();
       renderNoteSuggestions();
+      renderTitleSuggestions();
     }
 
     function checkRecitation() {
@@ -675,6 +830,7 @@
       document.getElementById("recVertical").value = "auto";
       updateRecRefPreview();
       renderNoteSuggestions();
+      renderTitleSuggestions();
       loadVideoSuggestions(url);     // reads the video's own title and channel
       wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
@@ -755,10 +911,11 @@
       document.getElementById("recCheckMsg").textContent = "";
       document.getElementById("recAddMsg").textContent = "";
       document.getElementById("recFromVideo").style.display = "none";
-      document.getElementById("recNoteSuggestions").innerHTML = "";
-      ["titleHint","reciterHint","noteHint"].forEach(id => {
+      ["recNoteSuggestions","recTitleSuggestions","titleAlts","reciterAlts","surahAlts","noteAlts"]
+        .forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = ""; });
+      ["titleHint","reciterHint","surahHint","noteHint"].forEach(id => {
         const h = document.getElementById(id);
-        h.className = "rec-hint"; h.textContent = "";
+        if (h) { h.className = "rec-hint"; h.textContent = ""; }
       });
       if (recActiveRecognition) { try { recActiveRecognition.stop(); } catch (e) {} recActiveRecognition = null; }
     }
@@ -970,7 +1127,13 @@
           body: JSON.stringify({ message: "Update site content from staff dashboard", content, sha })
         });
         if (!putResp.ok) throw new Error("GitHub returned " + putResp.status);
-        msg.textContent = "✓ Published! Live on the site in 1-2 minutes."; msg.className = "ok";
+        // It really is live now, so the draft and the warning can go.
+        publishedSnapshot = JSON.stringify(cfg);
+        try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+        updateUnpublishedBanner();
+        msg.innerHTML = "✓ Published. It appears on the website in 1-2 minutes — " +
+          "<a href='index.html#recitationsSection' target='_blank' rel='noopener' style='text-decoration:underline;'>open the home page</a> after that to see it.";
+        msg.className = "ok";
         return true;
       } catch (err) {
         msg.textContent = "Failed: " + err.message + " — check that your token is valid and has repo access."; msg.className = "err";
@@ -980,6 +1143,6 @@
 
     loadConfig();
   </script>
-  <script src="js/i18n.js?v=202608010029"></script>
+  <script src="js/i18n.js?v=202608012159"></script>
 </body>
 </html>

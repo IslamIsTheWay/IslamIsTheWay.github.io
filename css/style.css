@@ -96,9 +96,11 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
-  max-width: var(--max-width);
+  padding: 14px 20px;
+  /* Wider than the page body, so the extra nav links fit on one line. */
+  max-width: 1500px;
   margin: 0 auto;
+  gap: 18px;
 }
 
 .brand {
@@ -107,10 +109,13 @@ header.site-header {
   color: var(--green-dark);
   display: flex;
   align-items: center;
-  gap: 10px;
+  /* More air between the emblem and the name — they were almost touching. */
+  gap: 16px;
   /* The name must never break into one word per line when the menu is wide. */
   white-space: nowrap;
   flex-shrink: 0;
+  /* Pull the logo a little further left, freeing room for another nav link. */
+  margin-right: 18px;
 }
 
 .brand .logo-mosque {

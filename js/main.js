@@ -2,6 +2,53 @@
    Islam Is The Way — Shared Site Behaviour
    ============================================ */
 
+/* ---------- Staff sign-in that survives leaving the page ----------
+   This used to live in sessionStorage, which is per-tab and dies with it. So
+   opening a video link, or coming back to the dashboard later, meant signing in
+   again and losing everything that had been typed. It is kept in localStorage
+   now, with a deliberate expiry so a shared computer is not left open forever. */
+const IITW_STAFF_KEY = "iitw-staff-session";
+const IITW_STAFF_HOURS = 12;
+
+function iitwStaffLogin(user) {
+  try {
+    localStorage.setItem(IITW_STAFF_KEY, JSON.stringify({ user, at: Date.now() }));
+  } catch (e) {}
+  // Kept in step with the old keys so nothing else in the site breaks.
+  try {
+    sessionStorage.setItem("islamIsTheWayStaff", "true");
+    sessionStorage.setItem("islamIsTheWayStaffUser", user);
+  } catch (e) {}
+}
+
+function iitwStaffUser() {
+  try {
+    const raw = localStorage.getItem(IITW_STAFF_KEY);
+    if (raw) {
+      const s = JSON.parse(raw);
+      if (s && s.user && Date.now() - s.at < IITW_STAFF_HOURS * 3600e3) {
+        // Refresh the clock so an active session does not expire mid-task.
+        localStorage.setItem(IITW_STAFF_KEY, JSON.stringify({ user: s.user, at: Date.now() }));
+        return s.user;
+      }
+      localStorage.removeItem(IITW_STAFF_KEY);
+    }
+  } catch (e) {}
+  // Fall back to an older tab that signed in before this change.
+  try {
+    return sessionStorage.getItem("islamIsTheWayStaff") === "true"
+      ? sessionStorage.getItem("islamIsTheWayStaffUser") : null;
+  } catch (e) { return null; }
+}
+
+function iitwStaffLogout() {
+  try { localStorage.removeItem(IITW_STAFF_KEY); } catch (e) {}
+  try {
+    sessionStorage.removeItem("islamIsTheWayStaff");
+    sessionStorage.removeItem("islamIsTheWayStaffUser");
+  } catch (e) {}
+}
+
 /* ---------- Recommended recitations: one shared video parser ----------
    Used by BOTH the staff preview and the home page, deliberately. If the two
    parsed a link differently, the admin could approve one video and publish
@@ -263,6 +310,48 @@ const IITW_NOTE_GENERAL = [
   { en: "Beautiful recitation is a door — the aim is to understand and act, not only to be moved.",
     ar: "حُسن التلاوة بابٌ، والمقصود الفهم والعمل لا مجرّد التأثر." }
 ];
+
+/* Suggested TITLES, by the same themes. The title says what the verses are
+   about, so it is drawn from the same grouping as the notes. */
+const IITW_TITLE_THEMES = [
+  { surahs: [56,69,75,77,78,79,80,81,82,83,84,88,99,100,101,102,104],
+    titles: [
+      { en: "The verses that describe the Day of Judgement", ar: "آيات تصف يوم القيامة" },
+      { en: "A warning that shakes the heart", ar: "تحذير يهزّ القلب" },
+      { en: "When the earth gives up what it holds", ar: "حين تُخرج الأرض أثقالها" }
+    ] },
+  { surahs: [55,93,94,105,106,108,110],
+    titles: [
+      { en: "Which of the favours of your Lord will you deny?", ar: "فبأيِّ آلاء ربكما تكذبان" },
+      { en: "Mercy after hardship", ar: "الرحمة بعد الشدة" }
+    ] },
+  { surahs: [1,109,112],
+    titles: [
+      { en: "The heart of belief in a few short verses", ar: "أصل الاعتقاد في آياتٍ قصيرة" }
+    ] },
+  { surahs: [113,114],
+    titles: [
+      { en: "Seeking refuge with Allah", ar: "الاستعاذة بالله" }
+    ] },
+  { surahs: [11,12,14,18,19,21,26,28,37,71],
+    titles: [
+      { en: "A story of patience told for those who came after", ar: "قصة صبرٍ سيقت لمن بعدهم" },
+      { en: "How the Prophets were tested", ar: "كيف ابتُلي الأنبياء" }
+    ] }
+];
+const IITW_TITLE_GENERAL = [
+  { en: "A recitation worth stopping for", ar: "تلاوة تستحق الوقوف عندها" },
+  { en: "Verses to listen to slowly", ar: "آيات تُسمَع على مهل" }
+];
+
+function iitwSuggestTitles(surahNum, surahName, surahAr) {
+  const n = parseInt(surahNum, 10);
+  const themed = IITW_TITLE_THEMES.filter(t => t.surahs.includes(n)).flatMap(t => t.titles);
+  const named = (surahName && surahAr)
+    ? [{ en: "From Surah " + surahName, ar: "من سورة " + surahAr }]
+    : [];
+  return named.concat(themed, IITW_TITLE_GENERAL);
+}
 
 function iitwSuggestNotes(surahNum) {
   const n = parseInt(surahNum, 10);
