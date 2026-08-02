@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608021937" />
+  <link rel="stylesheet" href="css/style.css?v=202608021950" />
 </head>
 <body>
 
@@ -85,6 +85,26 @@
     </div>
   </section>
 
+  <!-- ===== What to say, and when ===== -->
+  <section class="pattern-bg">
+    <div class="container">
+      <h2 class="section-title">🕌 What Do I Say — and When? <span dir="rtl" style="font-family:'Amiri',serif;">— ماذا أقول ومتى؟</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:18px;">
+        The words said at each point of the prayer, what is said after it, the daily remembrance with its counts, and how to ask for forgiveness — each with its wording, its meaning, and its reference.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">ما يُقال في كل موضعٍ من الصلاة، وما يُقال بعدها، والأذكار اليومية بعددها، وصيغ الاستغفار — مع النص والمعنى والمرجع.</span>
+      </p>
+
+      <div class="worship-search-wrap">
+        <input type="text" id="worshipSearch" dir="auto" placeholder="What do I say in sujud? · after prayer? · to ask forgiveness?  |  ماذا أقول في السجود؟ بعد الصلاة؟ للاستغفار؟" />
+      </div>
+
+      <div class="worship-tabs" id="worshipTabs"></div>
+      <div id="worshipList" class="worship-list"></div>
+      <p id="worshipEmpty" class="no-results" style="display:none;">Nothing matches those words. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد ما يطابق هذه الكلمات.</span></p>
+    </div>
+  </section>
+
   <section class="pattern-bg">
     <div class="container">
       <div class="context-note">
@@ -148,10 +168,10 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608021937"></script>
+  <script src="js/data.js?v=202608021950"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608021937"></script>
+  <script src="js/sunnah.js?v=202608021950"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -451,8 +471,19 @@
       });
       themes.sort((a, b) => b.s - a.s);
 
+      /* 2a) The words themselves. Someone asking "what do I say in sujud" or
+         "how do I ask forgiveness" wants a wording, not a theme — so the
+         worship reference is searched from here too, and shown first when it
+         matches, because it answers the question directly. */
+      const worship = (typeof WORSHIP_STEPS !== "undefined" ? WORSHIP_STEPS : []).map(w => ({
+        w,
+        s: scoreContent(qt, raw, w.keys,
+             [w.title, w.titleAr, w.when, w.whenAr, w.meaning, w.meaningAr,
+              w.arabic, w.stageEn, w.stageAr].join(" "), qx)
+      })).filter(x => x.s >= 5).sort((a, b) => b.s - a.s).slice(0, 4);
+
       /* 2b) What the Prophet ﷺ actually DID about it. Someone describing a
-         situation wants the practice, not only the principle — so all 143
+         situation wants the practice, not only the principle — so all the
          Sunnah entries are searched here as well. */
       const sunnah = (typeof SUNNAH !== "undefined" ? SUNNAH : []).map(s => ({
         s,
@@ -487,7 +518,7 @@
 
       const companions = scorePeople(typeof COMPANIONS !== "undefined" ? COMPANIONS : [], "c");
 
-      const total = hadiths.length + themes.length + sunnah.length + prophets.length + companions.length;
+      const total = worship.length + hadiths.length + themes.length + sunnah.length + prophets.length + companions.length;
       if (total === 0) {
         out.innerHTML = `<div class="no-results">
           We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.
@@ -503,6 +534,12 @@
         <h3>Guidance related to your situation <span dir="rtl" style="font-family:'Amiri',serif;">— توجيه يتعلق بحالتك</span></h3>
         <p>Read each verse in its full surah and each hadith with its reference. These are pointers for reflection, not rulings. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة وكل حديث بمرجعه. هذه إشارات للتدبر لا أحكام.</span></p>
       </div>`;
+
+      // The exact wording comes first — it answers the question directly.
+      if (worship.length) {
+        html += `<h3 style="margin:8px 0 12px;color:var(--green-dark);">🗣️ The words to say <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ما تقوله</span></h3>`;
+        worship.forEach(({ w }) => { html += worshipCard(w); });
+      }
 
       if (hadiths.length) {
         html += `<h3 style="margin:8px 0 12px;color:var(--green-dark);">🕌 From the words of Prophet Muhammad ﷺ <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من أقوال النبي ﷺ</span></h3>`;
@@ -735,8 +772,87 @@
     document.getElementById("situationInput").addEventListener("keydown", e => {
       if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) findGuidance();
     });
+
+    /* ================= What to say, and when =================
+       A plain reference, not a mood matcher: the words for each point of the
+       prayer, what follows it, the daily remembrance with its counts, and the
+       wordings for seeking forgiveness. Browsable by stage and searchable in
+       either language. */
+    const WORSHIP_STAGES = [
+      { id: "all",    en: "Everything",         ar: "الكل" },
+      { id: "before", en: "Before you pray",    ar: "قبل الصلاة" },
+      { id: "in",     en: "Inside the prayer",  ar: "في الصلاة" },
+      { id: "after",  en: "After the prayer",   ar: "بعد الصلاة" },
+      { id: "daily",  en: "Every day",          ar: "كل يوم" },
+      { id: "mercy",  en: "Asking forgiveness", ar: "طلب المغفرة" }
+    ];
+    let worshipStage = "all";
+
+    function worshipCard(w) {
+      return `<article class="worship-card">
+        <div class="worship-stage">${w.stageEn} <span dir="rtl" style="font-family:'Amiri',serif;">— ${w.stageAr}</span></div>
+        <h3 class="worship-title">${w.title}</h3>
+        <div class="worship-title-ar" dir="rtl">${w.titleAr}</div>
+
+        <div class="worship-when">
+          <strong>When:</strong> <span class="en-only">${w.when}</span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">${w.whenAr}</span>
+          ${w.count ? `<div class="worship-count">🔁 ${w.count} <span dir="rtl" style="font-family:'Amiri',serif;">— ${w.countAr}</span></div>` : ""}
+        </div>
+
+        <p class="worship-arabic" dir="rtl" data-speak>${w.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
+
+        <p class="en-only">${w.meaning}</p>
+        <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${w.meaningAr}</p>
+
+        <div class="refs"><span>${w.ref}</span><span>${w.strength}</span></div>
+      </article>`;
+    }
+
+    function renderWorship(list) {
+      document.getElementById("worshipList").innerHTML = list.map(worshipCard).join("");
+      document.getElementById("worshipEmpty").style.display = list.length ? "none" : "";
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function worshipFilter() {
+      if (typeof WORSHIP_STEPS === "undefined") return;
+      const raw = document.getElementById("worshipSearch").value.trim();
+      let list = WORSHIP_STEPS.filter(w => worshipStage === "all" || w.stage === worshipStage);
+      if (raw) {
+        const qt = tokens(raw);
+        const qx = expandQuery(qt);
+        list = list.map(w => ({
+          w, s: scoreContent(qt, raw, w.keys,
+                [w.title, w.titleAr, w.when, w.whenAr, w.meaning, w.meaningAr,
+                 w.arabic, w.stageEn, w.stageAr].join(" "), qx)
+        })).filter(x => x.s >= 3).sort((a, b) => b.s - a.s).map(x => x.w);
+      }
+      renderWorship(list);
+    }
+
+    function renderWorshipTabs() {
+      const host = document.getElementById("worshipTabs");
+      host.innerHTML = WORSHIP_STAGES.map(st =>
+        `<button type="button" class="worship-tab${st.id === worshipStage ? " active" : ""}" data-stage="${st.id}">
+           ${st.en} <span dir="rtl" style="font-family:'Amiri',serif;">${st.ar}</span>
+         </button>`).join("");
+      host.querySelectorAll(".worship-tab").forEach(b => {
+        b.addEventListener("click", () => {
+          worshipStage = b.getAttribute("data-stage");
+          renderWorshipTabs();
+          worshipFilter();
+        });
+      });
+    }
+
+    if (typeof WORSHIP_STEPS !== "undefined") {
+      renderWorshipTabs();
+      renderWorship(WORSHIP_STEPS);
+      document.getElementById("worshipSearch").addEventListener("input", worshipFilter);
+    }
   </script>
-  <script src="js/main.js?v=202608021937"></script>
-  <script src="js/i18n.js?v=202608021937"></script>
+  <script src="js/main.js?v=202608021950"></script>
+  <script src="js/i18n.js?v=202608021950"></script>
 </body>
 </html>

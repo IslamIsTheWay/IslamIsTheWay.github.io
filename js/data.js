@@ -2211,6 +2211,258 @@ const COURSES = [
    than none. The "lesson" is what the situation itself teaches.
    ============================================================ */
 /* ============================================================
+   WHAT TO SAY, AND WHEN — the worship reference
+   Not "which verse suits my mood" but the plain question a person
+   actually has: what do I say at this point in the prayer, what do I
+   say after it, how many times, and what makes a prayer invalid.
+   Every wording below was located in Sahih al-Bukhari or Sahih Muslim
+   before being written, and carries its reference and grading. Where
+   something is well known but NOT in the two Sahihs, that is said
+   openly rather than dressed up.
+   ============================================================ */
+const WORSHIP_STEPS = [
+  /* ---------------- BEFORE THE PRAYER ---------------- */
+  {
+    id: "w-purity",
+    stage: "before", stageEn: "Before you pray", stageAr: "قبل الصلاة",
+    title: "No prayer is accepted without wudu",
+    titleAr: "لا تُقبل صلاة بغير وضوء",
+    when: "Before standing to pray, and after anything that breaks your wudu.",
+    whenAr: "قبل القيام إلى الصلاة، وبعد كل ما ينقض الوضوء.",
+    arabic: "لَا تُقْبَلُ صَلَاةُ مَنْ أَحْدَثَ حَتَّى يَتَوَضَّأَ",
+    meaning: "The prayer of one who has broken his wudu is not accepted until he performs wudu again. Abu Hurairah رضي الله عنه was asked what \"hadath\" means, and answered: passing wind, with or without sound.",
+    meaningAr: "لا تُقبل صلاة من أحدث حتى يتوضّأ. وسُئل أبو هريرة رضي الله عنه: ما الحدث؟ قال: فُساءٌ أو ضُراط.",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 135",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["wudu","ablution","invalid","not accepted","broken","purity","clean","before prayer","وضوء","الحدث","نقض","لا تقبل","الطهارة","قبل الصلاة","بطلان"]
+  },
+  {
+    id: "w-doubt-wudu",
+    stage: "before", stageEn: "Before you pray", stageAr: "قبل الصلاة",
+    title: "If you doubt whether your wudu broke, do not leave the prayer",
+    titleAr: "الشك في انتقاض الوضوء لا يُخرجك من الصلاة",
+    when: "When you are praying and are not sure whether you broke your wudu.",
+    whenAr: "إذا كنت في الصلاة وشككت هل انتقض وضوءك.",
+    arabic: "لَا يَنْصَرِفْ حَتَّى يَسْمَعَ صَوْتًا أَوْ يَجِدَ رِيحًا",
+    meaning: "A man complained of imagining something during the prayer. The Prophet ﷺ said he should not leave until he hears a sound or finds a smell — that is, certainty is not undone by doubt.",
+    meaningAr: "شكا رجلٌ أنه يُخيَّل إليه الشيء في الصلاة، فقال النبي ﷺ: لا ينصرف حتى يسمع صوتًا أو يجد ريحًا — فاليقين لا يزول بالشك.",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 137 and 177",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["doubt","waswas","unsure","broke wudu","leave prayer","certainty","شك","وسواس","انتقاض","اليقين","قطع الصلاة"]
+  },
+
+  /* ---------------- INSIDE THE PRAYER ---------------- */
+  {
+    id: "w-opening",
+    stage: "in", stageEn: "After the opening takbir", stageAr: "بعد تكبيرة الإحرام",
+    title: "The opening supplication, said quietly before al-Fatihah",
+    titleAr: "دعاء الاستفتاح قبل الفاتحة",
+    when: "Straight after saying Allahu Akbar, before you begin reciting.",
+    whenAr: "بعد تكبيرة الإحرام مباشرةً وقبل الشروع في القراءة.",
+    arabic: "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنَ الْخَطَايَا كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ",
+    meaning: "O Allah, put distance between me and my sins as You have put distance between the east and the west. O Allah, cleanse me of my sins as a white garment is cleansed of dirt. O Allah, wash away my sins with water and snow and hail.",
+    meaningAr: "يسأل العبد ربّه أن يُباعد بينه وبين خطاياه، وأن يُنقّيه منها كما يُنقّى الثوب الأبيض من الوسخ، وأن يغسلها بالماء والثلج والبرد.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 744",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["opening","istiftah","start prayer","takbir","before fatiha","dua","الاستفتاح","تكبيرة الإحرام","بداية الصلاة","قبل الفاتحة","دعاء"]
+  },
+  {
+    id: "w-ruku",
+    stage: "in", stageEn: "In bowing (ruku')", stageAr: "في الركوع",
+    title: "What he ﷺ said while bowing",
+    titleAr: "ما كان يقوله ﷺ في ركوعه",
+    when: "While your back is bent in ruku'.",
+    whenAr: "وأنت راكعٌ منحني الظهر.",
+    arabic: "سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ، اللَّهُمَّ اغْفِرْ لِي",
+    meaning: "Glory be to You, O Allah our Lord, and with Your praise. O Allah, forgive me. Aishah رضي الله عنها reported he said this in both his bowing and his prostration.",
+    meaningAr: "روت عائشة رضي الله عنها أن النبي ﷺ كان يقول في ركوعه وسجوده: سبحانك اللهم ربنا وبحمدك، اللهم اغفر لي.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 794",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["ruku","bowing","bow","what to say","tasbih","الركوع","التسبيح","ماذا أقول","سبحانك"]
+  },
+  {
+    id: "w-rising",
+    stage: "in", stageEn: "Rising from bowing", stageAr: "عند الرفع من الركوع",
+    title: "Sami' Allahu liman hamidah — and the answer to it",
+    titleAr: "سمع الله لمن حمده — وما يُقال بعدها",
+    when: "As you straighten up from ruku'.",
+    whenAr: "عند رفع رأسك من الركوع.",
+    arabic: "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ — اللَّهُمَّ رَبَّنَا وَلَكَ الْحَمْدُ",
+    meaning: "Allah hears the one who praises Him — O Allah our Lord, to You belongs all praise. The imam says the first; those behind him answer with the second.",
+    meaningAr: "يقول الإمام: سمع الله لمن حمده، ويقول من خلفه: اللهم ربنا ولك الحمد. وكان النبي ﷺ يُكبِّر عند الركوع وعند الرفع.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 795",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["rising","stand up","after ruku","sami allah","rabbana lakal hamd","imam","الرفع","سمع الله لمن حمده","ربنا ولك الحمد","الإمام"]
+  },
+  {
+    id: "w-sujud",
+    stage: "in", stageEn: "In prostration (sujud)", stageAr: "في السجود",
+    title: "What he ﷺ said while prostrating",
+    titleAr: "ما كان يقوله ﷺ في سجوده",
+    when: "While your forehead is on the ground.",
+    whenAr: "وأنت ساجدٌ وجبهتك على الأرض.",
+    arabic: "سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ، اللَّهُمَّ اغْفِرْ لِي",
+    meaning: "The same words he said in ruku'. Prostration is also the position in which the Prophet ﷺ said a servant is nearest to his Lord, so make much supplication there.",
+    meaningAr: "هي نفس الكلمات التي كان يقولها في الركوع. والسجود أقرب ما يكون العبد من ربه، فأكثِر فيه من الدعاء.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 794",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["sujud","prostration","forehead","ground","what to say","dua","السجود","التسبيح","الدعاء","ماذا أقول","أقرب"]
+  },
+  {
+    id: "w-sujud-posture",
+    stage: "in", stageEn: "In prostration (sujud)", stageAr: "في السجود",
+    title: "Prostrate on seven bones, and do not spread your forearms",
+    titleAr: "السجود على سبعة أعظم وعدم بسط الذراعين",
+    when: "The correct posture of prostration.",
+    whenAr: "هيئة السجود الصحيحة.",
+    arabic: "أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةٍ — وَلَا يَبْسُطْ أَحَدُكُمْ ذِرَاعَيْهِ انْبِسَاطَ الْكَلْبِ",
+    meaning: "The seven are the forehead with the nose, the two hands, the two knees and the toes of both feet. And the forearms are kept off the ground.",
+    meaningAr: "السبعة هي: الجبهة ومعها الأنف، واليدان، والركبتان، وأطراف القدمين. ولا يبسط ذراعيه على الأرض.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 816 and 822",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["sujud","seven bones","posture","how to prostrate","forearms","nose","السجود","سبعة أعظم","الهيئة","الذراعين","الأنف","كيف أسجد"]
+  },
+  {
+    id: "w-tashahhud",
+    stage: "in", stageEn: "Sitting for the tashahhud", stageAr: "في التشهد",
+    title: "The tashahhud, taught word for word",
+    titleAr: "التشهد كما علَّمه ﷺ",
+    when: "Sitting after the second rak'ah, and in the final sitting.",
+    whenAr: "في الجلوس بعد الركعة الثانية، وفي التشهد الأخير.",
+    arabic: "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+    meaning: "The companions used to name individuals in their greeting until the Prophet ﷺ turned to them and taught them these exact words, saying that when you say \"peace be upon us and upon the righteous servants of Allah\", it reaches every righteous servant in the heavens and the earth.",
+    meaningAr: "كان الصحابة يقولون: السلام على جبريل وميكائيل، على فلانٍ وفلان، فالتفت إليهم النبي ﷺ وعلَّمهم هذه الكلمات، وقال: إنكم إذا قلتموها أصابت كل عبدٍ صالحٍ في السماء والأرض.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 831",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["tashahhud","attahiyat","sitting","second rakah","what to say","التشهد","التحيات","الجلوس","الركعة الثانية"]
+  },
+  {
+    id: "w-salat-ibrahimiyyah",
+    stage: "in", stageEn: "After the tashahhud", stageAr: "بعد التشهد",
+    title: "How to send prayers upon the Prophet ﷺ",
+    titleAr: "الصلاة الإبراهيمية",
+    when: "In the final sitting, after the tashahhud, before the salam.",
+    whenAr: "في التشهد الأخير بعد التحيات وقبل السلام.",
+    arabic: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ. اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+    meaning: "The companions asked him directly: we know how to greet you, but how do we send prayers upon you? These are the words he gave them in answer.",
+    meaningAr: "سأله الصحابة: قد علمنا كيف نُسلِّم عليك، فكيف نُصلِّي عليك؟ فعلَّمهم هذه الصيغة.",
+    ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3370",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["salawat","durood","send prayers","ibrahimiyyah","after tashahhud","الصلاة على النبي","الإبراهيمية","بعد التشهد","الدرود"]
+  },
+  {
+    id: "w-before-salam",
+    stage: "in", stageEn: "Before the salam", stageAr: "قبل السلام",
+    title: "The refuge he ﷺ sought inside every prayer",
+    titleAr: "الاستعاذة التي كان يقولها ﷺ في الصلاة",
+    when: "In the last sitting, just before turning to give salam.",
+    whenAr: "في آخر التشهد قبل أن تُسلِّم.",
+    arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، وَأَعُوذُ بِكَ مِنْ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ، وَأَعُوذُ بِكَ مِنْ فِتْنَةِ الْمَحْيَا وَفِتْنَةِ الْمَمَاتِ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْمَأْثَمِ وَالْمَغْرَمِ",
+    meaning: "Refuge from the punishment of the grave, from the trial of the Masih ad-Dajjal, from the trial of life and of death, and from sin and from debt.",
+    meaningAr: "استعاذةٌ من عذاب القبر، ومن فتنة المسيح الدجّال، ومن فتنة المحيا والممات، ومن المأثم والمغرم.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 832",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["before salam","refuge","grave","dajjal","debt","protection","قبل السلام","الاستعاذة","عذاب القبر","الدجال","المغرم","الدين"]
+  },
+
+  /* ---------------- AFTER THE PRAYER ---------------- */
+  {
+    id: "w-after-tasbih",
+    stage: "after", stageEn: "After every prayer", stageAr: "بعد كل صلاة",
+    title: "The tasbih after every prayer — 33, 33, 33",
+    titleAr: "التسبيح بعد كل صلاة: ثلاثًا وثلاثين",
+    when: "Immediately after finishing any obligatory prayer.",
+    whenAr: "عقب كل صلاة مفروضة.",
+    arabic: "سُبْحَانَ اللَّهِ — وَالْحَمْدُ لِلَّهِ — وَاللَّهُ أَكْبَرُ",
+    count: "33 each",
+    countAr: "ثلاثًا وثلاثين لكلٍّ منها",
+    meaning: "The poor companions came saying the wealthy had outstripped them in reward. He taught them this. In this narration he said: say Subhan Allah, al-hamdu lillah and Allahu akbar until each of them reaches thirty-three.",
+    meaningAr: "جاء فقراء الصحابة يشكون أن أهل الأموال سبقوهم بالأجر، فعلَّمهم هذا وقال: تقول سبحان الله والحمد لله والله أكبر حتى يكون منهنّ كلهنّ ثلاثًا وثلاثين.",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 843",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["after prayer","tasbih","33","subhanallah","alhamdulillah","allahu akbar","count","dhikr","بعد الصلاة","التسبيح","ثلاث وثلاثين","سبحان الله","الحمد لله","الله أكبر","أذكار"]
+  },
+  {
+    id: "w-ayat-kursi",
+    stage: "after", stageEn: "After every prayer", stageAr: "بعد كل صلاة",
+    title: "Ayat al-Kursi after every prayer",
+    titleAr: "آية الكرسي بعد كل صلاة",
+    when: "After the obligatory prayer, and before sleeping.",
+    whenAr: "عقب الصلاة المكتوبة، وعند النوم.",
+    arabic: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
+    meaning: "The reading of Ayat al-Kursi (Surah Al-Baqarah 2:255) after every obligatory prayer is widely practised on the strength of a narration of an-Nasa'i, graded authentic by al-Albani. It is NOT in al-Bukhari or Muslim, and this site says so rather than implying otherwise. What IS in al-Bukhari is that reciting it before sleeping brings a guard from Allah and no devil comes near until morning.",
+    meaningAr: "قراءة آية الكرسي عقب كل صلاة مكتوبة مشهورةٌ عند الناس، ومستندها حديثٌ عند النسائي صحّحه الألباني، وليست في الصحيحين — ونُبيِّن ذلك ولا نوهم خلافه. وأما الثابت في البخاري فهو قراءتها عند النوم، وأن من قرأها لم يزل عليه من الله حافظ ولا يقربه شيطان حتى يصبح.",
+    ref: "Before sleeping: Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5010. After the prayer: Sunan an-Nasa'i, authenticated by al-Albani — not in the two Sahihs",
+    strength: "Sahih — Narrated by al-Bukhari (for reciting it before sleep); the practice after each prayer is Strong — Narrated by an-Nasa'i, authenticated by al-Albani",
+    keys: ["ayat al kursi","kursi","after prayer","chair verse","2:255","protection","sleep","آية الكرسي","بعد الصلاة","الحفظ","النوم","الحماية"]
+  },
+  {
+    id: "w-tahlil-100",
+    stage: "daily", stageEn: "Every day", stageAr: "كل يوم",
+    title: "A hundred times a day — la ilaha illa Allah, alone",
+    titleAr: "مئة مرة في اليوم: لا إله إلا الله وحده لا شريك له",
+    when: "Any time in the day; many say it in the morning.",
+    whenAr: "في أي وقتٍ من اليوم، وكثيرٌ يقولها في الصباح.",
+    arabic: "لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+    count: "100 times a day",
+    countAr: "مئة مرة في اليوم",
+    meaning: "Whoever says it a hundred times in a day has the reward of freeing ten slaves, a hundred good deeds are written for him, a hundred bad deeds are erased, and it is a protection from Shaytan for that day until evening.",
+    meaningAr: "من قالها مئة مرة في يومٍ كانت له عَدْلَ عشر رقاب، وكُتبت له مئة حسنة، ومُحيت عنه مئة سيئة، وكانت له حِرزًا من الشيطان يومه ذلك حتى يُمسي.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6403",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["100 times","hundred","daily","dhikr","tahlil","protection","shaytan","reward","مئة مرة","ذكر يومي","لا إله إلا الله","حرز","الشيطان","الأجر"]
+  },
+  {
+    id: "w-tasbih-100",
+    stage: "daily", stageEn: "Every day", stageAr: "كل يوم",
+    title: "A hundred times a day — Subhan Allah wa bihamdih",
+    titleAr: "مئة مرة في اليوم: سبحان الله وبحمده",
+    when: "Any time in the day — short enough to say while walking or working.",
+    whenAr: "في أي وقت — قصيرةٌ تُقال في المشي والعمل.",
+    arabic: "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+    count: "100 times a day",
+    countAr: "مئة مرة في اليوم",
+    meaning: "Whoever says it a hundred times in a day has his sins wiped away, even if they were like the foam of the sea.",
+    meaningAr: "من قال سبحان الله وبحمده في يومٍ مئة مرة حُطَّت خطاياه وإن كانت مثل زَبَد البحر.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6405",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["100 times","hundred","subhanallah","sins","forgiven","easy","short","daily","مئة مرة","سبحان الله وبحمده","الذنوب","زبد البحر","ذكر يسير"]
+  },
+
+  /* ---------------- ASKING FOR MERCY AND FORGIVENESS ---------------- */
+  {
+    id: "w-sayyid-istighfar",
+    stage: "mercy", stageEn: "Asking forgiveness", stageAr: "طلب المغفرة",
+    title: "Sayyid al-Istighfar — the best way to ask forgiveness",
+    titleAr: "سيّد الاستغفار",
+    when: "Morning and evening. Whoever says it in the day with certainty and dies before evening, or says it at night and dies before morning, is of the people of Paradise.",
+    whenAr: "في الصباح والمساء. من قالها من النهار موقنًا بها فمات من يومه قبل أن يُمسي فهو من أهل الجنة، ومن قالها من الليل وهو موقنٌ بها فمات قبل أن يُصبح فهو من أهل الجنة.",
+    arabic: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+    meaning: "The Prophet ﷺ called this the master of seeking forgiveness. It admits the favour and admits the sin in the same breath, and asks from the only One who can forgive.",
+    meaningAr: "سمّاه النبي ﷺ سيّد الاستغفار؛ يُقرّ فيه العبد بالنعمة ويُقرّ بالذنب في نَفَسٍ واحد، ويسأل من لا يغفر الذنوب سواه.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6306",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["istighfar","forgiveness","sin","repent","mercy","morning","evening","best","الاستغفار","سيد الاستغفار","الذنب","التوبة","الرحمة","الصباح","المساء"]
+  },
+  {
+    id: "w-istighfar-70",
+    stage: "mercy", stageEn: "Asking forgiveness", stageAr: "طلب المغفرة",
+    title: "He ﷺ sought forgiveness more than seventy times a day",
+    titleAr: "استغفاره ﷺ أكثر من سبعين مرة في اليوم",
+    when: "Throughout the day, in ordinary moments.",
+    whenAr: "في عموم اليوم وفي أوقات العادة.",
+    arabic: "أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",
+    count: "more than 70 times a day",
+    countAr: "أكثر من سبعين مرة في اليوم",
+    meaning: "Abu Hurairah رضي الله عنه heard him swear by Allah that he asked forgiveness and turned to Him in repentance more than seventy times a day — and his past and future faults were already forgiven.",
+    meaningAr: "سمع أبو هريرة رضي الله عنه النبي ﷺ يُقسم بالله أنه يستغفر الله ويتوب إليه في اليوم أكثر من سبعين مرة، وقد غُفر له ما تقدّم وما تأخّر.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6307",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["istighfar","seventy","70","daily","repent","forgiveness","habit","الاستغفار","سبعين","التوبة","المغفرة","عادة يومية"]
+  }
+];
+
+/* ============================================================
    CLASSICAL WORDS EXPLAINED
    The hadith wording is seventh-century Arabic. A native speaker today
    reads "قَطَط" or "مُمْحِلين" or "يعاسيب" and stops — these words are
