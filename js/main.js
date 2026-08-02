@@ -112,6 +112,101 @@ async function iitwFetchVideoInfo(url) {
    those are only accepted when the title actually says "Surah" before them.
    When nothing is certain, nothing is suggested. */
 
+/* ---------- Finding a verse from the words themselves ----------
+   Recitation clips are very often titled with the opening words of the verse
+   rather than the surah — "خذوه فغلوه | محمد اللحيدان" names no surah at all.
+   Looking only for surah names found nothing and left the owner to look
+   everything up by hand. So the whole Quran is fetched once and searched: if
+   the title quotes the verse, the surah AND the exact ayah number come back. */
+let _iitwQuran = null;
+let _iitwQuranPromise = null;
+
+function iitwNormQuran(s) {
+  return String(s || "")
+    .replace(/[ً-ْٰـۖ-ۭ]/g, "")   // harakat, waqf marks
+    .replace(/[أإآٱ]/g, "ا")            // hamza forms -> alif
+    .replace(/ى/g, "ي").replace(/ة/g, "ه")   // alif maqsura, ta marbuta
+    .replace(/[^ء-ي ]/g, " ")
+    .replace(/\s+/g, " ").trim();
+}
+
+async function iitwLoadQuran() {
+  if (_iitwQuran) return _iitwQuran;
+  if (_iitwQuranPromise) return _iitwQuranPromise;
+  _iitwQuranPromise = (async () => {
+    try {
+      const r = await fetch("https://api.alquran.cloud/v1/quran/quran-simple");
+      const j = await r.json();
+      if (j.code !== 200) throw new Error("no quran");
+      const out = [];
+      j.data.surahs.forEach(su => {
+        su.ayahs.forEach(a => {
+          out.push({
+            s: su.number, sName: su.englishName,
+            // "سُورَةُ الحَاقَّةِ" -> "الحاقة": drop the word and the harakat.
+            sAr: su.name.replace(/^سُورَةُ\s*/, "").replace(/[ؐ-ًؚ-ٰٟۖ-ۭ]/g, ""),
+            a: a.numberInSurah, norm: iitwNormQuran(a.text), text: a.text
+          });
+        });
+      });
+      _iitwQuran = out;
+      return out;
+    } catch (e) { _iitwQuranPromise = null; return null; }
+  })();
+  return _iitwQuranPromise;
+}
+
+/* Pull the Arabic phrases out of a video title, longest first, and look each
+   one up. The longest phrase that lands on exactly one verse wins — a short
+   common phrase that appears in many verses is not evidence of anything. */
+async function iitwFindVerseFromText(text) {
+  const quran = await iitwLoadQuran();
+  if (!quran) return null;
+
+  // Titles usually read "<verse words> | <reciter>". Try each part.
+  const parts = String(text || "").split(/[|｜\-–—•·:،]/).map(p => iitwNormQuran(p)).filter(p => p);
+  const candidates = [];
+  parts.forEach(p => {
+    const words = p.split(" ").filter(w => w.length > 1);
+    // Every run of words, longest first.
+    for (let len = Math.min(words.length, 8); len >= 2; len--) {
+      for (let i = 0; i + len <= words.length; i++) {
+        candidates.push(words.slice(i, i + len).join(" "));
+      }
+    }
+  });
+  candidates.sort((a, b) => b.length - a.length);
+
+  for (const q of candidates) {
+    if (q.length < 8) continue;                 // too short to be distinctive
+    const hits = quran.filter(v => v.norm.indexOf(q) !== -1);
+    if (hits.length === 1) {
+      return { surah: hits[0].s, surahName: hits[0].sName, surahAr: hits[0].sAr,
+               ayah: hits[0].a, arabic: hits[0].text, matched: q, exact: true };
+    }
+    if (hits.length > 1 && hits.length <= 4) {
+      // Same words in a few places — report the first and say it is not certain.
+      return { surah: hits[0].s, surahName: hits[0].sName, surahAr: hits[0].sAr,
+               ayah: hits[0].a, arabic: hits[0].text, matched: q, exact: false,
+               alsoIn: hits.slice(1).map(h => h.s + ":" + h.a) };
+    }
+  }
+  return null;
+}
+
+/* The reciter is usually after the separator: "خذوه فغلوه | محمد اللحيدان".
+   The channel name is often the page, not the person, so this is preferred. */
+function iitwReciterFromTitle(title) {
+  const parts = String(title || "").split(/[|｜]/).map(p => p.trim()).filter(Boolean);
+  if (parts.length < 2) return "";
+  const last = parts[parts.length - 1];
+  // A name, not a sentence: a few words, mostly Arabic letters.
+  const words = last.split(/\s+/);
+  if (words.length > 5) return "";
+  if (!/[ء-ي]/.test(last) && !/[A-Za-z]/.test(last)) return "";
+  return last.replace(/^(الشيخ|القارئ|قراءة|تلاوة|بصوت)\s+/, "").trim();
+}
+
 // Common spellings people actually type. Without these, "Yaseen" found nothing.
 const IITW_SURAH_ALIASES = {
   1:["fatiha","fatihah","faatiha"], 2:["baqara","baqarah","bakara","baqrah"],
