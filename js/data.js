@@ -794,6 +794,19 @@ const COMPANIONS = [
     ]
   },
   {
+    id: "saad-ibn-muadh",
+    name: "Sa'd ibn Mu'adh",
+    arabic: "سعد بن معاذ",
+    title: "Chief of the Aws — the one for whom the Throne shook",
+    category: "companion",
+    summary: "The chief of the Aws in Madinah, who accepted Islam at thirty-one through Mus'ab ibn Umayr and brought his entire tribe with him in a single day. He lived only about six years as a Muslim, spoke for the Ansar at Badr, and was wounded at the Trench. The Prophet ﷺ said that the Throne of the Most Merciful shook at his death.",
+    summaryAr: "سيّد الأوس بالمدينة، أسلم وهو ابن إحدى وثلاثين سنة على يد مصعب بن عمير، فأسلمت قبيلته كلّها في يومٍ واحد. لم يعش مسلمًا إلا نحو ست سنين، وتكلّم عن الأنصار يوم بدر، وأُصيب يوم الخندق. وقال النبي ﷺ: اهتزّ عرش الرحمن لموت سعد بن معاذ.",
+    refs: [
+      "Sahih al-Bukhari, Book of the Merits of the Ansar, Hadith 3803 — the Throne shaking at his death",
+      "Ibn Ishaq and Ibn Sa'd — his acceptance of Islam through Mus'ab and his words at Badr"
+    ]
+  },
+  {
     id: "ammar",
     name: "Ammar ibn Yasir",
     arabic: "عمار بن ياسر",
