@@ -2210,9 +2210,91 @@ const COURSES = [
    numbering differs between printings and a guessed number is worse
    than none. The "lesson" is what the situation itself teaches.
    ============================================================ */
+/* ============================================================
+   CLASSICAL WORDS EXPLAINED
+   The hadith wording is seventh-century Arabic. A native speaker today
+   reads "قَطَط" or "مُمْحِلين" or "يعاسيب" and stops — these words are
+   simply not in use any more. Each entry gives the meaning in ordinary
+   modern Arabic, and in English for readers using that side of the site.
+   The key is written WITHOUT harakat; matching strips them from the text.
+   ============================================================ */
+const AR_GLOSSARY = {
+  // — the hadith of the Dajjal —
+  "قطط":        { ar: "شديد جُعودة الشعر", en: "with tightly curled hair" },
+  "طافئة":      { ar: "ذاهبة الضوء، أي عوراء", en: "sightless — a blind eye" },
+  "خلة":        { ar: "الطريق أو الثغرة بين موضعين", en: "the gap or road between two places" },
+  "عاث":        { ar: "أفسد وأكثر من الفساد", en: "spread ruin" },
+  "اقدروا":     { ar: "احسِبوا مقداره بالتقدير", en: "work out its measure" },
+  "الغيث":      { ar: "المطر", en: "rain" },
+  "استدبرته":   { ar: "دفعته من خلفه", en: "driving it from behind" },
+  "سارحتهم":    { ar: "ماشيتهم التي تخرج للرعي", en: "their grazing animals" },
+  "ذرى":        { ar: "أعالي الأسنمة", en: "the tops of the camels' humps" },
+  "ضروعا":      { ar: "جمع ضَرْع، موضع اللبن", en: "udders" },
+  "خواصر":      { ar: "جوانب البطن", en: "flanks" },
+  "ممحلين":     { ar: "أصابهم الجدب والقحط", en: "struck by drought" },
+  "الخربة":     { ar: "المكان المهجور الخالي", en: "a ruined, deserted place" },
+  "كيعاسيب":    { ar: "كأسراب النحل خلف ذكورها", en: "like a swarm of bees" },
+  "جزلتين":     { ar: "قطعتين", en: "two pieces" },
+  "الغرض":      { ar: "الهدف الذي يُرمى إليه", en: "the archer's target" },
+  "يتهلل":      { ar: "يستنير ويُشرق", en: "shining, lit up" },
+  "مهرودتين":   { ar: "ثوبين مصبوغين صبغًا خفيفًا", en: "two lightly dyed garments" },
+  "جمان":       { ar: "حبّ اللؤلؤ", en: "pearl-like beads" },
+  "الطيالسة":   { ar: "أكسية تُلبس على الكتفين", en: "shawls worn over the shoulders" },
+  "حجيج":       { ar: "المُخاصِم بالحُجّة", en: "the one who argues the case" },
+  "خفض":        { ar: "هوّن من أمره", en: "made it sound small" },
+  "رفع":        { ar: "عظّم من أمره", en: "made it sound great" },
+  "الجساسة":    { ar: "دابّة سُمّيت بذلك لتجسُّسها الأخبار", en: "the beast — named for spying out news" },
+  "الدير":      { ar: "صومعة النصارى", en: "a monastery" },
+  "أهلب":       { ar: "كثير الشعر غليظه", en: "thickly haired" },
+  "طيبة":       { ar: "اسم من أسماء المدينة النبوية", en: "one of the names of Madinah" },
+  "نقب":        { ar: "الطريق في الجبل، والمدخل", en: "a mountain pass, an entry road" },
+  "مخصرته":     { ar: "عصا صغيرة كان يمسكها بيده", en: "the small staff he held" },
+  "زغر":        { ar: "عين ماء بالشام", en: "a spring in Syria" },
+  "بيسان":      { ar: "موضع بالشام فيه نخل", en: "a place in Syria known for its palms" },
+  "لد":         { ar: "بلدة بفلسطين", en: "a town in Palestine" },
+  "أصبهان":     { ar: "مدينة بفارس", en: "a city in Persia" },
+  "المنارة":    { ar: "المئذنة", en: "the minaret" },
+
+  // — the other stories —
+  "تزرموه":     { ar: "لا تقطعوا عليه بوله", en: "do not cut him off" },
+  "خشاش":       { ar: "صغار هوامّ الأرض وحشراتها", en: "the small creatures of the earth" },
+  "الكل":       { ar: "الثقل، ومن لا يستقلّ بأمر نفسه", en: "the burden — those who cannot manage alone" },
+  "تكسب":       { ar: "تُعطي وتُنفق على", en: "you give to" },
+  "المعدوم":    { ar: "الفقير الذي لا يملك شيئًا", en: "the destitute" },
+  "تقري":       { ar: "تُحسن ضيافته", en: "you honour (the guest)" },
+  "نوائب":      { ar: "ما ينزل بالناس من الشدائد", en: "the calamities that strike people" },
+  "أهب":        { ar: "جلود لم تُدبغ بعد", en: "untanned hides" },
+  "قرظا":       { ar: "ورق شجر يُدبغ به الجلد", en: "leaves used for tanning" },
+  "عرق":        { ar: "مِكتل أو زنبيل من خوص", en: "a large basket" },
+  "لابتيها":    { ar: "حرّتا المدينة، أرضها ذات الحجارة السود", en: "the two lava fields of Madinah" },
+  "دف":         { ar: "صوت حركة النعلين", en: "the sound of footsteps" },
+  "تقم":        { ar: "تكنس وتنظّف", en: "used to sweep" },
+  "يشوص":       { ar: "يدلك فمه وينقّيه", en: "scrubs his mouth" },
+  "خمصا":       { ar: "ضمور البطن من الجوع", en: "the hollowness of hunger" },
+  "صلتا":       { ar: "مسلولًا من غمده", en: "drawn from its sheath" },
+  "اخترط":      { ar: "سلّ السيف من غمده", en: "drew (the sword)" },
+  "الروع":      { ar: "الفزع والخوف", en: "the fright" },
+  "زملوني":     { ar: "لفّوني بالثياب", en: "wrap me in a cloak" },
+  "الناموس":    { ar: "صاحب السرّ، والمقصود جبريل عليه السلام", en: "the keeper of the secret — Jibril" },
+  "طأطأ":       { ar: "خفض رأسه", en: "lowered (his head)" },
+  "الدباء":     { ar: "القَرْع", en: "gourd" },
+  "القصعة":     { ar: "إناء كبير يُؤكل فيه", en: "a large serving dish" },
+  "التلبينة":   { ar: "حساء يُصنع من دقيق الشعير", en: "a broth made from barley flour" },
+  "مجمة":       { ar: "تُريح القلب وتُذهب بعض الغمّ", en: "it rests the heart" },
+  "هرة":        { ar: "قطّة", en: "a cat" },
+  "أف":         { ar: "كلمة تضجُّر وتبرُّم", en: "a word of irritation" },
+  "الأعور":     { ar: "من ذهبت إحدى عينيه", en: "blind in one eye" },
+  "رقبة":       { ar: "المملوك، والمراد عتقه", en: "a slave — meaning to free one" },
+  "مصلاه":      { ar: "الموضع الذي صلّى فيه", en: "the spot where he prayed" },
+  "الوحي":      { ar: "ما يُنزله الله على أنبيائه", en: "revelation" }
+};
+
 const PROPHET_STORIES = [
   {
     id: "dajjal-tamim-jassasah",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
     title: "Tamim ad-Dari and the chained man on the island — the Dajjal",
     titleAr: "تميم الداري والجسّاسة والرجل المُوثَق في الجزيرة — المسيح الدجّال",
     theme: "The warning every prophet gave",
@@ -2228,6 +2310,9 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-description-nawwas",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
     title: "What he looks like, how long he stays, and what he can do",
     titleAr: "صفته ومدَّة مكثه وما يستطيع أن يفعله",
     theme: "The Dajjal described in detail",
@@ -2243,6 +2328,9 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-fire-and-water",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
     title: "His fire is cool water, and his water is fire",
     titleAr: "ناره ماءٌ بارد، وماؤه نار",
     theme: "When your own eyes are the trap",
@@ -2258,6 +2346,9 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-protection",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
     title: "The protection he gave: ten verses, and a supplication in every prayer",
     titleAr: "الحماية التي دلَّ عليها: عشر آيات ودعاءٌ في كلِّ صلاة",
     theme: "What you are told to do about it",
@@ -2273,6 +2364,9 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-end",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
     title: "Who follows him, and who ends him",
     titleAr: "من يتبعه ومن يقتله",
     theme: "How it finishes",

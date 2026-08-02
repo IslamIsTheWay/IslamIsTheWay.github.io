@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608021835" />
+  <link rel="stylesheet" href="css/style.css?v=202608021845" />
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608021835"></script>
+  <script src="js/data.js?v=202608021845"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -109,8 +109,94 @@
         .map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
     }
 
+    /* ---------- Classical words used in this story ----------
+       The hadith wording is old Arabic and several words have simply fallen
+       out of use. Rather than make the reader look them up, the ones that
+       actually appear in this story are listed in a box of their own.
+
+       Matching is done word by word rather than with a regex, because the
+       text carries harakat between every letter and a pattern that tries to
+       cope with that is both fragile and slow. Common prefixes (و ف ب ل ك
+       and the definite article) are peeled off so "وَالْخَرِبَة" still finds
+       "الخربة". */
+    function stripHarakat(w) {
+      return String(w || "").replace(/[ً-ْٰـ]/g, "");
+    }
+    function glossaryFor(story) {
+      if (typeof AR_GLOSSARY === "undefined") return [];
+      const text = [story.storyAr, story.arabic || "", story.titleAr, story.lessonAr].join(" ");
+      const found = new Map();
+      stripHarakat(text).split(/[^ء-ي]+/).filter(Boolean).forEach(raw => {
+        // Try the word itself, then with prefixes removed, then with "ال" added.
+        const tries = [raw];
+        const noPrefix = raw.replace(/^(وال|فال|بال|كال|لل|و|ف|ب|ك|ل)/, "");
+        if (noPrefix && noPrefix !== raw && noPrefix.length >= 3) tries.push(noPrefix);
+        /* Adding "ال" is only safe for a word long enough to be distinctive.
+           Without this, the ordinary "كلّ" (every) matched the entry for
+           "الكَلّ" (a burden) and glossed it wrongly. */
+        if (raw.length >= 3) {
+          if (!/^ال/.test(raw)) tries.push("ال" + raw);
+          else tries.push(raw.replace(/^ال/, ""));
+        }
+        for (const t of tries) {
+          if (AR_GLOSSARY[t] && !found.has(t)) { found.set(t, AR_GLOSSARY[t]); break; }
+        }
+      });
+      return [...found.entries()].map(([word, m]) => ({ word, ar: m.ar, en: m.en }));
+    }
+
+    function glossaryBox(story) {
+      const list = glossaryFor(story);
+      if (!list.length) return "";
+      return `<div class="story-gloss">
+        <div class="story-gloss-head">📖 Words explained <span dir="rtl" style="font-family:'Amiri',serif;">— معاني الكلمات</span></div>
+        <dl class="gloss-list">
+          ${list.map(g => `<div class="gloss-item">
+              <dt dir="rtl">${g.word}</dt>
+              <dd dir="rtl" class="gloss-ar">${g.ar}</dd>
+              <dd class="gloss-en en-only">${g.en}</dd>
+            </div>`).join("")}
+        </dl>
+      </div>`;
+    }
+
+    /* ---------- Stories that belong together ----------
+       Five separate cards about the Dajjal read like five unconnected
+       stories. Anything sharing a `group` is shown as one series: which part
+       this is, out of how many, with the others linked so the reader can move
+       between them instead of wondering whether they missed something. */
+    function seriesBar(s) {
+      if (!s.group) return "";
+      const family = PROPHET_STORIES.filter(x => x.group === s.group);
+      if (family.length < 2) return "";
+      const pos = family.findIndex(x => x.id === s.id) + 1;
+      const others = family.filter(x => x.id !== s.id);
+      return `<div class="story-series">
+        <div class="story-series-head">
+          🔗 Part ${pos} of ${family.length} — <strong>${s.groupTitle}</strong>
+          <span dir="rtl" style="font-family:'Amiri',serif;">— الجزء ${pos} من ${family.length} من «${s.groupTitleAr}»</span>
+        </div>
+        <div class="story-series-links">
+          ${others.map(o => `<a href="#${o.id}" onclick="jumpToStory('${o.id}');return false;">${o.title}</a>`).join("")}
+        </div>
+      </div>`;
+    }
+
+    // Clear any filter first, so the target is definitely on the page.
+    function jumpToStory(id) {
+      const inp = document.getElementById("storySearch");
+      if (inp.value) { inp.value = ""; searchStories(); }
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        el.classList.add("story-flash");
+        setTimeout(() => el.classList.remove("story-flash"), 1600);
+      }
+    }
+
     function storyCard(s) {
-      return `<article class="story-card">
+      return `<article class="story-card" id="${s.id}">
+        ${seriesBar(s)}
         <div class="story-theme">${s.theme} <span dir="rtl" style="font-family:'Amiri',serif;">— ${s.themeAr}</span></div>
         <h2 class="story-title">${s.title}</h2>
         <div class="story-title-ar" dir="rtl">${s.titleAr}</div>
@@ -119,6 +205,8 @@
         <div class="story-body-ar" dir="rtl">${paras(s.storyAr)}</div>
 
         ${s.arabic ? `<p class="story-quote" dir="rtl" data-speak>${s.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
+
+        ${glossaryBox(s)}
 
         <div class="story-lesson">
           <div class="story-lesson-head">&#128161; What this teaches <span dir="rtl" style="font-family:'Amiri',serif;">— ما يُستفاد</span></div>
@@ -159,7 +247,7 @@
     renderStories(PROPHET_STORIES);
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/main.js?v=202608021835"></script>
-  <script src="js/i18n.js?v=202608021835"></script>
+  <script src="js/main.js?v=202608021845"></script>
+  <script src="js/i18n.js?v=202608021845"></script>
 </body>
 </html>
