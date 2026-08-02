@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608021823" />
+  <link rel="stylesheet" href="css/style.css?v=202608021831" />
 </head>
 <body>
 
@@ -99,16 +99,24 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608021823"></script>
+  <script src="js/data.js?v=202608021831"></script>
   <script>
+    // Longer stories are written with blank lines between paragraphs; HTML
+    // would collapse those into one block of text, so they become real
+    // paragraphs here.
+    function paras(text) {
+      return String(text || "").split(/\n\s*\n/)
+        .map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
+    }
+
     function storyCard(s) {
       return `<article class="story-card">
         <div class="story-theme">${s.theme} <span dir="rtl" style="font-family:'Amiri',serif;">— ${s.themeAr}</span></div>
         <h2 class="story-title">${s.title}</h2>
         <div class="story-title-ar" dir="rtl">${s.titleAr}</div>
 
-        <p class="story-body en-only">${s.story}</p>
-        <p class="story-body-ar" dir="rtl">${s.storyAr}</p>
+        <div class="story-body en-only">${paras(s.story)}</div>
+        <div class="story-body-ar" dir="rtl">${paras(s.storyAr)}</div>
 
         ${s.arabic ? `<p class="story-quote" dir="rtl" data-speak>${s.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
 
@@ -151,7 +159,7 @@
     renderStories(PROPHET_STORIES);
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/main.js?v=202608021823"></script>
-  <script src="js/i18n.js?v=202608021823"></script>
+  <script src="js/main.js?v=202608021831"></script>
+  <script src="js/i18n.js?v=202608021831"></script>
 </body>
 </html>

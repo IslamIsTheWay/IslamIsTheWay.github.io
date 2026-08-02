@@ -2201,6 +2201,9 @@ const COURSES = [
 
 /* ============================================================
    STORIES OF THE PROPHET MUHAMMAD ﷺ
+   The Dajjal story is placed first deliberately: it is the one warning
+   every prophet before him gave his people, and the Prophet ﷺ gathered
+   the companions in the mosque specifically to tell it.
    Each one was located in the text of Sahih al-Bukhari or Sahih Muslim
    before being written here — none is from memory. The Bukhari numbers
    match the standard numbering; Muslim is cited by book, because its
@@ -2208,6 +2211,21 @@ const COURSES = [
    than none. The "lesson" is what the situation itself teaches.
    ============================================================ */
 const PROPHET_STORIES = [
+  {
+    id: "dajjal-tamim-jassasah",
+    title: "Tamim ad-Dari and the chained man on the island — the Dajjal",
+    titleAr: "تميم الداري والجسّاسة والرجل المُوثَق في الجزيرة — المسيح الدجّال",
+    theme: "The warning every prophet gave",
+    themeAr: "التحذير الذي حذَّره كلُّ نبيّ",
+    story: "Fatimah bint Qays رضي الله عنها said the Prophet ﷺ called the people to the mosque, sat on the pulpit smiling, and said: \"By Allah, I have not gathered you for exhortation or a warning, but because Tamim ad-Dari — a Christian who came and accepted Islam — told me something that agrees with what I have been telling you about the Dajjal.\"\n\nTamim said he sailed with thirty men of Lakhm and Judham and the waves tossed them for a month, until they landed at sunset on an island in the sea. There a beast met them, so thickly haired they could not tell its face from its back. They said: what are you? It said: \"I am al-Jassasah. Go to that man in the monastery — he is desperate for news of you.\"\n\nThey hurried to the monastery and found a huge man, his hands bound to his neck and iron shackles from his knees to his ankles. He asked them about three things: the date-palms of Baysan — do they still bear fruit? The lake of Tiberias — is there still water in it? The spring of Zughar — does it still water the land? To each they answered yes, and to each he said it would soon fail.\n\nThen he asked about the unlettered Prophet: what has he done? They said he has left Makkah and settled in Yathrib. He asked: do the Arabs fight him? They said yes. He asked how he dealt with them, and they told him he had overcome those around him and they had submitted. He said: \"That is better for them, that they obey him.\"\n\nThen he said: \"I will tell you about myself. I am the Dajjal. I shall soon be permitted to come out, and I will travel the earth and leave no town where I do not stay forty nights — except Makkah and Taybah. Both are forbidden to me. Every time I try to enter one of them an angel meets me with a drawn sword and turns me back, and there are angels guarding every road into them.\"\n\nThe Prophet ﷺ struck the pulpit with his staff and said: \"This is Taybah — this is Madinah.\" Then: \"Did I not tell you this before?\" The people said yes. He said Tamim's account pleased him because it matched what he had told them about the Dajjal, and about Makkah and Madinah. Then he pointed east and said three times: \"He is in the east — he is in the east — he is in the east.\"",
+    storyAr: "قالت فاطمة بنت قيس رضي الله عنها: نادى النبيُّ ﷺ الناس إلى المسجد، فجلس على المنبر وهو يضحك فقال: «والله ما جمعتكم لرغبةٍ ولا لرهبة، ولكن جمعتكم لأنّ تميمًا الداريَّ — رجلًا نصرانيًّا فجاء فأسلم — حدَّثني حديثًا وافق الذي كنت أحدِّثكم عن المسيح الدجّال».\n\nحدَّث تميمٌ أنه ركب في سفينةٍ مع ثلاثين رجلًا من لَخْمٍ وجُذام، فلعب بهم الموج شهرًا، حتى أَرْفَؤوا عند غروب الشمس إلى جزيرةٍ في البحر. فلقيتهم دابّةٌ أهلبُ كثيرُ الشعر لا يُدرى ما قُبُله من دُبُره، فقالوا: ما أنتِ؟ قالت: «أنا الجسّاسة، انطلقوا إلى هذا الرجل في الدَّير فإنه إلى خبركم بالأشواق».\n\nفانطلقوا سراعًا حتى دخلوا الدَّير، فإذا فيه أعظمُ إنسانٍ رأوه، يداه مجموعتان إلى عنقه، وما بين ركبتيه إلى كعبيه بالحديد. فسألهم عن ثلاث: نخل بَيْسان، هل يُثمر؟ وبُحيرة الطبرية، هل فيها ماء؟ وعين زُغَر، هل فيها ماء وهل يزرع أهلها بمائها؟ فأجابوه بنعم في كلٍّ، فقال في كلٍّ إنها تُوشك أن تذهب.\n\nثم سأل عن النبيِّ الأمّيِّ: ما فعل؟ قالوا: قد خرج من مكة ونزل يثرب. قال: أقاتله العرب؟ قالوا: نعم. قال: كيف صنع بهم؟ فأخبروه أنه قد ظهر على من يليه من العرب وأطاعوه. قال: «قد كان ذلك؟ فإن ذاك خيرٌ لهم أن يُطيعوه».\n\nثم قال: «إني مُخبركم عني: أنا المسيح الدجّال، وإني أوشك أن يُؤذَن لي في الخروج، فأخرج فأسير في الأرض فلا أدع قريةً إلا هبطتها في أربعين ليلة، غير مكة وطَيْبة، فهما محرَّمتان عليّ كلتاهما، كلما أردت أن أدخل واحدةً منهما استقبلني ملَكٌ بيده السيف صَلْتًا يصدُّني عنها، وإنّ على كلِّ نَقْبٍ منها ملائكةً يحرسونها».\n\nفطعن النبيُّ ﷺ بمِخصرته في المنبر وقال: «هذه طَيْبة، هذه طَيْبة، هذه طَيْبة — يعني المدينة». ثم قال: «ألا هل كنت حدَّثتكم ذلك؟» فقال الناس: نعم. وأخبر أن حديث تميمٍ أعجبه لأنه وافق ما كان يحدِّثهم عن الدجّال وعن المدينة ومكة. ثم أشار بيده إلى المشرق وقال: «ألا إنه في بحر الشام أو بحر اليمن، لا بل من قِبَل المشرق، ما هو من قِبَل المشرق، ما هو من قِبَل المشرق».",
+    arabic: "أَنَا الْمَسِيحُ الدَّجَّالُ، وَإِنِّي أُوشِكُ أَنْ يُؤْذَنَ لِي فِي الْخُرُوجِ",
+    lesson: "The Prophet ﷺ described the Dajjal in ways that can be checked: he is blind in one eye — \"and your Lord is not one-eyed\" — and between his eyes is written kafir, which every believer will read. No prophet was sent who did not warn his people about him, and the Prophet ﷺ said he would say about him what no prophet had said before: that plain fact about his eye. That is the point of the warning. He will come with wonders, and the test is not whether the wonders are impressive but whether you are willing to see the defect the wonders are meant to distract you from. Madinah and Makkah are closed to him, guarded at every road. Notice also what the Prophet ﷺ did with Tamim's account: he did not hide that it came from a man who had been a Christian, nor claim it as revelation. He weighed it against what he already knew and told the people plainly where it came from.",
+    lessonAr: "وصف النبيُّ ﷺ الدجّال بما يمكن التحقّق منه: إنه أعورُ العين، «وإنّ ربَّكم ليس بأعور»، وبين عينيه مكتوبٌ كافر يقرؤه كلُّ مؤمن. وما بُعث نبيٌّ إلا أنذر أمّته إياه، وقال ﷺ إنه سيقول فيه قولًا لم يقله نبيٌّ لقومه: تلك الحقيقة الظاهرة في عينه. وهذا هو مقصود التحذير؛ فإنه سيأتي بالعجائب، والامتحان ليس في عظمة العجائب بل في استعدادك أن ترى النقص الذي سِيقت العجائب لتصرفك عنه. والمدينة ومكة محرَّمتان عليه، على كلِّ نَقْبٍ منهما ملائكة. وتأمَّل ما صنعه ﷺ بخبر تميم: لم يُخفِ أنه من رجلٍ كان نصرانيًّا، ولم يجعله وحيًا، بل وزنه بما عنده وأخبر الناس بمصدره صريحًا.",
+    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour (Kitab al-Fitan wa Ashrat as-Sa'ah) — narrated by Fatimah bint Qays; the description of his eye is in Sahih al-Bukhari, Book of Afflictions, Hadith 7131, and the angels guarding Madinah in Hadith 1879",
+    strength: "Sahih — Narrated by Muslim; the description of the Dajjal is agreed upon (al-Bukhari and Muslim)",
+    keys: ["dajjal","antichrist","masih","jassasah","tamim","end of time","last hour","fitna","trial","signs","madinah","makkah","one-eyed","kafir","الدجال","المسيح الدجال","الجساسة","تميم الداري","آخر الزمان","الساعة","الفتنة","علامات","المدينة","مكة","أعور","كافر","الملاحم"]
+  },
   {
     id: "bedouin-mosque",
     title: "The bedouin who urinated in the mosque",
@@ -2457,5 +2475,95 @@ const PROPHET_STORIES = [
     ref: "Sahih al-Bukhari, Book of Food, Hadith 5435",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["invitation","food","poor","simple","humble","worker","tailor","child","دعوة","طعام","بسيط","تواضع","الخيّاط","العامل","غلام"]
+  },
+  {
+    id: "first-revelation",
+    title: "The first revelation, and what Khadijah said",
+    titleAr: "بدء الوحي وما قالته خديجة",
+    theme: "Being believed when you are terrified",
+    themeAr: "أن تُصدَّق وأنت مرعوب",
+    story: "Alone in the cave of Hira, the angel came and told him: Read. He said: \"I do not know how to read.\" He came home shaking and said: \"Cover me, cover me.\" Khadijah رضي الله عنها covered him, and when the fear left him he told her what had happened and said he feared for himself. She answered: \"Never. By Allah, Allah will never disgrace you. You keep good relations with your kin, you carry the burden of the weak, you give to the destitute, you honour the guest, and you help those struck by calamity.\" Then she took him to her cousin Waraqah, who told him this was the same one who came to Musa.",
+    storyAr: "بينما هو وحده في غار حِراء جاءه المَلَك فقال: اقرأ. فقال: «ما أنا بقارئ». فرجع يرجُف فؤاده وقال: «زمِّلوني زمِّلوني». فزمَّلته خديجة رضي الله عنها حتى ذهب عنه الرَّوع، فأخبرها الخبر وقال: «لقد خشيتُ على نفسي». فقالت: كلَّا واللهِ، ما يُخزيك اللهُ أبدًا؛ إنك لتصِل الرَّحم، وتحمل الكَلَّ، وتُكسِب المعدوم، وتقري الضيف، وتُعين على نوائب الحق. ثم انطلقت به إلى ابن عمِّها ورقة، فأخبره أنه النَّاموس الذي نزل على موسى.",
+    arabic: "كَلَّا وَاللَّهِ مَا يُخْزِيكَ اللَّهُ أَبَدًا",
+    lesson: "He was frightened and doubted himself. She did not argue about the vision — she listed what he had actually done with his life, and let that answer the fear. When someone you love is shaken, evidence of who they have been is worth more than reassurance.",
+    lessonAr: "كان خائفًا يشكُّ في نفسه، فلم تُجادله في الرؤيا، بل عدَّدت له ما صنعه في حياته فأجابت الخوف بذلك. فإذا اهتزَّ من تُحبّ، فذِكر ما كان عليه أنفع من مجرَّد التطمين.",
+    ref: "Sahih al-Bukhari, Book of Revelation, Hadith 3",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["revelation","hira","khadijah","fear","doubt","support","wife","comfort","الوحي","حراء","خديجة","خوف","شك","تطمين","الزوجة","المؤازرة"]
+  },
+  {
+    id: "feet-swollen",
+    title: "He prayed until his feet swelled",
+    titleAr: "قيامه ﷺ حتى تورَّمت قدماه",
+    theme: "Worship as gratitude, not as payment",
+    themeAr: "العبادة شكرًا لا مقابلًا",
+    story: "The Prophet ﷺ used to stand in prayer at night until his feet became swollen. He was asked: has Allah not forgiven you what came before and what came after? He answered: \"Should I not then be a grateful servant?\"",
+    storyAr: "كان النبيُّ ﷺ يقوم من الليل حتى تتورَّم قدماه، فقيل له: أليس قد غفر الله لك ما تقدَّم من ذنبك وما تأخَّر؟ فقال: «أفلا أكون عبدًا شكورًا».",
+    arabic: "أَفَلَا أَكُونُ عَبْدًا شَكُورًا",
+    lesson: "He had nothing left to earn and stood anyway. If worship is only a payment against sins, it stops the moment you feel safe. He worshipped out of gratitude, and gratitude has no ceiling.",
+    lessonAr: "لم يبقَ له ما يُحصِّله ومع ذلك قام. فالعبادة إن كانت مجرَّد سدادٍ للذنوب توقَّفت حين تشعر بالأمان، أما هو فعبَد شكرًا، والشكر لا سقف له.",
+    ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4836",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["worship","prayer","night","tahajjud","gratitude","thankful","lazy","effort","عبادة","صلاة","قيام الليل","الشكر","الكسل","الاجتهاد"]
+  },
+  {
+    id: "thumamah",
+    title: "\"Release Thumamah\"",
+    titleAr: "«أطلقوا ثُمامة»",
+    theme: "Winning someone by letting them go",
+    themeAr: "أن تكسب الرجل بإطلاقه",
+    story: "Horsemen brought back a captured chief of Bani Hanifah, Thumamah ibn Uthal, and tied him to one of the pillars of the mosque. The Prophet ﷺ came out and said: \"Release Thumamah.\" He went to a grove near the mosque, washed himself, came back into the mosque and said: I bear witness that there is no god but Allah, and that Muhammad is the Messenger of Allah.",
+    storyAr: "أُسِر ثُمامة بن أُثال سيِّد بني حنيفة، فرُبِط بساريةٍ من سواري المسجد. فخرج إليه النبي ﷺ فقال: «أطلقوا ثُمامة». فانطلق إلى نخلٍ قريبٍ من المسجد فاغتسل، ثم دخل المسجد فقال: أشهد أن لا إله إلا الله وأن محمدًا رسول الله.",
+    arabic: "أَطْلِقُوا ثُمَامَةَ",
+    lesson: "He was tied in the mosque and could see for himself how these people prayed and how they treated a man in their power. Then he was let go — and chose to come back. Nobody is argued into a change of heart; they are shown one.",
+    lessonAr: "رُبِط في المسجد فرأى بعينه كيف يصلُّون وكيف يعاملون رجلًا وقع في أيديهم، ثم أُطلق فعاد باختياره. فما أحدٌ يُجادَل حتى يتغيَّر قلبه، وإنما يُرى ما يغيِّره.",
+    ref: "Sahih al-Bukhari, Book of Salat, Hadith 462",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["enemy","captive","prisoner","forgive","release","dawah","invite","change","عدو","أسير","عفو","إطلاق","الدعوة","التغيير","هداية"]
+  },
+  {
+    id: "poisoned-sheep",
+    title: "The poisoned sheep at Khaybar",
+    titleAr: "الشاة المسمومة بخيبر",
+    theme: "Facing someone who tried to kill you",
+    themeAr: "مواجهة من أراد قتلك",
+    story: "After Khaybar a roasted sheep was given to the Prophet ﷺ as a gift, with poison in it. He gathered them and asked: \"Will you be truthful with me if I ask you something?\" They said yes. He asked: \"Did you put poison in this sheep?\" They said yes. He asked: \"What made you do that?\" They answered: \"We thought if you were a liar we would be rid of you, and if you were a prophet it would not harm you.\"",
+    storyAr: "لمّا فُتحت خيبر أُهديت للنبي ﷺ شاةٌ مشويّةٌ فيها سُمّ. فجمعهم وقال: «هل أنتم صادِقيَّ عن شيءٍ إن سألتكم عنه؟» قالوا: نعم يا أبا القاسم. قال: «هل جعلتم في هذه الشاة سُمًّا؟» قالوا: نعم. قال: «ما حملكم على ذلك؟» قالوا: أردنا إن كنتَ كاذبًا نستريح منك، وإن كنتَ نبيًّا لم يضرّك.",
+    arabic: "مَا حَمَلَكُمْ عَلَى ذَلِكَ",
+    lesson: "They admitted it to his face. His question was not a threat but a question — what made you do that. Even with people who had just tried to kill him, he asked before he judged.",
+    lessonAr: "أقرُّوا في وجهه، ولم يكن سؤاله تهديدًا بل سؤالًا حقيقيًّا: ما الذي حملكم؟ فحتى مع من حاولوا قتله سأل قبل أن يحكم.",
+    ref: "Sahih al-Bukhari, Book of Jizyah, Hadith 3169",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["betrayal","enemy","poison","harm","forgive","question","judge","خيانة","عدو","سُمّ","أذى","عفو","سؤال","حكم"]
+  },
+  {
+    id: "bilal-footsteps",
+    title: "He heard Bilal's footsteps ahead of him in Paradise",
+    titleAr: "سماعه ﷺ دفَّ نعلي بلال في الجنة",
+    theme: "The small thing you never stop doing",
+    themeAr: "العمل القليل الدائم",
+    story: "At Fajr the Prophet ﷺ said to Bilal رضي الله عنه: \"Tell me the deed you did with most hope after entering Islam, for I heard the sound of your sandals ahead of me in Paradise.\" Bilal said he knew of nothing except that whenever he made wudu, by day or night, he prayed with that wudu whatever was written for him to pray.",
+    storyAr: "قال النبي ﷺ لبلالٍ رضي الله عنه عند الفجر: «حدِّثني بأرجى عملٍ عملته في الإسلام، فإني سمعتُ دفَّ نعليك بين يديَّ في الجنة». فقال بلال: ما عملتُ عملًا أرجى عندي من أني لم أتطهَّر طُهورًا في ساعةٍ من ليلٍ أو نهارٍ إلا صلَّيتُ بذلك الطُّهور ما كُتب لي أن أصلِّي.",
+    arabic: "سَمِعْتُ دَفَّ نَعْلَيْكَ بَيْنَ يَدَيَّ فِي الْجَنَّةِ",
+    lesson: "Bilal could not think of anything impressive. It was two rak'ahs after wudu, done every single time for years. What gets you there may not be the large thing you did once, but the small thing you never dropped.",
+    lessonAr: "لم يجد بلالٌ عملًا عظيمًا يذكره، إنما ركعتان بعد الوضوء داوم عليهما سنين. فلعلَّ الذي يبلغ بك ليس العمل الكبير مرَّةً، بل الصغير الذي لم تتركه قط.",
+    ref: "Sahih al-Bukhari, Book of Tahajjud, Hadith 1149",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["small deeds","consistent","habit","wudu","prayer","paradise","bilal","little","العمل القليل","المداومة","الوضوء","صلاة","الجنة","بلال","الاستمرار"]
+  },
+  {
+    id: "man-who-was-ruined",
+    title: "The man who came saying \"I am ruined\"",
+    titleAr: "الرجل الذي جاء يقول: هلكتُ",
+    theme: "Coming to be judged, and being fed",
+    themeAr: "جاء ليُحاسَب فخرج مُعانًا",
+    story: "A man came to the Prophet ﷺ and said: \"I am ruined.\" He had broken his fast in Ramadan with his wife. Could he free a slave? No. Fast two months? No. Feed sixty poor people? No. The Prophet ﷺ fell silent, and then a basket of dates was brought and he told the man to give it away as charity. The man said: \"To someone poorer than us? By Allah, there is no household between the two lava plains of Madinah poorer than mine.\" The Prophet ﷺ laughed until his back teeth showed, and said: \"Feed it to your family.\"",
+    storyAr: "جاء رجلٌ إلى النبي ﷺ فقال: هلكتُ! وكان قد واقع أهله في نهار رمضان. فقال: «هل تجد رقبةً تعتقها؟» قال: لا. «فهل تستطيع صيام شهرين متتابعين؟» قال: لا. «فهل تجد إطعام ستِّين مسكينًا؟» قال: لا. فسكت النبيُّ ﷺ، فأُتي بعَرَقٍ فيه تمرٌ فقال: «تصدَّق بهذا». فقال: أعلى أفقر منَّا؟! فوالله ما بين لابتيها أهلُ بيتٍ أفقر من أهل بيتي. فضحك النبيُّ ﷺ حتى بدت أنيابه ثم قال: «أطعِمه أهلك».",
+    arabic: "أَطْعِمْهُ أَهْلَكَ",
+    lesson: "He arrived expecting punishment and left with food for his children. The Prophet ﷺ did not excuse the sin — he asked for the expiation first. But when the man genuinely could not, the answer was not humiliation; it was laughter and a basket of dates.",
+    lessonAr: "جاء ينتظر العقوبة فخرج ومعه طعام عياله. لم يُهوِّن النبيُّ ﷺ من الذنب، بل سأله عن الكفَّارة أوّلًا، فلمّا عجز حقًّا لم يكن الجواب إذلالًا، بل ضحكًا وعَرَقًا من تمر.",
+    ref: "Sahih al-Bukhari, Book of Fasting, Hadith 1936",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["sin","guilt","ashamed","repent","mistake","ramadan","poor","mercy","forgive","ذنب","معصية","خجل","توبة","رمضان","فقر","رحمة","كفارة"]
   }
 ];

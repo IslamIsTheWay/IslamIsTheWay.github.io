@@ -1022,8 +1022,12 @@ section {
   margin-bottom: 16px;
   line-height: 1.8;
 }
-.story-body { line-height: 1.85; margin-bottom: 10px; }
-.story-body-ar { font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2.1; color: var(--text-dark); margin-bottom: 14px; }
+.story-body { margin-bottom: 10px; }
+.story-body p { line-height: 1.85; margin-bottom: 12px; }
+.story-body p:last-child { margin-bottom: 0; }
+.story-body-ar { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 14px; }
+.story-body-ar p { line-height: 2.1; margin-bottom: 12px; }
+.story-body-ar p:last-child { margin-bottom: 0; }
 .story-quote {
   font-family: 'Amiri', serif;
   font-size: 1.4rem;
