@@ -1245,6 +1245,65 @@ section {
 .rec-ref-ar { font-family: 'Amiri', serif; color: var(--green); font-size: .95rem; margin-top: 5px; }
 .rec-note { font-size: .88rem; color: var(--text-muted); margin-top: 9px; line-height: 1.6; }
 
+/* ===== Mushaf pages =====
+   Where a page of the printed Mushaf ends, so a reader following along in
+   a physical copy knows exactly where they are. */
+.mushaf-info {
+  background: var(--green-pale);
+  border: 1px solid var(--green-light);
+  border-radius: 10px;
+  padding: 11px 16px;
+  margin-bottom: 18px;
+  font-size: .88rem;
+  color: var(--green-dark);
+  line-height: 1.9;
+}
+
+.page-break {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 26px 0;
+  color: var(--gold);
+}
+.page-break::before,
+.page-break::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+.page-break-label {
+  white-space: nowrap;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: #8a6a12;
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 999px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.page-break-sub { font-weight: 400; color: var(--text-muted); }
+
+/* Page count on each card in the surah grid. */
+.surah-pages {
+  margin-top: 4px;
+  font-size: .78rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 620px) {
+  .page-break { gap: 8px; }
+  .page-break-label { font-size: .72rem; padding: 5px 10px; }
+}
+
 /* The number inside the traditional end-of-ayah rosette, on the Arabic line. */
 .ayah-end {
   display: inline-flex;

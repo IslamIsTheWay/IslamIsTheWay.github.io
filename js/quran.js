@@ -119,6 +119,7 @@ function renderSurahGrid(surahs) {
       <div class="surah-info">
         <h4>${s.name} <span class="surah-arabic">${s.arabic}</span></h4>
         <div class="surah-meta">${s.meaning} • ${s.verses} verses • ${s.place}</div>
+        ${s.pages ? `<div class="surah-pages">📖 ${s.pages} ${s.pages === 1 ? "page" : "pages"} in the Mushaf${s.pages > 1 ? ` (${s.pageFrom}–${s.pageTo})` : ` (p. ${s.pageFrom})`}</div>` : ""}
       </div>
     `;
     card.addEventListener("click", () => openSurah(s));
@@ -154,12 +155,30 @@ async function openSurah(surah) {
 
     const current = RECITERS.find(r => r.id === getReciter()) || RECITERS[0];
 
+    /* Which pages of the printed Mushaf this surah occupies. The API gives a
+       `page` on every ayah — the standard Madani Mushaf numbering, 1 to 604 —
+       so the reader can tell how long a surah really is, and where each page
+       ends, exactly as it does in the book in front of them. */
+    const pages = [...new Set(arabicAyahs.map(a => a.page))].sort((x, y) => x - y);
+    const pageCount = pages.length;
+    const pageRange = pageCount === 1 ? "page " + pages[0]
+                                      : "pages " + pages[0] + "–" + pages[pages.length - 1];
+    const pageRangeAr = pageCount === 1 ? "صفحة " + toArabicDigits(pages[0])
+                                        : "الصفحات " + toArabicDigits(pages[0]) + "–" + toArabicDigits(pages[pages.length - 1]);
+
     let html = `<div class="reciter-bar">
       <div class="reciter-now">🎧 Reciter: <strong>${current.name}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">${current.ar}</span></div>
       <div>
         <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ Play Full Surah</button>
         <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ Stop</button>
       </div>
+    </div>
+    <div class="mushaf-info">
+      📖 <strong>${pageCount}</strong> ${pageCount === 1 ? "page" : "pages"} in the Mushaf — ${pageRange}
+      &nbsp;·&nbsp; ${arabicAyahs.length} ${arabicAyahs.length === 1 ? "verse" : "verses"}
+      <span dir="rtl" style="font-family:'Amiri',serif;">
+        — في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}
+      </span>
     </div>`;
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
@@ -180,6 +199,22 @@ async function openSurah(surah) {
           <div class="ayah-cite">Surah ${surah.name} — <strong>${cite}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
         </div>
       `;
+
+      /* When the next verse falls on a different page of the Mushaf, this
+         verse was the last one on its page — so the page ends here. The
+         reader can then follow along in a printed copy and know exactly
+         where each page finishes. */
+      const next = arabicAyahs[i + 1];
+      if (next && next.page !== ayah.page) {
+        const n = pages.indexOf(ayah.page) + 1;
+        html += `<div class="page-break">
+          <span class="page-break-label">
+            End of page ${ayah.page}
+            <span class="page-break-sub">— ${n} of ${pageCount} in this surah</span>
+            <span dir="rtl" style="font-family:'Amiri',serif;">نهاية الصفحة ${toArabicDigits(ayah.page)} — ${toArabicDigits(n)} من ${toArabicDigits(pageCount)}</span>
+          </span>
+        </div>`;
+      }
     });
 
     body.innerHTML = html;
