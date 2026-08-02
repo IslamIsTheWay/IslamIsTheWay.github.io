@@ -1568,5 +1568,262 @@ const SUNNAH = [
     ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6382; and Book of Tahajjud, Hadith 1166",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["istikhara","decision","choose","confused","guidance","marriage","job","which","استخارة","قرار","حيرة","اختيار","الزواج","العمل","المشورة"]
+  },
+
+  /* ---- Second batch, worked through the books of al-Bukhari in order ----
+     Knowledge, Wudu, Adhan, Salat, Gifts and Food. Each located in the text
+     first; the Arabic is the wording of the hadith itself. */
+  {
+    cat: "manners",
+    title: "Make things easy, not hard — give good news, not aversion",
+    titleAr: "يسِّروا ولا تُعسِّروا، وبشِّروا ولا تُنفِّروا",
+    detail: "The Prophet ﷺ instructed those teaching and calling people to religion: make it easy for them and do not make it hard, give them good news and do not drive them away.",
+    detailAr: "أوصى النبي ﷺ من يُعلِّم الناس ويدعوهم: أن ييسِّر عليهم ولا يُعسِّر، وأن يُبشِّرهم ولا يُنفِّرهم عن الدين.",
+    arabic: "يَسِّرُوا وَلَا تُعَسِّرُوا، وَبَشِّرُوا وَلَا تُنَفِّرُوا",
+    ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 69",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["teach","teaching","dawah","easy","hard","strict","harsh","welcome","new muslim","تيسير","تعسير","تعليم","الدعوة","التبشير","التنفير","الرفق","شدة"]
+  },
+  {
+    cat: "purity",
+    title: "Do not use the right hand for cleaning after relieving yourself",
+    titleAr: "لا يستنجي بيمينه",
+    detail: "The Prophet ﷺ said that when one of you relieves himself he should not take hold of himself with his right hand nor clean himself with his right hand, nor breathe into the drinking vessel.",
+    detailAr: "قال النبي ﷺ: إذا بال أحدكم فلا يمسّ ذَكَره بيمينه، ولا يستنجِ بيمينه، ولا يتنفَّس في الإناء.",
+    arabic: "إِذَا بَالَ أَحَدُكُمْ فَلَا يَأْخُذَنَّ ذَكَرَهُ بِيَمِينِهِ، وَلَا يَسْتَنْجِي بِيَمِينِهِ، وَلَا يَتَنَفَّسْ فِي الْإِنَاءِ",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 154",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["toilet","bathroom","right hand","left hand","istinja","clean","استنجاء","اليمين","الشمال","الخلاء","الطهارة","الحمام"]
+  },
+  {
+    cat: "purity",
+    title: "Do not face the qiblah, or turn your back to it, when relieving yourself",
+    titleAr: "لا تستقبل القِبلة ولا تستدبرها عند قضاء الحاجة",
+    detail: "The Prophet ﷺ said that when one of you goes out into open ground to relieve himself, he should neither face the qiblah nor turn his back towards it, but should face east or west.",
+    detailAr: "قال النبي ﷺ: إذا أتى أحدكم الغائط في الفضاء فلا يستقبل القِبلة ولا يولِّها ظهره، ولْيُشرِّق أو يُغرِّب.",
+    arabic: "إِذَا أَتَى أَحَدُكُمُ الْغَائِطَ فَلَا يَسْتَقْبِلِ الْقِبْلَةَ وَلَا يُوَلِّهَا ظَهْرَهُ، شَرِّقُوا أَوْ غَرِّبُوا",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 144",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["toilet","qibla","direction","facing","relieve","الخلاء","القبلة","استقبال","الحاجة","الطهارة"]
+  },
+  {
+    cat: "purity",
+    title: "Clear the nose with water when making wudu",
+    titleAr: "الاستنثار في الوضوء",
+    detail: "The Prophet ﷺ said that whoever performs wudu should draw water into the nose and blow it out, and whoever cleans himself with stones should do so an odd number of times.",
+    detailAr: "قال النبي ﷺ: من توضَّأ فلْيستنثِر — أي يُدخل الماء أنفه ثم يُخرجه — ومن استجمر بالحجارة فلْيوتِر.",
+    arabic: "مَنْ تَوَضَّأَ فَلْيَسْتَنْثِرْ، وَمَنِ اسْتَجْمَرَ فَلْيُوتِرْ",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 161",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["wudu","nose","istinthar","ablution","wash","odd","وضوء","الاستنثار","الأنف","الاستجمار","الوتر","الطهارة"]
+  },
+  {
+    cat: "purity",
+    title: "Wash a vessel seven times if a dog drinks from it",
+    titleAr: "غسل الإناء سبعًا إذا شرب فيه الكلب",
+    detail: "The Prophet ﷺ said that if a dog drinks from the vessel of any one of you, he should wash it seven times.",
+    detailAr: "قال النبي ﷺ: إذا شرب الكلب في إناء أحدكم فلْيغسله سبعًا.",
+    arabic: "إِذَا شَرِبَ الْكَلْبُ فِي إِنَاءِ أَحَدِكُمْ فَلْيَغْسِلْهُ سَبْعًا",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 172",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["dog","vessel","wash","seven","najis","impure","كلب","إناء","غسل","سبعًا","نجاسة","الطهارة"]
+  },
+  {
+    cat: "purity",
+    title: "Do not urinate into still water and then wash in it",
+    titleAr: "النهي عن البول في الماء الراكد",
+    detail: "The Prophet ﷺ forbade any of you to urinate into standing water that does not flow, and then to wash himself in it.",
+    detailAr: "نهى النبي ﷺ أن يبول أحدكم في الماء الدائم الذي لا يجري ثم يغتسل فيه.",
+    arabic: "لَا يَبُولَنَّ أَحَدُكُمْ فِي الْمَاءِ الدَّائِمِ الَّذِي لَا يَجْرِي، ثُمَّ يَغْتَسِلُ فِيهِ",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 239",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["water","clean","pollute","urine","still water","hygiene","الماء","الراكد","الدائم","البول","النظافة","التلوث"]
+  },
+  {
+    cat: "prayer",
+    title: "If you become drowsy in prayer, go and sleep",
+    titleAr: "إذا نعستَ في الصلاة فنَمْ",
+    detail: "The Prophet ﷺ said that if one of you becomes drowsy while praying, he should sleep until he knows what he is saying — for one who prays while drowsy may intend to seek forgiveness and end up cursing himself.",
+    detailAr: "قال النبي ﷺ: إذا نعس أحدكم في الصلاة فلْينَمْ حتى يعلم ما يقرأ؛ فإن الذي يصلي وهو ناعس لعله يذهب يستغفر فيسبَّ نفسه.",
+    arabic: "إِذَا نَعَسَ أَحَدُكُمْ فِي الصَّلَاةِ فَلْيَنَمْ حَتَّى يَعْلَمَ مَا يَقْرَأُ",
+    ref: "Sahih al-Bukhari, Book of Wudu, Hadith 213",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["sleepy","drowsy","tired","night prayer","qiyam","concentrate","نعاس","النوم","التعب","قيام الليل","الخشوع","التركيز"]
+  },
+  {
+    cat: "prayer",
+    title: "There is a prayer between the adhan and the iqamah",
+    titleAr: "بين كل أذانين صلاة",
+    detail: "The Prophet ﷺ said three times that between every adhan and iqamah there is a prayer — adding on the third: for whoever wishes.",
+    detailAr: "قال النبي ﷺ ثلاثًا: «بين كل أذانين صلاة»، ثم قال في الثالثة: «لمن شاء».",
+    arabic: "بَيْنَ كُلِّ أَذَانَيْنِ صَلَاةٌ — لِمَنْ شَاءَ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 627",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["adhan","iqama","between","nafl","extra prayer","waiting","الأذان","الإقامة","نافلة","تطوع","انتظار الصلاة"]
+  },
+  {
+    cat: "prayer",
+    title: "Do not stand for the prayer until you see the imam, and come with calm",
+    titleAr: "لا تقوموا حتى تروني وعليكم السكينة",
+    detail: "The Prophet ﷺ said that when the iqamah is called, do not stand up until you see him, and keep calm as you come.",
+    detailAr: "قال النبي ﷺ: إذا أُقيمت الصلاة فلا تقوموا حتى تروني، وعليكم بالسكينة.",
+    arabic: "إِذَا أُقِيمَتِ الصَّلَاةُ فَلَا تَقُومُوا حَتَّى تَرَوْنِي وَعَلَيْكُمْ بِالسَّكِينَةِ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 638",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["iqama","stand","imam","calm","rush","hurry","mosque","الإقامة","القيام","الإمام","السكينة","العجلة","المسجد"]
+  },
+  {
+    cat: "prayer",
+    title: "Eat first if the food is served and the prayer is called",
+    titleAr: "إذا حضر العَشاء وأُقيمت الصلاة فابدؤوا بالعَشاء",
+    detail: "The Prophet ﷺ said that if the evening meal is served and the iqamah is called, begin with the meal; and do not hurry away from your food.",
+    detailAr: "قال النبي ﷺ: إذا وُضع العَشاء وأُقيمت الصلاة فابدؤوا بالعَشاء، ولا تعجَلوا عن عشائكم.",
+    arabic: "إِذَا وُضِعَ الْعَشَاءُ وَأُقِيمَتِ الصَّلَاةُ فَابْدَءُوا بِالْعَشَاءِ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 671 and 672",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["food","meal","dinner","prayer","hungry","distracted","khushu","الطعام","العشاء","الصلاة","الجوع","الخشوع","الانشغال"]
+  },
+  {
+    cat: "prayer",
+    title: "He ﷺ shortened the prayer when he heard a child crying",
+    titleAr: "تخفيفه ﷺ الصلاة إذا سمع بكاء الصبي",
+    detail: "The Prophet ﷺ said: I stand for the prayer intending to lengthen it, then I hear a child crying, and I shorten my prayer, disliking to cause his mother distress.",
+    detailAr: "قال النبي ﷺ: إني لأقوم في الصلاة أريد أن أُطوِّل فيها، فأسمع بكاء الصبي، فأتجوَّز في صلاتي كراهية أن أشقَّ على أمِّه.",
+    arabic: "فَأَسْمَعُ بُكَاءَ الصَّبِيِّ، فَأَتَجَوَّزُ فِي صَلَاتِي كَرَاهِيَةَ أَنْ أَشُقَّ عَلَى أُمِّهِ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 707",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["imam","long prayer","child","baby","crying","mother","consideration","إمام","تطويل","الصبي","بكاء","الأم","مراعاة","التخفيف"]
+  },
+  {
+    cat: "prayer",
+    title: "Say Ameen when the imam says it",
+    titleAr: "التأمين مع الإمام",
+    detail: "The Prophet ﷺ said that when the imam says Ameen, say Ameen — for whoever's Ameen coincides with that of the angels, his past sins are forgiven.",
+    detailAr: "قال النبي ﷺ: إذا أمَّن الإمام فأمِّنوا، فإنه من وافق تأمينه تأمين الملائكة غُفر له ما تقدَّم من ذنبه.",
+    arabic: "إِذَا أَمَّنَ الْإِمَامُ فَأَمِّنُوا، فَإِنَّهُ مَنْ وَافَقَ تَأْمِينُهُ تَأْمِينَ الْمَلَائِكَةِ غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 780",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["ameen","amin","imam","fatiha","angels","forgiven","congregation","آمين","التأمين","الإمام","الفاتحة","الملائكة","المغفرة","الجماعة"]
+  },
+  {
+    cat: "prayer",
+    title: "Do not spread your forearms on the ground in prostration",
+    titleAr: "الاعتدال في السجود وعدم بسط الذراعين",
+    detail: "The Prophet ﷺ said: be balanced in prostration, and none of you should spread out his forearms on the ground the way a dog does.",
+    detailAr: "قال النبي ﷺ: اعتدلوا في السجود، ولا يبسط أحدكم ذراعيه انبساط الكلب.",
+    arabic: "اعْتَدِلُوا فِي السُّجُودِ، وَلَا يَبْسُطْ أَحَدُكُمْ ذِرَاعَيْهِ انْبِسَاطَ الْكَلْبِ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 822",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["sujud","prostration","arms","elbows","posture","how to pray","السجود","الذراعين","الاعتدال","هيئة الصلاة","كيف أصلي"]
+  },
+  {
+    cat: "prayer",
+    title: "You are in prayer for as long as you wait for the prayer",
+    titleAr: "لا تزالون في صلاةٍ ما انتظرتم الصلاة",
+    detail: "After delaying the Isha prayer one night until close to midnight, the Prophet ﷺ told those who had waited: the people have prayed and gone to sleep, and you have not ceased to be in prayer for as long as you waited for it.",
+    detailAr: "لمّا أخَّر النبي ﷺ صلاة العشاء ذات ليلةٍ إلى قريبٍ من نصف الليل قال لمن انتظروا: إن الناس قد صلَّوا ورقدوا، وإنكم لن تزالوا في صلاةٍ ما انتظرتم الصلاة.",
+    arabic: "إِنَّكُمْ لَنْ تَزَالُوا فِي صَلَاةٍ مَا انْتَظَرْتُمُ الصَّلَاةَ",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 847",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["waiting","early","mosque","isha","reward","patience","انتظار","الصلاة","المسجد","العشاء","الأجر","الصبر"]
+  },
+  {
+    cat: "mosque",
+    title: "Do not come to the mosque after eating raw garlic or onion",
+    titleAr: "من أكل الثوم فلا يقربنا في المسجد",
+    detail: "The Prophet ﷺ said that whoever eats of this plant — meaning garlic — should not come near us, or should not pray with us, because the angels are harmed by what harms people.",
+    detailAr: "قال النبي ﷺ: من أكل من هذه الشجرة — يعني الثوم — فلا يقربنا، أو: فلا يصلِّينَّ معنا؛ فإن الملائكة تتأذى مما يتأذى منه بنو آدم.",
+    arabic: "مَنْ أَكَلَ مِنْ هَذِهِ الشَّجَرَةِ فَلَا يَقْرَبْنَا، أَوْ لَا يُصَلِّيَنَّ مَعَنَا",
+    ref: "Sahih al-Bukhari, Book of Salat, Hadith 856",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["garlic","onion","smell","breath","mosque","congregation","consideration","الثوم","البصل","الرائحة","المسجد","الجماعة","الأذى"]
+  },
+  {
+    cat: "mosque",
+    title: "Do not prevent women from going to the mosque",
+    titleAr: "لا تمنعوا النساء من المساجد",
+    detail: "The Prophet ﷺ said that if your women ask your permission to go to the mosque at night, give them permission.",
+    detailAr: "قال النبي ﷺ: إذا استأذنكم نساؤكم بالليل إلى المسجد فأْذنوا لهنّ.",
+    arabic: "إِذَا اسْتَأْذَنَكُمْ نِسَاؤُكُمْ بِاللَّيْلِ إِلَى الْمَسْجِدِ فَأْذَنُوا لَهُنَّ",
+    ref: "Sahih al-Bukhari, Book of Salat, Hadith 865",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["women","wife","mosque","permission","prevent","night","النساء","الزوجة","المسجد","الإذن","المنع","الليل"]
+  },
+  {
+    cat: "manners",
+    title: "Never belittle a small gift from a neighbour",
+    titleAr: "لا تحقرنَّ جارةٌ لجارتها ولو فِرْسِنَ شاة",
+    detail: "The Prophet ﷺ said: women of the Muslims, let no neighbour look down on what her neighbour sends her, even if it is a sheep's hoof.",
+    detailAr: "قال النبي ﷺ: يا نساء المسلمات، لا تحقرنَّ جارةٌ لجارتها ولو فِرْسِنَ شاة.",
+    arabic: "لَا تَحْقِرَنَّ جَارَةٌ لِجَارَتِهَا وَلَوْ فِرْسِنَ شَاةٍ",
+    ref: "Sahih al-Bukhari, Book of Gifts, Hadith 2566",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["gift","neighbour","neighbor","small","little","despise","share","هدية","الجار","الجارة","القليل","الاحتقار","المشاركة"]
+  },
+  {
+    cat: "manners",
+    title: "Accept an invitation, however modest the food",
+    titleAr: "إجابة الدعوة ولو إلى شيءٍ يسير",
+    detail: "The Prophet ﷺ said: if I were invited to a foreleg or a trotter I would accept, and if a foreleg or a trotter were given to me I would take it.",
+    detailAr: "قال النبي ﷺ: لو دُعيت إلى ذِراعٍ أو كُراعٍ لأجبت، ولو أُهدي إليَّ ذِراعٌ أو كُراعٌ لقبلت.",
+    arabic: "لَوْ دُعِيتُ إِلَى ذِرَاعٍ أَوْ كُرَاعٍ لَأَجَبْتُ",
+    ref: "Sahih al-Bukhari, Book of Gifts, Hadith 2568",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["invitation","accept","food","modest","poor","refuse","دعوة","إجابة","الطعام","اليسير","الرفض","التواضع"]
+  },
+  {
+    cat: "manners",
+    title: "Do not take back what you gave",
+    titleAr: "العائد في هبته كالكلب يعود في قيئه",
+    detail: "The Prophet ﷺ said that the one who takes back his gift is like a dog that vomits and then returns to its vomit.",
+    detailAr: "قال النبي ﷺ: العائد في هبته كالكلب يقيء ثم يعود في قيئه.",
+    arabic: "الْعَائِدُ فِي هِبَتِهِ كَالْكَلْبِ يَقِيءُ، ثُمَّ يَعُودُ فِي قَيْئِهِ",
+    ref: "Sahih al-Bukhari, Book of Gifts, Hadith 2589",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["gift","take back","regret","give","generosity","هبة","هدية","الرجوع","الندم","العطاء","الكرم"]
+  },
+  {
+    cat: "manners",
+    title: "Give, and do not keep count",
+    titleAr: "أنفقي ولا تُحصي",
+    detail: "The Prophet ﷺ said to Asma رضي الله عنها: spend and do not count, lest Allah count against you; do not withhold, lest Allah withhold from you.",
+    detailAr: "قال النبي ﷺ لأسماء رضي الله عنها: أنفقي ولا تُحصي فيُحصي الله عليك، ولا تُوعي فيُوعي الله عليك.",
+    arabic: "أَنْفِقِي وَلَا تُحْصِي فَيُحْصِيَ اللَّهُ عَلَيْكِ، وَلَا تُوعِي فَيُوعِيَ اللَّهُ عَلَيْكِ",
+    ref: "Sahih al-Bukhari, Book of Gifts, Hadith 2591",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["charity","spend","give","count","hoard","stingy","sadaqah","صدقة","إنفاق","العطاء","الإحصاء","البخل","الادخار"]
+  },
+  {
+    cat: "manners",
+    title: "Start with the neighbour whose door is nearest",
+    titleAr: "ابدأ بالجار الأقرب بابًا",
+    detail: "Aishah رضي الله عنها asked which of two neighbours she should give to. The Prophet ﷺ answered: the one whose door is nearer to you.",
+    detailAr: "سألت عائشة رضي الله عنها: إن لي جارَين، فإلى أيهما أُهدي؟ فقال النبي ﷺ: إلى أقربهما منكِ بابًا.",
+    arabic: "إِلَى أَقْرَبِهِمَا مِنْكِ بَابًا",
+    ref: "Sahih al-Bukhari, Book of Gifts, Hadith 2595",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["neighbour","neighbor","gift","which","nearest","door","الجار","الهدية","الأقرب","الباب","أيهما"]
+  },
+  {
+    cat: "manners",
+    title: "Feed the hungry, visit the sick, free the captive",
+    titleAr: "أطعموا الجائع وعودوا المريض وفكُّوا العاني",
+    detail: "The Prophet ﷺ gave three instructions together: feed the hungry, visit the sick, and set free the one held captive.",
+    detailAr: "أمر النبي ﷺ بثلاثٍ مجتمعة: أطعِموا الجائع، وعودوا المريض، وفُكُّوا العاني — أي الأسير.",
+    arabic: "أَطْعِمُوا الْجَائِعَ، وَعُودُوا الْمَرِيضَ، وَفُكُّوا الْعَانِيَ",
+    ref: "Sahih al-Bukhari, Book of Food, Hadith 5373",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["hungry","feed","sick","visit","captive","prisoner","charity","help","جائع","إطعام","المريض","العيادة","الأسير","العاني","الإحسان"]
+  },
+  {
+    cat: "quran",
+    title: "Do not attribute to the Prophet ﷺ what he did not say",
+    titleAr: "التحذير من الكذب على النبي ﷺ",
+    detail: "The Prophet ﷺ warned that whoever deliberately attributes to him what he did not say should take his seat in the Fire. This is why a hadith must always be traced to its source before it is repeated.",
+    detailAr: "حذَّر النبي ﷺ من الكذب عليه فقال: من تعمَّد عليَّ كذبًا فلْيتبوَّأ مقعده من النار. ولذلك لا يُنقل الحديث حتى يُعرف مصدره.",
+    arabic: "مَنْ تَعَمَّدَ عَلَيَّ كَذِبًا فَلْيَتَبَوَّأْ مَقْعَدَهُ مِنَ النَّارِ",
+    ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 108 and 109",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["hadith","forward","share","verify","source","fake","lie","whatsapp","الحديث","النقل","الكذب","التثبت","المصدر","النشر","التحقق"]
   }
 ];
