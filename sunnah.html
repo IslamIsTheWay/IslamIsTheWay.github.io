@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608030952" />
+  <link rel="stylesheet" href="css/style.css?v=202608031223" />
 </head>
 <body>
 
@@ -117,7 +117,7 @@
     </div>
   </footer>
 
-  <script src="js/sunnah.js?v=202608030952"></script>
+  <script src="js/sunnah.js?v=202608031223"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -218,7 +218,7 @@
           <span class="topic-tag">${c.en} <span dir="rtl">— ${c.ar}</span></span>
           <span class="topic-tag" style="background:${isSahih ? "#e6f4ea" : "#fff8e1"};color:${isSahih ? "#1e7e45" : "#b8860b"};">${s.strength}</span>
         </div>
-        <h3>${s.title}</h3>
+        <h3 class="en-only">${s.title}</h3>
         <h3 dir="rtl" class="sunnah-title-ar">${s.titleAr}</h3>
         ${s.arabic ? `<div class="sunnah-hadith" dir="rtl" data-speak>${s.arabic}
             <button class="speak-btn" data-lang="ar" title="Listen in Arabic">🔊</button></div>` : ""}
@@ -321,7 +321,7 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/main.js?v=202608030952"></script>
-  <script src="js/i18n.js?v=202608030952"></script>
+  <script src="js/main.js?v=202608031223"></script>
+  <script src="js/i18n.js?v=202608031223"></script>
 </body>
 </html>

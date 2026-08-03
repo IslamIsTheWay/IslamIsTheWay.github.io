@@ -1010,9 +1010,10 @@ function runPersonSearch(query) {
 
     card.innerHTML = `
       <span class="category">${categoryLabel}</span>
-      <h3>${person.name} <span style="font-family:'Amiri',serif; color: var(--green); font-size:1.1rem;">${person.arabic}</span></h3>
-      <p style="color: var(--gold); font-weight:600; font-size:0.85rem; margin-bottom: 8px;">${person.title}</p>
-      <p>${person.summary}</p>
+      <h3><span class="en-only">${person.name} </span><span style="font-family:'Amiri',serif; color: var(--green); font-size:1.1rem;">${person.arabic}</span></h3>
+      <p class="en-only" style="color: var(--gold); font-weight:600; font-size:0.85rem; margin-bottom: 8px;">${person.title}</p>
+      ${person.titleAr ? `<p class="ar-only" dir="rtl" style="color: var(--gold); font-weight:600; font-size:0.9rem; margin-bottom: 8px;">${person.titleAr}</p>` : ""}
+      <p class="en-only">${person.summary}</p>
       ${person.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif; font-size:1.05rem; line-height:1.9; color: var(--green-dark); text-align:right; background: var(--green-pale); border-radius:8px; padding:10px 14px; margin-bottom:12px;">${person.summaryAr}</p>` : ""}
       <div class="refs">
         <strong>References:</strong>
@@ -1028,3 +1029,112 @@ function escapeHtml(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+/* ============================================================
+   SITE-WIDE FEEDBACK
+   ------------------------------------------------------------
+   The feedback form used to live on the courses page only. It is
+   now injected above the footer of every page from here, so there
+   is one copy to maintain rather than fourteen.
+
+   Two things happen on submit:
+     1. the message is kept on the device (localStorage), so it is
+        never lost if the mail client fails to open, and so the
+        staff dashboard can show what was sent from this device;
+     2. the mail client opens, pre-filled, addressed to the site
+        owner — that is the part that actually delivers it.
+
+   Being straight about the limit: a site with no server cannot
+   collect visitors' messages into one shared inbox by itself.
+   The mail step is what carries a message from a visitor's phone
+   to the owner. The dashboard list is per-device.
+   ============================================================ */
+
+const IITW_FEEDBACK_KEY = "iitw-feedback";
+const IITW_FEEDBACK_TO = "ammarwalidyounis@gmail.com";
+
+function iitwFeedbackAll() {
+  try { return JSON.parse(localStorage.getItem(IITW_FEEDBACK_KEY) || "[]"); }
+  catch (e) { return []; }
+}
+
+function iitwFeedbackSave(entry) {
+  try {
+    const all = iitwFeedbackAll();
+    all.unshift(entry);
+    localStorage.setItem(IITW_FEEDBACK_KEY, JSON.stringify(all.slice(0, 200)));
+  } catch (e) { /* private mode — the mail step still works */ }
+}
+
+function iitwSendFeedback(e) {
+  if (e) e.preventDefault();
+  const nameEl = document.getElementById("iitwFbName");
+  const msgEl = document.getElementById("iitwFbMsg");
+  const noteEl = document.getElementById("iitwFbNote");
+  if (!msgEl) return;
+
+  const name = (nameEl && nameEl.value.trim()) || "";
+  const body = msgEl.value.trim();
+  if (!body) return;
+
+  const page = (location.pathname.split("/").pop() || "index.html");
+  iitwFeedbackSave({
+    id: "fb-" + Date.now(),
+    name: name,
+    msg: body,
+    page: page,
+    at: new Date().toISOString()
+  });
+
+  const subject = "Islam Is The Way — Feedback" + (name ? " from " + name : "") + " (" + page + ")";
+  const mailBody = body + "\n\n—\nSent from: " + page + "\n" + new Date().toLocaleString();
+  window.location.href = "mailto:" + IITW_FEEDBACK_TO +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(mailBody);
+
+  msgEl.value = "";
+  if (nameEl) nameEl.value = "";
+  if (noteEl) {
+    noteEl.style.display = "";
+    noteEl.innerHTML = 'Thank you — your message was saved and your mail app should now open. If it does not, write to <strong>' +
+      IITW_FEEDBACK_TO + '</strong> directly.' +
+      '<br><span dir="rtl" style="font-family:\'Amiri\',serif;">جزاك الله خيرًا — حُفظت رسالتك وسيُفتح تطبيق البريد. فإن لم يُفتح فراسلنا مباشرة على العنوان أعلاه.</span>';
+  }
+}
+
+function iitwInjectFeedback() {
+  // The staff dashboard has its own panel for reading feedback; it does not
+  // need a form for sending it.
+  const page = (location.pathname.split("/").pop() || "index.html");
+  if (page === "staff.html") return;
+  if (document.getElementById("feedback")) return;
+
+  const footer = document.querySelector("footer");
+  if (!footer) return;
+
+  const sec = document.createElement("section");
+  sec.className = "fb-section";
+  sec.id = "feedback";
+  sec.innerHTML = `
+    <div class="container" style="max-width:660px;">
+      <h2 class="section-title">💬 Tell Us What You Think</h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:16px;">
+        Found a mistake in a reference, a word translated wrongly, or something that would make this site better? Tell us — every message is read.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">وجدتَ خطأً في مرجع، أو ترجمةً غير دقيقة، أو عندك فكرة تُحسّن الموقع؟ اكتب لنا — كل رسالة تُقرأ.</span>
+      </p>
+      <form class="fb-form" onsubmit="iitwSendFeedback(event)">
+        <label for="iitwFbName">Your name (optional)</label>
+        <input type="text" id="iitwFbName" autocomplete="name" />
+        <label for="iitwFbMsg">Your message</label>
+        <textarea id="iitwFbMsg" required dir="auto"
+          placeholder="Describe the problem or your suggestion…  |  اكتب الملاحظة أو الاقتراح…"></textarea>
+        <button type="submit" class="btn btn-primary">Send Feedback</button>
+        <p id="iitwFbNote" class="fb-note" style="display:none;"></p>
+      </form>
+    </div>`;
+  footer.parentNode.insertBefore(sec, footer);
+  if (window.applyI18n) window.applyI18n();
+}
+
+document.addEventListener("DOMContentLoaded", iitwInjectFeedback);

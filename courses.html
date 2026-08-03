@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608030952" />
+  <link rel="stylesheet" href="css/style.css?v=202608031223" />
 </head>
 <body>
 
@@ -115,21 +115,10 @@
     </div>
   </section>
 
-  <section class="pattern-bg">
-    <div class="container" style="max-width:640px;">
-      <h2 class="section-title">💬 Tell Us What You Think</h2>
-      <p class="section-sub">Found a problem? Have an idea to improve the website? Send it to our team — we read every message.</p>
-      <div class="divider"></div>
-      <br>
-      <form onsubmit="sendFeedback(event)" style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow);">
-        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;">Your name (optional)</label>
-        <input type="text" id="fbName" style="width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:14px;" />
-        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;">Your message</label>
-        <textarea id="fbMsg" required style="width:100%;min-height:110px;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;resize:vertical;" placeholder="Describe the problem or your suggestion..."></textarea>
-        <button type="submit" class="btn btn-primary" style="margin-top:14px;">Send Feedback</button>
-      </form>
-    </div>
-  </section>
+  <!-- The feedback form is no longer written out here: it is injected above the
+       footer of every page by iitwInjectFeedback() in js/main.js, so there is
+       one copy of it to maintain. Links to courses.html#feedback still land on
+       it, because the injected section carries id="feedback". -->
 
   <section>
     <div class="container" style="text-align:center;">
@@ -174,7 +163,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608030952"></script>
+  <script src="js/data.js?v=202608031223"></script>
   <script>
     const grid = document.getElementById("courseGrid");
 
@@ -272,17 +261,9 @@
       }
     }
 
-    function sendFeedback(e) {
-      e.preventDefault();
-      const name = document.getElementById("fbName").value.trim();
-      const body = document.getElementById("fbMsg").value.trim();
-      const subject = "Islam Is The Way — Feedback" + (name ? " from " + name : "");
-      window.location.href = "mailto:ammarwalidyounis@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    }
-
     loadSiteConfig();
   </script>
-  <script src="js/main.js?v=202608030952"></script>
-  <script src="js/i18n.js?v=202608030952"></script>
+  <script src="js/main.js?v=202608031223"></script>
+  <script src="js/i18n.js?v=202608031223"></script>
 </body>
 </html>

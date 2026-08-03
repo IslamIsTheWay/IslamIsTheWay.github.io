@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608030952" />
+  <link rel="stylesheet" href="css/style.css?v=202608031223" />
 </head>
 <body>
 
@@ -106,6 +106,26 @@
     </div>
   </section>
 
+  <!-- ===== The adhkar — الأذكار =====
+       Morning and evening, sleeping and waking, after the prayer, tasbih, and
+       what is said in distress. Each carries a tap counter, and the count is
+       kept for the rest of the day so you can put the phone down and come
+       back to it. -->
+  <section id="adhkar">
+    <div class="container">
+      <h2 class="section-title">📿 The Adhkar <span dir="rtl" style="font-family:'Amiri',serif;">— الأذكار</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:18px;">
+        The remembrances of an ordinary day — morning and evening, on waking and before sleeping, after every prayer, and at a moment of distress. Tap a dhikr to count it; the count is kept until the end of the day.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">أذكار اليوم — الصباح والمساء، والاستيقاظ والنوم، وبعد كل صلاة، وعند الكرب. انقر على الذكر ليُحتسب لك، ويبقى العدّ محفوظًا إلى آخر اليوم.</span>
+      </p>
+
+      <div class="adhkar-tabs" id="adhkarTabs"></div>
+      <div id="adhkarList" class="adhkar-list"></div>
+      <p id="adhkarEmpty" class="no-results" style="display:none;">Nothing here yet. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد.</span></p>
+    </div>
+  </section>
+
   <section class="pattern-bg">
     <div class="container">
       <div class="context-note">
@@ -170,10 +190,13 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608030952"></script>
+  <script src="js/data.js?v=202608031223"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608030952"></script>
+  <script src="js/sunnah.js?v=202608031223"></script>
+  <!-- The adhkar of the day: morning and evening, sleeping and waking,
+       after the prayer, tasbih, and distress. -->
+  <script src="js/adhkar.js?v=202608031223"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -853,8 +876,157 @@
       renderWorship(WORSHIP_STEPS);
       document.getElementById("worshipSearch").addEventListener("input", worshipFilter);
     }
+
+    /* ================= The adhkar =================
+       A tap counter per dhikr, kept in localStorage under today's date so it
+       survives leaving the page but starts fresh tomorrow. Yesterday's keys
+       are cleared on load so the store cannot grow forever. */
+    let adhkarCat = "morning";
+
+    function adhkarToday() {
+      const d = new Date();
+      return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    }
+
+    const ADHKAR_KEY = "iitw-adhkar-" + adhkarToday();
+
+    function adhkarCounts() {
+      try { return JSON.parse(localStorage.getItem(ADHKAR_KEY) || "{}"); }
+      catch (e) { return {}; }
+    }
+
+    function adhkarSave(counts) {
+      try {
+        // drop any previous day's tally before writing today's
+        for (let i = localStorage.length - 1; i >= 0; i--) {
+          const k = localStorage.key(i);
+          if (k && k.startsWith("iitw-adhkar-") && k !== ADHKAR_KEY) localStorage.removeItem(k);
+        }
+        localStorage.setItem(ADHKAR_KEY, JSON.stringify(counts));
+      } catch (e) { /* private mode — the counter just will not persist */ }
+    }
+
+    function adhkarCard(d) {
+      const done = adhkarCounts()[d.id] || 0;
+      const target = d.count || 1;
+      const finished = done >= target;
+      return `<article class="dhikr-card${finished ? " dhikr-done" : ""}" id="dhikr-${d.id}">
+        <div class="dhikr-head">
+          <h3 class="dhikr-title en-only">${d.title}</h3>
+          <div class="dhikr-title-ar" dir="rtl">${d.titleAr}</div>
+        </div>
+
+        <p class="dhikr-arabic" dir="rtl" data-speak>${d.arabic}
+          <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>
+
+        <p class="dhikr-en en-only">${d.en}</p>
+
+        <div class="dhikr-count-row">
+          <button type="button" class="dhikr-counter" data-id="${d.id}" data-target="${target}"
+                  aria-label="Count this dhikr — عُدّ هذا الذكر">
+            <span class="dhikr-num">${toArabicMaybe(done)}</span>
+            <span class="dhikr-of">/ ${toArabicMaybe(target)}</span>
+          </button>
+          <div class="dhikr-when">
+            <span class="en-only">🔁 ${d.countEn}</span>
+            <span dir="rtl" style="font-family:'Amiri',serif;">🔁 ${d.countAr}</span>
+          </div>
+          <button type="button" class="dhikr-reset" data-id="${d.id}" title="Reset — تصفير">↺</button>
+        </div>
+
+        <div class="dhikr-virtue">
+          <p class="en-only">${d.virtue}</p>
+          <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${d.virtueAr}</p>
+        </div>
+
+        <div class="refs"><span>${d.ref}</span></div>
+        <div class="dhikr-strength">${d.strength}</div>
+      </article>`;
+    }
+
+    /* Arabic-Indic digits when the page is in Arabic, plain digits otherwise.
+       This reads localStorage as well as the class, because the cards are
+       rendered before i18n.js has had a chance to set `lang-ar` — without it
+       the counter came up as "0 / 1" on an Arabic page. */
+    function toArabicMaybe(n) {
+      const ar = document.documentElement.classList.contains("lang-ar") ||
+                 localStorage.getItem("iitw-lang") === "ar";
+      return ar ? String(n).replace(/[0-9]/g, c => "٠١٢٣٤٥٦٧٨٩"[+c]) : String(n);
+    }
+
+    /* And when the reader switches language with the page already open, the
+       numbers have to follow. i18n.js toggles a class on <html>, so watching
+       that is enough — no hook into i18n.js is needed. */
+    function refreshAdhkarDigits() {
+      const counts = adhkarCounts();
+      document.querySelectorAll(".dhikr-counter").forEach(btn => {
+        const id = btn.getAttribute("data-id");
+        const target = parseInt(btn.getAttribute("data-target"), 10) || 1;
+        btn.querySelector(".dhikr-num").textContent = toArabicMaybe(counts[id] || 0);
+        btn.querySelector(".dhikr-of").textContent = "/ " + toArabicMaybe(target);
+      });
+    }
+    new MutationObserver(refreshAdhkarDigits)
+      .observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+    function renderAdhkar() {
+      const list = ADHKAR.filter(d => d.cat === adhkarCat);
+      document.getElementById("adhkarList").innerHTML = list.map(adhkarCard).join("");
+      document.getElementById("adhkarEmpty").style.display = list.length ? "none" : "";
+      wireAdhkarButtons();
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function wireAdhkarButtons() {
+      document.querySelectorAll(".dhikr-counter").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-id");
+          const target = parseInt(btn.getAttribute("data-target"), 10) || 1;
+          const counts = adhkarCounts();
+          const next = Math.min((counts[id] || 0) + 1, target);
+          counts[id] = next;
+          adhkarSave(counts);
+          btn.querySelector(".dhikr-num").textContent = toArabicMaybe(next);
+          const card = document.getElementById("dhikr-" + id);
+          if (next >= target) card.classList.add("dhikr-done");
+        });
+      });
+      document.querySelectorAll(".dhikr-reset").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-id");
+          const counts = adhkarCounts();
+          counts[id] = 0;
+          adhkarSave(counts);
+          const card = document.getElementById("dhikr-" + id);
+          card.classList.remove("dhikr-done");
+          card.querySelector(".dhikr-num").textContent = toArabicMaybe(0);
+        });
+      });
+    }
+
+    function renderAdhkarTabs() {
+      const host = document.getElementById("adhkarTabs");
+      host.innerHTML = ADHKAR_CATEGORIES.map(c =>
+        `<button type="button" class="adhkar-tab${c.id === adhkarCat ? " active" : ""}" data-cat="${c.id}">
+           ${c.icon} <span class="en-only">${c.en}</span>
+           <span dir="rtl" style="font-family:'Amiri',serif;">${c.ar}</span>
+         </button>`).join("");
+      host.querySelectorAll(".adhkar-tab").forEach(b => {
+        b.addEventListener("click", () => {
+          adhkarCat = b.getAttribute("data-cat");
+          renderAdhkarTabs();
+          renderAdhkar();
+        });
+      });
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    if (typeof ADHKAR !== "undefined") {
+      renderAdhkarTabs();
+      renderAdhkar();
+    }
   </script>
-  <script src="js/main.js?v=202608030952"></script>
-  <script src="js/i18n.js?v=202608030952"></script>
+  <script src="js/main.js?v=202608031223"></script>
+  <script src="js/i18n.js?v=202608031223"></script>
 </body>
 </html>

@@ -210,7 +210,7 @@ const SUNNAH = [
     detail: "The Prophet ﷺ said that when one of you enters the mosque, he should not sit down until he has prayed two rak'ahs.",
     detailAr: "قال النبي ﷺ: إذا دخل أحدكم المسجد فلا يجلس حتى يصلي ركعتين.",
     arabic: "إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ فَلَا يَجْلِسْ حَتَّى يُصَلِّيَ رَكْعَتَيْنِ",
-    ref: "Sahih al-Bukhari, Hadith 1163; Sahih Muslim, Hadith 714",
+    ref: "Sahih al-Bukhari, Hadith 1167; Sahih Muslim, Hadith 714",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["tahiyyat al masjid","entering mosque","two rakah","greeting the mosque","تحية المسجد","دخول المسجد","ركعتان"]
   },

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608030952" />
+  <link rel="stylesheet" href="css/style.css?v=202608031223" />
 </head>
 <body>
 
@@ -101,7 +101,7 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608030952"></script>
+  <script src="js/data.js?v=202608031223"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -175,7 +175,7 @@
       const others = family.filter(x => x.id !== s.id);
       return `<div class="story-series">
         <div class="story-series-head">
-          🔗 Part ${pos} of ${family.length} — <strong>${s.groupTitle}</strong>
+          <span class="en-only">🔗 Part ${pos} of ${family.length} — <strong>${s.groupTitle}</strong></span>
           <span dir="rtl" style="font-family:'Amiri',serif;">— الجزء ${pos} من ${family.length} من «${s.groupTitleAr}»</span>
         </div>
         <div class="story-series-links">
@@ -200,7 +200,7 @@
       return `<article class="story-card" id="${s.id}">
         ${seriesBar(s)}
         <div class="story-theme">${s.theme} <span dir="rtl" style="font-family:'Amiri',serif;">— ${s.themeAr}</span></div>
-        <h2 class="story-title">${s.title}</h2>
+        <h2 class="story-title en-only">${s.title}</h2>
         <div class="story-title-ar" dir="rtl">${s.titleAr}</div>
 
         <div class="story-body en-only">${paras(s.story)}</div>
@@ -249,7 +249,7 @@
     renderStories(PROPHET_STORIES);
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/main.js?v=202608030952"></script>
-  <script src="js/i18n.js?v=202608030952"></script>
+  <script src="js/main.js?v=202608031223"></script>
+  <script src="js/i18n.js?v=202608031223"></script>
 </body>
 </html>

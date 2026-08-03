@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608030952" />
+  <link rel="stylesheet" href="css/style.css?v=202608031223" />
 </head>
 <body>
 
@@ -96,14 +96,17 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608030952"></script>
-  <script src="js/judgement.js?v=202608030952"></script>
+  <script src="js/data.js?v=202608031223"></script>
+  <script src="js/judgement.js?v=202608031223"></script>
   <script>
     function pointHtml(p) {
       return `<div class="judge-point">
         ${p.quran ? `<p class="judge-arabic" dir="rtl" data-speak>${p.quran} <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
         <p class="en-only">${p.en}</p>
         <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${p.ar}</p>
+        ${p.items ? `<ol class="judge-items">${p.items.map(it =>
+            `<li><span class="ji-ar" dir="rtl">${it.ar}</span><span class="ji-en en-only">${it.en}</span></li>`
+          ).join("")}</ol>` : ""}
         ${p.ref ? `<div class="refs"><span>${p.ref}</span></div>` : ""}
       </div>`;
     }
@@ -111,7 +114,7 @@
     function stageHtml(s) {
       return `<article class="judge-card" id="${s.id}">
         <div class="judge-num">${s.order}</div>
-        <h2 class="judge-title">${s.title}</h2>
+        <h2 class="judge-title en-only">${s.title}</h2>
         <div class="judge-title-ar" dir="rtl">${s.titleAr}</div>
         <p class="judge-lead en-only">${s.lead}</p>
         <p class="judge-lead-ar" dir="rtl">${s.leadAr}</p>
@@ -135,13 +138,13 @@
     document.getElementById("judgeNav").innerHTML = JUDGEMENT_STAGES.map(s =>
       `<button type="button" class="judge-step" onclick="jumpToStage('${s.id}')">
          <span class="judge-step-num">${s.order}</span>
-         <span class="judge-step-label">${s.title.split(" — ")[0]}<small dir="rtl">${s.titleAr.split(" — ")[0]}</small></span>
+         <span class="judge-step-label"><span class="en-only">${s.title.split(" — ")[0]}</span><small dir="rtl">${s.titleAr.split(" — ")[0]}</small></span>
        </button>`).join("");
 
     document.getElementById("judgeList").innerHTML = JUDGEMENT_STAGES.map(stageHtml).join("");
     if (window.applyI18n) setTimeout(window.applyI18n, 0);
   </script>
-  <script src="js/main.js?v=202608030952"></script>
-  <script src="js/i18n.js?v=202608030952"></script>
+  <script src="js/main.js?v=202608031223"></script>
+  <script src="js/i18n.js?v=202608031223"></script>
 </body>
 </html>

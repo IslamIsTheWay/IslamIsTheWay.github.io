@@ -1067,6 +1067,38 @@ section {
   margin-bottom: 12px;
   text-align: center;
 }
+/* A numbered point (the seven under the shade). Each item carries the Arabic
+   wording and its English underneath, so the two line up item for item and the
+   English can never look like an unnumbered summary of the Arabic. */
+.judge-items {
+  margin: 10px 0 12px;
+  padding-inline-start: 30px;
+  counter-reset: none;
+}
+.judge-items li {
+  margin-bottom: 12px;
+  padding-inline-start: 6px;
+}
+.judge-items li::marker {
+  color: var(--gold);
+  font-weight: 700;
+}
+.judge-items .ji-ar {
+  display: block;
+  font-family: 'Amiri', serif;
+  font-size: 1.18rem;
+  line-height: 2.1;
+  color: var(--green-dark);
+}
+.judge-items .ji-en {
+  display: block;
+  line-height: 1.75;
+  margin-top: 2px;
+}
+/* Arabic mode numbers the list with Arabic-Indic digits (١ ٢ ٣), matching the
+   way the hadith is set in a printed Arabic book. */
+html.lang-ar .judge-items { list-style-type: arabic-indic; }
+
 .judge-note {
   background: #fdf4ee;
   border: 1px solid #e8cdb8;
@@ -1255,6 +1287,112 @@ section {
   padding: 16px 20px;
   margin-bottom: 14px;
   text-align: center;
+}
+
+/* ============ The adhkar ============
+   Same visual family as the worship steps, plus a tap counter. A finished
+   dhikr turns green so you can see at a glance what is left in the day. */
+.adhkar-tabs {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.adhkar-tab {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-dark);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.adhkar-tab:hover { border-color: var(--green); background: var(--green-pale); }
+.adhkar-tab.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+.adhkar-list { display: grid; gap: 22px; max-width: 900px; margin: 0 auto; }
+
+.dhikr-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 26px;
+  transition: border-color .25s, background .25s;
+}
+.dhikr-card.dhikr-done {
+  border-left-color: var(--green);
+  background: var(--green-pale);
+}
+.dhikr-title { color: var(--green-dark); font-size: 1.14rem; margin: 0 0 3px; line-height: 1.4; }
+.dhikr-title-ar { font-family: 'Amiri', serif; font-size: 1.22rem; color: var(--green); margin-bottom: 14px; line-height: 1.8; }
+.dhikr-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 1.45rem;
+  line-height: 2.35;
+  color: var(--green-dark);
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 10px;
+  padding: 17px 21px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.dhikr-en { line-height: 1.85; margin-bottom: 14px; }
+
+.dhikr-count-row {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  background: var(--green-pale);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+.dhikr-counter {
+  border: none;
+  background: var(--green);
+  color: #fff;
+  border-radius: 999px;
+  min-width: 92px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .09s, background .2s;
+}
+.dhikr-counter:hover { background: var(--green-dark); }
+.dhikr-counter:active { transform: scale(.94); }
+.dhikr-of { font-size: .82rem; opacity: .8; margin-inline-start: 3px; }
+.dhikr-when { flex: 1; font-size: .86rem; line-height: 1.75; min-width: 160px; }
+.dhikr-reset {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-muted);
+  border-radius: 999px;
+  width: 38px; height: 38px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+.dhikr-reset:hover { border-color: var(--green); color: var(--green); }
+.dhikr-virtue { font-size: .93rem; line-height: 1.85; margin-bottom: 12px; }
+.dhikr-strength {
+  display: inline-block;
+  margin-top: 8px;
+  background: #e6f4ea;
+  color: #1e7e45;
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: .78rem;
+  font-weight: 600;
+}
+@media (max-width: 560px) {
+  .dhikr-card { padding: 18px 16px; }
+  .dhikr-arabic { font-size: 1.25rem; padding: 14px 12px; }
+  .dhikr-count-row { gap: 10px; }
 }
 
 @media (max-width: 640px) {
@@ -2524,9 +2662,14 @@ html.lang-ar .theme-card.warning { border-right-color: #b5541f; }
 html.lang-ar .mic-btn { right: auto; left: 10px; }
 html.lang-ar .sit-input-wrap textarea { padding: 15px 18px 15px 62px; }
 
-/* Show the right language of the content itself. */
-html:not(.lang-ar) .ar-only { display: none; }
-html.lang-ar .en-only { display: none; }
+/* Show the right language of the content itself.
+   These two are utilities: their only job is to hide one language, so they
+   have to beat any layout rule that also sets `display` on the same element.
+   `.person-card .person-head .title-tag` (0,3,0) was out-specifying
+   `html.lang-ar .en-only` (0,2,1), which left the English epithet showing
+   under the Arabic one on every prophet and companion card. */
+html:not(.lang-ar) .ar-only { display: none !important; }
+html.lang-ar .en-only { display: none !important; }
 
 /* ============ Responsive ============ */
 /* The menu now has twelve links plus the language switch. Laid out in a row it
@@ -2562,4 +2705,79 @@ html.lang-ar .en-only { display: none; }
   header.site-header {
     position: relative;
   }
+}
+
+/* ============ Site-wide feedback (injected on every page) ============ */
+.fb-section {
+  background: var(--green-pale);
+  border-top: 1px solid var(--border);
+  padding: 54px 0 58px;
+}
+.fb-form {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  text-align: start;
+}
+.fb-form label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--green-dark);
+}
+.fb-form input,
+.fb-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-size: .95rem;
+}
+.fb-form textarea { min-height: 112px; resize: vertical; }
+.fb-form input:focus,
+.fb-form textarea:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+.fb-note {
+  margin-top: 14px;
+  background: #e6f4ea;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: .88rem;
+  line-height: 1.8;
+  color: var(--green-dark);
+}
+
+/* ============ Staff: the feedback panel ============ */
+.fb-admin-note {
+  background: #fdf4ee;
+  border: 1px solid #e8cdb8;
+  border-radius: 10px;
+  padding: 14px 17px;
+  font-size: .89rem;
+  line-height: 1.85;
+  margin: 14px 0 16px;
+}
+.fb-admin-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 14px; }
+.fb-admin-count { font-size: .84rem; color: var(--text-muted); margin-bottom: 10px; }
+.fb-admin-list { display: grid; gap: 12px; }
+.fb-admin-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green);
+  border-radius: 10px;
+  padding: 13px 16px;
+}
+.fb-admin-meta { font-size: .78rem; color: var(--text-muted); margin-bottom: 6px; }
+.fb-admin-msg { font-size: .95rem; line-height: 1.8; white-space: pre-wrap; margin: 0; }
+.fb-admin-empty {
+  background: var(--green-pale);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: .9rem;
+  line-height: 1.8;
+  color: var(--text-muted);
 }

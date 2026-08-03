@@ -43,6 +43,18 @@ function toArabicDigits(n) {
   return String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[+d]);
 }
 
+/* Arabic counts its nouns differently from English: one, two, a few (3–10)
+   and many (11+) each take a different form. "75 آيات" is wrong where
+   "٧٥ آية" is right, and a native reader notices immediately. */
+function arCount(n, one, two, few, many) {
+  if (n === 1) return one;
+  if (n === 2) return two;
+  const d = toArabicDigits(n);
+  return (n >= 3 && n <= 10) ? d + " " + few : d + " " + many;
+}
+function arCountAyah(n) { return arCount(n, "آية واحدة", "آيتان", "آيات", "آية"); }
+function arCountPage(n) { return arCount(n, "صفحة واحدة", "صفحتان", "صفحات", "صفحة"); }
+
 function ayahAudioUrl(surahNum, ayahNumInSurah) {
   return "https://everyayah.com/data/" + getReciter() + "/" + pad3(surahNum) + pad3(ayahNumInSurah) + ".mp3";
 }
@@ -115,11 +127,13 @@ function renderSurahGrid(surahs) {
     const card = document.createElement("div");
     card.className = "surah-card";
     card.innerHTML = `
-      <div class="surah-number">${s.n}</div>
+      <div class="surah-number"><span class="en-only">${s.n}</span><span class="ar-only">${toArabicDigits(s.n)}</span></div>
       <div class="surah-info">
-        <h4>${s.name} <span class="surah-arabic">${s.arabic}</span></h4>
-        <div class="surah-meta">${s.meaning} • ${s.verses} verses • ${s.place}</div>
-        ${s.pages ? `<div class="surah-pages">📖 ${s.pages} ${s.pages === 1 ? "page" : "pages"} in the Mushaf${s.pages > 1 ? ` (${s.pageFrom}–${s.pageTo})` : ` (p. ${s.pageFrom})`}</div>` : ""}
+        <h4><span class="en-only">${s.name} </span><span class="surah-arabic">${s.arabic}</span></h4>
+        <div class="surah-meta en-only">${s.meaning} • ${s.verses} verses • ${s.place}</div>
+        <div class="surah-meta ar-only" dir="rtl">${arCountAyah(s.verses)} • ${s.place === "Meccan" ? "مكية" : "مدنية"}</div>
+        ${s.pages ? `<div class="surah-pages en-only">📖 ${s.pages} ${s.pages === 1 ? "page" : "pages"} in the Mushaf${s.pages > 1 ? ` (${s.pageFrom}–${s.pageTo})` : ` (p. ${s.pageFrom})`}</div>
+        <div class="surah-pages ar-only" dir="rtl">📖 ${arCountPage(s.pages)} في المصحف${s.pages > 1 ? ` (${toArabicDigits(s.pageFrom)}–${toArabicDigits(s.pageTo)})` : ` (ص ${toArabicDigits(s.pageFrom)})`}</div>` : ""}
       </div>
     `;
     card.addEventListener("click", () => openSurah(s));

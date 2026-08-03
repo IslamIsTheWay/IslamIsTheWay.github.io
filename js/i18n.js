@@ -139,11 +139,21 @@ const AR = {
     "سؤال عن دورة، أو تصويب لما قرأت، أو فكرة لتحسين الموقع — يسعدنا تواصلك معنا.",
   "Browse the courses": "تصفّح الدورات",
   "Send feedback": "أرسل ملاحظاتك",
+
+  // ---- Feedback (injected on every page) ----
+  "Tell Us What You Think": "قل لنا رأيك",
+  "💬 Tell Us What You Think": "💬 قل لنا رأيك",
+  "Found a mistake in a reference, a word translated wrongly, or something that would make this site better? Tell us — every message is read.":
+    "وجدتَ خطأً في مرجع، أو ترجمةً غير دقيقة، أو عندك فكرة تُحسّن الموقع؟ اكتب لنا — كل رسالة تُقرأ.",
+  "Describe the problem or your suggestion…  |  اكتب الملاحظة أو الاقتراح…":
+    "اكتب الملاحظة أو الاقتراح…",
   "Knowledge That Brings Peace to the Heart": "علمٌ تطمئن به القلوب",
   "Indeed, With Hardship Comes Ease": "إنّ مع العسر يسرًا",
 
   // ---- Quran page ----
   "The Quran Library": "مكتبة القرآن الكريم",
+  "All 114 surahs in one place. Search by name or meaning, filter by Makkah or Madinah, and open any surah to read it in Arabic with an English translation.":
+    "سور القرآن الكريم الـ114 في مكان واحد. ابحث بالاسم أو بالمعنى، وصنّف المكية والمدنية، وافتح أي سورة لتقرأها بالعربية مع الترجمة الإنجليزية.",
   "Play Full Surah": "تشغيل السورة كاملة",
   "▶ Play Full Surah": "▶ تشغيل السورة كاملة",
   "⏹ Stop": "⏹ إيقاف",
@@ -202,12 +212,79 @@ const AR = {
   // ---- Search page ----
   "Search a Prophet or Companion": "ابحث عن نبي أو صحابي",
   "Try:": "جرّب:",
+  "Type a name below — such as \"Musa\", \"Ibrahim\", \"Abu Bakr\", or \"عائشة\" — and see a summary with its references.":
+    "اكتب اسمًا بالأسفل — مثل «موسى» أو «إبراهيم» أو «أبو بكر» أو «عائشة» — لتظهر لك نبذةٌ مع مراجعها.",
+  "Muhammad ﷺ": "محمد ﷺ",
+  "Ibrahim": "إبراهيم",
+  "Musa": "موسى",
+  "Yusuf": "يوسف",
+  "Abu Bakr": "أبو بكر",
+  "Prophet": "نبيّ",
+  "Companion (Sahabi)": "صحابيّ",
+
+  // ---- Speech / voice notice ----
+  "No Arabic voice is installed on this device.": "لا يوجد صوت عربي مثبّت على هذا الجهاز.",
+  "A note:": "تنبيه:",
+  "not a fatwa": "ليست فتوى",
+  "The meaning of the hadith above": "معنى الحديث المذكور أعلاه",
+  "How these were chosen:": "طريقة الاختيار:",
+  "How this page handles its sources:": "طريقة التوثيق في هذه الصفحة:",
+  "outside": "خارج",
+
+  // ---- Login page ----
+  "Staff members can sign in below to manage content. Everyone else can browse the site freely — no account is needed.":
+    "يمكن لأعضاء الفريق تسجيل الدخول لإدارة المحتوى. وأما الزوّار فيتصفّحون الموقع بحرية دون حساب.",
+  "For site administrators and instructors only.": "لمديري الموقع والمعلّمين فقط.",
+  "No password needed. Browse the Quran, Prophets, Companions, Hadith and Guidance freely.":
+    "لا حاجة لكلمة مرور. تصفّح القرآن والأنبياء والصحابة والحديث والتوجيه بحرية.",
+  "Note:": "ملاحظة:",
 
   // ---- Sunnah page ----
   "Sunnah": "السنة",
   "The Sunnah of the Prophet ﷺ": "سنة النبي ﷺ",
   "How the Prophet Muhammad ﷺ actually lived — how he prayed, slept, ate, washed, travelled, and treated his family and everyone around him. Every practice here carries its source.":
     "هدي النبي محمد ﷺ العملي — كيف كان يصلي وينام ويأكل ويتطهر ويسافر، وكيف كان يعامل أهله والناس. كل سنة مذكورة بمرجعها.",
+  // ---- Gradings ----
+  // These appear on hundreds of cards. They are their own text nodes, so an
+  // exact entry here translates every one of them site-wide. The owner's rule
+  // is that the grading names the scholar — so does the Arabic.
+  "Sahih — Agreed upon (al-Bukhari and Muslim)": "صحيح — متفق عليه (البخاري ومسلم)",
+  "Sahih — Narrated by al-Bukhari": "صحيح — رواه البخاري",
+  "Sahih — Narrated by Muslim": "صحيح — رواه مسلم",
+  "Sahih — established in the collections": "صحيح — ثابت في كتب السنة",
+  "Sahih — authenticated in the collections": "صحيح — ثابت في كتب السنة",
+  "Strong — established in the collections": "قويّ — ثابت في كتب السنة",
+  "Strong — authenticated by al-Albani": "قويّ — صحّحه الألباني",
+  "Sahih — authenticated by al-Albani": "صحيح — صحّحه الألباني",
+  "Strong — graded Strong by the scholars of hadith": "قويّ — قوّاه أهل الحديث",
+  "Sahih — Narrated by al-Bukhari and at-Tirmidhi": "صحيح — رواه البخاري والترمذي",
+  "Sahih — Narrated by Muslim; also at-Tirmidhi": "صحيح — رواه مسلم، ورواه الترمذي أيضًا",
+  "Sahih — Narrated by at-Tirmidhi; authenticated by al-Albani": "صحيح — رواه الترمذي، وصحّحه الألباني",
+  "Sahih — Narrated by at-Tirmidhi; graded Sahih by at-Tirmidhi and al-Albani": "صحيح — رواه الترمذي، وصحّحه الترمذي والألباني",
+  "Strong — Narrated by at-Tirmidhi; graded Strong by at-Tirmidhi": "قويّ — رواه الترمذي، وحسّنه الترمذي",
+  "Strong — Narrated by at-Tirmidhi; graded Strong by al-Albani": "قويّ — رواه الترمذي، وحسّنه الألباني",
+  "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi": "قويّ — رواه الترمذي ومالك، وحسّنه الترمذي والنووي",
+  "Sahih — Narrated by Abu Dawud and at-Tirmidhi; authenticated by al-Albani": "صحيح — رواه أبو داود والترمذي، وصحّحه الألباني",
+  "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi": "قويّ — رواه أبو داود والترمذي، وحسّنه النووي",
+  "Sahih — Narrated by Ibn Majah; authenticated by as-Suyuti and al-Albani": "صحيح — رواه ابن ماجه، وصحّحه السيوطي والألباني",
+  "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani": "صحيح — رواه ابن ماجه وأحمد، وصحّحه الألباني",
+  "Strong — Narrated by Ibn Majah and Malik; authenticated by al-Albani": "قويّ — رواه ابن ماجه ومالك، وصحّحه الألباني",
+  "Strong — Narrated by at-Tabarani; graded Strong by al-Albani": "قويّ — رواه الطبراني، وحسّنه الألباني",
+  "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani": "صحيح — رواه الحاكم، وصحّحه الحاكم والألباني",
+  "Sahih — Narrated by al-Bukhari; the second by at-Tirmidhi (authenticated)": "صحيح — رواه البخاري، والثاني رواه الترمذي وصُحّح",
+  "Sahih — Narrated by al-Bukhari; the dua graded Strong": "صحيح — رواه البخاري، والدعاء قويّ",
+  "Sahih — Narrated by al-Bukhari; the manner graded Strong": "صحيح — رواه البخاري، وصفة الفعل قويّة",
+  "Sahih — Narrated by Muslim; the reward narration graded Strong": "صحيح — رواه مسلم، ورواية الأجر قويّة",
+  "Sahih — Narrated by Muslim; the description of the Dajjal is agreed upon (al-Bukhari and Muslim)": "صحيح — رواه مسلم، ووصف الدجال متفق عليه (البخاري ومسلم)",
+  "Sahih — Narrated by al-Bukhari (for reciting it before sleep); the practice after each prayer is Strong — Narrated by an-Nasa'i, authenticated by al-Albani":
+    "صحيح — رواه البخاري (في قراءتها عند النوم)، وأما بعد كل صلاة فقويّ — رواه النسائي وصحّحه الألباني",
+  "The words themselves are Quran. The hadith recommending them: Strong — Narrated by at-Tirmidhi, authenticated by al-Albani; not in the two Sahihs":
+    "الكلمات نفسها قرآن. وأما الحديث في الدعاء بها فقويّ — رواه الترمذي وصحّحه الألباني، وليس في الصحيحين",
+  "Strong — Narrated by Abu Dawud and at-Tirmidhi, authenticated by al-Albani (for the morning and evening); Sahih — Narrated by al-Bukhari (for before sleeping)":
+    "قويّ — رواه أبو داود والترمذي وصحّحه الألباني (في الصباح والمساء)؛ وصحيح — رواه البخاري (في قراءتها عند النوم)",
+  "Strong — Narrated by an-Nasa'i, authenticated by al-Albani; not in the two Sahihs":
+    "قويّ — رواه النسائي وصحّحه الألباني، وليس في الصحيحين",
+
   "before sleeping": "قبل النوم",
   "how to make wudu": "كيف أتوضأ",
   "eating": "الطعام",
@@ -231,6 +308,23 @@ const AR_PARTS = [
   [/\bMuwatta Imam Malik\b/g, "موطأ الإمام مالك"],
   [/\bMustadrak al-Hakim\b/g, "مستدرك الحاكم"],
   [/\bAl-Mu'jam al-Awsat\b/g, "المعجم الأوسط"],
+  // Histories and sira — these are NOT hadith collections, and the site marks
+  // them as such. Their names were showing in English on the Arabic pages.
+  [/\bMusannaf Ibn Abi Shaybah\b/g, "مصنّف ابن أبي شيبة"],
+  [/\bIbn Kathir, Al-Bidaya wan-Nihaya\b/g, "ابن كثير، البداية والنهاية"],
+  [/\bIbn Kathir, Stories of the Prophets\b/g, "ابن كثير، قصص الأنبياء"],
+  [/\bAl-Bidaya wan-Nihaya\b/g, "البداية والنهاية"],
+  [/\bStories of the Prophets\b/g, "قصص الأنبياء"],
+  [/\bIbn Kathir\b/g, "ابن كثير"],
+  [/\bIbn Ishaq\b/g, "ابن إسحاق"],
+  [/\bIbn Sa'd, Tabaqat\b/g, "ابن سعد، الطبقات"],
+  [/\bIbn Sa'd\b/g, "ابن سعد"],
+  [/\bTabaqat\b/g, "الطبقات"],
+  [/\bat-Tabari\b/g, "الطبري"],
+  [/\bhistorical sira, not hadith\b/g, "سيرة تاريخية لا حديث"],
+  [/\bhistorical sira\b/g, "سيرة تاريخية"],
+  [/\boutside the two Sahihs\b/g, "خارج الصحيحين"],
+  [/\bthe two Sahihs\b/g, "الصحيحين"],
   // Book titles inside references, longest first so they match before the
   // shorter words they contain.
   [/Book of the Virtues of the Quran/g, "كتاب فضائل القرآن"],
