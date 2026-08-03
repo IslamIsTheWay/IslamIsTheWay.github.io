@@ -15,6 +15,8 @@ islam-is-the-way-site/
 ├── sunnah.html         133 daily-life practices, category chips, bilingual search + mic
 ├── guidance.html       Quran themes + "describe your situation" finder with mic
 ├── courses.html        Course list, premium videos, join-a-class, feedback form
+├── stories.html        28 stories of the Prophet, glossary box, series links
+├── judgement.html      The Day of Judgement — 14 stages, from death to the end
 ├── search.html         Person search (prophets + companions)
 ├── login.html          Staff login (password) / visitor entry
 ├── staff.html          Staff dashboard — tabbed sections, publishes to GitHub
@@ -22,10 +24,14 @@ islam-is-the-way-site/
 │
 ├── css/style.css       ALL styling for the whole site (one file, ~2000 lines)
 ├── js/
-│   ├── data.js         Prophets, Companions, Surahs, Hadith, Guidance themes, Courses
-│   ├── sunnah.js       SUNNAH_CATEGORIES + SUNNAH (133 entries)
+│   ├── data.js         Prophets, Companions, Surahs (with Mushaf pages),
+│   │                   Hadith, Guidance themes, Courses, PROPHET_STORIES,
+│   │                   WORSHIP_STEPS, AR_GLOSSARY
+│   ├── sunnah.js       SUNNAH_CATEGORIES + SUNNAH (166 entries)
 │   ├── main.js         Nav, scroll reveal, analytics, text-to-speech, person search
-│   ├── quran.js        Surah grid, reciter list, audio playback, reader modal
+│   ├── lives.js        FULL_LIVES (companions + prophets), ONE_RELIGION
+│   ├── judgement.js    JUDGEMENT_STAGES — the 14 stages of the Day
+│   ├── quran.js        Surah grid, reciters, audio, reader, Mushaf page marks
 │   └── i18n.js         Arabic/English switch, RTL, reference translation
 ├── img/                23 optimised images (logo, mosque photos, gallery, favicon)
 ├── data/site-config.json   Staff-editable content (courses, videos, meetings, payment)
@@ -136,3 +142,42 @@ All five of `titleAr`, `detailAr`, `ref`, `strength`, `keys` are present on all
 - **Never use an image under 1000px wide as a full-width background.**
   `check-images.sh` enforces this.
 </content>
+
+
+#### Data shapes added since the first handoff
+
+```js
+// js/data.js
+PROPHET_STORIES  { id, group?, groupTitle?, title, titleAr, theme, themeAr,
+                   story, storyAr, arabic?, lesson, lessonAr, ref, strength, keys }
+WORSHIP_STEPS    { id, stage, stageEn, stageAr, title, titleAr, when, whenAr,
+                   arabic, count?, countAr?, meaning, meaningAr, ref, strength, keys }
+AR_GLOSSARY      { "<word without harakat>": { ar, en } }
+SURAHS           … + pageFrom, pageTo, pages   (Madani Mushaf, 604 pages)
+
+// js/lives.js
+FULL_LIVES       { "<id matching COMPANIONS/PROPHETS>": {
+                     before, beforeAr, islam, islamAr, change, changeAr,
+                     greatest, greatestAr, death, deathAr,
+                     message?, messageAr?,        // prophets only
+                     sources: [ "... — Sahih | historical sira" ] } }
+ONE_RELIGION     { title, titleAr, intro, introAr, points[], declarations[] }
+
+// js/judgement.js
+JUDGEMENT_STAGES { id, order, title, titleAr, lead, leadAr,
+                   points: [ { en, ar, quran, ref } ],
+                   note, noteAr }              // note = how strong the source is
+
+// data/site-config.json
+recitations      [ { id, url, title, titleAr, reciter, reciterAr, surah,
+                     surahAr, surahNum, ayahFrom, ayahTo, note, noteAr,
+                     vertical? } ]
+```
+
+#### Script load order — two deliberate exceptions
+
+The normal order is `data.js` → data files → page script → `main.js` →
+`i18n.js` last. But **`staff.html` and `companions.html` load `main.js`
+early**, before their inline script, because that script calls
+`iitwParseVideo` / `iitwEsc` / `iitwStaffUser` while parsing. `main.js` has no
+top-level DOM access, so loading it early is safe. Do not "tidy" this back.

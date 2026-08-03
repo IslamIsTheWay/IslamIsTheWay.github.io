@@ -68,18 +68,36 @@ responds well to a clear explanation plus the nearest workable alternative.
 ## Where things are
 
 ```
-index quran prophets companions hadith sunnah guidance courses search login staff meeting  (.html)
+index quran prophets companions hadith sunnah stories judgement guidance
+courses search login staff meeting                                     (.html)
+
 css/style.css              all styling, one file
-js/data.js                 prophets, companions, surahs, hadith, guidance themes, courses
-js/sunnah.js               SUNNAH_CATEGORIES + SUNNAH (133 entries)
-js/main.js                 nav, scroll reveal, analytics, text-to-speech, person search
-js/quran.js                surah grid, 16 reciters, audio, reader modal
+js/data.js                 PROPHETS, COMPANIONS, SURAHS (with Mushaf page
+                           numbers), HADITHS, PARADISE/WARNING_THEMES,
+                           PROPHET_STORIES, WORSHIP_STEPS, AR_GLOSSARY
+js/sunnah.js               SUNNAH_CATEGORIES + SUNNAH (166 entries)
+js/lives.js                FULL_LIVES (companions + prophets) + ONE_RELIGION
+js/judgement.js            JUDGEMENT_STAGES (14 stages)
+js/main.js                 nav, scroll reveal, analytics, text-to-speech,
+                           staff session, recitation video parsing, Quran
+                           verse lookup, translation helper
+js/quran.js                surah grid, 16 reciters, audio, reader modal,
+                           Mushaf page markers
 js/i18n.js                 Arabic/English switch, RTL, reference translation
-data/site-config.json      staff-editable (courses, videos, meetings, payment)
+data/site-config.json      staff-editable (courses, videos, meetings,
+                           payment, recitations)
 HANDOFF/                   full documentation — see below
 ```
 
-Script load order matters: `data.js` → page script → `main.js` → **`i18n.js` last**.
+Script load order matters: `data.js` → `lives.js`/`judgement.js`/`sunnah.js` →
+page script → `main.js` → **`i18n.js` last**. Two exceptions where `main.js`
+loads EARLY on purpose, because the page script calls its helpers at parse
+time: `staff.html` and `companions.html`.
+
+### Never destroy what the owner published
+`data/site-config.json` holds his live recitations. Before committing, run
+`git checkout origin/main -- data/site-config.json` unless you are
+deliberately changing it — a stale local copy will delete his videos.
 
 ---
 
@@ -139,16 +157,53 @@ with what we changed today?"*
 
 ## Current state
 
-_Last updated: 31 July 2026_
+_Last updated: 3 August 2026_
 
-- 29 prophets · 65 companions (all 11 Mothers of the Believers)
+- 29 prophets · **66** companions (all 11 Mothers of the Believers; Sa'd ibn
+  Mu'adh added) · **16 full life stories** in `js/lives.js`
 - 43 curated hadith, plus full Sahih al-Bukhari + Muslim (~15,000) via API
-- 133 sunnah practices across 18 areas
-- 20 Quran guidance themes · 114 surahs · 16 reciters
+- **166** sunnah practices across 18 areas
+- **23** Quran guidance themes · 114 surahs · 16 reciters
+- **28 stories of the Prophet ﷺ** (`stories.html`), 5 of them a linked series
+  on the Dajjal
+- **The Day of Judgement** (`judgement.html`) — 14 stages, 58 points, 52
+  Quranic passages
+- **16 worship steps** in Guidance — what to say at each point of the prayer,
+  after it, daily, and for forgiveness
+- **Recommended recitations** on the home page, published from the dashboard
 - Bilingual switch with RTL, situational search, staff dashboard with tabbed
   sections and one-click meeting start, live classes with recording and
   translated captions, admin-only analytics, Bing-indexed
 
-**Open work:** save-your-place in the Quran; Gmail sign-in (blocked — needs an
+### New pages and files since the last handoff
+```
+stories.html      28 stories of the Prophet ﷺ, glossary box, series linking
+judgement.html    the Day of Judgement, 14 stages
+js/lives.js       FULL_LIVES (companions + prophets) and ONE_RELIGION
+js/judgement.js   JUDGEMENT_STAGES
+js/data.js        + WORSHIP_STEPS, AR_GLOSSARY, PROPHET_STORIES,
+                    pageFrom/pageTo/pages on all 114 SURAHS
+```
+
+## The rule that matters most in this project
+
+**Say how strong a source is, every time.** The owner asks for "the strongest
+reference" and means it. So:
+
+- Bukhari/Muslim → cite the number. That is the top rank.
+- at-Tirmidhi, an-Nasa'i, Abu Dawud, Ahmad → name the collection AND say it is
+  outside the two Sahihs.
+- Ibn Ishaq, Ibn Sa'd, at-Tabari → label **historical sira, not hadith**.
+- If something famous is NOT authentic, **say so on the entry**. Examples
+  already on the site: the 70,000 angels at Sa'd ibn Mu'adh's funeral, the
+  names Azrail and Ridwan, Munkar and Nakir, Ayat al-Kursi after every prayer.
+
+Never invent a hadith number. Muslim's numbering in the jsdelivr API is
+**sequential (1–7563) and does NOT match** the standard numbering — cite Muslim
+by book name unless you have verified the number. Bukhari's numbering in that
+API **does** match.
+
+**Open work:** more companion full lives (16 of 66 done) and more prophets
+(4 of 29); save-your-place in the Quran; Gmail sign-in (blocked — needs an
 OAuth Client ID from the owner's own Google Cloud Console); Arabic speech
 quality is limited by the voices installed on the reader's device.

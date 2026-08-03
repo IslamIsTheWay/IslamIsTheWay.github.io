@@ -85,3 +85,41 @@
 - Nav insertion via sed also matching footer `<li>` items and breaking markup.
   Always check `<li>`/`<ul>` balance after bulk edits.
 </content>
+
+
+---
+
+## Open work as of 3 August 2026
+
+1. **Companion full lives — 12 of 66.** Written: Abu Bakr, Umar, Ali,
+   Khadijah, Aishah, Bilal, Hamza, Khalid, Abu Hurairah, Salman, Mus'ab,
+   Sa'd ibn Mu'adh. The other 54 still have only a summary. Structure is in
+   `js/lives.js`; the page renders any id that exists there.
+2. **Prophet full lives — 4 of 29.** Written: Nuh, Ibrahim, Musa, Isa.
+3. **Arabic pausal (waqf) rules for speech** — final short vowels should drop
+   at a stop, ta marbuta become ha. Designed, not built.
+4. **Show which Arabic voice is in use** — the owner has never confirmed what
+   his machine has, which is why the voice complaint is still unresolved. If
+   his dropdown says "Egyptian dialect", that is the whole cause and no code
+   fixes it.
+5. Quran "save my place"; Gmail sign-in (needs his own OAuth Client ID).
+
+## Traps found the hard way — do not reintroduce
+
+- **Muslim's numbering in the jsdelivr hadith API is sequential (1–7563) and
+  does NOT match the standard numbering.** API #2194 is a funeral hadith, not
+  the ruqyah. Bukhari's numbering in that API **does** match. Cite Muslim by
+  book name unless the number is verified.
+- **`sessionStorage` for the staff login** dies with the tab. It is
+  localStorage now, with a 12-hour expiry.
+- **Add and Publish were two steps** and the add could fail in a small grey
+  line — so Publish then saved an empty list and reported success. One button
+  does both now, and publishing is blocked while a video sits unadded.
+- **Surah detection by substring** matched "Sad recitation" to Surah Sad.
+  Whole words only; short and personal names require the word "Surah" first.
+- **Query expansion creating matches** — "money" expanded to "job" and hit the
+  cheating-at-work hadith. Expansion may only refine an existing match.
+- **Regex look-behind** breaks older Safari at parse time and would kill the
+  whole file. Avoided in guidance.html and stories.html.
+- **A stale local `data/site-config.json`** will delete the owner's published
+  recitations on commit.

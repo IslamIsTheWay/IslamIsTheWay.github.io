@@ -120,3 +120,62 @@ delegated listener.
 - **SEO** — robots.txt, sitemap.xml, meta/Open Graph, verified in Bing Webmaster
   Tools (BingSiteAuth.xml). Google Search Console **not yet set up**.
 </content>
+
+
+---
+
+## Added 1–3 August 2026
+
+### Stories of the Prophet (`stories.html`)
+28 stories, every one located in the text of al-Bukhari or Muslim **before**
+being written — none from memory. Each carries the Arabic where he spoke, the
+reference, the grading, and what the situation teaches, in both languages.
+
+- **Words explained** — a box above the lesson listing the classical words in
+  that story, in plain modern Arabic and English (`AR_GLOSSARY`, 65 words).
+  Matching is word-by-word, not regex, because the text carries harakat.
+  Do NOT add "ال" to words under 3 letters when matching: that made the
+  ordinary كلّ match الكَلّ.
+- **Series linking** — stories sharing a `group` show "Part 2 of 5" with the
+  others linked. The 5 Dajjal stories are one series.
+
+### The Day of Judgement (`judgement.html`)
+14 stages in the order they happen, 58 points, 52 Quranic passages: death and
+the soul · the grave and the three questions · the Trumpet · the standing ·
+**the angels by name** · what you are asked · **the seven under the shade** ·
+**the two faces** · the settling of rights (al-Muflis) · the records · the
+Scales · the Bridge and Basin · **the gates** · standing alone.
+
+Seven stages carry a `note` saying which parts are NOT in the two Sahihs.
+
+### Worship reference in Guidance
+16 steps — before the prayer, inside it, after it, daily, and asking
+forgiveness — browsable by stage, searchable, and fed into the situation box
+(shown first when it matches, because it answers the question directly).
+
+### Guidance search — how it works now
+Searches Quran themes **+ all Sunnah + the full Bukhari & Muslim (automatic,
+no button) + worship steps + prophets + companions**, and fetches the actual
+ayah text for every theme reference. Key mechanics:
+- Concept groups bridge everyday words to Quranic vocabulary.
+- Expansion can only *refine* a match, never create one — otherwise "money"
+  expanded to "job" and matched the hadith about cheating at work.
+- Distress vs wrongdoing: someone describing suffering is not shown warnings.
+
+### Quran — Mushaf pages
+Every ayah carries its page from the Madani 604-page Mushaf, so the reader
+sees "End of page 2 — 1 of 48" between verses, plus the page count per surah
+on every card. Verified against the printed Mushaf.
+
+### Recommended recitations (home page, admin only)
+Paste a link → the video's own title is read via YouTube oEmbed → **the whole
+Quran is searched for the words in that title**, which gives the surah AND the
+exact ayah, because clips are usually titled with the verse rather than the
+surah. Fills surah, verse, an English title from the verse translation, the
+Arabic title, and the reciter (from after the "|", not the channel).
+One button adds AND publishes; publishing is blocked if a video sits unadded.
+
+### Staff dashboard
+Sign-in lasts 12 hours in localStorage and survives leaving the page; every
+change is saved as a draft and restored; a banner warns when something is not
+published; the GitHub token is remembered after the first successful publish.

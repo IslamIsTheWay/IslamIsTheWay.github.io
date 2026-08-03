@@ -104,3 +104,43 @@ avoids repeating mistakes that have already been made once.
 19. The owner asks for things to be **"extremely detailed"** and "as much as
     possible" — err on the side of more content, provided accuracy holds.
 </content>
+
+
+---
+
+## Learned 1–3 August 2026 — read these before starting
+
+20. **Deploy. Do not park finished work.** He judges everything by opening the
+    live site. Three rounds of changes were completed locally and never pushed,
+    each ending with "not pushed yet, say the word" — he kept refreshing, saw
+    nothing, and reasonably concluded nothing had been done. Push as part of
+    finishing, then poll until GitHub Pages actually serves it and verify on
+    the real URL.
+
+21. **Say how strong every source is — every time.** This is his highest
+    priority after accuracy itself. Bukhari/Muslim with a number; anything from
+    at-Tirmidhi, an-Nasa'i, Abu Dawud or Ahmad labelled as outside the two
+    Sahihs; anything from Ibn Ishaq, Ibn Sa'd or the histories labelled
+    **historical sira, not hadith**. And when something famous is NOT
+    authentic, say so on the entry. He asked for "the strongest reference you
+    can get and say which reference did you get their story from" — that
+    includes telling him when a well-known detail is not in the two Sahihs.
+
+22. **Do not do a small batch and ask permission to continue.** When he says
+    "as much as you can", queueing a task and reporting back reads as stalling
+    and wastes his usage. Do the work. If the honest limit is quality per
+    entry, say that in one line and keep going in the same turn.
+
+23. **Verify, do not guess, when he reports a bug.** He is usually right and
+    the cause is usually not what it looks like. His video "not publishing"
+    was three successful commits that saved an empty list. The surah detector
+    being "absolutely wrong" was substring matching. Look at the evidence —
+    git history, the actual API response, the real config — before theorising.
+
+24. **He works by voice** and sends several asks in one long message, often
+    mid-turn. Split them into a list and do all of them; he will notice
+    precisely which one you skipped.
+
+25. **Never overwrite `data/site-config.json`.** It holds the recitations he
+    published. Always `git checkout origin/main -- data/site-config.json`
+    before committing unless you are deliberately changing it.

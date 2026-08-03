@@ -52,31 +52,36 @@ before the script existed. `bump-version.sh` prevents it.
 
 ---
 
-## Current state (as of this handoff)
+## Current state (3 August 2026)
 
 **Content**
-- 29 Prophets — English + Arabic summaries
-- 65 Companions — including all 11 Mothers of the Believers
-- 43 curated hadith with grading, plus full Sahih al-Bukhari + Muslim (~15,000) via API
-- 133 Sunnah practices across 18 areas of daily life
-- 20 Quran guidance themes (Paradise / warnings)
-- 114 surahs with 16 reciters
+- 29 Prophets — English + Arabic summaries, 4 with full life stories
+- 66 Companions — including all 11 Mothers of the Believers and Sa'd ibn
+  Mu'adh; 12 with full life stories
+- 43 curated hadith with grading, plus full Sahih al-Bukhari + Muslim
+  (~15,000) via API
+- 166 Sunnah practices across 18 areas of daily life
+- 23 Quran guidance themes, plus 16 worship steps (what to say, and when)
+- 28 Stories of the Prophet, 5 of them a linked series on the Dajjal
+- The Day of Judgement — 14 stages, 58 referenced points, 52 Quranic passages
+- 114 surahs with 16 reciters, and Mushaf page numbers on every one
+- A 65-word classical Arabic glossary (AR_GLOSSARY)
 
-**Pages**: index, quran, prophets, companions, hadith, sunnah, guidance, courses,
-search, login, staff, meeting
+**Pages**: index, quran, prophets, companions, hadith, sunnah, **stories**,
+**judgement**, guidance, courses, search, login, staff, meeting
 
-**Working**: bilingual switch with RTL, situational search, Quran audio, hadith
-search, staff dashboard with publishing, live meetings with recording and
-translated captions, analytics (admin only), SEO/Bing indexing.
+**Working**: bilingual switch with RTL; situational search across Quran +
+hadith + Sunnah + the full collections; Quran audio with Mushaf page markers;
+hadith search; staff dashboard with publishing, a remembered token and saved
+drafts; live meetings with recording and translated captions; analytics
+(admin only); recommended recitations on the home page; SEO/Bing indexing.
 
-**In progress / not finished** — see `04-known-issues.md`. Briefly:
-1. Staff dashboard was just split into tabs — **needs testing**
-2. "Start Meeting Now" button just added — **needs testing**
-3. Quran "save my place" — **requested, not built**
-4. Google/Gmail login — **requested, needs the owner's OAuth Client ID**
-5. Arabic text-to-speech quality — **fundamental platform limit, see notes**
-
----
+**In progress** — see `04-known-issues.md`. Briefly:
+1. Companion full lives — 12 of 66 written
+2. Prophet full lives — 4 of 29 written
+3. Quran "save my place" — requested, not built
+4. Google/Gmail login — needs the owner's own OAuth Client ID
+5. Arabic text-to-speech quality — a device limit, see the notes
 
 ## How to work with this owner
 

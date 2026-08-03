@@ -145,3 +145,59 @@ When testing in a browser, append a throwaway query string (`?t=123`) to bypass
 the CDN cache — otherwise you will be looking at the old page and think the
 change failed.
 </content>
+
+
+---
+
+## Adding a story, a life, a worship step or a Judgement stage
+
+The working method that produced all of this — use it, do not write from
+memory:
+
+```bash
+# 1. Get the sources once (they are multi-MB)
+for e in ara-bukhari ara-muslim eng-bukhari eng-muslim; do
+  curl -s -o "$e.json"     "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/$e.json"
+done
+
+# 2. Search the ENGLISH for the story, then copy the ARABIC from the same
+#    record. Never type the Arabic from memory.
+
+# 3. For Quranic material, fetch the whole Quran once and search it:
+curl -s -o quran-uthmani.json "https://api.alquran.cloud/v1/quran/quran-uthmani"
+```
+
+**Story** (`PROPHET_STORIES` in data.js) — `id, title, titleAr, theme, themeAr,
+story, storyAr, arabic?, lesson, lessonAr, ref, strength, keys`.
+Add `group`, `groupTitle`, `groupTitleAr` to link it into a series.
+Blank lines in `story`/`storyAr` become real paragraphs.
+
+**Full life** (`FULL_LIVES` in lives.js) — key must match the `id` in
+COMPANIONS or PROPHETS. Fields: `before, islam, change, greatest, death` each
+with an `Ar` twin, plus `sources: []`. Prophets also take `message`/`messageAr`.
+**Every entry in `sources` must say its rank** — "Sahih al-Bukhari … — Sahih",
+or "Ibn Sa'd, Tabaqat — historical sira, not hadith".
+
+**Worship step** (`WORSHIP_STEPS` in data.js) — `stage` must be one of
+`before | in | after | daily | mercy`.
+
+**Judgement stage** (`JUDGEMENT_STAGES` in judgement.js) — `order` must be
+sequential; renumber the whole array if you insert one. `note`/`noteAr` is
+where you say what is not in the two Sahihs.
+
+**Glossary word** (`AR_GLOSSARY` in data.js) — key written WITHOUT harakat.
+Do not add words under 3 letters.
+
+## Checks for the new files
+
+```bash
+awk '/^  \}$/{l=NR} /^  \{/{if(NR==l+1) print "MISSING COMMA "l}' js/data.js
+awk '/^  \}$/{l=NR} /^  \{/{if(NR==l+1) print "MISSING COMMA "l}' js/sunnah.js
+
+# every FULL_LIVES key must exist as a person, or the story is unreachable
+# (check in the browser console on companions.html / prophets.html):
+#   Object.keys(FULL_LIVES).filter(k => !COMPANIONS.some(c => c.id === k))
+
+# judgement stage order must be 1..n with no gaps
+grep -o 'order: [0-9]*' js/judgement.js
+```
