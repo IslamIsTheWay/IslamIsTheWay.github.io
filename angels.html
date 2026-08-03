@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608031739" />
+  <link rel="stylesheet" href="css/style.css?v=202608031806" />
 </head>
 <body>
 
@@ -98,8 +98,8 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608031739"></script>
-  <script src="js/angels.js?v=202608031739"></script>
+  <script src="js/data.js?v=202608031806"></script>
+  <script src="js/angels.js?v=202608031806"></script>
   <script>
     /* One card per angel. The Arabic of the hadith or the verse sits at the
        top of the card, because that is the thing being reported — everything
@@ -120,6 +120,12 @@
           <button class="speak-btn" data-lang="ar" title="Listen">&#128266;</button></p>` : ""}
         <p class="en-only">${a.detail}</p>
         <p dir="rtl" style="font-family:&#39;Amiri&#39;,serif;line-height:2;">${a.detailAr}</p>
+        ${(a.points && a.points.length) ? `<ol class="angel-points">${a.points.map(p =>
+          `<li>
+            <div class="ap-en en-only">${p.en}</div>
+            <div class="ap-ar" dir="rtl">${p.ar}</div>
+            <div class="refs ap-ref"><span>${p.ref}</span></div>
+          </li>`).join("")}</ol>` : ""}
         <div class="refs"><span>${a.ref}</span></div>
         <div class="dhikr-strength">${a.strength}</div>
       </article>`;
@@ -152,7 +158,7 @@
     renderAngelTabs();
     renderAngels();
   </script>
-  <script src="js/main.js?v=202608031739"></script>
-  <script src="js/i18n.js?v=202608031739"></script>
+  <script src="js/main.js?v=202608031806"></script>
+  <script src="js/i18n.js?v=202608031806"></script>
 </body>
 </html>
