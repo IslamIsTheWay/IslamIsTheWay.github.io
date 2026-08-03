@@ -82,8 +82,8 @@ const JUDGEMENT_STAGES = [
         quran: "كَمَا بَدَأْنَا أَوَّلَ خَلْقٍ نُّعِيدُهُ",
         ref: "Sahih al-Bukhari, Book of Ar-Riqaq, Hadith 6527 — Sahih; and Surah Al-Anbiya (21:104)" }
     ],
-    note: "The angel who blows the Trumpet is named Israfil in narrations outside the two Sahihs. The Trumpet itself is Quranic and certain; the name is not of the same rank.",
-    noteAr: "والملَك الموكَّل بالنفخ سُمّي إسرافيل في رواياتٍ خارج الصحيحين. والصور نفسه قرآنيٌّ قطعيّ، وأما الاسم فليس في رتبته."
+    note: "The angel who blows the Trumpet is Israfil, and his name is established — it appears in Sahih Muslim, in the supplication the Prophet ﷺ used to open his night prayer with: O Allah, Lord of Jibril and Mika'il and Israfil. See the section on the angels above for the full wording.",
+    noteAr: "والملَك الموكَّل بالنفخ هو إسرافيل، واسمه ثابت؛ فقد جاء في صحيح مسلم في دعاء استفتاح النبي ﷺ لقيام الليل: اللهم ربَّ جبريل وميكائيل وإسرافيل. وانظر قسم الملائكة أعلاه للنصّ كاملًا."
   },
 
   {
@@ -112,8 +112,152 @@ const JUDGEMENT_STAGES = [
   },
 
   {
-    id: "j-rights",
+    id: "j-angels",
     order: 5,
+    title: "The angels — their names, what they look like, and what each one does",
+    titleAr: "الملائكة — أسماؤهم وصفاتهم ووظيفة كلٍّ منهم",
+    lead: "Angels are named in the Quran and in the two Sahihs, and each has an assigned task. Some names people use every day are firmly established; others are not established at all. Both are marked here.",
+    leadAr: "الملائكة مُسمَّون في القرآن والصحيحين، ولكلٍّ منهم وظيفةٌ موكَّلٌ بها. وبعض الأسماء التي يتداولها الناس ثابتة، وبعضها غير ثابتٍ البتّة — ونُبيّن الأمرين.",
+    points: [
+      { en: "JIBRIL (Gabriel) — the angel of revelation, who brought the Quran down upon the heart of the Prophet ﷺ. As for his shape: Aishah رضي الله عنها said the Prophet ﷺ saw Jibril in the form in which he was created, and his creation filled the whole horizon. He is also described as having six hundred wings.",
+        ar: "جبريل عليه السلام — مَلَك الوحي، نزل بالقرآن على قلب النبي ﷺ. وأما صورته فقالت عائشة رضي الله عنها: رأى جبريل في صورته، وخَلقه سادٌّ ما بين الأفق. ووُصف أيضًا بأن له ستمائة جناح.",
+        quran: "قُلْ مَن كَانَ عَدُوًّا لِّجِبْرِيلَ فَإِنَّهُ نَزَّلَهُ عَلَىٰ قَلْبِكَ بِإِذْنِ اللَّهِ",
+        ref: "Surah Al-Baqarah (2:97); his form filling the horizon: Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3234 — Sahih; the six hundred wings: Sahih al-Bukhari, Hadith 3232 and Sahih Muslim — Sahih" },
+      { en: "MIKA'IL (Michael) — named in the Quran alongside Jibril, and named by the Prophet ﷺ. Whoever is an enemy to Allah, His angels, His messengers, Jibril and Mika'il — then Allah is an enemy to the disbelievers.",
+        ar: "ميكائيل عليه السلام — سُمّي في القرآن مع جبريل، وسمّاه النبي ﷺ. ومن كان عدوًّا لله وملائكته ورسله وجبريل وميكال فإن الله عدوٌّ للكافرين.",
+        quran: "مَن كَانَ عَدُوًّا لِّلَّهِ وَمَلَائِكَتِهِ وَرُسُلِهِ وَجِبْرِيلَ وَمِيكَالَ فَإِنَّ اللَّهَ عَدُوٌّ لِّلْكَافِرِينَ",
+        ref: "Surah Al-Baqarah (2:98); and Sahih al-Bukhari, Book of Adhan, Hadith 831 — Sahih" },
+      { en: "ISRAFIL — the angel of the Trumpet. His name IS established: the Prophet ﷺ used to open his night prayer saying, O Allah, Lord of Jibril and Mika'il and Israfil, Originator of the heavens and the earth. That is in Sahih Muslim.",
+        ar: "إسرافيل عليه السلام — المُوكَّل بالصور. واسمه ثابت: كان النبي ﷺ يفتتح صلاته من الليل بقوله: اللهم ربَّ جبريل وميكائيل وإسرافيل، فاطر السماوات والأرض. وهو في صحيح مسلم.",
+        quran: "اللَّهُمَّ رَبَّ جِبْرِيلَ وَمِيكَائِيلَ وَإِسْرَافِيلَ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ",
+        ref: "Sahih Muslim, Book of the Prayer of Travellers, Hadith 1811 — Sahih" },
+      { en: "THE ANGEL OF DEATH — put in charge of taking your soul. The Quran calls him Malak al-Mawt and does not give him a personal name. The name 'Azrail' that people commonly use is NOT in the Quran and NOT in the two Sahihs.",
+        ar: "مَلَك الموت — المُوكَّل بقبض روحك. سمّاه القرآن «ملك الموت» ولم يُعطه اسمًا علَمًا. وأما «عزرائيل» الذي يتداوله الناس فليس في القرآن ولا في الصحيحين.",
+        quran: "قُلْ يَتَوَفَّاكُم مَّلَكُ الْمَوْتِ الَّذِي وُكِّلَ بِكُمْ",
+        ref: "Surah As-Sajdah (32:11)" },
+      { en: "THE TWO OF THE GRAVE — the two who sit you up and ask you the three questions. Their names MUNKAR and NAKIR come from a narration of at-Tirmidhi, not from al-Bukhari or Muslim. The questioning itself is firmly established; the two names are not of that rank.",
+        ar: "ملَكا القبر — اللذان يُجلسانك ويسألانك الأسئلة الثلاثة. واسماهما «منكر ونكير» من رواية الترمذي لا من البخاري ومسلم. والسؤال نفسه ثابت، وأما الاسمان فليسا في تلك الرتبة.",
+        quran: "",
+        ref: "The questioning: Sahih al-Bukhari, Book of Funerals, Hadith 1369 — Sahih. The two names: Jami' at-Tirmidhi — outside the two Sahihs" },
+      { en: "THE TWO WRITERS — Kiraman Katibin, the noble scribes. Over you are keepers, noble recorders, who know whatever you do. Not a word is uttered but that there is an observer ready beside him.",
+        ar: "الكاتبان — كرامًا كاتبين. وإنّ عليكم لحافظين كرامًا كاتبين يعلمون ما تفعلون. وما يلفظ من قولٍ إلا لديه رقيبٌ عتيد.",
+        quran: "وَإِنَّ عَلَيْكُمْ لَحَافِظِينَ ۝ كِرَامًا كَاتِبِينَ ۝ يَعْلَمُونَ مَا تَفْعَلُونَ",
+        ref: "Surah Al-Infitar (82:10-12); and Surah Qaf (50:18)" },
+      { en: "MALIK — the keeper of the Fire, named in the Quran. Those inside call out to him by name asking that their Lord finish them off, and he answers: you are staying.",
+        ar: "مالك — خازن النار، مُسمّى في القرآن. ينادونه باسمه أن يقضي عليهم ربّهم، فيقول: إنكم ماكثون.",
+        quran: "وَنَادَوْا يَا مَالِكُ لِيَقْضِ عَلَيْنَا رَبُّكَ ۖ قَالَ إِنَّكُم مَّاكِثُونَ",
+        ref: "Surah Az-Zukhruf (43:77)" },
+      { en: "THE NINETEEN, AND THE ZABANIYAH — over the Fire are nineteen. Its angels are described as harsh and severe, who do not disobey Allah in what He commands them and do exactly what they are commanded. The Zabaniyah are named in Surah Al-'Alaq.",
+        ar: "التسعة عشر والزبانية — عليها تسعة عشر. ووُصف ملائكتها بأنهم غلاظٌ شداد لا يعصون الله ما أمرهم ويفعلون ما يُؤمرون. والزبانية مُسمَّون في سورة العلق.",
+        quran: "عَلَيْهَا تِسْعَةَ عَشَرَ ۝ عَلَيْهَا مَلَائِكَةٌ غِلَاظٌ شِدَادٌ لَّا يَعْصُونَ اللَّهَ مَا أَمَرَهُمْ وَيَفْعَلُونَ مَا يُؤْمَرُونَ",
+        ref: "Surah Al-Muddaththir (74:30); Surah At-Tahrim (66:6); the Zabaniyah in Surah Al-'Alaq (96:18)" },
+      { en: "THE KEEPERS OF PARADISE — the Quran calls them khazanatuha, its keepers, and records what they say to those arriving: peace be upon you, you have done well, so enter it to remain forever. The name RIDWAN, which people commonly give to the keeper of Paradise, is NOT in the Quran and NOT in the two Sahihs.",
+        ar: "خزنة الجنة — سمّاهم القرآن «خزنتها»، وذكر ما يقولونه للقادمين: سلامٌ عليكم طبتم فادخلوها خالدين. وأما اسم «رِضوان» الذي يشتهر عند الناس لخازن الجنة فليس في القرآن ولا في الصحيحين.",
+        quran: "وَقَالَ لَهُمْ خَزَنَتُهَا سَلَامٌ عَلَيْكُمْ طِبْتُمْ فَادْخُلُوهَا خَالِدِينَ",
+        ref: "Surah Az-Zumar (39:73)" },
+      { en: "THE BEARERS OF THE THRONE — eight will bear the Throne of your Lord above them on that Day.",
+        ar: "حملة العرش — ويحمل عرش ربّك فوقهم يومئذٍ ثمانية.",
+        quran: "وَالْمَلَكُ عَلَىٰ أَرْجَائِهَا ۚ وَيَحْمِلُ عَرْشَ رَبِّكَ فَوْقَهُمْ يَوْمَئِذٍ ثَمَانِيَةٌ",
+        ref: "Surah Al-Haqqah (69:17)" },
+      { en: "AND EVERY SOUL COMES WITH TWO — with each person on that Day is a driver and a witness. One brings you, one testifies about you.",
+        ar: "ومع كل نفسٍ اثنان — وجاءت كلّ نفسٍ معها سائقٌ وشهيد؛ واحدٌ يسوقك وآخر يشهد عليك.",
+        quran: "وَجَاءَتْ كُلُّ نَفْسٍ مَّعَهَا سَائِقٌ وَشَهِيدٌ",
+        ref: "Surah Qaf (50:21)" }
+    ],
+    note: "Two names in wide circulation are not established: 'Azrail' for the Angel of Death, and 'Ridwan' for the keeper of Paradise. Neither is in the Quran nor in al-Bukhari or Muslim. Israfil, by contrast, IS established — it is in Sahih Muslim, in the supplication the Prophet ﷺ opened his night prayer with. Munkar and Nakir sit in between: reported by at-Tirmidhi, outside the two Sahihs.",
+    noteAr: "اسمان مشهوران غير ثابتَين: «عزرائيل» لملَك الموت، و«رِضوان» لخازن الجنة؛ ليسا في القرآن ولا في البخاري ومسلم. وأما إسرافيل فثابت، وهو في صحيح مسلم في دعاء استفتاح النبي ﷺ لقيام الليل. وأما منكر ونكير فبينهما: رواهما الترمذي، وهما خارج الصحيحين."
+  },
+
+  {
+    id: "j-questions",
+    order: 6,
+    title: "What you will be asked about",
+    titleAr: "عمّا ستُسأل",
+    lead: "Nobody passes through without being stopped. The Quran commands: stop them — they are to be questioned. And it names some of what the questioning covers.",
+    leadAr: "لا يمرّ أحدٌ دون أن يُوقَف. قال الله: وقِفوهم إنهم مسؤولون. وسمّى بعض ما يقع عليه السؤال.",
+    points: [
+      { en: "Stop them — they are to be questioned.",
+        ar: "وقِفوهم إنهم مسؤولون.",
+        quran: "وَقِفُوهُمْ ۖ إِنَّهُم مَّسْئُولُونَ",
+        ref: "Surah As-Saffat (37:24)" },
+      { en: "Then you will surely be asked that Day about the blessings — the health you had, the food, the safety, the water, the time. Not only about the great sins, but about what you were given and what you did with it.",
+        ar: "ثم لتُسألنّ يومئذٍ عن النعيم — الصحة والطعام والأمن والماء والوقت. فليس السؤال عن كبائر الذنوب فحسب، بل عمّا أُعطيتَ وما صنعتَ به.",
+        quran: "ثُمَّ لَتُسْأَلُنَّ يَوْمَئِذٍ عَنِ النَّعِيمِ",
+        ref: "Surah At-Takathur (102:8)" },
+      { en: "The hearing, the sight and the heart — each of these will be asked about. What you listened to, what you looked at, and what you let settle in your heart.",
+        ar: "إنّ السمع والبصر والفؤاد كلّ أولئك كان عنه مسؤولًا. عمّا سمعتَ، وما نظرتَ إليه، وما أقررتَه في قلبك.",
+        quran: "إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا",
+        ref: "Surah Al-Isra (17:36)" },
+      { en: "Your own limbs testify. On that Day their tongues, their hands and their feet will bear witness against them for what they used to do — a person is not only asked, he is shown.",
+        ar: "وتشهد عليك جوارحك؛ يوم تشهد عليهم ألسنتهم وأيديهم وأرجلهم بما كانوا يعملون — فالمرء لا يُسأل فحسب، بل يُشهَد عليه.",
+        quran: "يَوْمَ تَشْهَدُ عَلَيْهِمْ أَلْسِنَتُهُمْ وَأَيْدِيهِمْ وَأَرْجُلُهُم بِمَا كَانُوا يَعْمَلُونَ",
+        ref: "Surah An-Nur (24:24)" },
+      { en: "And the mouth is sealed. On that Day We seal over their mouths, and their hands speak to Us, and their feet testify to what they used to earn.",
+        ar: "ويُختم على الفم؛ اليوم نختم على أفواههم وتُكلّمنا أيديهم وتشهد أرجلهم بما كانوا يكسبون.",
+        quran: "الْيَوْمَ نَخْتِمُ عَلَىٰ أَفْوَاهِهِمْ وَتُكَلِّمُنَا أَيْدِيهِمْ وَتَشْهَدُ أَرْجُلُهُم بِمَا كَانُوا يَكْسِبُونَ",
+        ref: "Surah Ya-Sin (36:65)" }
+    ],
+    note: "The well-known hadith listing four things a servant's feet will not move until he is asked about — his life and how he spent it, his knowledge and what he did with it, his wealth from where he earned it and where he spent it, and his body and how he wore it out — is narrated by at-Tirmidhi, not by al-Bukhari or Muslim. It is a strong and widely accepted report, but it is not of the rank of the two Sahihs, and the difference is stated here rather than hidden.",
+    noteAr: "وأما الحديث المشهور في أربعٍ لا تزول قدما عبدٍ حتى يُسأل عنهنّ — عن عمره فيم أفناه، وعن علمه ماذا عمل به، وعن ماله من أين اكتسبه وفيم أنفقه، وعن جسمه فيم أبلاه — فرواه الترمذي، وليس في البخاري ولا مسلم. وهو قويٌّ مقبولٌ عند أهل العلم، لكنه ليس في رتبة الصحيحين، ونُبيّن الفرق ولا نُخفيه."
+  },
+
+  {
+    id: "j-shade",
+    order: 7,
+    title: "Seven under the shade of Allah — when there is no other shade",
+    titleAr: "سبعةٌ يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه",
+    lead: "On a day when the sun is brought near and there is no shade at all, the Prophet ﷺ named seven kinds of people whom Allah shades. He named them precisely, so that anyone can look at the list and ask which of them he could still become.",
+    leadAr: "في يومٍ تُدنى فيه الشمس ولا ظلّ فيه البتّة، سمّى النبي ﷺ سبعةً يُظلّهم الله في ظلّه. وسمّاهم تسميةً دقيقة، حتى ينظر كلُّ أحدٍ في القائمة فيسأل نفسه: أيّهم يمكن أن أكون؟",
+    points: [
+      { en: "1. A just ruler. 2. A young person who grew up in the worship of his Lord. 3. A man whose heart is attached to the mosques. 4. Two who loved one another for the sake of Allah — they met upon that and parted upon that. 5. A man whom a woman of position and beauty called to herself, and he said: I fear Allah. 6. A man who gave charity so secretly that his left hand did not know what his right hand spent. 7. A man who remembered Allah alone, and his eyes overflowed.",
+        ar: "١ الإمام العادل. ٢ وشابٌّ نشأ في عبادة ربّه. ٣ ورجلٌ قلبه معلَّقٌ في المساجد. ٤ ورجلان تحابّا في الله اجتمعا عليه وتفرّقا عليه. ٥ ورجلٌ طلبته امرأةٌ ذات منصبٍ وجمالٍ فقال: إني أخاف الله. ٦ ورجلٌ تصدّق بصدقةٍ فأخفاها حتى لا تعلم شماله ما تُنفق يمينه. ٧ ورجلٌ ذكر الله خاليًا ففاضت عيناه.",
+        quran: "سَبْعَةٌ يُظِلُّهُمُ اللَّهُ فِي ظِلِّهِ يَوْمَ لَا ظِلَّ إِلَّا ظِلُّهُ",
+        ref: "Sahih al-Bukhari, Book of Adhan, Hadith 660 — Sahih, agreed upon" },
+      { en: "Look at what is on that list: not one of the seven is a position you are born into except the first. A young person who worships. Someone whose heart pulls him back to the mosque. Two friends who kept each other on the right thing. A man alone with an opportunity who refused it. A person who gave without telling anyone. A person who cried where nobody could see. Six of the seven are things done when nobody is watching.",
+        ar: "وتأمّل ما في القائمة: ليس فيها منصبٌ يُولَد فيه المرء إلا الأول. شابٌّ يعبد. وقلبٌ يجرّ صاحبه إلى المسجد. وصديقان ثبّت كلٌّ منهما صاحبه. ورجلٌ خلا بمعصيةٍ فتركها. ومتصدّقٌ لم يُخبر أحدًا. وباكٍ حيث لا يراه أحد. فستّةٌ من السبعة أعمالٌ تُصنع حين لا يراك أحد.",
+        quran: "",
+        ref: "The meaning of the hadith above" }
+    ],
+    note: "The number seven here does not mean only seven people or only these categories — scholars note that other narrations mention further groups, such as one who gives respite to a debtor in difficulty. The seven are named because they were named; they are not presented as an exhaustive list.",
+    noteAr: "وليس العدد سبعةً على معنى الحصر في هؤلاء وحدهم؛ فقد ذكر أهل العلم أن رواياتٍ أخرى فيها أصنافٌ غيرهم، كمن أنظر مُعسرًا. وإنما ذُكر السبعة لأنهم ذُكروا، ولا يُقدَّمون هنا على أنهم حصرٌ لا يزيد."
+  },
+
+  {
+    id: "j-faces",
+    order: 8,
+    title: "Two kinds of faces — and how the Day feels from inside each",
+    titleAr: "وجهان يومئذٍ — وكيف يمرّ اليوم على كلٍّ منهما",
+    lead: "The Quran describes the Day not only from the outside but from inside the person living it. Two sets of faces, and two completely different experiences of the same length of time.",
+    leadAr: "وصف القرآن ذلك اليوم لا من خارجه فحسب، بل من داخل من يعيشه: وجهان، وشعوران مختلفان تمامًا بالمدّة نفسها.",
+    points: [
+      { en: "Faces that Day are bright — laughing, rejoicing at good news.",
+        ar: "وجوهٌ يومئذٍ مُسفِرة، ضاحكةٌ مستبشرة.",
+        quran: "وُجُوهٌ يَوْمَئِذٍ مُّسْفِرَةٌ ۝ ضَاحِكَةٌ مُّسْتَبْشِرَةٌ",
+        ref: "Surah 'Abasa (80:38-39)" },
+      { en: "And faces that Day have dust upon them, covered by darkness — those are the disbelievers, the wicked.",
+        ar: "ووجوهٌ يومئذٍ عليها غَبَرة، ترهَقُها قَتَرة، أولئك هم الكفرة الفَجَرة.",
+        quran: "وَوُجُوهٌ يَوْمَئِذٍ عَلَيْهَا غَبَرَةٌ ۝ تَرْهَقُهَا قَتَرَةٌ ۝ أُولَٰئِكَ هُمُ الْكَفَرَةُ الْفَجَرَةُ",
+        ref: "Surah 'Abasa (80:40-42)" },
+      { en: "Faces radiant, looking at their Lord — this is the greatest thing given on that Day, and the Prophet ﷺ said the believers will see their Lord as they see the full moon on a clear night, crowding no one to see it.",
+        ar: "وجوهٌ يومئذٍ ناضرة، إلى ربها ناظرة — وهي أعظم ما يُعطاه أهل ذلك اليوم؛ وقال النبي ﷺ إن المؤمنين يرون ربهم كما يرون القمر ليلة البدر لا يُضامّون في رؤيته.",
+        quran: "وُجُوهٌ يَوْمَئِذٍ نَّاضِرَةٌ ۝ إِلَىٰ رَبِّهَا نَاظِرَةٌ",
+        ref: "Surah Al-Qiyamah (75:22-23); and Sahih al-Bukhari, Book of Adhan, Hadith 806 — Sahih, agreed upon" },
+      { en: "And how does the time pass? For those who feared, the whole thing will feel as though they had stayed no longer than an evening or its morning. The same fifty thousand years is not the same length for everybody.",
+        ar: "وكيف يمرّ الزمن؟ يشعر المتّقون كأنهم لم يلبثوا إلا عشيّةً أو ضُحاها. فالخمسون ألف سنةٍ نفسها ليست طولًا واحدًا على الجميع.",
+        quran: "كَأَنَّهُمْ يَوْمَ يَرَوْنَهَا لَمْ يَلْبَثُوا إِلَّا عَشِيَّةً أَوْ ضُحَاهَا",
+        ref: "Surah An-Nazi'at (79:46)" },
+      { en: "And for the one who has nothing to show, the Quran records the sentence he will say — the most despairing words in it. Seeing what his own hands sent ahead, the disbeliever says: I wish I were dust.",
+        ar: "وأمّا من لا شيء معه فقد سجّل القرآن جملته — وهي من أشدّ ما فيه يأسًا؛ حين ينظر المرء ما قدّمت يداه يقول الكافر: يا ليتني كنتُ تُرابًا.",
+        quran: "يَوْمَ يَنظُرُ الْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ الْكَافِرُ يَا لَيْتَنِي كُنتُ تُرَابًا",
+        ref: "Surah An-Naba (78:40)" }
+    ],
+    note: "",
+    noteAr: ""
+  },
+
+  {
+    id: "j-rights",
+    order: 9,
     title: "The settling of rights — this is where most people are ruined",
     titleAr: "القصاص بين الناس — وهنا يُفلس أكثر الناس",
     lead: "Before anything else is settled, what people took from one another is settled — and it is not settled with money, because there is no money there.",
@@ -138,7 +282,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-records",
-    order: 6,
+    order: 10,
     title: "The records — in the right hand or the left",
     titleAr: "الصحف — باليمين أو بالشمال",
     lead: "Everyone is given his record, and the Quran describes the two reactions in detail.",
@@ -162,7 +306,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-scales",
-    order: 7,
+    order: 11,
     title: "The Scales — weighed to the atom",
     titleAr: "الميزان — وزنٌ بمثقال الذرّة",
     lead: "Scales of justice are set, and nothing is wronged in the slightest.",
@@ -186,7 +330,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-bridge",
-    order: 8,
+    order: 12,
     title: "The Bridge over Hell, and the Basin",
     titleAr: "الصراط والحوض",
     lead: "The Bridge is set over Hell and people cross it at the speed of their deeds. Before it, the Prophet ﷺ waits at his Basin.",
@@ -207,7 +351,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-gates",
-    order: 9,
+    order: 13,
     title: "The gates — eight for Paradise, and who stands at them",
     titleAr: "الأبواب — ثمانية للجنة ومن عليها",
     lead: "Paradise has eight gates. The Prophet ﷺ named one of them and told Abu Bakr رضي الله عنه that whoever spends a pair of anything in the way of Allah is called from every gate.",
@@ -232,7 +376,19 @@ const JUDGEMENT_STAGES = [
       { en: "The gatekeepers of Paradise are described in the Quran, and the believers are met with: peace be upon you, you have done well, so enter it to remain.",
         ar: "وخزنة الجنة مذكورون في القرآن، ويُستقبل المؤمنون بقول: سلامٌ عليكم طبتم فادخلوها خالدين.",
         quran: "وَسِيقَ الَّذِينَ اتَّقَوْا رَبَّهُمْ إِلَى الْجَنَّةِ زُمَرًا ۖ حَتَّىٰ إِذَا جَاءُوهَا وَفُتِحَتْ أَبْوَابُهَا وَقَالَ لَهُمْ خَزَنَتُهَا سَلَامٌ عَلَيْكُمْ طِبْتُمْ فَادْخُلُوهَا خَالِدِينَ",
-        ref: "Surah Az-Zumar (39:73)" }
+        ref: "Surah Az-Zumar (39:73)" },
+      { en: "Notice the difference in the two verses. Those driven to the Fire come to it and its gates are opened as they arrive — fututihat. Those taken to Paradise come to it and its gates are ALREADY open — wa futihat, with the waw. The scholars of tafsir noted this: the Fire is opened for them when they get there; Paradise is standing open, waiting.",
+        ar: "وتأمّل الفرق بين الآيتين: أهل النار يأتونها فتُفتح أبوابها عند مجيئهم — «فُتِحت». وأهل الجنة يأتونها وأبوابها مفتوحةٌ من قبل — «وفُتِحت» بالواو. وقد نبّه المفسّرون على ذلك: النار تُفتح لهم عند وصولهم، والجنة مفتوحةٌ تنتظرهم.",
+        quran: "وَسِيقَ الَّذِينَ كَفَرُوا إِلَىٰ جَهَنَّمَ زُمَرًا ۖ حَتَّىٰ إِذَا جَاءُوهَا فُتِحَتْ أَبْوَابُهَا",
+        ref: "Surah Az-Zumar (39:71) compared with (39:73)" },
+      { en: "The width of a single gate of Paradise: the Prophet ﷺ said that between the two door-posts of a gate of Paradise is the distance of a forty-year journey — and a day will come when it is crowded.",
+        ar: "وسعة الباب الواحد من أبواب الجنة: قال النبي ﷺ إن ما بين المِصراعين من مصاريع الجنة مسيرة أربعين سنة، وليأتينّ عليه يومٌ وهو كظيظٌ من الزحام.",
+        quran: "وَمَا بَيْنَ الْمِصْرَاعَيْنِ مِنْ مَصَارِيعِ الْجَنَّةِ كَمَا بَيْنَ مَكَّةَ وَهَجَرٍ",
+        ref: "Sahih Muslim, Book of Faith (Kitab al-Iman) — Sahih" },
+      { en: "And the first to enter is named. The Prophet ﷺ said: I will come to the gate of Paradise on the Day of Resurrection and ask for it to be opened. The keeper will ask who I am. I will say: Muhammad. He will say: I was commanded not to open it for anyone before you.",
+        ar: "وأول من يدخلها مُسمّى؛ قال النبي ﷺ: آتي باب الجنة يوم القيامة فأستفتح، فيقول الخازن: من أنت؟ فأقول: محمد. فيقول: بك أُمِرت لا أفتح لأحدٍ قبلك.",
+        quran: "بِكَ أُمِرْتُ لَا أَفْتَحُ لِأَحَدٍ قَبْلَكَ",
+        ref: "Sahih Muslim, Book of Faith (Kitab al-Iman) — Sahih" }
     ],
     note: "Names given in popular accounts for each individual gate of Paradise, and for the angel at each one, are mostly not found in al-Bukhari or Muslim. What IS established: eight gates; the gate of Ar-Rayyan for those who fast; gates named after deeds — prayer, jihad, fasting, charity; seven gates of Hell; nineteen over it; and its keeper Malik. Anything beyond that is not presented here as certain.",
     noteAr: "وأما ما يُذكر في بعض الكتب من أسماءٍ لكل بابٍ من أبواب الجنة ولملَكٍ على كل باب فأكثره ليس في البخاري ولا مسلم. والثابت: ثمانية أبواب، وباب الريّان للصائمين، وأبوابٌ باسم الأعمال: الصلاة والجهاد والصيام والصدقة، وسبعة أبوابٍ لجهنم، وتسعة عشر عليها، وخازنها مالك. وما وراء ذلك لا نُقدّمه هنا على أنه قطعيّ."
@@ -240,7 +396,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-alone",
-    order: 10,
+    order: 14,
     title: "In the end you stand alone — even your mother will want her right",
     titleAr: "وفي النهاية تقف وحدك — حتى أمّك تطلب حقّها",
     lead: "This is the part people find hardest, and the Quran states it without softening. On that Day the closest people to you will not be beside you — they will be occupied with themselves, and some of them will be asking for what you owe them.",
