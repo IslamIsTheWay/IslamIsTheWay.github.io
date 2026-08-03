@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608031545" />
+  <link rel="stylesheet" href="css/style.css?v=202608031739" />
 </head>
 <body>
 
@@ -33,6 +33,7 @@
         <a href="sunnah.html">Sunnah</a>
         <a href="stories.html">Stories</a>
         <a href="judgement.html">Judgement Day</a>
+        <a href="angels.html">Angels</a>
         <a href="guidance.html">Guidance</a>
         <a href="courses.html">Courses</a>
         <a href="search.html">Search</a>
@@ -124,6 +125,14 @@
       <div class="adhkar-tabs" id="rulingTabs"></div>
       <div id="rulingList" class="adhkar-list"></div>
       <p id="rulingEmpty" class="no-results" style="display:none;">Nothing in this section yet. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد في هذا القسم بعد.</span></p>
+
+      <!-- The books themselves, so a reader can go past the summary. -->
+      <h3 class="section-title" style="margin-top:52px;font-size:1.5rem;">📖 The Scholars and Their Books <span dir="rtl" style="font-family:'Amiri',serif;">— العلماء وكتبهم</span></h3>
+      <p class="section-sub" style="margin-top:12px;">
+        Everything above is a summary of someone else's words. These are the books those words come from — what each one is actually for, and where to read it.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">كل ما تقدّم تلخيصٌ لكلام غيرنا. وهذه هي الكتب التي منها ذلك الكلام — فيمَ صُنّف كلُّ كتاب، وأين يُقرأ.</span>
+      </p>
+      <div id="scholarList" class="scholar-list"></div>
     </div>
   </section>
 
@@ -194,6 +203,7 @@
             <li><a href="sunnah.html">Sunnah</a></li>
             <li><a href="stories.html">Stories of the Prophet صلى الله عليه وسلم</a></li>
             <li><a href="judgement.html">The Day of Judgement</a></li>
+            <li><a href="angels.html">The Angels</a></li>
             <li><a href="guidance.html">Guidance</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="search.html">Search</a></li>
@@ -211,17 +221,19 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608031545"></script>
+  <script src="js/data.js?v=202608031739"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608031545"></script>
+  <script src="js/sunnah.js?v=202608031739"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608031545"></script>
+  <script src="js/adhkar.js?v=202608031739"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608031545"></script>
+  <script src="js/scholars.js?v=202608031739"></script>
+  <!-- Who wrote what, and which book to open. -->
+  <script src="js/scholars-books.js?v=202608031545"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -1013,6 +1025,36 @@
       renderRulings();
     }
 
+    /* The scholars and their books. Rendered once — there is nothing to
+       filter here, the point is to be able to read the whole shelf. */
+    function renderScholars() {
+      const host = document.getElementById("scholarList");
+      if (!host || typeof SCHOLARS === "undefined") return;
+      host.innerHTML = SCHOLARS.map(s => `<article class="scholar-card">
+        <div class="scholar-head">
+          <div>
+            <h4 class="scholar-name en-only">${s.name}</h4>
+            <div class="scholar-name-ar" dir="rtl">${s.nameAr}</div>
+          </div>
+          <div class="scholar-years">
+            <span class="en-only">${s.years}</span>
+            <span class="ar-only" dir="rtl">${s.yearsAr}</span>
+          </div>
+        </div>
+        <p class="scholar-known en-only">${s.known}</p>
+        <p class="scholar-known" dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${s.knownAr}</p>
+        <ul class="scholar-books">
+          ${s.books.map(b => `<li>
+            <div class="sb-title"><span class="en-only">${b.t}</span><span dir="rtl" style="font-family:'Amiri',serif;">${b.tAr}</span></div>
+            <div class="sb-desc en-only">${b.d}</div>
+            <div class="sb-desc" dir="rtl" style="font-family:'Amiri',serif;">${b.dAr}</div>
+          </li>`).join("")}
+        </ul>
+      </article>`).join("");
+      if (window.applyI18n) window.applyI18n();
+    }
+    renderScholars();
+
     /* ================= The adhkar =================
        A tap counter per dhikr, kept in localStorage under today's date so it
        survives leaving the page but starts fresh tomorrow. Yesterday's keys
@@ -1162,7 +1204,7 @@
       renderAdhkar();
     }
   </script>
-  <script src="js/main.js?v=202608031545"></script>
-  <script src="js/i18n.js?v=202608031545"></script>
+  <script src="js/main.js?v=202608031739"></script>
+  <script src="js/i18n.js?v=202608031739"></script>
 </body>
 </html>

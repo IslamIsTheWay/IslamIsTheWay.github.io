@@ -19,6 +19,8 @@ const AR = {
   "Hadith": "الحديث",
   "Stories": "القصص",
   "Judgement Day": "يوم القيامة",
+  "Angels": "الملائكة",
+  "The Angels": "الملائكة",
   "Guidance": "التوجيه",
   "Courses": "الدورات",
   "Search": "البحث",
