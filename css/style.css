@@ -984,6 +984,112 @@ section {
   font-size: 0.95rem;
 }
 
+/* ===== The Day of Judgement ===== */
+.page-hero.ph-judgement {
+  background-image: linear-gradient(rgba(8,25,40,.62), rgba(8,25,40,.55)), url("../img/mosque-night-main.jpg");
+}
+
+.judge-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+  max-width: 940px;
+  margin: 0 auto 40px;
+}
+.judge-step {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: all .2s;
+}
+.judge-step:hover { border-color: var(--green); background: var(--green-pale); }
+.judge-step-num {
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; font-weight: 700;
+}
+.judge-step-label { font-size: .82rem; font-weight: 600; color: var(--text-dark); line-height: 1.35; }
+.judge-step-label small {
+  display: block; font-family: 'Amiri', serif; font-weight: 400;
+  color: var(--text-muted); font-size: .9rem;
+}
+
+.judge-list { display: grid; gap: 30px; max-width: 900px; margin: 0 auto; }
+
+.judge-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--green);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 30px 26px;
+}
+.judge-num {
+  position: absolute; top: -18px; left: 26px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.05rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+.judge-title { color: var(--green-dark); font-size: 1.34rem; margin: 8px 0 3px; line-height: 1.35; }
+.judge-title-ar { font-family: 'Amiri', serif; font-size: 1.36rem; color: var(--green); margin-bottom: 14px; line-height: 1.8; }
+.judge-lead { line-height: 1.85; margin-bottom: 8px; font-weight: 500; }
+.judge-lead-ar { font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2.1; color: var(--text-dark); margin-bottom: 18px; }
+
+.judge-point {
+  border-left: 3px solid var(--green-light);
+  padding: 2px 0 2px 16px;
+  margin-bottom: 20px;
+}
+.judge-point p { line-height: 1.85; margin-bottom: 8px; }
+.judge-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 1.35rem;
+  line-height: 2.35;
+  color: var(--green-dark);
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 10px;
+  padding: 15px 19px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.judge-note {
+  background: #fdf4ee;
+  border: 1px solid #e8cdb8;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 8px;
+}
+.judge-note-head { font-weight: 700; color: #8a3d1f; font-size: .86rem; margin-bottom: 7px; }
+.judge-note p { font-size: .9rem; line-height: 1.8; margin-bottom: 6px; }
+
+.judge-card.judge-flash { animation: judgeFlash 1.6s ease-out; }
+@keyframes judgeFlash {
+  0%   { box-shadow: 0 0 0 3px var(--gold); }
+  100% { box-shadow: var(--shadow); }
+}
+
+@media (max-width: 640px) {
+  .judge-card { padding: 26px 18px 22px; }
+  .judge-title { font-size: 1.15rem; }
+  .judge-arabic { font-size: 1.16rem; padding: 12px 13px; }
+  .judge-point { padding-left: 12px; }
+}
+
 /* ===== The full life of a companion or prophet ===== */
 .life-toggle {
   display: block;
@@ -1019,6 +1125,17 @@ section {
   margin-bottom: 6px;
 }
 .life-part p { line-height: 1.85; margin-bottom: 6px; }
+/* A prophet's message, stated first inside his panel. */
+.life-message {
+  background: var(--green-pale);
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 16px;
+}
+.life-message p { line-height: 1.8; margin-bottom: 5px; }
+
+.one-religion-points { margin-top: 24px; display: grid; gap: 20px; }
+
 .life-sources {
   border-top: 1px dashed #e6d8a8;
   padding-top: 12px;

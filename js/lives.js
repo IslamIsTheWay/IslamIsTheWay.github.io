@@ -17,7 +17,127 @@
 
    `key` matches the id in COMPANIONS or PROPHETS in data.js.
    ============================================================ */
+/* ============================================================
+   ONE RELIGION, DIFFERENT LAWS
+   Shown at the top of the Prophets page. The Quran states both
+   halves of this and they are not in tension: the message every
+   prophet carried was the same, while the law each was given
+   differed. Verses verified in the Quranic text itself.
+   ============================================================ */
+const ONE_RELIGION = {
+  title: "One religion, many paths to fulfilling it",
+  titleAr: "دينٌ واحد، وشرائع مختلفة",
+  intro: "Every prophet named in the Quran brought the same message — worship Allah alone. What differed between them was the law and the way, not the God they called to. The Quran says both things plainly, and neither cancels the other.",
+  introAr: "كل نبيٍّ ذُكر في القرآن جاء بالرسالة نفسها: أن يُعبد الله وحده. وإنما اختلفت بينهم الشرائع والمناهج، لا الإله الذي دعوا إليه. وقد قرّر القرآن الأمرين معًا، ولا يُلغي أحدهما الآخر.",
+  points: [
+    { en: "Not one messenger was sent before you except that We revealed to him that there is no god but Me, so worship Me. The message never changed.",
+      ar: "ما أُرسل رسولٌ قبلك إلا أُوحي إليه أنه لا إله إلا أنا فاعبدون. فالرسالة لم تتغيّر.",
+      quran: "وَمَا أَرْسَلْنَا مِن قَبْلِكَ مِن رَّسُولٍ إِلَّا نُوحِي إِلَيْهِ أَنَّهُ لَا إِلَٰهَ إِلَّا أَنَا فَاعْبُدُونِ",
+      ref: "Surah Al-Anbiya (21:25)" },
+    { en: "He has ordained for you of religion what He enjoined upon Nuh, and what We revealed to you, and what We enjoined upon Ibrahim and Musa and Isa: that you establish the religion and do not divide in it. Five prophets named in one verse, given one instruction.",
+      ar: "شرع لكم من الدين ما وصّى به نوحًا، والذي أوحينا إليك، وما وصّينا به إبراهيم وموسى وعيسى: أن أقيموا الدين ولا تتفرّقوا فيه. خمسة أنبياء في آيةٍ واحدة وأمرٌ واحد.",
+      quran: "شَرَعَ لَكُم مِّنَ الدِّينِ مَا وَصَّىٰ بِهِ نُوحًا وَالَّذِي أَوْحَيْنَا إِلَيْكَ وَمَا وَصَّيْنَا بِهِ إِبْرَاهِيمَ وَمُوسَىٰ وَعِيسَىٰ ۖ أَنْ أَقِيمُوا الدِّينَ وَلَا تَتَفَرَّقُوا فِيهِ",
+      ref: "Surah Ash-Shura (42:13)" },
+    { en: "And here is the other half, in the same Quran: to each of you We prescribed a law and a way. Had Allah willed He would have made you one community, but He tests you in what He has given you — so race one another in good.",
+      ar: "وهذا هو الشقّ الآخر في القرآن نفسه: لكلٍّ جعلنا منكم شِرعةً ومنهاجًا، ولو شاء الله لجعلكم أمةً واحدة، ولكن ليبلوكم في ما آتاكم، فاستبقوا الخيرات.",
+      quran: "لِكُلٍّ جَعَلْنَا مِنكُمْ شِرْعَةً وَمِنْهَاجًا ۚ وَلَوْ شَاءَ اللَّهُ لَجَعَلَكُمْ أُمَّةً وَاحِدَةً وَلَٰكِن لِّيَبْلُوَكُمْ فِي مَا آتَاكُمْ ۖ فَاسْتَبِقُوا الْخَيْرَاتِ",
+      ref: "Surah Al-Ma'idah (5:48)" },
+    { en: "So the prophets are not rivals and are not separate religions. The Prophet ﷺ said the prophets are brothers of one father with different mothers, and their religion is one.",
+      ar: "فليس الأنبياء متنافسين ولا أديانًا شتّى؛ قال النبي ﷺ: الأنبياء إخوةٌ لِعَلَّات، أمهاتهم شتى ودينهم واحد.",
+      quran: "الْأَنْبِيَاءُ إِخْوَةٌ لِعَلَّاتٍ، أُمَّهَاتُهُمْ شَتَّى وَدِينُهُمْ وَاحِدٌ",
+      ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3443 — Sahih, agreed upon" }
+  ]
+};
+
 const FULL_LIVES = {
+
+  "nuh": {
+    before: "He was sent to a people who had begun worshipping idols with names the Quran records — Wadd, Suwa', Yaghuth, Ya'uq and Nasr — the first idolatry after the way of Adam.",
+    beforeAr: "بُعث إلى قومٍ ابتدعوا عبادة الأصنام، وسمّى القرآن أصنامهم: وَدًّا وسُواعًا ويَغوثَ ويعوقَ ونَسرًا، وهي أول شركٍ بعد ملّة آدم.",
+    islam: "His message was the message of every prophet: worship Allah, you have no god besides Him.",
+    islamAr: "ورسالته هي رسالة كل نبي: اعبدوا الله ما لكم من إلهٍ غيره.",
+    change: "He called them night and day, in secret and openly, for nine hundred and fifty years — a figure the Quran gives exactly. He describes his own effort: every time he called them so they might be forgiven, they put their fingers in their ears and covered themselves.",
+    changeAr: "دعاهم ليلًا ونهارًا، سرًّا وجهارًا، ألف سنةٍ إلا خمسين عامًا — وهو عددٌ ذكره القرآن بعينه. ووصف اجتهاده: كلما دعاهم ليغفر لهم جعلوا أصابعهم في آذانهم واستغشوا ثيابهم.",
+    greatest: "Endurance without result. Only a few believed with him. He built the ark on dry land while his people mocked him, and his own son refused to board and drowned.",
+    greatestAr: "الصبر بلا ثمرةٍ ظاهرة؛ فما آمن معه إلا قليل. وصنع الفلك في البرّ وقومه يسخرون، وأبى ابنه أن يركب فكان من المُغرَقين.",
+    death: "The Quran does not narrate his death. What it records is that he was saved with those who believed, and that peace was sent upon him among the worlds.",
+    deathAr: "لم يذكر القرآن وفاته، وإنما ذكر نجاته ومن آمن معه، وأنه سلامٌ عليه في العالمين.",
+    sources: [
+      "950 years: Surah Al-Ankabut (29:14) — Quran",
+      "The names of the idols: Surah Nuh (71:23) — Quran",
+      "Calling night and day, fingers in ears: Surah Nuh (71:5-7) — Quran",
+      "His son: Surah Hud (11:42-43) — Quran"
+    ],
+    message: "Worship Allah alone — the same call, to the first people who turned away from it.",
+    messageAr: "عبادة الله وحده — الدعوة نفسها، إلى أول من أعرض عنها."
+  },
+
+  "ibrahim": {
+    before: "He grew up among a people who worshipped idols and heavenly bodies, and his own father made and sold them.",
+    beforeAr: "نشأ في قومٍ يعبدون الأصنام والكواكب، وكان أبوه يصنعها ويبيعها.",
+    islam: "The Quran shows him reasoning his way to the truth in public — looking at a star, the moon, the sun, each time saying 'this is my Lord' and then, as each set, refusing what sets. Then he turned his face to the One who created the heavens and the earth.",
+    islamAr: "عرض القرآن محاجّته أمام قومه: نظر إلى الكوكب ثم القمر ثم الشمس، يقول في كلٍّ: هذا ربي، فإذا أفل قال: لا أحبّ الآفلين. ثم وجّه وجهه للذي فطر السماوات والأرض.",
+    change: "He broke the idols of his people and left the largest one, telling them to ask it who did it — forcing them to admit aloud that it could not speak. They threw him into the fire and Allah made it cool and safe for him.",
+    changeAr: "كسّر أصنام قومه وترك كبيرها وقال: فاسألوهم إن كانوا ينطقون، فألزمهم الإقرار بأنها لا تنطق. فألقوه في النار فجعلها الله بردًا وسلامًا عليه.",
+    greatest: "He was commanded in a dream to sacrifice his son, and both father and son submitted. The son said: do what you are commanded, you will find me patient. It was ransomed with a great sacrifice. He also raised the foundations of the Kaaba with his son Ismail, praying that it be accepted from them.",
+    greatestAr: "أُمر في المنام بذبح ابنه فأسلما، وقال الابن: يا أبتِ افعل ما تُؤمر، ستجدني إن شاء الله من الصابرين، ففُدي بذبحٍ عظيم. ورفع مع ابنه إسماعيل القواعد من البيت يدعوان: ربنا تقبّل منّا.",
+    death: "The Quran calls him a nation in himself, obedient to Allah, upright, and not of those who associate partners; and Allah took him as an intimate friend — khalil.",
+    deathAr: "وصفه القرآن بأنه كان أمّةً قانتًا لله حنيفًا ولم يكُ من المشركين، واتّخذه الله خليلًا.",
+    sources: [
+      "The star, moon and sun: Surah Al-An'am (6:76-79) — Quran",
+      "Breaking the idols and the fire: Surah Al-Anbiya (21:57-69) — Quran",
+      "The sacrifice: Surah As-Saffat (37:102-107) — Quran",
+      "Raising the Kaaba: Surah Al-Baqarah (2:127) — Quran",
+      "Taken as khalil: Surah An-Nisa (4:125) — Quran"
+    ],
+    message: "Pure monotheism, reasoned and defended in public, and submission even when the command is the hardest imaginable.",
+    messageAr: "التوحيد الخالص مُحاجًّا به علانية، والتسليم ولو كان الأمر أشقّ ما يكون."
+  },
+
+  "musa": {
+    before: "Born under a decree that the sons of the Israelites be killed. His mother was inspired to place him in the river, and he was taken up by the household of Pharaoh — raised in the house of the man who had ordered the killing.",
+    beforeAr: "وُلد في زمن أمرٍ بذبح أبناء بني إسرائيل، فأُوحي إلى أمه أن تُلقيه في اليمّ، فالتقطه آل فرعون — فتربّى في بيت الذي أمر بالقتل.",
+    islam: "He struck a man in defence of another and the man died; he left in fear and lived years in Madyan tending sheep. Returning, he saw a fire on the mountain and was spoken to directly by Allah.",
+    islamAr: "وكز رجلًا نصرةً لآخر فقضى عليه، فخرج خائفًا وأقام سنين بمدين يرعى الغنم. ثم آنس في الطور نارًا، فكلّمه الله تكليمًا.",
+    change: "He was sent back to the very palace he had fled, to the most powerful man of his age — and was told to speak to him gently. He asked for his brother Harun to help him because of a difficulty in his speech, and it was granted.",
+    changeAr: "أُرسل إلى القصر الذي فرّ منه، إلى أعتى أهل زمانه، وأُمر أن يقول له قولًا ليّنًا. وسأل أن يُشدّ أزره بأخيه هارون لعُقدةٍ في لسانه فأُوتي سؤله.",
+    greatest: "The staff and the sea. When the Israelites were caught between Pharaoh's army and the water and said they were overtaken, he answered: never — my Lord is with me, He will guide me. Then the sea parted.",
+    greatestAr: "العصا والبحر؛ لمّا تراءى الجمعان وقال بنو إسرائيل: إنّا لمُدرَكون، قال: كلّا، إنّ معي ربي سيهدين. فانفلق البحر.",
+    death: "The Quran does not narrate his death in detail. He is the prophet spoken to directly by Allah, and the one who asked to see Him and was told: you will not see Me.",
+    deathAr: "لم يفصّل القرآن وفاته. وهو كليم الله، والذي سأل الرؤية فقيل له: لن تراني.",
+    sources: [
+      "His mother and the river: Surah Al-Qasas (28:7) — Quran",
+      "Speaking gently to Pharaoh: Surah Ta-Ha (20:44) — Quran",
+      "Harun and his speech: Surah Ta-Ha (20:25-36) — Quran",
+      "'My Lord is with me': Surah Ash-Shu'ara (26:61-63) — Quran",
+      "Spoken to directly: Surah An-Nisa (4:164); asking to see Him: Surah Al-A'raf (7:143) — Quran"
+    ],
+    message: "The same tawhid, carried to a tyrant who claimed lordship — and a law given to a nation.",
+    messageAr: "التوحيد نفسه يُحمل إلى طاغيةٍ ادّعى الربوبية، وشريعةٌ تُعطى لأمّة."
+  },
+
+  "isa": {
+    before: "Born to Maryam without a father, by the word of Allah — the Quran states that his likeness with Allah is as the likeness of Adam, created from dust and told 'Be', and he was.",
+    beforeAr: "وُلد لمريم من غير أبٍ بكلمة الله؛ وقرّر القرآن أن مثله عند الله كمثل آدم، خلقه من ترابٍ ثم قال له كن فيكون.",
+    islam: "He spoke in the cradle, and his first recorded words are a declaration: I am the servant of Allah; He gave me the Scripture and made me a prophet.",
+    islamAr: "تكلّم في المهد، وأول ما نُقل عنه إعلانٌ: إني عبد الله آتاني الكتاب وجعلني نبيًّا.",
+    change: "He was given clear signs — healing the blind and the leper, and giving life to the dead by the permission of Allah. The Quran repeats that phrase every time: by the permission of Allah.",
+    changeAr: "أُوتي البيّنات: يُبرئ الأكمه والأبرص ويُحيي الموتى بإذن الله. ويُكرّر القرآن هذا القيد في كل مرة: بإذن الله.",
+    greatest: "He confirmed the Torah before him and gave glad tidings of a messenger to come after him named Ahmad. And when asked on the Day of Judgement whether he told people to take him and his mother as gods, he answers that he only said what he was commanded: worship Allah, my Lord and your Lord.",
+    greatestAr: "صدّق ما بين يديه من التوراة وبشّر برسولٍ يأتي من بعده اسمه أحمد. وإذا سُئل يوم القيامة: أأنت قلت للناس اتّخذوني وأمي إلهين؟ يقول: ما قلتُ لهم إلا ما أمرتني به: أن اعبدوا الله ربي وربكم.",
+    death: "They did not kill him and did not crucify him, but it was made to appear so to them; Allah raised him to Himself.",
+    deathAr: "وما قتلوه وما صلبوه ولكن شُبِّه لهم، بل رفعه الله إليه.",
+    sources: [
+      "Like Adam: Surah Ali 'Imran (3:59) — Quran",
+      "Speaking in the cradle: Surah Maryam (19:30) — Quran",
+      "The signs, by Allah's permission: Surah Ali 'Imran (3:49) — Quran",
+      "Glad tidings of Ahmad: Surah As-Saff (61:6) — Quran",
+      "His answer on the Day of Judgement: Surah Al-Ma'idah (5:116-117) — Quran",
+      "Not killed, not crucified: Surah An-Nisa (4:157-158) — Quran"
+    ],
+    message: "The same call — worship Allah, my Lord and your Lord — and a warning against raising a prophet above his rank.",
+    messageAr: "الدعوة نفسها: اعبدوا الله ربي وربكم، وتحذيرٌ من رفع النبي فوق منزلته."
+  },
 
   "abu-bakr": {
     before: "A cloth merchant of Makkah, wealthy and widely liked. He was a genealogist of the Arabs — he knew the lineages of the tribes better than almost anyone — which made him a man whose word carried weight in a society built on lineage. He never drank alcohol in the days of ignorance, and never worshipped an idol.",
