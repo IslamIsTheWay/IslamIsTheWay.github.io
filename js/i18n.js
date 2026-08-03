@@ -17,6 +17,8 @@ const AR = {
   "Prophets": "الأنبياء",
   "Companions": "الصحابة",
   "Hadith": "الحديث",
+  "Stories": "القصص",
+  "Judgement Day": "يوم القيامة",
   "Guidance": "التوجيه",
   "Courses": "الدورات",
   "Search": "البحث",
@@ -27,6 +29,8 @@ const AR = {
   "Contact": "تواصل معنا",
   "Quran Library": "مكتبة القرآن",
   "Prophets in Islam": "الأنبياء في الإسلام",
+  "Stories of the Prophet صلى الله عليه وسلم": "قصص النبي ﷺ",
+  "The Day of Judgement": "يوم القيامة",
   "Islamic Wisdom for Every Heart": "حكمة الإسلام لكل قلب",
   "© 2026 Islam Is The Way. All rights reserved.": "© 2026 الإسلام هو الطريق. جميع الحقوق محفوظة.",
   "A resource for learning the Quran, the Prophets, and the Companions of Prophet Muhammad ﷺ — built to inform, inspire, and guide.":
@@ -35,39 +39,100 @@ const AR = {
 
   // ---- Home ----
   "Unlock the Wisdom of the Quran": "اكتشف حكمة القرآن الكريم",
-  "A welcoming space to read the Quran, explore the lives of the Prophets, learn about the noble Companions of Prophet Muhammad ﷺ, and search for trustworthy, referenced answers — all in one place.":
-    "مكان يرحّب بك لقراءة القرآن، والتعرّف على سِيَر الأنبياء، ومعرفة صحابة النبي ﷺ الكرام، والبحث عن أجوبة موثوقة بمراجعها — في مكان واحد.",
+  "A welcoming space to read the Quran, follow the Sunnah of the Prophet ﷺ through the ordinary day, read the stories of his life and what awaits on the Day of Judgement, explore the lives of the Prophets and his noble Companions, and find trustworthy, referenced answers — all in one place.":
+    "مكانٌ يرحّب بك لتقرأ القرآن، وتتّبع سنة النبي ﷺ في يومك المعتاد، وتقرأ قصص حياته وما ينتظر العباد يوم القيامة، وتتعرّف على سِيَر الأنبياء وصحابته الكرام، وتجد أجوبةً موثّقة بمراجعها — في مكان واحد.",
   "Open the Quran Library": "افتح مكتبة القرآن",
+  "Ask About Your Situation": "اسأل عن حالتك",
   "Search a Person": "ابحث عن شخص",
   "Quick Access": "وصول سريع",
   "Jump straight to what you're looking for.": "اذهب مباشرة إلى ما تبحث عنه.",
   "The Holy Quran": "القرآن الكريم",
-  "All 114 surahs with Arabic text, English translation, and audio recitation by Mishary al-Afasy. Search in Arabic or English.":
-    "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية وتلاوة صوتية. ابحث بالعربية أو الإنجليزية.",
+  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf.":
+    "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة.",
   "Hadith Collection": "مجموعة الأحاديث",
-  "Complete Sahih al-Bukhari and Sahih Muslim — 15,000+ hadith in Arabic and English, with audio and scholar-verified grading.":
-    "صحيح البخاري وصحيح مسلم كاملين — أكثر من 15,000 حديث بالعربية والإنجليزية مع بيان درجة الحديث.",
-  "The lives and lessons of the Prophets named in the Quran, from Adam to Muhammad ﷺ.":
-    "سِيَر الأنبياء المذكورين في القرآن ودروسهم، من آدم إلى محمد ﷺ.",
+  "Complete Sahih al-Bukhari and Sahih Muslim — 15,000+ hadith in Arabic and English, plus 43 chosen ones. Every grading names the scholar behind it.":
+    "صحيح البخاري وصحيح مسلم كاملين — أكثر من 15,000 حديث بالعربية والإنجليزية، ومعها ثلاثة وأربعون حديثًا مختارًا. وكل درجةٍ مذكورٌ معها اسم من صحّحها.",
+  "The Sunnah in Daily Life": "السنة في الحياة اليومية",
+  "166 practices of the Prophet ﷺ across 18 areas of the day — sleeping, eating, washing, travelling, entering the mosque — each with its source.":
+    "مئة وستٌّ وستون سنة من هدي النبي ﷺ في ثمانية عشر بابًا من أبواب اليوم — النوم والطعام والطهارة والسفر ودخول المسجد — كلٌّ منها بمرجعها.",
+  "Stories of the Prophet ﷺ": "قصص النبي ﷺ",
+  "28 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
+    "ثمانية وعشرون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
+  "14 stages in the order they happen — from the moment of death to the gates — with 58 referenced points and 52 passages of the Quran.":
+    "أربع عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع ثمانٍ وخمسين مسألة موثّقة، واثنين وخمسين موضعًا من القرآن الكريم.",
+  "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ, with full life stories for Nuh, Ibrahim, Musa and Isa.":
+    "الأنبياء التسعة والعشرون المذكورون في القرآن، من آدم إلى محمد ﷺ، مع سِيَرٍ كاملة لنوح وإبراهيم وموسى وعيسى عليهم السلام.",
   "Companions (Sahaba)": "الصحابة رضي الله عنهم",
-  "The men and women who stood beside the Prophet ﷺ and shaped the early Muslim community.":
-    "الرجال والنساء الذين وقفوا مع النبي ﷺ وبنوا المجتمع المسلم الأول.",
+  "66 of the men and women who stood beside the Prophet ﷺ, including all eleven Mothers of the Believers — twelve with their full life story.":
+    "ستة وستون من الرجال والنساء الذين وقفوا مع النبي ﷺ، ومنهم أمهات المؤمنين الإحدى عشرة جميعًا — واثنا عشر منهم بسيرةٍ كاملة.",
   "Guidance & Reflection": "التوجيه والتدبر",
   "Guidance &amp; Reflection": "التوجيه والتدبر",
-  "Quranic themes on the path to Paradise and warnings to reflect upon, with verse references.":
-    "معانٍ قرآنية عن طريق الجنة وتحذيرات للتدبر، مع مراجع الآيات.",
+  "Describe your situation and receive what relates to it from the Quran and the Sunnah — plus 23 Quranic themes and what to say at each step of worship.":
+    "صِفْ حالك ليُعرض عليك ما يتعلق به من القرآن والسنة — ومعه ثلاثة وعشرون معنًى قرآنيًا، وما يُقال في كل خطوة من خطوات العبادة.",
   "Courses & Private Tutoring": "الدورات والدروس الخاصة",
   "Courses &amp; Private Tutoring": "الدورات والدروس الخاصة",
   "Tafsir, Hifz testing, 1-on-1 Quran teaching, Hadith explanation with context, Fiqh, Arabic, and private tutoring.":
     "التفسير، واختبار الحفظ، وتعليم القرآن فرديًا، وشرح الحديث بسياقه، والفقه، والعربية، ودروس خاصة.",
-  "Explore the Site": "استكشف الموقع",
-  "Everything you need to begin or deepen your journey of Islamic learning.":
-    "كل ما تحتاجه لتبدأ رحلتك في تعلّم الإسلام أو تعمّقها.",
+
+  // ---- Home: recently added ----
+  "Recently Added": "أحدث الإضافات",
+  "The newest additions to the site — each one written from the source, with its reference and its grading.":
+    "أحدث ما أُضيف إلى الموقع — كلُّ مادةٍ مكتوبة من أصلها، ومعها مرجعها ودرجتها.",
+  "28 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
+    "ثمانٍ وعشرون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
+  "Read the Stories": "اقرأ القصص",
+  "Fourteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 58 referenced points and 52 passages of the Quran.":
+    "أربع عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. ثمانٍ وخمسون مسألة موثّقة، واثنان وخمسون موضعًا من القرآن.",
+  "See the Stages": "اطّلع على المراحل",
+  "166 Sunnah Practices": "مئة وستٌّ وستون سنة",
+  "How the Prophet ﷺ actually lived, across 18 areas of ordinary life — waking, wudu, prayer, food, dress, the mosque, travel, Friday, illness, hardship and the treatment of family, neighbours and animals. Ask a question in Arabic or English and the right practice is found for you.":
+    "كيف عاش النبي ﷺ فعلاً، في ثمانية عشر بابًا من أبواب الحياة اليومية — الاستيقاظ والوضوء والصلاة والطعام واللباس والمسجد والسفر والجمعة والمرض والشدّة، ومعاملة الأهل والجيران والحيوان. اسأل بالعربية أو الإنجليزية ويُعرض لك ما يناسبك.",
+  "Browse the Sunnah": "تصفّح السنن",
+  "What to Say, and When": "ماذا تقول ومتى",
+  "Sixteen steps of worship on the Guidance page: what is said before the prayer, inside it, after it, through the day, and when asking forgiveness — with the Arabic wording, how many times, what it means, and where it comes from.":
+    "ست عشرة خطوة من خطوات العبادة في صفحة التوجيه: ما يُقال قبل الصلاة، وفيها، وبعدها، وفي عموم اليوم، وعند الاستغفار — مع النص العربي، وعدد المرات، والمعنى، والمرجع.",
+  "Open the Worship Reference": "افتح دليل العبادة",
+  "Mushaf Page Numbers": "صفحات المصحف",
+  "Every surah now shows how many pages it occupies in the 604-page Madani Mushaf, and while reading you are told where each page ends — so what you read on the screen matches the printed Mushaf in your hands.":
+    "كل سورة تُظهر الآن عدد صفحاتها في المصحف المدني ذي الأربع والستمائة صفحة، وأثناء القراءة يُبيَّن لك أين تنتهي كل صفحة — ليوافق ما على الشاشة ما بين يديك من المصحف المطبوع.",
+  "Open the Quran": "افتح المصحف",
+  "Full Life Stories": "سِيَر كاملة",
+  "Sixteen lives told in full rather than in summary — twelve Companions and four Prophets — from before Islam, through the moment of belief, to what changed in them, their greatest hour, and their death. Every source is listed with its rank.":
+    "ست عشرة سيرة مبسوطة لا مختصرة — اثنا عشر صحابيًا وأربعة أنبياء — من حالهم قبل الإسلام، إلى لحظة الإيمان، وما تغيّر فيهم، وأعظم مواقفهم، ووفاتهم. وكلُّ مصدرٍ مذكورةٌ درجته.",
+  "Read a Full Life": "اقرأ سيرة كاملة",
+
   "Words of the Prophet ﷺ": "من أقوال النبي ﷺ",
+  "A glimpse from our Hadith collection, primarily from Sahih al-Bukhari — the most authentic collection of the Prophet's sayings.":
+    "لمحة من مجموعة الأحاديث، أكثرها من صحيح البخاري — أصحّ كتب الحديث في أقوال النبي ﷺ.",
   "View All Hadith": "اطّلع على جميع الأحاديث",
   "Common Questions": "أسئلة شائعة",
+
+  // ---- Home: common questions ----
+  "What can I find in the Quran Library?": "ماذا أجد في مكتبة القرآن؟",
+  "All 114 surahs with their Arabic names, meanings, number of verses, and whether they were revealed in Makkah or Madinah. Open any surah to read it in Arabic with an English translation, choose from 16 reciters, and follow along by Mushaf page.":
+    "جميع السور الـ114 بأسمائها العربية ومعانيها وعدد آياتها، وهل نزلت بمكة أم بالمدينة. افتح أي سورة لتقرأها بالعربية مع الترجمة الإنجليزية، واختر من ستة عشر قارئًا، وتابع القراءة بصفحات المصحف.",
+  "How do I know a hadith here is authentic?": "كيف أعرف أن الحديث هنا صحيح؟",
+  "Every hadith on this site carries its grading and names the scholar behind it — \"Sahih — Narrated by al-Bukhari\", \"Sahih — Agreed upon\". Anything outside Sahih al-Bukhari and Sahih Muslim is labelled as such, and material taken from the historical sira is marked as history rather than hadith. Where something well known is not authentic, the site says so on the entry itself.":
+    "كل حديث في الموقع مذكورةٌ درجته ومعها اسم من صحّحه — «صحيح — رواه البخاري»، «صحيح — متفق عليه». وما كان خارج الصحيحين نُصّ على ذلك، وما كان من كتب السيرة بُيّن أنه تاريخ لا حديث. وإذا كان الأمر مشهورًا وهو غير ثابت، صرّح الموقع بذلك في موضعه.",
+  "What is on the Stories page?": "ماذا في صفحة القصص؟",
+  "28 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
+    "ثمانية وعشرون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
+  "What does the Day of Judgement page cover?": "ماذا تتناول صفحة يوم القيامة؟",
+  "Fourteen stages in the order they occur, from death to the gates, built on 52 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
+    "أربع عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على اثنين وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",
+  "How do I find something for my own situation?": "كيف أجد ما يناسب حالي؟",
+  "On the Guidance page, describe what you are going through by typing or speaking, in Arabic or English. The site searches the Quranic themes, the Sunnah, the worship steps, the full Bukhari and Muslim collections, and the lives of the Prophets and Companions, and shows what relates to it with full references. It is not a fatwa — read each verse in its full surah and consult a qualified scholar.":
+    "في صفحة التوجيه، اكتب ما تمرّ به أو قله بصوتك، بالعربية أو الإنجليزية. يبحث الموقع في المعاني القرآنية والسنن وخطوات العبادة وصحيحَي البخاري ومسلم كاملين وسِيَر الأنبياء والصحابة، ويعرض لك ما يتعلق بحالك مع مراجعه كاملة. وهذا ليس فتوى — اقرأ كل آية في سورتها كاملة وارجع إلى أهل العلم.",
+  "Is the content free to access?": "هل المحتوى مجاني؟",
+  "Yes. All content on Islam Is The Way is free, intended for learning, reflection, and sharing knowledge of Islam with others.":
+    "نعم. كلُّ ما في «الإسلام هو الطريق» مجاني، غايته التعلّم والتدبّر ونشر العلم بالإسلام.",
   "Houses of Allah Around the World": "بيوت الله في أنحاء العالم",
+  "بيوت الله في أنحاء العالم — from Makkah and Madinah to Istanbul, Casablanca and Abu Dhabi.":
+    "بيوت الله في أنحاء العالم — من مكة والمدينة إلى إسطنبول والدار البيضاء وأبوظبي.",
   "Community Reflections": "مشاركات المجتمع",
+  "We invite you to share your personal stories, questions, and reflections on faith. Your voice adds to the strength of our community, fostering deeper connection and mutual support.":
+    "ندعوك لمشاركة قصصك وأسئلتك وخواطرك في الإيمان. صوتك يزيد مجتمعنا قوة، ويعمّق الصلة والتعاون بيننا.",
+  "Recitations Worth Hearing": "تلاوات تستحق السماع",
   "Get Started": "ابدأ الآن",
   "Get in Touch": "تواصل معنا",
   "Questions about a course, a correction to something you read, or an idea to make this site better — we would be glad to hear from you.":

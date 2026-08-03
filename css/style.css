@@ -2529,9 +2529,13 @@ html:not(.lang-ar) .ar-only { display: none; }
 html.lang-ar .en-only { display: none; }
 
 /* ============ Responsive ============ */
-/* The menu now has ten links plus the language switch, so it needs to collapse
-   into the hamburger earlier — otherwise it squeezes the site name. */
-@media (max-width: 1150px) {
+/* The menu now has twelve links plus the language switch. Laid out in a row it
+   measures ~1136px, and the site name takes another 240px, so the bar needs
+   about 1435px before everything fits. Below that it must become the hamburger
+   — at 1150px the Login button was being pushed off the right edge of the
+   screen on ordinary laptop widths. Re-measure this breakpoint if a nav link
+   is ever added. */
+@media (max-width: 1440px) {
   nav.main-nav {
     position: absolute;
     top: 100%;
