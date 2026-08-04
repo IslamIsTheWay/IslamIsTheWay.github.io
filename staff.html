@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608041627" />
+  <link rel="stylesheet" href="css/style.css?v=202608041643" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -192,21 +192,55 @@
       <div class="staff-section" data-sec="courses">
       <!-- Add course -->
       <div class="staff-panel">
-        <h3>🎓 Add a New Course</h3>
-        <p class="panel-sub">Appears on the Courses page next to the existing courses.</p>
-        <label>Course title</label>
-        <input type="text" id="cTitle" placeholder="e.g. Qira'at & Tajweed Mastery" />
+        <h3 id="courseFormHead">🎓 Add a Course</h3>
+        <p class="panel-sub">
+          The Courses page shows <strong>only what you add here</strong>. While this list is empty the page
+          tells visitors that courses are on the way — so nothing is advertised before it exists.
+          Fill in what you know, press Add, then press <strong>Publish Changes</strong> at the bottom.
+        </p>
+
+        <label>Course title <span class="req">required</span></label>
+        <input type="text" id="cTitle" placeholder="e.g. Tajweed from the beginning" />
+
         <label>Level</label>
-        <input type="text" id="cLevel" placeholder="e.g. Beginner → Advanced" />
+        <input type="text" id="cLevel" placeholder="e.g. Beginner, or Beginner → Advanced" />
+
         <label>Price</label>
-        <input type="text" id="cPrice" placeholder="e.g. $30 / month" />
-        <label>Description</label>
-        <textarea id="cDesc" placeholder="What the course covers..."></textarea>
-        <label>What's included (one item per line)</label>
-        <textarea id="cIncludes" placeholder="Weekly live sessions&#10;Certificate&#10;..."></textarea>
-        <label>Course intro video link (optional — YouTube etc., shown to everyone as a preview)</label>
-        <input type="text" id="cVideo" placeholder="https://..." />
-        <button class="btn btn-primary btn-small" onclick="addCourse()">Add Course</button>
+        <input type="text" id="cPrice" placeholder="e.g. $30 per month, or: ask us" />
+
+        <label>Description — what the course covers</label>
+        <textarea id="cDesc" placeholder="A few plain sentences about what someone will actually learn."></textarea>
+
+        <label>What is included (one line each)</label>
+        <textarea id="cIncludes" placeholder="Weekly live session&#10;Recording afterwards&#10;Notes for each lesson"></textarea>
+
+        <label>Intro video link (optional)</label>
+        <input type="text" id="cVideo" placeholder="https://… shown to everyone as a free preview" />
+
+        <!-- The connected-or-not choice, made before the course is added. -->
+        <div class="course-series-box">
+          <label class="check-line">
+            <input type="checkbox" id="cIsSeries" onchange="toggleSeriesFields()" />
+            <span>This course is <strong>part of a series</strong> — it follows on from another one</span>
+          </label>
+          <p class="panel-sub" style="margin:6px 0 0;">
+            Leave it unticked and the course stands on its own. Tick it and give the series a name, and every
+            course with that same name is grouped together on the Courses page, in the order you set.
+          </p>
+          <div id="cSeriesFields" style="display:none;margin-top:10px;">
+            <label>Series name</label>
+            <input type="text" id="cSeries" placeholder="e.g. Quran Recitation Path" />
+            <label>Position in the series (1, 2, 3…)</label>
+            <input type="number" id="cOrder" min="1" step="1" placeholder="1" />
+          </div>
+        </div>
+
+        <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:12px;">
+          <button class="btn btn-primary btn-small" id="courseSaveBtn" onclick="addCourse()">Add Course</button>
+          <button class="btn btn-outline btn-small" id="courseCancelBtn" onclick="cancelCourseEdit()" style="display:none;">Cancel edit</button>
+          <button class="btn btn-outline btn-small" onclick="clearCourseForm()">Clear the form</button>
+        </div>
+
         <div class="item-list" id="courseList"></div>
       </div>
 
@@ -432,8 +466,8 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202608041627"></script>
-  <script src="js/main.js?v=202608041627"></script>
+  <script src="js/data.js?v=202608041643"></script>
+  <script src="js/main.js?v=202608041643"></script>
   <script>
     const STAFF_USER = iitwStaffUser();
     if (!STAFF_USER) window.location.href = "login.html";
@@ -567,8 +601,23 @@
     }
 
     function renderLists() {
-      document.getElementById("courseList").innerHTML = cfg.extraCourses.map((c, i) =>
-        `<div class="item-row"><span>${c.title} — ${c.price}</span><button class="del" onclick="cfg.extraCourses.splice(${i},1);renderLists()">Delete</button></div>`).join("");
+      const courseList = document.getElementById("courseList");
+      courseList.innerHTML = cfg.extraCourses.length
+        ? cfg.extraCourses.map((c, i) =>
+            `<div class="item-row course-row">
+               <span class="course-row-main">
+                 <strong>${iitwEsc(c.title)}</strong>
+                 <span class="course-row-meta">${iitwEsc(c.level || "")}${c.price ? " Â· " + iitwEsc(c.price) : ""}</span>
+                 ${c.series ? `<span class="course-row-series">🔗 ${iitwEsc(c.series)} â part ${c.order || "?"}</span>`
+                            : `<span class="course-row-series standalone">stands on its own</span>`}
+               </span>
+               <span style="display:flex;gap:6px;flex-wrap:wrap;">
+                 <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="editCourse(${i})">Edit</button>
+                 <button class="del" onclick="deleteCourse(${i})">Delete</button>
+               </span>
+             </div>`).join("")
+        : `<p class="panel-sub" style="margin-top:10px;">No courses yet â the Courses page is showing the
+             âcourses are on the wayâ notice to visitors.</p>`;
       document.getElementById("videoList").innerHTML = cfg.videos.map((v, i) =>
         `<div class="item-row"><span>${v.title} — ${v.price} — code: <span class="meeting-code">${v.code}</span></span><button class="del" onclick="cfg.videos.splice(${i},1);renderLists()">Delete</button></div>`).join("");
       document.getElementById("meetingList").innerHTML = cfg.meetings.map((m, i) =>
@@ -1091,20 +1140,89 @@
       }).join("");
     }
 
-    function addCourse() {
-      const title = document.getElementById("cTitle").value.trim();
-      if (!title) { alert("Please enter a course title."); return; }
-      cfg.extraCourses.push({
-        id: "custom-" + Date.now(),
-        title,
+    /* ---------- Courses: add, edit, delete ----------
+       One form does both adding and editing. `courseEditing` is the index
+       being edited, or null when adding. Kept deliberately plain so it is
+       obvious what each button does. */
+    let courseEditing = null;
+
+    function toggleSeriesFields() {
+      const on = document.getElementById("cIsSeries").checked;
+      document.getElementById("cSeriesFields").style.display = on ? "" : "none";
+    }
+
+    function readCourseForm() {
+      const inSeries = document.getElementById("cIsSeries").checked;
+      return {
+        title: document.getElementById("cTitle").value.trim(),
         level: document.getElementById("cLevel").value.trim() || "All Levels",
-        price: document.getElementById("cPrice").value.trim() || "Contact us",
+        price: document.getElementById("cPrice").value.trim() || "Ask us",
         description: document.getElementById("cDesc").value.trim(),
-        includes: document.getElementById("cIncludes").value.split("\n").map(s => s.trim()).filter(Boolean),
-        videoUrl: document.getElementById("cVideo").value.trim()
-      });
-      ["cTitle","cLevel","cPrice","cDesc","cIncludes","cVideo"].forEach(id => document.getElementById(id).value = "");
+        includes: document.getElementById("cIncludes").value.split("\n").map(x => x.trim()).filter(Boolean),
+        videoUrl: document.getElementById("cVideo").value.trim(),
+        series: inSeries ? document.getElementById("cSeries").value.trim() : "",
+        order: inSeries ? (parseInt(document.getElementById("cOrder").value, 10) || 1) : 0
+      };
+    }
+
+    function clearCourseForm() {
+      ["cTitle","cLevel","cPrice","cDesc","cIncludes","cVideo","cSeries","cOrder"]
+        .forEach(id => document.getElementById(id).value = "");
+      document.getElementById("cIsSeries").checked = false;
+      toggleSeriesFields();
+      courseEditing = null;
+      document.getElementById("courseFormHead").textContent = "🎓 Add a Course";
+      document.getElementById("courseSaveBtn").textContent = "Add Course";
+      document.getElementById("courseCancelBtn").style.display = "none";
+    }
+
+    function cancelCourseEdit() { clearCourseForm(); }
+
+    function addCourse() {
+      const data = readCourseForm();
+      if (!data.title) { alert("Please give the course a title."); return; }
+      if (data.series && !data.series.trim()) { alert("Please name the series, or untick the box."); return; }
+
+      if (courseEditing === null) {
+        data.id = "custom-" + Date.now();
+        cfg.extraCourses.push(data);
+      } else {
+        data.id = cfg.extraCourses[courseEditing].id || ("custom-" + Date.now());
+        cfg.extraCourses[courseEditing] = data;
+      }
+      clearCourseForm();
       renderLists();
+      updateUnpublishedBanner();
+    }
+
+    function editCourse(i) {
+      const c = cfg.extraCourses[i];
+      if (!c) return;
+      courseEditing = i;
+      document.getElementById("cTitle").value    = c.title || "";
+      document.getElementById("cLevel").value    = c.level || "";
+      document.getElementById("cPrice").value    = c.price || "";
+      document.getElementById("cDesc").value     = c.description || "";
+      document.getElementById("cIncludes").value = (c.includes || []).join("\n");
+      document.getElementById("cVideo").value    = c.videoUrl || "";
+      document.getElementById("cIsSeries").checked = !!(c.series && c.series.trim());
+      document.getElementById("cSeries").value   = c.series || "";
+      document.getElementById("cOrder").value    = c.order || "";
+      toggleSeriesFields();
+      document.getElementById("courseFormHead").textContent = "✎ Editing: " + c.title;
+      document.getElementById("courseSaveBtn").textContent = "Save changes";
+      document.getElementById("courseCancelBtn").style.display = "";
+      document.getElementById("cTitle").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function deleteCourse(i) {
+      const c = cfg.extraCourses[i];
+      if (!c) return;
+      if (!confirm("Delete the course “" + c.title + "”?\n\nIt disappears from the website once you press Publish Changes.")) return;
+      cfg.extraCourses.splice(i, 1);
+      if (courseEditing === i) clearCourseForm();
+      renderLists();
+      updateUnpublishedBanner();
     }
 
     function addVideo() {
@@ -1405,6 +1523,6 @@
     loadConfig();
     fbAdminRefresh();
   </script>
-  <script src="js/i18n.js?v=202608041627"></script>
+  <script src="js/i18n.js?v=202608041643"></script>
 </body>
 </html>
