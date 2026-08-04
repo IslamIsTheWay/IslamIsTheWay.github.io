@@ -415,5 +415,558 @@ const FULL_LIVES = {
       "His command at Uhud: Sahih al-Bukhari, Book of the Military Expeditions — Sahih",
       "His acceptance of Islam, and his words at his death: Ibn Ishaq and Ibn Sa'd — historical sira"
     ]
+  },
+
+  "adam": {
+    before: "There was no before. He is the beginning of us — created by Allah with His own hand, taught the names of all things, and honoured with the prostration of the angels. Iblis alone refused, out of pride, and was cast out.",
+    beforeAr: "لم يكن قبله شيءٌ من أمرنا؛ فهو البداية — خلقه الله بيده، وعلّمه الأسماء كلّها، وأكرمه بسجود الملائكة. وأبى إبليس وحده استكبارًا فطُرد.",
+    message: "That a human being is honoured by his Lord, and that the honour is not in never falling but in what he does after the fall.",
+    messageAr: "أن الإنسان مُكرَّمٌ عند ربّه، وأن الكرامة ليست في ألّا يزلّ، بل فيما يصنع بعد الزلّة.",
+    islam: "He was placed in the Garden with his wife and given one prohibition: do not approach this tree. Shaytan whispered until they ate from it, and their nakedness became apparent to them.",
+    islamAr: "أُسكن الجنة هو وزوجه ونُهي عن شجرةٍ واحدة: ولا تقربا هذه الشجرة. فوسوس لهما الشيطان حتى أكلا منها، فبدت لهما سوءاتهما.",
+    change: "What separates him from Iblis is not the sin — it is the answer to it. Iblis argued and blamed Allah; Adam said: our Lord, we have wronged ourselves, and if You do not forgive us and have mercy on us we will be among the losers. He received words from his Lord, and Allah turned to him.",
+    changeAr: "والذي فرّق بينه وبين إبليس ليس الذنب، بل ما بعده. فإبليس جادل وألقى اللوم على ربّه، وأما آدم فقال: ربنا ظلمنا أنفسنا وإن لم تغفر لنا وترحمنا لنكوننّ من الخاسرين. فتلقّى من ربّه كلماتٍ فتاب عليه.",
+    greatest: "The Prophet ﷺ described Musa and Adam disputing, and Adam answered him with the decree: do you blame me for something Allah decreed upon me forty years before He created me? The Prophet ﷺ said: so Adam got the better of Musa, three times.",
+    greatestAr: "ذكر النبي ﷺ محاجّة موسى وآدم، فاحتجّ آدم بالقدر: أتلومني على أمرٍ قدّره الله عليّ قبل أن يخلقني بأربعين سنة؟ قال النبي ﷺ: فحجّ آدمُ موسى، ثلاثًا.",
+    death: "He is the father of mankind, and on the night of the Isra the Prophet ﷺ found him in the lowest heaven, with the souls of his children on his right and his left — laughing towards the people of Paradise, weeping towards the people of the Fire.",
+    deathAr: "هو أبو البشر، وقد وجده النبي ﷺ ليلة الإسراء في السماء الدنيا وعن يمينه وشماله نَسَم بنيه — يضحك إلى أهل الجنة ويبكي على أهل النار.",
+    sources: [
+      "Created and taught the names, the angels prostrating: Surah Al-Baqarah (2:30-34) — Quran",
+      "The tree and the whisper: Surah Al-A'raf (7:19-22) — Quran",
+      "His repentance, and the words he received: Surah Al-A'raf (7:23) and Surah Al-Baqarah (2:37) — Quran",
+      "Adam and Musa disputing: Sahih al-Bukhari, Hadith 6614 — Sahih, agreed upon",
+      "Seen in the lowest heaven: Sahih al-Bukhari, Book of Prayer, Hadith 349 — Sahih"
+    ]
+  },
+
+  "idris": {
+    before: "The Quran says very little about him, and this entry says only what the Quran says. He is named twice, both times in praise, and nothing of his people or his times is established.",
+    beforeAr: "لم يذكر القرآن عنه إلا القليل، ولا نذكر هنا إلا ما ذكره. سُمّي مرتين، وفي الموضعين ثناءٌ عليه، ولم يثبت شيءٌ عن قومه ولا عن زمانه.",
+    message: "The message of every prophet before and after him: worship Allah alone.",
+    messageAr: "رسالة كل نبيٍّ قبله وبعده: عبادة الله وحده.",
+    islam: "Allah calls him a man of truth, a prophet — siddiq, nabiy — and that is the whole of what is said of his character in the Quran.",
+    islamAr: "وصفه الله بأنه صدّيقٌ نبيّ، وهذا جملة ما وُصف به في القرآن.",
+    change: "And We raised him to a high station. The scholars of tafsir differ over what the raising means, and the Quran does not settle it, so neither does this page.",
+    changeAr: "ورفعناه مكانًا عليًّا. واختلف المفسّرون في معنى الرفع، ولم يفصل القرآن فيه، فلا نفصل فيه هنا.",
+    greatest: "He is listed among those on whom Allah bestowed favour, of the offspring of Adam and of those carried with Nuh, of whom it is said: when the verses of the Most Merciful were recited to them, they fell down prostrate and weeping.",
+    greatestAr: "ذُكر في المُنعَم عليهم من ذرية آدم وممن حملنا مع نوح، الذين قال الله فيهم: إذا تُتلى عليهم آيات الرحمن خرّوا سُجّدًا وبُكيًّا.",
+    death: "Nothing about his death is established in the Quran or the two Sahihs. The account of him being seen in the fourth heaven on the night of the Mi'raj IS established. Everything else told about him — his trade, his writing, his age — comes from historical and Israiliyyat material, not from revelation, and is not repeated here as fact.",
+    deathAr: "لم يثبت شيءٌ عن وفاته في القرآن ولا في الصحيحين. وأما لقاؤه في السماء الرابعة ليلة المعراج فثابت. وسائر ما يُذكر عنه — من صناعته وكتابته وعمره — فمن كتب التاريخ والإسرائيليات لا من الوحي، ولا نُعيده هنا على أنه ثابت.",
+    sources: [
+      "A man of truth, a prophet; raised to a high station: Surah Maryam (19:56-57) — Quran",
+      "Among the patient and the righteous: Surah Al-Anbiya (21:85-86) — Quran",
+      "Met in the fourth heaven: Sahih al-Bukhari, Book of Prayer, Hadith 349 — Sahih",
+      "His trade and his age: historical and Israiliyyat accounts — NOT established, and not relied on here"
+    ]
+  },
+
+  "hud": {
+    before: "He was sent to 'Ad, a people the Quran describes as given a strength no other people had been given, who built landmarks on every high place and took for themselves fortresses as though they would live forever.",
+    beforeAr: "بُعث إلى عادٍ، وقد وصفهم القرآن بقوّةٍ لم تُعطَ لغيرهم، يبنون بكلّ ريعٍ آيةً، ويتّخذون مصانع لعلّهم يخلدون.",
+    message: "O my people, worship Allah — you have no god other than Him. Will you not fear Him?",
+    messageAr: "يا قوم اعبدوا الله ما لكم من إلهٍ غيره، أفلا تتّقون؟",
+    islam: "He was one of them, not a stranger. He asked them for no wage: my reward is only upon the One who created me.",
+    islamAr: "كان منهم لا غريبًا عنهم، ولم يسألهم أجرًا: إن أجري إلا على الذي فطرني.",
+    change: "They answered him with the sentence that ends every such argument: we see you in foolishness, and we think you are a liar. And they said: who is greater than us in strength? He told them their strength was the gift of the One they were denying.",
+    changeAr: "فأجابوه بما يُختم به كل جدال: إنّا لنراك في سفاهةٍ وإنّا لنظنّك من الكاذبين. وقالوا: من أشدّ منّا قوة؟ فذكّرهم أن قوّتهم من الذي يجحدونه.",
+    greatest: "Standing alone against a people who could not be resisted, and telling them so: I call Allah to witness, and bear witness yourselves, that I am free of what you associate with Him. Plot against me all together and give me no respite.",
+    greatestAr: "وقوفه وحده أمام قومٍ لا يُقاومون، وقوله لهم: إني أُشهد الله واشهدوا أني بريءٌ مما تُشركون من دونه، فكيدوني جميعًا ثم لا تُنظرون.",
+    death: "Their end came as a wind: a barren wind that left nothing it came upon without reducing it to ruin — seven nights and eight days without break, so that in the morning nothing could be seen but their dwellings. Hud and those who believed with him were saved by a mercy from Allah.",
+    deathAr: "وكان هلاكهم بالريح: ريحًا صرصرًا عاتية، سخّرها عليهم سبع ليالٍ وثمانية أيامٍ حُسومًا، فأصبحوا لا يُرى إلا مساكنهم. ونجّى الله هودًا والذين آمنوا معه برحمةٍ منه.",
+    sources: [
+      "'Ad and their buildings: Surah Ash-Shu'ara (26:123-140) — Quran",
+      "Who is greater than us in strength: Surah Fussilat (41:15) — Quran",
+      "I am free of what you associate: Surah Hud (11:54-56) — Quran",
+      "The wind, seven nights and eight days: Surah Al-Haqqah (69:6-8) and Surah Al-Ahqaf (46:24-25) — Quran"
+    ]
+  },
+
+  "salih": {
+    before: "He was sent to Thamud, who carved their homes out of the mountains and felt secure in them. Like 'Ad before them, they had been given ease, and it made them certain of themselves.",
+    beforeAr: "بُعث إلى ثمود، وكانوا ينحتون من الجبال بيوتًا ويأمنون فيها. وقد أُوتوا من السَّعة مثل ما أُوتيت عادٌ قبلهم، فاغترّوا بأنفسهم.",
+    message: "O my people, worship Allah — you have no god other than Him. He produced you from the earth and settled you in it, so ask His forgiveness and turn to Him.",
+    messageAr: "يا قوم اعبدوا الله ما لكم من إلهٍ غيره، هو أنشأكم من الأرض واستعمركم فيها، فاستغفروه ثم توبوا إليه.",
+    islam: "Before he called them, he had been the one among them they had hoped for: they said, O Salih, you were among us one in whom hope was placed before this.",
+    islamAr: "وقد كان قبل دعوته مرجوًّا فيهم، قالوا: يا صالح قد كنتَ فينا مرجوًّا قبل هذا.",
+    change: "They asked for a sign, and were given the she-camel — with one condition: leave her to eat in the earth of Allah, do not touch her with harm, and the water is shared, a drink for her and a drink for you, each on its known day. The test was not the camel. It was whether they could leave one thing alone.",
+    changeAr: "طلبوا آيةً فأُعطوا الناقة، وشُرط عليهم: ذروها تأكل في أرض الله ولا تمسّوها بسوء، والماء قسمةٌ بينهم، لها شِربٌ ولهم شِرب يومٍ معلوم. ولم يكن الاختبار في الناقة، بل في أن يتركوا شيئًا واحدًا وشأنه.",
+    greatest: "They hamstrung her, and then said to him: bring us what you promise us, if you are of the messengers. He gave them three days. On the third the cry took them, and they lay dead in their homes.",
+    greatestAr: "فعقروها ثم قالوا له: ائتنا بما تعدنا إن كنتَ من المرسلين. فأمهلهم ثلاثة أيام، فلما كان اليوم الثالث أخذتهم الصيحة فأصبحوا في ديارهم جاثمين.",
+    death: "Salih and those who believed with him were saved. Centuries later, passing their ruined dwellings at al-Hijr on the way to Tabuk, the Prophet ﷺ told his companions not to enter the place of those who wronged themselves except weeping, lest what struck them strike you — and he covered his head and hurried his mount through the valley.",
+    deathAr: "ونجّى الله صالحًا والذين آمنوا معه. وبعد قرون، لما مرّ النبي ﷺ بديارهم بالحِجر في طريقه إلى تبوك قال لأصحابه: لا تدخلوا مساكن الذين ظلموا أنفسهم إلا أن تكونوا باكين، أن يصيبكم مثل ما أصابهم. ثم قنّع رأسه وأسرع السير حتى جاوز الوادي.",
+    sources: [
+      "Carving homes in the mountains: Surah Al-A'raf (7:74) and Surah Al-Hijr (15:82) — Quran",
+      "You were one in whom hope was placed: Surah Hud (11:62) — Quran",
+      "The she-camel and the shared water: Surah Ash-Shu'ara (26:155-156) and Surah Al-Qamar (54:28) — Quran",
+      "Three days, then the cry: Surah Hud (11:65-67) — Quran",
+      "At al-Hijr on the way to Tabuk: Sahih al-Bukhari, Book of the Stories of the Prophets, Hadith 3380 — Sahih, agreed upon"
+    ]
+  },
+
+  "lut": {
+    before: "He was the nephew of Ibrahim عليه السلام and believed in him — the Quran records it plainly: so Lut believed in him. He left with him, and was later sent to the people of Sodom.",
+    beforeAr: "كان ابن أخي إبراهيم عليه السلام وآمن به، وقد نصّ القرآن على ذلك: فآمن له لوط. وهاجر معه، ثم أُرسل إلى أهل سدوم.",
+    message: "Will you not fear Allah? I am to you a trustworthy messenger — and he named the thing they did that no one in the worlds had done before them.",
+    messageAr: "ألا تتّقون؟ إني لكم رسولٌ أمين — وسمّى لهم الفعل الذي ما سبقهم به من أحدٍ من العالمين.",
+    islam: "He called them for years and not one of his people followed him. The Quran is exact about how few believed: We brought out whoever was in it of the believers, and We did not find in it except one house of Muslims.",
+    islamAr: "دعاهم سنين فلم يتّبعه من قومه أحد. وقد بيّن القرآن قلّة من آمن: فأخرجنا من كان فيها من المؤمنين، فما وجدنا فيها غير بيتٍ من المسلمين.",
+    change: "Their answer was to threaten to drive him out: expel them from your city, they are people who keep themselves pure. And he said the sentence of a man with no one behind him: if only I had against you some power, or could take shelter in a strong support.",
+    changeAr: "وكان جوابهم أن هدّدوه بالإخراج: أخرجوهم من قريتكم إنهم أُناسٌ يتطهّرون. فقال كلمة رجلٍ لا سند له: لو أنّ لي بكم قوةً أو آوي إلى ركنٍ شديد.",
+    greatest: "The night the angels came to him as guests and his people came running to the door. He stood between them and his guests and offered them anything else, and they refused — and then the angels told him who they were, and to leave by night with his family and not to look back.",
+    greatestAr: "ليلة جاءه الملائكة أضيافًا وجاءه قومه يُهرعون إلى الباب، فوقف بينهم وبين ضيفه وعرض عليهم غير ذلك فأبَوا — ثم أخبره الملائكة من هم، وأمروه أن يسري بأهله بقطعٍ من الليل ولا يلتفت.",
+    death: "The town was overturned and stones of baked clay rained upon them. His wife was not saved — she was of those who stayed behind, and the Quran uses her elsewhere as the example that closeness to a righteous man saves nobody by itself.",
+    deathAr: "فجُعل عاليها سافلها وأُمطروا حجارةً من سِجّيل. ولم تنجُ امرأته، بل كانت من الغابرين. وقد ضرب الله بها المثل في موضعٍ آخر على أن القرب من الصالح لا يُنجي بنفسه.",
+    sources: [
+      "So Lut believed in him: Surah Al-Ankabut (29:26) — Quran",
+      "Not one house but his: Surah Adh-Dhariyat (51:35-36) — Quran",
+      "If only I had against you some power: Surah Hud (11:80) — Quran",
+      "The night of the guests and the order to leave: Surah Hud (11:77-81) — Quran",
+      "His wife as an example: Surah At-Tahrim (66:10) — Quran"
+    ]
+  },
+
+  "ismail": {
+    before: "He was the first son of Ibrahim عليه السلام, born to Hajar after a long wait. While still a nursing child he was left with his mother in a barren valley with no cultivation, beside the Sacred House.",
+    beforeAr: "هو ابن إبراهيم عليه السلام الأول، وُلد لهاجر بعد طول انتظار. وتُرك رضيعًا مع أمّه بوادٍ غير ذي زرعٍ عند البيت الحرام.",
+    message: "He was a messenger and a prophet, and the Quran singles out one quality above the rest: he was true to his promise.",
+    messageAr: "كان رسولًا نبيًّا، وخصّه القرآن بصفةٍ قبل غيرها: إنه كان صادق الوعد.",
+    islam: "His mother asked Ibrahim as he walked away whether Allah had commanded this. He said yes. She said: then He will not abandon us. She ran between Safa and Marwah looking for water, and Zamzam came up at the child's feet. Muslims repeat her running to this day.",
+    islamAr: "سألت أمّه إبراهيم وهو ينصرف: آللهُ أمرك بهذا؟ قال: نعم. قالت: إذًا لا يُضيّعنا. ثم سعت بين الصفا والمروة تطلب الماء، فانبجست زمزم عند قدمي الغلام. ولا يزال المسلمون يسعون سعيها إلى اليوم.",
+    change: "When he was old enough to work alongside his father, Ibrahim told him he had seen in a dream that he was slaughtering him, and asked what he thought. His answer is why he is remembered: O my father, do as you are commanded — you will find me, if Allah wills, of the patient.",
+    changeAr: "فلمّا بلغ معه السعي قال له إبراهيم: إني أرى في المنام أني أذبحك فانظر ماذا ترى. فكان جوابه هو الذي خُلّد به: يا أبتِ افعل ما تُؤمر، ستجدني إن شاء الله من الصابرين.",
+    greatest: "He was ransomed with a great sacrifice, and he and his father raised the foundations of the House together, saying as they built: our Lord, accept from us — You are the Hearing, the Knowing.",
+    greatestAr: "ففُدي بذبحٍ عظيم، ثم رفع مع أبيه القواعد من البيت، وهما يقولان وهما يبنيان: ربنا تقبّل منا إنك أنت السميع العليم.",
+    death: "From his line came the Arabs, and from them the Prophet Muhammad ﷺ. The Prophet ﷺ said of the tribe of Ismail while they were competing in archery: shoot, sons of Ismail — your father was an archer.",
+    deathAr: "ومن ذريته العرب، ومنهم النبي محمد ﷺ. وقال النبي ﷺ لبني إسماعيل وهم ينتضلون: ارموا بني إسماعيل، فإن أباكم كان راميًا.",
+    sources: [
+      "Left in a valley with no cultivation: Surah Ibrahim (14:37) — Quran",
+      "Hajar, the running, and Zamzam: Sahih al-Bukhari, Book of the Stories of the Prophets, Hadith 3364 — Sahih",
+      "The dream and his answer: Surah As-Saffat (37:102) — Quran",
+      "Ransomed with a great sacrifice: Surah As-Saffat (37:107) — Quran",
+      "Raising the foundations: Surah Al-Baqarah (2:127) — Quran",
+      "True to his promise: Surah Maryam (19:54) — Quran",
+      "Your father was an archer: Sahih al-Bukhari, Hadith 3373 — Sahih"
+    ]
+  },
+
+  "ishaq": {
+    before: "He was the son given to Ibrahim عليه السلام in old age, and to Sarah after she had despaired of children. The angels who were on their way to the people of Lut brought the news.",
+    beforeAr: "هو الابن الذي وُهب لإبراهيم عليه السلام على الكِبَر، ولسارة بعد أن يئست من الولد. وجاءت البشارة به على أيدي الملائكة في طريقهم إلى قوم لوط.",
+    message: "A prophet from among the righteous — and the promise that his line would carry prophethood after him.",
+    messageAr: "نبيًّا من الصالحين — ومعه البشارة بأن النبوّة تكون في ذريته من بعده.",
+    islam: "His mother laughed when she heard, and said: shall I give birth when I am an old woman and this husband of mine is an old man? This is a strange thing. And they answered: are you amazed at the decree of Allah?",
+    islamAr: "ضحكت أمّه حين سمعت وقالت: أألد وأنا عجوزٌ وهذا بعلي شيخًا؟ إنّ هذا لشيءٌ عجيب. فقالوا: أتعجبين من أمر الله؟",
+    change: "The Quran pairs him with his brother as a single mercy: praise be to Allah, who granted me, despite old age, Ismail and Ishaq. Indeed my Lord is the Hearer of supplication.",
+    changeAr: "وجمع القرآن بينه وبين أخيه في نعمةٍ واحدة: الحمد لله الذي وهب لي على الكبر إسماعيل وإسحاق، إنّ ربي لسميع الدعاء.",
+    greatest: "That the promise about him was made before he existed. He was named, and his son Yaqub named after him, while he was still only news brought to a woman who laughed.",
+    greatestAr: "أن البشارة به سبقت وجوده؛ فسُمّي وسُمّي من بعده يعقوب، وهو بعدُ خبرٌ يُبشَّر به امرأةٌ ضحكت.",
+    death: "The Quran describes him and Yaqub as given understanding and made leaders guiding by Allah's command, and inspired to do good, establish prayer and give zakat — and it says they were worshippers of Us.",
+    deathAr: "وصفه القرآن هو ويعقوب بأنهما وُهبا الفهم وجُعلا أئمةً يهدون بأمر الله، وأُوحي إليهما فعل الخيرات وإقام الصلاة وإيتاء الزكاة، وقال: وكانوا لنا عابدين.",
+    sources: [
+      "The news brought by the angels: Surah Hud (11:69-73) — Quran",
+      "Sarah's laughter and reply: Surah Hud (11:72-73) — Quran",
+      "Granted me despite old age: Surah Ibrahim (14:39) — Quran",
+      "Made leaders guiding by Our command: Surah Al-Anbiya (21:72-73) — Quran"
+    ]
+  },
+
+  "yaqub": {
+    before: "He is Israel — the son of Ishaq and grandson of Ibrahim عليهم السلام, and the father of the twelve from whom the tribes came.",
+    beforeAr: "هو إسرائيل — ابن إسحاق وحفيد إبراهيم عليهم السلام، وأبو الاثني عشر الذين كانت منهم الأسباط.",
+    message: "The same one his fathers carried, and he made his sons say it at his deathbed: we worship your God and the God of your fathers, one God, and we are Muslims to Him.",
+    messageAr: "الرسالة نفسها التي حملها آباؤه، وقد استحلف بنيه عليها عند موته: نعبد إلهك وإله آبائك إلهًا واحدًا ونحن له مسلمون.",
+    islam: "He knew what Yusuf's dream meant the moment he heard it, and told him not to relate it to his brothers lest they plot against him.",
+    islamAr: "عرف معنى رؤيا يوسف حين سمعها، وقال له: لا تقصص رؤياك على إخوتك فيكيدوا لك كيدًا.",
+    change: "He lost Yusuf, and then lost Binyamin, and went blind from grief — and never once complained to anyone but Allah: I only complain of my anguish and my grief to Allah. His patience is named in the Quran by its own word: beautiful patience.",
+    changeAr: "فقد يوسف ثم فقد بنيامين وابيضّت عيناه من الحزن — ولم يشكُ إلى أحدٍ قطّ إلا إلى الله: إنما أشكو بثّي وحزني إلى الله. وسمّى القرآن صبره باسمه: فصبرٌ جميل.",
+    greatest: "Holding on to hope when there was no reason left for it: O my sons, go and seek news of Yusuf and his brother, and do not despair of the mercy of Allah — none despairs of the mercy of Allah except the disbelieving people. And he had said, years before, when everyone had given up: perhaps Allah will bring them all to me.",
+    greatestAr: "تمسّكه بالرجاء حين لم يبقَ ما يدعو إليه: يا بنيّ اذهبوا فتحسّسوا من يوسف وأخيه ولا تيأسوا من رَوح الله، إنه لا ييأس من رَوح الله إلا القوم الكافرون. وقد قال قبل ذلك بسنين وقد يئس الناس: عسى الله أن يأتيني بهم جميعًا.",
+    death: "He lived to see the dream fulfilled: Yusuf raised his parents upon the throne, and they fell down before him in prostration. And at his death he gathered his sons and asked them the only question that mattered: what will you worship after me?",
+    deathAr: "وعاش حتى رأى تأويل الرؤيا: ورفع أبويه على العرش وخرّوا له سُجّدًا. ولمّا حضره الموت جمع بنيه وسألهم السؤال الذي لا يعدله سؤال: ما تعبدون من بعدي؟",
+    sources: [
+      "Do not relate your dream: Surah Yusuf (12:5) — Quran",
+      "Beautiful patience: Surah Yusuf (12:18 and 12:83) — Quran",
+      "I complain only to Allah: Surah Yusuf (12:86) — Quran",
+      "Do not despair of the mercy of Allah: Surah Yusuf (12:87) — Quran",
+      "Perhaps Allah will bring them all: Surah Yusuf (12:83) — Quran",
+      "What will you worship after me: Surah Al-Baqarah (2:133) — Quran"
+    ]
+  },
+
+  "yusuf": {
+    before: "A boy of eleven brothers who saw eleven stars and the sun and the moon prostrating to him, and whose father loved him — which was the beginning of everything that happened to him.",
+    beforeAr: "غلامٌ من أحد عشر أخًا، رأى أحد عشر كوكبًا والشمس والقمر له ساجدين، وكان أبوه يحبّه — وكان ذلك مبتدأ كل ما جرى له.",
+    message: "He preached in a prison cell, to two men who had asked him about dreams, before he interpreted anything: are separate lords better, or Allah, the One, the Prevailing?",
+    messageAr: "دعا في السجن رجلين سألاه عن رؤيا، قبل أن يُعبّر لهما شيئًا: أأربابٌ متفرّقون خيرٌ أم الله الواحد القهّار؟",
+    islam: "His brothers threw him into a well and told their father a wolf had eaten him. He was sold as a slave, bought in Egypt, and raised in the house of the man who bought him.",
+    islamAr: "ألقاه إخوته في غيابة الجُبّ وقالوا لأبيهم أكله الذئب. فبِيع رقيقًا واشتُري بمصر ونشأ في بيت من اشتراه.",
+    change: "The wife of the house locked the doors and called him to herself. He said: I seek the refuge of Allah — he is my lord who has made good my stay; the wrongdoers do not succeed. And when the choice was prison or the sin, he chose the prison out loud: my Lord, prison is dearer to me than what they call me to.",
+    changeAr: "فراودته امرأة العزيز عن نفسه وغلّقت الأبواب، فقال: معاذ الله، إنه ربي أحسن مثواي، إنه لا يُفلح الظالمون. ولمّا صار الأمر بين السجن والمعصية اختار السجن جهارًا: ربّ السجن أحبّ إليّ مما يدعونني إليه.",
+    greatest: "The day he had absolute power over the men who had thrown him in a well, and used it for nothing. He said: no blame upon you today. May Allah forgive you, and He is the most merciful of the merciful. He did not remind them of what they did; he told them their father would see again.",
+    greatestAr: "يوم صار له عليهم كل سلطان — وهم الذين ألقوه في الجبّ — فلم يستعمله في شيء، وقال: لا تثريب عليكم اليوم، يغفر الله لكم وهو أرحم الراحمين. لم يُعدّد عليهم ما صنعوا، بل بشّرهم بأن أباهم يرتدّ بصيرًا.",
+    death: "At the height of it all — power, family restored, the dream fulfilled — his prayer was not for more: my Lord, You have given me of sovereignty and taught me the interpretation of events. Take me as a Muslim and join me with the righteous.",
+    deathAr: "وفي ذروة الأمر كلّه — المُلك واجتماع الأهل وتأويل الرؤيا — لم يسأل مزيدًا، بل قال: ربّ قد آتيتني من المُلك وعلّمتني من تأويل الأحاديث، توفّني مسلمًا وألحقني بالصالحين.",
+    sources: [
+      "The dream: Surah Yusuf (12:4) — Quran",
+      "The well and the shirt: Surah Yusuf (12:15-18) — Quran",
+      "I seek the refuge of Allah: Surah Yusuf (12:23) — Quran",
+      "Prison is dearer to me: Surah Yusuf (12:33) — Quran",
+      "Preaching in the prison: Surah Yusuf (12:39) — Quran",
+      "No blame upon you today: Surah Yusuf (12:92) — Quran",
+      "Take me as a Muslim: Surah Yusuf (12:101) — Quran"
+    ]
+  },
+
+  "ayyub": {
+    before: "He had health, wealth and family — and then lost all of it. The Quran does not describe his illness in detail, and neither does this page; what it records is what he said in it.",
+    beforeAr: "كان في صحةٍ ومالٍ وأهل، ثم ذهب ذلك كلّه. ولم يُفصّل القرآن مرضه، ولا نُفصّله هنا؛ وإنما سجّل ما قاله فيه.",
+    message: "That a servant may be tested severely and stay a servant — and that asking for relief is not complaint.",
+    messageAr: "أن العبد قد يُبتلى ابتلاءً شديدًا ويبقى عبدًا — وأن سؤال العافية ليس شكوى.",
+    islam: "The whole of his complaint, in the Quran, is two lines: he called upon his Lord — indeed adversity has touched me, and You are the most merciful of the merciful. No demand, no argument, no why.",
+    islamAr: "وجملة شكواه في القرآن سطران: إذ نادى ربّه أني مسّني الضرّ وأنت أرحم الراحمين. بلا مطالبةٍ ولا جدالٍ ولا سؤالٍ عن السبب.",
+    change: "And in another place: adversity has touched me, and You are the most merciful — with Shaytan touching him with hardship and torment, and still his address to his Lord did not change.",
+    changeAr: "وفي موضعٍ آخر: أني مسّني الشيطان بنُصبٍ وعذاب — ومع ذلك لم يتغيّر خطابه لربّه.",
+    greatest: "The answer: strike with your foot — this is a spring, cool and drink. And Allah removed what was with him of adversity and gave him back his family and the like of them with them, as a mercy from Us and a reminder for those of understanding.",
+    greatestAr: "فكان الجواب: اركض برجلك، هذا مغتسلٌ باردٌ وشراب. فكشف الله ما به من ضرّ، وآتاه أهله ومثلهم معهم رحمةً من عنده وذكرى لأولي الألباب.",
+    death: "Allah's own verdict on him is the sentence every Muslim knows: indeed We found him patient — an excellent servant. Indeed he was one who repeatedly turned back to Us.",
+    deathAr: "وحكم الله فيه هو الجملة التي يعرفها كل مسلم: إنّا وجدناه صابرًا نِعم العبد، إنه أوّاب.",
+    sources: [
+      "Adversity has touched me: Surah Al-Anbiya (21:83-84) — Quran",
+      "Shaytan touched me with hardship: Surah Sad (38:41) — Quran",
+      "Strike with your foot: Surah Sad (38:42) — Quran",
+      "His family restored and the like with them: Surah Sad (38:43) and Surah Al-Anbiya (21:84) — Quran",
+      "We found him patient, an excellent servant: Surah Sad (38:44) — Quran"
+    ]
+  },
+
+  "shuayb": {
+    before: "He was sent to Madyan, a trading people whose wrongdoing was in the marketplace: they short-measured, cheated the scales, and took from people what was theirs.",
+    beforeAr: "بُعث إلى مدين، وكانوا قومًا تجّارًا، وكان فسادهم في السوق: يُطفّفون الكيل ويبخسون الميزان ويأخذون من الناس حقوقهم.",
+    message: "O my people, worship Allah — you have no god other than Him. And do not decrease the measure and the scale. He joined the two: worship, and honesty in what you weigh.",
+    messageAr: "يا قوم اعبدوا الله ما لكم من إلهٍ غيره، ولا تنقصوا المكيال والميزان. فجمع بين الأمرين: التوحيد، والصدق في الكيل.",
+    islam: "He is called the orator of the prophets for the way he argued with them, and his argument was always the same shape: give full measure and do not be of those who cause loss; weigh with an even balance.",
+    islamAr: "ويُسمّى خطيب الأنبياء لحسن مجادلته إياهم، وكانت حجّته على صورةٍ واحدة: أوفوا الكيل ولا تكونوا من المخسرين، وزِنوا بالقسطاس المستقيم.",
+    change: "They answered with mockery aimed at his prayer: does your prayer command you that we should leave what our fathers worshipped, or that we should not do with our wealth what we please? And he answered them without raising his voice: I do not intend to differ from you in what I forbid you. I only intend reform as much as I am able.",
+    changeAr: "فسخِروا من صلاته: أصلاتك تأمرك أن نترك ما يعبد آباؤنا أو أن نفعل في أموالنا ما نشاء؟ فأجابهم بلا صخب: وما أريد أن أخالفكم إلى ما أنهاكم عنه، إن أريد إلا الإصلاح ما استطعت.",
+    greatest: "Refusing to make his message negotiable when they offered him the way out: we will surely drive you out, Shuayb, and those who believe with you from our city, or you must return to our religion. He said: even if we were unwilling?",
+    greatestAr: "رفضه أن يساوم على دينه حين عرضوا عليه المخرج: لنُخرجنّك يا شعيب والذين آمنوا معك من قريتنا أو لتعودُنّ في ملّتنا. فقال: أوَلو كنّا كارهين؟",
+    death: "The earthquake seized them and they lay dead in their homes, and in another passage it is the punishment of the day of the shade. He turned away from them and said: I conveyed to you the messages of my Lord and advised you — so how could I grieve over a disbelieving people?",
+    deathAr: "فأخذتهم الرجفة فأصبحوا في دارهم جاثمين، وفي موضعٍ آخر عذاب يوم الظُّلّة. فتولّى عنهم وقال: لقد أبلغتكم رسالات ربي ونصحتُ لكم، فكيف آسى على قومٍ كافرين؟",
+    sources: [
+      "Do not decrease the measure: Surah Hud (11:84-85) — Quran",
+      "Does your prayer command you: Surah Hud (11:87) — Quran",
+      "I only intend reform: Surah Hud (11:88) — Quran",
+      "Or you must return to our religion: Surah Al-A'raf (7:88) — Quran",
+      "The earthquake, and how could I grieve: Surah Al-A'raf (7:91-93) — Quran",
+      "The day of the shade: Surah Ash-Shu'ara (26:189) — Quran"
+    ]
+  },
+
+  "harun": {
+    before: "He was the older brother of Musa عليه السلام, and he was asked for by name — not by himself, but by Musa, who wanted him because of one thing: he is more fluent than me in speech.",
+    beforeAr: "هو أخو موسى عليه السلام الأكبر، وقد طُلب بالاسم — لا طلبَ نفسه، بل طلبه موسى لأمرٍ واحد: وأخي هارون هو أفصح مني لسانًا.",
+    message: "The same message as his brother, carried to the same man: go, both of you, to Pharaoh — indeed he has transgressed. And speak to him with gentle speech.",
+    messageAr: "الرسالة نفسها التي حملها أخوه، إلى الرجل نفسه: اذهبا إلى فرعون إنه طغى، فقولا له قولًا ليّنًا.",
+    islam: "Musa asked for him in the plainest words a man can use about his brother: appoint for me a helper from my family — Harun, my brother. Increase my strength through him and let him share my task. Allah answered: you have been granted your request, Musa.",
+    islamAr: "سأله موسى بأصرح ما يُسأل به: واجعل لي وزيرًا من أهلي، هارون أخي، اشدد به أزري وأشركه في أمري. فقال الله: قد أُوتيتَ سؤلك يا موسى.",
+    change: "He was left in charge when Musa went to the appointment with his Lord, and in his absence the people made the calf. He forbade them and was overpowered: O my people, you are only being tested by it, and your Lord is the Most Merciful — so follow me and obey my order. They said: we will not cease being devoted to it.",
+    changeAr: "استُخلف حين ذهب موسى لميقات ربّه، فاتّخذ القوم العجل في غيبته. فنهاهم فغُلب: يا قوم إنما فُتنتم به، وإن ربّكم الرحمن فاتّبعوني وأطيعوا أمري. قالوا: لن نبرح عليه عاكفين.",
+    greatest: "When Musa returned in anger and seized him by the head and the beard, he did not defend himself with his own authority. He said: son of my mother, the people overpowered me and were about to kill me, so do not let the enemies rejoice over me. He had held the group together rather than split it.",
+    greatestAr: "ولمّا رجع موسى غضبان وأخذ برأسه ولحيته لم يحتجّ بمنصبه، بل قال: يا ابن أمّ، إن القوم استضعفوني وكادوا يقتلونني، فلا تُشمت بي الأعداء. فقد آثر ألّا يُفرّق بينهم على أن يُفرّق.",
+    death: "He died before Musa. Allah names them together as those upon whom He bestowed favour, and says: peace be upon Musa and Harun. Indeed thus do We reward the doers of good.",
+    deathAr: "ومات قبل موسى. وقد جمعهما الله في المُنعَم عليهم، وقال: سلامٌ على موسى وهارون، إنّا كذلك نجزي المحسنين.",
+    sources: [
+      "More fluent than me: Surah Al-Qasas (28:34) — Quran",
+      "Appoint for me a helper: Surah Ta-Ha (20:29-36) — Quran",
+      "Speak to him with gentle speech: Surah Ta-Ha (20:43-44) — Quran",
+      "You are only being tested by it: Surah Ta-Ha (20:90-91) — Quran",
+      "Son of my mother: Surah Al-A'raf (7:150) and Surah Ta-Ha (20:94) — Quran",
+      "Peace be upon Musa and Harun: Surah As-Saffat (37:120-121) — Quran"
+    ]
+  },
+
+  "dawud": {
+    before: "He was a young man in the army of Talut when the army faced Jalut. Those who were certain they would meet Allah said: how many a small company has overcome a large company by the permission of Allah.",
+    beforeAr: "كان فتًى في جيش طالوت حين لقي الجيشُ جالوت، وقال الذين يظنون أنهم مُلاقو الله: كم من فئةٍ قليلةٍ غلبت فئةً كثيرةً بإذن الله.",
+    message: "He was given the Zabur, and made a khalifah in the land — with the charge that comes with it: judge between people in truth and do not follow desire, for it will lead you astray from the way of Allah.",
+    messageAr: "أُوتي الزبور وجُعل خليفةً في الأرض، ومعها التكليف: فاحكم بين الناس بالحق ولا تتّبع الهوى فيُضلّك عن سبيل الله.",
+    islam: "He killed Jalut, and Allah gave him kingship and wisdom and taught him of what He willed. The Quran states the principle in the same breath: were it not that Allah checks the people, some by means of others, the earth would be corrupted.",
+    islamAr: "فقتل جالوت، وآتاه الله المُلك والحكمة وعلّمه مما يشاء. وقرّر القرآن القاعدة في السياق نفسه: ولولا دفع الله الناس بعضهم ببعض لفسدت الأرض.",
+    change: "The mountains and the birds were made to join him in glorifying Allah — and iron was made soft for him, so he worked it himself. The Prophet ﷺ said: the best food a man eats is from the work of his own hand, and the prophet of Allah Dawud used to eat from the work of his own hand.",
+    changeAr: "وسُخّرت معه الجبال والطير يُسبّحن، وأُلين له الحديد فكان يعمل بيده. وقال النبي ﷺ: ما أكل أحدٌ طعامًا قطّ خيرًا من أن يأكل من عمل يده، وإنّ نبيّ الله داود كان يأكل من عمل يده.",
+    greatest: "The two disputants who climbed the wall of his private chamber, and the judgement he gave before hearing the other side — and then realised he had been tested. He asked forgiveness of his Lord and fell down bowing, and turned in repentance. The Quran does not dwell on the fault; it dwells on the returning.",
+    greatestAr: "الخصمان اللذان تسوّرا المحراب، والحكم الذي حكمه قبل أن يسمع من الآخر — ثم علم أنما فتنّاه، فاستغفر ربّه وخرّ راكعًا وأناب. ولم يُطِل القرآن في الزلّة، وإنما أطال في الأوبة.",
+    death: "His worship is the standard the Prophet ﷺ pointed to: the most beloved prayer to Allah is the prayer of Dawud, and the most beloved fasting is the fasting of Dawud — he used to sleep half the night, stand a third of it, and sleep a sixth; and he used to fast a day and not fast a day.",
+    deathAr: "وعبادته هي الميزان الذي دلّ عليه النبي ﷺ: أحبّ الصلاة إلى الله صلاة داود، وأحبّ الصيام إلى الله صيام داود — كان ينام نصف الليل ويقوم ثلثه وينام سدسه، وكان يصوم يومًا ويفطر يومًا.",
+    sources: [
+      "How many a small company: Surah Al-Baqarah (2:249-251) — Quran",
+      "Given the Zabur: Surah An-Nisa (4:163) — Quran",
+      "Judge in truth and do not follow desire: Surah Sad (38:26) — Quran",
+      "Mountains and birds; iron made soft: Surah Saba (34:10-11) and Surah Al-Anbiya (21:79) — Quran",
+      "He ate from the work of his own hand: Sahih al-Bukhari, Book of Sales, Hadith 2072 — Sahih",
+      "The two disputants: Surah Sad (38:21-25) — Quran",
+      "The prayer and fasting of Dawud: Sahih al-Bukhari, Hadith 1131 and 3420 — Sahih, agreed upon"
+    ]
+  },
+
+  "sulaiman": {
+    before: "He was the son of Dawud عليه السلام and inherited from him — and the Quran records the sentence he said about it: and he said, O people, we have been taught the language of birds, and we have been given of all things. Indeed this is evident bounty.",
+    beforeAr: "هو ابن داود عليه السلام وورثه، وسجّل القرآن قوله: وقال يا أيها الناس عُلّمنا منطق الطير وأُوتينا من كلّ شيء، إنّ هذا لهو الفضل المبين.",
+    message: "That the greatest kingdom ever given to a man is still a test — and he named it as one: this is from the favour of my Lord, to test me whether I am grateful or ungrateful.",
+    messageAr: "أن أعظم مُلكٍ أُوتيه بشرٌ يبقى ابتلاءً، وقد سمّاه هو كذلك: هذا من فضل ربي ليبلوني أأشكر أم أكفر.",
+    islam: "He asked for something no one would ask for: my Lord, forgive me and grant me a kingdom such as will not belong to anyone after me. The wind was made subject to him, and the jinn, and he was given what no one was given.",
+    islamAr: "سأل ما لا يسأله أحد: ربّ اغفر لي وهب لي مُلكًا لا ينبغي لأحدٍ من بعدي. فسُخّرت له الريح والجنّ، وأُوتي ما لم يُؤتَه أحد.",
+    change: "As a young man he had already been given understanding: he and his father judged in the case of the field, and Allah says We gave understanding of it to Sulaiman — and to each We gave judgement and knowledge. The Quran corrects the ruling without diminishing either man.",
+    changeAr: "وقد أُوتي الفهم صغيرًا؛ إذ حكم هو وأبوه في الحرث، فقال الله: ففهّمناها سليمان، وكلًّا آتينا حكمًا وعلمًا. فصوّب القرآن الحكم دون أن ينقص أحدهما.",
+    greatest: "The ant, and what he did about it. An ant said: O ants, enter your dwellings lest Sulaiman and his soldiers crush you while they perceive not. And he smiled, laughing at her speech, and said: my Lord, enable me to be grateful for Your favour which You have bestowed upon me. A king with armies of men and jinn stopped for an ant, and asked for gratitude.",
+    greatestAr: "النملة، وما صنع عندها. قالت نملة: يا أيها النمل ادخلوا مساكنكم لا يحطمنّكم سليمان وجنوده وهم لا يشعرون. فتبسّم ضاحكًا من قولها وقال: ربّ أوزعني أن أشكر نعمتك التي أنعمت عليّ. ملكٌ له جنودٌ من الإنس والجنّ يقف عند نملة، ويسأل الشكر.",
+    death: "He died leaning on his staff, and the jinn — who were said to know the unseen — did not know he had died until the creature of the earth ate through his staff and he fell. The Quran uses his death to end that claim: had they known the unseen, they would not have remained in humiliating punishment.",
+    deathAr: "مات متّكئًا على عصاه، ولم تعلم الجنّ — وقد كان يُظنّ أنهم يعلمون الغيب — بموته حتى أكلت دابّة الأرض منسأته فخرّ. وختم القرآن بموته تلك الدعوى: أن لو كانوا يعلمون الغيب ما لبثوا في العذاب المهين.",
+    sources: [
+      "We have been taught the language of birds: Surah An-Naml (27:16) — Quran",
+      "To test me whether I am grateful: Surah An-Naml (27:40) — Quran",
+      "A kingdom such as will not belong to anyone after me: Surah Sad (38:35) — Quran",
+      "The case of the field: Surah Al-Anbiya (21:78-79) — Quran",
+      "The ant, and his smile: Surah An-Naml (27:18-19) — Quran",
+      "His death and the creature of the earth: Surah Saba (34:14) — Quran"
+    ]
+  },
+
+  "ilyas": {
+    before: "He was sent to a people who worshipped an idol called Ba'l. The Quran names it, which is unusual, and names what he said to them about it.",
+    beforeAr: "بُعث إلى قومٍ يعبدون صنمًا يُسمّى بعلًا. وقد سمّاه القرآن، وهذا قليل، وسمّى ما قاله لهم فيه.",
+    message: "Will you not fear Allah? Do you call upon Ba'l and leave the best of creators — Allah, your Lord and the Lord of your forefathers?",
+    messageAr: "ألا تتّقون؟ أتدعون بعلًا وتذرون أحسن الخالقين، الله ربّكم وربّ آبائكم الأولين؟",
+    islam: "He is named among the righteous in the same list as Zakariya, Yahya and Isa — and Allah says of that whole group: and all of them We preferred over the worlds.",
+    islamAr: "ذُكر في الصالحين مع زكريا ويحيى وعيسى، وقال الله في تلك الجملة: وكلًّا فضّلنا على العالمين.",
+    change: "They denied him, and the Quran states the outcome briefly: so they will indeed be brought — except the chosen servants of Allah. It does not describe a punishment in this world for them, and neither does this page.",
+    changeAr: "فكذّبوه، وأوجز القرآن العاقبة: فإنهم لمُحضَرون، إلا عباد الله المخلَصين. ولم يذكر لهم عذابًا في الدنيا، ولا نذكره هنا.",
+    greatest: "That his name was left standing among later generations: and We left for him among later generations — peace be upon Ilyas. The Quran gives him the salutation it gives to Nuh, Ibrahim, Musa and Harun.",
+    greatestAr: "أن ذكره أُبقي في الآخِرين: وتركنا عليه في الآخِرين، سلامٌ على إل ياسين. وأعطاه القرآن السلام الذي أعطاه لنوحٍ وإبراهيم وموسى وهارون.",
+    death: "Nothing about his death is established in the Quran or the two Sahihs. The stories that circulate about him being raised, or living on, are from Israiliyyat and later histories. They are not repeated here as fact, because they are not established as fact.",
+    deathAr: "لم يثبت شيءٌ عن وفاته في القرآن ولا في الصحيحين. وأما ما يُتداول من رفعه أو بقائه فمن الإسرائيليات وكتب التاريخ المتأخرة، ولا نُعيده هنا على أنه ثابت، لأنه غير ثابت.",
+    sources: [
+      "Do you call upon Ba'l: Surah As-Saffat (37:123-126) — Quran",
+      "Among the righteous with Zakariya, Yahya and Isa: Surah Al-An'am (6:85) — Quran",
+      "Peace be upon Ilyas: Surah As-Saffat (37:129-130) — Quran",
+      "Accounts of him being raised or living on: Israiliyyat and later histories — NOT established"
+    ]
+  },
+
+  "al-yasa": {
+    before: "The Quran names him twice and no more. Both times he is in a list of prophets, and both times the point is the same: he is one of them, and he was preferred.",
+    beforeAr: "سمّاه القرآن مرتين لا غير، وفي الموضعين هو في سياق ذكر الأنبياء، والمعنى واحد: أنه منهم، وأنه من المفضَّلين.",
+    message: "The message of all of them: worship Allah alone.",
+    messageAr: "رسالتهم جميعًا: عبادة الله وحده.",
+    islam: "He is listed with Ismail, Yunus and Lut — and Allah says of the four: and all of them We preferred over the worlds.",
+    islamAr: "ذُكر مع إسماعيل ويونس ولوط، وقال الله في الأربعة: وكلًّا فضّلنا على العالمين.",
+    change: "And in Surah Sad he is listed with Ismail and Dhul-Kifl among those Allah calls the outstanding — and all are among the outstanding.",
+    changeAr: "وفي سورة ص ذُكر مع إسماعيل وذي الكفل فيمن سمّاهم الله الأخيار: وكلٌّ من الأخيار.",
+    greatest: "That Allah counted him among the outstanding is the whole of what is established about him, and it is not a small thing to have that said in a book that will be read until the Hour.",
+    greatestAr: "وعدّه الله من الأخيار هو جملة ما ثبت عنه، وليس ذلك بالقليل أن يُقال فيه هذا في كتابٍ يُتلى إلى قيام الساعة.",
+    death: "Nothing of his people, his time, or his death is established in the Quran or the two Sahihs. The detailed stories told about him come from Israiliyyat, and this page leaves them where it found them rather than dressing a short account up as a long one.",
+    deathAr: "لم يثبت شيءٌ عن قومه ولا زمانه ولا وفاته في القرآن ولا في الصحيحين. وما يُروى عنه من تفاصيل فمن الإسرائيليات، ونتركه حيث هو ولا نُطيل ما جاء قصيرًا.",
+    sources: [
+      "Preferred over the worlds: Surah Al-An'am (6:86) — Quran",
+      "Among the outstanding: Surah Sad (38:48) — Quran",
+      "Detailed stories about his life: Israiliyyat — NOT established"
+    ]
+  },
+
+  "dhul-kifl": {
+    before: "He is named twice in the Quran, both times briefly, and both times in company: with Ismail and Idris in one place, with Ismail and Al-Yasa in the other.",
+    beforeAr: "سُمّي في القرآن مرتين، بإيجازٍ في الموضعين، وفي سياق ذكر غيره: مع إسماعيل وإدريس في موضع، ومع إسماعيل واليسع في الآخر.",
+    message: "The message of every prophet: worship Allah alone.",
+    messageAr: "رسالة كل نبي: عبادة الله وحده.",
+    islam: "What Allah says of him is: all were of the patient. The patience is stated; the trial that required it is not described.",
+    islamAr: "والذي قاله الله فيه: كلٌّ من الصابرين. فذُكر الصبر ولم يُذكر البلاء الذي احتاج إليه.",
+    change: "And We admitted them into Our mercy. Indeed they were of the righteous. That is the sentence he shares with Ismail and Idris.",
+    changeAr: "وأدخلناهم في رحمتنا إنهم من الصالحين. وهذه الجملة يشترك فيها مع إسماعيل وإدريس.",
+    greatest: "Even his name is not fully settled: the scholars differ over whether Dhul-Kifl was a prophet or a righteous man, and over what the name means. Some said it refers to a pledge he took upon himself. The Quran does not explain it, so it is left unexplained here.",
+    greatestAr: "بل حتى اسمه لم يُقطع فيه: اختلف أهل العلم هل كان نبيًّا أو رجلًا صالحًا، وفي معنى الاسم. فقال بعضهم: من الكِفل، وهو ما تكفّل به. ولم يُبيّنه القرآن، فلا نُبيّنه هنا.",
+    death: "Nothing about his death is established. The long story attached to his name in some books — a man who guaranteed to fast by day, stand by night and judge without anger — is not in the Quran and not in the two Sahihs, and is not presented here as his.",
+    deathAr: "ولم يثبت شيءٌ عن وفاته. وأما القصة الطويلة التي تُنسب إليه في بعض الكتب — من تكفّله بصيام النهار وقيام الليل والقضاء بغير غضب — فليست في القرآن ولا في الصحيحين، ولا نُقدّمها هنا على أنها له.",
+    sources: [
+      "All were of the patient; admitted into Our mercy: Surah Al-Anbiya (21:85-86) — Quran",
+      "Among the outstanding: Surah Sad (38:48) — Quran",
+      "The story of the pledge: not in the Quran or the two Sahihs — NOT established"
+    ]
+  },
+
+  "yunus": {
+    before: "He was sent to a town, and when they did not respond he left them in anger, before he was given permission to leave.",
+    beforeAr: "أُرسل إلى قريةٍ فلمّا لم يستجيبوا خرج مُغاضبًا، قبل أن يُؤذن له.",
+    message: "Worship Allah alone — and the mercy that follows a nation which turns back before the punishment arrives.",
+    messageAr: "عبادة الله وحده — ورحمةٌ تلحق أمّةً رجعت قبل نزول العذاب.",
+    islam: "He went to a loaded ship, and lots were drawn, and he was of those thrown out. The fish swallowed him while he was blameworthy.",
+    islamAr: "فأبق إلى الفلك المشحون، فساهم فكان من المُدحضين، فالتقمه الحوت وهو مُليم.",
+    change: "In the darkness — the dark of the sea, the dark of the night, the dark of the fish — he called out. And what he said was not a request. It was the truth about who Allah is and who he was: there is no god but You. Glory be to You. I was indeed among the wrongdoers.",
+    changeAr: "وفي الظلمات — ظلمة البحر وظلمة الليل وظلمة الحوت — نادى. ولم يكن نداؤه طلبًا، بل كان تقريرًا لحقيقة ربّه وحقيقة نفسه: لا إله إلا أنت سبحانك إني كنتُ من الظالمين.",
+    greatest: "The answer, and what Allah attached to it: so We answered him and saved him from the distress. And thus do We save the believers. The rescue was not made his alone — it was made a rule.",
+    greatestAr: "فكان الجواب وما عُلّق به: فاستجبنا له ونجّيناه من الغمّ، وكذلك نُنجي المؤمنين. فلم تُجعل النجاة له وحده، بل جُعلت قاعدة.",
+    death: "Had he not been of those who glorify Allah, he would have remained inside the fish until the Day they are raised. And his people are the one people the Quran records as being spared after the warning: so why was there not a city that believed and its faith benefited it — except the people of Yunus?",
+    deathAr: "فلولا أنه كان من المسبّحين للبث في بطنه إلى يوم يُبعثون. وقومه هم القوم الوحيدون الذين ذكر القرآن نجاتهم بعد الإنذار: فلولا كانت قريةٌ آمنت فنفعها إيمانها إلا قوم يونس.",
+    sources: [
+      "He left in anger, the ship and the lots: Surah As-Saffat (37:139-142) — Quran",
+      "The call in the darkness: Surah Al-Anbiya (21:87) — Quran",
+      "And thus do We save the believers: Surah Al-Anbiya (21:88) — Quran",
+      "Had he not been of those who glorify: Surah As-Saffat (37:143-144) — Quran",
+      "Except the people of Yunus: Surah Yunus (10:98) — Quran"
+    ]
+  },
+
+  "zakariya": {
+    before: "He was an old man who had served in the sanctuary for years, the guardian of Maryam, and he had no child. His bones had weakened and his head was aflame with white hair — his own description.",
+    beforeAr: "كان شيخًا كبيرًا خدم المحراب سنين، وهو كافل مريم، ولم يكن له ولد. وقد وهن العظم منه واشتعل الرأس شيبًا — وهو وصفه لنفسه.",
+    message: "That a man may ask his Lord for what looks impossible, and ask it quietly, and be answered.",
+    messageAr: "أن العبد قد يسأل ربّه ما يبدو مستحيلًا، ويسأله سرًّا، فيُجاب.",
+    islam: "What moved him to ask was what he saw with Maryam: whenever he entered upon her in the chamber he found provision with her. He said: where is this from? She said: it is from Allah — Allah provides for whom He wills without account. There he prayed.",
+    islamAr: "والذي حرّكه للسؤال ما رآه عند مريم: كلما دخل عليها المحراب وجد عندها رزقًا، قال: أنّى لكِ هذا؟ قالت: هو من عند الله، إن الله يرزق من يشاء بغير حساب. فهنالك دعا.",
+    change: "He called upon his Lord in secret — the Quran says so explicitly — and said: my Lord, I have never been unblessed in my supplication to You. He asked for an heir who would inherit prophethood, not property, and asked that Allah make him pleasing.",
+    changeAr: "نادى ربّه نداءً خفيًّا — نصّ القرآن على ذلك — وقال: ولم أكن بدعائك ربّ شقيًّا. وسأل وليًّا يرث النبوّة لا المال، وسأل أن يجعله رضيًّا.",
+    greatest: "He was answered by name, and the child was given a name no one had been given before: O Zakariya, We give you good news of a boy whose name will be Yahya. We have not assigned to any before this name.",
+    greatestAr: "فأُجيب باسمه، وأُعطي الغلام اسمًا لم يُسمَّ به أحدٌ قبله: يا زكريا إنّا نُبشّرك بغلامٍ اسمه يحيى، لم نجعل له من قبل سميًّا.",
+    death: "The Quran describes him and his household with one line that explains the whole answer: indeed they used to hasten to good deeds and supplicate Us in hope and fear, and they were humbly submissive to Us.",
+    deathAr: "ووصفه القرآن وأهلَ بيته بجملةٍ تُفسّر الإجابة كلّها: إنهم كانوا يُسارعون في الخيرات ويدعوننا رغبًا ورهبًا، وكانوا لنا خاشعين.",
+    sources: [
+      "The provision with Maryam: Surah Al-Imran (3:37) — Quran",
+      "A secret call; my bones have weakened: Surah Maryam (19:3-6) — Quran",
+      "I have never been unblessed in my supplication: Surah Maryam (19:4) — Quran",
+      "News of Yahya, a name no one had: Surah Maryam (19:7) — Quran",
+      "They used to hasten to good deeds: Surah Al-Anbiya (21:90) — Quran"
+    ]
+  },
+
+  "yahya": {
+    before: "He was the answer to an old man's private prayer, and he was given his task while he was still a child: O Yahya, take the Scripture with strength. And We gave him judgement while a boy.",
+    beforeAr: "كان جواب دعاءٍ خفيٍّ لشيخٍ كبير، وأُعطي أمره وهو صبي: يا يحيى خذ الكتاب بقوّة، وآتيناه الحُكم صبيًّا.",
+    message: "Take it with strength — the Quran gives the command in that word, not in a softer one.",
+    messageAr: "خذ الكتاب بقوّة — بهذا اللفظ جاء الأمر، لا بما هو ألين منه.",
+    islam: "Allah lists what He gave him: tenderness from Us, and purity; and he was fearing of Allah, and dutiful to his parents, and he was not a tyrant or disobedient.",
+    islamAr: "وعدّد الله ما آتاه: وحنانًا من لدنّا وزكاةً، وكان تقيًّا، وبرًّا بوالديه، ولم يكن جبّارًا عصيًّا.",
+    change: "He is one of very few given peace at three points by name: and peace be upon him the day he was born, the day he dies, and the day he is raised alive. The same three are said of Isa عليه السلام about himself.",
+    changeAr: "وهو ممن خُصّ بالسلام في ثلاثة مواضع بالاسم: وسلامٌ عليه يوم وُلد ويوم يموت ويوم يُبعث حيًّا. والثلاثة نفسها قالها عيسى عليه السلام عن نفسه.",
+    greatest: "That he was confirmed before he was born — named by Allah, described by Allah, and given the Book as a boy. He was not asked to become worthy of the task; he was made for it.",
+    greatestAr: "أنه أُثبت قبل أن يُولد — سمّاه الله ووصفه الله وآتاه الكتاب صبيًّا. فلم يُطلب منه أن يصير أهلًا للأمر، بل جُعل له.",
+    death: "He was killed. The Quran does not narrate the killing, and this page does not narrate what the Quran does not — but the salutation Allah gave him covers the day he dies, and that is where his account is left.",
+    deathAr: "قُتل. ولم يقصّ القرآن خبر قتله، ولا نقصّ ما لم يقصّه — غير أن السلام الذي أعطاه الله إياه شمل يوم يموت، وعند هذا يُترك خبره.",
+    sources: [
+      "Take the Scripture with strength; judgement as a boy: Surah Maryam (19:12) — Quran",
+      "Tenderness, purity, dutiful to his parents: Surah Maryam (19:13-14) — Quran",
+      "Peace upon him on three days: Surah Maryam (19:15) — Quran",
+      "Confirming a word from Allah, a leader and chaste: Surah Al-Imran (3:39) — Quran"
+    ]
+  },
+
+  "shith": {
+    before: "He is not named in the Quran. He is named in the histories as a son of Adam who carried on after him, and this page will not turn that into more than it is.",
+    beforeAr: "لم يُسمَّ في القرآن. وإنما ذُكر في كتب التاريخ ابنًا لآدم قام بالأمر بعده، ولا نجعل هذا أكثر مما هو.",
+    message: "Worship Allah alone — the message every prophet carried.",
+    messageAr: "عبادة الله وحده — رسالة كل نبيّ.",
+    islam: "What IS established in the Quran about the sons of Adam is the story of the two who each offered a sacrifice: it was accepted from one and not the other, and one killed his brother, and became the first of that.",
+    islamAr: "والثابت في القرآن من خبر ابني آدم قصّة اللذين قرّبا قربانًا، فتُقبّل من أحدهما ولم يُتقبّل من الآخر، فقتل أحدهما أخاه، فكان أوّل من سنّ ذلك.",
+    change: "The Prophet ﷺ said that no soul is killed wrongfully without a share of the guilt falling on the first son of Adam, because he was the first to establish killing. That is the authentic teaching that comes out of the account of Adam's sons.",
+    changeAr: "وقال النبي ﷺ: لا تُقتل نفسٌ ظلمًا إلا كان على ابن آدم الأول كِفلٌ من دمها، لأنه أول من سنّ القتل. وهذا هو الثابت الذي يخرج من خبر ابني آدم.",
+    greatest: "The honest position: the number of prophets, and which of Adam's sons were among them, is not something the Quran or the two Sahihs settle. Abu Dharr رضي الله عنه narrated a long hadith giving numbers of prophets, but it is not in al-Bukhari or Muslim and scholars have spoken about its chain.",
+    greatestAr: "والإنصاف أن عدد الأنبياء ومن كان منهم من بني آدم ليس مما فصل فيه القرآن ولا الصحيحان. وقد رُوي عن أبي ذر رضي الله عنه حديثٌ طويل في عددهم، وليس في البخاري ولا مسلم، وتكلّم أهل العلم في إسناده.",
+    death: "So this entry stops where the evidence stops. What is certain is that Allah sent messengers to every nation — and We certainly sent into every nation a messenger — and that of them He has told us some and not told us others.",
+    deathAr: "فيقف هذا المدخل حيث يقف الدليل. والمقطوع به أن الله أرسل في كل أمّةٍ رسولًا — ولقد بعثنا في كل أمّةٍ رسولًا — وأن منهم من قصّه علينا ومنهم من لم يقصصه.",
+    sources: [
+      "The two sons of Adam and the sacrifice: Surah Al-Ma'idah (5:27-31) — Quran",
+      "The first son of Adam and the share of every wrongful killing: Sahih al-Bukhari, Hadith 3335 — Sahih, agreed upon",
+      "Into every nation a messenger: Surah An-Nahl (16:36) — Quran",
+      "Of them We have told you some and not others: Surah Ghafir (40:78) — Quran",
+      "The name Shith and his story: historical accounts, e.g. Ibn Kathir, Al-Bidaya wan-Nihaya — historical sira, NOT hadith"
+    ]
+  },
+
+  "yusha": {
+    before: "He is not named in the Quran, but he is present in it. He is the young companion of Musa عليه السلام on the journey to the meeting place of the two seas — and the scholars of tafsir identify the young man as Yusha ibn Nun.",
+    beforeAr: "لم يُسمَّ في القرآن، لكنه فيه. فهو فتى موسى عليه السلام في رحلته إلى مجمع البحرين — وقد عيّنه المفسّرون بأنه يوشع بن نون.",
+    message: "That the one who serves a prophet and keeps walking with him is being prepared for something.",
+    messageAr: "أن من خدم نبيًّا ولازم السير معه فإنما يُعَدّ لأمر.",
+    islam: "The Quran records his part in the journey: he carried the food, he forgot the fish, and he said the sentence that turned them back — I forgot the fish, and none but Shaytan made me forget to mention it.",
+    islamAr: "وسجّل القرآن دوره في الرحلة: حمل الزاد، ونسي الحوت، وقال الجملة التي ردّتهما: وما أنسانيه إلا الشيطان أن أذكره.",
+    change: "The Prophet ﷺ narrated the whole account of Musa and al-Khidr and named the servant in the telling — the hadith of Ibn Abbas in al-Bukhari, in which the young man with Musa is Yusha ibn Nun.",
+    changeAr: "وقد قصّ النبي ﷺ خبر موسى والخضر كاملًا وسمّى الفتى في القصّ — وهو حديث ابن عباس في البخاري، وفيه أن فتى موسى هو يوشع بن نون.",
+    greatest: "The Prophet ﷺ also told of a prophet who fought and told his people not to follow him if they had certain ties holding them back, and the sun was held back for him until Allah gave him victory. The Prophet ﷺ said the sun was never held back for any human being except for him.",
+    greatestAr: "وأخبر النبي ﷺ عن نبيٍّ غزا فقال لقومه: لا يتبعني رجلٌ له كذا وكذا، وأنّ الشمس حُبست له حتى فتح الله عليه. وقال النبي ﷺ: إن الشمس لم تُحبس على بشرٍ إلا له.",
+    death: "That hadith does not name him in the two Sahihs; the identification with Yusha comes from the scholars of tafsir and the histories. So it is given here as what it is: an authentic hadith, with an identification that is not itself part of the hadith.",
+    deathAr: "وهذا الحديث لم يُسمِّه في الصحيحين، وإنما جاء تعيينه بيوشع من كلام المفسّرين وكتب التاريخ. فيُذكر هنا على وجهه: حديثٌ صحيح، وتعيينٌ ليس من الحديث نفسه.",
+    sources: [
+      "The young man with Musa, and the forgotten fish: Surah Al-Kahf (18:60-64) — Quran",
+      "The full account, with the servant named: Sahih al-Bukhari, Book of Knowledge, Hadith 122 — Sahih",
+      "The sun held back for a prophet: Sahih al-Bukhari, Hadith 3124 — Sahih, agreed upon",
+      "Identifying that prophet as Yusha: tafsir and historical accounts — NOT part of the hadith itself"
+    ]
+  },
+
+  "samuel": {
+    before: "He is not named in the Quran either — but the event he is known for is told in it in detail, and told without his name: the chiefs of the Children of Israel after Musa who asked their prophet to appoint a king for them.",
+    beforeAr: "ولم يُسمَّ في القرآن أيضًا — لكن الحادثة التي اشتُهر بها مقصوصةٌ فيه بتفصيل، ومن غير تسميته: الملأ من بني إسرائيل من بعد موسى إذ قالوا لنبيٍّ لهم ابعث لنا مَلِكًا.",
+    message: "That leadership is given by Allah on His measure, not on people's measure of wealth and lineage.",
+    messageAr: "أن المُلك يُؤتيه الله بميزانه لا بميزان الناس في المال والنسب.",
+    islam: "They asked for a king so they could fight in the way of Allah. He warned them: is it possible that if fighting is prescribed for you, you will not fight? They insisted — and when it was prescribed, they turned away, except a few.",
+    islamAr: "سألوا مَلِكًا ليقاتلوا في سبيل الله، فحذّرهم: هل عسيتم إن كُتب عليكم القتال ألّا تقاتلوا؟ فأصرّوا — فلمّا كُتب عليهم تولّوا إلا قليلًا منهم.",
+    change: "He appointed Talut, and they objected on exactly the grounds people always object on: how can he have kingship over us when we are more worthy of it than him, and he has not been given abundance of wealth? He answered: Allah has chosen him over you and increased him in knowledge and stature.",
+    changeAr: "فبعث لهم طالوت، فاعترضوا بالحجّة التي يعترض بها الناس دائمًا: أنّى يكون له المُلك علينا ونحن أحقّ بالمُلك منه ولم يُؤتَ سَعةً من المال؟ فقال: إن الله اصطفاه عليكم وزاده بسطةً في العلم والجسم.",
+    greatest: "That he held to the choice Allah made and did not soften it to please the chiefs — and the outcome proved it, when the small company that stayed with Talut overcame the large one, and Dawud killed Jalut.",
+    greatestAr: "أنه ثبت على اختيار الله ولم يُداهن الملأ فيه — وصدّقت العاقبة ذلك، إذ غلبت الفئة القليلة التي ثبتت مع طالوت الفئة الكثيرة، وقتل داودُ جالوت.",
+    death: "Nothing about his death is established in the Quran or the two Sahihs. His name comes from the histories and from the accounts of the People of the Book, and it is recorded here as that and nothing more.",
+    deathAr: "لم يثبت شيءٌ عن وفاته في القرآن ولا في الصحيحين. واسمه إنما جاء من كتب التاريخ وأخبار أهل الكتاب، ويُذكر هنا على أنه كذلك لا أكثر.",
+    sources: [
+      "They said to a prophet of theirs: appoint for us a king: Surah Al-Baqarah (2:246) — Quran",
+      "The objection about wealth, and Allah's answer: Surah Al-Baqarah (2:247) — Quran",
+      "The river, the small company, and Dawud killing Jalut: Surah Al-Baqarah (2:249-251) — Quran",
+      "The name Shamwil/Samuel: historical accounts, e.g. Ibn Kathir — historical sira, NOT hadith"
+    ]
+  },
+
+  "danyal": {
+    before: "He is not mentioned in the Quran at all, and not in the two Sahihs. He is known from the histories as a prophet among the Children of Israel in the time of the Babylonian exile.",
+    beforeAr: "لم يُذكر في القرآن البتّة، ولا في الصحيحين. وإنما عُرف من كتب التاريخ نبيًّا في بني إسرائيل زمن السبي البابلي.",
+    message: "Worship Allah alone — the message of every prophet.",
+    messageAr: "عبادة الله وحده — رسالة كل نبيّ.",
+    islam: "The account most often given about him in Muslim sources is not about his life at all but about what happened long after his death, in the time of the Caliph Omar رضي الله عنه.",
+    islamAr: "وأشهر ما يُنقل عنه في مصادر المسلمين ليس من حياته، بل مما جرى بعد وفاته بزمنٍ طويل، في خلافة عمر رضي الله عنه.",
+    change: "When Tustar was conquered, a body was found which the people there venerated. The report says Omar رضي الله عنه ordered that it be buried in a concealed place, and that several graves be dug so that nobody would know which one it was — precisely so that it would not become an object of veneration.",
+    changeAr: "لمّا فُتحت تُستر وُجد جسدٌ كان أهلها يعظّمونه، ففي الخبر أن عمر رضي الله عنه أمر أن يُدفن في موضعٍ خفيّ، وأن تُحفر قبورٌ عدّة حتى لا يُعرف أيّها هو — قطعًا لأن يُتّخذ معبودًا من دون الله.",
+    greatest: "That report is in Musannaf Ibn Abi Shaybah and in the histories. It is NOT in the Quran and NOT in the two Sahihs. The lesson taken from it — that graves are not made into places of veneration — is itself firmly established in the two Sahihs by other texts.",
+    greatestAr: "وهذا الخبر في مصنّف ابن أبي شيبة وكتب التاريخ، وليس في القرآن ولا في الصحيحين. وأما المعنى المستفاد منه — ألّا تُتّخذ القبور مواضع تعظيمٍ وعبادة — فثابتٌ في الصحيحين بنصوصٍ أخرى.",
+    death: "So the honest summary is short: a prophet named in the histories, not in revelation; and the one story Muslims usually tell about him is a story about Omar رضي الله عنه guarding the worship of Allah, not a story about Danyal.",
+    deathAr: "فالخلاصة المنصفة قصيرة: نبيٌّ ذُكر في كتب التاريخ لا في الوحي؛ والقصّة التي يرويها المسلمون عنه غالبًا هي في الحقيقة قصّةُ عمر رضي الله عنه وهو يحمي التوحيد، لا قصّةُ دانيال.",
+    sources: [
+      "The discovery at Tustar in the caliphate of Omar: Musannaf Ibn Abi Shaybah and historical accounts — historical sira, NOT hadith",
+      "Not taking graves as places of worship: Sahih al-Bukhari, Hadith 435 and Sahih Muslim — Sahih, agreed upon",
+      "His prophethood and his life: historical accounts only — NOT established in the Quran or the two Sahihs"
+    ]
+  },
+
+  "muhammad": {
+    before: "He was born in Makkah, an orphan before he was born and motherless at six. He never worshipped an idol, never drank, never lied — and his people, who later fought him, called him Al-Amin, the trustworthy one, before he ever claimed anything. When the Kaaba was rebuilt and the tribes nearly went to war over who would place the Black Stone, they accepted his judgement: he laid it on a cloak and had every tribe carry a corner.",
+    beforeAr: "وُلد بمكة يتيمًا قبل أن يُولد، وماتت أمّه وله ستّ سنين. لم يعبد صنمًا قطّ، ولم يشرب خمرًا، ولم يكذب — وقد سمّاه قومه الذين قاتلوه بعدُ «الأمين» قبل أن يدّعي شيئًا. ولمّا أعادت قريش بناء الكعبة وكادوا يقتتلون في وضع الحجر الأسود رضوا بحكمه، فبسط رداءه ووضعه فيه وأمر كل قبيلةٍ أن تأخذ بطرف.",
+    message: "That there is no god but Allah, and that he is His Messenger — and that this is not a new religion but the same one Nuh, Ibrahim, Musa and Isa were sent with. Say: I am not something new among the messengers.",
+    messageAr: "أن لا إله إلا الله وأنه رسول الله — وأن هذا ليس دينًا جديدًا، بل هو دين نوحٍ وإبراهيم وموسى وعيسى. قل: ما كنتُ بِدْعًا من الرسل.",
+    islam: "It began in the cave of Hira at forty, with an angel who seized him and said: read. He said: I am not a reader. Three times, until the first five verses came down. He came home shaking and said to Khadijah: cover me, cover me — and she answered with the sentence that steadied him: never — by Allah, Allah will never disgrace you. You keep the ties of kinship, you carry the burden of others, you give to the poor, you honour the guest and you help against the calamities of truth.",
+    islamAr: "ابتدأ الأمر في غار حراء وله أربعون سنة، بمَلَكٍ غطّه وقال: اقرأ. قال: ما أنا بقارئ. ثلاثًا، حتى نزلت الآيات الخمس الأُوَل. فرجع يرجف فؤاده وقال لخديجة: زمّلوني زمّلوني — فأجابته بما ثبّته: كلا والله لا يُخزيك الله أبدًا، إنك لتصل الرحم، وتحمل الكَلّ، وتُكسب المعدوم، وتَقري الضيف، وتُعين على نوائب الحق.",
+    change: "Thirteen years in Makkah of being mocked, boycotted in a valley until they ate leaves, and losing Khadijah and Abu Talib in one year. At Ta'if he was stoned by children until his sandals filled with blood, and when the angel of the mountains offered to crush the town he refused and asked instead for their children. Then the migration to Madinah, and a state built by a man who still mended his own sandals and milked his own goat.",
+    changeAr: "ثلاث عشرة سنةً بمكة في السخرية والحصار في الشِّعب حتى أكلوا ورق الشجر، وفقد خديجة وأبا طالب في عامٍ واحد. وبالطائف رُمي بالحجارة حتى دميت قدماه، ولمّا عرض عليه ملَك الجبال أن يُطبق عليهم الأخشبين أبى وسأل لأبنائهم. ثم كانت الهجرة إلى المدينة، وقامت دولةٌ على يد رجلٍ ظلّ يخصف نعله ويحلب شاته بيده.",
+    greatest: "The day he entered Makkah with ten thousand men, in total power over the people who had driven him out, killed his companions and tried to kill him. He asked them: what do you think I will do with you? They said: a noble brother and the son of a noble brother. He said: go — you are free. Not one execution for what had been done to him.",
+    greatestAr: "يوم دخل مكة في عشرة آلاف، وقد صار له عليهم كل سلطان — وهم الذين أخرجوه وقتلوا أصحابه وحاولوا قتله — فقال لهم: ما ترون أني فاعلٌ بكم؟ قالوا: أخٌ كريم وابن أخٍ كريم. قال: اذهبوا فأنتم الطلقاء. ولم يُقتل أحدٌ ثأرًا لما صُنع به.",
+    death: "He died in Aishah's room with his head on her chest, at sixty-three, after a farewell sermon in which he asked the people three times whether he had conveyed the message, and made them the witnesses. He left no gold and no silver — his shield was in pledge with a Jew for barley taken for his family. His last words were: rather, the highest Companion. And when Omar could not accept that he had died, Abu Bakr stood and said: whoever worshipped Muhammad, Muhammad has died; whoever worships Allah, Allah is alive and does not die.",
+    deathAr: "مات في بيت عائشة ورأسه على صدرها وله ثلاثٌ وستون سنة، بعد خطبة الوداع التي سألهم فيها ثلاثًا: هل بلّغت؟ وأشهدهم على ذلك. ولم يترك دينارًا ولا درهمًا، ودرعه مرهونةٌ عند يهوديٍّ في شعيرٍ أخذه لأهله. وكان آخر كلامه: بل الرفيق الأعلى. ولمّا لم يُصدّق عمر أنه مات قام أبو بكر فقال: من كان يعبد محمدًا فإن محمدًا قد مات، ومن كان يعبد الله فإن الله حيٌّ لا يموت.",
+    sources: [
+      "Al-Amin and the Black Stone: historical sira accounts (Ibn Ishaq, Ibn Kathir) — historical sira, NOT hadith",
+      "The cave of Hira and Khadijah's words: Sahih al-Bukhari, Book of the Beginning of Revelation, Hadith 3 — Sahih, agreed upon",
+      "The first five verses: Surah Al-Alaq (96:1-5) — Quran",
+      "Ta'if and the angel of the mountains: Sahih al-Bukhari, Hadith 3231 — Sahih, agreed upon",
+      "Mending his sandals and serving his family: Sahih al-Bukhari, Hadith 676 — Sahih",
+      "You are free, on the conquest of Makkah: historical sira accounts — historical sira, NOT hadith; his forbearance that day is established in the two Sahihs in other wordings",
+      "Have I conveyed? Sahih al-Bukhari, Book of Hajj, Hadith 1741 — Sahih, agreed upon",
+      "His shield in pledge for barley: Sahih al-Bukhari, Hadith 2916 — Sahih",
+      "Died with his head on her chest; the highest Companion: Sahih al-Bukhari, Hadith 4449 and 4463 — Sahih",
+      "Abu Bakr's words on his death: Sahih al-Bukhari, Hadith 3667 — Sahih",
+      "I am not something new among the messengers: Surah Al-Ahqaf (46:9) — Quran"
+    ]
   }
 };
