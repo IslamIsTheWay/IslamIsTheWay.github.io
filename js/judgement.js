@@ -112,8 +112,45 @@ const JUDGEMENT_STAGES = [
   },
 
   {
-    id: "j-angels",
+    id: "j-shafaah",
     order: 5,
+    title: "The Great Intercession — the day people go from prophet to prophet",
+    titleAr: "الشفاعة العظمى — يوم يذهب الناس من نبيٍّ إلى نبيّ",
+    lead: "The standing goes on until people cannot bear it, and then they start looking for someone to speak. What happens next is one of the longest narrations in the two Sahihs, and it is the answer to the question people ask most about that Day: is there anyone who can help?",
+    leadAr: "يطول الموقف حتى لا يُطيقه الناس، فيلتمسون من يشفع لهم. وما يقع بعد ذلك من أطول ما في الصحيحين، وفيه جواب أكثر ما يُسأل عنه في ذلك اليوم: هل من أحدٍ يُغيث؟",
+    points: [
+      { en: "The sun is brought near, and people reach a grief and distress they cannot bear or carry. Then they say to one another: do you not see what has reached you? Will you not look for someone to intercede for you with your Lord?",
+        ar: "تُدنى الشمس فيبلغ الناس من الغمّ والكرب ما لا يُطيقون ولا يحتملون، فيقول بعضهم لبعض: ألا ترون ما قد بلغكم؟ ألا تنظرون من يشفع لكم إلى ربكم؟",
+        quran: "أَنَا سَيِّدُ النَّاسِ يَوْمَ الْقِيَامَةِ، وَهَلْ تَدْرُونَ بِمَ ذَاكَ؟",
+        ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4712; and Sahih Muslim, Book of Faith — Sahih, agreed upon" },
+      { en: "They go to ADAM: you are the father of mankind, Allah created you with His hand and had the angels prostrate to you — intercede for us. He says: my Lord has been angry today with an anger like none before and none after, and mentions his own slip. He says: myself, myself. Go to someone else.",
+        ar: "فيأتون آدم: أنت أبو البشر، خلقك الله بيده وأسجد لك ملائكته، اشفع لنا. فيقول: إن ربي غضب اليوم غضبًا لم يغضب قبله مثله ولن يغضب بعده مثله، ويذكر زلّته. ويقول: نفسي نفسي، اذهبوا إلى غيري.",
+        quran: "",
+        ref: "Sahih al-Bukhari, Hadith 4712 — Sahih, agreed upon" },
+      { en: "Then to NUH — the first messenger to the people of the earth. He says the same, and mentions the supplication he made against his people. Myself, myself.",
+        ar: "ثم يأتون نوحًا — أول رسولٍ إلى أهل الأرض. فيقول مثل ذلك، ويذكر دعوته على قومه. نفسي نفسي.",
+        quran: "",
+        ref: "Sahih al-Bukhari, Hadith 4712 — Sahih, agreed upon" },
+      { en: "Then to IBRAHIM — the friend of Allah. Then to MUSA — the one Allah spoke to and gave the Torah. Then to ISA — a word from Allah and a spirit from Him. Each of them names something from his own life and says: myself, myself. Go to someone else.",
+        ar: "ثم يأتون إبراهيم خليل الله، ثم موسى الذي كلّمه الله وآتاه التوراة، ثم عيسى كلمة الله وروحًا منه. كلٌّ منهم يذكر شيئًا من أمره ويقول: نفسي نفسي، اذهبوا إلى غيري.",
+        quran: "",
+        ref: "Sahih al-Bukhari, Hadith 4712 — Sahih, agreed upon" },
+      { en: "Then they come to MUHAMMAD ﷺ. He said: so they come to me, and I go and ask permission of my Lord, and it is granted. When I see Him I fall in prostration, and He leaves me as long as He wills. Then it is said: raise your head, ask and you will be given, intercede and your intercession will be accepted. So he raises his head and praises Allah with words of praise He teaches him.",
+        ar: "ثم يأتون محمدًا ﷺ. قال: فيأتونني، فأنطلق فأستأذن على ربي فيُؤذن لي، فإذا رأيته وقعت ساجدًا، فيدعني ما شاء الله. ثم يُقال: ارفع رأسك، وسَل تُعطَه، واشفع تُشفَّع. فأرفع رأسي فأحمده بمحامد يعلّمنيها.",
+        quran: "ارْفَعْ رَأْسَكَ، وَسَلْ تُعْطَهْ، وَاشْفَعْ تُشَفَّعْ",
+        ref: "Sahih al-Bukhari, Hadith 4712; and Sahih Muslim, Book of Faith — Sahih, agreed upon" },
+      { en: "And this is the praised station the Quran promises him — and the reason for the words said after every adhan: O Allah, Lord of this complete call and the prayer to be established, grant Muhammad the means and the excellence, and raise him to a praised station which You have promised him.",
+        ar: "وهذا هو المقام المحمود الذي وعده الله إياه — وهو معنى ما يُقال بعد كل أذان: اللهم ربّ هذه الدعوة التامّة والصلاة القائمة، آتِ محمدًا الوسيلة والفضيلة، وابعثه مقامًا محمودًا الذي وعدته.",
+        quran: "عَسَىٰ أَن يَبْعَثَكَ رَبُّكَ مَقَامًا مَّحْمُودًا",
+        ref: "Surah Al-Isra (17:79); and Sahih al-Bukhari, Book of Adhan, Hadith 614 — Sahih" }
+    ],
+    note: "Every prophet named above declines, and each one gives a reason from his own life. The scholars note that this is not a criticism of any of them — it is the point of the narration: on that Day nobody stands on his own record, and the one who is finally permitted to speak is permitted BY Allah, not by his own right. The intercession itself belongs to Allah, and happens only for whom He permits and is pleased with.",
+    noteAr: "كلُّ نبيٍّ ذُكر أعلاه يعتذر، ويذكر سببًا من أمره. ونبّه أهل العلم على أن هذا ليس قدحًا في أحدٍ منهم، بل هو مقصود الحديث: أن أحدًا لا يقوم يومئذٍ بنفسه، وأن الذي يُؤذن له إنما يُؤذن له بإذن الله لا بحقٍّ لنفسه. والشفاعة لله وحده، ولا تكون إلا لمن أذن له ورضي."
+  },
+
+  {
+    id: "j-angels",
+    order: 6,
     title: "The angels — their names, what they look like, and what each one does",
     titleAr: "الملائكة — أسماؤهم وصفاتهم ووظيفة كلٍّ منهم",
     lead: "Angels are named in the Quran and in the two Sahihs, and each has an assigned task. Some names people use every day are firmly established; others are not established at all. Both are marked here.",
@@ -170,7 +207,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-questions",
-    order: 6,
+    order: 7,
     title: "What you will be asked about",
     titleAr: "عمّا ستُسأل",
     lead: "Nobody passes through without being stopped. The Quran commands: stop them — they are to be questioned. And it names some of what the questioning covers.",
@@ -203,7 +240,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-shade",
-    order: 7,
+    order: 8,
     title: "Seven under the shade of Allah — when there is no other shade",
     titleAr: "سبعةٌ يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه",
     lead: "On a day when the sun is brought near and there is no shade at all, the Prophet ﷺ named seven kinds of people whom Allah shades. He named them precisely, so that anyone can look at the list and ask which of them he could still become.",
@@ -243,7 +280,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-faces",
-    order: 8,
+    order: 9,
     title: "Two kinds of faces — and how the Day feels from inside each",
     titleAr: "وجهان يومئذٍ — وكيف يمرّ اليوم على كلٍّ منهما",
     lead: "The Quran describes the Day not only from the outside but from inside the person living it. Two sets of faces, and two completely different experiences of the same length of time.",
@@ -276,7 +313,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-rights",
-    order: 9,
+    order: 10,
     title: "The settling of rights — this is where most people are ruined",
     titleAr: "القصاص بين الناس — وهنا يُفلس أكثر الناس",
     lead: "Before anything else is settled, what people took from one another is settled — and it is not settled with money, because there is no money there.",
@@ -301,7 +338,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-records",
-    order: 10,
+    order: 11,
     title: "The records — in the right hand or the left",
     titleAr: "الصحف — باليمين أو بالشمال",
     lead: "Everyone is given his record, and the Quran describes the two reactions in detail.",
@@ -325,7 +362,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-scales",
-    order: 11,
+    order: 12,
     title: "The Scales — weighed to the atom",
     titleAr: "الميزان — وزنٌ بمثقال الذرّة",
     lead: "Scales of justice are set, and nothing is wronged in the slightest.",
@@ -349,7 +386,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-bridge",
-    order: 12,
+    order: 13,
     title: "The Bridge over Hell, and the Basin",
     titleAr: "الصراط والحوض",
     lead: "The Bridge is set over Hell and people cross it at the speed of their deeds. Before it, the Prophet ﷺ waits at his Basin.",
@@ -370,7 +407,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-gates",
-    order: 13,
+    order: 14,
     title: "The gates — eight for Paradise, and who stands at them",
     titleAr: "الأبواب — ثمانية للجنة ومن عليها",
     lead: "Paradise has eight gates. The Prophet ﷺ named one of them and told Abu Bakr رضي الله عنه that whoever spends a pair of anything in the way of Allah is called from every gate.",
@@ -415,7 +452,7 @@ const JUDGEMENT_STAGES = [
 
   {
     id: "j-alone",
-    order: 14,
+    order: 15,
     title: "In the end you stand alone — even your mother will want her right",
     titleAr: "وفي النهاية تقف وحدك — حتى أمّك تطلب حقّها",
     lead: "This is the part people find hardest, and the Quran states it without softening. On that Day the closest people to you will not be beside you — they will be occupied with themselves, and some of them will be asking for what you owe them.",

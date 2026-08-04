@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Day of Judgement | Islam Is The Way</title>
-  <meta name="description" content="The Day of Judgement in Islam, stage by stage: death and the soul, the questioning in the grave, the Trumpet, the standing, the settling of rights between people, the Scales, the Records, the Bridge and the gates — with every Quranic verse and hadith referenced, in English and Arabic." />
+  <meta name="description" content="The Day of Judgement in Islam, stage by stage: death and the soul, the questioning in the grave, the Trumpet, the standing, the Great Intercession, the settling of rights between people, the Scales, the Records, the Bridge and the gates — plus every angel named in the Quran and in the two Sahihs, with every verse and hadith referenced, in English and Arabic." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608031806" />
+  <link rel="stylesheet" href="css/style.css?v=202608041604" />
 </head>
 <body>
 
@@ -62,6 +62,22 @@
     </div>
   </section>
 
+  <!-- ===== The angels, in full, on this page =====
+       Same data as angels.html — js/angels.js is the single source, so
+       the two pages can never drift apart. -->
+  <section class="pattern-bg" id="angels">
+    <div class="container">
+      <h2 class="section-title">The Angels <span dir="rtl" style="font-family:'Amiri',serif;">— الملائكة</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:18px;">
+        Every angel the Prophet ﷺ met or was shown on the night of the Isra and the Mi'raj, every angel named in the Quran, the ones around you every ordinary day — and the famous names that are not established at all. Each point carries its own reference.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">كلّ ملَكٍ لقيه النبي ﷺ أو أُريه ليلة الإسراء والمعراج، وكلّ ملَكٍ سُمّي في القرآن، ومن هم حولك في يومك — والأسماء المشهورة التي لا تثبت. وكلّ مسألةٍ بمرجعها.</span>
+      </p>
+      <div class="adhkar-tabs" id="angelTabs"></div>
+      <div id="angelList" class="adhkar-list"></div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -98,8 +114,9 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608031806"></script>
-  <script src="js/judgement.js?v=202608031806"></script>
+  <script src="js/data.js?v=202608041604"></script>
+  <script src="js/angels.js?v=202608041604"></script>
+  <script src="js/judgement.js?v=202608041604"></script>
   <script>
     function pointHtml(p) {
       return `<div class="judge-point">
@@ -145,8 +162,64 @@
 
     document.getElementById("judgeList").innerHTML = JUDGEMENT_STAGES.map(stageHtml).join("");
     if (window.applyI18n) setTimeout(window.applyI18n, 0);
+
+    /* ---------- The angels, rendered on this page too ---------- */
+    let angelGroup = "named";
+
+    function angelCardHtml(a) {
+      return `<article class="dhikr-card" id="angel-${a.id}">
+        <div class="dhikr-head">
+          <h3 class="dhikr-title en-only">${a.name}</h3>
+          <div class="dhikr-title-ar" dir="rtl">${a.nameAr}</div>
+        </div>
+        <div class="angel-role">
+          <span class="en-only">${a.role}</span>
+          <span dir="rtl" style="font-family:&#39;Amiri&#39;,serif;">${a.roleAr}</span>
+        </div>
+        ${a.arabic ? `<p class="dhikr-arabic" dir="rtl" data-speak>${a.arabic}
+          <button class="speak-btn" data-lang="ar" title="Listen">&#128266;</button></p>` : ""}
+        <p class="en-only">${a.detail}</p>
+        <p dir="rtl" style="font-family:&#39;Amiri&#39;,serif;line-height:2;">${a.detailAr}</p>
+        ${(a.points && a.points.length) ? `<ol class="angel-points">${a.points.map(p =>
+          `<li>
+            <div class="ap-en en-only">${p.en}</div>
+            <div class="ap-ar" dir="rtl">${p.ar}</div>
+            <div class="refs ap-ref"><span>${p.ref}</span></div>
+          </li>`).join("")}</ol>` : ""}
+        <div class="refs"><span>${a.ref}</span></div>
+        <div class="dhikr-strength">${a.strength}</div>
+      </article>`;
+    }
+
+    function renderAngels() {
+      const list = ANGELS.filter(a => a.group === angelGroup).sort((x, y) => x.order - y.order);
+      document.getElementById("angelList").innerHTML = list.map(angelCardHtml).join("");
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function renderAngelTabs() {
+      const host = document.getElementById("angelTabs");
+      host.innerHTML = ANGEL_GROUPS.map(g =>
+        `<button type="button" class="adhkar-tab${g.id === angelGroup ? " active" : ""}" data-g="${g.id}">
+           ${g.icon} <span class="en-only">${g.en}</span>
+           <span dir="rtl" style="font-family:&#39;Amiri&#39;,serif;">${g.ar}</span>
+         </button>`).join("");
+      host.querySelectorAll(".adhkar-tab").forEach(b => {
+        b.addEventListener("click", () => {
+          angelGroup = b.getAttribute("data-g");
+          renderAngelTabs();
+          renderAngels();
+        });
+      });
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    if (typeof ANGELS !== "undefined") {
+      renderAngelTabs();
+      renderAngels();
+    }
   </script>
-  <script src="js/main.js?v=202608031806"></script>
-  <script src="js/i18n.js?v=202608031806"></script>
+  <script src="js/main.js?v=202608041604"></script>
+  <script src="js/i18n.js?v=202608041604"></script>
 </body>
 </html>

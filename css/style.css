@@ -232,6 +232,9 @@ nav.main-nav a {
   padding: 6px 4px;
   transition: var(--transition);
   font-size: 0.92rem;
+  /* A two-word item must never break across two lines — "Judgement Day" was
+     stacking as "Judgement" over "Day" and throwing the whole bar out. */
+  white-space: nowrap;
 }
 
 nav.main-nav a:hover,
@@ -1017,7 +1020,7 @@ section {
   display: flex; align-items: center; justify-content: center;
   font-size: .8rem; font-weight: 700;
 }
-.judge-step-label { font-size: .82rem; font-weight: 600; color: var(--text-dark); line-height: 1.35; }
+.judge-step-label { font-size: .82rem; font-weight: 600; color: var(--text-dark); line-height: 1.35; white-space: nowrap; }
 .judge-step-label small {
   display: block; font-family: 'Amiri', serif; font-weight: 400;
   color: var(--text-muted); font-size: .9rem;

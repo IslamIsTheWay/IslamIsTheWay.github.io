@@ -58,15 +58,15 @@ const AR = {
   "166 practices of the Prophet ﷺ across 18 areas of the day — sleeping, eating, washing, travelling, entering the mosque — each with its source.":
     "مئة وستٌّ وستون سنة من هدي النبي ﷺ في ثمانية عشر بابًا من أبواب اليوم — النوم والطعام والطهارة والسفر ودخول المسجد — كلٌّ منها بمرجعها.",
   "Stories of the Prophet ﷺ": "قصص النبي ﷺ",
-  "28 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
-    "ثمانية وعشرون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
-  "14 stages in the order they happen — from the moment of death to the gates — with 58 referenced points and 52 passages of the Quran.":
-    "أربع عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع ثمانٍ وخمسين مسألة موثّقة، واثنين وخمسين موضعًا من القرآن الكريم.",
+  "38 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
+    "ثمانية وثلاثون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
+  "15 stages in the order they happen — from the moment of death to the gates — with 64 referenced points and 52 passages of the Quran.":
+    "خمس عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع أربعٍ وستين مسألة موثّقة، واثنين وخمسين موضعًا من القرآن الكريم.",
   "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ, with full life stories for Nuh, Ibrahim, Musa and Isa.":
     "الأنبياء التسعة والعشرون المذكورون في القرآن، من آدم إلى محمد ﷺ، مع سِيَرٍ كاملة لنوح وإبراهيم وموسى وعيسى عليهم السلام.",
   "Companions (Sahaba)": "الصحابة رضي الله عنهم",
-  "66 of the men and women who stood beside the Prophet ﷺ, including all eleven Mothers of the Believers — twelve with their full life story.":
-    "ستة وستون من الرجال والنساء الذين وقفوا مع النبي ﷺ، ومنهم أمهات المؤمنين الإحدى عشرة جميعًا — واثنا عشر منهم بسيرةٍ كاملة.",
+  "65 of the men and women who stood beside the Prophet ﷺ, including all eleven Mothers of the Believers — twelve with their full life story.":
+    "خمسة وستون من الرجال والنساء الذين وقفوا مع النبي ﷺ، ومنهم أمهات المؤمنين الإحدى عشرة جميعًا — واثنا عشر منهم بسيرةٍ كاملة.",
   "Guidance & Reflection": "التوجيه والتدبر",
   "Guidance &amp; Reflection": "التوجيه والتدبر",
   "Describe your situation and receive what relates to it from the Quran and the Sunnah — plus 23 Quranic themes and what to say at each step of worship.":
@@ -80,11 +80,11 @@ const AR = {
   "Recently Added": "أحدث الإضافات",
   "The newest additions to the site — each one written from the source, with its reference and its grading.":
     "أحدث ما أُضيف إلى الموقع — كلُّ مادةٍ مكتوبة من أصلها، ومعها مرجعها ودرجتها.",
-  "28 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
-    "ثمانٍ وعشرون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
+  "38 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
+    "ثمانٍ وثلاثون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
   "Read the Stories": "اقرأ القصص",
-  "Fourteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 58 referenced points and 52 passages of the Quran.":
-    "أربع عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. ثمانٍ وخمسون مسألة موثّقة، واثنان وخمسون موضعًا من القرآن.",
+  "Fifteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 64 referenced points and 52 passages of the Quran.":
+    "خمس عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. أربعٌ وستون مسألة موثّقة، واثنان وخمسون موضعًا من القرآن.",
   "See the Stages": "اطّلع على المراحل",
   "166 Sunnah Practices": "مئة وستٌّ وستون سنة",
   "How the Prophet ﷺ actually lived, across 18 areas of ordinary life — waking, wudu, prayer, food, dress, the mosque, travel, Friday, illness, hardship and the treatment of family, neighbours and animals. Ask a question in Arabic or English and the right practice is found for you.":
@@ -117,11 +117,11 @@ const AR = {
   "Every hadith on this site carries its grading and names the scholar behind it — \"Sahih — Narrated by al-Bukhari\", \"Sahih — Agreed upon\". Anything outside Sahih al-Bukhari and Sahih Muslim is labelled as such, and material taken from the historical sira is marked as history rather than hadith. Where something well known is not authentic, the site says so on the entry itself.":
     "كل حديث في الموقع مذكورةٌ درجته ومعها اسم من صحّحه — «صحيح — رواه البخاري»، «صحيح — متفق عليه». وما كان خارج الصحيحين نُصّ على ذلك، وما كان من كتب السيرة بُيّن أنه تاريخ لا حديث. وإذا كان الأمر مشهورًا وهو غير ثابت، صرّح الموقع بذلك في موضعه.",
   "What is on the Stories page?": "ماذا في صفحة القصص؟",
-  "28 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
-    "ثمانية وعشرون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
+  "38 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
+    "ثمانية وثلاثون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
   "What does the Day of Judgement page cover?": "ماذا تتناول صفحة يوم القيامة؟",
-  "Fourteen stages in the order they occur, from death to the gates, built on 52 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
-    "أربع عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على اثنين وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",
+  "Fifteen stages in the order they occur, from death to the gates, built on 52 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
+    "خمس عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على اثنين وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",
   "How do I find something for my own situation?": "كيف أجد ما يناسب حالي؟",
   "On the Guidance page, describe what you are going through by typing or speaking, in Arabic or English. The site searches the Quranic themes, the Sunnah, the worship steps, the full Bukhari and Muslim collections, and the lives of the Prophets and Companions, and shows what relates to it with full references. It is not a fatwa — read each verse in its full surah and consult a qualified scholar.":
     "في صفحة التوجيه، اكتب ما تمرّ به أو قله بصوتك، بالعربية أو الإنجليزية. يبحث الموقع في المعاني القرآنية والسنن وخطوات العبادة وصحيحَي البخاري ومسلم كاملين وسِيَر الأنبياء والصحابة، ويعرض لك ما يتعلق بحالك مع مراجعه كاملة. وهذا ليس فتوى — اقرأ كل آية في سورتها كاملة وارجع إلى أهل العلم.",
@@ -252,6 +252,25 @@ const AR = {
   // is that the grading names the scholar — so does the Arabic.
   "Sahih — Agreed upon (al-Bukhari and Muslim)": "صحيح — متفق عليه (البخاري ومسلم)",
   "Sahih — Narrated by al-Bukhari": "صحيح — رواه البخاري",
+  // Gradings used on the Angels page, where a point may be Quran, hadith, or
+  // explicitly neither. NOTE: a bare "Quran" is deliberately NOT a key here —
+  // it already exists as the navigation label, and adding it a second time
+  // silently overwrote the nav link with the wrong wording.
+  "Not established": "غير ثابت",
+  "Quran; and Sahih — Agreed upon (al-Bukhari and Muslim)": "قرآن؛ وصحيح — متفق عليه (البخاري ومسلم)",
+  "Quran; the size description is outside the two Sahihs": "قرآن؛ ووصف العِظَم خارج الصحيحين",
+  "Quran and Sahih for the name; the rain and provision: outside the two Sahihs":
+    "قرآن وصحيح في الاسم؛ وأما المطر والرزق فخارج الصحيحين",
+  "Quran for the description; the name 'Azrail' is NOT established":
+    "قرآن في الوصف؛ واسم «عزرائيل» غير ثابت",
+  "Sahih and Quran for everything above except where the entry says otherwise":
+    "صحيح وقرآن في كل ما تقدّم إلا ما نُصّ على خلافه",
+  "The description is Quran. The NAME is not established": "الوصف قرآن، وأما الاسم فغير ثابت",
+  "The questioning: Sahih. The names: outside the two Sahihs": "السؤال صحيح، وأما الاسمان فخارج الصحيحين",
+  "When:": "متى:",
+  "🎤 I speak English": "🎤 أتحدث الإنجليزية",
+  "Settings → Time & language → Language & region → add Arabic → Language options → Speech":
+    "الإعدادات ← الوقت واللغة ← اللغة والمنطقة ← أضف العربية ← خيارات اللغة ← الكلام",
   "Sahih — Narrated by Muslim": "صحيح — رواه مسلم",
   "Sahih — established in the collections": "صحيح — ثابت في كتب السنة",
   "Sahih — authenticated in the collections": "صحيح — ثابت في كتب السنة",
