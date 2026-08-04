@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608041604" />
+  <link rel="stylesheet" href="css/style.css?v=202608041627" />
 </head>
 <body>
 
@@ -33,7 +33,6 @@
         <a href="sunnah.html">Sunnah</a>
         <a href="stories.html">Stories</a>
         <a href="judgement.html">Judgement Day</a>
-        <a href="angels.html">Angels</a>
         <a href="guidance.html">Guidance</a>
         <a href="courses.html">Courses</a>
         <a href="search.html">Search</a>
@@ -203,7 +202,6 @@
             <li><a href="sunnah.html">Sunnah</a></li>
             <li><a href="stories.html">Stories of the Prophet صلى الله عليه وسلم</a></li>
             <li><a href="judgement.html">The Day of Judgement</a></li>
-            <li><a href="angels.html">The Angels</a></li>
             <li><a href="guidance.html">Guidance</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="search.html">Search</a></li>
@@ -221,17 +219,17 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608041604"></script>
+  <script src="js/data.js?v=202608041627"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608041604"></script>
+  <script src="js/sunnah.js?v=202608041627"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608041604"></script>
+  <script src="js/adhkar.js?v=202608041627"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608041604"></script>
+  <script src="js/scholars.js?v=202608041627"></script>
   <!-- Who wrote what, and which book to open. -->
   <script src="js/scholars-books.js?v=202608031545"></script>
   <script>
@@ -804,7 +802,7 @@
     }
 
     /* ---------- Microphone input (speak instead of typing) ---------- */
-    let sitRecognition = null, sitListening = false;
+    let sitRecognition = null, sitListening = false, sitWantsMic = false;
 
     document.getElementById("micBtn").addEventListener("click", () => {
       const btn = document.getElementById("micBtn");
@@ -815,40 +813,72 @@
         status.textContent = "Voice input needs Chrome or Edge. Please type instead. — الإدخال الصوتي يحتاج متصفح Chrome أو Edge، فاكتب من فضلك.";
         return;
       }
+
+      /* CLICK ON, CLICK OFF.
+         The browser ends recognition the moment you stop talking, so the mic
+         was closing while you were still thinking. Two things fix it:
+         `continuous`, so a pause does not end the session, and restarting in
+         `onend` unless you actually asked it to stop. `sitWantsMic` holds
+         that intention — the mic now stays open until it is clicked again. */
       if (sitListening) {
+        sitWantsMic = false;
         sitListening = false;
         if (sitRecognition) sitRecognition.stop();
+        btn.classList.remove("listening");
+        status.textContent = "■ Microphone off — أُغلق الميكروفون";
         return;
       }
 
+      sitWantsMic = true;
       sitRecognition = new SR();
       sitRecognition.lang = document.getElementById("micLang").value;
-      sitRecognition.interimResults = false;
-      sitRecognition.continuous = false;
+      sitRecognition.interimResults = true;   // show words as they land
+      sitRecognition.continuous = true;       // a pause no longer ends it
 
       sitRecognition.onstart = () => {
         sitListening = true;
         btn.classList.add("listening");
-        status.textContent = "● Listening… speak now — أستمع إليك… تفضل بالكلام";
+        status.textContent = "● Listening — take your time, click the mic again to stop  ·  أستمع إليك — خُذ وقتك، واضغط الميكروفون ثانيةً للإيقاف";
       };
+
+      /* With `continuous`, results accumulate across the whole session, so
+         only what is NEW and final is appended — otherwise every pause
+         would paste the same sentence again. */
       sitRecognition.onresult = e => {
-        let said = "";
-        for (let i = 0; i < e.results.length; i++) said += e.results[i][0].transcript;
         const box = document.getElementById("situationInput");
-        box.value = (box.value ? box.value.trim() + " " : "") + said.trim();
-        status.textContent = "✓ Got it — تم التقاط كلامك";
+        let fresh = "", interim = "";
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          if (e.results[i].isFinal) fresh += e.results[i][0].transcript;
+          else interim += e.results[i][0].transcript;
+        }
+        if (fresh.trim()) {
+          box.value = (box.value ? box.value.trim() + " " : "") + fresh.trim();
+        }
+        status.textContent = interim.trim()
+          ? "● " + interim.trim()
+          : "● Listening — click the mic again to stop  ·  أستمع — اضغط الميكروفون ثانيةً للإيقاف";
       };
+
       sitRecognition.onerror = e => {
+        if (e.error === "no-speech" || e.error === "aborted") return;  // silence is not a failure here
+        sitWantsMic = false;
         sitListening = false;
         btn.classList.remove("listening");
         status.textContent = e.error === "not-allowed"
           ? "Microphone blocked. Please allow it in your browser. — تم منع الميكروفون، اسمح به من المتصفح."
-          : "Could not hear anything. Please try again. — لم نسمع شيئاً، حاول مرة أخرى.";
+          : "The microphone stopped. Click it to start again. — توقف الميكروفون، اضغطه لتشغيله من جديد.";
       };
+
+      /* Chrome closes the session on its own after a stretch of silence.
+         If the reader has not clicked stop, open it straight back up. */
       sitRecognition.onend = () => {
+        if (sitWantsMic) {
+          try { sitRecognition.start(); return; } catch (err) { /* fall through */ }
+        }
         sitListening = false;
         btn.classList.remove("listening");
       };
+
       sitRecognition.start();
     });
 
@@ -1204,7 +1234,7 @@
       renderAdhkar();
     }
   </script>
-  <script src="js/main.js?v=202608041604"></script>
-  <script src="js/i18n.js?v=202608041604"></script>
+  <script src="js/main.js?v=202608041627"></script>
+  <script src="js/i18n.js?v=202608041627"></script>
 </body>
 </html>

@@ -2675,17 +2675,17 @@ html:not(.lang-ar) .ar-only { display: none !important; }
 html.lang-ar .en-only { display: none !important; }
 
 /* ============ Responsive ============ */
-/* The menu now has THIRTEEN links plus the language switch. Laid out in a row
-   the nav measures ~1212px, the site name takes another 240px, and with the
-   gap and padding the bar needs ~1511px before everything fits. Below that it
-   must become the hamburger, or the Login button is pushed off the right edge
-   of the screen.
+/* The menu has TWELVE links plus the language switch (Angels moved into the
+   Day of Judgement page). Measured with the desktop layout actually applied:
+   the nav row is ~877px and the site name ~210px, so with the gap and padding
+   the bar needs about 1145px before everything fits. The hamburger takes over
+   below 1200px, which leaves a little headroom for font loading.
 
-   This is MEASURED, not guessed, and it has to be re-measured every time a nav
-   link is added. Adding "Angels" moved the requirement from 1435px to 1511px —
-   the old 1440px breakpoint would have put Login off-screen between 1441 and
-   1510px, which is exactly the bug that was fixed a moment earlier. */
-@media (max-width: 1520px) {
+   RE-MEASURE THIS EVERY TIME A NAV LINK IS ADDED OR REMOVED. It has already
+   been wrong twice: too low at 1150px when links were added, and then left
+   too high at 1520px after Angels was taken out, which collapsed the bar into
+   a hamburger on ordinary laptops that had room for the whole thing. */
+@media (max-width: 1200px) {
   nav.main-nav {
     position: absolute;
     top: 100%;
@@ -2927,3 +2927,62 @@ html.lang-ar .en-only { display: none !important; }
 .angel-points .ap-ref { margin-top: 5px; font-size: .78rem; opacity: .95; }
 .angel-points li::marker { color: var(--gold); font-weight: 700; }
 html.lang-ar .angel-points { list-style-type: arabic-indic; }
+
+/* ============ Reader sign-in, and the saved verse ============ */
+.reader-box { max-width: 900px; margin: 0 auto 6px; }
+.reader-out, .reader-in {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 22px;
+}
+.reader-lead { font-size: .95rem; line-height: 1.85; margin-bottom: 14px; }
+.reader-form { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 12px; }
+.reader-form input {
+  flex: 1 1 190px;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: .95rem;
+}
+.reader-form input:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+.reader-rules { font-size: .82rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 12px; }
+.reader-honest {
+  background: #fdf4ee;
+  border: 1px solid #e8cdb8;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: .83rem;
+  line-height: 1.85;
+}
+.reader-msg { margin-top: 12px; border-radius: 9px; padding: 10px 14px; font-size: .88rem; line-height: 1.75; }
+.reader-msg.warn { background: #fdf0ea; color: #8a3d1f; }
+.reader-msg.ok   { background: #e6f4ea; color: #1e7e45; }
+
+.reader-in { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.reader-who { font-size: .95rem; display: flex; flex-direction: column; gap: 2px; }
+.reader-who span[dir="rtl"] { font-size: 1.02rem; color: var(--green-dark); }
+.reader-continue { flex: 1 1 320px; text-align: center; line-height: 1.6; }
+.reader-meta { font-size: .8rem; color: var(--text-muted); flex-basis: 100%; line-height: 1.75; }
+
+/* The Save button in the reciter bar */
+.rq-btn.rq-save { background: #efe6c8; color: #7a5c12; }
+.rq-btn.rq-save:disabled { opacity: .5; cursor: not-allowed; }
+.rq-btn.rq-save.armed { background: var(--gold); color: #fff; }
+.rq-save-note { margin: 8px 0 4px; font-size: .87rem; line-height: 1.8; border-radius: 9px; }
+.rq-save-note.ok   { background: #e6f4ea; color: #1e7e45; padding: 10px 14px; }
+.rq-save-note.warn { background: #fdf0ea; color: #8a3d1f; padding: 10px 14px; }
+
+/* The verse you were brought back to */
+.ayah-flash { animation: ayahFlash 2.2s ease-out; }
+@keyframes ayahFlash {
+  0%   { background: #fff3c4; }
+  100% { background: transparent; }
+}
+@media (max-width: 560px) {
+  .reader-out, .reader-in { padding: 16px 14px; }
+  .reader-continue { flex-basis: 100%; }
+}

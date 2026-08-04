@@ -185,8 +185,14 @@ async function openSurah(surah) {
       <div>
         <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ Play Full Surah</button>
         <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ Stop</button>
+        <!-- Sits beside Stop, as asked. It stays disabled until a verse's
+             audio has finished, and then names the verse it will save. -->
+        <button onclick="iitwSaveHere()" class="rq-btn rq-save" id="rqSaveBtn" disabled
+                title="Play a verse, then save where you stopped">💾 Save my place
+          <span dir="rtl" style="font-family:'Amiri',serif;">— احفظ موضعي</span></button>
       </div>
     </div>
+    <div class="rq-save-note" id="rqSaveNote"></div>
     <div class="mushaf-info">
       📖 <strong>${pageCount}</strong> ${pageCount === 1 ? "page" : "pages"} in the Mushaf — ${pageRange}
       &nbsp;·&nbsp; ${arabicAyahs.length} ${arabicAyahs.length === 1 ? "verse" : "verses"}
@@ -196,7 +202,9 @@ async function openSurah(surah) {
     </div>`;
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
-    window._ayahAudios = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));
+    window._ayahAudios  = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));
+    window._ayahNumbers = arabicAyahs.map(a => a.numberInSurah);
+    window._lastFinishedAyah = null;
 
     /* Each verse carries its number on the Arabic line (in the traditional
        end-of-ayah marker) AND its full surah:ayah reference underneath.
@@ -208,7 +216,7 @@ async function openSurah(surah) {
       const cite = surah.n + ":" + ayah.numberInSurah;
       html += `
         <div class="ayah-block" id="ayah-${ayah.numberInSurah}">
-          <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}')" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
+          <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}', ${ayah.numberInSurah})" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
           <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
           <div class="ayah-cite">Surah ${surah.name} — <strong>${cite}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
         </div>
@@ -250,9 +258,21 @@ function closeModal() {
 let currentAudioEl = null;
 let ayahPlayIndex = 0;
 
-function playAyah(url) {
+/* The verse whose audio last finished. This is what the "Save my place"
+   button beside Stop offers to save — the reader asked for the save to
+   become available at the moment a verse finishes playing, which is the
+   natural point at which someone stops for the day. */
+window._lastFinishedAyah = null;
+
+function iitwMarkFinished(ayahNum) {
+  window._lastFinishedAyah = ayahNum;
+  if (typeof window.iitwArmSaveButton === "function") window.iitwArmSaveButton(ayahNum);
+}
+
+function playAyah(url, ayahNum) {
   stopAudio();
   currentAudioEl = new Audio(url);
+  currentAudioEl.addEventListener("ended", () => iitwMarkFinished(ayahNum));
   currentAudioEl.play();
 }
 
@@ -265,8 +285,12 @@ function playAllAyahs() {
 function playNextAyah() {
   if (ayahPlayIndex >= window._ayahAudios.length) return;
   stopAudio();
+  const num = window._ayahNumbers ? window._ayahNumbers[ayahPlayIndex] : ayahPlayIndex + 1;
   currentAudioEl = new Audio(window._ayahAudios[ayahPlayIndex]);
   currentAudioEl.addEventListener("ended", () => {
+    // Each verse of a full-surah reading also arms the save, so stopping
+    // part-way through still leaves the right verse ready to save.
+    iitwMarkFinished(num);
     ayahPlayIndex++;
     playNextAyah();
   });
@@ -281,3 +305,184 @@ function stopAudio() {
   }
   window.speechSynthesis && window.speechSynthesis.cancel();
 }
+
+/* ============================================================
+   SAVE MY PLACE — tied to the signed-in reader
+   ============================================================
+   Armed when a verse's audio finishes, so the button beside Stop
+   knows which verse it is offering to save. Everything is stored
+   against the username in js/account.js.
+   ============================================================ */
+
+window.iitwArmSaveButton = function (ayahNum) {
+  const btn = document.getElementById("rqSaveBtn");
+  if (!btn) return;
+  const reader = (typeof iitwReader === "function") ? iitwReader() : null;
+  btn.disabled = false;
+  btn.classList.add("armed");
+  btn.innerHTML = reader
+    ? `💾 Save here — verse ${ayahNum} <span dir="rtl" style="font-family:'Amiri',serif;">— احفظ عند الآية ${toArabicDigits(ayahNum)}</span>`
+    : `💾 Sign in to save verse ${ayahNum} <span dir="rtl" style="font-family:'Amiri',serif;">— سجّل الدخول لتحفظ</span>`;
+};
+
+function iitwSaveHere() {
+  const note = document.getElementById("rqSaveNote");
+  const surah = window._openSurah;
+  const ayah = window._lastFinishedAyah;
+  if (!surah || !ayah) return;
+
+  const reader = (typeof iitwReader === "function") ? iitwReader() : null;
+  if (!reader) {
+    if (note) {
+      note.className = "rq-save-note warn";
+      note.innerHTML = `You need to sign in first — the place is saved under your username.
+        <a href="#readerBox" onclick="closeModal()">Sign in at the top of this page.</a>
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">سجّل الدخول أولًا، فالموضع يُحفظ باسم المستخدم.
+        <a href="#readerBox" onclick="closeModal()">سجّل من أعلى الصفحة.</a></span>`;
+    }
+    return;
+  }
+
+  const ok = iitwSavePlace({
+    surah: surah.n,
+    surahName: surah.name,
+    surahArabic: surah.arabic,
+    ayah: ayah
+  });
+
+  if (note) {
+    note.className = ok ? "rq-save-note ok" : "rq-save-note warn";
+    note.innerHTML = ok
+      ? `Saved. Surah ${surah.name}, verse ${ayah} — you will be brought straight back here.
+         <br><span dir="rtl" style="font-family:'Amiri',serif;">حُفظ. سورة ${surah.arabic}، الآية ${toArabicDigits(ayah)} — وستُعاد إلى هنا مباشرةً.</span>`
+      : `Could not save on this browser.
+         <br><span dir="rtl" style="font-family:'Amiri',serif;">تعذّر الحفظ في هذا المتصفح.</span>`;
+  }
+  if (typeof renderReaderBox === "function") renderReaderBox();
+}
+
+/* Reopen the saved surah and scroll to the saved verse. */
+async function iitwGoToSavedPlace() {
+  const place = (typeof iitwGetPlace === "function") ? iitwGetPlace() : null;
+  if (!place) return;
+  const surah = SURAHS.find(s => s.n === place.surah);
+  if (!surah) return;
+  await openSurah(surah);
+  // openSurah fills the modal; wait a tick for the DOM, then jump to the verse.
+  setTimeout(() => {
+    const el = document.getElementById("ayah-" + place.ayah);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("ayah-flash");
+      setTimeout(() => el.classList.remove("ayah-flash"), 2200);
+    }
+    window._lastFinishedAyah = place.ayah;
+    window.iitwArmSaveButton(place.ayah);
+  }, 120);
+}
+
+/* ============================================================
+   THE SIGN-IN PANEL AT THE TOP OF THE QURAN PAGE
+   ============================================================ */
+
+function renderReaderBox() {
+  const box = document.getElementById("readerBox");
+  if (!box || typeof iitwReader !== "function") return;
+
+  const reader = iitwReader();
+
+  if (reader) {
+    const p = reader.place;
+    box.innerHTML = `
+      <div class="reader-in">
+        <div class="reader-who">
+          <span class="reader-hi">Signed in as <strong>${iitwEsc(reader.name)}</strong></span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">مسجَّل الدخول باسم <strong>${iitwEsc(reader.name)}</strong></span>
+        </div>
+        ${p ? `
+          <button class="btn btn-primary reader-continue" onclick="iitwGoToSavedPlace()">
+            ↩ Continue where you stopped — Surah ${iitwEsc(p.surahName)}, verse ${p.ayah}
+            <span dir="rtl" style="font-family:'Amiri',serif;">— تابع من حيث وقفت: سورة ${iitwEsc(p.surahArabic || "")} الآية ${toArabicDigits(p.ayah)}</span>
+          </button>
+          <div class="reader-meta">Saved ${new Date(p.at).toLocaleString()}
+            · <a href="#" onclick="iitwForgetPlace(event)">forget it</a></div>
+        ` : `
+          <div class="reader-meta">
+            Nothing saved yet. Open a surah, play a verse, and the <strong>Save my place</strong> button beside Stop will remember it.
+            <br><span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد موضعٌ محفوظ بعد. افتح سورة وشغّل آية، ثم احفظ بزرّ «احفظ موضعي» بجانب زر الإيقاف.</span>
+          </div>
+        `}
+        <button class="btn btn-outline btn-small" onclick="iitwDoSignOut()">Sign out <span dir="rtl" style="font-family:'Amiri',serif;">— خروج</span></button>
+      </div>`;
+    return;
+  }
+
+  box.innerHTML = `
+    <div class="reader-out">
+      <div class="reader-lead">
+        <strong>Save the verse you stopped at.</strong>
+        Choose a username and a password, and the exact surah and verse you reach will be kept for you.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">احفظ الآية التي وقفت عندها. اختر اسم مستخدم وكلمة مرور، ويُحفظ لك موضعك بالسورة والآية بالضبط.</span>
+      </div>
+
+      <div class="reader-form">
+        <input type="text" id="rdUser" autocomplete="username" placeholder="Username — اسم المستخدم" dir="auto" />
+        <input type="password" id="rdPass" autocomplete="current-password" placeholder="Password — كلمة المرور" />
+        <button class="btn btn-primary btn-small" onclick="iitwDoSignIn()">Sign in <span dir="rtl" style="font-family:'Amiri',serif;">— دخول</span></button>
+        <button class="btn btn-outline btn-small" onclick="iitwDoSignUp()">Create <span dir="rtl" style="font-family:'Amiri',serif;">— إنشاء</span></button>
+      </div>
+
+      <div class="reader-rules">
+        Username: 3–20 characters, starting with a letter — letters, numbers, dot or underscore. Capitals are fine, and it does <strong>not</strong> have to be an email.
+        Password: 6 characters or more, anything you like.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">اسم المستخدم: من ٣ إلى ٢٠ خانة يبدأ بحرف — حروف أو أرقام أو نقطة أو شَرطة سفلية، والحروف الكبيرة مقبولة، و<strong>ليس</strong> بريدًا إلكترونيًا. وكلمة المرور: ستة أحرف فأكثر، وما شئت.</span>
+      </div>
+
+      <div class="reader-honest">
+        ⚠️ <strong>Read this once.</strong> This website has no server, so the account and your saved verse live in <strong>this browser on this device</strong>. They will not appear on another phone or computer, and clearing the browser's data erases them. Your password is stored only as a scrambled hash, never as text — but do not reuse an important password here.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">تنبيه يُقرأ مرة: هذا الموقع بلا خادم، فالحساب والموضع المحفوظ في <strong>هذا المتصفح على هذا الجهاز</strong> فقط. ولن يظهرا على هاتفٍ أو حاسوبٍ آخر، ومسح بيانات المتصفح يمحوهما. وكلمة المرور تُخزَّن مشفَّرةً لا نصًّا — ومع ذلك لا تستعمل هنا كلمة مرورٍ مهمة.</span>
+      </div>
+
+      <div id="rdMsg" class="reader-msg" style="display:none;"></div>
+    </div>`;
+}
+
+function iitwReaderMsg(text, ok) {
+  const m = document.getElementById("rdMsg");
+  if (!m) return;
+  m.style.display = "";
+  m.className = "reader-msg " + (ok ? "ok" : "warn");
+  m.innerHTML = text;
+}
+
+async function iitwDoSignIn() {
+  const u = document.getElementById("rdUser").value;
+  const p = document.getElementById("rdPass").value;
+  const r = await iitwSignIn(u, p);
+  if (r.ok) { renderReaderBox(); return; }
+  iitwReaderMsg(r.msg.en + `<br><span dir="rtl" style="font-family:'Amiri',serif;">${r.msg.ar}</span>`, false);
+}
+
+async function iitwDoSignUp() {
+  const u = document.getElementById("rdUser").value;
+  const p = document.getElementById("rdPass").value;
+  const r = await iitwSignUp(u, p);
+  if (r.ok) { renderReaderBox(); return; }
+  iitwReaderMsg(r.msg.en + `<br><span dir="rtl" style="font-family:'Amiri',serif;">${r.msg.ar}</span>`, false);
+}
+
+function iitwDoSignOut() {
+  iitwSignOut();
+  renderReaderBox();
+}
+
+function iitwForgetPlace(e) {
+  if (e) e.preventDefault();
+  iitwClearPlace();
+  renderReaderBox();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderReaderBox();
+  if (window.applyI18n) window.applyI18n();
+});
