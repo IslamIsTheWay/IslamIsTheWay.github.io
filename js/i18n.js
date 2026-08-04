@@ -62,11 +62,11 @@ const AR = {
     "ثمانية وثلاثون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
   "15 stages in the order they happen — from the moment of death to the gates — with 64 referenced points and 52 passages of the Quran.":
     "خمس عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع أربعٍ وستين مسألة موثّقة، واثنين وخمسين موضعًا من القرآن الكريم.",
-  "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ, with full life stories for Nuh, Ibrahim, Musa and Isa.":
-    "الأنبياء التسعة والعشرون المذكورون في القرآن، من آدم إلى محمد ﷺ، مع سِيَرٍ كاملة لنوح وإبراهيم وموسى وعيسى عليهم السلام.",
+  "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ — every one of them with a full life and the message he was sent with.":
+    "الأنبياء التسعة والعشرون المذكورون في القرآن، من آدم إلى محمد ﷺ — لكل واحدٍ منهم سيرةٌ كاملة ورسالةٌ بُعث بها.",
   "Companions (Sahaba)": "الصحابة رضي الله عنهم",
-  "65 of the men and women who stood beside the Prophet ﷺ, including all eleven Mothers of the Believers — twelve with their full life story.":
-    "خمسة وستون من الرجال والنساء الذين وقفوا مع النبي ﷺ، ومنهم أمهات المؤمنين الإحدى عشرة جميعًا — واثنا عشر منهم بسيرةٍ كاملة.",
+  "65 of the men and women who stood beside the Prophet ﷺ, including all eleven Mothers of the Believers — every one of them with a full life story.":
+    "خمسة وستون من الرجال والنساء الذين وقفوا مع النبي ﷺ، ومنهم أمهات المؤمنين الإحدى عشرة جميعًا — وكلّ واحدٍ منهم بسيرةٍ كاملة.",
   "Guidance & Reflection": "التوجيه والتدبر",
   "Guidance &amp; Reflection": "التوجيه والتدبر",
   "Describe your situation and receive what relates to it from the Quran and the Sunnah — plus 23 Quranic themes and what to say at each step of worship.":
@@ -98,9 +98,9 @@ const AR = {
   "Every surah now shows how many pages it occupies in the 604-page Madani Mushaf, and while reading you are told where each page ends — so what you read on the screen matches the printed Mushaf in your hands.":
     "كل سورة تُظهر الآن عدد صفحاتها في المصحف المدني ذي الأربع والستمائة صفحة، وأثناء القراءة يُبيَّن لك أين تنتهي كل صفحة — ليوافق ما على الشاشة ما بين يديك من المصحف المطبوع.",
   "Open the Quran": "افتح المصحف",
-  "Full Life Stories": "سِيَر كاملة",
-  "Sixteen lives told in full rather than in summary — twelve Companions and four Prophets — from before Islam, through the moment of belief, to what changed in them, their greatest hour, and their death. Every source is listed with its rank.":
-    "ست عشرة سيرة مبسوطة لا مختصرة — اثنا عشر صحابيًا وأربعة أنبياء — من حالهم قبل الإسلام، إلى لحظة الإيمان، وما تغيّر فيهم، وأعظم مواقفهم، ووفاتهم. وكلُّ مصدرٍ مذكورةٌ درجته.",
+  "94 Full Life Stories": "سِيَر كاملة للجميع",
+  "94 lives told in full rather than in summary — all 65 Companions and all 29 Prophets — from before Islam, through the moment of belief, to what changed in them, their greatest hour, and their death. Every source is listed with its rank.":
+    "أربعٌ وتسعون سيرة مبسوطة لا مختصرة — الصحابة الخمسة والستون جميعًا والأنبياء التسعة والعشرون — من حالهم قبل الإسلام، إلى لحظة الإيمان، وما تغيّر فيهم، وأعظم مواقفهم، ووفاتهم. وكلُّ مصدرٍ مذكورةٌ درجته.",
   "Read a Full Life": "اقرأ سيرة كاملة",
 
   "Words of the Prophet ﷺ": "من أقوال النبي ﷺ",
