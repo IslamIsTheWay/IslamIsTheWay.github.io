@@ -10,6 +10,40 @@
 
 const SCHOLARS = [
   {
+    id: "sch-abu-hanifah",
+    name: "Al-Imam Abu Hanifah",
+    nameAr: "الإمام أبو حنيفة النعمان",
+    years: "80–150 AH",
+    yearsAr: "٨٠–١٥٠ هـ",
+    known: "The earliest of the four imams, and a merchant by trade — his fiqh was worked out among people doing business, which is why so much of it is about transactions.",
+    knownAr: "أقدم الأئمة الأربعة، وكان تاجرًا، فنضج فقهه بين أهل السوق والمعاملات، ولذلك كثر فيه فقه البيوع.",
+    books: [
+      { t: "Al-Fiqh al-Akbar", tAr: "الفقه الأكبر",
+        d: "A short statement of creed attributed to him — the attribution itself is discussed by scholars.",
+        dAr: "رسالةٌ وجيزةٌ في الاعتقاد منسوبةٌ إليه، وفي ثبوت نسبتها كلامٌ لأهل العلم." },
+      { t: "His madhhab, written down by his students", tAr: "مذهبه بتدوين أصحابه",
+        d: "He left little in his own hand. What we have is through Abu Yusuf and Muhammad ash-Shaybani, who recorded, and sometimes differed from, their teacher.",
+        dAr: "لم يترك بخطّه إلا القليل، وإنما وصل مذهبه عن أبي يوسف ومحمد بن الحسن الشيباني، دوّناه وخالفاه أحيانًا." }
+    ]
+  },
+  {
+    id: "sch-malik",
+    name: "Al-Imam Malik ibn Anas",
+    nameAr: "الإمام مالك بن أنس",
+    years: "93–179 AH",
+    yearsAr: "٩٣–١٧٩ هـ",
+    known: "The imam of Madinah, who would not leave it — he held that the settled practice of the city the Prophet ﷺ lived in was itself evidence.",
+    knownAr: "إمام دار الهجرة، لم يفارقها، وكان يرى أنّ عمل أهل المدينة المستقرّ حجّةٌ في نفسه.",
+    books: [
+      { t: "Al-Muwatta", tAr: "الموطّأ",
+        d: "The earliest surviving book of hadith arranged by subject, and one of the foundations everything after it was built on.",
+        dAr: "أقدم كتابٍ باقٍ في الحديث مرتَّبٍ على الأبواب، وأصلٌ بُني عليه ما بعده." },
+      { t: "Al-Mudawwanah", tAr: "المدوّنة الكبرى",
+        d: "His fiqh as recorded by Sahnun from Ibn al-Qasim — the main reference of the Maliki school.",
+        dAr: "فقهه برواية سحنون عن ابن القاسم، وهو عمدة المذهب المالكي." }
+    ]
+  },
+  {
     id: "sch-shafii",
     name: "Al-Imam ash-Shafi'i",
     nameAr: "الإمام الشافعي",
@@ -24,6 +58,97 @@ const SCHOLARS = [
       { t: "Al-Umm", tAr: "الأمّ",
         d: "His fiqh in his own words, with the reasoning shown rather than only the conclusion.",
         dAr: "فقهه بلفظه، يذكر الدليل والتعليل لا الحكم وحده." }
+    ]
+  },
+  {
+    id: "sch-ahmad",
+    name: "Al-Imam Ahmad ibn Hanbal",
+    nameAr: "الإمام أحمد بن حنبل",
+    years: "164–241 AH",
+    yearsAr: "١٦٤–٢٤١ هـ",
+    known: "A scholar of hadith before he was a jurist, and the man who was flogged and imprisoned rather than say what he did not believe.",
+    knownAr: "كان محدّثًا قبل أن يكون فقيهًا، وهو الذي ضُرب وسُجن ولم يقل ما لا يعتقد.",
+    books: [
+      { t: "Al-Musnad", tAr: "المسند",
+        d: "Around 27,000 narrations arranged by companion rather than by subject. Its contents vary in strength, and the scholars of hadith grade them individually — it is not a Sahih collection.",
+        dAr: "نحو سبعةٍ وعشرين ألف حديثٍ مرتَّبةٍ على المسانيد لا على الأبواب. وأحاديثه متفاوتة، يحكم أهل الحديث على كلٍّ منها بمفرده، وليس من كتب الصحيح." },
+      { t: "Masa'il Ahmad", tAr: "مسائل الإمام أحمد",
+        d: "His answers as written down by his sons and students — his fiqh in the form it was actually given.",
+        dAr: "أجوبته بتدوين بنيه وأصحابه — فقهه على الصورة التي أُلقي بها." }
+    ]
+  },
+  {
+    id: "sch-bukhari",
+    name: "Al-Imam Muhammad ibn Isma'il al-Bukhari",
+    nameAr: "الإمام محمد بن إسماعيل البخاري",
+    years: "194–256 AH",
+    yearsAr: "١٩٤–٢٥٦ هـ",
+    known: "He set the strictest conditions anyone had set for accepting a narration, and applied them to a body of some 600,000 to produce one book.",
+    knownAr: "اشترط في قبول الرواية أشدّ ما اشترطه أحد، وطبّق ذلك على نحو ستّمئة ألف حديثٍ فأخرج منها كتابًا واحدًا.",
+    books: [
+      { t: "Sahih al-Bukhari", tAr: "صحيح البخاري",
+        d: "The most authentic book after the Quran by the agreement of the scholars. Almost every grading on this site that says \"Sahih\" traces here or to Muslim.",
+        dAr: "أصحّ الكتب بعد كتاب الله باتفاق أهل العلم. وأكثر ما في هذا الموقع من قولنا «صحيح» يرجع إليه أو إلى مسلم." },
+      { t: "Al-Adab al-Mufrad", tAr: "الأدب المفرد",
+        d: "His separate book on manners and character — broader in its conditions than the Sahih, so its narrations are graded individually.",
+        dAr: "كتابه المفرد في الأخلاق والآداب، وشرطه فيه أوسع من شرط الصحيح، فتُدرَس أحاديثه أفرادًا." },
+      { t: "At-Tarikh al-Kabir", tAr: "التاريخ الكبير",
+        d: "His register of narrators — who they were, and who may be relied on.",
+        dAr: "ديوانه في الرواة: من هم، ومن يُعتمد عليه منهم." }
+    ]
+  },
+  {
+    id: "sch-muslim",
+    name: "Al-Imam Muslim ibn al-Hajjaj",
+    nameAr: "الإمام مسلم بن الحجّاج",
+    years: "204–261 AH",
+    yearsAr: "٢٠٤–٢٦١ هـ",
+    known: "A student of al-Bukhari who arranged his book better than his teacher did — all the wordings of one hadith gathered in one place.",
+    knownAr: "من تلاميذ البخاري، وفاق شيخه في حسن الترتيب، فجمع ألفاظ الحديث الواحد في موضعٍ واحد.",
+    books: [
+      { t: "Sahih Muslim", tAr: "صحيح مسلم",
+        d: "The second of the two Sahihs. A practical warning used throughout this site: the sequential numbering in the free hadith APIs does NOT match Muslim's standard numbering, so this site cites him by book name unless a number has been verified.",
+        dAr: "ثاني الصحيحين. وتنبيهٌ عمليٌّ يجري عليه هذا الموقع: الترقيم المتسلسل في واجهات الحديث المجانية لا يوافق ترقيم مسلم المعتمد، ولذلك يُعزى إليه بالكتاب لا بالرقم إلا بعد التحقّق." },
+      { t: "At-Tamyiz", tAr: "التمييز",
+        d: "How he distinguished a sound narration from a defective one — his method, in his own words.",
+        dAr: "كيف يميّز الصحيح من المعلول — منهجه بلفظه." }
+    ]
+  },
+  {
+    id: "sch-tabari",
+    name: "Al-Imam Ibn Jarir at-Tabari",
+    nameAr: "الإمام ابن جرير الطبري",
+    years: "224–310 AH",
+    yearsAr: "٢٢٤–٣١٠ هـ",
+    known: "The father of tafsir by narration, and a historian — and the two must be kept apart when reading him.",
+    knownAr: "إمام التفسير بالمأثور، ومؤرّخ — وينبغي التفريق بين الأمرين عند القراءة له.",
+    books: [
+      { t: "Jami' al-Bayan (Tafsir at-Tabari)", tAr: "جامع البيان — تفسير الطبري",
+        d: "The foundation of tafsir by narration: he gathers what the companions and those after them said about a verse, with the chains, then weighs them.",
+        dAr: "أصل التفسير بالمأثور: يجمع أقوال الصحابة ومن بعدهم في الآية بأسانيدها ثم يرجّح بينها." },
+      { t: "Tarikh ar-Rusul wal-Muluk", tAr: "تاريخ الرسل والملوك",
+        d: "His history. IMPORTANT: he collected reports with their chains without sifting them, and said so himself — so this is HISTORICAL MATERIAL, not hadith, and this site labels anything taken from it that way.",
+        dAr: "تاريخه. وتنبيهٌ مهمّ: جمع فيه الأخبار بأسانيدها من غير غربلة، ونصّ على ذلك بنفسه — فهو مادّةٌ تاريخيّةٌ لا حديث، وهكذا يصفه هذا الموقع في كلّ ما يُنقل منه." }
+    ]
+  },
+  {
+    id: "sch-ibn-abd-al-barr",
+    name: "Al-Hafiz Ibn Abd al-Barr",
+    nameAr: "الحافظ ابن عبد البرّ",
+    years: "368–463 AH",
+    yearsAr: "٣٦٨–٤٦٣ هـ",
+    known: "The scholar of al-Andalus who is reached for whenever the question is what the scholars agreed on and where they actually parted.",
+    knownAr: "عالم الأندلس، ويُرجع إليه إذا سُئل: أين اتّفق أهل العلم وأين افترقوا حقًّا.",
+    books: [
+      { t: "At-Tamhid", tAr: "التمهيد",
+        d: "His commentary on the Muwatta, and one of the great books of Islam by common consent.",
+        dAr: "شرحه للموطّأ، وهو من عظيم كتب الإسلام باتفاق." },
+      { t: "Al-Isti'ab", tAr: "الاستيعاب في معرفة الأصحاب",
+        d: "A register of the companions — one of the sources behind the Companions section of this site.",
+        dAr: "ديوانٌ في تراجم الصحابة، ومن مصادر باب الصحابة في هذا الموقع." },
+      { t: "Jami' Bayan al-Ilm wa Fadlih", tAr: "جامع بيان العلم وفضله",
+        d: "On knowledge itself: how it is sought, how it is taught, and the manners of the one seeking it.",
+        dAr: "في العلم نفسه: كيف يُطلب ويُعلَّم، وآداب طالبه." }
     ]
   },
   {
@@ -113,6 +238,40 @@ const SCHOLARS = [
       { t: "Al-Bidaya wan-Nihaya", tAr: "البداية والنهاية",
         d: "History from the beginning of creation onwards. This site cites it for the prophets, and always labels it historical sira rather than hadith.",
         dAr: "التاريخ من بدء الخلق. ويستشهد به هذا الموقع في الأنبياء، ويصفه دائمًا بأنه سيرة تاريخية لا حديث." }
+    ]
+  },
+  {
+    id: "sch-shatibi",
+    name: "Al-Imam ash-Shatibi",
+    nameAr: "الإمام الشاطبي",
+    years: "d. 790 AH",
+    yearsAr: "ت ٧٩٠ هـ",
+    known: "He asked the question underneath every ruling: what is the law actually FOR? — and made that a discipline of its own.",
+    knownAr: "سأل السؤال الذي تحت كلّ حكم: لأيّ شيءٍ شُرع؟ — وجعل ذلك علمًا قائمًا بذاته.",
+    books: [
+      { t: "Al-Muwafaqat", tAr: "الموافقات",
+        d: "The book on the objectives of the Sharia: that the law came to protect religion, life, intellect, lineage and wealth — and that a ruling is understood properly only when you see what it is protecting.",
+        dAr: "كتاب مقاصد الشريعة: أنّها جاءت لحفظ الدين والنفس والعقل والنسل والمال، وأنّ الحكم لا يُفهم على وجهه حتى يُرى ما الذي يحفظه." },
+      { t: "Al-I'tisam", tAr: "الاعتصام",
+        d: "On innovation in religion: what actually counts as one, and — just as carefully — what does not.",
+        dAr: "في البدعة: ما الذي يُعدّ منها حقًّا، وما ليس منها — بالعناية نفسها." }
+    ]
+  },
+  {
+    id: "sch-ibn-rajab",
+    name: "Al-Hafiz Ibn Rajab al-Hanbali",
+    nameAr: "الحافظ ابن رجب الحنبلي",
+    years: "736–795 AH",
+    yearsAr: "٧٣٦–٧٩٥ هـ",
+    known: "A scholar of hadith who wrote about the heart — rare, and the reason his books are still read for reminders rather than only for rulings.",
+    knownAr: "محدّثٌ كتب في أعمال القلوب، وهذا قليل، ولذلك ما زالت كتبه تُقرأ للترقيق لا للأحكام وحدها.",
+    books: [
+      { t: "Jami' al-Ulum wal-Hikam", tAr: "جامع العلوم والحكم",
+        d: "His commentary on an-Nawawi's Forty Hadith — widely held to be the best thing written on them.",
+        dAr: "شرحه للأربعين النووية، وهو عند كثيرين أحسن ما كُتب عليها." },
+      { t: "Lata'if al-Ma'arif", tAr: "لطائف المعارف",
+        d: "The seasons of the year — Ramadan, the ten days, the sacred months — and what to do with each.",
+        dAr: "مواسم العام: رمضان والعشر والأشهر الحرم، وما يُعمل في كلٍّ منها." }
     ]
   },
   {

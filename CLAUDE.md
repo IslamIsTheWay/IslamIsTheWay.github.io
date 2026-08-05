@@ -93,6 +93,46 @@ git add -A && git commit -m "..." && git push origin main
 - **In RTL, `element.right > clientWidth` is not an overflow test** — the
   scrollbar moves to the left. Use `documentElement.scrollWidth > clientWidth`.
 
+## Added 5 August 2026
+
+- **`golden.html` + `js/golden.js`** — the Golden Age of Islam. 28 figures, each
+  with the Latinised name Europe used, plus `GOLDEN_ROOT` (why the peak grew out
+  of the religion) and `GOLDEN_TAKEN` (7 documented cases of the credit going
+  elsewhere). History is graded the same way hadith is: *his own surviving work*
+  · *his work plus the Latin translation* · *reported in the histories* ·
+  *popular but not established*. The "99% / 1%" framing was built as documented
+  receipts — Ibn ash-Shatir against Copernicus, Ibn an-Nafis, Toledo, the
+  Latinised names — rather than as a percentage, and one card states plainly
+  what is NOT true (Ibn Firnas's flight, ar-Razi's hanging meat, pseudo-Geber).
+- **`js/revival.js`** — why the ummah fell and the way back, rendered on
+  `guidance.html#revival`. Both key hadith are labelled outside the two Sahihs;
+  the 'inah hadith carries its real disagreement (al-Albani Sahih, Zubair Ali
+  Zai weak); Imam Malik's sentence is marked as HIS, not a hadith.
+- **Stories sectioned** — `STORY_SECTIONS` in `data.js`, 10 sections by what the
+  story teaches. 38 → **45 stories**.
+- **Guidance** — 11 → **15 rulings**, 10 → **19 scholars** (the four imams,
+  al-Bukhari, Muslim, at-Tabari, Ibn Abd al-Barr, ash-Shatibi, Ibn Rajab added).
+
+### Bugs fixed on 5 August that had reached the live site
+
+- **`bump-version.sh` never stamped hyphenated filenames.** The regex was
+  `js/[a-z0-9]+\.js`, so `js/scholars-books.js` had been serving a cached copy
+  since the day it was added. Now `[a-z0-9-]+`.
+- **The nav overflowed at every width between 1200px and ~1467px.** The
+  hamburger breakpoint was 1200px while twelve links plus the injected language
+  button needed 1467px, so Login sat off the right edge on a 1366px laptop.
+  Re-measured: 13 links need **1474px**, breakpoint is now **1480px**, and
+  `.nav-wrap` `max-width` was raised to 1560px — that cap is a real constraint,
+  because when the bar needs more than it, the nav overflows at EVERY width.
+  Verified clean at 390 / 768 / 1024 / 1280 / 1366 / 1440 / 1500 / 1600 / 1920.
+- **Guidance led with an irrelevant ruling.** Rulings render first by design
+  (correctly — "what counts as hijab" must be answered by the scholars). But
+  "first" was unconditional, so "I lose my temper" led with the ruling on
+  backbiting. Two guards now: a hadith that beats the best ruling by 35% takes
+  the lead, and a ruling set whose top two scores are within 20% of each other
+  is treated as a filler-word match and dropped. Verified on 11 queries in both
+  languages.
+
 ## Current state (4 August 2026)
 
 29 prophets and 65 companions — **all 94 with a full life**, and every prophet

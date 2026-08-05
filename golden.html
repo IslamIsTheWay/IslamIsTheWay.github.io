@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Golden Age of Islam | Islam Is The Way</title>
+  <meta name="description" content="What Muslims built — algebra, optics, surgery, the hospital, the university — who built it, what Europe did with it, and whose name ended up on it. Every claim with its evidence stated, in English and Arabic." />
+  <link rel="canonical" href="https://islamistheway.github.io/golden.html" />
+  <meta property="og:title" content="The Golden Age of Islam | Islam Is The Way" />
+  <meta property="og:description" content="Algebra, optics, surgery, the hospital and the university — who built them, and whose name ended up on them." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/logo-emblem.png" />
+  <link rel="stylesheet" href="css/style.css?v=202608051436" />
+</head>
+<body>
+
+  <div class="topbar">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ — In the name of Allah, the Most Gracious, the Most Merciful</div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <img class="logo-mosque" src="img/logo-emblem.png" alt="Islam Is The Way" width="46" height="46" />
+        Islam Is The Way
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="quran.html">Quran</a>
+        <a href="prophets.html">Prophets</a>
+        <a href="companions.html">Companions</a>
+        <a href="hadith.html">Hadith</a>
+        <a href="sunnah.html">Sunnah</a>
+        <a href="stories.html">Stories</a>
+        <a href="judgement.html">Judgement Day</a>
+        <a href="golden.html">Golden Age</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="courses.html">Courses</a>
+        <a href="search.html">Search</a>
+        <a href="login.html" class="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero ph-photo ph-golden">
+    <div class="container">
+      <h1>The Golden Age of Islam</h1>
+      <p>Algebra, optics, surgery, the hospital, the university — who built them, what Europe did with them, and whose name ended up on them.</p>
+      <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;margin-top:10px;">الجبر والبصريات والجراحة والبيمارستان والجامعة — من بناها، وماذا صنعت بها أوروبا، وباسم مَن قُيِّدت.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="context-note">
+        <strong>How strong is each claim?</strong> This site states the grading of every hadith, and the same rule is applied here to history. Every card says whether it rests on the man's own surviving book, on his book plus the Latin translation made from it, on later historians only, or whether it is famous but not established. The achievement is large enough that it does not need helping — and stating it exactly is what makes it impossible to answer.
+        <br><span dir="rtl" style="font-family:'Amiri',serif;">درجة كلّ خبر: هذا الموقع يذكر درجة كلّ حديث، وقد طُبّقت القاعدة نفسها هنا على التاريخ. فكلّ بطاقةٍ تبيّن هل الخبر من كتاب الرجل الباقي، أم من كتابه وترجمته اللاتينية، أم من المؤرّخين بعده، أم أنه مشهورٌ غير ثابت. والمنجز أعظم من أن يحتاج إلى عون، وضبطُه على وجهه هو الذي يجعله لا يُدفَع.</span>
+      </div>
+
+      <!-- ===== Why it happened ===== -->
+      <div id="rootBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== The figures ===== -->
+  <section class="pattern-bg">
+    <div class="container">
+      <h2 class="section-title">🏛️ Who Built It <span dir="rtl" style="font-family:'Amiri',serif;">— من بناه</span></h2>
+      <p class="section-sub">Each card carries the name Europe used for him, because a student can study his subject for years under that name and never learn he was a Muslim.</p>
+      <p class="section-sub" dir="rtl" style="font-family:'Amiri',serif;">في كلّ بطاقةٍ الاسم الذي دعته به أوروبا، لأنّ الطالب قد يدرس فنّه سنين بذلك الاسم ولا يعلم قطّ أنه مسلم.</p>
+
+      <div class="gold-search-wrap">
+        <input type="text" id="goldSearch" dir="auto" placeholder="Search — algebra, surgery, optics, the moon…  |  ابحث: الجبر، الجراحة، البصريات، القمر…" />
+      </div>
+
+      <div class="adhkar-tabs" id="goldTabs"></div>
+      <div id="goldList" class="gold-list"></div>
+      <p id="goldEmpty" class="no-results" style="display:none;">Nothing matches those words. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد ما يطابق هذه الكلمات.</span></p>
+    </div>
+  </section>
+
+  <!-- ===== What was taken ===== -->
+  <section id="taken">
+    <div class="container">
+      <div id="takenBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== And now? ===== -->
+  <section class="pattern-bg">
+    <div class="container">
+      <div class="gold-next">
+        <h3>So what happened to us — and how do we go back?</h3>
+        <p>That question deserves more than a page of pride. The answer is on the Guidance page, in the words of the Quran, the Sunnah and the scholars: why the ummah is in the state it is in, what the Prophet ﷺ said would cause exactly this, and the way back that he named.</p>
+        <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">وهذا السؤال أكبر من أن تُجاب عنه صفحةُ افتخار. والجواب في صفحة التوجيه، من الكتاب والسنة وكلام أهل العلم: لماذا صارت الأمة إلى ما صارت إليه، وما الذي أخبر النبي ﷺ أنه يورث هذا بعينه، والطريق الذي سمّاه للرجوع.</p>
+        <a class="btn btn-primary" href="guidance.html#revival">Why we fell, and the way back <span dir="rtl" style="font-family:'Amiri',serif;">— لماذا سقطنا وكيف نعود</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Islam Is The Way</h4>
+          <p>A resource for learning the Quran, the Prophets, and the Companions of Prophet Muhammad ﷺ — built to inform, inspire, and guide.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="quran.html">Quran Library</a></li>
+            <li><a href="prophets.html">Prophets in Islam</a></li>
+            <li><a href="companions.html">Companions</a></li>
+            <li><a href="hadith.html">Hadith</a></li>
+            <li><a href="sunnah.html">Sunnah</a></li>
+            <li><a href="stories.html">Stories of the Prophet صلى الله عليه وسلم</a></li>
+            <li><a href="judgement.html">The Day of Judgement</a></li>
+            <li><a href="golden.html">The Golden Age of Islam</a></li>
+            <li><a href="guidance.html">Guidance</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>contact@islamistheway.com</li>
+            <li>Islamic Wisdom for Every Heart</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Islam Is The Way. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/golden.js?v=202608051436"></script>
+  <script>
+    // Blank lines in the written text become real paragraphs, the same way
+    // the stories page does it.
+    function paras(text) {
+      return String(text || "").split(/\n\s*\n/)
+        .map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
+    }
+
+    /* ---------- Why the peak happened ----------
+       Deliberately rendered FIRST and above the figures. The list of names
+       on its own reads as a boast; the point of the page is that the peak
+       grew out of the religion, which is also what makes the way back
+       knowable rather than sentimental. */
+    function renderRoot() {
+      const r = GOLDEN_ROOT;
+      document.getElementById("rootBox").innerHTML = `
+        <article class="gold-root">
+          <h2 class="en-only">${r.title}</h2>
+          <h2 dir="rtl" class="ar-head">${r.titleAr}</h2>
+          <p class="gold-lead en-only">${r.intro}</p>
+          <p class="gold-lead" dir="rtl" style="font-family:'Amiri',serif;line-height:2.1;">${r.introAr}</p>
+          <ol class="gold-root-points">
+            ${r.points.map(p => `<li>
+              <span class="en-only">${p.en}</span>
+              <span class="gold-ar" dir="rtl">${p.ar}</span>
+              <span class="gold-ref">${p.ref}</span>
+            </li>`).join("")}
+          </ol>
+          <div class="gold-close">
+            <p class="en-only">${r.close}</p>
+            <p dir="rtl" style="font-family:'Amiri',serif;line-height:2.1;">${r.closeAr}</p>
+          </div>
+        </article>`;
+    }
+
+    /* ---------- The figures ---------- */
+    function figureCard(f) {
+      return `<article class="gold-card" id="${f.id}">
+        <div class="gold-card-head">
+          <div>
+            <h3 class="en-only">${f.name}</h3>
+            <div class="gold-name-ar" dir="rtl">${f.nameAr}</div>
+          </div>
+          ${f.latin && f.latin !== "—"
+            ? `<div class="gold-latin" title="The name Europe used">
+                 <span class="en-only">Known in Europe as</span>
+                 <span class="ar-only" dir="rtl">عُرف في أوروبا بـ</span>
+                 <strong>${f.latin}</strong>
+               </div>` : ""}
+        </div>
+
+        <div class="gold-meta">
+          <span>${f.years}<span class="ar-only" dir="rtl"> · ${f.yearsAr}</span></span>
+          <span class="en-only">${f.place}</span>
+          <span class="ar-only" dir="rtl">${f.placeAr}</span>
+        </div>
+
+        <p class="gold-headline en-only">${f.headline}</p>
+        <p class="gold-headline" dir="rtl" style="font-family:'Amiri',serif;">${f.headlineAr}</p>
+
+        <div class="gold-body en-only">${paras(f.detail)}</div>
+        <div class="gold-body-ar" dir="rtl">${paras(f.detailAr)}</div>
+
+        ${f.works && f.works.length ? `<div class="gold-works">
+          <div class="gold-works-head">📚 What he wrote <span dir="rtl" style="font-family:'Amiri',serif;">— ما صنّف</span></div>
+          ${f.works.map(w => `<div class="gold-work">
+            <div class="gold-work-t"><span class="en-only">${w.t}</span><span dir="rtl" style="font-family:'Amiri',serif;">${w.tAr}</span></div>
+            <div class="gold-work-d en-only">${w.d}</div>
+            <div class="gold-work-d" dir="rtl" style="font-family:'Amiri',serif;">${w.dAr}</div>
+          </div>`).join("")}
+        </div>` : ""}
+
+        <div class="gold-after">
+          <div class="gold-after-head">➡️ What happened to it <span dir="rtl" style="font-family:'Amiri',serif;">— ما آل إليه</span></div>
+          <p class="en-only">${f.after}</p>
+          <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${f.afterAr}</p>
+        </div>
+
+        <div class="refs">
+          <span class="en-only">${f.strength}</span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">${f.strengthAr}</span>
+        </div>
+      </article>`;
+    }
+
+    let goldCat = "all";
+
+    function currentFigures() {
+      const q = normalise(document.getElementById("goldSearch").value.trim());
+      let list = GOLDEN_FIGURES;
+      if (!q && goldCat !== "all") list = list.filter(f => f.cat === goldCat);
+      if (!q) return list;
+      // A search looks across every field and ignores the category tab, so a
+      // reader who types "camera" is not told there is nothing under the tab
+      // they happen to have open.
+      const words = q.split(/\s+/).filter(w => w.length >= 2);
+      return GOLDEN_FIGURES.map(f => {
+        const hay = normalise([f.name, f.nameAr, f.latin, f.headline, f.headlineAr,
+                               f.detail, f.detailAr, f.place, f.placeAr,
+                               (f.works || []).map(w => w.t + " " + w.tAr).join(" "),
+                               (f.keys || []).join(" ")].join(" "));
+        let score = 0;
+        words.forEach(w => { if (hay.includes(w)) score++; });
+        return { f, score };
+      }).filter(x => x.score > 0).sort((a, b) => b.score - a.score).map(x => x.f);
+    }
+
+    function normalise(s) {
+      return String(s || "").toLowerCase()
+        .replace(/[ً-ْـ]/g, "")
+        .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+    }
+
+    function renderFigures() {
+      const list = currentFigures();
+      document.getElementById("goldList").innerHTML = list.map(figureCard).join("");
+      document.getElementById("goldEmpty").style.display = list.length ? "none" : "";
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function renderTabs() {
+      const host = document.getElementById("goldTabs");
+      const all = `<button type="button" class="adhkar-tab${goldCat === "all" ? " active" : ""}" data-cat="all">
+          🌍 <span class="en-only">All</span><span class="ar-only" dir="rtl">الكل</span></button>`;
+      host.innerHTML = all + GOLDEN_FIELDS.map(c =>
+        `<button type="button" class="adhkar-tab${c.id === goldCat ? " active" : ""}" data-cat="${c.id}">
+           ${c.icon} <span class="en-only">${c.en}</span><span class="ar-only" dir="rtl">${c.ar}</span>
+         </button>`).join("");
+      host.querySelectorAll(".adhkar-tab").forEach(b => {
+        b.addEventListener("click", () => {
+          goldCat = b.getAttribute("data-cat");
+          document.getElementById("goldSearch").value = "";
+          renderTabs();
+          renderFigures();
+        });
+      });
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    /* ---------- What was taken ----------
+       The argument the owner asked for, made with the receipts rather than
+       with a percentage — a specific manuscript, a specific translation, a
+       specific printed book with the same diagram in it. That version can
+       be checked, so it cannot be waved away. */
+    function renderTaken() {
+      const t = GOLDEN_TAKEN;
+      document.getElementById("takenBox").innerHTML = `
+        <h2 class="section-title">⚖️ ${t.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${t.titleAr}</span></h2>
+        <div class="gold-taken-intro">
+          <p class="en-only">${t.intro}</p>
+          <p dir="rtl" style="font-family:'Amiri',serif;line-height:2.1;">${t.introAr}</p>
+        </div>
+        ${t.cases.map(c => `<article class="gold-taken" id="${c.id}">
+          <h3 class="en-only">${c.title}</h3>
+          <h3 dir="rtl" class="ar-head">${c.titleAr}</h3>
+          <div class="gold-body en-only">${paras(c.what)}</div>
+          <div class="gold-body-ar" dir="rtl">${paras(c.whatAr)}</div>
+          <div class="refs">
+            <span class="en-only">${c.strength}</span>
+            <span dir="rtl" style="font-family:'Amiri',serif;">${c.strengthAr}</span>
+          </div>
+        </article>`).join("")}
+        <div class="gold-taken-close">
+          <p class="en-only">${t.close}</p>
+          <p dir="rtl" style="font-family:'Amiri',serif;line-height:2.1;">${t.closeAr}</p>
+        </div>`;
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    renderRoot();
+    renderTabs();
+    renderFigures();
+    renderTaken();
+    document.getElementById("goldSearch").addEventListener("input", renderFigures);
+  </script>
+  <script src="js/main.js?v=202608051436"></script>
+  <script src="js/i18n.js?v=202608051436"></script>
+</body>
+</html>

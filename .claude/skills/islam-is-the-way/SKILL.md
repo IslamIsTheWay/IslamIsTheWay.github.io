@@ -111,15 +111,28 @@ because the page script calls its helpers at parse time: `staff.html` and
 deliberately changing it — a stale local copy will delete them.
 
 ### The nav breakpoint must be RE-MEASURED whenever a link is added or removed
-It is not a guess. Measure with the desktop layout actually applied:
+It is not a guess. Measure with the desktop layout actually applied, and
+remember the language button that `i18n.js` injects — forgetting it is what
+made the old figure wrong:
 
 ```js
-brand.getBoundingClientRect().width + gap + nav.scrollWidth + padding
+brand.getBoundingClientRect().width + nav.scrollWidth
+  + wrapPaddingLeft + wrapPaddingRight + wrapGap
 ```
 
-12 links need ~1145px, so the hamburger takes over below 1200px. This has been
-wrong **three times**: too low when links were added (Login fell off-screen),
-then left too high after Angels was removed (hamburger on laptops with room).
+**13 links plus the language button need 1474px, so the hamburger takes over
+below 1480px.** `.nav-wrap` has `max-width: 1560px`, and that cap is a real
+constraint, not decoration: when the bar needs more than it, the nav overflows
+at EVERY viewport width however wide the screen.
+
+This has now been wrong **four times**. Most recently it sat at 1200px while
+twelve links already needed 1467px, which put Login off the right edge of any
+screen between those numbers — a 1366px laptop could not reach it, and it was
+live. After changing a link, check overflow at 1280 / 1366 / 1440 / 1500 / 1920:
+
+```js
+document.documentElement.scrollWidth > document.documentElement.clientWidth
+```
 
 ---
 
@@ -189,6 +202,19 @@ A missing comma between objects silently breaks every page that loads the file.
 - **Regex look-behind** breaks older Safari at parse time — avoided in
   guidance.html and stories.html.
 - **A stale local `data/site-config.json`** deletes the owner's recitations.
+- **`bump-version.sh` silently skipped hyphenated filenames** — the regex was
+  `js/[a-z0-9]+\.js`, so `js/scholars-books.js` was never cache-busted from the
+  day it was added. Fixed to `[a-z0-9-]+`. Any new pattern in that script must
+  be checked against the filenames actually in `js/`.
+- **A guarded render fails INVISIBLY.** `renderScholars()` begins
+  `if (typeof SCHOLARS === "undefined") return;`, so a syntax error in
+  `scholars-books.js` produced an empty section and no console error anyone
+  noticed. After editing a data file, check the array actually loaded:
+  `typeof SCHOLARS` / `FIQH_RULINGS.length` in the console — a balanced-brace
+  count is not enough to prove it parses.
+- **`innerText` returns the text of `display:none` elements**, so it is useless
+  for checking whether `.en-only` / `.ar-only` are working. Use
+  `getComputedStyle(el).display` instead. This produced two false bug reports.
 
 ---
 
@@ -206,24 +232,38 @@ significant:
 
 ## Current state
 
-_Last updated: 4 August 2026_
+_Last updated: 5 August 2026_
 
 | Content | Count |
 |---|---|
 | Prophets | 29 — **all with a full life and message** |
 | Companions | 65 — **all with a full life** |
 | Full lives in `js/lives.js` | **94** |
-| Stories of the Prophet ﷺ | **38** |
+| Stories of the Prophet ﷺ | **45**, in **10 sections** by what the story teaches |
+| Golden Age figures (`js/golden.js`) | **28** + 7 documented cases of the credit going elsewhere |
 | Curated hadith | 43 (+ ~15,000 Bukhari & Muslim via API) |
 | Sunnah practices | 166 across 18 areas |
 | Day of Judgement stages | **15** (incl. the Great Intercession) |
 | Angels | **33** in 5 groups |
 | Adhkar | **19** in 6 groups |
-| Scholars' rulings | **11** in 7 areas |
-| Scholars with their books | **10** |
+| Scholars' rulings | **15** in 7 areas |
+| Scholars with their books | **19** (the four imams, al-Bukhari, Muslim, at-Tabari…) |
 | Surahs | 114, 16 reciters, Mushaf page numbers |
-| Guidance themes | 23 + 16 worship steps |
-| `AR` dictionary keys | 215 |
+| Guidance themes | 23 + 16 worship steps + the revival section |
+| Nav links | **13** — the bar needs 1474px, hamburger below 1480px |
+
+### Added 5 August 2026
+- **`golden.html` / `js/golden.js`** — the Golden Age. Every figure carries the
+  Latinised name Europe used. History is graded like hadith: *his own surviving
+  work* · *his work plus its Latin translation* · *reported in the histories* ·
+  *popular but not established*. The "they took it" argument is built from
+  documented receipts (Ibn ash-Shatir vs Copernicus, Ibn an-Nafis, Toledo,
+  the names) rather than a percentage, and one card says plainly what is NOT
+  true — because one inflated claim discredits the twenty true ones beside it.
+- **`js/revival.js`** → `guidance.html#revival` — why the ummah fell and the way
+  back. Both central hadith labelled outside the two Sahihs, the 'inah hadith
+  carrying its real disagreement, and Imam Malik's sentence marked as HIS.
+- `STORY_SECTIONS` in `data.js`; 9 more scholars; 4 more rulings.
 
 ### Built in the 3–4 August 2026 sessions
 - **All 94 full lives** written (was 16). Short-record prophets (Idris,

@@ -543,5 +543,207 @@ const FIQH_RULINGS = [
     verifyAr: "binbaz.org.sa و binothaimeen.net.",
     keys: ["repentance", "tawbah", "major sin", "forgive", "i sinned", "keep sinning", "relapse", "despair",
            "توبة", "كبيرة", "ذنب", "أذنبت", "الإصرار", "القنوط", "المغفرة"]
+  },
+
+  /* ================= PRAYER ================= */
+  {
+    id: "fq-travel-prayer",
+    cat: "prayer",
+    title: "Shortening and combining the prayer when travelling",
+    titleAr: "قصر الصلاة وجمعها في السفر",
+    question: "I travel often for work. When may I shorten the prayer, when may I join two together, and for how long does that last?",
+    questionAr: "أسافر كثيرًا لعملي. متى أقصر الصلاة؟ ومتى أجمع بين صلاتين؟ وإلى متى يبقى ذلك؟",
+    answer: "Shortening the four-rak'ah prayers to two on a journey is established beyond dispute and is the practice the Prophet ﷺ kept to. Joining two prayers together is also established, but the scholars set narrower conditions for it than for shortening — the two are not the same question and should not be treated as one.",
+    answerAr: "قصر الرباعية إلى ركعتين في السفر ثابتٌ لا نزاع فيه، وهو الذي لزمه النبي ﷺ. وأما الجمع بين الصلاتين فثابتٌ أيضًا، لكنّ أهل العلم ضيّقوا شرطه أكثر من القصر — وهما مسألتان لا مسألة واحدة، فلا يُخلط بينهما.",
+    points: [
+      { en: "Shortening applies only to the four-rak'ah prayers: Dhuhr, Asr and Isha. Maghrib stays three and Fajr stays two.",
+        ar: "القصر إنما هو في الرباعية: الظهر والعصر والعشاء. وأما المغرب فثلاث والفجر ركعتان، لا تُقصران." },
+      { en: "Shortening begins once you have left the built-up area of your town, not when you begin packing.",
+        ar: "ويبدأ القصر إذا فارقتَ عمران بلدك، لا من حين تتجهّز للسفر." },
+      { en: "Joining is a concession for need — travelling on, difficulty stopping, rain, illness. Shortening does not need a reason beyond the journey itself; joining does.",
+        ar: "والجمع رخصةٌ للحاجة: كالسير ومشقّة النزول والمطر والمرض. فالقصر لا يحتاج إلى سببٍ زائدٍ على السفر، والجمع يحتاج." },
+      { en: "You pray behind a resident imam in full — if you join a local congregation, you complete four with them.",
+        ar: "وإذا ائتممتَ بمقيمٍ أتممتَ معه أربعًا." }
+    ],
+    evidence: [
+      { en: "\"And when you travel throughout the land, there is no blame upon you for shortening the prayer.\"",
+        ar: "﴿وَإِذَا ضَرَبْتُمْ فِي الْأَرْضِ فَلَيْسَ عَلَيْكُمْ جُنَاحٌ أَن تَقْصُرُوا مِنَ الصَّلَاةِ﴾",
+        ref: "Surah An-Nisa (4:101)" },
+      { en: "Ibn Umar said: I accompanied the Prophet ﷺ and he did not pray more than two rak'ahs on a journey, and Abu Bakr, Umar and Uthman likewise.",
+        ar: "قال ابن عمر: صحبتُ النبي ﷺ فكان لا يزيد في السفر على ركعتين، وأبو بكر وعمر وعثمان كذلك.",
+        ref: "Sahih al-Bukhari, Book of Shortening the Prayer, Hadith 1102 — Sahih, agreed upon" }
+    ],
+    scholars: [
+      { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
+        view: "Held that a traveller shortens as long as he does not intend to settle, and that joining is for need rather than as a routine — a man who has stopped and is comfortable should pray each prayer in its time.",
+        viewAr: "يرى أنّ المسافر يقصر ما لم ينوِ الإقامة، وأنّ الجمع للحاجة لا على وجه الاعتياد، فمن نزل واستراح صلّى كلّ صلاةٍ في وقتها.",
+        work: "Majmu' Fatawa Ibn Baz" },
+      { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
+        view: "The same, and he stressed the distinction people most often miss: shortening is the stronger and easier of the two, joining is the narrower.",
+        viewAr: "على مثل قوله، وشدّد على الفرق الذي يغفل عنه أكثر الناس: أنّ القصر أوسع وأيسر، والجمع أضيق.",
+        work: "Ash-Sharh al-Mumti'" }
+    ],
+    difference: "How long the concession lasts is a genuine and old disagreement. Many scholars held that if you intend to stay more than four days you pray in full, and this is the position of the majority including Ibn Baz and Ibn Uthaymeen. Ibn Taymiyyah held that a traveller keeps shortening as long as he has not taken the place as a residence, even for a long stay — and a number of contemporary scholars followed him in that. The weight of the scholars is with the first, but the second is a serious position held by a major imam, and someone acting on it is not acting without evidence.",
+    differenceAr: "ومدّة بقاء الرخصة خلافٌ حقيقيٌّ قديم. فذهب كثيرٌ من أهل العلم إلى أنّ من نوى إقامة أكثر من أربعة أيام أتمّ، وهو قول الجمهور، وعليه ابن باز وابن عثيمين. وذهب ابن تيمية إلى أنّ المسافر يقصر ما لم يتّخذ البلد وطنًا وإن طالت إقامته، وتبعه على ذلك عددٌ من المعاصرين. والأكثرون على الأول، والثاني قولٌ معتبرٌ لإمامٍ كبير، ومن عمل به لم يعمل بلا دليل.",
+    verify: "Read the wording of each scholar at binbaz.org.sa and binothaimeen.net, and ask someone who knows your circumstances.",
+    verifyAr: "راجع كلام كلّ عالمٍ بنصّه في binbaz.org.sa و binothaimeen.net، واسأل من يعرف حالك.",
+    keys: ["travel", "travelling", "journey", "shorten", "qasr", "combine", "join prayers", "jam", "work trip", "flight", "abroad",
+           "السفر", "المسافر", "القصر", "الجمع", "جمع الصلاتين", "قصر الصلاة", "الرحلة", "الطائرة"]
+  },
+
+  /* ================= PURITY ================= */
+  {
+    id: "fq-wiping-socks",
+    cat: "purity",
+    title: "Wiping over socks instead of washing the feet",
+    titleAr: "المسح على الجوربين بدل غسل القدمين",
+    question: "Can I wipe over my socks in wudu instead of taking them off? Does it have to be leather?",
+    questionAr: "هل أمسح على جوربيّ في الوضوء بدل خلعهما؟ وهل يُشترط أن يكونا من جلد؟",
+    answer: "Wiping over the khuff — a leather foot covering — is established by so many narrations that scholars have described it as effectively beyond dispute. The question people actually have is about ordinary cloth socks, and there the scholars differ.",
+    answerAr: "المسح على الخفّ — وهو ما يُلبس في القدم من جلد — ثابتٌ بأحاديث كثيرةٍ حتى وصفه أهل العلم بأنه ممّا لا يكاد يُنازَع فيه. وإنما سؤال الناس عن الجورب المعتاد من القطن ونحوه، وفيه خلاف.",
+    points: [
+      { en: "You must have put them on while in a state of wudu — you cannot wipe over socks you pulled on without wudu.",
+        ar: "يُشترط أن تكون لبستهما على طهارة، فلا يمسح من لبسهما على غير وضوء." },
+      { en: "The time limit is one day and night for a resident, and three days and nights for a traveller, counted from the first wipe.",
+        ar: "والمدّة يومٌ وليلةٌ للمقيم، وثلاثة أيامٍ بلياليهنّ للمسافر، تُحسب من أول مسحة." },
+      { en: "You wipe the TOP of the foot, not the sole. Ali رضي الله عنه said that if the religion were by opinion, the underside would be more deserving of wiping — but he saw the Prophet ﷺ wipe the top.",
+        ar: "ويُمسح ظاهر القدم لا أسفلها. قال عليٌّ رضي الله عنه: لو كان الدين بالرأي لكان أسفل الخفّ أولى بالمسح من أعلاه، ولكنه رأى النبي ﷺ يمسح ظاهرهما." },
+      { en: "Wiping is broken by anything that breaks wudu in the normal way, and by taking the socks off.",
+        ar: "وينتقض المسح بما ينقض الوضوء، وبخلع الجوربين." }
+    ],
+    evidence: [
+      { en: "Al-Mughirah ibn Shu'bah said: I was with the Prophet ﷺ and I bent to remove his khuffs, and he said: \"Leave them — I put them on in a state of purity\" — and he wiped over them.",
+        ar: "عن المغيرة بن شعبة قال: كنت مع النبي ﷺ فأهويتُ لأنزع خفّيه فقال: «دعهما فإني أدخلتهما طاهرتين» — فمسح عليهما.",
+        ref: "Sahih al-Bukhari, Book of Wudu, Hadith 206; also Muslim — Sahih, agreed upon" }
+    ],
+    scholars: [
+      { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
+        view: "Permitted wiping over ordinary socks provided they are thick enough to cover the foot and stay on it, and rejected the condition that they be leather.",
+        viewAr: "أجاز المسح على الجورب المعتاد إذا كان صفيقًا يستر القدم ويثبت عليها، ولم يشترط أن يكون من جلد.",
+        work: "Majmu' Fatawa Ibn Baz" },
+      { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
+        view: "The same, and added that what matters is that the sock actually covers the part of the foot that must be washed and is not so thin that the skin shows through.",
+        viewAr: "على مثل قوله، وزاد أنّ المعتبر أن يستر الجورب موضع الفرض حقيقةً وألّا يكون رقيقًا تُرى البشرة من ورائه.",
+        work: "Ash-Sharh al-Mumti'" },
+      { name: "Al-Albani", nameAr: "الشيخ محمد ناصر الدين الألباني",
+        view: "Held the same permission and gathered the narrations reported from the companions who wiped over cloth socks.",
+        viewAr: "قال بالجواز نفسه، وجمع ما ورد عن الصحابة من المسح على الجوارب.",
+        work: "Silsilat al-Ahadith as-Sahihah" }
+    ],
+    difference: "Some earlier scholars restricted wiping to leather khuffs and required washing the feet with anything else, and that view is held by scholars within several of the schools. Against it, wiping over cloth socks is reported from a number of the companions, and the contemporary scholars named above permitted it. The weight is with permitting it on condition of thickness, but a person who chooses to wash the feet to be safe has done nothing wrong and has taken the more cautious road.",
+    differenceAr: "وقصر بعض المتقدّمين المسح على الخفّ الجلديّ وأوجبوا الغسل فيما سواه، وبه قال جماعةٌ داخل عدّة مذاهب. ويقابله أنّ المسح على الجوارب مرويٌّ عن عددٍ من الصحابة، وأفتى بجوازه المعاصرون المذكورون. والأكثرون على الجواز بشرط الصفاقة، ومن اختار غسل القدمين احتياطًا فلم يأتِ منكرًا، وقد أخذ بالأحوط.",
+    verify: "binbaz.org.sa and binothaimeen.net.",
+    verifyAr: "binbaz.org.sa و binothaimeen.net.",
+    keys: ["socks", "khuff", "wipe", "wiping", "feet", "wudu", "ablution", "leather", "masah",
+           "الجوربين", "الخف", "المسح", "مسح على الجوارب", "القدمين", "الوضوء", "الطهارة"]
+  },
+
+  /* ================= FAMILY ================= */
+  {
+    id: "fq-wali-marriage",
+    cat: "family",
+    title: "Marriage without the woman's guardian — where the schools genuinely part",
+    titleAr: "الزواج بغير وليّ — موضع افتراق المذاهب حقًّا",
+    question: "Is a marriage valid if the woman arranges it herself, without her father or another guardian?",
+    questionAr: "هل يصحّ النكاح إذا زوّجت المرأة نفسها بغير أبيها أو وليّها؟",
+    answer: "This is one of the clearest and oldest differences in fiqh, and it should be described as what it is rather than presented as settled. Three of the four schools require a guardian for the marriage to be valid. The Hanafi school holds that an adult woman of sound mind may contract her own marriage. Both positions have been held by major scholars for over a thousand years.",
+    answerAr: "هذه من أظهر مسائل الخلاف وأقدمها في الفقه، وحقُّها أن تُوصف على حقيقتها لا أن تُعرض مسألةً مجمَعًا عليها. فثلاثةٌ من المذاهب الأربعة تشترط الوليّ لصحّة العقد، والحنفيّة يرون أنّ البالغة العاقلة تعقد على نفسها. وكلا القولين قال به أئمّةٌ كبارٌ منذ أكثر من ألف سنة.",
+    points: [
+      { en: "Everyone agrees the woman's own consent is required. A marriage she was forced into is not valid by anyone's reckoning — the Prophet ﷺ annulled such a marriage when a woman came and complained.",
+        ar: "والجميع متفقون على اشتراط رضاها. فالنكاح بالإكراه باطلٌ عند الجميع، وقد ردّ النبي ﷺ نكاح امرأةٍ جاءت تشكو أنّ أباها زوّجها كارهة." },
+      { en: "Everyone agrees a guardian is better and safer, including the Hanafis — the dispute is about validity, not about what is preferable.",
+        ar: "والجميع متفقون على أنّ الوليّ أفضل وأحوط، ومنهم الحنفيّة — وإنما الخلاف في الصحّة لا في الأولويّة." },
+      { en: "Everyone agrees that if a guardian refuses without a valid reason, he loses that right and it passes to the next guardian or to the judge. A father cannot block his daughter's marriage out of preference.",
+        ar: "والجميع متفقون على أنّ الوليّ إذا عضلها بغير سببٍ معتبرٍ سقطت ولايته وانتقلت إلى من يليه أو إلى القاضي. فليس للأب أن يمنع ابنتها لهوًى." },
+      { en: "In practice, the law of the country you marry in also decides what is registered — and a marriage nobody can prove exposes the woman most.",
+        ar: "وفي الواقع فإنّ قانون البلد الذي يقع فيه العقد يحكم في التوثيق، والنكاح الذي لا يُستطاع إثباته أكثر ما يضرّ المرأة." }
+    ],
+    evidence: [
+      { en: "\"There is no marriage without a guardian.\"",
+        ar: "«لَا نِكَاحَ إِلَّا بِوَلِيٍّ»",
+        ref: "Sunan Abu Dawud, Book of Marriage, Hadith 2085 and elsewhere — OUTSIDE the two Sahihs; graded Sahih by al-Albani. This is the primary evidence of the majority." },
+      { en: "\"Any woman who marries without the permission of her guardian, her marriage is void\" — repeated three times.",
+        ar: "«أَيُّمَا امْرَأَةٍ نَكَحَتْ بِغَيْرِ إِذْنِ وَلِيِّهَا فَنِكَاحُهَا بَاطِلٌ» — قالها ثلاثًا",
+        ref: "Sunan Abu Dawud, Book of Marriage, Hadith 2083; at-Tirmidhi — OUTSIDE the two Sahihs; graded Sahih by al-Albani" },
+      { en: "\"A previously married woman has more right over herself than her guardian, and a virgin is asked permission for herself, and her permission is her silence.\"",
+        ar: "«الثَّيِّبُ أَحَقُّ بِنَفْسِهَا مِنْ وَلِيِّهَا، وَالْبِكْرُ تُسْتَأْذَنُ فِي نَفْسِهَا، وَإِذْنُهَا صُمَاتُهَا»",
+        ref: "Sahih Muslim, Book of Marriage — Sahih. This is among the evidences the Hanafis rely on." }
+    ],
+    scholars: [
+      { name: "Ash-Shafi'i, Malik and Ahmad", nameAr: "الشافعي ومالك وأحمد",
+        view: "A guardian is a condition of validity. Without him the contract does not stand, however willing the woman.",
+        viewAr: "الوليّ شرطٌ في الصحّة، ولا ينعقد بدونه وإن رضيت المرأة.",
+        work: "Al-Umm; Al-Mudawwanah; Masa'il Ahmad" },
+      { name: "Abu Hanifah", nameAr: "الإمام أبو حنيفة",
+        view: "An adult woman of sound mind may contract her own marriage to a suitable husband; the guardian's role is advisory and protective rather than a condition of validity.",
+        viewAr: "للبالغة العاقلة أن تعقد على نفسها من كفء، وولاية الوليّ نظرٌ وصيانةٌ لا شرط صحّة.",
+        work: "The Hanafi school, as recorded by his students" },
+      { name: "Ibn Baz and Ibn Uthaymeen", nameAr: "ابن باز وابن عثيمين",
+        view: "Both took the majority position that the guardian is a condition, and both stressed that a guardian who obstructs without a valid reason forfeits the right.",
+        viewAr: "أخذا بقول الجمهور أنّ الوليّ شرط، وشدّدا على أنّ العاضل بغير حقٍّ تسقط ولايته.",
+        work: "Majmu' Fatawa Ibn Baz; Ash-Sharh al-Mumti'" }
+    ],
+    difference: "The weight of the scholars is clearly with requiring a guardian — three of the four schools and the two contemporary scholars most cited on this site. The Hanafi position is not a fringe opinion and is followed by a very large number of Muslims. What must NOT be done is to tell someone their existing marriage is invalid: that is a judgement about a specific contract, and it belongs to a scholar or a court that knows the details, not to a website.",
+    differenceAr: "الأكثرون على اشتراط الوليّ بوضوح: ثلاثةٌ من المذاهب الأربعة، والشيخان المعاصران الأكثر نقلًا في هذا الموقع. وقول الحنفيّة ليس قولًا شاذًّا، وعليه خلقٌ كثيرٌ من المسلمين. والذي لا يجوز أن يُصنع أن يُقال لأحدٍ إنّ نكاحه القائم باطل، فذلك حكمٌ على عقدٍ بعينه، وهو إلى عالمٍ أو قاضٍ يعرف التفاصيل، لا إلى موقعٍ على الشبكة.",
+    verify: "This is a question for a scholar who knows your situation and your country's law — not for a summary. binbaz.org.sa and binothaimeen.net for the wording of the positions above.",
+    verifyAr: "هذه مسألةٌ تُسأل عنها عالمًا يعرف حالك وقانون بلدك، لا يُكتفى فيها بملخّص. وراجع نصّ الأقوال المتقدّمة في binbaz.org.sa و binothaimeen.net.",
+    keys: ["wali", "guardian", "marriage", "nikah", "father refuses", "marry without", "consent", "forced marriage", "revert",
+           "الولي", "الزواج", "النكاح", "بغير ولي", "العضل", "الإكراه", "رضا المرأة", "زوجت نفسها"]
+  },
+
+  /* ================= REPENTANCE ================= */
+  {
+    id: "fq-despair",
+    cat: "repent",
+    title: "\"My sins are too big to be forgiven\" — the one thing the scholars answer with one voice",
+    titleAr: "«ذنوبي أعظم من أن تُغفر» — وهذا ممّا يجيب عنه أهل العلم بقولٍ واحد",
+    question: "I have done things I cannot say out loud. Is there any point in repenting? I feel it is too late for me.",
+    questionAr: "فعلتُ ما لا أستطيع أن أذكره. فهل للتوبة معنى؟ أشعر أنّ الأوان قد فات عليّ.",
+    answer: "On almost every page of this section the scholars are shown disagreeing. On this one they do not. Despairing of Allah's mercy is not humility and it is not the fear of a righteous person — the Quran names it as a characteristic of those who have gone astray, and the texts about the size of Allah's forgiveness are among the most emphatic in the entire religion.",
+    answerAr: "في كلّ صفحةٍ من هذا الباب تقريبًا يُعرض اختلاف أهل العلم، وفي هذه لا يختلفون. فاليأس من رحمة الله ليس تواضعًا ولا هو خوف الصالحين، بل سمّاه القرآن من صفات الضالّين، ونصوص سَعة المغفرة من أشدّ ما في الدين توكيدًا.",
+    points: [
+      { en: "The verse is addressed to those who went furthest, and it uses the word ALL: \"Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins.\"",
+        ar: "والآية خطابٌ لمن بلغ أقصى ما يُبلغ، وفيها لفظ العموم: ﴿قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا﴾." },
+      { en: "The repentance is between you and Allah. There is no requirement in Islam to confess a past sin to any human being, and the scholars are agreed that concealing what Allah concealed is what should be done.",
+        ar: "والتوبة بينك وبين الله. وليس في الإسلام أن يُقرّ المرء بذنبٍ ماضٍ لبشر، واتفق أهل العلم على أنّ الستر بما ستر الله هو المطلوب." },
+      { en: "It does not require a feeling. It requires stopping, regretting, and resolving not to return — and if a right of another person is involved, returning it or seeking their pardon.",
+        ar: "وليست موقوفةً على وجدانٍ يُحسّ، بل على الإقلاع والندم والعزم على ألّا يعود — وإن كان فيها حقٌّ لآدميٍّ فردُّه أو استحلاله." },
+      { en: "Relapsing does not close the door. If you repent and fall and repent again, you repent again. The scholars treat the return itself as the thing that is asked of you.",
+        ar: "والعَوْد لا يغلق الباب. فإن تبتَ ثم وقعتَ ثم تبت، فتُبْ من جديد. وأهل العلم يجعلون الرجوع نفسه هو المطلوب منك." }
+    ],
+    evidence: [
+      { en: "\"Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins. Indeed it is He who is the Forgiving, the Merciful.\"",
+        ar: "﴿قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ﴾",
+        ref: "Surah Az-Zumar (39:53)" },
+      { en: "\"And who despairs of the mercy of his Lord except those astray?\"",
+        ar: "﴿وَمَن يَقْنَطُ مِن رَّحْمَةِ رَبِّهِ إِلَّا الضَّالُّونَ﴾",
+        ref: "Surah Al-Hijr (15:56)" },
+      { en: "The Prophet ﷺ said Allah says: \"O son of Adam, were your sins to reach the clouds of the sky, then you sought My forgiveness, I would forgive you and I would not mind.\"",
+        ar: "قال ﷺ فيما يرويه عن ربه: «يَا ابْنَ آدَمَ، لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلَا أُبَالِي»",
+        ref: "Jami at-Tirmidhi, Book of Supplications — OUTSIDE the two Sahihs; graded Sahih by al-Albani" },
+      { en: "And in the two Sahihs, the man who killed ninety-nine people and then one more, and was forgiven when he set out toward a land of righteous people and died on the road.",
+        ar: "وفي الصحيحين قصّة الذي قتل تسعةً وتسعين نفسًا ثم أتمّ بها مئة، فغُفر له لمّا خرج قاصدًا أرض الصالحين فمات في الطريق.",
+        ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3470; also Muslim — Sahih, agreed upon" }
+    ],
+    scholars: [
+      { name: "Ibn al-Qayyim", nameAr: "ابن القيم",
+        view: "Wrote at length that despair is one of Shaytan's most effective instruments precisely because it looks like piety — a person who thinks himself beyond forgiveness stops trying, and that is the whole aim.",
+        viewAr: "أطال في أنّ القنوط من أنفذ حبائل الشيطان، لأنه يتزيّا بزيّ التقوى؛ فمن ظنّ نفسه خارجًا عن المغفرة كفّ عن العمل، وذلك هو المقصود.",
+        work: "Madarij as-Salikin" },
+      { name: "An-Nawawi", nameAr: "الإمام النووي",
+        view: "Gathered the texts on hope and on the acceptance of repentance and held that the door remains open until the soul reaches the throat, and until the sun rises from the west.",
+        viewAr: "جمع نصوص الرجاء وقبول التوبة، وقرّر أنّ الباب مفتوحٌ حتى تبلغ الروح الحلقوم، وحتى تطلع الشمس من مغربها.",
+        work: "Riyad as-Salihin, the Book of Repentance" },
+      { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
+        view: "Answered this question many times and never qualified it: sincere repentance wipes what came before it, whatever the sin was, and the one who repents from a sin is as one with no sin.",
+        viewAr: "أجاب عن هذا مرارًا ولم يقيّده: التوبة الصادقة تمحو ما قبلها كائنًا ما كان الذنب، والتائب من الذنب كمن لا ذنب له.",
+        work: "Fatawa Nur 'ala ad-Darb" }
+    ],
+    difference: "There is no disagreement here worth reporting, and it would be dishonest to manufacture one. What the scholars do add is a warning against the opposite error — treating forgiveness as a licence and delaying repentance on the assumption of time that nobody is guaranteed.",
+    differenceAr: "لا خلاف ها هنا يستحقّ النقل، ولا يصحّ اختلاق خلافٍ لا وجود له. وإنما زاد أهل العلم التحذير من الطرف المقابل: أن تُتّخذ المغفرة ذريعةً فيُسوَّف بالتوبة اتّكالًا على أجلٍ لا يضمنه أحد.",
+    verify: "If this is weighing on you, speak to a scholar or an imam you trust — and if you are having thoughts of harming yourself, tell someone today. binbaz.org.sa and binothaimeen.net.",
+    verifyAr: "إن كان هذا يثقل عليك فكلّم عالمًا أو إمامًا تثق به — وإن كنت تحدّث نفسك بإيذائها فأخبر أحدًا اليوم. وراجع binbaz.org.sa و binothaimeen.net.",
+    keys: ["despair", "hopeless", "too late", "unforgivable", "big sins", "guilt", "ashamed", "cant forgive myself", "qunut", "hope",
+           "اليأس", "القنوط", "فات الأوان", "ذنوبي كثيرة", "لا تُغفر", "الندم", "الخجل", "الرجاء", "التوبة"]
   }
 ];

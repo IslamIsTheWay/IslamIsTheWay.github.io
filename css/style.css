@@ -97,10 +97,13 @@ header.site-header {
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  /* Wider than the page body, so the extra nav links fit on one line. */
-  max-width: 1500px;
+  /* Wider than the page body, so the extra nav links fit on one line.
+     Raised from 1500px for the 13th link — this cap is a real constraint,
+     not decoration: when the bar needs more than this it overflows at EVERY
+     viewport width, however wide the screen is. */
+  max-width: 1560px;
   margin: 0 auto;
-  gap: 18px;
+  gap: 14px;
 }
 
 .brand {
@@ -222,14 +225,17 @@ html.js-reveal .reveal.in-view {
 nav.main-nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  /* Tightened from 18px when Golden Age became the 13th link. Every pixel
+     here is multiplied by thirteen gaps, so this is the cheapest room to
+     find before anything has to be shortened or dropped. */
+  gap: 12px;
 }
 
 nav.main-nav a {
   font-weight: 500;
   color: var(--text-dark);
   position: relative;
-  padding: 6px 4px;
+  padding: 6px 3px;
   transition: var(--transition);
   font-size: 0.92rem;
   /* A two-word item must never break across two lines — "Judgement Day" was
@@ -2685,7 +2691,18 @@ html.lang-ar .en-only { display: none !important; }
    been wrong twice: too low at 1150px when links were added, and then left
    too high at 1520px after Angels was taken out, which collapsed the bar into
    a hamburger on ordinary laptops that had room for the whole thing. */
-@media (max-width: 1200px) {
+/* MEASURED, not guessed — re-measure this whenever a nav link is added or
+   removed, with the desktop layout actually applied:
+     brand.getBoundingClientRect().width + nav.scrollWidth
+       + wrap padding-left + padding-right + wrap gap
+   13 links plus the language button injected by i18n.js need 1474px, so the
+   hamburger takes over below 1480.
+
+   This was previously 1200px while the bar already needed 1467px for twelve
+   links, which put Login off the right edge of any screen between those two
+   numbers — a 1366px laptop could not reach it. Verified fixed at 1280, 1366
+   and 1440. */
+@media (max-width: 1480px) {
   nav.main-nav {
     position: absolute;
     top: 100%;
@@ -3054,3 +3071,575 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 }
 .course-row-series.standalone { background: #f0f0f0; color: var(--text-muted); font-weight: 500; }
 @media (max-width: 560px) { .courses-soon { padding: 30px 18px; } }
+
+/* ============ Why we fell, and the way back ============
+   Three movements with different weights: the diagnosis cards are sober
+   (a muted red edge), the law is the Quran and gets the gold treatment,
+   and the steps are the part meant to be acted on, so they are numbered
+   and lighter. */
+#revival { scroll-margin-top: 90px; }
+
+.rv-intro {
+  background: var(--green-pale);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-bottom: 26px;
+}
+.rv-intro p { line-height: 1.95; margin-bottom: 10px; }
+.rv-ar { font-family: 'Amiri', serif; }
+.rv-ar p { font-size: 1.13rem; line-height: 2.2; }
+
+.rv-head {
+  color: var(--green-dark);
+  font-size: 1.35rem;
+  margin: 40px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--green-light);
+  line-height: 1.6;
+}
+
+.rv-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid #b5541f;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 26px;
+  margin-bottom: 18px;
+}
+.rv-card h4 { color: var(--green-dark); font-size: 1.14rem; margin-bottom: 2px; line-height: 1.5; }
+.rv-card .ar-head { font-size: 1.24rem; margin-bottom: 14px; }
+.rv-card p { line-height: 1.9; margin-bottom: 11px; }
+
+.rv-quote {
+  font-family: 'Amiri', serif;
+  font-size: 1.3rem;
+  line-height: 2.2;
+  color: var(--green-dark);
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin: 14px 0;
+}
+.rv-note {
+  background: var(--green-pale);
+  border-radius: 10px;
+  padding: 14px 17px;
+  margin-bottom: 14px;
+}
+.rv-note p { line-height: 1.9; font-size: .94rem; }
+
+.rv-card .refs {
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  font-size: .8rem;
+}
+.rv-card .refs span {
+  background: var(--green-light);
+  color: var(--green-dark);
+  border-radius: 999px;
+  padding: 4px 13px;
+  line-height: 1.75;
+}
+.rv-card .refs span[dir="rtl"] { font-size: .95rem; }
+
+/* The law — the Quran, so it gets the gold. */
+.rv-law {
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-bottom: 20px;
+}
+.rv-ev { margin-bottom: 18px; }
+.rv-ev:last-child { margin-bottom: 0; }
+.rv-ev p { line-height: 1.9; }
+.rv-ev-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.24rem;
+  line-height: 2.25;
+  color: var(--green-dark);
+  margin-top: 6px;
+}
+.rv-ev-ref {
+  font-size: .78rem;
+  color: var(--text-muted);
+  margin-top: 7px;
+  line-height: 1.75;
+}
+
+/* Imam Malik's sentence, with the warning that it is HIS and not a hadith —
+   it is quoted as a hadith constantly, so the warning is not a footnote. */
+.rv-malik {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-bottom: 10px;
+}
+.rv-malik > p { line-height: 1.95; margin-bottom: 8px; font-weight: 500; }
+.rv-malik-warn {
+  background: #fdf4ec;
+  border: 1px solid #f0dccb;
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-top: 12px;
+}
+.rv-malik-warn p { font-size: .9rem; line-height: 1.9; color: #8a3d1f; }
+
+/* The steps — the part meant to be acted on. */
+.rv-steps { display: grid; gap: 18px; }
+.rv-step {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 26px;
+}
+.rv-step-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.rv-step-num {
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: .9rem;
+}
+.rv-step-icon { font-size: 1.5rem; flex-shrink: 0; }
+.rv-step-head h4 { color: var(--green-dark); font-size: 1.14rem; margin-bottom: 2px; line-height: 1.5; }
+.rv-step-head .ar-head { font-size: 1.22rem; margin-bottom: 0; }
+.rv-step p { line-height: 1.9; margin-bottom: 11px; }
+
+.rv-evidence {
+  background: var(--green-pale);
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin-top: 6px;
+}
+
+.rv-close {
+  background: var(--green-light);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin-top: 28px;
+  font-weight: 500;
+}
+.rv-close p { line-height: 1.95; margin-bottom: 12px; }
+
+html.lang-ar .rv-card { border-left: 1px solid var(--border); border-right: 5px solid #b5541f; }
+html.lang-ar .rv-step { border-left: 1px solid var(--border); border-right: 5px solid var(--green); }
+html.lang-ar .rv-malik { border-left: 1px solid var(--border); border-right: 5px solid var(--gold); }
+
+@media (max-width: 640px) {
+  .rv-card, .rv-step, .rv-malik, .rv-law, .rv-intro, .rv-close { padding: 20px 16px; }
+  .rv-step-head { flex-wrap: wrap; }
+}
+
+/* ============ Story sections ============
+   A heading between groups of story cards, so the page reads as ten short
+   collections rather than one long scroll. The count sits in the corner
+   because the first thing anyone asks of a section is how big it is. */
+.story-section-head {
+  position: relative;
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin: 36px 0 20px;
+}
+.story-section-head:first-child { margin-top: 8px; }
+.story-section-head h2 {
+  color: var(--green-dark);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+.story-section-icon { font-size: 1.6rem; }
+.story-section-head p { line-height: 1.9; color: var(--text-muted); font-size: .94rem; }
+.story-section-head p[dir="rtl"] { font-size: 1.06rem; }
+.story-section-count {
+  position: absolute;
+  top: 18px;
+  inset-inline-end: 22px;
+  background: var(--gold);
+  color: #3d2c00;
+  font-weight: 700;
+  font-size: .82rem;
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+@media (max-width: 560px) {
+  .story-section-head { padding: 18px 16px; }
+  .story-section-count { position: static; display: inline-block; margin-top: 8px; }
+}
+
+/* ============ The Golden Age of Islam ============
+   Gold is the accent here rather than green, so the page reads as its own
+   subject the moment it opens. The photo is the mosque interior — arches and
+   geometry — under a warm scrim instead of the green one used on the Quran
+   page, so the same photograph does not look like the same page. */
+.page-hero.ph-golden {
+  background-image: linear-gradient(rgba(52,34,6,.58), rgba(20,50,28,.50)), url("../img/mosque-inside.jpg");
+}
+
+/* Arabic headings sit beside their English twin rather than under a separate
+   rule, so the two never drift apart in size. */
+.ar-head {
+  font-family: 'Amiri', serif;
+  color: var(--green);
+  line-height: 1.9;
+  margin-bottom: 6px;
+}
+
+/* ---- Why the peak happened ---- */
+.gold-root {
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 32px;
+  margin-bottom: 10px;
+}
+.gold-root h2 { color: var(--green-dark); font-size: 1.5rem; margin-bottom: 4px; line-height: 1.4; }
+.gold-lead { line-height: 1.95; margin-bottom: 10px; }
+.gold-root-points { margin: 20px 0 6px; padding-inline-start: 24px; }
+.gold-root-points li { margin-bottom: 20px; line-height: 1.85; }
+.gold-root-points li::marker { color: var(--gold); font-weight: 700; }
+.gold-ar {
+  display: block;
+  font-family: 'Amiri', serif;
+  font-size: 1.14rem;
+  line-height: 2.15;
+  color: var(--green-dark);
+  margin-top: 4px;
+}
+.gold-ref {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: .78rem;
+  color: var(--green-dark);
+  background: var(--green-light);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+.gold-close {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed #e2d4a8;
+  font-weight: 500;
+}
+.gold-close p { line-height: 1.95; }
+
+/* ---- The figures ---- */
+.gold-search-wrap { max-width: 760px; margin: 0 auto 18px; }
+.gold-search-wrap input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: .96rem;
+  outline: none;
+  transition: var(--transition);
+}
+.gold-search-wrap input:focus { border-color: var(--green); box-shadow: 0 0 0 4px var(--green-light); }
+
+.gold-list { display: grid; gap: 22px; }
+.gold-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 28px;
+}
+.gold-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.gold-card-head h3 { color: var(--green-dark); font-size: 1.24rem; margin: 0 0 2px; line-height: 1.4; }
+.gold-name-ar { font-family: 'Amiri', serif; font-size: 1.3rem; color: var(--green); line-height: 1.8; }
+
+/* The Latinised name is given its own badge because it IS the point of the
+   page: the knowledge crossed over and the man's identity did not. */
+.gold-latin {
+  background: #fff7e0;
+  border: 1px dashed var(--gold);
+  border-radius: 10px;
+  padding: 7px 13px;
+  font-size: .78rem;
+  color: #7a5c10;
+  line-height: 1.7;
+  flex-shrink: 0;
+}
+.gold-latin strong { display: block; font-size: .98rem; color: #5c4408; letter-spacing: .3px; }
+
+.gold-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 12px 0 14px;
+  font-size: .82rem;
+  color: var(--text-muted);
+}
+.gold-meta span { background: var(--green-pale); border-radius: 999px; padding: 3px 12px; }
+
+.gold-headline {
+  font-weight: 600;
+  color: var(--green-dark);
+  line-height: 1.85;
+  margin-bottom: 6px;
+}
+.gold-headline[dir="rtl"] { font-size: 1.16rem; line-height: 2.1; }
+
+.gold-body p { line-height: 1.9; margin-bottom: 12px; }
+.gold-body-ar { font-family: 'Amiri', serif; }
+.gold-body-ar p { font-size: 1.14rem; line-height: 2.25; margin-bottom: 13px; color: var(--text); }
+
+.gold-works {
+  background: var(--green-pale);
+  border-radius: 11px;
+  padding: 15px 18px;
+  margin: 6px 0 16px;
+}
+.gold-works-head { font-weight: 700; color: var(--green-dark); font-size: .9rem; margin-bottom: 10px; }
+.gold-work { margin-bottom: 11px; }
+.gold-work:last-child { margin-bottom: 0; }
+.gold-work-t { font-weight: 600; color: var(--green-dark); font-size: .95rem; }
+.gold-work-t span[dir="rtl"] { display: block; font-size: 1.1rem; line-height: 1.85; }
+.gold-work-d { font-size: .86rem; color: var(--text-muted); line-height: 1.8; }
+.gold-work-d[dir="rtl"] { font-size: 1.02rem; line-height: 2; }
+
+/* "What happened to it" is the sentence the reader came for, so it is boxed
+   rather than buried at the end of a paragraph. */
+.gold-after {
+  background: #fdf4ec;
+  border: 1px solid #f0dccb;
+  border-radius: 11px;
+  padding: 14px 17px;
+  margin-bottom: 16px;
+}
+.gold-after-head { font-weight: 700; color: #8a3d1f; font-size: .9rem; margin-bottom: 7px; }
+.gold-after p { line-height: 1.9; font-size: .93rem; }
+
+.gold-card .refs, .gold-taken .refs {
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  font-size: .8rem;
+  color: var(--green-dark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+.gold-card .refs span, .gold-taken .refs span {
+  background: var(--green-light);
+  border-radius: 999px;
+  padding: 4px 13px;
+  line-height: 1.75;
+}
+.gold-card .refs span[dir="rtl"], .gold-taken .refs span[dir="rtl"] { font-size: .95rem; }
+
+/* ---- What was taken ---- */
+.gold-taken-intro {
+  background: var(--green-pale);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  line-height: 1.95;
+}
+.gold-taken {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 28px;
+  margin-bottom: 20px;
+}
+.gold-taken h3 { color: var(--green-dark); font-size: 1.18rem; margin: 0 0 2px; line-height: 1.45; }
+.gold-taken .ar-head { font-size: 1.28rem; margin-bottom: 14px; }
+.gold-taken-close {
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  font-weight: 500;
+  line-height: 1.95;
+}
+
+/* ---- The link onward to the way back ---- */
+.gold-next {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 32px;
+  text-align: center;
+}
+.gold-next h3 { color: var(--green-dark); font-size: 1.35rem; margin-bottom: 12px; }
+.gold-next p { line-height: 1.95; margin-bottom: 12px; max-width: 760px; margin-inline: auto; }
+.gold-next .btn { margin-top: 8px; }
+
+/* ---- RTL ---- */
+html.lang-ar .gold-card,
+html.lang-ar .gold-root { border-left: 1px solid var(--border); border-right: 5px solid var(--gold); }
+html.lang-ar .gold-taken { border-left: 1px solid var(--border); border-right: 5px solid var(--green-dark); }
+html.lang-ar .gold-root { border-left-color: #f0e4bd; }
+
+@media (max-width: 640px) {
+  .gold-card, .gold-taken, .gold-root, .gold-next { padding: 22px 18px; }
+  .gold-latin { width: 100%; }
+}
+
+/* ============================================================
+   POLISH — depth, focus and motion
+   ------------------------------------------------------------
+   Deliberately ADDITIVE. Nothing here changes a layout, a colour
+   variable, a font or a photo scrim — the owner asked for the
+   mosque photos to stay clearly visible and they are untouched.
+   This block only adds the things that make an interface feel
+   finished: something happens when you hover a card, the chip you
+   selected looks selected, a keyboard user can see where they
+   are, and jumping to an anchor glides instead of snapping.
+
+   It is kept in one block at the end of the file on purpose, so
+   the whole of it can be reviewed — or removed — in one piece.
+   ============================================================ */
+
+/* --- Cards lift slightly on hover. The shadow variables already
+       exist, so this only puts the existing --shadow-hover to work
+       on the cards that never used it. --- */
+.gold-card, .rv-card, .rv-step, .story-card, .ruling-card, .scholar-card, .gold-taken {
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1),
+              transform .28s cubic-bezier(.4,0,.2,1);
+}
+@media (hover: hover) {
+  .gold-card:hover, .rv-card:hover, .rv-step:hover,
+  .story-card:hover, .ruling-card:hover, .scholar-card:hover, .gold-taken:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+  }
+}
+
+/* --- The chip tabs. The active one had a colour change and
+       nothing else, so on a long strip it was easy to lose. --- */
+.adhkar-tab {
+  box-shadow: 0 1px 2px rgba(20,83,45,.05);
+}
+.adhkar-tab.active {
+  box-shadow: 0 4px 14px rgba(30,126,69,.28);
+  transform: translateY(-1px);
+}
+
+/* --- The Latinised-name badge is the point of the Golden Age
+       cards, so it earns a touch of warmth on hover. --- */
+@media (hover: hover) {
+  .gold-card:hover .gold-latin {
+    background: #fff2cf;
+    border-style: solid;
+  }
+}
+
+/* --- Section headings get the same gold hairline the home page
+       already draws with <div class="divider">, so that headings
+       look consistent on the pages that never had one (Golden Age,
+       Hadith, and the new Guidance sections).
+
+       IMPORTANT: index, courses, judgement and prophets already
+       place a real .divider under each heading — index has seven
+       of each. Drawing this as well would give those pages two
+       rules per heading, so wherever a divider is already present
+       in the same container this is suppressed and those pages
+       render EXACTLY as they do today.
+
+       :has() is unsupported on very old browsers, which drops this
+       one rule and shows both lines there — cosmetic, never a
+       break. --- */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 62px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,162,39,.25));
+}
+.container:has(> .divider) .section-title::after,
+.container:has(.divider) .section-title::after { display: none; }
+/* The Judgement page builds its own heading rules; leave those be. */
+.judge-stage .section-title::after { display: none; }
+
+/* --- A story section heading reads better with a hint of depth
+       behind it than as a flat tinted box. --- */
+.story-section-head {
+  background: linear-gradient(180deg, #ffffff 0%, var(--green-pale) 100%);
+  box-shadow: var(--shadow);
+}
+
+/* --- The numbered steps on the revival section. --- */
+.rv-step-num {
+  background: linear-gradient(145deg, var(--green), var(--green-dark));
+  box-shadow: 0 2px 8px rgba(20,83,45,.28);
+}
+
+/* --- Keyboard focus. There was no visible focus ring anywhere,
+       which makes the site unusable by keyboard and fails an easy
+       accessibility check. :focus-visible only shows for keyboard
+       users, so mouse users see no change at all. --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* --- Anchors glide. The Golden Age page links into
+       guidance.html#revival, and landing on it instantly is
+       disorienting. Respects a reduced-motion preference. --- */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .gold-card, .rv-card, .rv-step, .story-card,
+  .ruling-card, .scholar-card, .gold-taken, .adhkar-tab {
+    transition: none;
+  }
+  .gold-card:hover, .rv-card:hover, .rv-step:hover, .story-card:hover,
+  .ruling-card:hover, .scholar-card:hover, .gold-taken:hover,
+  .adhkar-tab.active {
+    transform: none;
+  }
+}
+
+/* --- Long Arabic passages read better with a touch more room
+       between lines than the Latin text needs. --- */
+html.lang-ar .gold-body-ar p,
+html.lang-ar .rv-ar p {
+  letter-spacing: .2px;
+}

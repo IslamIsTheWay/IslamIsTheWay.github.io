@@ -21,6 +21,8 @@ const AR = {
   "Judgement Day": "يوم القيامة",
   "Angels": "الملائكة",
   "The Angels": "الملائكة",
+  "Golden Age": "العصر الذهبي",
+  "The Golden Age of Islam": "العصر الذهبي للإسلام",
   "Guidance": "التوجيه",
   "Courses": "الدورات",
   "Search": "البحث",
@@ -58,8 +60,8 @@ const AR = {
   "166 practices of the Prophet ﷺ across 18 areas of the day — sleeping, eating, washing, travelling, entering the mosque — each with its source.":
     "مئة وستٌّ وستون سنة من هدي النبي ﷺ في ثمانية عشر بابًا من أبواب اليوم — النوم والطعام والطهارة والسفر ودخول المسجد — كلٌّ منها بمرجعها.",
   "Stories of the Prophet ﷺ": "قصص النبي ﷺ",
-  "38 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
-    "ثمانية وثلاثون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
+  "45 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
+    "خمسة وأربعون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
   "15 stages in the order they happen — from the moment of death to the gates — with 64 referenced points and 52 passages of the Quran.":
     "خمس عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع أربعٍ وستين مسألة موثّقة، واثنين وخمسين موضعًا من القرآن الكريم.",
   "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ — every one of them with a full life and the message he was sent with.":
@@ -80,8 +82,8 @@ const AR = {
   "Recently Added": "أحدث الإضافات",
   "The newest additions to the site — each one written from the source, with its reference and its grading.":
     "أحدث ما أُضيف إلى الموقع — كلُّ مادةٍ مكتوبة من أصلها، ومعها مرجعها ودرجتها.",
-  "38 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
-    "ثمانٍ وثلاثون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
+  "45 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
+    "خمسٌ وأربعون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
   "Read the Stories": "اقرأ القصص",
   "Fifteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 64 referenced points and 52 passages of the Quran.":
     "خمس عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. أربعٌ وستون مسألة موثّقة، واثنان وخمسون موضعًا من القرآن.",
@@ -117,8 +119,8 @@ const AR = {
   "Every hadith on this site carries its grading and names the scholar behind it — \"Sahih — Narrated by al-Bukhari\", \"Sahih — Agreed upon\". Anything outside Sahih al-Bukhari and Sahih Muslim is labelled as such, and material taken from the historical sira is marked as history rather than hadith. Where something well known is not authentic, the site says so on the entry itself.":
     "كل حديث في الموقع مذكورةٌ درجته ومعها اسم من صحّحه — «صحيح — رواه البخاري»، «صحيح — متفق عليه». وما كان خارج الصحيحين نُصّ على ذلك، وما كان من كتب السيرة بُيّن أنه تاريخ لا حديث. وإذا كان الأمر مشهورًا وهو غير ثابت، صرّح الموقع بذلك في موضعه.",
   "What is on the Stories page?": "ماذا في صفحة القصص؟",
-  "38 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
-    "ثمانية وثلاثون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
+  "45 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
+    "خمسة وأربعون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
   "What does the Day of Judgement page cover?": "ماذا تتناول صفحة يوم القيامة؟",
   "Fifteen stages in the order they occur, from death to the gates, built on 52 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
     "خمس عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على اثنين وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",
@@ -246,6 +248,29 @@ const AR = {
   "The Sunnah of the Prophet ﷺ": "سنة النبي ﷺ",
   "How the Prophet Muhammad ﷺ actually lived — how he prayed, slept, ate, washed, travelled, and treated his family and everyone around him. Every practice here carries its source.":
     "هدي النبي محمد ﷺ العملي — كيف كان يصلي وينام ويأكل ويتطهر ويسافر، وكيف كان يعامل أهله والناس. كل سنة مذكورة بمرجعها.",
+  // ---- Golden Age page ----
+  // The figure cards carry their own Arabic in golden.js; these are the page
+  // furniture around them.
+  "Algebra, optics, surgery, the hospital, the university — who built them, what Europe did with them, and whose name ended up on them.":
+    "الجبر والبصريات والجراحة والبيمارستان والجامعة — من بناها، وماذا صنعت بها أوروبا، وباسم مَن قُيِّدت.",
+  "Each card carries the name Europe used for him, because a student can study his subject for years under that name and never learn he was a Muslim.":
+    "في كلّ بطاقةٍ الاسم الذي دعته به أوروبا، لأنّ الطالب قد يدرس فنّه سنين بذلك الاسم ولا يعلم قطّ أنه مسلم.",
+  /* The tab labels, the section headings and "Known in Europe as" are NOT keys
+     here on purpose. They live inside .en-only spans (or carry an emoji, which
+     stops the exact-string match anyway), so Arabic mode already hides them and
+     shows the Arabic twin beside them — the same bilingual heading pattern the
+     rest of the site uses. Adding "Mathematics", "Chemistry", "Astronomy" and
+     the like as keys would have translated those bare words in EVERY text node
+     on EVERY page, which is the same class of accident as the duplicate-key
+     trap: a key added for one page quietly changing another. */
+  "So what happened to us — and how do we go back?": "فماذا جرى لنا — وكيف نعود؟",
+  "That question deserves more than a page of pride. The answer is on the Guidance page, in the words of the Quran, the Sunnah and the scholars: why the ummah is in the state it is in, what the Prophet ﷺ said would cause exactly this, and the way back that he named.":
+    "وهذا السؤال أكبر من أن تُجاب عنه صفحةُ افتخار. والجواب في صفحة التوجيه، من الكتاب والسنة وكلام أهل العلم: لماذا صارت الأمة إلى ما صارت إليه، وما الذي أخبر النبي ﷺ أنه يورث هذا بعينه، والطريق الذي سمّاه للرجوع.",
+  "Nothing matches those words.": "لا يوجد ما يطابق هذه الكلمات.",
+  "Why we fell, and the way back": "لماذا سقطنا وكيف نعود",
+  "See What We Built": "انظر ماذا بنينا",
+  "28 of the men and women who built it — algebra, optics, surgery, the hospital, the university — with the Latinised name Europe gave each of them, what Europe built on their work, and the documented cases where the credit went elsewhere. Every claim says how strong its evidence is, the same way every hadith on this site does.":
+    "ثمانيةٌ وعشرون من الرجال والنساء الذين بنوه — الجبر والبصريات والجراحة والبيمارستان والجامعة — ومع كلٍّ منهم الاسم اللاتيني الذي سمّته به أوروبا، وما بنته أوروبا على عمله، والمواضع الموثّقة التي ذهب فيها الفضل إلى غيره. وكلّ دعوى مقرونةٌ بدرجة قوّتها، كما يُصنع مع كلّ حديثٍ في هذا الموقع.",
   // ---- Gradings ----
   // These appear on hundreds of cards. They are their own text nodes, so an
   // exact entry here translates every one of them site-wide. The owner's rule
@@ -345,9 +370,44 @@ const AR_PARTS = [
   [/\bhistorical sira, not hadith\b/g, "سيرة تاريخية لا حديث"],
   [/\bhistorical sira\b/g, "سيرة تاريخية"],
   [/\boutside the two Sahihs\b/g, "خارج الصحيحين"],
+  // The full phrase must come before the bare "the two Sahihs" below it,
+  // or that rule fires first and leaves "Outside الصحيحين".
+  [/\bOutside the two Sahihs\b/g, "خارج الصحيحين"],
   [/\bthe two Sahihs\b/g, "الصحيحين"],
   // Book titles inside references, longest first so they match before the
   // shorter words they contain.
+  /* Added for the Golden Age, the revival section and the new stories. These
+     MUST sit above the catch-all [/\bBook of\b/ → "كتاب"] at the bottom of
+     this list — without them the catch-all fires on its own and leaves
+     half-Arabic references on the page, like "كتاب Battles (al-Malahim)". */
+  [/Book of Tribulations and the Portents of the Last Hour/g, "كتاب الفتن وأشراط الساعة"],
+  [/Book of the Virtues of the Companions/g, "كتاب فضائل الصحابة"],
+  [/Book of Virtue and Good Manners/g, "كتاب البر والصلة والآداب"],
+  [/Book of Transactions \(al-Buyu'\)/g, "كتاب البيوع"],
+  [/Book of Prayer of Travellers/g, "كتاب صلاة المسافرين"],
+  [/Book of Prescribed Punishments/g, "كتاب الحدود"],
+  [/Book of Dhikr and Supplication/g, "كتاب الذكر والدعاء"],
+  [/Book of Belief \(Kitab al-Iman\)/g, "كتاب الإيمان"],
+  [/Book of Funerals \(al-Jana'iz\)/g, "كتاب الجنائز"],
+  [/Book of Battles \(al-Malahim\)/g, "كتاب الملاحم"],
+  [/Book of Dress and Adornment/g, "كتاب اللباس والزينة"],
+  [/Book of Marriage \(an-Nikah\)/g, "كتاب النكاح"],
+  [/Book of Manners \(al-Adab\)/g, "كتاب الأدب"],
+  [/Book of the Call to Prayer/g, "كتاب الأذان"],
+  [/Book of Afflictions/g, "كتاب الفتن"],
+  [/Book of Medicine/g, "كتاب الطب"],
+  [/Book of Fasting/g, "كتاب الصيام"],
+  [/Book of Prayers/g, "كتاب الصلاة"],
+  [/Book of Oaths/g, "كتاب الأيمان"],
+  [/Book of Adhan/g, "كتاب الأذان"],
+  // Trailing narrator and grading phrases that appear on the same lines.
+  [/\bnarrated from Ibn Umar\b/g, "من حديث ابن عمر"],
+  [/\bnarrated from Thawban\b/g, "من حديث ثوبان"],
+  [/\bnarrated from\b/g, "من حديث"],
+  [/\balso narrated by\b/g, "ورواه أيضًا"],
+  [/\bnarrated by\b/g, "رواه"],
+  [/\bgraded weak by\b/g, "وضعّفه"],
+  [/\bThe scholars differ\b/g, "والخلاف فيه ثابت"],
   [/Book of the Virtues of the Quran/g, "كتاب فضائل القرآن"],
   [/Book of the Description of the Day of Judgment/g, "كتاب صفة القيامة"],
   [/Book of Limits and Punishments/g, "كتاب الحدود"],

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608050833" />
+  <link rel="stylesheet" href="css/style.css?v=202608051436" />
 </head>
 <body>
 
@@ -34,6 +34,7 @@
         <a href="sunnah.html">Sunnah</a>
         <a href="stories.html">Stories</a>
         <a href="judgement.html">Judgement Day</a>
+        <a href="golden.html">Golden Age</a>
         <a href="guidance.html">Guidance</a>
         <a href="courses.html">Courses</a>
         <a href="search.html">Search</a>
@@ -61,6 +62,7 @@
         <input type="text" id="storySearch" dir="auto" placeholder="Search the stories — mercy, forgiveness, children, anger…  |  ابحث: الرحمة، العفو، الأطفال، الغضب…" />
       </div>
 
+      <div class="adhkar-tabs" id="storyTabs"></div>
       <div id="storyList" class="story-list"></div>
       <p id="storyEmpty" class="no-results" style="display:none;">No story matches those words yet. <span dir="rtl" style="font-family:'Amiri',serif;">لا توجد قصة تطابق هذه الكلمات.</span></p>
     </div>
@@ -83,6 +85,7 @@
             <li><a href="sunnah.html">Sunnah</a></li>
             <li><a href="stories.html">Stories of the Prophet صلى الله عليه وسلم</a></li>
             <li><a href="judgement.html">The Day of Judgement</a></li>
+            <li><a href="golden.html">The Golden Age of Islam</a></li>
             <li><a href="guidance.html">Guidance</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="search.html">Search</a></li>
@@ -101,7 +104,7 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608050833"></script>
+  <script src="js/data.js?v=202608051436"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -184,10 +187,17 @@
       </div>`;
     }
 
-    // Clear any filter first, so the target is definitely on the page.
+    // Clear any filter first, so the target is definitely on the page — the
+    // section chips are a filter too, so they have to be cleared as well or a
+    // series link can point at a card that is not currently rendered.
     function jumpToStory(id) {
       const inp = document.getElementById("storySearch");
-      if (inp.value) { inp.value = ""; searchStories(); }
+      if (inp.value) inp.value = "";
+      if (!document.getElementById(id)) {
+        storySection = "all";
+        renderStoryTabs();
+        renderGrouped();
+      }
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -220,9 +230,78 @@
       </article>`;
     }
 
+    /* ---------- Sections ----------
+       The stories are grouped by what the story TEACHES, not by when it
+       happened. Someone who has just lost their temper, or been wronged and
+       is able to answer it, should be able to open the section for that and
+       read those stories together — which is a different thing from
+       scrolling forty-five cards in the order they were written.
+
+       Three states, deliberately:
+         • a section chosen  → just that section
+         • "All"             → every section, each under its own heading
+         • a search typed    → flat results across everything, sections
+                               ignored, so a reader who types "anger" is
+                               never told there is nothing while sitting in
+                               the wrong tab. */
+    let storySection = "all";
+
+    function sectionHeading(sec) {
+      return `<div class="story-section-head" id="sec-${sec.id}">
+        <h2><span class="story-section-icon">${sec.icon}</span>
+          <span class="en-only">${sec.en}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${sec.ar}</span>
+        </h2>
+        <p class="en-only">${sec.leadEn}</p>
+        <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${sec.leadAr}</p>
+        <span class="story-section-count">${PROPHET_STORIES.filter(s => s.section === sec.id).length}</span>
+      </div>`;
+    }
+
+    function orderedSections() {
+      return [...STORY_SECTIONS].sort((a, b) => a.order - b.order);
+    }
+
+    // Flat list — used for search results, where a heading per section would
+    // just get in the way of the ranking.
     function renderStories(list) {
       document.getElementById("storyList").innerHTML = list.map(storyCard).join("");
       document.getElementById("storyEmpty").style.display = list.length ? "none" : "";
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function renderGrouped() {
+      const secs = orderedSections()
+        .filter(sec => storySection === "all" || sec.id === storySection);
+      let html = "";
+      secs.forEach(sec => {
+        const inSec = PROPHET_STORIES.filter(s => s.section === sec.id);
+        if (!inSec.length) return;
+        html += sectionHeading(sec) + inSec.map(storyCard).join("");
+      });
+      document.getElementById("storyList").innerHTML = html;
+      document.getElementById("storyEmpty").style.display = html ? "none" : "";
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function renderStoryTabs() {
+      const host = document.getElementById("storyTabs");
+      const all = `<button type="button" class="adhkar-tab${storySection === "all" ? " active" : ""}" data-sec="all">
+          📚 <span class="en-only">All ${PROPHET_STORIES.length}</span><span class="ar-only" dir="rtl">الكل ${PROPHET_STORIES.length}</span>
+        </button>`;
+      host.innerHTML = all + orderedSections().map(sec =>
+        `<button type="button" class="adhkar-tab${sec.id === storySection ? " active" : ""}" data-sec="${sec.id}">
+           ${sec.icon} <span class="en-only">${sec.en}</span><span class="ar-only" dir="rtl">${sec.ar}</span>
+         </button>`).join("");
+      host.querySelectorAll(".adhkar-tab").forEach(b => {
+        b.addEventListener("click", () => {
+          storySection = b.getAttribute("data-sec");
+          const inp = document.getElementById("storySearch");
+          if (inp.value) inp.value = "";
+          renderStoryTabs();
+          renderGrouped();
+        });
+      });
       if (window.applyI18n) window.applyI18n();
     }
 
@@ -234,11 +313,18 @@
     }
     function searchStories() {
       const q = normalise(document.getElementById("storySearch").value.trim());
-      if (!q) { renderStories(PROPHET_STORIES); return; }
+      // An empty box falls back to the grouped view rather than a flat list,
+      // so clearing a search returns you to the sections you came from.
+      if (!q) { renderGrouped(); return; }
       const words = q.split(/\s+/).filter(w => w.length >= 2);
+      // The section name is part of the haystack, so searching "mercy" or
+      // "الرحمة" finds the whole section as well as the individual stories.
+      const secName = {};
+      STORY_SECTIONS.forEach(x => { secName[x.id] = x.en + " " + x.ar; });
       const scored = PROPHET_STORIES.map(s => {
         const hay = normalise([s.title, s.titleAr, s.theme, s.themeAr, s.story, s.storyAr,
-                               s.lesson, s.lessonAr, (s.keys || []).join(" ")].join(" "));
+                               s.lesson, s.lessonAr, secName[s.section] || "",
+                               (s.keys || []).join(" ")].join(" "));
         let score = 0;
         words.forEach(w => { if (hay.includes(w)) score++; });
         return { s, score };
@@ -246,10 +332,11 @@
       renderStories(scored.map(x => x.s));
     }
 
-    renderStories(PROPHET_STORIES);
+    renderStoryTabs();
+    renderGrouped();
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/main.js?v=202608050833"></script>
-  <script src="js/i18n.js?v=202608050833"></script>
+  <script src="js/main.js?v=202608051436"></script>
+  <script src="js/i18n.js?v=202608051436"></script>
 </body>
 </html>

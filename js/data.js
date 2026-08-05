@@ -1588,7 +1588,13 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Self-Control",
     title: "True strength is controlling yourself when angry",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    /* Added because "أنا كثير الغضب" was returning the ruling on backbiting
+       instead of this. With no keys, an Arabic question could only reach this
+       entry through the hadith wording itself, which carries harakat and is
+       phrased nothing like the way a person actually asks. */
+    keys: ["anger", "angry", "temper", "rage", "self control", "control myself", "lose my temper", "patience", "restraint",
+           "الغضب", "غاضب", "كثير الغضب", "أغضب", "الحلم", "ملك النفس", "ضبط النفس", "العصبية", "أعصابي", "الصبر"]
   },
   {
     arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِجَارِهِ مَا يُحِبُّ لِنَفْسِهِ",
@@ -2636,9 +2642,67 @@ const AR_GLOSSARY = {
   "الوحي":      { ar: "ما يُنزله الله على أنبيائه", en: "revelation" }
 };
 
+/* ============================================================
+   THE SECTIONS OF THE STORIES — أقسام القصص
+   ------------------------------------------------------------
+   The stories are grouped by WHAT THE STORY TEACHES, not by when
+   it happened or where it was narrated. Someone who comes here
+   after losing their temper, or after being wronged and having
+   the power to answer it, should be able to find the section
+   that speaks to that and read the four or five stories in it
+   together — which is a different thing from scrolling forty
+   cards in the order they were written.
+
+   `order` fixes the sequence on the page. A story's `section`
+   must be one of these ids or it will not appear.
+   ============================================================ */
+const STORY_SECTIONS = [
+  { id: "mercy",       order: 1, icon: "🤲",
+    en: "Mercy and gentleness",              ar: "الرحمة واللين",
+    leadEn: "What he was like with the weak, the small and the ones who could do nothing for him.",
+    leadAr: "كيف كان مع الضعيف والصغير ومن لا يملك أن ينفعه بشيء." },
+  { id: "forgiveness", order: 2, icon: "🕊️",
+    en: "Forgiveness when he had the power", ar: "العفو عند المقدرة",
+    leadEn: "Every one of these is a moment when he could have taken revenge and did not — which is the only time forgiveness means anything.",
+    leadAr: "كلُّ موقفٍ منها ساعةٌ كان يقدر فيها على الانتقام فلم ينتقم — وحينئذٍ فقط يكون للعفو معنى." },
+  { id: "justice",     order: 3, icon: "🛡️",
+    en: "Justice, anger and ruling yourself", ar: "العدل والغضب وملك النفس",
+    leadEn: "What he did when the guilty person was well-connected, and what he told a man who asked for one piece of advice.",
+    leadAr: "ما صنع حين كان المذنب ذا جاه، وما قاله لرجلٍ سأله وصيّةً واحدة." },
+  { id: "people",      order: 4, icon: "🤝",
+    en: "How he treated people",             ar: "كيف عامل الناس",
+    leadEn: "Servants, neighbours, the poor, and people who were not Muslims at all.",
+    leadAr: "الخدم والجيران والفقراء ومن لم يكن مسلمًا أصلًا." },
+  { id: "dunya",       order: 5, icon: "⚖️",
+    en: "What this world is worth",          ar: "قدر الدنيا",
+    leadEn: "He ruled Arabia and slept on a mat that marked his side.",
+    leadAr: "ملك جزيرة العرب ونام على حصيرٍ أثّر في جنبه." },
+  { id: "trials",      order: 6, icon: "🌧️",
+    en: "Fear, grief and hardship",          ar: "الخوف والحزن والشدّة",
+    leadEn: "For anyone reading this in the middle of something hard: he was afraid, and he wept, and he was told what to do about both.",
+    leadAr: "لمن يقرأ هذا وهو في شدّة: قد خاف، وقد بكى، وقد بُيِّن له ما يصنع في الحالين." },
+  { id: "worship",     order: 7, icon: "🕌",
+    en: "Worship, sincerity and the small deed", ar: "العبادة والإخلاص والعمل اليسير",
+    leadEn: "How little a deed can be and still be the reason someone is forgiven.",
+    leadAr: "كم يصغر العمل ويبقى مع ذلك سبب مغفرة صاحبه." },
+  { id: "knowledge",   order: 8, icon: "📖",
+    en: "Knowing your religion",             ar: "معرفة الدين",
+    leadEn: "The religion set out plainly, in front of the companions, so that nobody would have to guess at it afterwards.",
+    leadAr: "الدين مبيَّنًا بين يدي الصحابة، حتى لا يبقى بعده تخمين." },
+  { id: "signs",       order: 9, icon: "✨",
+    en: "The signs he was given",            ar: "الآيات التي أُيِّد بها",
+    leadEn: "What was shown, who saw it, and what those who saw it did next.",
+    leadAr: "ما أُرِي، ومن رآه، وماذا صنع من رآه بعد ذلك." },
+  { id: "endtimes",    order: 10, icon: "⏳",
+    en: "The end of time",                   ar: "آخر الزمان",
+    leadEn: "The trial he warned about more than any other, and the two things he told everyone to do about it.",
+    leadAr: "الفتنة التي حذّر منها أكثر من غيرها، والأمران اللذان أمر كلَّ أحدٍ أن يصنعهما لها." }
+];
+
 const PROPHET_STORIES = [
   {
     id: "dajjal-tamim-jassasah",
+    section: "endtimes",
     group: "dajjal",
     groupTitle: "The Dajjal — the trial at the end of time",
     groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
@@ -2657,6 +2721,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-description-nawwas",
+    section: "endtimes",
     group: "dajjal",
     groupTitle: "The Dajjal — the trial at the end of time",
     groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
@@ -2675,6 +2740,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-fire-and-water",
+    section: "endtimes",
     group: "dajjal",
     groupTitle: "The Dajjal — the trial at the end of time",
     groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
@@ -2693,6 +2759,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-protection",
+    section: "endtimes",
     group: "dajjal",
     groupTitle: "The Dajjal — the trial at the end of time",
     groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
@@ -2711,6 +2778,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "dajjal-end",
+    section: "endtimes",
     group: "dajjal",
     groupTitle: "The Dajjal — the trial at the end of time",
     groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
@@ -2729,6 +2797,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "bedouin-mosque",
+    section: "mercy",
     title: "The bedouin who urinated in the mosque",
     titleAr: "الأعرابي الذي بال في المسجد",
     theme: "Gentleness in correcting people",
@@ -2744,6 +2813,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "jewish-boy-ill",
+    section: "people",
     title: "He visited the Jewish boy who served him",
     titleAr: "عيادته ﷺ للغلام اليهودي الذي كان يخدمه",
     theme: "Kindness beyond your own people",
@@ -2758,6 +2828,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "standing-funeral",
+    section: "people",
     title: "He stood for a funeral, and it was a Jew's",
     titleAr: "قيامه ﷺ لجنازة يهودي",
     theme: "The dignity of every human being",
@@ -2773,6 +2844,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "sword-forgiven",
+    section: "forgiveness",
     title: "The man who stood over him with a drawn sword",
     titleAr: "الرجل الذي اخترط سيفه على النبي ﷺ",
     theme: "Forgiveness when you have the upper hand",
@@ -2788,6 +2860,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "never-said-uff",
+    section: "people",
     title: "Ten years of service, and never one harsh word",
     titleAr: "عشر سنين من الخدمة بلا كلمة أذى",
     theme: "How you treat those who work for you",
@@ -2803,6 +2876,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "kissing-grandson",
+    section: "mercy",
     title: "\"Whoever shows no mercy will be shown none\"",
     titleAr: "«من لا يَرحم لا يُرحم»",
     theme: "Mercy to children",
@@ -2818,6 +2892,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "cave-of-thawr",
+    section: "trials",
     title: "In the cave, with the search party overhead",
     titleAr: "في الغار والطلب فوق رؤوسهما",
     theme: "Fear, and what answers it",
@@ -2833,6 +2908,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "splitting-moon",
+    section: "signs",
     title: "The moon split in two",
     titleAr: "انشقاق القمر",
     theme: "A sign given, and refused",
@@ -2848,6 +2924,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "water-from-fingers",
+    section: "signs",
     title: "Water flowed from between his fingers",
     titleAr: "نبع الماء من بين أصابعه",
     theme: "Enough, made from not enough",
@@ -2863,6 +2940,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "death-of-ibrahim",
+    section: "trials",
     title: "He wept when his son died",
     titleAr: "بكاؤه ﷺ عند موت ابنه إبراهيم",
     theme: "Grief that does not complain",
@@ -2878,6 +2956,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "mat-on-his-side",
+    section: "dunya",
     title: "Omar wept at the marks of the mat on his side",
     titleAr: "بكاء عمر لأثر الحصير في جنبه",
     theme: "What this world is worth",
@@ -2893,6 +2972,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "guest-in-the-dark",
+    section: "dunya",
     title: "They fed the guest in the dark and went hungry",
     titleAr: "أطعموا الضيف في الظلام وباتوا جياعًا",
     theme: "Preferring someone else over yourself",
@@ -2908,6 +2988,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "woman-who-swept",
+    section: "people",
     title: "He asked after the woman who swept the mosque",
     titleAr: "سؤاله ﷺ عن المرأة التي كانت تقُمّ المسجد",
     theme: "Nobody's work is beneath notice",
@@ -2922,6 +3003,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "gentleness-with-aisha",
+    section: "mercy",
     title: "\"Allah loves gentleness in all things\"",
     titleAr: "«إنّ الله يحبّ الرفق في الأمر كلّه»",
     theme: "Answering an insult",
@@ -2937,6 +3019,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "never-struck-anyone",
+    section: "mercy",
     title: "He never struck anyone with his hand",
     titleAr: "ما ضرب بيده شيئًا قطّ",
     theme: "Power that is never used on the weak",
@@ -2951,6 +3034,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "trench-food",
+    section: "dunya",
     title: "The food of one small meal fed a thousand",
     titleAr: "طعام قليلٌ أشبع ألفًا",
     theme: "Bringing what little you have",
@@ -2965,6 +3049,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "tailors-dish",
+    section: "people",
     title: "He ate beside a tailor and picked out the gourd",
     titleAr: "أكله ﷺ عند الخيّاط وتتبُّعه الدُّبّاء",
     theme: "Accepting an ordinary person's invitation",
@@ -2979,6 +3064,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "first-revelation",
+    section: "trials",
     title: "The first revelation, and what Khadijah said",
     titleAr: "بدء الوحي وما قالته خديجة",
     theme: "Being believed when you are terrified",
@@ -2994,6 +3080,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "feet-swollen",
+    section: "worship",
     title: "He prayed until his feet swelled",
     titleAr: "قيامه ﷺ حتى تورَّمت قدماه",
     theme: "Worship as gratitude, not as payment",
@@ -3009,6 +3096,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "thumamah",
+    section: "forgiveness",
     title: "\"Release Thumamah\"",
     titleAr: "«أطلقوا ثُمامة»",
     theme: "Winning someone by letting them go",
@@ -3024,6 +3112,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "poisoned-sheep",
+    section: "forgiveness",
     title: "The poisoned sheep at Khaybar",
     titleAr: "الشاة المسمومة بخيبر",
     theme: "Facing someone who tried to kill you",
@@ -3039,6 +3128,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "bilal-footsteps",
+    section: "worship",
     title: "He heard Bilal's footsteps ahead of him in Paradise",
     titleAr: "سماعه ﷺ دفَّ نعلي بلال في الجنة",
     theme: "The small thing you never stop doing",
@@ -3054,6 +3144,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "man-who-was-ruined",
+    section: "worship",
     title: "The man who came saying \"I am ruined\"",
     titleAr: "الرجل الذي جاء يقول: هلكتُ",
     theme: "Coming to be judged, and being fed",
@@ -3069,6 +3160,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "three-in-the-cave",
+    section: "trials",
     title: "Three men trapped by a rock, and the deeds that moved it",
     titleAr: "ثلاثةٌ أطبقت عليهم صخرة، والأعمال التي فرّجت عنهم",
     theme: "What a private deed is worth when nothing else is left",
@@ -3085,6 +3177,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "angel-tested-three",
+    section: "dunya",
     title: "The leper, the bald man and the blind man",
     titleAr: "الأبرص والأقرع والأعمى",
     theme: "What wealth does to a person who forgets where it came from",
@@ -3101,6 +3194,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "dog-at-the-well",
+    section: "mercy",
     title: "The woman who was forgiven because of a thirsty dog",
     titleAr: "المرأة التي غُفر لها بسبب كلبٍ عطشان",
     theme: "One act of mercy, from someone with nothing else to show",
@@ -3117,6 +3211,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "the-cat",
+    section: "mercy",
     title: "And the woman who entered the Fire over a cat",
     titleAr: "والمرأة التي دخلت النار في هرّة",
     theme: "The same door, opening the other way",
@@ -3133,6 +3228,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "abu-umayr-bird",
+    section: "mercy",
     title: "Abu Umayr, and what happened to the little bird",
     titleAr: "أبو عُمير وما فعل النُّغَير",
     theme: "He made time for a child's grief over a pet",
@@ -3149,6 +3245,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "with-whom-you-love",
+    section: "worship",
     title: "A man asked when the Hour is — and the answer changed everything",
     titleAr: "رجلٌ سأل عن الساعة، فكان الجواب غير ما انتظر",
     theme: "You are with the one you love",
@@ -3165,6 +3262,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "ansar-hunayn",
+    section: "people",
     title: "He gave the wealth to others, and told the Ansar what they were getting",
     titleAr: "أعطى المالَ غيرَهم، وبيّن للأنصار ما لهم",
     theme: "When the people who gave everything got nothing",
@@ -3181,6 +3279,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "tahnik-abdullah",
+    section: "mercy",
     title: "He chewed the dates himself, for a newborn",
     titleAr: "مضغ التمر بنفسه لمولودٍ صغير",
     theme: "What he did with his own hands for other people's children",
@@ -3197,6 +3296,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "umamah-in-prayer",
+    section: "mercy",
     title: "He led the prayer carrying his granddaughter",
     titleAr: "صلّى بالناس وهو حاملٌ حفيدته",
     theme: "He did not put the child down to pray",
@@ -3213,6 +3313,7 @@ const PROPHET_STORIES = [
   },
   {
     id: "thorn-on-the-road",
+    section: "worship",
     title: "A branch of thorns, moved off the road",
     titleAr: "غصن شوكٍ أُزيح عن الطريق",
     theme: "The smallest possible deed, and what came of it",
@@ -3226,6 +3327,125 @@ const PROPHET_STORIES = [
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["thorn", "road", "small deed", "charity", "forgiven", "removing harm",
            "الشوك", "الطريق", "إماطة الأذى", "العمل الصغير", "المغفرة"]
+  },
+  {
+    id: "makhzumi-woman",
+    section: "justice",
+    title: "\"Even if Fatimah bint Muhammad stole, I would cut off her hand\"",
+    titleAr: "«وايمُ الله لو أنّ فاطمة بنت محمد سرقت لقطعتُ يدها»",
+    theme: "When the guilty person is well-connected",
+    themeAr: "حين يكون المذنب ذا جاهٍ ونسب",
+    story: "A woman of the clan of Makhzum — one of the noble houses of Quraish — was caught stealing. Quraish were distressed at the thought of the punishment falling on one of their own, and they began looking for someone who could talk the Prophet ﷺ out of it. They said: who would dare speak to him about this? And they answered themselves: nobody but Usamah ibn Zayd, the beloved of Allah's Messenger ﷺ.\n\nSo Usamah spoke to him. And the Prophet ﷺ said: \"Do you intercede concerning one of the punishments prescribed by Allah?\"\n\nThen he stood up and addressed the people, and said: \"What destroyed the nations before you was that when a noble among them stole they left him, and when a weak one among them stole they carried out the punishment on him. By Allah, if Fatimah the daughter of Muhammad were to steal, I would cut off her hand.\"",
+    storyAr: "سرقت امرأةٌ من بني مخزوم — وهم من بيوتات قريش الشريفة — فأهمّ قريشًا شأنها أن يقع الحدّ على واحدةٍ منهم، فأخذوا يلتمسون من يكلّم النبيَّ ﷺ في أمرها. فقالوا: ومن يجترئ عليه؟ فقالوا: ما من أحدٍ إلا أسامة بن زيد، حِبُّ رسول الله ﷺ.\n\nفكلّمه أسامة، فقال رسول الله ﷺ: «أتشفع في حدٍّ من حدود الله؟»\n\nثم قام فاختطب في الناس فقال: «إنما أهلك الذين قبلكم أنهم كانوا إذا سرق فيهم الشريف تركوه، وإذا سرق فيهم الضعيف أقاموا عليه الحدّ. وايمُ الله، لو أنّ فاطمة ابنة محمدٍ سرقت لقطعتُ يدها».",
+    arabic: "إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ، وَإِذَا سَرَقَ فِيهِمُ الضَّعِيفُ أَقَامُوا عَلَيْهِ الْحَدَّ",
+    lesson: "He named the exact mechanism by which a society rots, and it is not the theft. It is one law for the connected and another for the weak. Notice also who he refused: Usamah was not a stranger, he was the person most beloved to him, and he was told plainly that closeness to the Prophet ﷺ buys nothing here. And notice the example he chose to make the point unanswerable — not a distant relative, but his own daughter, by name.\n\nThis is worth reading beside the Golden Age of this ummah and beside its decline. A civilisation is not destroyed from outside first. It is destroyed when its own people stop believing the law applies upward as well as downward.",
+    lessonAr: "سمّى ﷺ العلّة التي تتعفّن بها المجتمعات على وجه التحديد، وليست هي السرقة، بل أن يكون للشريف حكمٌ وللضعيف حكمٌ آخر. وتأمّل من ردّه: فأسامة ليس غريبًا، بل هو أحبّ الناس إليه، وقيل له صريحًا إنّ القرب من رسول الله ﷺ لا يشتري في هذا الباب شيئًا. وتأمّل المثال الذي ضربه ليقطع كلّ جواب: لم يذكر قريبًا بعيدًا، بل ذكر ابنته باسمها.\n\nويحسن أن يُقرأ هذا مع العصر الذهبي لهذه الأمّة ومع انحدارها. فالحضارة لا تُهدم من خارجٍ أولًا، وإنما تُهدم حين يكفّ أهلها عن الإيمان بأنّ الحكم يجري على من فوق كما يجري على من دون.",
+    ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 3475; also narrated by Muslim in the Book of Prescribed Punishments",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["justice", "law", "theft", "stealing", "makhzum", "usamah", "fatimah", "corruption", "favouritism", "equal before the law", "wasta",
+           "العدل", "الحدود", "السرقة", "المخزومية", "أسامة", "فاطمة", "المحسوبية", "الواسطة", "الشريف والضعيف"]
+  },
+  {
+    id: "do-not-become-angry",
+    section: "justice",
+    title: "A man asked for one piece of advice, and got the same answer every time",
+    titleAr: "رجلٌ طلب وصيّةً واحدة، فكان الجواب واحدًا في كلّ مرّة",
+    theme: "The advice he would not add to",
+    themeAr: "الوصيّة التي لم يزد عليها",
+    story: "A man came to the Prophet ﷺ and said: \"Advise me.\" He said: \"Do not become angry.\"\n\nThe man repeated the request several times — asking again, as though waiting for something longer, or something else. Each time the Prophet ﷺ gave him the same three words: \"Do not become angry.\"",
+    storyAr: "جاء رجلٌ إلى النبيّ ﷺ فقال: أوصني. قال: «لا تغضب».\n\nفردّد الرجل السؤال مرارًا — يسأل ثانيةً وثالثة، كأنه ينتظر جوابًا أطول أو جوابًا آخر. فكان ﷺ يعيد عليه في كلّ مرّة الكلمتين أنفسهما: «لا تغضب».",
+    arabic: "أَوْصِنِي‏.‏ قَالَ: لاَ تَغْضَبْ‏.‏ فَرَدَّدَ مِرَارًا، قَالَ: لاَ تَغْضَبْ",
+    lesson: "The man kept asking because the answer seemed too small for the question. That is the point of the repetition: the Prophet ﷺ did not soften it, lengthen it, or offer an alternative. Most of what a person destroys in their life — a marriage, a friendship, a reputation, sometimes a life — is destroyed inside the few minutes when they were angry and did not have to act. He gave the man the one instruction that would have prevented the most damage, and then refused to let him trade it for a longer one.",
+    lessonAr: "إنما أعاد الرجل السؤال لأنّ الجواب بدا له أصغر من المسألة. وهذا هو مقصود التكرار: فلم يليّنه النبيُّ ﷺ ولم يُطِله ولم يعرض عليه بديلًا. وأكثر ما يُهلكه المرء في حياته — من زوجةٍ وصديقٍ وسمعةٍ وربما نفسٍ — إنما يهلك في تلك الدقائق اليسيرة التي غضب فيها ولم يكن مضطرًّا أن يفعل شيئًا. فأعطاه الوصيّة الواحدة التي تدفع أكثر الضرر، ثم أبى أن يبدّلها له بأطول منها.",
+    ref: "Sahih al-Bukhari, Book of Manners (al-Adab), Hadith 6116",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["anger", "advice", "temper", "self control", "patience", "restraint",
+           "الغضب", "الوصية", "لا تغضب", "ملك النفس", "الحلم", "الصبر"]
+  },
+  {
+    id: "the-strong-one",
+    section: "justice",
+    title: "\"The strong one is not the wrestler\"",
+    titleAr: "«ليس الشديد بالصُّرَعة»",
+    theme: "What strength actually is",
+    themeAr: "ما القوّة حقيقةً",
+    story: "The Prophet ﷺ said: \"The strong one is not the one who overcomes people by his strength. The strong one is the one who controls himself when he is angry.\"",
+    storyAr: "قال رسول الله ﷺ: «ليس الشديد بالصُّرَعة، إنما الشديد الذي يملك نفسه عند الغضب».",
+    arabic: "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+    lesson: "He took a word the Arabs used with admiration — the champion wrestler, the man nobody could throw — and moved it. The one everybody calls strong is not strong. The strong one is the man who is being insulted, who has the answer ready in his mouth and the ability to say it, and who holds it. It is a redefinition, and he stated it as a fact rather than as encouragement.",
+    lessonAr: "أخذ ﷺ لفظًا كانت العرب تقوله إعجابًا — وهو الصُّرَعة الذي يصرع الرجال ولا يُصرع — فنقله عن موضعه. فالذي يسمّيه الناس قويًّا ليس بقويّ. وإنما القويّ الرجل يُشتم وقد حضره الجواب في فيه وقدر أن يقوله، فيمسكه. وهو تعريفٌ جديد، قرّره تقريرَ الحقائق لا تقريرَ الترغيب.",
+    ref: "Sahih al-Bukhari, Book of Manners (al-Adab), Hadith 6114; also narrated by Muslim in the Book of Virtue and Good Manners",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["strength", "strong", "anger", "wrestler", "self control", "restraint", "power",
+           "القوة", "الشديد", "الصرعة", "الغضب", "ملك النفس", "الحلم"]
+  },
+  {
+    id: "abu-dharr-slave",
+    section: "people",
+    title: "Abu Dharr insulted a man's mother, and was still wearing the answer years later",
+    titleAr: "عيّر أبو ذرٍّ رجلًا بأمّه، فظلّ يلبس الجواب سنين بعدها",
+    theme: "\"They are your brothers\"",
+    themeAr: "«إخوانكم خَوَلُكم»",
+    story: "Al-Ma'rur said: I met Abu Dharr رضي الله عنه at ar-Rabadhah, and he was wearing a fine garment, and his servant was wearing one exactly like it. I asked him about that.\n\nHe said: I insulted a man by speaking badly of his mother. So the Prophet ﷺ said to me: \"Abu Dharr — did you insult him about his mother? You are a man in whom there is still something of the days of ignorance. They are your brothers; Allah has put them under your hand. So whoever has his brother under his hand, let him feed him from what he eats and clothe him from what he wears. And do not burden them with what overwhelms them — and if you do burden them, then help them.\"",
+    storyAr: "قال المعرور: لقيتُ أبا ذرٍّ رضي الله عنه بالرَّبَذة وعليه حُلّة وعلى غلامه حُلّةٌ مثلها، فسألته عن ذلك.\n\nفقال: إني ساببتُ رجلًا فعيّرتُه بأمّه. فقال لي النبيُّ ﷺ: «يا أبا ذرٍّ، أعيّرتَه بأمّه؟ إنك امرؤٌ فيك جاهليّة. إخوانكم خَوَلُكم، جعلهم الله تحت أيديكم، فمن كان أخوه تحت يده فليُطعمه ممّا يأكل، وليُلبسه ممّا يلبس، ولا تُكلّفوهم ما يغلبهم، فإن كلّفتموهم فأعينوهم».",
+    arabic: "إِخْوَانُكُمْ خَوَلُكُمْ، جَعَلَهُمُ اللَّهُ تَحْتَ أَيْدِيكُمْ، فَمَنْ كَانَ أَخُوهُ تَحْتَ يَدِهِ فَلْيُطْعِمْهُ مِمَّا يَأْكُلُ، وَلْيُلْبِسْهُ مِمَّا يَلْبَسُ",
+    lesson: "The best part of this story is not the instruction. It is the garment. Al-Ma'rur met Abu Dharr years later, in a different town, and the first thing he noticed was that the servant was dressed exactly as well as the master — so he asked. That is what it looks like when a correction is actually accepted: not an apology, but a habit visible to a stranger long afterwards.\n\nAnd note what the Prophet ﷺ called the fault. Not rudeness — jahiliyyah, the thing Islam came to end, still sitting inside one of his own companions. He named it in one sentence and then gave the practical remedy in the next: your food, your clothing, and do not load them beyond what they can carry.",
+    lessonAr: "وأحسن ما في هذا الخبر ليس الوصيّة، بل الحُلّة. فقد لقي المعرورُ أبا ذرٍّ بعد سنين في بلدٍ آخر، فكان أول ما لفته أنّ الغلام يلبس مثل ما يلبس سيّده سواءً بسواء، فسأله. وهكذا تكون التوبة من الخطأ حقًّا: ليست اعتذارًا يُقال، بل عادةً يراها الغريب بعد حين.\n\nوتأمّل بمَ سمّى النبيُّ ﷺ الخطأ: لم يسمّه سوء أدب، بل سمّاه جاهليّةً — وهي التي جاء الإسلام ليمحوها — باقيةً في رجلٍ من أصحابه. سمّاها في جملة، ثم أعطى الدواء العمليّ في التي تليها: من طعامك، ومن لباسك، ولا تحمّلهم فوق طاقتهم.",
+    ref: "Sahih al-Bukhari, Book of Belief (Kitab al-Iman), Hadith 30; also narrated by Muslim in the Book of Oaths",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["servant", "worker", "employee", "slave", "abu dharr", "insult", "racism", "dignity", "staff", "boss",
+           "الخادم", "العامل", "الموظف", "المملوك", "أبو ذر", "السباب", "العنصرية", "الكرامة", "جاهلية", "إخوانكم خولكم"]
+  },
+  {
+    id: "patience-first-stroke",
+    section: "trials",
+    title: "\"Go away from me\" — she said it to the Prophet ﷺ, and did not know who he was",
+    titleAr: "«إليك عنّي» — قالتها للنبيّ ﷺ وهي لا تعرفه",
+    theme: "Grief, and the moment patience counts",
+    themeAr: "الحزن، واللحظة التي يُحسب فيها الصبر",
+    story: "Anas ibn Malik رضي الله عنه said: The Prophet ﷺ passed by a woman who was weeping at a grave. He said to her: \"Fear Allah, and be patient.\"\n\nShe said: \"Go away from me — you have not been struck by the affliction I have been struck by.\" And she did not recognise him.\n\nThen she was told: that was the Prophet ﷺ. So she came to his door, and found no doorkeepers there, and said: \"I did not know you.\" He said: \"Patience is only at the first stroke.\"",
+    storyAr: "قال أنس بن مالك رضي الله عنه: مرّ النبيُّ ﷺ بامرأةٍ تبكي عند قبر، فقال: «اتّقي الله واصبري».\n\nفقالت: إليك عنّي، فإنك لم تُصَب بمصيبتي. ولم تعرفه.\n\nفقيل لها: إنه النبيُّ ﷺ. فأتت باب النبيّ ﷺ فلم تجد عنده بوّابين، فقالت: لم أعرفك. فقال: «إنما الصبر عند الصدمة الأولى».",
+    arabic: "إِنَّمَا الصَّبْرُ عِنْدَ الصَّدْمَةِ الأُولَى",
+    lesson: "Three things are in this and each is worth taking on its own.\n\nShe told the Prophet ﷺ to go away, in her grief, and he did not rebuke her for it. He let her say it.\n\nWhen she came to his house there were no doorkeepers — that detail is in the hadith deliberately. The head of the state had no one at his door to keep a grieving woman out.\n\nAnd then the answer: patience is at the first stroke. Anyone can be calm a month later when the shock has worn off; that is not patience, it is time doing the work. What is counted is the first moment, before you have adjusted to it, when the news has just landed. If you are in that moment now, this hadith was recorded for you.",
+    lessonAr: "في هذا الخبر ثلاثة أمور، كلٌّ منها يستحقّ أن يُفرد.\n\nقالت للنبيّ ﷺ في حال حزنها: إليك عنّي، فلم يزجرها على ذلك، بل تركها تقولها.\n\nولمّا أتت بيته لم تجد عنده بوّابين، وهذه اللفظة في الحديث مقصودة: رئيس الدولة ليس على بابه من يردّ امرأةً مفجوعة.\n\nثم الجواب: «إنما الصبر عند الصدمة الأولى». فكلُّ أحدٍ يهدأ بعد شهرٍ حين يخفّ وقع المصيبة، وليس ذلك صبرًا، وإنما هو فعل الزمان. وإنما يُحسب لك الموضع الأول، قبل أن تتعوّد، وقد جاءك الخبر توًّا. فإن كنت في تلك اللحظة الآن، فإنّ هذا الحديث إنما دُوّن لك.",
+    ref: "Sahih al-Bukhari, Book of Funerals (al-Jana'iz), Hadith 1283; the wording alone also at Hadith 1302, and narrated by Muslim in the Book of Funerals",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["grief", "patience", "death", "loss", "grave", "mourning", "sabr", "calamity", "bereaved",
+           "الحزن", "الصبر", "الموت", "الفقد", "القبر", "المصيبة", "الصدمة الأولى", "العزاء"]
+  },
+  {
+    id: "body-has-a-right",
+    section: "worship",
+    title: "He told a man who fasted every day and prayed every night to stop",
+    titleAr: "أمر رجلًا يصوم النهار ويقوم الليل أن يكفّ",
+    theme: "Worship that does not consume the rest of your life",
+    themeAr: "عبادةٌ لا تأكل بقيّة حياتك",
+    story: "Abdullah ibn Amr ibn al-As رضي الله عنهما said: Allah's Messenger ﷺ said to me: \"Abdullah — have I not been told that you fast all day and stand in prayer all night?\" I said: \"Yes, O Messenger of Allah.\"\n\nHe said: \"Do not do that. Fast and break your fast; stand in prayer and sleep. For your body has a right over you, and your eye has a right over you, and your wife has a right over you.\"",
+    storyAr: "قال عبد الله بن عمرو بن العاص رضي الله عنهما: قال لي رسول الله ﷺ: «يا عبد الله، ألم أُخبَر أنك تصوم النهار وتقوم الليل؟» قلت: بلى يا رسول الله.\n\nقال: «فلا تفعل. صُمْ وأفطِر، وقُمْ ونَمْ، فإنّ لجسدك عليك حقًّا، وإنّ لعينك عليك حقًّا، وإنّ لزوجك عليك حقًّا».",
+    arabic: "فَإِنَّ لِجَسَدِكَ عَلَيْكَ حَقًّا، وَإِنَّ لِعَيْنِكَ عَلَيْكَ حَقًّا، وَإِنَّ لِزَوْجِكَ عَلَيْكَ حَقًّا",
+    lesson: "The man was not doing anything forbidden. He was fasting and praying — and he was told to stop. That is worth sitting with, because it cuts against the instinct that more is always better.\n\nAnd notice the word he used: haqq, a right. Not a concession, not a permission, not \"it is alright to rest sometimes\". Your body has a claim on you that you owe, your eyes have a claim on you, and the person you married has a claim on you. Neglecting them is not extra piety; it is a debt going unpaid. A religion that produced the hospitals, the observatories and the libraries of the Golden Age was never going to be a religion that told a man to ruin his body.",
+    lessonAr: "لم يكن الرجل يصنع محرَّمًا، وإنما كان يصوم ويصلّي، ومع ذلك قيل له: لا تفعل. وهذا موضع تأمّل، فإنه يخالف ما تنزع إليه النفوس من أنّ الزيادة خيرٌ أبدًا.\n\nوتأمّل اللفظ الذي استعمله: «حقًّا». لا رخصةً ولا إذنًا ولا أنه «لا بأس أن تستريح أحيانًا»، بل لبدنك عليك حقٌّ تؤدّيه، ولعينك عليك حقٌّ، ولمن تزوّجتَ عليك حقّ. فإضاعتها ليست زيادةً في التقوى، بل هي دَينٌ لم يُقضَ. ودينٌ أنشأ بيمارستانات العصر الذهبي ومراصده وخزائن كتبه ما كان ليأمر رجلًا أن يُتلف بدنه.",
+    ref: "Sahih al-Bukhari, Book of Marriage (an-Nikah), Hadith 5199; also narrated by Muslim in the Book of Fasting",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["balance", "moderation", "overdoing", "burnout", "rest", "sleep", "body", "wife", "fasting", "night prayer", "health",
+           "التوازن", "الاعتدال", "الغلو", "الراحة", "النوم", "الجسد", "الزوجة", "الصيام", "قيام الليل", "الصحة", "حق البدن"]
+  },
+  {
+    id: "jibril-teaching",
+    section: "knowledge",
+    title: "A stranger sat down and questioned him in front of everyone — and it was Jibril",
+    titleAr: "جلس رجلٌ غريبٌ يسأله على رؤوس الناس — فإذا هو جبريل",
+    theme: "The whole religion laid out in one sitting",
+    themeAr: "الدين كلّه مبيَّنًا في مجلسٍ واحد",
+    story: "Abu Hurairah رضي الله عنه said: One day the Prophet ﷺ was sitting out among the people, and Jibril came to him and asked: \"What is faith?\"\n\nHe said: \"Faith is that you believe in Allah, and His angels, and in meeting Him, and in His messengers, and that you believe in the Resurrection.\"\n\nHe asked: \"What is Islam?\" He said: \"Islam is that you worship Allah and associate nothing with Him, and establish the prayer, and pay the obligatory zakah, and fast Ramadan.\"\n\nHe asked: \"What is ihsan?\" He said: \"That you worship Allah as though you see Him — and if you do not see Him, then He sees you.\"\n\nHe asked: \"When is the Hour?\" He said: \"The one asked about it knows no more than the one asking. But I will tell you of its signs…\" Then the man turned to leave, and the Prophet ﷺ said: \"Bring him back.\" But they saw nothing. So he said: \"That was Jibril — he came to teach the people their religion.\"",
+    storyAr: "قال أبو هريرة رضي الله عنه: كان النبيُّ ﷺ بارزًا يومًا للناس، فأتاه جبريل فقال: ما الإيمان؟\n\nقال: «الإيمان أن تؤمن بالله وملائكته وبلقائه ورسله، وتؤمن بالبعث».\n\nقال: ما الإسلام؟ قال: «الإسلام أن تعبد الله ولا تشرك به، وتقيم الصلاة، وتؤدّي الزكاة المفروضة، وتصوم رمضان».\n\nقال: ما الإحسان؟ قال: «أن تعبد الله كأنك تراه، فإن لم تكن تراه فإنه يراك».\n\nقال: متى الساعة؟ قال: «ما المسؤول عنها بأعلمَ من السائل، وسأخبرك عن أشراطها…». ثم أدبر الرجل، فقال ﷺ: «ردّوه». فلم يروا شيئًا. فقال: «هذا جبريل جاء يُعلّم الناس دينهم».",
+    arabic: "هَذَا جِبْرِيلُ جَاءَ يُعَلِّمُ النَّاسَ دِينَهُمْ",
+    lesson: "Look at the method, not only the content. The religion was not left to be pieced together from scattered remarks. It was set out in public, in front of witnesses, as answers to plain questions, and then explicitly labelled at the end so that nobody would be in any doubt about what had just happened: this was Jibril, and he came so that the religion would be taught.\n\nThat is where the whole scholarly tradition of this ummah begins — the isnad, the collections, the checking of one narration against another, and eventually the men who measured the earth and mapped the sky. A religion that opens with \"Read\" and whose foundational lesson is a public question-and-answer session was always going to produce people who ask questions and write down the answers.",
+    lessonAr: "انظر إلى الطريقة لا إلى المضمون وحده. فلم يُترك الدين ليُجمع من كلامٍ متفرّق، بل بُيِّن على رؤوس الناس، بحضرة شهود، جوابًا عن أسئلةٍ ظاهرة، ثم صُرّح في آخره بما جرى حتى لا يبقى في الأمر شكّ: هذا جبريل، وإنما جاء ليُعلَّم الدين.\n\nومن هنا ابتدأ صرح العلم في هذه الأمّة كلّه: الإسناد، والدواوين، وعرض الرواية على الرواية، وانتهى الأمر إلى رجالٍ قاسوا الأرض ورسموا السماء. فدينٌ أوّل ما نزل فيه «اقرأ»، ودرسه التأسيسيّ سؤالٌ وجوابٌ بين الناس، كان لا بدّ أن يُخرج قومًا يسألون ويُقيّدون الجواب.",
+    ref: "Sahih al-Bukhari, Book of Belief (Kitab al-Iman), Hadith 50; also narrated by Muslim in the Book of Faith, from Umar ibn al-Khattab with additional wording",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["jibril", "gabriel", "iman", "islam", "ihsan", "faith", "religion", "teaching", "knowledge", "hour",
+           "جبريل", "الإيمان", "الإسلام", "الإحسان", "الدين", "التعليم", "العلم", "الساعة", "حديث جبريل"]
   }
 
 ];
