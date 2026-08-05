@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608052006" />
+  <link rel="stylesheet" href="css/style.css?v=202608052045" />
 </head>
 <body>
 
@@ -178,11 +178,11 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608052006"></script>
-  <script src="js/golden.js?v=202608052006"></script>
+  <script src="js/data.js?v=202608052045"></script>
+  <script src="js/golden.js?v=202608052045"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
-  <script src="js/golden-closing.js?v=202608052006"></script>
+  <script src="js/golden-closing.js?v=202608052045"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -439,6 +439,25 @@
        highlighted card, because the owner asked that the Prophet's ﷺ own
        words for protection and steadfastness stand out on the page rather
        than sit inside a paragraph where they get skimmed past. */
+    /* A verse may carry a real recitation rather than the browser's speech
+       synthesis. The site's own rule is that the Quran is only ever heard in
+       a human reciter's voice, so this uses the same everyayah source and the
+       same reciter ids as the Quran page — never speech synthesis. */
+    function closingAudio(a) {
+      if (!a) return "";
+      return `<div class="gc-recite">
+        <div class="gc-recite-head">
+          🎧 <span class="en-only">Listen to it recited</span><span class="ar-only" dir="rtl">استمع إليها مُرتَّلة</span>
+          — <span class="en-only">${a.reciter}</span><span class="ar-only" dir="rtl">${a.reciterAr}</span>
+        </div>
+        <audio controls preload="none" src="${a.url}"></audio>
+        ${a.note ? `<p class="gc-recite-note">
+          <span class="en-only">${a.note}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${a.noteAr}</span>
+        </p>` : ""}
+      </div>`;
+    }
+
     function closingQuote(q) {
       if (!q) return "";
       return `<blockquote class="gc-quote">
@@ -446,6 +465,7 @@
           <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>
         <p class="gc-quote-en en-only">${q.en}</p>
         <div class="refs"><span>${q.ref}</span><span>${q.strength}</span></div>
+        ${closingAudio(q.audio)}
       </blockquote>`;
     }
 
@@ -507,7 +527,7 @@
     renderClosing();
     document.getElementById("goldSearch").addEventListener("input", renderFigures);
   </script>
-  <script src="js/main.js?v=202608052006"></script>
-  <script src="js/i18n.js?v=202608052006"></script>
+  <script src="js/main.js?v=202608052045"></script>
+  <script src="js/i18n.js?v=202608052045"></script>
 </body>
 </html>
