@@ -1,6 +1,6 @@
 ---
 name: islam-is-the-way
-description: Build, fix or add content to the Islam Is The Way website (islamistheway.github.io) — a bilingual Arabic/English Islamic education site with Quran, Hadith, Sunnah, Prophets, Companions, courses and live classes. Use whenever working in the islam-is-the-way-site folder, or when the request involves this site's pages, its Arabic/English content, hadith gradings, the staff dashboard, meetings, or deploying it.
+description: Build, fix or add content to the Islam Is The Way website (islamistheway.github.io) — a bilingual Arabic/English Islamic education site with Quran, Hadith, Sunnah, Prophets, Companions, the Day of Judgement, the angels, the adhkar, the scholars' explanations, courses and live classes. Use whenever working in the islam-is-the-way-site folder, or when the request involves this site's pages, its Arabic/English content, hadith gradings, the staff dashboard, meetings, or deploying it.
 ---
 
 # Islam Is The Way — working on this website
@@ -21,6 +21,7 @@ GitHub Pages (live in 1–2 minutes).
 Always, before committing front-end changes:
 
 ```bash
+git fetch -q origin && git checkout origin/main -- data/site-config.json
 ./check-images.sh        # blocks images <1000px used as full-width backgrounds
 ./bump-version.sh        # cache-busts every css/js link — MANDATORY
 git add -A && git commit -m "..." && git push origin main
@@ -33,8 +34,7 @@ query (`?t=123`) to bypass the CDN cache.
 ### 2. Religious accuracy outranks everything
 - **Never invent a hadith number.** Cite collection + book if unsure
   ("Sahih Muslim, Book of Faith").
-- **Never attribute a hadith to the Quran**, or vice versa. This mistake was
-  made once and had to be corrected.
+- **Never attribute a hadith to the Quran**, or vice versa.
 - **Grading must name the authenticating scholar:**
   `Sahih — Narrated by al-Bukhari` ·
   `Sahih — Agreed upon (al-Bukhari and Muslim)` ·
@@ -45,23 +45,29 @@ query (`?t=123`) to bypass the CDN cache.
   that it is **not a fatwa** and a scholar should be consulted.
 
 ### 3. Everything is bilingual
-Every prophet, companion, hadith, sunnah entry and guidance theme carries an
-Arabic field (`summaryAr`, `titleAr`, `detailAr`, `descriptionAr`). Adding
-content without Arabic is incomplete. **Keep the tashkeel** — it is required for
-correct pronunciation and for the speech feature.
+Every prophet, companion, hadith, sunnah entry, story, angel, dhikr, ruling and
+guidance theme carries an Arabic field. Adding content without Arabic is
+incomplete. **Keep the tashkeel** — required for pronunciation and the speech
+feature.
+
+**When you change a user-facing English string that has an entry in the `AR`
+dictionary, change the Arabic value in the same commit.** They are matched by
+exact string. Changing one silently breaks the other — this happened with the
+home-page counts and had to be repaired.
 
 ### 4. Verify on the live site
 The owner finds bugs by using the deployed page. After pushing, wait for the
 deploy and test the real URL:
 
 ```bash
-until curl -s "https://islamistheway.github.io/js/sunnah.js" | grep -q "new text"; do sleep 5; done; echo live
+until curl -s "https://islamistheway.github.io/js/lives.js" | grep -q "new text"; do sleep 5; done; echo live
 ```
 
 ### 5. Be honest about limits
-Browser speech cannot recite Arabic properly. The staff login is a front-end
-check, not real security. Say so plainly instead of over-promising — the owner
-responds well to a clear explanation plus the nearest workable alternative.
+Browser speech cannot recite Arabic properly. The staff login and the reader
+sign-in are front-end only, not real security. A static site cannot collect
+visitors' feedback centrally. Say so plainly — the owner responds well to a
+clear explanation plus the nearest workable alternative.
 
 ---
 
@@ -70,63 +76,87 @@ responds well to a clear explanation plus the nearest workable alternative.
 ```
 index quran prophets companions hadith sunnah stories judgement guidance
 courses search login staff meeting                                     (.html)
+angels.html                → redirect to judgement.html#angels (kept for links)
 
 css/style.css              all styling, one file
-js/data.js                 PROPHETS, COMPANIONS, SURAHS (with Mushaf page
-                           numbers), HADITHS, PARADISE/WARNING_THEMES,
-                           PROPHET_STORIES, WORSHIP_STEPS, AR_GLOSSARY
-js/sunnah.js               SUNNAH_CATEGORIES + SUNNAH (166 entries)
-js/lives.js                FULL_LIVES (companions + prophets) + ONE_RELIGION
-js/judgement.js            JUDGEMENT_STAGES (14 stages)
-js/main.js                 nav, scroll reveal, analytics, text-to-speech,
-                           staff session, recitation video parsing, Quran
-                           verse lookup, translation helper
-js/quran.js                surah grid, 16 reciters, audio, reader modal,
-                           Mushaf page markers
+js/data.js                 PROPHETS, COMPANIONS, SURAHS (Mushaf pages), HADITHS,
+                           PARADISE/WARNING_THEMES, PROPHET_STORIES,
+                           WORSHIP_STEPS, AR_GLOSSARY
+js/sunnah.js               SUNNAH_CATEGORIES + SUNNAH
+js/lives.js                FULL_LIVES (all prophets + all companions), ONE_RELIGION
+js/judgement.js            JUDGEMENT_STAGES
+js/angels.js               ANGEL_GROUPS + ANGELS   (rendered on judgement.html)
+js/adhkar.js               ADHKAR_CATEGORIES + ADHKAR   (guidance.html)
+js/scholars.js             FIQH_CATEGORIES + FIQH_RULINGS   (guidance.html)
+js/scholars-books.js       SCHOLARS — who wrote what   (guidance.html)
+js/account.js              reader sign-in + saved verse   (quran.html)
+js/main.js                 nav, scroll reveal, analytics, text-to-speech, staff
+                           session, video parsing, site-wide feedback widget
+js/quran.js                surah grid, 16 reciters, audio, reader modal, Mushaf
+                           page markers, save-my-place
 js/i18n.js                 Arabic/English switch, RTL, reference translation
-data/site-config.json      staff-editable (courses, videos, meetings,
-                           payment, recitations)
-HANDOFF/                   full documentation — see below
+data/site-config.json      staff-editable (courses, videos, meetings, payment,
+                           recitations)
+HANDOFF/                   full documentation
 ```
 
-Script load order matters: `data.js` → `lives.js`/`judgement.js`/`sunnah.js` →
-page script → `main.js` → **`i18n.js` last**. Two exceptions where `main.js`
-loads EARLY on purpose, because the page script calls its helpers at parse
-time: `staff.html` and `companions.html`.
+Script load order matters: `data.js` → data files → page script → `main.js` →
+**`i18n.js` last**. Two exceptions where `main.js` loads EARLY on purpose,
+because the page script calls its helpers at parse time: `staff.html` and
+`companions.html`. On `quran.html`, `account.js` loads before `quran.js`.
 
 ### Never destroy what the owner published
 `data/site-config.json` holds his live recitations. Before committing, run
 `git checkout origin/main -- data/site-config.json` unless you are
-deliberately changing it — a stale local copy will delete his videos.
+deliberately changing it — a stale local copy will delete them.
+
+### The nav breakpoint must be RE-MEASURED whenever a link is added or removed
+It is not a guess. Measure with the desktop layout actually applied:
+
+```js
+brand.getBoundingClientRect().width + gap + nav.scrollWidth + padding
+```
+
+12 links need ~1145px, so the hamburger takes over below 1200px. This has been
+wrong **three times**: too low when links were added (Login fell off-screen),
+then left too high after Angels was removed (hamburger on laptops with room).
 
 ---
 
 ## Full documentation
 
-For architecture, every feature, data shapes, credentials, open work and content
-templates, read:
-
-**`HANDOFF/ISLAM-IS-THE-WAY-HANDOFF.md`** (single file, 7 parts)
-
-Read it before non-trivial work. Part 4 (owner's rules) and Part 5 (open work
-and limitations) are the most important.
+**`HANDOFF/ISLAM-IS-THE-WAY-HANDOFF.md`** (single file, 7 parts). Read it before
+non-trivial work. Part 4 (owner's rules) and Part 5 (open work) matter most.
 
 ---
 
 ## Adding content
 
-Templates and validation commands are in Part 7 of the handoff. Quick reference:
+**Sunnah entry** (`js/sunnah.js`) — `cat, title, titleAr, detail, detailAr, ref,
+strength, keys` (+ optional `arabic` with tashkeel).
 
-**Sunnah entry** (`js/sunnah.js`) — needs `cat, title, titleAr, detail,
-detailAr, ref, strength, keys` (and optional `arabic` with tashkeel). All 133
-entries have every field; keep it that way.
+**Hadith** (`js/data.js`) — `arabic, text, narrator, ref, topic, title, strength`
+(+ optional `keys`). The `title` should describe the *situation* — that is what
+situational search matches.
 
-**Hadith** (`js/data.js`) — needs `arabic, text, narrator, ref, topic, title,
-strength` (+ optional `keys`). The `title` should describe the *situation*, as
-that is what situational search matches.
-
-**Person** (`js/data.js`) — needs `id, name, arabic, title, category, summary,
+**Person** (`js/data.js`) — `id, name, arabic, title, titleAr, category, summary,
 summaryAr, refs`.
+
+**Full life** (`js/lives.js`) — key must match the person's `id`. Fields:
+`before, islam, change, greatest, death` each with an `Ar` twin, plus
+`sources: []`. Prophets also take `message`/`messageAr`. **Every source must
+state its rank.**
+
+**Angel** (`js/angels.js`) — `id, group, order, name, nameAr, role, roleAr,
+detail, detailAr, arabic, points: [{en, ar, ref}], ref, strength`.
+
+**Dhikr** (`js/adhkar.js`) — `id, cat, title, titleAr, arabic, en, count,
+countEn, countAr, virtue, virtueAr, ref, strength, keys`.
+
+**Ruling** (`js/scholars.js`) — `id, cat, title, titleAr, question, questionAr,
+answer, answerAr, points, evidence, scholars, difference, verify, keys`.
+Positions attributed BY NAME; disagreements stated with which way the weight of
+scholars leaned; fatwas cited by WORK, never by an invented volume/page.
 
 Always validate before committing:
 
@@ -139,71 +169,118 @@ A missing comma between objects silently breaks every page that loads the file.
 
 ---
 
+## Traps that have already cost time — do not repeat them
+
+- **Muslim's numbering in the jsdelivr hadith API is sequential (1–7563) and
+  does NOT match** the standard numbering. Bukhari's **does**. Cite Muslim by
+  book name unless the number is verified.
+- **Never run generated code through Python's `unicode_escape`.** It reads UTF-8
+  as Latin-1 and turns Arabic into mojibake (`الدورات` → `Ø§ÙØ¯ÙØ±Ø§Øª`),
+  and turns `\n` inside JS string literals into real newlines, which breaks the
+  whole script. Both happened. Write files as plain unicode with
+  `encoding="utf-8"`.
+- **After any bulk edit, grep for mojibake** (`Ø` `Ù` `â€`) across every HTML,
+  JS and CSS file. Structural checks pass while the Arabic is destroyed.
+- **`.en-only` / `.ar-only` need `!important`** — layout rules that also set
+  `display` will out-specify them.
+- **Duplicate keys in the `AR` dictionary silently overwrite.** Adding `"Quran"`
+  as a grading overwrote the navigation label. Check for duplicates after
+  editing i18n.js.
+- **Regex look-behind** breaks older Safari at parse time — avoided in
+  guidance.html and stories.html.
+- **A stale local `data/site-config.json`** deletes the owner's recitations.
+
+---
+
 ## Keeping this skill current
 
-**This skill does not update itself.** When a work session finishes something
-significant, update it deliberately:
+**This skill does not update itself.** When a session finishes something
+significant:
 
-1. Update `HANDOFF/ISLAM-IS-THE-WAY-HANDOFF.md` (and the numbered files in
-   `HANDOFF/` if the change belongs in one of them).
+1. Update `HANDOFF/ISLAM-IS-THE-WAY-HANDOFF.md` (and the numbered files).
 2. Update the "Current state" numbers below.
 3. Update `CLAUDE.md` at the repo root if a critical rule changed.
-4. Commit and push — the skill lives in the repo, so it travels with the project.
-
-Ask the owner at the end of a session: *"Shall I update the handoff and skill
-with what we changed today?"*
+4. Commit and push — the skill lives in the repo and travels with the project.
 
 ---
 
 ## Current state
 
-_Last updated: 3 August 2026_
+_Last updated: 4 August 2026_
 
-- 29 prophets · **66** companions (all 11 Mothers of the Believers; Sa'd ibn
-  Mu'adh added) · **16 full life stories** in `js/lives.js`
-- 43 curated hadith, plus full Sahih al-Bukhari + Muslim (~15,000) via API
-- **166** sunnah practices across 18 areas
-- **23** Quran guidance themes · 114 surahs · 16 reciters
-- **28 stories of the Prophet ﷺ** (`stories.html`), 5 of them a linked series
-  on the Dajjal
-- **The Day of Judgement** (`judgement.html`) — 14 stages, 58 points, 52
-  Quranic passages
-- **16 worship steps** in Guidance — what to say at each point of the prayer,
-  after it, daily, and for forgiveness
-- **Recommended recitations** on the home page, published from the dashboard
-- Bilingual switch with RTL, situational search, staff dashboard with tabbed
-  sections and one-click meeting start, live classes with recording and
-  translated captions, admin-only analytics, Bing-indexed
+| Content | Count |
+|---|---|
+| Prophets | 29 — **all with a full life and message** |
+| Companions | 65 — **all with a full life** |
+| Full lives in `js/lives.js` | **94** |
+| Stories of the Prophet ﷺ | **38** |
+| Curated hadith | 43 (+ ~15,000 Bukhari & Muslim via API) |
+| Sunnah practices | 166 across 18 areas |
+| Day of Judgement stages | **15** (incl. the Great Intercession) |
+| Angels | **33** in 5 groups |
+| Adhkar | **19** in 6 groups |
+| Scholars' rulings | **11** in 7 areas |
+| Scholars with their books | **10** |
+| Surahs | 114, 16 reciters, Mushaf page numbers |
+| Guidance themes | 23 + 16 worship steps |
+| `AR` dictionary keys | 215 |
 
-### New pages and files since the last handoff
-```
-stories.html      28 stories of the Prophet ﷺ, glossary box, series linking
-judgement.html    the Day of Judgement, 14 stages
-js/lives.js       FULL_LIVES (companions + prophets) and ONE_RELIGION
-js/judgement.js   JUDGEMENT_STAGES
-js/data.js        + WORSHIP_STEPS, AR_GLOSSARY, PROPHET_STORIES,
-                    pageFrom/pageTo/pages on all 114 SURAHS
-```
+### Built in the 3–4 August 2026 sessions
+- **All 94 full lives** written (was 16). Short-record prophets (Idris,
+  Dhul-Kifl, Al-Yasa, Shith, Yusha, Shamwil, Danyal) get honest short entries
+  that state what is NOT established rather than padding with Israiliyyat.
+- **The angels** — `js/angels.js`, rendered inside `judgement.html`. Israfil in
+  eight points (the two blasts, the forty between them, the tailbone, the horn
+  and its waiting bearer); Jibril gathered; Mika'il honestly (rain/provision is
+  NOT from the two Sahihs); the Mi'raj gatekeepers; and a group for what is
+  famous but unestablished (Azrail, Ridwan, Israfil's eyes).
+- **The Great Intercession** added as Judgement stage 5; all 15 renumbered.
+- **The adhkar** on Guidance, with a tap counter kept per day.
+- **The scholars' explanations** on Guidance — Ibn Baz, Ibn Uthaymeen, the
+  Permanent Committee, an-Nawawi, al-Albani — searched and shown FIRST, because
+  "what counts as hijab" is answered by scholars, not by a hadith of warning.
+  Plus **the scholars and their books** (Ibn Taymiyyah, Ibn al-Qayyim, Ibn
+  Kathir, Ibn Hajar, as-Sa'di, ash-Shafi'i…).
+- **Reader sign-in on the Quran page** (`js/account.js`) — username (not an
+  email), password ≥6, SHA-256 salted hash, saves the exact surah and verse.
+  The Save button sits beside Stop and arms when a verse's audio finishes;
+  "Continue where you stopped" reopens it. Device-local, and says so.
+- **Feedback form on every page**, injected from `main.js`; staff panel reads
+  the device-local copies with an honest note that the real inbox is email.
+- **Guidance mic** is now a click-on/click-off toggle that survives pauses.
+- **Courses page** advertises nothing — it says courses are on the way until the
+  staff adds one. Staff editor does add/edit/delete and a connected-series option.
+- Omar and Osman spelled with **O** (ids unchanged, so search still works).
+- Arabic mode swept: prophets and Quran pages are clean; gradings, references,
+  Mushaf pages and Arabic-Indic numerals all translate.
 
 ## The rule that matters most in this project
 
-**Say how strong a source is, every time.** The owner asks for "the strongest
-reference" and means it. So:
+**Say how strong a source is, every time.**
 
-- Bukhari/Muslim → cite the number. That is the top rank.
+- Bukhari/Muslim → cite the number. Top rank.
 - at-Tirmidhi, an-Nasa'i, Abu Dawud, Ahmad → name the collection AND say it is
   outside the two Sahihs.
-- Ibn Ishaq, Ibn Sa'd, at-Tabari → label **historical sira, not hadith**.
-- If something famous is NOT authentic, **say so on the entry**. Examples
-  already on the site: the 70,000 angels at Sa'd ibn Mu'adh's funeral, the
-  names Azrail and Ridwan, Munkar and Nakir, Ayat al-Kursi after every prayer.
+- Ibn Ishaq, Ibn Sa'd, at-Tabari, Ibn Kathir → label **historical sira, not
+  hadith**.
+- If something famous is NOT authentic, **say so on the entry**. Already on the
+  site: the 70,000 angels at Sa'd ibn Mu'adh's funeral · Azrail · Ridwan ·
+  Munkar and Nakir · Ayat al-Kursi after every prayer · Israfil's eyes ·
+  Mika'il and the rain · the forty-year gate of Paradise (it is Utbah ibn
+  Ghazwan's words, not the Prophet's ﷺ).
 
-Never invent a hadith number. Muslim's numbering in the jsdelivr API is
-**sequential (1–7563) and does NOT match** the standard numbering — cite Muslim
-by book name unless you have verified the number. Bukhari's numbering in that
-API **does** match.
+## Open work
 
-**Open work:** more companion full lives (16 of 66 done) and more prophets
-(4 of 29); save-your-place in the Quran; Gmail sign-in (blocked — needs an
-OAuth Client ID from the owner's own Google Cloud Console); Arabic speech
-quality is limited by the voices installed on the reader's device.
+1. **Hadith page in Arabic** — the 43 curated hadith have English `title` and
+   `topic` with no Arabic twin, so ~100 English strings remain in Arabic mode.
+   Needs `titleAr` and `topicAr` written.
+2. **Courses page in Arabic** — ~108 UI strings with no `AR` entries.
+3. **Companion reference lines** — ~27 English descriptions in `refs` arrays
+   ("Historical sira accounts of the first Caliphate").
+4. **Gmail sign-in** — blocked: needs an OAuth Client ID from the owner's own
+   Google Cloud Console. The device-local reader account now covers most of the
+   value.
+5. **Cross-device saved place** — would need a real backend.
+6. **Arabic speech quality** — limited by the voices installed on the reader's
+   device; nothing in the code can fix it.
+7. **Google Search Console** — still not set up (Bing is verified and indexed).

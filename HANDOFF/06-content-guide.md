@@ -201,3 +201,48 @@ awk '/^  \}$/{l=NR} /^  \{/{if(NR==l+1) print "MISSING COMMA "l}' js/sunnah.js
 # judgement stage order must be 1..n with no gaps
 grep -o 'order: [0-9]*' js/judgement.js
 ```
+
+
+---
+
+## Adding a full life, an angel, a dhikr or a ruling
+
+**Full life** (`js/lives.js`) — key must equal the person's `id` in
+COMPANIONS/PROPHETS. `before, islam, change, greatest, death` each with an `Ar`
+twin, plus `sources: []`. Prophets also take `message`/`messageAr`. For a
+companion, `greatest` should be **the one situation they are most known for** —
+that is what the owner asked for. Every source must state its rank.
+
+**Angel** (`js/angels.js`) — `id, group, order, name, nameAr, role, roleAr,
+detail, detailAr, arabic, points: [{en, ar, ref}], ref, strength, keys`.
+Each point carries its OWN reference, because a single angel's entry mixes
+Quran, the two Sahihs and unestablished material.
+
+**Dhikr** (`js/adhkar.js`) — `id, cat, title, titleAr, arabic, en, count,
+countEn, countAr, virtue, virtueAr, ref, strength, keys`. `count` drives the tap
+counter.
+
+**Ruling** (`js/scholars.js`) — attribute BY NAME, state the disagreement and
+which way the weight leaned, and cite fatwas by WORK (Majmu' Fatawa Ibn Baz,
+Ash-Sharh al-Mumti', Fatawa Nur 'ala ad-Darb) — never an invented volume/page.
+Every entry ends with `verify` pointing at binbaz.org.sa / binothaimeen.net.
+
+### The working method for sourcing — use it, do not write from memory
+```bash
+for e in ara-bukhari ara-muslim eng-bukhari eng-muslim; do
+  curl -s -o "$e.json" "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/$e.json"
+done
+# search the ENGLISH for the story, then copy the ARABIC from the same record
+```
+
+### Extra checks now worth running
+```bash
+# mojibake anywhere (Arabic destroyed by a bad encode/decode)
+grep -l 'Ø§\|ÙÙ\|â€' *.html js/*.js css/*.css
+
+# duplicate keys in the AR dictionary
+grep -oE '^  "([^"]+)":' js/i18n.js | sort | uniq -d
+
+# every FULL_LIVES key must be a real person
+#   Object.keys(FULL_LIVES).filter(k => ![...COMPANIONS,...PROPHETS].some(p=>p.id===k))
+```

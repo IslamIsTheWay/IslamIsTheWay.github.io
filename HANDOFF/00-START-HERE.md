@@ -97,3 +97,37 @@ Read `03-owner-preferences.md` before making changes. Key points:
 - The owner communicates by voice, so requests arrive as long paragraphs with
   several asks bundled together. Break them into a task list and do all of them.
 </content>
+
+
+---
+
+## Current state — 4 August 2026
+
+**Content**
+- 29 Prophets — **every one with a full life and the message he was sent with**
+- 65 Companions — **every one with a full life** (all 11 Mothers of the
+  Believers). 94 full lives in total in `js/lives.js`
+- 43 curated hadith with grading, plus full Sahih al-Bukhari + Muslim
+  (~15,000) via API
+- 166 Sunnah practices across 18 areas of daily life
+- 23 Quran guidance themes, 16 worship steps, **19 adhkar**, **11 scholars'
+  rulings**, **10 scholars with their books**
+- **38 Stories of the Prophet ﷺ**, 5 of them a linked series on the Dajjal
+- The Day of Judgement — **15 stages** including the Great Intercession
+- **33 angels**, rendered inside the Day of Judgement page
+- 114 surahs with 16 reciters and Mushaf page numbers
+- A 65-word classical Arabic glossary (AR_GLOSSARY)
+
+**Pages**: index, quran, prophets, companions, hadith, sunnah, stories,
+judgement (which now contains the angels), guidance, courses, search, login,
+staff, meeting. `angels.html` is a redirect to `judgement.html#angels`.
+
+**Working**: bilingual switch with RTL; situational search that shows the
+scholars' explanation first; Quran audio with Mushaf page markers and a
+**reader sign-in that saves the exact verse you stopped at**; hadith search;
+**feedback form on every page**; staff dashboard with publishing, a remembered
+token, saved drafts and a **simple course editor**; live meetings; analytics.
+
+**Note on the counts**: the companion total is **65**, not 66. Sa'd ibn Mu'adh
+was in the data twice — added again when his full life was written — and the
+duplicate was removed.

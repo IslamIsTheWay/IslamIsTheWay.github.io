@@ -179,3 +179,58 @@ One button adds AND publishes; publishing is blocked if a video sits unadded.
 Sign-in lasts 12 hours in localStorage and survives leaving the page; every
 change is saved as a draft and restored; a banner warns when something is not
 published; the GitHub token is remembered after the first successful publish.
+
+
+---
+
+## Added 3–4 August 2026
+
+### The angels (inside `judgement.html`)
+33 entries in five groups: the named angels, the night of the Mi'raj, those
+named in the Quran, those around you every day, and **what is famous but not
+established**. Israfil is given in eight points — his name IS established
+(Sahih Muslim), the first blast kills everything and the second raises it
+(39:68), it is one shout (36:49-53), forty between them (al-Bukhari 4935), the
+tailbone, the horn and its already-waiting bearer (at-Tirmidhi, outside the two
+Sahihs) — and then, explicitly, that his eyes, his size and his never blinking
+are NOT established.
+
+### The Great Intercession (Judgement stage 5)
+People go from Adam to Nuh to Ibrahim to Musa to Isa, each saying "myself,
+myself", until they come to Muhammad ﷺ. al-Bukhari 4712 and Muslim. All 15
+stages renumbered.
+
+### The adhkar (Guidance)
+19 entries in 6 groups with a **tap counter** stored per day in localStorage,
+Arabic-Indic numerals in Arabic mode, and a card that turns green when finished.
+
+### What the scholars explained (Guidance)
+11 rulings across dress, prayer, purity, money, family, conduct and repentance.
+**Searched and rendered FIRST**, because "what actually counts as hijab" is
+answered by the scholars' conditions, not by a hadith of warning — which was the
+specific complaint that prompted it. Every position attributed by name;
+disagreements stated with which way the weight of scholars leaned; fatwas cited
+by work, never by an invented volume and page. Plus the scholars and their books.
+
+### Reader sign-in and save-your-place (Quran)
+Username (not an email, 3–20 chars, starts with a letter), password ≥6, stored
+as a SHA-256 hash of a random salt. The **Save button sits beside Stop** and
+arms only when a verse's audio finishes. Signing back in shows one button:
+"Continue where you stopped — Surah X, verse N", which reopens and scrolls to it.
+**Device-local**, and the panel says so plainly.
+
+### Feedback on every page
+Injected above the footer by `iitwInjectFeedback()` in `main.js` — one copy to
+maintain. Saves to the device and opens the mail client. The staff Feedback
+panel lists the device-local copies with an honest note that a serverless site
+cannot collect other people's messages.
+
+### Guidance mic
+Click on, click off. `continuous` plus a restart in `onend` unless the user
+actually stopped it, so a pause no longer closes the mic. Only NEW final text is
+appended, so a pause cannot paste the same sentence twice.
+
+### Courses
+The page advertises nothing until the staff adds a course. Staff editor does
+add / edit / delete, and each course can be standalone or part of a **named
+series with an order**, grouped under one heading on the page.

@@ -144,3 +144,32 @@ avoids repeating mistakes that have already been made once.
 25. **Never overwrite `data/site-config.json`.** It holds the recitations he
     published. Always `git checkout origin/main -- data/site-config.json`
     before committing unless you are deliberately changing it.
+
+
+---
+
+## Learned 3–4 August 2026
+
+26. **Omar and Osman are spelled with an O.** Not Umar, not Uthman. The internal
+    ids stay `umar`/`uthman` so search still finds them.
+
+27. **When the record is short, say so — do not pad it.** For Idris, Dhul-Kifl,
+    Al-Yasa, Shith, Yusha, Shamwil and Danyal the entry states plainly what is
+    NOT established instead of filling the space with Israiliyyat. He asked for
+    a decision to be made rather than another question, and this was it.
+
+28. **Guidance must EXPLAIN, not just quote.** Searching for the hijab returned
+    the hadith of the curse, and that was wrong — he wanted the conditions:
+    covers everything, not an adornment in itself, thick, loose, not perfumed,
+    no imitation of men, not a garment of fame. Texts answer "is it commanded";
+    only the scholars answer "what counts".
+
+29. **Where scholars differ, say who said what AND which way the weight leaned.**
+    His words: "say that this person said this, but the other said the opposite,
+    and most of the scholars said the first was right."
+
+30. **He notices numbers.** Counts on the home page must be corrected in English
+    AND Arabic together whenever content is added.
+
+31. **He asks for one thing at a time when it matters.** "I only want you to
+    concentrate on one thing" — when he says that, do not spread effort.

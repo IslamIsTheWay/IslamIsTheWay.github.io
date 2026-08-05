@@ -181,3 +181,57 @@ The normal order is `data.js` → data files → page script → `main.js` →
 early**, before their inline script, because that script calls
 `iitwParseVideo` / `iitwEsc` / `iitwStaffUser` while parsing. `main.js` has no
 top-level DOM access, so loading it early is safe. Do not "tidy" this back.
+
+
+---
+
+## Files added in the August 2026 sessions
+
+```
+js/angels.js           ANGEL_GROUPS + ANGELS (33) — rendered on judgement.html
+js/adhkar.js           ADHKAR_CATEGORIES + ADHKAR (19) — guidance.html
+js/scholars.js         FIQH_CATEGORIES + FIQH_RULINGS (11) — guidance.html
+js/scholars-books.js   SCHOLARS (10) — who wrote what — guidance.html
+js/account.js          reader sign-in and the saved verse — quran.html
+angels.html            now only a redirect to judgement.html#angels
+```
+
+### New data shapes
+
+```js
+// js/angels.js
+ANGELS       { id, group, order, name, nameAr, role, roleAr, detail, detailAr,
+               arabic, points: [ { en, ar, ref } ], ref, strength, keys }
+             group: miraj | named | quran | sahih | notest
+
+// js/adhkar.js
+ADHKAR       { id, cat, title, titleAr, arabic, en, count, countEn, countAr,
+               virtue, virtueAr, ref, strength, keys }
+
+// js/scholars.js
+FIQH_RULINGS { id, cat, title, titleAr, question, questionAr, answer, answerAr,
+               points: [{en,ar}], evidence: [{en,ar,ref}],
+               scholars: [{name,nameAr,view,viewAr,work}],
+               difference, differenceAr, verify, verifyAr, keys }
+
+// js/scholars-books.js
+SCHOLARS     { id, name, nameAr, years, yearsAr, known, knownAr,
+               books: [ { t, tAr, d, dAr } ] }
+
+// js/account.js  (localStorage only — no server)
+iitw-readers        { "<lowercased username>": { display, salt, hash, place } }
+iitw-reader-session "<lowercased username>"
+place               { surah, surahName, surahArabic, ayah, at }
+
+// js/judgement.js — a point may now carry a numbered list
+points[]     { en, ar, quran, ref, items?: [ { en, ar } ] }
+
+// data/site-config.json — a course may now belong to a series
+extraCourses [ { id, title, level, price, description, includes[], videoUrl,
+                 series, order } ]
+```
+
+### Load order additions
+`quran.html` loads `account.js` BEFORE `quran.js`. `judgement.html` loads
+`angels.js` before `judgement.js`. `guidance.html` loads `adhkar.js`,
+`scholars.js` and `scholars-books.js` after `sunnah.js`.

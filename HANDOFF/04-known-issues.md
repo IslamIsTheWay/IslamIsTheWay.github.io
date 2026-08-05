@@ -123,3 +123,44 @@
   whole file. Avoided in guidance.html and stories.html.
 - **A stale local `data/site-config.json`** will delete the owner's published
   recitations on commit.
+
+
+---
+
+## Open work as of 4 August 2026
+
+**Done since the last handoff** — full lives (all 94), the angels, the Great
+Intercession, the adhkar, the scholars' rulings and books, reader sign-in with
+save-your-place, feedback on every page, the mic toggle, the courses rework.
+
+**Still open**
+1. **Hadith page in Arabic** — the 43 curated hadith have English `title` and
+   `topic` with no Arabic twin, so ~100 English strings remain in Arabic mode.
+2. **Courses page in Arabic** — ~108 UI strings with no `AR` entries.
+3. **Companion `refs` lines** — ~27 English descriptions.
+4. **Gmail sign-in** — still blocked on an OAuth Client ID from his own Google
+   Cloud Console.
+5. **Cross-device saved place** — needs a real backend.
+6. **Arabic speech quality** — device-dependent, not fixable in code.
+7. **Google Search Console** — still not set up.
+
+## Traps added in these sessions — do not reintroduce
+
+- **Never run generated code through Python's `unicode_escape`.** It reads UTF-8
+  as Latin-1 and destroys Arabic (`الدورات` → `Ø§ÙØ¯ÙØ±Ø§Øª`), and it turns
+  `\n` inside JS string literals into REAL newlines, which split the literals
+  and broke the entire staff dashboard. Both of these actually happened and both
+  reached or nearly reached the live site.
+- **After a bulk edit, grep every HTML/JS/CSS file for mojibake** (`Ø` `Ù` `â€`).
+  Element counts and console checks pass while the Arabic is ruined.
+- **Duplicate keys in the `AR` dictionary silently overwrite.** Adding `"Quran"`
+  as a grading overwrote the navigation label.
+- **`.en-only` / `.ar-only` need `!important`** or layout rules out-specify them.
+- **Re-measure the nav breakpoint on every link change.** Wrong three times.
+- **In RTL, `element.right > clientWidth` is NOT an overflow test** — the
+  scrollbar moves left and shifts the origin. Use
+  `documentElement.scrollWidth > clientWidth`.
+- **One wrong hadith number was found and fixed**: entering the mosque cited
+  al-Bukhari 1163, which is the two rak'ahs of Fajr; it is **1167**. All 78
+  Bukhari-numbered citations were then checked mechanically against the source
+  text — the rest were correct.
