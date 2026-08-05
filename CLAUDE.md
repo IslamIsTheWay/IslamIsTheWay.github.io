@@ -93,6 +93,42 @@ git add -A && git commit -m "..." && git push origin main
 - **In RTL, `element.right > clientWidth` is not an overflow test** — the
   scrollbar moves to the left. Use `documentElement.scrollWidth > clientWidth`.
 
+## Added 5 August 2026 — second pass
+
+- **Golden Age now opens with a summary.** `GOLDEN_OVERVIEW` in `js/golden.js`:
+  what the period was in plain words, exactly WHEN (with the honest caveat that
+  the usual 750–1258 is Baghdad-shaped — Maragha, Ibn Khaldun, Ulugh Beg and
+  Taqi ad-Din all came after), where, a 16-item summary of what came out of it,
+  and a 22-entry dated timeline. Most readers have never heard the period
+  existed, so this comes before any name or any argument.
+- **`js/terms.js`** — 48 technical words explained in plain English and Arabic
+  (awrah, mahram, khimar, 'inah, waswas, khuff, hudud, ijma'…), shown as a
+  "Words explained" box under every ruling and every revival card, listing only
+  the words that actually appear in that card.
+- **`js/figures.js`** — inline SVG diagrams for four rulings (hijab conditions,
+  which part of the sock is wiped, rak'ah on a journey, ghibah vs slander).
+  **Drawn, not fetched from the web**: no copyright risk, nothing to go dead,
+  no photograph of a real person, and a diagram shows the RULE where a photo
+  shows one outfit.
+- **Photo bands on Stories and Guidance**, and a softer scroll arrival —
+  gentler curve, slight scale, and a stagger so the Arabic line, the heading
+  and the paragraph arrive in sequence.
+
+### Traps hit in this pass
+
+- **Arabic substring matching is never safe.** ولي (wali) sits inside وليس,
+  وهن (wahn) inside وهنّ, and عينة ('inah) matched بعينه. Match Arabic WORD BY
+  WORD after stripping harakat and the attached prefixes, and anchor a term to
+  its definite form (الوهن، الجمع) when the bare form is also a common word.
+  This is the same trap the Stories glossary hit with كلّ / الكَلّ.
+- **An SVG with a `min-width` widens its card instead of scrolling.** A grid
+  item defaults to `min-width: auto`, so it grows to fit and pushes the whole
+  page sideways on a phone. The scroll wrapper needs `min-width: 0`.
+- **`innerText` returns the text of `display:none` elements**, and a CSS
+  transition does not advance while the browser pane is not compositing — both
+  produced false bug reports. Use `getComputedStyle(el).display`, and read
+  resting values with transitions disabled.
+
 ## Added 5 August 2026
 
 - **`golden.html` + `js/golden.js`** — the Golden Age of Islam. 28 figures, each

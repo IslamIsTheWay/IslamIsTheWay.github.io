@@ -40,6 +40,146 @@ const GOLDEN_FIELDS = [
 ];
 
 /* ============================================================
+   WHAT THIS ACTUALLY WAS — الملخّص
+   ------------------------------------------------------------
+   Rendered FIRST, above everything else, because most people
+   who open this page have never been told that this period
+   existed at all. Before any names or any argument about who
+   took the credit, the reader needs four plain answers:
+
+       what was it · when exactly · where · what came out of it
+
+   Only then do the detailed cards make sense. Everything below
+   is a summary of what the rest of the page proves in detail.
+   ============================================================ */
+
+const GOLDEN_OVERVIEW = {
+  title: "First — what was the Golden Age of Islam?",
+  titleAr: "أولًا — ما العصر الذهبي للإسلام؟",
+
+  what: "For roughly seven hundred years, the centre of the world's learning was not in Europe. It was in Baghdad, Cordoba, Cairo, Damascus and Samarkand.\n\nIn that period Muslims did not simply preserve what the Greeks and Indians had written — although they did that too, and Europe got much of its own Greek inheritance back through Arabic. They corrected it, tested it, and built new sciences that had not existed before: algebra, the study of light, laboratory chemistry, clinical medicine, the science of society. They built the first hospitals that treated anyone free of charge, and the first university still teaching today.\n\nIf you have never heard this, that is the normal experience — including for most Muslims. It is not a small footnote to European history. For several centuries it WAS the history.",
+  whatAr: "نحو سبعمئة سنة، لم يكن مركز العلم في الدنيا بأوروبا، بل كان في بغداد وقرطبة والقاهرة ودمشق وسمرقند.\n\nولم يكن المسلمون في تلك المدّة حافظين لما كتبه اليونان والهند فحسب — وإن فعلوا ذلك أيضًا، حتى استردّت أوروبا أكثر ميراثها اليوناني من العربية — بل صحّحوه واختبروه، وأنشأوا علومًا لم تكن قبلهم: الجبر، وعلم الضوء، والكيمياء المعملية، والطبّ السريري، وعلم العمران. وبنوا أول المستشفيات التي تعالج كلَّ قادمٍ بلا أجر، وأول جامعةٍ ما زالت تُدرّس إلى اليوم.\n\nفإن كنت لم تسمع بهذا من قبل فتلك هي الحال المعتادة — حتى عند أكثر المسلمين. وليس هذا هامشًا صغيرًا في تاريخ أوروبا؛ بل كان هو التاريخ نفسه قرونًا.",
+
+  when: "The usual dates given are 750–1258 CE (132–656 AH) — from the rise of the Abbasid caliphate and the founding of Baghdad, to the Mongol destruction of that city.\n\nBut that is a Baghdad-shaped answer, and it is too neat. Muslim Spain ran on its own clock from 756 until 1492. And the science did not stop in 1258: the observatory at Maragha was founded the year AFTER Baghdad fell, Ibn ash-Shatir was rebuilding planetary astronomy in Damascus in the 1300s, Ibn Khaldun wrote the Muqaddimah in 1377, Ulugh Beg's observatory at Samarkand was catalouging stars in the 1420s, and Taqi ad-Din was describing a steam turbine in Istanbul in the 1550s.\n\nSo the honest answer: the peak was roughly the 8th to the 13th century, the decline was gradual rather than a single catastrophe, and first-rate work continued in places for another three hundred years.",
+  whenAr: "التاريخ الذي يُذكر عادةً هو من سنة ١٣٢هـ إلى ٦٥٦هـ (٧٥٠–١٢٥٨م) — من قيام الدولة العباسية وبناء بغداد، إلى إسقاط المغول لها.\n\nلكنّ هذا جوابٌ مقيسٌ على بغداد وحدها، وهو أنعم ممّا ينبغي. فالأندلس جرت على ساعتها من سنة ١٣٨هـ إلى ٨٩٧هـ. ولم يقف العلم سنة ٦٥٦هـ: فمرصد مراغة أُنشئ في السنة التالية لسقوط بغداد، وابن الشاطر يعيد بناء علم الهيئة بدمشق في القرن الثامن الهجري، وابن خلدون يكتب المقدّمة سنة ٧٧٩هـ، ومرصد أُلُغ بك بسمرقند يفهرس النجوم في العشرينيات من القرن التاسع الهجري، وتقيّ الدين يصف العنفة البخارية بإسطنبول في القرن العاشر.\n\nفالجواب المنصف: أنّ الذروة كانت من القرن الثاني إلى السابع الهجري تقريبًا، وأنّ الانحدار كان تدرّجًا لا كارثةً واحدة، وأنّ العمل الرفيع استمرّ في مواضع ثلاثمئة سنةٍ أخرى.",
+
+  where: "Baghdad — the House of Wisdom, founded with the city in 762. Cordoba — whose library under al-Hakam II held hundreds of thousands of volumes when the largest in Christian Europe held a few hundred. Cairo — al-Azhar from 970. Damascus. Fez — al-Qarawiyyin from 859. And later Maragha, Samarkand and Istanbul.",
+  whereAr: "بغداد — وبيت الحكمة قام مع المدينة سنة ١٤٥هـ. وقرطبة — التي ضمّت خزانتها في عهد الحكم المستنصر مئات الآلاف من المجلّدات، وأكبر خزائن أوروبا النصرانية يومئذٍ بضع مئات. والقاهرة — والأزهر من سنة ٣٥٩هـ. ودمشق. وفاس — والقرويّون من سنة ٢٤٥هـ. ثم مراغة وسمرقند وإسطنبول.",
+
+  /* ---------- The one-line summary of what came out of it ----------
+     Everything here is proved in detail further down the page. This is
+     the version someone can read in ninety seconds and walk away with. */
+  harvestTitle: "What came out of it — the short version",
+  harvestTitleAr: "ماذا خرج منه — باختصار",
+  harvest: [
+    { icon: "🔢", en: "Algebra — invented as a subject, in a book written to divide inheritance correctly.", ar: "الجبر — أُنشئ علمًا مستقلًّا، في كتابٍ صُنّف ليُقسم الميراث على وجهه." },
+    { icon: "⚙️", en: "The word algorithm — it is al-Khwarizmi's name, worn down by eight centuries of use.", ar: "لفظة «الخوارزمية» — وهي اسم الخوارزمي، أبلته ثمانية قرونٍ من الاستعمال." },
+    { icon: "0️⃣", en: "The decimal numbers and the zero, carried into Europe — which is why you are not doing arithmetic in Roman numerals.", ar: "الأرقام العشرية والصفر، نُقلت إلى أوروبا — ولذلك لا تحسب اليوم بالأرقام الرومانية." },
+    { icon: "💡", en: "How sight works — light enters the eye, it does not leave it — and with it the experimental method itself, written down around 1020.", ar: "كيف يقع الإبصار — بدخول الضوء إلى العين لا بخروجه منها — ومعه المنهج التجريبي نفسه، مكتوبًا نحو سنة ٤١٠هـ." },
+    { icon: "📷", en: "The camera obscura, from which the camera descends.", ar: "الغرفة المظلمة، ومنها انحدرت الكاميرا." },
+    { icon: "⚕️", en: "A medical encyclopaedia taught in European universities for six hundred years.", ar: "موسوعةٌ طبيةٌ دُرّست في جامعات أوروبا ستّمئة سنة." },
+    { icon: "🔪", en: "Illustrated surgery — about two hundred instruments drawn, many still recognisable today — and catgut for internal stitching.", ar: "الجراحة المصوَّرة — نحو مئتَي آلةٍ مرسومة، كثيرٌ منها يُعرف اليوم — وخيوط الأمعاء للخياطة الباطنة." },
+    { icon: "🫀", en: "The pulmonary circulation of the blood, three hundred years before Europe described it.", ar: "الدورة الدموية الصغرى، قبل أن تصفها أوروبا بثلاثمئة سنة." },
+    { icon: "⚗️", en: "Chemistry as laboratory work — distillation, the alembic, and the words alkali, alcohol and chemistry itself.", ar: "الكيمياء عملًا معمليًّا — التقطير والإنبيق، وألفاظ القِلْي والكُحْل والكيمياء نفسها." },
+    { icon: "🏥", en: "The hospital as we know it: wards by illness, case records, teaching at the bedside, free treatment for anyone — and a licensing exam for physicians in the year 931.", ar: "المستشفى كما نعرفه: أقسامٌ بحسب العلل، وسجلّات، وتعليمٌ عند سرير المريض، وعلاجٌ مجّانيٌّ لكلّ أحد — وامتحان ترخيصٍ للأطبّاء سنة ٣١٩هـ." },
+    { icon: "🎓", en: "The university — al-Qarawiyyin in Fez, founded by a woman in 859 and still teaching.", ar: "الجامعة — القرويّون بفاس، أسّستها امرأةٌ سنة ٢٤٥هـ وما زالت تُدرّس." },
+    { icon: "🌍", en: "The radius of the earth measured from one mountain, to within about half a percent.", ar: "نصف قطر الأرض مقيسًا من جبلٍ واحد، في حدود نصف بالمئة." },
+    { icon: "🧭", en: "The most accurate map of the world for the next three hundred years.", ar: "أدقّ خريطةٍ للعالم في الثلاثمئة سنة التالية." },
+    { icon: "🔭", en: "Star catalogues so good that European astronomers kept the Arabic names — and still use about two hundred of them today.", ar: "فهارس نجومٍ بلغت من الجودة أن أبقى فلكيّو أوروبا أسماءها العربية — وما زالوا يستعملون نحو مئتين منها اليوم." },
+    { icon: "🏛️", en: "The science of society, and a theory of why civilisations rise and fall — written six centuries before sociology had a name.", ar: "علم العمران، ونظريّةٌ في قيام الحضارات وسقوطها — كُتبت قبل أن يكون لعلم الاجتماع اسمٌ بستّة قرون." },
+    { icon: "📄", en: "Cheap paper, industrialised and passed to Europe — without which none of the rest of it survives or spreads.", ar: "الورق الرخيص، صُنّع على نطاقٍ واسعٍ ثم انتقل إلى أوروبا — ولولاه ما بقي شيءٌ من هذا كلّه ولا انتشر." }
+  ],
+
+  /* ---------- The timeline ----------
+     Dated so the reader can place it against something they already know.
+     `era` groups the entries; `note` is used where the usual telling is
+     misleading and needs a word of correction. */
+  timelineTitle: "When it happened — the dates",
+  timelineTitleAr: "متى كان — التواريخ",
+  timeline: [
+    { year: "610 CE", yearAr: "قبل الهجرة بـ ١٣ سنة", era: "before",
+      en: "The first revelation to the Prophet ﷺ. The first word is “Read.”",
+      ar: "أول ما نزل على النبي ﷺ، وأول كلمةٍ فيه: ﴿اقْرَأْ﴾." },
+    { year: "622 CE / 1 AH", yearAr: "١ هـ", era: "before",
+      en: "The Hijra to Madinah — the start of the Islamic calendar and of the Muslim state.",
+      ar: "الهجرة إلى المدينة — ومنها بدء التقويم الهجري وقيام الدولة." },
+    { year: "661–750 CE", yearAr: "٤١–١٣٢ هـ", era: "rise",
+      en: "The Umayyad period, centred on Damascus. Expansion, and the first translations.",
+      ar: "الدولة الأموية ومركزها دمشق. التوسّع، وأوائل الترجمة." },
+    { year: "751 CE", yearAr: "١٣٣ هـ", era: "rise",
+      en: "Papermaking reaches the Muslim world after the battle of Talas — the single most important thing on this list, because nothing else survives without it.",
+      ar: "وصول صناعة الورق إلى بلاد المسلمين بعد وقعة نهر طلاس — وهو أهمّ ما في هذه القائمة، إذ لا يبقى شيءٌ سواه بغيره." },
+    { year: "762 CE", yearAr: "١٤٥ هـ", era: "peak",
+      en: "Baghdad is founded by al-Mansur as a planned round city, and becomes the centre of the world's learning.",
+      ar: "بناء المنصور بغدادَ مدينةً مدوّرةً مخطَّطة، فصارت مركز العلم في الدنيا." },
+    { year: "c. 794 CE", yearAr: "نحو ١٧٨ هـ", era: "peak",
+      en: "The first paper mill in Baghdad. Books stop being a luxury.",
+      ar: "أول مطحنة ورقٍ ببغداد، فخرج الكتاب من باب الترف." },
+    { year: "813–833 CE", yearAr: "١٩٨–٢١٨ هـ", era: "peak",
+      en: "Al-Ma'mun. The House of Wisdom at its height and the great translation movement — Greek, Persian and Indian works rendered into Arabic and then corrected.",
+      ar: "خلافة المأمون. بيت الحكمة في ذروته، وحركة الترجمة الكبرى — نُقلت كتب اليونان وفارس والهند إلى العربية ثم صُحّحت." },
+    { year: "c. 820 CE", yearAr: "نحو ٢٠٥ هـ", era: "peak",
+      en: "Al-Khwarizmi writes the book that founds algebra.",
+      ar: "الخوارزمي يصنّف الكتاب الذي تأسّس به الجبر." },
+    { year: "859 CE", yearAr: "٢٤٥ هـ", era: "peak",
+      en: "Fatima al-Fihri founds al-Qarawiyyin in Fez — recognised as the oldest existing degree-granting university in the world.",
+      ar: "فاطمة الفهرية تؤسّس القرويّين بفاس — ويُقرّ بأنها أقدم جامعةٍ قائمةٍ في العالم تمنح الإجازة." },
+    { year: "929–1031 CE", yearAr: "٣١٦–٤٢٢ هـ", era: "peak",
+      en: "The caliphate of Cordoba. Al-Andalus at its height, and the library of al-Hakam II.",
+      ar: "خلافة قرطبة. الأندلس في ذروتها، وخزانة الحكم المستنصر." },
+    { year: "931 CE", yearAr: "٣١٩ هـ", era: "peak",
+      en: "After a patient dies of a doctor's error, the caliph orders every practising physician in Baghdad to be examined — a medical licensing board in the tenth century.",
+      ar: "بعد موت مريضٍ بخطأ طبيب، يأمر الخليفة بامتحان كلّ من يزاول الطبّ ببغداد — هيئة ترخيصٍ طبيٍّ في القرن الرابع." },
+    { year: "970 CE", yearAr: "٣٥٩ هـ", era: "peak",
+      en: "Al-Azhar is founded in Cairo.",
+      ar: "تأسيس الأزهر بالقاهرة." },
+    { year: "c. 1020 CE", yearAr: "نحو ٤١٠ هـ", era: "peak",
+      en: "Ibn al-Haytham completes the Book of Optics in Cairo — and with it the experimental method, six hundred years before it was named in Europe.",
+      ar: "ابن الهيثم يُتمّ كتاب المناظر بالقاهرة — ومعه المنهج التجريبي، قبل أن يُسمّى في أوروبا بستّمئة سنة." },
+    { year: "1025 CE", yearAr: "٤١٦ هـ", era: "peak",
+      en: "Ibn Sina completes the Canon of Medicine.",
+      ar: "ابن سينا يُتمّ القانون في الطب." },
+    { year: "1085 CE", yearAr: "٤٧٨ هـ", era: "transfer",
+      en: "Toledo falls, and its libraries with it. For the next century Europeans come to translate Arabic into Latin — this is the doorway most of it went through.",
+      ar: "سقوط طليطلة وخزائن كتبها معها. فيقبل الأوروبيون قرنًا يترجمون من العربية إلى اللاتينية — وهذا هو الباب الذي عبر منه أكثره." },
+    { year: "1258 CE", yearAr: "٦٥٦ هـ", era: "break",
+      en: "The Mongols destroy Baghdad. This is the date usually given for the end — and it is where the usual telling stops being accurate.",
+      ar: "المغول يدمّرون بغداد. وهذا هو التاريخ الذي يُجعل نهايةً عادةً — وعنده تكفّ الرواية المعتادة عن الدقّة.",
+      note: "The science did not stop here. Everything below happened after Baghdad fell." },
+    { year: "1259 CE", yearAr: "٦٥٧ هـ", era: "after",
+      en: "The observatory at Maragha is founded — the year AFTER Baghdad falls. At-Tusi's work there produces the geometry Copernicus would use.",
+      ar: "إنشاء مرصد مراغة — في السنة التالية لسقوط بغداد. ومن عمل الطوسي فيه خرجت الهندسة التي استعملها كوبرنيكوس." },
+    { year: "c. 1242 CE", yearAr: "نحو ٦٤٠ هـ", era: "after",
+      en: "Ibn an-Nafis describes the pulmonary circulation in Damascus.",
+      ar: "ابن النفيس يصف الدورة الدموية الصغرى بدمشق." },
+    { year: "1377 CE", yearAr: "٧٧٩ هـ", era: "after",
+      en: "Ibn Khaldun writes the Muqaddimah — and in it, the explanation of how civilisations decline.",
+      ar: "ابن خلدون يكتب المقدّمة — وفيها تفسير كيف تنحدر الحضارات." },
+    { year: "1420s CE", yearAr: "العشرينيات من القرن ٩ هـ", era: "after",
+      en: "Ulugh Beg's observatory at Samarkand produces the first substantially new star catalogue since antiquity.",
+      ar: "مرصد أُلُغ بك بسمرقند يخرج أول فهرسٍ نجميٍّ جديدٍ في جوهره منذ القدم." },
+    { year: "1492 CE", yearAr: "٨٩٧ هـ", era: "after",
+      en: "Granada falls. Eight centuries of al-Andalus end.",
+      ar: "سقوط غرناطة، وانتهاء ثمانية قرونٍ من الأندلس." },
+    { year: "1577 CE", yearAr: "٩٨٥ هـ", era: "after",
+      en: "Taqi ad-Din builds the Istanbul observatory, and describes a working steam turbine. It is demolished three years later — not by an enemy, but from within.",
+      ar: "تقيّ الدين يبني مرصد إسطنبول، ويصف عنفةً بخاريةً عاملة. ثم يُهدم بعد ثلاث سنين — لا بيد عدوٍّ، بل من الداخل." }
+  ],
+
+  eras: [
+    { id: "before",   en: "Before it began",            ar: "ما قبله" },
+    { id: "rise",     en: "The ground being laid",      ar: "تمهيد الأرض" },
+    { id: "peak",     en: "The peak",                   ar: "الذروة" },
+    { id: "transfer", en: "The crossing into Europe",   ar: "العبور إلى أوروبا" },
+    { id: "break",    en: "The blow",                   ar: "الضربة" },
+    { id: "after",    en: "After the date they give you", ar: "بعد التاريخ الذي يُقال لك" }
+  ],
+
+  close: "That is the summary. Everything in it is set out in detail below, name by name, with the strength of the evidence stated on every card.",
+  closeAr: "هذا هو الملخّص. وكلّ ما فيه مفصَّلٌ أدناه اسمًا اسمًا، مع بيان درجة الدليل في كلّ بطاقة."
+};
+
+/* ============================================================
    WHY IT HAPPENED
    ------------------------------------------------------------
    This is the part usually left out, and it is the part that

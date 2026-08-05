@@ -203,6 +203,48 @@ html.js-reveal .reveal {
   transform: translateY(28px);
 }
 
+/* ---- A softer arrival ----
+   The band used to snap in on a plain ease. Three changes, all small:
+   a gentler curve, a touch of scale so the text settles rather than
+   slides, and a stagger so the Arabic line, the heading and the
+   paragraph arrive one after another instead of together. Nothing
+   here changes the layout or the photo scrims. */
+.photo-band .band-inner.reveal,
+.contact-band .band-inner.reveal {
+  transition: opacity .95s cubic-bezier(.22,.61,.36,1),
+              transform .95s cubic-bezier(.22,.61,.36,1);
+}
+html.js-reveal .photo-band .band-inner,
+html.js-reveal .contact-band .band-inner {
+  transform: translateY(30px) scale(.985);
+}
+html.js-reveal .photo-band .band-inner.in-view,
+html.js-reveal .contact-band .band-inner.in-view {
+  transform: translateY(0) scale(1);
+}
+
+html.js-reveal .band-inner > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .8s cubic-bezier(.22,.61,.36,1),
+              transform .8s cubic-bezier(.22,.61,.36,1);
+}
+html.js-reveal .band-inner.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+html.js-reveal .band-inner.in-view > *:nth-child(1) { transition-delay: .05s; }
+html.js-reveal .band-inner.in-view > *:nth-child(2) { transition-delay: .16s; }
+html.js-reveal .band-inner.in-view > *:nth-child(3) { transition-delay: .27s; }
+html.js-reveal .band-inner.in-view > *:nth-child(4) { transition-delay: .38s; }
+
+/* The photo itself is deliberately NOT animated. Two things were tried and
+   both were rejected: background-size cannot interpolate between a
+   percentage and `cover`, and animating the scrim would mean the mosque
+   photo is darker than approved for the first second of every arrival.
+   The owner's rule is that the photos stay clearly visible, so the movement
+   belongs to the text over them, not to the image. */
+
 html.js-reveal .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
@@ -3308,6 +3350,249 @@ html.lang-ar .rv-malik { border-left: 1px solid var(--border); border-right: 5px
   color: var(--green);
   line-height: 1.9;
   margin-bottom: 6px;
+}
+
+/* ============ Ruling diagrams ============
+   Inline SVG, so it scales to any width and needs no request. The wrapper
+   scrolls horizontally on a narrow phone rather than squashing the labels
+   into each other. */
+.ruling-fig {
+  margin: 18px 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px 12px;
+  /* Without this the figure widens its card instead of scrolling: a grid
+     item defaults to min-width:auto, so it grows to fit the SVG's own
+     minimum and pushes the whole page sideways on a phone. */
+  min-width: 0;
+}
+.ruling-card, .adhkar-list > * { min-width: 0; }
+.ruling-fig-svg {
+  overflow-x: auto;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.ruling-fig svg {
+  display: block;
+  width: 100%;
+  /* The labels stop being legible below this, so the wrapper scrolls
+     horizontally instead of the drawing shrinking into mush. Kept under
+     290px so it still fits inside a 320px phone without contributing to a
+     page-level sideways scroll. */
+  min-width: 288px;
+  height: auto;
+}
+.ruling-fig figcaption {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: .86rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  text-align: center;
+}
+.ruling-fig figcaption .ar-only { font-size: 1.02rem; line-height: 2; }
+
+/* ============ Words explained ============
+   A vocabulary box on every ruling. Styled to read as a helpful aside
+   rather than as part of the ruling itself — the definitions describe what
+   a word means, they are never the ruling. */
+.terms-box {
+  background: #f6f4ff;
+  border: 1px solid #ddd7f5;
+  border-radius: 12px;
+  padding: 16px 19px;
+  margin: 16px 0;
+}
+.terms-head {
+  font-weight: 700;
+  color: #4a3d8f;
+  font-size: .9rem;
+  margin-bottom: 12px;
+}
+.term {
+  padding: 10px 0;
+  border-top: 1px dashed #ddd7f5;
+}
+.term:first-of-type { border-top: none; padding-top: 0; }
+.term-word {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.term-word .en-only {
+  font-weight: 700;
+  color: #4a3d8f;
+  font-size: .98rem;
+  text-transform: capitalize;
+}
+.term-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.18rem;
+  color: var(--green-dark);
+  font-weight: 700;
+}
+.term-def { line-height: 1.85; font-size: .9rem; color: var(--text); }
+.term-def-ar { font-family: 'Amiri', serif; font-size: 1.06rem; line-height: 2.05; }
+
+html.lang-ar .terms-head { font-family: 'Amiri', serif; font-size: 1.05rem; }
+
+@media (max-width: 560px) { .terms-box { padding: 14px 15px; } }
+
+/* ---- The summary: what / when / where ---- */
+.gold-overview {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 32px;
+}
+.gold-overview h2 { color: var(--green-dark); font-size: 1.55rem; margin-bottom: 4px; line-height: 1.4; }
+.gold-overview .ar-head { font-size: 1.62rem; margin-bottom: 20px; }
+.gold-ov-block { margin-bottom: 26px; }
+.gold-ov-block:last-child { margin-bottom: 0; }
+.gold-ov-label {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-light);
+  border-radius: 999px;
+  padding: 5px 14px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.gold-ov-block p { line-height: 1.95; margin-bottom: 12px; }
+
+/* ---- The one-line harvest ---- */
+.gold-harvest-head {
+  color: var(--green-dark);
+  font-size: 1.35rem;
+  margin: 36px 0 16px;
+  line-height: 1.5;
+}
+.gold-harvest {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 12px;
+}
+.gold-harvest-item {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 12px;
+  padding: 15px 17px;
+  line-height: 1.8;
+  font-size: .93rem;
+}
+.gold-harvest-icon { font-size: 1.35rem; flex-shrink: 0; line-height: 1.3; }
+.gold-harvest-ar {
+  display: block;
+  font-family: 'Amiri', serif;
+  font-size: 1.08rem;
+  line-height: 2;
+  color: var(--green-dark);
+  margin-top: 3px;
+}
+
+/* ---- The timeline ----
+   A single rule down the side with the dates hanging off it. The entries
+   after 1258 are the whole point, so the year that "ends" the period is
+   marked and the ones after it keep going. */
+.tl {
+  position: relative;
+  margin: 8px 0 0;
+  padding-inline-start: 8px;
+}
+.tl::before {
+  content: "";
+  position: absolute;
+  inset-block: 10px;
+  inset-inline-start: 0;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--green), var(--gold));
+  opacity: .5;
+}
+.tl-era {
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 24px 0 10px;
+  padding-inline-start: 22px;
+}
+.tl-era:first-child { margin-top: 4px; }
+.tl-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  gap: 16px;
+  padding: 12px 0 12px 22px;
+}
+.tl-row::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -4px;
+  top: 20px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--green-light);
+}
+.tl-year {
+  font-weight: 700;
+  color: var(--green-dark);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+.tl-year .ar-only { font-family: 'Amiri', serif; font-size: 1.02rem; }
+.tl-what { line-height: 1.85; font-size: .95rem; }
+.tl-ar {
+  display: block;
+  font-family: 'Amiri', serif;
+  font-size: 1.1rem;
+  line-height: 2.05;
+  color: var(--green-dark);
+  margin-top: 4px;
+}
+/* The year the usual telling stops at. */
+.tl-turn::before { background: #b5541f; box-shadow: 0 0 0 2px #fbe9e0; }
+.tl-turn .tl-year { color: #8a3d1f; }
+.tl-note {
+  background: #fdf4ec;
+  border: 1px solid #f0dccb;
+  border-radius: 9px;
+  padding: 9px 13px;
+  margin-top: 9px;
+  font-size: .87rem;
+  font-weight: 600;
+  color: #8a3d1f;
+}
+.gold-ov-close {
+  background: var(--green-light);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 26px;
+  line-height: 1.95;
+}
+
+html.lang-ar .gold-overview { border-left: 1px solid var(--border); border-right: 5px solid var(--green-dark); }
+
+@media (max-width: 640px) {
+  .gold-overview { padding: 22px 18px; }
+  .gold-harvest { grid-template-columns: 1fr; }
+  .tl-row { grid-template-columns: 1fr; gap: 4px; padding-inline-start: 20px; }
+  .tl-year { font-size: .84rem; }
 }
 
 /* ---- Why the peak happened ---- */
