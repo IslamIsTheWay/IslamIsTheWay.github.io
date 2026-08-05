@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608051525" />
+  <link rel="stylesheet" href="css/style.css?v=202608052006" />
 </head>
 <body>
 
@@ -240,32 +240,32 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608051525"></script>
+  <script src="js/data.js?v=202608052006"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608051525"></script>
+  <script src="js/sunnah.js?v=202608052006"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608051525"></script>
+  <script src="js/adhkar.js?v=202608052006"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608051525"></script>
+  <script src="js/scholars.js?v=202608052006"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608051525"></script>
+  <script src="js/scholars-books.js?v=202608052006"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608051525"></script>
+  <script src="js/revival.js?v=202608052006"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608051525"></script>
+  <script src="js/terms.js?v=202608052006"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608051525"></script>
+  <script src="js/figures.js?v=202608052006"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -1090,20 +1090,97 @@
       </article>`;
     }
 
-    /* ---------- The diagram, where there is one ----------
+    /* ---------- The figure, where there is one ----------
        Placed straight after the conditions, because that is the moment the
        reader has just been given four abstractions in a row ("loose",
-       "thick", "not an adornment") and a picture settles them.
+       "thick", "not an adornment") and seeing them laid out settles them.
 
-       A diagram is never the ruling — the evidence and the attributions above
-       it are. Rulings with no figure simply render nothing here. */
+       THESE ARE HTML, NOT DRAWINGS, AND THAT IS THE FIX.
+       The previous version drew shapes in SVG with the labels as <text>
+       inside the drawing. Text inside an SVG is not a node i18n.js can walk,
+       so every label stayed English when the site switched to Arabic; and
+       the horizontal scroll wrapper clipped the left-hand labels in RTL,
+       where scrolling starts from the right — "Hair, neck and ears" came out
+       as "irs / tly". Both were reported from the live site.
+
+       Rendering the same information as ordinary HTML fixes all of it: the
+       labels are real text nodes in both languages, they wrap, they read
+       right-to-left correctly, and nothing needs to scroll sideways.
+
+       A figure is never the ruling — the evidence and the attributions above
+       it are. Rulings with no figure render nothing here. */
+    function figCompare(c) {
+      if (!c) return "";
+      // The good/bad colouring is swapped where the LEFT column is the worse
+      // of the two, so green never lands on the thing being warned against.
+      const cls = c.swapColours ? ["fig-col-bad", "fig-col-worse"] : ["fig-col-bad", "fig-col-good"];
+      const col = (side, klass, mark) => `<div class="fig-col ${klass}">
+        <div class="fig-col-head">
+          <span class="fig-mark">${mark}</span>
+          <span class="en-only">${side.label}</span>
+          <span class="ar-only" dir="rtl">${side.labelAr}</span>
+        </div>
+        <ul class="fig-list">
+          ${side.items.map(i => `<li>
+            <span class="en-only">${i.en}</span>
+            <span class="fig-ar" dir="rtl">${i.ar}</span>
+          </li>`).join("")}
+        </ul>
+      </div>`;
+      return `<div class="fig-compare">
+        ${col(c.bad, cls[0], "✗")}
+        ${col(c.good, cls[1], c.swapColours ? "✗✗" : "✓")}
+      </div>`;
+    }
+
+    function figRows(r) {
+      if (!r) return "";
+      // Two shapes of table: a label/value pair, or prayer counts.
+      const isCount = r.items.length && r.items[0].home !== undefined;
+      return `<div class="fig-table-wrap"><table class="fig-table">
+        <thead><tr>${r.headers.map((h, i) => `<th>
+          <span class="en-only">${h}</span>
+          <span class="ar-only" dir="rtl">${r.headersAr[i]}</span>
+        </th>`).join("")}</tr></thead>
+        <tbody>
+          ${r.items.map(it => `<tr>
+            <th scope="row">
+              <span class="en-only">${it.label}</span>
+              <span class="ar-only" dir="rtl">${it.labelAr}</span>
+            </th>
+            ${isCount
+              ? `<td class="fig-num">${it.home}</td>
+                 <td class="fig-num${it.note === "never shortened" ? " fig-num-fixed" : ""}">${it.away}
+                   <span class="fig-note">
+                     <span class="en-only">${it.note}</span>
+                     <span class="ar-only" dir="rtl">${it.noteAr}</span>
+                   </span>
+                 </td>`
+              : `<td>
+                   <span class="en-only">${it.value}</span>
+                   <span class="fig-ar" dir="rtl">${it.valueAr}</span>
+                 </td>`}
+          </tr>`).join("")}
+        </tbody>
+      </table></div>`;
+    }
+
     function figureFor(id) {
       if (typeof RULING_FIGURES === "undefined") return "";
       const f = RULING_FIGURES[id];
       if (!f) return "";
       return `<figure class="ruling-fig">
-        <div class="ruling-fig-svg">${f.svg}</div>
-        <figcaption>
+        <figcaption class="fig-title">
+          <span class="en-only">${f.title}</span>
+          <span class="ar-only" dir="rtl">${f.titleAr}</span>
+        </figcaption>
+        ${figCompare(f.compare)}
+        ${figRows(f.rows)}
+        ${f.footnote ? `<div class="fig-footnote">
+          <span class="en-only">${f.footnote}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${f.footnoteAr}</span>
+        </div>` : ""}
+        <figcaption class="fig-caption">
           <span class="en-only">${f.caption}</span>
           <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${f.captionAr}</span>
         </figcaption>
@@ -1485,7 +1562,7 @@
       renderAdhkar();
     }
   </script>
-  <script src="js/main.js?v=202608051525"></script>
-  <script src="js/i18n.js?v=202608051525"></script>
+  <script src="js/main.js?v=202608052006"></script>
+  <script src="js/i18n.js?v=202608052006"></script>
 </body>
 </html>

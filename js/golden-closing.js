@@ -1,0 +1,174 @@
+/* ============================================================
+   THE CLOSING DISCUSSION — لماذا سقطنا، وكيف نعود
+   ============================================================
+   The long discussion at the end of the Golden Age page: why we
+   fell, what is pulling people down NOW, and how a person
+   actually turns around.
+
+   THE TONE IS THE POINT. Someone reading this is far more likely
+   to be a young Muslim who already feels behind and ashamed than
+   someone who needs telling off. Every section is written to be
+   honest without contempt — the diagnosis includes the writer,
+   and it always ends with the door open. Shame closes people; it
+   does not reform them.
+
+   WHERE IT IS SHARP, IT IS SHARP WITH OUR OWN TEXTS.
+   The section on blind imitation does not insult anybody. It
+   quotes al-Bukhari 7320 and the Quran's own words about people
+   who follow without understanding. The criticism lands on US —
+   on what WE chose to copy — and never on other peoples as
+   peoples. That is both the honest reading and the useful one:
+   a critique you can act on beats a grievance you cannot.
+
+   `quote` renders as a pulled-out verse or hadith.
+   `dua` renders as a highlighted card — the owner asked that the
+   Prophet's ﷺ own words for protection and steadfastness be made
+   to stand out rather than buried inside a paragraph.
+   ============================================================ */
+
+const GOLDEN_CLOSING = {
+  title: "So why did we fall — and how do we come back?",
+  titleAr: "فلماذا سقطنا — وكيف نعود؟",
+
+  lead: "If you have read this far, you have just seen what this ummah built. And the obvious, painful question is the one everybody asks quietly: what happened to us?\n\nBefore the answer, one thing needs saying, because it changes how the rest of this reads. This is not written to make anybody feel ashamed. If you are young, if you feel behind, if you look at other nations and feel small — that feeling is not a sin and it is not a verdict on you. It is information. And almost everything below is fixable by ordinary people doing ordinary things, which is exactly how it was built the first time.",
+  leadAr: "إن كنتَ قرأتَ إلى هنا فقد رأيتَ ما بنته هذه الأمّة. ويبقى السؤال الظاهر المؤلم الذي يسأله كلُّ أحدٍ في نفسه: ماذا جرى لنا؟\n\nوقبل الجواب كلمةٌ لا بدّ منها، فإنها تغيّر قراءة ما بعدها: لم يُكتب هذا ليُخجل أحدًا. فإن كنتَ شابًّا، وإن شعرتَ أنك متأخّر، وإن نظرتَ إلى الأمم فرأيتَ نفسك صغيرًا — فليس هذا الشعور ذنبًا ولا حكمًا عليك، وإنما هو خبر. وأكثر ما دُوّن أدناه ممّا يقدر عليه آحاد الناس بأعمالٍ عادية، وهكذا بُني أولَ مرّة.",
+
+  sections: [
+    {
+      id: "gc-why",
+      icon: "🔍",
+      title: "Why it fell — the short, honest answer",
+      titleAr: "لماذا سقط — الجواب القصير المنصف",
+      body: "It is tempting to answer with the Mongols, or the colonisers, or a conspiracy. Those are real events and they did real damage. But they are not the answer, and treating them as the answer is itself part of the problem — because if the cause is entirely outside us, then the cure is outside us too, and there is nothing left to do but wait and complain.\n\nThe Quran refuses that. When the best generation this ummah ever had was defeated at Uhud — with the Prophet ﷺ among them — and they asked how it could have happened, the answer came down, and it did not blame Quraish. It said: it is from yourselves.\n\nSo here is the honest chain. The peak came from taking the Book seriously: read, look, measure, be exact, be honest in your work, do not waste, take knowledge wherever it is. When that seriousness went, everything built on it went with it — slowly, across centuries, long before any foreign army arrived. Baghdad was sacked in 1258, and yet the science carried on for three hundred more years in Damascus, Samarkand and Istanbul. It did not die when they burned the libraries. It died when we stopped filling them.",
+      bodyAr: "من اليسير أن يُجاب بالمغول، أو بالاستعمار، أو بمؤامرة. وهذه وقائع حقيقيّةٌ أحدثت ضررًا حقيقيًّا. لكنها ليست الجواب، وجعلُها الجواب جزءٌ من الداء نفسه — لأنّ السبب إذا كان كلّه خارجًا عنّا كان الدواء خارجًا عنّا كذلك، فلا يبقى إلا الانتظار والشكوى.\n\nوالقرآن يأبى هذا. فلمّا هُزم خيرُ جيلٍ في هذه الأمّة يوم أُحُد — والنبيُّ ﷺ بين أظهرهم — وسألوا: أنّى هذا؟ نزل الجواب فلم يَلُم قريشًا، بل قال: ﴿قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ﴾.\n\nوهذا هو التسلسل المنصف: إنما جاء العلوّ من أخذ الكتاب مأخذ الجدّ: اقرأ، وانظر، وقِسْ، ودقِّق، واصدق في عملك، ولا تُسرف، وخذ العلم حيث كان. فلمّا ذهب ذلك الجدّ ذهب معه كلُّ ما بُني عليه — على مهلٍ، عبر قرون، قبل وصول أيّ جيشٍ أجنبيٍّ بزمنٍ طويل. سقطت بغداد سنة ٦٥٦هـ، ومع ذلك استمرّ العلم ثلاثمئة سنةٍ أخرى في دمشق وسمرقند وإسطنبول. فلم يمت حين أحرقوا الخزائن، وإنما مات حين كففنا عن ملئها.",
+      quote: {
+        ar: "قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ",
+        en: "“Say: it is from yourselves.”",
+        ref: "Surah Aal-Imran (3:165) — said to the companions themselves, after Uhud",
+        strength: "The Quran"
+      }
+    },
+    {
+      id: "gc-imitation",
+      icon: "🕳️",
+      title: "The trap we are in now: following without thinking",
+      titleAr: "الفخّ الذي نحن فيه الآن: الاتّباع بلا عقل",
+      body: "The Prophet ﷺ described our situation fourteen hundred years ago, with an image nobody who hears it forgets.\n\nHe said we would follow the ways of the nations before us step by step, arm's length by arm's length, until if they went down the hole of a lizard, we would go down it after them. The companions asked: do you mean the Jews and the Christians? He said: “Who else?”\n\nRead the image carefully, because it is not about hating anyone. A lizard's hole is not a palace. He did not say we would follow them into their strength. He said we would follow them into a hole — into the thing that is beneath us, the thing no thinking person would choose, the thing you only enter because you watched someone else enter it.\n\nAnd the Quran names the sickness underneath it. It is following without understanding: “We follow what we found our fathers upon” — and the answer comes: “even though their fathers understood nothing and were not guided?”\n\nThat verse was revealed about people copying their ancestors. It applies, letter for letter, to people copying a screen.",
+      bodyAr: "وصف النبيُّ ﷺ حالنا قبل أربعة عشر قرنًا بصورةٍ لا ينساها من سمعها.\n\nقال: لتتّبعنّ سنن من كان قبلكم شبرًا بشبرٍ وذراعًا بذراع، حتى لو دخلوا جُحر ضبٍّ تبعتموهم. قالوا: يا رسول الله، اليهود والنصارى؟ قال: «فمَن؟»\n\nوتأمَّل الصورة، فليست في بغض أحد. فجُحر الضبّ ليس قصرًا. ولم يقل إننا نتبعهم إلى قوّتهم، بل قال نتبعهم إلى جُحر — إلى ما هو دوننا، وإلى ما لا يختاره عاقل، وإلى ما لا تدخله إلا لأنك رأيتَ غيرك دخله.\n\nوسمّى القرآن الداء الذي تحته، وهو الاتّباع بغير فهم: ﴿بَلْ نَتَّبِعُ مَا أَلْفَيْنَا عَلَيْهِ آبَاءَنَا﴾ — فجاء الجواب: ﴿أَوَلَوْ كَانَ آبَاؤُهُمْ لَا يَعْقِلُونَ شَيْئًا وَلَا يَهْتَدُونَ﴾.\n\nنزلت هذه الآية في قومٍ يقلّدون آباءهم، وهي تنطبق حرفًا بحرفٍ على قومٍ يقلّدون شاشة.",
+      quote: {
+        ar: "لَتَتْبَعُنَّ سَنَنَ مَنْ كَانَ قَبْلَكُمْ شِبْرًا شِبْرًا وَذِرَاعًا بِذِرَاعٍ، حَتَّى لَوْ دَخَلُوا جُحْرَ ضَبٍّ تَبِعْتُمُوهُمْ. قُلْنَا: يَا رَسُولَ اللَّهِ، الْيَهُودُ وَالنَّصَارَى؟ قَالَ: فَمَنْ؟",
+        en: "“You will follow the ways of those before you span by span and cubit by cubit, so much so that if they entered the hole of a lizard, you would follow them.” We said: “O Messenger of Allah — the Jews and the Christians?” He said: “Who else?”",
+        ref: "Sahih al-Bukhari, Book of Holding Fast to the Book and the Sunnah, Hadith 7320 — narrated from Abu Sa'id al-Khudri; also Sahih Muslim",
+        strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+      }
+    },
+    {
+      id: "gc-what-we-copy",
+      icon: "⚖️",
+      title: "And look at WHAT we chose to copy",
+      titleAr: "وانظر ماذا اخترنا أن ننقل",
+      body: "This is where it becomes painful, and it has to be said plainly.\n\nThe West has real strengths, and any honest person can list them. They show up on time. They read. They maintain what they build instead of letting it rot the year after the opening ceremony. They save and invest rather than spending everything on an appearance. They build institutions that outlive the man who founded them. They keep records. They finish what they start.\n\nNone of that is what we copied.\n\nWhat crossed over was the drinking. The nightlife. The dress. The way of speaking, the way of looking, the mockery of anyone who prays. The idea that modesty is old-fashioned and shame is a defect. The appetite for being seen. We took the entertainment and left the engineering. We took the appetite and left the discipline.\n\nAnd here is the part that should stop us cold. The generation that built the Golden Age did the exact opposite. They took Greek geometry, Indian numerals, Persian administration and Chinese paper — and left the idolatry, the drinking and the immorality entirely alone. They imported the knowledge and refused the sin. We have managed to import the sin and refuse the knowledge.\n\nThat is not a difference of degree. It is the whole method, reversed.",
+      bodyAr: "وهنا يصير الأمر مؤلمًا، ولا بدّ من قوله صريحًا.\n\nللغرب مواطن قوّةٍ حقيقيّة يعدّها كلُّ منصف: يحضرون في الوقت. ويقرؤون. ويصونون ما يبنون بدل أن يتركوه يتهالك بعد سنةٍ من حفل الافتتاح. ويدّخرون ويستثمرون بدل أن يُنفقوا كلّ شيءٍ على المظهر. ويبنون مؤسّساتٍ تبقى بعد مؤسّسها. ويقيّدون ويوثّقون. ويُتمّون ما بدؤوا.\n\nولم ننقل من ذلك شيئًا.\n\nوإنما عبر إلينا الخمر. والسهر. واللباس. وطريقة الكلام، وهيئة المظهر، والسخرية ممّن يصلّي. وأنّ الحياء شيءٌ قديم وأنّ الاستحياء نقص. وشهوة أن يراك الناس. أخذنا اللهو وتركنا الهندسة، وأخذنا الشهوة وتركنا الانضباط.\n\nوهذا هو الذي ينبغي أن يوقفنا: فإنّ الجيل الذي بنى العصر الذهبي صنع عكس ذلك تمامًا. أخذ هندسة اليونان وأرقام الهند وإدارة فارس وورق الصين — وترك عبادة الأوثان والخمر والفجور تركًا تامًّا. استورد العلم وردَّ المعصية. أما نحن فقد استوردنا المعصية ورددنا العلم.\n\nوليس هذا فرقًا في المقدار، بل هو المنهج كلّه مقلوبًا.",
+      quote: {
+        ar: "بَلْ نَتَّبِعُ مَا أَلْفَيْنَا عَلَيْهِ آبَاءَنَا ۗ أَوَلَوْ كَانَ آبَاؤُهُمْ لَا يَعْقِلُونَ شَيْئًا وَلَا يَهْتَدُونَ",
+        en: "“We follow what we found our fathers upon.” — Even though their fathers understood nothing and were not guided?",
+        ref: "Surah Al-Baqarah (2:170)",
+        strength: "The Quran"
+      }
+    },
+    {
+      id: "gc-thinking",
+      icon: "🧠",
+      title: "Take the good, refuse the rest — and be someone who can tell the difference",
+      titleAr: "خُذِ الحسن وردَّ ما سواه — وكن ممّن يفرّق بينهما",
+      body: "Let nobody misread the section above as a call to shut the door and sit in the dark. That is not what the scholars said, and it is not what our own history did. Ibn Sina read the Greeks. Al-Biruni learned Sanskrit so that he could read the Hindus in their own language and describe them fairly. The House of Wisdom paid Christians, Jews and Sabians to translate, honoured them, and put their names on their work. That is a civilisation with a spine: confident enough to take what is true from anywhere, and to refuse what is corrupt from anywhere.\n\nThe rule was never “reject everything they have.” The rule is: you must be a person who chooses.\n\nAnd here the Quran uses language sharper than any preacher would dare. It describes people who have hearts they do not understand with, eyes they do not see with, ears they do not hear with — and then says of them: those are like cattle; no, they are further astray.\n\nThat is the question this page is really asking you. When you copy something — a way of dressing, a way of speaking, a way of spending your night — did you weigh it and choose it? Or did you simply see it and move toward it, the way an animal in a herd moves because the herd is moving?\n\nSomeone who chose is a human being. Someone who only followed is doing precisely what the verse describes. And that is not an insult — it is a standard, and it is one you can meet starting today, with a single question in front of the next thing you are about to imitate: is this good, and what is it doing to me?",
+      bodyAr: "ولا يُفهمنّ ما تقدّم دعوةً إلى إغلاق الباب والقعود في الظلام. فليس هذا قول أهل العلم، ولا هو صنيع تاريخنا. فقد قرأ ابن سينا اليونان، وتعلّم البيروني السنسكريتية ليقرأ الهنود بلغتهم ويصفهم بإنصاف، وأجرى بيتُ الحكمة الأرزاق على النصارى واليهود والصابئة ليترجموا، وأكرمهم، وقيّد أسماءهم على أعمالهم. تلك حضارةٌ لها ظهر: من الثقة بحيث تأخذ الحقّ من أيّ مكان وتردّ الفساد من أيّ مكان.\n\nفما كانت القاعدة قطّ «ارفض كلّ ما عندهم»، بل القاعدة: أن تكون إنسانًا يختار.\n\nوهنا يستعمل القرآن لفظًا أشدّ ممّا يجرؤ عليه واعظ. يصف قومًا لهم قلوبٌ لا يفقهون بها، ولهم أعينٌ لا يبصرون بها، ولهم آذانٌ لا يسمعون بها، ثم يقول فيهم: ﴿أُولَٰئِكَ كَالْأَنْعَامِ بَلْ هُمْ أَضَلُّ﴾.\n\nوهذا هو السؤال الذي تسألك إيّاه هذه الصفحة. حين تنقل شيئًا — هيئةَ لباسٍ أو طريقةَ كلامٍ أو كيفيّةَ قضاءِ ليلك — أوزنتَه فاخترتَه؟ أم رأيتَه فمِلتَ إليه، كما تميل الدابّة في القطيع لأنّ القطيع مال؟\n\nفمن اختار فهو إنسان، ومن اتّبع فحسب فقد وقع فيما وصفته الآية بعينه. وليس هذا سبًّا، بل هو معيار، وهو معيارٌ تبلغه من اليوم بسؤالٍ واحدٍ أمام أوّل ما تهمّ بتقليده: أهذا حسن؟ وما الذي يصنعه بي؟",
+      quote: {
+        ar: "لَهُمْ قُلُوبٌ لَّا يَفْقَهُونَ بِهَا وَلَهُمْ أَعْيُنٌ لَّا يُبْصِرُونَ بِهَا وَلَهُمْ آذَانٌ لَّا يَسْمَعُونَ بِهَا ۚ أُولَٰئِكَ كَالْأَنْعَامِ بَلْ هُمْ أَضَلُّ",
+        en: "“They have hearts with which they do not understand, eyes with which they do not see, and ears with which they do not hear. Those are like cattle — no, they are further astray.”",
+        ref: "Surah Al-A'raf (7:179); the same image again at Al-Furqan (25:44)",
+        strength: "The Quran"
+      }
+    },
+    {
+      id: "gc-modesty",
+      icon: "🫥",
+      title: "Modesty — and who the Quran addresses FIRST",
+      titleAr: "الحياء — ومن خاطبه القرآن أولًا",
+      body: "Of everything that crossed over from outside, the loss of haya — modesty, the sense of shame that protects a person — has done the most damage, because it is upstream of the rest. When shame goes, everything downstream of it becomes negotiable.\n\nHe ﷺ said modesty is a branch of faith, and he said that among the words people inherited from the first prophethood is: if you feel no shame, do as you wish. That is not permission. It is a diagnosis — that shame is the last thing standing between a person and whatever they feel like doing.\n\nAnd now the part that is usually left out, and that no honest treatment of this can leave out.\n\nIn Surah An-Nur the command comes in two verses. Verse 30 is to the believing MEN: tell them to lower their gaze and guard their chastity. Verse 31 is to the believing women. The men are addressed FIRST.\n\nThat order is not decoration. A great deal of talk about modesty in our communities is aimed entirely at women, as though a woman's dress were the whole subject and a man's eyes and behaviour were somebody else's problem. That is not how the Quran ordered it. A man who stares, who cannot be trusted, who consumes filth on his phone in private and then lectures his sister in public, has skipped his own verse and gone straight to hers.\n\nSo say it in the order it was revealed. Men: lower your gaze, and guard yourself, and stop pretending that is a woman's job. Women: the covering is commanded, and its conditions are set out with the scholars' evidence on the Guidance page of this site — not as a cultural preference but as an instruction with a reason. And to both: this is a matter of dignity, not of suspicion. Modesty was never meant to be a cage for one half of the ummah and a free pass for the other.",
+      bodyAr: "من كلّ ما عبر إلينا من خارج، كان ذهاب الحياء أشدَّها ضررًا، لأنه فوق غيره في السلسلة. فإذا ذهب الحياء صار ما دونه محلَّ مساومة.\n\nقال ﷺ: «الحياء شعبةٌ من الإيمان»، وقال: «إنّ ممّا أدرك الناس من كلام النبوّة الأولى: إذا لم تستحِ فاصنع ما شئت». وليست هذه إباحة، بل هي تشخيص: أنّ الحياء آخر ما يقف بين المرء وبين ما تشتهيه نفسه.\n\nوهنا الشقّ الذي يُترك عادةً، ولا يصحّ لمعالجةٍ منصفةٍ أن تتركه.\n\nفي سورة النور جاء الأمر في آيتين. الآية الثلاثون خطابٌ للمؤمنين الرجال: ﴿قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ﴾. والآية الحادية والثلاثون للمؤمنات. فالرجال خوطبوا أولًا.\n\nوهذا الترتيب ليس زينةً في الكلام. فكثيرٌ من الحديث عن الحياء في مجتمعاتنا مصوَّبٌ إلى النساء وحدهنّ، كأنّ لباس المرأة هو المسألة كلّها، وكأنّ عين الرجل وسلوكه شأن غيره. وليس هكذا رتّبه القرآن. فالرجل الذي يُطيل النظر، ولا يُؤمن جانبه، ويُدمن الخبيث في هاتفه سرًّا ثم يعظ أخته جهرًا — قد تخطّى آيته هو ومضى إلى آيتها.\n\nفلْيُقَل الأمر على ترتيب نزوله. أيها الرجال: غُضّوا أبصاركم واحفظوا فروجكم، وكفّوا عن ادّعاء أنّ هذا شأن النساء. وأيتها النساء: الستر مأمورٌ به، وشروطه مبسوطةٌ بأدلّة أهل العلم في صفحة التوجيه من هذا الموقع — لا عُرفًا اجتماعيًّا بل أمرًا له علّته. وإلى الفريقين جميعًا: هذا بابُ كرامةٍ لا بابُ تهمة. وما شُرع الحياء ليكون قفصًا على نصف الأمّة وإطلاقًا للنصف الآخر.",
+      quote: {
+        ar: "قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ اللَّهَ خَبِيرٌ بِمَا يَصْنَعُونَ",
+        en: "“Tell the believing men to lower their gaze and guard their chastity. That is purer for them. Indeed Allah is aware of what they do.” — verse 30, to the men, BEFORE verse 31 to the women.",
+        ref: "Surah An-Nur (24:30), and then (24:31); “Modesty is a branch of faith” — Sahih al-Bukhari, Hadith 9, and Muslim",
+        strength: "The Quran; and the hadith on modesty is Sahih — agreed upon"
+      }
+    },
+    {
+      id: "gc-youth",
+      icon: "💔",
+      title: "What is actually happening to our young people",
+      titleAr: "ما الذي يجري لشبابنا حقًّا",
+      body: "This part is written gently on purpose, because the people it describes are usually not rebels. They are tired.\n\nA young Muslim today often carries this: a phone that shows him, every hour, other people's edited lives, so that his own real life feels like a failure. Comparison with no end to it. A degree that led nowhere. Work that does not pay enough to marry, and marriage delayed for years while everything around him is engineered to inflame desire. Prayer that slipped first to sometimes, then to Fridays, then to nothing — not out of disbelief, but out of exhaustion and shame at coming back. Nights that end at four in the morning in front of a screen. And underneath all of it, a quiet, constant sense of having no purpose larger than getting through the week.\n\nAnd then, on top of that, being told that he is the problem.\n\nHe is not the problem. He is what happens when a generation is handed no purpose, no path to a household of its own, and nobody who trained it.\n\nThe young people in this page's history were not made of different material. Ali believed at about ten. Mus'ab was sent to teach an entire city as a young man. Usamah commanded an army in his teens. Ibn Sina had finished the medicine of his age at sixteen. Muhammad al-Fatih took Constantinople at twenty-one.\n\nThey were not stronger than our young people. They were TRUSTED, and they were given something enormous to do. That is the difference — and it is a difference the older generation controls, not the younger one.",
+      bodyAr: "كُتب هذا القسم برفقٍ مقصود، لأنّ من يصفهم ليسوا متمرّدين في الغالب، وإنما هم مُتعَبون.\n\nيحمل الشابّ المسلم اليوم غالبًا هذا: هاتفًا يعرض عليه في كلّ ساعةٍ حيوات الناس منتقاةً محرَّرة، فتبدو حياته هو فشلًا. ومقارنةً لا تنتهي. وشهادةً لم تُفضِ إلى شيء. وعملًا لا يكفي للزواج، وزواجًا يتأخّر سنين وكلُّ ما حوله مصنوعٌ لإثارة الشهوة. وصلاةً تراجعت أولًا إلى «أحيانًا»، ثم إلى الجمعة، ثم إلى لا شيء — لا كفرًا، بل إعياءً وحياءً من العودة. وليالي تنتهي عند الرابعة فجرًا أمام شاشة. وتحت ذلك كلِّه إحساسٌ خافتٌ مستمرٌّ بأن لا غاية له أكبر من أن يجتاز الأسبوع.\n\nثم يُقال له بعد ذلك: أنت المشكلة.\n\nوليس هو المشكلة. وإنما هو ما يقع حين يُسلَّم جيلٌ بلا غايةٍ ولا طريقٍ إلى بيتٍ يملكه ولا أحدٍ درّبه.\n\nوشباب هذه الصفحة من التاريخ لم يُخلقوا من طينةٍ أخرى: آمن عليٌّ وهو ابن نحو عشر، وأُرسل مصعبٌ ليعلّم مدينةً بأسرها وهو شاب، وأُمِّر أسامة على جيشٍ في مطلع شبابه، وأنهى ابن سينا طبّ زمانه وهو ابن ستّ عشرة، وفتح محمد الفاتح القسطنطينية وهو ابن إحدى وعشرين.\n\nلم يكونوا أقوى من شبابنا، ولكنهم أُوتُمنوا، وحُمِّلوا أمرًا عظيمًا. هذا هو الفرق، وهو بيد الكبار لا بيد الصغار."
+    },
+    {
+      id: "gc-behind",
+      icon: "📉",
+      title: "Why we are behind — the uncomfortable list",
+      titleAr: "لماذا نحن متأخّرون — القائمة الثقيلة",
+      body: "Not one of these needs a government to fix. Every one is a personal decision, repeated by enough people until it becomes a country.\n\n• We do not respect time, and time is the one thing that cannot be replaced. An appointment at nine means nine.\n\n• We do not finish. The project is announced, celebrated, and abandoned at seventy percent.\n\n• We do not maintain. We build something beautiful and let it fall apart, because maintenance is nobody's moment of glory.\n\n• We do not read. The Book we were given opens with “Read”, and reading is now something children are made to do and adults have quietly stopped.\n\n• We tolerate dishonesty in small things — the shortcut, the bribe, the exaggeration in a sale — and then wonder why nothing large can be trusted.\n\n• We do work badly and call it fate. He ﷺ made doing it well a matter of what Allah loves.\n\n• We spend on appearance what should be saved and invested, until a wedding costs what a home should cost.\n\n• We waste our best people, who then leave — and go on to do first-rate work in someone else's country, with someone else's name on the building.\n\nRead that list again and notice something. Not one item on it is a matter of belief. Every single one is a matter of character. That is why it is fixable — and it is why it is on us.",
+      bodyAr: "ليس في هذه القائمة ما يحتاج إلى حكومةٍ لإصلاحه، بل كلُّ بندٍ فيها قرارٌ شخصيٌّ يتكرّر من عددٍ كافٍ من الناس حتى يصير بلدًا.\n\n• لا نحترم الوقت، وهو الشيء الوحيد الذي لا يُعوَّض. والموعد في التاسعة معناه التاسعة.\n\n• ولا نُتمّ. يُعلَن المشروع ويُحتفل به ثم يُترك عند سبعين في المئة.\n\n• ولا نصون. نبني الجميل ثم ندعه يتهالك، لأنّ الصيانة ليست موضع فخرٍ لأحد.\n\n• ولا نقرأ. والكتاب الذي أُوتيناه يُفتتح بـ«اقرأ»، والقراءة اليوم شيءٌ يُلزَم به الصبيان وقد تركه الكبار في صمت.\n\n• ونتساهل في صغار الكذب — المخالفة اليسيرة والرشوة والمبالغة في البيع — ثم نعجب كيف لا يُوثق بكبيرٍ من الأمور.\n\n• ونُسيء العمل ونسمّيه قدرًا، وقد جعل ﷺ إتقانه ممّا يحبّه الله.\n\n• وننفق على المظهر ما حقُّه أن يُدَّخر ويُستثمر، حتى صار العرس يكلّف ثمن بيت.\n\n• ونُضيّع خيار أهلنا فيخرجون، فيعملون العمل الرفيع في بلد غيرنا، وعلى المبنى اسم غيرنا.\n\nثم أعِد قراءة القائمة وتأمّل: ليس فيها بندٌ واحدٌ من باب الاعتقاد، بل كلّها من باب الأخلاق. ولذلك هي قابلةٌ للإصلاح، ولذلك هي علينا نحن.",
+      quote: {
+        ar: "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ",
+        en: "“Allah loves that when one of you does a work, he does it well.”",
+        ref: "Narrated by al-Bayhaqi in Shu'ab al-Iman and by Abu Ya'la",
+        strength: "Outside the two Sahihs — graded Sahih by al-Albani in Sahih al-Jami'; some scholars considered its chain weak. Its meaning is supported by the Quran's command to give full measure."
+      }
+    },
+    {
+      id: "gc-return",
+      icon: "🌅",
+      title: "How a person actually comes back",
+      titleAr: "كيف يعود المرء حقًّا",
+      body: "Not a movement. Not a slogan. Not waiting for a leader. The verse puts the change inside people, so that is where it starts — with you, this week.\n\n1. Fix the prayer first. Everything else is built on it, and it is the thing Allah named when He described the generations that lost their way: they neglected the prayer and followed desires. Five prayers, in their time. If you have not prayed in years, pray one tonight. Nobody has to know.\n\n2. Cut the one thing you already know is destroying your week. You know what it is. You do not need a scholar to name it for you.\n\n3. Learn something properly. Your religion first, then your field, to a level nobody can dismiss. A Muslim who is the best engineer in the room serves this ummah in a way that a Muslim who is merely loud about it does not.\n\n4. Do your work well, keep your word, be exact. This is worship, and it is what a civilisation is actually made of.\n\n5. Choose before you copy. One question in front of anything you are about to imitate: is this good, and what is it doing to me?\n\n6. If you are older: trust a young person with something real, and teach them. If you are young: do not wait to be handed it.\n\nAnd know that coming back is not one dramatic moment. It is a return you will have to make more than once. Falling again does not close the door. The door is only closed by deciding not to walk back through it.",
+      bodyAr: "ليست حركةً، ولا شعارًا، ولا انتظارَ زعيم. فالآية تجعل التغيير في الأنفس، فمن هناك يبدأ — منك، في هذا الأسبوع.\n\n١. أصلِح الصلاة أولًا. فعليها يقوم كلّ ما سواها، وهي التي سمّاها الله حين وصف الأجيال التي ضلّت: ﴿أَضَاعُوا الصَّلَاةَ وَاتَّبَعُوا الشَّهَوَاتِ﴾. خمس صلواتٍ في أوقاتها. وإن كنت لم تصلِّ سنين فصلِّ واحدةً الليلة، ولا يلزم أن يعلم بها أحد.\n\n٢. اقطع الشيء الواحد الذي تعلم أنه يُفسد أسبوعك. أنت تعرفه، ولا تحتاج إلى عالمٍ يسمّيه لك.\n\n٣. تعلَّم شيئًا على وجهه. دينك أولًا، ثم فنّك، إلى درجةٍ لا يستطيع أحدٌ أن يزدريها. فالمسلم الذي هو أمهر مهندسٍ في المجلس يخدم هذه الأمّة بما لا يخدمها به من يُحسن الكلام عنها فقط.\n\n٤. أتقِن عملك، واحفظ وعدك، ودقِّق. فهذه عبادة، ومنها تُبنى الحضارة حقًّا.\n\n٥. اختَرْ قبل أن تنقل. سؤالٌ واحدٌ أمام كلّ ما تهمّ بتقليده: أهذا حسن؟ وما الذي يصنعه بي؟\n\n٦. إن كنت كبيرًا فائتمن شابًّا على أمرٍ حقيقيٍّ وعلّمه. وإن كنت شابًّا فلا تنتظر أن تُعطاه.\n\nواعلم أنّ العودة ليست لحظةً واحدةً فاصلة، بل رجوعٌ ستضطرّ إليه أكثر من مرّة. والسقوط ثانيةً لا يُغلق الباب؛ وإنما يُغلقه أن تعزم ألّا ترجع منه.",
+      dua: {
+        ar: "يَا مُقَلِّبَ الْقُلُوبِ، ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+        en: "“O Turner of the hearts, make my heart firm upon Your religion.”",
+        when: "Say it when you are afraid of slipping back. He ﷺ said it often, and when Aishah رضي الله عنها asked him why he repeated it so much, he said: “There is no heart that is not between two of the fingers of the Most Merciful. If He wills, He keeps it straight; if He wills, He turns it away.”",
+        whenAr: "قُلْه إذا خفتَ الانتكاس. كان ﷺ يُكثر منه، فسألته عائشة رضي الله عنها عن كثرة قوله فقال: «ما من قلبٍ إلا وهو بين إصبعين من أصابع الرحمن، إن شاء أقامه وإن شاء أزاغه».",
+        ref: "Jami at-Tirmidhi, Book of Qadar, Hadith 2140; also narrated by Ahmad and Ibn Majah",
+        strength: "Outside the two Sahihs — narrated by at-Tirmidhi; graded Sahih by al-Albani"
+      }
+    },
+    {
+      id: "gc-win",
+      icon: "🏆",
+      title: "And how it ends",
+      titleAr: "وكيف تكون العاقبة",
+      body: "The promise was made, and it was made with a condition attached — and the condition is not military and it is not economic. It is that they worship Him, associating nothing with Him.\n\nThat is worth sitting with, because it means the road back is not blocked by anything outside us. No nation is holding the door shut. The condition is one a person can begin to meet tonight, alone, with nobody watching.\n\nAnd notice how the first time happened. It was not a plan drawn up by a committee. It was a small number of people who took the Book seriously, and who were told to read, and to look, and to be exact, and to be honest — and within a hundred years the centre of the world's learning had moved to their cities, and stayed there for seven hundred.\n\nThey were not given anything we have not been given. The same Book is on the shelf. It has not changed a letter.\n\nSo the question at the end of this page is not whether it can be done again. It has already been done once, by people who started with less than we have. The question is only whether we will do the ordinary, unglamorous, entirely possible things it was built out of the first time: the prayer kept, the word honoured, the work finished properly, the young trusted — and the refusal to follow anyone down a hole simply because we watched them go in.",
+      bodyAr: "قد وُعِد الوعد، وقُيّد بشرط، وليس الشرط عسكريًّا ولا اقتصاديًّا، بل هو: ﴿يَعْبُدُونَنِي لَا يُشْرِكُونَ بِي شَيْئًا﴾.\n\nوهذا موضع تأمّل، فإنه يعني أنّ طريق الرجوع ليس مسدودًا بشيءٍ خارجٍ عنّا. فما من أمّةٍ تُمسك الباب. والشرط ممّا يبدأ المرء في تحقيقه هذه الليلة، وحده، لا يراه أحد.\n\nوتأمّل كيف كانت المرّة الأولى: لم تكن خطّةً وضعتها لجنة، بل نفرًا قليلًا أخذوا الكتاب مأخذ الجدّ، وقيل لهم: اقرؤوا، وانظروا، ودقّقوا، واصدقوا — فما مضت مئة سنةٍ حتى انتقل مركز العلم في الدنيا إلى مدنهم، فأقام فيها سبعمئة.\n\nولم يُؤتَوا شيئًا لم نُؤتَه. فالكتاب نفسه على الرفّ، لم يتغيّر منه حرف.\n\nفالسؤال في آخر هذه الصفحة ليس: أيمكن أن يُعاد؟ فقد أُعيد مرّةً على يد من بدأ بأقلّ ممّا بأيدينا. وإنما السؤال: أنفعل تلك الأمور العاديّة غير البرّاقة الممكنة تمامًا التي بُني منها أولَ مرّة — صلاةٌ تُحفظ، وكلمةٌ تُوفى، وعملٌ يُتمّ على وجهه، وشابٌّ يُؤتمن، وإباءٌ أن نتبع أحدًا إلى جُحرٍ لمجرّد أننا رأيناه يدخله؟",
+      quote: {
+        ar: "وَعَدَ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَعَمِلُوا الصَّالِحَاتِ لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ … وَلَيُبَدِّلَنَّهُم مِّن بَعْدِ خَوْفِهِمْ أَمْنًا ۚ يَعْبُدُونَنِي لَا يُشْرِكُونَ بِي شَيْئًا",
+        en: "“Allah has promised those among you who believe and do righteous deeds that He will surely make them successors in the land… and that He will surely exchange their fear for security — they worship Me, associating nothing with Me.”",
+        ref: "Surah An-Nur (24:55) — the promise, and its condition in the final clause",
+        strength: "The Quran"
+      },
+      dua: {
+        ar: "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+        en: "“O Allah, help me to remember You, to thank You, and to worship You well.”",
+        when: "Say it at the end of every prayer. He ﷺ took Mu'adh by the hand, told him twice that he loved him, and then told him never to leave this off after any prayer. Notice the third request: not merely to worship, but to worship WELL — the same word as doing your work well.",
+        whenAr: "قُلْه في دُبُر كلّ صلاة. أخذ ﷺ بيد معاذٍ وأخبره مرّتين أنه يحبّه، ثم أوصاه ألّا يدعه في دُبُر كلّ صلاة. وتأمّل الطلب الثالث: ليس أن يعبد فحسب، بل أن يُحسن العبادة — وهو المعنى نفسه في إتقان العمل.",
+        ref: "Sunan Abu Dawud, Book of Prayer, Hadith 1522 — narrated from Mu'adh ibn Jabal",
+        strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Shu'ayb al-Arna'ut"
+      }
+    }
+  ],
+
+  close: "May Allah return this ummah to the best of its conditions, and make us of those who did the work rather than only mourned it.",
+  closeAr: "اللهمّ ردّ هذه الأمّة إلى أحسن أحوالها، واجعلنا ممّن عمل لا ممّن بكى عليها فحسب.",
+
+  note: "This section is a reminder built on the Quran and on narrations whose grading is stated with each one. It is not a fatwa, and it is not a judgement on any person, nation or people. The criticism in it is aimed at our own choices — at what we decided to copy — and at nobody else.",
+  noteAr: "هذا القسم تذكيرٌ مبنيٌّ على القرآن وعلى مرويّاتٍ مبيَّنةٍ درجتُها مع كلٍّ منها. وليس فتوى، ولا حكمًا على شخصٍ أو أمّةٍ أو شعب. والنقد فيه موجَّهٌ إلى اختياراتنا نحن — إلى ما ارتضينا نقله — لا إلى أحدٍ سوانا."
+};

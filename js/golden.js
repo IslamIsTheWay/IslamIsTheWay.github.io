@@ -922,6 +922,330 @@ const GOLDEN_FIGURES = [
     strength: "Documented — the mills, the trade and the transmission route are recorded in both Muslim and European sources; the exact size of the Cordoba library is reported in the histories and the figure varies between them",
     strengthAr: "موثّق — المطاحن والتجارة وطريق الانتقال مسجَّلةٌ في مصادر المسلمين وأوروبا؛ وأما عدد مكتبة قرطبة فمرويٌّ في كتب التاريخ ويختلف الرقم بينها",
     keys: ["paper","books","library","cordoba","baghdad","printing","talas","الورق","الكتب","المكتبة","قرطبة","بغداد","الطباعة","الورّاقين"]
+  },
+
+  /* ================= MORE MATHEMATICS ================= */
+  {
+    id: "g-uqlidisi",
+    cat: "math",
+    name: "Abu al-Hasan al-Uqlidisi",
+    nameAr: "أبو الحسن الإقليدسي",
+    latin: "—",
+    years: "fl. c. 952 CE",
+    yearsAr: "ازدهر نحو ٣٤١ هـ",
+    place: "Damascus",
+    placeAr: "دمشق",
+    headline: "He wrote the decimal point into existence.",
+    headlineAr: "هو الذي أدخل الكسر العشري إلى الوجود كتابةً.",
+    detail: "Al-Uqlidisi's Kitab al-Fusul fi al-Hisab al-Hindi is the earliest surviving book to use decimal fractions — the notation that lets you write a half as 0.5 instead of as a ratio of two whole numbers. Every price, every measurement and every scientific result written today uses what he set down.\n\nHe also adapted the Indian arithmetic, which had been done on a dust board that you wiped as you went, so that it could be done with ink on paper and the working could be checked afterwards. That sounds small. It is the difference between a calculation that vanishes and a calculation that can be audited.",
+    detailAr: "«كتاب الفصول في الحساب الهندي» للإقليدسي أقدم كتابٍ باقٍ استُعملت فيه الكسور العشرية — وهي الكتابة التي تجعلك تكتب النصف ٠٫٥ بدل نسبةٍ بين عددين صحيحين. وكلُّ ثمنٍ وكلُّ قياسٍ وكلُّ نتيجةٍ علميةٍ تُكتب اليوم فإنما تجري على ما قرّره.\n\nوحوّل أيضًا الحساب الهندي — وكان يُعمل على لوحٍ من التراب يُمحى أولًا بأول — إلى حسابٍ بالمداد على الورق يمكن مراجعة خطواته بعد الفراغ منه. وهذا يبدو يسيرًا، وهو الفرق بين حسابٍ يتبخّر وحسابٍ يُمكن تدقيقه.",
+    works: [
+      { t: "Kitab al-Fusul fi al-Hisab al-Hindi", tAr: "الفصول في الحساب الهندي", d: "The earliest surviving use of decimal fractions.", dAr: "أقدم استعمالٍ باقٍ للكسور العشرية." }
+    ],
+    after: "Decimal fractions are usually dated in Europe to Simon Stevin in 1585 — six hundred years later.",
+    afterAr: "ويُؤرَّخ للكسور العشرية في أوروبا عادةً بسيمون ستيفن سنة ١٥٨٥م — بعده بستّمئة سنة.",
+    strength: "Documented — his own surviving manuscript",
+    strengthAr: "موثّق — بمخطوطه الباقي",
+    keys: ["uqlidisi","decimal","fraction","arithmetic","decimal point","الإقليدسي","الكسور العشرية","الحساب","الفاصلة العشرية"]
+  },
+  {
+    id: "g-karaji",
+    cat: "math",
+    name: "Al-Karaji and as-Samaw'al",
+    nameAr: "الكرجي والسموأل",
+    latin: "—",
+    years: "c. 953–1029 and c. 1130–1180 CE",
+    yearsAr: "نحو ٣٤٢–٤٢٠ و٥٢٥–٥٧٥ هـ",
+    place: "Baghdad and Maragha",
+    placeAr: "بغداد ومراغة",
+    headline: "Between them they freed algebra from geometry — and wrote down proof by induction.",
+    headlineAr: "حرّرا الجبر من الهندسة — ودوّنا البرهان بالاستقراء الرياضي.",
+    detail: "Al-Khwarizmi's algebra still leaned on geometric pictures — a square was a square you could draw. Al-Karaji cut that tie and treated the unknown as a pure quantity to be worked on by rules, which is what algebra has been ever since. He built the arithmetic of polynomials: adding, subtracting, multiplying and dividing expressions rather than numbers.\n\nAs-Samaw'al carried it further and used an argument that runs from a case to the case after it, back down to the first — the reasoning we now call mathematical induction. He used it to prove the binomial theorem and to set out the triangle of coefficients that Europe would later name after Pascal.",
+    detailAr: "كان جبر الخوارزمي ما يزال متعلّقًا بالصور الهندسية، فالمربّع مربّعٌ تراه مرسومًا. فقطع الكرجي هذه الصلة وعامل المجهول مقدارًا مجرَّدًا يُتصرَّف فيه بقواعد، وهذا هو الجبر منذئذٍ إلى اليوم. وأقام حساب كثيرات الحدود: جمعًا وطرحًا وضربًا وقسمةً للمقادير لا للأعداد.\n\nومضى السموأل أبعد، فاستعمل برهانًا ينتقل من حالةٍ إلى التي تليها ثم يرتدّ إلى الأولى — وهو ما نسمّيه اليوم الاستقراء الرياضي. وبرهن به على نشر ذات الحدّين، وأورد مثلّث المعاملات الذي سمّته أوروبا بعدُ باسم باسكال.",
+    works: [
+      { t: "Al-Fakhri fi al-Jabr", tAr: "الفخري في الجبر", d: "Al-Karaji: algebra as operations on quantities, not on shapes.", dAr: "الكرجي: الجبر عملياتٍ على المقادير لا على الأشكال." },
+      { t: "Al-Bahir fi al-Jabr", tAr: "الباهر في الجبر", d: "As-Samaw'al: induction, polynomials, and the coefficient triangle.", dAr: "السموأل: الاستقراء وكثيرات الحدود ومثلّث المعاملات." }
+    ],
+    after: "The triangle is called Pascal's triangle. Pascal was born in 1623, roughly five centuries after as-Samaw'al set it out.",
+    afterAr: "ويُسمّى المثلّث «مثلّث باسكال»، وقد وُلد باسكال سنة ١٦٢٣م، بعد أن أورده السموأل بنحو خمسة قرون.",
+    strength: "Documented — both works survive",
+    strengthAr: "موثّق — الكتابان باقيان",
+    keys: ["karaji","samawal","algebra","induction","polynomial","binomial","pascal","الكرجي","السموأل","الجبر","الاستقراء","كثيرات الحدود","مثلث باسكال"]
+  },
+  {
+    id: "g-thabit",
+    cat: "math",
+    name: "Thabit ibn Qurra",
+    nameAr: "ثابت بن قُرّة",
+    latin: "Thebit",
+    years: "826–901 CE",
+    yearsAr: "٢١١–٢٨٨ هـ",
+    place: "Harran and Baghdad",
+    placeAr: "حرّان وبغداد",
+    headline: "One of the finest minds of the House of Wisdom — and he was not a Muslim.",
+    headlineAr: "من أنبغ عقول بيت الحكمة — ولم يكن مسلمًا.",
+    detail: "Thabit ibn Qurra was a Sabian of Harran, and this card exists partly to say so. He translated Archimedes, Apollonius and Euclid into Arabic, corrected them, and went past them: he gave a general rule for producing amicable numbers, worked on the composition of ratios which is the ancestor of the concept of a real number, and computed areas and volumes by a method of summing that comes very close to integration.\n\nHe was paid by the caliph, honoured at court, and his name is on his work. That is the point worth taking from him. A civilisation confident in itself does not need everyone in the room to agree with it in order to learn from them — and this is the same civilisation that some now imagine was closed and afraid.",
+    detailAr: "كان ثابت بن قرّة صابئيًّا من حرّان، وهذه البطاقة موضوعةٌ ليُقال ذلك. نقل أرخميدس وأبولونيوس وإقليدس إلى العربية، وصحّحهم، وتجاوزهم: فوضع قاعدةً عامّةً لتوليد الأعداد المتحابّة، ونظر في تأليف النسب وهو أصل مفهوم العدد الحقيقي، وحسب المساحات والحجوم بطريقة جمعٍ تقارب التكامل مقاربةً شديدة.\n\nوأُجريت عليه أرزاق الخليفة، وأُكرم في مجلسه، واسمه على عمله. وهذا هو المأخوذ منه: أنّ الحضارة الواثقة بنفسها لا تشترط أن يوافقها كلُّ من في المجلس لتتعلّم منه — وهي الحضارة نفسها التي يتوهّمها بعضهم اليوم منغلقةً خائفة.",
+    works: [
+      { t: "On Amicable Numbers", tAr: "في الأعداد المتحابّة", d: "A general rule for generating them.", dAr: "قاعدةٌ عامّةٌ في توليدها." },
+      { t: "His translations", tAr: "ترجماته", d: "Archimedes, Apollonius and Euclid into Arabic — several survive only in his version.", dAr: "أرخميدس وأبولونيوس وإقليدس إلى العربية، وبعضها لم يبقَ إلا في نقله." }
+    ],
+    after: "HONEST NOTE: he was a Sabian, not a Muslim, and it would be dishonest to count him among Muslim scientists. He belongs on this page for a different reason — as evidence of what the civilisation was like to work in.",
+    afterAr: "تنبيهٌ للأمانة: كان صابئيًّا لا مسلمًا، ولا يصحّ عدُّه في علماء المسلمين. وإنما موضعه من هذه الصفحة لمعنًى آخر: شهادةً على طبيعة تلك الحضارة لمن عمل فيها.",
+    strength: "Documented — his own surviving works and translations",
+    strengthAr: "موثّق — بمصنّفاته وترجماته الباقية",
+    keys: ["thabit","qurra","amicable numbers","translation","sabian","calculus","ثابت بن قرة","الأعداد المتحابة","الترجمة","الصابئة","بيت الحكمة"]
+  },
+
+  /* ================= MORE ASTRONOMY ================= */
+  {
+    id: "g-sufi",
+    cat: "astronomy",
+    name: "Abd ar-Rahman as-Sufi",
+    nameAr: "عبد الرحمن الصوفي",
+    latin: "Azophi",
+    years: "903–986 CE",
+    yearsAr: "٢٩١–٣٧٦ هـ",
+    place: "Isfahan and Shiraz",
+    placeAr: "أصفهان وشيراز",
+    headline: "He recorded the Andromeda galaxy a thousand years before anyone knew what a galaxy was.",
+    headlineAr: "سجّل مجرّة المرأة المسلسلة قبل أن يُعرف ما المجرّة بألف سنة.",
+    detail: "In his Book of the Fixed Stars, as-Sufi went through Ptolemy's catalogue constellation by constellation, corrected the magnitudes and positions by his own observation, drew each constellation twice — as seen in the sky and as seen on a globe — and added the Arabic names the Bedouin already used.\n\nAnd in the constellation of the Chained Woman he described a \"little cloud\" that is not a star. That is the earliest known record of the Andromeda galaxy, the nearest large galaxy to our own, seen with the naked eye seven hundred years before the telescope. He also noted the Large Magellanic Cloud, which is not visible from Europe at all.",
+    detailAr: "استعرض الصوفي في «كتاب صور الكواكب الثابتة» فهرس بطليموس كوكبةً كوكبة، فصحّح الأقدار والمواضع برصده هو، ورسم كلّ صورةٍ مرّتين — كما تُرى في السماء وكما تُرى على الكرة — وأضاف الأسماء العربية التي كانت العرب تعرفها.\n\nووصف في كوكبة المرأة المسلسلة «لطخةً سحابيّة» ليست بنجم. وهذا أقدم ذكرٍ معروفٍ لمجرّة المرأة المسلسلة، أقرب المجرّات الكبيرة إلينا، رُئيت بالعين المجرّدة قبل المقراب بسبعمئة سنة. وذكر كذلك سحابة ماجلان الكبرى، وهي لا تُرى من أوروبا أصلًا.",
+    works: [
+      { t: "Kitab Suwar al-Kawakib", tAr: "كتاب صور الكواكب الثابتة", d: "The corrected star catalogue, illustrated, with the Arabic names.", dAr: "الفهرس النجميّ المصحَّح مصوَّرًا بالأسماء العربية." }
+    ],
+    after: "Andromeda's \"discovery\" is usually credited to Simon Marius in 1612. A lunar crater is named Azophi — the Latin name again.",
+    afterAr: "ويُنسب «اكتشاف» المرأة المسلسلة عادةً إلى سيمون ماريوس سنة ١٦١٢م. وسُمّيت فُوَّهةٌ قمريةٌ باسم Azophi — بالاسم اللاتيني مرّةً أخرى.",
+    strength: "Documented — his own illustrated work survives in many copies",
+    strengthAr: "موثّق — كتابه المصوَّر باقٍ في نسخٍ كثيرة",
+    keys: ["sufi","azophi","stars","andromeda","galaxy","constellation","catalogue","الصوفي","صور الكواكب","المرأة المسلسلة","المجرة","النجوم"]
+  },
+  {
+    id: "g-farghani",
+    cat: "astronomy",
+    name: "Ahmad al-Farghani",
+    nameAr: "أحمد الفرغاني",
+    latin: "Alfraganus",
+    years: "9th century CE",
+    yearsAr: "القرن الثالث الهجري",
+    place: "Farghana and Baghdad",
+    placeAr: "فرغانة وبغداد",
+    headline: "The book that taught Europe astronomy for seven hundred years — and that Columbus misread.",
+    headlineAr: "الكتاب الذي علّم أوروبا الفلك سبعمئة سنة — والذي أخطأ كولمبس في قراءته.",
+    detail: "Al-Farghani's Elements of Astronomy set out Ptolemaic astronomy clearly and without heavy mathematics, corrected several of Ptolemy's figures, and gave values for the size of the earth and the distances of the planets. It was translated into Latin twice in the twelfth century and became the standard European textbook. Dante used it for the astronomy in the Divine Comedy.\n\nAnd there is a detail worth telling. Columbus used al-Farghani's figure for the length of a degree — but al-Farghani had measured it in Arabic miles and Columbus took it as Roman miles, which are shorter. That error made the earth look about a quarter smaller than it is, which is part of why he believed he could reach Asia by sailing west. Europe reached the Americas partly on the back of a misread Muslim measurement.",
+    detailAr: "عرض الفرغاني في «جوامع علم النجوم» فلك بطليموس عرضًا واضحًا بلا إثقالٍ بالرياضيات، وصحّح عدّة أرقامٍ له، وأورد قيمًا لحجم الأرض وأبعاد الكواكب. وتُرجم إلى اللاتينية مرّتين في القرن الثاني عشر فصار المقرّر الأوروبي المعتمد. واعتمده دانتي في فلك «الكوميديا الإلهية».\n\nوثمّة تفصيلٌ يستحقّ أن يُروى: استعمل كولمبس قيمة الفرغاني لطول الدرجة، لكنّ الفرغاني قاسها بالميل العربي فحسبها كولمبس بالميل الروماني وهو أقصر. فأظهر هذا الخطأ الأرضَ أصغر بنحو الربع ممّا هي عليه، وكان ذلك من أسباب ظنّه أنه يبلغ آسيا بالإبحار غربًا. فبلغت أوروبا الأمريكتين في جزءٍ من السبب على ظهر قياسٍ إسلاميٍّ أُسيئت قراءته.",
+    works: [
+      { t: "Jawami' Ilm an-Nujum", tAr: "جوامع علم النجوم", d: "Europe's astronomy textbook, as Elementa Astronomica.", dAr: "مقرّر الفلك في أوروبا باسم Elementa Astronomica." }
+    ],
+    after: "A lunar crater is named Alfraganus.",
+    afterAr: "وسُمّيت فُوَّهةٌ قمريةٌ باسم Alfraganus.",
+    strength: "Documented — his own work and the two Latin translations; the Columbus mile confusion is standard in the history of navigation",
+    strengthAr: "موثّق — بكتابه وترجمتيه اللاتينيتين؛ والتباس الميل عند كولمبس مقرَّرٌ في تاريخ الملاحة",
+    keys: ["farghani","alfraganus","astronomy","columbus","earth size","dante","الفرغاني","الفلك","كولمبس","حجم الأرض","دانتي"]
+  },
+  {
+    id: "g-ibn-yunus",
+    cat: "astronomy",
+    name: "Ibn Yunus",
+    nameAr: "ابن يونس المصري",
+    latin: "—",
+    years: "c. 950–1009 CE",
+    yearsAr: "نحو ٣٣٩–٣٩٩ هـ",
+    place: "Cairo",
+    placeAr: "القاهرة",
+    headline: "Thirty years of observations so careful that they were used to test Newton's theory eight centuries later.",
+    headlineAr: "ثلاثون سنةً من الأرصاد بلغت من الدقّة أن اختُبرت بها نظريّة نيوتن بعده بثمانية قرون.",
+    detail: "Ibn Yunus observed from Cairo for around thirty years and produced az-Zij al-Hakimi, recording more than ten thousand entries of the sun's position, and — crucially — dating and describing his eclipses precisely. In the eighteenth and nineteenth centuries those eclipse records were used by European astronomers to work out whether the moon's motion was accelerating over long periods, which is a test of gravitation itself. Data taken in Cairo in the year 1000 was still doing scientific work eight hundred years later.\n\nHe also gave the trigonometric identity that converts a product into a sum, which before logarithms was the fastest way to multiply large numbers and was used by astronomers for centuries.",
+    detailAr: "رصد ابن يونس من القاهرة نحو ثلاثين سنةً فأخرج «الزيج الحاكمي»، وقيّد فيه ما يزيد على عشرة آلاف موضعٍ للشمس، والأهمّ أنه أرّخ الكسوفات ووصفها بدقّة. وفي القرنين الثامن عشر والتاسع عشر استعمل فلكيّو أوروبا سجلّات كسوفاته ليعرفوا هل تتسارع حركة القمر على المدى الطويل، وهو اختبارٌ للجاذبية نفسها. فبياناتٌ رُصدت بالقاهرة سنة ٣٩٠هـ كانت ما تزال تعمل في العلم بعد ثمانمئة سنة.\n\nوأورد كذلك المتطابقة المثلثية التي تُحيل الضرب إلى جمع، وكانت قبل اللوغاريتمات أسرع طرق ضرب الأعداد الكبيرة، واستعملها الفلكيون قرونًا.",
+    works: [
+      { t: "Az-Zij al-Hakimi", tAr: "الزيج الحاكمي الكبير", d: "Thirty years of observation, and the eclipse records.", dAr: "ثلاثون سنةً من الرصد، وسجلّات الكسوف." }
+    ],
+    after: "Laplace and others used his eclipse observations in the study of the moon's secular acceleration.",
+    afterAr: "واستعمل لابلاس وغيره أرصاد كسوفاته في دراسة التسارع القمري.",
+    strength: "Documented — his Zij survives, and its later scientific use is a matter of record",
+    strengthAr: "موثّق — زيجه باقٍ، واستعماله العلميّ بعده مسجَّل",
+    keys: ["ibn yunus","cairo","eclipse","zij","moon","newton","laplace","ابن يونس","القاهرة","الكسوف","الزيج","القمر"]
+  },
+
+  /* ================= MORE MEDICINE ================= */
+  {
+    id: "g-ibn-rushd",
+    cat: "medicine",
+    name: "Ibn Rushd",
+    nameAr: "ابن رشد",
+    latin: "Averroes",
+    years: "1126–1198 CE",
+    yearsAr: "٥٢٠–٥٩٥ هـ",
+    place: "Cordoba, al-Andalus",
+    placeAr: "قرطبة بالأندلس",
+    headline: "A judge, a physician, and the man through whom Europe got Aristotle back.",
+    headlineAr: "قاضٍ وطبيبٌ ومن طريقه استعادت أوروبا أرسطو.",
+    detail: "Ibn Rushd was chief judge of Cordoba and a working physician, and he wrote al-Kulliyat, a general medicine that Europe printed as Colliget. He was among the first to state that a person who has had smallpox does not catch it again, which is the idea of acquired immunity.\n\nBut his enormous effect was on philosophy. He wrote commentaries on nearly all of Aristotle, and when those crossed into Latin they created a whole movement in the European universities — for two centuries he was known there simply as \"the Commentator\", as though there could be no other. Thomas Aquinas argues with him constantly. Europe recovered its own Greek philosophical inheritance largely through a Maliki judge from Cordoba.",
+    detailAr: "كان ابن رشد قاضي قضاة قرطبة وطبيبًا مزاولًا، وصنّف «الكلّيات في الطب» فطبعته أوروبا باسم Colliget. وهو من أوائل من نصّ على أنّ من أصابه الجدري لم يُصَب به ثانيةً، وهذا هو معنى المناعة المكتسبة.\n\nوأما أثره الأعظم فكان في الفلسفة. شرح أرسطو كلَّه تقريبًا، فلمّا عبرت شروحه إلى اللاتينية أنشأت تيّارًا كاملًا في جامعات أوروبا، حتى عُرف عندهم قرنين باسم «الشارح» فقط، كأن لا شارح سواه. ويناقشه توما الأكويني في كلّ موضع. فاستعادت أوروبا ميراثها الفلسفيّ اليونانيّ في جُلّه على يد قاضٍ مالكيٍّ من قرطبة.",
+    works: [
+      { t: "Al-Kulliyat fi at-Tibb", tAr: "الكلّيات في الطب", d: "General medicine; printed in Europe as Colliget.", dAr: "الطبّ العامّ، وطُبع في أوروبا باسم Colliget." },
+      { t: "Bidayat al-Mujtahid", tAr: "بداية المجتهد ونهاية المقتصد", d: "Comparative fiqh: what each school held on a question, and WHY they differed.", dAr: "الفقه المقارن: ما قاله كلُّ مذهبٍ في المسألة، ولِمَ اختلفوا." },
+      { t: "The commentaries on Aristotle", tAr: "شروح أرسطو", d: "Short, middle and long — the works that made him \"the Commentator\" in Latin Europe.", dAr: "الجوامع والتلاخيص والشروح الكبرى، وبها صار «الشارح» عند لاتين أوروبا." }
+    ],
+    after: "He is in Raphael's School of Athens, in a turban, at the front. Named Averroes.",
+    afterAr: "وهو في لوحة رفائيل «مدرسة أثينا»، معتمًّا، في المقدّمة، باسم Averroes.",
+    strength: "Documented — his own surviving works, the Latin translations, and the European authors who argue with him by name",
+    strengthAr: "موثّق — بكتبه الباقية وترجماتها اللاتينية وبمن ناقشه من الأوروبيين باسمه",
+    keys: ["ibn rushd","averroes","aristotle","philosophy","medicine","immunity","cordoba","smallpox","ابن رشد","أرسطو","الفلسفة","الطب","المناعة","قرطبة","الجدري","بداية المجتهد"]
+  },
+  {
+    id: "g-ibn-al-baitar",
+    cat: "medicine",
+    name: "Ibn al-Baitar",
+    nameAr: "ابن البيطار",
+    latin: "—",
+    years: "c. 1197–1248 CE",
+    yearsAr: "نحو ٥٩٣–٦٤٦ هـ",
+    place: "Malaga, then Cairo and Damascus",
+    placeAr: "مالقة ثم القاهرة ودمشق",
+    headline: "He catalogued some 1,400 medicines — and went and looked at the plants himself.",
+    headlineAr: "فهرس نحو ألفٍ وأربعمئة دواء — وذهب فعاين النبات بنفسه.",
+    detail: "Ibn al-Baitar walked from Spain across North Africa to Egypt, Syria and Anatolia collecting plants, and his Comprehensive Book on Simple Drugs describes about 1,400 medicinal substances, some 300 of which had not been recorded before. It is the largest pharmacological work of the medieval world.\n\nWhat makes it science rather than a list is his method: he names his earlier sources, states where he is quoting and where he is reporting his own observation, corrects predecessors when the plant in front of him did not match the description, and gives the name of each plant in Arabic, Greek, Berber and Latin so that a reader elsewhere could identify the same thing. That is a citation practice and a controlled vocabulary — in the thirteenth century.",
+    detailAr: "رحل ابن البيطار من الأندلس ماشيًا عبر شمال إفريقية إلى مصر والشام وبلاد الروم يجمع النبات، ووصف في «الجامع لمفردات الأدوية والأغذية» نحو ألفٍ وأربعمئة مادّةٍ دوائية، منها نحو ثلاثمئةٍ لم تُسجَّل قبله. وهو أكبر كتب الأدوية في العصر الوسيط.\n\nوالذي يجعله علمًا لا قائمةً هو منهجه: يسمّي من سبقه، ويبيّن أين ينقل وأين يصف مشاهدته، ويصحّح المتقدّمين إذا خالف النباتُ الذي بين يديه وصفَهم، ويذكر اسم كلّ نبتةٍ بالعربية واليونانية والبربرية واللاتينية ليعرفها القارئ في بلدٍ آخر. فهذا توثيقٌ للمصادر ومصطلحٌ منضبط — في القرن السابع الهجري.",
+    works: [
+      { t: "Al-Jami' li-Mufradat al-Adwiya wal-Aghdhiya", tAr: "الجامع لمفردات الأدوية والأغذية", d: "About 1,400 drugs, with sources named and observations distinguished from quotation.", dAr: "نحو ١٤٠٠ دواء، بذكر المصادر وتمييز المشاهدة من النقل." }
+    ],
+    after: "Translated into Latin and used in European pharmacy into the eighteenth century.",
+    afterAr: "تُرجم إلى اللاتينية واستُعمل في صيدلة أوروبا إلى القرن الثامن عشر.",
+    strength: "Documented — his own surviving work",
+    strengthAr: "موثّق — بكتابه الباقي",
+    keys: ["ibn al-baitar","pharmacy","drugs","plants","botany","medicine","ابن البيطار","الصيدلة","الأدوية","النبات","المفردات"]
+  },
+
+  /* ================= MORE OPTICS ================= */
+  {
+    id: "g-farisi",
+    cat: "optics",
+    name: "Kamal ad-Din al-Farisi",
+    nameAr: "كمال الدين الفارسي",
+    latin: "—",
+    years: "c. 1267–1319 CE",
+    yearsAr: "نحو ٦٦٥–٧١٨ هـ",
+    place: "Tabriz",
+    placeAr: "تبريز",
+    headline: "He explained the rainbow — with a glass sphere of water on his desk.",
+    headlineAr: "فسّر قوس قزح — بكرةٍ زجاجيةٍ مملوءةٍ بالماء على مكتبه.",
+    detail: "Working through Ibn al-Haytham's optics, al-Farisi wanted to know what a raindrop actually does to light. So he built a model of one: a large glass sphere filled with water, in a darkened chamber, with a controlled aperture. He traced the light through it and found that the primary rainbow comes from two refractions and one internal reflection inside the drop, and the fainter secondary bow from two refractions and TWO reflections — which is why its colours run the other way round.\n\nThat is the correct explanation, and the method is the point: he did not argue about the sky, he built a raindrop he could control and experimented on it. Theodoric of Freiberg reached the same result in Europe at almost exactly the same time.",
+    detailAr: "بينما كان كمال الدين الفارسي ينظر في بصريات ابن الهيثم أراد أن يعرف ما الذي تصنعه قطرة المطر بالضوء حقًّا. فصنع لها نموذجًا: كرةً زجاجيةً كبيرةً مملوءةً بالماء، في حجرةٍ مظلمة، بفتحةٍ مضبوطة. وتتبّع الضوء فيها فوجد أنّ القوس الأول ينشأ من انكسارين وانعكاسٍ داخليٍّ واحدٍ في القطرة، وأنّ القوس الثاني الأخفت من انكسارين وانعكاسين — ولذلك انقلب ترتيب ألوانه.\n\nوهذا هو التفسير الصحيح، والمنهج هو المقصود: لم يجادل في السماء، بل صنع قطرةً يتحكّم فيها وأجرى عليها التجربة. وبلغ تيودوريك الفرايبرغي النتيجة نفسها في أوروبا في الوقت نفسه تقريبًا.",
+    works: [
+      { t: "Tanqih al-Manazir", tAr: "تنقيح المناظر", d: "His revision of Ibn al-Haytham, containing the rainbow experiment.", dAr: "تنقيحه لكتاب المناظر، وفيه تجربة قوس قزح." }
+    ],
+    after: "The rainbow is usually credited to Descartes, three hundred years later.",
+    afterAr: "ويُنسب تفسير قوس قزح عادةً إلى ديكارت بعده بثلاثمئة سنة.",
+    strength: "Documented — his own surviving work",
+    strengthAr: "موثّق — بكتابه الباقي",
+    keys: ["farisi","rainbow","refraction","light","optics","experiment","descartes","الفارسي","قوس قزح","الانكسار","الضوء","البصريات","التجربة"]
+  },
+
+  /* ================= MORE ENGINEERING ================= */
+  {
+    id: "g-sinan",
+    cat: "engineering",
+    name: "Mimar Sinan",
+    nameAr: "معمار سنان",
+    latin: "—",
+    years: "c. 1489–1588 CE",
+    yearsAr: "نحو ٨٩٥–٩٩٦ هـ",
+    place: "Istanbul",
+    placeAr: "إسطنبول",
+    headline: "Around three hundred and fifty structures, and most of them are still standing after five centuries of earthquakes.",
+    headlineAr: "نحو ثلاثمئةٍ وخمسين منشأة، وأكثرها قائمٌ بعد خمسة قرونٍ من الزلازل.",
+    detail: "Sinan was chief architect to three Ottoman sultans and built mosques, bridges, aqueducts, hospitals, kitchens for the poor and baths — by his own account around three hundred and fifty works. The Suleymaniye in Istanbul and the Selimiye in Edirne are the two he is judged by, and at the Selimiye he solved the problem that had defeated builders since Hagia Sophia: how to carry a very large dome on a structure that lets light in everywhere rather than on heavy walls.\n\nThe engineering matters more than the beauty. He built on ground that shakes, and he built for it — flexible foundations, hollowed piers, lead joints between blocks so a tremor moves the building rather than cracking it. Istanbul has had major earthquakes in 1766, 1894 and 1999. His buildings are still there.",
+    detailAr: "كان سنان كبير معماريّي ثلاثة سلاطين عثمانيّين، فبنى المساجد والجسور والقناطر والبيمارستانات والتكايا والحمّامات — نحو ثلاثمئةٍ وخمسين عملًا بحسب ما أثبته لنفسه. والسليمانية بإسطنبول والسليمية بأدرنة هما اللتان يُقاس بهما، وحلّ في السليمية المسألة التي أعجزت البنّائين منذ آيا صوفيا: كيف تُحمل قبّةٌ عظيمةٌ على بناءٍ يدخله الضوء من كلّ جهةٍ لا على جدرانٍ صمّاء.\n\nوالهندسة فيه أعظم من الجمال. بنى على أرضٍ تتزلزل فبنى لها: أساساتٌ مرنة، ودعائم مفرَّغة، ووصلاتٌ من الرصاص بين الأحجار حتى تتحرّك العمارة بالهزّة ولا تتصدّع. وقد أصابت إسطنبولَ زلازلُ كبرى سنة ١٧٦٦ و١٨٩٤ و١٩٩٩م، ومبانيه قائمة.",
+    works: [
+      { t: "The Selimiye Mosque, Edirne", tAr: "جامع السليمية بأدرنة", d: "The work he called his masterpiece; a UNESCO World Heritage site.", dAr: "الذي سمّاه أثر أستاذيّته، وهو من مواقع التراث العالمي." },
+      { t: "The Suleymaniye, Istanbul", tAr: "السليمانية بإسطنبول", d: "Mosque, hospital, schools, kitchen and baths as one complex.", dAr: "جامعٌ وبيمارستانٌ ومدارس ومطبخٌ وحمّاماتٌ في مجمّعٍ واحد." }
+    ],
+    after: "He is the one figure on this page whose work you can walk into tomorrow.",
+    afterAr: "وهو الوحيد في هذه الصفحة الذي يمكنك أن تدخل عمله غدًا.",
+    strength: "Documented — the buildings stand, and his own memoirs were recorded by his friend Sai Mustafa Celebi",
+    strengthAr: "موثّق — الأبنية قائمة، وسيرته أملاها على صديقه سائي مصطفى چلبي",
+    keys: ["sinan","architect","mosque","dome","earthquake","istanbul","selimiye","engineering","سنان","المعمار","الجامع","القبة","الزلزال","إسطنبول","السليمية","الهندسة"]
+  },
+
+  /* ================= MORE ON THE EARTH ================= */
+  {
+    id: "g-piri-reis",
+    cat: "earth",
+    name: "Piri Reis",
+    nameAr: "بيري ريس",
+    latin: "—",
+    years: "c. 1465–1553 CE",
+    yearsAr: "نحو ٨٧٠–٩٦٠ هـ",
+    place: "Gallipoli and the Ottoman fleet",
+    placeAr: "غاليبولي والأسطول العثماني",
+    headline: "A world map from 1513 that shows the coast of South America — and says on it which sources were used.",
+    headlineAr: "خريطةٌ للعالم سنة ٩١٩هـ فيها ساحل أمريكا الجنوبية — وعليها بخطّه من أيّ المصادر أُخذت.",
+    detail: "Piri Reis was an Ottoman admiral who drew a world map in 1513, of which the western third survives. It shows the Atlantic, the coast of Iberia and West Africa, and the coast of South America with a startling degree of correctness for twenty years after Columbus.\n\nThe honest and impressive part is the notes he wrote on the map itself. He states that he compiled it from about twenty older maps, including Ptolemaic charts, Arab maps, Portuguese charts and — he says explicitly — a map that had belonged to Columbus. He is doing what a scientist does: showing his sources so that another person can check him.\n\nHis Kitab-i Bahriye is a sailing manual for the Mediterranean with harbour-by-harbour charts, currents and dangers — a working book for men whose lives depended on it being right.",
+    detailAr: "كان بيري ريس أميرالًا عثمانيًّا رسم خريطةً للعالم سنة ٩١٩هـ بقي منها ثلثها الغربي. وفيها الأطلسي وسواحل الأندلس وغرب إفريقية وساحل أمريكا الجنوبية بدرجةٍ من الصواب تدهش بعد كولمبس بعشرين سنة.\n\nوالمنصف المدهش فيها ما كتبه عليها بخطّه: نصّ على أنه جمعها من نحو عشرين خريطةً قديمة، منها خرائط بطليموسية وخرائط عربية وخرائط برتغالية، ومنها — يقول صراحةً — خريطةٌ كانت لكولمبس. فهو يصنع صنيع العالِم: يُظهر مصادره ليتحقّق منه غيره.\n\nو«كتاب بحرية» له دليلُ ملاحةٍ للبحر المتوسط بخرائط الموانئ ميناءً ميناء، والتيارات والمخاطر — كتابُ عملٍ لمن كانت أرواحهم متعلّقةً بصوابه.",
+    works: [
+      { t: "The 1513 world map", tAr: "خريطة العالم سنة ٩١٩هـ", d: "The surviving western third, with his sources written on it.", dAr: "الثلث الغربي الباقي، وعليه ذكر مصادره." },
+      { t: "Kitab-i Bahriye", tAr: "كتاب بحرية", d: "A sailing manual of the Mediterranean, harbour by harbour.", dAr: "دليل الملاحة في المتوسط، ميناءً ميناء." }
+    ],
+    after: "HONEST NOTE: a great deal of nonsense circulates about this map — that it shows Antarctica free of ice, or was drawn from the air. None of that is established, and the map does not need it. What it actually is — a careful compilation with its sources named, twenty-one years after Columbus — is impressive enough without help.",
+    afterAr: "تنبيهٌ للأمانة: يدور حول هذه الخريطة كلامٌ كثيرٌ لا يصحّ، كأنها تُظهر القارّة الجنوبية بلا جليدٍ أو أنها رُسمت من الجوّ. وليس شيءٌ من ذلك بثابت، والخريطة لا تحتاج إليه. فحقيقتها — جمعٌ متقنٌ مذكورةٌ مصادره بعد كولمبس بإحدى وعشرين سنة — كافيةٌ من غير عون.",
+    strength: "Documented for the map and its own written notes; the popular claims about Antarctica are NOT established and are rejected by historians of cartography",
+    strengthAr: "موثّقٌ في الخريطة وحواشيها بخطّه؛ وأما الدعاوى الشائعة عن القارّة الجنوبية فغير ثابتةٍ ويردّها مؤرّخو الخرائط",
+    keys: ["piri reis","map","ottoman","america","navigation","atlantic","بيري ريس","الخريطة","العثمانية","أمريكا","الملاحة","الأطلسي"]
+  },
+
+  /* ================= MORE ON SOCIETY ================= */
+  {
+    id: "g-farabi",
+    cat: "society",
+    name: "Abu Nasr al-Farabi",
+    nameAr: "أبو نصر الفارابي",
+    latin: "Alpharabius",
+    years: "c. 872–950 CE",
+    yearsAr: "نحو ٢٥٩–٣٣٩ هـ",
+    place: "Farab, Baghdad and Damascus",
+    placeAr: "فاراب وبغداد ودمشق",
+    headline: "Called the Second Teacher — the first being Aristotle.",
+    headlineAr: "لُقّب بالمعلّم الثاني — والأول أرسطو.",
+    detail: "Al-Farabi organised logic in Arabic so thoroughly that everyone after him, including Ibn Sina, learned it from his arrangement. His book On the Virtuous City asks what a society is FOR, and answers that a city is virtuous when its people cooperate toward what actually perfects them, and corrupt when it organises itself around wealth, honour or pleasure alone — a question worth putting next to any modern city.\n\nHe also wrote the largest work on music theory of the medieval world, the Great Book of Music, dealing with the mathematics of sound, the tuning of instruments and their construction. Ibn Sina said he learned metaphysics only after reading al-Farabi's short treatise on it, having read Aristotle forty times without understanding.",
+    detailAr: "رتّب الفارابي المنطق بالعربية ترتيبًا استقرّ عليه من بعده، حتى تعلّمه منه ابن سينا نفسه. وسأل في «آراء أهل المدينة الفاضلة»: لأيّ شيءٍ يكون الاجتماع؟ فأجاب أنّ المدينة تفضل إذا تعاون أهلها على ما به كمالهم حقًّا، وتفسد إذا انتظمت على المال وحده أو الجاه وحده أو اللذّة وحدها — وهو سؤالٌ يحسن أن يُوضع بإزاء أيّ مدينةٍ حديثة.\n\nوصنّف أيضًا أكبر كتب نظريّة الموسيقى في العصر الوسيط، وهو «كتاب الموسيقى الكبير»، في رياضيّات الصوت وضبط الآلات وصناعتها. وقال ابن سينا إنه لم يفهم ما بعد الطبيعة حتى قرأ رسالة الفارابي فيها، بعد أن قرأ أرسطو أربعين مرّةً فلم يفهم.",
+    works: [
+      { t: "Ara Ahl al-Madinah al-Fadilah", tAr: "آراء أهل المدينة الفاضلة", d: "What a society is for, and what makes one corrupt.", dAr: "لأيّ شيءٍ يكون الاجتماع، وبمَ تفسد المدينة." },
+      { t: "Kitab al-Musiqa al-Kabir", tAr: "كتاب الموسيقى الكبير", d: "The mathematics of sound and the construction of instruments.", dAr: "رياضيّات الصوت وصناعة الآلات." },
+      { t: "Ihsa al-Ulum", tAr: "إحصاء العلوم", d: "A classification of all the sciences and what each is for.", dAr: "تصنيف العلوم وبيان موضوع كلٍّ منها." }
+    ],
+    after: "Translated into Latin and read across Europe as Alpharabius.",
+    afterAr: "تُرجم إلى اللاتينية وقُرئ في أوروبا باسم Alpharabius.",
+    strength: "Documented — his own surviving works",
+    strengthAr: "موثّق — بكتبه الباقية",
+    keys: ["farabi","alpharabius","logic","philosophy","music","virtuous city","الفارابي","المنطق","الفلسفة","الموسيقى","المدينة الفاضلة","إحصاء العلوم"]
+  },
+
+  /* ================= MORE INSTITUTIONS ================= */
+  {
+    id: "g-nizamiyya",
+    cat: "institutions",
+    name: "The Nizamiyya schools",
+    nameAr: "المدارس النظاميّة",
+    latin: "—",
+    years: "from 1065 CE",
+    yearsAr: "من سنة ٤٥٧ هـ",
+    place: "Baghdad, Nishapur, Isfahan and others",
+    placeAr: "بغداد ونيسابور وأصفهان وغيرها",
+    headline: "A state-funded network of colleges with salaried professors, scholarships and residences — in the eleventh century.",
+    headlineAr: "شبكةٌ من المدارس بتمويلٍ من الدولة، فيها أساتذةٌ برواتب ومِنَحٌ للطلبة وسكن — في القرن الخامس الهجري.",
+    detail: "Nizam al-Mulk, vizier of the Seljuk state, founded a chain of colleges across the empire, the greatest of them the Nizamiyya of Baghdad opened in 1067. They were endowed by waqf, which meant the funding did not depend on the mood of the next ruler. Teachers drew a salary. Students were housed and given a stipend. There was a library, a set curriculum, and a chair that a named scholar held — al-Ghazali held the one in Baghdad.\n\nEvery one of those features — endowment, salaried chair, scholarship, residence, curriculum — is what a university is. They appear here a generation before Bologna, and the debate over how much the European college owes to this model is a live one among historians.",
+    detailAr: "أنشأ نظام الملك وزير الدولة السلجوقية سلسلةً من المدارس في أنحاء الدولة، أعظمها نظاميّة بغداد افتُتحت سنة ٤٥٩هـ. وكانت موقوفةً بالأوقاف، فلم يكن تمويلها معلَّقًا بمزاج الحاكم التالي. وللمدرّسين رواتب، وللطلبة سكنٌ وجراية، وفيها خزانة كتبٍ ومنهجٌ مقرّر وكرسيٌّ يجلس عليه عالمٌ مسمّى — وقد جلس عليه في بغداد الغزالي.\n\nوكلُّ خصلةٍ من هذه — الوقف والكرسيّ براتبٍ والمنحة والسكن والمنهج — هي ما تكون به الجامعة جامعة. وقد ظهرت هنا قبل بولونيا بجيل، ومقدار ما تدين به الكلّية الأوروبية لهذا النموذج مسألةٌ حيّةٌ بين المؤرّخين.",
+    works: [
+      { t: "The Nizamiyya of Baghdad", tAr: "النظاميّة ببغداد", d: "Opened 1067; al-Ghazali taught there.", dAr: "افتُتحت سنة ٤٥٩هـ، ودرّس فيها الغزالي." },
+      { t: "Siyasatnama", tAr: "سياست‌نامه — سِيَر الملوك", d: "Nizam al-Mulk's own book on how a state should be run.", dAr: "كتاب نظام الملك في تدبير الدولة." }
+    ],
+    after: "Histories of the university generally begin at Bologna in 1088, twenty-one years after the Nizamiyya of Baghdad opened its doors.",
+    afterAr: "وتبدأ كتب تاريخ الجامعة عادةً من بولونيا سنة ١٠٨٨م، بعد افتتاح نظاميّة بغداد بإحدى وعشرين سنة.",
+    strength: "Documented — the endowment deeds, the chronicles and the named holders of the chairs",
+    strengthAr: "موثّق — بوثائق الأوقاف والتواريخ وأسماء من ولي الكراسي",
+    keys: ["nizamiyya","school","university","ghazali","nizam al-mulk","waqf","baghdad","النظامية","المدرسة","الجامعة","الغزالي","نظام الملك","الوقف","بغداد"]
   }
 ];
 

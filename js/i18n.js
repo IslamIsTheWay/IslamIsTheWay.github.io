@@ -360,6 +360,9 @@ const AR_PARTS = [
   [/\bIbn Kathir, Al-Bidaya wan-Nihaya\b/g, "ابن كثير، البداية والنهاية"],
   [/\bIbn Kathir, Stories of the Prophets\b/g, "ابن كثير، قصص الأنبياء"],
   [/\bAl-Bidaya wan-Nihaya\b/g, "البداية والنهاية"],
+  /* Must come BEFORE the bare "Stories of the Prophets" below, or that rule
+     fires first and leaves "كتاب the قصص الأنبياء" stranded on the page. */
+  [/Book of the Stories of the Prophets/g, "كتاب أحاديث الأنبياء"],
   [/\bStories of the Prophets\b/g, "قصص الأنبياء"],
   [/\bIbn Kathir\b/g, "ابن كثير"],
   [/\bIbn Ishaq\b/g, "ابن إسحاق"],
@@ -374,6 +377,48 @@ const AR_PARTS = [
   // or that rule fires first and leaves "Outside الصحيحين".
   [/\bOutside the two Sahihs\b/g, "خارج الصحيحين"],
   [/\bthe two Sahihs\b/g, "الصحيحين"],
+  /* Every remaining "Book of X" that was still rendering in English inside an
+     otherwise Arabic reference — collected by sweeping all seven content
+     pages in Arabic mode and listing what came out as "كتاب <English>".
+     Longest first, as with everything else in this list. */
+  [/Book of Holding Fast to the Book and the Sunnah/g, "كتاب الاعتصام بالكتاب والسنة"],
+  [/Book of Softening the Hearts \(ar-Riqaq\)/g, "كتاب الرقاق"],
+  [/Book of the Virtues of the Prophet ﷺ/g, "كتاب المناقب"],
+  [/Book of Cultivation and Sharecropping/g, "كتاب المزارعة"],
+  [/Book of Permission \(on the midday rest\)/g, "كتاب الاستئذان"],
+  [/Book of Purification \(Kitab at-Taharah\)/g, "كتاب الطهارة"],
+  [/Book of Greetings \(Kitab as-Salam\)/g, "كتاب السلام"],
+  [/Book of Paradise \(Kitab al-Jannah\)/g, "كتاب الجنة"],
+  [/Book of the Companions of the Prophet/g, "كتاب فضائل أصحاب النبي"],
+  [/Book of Virtue \(Kitab al-Birr\)/g, "كتاب البر والصلة"],
+  [/Book of the Beginning of Revelation/g, "كتاب بدء الوحي"],
+  [/Book of the Beginning of Creation/g, "كتاب بدء الخلق"],
+  [/Book of the Military Expeditions/g, "كتاب المغازي"],
+  [/Book of the Prayer of Travellers/g, "كتاب صلاة المسافرين"],
+  [/Book of Softening the Hearts/g, "كتاب الرقاق"],
+  [/Book of the Virtues of Madinah/g, "كتاب فضائل المدينة"],
+  [/Book of the Virtues of the Ansar/g, "كتاب مناقب الأنصار"],
+  [/Book of the Merits of the Ansar/g, "كتاب مناقب الأنصار"],
+  [/Book of Remembrance/g, "كتاب الذكر والدعاء"],
+  [/Book of Purification/g, "كتاب الطهارة"],
+  [/Book of Oppressions/g, "كتاب المظالم"],
+  [/Book of Invocations/g, "كتاب الدعوات"],
+  [/Book of the Prophets/g, "كتاب أحاديث الأنبياء"],
+  [/Book of Bequests/g, "كتاب الوصايا"],
+  [/Book of Marriage/g, "كتاب النكاح"],
+  [/Book of Tahajjud/g, "كتاب التهجد"],
+  [/Book of Patients/g, "كتاب المرضى"],
+  [/Book of Destiny/g, "كتاب القدر"],
+  [/Book of Tafsir/g, "كتاب التفسير"],
+  [/Book of Tawhid/g, "كتاب التوحيد"],
+  [/Book of Prophets/g, "كتاب أحاديث الأنبياء"],
+  [/Book of Ar-Riqaq/g, "كتاب الرقاق"],
+  [/Book of Jizyah/g, "كتاب الجزية"],
+  [/Book of Qadar/g, "كتاب القدر"],
+  [/Book of Salat/g, "كتاب الصلاة"],
+  [/Book of Gifts/g, "كتاب الهبة"],
+  [/Book of Dress/g, "كتاب اللباس"],
+  [/Book of Food/g, "كتاب الأطعمة"],
   // Book titles inside references, longest first so they match before the
   // shorter words they contain.
   /* Added for the Golden Age, the revival section and the new stories. These
@@ -405,6 +450,7 @@ const AR_PARTS = [
   [/\bnarrated from Thawban\b/g, "من حديث ثوبان"],
   [/\bnarrated from\b/g, "من حديث"],
   [/\balso narrated by\b/g, "ورواه أيضًا"],
+  [/\bnarrated by Ahmad\b/g, "رواه أحمد"],
   [/\bnarrated by\b/g, "رواه"],
   [/\bgraded weak by\b/g, "وضعّفه"],
   [/\bThe scholars differ\b/g, "والخلاف فيه ثابت"],
@@ -460,9 +506,64 @@ const AR_PARTS = [
   [/\band\b/g, "و"]
 ];
 
+/* ---------- Surah names, generated from the data ----------
+   References were coming out half-translated on every page that cites a
+   verse — "سورة Aal-Imran (3:165)", "سورة At-Tawbah (9:40)". There are 114
+   surahs and hand-typing them into AR_PARTS would guarantee typos and drift
+   from the Quran page, so they are generated from SURAHS in data.js, which
+   already carries the Arabic name of every one.
+
+   Two safety points:
+   • The rules match "سورة <EnglishName>", not the bare name. By the time
+     these run, [/\bSurah\b/ → "سورة"] has already fired, so the Arabic word
+     is the anchor. That stops a name like "An-Nur" or "Ali 'Imran" being
+     replaced where it appears in ordinary prose rather than in a citation.
+   • Longest name first, so "Al-Ma'idah" cannot be partly eaten by a shorter
+     name that is a prefix of it.
+
+   Built once, lazily, and only if data.js actually loaded — pages that do
+   not include it simply keep the old behaviour rather than erroring. */
+/* The lookup is keyed on a NORMALISED name rather than the exact spelling,
+   because the references were written over many sessions and do not spell
+   the transliterations the same way the SURAHS array does:
+
+       data "Ali 'Imran"  ·  refs "Aal-Imran" and "Al-Imran"
+       data "Ash-Shuraa"  ·  refs "Ash-Shura"
+       data "An-Naziat"   ·  refs "An-Nazi'at"
+
+   Normalising strips everything that is not a letter, lowercases, and then
+   collapses doubled letters — which makes all three pairs above land on the
+   same key without anyone having to go and re-spell 114 names by hand. */
+function iitwNormSurah(name) {
+  return String(name || "")
+    .toLowerCase()
+    .replace(/[^a-z]/g, "")
+    .replace(/(.)\1+/g, "$1");
+}
+
+let iitwSurahMap = null;
+function iitwGetSurahMap() {
+  if (iitwSurahMap) return iitwSurahMap;
+  iitwSurahMap = {};
+  if (typeof SURAHS === "undefined") return iitwSurahMap;
+  SURAHS.forEach(s => { iitwSurahMap[iitwNormSurah(s.name)] = s.arabic; });
+  return iitwSurahMap;
+}
+
 function iitwTranslateReference(text) {
   let out = text;
   AR_PARTS.forEach(([re, rep]) => { out = out.replace(re, rep); });
+
+  /* By this point [/\bSurah\b/ → "سورة"] has already fired, so the Arabic
+     word is the anchor: only a name that is actually part of a citation is
+     touched, never one that happens to appear in ordinary prose. The name
+     runs up to the opening bracket of the verse number, or to the end. */
+  const map = iitwGetSurahMap();
+  out = out.replace(/سورة\s+([A-Za-z][A-Za-z'’’\- ]*?)\s*(?=\(|$|[،,;—])/g,
+    (whole, name) => {
+      const ar = map[iitwNormSurah(name)];
+      return ar ? "سورة " + ar + " " : whole;
+    });
   return out;
 }
 

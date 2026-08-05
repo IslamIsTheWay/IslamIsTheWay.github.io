@@ -2560,6 +2560,129 @@ const WORSHIP_STEPS = [
     ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6307",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["istighfar","seventy","70","daily","repent","forgiveness","habit","الاستغفار","سبعين","التوبة","المغفرة","عادة يومية"]
+  },
+
+  /* ---- More of his wording: the call, the opening, and after the prayer ----
+     Added because the reference was thin on the moments AROUND the prayer —
+     the adhan, the silence before al-Fatihah, and the sitting after the
+     salam, which is where most of what he ﷺ said every day actually sits. */
+  {
+    id: "w-adhan-repeat",
+    stage: "before", stageEn: "Before you pray", stageAr: "قبل الصلاة",
+    title: "Repeat after the muadhdhin, word for word",
+    titleAr: "ردِّد مع المؤذّن كلمةً كلمة",
+    when: "The moment you hear the adhan, wherever you are — you do not have to be in the mosque.",
+    whenAr: "حين تسمع الأذان حيث كنت، ولا يُشترط أن تكون في المسجد.",
+    arabic: "إِذَا سَمِعْتُمُ النِّدَاءَ فَقُولُوا مِثْلَ مَا يَقُولُ الْمُؤَذِّنُ",
+    meaning: "Say what he says, phrase by phrase. Most people let the adhan pass as background noise; he ﷺ made it something you answer. It costs about ninety seconds and it turns a sound you were ignoring into an act of worship five times a day.",
+    meaningAr: "قُل مثل ما يقول، جملةً جملة. وأكثر الناس يدع الأذان يمرّ صوتًا في الخلفية، وقد جعله ﷺ شيئًا تُجيبه. ولا يكلّف إلا نحو تسعين ثانية، فيحيل صوتًا كنت تُهمله إلى عبادةٍ خمس مرّاتٍ في اليوم.",
+    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 611 — narrated from Abu Sa'id al-Khudri; also Sahih Muslim",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["adhan","call to prayer","muadhdhin","repeat","answer","الأذان","المؤذن","الترديد","إجابة المؤذن"]
+  },
+  {
+    id: "w-adhan-dua",
+    stage: "before", stageEn: "Before you pray", stageAr: "قبل الصلاة",
+    title: "The words after the adhan that he promised his intercession for",
+    titleAr: "دعاء ما بعد الأذان الذي وعد عليه بشفاعته",
+    when: "Straight after the adhan finishes, once you have repeated it.",
+    whenAr: "عقب فراغ المؤذّن، بعد أن تردّد معه.",
+    arabic: "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
+    meaning: "O Allah, Lord of this perfect call and the prayer about to be established — grant Muhammad the wasilah and the excellence, and raise him to the praised station You promised him. He ﷺ said whoever says this on hearing the call, his intercession becomes due for him on the Day of Resurrection. Note what it asks for: it asks nothing for yourself. You ask for HIM — and the reward is his intercession for you.",
+    meaningAr: "وقال ﷺ: مَن قالها حين يسمع النداء حلّت له شفاعته يوم القيامة. وتأمّل ما فيها: لا تسأل لنفسك شيئًا، وإنما تسأل له ﷺ — فيكون الجزاء شفاعته لك.",
+    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 614 — narrated from Jabir ibn Abdullah",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["adhan","after adhan","wasilah","intercession","shafaah","الأذان","دعاء الأذان","الوسيلة","الشفاعة","المقام المحمود"]
+  },
+  {
+    id: "w-opening-dua",
+    stage: "in", stageEn: "Inside the prayer", stageAr: "داخل الصلاة",
+    title: "What he said in the silence before al-Fatihah",
+    titleAr: "ما كان يقوله في السكتة قبل الفاتحة",
+    when: "After the opening takbir, in the short pause before you recite al-Fatihah.",
+    whenAr: "بعد تكبيرة الإحرام، في السكتة اليسيرة قبل قراءة الفاتحة.",
+    arabic: "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنَ الْخَطَايَا كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ",
+    meaning: "O Allah, put between me and my sins the distance You put between the east and the west. O Allah, cleanse me of my sins as a white garment is cleansed of dirt. O Allah, wash away my sins with water and snow and hail. Abu Hurairah رضي الله عنه noticed the silence and asked him what he said in it — which is how we have it at all.",
+    meaningAr: "لاحظ أبو هريرة رضي الله عنه تلك السكتة فسأله: ما تقول فيها؟ فأخبره — وبذلك وصلتنا أصلًا.",
+    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 744; also Sahih Muslim",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["opening","istiftah","takbir","before fatihah","start of prayer","دعاء الاستفتاح","تكبيرة الإحرام","قبل الفاتحة","بداية الصلاة"]
+  },
+  {
+    id: "w-after-salam",
+    stage: "after", stageEn: "After the prayer", stageAr: "بعد الصلاة",
+    title: "The first thing he said after the salam",
+    titleAr: "أول ما كان يقوله بعد السلام",
+    when: "Immediately after the salam, before you stand up or speak.",
+    whenAr: "عقب السلام مباشرةً، قبل أن تقوم أو تتكلّم.",
+    arabic: "أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+    count: "the istighfar three times",
+    countAr: "الاستغفار ثلاثًا",
+    meaning: "I seek Allah's forgiveness — three times — then: O Allah, You are Peace and from You is peace; blessed are You, Owner of Majesty and Honour. Sit with the order of it: he finishes the prayer and the first thing he does is ask forgiveness. If he ﷺ ended a prayer by seeking forgiveness for it, nobody else should walk away from theirs feeling it was owed.",
+    meaningAr: "وتأمّل ترتيبها: يفرغ من الصلاة فيكون أول ما يصنع الاستغفار. فإذا كان ﷺ يختم صلاته بالاستغفار منها، فليس لأحدٍ أن ينصرف من صلاته وهو يرى له بها فضلًا.",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Thawban",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["after prayer","salam","istighfar","as-salam","بعد الصلاة","السلام","الاستغفار","اللهم أنت السلام","أذكار بعد الصلاة"]
+  },
+  {
+    id: "w-tasbih-after",
+    stage: "after", stageEn: "After the prayer", stageAr: "بعد الصلاة",
+    title: "Thirty-three, thirty-three, thirty-four",
+    titleAr: "ثلاثٌ وثلاثون، وثلاثٌ وثلاثون، وأربعٌ وثلاثون",
+    when: "After every obligatory prayer, sitting where you prayed.",
+    whenAr: "بعد كلّ صلاةٍ مكتوبة، وأنت في مصلّاك.",
+    arabic: "سُبْحَانَ اللَّهِ (٣٣) — الْحَمْدُ لِلَّهِ (٣٣) — اللَّهُ أَكْبَرُ (٣٣) — لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+    count: "33 · 33 · 33, then the tahlil to complete one hundred",
+    countAr: "٣٣ · ٣٣ · ٣٣ ثم التهليل تمام المئة",
+    meaning: "He ﷺ said whoever glorifies Allah thirty-three times, praises Him thirty-three times and magnifies Him thirty-three times after every prayer — that is ninety-nine — and completes the hundred with the words of tahlil, his sins are forgiven even if they were like the foam of the sea. The poor companions complained that the wealthy had outstripped them in reward; this was part of what he gave them, and it costs nothing.",
+    meaningAr: "قال ﷺ: مَن سبّح دبر كلّ صلاةٍ ثلاثًا وثلاثين، وحمد ثلاثًا وثلاثين، وكبّر ثلاثًا وثلاثين — فتلك تسعٌ وتسعون — وقال تمام المئة كلمة التهليل، غُفرت خطاياه وإن كانت مثل زبد البحر. وقد شكا فقراء الصحابة أنّ أهل الأموال سبقوهم بالأجر، فكان هذا من جملة ما دلّهم عليه، ولا يكلّف شيئًا.",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Abu Hurairah",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["tasbih","33","after prayer","subhanallah","alhamdulillah","allahu akbar","hundred","التسبيح","ثلاث وثلاثون","بعد الصلاة","سبحان الله","الحمد لله","الله أكبر","المئة"]
+  },
+  {
+    id: "w-muadh-dua",
+    stage: "after", stageEn: "After the prayer", stageAr: "بعد الصلاة",
+    title: "The one he told Mu'adh never to leave off",
+    titleAr: "الذي أوصى معاذًا ألّا يدعه",
+    when: "At the end of every prayer.",
+    whenAr: "في دُبُر كلّ صلاة.",
+    arabic: "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+    meaning: "O Allah, help me to remember You, to thank You, and to worship You well. He ﷺ took Mu'adh ibn Jabal by the hand, told him twice that he loved him, and then gave him this. Notice the third request — not merely to worship, but to worship WELL. And notice that all three are requests for HELP: even remembering Him is something you ask His help to do.",
+    meaningAr: "أخذ ﷺ بيد معاذ بن جبل وأخبره مرّتين أنه يحبّه ثم أوصاه بهذا. وتأمّل الطلب الثالث: ليس أن يعبد فحسب بل أن يُحسن العبادة. وتأمّل أنّ الثلاثة كلَّها سؤالُ عون: حتى ذكرُه سبحانه تسأله العون عليه.",
+    ref: "Sunan Abu Dawud, Book of Prayer, Hadith 1522 — narrated from Mu'adh ibn Jabal",
+    strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Shu'ayb al-Arna'ut",
+    keys: ["muadh","after prayer","help me","dhikr","gratitude","worship well","معاذ","دبر كل صلاة","أعني على ذكرك","الشكر","حسن العبادة"]
+  },
+  {
+    id: "w-sayyid-istighfar",
+    stage: "daily", stageEn: "Through the day", stageAr: "في عموم اليوم",
+    title: "The master of seeking forgiveness",
+    titleAr: "سيّد الاستغفار",
+    when: "Once in the morning and once in the evening.",
+    whenAr: "مرّةً في الصباح ومرّةً في المساء.",
+    arabic: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+    count: "morning and evening",
+    countAr: "صباحًا ومساءً",
+    meaning: "He ﷺ said whoever says it during the day with certainty in it and dies before evening is of the people of Paradise, and whoever says it at night with certainty and dies before morning is of the people of Paradise. Look at how it is built: it makes no excuse. It admits the favour AND admits the sin in the same breath — I acknowledge Your favour upon me, and I acknowledge my sin — and only then asks.",
+    meaningAr: "قال ﷺ: مَن قالها من النهار موقنًا بها فمات من يومه قبل أن يُمسي فهو من أهل الجنة، ومَن قالها من الليل وهو موقنٌ بها فمات قبل أن يُصبح فهو من أهل الجنة. وانظر بناءها: ليس فيها اعتذار، بل تُقرّ بالنعمة وتُقرّ بالذنب في نفَسٍ واحد — «أبوء لك بنعمتك عليّ وأبوء لك بذنبي» — ثم تسأل بعد ذلك.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6306 — narrated from Shaddad ibn Aws",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["sayyid al-istighfar","forgiveness","morning","evening","master","سيد الاستغفار","الاستغفار","الصباح","المساء","أذكار الصباح والمساء"]
+  },
+  {
+    id: "w-karb",
+    stage: "mercy", stageEn: "When you are asking for mercy", stageAr: "حين تسأل الرحمة",
+    title: "What he said when something was crushing him",
+    titleAr: "ما كان يقوله عند الكرب",
+    when: "At a moment of real distress — the news you were dreading, the thing you cannot fix.",
+    whenAr: "عند الكرب الحقيقي: الخبر الذي كنت تخشاه، والأمر الذي لا تملك له حيلة.",
+    arabic: "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ",
+    meaning: "There is no god but Allah, the Magnificent, the Forbearing. There is no god but Allah, Lord of the Mighty Throne. There is no god but Allah, Lord of the heavens and Lord of the earth and Lord of the Noble Throne. Notice that it contains no request at all. It is pure declaration of who He is — and that is the point: at the moment you are smallest, you are reminded of the size of the One you are speaking to.",
+    meaningAr: "وتأمّل أنه ليس فيه سؤالٌ البتّة، وإنما هو تعظيمٌ محضٌ لمن تدعوه — وهذا هو المقصود: في أضعف ما تكون، تُذكَّر بعظمة من تخاطبه.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6346 — narrated from Ibn Abbas; also Sahih Muslim",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["distress","karb","anxiety","panic","crisis","hardship","worry","الكرب","الهمّ","الضيق","الشدة","القلق","دعاء الكرب"]
   }
 ];
 
