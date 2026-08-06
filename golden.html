@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608052045" />
+  <link rel="stylesheet" href="css/style.css?v=202608061028" />
 </head>
 <body>
 
@@ -178,11 +178,11 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608052045"></script>
-  <script src="js/golden.js?v=202608052045"></script>
+  <script src="js/data.js?v=202608061028"></script>
+  <script src="js/golden.js?v=202608061028"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
-  <script src="js/golden-closing.js?v=202608052045"></script>
+  <script src="js/golden-closing.js?v=202608061028"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -445,17 +445,65 @@
        same reciter ids as the Quran page — never speech synthesis. */
     function closingAudio(a) {
       if (!a) return "";
+      /* `data-repeat` makes the clip play through more than once. Reciters
+         return to the opening of this verse before completing it, and hearing
+         it a single time flattens the point the section is making — the
+         repetition IS the meaning. Wired below, after render. */
+      const rep = a.repeatTimes || 1;
       return `<div class="gc-recite">
         <div class="gc-recite-head">
           🎧 <span class="en-only">Listen to it recited</span><span class="ar-only" dir="rtl">استمع إليها مُرتَّلة</span>
           — <span class="en-only">${a.reciter}</span><span class="ar-only" dir="rtl">${a.reciterAr}</span>
         </div>
-        <audio controls preload="none" src="${a.url}"></audio>
+
+        ${a.repeatPhrase ? `<div class="gc-repeat">
+          <p class="gc-repeat-ar" dir="rtl">${a.repeatPhrase}</p>
+          <p class="gc-repeat-note">
+            <span class="en-only">${a.repeatLabel}</span>
+            <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${a.repeatLabelAr}</span>
+          </p>
+        </div>` : ""}
+
+        <audio controls preload="none" src="${a.url}" data-repeat="${rep}"></audio>
+        ${rep > 1 ? `<p class="gc-recite-plays">
+          <span class="en-only">Plays ${rep} times — press stop to end it sooner.</span>
+          <span class="ar-only" dir="rtl">تُعاد ${rep === 2 ? "مرّتين" : rep + " مرّات"} — أوقفها متى شئت.</span>
+        </p>` : ""}
+
+        ${a.link ? `<p class="gc-recite-link">
+          <a href="${a.link.url}" target="_blank" rel="noopener noreferrer">
+            ▶ <span class="en-only">${a.link.label}</span><span class="ar-only" dir="rtl">${a.link.labelAr}</span>
+          </a>
+        </p>` : ""}
+
         ${a.note ? `<p class="gc-recite-note">
           <span class="en-only">${a.note}</span>
           <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${a.noteAr}</span>
         </p>` : ""}
       </div>`;
+    }
+
+    /* Replay a clip the number of times its data-repeat asks for. Counting is
+       kept on the element so pausing and restarting cannot leave it looping
+       for ever, and the count resets whenever the listener starts it again. */
+    function wireRepeatAudio() {
+      document.querySelectorAll("audio[data-repeat]").forEach(el => {
+        const want = parseInt(el.getAttribute("data-repeat"), 10) || 1;
+        if (want < 2 || el._iitwRepeatWired) return;
+        el._iitwRepeatWired = true;
+        el.addEventListener("play", () => {
+          if (el._iitwPlayed === undefined || el.currentTime < 0.2) el._iitwPlayed = 0;
+        });
+        el.addEventListener("ended", () => {
+          el._iitwPlayed = (el._iitwPlayed || 0) + 1;
+          if (el._iitwPlayed < want) {
+            el.currentTime = 0;
+            el.play().catch(() => {});
+          } else {
+            el._iitwPlayed = 0;
+          }
+        });
+      });
     }
 
     function closingQuote(q) {
@@ -525,9 +573,10 @@
     renderFigures();
     renderTaken();
     renderClosing();
+    wireRepeatAudio();
     document.getElementById("goldSearch").addEventListener("input", renderFigures);
   </script>
-  <script src="js/main.js?v=202608052045"></script>
-  <script src="js/i18n.js?v=202608052045"></script>
+  <script src="js/main.js?v=202608061028"></script>
+  <script src="js/i18n.js?v=202608061028"></script>
 </body>
 </html>

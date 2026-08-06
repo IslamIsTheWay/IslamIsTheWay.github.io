@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608052045" />
+  <link rel="stylesheet" href="css/style.css?v=202608061028" />
   <style>
     .collection-tabs { display:flex; gap:12px; justify-content:center; margin-bottom:28px; flex-wrap:wrap; }
     .collection-tabs button { padding:12px 28px; border:2px solid var(--green); background:transparent; color:var(--green); border-radius:10px; font-size:1rem; font-weight:600; cursor:pointer; transition:all .2s; }
@@ -135,7 +135,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608052045"></script>
+  <script src="js/data.js?v=202608061028"></script>
   <script>
     const API_BASE = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions";
     const contentArea = document.getElementById("contentArea");
@@ -345,18 +345,54 @@
       intention:["niyyah","intent"], honesty:["honest","truthful","truth"], honest:["honesty","truthful"]
     };
 
+    /* ---------- Arabic has to be normalised on BOTH sides ----------
+       Searching "النية" returned nothing while "intention" found the hadith,
+       for two separate reasons that both had to be fixed:
+
+         • the hadith wording carries harakat (بِالنِّيَّاتِ), so a bare
+           substring test against a query typed without them never matches;
+         • the query carried the definite article while the keyword on the
+           entry is "نية" without it.
+
+       So harakat are stripped, the letter forms that people type
+       interchangeably are folded together (أ إ آ → ا، ى → ي، ة → ه), and the
+       query is also tried with the attached prefixes peeled off. */
+    function normAr(str) {
+      return (str || "")
+        .replace(/[ً-ْٰـ]/g, "")
+        .replace(/[أإآ]/g, "ا")
+        .replace(/ى/g, "ي")
+        .replace(/ة/g, "ه");
+    }
+
+    // "النية" also tried as "نية"; "وبالنية" also as "النية" and "نية".
+    function arVariants(word) {
+      const w = normAr(word);
+      const out = new Set([w]);
+      const stripped = w.replace(/^(وال|فال|بال|كال|لل|ال|و|ف|ب|ك|ل)/, "");
+      if (stripped.length >= 3) {
+        out.add(stripped);
+        out.add("ال" + stripped);
+      }
+      return [...out];
+    }
+
     function tokenize(str) {
       return (str || "").toLowerCase().replace(/[^a-z؀-ۿ\s]/g, " ").split(/\s+/).filter(w => w.length >= 3 && !STOPWORDS.has(w));
     }
 
     // How well does a hadith text match the query words? Returns a score.
     function scoreMatch(haystackLower, queryWords) {
+      // Normalised twin of the haystack, so an Arabic word matches whether or
+      // not the source carries harakat and whichever prefix the reader typed.
+      const hayAr = normAr(haystackLower);
       let score = 0;
       for (const w of queryWords) {
         const terms = [w];
         if (w.endsWith("s")) terms.push(w.slice(0, -1));
         if (SYN[w]) terms.push(...SYN[w]);
-        if (terms.some(t => t.length >= 3 && haystackLower.includes(t))) score++;
+        if (terms.some(t => t.length >= 3 && haystackLower.includes(t))) { score++; continue; }
+        if (/[؀-ۿ]/.test(w) && arVariants(w).some(v => v.length >= 3 && hayAr.includes(v))) score++;
       }
       return score;
     }
@@ -373,7 +409,12 @@
         // "a man wearing women's clothes" reach the right hadith.
         const hay = (h.text + " " + (h.title || "") + " " + h.topic + " " + h.narrator + " " + (h.keys || []).join(" ")).toLowerCase();
         let s = scoreMatch(hay, qWords);
-        if (qArabic && h.arabic && h.arabic.includes(qArabic)) s += 2;
+        // Compare the Arabic wording normalised on both sides — the source
+        // carries harakat, the query almost never does.
+        if (qArabic && h.arabic) {
+          const wordingAr = normAr(h.arabic);
+          if (arVariants(qArabic).some(v => v.length >= 3 && wordingAr.includes(v))) s += 2;
+        }
         if (hay.includes(qLower)) s += 2;
         return { h, s };
       }).filter(x => x.s > 0).sort((a, b) => b.s - a.s);
@@ -460,7 +501,7 @@
 
     renderCurated();
   </script>
-  <script src="js/main.js?v=202608052045"></script>
-  <script src="js/i18n.js?v=202608052045"></script>
+  <script src="js/main.js?v=202608061028"></script>
+  <script src="js/i18n.js?v=202608061028"></script>
 </body>
 </html>

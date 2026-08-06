@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608052045" />
+  <link rel="stylesheet" href="css/style.css?v=202608061028" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -467,8 +467,8 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202608052045"></script>
-  <script src="js/main.js?v=202608052045"></script>
+  <script src="js/data.js?v=202608061028"></script>
+  <script src="js/main.js?v=202608061028"></script>
   <script>
     const STAFF_USER = iitwStaffUser();
     if (!STAFF_USER) window.location.href = "login.html";
@@ -483,8 +483,48 @@
     // Analytics panel is only for the main admin account.
     const ADMIN_USER = "Islam.younis.2026";
     const ANALYTICS_NS = "iitw-islamistheway-2026";
-    const TRACKED_PAGES = ["index","quran","prophets","companions","hadith","guidance","courses","search","login","meeting"];
-    const TRACKED_NAV = ["home","quran","prophets","companions","hadith","guidance","courses","search","login"];
+    /* ---------- What analytics reports on ----------
+       js/main.js already counts EVERY page automatically — it derives the
+       counter key from the filename, so golden.html, judgement.html,
+       stories.html and sunnah.html have been recording visits all along.
+       They simply were not on this list, so the panel never read them back
+       and they showed no numbers at all.
+
+       So the list is no longer hand-written. It is derived from this page's
+       own nav, which is the same nav every page carries, which means adding
+       a nav link is now enough to get the page into analytics. The extras
+       below are the pages that are deliberately not in the nav. */
+    function trackedFromNav() {
+      const seen = new Map();
+      document.querySelectorAll("nav.main-nav a").forEach(a => {
+        const href = (a.getAttribute("href") || "").replace(/\.html.*$/, "");
+        if (!href || href.indexOf("//") >= 0) return;
+        const key = href === "index" ? "index" : href;
+        // The nav link's own text is the nicest label we have: it gives
+        // "Judgement Day" and "Golden Age" rather than "Judgement"/"Golden".
+        const label = (a.textContent || "").trim() || key;
+        if (!seen.has(key)) seen.set(key, label);
+      });
+      // Pages with no nav link of their own.
+      [["staff", "Staff dashboard"], ["meeting", "Meetings"], ["angels", "Angels (redirect)"]]
+        .forEach(([k, l]) => { if (!seen.has(k)) seen.set(k, l); });
+      return seen;
+    }
+
+    const TRACKED_PAGE_LABELS = trackedFromNav();
+    const TRACKED_PAGES = [...TRACKED_PAGE_LABELS.keys()];
+
+    /* The nav counter key is built in main.js from the link text with every
+       non-letter stripped — so "Judgement Day" becomes "judgementday" and
+       "Golden Age" becomes "goldenage". Build the same keys from the same
+       source rather than typing them out and getting one wrong. */
+    const TRACKED_NAV_LABELS = new Map();
+    document.querySelectorAll("nav.main-nav a").forEach(a => {
+      const label = (a.textContent || "").trim();
+      const key = label.toLowerCase().replace(/[^a-z]/g, "");
+      if (key && !TRACKED_NAV_LABELS.has(key)) TRACKED_NAV_LABELS.set(key, label);
+    });
+    const TRACKED_NAV = [...TRACKED_NAV_LABELS.keys()];
 
     // Analytics and the home-page recitations are for the main admin only.
     const IS_ADMIN = STAFF_USER === ADMIN_USER;
@@ -509,7 +549,7 @@
 
       const pageRows = await Promise.all(TRACKED_PAGES.map(async p => {
         const n = await readCount("page-" + p);
-        return { label: p === "index" ? "Home" : p.charAt(0).toUpperCase() + p.slice(1), n };
+        return { label: TRACKED_PAGE_LABELS.get(p) || p, n };
       }));
       document.getElementById("statPages").innerHTML = pageRows
         .sort((a, b) => b.n - a.n)
@@ -517,7 +557,7 @@
 
       const clickRows = await Promise.all(TRACKED_NAV.map(async c => {
         const n = await readCount("nav-" + c);
-        return { label: c.charAt(0).toUpperCase() + c.slice(1), n };
+        return { label: TRACKED_NAV_LABELS.get(c) || c, n };
       }));
       document.getElementById("statClicks").innerHTML = clickRows
         .sort((a, b) => b.n - a.n)
@@ -1524,6 +1564,6 @@
     loadConfig();
     fbAdminRefresh();
   </script>
-  <script src="js/i18n.js?v=202608052045"></script>
+  <script src="js/i18n.js?v=202608061028"></script>
 </body>
 </html>

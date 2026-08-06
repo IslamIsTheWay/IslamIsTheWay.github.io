@@ -106,8 +106,26 @@ const GOLDEN_CLOSING = {
           url: "https://everyayah.com/data/Yasser_Ad-Dussary_128kbps/036030.mp3",
           reciter: "Yasser Al-Dossary",
           reciterAr: "ياسر الدوسري",
-          note: "Reciters often return to this verse and repeat it, and it is worth understanding why. “Ya hasratan” is not a warning of punishment — it is grief. The word is the sound a person makes over something already lost, over a chance that will not come again. And the thing being grieved is not disbelief in the abstract; it is mockery. The specific, casual, comfortable act of making a joke of what was sent to save you. Listen to it more than once. That is what this age sounds like from above.",
-          noteAr: "كثيرًا ما يرجع القرّاء إلى هذه الآية فيعيدونها، ويحسن أن يُعلم لِمَ. فقوله «يا حسرة» ليس وعيدًا بعذاب، وإنما هو أسًى. واللفظ صوتُ من فات عليه ما لا يُستدرك، وضاعت عليه فرصةٌ لا تعود. والمأسوف عليه ليس الكفر مجرّدًا، بل الاستهزاء: ذلك الفعل المعيَّن اليسير المستطاب — أن تُتّخذ سخريةً ممّا أُرسل لنجاتك. فاستمع إليها أكثر من مرّة، فهكذا يبدو هذا الزمان من فوق."
+          /* The player repeats by default. Reciters return to the opening
+             phrase and say it again before completing the verse, and hearing
+             it once flattens the whole thing — the repetition IS the meaning
+             here. Two passes is the site's default; the listener can stop it. */
+          repeatTimes: 2,
+          /* Shown UNDER the verse and clearly labelled as the reciter's
+             repetition. The verse itself is printed above exactly as it is in
+             the mushaf, once — the doubling is a practice of recitation
+             (tardid), never a change to the text, and this site does not
+             blur that line even to make a point land harder. */
+          repeatPhrase: "يَا حَسْرَةً عَلَى الْعِبَادِ … يَا حَسْرَةً عَلَى الْعِبَادِ …",
+          repeatLabel: "How it is usually recited — the opening returned to before the verse is completed. The text above is the verse as it is written; this is the reciter repeating, not an extra word in the Quran.",
+          repeatLabelAr: "كما تُتلى عادةً — يُعاد صدرها قبل إتمام الآية. والنصّ أعلاه هو الآية كما هي مكتوبة، وهذا ترديدُ القارئ لا زيادةَ حرفٍ في القرآن.",
+          link: {
+            url: "https://www.youtube.com/shorts/KtDXEUjxqCE",
+            label: "The recitation this section was written around — Sharif Mustafa",
+            labelAr: "التلاوة التي كُتب حولها هذا القسم — شريف مصطفى"
+          },
+          note: "Reciters often return to this verse and repeat its opening, and it is worth understanding why. “Ya hasratan” is not a warning of punishment — it is grief. The word is the sound a person makes over something already lost, over a chance that will not come again. And the thing being grieved is not disbelief in the abstract; it is mockery. The specific, casual, comfortable act of making a joke of what was sent to save you. Listen to it more than once. That is what this age sounds like from above.",
+          noteAr: "كثيرًا ما يرجع القرّاء إلى هذه الآية فيعيدون صدرها، ويحسن أن يُعلم لِمَ. فقوله «يا حسرة» ليس وعيدًا بعذاب، وإنما هو أسًى. واللفظ صوتُ من فات عليه ما لا يُستدرك، وضاعت عليه فرصةٌ لا تعود. والمأسوف عليه ليس الكفر مجرّدًا، بل الاستهزاء: ذلك الفعل المعيَّن اليسير المستطاب — أن تُتّخذ سخريةً ممّا أُرسل لنجاتك. فاستمع إليها أكثر من مرّة، فهكذا يبدو هذا الزمان من فوق."
         }
       }
     },

@@ -982,16 +982,58 @@ function runPersonSearch(query) {
     return;
   }
 
-  const matches = ALL_PEOPLE.filter(person => {
-    return (
-      person.name.toLowerCase().includes(q) ||
-      person.title.toLowerCase().includes(q) ||
-      person.summary.toLowerCase().includes(q) ||
-      person.id.toLowerCase().includes(q) ||
-      person.arabic.includes(query.trim()) ||
-      (person.summaryAr && person.summaryAr.includes(query.trim()))
-    );
-  });
+  /* ---------- Matching ----------
+     This used to be a bare `includes()` on every field, which had two bad
+     consequences that were both reported:
+
+       "Ali"   returned SEVENTEEN people, because the letters a-l-i sit
+               inside Salih, Khalid, Malik, Salim and Ja'far ibn Abi Talib.
+       "Yusuf" returned Yaqub level with Yusuf, because Yusuf is named in
+               his father's summary — with nothing on the card to say that
+               was why it appeared.
+
+     So Latin text is now matched on WORD BOUNDARIES, Arabic word by word
+     after stripping harakat, and every hit carries a score and a reason.
+     A name match outranks a passing mention, and the card says which it
+     was, so a result can never look like an answer when it is really a
+     cross-reference. */
+  const qLatin = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const wordRe = new RegExp("(^|[^a-z])" + qLatin + "([^a-z]|$)", "i");
+  const startsRe = new RegExp("(^|[^a-z])" + qLatin, "i");
+
+  const stripAr = s => String(s || "").replace(/[ً-ْٰـ]/g, "")
+    .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+  const qAr = stripAr(query.trim());
+  const arWords = txt => new Set(stripAr(txt).split(/[^ء-ي]+/).filter(Boolean));
+  const hasArWord = txt => {
+    if (!qAr || !/[ء-ي]/.test(qAr)) return false;
+    const set = arWords(txt);
+    // Allow the definite article and the usual attached prefixes.
+    return [...set].some(w => w === qAr || w === "ال" + qAr ||
+      (w.length > qAr.length && w.endsWith(qAr) && w.length - qAr.length <= 2));
+  };
+
+  const scored = ALL_PEOPLE.map(person => {
+    let score = 0;
+    let why = "";
+    const name = person.name.toLowerCase();
+
+    if (name === q || person.id.toLowerCase() === q) { score = 120; why = "name"; }
+    else if (startsRe.test(name)) { score = 100; why = "name"; }
+    else if (wordRe.test(name)) { score = 90; why = "name"; }
+    else if (wordRe.test(person.id.replace(/-/g, " "))) { score = 85; why = "name"; }
+    else if (hasArWord(person.arabic)) { score = 95; why = "name"; }
+    else if (wordRe.test(person.title)) { score = 45; why = "title"; }
+    else if (person.titleAr && hasArWord(person.titleAr)) { score = 45; why = "title"; }
+    else if (wordRe.test(person.summary)) { score = 20; why = "mention"; }
+    else if (person.summaryAr && hasArWord(person.summaryAr)) { score = 20; why = "mention"; }
+
+    return { person, score, why };
+  }).filter(x => x.score > 0).sort((a, b) => b.score - a.score);
+
+  const matches = scored.map(x => x.person);
+  const reasonOf = {};
+  scored.forEach(x => { reasonOf[x.person.id] = x.why; });
 
   if (matches.length === 0) {
     resultsEl.innerHTML = `<div class="no-results">
@@ -1008,13 +1050,66 @@ function runPersonSearch(query) {
 
     const categoryLabel = person.category === "prophet" ? "Prophet" : "Companion (Sahabi)";
 
+    /* Say WHY this person is in the list. A cross-reference must never look
+       like an answer: searching "Yusuf" surfaces his father Yaqub because
+       Yusuf is named in Yaqub's story, and without this badge that reads as
+       though the site thinks Yaqub is Yusuf. */
+    const reason = reasonOf[person.id];
+    const badge = reason === "mention"
+      ? `<span class="match-why match-mention">
+           <span class="en-only">Not a name match — "${escapeHtml(query)}" appears in this person's story</span>
+           <span class="ar-only" dir="rtl">ليست مطابقة اسم — «${escapeHtml(query)}» مذكورٌ في سيرة هذا الشخص</span>
+         </span>`
+      : reason === "title"
+      ? `<span class="match-why match-title">
+           <span class="en-only">Matched their title, not their name</span>
+           <span class="ar-only" dir="rtl">مطابقةٌ في اللقب لا في الاسم</span>
+         </span>`
+      : "";
+
+    /* The full life, where one is written. The summary alone was the whole
+       result before, so someone searching a name got three lines about a
+       person this site has a complete biography for. */
+    const life = (typeof FULL_LIVES !== "undefined") ? FULL_LIVES[person.id] : null;
+    const lifePart = (en, ar, labelEn, labelAr) => (!en && !ar) ? "" : `
+      <div class="life-part">
+        <div class="life-part-head">
+          <span class="en-only">${labelEn}</span>
+          <span class="ar-only" dir="rtl">${labelAr}</span>
+        </div>
+        ${en ? `<p class="en-only">${en}</p>` : ""}
+        ${ar ? `<p class="life-ar" dir="rtl">${ar}</p>` : ""}
+      </div>`;
+
+    const fullLife = !life ? "" : `
+      <details class="full-life">
+        <summary>
+          <span class="en-only">📖 Read his full life — before Islam, the moment he believed, what changed, his greatest hour, and his death</span>
+          <span class="ar-only" dir="rtl">📖 اقرأ سيرته كاملة — قبل الإسلام، ولحظة الإيمان، وما تغيّر، وأعظم مواقفه، ووفاته</span>
+        </summary>
+        <div class="full-life-body">
+          ${lifePart(life.message, life.messageAr, "The message he was sent with", "الرسالة التي أُرسل بها")}
+          ${lifePart(life.before, life.beforeAr, "Before", "قبل ذلك")}
+          ${lifePart(life.islam, life.islamAr, "The moment he believed", "لحظة الإيمان")}
+          ${lifePart(life.change, life.changeAr, "What changed in him", "ما تغيّر فيه")}
+          ${lifePart(life.greatest, life.greatestAr, "His greatest hour", "أعظم مواقفه")}
+          ${lifePart(life.death, life.deathAr, "His death", "وفاته")}
+          ${(life.sources && life.sources.length) ? `<div class="refs">
+            <strong><span class="en-only">Sources — each with its rank</span><span class="ar-only" dir="rtl">المصادر ودرجة كلٍّ منها</span></strong>
+            <ul>${life.sources.map(s => `<li>${s}</li>`).join("")}</ul>
+          </div>` : ""}
+        </div>
+      </details>`;
+
     card.innerHTML = `
       <span class="category">${categoryLabel}</span>
       <h3><span class="en-only">${person.name} </span><span style="font-family:'Amiri',serif; color: var(--green); font-size:1.1rem;">${person.arabic}</span></h3>
+      ${badge}
       <p class="en-only" style="color: var(--gold); font-weight:600; font-size:0.85rem; margin-bottom: 8px;">${person.title}</p>
       ${person.titleAr ? `<p class="ar-only" dir="rtl" style="color: var(--gold); font-weight:600; font-size:0.9rem; margin-bottom: 8px;">${person.titleAr}</p>` : ""}
       <p class="en-only">${person.summary}</p>
       ${person.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif; font-size:1.05rem; line-height:1.9; color: var(--green-dark); text-align:right; background: var(--green-pale); border-radius:8px; padding:10px 14px; margin-bottom:12px;">${person.summaryAr}</p>` : ""}
+      ${fullLife}
       <div class="refs">
         <strong>References:</strong>
         <ul>${person.refs.map(r => `<li>${r}</li>`).join("")}</ul>
