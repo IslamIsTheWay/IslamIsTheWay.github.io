@@ -103,14 +103,19 @@ const GOLDEN_CLOSING = {
         ref: "Surah Ya-Sin (36:30)",
         strength: "The Quran",
         audio: {
-          url: "https://everyayah.com/data/Yasser_Ad-Dussary_128kbps/036030.mp3",
-          reciter: "Yasser Al-Dossary",
-          reciterAr: "ياسر الدوسري",
-          /* The player repeats by default. Reciters return to the opening
-             phrase and say it again before completing the verse, and hearing
-             it once flattens the whole thing — the repetition IS the meaning
-             here. Two passes is the site's default; the listener can stop it. */
-          repeatTimes: 2,
+          url: "https://everyayah.com/data/Abdul_Basit_Mujawwad_128kbps/036030.mp3",
+          reciter: "Abdul Basit (Mujawwad)",
+          reciterAr: "عبد الباسط عبد الصمد (مجوّد)",
+          /* MUJAWWAD on purpose, and the reason matters. This was a murattal
+             reading (Yasser Al-Dossary, 11 seconds) with the player set to
+             replay it twice, because the returning to the opening phrase IS
+             the meaning here and a single clean pass flattens it. But a player
+             looping a file is not a reciter returning to a phrase — it just
+             plays the same 11 seconds again. Abdul Basit's mujawwad reading of
+             this verse runs about 29 seconds and carries the returning inside
+             the recitation itself, which is what the note below describes. So
+             the artificial repeat is off: the recording no longer needs it. */
+          repeatTimes: 1,
           /* Shown UNDER the verse and clearly labelled as the reciter's
              repetition. The verse itself is printed above exactly as it is in
              the mushaf, once — the doubling is a practice of recitation

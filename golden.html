@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608061037" />
+  <link rel="stylesheet" href="css/style.css?v=202608061103" />
 </head>
 <body>
 
@@ -178,11 +178,11 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608061037"></script>
-  <script src="js/golden.js?v=202608061037"></script>
+  <script src="js/data.js?v=202608061103"></script>
+  <script src="js/golden.js?v=202608061103"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
-  <script src="js/golden-closing.js?v=202608061037"></script>
+  <script src="js/golden-closing.js?v=202608061103"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -452,7 +452,14 @@
       const rep = a.repeatTimes || 1;
       return `<div class="gc-recite">
         <div class="gc-recite-head">
-          🎧 <span class="en-only">Listen to it recited</span><span class="ar-only" dir="rtl">استمع إليها مُرتَّلة</span>
+          <!-- Style-neutral on purpose. This said "مُرتَّلة" (murattal), which
+               named a specific style of recitation, so when the clip became
+               Abdul Basit's MUJAWWAD reading the line read "listen to it in
+               murattal — Abdul Basit (mujawwad)" in Arabic: a contradiction in
+               one sentence. The English was always neutral; the Arabic now is
+               too, so the reciter's own style label is the only thing naming a
+               style. -->
+          🎧 <span class="en-only">Listen to it recited</span><span class="ar-only" dir="rtl">استمع إلى تلاوتها</span>
           — <span class="en-only">${a.reciter}</span><span class="ar-only" dir="rtl">${a.reciterAr}</span>
         </div>
 
@@ -576,7 +583,7 @@
     wireRepeatAudio();
     document.getElementById("goldSearch").addEventListener("input", renderFigures);
   </script>
-  <script src="js/main.js?v=202608061037"></script>
-  <script src="js/i18n.js?v=202608061037"></script>
+  <script src="js/main.js?v=202608061103"></script>
+  <script src="js/i18n.js?v=202608061103"></script>
 </body>
 </html>
