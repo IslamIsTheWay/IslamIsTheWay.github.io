@@ -180,6 +180,14 @@ async function openSurah(surah) {
     const pageRangeAr = pageCount === 1 ? "صفحة " + toArabicDigits(pages[0])
                                         : "الصفحات " + toArabicDigits(pages[0]) + "–" + toArabicDigits(pages[pages.length - 1]);
 
+    /* Tadabbur, if this surah has any. `iitwTadabburFor` returns null when
+       it does not, and the button is then not drawn at all — an empty
+       Tadabbur panel would promise something the surah has not got yet.
+       Guarded with typeof because quran.html is not the only page that
+       could ever load quran.js. */
+    const tad = (typeof iitwTadabburFor === "function") ? iitwTadabburFor(surah.n) : null;
+    window._tadOpen = false;
+
     let html = `<div class="reciter-bar">
       <div class="reciter-now">🎧 Reciter: <strong>${current.name}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">${current.ar}</span></div>
       <div>
@@ -190,6 +198,9 @@ async function openSurah(surah) {
         <button onclick="iitwSaveHere()" class="rq-btn rq-save" id="rqSaveBtn" disabled
                 title="Play a verse, then save where you stopped">💾 Save my place
           <span dir="rtl" style="font-family:'Amiri',serif;">— احفظ موضعي</span></button>
+        ${tad ? `<button onclick="iitwToggleTadabbur()" class="rq-btn rq-tad" id="rqTadBtn"
+                title="Why is this verse here? Why this word?">🧠 Tadabbur
+          <span dir="rtl" style="font-family:'Amiri',serif;">— تدبّر</span></button>` : ""}
       </div>
     </div>
     <div class="rq-save-note" id="rqSaveNote"></div>
@@ -199,7 +210,8 @@ async function openSurah(surah) {
       <span dir="rtl" style="font-family:'Amiri',serif;">
         — في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}
       </span>
-    </div>`;
+    </div>
+    ${tad ? iitwTadabburSurahHtml(tad, surah) : ""}`;
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
     window._ayahAudios  = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));
@@ -219,6 +231,7 @@ async function openSurah(surah) {
           <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}', ${ayah.numberInSurah})" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
           <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
           <div class="ayah-cite">Surah ${surah.name} — <strong>${cite}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
+          ${tad ? iitwTadabburAyahHtml(tad, ayah.numberInSurah) : ""}
         </div>
       `;
 
@@ -482,7 +495,266 @@ function iitwForgetPlace(e) {
   renderReaderBox();
 }
 
+/* ============================================================
+   TADABBUR — rendering
+   ------------------------------------------------------------
+   The data lives in js/tadabbur.js; this draws it. Two places:
+   a panel under the surah heading (why this surah, why here),
+   and a block under each verse that has one.
+
+   Everything starts HIDDEN. The reader came to read the Quran,
+   and a wall of commentary between every two verses would push
+   the text itself off the screen. The button opens it.
+   ============================================================ */
+
+/* Blank lines in the content become real paragraphs. The content
+   is static and written in this repo — there is no user input on
+   this path — but it is still inserted as text-bearing markup
+   only, never into an attribute. */
+function tadPara(text, rtl) {
+  if (!text) return "";
+  return String(text).split("\n\n").map(function (p) {
+    return '<p' + (rtl ? ' dir="rtl"' : '') + '>' + p.replace(/\n/g, "<br>") + '</p>';
+  }).join("");
+}
+
+/* What KIND of claim this is. The site grades hadith; this grades
+   meaning the same way, because a reader cannot weigh a statement
+   without knowing whether it is revelation, a lexicographer, or a
+   scholar's reading. */
+const TAD_STRENGTH = {
+  quran:    { en: "The Quran",                     ar: "قرآن",              cls: "t-quran" },
+  hadith:   { en: "Hadith — graded, see reference", ar: "حديث — مع درجته",   cls: "t-hadith" },
+  lugha:    { en: "Language — from a named lexicon", ar: "لغة — من معجمٍ مسمّى", cls: "t-lugha" },
+  tafsir:   { en: "A scholar's reading — not revelation", ar: "قول مفسّر — لا وحي", cls: "t-tafsir" },
+  qiraah:   { en: "A difference in the established recitations", ar: "اختلاف قراءات متواترة", cls: "t-qiraah" },
+  ikhtilaf: { en: "The scholars differed — both views given", ar: "خلافٌ بين أهل العلم — والقولان مذكوران", cls: "t-ikhtilaf" },
+  note:     { en: "A note on coverage",             ar: "بيان عن حدود ما أُنجز", cls: "t-note" }
+};
+
+function tadBadge(k) {
+  const s = TAD_STRENGTH[k];
+  if (!s) return "";
+  return '<span class="tad-badge ' + s.cls + '">' +
+    '<span class="en-only">' + s.en + '</span>' +
+    '<span class="ar-only" dir="rtl">' + s.ar + '</span></span>';
+}
+
+/* The panel under the surah title: why the Quran opens here, why
+   seven verses, and — when only part of a surah is covered — a
+   plain statement of exactly which verses have tadabbur. */
+function iitwTadabburSurahHtml(tad, surah) {
+  const d = tad.data;
+  let h = '<div class="tad-surah tad-hidden" id="tadSurahPanel">';
+
+  h += '<div class="tad-surah-head">🧠 <span class="en-only">' + d.surahTitle + '</span>' +
+       '<span class="ar-only" dir="rtl">' + d.surahTitleAr + '</span></div>';
+
+  (d.surahWhy || []).forEach(function (s) {
+    h += '<div class="tad-why">' +
+         '<h4><span class="en-only">' + s.h + '</span><span class="ar-only" dir="rtl">' + s.hAr + '</span></h4>' +
+         '<div class="en-only">' + tadPara(s.en) + '</div>' +
+         '<div class="ar-only">' + tadPara(s.ar, true) + '</div>' +
+         (s.ref ? '<div class="tad-ref">' + s.ref + '</div>' : "") +
+         (s.strength ? tadBadge(s.strength) : "") +
+         '</div>';
+  });
+
+  /* Which verses actually have tadabbur. Derived from the data, not
+     typed — the same lesson the analytics page taught. */
+  const list = tad.verses.join(", ");
+  h += '<div class="tad-coverage">' +
+       '<span class="en-only">Tadabbur is written for ' +
+         (tad.verses.length === 1 ? 'verse ' : 'verses ') + list +
+         ' of this surah' + (tad.partial ? ' — the rest has not been written yet, and nothing here pretends otherwise.' : '.') +
+       '</span>' +
+       '<span class="ar-only" dir="rtl">التدبّر مكتوبٌ لِ' +
+         (tad.verses.length === 1 ? 'الآية ' : 'الآيات ') + list +
+         ' من هذه السورة' + (tad.partial ? '، وما بقي لم يُكتب بعد، وليس هنا ما يُوهم غير ذلك.' : '.') +
+       '</span></div>';
+
+  h += '</div>';
+  return h;
+}
+
+/* The block under one verse. Returns "" when this verse has no
+   entry, so verses without tadabbur are simply left alone. */
+function iitwTadabburAyahHtml(tad, n) {
+  const a = (tad.data.ayat || []).filter(function (x) { return x.n === n; })[0];
+  if (!a) return "";
+
+  let h = '<div class="tad-ayah tad-hidden">';
+  h += '<div class="tad-ayah-head">🧠 <span class="en-only">Why this verse, and why these words</span>' +
+       '<span class="ar-only" dir="rtl">لِمَ هذه الآية، ولِمَ هذه الألفاظ</span></div>';
+
+  if (a.arNote) {
+    h += '<div class="tad-note-small"><span class="en-only">' + a.arNote + '</span>' +
+         '<span class="ar-only" dir="rtl">' + a.arNoteAr + '</span></div>';
+  }
+
+  if (a.why) {
+    h += '<div class="tad-sec"><div class="en-only">' + tadPara(a.why) + '</div>' +
+         '<div class="ar-only">' + tadPara(a.whyAr, true) + '</div>' +
+         (a.ref ? '<div class="tad-ref">' + a.ref + '</div>' : "") +
+         (a.strength ? tadBadge(a.strength) : "") + '</div>';
+  }
+
+  /* Why THIS word and not the one beside it — the thing the whole
+     feature was asked for. */
+  (a.words || []).forEach(function (w) {
+    h += '<div class="tad-word">' +
+         '<div class="tad-word-head"><span class="tad-w" dir="rtl">' + w.w + '</span>' +
+           '<span class="tad-translit">' + w.t + '</span></div>' +
+         '<div class="tad-word-body">' +
+           '<div class="en-only">' + tadPara(w.meaning) + '</div>' +
+           '<div class="ar-only">' + tadPara(w.meaningAr, true) + '</div>';
+    if (w.instead) {
+      h += '<div class="tad-instead">' +
+           '<div class="tad-instead-label"><span class="en-only">Why this word and not another</span>' +
+             '<span class="ar-only" dir="rtl">لِمَ هذه الكلمة دون غيرها</span></div>' +
+           '<div class="en-only">' + tadPara(w.instead) + '</div>' +
+           '<div class="ar-only">' + tadPara(w.insteadAr, true) + '</div></div>';
+    }
+    h += (w.source ? '<div class="tad-ref">' + w.source + '</div>' : "") +
+         (w.strength ? tadBadge(w.strength) : "") +
+         '</div></div>';
+  });
+
+  /* Where else the Quran says it — the verse that completes this one. */
+  (a.links || []).forEach(function (l) {
+    h += '<div class="tad-link">' +
+         '<div class="tad-link-label">🔗 <span class="en-only">Where the thought is completed</span>' +
+           '<span class="ar-only" dir="rtl">حيث يتمّ المعنى</span></div>';
+    if (l.ar) h += '<div class="tad-link-ar" dir="rtl">' + l.ar + '</div>';
+    if (l.en) h += '<div class="tad-link-en">' + l.en + '</div>';
+    h += '<div class="tad-ref">' + l.ref + '</div>' +
+         '<div class="en-only">' + tadPara(l.how) + '</div>' +
+         '<div class="ar-only">' + tadPara(l.howAr, true) + '</div></div>';
+  });
+
+  /* Where the scholars differed. Both sides, by name, then which
+     way the weight leaned — never a single view presented as the
+     only one. */
+  if (a.differ) {
+    const df = a.differ;
+    h += '<div class="tad-differ">' +
+         '<div class="tad-differ-head">⚖️ <span class="en-only">' + df.title + '</span>' +
+           '<span class="ar-only" dir="rtl">' + df.titleAr + '</span></div>';
+    (df.views || []).forEach(function (v) {
+      h += '<div class="tad-view">' +
+           '<div class="tad-who"><span class="en-only">' + v.who + '</span>' +
+             '<span class="ar-only" dir="rtl">' + v.whoAr + '</span></div>' +
+           '<div class="en-only">' + tadPara(v.view) + '</div>' +
+           '<div class="ar-only">' + tadPara(v.viewAr, true) + '</div></div>';
+    });
+    h += '<div class="tad-weight">' +
+         '<div class="en-only">' + tadPara(df.weight) + '</div>' +
+         '<div class="ar-only">' + tadPara(df.weightAr, true) + '</div></div>' +
+         tadBadge(df.strength || "ikhtilaf") + '</div>';
+  }
+
+  h += '</div>';
+  return h;
+}
+
+/* One button shows and hides every tadabbur block in the open
+   surah, including the surah panel. */
+function iitwToggleTadabbur() {
+  const open = !window._tadOpen;
+  window._tadOpen = open;
+
+  document.querySelectorAll("#modalBody .tad-surah, #modalBody .tad-ayah")
+    .forEach(function (el) { el.classList.toggle("tad-hidden", !open); });
+
+  const btn = document.getElementById("rqTadBtn");
+  if (btn) {
+    btn.classList.toggle("armed", open);
+    btn.innerHTML = (open ? "🧠 Hide Tadabbur" : "🧠 Tadabbur") +
+      ' <span dir="rtl" style="font-family:\'Amiri\',serif;">— ' + (open ? "إخفاء التدبّر" : "تدبّر") + '</span>';
+  }
+
+  /* Newly revealed markup has to be translated, or it renders in
+     English while the page is in Arabic. */
+  if (open && window.applyI18n) window.applyI18n();
+}
+
+/* The opening section on the page itself — why ponder at all,
+   built from TADABBUR_INTRO. Rendered above the surah grid so it
+   is read before any surah is opened. */
+function renderTadabburIntro() {
+  const box = document.getElementById("tadabburIntro");
+  if (!box || typeof TADABBUR_INTRO === "undefined") return;
+  const d = TADABBUR_INTRO;
+
+  let h = '<div class="tad-intro">' +
+    '<h2 class="tad-intro-title"><span class="en-only">🧠 ' + d.title + '</span>' +
+      '<span class="ar-only" dir="rtl">🧠 ' + d.titleAr + '</span></h2>' +
+    '<p class="tad-intro-lead"><span class="en-only">' + d.lead + '</span>' +
+      '<span class="ar-only" dir="rtl">' + d.leadAr + '</span></p>';
+
+  h += '<div class="tad-verse-big">' +
+       '<div class="tad-verse-ar" dir="rtl">' + d.verse.ar + '</div>' +
+       '<div class="tad-verse-en">' + d.verse.en + '</div>' +
+       '<div class="tad-ref">' + d.verse.ref + '</div>' + tadBadge(d.verse.strength) + '</div>';
+
+  h += '<div class="tad-context">' +
+       '<h3><span class="en-only">' + d.context.title + '</span>' +
+         '<span class="ar-only" dir="rtl">' + d.context.titleAr + '</span></h3>' +
+       '<div class="en-only">' + tadPara(d.context.en) + '</div>' +
+       '<div class="ar-only">' + tadPara(d.context.ar, true) + '</div></div>';
+
+  h += '<div class="tad-more">';
+  (d.more || []).forEach(function (m) {
+    h += '<div class="tad-more-item">' +
+         '<div class="tad-link-ar" dir="rtl">' + m.ar + '</div>' +
+         '<div class="tad-link-en">' + m.en + '</div>' +
+         '<div class="tad-ref">' + m.ref + '</div>' +
+         '<div class="tad-more-note"><span class="en-only">' + m.note + '</span>' +
+           '<span class="ar-only" dir="rtl">' + m.noteAr + '</span></div></div>';
+  });
+  h += '</div>';
+
+  h += '<div class="tad-method">' +
+       '<h3><span class="en-only">' + d.methodTitle + '</span>' +
+         '<span class="ar-only" dir="rtl">' + d.methodTitleAr + '</span></h3>' +
+       '<p><span class="en-only">' + d.methodLead + '</span>' +
+         '<span class="ar-only" dir="rtl">' + d.methodLeadAr + '</span></p><ol>';
+  (d.method || []).forEach(function (m) {
+    h += '<li><strong><span class="en-only">' + m.q + '</span>' +
+         '<span class="ar-only" dir="rtl">' + m.qAr + '</span></strong>' +
+         '<span class="en-only"> ' + m.d + '</span>' +
+         '<span class="ar-only" dir="rtl"> ' + m.dAr + '</span></li>';
+  });
+  h += '</ol></div>';
+
+  /* Which surahs are covered — derived from the data, so adding a
+     surah to tadabbur.js is enough to list it here. */
+  const nums = (typeof iitwTadabburSurahs === "function") ? iitwTadabburSurahs() : [];
+  const names = nums.map(function (n) {
+    const s = (typeof SURAHS !== "undefined") ? SURAHS.filter(function (x) { return x.n === n; })[0] : null;
+    return s ? (n + ". " + s.name) : String(n);
+  });
+  const namesAr = nums.map(function (n) {
+    const s = (typeof SURAHS !== "undefined") ? SURAHS.filter(function (x) { return x.n === n; })[0] : null;
+    return s ? (toArabicDigits(n) + ". " + (s.arabic || s.name)) : toArabicDigits(n);
+  });
+
+  h += '<div class="tad-covered">' +
+       '<div class="en-only"><strong>Where to find it:</strong> open any surah below and press the ' +
+         '<strong>🧠 Tadabbur</strong> button beside Stop. It is written so far for ' + names.join(" · ") + ' — and the button only appears on a surah that has it. The Quran is 6,236 verses and this is done verse by verse and word by word, so it grows rather than arriving finished.</div>' +
+       '<div class="ar-only" dir="rtl"><strong>أين تجده:</strong> افتح أيّ سورةٍ أدناه واضغط زرّ ' +
+         '<strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. وقد كُتب إلى الآن لِ' + namesAr.join(" · ") +
+         '، ولا يظهر الزرّ إلا على سورةٍ كُتب لها. والقرآن ستّة آلافٍ ومئتان وستٌّ وثلاثون آية، وهذا يُكتب آيةً آية وكلمةً كلمة، فهو ينمو ولا يأتي تامًّا.</div></div>';
+
+  h += '<div class="tad-notice"><span class="en-only">' + d.notice + '</span>' +
+       '<span class="ar-only" dir="rtl">' + d.noticeAr + '</span></div>';
+
+  h += '</div>';
+  box.innerHTML = h;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderReaderBox();
+  renderTadabburIntro();
   if (window.applyI18n) window.applyI18n();
 });

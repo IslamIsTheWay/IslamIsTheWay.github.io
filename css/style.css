@@ -4329,3 +4329,225 @@ html.lang-ar .gold-body-ar p,
 html.lang-ar .rv-ar p {
   letter-spacing: .2px;
 }
+
+/* ============================================================
+   TADABBUR — why this verse, why this word
+   ------------------------------------------------------------
+   Two surfaces: the opening section on quran.html, and the
+   blocks inside the surah reader.
+
+   Everything inside the reader starts hidden (.tad-hidden) and
+   the button reveals it. The reader opened the surah to read the
+   Quran; commentary wedged between every two verses by default
+   would push the text itself off the screen.
+
+   Note on RTL: no rule here positions anything with `left` or
+   `right`. Arabic mode flips the whole document, and a hard side
+   would strand the accent bar on the wrong edge — the border is
+   set with border-inline-start so it follows the text direction.
+   ============================================================ */
+
+.tad-hidden { display: none !important; }
+
+/* ---- The button in the reader bar ---- */
+.rq-btn.rq-tad { background: #e8e2f4; color: #4a3b73; }
+.rq-btn.rq-tad.armed { background: #6b57a8; color: #fff; }
+
+/* ---- The opening section on the page ---- */
+.tad-intro {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  box-shadow: var(--shadow);
+}
+.tad-intro-title { margin: 0 0 6px; color: var(--green-dark); font-size: 1.6rem; }
+.tad-intro-lead { color: var(--text-muted); margin: 0 0 20px; font-size: 1.02rem; }
+
+.tad-verse-big {
+  background: var(--green-pale);
+  border-inline-start: 4px solid var(--green);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 0 0 20px;
+}
+.tad-verse-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.6rem;
+  line-height: 2.1;
+  color: var(--green-dark);
+}
+.tad-verse-en { margin-top: 8px; font-size: 1.04rem; color: var(--text); }
+
+.tad-context { margin: 0 0 20px; }
+.tad-context h3, .tad-method h3 { color: var(--green-dark); margin: 0 0 8px; font-size: 1.18rem; }
+.tad-context p, .tad-method p { line-height: 1.95; margin: 0 0 12px; }
+
+.tad-more { display: grid; gap: 14px; margin: 0 0 20px; }
+.tad-more-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  background: var(--green-pale);
+}
+.tad-more-note { font-size: .93rem; color: var(--text-muted); margin-top: 6px; line-height: 1.8; }
+
+.tad-method ol { margin: 0; padding-inline-start: 22px; }
+.tad-method li { margin-bottom: 10px; line-height: 1.9; }
+
+.tad-covered {
+  background: #f6f3fc;
+  border: 1px solid #ded4f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 0 0 16px;
+  line-height: 1.9;
+  font-size: .96rem;
+}
+.tad-notice {
+  font-size: .9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  border-top: 1px dashed var(--border);
+  padding-top: 14px;
+}
+
+/* ---- Inside the surah reader ---- */
+.tad-surah {
+  background: #f6f3fc;
+  border: 1px solid #ded4f0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 14px 0 18px;
+}
+.tad-surah-head, .tad-ayah-head {
+  font-weight: 700;
+  color: #4a3b73;
+  font-size: 1.06rem;
+  margin-bottom: 12px;
+}
+.tad-why { margin-bottom: 18px; }
+.tad-why h4 { margin: 0 0 6px; color: var(--green-dark); font-size: 1.05rem; }
+.tad-why p, .tad-sec p { line-height: 1.95; margin: 0 0 10px; }
+
+.tad-coverage {
+  font-size: .9rem;
+  color: var(--text-muted);
+  border-top: 1px dashed #ded4f0;
+  padding-top: 12px;
+  line-height: 1.8;
+}
+
+.tad-ayah {
+  background: #faf8ff;
+  border: 1px solid #e5ddf5;
+  border-inline-start: 4px solid #6b57a8;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 14px 0 6px;
+}
+.tad-note-small { font-size: .88rem; color: var(--text-muted); margin-bottom: 10px; }
+.tad-sec { margin-bottom: 14px; }
+
+/* ---- One word ---- */
+.tad-word {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 14px 18px;
+  margin: 0 0 12px;
+}
+.tad-word-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.tad-w {
+  font-family: 'Amiri', serif;
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  font-weight: 700;
+}
+.tad-translit { font-size: .9rem; color: var(--text-muted); font-style: italic; }
+.tad-word-body p { line-height: 1.95; margin: 0 0 10px; }
+
+.tad-instead {
+  background: var(--green-pale);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 10px 0;
+}
+.tad-instead-label {
+  font-weight: 700;
+  color: var(--green);
+  font-size: .92rem;
+  margin-bottom: 6px;
+}
+
+/* ---- The verse that completes this one ---- */
+.tad-link {
+  background: #fffbea;
+  border: 1px solid #f0e2b6;
+  border-radius: 9px;
+  padding: 14px 18px;
+  margin: 0 0 12px;
+}
+.tad-link-label { font-weight: 700; color: #8a6d1a; font-size: .95rem; margin-bottom: 8px; }
+.tad-link-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.35rem;
+  line-height: 2.1;
+  color: var(--green-dark);
+  margin-bottom: 6px;
+}
+.tad-link-en { font-size: .99rem; margin-bottom: 6px; }
+.tad-link p { line-height: 1.95; margin: 0 0 10px; }
+
+/* ---- Where the scholars differed ---- */
+.tad-differ {
+  background: #fff5f5;
+  border: 1px solid #f2d9d9;
+  border-radius: 9px;
+  padding: 14px 18px;
+  margin: 0 0 12px;
+}
+.tad-differ-head { font-weight: 700; color: #8a3d3d; font-size: .98rem; margin-bottom: 10px; }
+.tad-view {
+  border-inline-start: 3px solid #e0bcbc;
+  padding-inline-start: 12px;
+  margin-bottom: 12px;
+}
+.tad-who { font-weight: 600; color: var(--text-dark); margin-bottom: 4px; font-size: .95rem; }
+.tad-view p, .tad-weight p { line-height: 1.9; margin: 0 0 8px; }
+.tad-weight {
+  border-top: 1px dashed #f2d9d9;
+  padding-top: 10px;
+  font-size: .96rem;
+}
+
+/* ---- References and the kind-of-claim badge ---- */
+.tad-ref {
+  font-size: .85rem;
+  color: var(--text-muted);
+  margin: 6px 0;
+  line-height: 1.7;
+}
+.tad-badge {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+.tad-badge.t-quran    { background: var(--green-light); color: var(--green-dark); }
+.tad-badge.t-hadith   { background: #e6f0fa; color: #1b4f7a; }
+.tad-badge.t-lugha    { background: #e8e2f4; color: #4a3b73; }
+.tad-badge.t-tafsir   { background: #fdf0e0; color: #8a5a1a; }
+.tad-badge.t-qiraah   { background: #efe6c8; color: #7a5c12; }
+.tad-badge.t-ikhtilaf { background: #f7e0e0; color: #8a3d3d; }
+.tad-badge.t-note     { background: #eef0ef; color: var(--text-muted); }
+
+@media (max-width: 640px) {
+  .tad-intro { padding: 22px 18px; }
+  .tad-surah, .tad-ayah { padding: 16px 14px; }
+  .tad-word, .tad-link, .tad-differ { padding: 12px 14px; }
+  .tad-verse-ar { font-size: 1.35rem; }
+  .tad-w { font-size: 1.3rem; }
+}

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608061103" />
+  <link rel="stylesheet" href="css/style.css?v=202608061539" />
 </head>
 <body>
 
@@ -53,6 +53,16 @@
   <section style="padding-bottom:0;">
     <div class="container">
       <div class="reader-box" id="readerBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== Tadabbur — why ponder at all =====
+       Sits above the surah grid on purpose: the question it asks is
+       meant to be read BEFORE a surah is opened, not found afterwards.
+       Filled by renderTadabburIntro() from TADABBUR_INTRO. -->
+  <section class="pattern-bg">
+    <div class="container">
+      <div id="tadabburIntro"></div>
     </div>
   </section>
 
@@ -120,11 +130,14 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608061103"></script>
+  <script src="js/data.js?v=202608061539"></script>
   <!-- Reader accounts: the username, the password, and the saved verse. -->
-  <script src="js/account.js?v=202608061103"></script>
-  <script src="js/quran.js?v=202608061103"></script>
-  <script src="js/main.js?v=202608061103"></script>
-  <script src="js/i18n.js?v=202608061103"></script>
+  <script src="js/account.js?v=202608061539"></script>
+  <!-- Tadabbur data. MUST load before quran.js, which calls
+       iitwTadabburFor() while building the surah reader. -->
+  <script src="js/tadabbur.js?v=202608061539"></script>
+  <script src="js/quran.js?v=202608061539"></script>
+  <script src="js/main.js?v=202608061539"></script>
+  <script src="js/i18n.js?v=202608061539"></script>
 </body>
 </html>
