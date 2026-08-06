@@ -198,9 +198,14 @@ async function openSurah(surah) {
         <button onclick="iitwSaveHere()" class="rq-btn rq-save" id="rqSaveBtn" disabled
                 title="Play a verse, then save where you stopped">💾 Save my place
           <span dir="rtl" style="font-family:'Amiri',serif;">— احفظ موضعي</span></button>
-        ${tad ? `<button onclick="iitwToggleTadabbur()" class="rq-btn rq-tad" id="rqTadBtn"
-                title="Why is this verse here? Why this word?">🧠 Tadabbur
-          <span dir="rtl" style="font-family:'Amiri',serif;">— تدبّر</span></button>` : ""}
+        <!-- Shown on EVERY surah, never conditionally. It used to be drawn
+             only where tadabbur existed, which meant it was simply absent on
+             106 of the 114 surahs — and an absent button reads as a broken
+             one, especially after switching language, when you are opening a
+             different surah anyway. It now always appears and says plainly
+             when a surah has not been written yet. -->
+        <button onclick="iitwToggleTadabbur()" class="rq-btn rq-tad${tad ? "" : " rq-tad-empty"}" id="rqTadBtn"
+                title="Why is this verse here? Why this word?"><span class="en-only">🧠 Tadabbur</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🧠 تدبّر</span></button>
       </div>
     </div>
     <div class="rq-save-note" id="rqSaveNote"></div>
@@ -211,7 +216,7 @@ async function openSurah(surah) {
         — في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}
       </span>
     </div>
-    ${tad ? iitwTadabburSurahHtml(tad, surah) : ""}`;
+    ${tad ? iitwTadabburSurahHtml(tad, surah) : iitwTadabburEmptyHtml(surah)}`;
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
     window._ayahAudios  = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));
@@ -577,6 +582,20 @@ function iitwTadabburSurahHtml(tad, surah) {
   return h;
 }
 
+/* Shown when a surah has no tadabbur written yet. The button is
+   drawn on every surah, so pressing it must always answer — an
+   inert button is worse than an absent one. */
+function iitwTadabburEmptyHtml(surah) {
+  return '<div class="tad-surah tad-surah-empty tad-hidden" id="tadSurahPanel">' +
+    '<div class="tad-surah-head">🧠 <span class="en-only">Tadabbur for this surah is not written yet</span>' +
+      '<span class="ar-only" dir="rtl">لم يُكتب تدبّر هذه السورة بعد</span></div>' +
+    '<div class="en-only"><p>This is written verse by verse and word by word — why each verse sits where it does, why a particular word was chosen over the one beside it, and which verse elsewhere in the Quran completes the thought. At that depth it is slow, and Surah ' + surah.name + ' has not been done yet.</p>' +
+      '<p>Rather than show you a thin summary and call it tadabbur, this says plainly that it is not ready. Open the Quran page and the section above the surah list names every surah that is finished.</p></div>' +
+    '<div class="ar-only" dir="rtl"><p>هذا يُكتب آيةً آية وكلمةً كلمة: لِمَ وقعت كلّ آيةٍ في موضعها، ولِمَ اختير لفظٌ دون الذي بجانبه، وأيُّ آيةٍ في موضعٍ آخر من القرآن تُتمّ المعنى. وهو على هذا العمق بطيء، وسورة ' + (surah.arabic || surah.name) + ' لم تُعمل بعد.</p>' +
+      '<p>وبدل أن يُعرض عليك تلخيصٌ رقيقٌ يُسمّى تدبّرًا، يُقال لك صراحةً إنه لم يتمّ. وفي صدر صفحة القرآن بيانُ السور التي فُرغ منها.</p></div>' +
+    '</div>';
+}
+
 /* The block under one verse. Returns "" when this verse has no
    entry, so verses without tadabbur are simply left alone. */
 function iitwTadabburAyahHtml(tad, n) {
@@ -666,11 +685,17 @@ function iitwToggleTadabbur() {
   document.querySelectorAll("#modalBody .tad-surah, #modalBody .tad-ayah")
     .forEach(function (el) { el.classList.toggle("tad-hidden", !open); });
 
+  /* The label is rebuilt as .en-only / .ar-only spans rather than as one
+     string with the Arabic appended. Written as a single string it showed
+     "🧠 Tadabbur — تدبّر" in Arabic mode, leaking the English word onto an
+     Arabic page. */
   const btn = document.getElementById("rqTadBtn");
   if (btn) {
     btn.classList.toggle("armed", open);
-    btn.innerHTML = (open ? "🧠 Hide Tadabbur" : "🧠 Tadabbur") +
-      ' <span dir="rtl" style="font-family:\'Amiri\',serif;">— ' + (open ? "إخفاء التدبّر" : "تدبّر") + '</span>';
+    btn.innerHTML =
+      '<span class="en-only">🧠 ' + (open ? "Hide Tadabbur" : "Tadabbur") + '</span>' +
+      '<span class="ar-only" dir="rtl" style="font-family:\'Amiri\',serif;">🧠 ' +
+        (open ? "إخفاء التدبّر" : "تدبّر") + '</span>';
   }
 
   /* Newly revealed markup has to be translated, or it renders in

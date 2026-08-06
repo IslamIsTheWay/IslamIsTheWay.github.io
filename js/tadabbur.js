@@ -643,6 +643,89 @@ const TADABBUR = {
         whyAr: "﴿أَلَمْ تَرَ﴾ خطابٌ للنبيّ ﷺ، وقد وُلد عام ذلك الحدث ولم يشهده. والرؤية في العربية تكون بالعين وتكون بالعلم اليقينيّ: أي إنّ هذا من الاشتهار عندكم بحيث صار كالمرئيّ. وكان الحدث في متناول ذاكرة أوّل المخاطَبين، يعرفون من حضره."
       },
       {
+        n: 2,
+        ar: "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِى تَضْلِيلٍۢ",
+        why: "Before a single bird is mentioned, the plan is already finished. And note HOW it was finished — not blocked, not defeated. Made to wander.",
+        whyAr: "قبل أن يُذكر طائرٌ واحد كان الكيد قد انتهى. وتأمّل كيف انتهى: لا صدًّا ولا هزيمة، بل تضليلًا.",
+        words: [
+          {
+            w: "كَيْدَهُمْ", t: "kayd — a scheme worked out in private",
+            meaning: "Kayd is not an open attack. It is a plan laid quietly, worked out in advance, meant not to be seen coming. The word by itself tells you they thought about this for a long time.",
+            meaningAr: "الكيد ليس مواجهةً ظاهرة، وإنما تدبيرٌ في خفاء، يُرتَّب قبل وقته، ويُراد ألّا يُفطَن له. فاللفظ وحده يخبرك أنهم أطالوا التفكير فيه.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ك ي د",
+            strength: "lugha"
+          },
+          {
+            w: "فِى تَضْلِيلٍۢ", t: "made to go astray",
+            meaning: "Tadlil is from the root of dalal — going astray, losing the way. It does not say the plan was crushed. It says the plan itself was made to lose its way.",
+            meaningAr: "التضليل من مادّة الضلال، وهو ذهاب الطريق. وليس معناه أنّ الكيد كُسر، وإنما أنّ الكيد نفسه أُضلّ فأخطأ طريقه.",
+            instead: "The verse could have said He destroyed their plot, or stopped it, or turned it back. It says He put it INTO a going-astray — the same preposition of being inside a thing that Al-Asr uses for loss. The army arrived. It simply never got where it was going.\n\nWhich is a harder thing than defeat. A defeated plan was still a plan. A misled one was never going to work, and the men carrying it did not know that while they carried it.",
+            insteadAr: "وقد كان يمكن أن يُقال أهلك كيدهم، أو ردّه، أو صرفه. فقيل ﴿فِى تَضْلِيلٍۢ﴾ بحرف الظرفيّة، وهو الحرف نفسه الذي في العصر ﴿لَفِى خُسْرٍ﴾. فقد وصل الجيش، غير أنه لم يبلغ ما خرج إليه قطّ.\n\nوهذا أشدّ من الهزيمة: فالمهزوم كان له تدبير، وأمّا المُضلَّل فما كان تدبيره ليتمّ، وحاملوه لا يشعرون بذلك وهم يحملونه.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ض ل ل",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:30)",
+            ar: "وَيَمْكُرُونَ وَيَمْكُرُ ٱللَّهُ ۖ وَٱللَّهُ خَيْرُ ٱلْمَٰكِرِينَ",
+            en: "“And they planned, and Allah planned. And Allah is the best of planners.”",
+            how: "The same idea stated as a rule rather than as an event. Al-Fil is one instance; Al-Anfal is the principle it belongs under. Read together, the elephant army stops being an old story about birds and becomes an example of something the Quran says happens generally.",
+            howAr: "المعنى نفسه مذكورًا قاعدةً لا واقعة. فالفيل مثالٌ واحد، والأنفال هي الأصل الذي يندرج تحته. فإذا قُرئتا معًا لم يبقَ خبرُ أصحاب الفيل قصّةً قديمةً عن طير، بل صار شاهدًا على سنّةٍ يذكر القرآن أنها تطّرد."
+          }
+        ]
+      },
+      {
+        n: 3,
+        ar: "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+        why: "The largest army the Arabs had seen, and what was sent against it was birds. Not an angel, not an earthquake, not a human army. The disproportion is the argument: what came against them was so small that nobody could afterwards claim it had been a fair fight they happened to lose.",
+        whyAr: "أعظم جيشٍ رأته العرب، والذي أُرسل عليه طير. لا مَلَك، ولا زلزلة، ولا جيشُ بشر. وفي التفاوت الحجّة: فقد كان الذي أتاهم من الصِّغر بحيث لا يستطيع أحدٌ بعدُ أن يقول إنها كانت معركةً متكافئةً خُذلوا فيها.",
+        words: [
+          {
+            w: "طَيْرًا", t: "birds — left indefinite",
+            meaning: "Indefinite and unnamed. Not falcons, not eagles — just birds. The Quran does not identify them.",
+            meaningAr: "نكرةٌ غير مُسمّاة: لا صقورًا ولا عُقبانًا، بل طيرًا. فلم يُعيّنها القرآن.",
+            instead: "A great deal has been written describing these birds — their colour, their size, what they carried, what they looked like. None of that is in the Quran, and none of it is in the two Sahihs. Where the revelation left a thing indefinite, the honest reading leaves it indefinite. Saying that plainly is part of tadabbur, not a gap in it.",
+            insteadAr: "وقد كُتب في وصف هذه الطير كثير: في لونها وقدرها وما حملت وهيئتها. وليس شيءٌ من ذلك في القرآن، ولا في الصحيحين. وما أبهمه الوحي فالصواب إبقاؤه مُبهمًا، والتصريح بهذا من التدبّر لا نقصٌ فيه.",
+            source: "The wording of the verse; nothing further on their description is established in the two Sahihs",
+            strength: "quran"
+          },
+          {
+            w: "أَبَابِيلَ", t: "ababil — flocks upon flocks",
+            meaning: "Successive groups — one flock after another, rather than all at once.",
+            meaningAr: "جماعاتٌ متتابعة، قطيعٌ في إثر قطيع، لا دفعةً واحدة.",
+            instead: "And here is something worth knowing, because it changes how confident anyone should sound about it: this word occurs ONCE in the entire Quran. Nowhere else, in any form.\n\nThat matters for method. The fourth question — where else does this word appear — is what normally settles a meaning, and here there is nowhere else to look. Which is exactly why the early lexicographers had to work at it and why more than one explanation of it survives. A word used a single time cannot be checked against its other places, and the honest thing is to say so rather than pick one reading and present it as settled.",
+            insteadAr: "وههنا ما يحسن علمه، فإنه يضبط مقدار الجزم في المسألة: هذا اللفظ لم يرد في القرآن كلّه إلا مرّةً واحدة، لا في هذه الصيغة ولا في غيرها.\n\nوهذا مؤثِّرٌ في المنهج: فالسؤال الرابع — أين وردت الكلمة أيضًا — هو الذي يُحرّر المعنى في العادة، ولا موضع هنا يُرجع إليه. ولهذا اجتهد المتقدّمون من أهل اللغة فيه، وبقي فيه أكثر من قول. واللفظ الذي لا يرد إلا مرّةً لا يُقابَل بمواضعه الأخرى، والإنصاف أن يُقال ذلك لا أن يُختار قولٌ فيُعرض على أنه المحسوم.",
+            source: "Established by counting its occurrences in the Uthmani text",
+            strength: "quran"
+          }
+        ]
+      },
+      {
+        n: 4,
+        ar: "تَرْمِيهِم بِحِجَارَةٍۢ مِّن سِجِّيلٍۢ",
+        why: "The tense changes here, and it is the only place in the surah where it does. Everything before is past — He did, He sent. This one verb is present: tarmihim, “pelting them”. The account stops reporting and starts showing, and it switches at exactly the moment of the blow.",
+        whyAr: "تغيّر الزمن هنا، وهو الموضع الوحيد في السورة الذي تغيّر فيه. فما قبله ماضٍ: فعل، وأرسل. وهذا الفعل وحده مضارع: ﴿تَرْمِيهِم﴾. فانتقل الخبر من الحكاية إلى العرض، ووقع الانتقال في لحظة الضربة بعينها.",
+        words: [
+          {
+            w: "سِجِّيلٍۢ", t: "sijjil — hardened, baked clay",
+            meaning: "Stone of baked clay. Not a rock picked up off the ground — something fired hard.",
+            meaningAr: "حجارةٌ من طينٍ متحجّر مطبوخ، لا حجرًا يُلتقط من الأرض، بل ما شُدّ وصُلّب.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry س ج ل",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Hud (11:82) and Surah Al-Hijr (15:74)",
+            ar: "وَأَمْطَرْنَا عَلَيْهَا حِجَارَةًۭ مِّن سِجِّيلٍۢ مَّنضُودٍۢ",
+            en: "“And We rained upon them stones of hardened clay, layered.” — of the people of Lut.",
+            how: "Here the fourth question pays. Sijjil appears in only three places in the whole Quran, and the other two are both the destruction of the people of Lut.\n\nSo one rare word was used for two events separated by centuries: a people destroyed for what they did among themselves, and an army destroyed for marching on the House. The vocabulary is quietly placing them in the same category of ending. Nothing in Al-Fil says that on its own. It appears only when you follow the word out of the surah — which is the whole method.",
+            howAr: "وهنا تظهر ثمرة السؤال الرابع. فلفظ ﴿سِجِّيلٍۢ﴾ لم يقع في القرآن كلّه إلا في ثلاثة مواضع، والموضعان الآخران كلاهما في إهلاك قوم لوط.\n\nفاستُعمل لفظٌ نادرٌ لحادثتين بينهما قرون: قومٌ أُهلكوا بما صنعوا فيما بينهم، وجيشٌ أُهلك بمسيره إلى البيت. فالمفردة تجعل النهايتين من بابٍ واحد في هدوء. ولا تقول سورة الفيل هذا وحدها، وإنما يظهر إذا تتبّعتَ اللفظ خارجها، وهذا هو المنهج كلّه."
+          }
+        ]
+      },
+      {
         n: 5,
         ar: "فَجَعَلَهُمْ كَعَصْفٍۢ مَّأْكُولٍۭ",
         why: "The image is exact and worth slowing down on. 'Asf is the leaf and husk of a crop — the part left over after the grain is taken. Ma'kul is “eaten”. So: not merely destroyed, but reduced to chaff that has already been chewed. The greatest army the region had seen, ending as the least valuable part of a plant, after something had finished with it.",
@@ -663,6 +746,40 @@ const TADABBUR = {
       }
     ],
     ayat: [
+      {
+        n: 1,
+        ar: "لِإِيلَٰفِ قُرَيْشٍ",
+        why: "No other surah in the Quran opens like this. It begins with a preposition and a reason — “FOR the ilaf of Quraysh” — and the thing it gives the reason for is not in this surah at all. It is in the one before.\n\nRead Quraysh on its own and the first verse is a fragment hanging in the air. Read it straight after Al-Fil and it is the second half of a sentence: the elephant army was destroyed FOR this.",
+        whyAr: "ليس في القرآن سورةٌ افتُتحت بمثل هذا: حرف جرٍّ وتعليل ﴿لِإِيلَٰفِ قُرَيْشٍ﴾، والمعلَّل ليس في هذه السورة أصلًا، وإنما في التي قبلها.\n\nفاقرأ قريشًا وحدها تجد الآية الأولى كلامًا معلَّقًا. واقرأها عقب الفيل تجدها شطر جملة: أُهلك أصحاب الفيل لهذا.",
+        words: [
+          {
+            w: "إِيلَٰف", t: "ilaf",
+            meaning: "From the root a-l-f, the root of ulfah — familiarity, being joined to something, being used to it. Not “security” exactly, and not “trade” exactly: the settled, habitual arrangement by which a thing has become normal and safe.",
+            meaningAr: "من مادّة (أ ل ف) التي منها الأُلفة: الاعتياد والاجتماع على الشيء وسكونُ النفس إليه. فليست «الأمن» على التحديد، ولا «التجارة» على التحديد، وإنما العادة المستقرّة التي صار بها الأمر مألوفًا آمنًا.",
+            instead: "The verse could have said “for the SAFETY of Quraysh” or “for the TRADE of Quraysh”. Ilaf says something more ordinary and, for that reason, heavier: their routine. The thing they had stopped noticing.\n\nThat is the argument the two surahs are making together. Allah did not only rescue them from a spectacular danger; He arranged the ordinary background of their lives, the part nobody thanks anyone for. And it is precisely the routine that people forget to be grateful for — which is why the next verse names it in detail before verse 3 asks for anything.",
+            insteadAr: "وقد كان يمكن أن يُقال «لأمن قريش» أو «لتجارة قريش». فقوله ﴿إِيلَٰفِ﴾ أهدأ وأثقل لذلك: إنه عادتهم، وهو الذي كفّوا عن الالتفات إليه.\n\nوهذه هي حجّة السورتين مجتمعتين: لم يُنجِهم الله من خطرٍ عظيمٍ فحسب، بل هيّأ لهم عاديّ عيشهم الذي لا يُشكر عليه أحد. والمألوف هو الذي يُنسى شكره، ولهذا فُصّل في الآية التي بعدها قبل أن تطلب الثالثة شيئًا.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry أ ل ف",
+            strength: "lugha"
+          }
+        ]
+      },
+      {
+        n: 2,
+        ar: "إِۦلَٰفِهِمْ رِحْلَةَ ٱلشِّتَآءِ وَٱلصَّيْفِ",
+        why: "The word ilaf is said again immediately, which in a four-verse surah is a large share of the words spent on repeating one term. Arabic calls this badal — a second mention that comes to specify the first. The first verse said “their ilaf”; this one says which ilaf.",
+        whyAr: "أُعيد لفظ الإيلاف في الحال، وهذا في سورةٍ من أربع آياتٍ نصيبٌ كبيرٌ من كلماتها أُنفق في تكرار لفظٍ واحد. وهذا الذي تسمّيه العربية البدل: ذكرٌ ثانٍ يأتي ليُبيّن الأوّل. فالآية الأولى قالت إيلافهم، وهذه تقول أيّ إيلاف.",
+        words: [
+          {
+            w: "رِحْلَةَ ٱلشِّتَآءِ وَٱلصَّيْفِ", t: "the winter and summer journey",
+            meaning: "Two trading caravans a year: south to Yemen in the winter, north to Sham in the summer. Between them they were the entire economy of Makkah — a town in a valley with no crops, which lived by moving goods between two civilisations.",
+            meaningAr: "رحلتان في السنة: إلى اليمن جنوبًا في الشتاء، وإلى الشام شمالًا في الصيف. وهما اقتصاد مكّة كلّه: بلدٌ في وادٍ غير ذي زرع، إنما عاش بنقل التجارة بين حضارتين.",
+            instead: "Notice what is NOT said. It does not say “for their wealth” or “for their standing among the Arabs”. It names the two journeys — the actual, physical thing they did twice a year and could picture as they heard it.\n\nThe Quran is arguing here, not decorating. An abstraction can be waved away; a caravan you personally travelled with cannot. It points at the specific arrangement they lived inside and asks them to trace it back to somebody.",
+            insteadAr: "وتأمّل ما لم يُقل: لم يقل «لمالهم» ولا «لمكانتهم في العرب»، وإنما سُمّيت الرحلتان: الأمر المحسوس الذي يصنعونه مرّتين في العام ويتصوّرونه وهم يسمعونه.\n\nوالقرآن هنا يحتجّ لا يُزيّن: فالمعنى المجرّد يُدفع، وأمّا قافلةٌ سافرتَ فيها بنفسك فلا تُدفع. فأشار إلى العيش المعيَّن الذي هم فيه، وطلب منهم أن يردّوه إلى صاحبه.",
+            source: "The wording of the verse; the two caravans are well known in the accounts of Makkah before Islam",
+            strength: "quran"
+          }
+        ]
+      },
       {
         n: 3,
         ar: "فَلْيَعْبُدُوا۟ رَبَّ هَٰذَا ٱلْبَيْتِ",
@@ -703,6 +820,75 @@ const TADABBUR = {
     ],
     ayat: [
       {
+        n: 1,
+        ar: "أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ",
+        why: "The surah opens with a question put to you, not a statement made at you. “Have you seen…” — which is an invitation to look at somebody, and it makes the reader start searching for the person being described before he has been described.\n\nAnd then the surah answers its own question in a way nobody expects.",
+        whyAr: "افتُتحت السورة بسؤالٍ يُوجَّه إليك لا بخبرٍ يُلقى عليك: ﴿أَرَءَيْتَ﴾، وهو دعوةٌ إلى النظر في أحد، فيأخذ القارئ في طلب الموصوف قبل أن يُوصَف.\n\nثم تُجيب السورة عن سؤالها بما لا يتوقّعه أحد.",
+        words: [
+          {
+            w: "بِٱلدِّينِ", t: "ad-din — the Recompense",
+            meaning: "The same word, in the same sense, as in Al-Fatihah: maliki yawm ad-din. Not “religion” here but the reckoning — being paid for what you did.",
+            meaningAr: "اللفظ نفسه بالمعنى نفسه الذي في الفاتحة: ﴿مَٰلِكِ يَوْمِ ٱلدِّينِ﴾. فليس المراد المِلّة، وإنما الجزاء: أن تُوفّى بعملك.",
+            instead: "So the man in question is not someone who denies God exists. He is someone who does not really believe there will be a bill. And the surah is about to prove that you can identify such a person without asking him a single question about what he believes.",
+            insteadAr: "فليس المسؤول عنه من يُنكر وجود الله، وإنما من لا يستقرّ في نفسه أنّ ثمّ حسابًا. والسورة على وشك أن تُثبت أنك تعرف هذا الرجل من غير أن تسأله عن اعتقاده سؤالًا واحدًا.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry د ي ن; and compare Surah Al-Fatihah (1:4)",
+            strength: "lugha"
+          }
+        ]
+      },
+      {
+        n: 2,
+        ar: "فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ",
+        why: "Here is the answer, and it is the whole method of the surah. Asked who denies the Recompense, it does not describe a creed. It describes a hand pushing a child.\n\nBelief is being tested at the point where nobody is watching and nothing is owed — how a man behaves toward the one person in the town who cannot complain about him.",
+        whyAr: "وهذا هو الجواب، وفيه منهج السورة كلّه. سُئلت: من المكذّب بالدين؟ فلم تصف عقيدة، وإنما وصفت يدًا تدفع صبيًّا.\n\nفالتصديق يُمتحن حيث لا رقيب ولا مطالِب: كيف يصنع الرجل مع الوحيد في البلد الذي لا يستطيع أن يشكوه.",
+        words: [
+          {
+            w: "يَدُعُّ", t: "yadu''u — shoves, drives away roughly",
+            meaning: "Not “turns away from” and not “neglects”. Da''  is to push hard, to shove — the verb carries physical force and contempt together.",
+            meaningAr: "ليس معناه الإعراض ولا الإهمال. فالدعّ الدفع بعنف، واللفظ يحمل الشدّة والاحتقار معًا.",
+            instead: "The Quran had gentler verbs available and did not use them. Compare Surah Ad-Duha, where the command is “as for the orphan, do not oppress him” — taqhar, a different word. Here the description is harsher, because it is describing what a person does, not commanding what he should not.\n\nAnd the force is the point. It is not that he failed to help. It is that the child came near and was pushed.",
+            insteadAr: "وقد كان في القرآن أفعالٌ ألين فلم يُستعمل شيءٌ منها. قارِن بسورة الضحى: ﴿فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ﴾، وهو لفظٌ آخر. وأمّا هنا فالوصف أغلظ، لأنه وصفٌ لما يصنعه الرجل لا نهيٌ عمّا لا ينبغي له.\n\nوفي الشدّة المقصود: فليس أنه قصّر في العون، بل أنّ الصبيّ دنا منه فدُفع.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry د ع ع; compare Surah Ad-Duha (93:9)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Ad-Duha (93:6) and (93:9)",
+            ar: "أَلَمْ يَجِدْكَ يَتِيمًۭا فَـَٔاوَىٰ … فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ",
+            en: "“Did He not find you an orphan and give you shelter?… So as for the orphan, do not oppress him.”",
+            how: "This is the pattern again, and it is one of the clearest cases of it in the whole Quran. Ad-Duha states the reason and then gives the command, three verses apart: you were an orphan and were sheltered — therefore do not crush an orphan.\n\nAl-Ma'un supplies what Ad-Duha leaves out: what it looks like when a man ignores that. Neither surah is incomplete on its own, but read together they give the full circuit — the mercy you were shown, the command that follows from it, and the portrait of the man who broke it.",
+            howAr: "وهذا هو النظم نفسه، وهو من أظهر مواضعه في القرآن كلّه. فالضحى ذكرت العلّة ثم الأمر بينهما ثلاث آيات: كنتَ يتيمًا فآواك، فلا تقهر اليتيم.\n\nوجاءت الماعون بما تركته الضحى: صورةُ من أعرض عن ذلك. وليست إحداهما ناقصةً وحدها، غير أنهما إذا قُرئتا معًا تمّت الدائرة: الرحمة التي رُحمتَها، والأمر المتفرّع عليها، وصورة الذي نقضه."
+          }
+        ]
+      },
+      {
+        n: 3,
+        ar: "وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ",
+        why: "And now the bar is lowered to a place almost nobody can claim to be under it.",
+        whyAr: "ثم خُفض الحدّ إلى موضعٍ لا يكاد أحدٌ يدّعي أنه دونه.",
+        words: [
+          {
+            w: "يَحُضُّ", t: "yahudd — urges others to it",
+            meaning: "To urge, to press someone toward a thing. It is speech, not spending.",
+            meaningAr: "الحضّ الحثّ والترغيب ودفع الغير إلى الأمر. وهو قولٌ لا إنفاق.",
+            instead: "The verse does not say “he does not feed the poor”. That could be answered — a poor man cannot feed anyone. It says he does not URGE the feeding of the poor.\n\nSo the accusation survives poverty. You may have nothing at all and still speak, still push someone who does have something, still care out loud. What is being described is a man in whom the matter raises nothing — and the Quran counts that silence as evidence about what he believes will happen to him later.",
+            insteadAr: "لم تقل الآية «لا يُطعم المسكين»، فذاك يُعتذر عنه: فالفقير لا يُطعم أحدًا. وإنما قالت لا يحضّ على طعامه.\n\nفالتهمة تبقى مع الفقر: قد لا تملك شيئًا وتقدر على القول، وعلى دفع من يملك، وعلى أن يظهر منك الاهتمام. والموصوف رجلٌ لا يُحرّك فيه الأمر شيئًا، وقد جعل القرآن هذا السكوت دليلًا على ما يعتقده فيما يصير إليه.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ح ض ض",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Haqqah (69:30-34)",
+            ar: "وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ",
+            en: "“…and did not urge the feeding of the poor.” — given as a reason for the Fire.",
+            how: "The identical phrase, word for word, in a completely different surah — and there it appears in the list of what put a man in the Fire, beside not believing in Allah the Most Great.\n\nThat placement is the point. In Al-Ma'un it could be read as a character flaw. Al-Haqqah shows the Quran treating it as belonging beside disbelief itself. Carry the phrase from one surah to the other and its weight changes.",
+            howAr: "العبارة بعينها حرفًا بحرفٍ في سورةٍ أخرى بالكلّيّة، وهي هناك في عِداد ما أوجب النار، إلى جنب أنه ﴿كَانَ لَا يُؤْمِنُ بِٱللَّهِ ٱلْعَظِيمِ﴾.\n\nوفي هذا الموضع المقصود: فقد تُقرأ في الماعون خَصلةً في الخُلق، فتُريك الحاقّة أنّ القرآن يجعلها إلى جانب الكفر نفسه. فاحمل العبارة من سورةٍ إلى سورةٍ يتغيّر وزنها."
+          }
+        ]
+      },
+      {
         n: 4,
         ar: "فَوَيْلٌۭ لِّلْمُصَلِّينَ",
         why: "Read that on its own and it should stop you. Woe — to those who PRAY. Not to those who abandon prayer. The threat is aimed at people already inside the mosque, and the surah is about to say which of them.",
@@ -723,6 +909,23 @@ const TADABBUR = {
             insteadAr: "ولم يقل «في صلاتهم» فيكون سهوَ الخاطر داخل الصلاة، وذلك يعرض لكلّ أحد وليس هو المُتوعَّد عليه. فحرفٌ واحدٌ يفصل بين ضعفٍ بشريٍّ عامّ وبين ما سمّته السورة ويلًا. ولو أُبدلت ﴿عَن﴾ بـ«في» لتناول الوعيدُ كلَّ من صلّى.\n\nوهذا الفرق مرويٌّ عن ابن عباس، وعليه عامّة المفسّرين.",
             source: "Reported from Ibn Abbas; the standard reading in the tafsir works",
             strength: "tafsir"
+          }
+        ]
+      },
+      {
+        n: 6,
+        ar: "ٱلَّذِينَ هُمْ يُرَآءُونَ",
+        why: "The second charge against the same praying men, and it explains the first. Why is a man heedless ABOUT his prayer while still performing it? Because the prayer was never for Allah. It was for whoever was watching.\n\nPut verses 5 and 6 together and they describe one coherent person, not two faults: he does not care when it is prayed, because the only thing that mattered was that it was seen.",
+        whyAr: "الوصف الثاني لهؤلاء المصلّين أنفسهم، وهو الذي يُفسّر الأوّل. فلِمَ يسهو الرجل عن صلاته وهو يؤدّيها؟ لأنّ الصلاة لم تكن لله قطّ، وإنما كانت لمن ينظر.\n\nفإذا ضممتَ الخامسة إلى السادسة وصفتا رجلًا واحدًا متّسقًا لا خصلتين متفرّقتين: لا يبالي متى صلّى، لأنّ الذي عناه أن تُرى.",
+        words: [
+          {
+            w: "يُرَآءُونَ", t: "yura''un — doing so as to be seen",
+            meaning: "From the root r-a-y, to see. The form is the one Arabic uses for an action done between two sides — so the meaning is not “they see” but “they make themselves seen”, performing toward an audience.",
+            meaningAr: "من مادّة (ر أ ي) وهي الإبصار. والبناء من أبنية المفاعلة التي تكون بين اثنين، فليس المعنى «يرون» بل «يُرون الناس أعمالهم»، أداءً لمن ينظر.",
+            instead: "This is the origin of the word riya, and it is worth seeing where the Quran chose to put it: not in a surah about hypocrites and not in a passage about enemies. It is here, inside a list that began with an orphan being shoved — among the ordinary failures of ordinary people, aimed at a man who is standing in the prayer row.",
+            insteadAr: "ومن هذا اللفظ اشتُقّ «الرياء»، ويحسن النظر في الموضع الذي اختاره القرآن له: لا في سورةٍ في المنافقين، ولا في سياقٍ في الأعداء، وإنما ههنا، داخل تعدادٍ بدأ بيتيمٍ يُدفع — بين زلل عامّة الناس، مُوجَّهًا إلى رجلٍ قائمٍ في الصفّ.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ر أ ي",
+            strength: "lugha"
           }
         ]
       },
@@ -772,6 +975,32 @@ const TADABBUR = {
             en: "The Prophet ﷺ said that al-Kawthar is a river his Lord has given him in Paradise. It is also described in Sahih al-Bukhari 1344 as his Fount, which he will reach before his ummah.",
             how: "The surah leaves the word undefined and the Sunnah defines it. This is the same completing pattern as Al-Fatihah and An-Nisa, except that here the second half is in the hadith rather than in another verse — which is one of the plainest demonstrations of why the Quran is not read without the Sunnah.\n\nCited by book name rather than a number for Muslim, because the numbering in the free hadith collection this site uses is sequential and does not match the standard numbering.",
             howAr: "أبهمت السورة اللفظ وبيّنته السنّة. وهذا هو نظم التتميم نفسه الذي في الفاتحة والنساء، إلا أنّ الشطر الثاني هنا في الحديث لا في آيةٍ أخرى، وهو من أظهر ما يُبيّن أنّ القرآن لا يُقرأ بمعزلٍ عن السنّة.\n\nوعُزي إلى مسلم بالكتاب لا بالرقم، لأنّ ترقيم النسخة المجّانيّة التي يعتمدها الموقع متسلسلٌ لا يوافق الترقيم المعروف."
+          }
+        ]
+      },
+      {
+        n: 2,
+        ar: "فَصَلِّ لِرَبِّكَ وَٱنْحَرْ",
+        why: "The gift was given in verse 1; verse 2 says what to do about it. And the answer is not to celebrate it, defend it, or announce it — it is to pray and to sacrifice. Something was given, so give something.\n\nThe fa at the start is a fa of consequence: BECAUSE We gave you, therefore pray. The whole logic of gratitude in Islam is inside one letter.",
+        whyAr: "أُعطيت العطيّة في الأولى، وبيّنت الثانية ما يُصنع بها. وليس الجواب فرحًا ولا دفاعًا ولا إعلانًا، وإنما صلاةٌ ونحر: أُعطيتَ فأعطِ.\n\nوالفاء في أوّلها فاء السببيّة: لَمّا أعطيناك فصلِّ. فمنطق الشكر في الإسلام كلّه في حرفٍ واحد.",
+        words: [
+          {
+            w: "لِرَبِّكَ", t: "for YOUR Lord",
+            meaning: "The prayer is given a direction, and the lam is the lam of belonging: pray FOR Him, to Him, on His account.",
+            meaningAr: "جُعلت للصلاة جهة، واللام لام الاختصاص: صلِّ له وحده وعلى حسابه.",
+            instead: "The word was not needed to make the sentence work. “So pray and sacrifice” would have been complete Arabic. Adding li-Rabbika puts the ownership of the act beyond argument — and it lands in a surah answering a man who mocked the Prophet ﷺ, i.e. exactly where a person is most tempted to act for the benefit of onlookers.\n\nWhich is the same disease Al-Ma'un named four surahs earlier. The two surahs sit close together in the mushaf and treat opposite sides of one thing: prayer performed to be seen, and prayer explicitly assigned to its Owner.",
+            insteadAr: "ولم تكن الكلمة لازمةً لتمام الجملة، فلو قيل «فصلِّ وانحر» لاستقام الكلام. فزيادة ﴿لِرَبِّكَ﴾ تقطع النزاع في ملكيّة العمل، ووقع ذلك في سورةٍ جوابًا لمن استهزأ بالنبيّ ﷺ، أي في أشدّ المواضع إغراءً بالعمل لأجل الناظرين.\n\nوهو الداء نفسه الذي سمّته الماعون قبلها بأربع سور. والسورتان متجاورتان في المصحف تعالجان وجهي أمرٍ واحد: صلاةٌ تُؤدّى ليُرى صاحبها، وصلاةٌ تُنسب إلى مالكها صريحًا.",
+            source: "The wording of the verse; compare Surah Al-Ma'un (107:6)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-An'am (6:162)",
+            ar: "قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+            en: "“Say: indeed my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.”",
+            how: "Al-Kawthar pairs prayer with sacrifice and assigns them to “your Lord”. Al-An'am takes the identical pair — salah and nusuk, prayer and sacrifice, in that order — and extends the same assignment over a person's living and dying as well.\n\nSo the short surah gives you the two acts; the longer verse shows they were only the opening of a list that ends with your whole life. This is the completing pattern working in the other direction: not a vague word made specific, but a small instruction shown to be part of something total.",
+            howAr: "قرنت الكوثر الصلاة بالنحر وجعلتهما لربّك. وأخذت الأنعام القرينين أنفسهما — الصلاة والنسك على هذا الترتيب — فمدّت النسبة نفسها إلى المحيا والممات.\n\nفالسورة القصيرة تعطيك العملين، وتُريك الآية الأطول أنهما كانا مطلع تعدادٍ ينتهي بحياتك كلّها. وهذا نظم التتميم في الجهة الأخرى: لا لفظٌ مُبهم بُيّن، بل أمرٌ يسيرٌ تبيّن أنه بعض أمرٍ شامل."
           }
         ]
       },
@@ -842,6 +1071,32 @@ const TADABBUR = {
         ar: "لَمْ يَلِدْ وَلَمْ يُولَدْ",
         why: "Two denials, and the order is not interchangeable. “He does not beget” comes before “nor was He begotten”.\n\nThe first answers what was being said around the Prophet ﷺ at the time — that the angels were daughters of Allah, that Uzayr was a son, that the Messiah was a son. That claim is struck first because it was the live one.\n\nThe second closes the door behind it: anything begotten had a beginning, and anything with a beginning is not the Eternal. Deal with the claim, then remove the possibility.",
         whyAr: "نفيان لا يُقدَّم أحدهما على الآخر اعتباطًا: ﴿لَمْ يَلِدْ﴾ قبل ﴿وَلَمْ يُولَدْ﴾.\n\nفالأوّل جوابٌ لِما كان يُقال حول النبيّ ﷺ حينئذٍ: أنّ الملائكة بناتُ الله، وأنّ عزيرًا ابن، وأنّ المسيح ابن. فبُدئ بإبطاله لأنه القول القائم.\n\nوالثاني يسدّ الباب من ورائه: فالمولود له ابتداء، وما له ابتداءٌ فليس بالأوّل الأزليّ. فأُبطلت الدعوى ثم رُفع الاحتمال."
+      },
+      {
+        n: 4,
+        ar: "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+        why: "The surah closes on the same word it opened with — ahad. Verse 1: “He is Allah, ahad.” Verse 4: “and there is not, for Him, an equal, ahad.” Four verses that begin and end on one word, with the whole description sitting between them.\n\nArabic calls a structure that returns to its opening a ring, and it does something a list cannot: it shuts. Nothing can be appended to this surah. The last word has already answered the first.",
+        whyAr: "خُتمت السورة باللفظ الذي افتُتحت به: ﴿أَحَدٌ﴾. ففي الأولى ﴿قُلْ هُوَ ٱللَّهُ أَحَدٌ﴾، وفي الرابعة ﴿وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ﴾. أربع آياتٍ تبدأ وتنتهي على كلمة، والوصف كلّه بينهما.\n\nوهذا البناء الراجع إلى مطلعه يُحدث ما لا يُحدثه التعداد: أنه يُغلق. فلا يُزاد على هذه السورة شيء، لأنّ آخر لفظٍ فيها قد أجاب أوّلها.",
+        words: [
+          {
+            w: "كُفُوًا", t: "kufuwan — an equal, a match",
+            meaning: "A peer: something on the same level, of the same kind, that could stand opposite it as a counterpart.",
+            meaningAr: "الكُفء: النظير المماثل في المرتبة والجنس، الذي يصلح أن يقابله ويُقاس به.",
+            instead: "The word is placed before ahad rather than after it, which is not the ordinary order. Fronting it that way makes the denial land on the KIND of thing being denied: it is not that He happens to have no equal at the moment — no equal is possible at all.\n\nAnd note the surah never argues. It was asked what Allah is like and it answered by removing every category a comparison could be built from: no second, no origin, no offspring, no counterpart. What is left cannot be pictured, and that is the answer.",
+            insteadAr: "قُدّم اللفظ على ﴿أَحَدٌ﴾ وليس هذا أصل الترتيب. وفي التقديم أن يقع النفي على جنس المنفيّ: فليس أنه لا كُفء له الآن، بل لا يُتصوّر له كُفء البتّة.\n\nوتأمّل أنّ السورة لم تُحاجّ قطّ: سُئلت عن الله فأجابت برفع كلّ بابٍ يُبنى منه تشبيه: لا ثاني، ولا أصل، ولا فرع، ولا نظير. فما بقي لا يُتخيّل، وذلك هو الجواب.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ك ف أ",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Ash-Shura (42:11)",
+            ar: "لَيْسَ كَمِثْلِهِۦ شَىْءٌۭ ۖ وَهُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ",
+            en: "“There is nothing like unto Him, and He is the Hearing, the Seeing.”",
+            how: "The same denial made in another surah, and it does something Al-Ikhlas leaves undone. Al-Ikhlas removes every comparison and stops there. Ash-Shura removes the comparison and, in the same breath, affirms that He hears and sees.\n\nThat pairing is the guard against a wrong conclusion. Read Al-Ikhlas alone and a person could drift toward a God so unlike anything that He is remote from everything. The other verse closes that door in five words: nothing resembles Him — AND He is hearing you now.",
+            howAr: "النفي نفسه في سورةٍ أخرى، وفيها ما لم تذكره الإخلاص. فالإخلاص ترفع كلّ تشبيهٍ وتقف. وأمّا الشورى فترفع التشبيه وتُثبت في النفَس نفسه أنه سميعٌ بصير.\n\nوفي هذا القِران عصمةٌ من لازمٍ فاسد: فقد يُفضي بالقارئ إفرادُ الإخلاص إلى إلهٍ بلغ من مخالفته كلَّ شيءٍ أن صار بعيدًا عن كلّ شيء. فسدّت الآية الأخرى هذا الباب في خمس كلمات: لا يُشبهه شيء — وهو سامعُك الآن."
+          }
+        ]
       }
     ]
   }
