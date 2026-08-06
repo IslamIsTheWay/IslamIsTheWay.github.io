@@ -483,20 +483,128 @@ const TADABBUR = {
      2 — AL-BAQARAH (Ayat al-Kursi only, for now)
      ========================================================== */
   2: {
-    surahTitle: "The longest surah — and the verse the Prophet ﷺ called the greatest",
-    surahTitleAr: "أطول السور — والآية التي سمّاها النبيّ ﷺ أعظم آية",
+    surahTitle: "The longest surah — and the answer to what Al-Fatihah just asked",
+    surahTitleAr: "أطول السور — وجوابُ ما سألته الفاتحة",
     partial: true,
     surahWhy: [
       {
-        h: "Only one verse of this surah is covered so far",
-        hAr: "لم يُتناول من هذه السورة إلا آيةٌ واحدة إلى الآن",
-        en: "Al-Baqarah is 286 verses and the tadabbur here covers verse 255, Ayat al-Kursi, only. Nothing on this page pretends the rest has been done. The remaining verses will be added the same way — word by word, with every claim carrying what kind of claim it is.",
-        ar: "البقرة ستٌّ وثمانون ومئتان آية، والذي هنا تدبّرُ الآية الخامسة والخمسين بعد المئتين، آية الكرسيّ، وحدها. وليس في هذه الصفحة ما يُوهم أنّ سائرها قد عُمل. وستُضاف البقيّة على الوجه نفسه: كلمةً كلمة، وكلُّ دعوى مقرونةٌ ببيان نوعها.",
-        ref: "",
-        strength: "note"
+        h: "It opens by answering the question Al-Fatihah ended on",
+        hAr: "افتُتحت بجواب السؤال الذي خُتمت به الفاتحة",
+        en: "Al-Fatihah closed with a request: guide us to the straight path. Turn the page and the second verse of this surah hands it over — this is the Book, no doubt in it, guidance.\n\nSo the join between the first two surahs is a question and its answer, and reading them in sequence is how you see it. Then verses 3 to 5 do something the request could not: they describe WHO the guidance actually reaches.",
+        ar: "خُتمت الفاتحة بسؤال: ﴿ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ﴾. فاقلب الصفحة تجد ثانية هذه السورة تُسلّمه: ﴿ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ﴾.\n\nفالوصل بين السورتين سؤالٌ وجوابه، ولا يُرى ذلك إلا بقراءتهما على الولاء. ثم تصنع الآيات من الثالثة إلى الخامسة ما لم يصنعه السؤال: تصف **من** تبلغه الهداية.",
+        ref: "Surah Al-Fatihah (1:6) and Surah Al-Baqarah (2:2)",
+        strength: "quran"
       }
     ],
     ayat: [
+      {
+        n: 1,
+        ar: "الٓمٓ",
+        why: "Three letters, and the surah begins with them. Twenty-nine surahs open with disconnected letters like these, and the honest position on them is the one the early scholars took.\n\nSome of the companions and those after them said plainly: Allah knows best what is meant by them. Others offered readings — that they are names of the surahs, or an oath, or an opening that arrests attention. None of these is established from the Prophet ﷺ with a chain that settles the matter.\n\nSo this entry does what the page does everywhere else: it tells you the readings exist, and that none is proven, rather than picking one and dressing it as knowledge. What IS worth noticing is what comes immediately after them — a challenge, in this same surah, to produce a single surah like it. Letters the Arabs used every day, arranged into something they could not answer.",
+        whyAr: "ثلاثة أحرفٍ افتُتحت بها السورة. وقد افتُتحت تسعٌ وعشرون سورةً بمثل هذه الحروف المقطّعة، والقول المنصف فيها ما قاله المتقدّمون.\n\nفمن السلف من قال صريحًا: الله أعلم بمراده بها. وذكر آخرون وجوهًا: أنها أسماءٌ للسور، أو قسم، أو افتتاحٌ يستدعي الإصغاء. وليس شيءٌ من ذلك ثابتًا عن النبيّ ﷺ بإسنادٍ يقطع النزاع.\n\nفصنعت هذه البطاقة ما تصنعه الصفحة في كلّ موضع: تُخبرك أنّ الأقوال موجودة وأنه لا شيء منها بثابت، ولا تختار قولًا فتُلبسه ثوب العلم. وأمّا الذي يُتأمَّل حقًّا فما جاء بعدها: التحدّي في هذه السورة نفسها أن يُؤتى بسورةٍ من مثله. حروفٌ كانت العرب تنطق بها كلَّ يوم، نُظمت فيما عجزوا عن معارضته.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:23)",
+            ar: "وَإِن كُنتُمْ فِى رَيْبٍۢ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا فَأْتُوا۟ بِسُورَةٍۢ مِّن مِّثْلِهِۦ",
+            en: "“And if you are in doubt about what We have sent down upon Our servant, then produce a surah the like of it.”",
+            how: "Twenty-two verses after the letters, the challenge is issued — in the surah that opened with them. Read 2:1 and 2:23 together and the arrangement makes an argument the letters alone do not: here are your own letters; now do this with them.",
+            howAr: "بعد الحروف باثنتين وعشرين آيةً يأتي التحدّي، في السورة التي افتُتحت بها. فاقرأ ﴿الٓمٓ﴾ مع ﴿فَأْتُوا۟ بِسُورَةٍۢ مِّن مِّثْلِهِۦ﴾ يظهر لك في الترتيب حجّةٌ لا تقولها الحروف وحدها: هذه حروفكم، فاصنعوا بها هذا."
+          }
+        ]
+      },
+      {
+        n: 2,
+        ar: "ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى لِّلْمُتَّقِينَ",
+        why: "The answer to Al-Fatihah's request, and it arrives in the second verse. But look at the last two words, because they narrow it sharply: guidance — for the God-conscious. Not guidance for everyone who opens it.\n\nWhich raises the obvious question. If a person must already have taqwa to be guided by the Book, and the Book is what produces taqwa, where does anyone begin? The answer the verse itself gives is in the next three verses: it lists what these people do. They are not people who arrived complete. They are people who did something.",
+        whyAr: "هو جواب سؤال الفاتحة، جاء في الآية الثانية. غير أنّ في آخره لفظين يُضيّقانه: ﴿هُدًى لِّلْمُتَّقِينَ﴾، لا هدًى لكلّ من فتحه.\n\nوهذا يُورد سؤالًا ظاهرًا: إذا كان لا يهتدي بالكتاب إلا من فيه تقوى، والكتابُ هو الذي تنشأ به التقوى، فمن أين يبدأ أحد؟ وجواب الآية في الثلاث التي بعدها: فإنها تعدّ ما يفعله هؤلاء. فليسوا قومًا جاؤوا تامّين، وإنما هم قومٌ صنعوا شيئًا.",
+        words: [
+          {
+            w: "رَيْب", t: "rayb",
+            meaning: "Ar-Raghib defines it precisely, and the precision is the point: “ar-rayb is that you suppose something about a thing, and then it is uncovered as other than what you supposed.” It is not simple doubt. It is a suspicion that turns out to be wrong.",
+            meaningAr: "حدّه الراغب حدًّا دقيقًا، وفي الدقّة الفائدة: «فالرَّيْبُ: أن تتوهّم بالشيء أمرًا مّا، فينكشف عمّا تتوهّمه». فليس هو الشكّ المجرّد، وإنما ظنٌّ ينكشف بخلافه.",
+            instead: "And he makes the distinction sharper with a second example that decides the meaning. Of “rayba al-manun” — the rayb of death — he says the word is used NOT because its happening is doubted, but because its TIME is. A person is always in rayb about death from the angle of when, never from the angle of whether.\n\nApply that back to this verse and it says more than “there is no doubt in it”. It says: there is nothing in this Book that you will suppose about it and then find to be otherwise. Nothing in it will turn out different from what it appeared to be. That is a claim about the whole Book, made in three words, at the start.",
+            insteadAr: "ثم شدّد الفرق بمثالٍ ثانٍ يحسم المعنى: فقال في ﴿رَيْبَ ٱلْمَنُونِ﴾ إنّ اللفظ استُعمل لا لأنّ وقوعه مشكوكٌ فيه، بل لأنّ **وقته** كذلك. فالإنسان أبدًا في ريب المنون من جهة وقته، لا من جهة كونه.\n\nفاحمل ذلك على هذه الآية تجدها أبلغ من «لا شكّ فيه»: إنها تقول إنه ليس في هذا الكتاب شيءٌ تتوهّم فيه أمرًا ثم ينكشف لك بخلافه. لا يخرج شيءٌ منه على غير ما ظهر. دعوى على الكتاب كلّه، في ثلاث كلمات، في مفتتحه.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ر ي ب (Shamela ed., p. 350) — quoted in his own words",
+            strength: "lugha"
+          },
+          {
+            w: "ٱلْمُتَّقِين", t: "al-muttaqin",
+            meaning: "From the root w-q-y, and Ar-Raghib gives the root sense first: “al-wiqayah is guarding a thing from what harms and injures it.” Then taqwa on top of it: “putting the self into a covering from what it fears — this is its exact sense.”",
+            meaningAr: "من مادّة (و ق ي)، وبدأ الراغب بأصلها: «الوِقَايَةُ: حفظُ الشيءِ ممّا يؤذيه ويضرّه». ثم التقوى فوقها: «والتَّقْوَى جعل النّفس في وِقَايَةٍ ممّا يخاف، هذا تحقيقه».",
+            instead: "So taqwa is not, at root, “fear of God” — Ar-Raghib says the naming of it as fear came afterwards, by calling a thing by what it leads to. At root it is a SHIELD. You put something between yourself and what would harm you.\n\nThat changes how the verse reads. The Book guides the people who have put something between themselves and harm — who are already taking cover. It is not asking for a feeling. It is asking for a posture, and the next three verses say what the posture consists of.",
+            insteadAr: "فليست التقوى في أصلها «الخوف من الله» — قال الراغب إنّ تسميتها خوفًا جاءت بعدُ، من باب تسمية الشيء بما يقتضيه. وإنما أصلها **وِقَاية**: أن تجعل بينك وبين ما يضرّك حاجزًا.\n\nوهذا يغيّر قراءة الآية: فالكتاب يهدي قومًا جعلوا بينهم وبين الأذى وقاية، أي قومًا قد استتروا. فليس المطلوب شعورًا، وإنما هو حالٌ عمليّة، والثلاث الآتية تبيّن ممّ تتركّب.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry و ق ي (Shamela ed., p. 863)",
+            strength: "lugha"
+          }
+        ]
+      },
+      {
+        n: 3,
+        ar: "ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَٰهُمْ يُنفِقُونَ",
+        why: "Here is what the muttaqin actually do, and the order is not random. One thing inward, one thing bodily, one thing with your property. Belief, prayer, spending — the heart, the limbs, the wallet. Between them there is nowhere left for a person to claim the description while withholding a part of himself.",
+        whyAr: "هذا ما يفعله المتّقون، والترتيب غير عشوائيّ: أمرٌ في الباطن، وأمرٌ بالبدن، وأمرٌ في المال. إيمانٌ وصلاةٌ وإنفاق: القلب والجوارح والمال. فلم يبقَ بينها موضعٌ يدّعي فيه المرء الوصف وهو مانعٌ شيئًا من نفسه.",
+        words: [
+          {
+            w: "ٱلْغَيْب", t: "al-ghayb",
+            meaning: "Ar-Raghib begins from the physical: “al-ghayb is the verbal noun of the sun setting and the like — when it is hidden from the eye.” Then it is used for everything absent from the senses, and for what is absent from a person's knowledge.",
+            meaningAr: "بدأ الراغب من المحسوس: «الغَيْبُ: مصدر غَابَتِ الشّمسُ وغيرها إذا استترت عن العين». ثم استُعمل في كلّ غائبٍ عن الحاسّة، وفيما يغيب عن علم الإنسان.",
+            instead: "And then the sentence that changes the verse. He says: a thing is called ghayb and ghaib WITH RESPECT TO PEOPLE, not with respect to Allah — for nothing is absent from Him.\n\nSo “those who believe in the ghayb” does not mean believing in something mysterious in itself. There is no category of the hidden from Allah's side; the hiddenness is entirely on ours. What is being asked of a person is that he accept there is real, definite, known-to-Allah reality that his senses do not reach — and that he not make his own eyes the measure of what exists.\n\nThat is why it is the FIRST thing listed. Everything after it depends on it.",
+            insteadAr: "ثم الجملة التي تُغيّر الآية: قال إنّ الشيء يُقال له غَيْبٌ وغائبٌ **باعتباره بالناس لا بالله تعالى، فإنه لا يغيب عنه شيء**.\n\nفليس معنى ﴿يُؤْمِنُونَ بِٱلْغَيْبِ﴾ الإيمان بشيءٍ مبهمٍ في نفسه. إذ لا غيب من جهته سبحانه، وإنما الغَيبة كلّها من جهتنا نحن. والمطلوب من العبد أن يُقرّ بأنّ ثمّ حقائق ثابتةً معلومةً لله لا تبلغها حواسّه، وألّا يجعل بصره ميزانًا لما هو كائن.\n\nولهذا كان **أوّل** المذكورات، فإنّ ما بعده متفرّعٌ عليه.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry غ ي ب (Shamela ed., p. 598)",
+            strength: "lugha"
+          },
+          {
+            w: "يُقِيمُونَ", t: "they establish it — not merely perform it",
+            meaning: "The verb is from q-w-m, to make a thing stand upright. It is not “they pray”; it is “they make the prayer stand”.",
+            meaningAr: "الفعل من (ق و م): إقامةُ الشيء وجعلُه قائمًا. فليس «يُصلّون» بل ﴿يُقِيمُونَ ٱلصَّلَوٰةَ﴾: يجعلونها قائمة.",
+            instead: "The Quran had a simpler verb available — yusallun, they pray — and never uses it for this. It says they make it stand: upright, on time, complete, not leaning. A thing that is standing can also be left to fall over, which is exactly what the surah Al-Ma'un describes later of people who pray and are heedless about it.",
+            insteadAr: "وقد كان في العربية ما هو أيسر — «يُصلّون» — ولم يستعمله القرآن هنا. بل قال يُقيمونها: قائمةً في وقتها تامّةً غير مائلة. والقائم يجوز أن يُترك فيسقط، وهو عين ما وصفته سورة الماعون بعدُ في قومٍ يصلّون وهم عن صلاتهم ساهون.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ق و م; compare Surah Al-Ma'un (107:4-5)",
+            strength: "lugha"
+          },
+          {
+            w: "مِمَّا رَزَقْنَٰهُمْ", t: "from what We provided them",
+            meaning: "Not “from their wealth”. From what WE provided them — the ownership is named before the spending is asked for.",
+            meaningAr: "لم يقل «من أموالهم»، بل ﴿مِمَّا رَزَقْنَٰهُمْ﴾: نُسبت الملكيّة قبل أن يُطلب الإنفاق.",
+            instead: "And the min is partitive — FROM what We gave, not all of it. The verse asks for a portion and names the source in the same breath, so that giving is framed as passing on something that was handed to you rather than surrendering something that was yours.",
+            insteadAr: "و«مِن» للتبعيض: من الذي أعطيناهم لا كلّه. فطلبت الآية بعضًا وسمّت المصدر في نفَسٍ واحد، ليكون البذل تمريرًا لما أُعطيتَه لا تنازلًا عمّا هو لك."
+          }
+        ]
+      },
+      {
+        n: 4,
+        ar: "وَٱلَّذِينَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ وَبِٱلْءَاخِرَةِ هُمْ يُوقِنُونَ",
+        why: "Belief in what came down to him AND in what came down before him. The verse makes accepting the earlier revelations part of the description of the people this Book guides — the religion is presented as one continuous thing, not as a replacement that begins in year one.\n\nThen the closing clause changes its verb, and that is the thing to stop at.",
+        whyAr: "الإيمان بما أُنزل إليه **وبما أُنزل من قبله**. فجعلت الآية تصديق ما تقدّم من الوحي جزءًا من وصف من يهديهم هذا الكتاب: فالدين مسوقٌ على أنه شيءٌ واحدٌ متّصل، لا بديلٌ يبتدئ من عامٍ أوّل.\n\nثم غُيّر الفعل في آخرها، وهذا موضع الوقوف.",
+        words: [
+          {
+            w: "يُوقِنُونَ", t: "yuqinun — not yu'minun",
+            meaning: "The verse says they BELIEVE in what was revealed, and then, of the Hereafter, that they have YAQIN — certainty. It changes the word.",
+            meaningAr: "قالت الآية ﴿يُؤْمِنُونَ﴾ فيما أُنزل، ثم قالت في الآخرة ﴿هُمْ يُوقِنُونَ﴾، فغيّرت اللفظ.",
+            instead: "Iman can be held with the possibility of doubt somewhere behind it. Yaqin is the settling of knowledge so that nothing moves it. Of everything in the list, the one thing given the stronger word is the Hereafter.\n\nAnd the reason is in the structure: the Hereafter is the one item nobody can be shown. The Book you can read; the prayer you can perform; the spending you can see leave your hand. The Day you cannot check. So it is exactly there that the higher word is used — and the pronoun هم is added before it as well, which in Arabic fronts and strengthens: THEY, they are certain of it.",
+            insteadAr: "الإيمان قد يُصحبه احتمالُ شكٍّ من ورائه، وأمّا اليقين فسكون العلم بحيث لا يتحرّك. فمن بين ما عُدّ، اللفظ الأقوى جُعل للآخرة وحدها.\n\nوالسبب في النظم: فالآخرة هي الوحيدة التي لا تُعرض على أحد. فالكتاب يُقرأ، والصلاة تُؤدّى، والنفقة تُرى خارجةً من يدك، وأمّا اليوم فلا يُتحقّق منه. فههنا بعينه جيء باللفظ الأعلى، وزيد قبله الضمير ﴿هُمْ﴾، وهو في العربية للتقوية والاختصاص: هم دون غيرهم موقنون به.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entries أ م ن and ي ق ن",
+            strength: "lugha"
+          }
+        ]
+      },
+      {
+        n: 5,
+        ar: "أُو۟لَٰٓئِكَ عَلَىٰ هُدًۭى مِّن رَّبِّهِمْ ۖ وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ",
+        why: "The verdict on the five verses, and every word in it is placed.\n\nعَلَىٰ — UPON guidance, not “with” it or “in” it. The preposition of being mounted on something and carried by it, the way you are upon a riding animal. They are not walking beside the guidance; it is under them, bearing them.\n\nمِّن رَّبِّهِمْ — and it is from their Lord. After four verses listing what THEY do, the guidance is still attributed to Him, not earned by the list. The deeds put them in the way of it; they did not manufacture it.",
+        whyAr: "حكمُ الآيات الخمس، وكلُّ لفظٍ فيه موضوع في موضعه.\n\n﴿عَلَىٰ﴾ — على هدًى، لا «مع» هدًى ولا «في» هدًى. وهو حرف الاستعلاء والتمكّن، كما تكون على الدابّة تحملك. فليسوا ماشين إلى جانب الهدى، بل هو تحتهم يقلّهم.\n\n﴿مِّن رَّبِّهِمْ﴾ — وهو من ربّهم. فبعد أربع آياتٍ في تعداد ما صنعوا **هم**، بقيت الهداية منسوبةً إليه سبحانه لا مُستحقّةً بالتعداد. فالأعمال وضعتهم في طريقها، ولم تصنعها لهم.",
+        words: [
+          {
+            w: "ٱلْمُفْلِحُون", t: "al-muflihun",
+            meaning: "From f-l-h. The root sense in the language is splitting and cleaving open — and from it comes the word for the farmer, al-fallah, the one who splits the earth to put seed in it.",
+            meaningAr: "من (ف ل ح)، وأصلها في اللغة الشقّ والفتح، ومنه سُمّي الفلّاح فلّاحًا: لأنه يشقّ الأرض ليضع فيها البذر.",
+            instead: "So falah is not simply “success” as a mood or an outcome that lands on you. It is what a farmer gets: he split the ground, he buried something, he waited through a season in which nothing was visible above the soil — and then it came up.\n\nSaid at the end of a list of deeds, the word carries its own farming: these five verses named what was buried. The harvest is the verse you are reading.",
+            insteadAr: "فليس الفلاح مجرّد «نجاح» يقع عليك حالًا أو مآلًا، وإنما هو ما يناله الفلّاح: شقّ الأرض، ودفن شيئًا، وصبر موسمًا لا يظهر فيه فوق التراب شيء، ثم خرج.\n\nفإذا قيل في خاتمة تعدادِ أعمالٍ حمل اللفظ زراعته معه: فهذه الآيات الخمس سمّت ما دُفن، والحصادُ هو الآية التي تقرؤها.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ف ل ح",
+            strength: "lugha"
+          }
+        ]
+      },
       {
         n: 255,
         ar: "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ ۚ لَا تَأْخُذُهُۥ سِنَةٌۭ وَلَا نَوْمٌۭ",
