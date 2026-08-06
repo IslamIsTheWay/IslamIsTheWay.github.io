@@ -88,8 +88,16 @@ git add -A && git commit -m "..." && git push origin main
 - **`.en-only` / `.ar-only` need `!important`** — layout rules that also set
   `display` will out-specify them.
 - **Re-measure the nav breakpoint whenever a nav link is added or removed.**
-  12 links need ~1145px, so the hamburger takes over below 1200px. This has been
-  wrong three times.
+  **13 links plus the language button that `i18n.js` injects need 1474px, so the
+  hamburger takes over below 1480px**, and `.nav-wrap` has `max-width: 1560px` —
+  that cap is a real constraint, because when the bar needs more than it the nav
+  overflows at EVERY width however wide the screen. This has now been wrong four
+  times; most recently the breakpoint sat at 1200px while twelve links already
+  needed 1467px, which put Login off the right edge of a 1366px laptop, live.
+  Measure with the desktop layout actually applied
+  (`brand.getBoundingClientRect().width + nav.scrollWidth` + the wrap padding and
+  gap), then check `documentElement.scrollWidth > clientWidth` at 1280 / 1366 /
+  1440 / 1500 / 1920.
 - **In RTL, `element.right > clientWidth` is not an overflow test** — the
   scrollbar moves to the left. Use `documentElement.scrollWidth > clientWidth`.
 
@@ -105,11 +113,12 @@ git add -A && git commit -m "..." && git push origin main
   (awrah, mahram, khimar, 'inah, waswas, khuff, hudud, ijma'…), shown as a
   "Words explained" box under every ruling and every revival card, listing only
   the words that actually appear in that card.
-- **`js/figures.js`** — inline SVG diagrams for four rulings (hijab conditions,
+- **`js/figures.js`** — four labelled figures for four rulings (hijab conditions,
   which part of the sock is wiped, rak'ah on a journey, ghibah vs slander).
-  **Drawn, not fetched from the web**: no copyright risk, nothing to go dead,
-  no photograph of a real person, and a diagram shows the RULE where a photo
-  shows one outfit.
+  **Authored here, not fetched from the web**: no copyright risk, nothing to go
+  dead, no photograph of a real person, and a figure shows the RULE where a photo
+  shows one outfit. They were drawn as inline SVG first and **rewritten as HTML
+  tables and comparison lists** — see the SVG trap below. Keep them HTML.
 - **Photo bands on Stories and Guidance**, and a softer scroll arrival —
   gentler curve, slight scale, and a stagger so the Arabic line, the heading
   and the paragraph arrive in sequence.
@@ -121,6 +130,13 @@ git add -A && git commit -m "..." && git push origin main
   WORD after stripping harakat and the attached prefixes, and anchor a term to
   its definite form (الوهن، الجمع) when the bare form is also a common word.
   This is the same trap the Stories glossary hit with كلّ / الكَلّ.
+- **Never put label text inside an SVG.** Text in an SVG is not a node
+  `i18n.js` can walk, so it **never translates**, and a horizontal scroll wrapper
+  clips it in RTL where scrolling starts from the right — "Hair, neck and ears"
+  rendered as "irs / tly" on the live site. Every figure on this site is HTML for
+  that reason. Related: the first hijab figure was an outline of a garment that
+  read as a winter hat — **a diagram the reader has to decode teaches less than a
+  sentence.** Prefer a labelled comparison in words.
 - **An SVG with a `min-width` widens its card instead of scrolling.** A grid
   item defaults to `min-width: auto`, so it grows to fit and pushes the whole
   page sideways on a phone. The scroll wrapper needs `min-width: 0`.
