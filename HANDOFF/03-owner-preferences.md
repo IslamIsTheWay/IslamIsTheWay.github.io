@@ -1,3 +1,10 @@
+> **⚠ This file is a SPLIT COPY and stops at 4 August 2026.**
+> The 5–6 August sessions (the Golden Age page, both closing discussions,
+> the terms and figures files, and seven live bugs that were fixed) are in
+> **Part 8 of `ISLAM-IS-THE-WAY-HANDOFF.md`** in this folder. Read that file
+> for the current state — it is the canonical one, and the one CLAUDE.md
+> points at.
+
 # Owner's rules and corrections
 
 These are things the owner has explicitly asked for, or corrected. Following them

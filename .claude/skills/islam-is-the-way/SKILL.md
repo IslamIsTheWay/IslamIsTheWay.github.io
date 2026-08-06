@@ -74,27 +74,35 @@ clear explanation plus the nearest workable alternative.
 ## Where things are
 
 ```
-index quran prophets companions hadith sunnah stories judgement guidance
-courses search login staff meeting                                     (.html)
+index quran prophets companions hadith sunnah stories judgement golden
+guidance courses search login staff meeting                            (.html)
 angels.html                → redirect to judgement.html#angels (kept for links)
 
 css/style.css              all styling, one file
 js/data.js                 PROPHETS, COMPANIONS, SURAHS (Mushaf pages), HADITHS,
                            PARADISE/WARNING_THEMES, PROPHET_STORIES,
-                           WORSHIP_STEPS, AR_GLOSSARY
+                           STORY_SECTIONS, WORSHIP_STEPS, AR_GLOSSARY
 js/sunnah.js               SUNNAH_CATEGORIES + SUNNAH
 js/lives.js                FULL_LIVES (all prophets + all companions), ONE_RELIGION
 js/judgement.js            JUDGEMENT_STAGES
+js/judgement-closing.js    JUDGEMENT_CLOSING — standing alone   (judgement.html)
 js/angels.js               ANGEL_GROUPS + ANGELS   (rendered on judgement.html)
+js/golden.js               GOLDEN_OVERVIEW + GOLDEN_FIELDS + GOLDEN_ROOT +
+                           GOLDEN_FIGURES + GOLDEN_TAKEN   (golden.html)
+js/golden-closing.js       GOLDEN_CLOSING — why we fell, how we return
 js/adhkar.js               ADHKAR_CATEGORIES + ADHKAR   (guidance.html)
 js/scholars.js             FIQH_CATEGORIES + FIQH_RULINGS   (guidance.html)
 js/scholars-books.js       SCHOLARS — who wrote what   (guidance.html)
+js/revival.js              REVIVAL → guidance.html#revival
+js/terms.js                TERMS + iitwFindTerms() — the "Words explained" box
+js/figures.js              RULING_FIGURES — HTML figures, NOT drawings
 js/account.js              reader sign-in + saved verse   (quran.html)
 js/main.js                 nav, scroll reveal, analytics, text-to-speech, staff
-                           session, video parsing, site-wide feedback widget
+                           session, video parsing, feedback widget, PERSON SEARCH
 js/quran.js                surah grid, 16 reciters, audio, reader modal, Mushaf
                            page markers, save-my-place
-js/i18n.js                 Arabic/English switch, RTL, reference translation
+js/i18n.js                 Arabic/English switch, RTL, reference translation,
+                           surah names generated from SURAHS
 data/site-config.json      staff-editable (courses, videos, meetings, payment,
                            recitations)
 HANDOFF/                   full documentation
@@ -104,6 +112,13 @@ Script load order matters: `data.js` → data files → page script → `main.js
 **`i18n.js` last**. Two exceptions where `main.js` loads EARLY on purpose,
 because the page script calls its helpers at parse time: `staff.html` and
 `companions.html`. On `quran.html`, `account.js` loads before `quran.js`.
+
+Pages that load `data.js` for a reason that is not obvious, so do not "tidy"
+it away: **`golden.html` and `sunnah.html`** need `SURAHS` because `i18n.js`
+builds its surah-name translations from it — without it every
+"Surah Al-Baqarah (2:170)" on those pages renders half in Arabic and half in
+English. **`search.html`** needs `lives.js`, because a search result offers the
+person's full biography.
 
 ### Never destroy what the owner published
 `data/site-config.json` holds his live recitations. Before committing, run
@@ -215,6 +230,43 @@ A missing comma between objects silently breaks every page that loads the file.
 - **`innerText` returns the text of `display:none` elements**, so it is useless
   for checking whether `.en-only` / `.ar-only` are working. Use
   `getComputedStyle(el).display` instead. This produced two false bug reports.
+- **`getComputedStyle` on a CHILD of a `display:none` parent still reports the
+  child's OWN display**, so checking a leaf node proves nothing. Use
+  `el.getClientRects().length > 0` to know whether something really renders.
+  This produced a third false report — 43 "English leaks" that did not exist.
+- **A CSS transition does not advance while the browser pane is not
+  compositing**, so a mid-transition value read in an automated check is
+  meaningless. Read resting values with transitions disabled.
+
+### Never put label text inside an SVG
+Text in an SVG is not a node `i18n.js` can walk, so it **never translates**, and
+a horizontal scroll wrapper clips it in RTL where scrolling starts from the
+right — "Hair, neck and ears" rendered as "irs / tly" on the live site. Every
+figure on this site is HTML for that reason. A related lesson: the first hijab
+figure was an outline of a garment that read as a winter hat, and **a diagram
+the reader has to decode teaches less than a sentence**.
+
+Also: an SVG with a `min-width` **widens its card instead of scrolling**, because
+a grid item defaults to `min-width: auto`. The scroll wrapper needs
+`min-width: 0` or the whole page scrolls sideways on a phone.
+
+### Arabic substring matching is NEVER safe
+ولي (wali) sits inside وليس, وهن (wahn) inside وهنّ, and عينة ('inah) matched
+بعينه. Match Arabic **word by word** after stripping harakat and peeling the
+attached prefixes (و ف ب ك ل ال), and anchor a term to its definite form
+(الوهن، الجمع) when the bare form is also a common word. Same trap the Stories
+glossary hit with كلّ / الكَلّ.
+
+The mirror of this bites in **English** too: `includes()` on a name made "Ali"
+return seventeen people, because a-l-i sits inside Salih, Khalid, Malik and
+Salim. Latin needs word boundaries; Arabic needs word-by-word. Neither is
+served by a bare substring test.
+
+### A hand-written list of pages will always go stale
+`staff.html` had a hand-typed `TRACKED_PAGES`, so golden, judgement, stories and
+sunnah recorded visits for weeks and showed **nothing** in analytics — `main.js`
+had been counting them all along. It is now derived from the page's own nav.
+Whenever something must enumerate the site's pages, derive it; do not type it.
 
 ---
 
@@ -232,7 +284,7 @@ significant:
 
 ## Current state
 
-_Last updated: 5 August 2026_
+_Last updated: 6 August 2026_
 
 | Content | Count |
 |---|---|
@@ -240,7 +292,11 @@ _Last updated: 5 August 2026_
 | Companions | 65 — **all with a full life** |
 | Full lives in `js/lives.js` | **94** |
 | Stories of the Prophet ﷺ | **45**, in **10 sections** by what the story teaches |
-| Golden Age figures (`js/golden.js`) | **28** + 7 documented cases of the credit going elsewhere |
+| Golden Age figures (`js/golden.js`) | **41** + 7 documented cases of the credit going elsewhere |
+| Golden Age closing sections | **12** — why we fell, the influencer inversion, how we return |
+| Judgement Day closing sections | **6** — standing alone, and what to do about it |
+| Terms explained (`js/terms.js`) | **48**, shown under every ruling |
+| Ruling figures (`js/figures.js`) | **4** — HTML comparison tables, never drawings |
 | Curated hadith | 43 (+ ~15,000 Bukhari & Muslim via API) |
 | Sunnah practices | 166 across 18 areas |
 | Day of Judgement stages | **15** (incl. the Great Intercession) |
@@ -249,21 +305,52 @@ _Last updated: 5 August 2026_
 | Scholars' rulings | **15** in 7 areas |
 | Scholars with their books | **19** (the four imams, al-Bukhari, Muslim, at-Tabari…) |
 | Surahs | 114, 16 reciters, Mushaf page numbers |
-| Guidance themes | 23 + 16 worship steps + the revival section |
+| Guidance themes | 23 + **24 worship steps** + the revival section |
 | Nav links | **13** — the bar needs 1474px, hamburger below 1480px |
 
-### Added 5 August 2026
-- **`golden.html` / `js/golden.js`** — the Golden Age. Every figure carries the
-  Latinised name Europe used. History is graded like hadith: *his own surviving
-  work* · *his work plus its Latin translation* · *reported in the histories* ·
-  *popular but not established*. The "they took it" argument is built from
-  documented receipts (Ibn ash-Shatir vs Copernicus, Ibn an-Nafis, Toledo,
-  the names) rather than a percentage, and one card says plainly what is NOT
-  true — because one inflated claim discredits the twenty true ones beside it.
+### Added 5–6 August 2026
+- **`golden.html` / `js/golden.js`** — the Golden Age. Opens with a plain
+  summary (what it was, exactly WHEN, where, what came out of it) and a
+  22-entry timeline, because most readers have never been told the period
+  existed. Then 41 figures, each carrying the Latinised name Europe used.
+  History is graded like hadith: *his own surviving work* · *his work plus its
+  Latin translation* · *reported in the histories* · *popular but not
+  established*. The "they took it" argument is built from documented receipts
+  (Ibn ash-Shatir vs Copernicus, Ibn an-Nafis, Toledo, the names) rather than a
+  percentage, and one card says plainly what is NOT true — because one inflated
+  claim discredits the twenty true ones beside it.
+- **`js/golden-closing.js`** — 12 sections: why we fell, following without
+  thinking (al-Bukhari 7320), what we chose to copy, **the influencer
+  inversion** (you are not his audience, you are his product), who Baghdad made
+  famous, how to get out of the loop, modesty in the order An-Nur revealed it
+  (24:30 to the MEN first), what is happening to our young, why we are behind,
+  how a person comes back, and how it ends. Ya-Sin 30 carries a real recitation
+  and shows the reciter's repetition in a **separate labelled block** — the
+  mushaf text is printed once, exactly, and that line is never blurred.
+- **`js/judgement-closing.js`** → `judgement.html#alone` — 6 sections on
+  standing alone, with every dua for steadfastness pulled into its own card.
 - **`js/revival.js`** → `guidance.html#revival` — why the ummah fell and the way
   back. Both central hadith labelled outside the two Sahihs, the 'inah hadith
   carrying its real disagreement, and Imam Malik's sentence marked as HIS.
-- `STORY_SECTIONS` in `data.js`; 9 more scholars; 4 more rulings.
+- **`js/terms.js`** — 48 terms explained under every ruling.
+- **`js/figures.js`** — 4 figures, as HTML tables. Read the SVG trap above.
+- `STORY_SECTIONS` in `data.js`; 9 more scholars; 4 more rulings; 8 more
+  worship steps.
+
+### Bugs fixed in those sessions that were ALREADY LIVE
+- Nav ran off-screen between 1200px and ~1467px — **Login was unreachable on a
+  1366px laptop.**
+- `bump-version.sh` never stamped hyphenated filenames.
+- Person search: "Ali" returned **17 people**; results now scored, ranked, and
+  labelled when they are only a cross-reference. `search.html` also never
+  loaded `lives.js`, so no result offered the full biography.
+- Hadith search could not handle the Arabic definite article — **"النية"
+  returned nothing** while "intention" worked.
+- Analytics silently ignored golden, judgement, stories and sunnah.
+- Guidance led with an irrelevant ruling — "I lose my temper" was answered with
+  backbiting.
+- Surah names rendered as "سورة Aal-Imran" site-wide — **83 such lines on
+  companions.html alone.** `i18n.js` now generates them from `SURAHS`.
 
 ### Built in the 3–4 August 2026 sessions
 - **All 94 full lives** written (was 16). Short-record prophets (Idris,
@@ -311,16 +398,27 @@ _Last updated: 5 August 2026_
 
 ## Open work
 
-1. **Hadith page in Arabic** — the 43 curated hadith have English `title` and
+_As of 6 August 2026._
+
+1. **The hijab illustration.** The owner asked for a photograph showing
+   incorrect hijab and pasted one into chat. A chat image cannot be written to
+   the repo — ask him to save the file into `img/`, then wire it into the
+   `fq-hijab-conditions` figure in `js/figures.js`. **Do not reference a
+   filename before the file exists**: `check-images.sh` fails the build on any
+   missing image reference.
+2. **Hadith page in Arabic** — the 43 curated hadith have English `title` and
    `topic` with no Arabic twin, so ~100 English strings remain in Arabic mode.
    Needs `titleAr` and `topicAr` written.
-2. **Courses page in Arabic** — ~108 UI strings with no `AR` entries.
-3. **Companion reference lines** — ~27 English descriptions in `refs` arrays
+3. **Courses page in Arabic** — ~108 UI strings with no `AR` entries.
+4. **Companion reference lines** — ~27 English descriptions in `refs` arrays
    ("Historical sira accounts of the first Caliphate").
-4. **Gmail sign-in** — blocked: needs an OAuth Client ID from the owner's own
+5. **Gmail sign-in** — blocked: needs an OAuth Client ID from the owner's own
    Google Cloud Console. The device-local reader account now covers most of the
    value.
-5. **Cross-device saved place** — would need a real backend.
-6. **Arabic speech quality** — limited by the voices installed on the reader's
+6. **Cross-device saved place** — would need a real backend.
+7. **Arabic speech quality** — limited by the voices installed on the reader's
    device; nothing in the code can fix it.
-7. **Google Search Console** — still not set up (Bing is verified and indexed).
+8. **Google Search Console** — still not set up (Bing is verified and indexed).
+9. **320px viewport** — `theme-card` on guidance overflows very slightly at
+   320px. Pre-existing and cosmetic; every other width from 375px to 1920px is
+   clean in both languages.
