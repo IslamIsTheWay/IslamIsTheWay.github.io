@@ -527,12 +527,27 @@ function iitwRecitationRefAr(r) {
       bump("page-" + page);
       sessionStorage.setItem("iitw-pv-" + page, "1");
     }
+    /* The counter key comes from the link's HREF, never from its text.
+       It used to be built from the text with /[^a-z]/g stripped — which
+       works in English and silently produces an EMPTY string in Arabic,
+       because i18n.js translates the nav and Arabic letters are not in
+       [a-z]. `if (label)` was then false, so every nav click made by a
+       reader in Arabic mode was dropped and never counted. The href is
+       the same in both languages, which is the whole point of using it.
+
+       Legacy keys are preserved on purpose: the old text-derived keys
+       ("judgementday", "goldenage") already hold months of counts, so
+       the href is mapped onto them rather than starting from zero. */
+    const NAV_KEY_ALIASES = { judgement: "judgementday", golden: "goldenage" };
     document.addEventListener("click", function (e) {
       const a = e.target.closest("nav.main-nav a");
-      if (a) {
-        const label = (a.textContent || "").trim().toLowerCase().replace(/[^a-z]/g, "");
-        if (label) bump("nav-" + label);
-      }
+      if (!a) return;
+      const href = (a.getAttribute("href") || "").split("#")[0].split("?")[0];
+      if (!href || href.indexOf("//") >= 0) return;
+      let key = href.replace(/\.html$/, "").toLowerCase();
+      if (!key || key === "index") key = "index";
+      key = NAV_KEY_ALIASES[key] || key;
+      if (key) bump("nav-" + key);
     });
   } catch (e) {}
 })();

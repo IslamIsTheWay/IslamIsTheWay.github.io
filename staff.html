@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608062220" />
+  <link rel="stylesheet" href="css/style.css?v=202608071813" />
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
@@ -467,8 +467,8 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202608062220"></script>
-  <script src="js/main.js?v=202608062220"></script>
+  <script src="js/data.js?v=202608071813"></script>
+  <script src="js/main.js?v=202608071813"></script>
   <script>
     const STAFF_USER = iitwStaffUser();
     if (!STAFF_USER) window.location.href = "login.html";
@@ -518,10 +518,23 @@
        non-letter stripped — so "Judgement Day" becomes "judgementday" and
        "Golden Age" becomes "goldenage". Build the same keys from the same
        source rather than typing them out and getting one wrong. */
+    /* Key from the HREF, label from the text — and they must be derived the
+       same way main.js derives them, including the legacy aliases, or this
+       panel reads counters nobody is writing to.
+
+       This used to build the key from the link text with /[^a-z]/g stripped,
+       which is what main.js did. Both were wrong the same way, so the panel
+       and the counter agreed while BOTH silently ignored every nav click made
+       in Arabic mode — Arabic letters are not in [a-z], so the key came out
+       empty. Fixed in both places together. */
+    const NAV_KEY_ALIASES = { judgement: "judgementday", golden: "goldenage" };
     const TRACKED_NAV_LABELS = new Map();
     document.querySelectorAll("nav.main-nav a").forEach(a => {
-      const label = (a.textContent || "").trim();
-      const key = label.toLowerCase().replace(/[^a-z]/g, "");
+      const href = (a.getAttribute("href") || "").split("#")[0].split("?")[0];
+      if (!href || href.indexOf("//") >= 0) return;
+      let key = href.replace(/\.html$/, "").toLowerCase() || "index";
+      key = NAV_KEY_ALIASES[key] || key;
+      const label = (a.textContent || "").trim() || key;
       if (key && !TRACKED_NAV_LABELS.has(key)) TRACKED_NAV_LABELS.set(key, label);
     });
     const TRACKED_NAV = [...TRACKED_NAV_LABELS.keys()];
@@ -1327,6 +1340,20 @@
       document.getElementById("instantJoin").href = roomUrl;
       document.getElementById("instantResult").style.display = "block";
 
+      /* OPEN THE ROOM FIRST — before any await. This is the bug that made
+         "Start a Meeting Right Now" appear to do nothing.
+
+         window.open() is only allowed while the browser still considers the
+         click to be in progress. The call used to sit at the END of this
+         function, after `await publishChanges(true)`, so with a token pasted
+         the await ended the click's turn and the popup was BLOCKED. The room
+         never opened.
+
+         It also explains why this passed testing: without a token there is no
+         await, so the window opened fine — and the token path, the one real
+         use, was the one that broke. */
+      const room = window.open(roomUrl, "_blank");
+
       if (!token) {
         msg.style.color = "#8a3d1f";
         msg.textContent = "Room ready — but paste your GitHub token below and press Publish so students can join.";
@@ -1339,7 +1366,15 @@
           ? "✓ Code is active — students can join now."
           : "Could not activate the code. Check your token, then press Publish Changes.";
       }
-      window.open(roomUrl, "_blank");
+
+      /* If the browser blocked it anyway, say so instead of leaving the host
+         staring at a room that never appeared. The Join button is already on
+         screen, so there is always a way through. */
+      if (!room || room.closed) {
+        msg.style.color = "#8a3d1f";
+        msg.textContent += (msg.textContent ? "  " : "") +
+          "Your browser blocked the new tab — use the Join button above to open the room.";
+      }
     }
 
     function copyCode(code) {
@@ -1564,6 +1599,6 @@
     loadConfig();
     fbAdminRefresh();
   </script>
-  <script src="js/i18n.js?v=202608062220"></script>
+  <script src="js/i18n.js?v=202608071813"></script>
 </body>
 </html>

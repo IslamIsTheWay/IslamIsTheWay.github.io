@@ -4551,3 +4551,63 @@ html.lang-ar .rv-ar p {
   .tad-verse-ar { font-size: 1.35rem; }
   .tad-w { font-size: 1.3rem; }
 }
+
+/* ============================================================
+   COURSE ENROLMENT — the sign-up and request box on courses.html
+   ------------------------------------------------------------
+   No rule here uses `left`/`right`; the accent border is set with
+   border-inline-start so it follows the text direction in Arabic.
+   ============================================================ */
+.enrol-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-inline-start: 4px solid var(--green);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin: 0 0 28px;
+  box-shadow: var(--shadow);
+}
+.enrol-head { font-weight: 700; color: var(--green-dark); font-size: 1.1rem; margin-bottom: 8px; }
+.enrol-note { color: var(--text-muted); font-size: .93rem; line-height: 1.8; margin: 0 0 12px; }
+.enrol-honest { border-top: 1px dashed var(--border); padding-top: 12px; margin-top: 14px; }
+
+/* The password warning. Deliberately loud — the owner asked that it be
+   unmistakable that this is NOT the reader's email password. */
+.enrol-warn {
+  background: #fff6e5;
+  border: 1px solid #f0d9a8;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 0 14px;
+  font-size: .93rem;
+  line-height: 1.8;
+  color: #7a5c12;
+}
+
+.enrol-fields { display: grid; gap: 10px; margin-bottom: 12px; }
+.enrol-fields input, .enrol-fields textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: .97rem;
+}
+.enrol-fields textarea { resize: vertical; }
+.enrol-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.enrol-msg { font-size: .93rem; line-height: 1.8; margin-top: 10px; }
+
+.enrol-reqs { margin: 10px 0 14px; font-size: .95rem; }
+.enrol-reqs ul { margin: 6px 0 0; padding-inline-start: 22px; }
+.enrol-reqs li { margin-bottom: 4px; }
+
+.enrol-request {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .enrol-box { padding: 18px 16px; }
+  .enrol-actions .btn { flex: 1 1 100%; }
+}
