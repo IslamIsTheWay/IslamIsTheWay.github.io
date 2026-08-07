@@ -10,7 +10,14 @@
     "demoUrl": ""
   },
   "videos": [],
-  "meetings": [],
+  "meetings": [
+    {
+      "title": "now",
+      "course": "",
+      "time": "2026-08-07T10:19",
+      "code": "IITW-QX4DTA"
+    }
+  ],
   "extraCourses": [],
   "recitations": [
     {
