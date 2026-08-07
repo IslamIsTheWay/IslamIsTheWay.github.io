@@ -545,12 +545,40 @@ function tadBadge(k) {
     '<span class="ar-only" dir="rtl">' + s.ar + '</span></span>';
 }
 
+/* THE MAIN IDEA OF THE SURAH — الفكرة الأساسية
+   The first thing shown when Tadabbur is opened, before any
+   verse detail. Every surah is driving at one thing; this says
+   what it is, why, and the verse where the surah says it most
+   plainly. It is rendered on surahs with no verse-by-verse
+   tadabbur too, so the button always answers with something
+   real. Data in js/concepts.js. */
+function iitwConceptHtml(surahNum) {
+  const c = (typeof iitwConceptFor === "function") ? iitwConceptFor(surahNum) : null;
+  if (!c) return "";
+  return '<div class="tad-concept">' +
+    '<div class="tad-concept-label">💡 <span class="en-only">The main idea of this surah</span>' +
+      '<span class="ar-only" dir="rtl">الفكرة الأساسية لهذه السورة</span></div>' +
+    '<div class="tad-concept-line"><span class="en-only">' + c.c + '</span>' +
+      '<span class="ar-only" dir="rtl">' + c.cAr + '</span></div>' +
+    '<div class="en-only">' + tadPara(c.w) + '</div>' +
+    '<div class="ar-only">' + tadPara(c.wAr, true) + '</div>' +
+    (c.a ? '<div class="tad-ref"><span class="en-only">Where the surah says it: ' + c.a + '</span>' +
+           '<span class="ar-only" dir="rtl">حيث تقوله السورة: ' + c.a + '</span></div>' : "") +
+    (c.careful ? '<div class="tad-careful">' +
+        '<div class="tad-careful-label">⚠ <span class="en-only">Commonly misread</span>' +
+          '<span class="ar-only" dir="rtl">ممّا يُساء فهمه</span></div>' +
+        '<div class="en-only">' + tadPara(c.careful) + '</div>' +
+        '<div class="ar-only">' + tadPara(c.carefulAr, true) + '</div></div>' : "") +
+    '</div>';
+}
+
 /* The panel under the surah title: why the Quran opens here, why
    seven verses, and — when only part of a surah is covered — a
    plain statement of exactly which verses have tadabbur. */
 function iitwTadabburSurahHtml(tad, surah) {
   const d = tad.data;
   let h = '<div class="tad-surah tad-hidden" id="tadSurahPanel">';
+  h += iitwConceptHtml(surah.n);
 
   h += '<div class="tad-surah-head">🧠 <span class="en-only">' + d.surahTitle + '</span>' +
        '<span class="ar-only" dir="rtl">' + d.surahTitleAr + '</span></div>';
@@ -586,9 +614,16 @@ function iitwTadabburSurahHtml(tad, surah) {
    drawn on every surah, so pressing it must always answer — an
    inert button is worse than an absent one. */
 function iitwTadabburEmptyHtml(surah) {
+  /* A surah with no verse-by-verse tadabbur may still have its main idea
+     written, and that is the thing most readers want anyway. Show it, and
+     only then say the verse detail is still to come. */
+  const concept = iitwConceptHtml(surah.n);
   return '<div class="tad-surah tad-surah-empty tad-hidden" id="tadSurahPanel">' +
-    '<div class="tad-surah-head">🧠 <span class="en-only">Tadabbur for this surah is not written yet</span>' +
-      '<span class="ar-only" dir="rtl">لم يُكتب تدبّر هذه السورة بعد</span></div>' +
+    concept +
+    '<div class="tad-surah-head">🧠 <span class="en-only">' +
+      (concept ? "The verse-by-verse detail is still to come" : "Tadabbur for this surah is not written yet") + '</span>' +
+      '<span class="ar-only" dir="rtl">' +
+      (concept ? "وأمّا تفصيل الآيات فلم يُكتب بعد" : "لم يُكتب تدبّر هذه السورة بعد") + '</span></div>' +
     '<div class="en-only"><p>This is written verse by verse and word by word — why each verse sits where it does, why a particular word was chosen over the one beside it, and which verse elsewhere in the Quran completes the thought. At that depth it is slow, and Surah ' + surah.name + ' has not been done yet.</p>' +
       '<p>Rather than show you a thin summary and call it tadabbur, this says plainly that it is not ready. Open the Quran page and the section above the surah list names every surah that is finished.</p></div>' +
     '<div class="ar-only" dir="rtl"><p>هذا يُكتب آيةً آية وكلمةً كلمة: لِمَ وقعت كلّ آيةٍ في موضعها، ولِمَ اختير لفظٌ دون الذي بجانبه، وأيُّ آيةٍ في موضعٍ آخر من القرآن تُتمّ المعنى. وهو على هذا العمق بطيء، وسورة ' + (surah.arabic || surah.name) + ' لم تُعمل بعد.</p>' +

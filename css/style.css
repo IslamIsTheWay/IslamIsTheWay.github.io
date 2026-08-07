@@ -4611,3 +4611,42 @@ html.lang-ar .rv-ar p {
   .enrol-box { padding: 18px 16px; }
   .enrol-actions .btn { flex: 1 1 100%; }
 }
+
+/* ---- The main idea of the surah, at the top of the Tadabbur panel ---- */
+.tad-concept {
+  background: linear-gradient(180deg, #f3f9f5 0%, var(--white) 100%);
+  border: 1px solid #cfe6d8;
+  border-inline-start: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 0 0 18px;
+}
+.tad-concept-label {
+  font-size: .85rem;
+  font-weight: 700;
+  color: #8a6d1a;
+  letter-spacing: .3px;
+  margin-bottom: 6px;
+}
+.tad-concept-line {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.tad-concept p { line-height: 1.95; margin: 0 0 10px; }
+
+.tad-careful {
+  background: #fff5f5;
+  border: 1px solid #f2d9d9;
+  border-radius: 9px;
+  padding: 12px 16px;
+  margin-top: 12px;
+}
+.tad-careful-label { font-weight: 700; color: #8a3d3d; font-size: .92rem; margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .tad-concept { padding: 14px 16px; }
+  .tad-concept-line { font-size: 1.08rem; }
+}
