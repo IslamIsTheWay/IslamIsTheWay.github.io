@@ -653,6 +653,18 @@ function iitwTadabburAyahHtml(tad, n) {
          (a.strength ? tadBadge(a.strength) : "") + '</div>';
   }
 
+  /* WHAT PEOPLE GET WRONG ABOUT THIS VERSE.
+     The whole reason this section exists: a verse that corrects an idea most
+     readers were taught and never questioned. Styled loudly — it is the
+     thing to stop at, not a footnote. */
+  if (a.misunderstood) {
+    h += '<div class="tad-misread">' +
+         '<div class="tad-misread-label">⚠ <span class="en-only">What people get wrong here</span>' +
+           '<span class="ar-only" dir="rtl">ما يُخطئ الناس فيه هنا</span></div>' +
+         '<div class="en-only">' + tadPara(a.misunderstood) + '</div>' +
+         '<div class="ar-only" dir="rtl">' + tadPara(a.misunderstoodAr, true) + '</div></div>';
+  }
+
   /* The plain-language box. Same one used on the Judgement and Golden Age
      pages: ordinary words, for a reader who is not a student of knowledge. */
   if (a.plain) {

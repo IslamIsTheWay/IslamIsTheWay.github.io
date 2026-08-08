@@ -4670,3 +4670,25 @@ html.lang-ar .rv-ar p {
 }
 .tad-plain p { line-height: 1.95; margin: 0 0 10px; }
 .tad-plain p:last-child { margin-bottom: 0; }
+
+/* ---- "What people get wrong here" ----
+   Louder than the other boxes on purpose: this is the reason the Tadabbur
+   section exists — a verse that corrects something the reader was taught
+   and never questioned. Not a footnote. */
+.tad-misread {
+  background: #fff4ec;
+  border: 1px solid #f0cfae;
+  border-inline-start: 5px solid #c9702a;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 12px 0;
+}
+.tad-misread-label {
+  font-weight: 800;
+  color: #9c4f13;
+  font-size: .96rem;
+  letter-spacing: .2px;
+  margin-bottom: 8px;
+}
+.tad-misread p { line-height: 1.95; margin: 0 0 10px; }
+.tad-misread p:last-child { margin-bottom: 0; }
