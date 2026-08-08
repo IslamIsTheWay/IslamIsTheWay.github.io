@@ -562,7 +562,7 @@ function iitwConceptHtml(surahNum) {
       '<span class="ar-only" dir="rtl">' + c.cAr + '</span></div>' +
     '<div class="en-only">' + tadPara(c.w) + '</div>' +
     '<div class="ar-only">' + tadPara(c.wAr, true) + '</div>' +
-    (c.a ? '<div class="tad-ref"><span class="en-only">Where the surah says it: ' + c.a + '</span>' +
+    (c.a ? '<div class="tad-ref" dir="auto"><span class="en-only">Where the surah says it: ' + c.a + '</span>' +
            '<span class="ar-only" dir="rtl">حيث تقوله السورة: ' + c.a + '</span></div>' : "") +
     (c.careful ? '<div class="tad-careful">' +
         '<div class="tad-careful-label">⚠ <span class="en-only">Commonly misread</span>' +
@@ -588,7 +588,7 @@ function iitwTadabburSurahHtml(tad, surah) {
          '<h4><span class="en-only">' + s.h + '</span><span class="ar-only" dir="rtl">' + s.hAr + '</span></h4>' +
          '<div class="en-only">' + tadPara(s.en) + '</div>' +
          '<div class="ar-only">' + tadPara(s.ar, true) + '</div>' +
-         (s.ref ? '<div class="tad-ref">' + s.ref + '</div>' : "") +
+         (s.ref ? '<div class="tad-ref" dir="auto">' + s.ref + '</div>' : "") +
          (s.strength ? tadBadge(s.strength) : "") +
          '</div>';
   });
@@ -649,7 +649,7 @@ function iitwTadabburAyahHtml(tad, n) {
   if (a.why) {
     h += '<div class="tad-sec"><div class="en-only">' + tadPara(a.why) + '</div>' +
          '<div class="ar-only">' + tadPara(a.whyAr, true) + '</div>' +
-         (a.ref ? '<div class="tad-ref">' + a.ref + '</div>' : "") +
+         (a.ref ? '<div class="tad-ref" dir="auto">' + a.ref + '</div>' : "") +
          (a.strength ? tadBadge(a.strength) : "") + '</div>';
   }
 
@@ -669,7 +669,7 @@ function iitwTadabburAyahHtml(tad, n) {
            '<div class="en-only">' + tadPara(w.instead) + '</div>' +
            '<div class="ar-only">' + tadPara(w.insteadAr, true) + '</div></div>';
     }
-    h += (w.source ? '<div class="tad-ref">' + w.source + '</div>' : "") +
+    h += (w.source ? '<div class="tad-ref" dir="auto">' + w.source + '</div>' : "") +
          (w.strength ? tadBadge(w.strength) : "") +
          '</div></div>';
   });
@@ -680,8 +680,8 @@ function iitwTadabburAyahHtml(tad, n) {
          '<div class="tad-link-label">🔗 <span class="en-only">Where the thought is completed</span>' +
            '<span class="ar-only" dir="rtl">حيث يتمّ المعنى</span></div>';
     if (l.ar) h += '<div class="tad-link-ar" dir="rtl">' + l.ar + '</div>';
-    if (l.en) h += '<div class="tad-link-en">' + l.en + '</div>';
-    h += '<div class="tad-ref">' + l.ref + '</div>' +
+    if (l.en) h += '<div class="tad-link-en en-only">' + l.en + '</div>';
+    h += '<div class="tad-ref" dir="auto">' + l.ref + '</div>' +
          '<div class="en-only">' + tadPara(l.how) + '</div>' +
          '<div class="ar-only">' + tadPara(l.howAr, true) + '</div></div>';
   });
@@ -754,8 +754,8 @@ function renderTadabburIntro() {
 
   h += '<div class="tad-verse-big">' +
        '<div class="tad-verse-ar" dir="rtl">' + d.verse.ar + '</div>' +
-       '<div class="tad-verse-en">' + d.verse.en + '</div>' +
-       '<div class="tad-ref">' + d.verse.ref + '</div>' + tadBadge(d.verse.strength) + '</div>';
+       '<div class="tad-verse-en en-only">' + d.verse.en + '</div>' +
+       '<div class="tad-ref" dir="auto">' + d.verse.ref + '</div>' + tadBadge(d.verse.strength) + '</div>';
 
   h += '<div class="tad-context">' +
        '<h3><span class="en-only">' + d.context.title + '</span>' +
@@ -767,8 +767,8 @@ function renderTadabburIntro() {
   (d.more || []).forEach(function (m) {
     h += '<div class="tad-more-item">' +
          '<div class="tad-link-ar" dir="rtl">' + m.ar + '</div>' +
-         '<div class="tad-link-en">' + m.en + '</div>' +
-         '<div class="tad-ref">' + m.ref + '</div>' +
+         '<div class="tad-link-en en-only">' + m.en + '</div>' +
+         '<div class="tad-ref" dir="auto">' + m.ref + '</div>' +
          '<div class="tad-more-note"><span class="en-only">' + m.note + '</span>' +
            '<span class="ar-only" dir="rtl">' + m.noteAr + '</span></div></div>';
   });

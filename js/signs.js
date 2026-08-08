@@ -68,7 +68,7 @@ const SIGNS_INTRO = {
   hadith: {
     ar: "لَا تَقُومُ السَّاعَةُ حَتَّى تَرَوْا عَشْرَ آيَاتٍ",
     en: "“It will not come until you see ten signs” — then he mentioned the smoke, the Dajjal, the Beast, the rising of the sun from the west, the descent of Isa son of Maryam, Gog and Magog, and landslides in three places: one in the east, one in the west, and one in Arabia — at the end of which a fire would come out of Yemen and drive the people to their place of gathering.",
-    ref: "Sahih Muslim, Book of Fitan and the Portents of the Last Hour — narrated by Hudhayfah ibn Usayd al-Ghifari. Cited by book rather than number: the numbering of Muslim in the free hadith collection this site uses is sequential and does not match the standard numbering, so a number here would be a guess.",
+    ref: "Sahih Muslim, Book of Fitan — Hudhayfah ibn Usayd al-Ghifari",
     strength: "hadith"
   },
 
@@ -268,7 +268,7 @@ const MEETING_ALLAH = {
       hAr: "والجهة الأخرى، مذكورةٌ بمثل ذلك الوضوح",
       en: "“No! Indeed, from their Lord, that Day, they will be veiled.” Ash-Shafi'i took this verse as the proof of the first: that being veiled is named as a punishment shows the seeing is a reward — otherwise there would be nothing in being kept from it.\n\nThat is a scholar's inference from two verses, attributed to him by name, and it is worth knowing as his reasoning rather than as a verse in itself.",
       ar: "﴿كَلَّآ إِنَّهُمْ عَن رَّبِّهِمْ يَوْمَئِذٍۢ لَّمَحْجُوبُونَ﴾. واستدلّ الشافعيّ بهذه الآية على الأولى: أنّ الحجاب لَمّا جُعل عقوبةً دلّ على أنّ النظر ثواب، وإلا لم يكن في المنع منه شيء.\n\nوهذا استنباطُ عالمٍ من آيتين، منسوبٌ إليه باسمه، ويحسن أن يُعلم أنه استدلاله لا أنه نصُّ آية.",
-      ref: "Surah Al-Mutaffifin (83:15); the inference is Imam ash-Shafi'i's, reported in the tafsir works — a scholar's reasoning, not a hadith",
+      ref: "Surah Al-Mutaffifin (83:15)",
       strength: "tafsir"
     },
     {
@@ -284,7 +284,7 @@ const MEETING_ALLAH = {
       hAr: "فما المطلوب منك في هذا الأسبوع",
       en: "The Prophet ﷺ was asked when the Hour would be. He did not give a date. He asked the man back: what have you prepared for it? The man said he had not prepared much — but that he loved Allah and His Messenger. And he was told: you are with the one you love.\n\nThat exchange is the whole subject reduced to something a person can act on tonight. Not a calendar. Not a prediction. A question about what you have made ready, and an answer that turns on attachment rather than on quantity.",
       ar: "سُئل النبيُّ ﷺ عن الساعة متى هي، فلم يُحدّد وقتًا، وإنما ردّ على السائل: «وماذا أعددتَ لها؟» فقال الرجل إنه لم يُعِدّ لها كثير عملٍ، غير أنه يحبّ الله ورسوله. فقيل له: «أنت مع من أحببت».\n\nوهذا الخبر يردّ الباب كلّه إلى ما يعمله المرء الليلة: لا تقويمًا، ولا تنبّؤًا، بل سؤالًا عمّا أعددتَ، وجوابًا مداره على التعلّق لا على الكثرة.",
-      ref: "Sahih al-Bukhari 3688 — narrated by Anas ibn Malik",
+      ref: "Sahih al-Bukhari 3688 — Anas ibn Malik",
       strength: "hadith"
     }
   ],
@@ -362,7 +362,7 @@ const THE_END = {
       hAr: "أربعون — والعظم الذي لا يبلى",
       en: "Between the two blasts there is a gap, and the hadith gives its length as a number with no unit. Abu Hurairah was asked: forty days? He refused to say. Forty months? He refused. Forty years? He refused.\n\nThat refusal is itself worth noticing. The companion who narrated it would not fill in what he had not been told, and neither should anyone else.\n\nIn the same narration: everything of a human being decays except one bone — the coccyx, the very base of the spine — and from it the person is put together again.",
       ar: "بين النفختين مدّة، وجاء في الحديث عددُها بلا وحدة. سُئل أبو هريرة: أربعون يومًا؟ فأبى. أربعون شهرًا؟ فأبى. أربعون سنة؟ فأبى.\n\nوهذا الإباء نفسه ممّا يُتأمَّل: فالصحابيُّ الراوي امتنع أن يملأ ما لم يُخبَر به، وكذلك ينبغي لغيره.\n\nوفي الحديث نفسه: يبلى كلُّ شيءٍ من الإنسان إلا عظمًا واحدًا، وهو عَجْبُ الذَّنَب، أسفلُ الصلب، ومنه يُركَّب الخلق.",
-      verse: { ar: "", en: "“Between the two blowings of the trumpet there will be forty.” … “Everything of the human body will decay except the coccyx bone, and from it the creation will be put together again.”", ref: "Sahih al-Bukhari 4814 — narrated by Abu Hurairah; the same “forty” also at al-Bukhari 4935" },
+      verse: { ar: "", en: "“Between the two blowings of the trumpet there will be forty.” … “Everything of the human body will decay except the coccyx bone, and from it the creation will be put together again.”", ref: "Sahih al-Bukhari 4814 and 4935 — Abu Hurairah" },
       strength: "hadith"
     },
     {
@@ -370,7 +370,7 @@ const THE_END = {
       hAr: "البعث — مطرٌ، وخروجُ الناس كما ينبت النبات",
       en: "Then rain comes down and human beings grow out of the earth the way vegetation grows. The image in the narrations is agricultural, not mechanical: something is planted, something rains, something comes up.\n\nAnd the ground they are gathered on is described in Sahih al-Bukhari as reddish-white land like a pure loaf of bread — with, the narrator adds, no landmark on it for anybody. Nowhere to go, and nothing to recognise.",
       ar: "ثم يُنزل الله مطرًا، فينبت الناس من الأرض كما ينبت النبات. والصورة في الأخبار زراعيّةٌ لا آليّة: بذرٌ يُوضع، ومطرٌ ينزل، وخَلقٌ يخرج.\n\nوالأرض التي يُجمعون عليها موصوفةٌ في صحيح البخاري بأنها أرضٌ بيضاء يعلوها حمرة كقُرصة النقيّ — قال الراوي: ليس فيها معلمٌ لأحد. فلا موضعَ يُقصد، ولا شيءَ يُعرَف.",
-      verse: { ar: "", en: "“The people will be gathered on the Day of Resurrection on reddish-white land like a pure loaf of bread.” Sahl added: that land will have no landmark for anybody.", ref: "Sahih al-Bukhari 6521 — narrated by Sahl ibn Sa'd" },
+      verse: { ar: "", en: "“The people will be gathered on the Day of Resurrection on reddish-white land like a pure loaf of bread.” Sahl added: that land will have no landmark for anybody.", ref: "Sahih al-Bukhari 6521 — Sahl ibn Sa'd" },
       strength: "hadith"
     },
     {
@@ -394,10 +394,10 @@ const MINOR_SIGNS = {
   items: [
     { en: "His own being sent. He said: “I have been sent, and the Hour, like these two” — and here he did something with his hands, which the narration records and which is the whole point of the statement.\n\nWHAT HE ACTUALLY DID: he held up his index finger and the middle finger beside it, joined together. Two fingers side by side, touching.\n\nAnd that is the meaning. He was not saying the Hour is far. He was saying that between his being sent and the Hour there is only the gap between these two fingers — and the only gap between them is that one is slightly longer than the other. In another wording he said exactly that: they are like these two, and one has almost nothing on the other.\n\nSo the sign is not something still to come. It happened. He himself, standing there, was the sign — and he was showing his companions with his hand how little was left.",
       ar: "بعثته نفسها. قال ﷺ: «بُعثتُ أنا والساعة كهاتين»، وصنع بيده شيئًا نقلته الرواية، وفيه مقصود الحديث كلّه.\n\nوالذي صنعه: أنه رفع السبّابة والوسطى التي تليها مقرونتين، إصبعين متلاصقتين.\n\nوهذا هو المعنى. فلم يُرد أنّ الساعة بعيدة، وإنما أراد أنّ بين بعثته وبين الساعة قدرَ ما بين هاتين الإصبعين، وليس بينهما إلا فضلُ إحداهما على الأخرى في الطول. وجاء في لفظٍ آخر التصريح بذلك: كهاتين، وما كادت إحداهما تفضل الأخرى.\n\nفالعلامة إذن ليست منتظَرة، بل قد وقعت. وهو ﷺ قائمٌ بينهم كان هو العلامة، وكان يُري أصحابه بيده كم بقي.",
-      ref: "Sahih al-Bukhari 6503 — narrated by Sahl ibn Sa'd; also al-Bukhari 4936, where the narrator says he saw him point with his index and middle fingers", strength: "hadith" },
+      ref: "Sahih al-Bukhari 6503 and 4936 — Sahl ibn Sa'd", strength: "hadith" },
     { en: "The splitting of the moon, which Surah Al-Qamar opens with: “The Hour has drawn near, and the moon has split.”",
       ar: "انشقاق القمر، وقد افتُتحت به سورة القمر: ﴿ٱقْتَرَبَتِ ٱلسَّاعَةُ وَٱنشَقَّ ٱلْقَمَرُ﴾.",
-      ref: "Surah Al-Qamar (54:1); the event itself is in al-Bukhari and Muslim", strength: "quran" },
+      ref: "Surah Al-Qamar (54:1); also al-Bukhari and Muslim", strength: "quran" },
     { en: "The contraction of time — that a period passes faster than it used to. It is in the narrations, and it is better kept as it was said than explained with physics.",
       ar: "تقارب الزمان، وأنّ المدّة تمرّ أسرع ممّا كانت. وهو في الأخبار، وإبقاؤه على ما قيل أولى من تفسيره بالفيزياء.",
       ref: "Sahih al-Bukhari, Book of Fitan", strength: "hadith" }
@@ -437,7 +437,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "كم يطول اليوم — خمسون ألف سنة",
       en: "The Quran gives the figure directly: a Day whose measure is fifty thousand years. And the Prophet ﷺ used the same number when describing the man who withheld the zakat of his wealth — he is dealt with “during a day the extent of which is fifty thousand years”, and only then is his path shown to him.\n\nThere is a second figure in the Quran — a day whose measure is a thousand years, in Surah As-Sajdah 32:5 — and the scholars discussed the two. The most careful position is that they are not in conflict: they describe different matters, or the same Day measured from different angles. Ibn Abbas was asked about exactly this pairing and is reported to have said they are two different days. What is agreed is that the length is not our length, and that arguing the arithmetic is not the point of either verse.\n\nAnd there is a mercy inside the number that is worth knowing. It is narrated that for the believer that Day will be made light — as short as the time between one prayer and the next. That narration is in the Musnad of Ahmad and is OUTSIDE the two Sahihs, so it is given here as that and not more.",
       ar: "جاء العدد في القرآن صريحًا: ﴿فِى يَوْمٍۢ كَانَ مِقْدَارُهُۥ خَمْسِينَ أَلْفَ سَنَةٍۢ﴾. واستعمل النبيُّ ﷺ العدد نفسه في وصف مانع زكاة ماله: يُقضى فيه ﴿فِى يَوْمٍ كَانَ مِقْدَارُهُ خَمْسِينَ أَلْفَ سَنَةٍ﴾، ثم يُرى سبيله بعد ذلك.\n\nوفي القرآن عددٌ آخر: يومٌ مقداره ألف سنة، في السجدة ٣٢:٥، وقد تكلّم أهل العلم في الجمع بينهما. وأحوطُ الأقوال أنهما لا يتعارضان: فهما في أمرين مختلفين، أو في اليوم نفسه من جهتين. وقد سُئل ابن عباس عن هذا التقابل بعينه فرُوي عنه أنهما يومان مختلفان. والمتّفق عليه أنّ الطول ليس بطولنا، وأنّ المماحكة في الحساب ليست مقصود الآيتين.\n\nوفي العدد رحمةٌ يحسن علمها: فقد رُوي أنّ ذلك اليوم يُخفَّف على المؤمن حتى يكون كقدر ما بين صلاتين. وهذا في مسند أحمد، وهو خارج الصحيحين، فيُذكر على أنه كذلك لا أكثر.",
-      refs: ["Surah Al-Ma'arij (70:4)", "Surah As-Sajdah (32:5)", "Sahih Muslim, Book of Zakat — narrated by Abu Hurairah", "The lightening for the believer: Musnad Ahmad — outside the two Sahihs"],
+      refs: ["Surah Al-Ma'arij (70:4)", "Surah As-Sajdah (32:5)", "Sahih Muslim, Book of Zakat — Abu Hurairah", "Musnad Ahmad — outside the two Sahihs"],
       strength: "quran"
     },
     {
@@ -446,7 +446,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "عمَّ تُسأل أوّلًا — وهما أوّلان لا أوّلٌ واحد",
       en: "This is one of the most useful things on this page, because two authentic reports both say “the first”, and they are not describing the same thing at all.\n\nTHE FIRST OF YOUR OWN DEEDS TO BE RECKONED IS THE PRAYER. If it is sound, the rest of the deeds go well; if it is ruined, the rest are ruined. The narration adds that when a shortfall is found in the obligatory prayers, Allah says: look whether My servant has any voluntary prayers — and the shortfall in the fard is completed from the nawafil. This is narrated by at-Tirmidhi, an-Nasa'i and Abu Dawud, and is OUTSIDE the two Sahihs. It is widely relied on and it is stated here as what it is.\n\nTHE FIRST MATTER JUDGED BETWEEN PEOPLE IS BLOODSHED. That one is in Sahih Muslim, from Ibn Mas'ud: the first thing decided among people on the Day of Judgment will pertain to blood.\n\nPut them side by side and the picture is exact. Between you and Allah, the first thing opened is your prayer. Between you and other people, the first thing opened is what you did to their lives. Neither report contradicts the other, and hearing only one of them leaves a person with half the answer.",
       ar: "وهذه من أنفع ما في هذه الصفحة، لأنّ خبرين ثابتين كلاهما يقول «أوّل»، وليسا في شيءٍ واحد أصلًا.\n\nأوّلُ ما يُحاسَب به العبد من عمله: الصلاة. فإن صلَحت صلَح سائر عمله، وإن فسَدت فسَد سائره. وفي الخبر أنه إذا انتقص من الفريضة شيء قال الله: انظروا هل لعبدي من تطوّع؟ فيُكمَّل بها ما نقص من الفريضة. أخرجه الترمذي والنسائي وأبو داود، وهو خارج الصحيحين، وعليه عملُ الناس، ويُذكر هنا على حقيقته.\n\nوأوّلُ ما يُقضى بين الناس: الدماء. وهذا في صحيح مسلم عن ابن مسعود: «أوّل ما يُقضى بين الناس يوم القيامة في الدماء».\n\nفإذا قُرن الخبران استبان الأمر على وجهه: فبينك وبين الله يُفتح أوّلًا بابُ صلاتك، وبينك وبين الناس يُفتح أوّلًا ما صنعتَ بأرواحهم. ولا تعارض بينهما، ومن سمع أحدهما وحده فقد بقي معه نصف الجواب.",
-      refs: ["The prayer first: at-Tirmidhi, an-Nasa'i, Abu Dawud — OUTSIDE the two Sahihs", "Bloodshed first: Sahih Muslim, Book of Qasamah — narrated by Ibn Mas'ud"],
+      refs: ["at-Tirmidhi, an-Nasa'i, Abu Dawud — outside the two Sahihs", "Sahih Muslim, Book of Qasamah — Ibn Mas'ud"],
       strength: "hadith"
     },
     {
@@ -455,7 +455,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "دنوّ الشمس، والعرق",
       en: "The sun is brought near on that Day, and people sweat. The Prophet ﷺ said the sweat will reach up to the middle of the ears.\n\nAnd it is not the same for everyone. The narrations describe people differing in it according to their deeds — some to the ankles, some to the knees, some to the waist, and some whom the sweat bridles at the mouth. The same standing, and people are not in it equally.\n\nIt is at that point, in the same hadith, that people begin going from prophet to prophet asking for the standing to begin — which is the Great Intercession, stage 5 above.",
       ar: "تُدنى الشمس في ذلك اليوم فيعرق الناس. قال النبيُّ ﷺ إنّ العرق يبلغ أنصاف الآذان.\n\nوليسوا فيه سواء. ففي الأخبار أنّ الناس يتفاوتون فيه بأعمالهم: فمنهم من يبلغ كعبيه، ومنهم من يبلغ ركبتيه، ومنهم من يبلغ حَقْوَيه، ومنهم من يُلجمه العرق إلجامًا. موقفٌ واحد، والناس فيه غير متساوين.\n\nوعند ذلك — في الحديث نفسه — يأخذ الناس يذهبون من نبيٍّ إلى نبيّ يسألون أن يُقضى بينهم، وهي الشفاعة العظمى، وهي المرحلة الخامسة المتقدّمة.",
-      refs: ["Sahih al-Bukhari 1474 and 1475 — narrated by Abdullah ibn Umar", "The differing levels of sweat: Sahih Muslim, Book of Paradise"],
+      refs: ["Sahih al-Bukhari 1474 and 1475 — Abdullah ibn Umar", "Sahih Muslim, Book of Paradise"],
       strength: "hadith"
     },
     {
@@ -464,7 +464,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "الصراط — ما تحته، وما يمتدّ إليك منه",
       en: "The Bridge is laid across Hell. That is what is underneath: not a valley, not darkness — the Fire itself.\n\nThe Prophet ﷺ described the surface of it in one phrase: a place where feet slip. It is not level ground.\n\nAnd this answers the question directly — what reaches up to pull people off it. There are HOOKS on it, and he compared them to the thorns of the sa'dan, a thorny tree of Najd his companions knew by sight. He asked them: have you seen the thorns of the sa'dan? They said yes. He said: they are like them, except that how great they are in size is known to nobody but Allah. Another wording adds tongs and spits.\n\nThen the sentence that decides everything: these hooks snatch people ACCORDING TO THEIR DEEDS. They are not random and they are not indiscriminate. What a person carries across is what determines whether anything reaches him.\n\nAnd the outcomes are three, stated plainly: some pass and are saved, some are lacerated and then let go, and some are pushed into the Fire.",
       ar: "يُضرب الصراط على جهنّم. فهذا ما تحته: ليس واديًا ولا ظلمة، بل النار نفسها.\n\nووصف النبيُّ ﷺ متنه بكلمة: «مَدْحَضةٌ مَزِلّة»، أي موضعٌ تزلّ فيه الأقدام. فليس بأرضٍ مستوية.\n\nوهذا جوابُ السؤال على وجهه: ما الذي يمتدّ إلى الناس فيخطفهم؟ عليه كلاليبُ شبّهها بشوك السَّعْدان، وهي شجرةٌ ذات شوكٍ بنجدٍ يعرفها أصحابه بأعينهم. فقال لهم: هل رأيتم شوك السعدان؟ قالوا: نعم. قال: فإنها مثلها، غير أنه لا يعلم قدرَ عِظَمها إلا الله. وفي لفظٍ آخر: خطاطيفُ وكلاليبُ وحسَكة.\n\nثم الجملة التي يدور عليها الأمر: أنّ هذه الكلاليب تخطف الناس **بأعمالهم**. فليست عشوائيّةً ولا تُصيب من غير تمييز، وإنما الذي يحمله المرء في عبوره هو الذي يُحدّد أيناله شيءٌ منها أم لا.\n\nوالمآلات ثلاثةٌ مذكورةٌ صريحًا: ناجٍ مُسلَّم، ومخدوشٌ مُرسَل، ومكدوسٌ في النار.",
-      refs: ["Sahih al-Bukhari 806 and 6573 — narrated by Abu Hurairah", "Sahih Muslim, Book of Faith — the bridge as a place where feet slip, with the hooks and tongs"],
+      refs: ["Sahih al-Bukhari 806 and 6573 — Abu Hurairah", "Sahih Muslim, Book of Faith"],
       strength: "hadith"
     },
     {
@@ -473,7 +473,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "سرعة العبور — وهي على قدر ما حملتَ",
       en: "This is answered in Sahih Muslim in a single line, and the order is a descending scale:\n\n· in the twinkling of an eye\n· like lightning\n· like the wind\n· like a bird\n· like the finest horses and camels\n\nAnd then the ones who are not carried at all: those who go across scratched and released, and those who do not get across.\n\nThe scale is not arbitrary. The believers pass at the speed their deeds carry them, and the fastest of them cross before a person has finished blinking. In the same passage the Prophet ﷺ says that no one will plead more fiercely for anything than the believers will plead for their brothers left in the Fire, saying: our Lord, they used to fast with us, and pray, and make hajj.",
       ar: "جاء جوابه في صحيح مسلم في سطرٍ واحد، والترتيب نازلٌ من الأعلى:\n\n· كطرْف العين\n· كالبرق\n· كالريح\n· كالطير\n· كأجاويد الخيل والرِّكاب\n\nثم الذين لا تحملهم أعمالهم: فناجٍ مخدوشٌ مُرسَل، ومكدوسٌ لا يعبر.\n\nوليس هذا التفاوت اعتباطًا: فالمؤمنون يمرّون على قدر ما تحملهم أعمالهم، وأسرعهم يقطعه قبل أن يُتمّ المرء طرفة عينه. وفي السياق نفسه يقول النبيُّ ﷺ إنه ليس أحدٌ أشدّ مناشدةً في الحقّ من المؤمنين لإخوانهم الذين بقوا في النار، يقولون: ربَّنا، كانوا يصومون معنا ويصلّون ويحجّون.",
-      refs: ["Sahih Muslim, Book of Faith — narrated in the long hadith of the intercession"],
+      refs: ["Sahih Muslim, Book of Faith"],
       strength: "hadith"
     },
     {
@@ -482,7 +482,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "من يعبر أوّلًا — والكلمة الوحيدة التي تُقال",
       en: "He said it about himself plainly: “I shall be the first among the Messengers to cross it, with my followers.”\n\nSo this ummah goes first, behind him.\n\nAnd then a detail that says more than a page of description could. On that Bridge nobody speaks — nobody at all — except the Messengers. And what the Messengers say is not a sermon. It is two words, repeated: Allahumma sallim, sallim. O Allah, keep them safe, keep them safe.\n\nThat is what the prophets are doing while their nations cross.",
       ar: "قاله عن نفسه صريحًا: «وأكون أوّل من يجوز من الرسل بأمّته».\n\nفهذه الأمّة تعبر أوّلًا، خلفه ﷺ.\n\nثم تفصيلٌ يقول ما لا تقوله صفحةٌ من الوصف: أنه لا يتكلّم على الصراط أحدٌ البتّة إلا الرسل. وليس الذي يقولونه خطبةً، وإنما كلمتان تتردّدان: «اللهمّ سلِّم سلِّم».\n\nهذا هو صنيع الأنبياء وأممُهم تعبر.",
-      refs: ["Sahih al-Bukhari 806 — narrated by Abu Hurairah"],
+      refs: ["Sahih al-Bukhari 806 — Abu Hurairah"],
       strength: "hadith"
     },
     {
@@ -491,7 +491,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "الإخراج من النار — ويُعرَفون بعلامةٍ واحدة",
       en: "Some of those who fall are not left there. When Allah intends mercy on whom He wills among the people of the Fire who worshipped none but Him, the angels are ordered to bring them out.\n\nAnd here is how the angels know them: by the traces of prostration. Allah has forbidden the Fire to consume the marks of sujud on the body of the son of Adam. The Fire eats everything else; that one place it is not permitted to touch. They come out as skeletons, and it is the mark on the forehead that identified them.\n\nThen the Water of Life is poured over them, and they grow the way a seed grows on the bank of a stream — the same agricultural image as the raising.",
       ar: "وليس كلُّ من سقط يُترك. فإذا أراد الله رحمة من شاء من أهل النار ممّن كان لا يعبد إلا إيّاه، أمر الملائكة أن يُخرجوهم.\n\nوهذا وجهُ معرفة الملائكة إيّاهم: آثارُ السجود. فقد حرّم الله على النار أن تأكل أثر السجود من ابن آدم. فالنار تأكل كلّ شيءٍ منه، وذلك الموضع وحده لا يُؤذن لها فيه. فيخرجون وقد صاروا حُمَمًا، وإنما دلّ عليهم الأثرُ في الجبهة.\n\nثم يُصبّ عليهم ماء الحياة، فينبتون كما تنبت الحبّة في حَمِيل السيل — وهي صورةُ البعث نفسها.",
-      refs: ["Sahih al-Bukhari 806 and 6573 — narrated by Abu Hurairah"],
+      refs: ["Sahih al-Bukhari 806 and 6573 — Abu Hurairah"],
       strength: "hadith"
     },
     {
@@ -500,7 +500,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "آخر أهل الجنّة دخولًا",
       en: "The hadith ends with one man left between Paradise and the Fire, and the exchange is worth reading in full because of how it ends.\n\nHe asks only to have his face turned away from the Fire. Allah says: if I do, will you ask for something else? He swears he will not. His face is turned away.\n\nThen he asks to be brought near the gate of Paradise. Allah says: did you not promise? Woe to you, son of Adam, how treacherous you are. He swears again. He is brought near.\n\nThen he sees what is inside, and stays silent as long as Allah wills — and then asks to enter. And he is reminded of his promise again.\n\nAnd then the line the whole hadith was built for: he keeps asking until ALLAH SMILES because of him, and when Allah smiles at him, He permits him to enter. And he is told: wish. And he wishes until he runs out of wishes — and is told: all of that, and the same again with it, is yours.\n\nThat is the LAST man in. The one at the very bottom of the list.",
       ar: "يختم الحديث برجلٍ يبقى بين الجنّة والنار، وحقُّ محاورته أن تُقرأ بتمامها لأجل خاتمتها.\n\nيسأل أن يُصرَف وجهه عن النار لا غير. فيقول الله: إن فعلتُ فلعلّك تسأل غير ذلك؟ فيُعطي العهد ألّا يسأل. فيُصرَف وجهه.\n\nثم يسأل أن يُدنى من باب الجنّة. فيقول الله: أليس قد أعطيتَ العهد؟ ويحك يا ابن آدم ما أغدرك! فيعاهد ثانيةً. فيُدنى.\n\nثم يرى ما فيها فيسكت ما شاء الله أن يسكت، ثم يسأل الدخول. فيُذكَّر بعهده مرّةً أخرى.\n\nثم الجملة التي سيق الحديث لأجلها: لا يزال يسأل حتى **يضحك الله** منه، فإذا ضحك منه أذن له بالدخول. ثم يُقال له: تمنَّ. فيتمنّى حتى تنقطع به الأماني، فيُقال: لك ذلك ومثله معه.\n\nوهذا **آخرُ** من يدخل، الذي في أسفل القائمة.",
-      refs: ["Sahih al-Bukhari 6573 — narrated by Abu Hurairah"],
+      refs: ["Sahih al-Bukhari 6573 — Abu Hurairah"],
       strength: "hadith"
     },
     {
@@ -509,7 +509,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "لحظة الدخول — وأوّل ما يُقدَّم",
       en: "Abdullah ibn Salam, a scholar of the Jews of Madinah, came to the Prophet ﷺ when he arrived and put three questions to him that he said only a prophet could answer. One of them was: what is the first meal the people of Paradise will eat?\n\nThe answer: the extra lobe of the fish liver. Not a description of a banquet — a specific thing, named.\n\nAnd in another hadith, what it is eaten with: the earth itself, on that Day, becomes a single loaf, turned over in the Hand of the Most Merciful the way one of you turns his loaf over when travelling — as the welcome-meal for the people of Paradise.\n\nSo the ground everyone was standing on through the whole of that Day becomes the bread of the first meal. Nothing on this page connects more tightly than that: the place of terror becomes the food of arrival.",
       ar: "جاء عبد الله بن سلام، وكان حَبرًا من أحبار يهود المدينة، إلى النبيّ ﷺ حين قدم، فسأله ثلاثًا قال لا يعلمهنّ إلا نبيّ. إحداهنّ: ما أوّل طعامٍ يأكله أهل الجنّة؟\n\nفكان الجواب: **زيادةُ كبد الحوت**. ليس وصفًا لمأدبة، بل شيءٌ معيَّنٌ مُسمًّى.\n\nوفي حديثٍ آخر بيانُ ما يُؤكل به: أنّ الأرض تكون يوم القيامة **خُبزةً واحدة**، يتكفّؤها الجبّار بيده كما يتكفّأ أحدكم خبزته في السفر، نُزُلًا لأهل الجنّة.\n\nفالأرض التي وقف عليها الناس ذلك اليوم كلَّه تصير خبز أوّل طعام. وليس في هذه الصفحة وصلٌ أشدّ من هذا: موضعُ الهول يصير طعامَ القدوم.",
-      refs: ["Sahih al-Bukhari 3329 — narrated by Anas, the questions of Abdullah ibn Salam", "Sahih al-Bukhari 6520 — narrated by Abu Sa'id al-Khudri, the earth as a loaf"],
+      refs: ["Sahih al-Bukhari 3329 — Anas", "Sahih al-Bukhari 6520 — Abu Sa'id al-Khudri"],
       strength: "hadith"
     },
     {
@@ -518,7 +518,7 @@ const JUDGEMENT_DETAIL = {
       hAr: "أيُّ العلامات أوّلًا",
       en: "You asked which of them happens first, and there is an authentic answer — in the same hadith of Abdullah ibn Salam's three questions.\n\nHis first question was: what is the first portent of the Hour? The Prophet ﷺ answered: a fire that will gather the people from the east to the west.\n\nNow the honest part. Compare that with the list of ten, where a fire coming out of Yemen driving people to their place of gathering is named as the LAST of them. The scholars discussed this, and the readings are: that they are the same fire, described as first of one series and last of another; or that “first portent” here means the first of the great signs in one respect while the Yemen fire is the last of them in another.\n\nWhat is certain is the text of both narrations. What is not settled is how exactly they line up, and this page does not pretend it is settled.",
       ar: "سألتَ أيُّها يقع أوّلًا، وفي المسألة جوابٌ ثابت، وهو في حديث عبد الله بن سلام نفسه.\n\nفكان سؤاله الأوّل: ما أوّل أشراط الساعة؟ فأجابه النبيُّ ﷺ: **نارٌ تحشر الناس من المشرق إلى المغرب**.\n\nوهذا موضع الإنصاف: قابِل ذلك بحديث العشر، وفيه أنّ نارًا تخرج من اليمن تطرد الناس إلى محشرهم هي **آخرها**. وقد تكلّم أهل العلم في ذلك، والأقوال: أنهما نارٌ واحدة وُصفت بأنها أوّل باعتبارٍ وآخر باعتبار؛ أو أنّ «أوّل الأشراط» هنا بمعنًى، ونار اليمن آخر الكبرى بمعنًى آخر.\n\nفالثابت نصُّ الحديثين، وأمّا وجه انتظامهما على التعيين فليس بمحسوم، ولا تدّعي هذه الصفحة حسمه.",
-      refs: ["Sahih al-Bukhari 3329 — the first portent of the Hour", "Compare: Sahih Muslim, Book of Fitan — the fire from Yemen as the last of the ten"],
+      refs: ["Sahih al-Bukhari 3329", "Sahih Muslim, Book of Fitan"],
       strength: "hadith"
     }
   ]

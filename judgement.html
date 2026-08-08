@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608071830" />
+  <link rel="stylesheet" href="css/style.css?v=202608081108" />
 </head>
 <body>
 
@@ -155,16 +155,16 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608071830"></script>
-  <script src="js/angels.js?v=202608071830"></script>
+  <script src="js/data.js?v=202608081108"></script>
+  <script src="js/angels.js?v=202608081108"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608071830"></script>
-  <script src="js/judgement.js?v=202608071830"></script>
+  <script src="js/signs.js?v=202608081108"></script>
+  <script src="js/judgement.js?v=202608081108"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608071830"></script>
+  <script src="js/judgement-closing.js?v=202608081108"></script>
   <script>
     /* ---------- Standing alone: the closing discussion ----------
        Reuses the same card / pulled-quote / dua shapes as the Golden Age
@@ -366,8 +366,8 @@
       if (!v) return "";
       return `<div class="tad-verse-big">
         ${v.ar ? `<div class="tad-verse-ar" dir="rtl" data-speak>${v.ar}</div>` : ""}
-        <div class="tad-verse-en">${v.en}</div>
-        <div class="tad-ref">${v.ref}</div></div>`;
+        <div class="tad-verse-en en-only">${v.en}</div>
+        <div class="tad-ref" dir="auto">${v.ref}</div></div>`;
     }
     function sgNotEstablished(en, ar) {
       if (!en) return "";
@@ -402,8 +402,8 @@
         <div class="tad-surah-head">📜 <span class="en-only">The ten, in his own words</span>
           <span class="ar-only" dir="rtl">العشر بلفظه ﷺ</span></div>
         <div class="tad-verse-ar" dir="rtl" data-speak>${SIGNS_INTRO.hadith.ar}</div>
-        <div class="tad-link-en">${SIGNS_INTRO.hadith.en}</div>
-        <div class="tad-ref">${SIGNS_INTRO.hadith.ref}</div>${sgBadge("hadith")}
+        <div class="tad-link-en en-only">${SIGNS_INTRO.hadith.en}</div>
+        <div class="tad-ref" dir="auto">${SIGNS_INTRO.hadith.ref}</div>${sgBadge("hadith")}
         <div class="tad-coverage"><span class="en-only">${SIGNS_INTRO.ordering.en}</span>
           <span class="ar-only" dir="rtl">${SIGNS_INTRO.ordering.ar}</span></div></div>`;
 
@@ -417,7 +417,7 @@
           ${(s.points || []).map(p => `<div class="tad-word">
             <div class="en-only">${sgParas(p.en)}</div>
             <div class="ar-only" dir="rtl">${sgParas(p.ar)}</div>
-            <div class="tad-ref">${p.ref}</div></div>`).join("")}
+            <div class="tad-ref" dir="auto">${p.ref}</div></div>`).join("")}
           ${sgNotEstablished(s.notEstablished, s.notEstablishedAr)}
           ${sgBadge(s.strength)}</div>`;
       });
@@ -432,7 +432,7 @@
           ${MINOR_SIGNS.items.map(i => `<div class="tad-word">
             <div class="en-only">${sgParas(i.en)}</div>
             <div class="ar-only" dir="rtl">${sgParas(i.ar)}</div>
-            <div class="tad-ref">${i.ref}</div>${sgBadge(i.strength)}</div>`).join("")}
+            <div class="tad-ref" dir="auto">${i.ref}</div>${sgBadge(i.strength)}</div>`).join("")}
           ${sgNotEstablished(MINOR_SIGNS.notEstablished, MINOR_SIGNS.notEstablishedAr)}</div>`;
       }
 
@@ -480,17 +480,25 @@
             <span class="ar-only" dir="rtl">${s.hAr}</span></div>
           <div class="en-only">${sgParas(s.en)}</div>
           <div class="ar-only" dir="rtl">${sgParas(s.ar)}</div>
-          <div class="tad-ref">${(s.refs || []).join(" &nbsp;·&nbsp; ")}</div>
+          <div class="tad-ref" dir="auto">${(s.refs || []).join(" &nbsp;·&nbsp; ")}</div>
           ${sgBadge(s.strength)}</div>`;
       });
       box.innerHTML = h;
     }
 
-    document.addEventListener("DOMContentLoaded", renderSigns);
-    document.addEventListener("DOMContentLoaded", renderJudgementDetail);
+    /* applyI18n MUST run after these. Both build their markup at
+       DOMContentLoaded, and i18n.js has already walked the DOM by then — so
+       without this the references stayed in English on an Arabic page
+       ("Sahih al-Bukhari 3439" instead of "صحيح البخاري ٣٤٣٩"), because
+       i18n.js never saw the nodes. */
+    document.addEventListener("DOMContentLoaded", function () {
+      renderSigns();
+      renderJudgementDetail();
+      if (window.applyI18n) window.applyI18n();
+    });
   </script>
 
-  <script src="js/main.js?v=202608071830"></script>
-  <script src="js/i18n.js?v=202608071830"></script>
+  <script src="js/main.js?v=202608081108"></script>
+  <script src="js/i18n.js?v=202608081108"></script>
 </body>
 </html>

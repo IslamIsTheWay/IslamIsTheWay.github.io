@@ -343,6 +343,33 @@ const AR = {
    "Surah Al-Baqarah (2:25)" are built from a few repeating pieces. Translating
    those pieces covers every reference on the site without listing them all. */
 const AR_PARTS = [
+  /* Narrators and the bare collection names that appear in the newer
+     citation lines. Without these a reference translated only halfway —
+     "صحيح مسلم, كتاب Fitan — Hudhayfah ibn Usayd al-Ghifari" — which is
+     worse to read than leaving it in English. Narrators go FIRST so a
+     name is matched before any shorter pattern can cut into it. */
+  [/\bHudhayfah ibn Usayd al-Ghifari\b/g, "حذيفة بن أسيد الغفاري"],
+  [/\bAbu Sa'id al-Khudri\b/g, "أبو سعيد الخدري"],
+  [/\bAbdullah ibn Umar\b/g, "عبد الله بن عمر"],
+  [/\bUbayy ibn Ka'b\b/g, "أُبيّ بن كعب"],
+  [/\bSahl ibn Sa'd\b/g, "سهل بن سعد"],
+  [/\bAbu Hurairah\b/g, "أبو هريرة"],
+  [/\bIbn Mas'ud\b/g, "ابن مسعود"],
+  [/\bIbn Abbas\b/g, "ابن عباس"],
+  /* The full name must precede the short one, or "Anas ibn Malik" comes out
+     as "أنس ibn Malik" — the bare pattern fires first and leaves the rest. */
+  [/\bAnas ibn Malik\b/g, "أنس بن مالك"],
+  [/\bAnas\b/g, "أنس"],
+
+  [/\bBook of Fitan\b/g, "كتاب الفتن"],
+  [/\bBook of Qasamah\b/g, "كتاب القسامة"],
+  [/\bBook of Repentance\b/g, "كتاب التوبة"],
+  [/\bBook of Paradise\b/g, "كتاب الجنة"],
+  [/\bBook of Zakat\b/g, "كتاب الزكاة"],
+  [/\bBook of Faith\b/g, "كتاب الإيمان"],
+
+  [/\boutside the two Sahihs\b/gi, "خارج الصحيحين"],
+
   [/\bSurah\b/g, "سورة"],
   [/\bSahih al-Bukhari\b/g, "صحيح البخاري"],
   [/\bSahih Muslim\b/g, "صحيح مسلم"],
@@ -500,6 +527,11 @@ const AR_PARTS = [
   [/\bReferences:/g, "المراجع:"],
   [/\bReference:/g, "المرجع:"],
   [/\bal-Albani\b/g, "الألباني"],
+  /* These two belong with the group below, not above it: they are substrings
+     of "Sunan an-Nasa'i" and "Sunan Abu Dawud", which are matched earlier in
+     this array. Putting them any higher would stop the full names matching. */
+  [/\ban-Nasa'i\b/g, "النسائي"],
+  [/\bAbu Dawud\b/g, "أبو داود"],
   [/\bat-Tirmidhi\b/g, "الترمذي"],
   [/\bal-Bukhari\b/g, "البخاري"],
   [/\bMuslim\b/g, "مسلم"],
@@ -589,6 +621,20 @@ function iitwCollectNodes() {
   return nodes;
 }
 
+/* WHICH ELEMENTS HOLD A SOURCE LINE.
+   A reference is only translated ("Sahih al-Bukhari" → "صحيح البخاري",
+   "Surah Al-Baqarah" → "سورة البقرة") when its parent matches this. It is
+   a hand-written list, which is exactly why it went stale: the Tadabbur,
+   Signs and Judgement-detail sections all use `.tad-ref`, that class was
+   never added here, and every reference on those sections stayed in English
+   on an Arabic page — 16 of them on the Judgement page alone.
+
+   ANY NEW SECTION THAT PRINTS A SOURCE LINE MUST ADD ITS CLASS HERE, or the
+   references will silently stay English. `.tad-ref` is the class the newer
+   sections use, so prefer it over inventing another one. */
+const IITW_REF_SELECTOR =
+  ".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs, .tad-ref";
+
 function iitwTranslateDom(lang) {
   iitwCollectNodes().forEach(node => {
     if (node._iitwEn === undefined) node._iitwEn = node.nodeValue;
@@ -598,7 +644,7 @@ function iitwTranslateDom(lang) {
       const t = AR[key];
       if (t) {
         node.nodeValue = original.replace(key, t);
-      } else if (node.parentElement.closest(".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs")) {
+      } else if (node.parentElement.closest(IITW_REF_SELECTOR)) {
         // Source lines ("Sahih al-Bukhari, Book of…", "Surah Al-Baqarah (2:25)")
         node.nodeValue = original.replace(key, iitwTranslateReference(key));
       }
