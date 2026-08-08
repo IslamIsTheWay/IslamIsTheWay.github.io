@@ -360,6 +360,8 @@ const AR_PARTS = [
      as "أنس ibn Malik" — the bare pattern fires first and leaves the rest. */
   [/\bAnas ibn Malik\b/g, "أنس بن مالك"],
   [/\bAnas\b/g, "أنس"],
+  [/\bAishah\b/g, "عائشة"],
+  [/\bUmar ibn al-Khattab\b/g, "عمر بن الخطاب"],
 
   [/\bBook of Fitan\b/g, "كتاب الفتن"],
   [/\bBook of Qasamah\b/g, "كتاب القسامة"],
@@ -527,6 +529,17 @@ const AR_PARTS = [
   [/\bReferences:/g, "المراجع:"],
   [/\bReference:/g, "المرجع:"],
   [/\bal-Albani\b/g, "الألباني"],
+
+  /* The Tadabbur sections cite Ar-Raghib's Al-Mufradat by root and page, and
+     none of those pieces were translatable, so nine citations sat in English
+     on an Arabic page. The longest patterns come first, as everywhere here. */
+  [/\bAr-Raghib al-Isfahani\b/g, "الراغب الأصفهاني"],
+  [/\bAl-Mufradat fi Gharib al-Quran\b/g, "المفردات في غريب القرآن"],
+  [/\bAl-Mufradat\b/g, "المفردات"],
+  [/Shamela ed\., p\./g, "ط. الشاملة، ص"],
+  [/\bentry\b/g, "مادّة"],
+  [/\bcompare\b/gi, "وقارِن"],
+
   /* These two belong with the group below, not above it: they are substrings
      of "Sunan an-Nasa'i" and "Sunan Abu Dawud", which are matched earlier in
      this array. Putting them any higher would stop the full names matching. */

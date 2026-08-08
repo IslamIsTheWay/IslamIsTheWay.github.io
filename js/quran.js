@@ -653,12 +653,27 @@ function iitwTadabburAyahHtml(tad, n) {
          (a.strength ? tadBadge(a.strength) : "") + '</div>';
   }
 
+  /* The plain-language box. Same one used on the Judgement and Golden Age
+     pages: ordinary words, for a reader who is not a student of knowledge. */
+  if (a.plain) {
+    h += '<div class="tad-plain">' +
+         '<div class="tad-plain-label">💬 <span class="en-only">In plain words</span>' +
+           '<span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>' +
+         '<div class="en-only">' + tadPara(a.plain) + '</div>' +
+         '<div class="ar-only" dir="rtl">' + tadPara(a.plainAr, true) + '</div></div>';
+  }
+
   /* Why THIS word and not the one beside it — the thing the whole
      feature was asked for. */
   (a.words || []).forEach(function (w) {
     h += '<div class="tad-word">' +
          '<div class="tad-word-head"><span class="tad-w" dir="rtl">' + w.w + '</span>' +
-           '<span class="tad-translit">' + w.t + '</span></div>' +
+           /* English-only: a transliteration exists for a reader who cannot
+              read the Arabic word, and in Arabic mode that word is printed
+              right beside it. Some of these slots also hold a short English
+              gloss ("they establish it — not merely perform it"), which was
+              showing untranslated on an Arabic page. */
+           '<span class="tad-translit en-only">' + w.t + '</span></div>' +
          '<div class="tad-word-body">' +
            '<div class="en-only">' + tadPara(w.meaning) + '</div>' +
            '<div class="ar-only">' + tadPara(w.meaningAr, true) + '</div>';

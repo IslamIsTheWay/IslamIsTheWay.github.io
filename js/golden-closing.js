@@ -36,6 +36,8 @@ const GOLDEN_CLOSING = {
   sections: [
     {
       id: "gc-why",
+      plain: "In plain words: it is easy to blame the Mongols or the colonisers. They did real damage. But if the whole cause is outside us, then the cure is outside us too, and there is nothing left to do but wait.\n\nThe Quran refused that answer to the best generation this ummah had. After Uhud they asked how it happened, and the reply was: it is from yourselves.\n\nThe simple version: Baghdad was burned in 1258, and the science carried on for another three hundred years in Damascus, Samarkand and Istanbul. It did not die when they burned the libraries. It died when we stopped filling them.",
+      plainAr: "بكلامٍ بسيط: من السهل أن نُلقي اللوم على المغول أو الاستعمار، وقد أحدثوا ضررًا حقيقيًّا. لكن إذا كان السبب كلّه خارجنا، فالعلاج كذلك خارجنا، ولا يبقى إلا الانتظار.\n\nوالقرآن ردّ هذا الجواب على خير جيلٍ في هذه الأمّة. سألوا بعد أُحُد: كيف حدث هذا؟ فجاء الردّ: ﴿قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ﴾.\n\nوالخلاصة البسيطة: أُحرقت بغداد سنة ٦٥٦هـ، واستمرّ العلم بعدها ثلاثمئة سنة في دمشق وسمرقند وإسطنبول. فلم يمت العلم يوم أحرقوا المكتبات، وإنما مات يوم توقّفنا عن ملئها.",
       icon: "🔍",
       title: "Why it fell — the short, honest answer",
       titleAr: "لماذا سقط — الجواب القصير المنصف",
@@ -50,6 +52,8 @@ const GOLDEN_CLOSING = {
     },
     {
       id: "gc-imitation",
+      plain: "In plain words: the Prophet ﷺ said we would copy the nations before us step by step, until if they went into a lizard's hole we would follow them in.\n\nNotice what he chose: a lizard's hole, not a palace. He did not say we would copy their strength — their science, their organisation, their seriousness. He said we would copy them into the hole. Into the thing that is beneath us.\n\nAnd that is the test. Copying what is good is not the problem; the Golden Age was built on taking knowledge from anywhere. The problem is copying without asking whether it is worth copying.",
+      plainAr: "بكلامٍ بسيط: قال النبيّ ﷺ إنّنا سنتّبع من قبلنا خطوةً بخطوة، حتى لو دخلوا جُحر ضبٍّ لدخلنا وراءهم.\n\nوانظر ما الذي اختاره: جُحر ضبّ، لا قصرًا. لم يقل إنّنا سنقلّدهم في قوّتهم — في علمهم وتنظيمهم وجدّهم — بل قال سنتبعهم إلى الجُحر. إلى ما هو دوننا.\n\nوهذا هو الميزان: ليست المشكلة في نقل الحسن، فالعصر الذهبيّ قام على أخذ العلم من كلّ مكان. المشكلة في النقل بلا سؤال: هل هذا يستحقّ أن يُنقل؟",
       icon: "🕳️",
       title: "The trap we are in now: following without thinking",
       titleAr: "الفخّ الذي نحن فيه الآن: الاتّباع بلا عقل",
@@ -92,6 +96,8 @@ const GOLDEN_CLOSING = {
     },
     {
       id: "gc-influencers",
+      plain: "In plain words: the influencer is not richer than you because he is better than you. He is richer because you gave him your hours.\n\nHere is the mechanism, and it is not complicated. You are not his audience — you are his product. He sells your attention to an advertiser and keeps the money. Every minute you watch is a minute deposited in his account and taken out of yours, and you cannot buy a single minute back at any price.\n\nSo when you are watching at two in the morning: he is being PAID for your time, and you are the one PAYING — in the currency you will be asked about, your life and how you spent it.",
+      plainAr: "بكلامٍ بسيط: المؤثِّر ليس أغنى منك لأنه خيرٌ منك، وإنما هو أغنى منك لأنك أعطيتَه ساعاتك.\n\nوالآلة التي تعمل بها القصّة ليست معقّدة: أنت لستَ جمهوره، أنت سلعته. يبيع انتباهك للمعلن ويأخذ المال. كلّ دقيقة تشاهدها دقيقةٌ تُودَع في حسابه وتُسحَب من حسابك، ولا تستطيع أن تشتري دقيقةً واحدةً بأيّ ثمن.\n\nفإذا كنتَ تشاهد في الثانية بعد منتصف الليل: هو **يُدفع له** مقابل وقتك، وأنت **الذي يدفع** — بالعملة التي ستُسأل عنها: عمرك فيمَ أفنيتَه.",
       icon: "📱",
       title: "The inversion: who we decided to make rich",
       titleAr: "الانقلاب: مَن الذي قرّرنا أن نُغنيه",
@@ -150,6 +156,8 @@ const GOLDEN_CLOSING = {
     },
     {
       id: "gc-phone",
+      plain: "In plain words: nobody is asking you to throw the phone away. That advice fails within a week and everyone knows it.\n\nStart with something you can actually do tonight: put it outside the room you sleep in. That single change fixes the last hour of your day and the first hour of the next, which are the two hours that set everything else.\n\nThen one more: decide what you are opening it FOR before you unlock it. The loop only works on someone who opens it with no purpose.",
+      plainAr: "بكلامٍ بسيط: لا أحد يطلب منك أن ترمي الهاتف. هذه نصيحةٌ تسقط خلال أسبوع، والجميع يعلم ذلك.\n\nابدأ بشيءٍ تقدر عليه الليلة: ضعه خارج الغرفة التي تنام فيها. هذا التغيير وحده يُصلح آخر ساعةٍ من يومك وأوّل ساعةٍ من غدك، وهما الساعتان اللتان تضبطان ما سواهما.\n\nثم واحدةٌ أخرى: قرّر **لماذا** تفتحه قبل أن تفتحه. فالحلقة المفرغة لا تعمل إلا على من يفتحه بلا سبب.",
       icon: "🔌",
       title: "How to get out of the loop — concretely",
       titleAr: "كيف تخرج من الحلقة — عملًا لا كلامًا",
@@ -188,6 +196,8 @@ const GOLDEN_CLOSING = {
     },
     {
       id: "gc-behind",
+      plain: "In plain words: feeling behind is not a sin and it is not a verdict on you. It is information.\n\nAnd the gap is not because of who we are. It is because of what we stopped doing — reading, measuring, being exact, being honest in work, taking knowledge from wherever it is. Every one of those is a habit, and habits can be picked back up.\n\nWhat this page is NOT saying: that other peoples are bad, or that we are owed something. It is saying the door is open and the key is the same one that worked before.",
+      plainAr: "بكلامٍ بسيط: شعورك بأنك متأخّر ليس ذنبًا ولا حكمًا عليك، وإنما هو خبر.\n\nوالفجوة ليست بسبب من نحن، وإنما بسبب ما توقّفنا عنه: القراءة، والقياس، والدقّة، والصدق في العمل، وأخذ العلم من حيث كان. وكلُّ واحدةٍ من هذه عادة، والعادات تُستأنف.\n\nوما لا تقوله هذه الصفحة: أنّ غيرنا من الشعوب أشرار، أو أنّ لنا حقًّا عند أحد. وإنما تقول إنّ الباب مفتوح، وإنّ المفتاح هو المفتاح الذي نجح من قبل.",
       icon: "📉",
       title: "Why we are behind — the uncomfortable list",
       titleAr: "لماذا نحن متأخّرون — القائمة الثقيلة",
@@ -202,6 +212,8 @@ const GOLDEN_CLOSING = {
     },
     {
       id: "gc-return",
+      plain: "In plain words: you are not being asked to fix the ummah. You are being asked to fix the part of it that is you, because that is the only part you were given control of.\n\nAllah put the change inside people themselves — He does not change what is with a people until they change what is in themselves. That is not a slogan; it means the starting point is not a leader or a movement, it is you, this week.\n\nSomething concrete: learn one thing properly this month. Be exact in your work. Do not waste. Take knowledge wherever you find it. That list is not motivational — it is literally what built the Golden Age the first time.",
+      plainAr: "بكلامٍ بسيط: لا يُطلب منك أن تُصلح الأمّة. يُطلب منك أن تُصلح الجزء الذي هو أنت، لأنه الجزء الوحيد الذي مُلِّكتَه.\n\nوقد جعل الله التغيير في الأنفس: ﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ﴾. وليس هذا شعارًا؛ معناه أنّ نقطة البداية ليست زعيمًا ولا حركة، بل أنت، في هذا الأسبوع.\n\nوشيءٌ محسوس: أتقِن تعلّم شيءٍ واحدٍ هذا الشهر. ودقّق في عملك. ولا تُسرف. وخذ العلم حيث وجدتَه. وهذه القائمة ليست تحفيزًا، بل هي حرفيًّا ما بُني به العصر الذهبيّ أوّل مرّة.",
       icon: "🌅",
       title: "How a person actually comes back",
       titleAr: "كيف يعود المرء حقًّا",

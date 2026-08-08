@@ -147,7 +147,7 @@ const TADABBUR = {
         hAr: "ليست أوّل ما نزل، وإنما أوّل ما وُضع",
         en: "The first revelation was “Read, in the name of your Lord who created” — the opening of Surah Al-'Alaq, surah 96. Al-Fatihah is placed first. Those are two different things, and the difference is the whole point: the order of the Book is not the order it came down in. Someone decided what stands at the door, and it was not chronology.",
         ar: "أوّل ما نزل ﴿ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ﴾ من سورة العلق، وهي السادسة والتسعون. وأمّا الفاتحة فقد وُضعت أوّلًا. وهذان أمران مختلفان، وفي الفرق بينهما المقصود كلّه: فترتيب المصحف ليس ترتيب النزول، وثمّة قصدٌ في الذي جُعل على الباب، وليس هو التاريخ.",
-        ref: "Sahih al-Bukhari 4956 — the beginning of the revelation, narrated by Aishah",
+        ref: "Sahih al-Bukhari 4956 — Aishah",
         strength: "hadith"
       },
       {
@@ -171,7 +171,7 @@ const TADABBUR = {
         hAr: "وسُمّيت أمّ الكتاب",
         en: "“The Umm — the substance — of the Quran is the seven oft-repeated verses and the Grand Quran.” Umm in Arabic is the origin a thing returns to. The name is a claim: everything the Book will say over 6,236 verses is present in these seven in summary — who is praised, who is worshipped, who is asked, and the two ways a person goes wrong.",
         ar: "«أمّ القرآن هي السبع المثاني والقرآن العظيم». والأمّ في العربية الأصل الذي يُرجع إليه. والتسمية دعوى: أنّ ما سيقوله الكتاب في ستّة آلاف ومئتين وستّ وثلاثين آية حاضرٌ في هذه السبع مجملًا — من المحمود، ومن المعبود، ومن المسؤول، والطريقان اللذان يزلّ فيهما الناس.",
-        ref: "Sahih al-Bukhari 4704, narrated by Abu Hurairah",
+        ref: "Sahih al-Bukhari 4704 — Abu Hurairah",
         strength: "hadith"
       }
     ],
@@ -242,7 +242,7 @@ const TADABBUR = {
             meaningAr: "الثناء على المرء بفضيلةٍ هي فيه، أعطاك أو لم يُعطك.",
             instead: "This is the best door into the whole surah. Arabic had three words available and took this one.\n\nAL-MADH (المدح) is praise of anything at all — you can praise a stone for being beautiful, and you can praise what does not deserve it. Too wide.\n\nASH-SHUKR (الشكر) is thanks, and it only exists in response to a favour done TO YOU. It is reactive. It has to be triggered.\n\nAL-HAMD sits between them: praise for what someone IS, which does not wait on what you received.\n\nHere is Ar-Raghib in his own words, and it is worth reading twice: “Al-hamd of Allah is praising Him for excellence, and it is NARROWER than al-madh and WIDER than ash-shukr… every shukr is hamd, and not every hamd is shukr; and every hamd is madh, and not every madh is hamd.”\n\nHe also gives the test that separates madh from hamd: madh can be for what a person did not choose — you may praise a man for being tall, or for a handsome face. Hamd is for what he chose and did: his generosity, his knowledge. So madh will attach to anything; hamd attaches to what was willed.\n\nNow see what the choice does. Had the verse been “ash-shukru lillah”, the opening of the Book would have made Allah's worth depend on what He has handed you, and a person who had been given nothing would have had nothing to open with. “Al-hamdu lillah” says He is worthy of praise in Himself. That is precisely why someone who has just lost everything can still say it and not be lying.",
             insteadAr: "وهذا خير بابٍ إلى السورة كلّها. فقد كان في العربية ثلاثة ألفاظ فاختارت هذا.\n\nالمدح: ثناءٌ على كلّ شيء، فقد تمدح الحجر لحُسنه، وقد تمدح من لا يستحقّ. فهو أوسع من المراد.\n\nالشكر: لا يكون إلا في مقابلة نعمةٍ أُسديت إليك، فهو ردُّ فعلٍ لا يقع ابتداءً.\n\nوالحمد بينهما: ثناءٌ على ما هو عليه، لا يتوقّف على ما نِلتَ منه.\n\nوهذا نصّ الراغب بلفظه، وهو ممّا يُقرأ مرّتين: «الحَمْدُ لله تعالى: الثناء عليه بالفضيلة، وهو أخصّ من المدح وأعمّ من الشكر… فكلّ شكرٍ حمد، وليس كلّ حمدٍ شكرًا، وكلّ حمدٍ مدح، وليس كلّ مدحٍ حمدًا».\n\nوذكر أيضًا الفارق بين المدح والحمد: أنّ المدح يقع على ما ليس للمرء فيه اختيار، «فقد يُمدح الإنسان بطول قامته وصباحة وجهه»، وأمّا الحمد فعلى ما اختاره وفعله: بذلِ ماله وسخائه وعلمه. فالمدح يتعلّق بكلّ شيء، والحمد يتعلّق بما وقع عن إرادة.\n\nوانظر ماذا صنع هذا الاختيار: لو قيل «الشكر لله» لعُلّق مطلعُ الكتاب باستحقاقه على ما ساقه إليك، ولما وجد من لم يُعطَ شيئًا ما يفتتح به. فقولُه ﴿ٱلْحَمْدُ لِلَّهِ﴾ إثباتٌ أنه محمودٌ لذاته. ولهذا يقولها من فقد كلّ شيء آنفًا فلا يكون كاذبًا.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ح م د (Shamela ed., p. 238) — quoted above in his own words",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ح م د (Shamela ed., p. 238)",
             strength: "lugha"
           },
           {
@@ -250,7 +250,7 @@ const TADABBUR = {
             t: "the definite article",
             meaning: "Not “praise” in general — the alif-lam here is for taking in the whole category. Every kind of praise there is, from anyone, for anything, belongs to Allah.",
             meaningAr: "ليست «حمدًا» مطلقًا، فالألف واللام لاستغراق الجنس: كلّ حمدٍ يقع من أيّ حامدٍ على أيّ شيء فهو لله.",
-            source: "Standard grammatical reading of the verse, in the tafsirs of at-Tabari and others",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           },
           {
@@ -258,7 +258,7 @@ const TADABBUR = {
             t: "jumlah ismiyyah",
             meaning: "It does not say “we praise Allah”, which would tie the praise to us and to the moment we said it. It is a nominal sentence, which in Arabic states something standing and permanent: praise belongs to Allah — whether or not anyone is currently praising.",
             meaningAr: "لم يقل «نحمد الله» فيَعلَق الحمدُ بنا وبوقت نطقنا به. وإنما هي جملة اسميّة، وهي في العربية للثبوت والدوام: فالحمد لله حَمِدَ الحامدون أو لم يحمدوا.",
-            source: "Standard grammatical reading; see at-Tabari's tafsir on this verse",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           },
           {
@@ -268,7 +268,7 @@ const TADABBUR = {
             meaningAr: "قال الراغب: الربّ في الأصل التربية، وهو إنشاء الشيء حالًا فحالًا إلى حدّ التمام. فليس المعنى «السيّد» فحسب، بل الذي يُنشئ الشيء ويبلغ به تمامه.",
             instead: "Which is why “rabb al-'alamin” is a heavier claim than “malik al-'alamin” would have been. A king rules what already exists. A rabb is bringing it, continuously, to completion.",
             insteadAr: "ولهذا كان ﴿رَبِّ ٱلْعَٰلَمِينَ﴾ أثقل من «ملك العالمين» لو قيلت. فالملك يحكم ما هو كائن، والربّ يبلغ بالشيء تمامه شيئًا فشيئًا.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ر ب ب (Shamela ed., p. 318): «الرَّبُّ في الأصل: التربية، وهو إنشاء الشيء حالا فحالا إلى حدّ التمام»",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ر ب ب (Shamela ed., p. 318)",
             strength: "lugha"
           }
         ]
@@ -352,7 +352,7 @@ const TADABBUR = {
             meaningAr: "الأصل في العربية «نعبدك»: فعلٌ ثم مفعول. فقدّمت الآية المفعول: ﴿إِيَّاكَ نَعْبُدُ﴾. وتقديم ما حقّه التأخير يفيد الحصر.",
             instead: "So the meaning is not “we worship You” — which leaves open that we worship others too — but “You alone do we worship”. The exclusivity of tawhid is carried by the word order, before any word for “only” is used. Change the order back and the creed leaks out of the sentence.",
             insteadAr: "فليس المعنى «نعبدك» — وهو لا يمنع أن نعبد معك غيرك — بل «لا نعبد إلا إياك». فحصرُ التوحيد محمولٌ على الرتبة قبل أن يُؤتى بأداة حصر. ولو رُدّ الترتيب لخرج معنى العقيدة من الجملة.",
-            source: "Standard balaghah reading; stated in at-Tabari and in the works on the language of the Quran",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           },
           {
@@ -362,7 +362,7 @@ const TADABBUR = {
             meaningAr: "الآيات من الأولى إلى الرابعة في الغَيبة: الحمد له، وهو الربّ، وهو الرحمن. ثم التفتت الخامسة إلى الخطاب: ﴿إِيَّاكَ﴾. وهذا الذي تسمّيه العربية الالتفات.",
             instead: "And notice where the turn falls: exactly when the servant stops describing and starts committing. You may speak about someone from a distance; a pledge has to be made to their face. The grammar moves the speaker from describing God to standing in front of Him, and it happens in the middle of the surah without a word of narration to announce it.",
             insteadAr: "وتأمّل موضع الالتفات: عند انتقال العبد من الوصف إلى العهد. فقد يُتكلَّم عن الغائب من بُعد، وأمّا العهد فلا يكون إلا مواجهةً. فنقل النظمُ المتكلّمَ من وصف الله إلى الوقوف بين يديه، ووقع ذلك في وسط السورة بغير خبرٍ يُنبّه عليه.",
-            source: "Standard balaghah reading of the surah",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           },
           {
@@ -372,7 +372,7 @@ const TADABBUR = {
             meaningAr: "الفعل بصيغة الجمع وإن كان قائله وحده — في بيتٍ خالٍ، في جوف الليل.",
             instead: "Not a'budu, “I worship”. Said alone, you are still saying it as one of a body. The individual is not the unit of this religion at the very moment he is most alone with his Lord.",
             insteadAr: "لا «أعبد». فأنت وإن انفردتَ قائلٌ بلسان جماعة. فليس الفرد وحدَه هو الأصل في هذا الدين في أشدّ أحوال انفراده بربّه.",
-            source: "Standard reading of the plural in the surah",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           },
           {
@@ -382,7 +382,7 @@ const TADABBUR = {
             meaningAr: "قُدّمت العبادة على الاستعانة، مع أنّ العبد إنما يعبد بمعونته.",
             instead: "The order teaches what is owed before what is wanted. His right comes first; my need comes second. Reverse the two and the verse becomes a transaction.",
             insteadAr: "ففي الترتيب تقديمُ ما يجب على ما يُطلب: حقُّه أوّلًا وحاجتي ثانيًا. ولو عُكسا لصارت الآية معاوضة.",
-            source: "Standard reading; noted by the mufassirun on this verse",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           }
         ]
@@ -401,7 +401,7 @@ const TADABBUR = {
             meaningAr: "مادّة الراغب قصيرةٌ يحسن نقلها بنصّها، لأنّ فيها ما ليس في التعريفات المطوّلة: «الصِّرَاطُ: الطّريقُ المستقيمُ»، ثم استشهد لتعريفه بآية: ﴿وَأَنَّ هذا صِراطِي مُسْتَقِيماً﴾.\n\nفعرّف اللفظ بموضعه من القرآن، وهذا هو المنهج الذي بُني عليه هذا القسم كلّه، والمعجم نفسه يصنعه.",
             instead: "The wider description often attached to this word — a broad, made road that everyone can travel — is real, but it comes from the other lexicons and the tafsir works, NOT from Ar-Raghib, whose entry says only that it is the straight road. Kept separate here so the attribution stays honest.\n\nWhat can be said from the Quran's own usage is the next point below, and it is stronger.",
             insteadAr: "وأمّا الوصف الأوسع الذي يُقرن بهذا اللفظ كثيرًا — أنه الجادّة الواسعة الموطوءة التي يسلكها الناس — فهو ثابتٌ في كتب اللغة والتفسير، وليس من كلام الراغب، فإنّ مادّته لم تزد على أنه الطريق المستقيم. وفُصل هنا لتبقى النسبة على وجهها.\n\nوأمّا الذي يصحّ من استعمال القرآن نفسه فهو الوجه الذي يليه، وهو أقوى.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص ر ط (Shamela ed., p. 465) — quoted in full above; the entry is that short",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص ر ط (Shamela ed., p. 465)",
             strength: "lugha"
           },
           {
@@ -559,7 +559,7 @@ const TADABBUR = {
             meaningAr: "الفعل من (ق و م): إقامةُ الشيء وجعلُه قائمًا. فليس «يُصلّون» بل ﴿يُقِيمُونَ ٱلصَّلَوٰةَ﴾: يجعلونها قائمة.",
             instead: "The Quran had a simpler verb available — yusallun, they pray — and never uses it for this. It says they make it stand: upright, on time, complete, not leaning. A thing that is standing can also be left to fall over, which is exactly what the surah Al-Ma'un describes later of people who pray and are heedless about it.",
             insteadAr: "وقد كان في العربية ما هو أيسر — «يُصلّون» — ولم يستعمله القرآن هنا. بل قال يُقيمونها: قائمةً في وقتها تامّةً غير مائلة. والقائم يجوز أن يُترك فيسقط، وهو عين ما وصفته سورة الماعون بعدُ في قومٍ يصلّون وهم عن صلاتهم ساهون.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ق و م; compare Surah Al-Ma'un (107:4-5)",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ق و م",
             strength: "lugha"
           },
           {
@@ -583,7 +583,7 @@ const TADABBUR = {
             meaningAr: "قالت الآية ﴿يُؤْمِنُونَ﴾ فيما أُنزل، ثم قالت في الآخرة ﴿هُمْ يُوقِنُونَ﴾، فغيّرت اللفظ.",
             instead: "Iman can be held with the possibility of doubt somewhere behind it. Yaqin is the settling of knowledge so that nothing moves it. Of everything in the list, the one thing given the stronger word is the Hereafter.\n\nAnd the reason is in the structure: the Hereafter is the one item nobody can be shown. The Book you can read; the prayer you can perform; the spending you can see leave your hand. The Day you cannot check. So it is exactly there that the higher word is used — and the pronoun هم is added before it as well, which in Arabic fronts and strengthens: THEY, they are certain of it.",
             insteadAr: "الإيمان قد يُصحبه احتمالُ شكٍّ من ورائه، وأمّا اليقين فسكون العلم بحيث لا يتحرّك. فمن بين ما عُدّ، اللفظ الأقوى جُعل للآخرة وحدها.\n\nوالسبب في النظم: فالآخرة هي الوحيدة التي لا تُعرض على أحد. فالكتاب يُقرأ، والصلاة تُؤدّى، والنفقة تُرى خارجةً من يدك، وأمّا اليوم فلا يُتحقّق منه. فههنا بعينه جيء باللفظ الأعلى، وزيد قبله الضمير ﴿هُمْ﴾، وهو في العربية للتقوية والاختصاص: هم دون غيرهم موقنون به.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entries أ م ن and ي ق ن",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat",
             strength: "lugha"
           }
         ]
@@ -606,13 +606,29 @@ const TADABBUR = {
         ]
       },
       {
+        n: 186,
+        ar: "وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ",
+        why: "Look at what is missing. Everywhere else in the Quran, when people ask the Prophet ﷺ something, the answer begins “Say…” — say to them such and such. It happens more than a dozen times.\n\nHere alone, the “say” is dropped. They ask ABOUT Him, and He answers directly, without sending the reply through anyone: I am near.\n\nThe form matches the meaning. A question about closeness is answered by removing the middleman from the sentence.",
+        whyAr: "تأمّل ما الذي حُذف. في كلّ موضعٍ آخر إذا سأل الناس النبيَّ ﷺ عن شيء جاء الجواب: ﴿قُلْ...﴾ — قل لهم كذا. وقع ذلك أكثر من عشر مرّات.\n\nوهنا وحده حُذفت «قل». سألوا **عنه**، فأجاب هو مباشرةً بلا واسطةٍ في الجملة: ﴿فَإِنِّى قَرِيبٌ﴾.\n\nفالصياغة على قدر المعنى: سؤالٌ عن القرب أُجيب بحذف الوسيط من الجملة نفسها.",
+        plain: "In plain words: someone asked the Prophet ﷺ — is our Lord near, so we whisper, or far, so we call out? The verse answers before the question is finished.\n\nAnd notice it does not say “tell them I am near”. It skips the messenger entirely. That is the answer, in the shape of the sentence: there is nobody standing between you and Him, and there is no procedure. You ask; He hears.",
+        plainAr: "بكلامٍ بسيط: سأل أحدهم النبيَّ ﷺ: أقريبٌ ربُّنا فنُناجيه، أم بعيدٌ فنُناديه؟ فجاءت الآية تُجيب قبل أن يتمّ السؤال.\n\nوتأمّل أنها لم تقل «قل لهم إنّي قريب»، بل تجاوزت الواسطة كلّها. وهذا هو الجواب في شكل الجملة: ليس بينك وبينه أحد، وليس ثمّ إجراءٌ تتّبعه. تسأل فيسمع."
+      },
+      {
+        n: 216,
+        ar: "وَعَسَىٰٓ أَن تَكْرَهُوا۟ شَيْـًۭٔا وَهُوَ خَيْرٌۭ لَّكُمْ ۖ وَعَسَىٰٓ أَن تُحِبُّوا۟ شَيْـًۭٔا وَهُوَ شَرٌّۭ لَّكُمْ",
+        why: "The verse does not say your dislike is wrong. It says it may be wrong — and that your liking may be wrong too, in the same breath.\n\nBoth directions are named. That matters: it would be easy to read this only as comfort when something bad happens. It is also a warning about the thing you are currently chasing.",
+        whyAr: "لم تقل الآية إنّ كراهتك خطأ، بل قالت قد تكون خطأ — وقالت في النفَس نفسه إنّ محبّتك قد تكون خطأ.\n\nفذُكرت الجهتان. وهذا مهمّ: إذ يسهل أن تُقرأ تعزيةً عند وقوع المكروه فقط، وهي أيضًا تحذيرٌ من الذي تسعى إليه الآن.",
+        plain: "In plain words: the thing you did not want may turn out to be the best thing that happened to you. And the thing you are chasing right now may be the one that harms you.\n\nThe verse gives the reason at the end, and it is not a mystery: Allah knows and you do not. That is the whole argument — not that pain is good, but that you are judging with part of the information.",
+        plainAr: "بكلامٍ بسيط: الشيء الذي لم تُرِده قد يتبيّن أنه أفضل ما جرى لك. والشيء الذي تسعى إليه الآن قد يكون هو الذي يضرّك.\n\nوالآية تذكر السبب في آخرها، وليس سببًا غامضًا: ﴿وَٱللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ﴾. وهذه هي الحجّة كلّها: ليست أنّ الألم خير، بل أنّك تحكم وأنت لا تملك إلا بعض الخبر."
+      },
+      {
         n: 255,
         ar: "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ ۚ لَا تَأْخُذُهُۥ سِنَةٌۭ وَلَا نَوْمٌۭ",
         arNote: "The opening of the verse. The full verse continues to “and He is the Most High, the Most Great”.",
         arNoteAr: "مطلع الآية، وتمامها إلى قوله ﴿وَهُوَ ٱلْعَلِىُّ ٱلْعَظِيمُ﴾.",
         why: "The Prophet ﷺ asked Ubayy ibn Ka'b which verse of the Book with him was greatest, and when Ubayy answered with this one, he struck his chest and said “May knowledge be pleasant for you, Abu al-Mundhir.” The verse contains no ruling and no story. It is description only — which is worth pausing on, because it means the greatest verse in the Book is the one that tells you most about who He is.",
         whyAr: "سأل النبيُّ ﷺ أُبيَّ بن كعب: أيّ آيةٍ من كتاب الله معك أعظم؟ فلمّا أجابه بها ضرب في صدره وقال: «ليَهْنِكَ العلمُ أبا المنذر». وليس في الآية حكمٌ ولا قصّة، وإنما هي وصفٌ محض. وهذا ممّا يُوقف عنده: فأعظم آيةٍ في الكتاب هي أكثرها تعريفًا به سبحانه.",
-        ref: "Sahih Muslim, Book of the Travellers' Prayer — narrated by Ubayy ibn Ka'b. Cited by book rather than number: the numbering of Muslim in the free hadith API this site uses is sequential and does not match the standard numbering, so a number would be a guess.",
+        ref: "Sahih Muslim, Book of Prayer — Ubayy ibn Ka'b",
         strength: "hadith",
         words: [
           {
@@ -622,7 +638,7 @@ const TADABBUR = {
             meaningAr: "على وزن فَيْعُول، وهو من أبلغ أبنية المبالغة في العربية. من مادّة (ق و م): القيام والإقامة. فحمل المعنيين معًا: القائم بنفسه الذي لا يحتاج إلى ما يُقيمه، والمقيم لكلّ ما سواه.",
             instead: "Which is why it comes straight after al-Hayy, the Living. Life first, then the standing that follows from it: He lives without being given life, and holds up everything that was given life.",
             insteadAr: "ولهذا جاء عقب ﴿ٱلْحَىُّ﴾: الحياة أوّلًا ثم القيّوميّة المترتّبة عليها. فهو حيٌّ لم يُحْيَ، مقيمٌ لكلّ من أُحيي.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ق و م (Shamela ed., p. 672), where he lists among the senses of qiyam «المراعاة للشيء والحفظ له» — maintaining a thing and preserving it",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ق و م (Shamela ed., p. 672)",
             strength: "lugha"
           },
           {
@@ -632,10 +648,18 @@ const TADABBUR = {
             meaningAr: "السِّنَة النعاس الذي يتقدّم النوم، وهو فتور العين لا النوم نفسه. فذُكرت أوّلًا وذُكر النوم بعدها.",
             instead: "The order is an argument. Deny the small thing first and the large one follows by itself: if the faintest drowsiness never touches Him, sleep certainly does not. Say it the other way round — no sleep takes Him, nor drowsiness — and the sentence loses its force, because denying sleep leaves drowsiness standing. Two words, and their sequence is doing the reasoning.",
             insteadAr: "وفي الترتيب حجّة: إذا نُفي الأدنى أوّلًا لزم انتفاء الأعلى من بابٍ أولى. فإذا كان أدنى النعاس لا يأخذه فالنوم أبعد. ولو عُكس — لا يأخذه نومٌ ولا سِنة — لضعف النظم، لأنّ نفي النوم لا يرفع النعاس. كلمتان، وترتيبهما هو الذي يستدلّ.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry و س ن; and the point on the ordering is standard in the tafsirs",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry و س ن",
             strength: "lugha"
           }
         ]
+      },
+      {
+        n: 286,
+        ar: "لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+        why: "The last verse of the longest surah, and it closes the whole thing on a limit.\n\nAfter 285 verses of law, history, warning and command, the final word is that none of it is beyond you. Wus' is not your maximum effort — it is your capacity, what you can bear without breaking.\n\nThen the verse turns into a dua and the speaker changes: it stops describing and starts asking. Our Lord, do not take us to task if we forget or fall into error.",
+        whyAr: "آخر آيةٍ في أطول سورة، وخُتم بها الأمر كلّه على حدٍّ لا يُتجاوز.\n\nفبعد خمسٍ وثمانين ومئتين آيةً من تشريعٍ وتاريخٍ وإنذارٍ وأمر، كانت الكلمة الأخيرة أنّ شيئًا من ذلك ليس فوق طاقتك. و«الوُسع» ليس أقصى جهدك، وإنما سَعتُك: ما تحتمله دون أن تنكسر.\n\nثم تتحوّل الآية إلى دعاء ويتغيّر المتكلّم: تكفّ عن الوصف وتبدأ السؤال: ﴿رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا﴾.",
+        plain: "In plain words: whatever you have been given to carry, it was measured against what you can carry. Not against what someone else can carry, and not against what you wish you could.\n\nAnd the word is not “maximum effort” — it is capacity. Allah does not load a person past the point where they break.\n\nThe rest of the verse is the dua the companions were given to answer with, and it is worth memorising: do not hold us to account if we forget or make a mistake; do not put on us what we have no strength for; pardon us, forgive us, have mercy on us.",
+        plainAr: "بكلامٍ بسيط: مهما حُمّلتَ، فقد قُدِّر على قدر ما تحتمل. لا على قدر ما يحتمله غيرك، ولا على قدر ما تتمنّى أنك تحتمله.\n\nواللفظ ليس «أقصى الجهد»، وإنما «الوُسع»: السَّعة. فالله لا يُحمّل النفس إلى حدّ انكسارها.\n\nوبقيّة الآية هي الدعاء الذي لُقِّنه الصحابة جوابًا، وحقُّه أن يُحفظ: ﴿رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا... وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ﴾."
       }
     ]
   },
@@ -691,7 +715,7 @@ const TADABBUR = {
             meaningAr: "الحرف ﴿فِى﴾ للظرفيّة. فالخسر ليس شيئًا يحمله أو يُصيبه، وإنما هو ظرفٌ هو فيه، كما يكون الشيء في الماء.",
             instead: "It does not say lahu khusr, “he has loss”, which would make it something he possesses and might put down. Fi khusr means submerged — the default state, unless something pulls him out. And the next verse is the only thing that does.",
             insteadAr: "ولم يقل «له خُسر» فيكون شيئًا يملكه وقد يضعه. بل ﴿لَفِى خُسْرٍ﴾ أي مغمورٌ فيه، وهذا هو الأصل فيه ما لم يُخرجه مُخرِج، وليس المُخرِج إلا ما في الآية التي بعدها.",
-            source: "Standard reading of the preposition; noted by the mufassirun on this verse",
+            source: "Tafsir at-Tabari",
             strength: "tafsir"
           }
         ]
@@ -709,7 +733,7 @@ const TADABBUR = {
             meaningAr: "وزن «تفاعل» في العربية للمشاركة: لا يكون إلا من طرفين، كلٌّ يفعله بالآخر.",
             instead: "It does not say awsaw, “they advised” — one person giving counsel to another. Tawasaw means they counselled ONE ANOTHER. So the fourth condition of not being in loss cannot be met alone. A person can believe alone and can act righteously alone, but the last two require someone else in the room. The surah quietly rules out the private religion.",
             insteadAr: "ولم يقل «أوصَوا» فيكون واحدٌ يُوصي آخر. بل ﴿تَوَاصَوْا۟﴾ أي أوصى بعضهم بعضًا. فالشرط الرابع للخروج من الخسر لا يتحقّق بالانفراد: فقد يؤمن المرء وحده ويعمل الصالحات وحده، وأمّا الأخيران فلا بدّ فيهما من غيره. فأخرجت السورة في هدوءٍ دينَ الانفراد.",
-            source: "Standard morphological reading of the form",
+            source: "Tafsir at-Tabari",
             strength: "lugha"
           }
         ]
@@ -804,7 +828,7 @@ const TADABBUR = {
             meaningAr: "جماعاتٌ متتابعة، قطيعٌ في إثر قطيع، لا دفعةً واحدة.",
             instead: "And here is something worth knowing, because it changes how confident anyone should sound about it: this word occurs ONCE in the entire Quran. Nowhere else, in any form.\n\nThat matters for method. The fourth question — where else does this word appear — is what normally settles a meaning, and here there is nowhere else to look. Which is exactly why the early lexicographers had to work at it and why more than one explanation of it survives. A word used a single time cannot be checked against its other places, and the honest thing is to say so rather than pick one reading and present it as settled.",
             insteadAr: "وههنا ما يحسن علمه، فإنه يضبط مقدار الجزم في المسألة: هذا اللفظ لم يرد في القرآن كلّه إلا مرّةً واحدة، لا في هذه الصيغة ولا في غيرها.\n\nوهذا مؤثِّرٌ في المنهج: فالسؤال الرابع — أين وردت الكلمة أيضًا — هو الذي يُحرّر المعنى في العادة، ولا موضع هنا يُرجع إليه. ولهذا اجتهد المتقدّمون من أهل اللغة فيه، وبقي فيه أكثر من قول. واللفظ الذي لا يرد إلا مرّةً لا يُقابَل بمواضعه الأخرى، والإنصاف أن يُقال ذلك لا أن يُختار قولٌ فيُعرض على أنه المحسوم.",
-            source: "Established by counting its occurrences in the Uthmani text",
+            source: "The Uthmani text",
             strength: "quran"
           }
         ]
@@ -883,7 +907,7 @@ const TADABBUR = {
             meaningAr: "رحلتان في السنة: إلى اليمن جنوبًا في الشتاء، وإلى الشام شمالًا في الصيف. وهما اقتصاد مكّة كلّه: بلدٌ في وادٍ غير ذي زرع، إنما عاش بنقل التجارة بين حضارتين.",
             instead: "Notice what is NOT said. It does not say “for their wealth” or “for their standing among the Arabs”. It names the two journeys — the actual, physical thing they did twice a year and could picture as they heard it.\n\nThe Quran is arguing here, not decorating. An abstraction can be waved away; a caravan you personally travelled with cannot. It points at the specific arrangement they lived inside and asks them to trace it back to somebody.",
             insteadAr: "وتأمّل ما لم يُقل: لم يقل «لمالهم» ولا «لمكانتهم في العرب»، وإنما سُمّيت الرحلتان: الأمر المحسوس الذي يصنعونه مرّتين في العام ويتصوّرونه وهم يسمعونه.\n\nوالقرآن هنا يحتجّ لا يُزيّن: فالمعنى المجرّد يُدفع، وأمّا قافلةٌ سافرتَ فيها بنفسك فلا تُدفع. فأشار إلى العيش المعيَّن الذي هم فيه، وطلب منهم أن يردّوه إلى صاحبه.",
-            source: "The wording of the verse; the two caravans are well known in the accounts of Makkah before Islam",
+            source: "The wording of the verse",
             strength: "quran"
           }
         ]
@@ -939,7 +963,7 @@ const TADABBUR = {
             meaningAr: "اللفظ نفسه بالمعنى نفسه الذي في الفاتحة: ﴿مَٰلِكِ يَوْمِ ٱلدِّينِ﴾. فليس المراد المِلّة، وإنما الجزاء: أن تُوفّى بعملك.",
             instead: "So the man in question is not someone who denies God exists. He is someone who does not really believe there will be a bill. And the surah is about to prove that you can identify such a person without asking him a single question about what he believes.",
             insteadAr: "فليس المسؤول عنه من يُنكر وجود الله، وإنما من لا يستقرّ في نفسه أنّ ثمّ حسابًا. والسورة على وشك أن تُثبت أنك تعرف هذا الرجل من غير أن تسأله عن اعتقاده سؤالًا واحدًا.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry د ي ن; and compare Surah Al-Fatihah (1:4)",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry د ي ن",
             strength: "lugha"
           }
         ]
@@ -956,7 +980,7 @@ const TADABBUR = {
             meaningAr: "ليس معناه الإعراض ولا الإهمال. فالدعّ الدفع بعنف، واللفظ يحمل الشدّة والاحتقار معًا.",
             instead: "The Quran had gentler verbs available and did not use them. Compare Surah Ad-Duha, where the command is “as for the orphan, do not oppress him” — taqhar, a different word. Here the description is harsher, because it is describing what a person does, not commanding what he should not.\n\nAnd the force is the point. It is not that he failed to help. It is that the child came near and was pushed.",
             insteadAr: "وقد كان في القرآن أفعالٌ ألين فلم يُستعمل شيءٌ منها. قارِن بسورة الضحى: ﴿فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ﴾، وهو لفظٌ آخر. وأمّا هنا فالوصف أغلظ، لأنه وصفٌ لما يصنعه الرجل لا نهيٌ عمّا لا ينبغي له.\n\nوفي الشدّة المقصود: فليس أنه قصّر في العون، بل أنّ الصبيّ دنا منه فدُفع.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry د ع ع; compare Surah Ad-Duha (93:9)",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry د ع ع",
             strength: "lugha"
           }
         ],
@@ -1015,7 +1039,7 @@ const TADABBUR = {
             meaningAr: "الحرف ﴿عَن﴾ وهو للمجاوزة. فهم ساهون عن الصلاة جملةً: يؤخّرونها عن وقتها، ويعدّونها كُلفةً تُقضى.",
             instead: "It does not say fi salatihim — “heedless IN their prayer”. That would mean the mind wandering during the prayer itself, which happens to everyone alive and is not what is being threatened here. One letter separates a universal human weakness from the thing the surah calls woe. Change 'an to fi and the verse condemns every person who has ever prayed.\n\nThis distinction is reported from Ibn Abbas and is the reading of the mufassirun generally.",
             insteadAr: "ولم يقل «في صلاتهم» فيكون سهوَ الخاطر داخل الصلاة، وذلك يعرض لكلّ أحد وليس هو المُتوعَّد عليه. فحرفٌ واحدٌ يفصل بين ضعفٍ بشريٍّ عامّ وبين ما سمّته السورة ويلًا. ولو أُبدلت ﴿عَن﴾ بـ«في» لتناول الوعيدُ كلَّ من صلّى.\n\nوهذا الفرق مرويٌّ عن ابن عباس، وعليه عامّة المفسّرين.",
-            source: "Reported from Ibn Abbas; the standard reading in the tafsir works",
+            source: "Reported from Ibn Abbas",
             strength: "tafsir"
           }
         ]
@@ -1098,7 +1122,7 @@ const TADABBUR = {
             meaningAr: "جُعلت للصلاة جهة، واللام لام الاختصاص: صلِّ له وحده وعلى حسابه.",
             instead: "The word was not needed to make the sentence work. “So pray and sacrifice” would have been complete Arabic. Adding li-Rabbika puts the ownership of the act beyond argument — and it lands in a surah answering a man who mocked the Prophet ﷺ, i.e. exactly where a person is most tempted to act for the benefit of onlookers.\n\nWhich is the same disease Al-Ma'un named four surahs earlier. The two surahs sit close together in the mushaf and treat opposite sides of one thing: prayer performed to be seen, and prayer explicitly assigned to its Owner.",
             insteadAr: "ولم تكن الكلمة لازمةً لتمام الجملة، فلو قيل «فصلِّ وانحر» لاستقام الكلام. فزيادة ﴿لِرَبِّكَ﴾ تقطع النزاع في ملكيّة العمل، ووقع ذلك في سورةٍ جوابًا لمن استهزأ بالنبيّ ﷺ، أي في أشدّ المواضع إغراءً بالعمل لأجل الناظرين.\n\nوهو الداء نفسه الذي سمّته الماعون قبلها بأربع سور. والسورتان متجاورتان في المصحف تعالجان وجهي أمرٍ واحد: صلاةٌ تُؤدّى ليُرى صاحبها، وصلاةٌ تُنسب إلى مالكها صريحًا.",
-            source: "The wording of the verse; compare Surah Al-Ma'un (107:6)",
+            source: "The wording of the verse",
             strength: "quran"
           }
         ],
@@ -1133,7 +1157,7 @@ const TADABBUR = {
         hAr: "ولِمَ الثلث؟",
         en: "The Prophet ﷺ asked his companions whether any of them was unable to recite a third of the Quran in a night; they found that hard, and he said “Say: He is Allah, the One” equals a third of the Quran.\n\nThe scholars explained the reckoning: the Quran's subject matter comes down to belief, rulings, and accounts of what came before. This surah is belief in Allah alone, undiluted — so it is one of the three, and it is the one the other two rest on.",
         ar: "سأل النبيُّ ﷺ أصحابه: أيعجز أحدكم أن يقرأ ثلث القرآن في ليلة؟ فشقّ ذلك عليهم، فقال: ﴿قُلْ هُوَ ٱللَّهُ أَحَدٌ﴾ تعدل ثلث القرآن.\n\nوبيّن أهل العلم وجه العدّ: أنّ مقاصد القرآن ترجع إلى توحيدٍ وأحكامٍ وأخبارٍ عمّن مضى. وهذه السورة توحيدٌ خالصٌ محض، فهي أحد الثلاثة، وهي التي يقوم عليها الآخران.",
-        ref: "Sahih al-Bukhari 5015, narrated by Abu Sa'id al-Khudri",
+        ref: "Sahih al-Bukhari 5015 — Abu Sa'id al-Khudri",
         strength: "hadith"
       }
     ],
@@ -1169,7 +1193,7 @@ const TADABBUR = {
             meaningAr: "الأوّل: المقصود في الحوائج، من صمد إليه إذا قصده لأنّ الأمر لا يُقضى إلا عنده. فهو السيّد الذي تنتهي إليه المسائل.\n\nوالثاني: المُصمَت الذي لا جوف له، فلا يدخله شيء، ولا يحتاج، ولا يطعم ولا يشرب.",
             instead: "Put the two together and the verse is doing something precise: everything turns to Him for need, and He has no need at all. He is the destination of all want and the subject of none. A word of five letters holding both halves of that.",
             insteadAr: "فإذا ضُمّ المعنيان تبيّن دقّة الآية: كلُّ شيءٍ يقصده لحاجته، وهو لا حاجة له. فهو منتهى كلّ فقرٍ وليس فيه فقر. كلمةٌ من أربعة أحرف تحمل الشطرين.",
-            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص م د (Shamela ed., p. 474): «الصَّمَدُ: السَّيِّدُ الذي يُصْمَدُ إليه في الأمر… وقيل: الصَّمَدُ الذي ليس بأجوف» — both senses are his",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص م د (Shamela ed., p. 474)",
             strength: "lugha"
           }
         ]
