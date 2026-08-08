@@ -79,6 +79,8 @@ const SIGNS_INTRO = {
 const MAJOR_SIGNS = [
   {
     id: "sg-dajjal",
+    plain: "In plain words: a man will come claiming to be God, and he will be able to do things that look impossible. The Prophet ﷺ warned about him more than about anything else.\n\nThe simplest thing to hold on to: he is blind in one eye. The Prophet ﷺ said Allah is not one-eyed — meaning the man's own defect is the proof he is lying. Whatever he shows you, that stays true.",
+    plainAr: "بكلامٍ بسيط: سيخرج رجلٌ يدّعي أنه ربّ، ويستطيع أن يفعل أشياء تبدو مستحيلة. وقد حذّر منه النبيّ ﷺ أكثر من تحذيره من أيّ شيءٍ آخر.\n\nوأبسط ما تُمسك به: أنه أعورُ العين. قال النبيّ ﷺ: إنّ الله ليس بأعور — أي أنّ عيبه هو نفسه الدليل على كذبه. ومهما أراك، يبقى هذا صحيحًا.",
     order: 1,
     name: "The Dajjal",
     nameAr: "المسيح الدجّال",
@@ -137,6 +139,8 @@ const MAJOR_SIGNS = [
   },
   {
     id: "sg-sun",
+    plain: "In plain words: one morning the sun comes up from the wrong side. Everyone sees it, and at that moment everybody believes — and it is too late for it to help anyone who did not believe before.\n\nWhy it matters to you today: until that happens, the door is open. Allah stretches out His hand at night for whoever sinned in the day, and in the day for whoever sinned at night. The point of this sign is not the sun; it is that the door has a closing time.",
+    plainAr: "بكلامٍ بسيط: في صباحٍ من الصباحات تطلع الشمس من الجهة الخطأ. يراها الناس جميعًا، فيؤمن الجميع في تلك اللحظة — وقد فات الأوان، فلا ينفع إيمانُ من لم يكن آمن قبلها.\n\nولماذا يعنيك هذا اليوم: لأنّ الباب مفتوحٌ إلى أن يقع ذلك. يبسط الله يده بالليل ليتوب مسيء النهار، وبالنهار ليتوب مسيء الليل. فليست العبرة في الشمس، وإنما في أنّ للباب وقتَ إغلاق.",
     order: 4,
     name: "The sun rising from the west",
     nameAr: "طلوع الشمس من مغربها",
@@ -433,6 +437,8 @@ const JUDGEMENT_DETAIL = {
   sections: [
     {
       id: "jd-length",
+      plain: "In plain words: the Day is long. Fifty thousand years is the figure the Quran gives.\n\nBut do not get stuck on the arithmetic — that is not what the number is for. It is there so you understand that this is not a quick hearing you stand through. And the same reports say it is made light for the believer, short as the gap between two prayers. So the length is not fixed for everyone: what you carry decides how long it feels.",
+      plainAr: "بكلامٍ بسيط: اليوم طويل، والرقم الذي ذكره القرآن خمسون ألف سنة.\n\nولا تقف عند الحساب، فليس هذا هو المقصود من الرقم. المقصود أن تعرف أنّ الأمر ليس جلسةً قصيرةً تنتهي بسرعة. وفي الأخبار نفسها أنه يُخفَّف على المؤمن حتى يصير كالوقت بين صلاتين. فالطول إذن ليس واحدًا على الجميع: ما تحمله أنت هو الذي يُحدّد كم يطول عليك.",
       h: "How long is the Day — fifty thousand years",
       hAr: "كم يطول اليوم — خمسون ألف سنة",
       en: "The Quran gives the figure directly: a Day whose measure is fifty thousand years. And the Prophet ﷺ used the same number when describing the man who withheld the zakat of his wealth — he is dealt with “during a day the extent of which is fifty thousand years”, and only then is his path shown to him.\n\nThere is a second figure in the Quran — a day whose measure is a thousand years, in Surah As-Sajdah 32:5 — and the scholars discussed the two. The most careful position is that they are not in conflict: they describe different matters, or the same Day measured from different angles. Ibn Abbas was asked about exactly this pairing and is reported to have said they are two different days. What is agreed is that the length is not our length, and that arguing the arithmetic is not the point of either verse.\n\nAnd there is a mercy inside the number that is worth knowing. It is narrated that for the believer that Day will be made light — as short as the time between one prayer and the next. That narration is in the Musnad of Ahmad and is OUTSIDE the two Sahihs, so it is given here as that and not more.",
@@ -442,6 +448,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-first",
+      plain: "In plain words: the very first case opened between people is not money, not property, not who insulted whom. It is who took a life.\n\nAnd it is wider than murder. Scholars include everyone who had a hand in it — the one who ordered it, the one who helped, the one who stayed silent when a word from him would have stopped it.\n\nWhat to take from it: the things we treat as small — a fight that got out of hand, a rumour that got someone hurt, a road you drove badly on — sit at the FRONT of the queue, not the back. And the other half is the easy half: your own prayer is the first thing looked at, and if it is short, your voluntary prayers are used to fill the gap. That is not a threat. It is being told which two things to fix first.",
+      plainAr: "بكلامٍ بسيط: أوّل قضيّةٍ تُفتح بين الناس ليست مالًا، ولا أرضًا، ولا من شتم من. أوّل شيء: من أزهق روحًا.\n\nوالأمر أوسع من القتل المباشر. أهل العلم يُدخلون فيه كلّ من كان له يد: من أمر، ومن أعان، ومن سكت وكلمةٌ منه كانت تكفي.\n\nوالذي تأخذه من هذا: الأشياء التي نعدّها صغيرة — خصامٌ خرج عن حدّه، وكلامٌ تسبّب في أذى أحد، وقيادةُ سيّارةٍ بغير مبالاة — هذه في **أوّل** الدور لا في آخره. والنصف الثاني سهل: صلاتُك أوّل ما يُنظر فيه، وإن كان فيها نقص أُكمل من النوافل. وليس هذا تخويفًا، وإنما هو إخبارٌ لك بأيّ شيئين تبدأ.",
       h: "What you are asked FIRST — and there are two different firsts",
       hAr: "عمَّ تُسأل أوّلًا — وهما أوّلان لا أوّلٌ واحد",
       en: "This is one of the most useful things on this page, because two authentic reports both say “the first”, and they are not describing the same thing at all.\n\nTHE FIRST OF YOUR OWN DEEDS TO BE RECKONED IS THE PRAYER. If it is sound, the rest of the deeds go well; if it is ruined, the rest are ruined. The narration adds that when a shortfall is found in the obligatory prayers, Allah says: look whether My servant has any voluntary prayers — and the shortfall in the fard is completed from the nawafil. This is narrated by at-Tirmidhi, an-Nasa'i and Abu Dawud, and is OUTSIDE the two Sahihs. It is widely relied on and it is stated here as what it is.\n\nTHE FIRST MATTER JUDGED BETWEEN PEOPLE IS BLOODSHED. That one is in Sahih Muslim, from Ibn Mas'ud: the first thing decided among people on the Day of Judgment will pertain to blood.\n\nPut them side by side and the picture is exact. Between you and Allah, the first thing opened is your prayer. Between you and other people, the first thing opened is what you did to their lives. Neither report contradicts the other, and hearing only one of them leaves a person with half the answer.",
@@ -451,6 +459,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-sun",
+      plain: "In plain words: it is hot, everyone is standing, and everyone is sweating — but not the same amount. Some are sweating to the ankles, some to the knees, some are drowning in it.\n\nThe difference is not body size or where you are standing. It is what you did. Picture a crowded place on the hottest day you have known, with no shade and no water, and you will have the idea.",
+      plainAr: "بكلامٍ بسيط: الحرّ شديد، والناس واقفون، وكلّهم يعرقون — لكن ليس بالقدر نفسه. منهم من يبلغ العرقُ كعبيه، ومنهم ركبتيه، ومنهم من يغرق فيه.\n\nوالفرق ليس في حجم الجسم ولا في موضع وقوفك، وإنما في عملك. تخيّل مكانًا مزدحمًا في أشدّ يومٍ حرًّا مرّ بك، بلا ظلٍّ ولا ماء، تقترب من الصورة.",
       h: "The sun brought near, and the sweat",
       hAr: "دنوّ الشمس، والعرق",
       en: "The sun is brought near on that Day, and people sweat. The Prophet ﷺ said the sweat will reach up to the middle of the ears.\n\nAnd it is not the same for everyone. The narrations describe people differing in it according to their deeds — some to the ankles, some to the knees, some to the waist, and some whom the sweat bridles at the mouth. The same standing, and people are not in it equally.\n\nIt is at that point, in the same hadith, that people begin going from prophet to prophet asking for the standing to begin — which is the Great Intercession, stage 5 above.",
@@ -460,6 +470,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-bridge",
+      plain: "In plain words: there is a crossing, and underneath it is the Fire itself — not a drop, not darkness, the Fire.\n\nThe surface is slippery. And there are hooks along it that reach out and catch people. The Prophet ﷺ compared them to the thorns of a desert tree his companions knew by sight, then said their real size is known only to Allah.\n\nThe part that matters: the hooks catch people ACCORDING TO WHAT THEY DID. They are not random and they do not catch everyone. Three things happen — some cross safely, some get scratched and are let through, some do not get across.",
+      plainAr: "بكلامٍ بسيط: هناك جسرٌ يُعبَر، وتحته النار نفسها — لا هُوّة ولا ظلام، بل النار.\n\nوسطحه زلق. وعليه كلاليب تمتدّ فتخطف الناس. شبّهها النبيّ ﷺ بشوك شجرةٍ صحراويّةٍ كان أصحابه يعرفونها بأعينهم، ثم قال إنّ حجمها الحقيقيّ لا يعلمه إلا الله.\n\nوالمهمّ في الأمر: أنّ هذه الكلاليب تخطف الناس **بحسب أعمالهم**. فهي لا تُصيب اعتباطًا ولا تُصيب الجميع. والذي يقع ثلاثة: ناجٍ يعبر سالمًا، ومخدوشٌ يُترك فيمرّ، ومن لا يعبر.",
       h: "The Bridge — what is under it, and what reaches up for you",
       hAr: "الصراط — ما تحته، وما يمتدّ إليك منه",
       en: "The Bridge is laid across Hell. That is what is underneath: not a valley, not darkness — the Fire itself.\n\nThe Prophet ﷺ described the surface of it in one phrase: a place where feet slip. It is not level ground.\n\nAnd this answers the question directly — what reaches up to pull people off it. There are HOOKS on it, and he compared them to the thorns of the sa'dan, a thorny tree of Najd his companions knew by sight. He asked them: have you seen the thorns of the sa'dan? They said yes. He said: they are like them, except that how great they are in size is known to nobody but Allah. Another wording adds tongs and spits.\n\nThen the sentence that decides everything: these hooks snatch people ACCORDING TO THEIR DEEDS. They are not random and they are not indiscriminate. What a person carries across is what determines whether anything reaches him.\n\nAnd the outcomes are three, stated plainly: some pass and are saved, some are lacerated and then let go, and some are pushed into the Fire.",
@@ -469,6 +481,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-speeds",
+      plain: "In plain words: everyone crosses the same bridge, but not at the same speed — and the speed comes from what you brought with you.\n\nThe fastest cross before you finish blinking. Then like lightning, then like wind, then like a bird, then like a good horse at full run. Then walking. Then some crawl.\n\nSo it is one road and one distance, and the difference is entirely in the person. Think of the same street with one man on a motorbike and another dragging himself along it.",
+      plainAr: "بكلامٍ بسيط: الجميع يعبرون الجسر نفسه، لكن ليس بالسرعة نفسها — والسرعة من الذي حملتَه معك.\n\nأسرعهم يعبر قبل أن تُتمّ رمشة عينك. ثم كالبرق، ثم كالريح، ثم كالطير، ثم كالفرس الجواد في أشدّ جريه. ثم مشيًا. ثم منهم من يزحف.\n\nفالطريق واحد والمسافة واحدة، والفرق كلّه في الشخص نفسه. تخيّل شارعًا واحدًا، فيه رجلٌ على درّاجةٍ ناريّة وآخر يجرّ نفسه فيه جرًّا.",
       h: "How fast you cross — and it is by what you carried",
       hAr: "سرعة العبور — وهي على قدر ما حملتَ",
       en: "This is answered in Sahih Muslim in a single line, and the order is a descending scale:\n\n· in the twinkling of an eye\n· like lightning\n· like the wind\n· like a bird\n· like the finest horses and camels\n\nAnd then the ones who are not carried at all: those who go across scratched and released, and those who do not get across.\n\nThe scale is not arbitrary. The believers pass at the speed their deeds carry them, and the fastest of them cross before a person has finished blinking. In the same passage the Prophet ﷺ says that no one will plead more fiercely for anything than the believers will plead for their brothers left in the Fire, saying: our Lord, they used to fast with us, and pray, and make hajj.",
@@ -478,6 +492,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-first-across",
+      plain: "In plain words: our Prophet ﷺ goes first, and this ummah goes behind him.\n\nAnd on that bridge nobody is talking. Not one person — except the prophets, and all they are saying is two words, over and over: O Allah, keep them safe. That is what your prophet is doing while you cross.",
+      plainAr: "بكلامٍ بسيط: نبيّنا ﷺ يعبر أوّلًا، وهذه الأمّة خلفه.\n\nولا أحد يتكلّم على ذلك الجسر. ولا واحد — إلا الأنبياء، وكلُّ ما يقولونه كلمتان تتكرّران: اللهمّ سلِّم سلِّم. هذا ما يصنعه نبيُّك وأنت تعبر.",
       h: "Who crosses first — and the only words spoken",
       hAr: "من يعبر أوّلًا — والكلمة الوحيدة التي تُقال",
       en: "He said it about himself plainly: “I shall be the first among the Messengers to cross it, with my followers.”\n\nSo this ummah goes first, behind him.\n\nAnd then a detail that says more than a page of description could. On that Bridge nobody speaks — nobody at all — except the Messengers. And what the Messengers say is not a sermon. It is two words, repeated: Allahumma sallim, sallim. O Allah, keep them safe, keep them safe.\n\nThat is what the prophets are doing while their nations cross.",
@@ -487,6 +503,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-out",
+      plain: "In plain words: not everyone who falls stays there. People who believed in Allah alone are brought back out.\n\nAnd the way the angels recognise them is the mark of sujud — the place on the forehead that touched the ground. The Fire is not permitted to eat that one spot. Everything else of them burns; that mark stays, and it is what identifies them.\n\nThen water is poured over them and they grow back the way a seed grows after rain.",
+      plainAr: "بكلامٍ بسيط: ليس كلُّ من سقط يبقى هناك. فالذين كانوا يعبدون الله وحده يُخرجون.\n\nوالذي تعرفهم به الملائكة أثرُ السجود — الموضع من الجبهة الذي لامس الأرض. فالنار لا يُؤذن لها في هذا الموضع وحده. يحترق منهم كلُّ شيءٍ سواه، ويبقى ذلك الأثر، وبه يُعرفون.\n\nثم يُصبّ عليهم ماء فينبتون كما تنبت الحبّة بعد المطر.",
       h: "Brought back out of the Fire — recognised by one mark",
       hAr: "الإخراج من النار — ويُعرَفون بعلامةٍ واحدة",
       en: "Some of those who fall are not left there. When Allah intends mercy on whom He wills among the people of the Fire who worshipped none but Him, the angels are ordered to bring them out.\n\nAnd here is how the angels know them: by the traces of prostration. Allah has forbidden the Fire to consume the marks of sujud on the body of the son of Adam. The Fire eats everything else; that one place it is not permitted to touch. They come out as skeletons, and it is the mark on the forehead that identified them.\n\nThen the Water of Life is poured over them, and they grow the way a seed grows on the bank of a stream — the same agricultural image as the raising.",
@@ -496,6 +514,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-last-man",
+      plain: "In plain words: this is the story of the very last person to get into Paradise — the one at the absolute bottom.\n\nHe keeps asking for one small thing, promising not to ask again, then asking again. Anyone would expect him to be refused.\n\nInstead he keeps going until Allah SMILES at him — and then he is let in and told: wish for what you want. He wishes until he runs out of things to wish for, and is told: you get all of that, and the same again on top.\n\nThat is the LAST one in. Read it when you think you are too far gone.",
+      plainAr: "بكلامٍ بسيط: هذه قصّة آخر واحدٍ يدخل الجنّة — الذي في أسفل القائمة تمامًا.\n\nيسأل شيئًا صغيرًا ويعاهد ألّا يسأل غيره، ثم يسأل من جديد. وكلُّ أحدٍ يتوقّع أن يُردّ.\n\nفإذا به يمضي في السؤال حتى **يضحك الله** منه، فيُؤذن له بالدخول ويُقال له: تمنَّ. فيتمنّى حتى تنقطع أمانيه، فيُقال له: لك هذا ومثله معه.\n\nوهذا **آخرهم** دخولًا. اقرأها إذا ظننتَ أنّ أمرك قد فات.",
       h: "The last man to enter Paradise",
       hAr: "آخر أهل الجنّة دخولًا",
       en: "The hadith ends with one man left between Paradise and the Fire, and the exchange is worth reading in full because of how it ends.\n\nHe asks only to have his face turned away from the Fire. Allah says: if I do, will you ask for something else? He swears he will not. His face is turned away.\n\nThen he asks to be brought near the gate of Paradise. Allah says: did you not promise? Woe to you, son of Adam, how treacherous you are. He swears again. He is brought near.\n\nThen he sees what is inside, and stays silent as long as Allah wills — and then asks to enter. And he is reminded of his promise again.\n\nAnd then the line the whole hadith was built for: he keeps asking until ALLAH SMILES because of him, and when Allah smiles at him, He permits him to enter. And he is told: wish. And he wishes until he runs out of wishes — and is told: all of that, and the same again with it, is yours.\n\nThat is the LAST man in. The one at the very bottom of the list.",
@@ -505,6 +525,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-paradise",
+      plain: "In plain words: the first thing served in Paradise is a specific dish — the extra lobe of a fish's liver. Not a general description of a feast; a named thing.\n\nAnd what it is eaten with is the strange, beautiful part: the earth itself becomes one loaf of bread. The same ground everybody stood on all through that terrifying Day turns into the bread of the welcome meal.",
+      plainAr: "بكلامٍ بسيط: أوّل طعامٍ يُقدَّم في الجنّة شيءٌ معيَّن: زيادةُ كبد الحوت. ليس وصفًا عامًّا لمأدبة، بل شيءٌ مُسمًّى.\n\nوالعجيب الجميل هو ما يُؤكل به: الأرض نفسها تصير رغيفًا واحدًا. الأرض التي وقف عليها الناس ذلك اليوم المُخيف كلَّه تتحوّل إلى خبز طعام الاستقبال.",
       h: "The moment you enter — what is served first",
       hAr: "لحظة الدخول — وأوّل ما يُقدَّم",
       en: "Abdullah ibn Salam, a scholar of the Jews of Madinah, came to the Prophet ﷺ when he arrived and put three questions to him that he said only a prophet could answer. One of them was: what is the first meal the people of Paradise will eat?\n\nThe answer: the extra lobe of the fish liver. Not a description of a banquet — a specific thing, named.\n\nAnd in another hadith, what it is eaten with: the earth itself, on that Day, becomes a single loaf, turned over in the Hand of the Most Merciful the way one of you turns his loaf over when travelling — as the welcome-meal for the people of Paradise.\n\nSo the ground everyone was standing on through the whole of that Day becomes the bread of the first meal. Nothing on this page connects more tightly than that: the place of terror becomes the food of arrival.",
@@ -514,6 +536,8 @@ const JUDGEMENT_DETAIL = {
     },
     {
       id: "jd-first-sign",
+      plain: "In plain words: you asked which one comes first, and there is an honest answer and an honest complication.\n\nThe answer: a fire that drives people from east to west. The complication: another authentic report calls a fire from Yemen the LAST of the ten. Scholars said they may be the same fire, counted first in one sense and last in another.\n\nWhat you should take away: nobody can hand you a numbered timetable, and anybody who does is adding to what was said.",
+      plainAr: "بكلامٍ بسيط: سألتَ أيّها أوّلًا، وفي المسألة جوابٌ صريح وإشكالٌ صريح.\n\nالجواب: نارٌ تحشر الناس من المشرق إلى المغرب. والإشكال: أنّ حديثًا آخر صحيحًا يجعل نار اليمن **آخر** العشر. وقال أهل العلم قد تكونان نارًا واحدة، عُدّت أوّلًا باعتبارٍ وآخرًا باعتبار.\n\nوالذي تخرج به: أنّ أحدًا لا يستطيع أن يُعطيك جدولًا مرقّمًا، ومن فعل فقد زاد على ما قيل.",
       h: "Which sign comes first",
       hAr: "أيُّ العلامات أوّلًا",
       en: "You asked which of them happens first, and there is an authentic answer — in the same hadith of Abdullah ibn Salam's three questions.\n\nHis first question was: what is the first portent of the Hour? The Prophet ﷺ answered: a fire that will gather the people from the east to the west.\n\nNow the honest part. Compare that with the list of ten, where a fire coming out of Yemen driving people to their place of gathering is named as the LAST of them. The scholars discussed this, and the readings are: that they are the same fire, described as first of one series and last of another; or that “first portent” here means the first of the great signs in one respect while the Yemen fire is the last of them in another.\n\nWhat is certain is the text of both narrations. What is not settled is how exactly they line up, and this page does not pretend it is settled.",

@@ -4650,3 +4650,23 @@ html.lang-ar .rv-ar p {
   .tad-concept { padding: 14px 16px; }
   .tad-concept-line { font-size: 1.08rem; }
 }
+
+/* ---- "In plain words" — the ordinary-language box ----
+   Visually distinct from the sourced material above it so a reader can tell
+   at a glance that this is the explanation, not another citation. */
+.tad-plain {
+  background: #eef6fb;
+  border: 1px solid #cfe2ef;
+  border-inline-start: 4px solid #3f7ea6;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 12px 0;
+}
+.tad-plain-label {
+  font-weight: 700;
+  color: #235a78;
+  font-size: .93rem;
+  margin-bottom: 6px;
+}
+.tad-plain p { line-height: 1.95; margin: 0 0 10px; }
+.tad-plain p:last-child { margin-bottom: 0; }
