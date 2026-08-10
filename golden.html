@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608101058" />
+  <link rel="stylesheet" href="css/style.css?v=202608101148" />
 </head>
 <body>
 
@@ -135,6 +135,13 @@
     </div>
   </section>
 
+  <!-- ===== Before you are dazzled — both sides, and ourselves first ===== -->
+  <section id="mirror">
+    <div class="container">
+      <div id="mirrorBox"></div>
+    </div>
+  </section>
+
   <section id="closing">
     <div class="container">
       <div id="closingBox"></div>
@@ -192,13 +199,15 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608101058"></script>
-  <script src="js/golden.js?v=202608101058"></script>
+  <script src="js/data.js?v=202608101148"></script>
+  <script src="js/golden.js?v=202608101148"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
   <!-- Full lives of the figures, and the women comparison. -->
-  <script src="js/golden-lives.js?v=202608101058"></script>
-  <script src="js/golden-closing.js?v=202608101058"></script>
+  <script src="js/golden-lives.js?v=202608101148"></script>
+  <!-- Before you are dazzled: both sides, honestly. -->
+  <script src="js/golden-mirror.js?v=202608101148"></script>
+  <script src="js/golden-closing.js?v=202608101148"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -685,14 +694,43 @@
       box.innerHTML = h;
     }
 
+    /* The mirror. Deliberately renders the section about US in the same
+       card shape and at the same size as the section about them — a page
+       that criticised only outward would be the blind following it warns
+       against, pointed the other way. */
+    function renderGoldenMirror() {
+      const box = document.getElementById("mirrorBox");
+      if (!box || typeof GOLDEN_MIRROR === "undefined") return;
+      const d = GOLDEN_MIRROR;
+      let h = `<h2 class="section-title">🪞 <span class="en-only">${d.title}</span>
+        <span class="ar-only" dir="rtl">${d.titleAr}</span></h2>
+        <p class="section-sub"><span class="en-only">${d.lead}</span>
+        <span class="ar-only" dir="rtl">${d.leadAr}</span></p>`;
+      d.sections.forEach(s => {
+        const ours = (s.id === "gm-ourselves");
+        h += `<div class="${ours ? "tad-misread" : "tad-ayah"}" style="display:block;" id="${s.id}">
+          <div class="${ours ? "tad-misread-label" : "tad-ayah-head"}">${ours ? "⚠ " : ""}<span class="en-only">${s.h}</span>
+            <span class="ar-only" dir="rtl">${s.hAr}</span></div>
+          <div class="en-only">${paras(s.en)}</div>
+          <div class="ar-only" dir="rtl">${paras(s.ar)}</div>
+          ${s.src ? `<div class="tad-ref en-only" dir="auto">${s.src}</div>` : ""}
+          ${s.srcAr ? `<div class="tad-ref ar-only" dir="rtl">${s.srcAr}</div>` : ""}
+          ${glBadge(s.rank)}</div>`;
+      });
+      h += `<div class="tad-notice"><span class="en-only">${d.notice}</span>
+        <span class="ar-only" dir="rtl">${d.noticeAr}</span></div>`;
+      box.innerHTML = h;
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       renderGoldenLives();
       renderGoldenWomen();
+      renderGoldenMirror();
       if (window.applyI18n) window.applyI18n();
     });
   </script>
 
-  <script src="js/main.js?v=202608101058"></script>
-  <script src="js/i18n.js?v=202608101058"></script>
+  <script src="js/main.js?v=202608101148"></script>
+  <script src="js/i18n.js?v=202608101148"></script>
 </body>
 </html>
