@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608101044" />
+  <link rel="stylesheet" href="css/style.css?v=202608101058" />
 </head>
 <body>
 
@@ -121,6 +121,20 @@
        actually turns around. Written to be honest without contempt: the
        reader is far more likely to be a young Muslim who already feels
        behind than someone who needs telling off. -->
+  <!-- ===== Full lives — same shape as the prophets' full lives ===== -->
+  <section id="lives">
+    <div class="container">
+      <div id="livesBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== How women were treated, with dates on both sides ===== -->
+  <section class="pattern-bg" id="women">
+    <div class="container">
+      <div id="womenBox"></div>
+    </div>
+  </section>
+
   <section id="closing">
     <div class="container">
       <div id="closingBox"></div>
@@ -178,11 +192,13 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608101044"></script>
-  <script src="js/golden.js?v=202608101044"></script>
+  <script src="js/data.js?v=202608101058"></script>
+  <script src="js/golden.js?v=202608101058"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
-  <script src="js/golden-closing.js?v=202608101044"></script>
+  <!-- Full lives of the figures, and the women comparison. -->
+  <script src="js/golden-lives.js?v=202608101058"></script>
+  <script src="js/golden-closing.js?v=202608101058"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -588,7 +604,95 @@
     wireRepeatAudio();
     document.getElementById("goldSearch").addEventListener("input", renderFigures);
   </script>
-  <script src="js/main.js?v=202608101044"></script>
-  <script src="js/i18n.js?v=202608101044"></script>
+  <script>
+    /* ---------- Full lives, and the women comparison ----------
+       Same card language as the rest of the page. Every entry carries its
+       rank — his own book, his book plus the Latin translation, a later
+       historian, or popular-but-not-established — so a reader can tell what
+       kind of thing they are being told before they decide what to do with
+       it. That is the page's rule and these entries do not get an exception. */
+    const GL_RANK = {
+      work:    ["From his own surviving book", "من كتابه الباقي", "t-quran"],
+      latin:   ["His book, plus the Latin translation made from it", "كتابه وترجمته اللاتينية", "t-hadith"],
+      history: ["Reported by later historians", "خبرٌ عند المؤرّخين بعده", "t-tafsir"],
+      documented: ["Documented — statute, date or chain", "موثّق — نصٌّ أو تاريخٌ أو إسناد", "t-hadith"],
+      quran:   ["The Quran", "قرآن", "t-quran"],
+      hadith:  ["Hadith — with its number", "حديث — برقمه", "t-hadith"],
+      notestablished: ["NOT established — do not repeat it", "غير ثابت — لا يُردَّد", "t-ikhtilaf"]
+    };
+    function glBadge(k) {
+      const r = GL_RANK[k]; if (!r) return "";
+      return `<span class="tad-badge ${r[2]}"><span class="en-only">${r[0]}</span><span class="ar-only" dir="rtl">${r[1]}</span></span>`;
+    }
+
+    function renderGoldenLives() {
+      const box = document.getElementById("livesBox");
+      if (!box || typeof GOLDEN_LIVES === "undefined") return;
+      let h = `<h2 class="section-title">📖 <span class="en-only">Their full lives</span>
+        <span class="ar-only" dir="rtl">سِيَرُهم كاملة</span></h2>
+        <p class="section-sub"><span class="en-only">Born, died, the life actually lived, what he found, and what happened to it afterwards.</span>
+        <span class="ar-only" dir="rtl">المولد والوفاة، والحياة كما عاشها، وما اكتشفه، وما صار إليه بعده.</span></p>`;
+
+      Object.keys(GOLDEN_LIVES).forEach(id => {
+        const g = GOLDEN_LIVES[id];
+        h += `<div class="tad-ayah" style="display:block;" id="gl-${id}">
+          <div class="tad-ayah-head">
+            <span class="en-only">${g.name}${g.latin && g.latin !== "—" ? ` — known in Europe as <em>${g.latin}</em>` : ""}</span>
+            <span class="ar-only" dir="rtl">${g.nameAr}${g.latin && g.latin !== "—" ? ` — ويُعرف في أوروبا بـ<em>${g.latin}</em>` : ""}</span>
+          </div>
+          <div class="tad-ref" dir="auto"><span class="en-only">Born: ${g.born} &nbsp;·&nbsp; Died: ${g.died}</span>
+            <span class="ar-only" dir="rtl">وُلد: ${g.bornAr} &nbsp;·&nbsp; تُوفّي: ${g.diedAr}</span></div>
+
+          <div class="tad-word">
+            <div class="tad-instead-label"><span class="en-only">The life</span><span class="ar-only" dir="rtl">حياته</span></div>
+            <div class="en-only">${paras(g.life)}</div><div class="ar-only" dir="rtl">${paras(g.lifeAr)}</div></div>
+
+          <div class="tad-word">
+            <div class="tad-instead-label"><span class="en-only">What he found</span><span class="ar-only" dir="rtl">ما اكتشفه</span></div>
+            <div class="en-only">${paras(g.discovery)}</div><div class="ar-only" dir="rtl">${paras(g.discoveryAr)}</div></div>
+
+          <div class="tad-link">
+            <div class="tad-link-label">➜ <span class="en-only">What happened to it</span><span class="ar-only" dir="rtl">ما صار إليه</span></div>
+            <div class="en-only">${paras(g.after)}</div><div class="ar-only" dir="rtl">${paras(g.afterAr)}</div></div>
+
+          <div class="tad-ref en-only" dir="auto">${(g.sources || []).join(" &nbsp;·&nbsp; ")}</div>
+          <div class="tad-ref ar-only" dir="rtl">${(g.sourcesAr || []).join(" &nbsp;·&nbsp; ")}</div>
+          ${glBadge(g.rank)}</div>`;
+      });
+      box.innerHTML = h;
+    }
+
+    function renderGoldenWomen() {
+      const box = document.getElementById("womenBox");
+      if (!box || typeof GOLDEN_WOMEN === "undefined") return;
+      const d = GOLDEN_WOMEN;
+      let h = `<h2 class="section-title">⚖️ <span class="en-only">${d.title}</span>
+        <span class="ar-only" dir="rtl">${d.titleAr}</span></h2>
+        <p class="section-sub"><span class="en-only">${d.lead}</span>
+        <span class="ar-only" dir="rtl">${d.leadAr}</span></p>`;
+      d.points.forEach(pt => {
+        h += `<div class="tad-ayah" style="display:block;">
+          <div class="tad-ayah-head"><span class="en-only">${pt.h}</span><span class="ar-only" dir="rtl">${pt.hAr}</span></div>
+          <div class="en-only">${paras(pt.en)}</div><div class="ar-only" dir="rtl">${paras(pt.ar)}</div>
+          ${pt.ref ? `<div class="tad-ref" dir="auto">${pt.ref}</div>` : ""}
+          ${glBadge(pt.rank)}</div>`;
+      });
+      const nt = d.notTrue;
+      h += `<div class="tad-misread">
+        <div class="tad-misread-label">⚠ <span class="en-only">${nt.h}</span><span class="ar-only" dir="rtl">${nt.hAr}</span></div>
+        <div class="en-only">${paras(nt.en)}</div><div class="ar-only" dir="rtl">${paras(nt.ar)}</div>
+        ${glBadge(nt.rank)}</div>`;
+      box.innerHTML = h;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      renderGoldenLives();
+      renderGoldenWomen();
+      if (window.applyI18n) window.applyI18n();
+    });
+  </script>
+
+  <script src="js/main.js?v=202608101058"></script>
+  <script src="js/i18n.js?v=202608101058"></script>
 </body>
 </html>
