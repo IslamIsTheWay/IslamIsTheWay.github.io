@@ -705,6 +705,135 @@ const TADABBUR = {
     ]
   },
 
+
+  /* ==========================================================
+     THE MOST MISREAD VERSES
+     Chosen because a real, widespread misunderstanding exists —
+     not manufactured to make a point. Where a verse is used as a
+     weapon against Islam AND misused by extremists, both misuses
+     are named, because correcting only one is not honesty.
+     ========================================================== */
+
+  9: {
+    surahTitle: "At-Tawbah — and the verse quoted more dishonestly than any other",
+    surahTitleAr: "التوبة — والآية التي تُقتطع أكثر من كلّ آية",
+    partial: true,
+    surahWhy: [
+      { h: "One verse of this surah is covered", hAr: "المُتناوَل من هذه السورة آيةٌ واحدة",
+        en: "At-Tawbah is 129 verses. Verse 5 is here because it is the single most misquoted verse in the Quran, in two opposite directions at once.",
+        ar: "التوبة تسعٌ وعشرون ومئة آية. وأُدرجت الخامسة لأنها أكثر آيةٍ في القرآن اقتطاعًا، وفي جهتين متضادّتين معًا.",
+        ref: "", strength: "note" }
+    ],
+    ayat: [
+      {
+        n: 5,
+        ar: "فَإِذَا ٱنسَلَخَ ٱلْأَشْهُرُ ٱلْحُرُمُ فَٱقْتُلُوا۟ ٱلْمُشْرِكِينَ حَيْثُ وَجَدتُّمُوهُمْ",
+        why: "This is what gets quoted — and it is quoted with the first half of the sentence cut off and the second half cut off.\n\nWhat comes BEFORE: “when the sacred months have passed.” This is not a general instruction; it is the end of a stated notice period, given to specific tribes who had signed a treaty and broken it. The surah says so a few verses earlier.\n\nWhat comes in the SAME verse, after: “but if they repent, establish the prayer and give zakat, then let them go on their way.” The verse itself names the exit.",
+        whyAr: "هذا هو المقتطَع — ويُقتطع وقد حُذف صدرُ الجملة وحُذف عجزُها.\n\nأمّا ما قبله: ﴿فَإِذَا ٱنسَلَخَ ٱلْأَشْهُرُ ٱلْحُرُمُ﴾. فليس أمرًا عامًّا، وإنما هو انقضاء مهلةٍ مضروبةٍ لقبائل بأعيانها عاهدت فنقضت، وقد نصّت السورة على ذلك قبله بآيات.\n\nوأمّا ما في الآية **نفسها** بعده: ﴿فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَخَلُّوا۟ سَبِيلَهُمْ﴾. فالآية ذكرت المخرج بنفسها.",
+        misunderstood: "MISUSED IN TWO OPPOSITE DIRECTIONS, and both need naming.\n\nThe first: people hostile to Islam quote the middle of the verse alone, as proof the Quran commands killing non-Muslims on sight.\n\nThe second, and this one is worse because it comes from inside: extremists quote exactly the same fragment, in exactly the same way, to authorise exactly what the first group accuses us of. They are reading it identically. The only difference is one is accusing and the other is agreeing.\n\nWHAT SETTLES IT is the verse immediately after, verse 6, and almost nobody who quotes verse 5 ever reads it: “And if any one of the polytheists seeks your protection, then grant him protection so that he may hear the words of Allah. Then deliver him to his place of safety.”\n\nRead them in order. Verse 5 ends a war with treaty-breakers. Verse 6 says that if one of those very people asks you for safety, you must protect him, let him hear the Quran, and then personally escort him somewhere safe. That is not a footnote — it is the next sentence.\n\nA rule you can carry: any verse about fighting in the Quran sits inside a passage that names who, why, and when it stops. If someone hands you the middle of one, they have removed the parts that answer those three questions.",
+        misunderstoodAr: "تُساء في جهتين متضادّتين، ولا بدّ من تسميتهما معًا.\n\nالأولى: أن ينقل المناوئون للإسلام وسط الآية وحده، دليلًا على أنّ القرآن يأمر بقتل غير المسلمين حيثما وُجدوا.\n\nوالثانية، وهي أسوأ لأنها من الداخل: أن ينقل الغلاة **المقطع نفسه بعينه** وعلى الوجه نفسه، ليُبيحوا ما يتّهمنا به الأوّلون. فقراءتهم واحدة، وإنما الفرق أنّ أحدهما يتّهم والآخر يُوافق.\n\nوالذي يحسم الأمر هو الآية التي تليها مباشرة، ولا يكاد يقرؤها أحدٌ ممّن ينقل الخامسة: ﴿وَإِنْ أَحَدٌۭ مِّنَ ٱلْمُشْرِكِينَ ٱسْتَجَارَكَ فَأَجِرْهُ حَتَّىٰ يَسْمَعَ كَلَٰمَ ٱللَّهِ ثُمَّ أَبْلِغْهُ مَأْمَنَهُۥ﴾.\n\nاقرأهما على الترتيب: الخامسة تُنهي حربًا مع ناقضي عهد. والسادسة تقول إنّ واحدًا من أولئك أنفسهم إذا استجارك وجب أن تُجيره، وأن تُسمعه القرآن، ثم أن **تُبلغه مأمنه** بنفسك. وليس هذا هامشًا، بل هو الجملة التالية.\n\nوقاعدةٌ تحملها معك: كلُّ آية قتالٍ في القرآن واقعةٌ في سياقٍ يُسمّي مَن، ولماذا، ومتى يتوقّف. فمن ناولك وسطها فقد نزع الأجزاء التي تُجيب عن هذه الثلاثة.",
+        plain: "In plain words: this verse is about the end of a specific war with specific tribes who signed a treaty and broke it, after a notice period ran out.\n\nAnd the very next sentence says: if one of those same people comes to you asking for safety, protect him, let him hear the Quran, and then walk him to somewhere safe yourself.\n\nWhoever hands you the middle of verse 5 and stops has hidden verse 6 from you. Ask them to read the next line.",
+        plainAr: "بكلامٍ بسيط: هذه الآية في نهاية حربٍ معيّنة مع قبائل معيّنة عاهدت فنقضت، بعد انقضاء مهلةٍ مضروبة.\n\nوالجملة التي تليها مباشرة تقول: إذا جاءك واحدٌ من أولئك أنفسهم يطلب الأمان، فأجِره، وأسمِعه القرآن، ثم أوصِله بنفسك إلى مكانٍ آمن.\n\nفمن ناولك وسط الآية الخامسة ووقف، فقد أخفى عنك السادسة. اطلب منه أن يقرأ السطر التالي."
+      }
+    ]
+  },
+
+  70: {
+    surahTitle: "Al-Ma'arij — and why the Quran keeps describing you badly",
+    surahTitleAr: "المعارج — ولماذا يصف القرآن الإنسان بالسوء",
+    partial: true,
+    surahWhy: [
+      { h: "One verse, because of the question it answers", hAr: "آيةٌ واحدة، لأجل السؤال الذي تُجيبه",
+        en: "Verse 19 is here because of a question many readers have and few ask aloud: why does the Quran seem to speak about the human being so negatively?",
+        ar: "أُدرجت التاسعة عشرة لأجل سؤالٍ يدور في نفوس كثيرٍ من القرّاء ولا يكاد يُنطق به: لِمَ يبدو القرآن قاسيًا في وصف الإنسان؟",
+        ref: "", strength: "note" }
+    ],
+    ayat: [
+      {
+        n: 19,
+        ar: "إِنَّ ٱلْإِنسَٰنَ خُلِقَ هَلُوعًا • إِذَا مَسَّهُ ٱلشَّرُّ جَزُوعًۭا • وَإِذَا مَسَّهُ ٱلْخَيْرُ مَنُوعًا",
+        why: "Halu' is defined by the two verses after it, so the Quran does not leave you guessing: when bad touches him, he panics; when good touches him, he withholds it.\n\nThat is a precise description of a person, not an insult. Everyone has watched themselves do both.",
+        whyAr: "فُسّر «الهلوع» بالآيتين بعده، فلم يترك القرآن الأمر للحدس: ﴿إِذَا مَسَّهُ ٱلشَّرُّ جَزُوعًۭا • وَإِذَا مَسَّهُ ٱلْخَيْرُ مَنُوعًا﴾.\n\nوهذا وصفٌ دقيقٌ لحال الإنسان لا شتيمةٌ له. وكلُّ أحدٍ قد رأى نفسه يصنع الأمرين.",
+        misunderstood: "THE QUESTION PEOPLE ACTUALLY HAVE: why is the human being always described badly in the Quran — weak, panicking, withholding, unjust, ignorant? Where is the encouragement?\n\nTHE ANSWER IS IN THE STRUCTURE, and it is the same every single time.\n\nLook at what follows this one: “EXCEPT those who pray.” The description is not a verdict — it is a starting position, and the next word is the way out.\n\nIt happens everywhere:\n· “Man was created weak” (4:28) — and the sentence BEGINS “Allah wishes to lighten for you”\n· “Indeed he was unjust and ignorant” (33:72) — said of the one who accepted a trust the heavens and mountains refused\n· “Man is in loss” (103:2) — “EXCEPT those who believe and do righteous deeds”\n· “We created man in the best of forms, then reduced him to the lowest” (95:4-5) — “EXCEPT those who believe”\n\nSo the pattern is: here is what you are by default, and here is the exception — and you are being handed the exception.\n\nAND THE COUNTERWEIGHT IS NOT SMALL. The same Book says We honoured the children of Adam (17:70), taught Adam all the names while the angels had none (2:31), made him a khalifah, and had the angels prostrate to him. Nobody who reads only the harsh verses has read the Quran on the human being; nobody who reads only the honouring ones has either.\n\nWHY IT IS DONE THIS WAY: a description that flattered you would not move you. The verse names the exact fault you can feel in yourself — panic in hardship, tightness in ease — and then, in the next breath, tells you which door is open.",
+        misunderstoodAr: "السؤال الذي يدور في النفوس: لِمَ يُوصَف الإنسان في القرآن بالسوء دائمًا — ضعيفًا، جزوعًا، منوعًا، ظلومًا، جهولًا؟ وأين التشجيع؟\n\nوالجواب في البناء نفسه، وهو مطّردٌ في كلّ موضع.\n\nانظر ما الذي أعقب هذه الآية: ﴿إِلَّا ٱلْمُصَلِّينَ﴾. فالوصف ليس حكمًا نهائيًّا، وإنما هو نقطة البداية، والكلمة التالية له هي المخرج.\n\nوهكذا في كلّ موضع:\n· ﴿وَخُلِقَ ٱلْإِنسَٰنُ ضَعِيفًۭا﴾ — والجملة **تبدأ** بـ﴿يُرِيدُ ٱللَّهُ أَن يُخَفِّفَ عَنكُمْ﴾\n· ﴿إِنَّهُۥ كَانَ ظَلُومًۭا جَهُولًۭا﴾ — قيلت في الذي حمل أمانةً أبتها السماوات والجبال\n· ﴿إِنَّ ٱلْإِنسَٰنَ لَفِى خُسْرٍ﴾ — ﴿**إِلَّا** ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ﴾\n· ﴿لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِىٓ أَحْسَنِ تَقْوِيمٍۢ • ثُمَّ رَدَدْنَٰهُ أَسْفَلَ سَٰفِلِينَ﴾ — ﴿**إِلَّا** ٱلَّذِينَ ءَامَنُوا۟﴾\n\nفالنسق: هذا حالك إن تُركت، وهذا الاستثناء — وأنت تُناوَل الاستثناء.\n\nوالكِفّة المقابلة ليست يسيرة: فالكتاب نفسه يقول ﴿وَلَقَدْ كَرَّمْنَا بَنِىٓ ءَادَمَ﴾، وعلّم آدم الأسماء كلّها ولا علم للملائكة، وجعله خليفة، وأمر الملائكة بالسجود له. فمن قرأ آيات الذمّ وحدها لم يقرأ القرآن في الإنسان، ومن قرأ آيات التكريم وحدها فكذلك.\n\nولِمَ جاء على هذا الوجه؟ لأنّ وصفًا يُطريك لا يُحرّكك. فتُسمّي الآيةُ العيب الذي تجده في نفسك بعينه — جزعٌ عند الشدّة وإمساكٌ عند السَّعة — ثم تدلّك في النفَس نفسه على الباب المفتوح.",
+        plain: "In plain words: you have probably wondered why the Quran talks about people so harshly. Weak. Panicking. Stingy. Unjust.\n\nHere is the thing to notice, and once you see it you will see it everywhere: the harsh description is almost never the end of the sentence. Look at what comes right after this one — “EXCEPT those who pray.”\n\nIt is the same in Al-Asr: everyone is in loss — except. And in At-Tin: we made him in the best form, then brought him low — except.\n\nSo it is not an insult. It is a diagnosis followed immediately by the treatment. And the same Book says He honoured the children of Adam and taught the first man what the angels did not know. Both halves are there; most people have only been shown one.",
+        plainAr: "بكلامٍ بسيط: لعلّك تساءلتَ لِمَ يتكلّم القرآن عن الناس بهذه الشدّة: ضعيف، جزوع، منوع، ظلوم.\n\nوهذا ما ينبغي أن تنتبه له، وإذا رأيتَه رأيتَه في كلّ مكان: الوصف الشديد لا يكاد يكون آخر الجملة. انظر ما الذي جاء بعد هذه مباشرة: ﴿**إِلَّا** ٱلْمُصَلِّينَ﴾.\n\nوكذلك في العصر: الناس كلّهم في خسر — **إلا**. وفي التين: خلقناه في أحسن تقويم ثم رددناه أسفل سافلين — **إلا**.\n\nفليس هذا سبًّا، وإنما هو تشخيصٌ يعقبه العلاج في الحال. والكتاب نفسه يقول إنه كرّم بني آدم، وعلّم أوّل إنسانٍ ما لم تعلمه الملائكة. فالكِفّتان موجودتان، وأكثر الناس لم يُعرض عليهم إلا واحدة."
+      }
+    ]
+  },
+
+  13: {
+    surahTitle: "Ar-Ra'd — the verse everyone quotes and few finish",
+    surahTitleAr: "الرعد — الآية التي يستشهد بها الجميع ويُتمّها القليل",
+    partial: true,
+    surahWhy: [
+      { h: "One verse", hAr: "آيةٌ واحدة",
+        en: "Verse 11 carries the sentence most quoted in speeches about change — and it is usually cut in half.",
+        ar: "في الآية الحادية عشرة الجملةُ التي يُستشهد بها في كلّ حديثٍ عن التغيير، وهي تُقتطع عادةً من نصفها.",
+        ref: "", strength: "note" }
+    ],
+    ayat: [
+      {
+        n: 11,
+        ar: "إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ",
+        why: "Note what the verse makes conditional. It does not say Allah will change your state IF you work hard. It says He does not change what is WITH a people until they change what is IN THEMSELVES — anfusihim, their own selves, not their circumstances.\n\nThe inner thing comes first. The outward change follows it.",
+        whyAr: "تأمّل ما الذي عُلّق في الآية: لم تقل إنّ الله يُغيّر حالك إن اجتهدت، وإنما قالت إنه لا يُغيّر ما **بقوم** حتى يُغيّروا ما **بأنفسهم** — أنفسهم هم، لا ظروفهم.\n\nفالباطن أوّلًا، والتغيّر الظاهر تابعٌ له.",
+        misunderstood: "HOW IT IS USUALLY USED: as a motivational line. Work harder and Allah will improve your situation. It appears on posters and in speeches, always as the first half only.\n\nWHAT IS MISSING: two things.\n\nFirst, the verse is about what is inside people — anfusihim — not their effort or their plans. The change being asked for is in what a people ARE: their honesty, their seriousness, what they tolerate among themselves. Not a productivity method.\n\nSecond, and this is the half almost never quoted: the verse continues, “and when Allah intends for a people a harm, there is no repelling it.” The same sentence that puts change in your hands also states plainly that the outcome is not in your hands. Both halves are one verse.\n\nSo it is not a formula where effort guarantees a result. It is: the inner change is your responsibility, and the outcome remains Allah's. Quoting only the first half turns a verse about accountability into a verse about self-help.",
+        misunderstoodAr: "كيف تُستعمل عادةً: جملةً تحفيزيّة — اجتهد يُحسّن اللهُ حالك. تُكتب على اللافتات وتُقال في الخطب، ولا يُنقل منها إلا شطرها الأوّل.\n\nوالذي سقط أمران:\n\nالأوّل: أنّ الآية في **الأنفس** لا في الجهد ولا في الخطط. فالتغيير المطلوب في **ما هم عليه**: صدقهم، وجدّهم، وما يرضونه بينهم. لا في أسلوب إنتاج.\n\nوالثاني، وهو الشطر الذي لا يكاد يُنقل: أنّ الآية تُتِمّ ﴿وَإِذَآ أَرَادَ ٱللَّهُ بِقَوْمٍۢ سُوٓءًۭا فَلَا مَرَدَّ لَهُۥ﴾. فالجملة التي جعلت التغيير بيدك هي نفسها التي تنصّ على أنّ المآل ليس بيدك. والشطران آيةٌ واحدة.\n\nفليست معادلةً يضمن فيها الجهدُ النتيجة، وإنما هي: التغيير الباطن مسؤوليّتك، والمآل لله. ومن نقل الشطر الأوّل وحده حوّل آيةَ مسؤوليّةٍ إلى آيةِ تطوير ذات.",
+        plain: "In plain words: this is the verse everyone quotes about change — and almost everyone stops halfway.\n\nWhat it actually says is that the change has to happen in what people ARE, not in what they are doing or planning. Their honesty, their seriousness, what they let pass among themselves.\n\nAnd the second half, which you rarely hear: when Allah intends harm for a people, nothing turns it back. So it is not a guarantee that effort produces results. It is: the inside is your job, the outcome is His.",
+        plainAr: "بكلامٍ بسيط: هذه الآية التي يستشهد بها الجميع في التغيير — ويقف أكثرهم في منتصفها.\n\nوالذي تقوله حقًّا أنّ التغيير يقع فيما **هم عليه**، لا فيما يفعلون أو يُخطّطون: في صدقهم، وجدّهم، وما يسكتون عنه بينهم.\n\nوالشطر الثاني الذي قلّ أن تسمعه: إذا أراد الله بقومٍ سوءًا فلا رادّ له. فليست ضمانًا أنّ الجهد يُثمر، وإنما هي: الباطن عملك، والمآل إليه."
+      }
+    ]
+  },
+
+  51: {
+    surahTitle: "Adh-Dhariyat — the verse that made people think life is only ritual",
+    surahTitleAr: "الذاريات — الآية التي ظنّ الناس بها أنّ الحياة عبادةٌ فقط",
+    partial: true,
+    surahWhy: [
+      { h: "One verse", hAr: "آيةٌ واحدة",
+        en: "Verse 56 is one of the most quoted in the Quran, and one of the most narrowly understood.",
+        ar: "الآية السادسة والخمسون من أكثر آي القرآن استشهادًا، ومن أضيقها فهمًا عند الناس.",
+        ref: "", strength: "note" }
+    ],
+    ayat: [
+      {
+        n: 56,
+        ar: "وَمَا خَلَقْتُ ٱلْجِنَّ وَٱلْإِنسَ إِلَّا لِيَعْبُدُونِ",
+        why: "The word is 'ibadah, and its root in Arabic is submission — a path is called mu'abbad when it has been made smooth by being walked on. To worship is to make your whole way conform.\n\nSo it is not a statement about how many hours you should spend in the mosque. It is a statement about who you are aligned to, in everything.",
+        whyAr: "اللفظ «العبادة»، وأصلها في العربية التذلّل والانقياد، ومنه قيل: طريقٌ مُعبَّد، أي ذُلّل بالوطء. فالعبادة أن يجري أمرك كلّه على مقتضى ذلك.\n\nفليست خبرًا عن عدد الساعات في المسجد، وإنما خبرٌ عمّن تنقاد له في كلّ شيء.",
+        misunderstood: "HOW IT IS OFTEN READ: that we were created only to pray, fast and make dhikr — so work, study, family and everything else are a distraction from the real purpose, at best tolerated.\n\nThat reading produces two broken people. One feels permanently guilty that his day is full of work rather than worship. The other concludes that the religion is not liveable and quietly gives up.\n\nWHAT 'IBADAH ACTUALLY COVERS, from the Prophet ﷺ himself:\n· He said that what a man spends on his family is a sadaqah\n· He said removing something harmful from the road is a branch of faith\n· He said that in the intimacy a man has with his wife there is a sadaqah — and when the companions were astonished, he answered: if he had put it somewhere forbidden it would have been a sin, so it is a reward when he puts it lawfully\n\nSo the verse is not shrinking your life down to rituals. It is expanding worship out to cover your life — every ordinary act becomes worship the moment it is done for Him and within His limits.\n\nWhich makes the verse the opposite of a burden. Almost nothing you do in a day has to be wasted.",
+        misunderstoodAr: "كيف تُقرأ كثيرًا: أنّنا لم نُخلق إلا للصلاة والصيام والذكر، فالعمل والدراسة والأهل وسائر ذلك صوارفُ عن المقصود، يُحتمل احتمالًا.\n\nوهذه القراءة تُخرج رجلين معطوبين: أحدهما في تأنيبٍ دائمٍ لأنّ نهاره عملٌ لا عبادة، والآخر ينتهي إلى أنّ الدين لا يُعاش فيترك في صمت.\n\nوما الذي تشمله العبادة، من قوله ﷺ نفسه:\n· أنّ ما يُنفقه الرجل على أهله صدقة\n· وأنّ إماطة الأذى عن الطريق شعبةٌ من الإيمان\n· وأنّ في بُضع أحدكم صدقة — فلمّا عجب الصحابة قال: أرأيتم لو وضعها في حرامٍ أكان عليه وزر؟ فكذلك إذا وضعها في الحلال كان له أجر\n\nفليست الآية تضييقًا لحياتك في شعائر، وإنما هي توسيعٌ للعبادة حتى تشمل حياتك: فيصير كلُّ عملٍ عاديٍّ عبادةً متى وقع له وفي حدوده.\n\nوبهذا تكون الآية عكس الكُلفة: إذ لا يكاد يضيع من يومك شيء.",
+        plain: "In plain words: many people read this and think life is supposed to be prayer and fasting, and everything else — job, study, family — is time stolen from the real thing. That leaves a person either permanently guilty or quietly giving up.\n\nBut the Prophet ﷺ called what a man spends on his family a charity. He called moving something dangerous off the road part of faith. He even told the companions that a man being with his wife is rewarded — and when they were surprised, he asked: if he had done it unlawfully, would it be a sin? Then it is a reward done lawfully.\n\nSo the verse is not shrinking your life into the mosque. It is turning your ordinary day into worship — as long as it is done for Him and inside His limits.",
+        plainAr: "بكلامٍ بسيط: يقرأ كثيرون هذه الآية فيظنّون أنّ الحياة صلاةٌ وصيام، وأنّ ما سواها — العمل والدراسة والأهل — وقتٌ مسروقٌ من المقصود. فيبقى المرء إمّا في تأنيبٍ دائم وإمّا تاركًا في صمت.\n\nوقد سمّى النبيّ ﷺ ما يُنفقه الرجل على أهله صدقة، وسمّى إماطة الأذى عن الطريق شعبةً من الإيمان، بل أخبر أنّ في بُضع أحدنا صدقة — فلمّا عجبوا سألهم: أرأيتم لو وضعها في حرامٍ أكان عليه وزر؟ فكذلك في الحلال له أجر.\n\nفالآية لا تُضيّق حياتك في المسجد، وإنما تُحوّل يومك العاديّ إلى عبادة، ما دام لله وفي حدوده."
+      }
+    ]
+  },
+
+  17: {
+    surahTitle: "Al-Isra — and a command about what leads there, not only what it is",
+    surahTitleAr: "الإسراء — ونهيٌ عن الطريق لا عن الغاية وحدها",
+    partial: true,
+    surahWhy: [
+      { h: "One verse", hAr: "آيةٌ واحدة",
+        en: "Verse 32 is chosen for a single word that changes what is being forbidden.",
+        ar: "أُدرجت الثانية والثلاثون لأجل كلمةٍ واحدةٍ تُغيّر المنهيَّ عنه.",
+        ref: "", strength: "note" }
+    ],
+    ayat: [
+      {
+        n: 32,
+        ar: "وَلَا تَقْرَبُوا۟ ٱلزِّنَىٰٓ ۖ إِنَّهُۥ كَانَ فَٰحِشَةًۭ وَسَآءَ سَبِيلًۭا",
+        why: "It does not say “do not commit”. It says do not COME NEAR.\n\nAnd then it does not call it a sin only — it calls it sa'a sabila, an evil WAY. A way is something you travel along, with steps before the destination.",
+        whyAr: "لم تقل «لا تفعلوا»، بل قالت **لا تقربوا**.\n\nثم لم تُسمّه ذنبًا فقط، بل قالت ﴿وَسَآءَ سَبِيلًۭا﴾، والسبيل طريقٌ يُسلَك، وله خطواتٌ قبل الغاية.",
+        misunderstood: "THE COMMON READING: the verse forbids one act, so anything short of that act is fine.\n\nWHY THE WORDING REFUSES THAT: Arabic had a plain way to say do not do it. The Quran chose do not approach it — and the difference is the whole ruling. What is forbidden is the road, not only the arrival.\n\nAnd the end of the verse says the same thing again: it is an evil WAY. Nobody arrives anywhere without travelling; the verse forbids the travelling.\n\nWHERE THIS IS ALSO MISUSED, in the other direction: as licence to police and shame people, especially the young. The verse is addressed to YOU about YOUR steps. It is guidance for a person walking, not a warrant to inspect others — and the same surah that contains it is the one that says We honoured the children of Adam.\n\nThe practical reading, and the one the scholars draw: this is a mercy, not a tightening. Being told to stop early is easier than being told to stop at the edge. Anyone who has tried to stop at the edge knows why.",
+        misunderstoodAr: "القراءة الشائعة: أنّ الآية تنهى عن فعلٍ واحد، فما دونه لا بأس به.\n\nولِمَ يأبى اللفظ ذلك: كان في العربية أن يُقال «لا تفعلوا»، فاختار القرآن **لا تقربوا** — وفي الفرق الحكم كلّه: فالمنهيّ عنه الطريق لا الوصول وحده.\n\nوخاتمة الآية تُعيد المعنى: ﴿وَسَآءَ سَبِيلًۭا﴾. ولا يصل أحدٌ إلى موضعٍ إلا بسير، والآية تنهى عن السير.\n\nوموضع إساءةٍ أخرى في الجهة المقابلة: أن تُتّخذ سوطًا لتتبّع الناس وفضحهم، ولا سيّما الشباب. والآية خطابٌ **لك** عن **خطواتك** أنت. فهي هدًى لسائرٍ لا إذنٌ بتفتيش الناس — والسورة التي فيها هي السورة التي فيها ﴿وَلَقَدْ كَرَّمْنَا بَنِىٓ ءَادَمَ﴾.\n\nوالقراءة العمليّة التي يستخرجها أهل العلم: أنّ هذا رحمةٌ لا تشديد. فأن يُقال لك قِف مبكّرًا أيسر من أن يُقال لك قِف على الحافّة. ومن حاول الوقوف على الحافّة يعرف لِمَ.",
+        plain: "In plain words: the verse does not say do not do it. It says do not go near it — and then calls it a bad ROAD, not just a bad act.\n\nThat is deliberate. A road has steps on it long before the end, and those steps are what is being forbidden.\n\nAnd it is talking to you about your own feet. It is not a licence to chase other people, especially the young — the same surah says Allah honoured the children of Adam. Being told to stop early is a mercy: stopping at the edge is much harder, as anyone who has tried it knows.",
+        plainAr: "بكلامٍ بسيط: لم تقل الآية «لا تفعلوه»، بل قالت **لا تقتربوا منه** — ثم سمّته **طريقًا** سيّئًا لا فعلًا سيّئًا فحسب.\n\nوهذا مقصود: فالطريق فيه خطواتٌ قبل نهايته بكثير، وتلك الخطوات هي المنهيّ عنها.\n\nوهي تخاطبك عن **قدميك أنت**، وليست إذنًا بملاحقة الناس ولا سيّما الشباب — والسورة نفسها فيها ﴿وَلَقَدْ كَرَّمْنَا بَنِىٓ ءَادَمَ﴾. وأن يُقال لك قِف مبكّرًا رحمة، فالوقوف على الحافّة أشقّ بكثير، ومن جرّبه عرف."
+      }
+    ]
+  },
+
   /* ==========================================================
      103 — AL-ASR
      ========================================================== */
