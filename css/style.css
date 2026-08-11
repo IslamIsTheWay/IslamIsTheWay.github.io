@@ -4692,3 +4692,19 @@ html.lang-ar .rv-ar p {
 }
 .tad-misread p { line-height: 1.95; margin: 0 0 10px; }
 .tad-misread p:last-child { margin-bottom: 0; }
+
+/* ---- Part headers in the mirror section ----
+   The sections used to run as one undifferentiated stack of cards. These
+   break the argument into its six movements so a reader can see the shape. */
+.gm-part {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  background: linear-gradient(90deg, var(--green-light) 0%, rgba(255,255,255,0) 100%);
+  border-inline-start: 5px solid var(--green);
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 34px 0 16px;
+}
+.gm-part:first-child { margin-top: 8px; }
+@media (max-width: 640px) { .gm-part { font-size: 1.1rem; padding: 10px 14px; } }
