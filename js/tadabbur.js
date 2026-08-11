@@ -1038,6 +1038,302 @@ const TADABBUR = {
     ]
   },
 
+  52: {
+    surahTitle: "What he was given instead of relief",
+    surahTitleAr: "ما أُعطيه بدلًا من الفرج",
+    partial: true,
+    ayat: [
+      {
+        n: 48,
+        ar: "وَٱصْبِرْ لِحُكْمِ رَبِّكَ فَإِنَّكَ بِأَعْيُنِنَا ۖ وَسَبِّحْ بِحَمْدِ رَبِّكَ حِينَ تَقُومُ",
+        why: "He is told to be patient, and then given a reason — and notice that the reason is not that it will end soon, and not that the enemy will be dealt with. The reason is FA-INNAKA BI-A'YUNINA: you are in Our eyes.\n\nWhat is offered is being seen. Not rescue, not a timetable. And that is the thing a person under pressure actually breaks for — not the difficulty itself but the sense that it is unwitnessed, that he is enduring it in private and nobody is counting. The verse removes exactly that.\n\nThen the instruction attached: glorify your Lord WHEN YOU ARISE. The patience is not passive waiting; it is given something to do at the moment of getting up, which is when the weight of a hard situation lands first.",
+        whyAr: "أُمر بالصبر، ثم عُلّل — وانظر أنّ العلّة ليست قربَ الفرج ولا أنّ العدوّ سيُكفى، وإنما ﴿فَإِنَّكَ بِأَعْيُنِنَا﴾.\n\nفالمعروضُ أن تكون **مرئيًّا**. لا نجاةً ولا موعدًا. وهذا هو الذي ينكسر لأجله المكروب حقًّا: لا شدّةُ الأمر نفسها، وإنما إحساسُه أنه يحتمله وحده وأنّ أحدًا لا يُحصي. فرفعت الآيةُ هذا بعينه.\n\nثم الأمرُ الملحق: ﴿وَسَبِّحْ بِحَمْدِ رَبِّكَ **حِينَ تَقُومُ**﴾. فليس الصبرُ انتظارًا ساكنًا، وإنما جُعل له عملٌ عند القيام، وهو الوقت الذي يقع فيه ثِقَلُ الحال أوّلَ ما يقع.",
+        ref: "Surah At-Tur (52:48)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  53: {
+    surahTitle: "What actually belongs to a person",
+    surahTitleAr: "ما الذي يملكه المرء حقًّا",
+    partial: true,
+    ayat: [
+      {
+        n: 39,
+        ar: "وَأَن لَّيْسَ لِلْإِنسَٰنِ إِلَّا مَا سَعَىٰ",
+        why: "The word is SA'A — striving, exertion, walking hard towards something. Not what he intended, not what he wished, not what he was born into. What he moved for.\n\nAnd it is preceded, one verse earlier, by the rule that no bearer of burdens carries another's. The two together dismantle inheritance in both directions: you do not carry your father's sin, and you do not live off his merit. The surah that opens by settling where revelation came from closes by settling what a person actually owns.\n\nThe scholars discussed the apparent tension with what reaches a person from others — the child's supplication, a charity that continues, a debt paid on their behalf — and the reconciliation offered is that these are themselves the fruit of the person's own sa'y: he raised the child, he set up the endowment. What arrives is still traceable to something he moved for.",
+        whyAr: "اللفظ ﴿سَعَىٰ﴾: السعيُ والكدُّ والمشيُ الحثيث إلى الشيء. لا ما نوى، ولا ما تمنّى، ولا ما وُلد فيه. بل ما **تحرّك** له.\n\nوقد سبقته بآيةٍ قاعدةُ ﴿أَلَّا تَزِرُ وَازِرَةٌۭ وِزْرَ أُخْرَىٰ﴾. وهما معًا يهدمان التوارثَ في الجهتين: لا تحمل وزر أبيك، ولا تعيش على فضله. فالسورةُ التي افتُتحت بتقرير مصدر الوحي خُتمت بتقرير ما يملكه العبد.\n\nوتكلّم أهل العلم فيما يبدو من معارضة ما يصل إلى الميّت من غيره — دعاءِ الولد، والصدقة الجارية، والدَّين يُقضى عنه — وجوابُهم أنّ هذه من ثمرة سعيه هو: فهو الذي ربّى الولد، وهو الذي أوقف الوقف. فالواصلُ راجعٌ إلى شيءٍ تحرّك له.",
+        ref: "Surah An-Najm (53:39), read with 53:38",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  54: {
+    surahTitle: "The sentence repeated four times, and where it falls",
+    surahTitleAr: "الجملةُ المكرَّرة أربعًا، وأين تقع",
+    partial: true,
+    ayat: [
+      {
+        n: 17,
+        ar: "وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍۢ",
+        why: "It occurs four times in this surah, and each time it comes immediately after a nation has been destroyed — Nuh's people, 'Ad, Thamud, Lut's people. Read in sequence, the effect is deliberate: ruin, then an open door; ruin, then an open door.\n\nThe ease claimed is LI-DH-DHIKR — for remembrance. Not easy to master, and the surah does not claim the meanings are shallow. Easy to carry: to memorise, to recall, to have on the tongue. The claim is checkable, and it holds in an unusual way — millions who do not speak Arabic have the whole text by heart, which is not true of any comparable book.\n\nAnd the question at the end is left open on purpose. FA-HAL MIN MUDDAKIR — is there any who will remember? The Book has done its part; the sentence stops and waits.",
+        whyAr: "تكرّرت في هذه السورة أربع مرّات، وفي كلّ مرّةٍ تأتي عقب إهلاك أمّة: قومِ نوح، وعاد، وثمود، وقومِ لوط. واقرأها على التوالي يظهر لك القصد: هلاكٌ ثم بابٌ مفتوح، وهلاكٌ ثم بابٌ مفتوح.\n\nواليُسرُ المدّعى ﴿لِلذِّكْرِ﴾، لا لإحاطة المعاني — ولم تدّعِ السورةُ أنّ معانيه سطحيّة. وإنما هو يُسرُ الحَمل: الحفظِ والاستحضار وجريانِه على اللسان. والدعوى قابلةٌ للامتحان، وهي واقعةٌ على وجهٍ عجيب: فملايينُ لا يعرفون العربيّة يحفظونه كلَّه، وليس ذلك في كتابٍ يُقارَن به.\n\nوالسؤالُ في الآخر مُبقًى مفتوحًا عن قصد: ﴿فَهَلْ مِن مُّدَّكِرٍۢ﴾. فقد أدّى الكتابُ ما عليه، ووقفت الجملةُ تنتظر.",
+        ref: "Surah Al-Qamar (54:17), and again at 54:22, 54:32, 54:40",
+        strength: "quran"
+      }
+    ]
+  },
+
+  55: {
+    surahTitle: "A question asked thirty-one times",
+    surahTitleAr: "سؤالٌ يُكرَّر إحدى وثلاثين مرّة",
+    partial: true,
+    ayat: [
+      {
+        n: 13,
+        ar: "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        why: "The refrain appears thirty-one times, and the surah is addressed to two — RABBIKUMA, YOUR Lord, dual — because it is speaking to mankind and the jinn together. Reported from the Prophet ﷺ is that when he recited it to the jinn, their response each time was better than that of his own people: they said, and none of Your favours do we deny.\n\nWhat repays attention is where the refrain is placed. It follows the mercies you would expect — fruit, the two seas, the gardens — but it also follows the sun and moon running to a reckoning, the sky raised and the balance set, and the description of the Fire. So the favour being asked about is not only pleasure. Order is a favour. Justice is a favour. Even the warning is one, because a warning delivered in time is a mercy to the one warned.\n\nAnd ALA' is the plural of a word for a bestowed favour, so the question is not rhetorical decoration. It is a running audit: after each item, which of these are you prepared to call false?",
+        whyAr: "تكرّرت اللازمةُ إحدى وثلاثين مرّة، والخطابُ لاثنين: ﴿رَبِّكُمَا﴾ بالتثنية، لأنّ السورة تخاطب الإنس والجنّ معًا. ورُوي عنه ﷺ أنه لمّا قرأها على الجنّ كان ردُّهم في كلّ مرّةٍ أحسنَ من ردّ قومه، قالوا: ولا بشيءٍ من نعمك ربّنا نكذّب.\n\nوالذي يستحقّ النظر مواضعُ اللازمة: فهي تجيء بعد النعم المتوقّعة — الفاكهةِ والبحرين والجنّتين — وتجيء أيضًا بعد الشمس والقمر بحسبان، والسماءِ رُفعت والميزانِ وُضع، وبعد وصف النار. فليست الآلاءُ المسؤولُ عنها لذّةً فقط: فالنظامُ نعمة، والعدلُ نعمة، وحتى النذارةُ نعمة، لأنّ الإنذار في وقته رحمةٌ بالمنذَر.\n\nو**الآلاء** جمعُ ما يُنعَم به، فليس السؤال زينةً بلاغيّة، وإنما هو مراجعةٌ جارية: بعد كلّ بندٍ، أيَّ هذه أنت مستعدٌّ أن تكذّب به؟",
+        ref: "Surah Ar-Rahman (55:13) · The recitation to the jinn: at-Tirmidhi 3291 — outside the two Sahihs",
+        strength: "quran"
+      }
+    ]
+  },
+
+  56: {
+    surahTitle: "The verse used for a ruling it may not be about",
+    surahTitleAr: "آيةٌ يُستدلّ بها على حكمٍ قد لا تكون فيه",
+    partial: true,
+    ayat: [
+      {
+        n: 79,
+        ar: "لَّا يَمَسُّهُۥٓ إِلَّا ٱلْمُطَهَّرُونَ",
+        why: "This is regularly quoted as the proof that a person without wudu may not touch the mushaf. The honest position is that the scholars differed, and the difference turns on what the pronoun refers to and who the purified are.\n\nOne reading — held by many, and the basis of the widespread ruling — is that it refers to the written copy, and the purified are people in a state of purity. The other reading, and the one the immediate context supports, is that the pronoun refers to the KITAB MAKNUN, the preserved Book mentioned in the verse before, and that the purified are THE ANGELS. On this reading the verse is a statement about the heavens, not an instruction to the reader — which fits the surah, since the passage is answering the accusation that a devil brought the revelation down.\n\nSo: the majority ruling that one should have wudu to carry the mushaf rests on more than this verse alone, including a letter of the Prophet ﷺ reported in the books of the Sunan. But the verse by itself is not decisive, and a page about pondering should say so rather than flattening a real disagreement into a slogan.",
+        whyAr: "يُنقل هذا كثيرًا دليلًا على أنّ المحدِث لا يمسّ المصحف. والإنصافُ أنّ العلماء اختلفوا، ومدارُ الخلاف على مرجع الضمير ومن هم المطهَّرون.\n\nفقيل — وعليه كثيرون، وهو مستند الحكم المشهور — إنّ الضمير للمصحف، وإنّ المطهَّرين المتطهّرون من الحدث. وقيل — وهو ما يشهد له السياق القريب — إنّ الضمير راجعٌ إلى ﴿كِتَٰبٍۢ مَّكْنُونٍۢ﴾ في الآية قبلها، وإنّ المطهَّرين **الملائكة**. وعلى هذا فالآيةُ خبرٌ عن الملأ الأعلى لا أمرٌ للقارئ — وهو يوافق السورة، فإنّ السياق في ردّ دعوى أنّ الشياطين نزلت به.\n\nفالحكمُ المشهور باشتراط الطهارة لمسّ المصحف يستند إلى أكثر من هذه الآية، ومنه كتابُ النبيّ ﷺ المرويّ في السنن. وأمّا الآيةُ وحدها فليست قاطعة، وحقُّ صفحة التدبّر أن تقول ذلك لا أن تطوي خلافًا حقيقيًّا في عبارةٍ واحدة.",
+        ref: "Surah Al-Waqi'ah (56:79), read with 56:77-78",
+        strength: "ikhtilaf"
+      }
+    ]
+  },
+
+  57: {
+    surahTitle: "The verse that made the companions weep",
+    surahTitleAr: "الآيةُ التي بكى بها الصحابة",
+    partial: true,
+    ayat: [
+      {
+        n: 16,
+        ar: "أَلَمْ يَأْنِ لِلَّذِينَ ءَامَنُوٓا۟ أَن تَخْشَعَ قُلُوبُهُمْ لِذِكْرِ ٱللَّهِ وَمَا نَزَلَ مِنَ ٱلْحَقِّ وَلَا يَكُونُوا۟ كَٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ مِن قَبْلُ فَطَالَ عَلَيْهِمُ ٱلْأَمَدُ فَقَسَتْ قُلُوبُهُمْ",
+        why: "Ibn Mas'ud said that only four years separated their becoming Muslim and Allah reproaching them with this verse. That is the detail that should stop a reader — the address is to BELIEVERS, and the best generation of them, and the complaint is that their hearts had not softened enough, after four years.\n\nThe mechanism named is the important part: a long period passed over them, SO their hearts hardened. Not sin, in the first instance. Time. Familiarity is described as the agent — the same verses heard until they stop registering, the prayer performed until it is furniture.\n\nAnd the diagnosis is followed immediately by the treatment, in the next verse: know that Allah revives the earth after its death. The comparison is chosen carefully — dead ground is not replaced, it is revived, and the same ground that looked finished carries a crop. The hardened heart is not written off in this surah; it is told what it is and told that reviving is a thing that happens.",
+        whyAr: "قال ابن مسعود: ما كان بين إسلامنا وبين أن عاتبنا الله بهذه الآية إلا أربع سنين. وهذه هي اللفتةُ التي ينبغي أن تُوقف القارئ: فالخطابُ **للمؤمنين**، ولخير قرونهم، والعتابُ أنّ قلوبهم لم تلن كفايةً، بعد أربع سنين.\n\nوالآليّةُ المذكورة هي المهمّ: ﴿فَطَالَ عَلَيْهِمُ ٱلْأَمَدُ **فَقَسَتْ** قُلُوبُهُمْ﴾. لا الذنبُ ابتداءً، بل **الزمن**. فجُعل الإلفُ هو الفاعل: الآياتُ تُسمع حتى لا تعود تُحرّك، والصلاةُ تُؤدّى حتى تصير من أثاث اليوم.\n\nوجاء الدواءُ عقب التشخيص في الآية التي بعدها: ﴿ٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ يُحْىِ ٱلْأَرْضَ بَعْدَ مَوْتِهَآ﴾. والمثلُ مختارٌ بدقّة: فالأرضُ الميتة لا تُستبدل، وإنما **تُحيا**، والتربةُ التي بدت منتهيةً تحمل الزرع. فالقلبُ القاسي لم يُشطب في هذه السورة، وإنما قيل له ما هو، وقيل له إنّ الإحياء يقع.",
+        ref: "Surah Al-Hadid (57:16), read with 57:17 · Ibn Mas'ud's report: Sahih Muslim, Book of Tafsir",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  58: {
+    surahTitle: "Make room, and you will be made room for",
+    surahTitleAr: "أفسِح يُفسَح لك",
+    partial: true,
+    ayat: [
+      {
+        n: 11,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا قِيلَ لَكُمْ تَفَسَّحُوا۟ فِى ٱلْمَجَٰلِسِ فَٱفْسَحُوا۟ يَفْسَحِ ٱللَّهُ لَكُمْ ۖ وَإِذَا قِيلَ ٱنشُزُوا۟ فَٱنشُزُوا۟ يَرْفَعِ ٱللَّهُ ٱلَّذِينَ ءَامَنُوا۟ مِنكُمْ وَٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ دَرَجَٰتٍۢ",
+        why: "It begins with something very small: shuffle along so another man can sit. And the return promised is worded with the same verb — make room, and ALLAH WILL MAKE ROOM FOR YOU. The recompense is not named as a specific thing, which the scholars read as breadth: room in the grave, in provision, in the chest, in whatever a person is cramped by.\n\nThe principle is the one that runs through the Sunnah — you are dealt with as you deal. What makes this verse worth pausing on is the size of the act it attaches that to. Not a great sacrifice; six inches on a bench.\n\nThen the second half raises two groups together — those who believed, and those given knowledge. Read closely, the knowledge is not a separate ladder standing beside faith; the wording lists them in one clause and the honour is one honour. And it arrives in the same verse as the instruction about seating, which quietly says where that rank is actually demonstrated: in whether a man will move over.",
+        whyAr: "افتُتحت بأمرٍ صغير جدًّا: تنحَّ قليلًا ليجلس رجلٌ آخر. وجاء الجزاءُ بالفعل نفسه: ﴿فَٱفْسَحُوا۟ **يَفْسَحِ ٱللَّهُ لَكُمْ**﴾. ولم يُعيَّن المجزيُّ به، وقرأه أهل العلم سعةً: في القبر، وفي الرزق، وفي الصدر، وفيما يضيق به المرء.\n\nوالقاعدةُ هي الجارية في السنّة: تُعامَل بما تُعامِل. والذي يستحقّ الوقوف قدرُ العمل الذي عُلّق به ذلك: لا بذلَ نفسٍ ولا مال، وإنما شبرٌ على مقعد.\n\nثم يرفع الشطرُ الثاني صنفين معًا: ﴿ٱلَّذِينَ ءَامَنُوا۟ مِنكُمْ وَٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ﴾. وتأمّل: فالعلمُ ليس سلّمًا آخر قائمًا بجانب الإيمان، وإنما سيقا في جملةٍ واحدةٍ والرفعةُ رفعةٌ واحدة. وجاء ذلك في الآية نفسها التي فيها أدبُ المجلس، وفي هذا إشارةٌ هادئة إلى أين تظهر تلك الرتبة: في أن يتزحزح الرجل.",
+        ref: "Surah Al-Mujadilah (58:11)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  59: {
+    surahTitle: "Giving away what you need yourself",
+    surahTitleAr: "أن تُعطي ما أنت محتاجٌ إليه",
+    partial: true,
+    ayat: [
+      {
+        n: 9,
+        ar: "وَيُؤْثِرُونَ عَلَىٰٓ أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌۭ ۚ وَمَن يُوقَ شُحَّ نَفْسِهِۦ فَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ",
+        arNote: "Part of the verse describing the Ansar, which begins: “And those who settled in the home and in faith before them…”",
+        arNoteAr: "بعضُ الآية في وصف الأنصار، وأوّلها: ﴿وَٱلَّذِينَ تَبَوَّءُو ٱلدَّارَ وَٱلْإِيمَٰنَ مِن قَبْلِهِمْ...﴾.",
+        why: "ITHAR is a rank above charity. Sadaqah is giving from what you have; ithar is giving the thing you need, to someone whose need you have decided is greater. The verse describes the Ansar doing it while KHASASAH — need, a gap — was on them.\n\nAnd the sentence before it is what makes it extraordinary: they find in their breasts no want for what the emigrants were given. Not merely that they gave, but that they were not resentful about the giving. The interior state is included in the description, which is the harder half.\n\nThen the general rule is drawn out: whoever is protected from the SHUHH of his own soul — those are the successful. Note the verb: protected, as something done TO him. Shuhh is not simple miserliness; it is the grasping that comes with wanting. And treating it as something a person needs protection FROM implies it is the default and the generosity is the rescue.",
+        whyAr: "**الإيثار** فوق الصدقة: فالصدقةُ أن تُعطي ممّا عندك، والإيثارُ أن تُعطي ما تحتاجه أنت لمن رأيتَ حاجته أشدّ. ووصفت الآيةُ الأنصارَ يفعلون ذلك و﴿خَصَاصَةٌۭ﴾ بهم، وهي الحاجةُ والخَلّة.\n\nوالذي قبلها هو الذي يجعله عجيبًا: ﴿وَلَا يَجِدُونَ فِى صُدُورِهِمْ حَاجَةًۭ مِّمَّآ أُوتُوا۟﴾. فليس أنهم أعطوا فحسب، بل لم يجدوا في أنفسهم على العطاء غضاضة. فأُدخلت الحالُ الباطنة في الوصف، وهي الشطرُ الأشقّ.\n\nثم استُخرجت القاعدة: ﴿وَمَن **يُوقَ** شُحَّ نَفْسِهِۦ فَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ﴾. وانظر الفعل: ﴿يُوقَ﴾ مبنيًّا لما لم يُسمّ فاعله، أي أنه شيءٌ يُصنع به. و**الشحّ** ليس مجرّد البخل، وإنما هو الحرصُ المقترن بالطلب. وجعلُه ممّا يُوقاه العبد يفيد أنه الأصل، وأنّ السخاء هو النجاة منه.",
+        ref: "Surah Al-Hashr (59:9)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  60: {
+    surahTitle: "The verse both sides leave out",
+    surahTitleAr: "الآيةُ التي يُسقطها الفريقان",
+    partial: true,
+    ayat: [
+      {
+        n: 8,
+        ar: "لَّا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمْ يُقَٰتِلُوكُمْ فِى ٱلدِّينِ وَلَمْ يُخْرِجُوكُم مِّن دِيَٰرِكُمْ أَن تَبَرُّوهُمْ وَتُقْسِطُوٓا۟ إِلَيْهِمْ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُقْسِطِينَ",
+        why: "Where this sits is the whole point. The surah is Al-Mumtahanah, revealed in a state of war, opening with a companion who had sent word to Quraysh. In that setting, at that temperature, this is what comes down.\n\nAnd look at the word chosen for what is permitted: TABARRUHUM, from BIRR — the same root used for the duty owed to parents. It is not tolerate them, and not deal with them fairly and no more. It is the warmest term the language has for good treatment. Then a second is added: and act justly towards them, and Allah loves the just.\n\nThe condition attached is stated exactly, and it is not belief. It is fighting you over religion and driving you from your homes. Whoever has not done those two things falls under this verse. Asma bint Abi Bakr asked about her mother, who came to her while still upon the religion of her people, and was told to maintain ties with her — which is this verse applied by the Prophet ﷺ to a specific, living case.",
+        whyAr: "موضعُ الآية هو المقصود كلُّه: فالسورةُ الممتحنة، نزلت في حال حرب، وافتُتحت بخبر صحابيٍّ أرسل إلى قريش. ففي هذا السياق، وعلى هذه الحرارة، نزل هذا.\n\nوانظر اللفظ المأذون فيه: ﴿أَن **تَبَرُّوهُمْ**﴾، من **البرّ**، وهي المادّةُ نفسها في حقّ الوالدين. فليس المعنى أن تحتملوهم، ولا أن تعدلوا معهم فحسب، وإنما هو أدفأُ لفظٍ في العربيّة للإحسان. ثم زِيد عليه: ﴿وَتُقْسِطُوٓا۟ إِلَيْهِمْ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُقْسِطِينَ﴾.\n\nوالشرطُ منصوصٌ على وجهه، وليس هو الكفر، وإنما ﴿لَمْ يُقَٰتِلُوكُمْ فِى ٱلدِّينِ وَلَمْ يُخْرِجُوكُم مِّن دِيَٰرِكُمْ﴾. فمن لم يفعل هذين فهو داخلٌ في هذه الآية. وقد سألت أسماءُ بنت أبي بكر عن أمّها وقد قدمت عليها وهي على دين قومها، فأُمرت أن تصلها — وهذا تنزيلُ النبيّ ﷺ للآية على واقعةٍ بعينها.",
+        ref: "Surah Al-Mumtahanah (60:8) · Asma's mother: Sahih al-Bukhari 2620 and Sahih Muslim — Asma bint Abi Bakr",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  61: {
+    surahTitle: "The gap between the saying and the doing",
+    surahTitleAr: "الفجوةُ بين القول والفعل",
+    partial: true,
+    ayat: [
+      {
+        n: 2,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ",
+        why: "The address is to believers, and the question is asked directly — LIMA, why. It is not a statement about hypocrites; it is a question put to people who consider themselves sincere, which is what makes it uncomfortable.\n\nThe verse after it supplies the weight: it is greatly hateful in the sight of Allah that you say what you do not do. KABURA MAQTAN — maqt is not ordinary dislike, it is severe loathing. That is a heavy word for something most people treat as a small failing, and the severity is the information the verse is giving.\n\nAnd notice the surah then puts believers in a rank like a welded building. The two ideas are placed together deliberately: a line only holds if each man in it does what he said he would. A person whose words run ahead of his actions has not merely disappointed himself; in the image the surah chooses, he has left a gap in the row.",
+        whyAr: "الخطابُ للمؤمنين، والسؤالُ مباشر: ﴿لِمَ﴾. فليس خبرًا عن المنافقين، وإنما سؤالٌ يُوجَّه إلى من يعدّون أنفسهم صادقين، وبهذا يثقل.\n\nوالآيةُ بعدها تُبيّن المقدار: ﴿كَبُرَ مَقْتًا عِندَ ٱللَّهِ أَن تَقُولُوا۟ مَا لَا تَفْعَلُونَ﴾. و**المقت** ليس كراهةً عادية، وإنما هو أشدُّ البُغض. وهي لفظةٌ ثقيلةٌ في أمرٍ يعدّه أكثر الناس هيّنًا، وهذه الشدّةُ هي الخبرُ الذي تُعطيه الآية.\n\nثم صفّت السورةُ المؤمنين ﴿كَأَنَّهُم بُنْيَٰنٌۭ مَّرْصُوصٌۭ﴾. وقُرن الأمران عمدًا: فالصفُّ لا يثبت إلا إذا فعل كلُّ واحدٍ فيه ما قال. فمن سبق قولُه فعلَه لم يُخلف نفسه فحسب، بل ترك في الصورة التي اختارتها السورة **ثغرةً في الصفّ**.",
+        ref: "Surah As-Saff (61:2), read with 61:3-4",
+        strength: "quran"
+      }
+    ]
+  },
+
+  62: {
+    surahTitle: "The animal chosen for the comparison",
+    surahTitleAr: "الحيوان المختار في المثل",
+    partial: true,
+    ayat: [
+      {
+        n: 5,
+        ar: "مَثَلُ ٱلَّذِينَ حُمِّلُوا۟ ٱلتَّوْرَىٰةَ ثُمَّ لَمْ يَحْمِلُوهَا كَمَثَلِ ٱلْحِمَارِ يَحْمِلُ أَسْفَارًۢا ۚ بِئْسَ مَثَلُ ٱلْقَوْمِ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِ ٱللَّهِ",
+        why: "The same verb is used twice with two meanings, and that is the hinge: they were made to CARRY the Torah, then they did not CARRY it. The first is being entrusted with it; the second is bearing it in the sense of living by it. So the failure is not that they lost the book. They kept it. They carried it exactly the way the animal in the image does.\n\nAnd the animal is not chosen to insult. A donkey carrying volumes is genuinely bearing weight — it works, it tires, and it arrives with the load intact. What it does not have is any access to what is inside. That is the precise condition being described, and it is a warning to whoever holds a text rather than a comment about anyone's worth.\n\nThe surah then turns to Friday: leave the trade, come to the reminder. Because the cure for carrying without understanding is to keep coming back to where the meaning is opened.",
+        whyAr: "استُعمل الفعلُ مرّتين بمعنيين، وعليه المدار: ﴿حُمِّلُوا۟ ٱلتَّوْرَىٰةَ ثُمَّ لَمْ يَحْمِلُوهَا﴾. فالأوّل التحميلُ والاستئمان، والثاني الحملُ بمعنى القيام بها والعمل. فالخللُ ليس أنهم أضاعوا الكتاب: فقد حفظوه، وحملوه على الوجه الذي تحمل به الدابّةُ في المثل.\n\nوما اختير الحيوانُ للسبّ. فالحمارُ الحاملُ للأسفار حاملٌ حقًّا: يكدّ ويتعب ويبلغ والحِملُ سليم. والذي ليس له سبيلٌ إليه هو **ما في داخله**. وهذه هي الحالُ الموصوفةُ بدقّة، وهي نذارةٌ لكلّ من عنده نصّ، لا حكمٌ على قدر أحد.\n\nثم انتقلت السورةُ إلى الجمعة: ذَرِ البيعَ واحضُر الذكر. لأنّ دواء الحمل بلا فهمٍ أن تُعاود الموضع الذي يُفتح فيه المعنى.",
+        ref: "Surah Al-Jumu'ah (62:5), read with 62:9",
+        strength: "quran"
+      }
+    ]
+  },
+
+  63: {
+    surahTitle: "The two things named, and neither is a sin",
+    surahTitleAr: "الشيئان المسمّيان، وليس واحدٌ منهما معصية",
+    partial: true,
+    ayat: [
+      {
+        n: 9,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُلْهِكُمْ أَمْوَٰلُكُمْ وَلَآ أَوْلَٰدُكُمْ عَن ذِكْرِ ٱللَّهِ ۚ وَمَن يَفْعَلْ ذَٰلِكَ فَأُو۟لَٰٓئِكَ هُمُ ٱلْخَٰسِرُونَ",
+        why: "Wealth and children — both lawful, both blessings, and one of them something the prophets asked for. The verse forbids neither. What it forbids is a function: ILHA', being so occupied by a thing that you are turned away from another.\n\nThat is why this is harder to guard against than a prohibition. A man knows when he is doing something forbidden. He does not notice being gradually absorbed by something permitted, because at no point does he make a decision he would recognise as wrong. The verse targets the drift, not the act.\n\nAnd the judgement passed is unusually blunt for so ordinary a failing: those are the LOSERS. The surah then continues into a man at the moment of death asking to be delayed a little so that he might give charity — which is the same wealth, appearing again at the point where it is no longer of any use to him.",
+        whyAr: "المالُ والولد: كلاهما حلال، وكلاهما نعمة، وقد سأل الأنبياءُ أحدهما. ولم تُحرّم الآيةُ واحدًا منهما، وإنما حرّمت **وظيفة**: ﴿لَا تُلْهِكُمْ﴾، وهو أن يشغلك الشيء حتى يصرفك عن غيره.\n\nولهذا كان التحرّزُ منه أشقّ من التحرّز من المحرَّم: فالرجل يعلم متى يقع في الحرام، ولا يشعر بانغماسه المتدرّج في المباح، لأنه لا يتّخذ في أيّ لحظةٍ قرارًا يعرف أنه خطأ. فالآيةُ تقصد **الانجرافَ** لا الفعل.\n\nوالحكمُ المذكور شديدٌ على أمرٍ يبدو مألوفًا: ﴿فَأُو۟لَٰٓئِكَ هُمُ ٱلْخَٰسِرُونَ﴾. ثم تمضي السورةُ إلى رجلٍ عند الموت يسأل التأخير ليتصدّق — وهو المالُ نفسه، يظهر مرّةً أخرى حين لم يعد ينفعه.",
+        ref: "Surah Al-Munafiqun (63:9), read with 63:10",
+        strength: "quran"
+      }
+    ]
+  },
+
+  64: {
+    surahTitle: "What is promised is not that it will not happen",
+    surahTitleAr: "الموعودُ ليس أنّ المصيبة لا تقع",
+    partial: true,
+    ayat: [
+      {
+        n: 11,
+        ar: "مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذْنِ ٱللَّهِ ۗ وَمَن يُؤْمِنۢ بِٱللَّهِ يَهْدِ قَلْبَهُۥ ۚ وَٱللَّهُ بِكُلِّ شَىْءٍ عَلِيمٌۭ",
+        why: "Read what is actually offered. Not that the calamity will be lifted, and not that it will be explained. Whoever believes in Allah — HE WILL GUIDE HIS HEART.\n\nThe intervention promised is on the inside. The event stands; what changes is the man's ability to hold his footing inside it. Alqamah is reported to have explained the guidance here as the man who is struck and knows it is from Allah, so he is content and submits.\n\nSo the verse is answering a different question from the one people usually bring to it. It does not tell you why this happened. It tells you that nothing arrives outside His permission, and then hands you the only thing that helps in the moment — steadiness — rather than the thing you asked for, which is an explanation you would not be able to use anyway.",
+        whyAr: "تأمّل ما الذي عُرض: ليس رفعَ المصيبة، ولا بيانَ وجهها. وإنما ﴿وَمَن يُؤْمِنۢ بِٱللَّهِ **يَهْدِ قَلْبَهُۥ**﴾.\n\nفالتدخّلُ الموعودُ في الداخل. والحادثةُ قائمةٌ، والذي يتغيّر قدرةُ الرجل على الثبات فيها. ورُوي عن علقمة في تفسير الهدى ها هنا: هو الرجل تصيبه المصيبة فيعلم أنها من عند الله، فيرضى ويُسلّم.\n\nفالآيةُ تُجيب عن غير السؤال الذي يُحمل إليها عادةً: فهي لا تقول لك لِمَ وقع هذا، وإنما تقول إنّ شيئًا لا يقع خارج إذنه، ثم تُعطيك الشيء الوحيد الذي ينفع في تلك الساعة — **الثبات** — لا الذي طلبتَه، وهو تفسيرٌ لم تكن لتنتفع به.",
+        ref: "Surah At-Taghabun (64:11)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  65: {
+    surahTitle: "Provision from a direction you were not watching",
+    surahTitleAr: "رزقٌ من جهةٍ لم تكن تراقبها",
+    partial: true,
+    ayat: [
+      {
+        n: 3,
+        ar: "وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَن يَتَوَكَّلْ عَلَى ٱللَّهِ فَهُوَ حَسْبُهُۥٓ ۚ إِنَّ ٱللَّهَ بَٰلِغُ أَمْرِهِۦ ۚ قَدْ جَعَلَ ٱللَّهُ لِكُلِّ شَىْءٍۢ قَدْرًۭا",
+        arNote: "The continuation of 65:2: “and whoever fears Allah, He will make for him a way out.”",
+        arNoteAr: "تتمّةُ قوله في الآية قبلها: ﴿وَمَن يَتَّقِ ٱللَّهَ يَجْعَل لَّهُۥ مَخْرَجًۭا﴾.",
+        why: "The specification is not the amount but the DIRECTION: from where he does not reckon. A man's anxiety is nearly always about a particular channel — this job, this person, this decision — and the promise deliberately does not name a channel. It names the fact that the opening will come from somewhere outside the list he has been staring at.\n\nAnd where this sits is the striking part. It is in Surah At-Talaq, in the middle of divorce legislation. This is not a verse revealed for a serene occasion; it is placed inside the collapse of a household, where a person's calculations have just failed publicly.\n\nThen HASBUHU — He is sufficient for him. And the surah closes the reasoning: Allah will accomplish His purpose, and He has set a measure for everything. So the delay is not neglect; it is a measure that has been fixed, and the not-yet is part of the same decree as the eventual.",
+        whyAr: "لم يُعيَّن المقدار، وإنما عُيّنت **الجهة**: ﴿مِنْ حَيْثُ لَا يَحْتَسِبُ﴾. وقلقُ الرجل يكون في الغالب على قناةٍ بعينها: هذا العمل، هذا الشخص، هذا القرار. فتعمّد الوعدُ ألّا يُسمّي قناة، وإنما سمّى أنّ الفرج يأتي من خارج القائمة التي يُحدّق فيها.\n\nوموضعُ الآية هو اللافت: فهي في سورة الطلاق، في وسط أحكام الفراق. فليست آيةً نزلت في مقامٍ هادئ، وإنما وُضعت داخل انهيار بيت، حيث خابت حساباتُ المرء على مرأًى من الناس.\n\nثم ﴿فَهُوَ حَسْبُهُۥٓ﴾. وتُتمّ السورةُ التعليل: ﴿إِنَّ ٱللَّهَ بَٰلِغُ أَمْرِهِۦ ۚ قَدْ جَعَلَ ٱللَّهُ لِكُلِّ شَىْءٍۢ قَدْرًۭا﴾. فالتأخّرُ ليس إهمالًا، وإنما هو قَدْرٌ مقدَّر، و«ليس بعدُ» من القضاء نفسه الذي منه «سيكون».",
+        ref: "Surah At-Talaq (65:2-3)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  66: {
+    surahTitle: "The order of the two duties",
+    surahTitleAr: "ترتيبُ الواجبين",
+    partial: true,
+    ayat: [
+      {
+        n: 6,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ قُوٓا۟ أَنفُسَكُمْ وَأَهْلِيكُمْ نَارًۭا وَقُودُهَا ٱلنَّاسُ وَٱلْحِجَارَةُ",
+        arNote: "The opening of the verse. It continues with the angels over it, harsh and severe, who do not disobey Allah in what He commands them.",
+        arNoteAr: "مطلع الآية، وتمامها في الملائكة عليها ﴿غِلَاظٌۭ شِدَادٌۭ لَّا يَعْصُونَ ٱللَّهَ مَآ أَمَرَهُمْ﴾.",
+        why: "YOURSELVES comes first, then your families. The order is the instruction. A man who reforms his household while neglecting himself has inverted the verse, and the household will read the contradiction long before it reads the sermon.\n\nAli is reported to have explained the command as: teach them and discipline them. So the protecting is not done by anxiety or by prohibition alone; it is done by teaching, and by a man's own conduct being the first lesson available in the house.\n\nAnd the fuel named is people and STONES. The scholars read the stones as the idols that were worshipped — the thing men gave their lives to, burning beside them. Whatever a person built his life around and was not worth it is in the fire with him, which is a more exact warning than fire alone.",
+        whyAr: "﴿أَنفُسَكُمْ﴾ أوّلًا، ثم ﴿وَأَهْلِيكُمْ﴾. والترتيبُ هو الأمر. فمن أصلح أهله وأهمل نفسه فقد قلب الآية، وأهلُه يقرؤون التناقض قبل أن يسمعوا الموعظة بزمن.\n\nورُوي عن عليّ في تفسير الأمر: علّموهم وأدّبوهم. فليست الوقايةُ بالقلق ولا بالمنع وحده، وإنما بالتعليم، وبأن يكون فعلُ الرجل أوّلَ درسٍ متاحٍ في البيت.\n\nوالوقودُ المذكور: ﴿ٱلنَّاسُ وَٱلْحِجَارَةُ﴾. وفسّر أهل العلم الحجارةَ بالأصنام التي كانت تُعبد — أي أنّ الذي أفنى الرجالُ فيه أعمارهم يحترق إلى جانبهم. فما بنى المرء عليه حياته ولم يكن أهلًا لذلك هو معه في النار، وهذه نذارةٌ أدقُّ من ذكر النار وحدها.",
+        ref: "Surah At-Tahrim (66:6)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  67: {
+    surahTitle: "Death is named before life",
+    surahTitleAr: "قُدّم الموتُ على الحياة",
+    partial: true,
+    ayat: [
+      {
+        n: 2,
+        ar: "ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ",
+        why: "Two things in one short verse repay stopping.\n\nFirst, death is CREATED. It is not the absence of life or a mere ending — it is spoken of as a thing brought into being, deliberately, and it is mentioned before life. The scholars noted the order: what a person is going towards is put in front of what he is currently in.\n\nSecond, the test is AHSANU 'AMALAN — best in deed, not most in deed. Al-Fudayl ibn Iyad's explanation of this is the one that stuck: the best is the most sincere and the most correct — sincere meaning done for Allah, correct meaning done as He legislated — and an action is not accepted unless it has both. That is the same two-condition rule as 18:110, arrived at from a different direction.\n\nAnd the verse closes with AL-'AZIZ AL-GHAFUR. The Mighty, who can do as He wills; the Forgiving, who has already told you He will cover it. A test announced in advance by an examiner who names Himself forgiving in the same sentence.",
+        whyAr: "أمران في آيةٍ قصيرةٍ يستحقّان الوقوف.\n\nالأوّل: أنّ الموت **مخلوق**. فليس عدمًا للحياة ولا مجرّد انقطاع، وإنما ذُكر شيئًا خُلق خلقًا، وقُدّم على الحياة. ونبّه أهل العلم على الترتيب: قُدّم ما يصير إليه المرء على ما هو فيه.\n\nوالثاني: أنّ الابتلاء ﴿أَيُّكُمْ **أَحْسَنُ** عَمَلًۭا﴾، لا أكثرُ عملًا. وقولُ الفضيل بن عياض في هذا هو الذي بقي: أحسنُه أخلصُه وأصوبُه؛ فالخالصُ ما كان لله، والصوابُ ما كان على السنّة، ولا يُقبل العمل حتى يكون فيه الأمران. وهما شرطا القبول في ﴿فَلْيَعْمَلْ عَمَلًۭا صَٰلِحًۭا وَلَا يُشْرِكْ﴾، أُتي إليهما من طريقٍ آخر.\n\nوخُتمت بـ﴿ٱلْعَزِيزُ ٱلْغَفُورُ﴾: العزيزُ القادر أن يفعل ما يشاء، والغفورُ الذي أخبرك أنه يستر. امتحانٌ أُعلن قبل وقته، وسمّى المُمتحِنُ نفسه فيه غفورًا.",
+        ref: "Surah Al-Mulk (67:2), read with Al-Kahf (18:110)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  68: {
+    surahTitle: "The answer to being called mad",
+    surahTitleAr: "جوابُ تهمة الجنون",
+    partial: true,
+    ayat: [
+      {
+        n: 4,
+        ar: "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍۢ",
+        why: "The accusation in the surah is that he is possessed. The reply is not a proof, not a miracle, and not an argument. It is a description of his character — and the description is left unqualified. Great. Nothing is compared to it and no limit is put on it.\n\nAnd the preposition matters: 'ALA khuluqin, UPON a character, as one is upon a mount or upon a road. It is not something he had; it is something he was carried by and stood on.\n\nAishah was asked about his character and said it was the Quran. Which is the same claim from the other side: what the Book instructs is what he was. And that is why this verse answers the accusation without arguing — the people making it had lived beside him for forty years, and every one of them knew that whatever was wrong with him, it was not his conduct.",
+        whyAr: "التهمةُ في السورة أنه مجنون. وما كان الجوابُ حجّةً ولا آيةً ولا مجادلة، وإنما وصفُ خُلقه — ووُصف بلا قيد: ﴿عَظِيمٍۢ﴾. لم يُقَس بشيءٍ ولم يُحدّ بحدّ.\n\nوالحرفُ مقصود: ﴿**لَعَلَىٰ** خُلُقٍ﴾، كما يُقال على مركبٍ أو على طريق. فليس شيئًا كان عنده، وإنما شيءٌ كان محمولًا عليه قائمًا به.\n\nوسُئلت عائشة عن خُلقه فقالت: كان خُلقه القرآن. وهي الدعوى نفسها من الجهة الأخرى: أنّ ما يأمر به الكتاب هو الذي كانه. ولهذا أجابت الآيةُ التهمة من غير جدال: فالذين رموه بها كانوا قد عاشوا إلى جانبه أربعين سنة، وكلُّهم يعلم أنّ عيبه — على فرضه — ليس في خُلقه.",
+        ref: "Surah Al-Qalam (68:4) · “His character was the Quran”: Sahih Muslim, Book of the Prayer of Travellers — Aishah",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  69: {
+    surahTitle: "The test he wrote against himself",
+    surahTitleAr: "الامتحانُ الذي كتبه على نفسه",
+    partial: true,
+    ayat: [
+      {
+        n: 44,
+        ar: "وَلَوْ تَقَوَّلَ عَلَيْنَا بَعْضَ ٱلْأَقَاوِيلِ",
+        arNote: "The first of three verses. They continue: “We would have seized him by the right hand, then cut from him the aorta, and none of you could have prevented it.”",
+        arNoteAr: "أولى ثلاث آيات، وتمامها: ﴿لَأَخَذْنَا مِنْهُ بِٱلْيَمِينِ ۝ ثُمَّ لَقَطَعْنَا مِنْهُ ٱلْوَتِينَ ۝ فَمَا مِنكُم مِّنْ أَحَدٍ عَنْهُ حَٰجِزِينَ﴾.",
+        why: "Consider what a man forging a revelation would need to avoid, and then look at what is in this passage. He recited, in public, that if he attributed even SOME sayings to Allah falsely, he would be seized and his aorta cut, and nobody could protect him.\n\nThe wording is exact in a way that matters. Not: he would be punished later. A specific, physical, immediate death, described in detail, with no possibility of rescue named. Anyone inventing a message has just installed a mechanism that indicts him every time he opens his mouth for the next twenty-three years.\n\nAnd it fits a pattern in the Book that a reader can check: the verses correcting him are in it. He is corrected for turning from the blind man, for forbidding himself what was lawful, for the prisoners at Badr. A man writing his own scripture does not include his own reprimands, and does not write out the sentence for his own execution.",
+        whyAr: "تصوّر ما الذي يحتاج مفترِي الوحي أن يتجنّبه، ثم انظر ما في هذا السياق. فقد تلا على الناس أنه لو نسب إلى الله ﴿بَعْضَ ٱلْأَقَاوِيلِ﴾ لأُخذ منه باليمين ولقُطع منه الوتين، ولا يقدر أحدٌ أن يحجز عنه.\n\nواللفظُ دقيقٌ على وجهٍ له أثره: فلم يقل إنه يُعاقَب في الآجل، وإنما موتٌ حسّيٌّ عاجلٌ موصوفٌ بتفصيله، ولم تُذكر معه إمكانُ نجاة. فمن يبتدع رسالةً يكون قد نصب على نفسه آلةً تُدينه كلّما فتح فاه ثلاثًا وعشرين سنة.\n\nوهذا موافقٌ لسَنَنٍ في الكتاب يقدر القارئ أن يمتحنه: أنّ آيات عتابه فيه. عوتب في الإعراض عن الأعمى، وفي تحريم ما أحلّ الله له، وفي أسرى بدر. ومن يكتب كتابه بنفسه لا يُدرج فيه عتاب نفسه، ولا يكتب فيه صيغةَ إعدامه.",
+        ref: "Surah Al-Haqqah (69:44-46)",
+        strength: "quran"
+      }
+    ]
+  },
+
   70: {
     surahTitle: "Al-Ma'arij — and why the Quran keeps describing you badly",
     surahTitleAr: "المعارج — ولماذا يصف القرآن الإنسان بالسوء",
@@ -1296,6 +1592,172 @@ const TADABBUR = {
     ]
   },
 
+  41: {
+    surahTitle: "What to do with someone who has wronged you",
+    surahTitleAr: "ماذا تصنع بمن أساء إليك",
+    partial: true,
+    ayat: [
+      {
+        n: 34,
+        ar: "وَلَا تَسْتَوِى ٱلْحَسَنَةُ وَلَا ٱلسَّيِّئَةُ ۚ ٱدْفَعْ بِٱلَّتِى هِىَ أَحْسَنُ فَإِذَا ٱلَّذِى بَيْنَكَ وَبَيْنَهُۥ عَدَٰوَةٌۭ كَأَنَّهُۥ وَلِىٌّ حَمِيمٌۭ",
+        why: "The instruction is not to absorb the wrong passively. The verb is IDFA' — repel, push it away — so an action is required. What is specified is the instrument: repel it with the thing that is BETTER. The response is active, and it is aimed upward.\n\nAnd read the result clause, because the FA-IDHA in Arabic carries surprise — and suddenly the one between you and whom there was enmity is as though he were a devoted friend. Not neutral. Not calmed down. A close friend, and the change arrives abruptly.\n\nThen the verse immediately after refuses to let this be read as easy: none is granted it except those who are patient, and none is granted it except one of great fortune. So the Quran states the method and, in the same breath, admits that most people will not manage it — which is more honest than presenting it as a simple technique.",
+        whyAr: "ليس الأمرُ أن تحتمل الأذى ساكتًا. فالفعل ﴿ٱدْفَعْ﴾، أي ادفعه وانفِه، فالمطلوبُ عملٌ لا كفّ. وإنما عُيّنت الآلة: ادفعه ﴿بِٱلَّتِى هِىَ **أَحْسَنُ**﴾. فالردُّ فعلٌ، وجهتُه إلى أعلى.\n\nواقرأ جواب الشرط، فإنّ ﴿فَإِذَا﴾ في العربيّة للمفاجأة: ﴿فَإِذَا ٱلَّذِى بَيْنَكَ وَبَيْنَهُۥ عَدَٰوَةٌۭ كَأَنَّهُۥ وَلِىٌّ حَمِيمٌۭ﴾. لا محايدًا، ولا ساكنَ الغضب، بل **وليًّا حميمًا**، ويقع ذلك بغتة.\n\nثم تأبى الآيةُ التي بعدها أن يُقرأ هذا هيّنًا: ﴿وَمَا يُلَقَّىٰهَآ إِلَّا ٱلَّذِينَ صَبَرُوا۟ وَمَا يُلَقَّىٰهَآ إِلَّا ذُو حَظٍّ عَظِيمٍۢ﴾. فذكر القرآنُ الطريقة، واعترف في النفَس نفسه بأنّ أكثر الناس لا يبلغونها — وهذا أصدق من أن تُعرض حيلةً سهلة.",
+        ref: "Surah Fussilat (41:34), read with 41:35",
+        strength: "quran"
+      }
+    ]
+  },
+
+  42: {
+    surahTitle: "The sentence that closes every wrong road at once",
+    surahTitleAr: "الجملةُ التي تسدّ كلَّ طريقٍ منحرفٍ دفعةً واحدة",
+    partial: true,
+    ayat: [
+      {
+        n: 11,
+        ar: "لَيْسَ كَمِثْلِهِۦ شَىْءٌۭ ۖ وَهُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ",
+        arNote: "The closing clause of the verse, which begins: “Originator of the heavens and the earth…”",
+        arNoteAr: "خاتمةُ الآية، وأوّلها: ﴿فَاطِرُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ...﴾.",
+        why: "This is the reference point for everything anyone says about Allah. Whatever image forms in a person's mind, this verse has already excluded it — because whatever he can picture is drawn from things he has seen, and none of them is like Him.\n\nThe grammar is worth noticing. It does not say LAYSA MITHLUHU SHAY' — nothing is His like. It says LAYSA KA-MITHLIHI — nothing is LIKE His like. The kaf appears to double the comparison, and the scholars discussed it at length: many held the kaf is for emphasis, closing the door twice over so that not even a resemblance to a resemblance survives.\n\nThen the second half does something the first half might have made a reader forget: and He is the Hearing, the Seeing. Denying likeness is not denying the attributes. The classical position holds both — He hears and sees really, and not in the manner of anything created. Strip the attributes and you have no God to address; make them like ours and you have made an image. The verse gives both halves in one line so neither can run loose.",
+        whyAr: "هذه هي الآيةُ المرجع لكلّ ما يُقال في الله. فأيُّ صورةٍ تنعقد في ذهن إنسان فقد نفتها هذه الآية قبلُ — لأنّ الذي يتخيّله مأخوذٌ ممّا رآه، وليس شيءٌ منه كمثله.\n\nوفي التركيب ما يُتأمّل: لم يقل «ليس مثلَه شيء»، وإنما ﴿لَيْسَ **كَمِثْلِهِ** شَىْءٌۭ﴾. فظاهرُ الكاف تضعيفُ التشبيه، وقد أطال أهل العلم فيها: وذهب كثيرٌ منهم إلى أنّ الكاف للتوكيد، فسُدّ البابُ مرّتين حتى لا يبقى شبهُ الشبه.\n\nثم يصنع الشطرُ الثاني ما قد يُنسيه الأوّل: ﴿وَهُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ﴾. فنفيُ المماثلة ليس نفيًا للصفات. ومذهبُ السلف الجمعُ بينهما: يسمع ويُبصر حقيقةً، لا كسمع المخلوقين ولا كبصرهم. فمن عطّل الصفات لم يبقَ له ربٌّ يُدعى، ومن شبّهها بصفاتنا فقد صوّر. وجاءت الآيةُ بالشطرين في سطرٍ واحدٍ لئلّا ينفلت أحدهما.",
+        ref: "Surah Ash-Shura (42:11)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  43: {
+    surahTitle: "The one friendship that survives the Day",
+    surahTitleAr: "الخُلّة الوحيدة التي تنجو يومئذٍ",
+    partial: true,
+    ayat: [
+      {
+        n: 67,
+        ar: "ٱلْأَخِلَّآءُ يَوْمَئِذٍۭ بَعْضُهُمْ لِبَعْضٍ عَدُوٌّ إِلَّا ٱلْمُتَّقِينَ",
+        why: "AKHILLA' is not acquaintances. KHULLAH in the language is the closest grade of friendship — affection that has entered the seams of a person, which is why Ibrahim was called KHALIL. The verse is talking about the people you were closest to.\n\nAnd it says they turn on each other. Not drift apart: ENEMIES. Because on that Day it becomes visible who encouraged what — and every friendship that was built around something worthless is seen for what it cost, by both people at once.\n\nThe exception is a single word. Except those who were conscious of Allah. So the surviving criterion is not how long you knew someone or how much you enjoyed their company; it is what the friendship was organised around. Which turns the verse into a practical question a person can ask tonight: of the people I speak to most, which of these friendships would survive being seen clearly?",
+        whyAr: "﴿ٱلْأَخِلَّآءُ﴾ ليسوا المعارف. والخُلّةُ في اللسان أرفعُ درجات الصداقة، وهي المودّةُ التي تخلّلت المرء، ومنها سُمّي إبراهيمُ خليلًا. فالآيةُ تتكلّم عن أقرب من كان إليك.\n\nوتقول إنهم ينقلبون: لا يتفرّقون فحسب، بل ﴿عَدُوٌّ﴾. لأنه يظهر يومئذٍ من الذي حسّن لصاحبه ماذا — فتنكشف كلُّ صحبةٍ قامت على باطلٍ بما كلّفت، ويراها الاثنان في وقتٍ واحد.\n\nوالاستثناءُ كلمةٌ واحدة: ﴿إِلَّا ٱلْمُتَّقِينَ﴾. فالمعيارُ الباقي ليس طولَ العهد ولا لذّةَ المجلس، وإنما ما قامت عليه الصحبة. وبهذا تصير الآيةُ سؤالًا عمليًّا يسأله المرء الليلة: من أكثر من أُكلّمهم، أيُّ هذه الصحبات تبقى لو رُئيت على حقيقتها؟",
+        ref: "Surah Az-Zukhruf (43:67)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  44: {
+    surahTitle: "The reason given for the whole of it",
+    surahTitleAr: "العلّةُ المذكورة لهذا كلّه",
+    partial: true,
+    ayat: [
+      {
+        n: 38,
+        ar: "وَمَا خَلَقْنَا ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ وَمَا بَيْنَهُمَا لَٰعِبِينَ",
+        why: "The claim is stated as a denial, and that is the efficient way to state it, because the alternative it rules out is the one people actually live by — that none of this means anything and there is no reckoning attached to it.\n\nAnd the following verse completes it: We did not create them except in truth, but most of them do not know. So the universe is described as having been made BI-L-HAQQ — with truth, for a real purpose — which is the same claim made in 23:115 and in 38:27.\n\nWhy it matters practically: play has no consequences, and that is its definition. A person who believes the world is play is being consistent when he lives without weighing anything. The verse denies the premise, and everything about accountability follows from that denial rather than being asserted separately.",
+        whyAr: "جاءت الدعوى نفيًا، وهو أوجزُ طرق إثباتها، لأنّ الذي نفته هو الذي يعيش عليه الناس فعلًا: أنّ هذا كلَّه لا معنى له وأنه لا حساب وراءه.\n\nوالآيةُ بعدها تُتمّها: ﴿مَا خَلَقْنَٰهُمَآ إِلَّا بِٱلْحَقِّ وَلَٰكِنَّ أَكْثَرَهُمْ لَا يَعْلَمُونَ﴾. فوُصف الكونُ بأنه خُلق **بالحقّ**، أي لغايةٍ صحيحة، وهي الدعوى نفسها في ﴿أَفَحَسِبْتُمْ أَنَّمَا خَلَقْنَٰكُمْ عَبَثًۭا﴾ وفي سورة ص.\n\nووجهُ أثرها في العمل: أنّ اللعب لا تبعة له، وذلك حدُّه. فمن اعتقد أنّ الدنيا لعبٌ فهو متّسقٌ مع نفسه إذ يعيش لا يزن شيئًا. فنفت الآيةُ المقدّمة، فلزم عن نفيها كلُّ ما يُقال في الحساب، ولم يُحتج إلى إثباته على حِدة.",
+        ref: "Surah Ad-Dukhan (44:38), read with 44:39",
+        strength: "quran"
+      }
+    ]
+  },
+
+  45: {
+    surahTitle: "Astray while holding the knowledge",
+    surahTitleAr: "ضالٌّ والعلمُ عنده",
+    partial: true,
+    ayat: [
+      {
+        n: 23,
+        ar: "أَفَرَءَيْتَ مَنِ ٱتَّخَذَ إِلَٰهَهُۥ هَوَىٰهُ وَأَضَلَّهُ ٱللَّهُ عَلَىٰ عِلْمٍۢ وَخَتَمَ عَلَىٰ سَمْعِهِۦ وَقَلْبِهِۦ وَجَعَلَ عَلَىٰ بَصَرِهِۦ غِشَٰوَةًۭ فَمَن يَهْدِيهِ مِنۢ بَعْدِ ٱللَّهِ",
+        why: "The wording is precise and worth slowing down for: he took his DESIRE as his GOD. Not: he followed his desire. The desire has been put in the position of the thing consulted and obeyed — so when it and the revelation disagree, it is the revelation that gives way. That is a description of a mechanism, and it does not require the man to believe anything unusual about himself.\n\nThen the phrase that unsettles: and Allah sent him astray 'ALA 'ILM — upon knowledge. The scholars read this two ways, both reported: upon knowledge from Allah, that is, He knew he deserved it; or upon knowledge the man himself had, that is, he went astray while possessing the information.\n\nThe second reading is the one modern life keeps illustrating. A person can know the ruling exactly, be able to state the evidence, and still be walking the other way — because the deciding faculty was never the knowledge. It was the wanting, and he had already installed that as the judge.",
+        whyAr: "اللفظُ دقيقٌ يستحقّ التمهّل: ﴿ٱتَّخَذَ **إِلَٰهَهُۥ هَوَىٰهُ**﴾. لم يقل: اتّبع هواه. وإنما أُنزل الهوى منزلةَ ما يُستفتى ويُطاع، فإذا تعارض هو والوحيُ نُحّي الوحي. وهذا وصفُ آليّةٍ، ولا يحتاج صاحبُها أن يعتقد في نفسه شيئًا غريبًا.\n\nثم العبارةُ التي تُقلق: ﴿وَأَضَلَّهُ ٱللَّهُ **عَلَىٰ عِلْمٍۢ**﴾. وللسلف فيها وجهان مرويّان: على علمٍ من الله، أي أنه سبحانه علم أنه أهلٌ لذلك؛ أو على علمٍ من الرجل نفسه، أي أنه ضلّ والعلمُ عنده.\n\nوالوجهُ الثاني هو الذي لا تنفكّ الحياةُ اليوم تضرب له الأمثلة: فقد يعرف المرء الحكم بعينه، ويقدر أن يسوق دليله، وهو ماضٍ في خلافه — لأنّ الفاصل لم يكن العلمَ قطّ، وإنما كان الهوى، وقد نصّبه حَكَمًا من قبل.",
+        ref: "Surah Al-Jathiyah (45:23)",
+        strength: "ikhtilaf"
+      }
+    ]
+  },
+
+  46: {
+    surahTitle: "Thirty months, and the only dua for a man at forty",
+    surahTitleAr: "ثلاثون شهرًا، ودعاءُ ابن الأربعين",
+    partial: true,
+    ayat: [
+      {
+        n: 15,
+        ar: "وَوَصَّيْنَا ٱلْإِنسَٰنَ بِوَٰلِدَيْهِ إِحْسَٰنًا ۖ حَمَلَتْهُ أُمُّهُۥ كُرْهًۭا وَوَضَعَتْهُ كُرْهًۭا ۖ وَحَمْلُهُۥ وَفِصَٰلُهُۥ ثَلَٰثُونَ شَهْرًا",
+        arNote: "The opening of the verse. It continues to the prayer of the one who reaches forty, ending: “I have repented to You, and I am of the Muslims.”",
+        arNoteAr: "مطلع الآية، وتمامها في دعاء من بلغ الأربعين، وتُختم: ﴿إِنِّى تُبْتُ إِلَيْكَ وَإِنِّى مِنَ ٱلْمُسْلِمِينَ﴾.",
+        why: "The command is to BOTH parents, and then the reasoning given is entirely about the mother — she carried him in hardship and delivered him in hardship. The verse does not divide the duty; it explains why the weight of it leans, and it does so by naming physical facts rather than sentiment.\n\nAli and Ibn Abbas took the thirty months together with the two years of suckling named in 2:233 and 31:14, and concluded that the shortest possible pregnancy is six months. It is a famous case of a ruling in law drawn from putting two verses side by side, and Uthman is reported to have accepted the argument and released a woman who had been judged on the assumption it was impossible.\n\nThen the second half: the man who reaches forty asks for three things — to be enabled to give thanks, to do work that is accepted, and to be put right IN HIS OFFSPRING. By that age the thing he most needs help with is no longer himself alone. And the prayer ends with repentance, which is where the surah places the mature man: still turning back.",
+        whyAr: "الوصيّةُ بالوالدين معًا، ثم جاء التعليلُ كلُّه في الأمّ: ﴿حَمَلَتْهُ أُمُّهُۥ كُرْهًۭا وَوَضَعَتْهُ كُرْهًۭا﴾. فلم تقسم الآيةُ الحقَّ، وإنما بيّنت لِمَ يميل ثِقَله، وبيّنته بذكر أمرٍ حسّيٍّ لا بعاطفة.\n\nوأخذ عليٌّ وابن عبّاس ﴿ثَلَٰثُونَ شَهْرًا﴾ مع الحولين المذكورين في البقرة ولقمان، فاستنبطا أنّ أقلّ الحمل ستّة أشهر. وهي من أشهر ما استُنبط من ضمّ آيةٍ إلى آية، ورُوي أنّ عثمان قبل الحجّة فدرأ عن امرأةٍ كان قد حُكم عليها بناءً على استحالة ذلك.\n\nثم الشطر الثاني: ابنُ الأربعين يسأل ثلاثًا — أن يُوزَع شكرَ النعمة، وأن يعمل صالحًا يُرضي، وأن يُصلح له **في ذرّيّته**. فقد صار في هذا السنّ أحوجَ ما يكون إلى العون في غير نفسه وحدها. وخُتم الدعاءُ بالتوبة، وهناك وضعت السورةُ الرجلَ الكامل: راجعًا بعدُ.",
+        ref: "Surah Al-Ahqaf (46:15), read with Al-Baqarah (2:233) and Luqman (31:14)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  47: {
+    surahTitle: "How you could possibly help Allah",
+    surahTitleAr: "كيف يُتصوَّر أن تنصر الله",
+    partial: true,
+    ayat: [
+      {
+        n: 7,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِن تَنصُرُوا۟ ٱللَّهَ يَنصُرْكُمْ وَيُثَبِّتْ أَقْدَامَكُمْ",
+        why: "The phrasing stops a careful reader immediately. He is the Almighty; nothing can be added to Him and nothing taken away. So what is being asked?\n\nThe scholars answer that supporting Allah means supporting His religion, His messenger and what He revealed — the honour of the expression is that He attaches the work to Himself. He does not need it; He credits it as though it were done for Him directly. That is a gift built into the wording.\n\nThen the promise has two parts, and the second is the one people overlook. He will help you — and He will make your feet firm. Victory and steadiness are not the same thing. A man can be given the outcome and still be unsteady in it; the verse promises the ground under him as well as the result. And the order is instructive: the help is conditional on the doing, so the sequence starts with him.",
+        whyAr: "الصياغةُ تُوقف القارئ المتأنّي في الحال: فهو سبحانه الغنيّ، لا يُزاد ولا يُنقص. فما المطلوب إذن؟\n\nأجاب أهل العلم بأنّ نصر الله نصرُ دينه ورسوله وما أنزل، وأنّ شرف العبارة أنه أضاف العمل إلى نفسه. لا يحتاجه، ويُنزّله منزلة ما صُنع له مباشرة. وهذه منّةٌ مضمَّنةٌ في اللفظ نفسه.\n\nثم الوعدُ شطران، وثانيهما هو الذي يُغفل: ﴿يَنصُرْكُمْ **وَيُثَبِّتْ أَقْدَامَكُمْ**﴾. فالنصرُ والثباتُ ليسا واحدًا. فقد يُعطى الرجل العاقبةَ وهو غير ثابتٍ فيها؛ فوَعدت الآيةُ بالأرض تحته كما وعدت بالنتيجة. والترتيبُ مُفيد: عُلّق النصرُ بالفعل، فالبداءةُ منه هو.",
+        ref: "Surah Muhammad (47:7)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  48: {
+    surahTitle: "The description misquoted in both directions",
+    surahTitleAr: "الوصفُ الذي يُساء نقله في الجهتين",
+    partial: true,
+    ayat: [
+      {
+        n: 29,
+        ar: "مُّحَمَّدٌۭ رَّسُولُ ٱللَّهِ ۚ وَٱلَّذِينَ مَعَهُۥٓ أَشِدَّآءُ عَلَى ٱلْكُفَّارِ رُحَمَآءُ بَيْنَهُمْ ۖ تَرَىٰهُمْ رُكَّعًۭا سُجَّدًۭا يَبْتَغُونَ فَضْلًۭا مِّنَ ٱللَّهِ وَرِضْوَٰنًۭا ۖ سِيمَاهُمْ فِى وُجُوهِهِم مِّنْ أَثَرِ ٱلسُّجُودِ",
+        arNote: "The opening of the verse. It continues with their likeness in the Torah and in the Gospel, and the promise of forgiveness and a great reward.",
+        arNoteAr: "مطلع الآية، وتمامها في مثلهم في التوراة والإنجيل، ووعدِ المغفرة والأجر العظيم.",
+        why: "The first clause is quoted constantly by two groups who want opposite things from it, and both stop at the same place. It is one sentence with two halves and it cannot be split: severe against the disbelievers, MERCIFUL AMONG THEMSELVES.\n\nAnd both halves have to be read as a description of a wartime generation, not a permanent posture towards every non-Muslim on earth — the surah is Al-Fath, revealed around Hudaybiyyah, and the KUFFAR in view are the ones who had driven them out and were fighting them. Read against 60:8, which forbids nothing towards those who did not fight you, the two verses fit without strain.\n\nThe part almost nobody quotes is the ending, and it changes the tone entirely. Their likeness is a crop that puts out its shoot, and it is strengthened, and it thickens, and it stands on its stalk, DELIGHTING THE SOWERS. The image chosen for this community is not an army. It is a field growing.",
+        whyAr: "الجملةُ الأولى يَنقلها فريقان يريدان منها ضدّين، ويقف كلاهما عند الموضع نفسه. وهي جملةٌ واحدةٌ ذاتُ شطرين لا تُشقّ: ﴿أَشِدَّآءُ عَلَى ٱلْكُفَّارِ **رُحَمَآءُ بَيْنَهُمْ**﴾.\n\nوالشطران جميعًا وصفُ جيلٍ في حالِ حرب، لا هيئةً دائمةً تجاه كلّ من ليس مسلمًا على وجه الأرض — فالسورةُ سورةُ الفتح، نزلت حول الحديبية، والكفّارُ المقصودون هم الذين أخرجوهم وقاتلوهم. وإذا قُرئت مع ﴿لَّا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمْ يُقَٰتِلُوكُمْ﴾ اتّفقت الآيتان من غير تكلّف.\n\nوالذي لا يكاد أحدٌ ينقله هو الخاتمة، وهي تقلب النبرة كلَّها: مثلُهم ﴿كَزَرْعٍ أَخْرَجَ شَطْـَٔهُۥ فَـَٔازَرَهُۥ فَٱسْتَغْلَظَ فَٱسْتَوَىٰ عَلَىٰ سُوقِهِۦ **يُعْجِبُ ٱلزُّرَّاعَ**﴾. فالصورةُ المختارة لهذه الأمّة ليست جيشًا، وإنما **زرعٌ ينمو**.",
+        ref: "Surah Al-Fath (48:29), read with Al-Mumtahanah (60:8)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  49: {
+    surahTitle: "Difference was the design, not the accident",
+    surahTitleAr: "الاختلافُ مقصودٌ لا عارض",
+    partial: true,
+    ayat: [
+      {
+        n: 13,
+        ar: "يَٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقْنَٰكُم مِّن ذَكَرٍۢ وَأُنثَىٰ وَجَعَلْنَٰكُمْ شُعُوبًۭا وَقَبَآئِلَ لِتَعَارَفُوٓا۟ ۚ إِنَّ أَكْرَمَكُمْ عِندَ ٱللَّهِ أَتْقَىٰكُمْ ۚ إِنَّ ٱللَّهَ عَلِيمٌ خَبِيرٌۭ",
+        why: "The address is YA AYYUHA AN-NAS — all people, not the believers. The surah has been correcting the manners of a Muslim community for twelve verses, and then widens to everyone for this one.\n\nThe argument is built in two moves. First, common origin: from a male and a female, so the starting point is shared and no lineage predates anyone else's. Second, the peoples and tribes are stated as deliberate — WE MADE YOU — with the purpose given as LI-TA'ARAFU, so that you may know one another. The difference exists to make recognition possible; if everyone were identical there would be nothing to know. Ethnicity is being given a function, and the function is introduction, not ranking.\n\nThen the ranking that does exist is stated, and it is the only one: the most honoured of you with Allah is the most conscious of Him. It is invisible, it cannot be inherited, and nobody can verify it about anyone else — which is why the verse closes with Allah being the Knowing, the Aware. He is the only one in a position to run the comparison.",
+        whyAr: "النداءُ ﴿يَٰٓأَيُّهَا ٱلنَّاسُ﴾ للناس كافّة لا للمؤمنين. وقد ظلّت السورةُ اثنتي عشرة آيةً تُقوّم آدابَ جماعةٍ مسلمة، ثم اتّسعت للجميع في هذه.\n\nوالحجّةُ في خطوتين. الأولى وحدةُ الأصل: ﴿مِّن ذَكَرٍۢ وَأُنثَىٰ﴾، فالمبدأُ مشترك، وليس نسبٌ أسبقَ من نسب. والثانية أنّ الشعوب والقبائل مقصودة: ﴿**وَجَعَلْنَٰكُمْ**﴾، والغايةُ ﴿لِتَعَارَفُوٓا۟﴾. فوُجد الاختلافُ ليمكن التعارف؛ ولو تشابه الناس كلُّهم لم يبقَ ما يُعرَف. فأُعطي العِرقُ وظيفة، ووظيفتُه التعريفُ لا التفاضل.\n\nثم ذُكر التفاضلُ الذي هو كائن، وهو وحده: ﴿إِنَّ أَكْرَمَكُمْ عِندَ ٱللَّهِ أَتْقَىٰكُمْ﴾. وهو خفيٌّ لا يُورث ولا يقدر أحدٌ أن يتحقّقه في غيره — ولذلك خُتمت الآيةُ بـ﴿عَلِيمٌ خَبِيرٌۭ﴾: فهو وحده القادر على إجراء هذه المقارنة.",
+        ref: "Surah Al-Hujurat (49:13)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  50: {
+    surahTitle: "Nearer than a thing inside your own body",
+    surahTitleAr: "أقربُ من شيءٍ في بدنك أنت",
+    partial: true,
+    ayat: [
+      {
+        n: 16,
+        ar: "وَلَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ وَنَعْلَمُ مَا تُوَسْوِسُ بِهِۦ نَفْسُهُۥ ۖ وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ ٱلْوَرِيدِ",
+        why: "The knowledge claimed is of the most private thing there is: what a person's own NAFS whispers to him. Not what he says and not what he decides — the suggestion before it becomes either, the thing he would not repeat to anyone and often does not admit to himself.\n\nThen the nearness is measured against something the reader carries. Not nearer than your friend, nearer than the vein in your neck. The comparison is set inside the body deliberately, so that the reader cannot place the distance anywhere.\n\nAnd the two halves belong together: the verse is not describing surveillance for its own sake. It is stating that the private struggle nobody sees — the whisper, the intention nobody credits, the sin resisted with no witness — is happening in front of Someone who is closer than the vein. That cuts both ways, and the surah gives both: the two recording angels come in the next verse, and the mercy at the end of the surah.",
+        whyAr: "العلمُ المدّعى بأخفى ما يكون: ﴿مَا تُوَسْوِسُ بِهِۦ **نَفْسُهُۥ**﴾. لا ما يقول ولا ما يعزم، وإنما الخاطرُ قبل أن يصير واحدًا منهما، وهو الذي لا يُحدّث به أحدًا وكثيرًا ما لا يُقرّ به لنفسه.\n\nثم قُيس القربُ بشيءٍ يحمله القارئ: لا أقربُ من صاحبك، بل ﴿مِنْ حَبْلِ ٱلْوَرِيدِ﴾. فجُعل المقياسُ داخل البدن عمدًا، حتى لا يجد القارئ موضعًا يضع فيه المسافة.\n\nوالشطران متلازمان: فليست الآيةُ في الرقابة لذاتها، وإنما تُخبر أنّ المجاهدة التي لا يراها أحد — الخاطرَ، والنيّةَ التي لا تُحسب لك، والمعصيةَ تُترك بلا شاهد — تجري بين يدي من هو أقربُ من الوريد. وهذا يقطع في الجهتين، وقد ذكرت السورةُ الجهتين: الملَكان في الآية التي بعدها، والرحمةُ في خاتمة السورة.",
+        ref: "Surah Qaf (50:16), read with 50:17-18",
+        strength: "quran"
+      }
+    ]
+  },
+
   51: {
     surahTitle: "Adh-Dhariyat — the verse that made people think life is only ritual",
     surahTitleAr: "الذاريات — الآية التي ظنّ الناس بها أنّ الحياة عبادةٌ فقط",
@@ -1395,6 +1857,544 @@ const TADABBUR = {
   /* ==========================================================
      103 — AL-ASR
      ========================================================== */
+  71: {
+    surahTitle: "One prescription, and what was promised for it",
+    surahTitleAr: "دواءٌ واحد، وما وُعد به عليه",
+    partial: true,
+    ayat: [
+      {
+        n: 10,
+        ar: "فَقُلْتُ ٱسْتَغْفِرُوا۟ رَبَّكُمْ إِنَّهُۥ كَانَ غَفَّارًۭا",
+        why: "Nuh had preached for nine hundred and fifty years. Here he reports what he told them, and the striking thing is what follows it in the next two verses: seek forgiveness, and He will send the sky upon you in showers, and increase you in wealth and children, and make for you gardens and rivers.\n\nRain, money, children, land. These are worldly, material things, and they are attached to ISTIGHFAR — a private act between a man and Allah with no obvious connection to agriculture or income. The scholars took this as an explicit statement that sin constricts provision and that seeking forgiveness opens it, and al-Hasan al-Basri is reported to have answered several different complaints — drought, poverty, childlessness — with this one verse.\n\nAnd the name given is GHAFFARA, the intensive form: not one who forgives, but one who forgives repeatedly and habitually. The word itself is an invitation to come back more than once.",
+        whyAr: "لبث نوحٌ في قومه ألف سنةٍ إلا خمسين عامًا. وها هو يُخبر بما قاله لهم، واللافتُ ما جاء بعده في الآيتين التاليتين: ﴿يُرْسِلِ ٱلسَّمَآءَ عَلَيْكُم مِّدْرَارًۭا ۝ وَيُمْدِدْكُم بِأَمْوَٰلٍۢ وَبَنِينَ وَيَجْعَل لَّكُمْ جَنَّٰتٍۢ وَيَجْعَل لَّكُمْ أَنْهَٰرًۭا﴾.\n\nمطرٌ ومالٌ وولدٌ وأرض. وهي أمورٌ دنيويّةٌ حسّيّة، عُلّقت بـ**الاستغفار**، وهو عملٌ بين العبد وربّه لا صلة ظاهرة بينه وبين الزرع ولا الرزق. وأخذ أهل العلم من هذا التصريحَ بأنّ الذنب يُضيّق الرزق وأنّ الاستغفار يفتحه، ورُوي أنّ الحسن البصريّ أجاب عن شكاوى مختلفة — جدبٍ وفقرٍ وعقم — بهذه الآية وحدها.\n\nوالاسمُ المذكور ﴿غَفَّارًۭا﴾ على المبالغة: لا غافرًا، بل كثيرَ المغفرة على الدوام. فاللفظُ نفسه دعوةٌ إلى أن تعود أكثر من مرّة.",
+        ref: "Surah Nuh (71:10), read with 71:11-12",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  72: {
+    surahTitle: "Staying straight, and what it waters",
+    surahTitleAr: "الاستقامةُ وما تُسقى به",
+    partial: true,
+    ayat: [
+      {
+        n: 16,
+        ar: "وَأَلَّوِ ٱسْتَقَٰمُوا۟ عَلَى ٱلطَّرِيقَةِ لَأَسْقَيْنَٰهُم مَّآءً غَدَقًۭا",
+        why: "The same connection as in Surah Nuh, from the other direction: uprightness on the path, and abundant water as the consequence. GHADAQ is water that is plentiful to the point of overflowing.\n\nThe scholars read the water both literally — rain and provision — and as a figure for expansion in every good thing. Both readings are reported, and the surah does not force a choice.\n\nWhat is worth noticing is the conditional structure. It is not a promise made to the believers here; it is stated about people who did NOT remain straight, as what WOULD have been given. The verse is describing a door that was available and not entered, which makes it a warning shaped like a gift.",
+        whyAr: "هي الصلةُ نفسها التي في سورة نوح، من الجهة الأخرى: استقامةٌ على الطريقة، والماءُ الغدق نتيجةً لها. و**الغَدَق** الماءُ الكثير حتى يفيض.\n\nوقرأ أهل العلم الماء على الحقيقة — مطرًا ورزقًا — وعلى المثل، أي السعةَ في كلّ خير. والوجهان مرويّان، ولم تُلجئ السورةُ إلى أحدهما.\n\nوالذي يُتأمّل بناءُ الشرط: فليست وعدًا للمؤمنين ها هنا، وإنما هي خبرٌ عمّن **لم** يستقيموا، بما كان سيُعطَونه. فالآيةُ تصف بابًا كان مفتوحًا فلم يُدخل منه، فهي نذارةٌ في صورة عطيّة.",
+        ref: "Surah Al-Jinn (72:16)",
+        strength: "ikhtilaf"
+      }
+    ]
+  },
+
+  73: {
+    surahTitle: "The command that was lightened, and how",
+    surahTitleAr: "الأمرُ الذي خُفّف، وكيف",
+    partial: true,
+    ayat: [
+      {
+        n: 20,
+        ar: "عَلِمَ أَن لَّن تُحْصُوهُ فَتَابَ عَلَيْكُمْ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ",
+        arNote: "Part of the last verse of the surah, which is long and ends with seeking forgiveness.",
+        arNoteAr: "بعضُ آخر آيةٍ في السورة، وهي طويلةٌ تُختم بالاستغفار.",
+        why: "The surah opened by commanding the night prayer — nearly all the night, or half, or a third. This is the same surah closing, and it lifts that.\n\nRead the reasoning, because it is remarkable: HE KNEW that you would not be able to keep count of it, SO HE TURNED TO YOU. The lightening is not granted after anyone complained or failed publicly. It is granted on the basis of what He knew in advance about human capacity — and the word used for the turning is TAWBAH, the same word used when a servant repents. Here it moves in the other direction.\n\nThen the replacement is deliberately unmeasured: recite what is easy of the Quran. No figure is given. And the reasons listed after it are ordinary life — some of you will be ill, some travelling to seek provision, some fighting. Illness and earning a living are named in the same verse as the reason a command was eased, which tells a reader how the Book treats the actual conditions people live in.",
+        whyAr: "افتُتحت السورةُ بالأمر بقيام الليل: ﴿قُمِ ٱلَّيْلَ إِلَّا قَلِيلًۭا ۝ نِّصْفَهُۥٓ أَوِ ٱنقُصْ مِنْهُ قَلِيلًا﴾. وهذه خاتمةُ السورة نفسها، وفيها رفعُ ذلك.\n\nواقرأ التعليل، فإنه عجيب: ﴿**عَلِمَ** أَن لَّن تُحْصُوهُ **فَتَابَ عَلَيْكُمْ**﴾. فلم يقع التخفيف بعد شكوى أحدٍ ولا بعد تقصيرٍ ظاهر، وإنما وقع بناءً على علمه المتقدّم بطاقة البشر — واللفظُ ﴿فَتَابَ﴾، وهي المادّةُ نفسها التي تُستعمل حين يتوب العبد. وهي ها هنا في الجهة المقابلة.\n\nثم جاء البدلُ غيرَ مقدَّرٍ عن قصد: ﴿فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ﴾، ولم يُذكر عدد. والأعذارُ المعدودةُ بعده من صميم الحياة: ﴿مَّرْضَىٰ﴾، و﴿يَضْرِبُونَ فِى ٱلْأَرْضِ يَبْتَغُونَ مِن فَضْلِ ٱللَّهِ﴾، و﴿يُقَٰتِلُونَ فِى سَبِيلِ ٱللَّهِ﴾. فذُكر المرضُ وطلبُ الرزق في آيةٍ واحدة سببًا لتخفيف أمر، وفي هذا بيانٌ للقارئ كيف يُعامل الكتابُ أحوال الناس كما هي.",
+        ref: "Surah Al-Muzzammil (73:20), read with 73:1-4",
+        strength: "quran"
+      }
+    ]
+  },
+
+  74: {
+    surahTitle: "Held as security against a debt",
+    surahTitleAr: "مرهونةٌ بدَينٍ عليها",
+    partial: true,
+    ayat: [
+      {
+        n: 38,
+        ar: "كُلُّ نَفْسٍۭ بِمَا كَسَبَتْ رَهِينَةٌ",
+        why: "RAHINAH is the pledge — the item a debtor leaves with the lender, held until the debt is settled. The image is commercial and every Arab knew it precisely: the object is not owned by the holder and not free to leave; it sits until the account is cleared.\n\nSo the soul is described as collateral against its own record. That is a heavier image than being judged, because a pledge is in custody from the moment the debt exists, not from the day of reckoning.\n\nAnd the verse immediately after names the exception: except the companions of the right. The way out is not that the debt is forgotten; it is that it is settled. The surah then asks those in the Fire what put them there, and the answer they give is a list — we were not of those who prayed, we did not feed the poor, we used to talk vainly with those who talk vainly, and we denied the Day. The debt is itemised by the debtors themselves.",
+        whyAr: "**الرهينة** المرهون، وهو ما يتركه المَدين عند الدائن يُحبس حتى يُقضى الدَّين. والصورةُ تجاريّةٌ كانت العربُ تعرفها بدقّة: فالمرهون لا يملكه القابض ولا هو طليقٌ ينصرف، وإنما يبقى موقوفًا حتى تُصفّى الذمّة.\n\nفوُصفت النفسُ بأنها رهنٌ على صحيفتها. وهذه صورةٌ أثقل من مجرّد المحاسبة، لأنّ المرهون محبوسٌ من حين ثبت الدَّين، لا من يوم الحساب.\n\nوالآيةُ بعدها تذكر المستثنى: ﴿إِلَّآ أَصْحَٰبَ ٱلْيَمِينِ﴾. فليس المخرجُ أن يُنسى الدَّين، وإنما أن يُوفّى. ثم تسأل السورةُ أهلَ النار ما أدخلهم، فيجيبون بقائمة: ﴿لَمْ نَكُ مِنَ ٱلْمُصَلِّينَ ۝ وَلَمْ نَكُ نُطْعِمُ ٱلْمِسْكِينَ ۝ وَكُنَّا نَخُوضُ مَعَ ٱلْخَآئِضِينَ ۝ وَكُنَّا نُكَذِّبُ بِيَوْمِ ٱلدِّينِ﴾. فالدَّينُ يُفصّله المَدينون أنفسهم.",
+        ref: "Surah Al-Muddaththir (74:38), read with 74:39-46",
+        strength: "quran"
+      }
+    ]
+  },
+
+  75: {
+    surahTitle: "The greatest thing given in the Garden",
+    surahTitleAr: "أعظمُ ما يُعطاه أهلُ الجنّة",
+    partial: true,
+    ayat: [
+      {
+        n: 22,
+        ar: "وُجُوهٌۭ يَوْمَئِذٍۢ نَّاضِرَةٌ",
+        arNote: "The first of two verses: “Faces that Day will be radiant, looking at their Lord.”",
+        arNoteAr: "أولى آيتين: ﴿وُجُوهٌۭ يَوْمَئِذٍۢ نَّاضِرَةٌ ۝ إِلَىٰ رَبِّهَا نَاظِرَةٌ﴾.",
+        why: "Two words sit beside each other and are nearly identical in sound: NADIRAH, radiant, and NAZIRAH, looking. The likeness is not decoration. The radiance and the looking are placed together because one is the cause of the other — the faces shine because of what they are seeing.\n\nAhl as-Sunnah took these two verses as among the clearest evidence that the believers will see their Lord in the Hereafter, and read them alongside the hadith in al-Bukhari and Muslim that people will see their Lord as they see the full moon, without crowding to see it. Some groups denied the seeing and read the verse as waiting for reward; the position of the vast majority of the early scholars is the plain one, and the hadith settles it.\n\nAnd this is why the Prophet ﷺ asked, in a dua reported in an-Nasa'i, for the pleasure of looking at His Face. Everything else described in the Garden is a thing given. This is the Giver.",
+        whyAr: "لفظتان متجاورتان يكاد جرسُهما يتّحد: ﴿نَّاضِرَةٌ﴾ من النضارة، و﴿نَاظِرَةٌ﴾ من النظر. وليس التشابه زينة، وإنما قُرن بينهما لأنّ إحداهما علّةُ الأخرى: أشرقت الوجوهُ **بما تنظر إليه**.\n\nوجعل أهل السنّة هاتين الآيتين من أصرح ما استُدلّ به على رؤية المؤمنين ربَّهم في الآخرة، وقرنوهما بحديث الصحيحين: إنكم سترون ربّكم كما ترون القمر ليلة البدر لا تُضامّون في رؤيته. وأنكرت طوائفُ الرؤية وحملت النظر على الانتظار؛ والذي عليه جمهور السلف هو الظاهر، والحديثُ فاصل.\n\nولهذا سأل النبيُّ ﷺ في دعائه المرويّ في النسائيّ: لذّةَ النظر إلى وجهك. فكلُّ ما وُصف في الجنّة سواه **عطاء**، وهذا هو **المُعطي**.",
+        ref: "Surah Al-Qiyamah (75:22-23) · “You will see your Lord”: Sahih al-Bukhari 554 and Sahih Muslim — Jarir ibn Abdullah",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  76: {
+    surahTitle: "Three people, and the third is the surprise",
+    surahTitleAr: "ثلاثةٌ، وثالثُهم هو المفاجئ",
+    partial: true,
+    ayat: [
+      {
+        n: 8,
+        ar: "وَيُطْعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسْكِينًۭا وَيَتِيمًۭا وَأَسِيرًا",
+        why: "'ALA HUBBIHI — despite loving it. The scholars differ on whether the pronoun refers to the food or to Allah, and both readings are reported and both are sound in meaning. On the first, they gave away food they themselves wanted; on the second, they gave it out of love for Him. Either way what is described is giving that costs.\n\nThen the three recipients, and the order runs from ordinary to unexpected. The needy — anyone would accept that. The orphan — closer to home, harder. And the CAPTIVE, who at the time this was revealed was a prisoner of war, which means he was not a Muslim, and in many cases he had been fighting them.\n\nThat is the point of including him. The feeding is not a reward for being on the right side; it is a duty owed to whoever is in your hands and cannot feed himself. And the verse after says what they said while doing it: we feed you only for the face of Allah — we want no repayment from you and no thanks.",
+        whyAr: "﴿عَلَىٰ حُبِّهِۦ﴾: اختلف أهل العلم في مرجع الضمير، أعائدٌ على الطعام أم على الله، والوجهان مرويّان وكلاهما صحيحُ المعنى. فعلى الأوّل: أعطوا طعامًا يشتهونه. وعلى الثاني: أعطوه حبًّا له سبحانه. وعلى الوجهين فالموصوفُ عطاءٌ يُكلِّف.\n\nثم الثلاثةُ الموصوفون، وترتيبُهم من المألوف إلى غير المتوقّع: **المسكين**، ويُسلّم به كلُّ أحد. و**اليتيم**، وهو أقرب وأشقّ. و**الأسير**، وكان يومئذٍ أسيرَ حرب، أي أنه ليس مسلمًا، وكثيرًا ما كان قد قاتلهم.\n\nوهذا هو المقصود من ذكره: فليس الإطعامُ جزاءً على الموافقة في الجهة، وإنما هو حقٌّ لمن صار في يدك ولا يقدر أن يُطعم نفسه. والآيةُ بعدها تحكي ما قالوه وهم يفعلون: ﴿إِنَّمَا نُطْعِمُكُمْ لِوَجْهِ ٱللَّهِ لَا نُرِيدُ مِنكُمْ جَزَآءًۭ وَلَا شُكُورًا﴾.",
+        ref: "Surah Al-Insan (76:8), read with 76:9",
+        strength: "ikhtilaf"
+      }
+    ]
+  },
+
+  77: {
+    surahTitle: "The day the excuses stop",
+    surahTitleAr: "اليومُ الذي تنقطع فيه المعاذير",
+    partial: true,
+    ayat: [
+      {
+        n: 35,
+        ar: "هَٰذَا يَوْمُ لَا يَنطِقُونَ",
+        why: "The verse after it completes the picture: nor are they permitted to make excuses. So the silence is not shock and it is not choice. Permission is withheld.\n\nThat is worth sitting with, because arguing our own case is the most practised human skill. Everyone has an account of himself ready — the pressure he was under, the intention behind it, the context nobody understood. On that day the account exists and is not admitted.\n\nAnd other verses describe them speaking on the same Day, disputing and blaming each other. The scholars reconciled these by the stations: the Day is long and has stages, and speech is permitted in some and cut off in others. Which is a reminder that the Quran describes a real sequence of events, not a single tableau — and that at the stage that decides the matter, the talking is over.",
+        whyAr: "والآيةُ بعدها تُتمّ الصورة: ﴿وَلَا يُؤْذَنُ لَهُمْ فَيَعْتَذِرُونَ﴾. فليس السكوتُ دهشةً ولا اختيارًا، وإنما هو **منعُ الإذن**.\n\nوهذا ممّا يُوقف عنده، فإنّ الاحتجاج للنفس أمهرُ ما يُحسنه الإنسان. فعند كلّ أحدٍ روايةٌ عن نفسه معدّة: الضغطُ الذي كان فيه، والنيّةُ التي وراء فعله، والظرفُ الذي لم يفهمه أحد. وفي ذلك اليوم تكون الروايةُ موجودةً ولا تُقبل.\n\nوقد وردت آياتٌ أخرى فيها كلامُهم في اليوم نفسه يتخاصمون ويتلاومون. وجمع أهل العلم بينها بالمواطن: فاليومُ طويلٌ ذو مواقف، يُؤذن في بعضها في الكلام ويُقطع في بعض. وفي هذا تذكيرٌ بأنّ القرآن يصف **وقائع متتابعة** لا مشهدًا واحدًا، وأنّ الكلام في الموطن الذي يُفصل فيه الأمر قد انتهى.",
+        ref: "Surah Al-Mursalat (77:35-36)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  78: {
+    surahTitle: "The wish nobody expects to hear",
+    surahTitleAr: "الأمنيّةُ التي لا يتوقّعها أحد",
+    partial: true,
+    ayat: [
+      {
+        n: 40,
+        ar: "إِنَّآ أَنذَرْنَٰكُمْ عَذَابًۭا قَرِيبًۭا يَوْمَ يَنظُرُ ٱلْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ ٱلْكَافِرُ يَٰلَيْتَنِى كُنتُ تُرَٰبًۢا",
+        why: "The punishment is called QARIB — near. Every generation since has read that word and looked around at a world that continued. The scholars answer that everything coming is near, and that a man's own death is the beginning of it, so the nearness is measured against his life rather than against history.\n\nThen the man looks at MA QADDAMAT YADAH — what his own two hands sent ahead. Not what was done to him and not what he intended. What he dispatched, which is now waiting there before he arrives.\n\nAnd the wish at the end is the most desperate sentence in the Quran. Not: I wish I had believed. Not: give me another chance. I WISH I WERE DUST — that I had never been made a person at all, had no responsibility, no record, and no self to answer for. It is a request for non-existence, and it comes from someone who has just seen what existence cost him.",
+        whyAr: "وُصف العذابُ بأنه ﴿قَرِيبًۭا﴾. وقد قرأ كلُّ جيلٍ منذئذٍ هذه الكلمة ثم نظر حوله فرأى الدنيا ماضية. وأجاب أهل العلم بأنّ كلَّ آتٍ قريب، وأنّ موت المرء أوّلُ ذلك، فالقربُ مقيسٌ بعمره لا بتاريخ الناس.\n\nثم ينظر الرجل ﴿مَا قَدَّمَتْ يَدَاهُ﴾: لا ما صُنع به، ولا ما نواه، وإنما ما **أرسله** فهو ينتظره هناك قبل أن يصل.\n\nوالأمنيّةُ في الآخر أيأسُ جملةٍ في القرآن. لم يقل: يا ليتني آمنت، ولا: ردّوني. وإنما ﴿يَٰلَيْتَنِى كُنتُ تُرَٰبًۢا﴾ — أي ليتني لم أُجعل إنسانًا أصلًا، فلا تكليف ولا صحيفة ولا نفسٌ أُسأل عنها. فهو طلبُ العدم، ويقوله من رأى للتوّ ما كلّفه الوجود.",
+        ref: "Surah An-Naba (78:40)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  79: {
+    surahTitle: "Two verbs that decide it",
+    surahTitleAr: "فعلان يُحسمان بهما الأمر",
+    partial: true,
+    ayat: [
+      {
+        n: 40,
+        ar: "وَأَمَّا مَنْ خَافَ مَقَامَ رَبِّهِۦ وَنَهَى ٱلنَّفْسَ عَنِ ٱلْهَوَىٰ",
+        arNote: "The first of two verses. The second: “then indeed, Paradise will be his refuge.”",
+        arNoteAr: "أولى آيتين، والثانية: ﴿فَإِنَّ ٱلْجَنَّةَ هِىَ ٱلْمَأْوَىٰ﴾.",
+        why: "Set this against Pharaoh a few verses earlier saying I am your lord, the most high. Two men are placed side by side, and what separates them is compressed into two verbs.\n\nThe first is inward: he FEARED the standing before his Lord. Not feared Hell — feared the position, the moment of being stood in front of Him. The second is an action that follows from it: he FORBADE the soul from its desire. Note who does the forbidding. It is not that his desire was weak or that he was never tempted; he is the one who issued the prohibition, against himself, repeatedly.\n\nThe pairing is the lesson. A fear that produces no restraint is a mood. A restraint with no fear behind it is willpower, and willpower runs out. The verse names both, in that order, and then makes the Garden the consequence of the pair.",
+        whyAr: "ضَعْ هذا في مقابل قول فرعون قبل آيات: ﴿أَنَا۠ رَبُّكُمُ ٱلْأَعْلَىٰ﴾. فقد قُرن رجلان، والفارقُ بينهما مجموعٌ في فعلين.\n\nالأوّل باطن: ﴿خَافَ **مَقَامَ** رَبِّهِۦ﴾. لا خاف النار، وإنما خاف الموقف، أي ساعةَ يُوقَف بين يديه. والثاني عملٌ لازمٌ عنه: ﴿وَنَهَى ٱلنَّفْسَ عَنِ ٱلْهَوَىٰ﴾. وانظر من الناهي: فليس هواه ضعيفًا ولا هو ممّن لم يُفتَن، وإنما **هو** الذي أصدر النهي، على نفسه، مرّةً بعد مرّة.\n\nوالقرنُ بينهما هو الدرس: فخوفٌ لا يُثمر كفًّا حالٌ عارضة، وكفٌّ لا خوف وراءه عزيمةٌ تنفد. فذكرت الآيةُ الاثنين على هذا الترتيب، ثم جعلت الجنّة جواب الاثنين معًا.",
+        ref: "Surah An-Nazi'at (79:40-41), read with 79:24",
+        strength: "quran"
+      }
+    ]
+  },
+
+  80: {
+    surahTitle: "A correction preserved and recited for ever",
+    surahTitleAr: "عتابٌ حُفظ ويُتلى أبدًا",
+    partial: true,
+    ayat: [
+      {
+        n: 1,
+        ar: "عَبَسَ وَتَوَلَّىٰٓ",
+        why: "A blind man, Abdullah ibn Umm Maktum, came asking to be taught. The Messenger ﷺ was at that moment occupied with the chiefs of Quraysh, whose acceptance would have brought many with them. He frowned and turned away, and this came down.\n\nNotice the grammar. The opening verses speak of him in the THIRD person — he frowned, he turned away — and only afterwards does the address become direct. The scholars read this as a mercy in the manner of the rebuke: the fault is stated at a distance before he is spoken to face on.\n\nAnd the reasoning given is a reversal of every worldly calculation. The one who came running, in fear of Allah — from him you are distracted. The man with nothing was the one with the need, and the strategy of pursuing the influential was corrected at its root. It is reported that afterwards the Prophet ﷺ would greet Ibn Umm Maktum with: welcome to the one because of whom my Lord reproached me.",
+        whyAr: "جاء رجلٌ أعمى، عبد الله بن أمّ مكتوم، يسأل أن يُعلَّم. وكان ﷺ حينئذٍ مشغولًا بصناديد قريش، الذين لو أسلموا لأسلم بإسلامهم خلق. فعبس وأعرض، فنزلت.\n\nوانظر الصياغة: افتُتحت الآياتُ بالغَيبة — ﴿عَبَسَ وَتَوَلَّىٰٓ﴾ — ثم صار الخطاب بعدُ مواجهة. وقرأ أهل العلم في هذا رحمةً في طريقة العتاب: ذُكر المأخذُ على بُعدٍ قبل أن يُواجَه به.\n\nوالتعليلُ المذكور قلبٌ لكلّ حسابٍ دنيويّ: ﴿وَأَمَّا مَن جَآءَكَ يَسْعَىٰ ۝ وَهُوَ يَخْشَىٰ ۝ فَأَنتَ عَنْهُ تَلَهَّىٰ﴾. فالذي لا شيء عنده هو صاحبُ الحاجة، وصُحّحت سياسةُ التوجّه إلى ذوي الجاه من أصلها. ورُوي أنه ﷺ كان بعدها يقول لابن أمّ مكتوم إذا رآه: مرحبًا بمن عاتبني فيه ربّي.",
+        ref: "Surah 'Abasa (80:1-10)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  81: {
+    surahTitle: "The question put to her, not to them",
+    surahTitleAr: "السؤالُ وُجّه إليها لا إليهم",
+    partial: true,
+    ayat: [
+      {
+        n: 8,
+        ar: "وَإِذَا ٱلْمَوْءُۥدَةُ سُئِلَتْ",
+        arNote: "The first of two verses: “and when the girl buried alive is asked, for what sin she was killed.”",
+        arNoteAr: "أولى آيتين: ﴿وَإِذَا ٱلْمَوْءُۥدَةُ سُئِلَتْ ۝ بِأَىِّ ذَنۢبٍۢ قُتِلَتْ﴾.",
+        why: "This sits in a list of the signs of the end — the sun folded up, the stars falling, the mountains moved, the seas set alight. Cosmic events, and then one girl.\n\nThat placement is the argument. Among the upheavals of the entire universe, a private crime committed in the dark against someone nobody recorded is given its own verse. Nothing about it was small enough to be lost.\n\nAnd the grammar is what makes it terrible for the perpetrators: SHE is asked. Not they. The one with no voice at the time is the one given the floor, and the question she is asked — for what sin was I killed? — has no answer, which is precisely why it is put to her rather than to them. A charge can be denied. A question from the victim, in front of everyone, cannot.",
+        whyAr: "وقع هذا في تعداد أشراط الآخرة: ﴿إِذَا ٱلشَّمْسُ كُوِّرَتْ﴾، ﴿وَإِذَا ٱلنُّجُومُ ٱنكَدَرَتْ﴾، ﴿وَإِذَا ٱلْجِبَالُ سُيِّرَتْ﴾، ﴿وَإِذَا ٱلْبِحَارُ سُجِّرَتْ﴾. حوادثُ الكون كلِّه، ثم **بنتٌ واحدة**.\n\nوهذا الموضعُ هو الحجّة: ففي زلزلة العالم بأسره تُفرد بآيةٍ جريمةٌ خاصّةٌ وقعت في الظلام على من لم يُقيّدها أحد. فلم يكن فيها شيءٌ من الصِّغَر بحيث يضيع.\n\nوالصياغةُ هي التي تجعلها فظيعةً على الجناة: ﴿**سُئِلَتْ**﴾ هي، لا هم. فالتي لم يكن لها صوتٌ يومئذٍ هي التي أُعطيت الكلام، والسؤالُ الموجَّه إليها — بأيّ ذنبٍ قُتلتُ؟ — لا جواب له، ولهذا بعينه وُجّه إليها دونهم. فالتهمةُ تُنكَر، وأمّا سؤالُ المجنيّ عليه على رؤوس الخلائق فلا يُنكَر.",
+        ref: "Surah At-Takwir (81:8-9)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  82: {
+    surahTitle: "The name chosen inside the question",
+    surahTitleAr: "الاسمُ المختار داخل السؤال",
+    partial: true,
+    ayat: [
+      {
+        n: 6,
+        ar: "يَٰٓأَيُّهَا ٱلْإِنسَٰنُ مَا غَرَّكَ بِرَبِّكَ ٱلْكَرِيمِ",
+        why: "The question could have ended at your Lord. Instead an attribute is attached, and it is AL-KARIM — the Generous. That single word turns the whole verse.\n\nBecause the generosity is the answer to the question. What deceived the man was exactly this: the punishment did not come, the fault was covered, the health continued, the provision kept arriving. He read all of that as evidence that nobody was keeping account — when it was evidence of the opposite, of a Lord generous enough to delay.\n\nSome of the early scholars read the verse as containing its own answer in this way, and one is reported to have said: what deceived him was His forbearance. And note the address: YA AYYUHA AL-INSAN. Not the disbeliever, not the sinner. Man — which means the question is put to the reader, and the reader is expected to supply his own answer to it.",
+        whyAr: "كان يمكن أن ينتهي السؤال عند ﴿بِرَبِّكَ﴾. فزِيد وصفٌ، وهو ﴿ٱلْكَرِيمِ﴾. وهذه الكلمةُ وحدها تقلب الآية.\n\nلأنّ الكرم هو جوابُ السؤال: فالذي غرّ الرجلَ هو هذا بعينه — أنّ العقوبة لم تُعجَّل، وأنّ العيب سُتر، وأنّ العافية دامت، وأنّ الرزق ما انقطع. فقرأ ذلك كلَّه دليلًا على أن لا حسيب، وهو دليلُ ضدّه: دليلُ ربٍّ من كرمه أن يُمهل.\n\nوقرأ بعض السلف الآيةَ على أنّ فيها جوابها، ورُوي عن أحدهم: غرّه حِلمُه. وانظر النداء: ﴿يَٰٓأَيُّهَا ٱلْإِنسَٰنُ﴾ — لا الكافر ولا العاصي، بل **الإنسان**. أي أنّ السؤال موجَّهٌ إلى القارئ، ومطلوبٌ منه هو أن يأتي بجوابه.",
+        ref: "Surah Al-Infitar (82:6)",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  83: {
+    surahTitle: "How a heart gets covered over",
+    surahTitleAr: "كيف يُغطّى القلب",
+    partial: true,
+    ayat: [
+      {
+        n: 14,
+        ar: "كَلَّا ۖ بَلْ ۜ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُوا۟ يَكْسِبُونَ",
+        why: "RAN is rust, or a film that settles on a surface and builds up. The scholars pointed out what the word implies: it does not arrive in one piece. It accumulates, layer on layer, from a repeated action.\n\nAnd the Prophet ﷺ explained the mechanism directly. When a servant commits a sin, a black spot is put in his heart; if he leaves it and seeks forgiveness his heart is polished, and if he returns to it, it increases until it covers his heart — and he then recited this verse. So the tafsir here is his own.\n\nWhat makes it precise is the phrase MA KANU YAKSIBUN — what they were EARNING, in the continuous. Not one sin. The habit. And the surah opened on a merchant shorting a measure, which is how small the earning can be: the covering of a heart is traced back to shaving grams off a scale.",
+        whyAr: "**الرَّان** الصدأ والغِشاء يقع على الشيء فيتراكم عليه. ونبّه أهل العلم على ما يقتضيه اللفظ: أنه لا يأتي جملةً واحدة، وإنما يتراكم طبقةً على طبقةٍ من فعلٍ يتكرّر.\n\nوقد بيّن النبيُّ ﷺ الآليّة نصًّا: إنّ العبد إذا أذنب ذنبًا نُكتت في قلبه نكتةٌ سوداء، فإن تركها واستغفر صُقل قلبه، وإن عاد زادت حتى تعلوَ قلبه — ثم تلا هذه الآية. فالتفسيرُ ها هنا تفسيرُه هو.\n\nوالذي يجعله دقيقًا قوله ﴿مَّا كَانُوا۟ **يَكْسِبُونَ**﴾ على الاستمرار: لا ذنبًا واحدًا، وإنما **العادة**. وقد افتُتحت السورةُ بتاجرٍ يُنقص المكيال، وهذا مقدارُ ما يُكسب: فتغطيةُ القلب مردودةٌ إلى حَبّاتٍ تُقتطع من ميزان.",
+        ref: "Surah Al-Mutaffifin (83:14) · The black spot: at-Tirmidhi 3334 — outside the two Sahihs, authenticated by al-Albani",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  84: {
+    surahTitle: "The direction you are already travelling",
+    surahTitleAr: "الجهةُ التي أنت سائرٌ إليها أصلًا",
+    partial: true,
+    ayat: [
+      {
+        n: 6,
+        ar: "يَٰٓأَيُّهَا ٱلْإِنسَٰنُ إِنَّكَ كَادِحٌ إِلَىٰ رَبِّكَ كَدْحًۭا فَمُلَٰقِيهِ",
+        why: "KADH is labour that leaves a mark on the one doing it — effort that wears a person down. The verse does not ask whether you are exerting yourself; it takes that as given and tells you what the exertion is pointed at.\n\nWhich is the part that unsettles. Every person is working hard at something, and the verse says all of that effort is travel in one direction, whether or not the traveller has noticed. A man building a business, a man chasing status, a man doing nothing in particular — all of them KADIHUN ILA RABBIK, and all of them arriving.\n\nThen FA-MULAQIH — and you will meet Him. The meeting is not presented as a possible outcome or a matter of belief. It is the destination of a journey already in progress. The only thing left open is what a person is carrying when he gets there, which the next verses take up: the record in the right hand, or behind the back.",
+        whyAr: "**الكَدْح** عملٌ يترك أثره في صاحبه، وهو الجهدُ الذي يُنهك. ولم تسأل الآيةُ: أتكدح أم لا؟ وإنما جعلت ذلك مسلَّمًا وأخبرت **إلى أين** يتّجه كدحك.\n\nوهذا هو الموضع الذي يُقلق: فكلُّ إنسانٍ مجتهدٌ في شيء، وتقول الآيةُ إنّ ذلك الجهد كلَّه سيرٌ في جهةٍ واحدة، شعر السائرُ أم لم يشعر. فالذي يبني تجارة، والذي يطلب جاهًا، والذي لا يصنع شيئًا معيّنًا — كلُّهم ﴿كَادِحٌ إِلَىٰ رَبِّكَ﴾، وكلُّهم واصل.\n\nثم ﴿فَمُلَٰقِيهِ﴾. فما عُرض اللقاءُ احتمالًا ولا مسألةَ اعتقاد، وإنما هو غايةُ سفرٍ جارٍ بالفعل. والذي بقي مفتوحًا ما الذي يحمله المرء حين يصل، وهو ما تتناوله الآياتُ بعدها: الكتابُ باليمين، أو من وراء الظهر.",
+        ref: "Surah Al-Inshiqaq (84:6), read with 84:7-10",
+        strength: "quran"
+      }
+    ]
+  },
+
+  85: {
+    surahTitle: "Two names placed together on purpose",
+    surahTitleAr: "اسمان قُرنا عن قصد",
+    partial: true,
+    ayat: [
+      {
+        n: 14,
+        ar: "وَهُوَ ٱلْغَفُورُ ٱلْوَدُودُ",
+        why: "Look at where this falls. The surah has just described believers burned alive in a trench for refusing to give up their faith, and has promised the persecutors the punishment of the Burning. Then, immediately: and He is the Forgiving, the Loving.\n\nAL-WADUD is from WUDD, and the scholars explain the form as carrying both directions at once: the One who loves His righteous servants, and the One who is loved by them. It is not a distant approval. It is affection, named as an attribute.\n\nAnd the placement is the tafsir. To a community that has just watched its own people die in fire, the two names given are not Al-Muntaqim and Al-Jabbar alone — the surah does mention His seizure being severe — but Forgiving and Loving. The One who allowed that to happen is described, in the same passage, as loving them. The surah does not resolve that tension by softening either side; it puts both in front of the reader and leaves them there.",
+        whyAr: "انظر أين وقع هذا. فقد وصفت السورةُ للتوّ مؤمنين أُحرقوا في الأخدود لأنهم أبَوا أن يرجعوا عن دينهم، ووعدت الجناةَ ﴿عَذَابُ ٱلْحَرِيقِ﴾. ثم جاء في الحال: ﴿وَهُوَ ٱلْغَفُورُ ٱلْوَدُودُ﴾.\n\nو**الودود** من الوُدّ، وبيّن أهل العلم أنّ البناء يحتمل الجهتين معًا: الذي يودّ عباده الصالحين، والذي يودّونه هم. فليس رضًا من بعيد، وإنما هي **مودّةٌ** ذُكرت وصفًا.\n\nوموضعُ الاسمين هو تفسيرهما: فلقومٍ رأوا أهلهم يموتون في النار لم يُذكر الاسمان المنتقمُ والجبّار وحدهما — وقد ذكرت السورةُ أنّ بطشه شديد — وإنما ذُكر **الغفور الودود**. فالذي أذن بوقوع ذلك يُوصف في السياق نفسه بأنه يودّهم. ولم تحلّ السورةُ هذا بأن تُخفّف إحدى الجهتين، وإنما وضعت الاثنتين بين يدي القارئ وتركتهما.",
+        ref: "Surah Al-Buruj (85:14), read with 85:4-12",
+        strength: "quran"
+      }
+    ]
+  },
+
+  86: {
+    surahTitle: "What is tested is not the deeds",
+    surahTitleAr: "الذي يُختبر ليس الأعمال",
+    partial: true,
+    ayat: [
+      {
+        n: 9,
+        ar: "يَوْمَ تُبْلَى ٱلسَّرَآئِرُ",
+        why: "TUBLA is from the same root as ibtila, testing — a thing is put under examination to find out what it actually is. And what is examined is not the actions. It is the SARA'IR, the secrets: the inner matter the deed was built on.\n\nSo the deeds are not what is on trial; they are the evidence. The examination is of what was underneath them, which nobody but the doer ever had access to, and which the doer himself was sometimes unsure about.\n\nThat is a heavier prospect than a list being read out. Two men can perform the same act for twenty years and have nothing in common at the level being tested here. And the verses immediately after leave no room to hide: then he will have no power and no helper. There is no advocate at this stage, because the matter is entirely internal and there is nobody else who could testify about it.",
+        whyAr: "﴿تُبْلَى﴾ من مادّة الابتلاء: أن يُوضع الشيء موضع الامتحان ليُعلم ما هو على الحقيقة. والذي يُمتحن ليس الأعمال، وإنما ﴿ٱلسَّرَآئِرُ﴾: البواطنُ التي بُنيت عليها الأعمال.\n\nفليست الأعمالُ هي الموقوفةَ للنظر، وإنما هي البيّنة. والامتحانُ لما تحتها، وهو الذي لم يطّلع عليه أحدٌ سوى صاحبه، بل ربما لم يستيقنه صاحبُه نفسه.\n\nوهذا أثقل من أن تُقرأ قائمة. فقد يعمل رجلان العمل نفسه عشرين سنةً ولا يجتمعان في شيءٍ عند هذه الدرجة من النظر. والآياتُ بعدها لا تدع موضعًا للاختفاء: ﴿فَمَا لَهُۥ مِن قُوَّةٍۢ وَلَا نَاصِرٍۢ﴾. فلا وكيل في هذا الموقف، لأنّ الأمر باطنٌ محض، وليس ثمّ أحدٌ يقدر أن يشهد فيه.",
+        ref: "Surah At-Tariq (86:9), read with 86:10",
+        strength: "quran"
+      }
+    ]
+  },
+
+  87: {
+    surahTitle: "The problem is not that you did not know",
+    surahTitleAr: "المشكلةُ ليست أنك لم تعلم",
+    partial: true,
+    ayat: [
+      {
+        n: 16,
+        ar: "بَلْ تُؤْثِرُونَ ٱلْحَيَوٰةَ ٱلدُّنْيَا",
+        arNote: "The first of two verses: “But you prefer the worldly life, while the Hereafter is better and more lasting.”",
+        arNoteAr: "أولى آيتين: ﴿بَلْ تُؤْثِرُونَ ٱلْحَيَوٰةَ ٱلدُّنْيَا ۝ وَٱلْـَٔاخِرَةُ خَيْرٌۭ وَأَبْقَىٰ﴾.",
+        why: "The verb is TU'THIRUN — you PREFER, you give precedence. Preference is a choice made between two things you have both seen. The verse is not describing people who were never told; it is describing people who compared and picked.\n\nAnd then it grants the comparison in the next breath: and the Hereafter is better and more lasting. It does not argue for that. It states it as agreed, which is more damning than an argument would be — you are not being accused of getting the sums wrong. You are being told you know the answer.\n\nThe two words are chosen exactly. KHAYR, better in quality. ABQA, more lasting in duration. So the thing being preferred loses on both measures at once, and is preferred anyway. The surah ends by noting this was in the scriptures of Ibrahim and Musa — an old problem, and not one modern life invented.",
+        whyAr: "الفعل ﴿تُؤْثِرُونَ﴾، أي تُقدّمون وتختارون. والإيثارُ اختيارٌ بين شيئين قد رأيتهما. فليست الآيةُ في قومٍ لم يُخبَروا، وإنما في قومٍ قابلوا فاختاروا.\n\nثم سلّمت بالمقابلة في النفَس التالي: ﴿وَٱلْـَٔاخِرَةُ خَيْرٌۭ وَأَبْقَىٰ﴾. ولم تُقم على ذلك حجّة، وإنما قرّرته مسلَّمًا، وهو أشدُّ من الحجّة: فلستَ متّهمًا بالخطأ في الحساب، وإنما يُقال لك إنك تعرف الجواب.\n\nواللفظان مختاران بدقّة: ﴿خَيْرٌۭ﴾ في الجودة، و﴿أَبْقَىٰ﴾ في المدّة. فالمؤثَرُ مغلوبٌ في الميزانين جميعًا، ويُؤثَر مع ذلك. وخُتمت السورةُ بأنّ هذا ﴿لَفِى ٱلصُّحُفِ ٱلْأُولَىٰ ۝ صُحُفِ إِبْرَٰهِيمَ وَمُوسَىٰ﴾ — فالداءُ قديم، وما اخترعته الحياةُ الحديثة.",
+        ref: "Surah Al-A'la (87:16-19)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  88: {
+    surahTitle: "Why this animal, in front of these people",
+    surahTitleAr: "لِمَ هذا الحيوان، أمام هؤلاء",
+    partial: true,
+    ayat: [
+      {
+        n: 17,
+        ar: "أَفَلَا يَنظُرُونَ إِلَى ٱلْإِبِلِ كَيْفَ خُلِقَتْ",
+        why: "The evidence is deliberately unimpressive. Not the stars and not the ocean — the animal these particular people were standing next to, had been standing next to their whole lives, and had stopped seeing.\n\nAnd the four things listed after it are ordered by distance: the camel in front of you, the sky above you, the mountains on the horizon, the earth spread out beyond. The eye is walked outward from the nearest object. The argument being made is not that the universe is vast; it is that the reader has not looked at what is in reach.\n\nThe scholars noted the fit of the camel to those addressed — it kneels to be loaded, endures thirst, crosses the terrain they crossed, and is the basis of their livelihood. Whatever a person's own equivalent is, the verse is asking why familiarity was allowed to switch off attention. Nothing here demands travel or instruments. It demands looking at the thing you walk past.",
+        whyAr: "الدليلُ مقصودُ البساطة: لا النجومَ ولا البحر، وإنما الحيوانُ الذي كان هؤلاء بعينهم واقفين إلى جانبه، وقد وقفوا إلى جانبه أعمارهم كلَّها حتى لم يعودوا يرونه.\n\nوالأربعةُ المعدودة بعده مرتّبةٌ بالقرب: الإبلُ بين يديك، ثم ﴿ٱلسَّمَآءِ كَيْفَ رُفِعَتْ﴾ فوقك، ثم ﴿ٱلْجِبَالِ كَيْفَ نُصِبَتْ﴾ في الأفق، ثم ﴿ٱلْأَرْضِ كَيْفَ سُطِحَتْ﴾ فيما وراء ذلك. فسِيقت العينُ من الأقرب إلى الأبعد. وليست الحجّةُ أنّ الكون واسع، وإنما أنّ القارئ لم ينظر فيما تحت يده.\n\nونبّه أهل العلم على مناسبة الإبل للمخاطَبين: تبرك لتُحمّل، وتصبر على الظمأ، وتقطع تلك الأرض التي يقطعونها، وعليها معاشهم. فمهما يكن نظيرُ ذلك عند المرء، فالآيةُ تسأل: لِمَ سُمح للإلف أن يُطفئ النظر؟ وليس فيها تكليفُ سفرٍ ولا آلة، وإنما تكليفُ أن تنظر إلى ما تمرّ به.",
+        ref: "Surah Al-Ghashiyah (88:17-20)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  89: {
+    surahTitle: "The only soul addressed by name at the end",
+    surahTitleAr: "النفسُ الوحيدةُ التي تُنادى بوصفها في الختام",
+    partial: true,
+    ayat: [
+      {
+        n: 27,
+        ar: "يَٰٓأَيَّتُهَا ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ",
+        arNote: "The first of four closing verses: “return to your Lord, well pleased and pleasing to Him; enter among My servants; and enter My Paradise.”",
+        arNoteAr: "أولى أربع آياتٍ خواتيم: ﴿ٱرْجِعِىٓ إِلَىٰ رَبِّكِ رَاضِيَةًۭ مَّرْضِيَّةًۭ ۝ فَٱدْخُلِى فِى عِبَٰدِى ۝ وَٱدْخُلِى جَنَّتِى﴾.",
+        why: "The surah has spent its length on nations that were given plenty and destroyed — 'Ad, Thamud, Pharaoh — and on the man who reads wealth as honour and poverty as humiliation. Then, at the very end, it turns and addresses one soul directly.\n\nMUTMA'INNAH is settled, at rest, no longer agitated. Set against everything before it, the description is the answer to the whole surah: the nations were unsettled by what they were given, and this soul is at rest.\n\nThen four commands in a row, and each one is an admission to somewhere: return to your Lord, pleased and pleasing; enter among MY SERVANTS; enter MY GARDEN. The two possessives at the end are what to stop at. Not a garden — MY Garden. And before the Garden is mentioned at all, the soul is admitted into the company: entry into the group of His servants comes first, and the place comes after.",
+        whyAr: "أنفقت السورةُ طولها في أممٍ أُوتيت فأُهلكت — عادٍ وثمودَ وفرعون — وفي الرجل الذي يقرأ الغنى إكرامًا والفقر إهانة. ثم التفتت في آخرها فخاطبت نفسًا واحدة.\n\nو**المطمئنّة** الساكنةُ القارّةُ التي ذهب اضطرابها. وإذا وُضعت في مقابل ما قبلها كانت وصفًا جامعًا لجواب السورة: فالأممُ زعزعها ما أُعطيت، وهذه النفسُ ساكنة.\n\nثم أربعةُ أوامرٍ متتابعة، كلُّ واحدٍ منها إدخالٌ في شيء: ﴿ٱرْجِعِىٓ إِلَىٰ رَبِّكِ رَاضِيَةًۭ مَّرْضِيَّةًۭ﴾، ﴿فَٱدْخُلِى فِى **عِبَٰدِى**﴾، ﴿وَٱدْخُلِى **جَنَّتِى**﴾. والإضافتان في الآخر هما موضعُ الوقوف: لا جنّةً، بل **جنّتي**. وقبل أن تُذكر الجنّة أصلًا أُدخلت النفسُ في الصحبة: فالدخولُ في جملة عباده مقدَّم، والمكانُ بعده.",
+        ref: "Surah Al-Fajr (89:27-30), read with 89:15-16",
+        strength: "quran"
+      }
+    ]
+  },
+
+  90: {
+    surahTitle: "Difficulty is the material, not the interruption",
+    surahTitleAr: "الكَبَدُ هو المادّة لا العارض",
+    partial: true,
+    ayat: [
+      {
+        n: 4,
+        ar: "لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِى كَبَدٍ",
+        why: "KABAD is hardship, strain, the state of being pressed. And the preposition is FI — IN hardship, not WITH it. Man is not described as encountering difficulty; he is described as created inside it, the way something is created in water or in air.\n\nThat reframes an entire category of complaint. A person who assumes ease is the normal state reads every difficulty as a malfunction — something has gone wrong, this was not supposed to happen. The verse says the medium itself is strain, from the first moment: the birth, the growing, the earning, the ageing, the losing.\n\nAnd the surah does not leave it there. It goes on to what to do inside the strain, and the answer is not escape: freeing a neck from bondage, feeding on a day of hunger, an orphan or a poor man in the dust — and being of those who counselled one another to patience and to mercy. The steep path it names is not a way out of the hardship. It is a way to spend it.",
+        whyAr: "**الكَبَد** المشقّةُ والشدّةُ والعناء. والحرفُ ﴿فِى﴾: خُلق **في** كبدٍ لا **مع** كبد. فما وُصف الإنسان بأنه يلقى الشدّة، وإنما وُصف بأنه خُلق داخلها، كما يُخلق الشيء في ماءٍ أو في هواء.\n\nوهذا يقلب بابًا كاملًا من الشكوى: فمن قدّر أنّ الأصل هو الراحة قرأ كلَّ شدّةٍ خللًا، وأنّ شيئًا قد أُفسد، وأنّ هذا ما كان ينبغي أن يقع. وتقول الآيةُ إنّ الوسط نفسه شدّة، من أوّل لحظة: الولادةُ، والنشأةُ، والكسبُ، والهرمُ، والفقد.\n\nولم تقف السورةُ عند ذلك، بل مضت إلى ما يُصنع داخل الشدّة، وليس الجوابُ فرارًا: ﴿فَكُّ رَقَبَةٍ ۝ أَوْ إِطْعَٰمٌۭ فِى يَوْمٍۢ ذِى مَسْغَبَةٍۢ ۝ يَتِيمًۭا ذَا مَقْرَبَةٍ ۝ أَوْ مِسْكِينًۭا ذَا مَتْرَبَةٍۢ﴾، ثم ﴿وَتَوَاصَوْا۟ بِٱلصَّبْرِ وَتَوَاصَوْا۟ بِٱلْمَرْحَمَةِ﴾. فالعقبةُ المذكورة ليست مخرجًا من الكبد، وإنما هي وجهُ إنفاقه.",
+        ref: "Surah Al-Balad (90:4), read with 90:11-17",
+        strength: "quran"
+      }
+    ]
+  },
+
+  91: {
+    surahTitle: "Eleven oaths for one sentence",
+    surahTitleAr: "أحدَ عشرَ قسمًا لجملةٍ واحدة",
+    partial: true,
+    ayat: [
+      {
+        n: 9,
+        ar: "قَدْ أَفْلَحَ مَن زَكَّىٰهَا",
+        arNote: "The answer to the oaths, paired with the verse after it: “and he has failed who buries it.”",
+        arNoteAr: "جوابُ القسم، ومعه الآيةُ بعده: ﴿وَقَدْ خَابَ مَن دَسَّىٰهَا﴾.",
+        why: "This is the longest run of oaths in the Quran — the sun, its brightness, the moon, the day, the night, the sky, the earth, and the soul itself. Seven creations sworn by, and then the point they were all leading to.\n\nAnd the point is two verbs about what a person does to himself. ZAKKA is to purify and to make grow — the same root as zakah, where taking wealth out makes what remains increase. DASSA is from burying, hiding a thing under something so it is lost from sight.\n\nSo the two outcomes are not believing and disbelieving. They are growing the soul or covering it over. And notice what is placed immediately before, in verse 8: He inspired it with its wickedness and its righteousness. Both were put there. The oaths are not swearing that one of them exists — they are swearing about which one you cultivate. The heaviest oath-sequence in the Book is spent establishing that the outcome rests on the person.",
+        whyAr: "هذه أطولُ سلسلة قسمٍ في القرآن: الشمسُ وضحاها، والقمر، والنهار، والليل، والسماء، والأرض، والنفس. سبعُ مخلوقاتٍ أُقسم بها، ثم جاء المقصودُ الذي سِيقت إليه.\n\nوالمقصودُ فعلان فيما يصنعه المرء بنفسه. **زكّى**: طهّر ونمّى، وهي مادّةُ الزكاة، حيث يُخرَج المال فيزيد ما بقي. و**دسّى** من الدسّ، وهو إخفاء الشيء تحت شيءٍ حتى يغيب.\n\nفليست العاقبتان إيمانًا وكفرًا، وإنما هما **تنميةُ النفس** أو **طمرُها**. وانظر ما وُضع قبلهما في الآية الثامنة: ﴿فَأَلْهَمَهَا فُجُورَهَا وَتَقْوَىٰهَا﴾. فالأمران مُودَعان جميعًا. فليس القسمُ على وجود أحدهما، وإنما هو على **أيّهما تُنمّي**. فأثقلُ قسمٍ في الكتاب أُنفق في تقرير أنّ العاقبة معلّقةٌ بالعبد.",
+        ref: "Surah Ash-Shams (91:9-10), read with 91:8",
+        strength: "lugha"
+      }
+    ]
+  },
+
+  92: {
+    surahTitle: "Eased towards it — in both directions",
+    surahTitleAr: "التيسيرُ في الجهتين",
+    partial: true,
+    ayat: [
+      {
+        n: 5,
+        ar: "فَأَمَّا مَنْ أَعْطَىٰ وَٱتَّقَىٰ",
+        arNote: "The first of a set: “…and confirmed the best, We will ease him toward ease. But as for he who withholds and considers himself free of need, and denies the best, We will ease him toward hardship.”",
+        arNoteAr: "أوّلُ سياقٍ تمامُه: ﴿وَصَدَّقَ بِٱلْحُسْنَىٰ ۝ فَسَنُيَسِّرُهُۥ لِلْيُسْرَىٰ ۝ وَأَمَّا مَنۢ بَخِلَ وَٱسْتَغْنَىٰ ۝ وَكَذَّبَ بِٱلْحُسْنَىٰ ۝ فَسَنُيَسِّرُهُۥ لِلْعُسْرَىٰ﴾.",
+        why: "The same verb is used for both men: SA-NUYASSIRUHU, We will ease him. One is eased towards ease and the other is eased towards hardship — and that second phrase is the one to stop at, because it is not what a reader expects. Being made comfortable in the wrong direction is described as a form of facilitation.\n\nWhich matches something observable: the road down gets smoother the longer it is walked. What was difficult the first time becomes ordinary, then automatic. The verse names that as part of the decree rather than as an accident of habit.\n\nAnd the sequence begins with the hand. Not with belief — with GIVING. The first man gives, then fears Allah, then confirms the best; the second withholds, then considers himself beyond need, then denies. In both lists the material act comes first and the creed follows it. Al-Bukhari and Muslim record that when the companions heard the promise of a decided destiny, they asked whether they should stop working, and he ﷺ answered: work, for each is eased towards what he was created for — and then recited these verses.",
+        whyAr: "استُعمل الفعلُ نفسه في الرجلين: ﴿فَسَنُيَسِّرُهُۥ﴾. فهذا يُيسَّر لليسرى، وذاك يُيسَّر **للعسرى** — وهذه هي التي يُوقف عندها، فإنها خلاف ما يتوقّع القارئ: إذ وُصف التسهيلُ في الجهة الخاطئة تيسيرًا.\n\nوهو موافقٌ لما يُشاهَد: فطريقُ الانحدار يزداد ملاسةً كلّما مُشي فيه. فما كان عسيرًا أوّل مرّةٍ يصير مألوفًا ثم يصير تلقائيًّا. وجعلت الآيةُ ذلك من القدَر، لا عارضًا من عوارض العادة.\n\nوابتدأ السياقُ **باليد** لا بالاعتقاد: ﴿مَنْ أَعْطَىٰ﴾ ثم ﴿وَٱتَّقَىٰ﴾ ثم ﴿وَصَدَّقَ﴾؛ و﴿مَنۢ بَخِلَ﴾ ثم ﴿وَٱسْتَغْنَىٰ﴾ ثم ﴿وَكَذَّبَ﴾. ففي القائمتين جميعًا قُدّم الفعلُ الحسّيّ وتأخّر التصديق. وفي الصحيحين أنّ الصحابة لمّا سمعوا بالقدر قالوا: أفلا ندع العمل؟ فقال ﷺ: اعملوا فكلٌّ ميسَّرٌ لما خُلق له — ثم تلا هذه الآيات.",
+        ref: "Surah Al-Layl (92:5-10) · Sahih al-Bukhari 4949 and Sahih Muslim — Ali ibn Abi Talib",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  93: {
+    surahTitle: "Revealed when the revelation had stopped",
+    surahTitleAr: "نزلت حين انقطع الوحي",
+    partial: true,
+    ayat: [
+      {
+        n: 3,
+        ar: "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+        why: "The revelation had paused, and the people around him were saying his Lord had abandoned him. This came down.\n\nTwo things are denied, and they are not the same thing. WADDA'AKA is from farewell — the leave-taking of someone who goes and does not come back. QALA is to hate, to be repelled by someone. So one denial is about absence and the other is about the relationship: He has not gone, and He does not dislike you.\n\nAnd there is a silence in the wording that the classical scholars pointed out. The verse says your Lord has not bid you farewell, nor DETESTED — and the object is dropped from the second verb. It does not say nor detested YOU. The scholars read the omission as deliberate courtesy: the word for hatred is not brought into direct contact with him at all.\n\nThen the argument that follows is entirely from his own past: did He not find you an orphan and shelter you, lost and guide you, in need and enrich you. Not a promise about the future — a review of what has already been done for him.",
+        whyAr: "احتبس الوحي، وقال من حوله: ودّعه ربُّه وقلاه. فنزلت.\n\nونُفي شيئان ليسا بواحد: **التوديع** من الوداع، وهو فراقُ من يذهب فلا يعود. و**القِلى** البُغض والنفور. فالنفيُ الأوّل في الغيبة، والثاني في العلاقة نفسها: ما ذهب عنك، ولا أبغضك.\n\nوفي التركيب سكوتٌ نبّه عليه المتقدّمون: قال ﴿مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ﴾، فحُذف مفعول الفعل الثاني، ولم يقل: وما قلاك. وقرأوا الحذف أدبًا مقصودًا: ألّا يُقرَن لفظُ البُغض به مباشرةً البتّة.\n\nثم جاءت الحجّةُ كلُّها من ماضيه هو: ﴿أَلَمْ يَجِدْكَ يَتِيمًۭا فَـَٔاوَىٰ ۝ وَوَجَدَكَ ضَآلًّۭا فَهَدَىٰ ۝ وَوَجَدَكَ عَآئِلًۭا فَأَغْنَىٰ﴾. فليست وعدًا بمستقبل، وإنما هي مراجعةٌ لما صُنع به من قبل.",
+        ref: "Surah Ad-Duha (93:3), read with 93:6-8 · The pause in revelation: Sahih al-Bukhari 4950 and Sahih Muslim — Jundub ibn Sufyan",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  94: {
+    surahTitle: "The word is not “after”",
+    surahTitleAr: "الحرفُ ليس «بعد»",
+    partial: true,
+    ayat: [
+      {
+        n: 5,
+        ar: "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+        arNote: "Repeated immediately in the next verse: “Indeed, with hardship is ease.”",
+        arNoteAr: "وتُعاد في الآية التي بعدها: ﴿إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا﴾.",
+        why: "The verse is constantly quoted as after hardship comes ease. The word is MA'A — WITH. Not ba'da, after. The ease is not queued behind the difficulty waiting for it to finish; it is present alongside it.\n\nThat is a different claim and a harder one to accept while inside the difficulty, which is presumably why it was said twice.\n\nAnd there is a point of Arabic here that the early scholars drew out. AL-'USR appears with the definite article both times, and YUSRAN indefinite both times. In Arabic, a definite noun repeated refers to the same thing, while an indefinite noun repeated can be a second, different one. Ibn Abbas is reported to have concluded from this: one hardship will never overcome two eases. It is a piece of grammar carrying a piece of consolation, and it is not something a reader could get from a translation.",
+        whyAr: "تُنقل الآيةُ دائمًا هكذا: بعد العسر يسر. والحرفُ ﴿مَعَ﴾ لا «بعد». فليس اليسرُ مصطفًّا خلف العسر ينتظر انقضاءه، وإنما هو **مصاحبٌ له**.\n\nوهذه دعوى أخرى، وقبولها وأنت داخل الشدّة أشقّ، ولعلّ هذا وجهُ إعادتها مرّتين.\n\nوثمّ لطيفةٌ عربيّةٌ استخرجها السلف: أنّ ﴿ٱلْعُسْرِ﴾ جاء معرّفًا في الموضعين، و﴿يُسْرًا﴾ جاء منكّرًا في الموضعين. والمعرفةُ إذا أُعيدت كانت هي الأولى، والنكرةُ إذا أُعيدت جاز أن تكون غيرها. فرُوي عن ابن عبّاس أنه قال: لن يغلب عسرٌ يُسرين. فهي قاعدةٌ في النحو تحمل تسليةً، وليست ممّا يبلغه القارئ من ترجمة.",
+        ref: "Surah Ash-Sharh (94:5-6)",
+        strength: "lugha"
+      }
+    ]
+  },
+
+  95: {
+    surahTitle: "The height explains the depth",
+    surahTitleAr: "العلوُّ يُفسّر السقوط",
+    partial: true,
+    ayat: [
+      {
+        n: 4,
+        ar: "لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِىٓ أَحْسَنِ تَقْوِيمٍۢ",
+        arNote: "Followed by: “then We returned him to the lowest of the low, except those who believed and did righteous deeds.”",
+        arNoteAr: "ويتلوها: ﴿ثُمَّ رَدَدْنَٰهُ أَسْفَلَ سَٰفِلِينَ ۝ إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ﴾.",
+        why: "TAQWIM is from q-w-m, the same root as istiqamah — to set a thing straight, to give it its proper proportion. So the claim is not that man is beautiful; it is that he was made correctly balanced, in body and in what was placed in him.\n\nThen the fall, and it is stated as being done to him: THEN WE RETURNED HIM to the lowest of the low. The scholars offered more than one reading — old age and decline, or the Fire, or the state a person sinks to when he abandons what he was made for — and the exception clause supports the last, since belief and righteous action are what hold a person up.\n\nThe two verses belong together. Nothing else in creation has this range: an animal cannot rise and cannot fall, because it was not given the equipment for either. Being made in the best proportion is precisely what makes the descent possible — which is why the surah opens with oaths on the fig, the olive, Sinai and this secure city, all places where revelation came to hold that height in place.",
+        whyAr: "**التقويم** من (ق و م)، وهي مادّةُ الاستقامة: تسويةُ الشيء وإعطاؤه قدره. فليست الدعوى أنّ الإنسان جميل، وإنما أنه خُلق **معتدلًا مسوّى**، في بدنه وفيما أُودع فيه.\n\nثم السقوط، وجاء مُسندًا إلى غيره: ﴿ثُمَّ **رَدَدْنَٰهُ** أَسْفَلَ سَٰفِلِينَ﴾. وذكر أهل العلم فيه وجوهًا: أرذلَ العمر، أو النار، أو الحال التي ينحطّ إليها من ترك ما خُلق له. والاستثناءُ يشهد للأخير، فإنّ الإيمان والعمل الصالح هما اللذان يُمسكان المرء.\n\nوالآيتان متلازمتان: فليس في الخلق ما له هذا المدى. فالبهيمةُ لا ترتفع ولا تنحطّ، لأنها لم تُعطَ آلة أحدهما. فكونُه خُلق في أحسن تقويمٍ هو بعينه ما جعل الانحدار ممكنًا — ولهذا افتُتحت السورةُ بالقسم بالتين والزيتون وطور سينين وهذا البلد الأمين، وكلُّها مواضعُ جاء فيها الوحي ليُمسك ذلك العلوّ.",
+        ref: "Surah At-Tin (95:4-6)",
+        strength: "ikhtilaf"
+      }
+    ]
+  },
+
+  96: {
+    surahTitle: "The first word, and what it was attached to",
+    surahTitleAr: "أوّلُ كلمة، وبِمَ قُيّدت",
+    partial: true,
+    ayat: [
+      {
+        n: 1,
+        ar: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
+        why: "The first word revealed to a man who could not read, in a society that transmitted almost everything by memory, was IQRA. That in itself is worth stopping at before anything else in the surah.\n\nBut the command does not stand alone, and this is the part usually dropped when the verse is quoted as a slogan about literacy. Read IN THE NAME OF YOUR LORD WHO CREATED. The reading is bound, in its first appearance, to whose name it is done in. Knowledge is commanded and simultaneously given a direction.\n\nAnd then the surah does something a reader should notice. It moves from the pen and teaching man what he did not know, straight to: no indeed, man transgresses when he sees himself self-sufficient. The first surah revealed pairs learning with the exact disease that learning produces — a man who knows things and concludes from that that he needs nobody. Both halves came down together, at the very beginning.",
+        whyAr: "أوّلُ كلمةٍ أُنزلت على رجلٍ لا يقرأ، في مجتمعٍ ينقل عامّة علمه بالحفظ، كانت ﴿ٱقْرَأْ﴾. وهذا وحده ممّا يُوقف عنده قبل كلّ ما في السورة.\n\nولكنّ الأمر لم يأتِ مطلقًا، وهذا هو الذي يُحذف حين تُتّخذ الآيةُ شعارًا في محو الأمّيّة: ﴿ٱقْرَأْ **بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ**﴾. فقُيّدت القراءةُ في أوّل ورودها بمن تكون باسمه. فأُمر بالعلم وأُعطي وجهته في آنٍ واحد.\n\nثم تصنع السورةُ ما ينبغي أن ينتبه له القارئ: تنتقل من القلم ومن ﴿عَلَّمَ ٱلْإِنسَٰنَ مَا لَمْ يَعْلَمْ﴾ رأسًا إلى: ﴿كَلَّآ إِنَّ ٱلْإِنسَٰنَ لَيَطْغَىٰٓ ۝ أَن رَّءَاهُ ٱسْتَغْنَىٰ﴾. فأوّلُ سورةٍ نزلت تقرن التعلّم بالداء الذي يُولّده التعلّم بعينه: رجلٌ يعلم فيستنتج أنه لا يحتاج أحدًا. ونزل الشطران معًا، في الابتداء.",
+        ref: "Surah Al-'Alaq (96:1-7)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  97: {
+    surahTitle: "A number, and then a silence",
+    surahTitleAr: "رقمٌ ثم سكوت",
+    partial: true,
+    ayat: [
+      {
+        n: 3,
+        ar: "لَيْلَةُ ٱلْقَدْرِ خَيْرٌۭ مِّنْ أَلْفِ شَهْرٍۢ",
+        why: "A thousand months is more than eighty-three years — longer than most people are given. So a person who catches this one night has been handed something he could not have accumulated in a full lifetime of ordinary nights.\n\nAnd QADR carries two senses the scholars discussed together: measuring and decreeing — the night matters are apportioned — and rank or worth. Both fit, and the surah supports both, since it describes the angels and the Spirit descending BY THE PERMISSION OF THEIR LORD WITH EVERY MATTER.\n\nThe striking thing is what is not said. The date is never given. He ﷺ came out to inform the companions of it and found two men disputing, and it was lifted from him — reported in al-Bukhari, and he added that perhaps it was better for them. The instruction that replaced the date was to seek it in the last ten, in the odd nights. So a night worth a lifetime was deliberately left unmarked, because a fixed date would be observed once and the other nine abandoned.",
+        whyAr: "ألفُ شهرٍ تزيد على ثلاثٍ وثمانين سنة، وهي أطولُ من أعمار أكثر الناس. فمن أدرك هذه الليلة الواحدة فقد أُعطي ما لم يكن ليجمعه في عمرٍ كاملٍ من الليالي المعتادة.\n\nو**القدر** يحتمل معنيين تكلّم فيهما أهل العلم معًا: التقديرَ والقضاء — إذ تُقدَّر فيها الأمور — والقَدْرَ بمعنى الشرف والمنزلة. وكلاهما يستقيم، والسورةُ تشهد لهما، إذ فيها ﴿تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍۢ﴾.\n\nواللافتُ ما لم يُقل: فلم تُذكر ليلتُها قطّ. وقد خرج ﷺ ليُخبر أصحابه بها فوجد رجلين يتلاحيان فرُفعت — والخبر في البخاريّ، وقال: وعسى أن يكون خيرًا لكم. وكان البدلُ من التعيين أن تُلتمس في العشر الأواخر في الوتر. فليلةٌ تعدل عمرًا تُركت غير معلّمةٍ عن قصد، لأنّ التاريخ لو ثبت لقُوّمت مرّةً وتُركت التسع.",
+        ref: "Surah Al-Qadr (97:3) · The date being lifted: Sahih al-Bukhari 49 — Ubadah ibn as-Samit",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  98: {
+    surahTitle: "The whole religion in one sentence",
+    surahTitleAr: "الدينُ كلُّه في جملة",
+    partial: true,
+    ayat: [
+      {
+        n: 5,
+        ar: "وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ حُنَفَآءَ وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ ۚ وَذَٰلِكَ دِينُ ٱلْقَيِّمَةِ",
+        why: "The structure is a restriction: they were commanded ONLY. Whatever else exists in the law, this sentence claims to hold the core of it, and then names four things.\n\nWorship Him — the act. Sincerely, His religion for Him alone — the intention. HUNAFA', inclining away from everything false towards the one truth — the direction. Then two specific duties: establish the prayer, give the zakah. The first three are internal and the last two are the visible test of them.\n\nAnd notice the order: sincerity is named before the prayer. A person can perform both duties precisely and fail the sentence, because the qualifier came first.\n\nThen: and that is the DIN AL-QAYYIMAH — the upright, standing religion, from the same root as qawwam and qayyum. Not a religion that is merely correct; one that stands, and that a person can stand on.",
+        whyAr: "التركيبُ قصر: ﴿وَمَآ أُمِرُوٓا۟ **إِلَّا**﴾. فمهما يكن في الشريعة من فروع، فهذه الجملةُ تدّعي أنها تحوي أصلها، ثم تُسمّي أربعة.\n\n﴿لِيَعْبُدُوا۟ ٱللَّهَ﴾: الفعل. ﴿مُخْلِصِينَ لَهُ ٱلدِّينَ﴾: القصد. ﴿حُنَفَآءَ﴾: الميلُ عن كلّ باطلٍ إلى الحقّ الواحد، وهو الوجهة. ثم فرضان بعينهما: ﴿وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ﴾. فالثلاثةُ الأُوَل باطنة، والأخيران هما امتحانها الظاهر.\n\nوانظر الترتيب: قُدّم الإخلاصُ على الصلاة. فقد يؤدّي المرء الفرضين على وجههما ويسقط في الجملة، لأنّ القيد سبق.\n\nثم: ﴿وَذَٰلِكَ **دِينُ ٱلْقَيِّمَةِ**﴾، من (ق و م)، وهي مادّةُ القوّام والقيّوم. فليس دينًا صحيحًا فحسب، وإنما هو **قائمٌ** يُقام عليه ويُستند إليه.",
+        ref: "Surah Al-Bayyinah (98:5)",
+        strength: "quran"
+      }
+    ]
+  },
+
+  99: {
+    surahTitle: "The smallest unit they could name",
+    surahTitleAr: "أصغرُ ما كانوا يعرفون تسميته",
+    partial: true,
+    ayat: [
+      {
+        n: 7,
+        ar: "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًۭا يَرَهُۥ",
+        arNote: "Paired with the verse after it: “and whoever does an atom's weight of evil will see it.”",
+        arNoteAr: "ومعها الآيةُ بعدها: ﴿وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍۢ شَرًّۭا يَرَهُۥ﴾.",
+        why: "DHARRAH was the smallest thing the language had a word for — the classical explanations include the tiny ant and the mote of dust you see suspended in a shaft of sunlight. The point is not the physics; it is that the Quran reached for the smallest available unit and then said even THAT is weighed.\n\nAnd the verb is YARAHU — he will SEE it. Not: he will be told about it, or it will be counted for him. He looks at it.\n\nThe two verses together close both of the excuses people actually use. Not: that good deed was too small to matter — you will see it. And not: that sin was too small to count — you will see that too. The surah is thirty words long and it removes the entire category of the negligible.",
+        whyAr: "**الذَّرّة** أصغرُ ما وضعت له العربُ اسمًا، وفسّرها المتقدّمون بصغار النمل، وبالهباء الذي تراه في شعاع الشمس من الكوّة. وليس المقصود تحديدَ الجرم، وإنما أنّ القرآن أخذ أصغر وحدةٍ متاحةٍ ثم قال إنّ **هذه** توزن.\n\nوالفعل ﴿يَرَهُۥ﴾: **يراه**. لا يُخبَر به ولا يُحسب له، وإنما ينظر إليه.\n\nوالآيتان معًا تسدّان العذرين اللذين يستعملهما الناس فعلًا: لا «هذه حسنةٌ أصغر من أن تنفع» — فسيراها؛ ولا «هذه سيّئةٌ أصغر من أن تُحسب» — فسيراها كذلك. والسورةُ نحو ثلاثين كلمة، وقد رفعت باب «الصغير الذي لا يُعتدّ به» من أصله.",
+        ref: "Surah Az-Zalzalah (99:7-8)",
+        strength: "lugha"
+      }
+    ]
+  },
+
+  100: {
+    surahTitle: "He is the witness against himself",
+    surahTitleAr: "هو الشاهدُ على نفسه",
+    partial: true,
+    ayat: [
+      {
+        n: 6,
+        ar: "إِنَّ ٱلْإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٌۭ",
+        arNote: "Followed by: “and indeed, he is to that a witness.”",
+        arNoteAr: "ويتلوها: ﴿وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٌۭ﴾.",
+        why: "KANUD was explained by the early scholars as the one who counts the hardships and forgets the favours — and al-Hasan is reported to have said he is the one who remembers the calamities and forgets the blessings. So it is not a general ingratitude; it is a specific accounting error, always running in the same direction.\n\nThen the verse after removes the possibility of dispute: and he is a witness to that. Whatever the exact reading — whether he testifies against himself by his conduct, or knows it in himself — no external accuser is needed. The case is closed with the defendant's own knowledge.\n\nAnd where this sits is deliberate. It comes after five verses of galloping war horses — striking sparks, raiding at dawn, raising dust. Animals described exerting themselves completely for their owner, and then, immediately: man is ungrateful to his Lord. The comparison is not stated. It is arranged.",
+        whyAr: "فسّر السلفُ **الكَنود** بالذي يعدّ المصائب وينسى النعم، ورُوي عن الحسن: هو الذي يعدّ المصيبات وينسى نعم الله. فليس كفرانًا مطلقًا، وإنما هو خطأٌ في الحساب بعينه، يجري أبدًا في جهةٍ واحدة.\n\nثم ترفع الآيةُ بعدها إمكانَ المنازعة: ﴿وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٌۭ﴾. وأيًّا ما كان الوجه — أيشهد على نفسه بحاله، أم يعلم ذلك من نفسه — فلا حاجة إلى مدّعٍ من خارج. فأُغلقت القضيّةُ بعلم المدّعى عليه.\n\nوموضعُ ذلك مقصود: فقد جاء بعد خمس آياتٍ في خيل الغزو ﴿وَٱلْعَٰدِيَٰتِ ضَبْحًۭا ۝ فَٱلْمُورِيَٰتِ قَدْحًۭا ۝ فَٱلْمُغِيرَٰتِ صُبْحًۭا﴾. دوابُّ وُصفت وهي تبذل غايتها لصاحبها، ثم في الحال: ﴿إِنَّ ٱلْإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٌۭ﴾. فما صُرّحت المقارنة، وإنما رُتّبت.",
+        ref: "Surah Al-'Adiyat (100:6-7), read with 100:1-5",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  101: {
+    surahTitle: "Weight, not quantity",
+    surahTitleAr: "الوزنُ لا العدد",
+    partial: true,
+    ayat: [
+      {
+        n: 6,
+        ar: "فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ",
+        arNote: "The first of a set ending: “…and as for one whose scales are light, his refuge will be an abyss.”",
+        arNoteAr: "أوّلُ سياقٍ خاتمتُه: ﴿وَأَمَّا مَنْ خَفَّتْ مَوَٰزِينُهُۥ ۝ فَأُمُّهُۥ هَاوِيَةٌۭ﴾.",
+        why: "THAQULAT — heavy. Not many, not long, not impressive. The measure the surah gives is weight, and weight is not the same as amount: a small dense thing outweighs a large hollow one.\n\nThat is the whole consolation and the whole warning in the image. A person with few deeds may find them heavy, and a person with a long record may find it light — which is exactly what the hadith of the card describes, where a man is brought with ninety-nine scrolls of sins each stretching as far as the eye can see, and one card with the testimony of faith on it, and the card outweighs them.\n\nAnd the description of the loser is strange enough to stop at: FA-UMMUHU HAWIYAH — his MOTHER is an abyss. The scholars explained the expression as the Arab usage for what a man returns to and takes refuge in, as a child returns to its mother. The place he ends up is described using the warmest word available, which makes it worse rather than softer.",
+        whyAr: "﴿ثَقُلَتْ﴾: ثِقَلًا، لا كثرةً ولا طولًا ولا ضخامة. فالميزانُ الذي ذكرته السورةُ **الوزن**، وليس الوزنُ هو المقدار: فالشيءُ الصغير الكثيف يرجح الكبيرَ الأجوف.\n\nوفي هذه الصورة التسليةُ كلُّها والنذارةُ كلُّها: فقد يجد قليلُ العمل عمله ثقيلًا، وقد يجد طويلُ الصحيفة صحيفتَه خفيفة — وهو الذي يصفه حديث البطاقة، إذ يُؤتى برجلٍ له تسعةٌ وتسعون سجلًّا كلُّ سجلٍّ مدَّ البصر، وبطاقةٍ فيها شهادةُ التوحيد، فترجح البطاقة.\n\nووصفُ الخاسر غريبٌ يستحقّ الوقوف: ﴿فَأُمُّهُۥ هَاوِيَةٌۭ﴾ — **أمُّه**. وفسّر أهل العلم العبارة بجاري كلام العرب فيما يأوي إليه المرء ويرجع، كما يرجع الولد إلى أمّه. فوُصف مآله بأدفأ لفظٍ في اللغة، وهو بذلك أشدُّ لا ألين.",
+        ref: "Surah Al-Qari'ah (101:6-9) · The hadith of the card: at-Tirmidhi 2639 — outside the two Sahihs, authenticated by al-Albani",
+        strength: "tafsir"
+      }
+    ]
+  },
+
+  102: {
+    surahTitle: "What will be asked about",
+    surahTitleAr: "الذي يُسأل عنه",
+    partial: true,
+    ayat: [
+      {
+        n: 8,
+        ar: "ثُمَّ لَتُسْـَٔلُنَّ يَوْمَئِذٍ عَنِ ٱلنَّعِيمِ",
+        why: "The surah opens on TAKATHUR — competing to have more — and says it distracted you UNTIL YOU VISITED THE GRAVES. The distraction is described as lasting the entire life, and only ending at the cemetery. Not a phase.\n\nThen the closing line, and it is heavier than it looks: you will be asked about AN-NA'IM, the pleasure. Not about the sins. About the enjoyment — the things that were permitted.\n\nAnd the hadith fixes how ordinary this is. He ﷺ went out with Abu Bakr and Umar to a man of the Ansar, who gave them dates and water and slaughtered for them, and he said: this is of the pleasure you will be asked about on the Day of Resurrection. Cold water, shade, a meal among friends — that is the level being described.\n\nWhich is not a threat against enjoying what is lawful. It is a statement that everything received is a debt entered in a ledger, and that the accounting covers the whole of it, not just the parts a person feels guilty about.",
+        whyAr: "افتُتحت السورةُ بـ﴿ٱلتَّكَاثُرُ﴾، وهو التباري في الكثرة، وقالت: ﴿أَلْهَىٰكُمُ ٱلتَّكَاثُرُ ۝ **حَتَّىٰ زُرْتُمُ ٱلْمَقَابِرَ**﴾. فوُصف الإلهاءُ بأنه يستغرق العمر كلَّه، ولا ينقضي إلا عند المقبرة. فليس طورًا من الأطوار.\n\nثم السطرُ الخاتم، وهو أثقلُ ممّا يبدو: ﴿لَتُسْـَٔلُنَّ يَوْمَئِذٍ عَنِ **ٱلنَّعِيمِ**﴾. لا عن الذنوب، بل عن **التنعّم**، أي عن المباح.\n\nوالحديثُ يُبيّن كم هو مألوف: خرج ﷺ ومعه أبو بكر وعمر إلى رجلٍ من الأنصار، فأطعمهم رُطبًا وسقاهم ماءً وذبح لهم، فقال: هذا من النعيم الذي تُسألون عنه يوم القيامة. ماءٌ باردٌ وظلٌّ وطعامٌ بين إخوة — هذه هي الدرجةُ الموصوفة.\n\nوليس في ذلك تهديدٌ على التمتّع بالحلال، وإنما هو خبرٌ بأنّ كلّ ما وصل إليك مقيَّدٌ في دفتر، وأنّ الحساب يستغرقه كلَّه، لا ما يستشعر المرء منه ذنبًا فقط.",
+        ref: "Surah At-Takathur (102:8) · The dates and water: Sahih Muslim, Book of Drinks — Abu Hurairah",
+        strength: "hadith"
+      }
+    ]
+  },
+
   103: {
     surahTitle: "Three verses that ash-Shafi'i said would have been enough",
     surahTitleAr: "ثلاث آياتٍ قال الشافعيّ لو ما أنزل الله غيرها لكفت",
@@ -1474,6 +2474,22 @@ const TADABBUR = {
      The clearest case in the Quran of two surahs completing each
      other, which is the thing the owner described.
      ========================================================== */
+  104: {
+    surahTitle: "Two habits joined in one line",
+    surahTitleAr: "خصلتان قُرنتا في سطر",
+    partial: true,
+    ayat: [
+      {
+        n: 1,
+        ar: "وَيْلٌۭ لِّكُلِّ هُمَزَةٍۢ لُّمَزَةٍ",
+        why: "Both words are on the intensive pattern FU'ALAH, which in Arabic describes someone in whom the act has become a habit and a character. Not a man who mocked once. A man who is a mocker.\n\nThe scholars distinguished them: HUMAZAH is generally the one who attacks a person to his face, by gesture or word, and LUMAZAH the one who does it behind his back or by insinuation. Between them they cover the open and the hidden form of the same contempt.\n\nAnd then the very next verse, without any transition: who gathers wealth and counts it repeatedly. The two are placed together on purpose. The surah is claiming a connection between despising people and being certain of money — the second is what funds the confidence of the first. And the punishment named plays on it exactly: AL-HUTAMAH, the crusher, described as rising over the hearts. The one who broke people is put where breaking happens.",
+        whyAr: "اللفظان على وزن **فُعَلة**، وهو في العربيّة للمبالغة، أي من صار الفعلُ فيه عادةً وخُلقًا. لا رجلٌ همز مرّة، وإنما **همّاز**.\n\nوفرّق أهل العلم بينهما: فالهُمَزة في الغالب من يقع في الناس في وجوههم بالإشارة أو القول، واللُّمَزة من يفعل ذلك من ورائهم أو بالتعريض. فاستغرقا الصورة الظاهرة والخفيّة من احتقارٍ واحد.\n\nثم الآيةُ التي تليها بلا فاصل: ﴿ٱلَّذِى جَمَعَ مَالًۭا وَعَدَّدَهُۥ﴾. وقد قُرن بينهما عن قصد: فالسورةُ تدّعي صلةً بين ازدراء الناس والثقة بالمال، وأنّ الثاني هو الذي يُموّل جرأة الأوّل. والعقوبةُ المذكورة على وفق ذلك: ﴿ٱلْحُطَمَةُ﴾، وهي التي تحطم، ووُصفت بأنها ﴿تَطَّلِعُ عَلَى ٱلْأَفْـِٔدَةِ﴾. فمن حطّم الناس وُضع حيث الحطم.",
+        ref: "Surah Al-Humazah (104:1-7)",
+        strength: "lugha"
+      }
+    ]
+  },
+
   105: {
     surahTitle: "The surah that does not finish until the next one",
     surahTitleAr: "السورة التي لا تتمّ إلا بالتي بعدها",
@@ -1876,6 +2892,54 @@ const TADABBUR = {
   /* ==========================================================
      112 — AL-IKHLAS
      ========================================================== */
+  109: {
+    surahTitle: "The verse quoted to mean the opposite of what it says",
+    surahTitleAr: "آيةٌ تُنقل لتعني ضدّ ما تقول",
+    partial: true,
+    ayat: [
+      {
+        n: 6,
+        ar: "لَكُمْ دِينُكُمْ وَلِىَ دِينِ",
+        why: "This is regularly quoted as though it meant all religions are the same, or that it makes no difference what a person believes. Read the five verses before it and that reading collapses.\n\nThe surah was revealed when Quraysh proposed a compromise: he would worship their gods for a year and they would worship his for a year. The answer is four verses of flat, repeated refusal — I do not worship what you worship, and you do not worship what I worship — before the last line arrives. So the sentence is the CONCLUSION of an outright rejection, not a statement that the difference does not matter.\n\nWhat it does establish is real and important: no compulsion in the matter, and a clean separation. You have yours and I have mine. That is a boundary, and boundaries are what allow people who genuinely disagree to live beside each other without either pretending or fighting. Which is a stronger and more useful position than the sentimental reading, and it is the one the surah actually supports.",
+        whyAr: "تُنقل هذه كثيرًا كأنّ معناها أنّ الأديان سواء، أو أنه لا يضرّ المرء ما اعتقد. واقرأ الآيات الخمس قبلها يسقط هذا الحمل.\n\nنزلت السورةُ حين عرضت قريشٌ المصالحة: أن يعبد آلهتهم سنةً ويعبدوا إلهه سنة. فكان الجوابُ أربع آياتٍ في الرفض الصريح المكرَّر: ﴿لَآ أَعْبُدُ مَا تَعْبُدُونَ ۝ وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ﴾، قبل أن يجيء السطر الأخير. فالجملةُ **نتيجةُ** ردٍّ قاطع، لا خبرٌ بأنّ الفرق لا يعني شيئًا.\n\nوالذي تُقرّره حقٌّ ومهمّ: أن لا إكراه في هذا الباب، وأنّ الفصل تامّ: لكم دينكم ولي ديني. وهذا **حدّ**، والحدودُ هي التي تُمكّن المختلفين حقًّا أن يتجاوروا من غير أن يتظاهر أحدهم أو يقاتل. وهذا أقوى وأنفع من القراءة العاطفيّة، وهو الذي تشهد له السورة.",
+        ref: "Surah Al-Kafirun (109:6), read with 109:1-5",
+        strength: "quran"
+      }
+    ]
+  },
+
+  110: {
+    surahTitle: "The companions understood it as a farewell",
+    surahTitleAr: "فهم الصحابةُ أنها نَعْي",
+    partial: true,
+    ayat: [
+      {
+        n: 3,
+        ar: "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ ۚ إِنَّهُۥ كَانَ تَوَّابًۢا",
+        why: "The victory has arrived and people are entering the religion in crowds. At the moment of complete success the instruction is not to celebrate and not to consolidate. It is: glorify, and SEEK FORGIVENESS.\n\nAsking forgiveness at the point of triumph is the opposite of the natural reflex, and that is the teaching in it. The scholars read it as guarding against what victory does to a man — that he begins to see the outcome as the product of his own effort.\n\nAnd al-Bukhari records that Umar used to bring Ibn Abbas into the company of the senior men of Badr, and some of them objected. So Umar asked them all about this surah. They said it meant we were commanded to praise Him and seek forgiveness when we were helped. He asked Ibn Abbas, who said: it is the term of the Messenger of Allah ﷺ, made known to him — when the victory comes, that is the sign of your approaching end, so glorify and seek forgiveness. Umar said: I do not know of it except what you know.\n\nSo the surah announcing the greatest success was, read correctly, the announcement of his death.",
+        whyAr: "جاء النصرُ ودخل الناس في الدين أفواجًا. وفي لحظة التمام لم يكن الأمر بالفرح ولا بالتثبيت، وإنما: ﴿فَسَبِّحْ بِحَمْدِ رَبِّكَ **وَٱسْتَغْفِرْهُ**﴾.\n\nوالاستغفارُ عند الظفر ضدُّ ما تنزع إليه النفس، وفيه التعليم. وقرأه أهل العلم احترازًا ممّا يصنعه النصر بالرجل: أن يبدأ يرى العاقبة من صنع يده.\n\nوفي البخاريّ أنّ عمر كان يُدخل ابن عبّاسٍ مع أشياخ بدر، فوجد بعضهم في نفسه، فسألهم عن هذه السورة. فقالوا: أُمرنا أن نحمد الله ونستغفره إذا نُصرنا. فسأل ابن عبّاس، فقال: هو أجلُ رسول الله ﷺ أعلمه له؛ إذا جاء النصر فذلك علامةُ أجلك، فسبّح واستغفر. فقال عمر: ما أعلم منها إلا ما تعلم.\n\nفالسورةُ التي أعلنت أعظم نجاحٍ كانت — على وجهها — إعلانَ وفاته ﷺ.",
+        ref: "Surah An-Nasr (110:3) · Umar and Ibn Abbas: Sahih al-Bukhari 4970",
+        strength: "hadith"
+      }
+    ]
+  },
+
+  111: {
+    surahTitle: "A prediction the enemy could have broken by lying",
+    surahTitleAr: "نبوءةٌ كان يقدر عدوُّه أن ينقضها بكذبة",
+    partial: true,
+    ayat: [
+      {
+        n: 1,
+        ar: "تَبَّتْ يَدَآ أَبِى لَهَبٍۢ وَتَبَّ",
+        why: "This is the only place in the Quran where a living opponent is named and his end declared. And that is the point worth pausing on, because of what it exposed.\n\nThe surah states that he will enter a flaming fire. It was recited publicly, in Makkah, while Abu Lahab was alive, free, wealthy, well connected and looking for anything that would discredit the message. For roughly ten years, until he died shortly after Badr, the simplest refutation in history was available to him: say the words, claim belief, even falsely. The Quran would have been contradicted by its own text in front of everyone.\n\nHe never did it. A man who mocked, boycotted, followed him to the markets to contradict him and had every incentive, did not take the one step that would have ended it — which is itself a piece of evidence, and it is evidence that only exists because the claim was made in a form that could have failed.",
+        whyAr: "هذا الموضع الوحيد في القرآن الذي سُمّي فيه خصمٌ حيٌّ وأُعلنت عاقبته. وهذا هو الذي يستحقّ الوقوف، لِما كشفه.\n\nأخبرت السورةُ أنه ﴿سَيَصْلَىٰ نَارًۭا ذَاتَ لَهَبٍۢ﴾. وتُليت جهرًا بمكّة، وأبو لهبٍ حيٌّ طليقٌ موسرٌ ذو مكانةٍ يتلمّس ما يُبطل به هذا الأمر. وظلّ نحو عشر سنين حتى مات بُعيد بدر، والنقضُ الأيسر في التاريخ بين يديه: أن يقول الكلمة ويدّعي الإيمان، ولو كاذبًا. فيُكذَّب القرآنُ بنصّه على رؤوس الناس.\n\nفما فعلها. رجلٌ آذى وسخر وقاطع وتبعه في الأسواق يردّ عليه، وله كلُّ الدواعي، لم يخطُ الخطوة الواحدة التي كانت تُنهي الأمر — وهذا في نفسه دليل، وهو دليلٌ لم يكن ليوجد لولا أنّ الدعوى صيغت على وجهٍ يقبل التخلّف.",
+        ref: "Surah Al-Masad (111:1-3)",
+        strength: "quran"
+      }
+    ]
+  },
+
   112: {
     surahTitle: "Four verses equal to a third of the Quran",
     surahTitleAr: "أربع آياتٍ تعدل ثلث القرآن",
@@ -1957,6 +3021,38 @@ const TADABBUR = {
             howAr: "النفي نفسه في سورةٍ أخرى، وفيها ما لم تذكره الإخلاص. فالإخلاص ترفع كلّ تشبيهٍ وتقف. وأمّا الشورى فترفع التشبيه وتُثبت في النفَس نفسه أنه سميعٌ بصير.\n\nوفي هذا القِران عصمةٌ من لازمٍ فاسد: فقد يُفضي بالقارئ إفرادُ الإخلاص إلى إلهٍ بلغ من مخالفته كلَّ شيءٍ أن صار بعيدًا عن كلّ شيء. فسدّت الآية الأخرى هذا الباب في خمس كلمات: لا يُشبهه شيء — وهو سامعُك الآن."
           }
         ]
+      }
+    ]
+  },
+
+  113: {
+    surahTitle: "Refuge from what is outside you",
+    surahTitleAr: "استعاذةٌ ممّا هو خارجك",
+    partial: true,
+    ayat: [
+      {
+        n: 1,
+        ar: "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+        why: "AL-FALAQ is from splitting — the daybreak is called that because the light splits the darkness open. Ibn Abbas is reported to have explained it as the morning, and the same root gives the verse elsewhere describing Him as the splitter of the seed and the date-stone.\n\nSo the name chosen for Him at the moment of seeking refuge is deliberate. The person saying this is in the dark about something — that is why he is seeking refuge at all — and he addresses the One whose known work is bringing an opening out of a closed thing. The attribute invoked matches the need.\n\nThen the four harms are named individually rather than left as a general dread: what He created, darkness when it settles, those who blow on knots, and an envier when he envies. And notice the last one is conditional — IDHA HASAD, when he envies. The person is not the harm; the act at the moment of acting is. This surah and the one after it were the two he ﷺ used for protection, and he recited them over himself in his final illness.",
+        whyAr: "**الفَلَق** من الفَلْق، وهو الشقّ؛ وسُمّي الصبحُ بذلك لأنّ النور يشقّ الظلمة. ورُوي عن ابن عبّاسٍ تفسيرُه بالصبح، والمادّةُ نفسها في قوله: ﴿إِنَّ ٱللَّهَ فَالِقُ ٱلْحَبِّ وَٱلنَّوَىٰ﴾.\n\nفاختيارُ الاسم في مقام الاستعاذة مقصود: فالقائلُ في ظُلمةٍ من أمرٍ ما، ولذلك يستعيذ، فيُنادي من عُرف فعلُه بإخراج الفَرَج من المنغلق. فوافق الوصفُ المدعوُّ به الحاجةَ.\n\nثم سُمّيت الشرورُ الأربعة أفرادًا ولم تُترك وجَلًا عامًّا: ﴿مَا خَلَقَ﴾، و﴿غَاسِقٍ إِذَا وَقَبَ﴾، و﴿ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ﴾، و﴿حَاسِدٍ إِذَا حَسَدَ﴾. وانظر الأخير جاء مقيَّدًا: ﴿**إِذَا حَسَدَ**﴾. فليس الشخصُ هو الشرّ، وإنما الفعلُ حين يقع. وهذه السورةُ والتي بعدها هما المعوّذتان اللتان كان ﷺ يتعوّذ بهما، وقرأ بهما على نفسه في مرضه الذي مات فيه.",
+        ref: "Surah Al-Falaq (113:1-5) · Reciting them in his final illness: Sahih al-Bukhari 5735 — Aishah",
+        strength: "lugha"
+      }
+    ]
+  },
+
+  114: {
+    surahTitle: "Refuge from what gets inside you",
+    surahTitleAr: "استعاذةٌ ممّا يدخل فيك",
+    partial: true,
+    ayat: [
+      {
+        n: 1,
+        ar: "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+        why: "The previous surah invoked one name against four named harms. This one invokes THREE names — Lord of mankind, King of mankind, God of mankind — against a single enemy. The weight is inverted, and that inversion is the argument about which threat is the greater.\n\nThe three are ordered. RABB is the one who raises, provides and sustains — the nearest relationship. MALIK is the one with authority, who commands. ILAH is the one who is worshipped, which is the highest. So the refuge is sought by ascending through the whole relationship before the enemy is even mentioned.\n\nAnd the enemy is described with two words that work together: AL-WASWAS, the whisperer, and AL-KHANNAS, the one who withdraws and hides. He does not argue and does not confront; he suggests and then retreats so the thought is left behind seeming to be your own. That is why the thing feels like your idea, and why the surah ends the entire Book on it — the last warning given is about a thought you did not notice arriving.",
+        whyAr: "استعاذت السورةُ قبلها باسمٍ واحدٍ من أربعة شرورٍ مسمّاة. وتستعيذ هذه بـ**ثلاثة** أسماء — ﴿رَبِّ ٱلنَّاسِ ۝ مَلِكِ ٱلنَّاسِ ۝ إِلَٰهِ ٱلنَّاسِ﴾ — من عدوٍّ واحد. فانقلب الثِّقَل، وفي هذا الانقلاب الحجّةُ على أيّ الخطرين أعظم.\n\nوالثلاثةُ مرتّبة: فـ**الربّ** المربّي الرازق القيّم، وهي أقربُ نسبة. و**الملِك** ذو السلطان الآمر. و**الإله** المعبود، وهو الأعلى. فطُلبت العياذةُ بالصعود في العلاقة كلِّها قبل أن يُذكر العدوّ أصلًا.\n\nووُصف العدوُّ بلفظين متلازمين: ﴿ٱلْوَسْوَاسِ﴾ الذي يُلقي الخاطر، و﴿ٱلْخَنَّاسِ﴾ الذي يتأخّر ويختفي. فهو لا يُحاجّ ولا يُواجه، وإنما يُلقي ثم ينسحب فيبقى الخاطرُ وكأنه منك أنت. ولهذا يشعر المرء أنّ الفكرة فكرتُه، ولهذا خُتم الكتابُ كلُّه بها: فآخرُ نذارةٍ أُعطيت في خاطرٍ لم تشعر بدخوله.",
+        ref: "Surah An-Nas (114:1-6)",
+        strength: "lugha"
       }
     ]
   }

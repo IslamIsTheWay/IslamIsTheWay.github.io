@@ -594,16 +594,32 @@ function iitwTadabburSurahHtml(tad, surah) {
   });
 
   /* Which verses actually have tadabbur. Derived from the data, not
-     typed — the same lesson the analytics page taught. */
-  const list = tad.verses.join(", ");
+     typed — the same lesson the analytics page taught.
+
+     The numbers are BUTTONS, not text. Ayat al-Kursi has had a full
+     entry all along, but it sits 255 verses down a surah of 286, so
+     the only way to reach it was to scroll past everything — and the
+     owner reasonably concluded it had never been written. A list that
+     names a verse without being able to take you to it is a catalogue
+     of things you cannot find. */
+  const jump = tad.verses.map(function (v) {
+    return '<button type="button" class="tad-jump" onclick="iitwJumpToTadabburVerse(' + v + ')">' +
+           '<span class="en-only">' + v + '</span>' +
+           '<span class="ar-only" dir="rtl">' +
+             (typeof toArabicDigits === "function" ? toArabicDigits(v) : v) + '</span>' +
+           '</button>';
+  }).join("");
   h += '<div class="tad-coverage">' +
        '<span class="en-only">Tadabbur is written for ' +
-         (tad.verses.length === 1 ? 'verse ' : 'verses ') + list +
-         ' of this surah' + (tad.partial ? ' — the rest has not been written yet, and nothing here pretends otherwise.' : '.') +
-       '</span>' +
+         (tad.verses.length === 1 ? 'verse ' : 'verses ') + '</span>' +
        '<span class="ar-only" dir="rtl">التدبّر مكتوبٌ لِ' +
-         (tad.verses.length === 1 ? 'الآية ' : 'الآيات ') + list +
-         ' من هذه السورة' + (tad.partial ? '، وما بقي لم يُكتب بعد، وليس هنا ما يُوهم غير ذلك.' : '.') +
+         (tad.verses.length === 1 ? 'الآية ' : 'الآيات ') + '</span>' +
+       jump +
+       '<span class="en-only"> of this surah — tap a number to go straight to it' +
+         (tad.partial ? '. The rest has not been written yet, and nothing here pretends otherwise.' : '.') +
+       '</span>' +
+       '<span class="ar-only" dir="rtl"> من هذه السورة — انقُر الرقم ينقلك إليه' +
+         (tad.partial ? '. وما بقي لم يُكتب بعد، وليس هنا ما يُوهم غير ذلك.' : '.') +
        '</span></div>';
 
   h += '</div>';
@@ -736,6 +752,23 @@ function iitwTadabburAyahHtml(tad, n) {
 
   h += '</div>';
   return h;
+}
+
+/* Jump from the coverage list to the verse itself.
+
+   It must OPEN the tadabbur blocks first, not just scroll: the blocks
+   carry .tad-hidden until the button is pressed, so scrolling to a
+   verse while they are hidden lands the reader on the bare ayah with
+   nothing under it — which looks exactly like the bug this is meant
+   to fix. Reuses the flash that save-my-place already uses, so the
+   eye lands on the right verse rather than somewhere near it. */
+function iitwJumpToTadabburVerse(n) {
+  if (!window._tadOpen) iitwToggleTadabbur();
+  const el = document.getElementById("ayah-" + n);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.add("ayah-flash");
+  setTimeout(function () { el.classList.remove("ayah-flash"); }, 2200);
 }
 
 /* One button shows and hides every tadabbur block in the open

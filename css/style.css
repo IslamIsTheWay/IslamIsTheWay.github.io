@@ -4438,6 +4438,31 @@ html.lang-ar .rv-ar p {
   line-height: 1.8;
 }
 
+/* The verse numbers in the coverage line are buttons that jump to the
+   verse. Sized to stay comfortably tappable on a phone — this is the
+   control that makes a verse like 2:255 reachable at all, so it must
+   not become a 10px target. */
+.tad-jump {
+  display: inline-block;
+  min-width: 34px;
+  margin: 2px 3px;
+  padding: 3px 9px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--green);
+  background: #f3eefb;
+  border: 1px solid #ded4f0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.tad-jump:hover,
+.tad-jump:focus-visible {
+  background: var(--green);
+  color: #fff;
+  outline: none;
+}
+
 .tad-ayah {
   background: #faf8ff;
   border: 1px solid #e5ddf5;
