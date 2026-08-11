@@ -96,6 +96,18 @@ js/scholars-books.js       SCHOLARS — who wrote what   (guidance.html)
 js/revival.js              REVIVAL → guidance.html#revival
 js/terms.js                TERMS + iitwFindTerms() — the "Words explained" box
 js/figures.js              RULING_FIGURES — HTML figures, NOT drawings
+js/tadabbur.js             TADABBUR_INTRO + TADABBUR — why this verse, why
+                           this word, and the verse that completes it
+                           (quran.html, the 🧠 Tadabbur button)
+js/concepts.js             SURAH_CONCEPTS — the ONE idea of each surah,
+                           shown at the top of the Tadabbur panel
+js/signs.js                SIGNS_INTRO + MAJOR_SIGNS + MINOR_SIGNS + THE_END
+                           + JUDGEMENT_DETAIL   (judgement.html)
+                           + MEETING_ALLAH      (guidance.html)
+js/golden-lives.js         GOLDEN_LIVES + GOLDEN_WOMEN   (golden.html)
+js/golden-mirror.js        GOLDEN_MIRROR — 15 sections in 6 parts
+js/enrol.js                course sign-up + the request that reaches the
+                           staff by mail/WhatsApp   (courses.html)
 js/account.js              reader sign-in + saved verse   (quran.html)
 js/main.js                 nav, scroll reveal, analytics, text-to-speech, staff
                            session, video parsing, feedback widget, PERSON SEARCH
@@ -238,6 +250,44 @@ A missing comma between objects silently breaks every page that loads the file.
   compositing**, so a mid-transition value read in an automated check is
   meaningless. Read resting values with transitions disabled.
 
+### A generator script's \n becomes a REAL newline in the JS string
+This happened twice in the 6–11 August sessions. Writing a data file from a
+Python/shell script with `\n` inside a normal (non-raw) string writes an
+actual line break into the JS source, which splits the string literal, and
+the file then **fails to parse and the section renders as nothing** while the
+page otherwise looks perfectly fine. Use raw strings, and verify with
+`typeof MY_CONST` in the console — never by looking at the page.
+
+### AR_PARTS is ORDER-SENSITIVE and getting it wrong is silent
+The short patterns are substrings of the long ones. `al-Bukhari` placed above
+`Sahih al-Bukhari` makes the latter render "Sahih البخاري". Bare collection
+names and short narrator forms go at the END of the array, and the full name
+always precedes the short one (`Anas ibn Malik` before `Anas`).
+
+### Reference lines must never contain explanatory prose
+A `ref` / `source` field is passed through `iitwTranslateReference()`, which
+translates named pieces. A paragraph in it cannot be translated and sits in
+English on an Arabic page. Put the explanation in the body or a comment.
+
+### Any new section printing a source line must be added to IITW_REF_SELECTOR
+`i18n.js` only translates a reference whose parent matches that selector. It
+is hand-written, it went stale the moment `.tad-ref` was introduced, and 16
+references on the Judgement page stayed English because of it. Prefer
+`.tad-ref` on new markup rather than inventing another class.
+
+### Fetch BEFORE restoring data/site-config.json
+`git checkout origin/main -- data/site-config.json` restores whatever
+`origin/main` you last fetched. A stale restore staged a revert of the
+owner's staff-dashboard publish; it was caught only because the push was
+rejected as non-fast-forward. `git fetch -q origin` first, every time.
+
+### If a push lands but the site does not change, check the DEPLOY step
+GitHub Pages runs build and deploy as separate jobs. The Jekyll **build can
+succeed while the deploy fails**, which leaves the repo healthy and the live
+site frozen on an older commit. Check
+`api.github.com/repos/<owner>/<repo>/actions/runs/<id>/jobs` — an empty
+commit re-queues the deployment.
+
 ### Never put label text inside an SVG
 Text in an SVG is not a node `i18n.js` can walk, so it **never translates**, and
 a horizontal scroll wrapper clips it in RTL where scrolling starts from the
@@ -284,7 +334,7 @@ significant:
 
 ## Current state
 
-_Last updated: 6 August 2026_
+_Last updated: 11 August 2026_
 
 | Content | Count |
 |---|---|
@@ -307,6 +357,48 @@ _Last updated: 6 August 2026_
 | Surahs | 114, 16 reciters, Mushaf page numbers |
 | Guidance themes | 23 + **24 worship steps** + the revival section |
 | Nav links | **13** — the bar needs 1474px, hamburger below 1480px |
+| Tadabbur verses (`js/tadabbur.js`) | **49** across **14 surahs** — Al-Fatihah complete, Al-Baqarah 1–5/31/186/216/255/286, Al-Asr, Al-Fil, Quraysh, Al-Ma'un, Al-Kawthar, Al-Ikhlas complete |
+| "What people get wrong here" boxes | **7** — 9:5, 13:11, 17:32, 30:9, 51:56, 70:19, 2:31 |
+| Surah concepts (`js/concepts.js`) | **62 of 114** — the one idea of each surah |
+| Major signs of the Hour (`js/signs.js`) | **9**, from the Prophet's ﷺ own list in Sahih Muslim |
+| The end itself (`THE_END`) | **6 stages** — blast to raising |
+| Judgement detail (`JUDGEMENT_DETAIL`) | **10 sections** — the two "firsts", the Bridge, the speeds, the last man in |
+| "In plain words" boxes | **25** across Judgement, Golden Age and the Quran |
+| Golden Age full lives (`js/golden-lives.js`) | **7** — al-Khwarizmi, Ibn al-Haytham, al-Zahrawi, Ibn al-Nafis, al-Biruni, Fatima al-Fihri, Ibn Khaldun |
+| The mirror (`js/golden-mirror.js`) | **15 sections in 6 parts** — them, us, and what to do |
+
+### Added 6–11 August 2026
+
+- **Tadabbur on the Quran page** — a 🧠 button beside Stop opening, per
+  verse: why it sits there, why THIS word, where else the Quran uses it, and
+  the verse elsewhere that completes it. Sourced from **Ar-Raghib
+  al-Isfahani's Al-Mufradat**, read off Shamela, every citation with its page.
+  **His *tafsir* survives only for surahs 1–5** — the manuscript ends at
+  Al-Ma'idah — so Al-Mufradat is the throughline for the ten-surah project
+  the owner chose.
+- **`SURAH_CONCEPTS`** — the one idea of each surah, shown first, and on
+  surahs with no verse detail too, so the button always answers.
+- **The signs of the Hour and the end of the world** on the Judgement page,
+  ABOVE the fifteen stages because that is the order it happens in. "Nobody
+  knows when" is placed before any sign.
+- **Golden Age full lives and the women comparison**, plus **the mirror** —
+  15 sections in 6 parts, which criticises US at the same volume and in the
+  warning box.
+- **Course enrolment** — the Enroll button had pointed at the STAFF login.
+
+### Bugs fixed in those sessions that were ALREADY LIVE
+- **The Pages DEPLOY step was failing while the build succeeded** — two
+  commits of work never reached the site while the repo looked healthy.
+- **The meeting button never opened the room**: `window.open` after an
+  `await`, so the popup was blocked. The no-token path had no await, which is
+  why it passed testing.
+- **Every nav click by an Arabic-mode reader was discarded** — 13 of 13 nav
+  links produced an empty analytics key in Arabic.
+- **English leaked into Arabic mode across every new section** — missing
+  `.en-only`, `.tad-ref` absent from `IITW_REF_SELECTOR`, and prose inside
+  citation fields.
+- **Ya-Sin 30** was a murattal clip looped by the player rather than a
+  mujawwad reading that carries the returning.
 
 ### Added 5–6 August 2026
 - **`golden.html` / `js/golden.js`** — the Golden Age. Opens with a plain
@@ -398,7 +490,17 @@ _Last updated: 6 August 2026_
 
 ## Open work
 
-_As of 6 August 2026._
+_As of 11 August 2026._
+
+0. **The ten surahs, verse by verse.** The owner chose full depth across
+   surahs 1–10 with Al-Mufradat throughout, delivered over time. **49 verses
+   done**; Al-Baqarah alone is 286. Add a surah by adding its number as a key
+   in `js/tadabbur.js` — nothing else needs changing.
+0b. **`SURAH_CONCEPTS` is 62 of 114.**
+0c. **Golden Age lives: 7.** Ibn Sina, ar-Razi, Ibn Battuta, Ibn Rushd,
+   al-Idrisi and Jabir ibn Hayyan are the obvious next. A "how we treated
+   each other" section (bimaristans, awqaf, ahl adh-dhimmah) was offered and
+   not built.
 
 1. **The hijab illustration.** The owner asked for a photograph showing
    incorrect hijab and pasted one into chat. A chat image cannot be written to

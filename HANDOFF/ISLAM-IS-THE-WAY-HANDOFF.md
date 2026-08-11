@@ -1585,3 +1585,218 @@ languages.**
 7. **Google Search Console** — still not set up (Bing is verified).
 8. **320px viewport** — `theme-card` on guidance still overflows very slightly
    at 320px. Pre-existing, cosmetic, and not introduced by these sessions.
+
+
+---
+
+<!-- ============================================================ -->
+# PART 9 — the 6–11 August 2026 sessions
+<!-- ============================================================ -->
+
+## What was built
+
+### Tadabbur — `js/tadabbur.js`, `js/concepts.js` → the Quran page
+
+A **🧠 Tadabbur button beside Stop** in the surah reader. It opens, per verse:
+why the verse sits where it does, why THIS word and not its near-synonym,
+where else the Quran uses it, and the verse in another surah that finishes
+the thought this one leaves open.
+
+- **`SURAH_CONCEPTS` (62 surahs)** — the ONE thing each surah is driving at,
+  why it is that, and the verse where the surah says it most plainly. Shown
+  at the TOP of the panel, and on surahs with no verse detail as well, so the
+  button always answers with something real.
+- **49 verses across 14 surahs** — Al-Fatihah complete (7/7), Al-Baqarah
+  1–5 + 31, 186, 216, 255, 286, plus Al-Asr, Al-Fil, Quraysh, Al-Ma'un,
+  Al-Kawthar and Al-Ikhlas complete, and single verses at 9:5, 13:11, 17:32,
+  30:9, 51:56, 70:19.
+- **7 "What people get wrong here" boxes** — the correction box, styled
+  louder than the rest because it is the reason the section exists.
+- **10 "In plain words" boxes** — ordinary language, both languages.
+
+**Sourced from Ar-Raghib al-Isfahani's Al-Mufradat**, pulled off Shamela and
+read: hamd (p.238), rabb (p.318), sirat (p.465), samad (p.474), qawm (p.672),
+rayb (p.350), waqa (p.863), ghayb (p.598), falah. Every citation carries its
+page.
+
+**A finding that constrains the project:** Ar-Raghib's *tafsir* survives only
+for **surahs 1–5** (the manuscript ends at Al-Ma'idah). For 6–10 there is no
+Raghib tafsir at all — only Al-Mufradat, which is a root dictionary covering
+the whole Quran. The owner chose Mufradat as the throughline for all ten.
+
+### The signs of the Hour — `js/signs.js` → Judgement Day and Guidance
+
+The Judgement page began at "when you die" and had nothing on how the world
+itself ends. Now, rendered ABOVE the fifteen stages because that is the order
+it happens in:
+
+- **"Nobody knows when" first**, before any sign — 7:187 and 31:34.
+- **The ten major signs** — the Prophet's ﷺ own list from Hudhayfah ibn Usayd
+  in Sahih Muslim. Nothing added to it.
+- **`THE_END`, 6 stages** — the blast, the mountains and seas and sky, the
+  earth left flat with "to whom belongs the sovereignty this Day", the forty
+  and the coccyx, the raising, and the handover to the fifteen stages.
+- **`JUDGEMENT_DETAIL`, 10 sections** — how long the Day is, what you are
+  asked FIRST (two different firsts), the sun and the sweat, the Bridge and
+  what reaches up from it, the speeds, who crosses first, coming back out by
+  the mark of sujud, the last man into Paradise, the first meal, which sign
+  is first.
+- **`MEETING_ALLAH`** on Guidance — the seeing, the veil, "send me back".
+- **12 "In plain words" boxes.**
+
+### Golden Age — `js/golden-lives.js`, `js/golden-mirror.js`
+
+- **`GOLDEN_LIVES` (7)** — full lives in the same shape as the prophets':
+  al-Khwarizmi, Ibn al-Haytham, al-Zahrawi, Ibn al-Nafis, al-Biruni, Fatima
+  al-Fihri, Ibn Khaldun. Born, died, the life lived, what he found, what
+  happened to the work.
+- **`GOLDEN_WOMEN`** — comparison by legal instrument and date on BOTH sides:
+  her property stayed hers against English coverture (Blackstone 1765,
+  remedied only by the Married Women's Property Acts 1870/1882, and in the US
+  from Mississippi 1839); fixed inheritance shares; Khansa bint Khidham's
+  marriage annulled on her objection (al-Bukhari 5138); women in the chains
+  of transmission; the vote (UK 1928, US 1920).
+- **`GOLDEN_MIRROR` (15 sections in 6 named parts)** — what they say about
+  us, what is actually happening there, why we still copy them, the honest
+  answer about who is ahead, ourselves, and what to do.
+
+### Course enrolment — `js/enrol.js` → the Courses page
+
+Account with name, email and a **self-created password** (SHA-256 + random
+salt, device-local), plus a request per course. The account is convenience;
+the REQUEST is what reaches the staff, by opening the student's own mail app
+or WhatsApp with the course, name, email, times and note already written in.
+
+---
+
+## Bugs found that were ALREADY LIVE
+
+### 1. The GitHub Pages DEPLOY step was failing — nothing was reaching the site
+The Jekyll **build succeeded every time**; the separate **"Deploy to GitHub
+Pages" step failed**, so two commits of finished work never reached the live
+site while the repo looked perfectly healthy. Diagnosed through the Actions
+API — `runs/<id>/jobs` shows `build: success` and `deploy: failure`.
+
+**If work is pushed and the site does not change, check the DEPLOY step, not
+the content.** An empty commit re-queues it.
+
+### 2. "Start a Meeting Right Now" never opened the room
+`window.open(roomUrl)` sat at the END of `startInstantMeeting()`, after
+`await publishChanges(true)`. A popup is only allowed while the browser still
+considers the click in progress; the await ends that window and the popup is
+**blocked**. It also explains why it passed testing: the no-token path has no
+await and worked, and the token path — the only real one — was the one that
+broke.
+
+### 3. Every nav click by an Arabic-mode reader was silently discarded
+The analytics key was built from the link TEXT with `/[^a-z]/g` stripped.
+`i18n.js` translates the nav, so in Arabic the key came out as an empty
+string and `if (label)` was false. **Proven in the browser: 13 of 13 nav
+links produced an EMPTY key in Arabic mode.** Now keyed on the href, which
+does not change with language, with the old text-derived keys preserved as
+aliases so existing counts are not orphaned. `staff.html` derived them the
+same wrong way and was fixed with it.
+
+### 4. English was leaking into Arabic mode across every new section
+Three separate causes stacked on one card:
+- `.tad-verse-en` / `.tad-link-en` hold the ENGLISH translation and never
+  carried `.en-only`, so the CSS that hides English never applied.
+- **`i18n.js` only translates a reference when its parent matches a
+  hand-written selector** — `.refs, .hadith-meta, .ayah-ref, .sunnah-card
+  .refs`. Every newer section uses `.tad-ref`, which was never added, so 16
+  references on the Judgement page alone stayed in English. It is now the
+  named constant `IITW_REF_SELECTOR` with a comment.
+- English PARAGRAPHS inside `ref` fields. A citation is not a paragraph, and
+  prose in a citation is untranslatable by design. ~45 reference lines cut
+  back to actual citations.
+
+### 5. "Enroll Now" on the Courses page pointed at the STAFF login
+A student pressing it landed on `login.html`, the staff password page.
+
+### 6. The Ya-Sin 30 recitation was a murattal clip looped by the player
+The section is about reciters *returning* to a phrase, but it carried an
+11-second murattal reading with `repeatTimes: 2`. A player looping a file is
+not a reciter returning to a phrase. Now Abdul Basit's mujawwad reading
+(29.5s), which carries the returning inside the recitation.
+
+### 7. `CLAUDE.md` still carried two rules that were already known-wrong
+The nav breakpoint figure that had put Login off the right edge of a 1366px
+laptop, and `js/figures.js` described as inline SVG after it had been
+rewritten as HTML.
+
+---
+
+## New traps — do not reintroduce
+
+- **A `\n` written into a JS string by a generator script becomes a REAL
+  newline and splits the literal.** This happened TWICE this session and both
+  times the file failed to parse and the section rendered as *nothing* with
+  the page otherwise fine. Write generator scripts with **raw strings**
+  (a Python raw string), and check `typeof MY_CONST` in the console rather than
+  trusting that the page looks right. This is the same class as the
+  documented `unicode_escape` disaster.
+- **Order matters in `AR_PARTS`, and getting it wrong is silent.** The short
+  patterns are substrings of the long ones: putting `al-Bukhari` before
+  `Sahih al-Bukhari` makes the latter render as "Sahih البخاري". Bare
+  collection names and narrator short forms belong at the END; the full name
+  must always precede the short one (`Anas ibn Malik` before `Anas`).
+- **Never put explanatory prose inside a `ref` / `source` field.** It cannot
+  be translated, so it sits in English on an Arabic page. Put it in the body
+  or in a code comment.
+- **A transliteration is for a reader who cannot read the Arabic word**, so
+  `.tad-translit` is `.en-only`. In Arabic the word itself is beside it.
+- **Any new section that prints a source line must add its class to
+  `IITW_REF_SELECTOR`** in `i18n.js`, or its references silently stay
+  English.
+- **`git checkout origin/main -- data/site-config.json` uses whatever
+  `origin/main` you last fetched.** Fetch FIRST. A stale restore staged a
+  revert of the owner's staff-dashboard publish, caught only because the push
+  was rejected as non-fast-forward.
+
+---
+
+## Editorial decisions worth keeping
+
+- **Ar-Raghib's `sirat` entry was misattributed and the page now says so.**
+  It says only "the straight road" and cites 6:153; the wider "broad made
+  road" description is from other lexicons. Correcting it in public is part
+  of the method.
+- **Contested artefacts were refused.** The owner asked for ancient
+  batteries, a carving read as a lamp, and "engineers cannot explain the
+  pyramids" as evidence for 30:9. They were left out, and the entry says why:
+  hanging a verse on a contested object puts it at the mercy of the next
+  archaeology paper. The verse states outright that earlier peoples surpassed
+  the ones addressed and were destroyed anyway — that cannot be taken away.
+- **The Council of Mâcon 585 claim is FALSE and is refuted on the page**
+  rather than repeated. Gregory of Tours, who was present, records a question
+  about whether the Latin *homo* applied to women — a question about a word —
+  answered from Scripture and accepted. Same discipline as Ibn Firnas's
+  flight and pseudo-Geber.
+- **"We are ahead in output" was refused as false.** The research, patents
+  and laboratories are overwhelmingly not ours today. The honest and stronger
+  answer is that the gap is in CONDITIONS not capacity — Zewail, Sancar and
+  Yaghi are the clean experiment: same minds, same early schooling, different
+  institutions, different result. It cuts both ways, which is why it holds.
+- **9:5 is corrected in BOTH directions** — hostile critics and extremists
+  quote the identical fragment identically. Verse 6 settles it.
+- **The mirror section criticises us at the same volume as it criticises
+  them**, and is styled in the warning box to make that unmissable. A section
+  that only cut outward would be the blind following it warns against.
+
+---
+
+## Open work as of 11 August 2026
+
+1. **The ten surahs, verse by verse** — the owner chose full depth across
+   surahs 1–10 with Al-Mufradat throughout, delivered over time. 49 verses
+   done; Al-Baqarah alone is 286.
+2. **More `SURAH_CONCEPTS`** — 62 of 114.
+3. **More Golden Age lives** — 7 done; Ibn Sina, ar-Razi, Ibn Battuta, Ibn
+   Rushd, al-Idrisi and Jabir ibn Hayyan are the obvious next.
+4. **A "how we treated each other" section** — bimaristans, awqaf, ahl
+   adh-dhimmah — was offered and not yet built.
+5. `.modal-overlay { position: fixed; inset: 0 }` spans the scrollbar, giving
+   an 11px horizontal overflow at 375px. **Pre-existing**, cosmetic.
+6. Everything still open from Part 8: the hijab photo, the hadith page
+   Arabic, the courses page Arabic, Gmail sign-in, cross-device saved place,
+   Google Search Console.
