@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608120902" />
+  <link rel="stylesheet" href="css/style.css?v=202608120920" />
 </head>
 <body>
 
@@ -171,16 +171,16 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608120902"></script>
-  <script src="js/angels.js?v=202608120902"></script>
+  <script src="js/data.js?v=202608120920"></script>
+  <script src="js/angels.js?v=202608120920"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608120902"></script>
-  <script src="js/judgement.js?v=202608120902"></script>
+  <script src="js/signs.js?v=202608120920"></script>
+  <script src="js/judgement.js?v=202608120920"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608120902"></script>
+  <script src="js/judgement-closing.js?v=202608120920"></script>
   <script>
     /* ---------- Standing alone: the closing discussion ----------
        Reuses the same card / pulled-quote / dua shapes as the Golden Age
@@ -395,6 +395,16 @@
       tafsir: { en: "A scholar's reading — not revelation", ar: "قول مفسّر — لا وحي", c: "t-tafsir" },
       note:   { en: "A note", ar: "تنبيه", c: "t-note" }
     };
+    /* Has it happened yet? Asked for directly, and it is the first thing a
+       reader wants to know about a minor sign. Kept separate from the
+       source grade (sgBadge) on purpose: the hadith can be Sahih while the
+       DATING of the event is history, and those are two different claims. */
+    const SG_STATUS = {
+      happened: { en: "✔ Already happened", ar: "✔ وقع بالفعل" },
+      notyet:   { en: "⏳ Has not happened yet", ar: "⏳ لم يقع بعد" },
+      mixed:    { en: "◐ Partly happened, partly still to come", ar: "◐ بعضه وقع وبعضه لم يقع" },
+      disputed: { en: "❓ The scholars differ on whether this has happened", ar: "❓ اختلف العلماء: أوقع أم لا" }
+    };
     function sgBadge(k) {
       const s = SG_BADGE[k]; if (!s) return "";
       return `<span class="tad-badge ${s.c}"><span class="en-only">${s.en}</span><span class="ar-only" dir="rtl">${s.ar}</span></span>`;
@@ -524,9 +534,17 @@
           ${MINOR_SIGNS.items.map(i => `<div class="tad-word">
             ${i.h ? `<div class="tad-word-head"><span class="en-only">${i.h}</span>
               <span class="ar-only" dir="rtl">${i.hAr}</span></div>` : ""}
+            ${i.status ? `<div class="sg-status sg-${i.status}">
+              <span class="en-only">${SG_STATUS[i.status].en}</span>
+              <span class="ar-only" dir="rtl">${SG_STATUS[i.status].ar}</span></div>` : ""}
             <div class="en-only">${sgParas(i.en)}</div>
             <div class="ar-only" dir="rtl">${sgParas(i.ar)}</div>
             ${i.quote ? `<div class="tad-verse-ar" dir="rtl" data-speak>${i.quote}</div>` : ""}
+            ${i.when ? `<div class="sg-when">
+              <div class="sg-when-label">🗓️ <span class="en-only">When — and how we date it</span>
+                <span class="ar-only" dir="rtl">متى — وبأيّ مستند نُؤرّخه</span></div>
+              <div class="en-only">${sgParas(i.when)}</div>
+              <div class="ar-only" dir="rtl">${sgParas(i.whenAr)}</div></div>` : ""}
             <div class="tad-ref" dir="auto">${i.ref}</div>${sgBadge(i.strength)}
             ${sgPlain(i.plain, i.plainAr)}</div>`).join("")}
           ${sgNotEstablished(MINOR_SIGNS.notEstablished, MINOR_SIGNS.notEstablishedAr)}</div>`;
@@ -596,7 +614,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608120902"></script>
-  <script src="js/i18n.js?v=202608120902"></script>
+  <script src="js/main.js?v=202608120920"></script>
+  <script src="js/i18n.js?v=202608120920"></script>
 </body>
 </html>
