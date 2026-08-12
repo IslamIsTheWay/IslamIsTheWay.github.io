@@ -334,7 +334,7 @@ significant:
 
 ## Current state
 
-_Last updated: 11 August 2026_
+_Last updated: 12 August 2026_
 
 | Content | Count |
 |---|---|
@@ -357,13 +357,14 @@ _Last updated: 11 August 2026_
 | Surahs | 114, 16 reciters, Mushaf page numbers |
 | Guidance themes | 23 + **24 worship steps** + the revival section |
 | Nav links | **13** — the bar needs 1474px, hamburger below 1480px |
-| Tadabbur verses (`js/tadabbur.js`) | **49** across **14 surahs** — Al-Fatihah complete, Al-Baqarah 1–5/31/186/216/255/286, Al-Asr, Al-Fil, Quraysh, Al-Ma'un, Al-Kawthar, Al-Ikhlas complete |
+| Tadabbur verses (`js/tadabbur.js`) | **167** across **all 114 surahs** — every surah has at least one explained verse. Al-Fatihah and Al-Ikhlas complete; Al-Baqarah 14 verses; Aal-Imran 5. The coverage numbers in the panel are BUTTONS that jump to the verse |
 | "What people get wrong here" boxes | **7** — 9:5, 13:11, 17:32, 30:9, 51:56, 70:19, 2:31 |
-| Surah concepts (`js/concepts.js`) | **62 of 114** — the one idea of each surah |
+| Surah concepts (`js/concepts.js`) | **114 of 114** — the one idea of each surah, so the Tadabbur button always answers |
 | Major signs of the Hour (`js/signs.js`) | **9**, from the Prophet's ﷺ own list in Sahih Muslim |
 | The end itself (`THE_END`) | **6 stages** — blast to raising |
 | Judgement detail (`JUDGEMENT_DETAIL`) | **10 sections** — the two "firsts", the Bridge, the speeds, the last man in |
-| "In plain words" boxes | **25** across Judgement, Golden Age and the Quran |
+| "In plain words" boxes | **49 on the Judgement page alone** (all 15 stages, all 6 closing sections, 9 major signs, 6 THE_END stages, 10 detail sections, 11 hardest angels), plus Golden Age and the Quran |
+| On-this-page nav | `.page-toc` — sticky bilingual jump bar on `judgement.html` (5 sections) and `golden.html` (9) |
 | Golden Age full lives (`js/golden-lives.js`) | **7** — al-Khwarizmi, Ibn al-Haytham, al-Zahrawi, Ibn al-Nafis, al-Biruni, Fatima al-Fihri, Ibn Khaldun |
 | The mirror (`js/golden-mirror.js`) | **15 sections in 6 parts** — them, us, and what to do |
 
@@ -490,13 +491,19 @@ _Last updated: 11 August 2026_
 
 ## Open work
 
-_As of 11 August 2026._
+_As of 12 August 2026._
 
-0. **The ten surahs, verse by verse.** The owner chose full depth across
-   surahs 1–10 with Al-Mufradat throughout, delivered over time. **49 verses
-   done**; Al-Baqarah alone is 286. Add a surah by adding its number as a key
-   in `js/tadabbur.js` — nothing else needs changing.
-0b. **`SURAH_CONCEPTS` is 62 of 114.**
+0. **Tadabbur DEPTH, not coverage.** Coverage is done: every one of the 114
+   surahs now has at least one explained verse, **167 entries in total**. The
+   owner's standing instruction is "more and more and more", so the remaining
+   work is depth — more verses inside the surahs people read most. Add one by
+   appending to that surah's `ayat` array; the coverage line sorts itself, so
+   insertion order does not matter.
+   **Two rules when adding:** pull the verse text from `api.alquran.cloud`
+   and never type it from memory, and if you quote only PART of a long verse
+   add `arNote`/`arNoteAr` naming what the verse goes on to say — otherwise a
+   fragment reads as the whole verse. 13 entries had to be repaired for this.
+0b. **`SURAH_CONCEPTS` is complete at 114 of 114.**
 0c. **Golden Age lives: 7.** Ibn Sina, ar-Razi, Ibn Battuta, Ibn Rushd,
    al-Idrisi and Jabir ibn Hayyan are the obvious next. A "how we treated
    each other" section (bimaristans, awqaf, ahl adh-dhimmah) was offered and
