@@ -269,8 +269,8 @@ const AR = {
   "Nothing matches those words.": "لا يوجد ما يطابق هذه الكلمات.",
   "Why we fell, and the way back": "لماذا سقطنا وكيف نعود",
   "See What We Built": "انظر ماذا بنينا",
-  "28 of the men and women who built it — algebra, optics, surgery, the hospital, the university — with the Latinised name Europe gave each of them, what Europe built on their work, and the documented cases where the credit went elsewhere. Every claim says how strong its evidence is, the same way every hadith on this site does.":
-    "ثمانيةٌ وعشرون من الرجال والنساء الذين بنوه — الجبر والبصريات والجراحة والبيمارستان والجامعة — ومع كلٍّ منهم الاسم اللاتيني الذي سمّته به أوروبا، وما بنته أوروبا على عمله، والمواضع الموثّقة التي ذهب فيها الفضل إلى غيره. وكلّ دعوى مقرونةٌ بدرجة قوّتها، كما يُصنع مع كلّ حديثٍ في هذا الموقع.",
+  "41 of the men and women who built it — algebra, optics, surgery, the hospital, the university — with the Latinised name Europe gave each of them, what Europe built on their work, and the documented cases where the credit went elsewhere. Every claim says how strong its evidence is, the same way every hadith on this site does.":
+    "واحدٌ وأربعون من الرجال والنساء الذين بنوه — الجبر والبصريات والجراحة والبيمارستان والجامعة — ومع كلٍّ منهم الاسم اللاتيني الذي سمّته به أوروبا، وما بنته أوروبا على عمله، والمواضع الموثّقة التي ذهب فيها الفضل إلى غيره. وكلّ دعوى مقرونةٌ بدرجة قوّتها، كما يُصنع مع كلّ حديثٍ في هذا الموقع.",
   // ---- Gradings ----
   // These appear on hundreds of cards. They are their own text nodes, so an
   // exact entry here translates every one of them site-wide. The owner's rule
