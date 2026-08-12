@@ -4430,6 +4430,19 @@ html.lang-ar .rv-ar p {
 .tad-why h4 { margin: 0 0 6px; color: var(--green-dark); font-size: 1.05rem; }
 .tad-why p, .tad-sec p { line-height: 1.95; margin: 0 0 10px; }
 
+/* The ten signs counted out. The last item is the one the hadith names
+   explicitly as the last, so it is marked — it is the only one of the ten
+   whose position in the sequence is settled by the text. */
+.sg-ten { margin-top: 4px; }
+.sg-ten li { padding: 7px 2px; border-bottom: 1px dashed #ede7f7; }
+.sg-ten li:last-child { border-bottom: none; }
+.sg-ten .sg-ten-mark {
+  background: #f6f1ff;
+  border-inline-start: 3px solid var(--green);
+  border-radius: 6px;
+  padding-inline-start: 10px;
+}
+
 /* ---------- On-this-page navigation ----------
    The Judgement and Golden Age pages are the two longest on the site —
    each runs to dozens of cards across five to nine major sections — and

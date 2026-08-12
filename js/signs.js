@@ -60,16 +60,109 @@ const SIGNS_INTRO = {
     strength: "quran"
   },
 
-  ordering: {
-    en: "One more thing before the list. The ten below are the Prophet's ﷺ own list, given in one hadith, and he did not present them as a fixed running order — the narration groups them rather than numbering them one to ten. Some are clearly linked to each other, and the fire from Yemen is stated as the last. Beyond that, the sequence is not something to be dogmatic about, and this page does not invent one.",
-    ar: "وكلمةٌ أخرى قبل السرد: العشرُ الآتية هي التي عدّها النبيُّ ﷺ في حديثٍ واحد، ولم يسُقها مساقَ ترتيبٍ لازم، فالرواية تجمعها ولا ترقّمها من واحدٍ إلى عشرة. وبعضها ظاهرُ الارتباط ببعض، وقد نُصّ على أنّ نار اليمن آخرها. وما وراء ذلك فليس ممّا يُقطع فيه بترتيب، ولا تخترع هذه الصفحة ترتيبًا."
+  hadith: {
+    ar: "إِنَّهَا لَنْ تَقُومَ حَتَّى تَرَوْنَ قَبْلَهَا عَشْرَ آيَاتٍ. فَذَكَرَ الدُّخَانَ وَالدَّجَّالَ وَالدَّابَّةَ وَطُلُوعَ الشَّمْسِ مِنْ مَغْرِبِهَا وَنُزُولَ عِيسَى ابْنِ مَرْيَمَ ﷺ وَيَأْجُوجَ وَمَأْجُوجَ وَثَلَاثَةَ خُسُوفٍ: خَسْفٌ بِالْمَشْرِقِ وَخَسْفٌ بِالْمَغْرِبِ وَخَسْفٌ بِجَزِيرَةِ الْعَرَبِ، وَآخِرُ ذَلِكَ نَارٌ تَخْرُجُ مِنَ الْيَمَنِ تَطْرُدُ النَّاسَ إِلَى مَحْشَرِهِمْ",
+    en: "He came upon them while they were talking and asked what they were discussing. They said: the Hour. He said: “It will not come until you see ten signs before it” — then he mentioned the Smoke, the Dajjal, the Beast, the rising of the sun from its west, the descent of Isa son of Maryam, Gog and Magog, and three landslides: one in the east, one in the west and one in the Arabian peninsula — “and the last of that is a fire that comes out of Yemen and drives the people to their place of gathering.”",
+    ref: "Sahih Muslim, Book of Tribulations and the Signs of the Hour — Hudhayfah ibn Usayd al-Ghifari",
+    strength: "hadith",
+    plain: "In plain words: the companions were sitting talking about the Hour. He came in, asked what they were discussing, and gave them a list of ten things that come before it.\n\nThis one hadith is where the phrase “the ten major signs” comes from. Everything in the cards below is an expansion of one item on this list — nothing has been added to it.\n\nAnd notice the last few words, because they are the only ordering statement in the whole hadith: “and THE LAST of that is a fire”. He named which one is last. He did not name which one is first.",
+    plainAr: "بكلامٍ بسيط: كان الصحابة جلوسًا يتذاكرون الساعة، فاطّلع عليهم فسألهم فيمَ يتذاكرون، ثم عدّ لهم عشرًا تكون قبلها.\n\nومن هذا الحديث وحده جاءت عبارة «العلامات الكبرى العشر». وكلُّ ما في البطاقات الآتية شرحٌ لبندٍ من بنود هذه القائمة، ولم يُزَد عليها شيء.\n\nوانظر آخر كلماته، فهي الجملة الوحيدة في الحديث كلِّه التي تُرتّب: **﴿وَآخِرُ ذَلِكَ نَارٌ﴾**. فسمّى الآخِرة، ولم يُسمِّ الأولى."
   },
 
-  hadith: {
-    ar: "لَا تَقُومُ السَّاعَةُ حَتَّى تَرَوْا عَشْرَ آيَاتٍ",
-    en: "“It will not come until you see ten signs” — then he mentioned the smoke, the Dajjal, the Beast, the rising of the sun from the west, the descent of Isa son of Maryam, Gog and Magog, and landslides in three places: one in the east, one in the west, and one in Arabia — at the end of which a fire would come out of Yemen and drive the people to their place of gathering.",
-    ref: "Sahih Muslim, Book of Fitan — Hudhayfah ibn Usayd al-Ghifari",
-    strength: "hadith"
+  /* The hadith names six things, then THREE landslides, then the fire.
+     A reader who counts the clauses gets eight and wonders where the
+     other two went, so the landslides are numbered separately here —
+     that is how the list makes ten, and it is how the scholars counted
+     it. */
+  theTen: {
+    title: "Counted out as ten — because the landslides are three of them",
+    titleAr: "معدودةً عشرًا — فالخسوف ثلاثةٌ منها",
+    lead: "Read the hadith again and count: six named things, then three landslides, then the fire. Three plus six plus one is ten. This is where people lose the count.",
+    leadAr: "أعِد قراءة الحديث وعُدّ: ستّةٌ مسمّاة، ثم ثلاثةُ خسوف، ثم النار. ثلاثةٌ وستّةٌ وواحد: عشرة. وهنا يضيع العدُّ على الناس.",
+    items: [
+      { en: "The Smoke", ar: "١ · الدُّخَان" },
+      { en: "The Dajjal", ar: "٢ · الدَّجَّال" },
+      { en: "The Beast of the earth", ar: "٣ · دَابَّة الأرض" },
+      { en: "The rising of the sun from its west", ar: "٤ · طلوع الشمس من مغربها" },
+      { en: "The descent of Isa son of Maryam", ar: "٥ · نزول عيسى ابن مريم عليه السلام" },
+      { en: "Gog and Magog — Yajuj and Majuj", ar: "٦ · يأجوج ومأجوج" },
+      { en: "A landslide in the east", ar: "٧ · خَسْفٌ بالمشرق" },
+      { en: "A landslide in the west", ar: "٨ · خَسْفٌ بالمغرب" },
+      { en: "A landslide in the Arabian peninsula", ar: "٩ · خَسْفٌ بجزيرة العرب" },
+      { en: "The fire that drives the people to the gathering — named in the hadith as THE LAST of them", ar: "١٠ · النار التي تطرد الناس إلى محشرهم — ونُصّ في الحديث على أنها آخرها", mark: true }
+    ],
+    plain: "In plain words: people often say “the ten signs” and then can only name seven or eight. That is because three of the ten are the same kind of event in three different places — the ground swallowing people in the east, in the west, and in Arabia.\n\nCount them as three, and the list comes to ten exactly.",
+    plainAr: "بكلامٍ بسيط: كثيرًا ما يقول الناس «العلامات العشر» ثم لا يُحسنون عدّ أكثر من سبعٍ أو ثمان. وسببُ ذلك أنّ ثلاثًا من العشر حادثةٌ من جنسٍ واحدٍ في ثلاثة مواضع: خسفٌ بالمشرق، وخسفٌ بالمغرب، وخسفٌ بجزيرة العرب.\n\nفعُدَّها ثلاثًا يستقم لك العدد عشرًا تمامًا."
+  },
+
+  /* WHICH COMES FIRST AND WHICH COMES LAST.
+     Built to separate three different grades of claim, because the
+     popular treatments of this subject present one confident sequence
+     with nothing marked. What a text NAILS DOWN, what a chain of events
+     inside one narration establishes, and what is a scholar's
+     reconciliation, are three different things. */
+  orderDetail: {
+    title: "So which comes first, and which comes last?",
+    titleAr: "فأيّها أوّل، وأيّها آخر؟",
+    lead: "This is the question everyone asks, and most answers give a confident running order with no evidence attached. Here is what is actually settled, what is likely, and what nobody can tell you.",
+    leadAr: "هذا هو السؤال الذي يسأله كلُّ أحد، وأكثر الأجوبة يسوق ترتيبًا واثقًا بلا دليل. وهذا بيانُ ما ثبت، وما تُرجّحه القرائن، وما لا يستطيع أحدٌ أن يُخبرك به.",
+    blocks: [
+      {
+        h: "THE LAST is settled by the text itself",
+        hAr: "الآخِرةُ منصوصةٌ في الحديث نفسه",
+        en: "There is no dispute about the end of the list, because the hadith says it outright: “and the last of that is a fire that comes out of Yemen and drives the people to their place of gathering.”\n\nSo whatever else is uncertain, the closing event is named. After the fire there is nothing further to wait for — the next thing is the Hour itself.",
+        ar: "لا نزاع في آخر القائمة، لأنّ الحديث نصَّ عليه: **وَآخِرُ ذَلِكَ نَارٌ تَخْرُجُ مِنَ الْيَمَنِ تَطْرُدُ النَّاسَ إِلَى مَحْشَرِهِمْ**.\n\nفمهما يكن ما بقي مجهولًا، فالخاتمةُ مسمّاة. وليس بعد النار شيءٌ يُنتظر، وإنما تليها الساعة.",
+        quote: "وَآخِرُ ذَلِكَ نَارٌ تَخْرُجُ مِنَ الْيَمَنِ تَطْرُدُ النَّاسَ إِلَى مَحْشَرِهِمْ",
+        ref: "Sahih Muslim, Book of Tribulations — Hudhayfah ibn Usayd",
+        strength: "hadith"
+      },
+      {
+        h: "THE FIRST is named too — in a different hadith",
+        hAr: "والأُولى مسمّاةٌ أيضًا — في حديثٍ آخر",
+        en: "Abdullah ibn Amr said he memorised a hadith from the Messenger of Allah ﷺ and never forgot it: “the first of the signs to appear is the rising of the sun from its west, and the coming out of the Beast upon the people in the forenoon — and whichever of the two comes before the other, the second follows it closely.”\n\nTwo things are given here that are easy to miss. First, the sun and the Beast are the OPENING pair, not the closing one. Second, they arrive almost together — he did not say which of the two leads, and said explicitly that it does not matter, because the other is right behind it.",
+        ar: "قال عبد الله بن عمرو: حفظتُ من رسول الله ﷺ حديثًا لم أنسه بعدُ: **إِنَّ أَوَّلَ الْآيَاتِ خُرُوجًا طُلُوعُ الشَّمْسِ مِنْ مَغْرِبِهَا، وَخُرُوجُ الدَّابَّةِ عَلَى النَّاسِ ضُحًى، وَأَيُّهُمَا مَا كَانَتْ قَبْلَ صَاحِبَتِهَا فَالْأُخْرَى عَلَى إِثْرِهَا قَرِيبًا**.\n\nوفيه أمران يسهل أن يُغفلا: الأوّل أنّ الشمس والدابّة هما **المفتتَح** لا الخاتمة. والثاني أنهما يقعان متقاربَين، فلم يُعيّن أيَّهما يسبق، وصرّح بأنّ ذلك لا يُهمّ، لأنّ الأخرى على إثرها قريبًا.",
+        quote: "إِنَّ أَوَّلَ الْآيَاتِ خُرُوجًا طُلُوعُ الشَّمْسِ مِنْ مَغْرِبِهَا وَخُرُوجُ الدَّابَّةِ عَلَى النَّاسِ ضُحًى",
+        ref: "Sahih Muslim, Book of Tribulations — Abdullah ibn Amr ibn al-As",
+        strength: "hadith"
+      },
+      {
+        h: "The scholars' reconciliation — and it is theirs, not revelation",
+        hAr: "وجهُ الجمع عند العلماء — وهو قولهم لا وحي",
+        en: "That raises an obvious problem. If the sun rising from the west is FIRST, where do the Dajjal, Isa and Gog and Magog fit? They are clearly enormous events, and they cannot all be squeezed in after it.\n\nIbn Hajar's reconciliation in Fath al-Bari is the one most later scholars followed, and it is this: the signs are of two kinds. There are the great events that still happen within the ordinary running of the world — the Dajjal appears, Isa descends, Gog and Magog are released. And there are the signs that break the natural order itself — the sun reversing, the earth producing a speaking creature. Abdullah ibn Amr's hadith is naming the first of the SECOND kind.\n\nSo the ordinary-world signs come earlier, and the sun and the Beast open the final phase. This page marks that as a scholar's reading, because that is what it is. It resolves the texts well, and it is not itself a text.",
+        ar: "وهذا يُورد إشكالًا ظاهرًا: إن كان طلوعُ الشمس من مغربها **أوّلها**، فأين يقع الدجّال ونزولُ عيسى ويأجوج ومأجوج؟ وهي حوادثُ عظام لا يمكن حشرها كلُّها بعده.\n\nووجهُ الجمع الذي ذكره ابن حجر في «فتح الباري» هو الذي جرى عليه أكثر المتأخّرين: أنّ الآيات صنفان. صنفٌ عظيمٌ يقع مع بقاء نظام الدنيا على ما هو عليه: خروجُ الدجّال، ونزولُ عيسى، وخروجُ يأجوج ومأجوج. وصنفٌ يخرق نظام الكون نفسه: أن تعود الشمس من مغربها، وأن تُخرج الأرض دابّةً تكلّم الناس. وحديثُ عبد الله بن عمرو إنما يُسمّي أوّل **الصنف الثاني**.\n\nفآياتُ الدنيا المعتادة قبل، والشمسُ والدابّة تفتتحان الطور الأخير. وقد وُسم هذا في هذه الصفحة بأنه قولُ عالم، لأنه كذلك: يجمع بين النصوص جمعًا حسنًا، وليس هو نصًّا.",
+        ref: "Ibn Hajar al-Asqalani, Fath al-Bari — a scholar's reading, not revelation",
+        strength: "tafsir"
+      },
+      {
+        h: "The chain in the middle IS established — Dajjal, then Isa, then Gog and Magog",
+        hAr: "والسلسلةُ الوسطى ثابتة: الدجّال، ثم عيسى، ثم يأجوج ومأجوج",
+        en: "Three of the ten are not loose items that could fall anywhere. They are one connected sequence, and they are narrated that way inside a single long hadith in Sahih Muslim — the hadith of an-Nawwas ibn Sam'an.\n\nThe Dajjal appears. Isa son of Maryam descends and it is he who kills him. And while Isa is still on the earth, Gog and Magog are released, and it is his supplication that ends them.\n\nSo you can say with confidence: the Dajjal comes before the descent of Isa, and the descent of Isa comes before Gog and Magog. That is not a guess about ordering — it is the order the events are narrated in, because each one causes the next.",
+        ar: "ثلاثٌ من العشر ليست بنودًا مفكّكةً يجوز وقوعها حيث اتّفق، وإنما هي سلسلةٌ واحدةٌ متّصلة، وقد سِيقت كذلك في حديثٍ واحدٍ طويلٍ في صحيح مسلم: حديثِ النوّاس بن سمعان.\n\nيخرج الدجّال. فينزل عيسى ابن مريم عليه السلام وهو الذي يقتله. وبينما عيسى في الأرض يُفتح عن يأجوج ومأجوج، وبدعائه يُهلكهم الله.\n\nفيصحّ أن يُقال بثقة: الدجّالُ قبل نزول عيسى، ونزولُ عيسى قبل يأجوج ومأجوج. وليس هذا حدسًا في الترتيب، وإنما هو الترتيب الذي سِيقت به الحوادث، لأنّ كلَّ واحدةٍ سببٌ لما بعدها.",
+        ref: "Sahih Muslim, Book of Tribulations — an-Nawwas ibn Sam'an",
+        strength: "hadith"
+      },
+      {
+        h: "And here is the proof the list itself is not an order",
+        hAr: "وهذا هو الدليل على أنّ السرد نفسه ليس ترتيبًا",
+        en: "This is worth seeing, because it settles the question from the text rather than from an opinion.\n\nThe same hadith, from the same companion — Hudhayfah ibn Usayd — is narrated twice in Sahih Muslim, one narration after the other. And the two list the ten in DIFFERENT orders. One begins with the Smoke, the Dajjal and the Beast. The other begins with the three landslides and puts the Smoke fourth.\n\nThe two narrations also differ on the tenth item: one narrator gave it as the descent of Isa, and another as a wind that casts the people into the sea.\n\nIf the listing were a timetable, the same companion could not have narrated it in two sequences. It is a list of what will happen, not a schedule of when — which is exactly why nobody should be given a confident running order for all ten.",
+        ar: "وهذا ممّا ينبغي أن يُرى، لأنه يحسم المسألة من النصّ لا من الرأي.\n\nفالحديثُ نفسه، عن الصحابيّ نفسه — حذيفة بن أسيد — مرويٌّ مرّتين في صحيح مسلم، إحداهما تلو الأخرى. والروايتان تسردان العشر بترتيبين **مختلفين**: إحداهما تبدأ بالدخان والدجّال والدابّة، والأخرى تبدأ بالخسوف الثلاثة وتجعل الدخان رابعًا.\n\nواختلفت الروايتان أيضًا في العاشرة: فجعلها أحد الرواة نزولَ عيسى، وجعلها الآخر ريحًا تُلقي الناس في البحر.\n\nفلو كان السردُ جدولَ مواعيد لما رواه الصحابيُّ الواحد على وجهين. فهي قائمةُ **ما سيقع** لا جدولُ **متى يقع** — ولهذا بعينه لا ينبغي أن يُعطى أحدٌ ترتيبًا واثقًا للعشر جميعًا.",
+        ref: "Sahih Muslim, Book of Tribulations — the two narrations of Hudhayfah ibn Usayd, one after the other",
+        strength: "hadith"
+      },
+      {
+        h: "One more thing that is fixed: after the sun rises from the west, the door shuts",
+        hAr: "وأمرٌ آخر ثابت: إذا طلعت الشمسُ من مغربها أُغلق الباب",
+        en: "This is not about sequence but it belongs here, because it is the reason the order matters at all.\n\nHe ﷺ said: three things, when they appear, a soul's faith will not benefit it if it had not believed before, or earned good in its faith — the rising of the sun from its west, the Dajjal, and the Beast of the earth.\n\nSo these signs are not a countdown to be watched. They mark the point where the offer closes. Everything the rest of this page describes is aimed at what a person does BEFORE that, which is the only part still in anyone's hands.",
+        ar: "وليس هذا في الترتيب، ولكنه موضعه، لأنه سببُ أهمّيّة الترتيب أصلًا.\n\nقال ﷺ: **ثَلَاثٌ إِذَا خَرَجْنَ لَا يَنْفَعُ نَفْسًا إِيمَانُهَا لَمْ تَكُنْ آمَنَتْ مِنْ قَبْلُ أَوْ كَسَبَتْ فِي إِيمَانِهَا خَيْرًا: طُلُوعُ الشَّمْسِ مِنْ مَغْرِبِهَا، وَالدَّجَّالُ، وَدَابَّةُ الْأَرْضِ**.\n\nفليست هذه الآياتُ عدًّا تنازليًّا يُرقَب، وإنما هي حدُّ انغلاق باب القبول. وكلُّ ما تصفه بقيّةُ هذه الصفحة موجَّهٌ إلى ما يصنعه المرء **قبل ذلك**، وهو وحده الذي ما زال بيد أحد.",
+        quote: "ثَلَاثٌ إِذَا خَرَجْنَ لَا يَنْفَعُ نَفْسًا إِيمَانُهَا لَمْ تَكُنْ آمَنَتْ مِنْ قَبْلُ: طُلُوعُ الشَّمْسِ مِنْ مَغْرِبِهَا، وَالدَّجَّالُ، وَدَابَّةُ الْأَرْضِ",
+        ref: "Sahih Muslim, Book of Faith — Abu Hurairah",
+        strength: "hadith"
+      }
+    ],
+    notEstablished: "Where the Smoke falls, and where the three landslides fall, is not established by any text. Neither is a full running order for all ten. Anyone who hands you a numbered timetable from one to ten — or matches the signs to current events and tells you which one we are on — has gone past the evidence. The two narrations of the same hadith listing them differently is the clearest proof that no such timetable was given.",
+    notEstablishedAr: "أمّا موضعُ الدخان، وموضعُ الخسوف الثلاثة، فلم يثبت فيه نصّ. وكذلك الترتيبُ الكامل للعشر جميعًا. فمن ناولك جدولًا مرقّمًا من واحدٍ إلى عشرة، أو نزّل الآيات على حوادث الزمان وأخبرك أين نحن منها، فقد تجاوز الدليل. وأصرحُ ما يدلّ على أنه لم يُعطَ جدولٌ أنّ روايتَي الحديث الواحد سردتاها على وجهين.",
+    plain: "In plain words, here is the whole answer:\n\nWE KNOW THE LAST ONE. The hadith says it: the fire that drives people to the gathering.\n\nWE KNOW THE FIRST OF THE FINAL PHASE. The sun rising from the west and the Beast — and they come almost together, so it does not matter which of the two leads.\n\nWE KNOW ONE CHAIN IN THE MIDDLE. The Dajjal comes, then Isa descends and kills him, then Gog and Magog are released and Isa's supplication ends them. Those three are in that order because each one causes the next.\n\nWE DO NOT KNOW where the Smoke goes, or where the three landslides go, or the full order of all ten. The same companion narrated the list in two different orders, which is how you can tell it was never a timetable.\n\nAnd the reason any of it matters: once the sun rises from the west, faith is no longer accepted from someone who did not have it. So this is not a subject to track. It is a deadline.",
+    plainAr: "بكلامٍ بسيط، هذا هو الجواب كلُّه:\n\n**نعلم الآخِرة**: نصَّ عليها الحديث، وهي النار التي تطرد الناس إلى المحشر.\n\n**ونعلم أوّل الطور الأخير**: طلوعُ الشمس من مغربها وخروجُ الدابّة، وهما متقاربان، فلا يُهمّ أيُّهما سبق.\n\n**ونعلم سلسلةً في الوسط**: يخرج الدجّال، ثم ينزل عيسى فيقتله، ثم يُفتح عن يأجوج ومأجوج فيُهلكهم الله بدعائه. وهذه الثلاث على هذا الترتيب لأنّ كلَّ واحدةٍ سببٌ لما بعدها.\n\n**ولا نعلم** أين يقع الدخان، ولا أين تقع الخسوف الثلاثة، ولا ترتيبَ العشر جميعًا. وقد روى الصحابيُّ الواحد القائمةَ على وجهين مختلفين، وبهذا تعرف أنها لم تكن جدولَ مواعيد قطّ.\n\nوسببُ أهمّيّة هذا كلِّه: أنّ الشمس إذا طلعت من مغربها لم يُقبل الإيمان ممّن لم يكن مؤمنًا. فليس هذا بابًا يُرقَب، وإنما هو **أجَل**."
   },
 
   notice: "Everything below is what the Quran and the two Sahihs actually say. Where something famous is not established, the entry says so. Nothing here is a prediction, and no date is given, because no date was given.",
@@ -430,7 +523,27 @@ const MINOR_SIGNS = {
       ref: "Surah Al-Qamar (54:1); also al-Bukhari and Muslim", strength: "quran" },
     { en: "The contraction of time — that a period passes faster than it used to. It is in the narrations, and it is better kept as it was said than explained with physics.",
       ar: "تقارب الزمان، وأنّ المدّة تمرّ أسرع ممّا كانت. وهو في الأخبار، وإبقاؤه على ما قيل أولى من تفسيره بالفيزياء.",
-      ref: "Sahih al-Bukhari, Book of Fitan", strength: "hadith" }
+      ref: "Sahih al-Bukhari, Book of Fitan", strength: "hadith" },
+
+    { h: "Six, and these ARE given in order — count them",
+      hAr: "وستٌّ سِيقت مرتَّبةً — فاعدُدها",
+      en: "This one is worth putting beside the ten, because it is the opposite case. In the hadith of the ten there is no ordering word at all. Here every item is joined to the next with THUMMA — then, and then, and then. So this list IS a sequence, and he said so.\n\nHe said to Awf ibn Malik at Tabuk: count six before the Hour. My death. Then the conquest of Jerusalem. Then a plague that takes you as the murrain takes sheep. Then wealth so abundant that a man is given a hundred dinars and stays angry. Then a tribulation that leaves no Arab house it has not entered. Then a truce between you and the Romans, which they break and come at you under eighty banners, twelve thousand under each.\n\nRead the first two and notice what they are: his own death, and the conquest of Jerusalem. Both happened, and both happened in the order he gave. The list opens with two items his own companions lived to see.",
+      ar: "هذا ممّا يُوضع بجانب العشر، لأنه العكس تمامًا: ففي حديث العشر لا توجد أداةُ ترتيبٍ البتّة، وها هنا كلُّ بندٍ معطوفٌ على ما قبله بـ**ثُمَّ**. فهذه القائمةُ سلسلةٌ مرتَّبة، وقد صرّح بذلك.\n\nقال لعوف بن مالك في تبوك: **اعْدُدْ سِتًّا بَيْنَ يَدَىِ السَّاعَةِ: مَوْتِي، ثُمَّ فَتْحُ بَيْتِ الْمَقْدِسِ، ثُمَّ مُوتَانٌ يَأْخُذُ فِيكُمْ كَقُعَاصِ الْغَنَمِ، ثُمَّ اسْتِفَاضَةُ الْمَالِ حَتَّى يُعْطَى الرَّجُلُ مِائَةَ دِينَارٍ فَيَظَلُّ سَاخِطًا، ثُمَّ فِتْنَةٌ لَا يَبْقَى بَيْتٌ مِنَ الْعَرَبِ إِلَّا دَخَلَتْهُ، ثُمَّ هُدْنَةٌ تَكُونُ بَيْنَكُمْ وَبَيْنَ بَنِي الْأَصْفَرِ**.\n\nواقرأ أوّل بندين وانظر ما هما: موتُه هو، وفتحُ بيت المقدس. وقد وقعا، ووقعا على الترتيب الذي ذكره. فافتُتحت القائمةُ ببندين أدركهما أصحابُه أنفسهم.",
+      quote: "اعْدُدْ سِتًّا بَيْنَ يَدَىِ السَّاعَةِ: مَوْتِي، ثُمَّ فَتْحُ بَيْتِ الْمَقْدِسِ",
+      ref: "Sahih al-Bukhari 3176 — Awf ibn Malik",
+      strength: "hadith",
+      plain: "In plain words: here is a list where he DID give the order, and you can tell because every item is joined with the word “then”.\n\nSix things: his death, the conquest of Jerusalem, a plague, wealth so common that a man given a hundred dinars is still annoyed, a trouble that reaches every home, and a broken treaty.\n\nThe first two already happened, in that order, and his companions were alive for them. Which is the point of putting this beside the ten: when he wanted to give an order, he gave one plainly. In the hadith of the ten he did not.",
+      plainAr: "بكلامٍ بسيط: هذه قائمةٌ **رتّبها** ﷺ، وتعرف ذلك لأنّ كلّ بندٍ معطوفٌ بـ«ثُمَّ».\n\nستّة: موتُه، وفتحُ بيت المقدس، وطاعونٌ، ومالٌ يكثر حتى يُعطى الرجل مئة دينارٍ فيسخط، وفتنةٌ تدخل كلَّ بيت، وهدنةٌ تُنقض.\n\nوقد وقع الأوّلان على هذا الترتيب وأدركهما أصحابُه. وهذا هو المقصود من وضعه بجانب العشر: فإنه إذا أراد الترتيب رتّب صريحًا، ولم يفعل ذلك في حديث العشر." },
+
+    { h: "The Euphrates uncovering a mountain of gold",
+      hAr: "حَسْرُ الفرات عن جبلٍ من ذهب",
+      en: "He ﷺ said the Hour will not come until the Euphrates uncovers a mountain of gold, over which people will fight — ninety-nine out of every hundred killed, and every man among them saying: perhaps I will be the one who survives.\n\nThe detail that makes this worth reading is not the gold. It is the sentence at the end. He described what every single person in that fight is thinking, and it is the same thought, and it is the thought that gets ninety-nine of them killed.",
+      ar: "قال ﷺ: **لَا تَقُومُ السَّاعَةُ حَتَّى يَحْسِرَ الْفُرَاتُ عَنْ جَبَلٍ مِنْ ذَهَبٍ، يَقْتَتِلُ النَّاسُ عَلَيْهِ، فَيُقْتَلُ مِنْ كُلِّ مِائَةٍ تِسْعَةٌ وَتِسْعُونَ، وَيَقُولُ كُلُّ رَجُلٍ مِنْهُمْ: لَعَلِّي أَكُونُ أَنَا الَّذِي أَنْجُو**.\n\nوالذي يستحقّ التأمّل ليس الذهب، وإنما الجملةُ الأخيرة: فقد وصف ما يدور في نفس كلّ واحدٍ منهم، وهو خاطرٌ واحد، وهو الخاطرُ الذي يُقتل به تسعةٌ وتسعون.",
+      quote: "وَيَقُولُ كُلُّ رَجُلٍ مِنْهُمْ: لَعَلِّي أَكُونُ أَنَا الَّذِي أَنْجُو",
+      ref: "Sahih Muslim, Book of Tribulations — Abu Hurairah",
+      strength: "hadith",
+      plain: "In plain words: the river dries back far enough to expose a mountain of gold, and people fight over it until ninety-nine out of a hundred are dead.\n\nAnd he told us what each of them is thinking while walking into it: maybe I'll be the one who makes it. Every one of them thinks that. That is why they go.",
+      plainAr: "بكلامٍ بسيط: ينحسر النهر حتى يكشف جبلًا من ذهب، فيقتتل الناس عليه حتى يُقتل من كلّ مئةٍ تسعةٌ وتسعون.\n\nوأخبرنا بما يدور في نفس كلّ واحدٍ منهم وهو مقبِل: لعلّي أنا الناجي. وكلُّهم يظنّ ذلك، ولهذا يُقدِمون." }
   ],
   notEstablished: "The popular lists of minor signs run to a hundred items or more and mix authentic narrations with weak and fabricated ones without distinguishing them. Only a few are given here, and only where the source is solid. A short honest list is worth more than a long one you cannot rely on.",
   notEstablishedAr: "وتبلغ قوائم العلامات الصغرى المشهورة مئةً فأكثر، ويُخلط فيها الصحيح بالضعيف والموضوع بلا تمييز. فلم يُذكر هنا إلا القليل، وحيث كان المصدر متينًا. وقائمةٌ قصيرةٌ صادقة خيرٌ من طويلةٍ لا يُوثق بها."
