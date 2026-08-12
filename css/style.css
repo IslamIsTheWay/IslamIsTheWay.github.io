@@ -4430,6 +4430,67 @@ html.lang-ar .rv-ar p {
 .tad-why h4 { margin: 0 0 6px; color: var(--green-dark); font-size: 1.05rem; }
 .tad-why p, .tad-sec p { line-height: 1.95; margin: 0 0 10px; }
 
+/* ---------- On-this-page navigation ----------
+   The Judgement and Golden Age pages are the two longest on the site —
+   each runs to dozens of cards across five to nine major sections — and
+   until now the only way to find anything was to scroll the whole thing.
+   This is a plain jump bar, bilingual, that says what is on the page and
+   takes you there. It sticks to the top so it is still reachable when a
+   reader is deep inside a section. */
+.page-toc {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 26px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e6dff5;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(45, 20, 90, .06);
+}
+.page-toc-label {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-inline-end: 4px;
+}
+html.lang-ar .page-toc-label { text-transform: none; letter-spacing: 0; font-family: 'Amiri', serif; font-size: 1rem; }
+.page-toc a {
+  display: inline-block;
+  padding: 6px 13px;
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  background: #f3eefb;
+  border: 1px solid #ded4f0;
+  border-radius: 999px;
+  transition: background .15s, color .15s;
+}
+.page-toc a:hover,
+.page-toc a:focus-visible { background: var(--green); color: #fff; outline: none; }
+html.lang-ar .page-toc a { font-family: 'Amiri', serif; font-size: 1.05rem; }
+
+/* Anchored sections must clear the sticky bar, or a jump lands with the
+   heading hidden underneath it. */
+#stages, #signs, #detail, #angels, #alone,
+#overview, #timeline, #why, #figures, #taken, #lives, #women, #mirror, #closing {
+  scroll-margin-top: 78px;
+}
+
+@media (max-width: 640px) {
+  .page-toc { padding: 10px; gap: 6px; }
+  .page-toc a { padding: 5px 10px; font-size: .85rem; }
+  .page-toc-label { width: 100%; margin-bottom: 2px; }
+}
+
 .tad-coverage {
   font-size: .9rem;
   color: var(--text-muted);

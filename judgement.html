@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608112128" />
+  <link rel="stylesheet" href="css/style.css?v=202608120832" />
 </head>
 <body>
 
@@ -50,8 +50,21 @@
     </div>
   </div>
 
-  <section>
+  <section id="stages">
     <div class="container">
+
+      <!-- On-this-page navigation. Five major sections, dozens of cards;
+           without this the only way to reach the angels or the closing was
+           to scroll past everything above them. -->
+      <nav class="page-toc" aria-label="On this page">
+        <span class="page-toc-label"><span class="en-only">On this page</span><span class="ar-only" dir="rtl">في هذه الصفحة</span></span>
+        <a href="#stages"><span class="en-only">The 15 stages</span><span class="ar-only" dir="rtl">المراحل الخمس عشرة</span></a>
+        <a href="#signs"><span class="en-only">How the world ends</span><span class="ar-only" dir="rtl">كيف تنتهي الدنيا</span></a>
+        <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
+        <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
+        <a href="#alone"><span class="en-only">Standing alone</span><span class="ar-only" dir="rtl">تقف وحدك</span></a>
+      </nav>
+
       <div class="context-note">
         <strong>How this page handles its sources:</strong> a Quranic verse is given with its surah and verse number. A hadith in Sahih al-Bukhari or Sahih Muslim is given with its number. Where something is widely told but sits <strong>outside</strong> the two Sahihs — the names of the two angels of the grave, the descriptions of the Bridge, names given to individual gates — the page says so plainly instead of presenting it as settled. This is not a fatwa, and a qualified scholar should be consulted for rulings.
         <br><span dir="rtl" style="font-family:'Amiri',serif;">طريقة التوثيق في هذه الصفحة: الآية تُذكر بسورتها ورقمها، والحديث في الصحيحين يُذكر برقمه. وما اشتُهر وهو <strong>خارج</strong> الصحيحين — كأسماء ملَكَي القبر، وأوصاف الصراط، وتسمية كل بابٍ — نُصرّح بذلك ولا نُقدّمه على أنه مقطوعٌ به. وهذه الصفحة ليست فتوى، ويُرجع لأهل العلم في الأحكام.</span>
@@ -62,10 +75,13 @@
     </div>
   </section>
 
-  <!-- ===== Before any of it: how the world ends =====
-       Placed ABOVE the fifteen stages on purpose. The stages begin at
-       "when you die"; this is what happens to the world itself first,
-       so chronologically it belongs here. -->
+  <!-- ===== How the world ends =====
+       NOTE: this comment used to claim the section was placed ABOVE the
+       fifteen stages. It is not, and has not been — it renders after them.
+       That is defensible: the stages open at "when you die", which happens
+       to a person before the Hour arrives, so a reader meets his own death
+       first and the end of the world second. Corrected rather than moved,
+       because the order on the page is the one that reads correctly. -->
   <section class="pattern-bg" id="signs">
     <div class="container">
       <div id="signsBox"></div>
@@ -155,16 +171,16 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608112128"></script>
-  <script src="js/angels.js?v=202608112128"></script>
+  <script src="js/data.js?v=202608120832"></script>
+  <script src="js/angels.js?v=202608120832"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608112128"></script>
-  <script src="js/judgement.js?v=202608112128"></script>
+  <script src="js/signs.js?v=202608120832"></script>
+  <script src="js/judgement.js?v=202608120832"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608112128"></script>
+  <script src="js/judgement-closing.js?v=202608120832"></script>
   <script>
     /* ---------- Standing alone: the closing discussion ----------
        Reuses the same card / pulled-quote / dua shapes as the Golden Age
@@ -176,6 +192,24 @@
     function closingParas(text) {
       return String(text || "").split(/\n\s*\n/)
         .map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
+    }
+
+    /* ---------- The plain-language box ----------
+       The signs section further down already had one (sgPlain), but the
+       fifteen stages, the angels and the closing sections did not — which
+       is the half of this page a reader hits first and the half that is
+       hardest: the grave, the intercession, the Scales, the Bridge. This
+       is deliberately duplicated rather than shared with sgPlain, because
+       sgPlain is declared in a LATER script block and stageHtml runs while
+       this one is still executing. Same reason golden.html and stories.html
+       each carry their own paras(). */
+    function jdPlain(en, ar) {
+      if (!en) return "";
+      return `<div class="tad-plain">
+        <div class="tad-plain-label">💬 <span class="en-only">In plain words</span>
+          <span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
+        <div class="en-only">${closingParas(en)}</div>
+        <div class="ar-only" dir="rtl">${closingParas(ar)}</div></div>`;
     }
 
     function closingQuote(q) {
@@ -223,6 +257,7 @@
           </div>
           <div class="gc-body en-only">${closingParas(s.body)}</div>
           <div class="gc-body gold-body-ar" dir="rtl">${closingParas(s.bodyAr)}</div>
+          ${jdPlain(s.plain, s.plainAr)}
           ${closingQuote(s.quote)}
           ${closingDua(s.dua)}
         </article>`).join("")}
@@ -256,6 +291,7 @@
         <div class="judge-title-ar" dir="rtl">${s.titleAr}</div>
         <p class="judge-lead en-only">${s.lead}</p>
         <p class="judge-lead-ar" dir="rtl">${s.leadAr}</p>
+        ${jdPlain(s.plain, s.plainAr)}
         ${s.points.map(pointHtml).join("")}
         ${s.note ? `<div class="judge-note">
             <div class="judge-note-head">&#9888;&#65039; On the strength of this <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— درجة الثبوت</span></div>
@@ -299,6 +335,7 @@
           <button class="speak-btn" data-lang="ar" title="Listen">&#128266;</button></p>` : ""}
         <p class="en-only">${a.detail}</p>
         <p dir="rtl" style="font-family:&#39;Amiri&#39;,serif;line-height:2;">${a.detailAr}</p>
+        ${jdPlain(a.plain, a.plainAr)}
         ${(a.points && a.points.length) ? `<ol class="angel-points">${a.points.map(p =>
           `<li>
             <div class="ap-en en-only">${p.en}</div>
@@ -515,7 +552,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608112128"></script>
-  <script src="js/i18n.js?v=202608112128"></script>
+  <script src="js/main.js?v=202608120832"></script>
+  <script src="js/i18n.js?v=202608120832"></script>
 </body>
 </html>

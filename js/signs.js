@@ -106,6 +106,8 @@ const MAJOR_SIGNS = [
     order: 2,
     name: "The descent of Isa, son of Maryam",
     nameAr: "نزول عيسى ابن مريم",
+    plain: "In plain words: Isa عليه السلام comes back. Not as a new prophet with a new law — he comes following this one, and the two Sahihs say he breaks the cross, kills the swine and puts an end to war.\n\nHe is the one who kills the Dajjal. And he prays behind the imam of the Muslims — which is the detail that settles what his return actually means.",
+    plainAr: "بكلامٍ بسيط: ينزل عيسى عليه السلام. لا نبيًّا بشريعةٍ جديدة، وإنما متّبعًا لهذه الشريعة، وفي الصحيحين أنه يكسر الصليب ويقتل الخنزير ويضع الحرب.\n\nوهو الذي يقتل الدجّال. ويصلّي خلف إمام المسلمين — وهذه هي اللفتة التي تحسم معنى نزوله.",
     lead: "He descends as a just ruler — and he comes as a follower of this religion, not with a new one.",
     leadAr: "ينزل حَكَمًا عدلًا، ويأتي متّبعًا لهذا الدين لا بدينٍ جديد.",
     points: [
@@ -125,6 +127,8 @@ const MAJOR_SIGNS = [
     order: 3,
     name: "Gog and Magog — Yajuj and Majuj",
     nameAr: "يأجوج ومأجوج",
+    plain: "In plain words: an enormous number of people are released and spread across the earth, and no army can stand against them. The Quran says they come down from every height.\n\nThey are not defeated in battle. They are ended by something small — the supplication of Isa عليه السلام, after which they die. The pattern is deliberate: what no force could stop is removed without a fight.",
+    plainAr: "بكلامٍ بسيط: يُفتح عن قومٍ لا قِبَل لأحدٍ بقتالهم، فينتشرون في الأرض، وفي القرآن ﴿وَهُم مِّن كُلِّ حَدَبٍۢ يَنسِلُونَ﴾.\n\nولا يُهزمون في معركة، وإنما يُنهيهم أمرٌ يسير: دعوةُ عيسى عليه السلام، فيموتون. والنسقُ مقصود: فالذي عجزت عنه القوّةُ رُفع بغير قتال.",
     lead: "Named in the Quran twice, and released when the barrier that held them is levelled.",
     leadAr: "سُمّيا في القرآن مرّتين، ويُطلقان حين يُجعل السدُّ الذي حبسهما دكّاء.",
     points: [
@@ -164,6 +168,8 @@ const MAJOR_SIGNS = [
     order: 5,
     name: "The Beast of the earth",
     nameAr: "دابّة الأرض",
+    plain: "In plain words: a creature is brought out of the earth and speaks to people. That much is stated in the Quran.\n\nWhat it looks like and where exactly it appears is not established. A great deal is said about it with no sound chain behind it, so this card gives what the verse gives and then stops — which is the honest place to stop.",
+    plainAr: "بكلامٍ بسيط: تخرج دابّةٌ من الأرض تكلّم الناس. وهذا القدرُ منصوصٌ في القرآن.\n\nوأمّا صفتُها وموضعُ خروجها بعينه فغير ثابت. وقد قيل فيها كثيرٌ لا يصحّ إسنادُه، فاقتصرت البطاقةُ على ما في الآية ووقفت — وهذا هو الموقف المنصف.",
     lead: "A creature brought out of the earth that speaks to people. The Quran states it; the details are not given.",
     leadAr: "دابّةٌ تُخرَج من الأرض تُكلّم الناس. نصّ عليها القرآن، ولم تُفصَّل.",
     points: [
@@ -183,6 +189,8 @@ const MAJOR_SIGNS = [
     order: 6,
     name: "The Smoke",
     nameAr: "الدخان",
+    plain: "In plain words: a smoke covers the people, and the Quran calls it a painful punishment.\n\nThe scholars genuinely differed here: some held it already happened in the Prophet's ﷺ lifetime, in the famine that struck Quraysh, and others that it is still to come. Both positions are held by major scholars, so the card gives both rather than picking one and presenting it as settled.",
+    plainAr: "بكلامٍ بسيط: يغشى الناسَ دخان، وسمّاه القرآن ﴿عَذَابٌ أَلِيمٌۭ﴾.\n\nوقد اختلف العلماء هنا اختلافًا حقيقيًّا: فمنهم من قال إنه وقع في زمنه ﷺ في سِنِي القحط التي أصابت قريشًا، ومنهم من قال إنه ممّا لم يأتِ بعد. والقولان لأئمّة، فذكرت البطاقةُ القولين ولم تُقدّم أحدهما على أنه المقطوع به.",
     lead: "A visible smoke covering the people, named in Surah Ad-Dukhan and listed among the ten.",
     leadAr: "دخانٌ مبينٌ يغشى الناس، سُمّي في سورة الدخان وعُدّ في العشر.",
     points: [
@@ -202,6 +210,8 @@ const MAJOR_SIGNS = [
     order: 7,
     name: "The three landslides",
     nameAr: "الخسوفات الثلاثة",
+    plain: "In plain words: the earth swallows people in three places — one in the east, one in the west, and one in the Arabian peninsula.\n\nThat is what the hadith says, and it says nothing more. Anyone who tells you which modern city each one is has gone past the text and is guessing.",
+    plainAr: "بكلامٍ بسيط: يُخسف بالناس في ثلاثة مواضع: خسفٌ بالمشرق، وخسفٌ بالمغرب، وخسفٌ بجزيرة العرب.\n\nهذا نصُّ الحديث، ولم يزد عليه. ومن عيّن لك مدينةً بعينها لكلّ خسفٍ فقد تجاوز النصّ وإنما يظنّ.",
     lead: "One in the east, one in the west, and one in the Arabian peninsula.",
     leadAr: "خسفٌ بالمشرق، وخسفٌ بالمغرب، وخسفٌ بجزيرة العرب.",
     points: [
@@ -218,6 +228,8 @@ const MAJOR_SIGNS = [
     order: 8,
     name: "The fire from Yemen — the last of them",
     nameAr: "نار اليمن — آخرها",
+    plain: "In plain words: the last of the signs is a fire that comes out and drives the people in front of it to the place where they will be gathered.\n\nIt is named as the last one in the Prophet's ﷺ own list — so once it appears, there is nothing further left to wait for.",
+    plainAr: "بكلامٍ بسيط: آخرُ الآيات نارٌ تخرج تسوق الناس أمامها إلى محشرهم.\n\nوقد جُعلت آخرَ ما عدّه ﷺ — فإذا ظهرت فليس بعدها شيءٌ يُنتظر.",
     lead: "The hadith names this one explicitly as the last: a fire that drives the people to their place of gathering.",
     leadAr: "نصّ الحديث على أنّ هذه آخرها: نارٌ تطرد الناس إلى محشرهم.",
     points: [
@@ -232,6 +244,8 @@ const MAJOR_SIGNS = [
     order: 9,
     name: "The Trumpet — and here the rest of this page begins",
     nameAr: "الصُّور — ومن هنا يبدأ سائر هذه الصفحة",
+    plain: "In plain words: the signs run out here and the Hour itself begins. Everything from this point on is what the rest of this page describes — the blast, the raising, the standing, and what follows.\n\nWhich is the reason the signs were placed above the fifteen stages rather than below them: this is the order it actually happens in.",
+    plainAr: "بكلامٍ بسيط: تنتهي الأشراط ها هنا وتبدأ الساعة نفسها. وكلُّ ما بعد هذا الموضع هو الذي تصفه بقيّةُ هذه الصفحة: النفخُ والبعثُ والموقفُ وما يتبعه.\n\nولهذا وُضعت الأشراطُ فوق المراحل الخمس عشرة لا تحتها: فهذا هو ترتيبُ وقوعها.",
     lead: "The signs end and the Hour arrives. Everything after this is on the rest of this page.",
     leadAr: "تنتهي العلامات وتقوم الساعة. وكلُّ ما بعد هذا في بقيّة هذه الصفحة.",
     points: [
@@ -329,6 +343,8 @@ const THE_END = {
     {
       h: "The blast — and everything alive dies",
       hAr: "النفخة — فيموت كلُّ حيّ",
+      plain: "In plain words: the horn is blown once and every living thing dies at the same moment. Not gradually, and not in order — at once.\n\nThe Quran makes one exception: except whom Allah wills. That exception is not explained further, and this page does not fill it in.",
+      plainAr: "بكلامٍ بسيط: يُنفخ في الصور نفخةً واحدةً فيموت كلُّ حيٍّ في اللحظة نفسها. لا تدريجًا ولا على ترتيب، بل دفعةً واحدة.\n\nواستثنى القرآن: ﴿إِلَّا مَن شَآءَ ٱللَّهُ﴾. ولم يُفسَّر هذا الاستثناء، ولا تملؤه هذه الصفحة من عندها.",
       en: "The Trumpet is blown and whoever is in the heavens and the earth falls dead, except whom Allah wills. Not destroyed slowly, not across generations — at a sound.\n\nThe Quran does not name who the exceptions are. Several answers have been suggested. The verse says “except whom Allah wills” and stops, and so does this page.",
       ar: "يُنفخ في الصور فيصعق من في السماوات ومن في الأرض إلا من شاء الله. لا هلاكًا على مهل، ولا عبر أجيال، بل عند صوت.\n\nولم يُسمّ القرآن المستثنَين، وقد ذُكرت في تعيينهم أقوال. والآية قالت ﴿إِلَّا مَن شَآءَ ٱللَّهُ﴾ ووقفت، وكذلك تقف هذه الصفحة.",
       verse: { ar: "وَنُفِخَ فِى ٱلصُّورِ فَصَعِقَ مَن فِى ٱلسَّمَٰوَٰتِ وَمَن فِى ٱلْأَرْضِ إِلَّا مَن شَآءَ ٱللَّهُ", en: "“And the Trumpet will be blown, and whoever is in the heavens and whoever is on the earth will fall dead, except whom Allah wills.”", ref: "Surah Az-Zumar (39:68)" },
@@ -337,6 +353,8 @@ const THE_END = {
     {
       h: "The mountains, the seas, the sky",
       hAr: "الجبال والبحار والسماء",
+      plain: "In plain words: the things people treat as the definition of permanence are the first to go. Mountains are moved and become like carded wool, the seas are set on fire, the sky is rolled up.\n\nThe Quran keeps choosing exactly the objects a person would point at to say: that will always be there.",
+      plainAr: "بكلامٍ بسيط: أوّلُ ما يزول هو ما يجعله الناس مثَلًا في الثبات. تُسيَّر الجبال فتكون ﴿كَٱلْعِهْنِ ٱلْمَنفُوشِ﴾، وتُسجَّر البحار، وتُطوى السماء.\n\nوالقرآن يختار في كلّ مرّةٍ الأشياء التي يُشير إليها المرء فيقول: هذه لا تزول.",
       en: "The Quran describes the world coming apart in short, hard images, and they are worth reading rather than summarised.\n\nThe mountains are set moving and become a mirage. Then they become like carded wool — the lightest thing there is, blown about.\n\nThe seas are set boiling. The sky becomes like molten metal, then splits open, and the stars scatter.\n\nEvery one of these is a verse. What none of them is, is an explanation. The Quran gives the scene, not the mechanism.",
       ar: "يصف القرآن انفراط العالم بصورٍ قصيرةٍ شديدة، وقراءتها خيرٌ من تلخيصها.\n\nتُسيَّر الجبال فتكون سرابًا، ثم تصير كالعهن المنفوش — أخفّ ما يكون، تذروه الريح.\n\nوتُسجَّر البحار. وتكون السماء كالمُهل، ثم تنشقّ، وتنكدر النجوم.\n\nوكلُّ واحدةٍ من هذه آية. وليست واحدةٌ منها تفسيرًا للكيفيّة: فالقرآن أعطى المشهد ولم يُعطِ الآليّة.",
       verses: [
@@ -353,6 +371,8 @@ const THE_END = {
     {
       h: "The earth left flat and empty — and the question nobody answers",
       hAr: "الأرض تُترك ممدودةً خالية — والسؤال الذي لا يُجيبه أحد",
+      plain: "In plain words: the earth is left completely level and bare — no buildings, no landmarks, nothing anyone built.\n\nThen a question is asked out loud with nobody left to answer it: to whom belongs the sovereignty today? And it is answered by the One who asked.",
+      plainAr: "بكلامٍ بسيط: تُترك الأرض قاعًا صفصفًا مستويةً عاريةً: لا بناءَ ولا معلَمَ ولا أثرَ لشيءٍ صنعه أحد.\n\nثم يُنادى بسؤالٍ ولا أحد يُجيب: ﴿لِّمَنِ ٱلْمُلْكُ ٱلْيَوْمَ﴾. فيُجيب عنه السائلُ سبحانه.",
       en: "The earth is stretched out, throws up what is inside it, and empties. No mountain, no landmark, nothing to hide behind.\n\nThen the Quran records a question asked into a world with nobody left in it: “To whom belongs the sovereignty this Day?” There is no one to answer, so the answer comes from the One who asked: “To Allah, the One, the Prevailing.”",
       ar: "تُمدّ الأرض وتُلقي ما في جوفها وتتخلّى: لا جبل، ولا معلَم، ولا ما يُستتر به.\n\nثم يحكي القرآن سؤالًا يُلقى في عالمٍ لم يبقَ فيه أحد: ﴿لِّمَنِ ٱلْمُلْكُ ٱلْيَوْمَ﴾. فلا مُجيب، فيأتي الجواب من السائل سبحانه: ﴿لِلَّهِ ٱلْوَٰحِدِ ٱلْقَهَّارِ﴾.",
       verses: [
@@ -364,6 +384,8 @@ const THE_END = {
     {
       h: "Forty — and the one bone that does not decay",
       hAr: "أربعون — والعظم الذي لا يبلى",
+      plain: "In plain words: there is a gap of forty between the two blasts. Abu Hurairah was asked forty what — forty days, months, years? — and he said: I refuse to answer. That is in al-Bukhari, and it is a companion declining to guess.\n\nAnd one part of the body does not decay: the tailbone. From it the person is put together again — which is why what comes back is you, not a copy of you.",
+      plainAr: "بكلامٍ بسيط: بين النفختين أربعون. وسُئل أبو هريرة: أربعون ماذا؟ أربعون يومًا؟ شهرًا؟ سنة؟ فقال: أبيت. والخبرُ في البخاريّ، وهو صحابيٌّ يمتنع عن الظنّ.\n\nوشيءٌ واحدٌ من البدن لا يبلى: عَجْبُ الذَّنَب. ومنه يُركَّب الخلقُ ثانيةً — ولهذا كان العائدُ **أنت**، لا نسخةً منك.",
       en: "Between the two blasts there is a gap, and the hadith gives its length as a number with no unit. Abu Hurairah was asked: forty days? He refused to say. Forty months? He refused. Forty years? He refused.\n\nThat refusal is itself worth noticing. The companion who narrated it would not fill in what he had not been told, and neither should anyone else.\n\nIn the same narration: everything of a human being decays except one bone — the coccyx, the very base of the spine — and from it the person is put together again.",
       ar: "بين النفختين مدّة، وجاء في الحديث عددُها بلا وحدة. سُئل أبو هريرة: أربعون يومًا؟ فأبى. أربعون شهرًا؟ فأبى. أربعون سنة؟ فأبى.\n\nوهذا الإباء نفسه ممّا يُتأمَّل: فالصحابيُّ الراوي امتنع أن يملأ ما لم يُخبَر به، وكذلك ينبغي لغيره.\n\nوفي الحديث نفسه: يبلى كلُّ شيءٍ من الإنسان إلا عظمًا واحدًا، وهو عَجْبُ الذَّنَب، أسفلُ الصلب، ومنه يُركَّب الخلق.",
       verse: { ar: "", en: "“Between the two blowings of the trumpet there will be forty.” … “Everything of the human body will decay except the coccyx bone, and from it the creation will be put together again.”", ref: "Sahih al-Bukhari 4814 and 4935 — Abu Hurairah" },
@@ -372,6 +394,8 @@ const THE_END = {
     {
       h: "The raising — rain, and people coming up like plants",
       hAr: "البعث — مطرٌ، وخروجُ الناس كما ينبت النبات",
+      plain: "In plain words: water is sent down and people grow out of the earth the way plants do after rain.\n\nThe image is chosen on purpose. Reviving dead ground is something everyone has already watched happen — so the argument is not asking you to imagine something new, it is pointing at something you see every year.",
+      plainAr: "بكلامٍ بسيط: يُنزَّل ماءٌ فينبت الناس من الأرض كما ينبت الزرعُ بعد المطر.\n\nوالتشبيهُ مقصود: فإحياءُ الأرض بعد موتها أمرٌ رآه كلُّ أحد. فليست الحجّةُ تطلب منك أن تتخيّل شيئًا جديدًا، وإنما تُشير إلى ما تراه كلّ سنة.",
       en: "Then rain comes down and human beings grow out of the earth the way vegetation grows. The image in the narrations is agricultural, not mechanical: something is planted, something rains, something comes up.\n\nAnd the ground they are gathered on is described in Sahih al-Bukhari as reddish-white land like a pure loaf of bread — with, the narrator adds, no landmark on it for anybody. Nowhere to go, and nothing to recognise.",
       ar: "ثم يُنزل الله مطرًا، فينبت الناس من الأرض كما ينبت النبات. والصورة في الأخبار زراعيّةٌ لا آليّة: بذرٌ يُوضع، ومطرٌ ينزل، وخَلقٌ يخرج.\n\nوالأرض التي يُجمعون عليها موصوفةٌ في صحيح البخاري بأنها أرضٌ بيضاء يعلوها حمرة كقُرصة النقيّ — قال الراوي: ليس فيها معلمٌ لأحد. فلا موضعَ يُقصد، ولا شيءَ يُعرَف.",
       verse: { ar: "", en: "“The people will be gathered on the Day of Resurrection on reddish-white land like a pure loaf of bread.” Sahl added: that land will have no landmark for anybody.", ref: "Sahih al-Bukhari 6521 — Sahl ibn Sa'd" },
@@ -380,6 +404,8 @@ const THE_END = {
     {
       h: "And from here, the rest of this page",
       hAr: "ومن هنا يبدأ سائر هذه الصفحة",
+      plain: "In plain words: the world has ended and the people are standing. From this point the rest of the page takes over — the standing, the intercession, the settling of rights, the Scales, the Bridge.\n\nSo this section is not a separate topic. It is the first chapter, and everything below it is what happens next.",
+      plainAr: "بكلامٍ بسيط: انتهت الدنيا وقام الناس. ومن هذا الموضع تبدأ بقيّةُ الصفحة: الموقفُ والشفاعةُ والقصاصُ والموازينُ والصراط.\n\nفليس هذا القسمُ موضوعًا مستقلًّا، وإنما هو الفصل الأوّل، وما تحته هو ما يجري بعده.",
       en: "Everyone is standing. What happens next — the sun drawing near, the sweat, the intercession, the records, the Scales, the Bridge, the settling of rights — is the fifteen stages above.",
       ar: "وقد قام الناس. وأمّا ما بعد ذلك — دنوّ الشمس، والعرق، والشفاعة، والصحف، والميزان، والصراط، واقتصاص الحقوق — فهو المراحل الخمس عشرة المتقدّمة.",
       strength: "note"

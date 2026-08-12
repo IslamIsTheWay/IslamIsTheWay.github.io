@@ -22,6 +22,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "عند الموت — خروج الروح",
     lead: "Death is not the end of you. It is the moment the soul is taken out of the body, and the Quran describes angels appointed to that task.",
     leadAr: "الموت ليس نهايتك، بل هو اللحظة التي تُنتزع فيها الروح من الجسد، وقد ذكر القرآن ملائكةً موكَّلين بذلك.",
+    plain: "In plain words: dying is not you switching off. It is you being moved. The body stops, and you carry on somewhere else — the Quran describes angels assigned to take the soul out.\n\nSo the question was never whether you continue. You do. The question is what you arrive holding.",
+    plainAr: "بكلامٍ بسيط: الموت ليس انطفاءك، وإنما هو نقلُك. يقف البدن وتمضي أنت إلى مكانٍ آخر، وقد ذكر القرآن ملائكةً موكَّلين بقبض الروح.\n\nفما كان السؤال يومًا: أتبقى أم لا؟ فأنت باقٍ. وإنما السؤال: بماذا تصل؟",
     points: [
       { en: "The Angel of Death is put in charge of taking the soul, and then you are returned to your Lord. The Quran does not give him the name 'Azrail' — that name is not in the Quran or in the two Sahihs.",
         ar: "مَلَك الموت مُوكَّلٌ بقبض الروح ثم تُردّون إلى ربكم. ولم يُسمَّ في القرآن ولا في الصحيحين باسم «عزرائيل»، وهذا الاسم ليس فيهما.",
@@ -47,6 +49,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "في القبر — المَلَكان والأسئلة الثلاثة",
     lead: "The grave is not simply storage until the Hour. The Prophet ﷺ described it as either a garden or a pit, and taught his companions to seek refuge from its punishment inside every prayer.",
     leadAr: "القبر ليس مجرّد مستودعٍ إلى قيام الساعة، بل وصفه النبي ﷺ بأنه روضةٌ أو حفرة، وعلَّم أصحابه أن يستعيذوا من عذابه في كل صلاة.",
+    plain: "In plain words: the grave is not a waiting room. It already goes one of two ways, before the Day itself has started.\n\nThree questions are asked there: who is your Lord, what is your religion, and who is this man who was sent to you. Nobody can rehearse the answers, because the answer comes out of how a person actually lived, not out of what he memorised.\n\nAnd he ﷺ taught his companions to ask for protection from the punishment of the grave inside every prayer. That is how seriously he treated it.",
+    plainAr: "بكلامٍ بسيط: القبر ليس غرفة انتظار. فهو يصير إلى إحدى حالين قبل أن يبدأ اليوم الآخر أصلًا.\n\nويُسأل فيه ثلاثًا: من ربّك؟ وما دينك؟ ومن هذا الرجل الذي بُعث فيكم؟ ولا يقدر أحدٌ أن يُحضّر الجواب، لأنّ الجواب يخرج من طريقة عيشه لا ممّا حفظه.\n\nوقد علّم ﷺ أصحابه أن يستعيذوا من عذاب القبر في كلّ صلاة. وهذا يدلّك كم كان الأمر عنده عظيمًا.",
     points: [
       { en: "Two angels come and sit the dead person up, and question him. The questions are: Who is your Lord? What is your religion? And who is this man who was sent among you? The believer answers and is told to sleep as a bridegroom sleeps.",
         ar: "يأتيه ملكان فيُجلسانه ويسألانه: من ربّك؟ وما دينك؟ ومن هذا الرجل الذي بُعث فيكم؟ فيُجيب المؤمن فيُقال له: نَمْ نومة العروس.",
@@ -72,6 +76,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "النفخ في الصور — فناءٌ ثم بعث",
     lead: "The Hour begins with a blast on the Trumpet. The Quran describes two blasts: at the first everything in the heavens and the earth falls dead except whom Allah wills; at the second they rise, looking on.",
     leadAr: "تبدأ الساعة بنفخةٍ في الصور. وذكر القرآن نفختين: تصعق الأولى من في السماوات والأرض إلا من شاء الله، ثم يُنفخ فيه أخرى فإذا هم قيامٌ ينظرون.",
+    plain: "In plain words: a horn is blown and everything alive dies at once. Then it is blown a second time and everyone stands up again.\n\nNothing you own, nothing you built and nobody you knew survives the first blast. Then the same people come back — the same person, not a copy of him.",
+    plainAr: "بكلامٍ بسيط: يُنفخ في الصور فيموت كلُّ حيٍّ في وقتٍ واحد. ثم يُنفخ ثانيةً فيقوم الناس ينظرون.\n\nولا يبقى بعد النفخة الأولى شيءٌ تملكه، ولا شيءٌ بنيتَه، ولا أحدٌ عرفتَه. ثم يعود الناس أنفسهم — الشخصُ نفسه لا نسخةٌ منه.",
     points: [
       { en: "Two blasts, and between them everything created dies.",
         ar: "نفختان، وبينهما يموت كل مخلوق.",
@@ -93,6 +99,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الموقف — كم يطول والعرق",
     lead: "Then comes the standing before the Lord of the worlds, and the Quran gives it a measure that is not like our measure.",
     leadAr: "ثم يكون القيام لربّ العالمين، وقد ذكر القرآن مقدارًا ليس كمقاديرنا.",
+    plain: "In plain words: everyone waits, standing, and it is long. The Quran measures that day in a way that has nothing to do with our clock.\n\nThe sun is brought near, and people sweat according to their deeds — some to the ankles, some until it reaches the mouth. The same day is heavy on some people and light on others.",
+    plainAr: "بكلامٍ بسيط: يقف الناس ينتظرون، ويطول الموقف. ويقدّر القرآن ذلك اليوم بمقدارٍ لا صلة له بساعاتنا.\n\nوتُدنى الشمس، فيعرق الناس على قدر أعمالهم: منهم من يبلغ عرقُه كعبيه، ومنهم من يُلجمه إلجامًا. واليومُ الواحد يثقُل على قومٍ ويخفّ على آخرين.",
     points: [
       { en: "A day whose measure is fifty thousand years.",
         ar: "يومٌ كان مقداره خمسين ألف سنة.",
@@ -118,6 +126,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الشفاعة العظمى — يوم يذهب الناس من نبيٍّ إلى نبيّ",
     lead: "The standing goes on until people cannot bear it, and then they start looking for someone to speak. What happens next is one of the longest narrations in the two Sahihs, and it is the answer to the question people ask most about that Day: is there anyone who can help?",
     leadAr: "يطول الموقف حتى لا يُطيقه الناس، فيلتمسون من يشفع لهم. وما يقع بعد ذلك من أطول ما في الصحيحين، وفيه جواب أكثر ما يُسأل عنه في ذلك اليوم: هل من أحدٍ يُغيث؟",
+    plain: "In plain words: the waiting becomes unbearable, so people go looking for somebody who can speak to Allah and get it started.\n\nThey go to Adam, and he says: myself, myself. Then to Nuh, then Ibrahim, then Musa, then Isa — and every one of them says the same thing and sends them on. Finally they come to Muhammad ﷺ and he says: I am for it.\n\nThe point is not that the other prophets failed. It is that on that day nobody has attention left for anyone else, and one man was given permission to speak.",
+    plainAr: "بكلامٍ بسيط: يشتدّ الموقف حتى لا يُطاق، فيلتمس الناس من يشفع لهم عند الله ليُقضى بينهم.\n\nفيأتون آدم فيقول: نفسي نفسي. ثم نوحًا، ثم إبراهيم، ثم موسى، ثم عيسى — وكلُّهم يقول ذلك ويُحيلهم على غيره. حتى يأتوا محمّدًا ﷺ فيقول: أنا لها.\n\nوليس المعنى أنّ الأنبياء عجزوا، وإنما أنّ ذلك اليوم لا يبقى فيه لأحدٍ التفاتٌ إلى غيره، وأنّ رجلًا واحدًا أُذن له أن يتكلّم.",
     points: [
       { en: "The sun is brought near, and people reach a grief and distress they cannot bear or carry. Then they say to one another: do you not see what has reached you? Will you not look for someone to intercede for you with your Lord?",
         ar: "تُدنى الشمس فيبلغ الناس من الغمّ والكرب ما لا يُطيقون ولا يحتملون، فيقول بعضهم لبعض: ألا ترون ما قد بلغكم؟ ألا تنظرون من يشفع لكم إلى ربكم؟",
@@ -155,6 +165,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الملائكة — أسماؤهم وصفاتهم ووظيفة كلٍّ منهم",
     lead: "Angels are named in the Quran and in the two Sahihs, and each has an assigned task. Some names people use every day are firmly established; others are not established at all. Both are marked here.",
     leadAr: "الملائكة مُسمَّون في القرآن والصحيحين، ولكلٍّ منهم وظيفةٌ موكَّلٌ بها. وبعض الأسماء التي يتداولها الناس ثابتة، وبعضها غير ثابتٍ البتّة — ونُبيّن الأمرين.",
+    plain: "In plain words: angels are real created beings with assigned jobs, and some of them are named in the Quran and in the two Sahihs.\n\nBut several names people use every day are not established at all. This page marks which is which instead of mixing them together — because saying something about the unseen with no evidence behind it is not a small matter.",
+    plainAr: "بكلامٍ بسيط: الملائكة خلقٌ حقيقيّون لكلٍّ منهم عملٌ موكَّلٌ به، وقد سُمّي بعضهم في القرآن وفي الصحيحين.\n\nولكنّ أسماءً يستعملها الناس كلَّ يومٍ ليست ثابتةً البتّة. وهذه الصفحة تُميّز هذا من هذا ولا تخلطهما — لأنّ القول في الغيب بلا دليلٍ ليس بالأمر الهيّن.",
     points: [
       { en: "JIBRIL (Gabriel) — the angel of revelation, who brought the Quran down upon the heart of the Prophet ﷺ. As for his shape: Aishah رضي الله عنها said the Prophet ﷺ saw Jibril in the form in which he was created, and his creation filled the whole horizon. He is also described as having six hundred wings.",
         ar: "جبريل عليه السلام — مَلَك الوحي، نزل بالقرآن على قلب النبي ﷺ. وأما صورته فقالت عائشة رضي الله عنها: رأى جبريل في صورته، وخَلقه سادٌّ ما بين الأفق. ووُصف أيضًا بأن له ستمائة جناح.",
@@ -212,6 +224,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "عمّا ستُسأل",
     lead: "Nobody passes through without being stopped. The Quran commands: stop them — they are to be questioned. And it names some of what the questioning covers.",
     leadAr: "لا يمرّ أحدٌ دون أن يُوقَف. قال الله: وقِفوهم إنهم مسؤولون. وسمّى بعض ما يقع عليه السؤال.",
+    plain: "In plain words: nobody walks past. Everyone is stopped and questioned.\n\nAnd the questions are about ordinary things you already have: your life and how you spent it, your youth and what you did with it, your money — where you got it and where it went — and what you did with what you knew.",
+    plainAr: "بكلامٍ بسيط: لا يمرّ أحدٌ دون أن يُوقف. كلُّهم يُحبَسون ويُسألون.\n\nوالسؤال عن أمورٍ عاديّةٍ هي بين يديك الآن: عمرِك فيم أفنيته، وشبابِك فيم أبليته، ومالِك من أين اكتسبته وفيم أنفقته، وعلمِك ماذا عملت فيه.",
     points: [
       { en: "Stop them — they are to be questioned.",
         ar: "وقِفوهم إنهم مسؤولون.",
@@ -245,6 +259,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "سبعةٌ يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه",
     lead: "On a day when the sun is brought near and there is no shade at all, the Prophet ﷺ named seven kinds of people whom Allah shades. He named them precisely, so that anyone can look at the list and ask which of them he could still become.",
     leadAr: "في يومٍ تُدنى فيه الشمس ولا ظلّ فيه البتّة، سمّى النبي ﷺ سبعةً يُظلّهم الله في ظلّه. وسمّاهم تسميةً دقيقة، حتى ينظر كلُّ أحدٍ في القائمة فيسأل نفسه: أيّهم يمكن أن أكون؟",
+    plain: "In plain words: there is no shade at all that day except the shade Allah gives, and he ﷺ named seven kinds of people who are given it.\n\nRead the list slowly, because it is not seven famous men. It is seven ordinary situations: a young man who grew up worshipping, a man whose heart is attached to the mosque, two who loved one another for Allah, a man who refused a woman of position and beauty, a man who gave charity so secretly that his left hand did not know, and a man who remembered Allah alone until his eyes overflowed.\n\nEvery one of them is reachable. That is why he named them instead of describing them vaguely.",
+    plainAr: "بكلامٍ بسيط: لا ظلَّ يومئذٍ إلا ظلُّه، وقد سمّى ﷺ سبعةً يُظلّهم الله فيه.\n\nواقرأ العدد على مهلٍ، فليسوا سبعةً من المشاهير، وإنما هي سبعُ حالاتٍ عاديّة: شابٌّ نشأ في عبادة ربّه، ورجلٌ قلبه معلَّقٌ بالمساجد، ورجلان تحابّا في الله، ورجلٌ دعته امرأةٌ ذات منصبٍ وجمالٍ فقال إني أخاف الله، ورجلٌ تصدّق بصدقةٍ فأخفاها حتى لا تعلم شماله ما تنفق يمينه، ورجلٌ ذكر الله خاليًا ففاضت عيناه.\n\nوكلُّها في متناول الناس. ولهذا سمّاها تسميةً ولم يصفها وصفًا مبهمًا.",
     points: [
       { en: "He listed them one by one. Each line below is his wording, not a summary of it.",
         ar: "عدّهم النبي ﷺ واحدًا واحدًا. وكلُّ سطرٍ ممّا يلي لفظ الحديث لا اختصاره.",
@@ -285,6 +301,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "وجهان يومئذٍ — وكيف يمرّ اليوم على كلٍّ منهما",
     lead: "The Quran describes the Day not only from the outside but from inside the person living it. Two sets of faces, and two completely different experiences of the same length of time.",
     leadAr: "وصف القرآن ذلك اليوم لا من خارجه فحسب، بل من داخل من يعيشه: وجهان، وشعوران مختلفان تمامًا بالمدّة نفسها.",
+    plain: "In plain words: the same day is not the same length for everyone living it.\n\nThe Quran describes two kinds of faces — some bright and laughing, some covered in dust and darkness — and describes the day itself as heavy on one group and light on the other. The difference is not in the day. It is in who is standing in it.",
+    plainAr: "بكلامٍ بسيط: اليومُ الواحد ليس واحدًا عند من يعيشونه.\n\nوصف القرآن وجهين: وجوهًا مسفرةً ضاحكةً مستبشرة، ووجوهًا عليها غَبَرةٌ ترهقها قَتَرة. ووصف اليوم نفسه بأنه ثقيلٌ على قومٍ يسيرٌ على آخرين. فالفرقُ ليس في اليوم، وإنما فيمن يقف فيه.",
     points: [
       { en: "Faces that Day are bright — laughing, rejoicing at good news.",
         ar: "وجوهٌ يومئذٍ مُسفِرة، ضاحكةٌ مستبشرة.",
@@ -318,6 +336,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "القصاص بين الناس — وهنا يُفلس أكثر الناس",
     lead: "Before anything else is settled, what people took from one another is settled — and it is not settled with money, because there is no money there.",
     leadAr: "قبل كل شيء تُقتصّ الحقوق التي بين الناس، ولا تُقضى بالمال لأنه لا مال هناك.",
+    plain: "In plain words: this is the part most people are not ready for.\n\nBefore anything else is settled, what you took from other people is settled — and there is no money there to pay with. So it is paid out of deeds. Your good deeds are taken from you and handed to the person you wronged.\n\nAnd if your good deeds run out before the debts do, their bad deeds are put onto you. He ﷺ called that man the bankrupt one: he arrives with prayer and fasting and charity, and leaves with nothing, because of how he treated people.",
+    plainAr: "بكلامٍ بسيط: هذا هو الموضع الذي لا يستعدّ له أكثر الناس.\n\nقبل أن يُفصل في شيءٍ آخر تُقتصّ المظالم التي بين الناس — ولا مال هناك يُدفع منه. فيُدفع من العمل: تُؤخذ حسناتك فتُعطى لمن ظلمتَه.\n\nفإن فنيت حسناتُك قبل أن تفنى المظالم أُخذ من سيّئاتهم فطُرحت عليك. وسمّى ﷺ هذا الرجل المفلس: يأتي بصلاةٍ وصيامٍ وصدقة، فينصرف وليس معه شيء، بسبب معاملته للناس.",
     points: [
       { en: "The Prophet ﷺ asked: do you know who the bankrupt one is? They said: the one among us with no money and no possessions. He said: the bankrupt of my nation is the one who comes on the Day of Resurrection with prayer and fasting and zakat — and comes having insulted this one, slandered that one, consumed the wealth of this one, spilt the blood of that one, and struck this one. So this one is given from his good deeds and that one from his good deeds. And if his good deeds run out before what he owes is paid, their sins are taken and thrown onto him, and then he is thrown into the Fire.",
         ar: "قال النبي ﷺ: أتدرون ما المفلس؟ قالوا: المفلس فينا من لا درهم له ولا متاع. فقال: إن المفلس من أمتي يأتي يوم القيامة بصلاةٍ وصيامٍ وزكاة، ويأتي قد شتم هذا، وقذف هذا، وأكل مال هذا، وسفك دم هذا، وضرب هذا؛ فيُعطى هذا من حسناته وهذا من حسناته، فإن فنيت حسناته قبل أن يُقضى ما عليه أُخذ من خطاياهم فطُرحت عليه، ثم طُرح في النار.",
@@ -343,6 +363,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الصحف — باليمين أو بالشمال",
     lead: "Everyone is given his record, and the Quran describes the two reactions in detail.",
     leadAr: "يُؤتى كلُّ إنسانٍ كتابه، وقد وصف القرآن الحالين وصفًا دقيقًا.",
+    plain: "In plain words: everyone is handed a book of what he did.\n\nThe one who takes it in his right hand starts showing it to people — here, read my record. The one who takes it in his left wishes he had never been given it. The same kind of document, two opposite reactions — and the reaction was decided long before the book arrived.",
+    plainAr: "بكلامٍ بسيط: يُعطى كلُّ أحدٍ كتابًا فيه ما عمل.\n\nفمن أخذه بيمينه أخذ يعرضه على الناس: ﴿هَاؤُمُ ٱقْرَءُوا۟ كِتَٰبِيَهْ﴾. ومن أخذه بشماله تمنّى أنه لم يُؤتَه: ﴿يَٰلَيْتَنِى لَمْ أُوتَ كِتَٰبِيَهْ﴾. صحيفةٌ من جنسٍ واحد، وردّان متقابلان — وقد تقرّر الردُّ قبل وصول الكتاب بزمنٍ طويل.",
     points: [
       { en: "The one given it in his right hand calls out to the people: here, read my record — I was certain I would meet my account.",
         ar: "فمن أُوتي كتابه بيمينه نادى الناس: هاؤم اقرؤوا كتابيه، إني ظننتُ أني ملاقٍ حسابيه.",
@@ -367,6 +389,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الميزان — وزنٌ بمثقال الذرّة",
     lead: "Scales of justice are set, and nothing is wronged in the slightest.",
     leadAr: "وتُوضع الموازين القسط فلا تُظلم نفسٌ شيئًا.",
+    plain: "In plain words: deeds are weighed, and the weighing is exact down to the smallest thing there is.\n\nAnd weight is not the same as amount. A small thing done sincerely can outweigh a pile of things done to be seen. That is the whole reason the Scales are mentioned — so that nobody assumes a long record is automatically a heavy one.",
+    plainAr: "بكلامٍ بسيط: تُوزن الأعمال، والوزنُ دقيقٌ إلى أصغر شيء.\n\nوليس الوزنُ هو الكثرة: فقد يرجح القليلُ الخالصُ كومًا عُمل رياءً. وهذا هو سببُ ذكر الموازين أصلًا: لئلّا يظنّ أحدٌ أنّ طول الصحيفة يعني ثِقَلها.",
     points: [
       { en: "Not the weight of a mustard seed is lost.",
         ar: "ولا يضيع مثقال حبةٍ من خردل.",
@@ -391,6 +415,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الصراط والحوض",
     lead: "The Bridge is set over Hell and people cross it at the speed of their deeds. Before it, the Prophet ﷺ waits at his Basin.",
     leadAr: "ويُضرب الصراط على متن جهنم فيمرّ الناس على قدر أعمالهم. وقبله يقف النبي ﷺ على حوضه.",
+    plain: "In plain words: there is a crossing set over Hell, and everybody goes over it. People cross at different speeds — some like lightning, some crawling — and the speed comes from their deeds, not from luck.\n\nBefore it, the Prophet ﷺ is waiting at his Basin giving water. Whoever drinks from it is never thirsty again.",
+    plainAr: "بكلامٍ بسيط: يُضرب الصراط على جهنّم، ويمرّ عليه الناس جميعًا. ويمرّون على درجات: منهم كالبرق، ومنهم من يزحف — والسرعةُ من العمل لا من الحظّ.\n\nوقبله يقف النبيّ ﷺ على حوضه يسقي. ومن شرب منه لم يظمأ بعده أبدًا.",
     points: [
       { en: "The Prophet ﷺ said his pulpit is upon his Basin, and described it as one from which whoever drinks will never thirst again. He said he would be at it before them, and would drive away those who changed after him.",
         ar: "قال النبي ﷺ: منبري على حوضي، ووصفه بأن من شرب منه لم يظمأ بعده أبدًا، وأنه فَرَطهم عليه، وأنه يُذاد عنه من بدّل بعده.",
@@ -412,6 +438,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "الأبواب — ثمانية للجنة ومن عليها",
     lead: "Paradise has eight gates. The Prophet ﷺ named one of them and told Abu Bakr رضي الله عنه that whoever spends a pair of anything in the way of Allah is called from every gate.",
     leadAr: "للجنة ثمانية أبواب، سمّى النبي ﷺ أحدها، وأخبر أبا بكرٍ رضي الله عنه أن من أنفق زوجين في سبيل الله نُودي من الأبواب كلّها.",
+    plain: "In plain words: Paradise has eight ways in, and different kinds of good deed are matched to different doors.\n\nSo a person is not squeezing towards one narrow entrance. And he ﷺ told Abu Bakr that whoever spends a pair of anything in the way of Allah is called from every one of them.",
+    plainAr: "بكلامٍ بسيط: للجنّة ثمانيةُ أبواب، ولكلّ بابٍ صنفٌ من العمل يُدعى منه أهلُه.\n\nفليس الناس مزدحمين على مدخلٍ واحدٍ ضيّق. وقد قال ﷺ لأبي بكر: من أنفق زوجين من شيءٍ في سبيل الله نُودي من أبواب الجنّة كلّها.",
     points: [
       { en: "Paradise has eight gates, and one of them is called Ar-Rayyan, through which none will enter but those who fast.",
         ar: "في الجنة ثمانية أبواب، منها بابٌ يُسمّى الرَّيّان لا يدخل منه إلا الصائمون.",
@@ -457,6 +485,8 @@ const JUDGEMENT_STAGES = [
     titleAr: "وفي النهاية تقف وحدك — حتى أمّك تطلب حقّها",
     lead: "This is the part people find hardest, and the Quran states it without softening. On that Day the closest people to you will not be beside you — they will be occupied with themselves, and some of them will be asking for what you owe them.",
     leadAr: "وهذا أشقّ ما يقع في النفس، وقد قرّره القرآن دون تلطيف: يوم القيامة لا يقف معك أقرب الناس إليك، بل يشغلهم أمرهم، وبعضهم يطالبك بحقّه.",
+    plain: "In plain words: you go through this on your own.\n\nThe people closest to you — parents, husband or wife, children — will be too occupied with themselves to help, and some of them will be standing there asking for a right you owe them. The Quran says that plainly and does not soften it.\n\nIt is not said to push anyone into despair. It is said so that a person stops building his whole plan around people who will not be able to stand with him, and starts building something that will.",
+    plainAr: "بكلامٍ بسيط: تمرّ بهذا وحدك.\n\nفأقربُ الناس إليك — الوالدان والزوج والولد — يشغلهم أمرُهم عن أن يُغنوا عنك شيئًا، وبعضهم واقفٌ يطلب حقًّا له عندك. قال القرآن ذلك صريحًا ولم يُلطّفه.\n\nولم يُقل هذا ليدفع أحدًا إلى القنوط، وإنما ليكفّ المرء عن أن يبني أمره كلَّه على من لا يقدرون أن يقفوا معه، ويبني على ما يقف معه.",
     points: [
       { en: "A man will flee from his brother, and his mother and his father, and his wife and his children — because on that Day every man has a matter that is enough to occupy him entirely. Read the words: he flees from his own mother.",
         ar: "يفرّ المرء من أخيه، وأمّه وأبيه، وصاحبته وبنيه؛ لأن لكل امرئٍ منهم يومئذٍ شأنٌ يُغنيه. وتأمّل اللفظ: يفرّ من أمّه.",
