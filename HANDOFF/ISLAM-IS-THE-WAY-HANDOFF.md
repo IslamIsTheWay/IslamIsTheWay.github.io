@@ -2141,6 +2141,73 @@ search**. It now points at the feedback form `main.js` injects on every page.
 - Home page, live: no horizontal overflow at 375px or 1280px; the stats strip
   falls 6 to 3 to 2 columns; Arabic-Indic numerals in Arabic mode.
 
+---
+
+## Second round, same day — the Tadabbur label and 51 more verses
+
+He asked for at least one explained verse in every surah, more wherever
+possible, the surah name and verse number shown in the box, and more work on
+the home page interface.
+
+### The box never said which verse it was explaining
+It opened straight into "Why this verse, and why these words". A reader deep
+inside a long surah had no anchor for what they were looking at, and nothing
+to quote or search for afterwards.
+
+`iitwTadabburFor()` now returns `num` alongside `data`, and
+`iitwTadabburAyahHtml()` renders a `.tad-which` pill: **"Surah Al-Baqarah ·
+verse 156 (2:156)"**, with Arabic-Indic numerals in Arabic mode. The surah
+NAME is read from `SURAHS` rather than stored in `js/tadabbur.js`, so it can
+never drift from the Quran page.
+
+### 174 to 225 verses, across 51 more surahs
+Every surah still has at least one. **Surahs with only ONE explained verse
+fell from 97 to 46.**
+
+Batch one (28): 13:28, 14:34, 16:97, 17:23, 20:14, 23:1, 25:74, 29:45, 30:21,
+31:18, 39:10, 41:33, 50:18, 51:22, 57:4, 59:18, 64:16, 66:8, 72:18, 87:14,
+91:8, 93:11, 94:7, 96:6, 99:8, 104:3, 113:5, 114:4.
+
+Batch two (23): 5:8, 7:199, 9:40, 10:62, 11:114, 15:9, 19:4, 21:87, 22:46,
+26:89, 27:62, 32:16, 34:13, 35:15, 38:29, 43:67, 45:23, 47:7, 54:17, 68:4,
+74:38, 83:14, 90:10.
+
+Chosen on the same principle as the rest of the file — the verses people
+actually recite, and the ones they quote wrongly. Some worth knowing:
+
+- **29:45** answers the standard objection to it. The verse does not say the
+  prayer PREVENTS sin, it says it FORBIDS — a standing prohibition the
+  worshipper carries out with him, and a man may disobey a prohibition
+  without it stopping being one.
+- **45:23** turns on word order. It is not "he took his desire as his god";
+  it is "he took HIS GOD to be his desire" — a man who keeps his God and
+  quietly swaps what that God wants for what he wants.
+- **90:10** — both roads are called *najd*, high ground. Neither is downhill.
+- **38:29** is the verse this whole section stands on, and it is now in it.
+- **15:9** has five separate emphasisers in eight words.
+
+Sourced from Al-Mufradat **by root entry, with no page numbers invented** —
+the entries that carry a Shamela page are the earlier ones that were read
+directly. Where a hadith number could not be verified, the collection and
+book are cited instead.
+
+### Interface
+- Nine Quick Access cards are `<a>` elements and nothing said so. They now
+  carry an arrow that **mirrors itself in RTL**. It is a GLYPH, never a word:
+  text in CSS `content` is not a DOM node, so `i18n.js` cannot reach it and it
+  would sit in English on an Arabic page — the same reason no SVG on this site
+  contains text.
+- **focus-visible rings** on the cards, stat tiles, gallery and footer links.
+  Tabbing through the home page previously went silent for long stretches.
+- Gallery photographs lift and lighten on hover. All of it is inside
+  `prefers-reduced-motion` guards.
+
+### Verified
+All 225 entries were rendered end-to-end through `iitwTadabburAyahHtml` and
+checked for literal `\n`, literal `**`, a missing label and an empty return:
+**zero problems across all 225**. No surah has zero verses. No mojibake, no
+duplicate AR keys, counts guard passing, no horizontal overflow at 375px.
+
 ## Open work as of 13 August 2026
 
 1. **The 377 English labels on the full-life sources.** The citations are now
@@ -2150,7 +2217,9 @@ search**. It now points at the feedback form `main.js` injects on every page.
 2. **~53 prose fragments still sitting inside `ref` fields** on the lives, and
    2 on the hadith page ("also in", "of the"). They cannot be translated where
    they are; they belong in the body.
-3. **Tadabbur depth.** Al-Baqarah is 21 of 286. Still "more and more and more".
+3. **Tadabbur depth.** 225 verses, at least one in every surah, and 46
+   surahs still have exactly one. Al-Baqarah is 21 of 286. The standing
+   instruction remains "more and more and more".
 4. **The citation audit has still only covered the Judgement page's files.**
    The other pages have not had that sweep.
 5. Everything still open from Part 8: the hijab photo, the hadith page Arabic
