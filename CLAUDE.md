@@ -73,9 +73,42 @@ grep -l 'Ø§\|ÙÙ\|â€' *.html js/*.js css/*.css        # mojibake check
 grep -oE '^  "([^"]+)":' js/i18n.js | sort | uniq -d   # duplicate AR keys
 git fetch -q origin && git checkout origin/main -- data/site-config.json
 ./check-images.sh
+./check-counts.sh       # home page numbers vs the data behind them
 ./bump-version.sh
 git add -A && git commit -m "..." && git push origin main
 ```
+
+**And once, in the browser, in Arabic mode** — the static greps above cannot
+see any of these:
+
+```js
+// English left inside a citation. Should be 0 on every content page.
+[...document.querySelectorAll('.tad-ref, .refs, .hadith-meta, .gold-ref, .rv-ev-ref')]
+  .filter(e => /Sahih al-Bukhari|Sahih Muslim|Book of |— Sahih\b|agreed upon/i.test(e.textContent)).length
+
+(document.body.innerText.match(/\*\*/g) || []).length   // literal bold markers
+```
+
+## Traps added 13 August 2026 — all three were found live
+
+- **A backtick inside an HTML comment that sits inside a template literal ends
+  the string.** A comment reading ``the `.tad-ref` class`` inside the
+  `card.innerHTML = \`…\`` block took the whole prophets page down with
+  "ref is not defined" — 0 of 29 cards rendered. Comments inside a template
+  literal must never contain a backtick.
+- **`IITW_REF_SELECTOR` went stale a second time**, and wider: `.life-sources`,
+  `.rv-ev-ref` and `.gold-ref` were all missing, leaving 190 of 240 source
+  lines on the companions page in English. But **do not simply add every new
+  class to it** — if the field contains English PROSE as well as a citation,
+  AR_PARTS mangles the prose word by word ("his trade and lineage" → "his
+  trade و lineage"). Split the line and wrap only the citation, as
+  `prophets.html` and `companions.html` now do.
+- **AR_PARTS ordering broke three more times, silently.** `Book of Food`,
+  `Book of Remembrance` and `Book of Dress` each sat ABOVE their own longer
+  forms, so the prefix matched and left the tail in English. And 16 narrator
+  names never matched at all because the data spells them **Omar** and
+  **Osman** (rule 26) while AR_PARTS was keyed on `Umar` and `Uthman`.
+  After touching that array, run the Arabic-mode check above.
 
 ## Traps worth knowing now
 

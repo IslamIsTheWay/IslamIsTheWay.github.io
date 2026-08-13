@@ -1997,3 +1997,162 @@ not depend on anyone's opinion.
 5. Everything still open from Part 8: the hijab photo, the hadith page Arabic,
    the courses page Arabic, Gmail sign-in, cross-device saved place, Google
    Search Console.
+
+---
+
+<!-- ============================================================ -->
+# PART 11 — the 13 August 2026 session
+<!-- ============================================================ -->
+
+The ask arrived in his usual form: find mistakes anywhere, add content, more
+explanation in the Quran section, improve the home page, make sure the search
+works, and "enhance the user interface by any kind of way".
+
+## What was built
+
+### Tadabbur finally appears on the home page
+Open work item 1 of Part 10 — "THE HOME PAGE DOES NOT MENTION TADABBUR AT ALL"
+— is closed. `index.html` now carries a `.tadabbur-feature` section with a
+**worked example rather than a description of one**: Al-Fatihah 1:5, why
+*iyyaka* is placed before the verb, and what fronting a word does to the
+meaning in Arabic. The Quran quick-access card names the feature too.
+
+### The numbers are counted now, not typed
+A `.stats-strip` under the hero renders six figures **computed from data.js at
+load**. It exists because hand-typed counts on that page have gone stale three
+times, and he reads the numbers. Found stale this session and fixed in English
+AND in the `AR` dictionary together:
+
+- "**Sixteen** steps of worship" — there are **24** (`WORSHIP_STEPS`)
+- "**52** passages of the Quran", on two separate cards — there are **54**
+  distinct (55 points carry one; 54 are unique)
+
+Four figures cannot be counted on the home page, because their data files are
+too heavy to load there. **`./check-counts.sh`** is the guard for those four:
+it counts the real thing in `js/tadabbur.js`, `js/lives.js`, `js/sunnah.js`
+and `js/golden.js` and fails if `index.html` disagrees. It is keyed on the
+LABEL, never on the digits — keying it on the number would make it stop
+finding the line at exactly the moment the number went wrong. It is in the
+pre-commit list in `CLAUDE.md`, and its negative test was run.
+
+### Search now tolerates the spelling the reader actually types
+**Fifteen of fifty-one** spellings a reader is likely to type returned nothing:
+Aishah, Ayesha, Hamzah, Othman, Talhah, Muaz, Zubair, AbuBakr, Yousef,
+Ibraheem, Dawood, Ismael, Zachariah — and **both `Sulayman` and `Suleiman`**,
+because the data spells him `Sulaiman`, which left that prophet reachable only
+by typing `Solomon`.
+
+`iitwTranslitWords()` in `main.js` reduces query and name to one skeleton:
+`th to s`, `dh to z`, `ch to k`, `ay/ey/ei to ai`, `oo/ou to u`, `ee to i`,
+doubled letters collapsed, a trailing `h` dropped. `kh` is deliberately left
+alone — folding it into `k` would start merging names that genuinely differ.
+A short alias map covers what the rules cannot reach (`yousef`, `mohammed`,
+`enoch`, `jethro`).
+
+All 51 now resolve, **all 94 people find themselves**, and the counts the
+previous session recorded as correct still hold: Ali 3, Khalid 1, junk 0,
+empty 0. The only query returning more than 8 is "Abu" at 19, which is
+correct — 19 people share it. The same skeleton is applied to the surah
+search, so `Yaseen`, `Noor` and `Ikhlaas` now find 36, 24 and 112.
+
+### 7 more Al-Baqarah verses
+14 to **21** (site total 167 to **174**): 2:30 (the angels' objection, and
+what *khalifah* does and does not mean), 2:62 (the condition in the middle
+that both misreadings drop), 2:115, 2:143 (*wasat* is `'adl`, not "moderate"
+in the modern sense), 2:153, 2:156, 2:190 (the limit sits in the same sentence
+as the command). Where a hadith number could not be verified against the
+source text it is cited by collection and book instead — the Umm Salamah
+hadith on 2:156 is given as "Sahih Muslim, Book of Funerals" for exactly the
+reason Part 9 documents about Muslim's numbering.
+
+### Reading aids on the long pages
+`iitwInjectReadingAids()` in `main.js` — a progress bar and a back-to-top
+button, injected on any page taller than 2.5 viewports, one copy for all
+thirteen pages. RTL-safe: the bar fills from the right in Arabic via
+`transform-origin`, and the button is placed with `inset-inline-end`.
+
+## Bugs found that were ALREADY LIVE
+
+### 1. Arabic readers were seeing English citations across three sections
+`IITW_REF_SELECTOR` had gone stale a **second** time, and wider than the
+first. `.life-sources`, `.rv-ev-ref` and `.gold-ref` were all missing from it.
+Measured in Arabic mode: **190 of 240** source lines on the companions page
+were still English.
+
+The fix is not simply "add the class". The full lives' sources read
+`"<what it supports>: <citation>"`, and handing a line containing English
+prose to AR_PARTS mangles the prose — "his trade **and** lineage" came out as
+"his trade **و** lineage". So `prophets.html` and `companions.html` now split
+each line and wrap **only the citation half** in `.tad-ref`, and
+`.life-sources` is deliberately NOT in the selector.
+
+The grading vocabulary itself was also missing, which is the worst part of it,
+because how strong a source is is what this site promises to state every time:
+**Sahih x116, agreed upon x41, historical accounts x36, Quran x10**. Citation
+English on that page went from ~370 runs to **53**, and all 53 are prose
+sitting inside a `ref` field — which this handoff already says not to do.
+
+### 2. Three more AR_PARTS ordering bugs, silent as always
+`Book of Food`, `Book of Remembrance` and `Book of Dress` each sat **above**
+their own longer forms, so the prefix matched first and left the tail in
+English: "كتاب الأطعمة و Drink", "كتاب الذكر والدعاء Supplication",
+"كتاب اللباس (Al-Libas)".
+
+### 3. Sixteen narrator names never matched, because of rule 26
+The data spells them **Omar** and **Osman** by his own instruction, while
+AR_PARTS was keyed on `Umar` and `Uthman`. So the hadith page rendered
+"رواه Omar ibn al-Khattab" in Arabic mode. English in that page's citations
+went from 24 runs to **2**.
+
+### 4. "Get Started" sent people to the wrong page
+Under "Community Reflections", which invites the reader to share stories,
+questions and reflections, the button pointed at **`search.html` — the person
+search**. It now points at the feedback form `main.js` injects on every page.
+
+## Traps added this session — do not reintroduce
+
+- **A backtick inside an HTML comment that sits inside a template literal ends
+  the string.** A comment naming the `.tad-ref` class in backticks, inside the
+  `card.innerHTML` template, took `prophets.html` down completely —
+  "ref is not defined", 0 of 29 cards rendered. It was caught only by the
+  post-change sweep, which is the argument for always doing the sweep.
+- **`requestAnimationFrame` never fires while the browser pane is not
+  compositing**, so anything rAF-throttled looks dead in testing and is fine
+  in a real browser. Same family as the documented CSS-transition trap. Keep
+  the update logic in a named function (`iitwUpdateReadingAids`) so it can be
+  called directly, rather than contorting the code to be testable.
+- **`textContent` includes `display:none` nodes**, so it reports both the
+  `.en-only` and the `.ar-only` twin. Use `getComputedStyle(el).display` —
+  this produced a false "both numerals are rendering" report on the stats
+  strip. Same family as the documented `innerText` trap.
+- **The Bash tool is not PowerShell.** `git commit -m @'...'@` put a literal
+  `@` in the commit subject. Use a heredoc.
+
+## Verified on the live site at the end of this session
+
+- All 16 pages return 200; no missing script, page or image reference.
+- No mojibake, no duplicate `AR` keys, no missing commas, no literal `**`.
+- Arabic mode, live: **0** English citations on prophets (148 citations),
+  companions (240), golden (9) and guidance (16); 0 mangled labels.
+- Search, live: 51/51 spellings resolve, 94/94 people find themselves, Arabic
+  queries unaffected, empty and junk queries return nothing.
+- Sunnah, hadith, guidance and surah search all still return correctly in
+  both languages.
+- Home page, live: no horizontal overflow at 375px or 1280px; the stats strip
+  falls 6 to 3 to 2 columns; Arabic-Indic numerals in Arabic mode.
+
+## Open work as of 13 August 2026
+
+1. **The 377 English labels on the full-life sources.** The citations are now
+   Arabic; the `"<what it supports>:"` half in front of them is still English
+   in Arabic mode. 388 source lines, 377 distinct labels — authorable in one
+   focused session, and the right fix rather than leaving a half-English line.
+2. **~53 prose fragments still sitting inside `ref` fields** on the lives, and
+   2 on the hadith page ("also in", "of the"). They cannot be translated where
+   they are; they belong in the body.
+3. **Tadabbur depth.** Al-Baqarah is 21 of 286. Still "more and more and more".
+4. **The citation audit has still only covered the Judgement page's files.**
+   The other pages have not had that sweep.
+5. Everything still open from Part 8: the hijab photo, the hadith page Arabic
+   titles, the courses page Arabic, Gmail sign-in, cross-device saved place,
+   Google Search Console.
