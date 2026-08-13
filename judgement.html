@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608122257" />
+  <link rel="stylesheet" href="css/style.css?v=202608131610" />
 </head>
 <body>
 
@@ -185,19 +185,19 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608122257"></script>
-  <script src="js/angels.js?v=202608122257"></script>
+  <script src="js/data.js?v=202608131610"></script>
+  <script src="js/angels.js?v=202608131610"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608122257"></script>
-  <script src="js/judgement.js?v=202608122257"></script>
+  <script src="js/signs.js?v=202608131610"></script>
+  <script src="js/judgement.js?v=202608131610"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608122257"></script>
+  <script src="js/judgement-closing.js?v=202608131610"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608122257"></script>
+  <script src="js/rise.js?v=202608131610"></script>
   <script>
     /* ---------- Standing alone: the closing discussion ----------
        Reuses the same card / pulled-quote / dua shapes as the Golden Age
@@ -206,9 +206,20 @@
        The dua cards are the point of the second half: the owner asked that
        the Prophet's ﷺ own words for protection and steadfastness stand out
        on the page rather than sit inside a paragraph where they get skimmed. */
+    /* **bold** -> <strong>. The data files have always been written with it,
+       but nothing on this page converted it, so Arabic readers were served
+       the literal asterisks. English was unaffected because the English text
+       uses CAPITALS for emphasis, which is why it went unnoticed for so long.
+       Non-greedy, and no look-behind: a look-behind breaks older Safari at
+       parse time and would kill the whole file.
+
+       NOTE: headings (h / hAr / title / name) are inserted RAW and never pass
+       through here, so a marker in a heading still renders as two asterisks.
+       Heading fields must not carry markers. */
     function closingParas(text) {
       return String(text || "").split(/\n\s*\n/)
-        .map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
+        .map(p => `<p>${p.replace(/\n/g, " ")
+          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`).join("");
     }
 
     /* ---------- The plain-language box ----------
@@ -404,8 +415,12 @@
        `notEstablished` block where the popular version has run past the
        text. That second part is the whole reason this section is safe to
        publish — no subject attracts more invented material than this one. */
+    /* Same **bold** conversion as closingParas above — see the note there.
+       The signs section is where most of the markers on this page live. */
     function sgParas(t) {
-      return String(t || "").split(/\n\s*\n/).map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
+      return String(t || "").split(/\n\s*\n/)
+        .map(p => `<p>${p.replace(/\n/g, " ")
+          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`).join("");
     }
     const SG_BADGE = {
       quran:  { en: "The Quran", ar: "قرآن", c: "t-quran" },
@@ -632,7 +647,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608122257"></script>
-  <script src="js/i18n.js?v=202608122257"></script>
+  <script src="js/main.js?v=202608131610"></script>
+  <script src="js/i18n.js?v=202608131610"></script>
 </body>
 </html>

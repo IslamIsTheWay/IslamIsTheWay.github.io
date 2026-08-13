@@ -516,10 +516,20 @@ function iitwForgetPlace(e) {
    is static and written in this repo — there is no user input on
    this path — but it is still inserted as text-bearing markup
    only, never into an attribute. */
+/* **bold** -> <strong>. js/tadabbur.js carries 486 of these markers and
+   nothing converted them, so every Arabic reader of the Tadabbur panel was
+   being shown the literal asterisks. English was unaffected because the
+   English text uses CAPITALS for emphasis, which is how it stayed hidden.
+   Non-greedy, and no look-behind — a look-behind breaks older Safari at
+   parse time and would kill the whole file.
+
+   Heading fields (h / title / w) are inserted raw elsewhere and never reach
+   this function, so they must not carry markers. */
 function tadPara(text, rtl) {
   if (!text) return "";
   return String(text).split("\n\n").map(function (p) {
-    return '<p' + (rtl ? ' dir="rtl"' : '') + '>' + p.replace(/\n/g, "<br>") + '</p>';
+    return '<p' + (rtl ? ' dir="rtl"' : '') + '>' +
+      p.replace(/\n/g, "<br>").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + '</p>';
   }).join("");
 }
 
