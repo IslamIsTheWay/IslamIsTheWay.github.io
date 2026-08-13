@@ -105,7 +105,11 @@ js/signs.js                SIGNS_INTRO + MAJOR_SIGNS + MINOR_SIGNS + THE_END
                            + JUDGEMENT_DETAIL   (judgement.html)
                            + MEETING_ALLAH      (guidance.html)
 js/golden-lives.js         GOLDEN_LIVES + GOLDEN_WOMEN   (golden.html)
-js/golden-mirror.js        GOLDEN_MIRROR — 15 sections in 6 parts
+js/golden-mirror.js        GOLDEN_MIRROR — 18 sections in 6 parts
+js/rise.js                 THE_RISE — "will we rise again?" PLUS its own
+                           renderer iitwRenderRise(hostId). Rendered on BOTH
+                           golden.html and judgement.html from this one file,
+                           so the two pages cannot drift
 js/enrol.js                course sign-up + the request that reaches the
                            staff by mail/WhatsApp   (courses.html)
 js/account.js              reader sign-in + saved verse   (quran.html)
@@ -250,6 +254,98 @@ A missing comma between objects silently breaks every page that loads the file.
   compositing**, so a mid-transition value read in an automated check is
   meaningless. Read resting values with transitions disabled.
 
+### `**bold**` is NOT converted unless the renderer does it — and headings never are
+This has now been found live **twice**, and it only ever hurts Arabic readers,
+which is why it survives so long: the English text uses CAPITALS for emphasis,
+so English looks fine while Arabic shows raw asterisks.
+
+Measured before the fix in the 13 August session: `golden.html` was the only
+page converting. `judgement.html` was showing **128 literal markers** in
+Arabic mode, `quran.html` was showing them from the 486 markers in
+`js/tadabbur.js`, and `guidance.html` from `MEETING_ALLAH`.
+
+Every paragraph helper must carry:
+
+```js
+.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+```
+
+Non-greedy, and **no look-behind** — a look-behind breaks older Safari at
+parse time and would kill the whole file. The helpers that have it now:
+`paras()` in golden.html, `closingParas()` and `sgParas()` in judgement.html,
+`tadPara()` in js/quran.js, the local `para()` in the MEETING_ALLAH renderer
+in guidance.html, and `iitwRiseParas()` in js/rise.js.
+
+**AND THE PART THAT BIT TWICE: heading fields are inserted RAW.** `h`, `hAr`,
+`title`, `titleAr`, `name`, `nameAr`, `w`, `surahTitle` never pass through a
+paragraph helper, so a marker in a heading can never convert no matter how
+many renderers you fix. Heading fields must not carry markers. Check with:
+
+```bash
+grep -nE '^\s*(h|hAr|title|titleAr|name|nameAr|w|surahTitle[A-Za-z]*):.*\*\*' js/*.js
+```
+
+### Musnad Ahmad is NOT in the hadith API — you cannot verify it mechanically
+The jsdelivr collection carries only: `abudawud bukhari ibnmajah malik muslim
+nasai tirmidhi nawawi qudsi dehlawi`. `ara-ahmad.json` returns an 84-byte
+"couldn't find the requested file" — which is easy to mistake for a real file.
+
+So anything from Musnad Ahmad — including the famous five-phases hadith of
+Hudhayfah ending in a caliphate on the way of prophethood — cannot be checked
+against a primary text the way Bukhari and Muslim can. Cite it **by collection
+and grader, never by a number**, and say on the entry that the wording was not
+machine-verified. `js/rise.js` does this and is the model.
+
+### Comparing Arabic: normalise to NFC or you get false failures
+The JSON editions and the repo files are stored in different Unicode
+normalisation forms, so a raw byte compare reports mismatches that are not
+real. Harakat ordering also differs harmlessly — `وَلاَ` in the collections vs
+`وَلَا` if typed — same consonantal skeleton, different bytes.
+
+```python
+import unicodedata
+N = lambda s: unicodedata.normalize("NFC", s)
+```
+
+Compare `N(mine) in N(source)`. Without this, a verification pass "fails" 14
+of 18 correct quotations, which then wastes time chasing nothing.
+
+### Python printing Arabic to the Windows console crashes — AND can leave the file unwritten
+`UnicodeEncodeError: 'charmap' codec` on cp1252. Write to a UTF-8 file and
+`Read` it back instead. **Never `unicode_escape`.**
+
+The dangerous version, which actually happened: a script that does
+`read → replace → print → write`, where the `print` contains Arabic. The print
+raises, the write never runs, and the file is **silently left unmodified**
+while the earlier files in the same loop were already saved. That produced a
+half-applied edit across `index.html` and `js/i18n.js` — English changed in
+one, key unchanged in the other, which is exactly the state that breaks the
+AR dictionary. Do the writes first, or print nothing but ASCII.
+
+### `grep -o '<li[ >]'` misses template literals
+`<li${cond ? ' class="x"' : ""}>` is a real open tag that the grep does not
+count, so the balance check reports a false mismatch. Verify list balance in
+the **parsed DOM**, not by grepping source.
+
+### A partial Quran quotation needs `arNote`
+If a tadabbur entry quotes only part of a long verse, it must carry
+`arNote` / `arNoteAr` naming what the verse goes on to say. Without it a
+fragment reads as the whole verse. 13 entries had to be repaired for this.
+
+### The citation audit worth re-running after any content push
+Mechanical, and it has caught real problems:
+
+```python
+# every "al-Bukhari NNNN" across the data files -> does the number exist,
+# and does the text actually say what the card claims?
+# every "Surah X (N:M)" -> does the surah name match the number, and is the
+# verse in range? (api.alquran.cloud/v1/surah gives names + ayah counts)
+```
+
+Note when reading its output: surah-name mismatches are almost always
+transliteration variants (`Qaf`/`Qaaf`, `Ya-Sin`/`Yaseen`), not errors — check
+the verse number is in range before treating a flag as a bug.
+
 ### A generator script's \n becomes a REAL newline in the JS string
 This happened twice in the 6–11 August sessions. Writing a data file from a
 Python/shell script with `\n` inside a normal (non-raw) string writes an
@@ -334,7 +430,7 @@ significant:
 
 ## Current state
 
-_Last updated: 12 August 2026_
+_Last updated: 13 August 2026_
 
 | Content | Count |
 |---|---|
@@ -359,14 +455,17 @@ _Last updated: 12 August 2026_
 | Nav links | **13** — the bar needs 1474px, hamburger below 1480px |
 | Tadabbur verses (`js/tadabbur.js`) | **167** across **all 114 surahs** — every surah has at least one explained verse. Al-Fatihah and Al-Ikhlas complete; Al-Baqarah 14 verses; Aal-Imran 5. The coverage numbers in the panel are BUTTONS that jump to the verse |
 | "What people get wrong here" boxes | **7** — 9:5, 13:11, 17:32, 30:9, 51:56, 70:19, 2:31 |
-| Surah concepts (`js/concepts.js`) | **114 of 114** — the one idea of each surah, so the Tadabbur button always answers |
+| Surah concepts (`js/concepts.js`) | **114 of 114** — complete |
 | Major signs of the Hour (`js/signs.js`) | **9**, from the Prophet's ﷺ own list in Sahih Muslim |
 | The end itself (`THE_END`) | **6 stages** — blast to raising |
 | Judgement detail (`JUDGEMENT_DETAIL`) | **10 sections** — the two "firsts", the Bridge, the speeds, the last man in |
-| "In plain words" boxes | **49 on the Judgement page alone** (all 15 stages, all 6 closing sections, 9 major signs, 6 THE_END stages, 10 detail sections, 11 hardest angels), plus Golden Age and the Quran |
-| On-this-page nav | `.page-toc` — sticky bilingual jump bar on `judgement.html` (5 sections) and `golden.html` (9) |
+| "In plain words" boxes | **56 on the Judgement page alone** (all 15 stages, all 6 closing sections, 9 major signs, 6 THE_END stages, 10 detail sections, 11 hardest angels, 7 of the 8 rise blocks), plus Golden Age and the Quran |
+| On-this-page nav | `.page-toc` — sticky bilingual jump bar on `judgement.html` (6 sections) and `golden.html` (10) |
+| Will we rise again (`js/rise.js`) | **8 blocks + 7 words explained**, on BOTH long pages. Built so the hope rests on AGREED-UPON texts (al-Bukhari 3116, Sahih Muslim/Jabir, al-Bukhari 3606) and does NOT depend on the Musnad Ahmad five-phases narration, which is flagged hardest of all |
+| The ten major signs | Counted out as **ten** (the three landslides are three of them), plus a 7-block section on which comes first and last |
+| Minor signs (`MINOR_SIGNS`) | **7**, each with a status badge — already happened / not yet / partly / scholars differ — and a dated `when` box in which the DATING is graded separately from the hadith |
 | Golden Age full lives (`js/golden-lives.js`) | **7** — al-Khwarizmi, Ibn al-Haytham, al-Zahrawi, Ibn al-Nafis, al-Biruni, Fatima al-Fihri, Ibn Khaldun |
-| The mirror (`js/golden-mirror.js`) | **15 sections in 6 parts** — them, us, and what to do |
+| The mirror (`js/golden-mirror.js`) | **18 sections in 6 parts** — them, us, and what to do. Includes the moral-collapse trio: what happened to the language (measured from the MPA rating rule, the Harvard ratings-creep study and the Pediatrics gun-violence paper), the word a boy thinks makes him a man, and the trade that leaves you holding nothing |
 
 ### Added 6–11 August 2026
 
@@ -491,7 +590,7 @@ _Last updated: 12 August 2026_
 
 ## Open work
 
-_As of 12 August 2026._
+_As of 13 August 2026._
 
 0. **Tadabbur DEPTH, not coverage.** Coverage is done: every one of the 114
    surahs now has at least one explained verse, **167 entries in total**. The
@@ -504,6 +603,20 @@ _As of 12 August 2026._
    add `arNote`/`arNoteAr` naming what the verse goes on to say — otherwise a
    fragment reads as the whole verse. 13 entries had to be repaired for this.
 0b. **`SURAH_CONCEPTS` is complete at 114 of 114.**
+0a1. **THE HOME PAGE DOES NOT MENTION TADABBUR AT ALL.** 167 explained verses
+   across all 114 surahs — the site's biggest single feature — and
+   `index.html` never names it. This is the largest known gap and it was
+   raised with the owner rather than fixed. Any home-page count added must
+   change the English in `index.html` AND the key AND the Arabic value in the
+   `AR` dictionary in `js/i18n.js`, in the same commit.
+0a2. **"Improve the interface" is an open request, deliberately not guessed
+   at.** The owner asked to improve the interface of the long pages "not by
+   changing the design much". The `.page-toc` jump bars were done; beyond
+   that he was asked to say what feels wrong rather than have it guessed.
+0a3. **Citation audit covers the Judgement page's files only** —
+   `judgement.js`, `judgement-closing.js`, `angels.js`, `signs.js`. All 17
+   al-Bukhari numbers there were verified against the collection and all
+   Quran references against the API. The other pages have NOT had that sweep.
 0c. **Golden Age lives: 7.** Ibn Sina, ar-Razi, Ibn Battuta, Ibn Rushd,
    al-Idrisi and Jabir ibn Hayyan are the obvious next. A "how we treated
    each other" section (bimaristans, awqaf, ahl adh-dhimmah) was offered and

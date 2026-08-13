@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 6 August 2026.**
+> **Last updated: 13 August 2026.**
 
 ## The four rules that matter most
 
@@ -1800,3 +1800,200 @@ rewritten as HTML.
 6. Everything still open from Part 8: the hijab photo, the hadith page
    Arabic, the courses page Arabic, Gmail sign-in, cross-device saved place,
    Google Search Console.
+
+---
+
+<!-- ============================================================ -->
+# PART 10 — the 12–13 August 2026 sessions
+<!-- ============================================================ -->
+
+## What was built
+
+### The Golden Age mirror — three sections on the moral collapse
+
+`GOLDEN_MIRROR` went from 15 sections to 18. The owner asked for the drop in
+what a society permits itself to say, using films as his example.
+
+His memory was right, and the honest version turned out stronger than a
+number would have been — because the threshold he remembered is not a memory
+at all, it is the rating board's own published rule.
+
+- **`gm-language`** — the MPA/CARA written guideline that **one** use of that
+  word pushes a film to PG-13 and a second requires an R; Thompson & Yokota at
+  Harvard finding profanity rising *inside a fixed rating label* across 1,906
+  films 1992–2003, which is where "ratings creep" got its name; Bushman et al.
+  in *Pediatrics* finding gun violence in PG-13 tripled since 1985 and passing
+  R; and Guinness logging 506 uses in one 2013 film — nominated for Best
+  Picture, which is the part that matters.
+  **It says out loud that no year-by-year average exists rather than inventing
+  one.** Same discipline as the 99%/1% decision: a number nobody can source is
+  the one an opponent knocks down, and the true claims beside it fall with it.
+- **`gm-grownup`** — the belief that swearing makes a boy a man. Answered with
+  al-Bukhari 6031 (he was never foul, and he was stoned at Ta'if and buried
+  six children), 5973 on where the insult actually travels, 48 (it is *fusuq*,
+  not banter), 6478, 6474 putting the tongue and the private parts together,
+  at-Tirmidhi 1977 labelled outside the two Sahihs, and 49:11, 50:18, 17:23-24.
+  Turns the knife on ourselves at the end, per this file's governing rule.
+- **`gm-ledger`** — they lead on laboratories, we lead on manners, and the
+  young man copies only what is free to copy.
+
+### Tadabbur — from 14 surahs to all 114
+
+`TADABBUR` went from **49 verses across 14 surahs** to **167 across all 114**.
+Every surah now has at least one explained verse. `SURAH_CONCEPTS` went from
+62 to **114 of 114**, so the 🧠 button always answers.
+
+Verses were chosen for being the one people argue about or quote wrongly:
+3:7, 4:34, 5:32, 8:60, 24:30, 28:77, 37:96, 42:11, 48:29, 56:79, 60:8, 94:5,
+109:6, 111:1 among them.
+
+**And the actual answer to "how did you not explain Ayat al-Kursi":** 2:255
+*had* a full entry all along — the hadith of Ubayy ibn Ka'b and al-Qayyum from
+Al-Mufradat. But it sat 255 verses into a surah of 286 and the coverage line
+only *named* the covered verses as plain text, so the only way to reach it was
+to scroll past everything. Concluding it did not exist was the correct
+conclusion from what the page showed. **The numbers are now buttons** that
+open the tadabbur blocks and jump to the verse.
+
+### The Day of Judgement — the ten signs, and the order
+
+- `SIGNS_INTRO.hadith` carried an *abbreviation* with the rest paraphrased in
+  English only. It now carries the real wording from Sahih Muslim, including
+  **وَآخِرُ ذَلِكَ نَارٌ** — the only ordering statement in the whole hadith.
+- **`theTen`** — counted out as ten, because the hadith names six things, then
+  **three** landslides, then the fire. A reader counting clauses gets eight.
+- **`orderDetail`** — 7 blocks on which comes first and last, each graded
+  separately: what a text nails down, what a chain inside one narration
+  establishes, and what is a scholar's reconciliation.
+- **`MINOR_SIGNS`** — 7 entries, each with a status badge (already happened /
+  not yet / partly / scholars differ) and a dated `when` box.
+
+### Will we rise again — `js/rise.js`, on BOTH long pages
+
+The owner asked whether the hadith about the ummah coming back is real, and
+about rising then falling again before the end. It is real. The arc is built
+deliberately on what is **agreed upon** wherever such a text exists, because
+nothing attracts fabrication like prophecy about the ummah's future:
+
+1. Thawban — many, but froth; *wahn* defined by him ﷺ as love of this world
+   and hatred of death. Abu Dawud 4297, outside the two Sahihs.
+2. **al-Bukhari 3116 + Muslim, agreed upon** — this ummah stays prevailing
+   until Allah's command comes *and they are still prevailing*.
+3. **Sahih Muslim, Jabir** — a group holds until the Day of Resurrection; and
+   when Isa descends the Muslims' leader asks him to lead the prayer and he
+   **refuses**, "some of you are commanders over others" — **تَكْرِمَةَ اللَّهِ
+   هَذِهِ الْأُمَّةَ**, an honouring by Allah of this ummah.
+4. **al-Bukhari 3606, agreed upon** — good, then evil, then good *with smoke
+   in it*, then callers at the gates of Hell "from our own skin".
+5. The same hadith, same breath — what to DO: stick to the jama'ah; and if
+   there is none, hold on alone, even biting the root of a tree.
+6. Musnad Ahmad, the five phases. **Flagged hardest of all** — see the trap
+   below. The section states plainly that the hope does not rest on it.
+7. The peak under Isa, then the Hour only upon the worst of people.
+
+Plus a **words-explained box**: ghutha', wahn, dakhan, ta'ifah, mulkan 'addan,
+mulkan jabriyyah, and **a'war — blind in ONE eye**, which is why the Dajjal's
+defect is itself the argument against him.
+
+### Plain-words boxes and page navigation
+
+- Judgement page: **12 → 56** plain boxes. `stageHtml`, `renderAlone` and
+  `renderAngels` had no plain-box support at all and were wired first.
+- `.page-toc` — a sticky bilingual jump bar on `judgement.html` (6 sections)
+  and `golden.html` (10). Four Golden Age sections had no `id` and now do.
+
+---
+
+## Bugs found that were ALREADY LIVE
+
+### 1. `**bold**` was never converted — Arabic readers saw raw asterisks
+Only `golden.html` converted. Measured in Arabic mode: **judgement.html was
+showing 128 literal markers**, `quran.html` was showing them from the 486
+markers in `js/tadabbur.js`, and `guidance.html` from `MEETING_ALLAH`.
+
+English was never affected because the English text uses CAPITALS for
+emphasis — which is exactly why it survived so long unnoticed. Fixed in all
+four remaining helpers. **Two heading fields also carried markers**, and
+headings are inserted raw, so those can never convert — see the trap.
+
+### 2. The home page said 28 Golden Age figures; there are 41
+Fixed in `index.html` **and** in the `AR` dictionary — both the English key
+and the Arabic value, because the dictionary is keyed on the exact English
+string and changing one alone makes that card render in English on an Arabic
+page.
+
+### 3. The ordering presentation was misleading — caught by the owner
+He objected that repentance is still accepted when Isa descends, so Isa cannot
+come after the sun rises from the west. **He was right.** The doctrine on the
+page was not wrong — Ibn Hajar's reconciliation already put the Dajjal, Isa
+and Gog and Magog earlier — but the block headed "THE FIRST is named too"
+stated the sun and Beast are first and the qualification only arrived two
+blocks later. A reader who stopped there would reach exactly his conclusion.
+
+Fixed by rewording the heading, refusing the wrong reading on the spot, and
+adding a block that makes his argument as a **proof**: once the sun rises from
+the west faith is no longer accepted (Sahih Muslim), but when Isa descends
+people *do* believe (An-Nisa 4:159; al-Bukhari 2222). Two established texts
+that only fit one way round — stronger than a harmonisation because it does
+not depend on anyone's opinion.
+
+### 4. Smaller ones
+- `iitwTadabburFor` returned verse numbers in array order, so appending to a
+  surah printed them out of sequence. Now sorted.
+- 13 new tadabbur entries quoted part of a long verse without `arNote`.
+- A comment in `judgement.html` claimed the signs section sits *above* the
+  fifteen stages. It does not and never did.
+
+---
+
+## Traps added in these sessions — do not reintroduce
+
+- **Every paragraph helper must convert `**bold**`, and heading fields must
+  never contain markers**, because headings are inserted raw and can never
+  convert. Found live twice. See the SKILL.md entry for the grep.
+- **Musnad Ahmad is NOT in the jsdelivr hadith API.** It carries only
+  abudawud, bukhari, ibnmajah, malik, muslim, nasai, tirmidhi, nawawi, qudsi,
+  dehlawi. `ara-ahmad.json` returns an 84-byte error that looks like a file.
+  Anything from Ahmad must be cited by collection and grader, never by a
+  number, with the entry saying the wording was not machine-verified.
+- **Normalise Arabic to NFC before comparing.** The JSON editions and the repo
+  files use different normalisation forms; without this a verification pass
+  "fails" 14 of 18 correct quotations.
+- **Python printing Arabic to the Windows console crashes on cp1252 — and if
+  the crash lands between a replace and the write, the file is silently left
+  unmodified.** This actually produced a half-applied edit across
+  `index.html` and `js/i18n.js`. Write first, print nothing but ASCII.
+- **`grep -o '<li[ >]'` misses `<li${...}` in template literals** and reports a
+  false imbalance. Check list balance in the parsed DOM.
+
+---
+
+## Verified working at the end of these sessions
+
+- All 13 pages return 200, every referenced script resolves, no mojibake,
+  section tags balanced.
+- **Search**: "Ali" returns **3** (not 17), "Khalid" 1, Arabic عمر finds Omar,
+  cross-references labelled, empty query handled.
+- **Guidance**: returns results in English and Arabic with the not-a-fatwa
+  notice present.
+- **Citation audit of the Judgement page's four data files**: all 17
+  al-Bukhari numbers exist *and match the claim made on them*; every Quran
+  reference in range. The 30 apparent name mismatches were transliteration
+  variants (Qaf/Qaaf, Ya-Sin/Yaseen), not errors.
+- Zero literal `**` markers in Arabic mode on judgement, quran, golden and
+  guidance; 120 / 305 / — / — proper `<strong>` tags respectively.
+
+## Open work as of 13 August 2026
+
+1. **THE HOME PAGE DOES NOT MENTION TADABBUR AT ALL** — 167 explained verses
+   across all 114 surahs, the site's biggest feature, and `index.html` never
+   names it. Largest known gap; raised with the owner rather than fixed.
+2. **"Improve the interface"** — an open request, deliberately not guessed at
+   beyond the `.page-toc` bars. He was asked to say what feels wrong.
+3. **The citation audit covered the Judgement page's files only.** The other
+   pages have not had that sweep.
+4. **Tadabbur depth, not coverage.** Coverage is finished. Al-Baqarah is 286
+   verses and has 14. The standing instruction is "more and more and more".
+5. Everything still open from Part 8: the hijab photo, the hadith page Arabic,
+   the courses page Arabic, Gmail sign-in, cross-device saved place, Google
+   Search Console.
