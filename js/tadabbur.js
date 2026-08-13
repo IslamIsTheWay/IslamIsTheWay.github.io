@@ -708,6 +708,202 @@ const TADABBUR = {
         whyAr: "آخر آيةٍ في أطول سورة، وخُتم بها الأمر كلّه على حدٍّ لا يُتجاوز.\n\nفبعد خمسٍ وثمانين ومئتين آيةً من تشريعٍ وتاريخٍ وإنذارٍ وأمر، كانت الكلمة الأخيرة أنّ شيئًا من ذلك ليس فوق طاقتك. و«الوُسع» ليس أقصى جهدك، وإنما سَعتُك: ما تحتمله دون أن تنكسر.\n\nثم تتحوّل الآية إلى دعاء ويتغيّر المتكلّم: تكفّ عن الوصف وتبدأ السؤال: ﴿رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا﴾.",
         plain: "In plain words: whatever you have been given to carry, it was measured against what you can carry. Not against what someone else can carry, and not against what you wish you could.\n\nAnd the word is not “maximum effort” — it is capacity. Allah does not load a person past the point where they break.\n\nThe rest of the verse is the dua the companions were given to answer with, and it is worth memorising: do not hold us to account if we forget or make a mistake; do not put on us what we have no strength for; pardon us, forgive us, have mercy on us.",
         plainAr: "بكلامٍ بسيط: مهما حُمّلتَ، فقد قُدِّر على قدر ما تحتمل. لا على قدر ما يحتمله غيرك، ولا على قدر ما تتمنّى أنك تحتمله.\n\nواللفظ ليس «أقصى الجهد»، وإنما «الوُسع»: السَّعة. فالله لا يُحمّل النفس إلى حدّ انكسارها.\n\nوبقيّة الآية هي الدعاء الذي لُقِّنه الصحابة جوابًا، وحقُّه أن يُحفظ: ﴿رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا... وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ﴾."
+      },
+
+      /* ---- Added August 2026 ----
+         Al-Baqarah had 14 of its 286 verses explained. These are chosen the
+         way the rest of this file was: the verses people actually quote, and
+         the ones they quote wrongly. Where a hadith number could not be
+         verified against the source text it is cited by collection and book
+         instead, per the rule about never inventing a number. */
+
+      {
+        n: 30,
+        ar: "وَإِذْ قَالَ رَبُّكَ لِلْمَلَٰٓئِكَةِ إِنِّى جَاعِلٌۭ فِى ٱلْأَرْضِ خَلِيفَةًۭ ۖ قَالُوٓا۟ أَتَجْعَلُ فِيهَا مَن يُفْسِدُ فِيهَا وَيَسْفِكُ ٱلدِّمَآءَ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَ ۖ قَالَ إِنِّىٓ أَعْلَمُ مَا لَا تَعْلَمُونَ",
+        why: "The angels are told what is coming and they raise an objection — out loud, and it is recorded in the Book rather than edited out. They are not punished for it, and they are not argued with either. They are answered with one sentence: I know what you do not know.\n\nNotice what the objection actually is. They do not say the plan is unjust; they say it will produce corruption and bloodshed. And they were right — it did. The answer is not that they were mistaken about the cost. It is that they were reasoning from part of the picture.",
+        whyAr: "أُخبرت الملائكة بما هو كائن فاعترضت، صراحةً، وأُثبت اعتراضها في الكتاب ولم يُطوَ. ولم تُعاقَب عليه، ولم تُجادَل، وإنما أُجيبت بجملةٍ واحدة: ﴿إِنِّىٓ أَعْلَمُ مَا لَا تَعْلَمُونَ﴾.\n\nوتأمّل حقيقة الاعتراض: لم تقل إنّ التدبير جَورٌ، وإنما قالت إنه مُفضٍ إلى فسادٍ وسفكِ دماء. وقد صدقت، فقد كان. فليس الجواب أنها أخطأت في تقدير الكُلفة، بل أنها حكمت من بعض الصورة لا من كلّها.",
+        words: [
+          {
+            w: "خَلِيفَة",
+            t: "khalifah",
+            meaning: "From kh-l-f, to come after. A khalifah is one who comes after another and stands in his place — the word is about succession and acting on behalf of, not about rank.",
+            meaningAr: "من (خ ل ف) وهو المجيء بعد، فالخليفة من يخلُف غيره ويقوم مقامه. فاللفظ في الخلافة والنيابة، لا في الرتبة.",
+            instead: "This is worth being exact about, because the word is often read as though it meant “deputy of Allah on earth”, which makes the human being sound like a stand-in for God. Allah is not absent and needs no substitute. The plain sense is succession: generations replacing generations on the earth — which is how the Quran itself uses the plural elsewhere, “He it is who made you khala'if of the earth” (Al-An'am 6:165).",
+            insteadAr: "وهذا ممّا يجب تحريره، فإنّ اللفظ يُفهم أحيانًا على معنى «نائب الله في أرضه»، فيُوهم أنّ الإنسان بدلٌ عن الله، والله لا يغيب فيُستخلَف. والظاهر أنه الخلافة بمعنى التعاقب: قرونٌ تخلُف قرونًا في الأرض، وهو استعمال القرآن نفسه في الجمع: ﴿وَهُوَ ٱلَّذِى جَعَلَكُمْ خَلَٰٓئِفَ ٱلْأَرْضِ﴾ الأنعام: ١٦٥.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry خ ل ف · Surah Al-An'am (6:165)",
+            strength: "lugha"
+          },
+          {
+            w: "أَتَجْعَلُ",
+            t: "a-taj'alu",
+            meaning: "A question, not a protest. The hamzah of inquiry — they are asking to understand, which is why it is answered with knowledge rather than rebuke.",
+            meaningAr: "استفهامٌ لا اعتراضَ إنكار، فهمزةُ الاستفهام للاسترشاد، ولذلك أُجيبت بالعلم لا بالزجر.",
+            source: "Tafsir at-Tabari",
+            strength: "tafsir"
+          }
+        ],
+        plain: "In plain words: the angels asked why Allah would put on the earth a creature that would ruin it and kill. They were not wrong about what would happen. They were told there was something in it they could not see — and the rest of the Quran is largely the answer to their question.",
+        plainAr: "بعبارة أخرى: سألت الملائكة لِمَ يُجعل في الأرض من يُفسد فيها ويسفك الدماء، ولم تُخطئ فيما توقّعت أنه سيقع، وإنما أُخبرت أنّ ثمّ ما لا تعلمه. وسائر القرآن في جملته جوابٌ عن سؤالها."
+      },
+
+      {
+        n: 62,
+        ar: "إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَٱلَّذِينَ هَادُوا۟ وَٱلنَّصَٰرَىٰ وَٱلصَّٰبِـِٔينَ مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْءَاخِرِ وَعَمِلَ صَٰلِحًۭا فَلَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+        why: "The verse names four groups and then, before promising anything, imposes a condition on all four: whoever believes in Allah and the Last Day and works righteousness. The condition is the whole verse. Read without it, the sentence says something it does not say.",
+        whyAr: "سمّت الآية أربع طوائف، ثم اشترطت على الجميع قبل أن تَعِد بشيء: ﴿مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْءَاخِرِ وَعَمِلَ صَٰلِحًۭا﴾. فالشرط هو الآية كلّها، ومن قرأها بغيره فقد حمّلها ما لا تحتمل.",
+        misunderstood: "READ ONE WAY, it is quoted to mean that every religion saves equally and that the message of Muhammad ﷺ adds nothing. READ THE OTHER WAY, critics quote it as proof the Quran contradicts itself, since Aal-Imran 3:85 says that whoever seeks other than Islam as a religion, it will not be accepted from him.\n\nBoth readings drop the condition in the middle of the verse. The verse does not say “the Jews and the Christians”; it says “whoever among them believed in Allah and the Last Day and worked righteousness”. The names are the starting point, and faith is the criterion.\n\nThe scholars' resolution is that this describes those who followed their prophets truly in their own time, before the final message reached them — and that once it has reached a person, believing in Allah and the Last Day includes believing the Messenger He sent. On that reading 2:62 and 3:85 say the same thing from two directions, and neither has to be explained away.",
+        misunderstoodAr: "تُقرأ على وجهٍ فيُستدلّ بها على أنّ الأديان كلّها مُنجية سواء، وأنّ رسالة محمد ﷺ لا تزيد شيئًا. وتُقرأ على الوجه الآخر فيحتجّ بها الطاعنون على أنّ في القرآن تناقضًا، إذ قال في آل عمران: ﴿وَمَن يَبْتَغِ غَيْرَ ٱلْإِسْلَٰمِ دِينًۭا فَلَن يُقْبَلَ مِنْهُ﴾ آل عمران: ٨٥.\n\nوالقراءتان تُسقطان الشرط الذي في وسط الآية. فليست العبارة «إنّ اليهود والنصارى»، وإنما ﴿مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْءَاخِرِ وَعَمِلَ صَٰلِحًۭا﴾. فالأسماء مبتدأ الكلام، والإيمان هو المناط.\n\nوجواب أهل العلم أنّ هذا في من اتّبع نبيّه حقًّا في زمانه قبل أن تبلغه الرسالة الخاتمة، وأنّ من بلغته فإنّ الإيمان بالله واليوم الآخر يتضمّن الإيمان بالرسول الذي أرسله. وعلى هذا تتّفق الآيتان من وجهين، ولا يحتاج واحدةٌ منهما إلى تأويلٍ متكلَّف.",
+        words: [
+          {
+            w: "ٱلصَّٰبِـِٔين",
+            t: "as-Sabi'in",
+            meaning: "From s-b-', to incline away from one thing towards another. The scholars of tafsir differed over precisely which community is meant; what the word itself says is that they departed from the religion of their people.",
+            meaningAr: "من (ص ب أ) وهو الميل من شيء إلى شيء. وقد اختلف أهل التفسير في تعيين الطائفة المرادة، وأمّا اللفظ فيدلّ على خروجهم عن دين قومهم.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص ب أ",
+            strength: "lugha"
+          }
+        ],
+        plain: "In plain words: the verse is not a list of religions that all work. It is a condition — faith in Allah and the Last Day, and righteous action — applied to everyone named in it.",
+        plainAr: "بعبارة أخرى: ليست الآية عدًّا لأديانٍ كلُّها مقبول، وإنما هي شرطٌ — الإيمان بالله واليوم الآخر والعمل الصالح — مضروبٌ على كلّ من ذُكر فيها."
+      },
+
+      {
+        n: 115,
+        ar: "وَلِلَّهِ ٱلْمَشْرِقُ وَٱلْمَغْرِبُ ۚ فَأَيْنَمَا تُوَلُّوا۟ فَثَمَّ وَجْهُ ٱللَّهِ ۚ إِنَّ ٱللَّهَ وَٰسِعٌ عَلِيمٌۭ",
+        why: "This sits in the middle of the argument about the qiblah. Facing the Ka'bah is commanded — the command comes a few verses later, at 2:144 — and yet the Book pauses first to say that the east and the west are His and He is not confined to a direction.\n\nSo the two ideas are placed deliberately side by side: obey the direction you are given, and do not imagine that Allah lives at the end of it. The Ka'bah orders the worshippers; it does not locate the Worshipped.",
+        whyAr: "موضعها في أثناء الكلام على القِبلة. فاستقبال الكعبة مأمورٌ به، والأمر بعد آياتٍ يسيرة في قوله: ﴿فَوَلِّ وَجْهَكَ شَطْرَ ٱلْمَسْجِدِ ٱلْحَرَامِ﴾ البقرة: ١٤٤، ومع ذلك وقف الكتاب قبله ليقرّر أنّ المشرق والمغرب لله، وأنه سبحانه لا تحصره جهة.\n\nفقُرن المعنيان قصدًا: التزِمِ الجهة التي أُمرت بها، ولا تظنّ أنّ الله في منتهاها. فالكعبة تجمع المصلّين ولا تحدّ المعبود.",
+        words: [
+          {
+            w: "وَجْه",
+            t: "wajh",
+            meaning: "The face; and in Arabic usage also the direction a thing turns to, and the aspect by which it is met.",
+            meaningAr: "الوجه، ويقع في كلام العرب على الجهة التي يُتوجّه إليها، وعلى ما يُواجَه به الشيء.",
+            instead: "Ahl as-Sunnah affirm the attribute as it came, without likening it to creation and without emptying it of meaning. Here, the classical commentators read the phrase as the direction Allah has appointed — the sense being that no direction is outside His dominion. The verse's own closing words point that way: He is Wasi', all-Encompassing.",
+            insteadAr: "وأهل السنة يُثبتون الصفة كما جاءت من غير تشبيهٍ ولا تعطيل. وحمل المفسّرون هنا اللفظ على الجهة التي وجّه الله إليها، والمعنى أنه ليست جهةٌ خارجةً عن مُلكه، ويدلّ عليه ختام الآية: ﴿إِنَّ ٱللَّهَ وَٰسِعٌ عَلِيمٌ﴾.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry و ج ه · Tafsir at-Tabari",
+            strength: "tafsir"
+          }
+        ],
+        plain: "In plain words: you are told to face the Ka'bah, and you are told in the same passage not to think Allah is limited to any direction. The first is an instruction for you; the second is a correction about Him.",
+        plainAr: "بعبارة أخرى: أُمرتَ باستقبال الكعبة، وقيل لك في السياق نفسه ألّا تظنّ الله محصورًا في جهة. فالأوّل تكليفٌ لك، والثاني تصحيحٌ في حقّه سبحانه."
+      },
+
+      {
+        n: 143,
+        ar: "وَكَذَٰلِكَ جَعَلْنَٰكُمْ أُمَّةًۭ وَسَطًۭا لِّتَكُونُوا۟ شُهَدَآءَ عَلَى ٱلنَّاسِ وَيَكُونَ ٱلرَّسُولُ عَلَيْكُمْ شَهِيدًۭا",
+        arNote: "The opening of the verse. It continues with the change of the qiblah, and the statement that it was made a test of who would follow the Messenger, ending: “and Allah would never let your faith go to waste; indeed Allah is, to the people, Kind and Merciful”.",
+        arNoteAr: "مطلع الآية، وتمامها في تحويل القبلة، وأنها جُعلت ابتلاءً ليُعلم من يتّبع الرسول، وتُختم: ﴿وَمَا كَانَ ٱللَّهُ لِيُضِيعَ إِيمَٰنَكُمْ ۚ إِنَّ ٱللَّهَ بِٱلنَّاسِ لَرَءُوفٌۭ رَّحِيمٌۭ﴾.",
+        why: "The description the ummah is given of itself is one word, and it is a word most English translations weaken.",
+        whyAr: "الوصف الذي وُصفت به هذه الأمة كلمةٌ واحدة، وأكثر التراجم تُضعف معناها.",
+        words: [
+          {
+            w: "وَسَط",
+            t: "wasat",
+            meaning: "The middle of a thing — and in Arabic the middle of something is its best and most protected part, which is why wasat also carries the sense of excellence and of being just.",
+            meaningAr: "وسط الشيء: ما بين طرفيه، وأوسط الشيء في العربية أفضله وأحماه، ولذلك جاء الوسط بمعنى الخيار والعدل.",
+            instead: "The Prophet ﷺ himself glossed it, and the gloss is the point: wasatan — 'adlan, meaning just. Not “moderate” in the modern political sense of holding weaker opinions, and not lukewarm. The Arabs called the noblest of a tribe its wasat because the middle is the part hardest to reach and easiest to defend.\n\nThe verse then says why it matters: so that you may be witnesses over the people. A witness must be 'adl — accepted as trustworthy — or the testimony is void. The description and the task are the same word.",
+            insteadAr: "وقد فسّرها النبيّ ﷺ نفسه، وفي تفسيره المقصود: «وسطًا» أي عدلًا. لا الوسط بمعناه السياسيّ المحدَث من ضَعف الرأي، ولا الفتور. وكانت العرب تسمّي أشرف القبيلة وسطها، لأنّ الوسط أمنعُ ما فيها وأصعبُه مَنالًا.\n\nثم بيّنت الآية الغاية: ﴿لِّتَكُونُوا۟ شُهَدَآءَ عَلَى ٱلنَّاسِ﴾، والشاهد لا تُقبل شهادته حتى يكون عدلًا. فالوصف والوظيفة لفظٌ واحد.",
+            source: "Sahih al-Bukhari, Book of Tafsir, on Surah Al-Baqarah — the Prophet ﷺ explaining wasatan as 'adlan",
+            strength: "hadith"
+          }
+        ],
+        plain: "In plain words: “a middle nation” does not mean a half-hearted one. It means a just one — and the reason given is that only the just can be trusted to testify.",
+        plainAr: "بعبارة أخرى: ﴿أُمَّةًۭ وَسَطًۭا﴾ ليست أمّةً فاترة، وإنما أمّةٌ عادلة، والعلّة المذكورة أنّ الشهادة لا تُؤتمن إلا عند العدل."
+      },
+
+      {
+        n: 153,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ ۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ",
+        why: "Two things are named as what you take help BY, and they are an odd pair until you see what they have in common. Both are things you do when you would rather not.\n\nAnd read the ending closely. It does not say Allah is with those who pray. Both were commanded; only one is named at the close — because prayer is an act that ends, and sabr is a state you are living inside while the hardship lasts.",
+        whyAr: "ذُكر شيئان يُستعان بهما، وهما مقترنان اقترانًا يبدو غريبًا حتى يتبيّن الجامع بينهما: كلاهما فعلٌ تفعله وأنت تكره أن تفعله.\n\nوتأمّل الختام: لم يقل «إنّ الله مع المصلّين». وقد أُمر بهما جميعًا، ولم يُذكر في الختم إلا أحدهما، لأنّ الصلاة عملٌ ينقضي، والصبر حالٌ أنت مقيمٌ فيها ما دامت المصيبة.",
+        words: [
+          {
+            w: "ٱلصَّبْر",
+            t: "as-sabr",
+            meaning: "Restraint — holding the self back. Ar-Raghib defines it as holding the self to what reason and revelation require, or holding it back from what they forbid.",
+            meaningAr: "الحبس، وحدّه الراغب بأنه حبس النفس على ما يقتضيه العقل والشرع، أو عمّا يقتضيان حبسها عنه.",
+            instead: "So sabr is not the absence of pain, and it is not silence. It is a grip. The same root gives the Arabs the word for the wall a grave is lined with — something that holds. A person can weep and still be doing sabr; what breaks it is not grief but resentment against the decree.",
+            insteadAr: "فليس الصبر عدم الألم، ولا هو السكوت، وإنما هو إمساك. ومن المادّة نفسها ما يُبنى به القبر ممّا يُمسك التراب. وقد يبكي المرء وهو صابر، وإنما ينقض الصبرَ السخطُ على القضاء لا الحزن.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص ب ر",
+            strength: "lugha"
+          },
+          {
+            w: "ٱسْتَعِينُوا۟",
+            t: "ista'inu",
+            meaning: "Seek help BY means of — the form is asking for aid, and the ba' that follows names the instrument you are given to ask with.",
+            meaningAr: "طلب العون، والباء بعده لبيان ما يُستعان به.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ع و ن",
+            strength: "lugha"
+          }
+        ],
+        plain: "In plain words: when something is heavy, you are given two handles — holding yourself together, and prayer. And the promise at the end is attached to the harder one.",
+        plainAr: "بعبارة أخرى: إذا اشتدّ الأمر أُعطيت مِقبَضين: حبسُ النفس، والصلاة. والوعد في آخر الآية معلّقٌ بأشقّهما."
+      },
+
+      {
+        n: 156,
+        ar: "ٱلَّذِينَ إِذَآ أَصَٰبَتْهُم مُّصِيبَةٌۭ قَالُوٓا۟ إِنَّا لِلَّهِ وَإِنَّآ إِلَيْهِ رَٰجِعُونَ",
+        why: "The most-said sentence in the Muslim world at a death, and it is not a prayer and not a request. It is two statements of fact, and the comfort is in the fact.\n\nThe first half settles ownership: we belong to Allah — and so did the one taken. Nothing was removed from you that was ever yours to keep. The second half settles direction: and to Him we are returning. Not “he has returned” — WE are returning. The one who died went first; the speaker is on the same road.",
+        whyAr: "أكثر ما يُقال في ديار المسلمين عند الموت، وليس دعاءً ولا سؤالًا، وإنما هما خبران، والعزاء في الخبر نفسه.\n\nفالشطر الأوّل تقريرُ مِلك: ﴿إِنَّا لِلَّهِ﴾، ونحن له، والمأخوذ له. فما نُزع منك شيءٌ كان لك أن تُبقيه. والشطر الثاني تقريرُ وجهة: ﴿وَإِنَّآ إِلَيْهِ رَٰجِعُونَ﴾، ولم يقل «وإنه إليه راجع»، بل «إنّا». فالميّت تقدّم، والقائل على الطريق نفسه.",
+        words: [
+          {
+            w: "مُصِيبَة",
+            t: "musibah",
+            meaning: "From s-w-b, to hit a target. A musibah is something that lands on you — the word carries aim, not accident.",
+            meaningAr: "من (ص و ب) وهو إصابة الهدف. فالمصيبة ما وقع بك، وفي اللفظ معنى القصد لا معنى المصادفة.",
+            instead: "Which is the quiet argument inside the word. Something that hits a target was aimed. The Arabic does not let the loss be random even before the verse says anything about Allah.",
+            insteadAr: "وهذه حجّةٌ خفيّة في اللفظ نفسه: فما أصاب الهدف فقد قُصد إليه. فالعربية لا تدع المصيبة عبثًا قبل أن تذكر الآية اسم الله.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص و ب",
+            strength: "lugha"
+          },
+          {
+            w: "رَٰجِعُون",
+            t: "raji'un",
+            meaning: "Returning — the active participle, a present and continuing state, not a future event.",
+            meaningAr: "اسم فاعل، يدلّ على حالٍ قائمةٍ مستمرّة لا على أمرٍ مستقبل.",
+            instead: "The grammar refuses to put the return safely in the future. It is not “we will return one day”; it is “we are returning”, said while standing at someone else's grave.",
+            insteadAr: "فالصيغة تأبى أن تُرجئ الرجوع إلى مستقبلٍ بعيد، فليس «سنرجع يومًا» بل «نحن راجعون» تُقال والمرء واقفٌ على قبر غيره.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ر ج ع",
+            strength: "lugha"
+          }
+        ],
+        plain: "In plain words: it is not “Allah give me patience”. It is “this was never mine, and I am going where he has gone”. Two facts, said out loud, at the moment they are hardest to believe.",
+        plainAr: "بعبارة أخرى: ليست «اللهم صبّرني»، وإنما «ما كان هذا مِلكي، وأنا صائرٌ إلى حيث صار». خبران يُقالان جهرًا في الساعة التي يصعب فيها التصديق بهما.",
+        differ: {
+          title: "Is there a reward promised for saying it?",
+          titleAr: "هل وُعد على قولها بثواب؟",
+          views: [
+            { who: "The hadith of Umm Salamah", whoAr: "حديث أمّ سلمة",
+              view: "The Prophet ﷺ taught that no servant is struck by an affliction and says what Allah commanded — inna lillahi wa inna ilayhi raji'un, O Allah reward me in my affliction and replace it for me with better — except that Allah replaces it for him with better. Umm Salamah reported that she said it on the death of Abu Salamah and was given the Prophet ﷺ himself.",
+              viewAr: "علّم النبيّ ﷺ أنه ما من عبدٍ تصيبه مصيبة فيقول ما أمره الله: ﴿إِنَّا لِلَّهِ وَإِنَّآ إِلَيْهِ رَٰجِعُونَ﴾، اللهم أجُرني في مصيبتي وأخلِف لي خيرًا منها، إلا أخلف الله له خيرًا منها. وذكرت أمّ سلمة أنها قالتها عند موت أبي سلمة فأُخلِفت رسولَ الله ﷺ." }
+          ],
+          weight: "This is in Sahih Muslim, in the Book of Funerals. It is cited here by collection and book rather than by number: the numbering of Muslim in the machine-readable edition this site checks against is sequential and does not match the standard numbering, so a number given from it would not be a number the reader could look up.",
+          weightAr: "وهو في صحيح مسلم، كتاب الجنائز. وعُزي هنا بالكتاب دون رقمٍ، لأنّ ترقيم مسلم في النسخة الآليّة التي يُقابَل عليها في هذا الموقع ترقيمٌ متسلسل يخالف الترقيم المشهور، فلو ذُكر رقمٌ منه لما وجده القارئ في مطبوعته.",
+          strength: "hadith"
+        }
+      },
+
+      {
+        n: 190,
+        ar: "وَقَٰتِلُوا۟ فِى سَبِيلِ ٱللَّهِ ٱلَّذِينَ يُقَٰتِلُونَكُمْ وَلَا تَعْتَدُوٓا۟ ۚ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُعْتَدِينَ",
+        why: "The command and its limit are in the same sentence, eleven words apart. That matters, because this verse is quoted in halves by two opposite camps.",
+        whyAr: "الأمر وحدّه في جملةٍ واحدة، بينهما كلماتٌ يسيرة. وهذا مهمّ، لأنّ الآية يُحتجّ بنصفها من طائفتين متقابلتين.",
+        misunderstood: "THE CRITIC quotes “and kill them wherever you find them” from the verse after it and stops. THE EXTREMIST quotes the same words and stops in the same place. They are doing the identical thing with the identical fragment, which is why answering one answers the other.\n\nWhat the passage actually establishes, in order: fight those who fight you — a defensive clause, with the object specified; do not transgress — the limit, stated before the fighting is even described; and Allah does not love the transgressors — the reason. Then 2:192: if they cease, Allah is Forgiving and Merciful. And 2:193: fight them until there is no persecution, “and if they cease, then there is no aggression except against the oppressors”.\n\nSo the passage names who may be fought, sets a limit, and states a stopping condition twice. A quotation that removes all three is not a short quotation; it is a different verse.",
+        misunderstoodAr: "يقتطع الطاعن ﴿وَٱقْتُلُوهُمْ حَيْثُ ثَقِفْتُمُوهُمْ﴾ من الآية التي بعدها ثم يقف. ويقتطع الغالي اللفظ نفسه ويقف عند الموضع نفسه. فصنيعهما واحد بالقطعة الواحدة، ولذلك كان الجواب عن أحدهما جوابًا عن الآخر.\n\nوالذي قرّره السياق على ترتيبه: ﴿ٱلَّذِينَ يُقَٰتِلُونَكُمْ﴾ فقيّد المقاتَل، ثم ﴿وَلَا تَعْتَدُوٓا۟﴾ فوضع الحدّ قبل أن يُفصّل القتال، ثم ﴿إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُعْتَدِينَ﴾ فذكر العلّة. ثم قال بعدُ: ﴿فَإِنِ ٱنتَهَوْا۟ فَإِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ﴾ البقرة: ١٩٢، ثم ﴿فَإِنِ ٱنتَهَوْا۟ فَلَا عُدْوَٰنَ إِلَّا عَلَى ٱلظَّٰلِمِينَ﴾ البقرة: ١٩٣.\n\nفالسياق عيّن من يُقاتَل، ووضع حدًّا، وذكر شرط الكفّ مرّتين. ومن أسقط الثلاثة فلم يختصر الآية، وإنما أتى بآيةٍ أخرى.",
+        words: [
+          {
+            w: "تَعْتَدُوا۟",
+            t: "ta'tadu",
+            meaning: "From '-d-w, to pass beyond. I'tida' is crossing the boundary of what is due — going past the limit set for you.",
+            meaningAr: "من (ع د و) وهو التجاوز. والاعتداء مجاوزة الحدّ المضروب لك.",
+            instead: "The word presumes there is a line. You cannot transgress where nothing was drawn — so the prohibition is itself the proof that the fighting it governs is bounded.",
+            insteadAr: "واللفظ يفترض حدًّا موضوعًا، إذ لا اعتداء حيث لا حدّ. فالنهي نفسه دليلٌ على أنّ القتال المذكور مقيَّد.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ع د و",
+            strength: "lugha"
+          }
+        ],
+        plain: "In plain words: the verse says fight the ones fighting you, and says do not go past the limit — in one breath. Anyone quoting the first half without the second is quoting half a sentence.",
+        plainAr: "بعبارة أخرى: أمرت الآية بقتال من يقاتلك، ونهت عن تجاوز الحدّ، في نفَسٍ واحد. ومن نقل نصفها الأوّل دون الثاني فقد نقل نصف جملة."
       }
     ]
   },

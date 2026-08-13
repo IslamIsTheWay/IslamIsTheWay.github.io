@@ -88,13 +88,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const place = placeFilter.value;
 
     const rawQ = searchInput.value.trim();
+
+    /* A surah name reaches an English reader in more than one spelling, and
+       the reader has no way of knowing which one this site chose. Measured:
+       "Ya-Sin" found the surah and "Yaseen" found NOTHING. The same skeleton
+       used by the person search on search.html is applied here, so Yaseen,
+       Yaaseen and Ya-Sin all land on 36. `iitwTranslitWords` lives in
+       main.js, which loads after this file — it is only ever called from an
+       input handler, long after both files have run, but the guard keeps
+       this honest if that load order ever changes. */
+    const translitOK = typeof iitwTranslitWords === "function" && !/[ء-ي]/.test(rawQ);
+    const qSkel = translitOK ? iitwTranslitWords(q).join("") : "";
+
     const filtered = SURAHS.filter(s => {
       const matchesQuery =
         !q ||
         s.name.toLowerCase().includes(q) ||
         s.meaning.toLowerCase().includes(q) ||
         String(s.n) === q ||
-        s.arabic.includes(rawQ);
+        s.arabic.includes(rawQ) ||
+        (qSkel.length >= 3 && iitwTranslitWords(s.name).join("").includes(qSkel));
       const matchesPlace = place === "all" || s.place === place;
       return matchesQuery && matchesPlace;
     });

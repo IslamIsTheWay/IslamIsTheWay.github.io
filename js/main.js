@@ -981,6 +981,98 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* ---------- Spelling-tolerant name matching ----------
+   An Arabic name reaches an English reader in several spellings, and this
+   site's own writing uses more than one of them: the handoff says "Aishah",
+   the data says "Aisha"; the owner asked for "Omar" and "Osman" while the
+   ids stay `umar` and `uthman`.
+
+   Measured on the live search before this existed: of 51 spellings a reader
+   is likely to type, FIFTEEN returned nothing at all — Aishah, Ayesha,
+   Hamzah, Othman, Talhah, Muaz, Zubair, Yousef, Ibraheem, Dawood, Ismael,
+   Zachariah, AbuBakr, and — worst of the set — BOTH `Sulayman` and
+   `Suleiman`, because the data spells him `Sulaiman`. The prophet was
+   reachable only by typing `Solomon`.
+
+   Both the query and the name are reduced to the same skeleton, so any rule
+   here is safe as long as it does not merge two genuinely different names.
+   The rules are the regular transliteration swaps only:
+     th → s   Uthman / Othman / Osman
+     dh → z   Mu'adh / Muaz
+     ch → k   Zachariah / Zakariya
+     ay, ey, ei → ai      Sulayman / Suleiman / Sulaiman
+     oo, ou → u    ee → i    aa → a
+     a trailing h dropped  Aishah / Aisha
+     doubled letters collapsed
+   `kh` is deliberately NOT touched — it is a distinct letter, and folding it
+   into `k` would start merging names that differ.
+
+   This tier only ever ADDS a match to a person already in the data. It never
+   widens a match the way query expansion did on the guidance page, because
+   it compares whole words, not substrings — the bug that once made "Ali"
+   return seventeen people is not reachable from here. */
+const IITW_TRANSLIT_ALIASES = {
+  // Spellings the mechanical rules above cannot reach, and the names a
+  // reader may know from the Bible that are not already in the data.
+  yusuf:    ["yousef", "youssef", "yousuf", "yusef"],
+  muhammad: ["mohammed", "mohamed", "muhammed", "mohammad", "ahmad", "ahmed"],
+  ayyub:    ["ayoub", "ayub", "ayyoub"],
+  idris:    ["enoch"],
+  shuayb:   ["jethro", "shoaib", "shuaib"],
+  yahya:    ["yahia"],
+  ishaq:    ["isaac", "ishak"],
+  ilyas:    ["ilyaas", "elias"],
+  yunus:    ["younus", "younis"],
+  lut:      ["loot"],
+  harun:    ["haroon"],
+  uthman:   ["usman"],
+  aisha:    ["aishah", "ayesha", "aaisha"]
+};
+
+function iitwTranslitWord(w) {
+  return w
+    .replace(/ph/g, "f")
+    .replace(/ch/g, "k")
+    .replace(/th/g, "s")
+    .replace(/dh/g, "z")
+    .replace(/oo|ou/g, "u")
+    .replace(/ee/g, "i")
+    .replace(/aa/g, "a")
+    .replace(/ay|ey|ei/g, "ai")
+    .replace(/(?!^)y/g, "i")   // y is a consonant only at the start: Yusuf
+    .replace(/o/g, "u")
+    .replace(/e/g, "i")
+    .replace(/(.)\1+/g, "$1")  // collapse doubles, after the vowel rules
+    .replace(/h$/, "");        // Aishah → Aisha, Hamzah → Hamza
+}
+
+function iitwTranslitWords(text) {
+  return String(text || "")
+    .toLowerCase()
+    .replace(/['’`ʿʾ]/g, "")     // Sa'd → sad, Ja'far → jafar
+    .replace(/[^a-z]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(iitwTranslitWord)
+    .filter(Boolean);
+}
+
+/* Built once per person and cached — the search runs on every keystroke. */
+const iitwPersonKeyCache = new Map();
+function iitwPersonKeys(person) {
+  let k = iitwPersonKeyCache.get(person.id);
+  if (k) return k;
+  const words = iitwTranslitWords(person.name)
+    .concat(iitwTranslitWords(person.id.replace(/-/g, " ")));
+  (IITW_TRANSLIT_ALIASES[person.id] || []).forEach(a => {
+    iitwTranslitWords(a).forEach(w => words.push(w));
+  });
+  k = { words: new Set(words), joined: words.join("") };
+  iitwPersonKeyCache.set(person.id, k);
+  return k;
+}
+
 /* ---------- Global "Search a Person" logic ----------
    Used on search.html. Searches PROPHETS + COMPANIONS (from data.js)
    by name, title, or summary text and renders result cards with refs.
@@ -1028,6 +1120,19 @@ function runPersonSearch(query) {
       (w.length > qAr.length && w.endsWith(qAr) && w.length - qAr.length <= 2));
   };
 
+  /* The query reduced to the same skeleton as the names. `qJoined` exists so
+     a reader who runs the words together ("AbuBakr") still lands on the
+     person; it must be a PREFIX of the whole name, not a substring, or short
+     queries would start matching the middle of unrelated names. */
+  const qWords = iitwTranslitWords(query);
+  const qJoined = qWords.join("");
+  const translitHit = person => {
+    if (!qWords.length || /[ء-ي]/.test(query)) return false;
+    const keys = iitwPersonKeys(person);
+    if (qWords.every(w => keys.words.has(w))) return true;
+    return qWords.length === 1 && qJoined.length >= 6 && keys.joined.startsWith(qJoined);
+  };
+
   const scored = ALL_PEOPLE.map(person => {
     let score = 0;
     let why = "";
@@ -1038,6 +1143,10 @@ function runPersonSearch(query) {
     else if (wordRe.test(name)) { score = 90; why = "name"; }
     else if (wordRe.test(person.id.replace(/-/g, " "))) { score = 85; why = "name"; }
     else if (hasArWord(person.arabic)) { score = 95; why = "name"; }
+    /* Scored just under an exact-word name match: a spelling variant is still
+       a name match, but a reader who typed the site's own spelling should not
+       be outranked by one who typed a variant. */
+    else if (translitHit(person)) { score = 80; why = "name"; }
     else if (wordRe.test(person.title)) { score = 45; why = "title"; }
     else if (person.titleAr && hasArWord(person.titleAr)) { score = 45; why = "title"; }
     else if (wordRe.test(person.summary)) { score = 20; why = "mention"; }
@@ -1248,3 +1357,94 @@ function iitwInjectFeedback() {
 }
 
 document.addEventListener("DOMContentLoaded", iitwInjectFeedback);
+
+/* ============================================================
+   READING AIDS — a progress bar and a way back to the top
+   ============================================================
+   Injected here rather than written into each page, for the same reason the
+   feedback form is: one copy to maintain across thirteen pages.
+
+   These exist because of how long the pages on this site actually are. The
+   Day of Judgement page runs to fifteen stages, the signs of the Hour and the
+   angels; the Golden Age page to forty-one figures and eighteen sections of
+   argument. A reader part-way down one of them had no sense of how much was
+   left and no way back to the navigation except a long scroll.
+
+   Both are injected only where they earn their place — a page that is barely
+   longer than the window gets neither.
+
+   RTL: the button is placed with `inset-inline-end`, so it sits bottom-left
+   in Arabic without a separate rule. The progress bar grows with
+   `transform: scaleX()` from `transform-origin: left`, which is flipped for
+   RTL below in the stylesheet rather than in script.
+------------------------------------------------------------- */
+function iitwInjectReadingAids() {
+  if (document.getElementById("iitwProgress")) return;
+
+  const bar = document.createElement("div");
+  bar.id = "iitwProgress";
+  bar.className = "iitw-progress";
+  bar.innerHTML = '<span class="iitw-progress-fill"></span>';
+
+  const top = document.createElement("button");
+  top.id = "iitwToTop";
+  top.className = "iitw-to-top";
+  top.type = "button";
+  top.setAttribute("aria-label", "Back to top — عودة إلى الأعلى");
+  top.title = "Back to top — عودة إلى الأعلى";
+  top.textContent = "↑";
+
+  document.body.appendChild(bar);
+  document.body.appendChild(top);
+
+  top.addEventListener("click", () => {
+    // A reader who has turned motion down should not be thrown up the page.
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+
+  let ticking = false;
+  // rAF-throttled: scroll fires far more often than the screen refreshes, and
+  // these pages are tens of thousands of pixels long.
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; iitwUpdateReadingAids(); });
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  iitwUpdateReadingAids();
+}
+
+/* How far down the page the reader is, 0 to 1. Kept as its own function
+   because it is the only arithmetic here worth being sure about, and because
+   requestAnimationFrame is paused whenever the page is not being painted —
+   so this is the piece that has to be checkable on its own. */
+function iitwProgressRatio() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (max <= 0) return 0;
+  return Math.min(1, Math.max(0, window.scrollY / max));
+}
+
+function iitwUpdateReadingAids() {
+  const bar = document.getElementById("iitwProgress");
+  const top = document.getElementById("iitwToTop");
+  if (!bar || !top) return;
+  const fill = bar.querySelector(".iitw-progress-fill");
+
+  // A page barely longer than the window needs neither of these.
+  if (document.documentElement.scrollHeight <= window.innerHeight * 2.5) {
+    bar.classList.remove("on");
+    top.classList.remove("on");
+    return;
+  }
+
+  bar.classList.add("on");
+  fill.style.transform = "scaleX(" + iitwProgressRatio() + ")";
+  top.classList.toggle("on", window.scrollY > window.innerHeight * 0.9);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // After the feedback section and any page render, so the height is real.
+  setTimeout(iitwInjectReadingAids, 0);
+});

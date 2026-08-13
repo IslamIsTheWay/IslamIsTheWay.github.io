@@ -51,8 +51,8 @@ const AR = {
   "Quick Access": "وصول سريع",
   "Jump straight to what you're looking for.": "اذهب مباشرة إلى ما تبحث عنه.",
   "The Holy Quran": "القرآن الكريم",
-  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf.":
-    "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة.",
+  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 174 verses open into a full explanation of why they are worded as they are.":
+    "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة، ومئةٌ وأربعٌ وسبعون آية تُفتح على شرحٍ كاملٍ لسبب ورودها بهذا اللفظ.",
   "Hadith Collection": "مجموعة الأحاديث",
   "Complete Sahih al-Bukhari and Sahih Muslim — 15,000+ hadith in Arabic and English, plus 43 chosen ones. Every grading names the scholar behind it.":
     "صحيح البخاري وصحيح مسلم كاملين — أكثر من 15,000 حديث بالعربية والإنجليزية، ومعها ثلاثة وأربعون حديثًا مختارًا. وكل درجةٍ مذكورٌ معها اسم من صحّحها.",
@@ -62,8 +62,8 @@ const AR = {
   "Stories of the Prophet ﷺ": "قصص النبي ﷺ",
   "45 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
     "خمسة وأربعون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
-  "15 stages in the order they happen — from the moment of death to the gates — with 64 referenced points and 52 passages of the Quran.":
-    "خمس عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع أربعٍ وستين مسألة موثّقة، واثنين وخمسين موضعًا من القرآن الكريم.",
+  "15 stages in the order they happen — from the moment of death to the gates — with 64 referenced points and 54 passages of the Quran.":
+    "خمس عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع أربعٍ وستين مسألة موثّقة، وأربعةٍ وخمسين موضعًا من القرآن الكريم.",
   "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ — every one of them with a full life and the message he was sent with.":
     "الأنبياء التسعة والعشرون المذكورون في القرآن، من آدم إلى محمد ﷺ — لكل واحدٍ منهم سيرةٌ كاملة ورسالةٌ بُعث بها.",
   "Companions (Sahaba)": "الصحابة رضي الله عنهم",
@@ -85,16 +85,16 @@ const AR = {
   "45 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
     "خمسٌ وأربعون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
   "Read the Stories": "اقرأ القصص",
-  "Fifteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 64 referenced points and 52 passages of the Quran.":
-    "خمس عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. أربعٌ وستون مسألة موثّقة، واثنان وخمسون موضعًا من القرآن.",
+  "Fifteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 64 referenced points and 54 passages of the Quran.":
+    "خمس عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. أربعٌ وستون مسألة موثّقة، وأربعةٌ وخمسون موضعًا من القرآن.",
   "See the Stages": "اطّلع على المراحل",
   "166 Sunnah Practices": "مئة وستٌّ وستون سنة",
   "How the Prophet ﷺ actually lived, across 18 areas of ordinary life — waking, wudu, prayer, food, dress, the mosque, travel, Friday, illness, hardship and the treatment of family, neighbours and animals. Ask a question in Arabic or English and the right practice is found for you.":
     "كيف عاش النبي ﷺ فعلاً، في ثمانية عشر بابًا من أبواب الحياة اليومية — الاستيقاظ والوضوء والصلاة والطعام واللباس والمسجد والسفر والجمعة والمرض والشدّة، ومعاملة الأهل والجيران والحيوان. اسأل بالعربية أو الإنجليزية ويُعرض لك ما يناسبك.",
   "Browse the Sunnah": "تصفّح السنن",
   "What to Say, and When": "ماذا تقول ومتى",
-  "Sixteen steps of worship on the Guidance page: what is said before the prayer, inside it, after it, through the day, and when asking forgiveness — with the Arabic wording, how many times, what it means, and where it comes from.":
-    "ست عشرة خطوة من خطوات العبادة في صفحة التوجيه: ما يُقال قبل الصلاة، وفيها، وبعدها، وفي عموم اليوم، وعند الاستغفار — مع النص العربي، وعدد المرات، والمعنى، والمرجع.",
+  "Twenty-four steps of worship on the Guidance page: what is said before the prayer, inside it, after it, through the day, and when asking forgiveness — with the Arabic wording, how many times, what it means, and where it comes from.":
+    "أربعٌ وعشرون خطوة من خطوات العبادة في صفحة التوجيه: ما يُقال قبل الصلاة، وفيها، وبعدها، وفي عموم اليوم، وعند الاستغفار — مع النص العربي، وعدد المرات، والمعنى، والمرجع.",
   "Open the Worship Reference": "افتح دليل العبادة",
   "Mushaf Page Numbers": "صفحات المصحف",
   "Every surah now shows how many pages it occupies in the 604-page Madani Mushaf, and while reading you are told where each page ends — so what you read on the screen matches the printed Mushaf in your hands.":
@@ -122,8 +122,8 @@ const AR = {
   "45 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
     "خمسة وأربعون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
   "What does the Day of Judgement page cover?": "ماذا تتناول صفحة يوم القيامة؟",
-  "Fifteen stages in the order they occur, from death to the gates, built on 52 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
-    "خمس عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على اثنين وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",
+  "Fifteen stages in the order they occur, from death to the gates, built on 54 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
+    "خمس عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على أربعةٍ وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",
   "How do I find something for my own situation?": "كيف أجد ما يناسب حالي؟",
   "On the Guidance page, describe what you are going through by typing or speaking, in Arabic or English. The site searches the Quranic themes, the Sunnah, the worship steps, the full Bukhari and Muslim collections, and the lives of the Prophets and Companions, and shows what relates to it with full references. It is not a fatwa — read each verse in its full surah and consult a qualified scholar.":
     "في صفحة التوجيه، اكتب ما تمرّ به أو قله بصوتك، بالعربية أو الإنجليزية. يبحث الموقع في المعاني القرآنية والسنن وخطوات العبادة وصحيحَي البخاري ومسلم كاملين وسِيَر الأنبياء والصحابة، ويعرض لك ما يتعلق بحالك مع مراجعه كاملة. وهذا ليس فتوى — اقرأ كل آية في سورتها كاملة وارجع إلى أهل العلم.",
@@ -133,11 +133,25 @@ const AR = {
   "Houses of Allah Around the World": "بيوت الله في أنحاء العالم",
   "بيوت الله في أنحاء العالم — from Makkah and Madinah to Istanbul, Casablanca and Abu Dhabi.":
     "بيوت الله في أنحاء العالم — من مكة والمدينة إلى إسطنبول والدار البيضاء وأبوظبي.",
+  /* ---- The Tadabbur section on the home page (added August 2026) ----
+     The site's largest feature had never been named on the home page.
+
+     ONLY the strings with no Arabic beside them belong here. The badge, the
+     example label and the two body paragraphs each carry their own Arabic
+     twin in the markup, and the English lines that do not are `.en-only`;
+     adding those as keys would print the Arabic twice, which is the same
+     mistake as translating a `life-head` that already ends in "— مصادر". */
+  "Not just what the verse says — why it says it that way":
+    "لا ما تقوله الآية فحسب — بل لماذا قالته هكذا",
+  "Open the Quran and try it": "افتح المصحف وجرّبه",
+  "Browse all 114 surahs": "تصفّح السور المئة والأربع عشرة",
+
   "Community Reflections": "مشاركات المجتمع",
   "We invite you to share your personal stories, questions, and reflections on faith. Your voice adds to the strength of our community, fostering deeper connection and mutual support.":
     "ندعوك لمشاركة قصصك وأسئلتك وخواطرك في الإيمان. صوتك يزيد مجتمعنا قوة، ويعمّق الصلة والتعاون بيننا.",
   "Recitations Worth Hearing": "تلاوات تستحق السماع",
   "Get Started": "ابدأ الآن",
+  "Share a Reflection": "شارك خاطرة",
   "Get in Touch": "تواصل معنا",
   "Questions about a course, a correction to something you read, or an idea to make this site better — we would be glad to hear from you.":
     "سؤال عن دورة، أو تصويب لما قرأت، أو فكرة لتحسين الموقع — يسعدنا تواصلك معنا.",
@@ -348,6 +362,28 @@ const AR_PARTS = [
      "صحيح مسلم, كتاب Fitan — Hudhayfah ibn Usayd al-Ghifari" — which is
      worse to read than leaving it in English. Narrators go FIRST so a
      name is matched before any shorter pattern can cut into it. */
+  /* Narrator names still rendering in English on the hadith page, counted in
+     Arabic mode. `Omar` and `Osman` are spelled with an O throughout this
+     site's data by the owner's instruction, so the AR_PARTS entries keyed on
+     `Umar`/`Uthman` never matched them — "رواه Omar ibn al-Khattab".
+     Longest first, as everywhere in this array. */
+  [/\bAbdullah ibn Amr ibn al-As\b/g, "عبد الله بن عمرو بن العاص"],
+  [/\bAbu Barzah al-Aslami\b/g, "أبو برزة الأسلمي"],
+  [/\bAbu Dharr al-Ghifari\b/g, "أبو ذرّ الغفاري"],
+  [/\bOmar ibn al-Khattab\b/g, "عمر بن الخطاب"],
+  [/\bAbdullah ibn Mas'ud\b/g, "عبد الله بن مسعود"],
+  [/\bJabir ibn Abdullah\b/g, "جابر بن عبد الله"],
+  [/\bJarir ibn Abdullah\b/g, "جرير بن عبد الله"],
+  [/\bAbdullah ibn Abbas\b/g, "عبد الله بن عباس"],
+  [/\bAisha bint Abu Bakr\b/g, "عائشة بنت أبي بكر"],
+  [/\bImran ibn Husayn\b/g, "عمران بن حصين"],
+  [/\bJubayr ibn Mut'im\b/g, "جبير بن مطعم"],
+  [/\bAbdullah ibn Omar\b/g, "عبد الله بن عمر"],
+  [/\bAbdullah ibn Amr\b/g, "عبد الله بن عمرو"],
+  [/\bOsman ibn Affan\b/g, "عثمان بن عفان"],
+  [/\bIbn Omar\b/g, "ابن عمر"],
+  [/\bby at-Tabarani\b/g, "الطبراني"],
+
   [/\bHudhayfah ibn Usayd al-Ghifari\b/g, "حذيفة بن أسيد الغفاري"],
   [/\bAbu Sa'id al-Khudri\b/g, "أبو سعيد الخدري"],
   [/\bAbdullah ibn Umar\b/g, "عبد الله بن عمر"],
@@ -399,6 +435,19 @@ const AR_PARTS = [
   [/\bIbn Sa'd\b/g, "ابن سعد"],
   [/\bTabaqat\b/g, "الطبقات"],
   [/\bat-Tabari\b/g, "الطبري"],
+  /* These compounds MUST precede the bare "historical sira" and "historical
+     accounts" rules. When they did not, the shorter rule fired first and left
+     the tail stranded in English — "سيرة تاريخية accounts", 24 times on the
+     companions page alone. Longest first, the same discipline as everywhere
+     else in this array. */
+  [/\bthe incident is from historical sira accounts\b/g, "الخبر من روايات السيرة التاريخية"],
+  [/\bhistorical and biographical accounts\b/g, "روايات تاريخية وكتب تراجم"],
+  [/\bhistorical and Israiliyyat accounts\b/g, "روايات تاريخية وإسرائيليات"],
+  [/\btafsir and historical accounts\b/g, "تفسير وروايات تاريخية"],
+  [/\bhistorical sira accounts\b/g, "روايات السيرة التاريخية"],
+  [/\bhistorical accounts differ\b/g, "تختلف الروايات التاريخية"],
+  [/\bhistorical accounts only\b/g, "روايات تاريخية فقط"],
+  [/\bthe accounts differ\b/g, "تختلف الروايات"],
   [/\bhistorical sira, not hadith\b/g, "سيرة تاريخية لا حديث"],
   [/\bhistorical sira\b/g, "سيرة تاريخية"],
   [/\boutside the two Sahihs\b/g, "خارج الصحيحين"],
@@ -428,6 +477,25 @@ const AR_PARTS = [
   [/Book of the Virtues of Madinah/g, "كتاب فضائل المدينة"],
   [/Book of the Virtues of the Ansar/g, "كتاب مناقب الأنصار"],
   [/Book of the Merits of the Ansar/g, "كتاب مناقب الأنصار"],
+  /* THESE FOUR ARE ORDERING FIXES, and they must stay above the shorter
+     patterns that follow them. Each of these long titles was already in this
+     array — but further DOWN it, below its own prefix. So the prefix matched
+     first and left the tail in English on the Arabic hadith page:
+
+       "Book of Food and Drink"            → "كتاب الأطعمة و Drink"
+       "Book of Remembrance and Supplication" → "كتاب الذكر والدعاء Supplication"
+       "Book of Dress (Al-Libas)"          → "كتاب اللباس (Al-Libas)"
+
+     This is the trap already written up in the handoff — the full name must
+     always precede the short one — caught a second time, silently, exactly as
+     that note warns. The now-unreachable copies lower down are left in place
+     rather than deleted, so the array stays a single ordered list. */
+  [/Book of Remembrance and Supplication/g, "كتاب الذكر والدعاء"],
+  [/Book of Dress and Adornment/g, "كتاب اللباس والزينة"],
+  [/Book of Dress \(Al-Libas\)/g, "كتاب اللباس"],
+  [/Book of Food and Drink/g, "كتاب الأطعمة والأشربة"],
+  [/\bTamim ad-Dari\b/g, "تميم الداري"],
+
   [/Book of Remembrance/g, "كتاب الذكر والدعاء"],
   [/Book of Purification/g, "كتاب الطهارة"],
   [/Book of Oppressions/g, "كتاب المظالم"],
@@ -455,6 +523,11 @@ const AR_PARTS = [
      this list — without them the catch-all fires on its own and leaves
      half-Arabic references on the page, like "كتاب Battles (al-Malahim)". */
   [/Book of Tribulations and the Portents of the Last Hour/g, "كتاب الفتن وأشراط الساعة"],
+  /* The full-lives citations use two more wordings for the same book, and both
+     were falling through to the catch-all as "كتاب the Merits of the
+     Companions". Counted in Arabic mode on the companions page: 8 and 3. */
+  [/Book of the Merits of the Companions/g, "كتاب فضائل الصحابة"],
+  [/Book of the Companions/g, "كتاب فضائل الصحابة"],
   [/Book of the Virtues of the Companions/g, "كتاب فضائل الصحابة"],
   [/Book of Virtue and Good Manners/g, "كتاب البر والصلة والآداب"],
   [/Book of Transactions \(al-Buyu'\)/g, "كتاب البيوع"],
@@ -543,11 +616,34 @@ const AR_PARTS = [
   /* These two belong with the group below, not above it: they are substrings
      of "Sunan an-Nasa'i" and "Sunan Abu Dawud", which are matched earlier in
      this array. Putting them any higher would stop the full names matching. */
+  /* THE GRADING WORDS THEMSELVES — the last English left in an otherwise
+     Arabic citation, and the most important words on the line, because how
+     strong a source is is the thing this site promises to state every time.
+
+     Counted in Arabic mode across the 94 full lives: "Sahih" 116 times,
+     "agreed upon" 41, "historical accounts" 36, "Quran" 10. The bare words
+     must sit here, at the very bottom: "Sahih" above would cut into
+     "Sahih al-Bukhari", and "Quran" above would cut into
+     "Book of the Virtues of the Quran". */
+  [/\bJami' at-Tirmidhi\b/g, "جامع الترمذي"],
+  [/\breported in the biographical works\b/g, "مذكور في كتب التراجم"],
+  [/\bhistorical accounts of his life\b/g, "روايات تاريخية عن حياته"],
+  [/\bhistorical accounts\b/g, "روايات تاريخية"],
+  [/\bin Ibn Hisham's Sira\b/g, "في سيرة ابن هشام"],
+  [/\bIbn Hisham\b/g, "ابن هشام"],
+  [/\bIbn Majah\b/g, "ابن ماجه"],
+  [/\bal-Hakim\b/g, "الحاكم"],
+  [/\bagreed upon\b/g, "متفق عليه"],
+  [/\bnot hadith\b/g, "لا حديث"],
+
   [/\ban-Nasa'i\b/g, "النسائي"],
   [/\bAbu Dawud\b/g, "أبو داود"],
   [/\bat-Tirmidhi\b/g, "الترمذي"],
   [/\bal-Bukhari\b/g, "البخاري"],
   [/\bMuslim\b/g, "مسلم"],
+  [/\bSahih\b/g, "صحيح"],
+  [/\bQuran\b/g, "قرآن"],
+  [/\bsira\b/g, "سيرة"],
   [/\band\b/g, "و"]
 ];
 
@@ -644,9 +740,27 @@ function iitwCollectNodes() {
 
    ANY NEW SECTION THAT PRINTS A SOURCE LINE MUST ADD ITS CLASS HERE, or the
    references will silently stay English. `.tad-ref` is the class the newer
-   sections use, so prefer it over inventing another one. */
+   sections use, so prefer it over inventing another one.
+
+   It went stale a SECOND time, and wider than the first. Measured in the
+   browser in Arabic mode, 190 of the 240 source lines rendered on the
+   companions page were still English, because the class their citations sat
+   in was never listed here. `.rv-ev-ref` (the revival evidence on Guidance)
+   and `.gold-ref` (the Golden Age points) were missing for the same reason —
+   both hold a bare citation, so both are safe to list.
+
+   The full lives are NOT listed, deliberately. Their source lines read
+   "<what it supports>: <citation>", and handing a line with English prose in
+   it to AR_PARTS mangles the prose — "his trade and lineage" became "his
+   trade و lineage". `prophets.html` and `companions.html` therefore split the
+   line and wrap only the citation half in `.tad-ref`. The rule this comes
+   from is already in the handoff: never put prose in a source field.
+
+   The check that catches this: switch to Arabic and search the rendered page
+   for "Sahih al-Bukhari" — in Arabic mode there should be none. */
 const IITW_REF_SELECTOR =
-  ".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs, .tad-ref";
+  ".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs, .tad-ref, " +
+  ".rv-ev-ref, .gold-ref";
 
 function iitwTranslateDom(lang) {
   iitwCollectNodes().forEach(node => {
