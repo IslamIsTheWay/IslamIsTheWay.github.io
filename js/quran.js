@@ -680,6 +680,23 @@ function iitwTadabburAyahHtml(tad, n) {
   h += '<div class="tad-ayah-head">🧠 <span class="en-only">Why this verse, and why these words</span>' +
        '<span class="ar-only" dir="rtl">لِمَ هذه الآية، ولِمَ هذه الألفاظ</span></div>';
 
+  /* WHICH VERSE THIS IS. The panel used to open straight into the
+     explanation without ever naming the surah or the verse, so a reader deep
+     inside a long surah had no anchor for what they were reading and nothing
+     to quote or look up afterwards. `tad.num` carries the surah number; the
+     name is read from SURAHS so it can never drift from the Quran page. */
+  const surahMeta = (typeof SURAHS !== "undefined" && tad.num)
+    ? SURAHS.filter(function (s) { return s.n === tad.num; })[0] : null;
+  if (surahMeta) {
+    h += '<div class="tad-which">' +
+         '<span class="en-only">Surah ' + surahMeta.name +
+           ' &middot; verse ' + n + '  (' + surahMeta.n + ':' + n + ')</span>' +
+         '<span class="ar-only" dir="rtl">سورة ' + surahMeta.arabic +
+           ' &middot; الآية ' + toArabicDigits(n) +
+           '  (' + toArabicDigits(surahMeta.n) + ':' + toArabicDigits(n) + ')</span>' +
+         '</div>';
+  }
+
   if (a.arNote) {
     h += '<div class="tad-note-small"><span class="en-only">' + a.arNote + '</span>' +
          '<span class="ar-only" dir="rtl">' + a.arNoteAr + '</span></div>';
