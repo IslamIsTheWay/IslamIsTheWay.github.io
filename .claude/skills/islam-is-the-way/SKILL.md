@@ -1,6 +1,6 @@
 ---
 name: islam-is-the-way
-description: Build, fix or add content to the Islam Is The Way website (islamistheway.github.io) — a bilingual Arabic/English Islamic education site with Quran, Hadith, Sunnah, Prophets, Companions, the Day of Judgement, the angels, the adhkar, the scholars' explanations, courses and live classes. Use whenever working in the islam-is-the-way-site folder, or when the request involves this site's pages, its Arabic/English content, hadith gradings, the staff dashboard, meetings, or deploying it.
+description: Build, fix or add content to the Islam Is The Way website (islamistheway.github.io) — a bilingual Arabic/English Islamic education site and installable app, with the full Quran text offline, Hadith, Sunnah, Prophets, Companions, the Day of Judgement, the angels, the adhkar, the scholars' explanations, bid'ah, tadabbur, a daily reading commitment with streaks, courses and live classes. Use whenever working in the islam-is-the-way-site folder, or when the request involves this site's pages, its Arabic/English content, hadith gradings, the guidance search, the PWA or offline behaviour, the daily habit box, the staff dashboard, meetings, or deploying it.
 ---
 
 # Islam Is The Way — working on this website
@@ -113,6 +113,17 @@ js/rise.js                 THE_RISE — "will we rise again?" PLUS its own
 js/enrol.js                course sign-up + the request that reaches the
                            staff by mail/WhatsApp   (courses.html)
 js/account.js              reader sign-in + saved verse   (quran.html)
+js/quran-text.js           THE WHOLE QURAN — 114 surahs, 6,236 verses, the
+                           English translation and the Mushaf page of every
+                           ayah. openSurah() reads THIS, not the API. 2.2MB.
+                           This is what makes a surah open with no connection
+js/bidah.js                BIDAH — adding to the religion   (guidance.html#bidah)
+js/wird.js                 the daily Quran commitment + WIRD_MILESTONES +
+                           wirdArDays()   (quran.html#wird, and index.html)
+js/daily.js                the four-item daily box   (index.html)
+sw.js                      service worker — NETWORK-FIRST, never cache-first
+manifest.webmanifest       PWA manifest, linked from every public page
+offline.html               shown when a page is asked for with no connection
 js/main.js                 nav, scroll reveal, analytics, text-to-speech, staff
                            session, video parsing, feedback widget, PERSON SEARCH
 js/quran.js                surah grid, 16 reciters, audio, reader modal, Mushaf
@@ -214,6 +225,83 @@ A missing comma between objects silently breaks every page that loads the file.
 ---
 
 ## Traps that have already cost time — do not repeat them
+
+### The site must NOT claim it works without a connection
+The owner's words on 14 August: *"either you fix it, which is not now, so remove
+that sentence — because like this, you're deceiving them."* My testing said
+offline worked; his iPhone said it did not, and **on what the reader
+experiences, the reader wins**. Every user-facing offline promise was removed:
+the `quran.html` panel, the install bar's subtitle, and `offline.html`'s lead.
+
+`sw.js` and `js/quran-text.js` stay — the capability is real, the boast is
+gone. The install bar now sells only what is plainly true: it opens from the
+home screen, with no browser and no address bar.
+
+**Do not re-add an offline claim** until it has been checked on HIS iPhone, in
+Safari, installed to the home screen, in aeroplane mode, opening a surah never
+opened before. A desktop browser with the server stopped is not that test.
+
+### NEVER match Arabic as a substring — this has shipped THREE times
+`ولي` sits inside `وليس`. `عينة` sits inside `بعينه`. And `ألم` sits inside
+`بالمولد`, which made the Guidance box answer "حكم الاحتفال بالمولد النبوي؟"
+with a verse about **relief after hardship**. Compare WHOLE WORDS after
+stripping the prefixes Arabic attaches (ال، بال، وال، لل، ب، ل، و، ف، ك) —
+`iitwWordSet()` / `iitwHasWord()` in `guidance.html`.
+
+### The Quran text ships with the site — do not go back to the API
+`js/quran-text.js` holds all 6,236 verses. The reader used to fetch every
+surah from `api.alquran.cloud`, so **the Quran did not work without a
+connection** — reported twice by the owner. Caching API replies only ever
+helps for surahs already read once, which is useless to someone who installs
+the app and then goes offline. No service-worker tuning fixes a dependency on
+someone else's server.
+
+### `cache: "no-store"` PREVENTS a response being cached
+A response fetched with no-store cannot be written to the Cache API. The
+offline warm-up had it on every fetch: 35 downloads, all returning 200, all
+storing **nothing**, and the "offline ready" flag was set before the loop even
+ran. Measured live from clean: five files cached, zero pages, after 45 seconds.
+
+### The browser caches `sw.js` itself
+Registering `"sw.js"` can return the byte-identical old copy, so a rewritten
+worker never installs while reporting itself active. Always register with
+`{ updateViaCache: "none" }`. `bump-version.sh` cannot reach this.
+
+### A service worker's `install` is killed if it takes too long
+Precaching 3.5MB inside `install` left eleven files cached and the worker
+reporting success. Keep install to a small shell (`PRECACHE_SHELL`) and pull
+the rest from the page (`iitwWarmOfflineCache()` in `main.js`).
+
+### iOS has NO install API — never show an Install button there
+A web page on iPhone cannot add itself to the home screen; only the person can,
+through Safari's Share menu. A button labelled "Install" there does nothing,
+and the owner reported it as broken. Show the three steps instead. iPadOS
+reports itself as a Mac, so detection must also check `maxTouchPoints`.
+
+### A backtick inside an HTML comment inside a template literal ends the string
+A comment naming a class in backticks, inside `card.innerHTML = \`…\``, took
+`prophets.html` down completely — 0 of 29 cards, "ref is not defined".
+
+### Arabic adjectives must agree with the count
+1 يوم · 2 يومان · 3–10 أيام · 11–99 يومًا · 100 يوم. And an adjective after it
+must agree too — "٧ أيام متتابعة" is wrong. `على التوالي` is invariant and
+correct at every number. `wirdArDays()` in `js/wird.js`.
+
+### Never apply negative `letter-spacing` to Arabic
+The script joins, and tightening the tracking pulls the joins apart. Scope any
+such rule away from `html.lang-ar`.
+
+### `*single asterisks*` are never converted
+Every paragraph helper here converts `**bold**` and nothing else.
+
+### Every canonical must name its own file
+`stories.html` carried `sunnah.html`'s canonical, telling search engines the
+Stories page was a duplicate. `./check-counts.sh` now checks this.
+
+### Testing offline: a resolved `fetch` does not prove the network is up
+The worker returns a 504 Response rather than rejecting. Check the status, and
+stop the dev server to test properly.
+
 
 - **Muslim's numbering in the jsdelivr hadith API is sequential (1–7563) and
   does NOT match** the standard numbering. Bukhari's **does**. Cite Muslim by
@@ -430,21 +518,21 @@ significant:
 
 ## Current state
 
-_Last updated: 13 August 2026_
+_Last updated: 14 August 2026_
 
 | Content | Count |
 |---|---|
 | Prophets | 29 — **all with a full life and message** |
 | Companions | 65 — **all with a full life** |
 | Full lives in `js/lives.js` | **94** |
-| Stories of the Prophet ﷺ | **45**, in **10 sections** by what the story teaches |
+| Stories of the Prophet ﷺ | **49**, in **10 sections** by what the story teaches |
 | Golden Age figures (`js/golden.js`) | **41** + 7 documented cases of the credit going elsewhere |
 | Golden Age closing sections | **12** — why we fell, the influencer inversion, how we return |
 | Judgement Day closing sections | **6** — standing alone, and what to do about it |
 | Terms explained (`js/terms.js`) | **48**, shown under every ruling |
 | Ruling figures (`js/figures.js`) | **4** — HTML comparison tables, never drawings |
 | Curated hadith | 43 (+ ~15,000 Bukhari & Muslim via API) |
-| Sunnah practices | 166 across 18 areas |
+| Sunnah practices | **177** across 18 areas |
 | Day of Judgement stages | **15** (incl. the Great Intercession) |
 | Angels | **33** in 5 groups |
 | Adhkar | **19** in 6 groups |
@@ -453,7 +541,12 @@ _Last updated: 13 August 2026_
 | Surahs | 114, 16 reciters, Mushaf page numbers |
 | Guidance themes | 23 + **24 worship steps** + the revival section |
 | Nav links | **13** — the bar needs 1474px, hamburger below 1480px |
-| Tadabbur verses (`js/tadabbur.js`) | **167** across **all 114 surahs** — every surah has at least one explained verse. Al-Fatihah and Al-Ikhlas complete; Al-Baqarah 14 verses; Aal-Imran 5. The coverage numbers in the panel are BUTTONS that jump to the verse |
+| Tadabbur verses (`js/tadabbur.js`) | **225** across **all 114 surahs** — every surah has at least one explained verse; **46 are still on exactly one**, which is the open work. Al-Baqarah is 21 of 286. The coverage numbers in the panel are BUTTONS that jump to the verse, and each entry names its surah and verse number (`tad.num`) |
+| **The app (PWA)** | `manifest.webmanifest` + `sw.js` + `offline.html`. Installable; **network-first**, never cache-first. **The site makes NO offline claim to the reader** — see the trap below |
+| **The Quran text** | `js/quran-text.js` — **all 6,236 verses**, the translation and the Mushaf page of each, shipped WITH the site, so the reader never waits on someone else's server |
+| **Daily commitment** (`js/wird.js`) | الورد اليومي on quran.html — pick an amount, get today's pages in Mushaf order, mark them read. Streak marked at 1, 3, 7, 10, 30, 40, 100, 200, 365 |
+| **Daily box** (`js/daily.js`) | Four things a day on the home page — Quran, a story, a sunnah, revision. Rotates by DAY OF THE YEAR, never at random |
+| **Adding to the religion** (`js/bidah.js`) | On Guidance — the added-rak'ah analogy, the Mawlid case, both scholarly positions named, and what is NOT bid'ah |
 | "What people get wrong here" boxes | **7** — 9:5, 13:11, 17:32, 30:9, 51:56, 70:19, 2:31 |
 | Surah concepts (`js/concepts.js`) | **114 of 114** — complete |
 | Major signs of the Hour (`js/signs.js`) | **9**, from the Prophet's ﷺ own list in Sahih Muslim |
@@ -590,10 +683,11 @@ _Last updated: 13 August 2026_
 
 ## Open work
 
-_As of 13 August 2026._
+_As of 14 August 2026._
 
 0. **Tadabbur DEPTH, not coverage.** Coverage is done: every one of the 114
-   surahs now has at least one explained verse, **167 entries in total**. The
+   surahs now has at least one explained verse, **225 entries in total** — but
+   **46 surahs are still on exactly one**, and Al-Baqarah is 21 of 286. The
    owner's standing instruction is "more and more and more", so the remaining
    work is depth — more verses inside the surahs people read most. Add one by
    appending to that surah's `ayat` array; the coverage line sorts itself, so
@@ -603,7 +697,7 @@ _As of 13 August 2026._
    add `arNote`/`arNoteAr` naming what the verse goes on to say — otherwise a
    fragment reads as the whole verse. 13 entries had to be repaired for this.
 0b. **`SURAH_CONCEPTS` is complete at 114 of 114.**
-0a1. **THE HOME PAGE DOES NOT MENTION TADABBUR AT ALL.** 167 explained verses
+0a1. **THE HOME PAGE DOES NOT MENTION TADABBUR AT ALL.** 225 explained verses
    across all 114 surahs — the site's biggest single feature — and
    `index.html` never names it. This is the largest known gap and it was
    raised with the owner rather than fixed. Any home-page count added must
@@ -622,25 +716,47 @@ _As of 13 August 2026._
    each other" section (bimaristans, awqaf, ahl adh-dhimmah) was offered and
    not built.
 
-1. **The hijab illustration.** The owner asked for a photograph showing
+1. **Push notifications are NOT built.** The owner asked for a daily
+   reminder. An in-app reminder is free; a notification that arrives while the
+   app is CLOSED needs a push server, a subscription and VAPID keys in his own
+   name. He was told this rather than given a half-working button.
+2. **377 English labels on the full-life sources** — `js/lives.js` source
+   lines still read English in Arabic mode. 388 lines, 377 distinct. This is
+   now the largest untranslated block on the site.
+3. **Twenty Sunnah entries carry a grading that names no scholar** — the
+   house rule is that anything outside the two Sahihs names who authenticated
+   it. These twenty say "Hasan" or similar on their own.
+3b. **Two Sunnah entries are the same hadith** — "Illness wipes away sins"
+   and "No fatigue or sorrow befalls you without reward" share
+   `al-Bukhari 5641 / Muslim 2573` and nearly identical Arabic detail.
+   `./check-counts.sh` flags it. Merging takes the count to 176 and means
+   editing `index.html` AND the `AR` value in `js/i18n.js` together. Whether a
+   hadith may be cross-listed under two areas is the OWNER's call — ask,
+   do not just merge.
+4. **A home-screen WIDGET is impossible from a web app.** He asked twice for
+   the Duolingo tile the size of four app icons. It needs a native app (Kotlin
+   or Swift). Say so plainly again if it is raised — do not quietly build
+   something else and call it done. `js/daily.js` is the nearest honest thing.
+
+5. **The hijab illustration.** The owner asked for a photograph showing
    incorrect hijab and pasted one into chat. A chat image cannot be written to
    the repo — ask him to save the file into `img/`, then wire it into the
    `fq-hijab-conditions` figure in `js/figures.js`. **Do not reference a
    filename before the file exists**: `check-images.sh` fails the build on any
    missing image reference.
-2. **Hadith page in Arabic** — the 43 curated hadith have English `title` and
+6. **Hadith page in Arabic** — the 43 curated hadith have English `title` and
    `topic` with no Arabic twin, so ~100 English strings remain in Arabic mode.
    Needs `titleAr` and `topicAr` written.
-3. **Courses page in Arabic** — ~108 UI strings with no `AR` entries.
-4. **Companion reference lines** — ~27 English descriptions in `refs` arrays
+7. **Courses page in Arabic** — ~108 UI strings with no `AR` entries.
+8. **Companion reference lines** — ~27 English descriptions in `refs` arrays
    ("Historical sira accounts of the first Caliphate").
-5. **Gmail sign-in** — blocked: needs an OAuth Client ID from the owner's own
+9. **Gmail sign-in** — blocked: needs an OAuth Client ID from the owner's own
    Google Cloud Console. The device-local reader account now covers most of the
    value.
-6. **Cross-device saved place** — would need a real backend.
-7. **Arabic speech quality** — limited by the voices installed on the reader's
+10. **Cross-device saved place** — would need a real backend.
+11. **Arabic speech quality** — limited by the voices installed on the reader's
    device; nothing in the code can fix it.
-8. **Google Search Console** — still not set up (Bing is verified and indexed).
-9. **320px viewport** — `theme-card` on guidance overflows very slightly at
+12. **Google Search Console** — still not set up (Bing is verified and indexed).
+13. **320px viewport** — `theme-card` on guidance overflows very slightly at
    320px. Pre-existing and cosmetic; every other width from 375px to 1920px is
    clean in both languages.

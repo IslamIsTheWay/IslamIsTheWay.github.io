@@ -1603,8 +1603,8 @@ function iitwInjectInstall() {
         '<strong><span class="en-only">Add this site to your phone</span>' +
           '<span class="ar-only" dir="rtl">أضِف الموقع إلى هاتفك</span></strong>' +
         '<span class="iitw-install-sub">' +
-          '<span class="en-only">Opens like an app, and the pages you have read stay available offline.</span>' +
-          '<span class="ar-only" dir="rtl">يفتح كالتطبيق، وما قرأته يبقى متاحًا بلا إنترنت.</span></span>' +
+          '<span class="en-only">Opens straight from your home screen — no browser, no address bar, no searching for it again.</span>' +
+          '<span class="ar-only" dir="rtl">يفتح مباشرةً من شاشة هاتفك — بلا متصفّح، ولا شريط عنوان، ولا بحث عنه من جديد.</span></span>' +
       '</div>' +
       '<div class="iitw-install-actions">' +
         '<button type="button" class="btn btn-primary btn-small" id="iitwInstallGo">' +

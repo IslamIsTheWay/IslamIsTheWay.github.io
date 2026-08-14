@@ -9,9 +9,9 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 13 August 2026.**
+> **Last updated: 14 August 2026.**
 
-## The four rules that matter most
+## The rules that matter most
 
 1. **Run `./bump-version.sh` before every commit.** Without it the owner
    reloads and sees no change. This has cost hours.
@@ -25,23 +25,68 @@
    UTF-8 as Latin-1 and turns Arabic into mojibake, and turns `\n` inside JS
    strings into real newlines. It has broken the staff dashboard once and
    shipped ruined Arabic to the live site once. Write files as plain unicode
-   with `encoding="utf-8"`, then grep for `Ø` and `Ù` before committing.
+   with `encoding="utf-8"`, then grep for the mojibake markers before
+   committing.
+5. **Never match Arabic as a substring.** Three separate bugs have shipped
+   this way: `ولي` inside `وليس`, `عينة` inside `بعينه`, and `ألم` inside
+   `بالمولد` - the last one made a question about a ruling return a verse
+   about hardship. Compare whole words after stripping the attached prefixes.
+6. **`sw.js` is NETWORK-FIRST and must stay that way.** A cache-first worker
+   would bring back the "reload and see no change" problem permanently and
+   stop `bump-version.sh` working.
+7. **Verify by measuring, not by looking.** Almost every bug in Parts 11-13
+   was found by counting something in the browser - English strings left in
+   Arabic mode, files actually in the cache, verses actually rendered. Several
+   were reported as fixed when they were not.
 
-## Where the project stands - 4 August 2026
+## Before committing
+
+```bash
+awk '/^  \}$/{l=NR} /^  \{/{if(NR==l+1) print "MISSING COMMA line "l}' js/data.js
+grep -l 'mojibake markers' *.html js/*.js css/*.css
+grep -oE '^  "([^"]+)":' js/i18n.js | sort | uniq -d   # duplicate AR keys
+git fetch -q origin && git checkout origin/main -- data/site-config.json
+./check-images.sh
+./check-counts.sh
+./bump-version.sh
+git add -A && git commit -m "..." && git push origin main
+```
+
+`CLAUDE.md` in the repo root carries the full, current list of traps. Read it.
+
+## Where the project stands - 14 August 2026
 
 | Content | Count |
 |---|---|
 | Prophets | 29 - all with a full life and message |
 | Companions | 65 - all with a full life |
 | Full lives (`js/lives.js`) | **94** |
-| Stories of the Prophet | 38 |
+| Stories of the Prophet | **49** |
 | Curated hadith | 43 (+ ~15,000 via API) |
-| Sunnah practices | 166 |
-| Day of Judgement stages | 15 |
-| Angels | 33 |
+| Sunnah practices | **177** |
+| Day of Judgement stages | 15, with 33 angels |
 | Adhkar | 19 |
-| Scholars' rulings / scholars with books | 11 / 10 |
+| Scholars' rulings / scholars with books | 15 / 19 |
 | Surahs | 114, 16 reciters, Mushaf pages |
+| **Tadabbur (explained verses)** | **225 across all 114 surahs** |
+| **Golden Age figures** | **41**, all with a plain-words box |
+| **Adding to the religion (bid'ah)** | `js/bidah.js`, on Guidance |
+
+**The site is now an installable app.** `manifest.webmanifest` + `sw.js`, and
+**the whole Quran text ships with it** (`js/quran-text.js`, 6,236 verses), so
+every page and every surah is ABLE to work with no connection.
+
+**But nothing on the site says so any more, and that is deliberate.** On 14
+August the owner said the offline promise was deceiving him, because it did not
+hold on his iPhone. Every user-facing claim was removed the same day. See
+"The offline claim was removed" in PART 13 before writing a word about it.
+
+**It also has a daily habit loop:** `js/wird.js` (the Quran commitment on
+quran.html) and `js/daily.js` (the four-item box on the home page), with a
+streak and marked days at 1, 7, 10, 30, 40, 100, 200 and 365.
+
+**Read PART 13 first** - it is the most recent session and it records five
+faults that shipped, including two the owner had to report twice.
 
 ## Contents
 
@@ -2433,3 +2478,224 @@ everything inside `prefers-reduced-motion` guards. No horizontal overflow at
 - **Never apply negative `letter-spacing` to Arabic.** It is not a matter of
   taste — the script joins, and tightening the tracking separates the joins.
   Any typographic rule of that kind must be scoped away from `html.lang-ar`.
+
+---
+
+<!-- ============================================================ -->
+# PART 13 — 14 August 2026: the app, the daily habit, and offline
+<!-- ============================================================ -->
+
+This is the session where the site became an installable app that works with
+no connection, and grew a daily habit loop. Two things in it were reported
+BROKEN by the owner after I had said they were done — both are written up
+below, because the mistakes are more useful than the features.
+
+## The Guidance box now reads the question, not the words in it
+
+He asked "حكم الاحتفال بالمولد النبوي؟" and got back **"Ease After Hardship"**.
+
+**Cause: Arabic matched as a SUBSTRING — the third sighting of this trap.**
+The theme carries the keyword `ألم` (pain). Normalised that is `الم`, and
+`الم` sits inside `بالمولد`. A raw `.includes()` found it, scored 5, and a
+question about a ruling came back as a verse about relief from difficulty.
+(The two earlier sightings: `ولي` inside `وليس`, `عينة` inside `بعينه`.)
+
+Fixed with `iitwWordSet()` / `iitwHasWord()` in `guidance.html`, which compare
+whole words after stripping the prefixes Arabic attaches (ال، بال، وال، لل،
+ب، ل، و، ف، ك). **Never `.includes()` on Arabic.**
+
+On top of that, an INTENT LAYER now reads the whole sentence before scoring
+any word in it — `iitwIntent()` returns whether this is a ruling question and
+what topic it is about, and `GUIDANCE_TOPICS` routes it to an authored answer.
+
+**A ruling question may only be answered by a ruling.** If nothing matches,
+`iitwNoRulingHtml()` says so plainly instead of reaching for the nearest
+verse. An honest empty answer beats a confident wrong one when the subject is
+the religion.
+
+And the answer comes FIRST now (`iitwDirectAnswerHtml`), with the evidence
+beneath it. The 15 `FIQH_RULINGS` each already carried an authored `answer`
+field that was never being shown.
+
+## Installable as an app (PWA)
+
+`manifest.webmanifest`, `sw.js`, `offline.html`, icons generated from the
+owner's own emblem, and an install bar injected from `main.js`.
+
+**The service worker is NETWORK-FIRST and must stay that way.** A cache-first
+worker would bring back the "reload and see no change" disaster permanently
+and stop `bump-version.sh` working.
+
+### The install button was broken on iPhone
+He pressed Install and nothing happened. **iOS has no install API at all** — a
+web page there cannot add itself to the home screen; only the person can,
+through Safari's Share menu. The bar still showed a button labelled "Install",
+which swapped a line of text and then did nothing on a second press.
+
+On iOS there is now **no button**: the three steps are shown immediately with
+the Share glyph drawn inline, plus a note that it works in Safari only. The
+Android bar stays hidden until the browser actually hands over a prompt.
+iPadOS reports itself as a Mac, so detection also checks `maxTouchPoints`.
+
+## Offline — reported broken twice, and both reports were right
+
+### Round one failed for two reasons
+1. Only six files were precached.
+2. **The Quran text was not on this site.** It came from
+   `api.alquran.cloud`, cross-origin, which the worker did not touch.
+
+### Round two still failed, for two more
+3. **The browser caches `sw.js` itself**, so registering `"sw.js"` returned
+   the byte-identical old copy and the rewritten worker never installed while
+   reporting itself active. Fixed with `{ updateViaCache: "none" }`.
+4. **A service worker's `install` is killed if it takes too long.** Pulling
+   3.5MB inside install left eleven files cached and the worker reporting
+   success. Install now takes `PRECACHE_SHELL` only; `iitwWarmOfflineCache()`
+   in `main.js` pulls the rest from the page afterwards.
+
+### And the fault that made his pages fail
+5. **`cache: "no-store"` was on every warm-up fetch.** A response fetched with
+   no-store CANNOT be written to the Cache API — 35 downloads returned 200 and
+   stored nothing, and the "offline ready" flag was set before the loop ran.
+   Measured live from clean: five files, ZERO pages, after 45 seconds.
+
+### The real answer: the Quran ships with the site
+`js/quran-text.js` — 2.2MB, **all 114 surahs, all 6,236 verses**, the English
+translation and the Mushaf page of every ayah, in the same two editions the
+site already displayed. `openSurah()` reads it; the API is only a fallback.
+
+**Do not put the reader back on an external API for the Quran.** No amount of
+service-worker tuning fixes a dependency on someone else's server.
+
+**Proven with the dev server stopped** — in a DESKTOP browser, which turned out not to be enough; see "The offline claim was REMOVED" below — not asserted: network probe 504;
+Al-Baqarah 286 verses with 94 page markers; Ar-Rahman 78; An-Naba 40 — none
+previously downloaded; Sunnah 177 cards; Guidance answered the Mawlid
+question; 48 files cached, 13 pages, 27 scripts.
+
+The recitation audio is deliberately never cached — everyayah serves hundreds
+of megabytes — and the panel on the Quran page says so.
+
+## الوِرْد اليومي — the daily reading commitment (`js/wird.js`)
+
+Choose an amount once (one page, two, five, or a juz, each labelled with the
+khatmah it actually produces). After that the Quran page hands you today's
+pages in Mushaf order, says which surah they fall in, opens them, and takes
+the mark when you have read them.
+
+**Two rules the owner set, and they should not be softened:**
+
+1. **The intention sits ON the button, not in a footnote.** His words: you are
+   not reading this to put a click. The line above the tick reads: "You are
+   not reading this to tick a box. You are reading it for Allah — the mark is
+   only so you know where to carry on from."
+2. **It tracks the PLACE, not the calendar.** Miss a day and you carry on from
+   where you stopped. Nothing scolds.
+
+### The streak and its marked days
+1, 3, 7, 10, 30, 40, 100, 200, 365 — each with an icon and a `tier` that makes
+the card louder as the number climbs, quiet green at three days and full gold
+at a complete year. **No milestone congratulates the number by itself**; each
+turns it back into what it is for.
+
+## ورد اليوم — the daily box on the home page (`js/daily.js`)
+
+Four things a day on `index.html`, under the numbers strip: the Quran pages
+from the commitment, a story from the 49, a sunnah from the 177, and revision
+of a short surah from memory. Each ticked, with the run of days.
+
+**What appears rotates by the DAY OF THE YEAR**, not at random — it changes
+daily, is the same for everyone, and does not reshuffle on refresh. A list
+that changed on reload would feel like a slot machine rather than a plan.
+
+## A home-screen widget is not possible, and was not promised
+
+He asked twice for the Duolingo tile the size of four app icons. **No website
+and no installed web app can draw one** — it needs a native app (Kotlin or
+Swift). He was told so plainly both times, and the daily box is the nearest
+honest thing: the first screen inside the app.
+
+## Traps added — every one of these shipped or nearly shipped
+
+- **`.includes()` on Arabic.** Third sighting. `ألم` inside `بالمولد`.
+- **`cache: "no-store"` prevents caching.** 35 downloads, 200 each, nothing
+  stored.
+- **The browser caches `sw.js`.** Register with `updateViaCache: "none"`.
+- **Service worker `install` is killed if slow.** Keep it to a small shell.
+- **iOS has no install API.** Never show an Install button there.
+- **Arabic adjectives must agree with the count.** "٧ أيام متتابعة" is wrong;
+  `على التوالي` is invariant and correct at every number, and one day takes no
+  adjective. `wirdArDays()` in `js/wird.js` handles the noun.
+- **A resolved `fetch` does not prove the network is up** — the worker returns
+  a 504 Response rather than rejecting. Check the status.
+
+## The offline claim was REMOVED — do not put it back
+
+Later the same day, after all of the above, the owner said this:
+
+> "That small section that says the content will work without Internet —
+> either you fix it, which is not now, so remove that sentence and just mention
+> that it will be easier for you to get the content without having to open the
+> browser. **Because like this, you're deceiving them.**"
+
+He is right, and the reasoning matters more than the edit. My own testing said
+offline worked; his phone said it did not. **On a question of what the reader
+experiences, the reader wins.** A promise the site cannot keep on his device is
+worse than no promise, because it costs trust in everything else on the page.
+
+### What was removed
+- **The whole offline panel on `quran.html`** — the strong line "Reading
+  without a connection", the sentence "Every page of this site already works
+  offline", the "X of 114 surahs are saved" count, and the "Save all of it"
+  button. `renderOffline()`, `offlineSurahsSaved()` and `QURAN_CACHE_NAME` went
+  with it.
+  This panel was **also stale**: its own comment still said the Quran text "is
+  not on this site at all — it comes from api.alquran.cloud", which stopped
+  being true when `js/quran-text.js` shipped hours earlier. It was downloading
+  114 surahs the site already carried, into a cache the reader no longer needs.
+- **The install bar's promise** in `js/main.js` — was "Opens like an app,
+  and the pages you have read stay available offline."
+- **`offline.html`'s promise** — was "Pages you have already opened are
+  still available."
+
+### What replaced it
+Only what is plainly true of an installed app, which is what he asked for:
+
+> "Opens straight from your home screen — no browser, no address bar, no
+> searching for it again."
+> يفتح مباشرةً من شاشة هاتفك — بلا متصفّح، ولا شريط عنوان، ولا بحث عنه من جديد.
+
+### What was NOT removed
+`sw.js`, `js/quran-text.js` and `iitwWarmOfflineCache()` all stay. The
+capability is still there and still works in a desktop browser with the server
+stopped. **The code kept its ability; the page dropped its boast.**
+
+### The rule
+**Do not re-add any offline claim until it has been verified on the owner's own
+iPhone**, by him, on the live site — not in a desktop browser, and not by
+me. Verifying it on iOS means Safari, a fresh install to the home screen,
+aeroplane mode, then opening several pages AND a surah that was never opened
+before. Until someone has done exactly that, the site says nothing about it.
+
+## Open work as of 14 August 2026
+
+1. **Push notifications.** Not built. A notification that arrives while the app
+   is closed needs a push server, which means a subscription and keys in the
+   owner's name. An in-app reminder is possible for free if he wants it.
+2. **The 377 English labels on the full-life sources** — still English in
+   Arabic mode. 388 lines, 377 distinct.
+3. **Twenty Sunnah entries carry a grading that names no scholar.**
+3b. **Two Sunnah entries are the same hadith.** "Illness wipes away sins"
+   and "No fatigue or sorrow befalls you without reward" both carry
+   `Sahih al-Bukhari, Hadith 5641; Sahih Muslim, Hadith 2573`, and their Arabic
+   detail is all but word for word the same text (ما يصيب المسلم من نصب ولا
+   وصب...). `./check-counts.sh` flags it. Either merge them and take the count
+   to 176 (which means editing `index.html` AND the `AR` value in `js/i18n.js`
+   in the same commit), or decide the cross-listing is deliberate and leave it.
+   **This is the owner's call.** Bukhari 1162 also appears twice, but there it
+   is a secondary support under two different prayers, which reads as deliberate.
+4. **Tadabbur depth** — 225 verses, at least one per surah, 46 surahs still on
+   exactly one. Al-Baqarah is 21 of 286.
+5. **The citation audit has still only covered the Judgement page's files.**
+6. Everything still open from Part 8: the hijab photo, the hadith page Arabic
+   titles, the courses page Arabic, Gmail sign-in, cross-device saved place,
+   Google Search Console.

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142308" />
+  <link rel="stylesheet" href="css/style.css?v=202608142326" />
   <link rel="canonical" href="https://islamistheway.github.io/quran.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -84,10 +84,6 @@
   <section id="wird">
     <div class="container">
       <div id="wirdBox"></div>
-      <!-- Offline status and the one-tap download of the whole Quran.
-           Hidden entirely when the browser has no service worker, so it never
-           promises something it cannot do. -->
-      <div id="offlineBox" class="offline-box" hidden></div>
     </div>
   </section>
 
@@ -165,26 +161,26 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608142308"></script>
+  <script src="js/data.js?v=202608142326"></script>
   <!-- Reader accounts: the username, the password, and the saved verse. -->
-  <script src="js/account.js?v=202608142308"></script>
+  <script src="js/account.js?v=202608142326"></script>
   <!-- Tadabbur data. MUST load before quran.js, which calls
        iitwTadabburFor() while building the surah reader. -->
   <!-- The main idea of each surah. Loads before quran.js, which shows it
        at the top of the Tadabbur panel on every surah that has one. -->
-  <script src="js/concepts.js?v=202608142308"></script>
-  <script src="js/tadabbur.js?v=202608142308"></script>
+  <script src="js/concepts.js?v=202608142326"></script>
+  <script src="js/tadabbur.js?v=202608142326"></script>
   <!-- The whole Quran, stored in this repo. Loaded BEFORE quran.js,
        which reads it in openSurah(). This is what makes a surah open
        with no connection. -->
-  <script src="js/quran-text.js?v=202608142308"></script>
-  <script src="js/quran.js?v=202608142308"></script>
+  <script src="js/quran-text.js?v=202608142326"></script>
+  <script src="js/quran.js?v=202608142326"></script>
   <!-- The daily commitment. Loaded AFTER quran.js because it calls openSurah()
        to hand the reader today's page, and after data.js because it maps a
        Mushaf page to a surah through SURAHS. -->
-  <script src="js/wird.js?v=202608142308"></script>
-  <script src="js/main.js?v=202608142308"></script>
-  <script src="js/i18n.js?v=202608142308"></script>
+  <script src="js/wird.js?v=202608142326"></script>
+  <script src="js/main.js?v=202608142326"></script>
+  <script src="js/i18n.js?v=202608142326"></script>
   <script>
     /* ================= الوِرْد اليومي — the daily reading =================
        Two states only, because a third would be a settings screen and this
@@ -410,104 +406,6 @@
 
     renderWird();
 
-    /* ================= WORKING WITHOUT A CONNECTION =================
-       The owner's complaint was exact: "why should I be connected to the
-       Internet to be able to open the Quran? If it's like this, I can just
-       get the book itself."
-
-       The pages and all the written content of this site are precached by
-       the service worker on install. The QURAN TEXT is not on this site at
-       all — it comes from api.alquran.cloud — so it has to be fetched once
-       before it can be read offline. The worker caches every surah that is
-       opened; this panel lets the reader take all 114 in one go instead of
-       having to open each of them first.
-
-       The audio is deliberately excluded and the panel says so. everyayah
-       serves hundreds of megabytes and silently filling a phone with it
-       would be a worse failure than the one being fixed.
-    ------------------------------------------------------------------- */
-    const QURAN_CACHE_NAME = "iitw-quran-v1";
-
-    async function offlineSurahsSaved() {
-      if (!("caches" in window)) return 0;
-      try {
-        const c = await caches.open(QURAN_CACHE_NAME);
-        const keys = await c.keys();
-        // two editions per surah (uthmani + en.sahih); count whole surahs
-        const nums = new Set();
-        keys.forEach(k => {
-          const m = k.url.match(/\/surah\/(\d+)\//);
-          if (m) nums.add(m[1]);
-        });
-        return nums.size;
-      } catch (e) { return 0; }
-    }
-
-    async function renderOffline() {
-      const box = document.getElementById("offlineBox");
-      if (!box) return;
-      if (!("serviceWorker" in navigator) || !("caches" in window)) return;
-      box.hidden = false;
-
-      const saved = await offlineSurahsSaved();
-      const total = (typeof SURAHS !== "undefined") ? SURAHS.length : 114;
-      const all = saved >= total;
-
-      box.innerHTML = `
-        <div class="offline-row">
-          <span class="offline-ico">${all ? "✅" : "📥"}</span>
-          <div class="offline-text">
-            <strong class="en-only">${all ? "The whole Quran is saved on this device" : "Reading without a connection"}</strong>
-            <strong class="ar-only" dir="rtl">${all ? "المصحف كامل محفوظ على هذا الجهاز" : "القراءة بلا إنترنت"}</strong>
-            <span class="offline-sub en-only">Every page of this site already works offline. Of the Quran text, <strong>${saved} of ${total}</strong> surahs are saved.</span>
-            <span class="offline-sub ar-only" dir="rtl">كل صفحات الموقع تعمل بلا إنترنت. ومن نصّ القرآن، <strong>${toArabicDigits(saved)} من ${toArabicDigits(total)}</strong> سورة محفوظة.</span>
-          </div>
-          ${all ? "" : `<button type="button" class="btn btn-primary btn-small" id="offlineGo">
-            <span class="en-only">Save all of it</span><span class="ar-only" dir="rtl">احفظ المصحف كاملًا</span></button>`}
-        </div>
-        <div class="offline-bar" id="offlineBar" hidden><span></span></div>
-        <div class="offline-note en-only">The recitation audio is not saved — it is very large, and listening needs a connection.</div>
-        <div class="offline-note ar-only" dir="rtl">التلاوة الصوتية غير محفوظة — حجمها كبير جدًا، والاستماع يحتاج اتصالًا.</div>`;
-
-      const go = document.getElementById("offlineGo");
-      if (!go) return;
-
-      go.addEventListener("click", async () => {
-        const bar = document.getElementById("offlineBar");
-        const fill = bar.querySelector("span");
-        bar.hidden = false;
-        go.disabled = true;
-
-        let done = 0;
-        const list = SURAHS.map(s => s.n);
-        /* Four at a time. All 114 at once floods a phone connection and the
-           browser starts cancelling requests; one at a time takes minutes. */
-        const queue = list.slice();
-        async function worker() {
-          while (queue.length) {
-            const n = queue.shift();
-            try {
-              await Promise.all([
-                fetch(`https://api.alquran.cloud/v1/surah/${n}/quran-uthmani`),
-                fetch(`https://api.alquran.cloud/v1/surah/${n}/en.sahih`)
-              ]);
-            } catch (e) {/* a failed surah is retried next time the button is used */}
-            done++;
-            fill.style.width = Math.round((done / list.length) * 100) + "%";
-            go.innerHTML =
-              `<span class="en-only">Saving ${done} of ${list.length}…</span>` +
-              `<span class="ar-only" dir="rtl">يُحفظ ${toArabicDigits(done)} من ${toArabicDigits(list.length)}…</span>`;
-            if (window.applyI18n) window.applyI18n();
-          }
-        }
-        await Promise.all([worker(), worker(), worker(), worker()]);
-        renderOffline();
-      });
-
-      if (window.applyI18n) window.applyI18n();
-    }
-
-    renderOffline();
   </script>
 </body>
 </html>
