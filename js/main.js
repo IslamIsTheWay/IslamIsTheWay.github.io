@@ -1507,37 +1507,96 @@ function iitwRegisterServiceWorker() {
   });
 }
 
-/* The install button. Chrome and Edge fire `beforeinstallprompt`; iOS Safari
-   does not, and has no API for this at all — there the reader must use
-   Share → Add to Home Screen, so the button explains that instead. */
+/* ---------- Adding the site to a phone ----------
+   Two completely different situations, and the first version got the second
+   one wrong badly enough that the owner reported it as broken:
+
+   ANDROID / DESKTOP CHROME & EDGE fire `beforeinstallprompt`. There a real
+   Install button works, because there is an API behind it.
+
+   IPHONE HAS NO SUCH API. A web page on iOS cannot add itself to the home
+   screen at all — only the person can, through Safari's Share menu. The first
+   version still showed a button labelled "Install" there. Pressing it could
+   not install anything; it swapped a line of text, and pressing it again did
+   nothing at all. A button that names an action and does not perform it is
+   broken, and this one was.
+
+   So on iOS there is NO BUTTON. The three steps are shown straight away with
+   the Share glyph drawn beside them, so the reader can match it to the icon
+   on their own screen. Nothing on the card claims to do something it cannot.
+
+   The glyph is an inline SVG of SHAPES ONLY — no text inside it. Text in an
+   SVG is not a node i18n.js can reach, so it would sit in English on an
+   Arabic page. That rule is in the handoff and it holds here too. */
+
+const IITW_SHARE_ICON =
+  '<svg class="iitw-share-ico" viewBox="0 0 24 24" width="17" height="17" ' +
+       'aria-hidden="true" focusable="false">' +
+    '<path d="M12 3l4 4h-3v8h-2V7H8l4-4z" fill="currentColor"/>' +
+    '<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" ' +
+          'stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+  '</svg>';
+
 function iitwInjectInstall() {
   if (document.getElementById("iitwInstall")) return;
 
+  // Already installed — the bar would be noise.
   const isStandalone = window.matchMedia("(display-mode: standalone)").matches ||
                        window.navigator.standalone === true;
-  if (isStandalone) return;                       // already installed
+  if (isStandalone) return;
   if (localStorage.getItem("iitw-install-dismissed") === "1") return;
 
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  /* iPadOS 13+ reports itself as a Mac, so the touch check is needed as well
+     or an iPad gets the Android bar and a button that never fires. */
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
   let deferred = null;
 
   const bar = document.createElement("div");
   bar.id = "iitwInstall";
-  bar.className = "iitw-install";
+  bar.className = "iitw-install" + (isIOS ? " is-ios" : "");
   bar.hidden = true;
-  bar.innerHTML =
-    '<div class="iitw-install-text">' +
-      '<strong><span class="en-only">Add this site to your phone</span>' +
-        '<span class="ar-only" dir="rtl">أضِف الموقع إلى هاتفك</span></strong>' +
-      '<span class="iitw-install-sub">' +
-        '<span class="en-only">Opens like an app, and the pages you have read stay available offline.</span>' +
-        '<span class="ar-only" dir="rtl">يفتح كالتطبيق، وما قرأته يبقى متاحًا بلا إنترنت.</span></span>' +
-    '</div>' +
-    '<div class="iitw-install-actions">' +
-      '<button type="button" class="btn btn-primary btn-small" id="iitwInstallGo">' +
-        '<span class="en-only">Install</span><span class="ar-only" dir="rtl">تثبيت</span></button>' +
-      '<button type="button" class="iitw-install-close" id="iitwInstallNo" aria-label="Dismiss">✕</button>' +
-    '</div>';
+
+  if (isIOS) {
+    /* No button. The steps ARE the content. */
+    bar.innerHTML =
+      '<div class="iitw-install-text">' +
+        '<strong><span class="en-only">Add this site to your home screen</span>' +
+          '<span class="ar-only" dir="rtl">أضِف الموقع إلى شاشتك الرئيسية</span></strong>' +
+        '<ol class="iitw-ios-steps">' +
+          '<li><span class="en-only">Tap the Share button ' + IITW_SHARE_ICON +
+                ' at the bottom of Safari</span>' +
+              '<span class="ar-only" dir="rtl">اضغط زر المشاركة ' + IITW_SHARE_ICON +
+                ' في أسفل سفاري</span></li>' +
+          '<li><span class="en-only">Scroll down and choose <strong>Add to Home Screen</strong></span>' +
+              '<span class="ar-only" dir="rtl">انزل واختر <strong>إضافة إلى الشاشة الرئيسية</strong></span></li>' +
+          '<li><span class="en-only">Tap <strong>Add</strong></span>' +
+              '<span class="ar-only" dir="rtl">اضغط <strong>إضافة</strong></span></li>' +
+        '</ol>' +
+        '<span class="iitw-install-sub">' +
+          '<span class="en-only">This only works in Safari. Chrome and Firefox on iPhone cannot add it.</span>' +
+          '<span class="ar-only" dir="rtl">هذا يعمل في سفاري فقط. ولا يستطيعه كروم ولا فايرفوكس على الآيفون.</span></span>' +
+      '</div>' +
+      '<div class="iitw-install-actions">' +
+        '<button type="button" class="btn btn-outline btn-small" id="iitwInstallNo">' +
+          '<span class="en-only">Got it</span><span class="ar-only" dir="rtl">فهمت</span></button>' +
+      '</div>';
+  } else {
+    bar.innerHTML =
+      '<div class="iitw-install-text">' +
+        '<strong><span class="en-only">Add this site to your phone</span>' +
+          '<span class="ar-only" dir="rtl">أضِف الموقع إلى هاتفك</span></strong>' +
+        '<span class="iitw-install-sub">' +
+          '<span class="en-only">Opens like an app, and the pages you have read stay available offline.</span>' +
+          '<span class="ar-only" dir="rtl">يفتح كالتطبيق، وما قرأته يبقى متاحًا بلا إنترنت.</span></span>' +
+      '</div>' +
+      '<div class="iitw-install-actions">' +
+        '<button type="button" class="btn btn-primary btn-small" id="iitwInstallGo">' +
+          '<span class="en-only">Install</span><span class="ar-only" dir="rtl">تثبيت</span></button>' +
+        '<button type="button" class="iitw-install-close" id="iitwInstallNo" aria-label="Dismiss">✕</button>' +
+      '</div>';
+  }
 
   document.body.appendChild(bar);
 
@@ -1546,23 +1605,20 @@ function iitwInjectInstall() {
     bar.hidden = true;
   });
 
-  document.getElementById("iitwInstallGo").addEventListener("click", async () => {
-    if (deferred) {
+  const go = document.getElementById("iitwInstallGo");
+  if (go) {
+    go.addEventListener("click", async () => {
+      if (!deferred) return;                 // never shown without one
       deferred.prompt();
       await deferred.userChoice;
       deferred = null;
       bar.hidden = true;
-      return;
-    }
-    // iOS: no API exists, so say what to tap.
-    const t = document.querySelector("#iitwInstall .iitw-install-sub");
-    if (t) {
-      t.innerHTML = '<span class="en-only">On iPhone: tap the Share button, then <strong>Add to Home Screen</strong>.</span>' +
-        '<span class="ar-only" dir="rtl">على الآيفون: اضغط زر المشاركة، ثم <strong>إضافة إلى الشاشة الرئيسية</strong>.</span>';
-      if (window.applyI18n) window.applyI18n();
-    }
-  });
+    });
+  }
 
+  /* Android/desktop: only reveal the bar once the browser has actually given
+     us a prompt to fire. Showing an Install button before that is the same
+     mistake as showing one on iOS. */
   window.addEventListener("beforeinstallprompt", e => {
     e.preventDefault();
     deferred = e;

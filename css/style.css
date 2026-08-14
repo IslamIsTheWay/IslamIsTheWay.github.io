@@ -5617,3 +5617,33 @@ html.lang-ar .wird-change { font-family: 'Amiri', serif; font-size: .95rem; }
   .wird-plan, .wird-progress-bar span { transition: none; }
   .wird-plan:hover { transform: none; }
 }
+
+/* ---- The iPhone version of the install bar ----
+   No button, because iOS has no install API and a button that names an action
+   it cannot perform is broken — which is exactly how the first version was
+   reported. The steps are the content, and the Share glyph is drawn inline so
+   the reader can match it to the icon on their own screen. */
+.iitw-install.is-ios { align-items: flex-start; }
+.iitw-ios-steps {
+  margin: 8px 0 6px;
+  padding-inline-start: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.iitw-ios-steps li {
+  font-size: .87rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+html.lang-ar .iitw-ios-steps li { font-family: 'Amiri', serif; font-size: 1rem; line-height: 1.9; }
+.iitw-ios-steps strong { color: var(--green-dark); }
+
+/* The Share glyph sits on the text baseline so it reads as part of the
+   sentence rather than as a floating icon. */
+.iitw-share-ico {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-inline: 2px;
+  color: #007aff;              /* the blue iOS uses for it, so it is recognisable */
+}
