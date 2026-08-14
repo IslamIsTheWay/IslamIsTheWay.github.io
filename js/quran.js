@@ -167,18 +167,45 @@ async function openSurah(surah) {
   overlay.classList.add("open");
 
   try {
-    const [arabicRes, translationRes] = await Promise.all([
-      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/quran-uthmani`),
-      fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`)
-    ]);
+    let arabicAyahs, translationAyahs;
 
-    if (!arabicRes.ok || !translationRes.ok) throw new Error("Network response was not ok");
+    /* ---------- THE TEXT COMES FROM THIS SITE, NOT FROM A SERVER ----------
+       js/quran-text.js carries every verse, its translation and its Mushaf
+       page. Reading it needs no connection at all, which is the whole point:
+       the owner reported twice that a surah would not open without internet,
+       and the cause was that the text was fetched from api.alquran.cloud on
+       every single open. Caching those replies only ever helped for surahs
+       that had already been read once — useless to someone who installs the
+       app and then goes offline.
 
-    const arabicData = await arabicRes.json();
-    const translationData = await translationRes.json();
+       The API is kept only as a fallback for the case where the local file
+       has not loaded, so nothing is lost if a browser fails to parse it. */
+    const local = (typeof QURAN_TEXT !== "undefined") ? QURAN_TEXT[String(surah.n)] : null;
 
-    const arabicAyahs = arabicData.data.ayahs;
-    const translationAyahs = translationData.data.ayahs;
+    if (local && local.a && local.a.length) {
+      arabicAyahs = local.a.map((t, i) => ({
+        numberInSurah: i + 1,
+        text: t,
+        page: local.p[i]
+      }));
+      translationAyahs = local.e.map((t, i) => ({
+        numberInSurah: i + 1,
+        text: t
+      }));
+    } else {
+      const [arabicRes, translationRes] = await Promise.all([
+        fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/quran-uthmani`),
+        fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`)
+      ]);
+
+      if (!arabicRes.ok || !translationRes.ok) throw new Error("Network response was not ok");
+
+      const arabicData = await arabicRes.json();
+      const translationData = await translationRes.json();
+
+      arabicAyahs = arabicData.data.ayahs;
+      translationAyahs = translationData.data.ayahs;
+    }
 
     const current = RECITERS.find(r => r.id === getReciter()) || RECITERS[0];
 

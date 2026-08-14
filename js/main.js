@@ -1681,11 +1681,24 @@ function iitwWarmOfflineCache() {
     ch.port1.onmessage = async ev => {
       const list = ev.data;
       if (!Array.isArray(list)) return;
-      sessionStorage.setItem("iitw-warmed", "1");
-      // One at a time, so this never competes with what the reader is doing.
+      /* `cache: "no-store"` USED TO BE ON THIS FETCH AND IT BROKE THE WHOLE
+         THING. A response fetched with no-store cannot be written to the
+         Cache API, so every one of these downloads completed with status 200
+         and stored NOTHING — the reader ended up with five files cached and
+         a flag saying the site was ready for offline use. Measured on the
+         live site: 0 pages cached after 45 seconds. Never put it back.
+
+         The "done" flag is also written only AFTER the loop finishes, so an
+         interrupted warm-up is retried on the next page load instead of being
+         marked complete. */
+      let stored = 0;
       for (const url of list) {
-        try { await fetch(url, { cache: "no-store" }); } catch (e) {}
+        try {
+          const res = await fetch(url);
+          if (res && res.ok) stored++;
+        } catch (e) {/* retried next load */}
       }
+      if (stored >= list.length) sessionStorage.setItem("iitw-warmed", "1");
     };
     sw.postMessage("iitw-content-list", [ch.port2]);
   }).catch(() => {});
