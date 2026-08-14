@@ -296,3 +296,36 @@ return "Ease After Hardship".
 - Adding a new answerable subject means adding an entry to `GUIDANCE_TOPICS`
   with `words` and a `need` count. Keep `need` at 2 for vague words so a single
   ordinary word can never decide the answer.
+
+## The service worker — read this before touching sw.js
+
+`sw.js` is **network-first, always**. The cache is an offline fallback and is
+never preferred over the network.
+
+**Never change it to cache-first.** A cache-first worker would bring back the
+"reload and see no change" problem permanently and make `bump-version.sh`
+stop working — the one failure this project has spent the most time on. The
+behaviour was proven by fetching a file through the worker, changing it on
+disk, and fetching again: the reader gets the new content.
+
+- Bump `CACHE_VERSION` in `sw.js` whenever that file changes.
+- Cross-origin requests are not intercepted at all — the Quran API, the
+  per-ayah audio and the hadith API go straight to the network. Caching the
+  audio would fill the reader's storage.
+- `manifest.webmanifest` is linked from every public page (not staff, login,
+  meeting or offline), so the app can be installed from wherever the reader is.
+
+## الوِرْد اليومي — the daily commitment (`js/wird.js`, `quran.html#wird`)
+
+Two rules from the owner govern it and should not be softened:
+
+1. **The intention sits on the button, not in a footnote.** "You are not
+   reading this to tick a box." A tracker that made the streak the point would
+   be the opposite of what this is for. The streak exists but is deliberately
+   not the largest thing on the card.
+2. **It tracks the PLACE, not the calendar.** Miss a day and the reader
+   carries on from where they stopped. Nothing scolds.
+
+State is `localStorage` under `iitw-wird`, device-only, and the card says so.
+`wirdTodaysPages()` wraps at page 604 so a finished khatmah rolls into the
+next one instead of stopping dead.
