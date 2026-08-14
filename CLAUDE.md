@@ -89,6 +89,16 @@ see any of these:
 (document.body.innerText.match(/\*\*/g) || []).length   // literal bold markers
 ```
 
+## When copying a page's `<head>` to a new page, fix the canonical
+
+`stories.html` carried `sunnah.html`'s canonical URL. A canonical naming a
+DIFFERENT page declares this one a duplicate of it, so the Stories page — 49
+stories, each located in the two Sahihs before being written — was asking
+every search engine to drop it and show the Sunnah page instead.
+`./check-counts.sh` now verifies each canonical names its own file.
+`angels.html` is exempt; it is a redirect and points at
+`judgement.html#angels` deliberately.
+
 ## Adding hadith-backed content — the order that works
 
 Load `ara-bukhari.json` and `eng-bukhari.json` from the jsdelivr edition and

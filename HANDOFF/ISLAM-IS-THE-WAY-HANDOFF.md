@@ -2275,6 +2275,25 @@ Ten pages gained a canonical link and ten gained Open Graph and Twitter tags,
 all read from each page's own `<title>` and meta description so nothing is
 invented and nothing can drift.
 
+### The Stories page was telling search engines it did not exist
+
+Found while verifying the Open Graph work **on the live site** — reading the
+canonical back from the deployed page returned the wrong URL.
+
+`stories.html` carried `sunnah.html`'s canonical, copy-pasted from that page's
+head. A canonical naming a DIFFERENT page is a declaration that this one is a
+duplicate of it, so the Stories page — 49 stories, each located in the two
+Sahihs before being written — had been asking every search engine to drop it
+and show the Sunnah page instead.
+
+`check-counts.sh` now verifies that every canonical names its own file.
+`angels.html` is exempt: it is a redirect to `judgement.html#angels` and points
+there on purpose.
+
+This is the second bug this session that only appeared when the deployed page
+was read back rather than the local file. The other was the version stamp
+served from cache.
+
 ### Found, not fixed
 **Twenty pre-existing Sunnah entries carry a grading that names no scholar** —
 "Sahih — established in the collections", "Strong — graded Strong by the
