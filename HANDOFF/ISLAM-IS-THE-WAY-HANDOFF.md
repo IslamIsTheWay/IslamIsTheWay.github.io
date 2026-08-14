@@ -2323,3 +2323,113 @@ work instead of being guessed at.
 5. Everything still open from Part 8: the hijab photo, the hadith page Arabic
    titles, the courses page Arabic, Gmail sign-in, cross-device saved place,
    Google Search Console.
+
+---
+
+<!-- ============================================================ -->
+# PART 12 — 14 August 2026: bid'ah, plain words, and a design pass
+<!-- ============================================================ -->
+
+## Adding to the religion — `js/bidah.js`, at `guidance.html#bidah`
+
+He asked for the concept of bid'ah to be explained, and gave the argument
+himself: adding a rak'ah to Fajr invalidates the prayer, and adding to the
+religion works the same way.
+
+**That analogy is the strongest thing on the section** and it is used as the
+spine. Everyone already agrees an added rak'ah ruins the prayer and nobody
+calls that harsh — the prayer is simply the one place where everybody can
+already see the rule that acts of worship are measured against what was
+taught, not against sincerity. Supported by al-Bukhari 631 ("pray as you have
+seen me pray") and 757 (the man told three times to go back and pray, "for you
+have not prayed" — he was praying, in the mosque, sincere, and it did not
+count).
+
+Thirteen cards, twelve plain-words boxes, both languages. The structure:
+
+1. **The religion was declared complete** at Arafah (5:3), so an addition says
+   something was missing — with Imam Malik's sentence, labelled as HIS and not
+   as a hadith.
+2. **The two hadith of rejection**, including Muslim's wider wording, which
+   closes the escape of "I did not start this, I only joined in".
+3. **"Every innovation"** — kull, not some.
+4. **The Mawlid, made checkable rather than arguable.** Monday is established
+   from his own mouth; the DATE is not — the historians give six different
+   days. The 12th of Rabi' al-Awwal, the date usually kept, is the date those
+   same histories more consistently give for his DEATH, which is exactly the
+   point he made. And the part usually missed: **he did mark his birth — by
+   fasting, every Monday**, a sunnah open to every Muslim fifty-two times a
+   year.
+5. **Both scholarly positions, with names**, and which way the weight leans.
+6. **The strongest objection answered rather than hidden** — Omar's
+   "نِعْمَ الْبِدْعَةُ هَذِهِ" (al-Bukhari 2010; note the real wording, not the
+   نعمت البدعة usually quoted). He did not invent the prayer: the Prophet ﷺ
+   prayed it and stopped for fear it would become obligatory (729), a fear
+   that died with him.
+7. **`notBidah` — what is NOT meant.** Microphones, printed Mushafs, schools,
+   this website. **This section is not optional**: without it the page teaches
+   a reader to call ordinary tools innovations, which would make it dangerous
+   rather than merely incomplete. It also states that the ruling is on the ACT
+   and never on the person, and that most people keeping the day were raised
+   to it and love him ﷺ.
+8. **Where the love actually goes** — five established things, all available
+   all year.
+
+Every Bukhari number was checked against the source text before the section
+was written: **631, 729, 757, 2010, 2697.** Nothing is cited to Muslim by a
+number.
+
+**A mistake made and fixed inside the same task:** I wrote English prose into
+the `ref` fields — the anti-pattern this file already documents — and it
+showed as English inside otherwise Arabic citations. Refs are now pure
+citations, and the book and scholar names they use were added to `AR_PARTS`
+(`Book of Reconciliation`, `Book of Judicial Decisions`, `Book of the Prayer
+at Night in Ramadan`, Ibn Hazm, ash-Shatibi, al-Maqrizi, Abu Shamah, Abu
+Qatadah). Zero English left in any of the ten.
+
+## Plain-words boxes where they were missing
+
+He said some boxes on the Judgement and Golden Age pages are still hard to
+understand. Measured rather than guessed:
+
+- **Golden Age figures: 0 of 41 had one.** `figureCard` had no plain-box
+  support at all, so that was wired in first. All 41 now carry one, and they
+  say why the person matters to someone alive today rather than restating the
+  history.
+- **Angels: 11 of 33 had one.** The other 22 now do. `angelCardHtml` already
+  called `jdPlain`, so only the data was missing.
+- Judgement page total: 63 plain boxes → **67**, with all 15 stages and all 33
+  angels covered.
+
+## The professional pass
+
+A design-system pass rather than a coat of paint:
+
+- **One spacing scale and one shadow family** at `:root`. Sections had mixed
+  60/70/80px margins and `<br>` tags, and three different shadow alpha ramps
+  were in use.
+- **Headings typeset** — tighter tracking and leading, `text-wrap: balance` so
+  no heading drops an orphan word. **Scoped away from Arabic deliberately:
+  the script joins, and negative letter-spacing pulls the joins apart.**
+  Verified that Arabic keeps `letter-spacing: normal`.
+- **Real interaction states.** Buttons had hover but no `:active`, so tapping
+  one on a phone gave no feedback until the next page painted. Nav links
+  gained an underline indicator that also marks the current page.
+- **The header reacts to being scrolled** (`.is-scrolled`, toggled from
+  `main.js`): transparent at the top so the hero photograph runs behind it,
+  opaque with a shadow and tighter padding once the page moves.
+
+**Constraints held:** the mosque photographs are not darkened; the nav bar now
+needs **1473px** against the documented 1474px, so the 1480px breakpoint is
+untouched; logical properties throughout, so RTL needed no separate rules;
+everything inside `prefers-reduced-motion` guards. No horizontal overflow at
+375, 1280, 1500 or 1920.
+
+## Traps added
+
+- **`*single asterisks*` are not converted.** Every paragraph helper on this
+  site converts `**bold**` and nothing else, so `*algorithm*` would have shown
+  its asterisks. Use a real tag or double asterisks.
+- **Never apply negative `letter-spacing` to Arabic.** It is not a matter of
+  taste — the script joins, and tightening the tracking separates the joins.
+  Any typographic rule of that kind must be scoped away from `html.lang-ar`.

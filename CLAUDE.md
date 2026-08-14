@@ -89,6 +89,16 @@ see any of these:
 (document.body.innerText.match(/\*\*/g) || []).length   // literal bold markers
 ```
 
+## Two typography rules that are not matters of taste
+
+- **Never apply negative `letter-spacing` to Arabic.** The script joins, and
+  tightening the tracking pulls the joins apart. Any rule of that kind must be
+  scoped away from `html.lang-ar`, as the heading rules at the bottom of
+  `style.css` are.
+- **`*single asterisks*` are never converted.** Every paragraph helper here
+  converts `**bold**` and nothing else, so `*word*` ships its asterisks to the
+  reader. Use a real tag.
+
 ## When copying a page's `<head>` to a new page, fix the canonical
 
 `stories.html` carried `sunnah.html`'s canonical URL. A canonical naming a
