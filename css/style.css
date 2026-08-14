@@ -5410,3 +5410,210 @@ html.lang-ar .gd-answer-more { font-family: 'Amiri', serif; line-height: 2.1; }
 .gd-answer-empty .gd-answer-label { color: #9a7b12; }
 .gd-answer-empty p { line-height: 1.95; margin: 0 0 10px; }
 .gd-answer-empty a { color: var(--green); text-decoration: underline; }
+
+/* ---- The install bar (PWA) ----
+   Bottom of the screen, above the back-to-top button, dismissable and
+   remembered. Uses logical properties so it sits correctly in RTL. */
+.iitw-install {
+  position: fixed;
+  inset-inline: 12px;
+  inset-block-end: 12px;
+  z-index: 1950;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 560px;
+  margin-inline: auto;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xl);
+}
+.iitw-install[hidden] { display: none; }
+.iitw-install-text { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.iitw-install-text strong { color: var(--green-dark); font-size: .98rem; }
+.iitw-install-sub { font-size: .84rem; color: var(--text-muted); line-height: 1.5; }
+html.lang-ar .iitw-install-sub { font-family: 'Amiri', serif; font-size: .95rem; }
+.iitw-install-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.iitw-install-close {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  padding: 6px 8px;
+  border-radius: 8px;
+  line-height: 1;
+}
+.iitw-install-close:hover { background: var(--green-light); color: var(--green-dark); }
+.iitw-install-close:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* The back-to-top button must not sit on top of the install bar. */
+.iitw-install:not([hidden]) ~ .iitw-to-top { inset-block-end: 92px; }
+
+@media (max-width: 520px) {
+  .iitw-install { flex-direction: column; align-items: stretch; gap: 10px; }
+  .iitw-install-actions { justify-content: space-between; }
+}
+
+/* ============================================================
+   الوِرْد اليومي — the daily reading commitment (quran.html#wird)
+   ============================================================ */
+.wird-card {
+  background: linear-gradient(180deg, var(--green-pale) 0%, var(--white) 62%);
+  border: 1px solid var(--border);
+  border-inline-start: 5px solid var(--green);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  box-shadow: var(--shadow-md);
+  max-width: 760px;
+  margin-inline: auto;
+}
+.wird-card.is-done { border-inline-start-color: var(--gold); }
+
+.wird-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.wird-badge {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 15px;
+  font-size: .88rem;
+  font-weight: 600;
+}
+.wird-streak {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 13px;
+}
+html.lang-ar .wird-streak { font-family: 'Amiri', serif; font-size: .98rem; }
+
+.wird-head h2 { color: var(--green-dark); margin: 12px 0 8px; font-size: 1.5rem; }
+.wird-head p { line-height: 1.9; margin: 0 0 8px; }
+.wird-hadith {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-top: 12px !important;
+}
+html.lang-ar .wird-hadith { font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2; }
+
+/* Today's assignment — the biggest thing on the card, because it is the
+   only thing the reader came for. */
+.wird-assign { text-align: center; padding: 22px 0 6px; }
+.wird-pages {
+  font-family: 'Amiri', Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.2;
+}
+.wird-in { color: var(--text-muted); font-size: .95rem; margin-top: 4px; }
+html.lang-ar .wird-in { font-family: 'Amiri', serif; font-size: 1.08rem; }
+
+/* The intention. Gold, above the buttons, and never collapsed into small
+   print — it is the point of the whole feature. */
+.wird-niyyah {
+  background: #fffdf5;
+  border: 1px solid #efe3bd;
+  border-inline-start: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin: 16px 0 14px;
+  line-height: 1.85;
+  font-size: .95rem;
+  color: #6b5a1e;
+}
+html.lang-ar .wird-niyyah { font-family: 'Amiri', serif; font-size: 1.08rem; line-height: 2; }
+
+.wird-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.wird-done-msg {
+  background: var(--green-light);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+  line-height: 1.85;
+  color: var(--green-dark);
+  margin: 8px 0 4px;
+}
+html.lang-ar .wird-done-msg { font-family: 'Amiri', serif; font-size: 1.08rem; }
+
+.wird-progress { margin-top: 20px; }
+.wird-progress-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--green-light);
+  overflow: hidden;
+}
+.wird-progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 999px;
+  transition: width .5s cubic-bezier(.2,.7,.3,1);
+}
+html.lang-ar .wird-progress-bar span { float: right; }
+.wird-progress-t { font-size: .82rem; color: var(--text-muted); margin-top: 7px; text-align: center; }
+html.lang-ar .wird-progress-t { font-family: 'Amiri', serif; font-size: .95rem; }
+
+/* Choosing a commitment */
+.wird-plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 14px; }
+.wird-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: start;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.wird-plan:hover { border-color: var(--green); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.wird-plan:focus-visible { outline: none; box-shadow: var(--ring); }
+.wird-plan-t { font-weight: 700; color: var(--green-dark); }
+.wird-plan-n { font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
+html.lang-ar .wird-plan-t { font-family: 'Amiri', serif; font-size: 1.12rem; }
+html.lang-ar .wird-plan-n { font-family: 'Amiri', serif; font-size: .95rem; }
+
+.wird-start { display: flex; align-items: center; gap: 10px; font-size: .92rem; color: var(--text-muted); }
+.wird-start input {
+  width: 90px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: .95rem;
+}
+.wird-note { font-size: .82rem; color: var(--text-muted); margin-top: 12px; }
+html.lang-ar .wird-note { font-family: 'Amiri', serif; font-size: .95rem; }
+
+.wird-change {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: .84rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.wird-change:hover { color: var(--green); }
+html.lang-ar .wird-change { font-family: 'Amiri', serif; font-size: .95rem; }
+
+@media (max-width: 560px) {
+  .wird-card { padding: 20px 18px; }
+  .wird-plans { grid-template-columns: 1fr; }
+  .wird-pages { font-size: 1.85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wird-plan, .wird-progress-bar span { transition: none; }
+  .wird-plan:hover { transform: none; }
+}

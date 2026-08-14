@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142205" />
+  <link rel="stylesheet" href="css/style.css?v=202608142221" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -21,6 +21,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="The Day of Judgement | Islam Is The Way" />
   <meta name="twitter:description" content="The Day of Judgement in Islam, stage by stage: death and the soul, the questioning in the grave, the Trumpet, the standing, the Great Intercession, the settling of rights between people, the Scales, the Records, the Bridge and the gates — plus every angel named in the Quran and in the two Sahihs, with every verse and hadith referenced, in English and Arabic." />
+  <!-- Installable as an app (PWA). The service worker is network-first and
+       cannot cause a stale page — see the note at the top of sw.js. -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#1e7e45" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Islam Is The Way" />
 </head>
 <body>
 
@@ -196,19 +203,19 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608142205"></script>
-  <script src="js/angels.js?v=202608142205"></script>
+  <script src="js/data.js?v=202608142221"></script>
+  <script src="js/angels.js?v=202608142221"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608142205"></script>
-  <script src="js/judgement.js?v=202608142205"></script>
+  <script src="js/signs.js?v=202608142221"></script>
+  <script src="js/judgement.js?v=202608142221"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608142205"></script>
+  <script src="js/judgement-closing.js?v=202608142221"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608142205"></script>
+  <script src="js/rise.js?v=202608142221"></script>
   <script>
     /* ---------- Standing alone: the closing discussion ----------
        Reuses the same card / pulled-quote / dua shapes as the Golden Age
@@ -658,7 +665,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608142205"></script>
-  <script src="js/i18n.js?v=202608142205"></script>
+  <script src="js/main.js?v=202608142221"></script>
+  <script src="js/i18n.js?v=202608142221"></script>
 </body>
 </html>

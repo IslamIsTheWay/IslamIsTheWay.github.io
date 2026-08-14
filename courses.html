@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142205" />
+  <link rel="stylesheet" href="css/style.css?v=202608142221" />
   <link rel="canonical" href="https://islamistheway.github.io/courses.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -21,6 +21,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Courses | Islam Is The Way" />
   <meta name="twitter:description" content="Structured learning paths in Quranic Arabic, Quranic Sciences, Islamic Studies, and Hadith Sciences." />
+  <!-- Installable as an app (PWA). The service worker is network-first and
+       cannot cause a stale page — see the note at the top of sw.js. -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#1e7e45" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Islam Is The Way" />
 </head>
 <body>
 
@@ -179,9 +186,9 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608142205"></script>
+  <script src="js/data.js?v=202608142221"></script>
   <!-- Course sign-up and the request that actually reaches the staff. -->
-  <script src="js/enrol.js?v=202608142205"></script>
+  <script src="js/enrol.js?v=202608142221"></script>
   <script>
     const grid = document.getElementById("courseGrid");
 
@@ -461,7 +468,7 @@
     document.addEventListener("DOMContentLoaded", renderEnrolBox);
   </script>
 
-  <script src="js/main.js?v=202608142205"></script>
-  <script src="js/i18n.js?v=202608142205"></script>
+  <script src="js/main.js?v=202608142221"></script>
+  <script src="js/i18n.js?v=202608142221"></script>
 </body>
 </html>

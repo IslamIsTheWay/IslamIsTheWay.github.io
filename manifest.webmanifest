@@ -1,0 +1,39 @@
+{
+  "name": "Islam Is The Way — الإسلام هو الطريق",
+  "short_name": "Islam Is The Way",
+  "description": "Read the Quran with 16 reciters and Mushaf pages, Sahih al-Bukhari and Sahih Muslim, the Sunnah in daily life, the stories of the Prophet ﷺ, and a daily reading commitment — in Arabic and English.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#1e7e45",
+  "lang": "ar",
+  "dir": "auto",
+  "categories": ["education", "books", "lifestyle"],
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's reading — ورد اليوم",
+      "short_name": "ورد اليوم",
+      "url": "./quran.html#wird",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "The Quran — المصحف",
+      "short_name": "المصحف",
+      "url": "./quran.html",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ask about your situation — اسأل عن حالتك",
+      "short_name": "التوجيه",
+      "url": "./guidance.html",
+      "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

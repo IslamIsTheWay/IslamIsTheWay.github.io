@@ -1470,3 +1470,111 @@ document.addEventListener("DOMContentLoaded", () => {
     iitwUpdateHeaderState();
   }, { passive: true });
 });
+
+/* ============================================================
+   INSTALLING THE SITE AS AN APP (PWA)
+   ============================================================
+   Registers the service worker and offers an install button.
+
+   The worker is NETWORK-FIRST — see the long note at the top of sw.js. It
+   cannot cause the "reload and see no change" problem, because when the
+   network is available the network always wins. bump-version.sh keeps
+   working exactly as it did.
+
+   Registration is deferred to the `load` event so it never competes with the
+   page's own scripts for bandwidth on a phone.
+------------------------------------------------------------- */
+function iitwRegisterServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  // file:// has no service worker support and would throw.
+  if (location.protocol !== "https:" && location.hostname !== "localhost") return;
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").then(reg => {
+      /* When a new version is waiting, tell it to take over straight away.
+         Without this the reader would have to close every tab before an
+         update reached them — which is the cache trap wearing a hat. */
+      reg.addEventListener("updatefound", () => {
+        const sw = reg.installing;
+        if (!sw) return;
+        sw.addEventListener("statechange", () => {
+          if (sw.state === "installed" && navigator.serviceWorker.controller) {
+            sw.postMessage("iitw-skip-waiting");
+          }
+        });
+      });
+    }).catch(() => {/* offline support is a bonus; never break the page for it */});
+  });
+}
+
+/* The install button. Chrome and Edge fire `beforeinstallprompt`; iOS Safari
+   does not, and has no API for this at all — there the reader must use
+   Share → Add to Home Screen, so the button explains that instead. */
+function iitwInjectInstall() {
+  if (document.getElementById("iitwInstall")) return;
+
+  const isStandalone = window.matchMedia("(display-mode: standalone)").matches ||
+                       window.navigator.standalone === true;
+  if (isStandalone) return;                       // already installed
+  if (localStorage.getItem("iitw-install-dismissed") === "1") return;
+
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  let deferred = null;
+
+  const bar = document.createElement("div");
+  bar.id = "iitwInstall";
+  bar.className = "iitw-install";
+  bar.hidden = true;
+  bar.innerHTML =
+    '<div class="iitw-install-text">' +
+      '<strong><span class="en-only">Add this site to your phone</span>' +
+        '<span class="ar-only" dir="rtl">أضِف الموقع إلى هاتفك</span></strong>' +
+      '<span class="iitw-install-sub">' +
+        '<span class="en-only">Opens like an app, and the pages you have read stay available offline.</span>' +
+        '<span class="ar-only" dir="rtl">يفتح كالتطبيق، وما قرأته يبقى متاحًا بلا إنترنت.</span></span>' +
+    '</div>' +
+    '<div class="iitw-install-actions">' +
+      '<button type="button" class="btn btn-primary btn-small" id="iitwInstallGo">' +
+        '<span class="en-only">Install</span><span class="ar-only" dir="rtl">تثبيت</span></button>' +
+      '<button type="button" class="iitw-install-close" id="iitwInstallNo" aria-label="Dismiss">✕</button>' +
+    '</div>';
+
+  document.body.appendChild(bar);
+
+  document.getElementById("iitwInstallNo").addEventListener("click", () => {
+    localStorage.setItem("iitw-install-dismissed", "1");
+    bar.hidden = true;
+  });
+
+  document.getElementById("iitwInstallGo").addEventListener("click", async () => {
+    if (deferred) {
+      deferred.prompt();
+      await deferred.userChoice;
+      deferred = null;
+      bar.hidden = true;
+      return;
+    }
+    // iOS: no API exists, so say what to tap.
+    const t = document.querySelector("#iitwInstall .iitw-install-sub");
+    if (t) {
+      t.innerHTML = '<span class="en-only">On iPhone: tap the Share button, then <strong>Add to Home Screen</strong>.</span>' +
+        '<span class="ar-only" dir="rtl">على الآيفون: اضغط زر المشاركة، ثم <strong>إضافة إلى الشاشة الرئيسية</strong>.</span>';
+      if (window.applyI18n) window.applyI18n();
+    }
+  });
+
+  window.addEventListener("beforeinstallprompt", e => {
+    e.preventDefault();
+    deferred = e;
+    bar.hidden = false;
+    if (window.applyI18n) window.applyI18n();
+  });
+
+  if (isIOS) {
+    bar.hidden = false;
+    if (window.applyI18n) window.applyI18n();
+  }
+}
+
+iitwRegisterServiceWorker();
+document.addEventListener("DOMContentLoaded", iitwInjectInstall);
