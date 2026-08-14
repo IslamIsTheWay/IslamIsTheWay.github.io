@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608141218" />
+  <link rel="stylesheet" href="css/style.css?v=202608142133" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -157,6 +157,17 @@
     </div>
   </section>
 
+  <!-- ===== Adding to the religion — البدعة =====
+       Placed after the revival section on purpose: that one asks what went
+       wrong with the ummah, and this is one of the answers it keeps running
+       into. Rendered from js/bidah.js so the whole argument, both scholarly
+       positions and every grading live together in one file. -->
+  <section id="bidah">
+    <div class="container">
+      <div id="bidahBox"></div>
+    </div>
+  </section>
+
   <div class="photo-band" style="background-image:url('img/mosque-beach.jpg');">
     <div class="band-inner reveal">
       <div class="band-arabic">إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ</div>
@@ -258,35 +269,40 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608141218"></script>
+  <script src="js/data.js?v=202608142133"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608141218"></script>
+  <script src="js/sunnah.js?v=202608142133"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608141218"></script>
+  <script src="js/adhkar.js?v=202608142133"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608141218"></script>
+  <script src="js/scholars.js?v=202608142133"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608141218"></script>
+  <script src="js/scholars-books.js?v=202608142133"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608141218"></script>
+  <script src="js/revival.js?v=202608142133"></script>
+  <!-- Adding to the religion. Every hadith number in it was checked against
+       the text of al-Bukhari first; anything from Muslim is cited by book
+       and never by a number. Both scholarly positions on the Mawlid are in
+       the file, with names, and so is what is NOT meant by the word. -->
+  <script src="js/bidah.js?v=202608142133"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608141218"></script>
+  <script src="js/terms.js?v=202608142133"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608141218"></script>
+  <script src="js/figures.js?v=202608142133"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608141218"></script>
+  <script src="js/signs.js?v=202608142133"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -1434,6 +1450,119 @@
 
     renderRevival();
 
+    /* ================= Adding to the religion — البدعة =================
+       Same shape as the revival section above. Two things this renderer does
+       that revivalParas does not:
+
+       1. It converts **bold**, because every paragraph helper on this site
+          must — markers left unconverted showed as literal asterisks to
+          Arabic readers on four pages once already.
+       2. It keeps "•" lines as real list items. The plain paragraph helper
+          replaces single newlines with spaces, which would collapse the list
+          of things to do instead into one run-on line. */
+    function bidahParas(text, rtl) {
+      return String(text || "").split(/\n\s*\n/).map(block => {
+        const lines = block.split("\n");
+        if (lines.every(l => l.trim().startsWith("•"))) {
+          return `<ul class="bd-list"${rtl ? ' dir="rtl"' : ""}>` +
+            lines.map(l => `<li>${bold(l.replace(/^\s*•\s*/, ""))}</li>`).join("") + "</ul>";
+        }
+        return `<p>${bold(block.replace(/\n/g, " "))}</p>`;
+      }).join("");
+      function bold(s) { return s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+    }
+
+    /* The plain-language box. Same one the Judgement and Golden Age pages
+       use, so a reader meets one explanation style across the whole site. */
+    function bidahPlain(en, ar) {
+      if (!en && !ar) return "";
+      return `<div class="tad-plain">
+        <div class="tad-plain-label">💬 <span class="en-only">In plain words</span>
+          <span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
+        ${en ? `<div class="en-only">${bidahParas(en)}</div>` : ""}
+        ${ar ? `<div class="ar-only" dir="rtl">${bidahParas(ar, true)}</div>` : ""}
+      </div>`;
+    }
+
+    function bidahCard(c) {
+      return `<article class="rv-card" id="${c.id || ""}">
+        <h4 class="en-only">${c.title}</h4>
+        <h4 class="ar-only" dir="rtl">${c.titleAr}</h4>
+        <div class="en-only">${bidahParas(c.body)}</div>
+        <div class="rv-ar" dir="rtl">${bidahParas(c.bodyAr, true)}</div>
+        ${bidahPlain(c.plain, c.plainAr)}
+        ${c.ref ? `<div class="rv-ev-ref">${c.ref}</div>` : ""}
+        ${c.strength ? `<div class="tad-badge">${c.strength}</div>` : ""}
+      </article>`;
+    }
+
+    function renderBidah() {
+      const host = document.getElementById("bidahBox");
+      if (!host || typeof BIDAH === "undefined") return;
+      const b = BIDAH;
+
+      let html = `
+        <h2 class="section-title">🛑 ${b.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.titleAr}</span></h2>
+        <div class="rv-intro">
+          <div class="en-only">${bidahParas(b.intro)}</div>
+          <div class="rv-ar" dir="rtl">${bidahParas(b.introAr, true)}</div>
+        </div>
+
+        <h3 class="rv-head">📖 ${b.baseTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.baseTitleAr}</span></h3>
+        ${b.base.map(bidahCard).join("")}
+
+        <h3 class="rv-head">🕌 ${b.analogyTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.analogyTitleAr}</span></h3>
+        ${bidahCard(Object.assign({ id: "bd-analogy" }, b.analogy, { title: b.analogyTitle, titleAr: b.analogyTitleAr }))}
+
+        <h3 class="rv-head">🎂 ${b.caseTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.caseTitleAr}</span></h3>
+        <div class="rv-intro">
+          <div class="en-only">${bidahParas(b.caseIntro)}</div>
+          <div class="rv-ar" dir="rtl">${bidahParas(b.caseIntroAr, true)}</div>
+        </div>
+        ${b.points.map(bidahCard).join("")}
+
+        <h3 class="rv-head">⚖️ ${b.scholarsTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.scholarsTitleAr}</span></h3>
+        <div class="rv-evidence">
+          ${b.scholars.map(s => `<div class="rv-ev">
+            <div class="bd-who en-only"><strong>${s.who}</strong></div>
+            <div class="bd-who ar-only" dir="rtl"><strong>${s.whoAr}</strong></div>
+            <p class="en-only">${s.view}</p>
+            <p class="rv-ev-ar" dir="rtl">${s.viewAr}</p>
+          </div>`).join("")}
+        </div>
+        <div class="bd-weight">
+          <div class="en-only">${bidahParas(b.weight)}</div>
+          <div class="ar-only" dir="rtl">${bidahParas(b.weightAr, true)}</div>
+        </div>
+
+        <h3 class="rv-head">❓ ${b.objectionTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.objectionTitleAr}</span></h3>
+        ${bidahCard(Object.assign({ id: "bd-objection" }, b.objection, { title: b.objectionTitle, titleAr: b.objectionTitleAr }))}
+
+        <h3 class="rv-head">✅ ${b.notTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.notTitleAr}</span></h3>
+        <div class="rv-intro">
+          <div class="en-only">${bidahParas(b.notIntro)}</div>
+          <div class="rv-ar" dir="rtl">${bidahParas(b.notIntroAr, true)}</div>
+        </div>
+        ${b.notBidah.map(bidahCard).join("")}
+
+        <h3 class="rv-head">💚 ${b.insteadTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.insteadTitleAr}</span></h3>
+        <article class="rv-card bd-instead">
+          <div class="en-only">${bidahParas(b.instead)}</div>
+          <div class="rv-ar" dir="rtl">${bidahParas(b.insteadAr, true)}</div>
+          <div class="rv-ev-ref">${b.insteadRef}</div>
+        </article>
+
+        <div class="context-note" style="margin-top:22px;">
+          <span class="en-only">${b.notice}</span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">${b.noticeAr}</span>
+        </div>`;
+
+      host.innerHTML = html;
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    renderBidah();
+
     /* ================= The adhkar =================
        A tap counter per dhikr, kept in localStorage under today's date so it
        survives leaving the page but starts fresh tomorrow. Yesterday's keys
@@ -1629,7 +1758,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608141218"></script>
-  <script src="js/i18n.js?v=202608141218"></script>
+  <script src="js/main.js?v=202608142133"></script>
+  <script src="js/i18n.js?v=202608142133"></script>
 </body>
 </html>

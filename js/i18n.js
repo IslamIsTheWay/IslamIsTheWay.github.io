@@ -494,6 +494,23 @@ const AR_PARTS = [
   [/Book of Dress and Adornment/g, "كتاب اللباس والزينة"],
   [/Book of Dress \(Al-Libas\)/g, "كتاب اللباس"],
   [/Book of Food and Drink/g, "كتاب الأطعمة والأشربة"],
+  /* Books cited by the bid'ah section. Longest first, as always. */
+  [/Book of the Prayer at Night in Ramadan/g, "كتاب صلاة التراويح"],
+  [/Book of Judicial Decisions/g, "كتاب الأقضية"],
+  [/Book of Reconciliation/g, "كتاب الصلح"],
+
+  /* Scholars and works cited by the bid'ah section. These are proper nouns
+     inside citations, so without them an otherwise Arabic reference reads
+     "ابن حزم" for one name and "Ibn Hazm" for the next. */
+  [/\bIbn Hazm, Al-Ihkam\b/g, "ابن حزم، الإحكام"],
+  [/\bash-Shatibi, Al-I'tisam\b/g, "الشاطبي، الاعتصام"],
+  [/\bal-Maqrizi, Al-Khitat\b/g, "المقريزي، الخطط"],
+  [/\bAbu Shamah, Al-Ba'ith\b/g, "أبو شامة، الباعث"],
+  [/\bAbu Qatadah\b/g, "أبي قتادة"],
+  [/\bIbn Hazm\b/g, "ابن حزم"],
+  [/\bash-Shatibi\b/g, "الشاطبي"],
+  [/\bal-Maqrizi\b/g, "المقريزي"],
+  [/\bAbu Shamah\b/g, "أبو شامة"],
   [/\bTamim ad-Dari\b/g, "تميم الداري"],
 
   [/Book of Remembrance/g, "كتاب الذكر والدعاء"],
