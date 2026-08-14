@@ -89,6 +89,23 @@ see any of these:
 (document.body.innerText.match(/\*\*/g) || []).length   // literal bold markers
 ```
 
+## Adding hadith-backed content — the order that works
+
+Load `ara-bukhari.json` and `eng-bukhari.json` from the jsdelivr edition and
+**search them first**, then write the entry around a hadith whose text you
+have already read at that number. Bukhari's numbering there matches the
+standard numbering; **Muslim's is sequential and does not**, so never cite
+Muslim by a number taken from it.
+
+- **Check which hadith are already cited, not just how many entries a category
+  has.** Doing the second and not the first put five duplicate Sunnah
+  practices into the file in one batch, each repeating a hadith the site
+  already taught under another title. `./check-counts.sh` now warns on this.
+- **When comparing a quoted matn to the source, match from the MIDDLE.**
+  Starting at the beginning compares across the salutation, where the entry
+  writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
+  four false mismatches. Strip harakat and normalise to NFC first.
+
 ## Traps added 13 August 2026 — all three were found live
 
 - **A backtick inside an HTML comment that sits inside a template literal ends

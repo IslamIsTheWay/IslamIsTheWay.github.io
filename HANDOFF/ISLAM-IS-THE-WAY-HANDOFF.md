@@ -2208,6 +2208,81 @@ checked for literal `\n`, literal `**`, a missing label and an empty return:
 **zero problems across all 225**. No surah has zero verses. No mojibake, no
 duplicate AR keys, counts guard passing, no horizontal overflow at 375px.
 
+---
+
+## Third round, same day — more Sunnah, more stories, verified first
+
+He asked for more stories and more Sunnah, and said to make sure they were
+authenticated **first**.
+
+### The verification came before the writing
+`ara-bukhari.json` and `eng-bukhari.json` were loaded from the jsdelivr
+edition and **searched first**, and each entry was then written around a
+hadith whose text had already been read at that number. That is the opposite
+of the usual order and it is the order he asked for.
+
+Bukhari's numbering in that edition matches the standard numbering; Muslim's
+is sequential and does not — so nothing added in this round is cited to
+Muslim by a number.
+
+Verified: **39, 71, 444, 1239, 1315, 1442, 2390, 3001, 3289, 5033, 5376,
+5649, 5854.**
+
+Afterwards every one was re-checked mechanically: strip harakat, normalise to
+NFC, and match the quoted matn against the source text. **A first pass
+reported four mismatches and all four were false** — the comparison was
+starting at the salutation, where the entry writes ﷺ and the source spells
+out صلى الله عليه وسلم. Matching on an interior chunk cleared all four. Worth
+remembering: **compare from the middle of the matn, never from its start.**
+
+### Sunnah 166 → 177, stories 45 → 49
+The thin Sunnah categories were filled first — travel, death, dress, the
+Quran, the mosque, illness. Every entry carries `titleAr`, `detailAr`, `ref`,
+`strength` and `keys`; no grading uses the bare word "Hasan"; every new
+grading names the authenticating scholar.
+
+The four new stories: the man who demanded his debt rudely and was given a
+better camel than he asked for (2390 — *"the one who has a right has
+something to say"*, said while the man was being rude to him); the religion is
+ease and whoever strains against it is beaten by it (39); whoever Allah wants
+good for is given **understanding**, not merely knowledge (71); and the two
+angels who come down every ordinary morning, one asking replacement for the
+giver and ruin for the withholder (1442). The `knowledge` section had one
+story and now has two.
+
+### A mistake made and then fixed
+I checked how many entries each **category** held before writing, and never
+checked **which hadith were already cited**. Five of the sixteen practices I
+first added repeated a hadith the site already taught, under another title in
+another category: **879, 1923, 1957, 3088, 5376**. All five were removed.
+
+`check-counts.sh` now lists any Bukhari number cited by more than one Sunnah
+entry. It **warns rather than fails**, because two entries may legitimately
+draw different practices out of one long hadith — 1162 and 5641 are
+long-standing pairs of exactly that kind. Its first version had a bug worth
+knowing: `Sahih al-Bukhari[^"]*Hadith [0-9]+` ran on across
+`"…Hadith 12; Sahih Muslim, Hadith 39"` and reported Muslim's number as
+Bukhari's. The character class must exclude `;` and `S`.
+
+### Canonical URLs and social tags on every public page
+Only `index.html` had the full set. **Eight of the twelve public pages had no
+canonical URL at all** — which matters more here than on most sites, because
+this one appends a version stamp to its assets on every deploy and uses
+throwaway query strings when testing, so `?v=` and `?t=` variants genuinely
+exist in the wild for a crawler to treat as separate pages.
+
+Ten pages gained a canonical link and ten gained Open Graph and Twitter tags,
+all read from each page's own `<title>` and meta description so nothing is
+invented and nothing can drift.
+
+### Found, not fixed
+**Twenty pre-existing Sunnah entries carry a grading that names no scholar** —
+"Sahih — established in the collections", "Strong — graded Strong by the
+scholars of hadith". That is against the owner's own rule, which is that the
+authenticating scholar must always be named. Fixing them means verifying each
+one's actual source rather than rewording the label, so it is listed as open
+work instead of being guessed at.
+
 ## Open work as of 13 August 2026
 
 1. **The 377 English labels on the full-life sources.** The citations are now
@@ -2220,7 +2295,11 @@ duplicate AR keys, counts guard passing, no horizontal overflow at 375px.
 3. **Tadabbur depth.** 225 verses, at least one in every surah, and 46
    surahs still have exactly one. Al-Baqarah is 21 of 286. The standing
    instruction remains "more and more and more".
-4. **The citation audit has still only covered the Judgement page's files.**
+4. **Twenty Sunnah entries carry a grading that names no scholar** —
+   "Sahih — established in the collections" and the like. Against the
+   owner's own rule. Fixing them means verifying each source, not
+   rewording the label.
+5. **The citation audit has still only covered the Judgement page's files.**
    The other pages have not had that sweep.
 5. Everything still open from Part 8: the hijab photo, the hadith page Arabic
    titles, the courses page Arabic, Gmail sign-in, cross-device saved place,
