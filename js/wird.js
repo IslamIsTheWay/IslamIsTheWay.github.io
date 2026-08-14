@@ -145,3 +145,82 @@ function wirdSurahToOpen(page) {
   if (!list.length) return null;
   return list.reduce((a, b) => (b.pageFrom > a.pageFrom ? b : a));
 }
+
+/* ============================================================
+   THE MILESTONES — أيام مباركة
+   ============================================================
+   The owner asked for the Duolingo shape: a day count that grows, with
+   certain days marked as special — day 1, day 7, day 10, day 100, day 365 —
+   and the celebration getting bigger as the number does.
+
+   One thing is deliberately different from Duolingo, and it follows the rule
+   that governs the whole file: THE MILESTONE MESSAGE NEVER CONGRATULATES THE
+   STREAK BY ITSELF. Every one of them turns the number back into the thing it
+   is for. A counter that makes the number the achievement would undo the
+   reminder printed on the button above it.
+
+   `tier` drives how loud the card looks — 1 quiet, 4 the full gold treatment
+   at a complete year.
+   ============================================================ */
+const WIRD_MILESTONES = [
+  { days: 1,   tier: 1, icon: "🌱",
+    en: "The first day",                   ar: "اليوم الأول",
+    noteEn: "Every khatmah anyone has ever finished began exactly here.",
+    noteAr: "كلّ ختمةٍ تمّت لأحدٍ قطّ بدأت من هنا بعينه." },
+  { days: 3,   tier: 1, icon: "🌿",
+    en: "Three days",                      ar: "ثلاثة أيام",
+    noteEn: "The hardest part of any habit is the third day. You are past it.",
+    noteAr: "أشقّ ما في العادة يومها الثالث، وقد جاوزته." },
+  { days: 7,   tier: 2, icon: "⭐",
+    en: "A full week",                     ar: "أسبوع كامل",
+    noteEn: "Seven days without breaking. He ﷺ said the most beloved deeds are the most constant, even if they are little.",
+    noteAr: "سبعة أيامٍ بلا انقطاع. قال ﷺ إنّ أحبّ الأعمال أدومها وإن قلّ." },
+  { days: 10,  tier: 2, icon: "🌟",
+    en: "Ten days",                        ar: "عشرة أيام",
+    noteEn: "Ten days is long enough that it is no longer enthusiasm. It has become something you do.",
+    noteAr: "عشرة أيامٍ مدّةٌ يخرج بها الأمر عن الحماسة، فيصير شيئًا تفعله." },
+  { days: 30,  tier: 3, icon: "🌙",
+    en: "A whole month",                   ar: "شهر كامل",
+    noteEn: "A month. Whatever else changed in it, this did not.",
+    noteAr: "شهرٌ كامل. ومهما تغيّر فيه من شيء، فهذا لم يتغيّر." },
+  { days: 40,  tier: 3, icon: "🕌",
+    en: "Forty days",                      ar: "أربعون يومًا",
+    noteEn: "Forty. Long enough that missing it would now feel like losing something.",
+    noteAr: "أربعون. مدّةٌ صار تركُها يُشبه فقدَ شيء." },
+  { days: 100, tier: 4, icon: "🏅",
+    en: "One hundred days",                ar: "مئة يوم",
+    noteEn: "A hundred days. Most people never keep anything this long — and the point was never the hundred.",
+    noteAr: "مئة يوم. وأكثر الناس لا يداوم على شيءٍ هذه المدّة — ولم تكن المئة هي المقصود قطّ." },
+  { days: 200, tier: 4, icon: "💎",
+    en: "Two hundred days",                ar: "مئتا يوم",
+    noteEn: "Two hundred. By now the Book has been part of more of your days than not.",
+    noteAr: "مئتان. وقد صار الكتاب في أكثر أيامك لا في أقلّها." },
+  { days: 365, tier: 4, icon: "👑",
+    en: "A complete year",                 ar: "سنة كاملة",
+    noteEn: "A year without breaking. Ask Allah to accept it, and to let it not be the last one.",
+    noteAr: "سنةٌ بلا انقطاع. فاسأل الله أن يتقبّلها، وألّا تكون آخرها." }
+];
+
+/* The milestone reached exactly today, if any — for the celebration. */
+function wirdMilestoneFor(streak) {
+  return WIRD_MILESTONES.filter(m => m.days === streak)[0] || null;
+}
+
+/* The next one to aim at, with how far there is to go. */
+function wirdNextMilestone(streak) {
+  const next = WIRD_MILESTONES.filter(m => m.days > streak)[0];
+  if (!next) return null;
+  const prev = WIRD_MILESTONES.filter(m => m.days <= streak).pop();
+  const from = prev ? prev.days : 0;
+  const span = next.days - from;
+  return {
+    m: next,
+    left: next.days - streak,
+    pct: span > 0 ? Math.round(((streak - from) / span) * 100) : 0
+  };
+}
+
+/* Every milestone already passed — the row of badges. */
+function wirdEarned(streak) {
+  return WIRD_MILESTONES.filter(m => m.days <= streak);
+}

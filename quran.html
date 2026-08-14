@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142229" />
+  <link rel="stylesheet" href="css/style.css?v=202608142252" />
   <link rel="canonical" href="https://islamistheway.github.io/quran.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -84,6 +84,10 @@
   <section id="wird">
     <div class="container">
       <div id="wirdBox"></div>
+      <!-- Offline status and the one-tap download of the whole Quran.
+           Hidden entirely when the browser has no service worker, so it never
+           promises something it cannot do. -->
+      <div id="offlineBox" class="offline-box" hidden></div>
     </div>
   </section>
 
@@ -161,22 +165,22 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608142229"></script>
+  <script src="js/data.js?v=202608142252"></script>
   <!-- Reader accounts: the username, the password, and the saved verse. -->
-  <script src="js/account.js?v=202608142229"></script>
+  <script src="js/account.js?v=202608142252"></script>
   <!-- Tadabbur data. MUST load before quran.js, which calls
        iitwTadabburFor() while building the surah reader. -->
   <!-- The main idea of each surah. Loads before quran.js, which shows it
        at the top of the Tadabbur panel on every surah that has one. -->
-  <script src="js/concepts.js?v=202608142229"></script>
-  <script src="js/tadabbur.js?v=202608142229"></script>
-  <script src="js/quran.js?v=202608142229"></script>
+  <script src="js/concepts.js?v=202608142252"></script>
+  <script src="js/tadabbur.js?v=202608142252"></script>
+  <script src="js/quran.js?v=202608142252"></script>
   <!-- The daily commitment. Loaded AFTER quran.js because it calls openSurah()
        to hand the reader today's page, and after data.js because it maps a
        Mushaf page to a surah through SURAHS. -->
-  <script src="js/wird.js?v=202608142229"></script>
-  <script src="js/main.js?v=202608142229"></script>
-  <script src="js/i18n.js?v=202608142229"></script>
+  <script src="js/wird.js?v=202608142252"></script>
+  <script src="js/main.js?v=202608142252"></script>
+  <script src="js/i18n.js?v=202608142252"></script>
   <script>
     /* ================= الوِرْد اليومي — the daily reading =================
        Two states only, because a third would be a settings screen and this
@@ -186,6 +190,21 @@
     ------------------------------------------------------------------- */
     function wirdArNum(n) {
       return String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[+d]);
+    }
+
+    /* Arabic counts nouns by a rule English does not have, and getting it
+       wrong is immediately visible to a native reader:
+         1        يوم        · 2        يومان
+         3 to 10  أيام       · 11 to 99 يومًا  (singular, accusative)
+         100+     يوم
+       "١٨ أيام" was wrong on the card before this; it is "١٨ يومًا". */
+    function wirdArDays(n) {
+      if (n === 1) return "يوم";
+      if (n === 2) return "يومان";
+      const mod100 = n % 100;
+      if (mod100 >= 3 && mod100 <= 10) return "أيام";
+      if (mod100 === 0 || mod100 === 1 || mod100 === 2) return "يوم";
+      return "يومًا";
     }
 
     function wirdPagesLabel(pages) {
@@ -204,6 +223,59 @@
         if (names.indexOf(s.name) === -1) { names.push(s.name); namesAr.push(s.arabic); }
       }));
       return { en: names.join(", "), ar: namesAr.join("، ") };
+    }
+
+    /* ---------- The streak, and the days that are marked ----------
+       The Duolingo shape he asked for: the number grows, certain days are
+       special, and the celebration gets louder as it climbs (tier 1 to 4).
+
+       One rule kept from the card above it — no milestone congratulates the
+       NUMBER on its own. Each one turns it back into the thing it is for. A
+       counter that made the streak the achievement would undo the reminder
+       printed on the button. */
+    function wirdStreakHtml(streak) {
+      if (!streak) return "";
+      const hit = wirdMilestoneFor(streak);       // reached exactly today
+      const next = wirdNextMilestone(streak);
+      const earned = wirdEarned(streak);
+
+      let html = `<div class="wird-streak-box${hit ? " is-milestone tier-" + hit.tier : ""}">`;
+
+      /* The day count. It is the number he asked to see grow. */
+      html += `<div class="wird-count">
+          <span class="wird-count-n en-only">${streak}</span>
+          <span class="wird-count-n ar-only" dir="rtl">${wirdArNum(streak)}</span>
+          <span class="wird-count-l en-only">day${streak === 1 ? "" : "s"} without breaking</span>
+          <span class="wird-count-l ar-only" dir="rtl">${wirdArDays(streak)} بلا انقطاع</span>
+        </div>`;
+
+      // Reached a marked day today — the celebration.
+      if (hit) {
+        html += `<div class="wird-milestone">
+            <div class="wird-ms-ico">${hit.icon}</div>
+            <div class="wird-ms-t en-only">${hit.en}</div>
+            <div class="wird-ms-t ar-only" dir="rtl">${hit.ar}</div>
+            <div class="wird-ms-n en-only">${hit.noteEn}</div>
+            <div class="wird-ms-n ar-only" dir="rtl">${hit.noteAr}</div>
+          </div>`;
+      } else if (next) {
+        html += `<div class="wird-next">
+            <div class="wird-next-bar"><span style="width:${next.pct}%"></span></div>
+            <div class="wird-next-t">
+              <span class="en-only">${next.left} more day${next.left === 1 ? "" : "s"} to ${next.m.icon} ${next.m.en.toLowerCase()}</span>
+              <span class="ar-only" dir="rtl">${wirdArNum(next.left)} ${wirdArDays(next.left)} إلى ${next.m.icon} ${next.m.ar}</span>
+            </div>
+          </div>`;
+      }
+
+      // The days already passed.
+      if (earned.length) {
+        html += `<div class="wird-badges">` +
+          earned.map(m => `<span class="wird-badge-i tier-${m.tier}"
+            title="${m.en} — ${m.ar}">${m.icon}</span>`).join("") + `</div>`;
+      }
+
+      return html + `</div>`;
     }
 
     function renderWird() {
@@ -277,7 +349,7 @@
             <span class="wird-badge">📖 <span class="en-only">Today's reading</span><span class="ar-only" dir="rtl">ورد اليوم</span></span>
             ${streak > 0 ? `<span class="wird-streak" title="Days in a row — أيام متتابعة">
               <span class="en-only">${streak} day${streak === 1 ? "" : "s"} in a row</span>
-              <span class="ar-only" dir="rtl">${wirdArNum(streak)} ${streak === 1 ? "يوم" : "يومًا"} متتابعة</span></span>` : ""}
+              <span class="ar-only" dir="rtl">${wirdArNum(streak)} ${wirdArDays(streak)} متتابعة</span></span>` : ""}
           </div>
 
           <div class="wird-assign">
@@ -315,6 +387,8 @@
             </div>
           </div>
 
+          ${wirdStreakHtml(streak)}
+
           <button type="button" class="wird-change" id="wirdChange">
             <span class="en-only">Change or stop this commitment</span>
             <span class="ar-only" dir="rtl">غيّر الالتزام أو أوقفه</span>
@@ -343,6 +417,105 @@
     }
 
     renderWird();
+
+    /* ================= WORKING WITHOUT A CONNECTION =================
+       The owner's complaint was exact: "why should I be connected to the
+       Internet to be able to open the Quran? If it's like this, I can just
+       get the book itself."
+
+       The pages and all the written content of this site are precached by
+       the service worker on install. The QURAN TEXT is not on this site at
+       all — it comes from api.alquran.cloud — so it has to be fetched once
+       before it can be read offline. The worker caches every surah that is
+       opened; this panel lets the reader take all 114 in one go instead of
+       having to open each of them first.
+
+       The audio is deliberately excluded and the panel says so. everyayah
+       serves hundreds of megabytes and silently filling a phone with it
+       would be a worse failure than the one being fixed.
+    ------------------------------------------------------------------- */
+    const QURAN_CACHE_NAME = "iitw-quran-v1";
+
+    async function offlineSurahsSaved() {
+      if (!("caches" in window)) return 0;
+      try {
+        const c = await caches.open(QURAN_CACHE_NAME);
+        const keys = await c.keys();
+        // two editions per surah (uthmani + en.sahih); count whole surahs
+        const nums = new Set();
+        keys.forEach(k => {
+          const m = k.url.match(/\/surah\/(\d+)\//);
+          if (m) nums.add(m[1]);
+        });
+        return nums.size;
+      } catch (e) { return 0; }
+    }
+
+    async function renderOffline() {
+      const box = document.getElementById("offlineBox");
+      if (!box) return;
+      if (!("serviceWorker" in navigator) || !("caches" in window)) return;
+      box.hidden = false;
+
+      const saved = await offlineSurahsSaved();
+      const total = (typeof SURAHS !== "undefined") ? SURAHS.length : 114;
+      const all = saved >= total;
+
+      box.innerHTML = `
+        <div class="offline-row">
+          <span class="offline-ico">${all ? "✅" : "📥"}</span>
+          <div class="offline-text">
+            <strong class="en-only">${all ? "The whole Quran is saved on this device" : "Reading without a connection"}</strong>
+            <strong class="ar-only" dir="rtl">${all ? "المصحف كامل محفوظ على هذا الجهاز" : "القراءة بلا إنترنت"}</strong>
+            <span class="offline-sub en-only">Every page of this site already works offline. Of the Quran text, <strong>${saved} of ${total}</strong> surahs are saved.</span>
+            <span class="offline-sub ar-only" dir="rtl">كل صفحات الموقع تعمل بلا إنترنت. ومن نصّ القرآن، <strong>${toArabicDigits(saved)} من ${toArabicDigits(total)}</strong> سورة محفوظة.</span>
+          </div>
+          ${all ? "" : `<button type="button" class="btn btn-primary btn-small" id="offlineGo">
+            <span class="en-only">Save all of it</span><span class="ar-only" dir="rtl">احفظ المصحف كاملًا</span></button>`}
+        </div>
+        <div class="offline-bar" id="offlineBar" hidden><span></span></div>
+        <div class="offline-note en-only">The recitation audio is not saved — it is very large, and listening needs a connection.</div>
+        <div class="offline-note ar-only" dir="rtl">التلاوة الصوتية غير محفوظة — حجمها كبير جدًا، والاستماع يحتاج اتصالًا.</div>`;
+
+      const go = document.getElementById("offlineGo");
+      if (!go) return;
+
+      go.addEventListener("click", async () => {
+        const bar = document.getElementById("offlineBar");
+        const fill = bar.querySelector("span");
+        bar.hidden = false;
+        go.disabled = true;
+
+        let done = 0;
+        const list = SURAHS.map(s => s.n);
+        /* Four at a time. All 114 at once floods a phone connection and the
+           browser starts cancelling requests; one at a time takes minutes. */
+        const queue = list.slice();
+        async function worker() {
+          while (queue.length) {
+            const n = queue.shift();
+            try {
+              await Promise.all([
+                fetch(`https://api.alquran.cloud/v1/surah/${n}/quran-uthmani`),
+                fetch(`https://api.alquran.cloud/v1/surah/${n}/en.sahih`)
+              ]);
+            } catch (e) {/* a failed surah is retried next time the button is used */}
+            done++;
+            fill.style.width = Math.round((done / list.length) * 100) + "%";
+            go.innerHTML =
+              `<span class="en-only">Saving ${done} of ${list.length}…</span>` +
+              `<span class="ar-only" dir="rtl">يُحفظ ${toArabicDigits(done)} من ${toArabicDigits(list.length)}…</span>`;
+            if (window.applyI18n) window.applyI18n();
+          }
+        }
+        await Promise.all([worker(), worker(), worker(), worker()]);
+        renderOffline();
+      });
+
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    renderOffline();
   </script>
 </body>
 </html>

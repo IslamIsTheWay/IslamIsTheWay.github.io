@@ -1490,7 +1490,22 @@ function iitwRegisterServiceWorker() {
   if (location.protocol !== "https:" && location.hostname !== "localhost") return;
 
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").then(reg => {
+    /* `updateViaCache: "none"` is not optional here.
+
+       The browser caches sw.js ITSELF through the normal HTTP cache. Without
+       this, a new worker can sit undelivered: registering "sw.js" returns the
+       byte-identical old copy from cache, the browser sees no change, and the
+       new version never installs. That is exactly what happened while
+       building this — a rewritten worker reported itself active while the
+       OLD six-file one was actually running, and the cache stayed nearly
+       empty. It is the same class of problem as the asset cache trap, one
+       level further down, and bump-version.sh cannot reach it.
+
+       "none" tells the browser to always go to the network for the worker
+       script and its imports. */
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then(reg => {
+      // Ask the browser to check for a new worker on every page load.
+      try { reg.update(); } catch (e) {}
       /* When a new version is waiting, tell it to take over straight away.
          Without this the reader would have to close every tab before an
          update reached them — which is the cache trap wearing a hat. */
@@ -1634,3 +1649,47 @@ function iitwInjectInstall() {
 
 iitwRegisterServiceWorker();
 document.addEventListener("DOMContentLoaded", iitwInjectInstall);
+
+/* ---------- Making the site usable with no connection ----------
+   The owner's complaint was that the Quran section did not work offline, and
+   that nothing else did either. Two causes, and this handles the first:
+
+   A SERVICE WORKER'S INSTALL IS KILLED IF IT TAKES TOO LONG. Pulling all
+   3.5MB of pages and content inside install left eleven files cached and the
+   worker reporting itself installed — a reader would have gone offline
+   believing the site was saved. So the worker takes only the shell, and the
+   rest is fetched HERE, from the page, where nothing terminates the work half
+   done. Each fetch lands in the same cache through the worker's fetch handler.
+
+   It runs quietly: after load, once, at most one file at a time, and only on
+   a connection that is not metered or slow. Nothing about it blocks the page.
+------------------------------------------------------------- */
+function iitwWarmOfflineCache() {
+  if (!("serviceWorker" in navigator) || !("caches" in window)) return;
+  if (sessionStorage.getItem("iitw-warmed") === "1") return;
+
+  /* Respect the reader's data. If the browser tells us the connection is
+     metered or slow, this waits for a better one rather than spending
+     someone's mobile allowance without asking. */
+  const c = navigator.connection;
+  if (c && (c.saveData || /2g/.test(c.effectiveType || ""))) return;
+
+  navigator.serviceWorker.ready.then(reg => {
+    const sw = reg.active;
+    if (!sw) return;
+    const ch = new MessageChannel();
+    ch.port1.onmessage = async ev => {
+      const list = ev.data;
+      if (!Array.isArray(list)) return;
+      sessionStorage.setItem("iitw-warmed", "1");
+      // One at a time, so this never competes with what the reader is doing.
+      for (const url of list) {
+        try { await fetch(url, { cache: "no-store" }); } catch (e) {}
+      }
+    };
+    sw.postMessage("iitw-content-list", [ch.port2]);
+  }).catch(() => {});
+}
+
+/* Deliberately late: the reader's own page finishes loading first. */
+window.addEventListener("load", () => setTimeout(iitwWarmOfflineCache, 2500));

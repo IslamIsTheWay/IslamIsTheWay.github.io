@@ -5647,3 +5647,129 @@ html.lang-ar .iitw-ios-steps li { font-family: 'Amiri', serif; font-size: 1rem; 
   margin-inline: 2px;
   color: #007aff;              /* the blue iOS uses for it, so it is recognisable */
 }
+
+/* ---- Offline status on the Quran page ----
+   Quiet by design: it is a status line, not a feature to be sold. It only
+   becomes prominent (the download button) when there is something the reader
+   can usefully do. */
+.offline-box {
+  max-width: 760px;
+  margin: 14px auto 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.offline-row { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
+.offline-ico { font-size: 1.3rem; line-height: 1; }
+.offline-text { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 3px; }
+.offline-text strong { color: var(--green-dark); font-size: .97rem; }
+.offline-sub { font-size: .84rem; color: var(--text-muted); line-height: 1.55; }
+html.lang-ar .offline-text strong { font-family: 'Amiri', serif; font-size: 1.1rem; }
+html.lang-ar .offline-sub { font-family: 'Amiri', serif; font-size: .97rem; }
+
+.offline-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--green-light);
+  overflow: hidden;
+  margin-top: 12px;
+}
+.offline-bar[hidden] { display: none; }
+.offline-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  transition: width .3s ease;
+}
+html.lang-ar .offline-bar span { float: right; }
+.offline-note { font-size: .8rem; color: var(--text-muted); margin-top: 10px; }
+html.lang-ar .offline-note { font-family: 'Amiri', serif; font-size: .93rem; }
+
+@media (prefers-reduced-motion: reduce) { .offline-bar span { transition: none; } }
+
+/* ---- The streak and its marked days ----
+   Sits UNDER the reading itself and under the progress bar, deliberately.
+   The number should be encouraging, not the first thing the eye lands on —
+   the reminder on the button says why. */
+.wird-streak-box {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  text-align: center;
+}
+.wird-count { display: flex; align-items: baseline; justify-content: center; gap: 8px; }
+.wird-count-n {
+  font-family: 'Amiri', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--green);
+}
+.wird-count-l { font-size: .9rem; color: var(--text-muted); }
+html.lang-ar .wird-count-l { font-family: 'Amiri', serif; font-size: 1.05rem; }
+
+/* Progress toward the next marked day */
+.wird-next { margin-top: 12px; }
+.wird-next-bar {
+  height: 5px; border-radius: 999px; background: var(--green-light);
+  overflow: hidden; max-width: 320px; margin-inline: auto;
+}
+.wird-next-bar span {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  transition: width .5s cubic-bezier(.2,.7,.3,1);
+}
+html.lang-ar .wird-next-bar span { float: right; }
+.wird-next-t { font-size: .82rem; color: var(--text-muted); margin-top: 7px; }
+html.lang-ar .wird-next-t { font-family: 'Amiri', serif; font-size: .95rem; }
+
+/* A marked day reached TODAY. The tiers are the "more exciting as it grows"
+   the owner asked for: quiet green at first, full gold at a complete year. */
+.wird-milestone {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--green-light);
+  border: 1px solid var(--border);
+}
+.wird-ms-ico { font-size: 2.1rem; line-height: 1; margin-bottom: 6px; }
+.wird-ms-t { font-weight: 800; color: var(--green-dark); font-size: 1.12rem; }
+html.lang-ar .wird-ms-t { font-family: 'Amiri', serif; font-size: 1.3rem; }
+.wird-ms-n { font-size: .9rem; color: var(--text-muted); line-height: 1.75; margin-top: 6px; }
+html.lang-ar .wird-ms-n { font-family: 'Amiri', serif; font-size: 1.05rem; line-height: 2; }
+
+.wird-streak-box.tier-2 .wird-milestone { background: #f2f9f4; border-color: #cfe6d8; }
+.wird-streak-box.tier-3 .wird-milestone {
+  background: linear-gradient(135deg, #f7f3e3, #f2f9f4);
+  border-color: #e6d8a8;
+}
+.wird-streak-box.tier-4 .wird-milestone {
+  background: linear-gradient(135deg, #fdf6e0, #f7f0d8);
+  border-color: var(--gold);
+  box-shadow: 0 6px 22px rgba(201,162,39,.22);
+}
+.wird-streak-box.tier-4 .wird-ms-ico { font-size: 2.7rem; }
+.wird-streak-box.tier-4 .wird-ms-t { color: #8a6d10; font-size: 1.3rem; }
+html.lang-ar .wird-streak-box.tier-4 .wird-ms-t { font-size: 1.5rem; }
+
+/* The row of days already passed */
+.wird-badges {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  justify-content: center; margin-top: 14px;
+}
+.wird-badge-i {
+  width: 34px; height: 34px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  font-size: 1.05rem;
+  cursor: default;
+}
+.wird-badge-i.tier-3 { border-color: #e6d8a8; }
+.wird-badge-i.tier-4 { border-color: var(--gold); box-shadow: 0 2px 8px rgba(201,162,39,.25); }
+
+@media (prefers-reduced-motion: reduce) { .wird-next-bar span { transition: none; } }
