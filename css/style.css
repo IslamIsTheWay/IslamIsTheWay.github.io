@@ -5220,3 +5220,148 @@ html.lang-ar .bd-who { font-family: 'Amiri', serif; font-size: 1.06rem; }
 /* What to do instead — gold edge, because it is the one card on the section
    that asks for an action rather than settling a question. */
 .bd-instead { border-inline-start: 5px solid var(--gold); }
+
+/* ============================================================
+   PROFESSIONAL PASS — August 2026
+   ============================================================
+   A design-system pass rather than a coat of paint. Four things
+   separate a site that looks built from one that looks assembled,
+   and all four are handled here:
+
+     1. one spacing rhythm instead of ad-hoc margins
+     2. headings that are tight and dark enough to lead the eye
+     3. buttons and cards with real pressed/hover/focus states
+     4. a header that reacts to being scrolled
+
+   CONSTRAINTS THIS PASS MUST NOT BREAK, all of them learned the
+   hard way and written up in the handoff:
+     · the mosque photographs stay clearly visible — no scrim on
+       this page is darkened by anything below
+     · the nav breakpoint stays at 1480px and .nav-wrap keeps its
+       1560px cap; nothing here touches either
+     · logical properties only, so RTL needs no separate rules
+     · nothing here sets `display` on a container that holds an
+       .en-only / .ar-only pair
+   ============================================================ */
+
+:root {
+  /* One spacing scale. Sections used a mix of 60/70/80px and <br> tags. */
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 20px;
+  --space-4: 32px;
+  --space-5: 52px;
+  --space-6: 80px;
+
+  /* Shadows in one family, so depth reads as one system. The previous set
+     mixed three different alpha ramps. */
+  --shadow-sm: 0 1px 2px rgba(20,83,45,.06), 0 2px 8px rgba(20,83,45,.05);
+  --shadow-md: 0 2px 4px rgba(20,83,45,.05), 0 8px 24px rgba(20,83,45,.08);
+  --shadow-xl: 0 8px 16px rgba(20,83,45,.06), 0 24px 56px rgba(20,83,45,.12);
+
+  --ring: 0 0 0 3px rgba(201,162,39,.45);
+}
+
+/* ---- Typography ----
+   Headings were set at default tracking and leading, which at Amiri's
+   proportions reads loose and slightly unresolved. Tightening the tracking
+   and the leading is most of what makes a heading look typeset. */
+h1, h2, h3, h4 {
+  letter-spacing: -0.011em;
+  line-height: 1.22;
+  text-wrap: balance;          /* no orphan word on its own last line */
+}
+.section-title { letter-spacing: -0.015em; }
+.section-sub {
+  max-width: 62ch;
+  margin-inline: auto;
+  text-wrap: pretty;
+}
+/* Arabic must NOT get the negative tracking — the script joins, and negative
+   letter-spacing breaks the joins apart. This is why it is scoped. */
+html.lang-ar h1, html.lang-ar h2,
+html.lang-ar h3, html.lang-ar h4,
+html.lang-ar .section-title { letter-spacing: 0; line-height: 1.5; }
+
+/* ---- Buttons ----
+   They had a hover but no pressed state, so a tap on a phone gave no
+   feedback at all until the next page painted. */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1.2;
+  will-change: transform;
+}
+.btn:active { transform: translateY(1px) scale(.995); }
+.btn:focus-visible { outline: none; box-shadow: var(--ring); }
+.btn-primary:hover { box-shadow: 0 8px 22px rgba(30,126,69,.32); }
+
+/* ---- Cards ----
+   A single elevation ramp, and a border that firms up on hover rather than
+   the card jumping. */
+.card, .person-card, .surah-card, .hadith-card, .sunnah-card, .gold-card {
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .28s cubic-bezier(.2,.7,.3,1),
+              transform .28s cubic-bezier(.2,.7,.3,1),
+              border-color .28s ease;
+}
+.card:hover, .person-card:hover, .surah-card:hover,
+.hadith-card:hover, .sunnah-card:hover, .gold-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ---- The header reacts to being scrolled ----
+   `.is-scrolled` is added by main.js. At the top the bar is nearly
+   transparent so the hero photograph runs behind it; once the page moves it
+   becomes opaque and gains a shadow, which is what makes a site feel like an
+   application rather than a document. */
+header.site-header {
+  transition: background-color .3s ease, box-shadow .3s ease,
+              border-color .3s ease;
+}
+header.site-header.is-scrolled {
+  background: rgba(255,255,255,0.97);
+  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--border);
+}
+header.site-header.is-scrolled .nav-wrap { padding-block: 9px; }
+.nav-wrap { transition: padding .3s ease; }
+
+/* ---- Nav links get a proper underline indicator ---- */
+nav.main-nav a {
+  position: relative;
+  border-radius: 6px;
+}
+nav.main-nav a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 10px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .25s cubic-bezier(.2,.7,.3,1);
+}
+nav.main-nav a:hover::after,
+nav.main-nav a.active::after { transform: scaleX(1); }
+nav.main-nav a:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* ---- Selection and scrollbar ----
+   Small, and the kind of thing that is only noticed when it is missing. */
+::selection { background: rgba(30,126,69,.18); }
+@supports (scrollbar-color: auto) {
+  html { scrollbar-color: rgba(30,126,69,.35) transparent; }
+}
+
+/* ---- Respect reduced motion across everything added above ---- */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .card, .person-card, .surah-card, .hadith-card,
+  .sunnah-card, .gold-card, header.site-header,
+  .nav-wrap, nav.main-nav a::after { transition: none; }
+  .btn:active { transform: none; }
+}

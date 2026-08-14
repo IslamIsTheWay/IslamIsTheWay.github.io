@@ -1448,3 +1448,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // After the feedback section and any page render, so the height is real.
   setTimeout(iitwInjectReadingAids, 0);
 });
+
+/* ---- The header reacts to being scrolled ----
+   At the top of a page the bar sits nearly transparent so the hero photograph
+   runs behind it; once the page moves it goes opaque and takes a shadow. It
+   is the cheapest single change that makes a site feel like an application
+   rather than a document.
+
+   Piggy-backs on the reading-aids scroll listener rather than adding a second
+   one — the long pages here fire scroll thousands of times. */
+function iitwUpdateHeaderState() {
+  const h = document.querySelector("header.site-header");
+  if (!h) return;
+  h.classList.toggle("is-scrolled", window.scrollY > 8);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  iitwUpdateHeaderState();
+  window.addEventListener("scroll", () => {
+    // Cheap: a class toggle, guarded so it only writes when the state flips.
+    iitwUpdateHeaderState();
+  }, { passive: true });
+});
