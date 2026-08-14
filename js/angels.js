@@ -108,6 +108,8 @@ const ANGELS = [
     ],
     ref: "Surah Al-Baqarah (2:97); Sahih al-Bukhari 3232, 3234, 50, 6, 3231; Sahih Muslim, Book of Faith",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "Everything the two Sahihs actually say about Jibril, gathered in one place — so you can see what is established and what is only famous.",
+    plainAr: "كلّ ما ثبت في الصحيحين عن جبريل مجموعًا في موضعٍ واحد، لترى ما هو ثابتٌ وما هو مشهورٌ فحسب.",
     keys: ["jibril", "gabriel", "revelation", "wings", "dihyah", "hadith jibril", "ramadan",
            "جبريل", "الوحي", "ستمائة جناح", "دحية", "حديث جبريل", "معارضة القرآن"]
   },
@@ -167,6 +169,8 @@ const ANGELS = [
     ],
     ref: "Surah Az-Zukhruf (43:77); Sahih al-Bukhari, Hadith 3239; Sahih Muslim, Book of Faith",
     strength: "Quran; and Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "The angel in charge of the Fire has a name, and it is in the Quran. The people inside call out to him and he answers them once.",
+    plainAr: "خازن النار له اسمٌ في القرآن. وأهلها يُنادونه فيجيبهم مرّةً واحدة.",
     keys: ["malik", "keeper of fire", "hell", "zabaniyah", "nineteen",
            "مالك", "خازن النار", "الزبانية", "تسعة عشر", "النار"]
   },
@@ -226,6 +230,8 @@ const ANGELS = [
     ],
     ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3231; and Sahih Muslim, Book of Jihad",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "At the worst moment of his life he was offered the destruction of the town that had just stoned him. He said no, and hoped for their children instead.",
+    plainAr: "في أشدّ ساعات حياته عُرض عليه إهلاك القرية التي رجمته، فأبى، ورجا أن يخرج من أصلابهم من يوحّد الله.",
     keys: ["angel of mountains", "taif", "akhshabayn", "mercy", "rejected",
            "ملك الجبال", "الطائف", "الأخشبين", "قرن الثعالب"]
   },
@@ -255,6 +261,8 @@ const ANGELS = [
     ],
     ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3208; and Sahih Muslim, Book of Destiny",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "Before you were born an angel was told four things about you and wrote them down. One of them was whether you would be happy or wretched.",
+    plainAr: "قبل أن تُولد أُمر ملَكٌ بأربع كلماتٍ فيك فكتبهنّ، إحداهنّ: أشقيٌّ أم سعيد.",
     keys: ["womb", "pregnancy", "creation", "forty days", "soul", "destiny", "qadar", "written",
            "ملك الرحم", "خلق الجنين", "أربعين يوما", "نفخ الروح", "القدر", "الكتابة"]
   },
@@ -272,6 +280,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Adhan, Hadith 780 — Sahih, agreed upon",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "When you say ameen behind the imam, angels are saying it at the same instant. Whoever's ameen lands together with theirs is forgiven what came before.",
+    plainAr: "إذا أمّنتَ خلف الإمام أمّنت الملائكة في اللحظة نفسها، فمن وافق تأمينُه تأمينَهم غُفر له ما تقدّم.",
     keys: ["ameen", "amin", "imam", "fatihah", "prayer", "forgiven",
            "التأمين", "آمين", "الإمام", "الفاتحة", "المغفرة"]
   },
@@ -289,6 +299,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3239 — Sahih",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "The Dajjal will reach every town on earth except two. Angels stand at the roads into Madinah, and he is turned back.",
+    plainAr: "يبلغ الدجّال كلَّ بلدةٍ إلا اثنتين، وعلى أنقاب المدينة ملائكةٌ تصدّه فيُرَدّ.",
     keys: ["madinah", "dajjal", "guard", "protection",
            "المدينة", "الدجال", "الحراسة", "أنقاب المدينة"]
   },
@@ -306,6 +318,8 @@ const ANGELS = [
     points: [],
     ref: "Surah Ar-Ra'd (13:23-24)",
     strength: "Quran",
+    plain: "The first thing said to the people of Paradise, by angels coming in through every gate, is: peace be upon you for what you endured.",
+    plainAr: "أوّل ما يُقال لأهل الجنة، تدخل عليهم الملائكة من كلّ باب: ﴿سَلَٰمٌ عَلَيْكُم بِمَا صَبَرْتُمْ﴾.",
     keys: ["paradise", "greeting", "patience", "salam", "gates",
            "الجنة", "سلام عليكم بما صبرتم", "الصبر", "الأبواب"]
   },
@@ -342,6 +356,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Prayer, Hadith 349 — narrated by Abu Dharr رضي الله عنه",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "Jibril did not send him on the night journey and wait. He came for him and went the whole way with him.",
+    plainAr: "لم يُرسله جبريل ليلة الإسراء ثم ينتظر، وإنما جاءه وصحبه الطريق كلّه.",
     keys: ["jibril", "miraj", "isra", "night journey", "chest", "zamzam",
            "جبريل", "المعراج", "الإسراء", "شق الصدر", "زمزم"]
   },
@@ -359,6 +375,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Prayer, Hadith 349; and Hadith 3207",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "At each of the seven heavens the same exchange happened at the gate: who is it, who is with you, has he been sent for — and only then was it opened.",
+    plainAr: "عند كلّ سماءٍ من السبع تكرّر السؤال نفسه على الباب: من هذا؟ ومن معك؟ أوقد أُرسل إليه؟ ثم يُفتح.",
     keys: ["gatekeeper", "keeper of heaven", "seven heavens", "gate",
            "خازن السماء", "أبواب السماء", "السماوات السبع", "استفتح"]
   },
@@ -376,6 +394,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3207",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "Seventy thousand angels enter one House above the seventh heaven every day — and none of them ever returns to it.",
+    plainAr: "يدخل البيتَ المعمور فوق السماء السابعة سبعون ألف ملَكٍ كلّ يوم، لا يعود إليه منهم أحدٌ أبدًا.",
     keys: ["bayt al mamur", "seventy thousand", "seventh heaven", "how many angels",
            "البيت المعمور", "سبعون ألف ملك", "السماء السابعة", "عدد الملائكة"]
   },
@@ -393,6 +413,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Prayer, Hadith 349",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "He was taken to a level so high that what he could hear was the scratching of the pens writing what is decreed.",
+    plainAr: "رُفع إلى مستوًى سمع فيه صريف الأقلام وهي تكتب ما يُقضى.",
     keys: ["pens", "decree", "writing", "miraj",
            "صريف الأقلام", "القدر", "الكتابة", "المعراج"]
   },
@@ -410,6 +432,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Prayer, Hadith 349",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "At the gate of the lowest heaven Adam sat with the souls of his descendants on either side. He laughed at one side and wept at the other.",
+    plainAr: "عند باب السماء الدنيا كان آدم وعن يمينه وشماله أرواح ذرّيّته، يضحك إلى جهةٍ ويبكي إلى الأخرى.",
     keys: ["adam", "souls", "right and left", "first heaven",
            "آدم", "نسم بنيه", "اليمين والشمال", "السماء الدنيا"]
   },
@@ -486,6 +510,8 @@ const ANGELS = [
     points: [],
     ref: "Surah Al-Anfal (8:9-10); Surah Al-Imran (3:124-125)",
     strength: "Quran",
+    plain: "Angels were sent down at Badr, and the Quran says plainly why: not because the fighting needed them, but so that the hearts of the believers would be at rest.",
+    plainAr: "أُنزلت الملائكة في بدر، وبيّن القرآن العلّة صراحةً: ليس لحاجة القتال إليهم، وإنما ﴿لِتَطْمَئِنَّ بِهِۦ قُلُوبُكُمْ﴾.",
     keys: ["badr", "battle", "angels help", "victory",
            "بدر", "المدد", "الملائكة في بدر", "النصر"]
   },
@@ -503,6 +529,8 @@ const ANGELS = [
     points: [],
     ref: "Surah Hud (11:69-81); Surah Adh-Dhariyat (51:24-30)",
     strength: "Quran",
+    plain: "Angels came to Ibrahim looking like ordinary guests. He did not know until they refused to eat.",
+    plainAr: "جاءت الملائكة إبراهيم في صورة أضيافٍ عاديّين، فما عرفهم حتى امتنعوا عن الطعام.",
     keys: ["ibrahim", "lut", "guests", "angels as men", "calf",
            "إبراهيم", "لوط", "الضيف", "العجل"]
   },
@@ -520,6 +548,8 @@ const ANGELS = [
     points: [],
     ref: "Surah Maryam (19:17-19)",
     strength: "Quran",
+    plain: "The one sent to Maryam appeared to her as a complete man, and her first response was to seek refuge from him.",
+    plainAr: "الذي أُرسل إلى مريم تمثّل لها بشرًا سويًّا، فكان أوّل ما فعلت أن استعاذت منه.",
     keys: ["maryam", "mary", "isa", "ruh",
            "مريم", "الروح", "بشارة عيسى"]
   },
@@ -537,6 +567,8 @@ const ANGELS = [
     points: [],
     ref: "Surah Al-Qadr (97:4-5)",
     strength: "Quran",
+    plain: "On one night of the year the angels come down in numbers, with every matter that has been decreed, until the dawn.",
+    plainAr: "في ليلةٍ واحدة من العام تتنزّل الملائكة بكثرة، بكلّ أمرٍ قُضي، حتى مطلع الفجر.",
     keys: ["laylat al qadr", "night of decree", "ramadan",
            "ليلة القدر", "تنزل الملائكة", "رمضان"]
   },
@@ -556,6 +588,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih Muslim, Book of Asceticism — narrated by Aishah رضي الله عنها",
     strength: "Sahih — Narrated by Muslim",
+    plain: "Angels are made of light, jinn of a smokeless flame, and Adam of what you were told. Three different creations, in one sentence.",
+    plainAr: "خُلقت الملائكة من نور، والجانّ من مارجٍ من نار، وآدم ممّا وُصف لكم. ثلاثة خلقٍ مختلفة في جملةٍ واحدة.",
     keys: ["created from light", "what are angels made of", "noor", "jinn",
            "خلقت الملائكة من نور", "خلق الملائكة", "الجن", "النور"]
   },
@@ -573,6 +607,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of the Times of Prayer, Hadith 555 — Sahih, agreed upon",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "Two sets of angels change over you twice a day, at Fajr and at Asr. They overlap at those two prayers — so both shifts see you praying.",
+    plainAr: "يتعاقب فيك ملائكةٌ بالليل وملائكةٌ بالنهار، ويجتمعون في صلاتي الفجر والعصر، فيراك الفريقان وأنت تصلّي.",
     keys: ["shifts", "fajr", "asr", "angels watching",
            "يتعاقبون", "ملائكة الليل والنهار", "الفجر والعصر"]
   },
@@ -590,6 +626,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Supplications, Hadith 6408 — Sahih",
     strength: "Sahih — Narrated by al-Bukhari",
+    plain: "There are angels whose work is to go around looking for people remembering Allah — and when they find them, they call each other over.",
+    plainAr: "لله ملائكةٌ يطوفون يلتمسون أهل الذكر، فإذا وجدوهم تنادوا: هلمّوا إلى حاجتكم.",
     keys: ["dhikr", "circles", "gatherings", "remembrance", "forgiven",
            "الذكر", "حلق الذكر", "الملائكة", "المغفرة", "لا يشقى جليسهم"]
   },
@@ -607,6 +645,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih Muslim, Book of Remembrance and Supplication — narrated by Abu Hurairah and Abu Sa'id al-Khudri رضي الله عنهما",
     strength: "Sahih — Narrated by Muslim",
+    plain: "Four things at once come down on a gathering of remembrance: calm settles on them, mercy covers them, angels surround them, and Allah mentions them to those with Him.",
+    plainAr: "أربعةٌ تنزل معًا على مجلس الذكر: تنزل عليهم السكينة، وتغشاهم الرحمة، وتحفّهم الملائكة، ويذكرهم الله فيمن عنده.",
     keys: ["gathering", "sakinah", "mercy", "dhikr circle",
            "مجلس الذكر", "السكينة", "الرحمة", "حفتهم الملائكة"]
   },
@@ -624,6 +664,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of Prayer, Hadith 445 — Sahih, agreed upon",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "After you finish praying, as long as you stay sitting where you prayed, angels are asking Allah to forgive you.",
+    plainAr: "إذا فرغت من صلاتك فما دمتَ جالسًا في مصلّاك فالملائكة تستغفر لك.",
     keys: ["after prayer", "sitting", "forgiveness", "musalla",
            "الملائكة تصلي عليه", "المصلى", "بعد الصلاة"]
   },
@@ -641,6 +683,8 @@ const ANGELS = [
     points: [],
     ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3225 — Sahih, agreed upon",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    plain: "There are houses angels do not enter. What keeps them out is named — and it is not the size or the poverty of the house.",
+    plainAr: "ثمّ بيوتٌ لا تدخلها الملائكة، وقد سُمّي ما يمنعها، وليس صِغَر البيت ولا فقره.",
     keys: ["dog", "images", "pictures", "house", "statues",
            "الكلب", "الصور", "التماثيل", "البيت"]
   },

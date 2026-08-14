@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142133" />
+  <link rel="stylesheet" href="css/style.css?v=202608142138" />
 </head>
 <body>
 
@@ -229,18 +229,18 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608142133"></script>
-  <script src="js/golden.js?v=202608142133"></script>
+  <script src="js/data.js?v=202608142138"></script>
+  <script src="js/golden.js?v=202608142138"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
   <!-- Full lives of the figures, and the women comparison. -->
-  <script src="js/golden-lives.js?v=202608142133"></script>
+  <script src="js/golden-lives.js?v=202608142138"></script>
   <!-- Before you are dazzled: both sides, honestly. -->
-  <script src="js/golden-mirror.js?v=202608142133"></script>
-  <script src="js/golden-closing.js?v=202608142133"></script>
+  <script src="js/golden-mirror.js?v=202608142138"></script>
+  <script src="js/golden-closing.js?v=202608142138"></script>
   <!-- Will we rise again? Shared with judgement.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608142133"></script>
+  <script src="js/rise.js?v=202608142138"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -393,6 +393,18 @@
 
         <div class="gold-body en-only">${paras(f.detail)}</div>
         <div class="gold-body-ar" dir="rtl">${paras(f.detailAr)}</div>
+
+        <!-- The plain-language box. These cards carry dates, instrument names
+             and the mathematics, and a reader who is not already interested in
+             the history can lose the point in them. This says the point in one
+             or two ordinary sentences. Same box the Judgement and Tadabbur
+             pages use, so one explanation style runs across the whole site. -->
+        ${f.plain ? `<div class="tad-plain">
+          <div class="tad-plain-label">💬 <span class="en-only">In plain words</span>
+            <span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
+          <div class="en-only">${paras(f.plain)}</div>
+          <div class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${paras(f.plainAr)}</div>
+        </div>` : ""}
 
         ${f.works && f.works.length ? `<div class="gold-works">
           <div class="gold-works-head">📚 What he wrote <span dir="rtl" style="font-family:'Amiri',serif;">— ما صنّف</span></div>
@@ -787,7 +799,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608142133"></script>
-  <script src="js/i18n.js?v=202608142133"></script>
+  <script src="js/main.js?v=202608142138"></script>
+  <script src="js/i18n.js?v=202608142138"></script>
 </body>
 </html>
