@@ -5773,3 +5773,99 @@ html.lang-ar .wird-streak-box.tier-4 .wird-ms-t { font-size: 1.5rem; }
 .wird-badge-i.tier-4 { border-color: var(--gold); box-shadow: 0 2px 8px rgba(201,162,39,.25); }
 
 @media (prefers-reduced-motion: reduce) { .wird-next-bar span { transition: none; } }
+
+/* ============================================================
+   ورد اليوم — the daily box on the home page
+   ============================================================
+   The card the owner asked for: what to do today, ticked off, with the run of
+   days. Sits directly under the numbers strip because for someone keeping a
+   habit it is the only thing on the page they opened it for. */
+.daily-card {
+  max-width: 760px;
+  margin-inline: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-inline-start: 5px solid var(--green);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-md);
+}
+.daily-card.is-done { border-inline-start-color: var(--gold); }
+
+.daily-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.daily-badge {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: .86rem;
+  font-weight: 600;
+}
+.daily-count { font-size: .84rem; color: var(--text-muted); margin-top: 6px; }
+html.lang-ar .daily-count { font-family: 'Amiri', serif; font-size: .97rem; }
+
+.daily-streak { text-align: center; flex-shrink: 0; }
+.daily-streak-n {
+  display: block;
+  font-family: 'Amiri', Georgia, serif;
+  font-size: 1.9rem; font-weight: 700; line-height: 1;
+  color: var(--green);
+}
+.daily-streak-l { font-size: .75rem; color: var(--text-muted); }
+html.lang-ar .daily-streak-l { font-family: 'Amiri', serif; font-size: .88rem; }
+
+.daily-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.daily-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--green-pale);
+  transition: var(--transition);
+}
+.daily-item:hover { border-color: var(--green); box-shadow: var(--shadow-sm); }
+.daily-item.is-checked { background: var(--white); opacity: .72; }
+.daily-item.is-checked .daily-what { text-decoration: line-through; }
+
+/* The tick. Big enough to hit with a thumb. */
+.daily-tick {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  border: 2px solid var(--green);
+  background: var(--white);
+  color: var(--white);
+  font-size: 1rem; font-weight: 700; line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.daily-item.is-checked .daily-tick { background: var(--green); }
+.daily-tick:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.daily-link { display: flex; align-items: center; gap: 11px; flex: 1; min-width: 0; color: inherit; }
+.daily-ico { font-size: 1.25rem; flex-shrink: 0; }
+.daily-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.daily-kind { font-size: .74rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .3px; }
+html.lang-ar .daily-kind { font-family: 'Amiri', serif; text-transform: none; letter-spacing: 0; font-size: .88rem; }
+.daily-what { font-size: .93rem; color: var(--text-dark); line-height: 1.45; }
+html.lang-ar .daily-what { font-family: 'Amiri', serif; font-size: 1.06rem; line-height: 1.8; }
+
+.daily-niyyah, .daily-all {
+  margin-top: 14px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: .87rem;
+  line-height: 1.7;
+}
+.daily-niyyah { background: #fffdf5; border: 1px solid #efe3bd; color: #6b5a1e; }
+.daily-all { background: var(--green-light); color: var(--green-dark); text-align: center; font-weight: 600; }
+html.lang-ar .daily-niyyah, html.lang-ar .daily-all { font-family: 'Amiri', serif; font-size: 1.02rem; line-height: 1.95; }
+
+@media (max-width: 560px) {
+  .daily-card { padding: 18px 15px; }
+  .daily-what { font-size: .88rem; }
+}
+@media (prefers-reduced-motion: reduce) { .daily-item, .daily-tick { transition: none; } }

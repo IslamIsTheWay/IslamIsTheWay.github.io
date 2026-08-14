@@ -224,3 +224,16 @@ function wirdNextMilestone(streak) {
 function wirdEarned(streak) {
   return WIRD_MILESTONES.filter(m => m.days <= streak);
 }
+
+/* ---------- Arabic counts nouns by a rule English does not have ----------
+   1 يوم · 2 يومان · 3-10 أيام · 11-99 يومًا · 100/101 يوم.
+   Lives here rather than in a page so the Quran page and the home page cannot
+   drift apart — "١٨ أيام" is wrong and a native reader sees it instantly. */
+function wirdArDays(n) {
+  if (n === 1) return "يوم";
+  if (n === 2) return "يومان";
+  const mod100 = n % 100;
+  if (mod100 >= 3 && mod100 <= 10) return "أيام";
+  if (mod100 === 0 || mod100 === 1 || mod100 === 2) return "يوم";
+  return "يومًا";
+}
