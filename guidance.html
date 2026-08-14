@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142144" />
+  <link rel="stylesheet" href="css/style.css?v=202608142203" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -269,40 +269,40 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608142144"></script>
+  <script src="js/data.js?v=202608142203"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608142144"></script>
+  <script src="js/sunnah.js?v=202608142203"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608142144"></script>
+  <script src="js/adhkar.js?v=202608142203"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608142144"></script>
+  <script src="js/scholars.js?v=202608142203"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608142144"></script>
+  <script src="js/scholars-books.js?v=202608142203"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608142144"></script>
+  <script src="js/revival.js?v=202608142203"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608142144"></script>
+  <script src="js/bidah.js?v=202608142203"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608142144"></script>
+  <script src="js/terms.js?v=202608142203"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608142144"></script>
+  <script src="js/figures.js?v=202608142203"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608142144"></script>
+  <script src="js/signs.js?v=202608142203"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -451,9 +451,55 @@
        - an explicit keyword from `keys` is the strongest signal
        - a multi-word keyword phrase counts more than a single word
        - otherwise we fall back to word/stem overlap with the text itself */
+    /* ---------- ARABIC MUST BE MATCHED WORD BY WORD ----------
+       This is the trap the handoff already records twice — ولي inside وليس,
+       عينة inside بعينه, كلّ inside الكَلّ — and it was live here a third time.
+
+       Asking "حكم الاحتفال بالمولد النبوي؟" returned "Ease After Hardship",
+       because that theme carries the keyword ألم (pain). Normalised, ألم is
+       الم — and الم sits inside بالمولد. A raw `.includes()` found it and
+       scored 5, which was enough to make a question about a ruling come back
+       as a verse about relief from difficulty.
+
+       So: split into whole words, and strip the prefixes Arabic attaches to
+       the front of a word (ال، وال، بال، فال، كال، لل، و، ف، ب، ك، ل)
+       before comparing. Nothing is matched inside a longer word ever again. */
+    const AR_PREFIXES = ["وبال", "فبال", "وال", "بال", "فال", "كال", "لل", "ال",
+                         "و", "ف", "ب", "ك", "ل"];
+
+    function iitwArStrip(w) {
+      for (const p of AR_PREFIXES) {
+        if (w.length > p.length + 2 && w.startsWith(p)) return w.slice(p.length);
+      }
+      return w;
+    }
+
+    /* Every form of every word in the text, so a lookup is O(1) per key. */
+    function iitwWordSet(text) {
+      const set = new Set();
+      normalize(text).split(" ").forEach(w => {
+        if (!w) return;
+        set.add(w);
+        set.add(stem(w));
+        if (/[؀-ۿ]/.test(w)) set.add(iitwArStrip(w));
+      });
+      return set;
+    }
+
+    /* Does `needle` appear in `hayWords` as a WORD (not inside one)?
+       Multi-word needles need every one of their words present. */
+    function iitwHasWord(hayWords, needle) {
+      const parts = normalize(needle).split(" ").filter(Boolean);
+      if (!parts.length) return false;
+      return parts.every(p =>
+        hayWords.has(p) || hayWords.has(stem(p)) ||
+        (/[؀-ۿ]/.test(p) && hayWords.has(iitwArStrip(p))));
+    }
+
     function scoreContent(queryTokens, rawQuery, keys, text, expanded) {
       const hay = " " + normalize(text || "") + " ";
       const hayStem = " " + normalize(text || "").split(" ").map(stem).join(" ") + " ";
+      const hayWords = iitwWordSet(text || "");
       const exp = expanded || EMPTY_SET;
       let score = 0;
       /* Points earned only through a related word. These are kept apart and
@@ -464,12 +510,16 @@
          only sharpens the order of entries that already matched a real word. */
       let expScore = 0;
 
+      // Whole words of the query, built once and reused for every key below.
+      const qWords = iitwWordSet(rawQuery);
+
       (keys || []).forEach(k => {
         const kn = normalize(k);
         if (kn.length < 3) return;
         const isPhrase = kn.includes(" ");
-        if (normalize(rawQuery).includes(kn)) {
-          score += isPhrase ? 8 : 5;                 // query literally contains the keyword
+        // WORD match, never a substring — see the note above iitwHasWord.
+        if (iitwHasWord(qWords, kn)) {
+          score += isPhrase ? 8 : 5;                 // the query contains the keyword
         } else if (!isPhrase) {
           const ks = stem(kn);
           if (queryTokens.some(q => stem(q) === ks)) score += 4;
@@ -490,7 +540,11 @@
       queryTokens.forEach(q => {
         const qs = stem(q);
         if (qs.length < 3) return;
-        const hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") || hay.includes(qs);
+        /* `hay.includes(qs)` used to be the third arm of this test, and it is
+           the same substring bug as above — it let a query word match inside
+           an unrelated longer word. Word sets only. */
+        const hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") ||
+                    iitwHasWord(hayWords, q);
         if (!hit) return;
         const generic = GENERIC.has(qs) || GENERIC.has(q);
         const w = generic ? 0.2 : idf(q);
@@ -570,6 +624,166 @@
       </div>`;
     }
 
+    /* ============================================================
+       WHAT IS THIS PERSON ACTUALLY ASKING?
+       ============================================================
+       The box used to score every word against every entry and print
+       whatever came out highest. That is why "حكم الاحتفال بالمولد النبوي؟"
+       — a question about a RULING — came back with a verse about relief
+       after hardship: one keyword happened to match, so the sentence was
+       never considered as a sentence.
+
+       Two things are read from the whole input before anything is scored:
+
+         1. INTENT — is this a question about a ruling ("حكم", "هل يجوز",
+            "is it allowed"), a request for instructions ("كيف", "how do I"),
+            or a person describing what they are going through?
+
+         2. TOPIC — the subject the sentence is about, matched on phrases
+            that are distinctive to a subject rather than on single words.
+
+       Intent then decides what may answer. A RULING QUESTION MAY ONLY BE
+       ANSWERED BY A RULING. If nothing matches it, the box says so plainly
+       instead of reaching for a verse about something else — an honest
+       "I do not have this yet" is worth more here than a confident wrong
+       answer, because a wrong answer in this subject is a wrong answer
+       about the religion.
+       ============================================================ */
+
+    /* Words that mark a question about a RULING. Kept as single words wherever
+       a single word is decisive, because the first version only held whole
+       phrases like "is it haram" — so "is music haram?" and
+       "هل الفائدة من البنك ربا؟" were not recognised as ruling questions at
+       all and fell through to the situation path. */
+    const INTENT_RULING = [
+      "حكم", "الحكم", "يجوز", "تجوز", "يحرم", "يصح", "يجب", "حرام", "حلال",
+      "مكروه", "مباح", "بدعة", "بدع", "محرم", "إثم", "ذنب",
+      "haram", "halal", "forbidden", "permissible", "permitted", "allowed",
+      "lawful", "unlawful", "sinful", "sin", "innovation", "bidah", "bid'ah",
+      "is it allowed", "ruling on", "the ruling", "am i allowed", "may i"
+    ];
+
+    /* Is this phrased as a question at all? A topic plus a question mark is
+       enough to route to the authored answer even when no ruling word was
+       used — "الاحتفال بالمولد؟" is a question about a ruling whether or not
+       the word حكم appears in it. */
+    function iitwIsQuestion(raw) {
+      const n = normalize(raw);
+      if (/[?؟]/.test(raw)) return true;
+      return /^(هل|ما|ماذا|كيف|متى|أ?يجوز|is|are|can|should|does|do|what|when|how|why)\b/.test(n);
+    }
+    const INTENT_HOWTO = [
+      "كيف", "كيفية", "طريقة", "ماذا أقول", "ما أقول", "متى أقول",
+      "how do i", "how can i", "how should i", "how to", "what do i say",
+      "what should i say", "when do i say", "steps"
+    ];
+
+    /* Topics the site has a real, authored answer for. `words` are matched as
+       WHOLE WORDS against the whole sentence; `need` is how many must be
+       present. Keeping `need` at 1 for the distinctive words (مولد, ربا) and
+       at 2 for the vaguer ones is what stops a single ordinary word from
+       deciding the answer. */
+    const GUIDANCE_TOPICS = [
+      { id: "bidah", need: 1, target: "#bidah",
+        words: ["مولد", "المولد", "بدعة", "بدع", "الاحتفال", "احتفال", "محدثة",
+                "mawlid", "birthday", "innovation", "bidah", "celebrate", "celebrating"],
+        en: "Adding to the religion — and celebrating the Prophet's ﷺ birthday",
+        ar: "الزيادة في الدين — والاحتفال بالمولد النبوي" },
+      { id: "fq-hijab-conditions", need: 1, target: "#rulings",
+        words: ["حجاب", "الحجاب", "خمار", "ستر", "hijab", "khimar", "cover", "covering", "modest"] },
+      { id: "fq-niqab", need: 1, target: "#rulings",
+        words: ["نقاب", "النقاب", "الوجه", "niqab", "face veil"] },
+      { id: "fq-bank-interest", need: 1, target: "#rulings",
+        words: ["ربا", "الربا", "فائدة", "فوائد", "البنك", "riba", "interest", "usury", "bank"] },
+      { id: "fq-music", need: 1, target: "#rulings",
+        words: ["موسيقى", "الموسيقى", "غناء", "أغاني", "music", "song", "songs", "singing"] },
+      { id: "fq-missed-prayers", need: 2, target: "#rulings",
+        words: ["قضاء", "فاتتني", "تركت", "الصلاة", "صلوات", "سنين", "missed", "prayers", "years", "make up"] },
+      { id: "fq-repentance", need: 1, target: "#rulings",
+        words: ["توبة", "التوبة", "أتوب", "ذنب", "ذنوب", "repent", "repentance", "sin", "sins"] },
+      { id: "fq-backbiting", need: 1, target: "#rulings",
+        words: ["غيبة", "الغيبة", "نميمة", "backbiting", "gossip", "slander"] },
+      { id: "fq-wiping-socks", need: 1, target: "#rulings",
+        words: ["مسح", "الخفين", "الجوارب", "wiping", "socks", "khuff"] },
+      { id: "fq-travel-prayer", need: 2, target: "#rulings",
+        words: ["سفر", "مسافر", "قصر", "جمع", "travel", "shorten", "combine", "journey"] },
+      { id: "fq-waswas", need: 1, target: "#rulings",
+        words: ["وسواس", "الوسواس", "شك", "waswas", "doubt", "doubting", "ocd"] },
+      { id: "fq-parents", need: 2, target: "#rulings",
+        words: ["والدي", "أمي", "أبي", "الوالدين", "parents", "mother", "father", "obey"] },
+      { id: "fq-haram-job", need: 2, target: "#rulings",
+        words: ["عملي", "وظيفة", "راتب", "خمر", "job", "work", "salary", "workplace", "sells"] },
+      { id: "fq-wali-marriage", need: 2, target: "#rulings",
+        words: ["زواج", "ولي", "نكاح", "marriage", "wali", "guardian"] },
+      { id: "fq-men-awrah", need: 2, target: "#rulings",
+        words: ["عورة", "الرجل", "السروال", "الكعبين", "awrah", "men", "trousers", "ankles"] },
+      { id: "fq-despair", need: 2, target: "#rulings",
+        words: ["يأس", "أيأس", "قنوط", "لا أمل", "despair", "hopeless", "no point", "forgive me"] }
+    ];
+
+    function iitwIntent(raw) {
+      const n = normalize(raw);
+      const words = iitwWordSet(raw);
+      const has = list => list.some(p => p.includes(" ") ? n.includes(normalize(p))
+                                                         : iitwHasWord(words, p));
+      const topics = GUIDANCE_TOPICS.map(t => {
+        const hits = t.words.filter(w => w.includes(" ") ? n.includes(normalize(w))
+                                                          : iitwHasWord(words, w)).length;
+        return { t, hits };
+      }).filter(x => x.hits >= x.t.need).sort((a, b) => b.hits - a.hits);
+
+      return {
+        ruling: has(INTENT_RULING),
+        howto: has(INTENT_HOWTO),
+        question: iitwIsQuestion(raw),
+        topic: topics.length ? topics[0].t : null,
+        topicHits: topics.length ? topics[0].hits : 0
+      };
+    }
+
+    /* The honest empty answer. Shown when someone asks for a RULING and the
+       site has nothing authored on it — instead of the nearest verse, which
+       is how a question about the Mawlid came back as a verse about
+       hardship. */
+    function iitwNoRulingHtml(raw) {
+      return `<div class="gd-answer gd-answer-empty">
+        <div class="gd-answer-label">🔎 <span class="en-only">No direct answer here yet</span>
+          <span class="ar-only" dir="rtl">لا يوجد جواب مباشر هنا بعد</span></div>
+        <p class="en-only">You asked about a ruling, and this site does not have one written on that subject yet. Rather than show you a verse about something else, it is saying so. What is here: <a href="#rulings">the rulings the scholars explained</a>, <a href="#bidah">adding to the religion</a>, and <a href="sunnah.html">the Sunnah in daily life</a>. For a ruling on your own situation, ask a scholar you trust.</p>
+        <p class="ar-only" dir="rtl">سؤالك عن حكم، ولا يوجد في هذا الموقع جوابٌ مكتوبٌ في هذه المسألة بعد. وبدل أن يُعرض عليك نصٌّ في موضوعٍ آخر، يُقال لك ذلك صراحةً. والموجود هنا: <a href="#rulings">ما شرحه العلماء من الأحكام</a>، و<a href="#bidah">الزيادة في الدين</a>، و<a href="sunnah.html">السنة في الحياة اليومية</a>. وأمّا الحكم في حالتك أنت فاسأل عنه عالمًا تثق به.</p>
+      </div>`;
+    }
+
+    /* THE ANSWER COMES FIRST, THEN THE EVIDENCE.
+       The box used to hand back a verse or a hadith and leave the reader to
+       work out what it meant for the thing they asked. That is a reference
+       lookup, not guidance. This renders the ANSWER — a sentence that
+       actually addresses the question — and puts the texts underneath it as
+       what the answer rests on. */
+    function iitwDirectAnswerHtml(o) {
+      return `<div class="guidance-results-head">
+          <h3>The answer to what you asked <span dir="rtl" style="font-family:'Amiri',serif;">— جواب ما سألت عنه</span></h3>
+        </div>
+        <div class="gd-answer">
+          <div class="gd-answer-label">✅ <span class="en-only">In short</span>
+            <span class="ar-only" dir="rtl">الجواب باختصار</span></div>
+          <h4 class="en-only">${o.headEn}</h4>
+          <h4 class="ar-only" dir="rtl">${o.headAr}</h4>
+          <p class="gd-answer-main en-only">${o.answerEn}</p>
+          <p class="gd-answer-main ar-only" dir="rtl">${o.answerAr}</p>
+          ${o.bodyEn ? `<div class="gd-answer-more en-only">${o.bodyEn}</div>` : ""}
+          ${o.bodyAr ? `<div class="gd-answer-more ar-only" dir="rtl">${o.bodyAr}</div>` : ""}
+          <a class="btn btn-primary btn-small gd-answer-link" href="${o.hrefTarget}">
+            <span class="en-only">${o.linkEn}</span>
+            <span class="ar-only" dir="rtl">${o.linkAr}</span>
+          </a>
+        </div>
+        <div class="context-note" style="margin-top:18px;">
+          <span class="en-only">This is an explanation, not a fatwa. Read the section it links to in full, and for a ruling on your own circumstances ask a scholar you trust.</span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">هذا بيانٌ وليس فتوى. اقرأ القسم المُحال إليه كاملًا، وأمّا الحكم في حالك أنت فاسأل عنه عالمًا تثق به.</span>
+        </div>`;
+    }
+
     function findGuidance() {
       const raw = document.getElementById("situationInput").value.trim();
       const out = document.getElementById("guidanceResults");
@@ -581,6 +795,42 @@
       const qt = tokens(raw);
       const qx = expandQuery(qt);
       const distress = isDistress(qt, raw);
+
+      /* READ THE SENTENCE BEFORE SCORING ANY WORD IN IT. */
+      const intent = iitwIntent(raw);
+
+      /* A ruling question that matched a topic goes straight to the authored
+         answer for that topic, and nothing else is allowed to pre-empt it. */
+      if (intent.topic && intent.topic.id === "bidah" && typeof BIDAH !== "undefined") {
+        out.innerHTML = iitwDirectAnswerHtml({
+          headEn: BIDAH.title, headAr: BIDAH.titleAr,
+          answerEn: BIDAH.analogy.plain,
+          answerAr: BIDAH.analogy.plainAr,
+          bodyEn: BIDAH.points[0].plain + " " + BIDAH.points[2].plain,
+          bodyAr: BIDAH.points[0].plainAr + " " + BIDAH.points[2].plainAr,
+          hrefTarget: "#bidah",
+          linkEn: "Read the whole section — the evidence, both scholarly positions, and what is NOT meant by it",
+          linkAr: "اقرأ القسم كاملًا — الأدلّة، وقولَي أهل العلم، وما لا يُقصد بهذا"
+        });
+        return;
+      }
+      /* A named topic asked as a question goes to that topic's authored
+         answer, whether or not a ruling word was used. */
+      if ((intent.ruling || intent.question) && intent.topic && typeof FIQH_RULINGS !== "undefined") {
+        const r = FIQH_RULINGS.find(x => x.id === intent.topic.id);
+        if (r) {
+          out.innerHTML = iitwDirectAnswerHtml({
+            headEn: r.title, headAr: r.titleAr,
+            answerEn: r.answer, answerAr: r.answerAr,
+            bodyEn: (r.points || []).slice(0, 3).map(p => "• " + p.en).join("<br>"),
+            bodyAr: (r.points || []).slice(0, 3).map(p => "• " + p.ar).join("<br>"),
+            hrefTarget: "#rulings",
+            linkEn: "Read it in full — the evidence, where the scholars differ, and how to verify it",
+            linkAr: "اقرأه كاملًا — الأدلّة، ومواضع خلاف أهل العلم، وكيف تتحقّق منه"
+          });
+          return;
+        }
+      }
 
       /* 0) THE EXPLANATION COMES FIRST.
          Someone asking "what is hijab" wants to be told what a covering has
@@ -679,6 +929,17 @@
       const companions = scorePeople(typeof COMPANIONS !== "undefined" ? COMPANIONS : [], "c");
 
       const total = rulings.length + worship.length + hadiths.length + themes.length + sunnah.length + prophets.length + companions.length;
+
+      /* A RULING QUESTION MAY ONLY BE ANSWERED BY A RULING.
+         If someone asks "حكم كذا" and no ruling and no worship step matched,
+         everything left in the pile is a verse or a hadith about some other
+         subject — which is exactly how a question about the Mawlid came back
+         as "with hardship comes ease". Say there is no answer instead. */
+      if (intent.ruling && rulings.length === 0 && worship.length === 0) {
+        out.innerHTML = iitwNoRulingHtml(raw);
+        return;
+      }
+
       if (total === 0) {
         out.innerHTML = `<div class="no-results">
           We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.
@@ -1758,7 +2019,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608142144"></script>
-  <script src="js/i18n.js?v=202608142144"></script>
+  <script src="js/main.js?v=202608142203"></script>
+  <script src="js/i18n.js?v=202608142203"></script>
 </body>
 </html>
