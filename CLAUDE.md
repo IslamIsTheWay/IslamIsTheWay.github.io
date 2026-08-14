@@ -365,3 +365,36 @@ And the one that wasted the most time:
 1 يوم · 2 يومان · 3–10 أيام · 11–99 يومًا · 100/101 يوم. `wirdArDays()` in
 `quran.html` implements it. "١٨ أيام" is wrong and a native reader sees it
 immediately.
+
+## The Quran text ships with the site
+
+`js/quran-text.js` (2.2MB) holds all 114 surahs, all 6,236 verses, the English
+translation and the Mushaf page of every ayah. `openSurah()` reads it; the API
+is only a fallback if that file fails to parse.
+
+**Do not put the reader back on api.alquran.cloud.** The owner reported twice
+that a surah would not open without a connection, and no amount of
+service-worker tuning fixes a dependency on someone else's server — caching
+API replies only ever helps for surahs already read once, which is useless to
+someone who installs the app and then goes offline.
+
+**And never pass `cache: "no-store"` to a fetch whose response you want
+cached.** A response fetched with no-store cannot be written to the Cache API.
+The background warm-up did exactly that: 35 downloads, all returning 200, all
+storing nothing, and the "offline ready" flag set before the loop even ran.
+Measured live from a clean state: five files cached, zero pages, after 45
+seconds. That was the whole reason his pages did not work.
+
+## ورد اليوم — the daily box (`js/daily.js`, on `index.html`)
+
+Four things a day: the Quran page from the commitment, a story, a sunnah to act
+on, and revision of something memorised. Ticked off, with the run of days.
+
+- What appears rotates by the **day of the year**, not at random, so it changes
+  daily, is the same for everyone, and does not reshuffle on refresh.
+- `wirdArDays()` lives in `js/wird.js` and is shared with the Quran page.
+  Arabic adjectives must agree with the count — "٧ أيام متتابعة" is wrong;
+  "على التوالي" is invariant and correct at every number, and one day takes no
+  adjective at all.
+- **A home-screen widget is not possible from a web app.** That needs a native
+  app. Do not promise it.
