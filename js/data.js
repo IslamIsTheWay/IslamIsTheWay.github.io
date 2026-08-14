@@ -3570,5 +3570,75 @@ const PROPHET_STORIES = [
     keys: ["jibril", "gabriel", "iman", "islam", "ihsan", "faith", "religion", "teaching", "knowledge", "hour",
            "جبريل", "الإيمان", "الإسلام", "الإحسان", "الدين", "التعليم", "العلم", "الساعة", "حديث جبريل"]
   }
+,
+
+  /* ================= ADDED AUGUST 2026 =================
+     Each of these was located in the text of Sahih al-Bukhari and the number
+     verified against it before the story was written. */
+
+  {
+    id: "debt-demanded-rudely",
+    section: "justice",
+    title: "The man who demanded his debt rudely — and was given better than he asked",
+    titleAr: "الرجل الذي أغلظ في طلب دَينه فأُعطي خيرًا ممّا طلب",
+    theme: "The one with a right has something to say",
+    themeAr: "إنّ لصاحب الحقّ مقالًا",
+    story: "Abu Hurairah رضي الله عنه said a man came demanding a debt from the Messenger of Allah ﷺ, and he was harsh about it — harsh enough that the companions moved towards him.\n\nThe Prophet ﷺ stopped them. He said: \"Leave him — the one who has a right has something to say.\"\n\nThen he told them: \"Buy him a camel and give it to him.\" They looked and came back and said they could not find one except one better than his, older and worth more. He said: \"Buy it and give it to him. The best of you are the best in repaying what they owe.\"",
+    storyAr: "عن أبي هريرة رضي الله عنه أنّ رجلًا تقاضى رسول الله ﷺ دَينًا له فأغلظ له، حتى همّ به أصحابه.\n\nفمنعهم النبي ﷺ وقال: «دعوه، فإنّ لصاحب الحقّ مقالًا».\n\nثم قال: «اشتروا له بعيرًا فأعطوه إياه». فطلبوا فلم يجدوا إلا بعيرًا أفضل من سنّه، فقالوا: لا نجد إلا أفضل من سنّه. قال: «اشتروه فأعطوه إياه، فإنّ خيركم أحسنكم قضاءً».",
+    arabic: "دَعُوهُ، فَإِنَّ لِصَاحِبِ الْحَقِّ مَقَالًا … فَإِنَّ خَيْرَكُمْ أَحْسَنُكُمْ قَضَاءً",
+    lesson: "Two things are settled here at once. First, a man who is owed something is allowed to speak, and being rude while asking for what is yours does not cancel that you are owed it — the Prophet ﷺ defended the creditor's right to complain against his own companions, while the creditor was in the middle of being rude to him. Second, the debt was not simply repaid: it was repaid with something better, and the reason given was that the best of people are the best at settling what they owe. The rudeness was answered with a better camel. Notice also what is NOT here: he did not lecture the man on his manners first, and he did not make the repayment conditional on an apology.",
+    lessonAr: "قُضي هنا في أمرين معًا. الأوّل: أنّ لصاحب الحقّ أن يتكلّم، وأنّ إغلاظه في طلب حقّه لا يُسقط أنّ الحقّ له — فقد دفع النبي ﷺ عن حقّ الغريم في الشكوى أمام أصحابه، والغريم يُغلظ عليه في تلك الساعة. والثاني: أنّ الدَّين لم يُقضَ بمثله، بل بخيرٍ منه، والعلّة المذكورة أنّ خير الناس أحسنهم قضاءً. فأُجيبت الغِلظة ببعيرٍ أفضل. وتأمّل ما ليس في الخبر: لم يبدأ بتعليمه الأدب، ولم يعلّق القضاء على اعتذار.",
+    ref: "Sahih al-Bukhari, Book of Loans and Settling Debts, Hadith 2390",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["debt","loan","money","owed","creditor","rudeness","anger","justice","repay","الدين","القرض","المال","الغريم","الإغلاظ","العدل","القضاء","حسن القضاء"]
+  },
+  {
+    id: "religion-is-easy",
+    section: "worship",
+    title: "The religion is ease — and whoever fights it is beaten by it",
+    titleAr: "إنّ الدين يسر، ومن شادّ الدين غلبه",
+    theme: "A pace you can keep",
+    themeAr: "وتيرةٌ تُطيق الدوام عليها",
+    story: "Abu Hurairah رضي الله عنه reported the Prophet ﷺ saying: \"The religion is ease, and no one makes the religion hard upon himself except that it overcomes him. So aim straight, come near, and receive good news — and take help from the morning journey, the evening journey, and something of the last part of the night.\"",
+    storyAr: "عن أبي هريرة رضي الله عنه عن النبي ﷺ قال: «إنّ الدين يسر، ولن يُشادّ الدين أحدٌ إلا غلبه، فسدِّدوا وقارِبوا وأبشِروا، واستعينوا بالغدوة والرَّوحة وشيءٍ من الدُّلجة».",
+    arabic: "إِنَّ الدِّينَ يُسْرٌ، وَلَنْ يُشَادَّ الدِّينَ أَحَدٌ إِلَّا غَلَبَهُ، فَسَدِّدُوا وَقَارِبُوا وَأَبْشِرُوا",
+    lesson: "The image at the end is of travel. A traveller who rides at the cool of the morning, the cool of the evening and a stretch of the night arrives; one who rides through the heat of the day exhausts his mount and does not. That is the whole counsel: the distance is covered by keeping a pace, not by a burst.\n\nAnd read the three commands in the middle carefully, because they are in order. SADDIDU — aim exactly right, which is the target. QARIBU — and if you cannot, come close to it, which is the concession. ABSHIRU — and expect good, which is what stops the concession from becoming despair. The person who cannot hit the mark exactly is not told to give up and not told to pretend. He is told to get near and to be glad.\n\nThis is not permission to do little. `Yushadd` is to strain against, to contend with — the warning is against treating the religion as an opponent to be wrestled, because the wrestler always loses that match eventually. The Prophet ﷺ himself stood at night until his feet swelled. What he forbade was the pace nobody can hold.",
+    lessonAr: "الصورة في آخره صورة سفر: فالمسافر الذي يسير في الغدوة والرَّوحة وشيءٍ من آخر الليل يبلغ، والذي يسير في هجير النهار يُنضي دابّته ولا يبلغ. وهذا تمام الوصيّة: تُقطع المسافة بالمداومة لا بالوثبة.\n\nوتأمّل الأوامر الثلاثة في وسطه، فهي على ترتيب: «سدِّدوا» أي أصيبوا الحقّ، وهو المطلوب. «وقارِبوا» فإن لم تُصيبوه فادنوا منه، وهي الرخصة. «وأبشِروا» وهو ما يمنع الرخصة أن تصير قنوطًا. فمن لم يبلغ الإصابة لم يُؤمر بالترك ولا بالتكلّف، بل بالمقاربة والبشرى.\n\nوليس هذا إذنًا في التقصير، فالمشادّة المغالبة والمعاندة، والتحذير من أن يُتّخذ الدين خصمًا يُصارَع، لأنّ المصارع مغلوبٌ في آخر الأمر. وقد قام النبي ﷺ حتى تورّمت قدماه، وإنما نهى عن وتيرةٍ لا يقوى عليها أحد.",
+    ref: "Sahih al-Bukhari, Book of Faith, Hadith 39",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["easy","ease","moderation","burnout","extreme","overburden","consistency","balance","worship","اليسر","الدين يسر","المشادة","الغلو","الاعتدال","المداومة","العبادة","الفتور"]
+  },
+  {
+    id: "understanding-the-religion",
+    section: "knowledge",
+    title: "Whoever Allah wants good for, He gives understanding of the religion",
+    titleAr: "من يُرد الله به خيرًا يُفقّهه في الدين",
+    theme: "The sign of good intended for you",
+    themeAr: "علامة إرادة الخير بالعبد",
+    story: "Mu'awiyah رضي الله عنه said, while giving a sermon: I heard the Prophet ﷺ say: \"Whoever Allah wants good for, He gives him understanding in the religion. I am only one who distributes, and Allah is the One who gives.\"",
+    storyAr: "قال معاوية رضي الله عنه وهو يخطب: سمعت النبي ﷺ يقول: «من يُرد الله به خيرًا يُفقّهه في الدين، وإنما أنا قاسمٌ والله يُعطي».",
+    arabic: "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ، وَإِنَّمَا أَنَا قَاسِمٌ وَاللَّهُ يُعْطِي",
+    lesson: "The word is FIQH, not 'ilm. In Arabic they are not the same: 'ilm is to know a thing, and fiqh is to understand it — to see why it is so, and what follows from it. The sign named here is comprehension, not the quantity of what someone has memorised.\n\nAnd the second half is the part usually left off, though it changes the first. \"I am only one who distributes, and Allah is the One who gives.\" The Prophet ﷺ says of himself that he hands out; the giving is not his. So a student who sits with a teacher has come to the distributor — and must ask the Giver.\n\nThere is also a plain consequence in it that is easy to miss: if being given understanding is the sign that good is intended for someone, then the effort to understand is not a career and not a hobby. It is being reached for.",
+    lessonAr: "اللفظ «يُفقّهه» لا «يُعلّمه»، وليسا في العربية سواءً: فالعلم إدراك الشيء، والفقه فهمه — أن تعرف لِمَ كان كذلك وما يترتّب عليه. فالعلامة المذكورة هي الفهم، لا مقدار المحفوظ.\n\nوالشطر الثاني هو الذي يُترك عادةً، وهو يغيّر الأوّل: «وإنما أنا قاسمٌ والله يُعطي». فأخبر ﷺ عن نفسه أنه يقسم، وأنّ العطاء ليس إليه. فمن جلس إلى معلّمٍ فقد أتى القاسم، وعليه أن يسأل المعطي.\n\nوفيه لازمٌ ظاهر يفوت كثيرًا: إذا كان رزقُ الفهم علامةَ إرادة الخير بالعبد، فليس طلبُ الفهم حرفةً ولا هواية، وإنما هو طلبٌ لأن تُنال.",
+    ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 71",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["knowledge","learning","study","understanding","fiqh","student","teacher","scholar","العلم","التعلم","الفقه","الفهم","طلب العلم","المعلم","العالم"]
+  },
+  {
+    id: "two-angels-every-morning",
+    section: "dunya",
+    title: "Two angels every morning — one asking for replacement, one for ruin",
+    titleAr: "ملَكان كلّ صباح: أحدهما يسأل الخلف والآخر التلف",
+    theme: "What is said over you before you wake",
+    themeAr: "ما يُقال فوقك قبل أن تستيقظ",
+    story: "Abu Hurairah رضي الله عنه reported the Prophet ﷺ saying: \"There is no morning the servants wake into except that two angels come down. One of them says: O Allah, give the one who spends a replacement. And the other says: O Allah, give the one who withholds ruin.\"",
+    storyAr: "عن أبي هريرة رضي الله عنه أنّ النبي ﷺ قال: «ما من يومٍ يُصبح العباد فيه إلا ملَكان ينزلان، فيقول أحدهما: اللهم أعطِ منفقًا خلفًا، ويقول الآخر: اللهم أعطِ ممسكًا تلفًا».",
+    arabic: "مَا مِنْ يَوْمٍ يُصْبِحُ الْعِبَادُ فِيهِ إِلَّا مَلَكَانِ يَنْزِلَانِ، فَيَقُولُ أَحَدُهُمَا: اللَّهُمَّ أَعْطِ مُنْفِقًا خَلَفًا، وَيَقُولُ الْآخَرُ: اللَّهُمَّ أَعْطِ مُمْسِكًا تَلَفًا",
+    lesson: "Both angels are asking for the same thing to happen to the money — for it to leave. The difference is only in how. KHALAF is what replaces a thing that has gone; TALAF is a thing going with nothing put in its place. So the one who gives and the one who holds on will both see wealth leave their hands. One of them gets it back.\n\nThat reframes the ordinary fear. A man withholds because he is afraid of losing what he has; the hadith says the withholding is itself the losing, and that it is being prayed for over his head every single morning while he sleeps.\n\nIt is worth noticing how routine this is. Not on a special night, not in Ramadan — every morning the servants wake into. And note the wording carefully: `munfiqan` and `mumsikan` are indefinite. It is not two named men. It is whoever is doing the spending and whoever is doing the withholding on that particular morning, which means the same person can be under either prayer depending on the day.",
+    lessonAr: "الملَكان كلاهما يسأل للمال شيئًا واحدًا: أن يذهب. وإنما الفرق في الكيفيّة. فالخلَف ما يعقُب الذاهب عوضًا عنه، والتلَف ذهابٌ لا عوض معه. فالمنفق والممسك كلاهما يرى المال يخرج من يده، غير أنّ أحدهما يعود إليه.\n\nوهذا يقلب الخوف المعتاد: فالرجل يُمسك خشية أن يفقد ما عنده، والحديث يخبر أنّ الإمساك نفسه هو الفقد، وأنه يُدعى به فوق رأسه كلّ صباحٍ وهو نائم.\n\nوتأمّل أنّ هذا في المعتاد لا في المخصوص: ليس في ليلةٍ بعينها ولا في رمضان، وإنما في كلّ يومٍ يُصبح العباد فيه. وتأمّل التنكير في «منفقًا» و«ممسكًا»: فليسا رجلين معيّنين، وإنما مَن كان في ذلك الصباح منفقًا ومن كان ممسكًا — فقد يكون الرجل الواحد تحت هذا الدعاء يومًا وتحت الآخر يومًا.",
+    ref: "Sahih al-Bukhari, Book of Zakat, Hadith 1442",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["charity","spending","money","wealth","stingy","withhold","angels","morning","provision","الصدقة","الإنفاق","المال","البخل","الإمساك","الملائكة","الصباح","الخلف","التلف","الرزق"]
+  }
 
 ];

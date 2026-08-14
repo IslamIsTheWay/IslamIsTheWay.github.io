@@ -1825,5 +1825,133 @@ const SUNNAH = [
     ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 108 and 109",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["hadith","forward","share","verify","source","fake","lie","whatsapp","الحديث","النقل","الكذب","التثبت","المصدر","النشر","التحقق"]
+  },
+  /* ================= ADDED AUGUST 2026 =================
+     Every hadith number in this block was verified against the text of
+     Sahih al-Bukhari before the entry was written, not after. The thin
+     categories were filled first: travel, death, dress, fasting, friday,
+     the Quran and the mosque. */
+
+  {
+    cat: "travel",
+    title: "Travel is a piece of torment — so finish and come home",
+    titleAr: "السفر قطعة من العذاب — فإذا قضيتَ فعجِّل الرجوع",
+    detail: "The Prophet ﷺ said travel is a portion of torment: it keeps you from your sleep, your food and your drink. So when one of you has finished what he set out for, let him hurry back to his family. It is a striking thing for him to have said, and it makes the point that being away from home is a hardship to be ended rather than a pleasure to be stretched out.",
+    detailAr: "قال النبي ﷺ إنّ السفر قطعة من العذاب، يمنع أحدكم نومه وطعامه وشرابه، فإذا قضى نَهمته فليُعجّل الرجوع إلى أهله. وهو قولٌ لافت، ومقصوده أنّ الغيبة عن الأهل مشقّةٌ تُنهى، لا متعةٌ تُطال.",
+    arabic: "السَّفَرُ قِطْعَةٌ مِنَ الْعَذَابِ، يَمْنَعُ أَحَدَكُمْ نَوْمَهُ وَطَعَامَهُ وَشَرَابَهُ، فَإِذَا قَضَى نَهْمَتَهُ فَلْيُعَجِّلْ إِلَى أَهْلِهِ",
+    ref: "Sahih al-Bukhari, Book of Jihad, Hadith 3001",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["travel","journey","trip","abroad","away","home","family","return","سفر","رحلة","غربة","الأهل","الرجوع","العودة"]
+  },
+  {
+    cat: "death",
+    title: "Carry the funeral quickly",
+    titleAr: "الإسراع بالجنازة",
+    detail: "The Prophet ﷺ said: hurry with the funeral — for if it was righteous, you are sending it on to good; and if it was otherwise, it is an evil you are putting down off your necks. The instruction is not haste for its own sake but a refusal to keep the dead waiting.",
+    detailAr: "قال النبي ﷺ: أسرعوا بالجنازة، فإن تكُ صالحة فخيرٌ تُقدِّمونها إليه، وإن تكُ غير ذلك فشرٌّ تضعونه عن رقابكم. وليس المقصود العجلة لذاتها، وإنما ألّا يُحبس الميت.",
+    arabic: "أَسْرِعُوا بِالْجِنَازَةِ، فَإِنْ تَكُ صَالِحَةً فَخَيْرٌ تُقَدِّمُونَهَا إِلَيْهِ، وَإِنْ يَكُ سِوَى ذَلِكَ فَشَرٌّ تَضَعُونَهُ عَنْ رِقَابِكُمْ",
+    ref: "Sahih al-Bukhari, Book of Funerals, Hadith 1315",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["death","funeral","janazah","burial","dead","جنازة","الموت","الدفن","الميت","الإسراع"]
+  },
+  {
+    cat: "quran",
+    title: "Keep going back to the Quran — it slips away faster than a camel",
+    titleAr: "تعاهدوا القرآن فهو أشدّ تفصّيًا من الإبل",
+    detail: "Abu Musa رضي الله عنه reported the Prophet ﷺ saying: keep to the Quran and keep returning to it, for by the One in whose Hand is my soul it escapes faster than a camel out of its hobble. The image is exact — a hobbled camel looks secure, and is gone the moment you stop checking the rope.",
+    detailAr: "عن أبي موسى رضي الله عنه عن النبي ﷺ قال: «تعاهدوا القرآن، فوالذي نفسي بيده لهو أشدّ تفصّيًا من الإبل في عُقُلها». والتشبيه دقيق: فالبعير المعقول يبدو موثَقًا، فإذا غفلتَ عن العِقال انفلت.",
+    arabic: "تَعَاهَدُوا الْقُرْآنَ، فَوَالَّذِي نَفْسِي بِيَدِهِ لَهُوَ أَشَدُّ تَفَصِّيًا مِنَ الْإِبِلِ فِي عُقُلِهَا",
+    ref: "Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5033",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["quran","memorise","memorize","hifz","forget","review","revision","recite","القرآن","الحفظ","المراجعة","النسيان","التلاوة","تعاهد"]
+  },
+  {
+    cat: "mosque",
+    title: "Two rak'ah before you sit down in the mosque",
+    titleAr: "ركعتان قبل أن تجلس في المسجد",
+    detail: "Abu Qatadah رضي الله عنه reported the Prophet ﷺ saying: when one of you enters the mosque, let him pray two rak'ah before he sits. It is the greeting of the place — given to the mosque before you give yourself to rest.",
+    detailAr: "عن أبي قتادة رضي الله عنه أنّ رسول الله ﷺ قال: «إذا دخل أحدكم المسجد فليركع ركعتين قبل أن يجلس». وهي تحيّة المكان، تُؤدّى قبل أن تأخذ راحتك فيه.",
+    arabic: "إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ فَلْيَرْكَعْ رَكْعَتَيْنِ قَبْلَ أَنْ يَجْلِسَ",
+    ref: "Sahih al-Bukhari, Book of Prayer, Hadith 444",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["mosque","masjid","enter","two rakah","tahiyyat","greeting","sit","المسجد","الدخول","ركعتين","تحية المسجد","الجلوس"]
+  },
+  {
+    cat: "dress",
+    title: "Start with the right — in washing, in grooming, in your shoes",
+    titleAr: "التيمّن في الطهور والترجّل والتنعّل",
+    detail: "Aishah رضي الله عنها said the Prophet ﷺ loved to begin with the right in his purification, in combing his hair, and in putting on his sandals. Three ordinary daily acts, named together, which is what makes it a habit rather than a ruling about one of them.",
+    detailAr: "قالت عائشة رضي الله عنها: كان النبي ﷺ يحبّ التيمّن في طُهوره وترجّله وتنعّله. ثلاثة أعمالٍ من عمل اليوم المعتاد، ذُكرت مجتمعةً، فصار الأمر عادةً راتبةً لا حكمًا في واحدٍ منها.",
+    arabic: "كَانَ النَّبِيُّ ﷺ يُحِبُّ التَّيَمُّنَ فِي طُهُورِهِ وَتَرَجُّلِهِ وَتَنَعُّلِهِ",
+    ref: "Sahih al-Bukhari, Book of Dress, Hadith 5854",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["dress","clothes","shoes","sandals","right","right side","hair","comb","grooming","wudu","اللباس","النعل","التيمن","اليمين","الترجل","الشعر","الوضوء"]
+  },
+  {
+    cat: "health",
+    title: "Feed the hungry, visit the sick, free the captive",
+    titleAr: "أطعموا الجائع، وعودوا المريض، وفكّوا العاني",
+    detail: "Abu Musa al-Ash'ari رضي الله عنه reported the Prophet ﷺ saying: feed the hungry, visit the sick, and set free the captive. Three commands in one breath, and all three are about someone whose need you can see.",
+    detailAr: "عن أبي موسى الأشعري رضي الله عنه قال: قال رسول الله ﷺ: «أطعموا الجائع، وعودوا المريض، وفُكّوا العاني». ثلاثة أوامر في نفَسٍ واحد، وكلّها فيمن ترى حاجته بعينك.",
+    arabic: "أَطْعِمُوا الْجَائِعَ، وَعُودُوا الْمَرِيضَ، وَفُكُّوا الْعَانِيَ",
+    ref: "Sahih al-Bukhari, Book of Patients, Hadith 5649",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["sick","illness","visit","hungry","feed","captive","prisoner","charity","المريض","العيادة","الجائع","الإطعام","الأسير","العاني"]
+  },
+  {
+    cat: "manners",
+    title: "The six things owed to another Muslim",
+    titleAr: "ما يجب للمسلم على أخيه",
+    detail: "Al-Bara' ibn Azib رضي الله عنه said the Prophet ﷺ ordered them with seven and forbade them seven. Among what he ordered: visiting the sick, following the funeral, answering the one who invites you, helping the wronged, fulfilling the oath, returning the greeting, and answering the one who sneezes. Every one of them is a small act that only exists because someone else is there.",
+    detailAr: "عن البراء بن عازب رضي الله عنه قال: أمرنا النبي ﷺ بسبع ونهانا عن سبع. فممّا أمر به: عيادة المريض، واتّباع الجنائز، وإجابة الداعي، ونصر المظلوم، وإبرار القسم، وردّ السلام، وتشميت العاطس. وكلّها أعمالٌ صغيرة لا توجد إلا لأنّ ثمّ إنسانًا آخر.",
+    arabic: "أَمَرَنَا النَّبِيُّ ﷺ بِعِيَادَةِ الْمَرِيضِ، وَاتِّبَاعِ الْجَنَائِزِ، وَإِجَابَةِ الدَّاعِي، وَنَصْرِ الْمَظْلُومِ، وَإِبْرَارِ الْقَسَمِ، وَرَدِّ السَّلَامِ، وَتَشْمِيتِ الْعَاطِسِ",
+    ref: "Sahih al-Bukhari, Book of Funerals, Hadith 1239",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["manners","rights","brother","muslim","sick","funeral","invitation","greeting","sneeze","oppressed","الأخلاق","الحقوق","المريض","الجنازة","الدعوة","السلام","العاطس","المظلوم"]
+  },
+  {
+    cat: "manners",
+    title: "Stifle a yawn as much as you can",
+    titleAr: "ردّ التثاؤب ما استطعت",
+    detail: "The Prophet ﷺ said yawning is from the Shaytan, and when one of you yawns he should hold it back as much as he can. A small piece of self-control over the body, taught in the same tone as the larger ones.",
+    detailAr: "قال النبي ﷺ إنّ التثاؤب من الشيطان، فإذا تثاءب أحدكم فليردّه ما استطاع. وهو ضبطٌ يسيرٌ للبدن، عُلّم بالنبرة نفسها التي عُلّم بها ما هو أكبر منه.",
+    arabic: "التَّثَاؤُبُ مِنَ الشَّيْطَانِ، فَإِذَا تَثَاءَبَ أَحَدُكُمْ فَلْيَرُدَّهُ مَا اسْتَطَاعَ",
+    ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3289",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["yawn","yawning","manners","shaytan","satan","self control","التثاؤب","الشيطان","الأدب","ضبط النفس"]
+  },
+  {
+    cat: "manners",
+    title: "Two angels come down every morning — one prays for the giver",
+    titleAr: "ملَكان ينزلان كلّ صباح: أحدهما يدعو للمنفق",
+    detail: "The Prophet ﷺ said there is no morning the servants wake into except that two angels descend. One says: O Allah, give the one who spends a replacement. The other says: O Allah, give the one who withholds destruction. Said of every ordinary morning, not of a special day.",
+    detailAr: "قال النبي ﷺ: ما من يومٍ يُصبح العباد فيه إلا ملَكان ينزلان، فيقول أحدهما: اللهم أعطِ منفقًا خلفًا، ويقول الآخر: اللهم أعطِ ممسكًا تلفًا. قيل هذا في كلّ صباحٍ معتاد، لا في يومٍ مخصوص.",
+    arabic: "مَا مِنْ يَوْمٍ يُصْبِحُ الْعِبَادُ فِيهِ إِلَّا مَلَكَانِ يَنْزِلَانِ، فَيَقُولُ أَحَدُهُمَا: اللَّهُمَّ أَعْطِ مُنْفِقًا خَلَفًا، وَيَقُولُ الْآخَرُ: اللَّهُمَّ أَعْطِ مُمْسِكًا تَلَفًا",
+    ref: "Sahih al-Bukhari, Book of Zakat, Hadith 1442",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["charity","spending","giving","money","angels","morning","stingy","withhold","الصدقة","الإنفاق","المال","الملائكة","الصباح","الإمساك","البخل"]
+  },
+  {
+    cat: "character",
+    title: "The religion is easy — and nobody overburdens himself without being beaten by it",
+    titleAr: "إنّ الدين يسر، ولن يُشادّ الدين أحدٌ إلا غلبه",
+    detail: "The Prophet ﷺ said the religion is ease, and no one will make it hard on himself without it overcoming him. So aim right, come close, expect good, and take help from the morning and the evening and something of the night. The warning is not against effort — it is against a pace you cannot keep.",
+    detailAr: "قال النبي ﷺ: «إنّ الدين يسر، ولن يُشادّ الدين أحدٌ إلا غلبه، فسدِّدوا وقارِبوا وأبشِروا، واستعينوا بالغدوة والرَّوحة وشيءٍ من الدُّلجة». وليس التحذير من الجدّ، وإنما من وتيرةٍ لا تُطيق الدوام عليها.",
+    arabic: "إِنَّ الدِّينَ يُسْرٌ، وَلَنْ يُشَادَّ الدِّينَ أَحَدٌ إِلَّا غَلَبَهُ، فَسَدِّدُوا وَقَارِبُوا وَأَبْشِرُوا",
+    ref: "Sahih al-Bukhari, Book of Faith, Hadith 39",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["easy","ease","moderation","balance","burnout","extreme","overburden","consistency","اليسر","الدين يسر","الاعتدال","المشادة","الغلو","الاستقامة","المداومة"]
+  },
+  {
+    cat: "character",
+    title: "Whoever Allah wants good for, He gives him understanding of the religion",
+    titleAr: "من يُرد الله به خيرًا يُفقّهه في الدين",
+    detail: "Mu'awiyah رضي الله عنه heard the Prophet ﷺ say: whoever Allah wishes good for, He gives him understanding in the religion. Note the wording — not simply knowledge, but fiqh, understanding: the sign of Allah's good intention towards a person is that he is given comprehension, not merely information.",
+    detailAr: "سمع معاوية رضي الله عنه النبيَّ ﷺ يقول: «من يُرد الله به خيرًا يُفقّهه في الدين». وتأمّل اللفظ: لم يقل «يُعلّمه» بل «يُفقّهه»، فعلامةُ إرادة الخير بالعبد أن يُرزق الفهم، لا مجرّد الخبر.",
+    arabic: "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ",
+    ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 71",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["knowledge","learning","study","understanding","fiqh","student","العلم","التعلم","الفقه","الفهم","طلب العلم"]
   }
 ];
+

@@ -72,6 +72,34 @@ check "full lives"      "$(count_lives)"    "${claim_lives:-MISSING}"
 check "sunnah entries"  "$(count_sunnah)"   "${claim_sunnah:-MISSING}"
 check "golden figures"  "$(count_golden)"   "${claim_golden:-MISSING}"
 
+# ---- The same hadith taught twice -------------------------------------
+# Adding a batch of Sunnah practices, I checked how many entries each CATEGORY
+# had and never checked which hadith were already cited — so five of the
+# sixteen repeated a hadith the site already had, in a different category
+# under a different title. Bukhari 879, 1923, 1957, 3088 and 5376.
+#
+# This lists any Bukhari number cited by more than one SUNNAH entry. It WARNS
+# rather than fails: two entries may legitimately draw different practices out
+# of one long hadith, which is why 1162 and 5641 are long-standing pairs. Read
+# the titles and decide.
+echo
+echo "Sunnah entries sharing a hadith number (check these are deliberate):"
+# The character class excludes ";" and "S" so the match cannot run on from
+# "Sahih al-Bukhari, Hadith 12; Sahih Muslim, Hadith 39" and pick up Muslim's
+# number as though it were Bukhari's — which it did on the first attempt.
+dupes=$(grep -oE 'Sahih al-Bukhari[^";S]*Hadith [0-9]+' js/sunnah.js \
+        | grep -oE '[0-9]+$' | sort -n | uniq -d)
+if [ -z "$dupes" ]; then
+  echo "  none"
+else
+  for n in $dupes; do
+    echo "  Bukhari $n:"
+    grep -B 20 "Hadith $n\"" js/sunnah.js | grep -oE 'title: "[^"]*"' \
+      | tail -1 | sed 's/^/     /'
+  done
+fi
+echo
+
 if [ "$fail" -ne 0 ]; then
   echo
   echo "A number on the home page no longer matches its data file."
