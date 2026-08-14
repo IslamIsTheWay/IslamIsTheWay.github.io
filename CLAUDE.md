@@ -329,3 +329,39 @@ Two rules from the owner govern it and should not be softened:
 State is `localStorage` under `iitw-wird`, device-only, and the card says so.
 `wirdTodaysPages()` wraps at page 604 so a finished khatmah rolls into the
 next one instead of stopping dead.
+
+## Offline — what broke and what the rules are now
+
+The owner reported that the Quran did not work offline. Three separate causes,
+all worth knowing:
+
+1. **Only the precached files work offline.** Anything not in the list works
+   only if it happens to have been visited. The list now covers every page and
+   every content file.
+2. **The Quran text is NOT on this site** — it comes from `api.alquran.cloud`,
+   cross-origin. The worker must handle it explicitly or the reader opens
+   empty offline. It is cached **cache-first**, which is safe only because the
+   Quran does not change.
+3. **The browser caches `sw.js` itself.** Registering `"sw.js"` can return the
+   byte-identical old copy, so a rewritten worker never installs while
+   reporting itself active. **Always register with
+   `{ updateViaCache: "none" }`.** `bump-version.sh` cannot reach this.
+
+And the one that wasted the most time:
+
+- **A service worker's `install` is killed if it takes too long.** Precaching
+  3.5MB inside `install` left eleven files cached and the worker reporting
+  success — a reader would have gone offline believing the site was saved.
+  Install takes `PRECACHE_SHELL` only; `iitwWarmOfflineCache()` in `main.js`
+  pulls `PRECACHE_CONTENT` afterwards from the page, where nothing terminates
+  it half done.
+- **Never cache the recitation audio.** everyayah serves hundreds of megabytes.
+- To test offline properly, **stop the dev server** and load a page. A resolved
+  `fetch` is not proof the network is up — the worker returns a 504 Response
+  rather than rejecting, so check the status.
+
+## Arabic counts nouns by a rule English does not have
+
+1 يوم · 2 يومان · 3–10 أيام · 11–99 يومًا · 100/101 يوم. `wirdArDays()` in
+`quran.html` implements it. "١٨ أيام" is wrong and a native reader sees it
+immediately.
