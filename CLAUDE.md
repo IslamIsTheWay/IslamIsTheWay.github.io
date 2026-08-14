@@ -274,3 +274,25 @@ guidance, courses, search, login, staff, meeting. `angels.html` is a redirect to
 Open work is listed in Part 5 of the handoff — chiefly: Arabic for the hadith
 page titles and the courses page, cross-device saved place (needs a backend),
 and Gmail sign-in (needs an OAuth Client ID from the owner).
+
+## The Guidance box: intent first, then scoring
+
+`findGuidance()` reads the whole sentence before scoring any word in it —
+`iitwIntent()` returns whether this is a RULING question and which TOPIC it is
+about. **A ruling question may only be answered by a ruling**; if nothing
+authored matches, `iitwNoRulingHtml()` says so rather than reaching for the
+nearest verse. That path exists because "حكم الاحتفال بالمولد النبوي؟" used to
+return "Ease After Hardship".
+
+- **Arabic is matched word by word, never as a substring** — `iitwWordSet()`
+  and `iitwHasWord()`, which strip the attached prefixes (ال، بال، وال، لل، ب،
+  ل، و، ف، ك). This is the third time the substring trap has been found live:
+  ولي inside وليس, عينة inside بعينه, and now **ألم inside بالمولد**, which is
+  what produced that wrong answer. Never reintroduce `.includes()` on Arabic.
+- **When a topic matches, the ANSWER is rendered first** (`iitwDirectAnswerHtml`)
+  and the evidence sits under it. The 15 entries in `FIQH_RULINGS` each carry an
+  authored `answer` field — surface that, do not quote a hadith and leave the
+  reader to work out what it meant.
+- Adding a new answerable subject means adding an entry to `GUIDANCE_TOPICS`
+  with `words` and a `need` count. Keep `need` at 2 for vague words so a single
+  ordinary word can never decide the answer.
