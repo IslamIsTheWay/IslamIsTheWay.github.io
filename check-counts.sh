@@ -100,6 +100,28 @@ else
 fi
 echo
 
+# ---- Every canonical must name its own file ---------------------------
+# stories.html carried sunnah.html's canonical, copy-pasted from that page's
+# head. A canonical pointing at a DIFFERENT page tells a search engine this
+# one is a duplicate of it — the Stories page was asking to be dropped from
+# results. angels.html is exempt: it is a redirect to judgement.html#angels
+# and points there on purpose.
+echo "Checking each canonical points at its own page…"
+for h in *.html; do
+  [ "$h" = "angels.html" ] && continue
+  c=$(grep -oE 'rel="canonical" href="[^"]*"' "$h" | sed 's/.*href="//;s/"//')
+  [ -z "$c" ] && continue
+  base="${c##*/}"
+  if [ "$h" = "index.html" ]; then
+    [ -z "$base" ] || [ "$base" = "index.html" ] || {
+      echo "  WRONG CANONICAL $h -> $c"; fail=1; }
+  elif [ "$base" != "$h" ]; then
+    echo "  WRONG CANONICAL $h -> $c"; fail=1
+  fi
+done
+[ "$fail" -eq 0 ] && echo "  all canonicals correct"
+echo
+
 if [ "$fail" -ne 0 ]; then
   echo
   echo "A number on the home page no longer matches its data file."
