@@ -2938,8 +2938,8 @@ const PROPHET_STORIES = [
               ar: "<strong>يومٌ كسنة</strong>." },
             { en: "The <strong>second is as long as a month</strong>.",
               ar: "<strong>ويومٌ كشهر</strong>." },
-            { en: "The <strong>third is as long as a week</strong>.",
-              ar: "<strong>ويومٌ كجمعة</strong>." },
+            { en: "The <strong>third is as long as a week</strong>. (The hadith says <em>جمعة</em>, which in Arabic means both “Friday” and “a week” — here it is the week, because the list is descending: year, month, week.)",
+              ar: "<strong>ويومٌ كجمعة</strong>، والمراد بها <strong>الأسبوع</strong> لا يوم الجمعة، لأنّ السياق متدرّجٌ نازل: سنةٌ فشهرٌ فأسبوع." },
             { en: "<strong>The rest are ordinary days.</strong> The Companions asked the practical question — in the day that lasts a year, is one day's prayers enough? He ﷺ said no: <strong>measure it out</strong>.",
               ar: "<strong>وسائر أيّامه كأيّامكم</strong>. وسأل الصحابةُ السؤال العمليّ: ذلك اليوم الذي كسنة، أتكفينا فيه صلاةُ يوم؟ قال ﷺ: لا، <strong>اقدروا له قدره</strong>." }
           ] },
@@ -3107,6 +3107,29 @@ const PROPHET_STORIES = [
             { en: "He crosses the earth <strong>like rain driven by the wind</strong>.",
               ar: "ويسير في الأرض <strong>كالغيث استدبرته الريح</strong>." }
           ] },
+        { head: "“A day like a Jumu‘ah” — does that mean Friday, or a week?",
+          headAr: "«ويومٌ كجمعة» — أهي الجمعة اليوم، أم الأسبوع؟",
+          points: [
+            { en: "This is the line that confuses almost everyone, and the confusion is in the Arabic itself: <strong>جمعة carries both meanings</strong> — the day called Friday, and a seven-day week.",
+              ar: "هذه الكلمة تُشكِل على أكثر الناس، والإشكال في اللفظ العربيّ نفسه: <strong>فـ«الجمعة» تُطلق على المعنيين</strong> — اليوم المعروف، والأسبوع." },
+            { en: "Here it means <strong>a week</strong>. You can tell from the order: <strong>a year → a month → a week → an ordinary day</strong>. Each one is shorter than the one before it. If the third meant “Friday”, the list would stop making sense — Friday is not a length of time.",
+              ar: "والمراد هنا <strong>الأسبوع</strong>، والدليل ترتيب السياق: <strong>سنة ← شهر ← أسبوع ← يومٌ معتاد</strong>، كلُّ واحدةٍ أقصر ممّا قبلها. ولو أُريد باليوم الثالث «يوم الجمعة» لانخرم المعنى، إذ ليست الجمعة مقدارًا من الزمن." },
+            { en: "This is how the scholars read it. <strong>An-Nawawi</strong>, in his commentary on Sahih Muslim, states that الجمعة here is the week.",
+              ar: "وعلى هذا حمله أهل العلم؛ قال <strong>النوويّ</strong> في شرحه على صحيح مسلم: المراد بالجمعة هنا الأسبوع." },
+            { en: "So it is not that one day of the forty happens to be a Friday. <strong>It is that the first three days are stretched</strong> — the first as long as a year, the second as long as a month, the third as long as a week — and the remaining thirty-seven pass at normal speed.",
+              ar: "فليس المعنى أنّ يومًا من الأربعين يقع في الجمعة، <strong>وإنّما أنّ الأيّام الثلاثة الأولى تطول</strong>: الأوّل بقدر سنة، والثاني بقدر شهر، والثالث بقدر أسبوع، ثمّ تمضي السبعة والثلاثون الباقية على المعتاد." }
+          ] },
+        { head: "So how long is it really?",
+          headAr: "فكم تكون المدّة في الحقيقة؟",
+          points: [
+            { en: "Counted as days, it is <strong>forty</strong>. Counted as time actually lived through, it is about <strong>a year, plus a month, plus a week, plus thirty-seven ordinary days</strong> — roughly fourteen months.",
+              ar: "هي <strong>أربعون</strong> يومًا عددًا. وأمّا بحسب ما يُعاش منها فهي نحو <strong>سنةٍ وشهرٍ وأسبوعٍ وسبعةٍ وثلاثين يومًا معتادة</strong> — أي قرابة أربعة عشر شهرًا." },
+            { en: "Both statements are true at once, and that is what makes the hadith hard to picture. <strong>The count is forty; the experience is far longer.</strong>",
+              ar: "والأمران صحيحان معًا، وهذا هو الذي يُشكِل في تصوّر الحديث: <strong>فالعدد أربعون، والمُعاش أطول من ذلك بكثير</strong>." },
+            { en: "Which is exactly why the Companions asked about the prayer. In a day that lasts a year, <strong>five prayers would not be enough</strong> — so he ﷺ told them to estimate the hours and keep the prayers to that measure.",
+              ar: "ولهذا بعينه سأل الصحابةُ عن الصلاة؛ فاليوم الذي كسنةٍ <strong>لا تكفي فيه خمسُ صلوات</strong>، فأمرهم ﷺ أن يقدّروا الأوقات ويحفظوا الصلوات على ذلك التقدير." }
+          ] }
+,
         { head: "And the question they actually asked",
           headAr: "والسؤال الذي سألوه فعلًا",
           points: [
