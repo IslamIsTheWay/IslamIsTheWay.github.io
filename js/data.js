@@ -2838,6 +2838,38 @@ const PROPHET_STORIES = [
     arabic: "أَنَا الْمَسِيحُ الدَّجَّالُ، وَإِنِّي أُوشِكُ أَنْ يُؤْذَنَ لِي فِي الْخُرُوجِ",
     lesson: "The Prophet ﷺ described the Dajjal in ways that can be checked: he is blind in one eye — \"and your Lord is not one-eyed\" — and between his eyes is written kafir, which every believer will read. No prophet was sent who did not warn his people about him, and the Prophet ﷺ said he would say about him what no prophet had said before: that plain fact about his eye. That is the point of the warning. He will come with wonders, and the test is not whether the wonders are impressive but whether you are willing to see the defect the wonders are meant to distract you from. Madinah and Makkah are closed to him, guarded at every road. Notice also what the Prophet ﷺ did with Tamim's account: he did not hide that it came from a man who had been a Christian, nor claim it as revelation. He weighed it against what he already knew and told the people plainly where it came from.",
     lessonAr: "وصف النبيُّ ﷺ الدجّال بما يمكن التحقّق منه: إنه أعورُ العين، «وإنّ ربَّكم ليس بأعور»، وبين عينيه مكتوبٌ كافر يقرؤه كلُّ مؤمن. وما بُعث نبيٌّ إلا أنذر أمّته إياه، وقال ﷺ إنه سيقول فيه قولًا لم يقله نبيٌّ لقومه: تلك الحقيقة الظاهرة في عينه. وهذا هو مقصود التحذير؛ فإنه سيأتي بالعجائب، والامتحان ليس في عظمة العجائب بل في استعدادك أن ترى النقص الذي سِيقت العجائب لتصرفك عنه. والمدينة ومكة محرَّمتان عليه، على كلِّ نَقْبٍ منهما ملائكة. وتأمَّل ما صنعه ﷺ بخبر تميم: لم يُخفِ أنه من رجلٍ كان نصرانيًّا، ولم يجعله وحيًا، بل وزنه بما عنده وأخبر الناس بمصدره صريحًا.",
+    plain: {
+      lead: "The short version: the Prophet ﷺ called everyone to the mosque to tell them that a man who had just become Muslim came back from a sea voyage with a story that matched — detail for detail — what he had already been telling them about the Dajjal.",
+      leadAr: "باختصار: جمع النبيُّ ﷺ الناس في المسجد ليخبرهم أنّ رجلًا أسلم حديثًا رجع من رحلةٍ في البحر بخبرٍ يطابق ما كان يحدّثهم به عن الدجّال، تفصيلًا بتفصيل.",
+      groups: [
+        { head: "What happens, step by step",
+          headAr: "ما جرى، خطوةً خطوة",
+          points: [
+            { en: "Thirty men are blown off course at sea for a month and land on an island at sunset.",
+              ar: "ثلاثون رجلًا لعبت بهم الريح في البحر شهرًا، فنزلوا جزيرةً عند مغيب الشمس." },
+            { en: "A beast covered in thick hair meets them — they cannot tell its front from its back. It calls itself <strong>al-Jassasah</strong>, and sends them to a man waiting in a monastery.",
+              ar: "لقيتهم دابّةٌ كثيرة الشعر لا يُدرى قُبُلها من دُبُرها، قالت: أنا <strong>الجسّاسة</strong>، ودلّتهم على رجلٍ في الدير ينتظر خبرهم." },
+            { en: "They find a huge man in chains — hands bound to his neck, irons from his knees to his ankles.",
+              ar: "فوجدوا رجلًا عظيم الخِلقة موثَقًا، يداه إلى عنقه، وما بين ركبتيه إلى كعبيه بالحديد." },
+            { en: "He asks about three places: the palms of Baysan, the lake of Tiberias, and the spring of Zughar — and says each will soon fail.",
+              ar: "فسألهم عن ثلاثة مواضع: نخل بَيْسان، وبحيرة الطبريّة، وعين زُغَر — وأخبر أنّ كلًّا منها يوشك أن ينقطع." },
+            { en: "He asks whether the unlettered Prophet has appeared, and how the Arabs answered him.",
+              ar: "وسألهم عن النبيّ الأمّيّ: هل خرج؟ وكيف صنع العرب معه؟" },
+            { en: "Then he says it outright: <strong>“I am the Dajjal”</strong> — and that he will be allowed out, and will enter every town on earth except two.",
+              ar: "ثمّ صرّح: <strong>«إنّي أنا المسيح الدجّال»</strong>، وأنّه يوشك أن يُؤذن له بالخروج، فيطأ الأرض كلّها إلا بلدتين." },
+            { en: "The Prophet ﷺ struck the pulpit and said: <strong>this is Taybah</strong> — this is Madinah. Makkah and Madinah are closed to him; an angel with a drawn sword turns him back at every road in.",
+              ar: "فطعن النبيُّ ﷺ بمِخصرته المنبر وقال: <strong>هذه طَيْبة</strong> — يعني المدينة. فمكّة والمدينة محرّمتان عليه، على كلّ نَقْبٍ منهما ملائكةٌ تحرسها." }
+          ] },
+        { head: "Why this story was told at all",
+          headAr: "لماذا حُدِّث بهذا الخبر أصلًا",
+          points: [
+            { en: "It is a <strong>confirmation</strong>, not new information — he ﷺ said plainly that it pleased him because it agreed with what he had already taught them.",
+              ar: "هو <strong>تصديقٌ</strong> لا خبرٌ جديد — قال ﷺ صراحةً إنّه أعجبه لأنّه وافق ما كان يحدّثهم به." },
+            { en: "He named his source: a man who had been a Christian. He did not present it as revelation, and he did not hide where it came from.",
+              ar: "وسمّى مصدره: رجلٌ كان نصرانيًّا. فلم يجعله وحيًا، ولم يكتم من أين جاء." }
+          ] }
+      ]
+    },
     ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour (Kitab al-Fitan wa Ashrat as-Sa'ah) — narrated by Fatimah bint Qays; the description of his eye is in Sahih al-Bukhari, Book of Afflictions, Hadith 7131, and the angels guarding Madinah in Hadith 1879",
     strength: "Sahih — Narrated by Muslim; the description of the Dajjal is agreed upon (al-Bukhari and Muslim)",
     keys: ["dajjal","antichrist","masih","jassasah","tamim","end of time","last hour","fitna","trial","signs","madinah","makkah","one-eyed","kafir","الدجال","المسيح الدجال","الجساسة","تميم الداري","آخر الزمان","الساعة","الفتنة","علامات","المدينة","مكة","أعور","كافر","الملاحم"]
@@ -2857,6 +2889,70 @@ const PROPHET_STORIES = [
     arabic: "إِنَّهُ شَابٌّ قَطَطٌ، عَيْنُهُ طَافِئَةٌ — فَمَنْ أَدْرَكَهُ مِنْكُمْ فَلْيَقْرَأْ عَلَيْهِ فَوَاتِحَ سُورَةِ الْكَهْفِ",
     lesson: "Notice what he said before any of the description: \"There are things I fear for you more than the Dajjal.\" The everyday things that quietly ruin a person worried him more than the great trial at the end. And notice what he gave them to hold onto — not a weapon, but verses to recite and one instruction: hold firm. He also told them plainly he could be cut down and raised again, so that nobody meeting him would think the wonder itself is proof.",
     lessonAr: "تأمَّل ما قاله قبل الوصف كلِّه: «غير الدجّال أخوفني عليكم»؛ فالأمور اليومية التي تُهلك المرء في صمتٍ كانت أخوف عنده من الفتنة الكبرى في آخر الزمان. وتأمَّل ما أعطاهم ليتمسَّكوا به: لم يكن سلاحًا بل آياتٍ تُقرأ وأمرًا واحدًا: فاثبتوا. وأخبرهم صراحةً أنه يَقتل ويُحيي، حتى لا يظنَّ من لقيه أنّ العجيبة نفسها دليل.",
+    plain: {
+      lead: "This is the card to read slowly. The Prophet ﷺ described the Dajjal in a way anybody could check — not vague warnings, but a face, a body, a written word, a timetable, and a list of what he is able to do. Below is that description, set out plainly.",
+      leadAr: "هذه البطاقة تُقرأ على مهل. فقد وصف النبيُّ ﷺ الدجّالَ وصفًا يستطيع كلُّ أحدٍ أن يتحقّق منه: خِلقةٌ، وعينٌ، وكلمةٌ مكتوبة، ومدّةٌ معلومة، وقائمةٌ بما يقدر عليه. وهذا الوصف مبسوطًا:",
+      groups: [
+        { head: "How he will LOOK",
+          headAr: "كيف يكون شكلُه",
+          points: [
+            { en: "<strong>A young man</strong> — not an old one.",
+              ar: "<strong>شابٌّ</strong> لا شيخ." },
+            { en: "<strong>Thickset and stocky</strong>, broad in the upper body.",
+              ar: "<strong>جَعْدٌ قَطَط</strong>، عريض أعلى البدن." },
+            { en: "<strong>Very curly hair</strong>.",
+              ar: "<strong>شديد جُعودة الشعر</strong>." },
+            { en: "<strong>Reddish in complexion</strong>.",
+              ar: "<strong>أحمر اللون</strong>." },
+            { en: "<strong>Blind in one eye.</strong> His eye is defective — described as raised and floating like a grape, not sunken and not protruding. This is the single clearest mark: <strong>“your Lord is not one-eyed.”</strong>",
+              ar: "<strong>أعورُ العين</strong>، عينُه طافيةٌ كأنّها عنبةٌ طافية، ليست بناتئةٍ ولا حَجْراء. وهذه أظهر علامةٍ فيه: <strong>«وإنّ ربَّكم ليس بأعور»</strong>." },
+            { en: "<strong>Between his eyes is written ك ف ر — “disbeliever.”</strong> Every believer reads it, whether or not he can read at all.",
+              ar: "<strong>ومكتوبٌ بين عينيه: ك ف ر</strong>، يقرؤه كلُّ مؤمنٍ، كاتبًا كان أو غير كاتب." },
+            { en: "<strong>He has no children.</strong>",
+              ar: "<strong>ولا يُولد له</strong>." }
+          ] },
+        { head: "What he will be ABLE TO DO",
+          headAr: "ما الذي يقدر عليه",
+          points: [
+            { en: "<strong>He brings something that looks like Paradise and something that looks like Fire</strong> — and they are the opposite of what they appear. His “Paradise” is the Fire and his “Fire” is Paradise.",
+              ar: "<strong>يأتي ومعه ما يُشبه الجنّة وما يُشبه النار</strong>، وهما على عكس ما تُبصر: فجنّته نارٌ، وناره جنّة." },
+            { en: "<strong>He commands the sky and it rains; he commands the earth and it grows</strong> — for the people who accept him. Their cattle come back fatter and heavier than ever.",
+              ar: "<strong>يأمر السماء فتُمطر، والأرض فتُنبت</strong> لمن استجاب له، فتروح عليهم ماشيتُهم أطول ما كانت وأعظمها ضروعًا." },
+            { en: "<strong>He withholds it from those who refuse him</strong> — their wealth is struck, the sky holds back, the land gives nothing.",
+              ar: "<strong>ويمنعه عمّن ردّه</strong>، فتُصبح أموالهم مُمحِلة، وتُمسك السماء، ولا تُنبت الأرض شيئًا." },
+            { en: "<strong>He calls the treasures of the earth and they follow him</strong> like a swarm of bees.",
+              ar: "<strong>ويدعو كنوز الأرض فتتبعه</strong> كيعاسيب النحل." },
+            { en: "<strong>He kills a man and brings him back to life in front of the crowd</strong> — and even that man tells him to his face that he is the Dajjal.",
+              ar: "<strong>ويقتل رجلًا ثمّ يحييه على أعين الناس</strong>، فيقول له ذلك الرجل في وجهه: أنت الدجّال." },
+            { en: "<strong>He moves across the earth extremely fast</strong> — like rain driven by the wind.",
+              ar: "<strong>ويسير في الأرض سيرًا سريعًا</strong> كالغيث استدبرته الريح." },
+            { en: "<strong>He cannot enter Makkah or Madinah.</strong> Angels stand at every road into them.",
+              ar: "<strong>ولا يدخل مكّة ولا المدينة</strong>، على كلّ نَقْبٍ منهما ملائكة." }
+          ] },
+        { head: "How long he stays",
+          headAr: "كم يمكث",
+          points: [
+            { en: "<strong>Forty days in total.</strong>",
+              ar: "<strong>أربعون يومًا جملةً</strong>." },
+            { en: "The <strong>first day is as long as a year</strong>.",
+              ar: "<strong>يومٌ كسنة</strong>." },
+            { en: "The <strong>second is as long as a month</strong>.",
+              ar: "<strong>ويومٌ كشهر</strong>." },
+            { en: "The <strong>third is as long as a week</strong>.",
+              ar: "<strong>ويومٌ كجمعة</strong>." },
+            { en: "<strong>The rest are ordinary days.</strong> The Companions asked the practical question — in the day that lasts a year, is one day's prayers enough? He ﷺ said no: <strong>measure it out</strong>.",
+              ar: "<strong>وسائر أيّامه كأيّامكم</strong>. وسأل الصحابةُ السؤال العمليّ: ذلك اليوم الذي كسنة، أتكفينا فيه صلاةُ يوم؟ قال ﷺ: لا، <strong>اقدروا له قدره</strong>." }
+          ] },
+        { head: "The point of the whole warning",
+          headAr: "مقصود التحذير كلّه",
+          points: [
+            { en: "Every prophet warned his people about him. But he ﷺ said he would tell them <strong>something no prophet had told his people</strong>: he is one-eyed, and Allah is not.",
+              ar: "ما من نبيٍّ إلا أنذر أمّته الدجّال. لكنّه ﷺ قال إنّه سيقول فيه <strong>قولًا لم يقله نبيٌّ لقومه</strong>: إنّه أعور، وإنّ الله ليس بأعور." },
+            { en: "So the test was never whether the wonders are impressive. <strong>The test is whether you will still see the defect the wonders are there to distract you from.</strong>",
+              ar: "فما كان الامتحان قطُّ في عِظَم العجائب، <strong>وإنّما في أن تبقى ترى النقص الذي سِيقت العجائب لتصرفك عنه</strong>." }
+          ] }
+      ]
+    },
     ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour (Kitab al-Fitan) — narrated by an-Nawwas ibn Sam'an",
     strength: "Sahih — Narrated by Muslim",
     keys: ["dajjal","antichrist","description","forty days","kahf","syria","iraq","miracle","wonder","treasure","young man","الدجال","صفة الدجال","أربعون يومًا","الكهف","الشام","العراق","معجزة","كنوز","النواس بن سمعان","آخر الزمان"]
@@ -2876,6 +2972,22 @@ const PROPHET_STORIES = [
     arabic: "فَمَنْ أَدْرَكَ مِنْكُمْ فَلْيَقَعْ فِي الَّذِي يَرَى أَنَّهَا نَارٌ، فَإِنَّهُ عَذْبٌ بَارِدٌ",
     lesson: "The whole trial in one image: what looks safe will burn you, and what looks like ruin is where safety is. He is not asking anyone to reason it out in the moment — by then the eyes are already lying. He is asking them to decide now, in advance, that they will trust what they were told over what they will see.",
     lessonAr: "الفتنة كلّها في صورةٍ واحدة: ما يبدو أمانًا يُحرق، وما يبدو هلاكًا فيه النجاة. وهو لا يطلب منك أن تستنتج ذلك في لحظته، فالعين حينها كاذبة، بل يطلب أن تعزم الآن مقدَّمًا أن تُصدِّق ما أُخبِرتَ به لا ما ستراه.",
+    plain: {
+      lead: "One instruction, and it is the practical heart of the whole subject: <strong>what you see with your eyes is the thing being used against you.</strong>",
+      leadAr: "أمرٌ واحد، وهو لبُّ الباب كلّه من جهة العمل: <strong>إنّ الذي تراه بعينك هو نفسه ما يُخدَع به عليك</strong>.",
+      groups: [
+        { points: [
+            { en: "He arrives with two things: one that looks like <strong>a garden of water</strong>, and one that looks like <strong>burning fire</strong>.",
+              ar: "يأتي ومعه شيئان: ما يُرى <strong>جنّةً وماءً</strong>، وما يُرى <strong>نارًا تحرق</strong>." },
+            { en: "They are <strong>swapped</strong>. His fire is cool water. His water is fire.",
+              ar: "وهما <strong>مقلوبان</strong>: فناره ماءٌ باردٌ عذب، وماؤه نار." },
+            { en: "The Prophet's ﷺ instruction to anyone who reaches that day: <strong>go into the one that looks like fire</strong>, because it is water.",
+              ar: "ووصيّة النبيّ ﷺ لمن أدرك ذلك: <strong>فليقع في الذي يراها نارًا</strong>، فإنّها ماءٌ عذبٌ بارد." },
+            { en: "Which means the safe choice will <strong>look</strong> like the ruinous one, and the ruinous one will look like rescue.",
+              ar: "ومعناه أنّ النجاة يومئذٍ <strong>تبدو</strong> هلاكًا، وأنّ الهلاك يبدو نجاةً." }
+          ] }
+      ]
+    },
     ref: "Sahih al-Bukhari, Book of the Virtues of the Prophet ﷺ, Hadith 3450",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["dajjal","fire","water","illusion","deception","trap","appearance","trust","الدجال","نار","ماء","خداع","الظاهر","الفتنة","الثبات"]
@@ -2895,9 +3007,180 @@ const PROPHET_STORIES = [
     arabic: "مَنْ حَفِظَ عَشْرَ آيَاتٍ مِنْ أَوَّلِ سُورَةِ الْكَهْفِ عُصِمَ مِنَ الدَّجَّالِ",
     lesson: "He did not leave it as a story to be frightened by. He gave two things anyone can do today: ten verses to commit to memory, and a supplication he himself said in every prayer. A trial you cannot outrun is met by preparation made long before it arrives.",
     lessonAr: "لم يتركه خبرًا يُفزَع منه، بل أعطى أمرين يقدر عليهما كلُّ أحدٍ اليوم: عشر آياتٍ تُحفَظ، ودعاءٌ كان هو ﷺ يقوله في كلِّ صلاة. فالفتنة التي لا تُسبَق تُواجَه باستعدادٍ سابقٍ لمجيئها.",
+    plain: {
+      lead: "Two things to actually do — both small enough that anyone can start today.",
+      leadAr: "أمران يُعمَلان بالفعل، وكلاهما يسيرٌ يستطيع كلُّ أحدٍ أن يبدأ به اليوم.",
+      groups: [
+        { head: "What to do",
+          headAr: "ما الذي تفعله",
+          points: [
+            { en: "<strong>Memorise the first ten verses of Surah Al-Kahf.</strong> Whoever does is protected from him.",
+              ar: "<strong>احفظ عشر آياتٍ من أوّل سورة الكهف</strong>، فمن حفظها عُصم منه." },
+            { en: "<strong>Seek refuge from his trial in every prayer</strong>, in the sitting before the tasleem — he ﷺ taught it as part of the prayer itself.",
+              ar: "<strong>واستعذ من فتنته في كلّ صلاة</strong> في التشهّد قبل السلام، فقد علّمه ﷺ في الصلاة نفسها." },
+            { en: "<strong>Keep away from him.</strong> Whoever hears of him should stay far — a man may come to him certain of himself and be taken in by what he is shown.",
+              ar: "<strong>وابتعد عنه</strong>؛ فمن سمع به فلينأَ عنه، فإنّ الرجل يأتيه وهو يحسب أنّه مؤمنٌ فيتّبعه ممّا يُرى." }
+          ] },
+        { head: "Why the protection is Quran and prayer, not a weapon",
+          headAr: "لِمَ كانت العصمة قرآنًا وصلاةً لا سلاحًا",
+          points: [
+            { en: "Because the danger is <strong>to what you believe</strong>, not to your body. He is not defeated by strength; he is survived by knowing the truth well enough not to be moved off it.",
+              ar: "لأنّ الخطر على <strong>ما تعتقده</strong> لا على بدنك. فلا يُغلَب بالقوّة، وإنّما يَسلم منه من عرف الحقّ معرفةً لا يُزحزَح عنها." }
+          ] }
+      ]
+    },
     ref: "Sahih Muslim, Book of Prayer of Travellers (the ten verses); Sahih al-Bukhari, Book of Adhan, Hadith 832 (the supplication in prayer)",
     strength: "Sahih — Narrated by Muslim; the supplication is agreed upon (al-Bukhari and Muslim)",
     keys: ["dajjal","protection","kahf","memorise","dua","refuge","prayer","friday","حماية","الكهف","حفظ","دعاء","الاستعاذة","الصلاة","الجمعة","عذاب القبر"]
+  },
+  {
+    id: "dajjal-young-man",
+    section: "endtimes",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
+    title: "The young man he kills in front of everyone — and who says it to his face",
+    titleAr: "الشابّ الذي يقتله على أعين الناس، ثمّ يقوله في وجهه",
+    theme: "The greatest miracle he is given, and the man it fails on",
+    themeAr: "أعظم ما يُعطاه من الخوارق، والرجل الذي لا تنفع فيه",
+    story: "Abu Sa'id al-Khudri رضي الله عنه said the Prophet ﷺ told them that the Dajjal will come, and it will be forbidden to him to enter the passes of Madinah. He will camp in some of the salt ground outside it.\n\nOn that day a man will go out to him — the best of people, or one of the best — and will say to him: \"I bear witness that you are the Dajjal whom the Messenger of Allah ﷺ told us about.\"\n\nThe Dajjal will say to those with him: \"What do you think — if I kill this man and then bring him back to life, will you have any doubt about the matter?\" They will say: no.\n\nSo he kills him, and then brings him back to life.\n\nAnd when he raises him, the man says: \"By Allah, I have never had more insight into you than I have today.\" In another wording: \"O people, this is the Dajjal whom the Messenger of Allah ﷺ told us about.\"\n\nThe Dajjal then wants to kill him a second time, and is not given power over him.",
+    storyAr: "عن أبي سعيدٍ الخدريّ رضي الله عنه أنّ النبيّ ﷺ حدّثهم أنّ الدجّال يأتي وهو محرَّمٌ عليه أن يدخل نِقاب المدينة، فينزل بعض السِّباخ التي بالمدينة.\n\nفيخرج إليه يومئذٍ رجلٌ هو خير الناس أو من خيرهم، فيقول له: أشهد أنّك الدجّال الذي حدّثنا عنه رسول الله ﷺ حديثه.\n\nفيقول الدجّال لمن معه: أرأيتم إن قتلتُ هذا ثمّ أحييتُه، أتشكّون في الأمر؟ فيقولون: لا.\n\nفيقتله ثمّ يحييه.\n\nفيقول الرجل حين يُحييه: والله ما كنتُ فيك قطُّ أشدَّ بصيرةً منّي اليوم. وفي روايةٍ: يا أيّها الناس، هذا الدجّال الذي حدّثنا عنه رسول الله ﷺ.\n\nفيريد الدجّال أن يقتله الثانية فلا يُسلَّط عليه.",
+    arabic: "وَاللَّهِ مَا كُنْتُ فِيكَ قَطُّ أَشَدَّ بَصِيرَةً مِنِّي الْيَوْمَ",
+    plain: {
+      lead: "This is the card that answers the question everybody actually has: <strong>if he can raise the dead, how is anyone supposed to resist him?</strong>",
+      leadAr: "هذه البطاقة تجيب عن السؤال الذي يدور في نفس كلِّ أحد: <strong>إذا كان يُحيي الموتى، فكيف يُصمد له؟</strong>",
+      groups: [
+        { points: [
+            { en: "The Dajjal camps outside Madinah — he <strong>cannot get in</strong>.",
+              ar: "ينزل الدجّال خارج المدينة، فهو <strong>لا يقدر على دخولها</strong>." },
+            { en: "One man walks out to him and says openly: <strong>you are the Dajjal the Messenger of Allah ﷺ warned us about</strong>.",
+              ar: "فيخرج إليه رجلٌ واحد فيصارحه: <strong>أنت الدجّال الذي حذّرنا منه رسول الله ﷺ</strong>." },
+            { en: "The Dajjal makes it a public test: <strong>if I kill him and raise him, will you doubt?</strong> They say no.",
+              ar: "فيجعلها الدجّال امتحانًا على رؤوس الناس: <strong>إن قتلتُه ثمّ أحييتُه أتشكّون؟</strong> فيقولون: لا." },
+            { en: "<strong>He kills him. He raises him.</strong> The crowd sees it happen.",
+              ar: "<strong>فيقتله ثمّ يحييه</strong>، والناس ينظرون." },
+            { en: "And the man's first words are the opposite of what the miracle was meant to produce: <strong>“I have never seen you more clearly than today.”</strong>",
+              ar: "فيكون أوّل ما ينطق به الرجل ضدَّ ما أُريد بالخارقة: <strong>«ما كنتُ فيك قطُّ أشدَّ بصيرةً منّي اليوم»</strong>." },
+            { en: "He tries to kill him again — and <strong>is not able to</strong>.",
+              ar: "ثمّ يريد قتله ثانيةً <strong>فلا يُسلَّط عليه</strong>." },
+            { en: "So the answer is: <strong>a wonder only convinces someone who was deciding by wonders.</strong> The man had already settled the matter on evidence, and no display could unsettle it.",
+              ar: "فالجواب: <strong>إنّما تغلب الخارقةُ من كان يزن الأمر بالخوارق</strong>. وأمّا هذا فقد استقرّ عنده الأمر بالدليل، فلم تُزحزحه العجائب." }
+          ] }
+      ]
+    },
+    lesson: "The Dajjal is given the most frightening thing on the list — killing and restoring a life in public — and it fails on the one man who already knew what he was. That is the whole logic of the warning. He ﷺ did not tell his people that the wonders would be small or fake-looking; he told them what the man's defect is, and that Allah has no such defect. The believer is not asked to out-argue the display. He is asked to have learnt the description beforehand. Notice too where it happens: outside Madinah, because he cannot enter it — the man walks out to him. He is not tricked into it, and he is not hiding from it.",
+    lessonAr: "يُعطى الدجّال أفظع ما في الباب — أن يقتل نفسًا ثمّ يردّها على أعين الناس — فتخيب هذه في الرجل الذي كان يعرف قبل ذلك من هو. وهذا هو منطق التحذير كلّه: فما أخبر ﷺ أمّته أنّ خوارقه ستكون صغيرةً أو ظاهرةَ الزيف، وإنّما أخبرهم بنقصه، وأنّ الله منزّهٌ عن ذلك النقص. فليس المطلوب من المؤمن أن يغلب العجيبة بالحجّة، بل أن يكون قد تعلّم الوصف قبل أن يراها. وتأمّل مكان الحادثة: خارج المدينة، لأنّه لا يدخلها؛ فالرجل هو الذي خرج إليه، ما خُدع إليه ولا اختبأ منه.",
+    ref: "Sahih al-Bukhari, Book of Afflictions (Kitab al-Fitan), Hadith 7132; also narrated by Muslim in the Book of Tribulations and the Portents of the Last Hour — from Abu Sa'id al-Khudri",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["dajjal","antichrist","young man","kills","raises","resurrect","miracle","madinah","insight","martyr","الدجال","المسيح الدجال","الشاب","يقتله","يحييه","بصيرة","المدينة","خوارق","آخر الزمان"]
+  },
+  {
+    id: "dajjal-forty-days",
+    section: "endtimes",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
+    title: "Forty days — and the day that lasts a year",
+    titleAr: "أربعون يومًا — واليوم الذي كسنة",
+    theme: "How long it lasts, and the question the Companions asked about prayer",
+    themeAr: "كم تدوم، والسؤال الذي سأله الصحابة عن الصلاة",
+    story: "An-Nawwas ibn Sam'an رضي الله عنه said the Prophet ﷺ spoke about the Dajjal one morning, lowering his voice and raising it, until they thought he was in a cluster of palm trees.\n\nThey asked: how long will he stay on the earth? He ﷺ said: \"Forty days — a day like a year, a day like a month, a day like a week, and the rest of his days like your days.\"\n\nThey said: \"O Messenger of Allah, that day which is like a year — will the prayers of one day be enough for us in it?\"\n\nHe said: \"No. Measure it out.\"\n\nThey said: and how fast is he on the earth? He said: \"Like rain driven by the wind.\"",
+    storyAr: "عن النوّاس بن سمعان رضي الله عنه قال: ذكر رسول الله ﷺ الدجّال ذات غداةٍ، فخفّض فيه ورفّع حتى ظنّوه في طائفة النخل.\n\nقالوا: يا رسول الله، وما لبثه في الأرض؟ قال: «أربعون يومًا: يومٌ كسنة، ويومٌ كشهر، ويومٌ كجمعة، وسائر أيّامه كأيّامكم».\n\nقالوا: يا رسول الله، فذلك اليوم الذي كسنة، أتكفينا فيه صلاةُ يوم؟\n\nقال: «لا، اقدروا له قدره».\n\nقالوا: يا رسول الله، وما إسراعه في الأرض؟ قال: «كالغيث استدبرته الريح».",
+    arabic: "لَا، اقْدُرُوا لَهُ قَدْرَهُ",
+    plain: {
+      lead: "Two things worth noticing here, and the second one is easy to miss.",
+      leadAr: "أمران في هذا الحديث، والثاني يكاد يُغفَل.",
+      groups: [
+        { head: "The timetable",
+          headAr: "المدّة",
+          points: [
+            { en: "<strong>Forty days altogether.</strong>",
+              ar: "<strong>أربعون يومًا جملةً</strong>." },
+            { en: "Day one is <strong>as long as a whole year</strong>.",
+              ar: "اليوم الأوّل <strong>كسنةٍ كاملة</strong>." },
+            { en: "Day two is <strong>as long as a month</strong>.",
+              ar: "والثاني <strong>كشهر</strong>." },
+            { en: "Day three is <strong>as long as a week</strong>.",
+              ar: "والثالث <strong>كجمعة</strong>." },
+            { en: "The remaining thirty-seven are <strong>normal days</strong>.",
+              ar: "والباقي — سبعةٌ وثلاثون — <strong>كأيّامكم المعتادة</strong>." },
+            { en: "He crosses the earth <strong>like rain driven by the wind</strong>.",
+              ar: "ويسير في الأرض <strong>كالغيث استدبرته الريح</strong>." }
+          ] },
+        { head: "And the question they actually asked",
+          headAr: "والسؤال الذي سألوه فعلًا",
+          points: [
+            { en: "In the middle of the most frightening description any of them had heard, the Companions asked: <strong>how do we pray in a day that long?</strong>",
+              ar: "في وسط أفظع وصفٍ سمعوه، كان سؤال الصحابة: <strong>كيف نصلّي في يومٍ بهذا الطول؟</strong>" },
+            { en: "He ﷺ did not tell them the prayer is suspended. He said: <strong>work out the timings</strong> — estimate the hours and keep the five prayers to that measure.",
+              ar: "فما أخبرهم ﷺ بسقوط الصلاة، بل قال: <strong>اقدروا له قدره</strong> — أي قدّروا الأوقات واحفظوا الصلوات الخمس على ذلك التقدير." },
+            { en: "So even in that year-long day, <strong>the ordinary duty continues</strong>. That is the answer to how anyone survives it.",
+              ar: "فحتى في ذلك اليوم الذي كسنة، <strong>يبقى الواجب المعتاد قائمًا</strong>. وهذا هو الجواب عن كيفيّة النجاة." }
+          ] }
+      ]
+    },
+    lesson: "The Companions heard a description terrifying enough that they thought he ﷺ was pointing at something among the palm trees, and their question was about the prayer timetable. That is the response the hadith preserves — not panic, and not a plan to fight him, but how do we keep the obligation. And the answer keeps the obligation on them: measure the hours out and pray. The trial does not cancel the ordinary duty; it is survived by it.",
+    lessonAr: "سمع الصحابة وصفًا مُفزِعًا حتى ظنّوا أنّه ﷺ يشير إلى شيءٍ في النخل، فكان سؤالهم عن أوقات الصلاة. هذا هو الأثر الذي حفظه الحديث: لا جزعًا، ولا تدبيرًا لقتاله، بل كيف نحفظ الفريضة. وجاء الجواب مُبقيًا الفريضة عليهم: قدّروا الأوقات وصلّوا. فالفتنة لا تُسقط الواجب المعتاد، وإنّما يُنجى منها به.",
+    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour (Kitab al-Fitan wa Ashrat as-Sa'ah) — the long hadith of an-Nawwas ibn Sam'an",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["dajjal","antichrist","forty days","how long","time","prayer","salah","measure","nawwas","الدجال","أربعون يومًا","اقدروا له قدره","الصلاة","النواس بن سمعان","المدة","آخر الزمان"]
+  },
+  {
+    id: "dajjal-followers-and-land",
+    section: "endtimes",
+    group: "dajjal",
+    groupTitle: "The Dajjal — the trial at the end of time",
+    groupTitleAr: "المسيح الدجّال — فتنة آخر الزمان",
+    title: "What he offers, what he withholds, and who goes after him",
+    titleAr: "ما يبذله وما يمنعه، ومن يتبعه",
+    theme: "The trial is prosperity, not only terror",
+    themeAr: "الفتنة رخاءٌ لا ترهيبٌ فقط",
+    story: "In the hadith of an-Nawwas ibn Sam'an رضي الله عنه, the Prophet ﷺ described what the Dajjal does when he reaches a people.\n\nHe comes to a people and calls them, and they believe in him and respond. So he commands the sky and it rains, and he commands the earth and it brings forth its plants. Their grazing animals return to them in the evening with their humps at their tallest, their udders at their fullest and their flanks stretched.\n\nThen he comes to a people and calls them, and they reject what he says. So he turns away from them, and they are left in drought, with none of their wealth in their hands.\n\nHe passes by the wasteland and says to it: \"Bring out your treasures\" — and its treasures follow him like a swarm of bees.\n\nAnd the Prophet ﷺ said, in the narration of Anas ibn Malik رضي الله عنه, that the Dajjal will be followed by seventy thousand of the Jews of Isfahan, wearing Persian shawls.",
+    storyAr: "في حديث النوّاس بن سمعان رضي الله عنه وصف النبيُّ ﷺ ما يصنع الدجّال إذا أتى قومًا.\n\nيأتي القوم فيدعوهم فيؤمنون به ويستجيبون له، فيأمر السماء فتُمطر، ويأمر الأرض فتُنبت، فتروح عليهم سارحتهم أطول ما كانت ذُرًى، وأسبغه ضروعًا، وأمدّه خواصر.\n\nثمّ يأتي القوم فيدعوهم فيردّون عليه قوله، فينصرف عنهم، فيُصبحون مُمحِلين ليس بأيديهم شيءٌ من أموالهم.\n\nويمرّ بالخَرِبة فيقول لها: أخرجي كنوزك، فتتبعه كنوزها كيعاسيب النحل.\n\nوقال ﷺ في حديث أنس بن مالك رضي الله عنه: يتبع الدجّالَ من يهود أصبهان سبعون ألفًا عليهم الطيالسة.",
+    arabic: "فَيَأْمُرُ السَّمَاءَ فَتُمْطِرُ، وَيَأْمُرُ الأَرْضَ فَتُنْبِتُ",
+    plain: {
+      lead: "Most people picture the Dajjal as a tyrant who forces belief. The hadith describes something harder to resist than force: <strong>he pays.</strong>",
+      leadAr: "يتصوّر أكثر الناس الدجّال جبّارًا يُكره على الإيمان به. والحديث يصف ما هو أشدّ من القهر: <strong>إنّه يُعطي</strong>.",
+      groups: [
+        { head: "To those who accept him",
+          headAr: "لمن استجاب له",
+          points: [
+            { en: "He <strong>orders the sky and it rains</strong>.",
+              ar: "<strong>يأمر السماء فتُمطر</strong>." },
+            { en: "He <strong>orders the earth and the crops come up</strong>.",
+              ar: "<strong>ويأمر الأرض فتُنبت</strong>." },
+            { en: "Their livestock come home <strong>taller, fuller and heavier than they have ever been</strong>.",
+              ar: "وتروح عليهم مواشيهم <strong>أطول ما كانت وأسبغها ضروعًا وأمدّها خواصر</strong>." }
+          ] },
+        { head: "To those who refuse him",
+          headAr: "لمن ردّ عليه",
+          points: [
+            { en: "He simply <strong>turns away</strong>.",
+              ar: "<strong>ينصرف عنهم</strong> لا أكثر." },
+            { en: "They are left in <strong>drought, with nothing of their wealth in their hands</strong>.",
+              ar: "فيُصبحون <strong>مُمحِلين ليس بأيديهم شيءٌ من أموالهم</strong>." }
+          ] },
+        { head: "And what he can summon",
+          headAr: "وما يستدعيه",
+          points: [
+            { en: "He tells the ruined ground to <strong>give up its treasure, and it follows him like bees</strong>.",
+              ar: "يقول للخَرِبة: <strong>أخرجي كنوزك، فتتبعه كيعاسيب النحل</strong>." },
+            { en: "<strong>Seventy thousand</strong> of the Jews of Isfahan, in Persian shawls, go out with him.",
+              ar: "ويخرج معه <strong>سبعون ألفًا</strong> من يهود أصبهان عليهم الطيالسة." }
+          ] },
+        { head: "So what is the test?",
+          headAr: "فما الامتحان إذًا؟",
+          points: [
+            { en: "Not <strong>“will you be brave enough”</strong> — but <strong>“will you refuse the one who is feeding you”</strong>, while the neighbours who accepted him watch their fields grow.",
+              ar: "ليس <strong>«أتصبر على البأس»</strong>، بل <strong>«أتردّ على من يطعمك»</strong> وجيرانك الذين استجابوا له ينظرون إلى زروعهم تنبت." }
+          ] }
+      ]
+    },
+    lesson: "This is the part of the description that is least talked about and hardest to face. The Dajjal does not only frighten people into following him — he rewards them, visibly and immediately, in the one currency everyone understands: rain, crops, fat livestock, treasure out of the ground. And those who refuse are not martyred dramatically; they are simply left poor while their neighbours prosper. That is the shape of the trial. It is not asking whether you can endure torture. It is asking whether you can watch someone else be paid for the thing you refused, and still refuse it.",
+    lessonAr: "هذا أقلُّ ما يُتحدَّث عنه من الوصف، وأشقُّه على النفس. فالدجّال لا يُخوّف الناس ليتبعوه فحسب، بل يعطيهم عطاءً ظاهرًا عاجلًا بالعملة التي يفهمها كلُّ أحد: مطرٌ وزرعٌ وماشيةٌ سِمانٌ وكنوزٌ تخرج من الأرض. وأمّا من ردّه فلا يُقتلون قتلةً ظاهرة، وإنّما يُتركون في جدبٍ وجيرانهم في رخاء. فهذه صورة الفتنة: ليست سؤالًا عن احتمال العذاب، بل عن أن ترى غيرك يُعطى ثمن ما رفضتَه ثمّ تثبت على رفضه.",
+    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the hadith of an-Nawwas ibn Sam'an; the seventy thousand of Isfahan is in Sahih Muslim, the same book, from Anas ibn Malik",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["dajjal","antichrist","rain","crops","wealth","treasure","followers","isfahan","seventy thousand","drought","trial","الدجال","المطر","الزرع","الكنوز","أصبهان","سبعون ألفًا","الفتنة","الرخاء","آخر الزمان"]
   },
   {
     id: "dajjal-end",
@@ -2914,6 +3197,20 @@ const PROPHET_STORIES = [
     arabic: "فَيَنْزِلُ عِنْدَ الْمَنَارَةِ الْبَيْضَاءِ شَرْقِيَّ دِمَشْقَ",
     lesson: "For all the terror of the description, the Dajjal is killed by one man at one gate, and the whole thing lasts forty days. He is not an equal to be defeated by an army; he is a trial permitted for a fixed time and then ended. Knowing how it finishes is part of why you were told about it.",
     lessonAr: "مع كلِّ ما في الوصف من هول، فإن الدجّال يقتله رجلٌ واحدٌ عند بابٍ واحد، ولا تزيد مدَّته على أربعين يومًا. فليس نِدًّا يُهزم بجيش، بل فتنةٌ أُذِن لها إلى أجلٍ ثم تنتهي. ومعرفتك كيف تنتهي بعضُ ما أُخبِرتَ به لأجله.",
+    plain: {
+      lead: "How it finishes — and it does finish.",
+      leadAr: "كيف ينتهي الأمر — وهو منتهٍ لا محالة.",
+      groups: [
+        { points: [
+            { en: "<strong>Isa (Jesus) the son of Maryam descends</strong> — at the white minaret to the east of Damascus, his hands on the wings of two angels.",
+              ar: "<strong>ينزل عيسى ابن مريم عليه السلام</strong> عند المنارة البيضاء شرقيّ دمشق، واضعًا كفّيه على أجنحة مَلَكين." },
+            { en: "<strong>The Dajjal dissolves at the sight of him</strong>, the way salt dissolves in water — and Isa catches and kills him <strong>at the gate of Ludd</strong>.",
+              ar: "<strong>فيذوب الدجّال لرؤيته</strong> كما يذوب الملح في الماء، فيدركه عيسى فيقتله <strong>عند باب لُدّ</strong>." },
+            { en: "So the trial that no army could beat is ended by <strong>one man sent by Allah</strong>. The believers' job in it was never to defeat him — it was to not be taken in by him.",
+              ar: "فالفتنة التي لا تردّها الجيوش يُنهيها <strong>رجلٌ واحدٌ يبعثه الله</strong>. وما كان على المؤمنين أن يغلبوه، وإنّما ألّا ينخدعوا به." }
+          ] }
+      ]
+    },
     ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the followers of Isfahan, and the descent of Isa and Ludd in the hadith of an-Nawwas ibn Sam'an",
     strength: "Sahih — Narrated by Muslim",
     keys: ["dajjal","isa","jesus","damascus","ludd","end","killed","isfahan","followers","gog","magog","الدجال","عيسى","دمشق","لد","النهاية","أصبهان","أتباع","يأجوج","مأجوج","المنارة البيضاء"]

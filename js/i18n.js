@@ -60,8 +60,8 @@ const AR = {
   "177 practices of the Prophet ﷺ across 18 areas of the day — sleeping, eating, washing, travelling, entering the mosque — each with its source.":
     "مئة وسبعٌ وسبعون سنة من هدي النبي ﷺ في ثمانية عشر بابًا من أبواب اليوم — النوم والطعام والطهارة والسفر ودخول المسجد — كلٌّ منها بمرجعها.",
   "Stories of the Prophet ﷺ": "قصص النبي ﷺ",
-  "49 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
-    "تسعةٌ وأربعون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
+  "52 moments from his life, every one located in Sahih al-Bukhari or Sahih Muslim before it was written, with the classical words explained.":
+    "اثنان وخمسون موقفًا من حياته ﷺ، كلُّ واحد وُجد في صحيح البخاري أو صحيح مسلم قبل كتابته، مع شرح الألفاظ القديمة الواردة فيه.",
   "15 stages in the order they happen — from the moment of death to the gates — with 64 referenced points and 54 passages of the Quran.":
     "خمس عشرة مرحلة بترتيب وقوعها — من لحظة الموت إلى الأبواب — مع أربعٍ وستين مسألة موثّقة، وأربعةٍ وخمسين موضعًا من القرآن الكريم.",
   "The 29 Prophets named in the Quran, from Adam to Muhammad ﷺ — every one of them with a full life and the message he was sent with.":
@@ -82,8 +82,8 @@ const AR = {
   "Recently Added": "أحدث الإضافات",
   "The newest additions to the site — each one written from the source, with its reference and its grading.":
     "أحدث ما أُضيف إلى الموقع — كلُّ مادةٍ مكتوبة من أصلها، ومعها مرجعها ودرجتها.",
-  "49 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the five stories about the Dajjal are linked together as one series.":
-    "تسعٌ وأربعون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الخمس مرتبطٌ بعضها ببعض كسلسلة واحدة.",
+  "52 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the eight stories about the Dajjal are linked together as one series, each with its own plain-words box.":
+    "اثنتان وخمسون قصة، كلُّ واحدة وُجدت في نص صحيح البخاري أو صحيح مسلم قبل كتابتها هنا، وليس فيها شيء من الذاكرة. والألفاظ العربية القديمة في كل قصة مشروحة بالعربية المعاصرة وبالإنجليزية، وقصص الدجّال الثماني مرتبطٌ بعضها ببعض كسلسلة واحدة، ومع كلِّ واحدةٍ منها صندوقُ «بكلماتٍ بسيطة».",
   "Read the Stories": "اقرأ القصص",
   "Fifteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 64 referenced points and 54 passages of the Quran.":
     "خمس عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. أربعٌ وستون مسألة موثّقة، وأربعةٌ وخمسون موضعًا من القرآن.",
@@ -119,8 +119,8 @@ const AR = {
   "Every hadith on this site carries its grading and names the scholar behind it — \"Sahih — Narrated by al-Bukhari\", \"Sahih — Agreed upon\". Anything outside Sahih al-Bukhari and Sahih Muslim is labelled as such, and material taken from the historical sira is marked as history rather than hadith. Where something well known is not authentic, the site says so on the entry itself.":
     "كل حديث في الموقع مذكورةٌ درجته ومعها اسم من صحّحه — «صحيح — رواه البخاري»، «صحيح — متفق عليه». وما كان خارج الصحيحين نُصّ على ذلك، وما كان من كتب السيرة بُيّن أنه تاريخ لا حديث. وإذا كان الأمر مشهورًا وهو غير ثابت، صرّح الموقع بذلك في موضعه.",
   "What is on the Stories page?": "ماذا في صفحة القصص؟",
-  "49 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
-    "تسعةٌ وأربعون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
+  "52 moments from the life of the Prophet ﷺ. Each was located in the text of Sahih al-Bukhari or Sahih Muslim before it was written here, and each carries the Arabic he spoke, the reference, the grading, and what the situation teaches — in both languages.":
+    "اثنان وخمسون موقفًا من حياة النبي ﷺ. كلُّ موقف وُجد في نص صحيح البخاري أو صحيح مسلم قبل كتابته هنا، ومعه لفظه العربي ومرجعه ودرجته وما يُستفاد منه — باللغتين.",
   "What does the Day of Judgement page cover?": "ماذا تتناول صفحة يوم القيامة؟",
   "Fifteen stages in the order they occur, from death to the gates, built on 54 passages of the Quran and hadith from the two Sahihs. Where a widely repeated detail sits outside them — the names of the angels of the grave, for instance — the page states that plainly instead of presenting it as settled.":
     "خمس عشرة مرحلة بترتيب وقوعها، من الموت إلى الأبواب، مبنيّة على أربعةٍ وخمسين موضعًا من القرآن وأحاديث الصحيحين. وما اشتُهر من التفاصيل وهو خارجهما — كأسماء ملَكَي القبر مثلاً — تُصرّح الصفحة بذلك ولا تُقدّمه على أنه مقطوعٌ به.",

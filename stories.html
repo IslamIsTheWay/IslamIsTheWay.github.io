@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608142326" />
+  <link rel="stylesheet" href="css/style.css?v=202608151057" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
   <meta property="og:type" content="website" />
@@ -139,7 +139,7 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608142326"></script>
+  <script src="js/data.js?v=202608151057"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -200,6 +200,41 @@
       </div>`;
     }
 
+    /* ---------- In plain words ----------
+       The owner asked for the same box the Judgement and Golden Age pages
+       have, and for the Dajjal he asked for something more: the description
+       and the powers set out as a LIST, "so it's easier for the reader to
+       consume", rather than buried in paragraphs of narrative.
+
+       So `plain` takes an optional lead, and any number of point groups.
+       A group with a `head` renders as a titled list; without one it is a
+       plain run of points. Nothing here is decorative — every point is a
+       line from the same hadith the card already cites. */
+    function plainBox(s) {
+      if (!s.plain) return "";
+      const p = s.plain;
+      const groups = p.groups || [];
+      return `<div class="story-plain">
+        <div class="story-plain-head">🟢 <span class="en-only">In plain words</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">بكلماتٍ بسيطة</span></div>
+
+        ${p.lead ? `<p class="story-plain-lead en-only">${p.lead}</p>
+          <p class="story-plain-lead ar-only" dir="rtl">${p.leadAr}</p>` : ""}
+
+        ${groups.map(g => `
+          ${g.head ? `<div class="story-plain-sub">
+              <span class="en-only">${g.head}</span>
+              <span class="ar-only" dir="rtl">${g.headAr}</span>
+            </div>` : ""}
+          <ul class="story-plain-list">
+            ${g.points.map(pt => `<li>
+              <span class="en-only">${pt.en}</span>
+              <span class="ar-only" dir="rtl">${pt.ar}</span>
+            </li>`).join("")}
+          </ul>`).join("")}
+      </div>`;
+    }
+
     /* ---------- Stories that belong together ----------
        Five separate cards about the Dajjal read like five unconnected
        stories. Anything sharing a `group` is shown as one series: which part
@@ -254,6 +289,7 @@
         ${s.arabic ? `<p class="story-quote" dir="rtl" data-speak>${s.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
 
         ${glossaryBox(s)}
+        ${plainBox(s)}
 
         <div class="story-lesson">
           <div class="story-lesson-head">&#128161; What this teaches <span dir="rtl" style="font-family:'Amiri',serif;">— ما يُستفاد</span></div>
@@ -278,8 +314,15 @@
          • a search typed    → flat results across everything, sections
                                ignored, so a reader who types "anger" is
                                never told there is nothing while sitting in
-                               the wrong tab. */
-    let storySection = "all";
+                               the wrong tab.
+
+       THE PAGE OPENS ON THE DAJJAL, by the owner's instruction: "keep it on
+       the antichrist story by default... because this is the most important
+       one". So the landing state is the end-of-time section rather than
+       "All". Everything else still works exactly as before — one tap on
+       "All" or any other chip leaves it, and a search still ignores the
+       chips entirely. */
+    let storySection = "endtimes";
 
     function sectionHeading(sec) {
       return `<div class="story-section-head" id="sec-${sec.id}">
@@ -371,7 +414,7 @@
     renderGrouped();
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/main.js?v=202608142326"></script>
-  <script src="js/i18n.js?v=202608142326"></script>
+  <script src="js/main.js?v=202608151057"></script>
+  <script src="js/i18n.js?v=202608151057"></script>
 </body>
 </html>

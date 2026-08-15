@@ -78,6 +78,102 @@ function dailyStreak() {
   return n;
 }
 
+/* ============================================================
+   THE DASHBOARD — the big number, the week, and the next marked day
+   ============================================================
+   The owner asked for "that type of dashboard like Duolingo, the one that
+   shows a certain number on it". Three parts, and the number is the hero:
+
+     1. the run of days, large enough to be the first thing seen
+     2. the last seven days, so a gap is visible rather than described
+     3. how far the next marked day is, so the number points somewhere
+
+   ONE DELIBERATE DEPARTURE FROM DUOLINGO: it uses a FLAME for the streak.
+   Not here. This site has a whole page about the Fire, and making 🔥 the
+   reward for reading Quran is the wrong note entirely. The hero icon is
+   instead the milestone already earned (🌱 → 🌿 → ⭐ → 🌟 → 🌙 → 🕌 → 🏅 →
+   💎 → 👑), which grows with the streak and is better than a static flame.
+   ============================================================ */
+
+function dailyKeyOf(d) {
+  const p = n => String(n).padStart(2, "0");
+  return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+}
+
+/* Was anything at all done on this date? */
+function dailyDayDone(k) {
+  const all = dailyLoad();
+  return !!(all[k] && Object.keys(all[k]).some(x => all[k][x]));
+}
+
+/* Sunday-first, matching Date.getDay(). The Arabic is the single letter each
+   day is known by: ح ن ث ر خ ج س. */
+const DAILY_DOW_EN = ["S", "M", "T", "W", "T", "F", "S"];
+const DAILY_DOW_AR = ["ح", "ن", "ث", "ر", "خ", "ج", "س"];
+
+/* The last seven days, OLDEST FIRST so today is last. In Arabic the page is
+   RTL, so the first element lands on the right and the run still reads in
+   the direction the language is read. */
+function dailyWeek() {
+  const out = [];
+  const d = new Date();
+  d.setDate(d.getDate() - 6);
+  const today = dailyToday();
+  for (let i = 0; i < 7; i++) {
+    const k = dailyKeyOf(d);
+    out.push({
+      key: k,
+      en: DAILY_DOW_EN[d.getDay()],
+      ar: DAILY_DOW_AR[d.getDay()],
+      done: dailyDayDone(k),
+      isToday: k === today,
+      isJumuah: d.getDay() === 5
+    });
+    d.setDate(d.getDate() + 1);
+  }
+  return out;
+}
+
+/* The longest run ever kept. Shown only when it is ahead of the current one,
+   where it is a target; showing it while it EQUALS the current streak would
+   just print the same number twice. */
+function dailyBest() {
+  const all = dailyLoad();
+  const days = Object.keys(all)
+    .filter(k => Object.keys(all[k]).some(x => all[k][x]))
+    .sort();
+  let best = 0, run = 0, prev = null;
+  days.forEach(k => {
+    if (prev) {
+      const gap = Math.round(
+        (new Date(k + "T00:00:00") - new Date(prev + "T00:00:00")) / 86400000
+      );
+      run = (gap === 1) ? run + 1 : 1;
+    } else {
+      run = 1;
+    }
+    if (run > best) best = run;
+    prev = k;
+  });
+  return best;
+}
+
+/* Where this streak sits between the marked days in js/wird.js — which one
+   has been passed, which one is next, and how far along the gap it is. */
+function dailyMark(streak) {
+  const ms = (typeof WIRD_MILESTONES !== "undefined") ? WIRD_MILESTONES : [];
+  let reached = null, next = null;
+  ms.forEach(m => {
+    if (streak >= m.days) reached = m;
+    else if (!next) next = m;
+  });
+  const from = reached ? reached.days : 0;
+  const to = next ? next.days : from;
+  /* A hair of fill at the start, so the bar never reads as broken. */
+  const pct = next ? Math.max(4, Math.round(((streak - from) / (to - from)) * 100)) : 100;
+  return { reached: reached, next: next, toGo: next ? next.days - streak : 0, pct: pct };
+}
+
 /* ---------- What today's four things are ----------
    Each returns null when its data file is not on the page, so the box simply
    shows fewer rows rather than breaking. index.html loads data.js and
