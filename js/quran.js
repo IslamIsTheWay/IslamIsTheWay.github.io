@@ -1,5 +1,5 @@
 /* ============================================
-   Islam Is The Way — Quran Library
+   IslamBasics — Quran Library
    Renders the 114-surah grid and fetches live
    Arabic text + English translation from the
    AlQuran Cloud API (api.alquran.cloud) when a

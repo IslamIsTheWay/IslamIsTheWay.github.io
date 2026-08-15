@@ -1,5 +1,5 @@
 /* ============================================
-   Islam Is The Way — Data
+   IslamBasics — Data
    Surahs of the Quran, Prophets, and Companions
    ============================================ */
 

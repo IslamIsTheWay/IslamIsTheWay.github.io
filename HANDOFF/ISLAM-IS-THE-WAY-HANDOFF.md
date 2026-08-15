@@ -1,4 +1,4 @@
-# ISLAM IS THE WAY - COMPLETE PROJECT HANDOFF
+# ISLAMBASICS - COMPLETE PROJECT HANDOFF
 
 > **For a new Claude chat / Project.** This single file contains everything
 > needed to continue building this website. Read it top to bottom once, then
@@ -106,7 +106,7 @@ faults that shipped, including two the owner had to report twice.
 # PART 1 - from `00-START-HERE.md`
 <!-- ============================================================ -->
 
-# Islam Is The Way — Project Handoff
+# IslamBasics — Project Handoff
 
 **Read this file first.** It tells a new assistant everything needed to continue
 building this website without repeating work or breaking what already exists.

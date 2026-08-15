@@ -1,5 +1,5 @@
 /* ============================================
-   Islam Is The Way — The Sunnah of the Prophet ﷺ
+   IslamBasics — The Sunnah of the Prophet ﷺ
    --------------------------------------------
    The practical guidance of the Prophet ﷺ for daily life: prayer, sleep,
    eating, cleanliness, travel, family, character and more.

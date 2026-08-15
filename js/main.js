@@ -1,5 +1,5 @@
 /* ============================================
-   Islam Is The Way — Shared Site Behaviour
+   IslamBasics — Shared Site Behaviour
    ============================================ */
 
 /* ---------- Staff sign-in that survives leaving the page ----------
@@ -1305,7 +1305,7 @@ function iitwSendFeedback(e) {
     at: new Date().toISOString()
   });
 
-  const subject = "Islam Is The Way — Feedback" + (name ? " from " + name : "") + " (" + page + ")";
+  const subject = "IslamBasics — Feedback" + (name ? " from " + name : "") + " (" + page + ")";
   const mailBody = body + "\n\n—\nSent from: " + page + "\n" + new Date().toLocaleString();
   window.location.href = "mailto:" + IITW_FEEDBACK_TO +
     "?subject=" + encodeURIComponent(subject) +

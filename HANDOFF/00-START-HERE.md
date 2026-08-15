@@ -5,7 +5,7 @@
 > for the current state — it is the canonical one, and the one CLAUDE.md
 > points at.
 
-# Islam Is The Way — Project Handoff
+# IslamBasics — Project Handoff
 
 **Read this file first.** It tells a new assistant everything needed to continue
 building this website without repeating work or breaking what already exists.

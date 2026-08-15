@@ -1,5 +1,5 @@
 /* ============================================
-   Islam Is The Way — Arabic / English switch
+   IslamBasics — Arabic / English switch
    --------------------------------------------
    Adds a language button to every page. Switching to Arabic translates the
    interface, flips the layout to right-to-left, and shows the Arabic version
@@ -28,7 +28,7 @@ const AR = {
   "Search": "البحث",
   "Login": "تسجيل الدخول",
   "Logout": "تسجيل الخروج",
-  "Islam Is The Way": "الإسلام هو الطريق",
+  "IslamBasics": "أساسيات الإسلام",
   "Explore": "استكشف",
   "Contact": "تواصل معنا",
   "Quran Library": "مكتبة القرآن",
@@ -36,7 +36,7 @@ const AR = {
   "Stories of the Prophet صلى الله عليه وسلم": "قصص النبي ﷺ",
   "The Day of Judgement": "يوم القيامة",
   "Islamic Wisdom for Every Heart": "حكمة الإسلام لكل قلب",
-  "© 2026 Islam Is The Way. All rights reserved.": "© 2026 الإسلام هو الطريق. جميع الحقوق محفوظة.",
+  "© 2026 IslamBasics. All rights reserved.": "© 2026 أساسيات الإسلام. جميع الحقوق محفوظة.",
   "A resource for learning the Quran, the Prophets, and the Companions of Prophet Muhammad ﷺ — built to inform, inspire, and guide.":
     "موقع لتعلّم القرآن الكريم وسيرة الأنبياء وصحابة النبي ﷺ — للتعليم والإلهام والتوجيه.",
   "Clear": "مسح",
@@ -128,8 +128,8 @@ const AR = {
   "On the Guidance page, describe what you are going through by typing or speaking, in Arabic or English. The site searches the Quranic themes, the Sunnah, the worship steps, the full Bukhari and Muslim collections, and the lives of the Prophets and Companions, and shows what relates to it with full references. It is not a fatwa — read each verse in its full surah and consult a qualified scholar.":
     "في صفحة التوجيه، اكتب ما تمرّ به أو قله بصوتك، بالعربية أو الإنجليزية. يبحث الموقع في المعاني القرآنية والسنن وخطوات العبادة وصحيحَي البخاري ومسلم كاملين وسِيَر الأنبياء والصحابة، ويعرض لك ما يتعلق بحالك مع مراجعه كاملة. وهذا ليس فتوى — اقرأ كل آية في سورتها كاملة وارجع إلى أهل العلم.",
   "Is the content free to access?": "هل المحتوى مجاني؟",
-  "Yes. All content on Islam Is The Way is free, intended for learning, reflection, and sharing knowledge of Islam with others.":
-    "نعم. كلُّ ما في «الإسلام هو الطريق» مجاني، غايته التعلّم والتدبّر ونشر العلم بالإسلام.",
+  "Yes. All content on IslamBasics is free, intended for learning, reflection, and sharing knowledge of Islam with others.":
+    "نعم. كلُّ ما في «أساسيات الإسلام» مجاني، غايته التعلّم والتدبّر ونشر العلم بالإسلام.",
   "Houses of Allah Around the World": "بيوت الله في أنحاء العالم",
   "بيوت الله في أنحاء العالم — from Makkah and Madinah to Istanbul, Casablanca and Abu Dhabi.":
     "بيوت الله في أنحاء العالم — من مكة والمدينة إلى إسطنبول والدار البيضاء وأبوظبي.",

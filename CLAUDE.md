@@ -1,4 +1,4 @@
-# Islam Is The Way — read this before making changes
+# IslamBasics — read this before making changes
 
 Bilingual (Arabic/English) Islamic education website. Plain static HTML/CSS/JS —
 no build step, no framework, no server. Pushing to `main` publishes it.
