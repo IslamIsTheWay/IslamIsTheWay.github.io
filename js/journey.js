@@ -94,7 +94,7 @@ const JOURNEY = [
         headAr: "إن كنتَ مؤمنًا",
         points: [
           { en: "Angels come down <strong>with faces like the sun</strong>, carrying a shroud and perfume from Paradise.",
-            ar: "تنزل ملائكةٌ <strong>وجوههم كالشمس</strong>، معهم كفنٌ وطِيبٌ من الجنّة." },
+            ar: "تنزل ملائكةٌ <strong>وجوههم كالشمس</strong>، معهم كفنٌ وطِيبٌ من الجنّة — و<strong>الكفن</strong> هو الثوب الذي يُلَفّ به الميّت، و<strong>الطِّيب (الحَنوط)</strong> ما يُطيَّب به." },
           { en: "The Angel of Death speaks to you <strong>gently</strong>: come out to forgiveness and pleasure.",
             ar: "ويخاطبك ملك الموت <strong>برفق</strong>: اخرجي إلى مغفرةٍ ورضوان." },
           { en: "The soul <strong>flows out easily</strong> — like a drop running from a waterskin.",
@@ -106,9 +106,9 @@ const JOURNEY = [
         headAr: "وإن كنتَ على غير ذلك",
         points: [
           { en: "The angels who come are <strong>black-faced</strong>, and they bring sackcloth.",
-            ar: "تنزل ملائكةٌ <strong>سود الوجوه</strong>، ومعهم المُسوح." },
+            ar: "تنزل ملائكةٌ <strong>سود الوجوه</strong>، ومعهم <strong>المُسوح</strong> — وهي <strong>ثيابٌ خشنةٌ غليظة</strong> من شَعر، على عكس كفن الجنّة." },
           { en: "The soul is <strong>dragged out</strong> — the hadith compares it to a many-pronged skewer pulled through wet wool.",
-            ar: "وتُنتزع الروح <strong>انتزاعًا</strong>؛ شبّهه الحديث بالسَّفُّود الكثير الشُّعَب يُنزع من الصوف المبلول." },
+            ar: "وتُنتزع الروح <strong>انتزاعًا</strong>؛ شبّهه الحديث بـ<strong>السَّفُّود</strong> — وهو <strong>سيخٌ حديدٌ ذو شُعَبٍ كثيرة (كالخطّاف)</strong> — يُنزع من <strong>صوفٍ مبلول</strong>، فيتعلّق به ما يتعلّق ويتمزّق." },
           { en: "And it <strong>stinks</strong> — the hadith says like the foulest corpse on the earth.",
             ar: "و<strong>لها نتنٌ</strong>؛ قال الحديث: كأنتن جيفةٍ على وجه الأرض." }
         ] },
@@ -152,10 +152,12 @@ const JOURNEY = [
       { head: "The two words",
         headAr: "الكلمتان",
         points: [
-          { en: "<strong>عِلِّيُّون (Illiyyun)</strong> — the register of the righteous, kept <strong>high up</strong>. Mentioned in Surah Al-Mutaffifin (83:18–19).",
-            ar: "<strong>عِلِّيُّون</strong> — ديوان الأبرار، وهو في <strong>الأعلى</strong>. وذُكر في سورة المطفّفين (٨٣:١٨–١٩)." },
-          { en: "<strong>سِجِّين (Sijjin)</strong> — the register of the wicked, kept <strong>in the lowest earth</strong>. Surah Al-Mutaffifin (83:7–8).",
-            ar: "<strong>سِجِّين</strong> — ديوان الفجّار، وهو <strong>في الأرض السفلى</strong>. سورة المطفّفين (٨٣:٧–٨)." }
+          { en: "<strong>عِلِّيُّون (Illiyyun)</strong> — think of it as <strong>the record book the good people's names are written in</strong>. The word itself comes from <em>uluww</em>, meaning <strong>height</strong> — it is kept up high. Surah Al-Mutaffifin (83:18–19).",
+            ar: "<strong>عِلِّيُّون</strong> — اجعله في ذهنك <strong>السجلّ الذي تُكتب فيه أسماء أهل الخير وأعمالهم</strong>. والكلمة من <em>العُلوّ</em> أي <strong>الارتفاع</strong>، فهو محفوظٌ في الأعلى. سورة المطفّفين (٨٣:١٨–١٩)." },
+          { en: "<strong>سِجِّين (Sijjin)</strong> — <strong>the record book for the wicked</strong>, and the word is connected to <em>sijn</em>, <strong>a prison</strong>. It is kept down in the lowest earth. Surah Al-Mutaffifin (83:7–8).",
+            ar: "<strong>سِجِّين</strong> — <strong>سجلّ أهل الفجور</strong>، والكلمة قريبةٌ من <em>السِّجن</em>، أي <strong>الحبس</strong>. وهو محفوظٌ في الأرض السفلى. سورة المطفّفين (٨٣:٧–٨)." },
+          { en: "So one name means <strong>up</strong> and the other means <strong>locked away below</strong> — the two words are opposites on purpose.",
+            ar: "فاسمٌ معناه <strong>العلوّ</strong>، والآخر معناه <strong>الحبس في الأسفل</strong> — والكلمتان متقابلتان عن قصد." }
         ] },
       { head: "What happens, in order",
         headAr: "ما يقع مرتَّبًا",
@@ -226,7 +228,7 @@ const JOURNEY = [
           { en: "The funeral is <strong>carried quickly</strong>, not delayed.",
             ar: "<strong>ويُسرَع بالجنازة</strong> ولا تُؤخَّر." },
           { en: "Whoever prays over it earns <strong>one qirat</strong>; whoever stays until burial earns <strong>two</strong> — and he ﷺ said each is <strong>like an enormous mountain</strong> of reward.",
-            ar: "من صلّى عليها فله <strong>قيراط</strong>، ومن بقي حتى تُدفن فله <strong>قيراطان</strong>، وقال ﷺ إنّ كلّ واحدٍ منهما <strong>مثل الجبل العظيم</strong> أجرًا." }
+            ar: "من صلّى عليها فله <strong>قيراط</strong>، ومن بقي حتى تُدفن فله <strong>قيراطان</strong>، و<strong>القيراط</strong> في الأصل جزءٌ يسير، لكنّه ﷺ فسّره هنا فقال إنّ كلّ واحدٍ منهما <strong>مثل الجبل العظيم</strong> أجرًا." }
         ] }
     ]
   }
@@ -283,7 +285,7 @@ const JOURNEY = [
           { en: "A door is opened to your place. The believer gets <strong>the scent and the breeze of Paradise</strong>, and the grave is widened as far as he can see.",
             ar: "يُفتح بابٌ إلى مقعدك؛ فالمؤمن يأتيه <strong>رَوح الجنّة وطِيبها</strong>، ويُفسح له في قبره مدَّ بصره." },
           { en: "The other gets <strong>the heat and the scorching wind of the Fire</strong>, and the grave <strong>squeezes him until his ribs interlock</strong>.",
-            ar: "والآخر يأتيه <strong>حرّ النار وسَمومها</strong>، <strong>ويُضيَّق عليه القبر حتى تختلف أضلاعه</strong>." },
+            ar: "والآخر يأتيه <strong>حرّ النار وسَمومها</strong>، <strong>ويُضيَّق عليه القبر حتى تختلف أضلاعه</strong> — أي <strong>تتداخل عظام صدره</strong> بعضها في بعضٍ من شدّة الضغط." },
           { en: "And then each says the opposite thing. The first: <strong>“My Lord, bring the Hour.”</strong> The second: <strong>“My Lord, do not bring the Hour.”</strong>",
             ar: "ثمّ يقول كلٌّ منهما ضدّ ما يقوله الآخر؛ فالأوّل: <strong>ربِّ أقِمِ الساعة</strong>، والثاني: <strong>ربِّ لا تُقِم الساعة</strong>." },
           { en: "So <strong>whether you want that Day to hurry up is itself the result.</strong> You will already know which one you are.",
@@ -429,7 +431,7 @@ const JOURNEY = [
         headAr: "العظم",
         points: [
           { en: "<strong>عَجْب الذَّنَب</strong> is the <strong>tailbone</strong> — the small bone at the very base of the spine, at the bottom of the back.",
-            ar: "<strong>عَجْب الذَّنَب</strong> هو <strong>العُصعُص</strong>، العظم الصغير في أسفل العمود الفقريّ في آخر الظهر." },
+            ar: "<strong>عَجْب الذَّنَب</strong> هو <strong>العُصعُص</strong> — العظم الصغير في <strong>آخر أسفل الظهر</strong>، عند نهاية العمود الفقريّ (ما يسمّيه الناس عظمة آخر الظهر)." },
           { en: "<strong>Everything else of the body decays.</strong> This one does not.",
             ar: "<strong>ويبلى كلُّ ما سواه من البدن</strong>، وأمّا هو فلا يبلى." },
           { en: "<strong>You are re-assembled from it</strong> — the way a whole plant comes out of one seed.",
@@ -486,7 +488,7 @@ const JOURNEY = [
           { en: "You are standing on <strong>open, flat ground</strong> with no hills, no trees and <strong>no shade of any kind</strong> — nothing to stand behind or under.",
             ar: "تقف في <strong>أرضٍ مستويةٍ مكشوفة</strong>، لا جبل فيها ولا شجر و<strong>لا ظلَّ البتّة</strong>، ليس فيها ما تستتر به أو تستظلّ." },
           { en: "You are <strong>barefoot, with nothing on you, and uncircumcised</strong> — created new, exactly as you were first made. Aishah رضي الله عنها asked whether men and women would look at one another, and he ﷺ said the matter is <strong>far too serious for that to occur to anyone</strong>.",
-            ar: "وتُبعث <strong>حافيًا عاريًا أغرل</strong> — أي كما خُلقت أوّل مرّة. وسألت عائشة رضي الله عنها: أينظر بعضنا إلى بعض؟ فقال ﷺ إنّ <strong>الأمر أشدّ من أن يُهِمَّهم ذلك</strong>." },
+            ar: "وتُبعث <strong>حافيًا عاريًا أغرل</strong> — و<strong>حافيًا</strong>: بلا نعل، و<strong>عاريًا</strong>: بلا ثوب، و<strong>أغرل</strong>: غير مختون، أي <strong>كما خُلقت أوّل مرّة تمامًا</strong>. وسألت عائشة رضي الله عنها: أينظر بعضنا إلى بعض؟ فقال ﷺ إنّ <strong>الأمر أشدّ من أن يُهِمَّهم ذلك</strong>." },
           { en: "The sun is brought down to <strong>about a mile away</strong>. The narrator himself said he did not know whether the Prophet ﷺ meant the distance or the little rod used to put kohl on the eye — <strong>and he admitted that rather than guess</strong>.",
             ar: "وتدنو الشمس حتى تكون <strong>كمقدار ميل</strong>. وقال الراوي نفسه إنّه لا يدري: أراد المسافة أم الميل الذي يُكتحل به؟ <strong>فصرّح بعدم علمه ولم يظنّ</strong>." },
           { en: "And everybody who ever lived is <strong>packed into that one place at the same time</strong> — every human being from Adam onwards, crowded together, with no room.",
@@ -504,9 +506,9 @@ const JOURNEY = [
           { en: "Some <strong>up to the knees</strong>.",
             ar: "ومنهم <strong>إلى ركبتيه</strong>." },
           { en: "Some <strong>up to the waist</strong>.",
-            ar: "ومنهم <strong>إلى حَقْويه</strong>." },
+            ar: "ومنهم <strong>إلى حَقْويه</strong> — و<strong>الحَقْو</strong> هو <strong>الخَصْر</strong>، أي وسط الجسم عند الحزام." },
           { en: "And some until the sweat <strong>bridles them</strong> — the Prophet ﷺ pointed to his own mouth as he said it. A bridle is the strap that goes into a horse's mouth: the sweat has risen that far.",
-            ar: "ومنهم من <strong>يُلجمه العرق إلجامًا</strong> — وأشار ﷺ بيده إلى فيه وهو يقولها. واللجام ما يُجعل في فم الدابّة: أي بلغ العرق ذلك الحدّ." },
+            ar: "ومنهم من <strong>يُلجمه العرق إلجامًا</strong> — وأشار ﷺ بيده إلى فمه وهو يقولها. و<strong>اللِّجام</strong> هو الحديدة التي تُوضع في <strong>فم الدابّة</strong> لتُقاد بها؛ فالمعنى أنّ العرق بلغ <strong>فمه</strong>." },
           { en: "So two people stand <strong>side by side in the same heat</strong>, and one is dry to the ankle while the other is drowning in it. <strong>The difference between them is not the weather. It is what they brought.</strong>",
             ar: "فيقف اثنان <strong>جنبًا إلى جنبٍ في الحرّ نفسه</strong>، فهذا إلى كعبه وذاك يغرق فيه. <strong>وليس الفارق بينهما الجوّ، وإنّما ما قدّماه.</strong>" }
         ] },
@@ -705,10 +707,12 @@ const JOURNEY = [
         note: "Here is the unusual part. You do not find out your result by READING the book. You find out by WHICH HAND it arrives in. The verdict is delivered by the manner of handing it over — before a single line has been read.",
         noteAr: "وهنا الأمر اللافت: لا تعرف نتيجتك <strong>بقراءة</strong> الكتاب، وإنّما <strong>باليد التي يُدفع بها إليك</strong>. فالحكم يُعلَم من هيئة التسليم قبل أن يُقرأ منه سطرٌ واحد.",
         points: [
-          { en: "<strong>In the right hand</strong> — an <em>easy</em> reckoning, and he goes back to his people <strong>happy</strong>.",
-            ar: "<strong>باليمين</strong> — فحسابٌ <em>يسير</em>، ويرجع إلى أهله <strong>مسرورًا</strong>." },
-          { en: "<strong>Behind his back</strong> — he <strong>calls for his own destruction</strong>. The Quran states the outcome in the same breath.",
-            ar: "<strong>من وراء ظهره</strong> — فـ<strong>يدعو على نفسه بالثبور</strong>، وذكر القرآن العاقبة في السياق نفسه." },
+          { en: "<strong>In the right hand</strong> — the Quran calls it an <em>easy reckoning</em>, which the Prophet ﷺ explained as <strong>simply being shown your deeds and passed</strong>, without being argued with over them. And the man goes back to his family <strong>happy</strong>.",
+            ar: "<strong>باليمين</strong> — وسمّاه القرآن <em>حِسابًا يسيرًا</em>، وفسّره النبيُّ ﷺ بأنّه <strong>أن تُعرَض عليك أعمالك فقط ثمّ تُجاوَز</strong> من غير أن تُناقَش فيها. ثمّ يرجع إلى أهله <strong>فرحًا مسرورًا</strong>." },
+          { en: "<strong>Behind his back</strong> — reaching backwards for it, not taking it in front of him. And the Quran says he will <em>call for thubur</em>: <strong>thubur means ruin and destruction</strong> — he starts calling out for his own end, wishing he were finished with rather than facing what is coming.",
+            ar: "<strong>من وراء ظهره</strong> — يمدّ يده إلى خلفه ليأخذه، لا يتناوله أمامه. وقال القرآن إنّه <em>يدعو ثُبورًا</em>، و<strong>الثُّبور معناه: الهلاك والدمار</strong> — أي يصيح داعيًا على نفسه بالهلاك، يتمنّى أن يُقضى عليه ولا يرى ما هو مُقبِلٌ عليه." },
+          { en: "So the manner of the handover <strong>is the verdict</strong> — and everyone around you can see which it was.",
+            ar: "فطريقة تسليم الكتاب <strong>هي الحكم نفسه</strong> — ومن حولك يرى بأيّ يدٍ أخذتَه." },
           { en: "What is in it: <strong>everything</strong>. The criminals themselves say it — <em>it leaves nothing small or great except that it has counted it.</em>",
             ar: "وما فيه: <strong>كلُّ شيء</strong>؛ ويقولها المجرمون أنفسهم: <em>لا يغادر صغيرةً ولا كبيرةً إلا أحصاها</em>." },
           { en: "And they <strong>find what they did actually present in front of them</strong> — not a description of it. The deed itself.",
@@ -719,8 +723,10 @@ const JOURNEY = [
         points: [
           { en: "They are set up <strong>so that nobody is wronged by even a little</strong> — that is what the verse says they are for.",
             ar: "تُوضع <strong>لئلّا تُظلم نفسٌ شيئًا</strong>، وهذا ما نصّت عليه الآية في الغرض منها." },
-          { en: "The sensitivity is <strong>the weight of a mustard seed</strong> — and elsewhere, <strong>an atom's weight</strong>, of good or of bad.",
-            ar: "ودقّتها <strong>مثقال حبّةٍ من خردل</strong>، وفي موضعٍ آخر <strong>مثقال ذرّة</strong> من خيرٍ أو شرّ." },
+          { en: "How sensitive is it? The Quran gives two measures. <strong>The weight of a mustard seed</strong> — mustard seed is one of the smallest seeds there is, the size of a pinhead. And <strong>the weight of a dharrah</strong>: <strong>dharrah means a speck of dust, or the smallest ant</strong> — the thing you can barely see floating in a beam of sunlight.",
+            ar: "وما مقدار دقّتها؟ ذكر القرآن مقياسين. <strong>مثقال حبّةٍ من خَردل</strong> — و<strong>الخَردل</strong> من <strong>أصغر البذور</strong>، حبّته في حجم رأس الدبّوس. و<strong>مثقال ذرّة</strong> — و<strong>الذرّة</strong> هي <strong>الهباءة الصغيرة جدًّا</strong> التي تراها تسبح في شعاع الشمس، أو النملة الصغيرة." },
+          { en: "Both are chosen to say the same thing: <strong>there is no amount too small to be counted</strong> — of good, or of bad.",
+            ar: "والمقياسان معًا يقولان شيئًا واحدًا: <strong>ليس هناك مقدارٌ أصغر من أن يُحسَب</strong>، لا في الخير ولا في الشرّ." },
           { en: "So <strong>nothing is too small to count</strong> — which cuts both ways, and is meant to.",
             ar: "فـ<strong>لا شيء أصغر من أن يُحسب</strong>، وهذا في الجهتين معًا، وذلك مقصود." },
           { en: "And weight is <strong>not the same as effort</strong>. He ﷺ named two short phrases as <strong>light on the tongue and heavy on the Scale</strong>: <em>Subhan Allahi wa bihamdih, Subhan Allahi'l-Azim</em>.",
@@ -1001,7 +1007,7 @@ const JOURNEY = [
       { head: "The body you live in there",
         headAr: "البدن الذي تعيش به",
         note: "The strange detail worth naming: there is NO WASTE in Paradise at all. No spitting, no blowing the nose, no toilet. You still eat and drink — with the strength of a hundred men — but what you eat leaves the body as a light sweat that smells of musk, and a breath. Nothing about the body there is unpleasant to be near.",
-        noteAr: "والتفصيل اللافت الذي يحسن التصريح به: <strong>لا فضلات في الجنّة البتّة</strong>؛ لا بُصاق ولا مُخاط ولا خلاء. ومع ذلك تأكل وتشرب — بقوّة مئة رجل — ولكن ما تأكله يخرج <strong>عَرَقًا لطيفًا ريحه المسك ونَفَسًا</strong>. فليس في البدن هناك ما يُستكره منه شيء.",
+        noteAr: "والتفصيل اللافت الذي يحسن التصريح به: <strong>لا فضلات في الجنّة البتّة</strong>؛ لا بُصاق ولا مُخاط (أي ما يخرج من الأنف) ولا <strong>خلاء</strong> (أي لا حاجةَ إلى دخول الحمّام). ومع ذلك تأكل وتشرب — بقوّة مئة رجل — ولكن ما تأكله يخرج <strong>عَرَقًا لطيفًا ريحه المسك ونَفَسًا</strong>. فليس في البدن هناك ما يُستكره منه شيء.",
         points: [
           { en: "The first group enters <strong>looking like the full moon</strong>.",
             ar: "تدخل أوّل زمرةٍ <strong>على صورة القمر ليلة البدر</strong>." },

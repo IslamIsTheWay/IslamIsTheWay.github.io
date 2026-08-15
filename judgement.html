@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608151916" />
+  <link rel="stylesheet" href="css/style.css?v=202608151932" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -63,7 +63,7 @@
     <div class="page-hero ph-photo ph-judgement">
     <div class="container">
       <h1>The Day of Judgement</h1>
-      <p>What happens from the moment you die: the soul, the grave and its questions, the Trumpet, the standing, the settling of what people owe each other, the Scales, the Records, the Bridge, and the gates.</p>
+      <p class="en-only">What happens from the moment you die: the soul, the grave and its questions, the Trumpet, the standing, the settling of what people owe each other, the Scales, the Records, the Bridge, and the gates.</p>
       <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;margin-top:10px;">ما يجري من لحظة الموت: الروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والقصاص بين الناس، والموازين، والصحف، والصراط، والأبواب.</p>
     </div>
   </div>
@@ -86,8 +86,8 @@
       </nav>
 
       <div class="context-note">
-        <strong>How this page handles its sources:</strong> a Quranic verse is given with its surah and verse number. A hadith in Sahih al-Bukhari or Sahih Muslim is given with its number. Where something is widely told but sits <strong>outside</strong> the two Sahihs — the names of the two angels of the grave, the descriptions of the Bridge, names given to individual gates — the page says so plainly instead of presenting it as settled. This is not a fatwa, and a qualified scholar should be consulted for rulings.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">طريقة التوثيق في هذه الصفحة: الآية تُذكر بسورتها ورقمها، والحديث في الصحيحين يُذكر برقمه. وما اشتُهر وهو <strong>خارج</strong> الصحيحين — كأسماء ملَكَي القبر، وأوصاف الصراط، وتسمية كل بابٍ — نُصرّح بذلك ولا نُقدّمه على أنه مقطوعٌ به. وهذه الصفحة ليست فتوى، ويُرجع لأهل العلم في الأحكام.</span>
+        <span class="en-only"><strong>How this page handles its sources:</strong> a Quranic verse is given with its surah and verse number. A hadith in Sahih al-Bukhari or Sahih Muslim is given with its number. Where something is widely told but sits <strong>outside</strong> the two Sahihs — the names of the two angels of the grave, the descriptions of the Bridge, names given to individual gates — the page says so plainly instead of presenting it as settled. This is not a fatwa, and a qualified scholar should be consulted for rulings.
+        </span><br><span dir="rtl" style="font-family:'Amiri',serif;">طريقة التوثيق في هذه الصفحة: الآية تُذكر بسورتها ورقمها، والحديث في الصحيحين يُذكر برقمه. وما اشتُهر وهو <strong>خارج</strong> الصحيحين — كأسماء ملَكَي القبر، وأوصاف الصراط، وتسمية كل بابٍ — نُصرّح بذلك ولا نُقدّمه على أنه مقطوعٌ به. وهذه الصفحة ليست فتوى، ويُرجع لأهل العلم في الأحكام.</span>
       </div>
 
       <div class="judge-nav" id="judgeNav"></div>
@@ -103,8 +103,15 @@
        js/journey.js. -->
   <section id="journey">
     <div class="container">
-      <h2 class="section-title">From your death to your final home — step by step</h2>
-      <p class="section-sub">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
+      <!-- BOTH of these must carry en-only / ar-only. Without it the English
+           shows in Arabic mode AND renders inside an RTL block, which throws
+           the full stop to the front of the line. Reported from the live
+           site. -->
+      <h2 class="section-title">
+        <span class="en-only">From your death to your final home — step by step</span>
+        <span class="ar-only" dir="rtl">من موتك إلى مستقرّك — خطوةً خطوة</span>
+      </h2>
+      <p class="section-sub en-only">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
       <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما يقع بترتيبه، ومع كلّ مرحلةٍ دليلها من القرآن أو السنّة، ثمّ شرحها بكلماتٍ بسيطة.</p>
       <div class="divider"></div>
       <div id="journeyTabs" class="adhkar-tabs"></div>
@@ -144,7 +151,8 @@
       <h2 class="section-title">The Angels <span dir="rtl" style="font-family:'Amiri',serif;">— الملائكة</span></h2>
       <div class="divider"></div>
       <p class="section-sub" style="margin-top:18px;">
-        Every angel the Prophet ﷺ met or was shown on the night of the Isra and the Mi'raj, every angel named in the Quran, the ones around you every ordinary day — and the famous names that are not established at all. Each point carries its own reference.
+        <span class="en-only">Every angel the Prophet ﷺ met or was shown on the night of the Isra and the Mi'raj, every angel named in the Quran, the ones around you every ordinary day — and the famous names that are not established at all. Each point carries its own reference.</span>
+        <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">كلُّ ملَكٍ لقيه النبيُّ ﷺ أو أُريه ليلة الإسراء والمعراج، وكلُّ ملَكٍ سُمّي في القرآن، والذين معك في يومك المعتاد — والأسماء المشهورة التي لا تثبت البتّة. ومع كلّ نقطةٍ مرجعها.</span>
         <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">كلّ ملَكٍ لقيه النبي ﷺ أو أُريه ليلة الإسراء والمعراج، وكلّ ملَكٍ سُمّي في القرآن، ومن هم حولك في يومك — والأسماء المشهورة التي لا تثبت. وكلّ مسألةٍ بمرجعها.</span>
       </p>
       <div class="adhkar-tabs" id="angelTabs"></div>
@@ -155,8 +163,9 @@
   <div class="photo-band" style="background-image:url('img/mosque-night-main.jpg');">
     <div class="band-inner reveal">
       <div class="band-arabic">وَكُلُّهُمْ آتِيهِ يَوْمَ الْقِيَامَةِ فَرْدًا</div>
-      <h2>“And every one of them will come to Him on the Day of Resurrection alone”</h2>
-      <p>Surah Maryam (19:95)</p>
+      <h2><span class="en-only">“And every one of them will come to Him on the Day of Resurrection alone”</span>
+        <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">﴿وَكُلُّهُمْ ءَاتِيهِ يَوْمَ ٱلْقِيَٰمَةِ فَرْدًا﴾</span></h2>
+      <p><span class="en-only">Surah Maryam (19:95)</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">سورة مريم (١٩:٩٥)</span></p>
       <p style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">سورة مريم (١٩:٩٥)</p>
     </div>
   </div>
@@ -222,20 +231,20 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608151916"></script>
-  <script src="js/angels.js?v=202608151916"></script>
+  <script src="js/data.js?v=202608151932"></script>
+  <script src="js/angels.js?v=202608151932"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608151916"></script>
-  <script src="js/judgement.js?v=202608151916"></script>
+  <script src="js/signs.js?v=202608151932"></script>
+  <script src="js/judgement.js?v=202608151932"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608151916"></script>
+  <script src="js/judgement-closing.js?v=202608151932"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608151916"></script>
-  <script src="js/journey.js?v=202608151916"></script>
+  <script src="js/rise.js?v=202608151932"></script>
+  <script src="js/journey.js?v=202608151932"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -421,7 +430,7 @@
       if (!host || typeof JUDGEMENT_CLOSING === "undefined") return;
       const c = JUDGEMENT_CLOSING;
       host.innerHTML = `
-        <h2 class="section-title">👤 ${c.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${c.titleAr}</span></h2>
+        <h2 class="section-title">👤 <span class="en-only">${c.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${c.titleAr}</span></h2>
         <div class="gc-lead">
           <div class="en-only">${closingParas(c.lead)}</div>
           <div class="gold-body-ar" dir="rtl">${closingParas(c.leadAr)}</div>
@@ -473,7 +482,7 @@
         ${jdPlain(s.plain, s.plainAr)}
         ${s.points.map(pointHtml).join("")}
         ${s.note ? `<div class="judge-note">
-            <div class="judge-note-head">&#9888;&#65039; On the strength of this <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— درجة الثبوت</span></div>
+            <div class="judge-note-head">&#9888;&#65039; <span class="en-only">On the strength of this</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">درجة الثبوت</span></div>
             <p class="en-only">${s.note}</p>
             <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${s.noteAr}</p>
           </div>` : ""}
@@ -798,7 +807,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608151916"></script>
-  <script src="js/i18n.js?v=202608151916"></script>
+  <script src="js/main.js?v=202608151932"></script>
+  <script src="js/i18n.js?v=202608151932"></script>
 </body>
 </html>
