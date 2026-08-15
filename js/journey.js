@@ -480,13 +480,35 @@ const JOURNEY = [
     lead: "The question everyone asks is <em>how long is it?</em> The texts answer that — and then answer a better question: <strong>how long will it feel?</strong>",
     leadAr: "يسأل الناس: كم يطول؟ فتجيب النصوص، ثمّ تجيب عمّا هو أهمّ: <strong>كم يُحسّ بطوله؟</strong>",
     groups: [
-      { head: "The conditions",
-        headAr: "حال الموقف",
+      { head: "Where you are standing",
+        headAr: "أين تقف",
         points: [
-          { en: "The sun is brought <strong>about a mile away</strong>. The narrator himself said he did not know whether the Prophet ﷺ meant the distance or the small rod used to apply kohl to the eye — <strong>and he said so rather than guess</strong>.",
-            ar: "تدنو الشمس حتى تكون <strong>كمقدار ميل</strong>. وقال الراوي نفسه إنّه لا يدري أراد المسافة أم الميل الذي يُكتحل به، <strong>فصرّح بذلك ولم يظنّ</strong>." },
-          { en: "People sweat <strong>in proportion to their deeds</strong> — to the ankles, to the knees, to the waist, or until the sweat <strong>reaches the mouth like a bridle</strong>.",
-            ar: "ويعرق الناس <strong>على قدر أعمالهم</strong>: إلى الكعبين، أو الركبتين، أو الحَقْوين، أو <strong>يُلجمهم العرق إلى الفم</strong>." }
+          { en: "You are standing on <strong>open, flat ground</strong> with no hills, no trees and <strong>no shade of any kind</strong> — nothing to stand behind or under.",
+            ar: "تقف في <strong>أرضٍ مستويةٍ مكشوفة</strong>، لا جبل فيها ولا شجر و<strong>لا ظلَّ البتّة</strong>، ليس فيها ما تستتر به أو تستظلّ." },
+          { en: "You are <strong>barefoot, with nothing on you, and uncircumcised</strong> — created new, exactly as you were first made. Aishah رضي الله عنها asked whether men and women would look at one another, and he ﷺ said the matter is <strong>far too serious for that to occur to anyone</strong>.",
+            ar: "وتُبعث <strong>حافيًا عاريًا أغرل</strong> — أي كما خُلقت أوّل مرّة. وسألت عائشة رضي الله عنها: أينظر بعضنا إلى بعض؟ فقال ﷺ إنّ <strong>الأمر أشدّ من أن يُهِمَّهم ذلك</strong>." },
+          { en: "The sun is brought down to <strong>about a mile away</strong>. The narrator himself said he did not know whether the Prophet ﷺ meant the distance or the little rod used to put kohl on the eye — <strong>and he admitted that rather than guess</strong>.",
+            ar: "وتدنو الشمس حتى تكون <strong>كمقدار ميل</strong>. وقال الراوي نفسه إنّه لا يدري: أراد المسافة أم الميل الذي يُكتحل به؟ <strong>فصرّح بعدم علمه ولم يظنّ</strong>." },
+          { en: "And everybody who ever lived is <strong>packed into that one place at the same time</strong> — every human being from Adam onwards, crowded together, with no room.",
+            ar: "ويُحشر <strong>الخلق كلّهم في صعيدٍ واحدٍ في وقتٍ واحد</strong> — كلُّ من عاش منذ آدم، مزدحمين لا يجدون فُسحة." }
+        ] },
+      { head: "The sweat — and read this part slowly, because it is not what you expect",
+        headAr: "العرق — واقرأ هذا على مهل، فإنّه ليس كما تتوقّع",
+        note: "This is the detail people miss. Sweat in this world runs DOWNWARD — off your forehead, down your back, towards the ground. On that Day it does the opposite: it RISES. It gathers on the ground and comes UP the body — first the ankles, then the knees, then the waist, until for some it reaches the mouth. That is why the hadith measures it by how HIGH it has reached on a person, which would make no sense for sweat that runs down and drains away.",
+        noteAr: "هذا ما يغفل عنه الناس. فعرق الدنيا ينزل إلى <strong>أسفل</strong>: عن الجبين، وعلى الظهر، إلى الأرض. وأمّا يومئذٍ فبالعكس: <strong>يعلو</strong>؛ يجتمع في الأرض ثمّ يرتفع في البدن — إلى الكعبين، فالركبتين، فالحَقْوين، حتى يبلغ الفم في بعضهم. ولهذا قدّره الحديث بـ<strong>مبلغه ارتفاعًا</strong> في الإنسان، وهذا لا يستقيم في عرقٍ ينحدر ويذهب.",
+        points: [
+          { en: "Everyone sweats — but <strong>not the same amount</strong>. The measure is <strong>your own deeds</strong>, not the heat.",
+            ar: "يعرق الجميع، ولكن <strong>لا بقدرٍ واحد</strong>؛ والمقياس <strong>عملك أنت</strong> لا شدّة الحرّ." },
+          { en: "Some are in it <strong>up to the ankles</strong>.",
+            ar: "فمنهم من يبلغه <strong>إلى كعبيه</strong>." },
+          { en: "Some <strong>up to the knees</strong>.",
+            ar: "ومنهم <strong>إلى ركبتيه</strong>." },
+          { en: "Some <strong>up to the waist</strong>.",
+            ar: "ومنهم <strong>إلى حَقْويه</strong>." },
+          { en: "And some until the sweat <strong>bridles them</strong> — the Prophet ﷺ pointed to his own mouth as he said it. A bridle is the strap that goes into a horse's mouth: the sweat has risen that far.",
+            ar: "ومنهم من <strong>يُلجمه العرق إلجامًا</strong> — وأشار ﷺ بيده إلى فيه وهو يقولها. واللجام ما يُجعل في فم الدابّة: أي بلغ العرق ذلك الحدّ." },
+          { en: "So two people stand <strong>side by side in the same heat</strong>, and one is dry to the ankle while the other is drowning in it. <strong>The difference between them is not the weather. It is what they brought.</strong>",
+            ar: "فيقف اثنان <strong>جنبًا إلى جنبٍ في الحرّ نفسه</strong>، فهذا إلى كعبه وذاك يغرق فيه. <strong>وليس الفارق بينهما الجوّ، وإنّما ما قدّماه.</strong>" }
         ] },
       { head: "How long",
         headAr: "كم يطول",
@@ -496,7 +518,121 @@ const JOURNEY = [
           { en: "But it is <strong>not the same length for everybody's experience of it</strong>. For the believer it is made light — one narration says lighter than a single obligatory prayer he used to pray in this world.",
             ar: "ولكنّه <strong>ليس سواءً في إحساس الناس به</strong>؛ فيُخفَّف على المؤمن حتى يكون — كما في روايةٍ — أخفَّ من صلاةٍ مكتوبةٍ كان يصلّيها في الدنيا." },
           { en: "So <strong>the same Day is a lifetime to one person and a short wait to another</strong> — and what makes the difference is what he brought with him.",
-            ar: "فـ<strong>اليومُ الواحد يكون على أحدهم عمرًا وعلى الآخر انتظارًا يسيرًا</strong>، والفارق ما قدّمه." }
+            ar: "فـ<strong>اليومُ الواحد يكون على أحدهم عمرًا وعلى الآخر انتظارًا يسيرًا</strong>، والفارق ما قدّمه." },
+          { en: "Put it plainly: <strong>the clock is the same for everyone; the experience is not.</strong> One person stands there for what feels like fifty thousand years of thirst and crowding. Another stands in the same place and it passes like the gap between two prayers.",
+            ar: "وبيانه: <strong>المدّة واحدةٌ على الجميع، والإحساس بها ليس واحدًا</strong>. فهذا يقف ما يُحسّه خمسين ألف سنةٍ من العطش والزحام، وذاك يقف في الموضع نفسه فتمرّ عليه كما بين صلاتين." },
+          { en: "And this is the answer to “how long will it take?” — <strong>the honest answer is that it depends on you</strong>. The length was fixed before you arrived; how heavy it feels was not.",
+            ar: "وهذا جواب: كم يطول؟ — <strong>والجواب الصادق أنّه يختلف بحسبك</strong>. فالمدّة قُدِّرت قبل أن تصل، وأمّا ثِقَلها عليك فلا." }
+        ] }
+    ]
+  }
+},
+{
+  id: "j-intercession",
+  phase: "rising",
+  icon: "🙏",
+  title: "The Great Intercession — the day people go from prophet to prophet and each one says “myself, myself”",
+  titleAr: "الشفاعة العظمى — يوم يذهب الناس من نبيٍّ إلى نبيٍّ فيقول كلٌّ: نفسي نفسي",
+  lead: "The standing goes on so long that people go looking for somebody to ask Allah to simply begin.",
+  leadAr: "يطول الموقف حتى يلتمس الناس من يسأل الله أن يبدأ الحساب.",
+  body: [
+    { h: "They go from one to the next",
+      hAr: "ينتقلون من واحدٍ إلى الذي يليه",
+      en: "The Prophet ﷺ described people gathering in their distress and saying: <em>“Do you not see what has reached you? Will you not look for someone to intercede for you with your Lord?”</em>\n\nThey go to <strong>Adam</strong> عليه السلام — the one Allah created with His hand and had the angels prostrate to. He says: <em>“My Lord is angry today with an anger the like of which He has never been angry before and never will be again… myself, myself. Go to someone else — go to Nuh.”</em>\n\nThey go to <strong>Nuh</strong>, the first messenger to the people of the earth. He says the same: <em>myself, myself — go to Ibrahim</em>. To <strong>Ibrahim</strong>, who says the same and sends them to <strong>Musa</strong>. To <strong>Musa</strong>, who sends them to <strong>Isa</strong>. And Isa عليه السلام says: <em>myself, myself — go to Muhammad ﷺ.</em>\n\nThey come to him ﷺ, and he says: <em>“I am for it, I am for it.”</em> He goes and <strong>falls in prostration beneath the Throne</strong>, and Allah opens upon him praises he had never known before. Then it is said: <em>“O Muhammad, raise your head. Ask, and you will be given. Intercede, and your intercession will be accepted.”</em>",
+      ar: "وصف النبيُّ ﷺ اجتماع الناس في كربهم فيقول بعضهم لبعض: ألا ترون ما بلغكم؟ ألا تنظرون من يشفع لكم إلى ربّكم؟\n\nفيأتون <strong>آدم</strong> عليه السلام، الذي خلقه الله بيده وأسجد له ملائكته، فيقول: إنّ ربّي غضب اليوم غضبًا لم يغضب قبله مثله ولن يغضب بعده مثله… نفسي نفسي، اذهبوا إلى غيري، اذهبوا إلى نوح.\n\nفيأتون <strong>نوحًا</strong> أوّل رسولٍ إلى أهل الأرض، فيقول مثلها: نفسي نفسي، ائتوا إبراهيم. فيأتون <strong>إبراهيم</strong> فيقول مثلها ويدلّهم على <strong>موسى</strong>، فيدلّهم موسى على <strong>عيسى</strong>، فيقول عيسى عليه السلام: نفسي نفسي، ائتوا محمّدًا ﷺ.\n\nفيأتونه ﷺ فيقول: «أنا لها، أنا لها»، فينطلق <strong>فيسجد تحت العرش</strong>، فيفتح الله عليه من محامده ما لم يفتحه على أحدٍ قبله، ثمّ يُقال: «يا محمّد، ارفع رأسك، سَل تُعطَه، واشفع تُشفَّع».",
+      ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4712; also Sahih Muslim, Book of Faith, Hadith 194 — from Abu Hurayrah and Anas ibn Malik",
+      strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" }
+  ],
+  plain: {
+    lead: "This scene is often told as a story about rank. <strong>It is not.</strong> It is about how serious that Day is — serious enough that the greatest people who ever lived will not speak up.",
+    leadAr: "كثيرًا ما تُروى هذه القصّة على أنّها في المفاضلة، <strong>وليست كذلك</strong>؛ وإنّما هي في عِظَم ذلك اليوم، حتى إنّ أعظم من وطئ الأرض لا يتقدّم فيه بكلمة.",
+    groups: [
+      { head: "What people actually want",
+        headAr: "ما الذي يطلبه الناس",
+        points: [
+          { en: "They are not asking to be forgiven yet. They are asking for <strong>the judgement to simply START</strong> — the waiting has become worse than the verdict.",
+            ar: "لا يسألون المغفرة بعدُ، وإنّما يسألون أن <strong>يبدأ الحساب</strong>؛ فقد صار الانتظار أشدّ من الحكم." },
+          { en: "So they look for someone with enough standing to ask Allah on everyone's behalf.",
+            ar: "فيلتمسون من له عند الله منزلةٌ يسأله عن الناس جميعًا." }
+        ] },
+      { head: "Who they go to, in order",
+        headAr: "من يقصدون بالترتيب",
+        points: [
+          { en: "<strong>Adam</strong> — the father of everyone, whom Allah created with His hand.",
+            ar: "<strong>آدم</strong> عليه السلام، أبو البشر، الذي خلقه الله بيده." },
+          { en: "<strong>Nuh</strong> — the first messenger sent to the people of the earth.",
+            ar: "<strong>نوح</strong> عليه السلام، أوّل رسولٍ إلى أهل الأرض." },
+          { en: "<strong>Ibrahim</strong> — the friend of Allah.",
+            ar: "<strong>إبراهيم</strong> عليه السلام، خليل الله." },
+          { en: "<strong>Musa</strong> — the one Allah spoke to directly.",
+            ar: "<strong>موسى</strong> عليه السلام، كليم الله." },
+          { en: "<strong>Isa</strong> — and he too says: myself, myself.",
+            ar: "<strong>عيسى</strong> عليه السلام، ويقول أيضًا: نفسي نفسي." },
+          { en: "And <strong>every single one of them says the same sentence</strong>: <em>myself, myself — go to someone else.</em>",
+            ar: "و<strong>يقول كلُّ واحدٍ منهم الكلمة نفسها</strong>: <em>نفسي نفسي، اذهبوا إلى غيري</em>." }
+        ] },
+      { head: "And then",
+        headAr: "ثمّ ماذا",
+        points: [
+          { en: "They reach the Prophet Muhammad ﷺ, and he says: <strong>“I am for it.”</strong>",
+            ar: "فينتهون إلى النبيّ محمّدٍ ﷺ فيقول: <strong>«أنا لها»</strong>." },
+          { en: "He does not argue or negotiate. He <strong>goes and prostrates beneath the Throne</strong> and stays there praising Allah — with words he is given on the spot and had never known.",
+            ar: "فلا يجادل ولا يشترط، بل <strong>ينطلق فيسجد تحت العرش</strong>، ويظلّ يحمد الله بمحامد يُفتح بها عليه حينئذٍ لم يكن يعرفها." },
+          { en: "Then he is told: <strong>raise your head; ask and you will be given; intercede and it will be accepted.</strong>",
+            ar: "ثمّ يُقال له: <strong>ارفع رأسك، وسَل تُعطَه، واشفع تُشفَّع</strong>." },
+          { en: "<strong>This is the moment the reckoning begins.</strong> Everything after it on this page happens because of it.",
+            ar: "<strong>وعند هذا يبدأ الحساب</strong>، وكلُّ ما بعده في هذه الصفحة إنّما وقع بسببه." }
+        ] }
+    ]
+  }
+},
+{
+  id: "j-hawd",
+  phase: "account",
+  icon: "🫗",
+  title: "The Basin (الحوض) — a drink after which you are never thirsty again",
+  titleAr: "الحوض — شربةٌ لا تظمأ بعدها أبدًا",
+  lead: "After all that thirst, this is the first relief — and not everyone reaches it.",
+  leadAr: "بعد ذلك العطش كلّه، هذا أوّل الفرج — ولا يبلغه كلُّ أحد.",
+  body: [
+    { h: "What it is",
+      hAr: "ما هو",
+      en: "The Prophet ﷺ said: <em>“My Basin is a month's journey across. Its water is whiter than milk, its scent better than musk, and its drinking-vessels are like the stars of the sky. <strong>Whoever drinks from it will never be thirsty again.</strong>”</em>",
+      ar: "قال النبيُّ ﷺ: «حوضي مسيرة شهر، ماؤه أبيض من اللبن، وريحه أطيب من المسك، وكيزانه كنجوم السماء، <strong>من شرب منه فلا يظمأ أبدًا</strong>».",
+      ref: "Sahih al-Bukhari, Book of Softening the Hearts, Hadith 6579; also Sahih Muslim, Book of Virtues, Hadith 2292 — from Abdullah ibn Amr",
+      strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" },
+    { h: "And the people turned away from it",
+      hAr: "والذين يُذادون عنه",
+      en: "He ﷺ said that men he recognises will be driven away from it, and he will say: <em>“My Lord, my companions!”</em> And it will be said: <em>“You do not know what they invented after you.”</em> So he says: <em>“Away, away with whoever changed after me.”</em>",
+      ar: "وقال ﷺ إنّه يُذاد عنه رجالٌ يعرفهم، فيقول: «أصحابي أصحابي»، فيُقال: «إنّك لا تدري ما أحدثوا بعدك»، فيقول: «سحقًا سحقًا لمن بدّل بعدي».",
+      ref: "Sahih al-Bukhari, Book of Softening the Hearts, Hadith 6582; also narrated by Muslim",
+      strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" }
+  ],
+  plain: {
+    lead: "Remember the state everyone is in by now: <strong>the sun a mile away, no shade, and sweat rising up the body.</strong> This is the first drink after all of that.",
+    leadAr: "تذكّر حال الناس إلى هذا الموضع: <strong>الشمس على قدر ميل، ولا ظلّ، والعرق يعلو في الأبدان</strong>. فهذه أوّل شربةٍ بعد ذلك كلّه.",
+    groups: [
+      { head: "What it is like",
+        headAr: "صفته",
+        points: [
+          { en: "It is <strong>a month's travel across</strong> — not a pool, a landscape.",
+            ar: "<strong>مسيرة شهرٍ عرضًا</strong> — فليس بِرْكةً، بل كالبلد." },
+          { en: "The water is <strong>whiter than milk</strong> and <strong>smells better than musk</strong>.",
+            ar: "وماؤه <strong>أبيض من اللبن</strong>، و<strong>ريحه أطيب من المسك</strong>." },
+          { en: "The cups around it are <strong>as many, and as bright, as the stars</strong>.",
+            ar: "وكيزانه <strong>كنجوم السماء</strong> كثرةً وإضاءة." },
+          { en: "And the promise on it: <strong>one drink, and you are never thirsty again — ever.</strong>",
+            ar: "ووعده: <strong>شربةٌ واحدة فلا تظمأ بعدها أبدًا</strong>." }
+        ] },
+      { head: "The hard part of this hadith",
+        headAr: "الشقّ الصعب من الحديث",
+        points: [
+          { en: "Some people <strong>are driven away from it in front of him ﷺ</strong>, and he recognises them.",
+            ar: "ويُذاد عنه أناسٌ <strong>على مرأًى منه ﷺ</strong> وهو يعرفهم." },
+          { en: "He objects on their behalf — <em>my companions!</em> — and is told: <strong>you do not know what they invented after you.</strong>",
+            ar: "فيشفع لهم: <em>أصحابي!</em> فيُقال: <strong>إنّك لا تدري ما أحدثوا بعدك</strong>." },
+          { en: "So <strong>being counted among his people is not automatic</strong>. What decides it is whether you kept to what he actually left, or changed it.",
+            ar: "فـ<strong>الانتساب إليه ليس ضمانًا</strong>، وإنّما العبرة بحفظ ما تركه أو تبديله." }
         ] }
     ]
   }
@@ -534,6 +670,61 @@ const JOURNEY = [
             ar: "ومعناه أنّ الركعتين قبل الظهر، وسنّة المغرب، وتحيّة المسجد، <strong>ليست فضولًا</strong>، وإنّما هي <strong>ما يُرمَّم به نقص فرائضك</strong>." },
           { en: "And the hadith ends by saying <strong>the rest of the deeds are handled the same way</strong> — the same repair applies to zakat, to fasting, and to the others.",
             ar: "وختم الحديث بأنّ <strong>سائر العمل على ذلك</strong>؛ فالترميم نفسه يجري في الزكاة والصيام وغيرهما." }
+        ] }
+    ]
+  }
+},
+{
+  id: "j-books-scales",
+  phase: "account",
+  icon: "📜",
+  title: "The book in your hand — and which hand decides everything before you read a word",
+  titleAr: "الكتاب في يدك — وباليد التي تأخذه به يُعلَم المصير قبل أن تقرأ حرفًا",
+  lead: "You know the result from how the book arrives, not from what is written in it.",
+  leadAr: "تعرف النتيجة من كيفيّة وصول الكتاب، لا ممّا فيه.",
+  body: [
+    { h: "Right hand, or behind the back",
+      hAr: "باليمين، أو من وراء الظهر",
+      en: "<em>“Then as for he who is given his record in his right hand, he will be judged with an easy reckoning and return to his people in joy. But as for he who is given his record behind his back, he will call for destruction and enter a Blaze.”</em> (84:7–12)\n\nAnd of what is in it: <em>“And the record will be placed, and you will see the criminals fearful of what is in it, saying: what is this book that leaves nothing small or great except that it has enumerated it? And they will find what they did present before them, and your Lord does not wrong anyone.”</em> (18:49)",
+      ar: "﴿فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِيَمِينِهِۦ • فَسَوْفَ يُحَاسَبُ حِسَابًا يَسِيرًا • وَيَنقَلِبُ إِلَىٰٓ أَهْلِهِۦ مَسْرُورًا • وَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ وَرَآءَ ظَهْرِهِۦ • فَسَوْفَ يَدْعُوا۟ ثُبُورًا • وَيَصْلَىٰ سَعِيرًا﴾ [الانشقاق: ٧–١٢].\n\nوفيما فيه: ﴿وَوُضِعَ ٱلْكِتَٰبُ فَتَرَى ٱلْمُجْرِمِينَ مُشْفِقِينَ مِمَّا فِيهِ وَيَقُولُونَ يَٰوَيْلَتَنَا مَالِ هَٰذَا ٱلْكِتَٰبِ لَا يُغَادِرُ صَغِيرَةً وَلَا كَبِيرَةً إِلَّآ أَحْصَىٰهَا ۚ وَوَجَدُوا۟ مَا عَمِلُوا۟ حَاضِرًا ۗ وَلَا يَظْلِمُ رَبُّكَ أَحَدًا﴾ [الكهف: ٤٩].",
+      ref: "Surah Al-Inshiqaq 84:7–12; Surah Al-Kahf 18:49",
+      strength: "Quran" },
+    { h: "The Scales, weighed to the atom",
+      hAr: "الموازين، ووزن مثقال الذرّة",
+      en: "<em>“And We place the scales of justice for the Day of Resurrection, so no soul will be treated unjustly at all. And if there is the weight of a mustard seed, We will bring it forth. And sufficient are We as accountant.”</em> (21:47)\n\n<em>“So whoever does an atom's weight of good will see it, and whoever does an atom's weight of evil will see it.”</em> (99:7–8)\n\nAnd the Prophet ﷺ said: <em>“Two words light on the tongue, heavy on the Scale, beloved to the Most Merciful: Subhan Allahi wa bihamdih, Subhan Allahi'l-Azim.”</em>",
+      ar: "﴿وَنَضَعُ ٱلْمَوَٰزِينَ ٱلْقِسْطَ لِيَوْمِ ٱلْقِيَٰمَةِ فَلَا تُظْلَمُ نَفْسٌ شَيْـًٔا ۖ وَإِن كَانَ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ أَتَيْنَا بِهَا ۗ وَكَفَىٰ بِنَا حَٰسِبِينَ﴾ [الأنبياء: ٤٧].\n\n﴿فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ • وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُۥ﴾ [الزلزلة: ٧–٨].\n\nوقال ﷺ: «كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن: سبحان الله وبحمده، سبحان الله العظيم».",
+      ref: "Surah Al-Anbiya 21:47; Surah Az-Zalzalah 99:7–8; the hadith is Sahih al-Bukhari, Book of Invocations, Hadith 6682, and Sahih Muslim 2694",
+      strength: "The verses are Quran; the hadith is agreed upon (al-Bukhari and Muslim)" }
+  ],
+  plain: {
+    lead: "Two separate things happen here and people mix them up: <strong>you are handed a record</strong>, and then <strong>your deeds are weighed</strong>.",
+    leadAr: "أمران منفصلان يقعان هنا، وكثيرًا ما يُخلط بينهما: <strong>تُعطى الكتاب</strong>، ثمّ <strong>تُوزن الأعمال</strong>.",
+    groups: [
+      { head: "First: the book",
+        headAr: "أوّلًا: الكتاب",
+        note: "Here is the unusual part. You do not find out your result by READING the book. You find out by WHICH HAND it arrives in. The verdict is delivered by the manner of handing it over — before a single line has been read.",
+        noteAr: "وهنا الأمر اللافت: لا تعرف نتيجتك <strong>بقراءة</strong> الكتاب، وإنّما <strong>باليد التي يُدفع بها إليك</strong>. فالحكم يُعلَم من هيئة التسليم قبل أن يُقرأ منه سطرٌ واحد.",
+        points: [
+          { en: "<strong>In the right hand</strong> — an <em>easy</em> reckoning, and he goes back to his people <strong>happy</strong>.",
+            ar: "<strong>باليمين</strong> — فحسابٌ <em>يسير</em>، ويرجع إلى أهله <strong>مسرورًا</strong>." },
+          { en: "<strong>Behind his back</strong> — he <strong>calls for his own destruction</strong>. The Quran states the outcome in the same breath.",
+            ar: "<strong>من وراء ظهره</strong> — فـ<strong>يدعو على نفسه بالثبور</strong>، وذكر القرآن العاقبة في السياق نفسه." },
+          { en: "What is in it: <strong>everything</strong>. The criminals themselves say it — <em>it leaves nothing small or great except that it has counted it.</em>",
+            ar: "وما فيه: <strong>كلُّ شيء</strong>؛ ويقولها المجرمون أنفسهم: <em>لا يغادر صغيرةً ولا كبيرةً إلا أحصاها</em>." },
+          { en: "And they <strong>find what they did actually present in front of them</strong> — not a description of it. The deed itself.",
+            ar: "و<strong>يجدون ما عملوا حاضرًا</strong> بين أيديهم، لا وصفًا له، بل العمل نفسه." }
+        ] },
+      { head: "Then: the Scales",
+        headAr: "ثمّ: الموازين",
+        points: [
+          { en: "They are set up <strong>so that nobody is wronged by even a little</strong> — that is what the verse says they are for.",
+            ar: "تُوضع <strong>لئلّا تُظلم نفسٌ شيئًا</strong>، وهذا ما نصّت عليه الآية في الغرض منها." },
+          { en: "The sensitivity is <strong>the weight of a mustard seed</strong> — and elsewhere, <strong>an atom's weight</strong>, of good or of bad.",
+            ar: "ودقّتها <strong>مثقال حبّةٍ من خردل</strong>، وفي موضعٍ آخر <strong>مثقال ذرّة</strong> من خيرٍ أو شرّ." },
+          { en: "So <strong>nothing is too small to count</strong> — which cuts both ways, and is meant to.",
+            ar: "فـ<strong>لا شيء أصغر من أن يُحسب</strong>، وهذا في الجهتين معًا، وذلك مقصود." },
+          { en: "And weight is <strong>not the same as effort</strong>. He ﷺ named two short phrases as <strong>light on the tongue and heavy on the Scale</strong>: <em>Subhan Allahi wa bihamdih, Subhan Allahi'l-Azim</em>.",
+            ar: "وليس <strong>الثِّقَل بقدر المشقّة</strong>؛ فقد سمّى ﷺ كلمتين <strong>خفيفتين على اللسان ثقيلتين في الميزان</strong>: <em>سبحان الله وبحمده، سبحان الله العظيم</em>." }
         ] }
     ]
   }
@@ -774,6 +965,114 @@ const JOURNEY = [
     ]
   }
 }
-
+,
+{
+  id: "j-jannah-life",
+  phase: "end2",
+  icon: "🏡",
+  title: "Living there — the body you get, the food, the age you stay, and what fills the day",
+  titleAr: "الحياة هناك — البدن الذي تُعطاه، والطعام، والسنّ الذي تثبت عليه، وبِمَ يُقضى اليوم",
+  lead: "What ordinary life in Paradise is actually like, from the texts — not what people imagine.",
+  leadAr: "كيف تكون الحياة المعتادة في الجنّة كما جاءت في النصوص، لا كما يتخيّل الناس.",
+  body: [
+    { h: "The body you enter with",
+      hAr: "البدن الذي تدخل به",
+      en: "The Prophet ﷺ said: <em>“The first group to enter Paradise will be in the form of the moon on the night it is full. They will not spit in it, nor blow their noses, nor relieve themselves. Their vessels and combs will be of gold and silver, their censers of aloeswood, and their sweat will be musk.</em>\n\n<em>“Each of them will have two wives; the marrow of their shins will be seen through the flesh from beauty. There is no disagreement between them and no hatred. Their hearts are as one heart, glorifying Allah morning and evening.”</em>\n\nAnd: <em>“The people of Paradise will enter Paradise hairless, beardless, with their eyes anointed with kohl, aged thirty or thirty-three years.”</em>",
+      ar: "قال النبيُّ ﷺ: «أوّل زمرةٍ تدخل الجنّة على صورة القمر ليلة البدر، لا يبصقون فيها ولا يمتخطون ولا يتغوّطون، آنيتهم وأمشاطهم الذهب والفضّة، ومجامرهم الألوّة، ورشحهم المسك.\n\nولكلّ واحدٍ منهم زوجتان، يُرى مخّ سوقهما من وراء اللحم من الحسن، لا اختلاف بينهم ولا تباغض، قلوبهم قلبٌ واحد، يسبّحون الله بكرةً وعشيًّا».\n\nوقال ﷺ: «يدخل أهل الجنّة الجنّة جُردًا مُردًا مُكحّلين، أبناء ثلاثٍ وثلاثين».",
+      ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3245, and Sahih Muslim, Book of Paradise, Hadith 2834 (the first group); Jami at-Tirmidhi 2545 (aged thirty-three)",
+      strength: "The first is Sahih — agreed upon. The report about their age is in at-Tirmidhi and is authenticated by al-Albani; it is outside the two Sahihs" },
+    { h: "Eating, drinking, and no waste at all",
+      hAr: "الأكل والشراب، ولا فضلات",
+      en: "The Companions asked: <em>“Messenger of Allah, do we eat in Paradise?”</em> He said: <em>“Yes, by the One in whose hand is my soul — one of them will be given the strength of a hundred men in eating, drinking, desire and intercourse.”</em> A man asked: <em>“And what happens to what he eats?”</em> He said: <em>“He needs only to sweat and to breathe — and his stomach becomes flat.”</em>\n\nOf the fruit and meat: <em>“And We will provide them with fruit and meat from whatever they desire”</em> (52:22), and its fruit is <em>“neither limited nor forbidden”</em> (56:33) — never out of season and never withheld.",
+      ar: "قال الصحابة: يا رسول الله، أنأكل في الجنّة؟ قال: «نعم، والذي نفسي بيده، إنّ الرجل منهم ليُعطى قوّة مئة رجلٍ في الأكل والشرب والشهوة والجماع». فقال رجل: فما بال ما يأكل؟ قال: «حاجة أحدهم عَرَقٌ يفيض من جلده ونَفَس، فإذا بطنه قد ضَمُر».\n\nوفي الثمر واللحم: ﴿وَأَمْدَدْنَٰهُم بِفَٰكِهَةٍ وَلَحْمٍ مِّمَّا يَشْتَهُونَ﴾ [الطور: ٢٢]، وثمرها ﴿لَّا مَقْطُوعَةٍ وَلَا مَمْنُوعَةٍ﴾ [الواقعة: ٣٣]، فلا ينقطع بفصلٍ ولا يُمنع.",
+      ref: "Musnad Ahmad and the sunan collections (the strength of a hundred and the sweat); Surah At-Tur 52:22; Surah Al-Waqi'ah 56:33",
+      strength: "The hadith is authenticated by al-Albani and sits outside the two Sahihs. The two verses are Quran" },
+    { h: "What is under it, and what is said in it",
+      hAr: "ما تحتها، وما يُقال فيها",
+      en: "The gardens are described again and again as ones <em>“beneath which rivers flow”</em>. And of the four kinds: <em>“rivers of water unaltered, rivers of milk the taste of which never changes, rivers of wine delicious to the drinkers, and rivers of purified honey”</em> (47:15).\n\nAs for what is heard there: <em>“They will hear no ill speech therein, nor any sinful talk — only the saying: peace, peace”</em> (56:25–26). And: <em>“Their call therein will be: Glory to You, O Allah — and their greeting therein: peace. And the last of their call will be: praise be to Allah, Lord of the worlds”</em> (10:10).\n\nAnd the removal of what was between people: <em>“And We will remove whatever is in their breasts of resentment, brothers, on thrones facing one another”</em> (15:47).",
+      ar: "وُصفت الجنّات مرّةً بعد مرّةٍ بأنّها ﴿تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ﴾. وفي أصنافها: ﴿أَنْهَٰرٌ مِّن مَّآءٍ غَيْرِ ءَاسِنٍ وَأَنْهَٰرٌ مِّن لَّبَنٍ لَّمْ يَتَغَيَّرْ طَعْمُهُۥ وَأَنْهَٰرٌ مِّنْ خَمْرٍ لَّذَّةٍ لِّلشَّٰرِبِينَ وَأَنْهَٰرٌ مِّنْ عَسَلٍ مُّصَفًّى﴾ [محمد: ١٥].\n\nوأمّا ما يُسمع فيها: ﴿لَا يَسْمَعُونَ فِيهَا لَغْوًا وَلَا تَأْثِيمًا • إِلَّا قِيلًا سَلَٰمًا سَلَٰمًا﴾ [الواقعة: ٢٥–٢٦]، و﴿دَعْوَىٰهُمْ فِيهَا سُبْحَٰنَكَ ٱللَّهُمَّ وَتَحِيَّتُهُمْ فِيهَا سَلَٰمٌ ۚ وَءَاخِرُ دَعْوَىٰهُمْ أَنِ ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ﴾ [يونس: ١٠].\n\nوفي نزع ما كان بين الناس: ﴿وَنَزَعْنَا مَا فِى صُدُورِهِم مِّنْ غِلٍّ إِخْوَٰنًا عَلَىٰ سُرُرٍ مُّتَقَٰبِلِينَ﴾ [الحجر: ٤٧].",
+      ref: "Surah Muhammad 47:15; Surah Al-Waqi'ah 56:25–26; Surah Yunus 10:10; Surah Al-Hijr 15:47",
+      strength: "Quran" }
+  ],
+  plain: {
+    lead: "This is the part that was missing, and it is the part worth wanting. Below is <strong>ordinary life</strong> there — the body, the food, the age, the company, and what actually fills a day.",
+    leadAr: "هذا هو الموضع الذي كان ناقصًا، وهو الذي يُشتاق إليه حقًّا. وفيما يلي <strong>الحياة المعتادة</strong> هناك: البدن، والطعام، والسنّ، والصحبة، وبِمَ يُقضى اليوم.",
+    groups: [
+      { head: "The body you live in there",
+        headAr: "البدن الذي تعيش به",
+        note: "The strange detail worth naming: there is NO WASTE in Paradise at all. No spitting, no blowing the nose, no toilet. You still eat and drink — with the strength of a hundred men — but what you eat leaves the body as a light sweat that smells of musk, and a breath. Nothing about the body there is unpleasant to be near.",
+        noteAr: "والتفصيل اللافت الذي يحسن التصريح به: <strong>لا فضلات في الجنّة البتّة</strong>؛ لا بُصاق ولا مُخاط ولا خلاء. ومع ذلك تأكل وتشرب — بقوّة مئة رجل — ولكن ما تأكله يخرج <strong>عَرَقًا لطيفًا ريحه المسك ونَفَسًا</strong>. فليس في البدن هناك ما يُستكره منه شيء.",
+        points: [
+          { en: "The first group enters <strong>looking like the full moon</strong>.",
+            ar: "تدخل أوّل زمرةٍ <strong>على صورة القمر ليلة البدر</strong>." },
+          { en: "<strong>Nobody ages.</strong> The report says they are all about <strong>thirty-three</strong> — and they stay that way.",
+            ar: "و<strong>لا يهرم أحد</strong>؛ جاء أنّهم <strong>أبناء ثلاثٍ وثلاثين</strong>، ويبقون كذلك." },
+          { en: "<strong>No illness, no tiredness, no dying.</strong> Nothing wears out.",
+            ar: "و<strong>لا مرض ولا تعب ولا موت</strong>، ولا يبلى شيء." },
+          { en: "Their <strong>sweat is musk</strong>, and their combs and vessels are gold and silver.",
+            ar: "و<strong>رشحهم المسك</strong>، وأمشاطهم وآنيتهم الذهب والفضّة." }
+        ] },
+      { head: "What you eat and drink",
+        headAr: "ما تأكل وتشرب",
+        points: [
+          { en: "The Companions asked this exact question — <em>do we eat in Paradise?</em> — and the answer was <strong>yes</strong>.",
+            ar: "سأل الصحابة هذا السؤال بعينه — <em>أنأكل في الجنّة؟</em> — فكان الجواب: <strong>نعم</strong>." },
+          { en: "<strong>Fruit and meat, whatever you want</strong> — and the fruit is <em>never cut off and never withheld</em>: no season, no shortage, nothing out of reach.",
+            ar: "<strong>فاكهةٌ ولحمٌ ممّا تشتهي</strong>، وثمرها <em>لا مقطوعةٍ ولا ممنوعة</em>: لا فصلَ لها ولا انقطاع ولا مانع." },
+          { en: "<strong>Four kinds of rivers</strong>, named in the Quran: <strong>water</strong> that never goes stale, <strong>milk</strong> whose taste never turns, <strong>wine</strong> that is a pleasure to those who drink it — and there is no drunkenness or headache in it — and <strong>purified honey</strong>.",
+            ar: "و<strong>أنهارٌ أربعة</strong> سمّاها القرآن: <strong>ماءٌ</strong> غير آسن، و<strong>لبنٌ</strong> لم يتغيّر طعمه، و<strong>خمرٌ</strong> لذّةٌ للشاربين لا سُكر فيها ولا صُداع، و<strong>عسلٌ</strong> مُصفّى." }
+        ] },
+      { head: "Who you are with, and what a day is like",
+        headAr: "مع من تكون، وكيف يكون اليوم",
+        points: [
+          { en: "<strong>Nobody there dislikes anybody.</strong> Allah says He <em>removes whatever was in their breasts of resentment</em> — so old grudges are not merely forgiven, they are <strong>taken out of you</strong>.",
+            ar: "<strong>لا يبغض أحدٌ أحدًا هناك</strong>؛ قال الله إنّه <em>ينزع ما في صدورهم من غِلّ</em> — فليست الأحقاد تُغفر فحسب، بل <strong>تُنزع منك</strong>." },
+          { en: "They sit <strong>facing one another</strong> — the Quran's own picture of it is brothers on couches, looking at each other.",
+            ar: "ويجلسون <strong>متقابلين</strong>؛ وصورة القرآن لذلك: إخوانٌ على سُررٍ متقابلين." },
+          { en: "<strong>You hear nothing ugly.</strong> No pointless talk, no insult, no lie — the Quran says the only thing said is <em>peace, peace</em>.",
+            ar: "و<strong>لا تسمع قبيحًا</strong>: لا لغو ولا تأثيم ولا كذب؛ قال القرآن إنّ الذي يُقال فيها: <em>سلامًا سلامًا</em>." },
+          { en: "And what they say themselves: they begin with <em>Glory to You, O Allah</em>, they greet one another with <em>peace</em>, and <strong>the last of it is: praise be to Allah, Lord of the worlds</strong>.",
+            ar: "وأمّا كلامهم فيبدأ بـ<em>سبحانك اللهمّ</em>، وتحيّتهم بينهم <em>سلام</em>، و<strong>آخر دعواهم: الحمد لله ربّ العالمين</strong>." }
+        ] }
+    ]
+  }
+},
+{
+  id: "j-jannah-greatest",
+  phase: "end2",
+  icon: "✨",
+  title: "The thing they themselves say is better than everything else in it",
+  titleAr: "ما يقولون هم إنّه أحبّ إليهم ممّا سواه",
+  lead: "After all of it has been given, they are offered one more thing.",
+  leadAr: "بعد أن أُعطوا ذلك كلّه، يُعرض عليهم شيءٌ آخر.",
+  body: [
+    { h: "The offer, and the answer",
+      hAr: "العرض والجواب",
+      en: "The Prophet ﷺ said: <em>“When the people of Paradise have entered Paradise, Allah تبارك وتعالى will say: do you want anything more, that I may increase it for you?</em>\n\n<em>“They will say: have You not brightened our faces? Have You not admitted us into Paradise and saved us from the Fire?</em>\n\n<em>“So He will lift the veil — and they will not have been given anything more beloved to them than looking at their Lord عز وجل.”</em>\n\nAnd of the same: <em>“Faces that Day will be radiant, looking at their Lord”</em> (75:22–23). And He says: <em>“For those who did good is the best, and more”</em> (10:26) — which the Prophet ﷺ explained as the looking at His face.",
+      ar: "قال النبيُّ ﷺ: «إذا دخل أهل الجنّة الجنّة، يقول الله تبارك وتعالى: تريدون شيئًا أزيدكم؟\n\nفيقولون: ألم تُبيّض وجوهنا؟ ألم تُدخلنا الجنّة وتُنجّنا من النار؟\n\nفيكشف الحجاب، فما أُعطوا شيئًا أحبّ إليهم من النظر إلى ربّهم عزّ وجلّ».\n\nوفي معناه: ﴿وُجُوهٌ يَوْمَئِذٍ نَّاضِرَةٌ • إِلَىٰ رَبِّهَا نَاظِرَةٌ﴾ [القيامة: ٢٢–٢٣]، وقوله: ﴿لِّلَّذِينَ أَحْسَنُوا۟ ٱلْحُسْنَىٰ وَزِيَادَةٌ﴾ [يونس: ٢٦]، وفسّرها النبيُّ ﷺ بالنظر إلى وجهه سبحانه.",
+      ref: "Sahih Muslim, Book of Faith, Hadith 181 — from Suhayb ar-Rumi; Surah Al-Qiyamah 75:22–23; Surah Yunus 10:26",
+      strength: "Sahih — Narrated by Muslim; the verses are Quran" }
+  ],
+  plain: {
+    lead: "Read the order of this carefully, because it is the whole point of the page.",
+    leadAr: "تأمّل ترتيب هذا المشهد، فإنّ فيه مقصود الصفحة كلّها.",
+    groups: [
+      { points: [
+          { en: "They are <strong>already inside</strong>. Everything on the previous card has already been given to them.",
+            ar: "هم <strong>قد دخلوا</strong>، وأُعطوا كلّ ما في البطاقة السابقة." },
+          { en: "Then they are asked: <strong>do you want anything more?</strong>",
+            ar: "ثمّ يُقال لهم: <strong>تريدون شيئًا أزيدكم؟</strong>" },
+          { en: "And their answer is that they <strong>cannot think of anything left to ask for</strong> — You brightened our faces, You let us in, You saved us from the Fire. What else is there?",
+            ar: "فيكون جوابهم أنّهم <strong>لا يجدون ما يسألونه بعدُ</strong>: بيّضتَ وجوهنا، وأدخلتنا الجنّة، ونجّيتنا من النار، فماذا بقي؟" },
+          { en: "<strong>Then the veil is lifted, and they look at their Lord.</strong>",
+            ar: "<strong>فيُكشف الحجاب، فينظرون إلى ربّهم</strong>." },
+          { en: "And the hadith's verdict on it: <strong>they were never given anything they loved more than that</strong> — more than the gardens, the rivers, the company, all of it.",
+            ar: "وحكم الحديث على ذلك: <strong>ما أُعطوا شيئًا قطُّ أحبّ إليهم منه</strong> — أحبّ من الجنّات والأنهار والصحبة وذلك كلّه." },
+          { en: "Which tells you what the whole journey was actually for. <strong>Paradise was never the point. It was where the point could finally be reached.</strong>",
+            ar: "وفي هذا بيان ما كانت الرحلة كلّها لأجله: <strong>فما كانت الجنّة هي المقصود، وإنّما هي الموضع الذي يُدرَك فيه المقصود</strong>." }
+        ] }
+    ]
+  }
+}
 
 ];

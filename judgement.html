@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608151852" />
+  <link rel="stylesheet" href="css/style.css?v=202608151916" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -77,6 +77,7 @@
       <nav class="page-toc" aria-label="On this page">
         <span class="page-toc-label"><span class="en-only">On this page</span><span class="ar-only" dir="rtl">في هذه الصفحة</span></span>
         <a href="#stages"><span class="en-only">The 15 stages</span><span class="ar-only" dir="rtl">المراحل الخمس عشرة</span></a>
+        <a href="#journey"><span class="en-only">The whole journey, in detail</span><span class="ar-only" dir="rtl">الرحلة كاملةً بالتفصيل</span></a>
         <a href="#signs"><span class="en-only">How the world ends</span><span class="ar-only" dir="rtl">كيف تنتهي الدنيا</span></a>
         <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
         <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
@@ -93,6 +94,24 @@
       <div id="judgeList" class="judge-list"></div>
     </div>
   </section>
+
+  <!-- ===== الرحلة — the whole journey, step by step =====
+       The owner asked for this to be the detailed spine of the page: what
+       happens from the moment you die to the gate of Paradise, every stage
+       with its evidence AND a plain-words box, "so normal people can open
+       the page and understand without having to search". Rendered from
+       js/journey.js. -->
+  <section id="journey">
+    <div class="container">
+      <h2 class="section-title">From your death to your final home — step by step</h2>
+      <p class="section-sub">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
+      <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما يقع بترتيبه، ومع كلّ مرحلةٍ دليلها من القرآن أو السنّة، ثمّ شرحها بكلماتٍ بسيطة.</p>
+      <div class="divider"></div>
+      <div id="journeyTabs" class="adhkar-tabs"></div>
+      <div id="journeyBox"></div>
+    </div>
+  </section>
+
 
   <!-- ===== How the world ends =====
        NOTE: this comment used to claim the section was placed ABOVE the
@@ -155,23 +174,6 @@
        The answer to "is it over for us" belongs before the closing, not
        after it. Same data as golden.html — js/rise.js is the single
        source, so the two pages cannot drift. -->
-  <!-- ===== الرحلة — the whole journey, step by step =====
-       The owner asked for this to be the detailed spine of the page: what
-       happens from the moment you die to the gate of Paradise, every stage
-       with its evidence AND a plain-words box, "so normal people can open
-       the page and understand without having to search". Rendered from
-       js/journey.js. -->
-  <section id="journey">
-    <div class="container">
-      <h2 class="section-title">From your death to your final home — step by step</h2>
-      <p class="section-sub">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
-      <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما يقع بترتيبه، ومع كلّ مرحلةٍ دليلها من القرآن أو السنّة، ثمّ شرحها بكلماتٍ بسيطة.</p>
-      <div class="divider"></div>
-      <div id="journeyTabs" class="adhkar-tabs"></div>
-      <div id="journeyBox"></div>
-    </div>
-  </section>
-
   <section class="pattern-bg" id="rise">
     <div class="container">
       <div id="riseBox"></div>
@@ -220,20 +222,20 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608151852"></script>
-  <script src="js/angels.js?v=202608151852"></script>
+  <script src="js/data.js?v=202608151916"></script>
+  <script src="js/angels.js?v=202608151916"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608151852"></script>
-  <script src="js/judgement.js?v=202608151852"></script>
+  <script src="js/signs.js?v=202608151916"></script>
+  <script src="js/judgement.js?v=202608151916"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608151852"></script>
+  <script src="js/judgement-closing.js?v=202608151916"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608151852"></script>
-  <script src="js/journey.js?v=202608151852"></script>
+  <script src="js/rise.js?v=202608151916"></script>
+  <script src="js/journey.js?v=202608151916"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -259,6 +261,12 @@
             ${g.head ? `<div class="story-plain-sub">
                 <span class="en-only">${g.head}</span>
                 <span class="ar-only" dir="rtl">${g.headAr}</span>
+              </div>` : ""}
+            ${g.note ? `<div class="jr-odd">
+                <div class="jr-odd-h">⚠️ <span class="en-only">This part is not what you would expect</span>
+                  <span class="ar-only" dir="rtl">هذا الموضع على غير ما تتوقّع</span></div>
+                <p class="en-only">${g.note}</p>
+                <p class="ar-only" dir="rtl">${g.noteAr}</p>
               </div>` : ""}
             <ul class="story-plain-list">
               ${g.points.map(pt => `<li>
@@ -790,7 +798,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608151852"></script>
-  <script src="js/i18n.js?v=202608151852"></script>
+  <script src="js/main.js?v=202608151916"></script>
+  <script src="js/i18n.js?v=202608151916"></script>
 </body>
 </html>
