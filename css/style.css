@@ -6017,3 +6017,64 @@ html.lang-ar .daily-niyyah, html.lang-ar .daily-all { font-family: 'Amiri', seri
   .daily-dow { font-size: .66rem; }
 }
 @media (prefers-reduced-motion: reduce) { .daily-item, .daily-tick { transition: none; } }
+
+/* ---------- الرحلة — the journey on the Judgement page ----------
+   Each stage is one card: a numbered head, then the evidence blocks with
+   their references, then the green plain-words box (shared with the stories
+   page). The number is there so the ORDER is obvious — this is a sequence,
+   not a list of topics. */
+.jr-phase {
+  margin: 34px 0 16px;
+  padding: 16px 20px;
+  background: var(--green-dark);
+  color: #fff;
+  border-radius: 12px;
+}
+.jr-phase h3 { color: #fff; font-size: 1.15rem; margin-bottom: 5px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.jr-phase p { color: #d8ece0; font-size: .9rem; line-height: 1.7; margin: 0; }
+html.lang-ar .jr-phase p { font-size: 1.05rem; line-height: 1.95; }
+.jr-phase-ico { font-size: 1.3rem; }
+
+.jr-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+.jr-head { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.jr-n {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem;
+}
+.jr-ico { font-size: 1.5rem; flex-shrink: 0; line-height: 1.2; }
+.jr-head h3 { color: var(--green-dark); font-size: 1.18rem; line-height: 1.45; margin-bottom: 4px; }
+html.lang-ar .jr-head h3 { font-size: 1.4rem; line-height: 1.7; }
+.jr-lead { color: var(--text-muted); font-size: .92rem; line-height: 1.7; }
+html.lang-ar .jr-lead { font-family: 'Amiri', serif; font-size: 1.07rem; line-height: 1.95; }
+
+.jr-block {
+  border-inline-start: 3px solid var(--green-light);
+  padding-inline-start: 16px;
+  margin-bottom: 18px;
+}
+.jr-block-h { font-weight: 700; color: var(--green-dark); margin-bottom: 7px; font-size: .97rem; }
+html.lang-ar .jr-block-h { font-family: 'Amiri', serif; font-size: 1.15rem; }
+.jr-block-body p { margin-bottom: 11px; line-height: 1.85; color: var(--text); }
+html.lang-ar .jr-block-body p { font-family: 'Amiri', serif; font-size: 1.09rem; line-height: 2.1; }
+.jr-block-body em { color: var(--green-dark); font-style: italic; }
+html.lang-ar .jr-block-body em { font-style: normal; }
+
+@media (max-width: 560px) {
+  .jr-card { padding: 18px 15px; }
+  .jr-head { gap: 10px; }
+  .jr-head h3 { font-size: 1.05rem; }
+  .jr-block { padding-inline-start: 12px; }
+}

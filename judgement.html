@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608151107" />
+  <link rel="stylesheet" href="css/style.css?v=202608151852" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -155,6 +155,23 @@
        The answer to "is it over for us" belongs before the closing, not
        after it. Same data as golden.html — js/rise.js is the single
        source, so the two pages cannot drift. -->
+  <!-- ===== الرحلة — the whole journey, step by step =====
+       The owner asked for this to be the detailed spine of the page: what
+       happens from the moment you die to the gate of Paradise, every stage
+       with its evidence AND a plain-words box, "so normal people can open
+       the page and understand without having to search". Rendered from
+       js/journey.js. -->
+  <section id="journey">
+    <div class="container">
+      <h2 class="section-title">From your death to your final home — step by step</h2>
+      <p class="section-sub">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
+      <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما يقع بترتيبه، ومع كلّ مرحلةٍ دليلها من القرآن أو السنّة، ثمّ شرحها بكلماتٍ بسيطة.</p>
+      <div class="divider"></div>
+      <div id="journeyTabs" class="adhkar-tabs"></div>
+      <div id="journeyBox"></div>
+    </div>
+  </section>
+
   <section class="pattern-bg" id="rise">
     <div class="container">
       <div id="riseBox"></div>
@@ -203,19 +220,127 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608151107"></script>
-  <script src="js/angels.js?v=202608151107"></script>
+  <script src="js/data.js?v=202608151852"></script>
+  <script src="js/angels.js?v=202608151852"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608151107"></script>
-  <script src="js/judgement.js?v=202608151107"></script>
+  <script src="js/signs.js?v=202608151852"></script>
+  <script src="js/judgement.js?v=202608151852"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608151107"></script>
+  <script src="js/judgement-closing.js?v=202608151852"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608151107"></script>
+  <script src="js/rise.js?v=202608151852"></script>
+  <script src="js/journey.js?v=202608151852"></script>
+  <script>
+    /* ---------- الرحلة — the journey, phase by phase ----------
+       Same two-layer shape the owner asked for everywhere: the detail with
+       its evidence, then a plain-words box that repeats it in short listed
+       lines. The phase chips filter; "All" shows the whole sequence in
+       order, which is how it is meant to be read the first time. */
+    (function renderJourney() {
+      const host = document.getElementById("journeyBox");
+      const tabs = document.getElementById("journeyTabs");
+      if (!host || typeof JOURNEY === "undefined") return;
+
+      let phase = "all";
+
+      function plainBox(st) {
+        if (!st.plain) return "";
+        const p = st.plain;
+        return `<div class="story-plain">
+          <div class="story-plain-head">🟢 <span class="en-only">In plain words</span>
+            <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">بكلماتٍ بسيطة</span></div>
+          ${p.lead ? `<p class="story-plain-lead en-only">${p.lead}</p>
+            <p class="story-plain-lead ar-only" dir="rtl">${p.leadAr}</p>` : ""}
+          ${(p.groups || []).map(g => `
+            ${g.head ? `<div class="story-plain-sub">
+                <span class="en-only">${g.head}</span>
+                <span class="ar-only" dir="rtl">${g.headAr}</span>
+              </div>` : ""}
+            <ul class="story-plain-list">
+              ${g.points.map(pt => `<li>
+                <span class="en-only">${pt.en}</span>
+                <span class="ar-only" dir="rtl">${pt.ar}</span>
+              </li>`).join("")}
+            </ul>`).join("")}
+        </div>`;
+      }
+
+      /* Paragraphs: the data uses \n\n between them, and **bold** only —
+         single asterisks are never converted anywhere on this site. */
+      function paras(t) {
+        return String(t).split("\n\n").map(x =>
+          "<p>" + x.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + "</p>").join("");
+      }
+
+      function card(st, n) {
+        return `<article class="jr-card" id="${st.id}">
+          <div class="jr-head">
+            <span class="jr-n">${n}</span>
+            <span class="jr-ico">${st.icon}</span>
+            <div>
+              <h3 class="en-only">${st.title}</h3>
+              <h3 class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${st.titleAr}</h3>
+              <p class="jr-lead en-only">${st.lead}</p>
+              <p class="jr-lead ar-only" dir="rtl">${st.leadAr}</p>
+            </div>
+          </div>
+
+          ${st.body.map(b => `
+            <div class="jr-block">
+              <div class="jr-block-h en-only">${b.h}</div>
+              <div class="jr-block-h ar-only" dir="rtl">${b.hAr}</div>
+              <div class="jr-block-body en-only">${paras(b.en)}</div>
+              <div class="jr-block-body ar-only" dir="rtl">${paras(b.ar)}</div>
+              <div class="refs"><span>${b.ref}</span><span>${b.strength}</span></div>
+            </div>`).join("")}
+
+          ${plainBox(st)}
+        </article>`;
+      }
+
+      function draw() {
+        const list = JOURNEY.filter(s => phase === "all" || s.phase === phase);
+        let html = "";
+        let n = 0;
+        JOURNEY_PHASES.forEach(ph => {
+          const inPh = list.filter(s => s.phase === ph.id);
+          if (!inPh.length) return;
+          html += `<div class="jr-phase">
+            <h3><span class="jr-phase-ico">${ph.icon}</span>
+              <span class="en-only">${ph.en}</span>
+              <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${ph.ar}</span></h3>
+            <p class="en-only">${ph.leadEn}</p>
+            <p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${ph.leadAr}</p>
+          </div>`;
+          html += inPh.map(s => card(s, ++n)).join("");
+        });
+        host.innerHTML = html;
+        if (window.applyI18n) window.applyI18n();
+      }
+
+      function drawTabs() {
+        tabs.innerHTML =
+          `<button type="button" class="adhkar-tab${phase === "all" ? " active" : ""}" data-ph="all">
+             <span class="en-only">The whole journey</span><span class="ar-only" dir="rtl">الرحلة كاملة</span></button>` +
+          JOURNEY_PHASES.map(p => `<button type="button" class="adhkar-tab${phase === p.id ? " active" : ""}" data-ph="${p.id}">
+             ${p.icon} <span class="en-only">${p.en}</span><span class="ar-only" dir="rtl">${p.ar}</span></button>`).join("");
+        tabs.querySelectorAll(".adhkar-tab").forEach(b => {
+          b.addEventListener("click", () => {
+            phase = b.getAttribute("data-ph");
+            drawTabs(); draw();
+          });
+        });
+        if (window.applyI18n) window.applyI18n();
+      }
+
+      drawTabs();
+      draw();
+    })();
+  </script>
   <script>
     /* ---------- Standing alone: the closing discussion ----------
        Reuses the same card / pulled-quote / dua shapes as the Golden Age
@@ -665,7 +790,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608151107"></script>
-  <script src="js/i18n.js?v=202608151107"></script>
+  <script src="js/main.js?v=202608151852"></script>
+  <script src="js/i18n.js?v=202608151852"></script>
 </body>
 </html>
