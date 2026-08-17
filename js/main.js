@@ -1110,14 +1110,27 @@ function runPersonSearch(query) {
 
   const stripAr = s => String(s || "").replace(/[ً-ْٰـ]/g, "")
     .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
-  const qAr = stripAr(query.trim());
   const arWords = txt => new Set(stripAr(txt).split(/[^ء-ي]+/).filter(Boolean));
+
+  /* The Arabic query must be split into WORDS the same way the text is.
+     It was previously kept whole — so "أبو بكر" was compared, space and all,
+     against a set of single words, and nothing can ever equal it. The effect
+     was that EVERY multi-word Arabic search returned nothing: أبو بكر,
+     عمر بن الخطاب and خالد بن الوليد all found zero, while their English
+     spellings found 34, 15 and 5. Reported by the owner, who reads the site
+     in Arabic.
+
+     Every word must be present (the same rule the Latin side already used),
+     and each is still matched WHOLE — never as a substring, which is the
+     trap that has cost this site three separate bugs. */
+  const qArWords = stripAr(query.trim()).split(/[^ء-ي]+/).filter(Boolean);
+  const arWordHit = (set, qw) =>
+    [...set].some(w => w === qw || w === "ال" + qw ||
+      (w.length > qw.length && w.endsWith(qw) && w.length - qw.length <= 2));
   const hasArWord = txt => {
-    if (!qAr || !/[ء-ي]/.test(qAr)) return false;
+    if (!qArWords.length || !/[ء-ي]/.test(query)) return false;
     const set = arWords(txt);
-    // Allow the definite article and the usual attached prefixes.
-    return [...set].some(w => w === qAr || w === "ال" + qAr ||
-      (w.length > qAr.length && w.endsWith(qAr) && w.length - qAr.length <= 2));
+    return qArWords.every(qw => arWordHit(set, qw));
   };
 
   /* The query reduced to the same skeleton as the names. `qJoined` exists so
