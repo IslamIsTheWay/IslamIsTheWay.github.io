@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 14 August 2026.**
+> **Last updated: 17 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 14 first.**
 
 ## The rules that matter most
 
@@ -2699,3 +2699,151 @@ before. Until someone has done exactly that, the site says nothing about it.
 6. Everything still open from Part 8: the hijab photo, the hadith page Arabic
    titles, the courses page Arabic, Gmail sign-in, cross-device saved place,
    Google Search Console.
+
+---
+
+<!-- ============================================================ -->
+# PART 14 — 15–17 August 2026: the rename, the dashboard, the journey
+<!-- ============================================================ -->
+
+## THE SITE IS NOW CALLED **IslamBasics** — أساسيات الإسلام
+
+Renamed from "Islam Is The Way" across 26 files, 144 replacements.
+
+**THE URLS DID NOT CHANGE AND MUST NOT.** Every canonical, every og:url and
+every internal href still points at `islamistheway.github.io`. The owner does
+not own a new domain yet. Rewriting canonicals to a domain that does not exist
+would drop the site out of search results entirely — the opposite of why he
+renamed it. Verified at the time: 0 canonical or og:url moved.
+
+**Why he renamed it:** `islamistheway` contains the string **"islamist"** —
+read the domain without spaces. Bad for search tokenisation and for how it
+looks. He chose IslamBasics for search volume ("Islam basics" is a phrase
+people actually type).
+
+**Still on the old domain:** `contact@islamistheway.com` in 13 footers. Left
+deliberately — rewriting an address people may use to reach him would break
+contact rather than fix branding. **His decision, not ours.**
+
+## The streak dashboard on the home page (`js/daily.js`)
+
+He asked for "that type of dashboard like Duolingo, the one that shows a
+certain number on it". The number is now the hero at 54px, with the last seven
+days as circles, a bar to the next marked day, and the longest run shown only
+when it is ahead of the current one.
+
+**DELIBERATE DEPARTURE FROM DUOLINGO: no flame.** This site has a whole page
+about the Fire; 🔥 as the reward for reading Quran is the wrong note. The hero
+icon is the milestone already earned (🌱 🌿 ⭐ 🌟 🌙 🕌 🏅 💎 👑).
+
+**A home-screen WIDGET is impossible.** He asked again, precisely: a tile
+outside the app, the size of four icons. Answered definitively — iOS needs
+WidgetKit in a native app from the App Store ($99/year + a Mac); Android needs
+an App Widget in a native APK ($25 one-off or sideload). **No web page can draw
+one on either phone.** Do not soften this and do not build something else and
+call it done.
+
+## The Dajjal, and `stories.html` opening on it
+
+The stories page now **lands on the end-of-time section**, by his instruction.
+Eight cards in the series, each with a green "In plain words" box; the
+description card lists how he looks, what he can do, how long he stays.
+
+**«ويومٌ كجمعة» means A WEEK, not Friday.** He asked directly and the ambiguity
+is real — جمعة carries both meanings. The order settles it: year → month →
+week → ordinary day, each shorter than the last. An-Nawawi says so in his
+commentary on Sahih Muslim, and he is named on the card. Counted as days it is
+forty; counted as time lived, about fourteen months.
+
+## `js/journey.js` — death to Paradise, 18 stages
+
+The detailed spine of judgement.html, built from a YouTube transcript he sent.
+18 stages in 5 phases, **157 plain-language points, 27 sourced blocks**, every
+stage with a plain box.
+
+**THREE RULES AT THE TOP OF THAT FILE, keep them:**
+1. nothing without a source; outside the two Sahihs the authenticating scholar
+   is named
+2. weak is labelled weak beside the strong, never blended in
+3. **SPECULATION IS NOT SCRIPTURE.** The lecture explains events with modern
+   chemistry (splitting water into hydrogen and oxygen). That is a speaker's
+   reasoning, not Quran or Sunnah, and it is NOT on the page.
+
+**Page order matters and was fixed:** stages → journey → signs → detail →
+angels → rise → alone. The journey was at the bottom and read out of context.
+
+**Correction carried into the content: PARADISE HAS EIGHT GATES.** Seven is the
+number of gates of **Hell** (Al-Hijr 15:44). The two get swapped constantly.
+
+## The offline claim was REMOVED — see PART 13, and do not re-add it
+
+## Arabic-mode faults he reported, and what the audit found
+
+He screenshotted the journey heading showing English in Arabic mode with the
+full stop thrown to the front of the line (RTL). Cause: no `.en-only` wrapper.
+
+**Then I audited instead of fixing only what was reported** — walked the
+rendered page with the language set to Arabic looking for visible latin text.
+**18 leaks, not one**, including "On the strength of this" rendered 11 times
+and a title that HAD an Arabic twin the renderer was not using. Down to 15,
+all inside reference lines.
+
+**Do this audit after any content addition.** It takes one script and finds
+what reading cannot.
+
+## Old Arabic words must be glossed
+
+His words: *"some Arabic words are hard to understand because they are old
+Arabic... when you say sweating until his mouth, it has a different word in
+Arabic, and you don't explain that."*
+
+**RULE: in a plain-words box a classical word may appear, but it must be
+followed immediately by (أي …) in ordinary modern Arabic.** Keep the classical
+word — it is the word in the hadith — and explain it beside it. Done for
+الحَقْو (the waist), اللِّجام, أغرل, المُسوح, السَّفُّود, عَجْب الذَّنَب,
+النَّقْب, and others.
+
+**And quoting a verse is NOT explaining it.** He named the book being handed
+over: ثُبور, مِثقال ذرّة and خَردل all sat bare. Now explained in ordinary
+words — ثُبور is ruin, a ذرّة is the speck you see in a sunbeam.
+
+## Search bug: EVERY multi-word Arabic query returned nothing
+
+`أبو بكر`, `عمر بن الخطاب`, `خالد بن الوليد` all returned only the fallback,
+while the English spellings returned 34, 15 and 5.
+
+**Cause:** in `runPersonSearch` the Arabic query was normalised but kept WHOLE,
+spaces and all, then compared against a Set of single words. A word can never
+contain a space. Single words worked, which is why it survived.
+
+**Fix:** split the query into words the same way the text is split, require
+every word, and still match each one WHOLE — never as a substring, which is the
+trap that has cost this site three separate bugs.
+
+## Open work as of 17 August 2026
+
+1. **TADABBUR DEPTH — he has asked twice and it is not done.** 46 surahs have
+   exactly ONE explained verse:
+   6, 8, 28, 33, 37, 40, 42, 44, 46, 48, 52, 53, 56, 58, 60, 61, 62, 63, 65,
+   69, 70, 71, 73, 75, 76, 77, 78, 79, 80, 81, 82, 84, 85, 86, 88, 89, 92, 95,
+   97, 98, 100, 101, 102, 109, 110, 111.
+   **Pull the verse text from `js/quran-text.js`, never from memory** — the
+   whole Quran ships with the site. Note: its structure is not
+   `QURAN_TEXT["2"] = {...}` as the comment at the top of that file suggests;
+   check the real shape before writing an extractor. That mismatch is what
+   stopped this work last session.
+2. **The Guidance page has NOT been audited** for wrong or irrelevant answers.
+   Test it with real ruling questions in both languages.
+3. **More Sunnah entries** — asked for and still not done. The inventory of
+   used hadith numbers (124 Bukhari, 74 Muslim) is in the session notes so new
+   ones do not repeat.
+4. **Name-variant search:** Omar 15 / Umar 10, Osman 20 / Uthman 14,
+   Fatimah 12 / Fatima 7. The variant you did not use silently loses results.
+5. **Journey stages still missing:** seeing Allah at the standing, the Saq and
+   the hypocrites unable to prostrate, going into the Fire to pull family out,
+   and the last handful.
+6. **15 English fragments still leak** in Arabic mode, all inside reference
+   lines — full sentences in `ref` fields.
+7. Everything still open from Part 13: push notifications, the 377 English
+   labels on full-life sources, 20 Sunnah gradings naming no scholar, the
+   duplicate al-Bukhari 5641 pair, the citation audit beyond the Judgement page.

@@ -226,6 +226,28 @@ A missing comma between objects silently breaks every page that loads the file.
 
 ## Traps that have already cost time — do not repeat them
 
+### The site is called IslamBasics — but the URLs are NOT
+Renamed from "Islam Is The Way" on 15 August. **Every canonical, og:url and
+internal href still points at `islamistheway.github.io`** and must keep doing
+so until the owner actually buys a domain. Pointing canonicals at a domain that
+does not exist removes the site from search results.
+`contact@islamistheway.com` is still in 13 footers on purpose — his call.
+
+### Multi-word Arabic queries: split them, then match each word WHOLE
+`runPersonSearch` kept the Arabic query whole, spaces included, and compared it
+against single words — so EVERY multi-word Arabic search found nothing
+(أبو بكر, عمر بن الخطاب). Split like the text is split, require every word,
+and never fall back to substring matching.
+
+### Classical Arabic must be glossed in a plain box
+A plain-words box may use a classical word, but it must be followed by (أي …)
+in ordinary Arabic. And **quoting a verse is not explaining it** — ثُبور,
+مِثقال ذرّة and خَردل all need saying in plain words.
+
+### After adding content, AUDIT Arabic mode by script
+Set the language to Arabic, walk the rendered page for visible latin text. A
+single reported leak turned out to be 18.
+
 ### The site must NOT claim it works without a connection
 The owner's words on 14 August: *"either you fix it, which is not now, so remove
 that sentence — because like this, you're deceiving them."* My testing said
@@ -518,7 +540,7 @@ significant:
 
 ## Current state
 
-_Last updated: 14 August 2026_
+_Last updated: 17 August 2026_
 
 | Content | Count |
 |---|---|
@@ -683,7 +705,7 @@ _Last updated: 14 August 2026_
 
 ## Open work
 
-_As of 14 August 2026._
+_As of 17 August 2026._
 
 0. **Tadabbur DEPTH, not coverage.** Coverage is done: every one of the 114
    surahs now has at least one explained verse, **225 entries in total** — but
