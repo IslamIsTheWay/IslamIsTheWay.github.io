@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 17 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 14 first.**
+> **Last updated: 18 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 15 first, then PART 14.**
 
 ## The rules that matter most
 
@@ -63,12 +63,12 @@ git add -A && git commit -m "..." && git push origin main
 | Full lives (`js/lives.js`) | **94** |
 | Stories of the Prophet | **49** |
 | Curated hadith | 43 (+ ~15,000 via API) |
-| Sunnah practices | **177** |
+| Sunnah practices | **187** |
 | Day of Judgement stages | 15, with 33 angels |
 | Adhkar | 19 |
 | Scholars' rulings / scholars with books | 15 / 19 |
 | Surahs | 114, 16 reciters, Mushaf pages |
-| **Tadabbur (explained verses)** | **225 across all 114 surahs** |
+| **Tadabbur (explained verses)** | **317 across all 114 surahs — every surah has 2+, most have 3** |
 | **Golden Age figures** | **41**, all with a plain-words box |
 | **Adding to the religion (bid'ah)** | `js/bidah.js`, on Guidance |
 
@@ -2847,3 +2847,243 @@ trap that has cost this site three separate bugs.
 7. Everything still open from Part 13: push notifications, the 377 English
    labels on full-life sources, 20 Sunnah gradings naming no scholar, the
    duplicate al-Bukhari 5641 pair, the citation audit beyond the Judgement page.
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 15 — 18 August 2026: tadabbur finished, and the Guidance audit
+<!-- ============================================================ -->
+
+## TADABBUR: every surah now has at least TWO verses, most have three
+
+**225 → 317 entries. The 46 single-verse surahs are gone — 0 remain.**
+Distribution now: 57 surahs with 2, 50 with 3, and the rest above that.
+
+**The thing that stopped this last session was NOT the data shape.** The
+handoff said `QURAN_TEXT["2"] = {...}` was wrong; it is exactly right —
+`{a:[arabic], e:[english], p:[mushaf page]}`, 114 keys, 6,236 ayat. What
+actually failed was the **Windows console encoding**: printing Arabic under
+cp1252 throws `UnicodeEncodeError` before you ever see the data. Set
+`PYTHONIOENCODING=utf-8` and it reads perfectly. Do not go looking for a
+parser bug that is not there.
+
+### How the 92 entries were written, and why it can be trusted
+
+No Arabic of the Quran was typed. Two mechanisms enforce it:
+
+1. **A generator pulls every `ar` field** from `js/quran-text.js` by
+   `(surah, ayah)`. There is no code path that accepts hand-typed verse text.
+   `links[]` entries are pulled the same way from their own `(s, n)`.
+2. **A quote healer** walks every `﴿…﴾` span in the prose, finds it in the
+   real text, and REPLACES it with the exact wording. It corrected 14 quotes
+   in the first batch alone — wrong small-waw, wrong mark order, `مَحْيَاَى`
+   for `مَحْيَاىَ`. A quote whose words cannot be found at all is reported and
+   the write is refused, never silently corrected.
+
+**All 317 entries were then verified against the shipped text: 317 faithful,
+0 not.** Re-run that check after any edit to the file.
+
+### Four traps found while building it — they will bite again
+
+* **NFD first, or 49 of 225 entries look wrong.** The Uthmani text writes
+  alef+maddah as two code points; a hand-copied quote carries precomposed
+  `آ`. Normalise to NFD before stripping marks.
+* **`۞` is not part of the verse.** The rub-el-hizb star opens 4:135, 6:59,
+  60:7, 63:4 and others. Strip it, and remember a verse can START with it.
+* **Trim the index map with the text.** A `bare()` helper that strips
+  whitespace from the string but not from its index array is off by one for
+  exactly those `۞` verses — it silently truncated the last letter of every
+  span extracted from them.
+* **Surahs 95 and 97 write the basmala with a doubled bā.** A literal prefix
+  comparison leaves the basmala glued to the front of ayah 1 on those two.
+  Strip it by comparing the marks-stripped form.
+* **A short quote matches many verses.** `﴿مثلها﴾` occurs all over with
+  different vowelling; the healer took the first hit in mushaf order and
+  rewrote a CORRECT quote into an unrelated verse's wording. It now prefers
+  the entry's own verses and refuses ambiguous global matches.
+
+## THE GUIDANCE AUDIT — it had never been done, and the faults were systematic
+
+Ten fixes. The two big ones were not content problems at all.
+
+### 1. The rarity model was blind to more than half the site
+
+`buildIdf()` built its corpus from 5 collections — 160 entries. `findGuidance`
+SEARCHES 8 — 376 entries. **All 177 Sunnah entries, the 15 rulings and the 24
+worship steps were invisible to it.**
+
+A word missing from the corpus scores `df = 0`, which is the MAXIMUM rarity the
+formula returns. So a word common in the Sunnah entries but absent from the
+corpus was treated as the rarest word in the language *while still matching
+dozens of those entries*. Fixed by indexing all eight.
+
+### 2. There was not one Arabic stopword on the page
+
+`STOP` and `GENERIC` were English-only. `tokens()` keeps every word of three
+letters or more, so `انا`, `هذا`, `عندي`, `كيف` all reached the scorer — and,
+being absent from the corpus, each carried maximum weight.
+
+Measured on `"أنا فقير ولا أجد عملا"`: **the pronoun انا scored idf 5.08
+against فقير at 3.98.** The sentence was scored on its grammar, not its
+subject, and the top answer was *"what to say when hearing of a death"*.
+
+Arabic stop and generic lists are now in place, including the `و`/`ف`-prefixed
+forms (`وانا`, `فهذا`) which slip past the base entries, and the inflected
+adverbs (`كثيرا` — `stem()` only cuts ENGLISH endings, so `كثير` never matched
+the `كثيرا` a person types).
+
+### 3. Individual answer faults, all now verified fixed
+
+| Asked | Was answered with | Cause |
+|---|---|---|
+| `ما حكم صلاة المسافر؟` | eight unrelated themes | topic needed 2 hits, got 1; `صلاة` was not in its word list. And because a worship step matched `صلاة`, the no-ruling guard was skipped too |
+| `عندي وسواس في الوضوء` | "do not waste water in wudu" | not phrased as a question, so it never reached the authored waswas ruling — the one answer that could make obsessive doubt worse |
+| `زوجتي وأنا نتشاجر كثيرا` | the ruling on shortening the prayer when travelling | the single adverb `كثيرا` scored it 8.38, and a LONE ruling had no guard — `rulingIsGeneric` compares the top two, so it can only fire when there are two |
+| `مات أبي وأنا حزين جدا` | Talbina, then charity after death | the bereavement entry scored **ZERO**: its Arabic keys were all definite nouns (`الموت`, `الحزن`) and Arabic derives the verb from the same root with a DIFFERENT written skeleton (م-ا-ت against م-و-ت) |
+| `music` (one word) | nothing at all | after the lone-ruling guard went in, a bare topic name had no route. Short queries are topic names and are now routed as such |
+
+**A lone ruling must now match on two distinct rare words** — the same
+`MIN_DISTINCT` rule the biographies already used. So must any ruling matched
+against a query of three words or more.
+
+### What was tried and REVERTED — do not redo it
+
+Reordering the blocks so a strongly-matching Sunnah entry could lead a weakly-
+matching hadith. It fixed one case and made four others worse. The blocks
+render in category order — rulings, hadith, Quran, Sunnah — and that order is
+load-bearing. Leave it.
+
+### Still open on this page
+
+* **Arabic morphology is not bridged in general.** Only the bereavement entry
+  was patched, by adding `مات`, `توفي`, `حزين` to its keys. Any entry keyed on
+  a definite noun is unreachable by the verb a reader actually types. The real
+  fix is a light tri-literal root normaliser that folds the weak letters
+  (ا/و/ي); it is a bigger change and it must not become substring matching.
+* **English bereavement ordering.** `"my father died and I am very sad"` now
+  reaches the right content, but a hadith about honouring mothers is printed
+  above it. See the reverted fix above — this is the same block-order issue.
+* `"زوجتي وأنا نتشاجر كثيرا"` now returns an honest "nothing found" rather
+  than a wrong answer. Better, but the site has material on this and it is not
+  being reached.
+
+## NAME-VARIANT SEARCH — fixed, and it was not where the handoff said
+
+The transliteration folding existed and worked. It was applied to **names
+only**, so `title` and `summary` were still matched against the RAW query —
+and the site's own prose is not spelt consistently (summaries say "Omar" and
+"Osman" while the ids are `umar` and `uthman`).
+
+Two more layers were needed: fold the prose too, and canonicalise through the
+alias table in BOTH directions (`mohammed` folds to `muhamid` and `muhammad`
+to `muhamad`; the mechanical rules cannot bridge that).
+
+**25 spelling pairs tested, all now return identical counts.** Guards hold:
+`Ali` is 3 and not 17, `Ahmad` did not flood, `Isaac`→Ishaq and `Enoch`→Idris
+still work, multi-word Arabic still works.
+
+**`IITW_TEXT_ALIAS_SKIP` matters.** The alias table maps people to the name a
+reader may know from the Bible, and maps `ahmad` to `muhammad`. Those belong in
+a NAME lookup and NOT in the prose fold — folding them would report every
+summary mentioning Muhammad as a match for someone searching Ahmad.
+
+**Known and deliberate:** `AbuBakr` run together returns 1 while `Abu Bakr`
+returns 6. Matching a run-together query against prose needs substring
+matching, which is the trap that has cost this site four separate bugs. Left
+alone on purpose.
+
+## SUNNAH: 177 → 187
+
+Ten entries in the thinnest categories (fasting, friday, travel, animals,
+death, dress, quran each had 4–6 against 30 for manners). Checked against the
+inventory — **no hadith number is repeated.**
+
+**Two traps hit while adding them, both already recorded and both live again:**
+
+* **`**bold**` is NOT converted on the Sunnah page.** One entry shipped raw
+  asterisks to an Arabic reader before it was caught. The tadabbur renderer
+  converts it; this one does not.
+* **`ref` and `strength` are translated by EXACT-STRING lookup in
+  `js/i18n.js`.** Any extra English prose inside them renders untranslated on
+  an Arabic page — which is precisely open item 6. Two of the ten new entries
+  did it. Keep those two fields to the standard patterns and put the grading
+  nuance in `detail`/`detailAr`, which exist in both languages.
+
+## The mic on the feedback box
+
+Asked for mid-session. Copied from the **Guidance** mic, not the Sunnah one —
+the Guidance version was already corrected once for a real fault (a mic that
+is not `continuous` shuts while the person is still thinking). Click on/click
+off, restart in `onend` unless stop was pressed, and only NEW final results
+appended — appending the whole results array repastes the sentence at every
+pause.
+
+**Two faults found in my own code by testing rather than reading:** the
+language select defaulted from the `lang-ar` CLASS, which is not on `<html>`
+yet when the feedback form mounts (i18n.js loads after main.js), so an Arabic
+reader got English dictation — read the STORED preference instead. And
+switching language mid-session reopened the mic on the language just switched
+away from, because the old session's `onend` restart fired first.
+
+**If the browser has no speech API the button is REMOVED, not left to explain
+itself when pressed.** A visible control is a promise that it works.
+
+## contact@islamistheway.com — removed from all 13 footers
+
+**`islamistheway.com` is NXDOMAIN.** No nameservers, no MX, nothing. That
+address has never been able to receive mail — every message anyone sent to it
+bounced. It was not a branding wart; it was 13 pages advertising a contact
+channel that could not work.
+
+**`islambasics.com` is registered to someone else** (Cloudflare NS, live MX),
+so that name is not available either.
+
+Put to the owner with those facts. **His decision: drop the address, keep the
+feedback route.** The footers now link to `#feedback`, which is the form
+`main.js` injects above the footer of every page and which opens a mail to his
+gmail. On index.html the band's feedback link pointed at `courses.html#feedback`
+from the home page, which sends a reader away for a form already on the page —
+now `#feedback`.
+
+His gmail is still public in `courses.html` as a mailto, and the feedback form
+and enrolment both use it. Nothing was hidden that was not already visible.
+
+## Home page counts
+
+`./check-counts.sh` caught them stale, which is what it is for. Updated in
+`index.html` AND `js/i18n.js` together — the AR dictionary is keyed on the
+exact English sentence, so changing one without the other makes that card
+render in English on an Arabic page. Both the sentence and the Arabic numeral
+words had to change (`مئتان وخمسٌ وعشرون` → `ثلاثمئة وسبع عشرة`).
+
+## Open work as of 18 August 2026
+
+1. **Arabic morphology in Guidance** — see above. The single largest remaining
+   source of missed answers in Arabic.
+2. **Guidance block ordering** — a weakly-matching hadith can still print above
+   a strongly-matching Sunnah entry. The naive fix was tried and reverted;
+   anything here needs measuring across a battery, not one example.
+3. **106 of the 225 pre-existing tadabbur ayah entries carry no `ref` and no
+   `strength`.** All 92 new ones do. Not touched — it is a bulk edit that
+   deserves its own pass.
+4. **English fragments in Arabic mode** — 11 found in a 14-surah sample, every
+   one inside a `ref` field of a PRE-EXISTING entry. The 92 new entries added
+   none. Cause is always the same: prose inside a field that i18n translates
+   by exact-string lookup.
+5. **Journey stages still missing:** seeing Allah at the standing, the Saq and
+   the hypocrites unable to prostrate, going into the Fire to pull family out.
+6. Everything still open from Part 13: push notifications, the 377 English
+   labels on full-life sources, 20 Sunnah gradings naming no scholar, the
+   duplicate al-Bukhari 5641 pair, the citation audit beyond the Judgement
+   page.
+
+## The scripts that did this work
+
+Kept in the session scratchpad, not the repo, because they are one-shot tools:
+`qload.py` (parse quran-text.js), `qcheck.py` (faithfulness + basmala strip),
+`heal.py` (the quote healer), `gen.py` (render + splice entries), `verify2.py`
+(check all entries against the shipped text), `tscan.py` (coverage per surah).
+Rebuild them from the descriptions above if they are needed again — the logic
+matters, the files do not.
