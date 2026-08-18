@@ -714,7 +714,15 @@ const SUNNAH = [
     detailAr: "عند المصيبة يقول المؤمن: «إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي وَأَخْلِفْ لِي خَيْرًا مِنْهَا». وعلّم النبي ﷺ أن الله يُخلف عليه خيراً.",
     ref: "Sahih Muslim, Book of Funerals, Hadith 918",
     strength: "Sahih — Narrated by Muslim",
-    keys: ["death","calamity","loss","grief","inna lillah","condolence","الموت","المصيبة","الفقد","الحزن","إنا لله","العزاء"]
+    /* The Arabic keys were all definite nouns - الموت، الحزن - and a bereaved
+       reader does not write those. He writes "مات أبي" and "حزين". Arabic
+       derives the verb and the noun from one root but they differ in the
+       written skeleton (م-ا-ت against م-و-ت), so nothing here matched and this
+       entry scored ZERO on the most natural way of asking for it. The verb and
+       adjective forms are added beside the nouns. */
+    keys: ["death","calamity","loss","grief","inna lillah","condolence","died","passed away","bereaved",
+           "الموت","المصيبة","الفقد","الحزن","إنا لله","العزاء",
+           "مات","ماتت","توفي","توفيت","فقدت","حزين","حزينة","وفاة","جنازة","عزاء"]
   },
 
   /* ================= MORE: SPEECH & GATHERINGS ================= */
@@ -1952,6 +1960,129 @@ const SUNNAH = [
     ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 71",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["knowledge","learning","study","understanding","fiqh","student","العلم","التعلم","الفقه","الفهم","طلب العلم"]
+  },
+
+  /* ================= ADDED 18 AUGUST 2026 =================
+     Ten entries for the categories that were thinnest. Hadith numbers checked
+     against the ones already used in this file; none is repeated. */
+  {
+    cat: "manners",
+    title: "If you must sit in the street, give the road its due",
+    titleAr: "إن جلستم في الطرقات فأعطوا الطريق حقّه",
+    detail: "They said they had no choice but to sit and talk in the road. He ﷺ did not forbid it outright — he said: then give the road its right. And he listed it: lower the gaze, hold back harm, return the greeting, and enjoin good and forbid wrong.",
+    detailAr: "قالوا: ما لنا بُدٌّ من مجالسنا نتحدّث فيها. فلم يمنعهم النبيّ ﷺ منعًا، وإنما قال: «فإذا أبيتم إلا المجلس فأعطوا الطريق حقّه». قالوا: وما حقّه؟ قال: «غضّ البصر، وكفّ الأذى، وردّ السلام، والأمر بالمعروف والنهي عن المنكر».",
+    arabic: "فَأَعْطُوا الطَّرِيقَ حَقَّهُ",
+    ref: "Sahih al-Bukhari, Hadith 2465; Sahih Muslim, Hadith 2121",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["street","road","sitting","gaze","harm","greeting","neighbours","public",
+           "الطريق","الطرقات","المجلس","غض البصر","كف الأذى","رد السلام"]
+  },
+  {
+    cat: "mosque",
+    title: "Whoever builds a mosque — a house in Paradise",
+    titleAr: "من بنى مسجدًا بنى الله له بيتًا في الجنة",
+    detail: "He ﷺ said that whoever builds a mosque for Allah, Allah builds for him a house like it in Paradise. The reports add nothing about its size — one narration mentions even a small shelter for prayer.",
+    detailAr: "قال النبيّ ﷺ: «من بنى مسجدًا لله بنى الله له بيتًا في الجنة». ولم يُذكر في الحديث حدٌّ لسَعته، وفي بعض الروايات ولو كان كمَفحص قطاة.",
+    arabic: "مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ",
+    ref: "Sahih al-Bukhari, Hadith 450; Sahih Muslim, Hadith 533",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["mosque","building","charity","sadaqah","paradise","masjid","donate",
+           "المسجد","بناء","الصدقة","الجنة","التبرع"]
+  },
+  {
+    cat: "home",
+    title: "At night: close the doors, cover the vessels, put out the lamp",
+    titleAr: "أغلق الباب وغطِّ الإناء وأطفئ السراج بالليل",
+    detail: "A practical instruction for the end of the day: shut the doors and mention Allah's name, cover the water and food vessels even if only by laying something across them, and put out the lamp before sleeping. He ﷺ gave a reason for the last one — a house has burned down over a lamp left lit.",
+    detailAr: "أمرٌ عمليٌّ لآخر النهار: أن تُغلق الأبواب وتُسمّي الله، وأن تُخمّر الأواني ولو أن تعرض عليها عودًا، وأن يُطفأ السراج عند النوم. وعلّل النبيّ ﷺ الأخير بأنّ الفويسقة ربما جرّت الفتيلة فأحرقت أهل البيت.",
+    arabic: "أَطْفِئُوا الْمَصَابِيحَ إِذَا رَقَدْتُمْ، وَغَلِّقُوا الْأَبْوَابَ، وَأَوْكُوا الْأَسْقِيَةَ",
+    ref: "Sahih al-Bukhari, Hadith 5623; Sahih Muslim, Hadith 2012",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["home","night","doors","lamp","fire","safety","vessels","covering","sleep",
+           "البيت","الليل","الأبواب","السراج","الأواني","النوم","الحريق"]
+  },
+  {
+    cat: "purity",
+    title: "Do not urinate into still water",
+    titleAr: "لا يُبال في الماء الراكد",
+    detail: "He ﷺ forbade urinating into water that does not flow, and then bathing in it. It is one of the clearest statements in the Sunnah about not fouling what other people will use.",
+    detailAr: "نهى النبيّ ﷺ أن يُبال في الماء الدائم الذي لا يجري ثم يُغتسل منه. وهو من أصرح ما في السنة في ألّا يُفسد المرءُ ما ينتفع به الناس.",
+    arabic: "لَا يَبُولَنَّ أَحَدُكُمْ فِي الْمَاءِ الدَّائِمِ الَّذِي لَا يَجْرِي ثُمَّ يَغْتَسِلُ فِيهِ",
+    ref: "Sahih Muslim, Hadith 281",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["water","clean","pollution","public","purity","hygiene","river","well",
+           "الماء","الراكد","الطهارة","النظافة","التلويث"]
+  },
+  {
+    cat: "fasting",
+    title: "Six days of Shawwal after Ramadan",
+    titleAr: "ستٌّ من شوال بعد رمضان",
+    detail: "He ﷺ said that whoever fasts Ramadan and then follows it with six days of Shawwal, it is as though he fasted the whole year. They need not be consecutive, and they come after the day of Eid, not on it.",
+    detailAr: "قال النبيّ ﷺ: «من صام رمضان ثم أتبعه ستًّا من شوال كان كصيام الدهر». ولا يُشترط تتابعها، وتكون بعد يوم العيد لا فيه.",
+    arabic: "مَنْ صَامَ رَمَضَانَ ثُمَّ أَتْبَعَهُ سِتًّا مِنْ شَوَّالٍ كَانَ كَصِيَامِ الدَّهْرِ",
+    ref: "Sahih Muslim, Hadith 1164",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["fasting","shawwal","ramadan","six days","voluntary","eid",
+           "الصيام","شوال","رمضان","الستّ","التطوع","العيد"]
+  },
+  {
+    cat: "manners",
+    title: "Meeting your brother with a cheerful face is charity",
+    titleAr: "لقاؤك أخاك بوجه طَلْق صدقة",
+    detail: "He ﷺ said not to belittle any act of good, even meeting your brother with a cheerful face. It costs nothing and is counted as sadaqah — which is the point of naming it beside the acts that cost something. The better-known wording, that your smiling in your brother's face is a charity, is narrated by at-Tirmidhi and is OUTSIDE the two Sahihs; he graded it hasan.",
+    detailAr: "قال النبيّ ﷺ: «لا تحقرنّ من المعروف شيئًا، ولو أن تلقى أخاك بوجهٍ طَلْق». وهو ما لا يُكلّف شيئًا وقد عُدّ صدقة، وفي ذكره إلى جانب ما يُكلّف المقصود. وأمّا اللفظ الأشهر «تبسّمك في وجه أخيك صدقة» فرواه الترمذي، وهو خارج الصحيحين، وحسّنه.",
+    arabic: "لَا تَحْقِرَنَّ مِنَ الْمَعْرُوفِ شَيْئًا، وَلَوْ أَنْ تَلْقَى أَخَاكَ بِوَجْهٍ طَلْقٍ",
+    ref: "Sahih Muslim, Hadith 2626",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["smile","cheerful","face","charity","sadaqah","kindness","greeting","brother",
+           "الابتسامة","الوجه","طلق","الصدقة","المعروف","الأخوة"]
+  },
+  {
+    cat: "death",
+    title: "Follow the funeral to the end — two qirat",
+    titleAr: "من تبع الجنازة حتى تُدفن فله قيراطان",
+    detail: "Whoever attends the funeral until the prayer is offered has one qirat; whoever stays until the burial has two. He ﷺ was asked what the two qirat are, and said: like two great mountains.",
+    detailAr: "من شهد الجنازة حتى يُصلّى عليها فله قيراط، ومن شهدها حتى تُدفن فله قيراطان. وسُئل النبيّ ﷺ: وما القيراطان؟ قال: «مثل الجبلين العظيمين».",
+    arabic: "مَنْ شَهِدَ الْجَنَازَةَ حَتَّى يُصَلَّى عَلَيْهَا فَلَهُ قِيرَاطٌ، وَمَنْ شَهِدَهَا حَتَّى تُدْفَنَ فَلَهُ قِيرَاطَانِ",
+    ref: "Sahih al-Bukhari, Hadith 1325; Sahih Muslim, Hadith 945",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["funeral","janazah","burial","death","reward","qirat","grave",
+           "الجنازة","الدفن","الموت","القيراط","الصلاة على الميت"]
+  },
+  {
+    cat: "quran",
+    title: "Struggling with the recitation earns two rewards",
+    titleAr: "الذي يشقّ عليه القرآن له أجران",
+    detail: "The one skilled in the Quran is with the noble scribes; and the one who reads it haltingly, finding it hard, has TWO rewards. Difficulty with the recitation is not a mark against a reader — it is counted twice in his favour.",
+    detailAr: "الماهر بالقرآن مع السفرة الكرام البررة، والذي يقرؤه ويتتعتع فيه وهو عليه شاقّ فله أجران اثنان. فليست المشقّة في التلاوة نقصًا في القارئ، بل تُكتب له مرّتين.",
+    arabic: "وَالَّذِي يَقْرَأُ الْقُرْآنَ وَيَتَتَعْتَعُ فِيهِ وَهُوَ عَلَيْهِ شَاقٌّ لَهُ أَجْرَانِ",
+    ref: "Sahih al-Bukhari, Hadith 4937; Sahih Muslim, Hadith 798",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["quran","recitation","reading","difficult","beginner","learning","tajweed","reward",
+           "القرآن","التلاوة","القراءة","يتتعتع","أجران","المبتدئ","التعلم"]
+  },
+  {
+    cat: "travel",
+    title: "Three on a journey — appoint one of you leader",
+    titleAr: "إذا خرج ثلاثة في سفر فليؤمّروا أحدهم",
+    detail: "When three set out together on a journey, one of them is to be put in charge. A small rule with a large principle behind it: even a party of three, even for a few days, is not left without someone to decide. This one is OUTSIDE the two Sahihs — it is narrated by Abu Dawud, and al-Albani graded it hasan.",
+    detailAr: "إذا خرج ثلاثةٌ في سفر فليؤمّروا أحدهم. حكمٌ صغير وراءه أصلٌ كبير: أنّ الثلاثة في أيامٍ معدودة لا يُتركون بغير من يُرجَع إليه في الأمر. وهذا الحديث خارج الصحيحين، رواه أبو داود، وحسّنه الألباني.",
+    arabic: "إِذَا خَرَجَ ثَلَاثَةٌ فِي سَفَرٍ فَلْيُؤَمِّرُوا أَحَدَهُمْ",
+    ref: "Sunan Abu Dawud, Hadith 2608",
+    strength: "Strong — authenticated by al-Albani",
+    keys: ["travel","journey","group","leader","amir","companions","trip",
+           "السفر","الرفقة","الأمير","التأمير","الثلاثة"]
+  },
+  {
+    cat: "animals",
+    title: "Never make a living creature a target",
+    titleAr: "لا تتّخذوا شيئًا فيه الروح غرضًا",
+    detail: "He ﷺ forbade taking anything with a soul in it as a target to shoot at. Killing an animal for food is permitted and regulated; killing one for practice, or for sport, is what this closes off.",
+    detailAr: "نهى النبيّ ﷺ أن يُتّخذ شيءٌ فيه الروح غَرَضًا يُرمى إليه. فذبح الحيوان للطعام مأذونٌ فيه مضبوطٌ بأحكامه، وأمّا قتلُه للتمرين أو للتسلية فهو الذي سدّه هذا النهي.",
+    arabic: "نَهَى أَنْ تُتَّخَذَ شَيْءٌ فِيهِ الرُّوحُ غَرَضًا",
+    ref: "Sahih Muslim, Hadith 1957",
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["animals","hunting","target","sport","cruelty","killing","mercy",
+           "الحيوان","الصيد","غرض","التسلية","الرفق","القتل"]
   }
 ];
-

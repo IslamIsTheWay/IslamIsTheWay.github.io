@@ -1063,13 +1063,82 @@ const iitwPersonKeyCache = new Map();
 function iitwPersonKeys(person) {
   let k = iitwPersonKeyCache.get(person.id);
   if (k) return k;
-  const words = iitwTranslitWords(person.name)
-    .concat(iitwTranslitWords(person.id.replace(/-/g, " ")));
+  /* Canonicalised, so a name that CONTAINS another person's name is reachable
+     by either spelling of it. Fatimah bint Muhammad was returned by
+     "Muhammad" and not by "Mohammed", because the alias table only ever
+     applied to the person whose own id it was - and her id is `fatimah`. */
+  const words = iitwTranslitWords(person.name).map(iitwCanonWord)
+    .concat(iitwTranslitWords(person.id.replace(/-/g, " ")).map(iitwCanonWord));
+  /* The person's own aliases are added UNFOLDED. That is deliberate: this is
+     where "Isaac" reaches Ishaq and "Ahmad" reaches the Prophet, and those
+     two are kept out of the canonical fold on purpose (see
+     IITW_TEXT_ALIAS_SKIP), so they have to survive here as themselves. */
   (IITW_TRANSLIT_ALIASES[person.id] || []).forEach(a => {
     iitwTranslitWords(a).forEach(w => words.push(w));
   });
   k = { words: new Set(words), joined: words.join("") };
   iitwPersonKeyCache.set(person.id, k);
+  return k;
+}
+
+/* The same skeleton, for the FREE TEXT of a person rather than the name.
+
+   Why this is needed. The spelling folding above was only ever applied to
+   names, so `title` and `summary` were still matched against the RAW query.
+   The effect was that the two spellings of one name returned two different
+   result sets, because the site's own prose is not spelt consistently: the
+   summaries say "Omar" and "Osman" while the ids are `umar` and `uthman`.
+   Measured before this fix: Omar 3 / Umar 2, Osman 3 / Uthman 2,
+   Aisha 5 / Aishah 1, Abu Bakr 6 / AbuBakr 1. Whichever spelling the reader
+   did not type silently lost results, with nothing to show it had happened.
+
+   Whole words only, out of a Set. Never a substring - that is the trap that
+   made "Ali" return seventeen people, and it is not reachable from here. */
+
+/* Some pairs the mechanical rules cannot bridge, because the two spellings
+   genuinely reduce to different skeletons: `mohammed` folds to muhamid and
+   `muhammad` to muhamad; `yousef` to yusif and `yusuf` to yusuf. The alias
+   table above already bridges those for NAMES. This map bridges them for the
+   prose as well, by folding both sides to one canonical form.
+
+   NOT every alias is carried over. The table above also maps a person to the
+   name a reader may know from the Bible - Enoch, Jethro, Isaac, Elias - and
+   maps `ahmad` to `muhammad`. Those belong in a NAME lookup: someone typing
+   Isaac should find Ishaq. They do not belong here, because folding them into
+   the prose would report every summary that mentions Muhammad as a match for
+   a reader searching Ahmad, which is a different name and would bury the real
+   results under scores of passing mentions. So this list is spelling variants
+   only. */
+const IITW_TEXT_ALIAS_SKIP = new Set(["enoch", "jethro", "isaac", "elias",
+                                      "ahmad", "ahmed"]);
+
+const IITW_ALIAS_FOLD = (function () {
+  const m = new Map();
+  Object.keys(IITW_TRANSLIT_ALIASES).forEach(function (canon) {
+    const cw = iitwTranslitWords(canon);
+    if (cw.length !== 1) return;               // single-word names only
+    IITW_TRANSLIT_ALIASES[canon].forEach(function (a) {
+      if (IITW_TEXT_ALIAS_SKIP.has(a)) return;
+      const aw = iitwTranslitWords(a);
+      if (aw.length === 1) m.set(aw[0], cw[0]);
+    });
+  });
+  return m;
+})();
+
+function iitwCanonWord(w) {
+  return IITW_ALIAS_FOLD.get(w) || w;
+}
+
+const iitwPersonTextCache = new Map();
+function iitwPersonTextKeys(person) {
+  let k = iitwPersonTextCache.get(person.id);
+  if (k) return k;
+  k = {
+    title:   new Set(iitwTranslitWords(person.title).map(iitwCanonWord)),
+    summary: new Set(iitwTranslitWords(person.summary).map(iitwCanonWord))
+  };
+  iitwPersonTextCache.set(person.id, k);
   return k;
 }
 
@@ -1139,10 +1208,16 @@ function runPersonSearch(query) {
      queries would start matching the middle of unrelated names. */
   const qWords = iitwTranslitWords(query);
   const qJoined = qWords.join("");
+  /* Every query word must be present as a WHOLE word in the folded text. */
+  const translitTextHit = set => {
+    if (!qWords.length || /[ء-ي]/.test(query)) return false;
+    return qWords.every(w => set.has(iitwCanonWord(w)));
+  };
+
   const translitHit = person => {
     if (!qWords.length || /[ء-ي]/.test(query)) return false;
     const keys = iitwPersonKeys(person);
-    if (qWords.every(w => keys.words.has(w))) return true;
+    if (qWords.every(w => keys.words.has(w) || keys.words.has(iitwCanonWord(w)))) return true;
     return qWords.length === 1 && qJoined.length >= 6 && keys.joined.startsWith(qJoined);
   };
 
@@ -1162,8 +1237,14 @@ function runPersonSearch(query) {
     else if (translitHit(person)) { score = 80; why = "name"; }
     else if (wordRe.test(person.title)) { score = 45; why = "title"; }
     else if (person.titleAr && hasArWord(person.titleAr)) { score = 45; why = "title"; }
+    /* A spelling variant found in the prose. Scored one under the literal
+       match so a reader who typed the site's own spelling still ranks first,
+       and placed after it so this tier can only ever ADD a person to the
+       list, never reorder the people who were already matching. */
+    else if (translitTextHit(iitwPersonTextKeys(person).title)) { score = 44; why = "title"; }
     else if (wordRe.test(person.summary)) { score = 20; why = "mention"; }
     else if (person.summaryAr && hasArWord(person.summaryAr)) { score = 20; why = "mention"; }
+    else if (translitTextHit(iitwPersonTextKeys(person).summary)) { score = 19; why = "mention"; }
 
     return { person, score, why };
   }).filter(x => x.score > 0).sort((a, b) => b.score - a.score);
@@ -1359,14 +1440,152 @@ function iitwInjectFeedback() {
         <label for="iitwFbName">Your name (optional)</label>
         <input type="text" id="iitwFbName" autocomplete="name" />
         <label for="iitwFbMsg">Your message</label>
-        <textarea id="iitwFbMsg" required dir="auto"
-          placeholder="Describe the problem or your suggestion…  |  اكتب الملاحظة أو الاقتراح…"></textarea>
-        <button type="submit" class="btn btn-primary">Send Feedback</button>
+        <div class="fb-mic-wrap">
+          <textarea id="iitwFbMsg" required dir="auto"
+            placeholder="Describe the problem or your suggestion…  |  اكتب الملاحظة أو الاقتراح…"></textarea>
+          <button type="button" id="iitwFbMic" class="mic-btn" title="Speak instead of typing — تحدث بدل الكتابة">🎤</button>
+        </div>
+        <div class="fb-mic-row">
+          <select id="iitwFbMicLang" aria-label="Speaking language">
+            <option value="ar-SA">🎤 أتحدّث بالعربية</option>
+            <option value="en-US">🎤 I speak English</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Send Feedback</button>
+        </div>
+        <div id="iitwFbMicStatus" class="mic-status"></div>
         <p id="iitwFbNote" class="fb-note" style="display:none;"></p>
       </form>
     </div>`;
   footer.parentNode.insertBefore(sec, footer);
+  iitwWireFeedbackMic();
   if (window.applyI18n) window.applyI18n();
+}
+
+/* ------------------------------------------------------------
+   THE MIC ON THE FEEDBACK BOX
+
+   Asked for directly. The point of it: the people most likely to
+   catch a mistake on this site — a wrong reference, a word
+   translated badly — are often the ones least willing to type a
+   paragraph on a phone, and in Arabic on a Latin keyboard that is
+   worse still.
+
+   The behaviour is copied from the Guidance mic deliberately,
+   because that one was already corrected once for a real fault:
+   the browser ends recognition the moment you stop talking, so a
+   mic that is not `continuous` shuts while the person is still
+   thinking of the next sentence. `continuous`, plus restarting in
+   `onend` unless stop was actually clicked, is what fixes it.
+   `wants` holds that intention.
+
+   Only what is NEW and final is appended — with `continuous` the
+   results array accumulates across the session, so appending the
+   whole of it on every event pastes the same sentence again at
+   every pause.
+
+   IF THE BROWSER HAS NO SPEECH API THE BUTTON IS REMOVED, not
+   left on the page to explain itself when pressed. A control that
+   is visible is a promise that it works.
+   ------------------------------------------------------------ */
+function iitwWireFeedbackMic() {
+  const btn = document.getElementById("iitwFbMic");
+  const box = document.getElementById("iitwFbMsg");
+  const status = document.getElementById("iitwFbMicStatus");
+  const langSel = document.getElementById("iitwFbMicLang");
+  if (!btn || !box || !status || !langSel) return;
+
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {                       // no promise we cannot keep
+    btn.remove();
+    langSel.remove();
+    return;
+  }
+
+  /* Start on the language the reader is already reading the site in.
+     Read the STORED preference, not the `lang-ar` class: this runs from
+     `iitwInjectFeedback` on DOMContentLoaded, and i18n.js loads after
+     main.js on every page, so the class is not on <html> yet. Testing the
+     class defaulted an Arabic reader to English dictation. */
+  let iitwLang = "en";
+  try { iitwLang = localStorage.getItem("iitw-lang") === "ar" ? "ar" : "en"; }
+  catch (e) { /* private mode — fall back to the class, then to English */
+    iitwLang = document.documentElement.classList.contains("lang-ar") ? "ar" : "en"; }
+  langSel.value = iitwLang === "ar" ? "ar-SA" : "en-US";
+
+  const SAY_LISTENING =
+    "● Listening — take your time, click the mic again to stop  ·  أستمع إليك — خذ وقتك، واضغط الميكروفون ثانيةً للإيقاف";
+
+  let rec = null, listening = false, wants = false;
+
+  btn.addEventListener("click", () => {
+    if (listening) {
+      wants = false;
+      listening = false;
+      if (rec) rec.stop();
+      btn.classList.remove("listening");
+      status.textContent = "■ Microphone off — أُغلق الميكروفون";
+      return;
+    }
+
+    wants = true;
+    rec = new SR();
+    rec.lang = langSel.value;
+    rec.interimResults = true;
+    rec.continuous = true;
+
+    rec.onstart = () => {
+      listening = true;
+      btn.classList.add("listening");
+      status.textContent = SAY_LISTENING;
+    };
+
+    rec.onresult = e => {
+      let fresh = "", interim = "";
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) fresh += e.results[i][0].transcript;
+        else interim += e.results[i][0].transcript;
+      }
+      if (fresh.trim()) {
+        box.value = (box.value ? box.value.trim() + " " : "") + fresh.trim();
+      }
+      status.textContent = interim.trim() ? "● " + interim.trim() : SAY_LISTENING;
+    };
+
+    rec.onerror = e => {
+      if (e.error === "no-speech" || e.error === "aborted") return;  // silence is not a failure
+      wants = false;
+      listening = false;
+      btn.classList.remove("listening");
+      status.textContent = e.error === "not-allowed"
+        ? "Microphone blocked. Please allow it in your browser. — تم منع الميكروفون، اسمح به من المتصفح."
+        : "The microphone stopped. Click it to start again. — توقف الميكروفون، اضغطه لتشغيله من جديد.";
+    };
+
+    // Chrome closes the session itself after a stretch of silence.
+    rec.onend = () => {
+      if (wants) {
+        try { rec.start(); return; } catch (err) { /* fall through */ }
+      }
+      listening = false;
+      btn.classList.remove("listening");
+    };
+
+    rec.start();
+  });
+
+  /* Switching language mid-session has to reopen recognition, because
+     `lang` is read once when the session starts. The old session must be
+     torn down with its `onend` detached first — otherwise the restart
+     inside `onend` fires while `wants` is still true and reopens the mic
+     on the language just switched away from. */
+  langSel.addEventListener("change", () => {
+    if (!listening) return;
+    wants = false;
+    listening = false;
+    if (rec) { rec.onend = null; rec.stop(); }
+    btn.classList.remove("listening");
+    btn.click();                       // reopen, now on the new language
+  });
 }
 
 document.addEventListener("DOMContentLoaded", iitwInjectFeedback);

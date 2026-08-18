@@ -2763,6 +2763,8 @@ html.lang-ar .theme-card { border-left: 1px solid var(--border); border-right: 5
 html.lang-ar .theme-card.warning { border-right-color: #b5541f; }
 html.lang-ar .mic-btn { right: auto; left: 10px; }
 html.lang-ar .sit-input-wrap textarea { padding: 15px 18px 15px 62px; }
+html.lang-ar .fb-mic-wrap .mic-btn { right: auto; left: 8px; }
+html.lang-ar .fb-form .fb-mic-wrap textarea { padding-right: 14px; padding-left: 60px; }
 
 /* Show the right language of the content itself.
    These two are utilities: their only job is to hide one language, so they
@@ -2856,6 +2858,30 @@ html.lang-ar .en-only { display: none !important; }
   font-size: .95rem;
 }
 .fb-form textarea { min-height: 112px; resize: vertical; }
+
+/* The mic sits inside the message box, so the box needs to be the
+   positioning parent and needs room at the end of the line for it. The
+   textarea keeps its own margin-bottom, so the wrap must not add one. */
+.fb-mic-wrap { position: relative; }
+.fb-mic-wrap .mic-btn { top: 8px; right: 8px; }
+.fb-form .fb-mic-wrap textarea { padding-right: 60px; }
+
+/* The speaking language and the send button share a row so the select does
+   not read as another field to fill in before sending. */
+.fb-mic-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fb-mic-row select {
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: .92rem;
+  background: #fff;
+}
 .fb-form input:focus,
 .fb-form textarea:focus { outline: 2px solid var(--green); outline-offset: 1px; }
 .fb-note {

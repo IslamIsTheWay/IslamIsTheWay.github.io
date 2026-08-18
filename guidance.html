@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608172054" />
+  <link rel="stylesheet" href="css/style.css?v=202608181002" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -267,7 +267,7 @@
         <div>
           <h4>Contact</h4>
           <ul>
-            <li>contact@islamistheway.com</li>
+            <li><a href="#feedback">Send feedback</a></li>
             <li>Islamic Wisdom for Every Heart</li>
           </ul>
         </div>
@@ -276,40 +276,40 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608172054"></script>
+  <script src="js/data.js?v=202608181002"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608172054"></script>
+  <script src="js/sunnah.js?v=202608181002"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608172054"></script>
+  <script src="js/adhkar.js?v=202608181002"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608172054"></script>
+  <script src="js/scholars.js?v=202608181002"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608172054"></script>
+  <script src="js/scholars-books.js?v=202608181002"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608172054"></script>
+  <script src="js/revival.js?v=202608181002"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608172054"></script>
+  <script src="js/bidah.js?v=202608181002"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608172054"></script>
+  <script src="js/terms.js?v=202608181002"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608172054"></script>
+  <script src="js/figures.js?v=202608181002"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608172054"></script>
+  <script src="js/signs.js?v=202608181002"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -359,7 +359,30 @@
     }
 
     // Words too common to be useful for matching.
-    const STOP = new Set(["the","and","for","with","his","her","him","its","was","who","that","this","are","from","you","your","she","they","them","not","does","did","will","would","when","what","which","about","says","said","have","has","had","been","were","there","their","then","than","some","any","can","could","should","just","like","very","really","been","because","into","over","also","only","other","such","being","between","while","after","before","how","why","get","got","one","two"]);
+    const STOP = new Set(["the","and","for","with","his","her","him","its","was","who","that","this","are","from","you","your","she","they","them","not","does","did","will","would","when","what","which","about","says","said","have","has","had","been","were","there","their","then","than","some","any","can","could","should","just","like","very","really","been","because","into","over","also","only","other","such","being","between","while","after","before","how","why","get","got","one","two",
+
+      /* ARABIC FUNCTION WORDS. There was not one of these in this list, and
+         the omission did real damage: `tokens()` keeps every word of three
+         letters or more, so انا, هذا, عندي and كيف all survived into the
+         scoring - and, being absent from the corpus, each carried the MAXIMUM
+         rarity weight. An Arabic sentence was therefore scored on its grammar
+         rather than on its subject, which is why unrelated questions kept
+         coming back with the same entries at the top.
+
+         Written in the normalised form the tokeniser produces: no harakat,
+         hamza forms folded onto ا. Words under three letters (في، من، ما،
+         لا، هو) never reach here, the length filter drops them already. */
+      "انا","انت","انتم","انتن","نحن","هما","هذا","هذه","هذان","هؤلاء","ذلك","تلك","اولئك",
+      "الذي","التي","الذين","اللاتي","اللذان","ماذا","لماذا","كيف","اين","متى","حتى","اذا",
+      "ولا","الا","لكن","ولكن","كما","حيث","بين","دون","عندي","عندك","عنده","عندنا",
+      "هناك","هنا","ايضا","كان","كانت","يكون","تكون","ليس","ليست","لقد","الان","ثم",
+      "عليه","عليها","منه","منها","فيه","فيها","لهم","لها","وهو","وهي","وقد","وان","فان",
+      "لان","حول","نحو","ضمن","لدى","سوف","وكان","هل",
+      /* The same words carrying the attached و/ف. `tokens()` reads the raw
+         word, so وانا and فهذا slipped past the entries above and kept the
+         full rarity weight of a word the corpus has never seen. */
+      "وانا","وانت","وهذا","وهذه","وذلك","وهناك","وليس","وكانت","وايضا","ولقد",
+      "فهذا","فهذه","فذلك","فكان","فليس","فانا","وعندي","وحتى","واذا","وبعد","وقبل"]);
 
     /* Cut common English endings so "womens"→"women", "clothes"→"cloth",
        "wearing"→"wear". The -ies/-ied case needs the "y" put back, otherwise
@@ -440,6 +463,31 @@
         docs.push([c.name, c.title, c.summary, c.summaryAr].join(" ")));
       [...PARADISE_THEMES, ...WARNING_THEMES].forEach(t =>
         docs.push([t.title, t.description, t.titleAr, t.descriptionAr, (t.keys || []).join(" ")].join(" ")));
+
+      /* THE CORPUS MUST CONTAIN EVERYTHING THAT IS SEARCHED.
+         It did not, and that was the largest single cause of irrelevant
+         Arabic answers on this page. `findGuidance` searches eight
+         collections - 376 entries - and this corpus was built from five of
+         them, 160. The 177 Sunnah entries, the 15 rulings and the 24 worship
+         steps were all invisible to it.
+
+         A word absent from the corpus scores df = 0, which is the MAXIMUM
+         rarity the formula can return. So a word common in the Sunnah entries
+         but missing here was treated as the rarest word in the language while
+         still matching dozens of those entries. Measured before this fix, on
+         "انا فقير ولا اجد عملا": the pronoun انا scored idf 5.08 - MORE than
+         فقير at 3.98 - so "what to say when hearing of a death" outranked
+         "do not turn away a beggar empty-handed". */
+      (typeof SUNNAH !== "undefined" ? SUNNAH : []).forEach(x =>
+        docs.push([x.title, x.titleAr, x.detail, x.detailAr, x.arabic || "",
+                   (x.keys || []).join(" ")].join(" ")));
+      (typeof FIQH_RULINGS !== "undefined" ? FIQH_RULINGS : []).forEach(x =>
+        docs.push([x.title, x.titleAr, x.question, x.questionAr, x.answer, x.answerAr,
+                   (x.points || []).map(pt => pt.en + " " + pt.ar).join(" "),
+                   (x.keys || []).join(" ")].join(" ")));
+      (typeof WORSHIP_STEPS !== "undefined" ? WORSHIP_STEPS : []).forEach(x =>
+        docs.push([x.title, x.titleAr, x.when, x.whenAr, x.meaning, x.meaningAr,
+                   x.arabic || "", (x.keys || []).join(" ")].join(" ")));
 
       const df = Object.create(null);
       docs.forEach(d => {
@@ -575,7 +623,25 @@
       "thing","things","someone","somebody","anyone","everyone","one","other","others",
       "prophet","messenger","allah","god","islam","muslim","muslims","said","say","says","told",
       "came","come","went","give","given","took","take","made","make","day","days","time","year",
-      "years","life","live","world","great","good","bad","very","also","first","second","story"
+      "years","life","live","world","great","good","bad","very","also","first","second","story",
+
+      /* The Arabic half of the same list. Down-weighted rather than dropped:
+         these carry a little meaning, but not enough to decide which entry
+         answers a question. Deliberately NOT here: عمل، مال، صبر، غضب، دين
+         and the rest of the actual subject matter - genericising those would
+         blunt the very matches this page exists to make. */
+      "رجل","رجال","امراة","نساء","انسان","الانسان","الناس","ناس","شخص","احد","نفسي",
+      "شيء","اشياء","امر","الامر","حاجة","الله","النبي","الرسول","محمد","الاسلام",
+      "مسلم","المسلم","المسلمين","اقول","اريد","اشعر","افعل","اعرف","جاء","ذهب","اخذ",
+      "يوم","ايام","وقت","سنة","سنوات","حياة","الحياة","الدنيا","العالم","كبير","صغير",
+      "جيد","حسن","سيء","جدا","اول","ثاني","قصة","كثير","قليل","بعض","جميع","قال","قالت",
+      /* Arabic adverbs in the exact forms a reader types. `stem()` only cuts
+         ENGLISH endings, so كثير in this list never matched the كثيرا that
+         someone actually writes - and كثيرا, carrying idf 5.24, was enough
+         on its own to make the ruling on the traveller's prayer the answer
+         to "زوجتي وأنا نتشاجر كثيرا". */
+      "كثيرا","قليلا","دائما","احيانا","تماما","ابدا","معا","حقا","فعلا","طبعا",
+      "غالبا","سريعا","طويلا","قصيرا","اصلا","تقريبا","مثلا","ايضا","خاصة","عامة"
     ]);
 
     // Set by the last scoreContent call.
@@ -712,8 +778,14 @@
         words: ["غيبة", "الغيبة", "نميمة", "backbiting", "gossip", "slander"] },
       { id: "fq-wiping-socks", need: 1, target: "#rulings",
         words: ["مسح", "الخفين", "الجوارب", "wiping", "socks", "khuff"] },
+      /* `صلاة` added. "ما حكم صلاة المسافر؟" hit only مسافر, one short of
+         `need`, so the topic never matched - and because a worship step DID
+         match on the word صلاة, the no-ruling guard further down was skipped
+         as well, and a ruling question came back as eight unrelated themes.
+         With صلاة present the pair reaches the threshold, while a general
+         question about prayer still scores one and is correctly ignored. */
       { id: "fq-travel-prayer", need: 2, target: "#rulings",
-        words: ["سفر", "مسافر", "قصر", "جمع", "travel", "shorten", "combine", "journey"] },
+        words: ["سفر", "مسافر", "صلاة", "قصر", "جمع", "travel", "shorten", "combine", "journey"] },
       { id: "fq-waswas", need: 1, target: "#rulings",
         words: ["وسواس", "الوسواس", "شك", "waswas", "doubt", "doubting", "ocd"] },
       { id: "fq-parents", need: 2, target: "#rulings",
@@ -822,8 +894,29 @@
         return;
       }
       /* A named topic asked as a question goes to that topic's authored
-         answer, whether or not a ruling word was used. */
-      if ((intent.ruling || intent.question) && intent.topic && typeof FIQH_RULINGS !== "undefined") {
+         answer, whether or not a ruling word was used.
+
+         A STATEMENT counts too, when it clears the topic threshold with room
+         to spare. "عندي وسواس في الوضوء" is not phrased as a question and
+         uses no ruling word, so it fell straight past this gate and was
+         answered with Sunnah entries about not wasting water in wudu - to a
+         reader describing obsessive doubt about their wudu, which is the one
+         answer capable of making it worse. The site HAS an authored ruling on
+         waswas; it simply was never being reached. */
+      /* A SHORT QUERY IS A TOPIC NAME, NOT A SITUATION.
+         Someone who types just "music" or "موسيقى" is naming the subject and
+         wants the ruling on it. There is no question mark and no ruling word,
+         so the gate below fell through to the general scoring - where the
+         lone-ruling guard then correctly threw the single weak match away and
+         the page answered "we could not find anything". Two defensible rules
+         combining into a wrong answer for the simplest query on the page.
+
+         So: more evidence than the topic's own threshold, OR a query short
+         enough that the reader is plainly naming the topic. */
+      const topicIsStrong = intent.topic &&
+        (intent.topicHits > (intent.topic.need || 1) || qt.length <= 2);
+      if (intent.topic && (intent.ruling || intent.question || topicIsStrong)
+          && typeof FIQH_RULINGS !== "undefined") {
         const r = FIQH_RULINGS.find(x => x.id === intent.topic.id);
         if (r) {
           out.innerHTML = iitwDirectAnswerHtml({
@@ -847,12 +940,42 @@
          searched first and shown first, and they are scored generously: the
          topic words a person types ("hijab", "interest", "music") are exactly
          the `keys` on these entries. */
-      const rulings = (typeof FIQH_RULINGS !== "undefined" ? FIQH_RULINGS : []).map(r => ({
-        r,
-        s: scoreContent(qt, raw, r.keys,
+      const rulings = (typeof FIQH_RULINGS !== "undefined" ? FIQH_RULINGS : []).map(r => {
+        const sc = scoreContent(qt, raw, r.keys,
              [r.title, r.titleAr, r.question, r.questionAr, r.answer, r.answerAr,
-              (r.points || []).map(p => p.en + " " + p.ar).join(" ")].join(" "), qx)
-      })).filter(x => x.s >= 4).sort((a, b) => b.s - a.s).slice(0, 3);
+              (r.points || []).map(p => p.en + " " + p.ar).join(" ")].join(" "), qx);
+        /* Captured immediately: `scoreContent` leaves these on the last call. */
+        return { r, s: sc, distinct: lastDistinctHits };
+      }).filter(x => x.s >= 4).sort((a, b) => b.s - a.s).slice(0, 3);
+
+      /* A LONE RULING MUST EARN IT ON MORE THAN ONE WORD.
+         The `rulingIsGeneric` guard below compares the top two rulings, so it
+         can only ever fire when there ARE two - and a single junk match sailed
+         straight past it into the top slot, where it is read as the answer.
+         "زوجتي وأنا نتشاجر كثيرا" - my wife and I argue a lot - was answered
+         with the ruling on shortening the prayer when travelling, on the
+         strength of the single word كثيرا appearing in its text.
+
+         Same rule the biographies already use (MIN_DISTINCT): one rare word in
+         common is a coincidence, two is a subject. A ruling reached through the
+         intent layer above never gets here, so a real topic match is unaffected. */
+      if (rulings.length === 1 && rulings[0].distinct < 2) rulings.length = 0;
+
+      /* And the same test for a DESCRIBED SITUATION, however many rulings
+         matched. "my father died and I am very sad" was led by the ruling on
+         obeying parents, scoring 13.96 on the single word "father", with the
+         Sunnah entry on what the Prophet ﷺ said in distress far below it. One
+         rare word in common is a coincidence.
+
+         Only for queries of three words or more. A reader who types "hijab"
+         or "music" is naming a topic and should still get the generous
+         scoring the block below describes - and in any case those reach their
+         authored answer through the intent layer long before this point. */
+      if (qt.length >= 3) {
+        for (let i = rulings.length - 1; i >= 0; i--) {
+          if (rulings[i].distinct < 2) rulings.splice(i, 1);
+        }
+      }
 
       /* A ruling that matched only on ordinary words is worse than no ruling
          at all, because it is rendered FIRST and so becomes the answer.
@@ -2026,7 +2149,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608172054"></script>
-  <script src="js/i18n.js?v=202608172054"></script>
+  <script src="js/main.js?v=202608181002"></script>
+  <script src="js/i18n.js?v=202608181002"></script>
 </body>
 </html>
