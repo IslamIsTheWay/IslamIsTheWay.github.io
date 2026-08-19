@@ -926,12 +926,66 @@ function renderTadabburIntro() {
     return s ? (toArabicDigits(n) + ". " + (s.arabic || s.name)) : toArabicDigits(n);
   });
 
+  /* HOW MANY VERSES, not how many surahs.
+
+     This box used to list every covered surah by name. That was right when a
+     handful were done; with all 114 covered it printed a wall of 114 names
+     that nobody reads, and the line "the button only appears on a surah that
+     has it" had stopped meaning anything.
+
+     What is still worth reporting is the DEPTH, because that is what keeps
+     growing. Counted from the data - an entry may explain a run of verses, so
+     the run length is read from the separator used to join a span - and never
+     typed, so it cannot drift from the file the way the home page numbers
+     did. */
+  const totalSurahs = (typeof SURAHS !== "undefined") ? SURAHS.length : 114;
+  let verseCount = 0;
+  if (typeof TADABBUR !== "undefined") {
+    Object.keys(TADABBUR).forEach(function (k) {
+      (TADABBUR[k].ayat || []).forEach(function (a) {
+        verseCount += String(a.ar || "").split(" \u2022 ").length;
+      });
+    });
+  }
+  const allCovered = nums.length >= totalSurahs;
+
+  /* Fewest verses explained in any one surah — so the claim "at least N in
+     every surah" is measured rather than asserted. */
+  let fewest = Infinity;
+  if (typeof TADABBUR !== "undefined") {
+    Object.keys(TADABBUR).forEach(function (k) {
+      let v = 0;
+      (TADABBUR[k].ayat || []).forEach(function (a) {
+        v += String(a.ar || "").split(" \u2022 ").length;
+      });
+      if (v < fewest) fewest = v;
+    });
+  }
+  if (!isFinite(fewest)) fewest = 0;
+
+  const enWhere = allCovered
+    ? 'open any surah below and press the <strong>🧠 Tadabbur</strong> button beside Stop. ' +
+      '<strong>Every one of the ' + totalSurahs + ' surahs has it</strong> — ' + verseCount +
+      ' verses explained, at least ' + fewest + ' in every surah. Inside each surah, a line names ' +
+      'exactly which of its verses are written, and those numbers are buttons that take you ' +
+      'straight there.'
+    : 'open any surah below and press the <strong>🧠 Tadabbur</strong> button beside Stop. ' +
+      'It is written so far for ' + names.join(" · ") +
+      ' — and the button only appears on a surah that has it.';
+
+  const arWhere = allCovered
+    ? 'افتح أيّ سورةٍ أدناه واضغط زرّ <strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. ' +
+      '<strong>وقد كُتب لكلّ سورةٍ من السور الـ' + toArabicDigits(totalSurahs) + '</strong> — ' +
+      arCountAyah(verseCount) + ' مشروحة، وأقلُّ سورةٍ فيها ' + arCountAyah(fewest) +
+      '. وفي كلّ سورةٍ سطرٌ يُبيّن أيّ آياتها كُتبت، وأرقامُه أزرارٌ تنقلك إليها.'
+    : 'افتح أيّ سورةٍ أدناه واضغط زرّ <strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. وقد كُتب إلى الآن لِ' +
+      namesAr.join(" · ") + '، ولا يظهر الزرّ إلا على سورةٍ كُتب لها.';
+
   h += '<div class="tad-covered">' +
-       '<div class="en-only"><strong>Where to find it:</strong> open any surah below and press the ' +
-         '<strong>🧠 Tadabbur</strong> button beside Stop. It is written so far for ' + names.join(" · ") + ' — and the button only appears on a surah that has it. The Quran is 6,236 verses and this is done verse by verse and word by word, so it grows rather than arriving finished.</div>' +
-       '<div class="ar-only" dir="rtl"><strong>أين تجده:</strong> افتح أيّ سورةٍ أدناه واضغط زرّ ' +
-         '<strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. وقد كُتب إلى الآن لِ' + namesAr.join(" · ") +
-         '، ولا يظهر الزرّ إلا على سورةٍ كُتب لها. والقرآن ستّة آلافٍ ومئتان وستٌّ وثلاثون آية، وهذا يُكتب آيةً آية وكلمةً كلمة، فهو ينمو ولا يأتي تامًّا.</div></div>';
+       '<div class="en-only"><strong>Where to find it:</strong> ' + enWhere +
+         ' The Quran is 6,236 verses and this is done verse by verse and word by word, so the depth keeps growing rather than arriving finished.</div>' +
+       '<div class="ar-only" dir="rtl"><strong>أين تجده:</strong> ' + arWhere +
+         ' والقرآن ستّة آلافٍ ومئتان وستٌّ وثلاثون آية، وهذا يُكتب آيةً آية وكلمةً كلمة، فالعمقُ ينمو ولا يأتي تامًّا.</div></div>';
 
   h += '<div class="tad-notice"><span class="en-only">' + d.notice + '</span>' +
        '<span class="ar-only" dir="rtl">' + d.noticeAr + '</span></div>';
