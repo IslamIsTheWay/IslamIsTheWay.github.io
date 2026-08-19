@@ -68,7 +68,7 @@ git add -A && git commit -m "..." && git push origin main
 | Adhkar | 19 |
 | Scholars' rulings / scholars with books | 15 / 19 |
 | Surahs | 114, 16 reciters, Mushaf pages |
-| **Tadabbur (explained verses)** | **317 across all 114 surahs — every surah has 2+, most have 3** |
+| **Tadabbur (explained verses)** | **472 verses in 358 blocks; every surah has 2+** |
 | **Golden Age figures** | **41**, all with a plain-words box |
 | **Adding to the religion (bid'ah)** | `js/bidah.js`, on Guidance |
 
@@ -3087,3 +3087,52 @@ Kept in the session scratchpad, not the repo, because they are one-shot tools:
 (check all entries against the shipped text), `tscan.py` (coverage per surah).
 Rebuild them from the descriptions above if they are needed again — the logic
 matters, the files do not.
+
+## SECOND ROUND, 18-19 August: coverage counted properly, and 14 dead blocks
+
+He asked for **4-5 explained verses in every surah**, and for the explanations
+to be right AND read in context.
+
+**317 blocks -> 358 blocks; 406 verses -> 472 verses.** No surah is below two
+now. Still short of five: 71 surahs, 169 verses. Short of four: 98 verses.
+
+### Count VERSES, not blocks
+
+`check-counts.sh` counted `n:` lines, one per block. But a block may explain a
+RUN - 26:78-82 is one entry covering five ayat - and the home page claims
+"verses explained". Counting blocks understated it. The script now counts
+verses by reading the bullet that joins a span in the `ar` field, and the home
+page says 472.
+
+Spans are also better tadabbur: Ibrahim's five-fold description of his Lord,
+the seven commands opening Al-Muddaththir, the three verses defining the
+mutaffif. Prefer them where the passage is one unit.
+
+### 14 SURAHS CARRIED THE SAME VERSE TWICE
+
+Found while counting. `iitwTadabburAyahHtml` picks with
+`.filter(x => x.n === n)[0]`, so the SECOND block never rendered anywhere, and
+the coverage line printed the number twice ("14, 14"). The pairs said the same
+thing in different words - 15:9 both on the emphasis in inna/nahnu, 74:38 both
+on rahinah as a pledge held against a debt. The first of each was kept.
+
+**`check-counts.sh` now fails if any verse is explained twice.** Nothing had
+been looking, which is how fourteen accumulated. It caught one of mine the same
+day: I added 68:4 without noticing the surah's only existing entry was 68:4.
+
+### Writing in context
+
+`ctx.py` in the scratchpad: `python ctx.py 93` dumps a surah whole in English,
+`python ctx.py 2 255` gives a verse with four either side, `python ctx.py 2 30 40`
+a range in both languages. Nothing in this round was written before the passage
+around it had been read. Several entries exist only because of what the reading
+turned up - that the ant excuses Sulayman's army in the same sentence she warns
+about it, that 98:4 says division came AFTER the evidence arrived, that Ayyub
+attributes his affliction to Shaytan and not to Allah.
+
+### The healer earned its place again
+
+Four quotes I typed were wrong and were corrected from the real text: an i'rab
+ending on ٱلنَّاسُ, a missing waqf mark in 43:32 and in 31:12, and one more.
+Every one of them reads correctly to the eye. Do not hand-check Arabic quotes.
+
