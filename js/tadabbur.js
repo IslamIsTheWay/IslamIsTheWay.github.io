@@ -583,6 +583,15 @@ const TADABBUR = {
             source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry و ق ي (Shamela ed., p. 863)",
             strength: "lugha"
           }
+        ],
+        links: [
+        {
+          ref: "Surah Al-Fatihah (1:6)",
+          ar: "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ",
+          en: "“Guide us to the straight path -”",
+          how: "The question this verse answers. Al-Fatihah ends with the servant asking for one thing — guide us to the straight path — and then the page turns and the next surah opens: THIS is the Book, no doubt in it, guidance. The request is the last line of surah one and the answer is the first of surah two.",
+          howAr: "السؤالُ الذي تُجيب عنه هذه الآية. فخُتمت الفاتحةُ بأن يسأل العبدُ شيئًا واحدًا: ﴿ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ﴾، ثم تُقلب الصفحةُ فتُفتتح السورةُ التي تليها: ﴿ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى﴾. فالطلبُ خاتمةُ الأولى، والجوابُ فاتحةُ الثانية."
+        }
         ]
       },
       {
@@ -3372,6 +3381,15 @@ const TADABBUR = {
         arNoteAr: "خاتمةُ الآية، وأوّلها: ﴿فَاطِرُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ...﴾.",
         why: "This is the reference point for everything anyone says about Allah. Whatever image forms in a person's mind, this verse has already excluded it — because whatever he can picture is drawn from things he has seen, and none of them is like Him.\n\nThe grammar is worth noticing. It does not say LAYSA MITHLUHU SHAY' — nothing is His like. It says LAYSA KA-MITHLIHI — nothing is LIKE His like. The kaf appears to double the comparison, and the scholars discussed it at length: many held the kaf is for emphasis, closing the door twice over so that not even a resemblance to a resemblance survives.\n\nThen the second half does something the first half might have made a reader forget: and He is the Hearing, the Seeing. Denying likeness is not denying the attributes. The classical position holds both — He hears and sees really, and not in the manner of anything created. Strip the attributes and you have no God to address; make them like ours and you have made an image. The verse gives both halves in one line so neither can run loose.",
         whyAr: "هذه هي الآيةُ المرجع لكلّ ما يُقال في الله. فأيُّ صورةٍ تنعقد في ذهن إنسان فقد نفتها هذه الآية قبلُ — لأنّ الذي يتخيّله مأخوذٌ ممّا رآه، وليس شيءٌ منه كمثله.\n\nوفي التركيب ما يُتأمّل: لم يقل «ليس مثلَه شيء»، وإنما ﴿لَيْسَ **كَمِثْلِهِ** شَىْءٌۭ﴾. فظاهرُ الكاف تضعيفُ التشبيه، وقد أطال أهل العلم فيها: وذهب كثيرٌ منهم إلى أنّ الكاف للتوكيد، فسُدّ البابُ مرّتين حتى لا يبقى شبهُ الشبه.\n\nثم يصنع الشطرُ الثاني ما قد يُنسيه الأوّل: ﴿وَهُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ﴾. فنفيُ المماثلة ليس نفيًا للصفات. ومذهبُ السلف الجمعُ بينهما: يسمع ويُبصر حقيقةً، لا كسمع المخلوقين ولا كبصرهم. فمن عطّل الصفات لم يبقَ له ربٌّ يُدعى، ومن شبّهها بصفاتنا فقد صوّر. وجاءت الآيةُ بالشطرين في سطرٍ واحدٍ لئلّا ينفلت أحدهما.",
+        links: [
+        {
+          ref: "Surah Al-Ikhlas (112:4)",
+          ar: "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+          en: "“Nor is there to Him any equivalent.\"”",
+          how: "The same denial of resemblance, from the two ends of the mushaf. Ash-Shura states it in the middle of describing His creating and providing — nothing is like Him — and Al-Ikhlas closes its four verses with it: and there is none comparable to Him. The one surah reaches it after describing what He does; the other makes it the last word on who He is.",
+          howAr: "نفيُ المِثل نفسُه، من طرفي المصحف. فالشورى تُقرّره في وسط وصفِ خلقه ورزقه: ﴿لَيْسَ كَمِثْلِهِۦ شَىْءٌۭ﴾، والإخلاصُ تختم به آياتها الأربع: ﴿وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ﴾. فسورةٌ بلغته بعد وصف فعله، وأخرى جعلته آخر ما يُقال في ذاته."
+        }
+        ],
         ref: "Surah Ash-Shura (42:11)",
         strength: "quran"
       },
@@ -4949,6 +4967,15 @@ const TADABBUR = {
         whyAr: "ههنا تنعطف السورة، والانعطافُ أنفعُ ما فيها.\n\nقد ذُكّر للتوّ بثلاث نِعَم. فما كان أوّلُ ما تلاها: اشكرني، ولا: افرح. وإنما: ﴿فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ ۞ وَأَمَّا ٱلسَّآئِلَ فَلَا تَنْهَرْ﴾.\n\nوضَع الموضعين متجاورين تجد المقابلة على التحقيق: كان يتيمًا — فلا يُقهر يتيم. وكان عائلًا فأُغني — فلا يُنهر سائل.\n\nفالمعنى أنّ النعمة إذا وقعت أورثت دَينًا يُؤدّى إلى من هو في موضعك الأوّل، لا إلى المُنعِم الذي لا يحتاج شيئًا.\n\nثم أتمّتها الآيةُ الحادية عشرة بالثالثة: ﴿وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ﴾. ثلاثُ نِعَمٍ وثلاثةُ أوامر، على الترتيب نفسه.",
         plain: "He was reminded that he had been an orphan and had been in need. The next instruction is not to give thanks — it is: do not crush an orphan, and do not turn away the one who asks. What you were given is owed to whoever is now standing where you stood.",
         plainAr: "ذُكّر بأنه كان يتيمًا وكان عائلًا. فلم يكن الأمرُ بعدها بالشكر، وإنما: لا تقهر يتيمًا، ولا تنهر سائلًا. فما أُعطيته دَينٌ لمن هو الآن في موضعك الذي كنت فيه.",
+        links: [
+        {
+          ref: "Surah Al-Ma'un (107:2)",
+          ar: "فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ",
+          en: "“For that is the one who drives away the orphan”",
+          how: "The same act named from the other end. Ad-Duha forbids it to a man who had been an orphan himself — do not oppress him. Al-Ma'un uses it as the FIRST evidence that a man denies the Recompense: that is the one who repels the orphan. One surah makes it a duty of gratitude, the other makes it a test of belief.",
+          howAr: "الفعلُ نفسه مسمًّى من الطرف الآخر. فالضحى تنهى عنه رجلًا كان يتيمًا: ﴿فَلَا تَقْهَرْ﴾. والماعونُ تجعله **أوّل** دليلٍ على أنّ المرء يُكذّب بالدين: ﴿فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ﴾. فسورةٌ تجعله واجبَ شكر، وأخرى تجعله ميزانَ تصديق."
+        }
+        ],
         ref: "Surah Ad-Duha (93:9-10)",
         strength: "quran"
       }
@@ -6130,14 +6157,7 @@ const TADABBUR = {
             en: "“Say: indeed my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.”",
             how: "Al-Kawthar pairs prayer with sacrifice and assigns them to “your Lord”. Al-An'am takes the identical pair — salah and nusuk, prayer and sacrifice, in that order — and extends the same assignment over a person's living and dying as well.\n\nSo the short surah gives you the two acts; the longer verse shows they were only the opening of a list that ends with your whole life. This is the completing pattern working in the other direction: not a vague word made specific, but a small instruction shown to be part of something total.",
             howAr: "قرنت الكوثر الصلاة بالنحر وجعلتهما لربّك. وأخذت الأنعام القرينين أنفسهما — الصلاة والنسك على هذا الترتيب — فمدّت النسبة نفسها إلى المحيا والممات.\n\nفالسورة القصيرة تعطيك العملين، وتُريك الآية الأطول أنهما كانا مطلع تعدادٍ ينتهي بحياتك كلّها. وهذا نظم التتميم في الجهة الأخرى: لا لفظٌ مُبهم بُيّن، بل أمرٌ يسيرٌ تبيّن أنه بعض أمرٍ شامل."
-          },
-        {
-          ref: "Surah Al-An'am (6:162)",
-          ar: "قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
-          en: "“Say, \"Indeed, my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.”",
-          how: "The same two acts, widened until nothing is left outside them. Here it is “pray to your Lord and sacrifice”; there it is “my prayer, my rites of sacrifice, my living and my dying — for Allah.” Al-Kawthar commands the two acts of worship; Al-An'am adds the ordinary hours and the death, so that the surrender has no remainder.",
-          howAr: "العملان نفسُهما، مُوسَّعين حتى لا يبقى خارجهما شيء. فههنا ﴿فَصَلِّ لِرَبِّكَ وَٱنْحَرْ﴾، وهناك ﴿إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ﴾. فالكوثرُ تأمر بالعبادتين، والأنعامُ تضمّ إليهما ساعات العمر والموت، فلا يبقى في الاستسلام فَضْل."
-        }
+          }
         ]
       },
       {

@@ -192,7 +192,7 @@ for i, ln in enumerate(lines):
         for k in range(run):
             covers[(cur, n + k)] = ent
         continue
-    m = re.match(r'^          ref: "Surah [^"]*\((\d+):(\d+)', ln)
+    m = re.match(r'^ {10,}ref: "Surah [^"]*\((\d+):(\d+)', ln)
     if m and ent is not None:
         links[ent].add((int(m.group(1)), int(m.group(2))))
 bad = []
