@@ -522,6 +522,15 @@ const TADABBUR = {
         arNoteAr: "مطلع الآية، وتمامها: ﴿فَمَن يَكْفُرْ بِٱلطَّٰغُوتِ وَيُؤْمِنۢ بِٱللَّهِ فَقَدِ ٱسْتَمْسَكَ بِٱلْعُرْوَةِ ٱلْوُثْقَىٰ لَا ٱنفِصَامَ لَهَا﴾.",
         why: "Four words that settle a question people argue about endlessly, and then a reason that explains why.\n\nNo compulsion — and the reason given is not tolerance as a value. It is that the right course has BECOME CLEAR from the wrong. In other words, compulsion is pointless where the truth is already distinguishable: forcing a man produces a statement, not a belief, and belief is what was being asked for.\n\nThen the image: whoever rejects false objects of worship and believes in Allah has grasped the most trustworthy handhold, which does not break. 'URWAH is the loop or handle you hold when you are afraid of falling. It is described not as something that carries you, but as something you take hold of — the taking is yours.",
         whyAr: "أربعُ كلماتٍ تحسم ما يُطيل الناس فيه النزاع، ثم عِلّةٌ تُبيّن وجه ذلك.\n\n﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾ — والعلّةُ ليست التسامح قيمةً مجرّدة، وإنما ﴿قَد تَّبَيَّنَ ٱلرُّشْدُ مِنَ ٱلْغَىِّ﴾. أي أنّ الإكراه لا معنى له حيث تميّز الحقُّ: فإكراهُ الرجل يُنتج قولًا لا اعتقادًا، والمطلوبُ هو الاعتقاد.\n\nثم الصورة: ﴿فَمَن يَكْفُرْ بِٱلطَّٰغُوتِ وَيُؤْمِنۢ بِٱللَّهِ فَقَدِ ٱسْتَمْسَكَ بِٱلْعُرْوَةِ ٱلْوُثْقَىٰ لَا ٱنفِصَامَ لَهَا﴾. و**العروة** ما يُمسَك به عند خوف السقوط. ولم تُوصف بأنها تحملك، وإنما بأنك **تستمسك** بها: فالأخذُ أخذُك أنت.",
+        links: [
+        {
+          ref: "Surah Yunus (10:99)",
+          ar: "وَلَوْ شَآءَ رَبُّكَ لَءَامَنَ مَن فِى ٱلْأَرْضِ كُلُّهُمْ جَمِيعًا ۚ أَفَأَنتَ تُكْرِهُ ٱلنَّاسَ حَتَّىٰ يَكُونُوا۟ مُؤْمِنِينَ",
+          en: "“And had your Lord willed, those on earth would have believed - all of them entirely. Then, [O Muhammad], would you compel the people in order that they become believers?”",
+          how: "The same ruling reached by argument instead of by decree. Al-Baqarah states it: there is no compulsion in religion. Yunus demonstrates it — had your Lord willed, everyone on earth would have believed; would YOU then compel people? He could have and did not, so a man who sets out to force belief is not completing Allah's work.",
+          howAr: "الحكمُ نفسه بُلغ بالحجّة لا بالنصّ. فالبقرةُ تُقرّره: ﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾. ويونسُ تُبرهنه: ﴿وَلَوْ شَآءَ رَبُّكَ لَءَامَنَ مَن فِى ٱلْأَرْضِ كُلُّهُمْ جَمِيعًا ۚ أَفَأَنتَ تُكْرِهُ ٱلنَّاسَ﴾. فقد قدر ولم يفعل، فمن نهض ليُكره لم يكن مُتمّمًا لعمل الله."
+        }
+        ],
         ref: "Surah Al-Baqarah (2:256)",
         strength: "quran"
       },
@@ -1159,6 +1168,13 @@ const TADABBUR = {
           en: "“Created man from a clinging substance.”",
           how: "The first revelation names ONE of these stages — created man from a clinging thing — and stops there. This verse runs the whole sequence and ends in the praise that the first was heading towards. The opening word of the Quran points at a stage; this verse finishes the sentence.",
           howAr: "سمّى أوّلُ الوحي **طورًا واحدًا** من هذه الأطوار — ﴿خَلَقَ ٱلْإِنسَٰنَ مِنْ عَلَقٍ﴾ — ووقف. وهذه الآيةُ تسوق المتوالية كلَّها وتنتهي إلى الثناء الذي كان الأوّلُ يسوق إليه. فأوّلُ ما نزل يُشير إلى طور، وهذه الآيةُ تُتمّ الجملة."
+        },
+        {
+          ref: "Surah Nuh (71:13-14)",
+          ar: "مَّا لَكُمْ لَا تَرْجُونَ لِلَّهِ وَقَارًۭا",
+          en: "“What is [the matter] with you that you do not attribute to Allah [due] grandeur”",
+          how: "Nuh used this as an argument. After nine hundred and fifty years he does not reach for the flood — he asks his people why they do not give Allah due weight “when He created you in STAGES”. Al-Mu'minun sets out those stages one by one; Nuh points at them as the evidence, and the evidence he offers is his listeners' own bodies.",
+          howAr: "احتجّ نوحٌ بهذا. فبعد تسعمئة وخمسين سنةً لم يأخذ بالطوفان — بل سأل قومه: ما لكم لا ترجون لله وقارًا ﴿وَقَدْ خَلَقَكُمْ **أَطْوَارًا**﴾. والمؤمنونُ تبسط تلك الأطوار طورًا طورًا، ونوحٌ يُشير إليها دليلًا، والدليلُ الذي ساقه أبدانُ سامعيه هم."
         }
         ],
         ref: "Surah Al-Mu'minun (23:14)",
@@ -2954,6 +2970,15 @@ const TADABBUR = {
         whyAr: "﴿إِنَّمَا يُؤْمِنُ بِـَٔايَٰتِنَا ٱلَّذِينَ إِذَا ذُكِّرُوا۟ بِهَا خَرُّوا۟ سُجَّدًۭا وَسَبَّحُوا۟ بِحَمْدِ رَبِّهِمْ وَهُمْ لَا يَسْتَكْبِرُونَ﴾.\n\n﴿إِنَّمَا﴾ مرّةً أخرى — أداةُ الحصر. فهذا حدٌّ، وقد حُدّ الإيمانُ بـ**ردّ فعل** لا بتصديقٍ مجرّد.\n\nواقرأ الشرط على التحقيق: ﴿إِذَا **ذُكِّرُوا۟** بِهَا﴾. لا إذا سمعوها أوّل مرّة. فليس الميزانُ ما يصنعه المرء عند أوّل لقاءٍ بالقرآن، وإنما ما يصنعه في المرّة المئة، حين لا يكون فيه جديد.\n\nثم الجوابُ فعلٌ بالبدن: ﴿خَرُّوا۟ سُجَّدًۭا﴾. وهذه نفسُها آيةُ سجدة: فالقارئ يُراد منه أن يفعل الموصوف في اللحظة التي يقرأ فيها الوصف.\n\nوالجملةُ الأخيرة هي الجامعة: ﴿وَهُمْ لَا يَسْتَكْبِرُونَ﴾. فما قبلها أعمال، وهذه الحالُ من تحتها. فسُمّي الكِبرُ المانعَ من السجود، وهو بعينه ما قاله القرآن في إبليس: ﴿أَبَىٰ وَٱسْتَكْبَرَ﴾.\n\nفحدُّ المؤمن في السورة أنه من لا يزال الذكرُ يُحدث فيه حركة، وحدُّ الآخر ليس الكفرَ بل الكِبر.",
         plain: "Belief is defined by a REACTION, not an assent — and the trigger is being REMINDED, not hearing it for the first time. The test is the hundredth time, when there is nothing new in it. And what stops a person is named: arrogance, the same word used of Iblees.",
         plainAr: "حُدّ الإيمانُ بردّ فعلٍ لا بتصديقٍ مجرّد — والشرطُ أن **يُذكَّروا** بها لا أن يسمعوها أوّل مرّة. فالميزانُ المرّةُ المئة حين لا جديد فيها. وسُمّي المانع: الاستكبار، وهو اللفظ نفسه في إبليس.",
+        links: [
+        {
+          ref: "Surah Al-Baqarah (2:34)",
+          ar: "وَإِذْ قُلْنَا لِلْمَلَٰٓئِكَةِ ٱسْجُدُوا۟ لِءَادَمَ فَسَجَدُوٓا۟ إِلَّآ إِبْلِيسَ أَبَىٰ وَٱسْتَكْبَرَ وَكَانَ مِنَ ٱلْكَٰفِرِينَ",
+          en: "“And [mention] when We said to the angels, \"Prostrate before Adam\"; so they prostrated, except for Iblees. He refused and was arrogant and became of the disbelievers.”",
+          how: "The definition here has its exact opposite there. As-Sajdah says the believer prostrates and is NOT arrogant; Al-Baqarah records the first refusal — the angels prostrated, all of them, except Iblees: he refused, and was arrogant, and became of the disbelievers. Same root for arrogance in both, and note the order there: the disbelief is the RESULT of the pride, not its cause.",
+          howAr: "الحدُّ ههنا له ضدُّه على التمام هناك. فالسجدةُ تقول إنّ المؤمن يسجد و**لا يستكبر**، والبقرةُ تُسجّل أوّل إباء: سجدت الملائكةُ كلُّهم أجمعون ﴿إِلَّآ إِبْلِيسَ أَبَىٰ وَٱسْتَكْبَرَ وَكَانَ مِنَ ٱلْكَٰفِرِينَ﴾. ومادّةُ الاستكبار واحدة، وتأمّل الترتيب هناك: فالكفرُ **نتيجةُ** الكِبر لا علّتُه."
+        }
+        ],
         ref: "Surah As-Sajdah (32:15)",
         strength: "quran"
       }
@@ -3567,6 +3592,15 @@ const TADABBUR = {
         whyAr: "﴿فَٱعْلَمْ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾.\n\n«فاعلم»: أمرٌ بالعلم — وُجّه إلى النبيّ ﷺ، في العشرين من دعوته، في الجملة التي كان يقولها منذ عشرين سنة.\n\nوبه تقع الآيةُ موقعها. فالعلمُ ليس شيئًا يُفعل مرّةً ثم يُملَك. وإنما أُمر به أمرًا، وخُوطب به أعلمُ الناس به — فهو حالٌ تُجدَّد لا خبرٌ يُحفظ.\n\nوقد ترجم البخاريُّ لهذه الآية في كتاب العلم بابًا: العلمُ قبل القول والعمل. وترتيبُ الآية حجّتُه: فاعلم **أوّلًا**، ثم استغفر.\n\nثم انظر ما تلا العلم: ﴿وَٱسْتَغْفِرْ لِذَنۢبِكَ وَلِلْمُؤْمِنِينَ وَٱلْمُؤْمِنَٰتِ﴾. لا لنفسك وحدك. فالمأمورُ بالعلم جُعل في نَفَسٍ واحدٍ مسؤولًا عن السؤال لقومٍ لن يلقاهم قطّ.\n\nوالخاتمةُ تنزع أن يكون ذلك في وقتٍ يُختار: ﴿وَٱللَّهُ يَعْلَمُ مُتَقَلَّبَكُمْ وَمَثْوَىٰكُمْ﴾ — حيث تتقلّب في نهارك وحيث تستقرّ في ليلك.",
         plain: "“So KNOW that there is no deity but Allah” — commanded to the Prophet ﷺ, about the sentence he had been saying for twenty years. Knowing is a state to be renewed, not a fact to be filed. Al-Bukhari used this verse for his chapter: knowledge comes before speech and action.",
         plainAr: "﴿فَٱعْلَمْ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾ — أُمر به النبيّ ﷺ في الجملة التي يقولها منذ عشرين سنة. فالعلمُ حالٌ تُجدَّد لا خبرٌ يُحفظ. وبوّب البخاريُّ بها: العلمُ قبل القول والعمل.",
+        links: [
+        {
+          ref: "Surah Ali 'Imran (3:18)",
+          ar: "شَهِدَ ٱللَّهُ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا هُوَ وَٱلْمَلَٰٓئِكَةُ وَأُو۟لُوا۟ ٱلْعِلْمِ قَآئِمًۢا بِٱلْقِسْطِ ۚ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+          en: "“Allah witnesses that there is no deity except Him, and [so do] the angels and those of knowledge - [that He is] maintaining [creation] in justice. There is no deity except Him, the Exalted in Might, the Wise.”",
+          how: "He is commanded here to KNOW that there is no deity but Allah; there the same sentence is what Allah Himself bears witness to, along with the angels and the people of knowledge. So what a man is ordered to know is what the highest witnesses testify — and the only human beings admitted to that list are the ones who know.",
+          howAr: "أُمر ههنا أن **يعلم** أن لا إله إلا الله، وهناك تلك الجملةُ نفسُها هي التي شهد بها اللهُ والملائكةُ وأولو العلم. فالذي أُمر الرجلُ بعلمه هو ما شهد به أعلى الشهود — والآدميّون الوحيدون المقبولون في ذلك العدّ هم الذين يعلمون."
+        }
+        ],
         ref: "Surah Muhammad (47:19)",
         strength: "quran"
       }
@@ -3748,6 +3782,13 @@ const TADABBUR = {
           en: "“Indeed, We have granted you, [O Muhammad], al-Kawthar.”",
           how: "The rule stated here, applied to a specific gift there. Al-Kawthar was granted outright — “indeed WE have given you” — and the surah's next word is the response: so pray and sacrifice. This verse says why that response is the right one, and what it earns.",
           howAr: "القاعدةُ ههنا مُنزَّلةً هناك على عطيّةٍ بعينها. فالكوثرُ أُعطي ابتداءً — ﴿إِنَّآ أَعْطَيْنَٰكَ﴾ — وأوّلُ ما تلاه في السورة الجواب: ﴿فَصَلِّ لِرَبِّكَ وَٱنْحَرْ﴾. وهذه الآيةُ تقول لِمَ كان ذلك هو الجواب، وما الذي يُثمره."
+        },
+        {
+          ref: "Surah Luqman (31:12)",
+          ar: "وَلَقَدْ ءَاتَيْنَا لُقْمَٰنَ ٱلْحِكْمَةَ أَنِ ٱشْكُرْ لِلَّهِ ۚ وَمَن يَشْكُرْ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِۦ ۖ وَمَن كَفَرَ فَإِنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌۭ",
+          en: "“And We had certainly given Luqman wisdom [and said], \"Be grateful to Allah.\" And whoever is grateful is grateful for [the benefit of] himself. And whoever denies [His favor] - then indeed, Allah is Free of need and Praiseworthy.”",
+          how: "What gratitude is worth, said from the other end. Ibrahim's verse promises the increase; Luqman's says who the increase lands on — “whoever is grateful is grateful only for himself” — and then names that recognition as the whole content of the wisdom he was given.",
+          howAr: "قدرُ الشكر مقولًا من الطرف الآخر. فآيةُ إبراهيم تَعِد بالزيادة، وآيةُ لقمان تقول على من تقع: ﴿وَمَن يَشْكُرْ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِۦ﴾ — ثم جعلت إدراك ذلك هو مضمون الحكمة التي أُوتيها."
         }
         ],
         ref: "Surah Ibrahim (14:7) · Al-Mufradat, Ar-Raghib al-Isfahani, entry a-dh-n",
@@ -3819,6 +3860,15 @@ const TADABBUR = {
         whyAr: "من بين كلّ ما يمكن أن يُوصف به النعيم، اختارت هذه الآيةُ شيئًا **يُنزع** لا شيئًا يُعطى.\n\n﴿وَنَزَعْنَا مَا فِى صُدُورِهِم مِّنْ غِلٍّ إِخْوَٰنًا عَلَىٰ سُرُرٍۢ مُّتَقَٰبِلِينَ﴾.\n\nوالغِلُّ هو الحقدُ الدفين: الموجدةُ تبقى بعد انقضاء الخصومة، والجفوةُ لا يُحسن المرء تعليلها. لا العداوةَ الظاهرة، بل رواسبَها الخفيّة.\n\nوالفعلُ ﴿نَزَعْنَا﴾: اقتلعنا. لا غفرنا ولا تجاوزنا. بل انتزاع.\n\nثم النتيجة، وهي أبسطُ صورةٍ في وصف الجنّة: إخوانٌ على سررٍ متقابلين. لا حواجز، ولا ترتيبَ مجالس، ولا أحدٌ وُضع بعناية بعيدًا عن أحد.\n\nوما تدلّ عليه الآيةُ في هذه الدار ظاهرٌ، وبه استحقّت أن تُذكر ههنا لا في وصف الآخرة وحدها: فالذي يمنع الناس أن يجلسوا هكذا اليوم ليس بُعدًا ولا ظرفًا، وإنما هو ما في الصدور. فإذا نُزع ذاك استقام المجلس من نفسه.",
         plain: "Of all Paradise could be described by, this verse names something REMOVED: the buried grudge is torn out of the chest. And the result is the plainest picture in the whole description — brothers on couches, facing each other. What stops that now is not distance. It is what is in the breasts.",
         plainAr: "من بين كلّ ما تُوصف به الجنّة، سمّت هذه الآيةُ شيئًا **يُنزع**: الغِلُّ الدفين يُقتلع من الصدر. والنتيجةُ أبسطُ صورةٍ في الوصف كلِّه: إخوانٌ على سررٍ متقابلين. والذي يمنع ذلك اليوم ليس البُعد، بل ما في الصدور.",
+        links: [
+        {
+          ref: "Surah Al-A'raf (7:43)",
+          ar: "وَنَزَعْنَا مَا فِى صُدُورِهِم مِّنْ غِلٍّۢ تَجْرِى مِن تَحْتِهِمُ ٱلْأَنْهَٰرُ ۖ وَقَالُوا۟ ٱلْحَمْدُ لِلَّهِ ٱلَّذِى هَدَىٰنَا لِهَٰذَا وَمَا كُنَّا لِنَهْتَدِىَ لَوْلَآ أَنْ هَدَىٰنَا ٱللَّهُ ۖ لَقَدْ جَآءَتْ رُسُلُ رَبِّنَا بِٱلْحَقِّ ۖ وَنُودُوٓا۟ أَن تِلْكُمُ ٱلْجَنَّةُ أُورِثْتُمُوهَا بِمَا كُنتُمْ تَعْمَلُونَ",
+          en: "“And We will have removed whatever is within their breasts of resentment, [while] flowing beneath them are rivers. And they will say, \"Praise to Allah, who has guided us to this; and we would never have been guided if Allah had not guided us. Certainly the messengers of our Lord had come with the truth.\" And they will be called, \"This is Paradise, which you have been made to inherit for what you used to do.\"”",
+          how: "The same removal, and there the Quran records what they SAY the moment it happens: praise to Allah who guided us to this, and we would never have been guided had He not guided us. Al-Hijr describes the result — brothers on couches facing one another; Al-A'raf gives the first sentence out of their mouths. Neither of them claims to have arrived by himself.",
+          howAr: "النزعُ نفسه، وقد سجّل القرآنُ هناك ما **يقولونه** ساعة يقع: ﴿ٱلْحَمْدُ لِلَّهِ ٱلَّذِى هَدَىٰنَا لِهَٰذَا وَمَا كُنَّا لِنَهْتَدِىَ لَوْلَآ أَنْ هَدَىٰنَا ٱللَّهُ﴾. فالحِجرُ تصف النتيجة — إخوانًا على سررٍ متقابلين — والأعرافُ تُعطي أوّل جملةٍ تخرج من أفواههم. ولا يدّعي أحدٌ منهم أنه بلغ بنفسه."
+        }
+        ],
         ref: "Surah Al-Hijr (15:47)",
         strength: "quran"
       },
@@ -4434,6 +4484,15 @@ const TADABBUR = {
           insteadAr: "لا «سارق» ولا «خائن» — وكلاهما أثقل، وأيسرُ على المرء أن يتبرّأ منه، إذ يعلم أكثرُ الناس أنهم ليسوا كذلك. فاللفظُ المختار يُسمّي قدرًا من الصِّغر بحيث لا يرى فاعلُه أنه صنع شيئًا.",
           source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ط ف ف",
           strength: "lugha"
+        }
+        ],
+        links: [
+        {
+          ref: "Surah Ar-Rahman (55:9)",
+          ar: "وَأَقِيمُوا۟ ٱلْوَزْنَ بِٱلْقِسْطِ وَلَا تُخْسِرُوا۟ ٱلْمِيزَانَ",
+          en: "“And establish weight in justice and do not make deficient the balance.”",
+          how: "What the mutaffif is actually tampering with. Ar-Rahman names the balance in the same breath as the raising of the sky, and then commands: establish the weight with justice, and do not make the balance deficient. The same word for the scale in a shop and for the order the heavens were set on — so shaving a margin is a small tear in something very large.",
+          howAr: "بِمَ يعبث المطفّفُ على التحقيق. فالرحمنُ تذكر الميزان في النفَس الذي ذُكر فيه رفعُ السماء، ثم تأمر: ﴿وَأَقِيمُوا۟ ٱلْوَزْنَ بِٱلْقِسْطِ وَلَا تُخْسِرُوا۟ ٱلْمِيزَانَ﴾. واللفظُ واحدٌ لكفّة الدكّان وللنظام الذي أُقيمت عليه السماوات — فاقتطاعُ الحافّة خرقٌ صغيرٌ في شيءٍ عظيم."
         }
         ],
         ref: "Surah Al-Mutaffifin (83:1-3)",
@@ -5115,6 +5174,15 @@ const TADABBUR = {
           strength: "lugha"
         }
         ],
+        links: [
+        {
+          ref: "Surah Al-Mu'minun (23:14)",
+          ar: "ثُمَّ خَلَقْنَا ٱلنُّطْفَةَ عَلَقَةًۭ فَخَلَقْنَا ٱلْعَلَقَةَ مُضْغَةًۭ فَخَلَقْنَا ٱلْمُضْغَةَ عِظَٰمًۭا فَكَسَوْنَا ٱلْعِظَٰمَ لَحْمًۭا ثُمَّ أَنشَأْنَٰهُ خَلْقًا ءَاخَرَ ۚ فَتَبَارَكَ ٱللَّهُ أَحْسَنُ ٱلْخَٰلِقِينَ",
+          en: "“Then We made the sperm-drop into a clinging clot, and We made the clot into a lump [of flesh], and We made [from] the lump, bones, and We covered the bones with flesh; then We developed him into another creation. So blessed is Allah, the best of creators.”",
+          how: "The first revelation names ONE stage and stops. This verse runs the whole sequence — the clinging thing becomes a lump, the lump bones, the bones are clothed in flesh — and then changes verb for the last step: “then We produced him as another creation.” The word the Quran opened with points at a stage; this verse finishes the sentence and ends in the praise it was heading for.",
+          howAr: "سمّى أوّلُ الوحي **طورًا واحدًا** ووقف. وهذه الآيةُ تسوق المتوالية كلَّها — فالعلقةُ مضغة، والمضغةُ عظام، وتُكسى العظامُ لحمًا — ثم يتغيّر الفعل في الخطوة الأخيرة: ﴿ثُمَّ أَنشَأْنَٰهُ خَلْقًا ءَاخَرَ﴾. فاللفظُ الذي افتُتح به القرآنُ يُشير إلى طور، وهذه الآيةُ تُتمّ الجملة وتنتهي إلى الثناء الذي كانت تسوق إليه."
+        }
+        ],
         ref: "Surah Al-'Alaq (96:2)",
         strength: "quran"
       },
@@ -5164,6 +5232,15 @@ const TADABBUR = {
         whyAr: "﴿إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةِ ٱلْقَدْرِ﴾.\n\nثلاثةُ أشياءَ في الجملة تُركت غير مسمّاة، وكلُّ واحدٍ منها مقصود.\n\nفالمُنزِل ضمير. والمُنزَل ضمير — ﴿أَنزَلْنَٰ**هُ**﴾. ولم يُسمَّ القرآنُ في هذه الآية أصلًا، ولم تُسمّه السورةُ قطّ. فعُومل معاملة الحاضر في نفس السامع حتى صار بيانُ «ما هو» فضلًا.\n\nوالفعل ﴿أَنزَلْنَا﴾ — لفظُ النزول، يُستعمل في المطر وفي الوحي، دائمًا إلى أسفل، ودائمًا من أعلى ممّن يتلقّاه.\n\nوالذي صنعه هذا الطيُّ أن وضع الثِّقل حيث تريده السورة. فقد كان يمكن أن يُقال: أُنزل القرآن في ليلة القدر، فلا يفوت من الخبر شيء. فبُنيت الجملةُ على أن يقع الثِّقلُ على ﴿إِنَّآ﴾ وعلى تلك **الليلة**.\n\nوالآيةُ المكتوبة على هذه السورة هي الجوابُ عن قدر الليلة: خيرٌ من ألف شهر. فالآيتان معًا دعوى في الزمان نفسه: أنّ ليلةً تكون خيرًا من ثمانين سنة، وأنّ قدرها ممّا نزل فيها.",
         plain: "The verse does not name the Quran — it just says WE sent IT down, as though the listener could not possibly need to be told what “it” is. All the weight falls on who sent it and on which night.",
         plainAr: "لم تُسمّ الآيةُ القرآن — وإنما قالت: **إنّا أنزلناه**، كأنّ السامع لا يحتاج أن يُقال له ما «هو». فوقع الثِّقلُ كلُّه على مَن أنزل وعلى أيّ ليلة.",
+        links: [
+        {
+          ref: "Surah Ad-Dukhan (44:3)",
+          ar: "إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةٍۢ مُّبَٰرَكَةٍ ۚ إِنَّا كُنَّا مُنذِرِينَ",
+          en: "“Indeed, We sent it down during a blessed night. Indeed, We were to warn [mankind].”",
+          how: "The same night described instead of named. Al-Qadr says WHICH night it was; Ad-Dukhan says what KIND of night — mubarakah, blessed, meaning good that stays and increases rather than a good night that passed. And it gives the reason in the same breath: indeed We were to warn.",
+          howAr: "الليلةُ نفسُها موصوفةً لا مسمّاة. فالقدرُ تقول **أيُّ** ليلةٍ هي، والدخانُ تقول **أيَّ** ليلةٍ كانت: ﴿مُّبَٰرَكَةٍ﴾، والبركةُ خيرٌ يثبت وينمو لا ليلةٌ حسنةٌ مضت. وأعطت العلّة في النفَس نفسه: ﴿إِنَّا كُنَّا مُنذِرِينَ﴾."
+        }
+        ],
         ref: "Surah Al-Qadr (97:1)",
         strength: "quran"
       },
@@ -5264,6 +5341,15 @@ const TADABBUR = {
         arNoteAr: "ومعها الآيةُ بعدها: ﴿وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍۢ شَرًّۭا يَرَهُۥ﴾.",
         why: "DHARRAH was the smallest thing the language had a word for — the classical explanations include the tiny ant and the mote of dust you see suspended in a shaft of sunlight. The point is not the physics; it is that the Quran reached for the smallest available unit and then said even THAT is weighed.\n\nAnd the verb is YARAHU — he will SEE it. Not: he will be told about it, or it will be counted for him. He looks at it.\n\nThe two verses together close both of the excuses people actually use. Not: that good deed was too small to matter — you will see it. And not: that sin was too small to count — you will see that too. The surah is thirty words long and it removes the entire category of the negligible.",
         whyAr: "**الذَّرّة** أصغرُ ما وضعت له العربُ اسمًا، وفسّرها المتقدّمون بصغار النمل، وبالهباء الذي تراه في شعاع الشمس من الكوّة. وليس المقصود تحديدَ الجرم، وإنما أنّ القرآن أخذ أصغر وحدةٍ متاحةٍ ثم قال إنّ **هذه** توزن.\n\nوالفعل ﴿يَرَهُۥ﴾: **يراه**. لا يُخبَر به ولا يُحسب له، وإنما ينظر إليه.\n\nوالآيتان معًا تسدّان العذرين اللذين يستعملهما الناس فعلًا: لا «هذه حسنةٌ أصغر من أن تنفع» — فسيراها؛ ولا «هذه سيّئةٌ أصغر من أن تُحسب» — فسيراها كذلك. والسورةُ نحو ثلاثين كلمة، وقد رفعت باب «الصغير الذي لا يُعتدّ به» من أصله.",
+        links: [
+        {
+          ref: "Surah Luqman (31:16)",
+          ar: "يَٰبُنَىَّ إِنَّهَآ إِن تَكُ مِثْقَالَ حَبَّةٍۢ مِّنْ خَرْدَلٍۢ فَتَكُن فِى صَخْرَةٍ أَوْ فِى ٱلسَّمَٰوَٰتِ أَوْ فِى ٱلْأَرْضِ يَأْتِ بِهَا ٱللَّهُ ۚ إِنَّ ٱللَّهَ لَطِيفٌ خَبِيرٌۭ",
+          en: "“[And Luqman said], \"O my son, indeed if wrong should be the weight of a mustard seed and should be within a rock or [anywhere] in the heavens or in the earth, Allah will bring it forth. Indeed, Allah is Subtle and Acquainted.”",
+          how: "A father had already told his son this. Luqman names the weight of a mustard seed, sealed inside a rock or anywhere in the heavens or the earth, and says Allah will bring it out. Az-Zalzalah reports it as what happens on the Day. The advice and the event are the same statement — one given to a boy to live by, one describing the moment it is carried out.",
+          howAr: "وقد قال أبٌ هذا لابنه من قبل. فلقمانُ يُسمّي مثقال حبّةٍ من خردلٍ في صخرةٍ أو في السماوات أو في الأرض، ويقول إنّ الله يأتي بها. والزلزلةُ تُخبر به عمّا يقع يوم القيامة. فالوصيّةُ والحدثُ خبرٌ واحد: أُعطي مرّةً لغلامٍ ليعيش به، ووُصف مرّةً في الساعة التي يُنفَّذ فيها."
+        }
+        ],
         ref: "Surah Az-Zalzalah (99:7-8)",
         strength: "lugha"
       },
@@ -6044,7 +6130,14 @@ const TADABBUR = {
             en: "“Say: indeed my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.”",
             how: "Al-Kawthar pairs prayer with sacrifice and assigns them to “your Lord”. Al-An'am takes the identical pair — salah and nusuk, prayer and sacrifice, in that order — and extends the same assignment over a person's living and dying as well.\n\nSo the short surah gives you the two acts; the longer verse shows they were only the opening of a list that ends with your whole life. This is the completing pattern working in the other direction: not a vague word made specific, but a small instruction shown to be part of something total.",
             howAr: "قرنت الكوثر الصلاة بالنحر وجعلتهما لربّك. وأخذت الأنعام القرينين أنفسهما — الصلاة والنسك على هذا الترتيب — فمدّت النسبة نفسها إلى المحيا والممات.\n\nفالسورة القصيرة تعطيك العملين، وتُريك الآية الأطول أنهما كانا مطلع تعدادٍ ينتهي بحياتك كلّها. وهذا نظم التتميم في الجهة الأخرى: لا لفظٌ مُبهم بُيّن، بل أمرٌ يسيرٌ تبيّن أنه بعض أمرٍ شامل."
-          }
+          },
+        {
+          ref: "Surah Al-An'am (6:162)",
+          ar: "قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+          en: "“Say, \"Indeed, my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.”",
+          how: "The same two acts, widened until nothing is left outside them. Here it is “pray to your Lord and sacrifice”; there it is “my prayer, my rites of sacrifice, my living and my dying — for Allah.” Al-Kawthar commands the two acts of worship; Al-An'am adds the ordinary hours and the death, so that the surrender has no remainder.",
+          howAr: "العملان نفسُهما، مُوسَّعين حتى لا يبقى خارجهما شيء. فههنا ﴿فَصَلِّ لِرَبِّكَ وَٱنْحَرْ﴾، وهناك ﴿إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ﴾. فالكوثرُ تأمر بالعبادتين، والأنعامُ تضمّ إليهما ساعات العمر والموت، فلا يبقى في الاستسلام فَضْل."
+        }
         ]
       },
       {

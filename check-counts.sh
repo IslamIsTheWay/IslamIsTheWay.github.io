@@ -172,6 +172,50 @@ else
 fi
 echo
 
+# ---- a verse-to-verse link must be stated from BOTH sides ---------------
+echo "Checking that every verse link is mentioned in both verses…"
+oneway=$(python - <<'PY'
+import io, re
+lines = io.open("js/tadabbur.js", encoding="utf-8").read().split("\n")
+entries, links, covers = set(), {}, {}
+cur = ent = None
+for i, ln in enumerate(lines):
+    m = re.match(r'^  (\d+): \{', ln)
+    if m:
+        cur = int(m.group(1)); continue
+    m = re.match(r'^        n: (\d+),', ln)
+    if m and cur is not None:
+        n = int(m.group(1)); ent = (cur, n)
+        entries.add(ent); links.setdefault(ent, set())
+        ar = lines[i + 1] if i + 1 < len(lines) else ""
+        run = ar.count(" \u2022 ") + 1 if ar.strip().startswith("ar:") else 1
+        for k in range(run):
+            covers[(cur, n + k)] = ent
+        continue
+    m = re.match(r'^          ref: "Surah [^"]*\((\d+):(\d+)', ln)
+    if m and ent is not None:
+        links[ent].add((int(m.group(1)), int(m.group(2))))
+bad = []
+for a, outs in links.items():
+    for b in outs:
+        tgt = covers.get(b)
+        if tgt is None:
+            continue                      # target has no entry yet - reported separately
+        back = {covers.get(x) for x in links.get(tgt, set())}
+        if a not in back:
+            bad.append("%d:%d points at %d:%d and %d:%d does not point back"
+                       % (a[0], a[1], b[0], b[1], tgt[0], tgt[1]))
+print("\n".join(bad))
+PY
+)
+if [ -n "$oneway" ]; then
+  echo "$oneway" | sed 's/^/  ONE-WAY  /'
+  fail=1
+else
+  echo "  every link is stated from both sides"
+fi
+echo
+
 if [ "$fail" -ne 0 ]; then
   echo
   echo "A number on the home page no longer matches its data file."
