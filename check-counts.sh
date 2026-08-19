@@ -43,7 +43,23 @@ count_sunnah() {
 
 # Tadabbur is nested: TADABBUR[surah].ayat is an array of verse objects, and
 # each one opens with its verse number on its own line.
-count_tadabbur() { grep -cE '^\s*n:\s*[0-9]+,\s*$' js/tadabbur.js; }
+# Counts VERSES, not blocks. One block may explain a run of ayat - 26:78-82 is
+# a single entry covering five - and the home page claims "verses explained",
+# so counting blocks understated it. The run length is read from the bullet the
+# file uses to join a span in the `ar` field.
+count_tadabbur() {
+  python - <<'PY'
+import io, re
+s = io.open("js/tadabbur.js", encoding="utf-8").read()
+lines = s.split("\n")
+total = 0
+for i, ln in enumerate(lines):
+    if re.match(r'^        n: \d+,', ln):
+        ar = lines[i + 1] if i + 1 < len(lines) else ""
+        total += ar.count(" \u2022 ") + 1 if ar.strip().startswith("ar:") else 1
+print(total)
+PY
+}
 
 check() {                       # check <label> <actual> <expected-in-index>
   local label="$1" actual="$2" expected="$3"
@@ -120,6 +136,40 @@ for h in *.html; do
   fi
 done
 [ "$fail" -eq 0 ] && echo "  all canonicals correct"
+echo
+
+# ---- the same verse explained twice in one surah -------------------------
+# `iitwTadabburAyahHtml` picks with `.filter(x => x.n === n)[0]`, so a second
+# block for a verse never renders, and the coverage line prints its number
+# twice. Fourteen of these were found on 18 August 2026; nothing had been
+# looking for them.
+echo "Checking for a verse explained twice in the same surah…"
+dup=$(python - <<'PY'
+import io, re
+from collections import Counter
+s = io.open("js/tadabbur.js", encoding="utf-8").read()
+cur, cov = None, {}
+for ln in s.split("\n"):
+    m = re.match(r'^  (\d+): \{', ln)
+    if m:
+        cur = int(m.group(1)); cov.setdefault(cur, []); continue
+    m = re.match(r'^        n: (\d+),', ln)
+    if m and cur is not None:
+        cov[cur].append(int(m.group(1)))
+bad = []
+for k, v in cov.items():
+    for n, c in Counter(v).items():
+        if c > 1:
+            bad.append("surah %d verse %d appears %d times" % (k, n, c))
+print("\n".join(bad))
+PY
+)
+if [ -n "$dup" ]; then
+  echo "$dup" | sed 's/^/  DUPLICATE  /'
+  fail=1
+else
+  echo "  no verse is explained twice"
+fi
 echo
 
 if [ "$fail" -ne 0 ]; then
