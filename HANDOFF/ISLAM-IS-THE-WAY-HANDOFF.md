@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 18 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 15 first, then PART 14.**
+> **Last updated: 19 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 15 first, then PART 14.**
 
 ## The rules that matter most
 
@@ -68,7 +68,7 @@ git add -A && git commit -m "..." && git push origin main
 | Adhkar | 19 |
 | Scholars' rulings / scholars with books | 15 / 19 |
 | Surahs | 114, 16 reciters, Mushaf pages |
-| **Tadabbur (explained verses)** | **472 verses in 358 blocks; every surah has 2+** |
+| **Tadabbur (explained verses)** | **480 verses in 364 blocks; 52 cross-links, all two-way** |
 | **Golden Age figures** | **41**, all with a plain-words box |
 | **Adding to the religion (bid'ah)** | `js/bidah.js`, on Guidance |
 
@@ -3135,4 +3135,109 @@ attributes his affliction to Shaytan and not to Allah.
 Four quotes I typed were wrong and were corrected from the real text: an i'rab
 ending on ٱلنَّاسُ, a missing waqf mark in 43:32 and in 31:12, and one more.
 Every one of them reads correctly to the eye. Do not hand-check Arabic quotes.
+
+## THIRD ROUND, 19 August: joining the verses to each other
+
+**His instruction:** *"try to connect the verses all together — God gave us
+al-Kawthar and then in another verse it tells you to appreciate what God gave
+us, so connect the two together, and follow this way in the entire explanation
+boxes."* Then, a minute later: **"mention the connection in both verses."**
+
+### The field already existed and was barely used
+
+`iitwTadabburAyahHtml` has always rendered a `links[]` array under
+**"🔗 Where the thought is completed"**. Only 20 of 358 blocks used it.
+
+Now **52 links across 46 blocks, and every one stated from BOTH sides.**
+His example works in both directions: 108:1 points at 14:7 (*if you are
+grateful I will increase you*) and 93:11 (*speak of your Lord's favour*), and
+each of those points back at 108:1, worded from its own side rather than
+copied.
+
+Pairs joined so far — Luqman's mustard seed and the atom's weight of
+Az-Zalzalah · the mutaffif and the balance the sky was raised with · the
+rancour drawn out of the chest in Al-Hijr and in Al-A'raf · Al-Muzzammil's
+night and Al-Muddaththir's warning · Ibrahim's cure for the body and Yunus's
+healing for what is in the breasts · his character in Al-Qalam and the pattern
+to copy in Al-Ahzab · the request that ends Al-Fatihah and the answer that
+opens Al-Baqarah · the orphan in Ad-Duha and the orphan in Al-Ma'un.
+
+### The tool
+
+`addlinks.py` in the scratchpad splices links into entries ALREADY in the
+file. The linked verse's Arabic and English are pulled from `js/quran-text.js`
+by (surah, ayah), exactly as `gen.py` does — a cross-reference that misquotes
+what it points at would be worse than none. Insertion goes before `ref:`,
+falling back to `strength:` and then to the entry's closing brace, because
+**106 of the older blocks have neither `ref` nor `strength`.**
+
+### Six entries written to make the link two-way
+
+A link can only be stated from both ends if the target has an entry. Six did
+not, so they were written — which deepens those surahs at the same time:
+**2:34** (he refused, was arrogant, and BECAME of the disbelievers — the order
+is a diagnosis, and his argument was not stupid: fire really is subtler than
+clay, he reasoned correctly from a true premise and left out that a command
+had been given), **3:18** (the only human beings named as witnesses beside the
+angels are the people of knowledge), **7:43**, **23:14**, **31:16**, **55:7-9**.
+
+### THE CHECKER HAD A BLIND SPOT — and it let a duplicate through
+
+The both-sides check matched `ref:` at **exactly ten spaces**. Links written in
+earlier sessions indent the object at ten, so their `ref` sits at **twelve**;
+the ones `gen.render_link(l, 8)` produces sit at ten. So the checker saw only
+what I had just added and was blind to every older link — it reported 38 links
+when the parsed file had 52.
+
+Two things got through it:
+
+* **108:2 already pointed at 6:162** and I added the same link again, so that
+  card rendered twice. Removed.
+* **Three pre-existing one-way pairs** had been half-finished for sessions:
+  1:6→2:2, 107:2→93:9, 112:4→42:11. All three now have their return half.
+
+**Match `ref:` at ten spaces OR MORE.** The entry's own `ref` is at eight, so
+that still separates them. `check-counts.sh` now fails if any link is not
+stated from both sides, and the span case is handled — a link into 26:80 lands
+in the block whose `n` is 78, and the checker resolves that before judging the
+pair. Its first version did not, and reported five false one-way links.
+
+### The "Where to find it" box was rewritten
+
+It was built for partial coverage: it listed every covered surah by name and
+warned that the button "only appears on a surah that has it". With all 114
+covered it printed a wall of 114 names nobody reads, and the caveat had stopped
+meaning anything.
+
+It now states the coverage and reports the DEPTH, which is the part still
+growing — counted from `js/tadabbur.js` at render time, so it cannot drift.
+The surah list is kept for the case where one is ever missing again: below 114
+the box goes back to naming what is covered.
+
+Arabic counts go through the site's own `arCountAyah()`, which handles the
+singular, dual and both plurals. **It returns the NOMINATIVE**, so the sentence
+is phrased "وأقلُّ سورةٍ فيها آيتان" rather than putting it after عن, which
+would need the genitive. Do not change the shared helper to suit one sentence.
+
+## Where the tadabbur stands — 19 August 2026
+
+| | |
+|---|---|
+| blocks | **364** |
+| verses explained | **480** |
+| fewest in any surah | **2** |
+| verse-to-verse links | **52**, across 46 blocks, **0 one-way** |
+| blocks with no link yet | **318** |
+
+## Open work as of 19 August 2026
+
+1. **318 of 364 blocks still have no cross-reference.** The tooling and the
+   method are set down above; this is the bulk of the remaining job.
+2. **13 links point at verses with no entry of their own** — 17:44, 28:76,
+   2:272, 42:52 (twice), 2:185, 4:69, 7:156, 2:23, 8:30, 15:74, 16:112, 69:30.
+   Each needs an entry written before it can point back. `check-counts.sh`
+   reports these rather than failing, because it is work and not a mistake.
+3. **Coverage: 98 verses short of four in every surah, 169 short of five.**
+   71 surahs are still under five; 38 are on two.
+4. Everything still open from PART 15 and PART 13.
 
