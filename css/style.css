@@ -3971,6 +3971,34 @@ html.lang-ar .gold-overview { border-left: 1px solid var(--border); border-right
 
 /* "What happened to it" is the sentence the reader came for, so it is boxed
    rather than buried at the end of a paragraph. */
+/* "What you still use today" — the concrete answer on every Golden Age card.
+   Green like the plain-words box, because it does the same job: it is the part
+   a reader who is not a historian is actually looking for. */
+.gold-today {
+  background: #f2f9f4;
+  border: 1px solid #cfe6d6;
+  border-inline-start: 4px solid var(--green);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+.gold-today-head {
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+  font-size: .95rem;
+}
+.gold-today-list {
+  margin: 0;
+  padding-inline-start: 20px;
+}
+.gold-today-list li {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+.gold-today-list li:last-child { margin-bottom: 0; }
+html.lang-ar .gold-today-list { line-height: 2; }
+
 .gold-after {
   background: #fdf4ec;
   border: 1px solid #f0dccb;

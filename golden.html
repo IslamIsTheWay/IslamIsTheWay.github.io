@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608192221" />
+  <link rel="stylesheet" href="css/style.css?v=202608201339" />
   <!-- Installable as an app (PWA). The service worker is network-first and
        cannot cause a stale page — see the note at the top of sw.js. -->
   <link rel="manifest" href="manifest.webmanifest" />
@@ -236,18 +236,18 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608192221"></script>
-  <script src="js/golden.js?v=202608192221"></script>
+  <script src="js/data.js?v=202608201339"></script>
+  <script src="js/golden.js?v=202608201339"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
   <!-- Full lives of the figures, and the women comparison. -->
-  <script src="js/golden-lives.js?v=202608192221"></script>
+  <script src="js/golden-lives.js?v=202608201339"></script>
   <!-- Before you are dazzled: both sides, honestly. -->
-  <script src="js/golden-mirror.js?v=202608192221"></script>
-  <script src="js/golden-closing.js?v=202608192221"></script>
+  <script src="js/golden-mirror.js?v=202608201339"></script>
+  <script src="js/golden-closing.js?v=202608201339"></script>
   <!-- Will we rise again? Shared with judgement.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608192221"></script>
+  <script src="js/rise.js?v=202608201339"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -413,8 +413,13 @@
           <div class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${paras(f.plainAr)}</div>
         </div>` : ""}
 
+        <!-- The heading is per-figure. "What he wrote" was printed on every
+             card and is wrong on six: Mimar Sinan's entries under it are the
+             Selimiye and Suleymaniye MOSQUES, Fatima al-Fihri is a woman who
+             BUILT a university, and paper, the bimaristan and the Nizamiyya
+             are not people and wrote nothing. -->
         ${f.works && f.works.length ? `<div class="gold-works">
-          <div class="gold-works-head">📚 What he wrote <span dir="rtl" style="font-family:'Amiri',serif;">— ما صنّف</span></div>
+          <div class="gold-works-head">${f.worksIcon || "📚"} <span class="en-only">${f.worksHead || "What he wrote"}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${f.worksHeadAr || "ما صنّف"}</span></div>
           ${f.works.map(w => `<div class="gold-work">
             <div class="gold-work-t"><span class="en-only">${w.t}</span><span dir="rtl" style="font-family:'Amiri',serif;">${w.tAr}</span></div>
             <div class="gold-work-d en-only">${w.d}</div>
@@ -422,8 +427,19 @@
           </div>`).join("")}
         </div>` : ""}
 
+        <!-- WHAT IS IN YOUR HAND RIGHT NOW.
+             The cards carry dates, instrument names and the mathematics, and
+             a reader can finish one without ever learning what any of it has
+             to do with him. This is the concrete answer: two or three things
+             he uses, says or can go and stand in. -->
+        ${f.today && f.today.length ? `<div class="gold-today">
+          <div class="gold-today-head">🔧 <span class="en-only">What you still use today</span><span class="ar-only" dir="rtl">ما تزال تستعمله اليوم</span></div>
+          <ul class="gold-today-list en-only">${f.today.map(t => `<li>${t}</li>`).join("")}</ul>
+          <ul class="gold-today-list ar-only" dir="rtl" style="font-family:'Amiri',serif;">${(f.todayAr||[]).map(t => `<li>${t}</li>`).join("")}</ul>
+        </div>` : ""}
+
         <div class="gold-after">
-          <div class="gold-after-head">➡️ What happened to it <span dir="rtl" style="font-family:'Amiri',serif;">— ما آل إليه</span></div>
+          <div class="gold-after-head">➡️ <span class="en-only">What happened to it</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما آل إليه</span></div>
           <p class="en-only">${f.after}</p>
           <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${f.afterAr}</p>
         </div>
@@ -806,7 +822,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608192221"></script>
-  <script src="js/i18n.js?v=202608192221"></script>
+  <script src="js/main.js?v=202608201339"></script>
+  <script src="js/i18n.js?v=202608201339"></script>
 </body>
 </html>

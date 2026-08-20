@@ -268,6 +268,8 @@ const GOLDEN_FIGURES = [
     afterAr: "كلّما نطق أحدٌ في الدنيا بكلمة «خوارزمية» فإنما ينطق باسمه، وكلّ درس جبرٍ في مدرسةٍ هو كتابه. ولا يكاد يُذكر واحدٌ من الأمرين.",
     plain: "Every time a computer follows a set of steps, it is running an <strong>algorithm</strong> — and that word is just his name, worn down by centuries of European mouths. Algebra is his book's title.",
     plainAr: "كلّما اتّبع الحاسوب سلسلةَ خطوات فهو ينفّذ «خوارزميّة»، وما هذه الكلمة إلا اسمه هو، حرّفته الألسن الأوروبية على مرّ القرون. و«الجبر» عنوان كتابه.",
+    today: ["The word <strong>algorithm</strong> — every app, search result and feed is running one.", "School algebra: the unknown, the equation, moving a term across.", "The digits 0–9 you write with, and the zero that makes them work."],
+    todayAr: ["كلمة <strong>خوارزميّة</strong> — وكلُّ تطبيقٍ ونتيجةِ بحثٍ تعمل بها.", "جبرُ المدرسة: المجهول، والمعادلة، ونقلُ الحدّ من طرفٍ إلى طرف.", "الأرقامُ من ٠ إلى ٩ التي تكتب بها، والصفرُ الذي بها يستقيم."],
     strength: "Documented — his own surviving work, and the Latin translation made from it",
     strengthAr: "موثّق — من كتابه الباقي بنصّه، ومن الترجمة اللاتينية المنقولة عنه",
     keys: ["algebra","algorithm","khwarizmi","mathematics","zero","numerals","equation","inheritance","الجبر","الخوارزمي","الرياضيات","الصفر","المعادلة","الفرائض","خوارزمية"]
@@ -294,6 +296,8 @@ const GOLDEN_FIGURES = [
     afterAr: "بقيت الرسالة مطويّةً في الأرشيف العثماني بإسطنبول إلى سنة ١٩٨٧م، وكان التحليل بالتكرار قبل اكتشافها يُنسب إلى أوروبيّين من القرنين الخامس عشر والسادس عشر.",
     plain: "He worked out that you can break a secret code by counting how often each letter appears. That is still the first thing taught in code-breaking today.",
     plainAr: "توصّل إلى أنّ الشيفرة تُكسر بإحصاء تكرار الحروف فيها. وهذا إلى اليوم أوّل ما يُعلَّم في كسر الشيفرات.",
+    today: ["Breaking a code by counting which letters appear most — still the first lesson in cryptography.", "The same trick you use on a word puzzle."],
+    todayAr: ["كسرُ الشيفرة بإحصاء أكثر الحروف ورودًا — وهو أوّل درسٍ في التعمية إلى اليوم.", "وهي الحيلةُ نفسها التي تستعملها في لُغز الكلمات."],
     strength: "Documented — the surviving manuscript, rediscovered in Istanbul in 1987",
     strengthAr: "موثّق — بالمخطوط الباقي الذي أُعيد اكتشافه في إسطنبول سنة ١٩٨٧م",
     keys: ["kindi","cryptography","code","cipher","frequency analysis","philosophy","الكندي","التعمية","الشيفرة","تحليل التكرار","الفلسفة"]
@@ -320,6 +324,8 @@ const GOLDEN_FIGURES = [
     afterAr: "يكاد لا يُعرف في العالم الناطق بالإنجليزية إلا شاعرًا، من خلال ترجمةٍ فيكتوريّةٍ متحرّرة لرباعيّاتٍ منسوبةٍ إليه. أما الرياضيّ فهو الجانب الذي تُرك خلفه.",
     plain: "The calendar he built was more accurate than the one most of the world uses now — and he is remembered in the West only for his poetry.",
     plainAr: "التقويم الذي وضعه أدقّ من التقويم الذي يستعمله أكثر العالم اليوم، ولا يُذكر في الغرب إلا بشعره.",
+    today: ["The Persian solar calendar, still the official calendar of Iran and Afghanistan.", "Cubic equations, in school maths and in engineering."],
+    todayAr: ["التقويمُ الشمسيّ الفارسيّ، وهو التقويمُ الرسميّ في إيران وأفغانستان إلى اليوم.", "المعادلاتُ التكعيبيّة، في رياضيّات المدرسة وفي الهندسة."],
     strength: "Documented — his own surviving treatise; the calendar is recorded in the state chronicles of the period",
     strengthAr: "موثّق — برسالته الباقية، والتقويم مسجَّلٌ في تواريخ الدولة في عصره",
     keys: ["khayyam","cubic","equation","calendar","geometry","conic","الخيام","المعادلة التكعيبية","التقويم","الهندسة","القطوع المخروطية"]
@@ -346,6 +352,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ما زال قانون جيب التمام يحمل اسمه بالفرنسية، ولا يحمل بالإنجليزية اسم أحد.",
     plain: "He calculated π to sixteen decimal places by hand. Nobody beat that for a hundred and eighty years.",
     plainAr: "حسب النسبة التقريبيّة (π) إلى ستّ عشرة منزلة عشرية بيده، فلم يتجاوزه أحدٌ مئةً وثمانين سنة.",
+    today: ["π to more decimal places than any machine you own needs.", "Decimal fractions — the way you write money and measurements."],
+    todayAr: ["النسبةُ التقريبيّة إلى منازلَ عشريّةٍ أكثر ممّا يحتاجه أيُّ جهازٍ تملكه.", "الكسورُ العشريّة — وهي طريقةُ كتابة المال والمقادير."],
     strength: "Documented — his own surviving treatises",
     strengthAr: "موثّق — برسائله الباقية",
     keys: ["kashi","pi","decimal","cosine","samarkand","الكاشي","النسبة التقريبية","الكسور العشرية","جيب التمام","سمرقند"]
@@ -373,6 +381,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ذكره كوبرنيكوس باسمه في كتابه «في دورات الأجرام السماوية»، واستعمل تيخو براهي وكبلر أرصادَه. وسُمّيت فُوَّهةٌ على القمر باسم Albategnius — بالاسم اللاتيني لا باسمه هو.",
     plain: "He measured the length of a year to within about two minutes — without a telescope, in the ninth century.",
     plainAr: "قدّر طول السنة بفارقٍ نحو دقيقتين عن الحقيقة، بلا مرصادٍ مقرِّب، في القرن التاسع الميلادي.",
+    today: ["The length of the solar year your calendar is built on.", "Sine and tangent — the trigonometry inside every phone's GPS."],
+    todayAr: ["طولُ السنة الشمسيّة الذي بُني عليه تقويمك.", "الجيبُ والظلّ — وهي المثلّثات التي يقوم عليها تحديدُ الموقع في هاتفك."],
     strength: "Documented — his Zij survives, and Copernicus names him in his own book",
     strengthAr: "موثّق — زيجه باقٍ، وكوبرنيكوس يسمّيه في كتابه نفسه",
     keys: ["battani","astronomy","solar year","trigonometry","copernicus","البتاني","الفلك","السنة الشمسية","حساب المثلثات","كوبرنيكوس"]
@@ -400,6 +410,8 @@ const GOLDEN_FIGURES = [
     afterAr: "يُوصف عادةً في الكتب الغربية بأنه «من أعظم علماء العصور الوسطى»، ثم يُترك خارج قصّة كيف قِيست الأرض.",
     plain: "He worked out how big the earth is by climbing one mountain and doing the trigonometry. He was off by about half a percent.",
     plainAr: "استخرج حجم الأرض بصعود جبلٍ واحد وحسابِ المثلّثات، فأخطأ بنحو نصف في المئة فقط.",
+    today: ["The method for measuring a planet's size from one mountain, still taught.", "Writing about another people's religion accurately, from their own books."],
+    todayAr: ["طريقةُ قياس حجم الكوكب من جبلٍ واحد، وما زالت تُدرَّس.", "أن تكتب عن دين قومٍ آخرين بدقّةٍ من كتبهم أنفسِها."],
     strength: "Documented — his own surviving works",
     strengthAr: "موثّق — بكتبه الباقية",
     keys: ["biruni","earth radius","geodesy","india","specific gravity","rotation","البيروني","نصف قطر الأرض","الجغرافيا","الوزن النوعي","دوران الأرض","الهند"]
@@ -426,6 +438,8 @@ const GOLDEN_FIGURES = [
     afterAr: "وصف تشوسر الصفيحة بالإنجليزية، وسُمّيت فُوَّهةٌ قمريةٌ باسم Arzachel، وأُعيدت تسمية الجداول باسم ملكٍ قشتالي.",
     plain: "European astronomers used his tables to find their way for four hundred years.",
     plainAr: "ظلّ فلكيّو أوروبا يهتدون بجداوله أربعمئة سنة.",
+    today: ["Star tables that ran European navigation for four hundred years.", "The universal astrolabe plate — one plate for any latitude."],
+    todayAr: ["أزياجٌ قامت عليها ملاحةُ أوروبا أربعمئة سنة.", "صفيحةُ الأسطرلاب الجامعة — صفيحةٌ واحدة تصلح لكلّ عَرض."],
     strength: "Documented — the tables and the instrument both survive, and their transmission through Toledo is recorded",
     strengthAr: "موثّق — الجداول والآلة كلاهما باقٍ، وانتقالهما عبر طليطلة مسجَّل",
     keys: ["zarqali","arzachel","toledo","tables","astrolabe","andalus","الزرقالي","طليطلة","الجداول","الأسطرلاب","الأندلس"]
@@ -453,6 +467,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ويظهر التركيب نفسه في كتاب كوبرنيكوس سنة ١٥٤٣م، وعلى الشكل الحروف نفسها. وانظر «ما الذي أُخذ» أدناه.",
     plain: "He invented a geometric trick for describing circular motion. Copernicus used exactly it three centuries later.",
     plainAr: "ابتكر حيلةً هندسيّة لوصف الحركة الدائرية، واستعملها كوبرنيكوس بعينها بعده بثلاثة قرون.",
+    today: ["The geometric device sitting inside Copernicus's model of the heavens.", "Trigonometry taught as its own subject, not a tool of astronomy."],
+    todayAr: ["الأداةُ الهندسيّة القائمة في صميم نموذج كوبرنيكوس للسماء.", "علمُ المثلّثات يُدرَّس علمًا مستقلًّا لا آلةً للفلك."],
     strength: "Documented — his own surviving work, and Copernicus's printed book to compare it with",
     strengthAr: "موثّق — بكتابه الباقي، وبكتاب كوبرنيكوس المطبوع للمقابلة",
     keys: ["tusi","maragha","copernicus","trigonometry","tusi couple","astronomy","الطوسي","مراغة","كوبرنيكوس","حساب المثلثات","مزدوجة الطوسي"]
@@ -478,6 +494,8 @@ const GOLDEN_FIGURES = [
     afterAr: "قارن مؤرّخ العلوم إ. س. كينيدي سنة ١٩٥٧م بين نماذجه ونماذج كوبرنيكوس فوجدها متطابقةً رياضيًّا. ولم يذكره كوبرنيكوس قطّ. وانظر «ما الذي أُخذ» أدناه.",
     plain: "His model of the moon and the one Copernicus published are mathematically the same thing, a hundred and fifty years apart.",
     plainAr: "نموذجه للقمر ونموذج كوبرنيكوس شيءٌ واحد في الرياضيات، بينهما مئةٌ وخمسون سنة.",
+    today: ["The lunar model Copernicus published a hundred and fifty years later, point for point."],
+    todayAr: ["نموذجُ القمر الذي نشره كوبرنيكوس بعده بمئةٍ وخمسين سنة، نقطةً نقطة."],
     strength: "Documented — his manuscript survives and the comparison with Copernicus is published, checkable work",
     strengthAr: "موثّق — مخطوطه باقٍ، والمقارنة بكوبرنيكوس منشورةٌ يمكن التحقّق منها",
     keys: ["ibn ash-shatir","damascus","copernicus","moon","planetary","muwaqqit","ابن الشاطر","دمشق","كوبرنيكوس","القمر","الهيئة","الموقّت"]
@@ -503,6 +521,8 @@ const GOLDEN_FIGURES = [
     afterAr: "طُبع الفهرس في أكسفورد سنة ١٦٦٥م واستُعمل في أوروبا كلّها. وهُدم المرصد على يد من ظنّوا عمله مناقضًا للدين — وهو تحذيرٌ من تاريخنا نحن عمّا يُنهي عصرًا ذهبيًّا.",
     plain: "A king who did the observing himself. His star catalogue stood unbeaten for two centuries.",
     plainAr: "ملكٌ رصد بنفسه، فبقي فهرسه للنجوم لا يُدانى قرنين.",
+    today: ["Star positions that were not beaten until the telescope.", "His observatory in Samarkand — the sextant arc is still in the ground."],
+    todayAr: ["مواضعُ نجومٍ لم تُتجاوَز حتى جاء المِرقب.", "مرصدُه في سمرقند — وقوسُ السُّدس ما زال في الأرض."],
     strength: "Documented — the catalogue survives and the observatory's foundations were excavated in 1908",
     strengthAr: "موثّق — الفهرس باقٍ، وأُسس المرصد نُقّب عنها سنة ١٩٠٨م",
     keys: ["ulugh beg","samarkand","observatory","star catalogue","sextant","ألغ بك","سمرقند","المرصد","فهرس النجوم","السدس"]
@@ -532,6 +552,8 @@ const GOLDEN_FIGURES = [
     afterAr: "كان «الحاوي» واحدًا من تسعة كتبٍ هي كلّ مكتبة كلّية الطبّ بباريس سنة ١٣٩٥م.",
     plain: "He was the first to write down how to tell smallpox from measles — and the first to insist a doctor keep notes on each patient.",
     plainAr: "أوّل من كتب الفرق بين الجدري والحصبة، وأوّل من أوجب على الطبيب أن يدوّن حال كلّ مريض.",
+    today: ["The patient file: writing down what you actually observed, case by case.", "Telling two diseases apart by their signs rather than by theory."],
+    todayAr: ["ملفُّ المريض: أن تُدوّن ما رأيتَه بالفعل، حالةً حالة.", "التفريقُ بين مرضين بعلاماتهما لا بالنظريّة."],
     strength: "Documented — his own surviving works and the Latin printings; the hanging-meat account is reported in the histories, not established",
     strengthAr: "موثّق — بكتبه الباقية وطبعاتها اللاتينية؛ وخبر تعليق اللحم مرويٌّ في كتب التراجم لا ثابت",
     keys: ["razi","rhazes","smallpox","measles","hospital","clinical","medicine","الرازي","الجدري","الحصبة","المستشفى","الطب","الحاوي"]
@@ -558,6 +580,8 @@ const GOLDEN_FIGURES = [
     afterAr: "صورته على جدار القاعة الكبرى في كلّية الطبّ بباريس، باسم Avicenna. وكثيرٌ ممّن يمرّ بها لا يعلم أنه مسلمٌ حفظ القرآن صغيرًا.",
     plain: "His medical textbook was the standard one in European universities for six hundred years.",
     plainAr: "كان كتابه في الطبّ هو المقرَّر في جامعات أوروبا ستّمئة سنة.",
+    today: ["The medical textbook and the idea of a syllabus to be examined on.", "Testing a drug before trusting it."],
+    todayAr: ["الكتابُ الجامع في الطبّ، وفكرةُ منهجٍ يُمتحَن فيه.", "أن يُختبَر الدواء قبل أن يُوثق به."],
     strength: "Documented — his own surviving work, the Latin translations, and the university records that show it on the syllabus",
     strengthAr: "موثّق — بكتابه الباقي، وبالترجمات اللاتينية، وبسجلّات الجامعات التي تُظهره في المقرّر",
     keys: ["ibn sina","avicenna","canon","medicine","contagion","tuberculosis","clinical trial","ابن سينا","القانون","الطب","العدوى","السل","التجربة السريرية"]
@@ -583,6 +607,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تُرجمت المقالة الجراحية في طليطلة على يد جيرارد الكريموني، فصارت مرجع الجراحة في أوروبا. وذكره غي دي شولياك في جراحته الفرنسية في القرن الرابع عشر باسم Albucasis أكثر من مئتَي مرّة.",
     plain: "He drew about two hundred surgical instruments. Surgeons were still using his designs eight hundred years later.",
     plainAr: "رسم نحو مئتي آلةٍ جراحية، وظلّ الجرّاحون يستعملون تصاميمه بعده بثمانمئة سنة.",
+    today: ["Instrument shapes still lying in a surgical tray — the forceps, the scalpel, the retractor.", "Catgut, the thread that dissolves inside the body.", "Using plaster to hold a broken bone still."],
+    todayAr: ["أشكالُ آلاتٍ ما زالت في صينيّة الجرّاح — الملقط والمِبضع والمِبعاد.", "خيطُ الأمعاء الذي يذوب داخل البدن.", "استعمالُ الجبس في تثبيت الكسر."],
     strength: "Documented — his own surviving illustrated work and the Latin translation made from it",
     strengthAr: "موثّق — بكتابه المصوَّر الباقي، وبالترجمة اللاتينية المنقولة عنه",
     keys: ["zahrawi","abulcasis","surgery","instruments","catgut","cordoba","الزهراوي","الجراحة","الآلات","التصريف","قرطبة"]
@@ -609,6 +635,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ونُسب الفضل إلى ميغيل سرفيتوس سنة ١٥٥٣م ووليم هارفي سنة ١٦٢٨م. ثم وُجد مخطوط ابن النفيس في المكتبة البروسية ببرلين سنة ١٩٢٤م على يد الطبيب المصري محيي الدين التطاوي، وكتب فيه أطروحته. وما زالت الكتب المدرسية بطيئةً في التصحيح.",
     plain: "He worked out that blood goes from the heart to the lungs and back — about three centuries before Europe did.",
     plainAr: "أدرك أنّ الدم يذهب من القلب إلى الرئة ثم يعود، قبل أوروبا بنحو ثلاثة قرون.",
+    today: ["The path your blood takes through the lungs, exactly as taught in school biology."],
+    todayAr: ["مسارُ دمك في الرئتين، كما يُدرَّس في الأحياء تمامًا."],
     strength: "Documented — the manuscript survives in Berlin and the 1924 rediscovery is a matter of record",
     strengthAr: "موثّق — المخطوط باقٍ في برلين، واكتشافه سنة ١٩٢٤م أمرٌ مسجَّل",
     keys: ["ibn nafis","pulmonary","circulation","blood","heart","lung","harvey","servetus","ابن النفيس","الدورة الدموية","القلب","الرئة","الدم","التشريح"]
@@ -634,6 +662,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تُرجم «التيسير» إلى اللاتينية وطُبع مرارًا في البندقية. و«اكتُشفت» دُوَيْبّة الجرب من جديدٍ في أوروبا سنة ١٦٨٧م.",
     plain: "He tried an operation on an animal before doing it on a person. That idea is now a rule everywhere.",
     plainAr: "كان يجرّب العمل الجراحيّ على حيوانٍ قبل إجرائه على إنسان، وهذا اليوم قاعدةٌ في كلّ مكان.",
+    today: ["Trying a procedure on an animal before performing it on a person.", "Knowing that scabies is a living mite you can see, not an imbalance."],
+    todayAr: ["تجريبُ العمل الجراحيّ على حيوانٍ قبل إجرائه على إنسان.", "العلمُ بأنّ الجرب دُويبّةٌ حيّةٌ تُرى، لا خلَلَ أخلاط."],
     strength: "Documented — his own surviving work and its Latin printings",
     strengthAr: "موثّق — بكتابه الباقي وطبعاته اللاتينية",
     keys: ["ibn zuhr","avenzoar","surgery","scabies","tracheotomy","seville","ابن زهر","الجراحة","الجرب","شق الحنجرة","إشبيلية"]
@@ -662,6 +692,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تُرجم إلى اللاتينية باسم De Aspectibus فأثّر في روجر بيكون وفيتيلو وليوناردو وكبلر، بل يبدأ عمل كبلر في العين من حيث انتهى. وكلمة camera الإنجليزية ترجع إلى غرفته المظلمة. وسمّت اليونسكو سنة ٢٠١٥م السنة الدولية للضوء في الذكرى الألفية لكتاب المناظر.",
     plain: "He proved that we see because light enters the eye, not because the eye sends something out. On the way he wrote down the method science still runs on: guess, test, and let the test decide.",
     plainAr: "برهن أنّ الإبصار بدخول الضوء إلى العين لا بخروج شيءٍ منها. وكتب في طريقه المنهجَ الذي يقوم عليه العلم إلى اليوم: فرضٌ، ثم تجربة، ثم تحكم التجربة.",
+    today: ["The scientific method itself: a claim, an experiment built to break it, then the result.", "The <strong>camera</strong> — the word comes from <em>al-qamarah</em>, the dark room.", "The reason you see anything: light comes from the object into your eye."],
+    todayAr: ["المنهجُ العلميّ نفسُه: دعوى، ثم تجربةٌ تُبنى لنقضها، ثم النتيجة.", "<strong>الكاميرا</strong> — واللفظُ من «القُمرة»، وهي الغرفةُ المظلمة.", "سببُ إبصارك أصلًا: أنّ الضوء يأتي من الشيء إلى عينك."],
     strength: "Documented — his own surviving work, the Latin translation, and the European authors who cite it",
     strengthAr: "موثّق — بكتابه الباقي، وبالترجمة اللاتينية، وبمن نقل عنه من الأوروبيين",
     keys: ["ibn al-haytham","alhazen","optics","light","vision","camera","scientific method","experiment","ابن الهيثم","المناظر","البصريات","الضوء","الإبصار","الكاميرا","المنهج التجريبي","التجربة"]
@@ -687,6 +719,8 @@ const GOLDEN_FIGURES = [
     afterAr: "لم يكد الكتاب يُعرف في الغرب إلى القرن التاسع عشر، وكان كلّ ما فيه قد اكتُشف من جديدٍ على أيدي غيره.",
     plain: "He measured how heavy fifty different materials are, so precisely that modern instruments barely correct him.",
     plainAr: "قاس كثافة خمسين مادّة بدقّةٍ لا تكاد أجهزة اليوم تصحّح فيها شيئًا.",
+    today: ["Density tables — the numbers barely corrected since.", "Testing whether a metal is genuine by weighing it in water."],
+    todayAr: ["جداولُ الكثافة — وما صُحّحت أرقامُها إلا قليلًا.", "اختبارُ صدق المعدن بوزنه في الماء."],
     strength: "Documented — his own surviving work",
     strengthAr: "موثّق — بكتابه الباقي",
     keys: ["khazini","density","specific gravity","balance","gravity","buoyancy","الخازني","الكثافة","الوزن النوعي","الميزان","الجاذبية","الطفو"]
@@ -715,6 +749,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تنبيهٌ للأمانة: كُتبت بعده مجموعةٌ كبيرةٌ من المصنّفات اللاتينية على أيدي أوروبيّين ونُشرت باسم Geber استعارةً لسلطانه، ويسمّي المؤرّخون صاحبها «جابر المنتحَل». فبعض ما يدور باسمه ليس له، ويجب أن يُقال هذا صراحةً، لأنه بعينه ما يُتّخذ ذريعةً لردّ السجلّ كلّه.",
     plain: "He turned alchemy into laboratory work: real apparatus, a written procedure, and a record of what happened.",
     plainAr: "نقل الكيمياء من الدعاوى إلى المعمل: آلاتٌ حقيقية، وخطواتٌ مكتوبة، وتدوينٌ لما وقع.",
+    today: ["The laboratory: apparatus, a written procedure, and a result anyone can repeat.", "Distillation — perfume, fuel and much of medicine come through it.", "The word <strong>alkali</strong>, and much of the vocabulary of chemistry."],
+    todayAr: ["المعملُ: آلاتٌ، وإجراءٌ مكتوب، ونتيجةٌ يُعيدها كلُّ أحد.", "التقطيرُ — وبه العطرُ والوقودُ وكثيرٌ من الدواء.", "كلمةُ <strong>القِلْي</strong> (alkali)، وكثيرٌ من ألفاظ الكيمياء."],
     strength: "Documented for the Arabic corpus and the apparatus; the attribution of individual treatises to the man himself is debated by historians, and the Latin “Geber” works are known forgeries",
     strengthAr: "موثّقٌ في المجموعة العربية والآلات؛ وأما نسبة آحاد الرسائل إليه بعينه فمختلَفٌ فيها عند المؤرّخين، ومصنّفات Geber اللاتينية منتحَلةٌ معروفة",
     keys: ["jabir","geber","chemistry","alchemy","distillation","alembic","alkali","alcohol","جابر بن حيان","الكيمياء","التقطير","الإنبيق","القلي","الكحل"]
@@ -742,6 +778,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تقوم اليوم في المتاحف نماذج عاملةٌ مصنوعةٌ من رسومه، لأنّ الرسوم تامّةٌ تكفي للصنع منها. وهو غير مذكورٍ في أكثر تواريخ الهندسة.",
     plain: "He described the crankshaft and the camshaft. Those two parts are why an engine can work at all.",
     plainAr: "وصف عمود المرفق وعمود الحدبات، وبهذين الجزأين أمكن للمحرّك أن يعمل أصلًا.",
+    today: ["The <strong>crankshaft</strong> — turning round motion into straight, in every car engine.", "The <strong>camshaft</strong> that opens and closes the valves.", "Machines that run through a sequence on their own."],
+    todayAr: ["<strong>عمودُ المِرفق</strong> — يحوّل الدوران إلى حركةٍ مستقيمة، وهو في كلّ محرّك سيّارة.", "<strong>عمودُ الحدبات</strong> الذي يفتح الصمّامات ويُغلقها.", "آلاتٌ تمضي في سلسلة خطواتٍ من نفسها."],
     strength: "Documented — his own illustrated manuscript survives in several copies",
     strengthAr: "موثّق — مخطوطه المصوَّر باقٍ في نسخٍ عدّة",
     keys: ["jazari","crankshaft","camshaft","pump","machine","robot","clock","engineering","الجزري","عمود المرفق","الحدبات","المضخة","الآلات","الحيل","الساعة","الهندسة"]
@@ -767,6 +805,8 @@ const GOLDEN_FIGURES = [
     afterAr: "وكان كتابهم من مصادر الجزري. وأُعيد ابتكار التحكّم بالتغذية الراجعة في أوروبا زمن الثورة الصناعية.",
     plain: "Three brothers who wrote a book of a hundred machines, some of which adjusted themselves — the idea behind automatic control.",
     plainAr: "ثلاثة إخوةٍ صنّفوا كتابًا في مئة آلة، بعضها يضبط نفسه بنفسه، وهي فكرة التحكّم الآليّ.",
+    today: ["Automatic control — a machine that corrects itself without a hand on it.", "The idea behind a thermostat and a float valve."],
+    todayAr: ["التحكّمُ الذاتيّ — آلةٌ تُصحّح نفسها بغير يدٍ عليها.", "الفكرةُ التي يقوم عليها المِنظام وصمّامُ العوّامة."],
     strength: "Documented — their own surviving work",
     strengthAr: "موثّق — بكتابهم الباقي",
     keys: ["banu musa","hiyal","machines","automatic","control","baghdad","بنو موسى","الحيل","الآلات","التحكم","بغداد","بيت الحكمة"]
@@ -786,12 +826,17 @@ const GOLDEN_FIGURES = [
     detail: "Ibn Firnas was a poet, astronomer and maker of instruments who is credibly recorded as having devised a planetarium-like room, worked on cutting rock crystal, and made a water clock.\n\nThe famous story is the flight: that he covered himself with feathers, fixed two wings, launched from a height, glided some distance and was injured on landing because he had not accounted for a tail. What must be said plainly is where this comes from. The account is preserved by al-Maqqari, a historian of the seventeenth century, quoting earlier writers, and it is not in a contemporary source we still have. So it is reported in the histories, not documented from his own time. It may well be true. But the honest label belongs on it, and the record of this civilisation is strong enough that nothing is lost by saying so.",
     detailAr: "كان ابن فرناس شاعرًا وفلكيًّا وصانع آلات، وقد صحّ عنه أنه اتّخذ في بيته ما يشبه قبّة فلكٍ تُحاكي السماء، وعمل في قطع البلّور، وصنع ساعةً مائية.\n\nوأما القصّة المشهورة فهي الطيران: أنه كسا نفسه بالريش وركّب جناحين وطار من موضعٍ عالٍ فانساب مسافةً ثم أصابه أذًى عند النزول لأنه لم يجعل لنفسه ذَنَبًا. والذي يجب أن يُقال صراحةً هو من أين جاء الخبر. فهو محفوظٌ عند المقّري، وهو مؤرّخٌ من القرن الحادي عشر الهجري، ينقل عمّن قبله، وليس في مصدرٍ معاصرٍ له بقي بين أيدينا. فهو إذًا مرويٌّ في كتب التاريخ لا موثَّقٌ من زمنه. وقد يكون صحيحًا. لكنّ الوصف الأمين حقُّه أن يُثبت عليه، وسجلّ هذه الحضارة من القوّة بحيث لا يضيع بذلك شيء.",
     works: [
-      { t: "—", tAr: "—", d: "No book of his survives; he is known through what others recorded.", dAr: "لم يبقَ له كتاب، وإنما يُعرف بما سجّله غيره." }
+      { t: "\u2014", tAr: "\u2014", d: "No book of his survives; he is known through what others recorded.", dAr: "لم يبقَ له كتاب، وإنما يُعرف بما سجّله غيره." }
     ],
     after: "Baghdad International Airport's original name and a bridge in Cordoba carry his name, and a lunar crater too.",
     afterAr: "حمل اسمه مطار بغداد الدولي في تسميته الأولى، وجسرٌ في قرطبة، وفُوَّهةٌ على القمر.",
     plain: "He tried to fly with wings in Cordoba. The site states plainly which parts of that story the sources actually support and which they do not.",
     plainAr: "حاول الطيران بجناحين في قرطبة. والموقع يبيّن صراحةً ما تحتمله المصادر من الخبر وما لا تحتمله.",
+    worksIcon: "🕊️",
+    worksHead: "What he attempted",
+    worksHeadAr: "ما حاول",
+    today: ["A crater on the far side of the Moon carries his name.", "The attempt itself is what is remembered — and this card is careful about the evidence for it."],
+    todayAr: ["فُوّهةٌ في الجانب البعيد من القمر تحمل اسمه.", "والمحفوظُ هو المحاولةُ نفسُها — وهذه البطاقةُ تتحرّى في دليلها."],
     strength: "Reported in the histories — the flight account comes from al-Maqqari in the 17th century quoting earlier writers, not from a surviving contemporary source",
     strengthAr: "مرويٌّ في كتب التاريخ — خبر الطيران عند المقّري في القرن الحادي عشر الهجري نقلًا عمّن قبله، لا من مصدرٍ معاصرٍ باقٍ",
     keys: ["ibn firnas","flight","flying","cordoba","glider","wings","ابن فرناس","الطيران","قرطبة","الجناحان","الأندلس"]
@@ -818,6 +863,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ويُؤرَّخ لقوّة البخار في أكثر الكتب من سافري ونيوكومن بعده بمئةٍ وعشرين سنة.",
     plain: "He described steam turning a spit, and a six-cylinder pump — in the sixteenth century.",
     plainAr: "وصف بخارًا يُدير سفّودًا، ومضخّةً بستّة مكابس، في القرن السادس عشر.",
+    today: ["The principle of a steam turbine — steam turning a wheel.", "The multi-cylinder pump."],
+    todayAr: ["مبدأُ العنفة البخاريّة — بخارٌ يُدير دولابًا.", "المضخّةُ ذاتُ الأسطوانات المتعدّدة."],
     strength: "Documented — his own surviving works",
     strengthAr: "موثّق — بكتبه الباقية",
     keys: ["taqi ad-din","steam","turbine","pump","istanbul","observatory","clock","تقي الدين","البخار","العنفة","المضخة","إسطنبول","المرصد","الساعة"]
@@ -845,6 +892,8 @@ const GOLDEN_FIGURES = [
     afterAr: "استعملها ملّاحو أوروبا قرونًا. وأُتلف القرص الفضّي في فتنة، وبقي الكتاب.",
     plain: "He drew the most accurate map of the world that existed for the next three hundred years.",
     plainAr: "رسم أدقّ خريطةٍ للعالم عُرفت في الثلاثمئة سنة التالية.",
+    today: ["A map built from many travellers' reports checked against each other, not from one man's guess."],
+    todayAr: ["خريطةٌ تُبنى من أخبار رحّالةٍ كثيرين يُقابَل بعضها ببعض، لا من تخمين رجلٍ واحد."],
     strength: "Documented — the book and its maps survive",
     strengthAr: "موثّق — الكتاب وخرائطه باقية",
     keys: ["idrisi","map","geography","world map","sicily","nile","الإدريسي","الخريطة","الجغرافيا","نزهة المشتاق","صقلية","النيل"]
@@ -870,6 +919,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ماركو بولو اسمٌ يعرفه كلُّ بيتٍ في الغرب، وابن بطّوطة — وقد طاف ثلاثة أضعافه وسجّل أضعاف ما سجّل — لا يكاد يُعرف.",
     plain: "He travelled about 117,000 km over twenty-nine years — three times as far as Marco Polo.",
     plainAr: "سافر نحو مئةٍ وسبعة عشر ألف كيلومتر في تسعٍ وعشرين سنة، ثلاثة أضعاف ما قطعه ماركو بولو.",
+    today: ["The travel book as a form of writing.", "Eyewitness detail historians still cite for fourteenth-century Africa and Asia."],
+    todayAr: ["أدبُ الرحلة صنفًا من التأليف.", "تفصيلُ شاهد عيانٍ ما زال المؤرّخون ينقلونه عن إفريقيا وآسيا في القرن الرابع عشر."],
     strength: "Documented — the Rihla survives; some individual episodes are questioned by historians and that is normal for any travel account",
     strengthAr: "موثّق — «الرحلة» باقية؛ وبعض أخبارها المفردة موضع نظرٍ عند المؤرّخين، وهذا معتادٌ في كتب الرحلات",
     keys: ["ibn battuta","travel","rihla","mali","china","india","marco polo","ابن بطوطة","الرحلة","السفر","مالي","الصين","الهند"]
@@ -898,6 +949,8 @@ const GOLDEN_FIGURES = [
     afterAr: "وصف أرنولد توينبي «المقدّمة» بأنها أعظم ما أُنشئ في بابها في أيّ زمانٍ ومكان. وهو اليوم يُدرَّس مؤسِّسًا لعلم الاجتماع والاقتصاد — بعد ستّة قرونٍ من تصنيفه، وفي غير بلاد المسلمين غالبًا.",
     plain: "He invented the study of how societies rise and fall. Sociology begins with him.",
     plainAr: "أنشأ علم العمران: كيف تقوم المجتمعات وكيف تسقط. وعلم الاجتماع يبدأ عنده.",
+    today: ["Sociology and economics as subjects you can study.", "The rule that a tax raised too high collects less, not more.", "<em>Asabiyyah</em> — group solidarity, still quoted by name."],
+    todayAr: ["علمُ الاجتماع والاقتصاد علمَين يُدرَسان.", "القاعدةُ أنّ الضريبة إذا أُفرط في رفعها قلّ حاصلُها لا زاد.", "<em>العصبيّة</em> — وما زالت تُنقل باسمها."],
     strength: "Documented — his own surviving work",
     strengthAr: "موثّق — بكتابه الباقي",
     keys: ["ibn khaldun","muqaddimah","sociology","asabiyyah","civilisation","decline","economics","tax","ابن خلدون","المقدمة","علم الاجتماع","العصبية","العمران","سقوط الحضارة","الاقتصاد","الجباية"]
@@ -925,6 +978,11 @@ const GOLDEN_FIGURES = [
     afterAr: "وتبدأ كتب تاريخ «الجامعة» عادةً من بولونيا سنة ١٠٨٨م.",
     plain: "The oldest university in the world that still gives degrees was founded by a Muslim woman.",
     plainAr: "أقدم جامعةٍ في العالم ما تزال تمنح الشهادات، أسّستها امرأةٌ مسلمة.",
+    worksIcon: "🏛️",
+    worksHead: "What she built",
+    worksHeadAr: "ما بَنَت",
+    today: ["Al-Qarawiyyin in Fez — open, teaching, and older than any university in Europe.", "The certificate you graduate with descends from the <em>ijazah</em> given there."],
+    todayAr: ["القرويّون بفاس — قائمةٌ تُدرِّس، وأقدمُ من كلّ جامعةٍ في أوروبا.", "الشهادةُ التي تتخرّج بها منحدرةٌ من <em>الإجازة</em> التي كانت تُمنح فيها."],
     strength: "Documented — the institution stands and teaches; the UNESCO and Guinness recognitions are on record",
     strengthAr: "موثّق — المؤسسة قائمةٌ يُدرَّس فيها، وإقرار اليونسكو وغينيس مسجَّل",
     keys: ["qarawiyyin","fatima al-fihri","university","fez","women","education","القرويين","فاطمة الفهرية","الجامعة","فاس","المرأة","التعليم"]
@@ -950,6 +1008,11 @@ const GOLDEN_FIGURES = [
     afterAr: "وأول ما ظهر في أوروبا من المستشفيات بهذا المعنى كان بعد الاتّصال ببلاد المسلمين عبر صقلّية والأندلس والشام.",
     plain: "Free treatment for anyone who came, separate wards, written records, teaching on the wards, and an exam before a man was allowed to practise. That is a modern hospital, a thousand years early.",
     plainAr: "علاجٌ مجّاني لكلّ قادم، وأقسامٌ مفصولة، وسجلّاتٌ مكتوبة، وتعليمٌ في المشافي، وامتحانٌ قبل أن يُؤذن للطبيب بالمزاولة. هذا مستشفى اليوم قبل ألف سنة.",
+    worksIcon: "🏛️",
+    worksHead: "What was built",
+    worksHeadAr: "ما أُقيم",
+    today: ["Treatment given free, whoever walks in.", "Separate wards for different illnesses.", "Written patient records, and an examination before a man may practise."],
+    todayAr: ["علاجٌ يُبذل مجّانًا لكلّ من دخل.", "أقسامٌ منفصلةٌ لكلّ داء.", "سجلّاتٌ مكتوبةٌ للمرضى، وامتحانٌ قبل أن يُؤذن لأحدٍ بالطبابة."],
     strength: "Documented — the buildings survive in Damascus and Cairo, along with their endowment deeds and the chronicles recording the 931 examination",
     strengthAr: "موثّق — الأبنية قائمةٌ في دمشق والقاهرة، ومعها وثائق أوقافها، والتواريخ المسجِّلة لامتحان سنة ٣١٩هـ",
     keys: ["hospital","bimaristan","waqf","free treatment","licensing","pharmacy","medicine","البيمارستان","المستشفى","الوقف","العلاج المجاني","الترخيص","الصيدلة","الطب"]
@@ -975,6 +1038,11 @@ const GOLDEN_FIGURES = [
     afterAr: "واحتاجت الطباعة الأوروبية بعد أربعة قرونٍ إلى ورقٍ رخيصٍ ليكون لها معنى، وقد وجدته، من هذا الطريق.",
     plain: "Muslims took paper from China and made it cheap. Cheap paper is why books stopped being for the rich.",
     plainAr: "أخذ المسلمون الورق عن الصين فأرخصوه، ورخصُ الورق هو الذي أخرج الكتاب من أن يكون للأغنياء وحدهم.",
+    worksIcon: "🏭",
+    worksHead: "What was built",
+    worksHeadAr: "ما أُقيم",
+    today: ["Cheap paper — the notebook, the book, the receipt in your pocket.", "The paper mill, which is where mass production of anything to read begins."],
+    todayAr: ["الورقُ الرخيص — الدفترُ والكتابُ والوصلُ في جيبك.", "مطحنةُ الورق، وبها يبدأ إنتاجُ كلّ ما يُقرأ على كثرة."],
     strength: "Documented — the mills, the trade and the transmission route are recorded in both Muslim and European sources; the exact size of the Cordoba library is reported in the histories and the figure varies between them",
     strengthAr: "موثّق — المطاحن والتجارة وطريق الانتقال مسجَّلةٌ في مصادر المسلمين وأوروبا؛ وأما عدد مكتبة قرطبة فمرويٌّ في كتب التاريخ ويختلف الرقم بينها",
     keys: ["paper","books","library","cordoba","baghdad","printing","talas","الورق","الكتب","المكتبة","قرطبة","بغداد","الطباعة","الورّاقين"]
@@ -1002,6 +1070,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ويُؤرَّخ للكسور العشرية في أوروبا عادةً بسيمون ستيفن سنة ١٥٨٥م — بعده بستّمئة سنة.",
     plain: "The decimal point — the dot in 3.5 — is written down for the first time by him.",
     plainAr: "الفاصلة العشرية — النقطة في مثل ٣٫٥ — أوّل ما دُوّنت عنده.",
+    today: ["The <strong>decimal point</strong> — every price and every measurement you read."],
+    todayAr: ["<strong>الفاصلةُ العشريّة</strong> — في كلّ سعرٍ وكلّ مقدارٍ تقرؤه."],
     strength: "Documented — his own surviving manuscript",
     strengthAr: "موثّق — بمخطوطه الباقي",
     keys: ["uqlidisi","decimal","fraction","arithmetic","decimal point","الإقليدسي","الكسور العشرية","الحساب","الفاصلة العشرية"]
@@ -1028,6 +1098,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ويُسمّى المثلّث «مثلّث باسكال»، وقد وُلد باسكال سنة ١٦٢٣م، بعد أن أورده السموأل بنحو خمسة قرون.",
     plain: "They separated algebra from drawing shapes, and wrote down proof by induction — still one of the main tools of mathematics.",
     plainAr: "فصلا الجبر عن الأشكال الهندسية، ودوّنا البرهان بالاستقراء، وهو إلى اليوم من أهمّ أدوات الرياضيات.",
+    today: ["Proof by induction, taught in every mathematics degree.", "Algebra done with symbols instead of drawn shapes."],
+    todayAr: ["البرهانُ بالاستقراء، يُدرَّس في كلّ قسم رياضيّات.", "الجبرُ يُعمل بالرموز لا بالأشكال المرسومة."],
     strength: "Documented — both works survive",
     strengthAr: "موثّق — الكتابان باقيان",
     keys: ["karaji","samawal","algebra","induction","polynomial","binomial","pascal","الكرجي","السموأل","الجبر","الاستقراء","كثيرات الحدود","مثلث باسكال"]
@@ -1054,6 +1126,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تنبيهٌ للأمانة: كان صابئيًّا لا مسلمًا، ولا يصحّ عدُّه في علماء المسلمين. وإنما موضعه من هذه الصفحة لمعنًى آخر: شهادةً على طبيعة تلك الحضارة لمن عمل فيها.",
     plain: "One of the best minds in the House of Wisdom was not a Muslim, and the page says so — that is the point of including him.",
     plainAr: "من أنبغ عقول بيت الحكمة رجلٌ لم يكن مسلمًا، والصفحة تقول ذلك صراحةً، وهذا هو المقصود من ذكره.",
+    today: ["Results in number theory still taught under his name.", "The translations without which much of Greek mathematics would be lost."],
+    todayAr: ["نتائجُ في نظريّة الأعداد ما زالت تُدرَّس باسمه.", "التراجمُ التي لولاها لضاع كثيرٌ من رياضيّات اليونان."],
     strength: "Documented — his own surviving works and translations",
     strengthAr: "موثّق — بمصنّفاته وترجماته الباقية",
     keys: ["thabit","qurra","amicable numbers","translation","sabian","calculus","ثابت بن قرة","الأعداد المتحابة","الترجمة","الصابئة","بيت الحكمة"]
@@ -1081,6 +1155,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ويُنسب «اكتشاف» المرأة المسلسلة عادةً إلى سيمون ماريوس سنة ١٦١٢م. وسُمّيت فُوَّهةٌ قمريةٌ باسم Azophi — بالاسم اللاتيني مرّةً أخرى.",
     plain: "He wrote down the Andromeda galaxy a thousand years before anyone knew galaxies existed.",
     plainAr: "دوّن مجرّة المرأة المسلسلة قبل أن يعرف أحدٌ أنّ المجرّات موجودة بألف سنة.",
+    today: ["Andromeda — the galaxy you can see with your own eyes on a dark night.", "Star names still used by astronomers."],
+    todayAr: ["المجرّةُ أندروميدا — تراها بعينك في ليلةٍ مظلمة.", "أسماءُ نجومٍ ما زال الفلكيّون يستعملونها."],
     strength: "Documented — his own illustrated work survives in many copies",
     strengthAr: "موثّق — كتابه المصوَّر باقٍ في نسخٍ كثيرة",
     keys: ["sufi","azophi","stars","andromeda","galaxy","constellation","catalogue","الصوفي","صور الكواكب","المرأة المسلسلة","المجرة","النجوم"]
@@ -1106,6 +1182,8 @@ const GOLDEN_FIGURES = [
     afterAr: "وسُمّيت فُوَّهةٌ قمريةٌ باسم Alfraganus.",
     plain: "Europe learned its astronomy from his book for seven hundred years — and Columbus misread one of his numbers.",
     plainAr: "تعلّمت أوروبا الفلك من كتابه سبعمئة سنة، وأخطأ كولومبوس في قراءة رقمٍ من أرقامه.",
+    today: ["The measurements of the earth and sky Europe worked from for seven centuries."],
+    todayAr: ["مقاديرُ الأرض والسماء التي عملت بها أوروبا سبعة قرون."],
     strength: "Documented — his own work and the two Latin translations; the Columbus mile confusion is standard in the history of navigation",
     strengthAr: "موثّق — بكتابه وترجمتيه اللاتينيتين؛ والتباس الميل عند كولمبس مقرَّرٌ في تاريخ الملاحة",
     keys: ["farghani","alfraganus","astronomy","columbus","earth size","dante","الفرغاني","الفلك","كولمبس","حجم الأرض","دانتي"]
@@ -1131,6 +1209,8 @@ const GOLDEN_FIGURES = [
     afterAr: "واستعمل لابلاس وغيره أرصاد كسوفاته في دراسة التسارع القمري.",
     plain: "His observations were so careful that scientists used them eight centuries later to test Newton.",
     plainAr: "كانت أرصاده من الدقّة بحيث استعملها العلماء بعده بثمانية قرونٍ لاختبار نظرية نيوتن.",
+    today: ["Observations exact enough that Newton's theory was tested against them eight centuries on."],
+    todayAr: ["أرصادٌ من الدقّة بحيث اختُبرت بها نظريّةُ نيوتن بعد ثمانية قرون."],
     strength: "Documented — his Zij survives, and its later scientific use is a matter of record",
     strengthAr: "موثّق — زيجه باقٍ، واستعماله العلميّ بعده مسجَّل",
     keys: ["ibn yunus","cairo","eclipse","zij","moon","newton","laplace","ابن يونس","القاهرة","الكسوف","الزيج","القمر"]
@@ -1160,6 +1240,8 @@ const GOLDEN_FIGURES = [
     afterAr: "وهو في لوحة رفائيل «مدرسة أثينا»، معتمًّا، في المقدّمة، باسم Averroes.",
     plain: "Europe got Aristotle back through him. Much of what Europe knew of its own Greek heritage came by way of a Muslim judge in Cordoba.",
     plainAr: "عادت أرسطو إلى أوروبا من طريقه. وكثيرٌ ممّا عرفته أوروبا من تراثها اليوناني جاءها عن قاضٍ مسلمٍ في قرطبة.",
+    today: ["Aristotle back inside European universities.", "Keeping a judge's reasoning separate from his personal preference."],
+    todayAr: ["أرسطو عائدًا إلى جامعات أوروبا.", "فصلُ استدلال القاضي عن هواه."],
     strength: "Documented — his own surviving works, the Latin translations, and the European authors who argue with him by name",
     strengthAr: "موثّق — بكتبه الباقية وترجماتها اللاتينية وبمن ناقشه من الأوروبيين باسمه",
     keys: ["ibn rushd","averroes","aristotle","philosophy","medicine","immunity","cordoba","smallpox","ابن رشد","أرسطو","الفلسفة","الطب","المناعة","قرطبة","الجدري","بداية المجتهد"]
@@ -1185,6 +1267,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تُرجم إلى اللاتينية واستُعمل في صيدلة أوروبا إلى القرن الثامن عشر.",
     plain: "He listed about 1,400 medicines, and he went and looked at the plants himself instead of copying earlier books.",
     plainAr: "أحصى نحو ألفٍ وأربعمئة دواء، وكان يذهب فينظر إلى النبات بنفسه بدل النقل عمّن سبقه.",
+    today: ["The pharmacopoeia — a checked, alphabetical list of what a medicine is and does.", "Going and looking at the plant yourself instead of copying an older book."],
+    todayAr: ["الأقرباذين — قائمةٌ محقّقةٌ مرتّبةٌ بما هو الدواء وما يفعل.", "أن تذهب فتنظر إلى النبتة بنفسك لا أن تنقل عن كتابٍ أقدم."],
     strength: "Documented — his own surviving work",
     strengthAr: "موثّق — بكتابه الباقي",
     keys: ["ibn al-baitar","pharmacy","drugs","plants","botany","medicine","ابن البيطار","الصيدلة","الأدوية","النبات","المفردات"]
@@ -1212,6 +1296,8 @@ const GOLDEN_FIGURES = [
     afterAr: "ويُنسب تفسير قوس قزح عادةً إلى ديكارت بعده بثلاثمئة سنة.",
     plain: "He explained why a rainbow appears, using a glass ball of water on his desk as a giant raindrop.",
     plainAr: "فسّر سبب ظهور قوس قزح مستعملًا كرةً زجاجية مملوءةً ماءً على مكتبه، جعلها قطرة مطرٍ كبيرة.",
+    today: ["The explanation of the rainbow you were taught in physics."],
+    todayAr: ["تفسيرُ قوس قزح الذي دُرّسته في الفيزياء."],
     strength: "Documented — his own surviving work",
     strengthAr: "موثّق — بكتابه الباقي",
     keys: ["farisi","rainbow","refraction","light","optics","experiment","descartes","الفارسي","قوس قزح","الانكسار","الضوء","البصريات","التجربة"]
@@ -1240,6 +1326,11 @@ const GOLDEN_FIGURES = [
     afterAr: "وهو الوحيد في هذه الصفحة الذي يمكنك أن تدخل عمله غدًا.",
     plain: "He built around three hundred and fifty buildings, and most are still standing after five hundred years of earthquakes.",
     plainAr: "بنى نحو ثلاثمئة وخمسين منشأة، وأكثرها قائمٌ إلى اليوم بعد خمسمئة سنةٍ من الزلازل.",
+    worksIcon: "🕌",
+    worksHead: "What he built",
+    worksHeadAr: "ما بنى",
+    today: ["The Selimiye at Edirne and the Suleymaniye in Istanbul — go and stand in them.", "Dome engineering that has held through five centuries of earthquakes."],
+    todayAr: ["السليميّة بأدرنة والسليمانيّة بإستانبول — تقدر أن تقف فيهما.", "هندسةُ قبابٍ صمدت خمسة قرونٍ من الزلازل."],
     strength: "Documented — the buildings stand, and his own memoirs were recorded by his friend Sai Mustafa Celebi",
     strengthAr: "موثّق — الأبنية قائمة، وسيرته أملاها على صديقه سائي مصطفى چلبي",
     keys: ["sinan","architect","mosque","dome","earthquake","istanbul","selimiye","engineering","سنان","المعمار","الجامع","القبة","الزلزال","إسطنبول","السليمية","الهندسة"]
@@ -1268,6 +1359,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تنبيهٌ للأمانة: يدور حول هذه الخريطة كلامٌ كثيرٌ لا يصحّ، كأنها تُظهر القارّة الجنوبية بلا جليدٍ أو أنها رُسمت من الجوّ. وليس شيءٌ من ذلك بثابت، والخريطة لا تحتاج إليه. فحقيقتها — جمعٌ متقنٌ مذكورةٌ مصادره بعد كولمبس بإحدى وعشرين سنة — كافيةٌ من غير عون.",
     plain: "His 1513 map shows the coast of South America — and he wrote on the map itself which sources he used, which is what an honest scholar does.",
     plainAr: "خريطته سنة ١٥١٣ تُظهر ساحل أمريكا الجنوبية، وقد كتب على الخريطة نفسها المصادر التي اعتمدها، وهذا صنيع العالم الأمين.",
+    today: ["Naming your sources on the map itself.", "The 1513 map, still in the Topkapi palace."],
+    todayAr: ["أن تُسمّي مصادرك على الخريطة نفسها.", "خريطةُ ١٥١٣م، ما زالت في قصر طوب قابي."],
     strength: "Documented for the map and its own written notes; the popular claims about Antarctica are NOT established and are rejected by historians of cartography",
     strengthAr: "موثّقٌ في الخريطة وحواشيها بخطّه؛ وأما الدعاوى الشائعة عن القارّة الجنوبية فغير ثابتةٍ ويردّها مؤرّخو الخرائط",
     keys: ["piri reis","map","ottoman","america","navigation","atlantic","بيري ريس","الخريطة","العثمانية","أمريكا","الملاحة","الأطلسي"]
@@ -1297,6 +1390,8 @@ const GOLDEN_FIGURES = [
     afterAr: "تُرجم إلى اللاتينية وقُرئ في أوروبا باسم Alpharabius.",
     plain: "They called him the Second Teacher. The first was Aristotle.",
     plainAr: "سمّوه المعلّم الثاني، والأوّل أرسطو.",
+    today: ["Music written about as a science, with the intervals measured.", "The classification of the sciences — what counts as a field and where it sits."],
+    todayAr: ["الموسيقى يُكتب فيها علمًا، وتُقاس أبعادُها.", "إحصاءُ العلوم — ما الذي يُعدّ علمًا وأين موضعُه."],
     strength: "Documented — his own surviving works",
     strengthAr: "موثّق — بكتبه الباقية",
     keys: ["farabi","alpharabius","logic","philosophy","music","virtuous city","الفارابي","المنطق","الفلسفة","الموسيقى","المدينة الفاضلة","إحصاء العلوم"]
@@ -1325,6 +1420,11 @@ const GOLDEN_FIGURES = [
     afterAr: "وتبدأ كتب تاريخ الجامعة عادةً من بولونيا سنة ١٠٨٨م، بعد افتتاح نظاميّة بغداد بإحدى وعشرين سنة.",
     plain: "Colleges paid for by the state, with salaried teachers, scholarships and student housing — in the eleventh century.",
     plainAr: "مدارس تنفق عليها الدولة، فيها أساتذة برواتب، ومِنَحٌ للطلبة، وسكنٌ لهم — في القرن الحادي عشر.",
+    worksIcon: "🏛️",
+    worksHead: "What was built",
+    worksHeadAr: "ما أُقيم",
+    today: ["The salaried professor, paid to teach rather than to please a patron.", "Scholarships and student residences.", "The college as a funded institution that outlives the man who endowed it."],
+    todayAr: ["الأستاذُ برَزق، يُعطى ليُعلّم لا ليُرضي مُنعِمًا.", "المنحُ وأماكنُ سكن الطلبة.", "المدرسةُ مؤسّسةً موقوفةً تبقى بعد واقفها."],
     strength: "Documented — the endowment deeds, the chronicles and the named holders of the chairs",
     strengthAr: "موثّق — بوثائق الأوقاف والتواريخ وأسماء من ولي الكراسي",
     keys: ["nizamiyya","school","university","ghazali","nizam al-mulk","waqf","baghdad","النظامية","المدرسة","الجامعة","الغزالي","نظام الملك","الوقف","بغداد"]
