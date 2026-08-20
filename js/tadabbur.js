@@ -1600,6 +1600,15 @@ const TADABBUR = {
         arNoteAr: "بعضُ الآية، وتمامها: ﴿وَمَا يَعْلَمُ تَأْوِيلَهُۥٓ إِلَّا ٱللَّهُ ۗ وَٱلرَّٰسِخُونَ فِى ٱلْعِلْمِ يَقُولُونَ ءَامَنَّا بِهِۦ كُلٌّۭ مِّنْ عِندِ رَبِّنَا﴾.",
         why: "This is the verse that governs every other verse, which is why it belongs on a page about pondering. The Book is described as containing two kinds of material: muhkam — clear, decisive, and called the mother of the Book — and mutashabih, which can bear more than one sense.\n\nThen it names who goes wrong, and the fault is not intellectual. Those in whose hearts is a swerving pursue the ambiguous part, seeking discord and seeking an interpretation. They are not confused. They are shopping — going past the clear verses on purpose, to find something bendable.\n\nSo the rule for reading is set by the Book itself: the decisive verses are the reference point, and anything open is read back to them. A person who builds a position on one ambiguous phrase while walking past ten plain ones has been described here.",
         whyAr: "هذه الآية هي الحاكمة على سائر الآيات، ولذلك كانت أولى بصفحة التدبّر. وُصف الكتاب بأنّ فيه صنفين: **محكمًا** بيّنًا قاطعًا سُمّي ﴿أُمُّ ٱلْكِتَٰبِ﴾، و**متشابهًا** يحتمل أكثر من وجه.\n\nثم سُمّي مَن يزيغ، وليست العلّة في العقل: ﴿فَأَمَّا ٱلَّذِينَ فِى قُلُوبِهِمْ زَيْغٌۭ فَيَتَّبِعُونَ مَا تَشَٰبَهَ مِنْهُ ٱبْتِغَآءَ ٱلْفِتْنَةِ﴾. فليسوا في حَيرة، وإنما هم في **انتقاء**: يتجاوزون المحكم قصدًا التماسًا لما يقبل الليّ.\n\nفقاعدة القراءة قرّرها الكتاب بنفسه: المحكم هو المرجع، وما احتمل يُردّ إليه. ومن بنى قولًا على لفظٍ محتملٍ وترك عشرة محكماتٍ فقد وُصف ها هنا.",
+        links: [
+        {
+          ref: "Surah Yusuf (12:111)",
+          ar: "لَقَدْ كَانَ فِى قَصَصِهِمْ عِبْرَةٌۭ لِّأُو۟لِى ٱلْأَلْبَٰبِ ۗ مَا كَانَ حَدِيثًۭا يُفْتَرَىٰ وَلَٰكِن تَصْدِيقَ ٱلَّذِى بَيْنَ يَدَيْهِ وَتَفْصِيلَ كُلِّ شَىْءٍۢ وَهُدًۭى وَرَحْمَةًۭ لِّقَوْمٍۢ يُؤْمِنُونَ",
+          en: "“There was certainly in their stories a lesson for those of understanding. Never was the Qur'an a narration invented, but a confirmation of what was before it and a detailed explanation of all things and guidance and mercy for a people who believe.”",
+          how: "The other verse addressed to ulu al-albab. Here they are the ones who say we believe in it, all of it is from our Lord, while others chase what is unclear looking for discord. There they are the ones who cross from a story to its lesson — 'ibrah is from the root meaning to cross over. Both times understanding is defined by what a person DOES with a text, not by how much of it he holds.",
+          howAr: "الآيةُ الأخرى الموجّهة إلى أولي الألباب. فهم ههنا الذين يقولون ﴿ءَامَنَّا بِهِۦ كُلٌّۭ مِّنْ عِندِ رَبِّنَا﴾، وغيرُهم يتّبع ما تشابه ابتغاء الفتنة. وهم هناك الذين يعبرون من القصّة إلى عبرتها — والعبرةُ من مادّة العبور. وفي الموضعين حُدّ اللبُّ بما **يصنعه** المرء بالنصّ لا بمقدار ما يحفظ."
+        }
+        ],
         ref: "Surah Aal-Imran (3:7)",
         strength: "quran"
       },
@@ -1945,6 +1954,26 @@ const TADABBUR = {
         }
         ],
         ref: "Surah Al-Anfal (8:30)",
+        strength: "quran"
+      },
+
+      {
+        n: 53,
+        ar: "ذَٰلِكَ بِأَنَّ ٱللَّهَ لَمْ يَكُ مُغَيِّرًۭا نِّعْمَةً أَنْعَمَهَا عَلَىٰ قَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ ۙ وَأَنَّ ٱللَّهَ سَمِيعٌ عَلِيمٌۭ",
+        why: "The same law as Surah Ar-Ra'd, and this is the version that settles what it means.\n\n“That is because Allah would not change a FAVOUR He had bestowed upon a people until they change what is in themselves.”\n\nAr-Ra'd states it generally: He does not change what is with a people until they change what is in themselves. A reader can take that as a promise about rising. This verse is about a ni'mah — a blessing already given — and about it being withdrawn. The context is the destruction of the people of Pharaoh, named in the verse before and the verse after.\n\nSo the direction is settled: the law runs both ways, and here it is running downward.\n\nAnd what it says about a nation's decline is precise, and uncomfortable. The blessing was not removed first, with the people deteriorating afterwards as a result. They changed what was in themselves, and the outward loss followed. Whatever a community is inwardly is what it will shortly be outwardly.\n\nThe two names closing it are exactly chosen: Sami' and 'Alim — Hearing and Knowing. What is inside people is not visible, and the verse names the two attributes by which it is nevertheless known.",
+        whyAr: "القانونُ نفسه الذي في الرعد، وهذه هي الصيغةُ التي يتحرّر بها معناه.\n\n﴿ذَٰلِكَ بِأَنَّ ٱللَّهَ لَمْ يَكُ مُغَيِّرًۭا **نِّعْمَةً أَنْعَمَهَا** عَلَىٰ قَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ﴾.\n\nفالرعدُ تُقرّره عامًّا: لا يُغيّر ما بقومٍ حتى يُغيّروا ما بأنفسهم. وقد يأخذه القارئ وعدًا في الارتفاع. وهذه الآيةُ في **نعمةٍ** قد أُعطيت، وفي سلبها. والسياقُ إهلاكُ آل فرعون، مذكورًا في الآية قبلها وفي التي بعدها.\n\nفتحرّرت الجهة: القانونُ يجري في الاتّجاهين، وهو ههنا يجري نازلًا.\n\nوما تقوله في انحدار الأمم دقيقٌ ثقيل. فلم تُنزع النعمةُ أوّلًا فتردّى القومُ بعدها أثرًا لذلك. وإنما غيّروا ما بأنفسهم، فتبِع ذلك الفقدُ في الظاهر. فما تكون عليه الجماعةُ في باطنها هو ما تصير إليه في ظاهرها عن قريب.\n\nوالاسمان في الخاتمة مختاران على التحديد: ﴿سَمِيعٌ عَلِيمٌۭ﴾. فالذي في النفوس لا يُرى، فسُمّيت الصفتان اللتان به يُعلم مع ذلك.",
+        plain: "Ar-Ra'd states the law generally and a reader takes it as a promise about rising. This verse is about a BLESSING being withdrawn, in the middle of the destruction of Pharaoh's people — so the law runs both ways. And the inward change comes first; the outward loss follows it.",
+        plainAr: "الرعدُ تُقرّر القانون عامًّا فيأخذه القارئ وعدًا في الارتفاع. وهذه الآيةُ في **نعمةٍ تُسلب**، في سياق إهلاك آل فرعون — فالقانونُ يجري في الاتّجاهين. والتغيّرُ في الباطن أوّلًا، والفقدُ في الظاهر تابعٌ له.",
+        links: [
+        {
+          ref: "Surah Ar-Ra'd (13:11)",
+          ar: "لَهُۥ مُعَقِّبَٰتٌۭ مِّنۢ بَيْنِ يَدَيْهِ وَمِنْ خَلْفِهِۦ يَحْفَظُونَهُۥ مِنْ أَمْرِ ٱللَّهِ ۗ إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ ۗ وَإِذَآ أَرَادَ ٱللَّهُ بِقَوْمٍۢ سُوٓءًۭا فَلَا مَرَدَّ لَهُۥ ۚ وَمَا لَهُم مِّن دُونِهِۦ مِن وَالٍ",
+          en: "“For each one are successive [angels] before and behind him who protect him by the decree of Allah. Indeed, Allah will not change the condition of a people until they change what is in themselves. And when Allah intends for a people ill, there is no repelling it. And there is not for them besides Him any patron.”",
+          how: "The general statement this verse applies. Ar-Ra'd says Allah does not change what is with a people until they change what is in themselves; here the same rule is applied to a blessing being taken away, with Pharaoh's people named on either side. Read together they show the law is not a promise about rising only.",
+          howAr: "القاعدةُ العامّة التي تُنزّلها هذه الآية. فالرعدُ تقول ﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ﴾، وههنا نُزّلت على نعمةٍ تُسلب، وآلُ فرعون مذكورون قبلها وبعدها. فإذا قُرئتا معًا تبيّن أنّ القانون ليس وعدًا في الارتفاع وحده."
+        }
+        ],
+        ref: "Surah Al-Anfal (8:53)",
         strength: "quran"
       }
     ]
@@ -2930,6 +2959,46 @@ const TADABBUR = {
         whyAr: "القائلُ أهمّ من المقول. يعقوبُ فقد يوسفَ سنين، ثم فقد الثاني، وبكى حتى ذهب بصره. فليست هذه تسليةَ مرتاحٍ، وإنما رجلٌ في القاع يأمر بنيه ألّا يقطعوا الرجاء.\n\nوانظر ترتيب الأمرين، ففيه الدرس كلُّه: ﴿ٱذْهَبُوا۟ فَتَحَسَّسُوا۟﴾ أوّلًا، ثم ﴿وَلَا تَا۟يْـَٔسُوا۟﴾ ثانيًا. فلم يأمرهم أن يقعدوا راجين، وإنما أخرجهم للطلب ثم قال لهم ما يحملونه وهم يطلبون. فعُلّق الرجاءُ بالسعي، ولم يُجعل بدلًا منه.\n\nثم اللفظ: ﴿رَّوْحِ﴾ لا «رُوح». قال الراغب: الرَّوْح: الفرج وذهاب الغمّ، وهو من الرَّاحة ونسيم الريح. فما وعدهم برَدِّ يوسف، وإنما وعدهم **فرجًا** من الله، وهو أوسع، وقد جاء على وجهٍ لم يقدّره أحدٌ منهم.",
         ref: "Surah Yusuf (12:87) · Al-Mufradat, Ar-Raghib al-Isfahani, entry r-w-h",
         strength: "lugha"
+      },
+
+      {
+        n: 108,
+        ar: "قُلْ هَٰذِهِۦ سَبِيلِىٓ أَدْعُوٓا۟ إِلَى ٱللَّهِ ۚ عَلَىٰ بَصِيرَةٍ أَنَا۠ وَمَنِ ٱتَّبَعَنِى ۖ وَسُبْحَٰنَ ٱللَّهِ وَمَآ أَنَا۠ مِنَ ٱلْمُشْرِكِينَ",
+        why: "“Say: this is my way. I call to Allah upon BASIRAH — I and whoever follows me.”\n\nTwo things in that sentence decide how a person may call to Allah at all.\n\nThe first is basirah — clear sight, evidence, knowing what you are looking at. The calling is not permitted on enthusiasm. It is conditioned on seeing the matter clearly, and a man who does not have that is not doing what this verse describes.\n\nThe second is the clause almost everyone skips: “I AND WHOEVER FOLLOWS ME.” The condition is not laid on the Prophet ﷺ alone. Whoever follows him is included in the same requirement — the follower must also be upon insight, not merely upon agreement.\n\nSo the verse rules out two things at once, and they are the two failures that actually happen: calling people to Allah while ignorant of what you are saying, and following a caller without understanding what you have joined.\n\nAnd it closes with wa ma ana min al-mushrikin — I am not of those who associate. The declaration of the way ends by naming what the way is not, which is how the whole of Surah Yusuf works: a story of a man who was tested at every point and never once traded the matter away.",
+        whyAr: "﴿قُلْ هَٰذِهِۦ سَبِيلِىٓ أَدْعُوٓا۟ إِلَى ٱللَّهِ ۚ عَلَىٰ **بَصِيرَةٍ** أَنَا۠ وَمَنِ ٱتَّبَعَنِى﴾.\n\nأمران في هذه الجملة يُحدّان كيف تجوز الدعوةُ إلى الله أصلًا.\n\nالأوّل ﴿بَصِيرَةٍ﴾: وضوحُ الرؤية والبيّنة والعلمُ بما تنظر فيه. فلم تُبَح الدعوةُ على الحماسة، وإنما شُرطت برؤية الأمر جليًّا، ومن لم يكن كذلك فليس يصنع ما وصفته هذه الآية.\n\nوالثاني هي الجملةُ التي يكاد كلُّ أحدٍ يمرّ عليها: ﴿**أَنَا۠ وَمَنِ ٱتَّبَعَنِى**﴾. فليس الشرطُ على النبيّ ﷺ وحده. بل مَن تبعه داخلٌ في الشرط نفسه — فعلى التابع أيضًا أن يكون على بصيرة، لا على مجرّد الموافقة.\n\nفسدّت الآيةُ بابين معًا، وهما الخللان الواقعان بالفعل: أن تدعو إلى الله وأنت جاهلٌ بما تقول، وأن تتبع داعيًا وأنت لا تفقه ما دخلتَ فيه.\n\nوخُتمت بـ﴿وَمَآ أَنَا۠ مِنَ ٱلْمُشْرِكِينَ﴾. فإعلانُ السبيل يُختم بتسمية ما ليس منه، وهذا صنيعُ سورة يوسف كلِّها: قصّةُ رجلٍ ابتُلي في كلّ منزلٍ فما ساوم على الأمر مرّةً.",
+        plain: "Calling to Allah is conditioned on BASIRAH — clear sight, knowing what you are talking about. And the condition is not on the Prophet ﷺ alone: “I AND whoever follows me.” The follower has to see it clearly too, not merely agree.",
+        plainAr: "الدعوةُ إلى الله مشروطةٌ بـ**بصيرة** (أي وضوحِ الرؤية والعلمِ بما تقول). والشرطُ ليس على النبيّ ﷺ وحده: ﴿أَنَا۠ **وَمَنِ ٱتَّبَعَنِى**﴾. فعلى التابع أن يُبصر أيضًا لا أن يُوافق فحسب.",
+        links: [
+        {
+          ref: "Surah An-Nahl (16:125)",
+          ar: "ٱدْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ ۖ وَجَٰدِلْهُم بِٱلَّتِى هِىَ أَحْسَنُ ۚ إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ ۖ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ",
+          en: "“Invite to the way of your Lord with wisdom and good instruction, and argue with them in a way that is best. Indeed, your Lord is most knowing of who has strayed from His way, and He is most knowing of who is [rightly] guided.”",
+          how: "The method, after this verse gives the condition. Yusuf says you must call upon insight; An-Nahl says how — with wisdom, with good instruction, and argue in the way that is best. One verse forbids calling out of ignorance, the other forbids calling badly.",
+          howAr: "الطريقةُ، بعد أن ذكرت هذه الآيةُ الشرط. فيوسفُ تقول: لا بدّ من البصيرة، والنحلُ تقول كيف: ﴿بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ ۖ وَجَٰدِلْهُم بِٱلَّتِى هِىَ أَحْسَنُ﴾. فآيةٌ تمنع أن تدعو بجهل، وأخرى تمنع أن تدعو بسوء."
+        }
+        ],
+        ref: "Surah Yusuf (12:108)",
+        strength: "quran"
+      },
+
+      {
+        n: 111,
+        ar: "لَقَدْ كَانَ فِى قَصَصِهِمْ عِبْرَةٌۭ لِّأُو۟لِى ٱلْأَلْبَٰبِ ۗ مَا كَانَ حَدِيثًۭا يُفْتَرَىٰ وَلَٰكِن تَصْدِيقَ ٱلَّذِى بَيْنَ يَدَيْهِ وَتَفْصِيلَ كُلِّ شَىْءٍۢ وَهُدًۭى وَرَحْمَةًۭ لِّقَوْمٍۢ يُؤْمِنُونَ",
+        why: "The last verse of the surah, and it tells you what the whole story was for.\n\n“There was certainly in their stories an 'ibrah for those of understanding.”\n\n'Ibrah is not a moral tacked onto the end. The root '-b-r is to CROSS OVER — the same root as the bridge and the crossing of a river. An 'ibrah is what carries you from the thing in front of you to the thing it is really about. So the stories are not told to be enjoyed; they are told to be crossed.\n\nThen: “it was not a narration invented.” The surah has just finished the most novelistic story in the Quran — a dream, a pit, a caravan, a house, a prison, a famine, a reunion — and the first thing said afterwards is that it is not fiction.\n\nAnd the three things it IS: a confirmation of what came before it, a detailed explanation of everything, and guidance and mercy — for a people who believe. The last clause narrows it: the same story reaches everyone, and what it becomes depends on who is reading.",
+        whyAr: "آخرُ آيةٍ في السورة، وتقول لك لأيّ شيءٍ كانت القصّة كلُّها.\n\n﴿لَقَدْ كَانَ فِى قَصَصِهِمْ **عِبْرَةٌۭ** لِّأُو۟لِى ٱلْأَلْبَٰبِ﴾.\n\nوالعبرةُ ليست موعظةً تُلحق بالخاتمة. فمادّة (ع ب ر) للعبور — وهي مادّةُ المِعبَر وعبورِ النهر. فالعبرةُ ما ينقلك ممّا بين يديك إلى ما هو مقصودٌ به. فما قُصّت القصصُ لتُستمتع، وإنما قُصّت لتُعبَر.\n\nثم: ﴿مَا كَانَ حَدِيثًۭا يُفْتَرَىٰ﴾. فقد فرغت السورةُ للتوّ من أقصّ ما في القرآن — رؤيا، وجُبّ، وقافلة، وبيت، وسجن، ومجاعة، ولقاء — فكان أوّلُ ما قيل بعدها إنها ليست بمُختلَقة.\n\nوالثلاثةُ التي **هي** إيّاها: تصديقُ الذي بين يديه، وتفصيلُ كلّ شيء، وهدًى ورحمة — ﴿لِّقَوْمٍۢ يُؤْمِنُونَ﴾. فضيّقت الخاتمة: فالقصّةُ نفسُها تبلغ الجميع، وما تصير إليه بحسب من يقرأ.",
+        plain: "'Ibrah is from the root meaning to CROSS OVER — a bridge. The story is not told to be enjoyed but to be crossed: from what happened to Yusuf, to what it is about in you. And straight after the most novel-like story in the Quran: “it was not an invented narration.”",
+        plainAr: "العبرةُ من مادّة العبور — كالمِعبَر. فما قُصّت القصّةُ لتُستمتع بل لتُعبَر: من الذي جرى ليوسف إلى الذي تعنيه فيك. وعقب أقصّ ما في القرآن: ﴿مَا كَانَ حَدِيثًۭا يُفْتَرَىٰ﴾.",
+        links: [
+        {
+          ref: "Surah Ali 'Imran (3:7)",
+          ar: "هُوَ ٱلَّذِىٓ أَنزَلَ عَلَيْكَ ٱلْكِتَٰبَ مِنْهُ ءَايَٰتٌۭ مُّحْكَمَٰتٌ هُنَّ أُمُّ ٱلْكِتَٰبِ وَأُخَرُ مُتَشَٰبِهَٰتٌۭ ۖ فَأَمَّا ٱلَّذِينَ فِى قُلُوبِهِمْ زَيْغٌۭ فَيَتَّبِعُونَ مَا تَشَٰبَهَ مِنْهُ ٱبْتِغَآءَ ٱلْفِتْنَةِ وَٱبْتِغَآءَ تَأْوِيلِهِۦ ۗ وَمَا يَعْلَمُ تَأْوِيلَهُۥٓ إِلَّا ٱللَّهُ ۗ وَٱلرَّٰسِخُونَ فِى ٱلْعِلْمِ يَقُولُونَ ءَامَنَّا بِهِۦ كُلٌّۭ مِّنْ عِندِ رَبِّنَا ۗ وَمَا يَذَّكَّرُ إِلَّآ أُو۟لُوا۟ ٱلْأَلْبَٰبِ",
+          en: "“It is He who has sent down to you, [O Muhammad], the Book; in it are verses [that are] precise - they are the foundation of the Book - and others unspecific. As for those in whose hearts is deviation [from truth], they will follow that of it which is unspecific, seeking discord and seeking an interpretation [suitable to them]. And no one knows its [true] interpretation except Allah. But those firm in knowledge say, \"We believe in it. All [of it] is from our Lord.\" And no one will be reminded except those of understanding.”",
+          how: "The other verse addressed to ulu al-albab, and it names the danger. There they are the ones who say we believe in it, all of it is from our Lord, while others chase what is unclear looking for discord. Here they are the ones who cross from the story to its lesson. Both times, understanding is defined by what a person does with a text rather than by how much of it he holds.",
+          howAr: "الآيةُ الأخرى الموجّهة إلى أولي الألباب، وفيها تسميةُ الخطر. فهم هناك الذين يقولون ﴿ءَامَنَّا بِهِۦ كُلٌّۭ مِّنْ عِندِ رَبِّنَا﴾، وغيرُهم يتّبع ما تشابه ابتغاء الفتنة. وهم ههنا الذين يعبرون من القصّة إلى عبرتها. وفي الموضعين حُدّ اللبُّ بما يصنعه المرء بالنصّ لا بمقدار ما يحفظ منه."
+        }
+        ],
+        ref: "Surah Yusuf (12:111)",
+        strength: "quran"
       }
     ]
   },
@@ -2953,7 +3022,16 @@ const TADABBUR = {
         misunderstood: "HOW IT IS USUALLY USED: as a motivational line. Work harder and Allah will improve your situation. It appears on posters and in speeches, always as the first half only.\n\nWHAT IS MISSING: two things.\n\nFirst, the verse is about what is inside people — anfusihim — not their effort or their plans. The change being asked for is in what a people ARE: their honesty, their seriousness, what they tolerate among themselves. Not a productivity method.\n\nSecond, and this is the half almost never quoted: the verse continues, “and when Allah intends for a people a harm, there is no repelling it.” The same sentence that puts change in your hands also states plainly that the outcome is not in your hands. Both halves are one verse.\n\nSo it is not a formula where effort guarantees a result. It is: the inner change is your responsibility, and the outcome remains Allah's. Quoting only the first half turns a verse about accountability into a verse about self-help.",
         misunderstoodAr: "كيف تُستعمل عادةً: جملةً تحفيزيّة — اجتهد يُحسّن اللهُ حالك. تُكتب على اللافتات وتُقال في الخطب، ولا يُنقل منها إلا شطرها الأوّل.\n\nوالذي سقط أمران:\n\nالأوّل: أنّ الآية في **الأنفس** لا في الجهد ولا في الخطط. فالتغيير المطلوب في **ما هم عليه**: صدقهم، وجدّهم، وما يرضونه بينهم. لا في أسلوب إنتاج.\n\nوالثاني، وهو الشطر الذي لا يكاد يُنقل: أنّ الآية تُتِمّ ﴿وَإِذَآ أَرَادَ ٱللَّهُ بِقَوْمٍۢ سُوٓءًۭا فَلَا مَرَدَّ لَهُۥ﴾. فالجملة التي جعلت التغيير بيدك هي نفسها التي تنصّ على أنّ المآل ليس بيدك. والشطران آيةٌ واحدة.\n\nفليست معادلةً يضمن فيها الجهدُ النتيجة، وإنما هي: التغيير الباطن مسؤوليّتك، والمآل لله. ومن نقل الشطر الأوّل وحده حوّل آيةَ مسؤوليّةٍ إلى آيةِ تطوير ذات.",
         plain: "In plain words: this is the verse everyone quotes about change — and almost everyone stops halfway.\n\nWhat it actually says is that the change has to happen in what people ARE, not in what they are doing or planning. Their honesty, their seriousness, what they let pass among themselves.\n\nAnd the second half, which you rarely hear: when Allah intends harm for a people, nothing turns it back. So it is not a guarantee that effort produces results. It is: the inside is your job, the outcome is His.",
-        plainAr: "بكلامٍ بسيط: هذه الآية التي يستشهد بها الجميع في التغيير — ويقف أكثرهم في منتصفها.\n\nوالذي تقوله حقًّا أنّ التغيير يقع فيما **هم عليه**، لا فيما يفعلون أو يُخطّطون: في صدقهم، وجدّهم، وما يسكتون عنه بينهم.\n\nوالشطر الثاني الذي قلّ أن تسمعه: إذا أراد الله بقومٍ سوءًا فلا رادّ له. فليست ضمانًا أنّ الجهد يُثمر، وإنما هي: الباطن عملك، والمآل إليه."
+        plainAr: "بكلامٍ بسيط: هذه الآية التي يستشهد بها الجميع في التغيير — ويقف أكثرهم في منتصفها.\n\nوالذي تقوله حقًّا أنّ التغيير يقع فيما **هم عليه**، لا فيما يفعلون أو يُخطّطون: في صدقهم، وجدّهم، وما يسكتون عنه بينهم.\n\nوالشطر الثاني الذي قلّ أن تسمعه: إذا أراد الله بقومٍ سوءًا فلا رادّ له. فليست ضمانًا أنّ الجهد يُثمر، وإنما هي: الباطن عملك، والمآل إليه.",
+        links: [
+        {
+          ref: "Surah Al-Anfal (8:53)",
+          ar: "ذَٰلِكَ بِأَنَّ ٱللَّهَ لَمْ يَكُ مُغَيِّرًۭا نِّعْمَةً أَنْعَمَهَا عَلَىٰ قَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ ۙ وَأَنَّ ٱللَّهَ سَمِيعٌ عَلِيمٌۭ",
+          en: "“That is because Allah would not change a favor which He had bestowed upon a people until they change what is within themselves. And indeed, Allah is Hearing and Knowing.”",
+          how: "The same law applied to a blessing being TAKEN AWAY, which settles the direction. Ar-Ra'd states it generally and a reader takes it as a promise about rising; Al-Anfal says Allah would not change a favour He had bestowed until they change what is in themselves — with the destruction of Pharaoh's people named on either side. The rule runs both ways.",
+          howAr: "القانونُ نفسه مُنزَّلًا على نعمةٍ **تُسلب**، وبه تتحرّر الجهة. فالرعدُ تُقرّره عامًّا فيأخذه القارئ وعدًا في الارتفاع؛ والأنفالُ تقول ﴿لَمْ يَكُ مُغَيِّرًۭا نِّعْمَةً أَنْعَمَهَا عَلَىٰ قَوْمٍ حَتَّىٰ يُغَيِّرُوا۟ مَا بِأَنفُسِهِمْ﴾، وإهلاكُ آل فرعون مذكورٌ قبلها وبعدها. فالقاعدةُ تجري في الاتّجاهين."
+        }
+        ]
       },
       {
         n: 28,
@@ -4162,6 +4240,26 @@ const TADABBUR = {
         }
         ],
         ref: "Surah An-Nahl (16:112)",
+        strength: "quran"
+      },
+
+      {
+        n: 125,
+        ar: "ٱدْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ ۖ وَجَٰدِلْهُم بِٱلَّتِى هِىَ أَحْسَنُ ۚ إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ ۖ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ",
+        why: "Three instruments are named for calling people to Allah, and they are given in descending order of gentleness.\n\nWith hikmah — wisdom, which is putting the right thing in its right place with the right person.\n\nWith maw'izah hasanah — good instruction. And notice the adjective: the exhortation must be GOOD. A true warning delivered harshly is not what was commanded.\n\nAnd argue with them BI-LLATI HIYA AHSAN — in the way that is BEST. Not merely a good way. The superlative: if there are two acceptable ways to answer someone, the verse binds you to the better one.\n\nThen the reason the whole thing must be done this way, and it is the part that governs it: “indeed your Lord is most knowing of who has strayed from His way, and He is most knowing of the guided.”\n\nThat sentence takes the outcome out of the caller's hands, and with it the temptation to win. A man who believes he is deciding who ends up guided will argue to defeat. A man who knows Allah has that file already can afford to argue in the way that is best — because he is no longer trying to force a result the verse has just told him is not his.",
+        whyAr: "ثلاثُ آلاتٍ سُمّيت للدعوة إلى الله، جاءت على ترتيبٍ نازلٍ في اللين.\n\n﴿بِٱلْحِكْمَةِ﴾: وهي وضعُ الشيء في موضعه مع صاحبه.\n\n﴿وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ﴾. وتأمّل النعت: فالموعظةُ لا بدّ أن تكون **حسنة**. فالإنذارُ الصادق يُلقى بغلظةٍ ليس هو المأمورَ به.\n\n﴿وَجَٰدِلْهُم **بِٱلَّتِى هِىَ أَحْسَنُ**﴾. لا بالحسنة فحسب، بل بصيغة التفضيل: فإن كان في الجواب وجهان مقبولان لزمك أحسنُهما.\n\nثم علّةُ وجوب ذلك كلِّه، وهي الحاكمةُ عليه: ﴿إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ ۖ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ﴾.\n\nفهذه الجملةُ تنزع العاقبة من يد الداعي، وتنزع معها داعيَ الغَلَبة. فمن ظنّ أنه هو الذي يقضي فيمن يهتدي جادل ليَغلب. ومن علم أنّ ذلك عند الله قدر أن يُجادل بالتي هي أحسن — لأنه لم يعد يتكلّف نتيجةً أخبرته الآيةُ للتوّ أنها ليست إليه.",
+        plain: "Wisdom, then GOOD instruction — the warning itself must be good — then argue in the way that is BEST, the superlative. And the reason: your Lord already knows who strayed and who is guided. Take the outcome out of a man's hands and the urge to win goes with it.",
+        plainAr: "الحكمة، ثم الموعظةُ **الحسنة** — فالإنذارُ نفسُه لا بدّ أن يكون حسنًا — ثم الجدالُ **بالتي هي أحسن**، بصيغة التفضيل. والعلّة: أنّ ربّك أعلمُ بمن ضلّ وبالمهتدين. فإذا نُزعت العاقبةُ من يد الرجل ذهب معها داعي الغلبة.",
+        links: [
+        {
+          ref: "Surah Yusuf (12:108)",
+          ar: "قُلْ هَٰذِهِۦ سَبِيلِىٓ أَدْعُوٓا۟ إِلَى ٱللَّهِ ۚ عَلَىٰ بَصِيرَةٍ أَنَا۠ وَمَنِ ٱتَّبَعَنِى ۖ وَسُبْحَٰنَ ٱللَّهِ وَمَآ أَنَا۠ مِنَ ٱلْمُشْرِكِينَ",
+          en: "“Say, \"This is my way; I invite to Allah with insight, I and those who follow me. And exalted is Allah; and I am not of those who associate others with Him.\"”",
+          how: "The condition, before this verse gives the method. Yusuf says the calling must be upon basirah — clear sight — and puts the same requirement on whoever follows. An-Nahl then says how to do it. Between them: you may not call out of ignorance, and you may not call badly.",
+          howAr: "الشرطُ، قبل أن تُعطي هذه الآيةُ الطريقة. فيوسفُ تقول إنّ الدعوة تكون ﴿عَلَىٰ بَصِيرَةٍ﴾، وتُلزم بذلك من تبعه أيضًا. ثم تقول النحلُ كيف تكون. فاجتمع منهما: لا تدعُ بجهل، ولا تدعُ بسوء."
+        }
+        ],
+        ref: "Surah An-Nahl (16:125)",
         strength: "quran"
       }
     ]
