@@ -74,27 +74,27 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "And tell the believing women to lower their gaze and guard their chastity, and not to display their adornment except what appears of it, and to draw their head-coverings over their chests.",
         ar: "وَقُل لِّلْمُؤْمِنَاتِ يَغْضُضْنَ مِنْ أَبْصَارِهِنَّ وَيَحْفَظْنَ فُرُوجَهُنَّ وَلَا يُبْدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنْهَا وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَىٰ جُيُوبِهِنَّ",
-        ref: "Surah An-Nur (24:31)" },
+        ref: "Surah An-Nur (24:31)", refAr: "سورة النور (٢٤:٣١)" },
       { en: "O Prophet, tell your wives and your daughters and the women of the believers to draw their outer garments over themselves. That is more likely that they will be known and not be abused.",
         ar: "يَا أَيُّهَا النَّبِيُّ قُل لِّأَزْوَاجِكَ وَبَنَاتِكَ وَنِسَاءِ الْمُؤْمِنِينَ يُدْنِينَ عَلَيْهِنَّ مِن جَلَابِيبِهِنَّ ۚ ذَٰلِكَ أَدْنَىٰ أَن يُعْرَفْنَ فَلَا يُؤْذَيْنَ",
-        ref: "Surah Al-Ahzab (33:59)" },
+        ref: "Surah Al-Ahzab (33:59)", refAr: "سورة الأحزاب (٣٣:٥٩)" },
       { en: "Two kinds of the people of the Fire I have not seen… and women who are clothed yet naked, inclining and inclining others, their heads like the humps of camels — they will not enter Paradise nor find its fragrance.",
         ar: "صِنْفَانِ مِنْ أَهْلِ النَّارِ لَمْ أَرَهُمَا… وَنِسَاءٌ كَاسِيَاتٌ عَارِيَاتٌ مَائِلَاتٌ مُمِيلَاتٌ، رُءُوسُهُنَّ كَأَسْنِمَةِ الْبُخْتِ الْمَائِلَةِ، لَا يَدْخُلْنَ الْجَنَّةَ وَلَا يَجِدْنَ رِيحَهَا",
-        ref: "Sahih Muslim, Book of Dress and Adornment — Sahih. This is the hadith the scholars point to for the transparent and the tight: 'clothed yet naked' describes exactly that." }
+        ref: "Sahih Muslim, Book of Dress and Adornment — Sahih. This is the hadith the scholars point to for the transparent and the tight: 'clothed yet naked' describes exactly that.", refAr: "صحيح مسلم، كتاب اللباس والزينة — صحيح. وهذا هو الحديث الذي يستدلّ به أهل العلم على الشفّاف والضيّق، فقولُه «كاسياتٌ عاريات» منطبقٌ عليهما." }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Repeatedly stated that a covering which is transparent, or tight enough to describe the body, does not fulfil the command at all — and that such a woman is included in the meaning of 'clothed yet naked'.",
         viewAr: "كرّر أن اللباس الشفّاف أو الضيّق الذي يصف الجسد لا يتحقق به المقصود من الأمر، وأن صاحبته داخلةٌ في معنى «كاسياتٍ عاريات».",
-        work: "Majmu' Fatawa Ibn Baz; Fatawa Nur 'ala ad-Darb" },
+        work: "Majmu' Fatawa Ibn Baz; Fatawa Nur 'ala ad-Darb", workAr: "«مجموع فتاوى ابن باز»؛ «فتاوى نور على الدرب»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Set out the same conditions and stressed the two people miss most: thickness and looseness. He said plainly that clothing which covers the colour but shows the shape has not covered.",
         viewAr: "ذكر الشروط نفسها وشدّد على ما يغفل عنه الناس: الصفاقة والسعة. وقال صراحةً إن ما ستر اللون ووصف الحجم فلم يستر.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen; Ash-Sharh al-Mumti'" },
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen; Ash-Sharh al-Mumti'", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»؛ «الشرح الممتع»" },
       { name: "The Permanent Committee", nameAr: "اللجنة الدائمة للإفتاء",
         view: "Issued the conditions as a list in substantially this form.",
         viewAr: "أصدرت هذه الشروط مسرودةً على هذا النحو.",
-        work: "Fatawa al-Lajnah ad-Da'imah" }
+        work: "Fatawa al-Lajnah ad-Da'imah", workAr: "«فتاوى اللجنة الدائمة»" }
     ],
     difference: "Scholars DO differ on the face and the hands, and the entry on that is separate. They do NOT differ on the conditions above — thickness, looseness and not being an adornment in itself are agreed upon across the schools.",
     differenceAr: "يختلف أهل العلم في الوجه والكفّين، وله مدخلٌ مستقل. وأما الشروط المتقدمة — الصفاقة والسعة وألّا يكون زينةً في نفسه — فمحلّ اتفاقٍ بين المذاهب.",
@@ -124,24 +124,24 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "And when you ask them for something, ask them from behind a screen. That is purer for your hearts and for theirs.",
         ar: "وَإِذَا سَأَلْتُمُوهُنَّ مَتَاعًا فَاسْأَلُوهُنَّ مِن وَرَاءِ حِجَابٍ ۚ ذَٰلِكُمْ أَطْهَرُ لِقُلُوبِكُمْ وَقُلُوبِهِنَّ",
-        ref: "Surah Al-Ahzab (33:53) — those who hold it obligatory argue from this and from 33:59" },
+        ref: "Surah Al-Ahzab (33:53) — those who hold it obligatory argue from this and from 33:59", refAr: "سورة الأحزاب (٣٣:٥٣) — ويستدلّ بها القائلون بالوجوب مع (٣٣:٥٩)" },
       { en: "…and not to display their adornment except what appears of it.",
         ar: "وَلَا يُبْدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنْهَا",
-        ref: "Surah An-Nur (24:31) — those who hold it not obligatory argue that Ibn Abbas رضي الله عنهما explained 'what appears of it' as the face and the hands" }
+        ref: "Surah An-Nur (24:31) — those who hold it not obligatory argue that Ibn Abbas رضي الله عنهما explained 'what appears of it' as the face and the hands", refAr: "سورة النور (٢٤:٣١) — ويستدلّ القائلون بعدم الوجوب بأنّ ابن عباس رضي الله عنهما فسّر ﴿مَا ظَهَرَ مِنْهَا﴾ بالوجه والكفّين" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Held covering the face OBLIGATORY.",
         viewAr: "ذهب إلى وجوب ستر الوجه.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Held covering the face OBLIGATORY, and wrote a treatise on it.",
         viewAr: "ذهب إلى وجوب ستر الوجه، وأفرد المسألة برسالة.",
-        work: "Risalah al-Hijab; Majmu' Fatawa wa Rasa'il" },
+        work: "Risalah al-Hijab; Majmu' Fatawa wa Rasa'il", workAr: "«رسالة الحجاب»؛ «مجموع الفتاوى والرسائل»" },
       { name: "Al-Albani", nameAr: "الشيخ محمد ناصر الدين الألباني",
         view: "Held it NOT obligatory but recommended and better, and wrote a book arguing that the face and hands may be uncovered.",
         viewAr: "ذهب إلى أنه ليس بواجب بل مستحبٌّ وأفضل، وصنّف في جواز كشف الوجه والكفّين.",
-        work: "Jilbab al-Mar'ah al-Muslimah" }
+        work: "Jilbab al-Mar'ah al-Muslimah", workAr: "«جلباب المرأة المسلمة»" }
     ],
     difference: "Honest summary: within the four schools, the position that the face is not part of what must be covered is the more widely reported one — it is the well-known view of the Hanafis, Malikis and Shafi'is in the absence of temptation, while the Hanbali school leans the other way. Among the prominent scholars of the last century, Ibn Baz and Ibn Uthaymeen held it obligatory and al-Albani did not. So: this is a case where you follow the scholar you trust and you do not condemn the woman who follows the other. What NOBODY held is that the hair, neck, arms or legs may be uncovered.",
     differenceAr: "وخلاصةٌ منصفة: القول بأن الوجه ليس من العورة الواجب سترها هو الأشهر نقلًا في المذاهب الأربعة — وهو المعروف عند الحنفية والمالكية والشافعية عند أمن الفتنة، والمذهب الحنبلي يميل إلى خلافه. وأما علماء العصر فابن باز وابن عثيمين على الوجوب، والألباني على خلافه. فالمسألة مما يُقلَّد فيه من تثق بعلمه، ولا تُنكَر فيها على من أخذ بالقول الآخر. والذي لم يقل به أحدٌ قط: كشف الشعر أو العنق أو الذراعين أو الساقين.",
@@ -170,20 +170,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "What is below the ankles of the lower garment is in the Fire.",
         ar: "مَا أَسْفَلَ مِنَ الْكَعْبَيْنِ مِنَ الْإِزَارِ فَفِي النَّارِ",
-        ref: "Sahih al-Bukhari, Book of Dress, Hadith 5787 — Sahih" },
+        ref: "Sahih al-Bukhari, Book of Dress, Hadith 5787 — Sahih", refAr: "صحيح البخاري، كتاب اللباس، حديث ٥٧٨٧ — صحيح" },
       { en: "Allah will not look on the Day of Resurrection at one who drags his garment out of arrogance.",
         ar: "لَا يَنْظُرُ اللَّهُ يَوْمَ الْقِيَامَةِ إِلَىٰ مَنْ جَرَّ ثَوْبَهُ خُيَلَاءَ",
-        ref: "Sahih al-Bukhari, Book of Dress, Hadith 5788 — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of Dress, Hadith 5788 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب اللباس، حديث ٥٧٨٨ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Held that letting the garment fall below the ankles is forbidden in both cases — with arrogance it is the graver threat, and without arrogance it remains forbidden, because the two hadiths name two separate punishments.",
         viewAr: "ذهب إلى تحريم الإسبال في الحالين — فمع الخيلاء الوعيد أشدّ، وبدونها يبقى محرَّمًا؛ لأن الحديثين ذكرا عقوبتين متغايرتين.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Took the same position and explained the two hadiths as two different levels of warning rather than one qualifying the other.",
         viewAr: "قال بمثل قوله، وبيّن أن الحديثين درجتان من الوعيد لا أن أحدهما يقيّد الآخر.",
-        work: "Ash-Sharh al-Mumti'" }
+        work: "Ash-Sharh al-Mumti'", workAr: "«الشرح الممتع»" }
     ],
     difference: "Some scholars, including a number of the earlier jurists, read the second hadith as restricting the first — i.e. the prohibition applies where there is arrogance, and without it the matter is disliked rather than forbidden. Ibn Baz and Ibn Uthaymeen rejected that reading. Both views are held by real scholars; the stricter one is the position of the two scholars this page cites most.",
     differenceAr: "وذهب بعض أهل العلم، ومنهم جماعةٌ من المتقدمين، إلى أن الحديث الثاني يقيّد الأول — فالتحريم عند الخيلاء، وبدونها كراهة لا تحريم. وردّ ابن باز وابن عثيمين هذا الحمل. والقولان قال بهما أهل علم، والأشدّ هو قول الشيخين المذكورين هنا.",
@@ -214,17 +214,17 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "Whoever sleeps through a prayer or forgets it, let him pray it when he remembers it — there is no expiation for it but that.",
         ar: "مَنْ نَامَ عَنْ صَلَاةٍ أَوْ نَسِيَهَا فَلْيُصَلِّهَا إِذَا ذَكَرَهَا، لَا كَفَّارَةَ لَهَا إِلَّا ذَٰلِكَ",
-        ref: "Sahih al-Bukhari, Book of the Times of Prayer, Hadith 597 — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of the Times of Prayer, Hadith 597 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب مواقيت الصلاة، حديث ٥٩٧ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Answered that the one who left prayer for years repents and starts afresh; he is not asked to make up what he abandoned.",
         viewAr: "أجاب بأن من ترك الصلاة سنين يتوب ويستأنف، ولا يُطالَب بقضاء ما ترك.",
-        work: "Fatawa Nur 'ala ad-Darb; Majmu' Fatawa Ibn Baz" },
+        work: "Fatawa Nur 'ala ad-Darb; Majmu' Fatawa Ibn Baz", workAr: "«فتاوى نور على الدرب»؛ «مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Same conclusion, with the reasoning that a worship tied to its appointed time, abandoned deliberately, is not accepted outside that time — so what is left is repentance.",
         viewAr: "انتهى إلى مثله، معلِّلًا بأن العبادة المؤقتة إذا تُركت عمدًا لم تُقبل خارج وقتها، فلم يبقَ إلا التوبة.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen" }
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»" }
     ],
     difference: "A number of scholars did hold that the missed prayers must be made up. But the position above is that of Ibn Taymiyyah, Ibn Baz and Ibn Uthaymeen, and it is the one usually given today to someone returning to prayer. Nobody, on either view, says the answer is to give up because the number is too large.",
     differenceAr: "وذهب جماعةٌ من أهل العلم إلى وجوب القضاء. لكن القول المتقدم هو قول ابن تيمية وابن باز وابن عثيمين، وهو الذي يُفتى به غالبًا لمن رجع إلى الصلاة. ولم يقل أحدٌ على القولين إن الحلّ ترك الأمر لكثرة العدد.",
@@ -255,17 +255,17 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "He should not leave until he hears a sound or finds a smell.",
         ar: "لَا يَنْصَرِفْ حَتَّىٰ يَسْمَعَ صَوْتًا أَوْ يَجِدَ رِيحًا",
-        ref: "Sahih al-Bukhari, Book of Wudu, Hadith 137 — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of Wudu, Hadith 137 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب الوضوء، حديث ١٣٧ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Gave this repeatedly and firmly: the one afflicted with waswas must turn away from it entirely and must not act on it, because acting on it strengthens it. He described obeying it as opening a door that does not close.",
         viewAr: "كرّر هذا وشدّد فيه: على الموسوَس أن يُعرض عنه بالكلية ولا يعمل به، فإن العمل به يقوّيه. ووصف طاعته بأنها فتح بابٍ لا يُغلق.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen; Fatawa Nur 'ala ad-Darb" },
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen; Fatawa Nur 'ala ad-Darb", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»؛ «فتاوى نور على الدرب»" },
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Instructed the same, and added seeking refuge from Shaytan and not giving the thought attention.",
         viewAr: "أمر بمثله، وزاد الاستعاذة من الشيطان وعدم الالتفات إلى الخاطر.",
-        work: "Majmu' Fatawa Ibn Baz" }
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" }
     ],
     difference: null,
     differenceAr: null,
@@ -296,24 +296,24 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "Those who consume interest will not stand except as one stands who is being beaten by Satan into insanity… Allah has permitted trade and forbidden interest.",
         ar: "الَّذِينَ يَأْكُلُونَ الرِّبَا لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ الَّذِي يَتَخَبَّطُهُ الشَّيْطَانُ مِنَ الْمَسِّ ۚ … وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا",
-        ref: "Surah Al-Baqarah (2:275)" },
+        ref: "Surah Al-Baqarah (2:275)", refAr: "سورة البقرة (٢:٢٧٥)" },
       { en: "The Messenger of Allah ﷺ cursed the one who consumes interest, the one who pays it, the one who writes it down, and its two witnesses — and said: they are all the same.",
         ar: "لَعَنَ رَسُولُ اللَّهِ ﷺ آكِلَ الرِّبَا وَمُوكِلَهُ وَكَاتِبَهُ وَشَاهِدَيْهِ، وَقَالَ: هُمْ سَوَاءٌ",
-        ref: "Sahih Muslim, Book of Transactions (Kitab al-Musaqah) — Sahih" }
+        ref: "Sahih Muslim, Book of Transactions (Kitab al-Musaqah) — Sahih", refAr: "صحيح مسلم، كتاب المساقاة — صحيح" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Ruled the fixed bank return to be riba, and directed that money already received be disposed of in charitable and public benefit without seeking reward for it.",
         viewAr: "أفتى بأن العائد البنكي المحدَّد ربًا، وأمر بصرف ما قُبض منه في وجوه البر والنفع العام من غير احتساب الأجر.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Same ruling, and explicitly said not to leave it with the bank.",
         viewAr: "أفتى بمثله، ونصّ على ألّا يُترك للبنك.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen" },
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»" },
       { name: "The Permanent Committee", nameAr: "اللجنة الدائمة للإفتاء",
         view: "Issued the same in numerous rulings.",
         viewAr: "أصدرت مثله في فتاوى كثيرة.",
-        work: "Fatawa al-Lajnah ad-Da'imah" }
+        work: "Fatawa al-Lajnah ad-Da'imah", workAr: "«فتاوى اللجنة الدائمة»" }
     ],
     difference: "A small number of modern voices have argued that regulated bank interest is not the riba of the Quran. That view is rejected by the overwhelming weight of scholars and by the standing fiqh academies, and it is not the position of any of the scholars cited on this page.",
     differenceAr: "وذهب نفرٌ قليل من المعاصرين إلى أن فوائد البنوك المنظَّمة ليست ربا القرآن، وهو قولٌ ردّه جمهور أهل العلم والمجامع الفقهية، وليس قول أحدٍ من العلماء المذكورين هنا.",
@@ -342,20 +342,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "And cooperate in righteousness and piety, but do not cooperate in sin and transgression.",
         ar: "وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ",
-        ref: "Surah Al-Ma'idah (5:2)" },
+        ref: "Surah Al-Ma'idah (5:2)", refAr: "سورة المائدة (٥:٢)" },
       { en: "Whoever gives up something for the sake of Allah, Allah replaces it with something better.",
         ar: "إِنَّكَ لَنْ تَدَعَ شَيْئًا لِلَّهِ عَزَّ وَجَلَّ إِلَّا بَدَّلَكَ اللَّهُ بِهِ مَا هُوَ خَيْرٌ لَكَ مِنْهُ",
-        ref: "Musnad Ahmad — outside the two Sahihs; graded authentic by al-Albani" }
+        ref: "Musnad Ahmad — outside the two Sahihs; graded authentic by al-Albani", refAr: "مسند أحمد — خارج الصحيحين، وصحّحه الألباني" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Made the distinction above and forbade direct participation in the forbidden transaction, including writing and witnessing it.",
         viewAr: "فرّق هذا التفريق، وحرّم المباشرة للمعاملة المحرَّمة بالكتابة والشهادة عليها.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Same, and stressed that a general contract of employment is judged by what the employee actually does.",
         viewAr: "قال بمثله، وشدّد على أن العقد العام يُحكم عليه بما يباشره الموظف فعلًا.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen" }
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»" }
     ],
     difference: null,
     differenceAr: null,
@@ -386,20 +386,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "And if they strive to make you associate with Me that of which you have no knowledge, do not obey them — but accompany them in this world with kindness.",
         ar: "وَإِن جَاهَدَاكَ عَلَىٰ أَن تُشْرِكَ بِي مَا لَيْسَ لَكَ بِهِ عِلْمٌ فَلَا تُطِعْهُمَا ۖ وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا",
-        ref: "Surah Luqman (31:15)" },
+        ref: "Surah Luqman (31:15)", refAr: "سورة لقمان (٣١:١٥)" },
       { en: "Obedience is only in what is right.",
         ar: "إِنَّمَا الطَّاعَةُ فِي الْمَعْرُوفِ",
-        ref: "Sahih al-Bukhari, Book of Holding Fast to the Book, Hadith 7257 — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of Holding Fast to the Book, Hadith 7257 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب الاعتصام بالكتاب والسنّة، حديث ٧٢٥٧ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Answered many such questions with the same frame: refuse the sin, keep the kindness, and do not let the refusal become an excuse for harshness.",
         viewAr: "أجاب عن كثيرٍ من هذا بالقاعدة نفسها: امتنع عن المعصية، وأبقِ البرّ، ولا تجعل الامتناع ذريعةً للجفاء.",
-        work: "Majmu' Fatawa Ibn Baz; Fatawa Nur 'ala ad-Darb" },
+        work: "Majmu' Fatawa Ibn Baz; Fatawa Nur 'ala ad-Darb", workAr: "«مجموع فتاوى ابن باز»؛ «فتاوى نور على الدرب»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Stressed that a parent's wrongdoing does not release the child from the command of kindness, and that this is one of the heaviest tests a person is given.",
         viewAr: "شدّد على أن إساءة الوالد لا تُسقط أمر الله بالبرّ، وأن هذا من أثقل ما يُبتلى به المرء.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen" }
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»" }
     ],
     difference: null,
     differenceAr: null,
@@ -430,20 +430,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "There will be among my nation people who regard as lawful fornication, silk, wine and musical instruments.",
         ar: "لَيَكُونَنَّ مِنْ أُمَّتِي أَقْوَامٌ يَسْتَحِلُّونَ الْحِرَ وَالْحَرِيرَ وَالْخَمْرَ وَالْمَعَازِفَ",
-        ref: "Sahih al-Bukhari, Book of Drinks, Hadith 5590 — Sahih. This is the central proof of those who forbid it." },
+        ref: "Sahih al-Bukhari, Book of Drinks, Hadith 5590 — Sahih. This is the central proof of those who forbid it.", refAr: "صحيح البخاري، كتاب الأشربة، حديث ٥٥٩٠ — صحيح. وهو عمدةُ من قال بالتحريم." },
       { en: "And of the people is he who buys the diversion of speech to mislead from the way of Allah.",
         ar: "وَمِنَ النَّاسِ مَن يَشْتَرِي لَهْوَ الْحَدِيثِ لِيُضِلَّ عَن سَبِيلِ اللَّهِ",
-        ref: "Surah Luqman (31:6) — Ibn Mas'ud رضي الله عنه explained 'the diversion of speech' as singing; that explanation is from a companion, not a text of the Quran itself" }
+        ref: "Surah Luqman (31:6) — Ibn Mas'ud رضي الله عنه explained 'the diversion of speech' as singing; that explanation is from a companion, not a text of the Quran itself", refAr: "سورة لقمان (٣١:٦) — فسّر ابن مسعود رضي الله عنه ﴿لَهْوَ ٱلْحَدِيثِ﴾ بالغناء، وهو تفسيرُ صحابيٍّ لا نصُّ القرآن نفسِه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Held instrumental music forbidden, citing the hadith of al-Bukhari above.",
         viewAr: "ذهب إلى تحريم المعازف مستدلًّا بحديث البخاري المتقدم.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Held the same, and answered the objection that the hadith's chain is weak by pointing out that al-Bukhari included it in his Sahih.",
         viewAr: "قال بمثله، وأجاب عن دعوى الانقطاع في الحديث بأن البخاري أخرجه في صحيحه.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen" }
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»" }
     ],
     difference: "The disagreement is real. Some scholars — Ibn Hazm most prominently, and a number of contemporaries — held instrumental music permissible, arguing over the chain of the Bukhari narration and over what the companion's explanation of Luqman 31:6 establishes. Weighing it honestly: the overwhelming majority of scholars across the four schools held it forbidden, and that is the stronger and better-supported position. But someone who follows the other view is following scholars, not following nothing.",
     differenceAr: "والخلاف حقيقيّ. فذهب بعض أهل العلم — وأشهرهم ابن حزم، وجماعةٌ من المعاصرين — إلى الإباحة، ونازعوا في إسناد حديث البخاري وفي دلالة تفسير الصحابي لآية لقمان. والإنصاف: أن جمهور أهل العلم في المذاهب الأربعة على التحريم، وهو الأقوى دليلًا. ومن أخذ بالقول الآخر فقد قلّد أهل علمٍ لا هوًى مجردًا.",
@@ -474,20 +474,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "And do not backbite one another. Would one of you like to eat the flesh of his dead brother? You would hate it.",
         ar: "وَلَا يَغْتَب بَّعْضُكُم بَعْضًا ۚ أَيُحِبُّ أَحَدُكُمْ أَن يَأْكُلَ لَحْمَ أَخِيهِ مَيْتًا فَكَرِهْتُمُوهُ",
-        ref: "Surah Al-Hujurat (49:12)" },
+        ref: "Surah Al-Hujurat (49:12)", refAr: "سورة الحجرات (٤٩:١٢)" },
       { en: "Do you know what backbiting is? — Allah and His Messenger know best. — Your mentioning your brother with what he dislikes.",
         ar: "أَتَدْرُونَ مَا الْغِيبَةُ؟ قَالُوا: اللَّهُ وَرَسُولُهُ أَعْلَمُ. قَالَ: ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ",
-        ref: "Sahih Muslim, Book of Righteousness and Good Manners — Sahih" }
+        ref: "Sahih Muslim, Book of Righteousness and Good Manners — Sahih", refAr: "صحيح مسلم، كتاب البرّ والصلة والآداب — صحيح" }
     ],
     scholars: [
       { name: "An-Nawawi", nameAr: "الإمام النووي",
         view: "Gathered the permitted cases into the list scholars have used ever since — redress of a wrong, seeking help to change a wrong, seeking a ruling, warning Muslims of harm, one open about his sin, and identification.",
         viewAr: "جمع مواضع الرخصة في السرد الذي تبعه عليه أهل العلم — التظلّم، والاستعانة على تغيير المنكر، والاستفتاء، وتحذير المسلمين، والمجاهر بفسقه، والتعريف.",
-        work: "Riyad as-Salihin; Al-Adhkar" },
+        work: "Riyad as-Salihin; Al-Adhkar", workAr: "«رياض الصالحين»؛ «الأذكار»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Taught the same list in his commentary on Riyad as-Salihin and warned against using 'warning people' as a cover for enjoying the talk.",
         viewAr: "شرح هذا السرد في شرحه لرياض الصالحين، وحذّر من اتخاذ «التحذير» ذريعةً للتلذّذ بالكلام في الناس.",
-        work: "Sharh Riyad as-Salihin" }
+        work: "Sharh Riyad as-Salihin", workAr: "«شرح رياض الصالحين»" }
     ],
     difference: null,
     differenceAr: null,
@@ -522,20 +522,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins.",
         ar: "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا",
-        ref: "Surah Az-Zumar (39:53)" },
+        ref: "Surah Az-Zumar (39:53)", refAr: "سورة الزمر (٣٩:٥٣)" },
       { en: "A servant committed a sin and said: my Lord, forgive me my sin. His Lord said: My servant knew that he has a Lord who forgives sin and takes for it — I have forgiven My servant. (Repeated three times in the hadith.)",
         ar: "أَذْنَبَ عَبْدٌ ذَنْبًا فَقَالَ: رَبِّ اغْفِرْ لِي ذَنْبِي. فَقَالَ: عَلِمَ عَبْدِي أَنَّ لَهُ رَبًّا يَغْفِرُ الذَّنْبَ وَيَأْخُذُ بِهِ، غَفَرْتُ لِعَبْدِي",
-        ref: "Sahih al-Bukhari, Book of Tawhid, Hadith 7507 — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of Tawhid, Hadith 7507 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب التوحيد، حديث ٧٥٠٧ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Listed the conditions and repeatedly told questioners frightened by relapse that the door of repentance stays open as long as the soul has not reached the throat.",
         viewAr: "سرد الشروط، وكرّر لمن خاف من العَوْد أن باب التوبة مفتوحٌ ما لم تبلغ الروحُ الحلقوم.",
-        work: "Majmu' Fatawa Ibn Baz; Fatawa Nur 'ala ad-Darb" },
+        work: "Majmu' Fatawa Ibn Baz; Fatawa Nur 'ala ad-Darb", workAr: "«مجموع فتاوى ابن باز»؛ «فتاوى نور على الدرب»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "Same, and added that the fourth condition — returning people's rights — is what many who consider themselves repentant have never done.",
         viewAr: "قال بمثله، وزاد أن الشرط الرابع — ردّ الحقوق — لم يفعله كثيرٌ ممن يحسب نفسه تائبًا.",
-        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen" }
+        work: "Majmu' Fatawa wa Rasa'il Ibn Uthaymeen", workAr: "«مجموع فتاوى ورسائل ابن عثيمين»" }
     ],
     difference: null,
     differenceAr: null,
@@ -568,20 +568,20 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "\"And when you travel throughout the land, there is no blame upon you for shortening the prayer.\"",
         ar: "﴿وَإِذَا ضَرَبْتُمْ فِي الْأَرْضِ فَلَيْسَ عَلَيْكُمْ جُنَاحٌ أَن تَقْصُرُوا مِنَ الصَّلَاةِ﴾",
-        ref: "Surah An-Nisa (4:101)" },
+        ref: "Surah An-Nisa (4:101)", refAr: "سورة النساء (٤:١٠١)" },
       { en: "Ibn Umar said: I accompanied the Prophet ﷺ and he did not pray more than two rak'ahs on a journey, and Abu Bakr, Umar and Uthman likewise.",
         ar: "قال ابن عمر: صحبتُ النبي ﷺ فكان لا يزيد في السفر على ركعتين، وأبو بكر وعمر وعثمان كذلك.",
-        ref: "Sahih al-Bukhari, Book of Shortening the Prayer, Hadith 1102 — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of Shortening the Prayer, Hadith 1102 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب تقصير الصلاة، حديث ١١٠٢ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Held that a traveller shortens as long as he does not intend to settle, and that joining is for need rather than as a routine — a man who has stopped and is comfortable should pray each prayer in its time.",
         viewAr: "يرى أنّ المسافر يقصر ما لم ينوِ الإقامة، وأنّ الجمع للحاجة لا على وجه الاعتياد، فمن نزل واستراح صلّى كلّ صلاةٍ في وقتها.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "The same, and he stressed the distinction people most often miss: shortening is the stronger and easier of the two, joining is the narrower.",
         viewAr: "على مثل قوله، وشدّد على الفرق الذي يغفل عنه أكثر الناس: أنّ القصر أوسع وأيسر، والجمع أضيق.",
-        work: "Ash-Sharh al-Mumti'" }
+        work: "Ash-Sharh al-Mumti'", workAr: "«الشرح الممتع»" }
     ],
     difference: "How long the concession lasts is a genuine and old disagreement. Many scholars held that if you intend to stay more than four days you pray in full, and this is the position of the majority including Ibn Baz and Ibn Uthaymeen. Ibn Taymiyyah held that a traveller keeps shortening as long as he has not taken the place as a residence, even for a long stay — and a number of contemporary scholars followed him in that. The weight of the scholars is with the first, but the second is a serious position held by a major imam, and someone acting on it is not acting without evidence.",
     differenceAr: "ومدّة بقاء الرخصة خلافٌ حقيقيٌّ قديم. فذهب كثيرٌ من أهل العلم إلى أنّ من نوى إقامة أكثر من أربعة أيام أتمّ، وهو قول الجمهور، وعليه ابن باز وابن عثيمين. وذهب ابن تيمية إلى أنّ المسافر يقصر ما لم يتّخذ البلد وطنًا وإن طالت إقامته، وتبعه على ذلك عددٌ من المعاصرين. والأكثرون على الأول، والثاني قولٌ معتبرٌ لإمامٍ كبير، ومن عمل به لم يعمل بلا دليل.",
@@ -614,21 +614,21 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "Al-Mughirah ibn Shu'bah said: I was with the Prophet ﷺ and I bent to remove his khuffs, and he said: \"Leave them — I put them on in a state of purity\" — and he wiped over them.",
         ar: "عن المغيرة بن شعبة قال: كنت مع النبي ﷺ فأهويتُ لأنزع خفّيه فقال: «دعهما فإني أدخلتهما طاهرتين» — فمسح عليهما.",
-        ref: "Sahih al-Bukhari, Book of Wudu, Hadith 206; also Muslim — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of Wudu, Hadith 206; also Muslim — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب الوضوء، حديث ٢٠٦، ورواه مسلم — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Permitted wiping over ordinary socks provided they are thick enough to cover the foot and stay on it, and rejected the condition that they be leather.",
         viewAr: "أجاز المسح على الجورب المعتاد إذا كان صفيقًا يستر القدم ويثبت عليها، ولم يشترط أن يكون من جلد.",
-        work: "Majmu' Fatawa Ibn Baz" },
+        work: "Majmu' Fatawa Ibn Baz", workAr: "«مجموع فتاوى ابن باز»" },
       { name: "Ibn Uthaymeen", nameAr: "الشيخ محمد بن صالح العثيمين",
         view: "The same, and added that what matters is that the sock actually covers the part of the foot that must be washed and is not so thin that the skin shows through.",
         viewAr: "على مثل قوله، وزاد أنّ المعتبر أن يستر الجورب موضع الفرض حقيقةً وألّا يكون رقيقًا تُرى البشرة من ورائه.",
-        work: "Ash-Sharh al-Mumti'" },
+        work: "Ash-Sharh al-Mumti'", workAr: "«الشرح الممتع»" },
       { name: "Al-Albani", nameAr: "الشيخ محمد ناصر الدين الألباني",
         view: "Held the same permission and gathered the narrations reported from the companions who wiped over cloth socks.",
         viewAr: "قال بالجواز نفسه، وجمع ما ورد عن الصحابة من المسح على الجوارب.",
-        work: "Silsilat al-Ahadith as-Sahihah" }
+        work: "Silsilat al-Ahadith as-Sahihah", workAr: "«سلسلة الأحاديث الصحيحة»" }
     ],
     difference: "Some earlier scholars restricted wiping to leather khuffs and required washing the feet with anything else, and that view is held by scholars within several of the schools. Against it, wiping over cloth socks is reported from a number of the companions, and the contemporary scholars named above permitted it. The weight is with permitting it on condition of thickness, but a person who chooses to wash the feet to be safe has done nothing wrong and has taken the more cautious road.",
     differenceAr: "وقصر بعض المتقدّمين المسح على الخفّ الجلديّ وأوجبوا الغسل فيما سواه، وبه قال جماعةٌ داخل عدّة مذاهب. ويقابله أنّ المسح على الجوارب مرويٌّ عن عددٍ من الصحابة، وأفتى بجوازه المعاصرون المذكورون. والأكثرون على الجواز بشرط الصفاقة، ومن اختار غسل القدمين احتياطًا فلم يأتِ منكرًا، وقد أخذ بالأحوط.",
@@ -661,27 +661,27 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "\"There is no marriage without a guardian.\"",
         ar: "«لَا نِكَاحَ إِلَّا بِوَلِيٍّ»",
-        ref: "Sunan Abu Dawud, Book of Marriage, Hadith 2085 and elsewhere — OUTSIDE the two Sahihs; graded Sahih by al-Albani. This is the primary evidence of the majority." },
+        ref: "Sunan Abu Dawud, Book of Marriage, Hadith 2085 and elsewhere — OUTSIDE the two Sahihs; graded Sahih by al-Albani. This is the primary evidence of the majority.", refAr: "سنن أبي داود، كتاب النكاح، حديث ٢٠٨٥ وغيره — خارج الصحيحين، وصحّحه الألباني. وهو عمدةُ الجمهور في الاستدلال." },
       { en: "\"Any woman who marries without the permission of her guardian, her marriage is void\" — repeated three times.",
         ar: "«أَيُّمَا امْرَأَةٍ نَكَحَتْ بِغَيْرِ إِذْنِ وَلِيِّهَا فَنِكَاحُهَا بَاطِلٌ» — قالها ثلاثًا",
-        ref: "Sunan Abu Dawud, Book of Marriage, Hadith 2083; at-Tirmidhi — OUTSIDE the two Sahihs; graded Sahih by al-Albani" },
+        ref: "Sunan Abu Dawud, Book of Marriage, Hadith 2083; at-Tirmidhi — OUTSIDE the two Sahihs; graded Sahih by al-Albani", refAr: "سنن أبي داود، كتاب النكاح، حديث ٢٠٨٣، ورواه الترمذي — خارج الصحيحين، وصحّحه الألباني" },
       { en: "\"A previously married woman has more right over herself than her guardian, and a virgin is asked permission for herself, and her permission is her silence.\"",
         ar: "«الثَّيِّبُ أَحَقُّ بِنَفْسِهَا مِنْ وَلِيِّهَا، وَالْبِكْرُ تُسْتَأْذَنُ فِي نَفْسِهَا، وَإِذْنُهَا صُمَاتُهَا»",
-        ref: "Sahih Muslim, Book of Marriage — Sahih. This is among the evidences the Hanafis rely on." }
+        ref: "Sahih Muslim, Book of Marriage — Sahih. This is among the evidences the Hanafis rely on.", refAr: "صحيح مسلم، كتاب النكاح — صحيح. وهو ممّا يعتمده الحنفيّة في الاستدلال." }
     ],
     scholars: [
       { name: "Ash-Shafi'i, Malik and Ahmad", nameAr: "الشافعي ومالك وأحمد",
         view: "A guardian is a condition of validity. Without him the contract does not stand, however willing the woman.",
         viewAr: "الوليّ شرطٌ في الصحّة، ولا ينعقد بدونه وإن رضيت المرأة.",
-        work: "Al-Umm; Al-Mudawwanah; Masa'il Ahmad" },
+        work: "Al-Umm; Al-Mudawwanah; Masa'il Ahmad", workAr: "«الأمّ»؛ «المدوّنة»؛ «مسائل أحمد»" },
       { name: "Abu Hanifah", nameAr: "الإمام أبو حنيفة",
         view: "An adult woman of sound mind may contract her own marriage to a suitable husband; the guardian's role is advisory and protective rather than a condition of validity.",
         viewAr: "للبالغة العاقلة أن تعقد على نفسها من كفء، وولاية الوليّ نظرٌ وصيانةٌ لا شرط صحّة.",
-        work: "The Hanafi school, as recorded by his students" },
+        work: "The Hanafi school, as recorded by his students", workAr: "مذهب الحنفية، كما دوّنه أصحابه" },
       { name: "Ibn Baz and Ibn Uthaymeen", nameAr: "ابن باز وابن عثيمين",
         view: "Both took the majority position that the guardian is a condition, and both stressed that a guardian who obstructs without a valid reason forfeits the right.",
         viewAr: "أخذا بقول الجمهور أنّ الوليّ شرط، وشدّدا على أنّ العاضل بغير حقٍّ تسقط ولايته.",
-        work: "Majmu' Fatawa Ibn Baz; Ash-Sharh al-Mumti'" }
+        work: "Majmu' Fatawa Ibn Baz; Ash-Sharh al-Mumti'", workAr: "«مجموع فتاوى ابن باز»؛ «الشرح الممتع»" }
     ],
     difference: "The weight of the scholars is clearly with requiring a guardian — three of the four schools and the two contemporary scholars most cited on this site. The Hanafi position is not a fringe opinion and is followed by a very large number of Muslims. What must NOT be done is to tell someone their existing marriage is invalid: that is a judgement about a specific contract, and it belongs to a scholar or a court that knows the details, not to a website.",
     differenceAr: "الأكثرون على اشتراط الوليّ بوضوح: ثلاثةٌ من المذاهب الأربعة، والشيخان المعاصران الأكثر نقلًا في هذا الموقع. وقول الحنفيّة ليس قولًا شاذًّا، وعليه خلقٌ كثيرٌ من المسلمين. والذي لا يجوز أن يُصنع أن يُقال لأحدٍ إنّ نكاحه القائم باطل، فذلك حكمٌ على عقدٍ بعينه، وهو إلى عالمٍ أو قاضٍ يعرف التفاصيل، لا إلى موقعٍ على الشبكة.",
@@ -714,30 +714,30 @@ const FIQH_RULINGS = [
     evidence: [
       { en: "\"Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins. Indeed it is He who is the Forgiving, the Merciful.\"",
         ar: "﴿قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ﴾",
-        ref: "Surah Az-Zumar (39:53)" },
+        ref: "Surah Az-Zumar (39:53)", refAr: "سورة الزمر (٣٩:٥٣)" },
       { en: "\"And who despairs of the mercy of his Lord except those astray?\"",
         ar: "﴿وَمَن يَقْنَطُ مِن رَّحْمَةِ رَبِّهِ إِلَّا الضَّالُّونَ﴾",
-        ref: "Surah Al-Hijr (15:56)" },
+        ref: "Surah Al-Hijr (15:56)", refAr: "سورة الحجر (١٥:٥٦)" },
       { en: "The Prophet ﷺ said Allah says: \"O son of Adam, were your sins to reach the clouds of the sky, then you sought My forgiveness, I would forgive you and I would not mind.\"",
         ar: "قال ﷺ فيما يرويه عن ربه: «يَا ابْنَ آدَمَ، لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلَا أُبَالِي»",
-        ref: "Jami at-Tirmidhi, Book of Supplications — OUTSIDE the two Sahihs; graded Sahih by al-Albani" },
+        ref: "Jami at-Tirmidhi, Book of Supplications — OUTSIDE the two Sahihs; graded Sahih by al-Albani", refAr: "جامع الترمذي، كتاب الدعوات — خارج الصحيحين، وصحّحه الألباني" },
       { en: "And in the two Sahihs, the man who killed ninety-nine people and then one more, and was forgiven when he set out toward a land of righteous people and died on the road.",
         ar: "وفي الصحيحين قصّة الذي قتل تسعةً وتسعين نفسًا ثم أتمّ بها مئة، فغُفر له لمّا خرج قاصدًا أرض الصالحين فمات في الطريق.",
-        ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3470; also Muslim — Sahih, agreed upon" }
+        ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3470; also Muslim — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب أحاديث الأنبياء، حديث ٣٤٧٠، ورواه مسلم — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn al-Qayyim", nameAr: "ابن القيم",
         view: "Wrote at length that despair is one of Shaytan's most effective instruments precisely because it looks like piety — a person who thinks himself beyond forgiveness stops trying, and that is the whole aim.",
         viewAr: "أطال في أنّ القنوط من أنفذ حبائل الشيطان، لأنه يتزيّا بزيّ التقوى؛ فمن ظنّ نفسه خارجًا عن المغفرة كفّ عن العمل، وذلك هو المقصود.",
-        work: "Madarij as-Salikin" },
+        work: "Madarij as-Salikin", workAr: "«مدارج السالكين»" },
       { name: "An-Nawawi", nameAr: "الإمام النووي",
         view: "Gathered the texts on hope and on the acceptance of repentance and held that the door remains open until the soul reaches the throat, and until the sun rises from the west.",
         viewAr: "جمع نصوص الرجاء وقبول التوبة، وقرّر أنّ الباب مفتوحٌ حتى تبلغ الروح الحلقوم، وحتى تطلع الشمس من مغربها.",
-        work: "Riyad as-Salihin, the Book of Repentance" },
+        work: "Riyad as-Salihin, the Book of Repentance", workAr: "«رياض الصالحين»، باب التوبة" },
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
         view: "Answered this question many times and never qualified it: sincere repentance wipes what came before it, whatever the sin was, and the one who repents from a sin is as one with no sin.",
         viewAr: "أجاب عن هذا مرارًا ولم يقيّده: التوبة الصادقة تمحو ما قبلها كائنًا ما كان الذنب، والتائب من الذنب كمن لا ذنب له.",
-        work: "Fatawa Nur 'ala ad-Darb" }
+        work: "Fatawa Nur 'ala ad-Darb", workAr: "«فتاوى نور على الدرب»" }
     ],
     difference: "There is no disagreement here worth reporting, and it would be dishonest to manufacture one. What the scholars do add is a warning against the opposite error — treating forgiveness as a licence and delaying repentance on the assumption of time that nobody is guaranteed.",
     differenceAr: "لا خلاف ها هنا يستحقّ النقل، ولا يصحّ اختلاق خلافٍ لا وجود له. وإنما زاد أهل العلم التحذير من الطرف المقابل: أن تُتّخذ المغفرة ذريعةً فيُسوَّف بالتوبة اتّكالًا على أجلٍ لا يضمنه أحد.",

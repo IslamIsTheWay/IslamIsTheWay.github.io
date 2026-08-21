@@ -702,10 +702,12 @@ function iitwBuildVoiceBar() {
 
   if (!voices.length) {
     host.innerHTML = `<div class="voice-bar voice-bar-warn">
-      <strong>No Arabic voice is installed on this device.</strong>
+      <span class="en-only"><strong>No Arabic voice is installed on this device.</strong>
       The 🔊 button for Arabic is disabled, because reading Arabic with an English voice mispronounces it badly.
-      To enable it on Windows: <em>Settings → Time &amp; language → Language &amp; region → add Arabic → Language options → Speech</em>, then reload this page. The Arabic voice <strong>Naayf</strong> is a man's voice.
-      <br><span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد صوت عربي على هذا الجهاز. أضف حزمة اللغة العربية من إعدادات النظام ثم أعد تحميل الصفحة، وصوت «نايف» صوت رجل.</span>
+      To enable it on Windows: <em>Settings → Time &amp; language → Language &amp; region → add Arabic → Language options → Speech</em>, then reload this page. The Arabic voice <strong>Naayf</strong> is a man's voice.</span>
+      <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;"><strong>لا يوجد صوتٌ عربيٌّ على هذا الجهاز.</strong>
+      ولذلك عُطّل زرّ 🔊 للعربية، لأنّ قراءة العربية بصوتٍ إنجليزيّ تُفسد نطقها إفسادًا شديدًا.
+      ولتفعيله في ويندوز: <em>الإعدادات ← الوقت واللغة ← اللغة والمنطقة ← أضف العربية ← خيارات اللغة ← الكلام</em>، ثم أعد تحميل الصفحة. وصوت <strong>«نايف»</strong> صوتُ رجل.</span>
     </div>`;
     return;
   }
@@ -730,15 +732,15 @@ function iitwBuildVoiceBar() {
   const group = (name, list) => list.length ? `<optgroup label="${name}">${list.map(opt).join("")}</optgroup>` : "";
 
   host.innerHTML = `<div class="voice-bar">
-    <label for="arVoiceSelect">🎙 Arabic voice <span dir="rtl">— الصوت العربي</span>:</label>
+    <label for="arVoiceSelect">🎙 <span class="en-only">Arabic voice</span><span class="ar-only" dir="rtl">الصوت العربي</span>:</label>
     <select id="arVoiceSelect">
       ${group("Classical Arabic (فصحى) — recommended", classical)}
       ${group("Regional dialects — some letters change", dialect)}
     </select>
-    <button type="button" class="voice-test">▶ Test the letters</button>
+    <button type="button" class="voice-test">▶ <span class="en-only">Test the letters</span><span class="ar-only" dir="rtl">جرّب الحروف</span></button>
     <span class="voice-hint">${hasClassical
-      ? "Classical (فصحى) voices pronounce every letter as written. A dialect voice will change ق, ج, ث, ذ and ظ — that is the dialect, not a fault."
-      : "<strong>Only dialect voices are installed</strong>, so ق, ج, ث, ذ and ظ will be altered. For classical Arabic add the <em>Arabic (Saudi Arabia)</em> speech pack in Windows settings, or open this site in <strong>Microsoft Edge</strong>, which provides Google/Microsoft online Arabic voices."}</span>
+      ? `<span class="en-only">Classical (فصحى) voices pronounce every letter as written. A dialect voice will change ق, ج, ث, ذ and ظ — that is the dialect, not a fault.</span><span class="ar-only" dir="rtl">أصوات الفصحى تنطق كلّ حرفٍ كما كُتِب. وأمّا صوت اللهجة فيُغيّر القاف والجيم والثاء والذال والظاء — وذاك من اللهجة لا عيبٌ في الجهاز.</span>`
+      : `<span class="en-only"><strong>Only dialect voices are installed</strong>, so ق, ج, ث, ذ and ظ will be altered. For classical Arabic add the <em>Arabic (Saudi Arabia)</em> speech pack in Windows settings, or open this site in <strong>Microsoft Edge</strong>, which provides Google/Microsoft online Arabic voices.</span><span class="ar-only" dir="rtl"><strong>لا يوجد إلاّ أصواتُ لهجات</strong>، فتتغيّر القاف والجيم والثاء والذال والظاء. وللفصحى أضف حزمة النطق <em>العربية (السعودية)</em> من إعدادات ويندوز، أو افتح الموقع في <strong>مايكروسوفت إيدج</strong>، ففيه أصواتٌ عربيّةٌ متصلة بالإنترنت.</span>`}</span>
   </div>`;
 
   host.querySelector("#arVoiceSelect").addEventListener("change", e => {

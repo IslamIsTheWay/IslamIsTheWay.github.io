@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608211618" />
+  <link rel="stylesheet" href="css/style.css?v=202608211740" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -72,10 +72,10 @@
   <section>
     <div class="container">
       <div class="situation-box">
-        <h2>🤲 Ask About Your Situation <span dir="rtl">— اسأل عن حالتك</span></h2>
+        <h2><span class="en-only">🤲 Ask About Your Situation</span><span class="ar-only" dir="rtl">اسأل عن حالتك</span></h2>
         <p class="sit-sub">
-          Describe what you are going through, in Arabic or English, and we will show you the Quranic themes and Prophets' stories that relate to it — each with its full reference so you can read it in context.
-          <br><span dir="rtl" style="font-family:'Amiri',serif;">اكتب ما تمر به بالعربية أو الإنجليزية، وسنعرض لك المعاني القرآنية وقصص الأنبياء المتعلقة بحالتك، مع المرجع كاملاً لتقرأه في سياقه.</span>
+          <span class="en-only">Describe what you are going through, in Arabic or English, and we will show you the Quranic themes and Prophets' stories that relate to it — each with its full reference so you can read it in context.</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">اكتب ما تمر به بالعربية أو الإنجليزية، وسنعرض لك المعاني القرآنية وقصص الأنبياء المتعلقة بحالتك، مع المرجع كاملاً لتقرأه في سياقه.</span>
         </p>
 
         <div class="sit-input-wrap">
@@ -94,9 +94,7 @@
         </div>
         <div id="micStatus" class="mic-status"></div>
 
-        <div class="context-note" style="margin:18px 0 0;">
-          <strong>Important — مهم:</strong> This tool only points you to verses and stories that are already on this site, always with their full reference. It is <strong>not a fatwa</strong> and does not judge you or your situation. Please read each verse within its complete surah and consult a qualified scholar for personal rulings.
-          <br><span dir="rtl" style="font-family:'Amiri',serif;">هذه الأداة تدلّك فقط على آيات وقصص موجودة في الموقع مع مراجعها كاملة. وهي <strong>ليست فتوى</strong> ولا تحكم عليك أو على حالتك. اقرأ كل آية في سياق سورتها كاملة، واستشر أهل العلم في المسائل الخاصة.</span>
+        <div class="context-note" style="margin:18px 0 0;"><span class="en-only"><strong>Important:</strong> This tool only points you to verses and stories that are already on this site, always with their full reference. It is <strong>not a fatwa</strong> and does not judge you or your situation. Please read each verse within its complete surah and consult a qualified scholar for personal rulings.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;"><strong>مهم:</strong> هذه الأداة تدلّك فقط على آيات وقصص موجودة في الموقع مع مراجعها كاملة. وهي <strong>ليست فتوى</strong> ولا تحكم عليك أو على حالتك. اقرأ كل آية في سياق سورتها كاملة، واستشر أهل العلم في المسائل الخاصة.</span>
         </div>
 
         <div id="arVoiceBar"></div>
@@ -108,11 +106,9 @@
   <!-- ===== What to say, and when ===== -->
   <section class="pattern-bg">
     <div class="container">
-      <h2 class="section-title">🕌 What Do I Say — and When? <span dir="rtl" style="font-family:'Amiri',serif;">— ماذا أقول ومتى؟</span></h2>
+      <h2 class="section-title"><span class="en-only">🕌 What Do I Say — and When?</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">ماذا أقول ومتى؟</span></h2>
       <div class="divider"></div>
-      <p class="section-sub" style="margin-top:18px;">
-        The words said at each point of the prayer, what is said after it, the daily remembrance with its counts, and how to ask for forgiveness — each with its wording, its meaning, and its reference.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">ما يُقال في كل موضعٍ من الصلاة، وما يُقال بعدها، والأذكار اليومية بعددها، وصيغ الاستغفار — مع النص والمعنى والمرجع.</span>
+      <p class="section-sub" style="margin-top:18px;"><span class="en-only">The words said at each point of the prayer, what is said after it, the daily remembrance with its counts, and how to ask for forgiveness — each with its wording, its meaning, and its reference.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">ما يُقال في كل موضعٍ من الصلاة، وما يُقال بعدها، والأذكار اليومية بعددها، وصيغ الاستغفار — مع النص والمعنى والمرجع.</span>
       </p>
 
       <div class="worship-search-wrap">
@@ -121,34 +117,28 @@
 
       <div class="worship-tabs" id="worshipTabs"></div>
       <div id="worshipList" class="worship-list"></div>
-      <p id="worshipEmpty" class="no-results" style="display:none;">Nothing matches those words. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد ما يطابق هذه الكلمات.</span></p>
+      <p id="worshipEmpty" class="no-results" style="display:none;"><span class="en-only">Nothing matches those words.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لا يوجد ما يطابق هذه الكلمات.</span></p>
     </div>
   </section>
 
   <!-- ===== What the scholars explained ===== -->
   <section class="pattern-bg" id="rulings">
     <div class="container">
-      <h2 class="section-title">📚 What the Scholars Explained <span dir="rtl" style="font-family:'Amiri',serif;">— ما شرحه أهل العلم</span></h2>
+      <h2 class="section-title"><span class="en-only">📚 What the Scholars Explained</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما شرحه أهل العلم</span></h2>
       <div class="divider"></div>
-      <p class="section-sub" style="margin-top:18px;">
-        A verse gives the command and a hadith shows the practice — but "what actually counts as hijab?" is answered by neither. That is what the scholars spent their lives on. These are the practical explanations of Ibn Baz, Ibn Uthaymeen, the Permanent Committee and others: the conditions, the cases, and — where they genuinely disagreed — who held what, and which way the weight of the scholars leaned.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">الآية تُعطي الأمر والحديث يُبيّن الفعل، وأما «ما الذي يُعدّ حجابًا حقًّا؟» فلا يجيب عنه واحدٌ منهما، وإنما هو ما أفنى فيه أهل العلم أعمارهم. وهذه شروحٌ عملية لابن باز وابن عثيمين واللجنة الدائمة وغيرهم: الشروط والصور، وحيث اختلفوا حقًّا — من قال بماذا، وإلى أين يميل الترجيح.</span>
+      <p class="section-sub" style="margin-top:18px;"><span class="en-only">A verse gives the command and a hadith shows the practice — but "what actually counts as hijab?" is answered by neither. That is what the scholars spent their lives on. These are the practical explanations of Ibn Baz, Ibn Uthaymeen, the Permanent Committee and others: the conditions, the cases, and — where they genuinely disagreed — who held what, and which way the weight of the scholars leaned.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">الآية تُعطي الأمر والحديث يُبيّن الفعل، وأما «ما الذي يُعدّ حجابًا حقًّا؟» فلا يجيب عنه واحدٌ منهما، وإنما هو ما أفنى فيه أهل العلم أعمارهم. وهذه شروحٌ عملية لابن باز وابن عثيمين واللجنة الدائمة وغيرهم: الشروط والصور، وحيث اختلفوا حقًّا — من قال بماذا، وإلى أين يميل الترجيح.</span>
       </p>
 
-      <div class="context-note">
-        <strong>How to use this:</strong> these are summaries of what named scholars said, given so you can find their words and read them yourself — every entry says where. They are <strong>not a fatwa</strong> for your particular case. Where the scholars differed, the entry says so plainly instead of hiding one side.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">طريقة الإفادة منها: هذه تلخيصاتٌ لكلام علماء مسمَّين، تُذكر لتصل إلى كلامهم فتقرأه بنفسك — وكل مدخلٍ يدلّك على موضعه. وليست <strong>فتوى</strong> في حالتك الخاصة. وحيث اختلف أهل العلم صرّحنا بالخلاف ولم نُخفِ أحد القولين.</span>
+      <div class="context-note"><span class="en-only"><strong>How to use this:</strong> these are summaries of what named scholars said, given so you can find their words and read them yourself — every entry says where. They are <strong>not a fatwa</strong> for your particular case. Where the scholars differed, the entry says so plainly instead of hiding one side.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">طريقة الإفادة منها: هذه تلخيصاتٌ لكلام علماء مسمَّين، تُذكر لتصل إلى كلامهم فتقرأه بنفسك — وكل مدخلٍ يدلّك على موضعه. وليست <strong>فتوى</strong> في حالتك الخاصة. وحيث اختلف أهل العلم صرّحنا بالخلاف ولم نُخفِ أحد القولين.</span>
       </div>
 
       <div class="adhkar-tabs" id="rulingTabs"></div>
       <div id="rulingList" class="adhkar-list"></div>
-      <p id="rulingEmpty" class="no-results" style="display:none;">Nothing in this section yet. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد في هذا القسم بعد.</span></p>
+      <p id="rulingEmpty" class="no-results" style="display:none;"><span class="en-only">Nothing in this section yet.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لا يوجد في هذا القسم بعد.</span></p>
 
       <!-- The books themselves, so a reader can go past the summary. -->
-      <h3 class="section-title" style="margin-top:52px;font-size:1.5rem;">📖 The Scholars and Their Books <span dir="rtl" style="font-family:'Amiri',serif;">— العلماء وكتبهم</span></h3>
-      <p class="section-sub" style="margin-top:12px;">
-        Everything above is a summary of someone else's words. These are the books those words come from — what each one is actually for, and where to read it.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">كل ما تقدّم تلخيصٌ لكلام غيرنا. وهذه هي الكتب التي منها ذلك الكلام — فيمَ صُنّف كلُّ كتاب، وأين يُقرأ.</span>
+      <h3 class="section-title" style="margin-top:52px;font-size:1.5rem;"><span class="en-only">📖 The Scholars and Their Books</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">العلماء وكتبهم</span></h3>
+      <p class="section-sub" style="margin-top:12px;"><span class="en-only">Everything above is a summary of someone else's words. These are the books those words come from — what each one is actually for, and where to read it.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">كل ما تقدّم تلخيصٌ لكلام غيرنا. وهذه هي الكتب التي منها ذلك الكلام — فيمَ صُنّف كلُّ كتاب، وأين يُقرأ.</span>
       </p>
       <div id="scholarList" class="scholar-list"></div>
     </div>
@@ -194,9 +184,9 @@
   <div class="photo-band" style="background-image:url('img/mosque-beach.jpg');">
     <div class="band-inner reveal">
       <div class="band-arabic">إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ</div>
-      <h2>“Allah will not change the condition of a people until they change what is in themselves”</h2>
-      <p>Surah Ar-Ra'd (13:11) — the verse the whole section above rests on.</p>
-      <p style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">سورة الرعد (١٣:١١) — وهي الآية التي يقوم عليها القسم المتقدّم كلّه.</p>
+      <h2 class="en-only">“Allah will not change the condition of a people until they change what is in themselves”</h2>
+      <p class="en-only">Surah Ar-Ra'd (13:11) — the verse the whole section above rests on.</p>
+      <p class="ar-only" style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">سورة الرعد (١٣:١١) — وهي الآية التي يقوم عليها القسم المتقدّم كلّه.</p>
     </div>
   </div>
 
@@ -207,35 +197,33 @@
        back to it. -->
   <section id="adhkar">
     <div class="container">
-      <h2 class="section-title">📿 The Adhkar <span dir="rtl" style="font-family:'Amiri',serif;">— الأذكار</span></h2>
+      <h2 class="section-title"><span class="en-only">📿 The Adhkar</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">الأذكار</span></h2>
       <div class="divider"></div>
-      <p class="section-sub" style="margin-top:18px;">
-        The remembrances of an ordinary day — morning and evening, on waking and before sleeping, after every prayer, and at a moment of distress. Tap a dhikr to count it; the count is kept until the end of the day.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">أذكار اليوم — الصباح والمساء، والاستيقاظ والنوم، وبعد كل صلاة، وعند الكرب. انقر على الذكر ليُحتسب لك، ويبقى العدّ محفوظًا إلى آخر اليوم.</span>
+      <p class="section-sub" style="margin-top:18px;"><span class="en-only">The remembrances of an ordinary day — morning and evening, on waking and before sleeping, after every prayer, and at a moment of distress. Tap a dhikr to count it; the count is kept until the end of the day.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">أذكار اليوم — الصباح والمساء، والاستيقاظ والنوم، وبعد كل صلاة، وعند الكرب. انقر على الذكر ليُحتسب لك، ويبقى العدّ محفوظًا إلى آخر اليوم.</span>
       </p>
 
       <div class="adhkar-tabs" id="adhkarTabs"></div>
       <div id="adhkarList" class="adhkar-list"></div>
-      <p id="adhkarEmpty" class="no-results" style="display:none;">Nothing here yet. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد.</span></p>
+      <p id="adhkarEmpty" class="no-results" style="display:none;"><span class="en-only">Nothing here yet.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لا يوجد.</span></p>
     </div>
   </section>
 
   <section class="pattern-bg">
     <div class="container">
-      <div class="context-note">
-        <strong>A note on context:</strong> Each theme below is a brief summary intended to encourage reflection and further study — not a complete ruling or judgment on any individual. The Quran's verses should always be read within their full surah, alongside trusted tafsir (commentary) and scholarship, rather than in isolation.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">ملاحظة عن السياق: كل معنى مذكور أدناه هو ملخّص موجز للتذكير والتدبر، وليس حكماً كاملاً على أحد. وينبغي قراءة الآيات ضمن سورتها كاملة مع تفسير موثوق وأهل العلم، لا منفردة عن سياقها.</span>
+      <div class="context-note"><span class="en-only"><strong>A note on context:</strong> Each theme below is a brief summary intended to encourage reflection and further study — not a complete ruling or judgment on any individual. The Quran's verses should always be read within their full surah, alongside trusted tafsir (commentary) and scholarship, rather than in isolation.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">ملاحظة عن السياق: كل معنى مذكور أدناه هو ملخّص موجز للتذكير والتدبر، وليس حكماً كاملاً على أحد. وينبغي قراءة الآيات ضمن سورتها كاملة مع تفسير موثوق وأهل العلم، لا منفردة عن سياقها.</span>
       </div>
 
       <div class="themes-columns">
         <div class="themes-col">
-          <h2>🌿 The Path Toward Paradise <span dir="rtl" style="font-family:'Amiri',serif;">— طريق الجنة</span></h2>
-          <p class="col-sub">Qualities and deeds the Quran associates with Allah's mercy and the reward of Paradise (Jannah).</p>
+          <h2><span class="en-only">🌿 The Path Toward Paradise</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">طريق الجنة</span></h2>
+          <p class="col-sub en-only">Qualities and deeds the Quran associates with Allah's mercy and the reward of Paradise (Jannah).</p>
+          <p class="col-sub ar-only" dir="rtl">الصفات والأعمال التي يقرنها القرآن برحمة الله وثواب الجنّة.</p>
           <div id="paradiseList"></div>
         </div>
         <div class="themes-col warning">
-          <h2>⚠️ Warnings to Reflect Upon <span dir="rtl" style="font-family:'Amiri',serif;">— تحذيرات للتدبر</span></h2>
-          <p class="col-sub">Behaviors the Quran warns against, associated with the consequence of the Hellfire (Jahannam) if persisted in without repentance.</p>
+          <h2><span class="en-only">⚠️ Warnings to Reflect Upon</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">تحذيرات للتدبر</span></h2>
+          <p class="col-sub en-only">Behaviors the Quran warns against, associated with the consequence of the Hellfire (Jahannam) if persisted in without repentance.</p>
+          <p class="col-sub ar-only" dir="rtl">أعمالٌ يحذّر منها القرآن، ويقرن بها عذاب النار لمن أصرّ عليها ولم يتب.</p>
           <div id="warningList"></div>
         </div>
       </div>
@@ -245,8 +233,9 @@
   <section class="ayah-banner">
     <div class="container">
       <div class="ayah-arabic">إِنَّ رَحْمَتَ اللَّهِ قَرِيبٌ مِّنَ الْمُحْسِنِينَ</div>
-      <p class="ayah-text">"Indeed, the mercy of Allah is near to the doers of good."</p>
-      <p class="ayah-ref">Surah Al-A'raf (7:56)</p>
+      <p class="ayah-text en-only">"Indeed, the mercy of Allah is near to the doers of good."</p>
+      <p class="ayah-ref en-only">Surah Al-A'raf (7:56)</p>
+      <p class="ayah-ref ar-only" dir="rtl">سورة الأعراف (٧:٥٦)</p>
     </div>
   </section>
 
@@ -292,54 +281,54 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608211618"></script>
+  <script src="js/data.js?v=202608211740"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608211618"></script>
+  <script src="js/sunnah.js?v=202608211740"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608211618"></script>
+  <script src="js/adhkar.js?v=202608211740"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608211618"></script>
+  <script src="js/scholars.js?v=202608211740"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608211618"></script>
+  <script src="js/scholars-books.js?v=202608211740"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608211618"></script>
+  <script src="js/revival.js?v=202608211740"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608211618"></script>
+  <script src="js/bidah.js?v=202608211740"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608211618"></script>
+  <script src="js/misunderstood.js?v=202608211740"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608211618"></script>
+  <script src="js/terms.js?v=202608211740"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608211618"></script>
+  <script src="js/figures.js?v=202608211740"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608211618"></script>
+  <script src="js/signs.js?v=202608211740"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
       return `
-        <h3>${t.title}${t.titleAr ? ` <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${t.titleAr}</span>` : ""}</h3>
+        <h3><span class="en-only">${t.title}</span>${t.titleAr ? `<span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${t.titleAr}</span>` : ""}</h3>
         <p class="en-only">${t.description}</p>
-        ${t.descriptionAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:${isWarning ? "#8a3d1f" : "var(--green-dark)"};background:${isWarning ? "#fdf1ea" : "var(--green-pale)"};border-radius:8px;padding:10px 14px;margin-bottom:10px;">${t.descriptionAr}</p>` : ""}
+        ${t.descriptionAr ? `<p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:${isWarning ? "#8a3d1f" : "var(--green-dark)"};background:${isWarning ? "#fdf1ea" : "var(--green-pale)"};border-radius:8px;padding:10px 14px;margin-bottom:10px;">${t.descriptionAr}</p>` : ""}
         <div class="refs">${t.refs.map(r => `<span>${r}</span>`).join("")}</div>
       `;
     }
@@ -698,7 +687,7 @@
 
     function personCardHtml(p) {
       return `<div class="theme-card" style="margin-bottom:14px;">
-        <h3>${p.name} <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${p.arabic || ""}</span></h3>
+        <h3><span class="en-only">${p.name}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${p.arabic || ""}</span></h3>
         ${p.title ? `<p style="color:var(--gold);font-weight:600;font-size:.82rem;margin-bottom:6px;">${p.title}</p>` : ""}
         <p class="en-only">${p.summary}</p>
         ${p.summaryAr ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;line-height:1.95;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${p.summaryAr}</p>` : ""}
@@ -976,7 +965,7 @@
        what the answer rests on. */
     function iitwDirectAnswerHtml(o) {
       return `<div class="guidance-results-head">
-          <h3>The answer to what you asked <span dir="rtl" style="font-family:'Amiri',serif;">— جواب ما سألت عنه</span></h3>
+          <h3><span class="en-only">The answer to what you asked</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">جواب ما سألت عنه</span></h3>
         </div>
         <div class="gd-answer">
           <div class="gd-answer-label">✅ <span class="en-only">In short</span>
@@ -994,7 +983,7 @@
         </div>
         <div class="context-note" style="margin-top:18px;">
           <span class="en-only">This is an explanation, not a fatwa. Read the section it links to in full, and for a ruling on your own circumstances ask a scholar you trust.</span>
-          <span dir="rtl" style="font-family:'Amiri',serif;">هذا بيانٌ وليس فتوى. اقرأ القسم المُحال إليه كاملًا، وأمّا الحكم في حالك أنت فاسأل عنه عالمًا تثق به.</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">هذا بيانٌ وليس فتوى. اقرأ القسم المُحال إليه كاملًا، وأمّا الحكم في حالك أنت فاسأل عنه عالمًا تثق به.</span>
         </div>`;
     }
 
@@ -1235,9 +1224,7 @@
       }
 
       if (total === 0) {
-        out.innerHTML = `<div class="no-results">
-          We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.
-          <br><span dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة بعد. جرّب وصف الفعل أو الشعور ببساطة — مثل: غضب، قلق، دين، غيبة، خمر، الوالدين، الجار، غش، تشبه، توبة.</span>
+        out.innerHTML = `<div class="no-results"><span class="en-only">We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة بعد. جرّب وصف الفعل أو الشعور ببساطة — مثل: غضب، قلق، دين، غيبة، خمر، الوالدين، الجار، غش، تشبه، توبة.</span>
           <br><br>You can also search the complete Sahih al-Bukhari and Sahih Muslim below.
           <br><button class="btn btn-outline btn-small" style="margin-top:10px;" onclick="deepSearch()">🔍 Search all of Bukhari &amp; Muslim — ابحث في البخاري ومسلم كاملين</button>
           <div id="deepResults"></div>
@@ -1246,8 +1233,8 @@
       }
 
       let html = `<div class="guidance-results-head">
-        <h3>Guidance related to your situation <span dir="rtl" style="font-family:'Amiri',serif;">— توجيه يتعلق بحالتك</span></h3>
-        <p>Read each verse in its full surah and each hadith with its reference. These are pointers for reflection, not rulings. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة وكل حديث بمرجعه. هذه إشارات للتدبر لا أحكام.</span></p>
+        <h3><span class="en-only">Guidance related to your situation</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">توجيه يتعلق بحالتك</span></h3>
+        <p><span class="en-only">Read each verse in its full surah and each hadith with its reference. These are pointers for reflection, not rulings.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة وكل حديث بمرجعه. هذه إشارات للتدبر لا أحكام.</span></p>
       </div>`;
 
       /* The scholars' explanation normally comes before everything else, and
@@ -1266,12 +1253,12 @@
       const hadithLeads = bestHadith > bestRuling * 1.35;
 
       const rulingsBlock = rulings.length
-        ? `<h3 style="margin:8px 0 12px;color:var(--green-dark);">📚 What the scholars explained <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ما شرحه أهل العلم</span></h3>`
+        ? `<h3 style="margin:8px 0 12px;color:var(--green-dark);"><span class="en-only">📚 What the scholars explained</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">ما شرحه أهل العلم</span></h3>`
           + rulings.map(({ r }) => rulingCardHtml(r)).join("")
         : "";
 
       const hadithsBlock = hadiths.length
-        ? `<h3 style="margin:8px 0 12px;color:var(--green-dark);">🕌 From the words of Prophet Muhammad ﷺ <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من أقوال النبي ﷺ</span></h3>`
+        ? `<h3 style="margin:8px 0 12px;color:var(--green-dark);"><span class="en-only">🕌 From the words of Prophet Muhammad ﷺ</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من أقوال النبي ﷺ</span></h3>`
           + hadiths.map(({ h }) => hadithCardHtml(h)).join("")
         : "";
 
@@ -1279,14 +1266,14 @@
 
       // The exact wording comes next — it answers the question directly.
       if (worship.length) {
-        html += `<h3 style="margin:8px 0 12px;color:var(--green-dark);">🗣️ The words to say <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ما تقوله</span></h3>`;
+        html += `<h3 style="margin:8px 0 12px;color:var(--green-dark);"><span class="en-only">🗣️ The words to say</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">ما تقوله</span></h3>`;
         worship.forEach(({ w }) => { html += worshipCard(w); });
       }
 
       html += hadithLeads ? rulingsBlock : hadithsBlock;
 
       if (themes.length) {
-        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">📖 From the Quran <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من القرآن الكريم</span></h3>`;
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);"><span class="en-only">📖 From the Quran</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من القرآن الكريم</span></h3>`;
         themes.slice(0, 5).forEach(({ t, kind }) => {
           const warn = kind === "warning";
           html += `<div class="theme-card ${warn ? "warning" : ""}" style="margin-bottom:14px;">
@@ -1300,17 +1287,17 @@
       }
 
       if (sunnah.length) {
-        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">🌙 What the Prophet ﷺ did — from the Sunnah <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من السنة النبوية</span></h3>`;
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);"><span class="en-only">🌙 What the Prophet ﷺ did — from the Sunnah</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من السنة النبوية</span></h3>`;
         sunnah.forEach(({ s }) => { html += sunnahCardHtml(s); });
       }
 
       if (prophets.length) {
-        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">🕊️ From the lives of the Prophets <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من سِيَر الأنبياء</span></h3>`;
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);"><span class="en-only">🕊️ From the lives of the Prophets</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من سِيَر الأنبياء</span></h3>`;
         prophets.forEach(({ p }) => { html += personCardHtml(p); });
       }
 
       if (companions.length) {
-        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);">🤝 From the Companions <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من سِيَر الصحابة</span></h3>`;
+        html += `<h3 style="margin:24px 0 12px;color:var(--green-dark);"><span class="en-only">🤝 From the Companions</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من سِيَر الصحابة</span></h3>`;
         companions.forEach(({ c }) => { html += personCardHtml(c); });
       }
 
@@ -1330,7 +1317,7 @@
        reference and grading so nothing is quoted without its source. */
     function sunnahCardHtml(s) {
       return `<div class="theme-card" style="margin-bottom:14px;">
-        <h3>${s.title}${s.titleAr ? ` <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${s.titleAr}</span>` : ""}</h3>
+        <h3><span class="en-only">${s.title}</span>${s.titleAr ? `<span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${s.titleAr}</span>` : ""}</h3>
         ${s.arabic ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.12rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;" data-speak>${s.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>` : ""}
         <p class="en-only">${s.detail}</p>
         ${s.detailAr ? `<p dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${s.detailAr}</p>` : ""}
@@ -1388,7 +1375,7 @@
         if (pieces.length) {
           slot.innerHTML = `<div style="margin-top:10px;border-top:1px dashed var(--green-pale);padding-top:10px;">
             ${pieces.join("")}
-            <p style="font-size:.78rem;color:var(--text-muted);margin:2px 0 0;">Please read each verse within its complete surah. <span dir="rtl" style="font-family:'Amiri',serif;">اقرأ الآية في سياق سورتها كاملة.</span></p>
+            <p style="font-size:.78rem;color:var(--text-muted);margin:2px 0 0;"><span class="en-only">Please read each verse within its complete surah.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">اقرأ الآية في سياق سورتها كاملة.</span></p>
           </div>`;
           if (window.applyI18n) window.applyI18n();
         }
@@ -1404,7 +1391,7 @@
       const box = document.getElementById("deepResults");
       const raw = document.getElementById("situationInput").value.trim();
       if (!raw || !box) return;
-      box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Searching all of Sahih al-Bukhari and Sahih Muslim… <span dir="rtl" style="font-family:'Amiri',serif;">جارٍ البحث في البخاري ومسلم كاملين…</span></p>`;
+      box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);"><span class="en-only">Searching all of Sahih al-Bukhari and Sahih Muslim…</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">جارٍ البحث في البخاري ومسلم كاملين…</span></p>`;
 
       try {
         if (!deepCache) {
@@ -1442,7 +1429,7 @@
           box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Nothing found in the full collections for those words. — لم نجد شيئاً في المجموعات الكاملة.</p>`;
           return;
         }
-        box.innerHTML = `<h3 style="margin:24px 0 12px;color:var(--green-dark);text-align:left;">📚 From the complete collections <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من المجموعات الكاملة</span></h3>` +
+        box.innerHTML = `<h3 style="margin:24px 0 12px;color:var(--green-dark);text-align:left;"><span class="en-only">📚 From the complete collections</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من المجموعات الكاملة</span></h3>` +
           hits.slice(0, 12).map(({ h }) => `<div class="theme-card" style="margin-bottom:14px;text-align:left;">
             <div style="font-size:.8rem;color:var(--gold);font-weight:700;margin-bottom:6px;">${h.src} — Hadith #${h.n}</div>
             ${h.ar ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.12rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${h.ar}</p>` : ""}
@@ -1561,14 +1548,14 @@
 
     function worshipCard(w) {
       return `<article class="worship-card">
-        <div class="worship-stage">${w.stageEn} <span dir="rtl" style="font-family:'Amiri',serif;">— ${w.stageAr}</span></div>
+        <div class="worship-stage"><span class="en-only">${w.stageEn}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${w.stageAr}</span></div>
         <h3 class="worship-title en-only">${w.title}</h3>
         <div class="worship-title-ar" dir="rtl">${w.titleAr}</div>
 
         <div class="worship-when">
-          <strong>When:</strong> <span class="en-only">${w.when}</span>
-          <span dir="rtl" style="font-family:'Amiri',serif;">${w.whenAr}</span>
-          ${w.count ? `<div class="worship-count">🔁 ${w.count} <span dir="rtl" style="font-family:'Amiri',serif;">— ${w.countAr}</span></div>` : ""}
+          <span class="en-only"><strong>When:</strong> ${w.when}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;"><strong>متى:</strong> ${w.whenAr}</span>
+          ${w.count ? `<div class="worship-count">🔁 <span class="en-only">${w.count}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${w.countAr}</span></div>` : ""}
         </div>
 
         <p class="worship-arabic" dir="rtl" data-speak>${w.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
@@ -1576,7 +1563,7 @@
         <p class="en-only">${w.meaning}</p>
         <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${w.meaningAr}</p>
 
-        <div class="refs"><span>${w.ref}</span><span>${w.strength}</span></div>
+        <div class="refs">${w.refAr ? `<span class="en-only">${w.ref}</span><span class="ar-only" dir="rtl">${w.refAr}</span>` : `<span>${w.ref}</span>`}${w.strengthAr ? `<span class="en-only">${w.strength}</span><span class="ar-only" dir="rtl">${w.strengthAr}</span>` : `<span>${w.strength}</span>`}</div>
       </article>`;
     }
 
@@ -1606,7 +1593,7 @@
       const host = document.getElementById("worshipTabs");
       host.innerHTML = WORSHIP_STAGES.map(st =>
         `<button type="button" class="worship-tab${st.id === worshipStage ? " active" : ""}" data-stage="${st.id}">
-           ${st.en} <span dir="rtl" style="font-family:'Amiri',serif;">${st.ar}</span>
+           <span class="en-only">${st.en}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${st.ar}</span>
          </button>`).join("");
       host.querySelectorAll(".worship-tab").forEach(b => {
         b.addEventListener("click", () => {
@@ -1648,27 +1635,27 @@
         ${figureFor(r.id)}
 
         ${(r.evidence && r.evidence.length) ? `<div class="ruling-evidence">
-          <div class="ruling-sub">📖 The evidence <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— الدليل</span></div>
+          <div class="ruling-sub">📖 <span class="en-only">The evidence</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">الدليل</span></div>
           ${r.evidence.map(e => `<div class="ruling-ev">
             <p class="ruling-ev-ar" dir="rtl" data-speak>${e.ar}
               <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>
             <p class="en-only">${e.en}</p>
-            <div class="refs"><span>${e.ref}</span></div>
+            <div class="refs"><span class="en-only">${e.ref}</span>${e.refAr ? `<span class="ar-only" dir="rtl">${e.refAr}</span>` : ""}</div>
           </div>`).join("")}
         </div>` : ""}
 
         <div class="ruling-scholars">
-          <div class="ruling-sub">🎓 Who said it <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— من قال به</span></div>
+          <div class="ruling-sub">🎓 <span class="en-only">Who said it</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من قال به</span></div>
           ${r.scholars.map(s => `<div class="ruling-scholar">
-            <div class="rs-name"><span class="en-only">${s.name}</span><span dir="rtl" style="font-family:'Amiri',serif;">${s.nameAr}</span></div>
+            <div class="rs-name"><span class="en-only"><span class="en-only">${s.name}</span></span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${s.nameAr}</span></div>
             <p class="en-only">${s.view}</p>
             <p dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${s.viewAr}</p>
-            <div class="rs-work">${s.work}</div>
+            <div class="rs-work"><span class="en-only">${s.work}</span>${s.workAr ? `<span class="ar-only" dir="rtl">${s.workAr}</span>` : ""}</div>
           </div>`).join("")}
         </div>
 
         ${r.difference ? `<div class="ruling-diff">
-          <div class="ruling-diff-head">⚖️ Where the scholars differ <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— موضع الخلاف</span></div>
+          <div class="ruling-diff-head">⚖️ <span class="en-only">Where the scholars differ</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">موضع الخلاف</span></div>
           <p class="en-only">${r.difference}</p>
           <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${r.differenceAr}</p>
         </div>` : ""}
@@ -1835,7 +1822,7 @@
       host.innerHTML = FIQH_CATEGORIES.map(c =>
         `<button type="button" class="adhkar-tab${c.id === fiqhCat ? " active" : ""}" data-cat="${c.id}">
            ${c.icon} <span class="en-only">${c.en}</span>
-           <span dir="rtl" style="font-family:'Amiri',serif;">${c.ar}</span>
+           <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${c.ar}</span>
          </button>`).join("");
       host.querySelectorAll(".adhkar-tab").forEach(b => {
         b.addEventListener("click", () => {
@@ -1872,7 +1859,7 @@
         <p class="scholar-known" dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${s.knownAr}</p>
         <ul class="scholar-books">
           ${s.books.map(b => `<li>
-            <div class="sb-title"><span class="en-only">${b.t}</span><span dir="rtl" style="font-family:'Amiri',serif;">${b.tAr}</span></div>
+            <div class="sb-title"><span class="en-only"><span class="en-only">${b.t}</span></span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.tAr}</span></div>
             <div class="sb-desc en-only">${b.d}</div>
             <div class="sb-desc" dir="rtl" style="font-family:'Amiri',serif;">${b.dAr}</div>
           </li>`).join("")}
@@ -1905,7 +1892,7 @@
         ${list.map(e => `<div class="rv-ev">
           <p class="en-only">${e.en}</p>
           <p class="rv-ev-ar" dir="rtl">${e.ar}</p>
-          <div class="rv-ev-ref">${e.ref}</div>
+          ${e.refAr ? `<div class="rv-ev-ref en-only">${e.ref}</div><div class="rv-ev-ref ar-only" dir="rtl">${e.refAr}</div>` : `<div class="rv-ev-ref">${e.ref}</div>`}
         </div>`).join("")}
       </div>`;
     }
@@ -1916,13 +1903,13 @@
       const r = REVIVAL;
 
       let html = `
-        <h2 class="section-title">🔁 ${r.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${r.titleAr}</span></h2>
+        <h2 class="section-title"><span class="en-only">🔁 ${r.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${r.titleAr}</span></h2>
         <div class="rv-intro">
           <div class="en-only">${revivalParas(r.intro)}</div>
           <div class="rv-ar" dir="rtl">${revivalParas(r.introAr)}</div>
         </div>
 
-        <h3 class="rv-head">📉 ${r.diagnosisTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${r.diagnosisTitleAr}</span></h3>`;
+        <h3 class="rv-head"><span class="en-only">📉 ${r.diagnosisTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${r.diagnosisTitleAr}</span></h3>`;
 
       html += r.diagnosis.map(d => `<article class="rv-card" id="${d.id}">
         <h4 class="en-only">${d.title}</h4>
@@ -1938,7 +1925,7 @@
         ${termsBox({ title: d.title, question: "", answer: d.body + " " + d.note,
                      titleAr: d.titleAr, questionAr: "", answerAr: d.bodyAr + " " + d.noteAr })}
         <div class="refs">
-          <span>${d.ref}</span>
+          ${d.refAr ? `<span class="en-only">${d.ref}</span><span class="ar-only" dir="rtl">${d.refAr}</span>` : `<span>${d.ref}</span>`}
           <!-- The grading is written by hand in BOTH languages rather than
                left to the AR_PARTS regex, because this is the one line on the
                card that must not come out approximate. Each side therefore
@@ -1948,7 +1935,7 @@
         </div>
       </article>`).join("");
 
-      html += `<h3 class="rv-head">⚖️ ${r.lawTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${r.lawTitleAr}</span></h3>
+      html += `<h3 class="rv-head"><span class="en-only">⚖️ ${r.lawTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${r.lawTitleAr}</span></h3>
         <div class="rv-intro">
           <p class="en-only">${r.lawIntro}</p>
           <p class="rv-ar" dir="rtl">${r.lawIntroAr}</p>
@@ -1957,7 +1944,7 @@
           ${r.law.map(l => `<div class="rv-ev">
             <p class="en-only">${l.en}</p>
             <p class="rv-ev-ar" dir="rtl">${l.ar}</p>
-            <div class="rv-ev-ref">${l.ref}</div>
+            ${l.refAr ? `<div class="rv-ev-ref en-only">${l.ref}</div><div class="rv-ev-ref ar-only" dir="rtl">${l.refAr}</div>` : `<div class="rv-ev-ref">${l.ref}</div>`}
           </div>`).join("")}
         </div>
 
@@ -1970,7 +1957,7 @@
           </div>
         </div>
 
-        <h3 class="rv-head">🌅 ${r.stepsTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${r.stepsTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">🌅 ${r.stepsTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${r.stepsTitleAr}</span></h3>
         <div class="rv-intro">
           <p class="en-only">${r.stepsIntro}</p>
           <p class="rv-ar" dir="rtl">${r.stepsIntroAr}</p>
@@ -1996,7 +1983,7 @@
         </div>
         <div class="context-note" style="margin-top:22px;">
           <span class="en-only">${r.note}</span>
-          <span dir="rtl" style="font-family:'Amiri',serif;">${r.noteAr}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${r.noteAr}</span>
         </div>`;
 
       host.innerHTML = html;
@@ -2046,8 +2033,8 @@
         <div class="en-only">${bidahParas(c.body)}</div>
         <div class="rv-ar" dir="rtl">${bidahParas(c.bodyAr, true)}</div>
         ${bidahPlain(c.plain, c.plainAr)}
-        ${c.ref ? `<div class="rv-ev-ref">${c.ref}</div>` : ""}
-        ${c.strength ? `<div class="tad-badge">${c.strength}</div>` : ""}
+        ${!c.ref ? "" : (c.refAr ? `<div class="rv-ev-ref en-only">${c.ref}</div><div class="rv-ev-ref ar-only" dir="rtl">${c.refAr}</div>` : `<div class="rv-ev-ref">${c.ref}</div>`)}
+        ${!c.strength ? "" : (c.strengthAr ? `<div class="tad-badge en-only">${c.strength}</div><div class="tad-badge ar-only" dir="rtl">${c.strengthAr}</div>` : `<div class="tad-badge">${c.strength}</div>`)}
       </article>`;
     }
 
@@ -2057,26 +2044,26 @@
       const b = BIDAH;
 
       let html = `
-        <h2 class="section-title">🛑 ${b.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.titleAr}</span></h2>
+        <h2 class="section-title"><span class="en-only">🛑 ${b.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.titleAr}</span></h2>
         <div class="rv-intro">
           <div class="en-only">${bidahParas(b.intro)}</div>
           <div class="rv-ar" dir="rtl">${bidahParas(b.introAr, true)}</div>
         </div>
 
-        <h3 class="rv-head">📖 ${b.baseTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.baseTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">📖 ${b.baseTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.baseTitleAr}</span></h3>
         ${b.base.map(bidahCard).join("")}
 
-        <h3 class="rv-head">🕌 ${b.analogyTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.analogyTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">🕌 ${b.analogyTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.analogyTitleAr}</span></h3>
         ${bidahCard(Object.assign({ id: "bd-analogy" }, b.analogy, { title: b.analogyTitle, titleAr: b.analogyTitleAr }))}
 
-        <h3 class="rv-head">🎂 ${b.caseTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.caseTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">🎂 ${b.caseTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.caseTitleAr}</span></h3>
         <div class="rv-intro">
           <div class="en-only">${bidahParas(b.caseIntro)}</div>
           <div class="rv-ar" dir="rtl">${bidahParas(b.caseIntroAr, true)}</div>
         </div>
         ${b.points.map(bidahCard).join("")}
 
-        <h3 class="rv-head">⚖️ ${b.scholarsTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.scholarsTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">⚖️ ${b.scholarsTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.scholarsTitleAr}</span></h3>
         <div class="rv-evidence">
           ${b.scholars.map(s => `<div class="rv-ev">
             <div class="bd-who en-only"><strong>${s.who}</strong></div>
@@ -2090,26 +2077,26 @@
           <div class="ar-only" dir="rtl">${bidahParas(b.weightAr, true)}</div>
         </div>
 
-        <h3 class="rv-head">❓ ${b.objectionTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.objectionTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">❓ ${b.objectionTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.objectionTitleAr}</span></h3>
         ${bidahCard(Object.assign({ id: "bd-objection" }, b.objection, { title: b.objectionTitle, titleAr: b.objectionTitleAr }))}
 
-        <h3 class="rv-head">✅ ${b.notTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.notTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">✅ ${b.notTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.notTitleAr}</span></h3>
         <div class="rv-intro">
           <div class="en-only">${bidahParas(b.notIntro)}</div>
           <div class="rv-ar" dir="rtl">${bidahParas(b.notIntroAr, true)}</div>
         </div>
         ${b.notBidah.map(bidahCard).join("")}
 
-        <h3 class="rv-head">💚 ${b.insteadTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${b.insteadTitleAr}</span></h3>
+        <h3 class="rv-head"><span class="en-only">💚 ${b.insteadTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.insteadTitleAr}</span></h3>
         <article class="rv-card bd-instead">
           <div class="en-only">${bidahParas(b.instead)}</div>
           <div class="rv-ar" dir="rtl">${bidahParas(b.insteadAr, true)}</div>
-          <div class="rv-ev-ref">${b.insteadRef}</div>
+          <div class="rv-ev-ref en-only">${b.insteadRef}</div><div class="rv-ev-ref ar-only" dir="rtl">${b.insteadRefAr}</div>
         </article>
 
         <div class="context-note" style="margin-top:22px;">
           <span class="en-only">${b.notice}</span>
-          <span dir="rtl" style="font-family:'Amiri',serif;">${b.noticeAr}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${b.noticeAr}</span>
         </div>`;
 
       host.innerHTML = html;
@@ -2273,7 +2260,7 @@
 
         <div class="context-note" style="margin-top:22px;">
           <span class="en-only">${m.notice}</span>
-          <span dir="rtl" style="font-family:'Amiri',serif;">${m.noticeAr}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${m.noticeAr}</span>
         </div>`;
 
       if (window.applyI18n) window.applyI18n();
@@ -2366,7 +2353,7 @@
           </button>
           <div class="dhikr-when">
             <span class="en-only">🔁 ${d.countEn}</span>
-            <span dir="rtl" style="font-family:'Amiri',serif;">🔁 ${d.countAr}</span>
+            <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🔁 ${d.countAr}</span>
           </div>
           <button type="button" class="dhikr-reset" data-id="${d.id}" title="Reset — تصفير">↺</button>
         </div>
@@ -2376,8 +2363,8 @@
           <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${d.virtueAr}</p>
         </div>
 
-        <div class="refs"><span>${d.ref}</span></div>
-        <div class="dhikr-strength">${d.strength}</div>
+        <div class="refs">${d.refAr ? `<span class="en-only">${d.ref}</span><span class="ar-only" dir="rtl">${d.refAr}</span>` : `<span>${d.ref}</span>`}</div>
+        <div class="dhikr-strength"><span class="en-only">${d.strength}</span><span class="ar-only" dir="rtl">${d.strengthAr || d.strength}</span></div>
       </article>`;
     }
 
@@ -2446,7 +2433,7 @@
       host.innerHTML = ADHKAR_CATEGORIES.map(c =>
         `<button type="button" class="adhkar-tab${c.id === adhkarCat ? " active" : ""}" data-cat="${c.id}">
            ${c.icon} <span class="en-only">${c.en}</span>
-           <span dir="rtl" style="font-family:'Amiri',serif;">${c.ar}</span>
+           <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${c.ar}</span>
          </button>`).join("");
       host.querySelectorAll(".adhkar-tab").forEach(b => {
         b.addEventListener("click", () => {
@@ -2509,7 +2496,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608211618"></script>
-  <script src="js/i18n.js?v=202608211618"></script>
+  <script src="js/main.js?v=202608211740"></script>
+  <script src="js/i18n.js?v=202608211740"></script>
 </body>
 </html>

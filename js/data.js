@@ -2493,7 +2493,7 @@ const WORSHIP_STEPS = [
     arabic: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
     meaning: "The reading of Ayat al-Kursi (Surah Al-Baqarah 2:255) after every obligatory prayer is widely practised on the strength of a narration of an-Nasa'i, graded authentic by al-Albani. It is NOT in al-Bukhari or Muslim, and this site says so rather than implying otherwise. What IS in al-Bukhari is that reciting it before sleeping brings a guard from Allah and no devil comes near until morning.",
     meaningAr: "قراءة آية الكرسي عقب كل صلاة مكتوبة مشهورةٌ عند الناس، ومستندها حديثٌ عند النسائي صحّحه الألباني، وليست في الصحيحين — ونُبيِّن ذلك ولا نوهم خلافه. وأما الثابت في البخاري فهو قراءتها عند النوم، وأن من قرأها لم يزل عليه من الله حافظ ولا يقربه شيطان حتى يصبح.",
-    ref: "Before sleeping: Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5010. After the prayer: Sunan an-Nasa'i, authenticated by al-Albani — not in the two Sahihs",
+    ref: "Before sleeping: Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5010. After the prayer: Sunan an-Nasa'i, authenticated by al-Albani — not in the two Sahihs", refAr: "قبل النوم: صحيح البخاري، كتاب فضائل القرآن، حديث ٥٠١٠. وبعد الصلاة: سنن النسائي، صحّحه الألباني — خارج الصحيحين",
     strength: "Sahih — Narrated by al-Bukhari (for reciting it before sleep); the practice after each prayer is Strong — Narrated by an-Nasa'i, authenticated by al-Albani",
     keys: ["ayat al kursi","kursi","after prayer","chair verse","2:255","protection","sleep","آية الكرسي","بعد الصلاة","الحفظ","النوم","الحماية"]
   },
@@ -2576,7 +2576,7 @@ const WORSHIP_STEPS = [
     arabic: "إِذَا سَمِعْتُمُ النِّدَاءَ فَقُولُوا مِثْلَ مَا يَقُولُ الْمُؤَذِّنُ",
     meaning: "Say what he says, phrase by phrase. Most people let the adhan pass as background noise; he ﷺ made it something you answer. It costs about ninety seconds and it turns a sound you were ignoring into an act of worship five times a day.",
     meaningAr: "قُل مثل ما يقول، جملةً جملة. وأكثر الناس يدع الأذان يمرّ صوتًا في الخلفية، وقد جعله ﷺ شيئًا تُجيبه. ولا يكلّف إلا نحو تسعين ثانية، فيحيل صوتًا كنت تُهمله إلى عبادةٍ خمس مرّاتٍ في اليوم.",
-    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 611 — narrated from Abu Sa'id al-Khudri; also Sahih Muslim",
+    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 611 — narrated from Abu Sa'id al-Khudri; also Sahih Muslim", refAr: "صحيح البخاري، كتاب الأذان، حديث ٦١١ — عن أبي سعيد الخدري، ورواه مسلم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["adhan","call to prayer","muadhdhin","repeat","answer","الأذان","المؤذن","الترديد","إجابة المؤذن"]
   },
@@ -2590,7 +2590,7 @@ const WORSHIP_STEPS = [
     arabic: "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
     meaning: "O Allah, Lord of this perfect call and the prayer about to be established — grant Muhammad the wasilah and the excellence, and raise him to the praised station You promised him. He ﷺ said whoever says this on hearing the call, his intercession becomes due for him on the Day of Resurrection. Note what it asks for: it asks nothing for yourself. You ask for HIM — and the reward is his intercession for you.",
     meaningAr: "وقال ﷺ: مَن قالها حين يسمع النداء حلّت له شفاعته يوم القيامة. وتأمّل ما فيها: لا تسأل لنفسك شيئًا، وإنما تسأل له ﷺ — فيكون الجزاء شفاعته لك.",
-    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 614 — narrated from Jabir ibn Abdullah",
+    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 614 — narrated from Jabir ibn Abdullah", refAr: "صحيح البخاري، كتاب الأذان، حديث ٦١٤ — عن جابر بن عبد الله",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["adhan","after adhan","wasilah","intercession","shafaah","الأذان","دعاء الأذان","الوسيلة","الشفاعة","المقام المحمود"]
   },
@@ -2620,7 +2620,7 @@ const WORSHIP_STEPS = [
     countAr: "الاستغفار ثلاثًا",
     meaning: "I seek Allah's forgiveness — three times — then: O Allah, You are Peace and from You is peace; blessed are You, Owner of Majesty and Honour. Sit with the order of it: he finishes the prayer and the first thing he does is ask forgiveness. If he ﷺ ended a prayer by seeking forgiveness for it, nobody else should walk away from theirs feeling it was owed.",
     meaningAr: "وتأمّل ترتيبها: يفرغ من الصلاة فيكون أول ما يصنع الاستغفار. فإذا كان ﷺ يختم صلاته بالاستغفار منها، فليس لأحدٍ أن ينصرف من صلاته وهو يرى له بها فضلًا.",
-    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Thawban",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Thawban", refAr: "صحيح مسلم، كتاب المساجد ومواضع الصلاة — عن ثوبان",
     strength: "Sahih — Narrated by Muslim",
     keys: ["after prayer","salam","istighfar","as-salam","بعد الصلاة","السلام","الاستغفار","اللهم أنت السلام","أذكار بعد الصلاة"]
   },
@@ -2636,7 +2636,7 @@ const WORSHIP_STEPS = [
     countAr: "٣٣ · ٣٣ · ٣٣ ثم التهليل تمام المئة",
     meaning: "He ﷺ said whoever glorifies Allah thirty-three times, praises Him thirty-three times and magnifies Him thirty-three times after every prayer — that is ninety-nine — and completes the hundred with the words of tahlil, his sins are forgiven even if they were like the foam of the sea. The poor companions complained that the wealthy had outstripped them in reward; this was part of what he gave them, and it costs nothing.",
     meaningAr: "قال ﷺ: مَن سبّح دبر كلّ صلاةٍ ثلاثًا وثلاثين، وحمد ثلاثًا وثلاثين، وكبّر ثلاثًا وثلاثين — فتلك تسعٌ وتسعون — وقال تمام المئة كلمة التهليل، غُفرت خطاياه وإن كانت مثل زبد البحر. وقد شكا فقراء الصحابة أنّ أهل الأموال سبقوهم بالأجر، فكان هذا من جملة ما دلّهم عليه، ولا يكلّف شيئًا.",
-    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Abu Hurairah",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Abu Hurairah", refAr: "صحيح مسلم، كتاب المساجد ومواضع الصلاة — عن أبي هريرة",
     strength: "Sahih — Narrated by Muslim",
     keys: ["tasbih","33","after prayer","subhanallah","alhamdulillah","allahu akbar","hundred","التسبيح","ثلاث وثلاثون","بعد الصلاة","سبحان الله","الحمد لله","الله أكبر","المئة"]
   },
@@ -2650,8 +2650,8 @@ const WORSHIP_STEPS = [
     arabic: "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
     meaning: "O Allah, help me to remember You, to thank You, and to worship You well. He ﷺ took Mu'adh ibn Jabal by the hand, told him twice that he loved him, and then gave him this. Notice the third request — not merely to worship, but to worship WELL. And notice that all three are requests for HELP: even remembering Him is something you ask His help to do.",
     meaningAr: "أخذ ﷺ بيد معاذ بن جبل وأخبره مرّتين أنه يحبّه ثم أوصاه بهذا. وتأمّل الطلب الثالث: ليس أن يعبد فحسب بل أن يُحسن العبادة. وتأمّل أنّ الثلاثة كلَّها سؤالُ عون: حتى ذكرُه سبحانه تسأله العون عليه.",
-    ref: "Sunan Abu Dawud, Book of Prayer, Hadith 1522 — narrated from Mu'adh ibn Jabal",
-    strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Shu'ayb al-Arna'ut",
+    ref: "Sunan Abu Dawud, Book of Prayer, Hadith 1522 — narrated from Mu'adh ibn Jabal", refAr: "سنن أبي داود، كتاب الصلاة، حديث ١٥٢٢ — عن معاذ بن جبل",
+    strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Shu'ayb al-Arna'ut", strengthAr: "خارج الصحيحين — رواه أبو داود، وصحّحه الألباني وشعيب الأرناؤوط",
     keys: ["muadh","after prayer","help me","dhikr","gratitude","worship well","معاذ","دبر كل صلاة","أعني على ذكرك","الشكر","حسن العبادة"]
   },
   {
@@ -2666,7 +2666,7 @@ const WORSHIP_STEPS = [
     countAr: "صباحًا ومساءً",
     meaning: "He ﷺ said whoever says it during the day with certainty in it and dies before evening is of the people of Paradise, and whoever says it at night with certainty and dies before morning is of the people of Paradise. Look at how it is built: it makes no excuse. It admits the favour AND admits the sin in the same breath — I acknowledge Your favour upon me, and I acknowledge my sin — and only then asks.",
     meaningAr: "قال ﷺ: مَن قالها من النهار موقنًا بها فمات من يومه قبل أن يُمسي فهو من أهل الجنة، ومَن قالها من الليل وهو موقنٌ بها فمات قبل أن يُصبح فهو من أهل الجنة. وانظر بناءها: ليس فيها اعتذار، بل تُقرّ بالنعمة وتُقرّ بالذنب في نفَسٍ واحد — «أبوء لك بنعمتك عليّ وأبوء لك بذنبي» — ثم تسأل بعد ذلك.",
-    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6306 — narrated from Shaddad ibn Aws",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6306 — narrated from Shaddad ibn Aws", refAr: "صحيح البخاري، كتاب الدعوات، حديث ٦٣٠٦ — عن شدّاد بن أوس",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["sayyid al-istighfar","forgiveness","morning","evening","master","سيد الاستغفار","الاستغفار","الصباح","المساء","أذكار الصباح والمساء"]
   },
@@ -2680,7 +2680,7 @@ const WORSHIP_STEPS = [
     arabic: "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ",
     meaning: "There is no god but Allah, the Magnificent, the Forbearing. There is no god but Allah, Lord of the Mighty Throne. There is no god but Allah, Lord of the heavens and Lord of the earth and Lord of the Noble Throne. Notice that it contains no request at all. It is pure declaration of who He is — and that is the point: at the moment you are smallest, you are reminded of the size of the One you are speaking to.",
     meaningAr: "وتأمّل أنه ليس فيه سؤالٌ البتّة، وإنما هو تعظيمٌ محضٌ لمن تدعوه — وهذا هو المقصود: في أضعف ما تكون، تُذكَّر بعظمة من تخاطبه.",
-    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6346 — narrated from Ibn Abbas; also Sahih Muslim",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6346 — narrated from Ibn Abbas; also Sahih Muslim", refAr: "صحيح البخاري، كتاب الدعوات، حديث ٦٣٤٦ — عن ابن عباس، ورواه مسلم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["distress","karb","anxiety","panic","crisis","hardship","worry","الكرب","الهمّ","الضيق","الشدة","القلق","دعاء الكرب"]
   }
@@ -3029,7 +3029,7 @@ const PROPHET_STORIES = [
           ] }
       ]
     },
-    ref: "Sahih Muslim, Book of Prayer of Travellers (the ten verses); Sahih al-Bukhari, Book of Adhan, Hadith 832 (the supplication in prayer)",
+    ref: "Sahih Muslim, Book of Prayer of Travellers (the ten verses); Sahih al-Bukhari, Book of Adhan, Hadith 832 (the supplication in prayer)", refAr: "صحيح مسلم، كتاب صلاة المسافرين (العشر الآيات)؛ وصحيح البخاري، كتاب الأذان، حديث ٨٣٢ (الدعاء في الصلاة)",
     strength: "Sahih — Narrated by Muslim; the supplication is agreed upon (al-Bukhari and Muslim)",
     keys: ["dajjal","protection","kahf","memorise","dua","refuge","prayer","friday","حماية","الكهف","حفظ","دعاء","الاستعاذة","الصلاة","الجمعة","عذاب القبر"]
   },
@@ -3471,7 +3471,7 @@ const PROPHET_STORIES = [
     storyAr: "قالت عائشة رضي الله عنها: ما ضرب رسول الله ﷺ شيئًا قطّ بيده، ولا امرأةً ولا خادمًا، إلا أن يجاهد في سبيل الله. وما نِيل منه شيءٌ قطّ فينتقم من صاحبه، إلا أن يُنتهك شيءٌ من محارم الله فينتقم لله عزّ وجلّ.",
     lesson: "He had every kind of power over the people around him and never once used it on someone who could not answer back. Anger about your own dignity, and anger about what is sacred, are not the same thing — he acted on the second and let the first go.",
     lessonAr: "كانت له كلُّ سلطةٍ على من حوله فما استعملها مرّةً على من لا يستطيع ردًّا. والغضب لنفسك غير الغضب لحرمات الله؛ فأمضى الثاني وترك الأول.",
-    ref: "Sahih Muslim, Book of Virtues (Kitab al-Fada'il)",
+    ref: "Sahih Muslim, Book of Virtues (Kitab al-Fada'il)", refAr: "صحيح مسلم، كتاب الفضائل",
     strength: "Sahih — Narrated by Muslim",
     keys: ["anger","hit","beat","violence","wife","servant","revenge","power","temper","غضب","ضرب","عنف","الزوجة","الخادم","انتقام","سلطة"]
   },

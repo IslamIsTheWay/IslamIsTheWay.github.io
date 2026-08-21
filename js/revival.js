@@ -52,8 +52,8 @@ const REVIVAL = {
       arabic: "بَلْ أَنْتُمْ يَوْمَئِذٍ كَثِيرٌ، وَلَكِنَّكُمْ غُثَاءٌ كَغُثَاءِ السَّيْلِ",
       note: "Read the numbers plainly: this ummah is not small. He said the weakness would come while we were many — so being many was never the measure, and never will be. And notice that he did not describe an enemy who became stronger. He described hearts that changed.",
       noteAr: "واقرأ الأرقام كما هي: فهذه الأمّة ليست قليلة. وقد أخبر ﷺ أنّ الضعف يأتي ونحن كثير — فلم تكن الكثرة قطّ هي الميزان، ولن تكون. وتأمّل أنه لم يصف عدوًّا قوي، وإنما وصف قلوبًا تغيّرت.",
-      ref: "Sunan Abu Dawud, Book of Battles (al-Malahim), Hadith 4297 — narrated from Thawban",
-      strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani",
+      ref: "Sunan Abu Dawud, Book of Battles (al-Malahim), Hadith 4297 — narrated from Thawban", refAr: "سنن أبي داود، كتاب الملاحم، حديث ٤٢٩٧ — عن ثوبان",
+      strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani", strengthAr: "خارج الصحيحين — رواه أبو داود، وصحّحه الألباني",
       strengthAr: "خارج الصحيحين — رواه أبو داود، وصحّحه الألباني"
     },
     {
@@ -65,8 +65,8 @@ const REVIVAL = {
       arabic: "سَلَّطَ اللَّهُ عَلَيْكُمْ ذُلًّا لَا يَنْزِعُهُ حَتَّى تَرْجِعُوا إِلَى دِينِكُمْ",
       note: "The whole answer to \"how do we get out of this?\" is inside the hadith that describes the problem. He did not say the humiliation lifts when the enemy weakens, or when we are richer, or when someone else stops doing something to us. He said it lifts when we return to our religion — and not before.\n\nHonesty about the grading: al-Albani graded this Sahih, and so did Muhammad Muhyi ad-Din Abdul Hamid. Zubair Ali Zai graded it weak. So the scholars genuinely differ on this chain, and anyone quoting it should say so. Its meaning, however, is confirmed by verses whose authority nobody disputes — 13:11 and 8:53 below say exactly the same thing.",
       noteAr: "وجواب سؤال «كيف نخرج من هذا؟» كلُّه داخل الحديث الذي وصف الداء. فلم يقل ﷺ إنّ الذلّ يُرفع إذا ضعف العدوّ، ولا إذا كثر المال، ولا إذا كفّ غيرنا عمّا يصنعه بنا. بل قال: «حتى ترجعوا إلى دينكم» — ولا قبل ذلك.\n\nوأمانةٌ في الدرجة: صحّحه الألباني، وصحّحه محمد محيي الدين عبد الحميد، وضعّفه زبير علي زئي. فالخلاف في هذا الإسناد خلافٌ حقيقيّ بين أهل العلم، ومن نقله فحقُّه أن يبيّن ذلك. وأما معناه فتشهد له آياتٌ لا ينازع أحدٌ في حجّيتها، وهما آيتا الرعد والأنفال الآتيتان، تقولان الشيء نفسه بعينه.",
-      ref: "Sunan Abu Dawud, Book of Transactions (al-Buyu'), Hadith 3462 — narrated from Ibn Umar",
-      strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Muhammad Muhyi ad-Din Abdul Hamid, and graded weak by Zubair Ali Zai. The scholars differ.",
+      ref: "Sunan Abu Dawud, Book of Transactions (al-Buyu'), Hadith 3462 — narrated from Ibn Umar", refAr: "سنن أبي داود، كتاب البيوع، حديث ٣٤٦٢ — عن ابن عمر",
+      strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Muhammad Muhyi ad-Din Abdul Hamid, and graded weak by Zubair Ali Zai. The scholars differ.", strengthAr: "خارج الصحيحين — رواه أبو داود، وصحّحه الألباني ومحمد محيي الدين عبد الحميد، وضعّفه زبير علي زئي. والخلاف بين أهل العلم قائم.",
       strengthAr: "خارج الصحيحين — رواه أبو داود، وصحّحه الألباني ومحمد محيي الدين عبد الحميد، وضعّفه زبير علي زئي. والخلاف فيه ثابت."
     },
     {
@@ -78,8 +78,8 @@ const REVIVAL = {
       arabic: "قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ",
       note: "And at Hunayn the lesson was the reverse of Uhud and pointed the same way: \"and on the day of Hunayn, when your great numbers pleased you but availed you nothing.\" Defeat when they were few, and defeat when they were many — so that nobody could conclude the issue was ever the numbers.",
       noteAr: "وكان الدرس يوم حنين عكس أُحُد ويدلّ على المعنى نفسه: ﴿وَيَوْمَ حُنَيْنٍ إِذْ أَعْجَبَتْكُمْ كَثْرَتُكُمْ فَلَمْ تُغْنِ عَنكُمْ شَيْئًا﴾. هُزموا وهم قِلّة، وابتُلوا وهم كثرة، حتى لا يظنّ أحدٌ أنّ المسألة كانت في العدد قطّ.",
-      ref: "Surah Aal-Imran (3:165); Surah At-Tawbah (9:25)",
-      strength: "The Quran",
+      ref: "Surah Aal-Imran (3:165); Surah At-Tawbah (9:25)", refAr: "سورة آل عمران (٣:١٦٥)؛ سورة التوبة (٩:٢٥)",
+      strength: "The Quran", strengthAr: "من القرآن",
       strengthAr: "القرآن الكريم"
     },
     {
@@ -91,8 +91,8 @@ const REVIVAL = {
       arabic: "وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رِيحُكُمْ",
       note: "And beside it: \"And hold firmly to the rope of Allah, all together, and do not become divided.\" The command is to hold to the rope — not to each other's opinions. Unity was ordered around a thing, and the thing was named.",
       noteAr: "وإلى جانبها: ﴿وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا﴾. فالأمر بالاعتصام بالحبل، لا بآراء بعضنا بعضًا. فقد أُمر بالاجتماع على شيء، وسُمّي ذلك الشيء.",
-      ref: "Surah Al-Anfal (8:46); Surah Aal-Imran (3:103)",
-      strength: "The Quran",
+      ref: "Surah Al-Anfal (8:46); Surah Aal-Imran (3:103)", refAr: "سورة الأنفال (٨:٤٦)؛ سورة آل عمران (٣:١٠٣)",
+      strength: "The Quran", strengthAr: "من القرآن",
       strengthAr: "القرآن الكريم"
     }
   ],
@@ -105,19 +105,19 @@ const REVIVAL = {
   law: [
     { en: "\"Indeed, Allah will not change the condition of a people until they change what is in themselves.\"",
       ar: "﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾",
-      ref: "Surah Ar-Ra'd (13:11)" },
+      ref: "Surah Ar-Ra'd (13:11)", refAr: "سورة الرعد (١٣:١١)" },
     { en: "\"That is because Allah would not change a favour which He had bestowed upon a people until they change what is in themselves.\"",
       ar: "﴿ذَٰلِكَ بِأَنَّ اللَّهَ لَمْ يَكُ مُغَيِّرًا نِّعْمَةً أَنْعَمَهَا عَلَىٰ قَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾",
-      ref: "Surah Al-Anfal (8:53)" },
+      ref: "Surah Al-Anfal (8:53)", refAr: "سورة الأنفال (٨:٥٣)" },
     { en: "\"O you who believe — if you support Allah, He will support you and plant your feet firmly.\"",
       ar: "﴿يَا أَيُّهَا الَّذِينَ آمَنُوا إِن تَنصُرُوا اللَّهَ يَنصُرْكُمْ وَيُثَبِّتْ أَقْدَامَكُمْ﴾",
-      ref: "Surah Muhammad (47:7)" },
+      ref: "Surah Muhammad (47:7)", refAr: "سورة محمد (٤٧:٧)" },
     { en: "\"Allah has promised those among you who believe and do righteous deeds that He will surely make them successors in the land, as He made successors those before them, and that He will surely establish for them their religion which He has approved for them, and that He will surely exchange their fear for security — they worship Me, associating nothing with Me.\" The promise is there. So is the condition, in the last clause.",
       ar: "﴿وَعَدَ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَعَمِلُوا الصَّالِحَاتِ لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ كَمَا اسْتَخْلَفَ الَّذِينَ مِن قَبْلِهِمْ وَلَيُمَكِّنَنَّ لَهُمْ دِينَهُمُ الَّذِي ارْتَضَىٰ لَهُمْ وَلَيُبَدِّلَنَّهُم مِّن بَعْدِ خَوْفِهِمْ أَمْنًا ۚ يَعْبُدُونَنِي لَا يُشْرِكُونَ بِي شَيْئًا﴾ — فالوعد ثابت، والشرط في آخرها.",
-      ref: "Surah An-Nur (24:55)" },
+      ref: "Surah An-Nur (24:55)", refAr: "سورة النور (٢٤:٥٥)" },
     { en: "\"You are the best nation produced for mankind: you enjoin what is right, and forbid what is wrong, and believe in Allah.\" It is worth reading slowly. The description is not a title held regardless of conduct — the three verbs after it are what the description is FOR.",
       ar: "﴿كُنتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ تَأْمُرُونَ بِالْمَعْرُوفِ وَتَنْهَوْنَ عَنِ الْمُنكَرِ وَتُؤْمِنُونَ بِاللَّهِ﴾ — وحقُّها أن تُقرأ على مهل: فليست الخيريّة لقبًا يُحمل مع أيّ حال، وإنما الأفعال الثلاثة بعدها هي عِلّتها.",
-      ref: "Surah Aal-Imran (3:110)" }
+      ref: "Surah Aal-Imran (3:110)", refAr: "سورة آل عمران (٣:١١٠)" }
   ],
   malik: {
     text: "And this is where Imam Malik's famous sentence belongs: \"The last of this ummah will not be set right except by what set right its first.\"",
@@ -142,7 +142,7 @@ const REVIVAL = {
       evidence: [
         { en: "\"But there came after them successors who neglected the prayer and followed desires — so they are going to meet evil.\"",
           ar: "﴿فَخَلَفَ مِن بَعْدِهِمْ خَلْفٌ أَضَاعُوا الصَّلَاةَ وَاتَّبَعُوا الشَّهَوَاتِ فَسَوْفَ يَلْقَوْنَ غَيًّا﴾",
-          ref: "Surah Maryam (19:59) — the Quran" }
+          ref: "Surah Maryam (19:59) — the Quran", refAr: "سورة مريم (١٩:٥٩) — من القرآن" }
       ]
     },
     {
@@ -155,10 +155,10 @@ const REVIVAL = {
       evidence: [
         { en: "\"Read, in the name of your Lord who created… who taught by the pen, taught man what he did not know.\"",
           ar: "﴿اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ … الَّذِي عَلَّمَ بِالْقَلَمِ • عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ﴾",
-          ref: "Surah Al-Alaq (96:1-5) — the Quran" },
+          ref: "Surah Al-Alaq (96:1-5) — the Quran", refAr: "سورة العلق (٩٦:١-٥) — من القرآن" },
         { en: "\"Whoever travels a path seeking knowledge, Allah makes easy for him by it a path to Paradise.\"",
           ar: "«مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا، سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ»",
-          ref: "Sahih Muslim, Book of Dhikr and Supplication, Hadith 2699 — Sahih" }
+          ref: "Sahih Muslim, Book of Dhikr and Supplication, Hadith 2699 — Sahih", refAr: "صحيح مسلم، كتاب الذكر والدعاء، حديث ٢٦٩٩ — صحيح" }
       ]
     },
     {
@@ -171,10 +171,10 @@ const REVIVAL = {
       evidence: [
         { en: "\"Allah loves that when one of you does a work, he does it well.\"",
           ar: "«إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ»",
-          ref: "Narrated by al-Bayhaqi in Shu'ab al-Iman and by Abu Ya'la — OUTSIDE the two Sahihs. Graded Sahih by al-Albani in Sahih al-Jami'; some scholars considered its chain weak. Its meaning is agreed upon and supported by the Quran's command to give full measure." },
+          ref: "Narrated by al-Bayhaqi in Shu'ab al-Iman and by Abu Ya'la — OUTSIDE the two Sahihs. Graded Sahih by al-Albani in Sahih al-Jami'; some scholars considered its chain weak. Its meaning is agreed upon and supported by the Quran's command to give full measure.", refAr: "رواه البيهقي في «شعب الإيمان» وأبو يعلى — خارج الصحيحين. صحّحه الألباني في «صحيح الجامع»، وضعّف إسنادَه بعضُ أهل العلم. ومعناه متّفقٌ عليه، يشهد له أمرُ القرآن بإيفاء الكيل." },
         { en: "\"O you who believe, why do you say what you do not do? It is greatly hateful in the sight of Allah that you say what you do not do.\"",
           ar: "﴿يَا أَيُّهَا الَّذِينَ آمَنُوا لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ • كَبُرَ مَقْتًا عِندَ اللَّهِ أَن تَقُولُوا مَا لَا تَفْعَلُونَ﴾",
-          ref: "Surah As-Saff (61:2-3) — the Quran" }
+          ref: "Surah As-Saff (61:2-3) — the Quran", refAr: "سورة الصف (٦١:٢-٣) — من القرآن" }
       ]
     },
     {
@@ -187,10 +187,10 @@ const REVIVAL = {
       evidence: [
         { en: "\"And hold firmly to the rope of Allah, all together, and do not become divided.\"",
           ar: "﴿وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا﴾",
-          ref: "Surah Aal-Imran (3:103) — the Quran" },
+          ref: "Surah Aal-Imran (3:103) — the Quran", refAr: "سورة آل عمران (٣:١٠٣) — من القرآن" },
         { en: "\"The believer to the believer is like a building, each part strengthening the other\" — and he interlocked his fingers.",
           ar: "«الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا» — وشبّك بين أصابعه",
-          ref: "Sahih al-Bukhari, Book of Prayers, Hadith 481; also Muslim — Sahih, agreed upon" }
+          ref: "Sahih al-Bukhari, Book of Prayers, Hadith 481; also Muslim — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب الصلاة، حديث ٤٨١، ورواه مسلم — صحيح، متفق عليه" }
       ]
     },
     {
@@ -203,10 +203,10 @@ const REVIVAL = {
       evidence: [
         { en: "\"They were young men who believed in their Lord, and We increased them in guidance.\"",
           ar: "﴿إِنَّهُمْ فِتْيَةٌ آمَنُوا بِرَبِّهِمْ وَزِدْنَاهُمْ هُدًى﴾",
-          ref: "Surah Al-Kahf (18:13) — the Quran" },
+          ref: "Surah Al-Kahf (18:13) — the Quran", refAr: "سورة الكهف (١٨:١٣) — من القرآن" },
         { en: "Among the seven whom Allah shades on the Day when there is no shade but His: \"a young man who grew up in the worship of Allah.\"",
           ar: "من السبعة الذين يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه: «وَشَابٌّ نَشَأَ فِي عِبَادَةِ اللَّهِ»",
-          ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 660; also Muslim — Sahih, agreed upon" }
+          ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 660; also Muslim — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب الأذان، حديث ٦٦٠، ورواه مسلم — صحيح، متفق عليه" }
       ]
     },
     {
@@ -219,10 +219,10 @@ const REVIVAL = {
       evidence: [
         { en: "\"Indeed, Allah will not change the condition of a people until they change what is in themselves.\"",
           ar: "﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾",
-          ref: "Surah Ar-Ra'd (13:11) — the Quran" },
+          ref: "Surah Ar-Ra'd (13:11) — the Quran", refAr: "سورة الرعد (١٣:١١) — من القرآن" },
         { en: "Umar's letter to Sa'd ibn Abi Waqqas: \"I fear for you your sins more than I fear your enemy… if our sins equal theirs, they will overcome us by their numbers.\"",
           ar: "من كتاب عمر إلى سعد بن أبي وقّاص: «فإني أخاف عليكم من ذنوبكم أشدّ ممّا أخاف عليكم من عدوّكم… فإن استوينا في المعصية كان لهم الفضل علينا في القوّة»",
-          ref: "Reported in the books of history (at-Tabari, and Ibn Kathir in al-Bidayah wan-Nihayah) — HISTORICAL, not a hadith" }
+          ref: "Reported in the books of history (at-Tabari, and Ibn Kathir in al-Bidayah wan-Nihayah) — HISTORICAL, not a hadith", refAr: "مرويٌّ في كتب التاريخ (الطبري، وابن كثير في «البداية والنهاية») — خبرٌ تاريخيّ لا حديث" }
       ]
     }
   ],

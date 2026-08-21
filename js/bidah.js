@@ -56,8 +56,8 @@ const BIDAH = {
       bodyAr: "﴿ٱلْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِى وَرَضِيتُ لَكُمُ ٱلْإِسْلَٰمَ دِينًۭا﴾.\n\nنزلت يوم عرفة في حجّة الوداع، قبل وفاته ﷺ بأشهر. وتأمّل ما تقرّره: ليس أنّ الدين ماضٍ على خير، بل أنه كامل.\n\nوهذه الكلمة وحدها تحسم المسألة قبل أن يبدأ النزاع في عملٍ بعينه. فإذا كان الشيء كاملًا، فمن زاد فيه فقد قال — قصد أو لم يقصد — إنّ شيئًا كان ناقصًا. وقد جمعها الإمام مالك في جملة: «من ابتدع في الإسلام بدعةً يراها حسنة فقد زعم أنّ محمدًا ﷺ خان الرسالة، لأنّ الله يقول ﴿ٱلْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ﴾، فما لم يكن يومئذٍ دينًا فلا يكون اليوم دينًا».",
       plain: "In plain words: the religion was finished and signed off while he ﷺ was still alive. Adding to something finished is a way of saying it was not finished.",
       plainAr: "بعبارة أخرى: فُرغ من الدين وأُعلن تمامه وهو ﷺ حيّ. والزيادة على التامّ قولٌ بأنه لم يكن تامًّا.",
-      ref: "Surah Al-Ma'idah (5:3); Ibn Hazm, Al-Ihkam; ash-Shatibi, Al-I'tisam",
-      strength: "quran"
+      ref: "Surah Al-Ma'idah (5:3); Ibn Hazm, Al-Ihkam; ash-Shatibi, Al-I'tisam", refAr: "سورة المائدة (٥:٣)؛ وابن حزم في «الإحكام»؛ والشاطبي في «الاعتصام»",
+      strength: "quran", strengthAr: "قرآن"
     },
     {
       id: "bd-radd",
@@ -67,8 +67,8 @@ const BIDAH = {
       bodyAr: "عن عائشة رضي الله عنها أنّ النبي ﷺ قال: «مَنْ أَحْدَثَ فِي أَمْرِنَا هَذَا مَا لَيْسَ فِيهِ فَهُوَ رَدٌّ».\n\nوفي لفظٍ عند مسلم: «مَنْ عَمِلَ عَمَلًا لَيْسَ عَلَيْهِ أَمْرُنَا فَهُوَ رَدٌّ».\n\nواللفظ الثاني أوسع، والفرق بينهما مقصود: فالأوّل في المُحدِث الذي ابتدع، والثاني في العامل بالمُحدَث وإن لم يبتدعه — فسدّ باب من يقول: لم أبتدئ هذا، وإنما تابعت.\n\nوتأمّل اللفظ: «ردٌّ»، أي مردود يُرَدّ على صاحبه. ولم يقل إنه يأثم ويُحتسب له، بل إنه يُرَدّ.",
       plain: "In plain words: an invented act of worship is not a smaller reward. It is returned to you — it does not count at all.",
       plainAr: "بعبارة أخرى: العمل المُحدَث ليس أجرًا أقلّ، وإنما يُرَدّ عليك، فلا يُحتسب لك أصلًا.",
-      ref: "Sahih al-Bukhari, Book of Reconciliation, Hadith 2697 — Aishah; Sahih Muslim, Book of Judicial Decisions",
-      strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+      ref: "Sahih al-Bukhari, Book of Reconciliation, Hadith 2697 — Aishah; Sahih Muslim, Book of Judicial Decisions", refAr: "صحيح البخاري، كتاب الصلح، حديث ٢٦٩٧ — عن عائشة؛ وصحيح مسلم، كتاب الأقضية",
+      strength: "Sahih — Agreed upon (al-Bukhari and Muslim)", strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
     },
     {
       id: "bd-every",
@@ -78,8 +78,8 @@ const BIDAH = {
       bodyAr: "كان ﷺ يقول في خطبته، فيما رواه جابر رضي الله عنه: «أَصْدَقُ الْحَدِيثِ كِتَابُ اللَّهِ، وَخَيْرُ الْهَدْيِ هَدْيُ مُحَمَّدٍ، وَشَرُّ الْأُمُورِ مُحْدَثَاتُهَا، وَكُلُّ بِدْعَةٍ ضَلَالَةٌ».\n\nوقوّته في لفظ «كلّ»، فإنّ في العربية لفظًا للبعض ولم يُستعمل. وقرّر الأصوليّون أنّ العامّ لا يُخصّص إلا بمخصِّص، ولا مخصِّص لهذا العموم في باب العبادات.",
       plain: "In plain words: he said EVERY innovation, not some of them. If some were fine, that is the place he would have said so.",
       plainAr: "بعبارة أخرى: قال «كلّ بدعة» لا «بعضها». ولو كان بعضها حسنًا لكان ذلك موضع بيانه.",
-      ref: "Sahih Muslim, Book of Jumu'ah — narrated from Jabir ibn Abdullah",
-      strength: "Sahih — Narrated by Muslim"
+      ref: "Sahih Muslim, Book of Jumu'ah — narrated from Jabir ibn Abdullah", refAr: "صحيح مسلم، كتاب الجمعة — عن جابر بن عبد الله",
+      strength: "Sahih — Narrated by Muslim", strengthAr: "صحيح — رواه مسلم"
     }
   ],
 
@@ -91,8 +91,8 @@ const BIDAH = {
     bodyAr: "الفجر ركعتان. فهَبْ رجلًا اشتدّ حبّه لله فصلّاها ثلاثًا، لا يريد إلا الخير. لم يسرق ولم يكذب، وإنما زاد.\n\nاسأل أيّ مسلمٍ عن هذه الصلاة يأتِك الجواب في الحال: باطلة. لا «أعظم أجرًا» ولا «أنقص قليلًا»، بل باطلة، وعليه إعادتها.\n\nوتأمّل أنّ أحدًا لا يحتاج إلى عالمٍ ليبلغ هذا الجواب، ولا يجده أحدٌ قاسيًا. فالناس جميعًا يفهمون في باب الصلاة أنّ العبادة تُوزن بموافقتها لما عُلِّم، لا بصدق نيّة صاحبها ولا بمقدار ما زاد.\n\nوهذا هو الأصل كلّه، وإنما الصلاة موضعٌ نراه فيه جميعًا. قال ﷺ: «صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي». ورجلٌ أساء صلاته في المسجد فقيل له ثلاثًا: «ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ». كان يصلّي، وكان في المسجد، وكان صادقًا. ولم تُحتسب له، لأنها لم تكن كما عُلِّم.",
     plain: "In plain words: everyone already agrees that adding a rak'ah ruins the prayer, and nobody calls that harsh. Adding to the religion works the same way — the prayer is just where we can all see it clearly.",
     plainAr: "بعبارة أخرى: الناس متّفقون أنّ زيادة ركعةٍ تُفسد الصلاة، ولا يرى أحدٌ في ذلك قسوة. والزيادة في الدين مثلها، وإنما الصلاة موضعٌ يظهر فيه الأمر للجميع.",
-    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 631 and Hadith 757",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 631 and Hadith 757", refAr: "صحيح البخاري، كتاب الأذان، حديث ٦٣١ و٧٥٧",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)", strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
   },
 
   /* ---------- 3. The worked case ---------- */
@@ -109,8 +109,8 @@ const BIDAH = {
       bodyAr: "سُئل ﷺ عن صوم يوم الاثنين فقال: «ذَاكَ يَوْمٌ وُلِدْتُ فِيهِ، وَيَوْمٌ بُعِثْتُ — أَوْ أُنْزِلَ عَلَيَّ — فِيهِ».\n\nفيوم الاثنين ثابتٌ من لفظه هو، في صحيح مسلم. وأمّا اليوم من الشهر فأمرٌ آخر: فقد ذكر المؤرّخون الثاني والثامن والتاسع والعاشر والثاني عشر والسابع عشر من ربيع الأوّل. وهي أقوال مؤرّخين لا أحاديث، وهي متعارضة.\n\nويبقى سؤالٌ ظاهر لمن يقيم موعدًا سنويًّا: أيّ هذه الأقوال تُقيم عليه، وبأيّ دليل؟",
       plain: "In plain words: he told us which DAY OF THE WEEK he was born on — Monday. Nobody knows the date. The historians give six different ones.",
       plainAr: "بعبارة أخرى: أخبرنا بيوم الأسبوع الذي وُلد فيه، وهو الاثنين. وأمّا التاريخ فلا يعلمه أحد، وقد ذكر المؤرّخون فيه ستّة أقوال.",
-      ref: "Sahih Muslim, Book of Fasting — narrated from Abu Qatadah; Ibn Ishaq, Ibn Sa'd, at-Tabari",
-      strength: "Sahih — Narrated by Muslim; the dates are historical sira, not hadith"
+      ref: "Sahih Muslim, Book of Fasting — narrated from Abu Qatadah; Ibn Ishaq, Ibn Sa'd, at-Tabari", refAr: "صحيح مسلم، كتاب الصيام — عن أبي قتادة؛ وابن إسحاق وابن سعد والطبري",
+      strength: "Sahih — Narrated by Muslim; the dates are historical sira, not hadith", strengthAr: "صحيح — رواه مسلم؛ وأمّا التواريخ فمن السيرة لا من الحديث"
     },
     {
       id: "bd-death-date",
@@ -120,8 +120,8 @@ const BIDAH = {
       bodyAr: "الثاني عشر من ربيع الأوّل هو أشهر ما يُقام عليه المولد. وهو أيضًا اليوم الذي عليه أكثر المؤرّخين في وفاته ﷺ.\n\nوكلاهما من روايات السيرة لا من الحديث، وفي كليهما خلاف — يُقال هذا صراحةً ولا يُتّخذ حجّةً قاطعة. لكنّ الحال التي يقف فيها المرء جديرةٌ بالتأمّل: تاريخٌ يُحتفل به مولدًا اعتمادًا على كتب التاريخ، وتلك الكتب نفسها أثبتُ ما فيها أنه اليوم الذي فُقد فيه من هذه الأمّة.",
       plain: "In plain words: the day people celebrate as his birthday is the same day the history books more firmly record as the day he died.",
       plainAr: "بعبارة أخرى: اليوم الذي يحتفل الناس به مولدًا هو نفسه اليوم الذي تُثبته كتب التاريخ بأقوى من ذلك يومَ وفاته.",
-      ref: "Ibn Ishaq (in Ibn Hisham's Sira); Ibn Sa'd, Tabaqat; at-Tabari",
-      strength: "historical sira, not hadith"
+      ref: "Ibn Ishaq (in Ibn Hisham's Sira); Ibn Sa'd, Tabaqat; at-Tabari", refAr: "ابن إسحاق (في سيرة ابن هشام)؛ وابن سعد في «الطبقات»؛ والطبري",
+      strength: "historical sira, not hadith", strengthAr: "من السيرة التاريخية لا من الحديث"
     },
     {
       id: "bd-how-he-marked",
@@ -131,8 +131,8 @@ const BIDAH = {
       bodyAr: "هذا أقوى ما في الباب، وليس حجّةً على أحد. فقد أحيا ﷺ ذكرى يوم مولده، أحياها بالصوم.\n\nوأحياها في كلّ أسبوع لا مرّةً في العام. والحديث المتقدّم إنما هو جوابه حين سُئل عن صومه الاثنين: «ذَاكَ يَوْمٌ وُلِدْتُ فِيهِ».\n\nفثمّ سنّةٌ متعلّقة بمولده، ثابتةٌ في صحيح مسلم، متاحةٌ لكلّ مسلمٍ اثنتين وخمسين مرّة في السنة. والسؤال ليس في حسن محبّته ﷺ، فهي حسنةٌ ظاهرة، وإنما: لِمَ يُترك ما اختاره هو وعلّمه إلى ما لم يفعله؟",
       plain: "In plain words: he marked his own birthday — by fasting, every Monday. That sunnah is still open to you every week of the year.",
       plainAr: "بعبارة أخرى: أحيا ﷺ ذكرى مولده بالصوم كلّ اثنين. وهذه السنّة ما زالت متاحةً لك كلّ أسبوع من العام.",
-      ref: "Sahih Muslim, Book of Fasting — narrated from Abu Qatadah",
-      strength: "Sahih — Narrated by Muslim"
+      ref: "Sahih Muslim, Book of Fasting — narrated from Abu Qatadah", refAr: "صحيح مسلم، كتاب الصيام — عن أبي قتادة",
+      strength: "Sahih — Narrated by Muslim", strengthAr: "صحيح — رواه مسلم"
     },
     {
       id: "bd-when-began",
@@ -142,8 +142,8 @@ const BIDAH = {
       bodyAr: "لم يفعله ﷺ، ولم يفعله أصحابه — وهم أشدّ الناس محبّةً له، لم يبلغ أحدٌ بعدهم مبلغهم. ولم يفعله أبو بكر ولا عمر ولا عثمان ولا عليّ. ولا التابعون، ولا تابعوهم. ولا الأئمّة الأربعة — أبو حنيفة ومالك والشافعي وأحمد — لم يفعلوه ولم يذكروه.\n\nوأوّل ما يُذكر في ابتدائه بعد قرون: الدولة الفاطميّة بمصر في القرن الرابع الهجري، ثم على الصورة المعروفة اليوم في عهد المظفّر كوكبري صاحب إربل في القرن السابع.\n\nوليست الحجّة أنّ كلّ جديدٍ ممنوع، وإنما هي أضيق من ذلك وأعسر جوابًا: أنّ أقدر الناس على محبّته وأشدّهم تحرّيًا لطريقها لم يجدوا هذا من طرقها.",
       plain: "In plain words: not the Prophet ﷺ, not his companions, not the four imams. It starts centuries later. The people who loved him most did not do it.",
       plainAr: "بعبارة أخرى: لا النبي ﷺ، ولا أصحابه، ولا الأئمّة الأربعة. وإنما بدأ بعد قرون. فأشدّ الناس حبًّا له لم يفعلوه.",
-      ref: "al-Maqrizi, Al-Khitat; Ibn Kathir, Al-Bidaya wan-Nihaya; Abu Shamah, Al-Ba'ith",
-      strength: "historical sira, not hadith"
+      ref: "al-Maqrizi, Al-Khitat; Ibn Kathir, Al-Bidaya wan-Nihaya; Abu Shamah, Al-Ba'ith", refAr: "المقريزي في «الخطط»؛ وابن كثير في «البداية والنهاية»؛ وأبو شامة في «الباعث»",
+      strength: "historical sira, not hadith", strengthAr: "من السيرة التاريخية لا من الحديث"
     }
   ],
 
@@ -175,8 +175,8 @@ const BIDAH = {
     bodyAr: "هذا أوّل ما يُعترض به، وهو جديرٌ بجوابٍ محرَّر لا بدفعٍ سريع.\n\nخرج عمر رضي الله عنه إلى المسجد في رمضان فوجد الناس أوزاعًا — الرجل يصلّي لنفسه، والرجل يصلّي بصلاته الرهط — فجمعهم على قارئٍ واحد. ثم قال في ليلةٍ بعدها: «نِعْمَ الْبِدْعَةُ هَذِهِ».\n\nوالجواب في نفس ما صنع: فإنه لم يبتدع قيام رمضان. فقد صلّاه النبي ﷺ في المسجد وصلّى الناس بصلاته، ثم تركه وبيّن العلّة: خشية أن يُفرض عليهم. فالصلاة سنّته ﷺ، وإنما غيّر عمرُ أن صلّوا خلف إمامٍ واحد بدل أن يكونوا أوزاعًا.\n\nوالعلّة التي من أجلها تركها ﷺ قد زالت بوفاته: فقد انقطع الوحي فلم يبقَ افتراضٌ يُخشى. فلم يكن عمر زائدًا في الدين، وإنما أعاد ما فعله النبي ﷺ وتركه لعلّةٍ ارتفعت.\n\nوأمّا لفظ «البدعة» فهو في العربية ما أُحدث على غير مثال، ويُطلق على كلّ جديد. وعلى هذا حمله أهل العلم ههنا: فالاجتماع جديد، وأمّا الصلاة فليست جديدة.",
     plain: "In plain words: Omar did not invent the tarawih. The Prophet ﷺ prayed it and then stopped, saying he feared it would become obligatory. After he died that fear was gone, so Omar simply gathered people behind one imam. The prayer was already sunnah — only the gathering was new.",
     plainAr: "بعبارة أخرى: لم يبتدع عمرُ التراويح. فقد صلّاها النبي ﷺ ثم تركها وقال إنه يخشى أن تُفرض. فلمّا مات ﷺ زالت تلك الخشية، فجمع عمرُ الناس على إمامٍ واحد. فالصلاة سنّةٌ من قبل، وإنما الجديد الاجتماع.",
-    ref: "Sahih al-Bukhari, Book of the Prayer at Night in Ramadan, Hadith 2010; Sahih al-Bukhari, Book of the Call to Prayer, Hadith 729; Sahih Muslim, Book of the Prayer of Travellers",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    ref: "Sahih al-Bukhari, Book of the Prayer at Night in Ramadan, Hadith 2010; Sahih al-Bukhari, Book of the Call to Prayer, Hadith 729; Sahih Muslim, Book of the Prayer of Travellers", refAr: "صحيح البخاري، كتاب صلاة التراويح، حديث ٢٠١٠؛ وكتاب الأذان، حديث ٧٢٩؛ وصحيح مسلم، كتاب صلاة المسافرين",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)", strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
   },
 
   /* ---------- 6. What is NOT meant ---------- */
@@ -216,7 +216,7 @@ const BIDAH = {
   insteadTitleAr: "أين تُوضع تلك المحبّة",
   instead: "The impulse behind the Mawlid is a true one, and it should not be left with nowhere to go. Everything below is established, available all year, and was asked for by him ﷺ himself:\n\n• Fast Mondays — the day he named as the day he was born.\n• Send salah upon him. He said whoever sends one, Allah sends ten upon him.\n• Learn his sira and his sunnah, and act on one thing you learn.\n• Revive a sunnah people have left. He said whoever revives a sunnah of his has its reward and the reward of whoever acts on it.\n• Follow him. \"Say: if you love Allah, then follow me, and Allah will love you.\"\n\nThat last one is the measure the Quran itself sets for the claim of love, and it is not a feeling — it is a following.",
   insteadAr: "الباعث على المولد باعثٌ صادق، ولا ينبغي أن يُترك بلا مصرف. وكلّ ما يلي ثابت، متاحٌ في العام كلّه، وقد طلبه هو ﷺ:\n\n• صُم الاثنين — اليوم الذي سمّاه يوم مولده.\n• أكثِر من الصلاة عليه، فقد قال: من صلّى عليّ واحدةً صلّى الله عليه بها عشرًا.\n• تعلّم سيرته وسنّته، واعمل بواحدةٍ ممّا تعلّمت.\n• أحيِ سنّةً أماتها الناس، فقد قال: من أحيا سنّةً من سنّته فله أجرها وأجر من عمل بها.\n• اتّبعه. ﴿قُلْ إِن كُنتُمْ تُحِبُّونَ ٱللَّهَ فَٱتَّبِعُونِى يُحْبِبْكُمُ ٱللَّهُ﴾.\n\nوالأخيرة هي الميزان الذي وضعه القرآن نفسه لدعوى المحبّة، وليست وجدانًا، وإنما هي اتّباع.",
-  insteadRef: "Sahih Muslim, Book of Fasting; Sahih Muslim, Book of Prayer; Jami at-Tirmidhi, Book of Knowledge — outside the two Sahihs, authenticated by al-Albani; Surah Aal-Imran (3:31)",
+  insteadRef: "Sahih Muslim, Book of Fasting; Sahih Muslim, Book of Prayer; Jami at-Tirmidhi, Book of Knowledge — outside the two Sahihs, authenticated by al-Albani; Surah Aal-Imran (3:31)", insteadRefAr: "صحيح مسلم، كتاب الصيام؛ وصحيح مسلم، كتاب الصلاة؛ وجامع الترمذي، كتاب العلم — خارج الصحيحين، صحّحه الألباني؛ وسورة آل عمران (٣:٣١)",
 
   notice: "This section explains a question of worship; it is not a fatwa and does not judge any particular person. Where the scholars differ, both positions are named above with their people. If this touches something in your own family, take it to a scholar you trust and be gentle with people who are acting out of love for the Prophet ﷺ.",
   noticeAr: "هذا القسم في بيان مسألةٍ من مسائل العبادة، وليس فتوى، ولا حكمًا على معيَّن. وحيث اختلف أهل العلم ذُكر القولان بأصحابهما. فإن كان هذا يمسّ شيئًا في أهلك فاسأل عالمًا تثق به، وارفُق بمن يفعله محبّةً للنبي ﷺ."

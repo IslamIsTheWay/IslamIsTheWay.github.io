@@ -58,7 +58,7 @@ const ADHKAR = [
     countAr: "مرّة واحدة — ويُقال في المساء: أمسينا وأمسى الملك لله",
     virtue: "This is what the Prophet ﷺ himself said when he entered the morning, and the same when he entered the evening.",
     virtueAr: "هذا ما كان يقوله النبي ﷺ إذا أصبح، وكان يقول مثله إذا أمسى.",
-    ref: "Sahih Muslim, Book of Remembrance and Supplication (Kitab adh-Dhikr wa'd-Du'a)",
+    ref: "Sahih Muslim, Book of Remembrance and Supplication (Kitab adh-Dhikr wa'd-Du'a)", refAr: "صحيح مسلم، كتاب الذكر والدعاء",
     strength: "Sahih — Narrated by Muslim",
     keys: ["morning", "evening", "dominion", "أصبحنا", "أمسينا", "الملك لله", "الصباح", "المساء"]
   },
@@ -74,7 +74,7 @@ const ADHKAR = [
     countAr: "ثلاث مرّات في المساء",
     virtue: "The Prophet ﷺ said that whoever stops at a place and says this, nothing will harm him until he leaves that place.",
     virtueAr: "قال النبي ﷺ: من نزل منزلًا ثم قال: أعوذ بكلمات الله التامّات من شرّ ما خلق، لم يضرّه شيءٌ حتى يرتحل من منزله ذلك.",
-    ref: "Sahih Muslim, Book of Remembrance and Supplication — narrated by Khawlah bint Hakim رضي الله عنها",
+    ref: "Sahih Muslim, Book of Remembrance and Supplication — narrated by Khawlah bint Hakim رضي الله عنها", refAr: "صحيح مسلم، كتاب الذكر والدعاء — عن خولة بنت حكيم رضي الله عنها",
     strength: "Sahih — Narrated by Muslim",
     keys: ["refuge", "protection", "harm", "كلمات الله", "الاستعاذة", "الحفظ", "المساء"]
   },
@@ -90,7 +90,7 @@ const ADHKAR = [
     countAr: "مئة مرّة في اليوم",
     virtue: "The Prophet ﷺ said whoever says it a hundred times in a day, his sins are wiped away even if they were like the foam of the sea.",
     virtueAr: "قال النبي ﷺ: من قال سبحان الله وبحمده في يومٍ مئة مرة حُطّت خطاياه وإن كانت مثل زَبَد البحر.",
-    ref: "Sahih al-Bukhari, Book of Supplications, Hadith 6405 — and Sahih Muslim, Book of Remembrance",
+    ref: "Sahih al-Bukhari, Book of Supplications, Hadith 6405 — and Sahih Muslim, Book of Remembrance", refAr: "صحيح البخاري، كتاب الدعوات، حديث ٦٤٠٥ — ورواه مسلم في كتاب الذكر",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["tasbih", "hundred", "sins", "سبحان الله", "مئة", "الذنوب", "التسبيح"]
   },
@@ -122,7 +122,7 @@ const ADHKAR = [
     countAr: "ثلاث مرّات لكلٍّ منها صباحًا ومساءً",
     virtue: "Reciting them three times each morning and evening is reported as sufficing a person against everything. Note carefully: reciting them at THIS time is not in al-Bukhari or Muslim — it is narrated by Abu Dawud and at-Tirmidhi and graded authentic by al-Albani. What IS in al-Bukhari is that the Prophet ﷺ recited them into his hands and wiped over himself each night before sleeping.",
     virtueAr: "قراءتها ثلاثًا صباحًا ومساءً جاء فيها أنها تكفي العبد من كل شيء. وانتبه: قراءتها في هذا الوقت ليست في البخاري ولا مسلم، وإنما رواها أبو داود والترمذي وصحّحها الألباني. وأما الثابت في البخاري فهو أنه ﷺ كان ينفث بها في كفّيه ويمسح بهما جسده كل ليلة عند النوم.",
-    ref: "Morning and evening: Sunan Abu Dawud and Jami' at-Tirmidhi, authenticated by al-Albani — outside the two Sahihs. Before sleeping: Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5017 — Sahih",
+    ref: "Morning and evening: Sunan Abu Dawud and Jami' at-Tirmidhi, authenticated by al-Albani — outside the two Sahihs. Before sleeping: Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5017 — Sahih", refAr: "الصباح والمساء: سنن أبي داود وجامع الترمذي، صحّحه الألباني — خارج الصحيحين. وقبل النوم: صحيح البخاري، كتاب فضائل القرآن، حديث ٥٠١٧ — صحيح",
     strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi, authenticated by al-Albani (for the morning and evening); Sahih — Narrated by al-Bukhari (for before sleeping)",
     keys: ["ikhlas", "falaq", "nas", "muawwidhat", "protection", "المعوذات", "الإخلاص", "الفلق", "الناس", "الرقية"]
   },
@@ -190,7 +190,7 @@ const ADHKAR = [
     countAr: "مئة في المجموع عند النوم",
     virtue: "Fatimah رضي الله عنها came to her father asking for a servant to help her, and he offered her this instead: \"Shall I not tell you of what is better for you than a servant?\" Ali رضي الله عنه said he never left it after that — and when he was asked, \"not even on the night of Siffin?\", he said: not even on the night of Siffin. The narrations differ over which of the three is the thirty-four; both wordings are in al-Bukhari.",
     virtueAr: "أتت فاطمة رضي الله عنها أباها تسأله خادمًا، فدلّها على ما هو خيرٌ لها منه: «ألا أخبرك بما هو خيرٌ لك منه؟» قال عليٌّ رضي الله عنه: فما تركتها بعد، فقيل: ولا ليلة صِفّين؟ قال: ولا ليلة صِفّين. واختلفت الروايات في أيّها تكون أربعًا وثلاثين، وكلا اللفظين في البخاري.",
-    ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 5362; and Book of Supplications, Hadith 6318",
+    ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 5362; and Book of Supplications, Hadith 6318", refAr: "صحيح البخاري، كتاب فضائل الصحابة، حديث ٥٣٦٢؛ وكتاب الدعوات، حديث ٦٣١٨",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["tasbih", "fatimah", "sleep", "servant", "تسبيح فاطمة", "النوم", "الخادم", "التسبيح"]
   },
@@ -208,7 +208,7 @@ const ADHKAR = [
     countAr: "الاستغفار ثلاثًا ثم الذكر مرّة",
     virtue: "This is what the Prophet ﷺ said the moment he finished the obligatory prayer, before anything else.",
     virtueAr: "هذا ما كان يقوله النبي ﷺ إذا انصرف من صلاته المكتوبة، قبل كل شيء.",
-    ref: "Sahih Muslim, Book of Mosques and Places of Prayer",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer", refAr: "صحيح مسلم، كتاب المساجد ومواضع الصلاة",
     strength: "Sahih — Narrated by Muslim",
     keys: ["after prayer", "istighfar", "salam", "بعد الصلاة", "الاستغفار", "اللهم أنت السلام"]
   },
@@ -224,7 +224,7 @@ const ADHKAR = [
     countAr: "بعد كل صلاة مكتوبة",
     virtue: "The Prophet ﷺ said whoever does this after every prayer — that is ninety-nine — and completes the hundred with the words of tahlil, his sins are forgiven even if they were like the foam of the sea.",
     virtueAr: "قال النبي ﷺ: من سبّح الله في دُبُر كل صلاة ثلاثًا وثلاثين، وحمد الله ثلاثًا وثلاثين، وكبّر الله ثلاثًا وثلاثين، فتلك تسعٌ وتسعون، وقال تمام المئة: لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير — غُفرت خطاياه وإن كانت مثل زَبَد البحر.",
-    ref: "Sahih Muslim, Book of Mosques and Places of Prayer; and Sahih al-Bukhari, Book of Adhan, Hadith 843",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer; and Sahih al-Bukhari, Book of Adhan, Hadith 843", refAr: "صحيح مسلم، كتاب المساجد ومواضع الصلاة؛ وصحيح البخاري، كتاب الأذان، حديث ٨٤٣",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["after prayer", "33", "tasbih", "بعد الصلاة", "ثلاث وثلاثين", "التسبيح", "تمام المئة"]
   },
@@ -240,7 +240,7 @@ const ADHKAR = [
     countAr: "مرّة واحدة بعد كل صلاة مكتوبة",
     virtue: "The Prophet ﷺ used to say this when he finished the prayer and gave the salam.",
     virtueAr: "كان النبي ﷺ يقول هذا إذا فرغ من الصلاة وسلّم.",
-    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated by al-Mughirah ibn Shu'bah رضي الله عنه; also Sahih al-Bukhari",
+    ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated by al-Mughirah ibn Shu'bah رضي الله عنه; also Sahih al-Bukhari", refAr: "صحيح مسلم، كتاب المساجد ومواضع الصلاة — عن المغيرة بن شعبة رضي الله عنه، ورواه البخاري",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["after prayer", "provision", "بعد الصلاة", "لا مانع لما أعطيت", "الرزق"]
   },
@@ -256,7 +256,7 @@ const ADHKAR = [
     countAr: "مرّة واحدة بعد كل صلاة مكتوبة",
     virtue: "Reading it after every obligatory prayer is very widely practised, and the report behind it — that nothing stands between the one who reads it and Paradise except death — is narrated by an-Nasa'i and graded authentic by al-Albani. It is NOT in al-Bukhari or Muslim. The site says so rather than letting it be assumed. What is in al-Bukhari is reading it before sleeping.",
     virtueAr: "قراءتها عقب كل صلاة مكتوبة مشهورةٌ جدًّا عند الناس، ومستندها حديثٌ عند النسائي صحّحه الألباني، وفيه أنه لا يمنعه من دخول الجنة إلا أن يموت. وليست في البخاري ولا مسلم، ونُبيّن ذلك ولا نوهم خلافه. وأما الثابت في البخاري فقراءتها عند النوم.",
-    ref: "Sunan an-Nasa'i, authenticated by al-Albani — outside the two Sahihs. Before sleeping: Sahih al-Bukhari, Hadith 5010 — Sahih",
+    ref: "Sunan an-Nasa'i, authenticated by al-Albani — outside the two Sahihs. Before sleeping: Sahih al-Bukhari, Hadith 5010 — Sahih", refAr: "سنن النسائي، صحّحه الألباني — خارج الصحيحين. وقبل النوم: صحيح البخاري، حديث ٥٠١٠ — صحيح",
     strength: "Strong — Narrated by an-Nasa'i, authenticated by al-Albani; not in the two Sahihs",
     keys: ["ayat al kursi", "after prayer", "آية الكرسي", "بعد الصلاة", "درجة الحديث"]
   },
@@ -324,7 +324,7 @@ const ADHKAR = [
     countAr: "يُقال عند الخوف وكثرة العدو",
     virtue: "Ibn Abbas رضي الله عنهما said: Ibrahim عليه السلام said it when he was thrown into the fire, and Muhammad ﷺ said it when the people said to him, \"the people have gathered against you, so fear them\" — and it only increased them in faith.",
     virtueAr: "قال ابن عباس رضي الله عنهما: قالها إبراهيم عليه السلام حين أُلقي في النار، وقالها محمد ﷺ حين قالوا: إنّ الناس قد جمعوا لكم فاخشوهم، فزادهم إيمانًا وقالوا: حسبنا الله ونعم الوكيل.",
-    ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4563; the words are Surah Al-Imran (3:173)",
+    ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4563; the words are Surah Al-Imran (3:173)", refAr: "صحيح البخاري، كتاب التفسير، حديث ٤٥٦٣؛ واللفظ من سورة آل عمران (٣:١٧٣)",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["fear", "enough", "trust", "tawakkul", "حسبنا الله", "الخوف", "التوكل", "الشدة"]
   },
@@ -340,7 +340,7 @@ const ADHKAR = [
     countAr: "يُقال في كل كرب",
     virtue: "These words are in the Quran, spoken by Yunus عليه السلام inside the darkness — Surah Al-Anbiya (21:87), and Allah says after them: \"So We answered him and saved him from the distress; and thus do We save the believers.\" The well-known hadith that no Muslim says them in any matter but that Allah answers him is narrated by at-Tirmidhi and graded authentic by al-Albani — it is NOT in al-Bukhari or Muslim, and this page says so.",
     virtueAr: "هذه الكلمات في القرآن، قالها يونس عليه السلام في الظلمات — سورة الأنبياء (٢١:٨٧)، وقال الله بعدها: «فَاسْتَجَبْنَا لَهُ وَنَجَّيْنَاهُ مِنَ الْغَمِّ وَكَذَٰلِكَ نُنجِي الْمُؤْمِنِينَ». وأما الحديث المشهور أنه لم يدعُ بها مسلمٌ في شيءٍ قط إلا استجاب الله له فرواه الترمذي وصحّحه الألباني، وليس في البخاري ولا مسلم، ونُبيّن ذلك.",
-    ref: "Surah Al-Anbiya (21:87). The hadith on saying it: Jami' at-Tirmidhi, authenticated by al-Albani — outside the two Sahihs",
+    ref: "Surah Al-Anbiya (21:87). The hadith on saying it: Jami' at-Tirmidhi, authenticated by al-Albani — outside the two Sahihs", refAr: "سورة الأنبياء (٢١:٨٧). وحديثُ قولها: جامع الترمذي، صحّحه الألباني — خارج الصحيحين",
     strength: "The words themselves are Quran. The hadith recommending them: Strong — Narrated by at-Tirmidhi, authenticated by al-Albani; not in the two Sahihs",
     keys: ["yunus", "dhun nun", "distress", "darkness", "ذو النون", "يونس", "الكرب", "الظلمات"]
   }
