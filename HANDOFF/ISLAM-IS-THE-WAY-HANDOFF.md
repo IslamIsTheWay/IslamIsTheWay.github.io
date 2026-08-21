@@ -3602,11 +3602,90 @@ men whose books we still read — with the English statute dates beside them.
 `GOLDEN_TAKEN` already covers the numbers, the algorithms and Toledo. Nothing
 there needed adding except this one case.
 
+## SECOND ROUND, 21 August: the Arabic sweep, and the verb form
+
+### The leak count was 94, not 23
+
+The chip from the first round named 23 leaks in the rulings section. Walking
+every text node of the rendered page in Arabic mode found **94**, and the
+owner sent a screenshot of the worst of it: the situation box printing its
+Arabic sub-line **twice** and its heading in both languages at once.
+
+Two causes, and they need different fixes — see CLAUDE.md for the rule. In
+short: markup pairs get `.en-only` / `.ar-only`; source lines and gradings get
+an explicit `refAr` / `strengthAr` / `workAr`, because the reference translator
+only reaches canonical citations and half-translates anything else.
+
+**Fixed across:** every section title and intro on guidance.html, the situation
+box, the context notes, the theme columns and their subtitles, the photo band,
+the closing ayah banner, the worship stage labels and repetition counts, the
+ruling headings, the scholars' book titles, the evidence source lines in
+scholars / revival / bidah / adhkar / WORSHIP_STEPS, the "Words explained"
+heading on all eight term boxes, and the Arabic voice notice in js/main.js.
+
+**Verified: 0 leaks** across all six ruling categories, all worship stages and
+all adhkar tabs. The five Latin strings that remain are binbaz.org.sa and
+binothaimeen.net inside Arabic sentences, which are correct.
+
+**The other fifteen pages have not been swept.** Run the same audit on each:
+walk every text node in Arabic mode, skip anything inside `.en-only`, report
+Latin runs of two or more.
+
+### `js/tadabbur-tense.js` — 28 verses, 22 surahs
+
+His words: *"the Quran, when he mentions things, usually uses the past phrase
+— why is that? ... Joseph asked them to bring their brother, and when they
+told their father they said it in another phase. That type of connection
+between the past and the present and the future is very important."*
+
+He is describing **12:60 against 12:63**, and he is exactly right:
+
+* **12:60** — `فَإِن لَّمْ تَأْتُونِى بِهِۦ فَلَا كَيْلَ لَكُمْ عِندِى` — a
+  **condition**, about the future, that the brothers can still satisfy.
+* **12:63** — `مُنِعَ مِنَّا ٱلْكَيْلُ` — **perfect** and **passive**: it *has
+  been* withheld, by nobody named.
+
+A condition Ya'qub could have argued with becomes a door already shut. Not one
+word of theirs is false. The tense did the work — and that is the point worth
+teaching, because it is how a person is misled without a lie being told.
+
+Each entry has four movements: **the form → why this one here → WHAT WOULD
+CHANGE IF IT SAID THE OTHER → plain words.** The third is the half he asked
+for by name and it has its own box and its own colour.
+
+Covered: past for a certain future (16:1, 48:1, 39:71-73, 54:1, 81:1, 7:44),
+the imperfect for what renews (2:15, 22:63, 14:25, 36:82), the passive that
+hides the doer (4:28, 12:63), iltifat (1:5, 10:22), the nominal sentence with
+no time in it (2:255, 112:2, 2:187), the emphatic future kept decades later
+(12:15 → 12:89), definite against indefinite (94:6), fronting for exclusivity
+(13:28, 2:4), the jussive binding a condition to its answer (65:3, 40:60), the
+same verb denied and affirmed of one man (8:17), the dropped object (93:3),
+and the one question in the Quran answered with no `قُلْ` (2:186).
+
+The home page tadabbur section now names the feature and carries the Yusuf
+pair as a second worked example.
+
+### Where the tadabbur stands — 21 August 2026
+
+| | |
+|---|---|
+| verses explained | 496 in 380 blocks, all 114 surahs |
+| verse-to-verse links | 70, all two-way, none dangling |
+| **verb-form notes** | **28 verses across 22 surahs** |
+| still short of four verses in every surah | 87 |
+| blocks with no cross-reference | 316 of 380 |
+
+**The coverage work he asked for is not finished, and he should be told so
+plainly.** 32 surahs still sit on two explained verses and 74 are under five.
+Both axes grow the same way: write the entry, copy the Arabic out of
+`js/quran-text.js`, run the quotation checker, run `./check-counts.sh`.
+
 ## Open work as of 21 August 2026
 
-1. **The rulings section leaks 23 English strings in Arabic mode** —
-   `ruling-sub` headings, `rs-work` book titles, and grading prose inside
-   `ref`. This is the documented `ref`/`strength` trap and it predates this
-   round. Fixing it means giving `FIQH_RULINGS` its own `refAr` the way
-   `js/misunderstood.js` now does.
-2. Everything still open from PART 16.
+1. **Tadabbur coverage.** 87 verses short of four in every surah; 32 surahs
+   still on two; 316 of 380 blocks carry no cross-reference. This is the bulk
+   of what the owner keeps asking for and it is the slowest work on the site.
+2. **The verb-form file has 28 entries.** Every surah could carry one.
+3. **Only guidance.html and index.html's tadabbur block have been swept for
+   Arabic-mode leaks.** Run the same audit on the other fifteen pages.
+4. Everything still open from PART 16.

@@ -126,6 +126,62 @@ Muslim by a number taken from it.
   writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
   four false mismatches. Strip harakat and normalise to NFC first.
 
+## Traps added 21 August 2026 — round two: the Arabic sweep, and the tense
+
+### The Arabic-mode sweep was 94, not 23
+The task chip said 23 leaks in the rulings section. Walking **every text node
+of the rendered page** in Arabic mode found 94 across guidance.html, and in
+places the Arabic was printing **twice** — the AR dictionary translated the
+English text node while a hard-coded Arabic span sat beside it.
+
+Two different faults, two different fixes:
+
+* **Markup pairs** — `English <span dir="rtl">Arabic</span>` with no
+  `.ar-only`. Split both halves. This is the same shape as the 82 Golden Age
+  heading leaks in PART 16 and it is by far the most common bug on this site.
+  **`grep -c '<span dir="rtl"' file.html` with no `ar-only` on the line is a
+  one-line audit for it, and it should be run on every page.**
+* **Source lines and gradings** — `iitwTranslateReference` reaches canonical
+  citations only. Anything with a narrator, a named work or grading prose gets
+  half-translated into things like `سورة مريم (19:59) — the قرآن` and
+  `those who hold it obligatory argue عن this و from 33:59`. Those entries now
+  carry their own `refAr` / `strengthAr` / `workAr` in js/scholars.js,
+  js/revival.js, js/bidah.js, js/adhkar.js and WORSHIP_STEPS, and the
+  renderers prefer them when present. **Do not convert the rest** — canonical
+  citations still go through the translator, which handles them and keeps new
+  entries working with no extra effort.
+
+**binbaz.org.sa and binothaimeen.net inside Arabic sentences are deliberate.**
+A sweep that reports them is wrong, like the Latin names on the Golden Age
+cards.
+
+### `${…}` cannot be nested inside `${…}`
+A scripted edit produced `${c.ref ? ${c.refAr ? \`…\` : \`…\`} : ""}`, which is
+a syntax error and killed the whole bid'ah section. Use
+`${!c.ref ? "" : (c.refAr ? \`…\` : \`…\`)}`. Check the browser console after
+any scripted change to a template literal — the page renders blank, not broken.
+
+### `js/tadabbur-tense.js` — why it is in this tense
+The owner asked for it by name, with his own example: Yusuf sets a **condition**
+about the future in 12:60, and the brothers report it to their father as a
+**completed past passive** in 12:63. Nothing false is said; the tense does it.
+
+* Keyed `"surah:ayah"` and merged into the tadabbur panel at render time, so a
+  verse can carry a verb-form note **without** having a tadabbur block of its
+  own — `iitwTadabburAyahHtml` falls through to `iitwTenseOnlyHtml`.
+* **`ifOther` is not optional.** "What would change if it said the other" is
+  the half he asked for, and it is what turns a grammar label into an insight.
+  It has its own box and its own colour.
+* **Verify every quotation against `js/quran-text.js`.** The file makes claims
+  ABOUT the wording, so an approximate quotation is not a typo, it is a false
+  claim. The scratchpad checker walks every `﴿…﴾` and requires it to be a
+  substring of the real text. It caught eight wrong small marks.
+* **`﴿ ﴾` is the mushaf bracket only.** Unvocalised paraphrases in the
+  plain-words boxes use `« »`. A checker that treats every `﴿…﴾` as a
+  quotation is right to, which is why the distinction has to be kept.
+* **`***` survives an asterisk cleanup.** `(?<!\*)\*(?!\*)` matches none of
+  the three, so `**you***` renders as bold plus a literal asterisk.
+
 ## Traps added 21 August 2026 — the misunderstood section
 
 `js/misunderstood.js` → `guidance.html#misunderstood`. Six subjects — the
