@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 19 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 15 first, then PART 14.**
+> **Last updated: 21 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 16 first, then PART 15.**
 
 ## The rules that matter most
 
@@ -54,7 +54,7 @@ git add -A && git commit -m "..." && git push origin main
 
 `CLAUDE.md` in the repo root carries the full, current list of traps. Read it.
 
-## Where the project stands - 14 August 2026
+## Where the project stands - 21 August 2026
 
 | Content | Count |
 |---|---|
@@ -68,8 +68,8 @@ git add -A && git commit -m "..." && git push origin main
 | Adhkar | 19 |
 | Scholars' rulings / scholars with books | 15 / 19 |
 | Surahs | 114, 16 reciters, Mushaf pages |
-| **Tadabbur (explained verses)** | **480 verses in 364 blocks; 52 cross-links, all two-way** |
-| **Golden Age figures** | **41**, all with a plain-words box |
+| **Tadabbur (explained verses)** | **496 verses in 380 blocks; 70 cross-links, all two-way, none dangling** |
+| **Golden Age figures** | **41**, all with a plain-words box and a “what you still use today” box |
 | **Adding to the religion (bid'ah)** | `js/bidah.js`, on Guidance |
 
 **The site is now an installable app.** `manifest.webmanifest` + `sw.js`, and
@@ -85,8 +85,9 @@ hold on his iPhone. Every user-facing claim was removed the same day. See
 quran.html) and `js/daily.js` (the four-item box on the home page), with a
 streak and marked days at 1, 7, 10, 30, 40, 100, 200 and 365.
 
-**Read PART 13 first** - it is the most recent session and it records five
-faults that shipped, including two the owner had to report twice.
+**Read PART 16 first** - it is the most recent session. PART 13 is still
+worth reading after it: it records five faults that shipped, including two
+the owner had to report twice.
 
 ## Contents
 
@@ -97,6 +98,8 @@ faults that shipped, including two the owner had to report twice.
 5. **Open Work & Limitations** - unfinished items, traps found the hard way
 6. **Credentials & Access** - logins, GitHub tokens, SEO
 7. **Content Guide** - how to add content correctly + validation commands
+8. **PARTS 8-16** - one section per session, newest last. Each records what
+   was built, what broke, and what must not be reintroduced.
 
 ---
 ---
@@ -3241,3 +3244,201 @@ would need the genitive. Do not change the shared helper to suit one sentence.
    71 surahs are still under five; 38 are on two.
 4. Everything still open from PART 15 and PART 13.
 
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 16 — 19–20 August 2026: every link closed, and the Golden Age made concrete
+<!-- ============================================================ -->
+
+Three commits: `1ed8427`, `4c1f83b`, `3fde76e`. All live and verified on the
+real URL.
+
+## TADABBUR: 480 → 496 verses, 52 → 70 links, and nothing left dangling
+
+PART 15 closed with an open item: *"13 links point at verses with no entry of
+their own — 17:44, 28:76, 2:272, 42:52 (twice), 2:185, 4:69, 7:156, 2:23, 8:30,
+15:74, 16:112, 69:30."* Those twelve verses were written first, because writing
+one deepens a surah AND closes a pair at the same time.
+
+**All twelve are done. There are now zero orphaned targets and zero one-way
+links.** Every cross-reference on the site points at a verse that has its own
+entry and points back.
+
+Then a second round added four more with a two-way link on each: **8:53,
+12:108, 12:111, 16:125**.
+
+| | 18 Aug | now |
+|---|---|---|
+| blocks | 364 | **380** |
+| verses explained | 480 | **496** |
+| verse-to-verse links | 52 | **70** |
+| blocks carrying at least one link | 46 | **64** |
+| one-way links | 0 | **0** |
+| links pointing at a verse with no entry | 13 | **0** |
+| fewest verses in any surah | 2 | **2** |
+
+Coverage as it actually stands, counted from the file:
+
+```
+2 verses: 32 surahs      5: 9      8: 7
+3 verses: 23 surahs      6: 11     9: 2
+4 verses: 19 surahs      7: 8      10+: 3
+```
+
+**87 verses short of four in every surah; 161 short of five.**
+
+### THE GUARD CAUGHT MY OWN MISTAKE — this is the important part of the round
+
+I wrote entries for **13:11, 36:82 and 39:53 for surahs that already had them.**
+The generator's `covered=` list is a record of what is DONE; I read it as a list
+of what to do. Three duplicate blocks went into the file.
+
+`check-counts.sh` failed on them before they could ship. That guard exists
+because the tadabbur renderer picks a verse with `.filter(x => x.n === n)[0]` —
+it takes the FIRST match and the second block is dead code that renders nowhere,
+so a duplicate is invisible in the browser and looks like work that was done.
+
+The three were removed and the links they carried were moved onto the original
+blocks, so nothing written was lost. **Do not remove that check.**
+
+### The healer's hamza problem, and the regression fixing it caused
+
+A hamza is written two ways: as a standalone letter `ء` (which survives
+mark-stripping) or as a combining mark on a seat (`أ` = ا + U+0654, which does
+not). So `لَءَايَٰتٍۢ` in the Uthmani text and `لَـَٔايَٰتٍۢ` as a person types
+it reduce to **different skeletons** and never match. The healer reported a real
+verse as NOT FOUND and refused the write — the guard behaving correctly, but
+unhelpfully.
+
+Fix: **the LOCATOR now ignores the hamza; the verifier stays strict.** That is
+safe because the healer never keeps what it matched — having found the span it
+substitutes the exact text from `js/quran-text.js` either way. Looser matching
+can only widen what is found; what gets written is the real wording regardless.
+
+**Then the fix caused its own bug, twice, on opposite edges.** Dropping the
+hamza for the search means the index map has no entry for it, so the extracted
+span is cut short at whichever end the hamza sits:
+
+* trailing — `شَىْءٍۢ` came back as `شَىْ`
+* leading — `ءَامَنَّا` came back as `امَنَّا`
+
+Both edges now walk outward over a dropped hamza and the marks on it. If you
+touch `exact_span()`, test a quote that starts with a hamza and one that ends
+with one.
+
+## GOLDEN AGE: what they BUILT, and what you still hold
+
+The owner's words: *"make the word and scholars part easier to understand —
+what they built, what they made, and what we still use until now."*
+
+### A heading that was wrong on six of the 41 cards
+
+**"📚 What he wrote"** was printed on every card. It is false on six:
+
+* **Mimar Sinan** — the entries under it are the Selimiye and Suleymaniye
+  **mosques**. The greatest Ottoman architect's buildings were labelled as
+  things he wrote.
+* **Fatima al-Fihri** — a **woman**, who **built** a university. The card
+  said "he".
+* **Paper**, **the bimaristan**, **the Nizamiyya schools** — not people, and
+  they wrote nothing. "The paper mills" sat under "what he wrote".
+* **Ibn Firnas** — his only listed work was a literal em-dash: an empty row
+  under a heading that did not apply to him.
+
+Each now carries its own heading via `worksHead` / `worksHeadAr`: *What she
+built*, *What was built*, *What he built*, *What he attempted*. **The emoji was
+split out into `worksIcon`** so it renders in both languages instead of being
+buried inside the English string.
+
+### Every card now answers "and what of it do I use?"
+
+A new block on all 41: **🔧 What you still use today** — `today[]` and
+`todayAr[]` in `js/golden.js`, **83 bullets in each language**. Rendered by
+`golden.html` above `gold-after`, styled green like the plain-words box
+(`.gold-today`, `.gold-today-head`, `.gold-today-list` in `css/style.css`).
+
+**The rule for writing these: not what he wrote — what is in the reader's hand.**
+Something they hold, say, or can go and stand in.
+
+* al-Jazari → the crankshaft in every car engine; the camshaft working the valves
+* al-Uqlidisi → the decimal point in every price
+* az-Zahrawi → the shape of the forceps; catgut; plaster on a broken bone
+* Ibn al-Haytham → the scientific method, and the word *camera* (`al-qamarah`,
+  the dark room)
+* as-Sufi → Andromeda, visible to the naked eye tonight
+* al-Qarawiyyin → still teaching
+
+Two or three per card. Concrete beats impressive: "the crankshaft in a car
+engine" lands, "a treatise on ingenious mechanical devices" does not.
+
+### An Arabic-mode leak, 82 instances — and the fix pattern
+
+`gold-works-head` and `gold-after-head` were built as **bare English text with
+only the Arabic wrapped in a span**, so the English was never hidden. On an
+Arabic page every card read *"🏛️ What she built — ما بَنَت"*. 41 cards × 2
+headings = 82.
+
+Both halves are now `.en-only` / `.ar-only`, which is what the rest of the site
+does. **This is the shape of the bug to look for elsewhere:** a span with `dir="rtl"`
+but no `.ar-only` class means the English beside it is unhidden.
+
+Audited after: **zero genuine leaks left on the cards.** The sweep still reports
+38 — all deliberate: 20 Latin names ("Known in Europe as: Algoritmi") and 18
+Arabic sentences that quote a European word on purpose, which is the point of
+those cards. **Do not "fix" those.**
+
+## Bug sweep across the site
+
+All 17 `.html` files checked live: no console errors, no raw `**` markers
+rendering, no `undefined` or `NaN` in output, every canonical pointing at its
+own page, asset stamps consistent at `v=202608201347`.
+
+**`angels.html` carries no version stamps, and that is correct** — it is an
+18-line redirect stub kept so old links and bookmarks still arrive at
+`judgement.html#angels`. A checker that flags it is wrong, not the file.
+
+## Traps added in this round — do not reintroduce
+
+* **`covered=` in the generator is a DONE list, not a TO-DO list.** Reading it
+  backwards put three duplicate blocks in the file.
+* **A duplicate tadabbur block is invisible in the browser.** The renderer takes
+  `[0]`; the second is dead. Only `check-counts.sh` will tell you.
+* **`ref` and `strength` are translated by exact-string lookup in `js/i18n.js`.**
+  Extra English prose inside them has no Arabic key and leaks onto Arabic pages.
+  Grading nuance belongs in `detail` / `detailAr`.
+* **The Sunnah renderer does not convert `**bold**`.** One entry shipped with
+  raw asterisks visible. Tadabbur converts them; Sunnah does not.
+* **The link checker matched `ref:` at exactly ten spaces of indent.** Older
+  links sit at twelve, so it reported 38 links in a file that had 52 and let a
+  duplicate through. The pattern is now ten-**or-more**. Any checker keyed to an
+  exact indent will rot the same way.
+* **Test both edges after touching Arabic extraction.** The hamza fix above broke
+  the leading edge after the trailing edge was already fixed.
+
+## Open work as of 21 August 2026
+
+1. **316 of 380 blocks still have no cross-reference.** The method is in PART 15
+   and the tooling works; this is the bulk of what remains.
+2. **Coverage: 87 verses short of four in every surah, 161 short of five.**
+   74 surahs are under five; 32 are still on two.
+3. **88 tadabbur blocks carry no `ref`, and 89 no `strength`** — the ones
+   written before those fields existed. Every block added since does.
+4. `AbuBakr` written as one word returns 1 search result where `Abu Bakr`
+   returns 6. Fixing it needs substring matching on names, which is the trap in
+   rule 5. **Left deliberately.**
+5. **Arabic morphology is not bridged in the Guidance box** — `مات` does not
+   reach an entry written with `الموت`. Only the bereavement entry is patched.
+6. Everything still open from PART 15 and PART 13.
+
+### Two items PART 15 left open that are now CLOSED — do not re-raise them
+
+* **`contact@islamistheway.com` is gone from the live site.** It went in
+  `f396f26`. Every contact route — the courses enquiry link, `js/enrol.js`,
+  the feedback sender in `js/main.js`, the note on `staff.html` — now uses
+  `ammarwalidyounis@gmail.com`. The 13 hits a `grep -r` still returns are all
+  inside **`.claude/worktrees/heuristic-wright-a77f44/`**, a stale detached
+  worktree that is in `.git/info/exclude` and has never deployed. Exclude
+  `worktrees` from the grep before believing a hit.
+* **The 13 orphaned link targets** are all written; see the top of this part.

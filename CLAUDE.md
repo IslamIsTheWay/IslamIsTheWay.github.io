@@ -126,6 +126,45 @@ Muslim by a number taken from it.
   writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
   four false mismatches. Strip harakat and normalise to NFC first.
 
+## Traps added 19-20 August 2026 — the tadabbur and Golden Age rounds
+
+- **A duplicate tadabbur block is invisible in the browser.** The renderer picks
+  a verse with `.filter(x => x.n === n)[0]`, so a second block for the same
+  verse renders nowhere and looks like work that was done. Three shipped into
+  the file this way because `covered=` in the generator was read as a TO-DO list
+  when it is a DONE list. `./check-counts.sh` is the only thing that catches
+  it — **do not remove that check.**
+- **A hamza is two different things to a string comparison.** Standalone `ء`
+  is a letter and survives mark-stripping; the hamza on a seat (`أ` = ا +
+  U+0654) is a combining mark and does not. So `لَءَايَٰتٍۢ` and `لَـَٔايَٰتٍۢ`
+  reduce to different skeletons and never match. The quote healer's LOCATOR
+  ignores the hamza; the VERIFIER stays strict. That is safe only because the
+  healer substitutes the real text from `js/quran-text.js` and never keeps what
+  it matched. **Then carry the dropped hamza back on BOTH edges when
+  extracting** — trailing gave `شَىْءٍۢ` → `شَىْ`, leading gave `ءَامَنَّا` →
+  `امَنَّا`, and each was a separate fix.
+- **`ref` and `strength` are translated by exact-string lookup in `js/i18n.js`.**
+  Extra English prose inside them has no Arabic key and leaks onto Arabic pages.
+  Grading nuance goes in `detail` / `detailAr`.
+- **The Sunnah renderer does not convert `**bold**`.** Tadabbur does. One entry
+  shipped with the asterisks visible on the live site.
+- **A checker keyed to an exact indent will rot.** The verse-link checker matched
+  `ref:` at exactly ten spaces; older links sit at twelve, so it reported 38
+  links in a file that had 52 and let a duplicate through. Match ten-**or-more**.
+- **A `dir="rtl"` span with no `.ar-only` class means the English beside it is
+  never hidden.** `gold-works-head` and `gold-after-head` were built that way and
+  printed "🏛️ What she built — ما بَنَت" on every card in Arabic mode: 41 cards
+  × 2 headings = 82 leaks. Both halves must carry `.en-only` / `.ar-only`.
+  **The 38 the leak sweep still reports on `golden.html` are deliberate** — 20
+  Latin names ("Known in Europe as: Algoritmi") and 18 Arabic sentences quoting
+  a European word on purpose. Do not "fix" those.
+- **`angels.html` has no `?v=` stamps and that is correct.** It is an 18-line
+  redirect stub kept so old bookmarks reach `judgement.html#angels`.
+- **`grep -r` for the dead `contact@islamistheway.com` still returns 13 hits.**
+  Every one is inside `.claude/worktrees/heuristic-wright-a77f44/`, a stale
+  detached worktree in `.git/info/exclude` that has never deployed. The live
+  pages were cleaned in `f396f26`. Exclude `worktrees` before believing a hit.
+
 ## Traps added 13 August 2026 — all three were found live
 
 - **A backtick inside an HTML comment that sits inside a template literal ends
