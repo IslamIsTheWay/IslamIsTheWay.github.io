@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 21 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 16 first, then PART 15.**
+> **Last updated: 21 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 17 first, then PART 16.**
 
 ## The rules that matter most
 
@@ -71,6 +71,7 @@ git add -A && git commit -m "..." && git push origin main
 | **Tadabbur (explained verses)** | **496 verses in 380 blocks; 70 cross-links, all two-way, none dangling** |
 | **Golden Age figures** | **41**, all with a plain-words box and a “what you still use today” box |
 | **Adding to the religion (bid'ah)** | `js/bidah.js`, on Guidance |
+| **The hardest questions about Islam** | `js/misunderstood.js`, **33 cards / 6 subjects**, on Guidance |
 
 **The site is now an installable app.** `manifest.webmanifest` + `sw.js`, and
 **the whole Quran text ships with it** (`js/quran-text.js`, 6,236 verses), so
@@ -98,7 +99,7 @@ the owner had to report twice.
 5. **Open Work & Limitations** - unfinished items, traps found the hard way
 6. **Credentials & Access** - logins, GitHub tokens, SEO
 7. **Content Guide** - how to add content correctly + validation commands
-8. **PARTS 8-16** - one section per session, newest last. Each records what
+8. **PARTS 8-17** - one section per session, newest last. Each records what
    was built, what broke, and what must not be reintroduced.
 
 ---
@@ -3442,3 +3443,170 @@ own page, asset stamps consistent at `v=202608201347`.
   worktree that is in `.git/info/exclude` and has never deployed. Exclude
   `worktrees` from the grep before believing a hit.
 * **The 13 orphaned link targets** are all written; see the top of this part.
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 17 — 21 August 2026: the hardest questions asked about Islam
+<!-- ============================================================ -->
+
+The owner's request, in his words: the section should answer *"the most
+misunderstood things in Islam"* — the verses quoted to prove Muslims are told
+to kill everyone, what jihad actually means (*"jihad can mean preventing
+yourself from doing something you want that you know is bad"*), why women wear
+hijab and that **we do not force them**, and it should *"explain more words"*
+because the wording of a hadith is not self-explanatory. In the Guidance part,
+mainly.
+
+## `js/misunderstood.js` → `guidance.html#misunderstood`
+
+**33 cards.** A 5-card opening on the method itself, six subjects, a closing on
+why it is done, and a card of what to say when someone puts one of these to you.
+
+| Subject | id | What it answers |
+|---|---|---|
+| The fighting verses | `mis-sword` | 2:191, 9:5 and 4:89 — each printed with the verse **before** and the verse **after** |
+| Jihad | `mis-jihad` | the root ج-ه-د, and the authentic hadith on striving against the self |
+| Compulsion | `mis-compulsion` | 2:256 with its occasion of revelation, and the map test |
+| The hijab | `mis-hijab` | what خمار and جيب and جلباب actually say, and who may compel — nobody |
+| Women | `mis-women` | what was given and when, with English statute dates beside it; and 4:34 |
+| Terrorism | `mis-terror` | every prohibition it breaks, and the Khawarij described in both Sahihs |
+
+### The device the section is built on
+
+`.mis-ctx` — a strip carrying **the verse before, the quoted verse, and the
+verse after**. That strip is the whole argument of the first subject: the
+distortion is made by cutting, so the repair is made by restoring. 25 rows.
+
+The best single example, and the one to lead with in any conversation: 9:5 says
+*"kill the polytheists wherever you find them"*. **9:6, the next sentence,
+orders a Muslim to give a polytheist who asks for protection safe conduct, let
+him hear the Quran, and then walk him home to safety.** It is never quoted with
+it.
+
+### What was verified before a word was written
+
+* **Every Quranic quotation was copied out of `js/quran-text.js`**, not typed.
+* **Every hadith number was checked against the collection text**: al-Bukhari
+  1, 10, 879, 887, 1520, 3004, 3015, 3166, 3344, 3610, 4758, 4759, 5138, 5778,
+  5971; Abu Dawud 2146, 2673, 2682, 3052, 4344; at-Tirmidhi 1621, 2174, 3895;
+  an-Nasa'i 4209; Malik 968. **Muslim is cited by BOOK and never by number**,
+  for the reason `js/bidah.js` already records.
+* **The famous "greater jihad" narration is labelled WEAK on its own card**,
+  with al-Bayhaqi and Ibn Taymiyyah named — and the four authentic hadith that
+  carry the same meaning are given in its place, including al-Bukhari 3004,
+  where a man asking to go and fight is told *"then in them is your jihad"*
+  about his parents. It is the most useful sentence in the whole subject and
+  the section refuses it. **Do not quietly promote it.**
+
+## The Guidance box now routes these questions
+
+Seven `GUIDANCE_TOPICS` entries with `src: "mis"`. 34 real questions tested in
+both languages, all correct.
+
+### Three changes to the matcher, and why each was forced
+
+**1. `must` — a second gate.** A topic that carries one is not scored at all
+unless one of its `must` words is present. Measured before it: *"I want to kill
+myself"* scored 4 on `mis-sword` and was answered with the section on the
+fighting verses. On this page that is not a relevance bug, it is a harm.
+
+**2. Hits count DISTINCT SUBJECTS, not list entries** (`canonWord`).
+`iitwHasWord` matches through `stem()` and `iitwArStrip()`, so kill / kills /
+killing / killed scored **four** on the single word "kill", and قتل / القتل /
+بقتل scored three on one Arabic word. `need` is meant to mean "this sentence is
+about two different things".
+
+**3. `وضوء` added to `fq-waswas`.** Deflating the count broke it: وسواس and
+الوسواس are one subject, so *"عندي وسواس في الوضوء"* — a statement, no question
+mark, no ruling word — dropped to one hit and stopped clearing
+`topicIsStrong`. **It has to clear it.** PART 15 records this as the one
+question on the page where a wrong answer can make the reader's condition
+worse.
+
+### Order in `GUIDANCE_TOPICS` is load-bearing
+
+The sort is stable, so a tie goes to whichever came first. The `mis-` entries
+sit **after** the `fq-` entries: "what counts as hijab" scores 1 on each and
+reaches the scholars' ruling; "why do Muslim women wear hijab" scores 5 and
+reaches this section. Moving them up takes every hijab question away from the
+ruling.
+
+### NOT added to `buildIdf()`, deliberately
+
+These entries are reached only through the intent layer and are never scored by
+`scoreContent`, so the corpus rule — index everything that is SEARCHED — is
+already satisfied. Adding them would shift the df of every word in the corpus
+and re-tune every existing score. **If you ever make this content scorable, you
+must index it in the same commit.**
+
+## Bugs found and fixed in this round
+
+### 1. A script rewrote the wrong verse, and it looked perfectly plausible
+
+A pass restoring truncated verses keyed on the first literal `"(9:5)"` in the
+file. Card **bodies** mention verse numbers in prose, so it found a mention in
+`ms-next` and rewrote **the 22:39 row with 9:5's text**. In the browser it
+rendered as a normal card with a normal verse. It was caught only by diffing
+every quoted Arabic string against `js/quran-text.js`.
+
+**Anchor on `refAr`, which is unique per row. Then diff against the Quran.**
+
+### 2. Seven verses were quoted partially, in a section about quoting partially
+
+Six were restored in full — including 2:191, whose tail says *"and do not fight
+them at al-Masjid al-Haram until they fight you there"*, which strengthens the
+point. The rest carry a visible `…`.
+
+### 3. 73 English strings leaked into Arabic mode
+
+`ref` and `strength` on 33 cards and 25 context rows.
+`iitwTranslateReference` reaches canonical citations only, and these name
+works, gradings and two French statutes. Every entry now carries its own
+`refAr` / `strengthAr`, rendered `.en-only` / `.ar-only`.
+**The Arabic sweep of this section is now 0.**
+
+### 4. `.terms-head` leaked on all 8 term boxes, and predates this round
+
+"💬 Words explained" was bare text with only the Arabic wrapped in a span, so
+the English was never hidden. Same shape as the 82 Golden Age heading leaks.
+Fixed in both `termsBox` and `misTermsBox`.
+
+## `js/terms.js` — 11 new terms
+
+jihad, qital, mu'ahid, aman, nushuz, mushrik, kafir, fitnah, asbab an-nuzul,
+Khawarij, birr. Written to be matched by the **English** first: the Arabic in
+this section is Quranic, where the word carries prefixes and case endings a
+whole-word compare will not reach (المشركين will never equal مشرك). Either
+language hitting is enough, so the English carries it and the Arabic label
+stays in the form a reader would look up. The section's box shows **31 terms**.
+
+## `js/golden.js` — `tk-clean`, the hygiene claim
+
+The owner raised it in the form it circulates: *"they didn't bathe... they
+invented perfume to prevent the horrible smell."* The documented half is
+strong — washing is a **condition of worship** (al-Bukhari 879, 887), the
+hammam is civic infrastructure in the Arab geographers, hard soap from olive
+oil and al-qali still carries the names of Aleppo and Nablus, and al-Kindi's
+Book of the Chemistry of Perfume and Distillations is ninth-century Baghdad.
+The card then says plainly that the popular half is **FALSE**: perfume is
+millennia older, medieval European towns had bathhouses, and the sharp decline
+in public bathing is 16th–18th century. Same rule as the Council of Macon in
+`GOLDEN_WOMEN`.
+
+**`GOLDEN_WOMEN` already existed** and already covers what the owner asked
+about women — property, inheritance, consent with a case, women who taught the
+men whose books we still read — with the English statute dates beside them.
+`GOLDEN_TAKEN` already covers the numbers, the algorithms and Toledo. Nothing
+there needed adding except this one case.
+
+## Open work as of 21 August 2026
+
+1. **The rulings section leaks 23 English strings in Arabic mode** —
+   `ruling-sub` headings, `rs-work` book titles, and grading prose inside
+   `ref`. This is the documented `ref`/`strength` trap and it predates this
+   round. Fixing it means giving `FIQH_RULINGS` its own `refAr` the way
+   `js/misunderstood.js` now does.
+2. Everything still open from PART 16.

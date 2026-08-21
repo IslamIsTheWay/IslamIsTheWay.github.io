@@ -192,7 +192,52 @@ const TERMS = [
     defAr: "ما يُثاب فاعله ولا يُلام تاركه." },
   { id: "mubah", en: "mubah", ar: "مباح", alt: ["permissible"],
     def: "Permitted — the religion neither asks for it nor objects to it.",
-    defAr: "ما استوى فعله وتركه في نظر الشرع." }
+    defAr: "ما استوى فعله وتركه في نظر الشرع." },
+
+  /* ---------- The words the arguments are made of ----------
+     Added for guidance.html#misunderstood. Every one of these is a word
+     that gets used against Muslims in translation while never being
+     defined — which is the whole trick that section is about, so leaving
+     them undefined here would be the same failure.
+
+     Written to be matched by the ENGLISH first: the Arabic in that section
+     is mostly Quranic, where the word carries prefixes and case endings
+     that a whole-word compare will not reach (المشركين will never equal
+     مشرك). Either language hitting is enough, so the English carries it
+     and the Arabic label stays in the form a reader would look up. */
+  { id: "jihad", en: "jihad", ar: "جهاد", alt: ["mujahid", "jihaad"],
+    def: "Exerting effort against something — from the root ج-ه-د, effort. It is NOT the word for war (that is harb) or for fighting (qital); the Quran uses those when it means those. What the effort is against is named in each place: one's own desires, ignorance, injustice, or an army attacking you.",
+    defAr: "بذل الوسع في مدافعة شيء، من ج-ه-د أي الجُهد. وليس هو لفظ الحرب ولا لفظ القتال، ولكلٍّ منهما لفظُه في القرآن. والمُجاهَد مسمًّى في كلّ موضع: النفسُ، أو الجهل، أو الظلم، أو عدوٌّ يقاتلك." },
+  { id: "qital", en: "qital", ar: "قتال", alt: ["armed fighting"],
+    def: "Armed fighting. This — not jihad — is the word the Quran uses in the verses about battle, and it is what the conditions of war attach to.",
+    defAr: "المقاتلة بالسلاح. وهو اللفظ الذي تُذكر به آياتُ الحرب في القرآن، لا لفظ الجهاد، وعليه تُعلَّق شروطُ القتال." },
+  { id: "muahid", en: "mu'ahid", ar: "معاهَد", alt: ["muahid", "covenanted"],
+    def: "Anyone who holds a covenant of safety — a visitor, a trader, an envoy, or a citizen of a state at peace with yours. Killing one is named in Sahih al-Bukhari as costing Paradise, and no state of hostility anywhere else lifts that protection.",
+    defAr: "من له عهدُ أمان: زائرٌ أو تاجرٌ أو رسولٌ أو مواطنُ دولةٍ بينك وبينها سلم. وقتلُه في صحيح البخاري حرمانٌ من الجنّة، ولا يرفع هذه العصمة عداءٌ في موضعٍ آخر." },
+  { id: "aman", en: "aman", ar: "أمان", alt: ["safe conduct", "grant of safety"],
+    def: "A grant of safety. Once given — even by a single ordinary Muslim, and even to an enemy in open war — it binds everyone, and breaking it is treachery.",
+    defAr: "عقدُ تأمين. فإذا أُعطي — ولو من آحاد المسلمين، ولو لعدوٍّ في حربٍ ظاهرة — لزم الجميعَ، ونقضُه غدر." },
+  { id: "nushuz", en: "nushuz", ar: "نشوز",
+    def: "The deliberate breaking of the marriage bond — open defiance of the contract itself, not an argument or a bad mood. The Quran uses the same word of a HUSBAND in 4:128, where the remedy prescribed is reconciliation.",
+    defAr: "الترفّع عن حقّ العقد ونقضُه ظاهرًا، لا الخلافُ العارض ولا سوءُ الخُلق. واستعمل القرآن اللفظ نفسه في الرجل في (٤:١٢٨) وجعل علاجه الصلح." },
+  { id: "mushrik", en: "mushrik", ar: "مشرك", alt: ["polytheist", "polytheists", "mushrikin"],
+    def: "Someone who worships something alongside Allah. In the Madinan verses about fighting it refers to specific Arabian tribes in a specific war, which is why those verses name treaties, terms and exemptions rather than a category of person for all time.",
+    defAr: "من عبد مع الله غيره. وهو في آيات القتال المدنيّة منصرفٌ إلى قبائلَ بعينها في حربٍ بعينها، ولذلك ذُكرت فيها العهودُ والمُددُ والاستثناءات، لا صنفٌ من الناس على الدوام." },
+  { id: "kafir", en: "kafir", ar: "كافر", alt: ["kaafir", "infidel", "disbeliever"],
+    def: "One who rejects — from the root ك-ف-ر, to cover over or conceal, used in classical Arabic of a farmer covering seed with soil. It describes a position taken toward a message, not a race, a nationality or a level of worth, and it is not a term of abuse. \"Infidel\" is a Latin word from a different history.",
+    defAr: "من ردّ وجحد — من ك-ف-ر أي السَّتر والتغطية، ومنه سُمّي الزارع كافرًا لأنه يُغطّي البذر. وهو وصفٌ لموقفٍ من رسالة، لا لعِرقٍ ولا جنسيّةٍ ولا قيمةِ إنسان، وليس لفظَ سبّ." },
+  { id: "fitnah", en: "fitnah", ar: "فتنة", alt: ["fitna"],
+    def: "Persecution, or a trial that tears people from their religion — the word covers being tortured for belief, and it also covers civil strife. In 2:191 it means the persecution the Muslims were driven out of Makkah by.",
+    defAr: "الاضطهادُ والابتلاء الذي يُفتن به المرء عن دينه — ويقع على التعذيب في الدين وعلى الاقتتال بين الناس. والمراد بها في (٢:١٩١) الاضطهادُ الذي أُخرج به المسلمون من مكّة." },
+  { id: "asbab-nuzul", en: "asbab an-nuzul", ar: "أسباب النزول", alt: ["asbab al-nuzul", "occasions of revelation", "occasion of revelation"],
+    def: "The recorded events a verse came down about. It is a whole discipline, and it exists because Muslims worked out early that a verse read without its occasion is a verse a person can be misled by.",
+    defAr: "ما ثبت من الوقائع التي نزلت فيها الآية. وهو علمٌ قائم، وُضع لأنّ المسلمين أدركوا مبكّرًا أنّ الآية بلا سببها يُضلّ بها." },
+  { id: "khawarij", en: "Khawarij", ar: "خوارج", alt: ["khariji", "kharijite", "kharijites"],
+    def: "The group the Prophet ﷺ described in advance: people who recite the Quran without it reaching their hearts, whose worship looks more impressive than yours, who kill Muslims and leave the idol-worshippers, and who \"pass out of the religion as an arrow passes through the game\". Both Sahihs carry the description.",
+    defAr: "القوم الذين وصفهم النبي ﷺ سلفًا: يقرؤون القرآن لا يجاوز حناجرهم، تحقر صلاتك مع صلاتهم، يقتلون أهل الإسلام ويدعون أهل الأوثان، «يمرقون من الدين كما يمرق السهم من الرميّة». والوصفُ في الصحيحين." },
+  { id: "birr", en: "birr", ar: "بِرّ", alt: ["righteousness toward"],
+    def: "Active goodness done to someone. It is the word used for what a child owes a parent — and it is the word the Quran uses in 60:8 for how Muslims are to treat people of other religions who are not fighting them.",
+    defAr: "الإحسانُ فعلًا إلى الغير. وهو اللفظ المستعمل في حقّ الوالدين، وهو اللفظ الذي استعمله القرآن في (٦٠:٨) في معاملة من لم يقاتل المسلمين من أهل الأديان." }
 ];
 
 /* Build the lookup once. Kept as a function rather than a top-level constant

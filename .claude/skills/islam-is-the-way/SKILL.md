@@ -118,6 +118,11 @@ js/quran-text.js           THE WHOLE QURAN — 114 surahs, 6,236 verses, the
                            ayah. openSurah() reads THIS, not the API. 2.2MB.
                            This is what makes a surah open with no connection
 js/bidah.js                BIDAH — adding to the religion   (guidance.html#bidah)
+js/misunderstood.js        MISUNDERSTOOD — the six things said about Islam and
+                           what the texts say: the fighting verses with the
+                           verse either side of each, jihad, compulsion, the
+                           hijab, women, the Khawarij
+                           (guidance.html#misunderstood)
 js/wird.js                 the daily Quran commitment + WIRD_MILESTONES +
                            wirdArDays()   (quran.html#wird, and index.html)
 js/daily.js                the four-item daily box   (index.html)
@@ -569,6 +574,7 @@ _Last updated: 17 August 2026_
 | **Daily commitment** (`js/wird.js`) | الورد اليومي on quran.html — pick an amount, get today's pages in Mushaf order, mark them read. Streak marked at 1, 3, 7, 10, 30, 40, 100, 200, 365 |
 | **Daily box** (`js/daily.js`) | Four things a day on the home page — Quran, a story, a sunnah, revision. Rotates by DAY OF THE YEAR, never at random |
 | **Adding to the religion** (`js/bidah.js`) | On Guidance — the added-rak'ah analogy, the Mawlid case, both scholarly positions named, and what is NOT bid'ah |
+| **The hardest questions** (`js/misunderstood.js`) | On Guidance — 33 cards over six subjects. Every fighting verse printed with the verse before and after it; jihad from the dictionary out; "no compulsion" with its occasion of revelation; why the hijab is worn and why nobody may force it; 4:34 answered without hiding it; and the Khawarij, described in both Sahihs. Reached from the Guidance box by "why do Muslim women wear hijab", "does Islam say kill the disbelievers", "what is jihad" |
 | "What people get wrong here" boxes | **7** — 9:5, 13:11, 17:32, 30:9, 51:56, 70:19, 2:31 |
 | Surah concepts (`js/concepts.js`) | **114 of 114** — complete |
 | Major signs of the Hour (`js/signs.js`) | **9**, from the Prophet's ﷺ own list in Sahih Muslim |

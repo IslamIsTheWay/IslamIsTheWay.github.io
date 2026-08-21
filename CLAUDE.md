@@ -126,6 +126,55 @@ Muslim by a number taken from it.
   writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
   four false mismatches. Strip harakat and normalise to NFC first.
 
+## Traps added 21 August 2026 — the misunderstood section
+
+`js/misunderstood.js` → `guidance.html#misunderstood`. Six subjects — the
+fighting verses, jihad, compulsion, the hijab, women, and the Khawarij — each
+with the claim as people say it, the texts with the verse on either side, and
+a plain-words box on every card. Every Quranic quotation was copied out of
+`js/quran-text.js`; every hadith number was checked against the collection.
+
+- **A section arguing "they cut the sentence" cannot itself print a cut
+  sentence.** Seven quotations were shortened for length while writing. Six
+  were restored in full; the rest carry a visible `…`. There is a checker for
+  this in the scratchpad approach: parse each `context[]` row, read surah:ayah
+  off its `ref`, and require the Arabic to be a substring of the real verse.
+  Re-run something like it after touching this file.
+- **Never key a rewrite on the first literal `"(9:5)"` in the file.** Card
+  BODIES mention verse numbers in prose, so a script anchored that way found a
+  mention in `ms-next` and rewrote the 22:39 row with 9:5's text. It looked
+  completely plausible in the browser. Anchor on `refAr`, which is unique per
+  row, and diff the Arabic against `js/quran-text.js` afterwards — that is the
+  only reason it was caught.
+- **`ref` and `strength` here carry their own `refAr` / `strengthAr`.**
+  `iitwTranslateReference` reaches canonical citations only; these lines name
+  works, gradings and two French statutes, and 73 of them rendered as English
+  on the Arabic page. Both halves are now `.en-only` / `.ar-only`, which is
+  also why `.mis-ctx-ref` is NOT in `IITW_REF_SELECTOR` — it does not need to
+  be. **The Arabic-mode sweep of this section is now 0.**
+- **`misParas` is `bidahParas` plus numbered lists.** The bid'ah helper
+  flattens `1. … 2. … 3. …` into one run-on line, and three of these cards are
+  built on numbered lists. If you render this data with the bid'ah helper you
+  will silently lose the structure.
+- **The "greater jihad" narration is labelled WEAK on its own card**, with
+  al-Bayhaqi and Ibn Taymiyyah named, and the four authentic hadith that carry
+  the same meaning given in its place. It is the most useful sentence in the
+  whole subject and the site refuses it. Do not quietly promote it.
+- **`.terms-head` leaked on all 8 term boxes** — "💬 Words explained" was bare
+  text with only the Arabic in a span, so the English showed in Arabic mode.
+  Same shape as the 82 Golden Age heading leaks. Fixed in both `termsBox` and
+  `misTermsBox`.
+- **`js/golden.js` → `tk-clean`** answers the hygiene claim, and says plainly
+  that "Europeans invented perfume to cover the smell" is FALSE — perfume is
+  millennia older, medieval European towns had bathhouses, and the decline in
+  public bathing is 16th–18th century. Same rule as the Council of Macon in
+  `GOLDEN_WOMEN`: attaching a false claim to true ones hands the argument away.
+
+**Known and NOT fixed:** the rulings section still leaks 23 English strings in
+Arabic mode — `ruling-sub` headings, `rs-work` book titles, and grading prose
+inside `ref`. That is the documented `ref`/`strength` trap, it predates this
+round, and it is a separate job.
+
 ## Traps added 19-20 August 2026 — the tadabbur and Golden Age rounds
 
 - **A duplicate tadabbur block is invisible in the browser.** The renderer picks
@@ -335,6 +384,30 @@ return "Ease After Hardship".
 - Adding a new answerable subject means adding an entry to `GUIDANCE_TOPICS`
   with `words` and a `need` count. Keep `need` at 2 for vague words so a single
   ordinary word can never decide the answer.
+- **`must` is a second gate, and it is what makes an ordinary word safe.** A
+  topic that carries one is only scored at all when one of its `must` words is
+  present. Without it, `mis-sword` — built on "kill" — answered *"I want to
+  kill myself"* with the section on the fighting verses. On this page that
+  class of mistake is not a relevance bug, it is a harm.
+- **Hits count DISTINCT SUBJECTS, not distinct list entries** (`canonWord`).
+  `iitwHasWord` matches through `stem()` and `iitwArStrip()`, so a list holding
+  kill / kills / killing / killed scored FOUR on the single word "kill", and
+  قتل / القتل / بقتل scored three on one Arabic word. `need` is supposed to mean
+  "this sentence is about two different things"; the inflation made one word
+  look like several. If you add morphological variants to a `words` list they
+  now cost nothing and gain nothing — which is correct.
+- **The sort is stable, so ORDER IN THE ARRAY BREAKS TIES.** The
+  `mis-` entries sit AFTER the `fq-` entries deliberately: "what counts as
+  hijab" scores 1 on each and must reach the scholars' ruling, while "why do
+  Muslim women wear hijab" scores 5 on `mis-hijab` and must reach the
+  misunderstood section. Moving them above the `fq-` block takes every hijab
+  question away from the ruling.
+- **`js/misunderstood.js` is NOT in `buildIdf()`, and that is deliberate.**
+  Those entries are reached only through the intent layer and are never scored
+  by `scoreContent`, so the corpus rule — index everything that is SEARCHED —
+  is already satisfied. Adding them would shift the df of every word and
+  re-tune every existing score on the page. If you ever make that content
+  scorable, you MUST index it at the same time.
 
 ## The service worker — read this before touching sw.js
 

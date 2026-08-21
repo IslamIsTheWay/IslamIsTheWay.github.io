@@ -6149,3 +6149,141 @@ html.lang-ar .jr-block-body em { font-style: normal; }
 html.lang-ar .jr-odd-h { font-family: 'Amiri', serif; font-size: 1.02rem; }
 .jr-odd p { font-size: .9rem; line-height: 1.85; color: #6b4e14; margin: 0; }
 html.lang-ar .jr-odd p { font-family: 'Amiri', serif; font-size: 1.06rem; line-height: 2.05; }
+
+/* ============ The hardest questions asked about Islam ============
+   guidance.html#misunderstood, rendered from js/misunderstood.js.
+
+   It borrows the revival/bid'ah card so the reader meets one explanation
+   style across the site, and adds two devices of its own:
+
+   1. `.mis-claim` — the accusation, printed in the words a reader has
+      actually heard it in. Deliberately the only red thing on the page:
+      someone who has been told this has to SEE it written down before he
+      believes the section is answering him and not a strawman.
+   2. `.mis-ctx` — the verse before, the quoted verse, and the verse after,
+      as one strip. That strip IS the argument of the whole first section,
+      so it is structure and not decoration.
+
+   Everything here has both an .en-only and an .ar-only half in the markup;
+   nothing in this block may render bare English beside an Arabic span. */
+
+#misunderstood { scroll-margin-top: 90px; }
+.mis-block { scroll-margin-top: 90px; }
+
+/* The claim, in the reader's own words. */
+.mis-claim {
+  background: #fdf2f2;
+  border: 1px solid #f3d4d4;
+  border-inline-start: 5px solid #b5341f;
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+.mis-claim-label {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #8f2c1c;
+  margin-bottom: 8px;
+}
+html.lang-ar .mis-claim-label {
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.mis-claim p {
+  margin: 0;
+  line-height: 1.9;
+  color: #7a2a1c;
+  font-style: italic;
+}
+.mis-claim p[dir="rtl"] {
+  font-family: 'Amiri', serif;
+  font-size: 1.14rem;
+  line-height: 2.2;
+  font-style: normal;
+}
+
+/* The context strip: before / quoted / after. */
+.mis-ctx {
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 11px;
+  padding: 14px 17px;
+  margin: 14px 0 4px;
+}
+.mis-ctx-row { padding: 10px 0; border-bottom: 1px dashed #ece0bb; }
+.mis-ctx-row:first-child { padding-top: 2px; }
+.mis-ctx-row:last-child { border-bottom: none; padding-bottom: 2px; }
+
+.mis-ctx-tag {
+  font-size: .78rem;
+  font-weight: 700;
+  color: #8a6d12;
+  margin-bottom: 7px;
+  line-height: 1.7;
+}
+html.lang-ar .mis-ctx-tag { font-family: 'Amiri', serif; font-size: 1rem; }
+.mis-ctx-ref {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border-radius: 999px;
+  padding: 2px 11px;
+  margin-inline-start: 8px;
+  font-weight: 600;
+  font-size: .72rem;
+  letter-spacing: .01em;
+}
+
+.mis-ctx-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.26rem;
+  line-height: 2.3;
+  color: var(--green-dark);
+  margin: 0 0 8px;
+  direction: rtl;
+  text-align: right;
+}
+.mis-ctx-en {
+  font-size: .95rem;
+  line-height: 1.9;
+  color: var(--text);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Numbered lists, which `misParas` builds from lines beginning "1." */
+.mis-ol { margin: 6px 0 0; padding-inline-start: 24px; }
+.mis-ol li { line-height: 1.95; margin-bottom: 7px; }
+.mis-ol li:last-child { margin-bottom: 0; }
+html.lang-ar .mis-ol { line-height: 2.1; }
+html.lang-ar .mis-ol li { font-family: 'Amiri', serif; font-size: 1.1rem; }
+
+/* The section cards sit slightly apart from each other so the six subjects
+   read as six subjects rather than one very long wall. */
+.mis-block + .mis-block { margin-top: 14px; }
+.mis-card { border-left-color: var(--green); }
+
+@media (max-width: 560px) {
+  .mis-claim { padding: 14px 16px; }
+  .mis-ctx { padding: 12px 13px; }
+  .mis-ctx-ar { font-size: 1.16rem; line-height: 2.15; }
+  .mis-ctx-ref { display: block; margin: 5px 0 0; }
+}
+
+/* The source line. Written in both languages in js/misunderstood.js rather
+   than translated at runtime — these references carry named works, grading
+   nuance and two French statutes, and the reference translator only reaches
+   canonical citations. Same size and colour as .rv-ev-ref so the two
+   sections still look like one site. */
+.mis-ref {
+  font-size: .78rem;
+  color: var(--text-muted);
+  margin-top: 7px;
+  line-height: 1.75;
+}
+.mis-ref.ar-only { font-family: 'Amiri', serif; font-size: .95rem; line-height: 2; }
+.mis-card .tad-badge.ar-only { font-family: 'Amiri', serif; font-size: .95rem; }

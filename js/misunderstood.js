@@ -1,0 +1,756 @@
+/* ============================================================
+   WHAT IS SAID ABOUT ISLAM — AND WHAT THE TEXTS ACTUALLY SAY
+   المُشكِل من الآيات والألفاظ — وما تقوله النصوص حقًّا
+   ============================================================
+   Rendered on guidance.html, under #misunderstood, and reachable
+   from the "Ask About Your Situation" box: someone who types
+   "why do Muslim women wear hijab", "does Islam say kill the
+   disbelievers" or "what is jihad" is routed straight to the
+   authored answer here.
+
+   THE RULES THAT GOVERN THIS FILE. This is the most attacked
+   subject on the site and the easiest one to do damage in — by
+   overclaiming as much as by underclaiming. So:
+
+   1. EVERY Quranic quotation in this file was copied out of
+      js/quran-text.js, not typed. The Arabic is the Uthmani text
+      and the English is the Sahih International rendering the
+      rest of the site already shows.
+
+   2. EVERY hadith number was checked against the text of the
+      collection before it was written. Verified for this file:
+      al-Bukhari 10, 1520, 3004, 3015, 3166, 3344, 3610, 4759,
+      5138, 5778, 5971; Abu Dawud 2146, 2673, 2682, 3052, 4344;
+      at-Tirmidhi 1621, 2174, 3895; an-Nasa'i 4209; Malik 968.
+      ANYTHING FROM MUSLIM IS CITED BY BOOK AND NEVER BY NUMBER,
+      because the machine-readable edition this site checks
+      against numbers Muslim sequentially and that numbering does
+      not match a printed copy.
+
+   3. THE VERSE IS NEVER QUOTED ALONE. Every fighting-verse card
+      carries the sentence before it and the sentence after it,
+      because that IS the answer — the distortion is made by
+      cutting, so the repair is made by restoring. If you want to
+      add a card here and you have only the fragment, do not.
+
+   4. WHAT IS WEAK IS SAID TO BE WEAK, even when it helps.
+      "We have returned from the lesser jihad to the greater
+      jihad" is the most quoted sentence in this whole subject
+      and it is NOT authentic. It is labelled as such on its own
+      card, and the authentic hadith carrying the same meaning
+      (at-Tirmidhi 1621) is given in its place. Winning an
+      argument with a weak narration loses the reader.
+
+   5. NO EXAGGERATION AGAINST ANYONE. The claims about medieval
+      Europe that circulate in this argument are largely folklore,
+      and this site already refuses one of them by name on
+      golden.html — the Council of Macon. Attaching a false claim
+      to true ones hands the whole argument away for free.
+
+   6. NO TAKFIR, AND NO NAMING OF LIVING GROUPS OR PARTIES. The
+      Khawarij are named because the Prophet ﷺ named them and
+      because both Sahihs describe them. Nothing here calls any
+      living person or party anything.
+
+   7. THE READER IS NOT ASSUMED TO BE MUSLIM. Someone who arrived
+      from an argument on the internet must be able to read every
+      card and check every reference themselves. That is why the
+      references are full and every card has a plain-words box.
+   ============================================================ */
+
+const MISUNDERSTOOD = {
+  id: "misunderstood",
+  title: "The hardest questions asked about Islam",
+  titleAr: "أصعبُ ما يُسأل عنه الإسلام",
+
+  intro: "A small number of verses and words are quoted at Muslims constantly — \"kill them wherever you find them\", \"jihad\", the hijab — and almost always as half a sentence with the rest cut away.\n\nThis section takes the ones that come up most, puts each back into the passage it belongs to, explains what the Arabic words actually mean, and gives a full reference for every claim so you can go and check it yourself.\n\nNothing here is defensive. The complete passages are far stronger than the fragments — which is precisely why it is the fragments that get quoted. Every card ends with a plain-words box, because the point of this is to be understood, not to sound learned.",
+  introAr: "ثمّة آياتٌ قليلةٌ وألفاظٌ تُساق في وجه المسلمين على الدوام — ﴿فَٱقْتُلُوا۟ ٱلْمُشْرِكِينَ حَيْثُ وَجَدتُّمُوهُمْ﴾، ولفظ «الجهاد»، والحجاب — وتُساق في الغالب نصفَ جملةٍ قد قُطع سائرها.\n\nوهذا القسم يأخذ أكثرها ورودًا، فيردّ كلّ واحدةٍ إلى سياقها الذي هي منه، ويبيّن معاني الألفاظ العربية على وجهها، ويذكر المرجع كاملًا لكلّ دعوى ليتحقّق منه القارئ بنفسه.\n\nوليس ما ههنا دفاعًا؛ فالسياق التامّ أقوى من الشَّذْرة المقتطعة، ولذلك تُقتطع الشَّذْرة. وفي آخر كلّ بطاقةٍ بيانٌ بكلامٍ بسيط، فالمقصود أن يُفهم لا أن يُستعرض.",
+
+  /* ---------- The method, before any of the cases ---------- */
+  methodTitle: "First — the trick itself, and how to spot it",
+  methodTitleAr: "أوّلًا: الصنعةُ نفسُها، وكيف تُعرف",
+  methodIntro: "Every example in this section is manufactured the same way. Learn the method once and you will not need this page again — you will see it yourself, in seconds, whoever is doing it and about whichever religion.",
+  methodIntroAr: "كلّ مثالٍ في هذا القسم مصنوعٌ على وجهٍ واحد. فإذا عرفتَ الصنعةَ مرّةً استغنيتَ عن هذه الصفحة، وأبصرتَها بنفسك في لحظة، أيًّا كان صانعُها، وفي أيّ دينٍ كان.",
+  method: [
+    {
+      id: "ms-cut",
+      title: "1. Cut the sentence in the middle",
+      titleAr: "١. يُقطع النصّ من وسطه",
+      body: "The clearest example is 4:43, which can be quoted as \"do not approach prayer\" — full stop. The verse says: \"do not approach prayer while you are intoxicated, until you know what you are saying.\" The words removed reverse it completely.\n\nThis is not a clever trick. It is the oldest one there is, and it works on any book in any language — on a contract, on a medicine leaflet, on a newspaper. It works on the Quran because it works on writing.\n\nSo the first question to ask of any quotation is not \"is that really in there?\" It usually is. The question is: **where does the sentence start, and where does it end?**",
+      bodyAr: "أوضح مثالٍ قوله تعالى: ﴿لَا تَقْرَبُوا۟ ٱلصَّلَوٰةَ﴾، يُقتطع هكذا ويُوقف عليه. وتمام الآية: ﴿لَا تَقْرَبُوا۟ ٱلصَّلَوٰةَ وَأَنتُمْ سُكَٰرَىٰ حَتَّىٰ تَعْلَمُوا۟ مَا تَقُولُونَ﴾. فالمحذوف يقلب المعنى إلى ضدّه.\n\nوليست هذه حيلةً بارعة، بل هي أقدم الحيل، وتجري على كلّ كتابٍ بكلّ لسان: على عقدٍ، وعلى نشرةِ دواء، وعلى صحيفة. وإنما جرت على القرآن لأنها تجري على الكتابة نفسها.\n\nفأوّل ما يُسأل عن أيّ نقلٍ ليس: أفي الكتاب هذا حقًّا؟ فالغالب أنه فيه. وإنما السؤال: **أين تبتدئ الجملة وأين تنتهي؟**",
+      plain: "In plain words: quote half a sentence from any book on earth and you can make it say the opposite of what it says. Always ask where the sentence begins and where it ends.",
+      plainAr: "بعبارة أخرى: اقتطع نصف جملةٍ من أيّ كتابٍ في الدنيا تجعله يقول ضدّ ما قال. فاسأل دائمًا: أين مبتدأ الكلام ومنتهاه؟",
+      ref: "Surah An-Nisa (4:43)",
+      refAr: "سورة النساء (٤:٤٣)",
+      strength: "quran",
+      strengthAr: "قرآن"
+    },
+    {
+      id: "ms-next",
+      title: "2. Stop reading one verse early",
+      titleAr: "٢. يُوقَف عن القراءة قبل الآية التالية",
+      body: "This one is used on every single fighting verse, without exception. The verse of fighting is quoted; the verse immediately after it — which limits it, or ends it, or orders safe conduct — is not.\n\n\"Kill the polytheists wherever you find them\" (9:5). The very next verse: \"And if any one of the polytheists seeks your protection, then grant him protection so that he may hear the words of Allah. **Then deliver him to his place of safety**\" (9:6).\n\nAn order to escort your enemy home safely sits one line below the order that gets quoted, and is never quoted with it. That is not a difference of interpretation. It is a decision about where to stop reading.",
+      bodyAr: "وهذه تجري على كلّ آيةِ قتالٍ بلا استثناء: تُذكر آية القتال ولا تُذكر التي تليها — وهي التي تقيّدها أو تنهيها أو تأمر بالتأمين.\n\n﴿فَٱقْتُلُوا۟ ٱلْمُشْرِكِينَ حَيْثُ وَجَدتُّمُوهُمْ﴾ (٩:٥). والتي تليها بلا فاصل: ﴿وَإِنْ أَحَدٌۭ مِّنَ ٱلْمُشْرِكِينَ ٱسْتَجَارَكَ فَأَجِرْهُ حَتَّىٰ يَسْمَعَ كَلَٰمَ ٱللَّهِ **ثُمَّ أَبْلِغْهُ مَأْمَنَهُۥ**﴾ (٩:٦).\n\nفالأمر بإيصال الخصم إلى مأمنه سطرٌ واحدٌ تحت الأمر الذي يُنقل، ولا يُنقل معه قطّ. وليس هذا اختلافًا في التأويل، وإنما هو قرارٌ بموضع الوقوف عن القراءة.",
+      plain: "In plain words: the verse right after the famous one usually contains the limit on it. That is exactly why it is left out.",
+      plainAr: "بعبارة أخرى: الآية التي تلي الآية المشهورة فيها قيدُها غالبًا، ولذلك تُترك.",
+      ref: "Surah At-Tawbah (9:5-6)",
+      refAr: "سورة التوبة (٩:٥-٦)",
+      strength: "quran",
+      strengthAr: "قرآن"
+    },
+    {
+      id: "ms-who",
+      title: "3. Remove who it was addressed to, and when",
+      titleAr: "٣. يُحذف المخاطَبُ ووقتُ الخطاب",
+      body: "The Quran came down over twenty-three years, into events as they happened. Some of it is permanent law. Some of it was spoken to a named group of people about one specific war that ended fourteen centuries ago.\n\nAn order issued during a battle is not a description of a religion — in any tradition. Take any wartime order from any nation's history, strip off who it was for and when, and you produce a monster.\n\nThe scholars built an entire science around this: **asbab an-nuzul**, the occasions of revelation — what was happening when each verse came down. It exists because Muslims themselves worked out very early that a verse without its occasion is a verse you can be misled by.",
+      bodyAr: "نزل القرآن في ثلاثٍ وعشرين سنةً على الوقائع. فمنه ما هو تشريعٌ دائم، ومنه ما خُوطب به قومٌ بأعيانهم في حربٍ بعينها انقضت منذ أربعة عشر قرنًا.\n\nوالأمرُ يصدر في معركةٍ ليس وصفًا لدين، في أيّ ملّةٍ كانت. فخذ أمرًا حربيًّا من تاريخ أيّ أمّة، وانزع عنه المخاطَبَ والزمان، يخرج لك وحشٌ.\n\nوقد أفرد أهل العلم لهذا علمًا قائمًا: **أسبابُ النزول**. وإنما وُضع لأنّ المسلمين أنفسهم أدركوا مبكّرًا أنّ الآية بلا سببها آيةٌ يُضلّ بها.",
+      plain: "In plain words: some verses are law for all time, and some were orders given in one war to one army. Remove who and when, and you can make anything look like anything.",
+      plainAr: "بعبارة أخرى: من الآيات ما هو حكمٌ دائم، ومنها ما هو أمرٌ في حربٍ واحدةٍ لجيشٍ واحد. فإذا نُزع المخاطَبُ والزمانُ أمكن أن يُصوَّر كلُّ شيءٍ على أيّ شيء.",
+      ref: "Surah Aal-Imran (3:7); al-Wahidi, Asbab an-Nuzul; as-Suyuti, Lubab an-Nuqul",
+      refAr: "سورة آل عمران (٣:٧)؛ الواحدي، أسباب النزول؛ السيوطي، لباب النقول",
+      strength: "quran",
+      strengthAr: "قرآن"
+    },
+    {
+      id: "ms-word",
+      title: "4. Translate the word wrongly, and never define it",
+      titleAr: "٤. تُترجم الكلمة على غير وجهها ثم لا تُعرَّف",
+      body: "**Jihad** is rendered \"holy war\". It does not mean war. Arabic has a word for war — **harb** — and a word for fighting — **qital** — and the Quran uses those when it means those. Jihad is from the root ج-ه-د, effort, and it means to exert yourself against something. What you are exerting yourself against is named in each place the word appears.\n\nThe same is done to **kafir**, rendered \"infidel\" as though it were a racial slur; to **hijab**, rendered as though the Quran had specified a garment; and to **wadribuhunna** in 4:34, a word with several meanings in the dictionary, always translated with the harshest one available.\n\nWhen someone will not tell you what a word means in its own language, that is the tell. A person arguing honestly explains the word. A person arguing dishonestly needs you not to look it up.",
+      bodyAr: "يُترجم **الجهاد** بـ«الحرب المقدّسة»، وليس معناه الحربَ. وفي العربية لفظُ **الحرب**، ولفظُ **القتال**، ويستعملهما القرآن حيث يريدهما. وإنما الجهاد من ج-ه-د أي بذلِ الوسع، ومعناه استفراغُ الطاقة في مدافعة شيءٍ، والشيءُ مسمًّى في كلّ موضعٍ ورد فيه.\n\nومثله يُصنع بلفظ **الكافر** فيُترجم كأنه سبٌّ عنصريّ، وبلفظ **الحجاب** فيُصوَّر كأنّ القرآن نصّ على ثوبٍ بعينه، وبلفظ ﴿**وَٱضْرِبُوهُنَّ**﴾ في آية النساء وله في المعجم وجوهٌ، فلا يُختار منها إلا أغلظُها.\n\nومن أبى أن يُخبرك بمعنى اللفظ في لسانه فتلك العلامة. فالمحاجّ بصدقٍ يشرح اللفظ، والمحاجّ بغيره يحتاج ألا تبحث عنه.",
+      plain: "In plain words: jihad does not mean war — Arabic already has a word for war, and the Quran uses it. When someone refuses to tell you what an Arabic word means, that refusal is the whole trick.",
+      plainAr: "بعبارة أخرى: الجهاد ليس معناه الحرب، وللحرب لفظُها في العربية ويستعمله القرآن. ومن أبى أن يخبرك بمعنى اللفظ العربيّ فذلك الإباءُ هو الحيلة كلّها.",
+      ref: "Ibn Faris, Maqayis al-Lugha; Ibn Manzur, Lisan al-Arab — the root ج-ه-د",
+      refAr: "ابن فارس، مقاييس اللغة؛ ابن منظور، لسان العرب — مادّة ج-ه-د",
+      strength: "the Arabic dictionaries",
+      strengthAr: "معاجم اللغة العربية"
+    },
+    {
+      id: "ms-worst",
+      title: "5. Find the worst Muslim alive, and call him the religion",
+      titleAr: "٥. يُلتمس أسوأ مسلمٍ حيٍّ فيُجعل هو الدين",
+      body: "This is the last step, and the only one that needs no text at all. Someone commits a crime, says a word of Arabic while doing it, and nearly two billion people are asked to account for him.\n\nThe test of whether that is a real argument is whether the person making it will accept it back. Every nation and every faith has people who did terrible things in its name. A rule applied in one direction only is not a rule; it is a preference wearing the clothes of one.\n\nAnd the answer from inside the religion is harsher than any criticism from outside it. The Prophet ﷺ described people who would kill Muslims while reciting the Quran, and said of them: **\"they pass out of the religion as an arrow passes clean through the game.\"** That is in both Sahihs, and there is a whole part on them below.",
+      bodyAr: "وهذه آخر الخطوات، وهي وحدها لا تحتاج نصًّا البتّة: يجني جانٍ، وينطق وهو يجني بكلمةٍ عربية، فيُطالَب بجنايته قريبٌ من ملياري إنسان.\n\nوميزانُ كون ذلك حجّةً حقيقيّة أن يقبله قائله على نفسه. فما من أمّةٍ ولا ملّةٍ إلا وفيها من فعل الفظائع باسمها. وما لم يُطبَّق إلا في جهةٍ واحدة فليس قاعدةً، وإنما هو هوًى لبس ثوب القاعدة.\n\nوالجوابُ من داخل الدين أشدُّ من كلّ نقدٍ من خارجه: فقد وصف النبي ﷺ قومًا يقتلون أهل الإسلام وهم يقرؤون القرآن، فقال فيهم: **«يَمْرُقُونَ مِنَ الدِّينِ كَمَا يَمْرُقُ السَّهْمُ مِنَ الرَّمِيَّةِ»**. وهو في الصحيحين، وفي هذه الصفحة قسمٌ في شأنهم.",
+      plain: "In plain words: judging a religion by its worst follower is a rule nobody accepts about their own. And the harshest words ever said about those people were said inside Islam, not outside it.",
+      plainAr: "بعبارة أخرى: الحكم على دينٍ بأسوأ أتباعه قاعدةٌ لا يرضاها أحدٌ على نفسه. وأشدُّ ما قيل في أولئك إنما قيل في داخل الإسلام لا خارجه.",
+      ref: "Sahih al-Bukhari, Book of the Merits of the Ansar, Hadith 3610; Sahih Muslim, Book of Zakat",
+      refAr: "صحيح البخاري، كتاب مناقب الأنصار، حديث ٣٦١٠؛ صحيح مسلم، كتاب الزكاة",
+      strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+      strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
+    }
+  ],
+
+  /* ============================================================
+     THE SIX CASES. Each is a section: the claim as people say it,
+     then the texts, then a plain-words summary that the Guidance
+     search box uses as its short answer.
+     ============================================================ */
+  sections: [
+
+    /* ---------- 1. The fighting verses ---------- */
+    {
+      id: "mis-sword",
+      icon: "⚔️",
+      claim: "\"Islam tells Muslims to kill everyone who is not a Muslim. It is right there in the book: kill them wherever you find them.\"",
+      claimAr: "«الإسلام يأمر المسلمين بقتل كلّ من ليس مسلمًا، وهو في كتابهم صراحةً: اقتلوهم حيث وجدتموهم».",
+      title: "\"Kill them wherever you find them\"",
+      titleAr: "﴿فَٱقْتُلُوهُمْ حَيْثُ وَجَدتُّمُوهُمْ﴾",
+      lead: "Those words are in the Quran. They appear in three places, and each of the three is a sentence with a beginning and an end. Here is every one of them, with the verse before it and the verse after it. Read the whole passage — that is the entire answer.",
+      leadAr: "هذه الألفاظ في القرآن، وردت في ثلاثة مواضع، وكلٌّ منها جملةٌ لها مبتدأٌ ومنتهى. وهذه المواضع الثلاثة كاملةً، مع الآية قبلها والآية بعدها. فاقرأ السياق تامًّا، فهو الجوابُ كلُّه.",
+
+      answer: "They are wartime orders about named enemies who had broken a treaty and were fighting the Muslims — and each one is limited, in the very next verse, by an order to stop the moment the other side stops. In the most famous case, 9:5, the verse immediately following commands a Muslim to give a polytheist safe passage and escort him home unharmed if he asks for protection. The Quran's rule for people who are not fighting you is 60:8: be righteous toward them and act justly toward them.",
+      answerAr: "هي أوامرُ حربٍ في أعداءٍ معيَّنين نقضوا العهد وقاتلوا المسلمين، وكلُّ واحدٍ منها مقيَّدٌ في الآية التي تليها مباشرةً بالكفّ متى كفَّ الخصم. وفي أشهرها — التوبة ٥ — تأمر الآية التي بعدها المسلمَ أن يُجير المشركَ المستجيرَ ويبلّغه مأمنه سالمًا. وحكم القرآن فيمن لم يقاتلك هو قوله: ﴿لَّا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمْ يُقَٰتِلُوكُمْ فِى ٱلدِّينِ ... أَن تَبَرُّوهُمْ وَتُقْسِطُوٓا۟ إِلَيْهِمْ﴾.",
+
+      cards: [
+        {
+          id: "ms-sw-first",
+          title: "Where fighting was permitted at all — and the reason given",
+          titleAr: "أوّلُ ما أُذن في القتال — وعلّتُه المذكورة",
+          body: "For thirteen years in Makkah the Muslims were beaten, boycotted, tortured and killed, and were not permitted to fight back at all. Fighting was allowed only after the migration to Madinah, and the first verse that allowed it gives the reason in the same breath.\n\nRead what that reason is. It is not \"because they disbelieve.\" It is **because they were wronged** and **driven out of their homes for saying \"our Lord is Allah\"**.\n\nThen read what the verse says the fighting is for. It names, in order: **monasteries, churches, synagogues** and mosques — and says that without people being restrained by other people, all of them would be pulled down.\n\nThe very first verse in the Quran permitting a Muslim to fight names the protection of other religions' houses of worship as part of the point.",
+          bodyAr: "مكث المسلمون بمكّة ثلاث عشرة سنةً يُضربون ويُحاصرون ويُعذَّبون ويُقتلون، ولم يُؤذن لهم في القتال البتّة. وإنما أُذن بعد الهجرة إلى المدينة، وأوّلُ آيةٍ أذنت فيه ذكرت العلّة في سياقها.\n\nفانظر ما هي العلّة: ليست «لأنهم كفروا»، وإنما **﴿بِأَنَّهُمْ ظُلِمُوا۟﴾**، و**﴿أُخْرِجُوا۟ مِن دِيَٰرِهِم بِغَيْرِ حَقٍّ إِلَّآ أَن يَقُولُوا۟ رَبُّنَا ٱللَّهُ﴾**.\n\nثم انظر فيمَ جُعل هذا القتال: فقد سمّت الآية على الترتيب **الصوامعَ والبِيَعَ والصلواتِ** والمساجد، وأخبرت أنها لولا دفعُ الله الناسَ بعضهم ببعضٍ لهُدّمت كلُّها.\n\nفأوّلُ آيةٍ في القرآن أذنت لمسلمٍ أن يقاتل جعلت حمايةَ معابدِ أهل الأديان الأخرى من مقاصدها.",
+          context: [
+            { tag: "The permission", tagAr: "الإذن", ref: "Al-Hajj (22:39)", refAr: "الحج (٢٢:٣٩)",
+              ar: "أُذِنَ لِلَّذِينَ يُقَٰتَلُونَ بِأَنَّهُمْ ظُلِمُوا۟ ۚ وَإِنَّ ٱللَّهَ عَلَىٰ نَصْرِهِمْ لَقَدِيرٌ",
+              en: "Permission [to fight] has been given to those who are being fought, because they were wronged. And indeed, Allah is competent to give them victory." },
+            { tag: "And its purpose, in the next verse", tagAr: "ومقصدُه في الآية التالية", ref: "Al-Hajj (22:40)", refAr: "الحج (٢٢:٤٠)",
+              ar: "ٱلَّذِينَ أُخْرِجُوا۟ مِن دِيَٰرِهِم بِغَيْرِ حَقٍّ إِلَّآ أَن يَقُولُوا۟ رَبُّنَا ٱللَّهُ ۗ وَلَوْلَا دَفْعُ ٱللَّهِ ٱلنَّاسَ بَعْضَهُم بِبَعْضٍۢ لَّهُدِّمَتْ صَوَٰمِعُ وَبِيَعٌۭ وَصَلَوَٰتٌۭ وَمَسَٰجِدُ يُذْكَرُ فِيهَا ٱسْمُ ٱللَّهِ كَثِيرًۭا ۗ وَلَيَنصُرَنَّ ٱللَّهُ مَن يَنصُرُهُۥٓ ۗ إِنَّ ٱللَّهَ لَقَوِىٌّ عَزِيزٌ",
+              en: "[They are] those who have been evicted from their homes without right - only because they say, \"Our Lord is Allah.\" And were it not that Allah checks the people, some by means of others, there would have been demolished monasteries, churches, synagogues, and mosques in which the name of Allah is much mentioned. And Allah will surely support those who support Him. Indeed, Allah is Powerful and Exalted in Might." }
+          ],
+          plain: "In plain words: Muslims were not allowed to fight at all for the first thirteen years, no matter what was done to them. When it was finally allowed, the reason given was that they had been attacked and driven out of their homes — and the verse names monasteries, churches and synagogues among the things the fighting protects.",
+          plainAr: "بعبارة أخرى: لم يُؤذن للمسلمين في القتال ثلاث عشرة سنةً مهما فُعل بهم. فلمّا أُذن كانت العلّة أنهم قوتلوا وأُخرجوا من ديارهم — وسمّت الآيةُ الصوامعَ والبِيَعَ والكنائسَ ممّا يُحمى بهذا الدفع.",
+          ref: "Surah Al-Hajj (22:39-40)",
+          refAr: "سورة الحج (٢٢:٣٩-٤٠)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-sw-baqarah",
+          title: "The first case: 2:191 — and the two verses that fence it in",
+          titleAr: "الموضع الأوّل: البقرة ١٩١ — والآيتان اللتان تحفّانه",
+          body: "This is the passage the fragment \"kill them wherever you overtake them\" is taken from. Look at what stands on either side of it.\n\n**Before it**, the command opens by naming who may be fought — \"those who fight you\" — and then, in the same sentence, forbids going beyond that: \"and do not transgress. Indeed, Allah does not like transgressors.\"\n\n**After it**, in seven words: \"And if they cease, then indeed, Allah is Forgiving and Merciful.\"\n\nSo the order is bounded twice: it applies to people who are fighting you, and it ends the moment they stop. And the verse after that repeats the same ending again — \"but if they cease, then there is to be no aggression except against the oppressors.\" The passage cannot be read as open-ended without deleting three separate sentences from it.",
+          bodyAr: "هذا هو السياق الذي تُقتطع منه شَذْرة ﴿وَٱقْتُلُوهُمْ حَيْثُ ثَقِفْتُمُوهُمْ﴾. فانظر ما عن يمينها وما عن شمالها.\n\n**قبلها**: يفتتح الأمرُ بتسمية من يُقاتَل — ﴿ٱلَّذِينَ يُقَٰتِلُونَكُمْ﴾ — ثم ينهى في الجملة نفسها عن مجاوزة ذلك: ﴿وَلَا تَعْتَدُوٓا۟ ۚ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُعْتَدِينَ﴾.\n\n**وبعدها** في أربع كلمات: ﴿فَإِنِ ٱنتَهَوْا۟ فَإِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ﴾.\n\nفالأمر مقيَّدٌ مرّتين: هو فيمن يقاتلك، وينتهي بانتهائه. ثم تُعيد الآية التي بعدها القيدَ نفسه: ﴿فَإِنِ ٱنتَهَوْا۟ فَلَا عُدْوَٰنَ إِلَّا عَلَى ٱلظَّٰلِمِينَ﴾. فلا يُقرأ هذا السياق مطلقًا إلا بحذف ثلاث جملٍ منه.",
+          context: [
+            { tag: "The verse before", tagAr: "الآية قبلها", ref: "Al-Baqarah (2:190)", refAr: "البقرة (٢:١٩٠)",
+              ar: "وَقَٰتِلُوا۟ فِى سَبِيلِ ٱللَّهِ ٱلَّذِينَ يُقَٰتِلُونَكُمْ وَلَا تَعْتَدُوٓا۟ ۚ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُعْتَدِينَ",
+              en: "Fight in the way of Allah those who fight you but do not transgress. Indeed, Allah does not like transgressors." },
+            { tag: "The quoted verse", tagAr: "الآية المقتطعة", ref: "Al-Baqarah (2:191)", refAr: "البقرة (٢:١٩١)",
+              ar: "وَٱقْتُلُوهُمْ حَيْثُ ثَقِفْتُمُوهُمْ وَأَخْرِجُوهُم مِّنْ حَيْثُ أَخْرَجُوكُمْ ۚ وَٱلْفِتْنَةُ أَشَدُّ مِنَ ٱلْقَتْلِ ۚ وَلَا تُقَٰتِلُوهُمْ عِندَ ٱلْمَسْجِدِ ٱلْحَرَامِ حَتَّىٰ يُقَٰتِلُوكُمْ فِيهِ ۖ فَإِن قَٰتَلُوكُمْ فَٱقْتُلُوهُمْ ۗ كَذَٰلِكَ جَزَآءُ ٱلْكَٰفِرِينَ",
+              en: "And kill them wherever you overtake them and expel them from wherever they have expelled you, and fitnah is worse than killing. And do not fight them at al-Masjid al- Haram until they fight you there. But if they fight you, then kill them. Such is the recompense of the disbelievers." },
+            { tag: "The verse after", tagAr: "الآية بعدها", ref: "Al-Baqarah (2:192)", refAr: "البقرة (٢:١٩٢)",
+              ar: "فَإِنِ ٱنتَهَوْا۟ فَإِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ",
+              en: "And if they cease, then indeed, Allah is Forgiving and Merciful." }
+          ],
+          plain: "In plain words: the sentence starts with \"those who fight you\" and ends with \"if they stop, stop.\" Cut both ends off and you are left with something the passage never said.",
+          plainAr: "بعبارة أخرى: يبتدئ الكلام بـ﴿ٱلَّذِينَ يُقَٰتِلُونَكُمْ﴾ وينتهي بـ﴿فَإِنِ ٱنتَهَوْا۟﴾. فإذا قُطع الطرفان بقي ما لم يقله السياق قطّ.",
+          ref: "Surah Al-Baqarah (2:190-194)",
+          refAr: "سورة البقرة (٢:١٩٠-١٩٤)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-sw-tawbah",
+          title: "The famous one: 9:5 — and the order that comes one line later",
+          titleAr: "المشهورة: التوبة ٥ — والأمرُ الذي يليها بسطر",
+          body: "This is the verse people mean when they say \"the sword verse\" — a name given to it by later writers, not by the Quran, which never uses that phrase.\n\nThe surah opens by stating what it is about: a treaty, and the ending of it. Verse 4 exempts, by name, the polytheists who kept their side of it: \"they have not been deficient toward you in anything or supported anyone against you; **so complete for them their treaty until their term**.\" Verse 13, further down, states what the other group had done: they broke their oaths and attacked first.\n\nThen comes verse 5, about the treaty-breakers, and then verse 6 about anyone from that same group who asks for safety — **grant him protection, let him hear the Quran, then take him to a place where he is safe.**\n\nAn order to escort an enemy home unharmed is not a footnote to the passage. It is the next sentence in it.",
+          bodyAr: "هذه هي التي يُعنونها بـ«آية السيف»، وهو اسمٌ أطلقه متأخّرون ولم يسمّها القرآن به قطّ.\n\nتفتتح السورة ببيان موضوعها: عهدٌ ونبذُه. واستثنت الآية الرابعة بأعيانهم المشركين الذين وفَّوا: ﴿ثُمَّ لَمْ يَنقُصُوكُمْ شَيْـًۭٔا وَلَمْ يُظَٰهِرُوا۟ عَلَيْكُمْ أَحَدًۭا **فَأَتِمُّوٓا۟ إِلَيْهِمْ عَهْدَهُمْ إِلَىٰ مُدَّتِهِمْ**﴾. وبيّنت الآية الثالثة عشرة ما صنع الفريق الآخر: نكثوا أيمانهم وبدؤوا بالقتال.\n\nثم جاءت الآية الخامسة في الناكثين، ثم السادسة فيمن استجار من ذلك الفريق نفسه: **﴿فَأَجِرْهُ حَتَّىٰ يَسْمَعَ كَلَٰمَ ٱللَّهِ ثُمَّ أَبْلِغْهُ مَأْمَنَهُۥ﴾**.\n\nفالأمرُ بإبلاغ الخصم مأمنه سالمًا ليس حاشيةً على السياق، بل هو الجملة التي تليه.",
+          context: [
+            { tag: "The verse before — those who kept the treaty", tagAr: "الآية قبلها — من وفّى بالعهد", ref: "At-Tawbah (9:4)", refAr: "التوبة (٩:٤)",
+              ar: "إِلَّا ٱلَّذِينَ عَٰهَدتُّم مِّنَ ٱلْمُشْرِكِينَ ثُمَّ لَمْ يَنقُصُوكُمْ شَيْـًۭٔا وَلَمْ يُظَٰهِرُوا۟ عَلَيْكُمْ أَحَدًۭا فَأَتِمُّوٓا۟ إِلَيْهِمْ عَهْدَهُمْ إِلَىٰ مُدَّتِهِمْ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُتَّقِينَ",
+              en: "Excepted are those with whom you made a treaty among the polytheists and then they have not been deficient toward you in anything or supported anyone against you; so complete for them their treaty until their term [has ended]. Indeed, Allah loves the righteous [who fear Him]." },
+            { tag: "The quoted verse", tagAr: "الآية المقتطعة", ref: "At-Tawbah (9:5)", refAr: "التوبة (٩:٥)",
+              ar: "فَإِذَا ٱنسَلَخَ ٱلْأَشْهُرُ ٱلْحُرُمُ فَٱقْتُلُوا۟ ٱلْمُشْرِكِينَ حَيْثُ وَجَدتُّمُوهُمْ وَخُذُوهُمْ وَٱحْصُرُوهُمْ وَٱقْعُدُوا۟ لَهُمْ كُلَّ مَرْصَدٍۢ ۚ فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَخَلُّوا۟ سَبِيلَهُمْ ۚ إِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ",
+              en: "And when the sacred months have passed, then kill the polytheists wherever you find them and capture them and besiege them and sit in wait for them at every place of ambush. But if they should repent, establish prayer, and give zakah, let them [go] on their way. Indeed, Allah is Forgiving and Merciful." },
+            { tag: "The verse after — and this is the one never quoted", tagAr: "الآية بعدها — وهي التي لا تُنقل قطّ", ref: "At-Tawbah (9:6)", refAr: "التوبة (٩:٦)",
+              ar: "وَإِنْ أَحَدٌۭ مِّنَ ٱلْمُشْرِكِينَ ٱسْتَجَارَكَ فَأَجِرْهُ حَتَّىٰ يَسْمَعَ كَلَٰمَ ٱللَّهِ ثُمَّ أَبْلِغْهُ مَأْمَنَهُۥ ۚ ذَٰلِكَ بِأَنَّهُمْ قَوْمٌۭ لَّا يَعْلَمُونَ",
+              en: "And if any one of the polytheists seeks your protection, then grant him protection so that he may hear the words of Allah. Then deliver him to his place of safety. That is because they are a people who do not know." }
+          ],
+          plain: "In plain words: this verse is about people who signed a treaty and then broke it and attacked. The verse before it orders Muslims to honour the treaty with everyone who kept it. The verse after it orders a Muslim to protect any one of them who asks, let him listen, and then walk him safely home.",
+          plainAr: "بعبارة أخرى: هذه الآية في قومٍ عاهدوا ثم نكثوا وبدؤوا بالقتال. والتي قبلها تأمر بالوفاء لمن وفّى منهم إلى مدّته. والتي بعدها تأمر المسلمَ أن يُجير من استجاره منهم، ويُسمعه، ثم يبلّغه مأمنه سالمًا.",
+          ref: "Surah At-Tawbah (9:1-6, and 9:13)",
+          refAr: "سورة التوبة (٩:١-٦، و٩:١٣)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-sw-nisa",
+          title: "The third case: 4:89 — where the exceptions are longer than the order",
+          titleAr: "الموضع الثالث: النساء ٨٩ — والاستثناءُ أطولُ من الأمر",
+          body: "This one is about a group in Madinah who were fighting alongside the enemy while claiming to be with the Muslims. Even here, the very next verse carves out three exceptions, and they are longer than the order itself:\n\n1. anyone who has reached a people you have a treaty with;\n2. anyone who comes to you unwilling to fight either side;\n3. and then, decisively — **\"So if they remove themselves from you and do not fight you and offer you peace, then Allah has not made for you a cause against them.\"**\n\nThat last clause is the general rule in one sentence: **withdraw, stop fighting, offer peace — and there is no case against you at all.** It is stated in the middle of the harshest passage in the surah.\n\nAnd elsewhere the same rule is put as a command to the Muslims rather than a concession: \"And if they incline to peace, then incline to it also, and rely upon Allah.\"",
+          bodyAr: "هذه في طائفةٍ بالمدينة كانوا يقاتلون مع العدوّ وهم يدّعون أنهم مع المسلمين. ومع ذلك جاءت الآية التي تليها بثلاثة استثناءاتٍ هي أطولُ من الأمر نفسه:\n\n١. من وصل إلى قومٍ بينكم وبينهم ميثاق؛\n٢. ومن جاءكم حَصِرَتْ صدورُهم أن يقاتلوكم أو يقاتلوا قومهم؛\n٣. ثم القاطعة: **﴿فَإِنِ ٱعْتَزَلُوكُمْ فَلَمْ يُقَٰتِلُوكُمْ وَأَلْقَوْا۟ إِلَيْكُمُ ٱلسَّلَمَ فَمَا جَعَلَ ٱللَّهُ لَكُمْ عَلَيْهِمْ سَبِيلًۭا﴾**.\n\nوهذه الأخيرة هي القاعدة العامّة في جملةٍ واحدة: **الاعتزالُ، والكفُّ عن القتال، وإلقاءُ السلم — فلا سبيل لكم عليهم البتّة**. قيلت في أشدّ سياقٍ في السورة.\n\nوجاءت القاعدة نفسها في موضعٍ آخر أمرًا للمسلمين لا رخصةً لهم: ﴿وَإِن جَنَحُوا۟ لِلسَّلْمِ فَٱجْنَحْ لَهَا وَتَوَكَّلْ عَلَى ٱللَّهِ﴾.",
+          context: [
+            { tag: "The quoted verse", tagAr: "الآية المقتطعة", ref: "An-Nisa (4:89)", refAr: "النساء (٤:٨٩)",
+              ar: "… فَإِن تَوَلَّوْا۟ فَخُذُوهُمْ وَٱقْتُلُوهُمْ حَيْثُ وَجَدتُّمُوهُمْ ۖ وَلَا تَتَّخِذُوا۟ مِنْهُمْ وَلِيًّۭا وَلَا نَصِيرًا",
+              en: "… But if they turn away, then seize them and kill them wherever you find them and take not from among them any ally or helper." },
+            { tag: "The verse after", tagAr: "الآية بعدها", ref: "An-Nisa (4:90)", refAr: "النساء (٤:٩٠)",
+              ar: "إِلَّا ٱلَّذِينَ يَصِلُونَ إِلَىٰ قَوْمٍۭ بَيْنَكُمْ وَبَيْنَهُم مِّيثَٰقٌ أَوْ جَآءُوكُمْ حَصِرَتْ صُدُورُهُمْ أَن يُقَٰتِلُوكُمْ أَوْ يُقَٰتِلُوا۟ قَوْمَهُمْ ۚ وَلَوْ شَآءَ ٱللَّهُ لَسَلَّطَهُمْ عَلَيْكُمْ فَلَقَٰتَلُوكُمْ ۚ فَإِنِ ٱعْتَزَلُوكُمْ فَلَمْ يُقَٰتِلُوكُمْ وَأَلْقَوْا۟ إِلَيْكُمُ ٱلسَّلَمَ فَمَا جَعَلَ ٱللَّهُ لَكُمْ عَلَيْهِمْ سَبِيلًۭا",
+              en: "Except for those who take refuge with a people between yourselves and whom is a treaty or those who come to you, their hearts strained at [the prospect of] fighting you or fighting their own people. And if Allah had willed, He could have given them power over you, and they would have fought you. So if they remove themselves from you and do not fight you and offer you peace, then Allah has not made for you a cause [for fighting] against them." },
+            { tag: "And the standing command", tagAr: "والأمرُ المحكم", ref: "Al-Anfal (8:61)", refAr: "الأنفال (٨:٦١)",
+              ar: "وَإِن جَنَحُوا۟ لِلسَّلْمِ فَٱجْنَحْ لَهَا وَتَوَكَّلْ عَلَى ٱللَّهِ ۚ إِنَّهُۥ هُوَ ٱلسَّمِيعُ ٱلْعَلِيمُ",
+              en: "And if they incline to peace, then incline to it [also] and rely upon Allah. Indeed, it is He who is the Hearing, the Knowing." }
+          ],
+          plain: "In plain words: even in the harshest passage, the next verse says that anyone who stays out of it and offers peace is completely off limits. And the Quran orders Muslims to accept peace whenever it is offered.",
+          plainAr: "بعبارة أخرى: حتى في أشدّ السياقات تقول الآيةُ التالية إنّ من اعتزل وألقى السلم فلا سبيل عليه البتّة. والقرآن يأمر المسلمين بقبول السلم متى عُرض.",
+          ref: "Surah An-Nisa (4:88-91); Surah Al-Anfal (8:61)",
+          refAr: "سورة النساء (٤:٨٨-٩١)؛ سورة الأنفال (٨:٦١)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-sw-rule",
+          title: "So what IS the rule about people of other religions?",
+          titleAr: "فما الحكمُ إذن في أهل الأديان الأخرى؟",
+          body: "The Quran answers that directly, in a verse that draws the line exactly where the fighting verses draw it — around those who fight you and drive you out, and nowhere else.\n\n\"Allah does not forbid you from those who **do not fight you** because of religion and **do not expel you** from your homes — from **being righteous toward them and acting justly toward them**. Indeed, Allah loves those who act justly.\"\n\nThe word used is **birr** — the same word used for the treatment owed to a parent. It is not tolerance. It is kindness, actively.\n\nAnd the standing prohibition on killing is stated in terms that apply to every human being: \"whoever kills a soul unless for a soul or for corruption in the land — it is as if he had slain mankind entirely.\"",
+          bodyAr: "أجاب القرآن عن هذا صراحةً، بآيةٍ تضع الحدَّ حيث وضعته آياتُ القتال بعينه: عند من قاتلك وأخرجك، لا فيما وراء ذلك.\n\n﴿لَّا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ **لَمْ يُقَٰتِلُوكُمْ** فِى ٱلدِّينِ **وَلَمْ يُخْرِجُوكُم** مِّن دِيَٰرِكُمْ **أَن تَبَرُّوهُمْ وَتُقْسِطُوٓا۟ إِلَيْهِمْ** ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُقْسِطِينَ﴾.\n\nواللفظ ﴿تَبَرُّوهُمْ﴾ من **البِرّ**، وهو اللفظ نفسه المستعمل في حقّ الوالدين. وليس هو التسامحَ، وإنما هو الإحسانُ فعلًا.\n\nوأمّا تحريم القتل فمُطلقٌ في كلّ نفسٍ: ﴿مَن قَتَلَ نَفْسًۢا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍۢ فِى ٱلْأَرْضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعًۭا﴾.",
+          context: [
+            { tag: "The rule", tagAr: "القاعدة", ref: "Al-Mumtahanah (60:8)", refAr: "الممتحنة (٦٠:٨)",
+              ar: "لَّا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ لَمْ يُقَٰتِلُوكُمْ فِى ٱلدِّينِ وَلَمْ يُخْرِجُوكُم مِّن دِيَٰرِكُمْ أَن تَبَرُّوهُمْ وَتُقْسِطُوٓا۟ إِلَيْهِمْ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُقْسِطِينَ",
+              en: "Allah does not forbid you from those who do not fight you because of religion and do not expel you from your homes - from being righteous toward them and acting justly toward them. Indeed, Allah loves those who act justly." },
+            { tag: "And the value of one life", tagAr: "وقيمةُ النفس الواحدة", ref: "Al-Ma'idah (5:32)", refAr: "المائدة (٥:٣٢)",
+              ar: "… مَن قَتَلَ نَفْسًۢا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍۢ فِى ٱلْأَرْضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعًۭا وَمَنْ أَحْيَاهَا فَكَأَنَّمَآ أَحْيَا ٱلنَّاسَ جَمِيعًۭا …",
+              en: "… Whoever kills a soul unless for a soul or for corruption [done] in the land - it is as if he had slain mankind entirely. And whoever saves one - it is as if he had saved mankind entirely …" }
+          ],
+          plain: "In plain words: if someone is not fighting you and not driving you out of your home, the Quran does not merely permit you to leave them alone — it tells you to be actively good to them, using the same word it uses for how you treat your own mother and father.",
+          plainAr: "بعبارة أخرى: من لم يقاتلك ولم يُخرجك من دارك فليس المأمورُ به تركَه وشأنه فحسب، بل البِرُّ به — وهو اللفظ نفسه المستعمل في برّ الوالدين.",
+          ref: "Surah Al-Mumtahanah (60:8-9); Surah Al-Ma'idah (5:32)",
+          refAr: "سورة الممتحنة (٦٠:٨-٩)؛ سورة المائدة (٥:٣٢)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-sw-abubakr",
+          title: "And when fighting was allowed, these were the standing orders",
+          titleAr: "وإذا وقع القتالُ فهذه أوامرُه القائمة",
+          body: "This is the part that settles the argument, because it is not theory — it is the operational order given to an actual army marching to an actual war.\n\nAbu Bakr رضي الله عنه walked out with the army heading for Syria and gave its commander ten instructions. They are recorded in Malik's Muwatta:\n\n\"**I charge you with ten: do not kill a woman, nor a child, nor an aged elderly man; do not cut down a fruit-bearing tree; do not destroy an inhabited place; do not slaughter a sheep or a camel except for food; do not steal from the spoils, and do not be a coward.**\"\n\nAnd before that, in the same address: \"You will find people who have confined themselves to monasteries — **leave them to what they have devoted themselves to.**\"\n\nAlongside it, from the Prophet ﷺ himself: he forbade the killing of women and children after one was found killed on a campaign (al-Bukhari 3015); he forbade burning anyone with fire, saying **\"none punishes with fire but the Lord of fire\"** (Abu Dawud 2673); and he said: **\"Whoever kills a person under a covenant will not smell the fragrance of Paradise\"** (al-Bukhari 3166).",
+          bodyAr: "وهذا ما يحسم النزاع، لأنه ليس نظريًّا، وإنما هو أمرٌ عمليٌّ لجيشٍ حقيقيٍّ خارجٍ إلى حربٍ حقيقيّة.\n\nخرج أبو بكر رضي الله عنه يمشي مع الجيش المتوجّه إلى الشام فأوصى أميرَه بعشر، وهي في موطّإ مالك:\n\n«**وَإِنِّي مُوصِيكَ بِعَشْرٍ: لاَ تَقْتُلَنَّ امْرَأَةً وَلاَ صَبِيًّا وَلاَ كَبِيرًا هَرِمًا، وَلاَ تَقْطَعَنَّ شَجَرًا مُثْمِرًا، وَلاَ تُخَرِّبَنَّ عَامِرًا، وَلاَ تَعْقِرَنَّ شَاةً وَلاَ بَعِيرًا إِلاَّ لِمَأْكُلَةٍ، وَلاَ تَغْلُلْ، وَلاَ تَجْبُنْ**».\n\nوقبل ذلك في الخطاب نفسه: «إِنَّكَ سَتَجِدُ قَوْمًا زَعَمُوا أَنَّهُمْ حَبَّسُوا أَنْفُسَهُمْ لِلَّهِ **فَذَرْهُمْ وَمَا زَعَمُوا أَنَّهُمْ حَبَّسُوا أَنْفُسَهُمْ لَهُ**».\n\nومع ذلك من النبي ﷺ نفسه: نهى عن قتل النساء والصبيان لمّا وُجدت امرأةٌ مقتولةٌ في بعض مغازيه (البخاري ٣٠١٥)، ونهى عن التحريق بالنار وقال: **«فَإِنَّهُ لاَ يُعَذِّبُ بِالنَّارِ إِلاَّ رَبُّ النَّارِ»** (أبو داود ٢٦٧٣)، وقال: **«مَنْ قَتَلَ مُعَاهَدًا لَمْ يَرَحْ رَائِحَةَ الْجَنَّةِ»** (البخاري ٣١٦٦).",
+          plain: "In plain words: an army going out to war was ordered not to kill women, children or the elderly, not to cut down a fruit tree, not to wreck a house, not to kill an animal except to eat it, and to leave monks in their monasteries alone. Those are the standing orders, not a modern reinterpretation.",
+          plainAr: "بعبارة أخرى: جيشٌ خارجٌ إلى حربٍ يُؤمر ألّا يقتل امرأةً ولا صبيًّا ولا شيخًا هرمًا، ولا يقطع شجرةً مثمرة، ولا يخرّب عامرًا، ولا يذبح دابّةً إلا لمأكلة، وأن يدع الرهبان في صوامعهم. هذه هي الأوامر القائمة، لا تأويلًا حديثًا.",
+          ref: "Malik, Al-Muwatta, Hadith 968 — Abu Bakr's charge to Yazid ibn Abi Sufyan; Sahih al-Bukhari 3015 and 3166; Sunan Abu Dawud 2673",
+          refAr: "موطّأ مالك، حديث ٩٦٨ — وصيّة أبي بكر ليزيد بن أبي سفيان؛ صحيح البخاري ٣٠١٥ و٣١٦٦؛ سنن أبي داود ٢٦٧٣",
+          strength: "Sahih for al-Bukhari; Abu Dawud is outside the two Sahihs; the Muwatta report is Malik's, from Yahya ibn Sa'id",
+          strengthAr: "صحيحٌ ما لدى البخاري؛ وأبو داود خارج الصحيحين؛ وخبرُ الموطّإ لمالك عن يحيى بن سعيد"
+        }
+      ],
+
+      close: "Put together, the passages say something the fragments cannot: fighting was permitted after thirteen years of it being forbidden, it was permitted against people who were fighting and expelling Muslims, it was ordered to stop the moment they stopped, it protected the churches and synagogues of others by name, and the army carrying it out was forbidden from touching a woman, a child, an old man, a fruit tree or a monk.\n\nWhat is left of the claim after that is the fragment — and the fragment was made by someone who read verse 5 and closed the book before verse 6.",
+      closeAr: "فإذا جُمعت هذه المواضع قالت ما لا تقوله الشَّذَرات: أنّ القتال أُذن فيه بعد ثلاث عشرة سنةً من المنع، وأُذن فيه في قومٍ يقاتلون ويُخرجون، وأُمر بالكفّ متى كفّوا، وسُمّيت الكنائسُ والبِيَعُ فيما يُحمى به، ومُنع الجيشُ القائم به من امرأةٍ وصبيٍّ وشيخٍ وشجرةٍ مثمرةٍ وراهب.\n\nولا يبقى بعد ذلك من الدعوى إلا الشَّذْرة، وإنما صنعها من قرأ الآية الخامسة وأطبق المصحف قبل السادسة."
+    },
+
+    /* ---------- 2. Jihad ---------- */
+    {
+      id: "mis-jihad",
+      icon: "🛡️",
+      claim: "\"Jihad means holy war. A jihadist is a Muslim doing what his religion tells him to do.\"",
+      claimAr: "«الجهاد معناه الحربُ المقدّسة، والجهاديّ مسلمٌ يفعل ما يأمره به دينُه».",
+      title: "What jihad actually means",
+      titleAr: "ما معنى الجهاد حقًّا",
+      lead: "This is a question about a word, and it has a plain answer that anyone can check in an Arabic dictionary. Start there, then look at how the Prophet ﷺ used it — because he used it, in authentic hadith, for a man staying home to look after his parents.",
+      leadAr: "هذه مسألةٌ في لفظ، ولها جوابٌ ظاهرٌ يقدر كلّ أحدٍ أن يراجعه في معجم عربيّ. فابدأ منه، ثم انظر كيف استعمله النبي ﷺ — فقد أطلقه في حديثٍ صحيحٍ على رجلٍ قعد يخدم أبويه.",
+
+      answer: "Jihad means to exert effort against something. It is from the root ج-ه-د, which is where the Arabic word for effort comes from. It does not mean war: Arabic already has harb for war and qital for fighting, and the Quran uses those words when it means them. The Prophet ﷺ used \"jihad\" for a man who stayed home to serve his parents, for a woman going on hajj, for speaking a word of truth to a tyrant, and — most of all — for a person struggling against his own soul: \"the mujahid is the one who strives against his own self in obedience to Allah.\" Armed fighting is one of the forms it takes, under strict conditions, declared by a state and never by an individual — and stopping yourself from doing something wrong you badly want to do is also jihad, every single day.",
+      answerAr: "الجهادُ بذلُ الوسع في مدافعة شيء، وهو من ج-ه-د التي منها لفظ الجُهد. وليس معناه الحربَ: ففي العربية لفظُ الحرب ولفظُ القتال، ويستعملهما القرآن حيث يريدهما. وقد أطلق النبي ﷺ «الجهاد» على رجلٍ قعد يخدم أبويه، وعلى حجّ المرأة، وعلى كلمة حقٍّ عند سلطانٍ جائر، وأعظمُ ذلك على مجاهدة المرء نفسَه: «الْمُجَاهِدُ مَنْ جَاهَدَ نَفْسَهُ». والقتالُ صورةٌ من صوره بشروطٍ مضبوطة، تعقدها الدولةُ لا الأفراد — وكفُّك نفسَك عن معصيةٍ تشتهيها جهادٌ كذلك، في كلّ يوم.",
+
+      cards: [
+        {
+          id: "ms-jh-word",
+          title: "The word, before anything else",
+          titleAr: "اللفظُ قبل كلّ شيء",
+          body: "**Jihad — جهاد** — is a verbal noun from the root **ج-ه-د**. The same root gives **juhd**, effort, and **ijtihad**, the scholar's exertion to reach a ruling. The core meaning across all of them is one thing: **to put out your full effort against something that resists you.**\n\nNotice what is not in that definition: no weapon, no enemy, no religion, no war. Those have to be supplied by the context, and the Quran supplies them each time.\n\nSo when Arabic wants to say war, it does not say jihad. It says **harb** — حرب. When it wants to say fighting, it says **qital** — قتال. Both words are in the Quran, repeatedly, and the fighting verses in the section above are built on qital, not on jihad.\n\nOne more thing worth knowing: **there is no Arabic phrase meaning \"holy war\"** in the Quran or the hadith. The expression comes from medieval European Latin — **bellum sacrum** — describing the Crusades, and was later applied to Muslims by translators. It has no root in the Islamic texts at all.",
+          bodyAr: "**الجهاد** مصدرٌ من الجذر **ج-ه-د**. ومن الجذر نفسه **الجُهد**، و**الاجتهاد** وهو استفراغ الفقيه وسعَه في طلب الحكم. والمعنى الجامع فيها كلّها واحد: **استفراغُ الوسع في مدافعة ما يُمانع**.\n\nوتأمّل ما ليس في هذا الحدّ: لا سلاح، ولا عدوّ، ولا دين، ولا حرب. وإنما يأتي ذلك من السياق، والقرآن يذكره في كلّ موضع.\n\nفإذا أرادت العربيةُ الحربَ لم تقل «جهادًا»، وإنما قالت **الحرب**. وإذا أرادت المقاتلةَ قالت **القتال**. واللفظان في القرآن كثيرًا، وآياتُ القتال في القسم المتقدّم مبنيّةٌ على القتال لا على الجهاد.\n\nوممّا ينبغي علمُه: **ليس في القرآن ولا في السنّة لفظٌ معناه «الحرب المقدّسة»**. وإنما هي عبارةٌ لاتينيّةٌ أوروبيّةٌ وسيطة وُصفت بها الحروب الصليبيّة، ثم أطلقها المترجمون على المسلمين. ولا أصل لها في نصوص الإسلام البتّة.",
+          plain: "In plain words: jihad means effort — struggling hard against something. Arabic has separate words for war and for fighting, and the Quran uses those when it means those. \"Holy war\" is a European phrase that does not exist in Arabic.",
+          plainAr: "بعبارة أخرى: الجهادُ بذلُ الجهد ومدافعةُ الشيء. وللحرب والقتال ألفاظُهما في العربية ويستعملهما القرآن حيث يريدهما. و«الحرب المقدّسة» عبارةٌ أوروبيّةٌ لا وجود لها في العربية.",
+          ref: "Ibn Faris, Maqayis al-Lugha; Ibn Manzur, Lisan al-Arab; ar-Raghib al-Isfahani, Al-Mufradat — the root ج-ه-د",
+          refAr: "ابن فارس، مقاييس اللغة؛ ابن منظور، لسان العرب؛ الراغب الأصفهاني، المفردات — مادّة ج-ه-د",
+          strength: "the Arabic dictionaries",
+          strengthAr: "معاجم اللغة العربية"
+        },
+        {
+          id: "ms-jh-nafs",
+          title: "The jihad every Muslim is doing today",
+          titleAr: "الجهادُ الذي يقوم به كلّ مسلمٍ اليوم",
+          body: "The Prophet ﷺ said: **\"The mujahid is the one who strives against his own self in obedience to Allah.\"** That is at-Tirmidhi 1621, from Fadalah ibn Ubayd, and it is authentic.\n\nRead it slowly, because it is a definition, and it is his. Not \"one kind of mujahid is\". **The** mujahid is the one who fights himself.\n\nThis is the jihad that is happening constantly, everywhere, in the life of every ordinary Muslim, and it is the one nobody ever hears about:\n• You want to look at something you should not. You look away. That is jihad.\n• You could take money that is not yours and nobody would ever know. You do not take it. That is jihad.\n• Someone insults you and you can destroy him with one sentence. You keep quiet. That is jihad.\n• The alarm goes at four in the morning in winter and the bed is warm. You get up and pray. That is jihad.\n• You are burning to repeat something about someone. You swallow it. That is jihad.\n\nEvery single one of those is you overpowering yourself for the sake of Allah — you had the ability and the desire, and you refused. **That is what the word means, and that is where almost all of it happens.**\n\nAnd the Quran uses the word this way outright. In Makkah, years before any fighting was permitted, Allah told the Prophet ﷺ: \"do not obey the disbelievers, and **strive against them with it** — a great striving.\" With what? With the Quran. The great jihad, named as such, was preaching.",
+          bodyAr: "قال النبي ﷺ: **«الْمُجَاهِدُ مَنْ جَاهَدَ نَفْسَهُ»**، وفي روايةٍ: «فِي طَاعَةِ اللَّهِ». رواه الترمذي (١٦٢١) عن فَضالة بن عُبيد، وهو صحيح.\n\nوتأمّله على مهل، فإنه حدٌّ، وهو حدُّه ﷺ. ولم يقل: ومن المجاهدين من يجاهد نفسه، بل **المجاهدُ** من جاهد نفسه.\n\nوهذا هو الجهاد الواقع في كلّ حينٍ، في حياة كلّ مسلمٍ عاديّ، وهو الذي لا يُذكر:\n• تشتهي نظرةً لا تحلّ لك فتصرف بصرك — فهذا جهاد.\n• تقدر على مالٍ ليس لك ولا يعلم بك أحد فلا تأخذه — فهذا جهاد.\n• يشتمك رجلٌ وتقدر أن تهدمه بكلمةٍ فتسكت — فهذا جهاد.\n• يؤذّن الفجر في شتاءٍ والفراش دافئ فتقوم فتصلّي — فهذا جهاد.\n• تحترق أن تنقل كلمةً في أحدٍ فتبتلعها — فهذا جهاد.\n\nكلُّ واحدةٍ من هذه غلبةٌ منك لنفسك لله: قدرتَ واشتهيتَ فامتنعت. **وهذا معنى اللفظ، وهذا موضعُ عامّته.**\n\nوقد استعمل القرآنُ اللفظَ في هذا صراحةً: قال بمكّةَ قبل الإذن في القتال بسنين: ﴿فَلَا تُطِعِ ٱلْكَٰفِرِينَ **وَجَٰهِدْهُم بِهِۦ جِهَادًۭا كَبِيرًۭا**﴾. بأيّ شيء؟ بالقرآن. فالجهادُ الكبير مسمًّى في الآية: هو البلاغ.",
+          context: [
+            { tag: "The great jihad, named", tagAr: "الجهادُ الكبير مسمًّى", ref: "Al-Furqan (25:52)", refAr: "الفرقان (٢٥:٥٢)",
+              ar: "فَلَا تُطِعِ ٱلْكَٰفِرِينَ وَجَٰهِدْهُم بِهِۦ جِهَادًۭا كَبِيرًۭا",
+              en: "So do not obey the disbelievers, and strive against them with the Qur'an a great striving." },
+            { tag: "And the promise attached to it", tagAr: "والوعدُ المتعلّق به", ref: "Al-Ankabut (29:69)", refAr: "العنكبوت (٢٩:٦٩)",
+              ar: "وَٱلَّذِينَ جَٰهَدُوا۟ فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا ۚ وَإِنَّ ٱللَّهَ لَمَعَ ٱلْمُحْسِنِينَ",
+              en: "And those who strive for Us - We will surely guide them to Our ways. And indeed, Allah is with the doers of good." }
+          ],
+          plain: "In plain words: stopping yourself from doing something wrong that you want to do and could easily get away with — that is jihad, and the Prophet ﷺ called that person THE mujahid. It happens in every Muslim's day, and nobody reports it.",
+          plainAr: "بعبارة أخرى: كفُّك نفسَك عن معصيةٍ تشتهيها وتقدر عليها ولا يُنكر عليك أحد — هذا جهاد، وسمّى النبي ﷺ صاحبَه «المجاهدَ». وهو واقعٌ في يوم كلّ مسلم، ولا يُخبر عنه أحد.",
+          ref: "Jami at-Tirmidhi, Book of the Virtues of Jihad, Hadith 1621 — outside the two Sahihs, authenticated by al-Albani; Surah Al-Furqan (25:52); Surah Al-Ankabut (29:69)",
+          refAr: "جامع الترمذي، كتاب فضائل الجهاد، حديث ١٦٢١ — خارج الصحيحين، صحّحه الألباني؛ سورة الفرقان (٢٥:٥٢)؛ سورة العنكبوت (٢٩:٦٩)",
+          strength: "Strong — Narrated by at-Tirmidhi; authenticated by al-Albani",
+          strengthAr: "قويّ — رواه الترمذي، وصحّحه الألباني"
+        },
+        {
+          id: "ms-jh-weak",
+          title: "The famous \"greater jihad\" hadith is NOT authentic — and it is not needed",
+          titleAr: "حديثُ «الجهاد الأكبر» المشهور ليس صحيحًا — ولا حاجة إليه",
+          body: "You will constantly see this quoted: **\"We have returned from the lesser jihad to the greater jihad\"** — said, supposedly, on returning from a battle.\n\n**It is not authentic.** Al-Bayhaqi narrated it in az-Zuhd al-Kabir and stated that its chain is weak. Ibn Taymiyyah said plainly that it has no basis and was not narrated by anyone with knowledge of the Prophet's ﷺ words. Al-Iraqi, checking the hadith of al-Ghazali's Ihya, traced it to al-Bayhaqi with a weak chain.\n\nIt is put here, on this page, in a section defending Islam — because that is the standard. A weak narration does not become strong by being useful. And the moment you cite one to someone who checks, you have lost everything else you said, including the true parts.\n\n**And nothing is lost by dropping it,** because its meaning is established by authentic texts that say it better:\n• \"The mujahid is the one who strives against his own self\" — at-Tirmidhi 1621, authenticated.\n• A man came asking permission to go and fight. He ﷺ asked: \"Are your parents alive?\" He said yes. He said: **\"Then in them is your jihad\"** — al-Bukhari 3004.\n• Aishah رضي الله عنها asked whether women should go out to fight, since jihad is the best of deeds. He said: **\"No. But the best jihad is an accepted hajj\"** — al-Bukhari 1520.\n• \"The best jihad is a word of justice before a tyrannical ruler\" — Abu Dawud 4344, at-Tirmidhi 2174, an-Nasa'i 4209.\n\nA man told to stay home and look after his mother was told he was doing jihad. That is stronger than the weak narration, and it is in Sahih al-Bukhari.",
+          bodyAr: "يُنقل هذا كثيرًا: «رَجَعْنَا مِنَ الْجِهَادِ الْأَصْغَرِ إِلَى الْجِهَادِ الْأَكْبَرِ»، يُزعم أنه قيل عند الرجوع من غزوة.\n\n**وليس بصحيح.** رواه البيهقيّ في «الزهد الكبير» ونصّ على ضعف إسناده. وقال ابن تيمية إنه لا أصل له، وإنه لم يروه أحدٌ من أهل المعرفة بأقوال النبي ﷺ. وخرّجه العراقيُّ في تخريج أحاديث «الإحياء» فعزاه للبيهقي بإسنادٍ ضعيف.\n\nوإنما ذُكر ههنا في صفحةٍ يُنافح فيها عن الإسلام، لأنّ هذا هو الميزان. فالضعيفُ لا يقوى بكونه نافعًا. ومتى احتججتَ به على من يتحقّق سقط عنده سائرُ ما قلت، وفيه الصحيح.\n\n**ولا يفوت بتركه شيء**، فمعناه ثابتٌ بنصوصٍ صحاحٍ هي أحسنُ منه أداءً:\n• «الْمُجَاهِدُ مَنْ جَاهَدَ نَفْسَهُ» — الترمذي (١٦٢١)، صحّحه الألباني.\n• جاء رجلٌ يستأذنه في الجهاد فقال: «أَحَيٌّ وَالِدَاكَ؟» قال: نعم. قال: **«فَفِيهِمَا فَجَاهِدْ»** — البخاري (٣٠٠٤).\n• سألته عائشةُ رضي الله عنها: نرى الجهادَ أفضلَ العمل أفلا نجاهد؟ فقال: **«لاَ، لَكِنَّ أَفْضَلَ الْجِهَادِ حَجٌّ مَبْرُورٌ»** — البخاري (١٥٢٠).\n• «أَفْضَلُ الْجِهَادِ كَلِمَةُ عَدْلٍ عِنْدَ سُلْطَانٍ جَائِرٍ» — أبو داود (٤٣٤٤)، والترمذي (٢١٧٤)، والنسائي (٤٢٠٩).\n\nفرجلٌ قيل له: ارجع فاخدم أمّك، قيل له إنّ ذلك جهادُه. وهذا أقوى من الضعيف، وهو في صحيح البخاري.",
+          plain: "In plain words: the famous \"greater jihad\" saying is weak — al-Bayhaqi and Ibn Taymiyyah both said so, and this page says so too even though it would be convenient not to. It is not needed: authentic hadith call looking after your parents jihad, hajj a woman's jihad, and speaking the truth to a tyrant the best jihad of all.",
+          plainAr: "بعبارة أخرى: حديثُ «الجهاد الأكبر» المشهور ضعيف، نصّ على ذلك البيهقيُّ وابنُ تيمية، وتقوله هذه الصفحة وإن كان السكوتُ أنفعَ لها. ولا حاجة إليه: ففي الصحيح أنّ برّ الوالدين جهاد، وأنّ حجّ المرأة جهادُها، وأنّ كلمة الحقّ عند السلطان الجائر أفضلُ الجهاد.",
+          ref: "al-Bayhaqi, Az-Zuhd al-Kabir (weak chain, stated by al-Bayhaqi); Ibn Taymiyyah, Majmu' al-Fatawa; al-Iraqi, Takhrij Ahadith al-Ihya. The replacements: Sahih al-Bukhari 3004 and 1520; Sunan Abu Dawud 4344; Jami at-Tirmidhi 1621 and 2174; Sunan an-Nasa'i 4209",
+          refAr: "البيهقي، الزهد الكبير (وضعّف إسنادَه البيهقيُّ نفسُه)؛ ابن تيمية، مجموع الفتاوى؛ العراقي، تخريج أحاديث الإحياء. وما ذُكر بدلًا منه: صحيح البخاري ٣٠٠٤ و١٥٢٠؛ سنن أبي داود ٤٣٤٤؛ جامع الترمذي ١٦٢١ و٢١٧٤؛ سنن النسائي ٤٢٠٩",
+          strength: "The \"greater jihad\" narration: WEAK — do not quote it. The four given in its place: Sahih al-Bukhari, and at-Tirmidhi / Abu Dawud / an-Nasa'i authenticated by al-Albani",
+          strengthAr: "روايةُ «الجهاد الأكبر»: ضعيفة — لا يُحتجّ بها. وأمّا الأربعةُ المذكورة بدلًا منها: فصحيح البخاري، والترمذي وأبو داود والنسائي بتصحيح الألباني"
+        },
+        {
+          id: "ms-jh-rules",
+          title: "When it does mean fighting, these are the conditions",
+          titleAr: "وإذا كان قتالًا فهذه شروطُه",
+          body: "Armed jihad is real, and pretending otherwise would be dishonest. But it is a chapter of law with conditions, and the conditions are what the word \"jihadist\" is used to hide.\n\n**It is declared by a state, not by a person or a group.** In every one of the four schools, the decision to go to war belongs to the legitimate authority under a banner it holds. A man who decides for himself and gathers followers is not conducting jihad; he is committing what the jurists call **khuruj**, revolt, and the books treat it as a crime.\n\n**Non-combatants are protected absolutely.** See Abu Bakr's ten orders in the section above, and al-Bukhari 3015.\n\n**Treachery is forbidden.** Anyone given safety — a diplomat, a traveller, a trader, a person living under a treaty — is protected by that grant, and killing him is named in al-Bukhari 3166 as costing Paradise. And: \"Whoever wrongs a covenanted person, or diminishes his right, or burdens him beyond his capacity, or takes something from him without his consent — I will be his opponent on the Day of Judgement\" (Abu Dawud 3052).\n\n**Peace must be accepted the moment it is offered** — 8:61, above.\n\n**Prisoners are fed and then freed or ransomed.** \"Either confer favour afterwards or ransom\" (47:4). And of the people of Paradise: \"they give food, in spite of loving it, to the needy, the orphan and **the captive**\" (76:8).\n\nA man who blows up a market has broken every one of those. He has not done a small jihad badly. He has done the opposite of the thing.",
+          bodyAr: "الجهادُ بالسلاح ثابت، ونفيُه مكابرة. غير أنه بابٌ من الفقه له شروط، وهذه الشروطُ هي ما تُخفيه كلمةُ «جهاديّ».\n\n**تعقده الدولةُ لا الأفراد ولا الجماعات.** فعند الأئمّة الأربعة أنّ عقد الحرب إلى الإمام تحت رايته. ومن استقلّ بذلك وجمع أتباعًا فليس بمجاهد، وإنما هو **خارج**، والكتب تعدّه جناية.\n\n**غيرُ المقاتِل معصومٌ قطعًا** — وانظر وصايا أبي بكر العشر في القسم المتقدّم، والبخاري (٣٠١٥).\n\n**والغدرُ حرام.** فمن أُعطي أمانًا — رسولًا أو عابرًا أو تاجرًا أو ذا عهدٍ مقيمًا — فهو معصومٌ بأمانه، وقتلُه في البخاري (٣١٦٦) حرمانٌ من الجنّة. وقال ﷺ: «أَلاَ مَنْ ظَلَمَ مُعَاهِدًا أَوِ انْتَقَصَهُ أَوْ كَلَّفَهُ فَوْقَ طَاقَتِهِ أَوْ أَخَذَ مِنْهُ شَيْئًا بِغَيْرِ طِيبِ نَفْسٍ فَأَنَا حَجِيجُهُ يَوْمَ الْقِيَامَةِ» (أبو داود ٣٠٥٢).\n\n**ويُقبل السلمُ متى عُرض** — الأنفال ٦١ فيما تقدّم.\n\n**والأسيرُ يُطعم ثم يُمَنّ عليه أو يُفادى**: ﴿فَإِمَّا مَنًّۢا بَعْدُ وَإِمَّا فِدَآءً﴾ (٤٧:٤). ومن صفة أهل الجنّة: ﴿وَيُطْعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسْكِينًۭا وَيَتِيمًۭا **وَأَسِيرًا**﴾ (٧٦:٨).\n\nفمن نسف سوقًا فقد نقض هذه كلَّها. وليس قد أساء جهادًا صغيرًا، وإنما فعل ضدَّ الشيء.",
+          plain: "In plain words: even armed jihad has rules — a state declares it, not a man; civilians are untouchable; anyone given safety is protected; peace must be accepted the moment it is offered; and prisoners are fed and then released or ransomed. Someone who bombs a market has broken every one of those rules, not followed them.",
+          plainAr: "بعبارة أخرى: حتى القتالُ له أحكام — تعقده الدولةُ لا الرجل، وغيرُ المقاتل معصوم، ومن أُعطي أمانًا فهو محميّ، ويُقبل السلمُ متى عُرض، والأسيرُ يُطعم ثم يُطلق أو يُفادى. ومن نسف سوقًا فقد نقض هذه كلَّها لا التزمها.",
+          ref: "Sahih al-Bukhari 3015 and 3166; Sunan Abu Dawud 3052; Malik, Al-Muwatta 968; Surah Muhammad (47:4); Surah Al-Insan (76:8); Surah Al-Anfal (8:61)",
+          refAr: "صحيح البخاري ٣٠١٥ و٣١٦٦؛ سنن أبي داود ٣٠٥٢؛ موطّأ مالك ٩٦٨؛ سورة محمد (٤٧:٤)؛ سورة الإنسان (٧٦:٨)؛ سورة الأنفال (٨:٦١)",
+          strength: "Sahih for al-Bukhari; Abu Dawud is outside the two Sahihs",
+          strengthAr: "صحيحٌ ما لدى البخاري؛ وأبو داود خارج الصحيحين"
+        }
+      ],
+
+      close: "So the honest summary of the word is this: **jihad is effort, and it takes many forms.** Its most constant form is a person refusing his own desire for the sake of Allah, which is happening in millions of ordinary lives right now. Its other forms are seeking knowledge, serving parents, hajj, spending wealth, and speaking the truth where it is dangerous to speak it. Armed fighting is one form, hedged with conditions, held by a state, and forbidden against anyone who is not fighting you.\n\nAnyone who tells you the word means \"holy war\" is telling you about a Latin phrase from the Crusades, not about an Arabic one.",
+      closeAr: "فخلاصةُ القول في اللفظ منصفةً: **الجهادُ بذلُ الجهد، وله صورٌ**. وأدومُ صوره امتناعُ المرء عن شهوته لله، وهو واقعٌ الآن في ملايين الأعمار العاديّة. وسائرُ صوره: طلبُ العلم، وبرُّ الوالدين، والحجّ، وبذلُ المال، وقولُ الحقّ حيث يُخاف قولُه. والقتالُ صورةٌ منها، مقيَّدةٌ بشروط، معقودةٌ للدولة، ممنوعةٌ في حقّ من لم يقاتلك.\n\nومن أخبرك أنّ معنى اللفظ «الحرب المقدّسة» فإنما أخبرك عن عبارةٍ لاتينيّةٍ من زمن الحروب الصليبيّة، لا عن عبارةٍ عربيّة."
+    },
+
+    /* ---------- 3. Compulsion ---------- */
+    {
+      id: "mis-compulsion",
+      icon: "🕊️",
+      claim: "\"Islam was spread by the sword. Convert or die.\"",
+      claimAr: "«انتشر الإسلام بالسيف: إمّا أن تُسلم وإمّا أن تُقتل».",
+      title: "\"There shall be no compulsion in religion\"",
+      titleAr: "﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾",
+      lead: "The Quran states this as a rule, gives the reason for it, and tells the Prophet ﷺ himself that forcing belief is not his job. And the occasion on which the verse came down was a case of Muslim fathers trying to force their own sons — and being told no.",
+      leadAr: "قرّر القرآن هذا حكمًا، وذكر علّته، وقال للنبيّ ﷺ نفسه إنّ إكراه الناس على الإيمان ليس إليه. وكان سببُ نزول الآية أنّ آباءً مسلمين أرادوا إكراه أبنائهم فمُنعوا.",
+
+      answer: "\"There shall be no compulsion in religion\" (2:256) is a verse of the Quran, and its occasion of revelation is recorded: Muslim fathers in Madinah wanted to force their sons — who had been raised in another faith — to become Muslim, and this verse came down forbidding it (Abu Dawud 2682). The Quran tells the Prophet ﷺ himself: \"would you compel the people until they become believers?\" (10:99) and \"you are not over them a controller\" (88:22). A forced belief is worth nothing in Islam anyway, because nothing is accepted without intention — so compulsion does not just break a rule, it fails at what it is trying to do.",
+      answerAr: "﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾ آيةٌ محكمة، وسببُ نزولها مرويّ: أراد آباءٌ من الأنصار إكراه أبنائهم الذين نشؤوا على غير الإسلام، فنزلت تمنعهم (أبو داود ٢٦٨٢). وقال الله لنبيّه ﷺ: ﴿أَفَأَنتَ تُكْرِهُ ٱلنَّاسَ حَتَّىٰ يَكُونُوا۟ مُؤْمِنِينَ﴾ (١٠:٩٩)، و﴿لَّسْتَ عَلَيْهِم بِمُصَيْطِرٍ﴾ (٨٨:٢٢). والإيمانُ المُكرَه لا قيمة له أصلًا، فإنما الأعمال بالنيّات — فالإكراه لا ينقض الحكم فحسب، بل يُخفق فيما يطلبه.",
+
+      cards: [
+        {
+          id: "ms-cm-verse",
+          title: "The verse, and the case it was revealed about",
+          titleAr: "الآيةُ وسببُ نزولها",
+          body: "\"There shall be no compulsion in religion. The right course has become clear from the wrong.\"\n\nNotice the reasoning inside the verse: the second sentence is the argument for the first. Guidance has been made distinguishable from error — therefore it can be seen — therefore it does not need to be forced. Force is what you use when you cannot convince.\n\nAnd here is the occasion it came down for, in Sunan Abu Dawud 2682, from Ibn Abbas:\n\nA woman of the Ansar whose children kept dying would vow that if a child of hers lived, she would raise him in the Jewish faith. So there were sons of the Ansar being brought up among Banu an-Nadir. When Banu an-Nadir were expelled from Madinah, those Ansar fathers said: **\"We will not abandon our sons.\"** They wanted to hold them back and force them into Islam. And Allah revealed: \"There shall be no compulsion in religion.\"\n\nRead who was stopped. Not an enemy army — **Muslim fathers, about their own children, in the Prophet's own city.** If the verse does not apply to anyone, it does not apply to them. It was revealed precisely about them.",
+          bodyAr: "﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ ۖ قَد تَّبَيَّنَ ٱلرُّشْدُ مِنَ ٱلْغَىِّ﴾.\n\nوتأمّل التعليل في الآية نفسها: فالجملةُ الثانية حجّةُ الأولى. تبيّن الرشدُ من الغيّ — فهو مُبصَر — فلا يحتاج إلى إكراه. وإنما يُكرِه من عجز أن يُقنع.\n\nوهذا سببُ نزولها، في سنن أبي داود (٢٦٨٢) عن ابن عباس:\n\nكانت المرأةُ من الأنصار تكون مِقلاتًا — لا يعيش لها ولد — فتنذر إن عاش لها ولدٌ أن تُهوّده. فلمّا أُجليت بنو النضير كان فيهم من أبناء الأنصار، فقال آباؤهم: **«لَا نَدَعُ أَبْنَاءَنَا»**، أرادوا حبسهم وإكراههم على الإسلام. فأنزل الله: ﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾.\n\nفانظر من مُنع: ليس جيشًا معاديًا، وإنما **آباءٌ مسلمون في أبنائهم في مدينة النبيّ ﷺ**. فإن لم تتناول الآيةُ أحدًا فهي لا تتناولهم، وإنما نزلت فيهم بأعيانهم.",
+          context: [
+            { tag: "The verse", tagAr: "الآية", ref: "Al-Baqarah (2:256)", refAr: "البقرة (٢:٢٥٦)",
+              ar: "لَآ إِكْرَاهَ فِى ٱلدِّينِ ۖ قَد تَّبَيَّنَ ٱلرُّشْدُ مِنَ ٱلْغَىِّ ۚ فَمَن يَكْفُرْ بِٱلطَّٰغُوتِ وَيُؤْمِنۢ بِٱللَّهِ فَقَدِ ٱسْتَمْسَكَ بِٱلْعُرْوَةِ ٱلْوُثْقَىٰ لَا ٱنفِصَامَ لَهَا ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+              en: "There shall be no compulsion in [acceptance of] the religion. The right course has become clear from the wrong. So whoever disbelieves in Taghut and believes in Allah has grasped the most trustworthy handhold with no break in it. And Allah is Hearing and Knowing." }
+          ],
+          plain: "In plain words: this verse came down to stop Muslim fathers forcing their own sons to become Muslim. If it stops that, it stops everything weaker than that.",
+          plainAr: "بعبارة أخرى: نزلت هذه الآية لتمنع آباءً مسلمين من إكراه أبنائهم على الإسلام. فإذا منعت هذا فما دونه أولى بالمنع.",
+          ref: "Surah Al-Baqarah (2:256); Sunan Abu Dawud, Book of Jihad, Hadith 2682 — narrated from Ibn Abbas",
+          refAr: "سورة البقرة (٢:٢٥٦)؛ سنن أبي داود، كتاب الجهاد، حديث ٢٦٨٢ — عن ابن عباس",
+          strength: "quran; the occasion of revelation is in Abu Dawud, outside the two Sahihs",
+          strengthAr: "قرآن؛ وسببُ النزول عند أبي داود، خارج الصحيحين"
+        },
+        {
+          id: "ms-cm-prophet",
+          title: "The Prophet ﷺ was told, three separate ways, that this is not his job",
+          titleAr: "قيل للنبيّ ﷺ في ثلاثة مواضع إنّ هذا ليس إليه",
+          body: "If forcing belief were part of the mission, the person carrying the mission would have been told to do it. He was told the opposite, repeatedly:\n\n**\"And had your Lord willed, those on earth would have believed — all of them entirely. Then would you compel the people in order that they become believers?\"** (10:99). The argument is that if forced belief were the goal, it could have been arranged without him.\n\n**\"So remind; you are only a reminder. You are not over them a controller.\"** (88:21-22). The Arabic word is **musaytir** — one who has power over, an overseer. He is told he is not one.\n\n**\"And say: the truth is from your Lord, so whoever wills — let him believe; and whoever wills — let him disbelieve.\"** (18:29).\n\nAnd for anyone who insists after that, an entire surah exists on the subject, ending: **\"For you is your religion, and for me is my religion.\"**",
+          bodyAr: "لو كان الإكراهُ على الإيمان من الرسالة لأُمر به حاملُها. وإنما قيل له ضدُّه في مواضع:\n\n**﴿وَلَوْ شَآءَ رَبُّكَ لَءَامَنَ مَن فِى ٱلْأَرْضِ كُلُّهُمْ جَمِيعًا ۚ أَفَأَنتَ تُكْرِهُ ٱلنَّاسَ حَتَّىٰ يَكُونُوا۟ مُؤْمِنِينَ﴾** (١٠:٩٩). والحجّةُ أنّ الإيمان المُكرَه لو كان مقصودًا لتهيّأ من دونه.\n\n**﴿فَذَكِّرْ إِنَّمَآ أَنتَ مُذَكِّرٌۭ ۝ لَّسْتَ عَلَيْهِم بِمُصَيْطِرٍ﴾** (٨٨:٢١-٢٢). و«المصيطر» المتسلّط المتعهّد، فنُفي عنه.\n\n**﴿وَقُلِ ٱلْحَقُّ مِن رَّبِّكُمْ ۖ فَمَن شَآءَ فَلْيُؤْمِن وَمَن شَآءَ فَلْيَكْفُرْ﴾** (١٨:٢٩).\n\nومن أبى بعد ذلك فقد نزلت في هذا سورةٌ تامّة، خاتمتُها: **﴿لَكُمْ دِينُكُمْ وَلِىَ دِينِ﴾**.",
+          context: [
+            { tag: "To the Prophet ﷺ himself", tagAr: "خطابًا للنبيّ ﷺ", ref: "Yunus (10:99)", refAr: "يونس (١٠:٩٩)",
+              ar: "وَلَوْ شَآءَ رَبُّكَ لَءَامَنَ مَن فِى ٱلْأَرْضِ كُلُّهُمْ جَمِيعًا ۚ أَفَأَنتَ تُكْرِهُ ٱلنَّاسَ حَتَّىٰ يَكُونُوا۟ مُؤْمِنِينَ",
+              en: "And had your Lord willed, those on earth would have believed - all of them entirely. Then, [O Muhammad], would you compel the people in order that they become believers?" },
+            { tag: "And what he is, exactly", tagAr: "وحدُّ وظيفته", ref: "Al-Ghashiyah (88:21-22)", refAr: "الغاشية (٨٨:٢١-٢٢)",
+              ar: "فَذَكِّرْ إِنَّمَآ أَنتَ مُذَكِّرٌۭ ۝ لَّسْتَ عَلَيْهِم بِمُصَيْطِرٍ",
+              en: "So remind, [O Muhammad]; you are only a reminder. You are not over them a controller." }
+          ],
+          plain: "In plain words: the Prophet ﷺ himself was told he is a reminder and not a controller, and was asked directly \"would you force people until they believe?\" If he was not permitted to force anyone, nobody after him is.",
+          plainAr: "بعبارة أخرى: قيل للنبيّ ﷺ إنه مذكّرٌ لا مسيطر، وقيل له صراحةً: ﴿أَفَأَنتَ تُكْرِهُ ٱلنَّاسَ حَتَّىٰ يَكُونُوا۟ مُؤْمِنِينَ﴾. فإذا لم يُؤذن له في الإكراه فمن بعده أولى.",
+          ref: "Surah Yunus (10:99); Surah Al-Ghashiyah (88:21-22); Surah Al-Kahf (18:29); Surah Al-Kafirun (109:6)",
+          refAr: "سورة يونس (١٠:٩٩)؛ سورة الغاشية (٨٨:٢١-٢٢)؛ سورة الكهف (١٨:٢٩)؛ سورة الكافرون (١٠٩:٦)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-cm-intention",
+          title: "Why forcing belief cannot work, even on its own terms",
+          titleAr: "ولِمَ لا يُجدي الإكراه أصلًا",
+          body: "There is a reason deeper than the prohibition, and it is worth understanding because it explains why the prohibition exists.\n\nThe first hadith in Sahih al-Bukhari is: **\"Actions are but by intentions, and every man will have only what he intended.\"** Nothing in Islam counts without the intention behind it. Prayer without intention is exercise. Fasting without intention is hunger.\n\nSo a man forced to say the shahadah at knife-point has not become a Muslim. He has said some Arabic. The thing the sword was supposedly imposing is the one thing a sword categorically cannot reach — because it lives in a place a weapon has no access to.\n\nThat is why compulsion is not merely banned in Islam; it is **incoherent** in Islam. It does not fail morally and succeed practically. It fails at both ends.",
+          bodyAr: "وثمّ علّةٌ أعمقُ من النهي، وفهمُها يُبيّن لِمَ كان النهي.\n\nأوّلُ حديثٍ في صحيح البخاري: **«إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى»**. فلا يُعتدّ في الإسلام بعملٍ إلا بنيّته. والصلاةُ بلا نيّةٍ حركة، والصومُ بلا نيّةٍ جوع.\n\nفمن أُكره على الشهادة تحت السيف لم يُسلم، وإنما نطق بعربيّة. والذي زُعم أنّ السيف يفرضه هو عينُ ما لا يبلغه السيف البتّة، لأنه في موضعٍ لا سبيل للسلاح إليه.\n\nولهذا لم يكن الإكراه في الإسلام ممنوعًا فحسب، بل **متناقضًا**: فليس يخفق أخلاقيًّا وينجح عمليًّا، وإنما يخفق في الطرفين.",
+          plain: "In plain words: nothing in Islam counts unless you meant it. So forcing someone to say the words produces nothing at all — a sword cannot reach the one place where belief actually lives.",
+          plainAr: "بعبارة أخرى: لا يُقبل في الإسلام عملٌ بلا نيّة. فإكراهُ رجلٍ على النطق لا يُنتج شيئًا البتّة، فليس للسيف سبيلٌ إلى الموضع الذي يقوم فيه الإيمان.",
+          ref: "Sahih al-Bukhari, Book of the Beginning of Revelation, Hadith 1 — narrated from Umar ibn al-Khattab",
+          refAr: "صحيح البخاري، كتاب بدء الوحي، حديث ١ — عن عمر بن الخطاب",
+          strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+          strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
+        },
+        {
+          id: "ms-cm-history",
+          title: "And the plain historical test anyone can run",
+          titleAr: "والامتحانُ التاريخيُّ الذي يقدر عليه كلّ أحد",
+          body: "Set the texts aside for a moment and just look at a map.\n\nIf Islam had been imposed by conquest, then the places conquered earliest and held longest would be the most Muslim, and the places never conquered would have no Muslims at all. Neither is true.\n\n**Egypt, Syria and Iraq** were under Muslim rule from the seventh century — and remained majority Christian for centuries afterwards. Conversion was slow, and it happened long after the armies had gone home. Christian communities are there to this day, with their own churches, courts and language of worship.\n\n**Indonesia**, the largest Muslim country on earth, was never conquered by an Arab army at all. Islam arrived there with traders. So did Islam in Malaysia, and across much of West Africa.\n\n**Spain** was under Muslim rule for nearly eight hundred years, and did not end up Muslim.\n\n**India** was ruled by Muslim dynasties for centuries and remained majority Hindu throughout, which would be inexplicable if the rulers had been converting people by force.\n\nA policy of forced conversion that leaves the conquered heartlands Christian and makes the never-conquered islands Muslim is not a policy. It is a story that does not fit its own evidence.",
+          bodyAr: "دع النصوص لحظةً وانظر في الخريطة.\n\nلو فُرض الإسلامُ بالفتح لكانت أوائلُ البلاد فتحًا وأطولُها بقاءً تحت الحكم أشدَّها إسلامًا، ولما كان في البلاد التي لم تُفتح مسلمون. وليس واحدٌ من هذين بواقع.\n\n**مصر والشام والعراق** دخلت في حكم المسلمين في القرن الأوّل، وبقيت أكثريّتُها نصرانيّةً قرونًا بعده. وكان الدخول في الإسلام بطيئًا، وإنما وقع بعد أن رجعت الجيوش بزمن. وطوائفُ النصارى فيها إلى اليوم بكنائسها ومحاكمها ولسان عبادتها.\n\n**وإندونيسيا** أكبرُ بلاد المسلمين لم يفتحها جيشٌ عربيّ قطّ، وإنما بلغها الإسلامُ مع التجّار. وكذلك ماليزيا، وكثيرٌ من غرب إفريقيا.\n\n**والأندلس** بقيت تحت حكم المسلمين قريبًا من ثمانية قرون ولم تصر مسلمة.\n\n**والهند** حكمتها دولٌ إسلاميّةٌ قرونًا وبقيت أكثريّتُها هندوسيّة، ولا يستقيم هذا لو كان الحكّام يُدخلون الناس بالقهر.\n\nفسياسةُ إكراهٍ تُبقي قلبَ البلاد المفتوحة نصرانيًّا وتجعل الجزر التي لم تُفتح مسلمةً ليست سياسة، وإنما هي حكايةٌ لا تُوافق دليلَها.",
+          plain: "In plain words: the lands conquered first stayed Christian for centuries, and the biggest Muslim country in the world was never conquered at all. Forced conversion is a story that does not match the map.",
+          plainAr: "بعبارة أخرى: البلادُ التي فُتحت أوّلًا بقيت نصرانيّةً قرونًا، وأكبرُ بلاد المسلمين لم تُفتح أصلًا. فدعوى الإكراه حكايةٌ لا تُوافق الخريطة.",
+          ref: "Richard W. Bulliet, Conversion to Islam in the Medieval Period (Harvard, 1979), on the pace of conversion in Iran, Iraq, Syria, Egypt and Spain; the Coptic, Syriac and Assyrian churches, continuously present to the present day",
+          refAr: "ريتشارد بوليت، «الدخول في الإسلام في العصر الوسيط» (هارفارد ١٩٧٩م)، في وتيرة الدخول في الإسلام بإيران والعراق والشام ومصر والأندلس؛ والكنائسُ القبطيّة والسريانيّة والآشوريّة قائمةٌ متّصلةٌ إلى اليوم",
+          strength: "documented history, not scripture",
+          strengthAr: "تاريخٌ موثّق، لا نصٌّ شرعيّ"
+        }
+      ],
+
+      close: "None of this claims that no Muslim ruler in fourteen centuries ever forced anyone. Some did, and they were wrong by the standard of their own religion. That is the difference between a rule and a record: the rule is in the Book, and where a ruler broke it, the Book is what convicts him.",
+      closeAr: "وليس في هذا دعوى أنّ حاكمًا مسلمًا لم يُكره أحدًا في أربعة عشر قرنًا. فقد وقع ذلك من بعضهم، وكانوا مخطئين بميزان دينهم هم. وهذا هو الفرق بين الحكم والوقوع: الحكمُ في الكتاب، ومن خالفه من الحكّام فالكتابُ هو الذي يُدينه."
+    },
+
+    /* ---------- 4. The hijab ---------- */
+    {
+      id: "mis-hijab",
+      icon: "🧕",
+      claim: "\"Muslim women are forced to cover. It is a symbol of oppression, and their fathers and husbands make them do it.\"",
+      claimAr: "«المرأةُ المسلمة مُكرَهةٌ على الستر، وهو رمزُ قهرٍ يفرضه عليها أبوها أو زوجُها».",
+      title: "Why Muslim women wear hijab — and no, they are not forced",
+      titleAr: "لِمَ تلبس المسلمةُ الحجاب — ولا، لا تُكرَه عليه",
+      lead: "Two separate questions get mixed together here, and they need separating: **why is it worn**, and **who may make anyone wear it**. The first is answered by two verses and by what the women who first heard them did. The second is answered by a rule that applies to every act of worship in Islam without exception.",
+      leadAr: "ههنا مسألتان تُخلطان وينبغي فصلُهما: **لِمَ يُلبس؟** و**من له أن يُلزم به؟** فالأولى تُجيب عنها آيتان وما فعلته النساءُ اللاتي سمعنهما أوّلَ مرّة. والثانية يُجيب عنها أصلٌ يجري في كلّ عبادةٍ في الإسلام بلا استثناء.",
+
+      answer: "She wears it because Allah commanded it in two verses of the Quran — it is an act of worship, done for Him, exactly like prayer and fasting. And it cannot be forced, for the same reason prayer cannot be forced: nothing in Islam counts without the intention behind it, so a covering put on under threat is worth nothing before Allah and has simply made a hypocrite out of someone. When the verse was first revealed, nobody had to be told twice: Aishah رضي الله عنها said the women tore their own wraps and covered themselves with them that same hour. The obligation is on the woman, before her Lord. It is not a permission granted to any man over her.",
+      answerAr: "تلبسه لأنّ الله أمر به في آيتين من القرآن، فهو عبادةٌ يُتقرّب بها إليه كالصلاة والصيام. ولا يقع بالإكراه، للعلّة التي لا تقع بها الصلاةُ إكراهًا: فلا يُعتدّ في الإسلام بعملٍ بلا نيّة، فالسترُ المفروضُ بالتهديد لا وزن له عند الله، وإنما صنع من صاحبته منافقة. ولمّا نزلت الآية لم تُحتج امرأةٌ إلى أن تُؤمر مرّتين: قالت عائشةُ رضي الله عنها إنهنّ شقَقن مروطهنّ فاختمرن بها من ساعتهنّ. فالتكليفُ عليها هي أمام ربّها، وليس إذنًا لرجلٍ عليها.",
+
+      cards: [
+        {
+          id: "ms-hj-men",
+          title: "The command starts with the men — and this is almost never mentioned",
+          titleAr: "الأمرُ يبدأ بالرجال — ولا يكاد يُذكر",
+          body: "Open Surah An-Nur at the passage everyone quotes about women's dress. The verse before it is addressed to men, and it comes **first**:\n\n\"**Tell the believing men** to reduce [some] of their vision and guard their private parts. That is purer for them.\" (24:30)\n\nOnly then, in the next verse: \"And tell the believing women...\"\n\nThat ordering is not decorative. The passage puts the first duty on the man's eyes before it says a word about the woman's clothes. A religion that intended to make women responsible for men's behaviour would not have opened by telling the men to control themselves.\n\nAnd men have a covering obligation of their own — the **awrah** of a man, which the scholars define and which is discussed in its own ruling on this page. \"Hijab\" in the fiqh books is a chapter about modesty, and it has a section for each sex.",
+          bodyAr: "افتح سورة النور عند الموضع الذي يُنقل في لباس النساء، تجد الآيةَ التي قبله في الرجال، وهي **مقدَّمة**:\n\n﴿**قُل لِّلْمُؤْمِنِينَ** يَغُضُّوا۟ مِنْ أَبْصَٰرِهِمْ وَيَحْفَظُوا۟ فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ﴾ (٢٤:٣٠).\n\nثم بعدها: ﴿وَقُل لِّلْمُؤْمِنَٰتِ...﴾.\n\nوليس هذا الترتيبُ زينة. فالسياقُ يضع أوّلَ التكليف على بصر الرجل قبل أن يذكر ثوبَ المرأة بكلمة. ولو أُريد تحميلُ المرأة سلوكَ الرجل ما افتُتح الأمرُ بأمر الرجال أن يضبطوا أنفسهم.\n\nوللرجل سترٌ واجبٌ عليه هو **عورتُه**، حدَّها أهل العلم، ولها في هذه الصفحة حكمٌ مفرد. و«الحجاب» في كتب الفقه بابٌ في الحياء، فيه فصلٌ لكلّ من الصنفين.",
+          context: [
+            { tag: "First — to the men", tagAr: "أوّلًا — للرجال", ref: "An-Nur (24:30)", refAr: "النور (٢٤:٣٠)",
+              ar: "قُل لِّلْمُؤْمِنِينَ يَغُضُّوا۟ مِنْ أَبْصَٰرِهِمْ وَيَحْفَظُوا۟ فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا يَصْنَعُونَ",
+              en: "Tell the believing men to reduce [some] of their vision and guard their private parts. That is purer for them. Indeed, Allah is Acquainted with what they do." }
+          ],
+          plain: "In plain words: the verse telling men to lower their gaze comes BEFORE the verse about women's dress. The first instruction in the passage is aimed at men.",
+          plainAr: "بعبارة أخرى: آيةُ غضّ البصر في الرجال سابقةٌ على آية لباس النساء. فأوّلُ ما في السياق خطابٌ للرجال.",
+          ref: "Surah An-Nur (24:30-31)",
+          refAr: "سورة النور (٢٤:٣٠-٣١)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-hj-words",
+          title: "What the Arabic words actually say — read them slowly",
+          titleAr: "ما تقوله الألفاظُ العربية — على مهل",
+          body: "This is where nearly all the confusion lives, because the verse is usually read in translation and the translation hides what is going on.\n\n**﴿وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَىٰ جُيُوبِهِنَّ﴾** — \"and let them draw their **khumur** over their **juyub**.\"\n\n**Khumur (خُمُر)** is the plural of **khimar (خِمار)**, from the root خ-م-ر, to cover — the same root as the word for wine, because it covers the mind. A khimar is the cloth a woman puts over her head. **The women of Arabia were already wearing it before the verse came.** The verse does not introduce it and does not describe it: it uses the definite possessive, \"**their** khimars\", meaning the ones you already have.\n\n**Juyub (جُيوب)** is the plural of **jayb (جَيب)** — the opening of a garment at the neck, running down over the chest. In that time the khimar was thrown back over the shoulders, leaving the neck and the chest opening exposed.\n\nSo read what the command actually is: **take the head-covering you are already wearing, and bring it forward over your chest instead of throwing it behind you.** It is an instruction about where to put an existing garment.\n\nThe second verse uses a different word again:\n\n**﴿يُدْنِينَ عَلَيْهِنَّ مِن جَلَٰبِيبِهِنَّ﴾** — \"let them draw down over themselves [part] of their **jalabib**.\" **Jilbab (جِلباب)** is the loose outer wrap worn over the ordinary clothes when going out — the outer layer, not the headscarf. And again: \"**their** jalabib\", the ones they own.\n\nThis is why the Quran never specifies a colour, a country's costume, a fabric or a style. It gives a function. Everything else — the abaya, the shayla, the Malaysian tudung, the West African wrapper — is culture, and it varies enormously, which by itself disproves the idea that Islam imposed a uniform.",
+          bodyAr: "وههنا موضعُ عامّة اللبس، لأنّ الآية تُقرأ مترجمةً فتُخفي الترجمةُ ما يجري فيها.\n\n**﴿وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَىٰ جُيُوبِهِنَّ﴾**.\n\n**الخُمُر** جمع **خِمار**، من خ-م-ر أي السَّتر والتغطية — ومنه سُمّيت الخمرُ لأنها تُخامر العقل. والخمارُ ما تضعه المرأة على رأسها. **وكانت نساءُ العرب لابساتِه قبل نزول الآية.** فلم تُحدثه الآيةُ ولم تصفه، وإنما قالت «**بخُمُرهنّ**» أي التي عندكنّ.\n\n**والجُيوب** جمع **جَيب**، وهو فتحةُ الثوب عند العنق النازلةُ على الصدر. وكان الخمارُ يُلقى إلى الخلف على الظهر فيبقى العنقُ وفتحةُ الصدر باديين.\n\nفانظر ما الأمرُ حقًّا: **خذي غطاء الرأس الذي عليكِ فأرسليه على صدرك بدل أن تُلقيه وراءك.** فهو أمرٌ في موضع ثوبٍ موجود.\n\nوالآية الثانية بلفظٍ آخر:\n\n**﴿يُدْنِينَ عَلَيْهِنَّ مِن جَلَٰبِيبِهِنَّ﴾**. و**الجِلباب** الثوبُ الواسع يُلبس فوق الثياب عند الخروج — وهو الرداءُ الظاهر لا غطاءُ الرأس. وقيل كذلك: «**من جلابيبهنّ**» أي التي يملكنها.\n\nولهذا لم يذكر القرآنُ لونًا ولا زيَّ بلدٍ ولا نسيجًا ولا هيئة، وإنما ذكر وظيفة. وما سوى ذلك — العباءة، والشيلة، والتُّودونغ في ماليزيا، ولفاعُ غرب إفريقيا — فعُرفٌ يختلف اختلافًا شديدًا، وفي اختلافه وحده ردٌّ على دعوى أنّ الإسلام فرض زيًّا واحدًا.",
+          context: [
+            { tag: "The command, in full", tagAr: "الأمرُ بتمامه", ref: "An-Nur (24:31)", refAr: "النور (٢٤:٣١)",
+              ar: "وَقُل لِّلْمُؤْمِنَٰتِ يَغْضُضْنَ مِنْ أَبْصَٰرِهِنَّ وَيَحْفَظْنَ فُرُوجَهُنَّ وَلَا يُبْدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنْهَا ۖ وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَىٰ جُيُوبِهِنَّ … — وتمضي الآيةُ فتذكر من يجوز أن تُبدي زينتها أمامهم",
+              en: "And tell the believing women to reduce [some] of their vision and guard their private parts and not expose their adornment except that which [necessarily] appears thereof and to wrap [a portion of] their headcovers over their chests … — the verse then lists the relatives before whom she need not cover." },
+            { tag: "The second verse", tagAr: "الآية الثانية", ref: "Al-Ahzab (33:59)", refAr: "الأحزاب (٣٣:٥٩)",
+              ar: "يَٰٓأَيُّهَا ٱلنَّبِىُّ قُل لِّأَزْوَٰجِكَ وَبَنَاتِكَ وَنِسَآءِ ٱلْمُؤْمِنِينَ يُدْنِينَ عَلَيْهِنَّ مِن جَلَٰبِيبِهِنَّ ۚ ذَٰلِكَ أَدْنَىٰٓ أَن يُعْرَفْنَ فَلَا يُؤْذَيْنَ ۗ وَكَانَ ٱللَّهُ غَفُورًۭا رَّحِيمًۭا",
+              en: "O Prophet, tell your wives and your daughters and the women of the believers to bring down over themselves [part] of their outer garments. That is more suitable that they will be known and not be abused. And ever is Allah Forgiving and Merciful." }
+          ],
+          plain: "In plain words: the women already owned and wore a head cloth. The verse told them to bring it forward over the chest opening instead of throwing it back. That is the command — a placement, not a new uniform. The Quran never names a colour, a fabric or a country's costume, which is why Muslim women's clothing looks so different from one country to another.",
+          plainAr: "بعبارة أخرى: كانت المرأة تلبس الخمارَ قبل الآية، فأُمرت أن تُرسله على فتحة صدرها بدل إلقائه خلفها. فهذا هو الأمر: موضعُ ثوبٍ لا زيٌّ جديد. ولم يذكر القرآنُ لونًا ولا نسيجًا ولا زيَّ بلد، ولذلك اختلف لباسُ المسلمات من بلدٍ إلى بلد.",
+          ref: "Surah An-Nur (24:31); Surah Al-Ahzab (33:59); Ibn Manzur, Lisan al-Arab — خمر and جيب and جلبب; at-Tabari and Ibn Kathir on 24:31",
+          refAr: "سورة النور (٢٤:٣١)؛ سورة الأحزاب (٣٣:٥٩)؛ ابن منظور، لسان العرب — موادّ خمر وجيب وجلبب؛ الطبري وابن كثير عند (٢٤:٣١)",
+          strength: "quran, with the Arabic dictionaries and the tafsir",
+          strengthAr: "قرآن، ومعه معاجم العربية وكتب التفسير"
+        },
+        {
+          id: "ms-hj-why",
+          title: "Why — the reason she would give you, and the reason the verse gives",
+          titleAr: "لِمَ؟ — علّتُها هي، والعلّةُ في الآية",
+          body: "Ask a Muslim woman who wears it why she does, and the first answer is almost always the shortest one: **because Allah told me to.** That is not an evasion; it is the whole of it. It is worship, the same category as praying and fasting — things done for Him, whether or not anyone else understands them. Anyone who has fasted a summer day knows that people do difficult things for God without needing them to be socially explicable.\n\nBeyond that, the verse itself gives a reason: **﴿ذَٰلِكَ أَدْنَىٰٓ أَن يُعْرَفْنَ فَلَا يُؤْذَيْنَ﴾** — \"that is more suitable that they will be **known** and **not be abused**.\" **Yu'rafna**, from ع-ر-ف, to be recognised — to be identifiable as someone not available, so as not to be harassed.\n\nAnd many women describe a third thing, which is not in the verse but follows from it: it moves the question. In a world that measures a woman by her face and her body first and everything else afterwards, she has taken that measurement off the table. What is left to judge her by is her work, her mind, her character and her manners. A great many women describe that as the opposite of a cage.\n\nWhich is worth stating plainly, because the claim in the headline of this section says it makes them oppressed. **Ask them.** They are not silent, they are not rare, and they are not hard to find. Almost none of them will describe what you were told they would describe.",
+          bodyAr: "اسأل مسلمةً تلبسه: لِمَ؟ فأوّلُ الجواب في الغالب أقصرُه: **لأنّ الله أمرني**. وليس هذا تهرّبًا، بل هو الأمر كلُّه. فهي عبادةٌ من جنس الصلاة والصيام: تُفعل له سبحانه، فُهمت عند الناس أو لم تُفهم. ومن صام يومًا من الصيف يعلم أنّ الناس يحتملون المشقّة لله من غير حاجةٍ إلى أن يُقبل ذلك اجتماعيًّا.\n\nومع ذلك ذكرت الآيةُ علّةً: **﴿ذَٰلِكَ أَدْنَىٰٓ أَن يُعْرَفْنَ فَلَا يُؤْذَيْنَ﴾**. و«يُعرفن» من ع-ر-ف، أي يُميَّزن فلا يُتعرَّض لهنّ بأذى.\n\nوتذكر كثيرٌ منهنّ أمرًا ثالثًا ليس في الآية لكنه يتبعها: أنه ينقل السؤال. ففي دنيا تزن المرأة بوجهها وجسدها أوّلًا وبكلّ ما سواهما بعدَهما، تكون قد رفعت هذا الميزان من الطريق، فلم يبقَ ما تُقاس به إلا عملُها وعقلُها وخُلقُها وأدبُها. وكثيرٌ منهنّ يصفن ذلك بأنه ضدُّ القفص.\n\nوينبغي التصريح بهذا، فإنّ الدعوى في عنوان هذا القسم أنه قهرٌ لهنّ. **فاسألوهنّ.** فلسن ساكتاتٍ ولا قليلاتٍ ولا يعسر بلوغُهنّ. وقلَّ أن تجد فيهنّ من تصف ما قيل لك إنها تصفه.",
+          plain: "In plain words: she wears it because God asked her to — the same reason she prays and fasts. The verse adds its own reason: so that she is recognised and not harassed. And many women say it takes their looks off the table, so people have to deal with their mind and their character instead.",
+          plainAr: "بعبارة أخرى: تلبسه لأنّ الله أمرها، وهو سببُ صلاتها وصيامها. وذكرت الآيةُ علّةً: أن تُعرف فلا تُؤذى. وتقول كثيراتٌ منهنّ إنه يرفع مقياس الصورة، فيُضطرّ الناس إلى معاملة عقلها وخُلقها.",
+          ref: "Surah Al-Ahzab (33:59); Surah An-Nur (24:31)",
+          refAr: "سورة الأحزاب (٣٣:٥٩)؛ سورة النور (٢٤:٣١)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        },
+        {
+          id: "ms-hj-force",
+          title: "Forced? Then look at what happened the day the verse came down",
+          titleAr: "إكراهًا؟ فانظر ما وقع يوم نزلت الآية",
+          body: "There is a hadith that answers this without needing an argument.\n\nAishah رضي الله عنها said: **\"May Allah have mercy on the first women of the Muhajirat. When Allah revealed 'and let them draw their khimars over their chests', they tore their waist-wraps at the edges and covered themselves with them.\"** (al-Bukhari 4758, and 4759)\n\nRead that as a scene. The verse is recited. There is no shop and no time to prepare. So they take the cloth they are wearing, tear it, and cover themselves with it — immediately, in the same hour.\n\nNobody instructed them. Nobody enforced anything on them. There was no punishment in place and no one to administer one. They heard a command from their Lord and they were not willing to be an hour late in obeying it.\n\nThat is the origin of the practice, and it is the exact opposite of the picture in the claim. It began with women moving faster than anyone could have made them move.",
+          bodyAr: "وثمّ حديثٌ يُجيب عن هذا بلا حاجةٍ إلى محاجّة.\n\nقالت عائشةُ رضي الله عنها: **«يَرْحَمُ اللَّهُ نِسَاءَ الْمُهَاجِرَاتِ الْأُوَلَ، لَمَّا أَنْزَلَ اللَّهُ ﴿وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَى جُيُوبِهِنَّ﴾ شَقَّقْنَ مُرُوطَهُنَّ فَاخْتَمَرْنَ بِهَا»** (البخاري ٤٧٥٨، و٤٧٥٩).\n\nتصوّرها مشهدًا: تُتلى الآية، ولا سوقَ ولا مهلةَ استعداد. فيأخذن ما عليهنّ من الثياب فيشقّقنه فيختمرن به — من ساعتهنّ.\n\nلم يأمرهنّ أحد، ولم يُلزمهنّ أحد، ولم تكن ثمّ عقوبةٌ ولا من يُقيمها. سمعن أمرًا من ربّهنّ فلم يرضين أن يتأخّرن عنه ساعة.\n\nفهذا مبتدأ الأمر، وهو ضدُّ الصورة في الدعوى تمامًا: ابتدأ بنساءٍ سبقن كلَّ من كان يقدر أن يُلزمهنّ.",
+          plain: "In plain words: the day the verse came down, the women tore their own cloth and covered themselves within the hour. Nobody made them, and there was nobody to make them. That is where the practice started.",
+          plainAr: "بعبارة أخرى: يومَ نزلت الآيةُ شقَّقن ثيابهنّ واختمرن بها من ساعتهنّ. لم يُكرههنّ أحد ولم يكن ثمّ من يُكرههنّ. وهذا مبتدأ الأمر.",
+          ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4758 and 4759 — narrated from Aishah",
+          refAr: "صحيح البخاري، كتاب التفسير، حديث ٤٧٥٨ و٤٧٥٩ — عن عائشة",
+          strength: "Sahih — Narrated by al-Bukhari",
+          strengthAr: "صحيح — رواه البخاري"
+        },
+        {
+          id: "ms-hj-noforce",
+          title: "Who is allowed to force her? Nobody. And here is why",
+          titleAr: "فمن له أن يُكرهها؟ لا أحد. وهذه علّتُه",
+          body: "This needs to be said precisely, because the honest answer has two halves and dropping either one makes it false.\n\n**The first half: it is an obligation.** This site does not pretend otherwise. The covering is commanded in the Quran, and a Muslim woman who does not wear it has left something obligatory, exactly as a Muslim man who does not pray has. There is no need to soften that.\n\n**The second half: an obligation is not a permission for someone else.** The command is addressed **to her**. The account for it is **hers**, before Allah, on the Day of Judgement, where nobody carries anyone else's burden. Her father is not asked about her covering; she is. Nowhere in the Quran or the Sunnah is a man given authority to compel a woman into an act of worship.\n\n**And forcing it destroys the thing itself.** Return to the first hadith in al-Bukhari: **\"Actions are but by intentions.\"** A covering worn out of fear of a man is not worship — it is compliance with a man. It earns nothing, it changes nothing, and it teaches the person wearing it that religion is a thing done to you rather than a thing you choose. Force does not produce a religious woman. It produces someone who takes it off the moment she is out of sight, and it very often produces someone who resents the religion for the rest of her life.\n\n**What a family is actually asked to do** is what the Prophet ﷺ did with everyone: teach, explain, be an example, be patient, and make the religion beautiful to them. Allah told him — the best of creation, teaching the truth itself — that if he had been **\"harsh in heart, they would have disbanded from about you.\"** If harshness would have emptied the room around the Prophet ﷺ, it will not fill anyone's house.",
+          bodyAr: "وينبغي تحريرُ هذا، فإنّ الجواب الصادق شطران، ومن أسقط أحدهما كذب.\n\n**الشطر الأوّل: هو واجب.** ولا يُداري هذا الموقعُ في ذلك. فالسترُ مأمورٌ به في القرآن، ومن تركته من المسلمات فقد تركت واجبًا، كما أنّ من ترك الصلاة من الرجال قد ترك واجبًا. ولا حاجة إلى تليين هذا.\n\n**والشطر الثاني: الواجبُ على المرء ليس إذنًا لغيره عليه.** فالخطابُ موجَّهٌ **إليها**، والحسابُ **حسابُها** أمام الله يوم لا تزر وازرةٌ وزر أخرى. ولا يُسأل أبوها عن سترها، وإنما تُسأل هي. وليس في كتابٍ ولا سنّةٍ تسليطُ رجلٍ على امرأةٍ يُكرهها على عبادة.\n\n**والإكراهُ يُفسد الشيء نفسَه.** فارجع إلى أوّل حديثٍ في البخاري: **«إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ»**. فسترٌ يُلبس خوفًا من رجلٍ ليس عبادةً، وإنما هو طاعةٌ لرجل. لا يُؤجَر عليه، ولا يُغيّر شيئًا، ويُعلّم صاحبتَه أنّ الدين شيءٌ يُفعل بها لا شيءٌ تختاره. فالإكراه لا يُخرج امرأةً متديّنة، وإنما يُخرج من تخلعه إذا غابت العيون، وكثيرًا ما يُخرج من تُبغض الدين عمرَها كلَّه.\n\n**والذي يُطلب من الأهل** هو ما صنعه النبي ﷺ مع الناس: التعليمُ والبيانُ والقدوةُ والصبرُ وتحبيبُ الدين إليهم. وقد قال الله له — وهو خيرُ الخلق يُعلّم الحقّ نفسَه — إنه لو كان **﴿فَظًّا غَلِيظَ ٱلْقَلْبِ لَٱنفَضُّوا۟ مِنْ حَوْلِكَ﴾**. فإذا كانت الغلظةُ تُفرّغ المجلسَ من حول النبيّ ﷺ فلن تملأ بيتَ أحد.",
+          context: [
+            { tag: "To the Prophet ﷺ, about harshness", tagAr: "خطابٌ للنبيّ ﷺ في الغلظة", ref: "Aal-Imran (3:159)", refAr: "آل عمران (٣:١٥٩)",
+              ar: "فَبِمَا رَحْمَةٍۢ مِّنَ ٱللَّهِ لِنتَ لَهُمْ ۖ وَلَوْ كُنتَ فَظًّا غَلِيظَ ٱلْقَلْبِ لَٱنفَضُّوا۟ مِنْ حَوْلِكَ ۖ فَٱعْفُ عَنْهُمْ وَٱسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِى ٱلْأَمْرِ …",
+              en: "So by mercy from Allah, [O Muhammad], you were lenient with them. And if you had been rude [in speech] and harsh in heart, they would have disbanded from about you. So pardon them and ask forgiveness for them and consult them in the matter …" }
+          ],
+          plain: "In plain words: yes, it is obligatory — and no, that does not give any man the right to force it. The account is hers, before Allah. And forcing it destroys it anyway, because nothing counts in Islam without intention: a scarf worn out of fear of a father is obedience to a father, not worship of God.",
+          plainAr: "بعبارة أخرى: نعم هو واجب — ولا، ليس ذلك إذنًا لرجلٍ أن يُكره عليه. فالحسابُ حسابُها أمام الله. والإكراه يُفسده أصلًا، إذ لا عمل بلا نيّة: فخِمارٌ يُلبس خوفًا من أبٍ طاعةٌ لأبٍ لا عبادةٌ لله.",
+          ref: "Sahih al-Bukhari, Hadith 1; Surah Aal-Imran (3:159); Surah Al-An'am (6:164) — \"no bearer of burdens will bear the burden of another\"",
+          refAr: "صحيح البخاري، حديث ١؛ سورة آل عمران (٣:١٥٩)؛ سورة الأنعام (٦:١٦٤) — ﴿وَلَا تَزِرُ وَازِرَةٌ وِزْرَ أُخْرَىٰ﴾",
+          strength: "Sahih — Agreed upon (al-Bukhari and Muslim); and the Quran",
+          strengthAr: "صحيح — متفق عليه (البخاري ومسلم)؛ ومن القرآن"
+        },
+        {
+          id: "ms-hj-ban",
+          title: "Which brings up the one place a woman IS being told what she may wear",
+          titleAr: "وههنا الموضعُ الذي تُملى فيه على المرأة حقًّا",
+          body: "There is a straightforward way to test whether a person objecting to the hijab is objecting to compulsion or to Islam. Ask what they think about banning it.\n\nBecause the covering is banned by law in a number of places. France prohibited conspicuous religious symbols in state schools in 2004, and prohibited face coverings in public in 2010. Similar face-covering bans have followed in several other European countries. There are workplaces, universities and countries where a woman who chooses to cover cannot study, work, or in some cases walk down a street.\n\nAnd that is force. Not argued force, not implied force — a law, with a fine attached, telling a woman what she may not wear.\n\nIf someone's principle is that no woman should be compelled about her clothing, they hold that principle against her father AND against the state, and they will be found objecting to both. If it turns out they only object when the pressure runs in one direction, then the principle was never about her freedom.\n\nThis site's position is the consistent one: **the covering is an obligation from Allah, addressed to her, that no man and no government may impose or forbid.** It is between her and her Lord, and every party that tries to take that decision away from her — in either direction — is doing the same thing.",
+          bodyAr: "وثمّ ميزانٌ ظاهر يُعرف به أمُنكِرُ الحجاب منكرٌ للإكراه أم منكرٌ للإسلام: اسأله عن منعه بالقانون.\n\nفإنّ السترَ ممنوعٌ بالقانون في مواضع. منعت فرنسا الرموز الدينيّة الظاهرة في مدارس الدولة سنة ٢٠٠٤م، ومنعت تغطية الوجه في الأماكن العامّة سنة ٢٠١٠م. وتبعتها دولٌ أوروبيّةٌ أخرى بمنع تغطية الوجه. وثمّ أعمالٌ وجامعاتٌ وبلادٌ لا تستطيع المرأةُ المحتجبة فيها أن تدرس أو تعمل، أو أن تمشي في طريقٍ أحيانًا.\n\nوهذا هو الإكراه: ليس إكراهًا مستنبَطًا ولا ملمَّحًا إليه، بل قانونٌ عليه غرامة، يقول للمرأة ما لا تلبس.\n\nفمن كان أصلُه ألّا تُكره امرأةٌ في لباسها لزمه ذلك في أبيها وفي الدولة جميعًا، ووُجد منكرًا عليهما. فإن تبيّن أنه لا يُنكر إلا إذا كان الضغطُ في جهةٍ واحدة، فلم يكن الأصلُ في حرّيتها قطّ.\n\nوموقفُ هذا الموقع هو المطّرد: **السترُ فريضةٌ من الله، خطابُها إليها، ليس لرجلٍ ولا لدولةٍ أن تفرضه ولا أن تمنعه.** وهو بينها وبين ربّها، وكلُّ من نازعها هذا القرار — في أيّ الجهتين — فقد صنع الصنيع نفسه.",
+          plain: "In plain words: the hijab is banned by law in several countries — that is real force, with a fine attached. Someone who objects to a father pressuring his daughter but not to a state fining her was never objecting to force. It is her decision, and neither a man nor a government gets to make it for her.",
+          plainAr: "بعبارة أخرى: الحجابُ ممنوعٌ بالقانون في بلاد، وهذا إكراهٌ حقيقيٌّ عليه غرامة. ومن أنكر ضغطَ أبٍ على ابنته ولم يُنكر تغريم الدولة لها لم يكن يُنكر الإكراه. فهو قرارُها، ليس لرجلٍ ولا لدولةٍ أن يقرّره عنها.",
+          ref: "France, Law no. 2004-228 (15 March 2004) on religious symbols in state schools; Law no. 2010-1192 (11 October 2010) prohibiting the concealment of the face in public",
+          refAr: "فرنسا، القانون رقم ٢٠٠٤-٢٢٨ (١٥ مارس ٢٠٠٤م) في الرموز الدينية بمدارس الدولة؛ والقانون رقم ٢٠١٠-١١٩٢ (١١ أكتوبر ٢٠١٠م) في منع تغطية الوجه في الأماكن العامّة",
+          strength: "documented law, not scripture",
+          strengthAr: "قانونٌ موثّق، لا نصٌّ شرعيّ"
+        }
+      ],
+
+      close: "One last thing, because it comes up constantly: **\"what counts as hijab\"** is a separate question from this one, and the Quran and hadith do not answer it on their own — the conditions are what the scholars worked out. That question has its own detailed ruling on this page, under \"What the Scholars Explained\", with the conditions named and the disagreements stated. This section answers **why** and **who may compel**. That one answers **what**.",
+      closeAr: "وأمرٌ أخيرٌ لكثرة وروده: **«ما الذي يُعدّ حجابًا؟»** مسألةٌ أخرى غيرُ هذه، ولا يُجيب عنها القرآنُ والحديثُ وحدهما، وإنما شروطُها ممّا حرّره أهل العلم. ولها في هذه الصفحة حكمٌ مفصَّلٌ في قسم «ما شرحه أهل العلم»، مذكورةٌ فيه الشروطُ ومواضعُ الخلاف. وهذا القسمُ يُجيب عن **لِمَ** و**من له الإلزام**، وذاك يُجيب عن **ما هو**."
+    },
+
+    /* ---------- 5. Women ---------- */
+    {
+      id: "mis-women",
+      icon: "🌸",
+      claim: "\"Islam oppresses women. It gives a man the right to beat his wife, and treats her as property.\"",
+      claimAr: "«الإسلام يظلم المرأة، ويُبيح للرجل ضربَ زوجته، ويعاملها معاملة المتاع».",
+      title: "What was actually given to women — and the verse everyone quotes",
+      titleAr: "ماذا أُعطيت المرأة حقًّا — والآيةُ التي يحتجّ بها الجميع",
+      lead: "This has to be answered two ways, because there are two questions inside it. The first is a comparison, and it needs dates and legal documents rather than adjectives. The second is a specific verse — 4:34 — and it needs the Arabic word, the hadith beside it, and the scholars, without hiding anything.",
+      leadAr: "لا بدّ من الجواب عن هذا من وجهين، فإنّ فيه مسألتين. الأولى مقارنةٌ، وحاجتُها إلى التواريخ والنصوص القانونيّة لا إلى الأوصاف. والثانية آيةٌ بعينها — النساء ٣٤ — وحاجتُها إلى اللفظ العربيّ، وإلى الحديث الذي بجانبها، وإلى أقوال أهل العلم، من غير إخفاءِ شيء.",
+
+      answer: "Islamic law gave a woman her own property, her own earnings, a named share of inheritance, the right to refuse a marriage, and the right to seek knowledge — and it did so at a time when English law was still holding that a married woman had no separate legal existence at all. As for 4:34, the verse people quote: the Prophet ﷺ, who was sent to explain the Quran, never struck a woman in his life, said \"do not strike the female servants of Allah\", said \"the best of you are the best to their families\", and in his farewell sermon limited it to something \"that leaves no mark\". A man who beats his wife is not following that verse; he is doing the opposite of what the man who received it did.",
+      answerAr: "أعطت الشريعةُ المرأةَ مالَها وكسبَها ونصيبًا مفروضًا من الميراث، وحقَّ ردّ النكاح، وطلبَ العلم — وذلك في زمنٍ كان القانون الإنجليزيّ يقرّر فيه أنّ المتزوّجة لا كيان قانونيًّا لها منفصلًا. وأمّا آية النساء ٣٤: فإنّ النبي ﷺ الذي بُعث ليبيّن القرآن ما ضرب امرأةً قطّ، وقال: «لَا تَضْرِبُوا إِمَاءَ اللَّهِ»، وقال: «خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ»، وقيّده في خطبة الوداع بما لا يُبرّح ولا يترك أثرًا. فمن ضرب امرأته لم يتّبع الآية، وإنما خالف صنيعَ من نزلت عليه.",
+
+      cards: [
+        {
+          id: "ms-wm-given",
+          title: "What was given, and when — with the other side's dates beside it",
+          titleAr: "ما أُعطيت ومتى — مع تواريخ الجهة الأخرى",
+          body: "This is a comparison, so it needs dates on both sides rather than praise on one.\n\n**Her property stayed hers.** In Islamic law a woman's property and her earnings remain her own on marriage; her husband acquires no title to them. She trades, owns, sues and gives in her own name — and her maintenance remains his obligation, not a charge on her money.\n\nIn English common law the doctrine of coverture said the opposite. Blackstone's Commentaries (1765) stated it without embarrassment: the woman's very legal existence is suspended during marriage. It took statute to undo — the **Married Women's Property Act 1870**, extended in 1882. In the United States it went state by state from Mississippi in 1839.\n\n**A named share of inheritance**, fixed in the text: \"for men a share of what the parents and near relatives leave, and for women a share\" (4:7). The point is not the size of any share — it is that it is a legal entitlement she does not have to be granted by anyone.\n\n**Consent to her own marriage**, with a recorded case: Khansa bint Khidham was married off by her father against her will; she came to the Prophet ﷺ and **he cancelled the marriage** (al-Bukhari 5138). That is a father's arrangement overturned on a woman's objection, in the Sahih.\n\n**And an end to burying daughters alive** — which was happening. The Quran does not merely forbid it; it puts the murdered girl herself in the courtroom on the Day of Judgement: \"and when the girl buried alive is asked — **for what sin she was killed**\" (81:8-9). She is the one asked. Not her killer.\n\nFor scale on the other side: women received the vote on equal terms in the United States in 1920 and in the United Kingdom in 1928 — within living memory of people's grandparents. The full comparison, with the legal instruments named, is on the Golden Age page.",
+          bodyAr: "هذه مقارنة، فحاجتُها إلى التواريخ في الجهتين لا إلى الثناء في إحداهما.\n\n**مالُها يبقى لها.** ففي الشريعة يبقى مال المرأة وكسبُها لها بعد الزواج، ولا يملك الزوج منه شيئًا. تتّجر وتملك وتُخاصم وتهب باسمها، ونفقتُها عليه لا في مالها.\n\nوفي القانون الإنجليزيّ العامّ كان مذهب «التغطية» على العكس، ونصّ عليه بلاكستون سنة ١٧٦٥م بلا حرج: أنّ الوجود القانونيّ للمرأة يتعطّل مدّة الزواج. ولم يُنقض إلا بتشريع: **قانون أملاك المرأة المتزوّجة سنة ١٨٧٠م**، ووُسّع سنة ١٨٨٢م. وفي الولايات المتّحدة كان ولايةً ولاية ابتداءً من مسيسيبي سنة ١٨٣٩م.\n\n**ونصيبٌ مفروضٌ في الميراث** منصوصٌ عليه: ﴿لِّلرِّجَالِ نَصِيبٌۭ مِّمَّا تَرَكَ ٱلْوَٰلِدَانِ وَٱلْأَقْرَبُونَ وَلِلنِّسَآءِ نَصِيبٌۭ﴾ (٤:٧). وليست العبرة في مقدار نصيبٍ بعينه، وإنما في أنه حقٌّ لازمٌ لا مِنّةَ فيه لأحد.\n\n**ورضاها بنكاحها**، وله واقعةٌ مسجّلة: زوّج خنساءَ بنت خِذام أبوها وهي كارهة، فأتت النبيَّ ﷺ **فردّ نكاحه** (البخاري ٥١٣٨). فهذا عقدُ أبٍ يُنقض لاعتراض امرأة، في الصحيح.\n\n**وانتهاءُ وأد البنات** — وكان واقعًا. ولم يكتفِ القرآن بتحريمه، بل أقام الموءودةَ نفسَها في الموقف يوم القيامة: ﴿وَإِذَا ٱلْمَوْءُۥدَةُ سُئِلَتْ ۝ **بِأَىِّ ذَنۢبٍۢ قُتِلَتْ**﴾ (٨١:٨-٩). فهي المسؤولة، لا قاتلُها.\n\nوللمقارنة في الجهة الأخرى: نالت المرأةُ حقَّ التصويت مساواةً في الولايات المتّحدة سنة ١٩٢٠م وفي المملكة المتّحدة سنة ١٩٢٨م — وذلك في حياة أجداد الناس اليوم. والمقارنةُ التامّة بنصوصها القانونيّة في صفحة العصر الذهبيّ.",
+          context: [
+            { tag: "The buried daughter, asked herself", tagAr: "الموءودةُ تُسأل هي", ref: "At-Takwir (81:8-9)", refAr: "التكوير (٨١:٨-٩)",
+              ar: "وَإِذَا ٱلْمَوْءُۥدَةُ سُئِلَتْ ۝ بِأَىِّ ذَنۢبٍۢ قُتِلَتْ",
+              en: "And when the girl [who was] buried alive is asked — for what sin she was killed." }
+          ],
+          plain: "In plain words: a Muslim woman kept her own money and earnings, inherited a fixed share by law, and could cancel a marriage she did not agree to — while English law was still saying a married woman had no separate legal existence until 1870.",
+          plainAr: "بعبارة أخرى: كانت المسلمة تحتفظ بمالها وكسبها، وترث نصيبًا مفروضًا بالنصّ، وتردّ نكاحًا لم ترضَه — والقانون الإنجليزيّ يقرّر إلى سنة ١٨٧٠م أنّ المتزوّجة لا كيان قانونيًّا لها.",
+          ref: "Surah An-Nisa (4:7); Surah At-Takwir (81:8-9); Sahih al-Bukhari 5138; Blackstone, Commentaries on the Laws of England (1765); Married Women's Property Act 1870 and 1882",
+          refAr: "سورة النساء (٤:٧)؛ سورة التكوير (٨١:٨-٩)؛ صحيح البخاري ٥١٣٨؛ بلاكستون، تعليقات على قوانين إنجلترا (١٧٦٥م)؛ قانون أملاك المرأة المتزوّجة ١٨٧٠م و١٨٨٢م",
+          strength: "quran and Sahih al-Bukhari; the English law is documented statute",
+          strengthAr: "قرآن وصحيح البخاري؛ والقانون الإنجليزيّ نصٌّ تشريعيٌّ موثّق"
+        },
+        {
+          id: "ms-wm-honour",
+          title: "How he ﷺ actually spoke about women",
+          titleAr: "كيف تكلّم ﷺ عن النساء",
+          body: "The claim says women are treated as property. Set that against what the man himself said and did:\n• A man asked him who deserves his good company most. He said: **\"Your mother.\"** The man asked again — \"your mother.\" Again — \"your mother.\" Only the fourth time: \"then your father.\" (al-Bukhari 5971)\n• **\"The best of you are the best to their families, and I am the best of you to my family.\"** (at-Tirmidhi 3895)\n• Aishah رضي الله عنها, who lived in his house, was asked about him. She said: **\"The Messenger of Allah ﷺ never struck anything with his hand — not a woman and not a servant\"** — except when fighting in the way of Allah. (Sahih Muslim, Book of Virtues)\n• **\"Treat women well.\"** (al-Bukhari 3331)\n• When Umar came to him saying the women had become bold with their husbands, he had already said: **\"Do not strike the female servants of Allah.\"** After the permission was given, many women came to his household complaining of their husbands — and he said: \"Many women have come to the family of Muhammad complaining of their husbands. **Those are not the best of you.**\" (Abu Dawud 2146)\n• And in his farewell sermon, before the largest gathering of his life: **\"Fear Allah regarding women, for you have taken them by the covenant of Allah... and they have a right upon you to their provision and their clothing in kindness.\"** (Sahih Muslim, Book of Pilgrimage)\n\nThat last one is worth pausing on. Of all the things he could have used his last public address for, this is one of the things he chose.",
+          bodyAr: "تقول الدعوى إنّ المرأة تُعامل متاعًا. فقابل ذلك بما قاله الرجل نفسُه وفعله:\n• سأله رجلٌ: مَن أحقّ بحسن صحابتي؟ قال: **«أُمُّكَ»**. قال: ثم من؟ قال: «أُمُّكَ». قال: ثم من؟ قال: «أُمُّكَ». ثم في الرابعة: «ثُمَّ أَبُوكَ» (البخاري ٥٩٧١).\n• **«خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ، وَأَنَا خَيْرُكُمْ لِأَهْلِي»** (الترمذي ٣٨٩٥).\n• سُئلت عائشةُ رضي الله عنها وقد عاشت في بيته، فقالت: **«مَا ضَرَبَ رَسُولُ اللَّهِ ﷺ شَيْئًا قَطُّ بِيَدِهِ، وَلَا امْرَأَةً وَلَا خَادِمًا»** إلا أن يجاهد في سبيل الله (صحيح مسلم، كتاب الفضائل).\n• **«اسْتَوْصُوا بِالنِّسَاءِ»** (البخاري ٣٣٣١).\n• وكان قد قال: **«لَا تَضْرِبُوا إِمَاءَ اللَّهِ»**. فلمّا جاء عمرُ يذكر أنّ النساء ذَئِرْنَ على أزواجهنّ ورُخّص، أطاف بآل بيته نساءٌ كثيرٌ يشكون أزواجهنّ، فقال: «لَقَدْ طَافَ بِآلِ مُحَمَّدٍ نِسَاءٌ كَثِيرٌ يَشْكُونَ أَزْوَاجَهُنَّ، **لَيْسَ أُولَئِكَ بِخِيَارِكُمْ**» (أبو داود ٢١٤٦).\n• وفي خطبة الوداع أمام أعظم جمعٍ في حياته: **«فَاتَّقُوا اللَّهَ فِي النِّسَاءِ، فَإِنَّكُمْ أَخَذْتُمُوهُنَّ بِأَمَانِ اللَّهِ ... وَلَهُنَّ عَلَيْكُمْ رِزْقُهُنَّ وَكِسْوَتُهُنَّ بِالْمَعْرُوفِ»** (صحيح مسلم، كتاب الحجّ).\n\nوهذه الأخيرة جديرةٌ بالوقوف: فمن بين كلّ ما كان يمكن أن يجعله في آخر خطابٍ عامٍّ له، اختار هذا من جملة ما اختار.",
+          plain: "In plain words: he was asked who deserves the best treatment and said \"your mother\" three times before he said \"your father\". His own wife said he never once struck a woman or a servant in his life. He said men who beat their wives are not the best of you. And he used his farewell sermon to tell men to fear Allah regarding women.",
+          plainAr: "بعبارة أخرى: سُئل: من أحقّ بحسن الصحبة؟ فقال «أمّك» ثلاثًا قبل أن يقول «أبوك». وقالت زوجتُه إنه ما ضرب امرأةً ولا خادمًا قطّ. وقال إنّ من يضربون نساءهم ليسوا بخياركم. وجعل من وصيّته في خطبة الوداع أن يتّقي الرجالُ الله في النساء.",
+          ref: "Sahih al-Bukhari 5971 and 3331; Sahih Muslim, Book of Virtues and Book of Pilgrimage; Sunan Abu Dawud 2146; Jami at-Tirmidhi 3895",
+          refAr: "صحيح البخاري ٥٩٧١ و٣٣٣١؛ صحيح مسلم، كتاب الفضائل وكتاب الحج؛ سنن أبي داود ٢١٤٦؛ جامع الترمذي ٣٨٩٥",
+          strength: "Sahih for al-Bukhari and Muslim; Abu Dawud and at-Tirmidhi are outside the two Sahihs, both authenticated by al-Albani",
+          strengthAr: "صحيحٌ ما لدى البخاري ومسلم؛ وأبو داود والترمذي خارج الصحيحين، وصحّحهما الألباني"
+        },
+        {
+          id: "ms-wm-434",
+          title: "4:34 — the verse itself, said plainly and not hidden",
+          titleAr: "النساء ٣٤ — الآيةُ نفسُها، مصرَّحًا بها لا مخفاة",
+          body: "The verse says, of a wife whose ***nushuz*** the husband fears: advise her; then withdraw from the bed; then **wadribuhunna**.\n\nThis site is not going to pretend the word is not there. What it will do is give you the four things that anyone reading it honestly has to read with it.\n\n**One — what nushuz means.** It is not a wife who annoyed him, argued, burnt the dinner, or refused an errand. In the fiqh books **nushuz** is a specific thing: the deliberate breaking of the marriage bond — open defiance of the contract itself. The same word is used of a **husband** eleven verses later (4:128), where the remedy prescribed is reconciliation. It is a term for a marriage in collapse, not for an ordinary disagreement.\n\n**Two — the three steps are a sequence designed to end before it arrives.** They descend in escalation over what is, in the books, a long period. Two of the three are talking and withdrawing. The structure is a ladder built so that the man gets off it.\n\n**Three — what the word was limited to, by the man who received the verse.** In the farewell sermon, in Sahih Muslim, he ﷺ limits it in the same sentence: **\"ḍarban ghayra mubarrih\"** — a striking that is **not injurious**, that leaves no mark. The commentators are unanimous that it excludes the face, excludes anything that harms, and excludes anything that leaves a trace. It is symbolic by definition: the moment it hurts, it has exceeded what the text permits and become a crime the man is liable for.\n\n**Four — and this is the one that settles it — what he ﷺ actually did.** He was sent to explain the Quran and to live it. He received this verse. **And he never struck a woman in his life.** His wife says so, in Sahih Muslim. He said \"do not strike the female servants of Allah\", and when men did it he said they were not the best of them.\n\nSo a man beating his wife and pointing at 4:34 is pointing at a verse whose recipient never once acted on it, whose wording he limited to something that leaves no mark, and about whose practitioners he said: those are not the best of you.\n\n**And the scholars did not all read it the same way.** Ata' ibn Abi Rabah, one of the great jurists of Makkah among the Tabi'un, held that a man should not strike his wife at all but should show his anger. Ash-Shafi'i held it permitted but that abandoning it is better. Ibn Ashur, in at-Tahrir wa't-Tanwir, argued that where men misuse it, the ruler may forbid it outright. The disagreement is stated here rather than tidied away, because that is what this site does everywhere else.",
+          bodyAr: "الآيةُ في زوجةٍ يُخاف **نشوزُها**: فعِظُوهنّ، ثم اهجروهنّ في المضاجع، ثم **﴿وَٱضْرِبُوهُنَّ﴾**.\n\nولن يتظاهر هذا الموقعُ بأنّ اللفظ غيرُ موجود. وإنما يذكر لك أربعةَ أمورٍ يلزم كلَّ قارئٍ منصفٍ أن يقرأها معه.\n\n**الأوّل — ما النشوز؟** ليس زوجةً أغضبته أو راجعته أو أحرقت الطعام أو أبت حاجة. والنشوزُ في كتب الفقه أمرٌ معيّن: التمرّدُ على عقد النكاح ونقضُه ظاهرًا. واللفظُ نفسُه مستعملٌ في **الرجل** بعد إحدى عشرة آية: ﴿وَإِنِ ٱمْرَأَةٌ خَافَتْ مِنۢ بَعْلِهَا نُشُوزًا﴾ (٤:١٢٨)، وعلاجُه هناك الصلح. فهو لفظٌ لزواجٍ ينهار لا لخلافٍ عاديّ.\n\n**الثاني — الخطواتُ الثلاث ترتيبٌ مقصودٌ به أن ينتهي قبل بلوغ آخره.** فهي متدرّجةٌ على مدّةٍ طويلةٍ في الكتب، واثنتان من الثلاث كلامٌ وهجر. والبناءُ سُلَّمٌ صُنع ليَنزل عنه الرجل.\n\n**الثالث — بمَ قُيّد اللفظ، على لسان من نزلت عليه الآية؟** في خطبة الوداع، في صحيح مسلم، قيّده في الجملة نفسها: **«ضَرْبًا غَيْرَ مُبَرِّحٍ»**، أي لا يشتدّ ولا يترك أثرًا. وأجمع المفسّرون على أنه يُستثنى منه الوجه، وكلُّ ما آذى، وكلُّ ما أبقى أثرًا. فهو رمزيٌّ بحدّه: فمتى آلم فقد جاوز ما أذن به النصّ وصار جنايةً يُؤخذ بها.\n\n**والرابع — وهو الفاصل — ما فعله ﷺ.** بُعث ليبيّن القرآن ويعمل به. ونزلت عليه هذه الآية. **وما ضرب امرأةً قطّ في حياته.** تقول ذلك زوجتُه، في صحيح مسلم. وقال: «لَا تَضْرِبُوا إِمَاءَ اللَّهِ»، ولمّا فعل رجالٌ ذلك قال: «لَيْسَ أُولَئِكَ بِخِيَارِكُمْ».\n\nفمن ضرب امرأته مشيرًا إلى الآية فإنما يشير إلى آيةٍ لم يعمل بها من نزلت عليه قطّ، وقيّد لفظها بما لا يترك أثرًا، وقال في أهلها: ليس أولئك بخياركم.\n\n**ولم يكن أهلُ العلم على قولٍ واحد.** فذهب عطاء بن أبي رباح، وهو من كبار فقهاء مكّة من التابعين، إلى أنه لا يضربها وإنما يُغضب عليها. وذهب الشافعيّ إلى أنه مباحٌ وتركُه أولى. وذهب ابن عاشور في «التحرير والتنوير» إلى أنّ لوليّ الأمر منعَه إذا أساء الرجال استعماله. والخلافُ مذكورٌ ههنا لا مطويّ، فهذا صنيع هذا الموقع في كلّ موضع.",
+          context: [
+            { tag: "The limit, from his farewell sermon", tagAr: "القيدُ من خطبة الوداع", ref: "Sahih Muslim, Book of Pilgrimage", refAr: "صحيح مسلم، كتاب الحج",
+              ar: "فَاتَّقُوا اللَّهَ فِي النِّسَاءِ، فَإِنَّكُمْ أَخَذْتُمُوهُنَّ بِأَمَانِ اللَّهِ ... فَاضْرِبُوهُنَّ ضَرْبًا غَيْرَ مُبَرِّحٍ، وَلَهُنَّ عَلَيْكُمْ رِزْقُهُنَّ وَكِسْوَتُهُنَّ بِالْمَعْرُوفِ",
+              en: "Fear Allah regarding women, for you have taken them by the covenant of Allah... [and if they do so] then strike them with a striking that is not injurious, and they have a right upon you to their provision and their clothing in kindness." }
+          ],
+          plain: "In plain words: the verse is about a marriage that is collapsing, not a disagreement. Two of its three steps are talking and withdrawing. The Prophet ﷺ limited the third to something that leaves no mark, said men who do it are not the best of you — and never once did it himself in his entire life. A man who beats his wife has not followed the verse; he has done the opposite of what the man who received it did.",
+          plainAr: "بعبارة أخرى: الآية في زواجٍ ينهار لا في خلافٍ عارض. واثنتان من خطواتها الثلاث كلامٌ وهجر. وقيّد النبي ﷺ الثالثة بما لا يترك أثرًا، وقال في فاعليها: ليس أولئك بخياركم — وما فعلها هو قطّ في عمره كلّه. فمن ضرب امرأته لم يتّبع الآية، وإنما خالف صنيع من نزلت عليه.",
+          ref: "Surah An-Nisa (4:34) and (4:128); Sahih Muslim, Book of Pilgrimage — the farewell sermon, and Book of Virtues — Aishah; Sunan Abu Dawud 2146; at-Tabari and Ibn Kathir on 4:34; Ibn Ashur, At-Tahrir wat-Tanwir",
+          refAr: "سورة النساء (٤:٣٤) و(٤:١٢٨)؛ صحيح مسلم، كتاب الحج — خطبة الوداع، وكتاب الفضائل — عن عائشة؛ سنن أبي داود ٢١٤٦؛ الطبري وابن كثير عند (٤:٣٤)؛ ابن عاشور، التحرير والتنوير",
+          strength: "quran, with Sahih Muslim; the scholars' positions are named individually",
+          strengthAr: "قرآن، ومعه صحيح مسلم؛ وأقوالُ أهل العلم منسوبةٌ إلى أصحابها"
+        },
+        {
+          id: "ms-wm-culture",
+          title: "And where the real abuse comes from — said honestly",
+          titleAr: "ومن أين يأتي الظلمُ حقًّا — بصراحة",
+          body: "None of the above claims that no Muslim woman is mistreated. Some are, and it would be worthless to write this section and pretend otherwise.\n\nBut a fair argument has to separate two things: **what a religion instructs, and what a culture does.** Forced marriage, denying a woman her inheritance, honour killing, denying a girl an education — every one of those is **forbidden** in Islamic law, and several of them are contradicted by explicit texts on this very page. A father who forces a daughter into marriage is doing the thing the Prophet ﷺ overturned in al-Bukhari 5138. A family that withholds her inheritance is taking what the Quran assigned her by name.\n\nWhen a Muslim does one of those, the Islamic texts are the strongest evidence against him — which is why reform inside Muslim societies has so often been argued **from** the texts rather than against them.\n\nAnd the same distinction has to be extended in the other direction to be worth anything. Domestic violence is not a Muslim phenomenon; it exists at serious rates in every society on earth, including the ones that raise this argument. Naming that is not a defence of anything — a wrong is not made smaller by being common. It is simply what honesty requires when a rule is being applied to one group only.",
+          bodyAr: "ليس في ما تقدّم دعوى أنّ مسلمةً لا تُظلم. فذلك واقعٌ في بعضهنّ، ولا قيمة لهذا القسم إن كُتب على غير هذا.\n\nغير أنّ الإنصاف يقتضي التفريق بين أمرين: **ما يأمر به الدين وما تفعله العادة.** فالإكراهُ على النكاح، ومنعُ المرأة ميراثَها، والقتلُ باسم الشرف، وحرمانُ البنت من التعليم — كلُّ ذلك **محرَّمٌ** في الشريعة، وبعضُه تردّه نصوصٌ في هذه الصفحة نفسها. فمن أكره ابنته على النكاح فقد فعل ما نقضه النبي ﷺ في البخاري (٥١٣٨). ومن حبس عنها ميراثَها فقد أخذ ما سمّاه الله لها.\n\nومتى فعل مسلمٌ شيئًا من ذلك كانت نصوصُ الإسلام أقوى ما يُحتجّ به عليه — ولهذا كان الإصلاح في مجتمعات المسلمين كثيرًا ما يُحتجّ له **بالنصوص** لا عليها.\n\nوهذا التفريقُ نفسُه يلزم في الجهة الأخرى ليكون له قيمة. فالعنفُ الأسريّ ليس ظاهرةً إسلاميّة، وهو بنسبٍ ثقيلةٍ في كلّ مجتمعٍ على وجه الأرض، ومنها المجتمعاتُ التي تُثار فيها هذه الحجّة. وليس ذكرُ هذا دفاعًا عن شيء — فالمنكرُ لا يصغر بكثرته — وإنما هو ما يوجبه الإنصاف حين تُطبَّق قاعدةٌ على طائفةٍ دون غيرها.",
+          plain: "In plain words: yes, some Muslim women are treated badly — and everything done to them is already forbidden by the same texts on this page. Forced marriage, stealing her inheritance, honour killing: all haram. When a Muslim does those things, Islam is the evidence against him.",
+          plainAr: "بعبارة أخرى: نعم، بعضُ المسلمات يُظلمن — وكلُّ ما يُفعل بهنّ محرَّمٌ بالنصوص التي في هذه الصفحة. فالإكراه على النكاح، وأكلُ ميراثها، والقتل باسم الشرف: حرامٌ كلُّه. ومتى فعل مسلمٌ ذلك كان الإسلام هو الحجّة عليه.",
+          ref: "Sahih al-Bukhari 5138; Surah An-Nisa (4:7) and (4:19); and see the section \"How women were treated\" on the Golden Age page",
+          refAr: "صحيح البخاري ٥١٣٨؛ سورة النساء (٤:٧) و(٤:١٩)؛ وانظر قسم «كيف عُوملت المرأة» في صفحة العصر الذهبيّ",
+          strength: "quran and Sahih al-Bukhari",
+          strengthAr: "قرآن وصحيح البخاري"
+        }
+      ],
+
+      close: "The fuller comparison — property law, inheritance, consent, the women who taught the men whose books we still read, with the dates and legal instruments on both sides — is set out on the **Golden Age** page under \"How women were treated\". It also names one popular claim in this argument as **false** and refuses to use it, for the same reason the \"greater jihad\" narration is refused here.",
+      closeAr: "والمقارنةُ التامّة — في أحكام المال والميراث والرضا، وفي النساء اللاتي علّمن الرجالَ الذين نقرأ كتبهم، بالتواريخ والنصوص القانونيّة في الجهتين — مبسوطةٌ في صفحة **العصر الذهبيّ** تحت «كيف عُوملت المرأة». وفيها التصريح بأنّ دعوى مشهورةً في هذا الباب **غيرُ صحيحة**، والامتناعُ عن الاحتجاج بها، للعلّة التي رُدّ بها حديثُ «الجهاد الأكبر» ههنا."
+    },
+
+    /* ---------- 6. Terrorism and the Khawarij ---------- */
+    {
+      id: "mis-terror",
+      icon: "🚫",
+      claim: "\"Muslims are terrorists. Their religion produces this.\"",
+      claimAr: "«المسلمون إرهابيّون، ودينُهم يُنتج هذا».",
+      title: "Killing civilians — and the people the Prophet ﷺ warned about by name",
+      titleAr: "قتلُ الآمنين — والقومُ الذين حذّر منهم النبي ﷺ بأوصافهم",
+      lead: "This is the one where the Islamic texts are hardest — not on the accusation, but on the people who do it. He ﷺ described them, fourteen centuries in advance, and what he said about them is more severe than anything said from outside.",
+      leadAr: "وهذا الموضعُ أشدُّ ما تكون فيه نصوصُ الإسلام — لا على الدعوى، بل على من يفعل ذلك. فقد وصفهم ﷺ قبل أربعة عشر قرنًا، وما قاله فيهم أشدُّ من كلّ ما قيل من خارج.",
+
+      answer: "Killing a person who is not fighting you is forbidden absolutely — \"whoever kills a soul... it is as if he had slain mankind entirely\" (5:32). Killing yourself is separately forbidden, so a suicide attack breaks two prohibitions at once. Killing anyone under a grant of safety — a traveller, a trader, a citizen of a state you have a treaty with — costs Paradise (al-Bukhari 3166). And the Prophet ﷺ described a group who would recite the Quran, kill the people of Islam and leave the idolaters, and said: \"they pass out of the religion as an arrow passes clean through the game\" (al-Bukhari 3610 and 3344, and Sahih Muslim). The strongest condemnation of these people is inside the religion, not outside it.",
+      answerAr: "قتلُ من لا يقاتلك محرَّمٌ قطعًا: ﴿مَن قَتَلَ نَفْسًۢا ... فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعًۭا﴾ (٥:٣٢). وقتلُ النفس محرَّمٌ على حِدة، فالعمليّةُ الانتحاريّة تجمع محرّمين. وقتلُ من أُعطي أمانًا — عابرٍ أو تاجرٍ أو من دولةٍ بينك وبينها عهد — حرمانٌ من الجنّة (البخاري ٣١٦٦). ووصف النبي ﷺ قومًا يقرؤون القرآن ويقتلون أهل الإسلام ويدعون أهل الأوثان فقال: «يَمْرُقُونَ مِنَ الدِّينِ كَمَا يَمْرُقُ السَّهْمُ مِنَ الرَّمِيَّةِ» (البخاري ٣٦١٠ و٣٣٤٤، ومسلم). فأشدُّ ما قيل في هؤلاء إنما قيل داخل الدين لا خارجه.",
+
+      cards: [
+        {
+          id: "ms-tr-forbidden",
+          title: "Every element of it is separately forbidden",
+          titleAr: "كلُّ جزءٍ منه محرَّمٌ على حِدة",
+          body: "Take an attack on civilians apart and count the prohibitions it breaks:\n\n**Killing a person who is not fighting you.** \"Whoever kills a soul unless for a soul or for corruption in the land — it is as if he had slain mankind entirely\" (5:32). And: \"do not kill the soul which Allah has forbidden, except by right\" (17:33).\n\n**Killing women, children and the elderly.** Forbidden explicitly — al-Bukhari 3015, and Abu Bakr's ten standing orders to an army at war.\n\n**Killing anyone under a grant of safety.** \"Whoever kills a mu'ahid will not smell the fragrance of Paradise, and its fragrance is found at a distance of forty years\" (al-Bukhari 3166). A **mu'ahid** is anyone with a covenant of safety — including a visitor, a trader, or a citizen of a state at peace with yours. Which means that a person living peacefully in a country, or visiting one, is protected by that alone.\n\n**Killing yourself.** \"And do not kill yourselves. Indeed, Allah is to you ever Merciful\" (4:29). And the hadith is severe: whoever kills himself with a blade will have that blade in his hand in the Fire (al-Bukhari 5778). So an attacker who dies in the act has committed a second forbidden killing — his own — before any question about his victims.\n\n**Treachery.** He ﷺ forbade breaking a covenant even with an enemy in open war.\n\n**Burning.** \"None punishes with fire but the Lord of fire\" (Abu Dawud 2673).\n\nThere is no reading of the texts under which those add up to an act of worship. They add up to a list of major sins committed at once.",
+          bodyAr: "فُكَّ الاعتداءَ على الآمنين إلى أجزائه، وعُدَّ ما ينقض من المحرَّمات:\n\n**قتلُ من لا يقاتلك**: ﴿مَن قَتَلَ نَفْسًۢا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍۢ فِى ٱلْأَرْضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعًۭا﴾ (٥:٣٢)، و﴿وَلَا تَقْتُلُوا۟ ٱلنَّفْسَ ٱلَّتِى حَرَّمَ ٱللَّهُ إِلَّا بِٱلْحَقِّ﴾ (١٧:٣٣).\n\n**وقتلُ النساء والصبيان والشيوخ**: منهيٌّ عنه نصًّا — البخاري (٣٠١٥)، ووصايا أبي بكر العشر لجيشٍ في حرب.\n\n**وقتلُ من أُعطي أمانًا**: «مَنْ قَتَلَ مُعَاهَدًا لَمْ يَرَحْ رَائِحَةَ الْجَنَّةِ، وَإِنَّ رِيحَهَا تُوجَدُ مِنْ مَسِيرَةِ أَرْبَعِينَ عَامًا» (البخاري ٣١٦٦). و**المعاهَد** كلُّ من له عهدُ أمان، ومنه الزائرُ والتاجرُ ومواطنُ دولةٍ بينك وبينها سلم. فمن أقام في بلدٍ آمنًا أو زارها فهو معصومٌ بذلك وحده.\n\n**وقتلُ النفس**: ﴿وَلَا تَقْتُلُوٓا۟ أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًۭا﴾ (٤:٢٩)، والحديثُ شديد: «وَمَنْ قَتَلَ نَفْسَهُ بِحَدِيدَةٍ فَحَدِيدَتُهُ فِي يَدِهِ يَجَأُ بِهَا فِي بَطْنِهِ فِي نَارِ جَهَنَّمَ» (البخاري ٥٧٧٨). فمن مات في فعلته فقد ارتكب قتلًا محرَّمًا ثانيًا — نفسَه — قبل السؤال عن ضحاياه.\n\n**والغدر**: نهى ﷺ عن نقض العهد ولو مع عدوٍّ في حربٍ ظاهرة.\n\n**والتحريق**: «لَا يُعَذِّبُ بِالنَّارِ إِلَّا رَبُّ النَّارِ» (أبو داود ٢٦٧٣).\n\nفليس في النصوص وجهٌ تجتمع به هذه فتصير عبادة، وإنما تجتمع فتصير جملةً من الكبائر في فعلةٍ واحدة.",
+          plain: "In plain words: killing someone not fighting you is forbidden, killing women and children is forbidden, killing anyone who has been given safety costs Paradise, and killing yourself is forbidden on its own. A suicide attack breaks all of them at once.",
+          plainAr: "بعبارة أخرى: قتلُ من لا يقاتلك حرام، وقتلُ النساء والصبيان حرام، وقتلُ من أُعطي أمانًا حرمانٌ من الجنّة، وقتلُ النفس حرامٌ على حِدة. والعمليّةُ الانتحاريّة تنقض هذه كلَّها في فعلةٍ واحدة.",
+          ref: "Surah Al-Ma'idah (5:32); Surah Al-Isra (17:33); Surah An-Nisa (4:29-30); Sahih al-Bukhari 3015, 3166 and 5778; Sunan Abu Dawud 2673; Malik, Al-Muwatta 968",
+          refAr: "سورة المائدة (٥:٣٢)؛ سورة الإسراء (١٧:٣٣)؛ سورة النساء (٤:٢٩-٣٠)؛ صحيح البخاري ٣٠١٥ و٣١٦٦ و٥٧٧٨؛ سنن أبي داود ٢٦٧٣؛ موطّأ مالك ٩٦٨",
+          strength: "quran and Sahih al-Bukhari; Abu Dawud is outside the two Sahihs",
+          strengthAr: "قرآن وصحيح البخاري؛ وأبو داود خارج الصحيحين"
+        },
+        {
+          id: "ms-tr-khawarij",
+          title: "He ﷺ described them, and said they leave the religion",
+          titleAr: "وصفهم ﷺ وأخبر أنهم يخرجون من الدين",
+          body: "This is the part that ought to be much better known, because it is the religion's own verdict, delivered in advance.\n\nA man came to the Prophet ﷺ while he was distributing wealth and said: **\"Be just, Muhammad.\"** Umar asked permission to strike his neck. He ﷺ refused, and then said of him:\n\n**\"From the offspring of this man will come a people who recite the Quran but it does not pass beyond their throats. They will kill the people of Islam and leave the idol-worshippers. They pass out of the religion as an arrow passes clean through the game.\"** (al-Bukhari 3344, and Sahih Muslim)\n\nAnd in the other narration, of the same group: \"one of you would look down on his own prayer beside their prayer, and his fasting beside their fasting\" — meaning they would appear the most religious people you had ever seen. (al-Bukhari 3610, and Sahih Muslim)\n\nRead the marks he gave, because they are precise, and they are a portrait:\n\n1. **They recite the Quran** — constantly. Nobody outrecites them.\n2. **It does not reach their hearts.** They have the words and not the meaning.\n3. **They kill Muslims and leave the idolaters.** Their victims are overwhelmingly other Muslims — which is exactly what the record shows.\n4. **Their worship is impressive.** This is not hypocrisy; they mean it.\n5. **They pass out of the religion**, cleanly, like an arrow through an animal — through and out, with nothing of it left on them.\n\nThese are the **Khawarij**, and this is the first thing Muslims call the people who do these acts, because he ﷺ gave the description and it fits.\n\nThat is why the sentence \"Muslims are terrorists\" fails on the group's own texts: the people it means are described in both Sahihs as having gone straight through the religion and out the other side.",
+          bodyAr: "وهذا ما ينبغي أن يُعرف أكثر ممّا يُعرف، فإنه حكم الدين نفسِه، قيل سلفًا.\n\nجاء رجلٌ إلى النبي ﷺ وهو يقسم فقال: **«اتَّقِ اللَّهَ يَا مُحَمَّدُ»**. فاستأذنه عمرُ في ضرب عنقه فمنعه، ثم قال فيه:\n\n**«إِنَّ مِنْ ضِئْضِئِ هَذَا قَوْمًا يَقْرَءُونَ الْقُرْآنَ لَا يُجَاوِزُ حَنَاجِرَهُمْ، يَمْرُقُونَ مِنَ الدِّينِ مُرُوقَ السَّهْمِ مِنَ الرَّمِيَّةِ، يَقْتُلُونَ أَهْلَ الْإِسْلَامِ وَيَدَعُونَ أَهْلَ الْأَوْثَانِ»** (البخاري ٣٣٤٤، ومسلم).\n\nوفي الرواية الأخرى فيهم: «يَحْقِرُ أَحَدُكُمْ صَلَاتَهُ مَعَ صَلَاتِهِمْ وَصِيَامَهُ مَعَ صِيَامِهِمْ» — أي يبدون أشدَّ من رأيت تديّنًا (البخاري ٣٦١٠، ومسلم).\n\nوتأمّل العلامات، فإنها دقيقة، وهي صورةٌ تامّة:\n\n١. **يقرؤون القرآن** كثيرًا، لا يُبَزّون فيه.\n٢. **ولا يجاوز حناجرهم**: عندهم اللفظُ دون المعنى.\n٣. **يقتلون أهل الإسلام ويدعون أهل الأوثان**: وعامّةُ ضحاياهم مسلمون، وهو ما يشهد به الواقع.\n٤. **عبادتُهم تبهر**: وليس هذا نفاقًا، فهم صادقون فيه.\n٥. **ويمرقون من الدين** مروقَ السهم من الرميّة: نفاذًا وخروجًا لا يعلق منه شيء.\n\nهؤلاء هم **الخوارج**، وهو أوّلُ ما يُسمّي به المسلمون من يفعل هذه الأفعال، لأنه ﷺ وصفهم فانطبق الوصف.\n\nولهذا تسقط جملة «المسلمون إرهابيّون» بنصوص الطائفة نفسِها: فالذين تعنيهم موصوفون في الصحيحين بأنهم نفذوا من الدين وخرجوا من الجهة الأخرى.",
+          plain: "In plain words: the Prophet ﷺ described these people 1400 years before they existed — people who recite the Quran constantly, look more religious than anyone, kill Muslims and leave the idol-worshippers alone. He said they go through the religion and out the other side, like an arrow through an animal.",
+          plainAr: "بعبارة أخرى: وصف النبي ﷺ هؤلاء قبل وجودهم بأربعة عشر قرنًا — قومٌ يُكثرون قراءة القرآن، ويبدون أشدَّ الناس تديّنًا، يقتلون المسلمين ويدعون عبّاد الأوثان. وقال إنهم ينفذون من الدين ويخرجون من الجهة الأخرى كالسهم من الرميّة.",
+          ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3344, and Book of the Merits of the Ansar, Hadith 3610; Sahih Muslim, Book of Zakat",
+          refAr: "صحيح البخاري، كتاب أحاديث الأنبياء، حديث ٣٣٤٤، وكتاب مناقب الأنصار، حديث ٣٦١٠؛ صحيح مسلم، كتاب الزكاة",
+          strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+          strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
+        },
+        {
+          id: "ms-tr-justice",
+          title: "And the rule that has to be applied in both directions",
+          titleAr: "والقاعدةُ التي تلزم في الجهتين",
+          body: "There is a verse that decides this whole argument, and its edge points at the reader, whoever the reader is:\n\n**\"O you who have believed, be persistently standing firm for Allah, witnesses in justice, and do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness.\"** (5:8)\n\nRead it as an instruction to a Muslim. It says: your dislike of a people **does not** license you to treat them unfairly. Not when they are wrong. Not when they have wronged you. Justice is owed to people you hate, and being owed it is not conditional on their deserving it.\n\nSo this section ends where it has to end: **the same rule applies to us.**\n\nIf a Muslim answers unfair generalisation about Islam with unfair generalisation about the West, or about Christians, or about anyone, he has broken 5:8 while defending the Book it is in. He has lost the argument in the act of making it.\n\nThere is no shortage of people arguing dishonestly about Islam. The reply is not to argue dishonestly back. The reply is the whole passage, the real reference, the honest \"this narration is weak\", and the courtesy that makes a person willing to listen to any of it.\n\nHe ﷺ was told plainly that if he had been harsh, they would have scattered from around him. Nothing has changed about that.",
+          bodyAr: "وثمّ آيةٌ تحسم هذا الباب كلَّه، وحدُّها متوجّهٌ إلى القارئ نفسِه، أيًّا كان:\n\n**﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوا۟ قَوَّٰمِينَ لِلَّهِ شُهَدَآءَ بِٱلْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ عَلَىٰٓ أَلَّا تَعْدِلُوا۟ ۚ ٱعْدِلُوا۟ هُوَ أَقْرَبُ لِلتَّقْوَىٰ﴾** (٥:٨).\n\nاقرأها أمرًا للمسلم: بغضُك لقومٍ **لا** يُبيح لك أن تجور عليهم. لا إذا أخطؤوا، ولا إذا ظلموك. فالعدلُ حقٌّ لمن تبغض، وليس استحقاقُه موقوفًا على استئهالهم له.\n\nفينتهي هذا القسم حيث يلزم أن ينتهي: **والقاعدةُ نفسُها علينا.**\n\nفمن قابل التعميمَ الجائر على الإسلام بتعميمٍ جائرٍ على الغرب أو على النصارى أو على غيرهم، فقد نقض الآية وهو يُدافع عن الكتاب الذي هي فيه، وخسر الحجّة في أثناء إقامتها.\n\nوليس المحاجّون بغير إنصافٍ في شأن الإسلام بقليل. وليس الجوابُ أن نُجادل بغير إنصافٍ مثلهم. وإنما الجوابُ: السياقُ كاملًا، والمرجعُ الصحيح، والتصريحُ بأنّ هذه الرواية ضعيفة، والأدبُ الذي يجعل الرجل مستعدًّا أن يسمع شيئًا من ذلك.\n\nوقد قيل له ﷺ صراحةً إنه لو كان فظًّا لانفضّوا من حوله. ولم يتغيّر من هذا شيء.",
+          context: [
+            { tag: "The rule, in both directions", tagAr: "القاعدةُ في الجهتين", ref: "Al-Ma'idah (5:8)", refAr: "المائدة (٥:٨)",
+              ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوا۟ قَوَّٰمِينَ لِلَّهِ شُهَدَآءَ بِٱلْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ عَلَىٰٓ أَلَّا تَعْدِلُوا۟ ۚ ٱعْدِلُوا۟ هُوَ أَقْرَبُ لِلتَّقْوَىٰ ۖ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا تَعْمَلُونَ",
+              en: "O you who have believed, be persistently standing firm for Allah, witnesses in justice, and do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness. And fear Allah; indeed, Allah is Acquainted with what you do." }
+          ],
+          plain: "In plain words: the Quran tells Muslims that hating a people does not give you the right to be unfair to them. So the answer to unfair generalisations about Islam is never unfair generalisations back — that breaks the very verse you are defending.",
+          plainAr: "بعبارة أخرى: يقول القرآن للمسلم إنّ بغضك لقومٍ لا يُبيح لك الجور عليهم. فليس جوابُ التعميم الجائر على الإسلام تعميمًا جائرًا مثله — فذلك نقضٌ للآية التي تُدافع عنها.",
+          ref: "Surah Al-Ma'idah (5:8); Surah Al-Hujurat (49:13); Surah Aal-Imran (3:159)",
+          refAr: "سورة المائدة (٥:٨)؛ سورة الحجرات (٤٩:١٣)؛ سورة آل عمران (٣:١٥٩)",
+          strength: "quran",
+          strengthAr: "قرآن"
+        }
+      ],
+
+      close: "\"O mankind, indeed We have created you from male and female and made you peoples and tribes **that you may know one another**. Indeed, the most noble of you in the sight of Allah is the most righteous of you\" (49:13).\n\nThat verse was recited in the farewell sermon, to a crowd of tribes who had spent generations killing each other over lineage. The point of difference, it says, is that people **find out about each other**. Which is, in the end, all this section is asking for.",
+      closeAr: "﴿يَٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقْنَٰكُم مِّن ذَكَرٍۢ وَأُنثَىٰ وَجَعَلْنَٰكُمْ شُعُوبًۭا وَقَبَآئِلَ **لِتَعَارَفُوٓا۟** ۚ إِنَّ أَكْرَمَكُمْ عِندَ ٱللَّهِ أَتْقَىٰكُمْ﴾ (٤٩:١٣).\n\nتُليت هذه الآيةُ في خطبة الوداع على جمعٍ من قبائلَ أفنت أجيالًا في القتل على الأنساب. والحكمةُ من الاختلاف — كما تقول — أن **يتعارف** الناس. وليس هذا القسمُ في آخره يطلب سوى ذلك."
+    }
+  ],
+
+  /* ---------- Why it is done, and what to do with all this ---------- */
+  whyTitle: "Why the same six verses, every single time?",
+  whyTitleAr: "ولِمَ هذه الآياتُ الستُّ بأعيانها في كلّ مرّة؟",
+  why: {
+    body: "It is a fair question, and it has a fair answer that does not require accusing anyone of anything.\n\n**Fear moves people, and moved people are useful.** That is not a claim about any particular country or party; it is an old and well-documented fact about how crowds are steered, and every society on earth has examples of it in its own history — including Muslim societies, which have their own record of leaders who found an enemy convenient. A frightened population is easier to lead, easier to unite, and less inclined to ask what else is going on. A minority that most people never actually meet is the cheapest available material for that, because the fear costs nothing to produce and nobody in the room can contradict it.\n\n**And it survives because of how little checking gets done.** Almost nobody who repeats \"kill them wherever you find them\" has opened the surah. It takes about ninety seconds to read verses 1 to 6 of At-Tawbah and see the treaty, the exemption and the safe-conduct order. Ninety seconds is not a hard price. It is simply a price nobody was asked to pay, because the fragment arrived pre-packaged and confirmed something already believed.\n\n**Which is why the answer to it is not anger.** Anger confirms the picture. The answer is the whole passage, the real reference, and the patience to hand it over to someone who has never seen it. Most people repeating these things are not malicious — they are repeating what they were told by someone they trusted, exactly as you and I do about a hundred subjects we have not personally checked.\n\nThe ones producing it on purpose are a different and much smaller group, and they are not the audience for this page. **The audience is the person who heard it, half-believed it, and would change their mind if someone showed them verse 6.**",
+    bodyAr: "وهو سؤالٌ منصف، وله جوابٌ منصفٌ لا يحتاج إلى اتّهام أحد.\n\n**الخوفُ يُحرّك الناس، والمُحرَّكُ نافع.** وليست هذه دعوى في بلدٍ بعينه ولا حزبٍ بعينه، وإنما هي حقيقةٌ قديمةٌ موثّقة في سياسة الجماهير، ولكلّ مجتمعٍ على الأرض منها أمثلةٌ في تاريخه — ومنها مجتمعاتُ المسلمين، ولها سجلٌّ في حكّامٍ وجدوا في العدوّ منفعة. فالشعبُ الخائف أسهلُ قيادةً وأيسرُ جمعًا وأقلُّ سؤالًا عمّا يجري وراء ذلك. والأقلّيةُ التي لا يلقاها أكثرُ الناس أرخصُ مادّةٍ لذلك، إذ لا يُكلّف الخوفُ منها شيئًا ولا يقدر أحدٌ في المجلس على تكذيبه.\n\n**وإنما يبقى ذلك لقلّة التحقّق.** فما من أحدٍ تقريبًا ممّن يردّدون ﴿فَٱقْتُلُوهُمْ حَيْثُ وَجَدتُّمُوهُمْ﴾ قد فتح السورة. وقراءةُ الآيات من الأولى إلى السادسة من التوبة تأخذ نحو تسعين ثانية، يرى فيها العهدَ والاستثناءَ والأمرَ بالإجارة. وتسعون ثانيةً ليست ثمنًا غاليًا، وإنما هو ثمنٌ لم يُطلب من أحدٍ أن يدفعه، لأنّ الشَّذْرة جاءت مهيّأةً وصدّقت ما هو مستقرٌّ من قبل.\n\n**ولهذا لم يكن الجوابُ الغضب**، فالغضبُ يُصدّق الصورة. وإنما الجوابُ: السياقُ كاملًا، والمرجعُ الصحيح، والصبرُ على من لم يره قطّ. وأكثرُ من يردّد هذا ليس بخبيث، وإنما يردّد ما سمعه ممّن يثق به، كما نصنع أنا وأنت في مئة مسألةٍ لم نتحقّق منها بأنفسنا.\n\nوأمّا من يصنعه قصدًا فطائفةٌ أخرى أقلُّ عددًا، وليسوا هم المقصودين بهذه الصفحة. **وإنما المقصودُ من سمعها فصدّق نصفَها، ولو أُري الآيةَ السادسة لرجع.**",
+    plain: "In plain words: fear is useful to people who want to lead a crowd, and a group most people never meet is the cheapest thing to make them afraid of. It survives because checking takes ninety seconds and nobody was asked to spend them. So the answer is not anger — it is showing someone the next verse.",
+    plainAr: "بعبارة أخرى: الخوف نافعٌ لمن يريد أن يسوق جمهورًا، وأرخصُ ما يُخوَّف به طائفةٌ لا يلقاها أكثرُ الناس. وإنما بقي ذلك لأنّ التحقّق يأخذ تسعين ثانيةً لم يُطلب من أحدٍ أن يبذلها. فليس الجوابُ الغضب، وإنما أن تُري الرجلَ الآيةَ التي بعدها."
+  },
+
+  /* ---------- What to do with it ---------- */
+  useTitle: "What to do when someone says one of these to you",
+  useTitleAr: "ماذا تصنع إذا قيل لك شيءٌ من هذا",
+  use: "• **Ask for the whole passage.** Not \"that's out of context\" — that sounds like an excuse and settles nothing. Say: **let's read verse 4, 5 and 6 together.** Then read them. The passage does the work; you do not have to.\n• **Give the reference every time.** Surah and verse. Collection and number. It costs you nothing and it makes you checkable, which is the difference between you and the thing you are answering.\n• **Say when something is weak.** If they quote a hadith that is not authentic in your favour, say so. If you quote one, check it first. This page refused the most useful narration in the whole subject for that reason, and it is stronger for having refused it.\n• **Do not answer a generalisation with a generalisation.** Read 5:8 again. That verse is aimed at you.\n• **Do not take the bait of defending every Muslim.** You are not responsible for two billion people, and Islam is not on trial for what its worst follower did. Nobody accepts that standard for their own group.\n• **Know when to stop.** Some people are not asking a question; they arrived at the conclusion first. \"For you is your religion, and for me is mine\" is a complete and dignified end to a conversation, and it is in the Quran.\n• **And be the better argument.** Fourteen centuries of texts will not do as much as one Muslim who is honest in his work, gentle with his family and calm under insult. He ﷺ was told that harshness would have emptied the room around him. It has not become more effective since.",
+  useAr: "• **اطلب السياق كاملًا.** لا تقل: «هذا مقتطعٌ من سياقه»، فإنها تُسمع عذرًا ولا تحسم شيئًا. وإنما قل: **هلمّ نقرأ الرابعة والخامسة والسادسة معًا.** ثم اقرأها. فالسياقُ يكفيك المؤونة.\n• **اذكر المرجع في كلّ مرّة**: السورةَ والآية، والكتابَ والرقم. لا يُكلّفك شيئًا، ويجعلك ممّن يُتحقّق منه، وهذا هو الفرق بينك وبين ما تُجيب عنه.\n• **وصرّح بالضعيف إذا كان ضعيفًا.** فإن احتجّ عليك بحديثٍ غيرِ صحيحٍ في صالحك فقل ذلك. وإن احتججتَ به فتحقّق قبل. وقد ردّت هذه الصفحةُ أنفعَ روايةٍ في الباب كلِّه لهذا، وهي بردّها أقوى.\n• **ولا تُقابل التعميمَ بتعميم.** فأعِد قراءة ﴿وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ عَلَىٰٓ أَلَّا تَعْدِلُوا۟﴾، فالآيةُ مقصودٌ بها أنت.\n• **ولا تنجرّ إلى الدفاع عن كلّ مسلم.** فلستَ مسؤولًا عن ملياري إنسان، وليس الإسلام في محاكمةٍ بفعل أسوأ أتباعه، ولا يقبل أحدٌ هذا الميزان في قومه.\n• **واعرف موضع الوقوف.** فمن الناس من ليس بسائل، وإنما بلغ الحكم قبل السؤال. و﴿لَكُمْ دِينُكُمْ وَلِىَ دِينِ﴾ خاتمةٌ تامّةٌ كريمةٌ للمجلس، وهي في القرآن.\n• **وكن أنت الحجّة الأحسن.** فأربعةَ عشرَ قرنًا من النصوص لا تبلغ ما يبلغه مسلمٌ واحدٌ أمينٌ في عمله، رفيقٌ بأهله، حليمٌ عند الشتم. وقد قيل له ﷺ إنّ الغلظة كانت ستُفرّغ المجلس من حوله، ولم تصر أنفعَ من ذلك اليوم.",
+
+  notice: "This section explains verses and answers claims made about them. It is not a fatwa, and it does not settle any question about a particular person or a particular conflict. Every verse should be read inside its complete surah with a trusted tafsir, and every hadith checked in the collection named. Where scholars have differed — as they did on 4:34 — both positions are named above. If any of this touches something real in your life, take it to a scholar you trust.",
+  noticeAr: "هذا القسمُ بيانٌ لآياتٍ وجوابٌ عن دعاوى قيلت فيها. وليس فتوى، ولا يفصل في شأن شخصٍ بعينه ولا نزاعٍ بعينه. وينبغي قراءةُ كلّ آيةٍ في سورتها كاملةً مع تفسيرٍ موثوق، والتحقّقُ من كلّ حديثٍ في الكتاب المذكور. وحيث اختلف أهل العلم — كما في آية النساء ٣٤ — ذُكر القولان بأصحابهما. فإن مسّ شيءٌ من هذا أمرًا في حياتك فاسأل عنه عالمًا تثق به."
+};
+
+/* Count helper, used by check-counts.sh and by the home page if it ever
+   reports this section. Counts every card the reader can actually see. */
+function iitwMisunderstoodCount() {
+  if (typeof MISUNDERSTOOD === "undefined") return 0;
+  return (MISUNDERSTOOD.method || []).length +
+    (MISUNDERSTOOD.sections || []).reduce((n, s) => n + (s.cards || []).length, 0);
+}

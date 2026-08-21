@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608201347" />
+  <link rel="stylesheet" href="css/style.css?v=202608211618" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -154,6 +154,22 @@
     </div>
   </section>
 
+  <!-- ===== The hardest questions asked about Islam =====
+       Placed after the scholars' rulings on purpose: that section answers
+       "what does my religion require of me", and this one answers "what is
+       said about my religion, and is it true". Rendered from
+       js/misunderstood.js so every verse, the verses on either side of it,
+       its grading and the plain-words box live together in one file.
+
+       Reachable from the Guidance box at the top of this page: "why do
+       Muslim women wear hijab", "does Islam say kill the disbelievers" and
+       "what is jihad" are routed straight to the authored answers here. -->
+  <section class="pattern-bg" id="misunderstood">
+    <div class="container">
+      <div id="misunderstoodBox"></div>
+    </div>
+  </section>
+
   <!-- ===== Why we fell, and the way back =====
        The Golden Age page ends by asking what happened to us; this is where
        that link lands. Rendered from js/revival.js so the whole argument
@@ -276,40 +292,47 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608201347"></script>
+  <script src="js/data.js?v=202608211618"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608201347"></script>
+  <script src="js/sunnah.js?v=202608211618"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608201347"></script>
+  <script src="js/adhkar.js?v=202608211618"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608201347"></script>
+  <script src="js/scholars.js?v=202608211618"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608201347"></script>
+  <script src="js/scholars-books.js?v=202608211618"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608201347"></script>
+  <script src="js/revival.js?v=202608211618"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608201347"></script>
+  <script src="js/bidah.js?v=202608211618"></script>
+  <!-- The verses and words that get quoted at Muslims — the fighting verses,
+       jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
+       quotation in it was copied out of js/quran-text.js and every hadith
+       number was checked against the collection. It labels the famous
+       "greater jihad" narration as WEAK, which is the standard this site
+       holds itself to even when the weak one would be more useful. -->
+  <script src="js/misunderstood.js?v=202608211618"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608201347"></script>
+  <script src="js/terms.js?v=202608211618"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608201347"></script>
+  <script src="js/figures.js?v=202608211618"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608201347"></script>
+  <script src="js/signs.js?v=202608211618"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -786,8 +809,15 @@
          question about prayer still scores one and is correctly ignored. */
       { id: "fq-travel-prayer", need: 2, target: "#rulings",
         words: ["سفر", "مسافر", "صلاة", "قصر", "جمع", "travel", "shorten", "combine", "journey"] },
+      /* `وضوء` added when the hit count started collapsing stem-equivalent
+         entries (see `canonWord` below). وسواس and الوسواس are one subject,
+         not two, so "عندي وسواس في الوضوء" — a statement, with no question
+         mark and no ruling word — dropped to a single hit and stopped
+         clearing `topicIsStrong`. It has to clear it: this is the one
+         question on the page where the wrong answer can make the reader's
+         condition worse, and it is recorded in the handoff as such. */
       { id: "fq-waswas", need: 1, target: "#rulings",
-        words: ["وسواس", "الوسواس", "شك", "waswas", "doubt", "doubting", "ocd"] },
+        words: ["وسواس", "الوسواس", "شك", "وضوء", "الوضوء", "waswas", "doubt", "doubting", "ocd"] },
       { id: "fq-parents", need: 2, target: "#rulings",
         words: ["والدي", "أمي", "أبي", "الوالدين", "parents", "mother", "father", "obey"] },
       { id: "fq-haram-job", need: 2, target: "#rulings",
@@ -797,7 +827,93 @@
       { id: "fq-men-awrah", need: 2, target: "#rulings",
         words: ["عورة", "الرجل", "السروال", "الكعبين", "awrah", "men", "trousers", "ankles"] },
       { id: "fq-despair", need: 2, target: "#rulings",
-        words: ["يأس", "أيأس", "قنوط", "لا أمل", "despair", "hopeless", "no point", "forgive me"] }
+        words: ["يأس", "أيأس", "قنوط", "لا أمل", "despair", "hopeless", "no point", "forgive me"] },
+
+      /* ---------- The misunderstood section — js/misunderstood.js ----------
+         `src: "mis"` routes to the authored answer in that file instead of
+         to a FIQH ruling. `must` is a second gate: at least one word from
+         `must` has to be present before `need` is even counted, so a topic
+         built on ordinary words ("women", "kill", "force") cannot be reached
+         by a sentence that merely contains one of them. Without it,
+         "I want to kill myself" reached the section on the fighting verses.
+
+         THESE ARE LISTED AFTER THE fq- ENTRIES ON PURPOSE. The sort is
+         stable, so a tie goes to whichever came first — which means
+         "what counts as hijab" still reaches the conditions ruling (1 hit
+         each), while "why do Muslim women wear hijab" scores five here and
+         reaches this section. Moving these above the fq- block would take
+         every hijab question away from the scholars' answer.
+
+         NOT ADDED TO buildIdf(). These entries are reached ONLY through
+         this intent layer and are never scored by `scoreContent`, so the
+         corpus rule — index everything that is SEARCHED — is satisfied
+         without touching it. Adding them would shift the df of every word
+         in the corpus and re-tune every score on the page. If you ever make
+         this content scorable, you MUST index it here as well. */
+      { id: "mis-hijab", src: "mis", need: 2, target: "#mis-hijab",
+        must: ["hijab", "headscarf", "veil", "scarf", "khimar", "cover", "covering",
+               "حجاب", "الحجاب", "خمار", "الخمار", "محجبة", "تحجب", "الستر", "تغطي"],
+        words: ["hijab", "headscarf", "veil", "scarf", "khimar", "cover", "covering",
+                "حجاب", "الحجاب", "خمار", "الخمار", "محجبة", "تحجب", "الستر", "تغطي",
+                "why", "force", "forced", "forcing", "forces", "compel", "compulsion",
+                "oppress", "oppressed", "oppression", "wear", "wears", "wearing", "must",
+                "women", "woman", "muslim", "daughter", "wife",
+                "لماذا", "لِمَ", "تلبس", "يلبسن", "نجبر", "يجبر", "أجبر", "إجبار", "اجبار",
+                "قهر", "اضطهاد", "المرأة", "النساء", "المسلمة", "المسلمات", "ابنتي", "زوجتي"] },
+      { id: "mis-sword", src: "mis", need: 2, target: "#mis-sword",
+        must: ["kill", "kills", "killing", "killed", "murder", "slay", "slaughter",
+               "اقتلوا", "اقتلوهم", "القتل", "قتل", "نقتل", "يقتلون", "تقتلون", "بقتل"],
+        words: ["kill", "kills", "killing", "killed", "murder", "slay", "slaughter",
+                "اقتلوا", "اقتلوهم", "القتل", "قتل", "نقتل", "يقتلون", "تقتلون", "بقتل",
+                "disbeliever", "disbelievers", "infidel", "infidels", "kafir", "kuffar",
+                "christians", "jews", "everyone", "wherever", "verse", "sword", "sword verse",
+                "quran", "islam", "muslims", "polytheists", "war", "fight", "fighting",
+                "الكفار", "كفار", "المشركين", "مشركين", "النصارى", "اليهود", "آية السيف",
+                "السيف", "القرآن", "الإسلام", "المسلمين", "آية", "حيث", "الحرب", "القتال"] },
+      { id: "mis-jihad", src: "mis", need: 1, target: "#mis-jihad",
+        must: ["jihad", "jihaad", "mujahid", "jihadist", "jihadists", "jihadi", "holy war",
+               "جهاد", "الجهاد", "مجاهد", "جهادي", "الحرب المقدسة"],
+        words: ["jihad", "jihaad", "mujahid", "jihadist", "jihadists", "jihadi", "holy war",
+                "جهاد", "الجهاد", "مجاهد", "جهادي", "الحرب المقدسة"] },
+      { id: "mis-terror", src: "mis", need: 1, target: "#mis-terror",
+        must: ["terrorist", "terrorists", "terrorism", "terror", "extremist", "extremists",
+               "extremism", "suicide bomber", "suicide bombing", "khawarij", "kharijite",
+               "إرهاب", "ارهاب", "إرهابي", "ارهابي", "الخوارج", "خوارج", "انتحاري",
+               "تفجير", "التطرف", "متطرف", "متطرفين"],
+        words: ["terrorist", "terrorists", "terrorism", "terror", "extremist", "extremists",
+                "extremism", "suicide bomber", "suicide bombing", "khawarij", "kharijite",
+                "إرهاب", "ارهاب", "إرهابي", "ارهابي", "الخوارج", "خوارج", "انتحاري",
+                "تفجير", "التطرف", "متطرف", "متطرفين"] },
+      { id: "mis-compulsion", src: "mis", need: 2, target: "#mis-compulsion",
+        must: ["compulsion", "convert", "converted", "conversion", "spread", "forced",
+               "force", "forcing", "إكراه", "اكراه", "بالسيف", "انتشر", "يُجبر", "يجبر",
+               "أجبر", "نجبر", "أسلم", "التهويد"],
+        words: ["compulsion", "convert", "converted", "conversion", "spread", "forced",
+                "force", "forcing", "إكراه", "اكراه", "بالسيف", "انتشر", "يُجبر", "يجبر",
+                "أجبر", "نجبر", "أسلم", "التهويد",
+                "religion", "islam", "sword", "belief", "believe", "faith", "apostate",
+                "الدين", "الإسلام", "السيف", "الإيمان", "العقيدة", "مرتد"] },
+      { id: "mis-nonmuslims", src: "mis", need: 2, target: "#mis-sword",
+        must: ["christian", "christians", "jew", "jews", "non-muslim", "non-muslims",
+               "nonmuslim", "nonmuslims", "disbeliever", "disbelievers", "kafir", "kuffar",
+               "نصارى", "النصارى", "يهود", "اليهود", "الكفار", "كفار", "غير المسلمين"],
+        words: ["christian", "christians", "jew", "jews", "non-muslim", "non-muslims",
+                "nonmuslim", "nonmuslims", "disbeliever", "disbelievers", "kafir", "kuffar",
+                "نصارى", "النصارى", "يهود", "اليهود", "الكفار", "كفار", "غير المسلمين",
+                "treat", "treatment", "friends", "friend", "neighbour", "neighbor",
+                "relations", "deal", "hate", "معاملة", "نعامل", "يعامل", "الجار", "جار",
+                "صداقة", "نكره", "بر", "نبرهم"] },
+      { id: "mis-women", src: "mis", need: 2, target: "#mis-women",
+        must: ["beat", "beats", "beating", "hit", "hitting", "strike", "striking",
+               "oppress", "oppressed", "oppression", "nushuz",
+               "ضرب", "يضرب", "تضرب", "اضربوهن", "الضرب", "قهر", "اضطهاد", "النشوز", "نشوز"],
+        words: ["beat", "beats", "beating", "hit", "hitting", "strike", "striking",
+                "oppress", "oppressed", "oppression", "nushuz",
+                "ضرب", "يضرب", "تضرب", "اضربوهن", "الضرب", "قهر", "اضطهاد", "النشوز", "نشوز",
+                "women", "woman", "wife", "wives", "female", "islam", "muslim", "rights",
+                "inheritance", "inherit", "equal", "equality", "property", "husband",
+                "نساء", "النساء", "المرأة", "امرأة", "زوجة", "زوجتي", "الإسلام", "حقوق",
+                "الميراث", "ترث", "المساواة", "الزوج"] }
     ];
 
     function iitwIntent(raw) {
@@ -805,10 +921,29 @@
       const words = iitwWordSet(raw);
       const has = list => list.some(p => p.includes(" ") ? n.includes(normalize(p))
                                                          : iitwHasWord(words, p));
+      const hasWord = w => w.includes(" ") ? n.includes(normalize(w))
+                                           : iitwHasWord(words, w);
+
+      /* COUNT DISTINCT SUBJECTS, NOT DISTINCT LIST ENTRIES.
+         `iitwHasWord` matches through `stem()` and `iitwArStrip()`, so a list
+         holding kill / kills / killing / killed scored FOUR on the single
+         word "kill" — and قتل / القتل / بقتل scored three on one Arabic word.
+         The `need` threshold is meant to mean "this sentence is about two
+         different things", and inflation made one word look like several:
+         measured before this fix, "I want to kill myself" scored 4 and was
+         answered with the section on the fighting verses. Folding each
+         matched entry to its canonical form first makes `need` mean what it
+         says. Whole-word matching only — never a substring. */
+      const canonWord = w => normalize(w).split(" ").filter(Boolean)
+        .map(p => /[؀-ۿ]/.test(p) ? iitwArStrip(p) : stem(p)).join(" ");
+
       const topics = GUIDANCE_TOPICS.map(t => {
-        const hits = t.words.filter(w => w.includes(" ") ? n.includes(normalize(w))
-                                                          : iitwHasWord(words, w)).length;
-        return { t, hits };
+        /* `must` gates the whole topic: without one of these words present,
+           the hit count is not even taken. It is what stops a topic built on
+           ordinary words being reached by a sentence that merely contains
+           one of them. */
+        if (t.must && !t.must.some(hasWord)) return { t, hits: 0 };
+        return { t, hits: new Set(t.words.filter(hasWord).map(canonWord)).size };
       }).filter(x => x.hits >= x.t.need).sort((a, b) => b.hits - a.hits);
 
       return {
@@ -893,6 +1028,35 @@
         });
         return;
       }
+
+      /* A QUESTION ABOUT WHAT IS SAID ABOUT ISLAM GOES TO THE AUTHORED
+         ANSWER, whether it was phrased as a question or not.
+
+         "Muslims are terrorists" and "you force women to cover" are not
+         questions and use no ruling word, so both fell through every gate
+         below and were answered by scoring their individual words — which
+         returned verses about fear and about clothing. The topics that
+         reach here already passed the `must` gate in GUIDANCE_TOPICS, so
+         one of these matching is evidence enough on its own. */
+      if (intent.topic && intent.topic.src === "mis" && typeof MISUNDERSTOOD !== "undefined") {
+        const sec = (MISUNDERSTOOD.sections || [])
+          .find(s => s.id === (intent.topic.answer || intent.topic.id)) ||
+          (MISUNDERSTOOD.sections || []).find(s => intent.topic.target === "#" + s.id);
+        if (sec) {
+          const cards = (sec.cards || []).slice(0, 2);
+          out.innerHTML = iitwDirectAnswerHtml({
+            headEn: sec.title, headAr: sec.titleAr,
+            answerEn: sec.answer, answerAr: sec.answerAr,
+            bodyEn: cards.map(c => "• " + c.plain).join("<br>"),
+            bodyAr: cards.map(c => "• " + c.plainAr).join("<br>"),
+            hrefTarget: "#" + sec.id,
+            linkEn: "Read the whole answer — every verse with the verses on either side of it, and the reference for each one",
+            linkAr: "اقرأ الجواب كاملًا — كلّ آيةٍ مع ما قبلها وما بعدها، ومرجعُ كلّ نقل"
+          });
+          return;
+        }
+      }
+
       /* A named topic asked as a question goes to that topic's authored
          answer, whether or not a ruling word was used.
 
@@ -1641,7 +1805,7 @@
       const found = iitwFindTerms(en, ar);
       if (!found.length) return "";
       return `<div class="terms-box">
-        <div class="terms-head">💬 Words explained <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— معاني المصطلحات</span></div>
+        <div class="terms-head">💬 <span class="en-only">Words explained</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">معاني المصطلحات</span></div>
         ${found.map(t => `<div class="term">
           <div class="term-word">
             <span class="en-only">${t.en}</span>
@@ -1954,6 +2118,202 @@
 
     renderBidah();
 
+    /* ================= The hardest questions asked about Islam =========
+       Rendered from js/misunderstood.js.
+
+       It reuses the revival/bid'ah card styling on purpose — a reader
+       should meet ONE explanation style across the whole site — and adds
+       exactly one new device, `.mis-ctx`: the verse BEFORE the famous one,
+       the famous one, and the verse AFTER it, printed as a strip. That
+       strip is the entire argument of the first section, so it is a
+       structure and not a decoration.
+
+       `misParas` is a superset of `bidahParas`: same paragraph and bullet
+       handling, plus NUMBERED lines become an <ol>. The bid'ah helper
+       flattens "1. ... 2. ... 3. ..." into one run-on line, and three of
+       these cards are built on numbered lists. */
+    function misParas(text, rtl) {
+      return String(text || "").split(/\n\s*\n/).map(block => {
+        const lines = block.split("\n").filter(l => l.trim() !== "");
+        if (lines.length && lines.every(l => l.trim().startsWith("•"))) {
+          return `<ul class="bd-list"${rtl ? ' dir="rtl"' : ""}>` +
+            lines.map(l => `<li>${misBold(l.replace(/^\s*•\s*/, ""))}</li>`).join("") + "</ul>";
+        }
+        if (lines.length > 1 && lines.every(l => /^\s*[0-9٠-٩]+[.．]\s/.test(l))) {
+          return `<ol class="mis-ol"${rtl ? ' dir="rtl"' : ""}>` +
+            lines.map(l => `<li>${misBold(l.replace(/^\s*[0-9٠-٩]+[.．]\s*/, ""))}</li>`).join("") + "</ol>";
+        }
+        return `<p>${misBold(block.replace(/\n/g, " "))}</p>`;
+      }).join("");
+    }
+    function misBold(s) { return String(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+
+    /* Same plain-words box as the Judgement, Golden Age and bid'ah sections. */
+    function misPlain(en, ar) {
+      if (!en && !ar) return "";
+      return `<div class="tad-plain">
+        <div class="tad-plain-label">💬 <span class="en-only">In plain words</span>
+          <span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
+        ${en ? `<div class="en-only">${misParas(en)}</div>` : ""}
+        ${ar ? `<div class="ar-only" dir="rtl">${misParas(ar, true)}</div>` : ""}
+      </div>`;
+    }
+
+    /* The context strip. Both halves of the tag are .en-only / .ar-only —
+       a span with dir="rtl" and no .ar-only class leaves the English beside
+       it unhidden, which is exactly the leak that put 82 English headings on
+       the Arabic Golden Age cards. */
+    function misContext(list) {
+      if (!list || !list.length) return "";
+      return `<div class="mis-ctx">` + list.map(c => `<div class="mis-ctx-row">
+        <div class="mis-ctx-tag">
+          <span class="en-only">${c.tag || ""}</span>
+          <span class="ar-only" dir="rtl">${c.tagAr || ""}</span>
+          ${c.ref ? `<span class="mis-ctx-ref en-only">${c.ref}</span>` : ""}
+          ${c.refAr ? `<span class="mis-ctx-ref ar-only" dir="rtl">${c.refAr}</span>` : ""}
+        </div>
+        ${c.ar ? `<p class="mis-ctx-ar" dir="rtl" data-speak>${c.ar}
+          <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
+        ${c.en ? `<p class="mis-ctx-en en-only">${c.en}</p>` : ""}
+      </div>`).join("") + `</div>`;
+    }
+
+    /* THE SOURCE LINE AND THE GRADING ARE WRITTEN IN BOTH LANGUAGES, NOT
+       TRANSLATED AT RUNTIME. `iitwTranslateReference` handles canonical
+       citations ("Surah Al-Baqarah (2:190)", "Sahih al-Bukhari 3015") and
+       nothing else — and the references in this section carry named works,
+       grading nuance and two French statutes, none of which it can reach.
+       That is exactly the leak the handoff records: extra English prose
+       inside `ref` or `strength` has no Arabic key and renders as English on
+       an Arabic page. So every entry in js/misunderstood.js carries its own
+       `refAr` and `strengthAr`, and both halves are .en-only / .ar-only. */
+    function misCard(c) {
+      return `<article class="rv-card mis-card" id="${c.id || ""}">
+        <h4 class="en-only">${misBold(c.title)}</h4>
+        <h4 class="ar-only" dir="rtl">${misBold(c.titleAr)}</h4>
+        <div class="en-only">${misParas(c.body)}</div>
+        <div class="rv-ar ar-only" dir="rtl">${misParas(c.bodyAr, true)}</div>
+        ${misContext(c.context)}
+        ${misPlain(c.plain, c.plainAr)}
+        ${c.ref ? `<div class="mis-ref en-only">${c.ref}</div>` : ""}
+        ${c.refAr ? `<div class="mis-ref ar-only" dir="rtl">${c.refAr}</div>` : ""}
+        ${c.strength ? `<div class="tad-badge en-only">${c.strength}</div>` : ""}
+        ${c.strengthAr ? `<div class="tad-badge ar-only" dir="rtl">${c.strengthAr}</div>` : ""}
+      </article>`;
+    }
+
+    /* One of the six subjects: the claim as people actually say it, the
+       texts, and a closing paragraph. The claim is printed in the reader's
+       own words on purpose — someone who has been told this needs to see it
+       written down before he will believe the page is answering HIM. */
+    function misSection(s) {
+      return `<div class="mis-block" id="${s.id}">
+        <h3 class="rv-head">${s.icon || "❓"} <span class="en-only">${s.title}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${s.titleAr}</span></h3>
+
+        <div class="mis-claim">
+          <div class="mis-claim-label">🗣️ <span class="en-only">What is said</span>
+            <span class="ar-only" dir="rtl">ما يُقال</span></div>
+          <p class="en-only">${s.claim}</p>
+          <p class="ar-only" dir="rtl">${s.claimAr}</p>
+        </div>
+
+        <div class="rv-intro">
+          <div class="en-only">${misParas(s.lead)}</div>
+          <div class="rv-ar ar-only" dir="rtl">${misParas(s.leadAr, true)}</div>
+        </div>
+
+        ${(s.cards || []).map(misCard).join("")}
+
+        ${s.close ? `<div class="bd-weight">
+          <div class="en-only">${misParas(s.close)}</div>
+          <div class="ar-only" dir="rtl">${misParas(s.closeAr, true)}</div>
+        </div>` : ""}
+      </div>`;
+    }
+
+    function renderMisunderstood() {
+      const host = document.getElementById("misunderstoodBox");
+      if (!host || typeof MISUNDERSTOOD === "undefined") return;
+      const m = MISUNDERSTOOD;
+
+      host.innerHTML = `
+        <h2 class="section-title">🛡️ <span class="en-only">${m.title}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${m.titleAr}</span></h2>
+        <div class="divider"></div>
+
+        <div class="rv-intro" style="margin-top:22px;">
+          <div class="en-only">${misParas(m.intro)}</div>
+          <div class="rv-ar ar-only" dir="rtl">${misParas(m.introAr, true)}</div>
+        </div>
+
+        <h3 class="rv-head">🔍 <span class="en-only">${m.methodTitle}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${m.methodTitleAr}</span></h3>
+        <div class="rv-intro">
+          <div class="en-only">${misParas(m.methodIntro)}</div>
+          <div class="rv-ar ar-only" dir="rtl">${misParas(m.methodIntroAr, true)}</div>
+        </div>
+        ${(m.method || []).map(misCard).join("")}
+
+        ${(m.sections || []).map(misSection).join("")}
+
+        <h3 class="rv-head">🎯 <span class="en-only">${m.whyTitle}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${m.whyTitleAr}</span></h3>
+        ${misCard(Object.assign({ id: "ms-why" }, m.why,
+            { title: m.whyTitle, titleAr: m.whyTitleAr }))}
+
+        <h3 class="rv-head">🤝 <span class="en-only">${m.useTitle}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${m.useTitleAr}</span></h3>
+        <article class="rv-card bd-instead">
+          <div class="en-only">${misParas(m.use)}</div>
+          <div class="rv-ar ar-only" dir="rtl">${misParas(m.useAr, true)}</div>
+        </article>
+
+        ${misTermsBox(m)}
+
+        <div class="context-note" style="margin-top:22px;">
+          <span class="en-only">${m.notice}</span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">${m.noticeAr}</span>
+        </div>`;
+
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    /* The words-explained box for this section. It is built from the WHOLE
+       section rather than per-card, because the same terms (jihad, nushuz,
+       khimar, mu'ahid) recur across cards and a box on each one would be
+       the same box printed thirty times. */
+    function misTermsBox(m) {
+      if (typeof iitwFindTerms !== "function") return "";
+      const en = [], ar = [];
+      const take = o => {
+        if (!o) return;
+        ["title", "body", "plain", "lead", "close", "use", "claim"].forEach(k => {
+          if (o[k]) en.push(o[k]);
+          if (o[k + "Ar"]) ar.push(o[k + "Ar"]);
+        });
+      };
+      take(m); en.push(m.use || ""); ar.push(m.useAr || "");
+      (m.method || []).forEach(take);
+      (m.sections || []).forEach(s => { take(s); (s.cards || []).forEach(take); });
+      take(m.why);
+      const found = iitwFindTerms(en.join(" "), ar.join(" "));
+      if (!found.length) return "";
+      return `<div class="terms-box" style="margin-top:26px;">
+        <div class="terms-head">💬 <span class="en-only">Words explained</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">معاني المصطلحات</span></div>
+        ${found.map(t => `<div class="term">
+          <div class="term-word">
+            <span class="en-only">${t.en}</span>
+            <span class="term-ar" dir="rtl">${t.ar}</span>
+          </div>
+          <p class="term-def en-only">${t.def}</p>
+          <p class="term-def term-def-ar" dir="rtl">${t.defAr}</p>
+        </div>`).join("")}
+      </div>`;
+    }
+
+    renderMisunderstood();
+
     /* ================= The adhkar =================
        A tap counter per dhikr, kept in localStorage under today's date so it
        survives leaving the page but starts fresh tomorrow. Yesterday's keys
@@ -2149,7 +2509,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608201347"></script>
-  <script src="js/i18n.js?v=202608201347"></script>
+  <script src="js/main.js?v=202608211618"></script>
+  <script src="js/i18n.js?v=202608211618"></script>
 </body>
 </html>
