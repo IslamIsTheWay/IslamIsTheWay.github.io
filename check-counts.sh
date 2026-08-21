@@ -32,6 +32,11 @@ fail=0
 count_lives()    { grep -cE '^\s{2}"[a-z0-9-]+":\s*\{' js/lives.js; }
 count_golden()   { grep -cE '^\s{2}\{\s*$' js/golden.js; }
 
+# js/tadabbur-tense.js: one entry per verse, keyed "surah:ayah" at two spaces
+# of indent. Counted rather than typed for the same reason as everything else
+# on this page — the Golden Age card said 28 when there were 41.
+count_tense() { grep -cE '^  "[0-9]+:[0-9]+": \{' js/tadabbur-tense.js; }
+
 # js/sunnah.js holds SUNNAH_CATEGORIES first and SUNNAH after it, both at the
 # same indent. Counting the whole file returns 184 — the 166 practices plus the
 # 18 categories. So start counting at the line SUNNAH itself opens.
