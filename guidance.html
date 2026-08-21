@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608211819" />
+  <link rel="stylesheet" href="css/style.css?v=202608212128" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -68,6 +68,33 @@
     </div>
   </div>
 
+  <!-- ===== What is on this page =====
+       Added because the misunderstood section shipped, was 33 cards long, and
+       the owner scrolled past it and asked where it was. A long page with no
+       index is a page whose bottom half does not exist. -->
+  <nav class="gd-jump" aria-label="Sections of this page">
+    <div class="container">
+      <div class="gd-jump-head"><span class="en-only">On this page</span>
+        <span class="ar-only" dir="rtl">في هذه الصفحة</span></div>
+      <div class="gd-jump-links">
+        <a href="#misunderstood" class="gd-jump-hot">🛡️ <span class="en-only">The hardest questions about Islam</span>
+          <span class="ar-only" dir="rtl">أصعبُ ما يُسأل عنه الإسلام</span></a>
+        <a href="#worship">🕌 <span class="en-only">What do I say — and when?</span>
+          <span class="ar-only" dir="rtl">ماذا أقول ومتى؟</span></a>
+        <a href="#rulings">📚 <span class="en-only">What the scholars explained</span>
+          <span class="ar-only" dir="rtl">ما شرحه أهل العلم</span></a>
+        <a href="#revival">🔁 <span class="en-only">Why we fell, and the way back</span>
+          <span class="ar-only" dir="rtl">لماذا سقطنا وكيف نعود</span></a>
+        <a href="#bidah">🛑 <span class="en-only">Adding to the religion</span>
+          <span class="ar-only" dir="rtl">الزيادة في الدين</span></a>
+        <a href="#adhkar">📿 <span class="en-only">The adhkar</span>
+          <span class="ar-only" dir="rtl">الأذكار</span></a>
+        <a href="#meeting">🌅 <span class="en-only">Meeting Allah</span>
+          <span class="ar-only" dir="rtl">لقاء الله</span></a>
+      </div>
+    </div>
+  </nav>
+
   <!-- ===== Ask for guidance about your situation ===== -->
   <section>
     <div class="container">
@@ -104,7 +131,7 @@
   </section>
 
   <!-- ===== What to say, and when ===== -->
-  <section class="pattern-bg">
+  <section class="pattern-bg" id="worship">
     <div class="container">
       <h2 class="section-title"><span class="en-only">🕌 What Do I Say — and When?</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">ماذا أقول ومتى؟</span></h2>
       <div class="divider"></div>
@@ -281,47 +308,47 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608211819"></script>
+  <script src="js/data.js?v=202608212128"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608211819"></script>
+  <script src="js/sunnah.js?v=202608212128"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608211819"></script>
+  <script src="js/adhkar.js?v=202608212128"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608211819"></script>
+  <script src="js/scholars.js?v=202608212128"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608211819"></script>
+  <script src="js/scholars-books.js?v=202608212128"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608211819"></script>
+  <script src="js/revival.js?v=202608212128"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608211819"></script>
+  <script src="js/bidah.js?v=202608212128"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608211819"></script>
+  <script src="js/misunderstood.js?v=202608212128"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608211819"></script>
+  <script src="js/terms.js?v=202608212128"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608211819"></script>
+  <script src="js/figures.js?v=202608212128"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608211819"></script>
+  <script src="js/signs.js?v=202608212128"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -613,7 +640,13 @@
         const hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") ||
                     iitwHasWord(hayWords, q);
         if (!hit) return;
-        const generic = GENERIC.has(qs) || GENERIC.has(q);
+        /* Test the Arabic prefix-stripped form as well. Every Arabic word
+           in GENERIC was written bare — شيء, ناس, امر — while a reader types
+           الأشياء, الناس, الأمر. Normalised those become الاشياء, الناس,
+           الامر, and only the middle one was ever in the list, so most of the
+           Arabic half of GENERIC never fired. */
+        const qStrip = /[؀-ۿ]/.test(q) ? iitwArStrip(q) : q;
+        const generic = GENERIC.has(qs) || GENERIC.has(q) || GENERIC.has(qStrip);
         const w = generic ? 0.2 : idf(q);
         score += w * 1.6;
         if (!generic && w >= 2.5) { distinctHits++; if (w > bestRarity) bestRarity = w; }
@@ -653,7 +686,15 @@
          on its own to make the ruling on the traveller's prayer the answer
          to "زوجتي وأنا نتشاجر كثيرا". */
       "كثيرا","قليلا","دائما","احيانا","تماما","ابدا","معا","حقا","فعلا","طبعا",
-      "غالبا","سريعا","طويلا","قصيرا","اصلا","تقريبا","مثلا","ايضا","خاصة","عامة"
+      "غالبا","سريعا","طويلا","قصيرا","اصلا","تقريبا","مثلا","ايضا","خاصة","عامة",
+      /* RANKING AND QUANTITY WORDS. A question is never ABOUT "most" or
+         "greatest" — these words rank whatever the subject turns out to be.
+         أكثر is the word that answered "what are the most misunderstood
+         things about Islam?" with the supplication said in prostration,
+         because "أكثِر فيه من الدعاء" and "أكثر من سبعين مرة" contain it. */
+      "اكثر","اقل","اهم","اعظم","اشهر","افضل","احسن","اسوا","ابرز","اخطر",
+      "معظم","اغلب","بعض","جميع","كل","عدة","كثيرون","قليلون","نوع","انواع",
+      "اشياء","الاشياء","امور","الامور","مسائل","المسائل","نقاط","النقاط"
     ]);
 
     // Set by the last scoreContent call.
@@ -892,6 +933,27 @@
                 "treat", "treatment", "friends", "friend", "neighbour", "neighbor",
                 "relations", "deal", "hate", "معاملة", "نعامل", "يعامل", "الجار", "جار",
                 "صداقة", "نكره", "بر", "نبرهم"] },
+      /* The section as a whole. Someone asks "what do people get wrong
+         about Islam" without naming which thing, and until now that question
+         reached nothing and fell through to word scoring — which answered it
+         with a supplication said in prostration. Placed LAST so a question
+         that names its subject still reaches the specific entry. */
+      { id: "mis-general", src: "mis", need: 2, target: "#misunderstood",
+        must: ["misunderstood", "misunderstanding", "misunderstandings", "misconception",
+               "misconceptions", "misunderstand", "myth", "myths", "propaganda",
+               "accusation", "accusations", "criticism", "objection", "objections",
+               "شبهة", "شبهات", "الشبهات", "افتراء", "افتراءات", "الافتراءات",
+               "اتهام", "اتهامات", "الاتهامات", "مطاعن", "الطعن", "تشويه",
+               "يساء", "المساء", "مساء", "سوء", "الفهم", "فهمها", "يفهم", "يفهمون"],
+        words: ["misunderstood", "misunderstanding", "misunderstandings", "misconception",
+                "misconceptions", "misunderstand", "myth", "myths", "propaganda",
+                "accusation", "accusations", "criticism", "objection", "objections",
+                "شبهة", "شبهات", "الشبهات", "افتراء", "افتراءات", "الافتراءات",
+                "اتهام", "اتهامات", "الاتهامات", "مطاعن", "الطعن", "تشويه",
+                "يساء", "المساء", "مساء", "سوء", "الفهم", "فهمها", "يفهم", "يفهمون",
+                "islam", "muslims", "quran", "people", "west", "media", "answer", "reply",
+                "الإسلام", "الاسلام", "المسلمين", "المسلمون", "القرآن", "الناس",
+                "الغرب", "الإعلام", "الاعلام", "الرد", "الجواب", "عن الإسلام"] },
       { id: "mis-women", src: "mis", need: 2, target: "#mis-women",
         must: ["beat", "beats", "beating", "hit", "hitting", "strike", "striking",
                "oppress", "oppressed", "oppression", "nushuz",
@@ -944,16 +1006,127 @@
       };
     }
 
+    /* ============================================================
+       SOMEONE SAYING THEY WANT TO HARM THEMSELVES
+       ============================================================
+       This is the one input on the page where a wrong answer can do real
+       harm, and it was wrong. "I want to kill myself" was answered with
+       four Sunnah entries about neighbours, archery targets, fasting and
+       istikharah — matched on the words "want", "kill" and "myself".
+
+       It cannot be fixed by scoring, because the sentence is not a search
+       query. It is a person telling you something. So it is caught before
+       any word is scored, and answered by a human sentence first.
+
+       WHAT THIS BOX DOES NOT DO, deliberately:
+         * it does not open with a ruling, and it does not open with a verse
+         * it does not say the word for the act, or name its punishment
+         * it does not tell the reader they are sinning
+       Someone in that state has usually heard all of that already, and the
+       one thing they have not been told is that this is survivable and that
+       they should tell a human being today.
+
+       MATCHING IS ON PHRASES, NEVER ON SINGLE WORDS. "kill" alone must not
+       fire this — that is the same one-word trap that caused the bug. Each
+       pattern below names an intention toward oneself. */
+    const SELF_HARM = [
+      /\bkill(ing)?\s+(myself|my\s*self)\b/i,
+      /\bend(ing)?\s+(my|it\s+all|my\s+own)\s*(life|existence)?\b/i,
+      /\b(want|wanna|going|plan(ning)?|thinking about|thought about)\s+to\s+die\b/i,
+      /\bi\s+(want|wish)\s+to\s+(die|disappear|not\s+exist)\b/i,
+      /\bsuicid(e|al)\b/i,
+      /\btake\s+my\s+(own\s+)?life\b/i,
+      /\b(harm|hurt|cut)\s+(myself|my\s*self)\b/i,
+      /\bno\s+(reason|point)\s+(to|in)\s+(live|living|go\s+on)\b/i,
+      /\bbetter\s+off\s+dead\b/i,
+      /\u0623\u0642\u062a\u0644\s*\u0646\u0641\u0633\u064a/,        /* أقتل نفسي */
+      /\u0642\u062a\u0644\s*\u0646\u0641\u0633\u064a/,
+      /\u0627\u0646\u062a\u062d\u0627\u0631/,                    /* انتحار */
+      /\u0623\u0646\u062a\u062d\u0631|\u0627\u0646\u062a\u062d\u0631/,
+      /\u0623\u0631\u064a\u062f\s*\u0623\u0646\s*\u0623\u0645\u0648\u062a|\u0627\u0631\u064a\u062f\s*\u0627\u0646\s*\u0627\u0645\u0648\u062a/,
+      /\u0623\u062a\u0645\u0646\u0649\s*\u0627\u0644\u0645\u0648\u062a|\u0627\u062a\u0645\u0646\u0649\s*\u0627\u0644\u0645\u0648\u062a/,
+      /\u0623\u0624\u0630\u064a\s*\u0646\u0641\u0633\u064a|\u0627\u0624\u0630\u064a\s*\u0646\u0641\u0633\u064a/,
+      /\u0644\u0627\s*\u0645\u0639\u0646\u0649\s*\u0644\u0644\u062d\u064a\u0627\u0629|\u0645\u0627\s*\u0641\u064a\u0647\s*\u0641\u0627\u064a\u062f\u0629\s*\u0645\u0646\s*\u0627\u0644\u062d\u064a\u0627\u0629/
+    ];
+
+    function iitwIsSelfHarm(raw) {
+      return SELF_HARM.some(re => re.test(raw));
+    }
+
+    function iitwSelfHarmHtml() {
+      return `<div class="gd-selfharm">
+        <div class="gd-sh-label">\u2764\ufe0f <span class="en-only">Please read this first</span>
+          <span class="ar-only" dir="rtl">\u0627\u0642\u0631\u0623 \u0647\u0630\u0627 \u0623\u0648\u0651\u0644\u064b\u0627</span></div>
+
+        <p class="gd-sh-lead en-only">Tell a person today. Not this website \u2014 a person. Someone in your family, a friend, an imam, a doctor. Say the words out loud to somebody who can sit with you. That single step is the whole of what is being asked of you right now, and it is enough for today.</p>
+        <p class="gd-sh-lead ar-only" dir="rtl">\u0623\u062e\u0628\u0650\u0631 \u0625\u0646\u0633\u0627\u0646\u064b\u0627 \u0627\u0644\u064a\u0648\u0645. \u0644\u0627 \u0647\u0630\u0627 \u0627\u0644\u0645\u0648\u0642\u0639 \u2014 \u0625\u0646\u0633\u0627\u0646\u064b\u0627: \u0623\u062d\u062f\u064b\u0627 \u0645\u0646 \u0623\u0647\u0644\u0643\u060c \u0623\u0648 \u0635\u0627\u062d\u0628\u064b\u0627\u060c \u0623\u0648 \u0625\u0645\u0627\u0645\u064b\u0627\u060c \u0623\u0648 \u0637\u0628\u064a\u0628\u064b\u0627. \u0642\u064f\u0644\u0652\u0647\u0627 \u0628\u0644\u0633\u0627\u0646\u0643 \u0644\u0645\u0646 \u064a\u0642\u062f\u0631 \u0623\u0646 \u064a\u062c\u0644\u0633 \u0645\u0639\u0643. \u0648\u0647\u0630\u0647 \u0627\u0644\u062e\u0637\u0648\u0629 \u0648\u062d\u062f\u0647\u0627 \u0647\u064a \u0643\u0644\u0651 \u0627\u0644\u0645\u0637\u0644\u0648\u0628 \u0645\u0646\u0643 \u0627\u0644\u0622\u0646\u060c \u0648\u062a\u0643\u0641\u064a \u0644\u064a\u0648\u0645\u0643.</p>
+
+        <p class="en-only">If there is a crisis or emergency line where you live, call it. If you are in immediate danger, go to a hospital or ask someone to take you. There is no shame in either \u2014 you would take a friend.</p>
+        <p class="ar-only" dir="rtl">\u0648\u0625\u0646 \u0643\u0627\u0646 \u0641\u064a \u0628\u0644\u062f\u0643 \u062e\u0637\u0651\u064c \u0644\u0644\u0637\u0648\u0627\u0631\u0626 \u0623\u0648 \u0644\u0644\u062f\u0639\u0645 \u0627\u0644\u0646\u0641\u0633\u064a \u0641\u0627\u062a\u0651\u0635\u0644 \u0628\u0647. \u0648\u0625\u0646 \u0643\u0646\u062a \u0641\u064a \u062e\u0637\u0631 \u0627\u0644\u0622\u0646 \u0641\u0627\u0630\u0647\u0628 \u0625\u0644\u0649 \u0645\u0633\u062a\u0634\u0641\u0649 \u0623\u0648 \u0627\u0637\u0644\u0628 \u0645\u0646 \u064a\u0630\u0647\u0628 \u0628\u0643. \u0648\u0644\u064a\u0633 \u0641\u064a \u0648\u0627\u062d\u062f\u064d \u0645\u0646\u0647\u0645\u0627 \u0639\u064a\u0628\u064c \u2014 \u0641\u0623\u0646\u062a \u062a\u0641\u0639\u0644\u0647 \u0644\u0635\u0627\u062d\u0628\u0643.</p>
+
+        <div class="gd-sh-verse">
+          <p class="gd-sh-ar" dir="rtl">\u0642\u064f\u0644\u0652 \u064a\u064e\u0670\u0639\u0650\u0628\u064e\u0627\u062f\u0650\u0649\u064e \u0671\u0644\u0651\u064e\u0630\u0650\u064a\u0646\u064e \u0623\u064e\u0633\u0652\u0631\u064e\u0641\u064f\u0648\u0627\u06df \u0639\u064e\u0644\u064e\u0649\u0670\u0653 \u0623\u064e\u0646\u0641\u064f\u0633\u0650\u0647\u0650\u0645\u0652 \u0644\u064e\u0627 \u062a\u064e\u0642\u0652\u0646\u064e\u0637\u064f\u0648\u0627\u06df \u0645\u0650\u0646 \u0631\u0651\u064e\u062d\u0652\u0645\u064e\u0629\u0650 \u0671\u0644\u0644\u0651\u064e\u0647\u0650 \u06da \u0625\u0650\u0646\u0651\u064e \u0671\u0644\u0644\u0651\u064e\u0647\u064e \u064a\u064e\u063a\u0652\u0641\u0650\u0631\u064f \u0671\u0644\u0630\u0651\u064f\u0646\u064f\u0648\u0628\u064e \u062c\u064e\u0645\u0650\u064a\u0639\u064b\u0627</p>
+          <p class="gd-sh-en en-only">"Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed, Allah forgives all sins."</p>
+          <div class="tad-ref en-only">Surah Az-Zumar (39:53)</div>
+          <div class="tad-ref ar-only" dir="rtl">\u0633\u0648\u0631\u0629 \u0627\u0644\u0632\u0645\u0631 (\u0663\u0669:\u0665\u0663)</div>
+          <p class="en-only" style="margin-top:8px;">Notice who is being addressed. Not "O people" \u2014 <strong>\u064a\u064e\u0627 \u0639\u0650\u0628\u064e\u0627\u062f\u0650\u064a</strong>, <em>O My servants</em>, said to the ones who have transgressed against themselves. He is still calling them His. That is the verse's whole answer to a person who has decided they are past saving.</p>
+          <p class="ar-only" dir="rtl" style="margin-top:8px;">\u0648\u062a\u0623\u0645\u0651\u0644 \u0645\u0646 \u0627\u0644\u0645\u062e\u0627\u0637\u064e\u0628: \u0644\u0645 \u064a\u0642\u0644 \u00ab\u064a\u0627 \u0623\u064a\u0651\u0647\u0627 \u0627\u0644\u0646\u0627\u0633\u00bb\u060c \u0628\u0644 <strong>\u064a\u064e\u0627 \u0639\u0650\u0628\u064e\u0627\u062f\u0650\u064a</strong> \u2014 \u0642\u0627\u0644\u0647\u0627 \u0644\u0645\u0646 \u0623\u0633\u0631\u0641\u0648\u0627 \u0639\u0644\u0649 \u0623\u0646\u0641\u0633\u0647\u0645\u060c \u0641\u0646\u0633\u0628\u0647\u0645 \u0625\u0644\u064a\u0647 \u0628\u0639\u062f\u064f. \u0648\u0647\u0630\u0627 \u062c\u0648\u0627\u0628 \u0627\u0644\u0622\u064a\u0629 \u0643\u0644\u0651\u0647 \u0644\u0645\u0646 \u0631\u0623\u0649 \u0623\u0646\u0651\u0647 \u0642\u062f \u062e\u0631\u062c \u0645\u0646 \u0627\u0644\u0631\u062d\u0645\u0629.</p>
+        </div>
+
+        <div class="gd-empty-links">
+          <div class="gd-empty-head"><span class="en-only">When you are ready, these are here</span>
+            <span class="ar-only" dir="rtl">\u0648\u0625\u0630\u0627 \u0627\u0633\u062a\u0637\u0639\u062a\u060c \u0641\u0647\u0630\u0647 \u0647\u0647\u0646\u0627</span></div>
+          <a href="#rulings"><span class="en-only">\ud83d\udcda "My sins are too big to be forgiven" \u2014 the one question the scholars answer with one voice</span>
+            <span class="ar-only" dir="rtl">\ud83d\udcda \u00ab\u0630\u0646\u0648\u0628\u064a \u0623\u0639\u0638\u0645 \u0645\u0646 \u0623\u0646 \u062a\u064f\u063a\u0641\u0631\u00bb \u2014 \u0648\u0647\u0630\u0627 \u0645\u0645\u0651\u0627 \u064a\u062c\u064a\u0628 \u0639\u0646\u0647 \u0623\u0647\u0644 \u0627\u0644\u0639\u0644\u0645 \u0628\u0642\u0648\u0644\u064d \u0648\u0627\u062d\u062f</a>
+          <a href="#adhkar"><span class="en-only">\ud83d\udcff What the Prophet \ufdfa said at a moment of distress</span>
+            <span class="ar-only" dir="rtl">\ud83d\udcff \u0645\u0627 \u0643\u0627\u0646 \u064a\u0642\u0648\u0644\u0647 \u0627\u0644\u0646\u0628\u064a\u0651 \ufdfa \u0639\u0646\u062f \u0627\u0644\u0643\u0631\u0628</a>
+        </div>
+
+        <p class="gd-sh-foot en-only">This page is not a doctor and not a scholar, and it is not going to pretend to be either while you are feeling like this. Tell someone today.</p>
+        <p class="gd-sh-foot ar-only" dir="rtl">\u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062d\u0629 \u0644\u064a\u0633\u062a \u0637\u0628\u064a\u0628\u064b\u0627 \u0648\u0644\u0627 \u0639\u0627\u0644\u0645\u064b\u0627\u060c \u0648\u0644\u0646 \u062a\u062f\u0651\u0639\u064a \u0630\u0644\u0643 \u0648\u0623\u0646\u062a \u0639\u0644\u0649 \u0647\u0630\u0647 \u0627\u0644\u062d\u0627\u0644. \u0641\u0623\u062e\u0628\u0650\u0631 \u0625\u0646\u0633\u0627\u0646\u064b\u0627 \u0627\u0644\u064a\u0648\u0645.</p>
+      </div>`;
+    }
+
     /* The honest empty answer. Shown when someone asks for a RULING and the
        site has nothing authored on it — instead of the nearest verse, which
        is how a question about the Mawlid came back as a verse about
        hardship. */
-    function iitwNoRulingHtml(raw) {
+    /* THE HONEST EMPTY ANSWER.
+       Two callers: a ruling question with no ruling, and — since the one-word
+       bug — ANY question that matched nothing on more than a single ordinary
+       word. It names every section on the page, because the box exists to
+       point a reader somewhere real, and because the owner asked a question
+       about misconceptions, was shown a supplication said in prostration, and
+       then could not find the section that actually answers him. */
+    function iitwNoRulingHtml(raw, kind) {
+      const ruling = kind !== "question";
+      const leadEn = ruling
+        ? "You asked about a ruling, and this site does not have one written on that subject yet."
+        : "Nothing on this page matched your question closely enough to be worth showing you. Rather than print whatever came nearest — which is how a question about Islam gets answered with a supplication said in prostration — it is saying so.";
+      const leadAr = ruling
+        ? "سؤالك عن حكم، ولا يوجد في هذا الموقع جوابٌ مكتوبٌ في هذه المسألة بعد."
+        : "لم يُطابق سؤالَك شيءٌ في هذه الصفحة مطابقةً تكفي لعرضه عليك. وبدل أن يُعرض عليك أقربُ ما وُجد — وهو الذي جعل سؤالًا عن الإسلام يُجاب بدعاءٍ يُقال في السجود — يُقال لك ذلك صراحةً.";
       return `<div class="gd-answer gd-answer-empty">
         <div class="gd-answer-label">🔎 <span class="en-only">No direct answer here yet</span>
           <span class="ar-only" dir="rtl">لا يوجد جواب مباشر هنا بعد</span></div>
-        <p class="en-only">You asked about a ruling, and this site does not have one written on that subject yet. Rather than show you a verse about something else, it is saying so. What is here: <a href="#rulings">the rulings the scholars explained</a>, <a href="#bidah">adding to the religion</a>, and <a href="sunnah.html">the Sunnah in daily life</a>. For a ruling on your own situation, ask a scholar you trust.</p>
-        <p class="ar-only" dir="rtl">سؤالك عن حكم، ولا يوجد في هذا الموقع جوابٌ مكتوبٌ في هذه المسألة بعد. وبدل أن يُعرض عليك نصٌّ في موضوعٍ آخر، يُقال لك ذلك صراحةً. والموجود هنا: <a href="#rulings">ما شرحه العلماء من الأحكام</a>، و<a href="#bidah">الزيادة في الدين</a>، و<a href="sunnah.html">السنة في الحياة اليومية</a>. وأمّا الحكم في حالتك أنت فاسأل عنه عالمًا تثق به.</p>
+        <p class="en-only">${leadEn}</p>
+        <p class="ar-only" dir="rtl">${leadAr}</p>
+        <div class="gd-empty-links">
+          <div class="gd-empty-head"><span class="en-only">What is on this page</span>
+            <span class="ar-only" dir="rtl">ما في هذه الصفحة</span></div>
+          <a href="#misunderstood"><span class="en-only">🛡️ The hardest questions asked about Islam — the fighting verses, jihad, compulsion, the hijab, women, and the Khawarij</span>
+            <span class="ar-only" dir="rtl">🛡️ أصعبُ ما يُسأل عنه الإسلام — آياتُ القتال، والجهاد، والإكراه، والحجاب، والمرأة، والخوارج</span></a>
+          <a href="#rulings"><span class="en-only">📚 What the scholars explained — the rulings, with who said what</span>
+            <span class="ar-only" dir="rtl">📚 ما شرحه أهل العلم — الأحكام بأسماء أصحابها</span></a>
+          <a href="#bidah"><span class="en-only">🛑 Adding to the religion</span>
+            <span class="ar-only" dir="rtl">🛑 الزيادة في الدين</span></a>
+          <a href="#adhkar"><span class="en-only">📿 The adhkar of an ordinary day</span>
+            <span class="ar-only" dir="rtl">📿 أذكار اليوم</span></a>
+          <a href="quran.html"><span class="en-only">🧠 The Quran, with 496 verses explained</span>
+            <span class="ar-only" dir="rtl">🧠 القرآن، وفيه ٤٩٦ آيةً مشروحة</span></a>
+        </div>
+        <p class="en-only" style="margin-top:12px;">For a ruling on your own situation, ask a scholar you trust.</p>
+        <p class="ar-only" dir="rtl" style="margin-top:12px;">وأمّا الحكم في حالتك أنت فاسأل عنه عالمًا تثق به.</p>
       </div>`;
     }
 
@@ -999,6 +1172,16 @@
       const qx = expandQuery(qt);
       const distress = isDistress(qt, raw);
 
+      /* BEFORE ANY OF IT. Someone telling this page they want to end their
+         life is not running a search, and every word in that sentence is a
+         trap for a scorer: "kill" reached the fighting verses, and "want",
+         "kill" and "myself" together reached four Sunnah entries about
+         neighbours, archery, fasting and istikharah. */
+      if (iitwIsSelfHarm(raw)) {
+        out.innerHTML = iitwSelfHarmHtml();
+        return;
+      }
+
       /* READ THE SENTENCE BEFORE SCORING ANY WORD IN IT. */
       const intent = iitwIntent(raw);
 
@@ -1027,6 +1210,41 @@
          returned verses about fear and about clothing. The topics that
          reach here already passed the `must` gate in GUIDANCE_TOPICS, so
          one of these matching is evidence enough on its own. */
+      /* "What do people get wrong about Islam" names no single subject, so
+         it cannot resolve to one section. It gets the whole list instead —
+         which is also the answer to "where is that section?". */
+      if (intent.topic && intent.topic.id === "mis-general" && typeof MISUNDERSTOOD !== "undefined") {
+        const secs = MISUNDERSTOOD.sections || [];
+        out.innerHTML = `<div class="guidance-results-head">
+            <h3><span class="en-only">The answer to what you asked</span>
+              <span class="ar-only" dir="rtl">جواب ما سألت عنه</span></h3>
+          </div>
+          <div class="gd-answer">
+            <div class="gd-answer-label">✅ <span class="en-only">In short</span>
+              <span class="ar-only" dir="rtl">الجواب باختصار</span></div>
+            <h4 class="en-only">${MISUNDERSTOOD.title}</h4>
+            <h4 class="ar-only" dir="rtl">${MISUNDERSTOOD.titleAr}</h4>
+            <p class="gd-answer-main en-only">There is a whole section on this page for exactly that question. It takes the six things said most often about Islam, puts every verse back into the passage it belongs to — with the verse before it and the verse after it — explains what the Arabic words actually mean, and gives a full reference for every claim so you can check it yourself.</p>
+            <p class="gd-answer-main ar-only" dir="rtl">في هذه الصفحة قسمٌ كاملٌ لهذا السؤال بعينه. يأخذ أكثر ستّة أمورٍ تُقال عن الإسلام، ويردّ كلّ آيةٍ إلى سياقها — مع الآية قبلها والآية بعدها — ويبيّن معاني الألفاظ العربية على وجهها، ويذكر المرجع كاملًا لكلّ دعوى لتتحقّق منها بنفسك.</p>
+            <div class="gd-empty-links">
+              <div class="gd-empty-head"><span class="en-only">The six subjects</span>
+                <span class="ar-only" dir="rtl">الأبواب الستّة</span></div>
+              ${secs.map(x => `<a href="#${x.id}">${x.icon || "❓"}
+                <span class="en-only">${x.title}</span>
+                <span class="ar-only" dir="rtl">${x.titleAr}</span></a>`).join("")}
+            </div>
+            <a class="btn btn-primary btn-small gd-answer-link" href="#misunderstood">
+              <span class="en-only">Open the whole section</span>
+              <span class="ar-only" dir="rtl">افتح القسم كاملًا</span>
+            </a>
+          </div>
+          <div class="context-note" style="margin-top:18px;">
+            <span class="en-only">This is an explanation, not a fatwa. Read each verse inside its complete surah, and for a ruling on your own circumstances ask a scholar you trust.</span>
+            <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">هذا بيانٌ وليس فتوى. اقرأ كلّ آيةٍ في سورتها كاملة، وأمّا الحكم في حالك أنت فاسأل عنه عالمًا تثق به.</span>
+          </div>`;
+        return;
+      }
+
       if (intent.topic && intent.topic.src === "mis" && typeof MISUNDERSTOOD !== "undefined") {
         const sec = (MISUNDERSTOOD.sections || [])
           .find(s => s.id === (intent.topic.answer || intent.topic.id)) ||
@@ -1144,23 +1362,73 @@
       const rulingIsGeneric = rulings.length >= 2 && rulings[0].s <= rulings[1].s * 1.2;
       if (rulingIsGeneric) rulings.length = 0;
 
-      // 1) The Prophet's ﷺ own words — shown first, as the clearest guidance.
-      const hadiths = (typeof HADITHS !== "undefined" ? HADITHS : []).map(h => ({
-        h,
-        s: scoreContent(qt, raw, h.keys, [h.title, h.text, h.topic, h.arabic, h.narrator].join(" "), qx)
-      })).filter(x => x.s >= 4).sort((a, b) => b.s - a.s).slice(0, 6);
+      /* ============================================================
+         ONE RARE WORD IN COMMON IS A COINCIDENCE. TWO IS A SUBJECT.
+         ============================================================
+         This rule was already here, and it was applied to rulings and to
+         biographies only. Hadiths, themes, worship steps and Sunnah entries
+         had no guard at all, so a single ordinary word could carry any of
+         them to the top of the page — and did:
 
-      // 2) Quranic themes
+           "ما هي أكثر الأشياء المُساء فهمها عن الإسلام؟"
+              → "what he ﷺ said while prostrating", on the word أكثر alone.
+
+         Three of that question's four words scored zero. The fourth scored
+         5.70 and three different worship steps tied on it exactly, because
+         they all merely contain the word "most".
+
+         So: for a query of three words or more, EVERY collection now has to
+         match on two distinct rare words. A short query is still a topic name
+         and is left generous — someone typing "music" or "hijab" means the
+         subject, and reaches its authored answer through the intent layer
+         long before this point anyway. */
+      const NEEDS_TWO = qt.length >= 3;
+
+      /* ONE, NOT TWO — and this number was measured, not guessed.
+         Requiring two distinct rare words killed the queries this box exists
+         for: "I am struggling with anger and I hurt someone I love",
+         "أنا فقير ولا أجد عملا" and "مات أبي وأنا حزين جدا" all went
+         empty, because a person describing a situation names their subject
+         ONCE. Meanwhile the junk match that started this — three worship steps
+         tied at 5.70 on the single word أكثر — scored ZERO distinct rare
+         words, and once أكثر was added to GENERIC it fell to 0.32, far under
+         its threshold of 5.
+
+         So the line is between "one real word" and "no real word at all",
+         not between one and two. Anything that matched only generic filler
+         is dropped; a situation named once still comes through. */
+      const MIN_DISTINCT_ANY = 1;
+
+      /* Score, and keep how many distinct rare words carried it.
+         `scoreContent` leaves that on `lastDistinctHits`, so it has to be
+         read on the same tick — captured inside the map, never after it. */
+      function scoreAll(list, hayOf, keysOf, min) {
+        return list.map(item => {
+          const sc = scoreContent(qt, raw, keysOf(item), hayOf(item), qx);
+          return { item, s: sc, distinct: lastDistinctHits };
+        }).filter(x => x.s >= min && (!NEEDS_TWO || x.distinct >= MIN_DISTINCT_ANY))
+          .sort((a, b) => b.s - a.s);
+      }
+
+      // 1) The Prophet's ﷺ own words — shown first, as the clearest guidance.
+      const hadiths = scoreAll(
+        (typeof HADITHS !== "undefined" ? HADITHS : []),
+        h => [h.title, h.text, h.topic, h.arabic, h.narrator].join(" "),
+        h => h.keys, 4).slice(0, 6).map(x => ({ h: x.item, s: x.s }));
+
+      // 2) Quranic themes — same guard.
       const themes = [];
       PARADISE_THEMES.forEach(t => {
         const s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "), qx);
-        if (s >= 4) themes.push({ t, s, kind: "paradise" });
+        const d = lastDistinctHits;
+        if (s >= 4 && (!NEEDS_TWO || d >= MIN_DISTINCT_ANY)) themes.push({ t, s, kind: "paradise" });
       });
       WARNING_THEMES.forEach(t => {
         let s = scoreContent(qt, raw, t.keys, [t.title, t.description, t.titleAr, t.descriptionAr].join(" "), qx);
+        const d = lastDistinctHits;
         // Someone describing their own suffering is not asking to be warned.
         if (distress) s *= 0.45;
-        if (s >= 4) themes.push({ t, s, kind: "warning" });
+        if (s >= 4 && (!NEEDS_TWO || d >= MIN_DISTINCT_ANY)) themes.push({ t, s, kind: "warning" });
       });
       themes.sort((a, b) => b.s - a.s);
 
@@ -1168,21 +1436,19 @@
          "how do I ask forgiveness" wants a wording, not a theme — so the
          worship reference is searched from here too, and shown first when it
          matches, because it answers the question directly. */
-      const worship = (typeof WORSHIP_STEPS !== "undefined" ? WORSHIP_STEPS : []).map(w => ({
-        w,
-        s: scoreContent(qt, raw, w.keys,
-             [w.title, w.titleAr, w.when, w.whenAr, w.meaning, w.meaningAr,
-              w.arabic, w.stageEn, w.stageAr].join(" "), qx)
-      })).filter(x => x.s >= 5).sort((a, b) => b.s - a.s).slice(0, 4);
+      const worship = scoreAll(
+        (typeof WORSHIP_STEPS !== "undefined" ? WORSHIP_STEPS : []),
+        w => [w.title, w.titleAr, w.when, w.whenAr, w.meaning, w.meaningAr,
+              w.arabic, w.stageEn, w.stageAr].join(" "),
+        w => w.keys, 5).slice(0, 4).map(x => ({ w: x.item, s: x.s }));
 
       /* 2b) What the Prophet ﷺ actually DID about it. Someone describing a
          situation wants the practice, not only the principle — so all the
          Sunnah entries are searched here as well. */
-      const sunnah = (typeof SUNNAH !== "undefined" ? SUNNAH : []).map(s => ({
-        s,
-        score: scoreContent(qt, raw, s.keys,
-          [s.title, s.titleAr, s.detail, s.detailAr, s.arabic || "", s.ref].join(" "), qx)
-      })).filter(x => x.score >= 4).sort((a, b) => b.score - a.score).slice(0, 5);
+      const sunnah = scoreAll(
+        (typeof SUNNAH !== "undefined" ? SUNNAH : []),
+        x => [x.title, x.titleAr, x.detail, x.detailAr, x.arabic || "", x.ref].join(" "),
+        x => x.keys, 4).slice(0, 5).map(x => ({ s: x.item, score: x.s }));
 
       /* 3 & 4) People. A biography must match on a genuinely distinctive word
          before it is shown. Without this, searching "a man wearing women's
@@ -1220,6 +1486,17 @@
          as "with hardship comes ease". Say there is no answer instead. */
       if (intent.ruling && rulings.length === 0 && worship.length === 0) {
         out.innerHTML = iitwNoRulingHtml(raw);
+        return;
+      }
+
+      /* A QUESTION THAT MATCHED NOTHING GETS THE HONEST BOX, NOT THE
+         KEYWORD SUGGESTIONS. The old empty state told the reader to "try
+         describing the action or feeling more simply", which is the right
+         advice for someone describing a situation and useless to someone who
+         asked a question about the religion — and it never mentioned the
+         sections that would have answered them. */
+      if (total === 0 && intent.question) {
+        out.innerHTML = iitwNoRulingHtml(raw, "question");
         return;
       }
 
@@ -2496,7 +2773,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608211819"></script>
-  <script src="js/i18n.js?v=202608211819"></script>
+  <script src="js/main.js?v=202608212128"></script>
+  <script src="js/i18n.js?v=202608212128"></script>
 </body>
 </html>

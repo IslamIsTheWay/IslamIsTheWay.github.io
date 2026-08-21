@@ -6394,3 +6394,163 @@ html.lang-ar .tad-tense-form p { font-size: 1.14rem; }
   .tad-tense-form, .tad-tense-if, .tad-tense-pair { padding: 10px 12px; }
   .tad-tense-pair .tad-link-ar { font-size: 1.14rem; line-height: 2.1; }
 }
+
+/* ============ On this page — the jump bar ============
+   Added because the misunderstood section shipped at 33 cards and the owner
+   scrolled past it and asked where it was. A long page with no index is a
+   page whose bottom half does not exist.
+
+   The first link is highlighted, because that is the section people arrive
+   looking for and it is the furthest down. */
+.gd-jump {
+  background: var(--green-pale);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0 18px;
+}
+.gd-jump-head {
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+html.lang-ar .gd-jump-head {
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.gd-jump-links { display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.gd-jump-links a {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  text-decoration: none;
+  line-height: 1.7;
+  transition: var(--transition);
+}
+.gd-jump-links a:hover { background: var(--green-light); border-color: var(--green); }
+html.lang-ar .gd-jump-links a { font-family: 'Amiri', serif; font-size: 1.02rem; }
+.gd-jump-links a.gd-jump-hot {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: #fff;
+}
+.gd-jump-links a.gd-jump-hot:hover { background: var(--green); border-color: var(--green); }
+
+/* Every section the bar points at has to clear the sticky header. */
+#worship, #rulings, #revival, #bidah, #adhkar, #meeting, #misunderstood {
+  scroll-margin-top: 90px;
+}
+
+/* The section list inside the honest empty answer. */
+.gd-empty-links {
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 13px 16px;
+}
+.gd-empty-head {
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+html.lang-ar .gd-empty-head {
+  font-family: 'Amiri', serif;
+  font-size: .98rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.gd-empty-links a {
+  display: block;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--border);
+  color: var(--green-dark);
+  text-decoration: none;
+  font-size: .9rem;
+  line-height: 1.8;
+  font-weight: 600;
+}
+.gd-empty-links a:last-child { border-bottom: none; }
+.gd-empty-links a:hover { color: var(--green); }
+html.lang-ar .gd-empty-links a { font-family: 'Amiri', serif; font-size: 1.06rem; }
+
+@media (max-width: 560px) {
+  .gd-jump-links a { font-size: .78rem; padding: 6px 12px; }
+  html.lang-ar .gd-jump-links a { font-size: .96rem; }
+}
+
+/* ============ Someone saying they want to harm themselves ============
+   The one box on this site that must not look like the others. Warm rather
+   than institutional, the human instruction first and largest, the verse
+   below it rather than above it, and no grading badge — a person in that
+   state is not being handed a citation to evaluate. */
+.gd-selfharm {
+  background: #fff6f2;
+  border: 1px solid #f0cdbe;
+  border-inline-start: 6px solid #c2552a;
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-top: 18px;
+  box-shadow: var(--shadow);
+}
+.gd-sh-label {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #a8431f;
+  margin-bottom: 12px;
+}
+html.lang-ar .gd-sh-label {
+  font-family: 'Amiri', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.gd-sh-lead {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.85;
+  color: #7a2f14;
+  margin-bottom: 14px;
+}
+html.lang-ar .gd-sh-lead { font-family: 'Amiri', serif; font-size: 1.3rem; line-height: 2.1; }
+.gd-selfharm p { line-height: 1.9; margin-bottom: 12px; }
+html.lang-ar .gd-selfharm p { font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2.15; }
+
+.gd-sh-verse {
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 11px;
+  padding: 15px 18px;
+  margin: 16px 0;
+}
+.gd-sh-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.3rem;
+  line-height: 2.3;
+  color: var(--green-dark);
+  direction: rtl;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.gd-sh-en { font-style: italic; font-size: .98rem; line-height: 1.9; }
+.gd-sh-foot { font-size: .92rem; color: #8a5a3f; margin-top: 12px; margin-bottom: 0; }
+
+@media (max-width: 560px) {
+  .gd-selfharm { padding: 17px 16px; }
+  .gd-sh-lead { font-size: 1.04rem; }
+  html.lang-ar .gd-sh-lead { font-size: 1.18rem; }
+  .gd-sh-ar { font-size: 1.16rem; line-height: 2.15; }
+}
