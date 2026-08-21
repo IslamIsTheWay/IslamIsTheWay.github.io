@@ -701,7 +701,13 @@ function iitwTadabburEmptyHtml(surah) {
    entry, so verses without tadabbur are simply left alone. */
 function iitwTadabburAyahHtml(tad, n) {
   const a = (tad.data.ayat || []).filter(function (x) { return x.n === n; })[0];
-  if (!a) return "";
+  /* A verse may carry a verb-form note without having a tadabbur block of its
+     own — js/tadabbur-tense.js is keyed "surah:ayah" and grew separately, so
+     the panel opens for either. Without this, adding a tense note to a verse
+     that had no block rendered nothing at all and looked like a data error. */
+  const tn = (typeof iitwTenseFor === "function") ? iitwTenseFor(tad.num, n) : null;
+  if (!a && !tn) return "";
+  if (!a) return iitwTenseOnlyHtml(tad, n, tn);
 
   let h = '<div class="tad-ayah tad-hidden">';
   h += '<div class="tad-ayah-head">🧠 <span class="en-only">Why this verse, and why these words</span>' +
@@ -735,6 +741,12 @@ function iitwTadabburAyahHtml(tad, n) {
          (a.ref ? '<div class="tad-ref" dir="auto">' + a.ref + '</div>' : "") +
          (a.strength ? tadBadge(a.strength) : "") + '</div>';
   }
+
+  /* WHY IT IS IN THIS TENSE, AND WHAT WOULD CHANGE IF IT WERE NOT.
+     Placed straight after `why` and before everything else, because it is
+     about the sentence itself — the shape the meaning arrived in — and every
+     other block below reads differently once you have seen it. */
+  if (tn) h += iitwTenseBlockHtml(tn);
 
   /* WHAT PEOPLE GET WRONG ABOUT THIS VERSE.
      The whole reason this section exists: a verse that corrects an idea most
@@ -818,6 +830,95 @@ function iitwTadabburAyahHtml(tad, n) {
   }
 
   h += '</div>';
+  return h;
+}
+
+/* ============================================================
+   WHY THIS TENSE — the block, and the panel when it is alone
+   ============================================================
+   Four movements, in the order a reader needs them:
+     what form the word is actually in  →  why that form here  →
+     WHAT WOULD CHANGE if it were the other  →  plain words.
+
+   The third is the one the owner asked for, and it is the one that
+   turns a grammar label into something a person can feel. You only
+   notice a choice when you are shown the alternative.
+
+   `pair` is rendered last and loudly: several of these entries are
+   not about one verse at all but about the SAME sentence appearing
+   twice in different shapes — Yusuf's condition in 12:60 and the
+   brothers' report of it in 12:63 — and the pair IS the point. */
+function iitwTenseBlockHtml(t) {
+  let h = '<div class="tad-tense">' +
+    '<div class="tad-tense-label">🕰 <span class="en-only">Why it is in this tense</span>' +
+      '<span class="ar-only" dir="rtl">لِمَ جاء بهذه الصيغة</span></div>' +
+    '<div class="tad-tense-head"><span class="en-only">' + t.head + '</span>' +
+      '<span class="ar-only" dir="rtl">' + t.headAr + '</span></div>';
+
+  h += '<div class="tad-tense-form">' +
+    '<div class="tad-tense-sub"><span class="en-only">The form</span>' +
+      '<span class="ar-only" dir="rtl">الصيغة</span></div>' +
+    '<div class="en-only">' + tadPara(t.form) + '</div>' +
+    '<div class="ar-only" dir="rtl">' + tadPara(t.formAr, true) + '</div></div>';
+
+  h += '<div class="tad-tense-why">' +
+    '<div class="tad-tense-sub"><span class="en-only">Why this one here</span>' +
+      '<span class="ar-only" dir="rtl">لِمَ هذه ههنا</span></div>' +
+    '<div class="en-only">' + tadPara(t.why) + '</div>' +
+    '<div class="ar-only" dir="rtl">' + tadPara(t.whyAr, true) + '</div></div>';
+
+  if (t.ifOther) {
+    h += '<div class="tad-tense-if">' +
+      '<div class="tad-tense-sub"><span class="en-only">And if it said the other?</span>' +
+        '<span class="ar-only" dir="rtl">فلو قيل بالوجه الآخر؟</span></div>' +
+      '<div class="en-only">' + tadPara(t.ifOther) + '</div>' +
+      '<div class="ar-only" dir="rtl">' + tadPara(t.ifOtherAr, true) + '</div></div>';
+  }
+
+  if (t.plain) {
+    h += '<div class="tad-plain">' +
+      '<div class="tad-plain-label">💬 <span class="en-only">In plain words</span>' +
+        '<span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>' +
+      '<div class="en-only">' + tadPara(t.plain) + '</div>' +
+      '<div class="ar-only" dir="rtl">' + tadPara(t.plainAr, true) + '</div></div>';
+  }
+
+  if (t.pair) {
+    const p = t.pair;
+    h += '<div class="tad-tense-pair">' +
+      '<div class="tad-tense-sub">🔗 <span class="en-only">The verse it is answered by</span>' +
+        '<span class="ar-only" dir="rtl">الآية التي تقابلها</span></div>' +
+      (p.ar ? '<div class="tad-link-ar" dir="rtl">' + p.ar + '</div>' : "") +
+      (p.en ? '<div class="tad-link-en en-only">' + p.en + '</div>' : "") +
+      '<div class="tad-ref en-only">' + p.ref + '</div>' +
+      '<div class="tad-ref ar-only" dir="rtl">' + (p.refAr || p.ref) + '</div>' +
+      '<div class="en-only">' + tadPara(p.how) + '</div>' +
+      '<div class="ar-only" dir="rtl">' + tadPara(p.howAr, true) + '</div></div>';
+  }
+
+  h += '<div class="tad-ref en-only">' + t.ref + '</div>' +
+       '<div class="tad-ref ar-only" dir="rtl">' + (t.refAr || t.ref) + '</div>' +
+       tadBadge(t.strength || "lugha") + '</div>';
+  return h;
+}
+
+/* The panel for a verse that has a verb-form note and nothing else. Same
+   frame as the full one so the two never look like different features. */
+function iitwTenseOnlyHtml(tad, n, tn) {
+  let h = '<div class="tad-ayah tad-hidden">';
+  h += '<div class="tad-ayah-head">🧠 <span class="en-only">Why this verse, and why these words</span>' +
+       '<span class="ar-only" dir="rtl">لِمَ هذه الآية، ولِمَ هذه الألفاظ</span></div>';
+  const sm = (typeof SURAHS !== "undefined" && tad.num)
+    ? SURAHS.filter(function (s) { return s.n === tad.num; })[0] : null;
+  if (sm) {
+    h += '<div class="tad-which">' +
+         '<span class="en-only">Surah ' + sm.name + ' &middot; verse ' + n +
+           '  (' + sm.n + ':' + n + ')</span>' +
+         '<span class="ar-only" dir="rtl">سورة ' + sm.arabic + ' &middot; الآية ' +
+           toArabicDigits(n) + '  (' + toArabicDigits(sm.n) + ':' + toArabicDigits(n) + ')</span>' +
+         '</div>';
+  }
+  h += iitwTenseBlockHtml(tn) + '</div>';
   return h;
 }
 

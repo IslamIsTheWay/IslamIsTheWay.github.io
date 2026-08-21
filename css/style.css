@@ -6287,3 +6287,110 @@ html.lang-ar .mis-ol li { font-family: 'Amiri', serif; font-size: 1.1rem; }
 }
 .mis-ref.ar-only { font-family: 'Amiri', serif; font-size: .95rem; line-height: 2; }
 .mis-card .tad-badge.ar-only { font-family: 'Amiri', serif; font-size: .95rem; }
+
+/* ============ Why it is in this tense — لِمَ جاء بهذه الصيغة ============
+   guidance for the eye, on the Quran page's tadabbur panel.
+
+   The owner asked for this feature by name, and for one part of it in
+   particular: "what will change if we mentioned it in another phase?"
+   That question gets its own box (.tad-tense-if) with its own colour,
+   because it is the half that turns a grammar label into something a
+   reader can feel — and it is the half a skimming eye would otherwise
+   skip as more of the same paragraph.
+
+   Blue, deliberately: the plain-words box is green, the misread box is
+   amber, the differ box is grey. A fourth device needs a fourth colour
+   or the panel stops having any hierarchy at all. */
+.tad-tense {
+  background: #f2f7fc;
+  border: 1px solid #cfe0f2;
+  border-inline-start: 5px solid #2c5f96;
+  border-radius: var(--radius);
+  padding: 18px 21px;
+  margin: 16px 0;
+}
+.tad-tense-label {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #1f4c7a;
+  margin-bottom: 8px;
+}
+html.lang-ar .tad-tense-label {
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.tad-tense-head {
+  font-weight: 700;
+  color: #1a3f66;
+  line-height: 1.65;
+  margin-bottom: 12px;
+  font-size: 1.02rem;
+}
+html.lang-ar .tad-tense-head { font-family: 'Amiri', serif; font-size: 1.2rem; line-height: 2; }
+
+.tad-tense-sub {
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #4a7bab;
+  margin-bottom: 5px;
+}
+html.lang-ar .tad-tense-sub {
+  font-family: 'Amiri', serif;
+  font-size: .98rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.tad-tense-form,
+.tad-tense-why,
+.tad-tense-if,
+.tad-tense-pair { margin-bottom: 13px; }
+.tad-tense p { line-height: 1.9; margin: 0 0 9px; }
+.tad-tense p:last-child { margin-bottom: 0; }
+html.lang-ar .tad-tense p { font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2.15; }
+
+/* The form itself — the Arabic in it is the subject of the sentence, so it
+   is set larger than the prose around it. */
+.tad-tense-form { background: #fff; border-radius: 9px; padding: 11px 14px; }
+.tad-tense-form p { font-size: .96rem; }
+html.lang-ar .tad-tense-form p { font-size: 1.14rem; }
+
+/* "And if it said the other?" — the half the owner asked for by name. */
+.tad-tense-if {
+  background: #fffaf0;
+  border: 1px solid #f0dcb4;
+  border-radius: 9px;
+  padding: 12px 15px;
+}
+.tad-tense-if .tad-tense-sub { color: #8a5d0f; }
+.tad-tense-if p { color: #6b4e14; }
+
+/* The matching verse, where the point IS the pair. */
+.tad-tense-pair {
+  background: #fffdf3;
+  border: 1px solid #f0e4bd;
+  border-radius: 9px;
+  padding: 12px 15px;
+}
+.tad-tense-pair .tad-link-ar {
+  font-family: 'Amiri', serif;
+  font-size: 1.24rem;
+  line-height: 2.25;
+  color: var(--green-dark);
+  margin: 6px 0 8px;
+  direction: rtl;
+  text-align: right;
+}
+.tad-tense-pair .tad-link-en { font-style: italic; font-size: .94rem; line-height: 1.9; }
+
+@media (max-width: 560px) {
+  .tad-tense { padding: 14px 15px; }
+  .tad-tense-form, .tad-tense-if, .tad-tense-pair { padding: 10px 12px; }
+  .tad-tense-pair .tad-link-ar { font-size: 1.14rem; line-height: 2.1; }
+}
