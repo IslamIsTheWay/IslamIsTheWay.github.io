@@ -126,6 +126,45 @@ Muslim by a number taken from it.
   writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
   four false mismatches. Strip harakat and normalise to NFC first.
 
+## `gc-whytech` — why the technology sections are on a religion site
+
+Added 23 August 2026, and placed deliberately **before `gc-consumer`** so it
+introduces the whole technology run (consumer → data → unity → waiting) rather
+than interrupting it. The owner asked for the justification to be stated out
+loud, because a reader is entitled to ask why a site about Islam discusses
+processors and servers.
+
+Its load-bearing argument is **fard kifayah** — the classical ruling that the
+knowledge a community needs (medicine, agriculture, the crafts, calculation) is
+a communal obligation, so that **if nobody carries it every capable person in
+the ummah is sinning**, not merely falling behind. Al-Ghazali argues it in the
+Ihya with medicine as the example. That word had never appeared anywhere on the
+site before this section. **Do not water it down to "Islam encourages
+knowledge"** — the whole force is that it is a ruling with a consequence.
+
+Supporting it, in order: the religious/worldly split is inherited and not ours
+(proved on this same page by Ibn ash-Shatir, muwaqqit of the Umayyad Mosque,
+whose lunar model matches Copernicus — the prayer times were the *reason* for
+the astronomy); worship itself has always leaned on this (qiblah is spherical
+geometry, prayer times are astronomy, and al-Khwarizmi says in his own preface
+that he wrote on algebra for inheritance, legacies, partition and trade); and
+8:60 with Sahih Muslim 1917, where the Prophet ﷺ recited "prepare whatever you
+are able of power" from the minbar and then said three times **"indeed, the
+power is shooting"** — naming the decisive capability of that century, not a
+permanent list.
+
+**That hadith is the one thing here to handle carefully.** The section states
+in its own body that 8:61 commands peace the moment it is offered, that this is
+an instruction to a **state** to be capable of protecting its people, and that
+it is not a permission for individuals to fight — and it points at the Quran
+section and the misunderstood section. Never quote it on this site without that
+frame. `js/tadabbur.js` uses 8:60 for a different purpose (answering the
+"terrorism verse" claim via تُرهِبُون), and the two do not overlap.
+
+It closes with the balance the section needs: technology is not the point, the
+Hereafter is; competence is part of how the trust is carried here. Keep that
+paragraph — without it the section reads as worldly-first.
+
 ## Two things the owner corrected in `gc-data` and `gc-united`
 
 Both are easy to break on a later pass — the first by softening it, the
