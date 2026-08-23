@@ -3680,7 +3680,50 @@ plainly.** 32 surahs still sit on two explained verses and 74 are under five.
 Both axes grow the same way: write the entry, copy the Arabic out of
 `js/quran-text.js`, run the quotation checker, run `./check-counts.sh`.
 
-## Open work as of 21 August 2026
+## THIRD ROUND, 23 August: the Mahdi, and the waiting
+
+The owner's request, and the part of it that matters is right: nobody is
+denying the Mahdi, but a habit has grown up beside the belief that is not part
+of it — that the repair of this ummah is somebody else's job, arriving on a
+date nobody knows, and that until then there is nothing to be done. **That is
+in no narration.**
+
+Split across three pages so nothing is said twice — see CLAUDE.md for which
+half lives where.
+
+**What is actually established, and it is one thing.** An army sent against a
+man who has taken refuge at the Kaaba is swallowed at al-Bayda' — Sahih
+Muslim, from Umm Salamah and from Hafsah. That text gives **no number**, names
+**no country**, and **does not name the Mahdi**. Everything else — Abu Dawud
+4282, 4285, 4286 and the rest — is outside the two Sahihs, accepted
+collectively by Ibn Taymiyyah, Ibn Kathir, as-Suyuti and al-Albani, and graded
+weak chain by chain by Ibn Khaldun. Both positions are named on the page.
+
+**The argument the section is built on comes from the narrations, not against
+them.** People go to him and pledge to him **while he is unwilling**; and in
+Sahih Muslim, Isa descends to find the imam of the Muslims **already leading
+the prayer**, and prays behind him. Both describe a community that is already
+standing being given someone to lead it. So the question is not when he
+arrives — it is what he would find here if he did.
+
+Then: the Prophet ﷺ, whose supplication was answered, still dug the trench,
+wore two coats of mail, hired a guide who was not yet a Muslim and signed a
+treaty. "Tie it **and** rely" (at-Tirmidhi 2517). And the sapling hadith — at
+the literal end of the world, plant it — cited by collection and grader and
+**not by number**, because Musnad Ahmad cannot be machine-checked.
+
+**Golden Age gained three sections**, all new rather than restatements:
+`gc-consumer` (what is in your hand and who made it; oil is extracted, not
+made; a consumer has no leverage), `gc-data` (foreign systems holding
+citizens' records, servers abroad, the switch in someone else's hand, and the
+individual at the terminal who can sell one sentence — with the House of
+Wisdom as the precedent: take knowledge from everywhere, own the building),
+and `gc-united` (one language across twenty-two states against twenty-four
+languages in the EU; Sykes-Picot 1916; and English words dropped into Arabic
+to sound advanced, answered with Ibn Majah 3949 — loving your people is not
+tribalism, helping them upon wrongdoing is).
+
+## Open work as of 23 August 2026
 
 1. **Tadabbur coverage.** 87 verses short of four in every surah; 32 surahs
    still on two; 316 of 380 blocks carry no cross-reference. This is the bulk

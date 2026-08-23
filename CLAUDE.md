@@ -126,6 +126,47 @@ Muslim by a number taken from it.
   writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
   four false mismatches. Strip harakat and normalise to NFC first.
 
+## The Mahdi — where each half of it lives, and why
+
+Added 23 August 2026, split across three pages so nothing is stated twice.
+If you are adding to any of it, add to the right one:
+
+* **`js/signs.js` → Judgement Day** — the FACTUAL entry. What is in the two
+  Sahihs, what is only in Abu Dawud/at-Tirmidhi/Ibn Majah, and where Ibn
+  Khaldun disagreed with Ibn Taymiyyah, Ibn Kathir, as-Suyuti and al-Albani.
+* **`js/misunderstood.js` → Guidance** — the MINDSET. Why waiting is not in
+  any narration, and what it costs.
+* **`js/golden-closing.js` → Golden Age** — the CONSEQUENCES: consumers not
+  makers, the data-sovereignty decision, and the disunity comparison.
+
+**He is deliberately NOT in `MAJOR_SIGNS`.** The ten major signs are the ten
+named in ONE hadith in Sahih Muslim, and he is not among them. Putting him in
+that list would make the page claim something the text does not. He is a
+`MINOR_SIGNS` item with `status: "disputed"`.
+
+**Only ONE piece of it is in the two Sahihs**, and it is the piece people
+attach to him without realising it is the only strong part: an army sent
+against a man who took refuge at the Kaaba is swallowed at al-Bayda' — Sahih
+Muslim, from Umm Salamah and from Hafsah. **That text gives no number, names
+no country, and does not name the Mahdi at all.** "Forty thousand", "from
+Iran", any date, and any living person are all listed under `notEstablished`.
+Do not let any of them creep into the body text.
+
+**The detail worth keeping in every version of this:** the narrations describe
+people going to him and pledging to him **while he is unwilling** — so a
+community was already standing before he appeared. And in Sahih Muslim, Isa
+descends to find the imam of the Muslims **already leading the prayer** and
+refuses to take his place. Both say the same thing: a community that is
+already working is given someone to lead it. That is the whole argument
+against waiting, and it is made from the narrations themselves rather than
+against them.
+
+**A `MINOR_SIGNS` item can now carry its own `notEstablished` and `refAr`.**
+Both were added for this entry — the per-item not-established list, and the
+source line, which `iitwTranslateReference` half-translates because it names
+works and a scholar. Same for `closingQuote` on golden.html, which now prefers
+`q.refAr` / `q.strengthAr` when the entry supplies them.
+
 ## Traps added 21 August 2026 — round two: the Arabic sweep, and the tense
 
 ### The Arabic-mode sweep was 94, not 23
