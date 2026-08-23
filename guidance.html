@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608231623" />
+  <link rel="stylesheet" href="css/style.css?v=202608231632" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -79,6 +79,10 @@
       <div class="gd-jump-links">
         <a href="#misunderstood" class="gd-jump-hot">🛡️ <span class="en-only">The hardest questions about Islam</span>
           <span class="ar-only" dir="rtl">أصعبُ ما يُسأل عنه الإسلام</span></a>
+        <a href="#mis-double">⚖️ <span class="en-only">"None of your business" — and the double standard</span>
+          <span class="ar-only" dir="rtl">«ما دخلك؟» والازدواجيّة</span></a>
+        <a href="#mis-waiting">⏳ <span class="en-only">Waiting for the Mahdi</span>
+          <span class="ar-only" dir="rtl">انتظارُ المهديّ</span></a>
         <a href="#worship">🕌 <span class="en-only">What do I say — and when?</span>
           <span class="ar-only" dir="rtl">ماذا أقول ومتى؟</span></a>
         <a href="#rulings">📚 <span class="en-only">What the scholars explained</span>
@@ -308,47 +312,47 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608231623"></script>
+  <script src="js/data.js?v=202608231632"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608231623"></script>
+  <script src="js/sunnah.js?v=202608231632"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608231623"></script>
+  <script src="js/adhkar.js?v=202608231632"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608231623"></script>
+  <script src="js/scholars.js?v=202608231632"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608231623"></script>
+  <script src="js/scholars-books.js?v=202608231632"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608231623"></script>
+  <script src="js/revival.js?v=202608231632"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608231623"></script>
+  <script src="js/bidah.js?v=202608231632"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608231623"></script>
+  <script src="js/misunderstood.js?v=202608231632"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608231623"></script>
+  <script src="js/terms.js?v=202608231632"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608231623"></script>
+  <script src="js/figures.js?v=202608231632"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608231623"></script>
+  <script src="js/signs.js?v=202608231632"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -933,6 +937,28 @@
                 "treat", "treatment", "friends", "friend", "neighbour", "neighbor",
                 "relations", "deal", "hate", "معاملة", "نعامل", "يعامل", "الجار", "جار",
                 "صداقة", "نكره", "بر", "نبرهم"] },
+      /* The double standard, and forbidding the wrong. `must` needs an
+         explicit word about advising, minding one's business or the
+         hypocrite label — so a plain question about a ruling is unaffected. */
+      { id: "mis-double", src: "mis", need: 2, target: "#mis-double",
+        must: ["hypocrite", "hypocrisy", "munafiq", "judge", "judging", "judgemental",
+               "nosy", "none of your business", "none of my business", "my business",
+               "mind your own", "mind your business", "advise", "advice",
+               "منافق", "المنافق", "نفاق", "ما دخلك", "دخلك",
+               "الخلق للخالق", "انصح", "النصيحة", "نصيحة", "أنكر", "إنكار",
+               "المنكر", "منكر", "تحكم", "الحكم على"],
+        words: ["hypocrite", "hypocrisy", "munafiq", "judge", "judging", "judgemental",
+                "nosy", "none of your business", "none of my business", "my business",
+                "mind your own", "mind your business", "advise", "advice",
+                "منافق", "المنافق", "نفاق", "ما دخلك", "دخلك",
+                "الخلق للخالق", "انصح", "النصيحة", "نصيحة", "أنكر", "إنكار",
+                "المنكر", "منكر", "تحكم", "الحكم على",
+                "wrong", "forbid", "forbidding", "silence", "silent", "speak", "say",
+                "someone", "people", "sister", "brother", "hijab", "music",
+                "خطأ", "أسكت", "السكوت", "أتكلم", "أختي", "أخي", "الناس",
+                "لماذا", "ملتزم", "الملتزم", "ملتزمة", "محجبة", "نسمي",
+                "يقولون", "نقول", "نتهم", "الازدواجية", "ازدواجية", "معايير"] },
+
       /* Waiting for the Mahdi. `must` requires the Mahdi himself or an
          explicit word about waiting for him, so an ordinary question about
          the signs of the Hour still reaches the Judgement Day material. */
@@ -2784,7 +2810,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608231623"></script>
-  <script src="js/i18n.js?v=202608231623"></script>
+  <script src="js/main.js?v=202608231632"></script>
+  <script src="js/i18n.js?v=202608231632"></script>
 </body>
 </html>
