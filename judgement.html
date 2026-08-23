@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608212128" />
+  <link rel="stylesheet" href="css/style.css?v=202608231605" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -231,20 +231,20 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608212128"></script>
-  <script src="js/angels.js?v=202608212128"></script>
+  <script src="js/data.js?v=202608231605"></script>
+  <script src="js/angels.js?v=202608231605"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608212128"></script>
-  <script src="js/judgement.js?v=202608212128"></script>
+  <script src="js/signs.js?v=202608231605"></script>
+  <script src="js/judgement.js?v=202608231605"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608212128"></script>
+  <script src="js/judgement-closing.js?v=202608231605"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608212128"></script>
-  <script src="js/journey.js?v=202608212128"></script>
+  <script src="js/rise.js?v=202608231605"></script>
+  <script src="js/journey.js?v=202608231605"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -738,8 +738,15 @@
                 <span class="ar-only" dir="rtl">متى — وبأيّ مستند نُؤرّخه</span></div>
               <div class="en-only">${sgParas(i.when)}</div>
               <div class="ar-only" dir="rtl">${sgParas(i.whenAr)}</div></div>` : ""}
-            <div class="tad-ref" dir="auto">${i.ref}</div>${sgBadge(i.strength)}
-            ${sgPlain(i.plain, i.plainAr)}</div>`).join("")}
+            ${i.refAr ? `<div class="tad-ref en-only">${i.ref}</div>
+              <div class="tad-ref ar-only" dir="rtl">${i.refAr}</div>`
+              : `<div class="tad-ref" dir="auto">${i.ref}</div>`}${sgBadge(i.strength)}
+            ${sgPlain(i.plain, i.plainAr)}
+            <!-- A minor sign may carry its own "what is NOT established" list.
+                 Only the whole block had one before, and the Mahdi entry needs
+                 its own: the number, the country and the date attached to him
+                 are the parts a reader most needs told apart from the text. -->
+            ${i.notEstablished ? sgNotEstablished(i.notEstablished, i.notEstablishedAr) : ""}</div>`).join("")}
           ${sgNotEstablished(MINOR_SIGNS.notEstablished, MINOR_SIGNS.notEstablishedAr)}</div>`;
       }
 
@@ -807,7 +814,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608212128"></script>
-  <script src="js/i18n.js?v=202608212128"></script>
+  <script src="js/main.js?v=202608231605"></script>
+  <script src="js/i18n.js?v=202608231605"></script>
 </body>
 </html>
