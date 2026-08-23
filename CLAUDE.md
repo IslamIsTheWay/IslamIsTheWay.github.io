@@ -126,6 +126,36 @@ Muslim by a number taken from it.
   writes ﷺ and the source spells out صلى الله عليه وسلم — that alone reported
   four false mismatches. Strip harakat and normalise to NFC first.
 
+## Two things the owner corrected in `gc-data` and `gc-united`
+
+Both are easy to break on a later pass — the first by softening it, the
+second by narrowing it back. Do not.
+
+**`gc-data` is a SOVEREIGNTY argument, not an anti-surveillance argument.**
+The owner was explicit: we are **not** against our own state collecting our
+information — every state does that and has to. The objection is that the
+data sits on **another country's ground**, where our courts do not reach, our
+law does not bind the people reading it, and nothing can be audited, deleted
+or switched off — so the day their interest and ours part, everything we told
+them about ourselves is available to be used against us. **On our land and
+under our courts is acceptable and the page says so plainly.** If you ever
+find yourself editing this box into a general complaint about being watched,
+you have lost the argument he actually wanted made.
+
+**`gc-united` is about the whole ummah, not only the Arabs.** The twenty-two
+Arab states stay the headline case — he confirmed that — because they share
+the most and manage the least. But roughly **four in five Muslims are not
+Arab**, the four largest Muslim populations (Indonesia, Pakistan, India,
+Bangladesh) are all non-Arab, and the OIC's **fifty-seven** states across four
+continents fail in exactly the same way. That widening makes the argument
+**stronger**: if it were only the Arabs you could blame Arab politics, but one
+result under fifty-seven governments and dozens of languages is not about
+being Arab. The proof is on this very page — al-Bukhari from Bukhara,
+al-Khwarizmi from Khwarazm, al-Farabi from Farab, and the foundational book of
+Arabic grammar written by Sibawayh, a Persian. **The Golden Age was a Muslim
+achievement, not an Arab one.** Never write the section as if Arab and Muslim
+were the same word.
+
 ## The Mahdi — where each half of it lives, and why
 
 Added 23 August 2026, split across three pages so nothing is stated twice.
