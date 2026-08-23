@@ -117,6 +117,15 @@ const SIGNS_INTRO = {
         strength: "hadith"
       },
       {
+        h: "AND WHY THEY ARE NUMBERED 1 TO 9 ON THIS PAGE",
+        hAr: "ولِمَ رُقّمت في هذه الصفحة من ١ إلى ٩",
+        en: "This needs saying plainly, because a numbered list looks like a claim and this one is not.\n\n**The numbers on the cards are a reading order, not a timetable.** They are there so a reader can refer to one (\"number four, the sun\") and find it again. They are NOT the sequence in which the events occur, and nobody on earth has that sequence.\n\n**What IS fixed by text:** the fire from Yemen is last, because the hadith says “and the last of that is a fire.” And the sun rising from its west is named as a first in its own narration — which the block above explains carefully, because of which first it means.\n\n**What is strongly indicated but not stated:** the Dajjal, Isa and Ya’juj run together as one connected episode, in that order, because the narrations put them in one another’s stories — Isa descends while the Dajjal is on the earth and kills him, and Ya’juj come out while Isa is still there. That is a linkage the texts make, not an order this page invented.\n\n**What nobody knows:** where the smoke, the beast and the three landslides fall against those. They are named in the same hadith with no order given, and every confident running order you have seen was somebody’s arrangement.\n\n**And one more thing that is not a detail.** The Trumpet is numbered 9 here for reading, but it is not one of the ten. The ten are signs BEFORE the Hour. The Trumpet is the Hour. It is on the same list on this page only so a reader is not left at the fire wondering what comes next.",
+        ar: "ويحسن التصريح بهذا، فإنّ القائمة المرقَّمة تبدو دعوى، وليست هذه كذلك.\n\n**فالأرقامُ على البطاقات ترتيبُ قراءةٍ لا جدولُ وقوع.** وُضعت ليُحيل القارئ إلى واحدةٍ منها («الرابعة: الشمس») فيجدها. وليست هي ترتيب وقوع الأحداث، ولا يملك ذلك الترتيبَ أحدٌ على وجه الأرض.\n\n**والثابتُ بالنصّ:** أنّ نار اليمن آخرها، لقوله: «وآخرُ ذلك نارٌ». وأنّ طلوع الشمس من مغربها سُمّي أوّلًا في روايته — وقد حرّر البابُ الذي قبله أيَّ أوّلٍ يُراد.\n\n**والذي تدلّ عليه القرائنُ ولم يُنصّ عليه:** أنّ الدجّال وعيسى ويأجوج متتابعةٌ في نسقٍ واحدٍ على هذا الترتيب، لأنّ الأخبار تُدخل بعضها في قصّة بعض — فينزل عيسى والدجّالُ في الأرض فيقتله، ويخرج يأجوج وعيسى بعدُ حاضر. وهذا ربطٌ صنعته النصوص لا رتّبته هذه الصفحة.\n\n**والذي لا يعلمه أحد:** أين يقع الدخانُ والدابّةُ والخسوفاتُ الثلاث من ذلك. فقد سُمّيت في الحديث نفسِه بلا ترتيب، وكلُّ ترتيبٍ واثقٍ رأيتَه فهو ترتيبُ رجل.\n\n**وأمرٌ أخيرٌ ليس تفصيلًا:** أنّ الصور رُقّم ههنا تاسعًا للقراءة، وليس من العشر. فالعشرُ علاماتٌ **قبل** الساعة، والصورُ هو الساعة. وإنما أُلحق بالقائمة في هذه الصفحة لئلّا يقف القارئ عند النار لا يدري ما بعدها.",
+        ref: "Sahih Muslim, Book of Tribulations — Hudhayfah ibn Usayd, the hadith of the ten; Sahih Muslim, Book of Faith — the sun and the beast",
+        refAr: "صحيح مسلم، كتاب الفتن — عن حذيفة بن أسيد، حديثُ العشر؛ وصحيح مسلم، كتاب الإيمان — في الشمس والدابّة",
+        strength: "hadith"
+      },
+      {
         h: "“THE FIRST” is named too — but read carefully WHICH first it means",
         hAr: "و«الأُولى» مسمّاةٌ أيضًا — ولكن تأمّل أيَّ أوّلٍ يُقصد",
         en: "This is the block that misleads people, so read it slowly.\n\nAbdullah ibn Amr said he memorised a hadith from the Messenger of Allah ﷺ and never forgot it: “the first of the signs to appear is the rising of the sun from its west, and the coming out of the Beast upon the people in the forenoon — and whichever of the two comes before the other, the second follows it closely.”\n\nTaken on its own, that sentence sounds as though the sun rising from the west is the first of all ten — which would put the Dajjal, Isa and Gog and Magog AFTER it. That reading is wrong, and the next two blocks show why. Isa عليه السلام descends while repentance is still being accepted, and the sun rising from the west is the moment repentance stops. They cannot be in that order.\n\nWhat the hadith establishes is narrower and still important: the sun and the Beast are the opening pair of the FINAL phase, they arrive almost together, and he did not say which of the two leads — he said explicitly that it does not matter, because the other is right behind it.",
@@ -202,7 +211,16 @@ const MAJOR_SIGNS = [
         ref: "Sahih Muslim, Book of Fitan" },
       { en: "He is named in the list of ten in Sahih Muslim, and he is the sign the Prophet ﷺ taught his ummah to seek refuge from in every prayer.",
         ar: "وهو معدودٌ في العشر في صحيح مسلم، وهو الذي علّم النبيُّ ﷺ أمّته أن تستعيذ منه في كلّ صلاة.",
-        ref: "Sahih Muslim, Book of Fitan" }
+        ref: "Sahih Muslim, Book of Fitan" },
+      { en: "HOW LONG he stays is given, and the strangest detail in it is about time itself: forty days — one like a year, one like a month, one like a week, and the rest like ordinary days. The companions asked the practical question immediately: the day that is like a year, is one prayer enough for it? He said no — estimate its measure.",
+        ar: "ومُدّتُه مذكورة، وأعجبُ ما فيها في الزمن نفسه: أربعون يومًا — يومٌ كسنة، ويومٌ كشهر، ويومٌ كجمعة، وسائرُ أيّامه كأيّامكم. وسأل الصحابةُ السؤال العمليّ من فورهم: ذلك اليومُ الذي كسنة، أتكفينا فيه صلاةُ يوم؟ قال: لا، **اقدُروا له قدره**.",
+        ref: "Sahih Muslim, Book of Tribulations — the long hadith of an-Nawwas ibn Sam'an" },
+      { en: "The protection given is not a weapon. It is ten verses from the beginning of Surah Al-Kahf, memorised — and the narration says whoever memorises them is protected from him. A sign warned about more than any other, and the defence handed out is a page of the Quran.",
+        ar: "والعصمةُ المذكورة ليست سلاحًا، وإنما عشرُ آياتٍ من أوّل سورة الكهف تُحفظ — وفي الرواية: من حفظها عُصم منه. علامةٌ حُذّر منها أكثرَ من كلّ شيء، والدفعُ المعطى صفحةٌ من القرآن.",
+        ref: "Sahih Muslim, Book of the Travellers' Prayer" },
+      { en: "He is not the last thing that happens, and this is worth holding on to. He is on the earth when Isa عليه السلام descends, and Isa kills him — so the story of the greatest trial ever put before people already has its ending written before it begins.",
+        ar: "وليس هو آخرَ ما يقع، وهذا ممّا يُمسَك به. فهو في الأرض حين ينزل عيسى عليه السلام، فيقتله عيسى — فقصّةُ أعظم فتنةٍ عُرضت على الناس مكتوبةٌ خاتمتُها قبل أن تبتدئ.",
+        ref: "Sahih Muslim, Book of Tribulations — the long hadith of an-Nawwas ibn Sam'an" }
     ],
     notEstablished: "An enormous amount is said about him that is not in the two Sahihs — where exactly he is now, what year he appears, which modern figure or system he is. The site's five linked Dajjal stories keep to what is established. Matching him to a living person or a current government is not knowledge; it has been done in every century and has been wrong in every century.",
     notEstablishedAr: "ويُقال فيه كثيرٌ ليس في الصحيحين: أين هو الآن على التعيين، وفي أيّ سنةٍ يخرج، ومن يكون من المعاصرين أو الأنظمة. وقصص الدجّال الخمس المتسلسلة في هذا الموقع تلتزم الثابت. وتنزيلُه على شخصٍ حيٍّ أو دولةٍ قائمة ليس علمًا، وقد صُنع في كلّ قرنٍ فأخطأ أهلُه في كلّ قرن.",
@@ -223,7 +241,16 @@ const MAJOR_SIGNS = [
         ref: "Sahih al-Bukhari 2222" },
       { en: "He is one of the ten named in the hadith of Hudhayfah ibn Usayd.",
         ar: "وهو أحد العشر المعدودة في حديث حذيفة بن أسيد.",
-        ref: "Sahih Muslim, Book of Fitan" }
+        ref: "Sahih Muslim, Book of Fitan" },
+      { en: "WHERE he descends is named: at the white minaret east of Damascus, with his hands on the wings of two angels. The narration is specific in a way the rest of the subject usually is not.",
+        ar: "وموضعُ نزوله مسمًّى: عند المنارة البيضاء شرقيَّ دمشق، واضعًا كفّيه على أجنحة مَلَكين. والرواية في هذا محدَّدةٌ على غير ما جرت عليه عامّةُ هذا الباب.",
+        ref: "Sahih Muslim, Book of Tribulations — the long hadith of an-Nawwas ibn Sam'an" },
+      { en: "He does not stay to rule for ever. The narrations give a limited period on the earth, after which he dies — and he is prayed over and buried by Muslims. A prophet, dying an ordinary human death, in the middle of this ummah.",
+        ar: "ولا يبقى حاكمًا أبدًا، بل في الأخبار مدّةٌ محدودةٌ في الأرض، ثم يموت — فيُصلّى عليه ويُدفن بين المسلمين. نبيٌّ يموت الموتةَ البشريّة المعتادة في وسط هذه الأمّة.",
+        ref: "Sunan Abu Dawud, Book of Battles — outside the two Sahihs" },
+      { en: "The detail that settles what his return MEANS: he refuses to lead the prayer. The imam of the Muslims says come and lead us, and he says no — some of you are leaders over others, as an honour Allah gave this ummah. So the ordinary structure of Muslim life is still standing, and he prays inside it rather than replacing it.",
+        ar: "واللفتةُ التي تحسم معنى نزوله: أنه يأبى أن يؤمّ الناس. يقول له أميرُهم: تعال صلِّ بنا، فيقول: لا، إنّ بعضكم على بعضٍ أمراء، تكرمةَ الله هذه الأمّة. فبناءُ حياة المسلمين المعتاد قائمٌ بعدُ، وهو يصلّي داخله لا بديلًا عنه.",
+        ref: "Sahih Muslim, Book of Faith" }
     ],
     notEstablished: "That he descends is established. Detailed timelines of exactly how long he stays, what he does year by year, and precisely where events fall, go well beyond what the two Sahihs give.",
     notEstablishedAr: "أمّا نزوله فثابت. وأمّا التفاصيل في مدّة مكثه سنةً سنة، وما يصنع في كلّ عام، وتعيين مواضع الأحداث على الدقّة، فوراء ما في الصحيحين.",
@@ -244,7 +271,13 @@ const MAJOR_SIGNS = [
         ref: "Surah Al-Anbiya (21:96)" },
       { en: "Dhul-Qarnayn, having built the barrier, said: this is a mercy from my Lord — and when the promise of my Lord comes, He will level it. So the barrier's end is itself part of the appointed promise.",
         ar: "قال ذو القرنين لَمّا بنى السدّ: ﴿هَٰذَا رَحْمَةٌۭ مِّن رَّبِّى ۖ فَإِذَا جَآءَ وَعْدُ رَبِّى جَعَلَهُۥ دَكَّآءَ﴾. فزوالُ السدّ نفسه من الوعد المضروب.",
-        ref: "Surah Al-Kahf (18:98)" }
+        ref: "Surah Al-Kahf (18:98)" },
+      { en: "The barrier is in the Quran, and so is its end. Dhul-Qarnayn built it from iron and molten copper, and said the thing that matters: “this is a mercy from my Lord — and when the promise of my Lord comes, He will make it level.” The wall was never permanent. It was a delay with a stated expiry.",
+        ar: "والسدُّ في القرآن، ونهايتُه فيه أيضًا. بناه ذو القرنين من زُبَر الحديد والقِطر، ثم قال الذي عليه المدار: ﴿هَٰذَا رَحْمَةٌۭ مِّن رَّبِّى ۖ فَإِذَا جَآءَ وَعْدُ رَبِّى جَعَلَهُۥ دَكَّآءَ﴾. فما كان السدُّ دائمًا قطّ، وإنما هو تأجيلٌ مضروبٌ له أجل.",
+        ref: "Surah Al-Kahf (18:94-98); Surah Al-Anbiya (21:96-97)" },
+      { en: "Their number is described by what they consume, not by a figure: the first of them pass Lake Tiberias and drink it, and the last arrive and say “there was water here once.” Isa and the believers with him withdraw to the mountain, and it is not an army that ends them — Allah sends a worm in their necks and they die in a single morning.",
+        ar: "وكثرتُهم موصوفةٌ بما يستهلكون لا بعدد: يمرّ أوّلُهم ببحيرة طبريّة فيشربها، ويأتي آخرُهم فيقول: لقد كان بهذه مرّةً ماء. وينحاز عيسى ومن معه إلى الجبل، وليس جيشٌ هو الذي يُنهيهم — بل يُرسل الله دودًا في رقابهم فيموتون موتةَ نفسٍ واحدة في غداةٍ واحدة.",
+        ref: "Sahih Muslim, Book of Tribulations — the long hadith of an-Nawwas ibn Sam'an" }
     ],
     strength: "quran"
   },
@@ -285,7 +318,13 @@ const MAJOR_SIGNS = [
         ref: "Surah An-Naml (27:82)" },
       { en: "It is one of the three the Prophet ﷺ named as the point after which faith no longer benefits one who had not believed: the sun from its setting place, the Dajjal, and the Beast.",
         ar: "وهي إحدى الثلاث التي عدّها النبيُّ ﷺ ممّا لا ينفع بعده إيمانُ من لم يكن آمن: طلوعُ الشمس من مغربها، والدجّال، ودابّة الأرض.",
-        ref: "Sahih Muslim, Book of Faith" }
+        ref: "Sahih Muslim, Book of Faith" },
+      { en: "The Quran names her and names what she does: “We will bring forth for them a beast from the earth, speaking to them, because the people were not certain of Our signs.” The reason given is not punishment — it is that certainty had gone.",
+        ar: "سمّاها القرآن وسمّى فعلها: ﴿وَإِذَا وَقَعَ ٱلْقَوْلُ عَلَيْهِمْ أَخْرَجْنَا لَهُمْ دَآبَّةًۭ مِّنَ ٱلْأَرْضِ تُكَلِّمُهُمْ أَنَّ ٱلنَّاسَ كَانُوا۟ بِـَٔايَٰتِنَا لَا يُوقِنُونَ﴾. والعلّةُ المذكورة ليست العقوبة، وإنما ذهابُ اليقين.",
+        ref: "Surah An-Naml (27:82)" },
+      { en: "Her appearance is one of the three the Prophet ﷺ named as closing the door: after them, faith brings no benefit to a soul that did not believe before. Which is what makes her a sign and not a wonder — she does not persuade anybody, because by then persuasion is finished.",
+        ar: "وخروجُها إحدى الثلاث التي سمّاها النبيُّ ﷺ سادّاتٍ للباب: إذا وقعن لم ينفع نفسًا إيمانُها لم تكن آمنت من قبل. وبهذا صارت علامةً لا أُعجوبة، فهي لا تُقنع أحدًا، إذ الإقناعُ حينئذٍ قد انتهى.",
+        ref: "Sahih Muslim, Book of Faith; Surah Al-An'am (6:158)" }
     ],
     notEstablished: "What it looks like, its size, where exactly it emerges, and what it says word for word — none of that is established in the Quran or the two Sahihs. A great deal has been written describing it. The honest position is that the Quran named it and left it undescribed.",
     notEstablishedAr: "أمّا هيئتها وقدرها وموضع خروجها على التعيين ونصُّ ما تقوله، فليس شيءٌ من ذلك ثابتًا في القرآن ولا في الصحيحين. وقد كُتب في وصفها كثير. والإنصاف أنّ القرآن سمّاها ولم يصفها.",
@@ -306,7 +345,13 @@ const MAJOR_SIGNS = [
         ref: "Surah Ad-Dukhan (44:10-11)" },
       { en: "It is the first named in the hadith of the ten.",
         ar: "وهو أوّل ما ذُكر في حديث العشر.",
-        ref: "Sahih Muslim, Book of Fitan" }
+        ref: "Sahih Muslim, Book of Fitan" },
+      { en: "The Quran describes it in three short verses, and the third is the one to sit with: the smoke covers the people, they call it a painful punishment, and then they say — “Our Lord, remove the punishment from us; indeed, we are believers.” The belief arrives, and it arrives too late to be belief.",
+        ar: "وصفه القرآن في ثلاث آياتٍ قصار، وثالثتُها موضعُ الوقوف: يغشى الدخانُ الناس، فيسمّونه عذابًا أليمًا، ثم يقولون: ﴿رَّبَّنَا ٱكْشِفْ عَنَّا ٱلْعَذَابَ إِنَّا مُؤْمِنُونَ﴾. فيأتي الإيمان، ويأتي متأخّرًا عن أن يكون إيمانًا.",
+        ref: "Surah Ad-Dukhan (44:10-12)" },
+      { en: "The scholars differed, and both readings are old. Ibn Mas'ud held it had already happened — the famine over Quraysh, when a starving man saw a haze between himself and the sky. Ibn Abbas and others held it is still to come, and that the ten-signs hadith listing it beside the Dajjal and the sun settles it as future. The second is the reading of most, and the first is not the view of a stranger.",
+        ar: "واختلف أهل العلم، والقولان قديمان. فذهب ابن مسعود إلى أنه قد مضى: جَدْبُ قريشٍ حين كان الجائع يرى بينه وبين السماء كهيئة الدخان. وذهب ابن عباس وغيره إلى أنه منتظَر، وأنّ حديث العشر إذ عدّه مع الدجّال وطلوع الشمس يقضي بأنه مستقبَل. والثاني قولُ الأكثر، والأوّل ليس قولَ غريب.",
+        ref: "Sahih al-Bukhari, Book of Tafsir — Ibn Mas'ud; Sahih Muslim, Book of Tribulations — the hadith of the ten" }
     ],
     notEstablished: "The scholars differed on whether this verse refers to a smoke already past — a famine in the time of the Prophet ﷺ in which people saw a haze from hunger, which is the reading reported from Ibn Mas'ud — or to a smoke still to come, which is the reading of those who place it among the ten. Both are held by serious scholars, and this is stated rather than resolved here.",
     notEstablishedAr: "واختلف أهل العلم: أهذه الآية في دخانٍ قد مضى — وهو الجدب في زمن النبيّ ﷺ حتى كان الرجل يرى كهيئة الدخان من الجوع، وهو المرويّ عن ابن مسعود — أم في دخانٍ آتٍ، وهو قول من عدّه في العشر. والقولان لأئمّة، ويُذكر الخلاف هنا ولا يُقطع فيه.",
@@ -324,7 +369,13 @@ const MAJOR_SIGNS = [
     points: [
       { en: "Named in the hadith of the ten, in that order, with no further description given.",
         ar: "ذُكرت في حديث العشر على هذا الترتيب، ولم يُزد عليها وصف.",
-        ref: "Sahih Muslim, Book of Fitan" }
+        ref: "Sahih Muslim, Book of Fitan" },
+      { en: "They are three, and the hadith places them: one in the east, one in the west, and one in the Arabian Peninsula. Three separate events, in three named directions — which is why this page counts them as one entry and not as one sign.",
+        ar: "وهي ثلاثة، وقد عيّنها الحديث: خسفٌ بالمشرق، وخسفٌ بالمغرب، وخسفٌ بجزيرة العرب. ثلاثُ وقائعَ في ثلاث جهاتٍ مسمّاة — ولهذا عدّتها هذه الصفحة مدخلًا واحدًا لا علامةً واحدة.",
+        ref: "Sahih Muslim, Book of Tribulations — Hudhayfah ibn Usayd, the hadith of the ten" },
+      { en: "Nothing in the hadith says what causes them, how large they are, or when. People have attached earthquakes to this in every century. The text gives three directions and stops, and this page stops where it stops.",
+        ar: "وليس في الحديث ما يُسبّبها ولا يُقدّر سعتها ولا يؤرّخها. وقد ألحق الناسُ بها الزلازل في كلّ قرن. والنصُّ يذكر ثلاث جهاتٍ ويقف، وتقف هذه الصفحةُ حيث وقف.",
+        ref: "Sahih Muslim, Book of Tribulations" }
     ],
     notEstablished: "Nothing beyond this is established — not when, not exactly where, and not which recorded earthquake in history was or was not one of them. Attaching them to particular modern events is guesswork.",
     notEstablishedAr: "ولا يثبت وراء هذا شيء: لا الزمان، ولا الموضع على التعيين، ولا أنّ زلزالًا بعينه في التاريخ منها أو ليس منها. وتنزيلُها على وقائع معاصرة ظنٌّ لا علم.",
@@ -342,7 +393,16 @@ const MAJOR_SIGNS = [
     points: [
       { en: "“…at the end of which a fire would come out of Yemen and drive the people to their place of assembly.” It is the one sign in the list whose position is stated.",
         ar: "«…وآخر ذلك نارٌ تخرج من اليمن تطرد الناس إلى محشرهم». وهي العلامة الوحيدة في السرد التي نُصّ على موضعها.",
-        ref: "Sahih Muslim, Book of Fitan" }
+        ref: "Sahih Muslim, Book of Fitan" },
+      { en: "It DRIVES them. The verb in the hadith is not that it burns them or destroys them — it herds them, in front of it, to the place of gathering. Nobody is left behind to watch. This is the sign that ends the possibility of being a bystander.",
+        ar: "وهي **تطردهم**. والفعلُ في الحديث ليس أنها تُحرقهم ولا تُهلكهم، وإنما تسوقهم أمامها إلى المحشر. فلا يبقى أحدٌ ينظر. وهذه هي العلامةُ التي تُنهي إمكان أن يكون المرءُ متفرّجًا.",
+        ref: "Sahih Muslim, Book of Tribulations — Hudhayfah ibn Usayd" },
+      { en: "In another wording it gathers them and stays with them — resting where they rest, sleeping where they sleep. Not a disaster that strikes once, but something that travels with the people the whole way.",
+        ar: "وفي لفظٍ آخر أنها تحشرهم وتبيت معهم: تقيل حيث يقيلون، وتبيت حيث يبيتون. فليست نازلةً تقع مرّةً، وإنما شيءٌ يسير مع الناس الطريقَ كلَّه.",
+        ref: "Sahih al-Bukhari, Book of Tribulations; Sahih Muslim, Book of Tribulations" },
+      { en: "And because it is named as the last, it is the only sign with a plain practical use: whatever anyone tells you about the order of the rest, if the fire has not come out, the list is not finished — and if someone claims the list IS finished, this is the one item you can check him against.",
+        ar: "ولأنها سُمّيت آخرًا، فهي العلامةُ الوحيدة ذات الفائدة العمليّة الظاهرة: فمهما قيل لك في ترتيب سائرها، فما لم تخرج النارُ لم تتمّ القائمة — ومن ادّعى أنها **قد** تمّت فهذا البندُ هو الذي تُراجعه به.",
+        ref: "Sahih Muslim, Book of Tribulations — the hadith of the ten" }
     ],
     strength: "hadith"
   },
@@ -361,7 +421,13 @@ const MAJOR_SIGNS = [
         ref: "Surah Az-Zumar (39:68)" },
       { en: "“The day people will be like scattered moths, and the mountains like carded wool.”",
         ar: "﴿يَوْمَ يَكُونُ ٱلنَّاسُ كَٱلْفَرَاشِ ٱلْمَبْثُوثِ • وَتَكُونُ ٱلْجِبَالُ كَٱلْعِهْنِ ٱلْمَنفُوشِ﴾",
-        ref: "Surah Al-Qari'ah (101:4-5)" }
+        ref: "Surah Al-Qari'ah (101:4-5)" },
+      { en: "The Quran gives it as two blasts with a gap between them: “And the Trumpet will be blown, and whoever is in the heavens and whoever is on the earth will fall dead, except whom Allah wills. Then it will be blown again, and at once they will be standing, looking on.” One blast ends everything; the second starts everything again.",
+        ar: "جعله القرآنُ نفختين بينهما مهلة: ﴿وَنُفِخَ فِى ٱلصُّورِ فَصَعِقَ مَن فِى ٱلسَّمَٰوَٰتِ وَمَن فِى ٱلْأَرْضِ إِلَّا مَن شَآءَ ٱللَّهُ ۖ ثُمَّ نُفِخَ فِيهِ أُخْرَىٰ فَإِذَا هُمْ قِيَامٌۭ يَنظُرُونَ﴾. فنفخةٌ تُنهي كلَّ شيء، وأخرى تُعيده كلَّه.",
+        ref: "Surah Az-Zumar (39:68)" },
+      { en: "And the one holding it is waiting. He ﷺ said the owner of the Trumpet has taken it up, bent his forehead, turned his ear, waiting to be told to blow — and told his companions to say “Allah is sufficient for us, and He is the best disposer of affairs.” The instrument is already at the mouth.",
+        ar: "وصاحبُه منتظِر. قال ﷺ: إنّ صاحب الصور قد التقمه وحنى جبهته وأصغى سمعه ينتظر أن يُؤمر فينفخ — وأمر أصحابه أن يقولوا: حسبنا الله ونعم الوكيل. فالآلةُ في الفم من قبل.",
+        ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgement — outside the two Sahihs, graded Strong" }
     ],
     strength: "quran"
   }
@@ -587,6 +653,30 @@ const MINOR_SIGNS = {
       strength: "hadith",
       plain: "In plain words: here is a list where he DID give the order, and you can tell because every item is joined with the word “then”.\n\nSix things: his death, the conquest of Jerusalem, a plague, wealth so common that a man given a hundred dinars is still annoyed, a trouble that reaches every home, and a broken treaty.\n\nThe first two already happened, in that order, and his companions were alive for them. Which is the point of putting this beside the ten: when he wanted to give an order, he gave one plainly. In the hadith of the ten he did not.",
       plainAr: "بكلامٍ بسيط: هذه قائمةٌ **رتّبها** ﷺ، وتعرف ذلك لأنّ كلّ بندٍ معطوفٌ بـ«ثُمَّ».\n\nستّة: موتُه، وفتحُ بيت المقدس، وطاعونٌ، ومالٌ يكثر حتى يُعطى الرجل مئة دينارٍ فيسخط، وفتنةٌ تدخل كلَّ بيت، وهدنةٌ تُنقض.\n\nوقد وقع الأوّلان على هذا الترتيب وأدركهما أصحابُه. وهذا هو المقصود من وضعه بجانب العشر: فإنه إذا أراد الترتيب رتّب صريحًا، ولم يفعل ذلك في حديث العشر." },
+
+    { h: "Al-harj — the killing where neither side knows what it was about",
+      hAr: "الهَرْج — القتلُ الذي لا يدري فيه أحدُ الطرفين فيمَ كان",
+      en: "This one is short, and there is nothing in it that needs interpreting.\n\nHe ﷺ swore to it: **\"By the One in whose hand is my soul, a time will come upon people when the killer will not know why he killed, and the one killed will not know why he was killed.\"**\n\nRead it again. Not that killing becomes common — that is ordinary in history. That **the reason itself disappears from both ends at once.** The man doing it cannot tell you what it is for. Neither can the man it is being done to.\n\nAnd he named al-harj in a list with three other things, in this order: **knowledge is taken away, ignorance appears, tribulations appear, and killing increases.** The sequence is worth noticing, because the first item is the cause of the last. When people are asked \"what is al-harj?\" he did not answer with a word — he **turned his hand**, as if to say: this.",
+      ar: "وهذا قصير، وليس فيه ما يحتاج إلى تأويل.\n\nأقسم عليه ﷺ فقال: **«وَالَّذِي نَفْسِي بِيَدِهِ لَيَأْتِيَنَّ عَلَى النَّاسِ زَمَانٌ لَا يَدْرِي الْقَاتِلُ فِي أَيِّ شَيْءٍ قَتَلَ، وَلَا يَدْرِي الْمَقْتُولُ عَلَى أَيِّ شَيْءٍ قُتِلَ»**.\n\nأعِد قراءتها: ليس أنّ القتل يكثر، فذلك معتادٌ في التاريخ. وإنما أنّ **العلّة نفسها تسقط من الطرفين معًا.** فالفاعلُ لا يستطيع أن يُخبرك فيمَ يفعل، ولا المفعولُ به.\n\nوقد ذكر الهرجَ في نسقٍ مع ثلاثةٍ قبله: **يُقبض العلم، ويظهر الجهل والفتن، ويكثر الهرج.** والترتيبُ جديرٌ بالانتباه، فأوّلُ ما فيه علّةُ آخره. ولمّا سُئل: وما الهرج؟ لم يُجب بلفظ، وإنما **حرّف يده** كأنه يقول: هذا.",
+      quote: "لَا يَدْرِي الْقَاتِلُ فِي أَيِّ شَيْءٍ قَتَلَ، وَلَا يَدْرِي الْمَقْتُولُ عَلَى أَيِّ شَيْءٍ قُتِلَ",
+      status: "disputed",
+      when: "No date, and this page will not give one — but it will say what makes this sign different from the others.\n\nMost signs are events you would notice: a moon splits, a sun rises backwards, a beast comes out of the earth. **This one is a condition, not an event.** There is no morning on which it begins. It arrives by degrees, and the people living inside it are the least able to see it, because the missing thing is the reason — and a person who has lost the reason does not experience himself as having lost anything.\n\nWhich is why it is not dated here. You cannot date the year a purpose went missing.",
+      whenAr: "لا تاريخ، ولن تُعطيه هذه الصفحة — غير أنها تقول ما الذي يُفرّق هذه العلامة عن أخواتها.\n\nفأكثرُ العلامات وقائعُ تُرى: ينشقّ قمر، وتطلع شمسٌ من مغربها، وتخرج دابّةٌ من الأرض. **وهذه حالٌ لا واقعة.** وليس لها صباحٌ تبتدئ فيه، وإنما تأتي على درجات، وأهلُها الساكنون فيها أعجزُ الناس عن رؤيتها، لأنّ الغائبَ هو السبب — ومن فقد السبب لا يجد في نفسه أنه فقد شيئًا.\n\nولهذا لم تُؤرَّخ ههنا. فلا تُؤرَّخ سنةٌ غاب فيها المعنى.",
+      ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour, Hadith 7303 — Abu Hurairah; Sahih al-Bukhari, Book of Knowledge, Hadith 85 — the gesture of the hand",
+      refAr: "صحيح مسلم، كتاب الفتن وأشراط الساعة، حديث ٧٣٠٣ — عن أبي هريرة؛ وصحيح البخاري، كتاب العلم، حديث ٨٥ — وفيه تحريفُ اليد",
+      strength: "hadith" },
+
+    { h: "People who will call wine, silk and instruments lawful — and be certain they are right",
+      hAr: "أقوامٌ يستحلّون الخمر والحرير والمعازف — وهم على يقينٍ أنهم مصيبون",
+      en: "He ﷺ said: **\"There will certainly be among my ummah peoples who declare lawful illicit relations, and silk, and wine, and musical instruments.\"** It is in Sahih al-Bukhari.\n\nNotice the exact word, because everything turns on it. Not that they **do** these things — people have always done forbidden things and known they were forbidden. **They declare them lawful.** They move the line rather than crossing it, and then stand on the correct side of the new line feeling entirely comfortable.\n\nThat is a different condition from disobedience, and a heavier one. A man who sins and knows it still has somewhere to return to; the door of repentance is where he left it. A man who has decided the thing is not a sin has closed that door without noticing, because you cannot repent from something you have concluded is fine.\n\nAnd the rest of the hadith is what makes it a sign of the times rather than a rebuke: they will be **camped near a mountain**, prosperous, with a shepherd bringing their livestock in the evening — ordinary, comfortable, respectable people. Not villains. **That is the point.**",
+      ar: "قال ﷺ: **«لَيَكُونَنَّ مِنْ أُمَّتِي أَقْوَامٌ يَسْتَحِلُّونَ الْحِرَ وَالْحَرِيرَ وَالْخَمْرَ وَالْمَعَازِفَ»**. وهو في صحيح البخاري.\n\nوتأمّل اللفظ بعينه، فعليه المدار: ليس أنهم **يفعلونها** — فما زال الناس يفعلون المحرَّم ويعلمون أنه محرَّم. وإنما **يستحلّونها**: ينقلون الحدّ ولا يتخطّونه، ثم يقفون في الجهة الصحيحة من الحدّ الجديد مطمئنّين تمامًا.\n\nوهذه حالٌ غيرُ المعصية وأثقلُ منها. فالعاصي الذي يعلم أنه عاصٍ له مرجع، وبابُ التوبة حيث تركه. وأمّا من قرّر أنّ الشيء ليس بذنبٍ فقد أغلق ذلك الباب وهو لا يشعر، إذ لا يتوب أحدٌ ممّا انتهى إلى أنه لا بأس به.\n\nوتمامُ الحديث هو الذي يجعله علامةَ زمانٍ لا تعييرًا لقوم: أنهم **ينزلون إلى جنب عَلَم** — جبل — في سَعةٍ ورخاء، يروح عليهم راعيهم بسارحةٍ لهم. أناسٌ عاديّون مياسير ذوو وجاهة. لا أشرار. **وهذا هو المقصود.**",
+      quote: "لَيَكُونَنَّ مِنْ أُمَّتِي أَقْوَامٌ يَسْتَحِلُّونَ الْحِرَ وَالْحَرِيرَ وَالْخَمْرَ وَالْمَعَازِفَ",
+      status: "disputed",
+      when: "No date. And a warning about how this hadith is used, because it is misused constantly in both directions.\n\n**It is not a licence to accuse people.** The hadith describes a condition — declaring lawful — and no ordinary Muslim who listens to something or wears something has declared anything lawful. Reaching for this narration to label a person is doing the opposite of what it says, and the Guidance page carries a whole section on that double standard.\n\n**And it is not to be waved away either.** Some tried to weaken the chain because of a suspended wording at its start; al-Bukhari included it in his Sahih, and Ibn Hajar, Ibn Salah and Ibn Taymiyyah answered that objection in detail. The ruling on instruments themselves is a genuine disagreement among scholars, and it has its own entry with both sides on the Guidance page. This entry is about the WORD *declare lawful*, which is not disputed by anyone.",
+      whenAr: "لا تاريخ. وتحذيرٌ في طريقة استعمال هذا الحديث، فإنه يُساء استعماله في الجهتين معًا.\n\n**فليس إذنًا في اتّهام الناس.** فالحديث يصف حالًا — وهي الاستحلال — وليس مسلمٌ عاديٌّ سمع شيئًا أو لبس شيئًا قد استحلّ شيئًا. والاحتجاجُ به لوسم رجلٍ بعينه صنيعٌ ضدّ ما فيه، وفي صفحة التوجيه قسمٌ كاملٌ في هذه الازدواجيّة.\n\n**وليس ممّا يُطرح أيضًا.** فقد أعلّه بعضُهم بالتعليق في أوّله؛ وقد أخرجه البخاريُّ في صحيحه، وأجاب عن ذلك ابن حجرٍ وابنُ الصلاح وابنُ تيمية بأجوبةٍ مفصّلة. وأمّا حكمُ المعازف نفسِه فخلافٌ حقيقيٌّ بين أهل العلم، وله مدخلٌ مستقلٌّ بالقولين في صفحة التوجيه. وهذا المدخلُ إنما هو في لفظ **الاستحلال**، ولا ينازع فيه أحد.",
+      ref: "Sahih al-Bukhari, Book of Drinks, Hadith 5590 — Abu Amir or Abu Malik al-Ash'ari",
+      refAr: "صحيح البخاري، كتاب الأشربة، حديث ٥٥٩٠ — عن أبي عامرٍ أو أبي مالكٍ الأشعري",
+      strength: "hadith" },
 
     { h: "The Euphrates uncovering a mountain of gold",
       hAr: "حَسْرُ الفرات عن جبلٍ من ذهب",
