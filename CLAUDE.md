@@ -138,6 +138,25 @@ If you are adding to any of it, add to the right one:
   any narration, and what it costs.
 * **`js/golden-closing.js` → Golden Age** — the CONSEQUENCES: consumers not
   makers, the data-sovereignty decision, and the disunity comparison.
+* **`js/golden-closing.js` → `gc-waiting`** — the HISTORY of the waiting,
+  added 23 August 2026. Kept apart from the Guidance box on purpose: that one
+  argues from the texts, this one argues from the record, and no point appears
+  in both. Its four legs are (1) the House of Wisdom generation held the same
+  belief — al-Bukhari died 870 and Muslim 875, so the end-times hadith were
+  written down in the same century Baghdad was buying Greek manuscripts, which
+  means the belief cannot be what caused the paralysis; (2) the real test is
+  the length of project you will begin — al-Qarawiyyin 859, the waqf, Ulugh
+  Beg's catalogue; (3) the claimants — Fatimid 909, Ibn Tumart c.1121,
+  Muhammad Ahmad 1881, the Haram 1979 — stated WITH the honest counterweight
+  that al-Azhar is Fatimid and still standing, so the argument is not that they
+  built nothing but that **the ordinary work survived and the claim expired in
+  every case**; (4) 5:23–26, which is used nowhere else on the site — the
+  method is "enter by the gate AND rely on Allah", the refusal is "go, you and
+  your Lord, and fight", and the sentence is forty years of wandering, a
+  punishment that looks exactly like ordinary life.
+
+  If you extend it, extend THIS box. Do not restate the Guidance six cards
+  here, and do not move the grading here — that lives in `js/signs.js`.
 
 **He is deliberately NOT in `MAJOR_SIGNS`.** The ten major signs are the ten
 named in ONE hadith in Sahih Muslim, and he is not among them. Putting him in
