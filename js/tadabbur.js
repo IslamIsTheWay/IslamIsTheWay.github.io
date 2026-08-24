@@ -1095,7 +1095,7 @@ const TADABBUR = {
       {
         n: 14,
         ar: "إِنَّنِىٓ أَنَا ٱللَّهُ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعْبُدْنِى وَأَقِمِ ٱلصَّلَوٰةَ لِذِكْرِىٓ",
-        why: "The first words Musa is spoken to with, at the burning bush, after a lifetime of exile. Not an instruction about Pharaoh — that comes later. First: who is speaking. Then one act of worship named before any other: the prayer.\n\nAnd the reason given for it is not the usual one. Not \"so that you may be rewarded\", but *li-dhikri* — for My remembrance. The prayer is given a purpose that points back at Allah rather than at the worshipper.",
+        why: "The first words Musa is spoken to with, at the burning bush, after a lifetime of exile. Not an instruction about Pharaoh — that comes later. First: who is speaking. Then one act of worship named before any other: the prayer.\n\nAnd the reason given for it is not the usual one. Not \"so that you may be rewarded\", but **li-dhikri** — for My remembrance. The prayer is given a purpose that points back at Allah rather than at the worshipper.",
         whyAr: "أوّل ما خوطب به موسى عند الشجرة بعد عمرٍ في الغربة. ليس أمرًا في شأن فرعون، فذاك بعدُ، وإنما أوّلًا: من المتكلّم. ثم عبادةٌ واحدة سُمّيت قبل غيرها، وهي الصلاة.\n\nوالعلّة المذكورة ليست المعتادة، فلم يقل «لتُجزى»، وإنما ﴿لِذِكْرِىٓ﴾. فجُعلت للصلاة غايةٌ ترجع إليه سبحانه لا إلى المصلّي.",
         words: [
           {
@@ -1519,7 +1519,7 @@ const TADABBUR = {
       {
         n: 21,
         ar: "وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًۭا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةًۭ وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍۢ لِّقَوْمٍۢ يَتَفَكَّرُونَ",
-        why: "Marriage is listed among the SIGNS — beside the creation of the heavens and the earth and the difference of languages and colours in the verses around it. And the purpose given is not children, and not lawful desire. It is *sukun*: that you may come to rest.\n\nThen two things are said to be PUT there, not grown there: affection, and mercy.",
+        why: "Marriage is listed among the SIGNS — beside the creation of the heavens and the earth and the difference of languages and colours in the verses around it. And the purpose given is not children, and not lawful desire. It is **sukun**: that you may come to rest.\n\nThen two things are said to be PUT there, not grown there: affection, and mercy.",
         whyAr: "عُدّ النكاح في الآيات، إلى جانب خلق السماوات والأرض واختلاف الألسنة والألوان في سياقها. والغاية المذكورة ليست الولد ولا قضاء الشهوة، وإنما ﴿لِّتَسْكُنُوٓا۟ إِلَيْهَا﴾.\n\nثم أُخبر أنّ شيئين مجعولان لا نابتان: المودّة والرحمة.",
         words: [
           {
@@ -3984,7 +3984,7 @@ const TADABBUR = {
       {
         n: 18,
         ar: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌۭ",
-        why: "Two words are used for the one watching, and neither is \"angel\" — they describe a posture, not a species. Raqib: one who watches without looking away. 'Atid: one who is already in place, ready, before the thing happens.\n\nAnd the verb chosen is *yalfizu* — to throw out of the mouth. Not \"says\", not \"speaks\": the word for something that leaves you before you have weighed it.",
+        why: "Two words are used for the one watching, and neither is \"angel\" — they describe a posture, not a species. Raqib: one who watches without looking away. 'Atid: one who is already in place, ready, before the thing happens.\n\nAnd the verb chosen is **yalfizu** — to throw out of the mouth. Not \"says\", not \"speaks\": the word for something that leaves you before you have weighed it.",
         whyAr: "ذُكر للحافظ وصفان، وليس فيهما لفظ «ملَك»، وإنما هما في الهيئة لا في الجنس: فالرقيب المراقب الذي لا يصرف نظره، والعتيد الحاضر المهيّأ قبل وقوع الأمر.\n\nوالفعل المختار ﴿يَلْفِظُ﴾، وهو الرمي من الفم، لا «يقول» ولا «يتكلّم»: وهو لفظ ما يخرج منك قبل أن تزنه.",
         words: [
           {
@@ -4289,7 +4289,7 @@ const TADABBUR = {
       {
         n: 23,
         ar: "وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوٓا۟ إِلَّآ إِيَّاهُ وَبِٱلْوَٰلِدَيْنِ إِحْسَٰنًا ۚ إِمَّا يَبْلُغَنَّ عِندَكَ ٱلْكِبَرَ أَحَدُهُمَآ أَوْ كِلَاهُمَا فَلَا تَقُل لَّهُمَآ أُفٍّۢ وَلَا تَنْهَرْهُمَا وَقُل لَّهُمَا قَوْلًۭا كَرِيمًۭا",
-        why: "Kindness to parents is placed in the same breath as worshipping Allah alone — and then the standard is set at a level nobody can pretend to meet by accident. The forbidden word is *uff*: not an insult, not a raised voice. It is the small sound of being fed up.\n\nIf the line is drawn THERE, everything above it is already settled without needing to be listed.",
+        why: "Kindness to parents is placed in the same breath as worshipping Allah alone — and then the standard is set at a level nobody can pretend to meet by accident. The forbidden word is **uff**: not an insult, not a raised voice. It is the small sound of being fed up.\n\nIf the line is drawn THERE, everything above it is already settled without needing to be listed.",
         whyAr: "قُرن الإحسان إلى الوالدين بتوحيد العبادة في سياقٍ واحد، ثم ضُرب الحدّ عند موضعٍ لا يُدّعى بلوغه مصادفةً. فالمنهيّ عنه ﴿أُفٍّۢ﴾، وليست سبًّا ولا رفعَ صوت، وإنما هي كلمة الضجر الصغيرة.\n\nفإذا وُضع الحدّ هناك، فما فوقه مقضيٌّ فيه من غير حاجةٍ إلى تعداد.",
         words: [
           {
@@ -5121,7 +5121,7 @@ const TADABBUR = {
       {
         n: 10,
         ar: "وَهَدَيْنَٰهُ ٱلنَّجْدَيْنِ",
-        why: "Two roads, and the word chosen for both of them is *najd* — high ground, a road that climbs. Not one uphill and one downhill.\n\nThat is the observation in the verse. People assume wrong is the easy slope and right is the hard climb. The Arabic makes them both an ascent: whichever you take, you will be paying to go up it.",
+        why: "Two roads, and the word chosen for both of them is **najd** — high ground, a road that climbs. Not one uphill and one downhill.\n\nThat is the observation in the verse. People assume wrong is the easy slope and right is the hard climb. The Arabic makes them both an ascent: whichever you take, you will be paying to go up it.",
         whyAr: "طريقان، واللفظ المختار لهما جميعًا ﴿ٱلنَّجْدَيْنِ﴾، والنجد ما ارتفع من الأرض، لا أنّ أحدهما صعودٌ والآخر هبوط.\n\nوهذا موضع النظر في الآية: يظنّ الناس أنّ الشرّ منحدرٌ سهل وأنّ الخير مرتقًى شاقّ، والعربية جعلتهما صعودًا: أيّهما سلكتَ فأنت دافعٌ ثمن الارتقاء.",
         words: [
           {
@@ -5509,7 +5509,7 @@ const TADABBUR = {
         ar: "كَلَّآ إِنَّ ٱلْإِنسَٰنَ لَيَطْغَىٰٓ ۝ أَن رَّءَاهُ ٱسْتَغْنَىٰٓ",
         arNote: "Verses 6 and 7 together, because the second gives the cause of the first.",
         arNoteAr: "الآيتان السادسة والسابعة معًا، لأنّ الثانية علّة الأولى.",
-        why: "This is in the surah of the first revelation — five verses about reading and the pen, and then immediately this. The first thing said after the command to read is a warning about what happens to a person who learns and then feels he has enough.\n\nThe cause given is not wealth. It is *ra'ahu istaghna*: that he SAW himself as self-sufficient. The seeing is the problem, not the having.",
+        why: "This is in the surah of the first revelation — five verses about reading and the pen, and then immediately this. The first thing said after the command to read is a warning about what happens to a person who learns and then feels he has enough.\n\nThe cause given is not wealth. It is **ra'ahu istaghna**: that he SAW himself as self-sufficient. The seeing is the problem, not the having.",
         whyAr: "هذا في سورة أوّل ما نزل: خمس آياتٍ في القراءة والقلم، ثم هذا مباشرةً. فأوّل ما قيل بعد الأمر بالقراءة تحذيرٌ ممّا يصيب من علِم ثم رأى أنه اكتفى.\n\nوالعلّة المذكورة ليست المال، وإنما ﴿أَن رَّءَاهُ ٱسْتَغْنَىٰٓ﴾: أنه رأى نفسه مستغنيًا. فالآفة في الرؤية لا في الوجود.",
         words: [
           {
