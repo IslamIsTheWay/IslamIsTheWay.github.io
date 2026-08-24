@@ -484,21 +484,22 @@ function iitwEsc(s) {
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
-// "Surah Al-Haqqah 69:29-33" — built from whatever fields are filled in.
+// "Al-Haqqah 69:29-33" — built from whatever fields are filled in.
+// No "Surah" prefix: the field also carries titles that are not surah names.
 function iitwRecitationRef(r) {
-  const name = r.surah ? "Surah " + r.surah : "";
+  const name = r.surah ? String(r.surah) : "";
   const num = r.surahNum ? String(r.surahNum) : "";
   const from = r.ayahFrom ? String(r.ayahFrom) : "";
   const to = r.ayahTo && String(r.ayahTo) !== from ? "-" + r.ayahTo : "";
   const cite = num && from ? " " + num + ":" + from + to : (from ? " — verses " + from + to.replace("-", "–") : "");
   return (name + cite).trim();
 }
-/* Only shown when the Arabic surah name was actually given — "سورة Al-Haqqah"
-   reads badly, so no Arabic name means no Arabic line. */
+/* Only shown when the Arabic name was actually given — a Latin name sitting
+   on the Arabic line reads badly, so no Arabic name means no Arabic line. */
 function iitwRecitationRefAr(r) {
   if (!r.surahAr) return "";
   const ar = n => String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[+d]);
-  const name = "سورة " + r.surahAr;
+  const name = String(r.surahAr);
   const from = r.ayahFrom ? String(r.ayahFrom) : "";
   if (!from) return name;
   const single = !r.ayahTo || String(r.ayahTo) === from;
