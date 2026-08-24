@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 21 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 17 first, then PART 16.**
+> **Last updated: 24 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 17 first — and inside it, the THIRD, FOURTH and FIFTH ROUNDS at the end are the most recent work — then PART 16.** The last three sections of this file (verification habits, the known-unfixed golden.html issue, and where the content stands) are the fastest way to pick up.
 
 ## The rules that matter most
 
