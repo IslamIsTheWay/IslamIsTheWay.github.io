@@ -3723,6 +3723,196 @@ languages in the EU; Sykes-Picot 1916; and English words dropped into Arabic
 to sound advanced, answered with Ibn Majah 3949 — loving your people is not
 tribalism, helping them upon wrongdoing is).
 
+## FOURTH ROUND, 23 August: the end times properly, and the double standard
+
+The owner's two complaints, both fair. First: a subject as central as the
+Mahdi was missing, and the ten major signs were listed rather than explained.
+Second: the double standard he sees every day — tell a woman dressed
+immodestly to cover and you are told to leave the creation to their Creator,
+but watch a practising Muslim slip and the same crowd has "hypocrite" ready.
+
+**The Mahdi is in `MINOR_SIGNS` with `status: "disputed"`, and deliberately
+NOT in `MAJOR_SIGNS`.** The ten are the ten named in one hadith in Sahih
+Muslim and he is not among them; putting him there would make the page claim
+something the text does not.
+
+**Two narrations that were missing from the site entirely:**
+
+* **Al-harj** — "a time will come when the killer will not know why he killed,
+  and the one killed will not know why he was killed" (Sahih Muslim 7303). And
+  when he ﷺ was asked what al-harj was, he answered by **turning his hand**,
+  not with a word (Sahih al-Bukhari 85). It is written as a **condition, not
+  an event**, which is why it carries no date — you cannot date the year a
+  purpose went missing.
+* **Declaring silk, wine and instruments lawful** (Sahih al-Bukhari 5590). The
+  entry turns on the word *declaring*: not that people do these things, but
+  that they move the line and then stand comfortably on the correct side of
+  the new one.
+
+**The nine major signs were deepened by ADDING points, never rewriting.** They
+went from 1–3 points each to 3–6. Isa gained where he descends and that he
+**refuses to lead the prayer**; Ya'juj gained the barrier's stated expiry
+(18:98) and Lake Tiberias; the smoke gained **both** readings — Ibn Mas'ud's
+(already happened, the famine over Quraysh) and Ibn Abbas's (still to come);
+the Trumpet gained the two blasts of 39:68 and the one already holding it; the
+fire gained that it **drives** people and travels with them; the Dajjal gained
+the forty days with "estimate its measure", the ten verses of Al-Kahf, and
+that Isa kills him.
+
+**`SIGNS_INTRO.orderDetail` explains the numbering**, because the owner asked
+why they are numbered 1 to 9. The answer on the page: it is a **reading order,
+not a timetable**. What is fixed by text (the fire is last), what is strongly
+indicated (Dajjal → Isa → Ya'juj, because the narrations sit inside each
+other's stories), what nobody knows (where the smoke, the beast and the
+landslides fall), and that **the Trumpet is numbered for reading but is not
+one of the ten** — the ten are signs *before* the Hour; the Trumpet *is* the
+Hour.
+
+**`mis-double` — the double standard, four cards.**
+
+1. `ms-db-notahadith` — **"Leave the creation to their Creator" is not a hadith
+   and not a verse.** The actual instruction gives three **descending** levels
+   — hand, tongue, heart — and the lowest is still obligatory, called the
+   weakest of faith. There is no fourth level and silence is not on the list.
+   The hand belongs to whoever has authority over the thing; for almost
+   everyone the available level is the tongue.
+2. `ms-db-how` — the part people skip. **Gently**: Allah sent Musa to
+   **Pharaoh** with "speak to him a gentle word" (20:44), so nobody has a case
+   for harshness with a Muslim who prays. **Privately**: ash-Shafi'i's line,
+   and the reason it works — a person corrected in public defends the mistake
+   to save face. **Without spying or suspicion**: 49:12 forbids all three in
+   one verse. **Once, then leave**: "you are not over them a controller"
+   (88:22). And start with yourself (2:44).
+3. `ms-db-hypocrite` — the reverse, and the **heavier** sin. "Hypocrite" is a
+   ruling on what is inside a person, and he ﷺ refused that at the hardest
+   possible point: Usamah killed a man who said the shahadah with a spear over
+   him, certain he was lying, and was asked **"did you open up his heart?"**
+   If it was refused there it is refused about a Muslim who prays and errs.
+   Say the act is wrong; never say the person is a hypocrite.
+4. `ms-db-scale` — so is anything worth saying loudly? Yes, and the line is
+   **scale, not anger**. Private sin → cover it. Public call to a wrong →
+   answer the claim publicly, and only the claim. Mockery of the religion →
+   **4:140**: leave the gathering until they change the subject — **withdraw
+   your presence, not remove a person.** And the best jihad is a word of
+   justice before a tyrant, so silence was never the safe default.
+
+**A bug worth keeping in mind: `words` must be a superset of `must`.** "None of
+my business" had been added to `must` only, which silently cost the match. An
+invariant check now confirms it for every `mis-` topic. Battery of 18 questions
+across all four outcomes, all correct.
+
+## FIFTH ROUND, 23 August: the Golden Age carries the argument
+
+Four changes, all on `js/golden-closing.js`, which is now **17 boxes**. The
+order of the run matters and should not be shuffled:
+
+`gc-behind` → **`gc-whytech`** → `gc-consumer` → `gc-data` → `gc-united` →
+**`gc-waiting`** → `gc-return` → `gc-win`.
+
+**1. `gc-waiting` — "They believed in the Mahdi too, and built all this
+anyway."** The Guidance box argues the waiting from the **texts**; this one
+argues it from the **record**, and no point appears in both. Four legs:
+
+* The House of Wisdom generation held the same belief. Al-Bukhari died 870 and
+  Muslim 875 — the end-times hadith were written down in the **same century**
+  Baghdad was buying Greek manuscripts. **So the belief cannot be the cause of
+  the paralysis: the belief was present, the paralysis was not.**
+* The real test is the **length of project you will begin** — al-Qarawiyyin
+  859 and still teaching, the waqf (nobody endows a hospital in perpetuity
+  while expecting the world to end this decade), Ulugh Beg's catalogue.
+* The claimants — Fatimid 909, Ibn Tumart c.1121, Muhammad Ahmad 1881, the
+  Haram 1979 — stated **with the honest counterweight** that al-Azhar is
+  Fatimid, 970, and still standing. The argument is not that they built
+  nothing: it is that **the ordinary work survived and the claim expired in
+  every case, without one exception in eleven hundred years.**
+* **5:23–26**, used nowhere else on the site. The method is "enter by the gate
+  AND rely on Allah" in one breath; the refusal is "go, you and your Lord, and
+  fight; we are remaining right here"; and the sentence is **forty years of
+  wandering** — a punishment that does not look like a punishment, it looks
+  like ordinary life. Quote: Sahih Muslim 2664, the half nobody cites — "be
+  keen on what benefits you, seek help from Allah, and do not be incapable."
+  The Sunnah page already carries the first half of that same hadith, and the
+  grading line says so.
+
+**2. `gc-data` — the objection restated as SOVEREIGNTY, at the owner's
+insistence.** It had been one buried sentence. It is now the headed statement
+of the case: we are **not** against our own state collecting our information
+— every state does it and must. The argument is **whose hands it ends up in**,
+and there are two cases. On our ground, under our courts: inspectable,
+correctable, switchable off, and whoever abuses it faces a judge with
+authority over him — **acceptable, and the page says so plainly.** On another
+country's ground: our courts do not reach it, our law does not bind the
+readers, nothing can be audited or deleted or switched off, and the day their
+interest and ours part it is available to be used against us — **not
+acceptable, and no price makes it acceptable.** **Never edit this box back
+into a general complaint about being watched.**
+
+**3. `gc-united` — widened past the Arabs, at the owner's insistence.** The
+twenty-two stay the headline case. Added after it: roughly **four in five
+Muslims are not Arab**; the four largest Muslim populations (Indonesia,
+Pakistan, India, Bangladesh) are all non-Arab; the **OIC is fifty-seven
+states** across four continents and fails the same way. That widening makes
+the argument **stronger** — one result under fifty-seven governments in dozens
+of languages is not about being Arab, and it removes the excuse in every
+direction. The splits are not only Arab against Arab either: Pakistan and
+Bangladesh were one state until 1971. And **this page holds the proof**:
+al-Bukhari from Bukhara, al-Khwarizmi from Khwarazm, al-Farabi from Farab, and
+the foundational book of Arabic grammar written by **Sibawayh, a Persian**.
+**The Golden Age was a Muslim achievement, not an Arab one.** The farewell
+sermon is referenced, not restated — `js/golden-mirror.js` already carries it
+above, for a different reason.
+
+**4. `gc-whytech` — why a religion site discusses chips and servers.** Placed
+**before** `gc-consumer` so it introduces the whole run. Its load-bearing
+argument is **fard kifayah**, a word that had never appeared on the site: the
+knowledge a community needs — medicine, agriculture, the crafts, calculation
+— is a communal obligation, so **if nobody carries it every capable person in
+the ummah is sinning**, not merely falling behind. Al-Ghazali argues it in the
+Ihya with medicine as the example. Supporting it: the religious/worldly split
+is inherited and not ours (**Ibn ash-Shatir was the muwaqqit of the Umayyad
+Mosque** — the prayer times were the *reason* for the astronomy that matched
+Copernicus); worship has always leaned on this (qiblah is spherical geometry,
+and al-Khwarizmi's own preface says he wrote on algebra for inheritance,
+legacies, partition and trade); and **8:60 with Sahih Muslim 1917**, where he
+ﷺ recited "prepare whatever you are able of power" from the minbar and then
+said three times **"indeed, the power is shooting"** — naming the decisive
+capability of that century, not a permanent list.
+
+**That hadith must never be quoted here without its frame**, which the section
+itself carries: 8:61 commands peace the moment it is offered, it addresses a
+**state's** capacity to protect its people, and it is not a permission for
+individuals to fight. `js/tadabbur.js` uses 8:60 for a different purpose
+(answering the "terrorism verse" claim through تُرهِبُون) and the two do not
+overlap. The box closes on the balance deliberately — technology is not the
+point, the Hereafter is; competence is part of how the trust is carried here.
+**Keep that paragraph**; without it the section reads as worldly-first.
+
+## Verification habits that earned their place this round
+
+* **Slice Arabic fragments OUT OF the source and test containment.** Do not
+  compare the page against a hand-typed escape. A 5:26 check failed on
+  diacritic **order** (fatha before shadda vs after), which is invisible in a
+  terminal, and the fragment was fine all along.
+* **Positional insertion beats text anchors for Arabic.** `gc-data` and
+  `gc-united` were edited by finding the nth paragraph break of a named field,
+  because a hand-typed Arabic anchor missed for the same reason.
+* **Search hadith text with alef-maqsura folded.** The archery narration was
+  "missing" from Sahih Muslim until الرمى was folded to الرمي.
+* **Write Python scripts with the file tool, not bash heredocs**, when the
+  content carries Arabic or regex — a heredoc broke on an apostrophe this
+  round and has mangled backslashes before.
+
+## Known, unfixed: golden.html shows both languages in ENGLISH mode
+
+Every one of the 17 closing boxes renders its Arabic body underneath its
+English body when the page is in English. The renderer marks the English half
+`.en-only` but never marks the Arabic half `.ar-only` — the sibling class
+proves the pair was intended. **This is pre-existing and page-wide, not from
+this round.** Arabic mode is clean (0 leaks, verified live), so it does not
+affect how the owner reads the site. Left alone because fixing it changes the
+appearance of thirteen boxes he has already read; it is a one-class fix
+whenever he wants it.
+
 ## Open work as of 23 August 2026
 
 1. **Tadabbur coverage.** 87 verses short of four in every surah; 32 surahs
@@ -3730,5 +3920,18 @@ tribalism, helping them upon wrongdoing is).
    of what the owner keeps asking for and it is the slowest work on the site.
 2. **The verb-form file has 28 entries.** Every surah could carry one.
 3. **Only guidance.html and index.html's tadabbur block have been swept for
-   Arabic-mode leaks.** Run the same audit on the other fifteen pages.
-4. Everything still open from PART 16.
+   Arabic-mode leaks.** judgement.html alone showed **62** on the last count —
+   ref lines carrying prose, the same two-cause pattern as before. Run the
+   audit on the other fifteen pages.
+4. **golden.html's English-mode duplication**, above — owner's call.
+5. Everything still open from PART 16.
+
+## Where the content stands, 23 August 2026
+
+* `js/misunderstood.js` — **8 sections, 37 cards**, plus the 5 method cards.
+* `js/golden-closing.js` — **17 boxes**.
+* `js/signs.js` — **9 major signs** (plus the Trumpet, numbered for reading
+  only), the Mahdi and al-harj and the declaring-lawful hadith among the
+  minor, and `orderDetail` explaining the numbering.
+* `js/tadabbur-tense.js` — **28 entries across 22 surahs**.
+
