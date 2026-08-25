@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608242306" />
+  <link rel="stylesheet" href="css/style.css?v=202608250801" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -78,6 +78,7 @@
         <span class="page-toc-label"><span class="en-only">On this page</span><span class="ar-only" dir="rtl">في هذه الصفحة</span></span>
         <a href="#stages"><span class="en-only">The 15 stages</span><span class="ar-only" dir="rtl">المراحل الخمس عشرة</span></a>
         <a href="#journey"><span class="en-only">The whole journey, in detail</span><span class="ar-only" dir="rtl">الرحلة كاملةً بالتفصيل</span></a>
+        <a href="#endmap"><span class="en-only">The map, and where we are</span><span class="ar-only" dir="rtl">الخريطة وأين نحن</span></a>
         <a href="#signs"><span class="en-only">How the world ends</span><span class="ar-only" dir="rtl">كيف تنتهي الدنيا</span></a>
         <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
         <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
@@ -119,6 +120,19 @@
     </div>
   </section>
 
+
+  <!-- ===== The map: one ordered chain, and where we are on it =====
+       Placed BEFORE the signs section on purpose. It is the overview that
+       organises everything after it, and reading the detail first is what
+       made the subject feel like a pile of disconnected events. Ordering is
+       LABELLED at every phase: fixed by text, strongly indicated, or
+       unknown. Where it is unknown the map says so instead of inventing a
+       sequence -- see the three rules at the top of js/endmap.js. -->
+  <section id="endmap">
+    <div class="container">
+      <div id="endMapBox"></div>
+    </div>
+  </section>
 
   <!-- ===== How the world ends =====
        NOTE: this comment used to claim the section was placed ABOVE the
@@ -231,20 +245,21 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608242306"></script>
-  <script src="js/angels.js?v=202608242306"></script>
+  <script src="js/data.js?v=202608250801"></script>
+  <script src="js/angels.js?v=202608250801"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608242306"></script>
-  <script src="js/judgement.js?v=202608242306"></script>
+  <script src="js/signs.js?v=202608250801"></script>
+  <script src="js/endmap.js?v=202608250801"></script>
+  <script src="js/judgement.js?v=202608250801"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608242306"></script>
+  <script src="js/judgement-closing.js?v=202608250801"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608242306"></script>
-  <script src="js/journey.js?v=202608242306"></script>
+  <script src="js/rise.js?v=202608250801"></script>
+  <script src="js/journey.js?v=202608250801"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -632,6 +647,128 @@
         <div class="ar-only" dir="rtl">${sgParas(ar)}</div></div>`;
     }
 
+    /* ===== The map of the end of time =====
+       One ordered chain instead of a list. The ordering badge on each phase
+       is not decoration: it is the difference between what a text fixes and
+       what a scholar reconciled, and blurring the two is how this subject
+       goes wrong. */
+    const EM_ORDER = {
+      fixed:     { en: "Order fixed by a text", ar: "الترتيب ثابت بالنصّ", c: "em-fixed" },
+      indicated: { en: "Order strongly indicated", ar: "الترتيب دلالته قويّة", c: "em-ind" },
+      unknown:   { en: "Order unknown — grouped, not sequenced", ar: "الترتيب مجهول — مجموعة لا مرتّبة", c: "em-unk" }
+    };
+    const EM_BADGE = {
+      now:     { en: "Happening now", ar: "واقعٌ الآن" },
+      named:   { en: "Named, and not yet", ar: "مسمّاةٌ ولم تقع" },
+      major:   { en: "The ten major signs", ar: "العلامات العشر الكبرى" },
+      closing: { en: "The closing", ar: "الختام" }
+    };
+
+    function emParas(t) {
+      return String(t || "").split(/\n\s*\n/)
+        .map(p => `<p>${p.replace(/\n/g, " ")
+          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`).join("");
+    }
+    function emPair(en, ar, cls, tag) {
+      const t = tag || "div";
+      return `<${t} class="${cls} en-only">${en}</${t}>` +
+             `<${t} class="${cls} ar-only" dir="rtl">${ar}</${t}>`;
+    }
+    function emSrc(ref, refAr, strength, strengthAr) {
+      let h = `<div class="tad-ref en-only" dir="auto">${ref}</div>` +
+              `<div class="tad-ref ar-only" dir="rtl">${refAr}</div>`;
+      if (strength) {
+        h += `<div class="em-grade en-only">${strength}</div>` +
+             `<div class="em-grade ar-only" dir="rtl">${strengthAr}</div>`;
+      }
+      return h;
+    }
+
+    function renderEndMap() {
+      const box = document.getElementById("endMapBox");
+      if (!box || typeof END_MAP === "undefined") return;
+      const M = END_MAP;
+      let h = "";
+
+      h += `<h2 class="section-title"><span class="en-only">${M.title}</span>
+        <span class="ar-only" dir="rtl">${M.titleAr}</span></h2>`;
+      h += `<div class="section-sub">${emPair(emParas(M.lead), emParas(M.leadAr), "em-lead")}</div>`;
+
+      /* the legend, so the ordering badges mean something before they appear */
+      h += `<div class="em-legend">
+        ${emPair(M.legendTitle, M.legendTitleAr, "em-legend-head", "div")}
+        <ul class="em-legend-list">` +
+        M.legend.map(l => `<li><span class="em-dot ${EM_ORDER[l.k].c}"></span>` +
+          `<span class="en-only">${l.en}</span>` +
+          `<span class="ar-only" dir="rtl">${l.ar}</span></li>`).join("") +
+        `</ul></div>`;
+
+      M.phases.forEach(function (p) {
+        const ord = EM_ORDER[p.order] || EM_ORDER.unknown;
+        const bdg = EM_BADGE[p.badge] || EM_BADGE.named;
+        h += `<div class="em-phase ${ord.c}" id="${p.id}">
+          <div class="em-phase-top">
+            <span class="em-num">${p.num}</span>
+            <span class="em-when"><span class="en-only">${bdg.en}</span>
+              <span class="ar-only" dir="rtl">${bdg.ar}</span></span>
+            <span class="em-ord"><span class="em-dot ${ord.c}"></span>
+              <span class="en-only">${ord.en}</span>
+              <span class="ar-only" dir="rtl">${ord.ar}</span></span>
+          </div>
+          <h3 class="em-phase-title"><span class="en-only">${p.title}</span>
+            <span class="ar-only" dir="rtl">${p.titleAr}</span></h3>
+          <div class="em-ordnote">${emPair(emParas(p.orderNote), emParas(p.orderNoteAr), "em-ordnote-t")}</div>
+          ${emPair(emParas(p.lead), emParas(p.leadAr), "em-phase-lead")}`;
+
+        h += `<ol class="em-nodes">` + p.nodes.map(function (n) {
+          return `<li class="em-node">
+            <h4 class="em-node-t"><span class="en-only">${n.t}</span>
+              <span class="ar-only" dir="rtl">${n.tAr}</span></h4>
+            ${emPair(emParas(n.detail), emParas(n.detailAr), "em-node-d")}
+            <div class="em-means">${emPair(emParas(n.means), emParas(n.meansAr), "em-means-t")}</div>
+            ${emSrc(n.ref, n.refAr, n.strength, n.strengthAr)}
+          </li>`;
+        }).join("") + `</ol>`;
+
+        if (p.here) {
+          h += `<div class="em-here">
+            <div class="em-here-head">📍 <span class="en-only">${p.here.t}</span>
+              <span class="ar-only" dir="rtl">${p.here.tAr}</span></div>
+            ${emPair(emParas(p.here.body), emParas(p.here.bodyAr), "em-here-b")}
+          </div>`;
+        }
+        h += `</div>`;
+      });
+
+      /* how life will feel, then how to hold yourself -- in that order,
+         because the second only lands once the first has been read */
+      [["em-life", M.life], ["em-hold", M.hold]].forEach(function (pair) {
+        const cls = pair[0], s = pair[1];
+        if (!s) return;
+        h += `<div class="${cls}">
+          <h3 class="em-sec-t"><span class="en-only">${s.title}</span>
+            <span class="ar-only" dir="rtl">${s.titleAr}</span></h3>
+          ${emPair(emParas(s.lead), emParas(s.leadAr), "em-sec-lead")}
+          <ul class="em-points">` +
+          s.points.map(pt => `<li>` +
+            `<span class="en-only">${pt.en.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</span>` +
+            `<span class="ar-only" dir="rtl">${pt.ar.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</span>` +
+            `</li>`).join("") +
+          `</ul>${s.ref ? emSrc(s.ref, s.refAr, s.strength, s.strengthAr) : ""}</div>`;
+      });
+
+      /* the training question, answered plainly because it was asked plainly */
+      const c = M.closing;
+      h += `<div class="em-closing">
+        <h3 class="em-sec-t"><span class="en-only">${c.title}</span>
+          <span class="ar-only" dir="rtl">${c.titleAr}</span></h3>
+        ${emPair(emParas(c.body), emParas(c.bodyAr), "em-closing-b")}
+        ${emSrc(c.ref, c.refAr, c.strength, c.strengthAr)}
+      </div>`;
+
+      box.innerHTML = h;
+    }
+
     function renderSigns() {
       const box = document.getElementById("signsBox");
       if (!box || typeof SIGNS_INTRO === "undefined") return;
@@ -808,13 +945,14 @@
        ("Sahih al-Bukhari 3439" instead of "صحيح البخاري ٣٤٣٩"), because
        i18n.js never saw the nodes. */
     document.addEventListener("DOMContentLoaded", function () {
-      renderSigns();
+      renderEndMap();
+    renderSigns();
       renderJudgementDetail();
       if (window.applyI18n) window.applyI18n();
     });
   </script>
 
-  <script src="js/main.js?v=202608242306"></script>
-  <script src="js/i18n.js?v=202608242306"></script>
+  <script src="js/main.js?v=202608250801"></script>
+  <script src="js/i18n.js?v=202608250801"></script>
 </body>
 </html>
