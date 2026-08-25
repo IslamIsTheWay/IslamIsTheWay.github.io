@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608250820" />
+  <link rel="stylesheet" href="css/style.css?v=202608251644" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -245,21 +245,21 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608250820"></script>
-  <script src="js/angels.js?v=202608250820"></script>
+  <script src="js/data.js?v=202608251644"></script>
+  <script src="js/angels.js?v=202608251644"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608250820"></script>
-  <script src="js/endmap.js?v=202608250820"></script>
-  <script src="js/judgement.js?v=202608250820"></script>
+  <script src="js/signs.js?v=202608251644"></script>
+  <script src="js/endmap.js?v=202608251644"></script>
+  <script src="js/judgement.js?v=202608251644"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608250820"></script>
+  <script src="js/judgement-closing.js?v=202608251644"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608250820"></script>
-  <script src="js/journey.js?v=202608250820"></script>
+  <script src="js/rise.js?v=202608251644"></script>
+  <script src="js/journey.js?v=202608251644"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -684,6 +684,15 @@
       return h;
     }
 
+    function emPlain(en, ar) {
+      if (!en) return "";
+      return `<div class="em-plain">
+        <div class="em-plain-head">💬 <span class="en-only">In plain words</span>
+          <span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
+        ${emPair(emParas(en), emParas(ar), "em-plain-b")}
+      </div>`;
+    }
+
     function renderEndMap() {
       const box = document.getElementById("endMapBox");
       if (!box || typeof END_MAP === "undefined") return;
@@ -718,6 +727,7 @@
           <h3 class="em-phase-title"><span class="en-only">${p.title}</span>
             <span class="ar-only" dir="rtl">${p.titleAr}</span></h3>
           <div class="em-ordnote">${emPair(emParas(p.orderNote), emParas(p.orderNoteAr), "em-ordnote-t")}</div>
+          ${emPlain(p.plain, p.plainAr)}
           ${emPair(emParas(p.lead), emParas(p.leadAr), "em-phase-lead")}`;
 
         h += `<ol class="em-nodes">` + p.nodes.map(function (n) {
@@ -748,6 +758,7 @@
         h += `<div class="${cls}">
           <h3 class="em-sec-t"><span class="en-only">${s.title}</span>
             <span class="ar-only" dir="rtl">${s.titleAr}</span></h3>
+          ${emPlain(s.plain, s.plainAr)}
           ${emPair(emParas(s.lead), emParas(s.leadAr), "em-sec-lead")}
           <ul class="em-points">` +
           s.points.map(pt => `<li>` +
@@ -762,6 +773,7 @@
       h += `<div class="em-closing">
         <h3 class="em-sec-t"><span class="en-only">${c.title}</span>
           <span class="ar-only" dir="rtl">${c.titleAr}</span></h3>
+        ${emPlain(c.plain, c.plainAr)}
         ${emPair(emParas(c.body), emParas(c.bodyAr), "em-closing-b")}
         ${emSrc(c.ref, c.refAr, c.strength, c.strengthAr)}
       </div>`;
@@ -952,7 +964,7 @@
     });
   </script>
 
-  <script src="js/main.js?v=202608250820"></script>
-  <script src="js/i18n.js?v=202608250820"></script>
+  <script src="js/main.js?v=202608251644"></script>
+  <script src="js/i18n.js?v=202608251644"></script>
 </body>
 </html>
