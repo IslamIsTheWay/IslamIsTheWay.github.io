@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608260908" />
+  <link rel="stylesheet" href="css/style.css?v=202608260920" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
   <meta property="og:type" content="website" />
@@ -139,11 +139,11 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608260908"></script>
-  <script src="js/sunnah.js?v=202608260908"></script>
-  <script src="js/adhkar.js?v=202608260908"></script>
-  <script src="js/quran-text.js?v=202608260908"></script>
-  <script src="js/verify.js?v=202608260908"></script>
+  <script src="js/data.js?v=202608260920"></script>
+  <script src="js/sunnah.js?v=202608260920"></script>
+  <script src="js/adhkar.js?v=202608260920"></script>
+  <script src="js/quran-text.js?v=202608260920"></script>
+  <script src="js/verify.js?v=202608260920"></script>
   <script>
   /* ============================================================
      The page logic. The engine is in js/verify.js; this file only
@@ -233,6 +233,32 @@
       </div>`;
     }
 
+    /* ---- what IS established on the same subject. The owner asked for this:
+       "not found" alone is a dead end, and somebody who wanted to share
+       something good is left with nothing to share. Labelled as RELATED at
+       every level so it can never read as the same text. ------------------ */
+    function relatedBlock(list) {
+      if (!list.length) return "";
+      return `<div class="vf-related">
+        <div class="vf-related-head">🌿 ${pair(
+          "That wording was not found — but this IS established on the same subject",
+          "لم يوجد ذلك اللفظ — ولكنّ هذا ثابتٌ في المعنى نفسه")}</div>
+        <p class="vf-related-note">${pair(
+          "These are NOT the text you pasted. They are authentic narrations about the same thing, each with its grading — so if you wanted to pass something on, pass one of these on instead.",
+          "وهذه ليست النصَّ الذي ألصقتَه، وإنما أحاديثُ ثابتةٌ في المعنى نفسه، كلٌّ بدرجته — فإن كنتَ تريد أن تُرسِل شيئًا فأرسِل واحدًا من هذه.")}</p>
+        ${list.map(h => `<div class="vf-card vf-rel">
+          ${!h.title ? "" : (h.titleAr
+            ? `<div class="vf-title">${pair(esc(h.title), esc(h.titleAr))}</div>`
+            : `<div class="vf-title en-only">${esc(h.title)}</div>`)}
+          ${arabicLine(h.ar)}
+          ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
+          ${h.ref ? `<div class="vf-src">${esc(h.ref)}</div>` : ""}
+          ${h.strength ? `<div class="vf-grade">${esc(h.strength)}</div>` : ""}
+          <a class="vf-go" href="${esc(h.where || "hadith.html")}">${pair("See it in context", "انظرها في موضعها")}</a>
+        </div>`).join("")}
+      </div>`;
+    }
+
     /* ---- nothing found. The most important branch on the page. ---------- */
     function notFound(searched) {
       return `<div class="vf-card vf-none">
@@ -241,7 +267,8 @@
         <p class="ar-only" dir="rtl"><strong>وليس هذا كقولنا إنه موضوع، ولن تقوله هذه الصفحة.</strong> وإنما معناه أننا لم نجد هذه الألفاظ فيما بحثنا فيه.</p>
         <p class="en-only">Three ordinary reasons a real hadith is not found here: the wording you were sent is a <strong>paraphrase</strong> rather than the exact text; it is in a collection this site does not carry; or a word was mistyped.</p>
         <p class="ar-only" dir="rtl">وثلاثةُ أسبابٍ عاديّةٍ لا يوجد بها الحديثُ الثابت ههنا: أن يكون اللفظُ الذي وصلك <strong>روايةً بالمعنى</strong> لا نصًّا؛ أو أن يكون في كتابٍ لا يحمله هذا الموقع؛ أو أن تكون كلمةٌ كُتبت خطأً.</p>
-        <div class="vf-searched">${pair("Searched: " + searched.en, "بُحث في: " + searched.ar)}</div>
+        <div class="vf-searched"><strong>${pair("Searched so far:", "ما بُحث فيه حتى الآن:")}</strong>
+          ${pair(searched.en, searched.ar)}</div>
         <div class="vf-note">${pair(
           "What to do: do not forward it while you are unsure. Ask someone who knows, or check binbaz.org.sa or binothaimeen.net. Passing on something about the Prophet ﷺ that he did not say is not a small thing.",
           "وماذا تصنع: لا تُرسِلها وأنت غيرُ متيقّن. واسأل من يعلم، أو راجع binbaz.org.sa أو binothaimeen.net. فنقلُ ما لم يقله النبيُّ ﷺ عنه ليس بالأمر الهيّن.")}</div>
@@ -252,73 +279,88 @@
       return `<button class="btn btn-ghost vf-deep" id="${id}">${label}</button>`;
     }
 
-    let lastClaim = "";
+    /* ONE VERDICT, WHICH UPDATES. See the note in the commit: printing a
+       second identical not-found card under the first made the deep-search
+       button look broken. State lives here and the panel is re-rendered. */
+    const vfState = { claim: "", hits: "", searchedEn: [], searchedAr: [], done: {} };
+
+    function vfRender(changed) {
+      const body = vfState.hits ||
+        (notFound({ en: vfState.searchedEn.join("; "), ar: vfState.searchedAr.join("؛ ") })
+         + relatedBlock(vfState.related || []));
+      const b1done = vfState.done.sahih, b2done = vfState.done.sunan;
+      box.innerHTML =
+        `<div class="vf-slot${changed ? " vf-updated" : ""}">${body}</div>` +
+        `<div class="vf-deeprow">
+          <p>${pair("Not what you were looking for? Search the full collections as well — they are large, so they load only when you ask.",
+                    "أليس هذا ما تبحث عنه؟ ابحث في الكتب كاملةً أيضًا — وهي كبيرة، فلا تُحمَّل إلا إذا طلبتَها.")}</p>
+          ${b1done ? `<button class="btn btn-ghost vf-deep is-done" disabled>${pair("Two Sahihs — searched ✓", "الصحيحان — تم البحث ✓")}</button>`
+                   : deepButton(pair("Search the two Sahihs", "ابحث في الصحيحين"), "vfDeep1")}
+          ${b2done ? `<button class="btn btn-ghost vf-deep is-done" disabled>${pair("Sunan and Muwatta — searched ✓", "السنن والموطّأ — تم البحث ✓")}</button>`
+                   : deepButton(pair("Search the four Sunan and the Muwatta", "ابحث في السنن الأربعة والموطّأ"), "vfDeep2")}
+          <div id="vfDeepStatus" class="vf-hint"></div>
+        </div>`;
+      wireDeep();
+      if (window.applyI18n) window.applyI18n();
+    }
 
     function run() {
       const claim = input.value.trim();
-      lastClaim = claim;
       if (claim.length < 6) {
         box.innerHTML = `<p class="vf-hint">${pair(
           "Paste a little more of the text.", "ألصِق قدرًا أكبر من النصّ.")}</p>`;
         return;
       }
       box.innerHTML = `<p class="vf-hint">${pair("Checking…", "جارٍ التحقّق…")}</p>`;
-
-      // Let the hint paint before the synchronous search blocks the thread.
       setTimeout(function () {
-        const q = vSearchQuran(claim);
-        const s = vSearchSite(claim);
+        vfState.claim = claim;
+        vfState.hits = "";
+        vfState.done = {};
+        vfState.searchedEn = ["the whole Quran, and everything this site carries with a grading"];
+        vfState.searchedAr = ["القرآنُ كلُّه، وكلُّ ما يحمله هذا الموقع بدرجته"];
+        const q = vSearchQuran(claim), s = vSearchSite(claim);
         let html = "";
         if (q.length) html += q.slice(0, 2).map(quranCard).join("");
         if (s.length) html += s.slice(0, 3).map(siteCard).join("");
-
-        if (!html) {
-          html = notFound({ en: "the whole Quran, and everything this site carries with a grading",
-                            ar: "القرآنُ كلُّه، وكلُّ ما يحمله هذا الموقع بدرجته" });
-        }
-        html += `<div class="vf-deeprow">
-          <p>${pair("Not what you were looking for? Search the full collections as well — they are large, so they load only when you ask.",
-                    "أليس هذا ما تبحث عنه؟ ابحث في الكتب كاملةً أيضًا — وهي كبيرة، فلا تُحمَّل إلا إذا طلبتَها.")}</p>
-          ${deepButton(pair("Search the two Sahihs", "ابحث في الصحيحين"), "vfDeep1")}
-          ${deepButton(pair("Search the four Sunan and the Muwatta", "ابحث في السنن الأربعة والموطّأ"), "vfDeep2")}
-          <div id="vfDeepStatus" class="vf-hint"></div>
-          <div id="vfDeepOut"></div>
-        </div>`;
-        box.innerHTML = html;
-        wireDeep();
-        if (window.applyI18n) window.applyI18n();
+        vfState.hits = html;
+        /* Only when the wording itself was not found — offering "related"
+           beside an exact hit would just be noise. */
+        vfState.related = html ? [] : vSearchRelated(claim);
+        vfRender(false);
       }, 20);
     }
 
     function wireDeep() {
       const st = document.getElementById("vfDeepStatus");
-      const out = document.getElementById("vfDeepOut");
-      async function go(cols, label) {
-        st.textContent = "";
-        st.innerHTML = pair("Loading " + label + "… this can take a moment.",
-                            "جارٍ تحميل " + label + "… وقد يستغرق لحظة.");
+      async function go(cols, key, enName, arName, btn) {
+        if (btn) { btn.disabled = true; btn.classList.add("is-loading"); }
+        st.innerHTML = pair("Loading " + enName + "… this can take a moment.",
+                            "جارٍ تحميل " + arName + "… وقد يستغرق لحظة.");
         if (window.applyI18n) window.applyI18n();
-        let ok = true;
-        for (const c of cols) { if (!(await vLoad(c))) ok = false; }
-        if (!ok && !cols.some(c => vCache[c.id])) {
+        for (const c of cols) { await vLoad(c); }
+        const ready = cols.filter(c => vCache[c.id]);
+        if (!ready.length) {
           st.innerHTML = pair("Could not load the collections. Check your connection.",
                               "تعذّر تحميلُ الكتب. تحقّق من الاتصال.");
+          if (btn) { btn.disabled = false; btn.classList.remove("is-loading"); }
           if (window.applyI18n) window.applyI18n();
           return;
         }
-        const hits = vSearchLoaded(lastClaim, cols.filter(c => vCache[c.id]));
-        const names = cols.filter(c => vCache[c.id]);
-        st.innerHTML = "";
-        out.innerHTML = hits.length
-          ? hits.map(colCard).join("")
-          : notFound({ en: names.map(c => c.en).join(", "),
-                       ar: names.map(c => c.ar).join("، ") });
-        if (window.applyI18n) window.applyI18n();
+        const hits = vSearchLoaded(vfState.claim, ready);
+        vfState.done[key] = true;
+        vfState.searchedEn.push(ready.map(c => c.en).join(", "));
+        vfState.searchedAr.push(ready.map(c => c.ar).join("، "));
+        /* A hit REPLACES the not-found verdict. Leaving "we did not find
+           this" sitting above a hit would simply be wrong. */
+        if (hits.length) vfState.hits = (vfState.hits || "") + hits.map(colCard).join("");
+        vfRender(true);
       }
       const b1 = document.getElementById("vfDeep1");
       const b2 = document.getElementById("vfDeep2");
-      if (b1) b1.addEventListener("click", () => go(V_SAHIH, "the two Sahihs"));
-      if (b2) b2.addEventListener("click", () => go(V_SUNAN, "the Sunan"));
+      if (b1) b1.addEventListener("click", () =>
+        go(V_SAHIH, "sahih", "the two Sahihs", "الصحيحين", b1));
+      if (b2) b2.addEventListener("click", () =>
+        go(V_SUNAN, "sunan", "the Sunan", "السنن", b2));
     }
 
     document.getElementById("vfGo").addEventListener("click", run);
@@ -365,7 +407,7 @@
   })();
   </script>
 
-  <script src="js/main.js?v=202608260908"></script>
-  <script src="js/i18n.js?v=202608260908"></script>
+  <script src="js/main.js?v=202608260920"></script>
+  <script src="js/i18n.js?v=202608260920"></script>
 </body>
 </html>

@@ -412,3 +412,83 @@ function vSearchLoaded(claim, cols) {
   }
   return hits.sort(function (a, b) { return b.score - a.score; }).slice(0, 6);
 }
+
+/* ---------- 4. what IS established on the same subject ----------
+
+   THE OWNER ASKED FOR THIS AND HE IS RIGHT. Telling a reader "we did not
+   find this" and stopping is a dead end — and worse, it leaves someone who
+   wanted to share something good with nothing to share. "اطلبوا العلم ولو
+   في الصين" is not established, but the Prophet ﷺ said a great deal about
+   seeking knowledge that IS, and that is what the person actually wanted.
+
+   So when the wording is not found, the subject is searched instead, in
+   what this site carries WITH ITS GRADING. Matching here is deliberately
+   loose — shared content words, not a shared run — because the whole point
+   is that the wording is different.
+
+   TWO RULES. It is labelled as RELATED, never as the same hadith; and it
+   only ever draws on the site's own graded content, so nothing is offered
+   as a replacement without a grading attached to it. */
+
+const V_STOP = ("من في على الى عن مع كل ما لا ان اذا هذا هذه ذلك التي الذي "
+  + "قال قل يقول كان كانت هو هي هم قد ثم او و ب ل ك يا ايها لم لن كي حتى "
+  + "the and for that with this from was were you your not but has have").split(" ");
+
+function vContentWords(skel) {
+  const stop = {};
+  for (let i = 0; i < V_STOP.length; i++) stop[vSkel(V_STOP[i]) || V_STOP[i]] = 1;
+  const seen = {}, out = [];
+  skel.split(" ").forEach(function (w) {
+    if (w.length < 3 || stop[w] || seen[w]) return;
+    seen[w] = 1; out.push(w);
+  });
+  return out;
+}
+
+function vSearchRelated(claim) {
+  const ar = vIsArabic(claim);
+  const cs = ar ? vStripBoiler(vSkel(claim)) : vSkelEn(claim);
+  const words = vContentWords(cs);
+  if (!words.length) return [];
+  const hits = [];
+
+  function tryOne(text, entry) {
+    if (!text) return;
+    const skel = ar ? vSkel(text) : vSkelEn(text);
+    let n = 0, strong = 0;
+    for (let i = 0; i < words.length; i++) {
+      if (skel.indexOf(words[i]) >= 0) { n++; if (words[i].length >= 4) strong++; }
+    }
+    /* AT LEAST ONE SHARED WORD OF FOUR LETTERS OR MORE. A three-letter
+       Arabic word is far too common to carry a subject: searching the
+       "seek knowledge even in China" wording returned a hadith about the
+       hour of answered supplication on Friday, purely because طلب appears
+       in it meaning ASKING rather than seeking knowledge. It shared no
+       other word with the claim at all. */
+    if (strong >= 1) hits.push(Object.assign({ kind: "related", score: n / words.length, shared: n }, entry));
+  }
+
+  if (typeof HADITHS !== "undefined") {
+    HADITHS.forEach(function (h) {
+      tryOne(ar ? (h.arabic + " " + (h.topic || "")) : (h.text + " " + (h.title || "") + " " + (h.topic || "")),
+        { title: h.title || h.topic, ar: h.arabic, en: h.text,
+          ref: h.ref, strength: h.strength, where: "hadith.html" });
+    });
+  }
+  if (typeof SUNNAH !== "undefined") {
+    SUNNAH.forEach(function (s) {
+      tryOne(ar ? ((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || ""))
+                : (s.title + " " + s.detail),
+        { title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
+          ref: s.ref, strength: s.strength, where: "sunnah.html" });
+    });
+  }
+  if (typeof ADHKAR !== "undefined") {
+    ADHKAR.forEach(function (d) {
+      tryOne(ar ? (d.arabic + " " + (d.titleAr || "")) : (d.en + " " + (d.title || "")),
+        { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
+          ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" });
+    });
+  }
+  return hits.sort(function (a, b) { return b.shared - a.shared || b.score - a.score; }).slice(0, 3);
+}
