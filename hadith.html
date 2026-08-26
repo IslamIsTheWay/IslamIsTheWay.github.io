@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608261552" />
+  <link rel="stylesheet" href="css/style.css?v=202608261847" />
   <style>
     .collection-tabs { display:flex; gap:12px; justify-content:center; margin-bottom:28px; flex-wrap:wrap; }
     .collection-tabs button { padding:12px 28px; border:2px solid var(--green); background:transparent; color:var(--green); border-radius:10px; font-size:1rem; font-weight:600; cursor:pointer; transition:all .2s; }
@@ -154,7 +154,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608261552"></script>
+  <script src="js/data.js?v=202608261847"></script>
   <script>
     const API_BASE = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions";
     const contentArea = document.getElementById("contentArea");
@@ -357,6 +357,14 @@
       steal:["theft","stealing","robbery"], theft:["steal","stealing"],
       alcohol:["wine","khamr","intoxicant","drink"], wine:["alcohol","khamr","intoxicant"],
       parent:["parents","mother","father"], parents:["mother","father"],
+      /* The everyday words for them. "I love my mom" found nothing here,
+         because only "mother" was ever listed and this page has no stemmer —
+         the same gap the Guidance page's concept list had already closed. */
+      mom:["mother","mum","parent"], mum:["mother","mom","parent"],
+      moms:["mother","mothers"], mothers:["mother","mom","parent"],
+      mother:["mothers","mom","mum","parent"],
+      dad:["father","parent"], daddy:["father","parent"],
+      father:["fathers","dad","parent"], fathers:["father","dad","parent"],
       prayer:["salah","salat","pray"], pray:["prayer","salah","salat"],
       charity:["sadaqah","zakat","giving","alms"], neighbour:["neighbor","neighbours"], neighbor:["neighbour"],
       anger:["angry","rage"], angry:["anger"], patience:["patient","sabr"], patient:["patience","sabr"],
@@ -400,6 +408,36 @@
       return (str || "").toLowerCase().replace(/[^a-z؀-ۿ\s]/g, " ").split(/\s+/).filter(w => w.length >= 3 && !STOPWORDS.has(w));
     }
 
+    /* WHOLE WORDS, NEVER SUBSTRINGS.
+
+       This is the trap the repo already records three times over — ولي inside
+       وليس, عينة inside بعينه, ألم inside بالمولد — and it was still live on
+       this page, on both scripts, because the test was a bare `includes()`.
+       Measured here: searching ألم put "Men imitating women" at the top of the
+       list, because الم sits inside a longer word in that hadith's text.
+
+       The regexes are built once per term and cached: this runs against
+       roughly 15,000 hadith on every keystroke, so compiling per call would
+       be far too slow. Lookahead only — a look-BEHIND breaks older Safari at
+       parse time and would take the whole page down with it. */
+    const _reCache = new Map();
+    function termRe(term) {
+      let re = _reCache.get(term);
+      if (re) return re;
+      const esc = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      re = /[؀-ۿ]/.test(term)
+        /* Arabic attaches its article and conjunctions to the front of the
+           word, so those are allowed before the term and nothing else is. */
+        ? new RegExp("(^|[^؀-ۿ])(?:وال|فال|بال|كال|لل|ال|و|ف|ب|ك|ل)?" + esc + "(?![؀-ۿ])")
+        : new RegExp("(^|[^a-z])" + esc + "(?![a-z])", "i");
+      _reCache.set(term, re);
+      return re;
+    }
+    function hasWord(hay, hayAr, term) {
+      if (!term || term.length < 3) return false;
+      return /[؀-ۿ]/.test(term) ? termRe(term).test(hayAr) : termRe(term).test(hay);
+    }
+
     // How well does a hadith text match the query words? Returns a score.
     function scoreMatch(haystackLower, queryWords) {
       // Normalised twin of the haystack, so an Arabic word matches whether or
@@ -410,10 +448,77 @@
         const terms = [w];
         if (w.endsWith("s")) terms.push(w.slice(0, -1));
         if (SYN[w]) terms.push(...SYN[w]);
-        if (terms.some(t => t.length >= 3 && haystackLower.includes(t))) { score++; continue; }
-        if (/[؀-ۿ]/.test(w) && arVariants(w).some(v => v.length >= 3 && hayAr.includes(v))) score++;
+        if (terms.some(t => hasWord(haystackLower, hayAr, t))) { score++; continue; }
+        if (/[؀-ۿ]/.test(w) && arVariants(w).some(v => hasWord(haystackLower, hayAr, v))) score++;
       }
       return score;
+    }
+
+    /* THE WHOLE QUERY DECIDES THE ORDER, NOT ONE WORD OF IT.
+
+       His words: "if I say I love my mom, if it only concentrates on mom and
+       leaves I love, the meaning can come out different or the opposite."
+       Measured before this: "I love my mom" returned hadith about loving
+       your brother, wanting good for your neighbour and small consistent
+       deeds — all level with, and above, the one hadith that is actually
+       about a mother. Every one scored 1, on the single word "love".
+
+       DEMANDING EVERY WORD WAS TRIED FIRST AND IS WRONG. It empties the page:
+       no hadith contains both "love" and "mother", so "I love my mom"
+       returned nothing at all, which is worse than the fault it fixed. What
+       separates the right answer from the others is not how MANY words match
+       but WHICH — "mother" appears in one or two of these hadith and "love"
+       in a dozen, so the rare word is the one carrying the question. That is
+       the rarity model the Guidance and Verify pages already use, in its
+       cheapest possible form: the curated set is 43 entries, so it is counted
+       here directly. Everything that matched is still shown; only the ORDER
+       changes, and the entry the reader meant comes first. */
+    let _rarity = null;
+    function wordRarity(term) {
+      if (!_rarity) _rarity = new Map();
+      let r = _rarity.get(term);
+      if (r !== undefined) return r;
+      let df = 0;
+      for (const h of HADITHS) {
+        const hay = (h.text + " " + (h.title || "") + " " + h.topic + " " +
+                     h.narrator + " " + (h.keys || []).join(" ")).toLowerCase();
+        if (hasWord(hay, normAr(hay), term)) df++;
+      }
+      r = Math.log((HADITHS.length + 1) / (df + 1));
+      _rarity.set(term, r);
+      return r;
+    }
+
+    /* The same score as scoreMatch, but weighted by how rare each matched
+       word is in this collection. Used for ORDERING only. */
+    function scoreWeighted(haystackLower, queryWords) {
+      const hayAr = normAr(haystackLower);
+      let score = 0;
+      for (const w of queryWords) {
+        const terms = [w];
+        if (w.endsWith("s")) terms.push(w.slice(0, -1));
+        if (SYN[w]) terms.push(...SYN[w]);
+        /* Weigh the term that ACTUALLY matched, not the one that was typed.
+           "mom" occurs in no hadith at all and would therefore score as the
+           rarest word in the language, while the word it reached — "mother" —
+           is the one whose rarity means something. This is the df = 0 trap in
+           miniature: absence is not distinctiveness. */
+        let hitTerm = terms.filter(t => hasWord(haystackLower, hayAr, t))[0];
+        if (!hitTerm && /[؀-ۿ]/.test(w)) {
+          hitTerm = arVariants(w).filter(v => hasWord(haystackLower, hayAr, v))[0];
+        }
+        if (hitTerm) score += wordRarity(hitTerm);
+      }
+      return score;
+    }
+
+    /* An Arabic query typed as a phrase is compared as a phrase; a single
+       word is compared as a WORD, for the same reason as above. */
+    function arWordingHit(wordingAr, qArabic) {
+      if (!qArabic || qArabic.length < 3) return false;
+      const q = normAr(qArabic);
+      if (/\s/.test(q.trim())) return wordingAr.indexOf(q) >= 0;
+      return arVariants(q).some(v => v.length >= 3 && termRe(v).test(wordingAr));
     }
 
     async function searchHadith(query) {
@@ -430,13 +535,13 @@
         let s = scoreMatch(hay, qWords);
         // Compare the Arabic wording normalised on both sides — the source
         // carries harakat, the query almost never does.
-        if (qArabic && h.arabic) {
-          const wordingAr = normAr(h.arabic);
-          if (arVariants(qArabic).some(v => v.length >= 3 && wordingAr.includes(v))) s += 2;
-        }
-        if (hay.includes(qLower)) s += 2;
-        return { h, s };
-      }).filter(x => x.s > 0).sort((a, b) => b.s - a.s);
+        let w = scoreWeighted(hay, qWords);
+        if (qArabic && h.arabic && arWordingHit(normAr(h.arabic), qArabic)) { s += 2; w += 6; }
+        if (hay.includes(qLower)) { s += 2; w += 6; }
+        return { h, s, w };
+      /* Everything that matched a word is kept; the rare word decides the
+         order — see the note above wordRarity. */
+      }).filter(x => x.s > 0).sort((a, b) => b.w - a.w || b.s - a.s);
 
       if (curatedScored.length > 0) {
         const curHtml = curatedScored.map(({ h }) => {
@@ -480,10 +585,11 @@
         for (const h of cache[col].hadiths) {
           const hay = h.english.toLowerCase();
           let s = scoreMatch(hay, qWords);
-          if (qArabic && h.arabic && h.arabic.includes(qArabic)) s += 3;
-          // Require a meaningful match: most query words, or an exact phrase.
+          const arHit = qArabic && h.arabic && arWordingHit(normAr(h.arabic), qArabic);
+          if (arHit) s += 3;
+          // Require a meaningful match: most of the query words, or an exact phrase.
           const needed = Math.max(1, Math.ceil(qWords.length * 0.6));
-          if ((qWords.length > 0 && s >= needed) || (qArabic && h.arabic && h.arabic.includes(qArabic)) || hay.includes(qLower)) {
+          if ((qWords.length > 0 && s >= needed) || arHit || hay.includes(qLower)) {
             scored.push({ h: { ...h, source: displayName }, s: s + (hay.includes(qLower) ? 3 : 0) });
           }
         }
@@ -520,8 +626,8 @@
 
     renderCurated();
   </script>
-  <script src="js/wordlens.js?v=202608261552"></script>
-  <script src="js/main.js?v=202608261552"></script>
-  <script src="js/i18n.js?v=202608261552"></script>
+  <script src="js/wordlens.js?v=202608261847"></script>
+  <script src="js/main.js?v=202608261847"></script>
+  <script src="js/i18n.js?v=202608261847"></script>
 </body>
 </html>

@@ -301,6 +301,36 @@ function vScore(claimSkel, textSkel, gramSet) {
 
 /* ---------- 1. the Quran, which ships with the site ---------- */
 
+/* THE SKELETONS ARE BUILT ONCE, NOT ON EVERY CHECK.
+
+   Measured: 470ms of the roughly 480ms a check took was this function
+   re-skeletoning all 6,236 verses, twice over (Arabic and English), for
+   every single query. This file already records the same lesson for the
+   deep search — "precompute each collection's skeleton once at load" — and
+   the Quran, which ships with the site and never changes, is the easiest
+   place of all to apply it. Built lazily so it costs nothing until the
+   reader actually checks something. */
+var V_QURAN_SKEL = null;
+
+function vQuranSkel() {
+  if (V_QURAN_SKEL) return V_QURAN_SKEL;
+  const rows = [];
+  const keys = Object.keys(QURAN_TEXT);
+  for (let k = 0; k < keys.length; k++) {
+    const s = keys[k], data = QURAN_TEXT[s];
+    const a = data.a || [], e = data.e || [];
+    const n = Math.max(a.length, e.length);
+    for (let i = 0; i < n; i++) {
+      rows.push({ surah: +s, ayah: i + 1,
+                  ar: a[i], en: e[i],
+                  arSkel: a[i] ? vSkel(a[i]) : "",
+                  enSkel: e[i] ? vSkelEn(e[i]) : "" });
+    }
+  }
+  V_QURAN_SKEL = rows;
+  return rows;
+}
+
 function vSearchQuran(claim) {
   if (typeof QURAN_TEXT === "undefined") return [];
   const ar = vIsArabic(claim);
@@ -308,22 +338,56 @@ function vSearchQuran(claim) {
   if (cs.length < 6) return [];
   const gs = vGrams(cs);
   const hits = [];
-  const keys = Object.keys(QURAN_TEXT);
-  for (let k = 0; k < keys.length; k++) {
-    const s = keys[k], data = QURAN_TEXT[s];
-    const arr = ar ? data.a : data.e;
-    if (!arr) continue;
-    for (let i = 0; i < arr.length; i++) {
-      const sc = vScore(cs, ar ? vSkel(arr[i]) : vSkelEn(arr[i]), gs);
-      if (sc) hits.push({ kind: "quran", surah: +s, ayah: i + 1, score: sc,
-                          ar: data.a[i], en: data.e[i] });
-    }
+  const rows = vQuranSkel();
+  for (let i = 0; i < rows.length; i++) {
+    const r = rows[i];
+    const skel = ar ? r.arSkel : r.enSkel;
+    if (!skel) continue;
+    const sc = vScore(cs, skel, gs);
+    if (sc) hits.push({ kind: "quran", surah: r.surah, ayah: r.ayah, score: sc,
+                        ar: r.ar, en: r.en });
   }
   return hits.sort(function (a, b) { return b.score - a.score; }).slice(0, 4);
 }
 
 /* ---------- 2. what this site itself carries, already graded ---------- */
 
+/* A NARRATION AND THIS SITE'S OWN PROSE ARE NOT THE SAME THING, and telling
+   them apart is the whole of this section.
+
+   THE BUG THIS EXISTS TO STOP, found by measuring the page rather than
+   reading it. Pasting "the best of you are those who are best to their
+   families" was answered:
+
+       ✅ This site carries this, and it is graded
+          Teach your family and pray with them
+          Sahih al-Bukhari, Hadith 1129; Sunan Abu Dawud, Hadith 495
+          Sahih — established in the collections
+
+   Every part of that is wrong. al-Bukhari 1129 is the Prophet ﷺ rousing Ali
+   and Fatimah for the night prayer; Abu Dawud 495 is the command to teach
+   children the prayer at seven. Neither carries those words. The wording is
+   خيركم خيركم لأهله — at-Tirmidhi 3895 and Ibn Majah 1977, both read out of
+   the collections before this note was written — and THIS SITE ALREADY
+   CARRIES IT, correctly cited, in `HADITHS`. The reader was handed a wrong
+   number with a Sahih grading on it, for a hadith the site had right all
+   along, while the correct entry was pushed off the list.
+
+   The cause: for an ENGLISH claim a Sunnah practice was matched against its
+   `detail` and a story against its `story`. Those fields are the SITE'S OWN
+   SUMMARY — often bundling several practices and quoting a hadith in passing
+   — while the `ref` covers the entry as a whole. Sharing a run of text with a
+   summary proves nothing about the reference printed beneath it. The Arabic
+   side never had this fault: it matches `arabic`, which is the narration.
+
+   So a prose match is FLAGGED, and thereafter it is:
+     · never given the verdict that certifies a wording (see verify.html), and
+     · ranked below every real narration, so a summary can no longer bury the
+       narration this site actually carries.
+
+   This is the "Ibn Majah 226" lesson a second time: a long shared run is not
+   proof, and a battery that only checks whether AN answer appeared is not a
+   test — read what the answer actually says. */
 function vSearchSite(claim) {
   const ar = vIsArabic(claim);
   const cs = ar ? vStripBoiler(vSkel(claim)) : vSkelEn(claim);
@@ -331,18 +395,21 @@ function vSearchSite(claim) {
   const gs = vGrams(cs);
   const hits = [];
 
-  function tryOne(text, entry) {
+  function tryOne(text, entry, prose) {
     if (!text) return;
     const sc = vScore(cs, ar ? vSkel(text) : vSkelEn(text), gs);
-    if (sc) hits.push(Object.assign({ kind: "site", score: sc }, entry));
+    if (sc) hits.push(Object.assign({ kind: "site", score: sc, prose: !!prose }, entry));
   }
 
   if (typeof HADITHS !== "undefined") {
     HADITHS.forEach(function (h) {
+      /* `text` here is a translation of the narration itself, so an English
+         match on it is a match on the hadith and not on anything written
+         about it. This is the one collection where that is true. */
       tryOne(ar ? h.arabic : (h.text + " " + (h.title || "")), {
         title: h.title || h.topic, ar: h.arabic, en: h.text,
         ref: h.ref, strength: h.strength, where: "hadith.html"
-      });
+      }, false);
     });
   }
   if (typeof SUNNAH !== "undefined") {
@@ -350,7 +417,7 @@ function vSearchSite(claim) {
       tryOne(ar ? (s.arabic || "") : (s.detail + " " + (s.title || "")), {
         title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
         ref: s.ref, strength: s.strength, where: "sunnah.html"
-      });
+      }, !ar);          // the Arabic side is the narration; the English is our summary
     });
   }
   if (typeof PROPHET_STORIES !== "undefined") {
@@ -358,7 +425,7 @@ function vSearchSite(claim) {
       tryOne(ar ? (p.arabic || "") : (p.story || ""), {
         title: p.title, titleAr: p.titleAr, ar: p.arabic, en: p.lesson,
         ref: p.ref, strength: p.strength, where: "stories.html"
-      });
+      }, !ar);
     });
   }
   if (typeof ADHKAR !== "undefined") {
@@ -366,10 +433,14 @@ function vSearchSite(claim) {
       tryOne(ar ? d.arabic : (d.en + " " + (d.title || "")), {
         title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
         ref: d.ref, strength: d.strength, where: "guidance.html#adhkar"
-      });
+      }, false);        // `en` is a translation of the dhikr, not prose about it
     });
   }
-  return hits.sort(function (a, b) { return b.score - a.score; }).slice(0, 5);
+  /* A narration always outranks a summary, however long the shared run was. */
+  return hits.sort(function (a, b) {
+    if (!!a.prose !== !!b.prose) return a.prose ? 1 : -1;
+    return b.score - a.score;
+  }).slice(0, 5);
 }
 
 /* ---------- 3. the full collections, on demand ---------- */
@@ -467,20 +538,202 @@ function vSearchLoaded(claim, cols) {
    only ever draws on the site's own graded content, so nothing is offered
    as a replacement without a grading attached to it. */
 
-const V_STOP = ("من في على الى عن مع كل ما لا ان اذا هذا هذه ذلك التي الذي "
-  + "قال قل يقول كان كانت هو هي هم قد ثم او و ب ل ك يا ايها لم لن كي حتى "
-  + "the and for that with this from was were you your not but has have").split(" ");
+/* FUNCTION WORDS, IN BOTH SCRIPTS.
+
+   This list was forty words long and every gap in it cost a wrong answer.
+   The Guidance page recorded the identical lesson — "there was not one
+   Arabic stopword on the page" — and this file was written without looking
+   at it. Two measured examples, both from the battery:
+
+     "seek knowledge even if you have to go to china" was answered with
+     "do not waste water, EVEN in wudu", "do not waste food — EVEN a fallen
+     morsel" and "give the greeting of peace, EVEN to those you do not
+     know". The shared word was "even".
+
+     "اطلبوا العلم ولو في الصين" was answered with "لا تحقرن جارة لجارتها
+     ولو فرسن شاة" and the hadith on accepting an invitation ولو. The shared
+     word was ولو.
+
+   Written in the form the tokeniser produces: no harakat, hamza folded onto
+   ا, ة folded to ه. A word listed in a form no text ever contains does
+   nothing, which is how half of the Guidance page's list sat dead for
+   months. */
+const V_STOP = (
+  "the and for that with this from was were you your not but has have "
+  + "are is am be been being had having will would shall should can could "
+  + "may might must do does did done get got gets very too also just only "
+  + "even more most less least than then there their them they what when "
+  + "where which who whom whose why how all any some each both few other "
+  + "those these thing things anything something nothing everything "
+  + "others such own same so still yet about above below under over after "
+  + "before between during without within through because while until since "
+  + "again once here out off down back into onto upon per via its it his "
+  + "her him she he we our us my mine yours himself herself themselves "
+  + "if else unless whether though although however therefore thus hence "
+  + "as at by in of on or to a an no nor not one two three "
+  /* ARABIC. The prepositions, pronouns, demonstratives, relatives and
+     connectives — including the و/ف-prefixed forms, because the reader
+     writes ولو and فان, not لو and ان. */
+  + "من في على الي عن مع كل بعض جميع ما لا ان اذا اذ لو ولو هذا هذه هذان "
+  + "هؤلاء ذلك تلك اولئك التي الذي الذين اللاتي قال قل يقول قالت كان كانت "
+  + "يكون تكون ليس ليست هو هي هم هن نحن انا انت انتم قد لقد ثم او و ب ل ك "
+  + "يا ايها لم لن كي حتي كما حيث بين تحت فوق امام خلف بعد قبل عند عندما "
+  + "دون سوي غير ضد حول نحو منذ لدي مثل ايضا فقط جدا هنا هناك الان كيف اين "
+  + "متي لماذا ماذا هل اي عليه عليها منه منها فيه فيها به بها له لها لهم "
+  + "لكم لنا اليه اليها وهو وهي وقد وان فان لان لكن ولكن الا وقال وكان "
+  + "ولا وهذا وهذه وذلك وفي ومن وعلي وبين وبعد وقبل سوف كذلك انه انها"
+).split(/\s+/).filter(Boolean);
+
+const V_STOP_SET = (function () {
+  const m = Object.create(null);
+  for (let i = 0; i < V_STOP.length; i++) {
+    const k = V_ARABIC.test(V_STOP[i]) ? (vSkelWord(V_STOP[i]) || V_STOP[i]) : V_STOP[i];
+    if (k) m[k] = 1;
+  }
+  return m;
+})();
 
 function vContentWords(skel) {
-  const stop = {};
-  for (let i = 0; i < V_STOP.length; i++) stop[vSkelWord(V_STOP[i]) || V_STOP[i]] = 1;
   const seen = {}, out = [];
   skel.split(" ").forEach(function (w) {
-    if (w.length < 3 || stop[w] || seen[w]) return;
+    if (w.length < 3 || V_STOP_SET[w] || seen[w]) return;
+    /* A word whose stripped form is a function word is one too — ولو is
+       written as one word and reduces to لو. */
+    if (V_STOP_SET[vArStrip(w)]) return;
     seen[w] = 1; out.push(w);
   });
   return out;
 }
+
+/* ====================================================================
+   READ THE WHOLE SENTENCE, NOT THE ONE WORD IN IT THAT HAPPENS TO BE RARE
+   ====================================================================
+
+   HIS COMPLAINT, and it is the right one:
+
+     "make sure that when I am searching for something, it doesn't
+      constitute only one word and then leave the whole sentence.
+      Because if I say I love my mom, if it only concentrates on mom and
+      leaves I love, the meaning can come out different or the opposite."
+
+   Measured on this page before any of the below existed. Every one of these
+   is a real answer it gave, and in each the engine kept ONE word of the
+   sentence and threw the rest away:
+
+     الجنة تحت أقدام الأمهات → "Seeking knowledge is a path to Paradise"
+        الأمهات and أقدام occur nowhere in the corpus, so both were dropped
+        and الجنة alone chose the answer. Nothing about mothers came back —
+        although this site carries "your mother, then your mother, then your
+        mother". The handoff records this exact case as FIXED. It was not.
+     حب الوطن من الإيمان   → "On seeing the new moon"
+        الوطن dropped, الإيمان alone decided, and الإيمان happens to sit in
+        the supplication for a new moon.
+     بر الوالدين واجب على كل مسلم → "Ghusl on Friday and cleanliness"
+        matched on واجب — a word that ranks a ruling and is never a subject.
+     I love my mom          → "Loving for your brother what you love for
+        yourself" — "mom" is three letters and the matcher only looked at
+        words of four or more, so the sentence WAS "love".
+
+   FOUR RULES, and all four are needed — each of the cases above survives
+   any three of them:
+
+   1. WHOLE WORDS, NEVER SUBSTRINGS. `indexOf` on a skeleton is the trap
+      this repo has now recorded four times (ولي inside وليس, عينة inside
+      بعينه, ألم inside بالمولد). Attached prefixes are stripped instead.
+
+   2. GENERIC WORDS CANNOT CARRY A MATCH. واجب, حرام, مسلم, man, people,
+      thing rank or classify whatever the subject turns out to be; they are
+      never the subject. This is the list the Guidance page had and this
+      page did not.
+
+   3. CONCEPTS, IN BOTH SCRIPTS. الأمهات and أمك are one subject, and so are
+      "mom" and "mother" — the synonym map here was English-only and did not
+      even carry "mom". A concept is matched when the entry holds ANY word of
+      the group, which is what lets a plural in the claim reach a singular in
+      the text without a root stemmer.
+
+   4. THE MATCH MUST ACCOUNT FOR THE SENTENCE. One shared concept is enough
+      only when it is the most distinctive one the claim has AND the entry is
+      actually ABOUT it — its own title or `keys` say so. Otherwise two are
+      needed, and either way the matched words must cover a real share of the
+      claim. This is the rule that answers his complaint directly: a leftover
+      common word can no longer speak for a sentence. */
+
+/* Attached prefixes, longest first — the same list the Guidance page uses. */
+const V_AR_PREFIX = ["وبال", "فبال", "وال", "بال", "فال", "كال", "لل", "ال",
+                     "و", "ف", "ب", "ك", "ل"];
+
+function vArStrip(w) {
+  if (!V_ARABIC.test(w)) return w;
+  for (let i = 0; i < V_AR_PREFIX.length; i++) {
+    const p = V_AR_PREFIX[i];
+    if (w.lastIndexOf(p, 0) !== 0) continue;
+    const rest = w.slice(p.length);
+    /* A ONE-LETTER PREFIX MUST LEAVE A LONGER WORD BEHIND THAN A THREE-LETTER
+       ONE, because و ف ب ك ل are also ordinary letters. Measured: فُتِحَت
+       ("were opened") had its ف stripped and became تحت ("under"), which
+       then matched "الجنة تحت أقدام الأمهات" and answered a claim about
+       mothers with the supplication after wudu. The determiners (ال and its
+       compounds) are unambiguous and keep the looser rule. */
+    const min = p.length === 1 ? 4 : 3;
+    if (rest.length >= min) return rest;
+  }
+  return w;
+}
+
+/* Every whole word of a text, plus its prefix-stripped form. O(1) lookups,
+   and nothing can be found inside a longer word. */
+function vWordSet(skel) {
+  const set = Object.create(null);
+  skel.split(" ").forEach(function (w) {
+    if (!w) return;
+    set[w] = 1;
+    const s = vArStrip(w);
+    if (s !== w && s.length >= 3) set[s] = 1;
+  });
+  return set;
+}
+
+/* Semantically generic even where they are statistically rare here. Matching
+   only one of these is never relevance. Written in skeleton form — the same
+   mistake the Guidance page made was writing the Arabic half in a form no
+   reader ever types, so it never fired. */
+const V_GENERIC = (
+  "man men male woman women female people person human boy girl child "
+  + "thing things someone somebody anyone everyone other others "
+  + "prophet messenger allah god islam islamic muslim muslims said say says "
+  + "told came come went give given take made make day days time year years "
+  + "life live world great good bad best better very also first second story "
+  + "most more less least important thing whoever whatever every each "
+  /* NOUNS THAT CARRY NO SUBJECT. "way" was worth 3.92 in "kindness to your
+     mother is the way to paradise" and helped an entry about mercy to
+     animals outweigh the hadith about one's mother. */
+  + "way ways part parts half whole side sides place places point points "
+  + "case cases sort sorts type types kind number lot lots piece pieces "
+  + "طريق الطريق طريقه جزء الجزء نصف الجانب مكان المكان نوع النوع حال الحال "
+  + "رجل رجال امراه نساء انسان الانسان الناس ناس شخص احد ولد بنت طفل "
+  + "شيء اشياء الاشياء امر الامر امور حاجه الله النبي الرسول محمد الاسلام "
+  + "مسلم المسلم المسلمين مؤمن المؤمن جاء ذهب اخذ اعطى فعل يفعل "
+  + "يوم ايام وقت سنه سنوات حياه الحياه الدنيا العالم كبير صغير "
+  + "جيد حسن سيء جدا اول ثاني قصه كثير قليل بعض جميع "
+  + "اكثر اقل اهم اعظم اشهر افضل احسن اسوا ابرز اخطر معظم اغلب "
+  /* RULING AND OBLIGATION WORDS. واجب is what answered "بر الوالدين واجب
+     على كل مسلم" with ghusl on a Friday: it is in the corpus, it is rare,
+     and it says nothing whatever about the subject. */
+  + "واجب الواجب فرض الفرض حرام الحرام حلال الحلال جائز يجوز مستحب مكروه "
+  + "سنه مندوب مباح حكم الحكم"
+).split(/\s+/).filter(Boolean);
+
+const V_GENERIC_SET = (function () {
+  const m = Object.create(null);
+  V_GENERIC.forEach(function (w) {
+    const k = V_ARABIC.test(w) ? vSkelWord(w) : w;
+    if (k) { m[k] = 1; m[vArStrip(k)] = 1; }
+  });
+  return m;
+})();
+
+function vIsGeneric(w) { return !!V_GENERIC_SET[w] || !!V_GENERIC_SET[vArStrip(w)]; }
 
 /* Document frequency over everything this site carries, built once.
 
@@ -520,13 +773,23 @@ function vKeyText(keys, wantArabic) {
   return " " + out.join(" ");
 }
 
+/* fn(arBody, enBody, entry, arSubject, enSubject)
+
+   THE SUBJECT IS THE FOURTH AND FIFTH ARGUMENT, and it is what the entry is
+   ABOUT: its title and its `keys`. Matching a word somewhere in a body is
+   weak evidence — الإيمان sits in the supplication for a new moon — while
+   matching the title or a key is the entry declaring its own subject. The
+   two were previously mixed into one blob, so nothing could tell them
+   apart. */
 function vEachEntry(fn) {
   if (typeof HADITHS !== "undefined") {
     HADITHS.forEach(function (h) {
       fn(h.arabic + " " + (h.topic || "") + vKeyText(h.keys, true),
          h.text + " " + (h.title || "") + " " + (h.topic || "") + vKeyText(h.keys, false),
          { title: h.title || h.topic, ar: h.arabic, en: h.text,
-           ref: h.ref, strength: h.strength, where: "hadith.html" });
+           ref: h.ref, strength: h.strength, where: "hadith.html" },
+         (h.topic || "") + vKeyText(h.keys, true),
+         (h.title || "") + " " + (h.topic || "") + vKeyText(h.keys, false));
     });
   }
   if (typeof SUNNAH !== "undefined") {
@@ -534,7 +797,9 @@ function vEachEntry(fn) {
       fn((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || "") + vKeyText(s.keys, true),
          s.title + " " + s.detail + vKeyText(s.keys, false),
          { title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
-           ref: s.ref, strength: s.strength, where: "sunnah.html" });
+           ref: s.ref, strength: s.strength, where: "sunnah.html" },
+         (s.titleAr || "") + vKeyText(s.keys, true),
+         (s.title || "") + vKeyText(s.keys, false));
     });
   }
   if (typeof ADHKAR !== "undefined") {
@@ -542,7 +807,9 @@ function vEachEntry(fn) {
       fn(d.arabic + " " + (d.titleAr || "") + vKeyText(d.keys, true),
          d.en + " " + (d.title || "") + vKeyText(d.keys, false),
          { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
-           ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" });
+           ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" },
+         (d.titleAr || "") + vKeyText(d.keys, true),
+         (d.title || "") + vKeyText(d.keys, false));
     });
   }
   if (typeof PROPHET_STORIES !== "undefined") {
@@ -550,7 +817,9 @@ function vEachEntry(fn) {
       fn((p.arabic || "") + " " + (p.titleAr || "") + " " + (p.lessonAr || "") + vKeyText(p.keys, true),
          (p.title || "") + " " + (p.lesson || "") + vKeyText(p.keys, false),
          { title: p.title, titleAr: p.titleAr, ar: p.arabic, en: p.lesson,
-           ref: p.ref, strength: p.strength, where: "stories.html" });
+           ref: p.ref, strength: p.strength, where: "stories.html" },
+         (p.titleAr || "") + vKeyText(p.keys, true),
+         (p.title || "") + vKeyText(p.keys, false));
     });
   }
 }
@@ -606,7 +875,12 @@ var V_REL_SHARE = 0.65;
    word here can only widen what is found, never change a grading. */
 var V_SYNONYMS = [
   ["connection", "connections", "connect", "ties", "tie", "kinship", "relatives", "relative", "rahim"],
-  ["family", "relatives", "kin", "kinship", "household"],
+  /* The plural again. "the best of you are those who are best to their
+     FAMILIES" could not reach the entry whose keys say "family", so the one
+     hadith on this site that carries those words — at-Tirmidhi 3895, cited
+     correctly in HADITHS — was never offered, while the Sunnah summary that
+     merely quotes it in passing was. */
+  ["family", "families", "relatives", "relative", "kin", "kinship", "household", "households"],
   ["parents", "mother", "father", "mum", "dad", "parent"],
   ["angry", "anger", "temper", "rage", "furious"],
   ["charity", "sadaqah", "giving", "give", "donate", "alms",
@@ -627,10 +901,83 @@ var V_SYNONYMS = [
   ["mercy", "merciful", "kind", "kindness", "compassion"],
   ["debt", "loan", "owe", "borrow"],
   ["orphan", "orphans"],
-  ["intention", "intentions", "niyyah", "sincerity"]
+  ["intention", "intentions", "niyyah", "sincerity"],
+
+  /* "mom" was missing and that is the whole of why "I love my mom" was
+     answered with loving for your brother what you love for yourself. The
+     Guidance page's own concept list has carried "mom" all along; this one
+     did not, and the two were never compared. */
+  /* PLURALS MUST BE LISTED. "paradise lies at the feet of mothers" reached
+     nothing about mothers because only the singular was here, and there is
+     no English stemmer on this page. */
+  ["mother", "mothers", "mom", "moms", "mum", "mums", "mummy", "mama"],
+  ["father", "fathers", "dad", "dads", "daddy", "baba"],
+  ["parent", "parents"],
+  ["brother", "brothers", "sister", "sisters", "sibling", "siblings"],
+  ["son", "sons", "daughter", "daughters", "child", "children", "kids"],
+  ["homeland", "country", "nation", "patriotism", "patriotic"],
+  ["paradise", "jannah", "heaven"],
+  ["faith", "belief", "believer", "believers", "iman"],
+
+  /* THE ARABIC SIDE, which did not exist. The note that used to sit here
+     said Arabic was "left alone" because widening it would need a root
+     normaliser. That is true of a general solution and false of this one: a
+     named list of the subjects people actually forward needs no morphology,
+     and without it الأمهات could never reach أمك, so a claim about mothers
+     was answered with whatever else mentioned Paradise.
+
+     Written in SKELETON form (vSkelWord), which is what the matcher sees. */
+  ["ام", "امي", "امك", "امه", "الام", "امهات", "الامهات", "والده", "الوالده", "امهاتكم"],
+  ["اب", "ابي", "ابوك", "الاب", "اباء", "الاباء", "والد", "الوالد"],
+  ["الوالدين", "والدين", "الابوين", "ابوين", "بر الوالدين", "الام", "الاب"],
+  ["الرحم", "رحم", "الاقارب", "اقارب", "قرابه", "صله الرحم", "الاهل", "اهل", "اهله", "عشيره"],
+  ["الجنه", "جنه", "الفردوس", "النعيم"],
+  ["الايمان", "ايمان", "مؤمن", "المؤمنين", "تصديق"],
+  ["العلم", "علم", "تعلم", "يتعلم", "العلماء", "طالب العلم", "معرفه"],
+  ["الصلاه", "صلاه", "يصلي", "المصلي", "ركعه", "ركعتين"],
+  ["الصدقه", "صدقه", "تصدق", "الزكاه", "زكاه", "انفاق", "ينفق"],
+  ["الغضب", "غضب", "غاضب", "يغضب", "الحلم"],
+  ["الصبر", "صبر", "يصبر", "الصابرين", "احتساب"],
+  ["النظافه", "نظافه", "طهاره", "الطهاره", "وضوء", "الوضوء", "غسل", "الغسل"],
+  ["الكذب", "كذب", "يكذب", "الصدق", "صدق"],
+  ["الغش", "غش", "خيانه", "يخون", "تدليس"],
+  ["الجار", "جار", "الجيران", "جيران"],
+  ["اللسان", "لسان", "الغيبه", "غيبه", "نميمه", "الكلام"],
+  ["التوبه", "توبه", "استغفار", "الاستغفار", "يتوب", "الذنب", "ذنب", "ذنوب", "المغفره"],
+  ["الزوجه", "زوجه", "الزوج", "زوج", "النكاح", "الزواج", "زواج", "اهلي", "اهله"],
+  ["اليتيم", "يتيم", "الايتام", "ايتام"],
+  ["النيه", "نيه", "بالنيات", "النيات", "الاخلاص", "اخلاص"],
+  ["الابتسامه", "ابتسامه", "تبسم", "التبسم", "بشاشه", "وجه طلق"],
+  ["الرحمه", "رحمه", "يرحم", "الرحماء", "شفقه"],
+  /* الدَّين (debt) and الدِّين (religion) are one word once the vowels are
+     dropped, so neither may be folded into this group — "الصلاة عماد الدين"
+     would then be answered with the entries on borrowing. Only the forms
+     that can mean nothing else are listed. */
+  ["الديون", "ديون", "قرض", "القرض", "مدين", "استدان"]
 ];
 
-/* Every group a word belongs to, flattened into the extra words to try. */
+/* word -> the ids of every group it belongs to. A word may sit in several
+   (الأم is both "mother" and "parents"), and that is deliberate. */
+const V_CONCEPT = (function () {
+  const m = Object.create(null);
+  V_SYNONYMS.forEach(function (g, id) {
+    g.forEach(function (raw) {
+      /* A multi-word entry like "صلة الرحم" is indexed on each of its words;
+         the group is what carries the meaning, not the phrase. */
+      const norm = V_ARABIC.test(raw) ? vSkelWord(raw) : vSkelEn(raw);
+      norm.split(" ").forEach(function (w) {
+        if (!w || w.length < 3) return;
+        (m[w] = m[w] || []).push("g" + id);
+        const s = vArStrip(w);
+        if (s !== w && s.length >= 3) (m[s] = m[s] || []).push("g" + id);
+      });
+    });
+  });
+  return m;
+})();
+
+/* Every group a word belongs to, flattened into the extra words to try.
+   Kept for the callers that only want a widened word list. */
 function vExpand(words) {
   var out = words.slice(), seen = {}, i, j, g;
   words.forEach(function (w) { seen[w] = 1; });
@@ -646,58 +993,256 @@ function vExpand(words) {
   return out;
 }
 
-function vSearchRelated(claim) {
-  var ar = vIsArabic(claim);
-  var cs = ar ? vStripBoiler(vSkelWord(claim)) : vSkelEn(claim);
-  var words = vContentWords(cs);
-  if (!words.length) return [];
-  if (!V_DF) vBuildDf();
-  /* An English claim is widened through the everyday-word map. Arabic is
-     left alone: its content words are already the words the entries use,
-     and widening it would need a root normaliser, not a word list. */
-  if (!ar) words = vExpand(words);
-  var hits = [];
+/* ---- the claim, read as a sentence rather than as a bag of words ----
 
-  /* The bar is set by the best word the claim has THAT ACTUALLY EXISTS in
-     the corpus. A word found in nothing gets the maximum rarity score, which
-     is meaningless — it is absence, not distinctiveness — and letting it set
-     the bar shuts out every real match beneath it. Measured: "make
-     connections with your family" scored 5.52 on "connections", which occurs
-     in no entry at all, and that pushed the bar above "family" at 3.58, so
-     the answer was nothing. This is the same df = 0 trap the Guidance page
-     documented; it should not have been repeated here. */
-  var claimBest = 0;
-  for (var k = 0; k < words.length; k++) {
-    if (words[k].length >= 4 && (V_DF[words[k]] || 0) > 0) {
-      claimBest = Math.max(claimBest, vWeight(words[k]));
+   Each content word becomes a CONCEPT: itself, plus every word of every
+   group it belongs to. The concept's weight is the rarest form of it that
+   the corpus actually contains — never the df = 0 maximum, because absence
+   is not distinctiveness (the trap this file already records for
+   "connections"), and never zero either, because the word is still part of
+   what the reader wrote. `generic` concepts are carried so they can be
+   counted for coverage but never allowed to decide a match. */
+function vClaimConcepts(claim) {
+  const ar = vIsArabic(claim);
+  const cs = ar ? vStripBoiler(vSkelWord(claim)) : vSkelEn(claim);
+  const words = vContentWords(cs);
+  if (!V_DF) vBuildDf();
+  const byId = Object.create(null), out = [];
+  words.forEach(function (w) {
+    const base = vArStrip(w);
+    const groups = (V_CONCEPT[w] || []).concat(V_CONCEPT[base] || []);
+    const id = groups.length ? groups[0] : ("w:" + base);
+    let c = byId[id];
+    if (!c) {
+      c = byId[id] = { id: id, forms: Object.create(null), weight: 0,
+                       generic: true, words: [] };
+      out.push(c);
+    }
+    c.words.push(w);
+    if (!vIsGeneric(w)) c.generic = false;
+    /* every form this concept may appear as in an entry */
+    const forms = [w, base];
+    groups.forEach(function (gid) {
+      V_SYNONYMS[+gid.slice(1)].forEach(function (raw) {
+        const norm = V_ARABIC.test(raw) ? vSkelWord(raw) : vSkelEn(raw);
+        norm.split(" ").forEach(function (x) { if (x.length >= 3) forms.push(x); });
+      });
+    });
+    forms.forEach(function (f) {
+      if (!f || f.length < 3) return;
+      c.forms[f] = 1;
+      /* The weight is set by the rarest form the corpus HAS. A form the
+         corpus has never seen contributes nothing to the weight, so a claim
+         cannot be ranked on a word that exists only in the claim. */
+      if ((V_DF[f] || 0) > 0) c.weight = Math.max(c.weight, vWeight(f));
+    });
+  });
+  /* A concept the corpus has never seen in any form still counts toward how
+     much of the sentence an entry has to account for — that is exactly what
+     was being thrown away — so it gets a nominal weight rather than none. */
+  out.forEach(function (c) { if (!c.weight) { c.weight = 2.2; c.absent = true; } });
+  return out;
+}
+
+/* Which of the claim's concepts does this entry hold, and is the entry
+   ABOUT any of them — that is, does the concept appear in the entry's own
+   title or `keys` rather than somewhere down in its body? */
+function vMatchConcepts(concepts, bodySet, subjSet) {
+  let total = 0, covered = 0, best = 0, n = 0, subjectHit = false;
+  const hitWords = [];
+  concepts.forEach(function (c) {
+    total += c.weight;
+    let inBody = false, inSubj = false;
+    for (const f in c.forms) {
+      if (bodySet[f]) inBody = true;
+      if (subjSet && subjSet[f]) { inSubj = true; inBody = true; }
+      if (inBody && inSubj) break;
+    }
+    if (!inBody) return;
+    covered += c.weight;
+    if (c.generic) return;             // counts for coverage, never for the decision
+    n++;
+    hitWords.push(c.words[0]);
+    if (c.weight > best) best = c.weight;
+    if (inSubj) subjectHit = true;
+  });
+  return { total: total, covered: covered, share: total ? covered / total : 0,
+           best: best, n: n, subjectHit: subjectHit, words: hitWords };
+}
+
+/* The gates, together. Written once so `related` and `explain` cannot drift
+   apart — they had already drifted, and the explain side was the looser of
+   the two, which is why a claim about seeking knowledge was answered with
+   the entry on the niqab. */
+var V_MIN_SHARE_OF_CLAIM = 0.34;   // how much of the sentence a match must account for
+var V_TOP_CONCEPT_SHARE  = 0.85;   // a lone concept must be the claim's strongest
+
+function vConceptGate(m, claimTop, bar) {
+  if (!m.n) return false;
+  if (m.best < bar) return false;
+  /* TWO OR MORE CONCEPTS: the danger is a pile of weak ones, so they have to
+     add up to a real share of the sentence. */
+  if (m.n >= 2) return m.share >= V_MIN_SHARE_OF_CLAIM;
+  /* ONE CONCEPT: it has to be the most distinctive thing in the sentence AND
+     the entry has to be ABOUT it — its own title or keys must say so. This
+     is the rule that stops "On seeing the new moon" answering "حب الوطن من
+     الإيمان", and it does not use the share, because a share cannot tell a
+     subject from an incidental word: "صلة الرحم تزيد في العمر" spends two
+     thirds of its weight on تزيد and العمر, and requiring a share of the
+     whole sentence threw away the one entry that was actually about صلة
+     الرحم. */
+  return m.subjectHit && m.best >= claimTop * V_TOP_CONCEPT_SHARE;
+}
+
+/* ---- the word sets, built ONCE ----------------------------------------
+
+   Rebuilding a word set for every entry on every keystroke took the battery
+   of 29 claims from milliseconds to 15.6 SECONDS. This file already records
+   the same lesson for the deep search ("precompute each collection's
+   skeleton once at load"); it applies here for exactly the same reason. Both
+   scripts are built for every entry, because the reader can switch language
+   between one question and the next. */
+var V_ENTRY_INDEX = null, V_EXPLAIN_INDEX = null;
+
+function vIndexOf(each) {
+  var rows = [];
+  each(function (arText, enText, entry, arSubj, enSubj) {
+    rows.push({
+      arBody: vWordSet(vSkelWord(arText || "")),
+      enBody: vWordSet(vSkelEn(enText || "")),
+      arSubj: vWordSet(vSkelWord(arSubj || "")),
+      enSubj: vWordSet(vSkelEn(enSubj || "")),
+      entry: entry
+    });
+  });
+  return rows;
+}
+
+function vEntryIndex() {
+  if (!V_ENTRY_INDEX) V_ENTRY_INDEX = vIndexOf(vEachEntry);
+  return V_ENTRY_INDEX;
+}
+function vExplainIndex() {
+  if (!V_EXPLAIN_INDEX) V_EXPLAIN_INDEX = vIndexOf(vEachExplain);
+  return V_EXPLAIN_INDEX;
+}
+
+/* ---- HOW SELECTIVE IS THIS CONCEPT, IN THIS CORPUS? ---------------------
+
+   Rarity measured on single words could not choose between النظافة and
+   الإيمان in "النظافة من الإيمان": both sit in five entries and both weigh
+   3.92, so the three entries about faith crowded out the one about
+   cleanliness, which is the subject of the sentence. The same fault in
+   English let "kindness" — a concept 24 entries match — outweigh "mother",
+   which 9 match, and the hadith naming one's mother three times was dropped
+   from a claim whose subject was one's mother.
+
+   So the weight used for RANKING is measured over CONCEPTS, and over the
+   entries that actually hold them, in one pass at query time. A concept that
+   half the collection shares tells the reader nothing about which entry
+   answers them; a concept nine entries share is close to an answer by
+   itself. */
+function vConceptSelectivity(rows, concepts, ar) {
+  var n = rows.length, i, j;
+  var counts = concepts.map(function () { return 0; });
+  var held = new Array(n);
+  for (i = 0; i < n; i++) {
+    var body = ar ? rows[i].arBody : rows[i].enBody;
+    var subj = ar ? rows[i].arSubj : rows[i].enSubj;
+    var row = held[i] = { body: [], subj: [] };
+    for (j = 0; j < concepts.length; j++) {
+      var forms = concepts[j].forms, inB = false, inS = false, f;
+      for (f in forms) {
+        if (body[f]) inB = true;
+        if (subj[f]) { inS = true; inB = true; }
+        if (inB && inS) break;
+      }
+      if (inB) { counts[j]++; row.body.push(j); if (inS) row.subj.push(j); }
     }
   }
-  var bar = Math.max(V_MIN_WEIGHT, claimBest * V_REL_SHARE);
+  var weights = counts.map(function (c) { return Math.log((n + 1) / (c + 1)); });
+  return { held: held, counts: counts, weights: weights };
+}
 
-  vEachEntry(function (arText, enText, entry) {
-    var skel = ar ? vSkelWord(arText) : vSkelEn(enText);
-    var total = 0, best = 0, shared = 0;
-    for (var i = 0; i < words.length; i++) {
-      if (words[i].length >= 4 && skel.indexOf(words[i]) >= 0) {
-        var wt = vWeight(words[i]);
-        total += wt; shared++;
-        if (wt > best) best = wt;
-      }
-    }
-    /* Rarity decides, not count — see the note above vBuildDf. */
-    if (shared && best >= bar) {
-      hits.push(Object.assign({ kind: "related", score: total, best: best, shared: shared }, entry));
-    }
+/* Score one entry against the WHOLE claim, using the selectivity weights. */
+function vScoreRow(concepts, sel, i) {
+  var row = sel.held[i], total = 0, covered = 0, best = 0, n = 0;
+  var subjectHit = false, j, w, k;
+  for (j = 0; j < concepts.length; j++) total += sel.weights[j];
+  var inSubj = Object.create(null);
+  for (k = 0; k < row.subj.length; k++) inSubj[row.subj[k]] = 1;
+  for (k = 0; k < row.body.length; k++) {
+    j = row.body[k];
+    w = sel.weights[j];
+    covered += w;
+    if (concepts[j].generic) continue;
+    n++;
+    if (w > best) best = w;
+    if (inSubj[j]) subjectHit = true;
+  }
+  return { total: total, covered: covered, share: total ? covered / total : 0,
+           best: best, n: n, subjectHit: subjectHit };
+}
+
+function vSearchRelated(claim) {
+  var ar = vIsArabic(claim);
+  var concepts = vClaimConcepts(claim);
+  if (!concepts.length) return [];
+  if (!V_DF) vBuildDf();
+  var hits = [];
+
+  /* The bar is set by the strongest CONCEPT the claim has that the corpus
+     actually contains. Absence is not distinctiveness — a word found in
+     nothing used to score the maximum and shut out every real match beneath
+     it ("make connections with your family" was answered with nothing at
+     all, because "connections" occurs in no entry) — so an absent concept
+     carries a nominal weight and sets no bar. What it DOES still do is
+     count toward how much of the sentence a match has to account for, which
+     is what stops الجنة speaking for a claim about الأمهات. */
+  var rows = vEntryIndex();
+  var sel = vConceptSelectivity(rows, concepts, ar);
+  /* THE BAR IS SET BY THE STRONGEST CONCEPT THE CORPUS ACTUALLY HAS.
+
+     A concept NO entry holds gets the maximum selectivity weight, and that
+     is the df = 0 trap this file already records twice — absence is not
+     distinctiveness. It came back the moment weights were measured over
+     concepts instead of words: الصين and أقدام are held by nothing, scored
+     5.73, and the bar they set shut out أمّك at 3.43, so the two claims this
+     whole change exists to fix went empty. An unheld concept therefore sets
+     no bar. It still counts toward `total`, so it still decides how much of
+     the sentence a match has to account for — which is the part that must
+     never be thrown away. */
+  var claimTop = 0;
+  concepts.forEach(function (c, j) {
+    if (!c.generic && sel.counts[j] > 0 && sel.weights[j] > claimTop) claimTop = sel.weights[j];
   });
+  var bar = Math.max(V_MIN_WEIGHT, claimTop * V_REL_SHARE);
 
-  hits.sort(function (a, b) { return b.score - a.score; });
-  /* Drop the tail for the same reason the bar is relative: an entry scoring
-     a third of the best one is not "also relevant", it is the next thing
-     down a long list. Three weak suggestions read as padding and cost the
-     page the trust the strong one earned. */
+  for (var i = 0; i < rows.length; i++) {
+    var m = vScoreRow(concepts, sel, i);
+    if (!vConceptGate(m, claimTop, bar)) continue;
+    hits.push(Object.assign({ kind: "related", score: m.covered, best: m.best,
+                              shared: m.n, subj: m.subjectHit }, rows[i].entry));
+  }
+
+  /* RANK ON THE STRONGEST THING MATCHED, NOT ON HOW MANY THINGS WERE.
+     Summing let an entry that brushed three incidental words of a sentence
+     beat the one entry that was actually about its subject — measured on
+     "kindness to your mother is the way to paradise", where the hadith
+     naming one's mother three times was pushed off the list altogether.
+     Breadth is kept only as a tiebreak. */
+  hits.sort(function (a, b) {
+    if (!!a.subj !== !!b.subj) return a.subj ? -1 : 1;
+    if (Math.abs(b.best - a.best) > 0.001) return b.best - a.best;
+    return b.score - a.score;
+  });
+  /* Drop the tail for the same reason the bar is relative: an entry matching
+     something far weaker than the best one is not "also relevant", it is the
+     next thing down a long list. Three weak suggestions read as padding and
+     cost the page the trust the strong one earned. */
   if (hits.length) {
-    var top = hits[0].score;
-    hits = hits.filter(function (h) { return h.score >= top * 0.6; });
+    var top = hits[0].best;
+    hits = hits.filter(function (h) { return h.best >= top * 0.75; });
   }
   return hits.slice(0, 3);
 }
@@ -723,7 +1268,8 @@ function vEachExplain(fn) {
       fn((x.ar || "") + " " + (x.defAr || ""),
          (x.en || "") + " " + (x.def || "") + " " + (x.alt || []).join(" "),
          { kind: "explain", what: "term", title: x.en, titleAr: x.ar,
-           body: x.def, bodyAr: x.defAr, where: "guidance.html#terms" });
+           body: x.def, bodyAr: x.defAr, where: "guidance.html#terms" },
+         (x.ar || ""), (x.en || "") + " " + (x.alt || []).join(" "));
     });
   }
   /* the scholars' rulings — question and authored answer */
@@ -732,7 +1278,9 @@ function vEachExplain(fn) {
       fn((r.titleAr || "") + " " + (r.questionAr || "") + " " + (r.answerAr || "") + vKeyText(r.keys, true),
          (r.title || "") + " " + (r.question || "") + " " + (r.answer || "") + vKeyText(r.keys, false),
          { kind: "explain", what: "ruling", title: r.title, titleAr: r.titleAr,
-           body: r.answer, bodyAr: r.answerAr, where: "guidance.html#rulings" });
+           body: r.answer, bodyAr: r.answerAr, where: "guidance.html#rulings" },
+         (r.titleAr || "") + " " + (r.questionAr || "") + vKeyText(r.keys, true),
+         (r.title || "") + " " + (r.question || "") + vKeyText(r.keys, false));
     });
   }
   /* adding to the religion */
@@ -743,12 +1291,14 @@ function vEachExplain(fn) {
          (c.title || "") + " " + (c.body || c.text || ""),
          { kind: "explain", what: "bidah", title: c.title || BIDAH.title,
            titleAr: c.titleAr || BIDAH.titleAr, body: c.body || c.text,
-           bodyAr: c.bodyAr || c.textAr, where: "guidance.html#bidah" });
+           bodyAr: c.bodyAr || c.textAr, where: "guidance.html#bidah" },
+         (c.titleAr || ""), (c.title || ""));
     };
     fn((BIDAH.titleAr || "") + " " + (BIDAH.introAr || ""),
        (BIDAH.title || "") + " " + (BIDAH.intro || ""),
        { kind: "explain", what: "bidah", title: BIDAH.title, titleAr: BIDAH.titleAr,
-         body: BIDAH.intro, bodyAr: BIDAH.introAr, where: "guidance.html#bidah" });
+         body: BIDAH.intro, bodyAr: BIDAH.introAr, where: "guidance.html#bidah" },
+       (BIDAH.titleAr || ""), (BIDAH.title || ""));
     (BIDAH.base || []).forEach(push);
     (BIDAH.cards || []).forEach(push);
     (BIDAH.notBidah || []).forEach(push);
@@ -760,51 +1310,55 @@ function vEachExplain(fn) {
         fn((c.titleAr || "") + " " + (c.plainAr || ""),
            (c.title || "") + " " + (c.plain || ""),
            { kind: "explain", what: "misunderstood", title: c.title, titleAr: c.titleAr,
-             body: c.plain, bodyAr: c.plainAr, where: "guidance.html#misunderstood" });
+             body: c.plain, bodyAr: c.plainAr, where: "guidance.html#misunderstood" },
+           (c.titleAr || ""), (c.title || ""));
       });
     });
   }
 }
 
-function vSearchExplain(claim) {
+/* `strict` is passed when something has ALREADY been identified. In that
+   case an explanation is a bonus beside a real answer, and a loose one is
+   pure noise — pasting إنما الأعمال بالنيات, which the page matches exactly
+   to al-Bukhari 1, was followed by "wiping over socks instead of washing the
+   feet". So when there is already a verdict, the explanation has to be about
+   the subject and not merely to contain one of its words. */
+function vSearchExplain(claim, strict) {
   var ar = vIsArabic(claim);
-  var cs = ar ? vStripBoiler(vSkelWord(claim)) : vSkelEn(claim);
-  var words = vContentWords(cs);
-  if (!words.length) return [];
+  var concepts = vClaimConcepts(claim);
+  if (!concepts.length) return [];
   if (!V_DF) vBuildDf();
-  if (!ar) words = vExpand(words);
 
-  var claimBest = 0, k;
-  for (k = 0; k < words.length; k++) {
-    if (words[k].length >= 4 && (V_DF[words[k]] || 0) > 0) {
-      claimBest = Math.max(claimBest, vWeight(words[k]));
-    }
-  }
+  var rows = vExplainIndex();
+  var sel = vConceptSelectivity(rows, concepts, ar);
+  /* A concept nothing holds sets no bar — see the note in vSearchRelated. */
+  var claimTop = 0;
+  concepts.forEach(function (c, j) {
+    if (!c.generic && sel.counts[j] > 0 && sel.weights[j] > claimTop) claimTop = sel.weights[j];
+  });
   /* A question is usually SHORT and its subject is one word — "ما هي
      البدعة؟" reduces to a single content word. So the bar here is gentler
      than for related narrations: this content is an explanation offered as
      an explanation, not a text being identified. */
-  var bar = Math.max(1.2, claimBest * 0.45);
+  var bar = Math.max(1.2, claimTop * 0.45);
 
   var hits = [];
-  vEachExplain(function (arText, enText, entry) {
-    var skel = ar ? vSkelWord(arText) : vSkelEn(enText);
-    var total = 0, best = 0, shared = 0;
-    for (var i = 0; i < words.length; i++) {
-      if (words[i].length >= 3 && skel.indexOf(words[i]) >= 0) {
-        var wt = vWeight(words[i]);
-        total += wt; shared++;
-        if (wt > best) best = wt;
-      }
-    }
-    if (shared && best >= bar) {
-      hits.push(Object.assign({ score: total, best: best }, entry));
-    }
-  });
-  hits.sort(function (a, b) { return b.score - a.score; });
-  if (hits.length) {
-    var top = hits[0].score;
-    hits = hits.filter(function (h) { return h.score >= top * 0.6; });
+  for (var i = 0; i < rows.length; i++) {
+    var m = vScoreRow(concepts, sel, i);
+    if (!m.n || m.best < bar) continue;
+    /* The same gates the related search uses, so the two cannot drift. */
+    if (!vConceptGate(m, claimTop, bar)) continue;
+    if (strict && !m.subjectHit) continue;
+    hits.push(Object.assign({ score: m.covered, best: m.best, subj: m.subjectHit }, rows[i].entry));
   }
-  return hits.slice(0, 3);
+  hits.sort(function (a, b) {
+    if (!!a.subj !== !!b.subj) return a.subj ? -1 : 1;
+    if (Math.abs(b.best - a.best) > 0.001) return b.best - a.best;
+    return b.score - a.score;
+  });
+  if (hits.length) {
+    var top = hits[0].best;
+    hits = hits.filter(function (h) { return h.best >= top * 0.75; });
+  }
+  return hits.slice(0, strict ? 1 : 3);
 }
