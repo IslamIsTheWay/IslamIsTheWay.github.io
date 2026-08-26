@@ -53,6 +53,60 @@ an answer appeared is not a test.** Check WHAT came back. I reported "Ibn
 Majah 226" as a pass without reading hadith 226, which is a different hadith
 entirely — he found that, not me.
 
+**Later the same day, the same rule caught a worse one.** The bullet above
+says the related search was fixed to rank by rarity relative to the claim,
+and PART 18 records "الجنة تحت أقدام الأمهات" as fixed. **It was not.** The bar is
+set only by words the corpus actually has — correctly, because absence is
+not distinctiveness — and الأمهات occurs in no entry, so the bar fell back
+to الجنة and every entry about Paradise cleared it again. Two correct
+fixes cancelled each other and the case was never re-run. **Re-run the
+original case after the fix, not just the new ones.**
+
+## READ THE WHOLE SENTENCE, NOT THE ONE WORD IN IT THAT IS RARE
+
+His words, 26 August:
+
+> "make sure that when I am searching for something, it doesn't constitute
+> only one word and then leave the whole sentence. Because if I say I love
+> my mom, if it only concentrates on mom and leaves I love, the meaning can
+> come out different or the opposite."
+
+This is a rule about every matcher on the site, and it had been broken on
+`verify.html` in four measured ways at once — see PART 19. Before changing
+any matching code, know these:
+
+* **A claim word the corpus has never seen must not be silently dropped.**
+  It sets no bar, but it still counts toward how much of the sentence a
+  match has to account for. Dropping it entirely is what let الجنة answer
+  a claim about الأمهات and "love" answer one about "mom".
+* **A generic word can never carry a match.** واجب, حرام, مسلم, "best",
+  "way", "man" rank or classify a subject; they are never the subject.
+  واجب is what answered بر الوالدين with ghusl on a Friday.
+* **A single shared word is enough only when it is the claim's strongest AND
+  the entry's own title or `keys` say the entry is about it.** Otherwise two
+  are needed. Presence in a body is weak evidence — الإيمان sits inside the
+  supplication for a new moon.
+* **Stopwords, in both scripts, or a function word becomes the subject.**
+  "even" answered a claim about seeking knowledge with "do not waste water,
+  even in wudu"; ولو did the same in Arabic.
+* **Concepts, in both scripts.** الأمهات and أمّك are one subject; so are
+  "mom" and "mother". `guidance.html` has had this list for months and
+  `verify.js` did not — **compare the two before writing a third.**
+
+## A REFERENCE MUST CARRY THE WORDS PRINTED ABOVE IT
+
+`verify.html` told a reader that "the best of you are those who are best to
+their families" is **Sahih al-Bukhari 1129**, graded Sahih. It is not; 1129
+is the night prayer. The wording is من خيركم خيركم لأهله — at-Tirmidhi
+3895 and Ibn Majah 1977 — **and this site already carried it, cited
+correctly.** The English side had matched a Sunnah entry's `detail`, which
+is a summary written HERE that may quote a hadith in passing while its `ref`
+covers the whole entry.
+
+**So: an entry's own prose is not a source.** Never let a match inside
+`detail`, `story`, or any summary this site wrote produce a verdict that
+prints a `ref` and a grading. Flag it and say where the words were seen.
+
 ## The rules that matter most
 
 1. **Run `./bump-version.sh` before every commit.** It cache-busts the CSS/JS

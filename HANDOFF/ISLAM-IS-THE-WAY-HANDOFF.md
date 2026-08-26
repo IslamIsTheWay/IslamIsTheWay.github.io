@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 24 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 17 first — and inside it, the THIRD, FOURTH and FIFTH ROUNDS at the end are the most recent work — then PART 16.** The last three sections of this file (verification habits, the known-unfixed golden.html issue, and where the content stands) are the fastest way to pick up.
+> **Last updated: 26 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 19 first, then PART 18.** PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -99,7 +99,7 @@ the owner had to report twice.
 5. **Open Work & Limitations** - unfinished items, traps found the hard way
 6. **Credentials & Access** - logins, GitHub tokens, SEO
 7. **Content Guide** - how to add content correctly + validation commands
-8. **PARTS 8-17** - one section per session, newest last. Each records what
+8. **PARTS 8-19** - one section per session, newest last. Each records what
    was built, what broke, and what must not be reintroduced.
 
 ---
@@ -4108,3 +4108,197 @@ without re-measuring.**
 3. Tadabbur: 496 verses in 380 blocks, 122 two-way links, 264 blocks with no
    cross-reference yet.
 4. Everything still open from PART 17.
+
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 19 - 26 August 2026: the sentence, not the word in it
+
+## What he asked for
+
+Two things, in one voice message. Check every search box on the site and
+make sure the answers are correct and related rather than plausible-looking.
+And then the rule that turned out to name a fault running through the whole
+page:
+
+> "make sure that when I am searching for something, it doesn't constitute
+> only one word and then leave the whole sentence. Because, for example, if
+> I say I love my mom, if it only concentrates on mom and leaves I love, the
+> meaning can come out different or the opposite."
+
+He is describing exactly what `verify.html` was doing, and he had not seen
+the code.
+
+## THE WORST BUG: a wrong hadith number under a Sahih grading
+
+Pasting **"the best of you are those who are best to their families"** was
+answered:
+
+> ✅ This site carries this, and it is graded
+> Teach your family and pray with them
+> **Sahih al-Bukhari, Hadith 1129; Sunan Abu Dawud, Hadith 495**
+> Sahih — established in the collections
+
+Every part of that is wrong. al-Bukhari 1129 is the Prophet ﷺ rousing Ali and
+Fatimah for the night prayer; Abu Dawud 495 is the command to teach children
+the prayer at seven. Neither carries those words. The wording is **خيركم
+خيركم لأهله — at-Tirmidhi 3895 and Ibn Majah 1977**, and BOTH were read out
+of the collection text before this note was written, not recalled. Worse:
+**the site already carried it, correctly cited, in `HADITHS`** — and the
+false answer had pushed the true one off the list.
+
+**The cause is a distinction this page did not make.** For an ENGLISH claim,
+a Sunnah practice is matched against its `detail` and a story against its
+`story`. Those fields are **the site's own summary**, written here, often
+bundling several practices and quoting a hadith in passing — while the `ref`
+covers the entry as a whole. A run of text shared with a summary proves
+nothing about the reference printed under it. The Arabic side never had this
+fault: it matches `arabic`, which is the narration itself.
+
+**Fixed by flagging prose.** A prose match is `prose: true`, is ranked below
+every real narration, and gets `mentionCard` — a grey card that says the
+words were found in a summary this site wrote, that the reference is for the
+entry and not for those words, and not to forward them under it. The verdict
+branch never sees it. The same claim now shows at-Tirmidhi 3895 with its own
+grading in the related block.
+
+**This is the "Ibn Majah 226" lesson for the third time.** A long shared run
+is not proof, and *a battery that only records whether AN answer appeared is
+not a test* — the answer has to be read.
+
+## ONE WORD WAS SPEAKING FOR THE WHOLE SENTENCE
+
+Four measured answers, all real, all from before this round:
+
+| pasted | answered with | on the single word |
+|---|---|---|
+| الجنة تحت أقدام الأمهات | "Seeking knowledge is a path to Paradise" | الجنة |
+| حب الوطن من الإيمان | "On seeing the new moon" | الإيمان |
+| بر الوالدين واجب على كل مسلم | "Ghusl on Friday and cleanliness of the body" | واجب |
+| I love my mom | "Loving for your brother what you love for yourself" | love |
+
+**PART 18 records the mothers case as FIXED. It was not.** The relative bar
+it describes is real, but the code deliberately excludes df = 0 words from
+setting it — correctly, for "connections" — and الأمهات occurs nowhere in the
+corpus, so the bar fell back to الجنة and every Paradise entry cleared it.
+Two correct fixes cancelled each other and nobody re-ran the case.
+
+### The five rules that were needed, and why three of them are not enough
+
+1. **Whole words, never substrings.** `skel.indexOf(w)` is the trap this repo
+   records four times (ولي in وليس, عينة in بعينه, ألم in بالمولد). Replaced
+   with word sets plus prefix stripping.
+2. **`V_GENERIC`, which this page did not have.** واجب, حرام, مسلم, "best",
+   "way", "man" rank or classify a subject; they are never the subject. واجب
+   is what answered a claim about honouring parents with ghusl on a Friday.
+3. **Concepts in BOTH scripts.** The synonym map was English-only and did not
+   even carry "mom" — the Guidance page's list has carried it all along, and
+   the two were never compared. الأمهات now reaches أمّك without a root
+   stemmer, because a named list of the subjects people actually forward
+   needs no morphology.
+4. **A fuller stopword list.** "even" answered "seek knowledge even if you
+   have to go to china" with *do not waste water, even in wudu*; ولو answered
+   the Arabic with *لا تحقرن جارة لجارتها ولو فرسن شاة*.
+5. **The match must account for the sentence.** One shared concept counts
+   only when it is the most distinctive one the claim has AND the entry's own
+   title or `keys` say it is about it. Otherwise two are needed.
+
+### Rank on what is SELECTIVE, not on how many words touched
+
+Word rarity could not choose between النظافة and الإيمان — both sit in five
+entries and both weigh 3.92 — so three entries about faith crowded out the
+one about cleanliness. In English "kindness" (24 entries) outweighed "mother"
+(9) and the hadith naming one's mother three times was dropped from a claim
+whose subject was one's mother.
+
+So weights are measured **over concepts, over the entries that actually hold
+them**, in one pass at query time; and entries are ranked on the **strongest**
+concept matched, with breadth only as a tiebreak.
+
+### The df = 0 trap came back through the new door
+
+The moment weights were measured over concepts, a concept **no entry holds**
+scored the maximum again — الصين and أقدام at 5.73 — and the bar they set
+shut out أمّك at 3.43, emptying the two cases the whole change existed to
+fix. **An unheld concept sets no bar, but still counts toward `total`**, so
+it still decides how much of the sentence a match must account for. That
+half is the part that must never be thrown away.
+
+### Where it landed
+
+All four rows in the table above now answer with the hadith about the
+mother, or honestly with nothing. Verified on the live URL, in both
+languages: **الجنة تحت أقدام الأمهات → أُمُّكَ، ثُمَّ أُمُّكَ، ثُمَّ
+أُمُّكَ، ثُمَّ أَبُوكَ (البخاري 5971؛ مسلم 2548).**
+
+## Also fixed
+
+* **The Quran was re-skeletonised on every check.** 470ms of a ~480ms check
+  was `vSearchQuran` rebuilding the skeletons of all 6,236 verses, twice
+  over, every time. Precomputed once, lazily: **470ms → 197ms.** This file
+  already recorded the identical lesson for the deep search.
+* **`hadith.html` still had the Arabic substring trap live.** Searching ألم
+  put "Men imitating women" at the top, because الم sits inside a longer word
+  in it. Now whole-word with cached regexes, on both scripts. Its curated
+  list is also ranked by word rarity, so "my mother is angry with me" leads
+  with the hadith about the mother instead of tying it with three others.
+* **The explanation block beside a verdict.** Pasting إنما الأعمال بالنيات
+  matched al-Bukhari 1 exactly and was then followed by "wiping over socks
+  instead of washing the feet". When something has already been identified,
+  an explanation must be about the subject (`vSearchExplain(claim, strict)`).
+
+## What was checked and found HEALTHY — do not re-audit blind
+
+* **`search.html` (people).** "Ali" returns 3, not 17. Arabic multi-word
+  works. Omar/Umar, Aisha/Aishah, Mohammed/Muhammad all return the same set.
+  A situation sentence returns nothing and points at Guidance.
+* **`sunnah.html`.** Filter search, results relevant in both scripts.
+* **`guidance.html`.** **"I love my mom" already answered correctly** — "your
+  mother, then your mother, then your mother". Its intent layer reads the
+  sentence before scoring any word in it, which is precisely what Verify was
+  missing. Self-harm, the music ruling, the misunderstood section, poverty
+  and grief all still behave.
+* **`quran.html`** has no search box of its own.
+
+## Traps added this round — do not reintroduce
+
+* **A one-letter Arabic prefix must leave a LONGER word behind than a
+  three-letter one.** و ف ب ك ل are also ordinary letters: stripping the ف
+  from فُتِحَت produced تحت, which then matched "الجنة تحت أقدام الأمهات" and
+  answered a claim about mothers with the supplication after wudu. The
+  determiners (ال and its compounds) are unambiguous and keep the looser rule.
+* **الدَّين and الدِّين are one word once the vowels are dropped.** Neither may
+  be folded into the debt concept or "الصلاة عماد الدين" is answered with
+  entries about borrowing.
+* **Plurals must be listed; there is no English stemmer here.** "families"
+  could not reach "family", which is why the correctly-cited at-Tirmidhi 3895
+  entry stayed hidden. "mothers" could not reach "mother".
+* **Rebuilding a word set per entry per query** took a battery of 29 claims
+  from milliseconds to 15.6 SECONDS. Precompute the index.
+* **A coverage share cannot tell a subject from an incidental word.** "صلة
+  الرحم تزيد في العمر" spends two thirds of its weight on تزيد and العمر, so
+  requiring a share of the whole sentence threw away the one entry actually
+  about صلة الرحم. Coverage is a backstop for MULTI-concept matches only.
+* **Weigh the term that MATCHED, not the one that was typed.** "mom" occurs
+  in no hadith and would score as the rarest word in the language.
+
+## Open work as of 26 August 2026
+
+1. **28 of the 43 curated hadith in `HADITHS` have no `keys`.** The content
+   guide says keys are how a natural question finds an entry, and both Verify
+   and `hadith.html` read them. Measured consequence: an Arabic reader
+   searching **النية** gets nothing, although al-Bukhari 1 is on the page.
+   This is ordinary content work and it would lift every search surface.
+2. `الصلاة عماد الدين` and `حب الوطن من الإيمان` still return entries about
+   prayer and about faith in general. Both claims name a subject the site has
+   nothing on (عماد، الوطن), so this is honest breadth rather than a wrong
+   answer — but a short line saying "the site has nothing on الوطن" would be
+   better than three entries about faith.
+3. `صلة الرحم تزيد في العمر` can surface "Omar wept at the marks of the mat",
+   because العمر and عمر are the same word once the article is stripped. A
+   homograph, not a matching fault.
+4. Everything still open from PART 18, including the ~77 English strings
+   still leaking in Arabic mode on `judgement.html`.
