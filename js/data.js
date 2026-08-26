@@ -1543,7 +1543,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
     topic: "Sincerity",
     title: "Every deed depends on its intention (Niyyah)",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["intention","intentions","niyyah","sincerity","sincere","showing off","riya","why i do it","deeds","actions","reward","النية","النيات","نية","الإخلاص","إخلاص","الرياء","الأعمال","العمل","الأجر"]
   },
   {
     arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
@@ -1552,7 +1553,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Brotherhood",
     title: "Loving for your brother what you love for yourself",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["brother","brotherhood","love","loving others","wish well","envy","jealousy","selfish","أخي","الأخوة","المحبة","حب","يحب لأخيه","الحسد","الأنانية","jealous","envious","resent","happy for others","حسدت","أحسد","غيرة","أخيك","لأخيك","أخاك","نفسك","لنفسك","أخوك"]
   },
   {
     arabic: "إِنَّ مِنْ خِيَارِكُمْ أَحْسَنَكُمْ أَخْلَاقًا",
@@ -1561,7 +1563,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Character",
     title: "The best people are those with the best manners",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["manners","good manners","character","behaviour","how to behave","akhlaq","best people","politeness","kindness","الأخلاق","حسن الخلق","الخلق","الأدب","المعاملة","السلوك","أحسن الناس"]
   },
   {
     arabic: "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
@@ -1570,7 +1573,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Sahih Muslim",
     topic: "Speech",
     title: "Say something good or stay silent",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["speech","speak","talking","silence","stay silent","keep quiet","words","gossip","say good","watch your words","tongue","الكلام","الصمت","السكوت","اللسان","الغيبة","قل خيرا","حفظ اللسان","أسكت","اسكت","أتكلم","تكلم","لا تتكلم","الصمت خير","أرد أو أسكت"]
   },
   {
     arabic: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
@@ -1579,7 +1583,8 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
     topic: "Kindness",
     title: "Smiling at others is an act of charity",
-    strength: "Sahih — Narrated by Muslim; also at-Tirmidhi"
+    strength: "Sahih — Narrated by Muslim; also at-Tirmidhi",
+    keys: ["smile","smiling","charity","sadaqah","kindness","cheerful","good deed","easy good deeds","face","الابتسامة","ابتسم","التبسم","صدقة","الصدقة","المعروف","البشاشة","اللطف"]
   },
   {
     arabic: "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
@@ -1603,7 +1608,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Neighbors",
     title: "Wanting good for your neighbour",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["neighbour","neighbor","neighbours","neighbors","next door","love for your neighbour","الجار","الجيران","جاري","حق الجار","جيراني","بيت الجيران"]
   },
   {
     arabic: "أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
@@ -1612,7 +1618,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Consistency",
     title: "Small, consistent deeds are the most beloved to Allah",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["consistency","consistent","regular","little and often","small deeds","habit","routine","keep going","daily","beloved deeds","give up","المداومة","الاستمرار","أحب الأعمال","الدوام","ولو قل","الاستقامة","عادة","القليل","العمل القليل","الدائم","المستمر","أدومه","أفضل العمل أدومه","انقطعت"]
   },
   {
     arabic: "خَيْرُ النَّاسِ مَنْ أَطْعَمَ الطَّعَامَ",
@@ -1621,7 +1628,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Food and Drink",
     topic: "Generosity",
     title: "Sharing food, eating in moderation",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["food","eating","eat","share food","sharing","generosity","generous","moderation","overeating","greed","hospitality","الطعام","الأكل","المشاركة","الكرم","الاعتدال","الشبع","الإسراف","الضيافة"]
   },
   {
     arabic: "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
@@ -1630,7 +1638,8 @@ const HADITHS = [
     ref: "Sunan Ibn Majah, Book of the Sunnah",
     topic: "Knowledge",
     title: "Seeking knowledge is a duty on every Muslim",
-    strength: "Sahih — Narrated by Ibn Majah; authenticated by as-Suyuti and al-Albani"
+    strength: "Sahih — Narrated by Ibn Majah; authenticated by as-Suyuti and al-Albani",
+    keys: ["knowledge","seek knowledge","learn","learning","study","student","school","obligation","duty","education","ilm","العلم","طلب العلم","التعلم","الدراسة","فريضة","طالب علم","التعليم","studying","obligatory","compulsory","must learn","التعلم واجب","أتعلم","أدرس"]
   },
   {
     arabic: "الْمُؤْمِنُ الَّذِي يُخَالِطُ النَّاسَ وَيَصْبِرُ عَلَى أَذَاهُمْ خَيْرٌ مِنَ الَّذِي لَا يُخَالِطُ النَّاسَ وَلَا يَصْبِرُ عَلَى أَذَاهُمْ",
@@ -1639,7 +1648,8 @@ const HADITHS = [
     ref: "Sunan Ibn Majah, Book of Asceticism; Musnad Ahmad",
     topic: "Patience",
     title: "Mixing with people and bearing their harm with patience",
-    strength: "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani"
+    strength: "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani",
+    keys: ["patience","patient","people","mixing with people","society","harm","difficult people","tolerate","put up with","isolation","withdraw","alone","الصبر","مخالطة الناس","الناس","الأذى","العزلة","الاختلاط","التحمل","أذاني","يزعجونني","أعتزل","أبتعد عن الناس"]
   },
   {
     arabic: "مَنْ يَضْمَنْ لِي مَا بَيْنَ لَحْيَيْهِ وَمَا بَيْنَ رِجْلَيْهِ أَضْمَنْ لَهُ الْجَنَّةَ",
@@ -1648,7 +1658,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Limits and Punishments",
     topic: "Guarding the Tongue",
     title: "Guard your tongue and chastity, and earn Paradise",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["tongue","guard your tongue","speech","chastity","private parts","zina","desire","temptation","paradise","jannah","self control","اللسان","حفظ اللسان","الفرج","العفة","الزنا","الشهوة","الجنة","ضبط النفس","لساني","أتكلم كثيرا","شهوتي"]
   },
   {
     arabic: "خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ",
@@ -1657,7 +1668,8 @@ const HADITHS = [
     ref: "Al-Mu'jam al-Awsat by at-Tabarani",
     topic: "Service",
     title: "The best people are those who benefit others most",
-    strength: "Strong — Narrated by at-Tabarani; graded Strong by al-Albani"
+    strength: "Strong — Narrated by at-Tabarani; graded Strong by al-Albani",
+    keys: ["benefit others","help","helping","useful","service","best people","volunteer","community","giving","نفع الناس","أنفع","خدمة الناس","المساعدة","خير الناس","الخير"]
   },
   {
     arabic: "اغْتَنِمْ خَمْسًا قَبْلَ خَمْسٍ: شَبَابَكَ قَبْلَ هَرَمِكَ، وَصِحَّتَكَ قَبْلَ سَقَمِكَ، وَغِنَاكَ قَبْلَ فَقْرِكَ، وَفَرَاغَكَ قَبْلَ شُغْلِكَ، وَحَيَاتَكَ قَبْلَ مَوْتِكَ",
@@ -1666,7 +1678,8 @@ const HADITHS = [
     ref: "Mustadrak al-Hakim",
     topic: "Time",
     title: "Use five before five: youth, health, wealth, free time, life",
-    strength: "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani"
+    strength: "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani",
+    keys: ["time","free time","wasting time","youth","young","health","wealth","life","death","procrastination","before it is too late","five before five","الوقت","الفراغ","الشباب","الصحة","الغنى","الحياة","الموت","اغتنم","التسويف","وقتي","فراغي","شبابي","صحتي","أضيع وقتي"]
   },
   {
     arabic: "إِنَّ اللَّهَ لَا يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
@@ -1675,7 +1688,8 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Righteousness",
     topic: "Sincerity",
     title: "Allah looks at your heart and deeds, not your looks or wealth",
-    strength: "Sahih — Narrated by Muslim"
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["heart","hearts","appearance","looks","beauty","wealth","money","rich","poor","judging people","showing off","sincerity","insecure","القلب","القلوب","المظهر","الشكل","الصور","المال","الغنى","الفقر","الإخلاص","قلبي","شكلي","مالي","أقارن نفسي"]
   },
   {
     arabic: "يَسِّرُوا وَلَا تُعَسِّرُوا وَبَشِّرُوا وَلَا تُنَفِّرُوا",
@@ -1684,7 +1698,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Knowledge; Sahih Muslim",
     topic: "Ease",
     title: "Make matters easy, do not make them hard",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["easy","ease","make it easy","hard","difficult","strict","harsh","gentle","good news","put people off","teaching","dawah","التيسير","يسروا","السهولة","التشديد","العسر","الرفق","التبشير","التنفير"]
   },
   {
     arabic: "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
@@ -1693,7 +1708,8 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Remembrance, Hadith 2699",
     topic: "Knowledge",
     title: "Seeking knowledge is a path to Paradise",
-    strength: "Sahih — Narrated by Muslim"
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["knowledge","seek knowledge","learn","learning","study","student","path to paradise","paradise","reward of learning","ilm","العلم","طلب العلم","التعلم","طريق الجنة","الجنة","الدراسة","طالب علم"]
   },
   {
     arabic: "لَيْسَ الْمُؤْمِنُ بِالطَّعَّانِ وَلَا اللَّعَّانِ وَلَا الْفَاحِشِ وَلَا الْبَذِيءِ",
@@ -1702,7 +1718,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Jami at-Tirmidhi",
     topic: "Speech",
     title: "A believer does not slander, curse, or speak obscenely",
-    strength: "Sahih — Narrated by al-Bukhari and at-Tirmidhi"
+    strength: "Sahih — Narrated by al-Bukhari and at-Tirmidhi",
+    keys: ["slander","curse","cursing","swearing","obscene","bad language","rude","insult","speech","tongue","abuse","الطعن","اللعن","السب","الشتم","الفحش","الكلام البذيء","اللسان","الإساءة"]
   },
   {
     arabic: "كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ أَوْ عَابِرُ سَبِيلٍ",
@@ -1711,7 +1728,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Heart Softeners",
     topic: "Worldliness",
     title: "Live in this world like a stranger or a traveller",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["world","dunya","worldliness","attachment","stranger","traveller","traveler","passing through","materialism","detachment","hereafter","الدنيا","الزهد","غريب","عابر سبيل","التعلق بالدنيا","الآخرة"]
   },
   {
     arabic: "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
@@ -1720,7 +1738,8 @@ const HADITHS = [
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Mercy",
     title: "Show mercy to those on earth and you will be shown mercy",
-    strength: "Sahih — Narrated by Abu Dawud and at-Tirmidhi; authenticated by al-Albani"
+    strength: "Sahih — Narrated by Abu Dawud and at-Tirmidhi; authenticated by al-Albani",
+    keys: ["mercy","merciful","compassion","kindness","harsh","animals","children","show mercy","gentle","الرحمة","ارحموا","الرحماء","الشفقة","اللين","القسوة","الرفق","الحيوان","الحيوانات","الأطفال","أطفالي"]
   },
   {
     arabic: "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ",
@@ -1729,7 +1748,8 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
     topic: "Helping Others",
     title: "Relieving a fellow believer's hardship",
-    strength: "Sahih — Narrated by Muslim"
+    strength: "Sahih — Narrated by Muslim",
+    keys: ["help","helping","hardship","difficulty","trouble","relieve","support","someone in need","favour","day of judgement","reward","debt","الكربة","تفريج الكرب","المساعدة","العون","الشدة","الضيق","قضاء الحوائج","أساعد","محتاج","مكروب","في ضيق"]
   },
   {
     arabic: "لَا يَرْحَمُ اللَّهُ مَنْ لَا يَرْحَمُ النَّاسَ",
@@ -1738,7 +1758,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
     topic: "Mercy",
     title: "Allah does not show mercy to those who show no mercy",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["mercy","no mercy","harsh","cruel","hard hearted","kindness","people","الرحمة","لا يرحم","القسوة","قسوة القلب","الرفق","الشفقة"]
   },
   {
     arabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
@@ -1747,7 +1768,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
     topic: "Quran",
     title: "The best of you learns the Quran and teaches it",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["quran","learn quran","teach quran","memorise","memorize","hifz","recitation","recite","teacher","student","القرآن","تعلم القرآن","تعليم القرآن","حفظ القرآن","التلاوة","المعلم","أحفظ القرآن","أتعلم القرآن","حفظي","المصحف"]
   },
   {
     arabic: "الرَّجُلُ عَلَى دِينِ خَلِيلِهِ فَلْيَنْظُرْ أَحَدُكُمْ مَنْ يُخَالِلُ",
@@ -1756,7 +1778,8 @@ const HADITHS = [
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Friendship",
     title: "Choose your friends carefully — you follow their way",
-    strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi"
+    strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi",
+    keys: ["friend","friends","friendship","company","bad company","peer pressure","who you sit with","influence","choose friends","bad influence","الصديق","الأصدقاء","الصحبة","الخليل","جليس","رفقة السوء","اختيار الصاحب","أصدقائي","صاحبي","رفاقي","أصحابي"]
   },
   {
     arabic: "لَا تَزُولُ قَدَمَا عَبْدٍ يَوْمَ الْقِيَامَةِ حَتَّى يُسْأَلَ عَنْ عُمُرِهِ فِيمَا أَفْنَاهُ وَعَنْ عِلْمِهِ فِيمَا فَعَلَ وَعَنْ مَالِهِ مِنْ أَيْنَ اكْتَسَبَهُ وَفِيمَا أَنْفَقَهُ وَعَنْ جِسْمِهِ فِيمَا أَبْلَاهُ",
@@ -1765,7 +1788,8 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment",
     topic: "Accountability",
     title: "You will be questioned about your life, knowledge, wealth and body",
-    strength: "Sahih — Narrated by at-Tirmidhi; graded Sahih by at-Tirmidhi and al-Albani"
+    strength: "Sahih — Narrated by at-Tirmidhi; graded Sahih by at-Tirmidhi and al-Albani",
+    keys: ["accountability","questioned","day of judgement","judgement day","life","time","knowledge","wealth","money","body","health","how you spent it","الحساب","يوم القيامة","السؤال","العمر","الوقت","العلم","المال","الجسد","عمري","وقتي","مالي","سأسأل","محاسبة النفس"]
   },
   {
     arabic: "لَيْسَ الْغِنَى عَنْ كَثْرَةِ الْعَرَضِ وَلَكِنَّ الْغِنَى غِنَى النَّفْسِ",
@@ -1774,7 +1798,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
     topic: "Contentment",
     title: "True richness is the contentment of the heart",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["rich","richness","wealth","money","contentment","content","satisfied","greed","poor","possessions","happiness","never enough","الغنى","غنى النفس","القناعة","الرضا","المال","الطمع","الفقر","مالي","راتبي","لا يكفيني","أريد أكثر"]
   },
   {
     arabic: "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",
@@ -1783,7 +1808,8 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Book of Asceticism; Muwatta Imam Malik",
     topic: "Discipline",
     title: "Part of good Islam is leaving what does not concern you",
-    strength: "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi"
+    strength: "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi",
+    keys: ["mind your own business","not your business","interfering","nosy","gossip","waste of time","focus","discipline","curiosity","ما لا يعنيه","ترك ما لا يعني","الفضول","التدخل","حسن الإسلام","أتدخل","فضولي","شؤون الناس","لا يعنيني"]
   },
   {
     arabic: "لَا تَغْضَبْ، لَا تَغْضَبْ، لَا تَغْضَبْ",
@@ -1792,7 +1818,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
     topic: "Self-Control",
     title: "Do not become angry",
-    strength: "Sahih — Narrated by al-Bukhari"
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["anger","angry","temper","rage","lose my temper","control anger","calm","self control","advice","shouting","الغضب","لا تغضب","العصبية","الانفعال","ضبط النفس","الحلم","الهدوء","غضبي","أغضب","تغضب","عصبي","انفعالي","أنفعل","سريع الغضب"]
   },
   {
     arabic: "الْحَيَاءُ لَا يَأْتِي إِلَّا بِخَيْرٍ",
@@ -1801,7 +1828,8 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",
     topic: "Modesty",
     title: "Modesty brings nothing but good",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)"
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["modesty","shy","shyness","haya","shame","decency","bashful","embarrassed","الحياء","الحياء خير","الخجل","الاحتشام","العفة","الأدب","أستحي","خجول","حيائي"]
   },
   {
     arabic: "لَعَنَ رَسُولُ اللَّهِ ﷺ الْمُتَشَبِّهِينَ مِنَ الرِّجَالِ بِالنِّسَاءِ وَالْمُتَشَبِّهَاتِ مِنَ النِّسَاءِ بِالرِّجَالِ",

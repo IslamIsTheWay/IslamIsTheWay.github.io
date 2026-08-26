@@ -581,6 +581,11 @@ const V_STOP = (
   + "دون سوي غير ضد حول نحو منذ لدي مثل ايضا فقط جدا هنا هناك الان كيف اين "
   + "متي لماذا ماذا هل اي عليه عليها منه منها فيه فيها به بها له لها لهم "
   + "لكم لنا اليه اليها وهو وهي وقد وان فان لان لكن ولكن الا وقال وكان "
+  /* THE ATTACHED PRONOUNS. عليك was worth more than الجار in "حق الجار
+     عليك" — it sits in two entries and الجار in seven — so a pronoun set
+     the bar and the hadith on the neighbour was refused outright. */
+  + "عليك عليكم عليكما اليك اليكم منك منكم فيك فيكم بك بكم لك عندك عندكم "
+  + "لديك معك معكم عنك عنكم اليهم عليهم منهم فيهم بهم لهما عليهما "
   + "ولا وهذا وهذه وذلك وفي ومن وعلي وبين وبعد وقبل سوف كذلك انه انها"
 ).split(/\s+/).filter(Boolean);
 
@@ -930,7 +935,18 @@ var V_SYNONYMS = [
   ["ام", "امي", "امك", "امه", "الام", "امهات", "الامهات", "والده", "الوالده", "امهاتكم"],
   ["اب", "ابي", "ابوك", "الاب", "اباء", "الاباء", "والد", "الوالد"],
   ["الوالدين", "والدين", "الابوين", "ابوين", "بر الوالدين", "الام", "الاب"],
-  ["الرحم", "رحم", "الاقارب", "اقارب", "قرابه", "صله الرحم", "الاهل", "اهل", "اهله", "عشيره"],
+  /* KINSHIP AND HOUSEHOLD ARE TWO GROUPS, AND صلة IS IN NEITHER.
+
+     They were one, and the phrase "صلة الرحم" sat inside it — which indexes
+     صلة and الرحم as THE SAME concept, so a claim naming both counted as one
+     and could never reach the two-concept gate. الأهل was in there too, and
+     it is common enough to have diluted the whole group to twelve entries.
+     Measured on "صلة الرحم تزيد في العمر": the kinship concept fell to 3.15
+     while العمر stood at 4.61, so the one entry actually about صلة الرحم was
+     refused and the hadith on being questioned about your lifespan answered
+     instead. Words that merely CO-OCCUR are not synonyms. */
+  ["الرحم", "رحم", "ارحام", "الاقارب", "اقارب", "قرابه", "عشيره", "ذوي القربي"],
+  ["الاهل", "اهل", "اهله", "اهلي", "العائله", "عائله", "ذوي"],
   ["الجنه", "جنه", "الفردوس", "النعيم"],
   ["الايمان", "ايمان", "مؤمن", "المؤمنين", "تصديق"],
   ["العلم", "علم", "تعلم", "يتعلم", "العلماء", "طالب العلم", "معرفه"],
@@ -1145,6 +1161,7 @@ function vExplainIndex() {
 function vConceptSelectivity(rows, concepts, ar) {
   var n = rows.length, i, j;
   var counts = concepts.map(function () { return 0; });
+  var subjCounts = concepts.map(function () { return 0; });
   var held = new Array(n);
   for (i = 0; i < n; i++) {
     var body = ar ? rows[i].arBody : rows[i].enBody;
@@ -1157,11 +1174,49 @@ function vConceptSelectivity(rows, concepts, ar) {
         if (subj[f]) { inS = true; inB = true; }
         if (inB && inS) break;
       }
-      if (inB) { counts[j]++; row.body.push(j); if (inS) row.subj.push(j); }
+      if (inB) {
+        counts[j]++; row.body.push(j);
+        if (inS) { row.subj.push(j); subjCounts[j]++; }
+      }
     }
   }
   var weights = counts.map(function (c) { return Math.log((n + 1) / (c + 1)); });
-  return { held: held, counts: counts, weights: weights };
+  return { held: held, counts: counts, subjCounts: subjCounts, weights: weights };
+}
+
+/* WHICH CONCEPT IN THIS SENTENCE IS ITS SUBJECT?
+
+   Taking the rarest one is wrong, and it fails in the mirror image of the
+   fault this whole file was rebuilt for. Measured, all three real:
+
+     "حق الجار عليك"        → nothing. عليك — a PRONOUN — sits in two entries
+                              and therefore outweighed الجار, which sits in
+                              seven, so the bar rose above the subject and
+                              the hadith on the neighbour was refused.
+     "whoever relieves a believer of a hardship" → nothing, because
+                              "relieves" occurs in one entry and shut out
+                              "believer" and "hardship" beneath it.
+     "أحب لأخيك ما تحب لنفسك" → nothing, on تحب.
+
+   A word no entry anywhere treats as its own subject — none of them names it
+   in a title or a `keys` list — is vocabulary, not subject matter, however
+   rare it happens to be. So only concepts that at least one entry DECLARES
+   may set the bar. If the claim has none of those, fall back to whatever the
+   corpus holds at all, because a bar of zero would admit everything. */
+function vClaimTop(concepts, sel) {
+  var top = 0, j;
+  for (j = 0; j < concepts.length; j++) {
+    if (!concepts[j].generic && sel.subjCounts[j] > 0 && sel.weights[j] > top) {
+      top = sel.weights[j];
+    }
+  }
+  if (top) return top;
+  for (j = 0; j < concepts.length; j++) {
+    if (!concepts[j].generic && sel.counts[j] > 0 && sel.weights[j] > top) {
+      top = sel.weights[j];
+    }
+  }
+  return top;
 }
 
 /* Score one entry against the WHOLE claim, using the selectivity weights. */
@@ -1212,10 +1267,7 @@ function vSearchRelated(claim) {
      no bar. It still counts toward `total`, so it still decides how much of
      the sentence a match has to account for — which is the part that must
      never be thrown away. */
-  var claimTop = 0;
-  concepts.forEach(function (c, j) {
-    if (!c.generic && sel.counts[j] > 0 && sel.weights[j] > claimTop) claimTop = sel.weights[j];
-  });
+  var claimTop = vClaimTop(concepts, sel);
   var bar = Math.max(V_MIN_WEIGHT, claimTop * V_REL_SHARE);
 
   for (var i = 0; i < rows.length; i++) {
@@ -1331,11 +1383,8 @@ function vSearchExplain(claim, strict) {
 
   var rows = vExplainIndex();
   var sel = vConceptSelectivity(rows, concepts, ar);
-  /* A concept nothing holds sets no bar — see the note in vSearchRelated. */
-  var claimTop = 0;
-  concepts.forEach(function (c, j) {
-    if (!c.generic && sel.counts[j] > 0 && sel.weights[j] > claimTop) claimTop = sel.weights[j];
-  });
+  /* Only a concept some entry DECLARES may set the bar — see vClaimTop. */
+  var claimTop = vClaimTop(concepts, sel);
   /* A question is usually SHORT and its subject is one word — "ما هي
      البدعة؟" reduces to a single content word. So the bar here is gentler
      than for related narrations: this content is an explanation offered as
