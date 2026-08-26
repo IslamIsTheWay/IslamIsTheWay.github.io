@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608261336" />
+  <link rel="stylesheet" href="css/style.css?v=202608261450" />
   <!-- Installable as an app (PWA). The service worker is network-first and
        cannot cause a stale page — see the note at the top of sw.js. -->
   <link rel="manifest" href="manifest.webmanifest" />
@@ -104,10 +104,75 @@
     </div>
   </section>
 
+  <!-- Doors by SITUATION. The nav is organised the way the material is
+       organised; people arrive organised by their life. Every link here
+       points at content that already exists, and every anchor was read
+       out of the target page before it was written. -->
+  <section id="situations">
+    <div class="container">
+      <h2 class="section-title"><span class="en-only">Start from where you are</span><span class="ar-only" dir="rtl">ابدأ من حيث أنت</span></h2>
+      <p class="section-sub"><span class="en-only">Not sure where to look? Find the one that sounds like you.</span><span class="ar-only" dir="rtl">لا تدري من أين تبدأ؟ اختر ما يشبه حالك.</span></p>
+      <div class="divider"></div>
+      <br>
+      <div class="grid">
+        <a href="verify.html" class="card" style="text-decoration:none;">
+          <div class="icon">📩</div>
+          <h3><span class="en-only">I was sent something and I don't know if it's true</span><span class="ar-only" dir="rtl">وصلتني رسالةٌ ولا أدري أصحيحةٌ هي</span></h3>
+          <p><span class="en-only">Paste it and find out what it actually is — the Quran, the two Sahihs, the four Sunan, with its grading.</span><span class="ar-only" dir="rtl">ألصِقها واعرف ما هي حقًّا: أفي القرآن، أم في الصحيحين، أم في السنن، وبأيّ درجة.</span></p>
+        </a>
+        <a href="judgement.html#journey" class="card" style="text-decoration:none;">
+          <div class="icon">🕊️</div>
+          <h3><span class="en-only">Someone I love has died</span><span class="ar-only" dir="rtl">مات لي من أُحِبّ</span></h3>
+          <p><span class="en-only">What happens from the moment of death onward, stage by stage, and what actually reaches them now.</span><span class="ar-only" dir="rtl">ما يجري من لحظة الموت فما بعدها، مرحلةً مرحلة، وما الذي يصلهم الآن حقًّا.</span></p>
+        </a>
+        <a href="guidance.html#adhkar" class="card" style="text-decoration:none;">
+          <div class="icon">🤲</div>
+          <h3><span class="en-only">I feel anxious, low, or frightened</span><span class="ar-only" dir="rtl">أشعر بالضيق أو الحزن أو الخوف</span></h3>
+          <p><span class="en-only">What he ﷺ said at moments of distress, with a counter for each — and what to do when it does not lift.</span><span class="ar-only" dir="rtl">ما كان يقوله ﷺ عند الكرب، مع عدّادٍ لكلّ ذكر — وماذا تصنع إن لم ينكشف.</span></p>
+        </a>
+        <a href="guidance.html#misunderstood" class="card" style="text-decoration:none;">
+          <div class="icon">💬</div>
+          <h3><span class="en-only">Someone asked me a hard question about Islam</span><span class="ar-only" dir="rtl">سألني أحدُهم سؤالًا صعبًا عن الإسلام</span></h3>
+          <p><span class="en-only">The fighting verses, jihad, the hijab, women, terrorism — each with the verse before and the verse after.</span><span class="ar-only" dir="rtl">آياتُ القتال، والجهاد، والحجاب، والمرأة، والإرهاب — كلٌّ مع الآية قبلها والآية بعدها.</span></p>
+        </a>
+        <a href="guidance.html#worship" class="card" style="text-decoration:none;">
+          <div class="icon">🕌</div>
+          <h3><span class="en-only">I want to get my prayer right</span><span class="ar-only" dir="rtl">أريد أن أُتقن صلاتي</span></h3>
+          <p><span class="en-only">What to say and when — before the prayer, inside it, after it, and through the day.</span><span class="ar-only" dir="rtl">ماذا تقول ومتى: قبل الصلاة، وفيها، وبعدها، وفي يومك.</span></p>
+        </a>
+        <a href="quran.html" class="card" style="text-decoration:none;">
+          <div class="icon">📖</div>
+          <h3><span class="en-only">I read the Quran but I don't understand it</span><span class="ar-only" dir="rtl">أقرأ القرآن ولا أفهمه</span></h3>
+          <p><span class="en-only">Why this word and not its near-synonym, why the verse sits where it does, and where the thought is completed.</span><span class="ar-only" dir="rtl">لِمَ هذه الكلمة دون قريبتها، ولِمَ وقعت الآيةُ هنا، وأين يكتمل المعنى.</span></p>
+        </a>
+        <a href="quran.html#wird" class="card" style="text-decoration:none;">
+          <div class="icon">🌙</div>
+          <h3><span class="en-only">I want something small I can keep to every day</span><span class="ar-only" dir="rtl">أريد وِردًا صغيرًا ألتزمه كلَّ يوم</span></h3>
+          <p><span class="en-only">Choose an amount once. After that it hands you today's pages and remembers where you stopped.</span><span class="ar-only" dir="rtl">اختر المقدار مرّةً واحدة، ثم يعطيك صفحات يومك ويحفظ أين وقفت.</span></p>
+        </a>
+        <a href="guidance.html#rulings" class="card" style="text-decoration:none;">
+          <div class="icon">⚖️</div>
+          <h3><span class="en-only">Is this allowed or not?</span><span class="ar-only" dir="rtl">هل هذا جائزٌ أم لا؟</span></h3>
+          <p><span class="en-only">What the scholars actually ruled, who said what, and which way the weight of them leaned.</span><span class="ar-only" dir="rtl">ما قرّره أهل العلم، ومن قال بماذا، وإلى أين مال أكثرهم.</span></p>
+        </a>
+        <a href="judgement.html#endmap" class="card" style="text-decoration:none;">
+          <div class="icon">🗺️</div>
+          <h3><span class="en-only">What happens at the end of the world?</span><span class="ar-only" dir="rtl">ماذا يحدث في آخر الزمان؟</span></h3>
+          <p><span class="en-only">One ordered chain instead of a pile of signs — with where we are on it, said carefully.</span><span class="ar-only" dir="rtl">سلسلةٌ مرتّبةٌ بدل كومةٍ من العلامات — وأين نحن منها، بتحفّظ.</span></p>
+        </a>
+        <a href="golden.html#why" class="card" style="text-decoration:none;">
+          <div class="icon">🏛️</div>
+          <h3><span class="en-only">Why are Muslims behind today?</span><span class="ar-only" dir="rtl">لماذا تأخّر المسلمون اليوم؟</span></h3>
+          <p><span class="en-only">What they built when they were ahead, what happened, and what is actually in our hands now.</span><span class="ar-only" dir="rtl">ما بنَوه يوم كانوا في المقدّمة، وماذا جرى، وما الذي بيدنا الآن حقًّا.</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="ayah-banner">
     <div class="container">
       <div class="ayah-arabic" id="ayahArabic"></div>
-      <p class="ayah-text" id="ayahText"></p>
+      <p class="ayah-text en-only" id="ayahText"></p>
       <p class="ayah-ref" id="ayahRef"></p>
     </div>
   </section>
@@ -223,9 +288,10 @@
   <section class="photo-band" style="background-image:url('img/mosque-night.jpg');">
     <div class="band-inner reveal">
       <div class="band-arabic">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا</div>
-      <h2>Knowledge That Brings Peace to the Heart</h2>
-      <p>Every verse, every hadith, and every story on this site comes with its full reference — so you can read, verify, and reflect with confidence.</p>
-      <p style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">كل آية وحديث وقصة في هذا الموقع مع مرجعها الكامل — لتقرأ وتتحقق وتتدبر بثقة واطمئنان.</p>
+      <h2 class="en-only">Knowledge That Brings Peace to the Heart</h2>
+      <h2 class="ar-only" dir="rtl">علمٌ تطمئنّ به القلوب</h2>
+      <p class="en-only">Every verse, every hadith, and every story on this site comes with its full reference — so you can read, verify, and reflect with confidence.</p>
+      <p class="ar-only" style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">كل آية وحديث وقصة في هذا الموقع مع مرجعها الكامل — لتقرأ وتتحقق وتتدبر بثقة واطمئنان.</p>
     </div>
   </section>
 
@@ -305,9 +371,10 @@
   <section class="photo-band" style="background-image:url('img/mosque-beach.jpg');">
     <div class="band-inner reveal">
       <div class="band-arabic">إِنَّ مَعَ الْعُسْرِ يُسْرًا</div>
-      <h2>Indeed, With Hardship Comes Ease</h2>
-      <p>Wherever you are in the world, and whatever you are going through, there is guidance here for you — in both Arabic and English.</p>
-      <p style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">أينما كنت في العالم، ومهما كان ما تمر به، ستجد هنا ما يهديك — بالعربية والإنجليزية.</p>
+      <h2 class="en-only">Indeed, With Hardship Comes Ease</h2>
+      <h2 class="ar-only" dir="rtl">إنّ مع العسر يسرًا</h2>
+      <p class="en-only">Wherever you are in the world, and whatever you are going through, there is guidance here for you — in both Arabic and English.</p>
+      <p class="ar-only" style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">أينما كنت في العالم، ومهما كان ما تمر به، ستجد هنا ما يهديك — بالعربية والإنجليزية.</p>
     </div>
   </section>
 
@@ -398,8 +465,8 @@
       <h2 class="section-title">Recitations Worth Hearing</h2>
       <div class="divider"></div>
       <p class="section-sub" style="margin-top:18px;">
-        A few recitations chosen for the beauty of the reading and the weight of the verses. Listen with an unhurried heart, then read the passage in its full surah.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">تلاوات مختارة لجمال الأداء وعظمة الآيات. استمع بقلب حاضر، ثم اقرأ الآيات في سورتها كاملة.</span>
+        <span class="en-only">A few recitations chosen for the beauty of the reading and the weight of the verses. Listen with an unhurried heart, then read the passage in its full surah.</span>
+        <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">تلاوات مختارة لجمال الأداء وعظمة الآيات. استمع بقلب حاضر، ثم اقرأ الآيات في سورتها كاملة.</span>
       </p>
       <div id="recitationsGrid" class="recitations-grid"></div>
     </div>
@@ -440,13 +507,13 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608261336"></script>
+  <script src="js/data.js?v=202608261450"></script>
   <!-- The daily box needs the sunnah practices and the Quran
        commitment. wird.js is read only if a commitment exists; it is
        small and shares the storage with the Quran page. -->
-  <script src="js/sunnah.js?v=202608261336"></script>
-  <script src="js/wird.js?v=202608261336"></script>
-  <script src="js/daily.js?v=202608261336"></script>
+  <script src="js/sunnah.js?v=202608261450"></script>
+  <script src="js/wird.js?v=202608261450"></script>
+  <script src="js/daily.js?v=202608261450"></script>
   <script>
     /* ---------- The numbers strip ----------
        COUNTED, not typed. data.js is the only data file the home page loads
@@ -604,8 +671,8 @@
       const card = document.createElement("div");
       card.className = "hadith-card";
       card.innerHTML = `
-        ${h.title ? `<div style="font-weight:700;color:var(--green-dark);font-size:1.02rem;margin-bottom:8px;">${h.title}</div>` : ""}
-        <span class="topic-tag">${h.topic}</span>
+        ${h.title ? `<div class="en-only" style="font-weight:700;color:var(--green-dark);font-size:1.02rem;margin-bottom:8px;">${h.title}</div>` : ""}
+        <span class="topic-tag en-only">${h.topic}</span>
         <span class="topic-tag" style="background:${h.strength.startsWith('Sahih') ? '#e6f4ea' : '#fff8e1'};color:${h.strength.startsWith('Sahih') ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
         ${h.arabic ? `<p style="font-family:'Amiri',serif;font-size:1.15rem;line-height:2;direction:rtl;text-align:right;color:var(--green-dark);margin-bottom:8px;">${h.arabic} <button class="speak-btn" data-lang="ar" style="border:none;background:none;cursor:pointer;font-size:1rem;" title="Listen">🔊</button></p>` : ""}
         <p class="hadith-text en-only">"${h.text}" <button class="speak-btn" data-lang="en" style="border:none;background:none;cursor:pointer;font-size:1rem;" title="Listen">🔊</button></p>
@@ -614,8 +681,8 @@
       hadithPreview.appendChild(card);
     });
   </script>
-  <script src="js/wordlens.js?v=202608261336"></script>
-  <script src="js/main.js?v=202608261336"></script>
+  <script src="js/wordlens.js?v=202608261450"></script>
+  <script src="js/main.js?v=202608261450"></script>
   <script>
     /* ---------- Recommended recitations ----------
        Reads what the admin published in data/site-config.json. Runs after
@@ -657,8 +724,8 @@
           : `<div class="rec-noposter">▶</div>`;
         return `<article class="rec-card">
           <div class="rec-heading">
-            <h3 class="rec-title">${iitwEsc(r.title || "Recitation")}</h3>
-            ${r.titleAr ? `<div class="rec-title-ar" dir="rtl">${iitwEsc(r.titleAr)}</div>` : ""}
+            <h3 class="rec-title${r.titleAr ? " en-only" : ""}">${iitwEsc(r.title || "Recitation")}</h3>
+            ${r.titleAr ? `<div class="rec-title-ar ar-only" dir="rtl">${iitwEsc(r.titleAr)}</div>` : ""}
           </div>
           <div class="rec-player" data-embed="${iitwEsc(v.embed)}" data-kind="${v.kind}" role="button" tabindex="0"
                aria-label="Play: ${iitwEsc(r.title || "recitation")}">
@@ -666,11 +733,11 @@
             <span class="rec-play" aria-hidden="true">▶</span>
           </div>
           <div class="rec-meta">
-            ${r.reciter ? `<div class="rec-reciter">🎙 ${iitwEsc(r.reciter)}${r.reciterAr ? `<span class="rec-reciter-ar" dir="rtl">${iitwEsc(r.reciterAr)}</span>` : ""}</div>` : ""}
-            ${ref ? `<div class="rec-ref">${iitwEsc(ref)}</div>` : ""}
-            ${refAr ? `<div class="rec-ref-ar" dir="rtl">${iitwEsc(refAr)}</div>` : ""}
-            ${r.note ? `<p class="rec-note">${iitwEsc(r.note)}</p>` : ""}
-            ${r.noteAr ? `<p class="rec-note rec-note-ar" dir="rtl">${iitwEsc(r.noteAr)}</p>` : ""}
+            ${r.reciter ? `<div class="rec-reciter">🎙 <span class="${r.reciterAr ? "en-only" : ""}">${iitwEsc(r.reciter)}</span>${r.reciterAr ? `<span class="rec-reciter-ar ar-only" dir="rtl">${iitwEsc(r.reciterAr)}</span>` : ""}</div>` : ""}
+            ${ref ? `<div class="rec-ref${refAr ? " en-only" : ""}">${iitwEsc(ref)}</div>` : ""}
+            ${refAr ? `<div class="rec-ref-ar ar-only" dir="rtl">${iitwEsc(refAr)}</div>` : ""}
+            ${r.note ? `<p class="rec-note${r.noteAr ? " en-only" : ""}">${iitwEsc(r.note)}</p>` : ""}
+            ${r.noteAr ? `<p class="rec-note rec-note-ar ar-only" dir="rtl">${iitwEsc(r.noteAr)}</p>` : ""}
           </div>
         </article>`;
       }).join("");
@@ -698,6 +765,6 @@
       if (window.applyI18n) window.applyI18n();
     })();
   </script>
-  <script src="js/i18n.js?v=202608261336"></script>
+  <script src="js/i18n.js?v=202608261450"></script>
 </body>
 </html>
