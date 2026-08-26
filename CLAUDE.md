@@ -13,6 +13,46 @@ every feature, the owner's rules, open work, credentials, and content templates.
 Read it before starting non-trivial work. (The same content is also split into
 seven numbered files in `HANDOFF/`.)
 
+## FIX THE CLASS, NOT THE INSTANCE — he asked for this in these words
+
+> "when I mention any problem I am not just asking to fix this one sentence,
+> I meant to fix the entire problem from the root to make sure the answers
+> come out correct — and that is what you didn't do at all."
+
+He is right, and this is the rule he most wants kept. When he reports one
+wrong answer, he is reporting a SAMPLE of a fault, not the fault. Find what
+produced it, fix that, then test the whole class with a battery of cases he
+did NOT mention. A patch that makes his example pass and leaves the rest
+broken wastes his next hour finding the next one.
+
+Three failures from 26 August that all came from ignoring this:
+
+* He reported that the Verify page answered "اطلبوا العلم ولو في الصين" with
+  the wrong hadith. I raised a threshold so that one case passed. The real
+  cause was two levels down: **one normaliser was doing two incompatible
+  jobs.** `vSkel` drops every weak letter, which is REQUIRED for the exact
+  matcher because the Uthmani script spells the long a four ways — but the
+  same function was feeding the word-level features, where it turned الوطن
+  into لطن and الإيمان into لمن. Every rule about word length was measuring
+  a crushed word. There are now two normalisers, `vSkel` for matching and
+  `vSkelWord` for words, and the file says why in a header comment.
+
+* The related-content search then fired but ranked by how MANY words were
+  shared, so الجنة pulled in everything about Paradise. **Rank by rarity,
+  and judge rarity RELATIVE TO THE CLAIM** — the Guidance page had already
+  learned this exact lesson and written it down, and I did not apply it.
+
+* The Verify hero was jammed against the edge of the screen because I
+  invented `.hero-inner` instead of using `.page-hero > .container` like
+  every other page. The class did not exist in style.css at all. **Follow
+  the existing pattern; check how the site already does a thing before
+  inventing a second way.**
+
+And the testing rule that goes with it: **a battery that only checks whether
+an answer appeared is not a test.** Check WHAT came back. I reported "Ibn
+Majah 226" as a pass without reading hadith 226, which is a different hadith
+entirely — he found that, not me.
+
 ## The rules that matter most
 
 1. **Run `./bump-version.sh` before every commit.** It cache-busts the CSS/JS

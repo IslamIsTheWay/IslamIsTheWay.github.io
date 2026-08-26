@@ -62,6 +62,41 @@ function vIsArabic(s) { return V_ARABIC.test(s || ""); }
 /* Consonant skeleton. Everything the script spells inconsistently is
    removed from BOTH sides, so a phrase typed the ordinary way finds its
    place in a text written in the Uthmani or the classical hand. */
+/* ================= TWO NORMALISERS, AND THEY ARE NOT INTERCHANGEABLE ======
+   This file needs two different ideas of "the same word", and using one for
+   both jobs was the root of a whole family of wrong answers.
+
+   vSkelMatch — drops every weak letter (ا و ي and the hamza forms). That is
+     REQUIRED for the exact matcher, because the Uthmani script spells the
+     long a four different ways and nothing else survives the variance.
+
+   vSkelWord — keeps the letters and folds the alef forms instead. That is
+     required for anything that works with WORDS: content words, coverage,
+     and the related-subject search.
+
+   WHY IT MATTERS. vSkelMatch turns الوطن into لطن and الإيمان into لمن.
+   For matching that is harmless, because both sides are crushed the same
+   way. For words it is fatal: a seven-letter subject becomes three letters,
+   every word-length rule then measures the wrong thing, and the related
+   search could not see that a claim was about الإيمان at all. The
+   four-letter minimum added earlier was compensating for this instead of
+   fixing it.
+   ======================================================================= */
+
+/* Word-level: marks off, alef forms folded, LETTERS KEPT. */
+function vSkelWord(s) {
+  return String(s || "")
+    .normalize("NFC")
+    .replace(/[ؐ-ًؚ-ٰٟۖ-ۭـ]/g, "")
+    .replace(/[ٱآأإ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .replace(/ة/g, "ه")
+    .replace(/[^ء-ي\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/* Match-level: weak letters dropped as well. */
 function vSkel(s) {
   s = (s || "").normalize("NFD");
   let out = "";
@@ -127,7 +162,9 @@ const V_BOILER = [
   "قال رسول الله", "قال النبي", "عن رسول الله", "عن النبي",
   "رضي الله عنه", "رضي الله عنها", "رضي الله عنهم", "رضي الله عنهما",
   "عليه السلام", "حدثنا", "أخبرنا", "اخبرنا", "قال صلى الله عليه وسلم"
-].map(vSkel).filter(function (s) { return s.length >= 4; })
+].map(function (p) { return [vSkel(p), vSkelWord(p)]; })
+ .reduce(function (a, b) { return a.concat(b); }, [])
+ .filter(function (s) { return s.length >= 4; })
  .sort(function (a, b) { return b.length - a.length; });   // longest first
 
 function vStripBoiler(skel) {
@@ -258,7 +295,7 @@ function vScore(claimSkel, textSkel, gramSet) {
   /* and the shorter side's own words must actually be there — see above */
   const shorter = claimSkel.length <= textSkel.length ? claimSkel : textSkel;
   const longer  = claimSkel.length <= textSkel.length ? textSkel : claimSkel;
-  if (vWordCover(shorter, longer) < V_MIN_COVER) return 0;
+  if (vWordCover(shorter, longer) < V_MIN_COVER) return 0;   // both already match-level
   return share;
 }
 
@@ -436,7 +473,7 @@ const V_STOP = ("من في على الى عن مع كل ما لا ان اذا ه
 
 function vContentWords(skel) {
   const stop = {};
-  for (let i = 0; i < V_STOP.length; i++) stop[vSkel(V_STOP[i]) || V_STOP[i]] = 1;
+  for (let i = 0; i < V_STOP.length; i++) stop[vSkelWord(V_STOP[i]) || V_STOP[i]] = 1;
   const seen = {}, out = [];
   skel.split(" ").forEach(function (w) {
     if (w.length < 3 || stop[w] || seen[w]) return;
@@ -445,50 +482,119 @@ function vContentWords(skel) {
   return out;
 }
 
-function vSearchRelated(claim) {
-  const ar = vIsArabic(claim);
-  const cs = ar ? vStripBoiler(vSkel(claim)) : vSkelEn(claim);
-  const words = vContentWords(cs);
-  if (!words.length) return [];
-  const hits = [];
+/* Document frequency over everything this site carries, built once.
 
-  function tryOne(text, entry) {
-    if (!text) return;
-    const skel = ar ? vSkel(text) : vSkelEn(text);
-    let n = 0, strong = 0;
-    for (let i = 0; i < words.length; i++) {
-      if (skel.indexOf(words[i]) >= 0) { n++; if (words[i].length >= 4) strong++; }
-    }
-    /* AT LEAST ONE SHARED WORD OF FOUR LETTERS OR MORE. A three-letter
-       Arabic word is far too common to carry a subject: searching the
-       "seek knowledge even in China" wording returned a hadith about the
-       hour of answered supplication on Friday, purely because طلب appears
-       in it meaning ASKING rather than seeking knowledge. It shared no
-       other word with the claim at all. */
-    if (strong >= 1) hits.push(Object.assign({ kind: "related", score: n / words.length, shared: n }, entry));
-  }
+   WHY THIS EXISTS. Ranking related material by how MANY words it shares was
+   useless, because the words a claim shares are usually the common ones:
+   "الجنة تحت أقدام الأمهات" returned nothing about mothers at all, because
+   الجنة and تحت pulled in every entry that mentions Paradise. A word found
+   in a hundred entries carries almost no information; one found in three is
+   decisive.
 
+   This is the same lesson the Guidance page learned and wrote down —
+   relevance there uses word rarity so common words score near zero — and it
+   should have been applied here from the start rather than after being
+   told twice. */
+var V_DF = null, V_DOCS = 0;
+
+function vEachEntry(fn) {
   if (typeof HADITHS !== "undefined") {
     HADITHS.forEach(function (h) {
-      tryOne(ar ? (h.arabic + " " + (h.topic || "")) : (h.text + " " + (h.title || "") + " " + (h.topic || "")),
-        { title: h.title || h.topic, ar: h.arabic, en: h.text,
-          ref: h.ref, strength: h.strength, where: "hadith.html" });
+      fn(h.arabic + " " + (h.topic || ""), h.text + " " + (h.title || "") + " " + (h.topic || ""),
+         { title: h.title || h.topic, ar: h.arabic, en: h.text,
+           ref: h.ref, strength: h.strength, where: "hadith.html" });
     });
   }
   if (typeof SUNNAH !== "undefined") {
     SUNNAH.forEach(function (s) {
-      tryOne(ar ? ((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || ""))
-                : (s.title + " " + s.detail),
-        { title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
-          ref: s.ref, strength: s.strength, where: "sunnah.html" });
+      fn((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || ""),
+         s.title + " " + s.detail,
+         { title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
+           ref: s.ref, strength: s.strength, where: "sunnah.html" });
     });
   }
   if (typeof ADHKAR !== "undefined") {
     ADHKAR.forEach(function (d) {
-      tryOne(ar ? (d.arabic + " " + (d.titleAr || "")) : (d.en + " " + (d.title || "")),
-        { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
-          ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" });
+      fn(d.arabic + " " + (d.titleAr || ""), d.en + " " + (d.title || ""),
+         { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
+           ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" });
     });
   }
-  return hits.sort(function (a, b) { return b.shared - a.shared || b.score - a.score; }).slice(0, 3);
+}
+
+function vBuildDf() {
+  V_DF = {}; V_DOCS = 0;
+  vEachEntry(function (arText, enText) {
+    V_DOCS++;
+    var seen = {};
+    vSkelWord(arText).split(" ").concat(vSkelEn(enText).split(" ")).forEach(function (w) {
+      if (w.length < 3 || seen[w]) return;
+      seen[w] = 1;
+      V_DF[w] = (V_DF[w] || 0) + 1;
+    });
+  });
+}
+
+function vWeight(w) {
+  if (!V_DF) vBuildDf();
+  var df = V_DF[w] || 0;
+  return Math.log((V_DOCS + 1) / (df + 1));
+}
+
+/* At least one shared word has to be genuinely distinctive — and
+   "distinctive" is judged RELATIVE TO THIS CLAIM, not against a fixed
+   number. An absolute bar cannot work: الجنة weighs 3.22, which sounds
+   rare until the claim is "الجنة تحت أقدام الأمهات", where the word that
+   actually carries the subject is الأمهات at 5.52. Anything matching only
+   on الجنة is then about Paradise in general, not about mothers, and it
+   was filling the panel with exactly that.
+
+   So an entry must match on a word worth at least this fraction of the
+   best word the claim has. When nothing clears it, the honest result is
+   an empty related section — the site simply has nothing close, and
+   saying so beats three confident irrelevancies. */
+var V_MIN_WEIGHT = 1.8;
+var V_REL_SHARE = 0.65;
+
+function vSearchRelated(claim) {
+  var ar = vIsArabic(claim);
+  var cs = ar ? vStripBoiler(vSkelWord(claim)) : vSkelEn(claim);
+  var words = vContentWords(cs);
+  if (!words.length) return [];
+  if (!V_DF) vBuildDf();
+  var hits = [];
+
+  /* the best word this claim has to offer, which sets the bar for the rest */
+  var claimBest = 0;
+  for (var k = 0; k < words.length; k++) {
+    if (words[k].length >= 4) claimBest = Math.max(claimBest, vWeight(words[k]));
+  }
+  var bar = Math.max(V_MIN_WEIGHT, claimBest * V_REL_SHARE);
+
+  vEachEntry(function (arText, enText, entry) {
+    var skel = ar ? vSkelWord(arText) : vSkelEn(enText);
+    var total = 0, best = 0, shared = 0;
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].length >= 4 && skel.indexOf(words[i]) >= 0) {
+        var wt = vWeight(words[i]);
+        total += wt; shared++;
+        if (wt > best) best = wt;
+      }
+    }
+    /* Rarity decides, not count — see the note above vBuildDf. */
+    if (shared && best >= bar) {
+      hits.push(Object.assign({ kind: "related", score: total, best: best, shared: shared }, entry));
+    }
+  });
+
+  hits.sort(function (a, b) { return b.score - a.score; });
+  /* Drop the tail for the same reason the bar is relative: an entry scoring
+     a third of the best one is not "also relevant", it is the next thing
+     down a long list. Three weak suggestions read as padding and cost the
+     page the trust the strong one earned. */
+  if (hits.length) {
+    var top = hits[0].score;
+    hits = hits.filter(function (h) { return h.score >= top * 0.6; });
+  }
+  return hits.slice(0, 3);
 }
