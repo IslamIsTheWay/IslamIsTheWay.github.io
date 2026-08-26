@@ -497,27 +497,60 @@ function vContentWords(skel) {
    told twice. */
 var V_DF = null, V_DOCS = 0;
 
+/* THE `keys` FIELDS ARE THE WHOLE POINT FOR EVERYDAY LANGUAGE, and this
+   search was ignoring them.
+
+   The content guide in this repo says what they are for, in these words:
+   "Keys matter. They are how a natural question finds the entry. Include
+   the everyday words a person would actually type, in both languages."
+   That is exactly the problem here — nobody knows the wording of a hadith,
+   they know what it is ABOUT. Somebody typing "make connections with your
+   family" is asking for صلة الرحم and should be given it.
+
+   So every entry's searchable text now carries its keys, in both scripts,
+   and the keys are mixed into BOTH sides: Arabic keys into the Arabic text
+   and Latin keys into the English, because a key list holds both. */
+function vKeyText(keys, wantArabic) {
+  if (!keys || !keys.length) return "";
+  var out = [];
+  for (var i = 0; i < keys.length; i++) {
+    var isAr = /[ء-ي]/.test(keys[i]);
+    if (isAr === !!wantArabic) out.push(keys[i]);
+  }
+  return " " + out.join(" ");
+}
+
 function vEachEntry(fn) {
   if (typeof HADITHS !== "undefined") {
     HADITHS.forEach(function (h) {
-      fn(h.arabic + " " + (h.topic || ""), h.text + " " + (h.title || "") + " " + (h.topic || ""),
+      fn(h.arabic + " " + (h.topic || "") + vKeyText(h.keys, true),
+         h.text + " " + (h.title || "") + " " + (h.topic || "") + vKeyText(h.keys, false),
          { title: h.title || h.topic, ar: h.arabic, en: h.text,
            ref: h.ref, strength: h.strength, where: "hadith.html" });
     });
   }
   if (typeof SUNNAH !== "undefined") {
     SUNNAH.forEach(function (s) {
-      fn((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || ""),
-         s.title + " " + s.detail,
+      fn((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || "") + vKeyText(s.keys, true),
+         s.title + " " + s.detail + vKeyText(s.keys, false),
          { title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
            ref: s.ref, strength: s.strength, where: "sunnah.html" });
     });
   }
   if (typeof ADHKAR !== "undefined") {
     ADHKAR.forEach(function (d) {
-      fn(d.arabic + " " + (d.titleAr || ""), d.en + " " + (d.title || ""),
+      fn(d.arabic + " " + (d.titleAr || "") + vKeyText(d.keys, true),
+         d.en + " " + (d.title || "") + vKeyText(d.keys, false),
          { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
            ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" });
+    });
+  }
+  if (typeof PROPHET_STORIES !== "undefined") {
+    PROPHET_STORIES.forEach(function (p) {
+      fn((p.arabic || "") + " " + (p.titleAr || "") + " " + (p.lessonAr || "") + vKeyText(p.keys, true),
+         (p.title || "") + " " + (p.lesson || "") + vKeyText(p.keys, false),
+         { title: p.title, titleAr: p.titleAr, ar: p.arabic, en: p.lesson,
+           ref: p.ref, strength: p.strength, where: "stories.html" });
     });
   }
 }
@@ -556,18 +589,88 @@ function vWeight(w) {
 var V_MIN_WEIGHT = 1.8;
 var V_REL_SHARE = 0.65;
 
+/* EVERYDAY WORDS THAT MEAN THE SAME THING.
+
+   His complaint, and it is the right one: "do you think I know what the
+   words of the hadith are? most people don't know what words to use, so
+   use normal people words and not only formal words."
+
+   A person asking about صلة الرحم may well type "make connections with your
+   family" — which is a literal rendering of the Arabic — while the entry
+   itself says "ties" and "relatives". No amount of rarity weighting bridges
+   that, because the words genuinely do not overlap. So a small map of
+   everyday phrasings onto the vocabulary the content actually uses.
+
+   Kept deliberately small and concrete. It is not a thesaurus: each group
+   is one SUBJECT that people ask about in more than one way, and adding a
+   word here can only widen what is found, never change a grading. */
+var V_SYNONYMS = [
+  ["connection", "connections", "connect", "ties", "tie", "kinship", "relatives", "relative", "rahim"],
+  ["family", "relatives", "kin", "kinship", "household"],
+  ["parents", "mother", "father", "mum", "dad", "parent"],
+  ["angry", "anger", "temper", "rage", "furious"],
+  ["charity", "sadaqah", "giving", "give", "donate", "alms",
+   "poor", "needy", "money", "spend", "spending", "help"],
+  ["sleep", "sleeping", "bed", "night", "bedtime"],
+  ["cheat", "cheating", "deceive", "fraud", "dishonest"],
+  ["wash", "washing", "wudu", "ablution", "purity", "clean", "cleanliness"],
+  ["forgive", "forgiveness", "pardon", "istighfar", "repent", "repentance",
+   "sorry", "apologise", "apologize", "sin", "sins", "mistake"],
+  ["patience", "patient", "sabr", "endure", "hardship", "difficult",
+   "hard", "trouble", "distress", "sad", "sadness", "worry"],
+  ["neighbour", "neighbor", "neighbours", "neighbors"],
+  ["knowledge", "learn", "learning", "study", "seek", "ilm"],
+  ["tongue", "speech", "speak", "words", "backbiting", "gossip"],
+  ["prayer", "pray", "salah", "salat"],
+  ["fasting", "fast", "sawm", "ramadan"],
+  ["smile", "smiling", "cheerful", "face"],
+  ["mercy", "merciful", "kind", "kindness", "compassion"],
+  ["debt", "loan", "owe", "borrow"],
+  ["orphan", "orphans"],
+  ["intention", "intentions", "niyyah", "sincerity"]
+];
+
+/* Every group a word belongs to, flattened into the extra words to try. */
+function vExpand(words) {
+  var out = words.slice(), seen = {}, i, j, g;
+  words.forEach(function (w) { seen[w] = 1; });
+  for (i = 0; i < V_SYNONYMS.length; i++) {
+    g = V_SYNONYMS[i];
+    var inGroup = false;
+    for (j = 0; j < g.length; j++) { if (seen[g[j]]) { inGroup = true; break; } }
+    if (!inGroup) continue;
+    for (j = 0; j < g.length; j++) {
+      if (!seen[g[j]]) { seen[g[j]] = 1; out.push(g[j]); }
+    }
+  }
+  return out;
+}
+
 function vSearchRelated(claim) {
   var ar = vIsArabic(claim);
   var cs = ar ? vStripBoiler(vSkelWord(claim)) : vSkelEn(claim);
   var words = vContentWords(cs);
   if (!words.length) return [];
   if (!V_DF) vBuildDf();
+  /* An English claim is widened through the everyday-word map. Arabic is
+     left alone: its content words are already the words the entries use,
+     and widening it would need a root normaliser, not a word list. */
+  if (!ar) words = vExpand(words);
   var hits = [];
 
-  /* the best word this claim has to offer, which sets the bar for the rest */
+  /* The bar is set by the best word the claim has THAT ACTUALLY EXISTS in
+     the corpus. A word found in nothing gets the maximum rarity score, which
+     is meaningless — it is absence, not distinctiveness — and letting it set
+     the bar shuts out every real match beneath it. Measured: "make
+     connections with your family" scored 5.52 on "connections", which occurs
+     in no entry at all, and that pushed the bar above "family" at 3.58, so
+     the answer was nothing. This is the same df = 0 trap the Guidance page
+     documented; it should not have been repeated here. */
   var claimBest = 0;
   for (var k = 0; k < words.length; k++) {
-    if (words[k].length >= 4) claimBest = Math.max(claimBest, vWeight(words[k]));
+    if (words[k].length >= 4 && (V_DF[words[k]] || 0) > 0) {
+      claimBest = Math.max(claimBest, vWeight(words[k]));
+    }
   }
   var bar = Math.max(V_MIN_WEIGHT, claimBest * V_REL_SHARE);
 
