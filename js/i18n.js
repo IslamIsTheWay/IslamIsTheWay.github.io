@@ -24,6 +24,7 @@ const AR = {
   "Golden Age": "العصر الذهبي",
   "The Golden Age of Islam": "العصر الذهبي للإسلام",
   "Guidance": "التوجيه",
+  "Verify": "تحقَّق",
   "Courses": "الدورات",
   "Search": "البحث",
   "Login": "تسجيل الدخول",

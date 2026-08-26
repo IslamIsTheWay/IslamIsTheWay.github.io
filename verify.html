@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify a Hadith or Verse — Check Before You Forward It | IslamBasics</title>
+  <meta name="description" content="Paste a forwarded hadith or verse and find out what it actually is — whether it is in the Quran, in Sahih al-Bukhari or Muslim, or in the four Sunan, with its grading. In Arabic and English." />
+  <link rel="canonical" href="https://islamistheway.github.io/verify.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/logo-emblem.png" />
+  <link rel="stylesheet" href="css/style.css?v=202608260850" />
+  <!-- Social sharing. Title and description are taken from this
+       page's own tags so they cannot drift from what it says. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="IslamBasics" />
+  <meta property="og:title" content="Verify a Hadith or Verse — Check Before You Forward It | IslamBasics" />
+  <meta property="og:description" content="Paste a forwarded hadith or verse and find out what it actually is — whether it is in the Quran, in Sahih al-Bukhari or Muslim, or in the four Sunan, with its grading. In Arabic and English." />
+  <meta property="og:url" content="https://islamistheway.github.io/verify.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Verify a Hadith or Verse — Check Before You Forward It | IslamBasics" />
+  <meta name="twitter:description" content="Paste a forwarded hadith or verse and find out what it actually is — whether it is in the Quran, in Sahih al-Bukhari or Muslim, or in the four Sunan, with its grading. In Arabic and English." />
+  <!-- Installable as an app (PWA). The service worker is network-first and
+       cannot cause a stale page — see the note at the top of sw.js. -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#1e7e45" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="IslamBasics" />
+</head>
+<body>
+
+  <div class="topbar">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ<span class="en-only"> — In the name of Allah, the Most Gracious, the Most Merciful</span></div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <img class="logo-mosque" src="img/logo-emblem.png" alt="IslamBasics" width="46" height="46" />
+        IslamBasics
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="quran.html">Quran</a>
+        <a href="prophets.html">Prophets</a>
+        <a href="companions.html">Companions</a>
+        <a href="hadith.html">Hadith</a>
+        <a href="sunnah.html">Sunnah</a>
+        <a href="stories.html">Stories</a>
+        <a href="judgement.html">Judgement Day</a>
+        <a href="golden.html">Golden Age</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="verify.html">Verify</a>
+        <a href="courses.html">Courses</a>
+        <a href="search.html">Search</a>
+        <a href="login.html" class="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero ph-photo ph-verify">
+    <div class="hero-inner">
+      <h1><span class="en-only">Check it before you forward it</span><span class="ar-only" dir="rtl">تحقَّق قبل أن تُرسِلها</span></h1>
+      <p><span class="en-only">Paste the message. Find out what it actually is.</span><span class="ar-only" dir="rtl">ألصِق الرسالة، واعرف ما هي حقًّا.</span></p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <div class="vf-intro">
+          <p class="en-only">Somebody sends you a message: <em>“The Prophet ﷺ said whoever recites this a hundred times…”</em> — and you have no way to check it. That is what this page is for.</p>
+          <p class="ar-only" dir="rtl">تصلك رسالة: <em>«قال النبيُّ ﷺ: من قال هذا مئة مرّة…»</em> — ولا تملك طريقةً للتحقّق. ولهذا وُضعت هذه الصفحة.</p>
+          <p class="en-only">Paste it below, in Arabic or English. The page searches the Quran first, then everything this site itself carries with its grading, and then — if you ask it to — the full collections.</p>
+          <p class="ar-only" dir="rtl">ألصِقها في الأسفل، بالعربيّة أو بالإنجليزيّة. تبحث الصفحةُ في القرآن أوّلًا، ثم في كلّ ما يحمله هذا الموقع بدرجته، ثم — إن طلبتَ — في الكتب كاملةً.</p>
+        </div>
+
+        <div class="vf-box">
+          <label for="vfInput" class="vf-label">
+            <span class="en-only">The text you received</span>
+            <span class="ar-only" dir="rtl">النصُّ الذي وصلك</span>
+          </label>
+          <textarea id="vfInput" rows="5" placeholder="الصق النص هنا…  /  Paste the text here…"></textarea>
+          <div class="vf-actions">
+            <button id="vfGo" class="btn">
+              <span class="en-only">Check it</span><span class="ar-only" dir="rtl">تحقَّق</span>
+            </button>
+            <button id="vfMic" class="btn btn-ghost" title="Speak">🎤</button>
+            <button id="vfClear" class="btn btn-ghost">
+              <span class="en-only">Clear</span><span class="ar-only" dir="rtl">مسح</span>
+            </button>
+            <span id="vfMicStatus" class="vf-mic-status"></span>
+          </div>
+          <div class="vf-examples">
+            <span class="en-only">Try one:</span><span class="ar-only" dir="rtl">جرّب:</span>
+            <button class="vf-ex" data-t="إنما الأعمال بالنيات">إنما الأعمال بالنيات</button>
+            <button class="vf-ex" data-t="اطلبوا العلم ولو في الصين">اطلبوا العلم ولو في الصين</button>
+            <button class="vf-ex" data-t="حب الوطن من الإيمان">حب الوطن من الإيمان</button>
+            <button class="vf-ex" data-t="وأن ليس للإنسان إلا ما سعى">وأن ليس للإنسان إلا ما سعى</button>
+          </div>
+        </div>
+
+        <div id="vfResults"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>IslamBasics</h4>
+        <p class="en-only">Learn Islam from its sources — the Quran and the authentic Sunnah.</p>
+        <p class="ar-only" dir="rtl">تعلَّم الإسلام من مصادره — القرآن والسنّة الصحيحة.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="quran.html">Quran</a></li>
+          <li><a href="hadith.html">Hadith</a></li>
+          <li><a href="sunnah.html">Sunnah</a></li>
+          <li><a href="verify.html">Verify</a></li>
+          <li><a href="guidance.html">Guidance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#feedback">Send feedback</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 IslamBasics</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js?v=202608260850"></script>
+  <script src="js/sunnah.js?v=202608260850"></script>
+  <script src="js/adhkar.js?v=202608260850"></script>
+  <script src="js/quran-text.js?v=202608260850"></script>
+  <script src="js/verify.js?v=202608260850"></script>
+  <script>
+  /* ============================================================
+     The page logic. The engine is in js/verify.js; this file only
+     renders what it returns.
+
+     THE ONE RULE THAT GOVERNS EVERY BRANCH BELOW: this page never
+     says a text is fabricated. Not finding something proves that
+     we did not find it, and nothing more — the wording may be a
+     paraphrase, or it may sit in a book this site does not carry.
+     Every not-found answer says so and points at a scholar.
+     ============================================================ */
+  (function () {
+    const input = document.getElementById("vfInput");
+    const box = document.getElementById("vfResults");
+    const esc = s => String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+    const pair = (en, ar) =>
+      `<span class="en-only">${en}</span><span class="ar-only" dir="rtl">${ar}</span>`;
+
+    function arabicLine(t) {
+      return t ? `<p class="vf-ar" dir="rtl">${esc(t)}</p>` : "";
+    }
+
+    /* ---- a Quran hit. Rendered first and loudest, because mistaking a
+       hadith for a verse is the error this whole site was built around. --- */
+    function quranCard(h) {
+      const name = (typeof SURAHS !== "undefined" &&
+        (SURAHS.find(s => s.number === h.surah) || {}).name) || ("Surah " + h.surah);
+      const nameAr = (typeof SURAHS !== "undefined" &&
+        (SURAHS.find(s => s.number === h.surah) || {}).arabic) || "";
+      return `<div class="vf-card vf-quran">
+        <div class="vf-verdict">📖 ${pair("This is the Quran", "هذا قرآن")}</div>
+        ${arabicLine(h.ar)}
+        <p class="en-only">${esc(h.en)}</p>
+        <div class="vf-src">${pair(
+          `Surah ${esc(name)} (${h.surah}:${h.ayah})`,
+          `سورة ${esc(nameAr || name)} (${h.surah}:${h.ayah})`)}</div>
+        <div class="vf-note">${pair(
+          "If it reached you called a hadith, that was wrong — it is a verse of the Quran. Keeping the two apart matters more than almost anything else on this subject.",
+          "فإن وصلتك على أنها حديث فذلك خطأ — بل هي آيةٌ من القرآن. والتفريقُ بينهما أهمُّ ما في هذا الباب.")}</div>
+        <a class="vf-go" href="quran.html">${pair("Open it on the Quran page", "افتحها في صفحة القرآن")}</a>
+      </div>`;
+    }
+
+    /* ---- something this site already carries, with the grading it was
+       written with. This is the best possible answer: a human graded it. -- */
+    function siteCard(h) {
+      return `<div class="vf-card vf-site">
+        <div class="vf-verdict">✅ ${pair("This site carries this, and it is graded",
+                                          "هذا موجودٌ في الموقع بدرجته")}</div>
+        ${h.title ? `<div class="vf-title">${esc(h.title)}</div>` : ""}
+        ${arabicLine(h.ar)}
+        ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
+        ${h.ref ? `<div class="vf-src">${esc(h.ref)}</div>` : ""}
+        ${h.strength ? `<div class="vf-grade">${esc(h.strength)}</div>` : ""}
+        <a class="vf-go" href="${esc(h.where || "hadith.html")}">${pair("See it in context", "انظرها في موضعها")}</a>
+      </div>`;
+    }
+
+    /* ---- a hit in a full collection. NOTE THE NUMBERING RULE: Muslim's
+       numbering in this API is sequential and does NOT match the standard
+       numbering, so a Muslim hit shows its BOOK and no number at all. ----- */
+    function colCard(h) {
+      const twoSahihs = h.col.id === "bukhari" || h.col.id === "muslim";
+      const cite = h.col.numbered
+        ? pair(`${h.col.en} ${h.n}`, `${h.col.ar} ${h.n}`)
+        : pair(`${h.col.en} — cited by book, not by number`,
+               `${h.col.ar} — يُعزى بالكتاب لا بالرقم`);
+      return `<div class="vf-card vf-col">
+        <div class="vf-verdict">✅ ${pair("Found in the collections", "وُجد في الكتب")}</div>
+        ${arabicLine(h.ar)}
+        ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
+        <div class="vf-src">${cite}</div>
+        <div class="vf-grade">${twoSahihs
+          ? pair("This is one of the two Sahihs — the highest grade there is.",
+                 "هذا من الصحيحين، وهو أعلى الدرجات.")
+          : pair("This is OUTSIDE the two Sahihs. Being in this book does not by itself make it authentic — it needs a scholar's grading, and this page does not invent one.",
+                 "هذا **خارج الصحيحين**. ووجودُه في هذا الكتاب لا يجعله صحيحًا بنفسه، بل يحتاج إلى تصحيح عالم، ولا تخترع هذه الصفحةُ تصحيحًا.")}</div>
+      </div>`;
+    }
+
+    /* ---- nothing found. The most important branch on the page. ---------- */
+    function notFound(searched) {
+      return `<div class="vf-card vf-none">
+        <div class="vf-verdict">⚠️ ${pair("We did not find this", "لم نجد هذا")}</div>
+        <p class="en-only"><strong>This is not the same as saying it is fabricated, and this page will not say that.</strong> It means only that we did not find these words in what we searched.</p>
+        <p class="ar-only" dir="rtl"><strong>وليس هذا كقولنا إنه موضوع، ولن تقوله هذه الصفحة.</strong> وإنما معناه أننا لم نجد هذه الألفاظ فيما بحثنا فيه.</p>
+        <p class="en-only">Three ordinary reasons a real hadith is not found here: the wording you were sent is a <strong>paraphrase</strong> rather than the exact text; it is in a collection this site does not carry; or a word was mistyped.</p>
+        <p class="ar-only" dir="rtl">وثلاثةُ أسبابٍ عاديّةٍ لا يوجد بها الحديثُ الثابت ههنا: أن يكون اللفظُ الذي وصلك <strong>روايةً بالمعنى</strong> لا نصًّا؛ أو أن يكون في كتابٍ لا يحمله هذا الموقع؛ أو أن تكون كلمةٌ كُتبت خطأً.</p>
+        <div class="vf-searched">${pair("Searched: " + searched.en, "بُحث في: " + searched.ar)}</div>
+        <div class="vf-note">${pair(
+          "What to do: do not forward it while you are unsure. Ask someone who knows, or check binbaz.org.sa or binothaimeen.net. Passing on something about the Prophet ﷺ that he did not say is not a small thing.",
+          "وماذا تصنع: لا تُرسِلها وأنت غيرُ متيقّن. واسأل من يعلم، أو راجع binbaz.org.sa أو binothaimeen.net. فنقلُ ما لم يقله النبيُّ ﷺ عنه ليس بالأمر الهيّن.")}</div>
+      </div>`;
+    }
+
+    function deepButton(label, id) {
+      return `<button class="btn btn-ghost vf-deep" id="${id}">${label}</button>`;
+    }
+
+    let lastClaim = "";
+
+    function run() {
+      const claim = input.value.trim();
+      lastClaim = claim;
+      if (claim.length < 6) {
+        box.innerHTML = `<p class="vf-hint">${pair(
+          "Paste a little more of the text.", "ألصِق قدرًا أكبر من النصّ.")}</p>`;
+        return;
+      }
+      box.innerHTML = `<p class="vf-hint">${pair("Checking…", "جارٍ التحقّق…")}</p>`;
+
+      // Let the hint paint before the synchronous search blocks the thread.
+      setTimeout(function () {
+        const q = vSearchQuran(claim);
+        const s = vSearchSite(claim);
+        let html = "";
+        if (q.length) html += q.slice(0, 2).map(quranCard).join("");
+        if (s.length) html += s.slice(0, 3).map(siteCard).join("");
+
+        if (!html) {
+          html = notFound({ en: "the whole Quran, and everything this site carries with a grading",
+                            ar: "القرآنُ كلُّه، وكلُّ ما يحمله هذا الموقع بدرجته" });
+        }
+        html += `<div class="vf-deeprow">
+          <p>${pair("Not what you were looking for? Search the full collections as well — they are large, so they load only when you ask.",
+                    "أليس هذا ما تبحث عنه؟ ابحث في الكتب كاملةً أيضًا — وهي كبيرة، فلا تُحمَّل إلا إذا طلبتَها.")}</p>
+          ${deepButton(pair("Search the two Sahihs", "ابحث في الصحيحين"), "vfDeep1")}
+          ${deepButton(pair("Search the four Sunan and the Muwatta", "ابحث في السنن الأربعة والموطّأ"), "vfDeep2")}
+          <div id="vfDeepStatus" class="vf-hint"></div>
+          <div id="vfDeepOut"></div>
+        </div>`;
+        box.innerHTML = html;
+        wireDeep();
+        if (window.applyI18n) window.applyI18n();
+      }, 20);
+    }
+
+    function wireDeep() {
+      const st = document.getElementById("vfDeepStatus");
+      const out = document.getElementById("vfDeepOut");
+      async function go(cols, label) {
+        st.textContent = "";
+        st.innerHTML = pair("Loading " + label + "… this can take a moment.",
+                            "جارٍ تحميل " + label + "… وقد يستغرق لحظة.");
+        if (window.applyI18n) window.applyI18n();
+        let ok = true;
+        for (const c of cols) { if (!(await vLoad(c))) ok = false; }
+        if (!ok && !cols.some(c => vCache[c.id])) {
+          st.innerHTML = pair("Could not load the collections. Check your connection.",
+                              "تعذّر تحميلُ الكتب. تحقّق من الاتصال.");
+          if (window.applyI18n) window.applyI18n();
+          return;
+        }
+        const hits = vSearchLoaded(lastClaim, cols.filter(c => vCache[c.id]));
+        const names = cols.filter(c => vCache[c.id]);
+        st.innerHTML = "";
+        out.innerHTML = hits.length
+          ? hits.map(colCard).join("")
+          : notFound({ en: names.map(c => c.en).join(", "),
+                       ar: names.map(c => c.ar).join("، ") });
+        if (window.applyI18n) window.applyI18n();
+      }
+      const b1 = document.getElementById("vfDeep1");
+      const b2 = document.getElementById("vfDeep2");
+      if (b1) b1.addEventListener("click", () => go(V_SAHIH, "the two Sahihs"));
+      if (b2) b2.addEventListener("click", () => go(V_SUNAN, "the Sunan"));
+    }
+
+    document.getElementById("vfGo").addEventListener("click", run);
+    document.getElementById("vfClear").addEventListener("click", function () {
+      input.value = ""; box.innerHTML = "";
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) run();
+    });
+    document.querySelectorAll(".vf-ex").forEach(function (b) {
+      b.addEventListener("click", function () { input.value = b.dataset.t; run(); });
+    });
+
+    /* The mic, copied from the Guidance one — that version was already
+       corrected for a real fault: a mic that is not `continuous` shuts
+       while the person is still thinking. And the language comes from the
+       STORED preference, not from the lang-ar class, which is not on
+       <html> yet when this runs. If the browser has no speech API the
+       button is REMOVED, not left to explain itself when pressed. */
+    (function () {
+      const btn = document.getElementById("vfMic");
+      const status = document.getElementById("vfMicStatus");
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SR) { btn.remove(); return; }
+      let rec = null, on = false, stopped = false;
+      btn.addEventListener("click", function () {
+        if (on) { stopped = true; rec && rec.stop(); return; }
+        rec = new SR();
+        rec.lang = (localStorage.getItem("iitw-lang") === "ar") ? "ar-SA" : "en-US";
+        rec.continuous = true;
+        rec.interimResults = false;
+        stopped = false;
+        rec.onresult = function (e) {
+          for (let i = e.resultIndex; i < e.results.length; i++) {
+            if (e.results[i].isFinal) input.value += (input.value ? " " : "") + e.results[i][0].transcript;
+          }
+        };
+        rec.onend = function () { if (!stopped) { try { rec.start(); } catch (x) {} } else { on = false; btn.classList.remove("is-on"); status.textContent = ""; } };
+        rec.start();
+        on = true; btn.classList.add("is-on");
+        status.textContent = localStorage.getItem("iitw-lang") === "ar" ? "يستمع…" : "Listening…";
+      });
+    })();
+  })();
+  </script>
+
+  <script src="js/main.js?v=202608260850"></script>
+  <script src="js/i18n.js?v=202608260850"></script>
+</body>
+</html>
