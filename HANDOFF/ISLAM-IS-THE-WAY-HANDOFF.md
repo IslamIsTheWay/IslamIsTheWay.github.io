@@ -3935,3 +3935,176 @@ whenever he wants it.
   minor, and `orderDetail` explaining the numbering.
 * `js/tadabbur-tense.js` — **28 entries across 22 surahs**.
 
+
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 18 - 26 August 2026: Verify, the word lens, and the doors
+<!-- ============================================================ -->
+
+## The rule he set this session, and it now heads CLAUDE.md
+
+> "when I mention any problem I am not just asking to fix this one sentence,
+> I meant to fix the entire problem from the root."
+
+He is right and it cost him several rounds. A reported bug is a SAMPLE of a
+fault. Find what produced it, fix that, then test the CLASS with cases he did
+not name. **And a battery that only checks whether an answer appeared is not
+a test** - I reported "Ibn Majah 226" as a pass without reading hadith 226,
+which is a different hadith entirely. He found that, not me.
+
+## verify.html + js/verify.js - the authenticity checker
+
+Paste or speak a forwarded text. It searches the Quran first, then everything
+this site carries WITH its grading, then on request the two Sahihs and
+separately the four Sunan and the Muwatta.
+
+**Five rules, none of them softenable.** It never says *fabricated* - not
+finding something proves only that we did not find it. Muslim is never cited
+by number. A Sunan hit says plainly that being in the book does not make it
+authentic. The Quran is searched first and answers loudest. It always names
+what was searched.
+
+**Three input shapes, three answers.** A quotation gets a verdict. A wording
+that is not found gets the verdict plus WHAT IS ESTABLISHED on the same
+subject, from the site's own graded content. **A QUESTION gets the site's
+explanation and no verdict at all** - js/terms.js, js/scholars.js,
+js/bidah.js and js/misunderstood.js are loaded and searched for exactly that.
+
+### The matching, and every trap in it
+
+* **TWO NORMALISERS, AND THEY ARE NOT INTERCHANGEABLE.** `vSkel` drops every
+  weak letter - required for the exact matcher, because the Uthmani script
+  spells the long a four ways. `vSkelWord` keeps the letters and folds the
+  alef forms - required for anything working with WORDS. Using the
+  match-level one for words turned الوطن into لطن and الإيمان into لمن, and
+  every word-length rule was then measuring a crushed word.
+* **Arabic PUNCTUATION was surviving the skeleton.** The comma, semicolon and
+  ayah marks sit inside the Arabic Unicode block. The stored wording of
+  al-Bukhari 1 has a comma and a forward does not, so every window spanning
+  it failed at 0.00.
+* **Sampling fixed windows cannot see a TRUNCATED quotation.** Replaced with
+  a longest-common-run behind a cheap n-gram filter.
+* **The run floor must be the shorter of claim and text**, or a short hadith
+  behind a full isnad is rejected.
+* **Formulaic wording carries no signal.** The bare salutation matched a
+  hadith about the siwak at 0.60. Salutations and isnad openings are stripped.
+* **A long shared run is not enough** - the WORDS of the shorter side must
+  also be present. Without this "اطلبوا العلم ولو في الصين" was answered with
+  Ibn Majah 226, sharing only طلب العلم, while الصين occurs nowhere in Ibn
+  Majah. **He found this one.**
+* **`keys` are the everyday words and were never being read.** The content
+  guide in this repo says so explicitly. Reading them is what made ordinary
+  language work at all.
+* **df = 0 is ABSENCE, not distinctiveness.** "connections" occurs in no
+  entry, scored maximum rarity, and pushed the bar above "family". The
+  Guidance page had already documented this exact trap.
+* **Rank by rarity, judged RELATIVE TO THE CLAIM.** An absolute bar cannot
+  work: الجنة weighs 3.22, which sounds rare until the claim is about
+  الأمهات at 5.52.
+* **Performance:** the deep search took 8.8 SECONDS. Precompute each
+  collection's skeleton once at load, and drive the n-gram scan from the
+  claim with native indexOf. Now about 300ms across 15,000 hadith.
+
+## js/wordlens.js - select any Arabic word, anywhere
+
+On all 16 pages. Select a word (double-click, or long-press on a phone) and
+get its meaning in modern Arabic and English, its source where the data has
+one, and how many places in the Quran that wording occurs. It unifies
+AR_GLOSSARY (65), TERMS (59) and every per-verse word study in the tadabbur
+with its Al-Mufradat citation.
+
+**Selection, not a click** - nothing in the DOM is modified, so reading,
+copying and links are untouched and i18n.js can still walk the text nodes it
+translates. A wrapper would have broken that.
+
+**Two traps.** The tadabbur words open with alef wasla (U+0671), which sits
+outside the plain letter range and was being deleted rather than folded, so
+every one was unreachable. And الصراط needed a second looser key with the
+long vowels dropped: folding the superscript alef to a letter instead would
+have broken رحمن, which matches today precisely because it is dropped on
+both sides.
+
+## Home page: "ابدأ من حيث أنت" - eleven doors by SITUATION
+
+index.html, section id="situations", immediately after the daily box. The nav
+is organised the way the MATERIAL is organised; people arrive organised by
+their LIFE. Nothing new was written - every door opens onto content that
+already exists, and **every anchor was read out of the target page before the
+link was written.** A checker confirms all eleven resolve.
+
+Includes, at his request, **"لماذا لا ننتظر المهديّ ليُصلح كلَّ شيء؟"**
+pointing at guidance.html#misunderstood.
+
+## Guidance: the sixty-second answer, on all 8 misunderstood subjects
+
+Each subject opens with a `say` block: two or three sentences the reader can
+say aloud, the single strongest text under it with its reference, and a
+button that copies both in whichever language is showing. The fields are
+`say`, `sayAr`, `sayProof`, `sayProofAr`, `sayRef`, `sayRefAr`, on the
+SECTION rather than the card.
+
+The greater-jihad narration stays refused; the jihad answer uses al-Bukhari
+3004 (ففيهما فجاهد), which is authentic and stronger. Every number used was
+re-verified against the collection text first.
+
+## Arabic sweep of the home page - 19 leaks down to 3
+
+Never done before. All the same documented shape: an Arabic half with
+dir="rtl" and no .ar-only, so the English beside it never hid. The recitation
+cards (13), both photo bands (one had no Arabic heading at all), the
+recitations subtitle, the ayah translation, and the hadith preview's title
+and topic, which have NO Arabic twin in the data and are now hidden rather
+than invented.
+
+**The 3 that remain are his own published recitations** where only the
+English field was filled in. Showing the English beats showing a blank;
+filling titleAr / reciterAr in the dashboard switches them.
+
+## THE NAV IS FULL
+
+Adding "Verify" as the 14th link genuinely broke the bar. Measured live:
+1474px needed against a 1480px breakpoint, and 1481px OVERFLOWED in English
+while Arabic was fine at 1161px because its labels are shorter. **The
+breakpoint is now 1500px**, re-verified at 1482 and 1520 in both languages.
+.nav-wrap max-width 1560px is still the hard cap. **Do not add a 15th link
+without re-measuring.**
+
+## Traps added this session - do not reintroduce
+
+* **A backslash-n written by a generator becomes a REAL newline and splits
+  the literal.** It happened AGAIN, inside a join, and killed the entire
+  inline script on guidance.html so nothing rendered at all. Use raw strings,
+  or String.fromCharCode(10,10). The same heredoc route then broke this very
+  handoff update, which is why it was written as a file.
+* **Escape EVERY field, not one.** Escaping only sayProof put a bare quote
+  into a JS string literal and took the whole data file down.
+* **A bold marker only converts where a paragraph helper runs it.** The say
+  block rendered its string directly and shipped literal asterisks until it
+  was routed through misParas.
+* **Single asterisks convert nowhere on this site.** 18 were found and fixed
+  across signs.js, misunderstood.js and tadabbur.js.
+* **A clipboard promise can REJECT** - swallowing it left a button that did
+  nothing and said nothing. Fall back to the textarea method and report
+  either way.
+* **Check how the site already does a thing before inventing a class.** The
+  Verify hero was jammed against the edge of the screen because .hero-inner
+  does not exist in style.css; every other page uses .page-hero > .container.
+* **INDENTATION IS LOAD-BEARING when splicing js/tadabbur.js.** A block's
+  nested words[] and differ.views[] carry ref: and strength: fields of their
+  own, so scanning for the first one put a links array inside a word object.
+  It parsed as an error and cost 16 links.
+
+## Open work as of 26 August 2026
+
+1. The word lens only knows the ~124 words the data already explains.
+   Growing that vocabulary is ordinary content work.
+2. **judgement.html still leaks about 77 English strings in Arabic mode** -
+   prose inside ref fields, the documented two-cause pattern. guidance.html
+   and index.html are now clean; the other pages have not been swept.
+3. Tadabbur: 496 verses in 380 blocks, 122 two-way links, 264 blocks with no
+   cross-reference yet.
+4. Everything still open from PART 17.
