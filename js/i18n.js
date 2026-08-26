@@ -893,7 +893,7 @@ function iitwCollectNodes() {
    for "Sahih al-Bukhari" — in Arabic mode there should be none. */
 const IITW_REF_SELECTOR =
   ".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs, .tad-ref, " +
-  ".rv-ev-ref, .gold-ref";
+  ".rv-ev-ref, .gold-ref, .vf-src";
 
 function iitwTranslateDom(lang) {
   iitwCollectNodes().forEach(node => {

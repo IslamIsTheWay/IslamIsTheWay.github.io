@@ -208,6 +208,37 @@ function vLongestRun(a, b) {
   return best;
 }
 
+/* THE LONGEST RUN ALONE IS NOT ENOUGH, and this was found by the owner on
+   the live page rather than by me.
+
+   He checked "اطلبوا العلم ولو في الصين". The instant search correctly said
+   not found. The deep search then answered with Sunan Ibn Majah 226 — which
+   is a COMPLETELY DIFFERENT hadith, the one about the angels lowering their
+   wings for whoever leaves his house seeking knowledge. The two share the
+   phrase "طلب العلم", that run was long enough to pass, and the word that
+   actually identifies the claim — الصين — is not in Ibn Majah anywhere.
+
+   So the words of the SHORTER side must also be present in the longer one.
+   Shorter, not the claim, because both directions are legitimate:
+     · a short hadith inside a long forwarded message — the TEXT is shorter,
+       and all of its words appear in the message. Accept.
+     · a short claim against a long hadith — the CLAIM is shorter, and if a
+       distinctive word of it is missing, the match is a coincidence of
+       common phrasing. Reject.
+   Measured on the case above: coverage 0.25, comfortably rejected, while
+   every true positive in the battery stays at 1.00. */
+function vWordCover(shortSkel, longSkel) {
+  const words = shortSkel.split(" ").filter(function (w) { return w.length >= 3; });
+  if (!words.length) return 1;
+  let n = 0;
+  for (let i = 0; i < words.length; i++) {
+    if (longSkel.indexOf(words[i]) >= 0) n++;
+  }
+  return n / words.length;
+}
+
+const V_MIN_COVER = 0.70;
+
 /* 0 when the two do not share enough, otherwise 0..1. */
 function vScore(claimSkel, textSkel, gramSet) {
   if (!claimSkel || !textSkel) return 0;
@@ -223,7 +254,12 @@ function vScore(claimSkel, textSkel, gramSet) {
   const need = Math.min(V_MIN_RUN, claimSkel.length, textSkel.length);
   if (run < need) return 0;
   const share = run / Math.min(claimSkel.length, textSkel.length);
-  return share >= V_MIN_SHARE ? share : 0;
+  if (share < V_MIN_SHARE) return 0;
+  /* and the shorter side's own words must actually be there — see above */
+  const shorter = claimSkel.length <= textSkel.length ? claimSkel : textSkel;
+  const longer  = claimSkel.length <= textSkel.length ? textSkel : claimSkel;
+  if (vWordCover(shorter, longer) < V_MIN_COVER) return 0;
+  return share;
 }
 
 /* ---------- 1. the Quran, which ships with the site ---------- */
@@ -275,7 +311,7 @@ function vSearchSite(claim) {
   if (typeof SUNNAH !== "undefined") {
     SUNNAH.forEach(function (s) {
       tryOne(ar ? (s.arabic || "") : (s.detail + " " + (s.title || "")), {
-        title: s.title, ar: s.arabic, en: s.detail,
+        title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
         ref: s.ref, strength: s.strength, where: "sunnah.html"
       });
     });
@@ -283,7 +319,7 @@ function vSearchSite(claim) {
   if (typeof PROPHET_STORIES !== "undefined") {
     PROPHET_STORIES.forEach(function (p) {
       tryOne(ar ? (p.arabic || "") : (p.story || ""), {
-        title: p.title, ar: p.arabic, en: p.lesson,
+        title: p.title, titleAr: p.titleAr, ar: p.arabic, en: p.lesson,
         ref: p.ref, strength: p.strength, where: "stories.html"
       });
     });
@@ -291,7 +327,7 @@ function vSearchSite(claim) {
   if (typeof ADHKAR !== "undefined") {
     ADHKAR.forEach(function (d) {
       tryOne(ar ? d.arabic : (d.en + " " + (d.title || "")), {
-        title: d.title, ar: d.arabic, en: d.en,
+        title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
         ref: d.ref, strength: d.strength, where: "guidance.html#adhkar"
       });
     });

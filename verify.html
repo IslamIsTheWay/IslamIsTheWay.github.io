@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608260850" />
+  <link rel="stylesheet" href="css/style.css?v=202608260908" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
   <meta property="og:type" content="website" />
@@ -139,11 +139,11 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608260850"></script>
-  <script src="js/sunnah.js?v=202608260850"></script>
-  <script src="js/adhkar.js?v=202608260850"></script>
-  <script src="js/quran-text.js?v=202608260850"></script>
-  <script src="js/verify.js?v=202608260850"></script>
+  <script src="js/data.js?v=202608260908"></script>
+  <script src="js/sunnah.js?v=202608260908"></script>
+  <script src="js/adhkar.js?v=202608260908"></script>
+  <script src="js/quran-text.js?v=202608260908"></script>
+  <script src="js/verify.js?v=202608260908"></script>
   <script>
   /* ============================================================
      The page logic. The engine is in js/verify.js; this file only
@@ -196,7 +196,13 @@
       return `<div class="vf-card vf-site">
         <div class="vf-verdict">✅ ${pair("This site carries this, and it is graded",
                                           "هذا موجودٌ في الموقع بدرجته")}</div>
-        ${h.title ? `<div class="vf-title">${esc(h.title)}</div>` : ""}
+        ${!h.title ? "" : (h.titleAr
+            ? `<div class="vf-title">${pair(esc(h.title), esc(h.titleAr))}</div>`
+            /* The 43 curated hadith carry an English title with no Arabic
+               twin — a known gap in the data, not something to invent here.
+               So in Arabic the title is hidden rather than left leaking; the
+               Arabic wording of the hadith is printed directly above it. */
+            : `<div class="vf-title en-only">${esc(h.title)}</div>`)}
         ${arabicLine(h.ar)}
         ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
         ${h.ref ? `<div class="vf-src">${esc(h.ref)}</div>` : ""}
@@ -222,8 +228,8 @@
         <div class="vf-grade">${twoSahihs
           ? pair("This is one of the two Sahihs — the highest grade there is.",
                  "هذا من الصحيحين، وهو أعلى الدرجات.")
-          : pair("This is OUTSIDE the two Sahihs. Being in this book does not by itself make it authentic — it needs a scholar's grading, and this page does not invent one.",
-                 "هذا **خارج الصحيحين**. ووجودُه في هذا الكتاب لا يجعله صحيحًا بنفسه، بل يحتاج إلى تصحيح عالم، ولا تخترع هذه الصفحةُ تصحيحًا.")}</div>
+          : pair("This is <strong>outside the two Sahihs</strong>. Being in this book does not by itself make it authentic — it needs a scholar's grading, and this page does not invent one.",
+                 "هذا <strong>خارج الصحيحين</strong>. ووجودُه في هذا الكتاب لا يجعله صحيحًا بنفسه، بل يحتاج إلى تصحيح عالم، ولا تخترع هذه الصفحةُ تصحيحًا.")}</div>
       </div>`;
     }
 
@@ -359,7 +365,7 @@
   })();
   </script>
 
-  <script src="js/main.js?v=202608260850"></script>
-  <script src="js/i18n.js?v=202608260850"></script>
+  <script src="js/main.js?v=202608260908"></script>
+  <script src="js/i18n.js?v=202608260908"></script>
 </body>
 </html>
