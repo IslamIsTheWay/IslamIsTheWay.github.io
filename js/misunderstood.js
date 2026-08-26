@@ -149,6 +149,12 @@ const MISUNDERSTOOD = {
     /* ---------- 1. The fighting verses ---------- */
     {
       id: "mis-sword",
+      say: "They are quoting half a sentence. Take 9:5, the one they always use — the very next verse, 9:6, orders a Muslim to give a polytheist who asks for protection safe conduct, let him hear the Quran, and then walk him home to safety. Nobody quotes that one. Ask them to read the sentence before and the sentence after, and the argument is over.",
+      sayAr: "هم ينقلون نصف جملة. خذ آية التوبة ٥ التي يستشهدون بها دائمًا — فالآية التي تليها مباشرةً، ٩:٦، تأمر المسلم أن يُجير المشرك إذا استجار، ويُسمعه كلام الله، ثم يُبلغه مأمنه. ولا ينقل أحدٌ هذه. اطلب منهم أن يقرؤوا الآية قبلها والآية بعدها، وينتهي الكلام.",
+      sayProof: "\"And if any one of the polytheists seeks your protection, then grant him protection so he may hear the words of Allah. Then deliver him to his place of safety.\"",
+      sayProofAr: "﴿وَإِنْ أَحَدٌ مِّنَ ٱلْمُشْرِكِينَ ٱسْتَجَارَكَ فَأَجِرْهُ حَتَّىٰ يَسْمَعَ كَلَٰمَ ٱللَّهِ ثُمَّ أَبْلِغْهُ مَأْمَنَهُۥ﴾",
+      sayRef: "Surah At-Tawbah (9:6) — the verse immediately after the one usually quoted",
+      sayRefAr: "سورة التوبة (٩:٦) — الآية التي تلي المستشهَد بها مباشرةً",
       icon: "⚔️",
       claim: "\"Islam tells Muslims to kill everyone who is not a Muslim. It is right there in the book: kill them wherever you find them.\"",
       claimAr: "«الإسلام يأمر المسلمين بقتل كلّ من ليس مسلمًا، وهو في كتابهم صراحةً: اقتلوهم حيث وجدتموهم».",
@@ -297,6 +303,12 @@ const MISUNDERSTOOD = {
     /* ---------- 2. Jihad ---------- */
     {
       id: "mis-jihad",
+      say: "Jihad means to strive, and most of it has nothing to do with fighting. A man came to the Prophet ﷺ asking permission to go and fight, and he asked whether the man's parents were alive. He said yes. He told him: then in them is your jihad — go back and serve them. That is authentic, in al-Bukhari.",
+      sayAr: "الجهاد معناه بذل الجهد، وأكثره لا علاقة له بالقتال. جاء رجلٌ إلى النبي ﷺ يستأذنه في الجهاد، فسأله: أحيٌّ والداك؟ قال: نعم. قال: ففيهما فجاهد. وهذا ثابتٌ في البخاري.",
+      sayProof: "A man asked permission to go out and fight. He ﷺ asked: are your parents alive? He said yes. He said: then in them is your jihad.",
+      sayProofAr: "أَحَيٌّ وَالِدَاكَ؟ قَالَ: نَعَمْ. قَالَ: فَفِيهِمَا فَجَاهِدْ.",
+      sayRef: "Sahih al-Bukhari 3004 — Abdullah ibn Amr",
+      sayRefAr: "صحيح البخاري ٣٠٠٤ — عن عبد الله بن عمرو",
       icon: "🛡️",
       claim: "\"Jihad means holy war. A jihadist is a Muslim doing what his religion tells him to do.\"",
       claimAr: "«الجهاد معناه الحربُ المقدّسة، والجهاديّ مسلمٌ يفعل ما يأمره به دينُه».",
@@ -378,6 +390,12 @@ const MISUNDERSTOOD = {
     /* ---------- 3. Compulsion ---------- */
     {
       id: "mis-compulsion",
+      say: "There is a verse that says it in four words: there is no compulsion in religion. And it is not theory — it was revealed about men of Madinah whose own sons had been raised in another faith, and they were told they could not force them. If forcing were allowed anywhere, it would have been allowed there.",
+      sayAr: "ثمّ آيةٌ تقولها في ثلاث كلمات: ﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾. وليست كلامًا نظريًّا — بل نزلت في رجالٍ من الأنصار كان لهم أبناءٌ نشؤوا على دينٍ آخر، فقيل لهم: ليس لكم أن تُكرهوهم. فلو جاز الإكراه في موضعٍ لجاز هناك.",
+      sayProof: "\"There shall be no compulsion in religion. The right course has become distinct from the wrong.\"",
+      sayProofAr: "﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ ۖ قَد تَّبَيَّنَ ٱلرُّشْدُ مِنَ ٱلْغَىِّ﴾",
+      sayRef: "Surah Al-Baqarah (2:256); its occasion of revelation is in Sunan Abu Dawud 2682, outside the two Sahihs",
+      sayRefAr: "سورة البقرة (٢:٢٥٦)؛ وسببُ نزولها في سنن أبي داود ٢٦٨٢، خارج الصحيحين",
       icon: "🕊️",
       claim: "\"Islam was spread by the sword. Convert or die.\"",
       claimAr: "«انتشر الإسلام بالسيف: إمّا أن تُسلم وإمّا أن تُقتل».",
@@ -464,6 +482,12 @@ const MISUNDERSTOOD = {
     /* ---------- 4. The hijab ---------- */
     {
       id: "mis-hijab",
+      say: "Two things, and the second surprises people. The command in An-Nur comes to the MEN first — lower your gaze — before it says a word to the women. And nobody has the right to force a woman into it: the same Book that commands it also says there is no compulsion in religion. A garment put on by force is not worship, it is obedience to a man.",
+      sayAr: "أمران، والثاني يفاجئ الناس. فالأمرُ في سورة النور جاء **للرجال أوّلًا**: غُضّوا أبصاركم — قبل أن يُقال للنساء شيء. ولا يملك أحدٌ أن يُكره امرأةً عليه: فالكتابُ الذي أمر به هو الذي قال ﴿لَآ إِكْرَاهَ فِى ٱلدِّينِ﴾. والثوبُ الذي يُلبَس قهرًا ليس عبادةً، وإنما هو طاعةٌ لرجل.",
+      sayProof: "\"Tell the believing men to lower their gaze and guard their private parts.\" — and only then, in the next verse, the women.",
+      sayProofAr: "﴿قُل لِّلْمُؤْمِنِينَ يَغُضُّوا۟ مِنْ أَبْصَٰرِهِمْ وَيَحْفَظُوا۟ فُرُوجَهُمْ﴾ — ثم في الآية التي تليها للنساء",
+      sayRef: "Surah An-Nur (24:30), then (24:31)",
+      sayRefAr: "سورة النور (٢٤:٣٠)، ثم (٢٤:٣١)",
       icon: "🧕",
       claim: "\"Muslim women are forced to cover. It is a symbol of oppression, and their fathers and husbands make them do it.\"",
       claimAr: "«المرأةُ المسلمة مُكرَهةٌ على الستر، وهو رمزُ قهرٍ يفرضه عليها أبوها أو زوجُها».",
@@ -581,6 +605,12 @@ const MISUNDERSTOOD = {
     /* ---------- 5. Women ---------- */
     {
       id: "mis-women",
+      say: "Ask for a date. A Muslim woman kept her own property and her own name in the seventh century; an English wife could not own property in her own right until 1870. And a marriage was annulled by the Prophet ﷺ himself because the woman said she had not consented — that is in al-Bukhari, and it is a case, not a slogan.",
+      sayAr: "اطلب تاريخًا. فالمسلمة كان لها مالُها واسمُها في القرن السابع الميلاديّ، والزوجةُ في إنجلترا لم تملك مالها باسمها إلا سنة ١٨٧٠م. وقد ردّ النبيُّ ﷺ نكاحَ امرأةٍ لمّا قالت إنها لم تُستأذن — وهذا في البخاري، وهي واقعةٌ لا شعار.",
+      sayProof: "Khansa bint Khidham was married by her father against her will. She came to the Prophet ﷺ, and he annulled the marriage.",
+      sayProofAr: "أنّ خنساء بنت خِذام زوّجها أبوها وهي كارهة، فأتت النبيَّ ﷺ فردّ نكاحه.",
+      sayRef: "Sahih al-Bukhari 5138; the Married Women's Property Act is 1870, English statute",
+      sayRefAr: "صحيح البخاري ٥١٣٨؛ وقانون تملّك المرأة المتزوّجة الإنجليزيّ سنة ١٨٧٠م",
       icon: "🌸",
       claim: "\"Islam oppresses women. It gives a man the right to beat his wife, and treats her as property.\"",
       claimAr: "«الإسلام يظلم المرأة، ويُبيح للرجل ضربَ زوجته، ويعاملها معاملة المتاع».",
@@ -664,6 +694,12 @@ const MISUNDERSTOOD = {
     /* ---------- 6. Terrorism and the Khawarij ---------- */
     {
       id: "mis-terror",
+      say: "Whoever did that broke the religion he claimed to be defending. Killing a non-Muslim under a covenant is named in al-Bukhari as barring a man from even smelling Paradise. And the Prophet ﷺ described people exactly like them fourteen centuries ago — they would recite the Quran, it would not pass their throats, and they would kill the people of Islam.",
+      sayAr: "من فعل ذلك فقد نقض الدين الذي زعم أنه يدافع عنه. فقتلُ المعاهَد جاء في البخاري أنّ صاحبه لا يَرَح رائحة الجنّة. ووصف النبيُّ ﷺ أمثالهم قبل أربعة عشر قرنًا: يقرؤون القرآن لا يجاوز حناجرهم، ويقتلون أهل الإسلام.",
+      sayProof: "\"Whoever kills a person under a covenant will not smell the fragrance of Paradise.\"",
+      sayProofAr: "مَنْ قَتَلَ مُعَاهَدًا لَمْ يَرَحْ رَائِحَةَ الْجَنَّةِ",
+      sayRef: "Sahih al-Bukhari 3166; and the description of the Khawarij in both Sahihs",
+      sayRefAr: "صحيح البخاري ٣١٦٦؛ ووصفُ الخوارج في الصحيحين",
       icon: "🚫",
       claim: "\"Muslims are terrorists. Their religion produces this.\"",
       claimAr: "«المسلمون إرهابيّون، ودينُهم يُنتج هذا».",
@@ -730,6 +766,12 @@ const MISUNDERSTOOD = {
     /* ---------- 7. Waiting for the Mahdi ---------- */
     {
       id: "mis-waiting",
+      say: "Nothing in any narration says to stop working. Read them and the opposite is there: people go to him and pledge to him while he is unwilling — so a community was already standing before he appeared. He is given to people who are doing something. The question is not when he arrives. It is what he would find here if he did.",
+      sayAr: "ليس في خبرٍ واحدٍ أن تُوقف العمل. بل اقرأها تجد ضدّه: يأتيه الناسُ فيبايعونه وهو كاره — فجماعةٌ كانت قائمةً قبل ظهوره. فهو يُساق إلى قومٍ يعملون. وليس السؤال متى يجيء، وإنما ماذا كان سيجد ههنا لو جاء.",
+      sayProof: "\"If the Hour comes while one of you has a palm shoot in his hand, let him plant it.\"",
+      sayProofAr: "إِنْ قَامَتِ السَّاعَةُ وَفِي يَدِ أَحَدِكُمْ فَسِيلَةٌ فَلْيَغْرِسْهَا",
+      sayRef: "Musnad Ahmad and al-Bukhari's Al-Adab al-Mufrad — outside the two Sahihs, authenticated by al-Albani; cited by collection, never by number",
+      sayRefAr: "مسند أحمد و«الأدب المفرد» للبخاري — خارج الصحيحين، صحّحه الألباني؛ ويُعزى بالكتاب لا بالرقم",
       icon: "⏳",
       claim: "\"There is nothing we can do. The Mahdi will come and fix it. Our job is to hold on until then.\"",
       claimAr: "«ليس بأيدينا شيء. سيخرج المهديّ فيُصلحها. وإنما علينا أن نصبر حتى يأتي».",
@@ -877,6 +919,12 @@ const MISUNDERSTOOD = {
     /* ---------- 8. The double standard, and forbidding the wrong ---------- */
     {
       id: "mis-double",
+      say: "\"Leave the creation to their Creator\" is not a hadith and not a verse. The actual instruction gives three descending levels — change it with your hand, then your tongue, then hate it in your heart — and the lowest is still obligatory. There is no fourth level, and silence is not on the list. But the same religion forbids calling a Muslim a hypocrite: that is a ruling on what is inside a person, and he ﷺ refused it even about a man who said the shahadah with a spear over him.",
+      sayAr: "«اترك الخلق للخالق» ليست حديثًا ولا آية. والأمرُ الثابت فيه ثلاثُ درجاتٍ متنازلة — بيده، فبلسانه، فبقلبه — وأدناها واجبٌ أيضًا. وليس ثمّ درجةٌ رابعة، والسكوتُ ليس منها. ومع ذلك يحرّم الدينُ نفسُه أن تُسمّي مسلمًا منافقًا: فذلك حكمٌ على ما في القلب، وقد أباه ﷺ في رجلٍ قال الشهادة والسيفُ فوق رأسه.",
+      sayProof: "\"Whoever among you sees a wrong, let him change it with his hand; if he cannot, then with his tongue; if he cannot, then with his heart — and that is the weakest of faith.\"",
+      sayProofAr: "مَنْ رَأَى مِنكُمْ مُنكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ، وَذَلِكَ أَضْعَفُ الْإِيمَانِ",
+      sayRef: "Sahih Muslim, Book of Faith — Abu Sa'id al-Khudri",
+      sayRefAr: "صحيح مسلم، كتاب الإيمان — عن أبي سعيد الخدري",
       icon: "⚖️",
       claim: "\"Leave the creation to their Creator — it is none of your business.\" And then, about someone who prays and slips: \"look at the hypocrite.\"",
       claimAr: "«اترك الخلق للخالق، وما شأنك أنت؟» ثم يُقال عمّن يصلّي ثم يزلّ: «انظروا إلى المنافق».",

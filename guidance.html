@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608261450" />
+  <link rel="stylesheet" href="css/style.css?v=202608261459" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -325,48 +325,48 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608261450"></script>
+  <script src="js/data.js?v=202608261459"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608261450"></script>
+  <script src="js/sunnah.js?v=202608261459"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608261450"></script>
+  <script src="js/adhkar.js?v=202608261459"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608261450"></script>
+  <script src="js/scholars.js?v=202608261459"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608261450"></script>
+  <script src="js/scholars-books.js?v=202608261459"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608261450"></script>
+  <script src="js/revival.js?v=202608261459"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608261450"></script>
+  <script src="js/bidah.js?v=202608261459"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608261450"></script>
-  <script src="js/endmap.js?v=202608261450"></script>
+  <script src="js/misunderstood.js?v=202608261459"></script>
+  <script src="js/endmap.js?v=202608261459"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608261450"></script>
+  <script src="js/terms.js?v=202608261459"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608261450"></script>
+  <script src="js/figures.js?v=202608261459"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608261450"></script>
+  <script src="js/signs.js?v=202608261459"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -2548,6 +2548,24 @@
           <p class="ar-only" dir="rtl">${s.claimAr}</p>
         </div>
 
+        ${!s.say ? "" : `<div class="mis-say">
+          <div class="mis-say-head">💬 <span class="en-only">If you have sixty seconds — say this</span>
+            <span class="ar-only" dir="rtl">إن لم يكن معك إلا دقيقة — قل هذا</span></div>
+          <div class="mis-say-body en-only">${misParas(s.say)}</div>
+          <div class="mis-say-body ar-only" dir="rtl">${misParas(s.sayAr, true)}</div>
+          ${!s.sayProof ? "" : `<div class="mis-say-proof">
+            <div class="mis-say-proof-label"><span class="en-only">And the one text that settles it</span>
+              <span class="ar-only" dir="rtl">والنصُّ الذي يفصل فيه</span></div>
+            <p class="mis-say-ar" dir="rtl">${s.sayProofAr}</p>
+            <p class="en-only">${s.sayProof}</p>
+            <div class="mis-say-ref en-only">${s.sayRef || ""}</div>
+            <div class="mis-say-ref ar-only" dir="rtl">${s.sayRefAr || ""}</div>
+          </div>`}
+          <button class="btn btn-ghost mis-copy" data-id="${s.id}">
+            <span class="en-only">Copy it</span><span class="ar-only" dir="rtl">انسخه</span>
+          </button>
+        </div>`}
+
         <div class="rv-intro">
           <div class="en-only">${misParas(s.lead)}</div>
           <div class="rv-ar ar-only" dir="rtl">${misParas(s.leadAr, true)}</div>
@@ -2561,6 +2579,56 @@
         </div>` : ""}
       </div>`;
     }
+
+    /* COPY THE SPOKEN ANSWER. The whole point of this block is that the
+       reader is in a conversation, so it has to leave the page — into a
+       message, a note, a reply. Copies in whichever language is showing,
+       answer plus the text that settles it plus the reference. */
+    document.addEventListener("click", function (e) {
+      const b = e.target.closest(".mis-copy");
+      if (!b) return;
+      const sec = (typeof MISUNDERSTOOD !== "undefined" ? MISUNDERSTOOD.sections : [])
+        .find(x => x.id === b.dataset.id);
+      if (!sec) return;
+      const ar = document.documentElement.classList.contains("lang-ar");
+      const txt = [ar ? sec.sayAr : sec.say,
+                   ar ? sec.sayProofAr : sec.sayProof,
+                   ar ? sec.sayRefAr : sec.sayRef].filter(Boolean).join(String.fromCharCode(10,10));
+      const failed = () => {
+        const s = b.querySelector(".en-only"), a = b.querySelector(".ar-only");
+        if (s) s.textContent = "Select and copy it";
+        if (a) a.textContent = "حدّده وانسخه";
+      };
+      const done = () => {
+        const s = b.querySelector(".en-only"), a = b.querySelector(".ar-only");
+        if (s) s.textContent = "Copied ✓";
+        if (a) a.textContent = "نُسخ ✓";
+        setTimeout(() => { if (s) s.textContent = "Copy it"; if (a) a.textContent = "انسخه"; }, 1800);
+      };
+      /* The clipboard promise can REJECT — an insecure origin, a browser
+         that wants a closer user gesture, a permission refusal — and
+         swallowing that left the reader with a button that did nothing and
+         said nothing. So a rejection falls through to the textarea method,
+         and the reader is told either way. */
+      const legacy = () => {
+        const ta = document.createElement("textarea");
+        ta.value = txt;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        let ok = false;
+        try { ok = document.execCommand("copy"); } catch (x) {}
+        ta.remove();
+        ok ? done() : failed();
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done, legacy);
+      } else {
+        legacy();
+      }
+    });
 
     /* ===== The preparation half of the map (js/endmap.js) =====
        The phases themselves are on the Judgement page. Repeating them here
@@ -2923,9 +2991,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608261450"></script>
+  <script src="js/wordlens.js?v=202608261459"></script>
 
-  <script src="js/main.js?v=202608261450"></script>
-  <script src="js/i18n.js?v=202608261450"></script>
+  <script src="js/main.js?v=202608261459"></script>
+  <script src="js/i18n.js?v=202608261459"></script>
 </body>
 </html>

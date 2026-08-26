@@ -6785,3 +6785,18 @@ html.lang-ar #vfInput { font-family: 'Amiri', serif; font-size: 1.18rem; directi
 .vf-exp-kind { font-size: .78rem; font-weight: 700; color: #3f7cac;
   text-transform: uppercase; letter-spacing: .02em; margin-bottom: 6px; }
 .vf-quiet { font-size: .88rem; color: #7a8580; font-style: italic; margin-top: -4px; }
+
+/* "If you have sixty seconds — say this." The section read as a page; this
+   is the version a person can actually use mid-conversation, so it sits at
+   the TOP of each subject and can be copied out of the page. */
+.mis-say { background: #fdf8ec; border: 1px solid #ecdcb8; border-inline-start: 5px solid var(--gold, #b8860b);
+  border-radius: 12px; padding: 15px 18px 14px; margin: 0 0 18px; }
+.mis-say-head { font-weight: 700; color: #8a6508; margin-bottom: 9px; font-size: 1rem; }
+.mis-say-body { line-height: 1.95; margin: 0 0 12px; font-size: 1.02rem; }
+html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
+.mis-say-proof { border-top: 1px dashed #e3d3ae; padding-top: 11px; margin-top: 4px; }
+.mis-say-proof-label { font-size: .8rem; font-weight: 700; color: #8a6508; margin-bottom: 6px; }
+.mis-say-ar { font-family: 'Amiri', serif; font-size: 1.22rem; line-height: 2.1;
+  color: var(--green-dark, #14532d); margin: 0 0 7px; }
+.mis-say-ref { font-size: .82rem; color: var(--gold, #b8860b); font-weight: 700; }
+.mis-copy { margin-top: 12px; font-size: .88rem; }
