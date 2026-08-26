@@ -701,3 +701,110 @@ function vSearchRelated(claim) {
   }
   return hits.slice(0, 3);
 }
+
+/* ================= WHAT THE SITE EXPLAINS ABOUT THIS ====================
+
+   A SECOND THING PEOPLE ACTUALLY DO, which this page was ignoring: they ask
+   a QUESTION. "ما هي البدعة؟" is not a claimed hadith, and answering it with
+   "we did not find this wording" is useless when the site carries a whole
+   section on the subject. It also fails his standing complaint — a person
+   uses the words they have, not the words a text uses.
+
+   So the site's own EXPLANATORY content is searched too: the terms glossary,
+   the scholars' rulings, the section on adding to the religion, and the
+   hardest-questions cards. These are explanations, not narrations, so they
+   are rendered as their own kind of answer and never carry a hadith grading.
+   ===================================================================== */
+
+function vEachExplain(fn) {
+  /* the technical terms — the shortest, most direct answer to "what is X" */
+  if (typeof TERMS !== "undefined") {
+    TERMS.forEach(function (x) {
+      fn((x.ar || "") + " " + (x.defAr || ""),
+         (x.en || "") + " " + (x.def || "") + " " + (x.alt || []).join(" "),
+         { kind: "explain", what: "term", title: x.en, titleAr: x.ar,
+           body: x.def, bodyAr: x.defAr, where: "guidance.html#terms" });
+    });
+  }
+  /* the scholars' rulings — question and authored answer */
+  if (typeof FIQH_RULINGS !== "undefined") {
+    FIQH_RULINGS.forEach(function (r) {
+      fn((r.titleAr || "") + " " + (r.questionAr || "") + " " + (r.answerAr || "") + vKeyText(r.keys, true),
+         (r.title || "") + " " + (r.question || "") + " " + (r.answer || "") + vKeyText(r.keys, false),
+         { kind: "explain", what: "ruling", title: r.title, titleAr: r.titleAr,
+           body: r.answer, bodyAr: r.answerAr, where: "guidance.html#rulings" });
+    });
+  }
+  /* adding to the religion */
+  if (typeof BIDAH !== "undefined") {
+    var push = function (c) {
+      if (!c) return;
+      fn((c.titleAr || "") + " " + (c.arabicAr || "") + " " + (c.bodyAr || c.textAr || ""),
+         (c.title || "") + " " + (c.body || c.text || ""),
+         { kind: "explain", what: "bidah", title: c.title || BIDAH.title,
+           titleAr: c.titleAr || BIDAH.titleAr, body: c.body || c.text,
+           bodyAr: c.bodyAr || c.textAr, where: "guidance.html#bidah" });
+    };
+    fn((BIDAH.titleAr || "") + " " + (BIDAH.introAr || ""),
+       (BIDAH.title || "") + " " + (BIDAH.intro || ""),
+       { kind: "explain", what: "bidah", title: BIDAH.title, titleAr: BIDAH.titleAr,
+         body: BIDAH.intro, bodyAr: BIDAH.introAr, where: "guidance.html#bidah" });
+    (BIDAH.base || []).forEach(push);
+    (BIDAH.cards || []).forEach(push);
+    (BIDAH.notBidah || []).forEach(push);
+  }
+  /* the hardest questions */
+  if (typeof MISUNDERSTOOD !== "undefined") {
+    (MISUNDERSTOOD.sections || []).forEach(function (s) {
+      (s.cards || []).forEach(function (c) {
+        fn((c.titleAr || "") + " " + (c.plainAr || ""),
+           (c.title || "") + " " + (c.plain || ""),
+           { kind: "explain", what: "misunderstood", title: c.title, titleAr: c.titleAr,
+             body: c.plain, bodyAr: c.plainAr, where: "guidance.html#misunderstood" });
+      });
+    });
+  }
+}
+
+function vSearchExplain(claim) {
+  var ar = vIsArabic(claim);
+  var cs = ar ? vStripBoiler(vSkelWord(claim)) : vSkelEn(claim);
+  var words = vContentWords(cs);
+  if (!words.length) return [];
+  if (!V_DF) vBuildDf();
+  if (!ar) words = vExpand(words);
+
+  var claimBest = 0, k;
+  for (k = 0; k < words.length; k++) {
+    if (words[k].length >= 4 && (V_DF[words[k]] || 0) > 0) {
+      claimBest = Math.max(claimBest, vWeight(words[k]));
+    }
+  }
+  /* A question is usually SHORT and its subject is one word — "ما هي
+     البدعة؟" reduces to a single content word. So the bar here is gentler
+     than for related narrations: this content is an explanation offered as
+     an explanation, not a text being identified. */
+  var bar = Math.max(1.2, claimBest * 0.45);
+
+  var hits = [];
+  vEachExplain(function (arText, enText, entry) {
+    var skel = ar ? vSkelWord(arText) : vSkelEn(enText);
+    var total = 0, best = 0, shared = 0;
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].length >= 3 && skel.indexOf(words[i]) >= 0) {
+        var wt = vWeight(words[i]);
+        total += wt; shared++;
+        if (wt > best) best = wt;
+      }
+    }
+    if (shared && best >= bar) {
+      hits.push(Object.assign({ score: total, best: best }, entry));
+    }
+  });
+  hits.sort(function (a, b) { return b.score - a.score; });
+  if (hits.length) {
+    var top = hits[0].score;
+    hits = hits.filter(function (h) { return h.score >= top * 0.6; });
+  }
+  return hits.slice(0, 3);
+}
