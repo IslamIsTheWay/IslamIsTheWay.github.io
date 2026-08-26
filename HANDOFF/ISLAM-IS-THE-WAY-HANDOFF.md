@@ -4285,13 +4285,13 @@ languages: **الجنة تحت أقدام الأمهات → أُمُّكَ، ث
 * **Weigh the term that MATCHED, not the one that was typed.** "mom" occurs
   in no hadith and would score as the rarest word in the language.
 
-## Open work as of 26 August 2026
+## Open work after the first round (superseded — see the revised list at the end)
 
 1. **28 of the 43 curated hadith in `HADITHS` have no `keys`.** The content
    guide says keys are how a natural question finds an entry, and both Verify
    and `hadith.html` read them. Measured consequence: an Arabic reader
    searching **النية** gets nothing, although al-Bukhari 1 is on the page.
-   This is ordinary content work and it would lift every search surface.
+   **CLOSED in the second round below.**
 2. `الصلاة عماد الدين` and `حب الوطن من الإيمان` still return entries about
    prayer and about faith in general. Both claims name a subject the site has
    nothing on (عماد، الوطن), so this is honest breadth rather than a wrong
@@ -4300,5 +4300,106 @@ languages: **الجنة تحت أقدام الأمهات → أُمُّكَ، ث
 3. `صلة الرحم تزيد في العمر` can surface "Omar wept at the marks of the mat",
    because العمر and عمر are the same word once the article is stripped. A
    homograph, not a matching fault.
+4. Everything still open from PART 18, including the ~77 English strings
+   still leaking in Arabic mode on `judgement.html`.
+
+## SECOND ROUND, 26 August: keys on all 43 hadith, and the mirror-image fault
+
+Item 1 of the open work above is now closed. **28 of the 43 entries in
+`HADITHS` had no `keys`**, and the content guide in this repo says exactly
+what they are for: *"the everyday words a person would actually type, in
+both languages."* Both `js/verify.js` and `hadith.html` read them. The
+measured cost: an Arabic reader searching **النية** got nothing at all,
+although al-Bukhari 1 is on the page.
+
+All 28 now carry a bilingual list. **Index terms only** — no `arabic`,
+`text`, `ref`, `strength` or `narrator` was touched, and no number or
+grading was altered or invented. Proved rather than asserted: the diff
+removes 28 lines, every one a `strength:` that gained a trailing comma, each
+value byte-identical to its replacement.
+
+### The test was 56 natural sentences, not 56 keys
+
+Two probes per entry, one in each language, **none of them a verbatim key** —
+because a battery that feeds the index back to itself proves nothing:
+
+| | first run | after |
+|---|---|---|
+| `hadith.html` | 51/56 | **56/56** — 44 at rank 1, 53 in the top 3 |
+| `verify.html` | 51/56 | **54/56** |
+
+The two on Verify that still "miss" return **the same wording from a
+different entry** — من لا يرحم لا يرحم is carried by the story of al-Aqra'
+ibn Habis as well, and the anger advice by "What to do when you become
+angry". Correct answers; the assertion was matching a title.
+
+**Every one of the five original misses was an INFLECTION, and neither
+matcher stems anything.** "jealous" against a key of "jealousy"; "studying"
+against "study"; أسكت against السكوت; and غضبي against الغضب — which is a
+**suffix**, where the matcher strips prefixes only. So the possessive forms
+people actually write about themselves are listed now: لساني، وقتي، قلبي،
+مالي، أصدقائي، غضبي.
+
+### THE MIRROR IMAGE OF THE FAULT THIS PART OPENED WITH
+
+The probes then exposed the same fault running the other way. PART 19 above
+is about one rare word choosing a wrong answer; this is one rare word
+suppressing the right one.
+
+    حق الجار عليك                             → NOTHING
+    whoever relieves a believer of a hardship → NOTHING
+    أحب لأخيك ما تحب لنفسك                    → NOTHING
+
+**عليك — a pronoun — sits in two entries, and الجار in seven.** So عليك
+weighed more, set `claimTop`, and the bar rose above the subject: the hadith
+on the neighbour was refused outright. Same shape on "relieves" (one entry)
+and on تحب.
+
+**The fix is a definition of what a subject is.** A word that no entry
+anywhere names in its own title or `keys` is vocabulary, not subject matter,
+however rare it happens to be in the corpus. So `vClaimTop` lets only
+concepts that at least one entry DECLARES set the bar, falling back to
+whatever the corpus holds at all when the claim has none — a bar of zero
+would admit everything. The attached pronouns (عليك، إليك، منك، بك، عندك…)
+are stopwords now as well; they were simply missing.
+
+### Two more, both found by measuring rather than reading
+
+* **"faith" and "believer" were keyed onto the hadith on brotherhood and on
+  the neighbour.** That is the GRAMMAR of those two — *"none of you truly
+  believes until…"* — and not their subject, and it made every claim
+  mentioning faith reach them. A key must name what the entry is ABOUT.
+* **The kinship concept contained the phrase "صلة الرحم".** A phrase is
+  indexed on each of its words, so صلة and الرحم became ONE concept and a
+  claim naming both could never reach the two-concept gate. الأهل was in the
+  same group and diluted it to twelve entries. **Words that merely co-occur
+  are not synonyms.** Split into kinship and household: "صلة الرحم تزيد في
+  العمر" now leads with the hadith on severing kinship instead of the one
+  about being questioned on your lifespan.
+
+### Traps added — do not reintroduce
+
+* **A key must name the SUBJECT, not the wording.** Keying "faith" onto a
+  hadith whose sentence merely contains the word made it match everything
+  about faith.
+* **Never put a multi-word phrase in a concept group beside its own words.**
+  It collapses them into one concept and disables the two-concept gate.
+* **Do not mix a specific subject with a broad one in one group** (صلة الرحم
+  with الأهل). The broad word sets the count and the specific one loses all
+  its weight.
+* **A test that searches an entry by its own keys is not a test.** It proves
+  the field is wired and nothing else. Use sentences.
+
+## Open work as of 26 August 2026 — revised
+
+1. ~~28 curated hadith without keys~~ — **DONE, this round.**
+2. `الصلاة عماد الدين` and `حب الوطن من الإيمان` still answer with entries
+   about prayer and about faith in general. Both name a subject the site has
+   nothing on (عماد، الوطن). For the الإيمان ones this is arguably right —
+   somebody checking "حب الوطن من الإيمان" is shown the authentic narrations
+   of that exact shape, الحياء شعبة من الإيمان and أكمل المؤمنين إيمانا —
+   but a line saying "the site has nothing on الوطن" would be better.
+3. "kindness to your mother is the way to paradise" still leads with the
+   entries on mercy; the hadith naming one's mother is third, not first.
 4. Everything still open from PART 18, including the ~77 English strings
    still leaking in Arabic mode on `judgement.html`.

@@ -107,6 +107,45 @@ covers the whole entry.
 `detail`, `story`, or any summary this site wrote produce a verdict that
 prints a `ref` and a grading. Flag it and say where the words were seen.
 
+## `keys` ARE THE INDEX, AND THEY HAVE THEIR OWN RULES
+
+The content guide says what they are for: *"the everyday words a person would
+actually type, in both languages."* Every entry needs them — 28 of the 43
+curated hadith had none, and an Arabic reader searching النية got nothing at
+all while al-Bukhari 1 sat on the page. Four rules, each paid for:
+
+* **A key must name what the entry is ABOUT, not what its sentence contains.**
+  "faith" was keyed onto the hadith on brotherhood and on the neighbour
+  because both open *"none of you truly believes until…"* — and every claim
+  mentioning faith then reached them.
+* **List the inflections; nothing here stems.** A probe of "jealous" missed a
+  key of "jealousy", "studying" missed "study", أسكت missed السكوت. And
+  غضبي missed الغضب because that is a SUFFIX — the matchers strip prefixes
+  only. Include the possessives people write about themselves: لساني، وقتي،
+  قلبي، مالي، أصدقائي.
+* **Never put a multi-word phrase in a concept group beside its own words**
+  ("صلة الرحم" among الرحم), and never mix a specific subject with a broad
+  one (صلة الرحم with الأهل). The first collapses two concepts into one and
+  disables the two-concept gate; the second lets the common word set the
+  count and strips the specific one of its weight.
+* **A test that searches an entry by its own keys is not a test.** It proves
+  the field is wired and nothing else. Use natural sentences — 56 of them
+  found five faults that 56 key-lookups reported as a clean pass.
+
+## A RARE WORD IS NOT AUTOMATICALLY THE SUBJECT
+
+The mirror image of the rule above, and it empties the page instead of
+filling it with junk. `حق الجار عليك` returned NOTHING, because **عليك — a
+pronoun — sits in two entries and الجار in seven**, so عليك weighed more, set
+the bar, and the hadith on the neighbour was refused. Same on "relieves" for
+"whoever relieves a believer of a hardship".
+
+**A word that no entry anywhere names in its own title or `keys` is
+vocabulary, not subject matter, however rare it is.** Only a concept some
+entry DECLARES may set the bar (`vClaimTop`). And keep the function-word
+lists complete in both scripts — the attached pronouns عليك، إليك، منك، بك،
+عندك were simply missing.
+
 ## The rules that matter most
 
 1. **Run `./bump-version.sh` before every commit.** It cache-busts the CSS/JS
