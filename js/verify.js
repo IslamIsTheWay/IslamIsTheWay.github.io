@@ -1320,7 +1320,12 @@ function vEachExplain(fn) {
       fn((x.ar || "") + " " + (x.defAr || ""),
          (x.en || "") + " " + (x.def || "") + " " + (x.alt || []).join(" "),
          { kind: "explain", what: "term", title: x.en, titleAr: x.ar,
-           body: x.def, bodyAr: x.defAr, where: "guidance.html#terms" },
+           /* NOT "#terms" — there is no element with that id on the page.
+              The glossary is rendered by termsBox() INSIDE the rulings
+              cards, so the rulings section is where a reader actually
+              arrives at it. Checked by asking the rendered DOM for the id
+              and getting null. */
+           body: x.def, bodyAr: x.defAr, where: "guidance.html#rulings" },
          (x.ar || ""), (x.en || "") + " " + (x.alt || []).join(" "));
     });
   }
