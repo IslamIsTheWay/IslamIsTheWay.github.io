@@ -132,6 +132,32 @@ all while al-Bukhari 1 sat on the page. Four rules, each paid for:
   the field is wired and nothing else. Use natural sentences — 56 of them
   found five faults that 56 key-lookups reported as a clean pass.
 
+## VERIFY THE FACT, NOT ONLY THE NUMBER
+
+He asked what the zakat rate and period actually are, and had both wrong —
+2% and monthly, where the texts give **2.5% and once a lunar year** (Abu
+Dawud 1573: five dirhams out of two hundred, half a dinar out of twenty, and
+"وليس في مالٍ زكاةٌ حتى يحول عليه الحول"). When he asks a factual question
+about the religion, **go and read the source**; do not answer from memory and
+do not repeat his figure back to him.
+
+Searching the collections BY WORDING rather than by number also caught
+something memory would have got wrong: the six pillars of faith are usually
+cited to the hadith of Jibril, but **al-Bukhari 50's version lists five and
+mentions neither the books nor al-qadar**. The six-item wording is Muslim's.
+
+## SWEEP YOUR OWN NEW SECTION FOR ARABIC LEAKS
+
+The pillars section shipped its list items as bare English beside an Arabic
+span — **36 strings still showing in Arabic mode**, the exact markup pair
+this file already documents. Writing the rule down does not exempt the next
+thing you write from it. Walk the DOM of anything new before calling it
+bilingual.
+
+**And `?v=` does not cache-bust the HTML document.** The stamps cover CSS and
+JS, so a new `<script>` tag will not appear locally until the document itself
+is reloaded past the cache. Add a throwaway query string when testing.
+
 ## A RARE WORD IS NOT AUTOMATICALLY THE SUBJECT
 
 The mirror image of the rule above, and it empties the page instead of

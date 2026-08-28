@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 26 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 19 first, then PART 18.** PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 28 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 20 first, then PART 19.** PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -99,7 +99,7 @@ the owner had to report twice.
 5. **Open Work & Limitations** - unfinished items, traps found the hard way
 6. **Credentials & Access** - logins, GitHub tokens, SEO
 7. **Content Guide** - how to add content correctly + validation commands
-8. **PARTS 8-19** - one section per session, newest last. Each records what
+8. **PARTS 8-20** - one section per session, newest last. Each records what
    was built, what broke, and what must not be reintroduced.
 
 ---
@@ -4402,4 +4402,139 @@ are stopwords now as well; they were simply missing.
 3. "kindness to your mother is the way to paradise" still leads with the
    entries on mercy; the hadith naming one's mother is third, not first.
 4. Everything still open from PART 18, including the ~77 English strings
+   still leaking in Arabic mode on `judgement.html`.
+
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 20 - 28 August 2026: the pillars, and the zakat arithmetic
+
+## The gap, and it was the largest one on the site
+
+A site called **IslamBasics** carried no account of the five pillars. Not a
+card, not a line. It had 496 explained verses, 187 Sunnah practices, 41
+Golden Age figures and a hadith authenticity checker — and nothing that told
+a reader what Islam is built on. `js/pillars.js` + `guidance.html#pillars`
+and `#zakat` close it.
+
+**What is there now:** five cards for the pillars of Islam, six for the
+pillars of faith, one for ihsan, and a zakat section that shows the sums.
+
+## HE ASKED ME TO CHECK THE ZAKAT ANSWER, AND HE HAD TWO THINGS WRONG
+
+His words: *"two percent of what you get. I'm not sure in a year or in a
+month that you should actually search because I want to know the answer."*
+He was right to ask. Both halves were wrong, and correcting them is why the
+zakat section is the length it is.
+
+* **The rate is 2.5%, not 2%.** Abu Dawud 1573: two hundred dirhams held a
+  year owe **five dirhams**; twenty dinars owe **half a dinar**. Both are
+  exactly one fortieth — ربع العشر.
+* **It is yearly, not monthly, and it is not a slice of a salary.** The same
+  hadith: *"وليس في مالٍ زكاةٌ حتى يحول عليه الحول"*.
+
+So his own example is answered on the page, in his own numbers:
+
+| he asked | the page answers |
+|---|---|
+| "10,000 a month — do I give 200 every month?" | No, on both counts. Wait for the year, look at what you are STILL HOLDING; if that is 30,000, give **750** once. |
+| "100,000 held a year, never paid" | 2.5% = **2,500** — not 2,000, which is the 2% figure. |
+| "three years missed" | Year by year on a falling balance: 2,500 + 2,437.50 + 2,376.56 ≈ **7,314**. |
+
+## EVERY PROOF WAS READ BEFORE IT WAS QUOTED
+
+Not one number was recalled. Each collection was fetched and **searched by
+wording**, and the matn copied out of the record: al-Bukhari **8** (the five
+pillars), **38** (fasting forgiven), **1395** (Mu'adh — five prayers, and
+charity taken from the rich for the poor), **1405** (the nisab), **1503**
+(zakat al-Fitr), **1773** (the accepted Hajj), **5352** (أنفق يا ابن آدم),
+Abu Dawud **1573** (the rate and the year), and the hadith of Jibril in
+**Muslim's Book of Faith**. Verses came from this site's own
+`js/quran-text.js`.
+
+**One thing the search caught that memory would not have.** The six pillars
+of faith are usually cited to the hadith of Jibril — but **al-Bukhari 50's
+version lists five and mentions neither the books nor al-qadar**. The six-item
+wording is Muslim's. The page says so in a note, and cites Muslim. Muslim is
+given **by book with no number**, per the standing rule that the machine
+editions' numbering is sequential.
+
+## Beyond what he listed
+
+He named four of the five and asked for "other points that I didn't mention".
+Added: **fasting Ramadan** (missing from the five he listed), **ihsan** as
+the third level, the **eight categories** of 9:60, **three things zakat may
+not be spent on** (your own parents or children, the rich, and building —
+with the "في سبيل الله" disagreement stated honestly), **seven texts** on what
+giving is promised, and **zakat al-Fitr**, kept deliberately separate because
+it is constantly confused with zakat on savings.
+
+**The qadar card carries the correction people most need**: it is a comfort
+AFTER something has happened and cannot be changed, never an excuse BEFORE
+acting. "It was written, so I stole" is not what the pillar means.
+
+## THE SEARCH — which is what he actually asked for
+
+*"I don't want for me to put one word and then it doesn't give me the answer
+that I want."* Ten topics in `GUIDANCE_TOPICS` route a plain question to an
+authored answer, and **every answer is built from `js/pillars.js`** rather
+than restated in the page, so the two cannot drift.
+
+Measured on **26 everyday questions, both languages: 26/26 land.** The first
+run was 22/26, and every miss was a phrasing the word lists did not carry:
+
+* `كيف أدخل في الإسلام؟` — the list held "أدخل الإسلام", and a person writes
+  **في** in the middle. Phrases are matched as substrings, so the exact shape
+  has to be listed.
+* `how do I become a muslim` — "become muslim" does not match "become **a**
+  muslim".
+* `عندي مائة ألف ولم أزكِّ منها` — the gate wanted the noun الزكاة; the
+  sentence has only the **verb**.
+* `if everything is written why should I try` — the objection is essentially
+  never phrased with the word qadar.
+
+`I have savings do I owe anything` also answers now, with no technical word
+in it anywhere.
+
+**`pl-salah` and `pl-iman` carry `need: 2` on purpose.** الصلاة and الإيمان
+are among the commonest words on the page; with `need: 1` they would have
+stolen every prayer question from the rulings written for them. Verified:
+"I missed years of prayers" and "ما حكم صلاة المسافر؟" still reach their own
+rulings, and self-harm, music, riba, bid'ah and "I love my mom" are all
+unchanged.
+
+## Traps added this round
+
+* **The markup pair caught me too.** The zakat list helper printed bare
+  English beside an Arabic span with no `.en-only` — **36 English strings
+  still showing in Arabic mode**, the exact shape this repo documents as its
+  commonest defect. Sweep your OWN new section before claiming it is
+  bilingual; the section now measures zero.
+* **The HTML document is not cache-busted by `?v=`.** The stamps cover CSS
+  and JS only, so a new `<script>` tag added to a page will not appear until
+  the document itself is reloaded past the cache. Ten minutes went into
+  "PILLARS is undefined" when the tag was on disk the whole time. Add a
+  throwaway query string when testing locally.
+* **Order in `GUIDANCE_TOPICS` breaks ties, so the narrower topic goes
+  first** — `pl-fitr` before `pl-zakat`, or a question about the fitrah is
+  answered with the arithmetic for savings.
+* **Do not cite the six pillars of faith to al-Bukhari 50.** That version has
+  five and omits the books and the decree.
+
+## Open work as of 28 August 2026
+
+1. The zakat nisab is given in grams (85g gold / 595g silver) with a note
+   that these are the scholars' conversion of the hadith's weights and shift
+   between sources. A live gold price would make the page calculate the
+   threshold itself, but it would need a network call and this site works
+   without one — so it stays a note.
+2. Gold jewellery a woman wears is stated as a genuine disagreement without
+   naming which scholars hold which side. That is thinner than the treatment
+   the music ruling gets, and could be written up properly in `FIQH_RULINGS`.
+3. Nothing links to the new section from `index.html`'s eleven doors. "I want
+   to start praying" and "how much zakat do I owe" both belong there.
+4. Everything still open from PART 19, including the ~77 English strings
    still leaking in Arabic mode on `judgement.html`.
