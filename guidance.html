@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608262315" />
+  <link rel="stylesheet" href="css/style.css?v=202608281132" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -78,6 +78,10 @@
       <div class="gd-jump-head"><span class="en-only">On this page</span>
         <span class="ar-only" dir="rtl">في هذه الصفحة</span></div>
       <div class="gd-jump-links">
+        <a href="#pillars" class="gd-jump-hot">🕋 <span class="en-only">The pillars of Islam and of faith</span>
+          <span class="ar-only" dir="rtl">أركان الإسلام والإيمان</span></a>
+        <a href="#zakat">💰 <span class="en-only">Zakat — how much, and when</span>
+          <span class="ar-only" dir="rtl">الزكاة — كم ومتى</span></a>
         <a href="#misunderstood" class="gd-jump-hot">🛡️ <span class="en-only">The hardest questions about Islam</span>
           <span class="ar-only" dir="rtl">أصعبُ ما يُسأل عنه الإسلام</span></a>
         <a href="#mis-double">⚖️ <span class="en-only">"None of your business" — and the double standard</span>
@@ -155,6 +159,18 @@
   </section>
 
   <!-- ===== What the scholars explained ===== -->
+  <section id="pillars">
+    <div class="container">
+      <div id="pillarsBox"></div>
+    </div>
+  </section>
+
+  <section class="pattern-bg" id="zakat">
+    <div class="container">
+      <div id="zakatBox"></div>
+    </div>
+  </section>
+
   <section class="pattern-bg" id="rulings">
     <div class="container">
       <h2 class="section-title"><span class="en-only">📚 What the Scholars Explained</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما شرحه أهل العلم</span></h2>
@@ -325,48 +341,51 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608262315"></script>
+  <script src="js/data.js?v=202608281132"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608262315"></script>
+  <script src="js/sunnah.js?v=202608281132"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608262315"></script>
+  <script src="js/adhkar.js?v=202608281132"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608262315"></script>
+  <script src="js/scholars.js?v=202608281132"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608262315"></script>
+  <script src="js/scholars-books.js?v=202608281132"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608262315"></script>
+  <script src="js/revival.js?v=202608281132"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608262315"></script>
+  <script src="js/bidah.js?v=202608281132"></script>
+  <!-- The five pillars, the six of faith, and the zakat arithmetic. The
+       most basic thing this site can carry, and it was missing until now. -->
+  <script src="js/pillars.js?v=202608281132"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608262315"></script>
-  <script src="js/endmap.js?v=202608262315"></script>
+  <script src="js/misunderstood.js?v=202608281132"></script>
+  <script src="js/endmap.js?v=202608281132"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608262315"></script>
+  <script src="js/terms.js?v=202608281132"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608262315"></script>
+  <script src="js/figures.js?v=202608281132"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608262315"></script>
+  <script src="js/signs.js?v=202608281132"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -843,6 +862,81 @@
        at 2 for the vaguer ones is what stops a single ordinary word from
        deciding the answer. */
     const GUIDANCE_TOPICS = [
+      /* ---------- THE PILLARS ----------
+         Placed FIRST because order breaks ties here, and these are the most
+         basic questions on the page: somebody asking "how many prayers" or
+         "how much zakat" must not be handed a ruling about travelling.
+
+         The narrower topic comes before the wider one for the same reason —
+         زكاة الفطر before الزكاة, or a question about the fitrah is answered
+         with the arithmetic for savings. */
+      { id: "pl-fitr", need: 1, target: "#zakat-fitr",
+        words: ["زكاة الفطر", "الفطر", "الفطرة", "صاع", "زكاة الفطرة",
+                "fitr", "fitrah", "zakat al-fitr", "eid charity", "sa of food"] },
+      { id: "pl-zakat", need: 1, target: "#zakat",
+        must: ["زكاة", "الزكاة", "زكاه", "نصاب", "النصاب", "أزكي", "أزك", "زكيت", "نزكي",
+               "تزكية", "زكاتي", "مدخرات", "مدخراتي", "ادخرت",
+               "zakat", "zakah", "zakaat", "nisab",
+               /* Plain language, no technical word anywhere in it: "I have
+                  savings, do I owe anything" is the zakat question as an
+                  ordinary person asks it, and the gate refused it. */
+               "savings", "saved up", "money saved"],
+        words: ["زكاة", "الزكاة", "نصاب", "النصاب", "ربع العشر", "كم أزكي", "زكاة المال",
+                "أزكي", "أزك", "زكيت", "لم أزك", "زكاتي", "تزكية", "المدخرات",
+                "حال عليه الحول", "الحول", "مدخراتي", "مالي المدخر",
+                "zakat", "zakah", "zakaat", "nisab", "how much zakat", "calculate zakat",
+                "savings", "threshold", "percent", "percentage", "2.5"] },
+      { id: "pl-hajj", need: 1, target: "#pi-hajj",
+        words: ["حج", "الحج", "أحج", "مكة", "الكعبة", "البيت الحرام", "العمرة", "الاستطاعة",
+                "hajj", "haj", "pilgrimage", "mecca", "makkah", "kaaba", "kabah", "umrah"] },
+      { id: "pl-sawm", need: 1, target: "#pi-sawm",
+        words: ["صيام", "الصيام", "الصوم", "أصوم", "رمضان", "الفدية", "أفطرت", "القضاء",
+                "fasting", "fast", "sawm", "siyam", "ramadan", "ramadhan", "fidya"] },
+      { id: "pl-shahada", need: 1, target: "#pi-shahada",
+        words: ["الشهادة", "الشهادتان", "لا إله إلا الله", "التوحيد",
+                /* PHRASES ARE MATCHED AS SUBSTRINGS, so the exact shape people
+                   type has to be here. "أدخل الإسلام" never fired, because
+                   what a person writes is "كيف أدخل في الإسلام" — with في in
+                   the middle. Same in English: "become muslim" missed "become
+                   a muslim". Both were found by running the battery. */
+                "أدخل في الإسلام", "الدخول في الإسلام", "أدخل الإسلام", "كيف أسلم",
+                "أريد أن أسلم", "أسلم", "أعتنق", "اعتناق", "نطق الشهادة",
+                "shahada", "shahadah", "testimony", "become a muslim", "become muslim",
+                "becoming muslim", "convert", "revert", "accept islam",
+                "enter islam", "embrace islam", "tawheed", "tawhid"] },
+      { id: "pl-qadar", need: 1, target: "#pm-qadar",
+        words: ["القدر", "قدر", "القضاء والقدر", "المكتوب", "مكتوب علي", "النصيب", "الجبر",
+                "كل شيء مكتوب", "مكتوب", "فلماذا أسعى", "لماذا أسعى", "الاختيار",
+                "qadar", "qadr", "destiny", "fate", "predestination", "decree",
+                /* The objection is almost never phrased with the word qadar.
+                   It is phrased "if everything is written, why should I try" —
+                   which matched nothing until these went in. */
+                "everything is written", "already written", "written for me",
+                "why should i try", "why bother", "no point trying", "predestined",
+                "free will", "meant to be", "do i have a choice"] },
+      { id: "pl-angels", need: 1, target: "#pm-angels",
+        words: ["الملائكة", "ملائكة", "جبريل", "ملك الموت", "الكرام الكاتبون", "الحفظة",
+                "angels", "angel", "malaika", "jibril", "gabriel", "angel of death"] },
+      /* `need: 2` on purpose. "الإيمان" and "belief" are ordinary words that
+         appear in half the questions on this page; one of them alone must not
+         route a reader here. Two means the sentence is really asking about
+         the pillars of faith. */
+      { id: "pl-iman", need: 2, target: "#p-iman",
+        words: ["أركان", "الأركان", "الإيمان", "أركان الإيمان", "ستة", "ست", "الاعتقاد", "العقيدة",
+                "pillars", "pillar", "iman", "faith", "six", "belief", "believe", "creed", "aqeedah"] },
+      /* Likewise: "الصلاة" alone is the commonest word on the page, so this
+         needs a counting or timing word beside it. Without that gate it would
+         steal every prayer question from the rulings written for them. */
+      { id: "pl-salah", need: 2, target: "#pi-salah",
+        words: ["الصلاة", "صلاة", "الصلوات", "خمس", "الخمس", "كم", "أوقات", "وقت", "متى",
+                "الفجر", "الظهر", "العصر", "المغرب", "العشاء",
+                "prayer", "prayers", "salah", "salat", "five", "how many", "times", "when",
+                "fajr", "dhuhr", "asr", "maghrib", "isha"] },
+      { id: "pl-arkan", need: 1, target: "#pillars",
+        must: ["أركان", "الأركان", "ركن", "pillars", "pillar", "arkan"],
+        words: ["أركان", "الأركان", "ركن", "أركان الإسلام", "خمسة", "خمس", "المباني",
+                "pillars", "pillar", "arkan", "five pillars", "pillars of islam",
+                "basics", "fundamentals", "what is islam built on"] },
       { id: "bidah", need: 1, target: "#bidah",
         words: ["مولد", "المولد", "بدعة", "بدع", "الاحتفال", "احتفال", "محدثة",
                 "mawlid", "birthday", "innovation", "bidah", "celebrate", "celebrating"],
@@ -1202,6 +1296,81 @@
        lookup, not guidance. This renders the ANSWER — a sentence that
        actually addresses the question — and puts the texts underneath it as
        what the answer rests on. */
+    /* Build the short answer for a pillars topic out of the DATA, never by
+       retyping it. `card` finds an item by its id across every group. */
+    function iitwPillarCard(id) {
+      let found = null;
+      (PILLARS.groups || []).forEach(g => (g.items || []).forEach(it => {
+        if (it.id === id) found = it;
+      }));
+      return found;
+    }
+    function iitwPillarAnswer(topicId, target) {
+      const P = PILLARS, z = P.zakat;
+      const link = (en, ar, href) => ({ linkEn: en, linkAr: ar, hrefTarget: href });
+      const fromCard = (id, href, en, ar) => {
+        const c = iitwPillarCard(id);
+        if (!c) return null;
+        return Object.assign({
+          headEn: c.title, headAr: c.titleAr,
+          answerEn: c.plain, answerAr: c.plainAr,
+          bodyEn: c.example || "", bodyAr: c.exampleAr || ""
+        }, link(en, ar, href || target));
+      };
+      switch (topicId) {
+        case "pl-shahada": return fromCard("pi-shahada", "#pi-shahada",
+          "Read it with the other four pillars", "اقرأها مع الأركان الأربعة الأخرى");
+        case "pl-salah": return fromCard("pi-salah", "#pi-salah",
+          "The prayer, and what to do about years you missed", "الصلاة، وما تصنع فيما فاتك من السنين");
+        case "pl-sawm": return fromCard("pi-sawm", "#pi-sawm",
+          "Fasting — and who does not have to", "الصيام — ومن لا يلزمه");
+        case "pl-hajj": return fromCard("pi-hajj", "#pi-hajj",
+          "Hajj, and what \"able\" actually means", "الحج، وما معنى الاستطاعة");
+        case "pl-qadar": return fromCard("pm-qadar", "#pm-qadar",
+          "The decree — and the commonest misunderstanding of it", "القدر — وأكثر ما يُساء فهمه فيه");
+        case "pl-angels": return fromCard("pm-angels", "#pm-angels",
+          "The angels, with the other five pillars of faith", "الملائكة مع بقيّة أركان الإيمان");
+        case "pl-arkan": {
+          const g = P.groups[0];
+          return Object.assign({
+            headEn: "Islam is built on five, and faith on six",
+            headAr: "الإسلامُ مبنيٌّ على خمسٍ، والإيمانُ على ستّ",
+            answerEn: "The five: the two testimonies; the five daily prayers; zakat; fasting Ramadan; and Hajj once in a lifetime for whoever is able. The six of faith: belief in Allah, His angels, His books, His messengers, the Last Day, and the decree — its good and its bad.",
+            answerAr: "الخمس: الشهادتان، والصلواتُ الخمس، والزكاة، وصومُ رمضان، وحجُّ البيت مرّةً في العمر لمن استطاع. وأركانُ الإيمان الستّة: الإيمانُ بالله، وملائكته، وكتبه، ورسله، واليوم الآخر، وبالقدر خيره وشرّه.",
+            bodyEn: g.proof + " — " + g.ref,
+            bodyAr: g.proofAr + " — " + g.refAr
+          }, link("Every one of them explained, with examples", "بيانُ كلِّ ركنٍ منها بالأمثلة", "#pillars"));
+        }
+        case "pl-iman": {
+          const g = P.groups[1];
+          return Object.assign({
+            headEn: g.title, headAr: g.titleAr,
+            answerEn: "Belief in Allah, His angels, His books, His messengers, the Last Day, and belief in the decree — its good and its bad. The five pillars of Islam are what you DO; these six are what you BELIEVE.",
+            answerAr: "الإيمانُ بالله، وملائكته، وكتبه، ورسله، واليوم الآخر، والإيمانُ بالقدر خيره وشرّه. فأركانُ الإسلام الخمسة عمل، وهذه الستُّ اعتقاد.",
+            bodyEn: g.proof + " — " + g.ref,
+            bodyAr: g.proofAr + " — " + g.refAr
+          }, link("All six explained, one by one", "بيانُ الستّة واحدًا واحدًا", "#p-iman"));
+        }
+        case "pl-fitr": return Object.assign({
+          headEn: z.fitr.head, headAr: z.fitr.headAr,
+          answerEn: z.fitr.body, answerAr: z.fitr.bodyAr,
+          bodyEn: z.fitr.note, bodyAr: z.fitr.noteAr
+        }, link("Zakat al-Fitr in full", "زكاةُ الفطر كاملةً", "#zakat-fitr"));
+        case "pl-zakat": {
+          const r0 = z.examples.rows[0], r1 = z.examples.rows[1];
+          return Object.assign({
+            headEn: "Zakat is 2.5% of your savings, once a lunar year — not 2%, and not monthly",
+            headAr: "الزكاةُ ربعُ عشر مالك مرّةً في السنة — لا اثنان في المئة، ولا كلَّ شهر",
+            answerEn: "Once a lunar year, if what you have saved has stayed above the threshold for that whole year, you give two and a half per cent of it. It is not taken out of your salary as it arrives, and the rate is not 2%.",
+            answerAr: "مرّةً في السنة القمرية، إذا بقي ما ادّخرتَه فوق النِّصاب طَوالَ الحول، أخرجتَ منه ربعَ العشر. ولا تُؤخذ من الراتب كلَّما وصل، وليست النسبةُ اثنين في المئة.",
+            bodyEn: r1.q + " " + r1.sum.replace(/\*\*/g, "") + " And: " + r0.q + " " + r0.sum.replace(/\*\*/g, ""),
+            bodyAr: r1.qAr + " " + r1.sumAr.replace(/\*\*/g, "") + " و: " + r0.qAr + " " + r0.sumAr.replace(/\*\*/g, "")
+          }, link("The threshold, the worked examples, who it goes to", "النِّصابُ، والأمثلةُ المحلولة، ومن تُصرف إليه", "#zakat"));
+        }
+      }
+      return null;
+    }
+
     function iitwDirectAnswerHtml(o) {
       return `<div class="guidance-results-head">
           <h3><span class="en-only">The answer to what you asked</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">جواب ما سألت عنه</span></h3>
@@ -1250,6 +1419,17 @@
 
       /* READ THE SENTENCE BEFORE SCORING ANY WORD IN IT. */
       const intent = iitwIntent(raw);
+
+      /* ---------- A PILLARS QUESTION GOES STRAIGHT TO THE PILLAR ----------
+         These are the plainest questions anyone asks — "how many prayers",
+         "how much is zakat", "what are the pillars" — and they must never be
+         answered by scoring the individual words of the sentence. Every
+         answer below is built FROM js/pillars.js rather than restated here,
+         so the two can never drift apart. */
+      if (intent.topic && /^pl-/.test(intent.topic.id) && typeof PILLARS !== "undefined") {
+        const ans = iitwPillarAnswer(intent.topic.id, intent.topic.target);
+        if (ans) { out.innerHTML = iitwDirectAnswerHtml(ans); return; }
+      }
 
       /* A ruling question that matched a topic goes straight to the authored
          answer for that topic, and nothing else is allowed to pre-empt it. */
@@ -2381,6 +2561,136 @@
       </article>`;
     }
 
+    /* ============================================================
+       THE PILLARS — أركان الإسلام والإيمان
+       Data in js/pillars.js. Rendered here only.
+
+       Bold markers are routed through plParas, because a bold marker
+       only converts where a paragraph helper runs it — a string
+       printed straight into the template ships literal asterisks, and
+       that has now happened on this site twice.
+       ============================================================ */
+    function plBold(t) { return String(t || "").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+    function plParas(t, rtl) {
+      return String(t || "").split(/\n\s*\n/).filter(Boolean)
+        .map(b => `<p${rtl ? ' dir="rtl"' : ""}>${plBold(b)}</p>`).join("");
+    }
+    function plPair(en, ar) {
+      return `${en ? `<div class="en-only">${plParas(en)}</div>` : ""}` +
+             `${ar ? `<div class="ar-only pl-ar" dir="rtl">${plParas(ar, true)}</div>` : ""}`;
+    }
+    /* A proof block. Arabic first and always shown, because the wording
+       IS the evidence; the English rendering is a translation of it. */
+    function plProof(o, p, pa, r, ra, st, sta) {
+      const ar = o[pa], en = o[p], ref = o[r], refAr = o[ra], str = o[st], strAr = o[sta];
+      if (!ar && !en) return "";
+      return `<div class="pl-proof">
+        ${ar ? `<div class="pl-proof-ar" dir="rtl">${ar}</div>` : ""}
+        ${en ? `<p class="en-only pl-proof-en">${en}</p>` : ""}
+        ${(ref || refAr) ? `<div class="pl-ref"><span class="en-only">${ref || ""}</span><span class="ar-only" dir="rtl">${refAr || ref || ""}</span></div>` : ""}
+        ${(str || strAr) ? `<div class="pl-grade"><span class="en-only">${str || ""}</span><span class="ar-only" dir="rtl">${strAr || str || ""}</span></div>` : ""}
+      </div>`;
+    }
+    function plCard(it) {
+      return `<div class="pl-card" id="${it.id}">
+        <div class="pl-card-head">
+          <span class="pl-num">${it.icon || ""}${it.num ? " " + it.num : ""}</span>
+          <span class="en-only">${it.title}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${it.titleAr}</span>
+        </div>
+        <div class="pl-plain">
+          <div class="pl-plain-label"><span class="en-only">In plain words</span><span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
+          ${plPair(it.plain, it.plainAr)}
+        </div>
+        ${(it.example || it.exampleAr) ? `<div class="pl-eg">
+          <div class="pl-eg-label"><span class="en-only">For example</span><span class="ar-only" dir="rtl">مثال</span></div>
+          ${plPair(it.example, it.exampleAr)}
+        </div>` : ""}
+        ${plProof(it, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
+        ${plProof(it, "extraProof", "extraProofAr", "extraRef", "extraRefAr", "strength", "strengthAr")}
+        ${it.link ? `<a class="pl-go" href="${it.link}"><span class="en-only">${it.linkEn}</span><span class="ar-only" dir="rtl">${it.linkAr}</span></a>` : ""}
+      </div>`;
+    }
+    function renderPillars() {
+      const host = document.getElementById("pillarsBox");
+      if (!host || typeof PILLARS === "undefined") return;
+      const P = PILLARS;
+      host.innerHTML = `
+        <h2 class="section-title"><span class="en-only">🕋 ${P.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${P.titleAr}</span></h2>
+        <div class="rv-intro">${plPair(P.intro, P.introAr)}</div>
+        ${P.groups.map(g => `
+          <div class="pl-group" id="${g.id}">
+            <h3 class="rv-head"><span class="en-only">${g.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${g.titleAr}</span></h3>
+            <div class="pl-lead">${plPair(g.lead, g.leadAr)}</div>
+            ${plProof(g, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
+            ${(g.note || g.noteAr) ? `<div class="pl-note">${plPair(g.note, g.noteAr)}</div>` : ""}
+            ${g.items.map(plCard).join("")}
+          </div>`).join("")}
+        <div class="pl-closing">${plPair(P.closing, P.closingAr)}</div>`;
+    }
+
+    /* ---- the zakat arithmetic, its own section ---- */
+    function renderZakat() {
+      const host = document.getElementById("zakatBox");
+      if (!host || typeof PILLARS === "undefined" || !PILLARS.zakat) return;
+      const z = PILLARS.zakat;
+      /* BOTH HALVES MUST BE CLASSED. Written first as bare English beside an
+         Arabic span, which is the exact markup-pair shape this repo records as
+         its commonest defect — measured at 36 English strings still showing in
+         Arabic mode on this section alone. */
+      const list = (arr) => arr.map(p => `<li><span class="en-only">${plBold(p.en)}</span><span class="ar-only pl-li-ar" dir="rtl">${plBold(p.ar)}</span></li>`).join("");
+      host.innerHTML = `
+        <h2 class="section-title"><span class="en-only">💰 ${z.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${z.titleAr}</span></h2>
+        <div class="rv-intro">${plPair(z.intro, z.introAr)}</div>
+
+        <div class="pl-correct">
+          <h3 class="pl-sub"><span class="en-only">⚠️ ${z.correction.head}</span><span class="ar-only" dir="rtl">${z.correction.headAr}</span></h3>
+          <ul class="pl-list">${list(z.correction.points)}</ul>
+          ${plProof(z.correction, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
+        </div>
+
+        <div class="pl-block">
+          <h3 class="pl-sub"><span class="en-only">📏 ${z.threshold.head}</span><span class="ar-only" dir="rtl">${z.threshold.headAr}</span></h3>
+          ${plPair(z.threshold.body, z.threshold.bodyAr)}
+          ${plProof(z.threshold, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
+          <div class="pl-note">${plPair(z.threshold.note, z.threshold.noteAr)}</div>
+        </div>
+
+        <div class="pl-block">
+          <h3 class="pl-sub"><span class="en-only">🧮 ${z.examples.head}</span><span class="ar-only" dir="rtl">${z.examples.headAr}</span></h3>
+          ${z.examples.rows.map(r => `<div class="pl-eg-row">
+            <div class="pl-q"><span class="en-only">${r.q}</span><span class="ar-only" dir="rtl">${r.qAr}</span></div>
+            ${plPair(r.a, r.aAr)}
+            <div class="pl-sum"><span class="en-only">${plBold(r.sum)}</span><span class="ar-only" dir="rtl">${plBold(r.sumAr)}</span></div>
+          </div>`).join("")}
+        </div>
+
+        <div class="pl-block">
+          <h3 class="pl-sub"><span class="en-only">🎯 ${z.recipients.head}</span><span class="ar-only" dir="rtl">${z.recipients.headAr}</span></h3>
+          ${plPair(z.recipients.body, z.recipients.bodyAr)}
+          ${plProof(z.recipients, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
+          <ul class="pl-list pl-not">${list(z.recipients.notFor)}</ul>
+        </div>
+
+        <div class="pl-block pl-virtues">
+          <h3 class="pl-sub"><span class="en-only">🌱 ${z.virtues.head}</span><span class="ar-only" dir="rtl">${z.virtues.headAr}</span></h3>
+          ${plPair(z.virtues.lead, z.virtues.leadAr)}
+          ${z.virtues.points.map(p => `<div class="pl-virtue">
+            <div class="en-only">${plBold(p.en)}</div>
+            <div class="ar-only pl-ar" dir="rtl">${plBold(p.ar)}</div>
+            ${(p.ref || p.refAr) ? `<div class="pl-ref"><span class="en-only">${p.ref}</span><span class="ar-only" dir="rtl">${p.refAr}</span></div>` : ""}
+            ${(p.strength || p.strengthAr) ? `<div class="pl-grade"><span class="en-only">${p.strength}</span><span class="ar-only" dir="rtl">${p.strengthAr}</span></div>` : ""}
+          </div>`).join("")}
+        </div>
+
+        <div class="pl-block" id="zakat-fitr">
+          <h3 class="pl-sub"><span class="en-only">🌙 ${z.fitr.head}</span><span class="ar-only" dir="rtl">${z.fitr.headAr}</span></h3>
+          ${plPair(z.fitr.body, z.fitr.bodyAr)}
+          ${plProof(z.fitr, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
+          <div class="pl-note">${plPair(z.fitr.note, z.fitr.noteAr)}</div>
+        </div>`;
+    }
+
     function renderBidah() {
       const host = document.getElementById("bidahBox");
       if (!host || typeof BIDAH === "undefined") return;
@@ -2446,6 +2756,8 @@
       if (window.applyI18n) window.applyI18n();
     }
 
+    renderPillars();
+    renderZakat();
     renderBidah();
 
     /* ================= The hardest questions asked about Islam =========
@@ -2991,9 +3303,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608262315"></script>
+  <script src="js/wordlens.js?v=202608281132"></script>
 
-  <script src="js/main.js?v=202608262315"></script>
-  <script src="js/i18n.js?v=202608262315"></script>
+  <script src="js/main.js?v=202608281132"></script>
+  <script src="js/i18n.js?v=202608281132"></script>
 </body>
 </html>
