@@ -4534,7 +4534,48 @@ unchanged.
 2. Gold jewellery a woman wears is stated as a genuine disagreement without
    naming which scholars hold which side. That is thinner than the treatment
    the music ruling gets, and could be written up properly in `FIQH_RULINGS`.
-3. Nothing links to the new section from `index.html`'s eleven doors. "I want
-   to start praying" and "how much zakat do I owe" both belong there.
+3. ~~Nothing links to the new section from the home page doors~~ — **DONE,
+   see the round below.**
 4. Everything still open from PART 19, including the ~77 English strings
    still leaking in Arabic mode on `judgement.html`.
+
+## SECOND ROUND, 28 August: the doors, and what testing them exposed
+
+Three doors added to `index.html#situations`, taking it from eleven to
+fourteen. Only three, and the reasoning is worth keeping: a door has to name
+a situation somebody is actually IN. Nothing on the home page said what Islam
+is built on, nothing said anything about money, and nothing answered the
+fatalism objection — which is NOT the Mahdi door beside it, that one being
+about waiting for a rescuer rather than about whether effort counts.
+
+**A fourth was considered and dropped.** "I want to start praying" would sit
+beside the existing "I want to get my prayer right" and make the reader
+choose between two prayer doors for no gain. The pillars page carries the
+prayer card anyway and links on to the missed-years ruling.
+
+All fourteen anchors were resolved in the RENDERED DOM before the links were
+written, per the rule PART 18 set. The nav was not touched — it is full at
+fourteen and these are doors inside a page.
+
+### A DANGLING LINK THAT WAS ALREADY LIVE
+
+`js/verify.js` sent every glossary hit to **`guidance.html#terms`**, and
+`getElementById("terms")` returns **null** — the glossary is rendered by
+`termsBox()` INSIDE the rulings cards and has no section of its own. So a
+reader who asked Verify "ما هي البدعة؟" and clicked through landed at the top
+of a very long page. It points at `#rulings` now. Introduced in PART 18,
+found only because the doors were checked properly.
+
+### AND A MISREADING, RECORDED BECAUSE IT WILL HAPPEN AGAIN
+
+`guidance.html#pm-qadar` was measured at `scrollY: 0` and called a broken
+anchor. **That reading was wrong.** The preview pane does not scroll at all —
+`window.scrollTo(0, 5000)` also leaves `scrollY` at 0, and so does a manual
+`scrollIntoView()`. Nothing about the anchor was demonstrated.
+
+**In this pane, `scrollY` proves nothing.** Anything about scrolling,
+sticky positioning or viewport arithmetic has to be checked on a real device.
+The guarded `load` handler added alongside is a safety net for hashes naming
+JS-rendered anchors; what is verified is that it fires, resolves the id and
+calls `scrollIntoView`, and stays silent with no hash — `window.__iitwHashJump`
+records it. Whether the browser needed the help is untested.

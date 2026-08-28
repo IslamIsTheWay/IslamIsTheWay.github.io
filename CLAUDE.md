@@ -146,6 +146,17 @@ something memory would have got wrong: the six pillars of faith are usually
 cited to the hadith of Jibril, but **al-Bukhari 50's version lists five and
 mentions neither the books nor al-qadar**. The six-item wording is Muslim's.
 
+## THE PREVIEW PANE DOES NOT SCROLL — scrollY PROVES NOTHING THERE
+
+`guidance.html#pm-qadar` was measured at `scrollY: 0` and reported as a
+broken anchor. It was not. `window.scrollTo(0, 5000)` leaves scrollY at 0 in
+that pane too, and so does a manual `scrollIntoView()`. **Anything to do with
+scrolling, sticky positioning or viewport arithmetic has to be checked on a
+real device** — and see [[claims-must-be-verified-on-his-device]]: his
+experience beats your testing.
+
+What CAN be measured there is logic: instrument the branch and assert it ran.
+
 ## SWEEP YOUR OWN NEW SECTION FOR ARABIC LEAKS
 
 The pillars section shipped its list items as bare English beside an Arabic
