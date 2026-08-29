@@ -49,8 +49,8 @@ const AR = {
   "Open the Quran Library": "افتح مكتبة القرآن",
   "Ask About Your Situation": "اسأل عن حالتك",
   "Search a Person": "ابحث عن شخص",
-  "Quick Access": "وصول سريع",
-  "Jump straight to what you're looking for.": "اذهب مباشرة إلى ما تبحث عنه.",
+  "Or browse by subject": "أو تصفَّح بحسب الموضوع",
+  "The doors above are arranged by what is happening to you. These are arranged by what the material is.": "الأبواب فوق مرتّبة بحسب حالك، وهذه مرتّبة بحسب موضوع المادّة.",
   "The Holy Quran": "القرآن الكريم",
   "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 496 verses — at least two in every surah — open into a full explanation of why they are worded as they are.":
     "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة، وأربعمئة وستٌّ وتسعون آية — في كلّ سورةٍ منها آيتان فأكثر — تُفتح على شرحٍ كاملٍ لسبب ورودها بهذا اللفظ.",
