@@ -146,6 +146,46 @@ something memory would have got wrong: the six pillars of faith are usually
 cited to the hadith of Jibril, but **al-Bukhari 50's version lists five and
 mentions neither the books nor al-qadar**. The six-item wording is Muslim's.
 
+## NOBODY TYPES فصحى INTO A SEARCH BOX
+
+His instruction: "from the east to the west … some words are not
+understandable in Iraq for Moroccan people, and the opposite's the same."
+`IITW_DIALECT` in guidance.html folds dialect onto the standard word before
+anything is scored — عراقي شنو شلون شكد · شامي شو بدي قديش · مصري ايه
+ازاي عايز · خليجي وش أبغى · مغربي آش كيفاش بغيت شحال · تونسي شنوة قداش.
+
+**Three homographs are deliberately NOT folded and must stay that way:**
+مال (Iraqi "of", and the word for money — folding it breaks every zakat
+question), حق (Gulf "of", and "right"), ماشي ("not" in Morocco, "walking"
+further east). A wrong fold is worse than a missing one.
+
+**And the self-harm branch carries the dialects too.** بدي موت حالي fell
+straight through to the ordinary scorer. The word for oneself changes by
+region: حالي Levant, راسي Morocco, نفسي and روحي elsewhere. Phrases
+only — موت alone must never fire it.
+
+## i18n.js KEYS ON THE EXACT ENGLISH STRING
+
+Change a sentence in a page without changing its key in `js/i18n.js` and the
+Arabic silently disappears. That is this site's commonest defect arriving by
+a new door, and it makes every copy edit a TWO-FILE edit.
+
+Related, and it cost a diagnostic round: **the language is remembered in
+localStorage**, so a page may already be in Arabic when a test opens it, and
+clicking the toggle then switches it to ENGLISH. Read
+`document.documentElement.className` before sweeping for leaks. I read a
+page-wide English fallback as "I have broken i18n.js" when I had simply
+toggled Arabic off.
+
+## QUOTE A PAGE HEIGHT WITH ITS VIEWPORT, OR NOT AT ALL
+
+I told him the home page was 42,403px and fifty-three phone screens, and he
+chose what to do partly on that number. It was measured at a **zero-width
+viewport** and was an artifact. The true figures were 27,235px (34 screens)
+at 375x812 and 14,606px (18) at 1280x800 — a factor of two apart, and they
+pointed at a different fix. Assert `window.innerWidth` before quoting a
+height, and quote phone and desktop both.
+
 ## THE PREVIEW PANE DOES NOT SCROLL — scrollY PROVES NOTHING THERE
 
 `guidance.html#pm-qadar` was measured at `scrollY: 0` and reported as a

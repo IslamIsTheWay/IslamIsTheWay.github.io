@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 28 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 20 first, then PART 19.** PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 29 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 21 first, then PART 20.** PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -99,7 +99,7 @@ the owner had to report twice.
 5. **Open Work & Limitations** - unfinished items, traps found the hard way
 6. **Credentials & Access** - logins, GitHub tokens, SEO
 7. **Content Guide** - how to add content correctly + validation commands
-8. **PARTS 8-20** - one section per session, newest last. Each records what
+8. **PARTS 8-21** - one section per session, newest last. Each records what
    was built, what broke, and what must not be reintroduced.
 
 ---
@@ -4579,3 +4579,172 @@ The guarded `load` handler added alongside is a safety net for hashes naming
 JS-rendered anchors; what is verified is that it fires, resolves the id and
 calls `scrollIntoView`, and stays silent with no hash — `window.__iitwHashJump`
 records it. Whether the browser needed the help is untested.
+
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 21 - 29 August 2026: the basics, the dialects, and the phone
+
+## THE TEST CAME FIRST, AND IT FAILED
+
+Twenty questions typed the way people actually type them. **The page answered
+five.** Several answers were not merely unhelpful, they were wrong:
+
+| typed | answered with |
+|---|---|
+| how much money do i give to poor people every year | **bank interest** |
+| what do muslims actually believe in | wanting good for your neighbour |
+| i did something really bad can i be forgiven | **alcohol and drugs** |
+| كم لازم اطلع فلوس للفقراء | the tasbih after prayer |
+| ايه اللي المسلم لازم يعمله | Ayat al-Kursi |
+
+Four found nothing at all: `ازاي اتوضأ`, `هل الخمر حرام`, `اكل لحم الخنزير
+حرام`, "how do i say sorry to god".
+
+**Two separate causes, and it is worth keeping them apart.** Half was
+CONTENT the site did not have. Half was SEARCH that only understood فصحى.
+
+## `js/basics.js` — 23 cards, six sections, TWO LEVELS
+
+He asked for this in these words: *"the basics should be added, and the
+medium level also should be added, and divided. So it's easier to find if I
+need it."* So the levels are tabs, one at a time, and the chosen tab is
+remembered in localStorage.
+
+**Start here** — purification (why you wash, the steps from 5:6, what breaks
+it and what does not, ghusl, tayammum) · halal and haram (the short list of
+forbidden food, alcohol and everything that intoxicates, where your money
+comes from) · who Allah is (why you are here, al-Ikhlas, the one sin not
+forgiven, He is near and needs no middleman) · turning back (however bad it
+was, what repentance actually requires, deeds exchanged not erased, everyone
+errs, sayyid al-istighfar).
+
+**When you're ready for more** — how anyone knows this (two sources and they
+are not equal, what sahih and da'if actually mean, why scholars differ) ·
+the work of the heart (sincerity, taqwa, the good life).
+
+Cards are drawn by `plCard`, the same renderer `js/pillars.js` uses, so the
+two cannot drift into looking like different sites.
+
+**Every proof read out of the record**: al-Bukhari 71, 2856, 4497, 6306,
+6954; Muslim's Books of Purification, Drinks, Zakat and Repentance; Ibn Majah
+4250 and 4251; at-Tirmidhi 2499. That last one carries at-Tirmidhi's own
+**غريب** on it and the card says so rather than borrowing a grading from
+somewhere else. Verses from `js/quran-text.js`. Muslim by book, never by
+number.
+
+## ARABIC IS NOT ONE LANGUAGE IN A SEARCH BOX
+
+His instruction, and it is the right one: *"don't forget the Arabic accents
+from, like, Iraq, maybe from Morocco. From the east to the west … some words
+are not understandable in Iraq for Moroccan people, and the opposite's the
+same."*
+
+`IITW_DIALECT` folds dialect onto the standard word **before anything is
+scored**, written in the form `normalize()` produces:
+
+| | what | how | why | want | now |
+|---|---|---|---|---|---|
+| عراقي | شنو | شلون | ليش | أريد | هسه |
+| شامي | شو | كيف | ليش | بدي | هلق |
+| مصري | ايه | ازاي | ليه | عايز | دلوقتي |
+| خليجي | وش | كيف | ليش | أبغى | الحين |
+| مغربي | آش، شنو | كيفاش | علاش | بغيت | دابا |
+| تونسي | شنوة | كيفاش | علاش | نحب | توا |
+
+**THREE HOMOGRAPHS ARE DELIBERATELY NOT FOLDED**, and they must stay that
+way: **مال** (Iraqi "belonging to", and the word for MONEY — folding it would
+break every zakat question), **حق** (Gulf "belonging to", and "right"), and
+**ماشي** ("not" in Morocco, "walking" and "fine" further east). A wrong fold
+is worse than a missing one.
+
+## THE BRANCH WHERE A MISS IS NOT AN INCONVENIENCE
+
+**`بدي موت حالي` — Levantine, and one of the commonest ways it is really
+written — fell straight through to the ordinary scorer.** So did `بغيت
+نموت`, `عايز اموت`, `أبغى أموت`.
+
+The self-harm patterns now carry the dialect forms, including the regional
+word for oneself: **حالي** in the Levant, **راسي** in Morocco, **نفسي** and
+**روحي** elsewhere. The existing rule stands and must: **phrases only, never
+single words** — موت on its own still never fires it.
+
+Measured: 13/13 caught across dialects, and **zero false positives** on
+"مات أبي وأنا حزين جدا", "what happens after death", "كيف أصلي على الميت".
+
+## A ONE-LINE ROOT FAULT THE BATTERY FOUND
+
+A `must` word gated a topic OPEN and then counted **zero** toward its hit
+total, because only `words` was counted. So a sentence could pass the gate
+and score nothing. **Eight of thirty failures came from that one line.**
+`must` now counts toward hits as well.
+
+**Measured end state: 36/36** across English, Egyptian, Iraqi, Levantine,
+Gulf, Moroccan and Tunisian. Regression-checked: self-harm, music, missed
+prayers, the traveller's prayer, riba, bid'ah, the pillars and "I love my
+mom" all answer exactly as before.
+
+## THE HOME PAGE — AND A MEASUREMENT I GOT WRONG
+
+**I reported the page at 42,403px / 53 phone screens and put that number in
+front of him before he chose what to do about it. It was wrong.** That
+reading was taken at a zero-width viewport, which is an artifact and not a
+page. The real figures:
+
+    375 x 812  (phone)    27,235px   34 screens
+    1280 x 800 (desktop)  14,606px   18 screens
+
+So desktop was already near the target and **the problem was mobile only** —
+and it was SPACE, not content: the same cards stacked one per row with
+desktop padding, and 60-80px of air between every section.
+
+Fixed in CSS alone. Browse-y grids (the mosque gallery, the recitations) go
+two-up on a phone; card chrome tightens; section rhythm drops to 34px.
+**27,235 → 19,073px. Thirty-four screens to twenty-three.** Desktop 14,606 →
+14,466, unchanged. No horizontal overflow at 375px. The doors now begin 2.3
+screens in instead of 5.
+
+**The duplication was named rather than merged.** Two navigation grids sat
+together with nothing to say why there were two. They are not duplicates —
+one is by what is HAPPENING to you, the other by what the MATERIAL is — but
+"Quick Access" describes a mechanism, so the pair read as a mistake. Renamed
+to "Or browse by subject" with a subtitle stating the distinction. Merging
+them was approved but NOT done: on measuring, the subject grid is the only
+route on the home page to Prophets, Companions, Hadith, Sunnah, Stories and
+Courses, so merging would have cost navigation to six pages to save ~2,000px.
+
+## Traps added this round — do not reintroduce
+
+* **`i18n.js` keys on the exact English string.** Change a sentence in
+  `index.html` without changing its key and the Arabic silently disappears —
+  which is this site's commonest defect, arriving by a new door. Both files
+  move together, always.
+* **`scrollHeight` at a zero-width viewport is meaningless.** Always assert
+  the viewport before quoting a page height, and quote both phone and desktop
+  — they differ by a factor of two here.
+* **The language is remembered in localStorage**, so a page may already be in
+  Arabic when a test opens it, and clicking the toggle then switches it to
+  ENGLISH. Read `document.documentElement.className` before sweeping for
+  leaks; do not assume a click means Arabic. This produced a false "i18n.js
+  is broken" reading that cost a diagnostic round.
+* **A `must` entry must also count as a hit**, or the gate opens onto zero.
+* **List every person of an Arabic verb.** `iitwHasWord` strips ال و ف ب ك ل
+  but NOT the imperfect prefixes ا ن ي ت, and it must not — stripping ن from
+  نور leaves ور. So اتوضأ, نتوضأ, يتوضأ and تتوضأ are all listed.
+
+## Open work as of 29 August 2026
+
+1. The site now has purification, halal/haram, tawheed, repentance, the
+   sources and the heart — but **not** marriage and family rights,
+   inheritance, business contracts beyond riba, or the fiqh of prayer beyond
+   what is in `#worship` and `#rulings`. Those are the obvious next tier.
+2. The dialect map is one flat word list. It handles the question words,
+   the verbs of wanting and the common nouns; it does not handle Maghrebi
+   negation circumfixes (ما...ش) or Gulf/Iraqi verb morphology.
+3. `js/basics.js` items carry `keys` that nothing currently reads — the
+   routing is done by `GUIDANCE_TOPICS`. Wiring the cards into a scored
+   search as well would let a question reach a card no topic names.
+4. Everything still open from PART 20.
