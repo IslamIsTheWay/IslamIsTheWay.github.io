@@ -262,6 +262,21 @@ const GOLDEN_MIRROR = {
       rank: "documented"
     },
     {
+      /* The hinge between this page and guidance.html#morals. It states the
+         mechanism in one paragraph and then hands over — the detail lives
+         there, and is not repeated here. */
+      id: "gm-home",
+      part: "do",
+      h: "And the machinery that does it here, in one house at a time",
+      hAr: "والآلة التي تفعل ذلك عندنا، في بيتٍ بيت",
+      en: "Everything above is a destination. It is worth being just as clear about the road, because the road does not run through parliaments. It runs through houses.\n\nA child is born with nothing written on him. What gets written is what he hears at his own table, what he watches pass between his parents, and what the people around him treat as normal — and a young person who wants to be noticed will always go one step past whatever normal is. So normal is never where a society stays. It is where the next step begins.\n\nWhich means the figures on this page were not produced by a policy. They were produced by several million ordinary evenings. And so is the alternative.\n\nTHE PART THAT IS ACTUALLY YOURS. Complaining about a generation is a report on the people who raised it — and that is the uncomfortable, useful version, because it is the only one that leaves you holding something. The full argument, with what it asks of a parent, of a man's eyes, and of a house, is set out on the Guidance page under Morals.",
+      ar: "كلُّ ما تقدّم غايةٌ يُنتهى إليها، وحقُّ الطريق أن يُبيَّن كما بُيّنت الغاية، فالطريقُ لا يمرّ بالبرلمانات، وإنما يمرّ بالبيوت.\n\nيولد الطفلُ ولم يُكتب عليه شيء، فيُكتب عليه ما يسمعه على مائدته، وما يراه يجري بين أبويه، وما يعدّه من حوله مألوفًا — والصغيرُ الذي يريد أن يُرى يتجاوز المألوفَ أبدًا بخطوة. فما كان المألوفُ موضعَ وقوفٍ لجماعةٍ قطُّ، وإنما هو مبدأُ الخطوة التالية.\n\nومعنى ذلك أنّ الأرقام التي في هذه الصفحة لم تصنعها سياسة، وإنما صنعتها ملايينُ الأمسيات العاديّة. وكذلك صُنع خلافُها.\n\nوأمّا الذي يخصّك أنت: فالشكوى من جيلٍ إخبارٌ عن الذين ربّوه — وهي الصورةُ الثقيلة النافعة، إذ هي الوحيدة التي تُبقي في يدك شيئًا. وتفصيلُ ذلك، وما يقتضيه من الوالد ومن بصر الرجل ومن البيت، مبسوطٌ في صفحة التوجيه تحت عنوان الأخلاق.",
+      rank: "This entry makes no factual claim of its own; the figures it refers to are sourced in the entries above it.",
+      rankAr: "لا دعوى في هذه المادّة بنفسها، والأرقامُ المشار إليها معزوّةٌ في المواد التي قبلها.",
+      plain: "The statistics above are a destination. The road to them runs through ordinary houses, one child at a time — and so does the road away from them.",
+      plainAr: "الأرقامُ فيما تقدّم غاية، وطريقُها يمرّ بالبيوت العاديّة، طفلًا طفلًا — وكذلك طريقُ الخروج منها."
+    },
+    {
       id: "gm-week",
       part: "do",
       h: "What a young person actually does about it this week",

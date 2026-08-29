@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608291736" />
+  <link rel="stylesheet" href="css/style.css?v=202608291844" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -84,6 +84,8 @@
           <span class="ar-only" dir="rtl">الزكاة — كم ومتى</span></a>
         <a href="#basics">🧭 <span class="en-only">The basics, step by step</span>
           <span class="ar-only" dir="rtl">الأساسيات خطوةً خطوة</span></a>
+        <a href="#morals">🪞 <span class="en-only">Morals — where they went</span>
+          <span class="ar-only" dir="rtl">الأخلاق — أين ذهبت</span></a>
         <a href="#misunderstood" class="gd-jump-hot">🛡️ <span class="en-only">The hardest questions about Islam</span>
           <span class="ar-only" dir="rtl">أصعبُ ما يُسأل عنه الإسلام</span></a>
         <a href="#mis-double">⚖️ <span class="en-only">"None of your business" — and the double standard</span>
@@ -176,6 +178,12 @@
   <section id="basics">
     <div class="container">
       <div id="basicsBox"></div>
+    </div>
+  </section>
+
+  <section id="morals">
+    <div class="container">
+      <div id="moralsBox"></div>
     </div>
   </section>
 
@@ -349,52 +357,53 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608291736"></script>
+  <script src="js/data.js?v=202608291844"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608291736"></script>
+  <script src="js/sunnah.js?v=202608291844"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608291736"></script>
+  <script src="js/adhkar.js?v=202608291844"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608291736"></script>
+  <script src="js/scholars.js?v=202608291844"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608291736"></script>
+  <script src="js/scholars-books.js?v=202608291844"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608291736"></script>
+  <script src="js/revival.js?v=202608291844"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608291736"></script>
+  <script src="js/bidah.js?v=202608291844"></script>
   <!-- The five pillars, the six of faith, and the zakat arithmetic. The
        most basic thing this site can carry, and it was missing until now. -->
-  <script src="js/pillars.js?v=202608291736"></script>
-  <script src="js/basics.js?v=202608291736"></script>
+  <script src="js/pillars.js?v=202608291844"></script>
+  <script src="js/basics.js?v=202608291844"></script>
+  <script src="js/morals.js?v=202608291844"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608291736"></script>
-  <script src="js/endmap.js?v=202608291736"></script>
+  <script src="js/misunderstood.js?v=202608291844"></script>
+  <script src="js/endmap.js?v=202608291844"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608291736"></script>
+  <script src="js/terms.js?v=202608291844"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608291736"></script>
+  <script src="js/figures.js?v=202608291844"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608291736"></script>
+  <script src="js/signs.js?v=202608291844"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -960,6 +969,95 @@
        at 2 for the vaguer ones is what stops a single ordinary word from
        deciding the answer. */
     const GUIDANCE_TOPICS = [
+      /* ---------- MORALS (js/morals.js) ----------
+         Ahead of everything else because these are the narrowest topics on
+         the page: "can I talk to a girl in my class" must not be answered
+         with the pillars, and "my parents fight" must not be answered with
+         the adhkar. Dialect forms are carried here as well as folded by
+         IITW_DIALECT. */
+      { id: "mo-talk", need: 1, target: "#mo-context",
+        must: ["اكلم بنت", "اكلم بنات", "اكلم فتاة", "اكلم امراه", "اكلم رجل", "اكلم شاب",
+               "زميلة", "زميلتي", "زميل", "الاختلاط", "اختلاط", "الخلوة", "خلوة",
+               "صداقة بين", "صديقة", "صاحبتي", "احكي مع", "اتكلم مع بنت", "احادث",
+               "talk to a girl", "talk to girls", "talk to a woman", "talk to women",
+               "talk to a boy", "talk to men", "opposite gender", "opposite sex",
+               "female friend", "male friend", "girl friend", "friendship between",
+               "female colleague", "classmate", "texting a girl", "messaging a girl",
+               "chatting with", "is it haram to talk", "mixing", "khulwa", "khalwa",
+               "alone with a woman", "alone with a girl"],
+        words: ["اكلم", "كلام", "بنت", "بنات", "امراه", "رجل", "زميلة", "زميل", "الاختلاط",
+                "الخلوة", "صداقة", "صديقة", "رسائل", "محادثة", "العمل", "الدراسة",
+                "talk", "talking", "girl", "girls", "woman", "women", "man", "men",
+                "colleague", "classmate", "friend", "friendship", "message", "text",
+                "chat", "alone", "mixing", "work", "study", "haram"] },
+      { id: "mo-gaze", need: 1, target: "#mo-gaze",
+        must: ["غض البصر", "غض بصري", "النظر الي النساء", "النظر للنساء", "اطالع", "انظر الي",
+               "لا استطيع غض", "الفتنة بالنظر",
+               "lower my gaze", "lowering the gaze", "looking at women", "looking at girls",
+               "cant stop looking", "staring", "my eyes", "she was dressed", "her fault",
+               "what she wears", "temptation"],
+        words: ["غض", "البصر", "النظر", "العين", "النساء", "الفتنة", "لبسها", "الحجاب",
+                "gaze", "eyes", "looking", "stare", "women", "dressed", "wearing",
+                "temptation", "fault", "responsible"] },
+      { id: "mo-raise", need: 1, target: "#mo-luqman",
+        must: ["كيف اربي", "تربية الاولاد", "تربية الابناء", "اربي ابني", "اربي ابنتي",
+               "اعلم ابني", "اعلم ابنتي", "ولدي", "بنتي", "اولادي",
+               "how to raise", "raising children", "raising kids", "raise my son",
+               "raise my daughter", "teach my son", "teach my daughter", "parenting",
+               "my children", "my kids", "bring up"],
+        words: ["تربية", "اربي", "ابني", "ابنتي", "اولادي", "الاطفال", "لقمان", "الادب",
+                "raise", "raising", "children", "kids", "son", "daughter", "parenting",
+                "teach", "manners", "upbringing"] },
+      { id: "mo-fight", need: 1, target: "#mo-house",
+        /* Every person of the verb — dual AND plural. "أبي وأمي يتشاجرون" is
+           what people write, and the dual form alone missed it. */
+        must: ["ابي وامي يتشاجران", "يتشاجرون", "يتشاجران", "يتخاصمون", "يتعاركون", "يتضاربون",
+               "شجار الوالدين", "خصام الوالدين", "يتخانقون", "الصراخ في البيت",
+               "الضرب في البيت", "ابي يضرب", "مشاكل البيت", "البيت مضطرب",
+               "parents fight", "parents fighting", "parents arguing", "shouting at home",
+               "my dad hits", "violence at home", "domestic", "unhappy home", "broken home",
+               "arguing in front of the children"],
+        words: ["شجار", "خصام", "الصراخ", "الضرب", "البيت", "الوالدين", "ابي", "امي", "قلق",
+                "fight", "fighting", "arguing", "shouting", "hitting", "home", "house",
+                "parents", "anxiety", "children"] },
+      { id: "mo-shame", need: 1, target: "#mo-shame",
+        must: ["الحياء", "قلة الحياء", "قليل الحياء", "الوقاحة", "الالفاظ البذيئة", "الشتم",
+               "السباب", "كلام بذيء", "بذاءة",
+               "shame", "shameless", "hayaa", "modesty", "swearing", "cursing",
+               "bad language", "bad words", "vulgar", "why do people swear",
+               "cool to swear", "no respect"],
+        words: ["الحياء", "الوقاحة", "الشتم", "السباب", "بذيء", "الادب", "الاحترام",
+                "shame", "modesty", "swearing", "cursing", "language", "words", "respect",
+                "vulgar", "rude"] },
+      { id: "mo-generation", need: 1, target: "#mo-shepherd",
+        must: ["جيل اليوم", "هذا الجيل", "الشباب اليوم", "جيل فاسد", "الاجيال", "الجيل الجديد",
+               "من المسؤول عن الجيل", "لماذا الشباب",
+               "this generation", "young people today", "kids these days", "youth today",
+               "generation is bad", "no morals", "morals today", "society is getting worse",
+               "whose fault is it", "young people have no"],
+        words: ["جيل", "الجيل", "الشباب", "الاخلاق", "المجتمع", "التربية", "المسؤولية",
+                "generation", "young", "youth", "morals", "society", "raised", "fault",
+                "responsible", "worse"] },
+      { id: "mo-double", need: 1, target: "#mo-double",
+        must: ["ازدواجية", "الكيل بمكيالين", "مكيالين", "يجوز للرجل ولا يجوز للمراه",
+               "لماذا الفرق بين الرجل والمراه", "حرب بين الرجال والنساء",
+               "double standard", "double standards", "unfair to women", "unfair to men",
+               "why is it different for women", "different for men and women",
+               "different for men", "men can but women", "war between men and women",
+               "one rule for men", "not fair on women", "not fair on men"],
+        words: ["ازدواجية", "مكيالين", "الرجل", "المراه", "ظلم", "فرق", "انصاف",
+                "double", "standard", "unfair", "men", "women", "different", "hypocrisy"] },
+      { id: "mo-where", need: 1, target: "#mo-direction",
+        must: ["الي اين", "الي اين نتجه", "الجيل القادم", "ماذا بعد", "المعايير", "تغير المجتمع",
+               "رجعي", "متخلف",
+               "where does it end", "where is this going", "where is society heading",
+               "where are we going", "where is this heading", "next generation", "standards",
+               "old fashioned", "out of touch", "society changing", "slippery slope",
+               "getting worse every year", "what comes next"],
+        words: ["اين", "الجيل", "المعايير", "المجتمع", "التغير", "رجعي",
+                "where", "end", "generation", "standards", "society", "changing",
+                "old fashioned"] },
+
       /* ---------- THE BASICS (js/basics.js) ----------
          Ahead of the pillars because these are narrower: someone asking how
          to make wudu must not be handed the whole prayer pillar, and someone
@@ -1574,10 +1672,16 @@
           if (it.id === id) found = it;
         }));
       }
-      /* The basics use the same card shape, so one lookup serves both and a
-         topic can point at either file without the router knowing which. */
+      /* The basics and the morals use the same card shape, so one lookup
+         serves all three and a topic can point at any file without the
+         router knowing which. */
       if (!found && typeof BASICS !== "undefined") {
         (BASICS.sections || []).forEach(g => (g.items || []).forEach(it => {
+          if (it.id === id) found = it;
+        }));
+      }
+      if (!found && typeof MORALS !== "undefined") {
+        (MORALS.groups || []).forEach(g => (g.items || []).forEach(it => {
           if (it.id === id) found = it;
         }));
       }
@@ -1587,8 +1691,14 @@
     /* A whole SECTION of the basics, when the question is about the subject
        rather than about one card in it. */
     function iitwBasicsSection(id) {
-      if (typeof BASICS === "undefined") return null;
-      return (BASICS.sections || []).filter(x => x.id === id)[0] || null;
+      var g = null;
+      if (typeof BASICS !== "undefined") {
+        g = (BASICS.sections || []).filter(x => x.id === id)[0] || null;
+      }
+      if (!g && typeof MORALS !== "undefined") {
+        g = (MORALS.groups || []).filter(x => x.id === id)[0] || null;
+      }
+      return g;
     }
     function iitwPillarAnswer(topicId, target) {
       const P = PILLARS, z = P.zakat;
@@ -1605,7 +1715,7 @@
       /* Every bs- topic names either a CARD id or a SECTION id, and the two
          are told apart by looking for each in turn. Answers are built from
          the data, never restated here. */
-      if (/^bs-/.test(topicId)) {
+      if (/^(bs|mo)-/.test(topicId)) {
         const c = iitwPillarCard(target.replace("#", ""));
         if (c) {
           return Object.assign({
@@ -1743,8 +1853,9 @@
          answered by scoring the individual words of the sentence. Every
          answer below is built FROM js/pillars.js rather than restated here,
          so the two can never drift apart. */
-      if (intent.topic && /^(pl|bs)-/.test(intent.topic.id) &&
-          (typeof PILLARS !== "undefined" || typeof BASICS !== "undefined")) {
+      if (intent.topic && /^(pl|bs|mo)-/.test(intent.topic.id) &&
+          (typeof PILLARS !== "undefined" || typeof BASICS !== "undefined" ||
+           typeof MORALS !== "undefined")) {
         const ans = iitwPillarAnswer(intent.topic.id, intent.topic.target);
         if (ans) { out.innerHTML = iitwDirectAnswerHtml(ans); return; }
       }
@@ -2999,6 +3110,31 @@
       }));
     }
 
+    /* ============================================================
+       MORALS — data in js/morals.js, cards drawn by plCard.
+
+       No level tabs here: the four groups are one argument in order,
+       and letting a reader open the third before the first would
+       break it. The first group is the premise everything else
+       rests on.
+       ============================================================ */
+    function renderMorals() {
+      const host = document.getElementById("moralsBox");
+      if (!host || typeof MORALS === "undefined") return;
+      const M = MORALS;
+      host.innerHTML = `
+        <h2 class="section-title"><span class="en-only">🪞 ${M.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${M.titleAr}</span></h2>
+        <div class="rv-intro">${plPair(M.intro, M.introAr)}</div>
+        ${M.groups.map(g => `
+          <div class="pl-group" id="${g.id}">
+            <h3 class="rv-head"><span class="en-only">${g.icon} ${g.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${g.icon} ${g.titleAr}</span></h3>
+            <div class="pl-lead">${plPair(g.lead, g.leadAr)}</div>
+            ${g.items.map(it => plCard(it) + ((it.note || it.noteAr)
+              ? `<div class="pl-note pl-note-tight">${plPair(it.note, it.noteAr)}</div>` : "")).join("")}
+          </div>`).join("")}
+        <div class="pl-closing">${plPair(M.closing, M.closingAr)}</div>`;
+    }
+
     /* ---- the zakat arithmetic, its own section ---- */
     function renderZakat() {
       const host = document.getElementById("zakatBox");
@@ -3129,6 +3265,7 @@
     renderPillars();
     renderZakat();
     renderBasics();
+    renderMorals();
     renderBidah();
 
     /* ================= The hardest questions asked about Islam =========
@@ -3710,9 +3847,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608291736"></script>
+  <script src="js/wordlens.js?v=202608291844"></script>
 
-  <script src="js/main.js?v=202608291736"></script>
-  <script src="js/i18n.js?v=202608291736"></script>
+  <script src="js/main.js?v=202608291844"></script>
+  <script src="js/i18n.js?v=202608291844"></script>
 </body>
 </html>
