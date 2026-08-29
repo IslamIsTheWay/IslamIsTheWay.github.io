@@ -922,3 +922,96 @@ on, and revision of something memorised. Ticked off, with the run of days.
   adjective at all.
 - **A home-screen widget is not possible from a web app.** That needs a native
   app. Do not promise it.
+
+## A stemmer that maps two words onto one string is a wrong answer waiting
+
+`stem()` is not decoration. It decides which `must` gate opens, and a gate that
+opens on the wrong sentence produces a confident answer to a question nobody
+asked. Measured on the live site: `beer -> be`, `weed -> we`,
+`betting -> bett`, `better -> bett` — so **"i cant be happy when my friend
+succeeds" and "i want to be a better muslim" were both answered with the ruling
+on alcohol**, and so was any sentence containing "we".
+
+The rules, and both copies of the stemmer (`guidance.html` and `sunnah.html`)
+must keep agreeing on all four:
+
+1. **Three characters must survive a strip.** Otherwise short content words
+   land on stop words.
+2. **Never strip `-er` or `-ers`.** other→oth, mother→moth, under→und,
+   never→nev, answer→answ. The plain `-s` rule already gives prayers→prayer,
+   which is the form the lists actually hold.
+3. **Try a shorter suffix before giving up.** `eyes` cut at `-es` leaves "ey",
+   below the floor — fall through to `-s` and leave "eye".
+4. **Undouble the consonant, but not ll / ss / zz / ff.** I got this wrong on
+   the first pass by including `l`: `kills` and `killing` became "kil" while
+   `kill` stayed "kill", and the three forms of the commonest verb in the
+   self-harm gate stopped matching each other.
+
+**Before changing any matching code, run the battery, change it, run it again.**
+Both bugs above were found by a battery written for new content, not by reading
+the function.
+
+## A `must` gate opened by a generic word is not a gate
+
+`للناس` gated the sincerity topic, so a Moroccan asking why people envy each
+other was answered with the section on doing things for Allah rather than for
+the room. `js/verify.js` has had this guard for a long time (`V_GENERIC`); the
+Guidance matcher did not. There is now an `IITW_GENERIC` set, and a gate needs
+one entry that actually names a subject.
+
+Generic words still count toward the hit total once a real subject word has
+opened the gate. They are weak evidence, not no evidence.
+
+## Keep `must` phrases short enough to survive being asked differently
+
+A multi-word `must` is matched as a **substring of the whole query**, so
+`"how to choose a wife"` does not match `"how do i choose a wife"`. The frame
+around the subject changes constantly and the subject does not.
+
+Write the shortest fragment that still names the subject and could not appear
+in a sentence about anything else: `"choose a wife"`, `"mahr"`,
+`"afford to marry"`, `"without the quran"`, `"marriage contract"`. Enumerating
+phrasings never ends and never finishes the job.
+
+## Fold a dialect word onto the form a list actually carries
+
+`كايحسدو` folded to `يحسدون` still matched nothing, because no topic held
+`يحسدون`. Folding it to the bare root `حسد` fixed it. **A fold that lands on a
+word no list holds is a fold that did nothing** — check the destination, not
+just the source.
+
+And verb-prefix stripping stays hand-written. `iitwArStrip` removes NOMINAL
+prefixes and must never learn ي ت ن: `نساء` would become `ساء`, `يوم` would
+become `وم`. The same reason مال، حق، ماشي are deliberately absent from the map.
+
+## Before adding a section to a page, read what that page already carries
+
+He asked for the new subjects on the Judgement page "if it needs one". It did
+not: `j-rights` already had the bankrupt one and `j-alone` already had the
+sound heart — both endgames were there before either new section existed. What
+was missing was the **join**: the page said settle your debts and never said
+where the debts come from. One paragraph, not a section.
+
+The answer to "cover this here too" is sometimes a sentence.
+
+## `rank` on a golden-mirror entry is a KEY, not a sentence
+
+`glBadge` looks `rank` up in `GL_RANK` and returns `""` for anything missing.
+Eight entries carried `rank: "reasoning"`, which was not a key, so eight cards
+sat with no badge at all on a page where every sourced card wears one — and it
+was invisible, because a missing badge looks like a design choice. If you add a
+rank value, add it to `GL_RANK` in the same commit.
+
+## Check the famous number before quoting the famous hadith
+
+"If one whose religion and character please you proposes, marry him" is quoted
+everywhere as at-Tirmidhi **1084** — and at-Tirmidhi himself records that its
+narrator was contradicted, that al-Layth's mursal version is more likely, and
+that **al-Bukhari did not consider that wording preserved**. The site cites
+**1085** instead.
+
+Reading the collection instead of trusting the number caught this, the same way
+it caught al-Bukhari 50 listing five items and not six. The rule is unchanged
+and it keeps paying: **search the collection by wording, never cite from
+memory, and read what the compiler said underneath the hadith.**
+

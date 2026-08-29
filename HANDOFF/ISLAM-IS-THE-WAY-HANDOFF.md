@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 29 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 22 first, then PART 21.** PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 29 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 23 first, then PART 22, then PART 21.** PART 23 is the marriage / "judge by what" / envy sections AND two bugs in the search that was already live - a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, and a generic word that could open a `must` gate on its own. Read its search half before touching any matching code anywhere on this site. PART 22 is the morals section and the text-versus-application rule that governs it. PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -4871,3 +4871,213 @@ the DUAL يتشاجران and people write the PLURAL.
    narration — which is correct, but it means it is the one card on the page
    whose weight rests on the argument alone.
 3. Everything still open from PART 21.
+
+---
+
+# PART 23 - Judging by what, envy, marriage; and two live search bugs
+
+*Added 29 August 2026, after PART 22.*
+
+## What he asked for
+
+Three things, in one message, and the third one at great length.
+
+1. **Marriage, agreements "and some other things."** This was already recorded
+   as the largest content gap in PART 22's open work.
+2. **"Give me an argument away from religion."** His reply to it is the whole
+   section and it is not a defence, it is a return question: *"If I give you an
+   argument away from religion, what are we going to give our judgements from?"*
+   He then walked the candidates himself - culture, traditions, morals,
+   humanity, the kindness of people's hearts, your own heart, desire - and gave
+   the orphan-sister example for the last two.
+3. **"The moral destruction starts with one sentence: what will I get advantage
+   if I help you?"** And underneath it, at much greater length and with much
+   more heat, envy. He spoke about envy for more than half the message.
+
+He also said, for the second time, **not to write the same words twice** across
+the Guidance page, the Golden Age page and the Judgement page.
+
+## What shipped
+
+| Where | What |
+|---|---|
+| `js/marriage.js` -> `guidance.html#marriage` | 13 cards, 5 groups |
+| `js/standard.js` -> `guidance.html#standard` | 11 cards, 3 groups |
+| `js/hearts.js` -> `guidance.html#hearts` | 12 cards, 2 groups |
+| `js/golden-mirror.js` | `gm-pulldown`, `gm-noruler` - two hinges, nothing repeated |
+| `js/judgement.js` | one paragraph on the `j-rights` note. No new section - see below |
+
+Page order on Guidance is deliberate: pillars, zakat, basics, **marriage**,
+**standard**, morals, **hearts**, rulings. `standard` sits BEFORE `morals`
+because "morals are declining" is not a claim you can even state until you
+have said what you are measuring against.
+
+## THE JUDGEMENT PAGE DID NOT NEED A SECTION, and that was the right answer
+
+He said "and the judgment day if it needs one." It did not. `j-rights` already
+carried the bankrupt one - the man who arrives with prayer and fasting and
+leaves with nothing because of what he took from people - and `j-alone` already
+carried 26:89, the sound heart. **Both endgames were on that page before either
+new section existed.** Writing them again is exactly what he told me not to do.
+
+What was missing was the JOIN: the page said settle your debts and never said
+where the debts come from. One paragraph on the existing note names it - almost
+nothing on that list started as an act, it started as something in the chest -
+and hands the reader to `#hearts`.
+
+**The general rule this is an instance of:** when he asks for a subject on a
+page, check what that page already carries before adding anything. The answer
+is sometimes a sentence, not a section.
+
+## Two bugs in the search that was ALREADY LIVE
+
+Both found by running a battery for the new sections, not by reading code.
+Both are the failure he described in his own words in the very first session:
+one word deciding an answer the whole sentence contradicts.
+
+### 1. `stem()` collapsed short content words onto stop words
+
+The suffix stripper had no minimum stem length:
+
+```
+beer -> be      weed -> we      hers -> h
+is   -> i       was  -> wa      betting -> bett   better -> bett
+```
+
+`beer`, `weed` and `betting` are all `must` entries on the drinks-and-gambling
+topic. So **"i cant be happy when my friend succeeds" was answered with the
+ruling on alcohol**, and so was **"i want to be a better muslim"**, and so was
+any sentence containing the word "we". Measured on the live page.
+
+Rewritten with four rules:
+
+- three characters must survive a strip;
+- **`-er` and `-ers` are never stripped** - they are where most of the damage
+  came from (other->oth, mother->moth, under->und, never->nev, answer->answ)
+  and the plain `-s` rule already gives prayers->prayer, which is the form the
+  lists hold;
+- a shorter suffix is tried before giving up (eyes cut at `-es` leaves "ey",
+  below the floor, so it falls through to `-s` and leaves "eye");
+- Porter's undoubling, **excluding ll, ss, zz and ff**. I got this wrong on the
+  first pass and included `l`, which made `kills` and `killing` stem to "kil"
+  while `kill` stayed "kill" - the three forms of the commonest verb in the
+  self-harm gate stopped matching each other. Caught by re-running the battery.
+
+**`sunnah.html` carried its own one-line copy of the same stemmer and got the
+same fix.** Two stemmers that disagree is how one search starts contradicting
+the other on the same sentence.
+
+### 2. A generic word could open a `must` gate on its own
+
+`للناس` gated `bs-ikhlas`, so a Moroccan asking why people envy each other was
+answered with the section on sincerity, on the strength of the word "people".
+`js/verify.js` has carried exactly this guard (`V_GENERIC`) since PART 19; the
+Guidance matcher never got it. There is now an `IITW_GENERIC` set, and a gate
+needs at least one non-generic entry to open. Generic words still count toward
+`hits` once it is open - weak evidence, not no evidence.
+
+## `must` PHRASES MUST BE SHORT
+
+A multi-word `must` is matched as a **substring of the whole query**, so
+`"how to choose a wife"` does not match `"how do i choose a wife"` - the
+question frame around the subject changed and the gate closed. Six of the new
+topics failed this way on the first run.
+
+The fix is never more phrasings. It is **the shortest fragment that still names
+the subject**: `"choose a wife"`, `"mahr"`, `"afford to marry"`,
+`"without the quran"`, `"marriage contract"`.
+
+## Dialect: verbs, finally - but only by hand
+
+`IITW_DIALECT` folded question words and subject nouns and no verbs, so `نطلق`
+(Moroccan "I divorce") and `كايحسدو` ("they envy") reached nothing at all on a
+page that now has sections on both.
+
+**Verb-prefix stripping cannot be generalised.** `iitwArStrip` removes NOMINAL
+prefixes only and must never be taught to remove ي ت ن, because `نساء` would
+become `ساء` and `يوم` would become `وم`. So the high-frequency forms are folded
+as whole words: نطلق، نتزوج، نتجوز، كايحسدو، كيحسد، نحسد، يسبو، يشتم، نساعد،
+نفرح، نختار، نحتاج، عارف. Explicit, and unable to damage anything not listed -
+the same reason مال and حق and ماشي are still deliberately absent.
+
+**Fold onto the form the topic actually lists.** I first folded `كايحسدو` to
+`يحسدون`, which no topic carried, so it still matched nothing. Folding it to the
+bare root `حسد` fixed it. A fold that lands on a word no list holds is a fold
+that did nothing.
+
+## A badge that was never printing
+
+`rank` on a GOLDEN_MIRROR entry is a **key into `GL_RANK`**, not a sentence.
+Eight entries carried `rank: "reasoning"`, which was not a key, so `glBadge`
+returned `""` and eight cards sat unlabelled on a page where every sourced card
+wears a badge. (`gm-home`, added in PART 22, carried a whole sentence there and
+behaved the same way.) `reasoning` is now a real key - "Reasoning from what is
+above - no new claim" - and all 21 entries say what kind of claim they are.
+
+## Two gradings corrected while sourcing
+
+- **"If one whose religion and character please you proposes, marry him"** is
+  almost always quoted as at-Tirmidhi **1084**. At-Tirmidhi himself records
+  that its narrator was contradicted, that al-Layth's mursal version is more
+  likely, and that **al-Bukhari did not consider that wording preserved**. The
+  site cites **1085** instead - the Abu Hatim al-Muzani wording at-Tirmidhi
+  graded hasan gharib - and the card says why.
+- **"The most hated permitted thing to Allah is divorce"** (Ibn Majah 2018) and
+  **"envy eats good deeds as fire eats wood"** (Abu Dawud 4903) are both outside
+  the two Sahihs with criticised chains. Both cards say so, and then make the
+  same point from what is authentic. Neither is needed.
+
+## Content decisions worth keeping
+
+- **`standard` opens by turning the question around, not by defending.** The
+  person asking is not being stupid; he is assuming what almost everyone
+  assumes. Every card gives the alternative its strongest form before showing
+  where it moves.
+- **`standard` ends by conceding what is true.** Islam does not say the
+  conscience is worthless - Muslim's Book of Virtue makes the heart's unease a
+  sign of sin. Leaving that out would win the argument by hiding evidence.
+- **`hearts` refuses to make envy a scoreboard.** He said envy is worse among
+  women. `hs-coat`/`hs-list` gives that observation its real content - it wears
+  a different coat in different rooms, and the male form is named as fully as
+  the female one - and then says turning it into a competition is just the
+  disease in a new form. That is his own rule from PART 22 ("no side is a
+  hundred percent right") applied, not a softening.
+- **The West comparison is on the Golden Age page and nowhere else.** "They
+  lift the one who rises, we wait for him to fall" is a civilisational claim,
+  so it is `gm-pulldown`, and `#hearts` links to it rather than repeating it.
+- **`marriage` says where the madhhabs differ.** The wali is a condition to the
+  majority and not to the Hanafis for an adult woman. Closing a difference the
+  scholars kept open for twelve centuries is not this site's job.
+- **The mahr card is blunt on purpose.** It is hers, not her father's, and not
+  a price - because the practice in several of our countries contradicts 4:4
+  outright.
+
+## Measured
+
+- **37/37** on the new sections across English, MSA and five dialects
+  (Iraqi, Levantine, Egyptian, Gulf, Moroccan).
+- **21/21** regression over wudu, drinks, food, repentance, zakat, prayer, the
+  pillars and the morals section.
+- **5/5** self-harm, English and dialect.
+- **Zero** English strings leaking in Arabic mode across all four Guidance
+  sections.
+- Zero console errors, zero dangling anchors, zero literal `**`, zero
+  `undefined`, zero mojibake across nine pages.
+
+## Open work as of 29 August 2026
+
+1. **Inheritance.** The orphan card (`sd-self`) leans on 4:6 and the marriage
+   section leans on the contract, but the actual shares are nowhere on the site
+   and people ask about them constantly. It is the largest remaining gap.
+2. **Prayer fiqh** beyond `#worship` and `#rulings` - what breaks it, making it
+   up, joining and shortening.
+3. **Business and work** beyond riba: wages, partnerships, what makes a sale
+   invalid. `mg-write` opens the door and stops at the door.
+4. **Maghrebi negation circumfixes** (ما...ش) are still not handled, and the
+   verb folds added here are a hand-written list, not morphology. The next
+   person to touch this should measure before generalising - a wrong fold is
+   worse than a missing one.
+5. `js/basics.js` `keys` are still not read by any scored search.
+6. ~77 English strings still leaking in Arabic mode on `judgement.html`.
+7. Everything still open from PART 21.
+
