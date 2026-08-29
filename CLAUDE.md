@@ -146,6 +146,23 @@ something memory would have got wrong: the six pillars of faith are usually
 cited to the hadith of Jibril, but **al-Bukhari 50's version lists five and
 mentions neither the books nor al-qadar**. The six-item wording is Muslim's.
 
+## SAY WHICH PART IS A TEXT AND WHICH IS AN APPLICATION
+
+The morals section (js/morals.js) carries firm positions on how men and women
+should speak to each other, and that is exactly where the temptation is worst.
+So the card separates them out loud: being alone with a non-mahram is an
+EXPLICIT hadith (al-Bukhari 5233); "keep the conversation inside its reason"
+is the scholars' APPLICATION of it and of 33:32 — strong, widely held, and
+not a verse. **Never let an application wear the clothes of a text.** The
+stronger the opinion, the more this matters.
+
+Related, and it governs that whole section: when he asks for something with
+force in it, the force belongs in the ARGUMENT, not in contempt for anybody.
+The morals section opens with the men because 24:30 does, and it closes by
+saying that if it reads as an accusation against someone else it has been
+read backwards. He asked for that balance himself — "no side is a hundred
+percent right" — and it is what keeps the section persuasive.
+
 ## NOBODY TYPES فصحى INTO A SEARCH BOX
 
 His instruction: "from the east to the west … some words are not

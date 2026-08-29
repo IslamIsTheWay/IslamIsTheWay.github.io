@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 29 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 21 first, then PART 20.** PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 29 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 22 first, then PART 21.** PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -99,7 +99,7 @@ the owner had to report twice.
 5. **Open Work & Limitations** - unfinished items, traps found the hard way
 6. **Credentials & Access** - logins, GitHub tokens, SEO
 7. **Content Guide** - how to add content correctly + validation commands
-8. **PARTS 8-21** - one section per session, newest last. Each records what
+8. **PARTS 8-22** - one section per session, newest last. Each records what
    was built, what broke, and what must not be reintroduced.
 
 ---
@@ -4763,3 +4763,111 @@ Courses, so merging would have cost navigation to six pages to save ~2,000px.
    routing is done by `GUIDANCE_TOPICS`. Wiring the cards into a scored
    search as well would let a question reach a card no topic names.
 4. Everything still open from PART 20.
+
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 22 - 29 August 2026: morals, and the complaint turned around
+
+## THE ARGUMENT IS HIS, AND IT IS WHY THE SECTION IS WORTH HAVING
+
+He asked for a section on morals and their decline. What makes it more than
+one more complaint about the young is the framing he gave with it:
+
+> "the generation you are mocking is actually a generation that came from
+> under your hand. So that's a problem that you created."
+
+That is an **accountability inversion**, and it governs the whole file. Every
+card is addressed to somebody RESPONSIBLE — a parent, a man with eyes, a
+person in a house — and never to a victim of somebody else's choices. The
+closing line says so outright: if it reads as an accusation against someone
+else, it has been read backwards.
+
+## `js/morals.js` — 12 cards, four groups, at `guidance.html#morals`
+
+| group | cards |
+|---|---|
+| the complaint turned around | you raised them (al-Bukhari 893) · no child is born like this (1385) · and it compounds, which is why it feels faster each decade |
+| what forms a person | a child raised inside a fight (66:6, 30:21) · what one father said to his son (Luqman 31:17-19) · when shame goes (3484, 6117) |
+| where the line is | it begins with the MEN (24:30 before 24:31) · the verse forbids the road (17:32) · speech stays inside its reason · the double standard, both ways |
+| where it ends, and stops | a standard that moves every decade · it stops in one house (25:74) |
+
+## THE ORDER IN THE THIRD GROUP IS LOAD-BEARING
+
+He said a great deal about women. He also said, in the same message: *"both
+sides are responsible. No side is a hundred percent responsible, and no side
+is a hundred percent right."*
+
+So that group **opens with the men**, because that is the Quran's own order —
+24:30 to the believing men, and 24:31 to the believing women after it. It
+makes "she was dressed like that" answerable in one line: your instruction
+arrived first and was not conditional on her. A section that reversed the
+order would be both less true to the text and less true to what he asked for.
+
+The double-standard card exists for the same reason and cuts both ways: a man
+known for talking to many women is called charming, a woman known for the
+same is called something else. One rule, addressed to both.
+
+## AND IT SAYS WHICH PART IS TEXT AND WHICH IS APPLICATION
+
+Being alone with a non-mahram is an **explicit hadith** (al-Bukhari 5233,
+and at-Tirmidhi 1171 for the "third of them is Shaytan" wording). "Keep the
+conversation inside its reason — the task, the assignment, the matter at
+hand" is the **scholars' application** of that and of 33:32.
+
+The card carries a note saying which is which. **Dressing an application up
+as a verse is the one thing this site does not do**, and a section with
+opinions this firm is exactly where it would be tempting.
+
+## NOT WRITTEN TWICE — he asked for this explicitly
+
+`js/golden-mirror.js` already carried the CIVILISATIONAL half: the West's own
+published figures on loneliness (`gm-loneliness`), family and marriage
+(`gm-family`), drugs (`gm-drugs`), the assumption of inferiority
+(`gm-inferiority`), and the word people think makes them a man
+(`gm-grownup`). **None of that is repeated in morals.js.**
+
+What that page lacked was the JOIN. It shows a destination and never says by
+what machinery the same thing arrives here, in a house, to one child. One
+new entry — `gm-home` — is that hinge, and it is short on purpose: its whole
+job is to state the mechanism in a paragraph and hand the reader over.
+
+## What he asked for that is deliberately NOT there
+
+He described where the trajectory ends, then said: *"I mean, don't put this,
+but you can give this idea."* So `mo-direction` makes the argument by the
+SHAPE of the road instead — a line that only ever moves in one direction is
+not being debated, it is being carried, and you can tell where a road goes
+from which way it slopes without walking to the end of it. The explicit image
+is not on the page and should not be added.
+
+## Search
+
+Eight topics route the plain questions, and they are the narrowest on the
+page so they sit ahead of the pillars and the basics — "can I talk to a girl
+in my class" must not be answered with the five pillars.
+
+**Measured 20/20** across English and five dialects, including `ليش جيل اليوم
+ما عنده اخلاق`, `علاش الناس كلهم يسبو`, `زميلتي في الشغل اتكلم معاها`.
+Regression 12/12. Arabic sweep of all four Guidance sections clean but for
+the two deliberate scholar domains.
+
+**Three misses the battery caught**, all the same shape as ever: "why is it
+different for men and women" (the list had "for women"), "where is society
+heading" (had "where is this going"), and `أبي وأمي يتشاجرون` — the list had
+the DUAL يتشاجران and people write the PLURAL.
+
+## Open work as of 29 August 2026
+
+1. The morals section covers the home, the gaze and speech between the sexes.
+   It does not cover marriage itself — the rights each spouse owes, what a
+   nikah actually requires, or divorce. That is the obvious next tier and it
+   is the other half of "the family is the core".
+2. `mo-loop` (the compounding chain) makes an argument about how decline
+   accelerates. It carries no text, because it is reasoning rather than a
+   narration — which is correct, but it means it is the one card on the page
+   whose weight rests on the argument alone.
+3. Everything still open from PART 21.
