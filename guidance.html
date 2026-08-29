@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608281236" />
+  <link rel="stylesheet" href="css/style.css?v=202608291722" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -82,6 +82,8 @@
           <span class="ar-only" dir="rtl">أركان الإسلام والإيمان</span></a>
         <a href="#zakat">💰 <span class="en-only">Zakat — how much, and when</span>
           <span class="ar-only" dir="rtl">الزكاة — كم ومتى</span></a>
+        <a href="#basics">🧭 <span class="en-only">The basics, step by step</span>
+          <span class="ar-only" dir="rtl">الأساسيات خطوةً خطوة</span></a>
         <a href="#misunderstood" class="gd-jump-hot">🛡️ <span class="en-only">The hardest questions about Islam</span>
           <span class="ar-only" dir="rtl">أصعبُ ما يُسأل عنه الإسلام</span></a>
         <a href="#mis-double">⚖️ <span class="en-only">"None of your business" — and the double standard</span>
@@ -168,6 +170,12 @@
   <section class="pattern-bg" id="zakat">
     <div class="container">
       <div id="zakatBox"></div>
+    </div>
+  </section>
+
+  <section id="basics">
+    <div class="container">
+      <div id="basicsBox"></div>
     </div>
   </section>
 
@@ -341,51 +349,52 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608281236"></script>
+  <script src="js/data.js?v=202608291722"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608281236"></script>
+  <script src="js/sunnah.js?v=202608291722"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608281236"></script>
+  <script src="js/adhkar.js?v=202608291722"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608281236"></script>
+  <script src="js/scholars.js?v=202608291722"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608281236"></script>
+  <script src="js/scholars-books.js?v=202608291722"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608281236"></script>
+  <script src="js/revival.js?v=202608291722"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608281236"></script>
+  <script src="js/bidah.js?v=202608291722"></script>
   <!-- The five pillars, the six of faith, and the zakat arithmetic. The
        most basic thing this site can carry, and it was missing until now. -->
-  <script src="js/pillars.js?v=202608281236"></script>
+  <script src="js/pillars.js?v=202608291722"></script>
+  <script src="js/basics.js?v=202608291722"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608281236"></script>
-  <script src="js/endmap.js?v=202608281236"></script>
+  <script src="js/misunderstood.js?v=202608291722"></script>
+  <script src="js/endmap.js?v=202608291722"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608281236"></script>
+  <script src="js/terms.js?v=202608291722"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608281236"></script>
+  <script src="js/figures.js?v=202608291722"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608281236"></script>
+  <script src="js/signs.js?v=202608291722"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -468,6 +477,95 @@
     function stem(w) {
       if (/[^aeiou](ies|ied)$/i.test(w)) return w.replace(/(ies|ied)$/i, "y");
       return w.replace(/(ings|ing|ers|er|ed|es|s)$/i, "") || w;
+    }
+
+    /* ============================================================
+       ARABIC IS NOT ONE LANGUAGE IN A SEARCH BOX — من المشرق إلى المغرب
+
+       His instruction, and it is the right one: "don't forget the Arabic
+       accents from, like, Iraq, maybe from Morocco. From the east to the
+       west … some words are not understandable in Iraq for Moroccan people,
+       and the opposite's the same."
+
+       Nobody types فصحى into a search box. An Iraqi writes شنو and شلون, a
+       Moroccan writes شنو or آش and كيفاش, an Egyptian writes ايه and ازاي,
+       a Gulf reader writes وش and أبغى, a Levantine writes شو and بدي. Every
+       one of those meant NOTHING to this page before — measured: "ازاي
+       اتوضأ" and "كم لازم اطلع فلوس للفقراء" both came back with the tasbih
+       after prayer, or with nothing at all.
+
+       So dialect is folded onto the standard word BEFORE anything is scored.
+       Written in the form `normalize()` produces: no harakat, أ إ آ folded
+       onto ا, ة onto ه, ى onto ي.
+
+       WHAT IS DELIBERATELY NOT HERE, because a wrong fold is worse than a
+       missing one:
+         · مال — Iraqi for "belonging to", and also the word for MONEY. It
+           would break every zakat question on the page.
+         · حق — Gulf for "belonging to", and also "right" and "truth".
+         · ماشي — "not" in Morocco, "walking" and "fine" further east.
+       Three genuine homographs, left alone on purpose.
+       ============================================================ */
+    const IITW_DIALECT = {
+      /* ما / ماذا — what.  عراقي شنو · شامي شو · مصري ايه · خليجي وش
+         · مغربي آش، شنو · تونسي شنوة */
+      "شنو": "ما", "شنوه": "ما", "شني": "ما", "شو": "ما", "شوه": "ما",
+      "ايه": "ما", "ايش": "ما", "وش": "ما", "وشنو": "ما", "اش": "ما", "واش": "ما",
+      /* كيف — how.  عراقي شلون · مغربي كيفاش · مصري ازاي */
+      "شلون": "كيف", "شلونه": "كيف", "كيفاش": "كيف", "كيفاه": "كيف",
+      "ازاي": "كيف", "كيفية": "كيف", "شكثر": "كيف",
+      /* لماذا — why.  ليش شرقًا · علاش غربًا · ليه مصر */
+      "ليش": "لماذا", "ليه": "لماذا", "علاش": "لماذا", "علاه": "لماذا", "لويش": "لماذا",
+      /* أين — where */
+      "وين": "اين", "فين": "اين", "منين": "اين", "فينه": "اين",
+      /* متى — when.  عراقي شوكت · مغربي إمتى، وقتاش · شامي إيمتى */
+      "شوكت": "متي", "امتي": "متي", "ايمتي": "متي", "وقتاش": "متي",
+      "متين": "متي", "وكتاش": "متي", "فوقاش": "متي",
+      /* من — who.  عراقي منو · مغربي شكون */
+      "منو": "من", "مين": "من", "شكون": "من", "اشكون": "من",
+      /* كم — how much.  عراقي شكد · شامي قديش · مغربي شحال */
+      "شكد": "كم", "شقد": "كم", "كام": "كم", "قديش": "كم", "اديش": "كم",
+      "شحال": "كم", "قداش": "كم",
+      /* أريد — want.  شامي بدي · خليجي أبغى، أبي · مصري عايز
+         · مغربي بغيت · تونسي نحب */
+      "بدي": "اريد", "بدنا": "نريد", "بدك": "تريد", "ابغي": "اريد", "ابي": "اريد",
+      "نبغي": "اريد", "عايز": "اريد", "عاوز": "اريد", "عايزه": "اريد", "عاوزه": "اريد",
+      "بغيت": "اريد", "نحب": "اريد", "حاب": "اريد", "ودي": "اريد", "نبي": "اريد",
+      /* ليس — not.  مو، مش، موب، مب */
+      "مو": "ليس", "مش": "ليس", "موب": "ليس", "مب": "ليس", "ماهوش": "ليس",
+      /* يجب — must */
+      "لازم": "يجب", "المفروض": "يجب", "مفروض": "يجب", "ضروري": "يجب",
+      /* مال — money.  فلوس مصر والشام · مصاري الشام · قروش */
+      "فلوس": "مال", "الفلوس": "المال", "مصاري": "مال", "المصاري": "المال",
+      "قروش": "مال", "فلوسي": "مالي",
+      /* كثير / قليل */
+      "هواي": "كثير", "وايد": "كثير", "بزاف": "كثير", "برشا": "كثير",
+      "كتير": "كثير", "ياسر": "كثير", "شوي": "قليل", "شويه": "قليل", "شويا": "قليل",
+      /* جيد */
+      "زين": "جيد", "مزيان": "جيد", "كويس": "جيد", "باهي": "جيد", "حلو": "جيد",
+      /* الآن.  عراقي هسه · شامي هلق · مصري دلوقتي · مغربي دابا
+         · خليجي الحين · تونسي توا */
+      "هسه": "الان", "هسا": "الان", "هلق": "الان", "هلا": "الان",
+      "دلوقتي": "الان", "دابا": "الان", "الحين": "الان", "توا": "الان",
+      /* شيء */
+      "شي": "شيء", "حاجه": "شيء", "حاجة": "شيء",
+      /* يجوز — is it allowed */
+      "ينفع": "يجوز", "يصح": "يجوز", "يزي": "يجوز",
+      /* أستطيع */
+      "اقدر": "استطيع", "نقدر": "استطيع", "قادر": "استطيع", "نجم": "استطيع",
+      /* أفعل */
+      "اسوي": "افعل", "نسوي": "افعل", "ندير": "افعل", "اعمل": "افعل", "نعمل": "افعل",
+      /* هكذا / لأن */
+      "هيك": "هكذا", "هيچ": "هكذا", "كده": "هكذا", "كذا": "هكذا",
+      "علشان": "لان", "عشان": "لان", "منشان": "لان", "حيت": "لان", "باش": "لان"
+    };
+
+    /* Fold dialect onto the standard word, whole words only. Never a
+       substring — that is the trap this repo records five times over. */
+    function iitwDialect(raw) {
+      const n = normalize(raw);
+      if (!/[؀-ۿ]/.test(n)) return n;
+      return n.split(" ").map(w => IITW_DIALECT[w] || w).join(" ");
     }
 
     function tokens(s) {
@@ -862,6 +960,126 @@
        at 2 for the vaguer ones is what stops a single ordinary word from
        deciding the answer. */
     const GUIDANCE_TOPICS = [
+      /* ---------- THE BASICS (js/basics.js) ----------
+         Ahead of the pillars because these are narrower: someone asking how
+         to make wudu must not be handed the whole prayer pillar, and someone
+         asking about pork must not be handed the five pillars.
+
+         The word lists carry the DIALECT forms as well as the standard ones.
+         IITW_DIALECT folds most of it, but a phrase like "ازاي اتوضا" only
+         survives if the phrase itself is listed too. */
+      { id: "bs-wudu", need: 1, target: "#bt-how",
+        must: ["وضوء", "الوضوء", "اتوضا", "اتوضأ", "أتوضأ", "توضا", "نتوضا", "نتوضأ",
+               "يتوضا", "يتوضأ", "تتوضا", "تتوضأ", "نتوضاو", "wudu", "wudhu",
+               "ablution", "wash before pray", "washing before pray",
+               "طهارة", "الطهارة", "طهاره", "purification", "purity", "clean for prayer"],
+        words: ["وضوء", "الوضوء", "اتوضا", "أتوضأ", "كيف أتوضأ", "ازاي اتوضا", "شلون اتوضا",
+                "كيفاش نتوضا", "صفة الوضوء", "خطوات الوضوء", "طهارة", "الطهارة",
+                "wudu", "wudhu", "ablution", "how to wash", "wash before praying",
+                "steps", "how do i wash"] },
+      { id: "bs-wudu-breaks", need: 2, target: "#bt-breaks",
+        must: ["وضوء", "الوضوء", "wudu", "ablution"],
+        words: ["ينقض", "نقض", "ينتقض", "بطل", "الريح", "النوم", "الشك", "الوسواس", "اعيد",
+                "breaks", "break", "invalidate", "wind", "sleep", "doubt", "redo", "again"] },
+      { id: "bs-ghusl", need: 1, target: "#bt-ghusl",
+        words: ["غسل", "الغسل", "جنابة", "الجنابة", "احتلام", "الاحتلام", "اغتسل",
+                "ghusl", "janabah", "wet dream", "full wash", "shower before prayer"] },
+      { id: "bs-tayammum", need: 1, target: "#bt-tayammum",
+        words: ["تيمم", "التيمم", "الصعيد", "لا يوجد ماء", "ما في ماء", "بدون ماء",
+                "tayammum", "no water", "without water", "dry ablution"] },
+      { id: "bs-food", need: 1, target: "#bh-food",
+        must: ["خنزير", "الخنزير", "لحم", "اللحم", "ميتة", "الميتة", "جيلاتين", "ذبح", "الذبيحة",
+               "pork", "pig", "bacon", "ham", "gelatine", "gelatin", "meat", "slaughter", "eat", "food"],
+        words: ["خنزير", "الخنزير", "لحم الخنزير", "اكل الخنزير", "لحم", "اللحم", "الميتة", "الدم",
+                "جيلاتين", "ذبح", "الذبيحة", "طعام", "الطعام", "حلال", "حرام", "اكل",
+                "pork", "pig", "bacon", "ham", "gelatine", "gelatin", "meat", "halal", "haram",
+                "can i eat", "food", "forbidden food", "slaughter"] },
+      { id: "bs-drink", need: 1, target: "#bh-drink",
+        must: ["خمر", "الخمر", "كحول", "الكحول", "مسكر", "شرب", "مخدرات", "حشيش", "قمار", "الميسر",
+               "alcohol", "drink", "drinking", "beer", "wine", "drunk", "drugs", "weed",
+               "cannabis", "gambling", "betting", "lottery", "casino"],
+        words: ["خمر", "الخمر", "كحول", "مسكر", "اشرب", "الشرب", "مخدرات", "حشيش", "تدخين",
+                "قمار", "الميسر", "رهان", "يانصيب",
+                "alcohol", "drinking", "beer", "wine", "drunk", "drugs", "weed", "cannabis",
+                "smoking", "gambling", "betting", "lottery", "casino", "haram"] },
+      { id: "bs-earning", need: 2, target: "#bh-earning",
+        words: ["مال", "المال", "كسب", "الكسب", "راتب", "عمل", "وظيفة", "حرام", "سرقة", "رشوة",
+                "money", "income", "earning", "salary", "job", "work", "haram", "stealing", "bribe"] },
+      { id: "bs-shirk", need: 1, target: "#bw-shirk",
+        must: ["شرك", "الشرك", "تميمة", "التميمة", "قبر", "القبور", "اولياء", "سحر", "حسد",
+               "shirk", "amulet", "charm", "talisman", "grave", "graves", "saint", "saints", "magic"],
+        words: ["شرك", "الشرك", "اكبر الكبائر", "تميمة", "حجاب", "قبر", "القبور", "اولياء",
+                "دعاء الاموات", "سحر", "حسد", "العين",
+                "shirk", "biggest sin", "unforgivable", "amulet", "charm", "grave", "saints",
+                "asking the dead", "magic", "evil eye", "superstition"] },
+      { id: "bs-allah", need: 1, target: "#bw-who",
+        must: ["من هو الله", "من ربي", "صفة الله", "الاخلاص", "لله ولد", "من الله",
+               "who is allah", "what is god", "describe god", "does god have a son",
+               "is allah god", "oneness"],
+        words: ["من هو الله", "من ربي", "صفة الله", "الاخلاص", "احد", "الصمد", "لله ولد",
+                "who is allah", "what is god like", "describe god", "son of god", "trinity",
+                "oneness", "one god"] },
+      { id: "bs-purpose", need: 1, target: "#bw-why",
+        must: ["لماذا خلقنا", "لماذا خلقني", "الهدف من الحياة", "معني الحياة", "الغاية من الخلق",
+               "لماذا انا هنا", "ما العبادة", "لماذا اصلي", "ما فائدة الصلاة",
+               "why am i here", "purpose of life", "meaning of life", "why did god create",
+               "why do we exist", "what is worship", "point of living",
+               "point of praying", "why pray", "why should i pray", "whats the point"],
+        words: ["لماذا خلقنا", "الهدف", "معني الحياة", "العبادة", "الغاية", "لماذا انا هنا",
+                "لماذا اصلي", "ما فائدة الصلاة", "لماذا نعبد",
+                "why am i here", "purpose", "meaning of life", "worship", "why do we exist",
+                "point of praying", "why pray", "why should i pray", "whats the point",
+                "why bother", "what do i get out of it"] },
+      { id: "bs-dua", need: 1, target: "#bw-near",
+        must: ["دعاء", "الدعاء", "ادعو", "اسال الله", "يسمعني", "الله بعيد",
+               "dua", "supplication", "pray to god", "does god hear", "god feels far",
+               "ask god", "no one listens"],
+        words: ["دعاء", "الدعاء", "ادعو", "كيف ادعو", "يسمعني", "الله بعيد", "استجابة",
+                "dua", "supplication", "how to ask god", "does god hear me", "god feels far",
+                "answer my prayers", "in english"] },
+      { id: "bs-tawbah", need: 1, target: "#b-tawbah",
+        must: ["توبة", "التوبة", "اتوب", "نتوب", "يتوب", "تتوب", "نتوبو", "توبه",
+               "استغفار", "الاستغفار", "استغفر", "اغفر", "يغفر", "المغفرة",
+               "يسامح", "يسامحني", "سامحني", "المسامحة", "ذنب", "ذنوب", "خطيئة",
+               "repent", "repentance", "tawbah", "forgive", "forgiven", "forgiveness",
+               "istighfar", "sorry to god", "sin", "sins", "sinning", "sinned",
+               "pardon", "make it right", "cant stop", "keep doing it", "relapse",
+               "اذنبت", "مذنب", "اخطات"],
+        words: ["توبة", "اتوب", "استغفار", "اغفر", "المغفرة", "ذنب", "ذنوب", "فات الاوان",
+                "لن يغفر", "ندم", "ارجع",
+                "repent", "repentance", "forgive me", "forgiveness", "istighfar", "sorry",
+                "too late", "start again", "second chance", "keep sinning", "guilty", "ashamed"] },
+      { id: "bs-grading", need: 1, target: "#bs-grading",
+        must: ["صحيح", "ضعيف", "موضوع", "الاسناد", "السند", "درجة الحديث", "ثابت",
+               "sahih", "daif", "weak hadith", "fabricated", "isnad", "chain", "grading",
+               "authentic hadith", "is this hadith real", "hadith real", "real hadith",
+               "is this true", "hadith true", "made up"],
+        words: ["صحيح", "ضعيف", "موضوع", "الاسناد", "السند", "درجة الحديث", "كيف نعرف",
+                "sahih", "daif", "weak", "fabricated", "isnad", "chain of narration",
+                "how do we know", "authentic", "grading", "is this hadith true"] },
+      { id: "bs-differ", need: 1, target: "#bs-differ",
+        must: ["مذهب", "المذاهب", "حنفي", "مالكي", "شافعي", "حنبلي", "اختلاف العلماء",
+               "لماذا يختلف", "اي قول",
+               "madhhab", "madhab", "school of thought", "hanafi", "maliki", "shafi",
+               "hanbali", "scholars disagree", "different opinions", "which opinion",
+               "scholars", "different answers", "two answers", "conflicting", "disagree"],
+        words: ["مذهب", "المذاهب", "حنفي", "مالكي", "شافعي", "حنبلي", "اختلاف", "العلماء",
+                "اي قول اتبع", "فتاوي مختلفة",
+                "madhhab", "school", "hanafi", "maliki", "shafi", "hanbali", "disagree",
+                "different answers", "who do i follow", "which opinion"] },
+      { id: "bs-ikhlas", need: 1, target: "#bh-ikhlas",
+        must: ["اخلاص", "الاخلاص", "رياء", "الرياء", "سمعة", "للناس",
+               "sincerity", "ikhlas", "showing off", "riya", "for people", "attention",
+               "hypocrisy"],
+        words: ["اخلاص", "رياء", "سمعة", "اعمل للناس", "لله ام للناس",
+                "sincerity", "showing off", "riya", "doing it for people", "attention",
+                "am i doing this for god"] },
+      { id: "bs-taqwa", need: 1, target: "#bh-taqwa",
+        must: ["تقوي", "التقوي", "اكرمكم", "عنصرية", "افضل الناس",
+               "taqwa", "god consciousness", "racism", "who is better", "most noble"],
+        words: ["تقوي", "التقوي", "اكرمكم", "عنصرية", "عربي", "اعجمي", "الجنسية",
+                "taqwa", "racism", "who is better", "nationality", "arab", "piety"] },
+
       /* ---------- THE PILLARS ----------
          Placed FIRST because order breaks ties here, and these are the most
          basic questions on the page: somebody asking "how many prayers" or
@@ -876,6 +1094,11 @@
       { id: "pl-zakat", need: 1, target: "#zakat",
         must: ["زكاة", "الزكاة", "زكاه", "نصاب", "النصاب", "أزكي", "أزك", "زكيت", "نزكي",
                "تزكية", "زكاتي", "مدخرات", "مدخراتي", "ادخرت",
+               /* No technical word anywhere in it — "كم لازم اطلع فلوس
+                  للفقراء" is the question as an ordinary person asks it. */
+               "للفقراء", "الفقراء", "للمحتاجين", "مال للفقراء", "فلوس للفقراء",
+               "give to the poor", "poor people", "money to the poor",
+               "every year", "each year", "yearly", "annually",
                "zakat", "zakah", "zakaat", "nisab",
                /* Plain language, no technical word anywhere in it: "I have
                   savings, do I owe anything" is the zakat question as an
@@ -921,6 +1144,17 @@
          appear in half the questions on this page; one of them alone must not
          route a reader here. Two means the sentence is really asking about
          the pillars of faith. */
+      /* `need: 2` with "believe" as the gate. A phrase cannot carry this one:
+         the reader writes "what do muslims ACTUALLY believe in", and the word
+         in the middle breaks every phrase match. So the gate is the verb and
+         the second hit is the subject. "I believe I am a bad person" opens the
+         gate and then scores one, so it does not fire. */
+      { id: "pl-iman-plain", need: 2, target: "#p-iman",
+        must: ["نؤمن", "يؤمن", "بماذا نؤمن", "عقيدة المسلم",
+               "believe", "believes", "beliefs", "belief", "creed"],
+        words: ["نؤمن", "يؤمن", "الايمان", "العقيدة", "المعتقد", "المسلم", "المسلمون", "الاسلام",
+                "believe", "beliefs", "belief", "faith", "articles", "muslims", "muslim",
+                "islam", "creed", "aqeedah"] },
       { id: "pl-iman", need: 2, target: "#p-iman",
         words: ["أركان", "الأركان", "الإيمان", "أركان الإيمان", "ستة", "ست", "الاعتقاد", "العقيدة",
                 "pillars", "pillar", "iman", "faith", "six", "belief", "believe", "creed", "aqeedah"] },
@@ -933,7 +1167,13 @@
                 "prayer", "prayers", "salah", "salat", "five", "how many", "times", "when",
                 "fajr", "dhuhr", "asr", "maghrib", "isha"] },
       { id: "pl-arkan", need: 1, target: "#pillars",
-        must: ["أركان", "الأركان", "ركن", "pillars", "pillar", "arkan"],
+        must: ["أركان", "الأركان", "ركن", "pillars", "pillar", "arkan",
+               /* Asked with no technical word: "ايه اللي المسلم لازم يعمله",
+                  "what do i have to do as a muslim". */
+               "ما يجب علي المسلم", "يجب علي المسلم", "المسلم يجب", "لازم اعمله",
+               "واجبات المسلم", "ما يلزم المسلم",
+               "what do i have to do", "what must a muslim do", "what does islam require",
+               "what am i supposed to do", "basics of islam", "what do muslims do"],
         words: ["أركان", "الأركان", "ركن", "أركان الإسلام", "خمسة", "خمس", "المباني",
                 "pillars", "pillar", "arkan", "five pillars", "pillars of islam",
                 "basics", "fundamentals", "what is islam built on"] },
@@ -1154,7 +1394,15 @@
            ordinary words being reached by a sentence that merely contains
            one of them. */
         if (t.must && !t.must.some(hasWord)) return { t, hits: 0 };
-        return { t, hits: new Set(t.words.filter(hasWord).map(canonWord)).size };
+        /* COUNT THE `must` WORDS TOO. A `must` entry is by definition the
+           strongest signal a topic has — it is what gates the whole topic —
+           and counting it only as a gate and not as a hit meant a sentence
+           could open the gate and then score zero. Measured: "بغيت نتوب"
+           folds to "اريد نتوب", نتوب is in `must`, the gate opened, and the
+           hit count came back 0 because نتوب was not also in `words`. Eight
+           of a thirty-question battery failed this way. */
+        const pool = t.must ? t.words.concat(t.must) : t.words;
+        return { t, hits: new Set(pool.filter(hasWord).map(canonWord)).size };
       }).filter(x => x.hits >= x.t.need).sort((a, b) => b.hits - a.hits);
 
       return {
@@ -1206,7 +1454,28 @@
       /\u0623\u0631\u064a\u062f\s*\u0623\u0646\s*\u0623\u0645\u0648\u062a|\u0627\u0631\u064a\u062f\s*\u0627\u0646\s*\u0627\u0645\u0648\u062a/,
       /\u0623\u062a\u0645\u0646\u0649\s*\u0627\u0644\u0645\u0648\u062a|\u0627\u062a\u0645\u0646\u0649\s*\u0627\u0644\u0645\u0648\u062a/,
       /\u0623\u0624\u0630\u064a\s*\u0646\u0641\u0633\u064a|\u0627\u0624\u0630\u064a\s*\u0646\u0641\u0633\u064a/,
-      /\u0644\u0627\s*\u0645\u0639\u0646\u0649\s*\u0644\u0644\u062d\u064a\u0627\u0629|\u0645\u0627\s*\u0641\u064a\u0647\s*\u0641\u0627\u064a\u062f\u0629\s*\u0645\u0646\s*\u0627\u0644\u062d\u064a\u0627\u0629/
+      /\u0644\u0627\s*\u0645\u0639\u0646\u0649\s*\u0644\u0644\u062d\u064a\u0627\u0629|\u0645\u0627\s*\u0641\u064a\u0647\s*\u0641\u0627\u064a\u062f\u0629\s*\u0645\u0646\s*\u0627\u0644\u062d\u064a\u0627\u0629/,
+
+      /* ---- THE SAME THING, IN THE DIALECT IT IS ACTUALLY WRITTEN IN ----
+         من المشرق إلى المغرب. Measured: "بدي موت حالي" reached the ordinary
+         scorer and was answered with situation results. Phrases only — موت
+         on its own must never fire this. */
+
+      /* the SELF word changes by region: حالي شامي · راسي مغربي · نفسي/روحي */
+      /(اقتل|أقتل|نقتل|اقطع|أذبح)\s*(حالي|راسي|روحي|نفسي)/,
+      /(قتل|ذبح)\s*(حالي|راسي|روحي|نفسي)/,
+      /(اذي|أذي|اؤذي|نضر)\s*(حالي|راسي|روحي|نفسي)/,
+
+      /* wanting to die — بدي/عايز/أبغى/بغيت/نحب fold onto أريد, and the
+         verb itself varies: موت · أموت · نموت */
+      /(اريد|أريد|بدي|بغيت|عايز|عاوز|ابغى|أبغى|ابي|ودي|نحب)\s*(ان\s*)?(ا?موت|نموت|أموت|الموت)/,
+      /(اريد|أريد|بدي|بغيت|عايز|عاوز|ابغى|أبغى|ابي|ودي|نحب)\s*(ان\s*)?(اختفي|أختفي|نختفي|انتهي|أنتهي)/,
+      /(ما|مش|مو|ماشي|لا)\s*(بدي|اريد|أريد|عايز|عاوز|ابغى|أبغى|بغيت|نحب)\s*(ان\s*)?(اعيش|أعيش|نعيش|احيا|أحيا)/,
+      /(تعبت|مليت|زهقت|ما\s*عاد)\s*من\s*(الحياة|العيش|هالحياة)/,
+      /(خلص|كفايه|كفاية)\s*(حياتي|هالحياة)/,
+      /(نهي|أنهي|انهي|نكمل\s*لا)\s*حياتي/,
+      /حياتي\s*(ما\s*)?(الها|لها|فيها)\s*(معنى|طعم|فايدة|فائدة)/,
+      /(ما|مو|مش)\s*(في|فيه)\s*(سبب|فايدة|فائدة|داعي)\s*(ل|لل)?(اعيش|أعيش|العيش|الحياة)/
     ];
 
     function iitwIsSelfHarm(raw) {
@@ -1300,10 +1569,26 @@
        retyping it. `card` finds an item by its id across every group. */
     function iitwPillarCard(id) {
       let found = null;
-      (PILLARS.groups || []).forEach(g => (g.items || []).forEach(it => {
-        if (it.id === id) found = it;
-      }));
+      if (typeof PILLARS !== "undefined") {
+        (PILLARS.groups || []).forEach(g => (g.items || []).forEach(it => {
+          if (it.id === id) found = it;
+        }));
+      }
+      /* The basics use the same card shape, so one lookup serves both and a
+         topic can point at either file without the router knowing which. */
+      if (!found && typeof BASICS !== "undefined") {
+        (BASICS.sections || []).forEach(g => (g.items || []).forEach(it => {
+          if (it.id === id) found = it;
+        }));
+      }
       return found;
+    }
+
+    /* A whole SECTION of the basics, when the question is about the subject
+       rather than about one card in it. */
+    function iitwBasicsSection(id) {
+      if (typeof BASICS === "undefined") return null;
+      return (BASICS.sections || []).filter(x => x.id === id)[0] || null;
     }
     function iitwPillarAnswer(topicId, target) {
       const P = PILLARS, z = P.zakat;
@@ -1317,6 +1602,28 @@
           bodyEn: c.example || "", bodyAr: c.exampleAr || ""
         }, link(en, ar, href || target));
       };
+      /* Every bs- topic names either a CARD id or a SECTION id, and the two
+         are told apart by looking for each in turn. Answers are built from
+         the data, never restated here. */
+      if (/^bs-/.test(topicId)) {
+        const c = iitwPillarCard(target.replace("#", ""));
+        if (c) {
+          return Object.assign({
+            headEn: c.title, headAr: c.titleAr,
+            answerEn: c.plain, answerAr: c.plainAr,
+            bodyEn: c.example || "", bodyAr: c.exampleAr || ""
+          }, link("Read it with the rest of the basics", "اقرأه مع بقيّة الأساسيات", target));
+        }
+        const g = iitwBasicsSection(target.replace("#", ""));
+        if (g) {
+          return Object.assign({
+            headEn: g.title, headAr: g.titleAr,
+            answerEn: g.lead, answerAr: g.leadAr,
+            bodyEn: (g.items[0] || {}).plain || "", bodyAr: (g.items[0] || {}).plainAr || ""
+          }, link("The whole section, card by card", "القسمُ كاملًا، بطاقةً بطاقة", target));
+        }
+        return null;
+      }
       switch (topicId) {
         case "pl-shahada": return fromCard("pi-shahada", "#pi-shahada",
           "Read it with the other four pillars", "اقرأها مع الأركان الأربعة الأخرى");
@@ -1341,6 +1648,10 @@
             bodyAr: g.proofAr + " — " + g.refAr
           }, link("Every one of them explained, with examples", "بيانُ كلِّ ركنٍ منها بالأمثلة", "#pillars"));
         }
+        /* pl-iman-plain is the same answer reached by a plainer sentence,
+           so it must land in the same case — it was falling through to the
+           scorer because the switch only knew the formal id. */
+        case "pl-iman-plain":
         case "pl-iman": {
           const g = P.groups[1];
           return Object.assign({
@@ -1403,22 +1714,28 @@
         return;
       }
 
-      const qt = tokens(raw);
+      /* THE DIALECT FORM IS WHAT GETS SCORED. The original is kept for
+         everything shown back to the reader, and for the self-harm branch,
+         which is matched on both — see IITW_DIALECT above. */
+      const rawStd = iitwDialect(raw);
+      const qt = tokens(raw).concat(tokens(rawStd))
+                   .filter((w, i, a) => a.indexOf(w) === i);
       const qx = expandQuery(qt);
-      const distress = isDistress(qt, raw);
+      const distress = isDistress(qt, raw + " " + rawStd);
 
       /* BEFORE ANY OF IT. Someone telling this page they want to end their
          life is not running a search, and every word in that sentence is a
          trap for a scorer: "kill" reached the fighting verses, and "want",
          "kill" and "myself" together reached four Sunnah entries about
          neighbours, archery, fasting and istikharah. */
-      if (iitwIsSelfHarm(raw)) {
+      if (iitwIsSelfHarm(raw) || iitwIsSelfHarm(rawStd)) {
         out.innerHTML = iitwSelfHarmHtml();
         return;
       }
 
-      /* READ THE SENTENCE BEFORE SCORING ANY WORD IN IT. */
-      const intent = iitwIntent(raw);
+      /* READ THE SENTENCE BEFORE SCORING ANY WORD IN IT — and read it in
+         the dialect the reader actually wrote it in. */
+      const intent = iitwIntent(raw + " " + rawStd);
 
       /* ---------- A PILLARS QUESTION GOES STRAIGHT TO THE PILLAR ----------
          These are the plainest questions anyone asks — "how many prayers",
@@ -1426,7 +1743,8 @@
          answered by scoring the individual words of the sentence. Every
          answer below is built FROM js/pillars.js rather than restated here,
          so the two can never drift apart. */
-      if (intent.topic && /^pl-/.test(intent.topic.id) && typeof PILLARS !== "undefined") {
+      if (intent.topic && /^(pl|bs)-/.test(intent.topic.id) &&
+          (typeof PILLARS !== "undefined" || typeof BASICS !== "undefined")) {
         const ans = iitwPillarAnswer(intent.topic.id, intent.topic.target);
         if (ans) { out.innerHTML = iitwDirectAnswerHtml(ans); return; }
       }
@@ -2629,6 +2947,58 @@
         <div class="pl-closing">${plPair(P.closing, P.closingAr)}</div>`;
     }
 
+    /* ============================================================
+       THE BASICS, IN TWO LEVELS — data in js/basics.js.
+
+       DIVIDED, because he asked for it in those words: "the basics
+       should be added, and the medium level also should be added, and
+       divided. So it's easier to find if I need it." So the levels are
+       tabs, one visible at a time, and the tab is remembered — a reader
+       who has moved on to the second level should not be dropped back
+       at the first every time they open the page.
+
+       Cards are drawn by plCard, the same renderer the pillars use, so
+       the two can never drift into looking like different sites.
+       ============================================================ */
+    var BASICS_LEVEL = (function () {
+      try { return localStorage.getItem("iitw-basics-level") || "start"; }
+      catch (e) { return "start"; }
+    })();
+
+    function renderBasics() {
+      const host = document.getElementById("basicsBox");
+      if (!host || typeof BASICS === "undefined") return;
+      const B = BASICS;
+      const lvl = B.levels.some(l => l.id === BASICS_LEVEL) ? BASICS_LEVEL : "start";
+      const cur = B.levels.filter(l => l.id === lvl)[0];
+      const secs = B.sections.filter(x => x.level === lvl);
+      host.innerHTML = `
+        <h2 class="section-title"><span class="en-only">🧭 ${B.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${B.titleAr}</span></h2>
+        <div class="rv-intro">${plPair(B.intro, B.introAr)}</div>
+        <div class="bs-tabs" role="tablist">
+          ${B.levels.map(l => `<button type="button" class="bs-tab${l.id === lvl ? " active" : ""}" data-level="${l.id}" role="tab" aria-selected="${l.id === lvl}">
+            <span class="en-only">${l.label}</span><span class="ar-only" dir="rtl">${l.labelAr}</span>
+            <span class="bs-count">${B.sections.filter(x => x.level === l.id).reduce((n, x) => n + x.items.length, 0)}</span>
+          </button>`).join("")}
+        </div>
+        <div class="bs-note">${plPair(cur.note, cur.noteAr)}</div>
+        ${secs.map(g => `
+          <div class="pl-group" id="${g.id}">
+            <h3 class="rv-head"><span class="en-only">${g.icon} ${g.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${g.icon} ${g.titleAr}</span></h3>
+            <div class="pl-lead">${plPair(g.lead, g.leadAr)}</div>
+            ${g.items.map(plCard).join("")}
+          </div>`).join("")}
+        <div class="pl-closing">${plPair(B.closing, B.closingAr)}</div>`;
+      host.querySelectorAll(".bs-tab").forEach(b => b.addEventListener("click", function () {
+        BASICS_LEVEL = this.dataset.level;
+        try { localStorage.setItem("iitw-basics-level", BASICS_LEVEL); } catch (e) {}
+        renderBasics();
+        /* Built after i18n.js has run, so it has to be translated again —
+           the same reason every other renderer on this page does it. */
+        if (window.applyI18n) window.applyI18n();
+      }));
+    }
+
     /* ---- the zakat arithmetic, its own section ---- */
     function renderZakat() {
       const host = document.getElementById("zakatBox");
@@ -2758,6 +3128,7 @@
 
     renderPillars();
     renderZakat();
+    renderBasics();
     renderBidah();
 
     /* ================= The hardest questions asked about Islam =========
@@ -3339,9 +3710,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608281236"></script>
+  <script src="js/wordlens.js?v=202608291722"></script>
 
-  <script src="js/main.js?v=202608281236"></script>
-  <script src="js/i18n.js?v=202608281236"></script>
+  <script src="js/main.js?v=202608291722"></script>
+  <script src="js/i18n.js?v=202608291722"></script>
 </body>
 </html>
