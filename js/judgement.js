@@ -352,8 +352,8 @@ const JUDGEMENT_STAGES = [
         quran: "سَتَرْتُهَا عَلَيْكَ فِي الدُّنْيَا وَأَنَا أَغْفِرُهَا لَكَ الْيَوْمَ",
         ref: "Sahih al-Bukhari, Book of Oppressions, Hadith 2441 — Sahih, agreed upon" }
     ],
-    note: "The practical conclusion the scholars draw from this is simple and urgent: settle what you owe people while you are still here, where it can still be paid with money and with an apology. After death the only currency is your good deeds.",
-    noteAr: "والنتيجة العملية التي يقرّرها أهل العلم من هذا بيّنة وعاجلة: أنْ ترُدّ الحقوق إلى أهلها وأنت في الدنيا، حيث يمكن أن تُقضى بالمال والاعتذار. فبعد الموت لا عُملة إلا الحسنات."
+    note: "The practical conclusion the scholars draw from this is simple and urgent: settle what you owe people while you are still here, where it can still be paid with money and with an apology. After death the only currency is your good deeds.\n\nAnd it is worth knowing where that list of debts usually comes from. Almost nothing on it started as an act. It started as something in the chest that nobody could see — a grudge, or resentment at what somebody else was given — and the insult, the withheld help and the taken money all came afterwards. That is taken apart on the Guidance page under \"What do I get out of it?\"",
+    noteAr: "والنتيجة العملية التي يقرّرها أهل العلم من هذا بيّنة وعاجلة: أنْ ترُدّ الحقوق إلى أهلها وأنت في الدنيا، حيث يمكن أن تُقضى بالمال والاعتذار. فبعد الموت لا عُملة إلا الحسنات.\n\nوحقٌّ أن يُعلم من أين تأتي تلك المظالم في الغالب: فما كاد شيءٌ منها يبدأ فعلًا، وإنما يبدأ شيئًا في الصدر لا يراه أحد — حقدٌ، أو سخطٌ على ما أُعطي غيرُك — ثم تجيء بعده الشتيمة، ومنعُ المعونة، وأكلُ المال. وذلك مبسوطٌ في صفحة التوجيه تحت عنوان «وأنا ما لي؟»."
   },
 
   {

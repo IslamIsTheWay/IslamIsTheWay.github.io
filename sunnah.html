@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608291847" />
+  <link rel="stylesheet" href="css/style.css?v=202608292252" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
   <meta property="og:type" content="website" />
@@ -141,8 +141,8 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202608291847"></script>
-  <script src="js/sunnah.js?v=202608291847"></script>
+  <script src="js/data.js?v=202608292252"></script>
+  <script src="js/sunnah.js?v=202608292252"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -156,7 +156,44 @@
     function norm(s) {
       return normAr(String(s || "").toLowerCase()).replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim();
     }
-    function stem(w) { return w.replace(/(ings|ing|ies|ied|ers|er|ed|es|s)$/i, "") || w; }
+    /* THE SAME STEMMER AS guidance.html, AND FOR THE SAME REASON.
+
+       The one-line version this replaces collapsed short content words onto
+       stop words — beer->be, weed->we, better->bett, is->i, was->wa — which
+       on the Guidance page was measurably answering "i want to be a better
+       muslim" with the ruling on alcohol. This page runs its own search over
+       its own data, so it needs its own copy of the fix; two stemmers that
+       disagree is how one search starts contradicting the other.
+
+       Three characters must survive, -er is never stripped, a shorter
+       suffix is tried before giving up, and a doubled consonant is
+       undoubled the way Porter does it. */
+    const STEM_MIN = 3;
+    const STEM_SUFFIXES = ["ings", "ing", "ed", "es", "s"];
+    function stem(w) {
+      if (/[^aeiou](ies|ied)$/i.test(w)) {
+        const y = w.replace(/(ies|ied)$/i, "y");
+        if (y.length >= STEM_MIN) return y;
+      }
+      const lw = String(w).toLowerCase();
+      for (const suf of STEM_SUFFIXES) {
+        if (!lw.endsWith(suf)) continue;
+        /* Porter leaves a final -ss alone: without this, miss stemmed to
+           "mis" while missing stemmed to "miss", and the two never met. */
+        if (suf === "s" && lw.endsWith("ss")) continue;
+        let cut = w.slice(0, w.length - suf.length);
+        if (cut.length < STEM_MIN) continue;
+        /* ll, ss, zz and ff are NOT undoubled — Porter excludes them, and
+           for a reason this site can measure: undoubling ll made kills and
+           killing stem to "kil" while kill itself stayed "kill", so the three
+           forms of the commonest verb in the self-harm gate stopped matching
+           each other. */
+        if (/([bdgkmnprtv])\1$/i.test(cut) && cut.length - 1 >= STEM_MIN)
+          cut = cut.slice(0, -1);
+        return cut;
+      }
+      return w;
+    }
 
     /* Irregular plurals and close synonyms that simple stemming cannot join,
        so "my child" still finds entries written about "children". */
@@ -346,8 +383,8 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/wordlens.js?v=202608291847"></script>
-  <script src="js/main.js?v=202608291847"></script>
-  <script src="js/i18n.js?v=202608291847"></script>
+  <script src="js/wordlens.js?v=202608292252"></script>
+  <script src="js/main.js?v=202608292252"></script>
+  <script src="js/i18n.js?v=202608292252"></script>
 </body>
 </html>
