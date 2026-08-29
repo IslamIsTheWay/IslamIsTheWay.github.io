@@ -4703,9 +4703,24 @@ desktop padding, and 60-80px of air between every section.
 
 Fixed in CSS alone. Browse-y grids (the mosque gallery, the recitations) go
 two-up on a phone; card chrome tightens; section rhythm drops to 34px.
-**27,235 → 19,073px. Thirty-four screens to twenty-three.** Desktop 14,606 →
-14,466, unchanged. No horizontal overflow at 375px. The doors now begin 2.3
-screens in instead of 5.
+
+**AND THE FIGURES WERE MEASURED TWICE, BECAUSE THE FIRST SET WAS ALSO WRONG.**
+A local reading gave 27,235 → 19,073px and I reported it. It was taken before
+the web fonts (Amiri, Poppins) had finished loading, so BOTH sides were short.
+The honest measurement is an A/B on the deployed page at one moment, with the
+block enabled and then disabled through the CSSOM:
+
+    without this block   31,816px   39 phone screens
+    with it              23,857px   29 phone screens
+    saved                 7,959px   ten screens
+
+Desktop, at 1280x800: 16,353px, twenty screens. No horizontal overflow at
+375px. The doors begin about two screens in.
+
+**The lesson, for the third time in three days: assert the conditions before
+quoting a number.** A page height needs its viewport AND its fonts settled,
+and the only trustworthy before/after is one measured on the same page in the
+same second — not a local reading against a remembered one.
 
 **The duplication was named rather than merged.** Two navigation grids sat
 together with nothing to say why there were two. They are not duplicates —
