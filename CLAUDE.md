@@ -1111,3 +1111,32 @@ made every element on the page look like it was overflowing. Resize to a real
 viewport — `resize_window` with preset "mobile" — before believing any width
 measurement. This is the third time this artifact has cost a wrong report.
 
+## An overview card must hand over its keys when a real section arrives
+
+`pi-salah` — the card that says prayer is the second pillar — was carrying
+`"prayer times"`, `"missed prayers"` and `"أوقات الصلاة"`. It had been the
+best answer available for months, so it had accumulated the keys for
+questions it can only gesture at. The moment `js/prayer.js` shipped, those
+searches kept landing on the overview instead of the section that answers
+them, and no amount of keyword-adding on the new topics fixed it.
+
+**When a new section overlaps an old card: take the specific keys off the old
+card, and add a link between them in both directions.** An overview keeps
+what it can answer and gives up what it can only point at. Same thing
+happened with `sn-salah`, which is about abandoning prayer and was holding
+"years of missed prayers" — that belongs to `#pr-years`.
+
+Check for this every time a section is added. It is not a scoring bug.
+
+## When two scholarly positions produce the same next action, give both and say so
+
+Years of missed prayers: the majority say make them up, Ibn Taymiyyah and
+Ibn Hazm held there is no qada for deliberate abandonment. The site states
+both and picks neither — because **both produce the same instruction
+tonight**: pray the next one, and ask someone qualified while already
+praying.
+
+That framing is what makes an unresolved difference usable instead of
+paralysing. What actually stops people here is the arithmetic — nine years
+computed into the thousands, concluded impossible, nothing prayed — and
+neither position asks for it up front. Say that.

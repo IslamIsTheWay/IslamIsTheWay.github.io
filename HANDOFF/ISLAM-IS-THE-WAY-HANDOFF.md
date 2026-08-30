@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 30 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 24 first, then PART 23, then PART 22.** PART 24 is the major-sins and inheritance sections AND the deepest search fault found so far - the scored fallback never searched the card sections at all, so about 180 cards were unreachable. Read its "DEEP CAUSE" section before touching any matcher. PART 23 carries the stemmer rules and the generic-gate guard. PART 22 is the morals section and the text-versus-application rule. PART 23 is the marriage / "judge by what" / envy sections AND two bugs in the search that was already live - a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, and a generic word that could open a `must` gate on its own. Read its search half before touching any matching code anywhere on this site. PART 22 is the morals section and the text-versus-application rule that governs it. PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 30 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 24 first, then PART 25, then PART 23.** PART 24 is the major-sins and inheritance sections AND the deepest search fault found so far - the scored fallback never searched the card sections at all, so about 180 cards were unreachable. Read its "DEEP CAUSE" section before touching any matcher. PART 23 carries the stemmer rules and the generic-gate guard. PART 22 is the morals section and the text-versus-application rule. PART 23 is the marriage / "judge by what" / envy sections AND two bugs in the search that was already live - a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, and a generic word that could open a `must` gate on its own. Read its search half before touching any matching code anywhere on this site. PART 22 is the morals section and the text-versus-application rule that governs it. PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -5274,4 +5274,82 @@ entry has no `titleAr` yet (12 have one).
    folds are a hand-written list rather than morphology.
 5. ~77 English strings still leaking in Arabic mode on `judgement.html`.
 6. Everything still open from PART 21.
+
+---
+
+# PART 25 - The prayer in practice, and a rule about overview cards
+
+*Added 30 August 2026, straight after PART 24. Short, because most of the
+machinery it needed already existed.*
+
+He asked for the prayer gap PART 24 flagged. **Audited first**: `سجود السهو`,
+`مبطلات الصلاة` and `صلاة الجماعة` appeared in NO file on this site. The page
+could say prayer is the second pillar (#pi-salah), what to say inside it
+(#worship), how to wash before it (#bt-how) and what leaving it means
+(#sn-salah) — and could not answer one question a person has while praying.
+
+`js/prayer.js` -> `#prayer`, 11 cards in 5 groups: the times, what
+invalidates it, a lost count, doubt about wudu, missed prayers, travelling,
+and khushu'.
+
+## The three content decisions worth keeping
+
+**pr-breaks lists what does NOT break a prayer, and that list is longer.**
+Most restarts come from a wandering thought, a phone, a child climbing on you
+(he ﷺ prayed carrying Umamah, al-Bukhari 516), one step, or crying. The card
+also says the invalidators are the scholars' collation from many texts and
+not one narration — the text-versus-application rule, in the place it matters
+most.
+
+**pr-years does not pick a side, on purpose.** The majority make up missed
+prayers; Ibn Taymiyyah and Ibn Hazm held there is no qada for deliberate
+abandonment and the way back is repentance and voluntary prayer. Both are
+stated because **both produce the same instruction tonight**: pray the next
+one, and ask someone qualified while already praying. What stops people is
+the arithmetic — nine years computed into the thousands, concluded
+impossible, nothing prayed — and neither position requires it up front.
+
+**Every card turned out gentler than the reader feared**, and the closing
+says so: sleep is not negligence, doubt does not undo certainty, a lost count
+is two prostrations, shortening is a gift you were told to accept.
+
+## THE RULE THIS ROUND EARNED: an overview card must hand over its keys
+
+Five near-misses on the first battery, all the same shape:
+
+```
+"prayer times"                   -> #pi-salah   the PILLAR overview
+"can i combine dhuhr and asr"    -> #pi-salah
+"i have years of missed prayers" -> #sn-salah   which is about ABANDONING it
+```
+
+`pi-salah` was carrying `"prayer times"`, `"missed prayers"`, `"أوقات
+الصلاة"` and `"متى أصلي"` — keys for questions it can only gesture at. It
+had been the best answer available for months, so it had accumulated them.
+
+**An overview card keeps the keys for what it can answer and gives up the
+ones it can only point at. The day a real section arrives is the day to hand
+them over** — and to add a link in the other direction, which both cards now
+have. Same for `sn-salah`: it keeps abandonment and gives the making-up to
+`#pr-years`.
+
+Check this whenever a new section overlaps an old card. It is not a
+scoring bug and no amount of keyword-adding fixes it.
+
+## Measured
+
+42/42 on the prayer battery across English and Arabic · 15/15 regression ·
+self-harm 3/3 fires and 2/2 stays quiet · zero Arabic-mode leaks in the
+section · no overflow at a real 375px viewport · verified live: 15/15, no
+console errors.
+
+## Open work as of 30 August 2026
+
+1. **Business and work** beyond riba: wages, partnerships, what invalidates a
+   sale. Now the largest gap.
+2. Congregation and the mosque — `#prayer` covers the individual's questions
+   and not the jama'ah (al-Bukhari 645 and 900 were verified for it and not
+   used, so the sourcing is already done if someone picks it up).
+3. 43 of 55 curated hadith still have no `titleAr`.
+4. Everything still open from PART 24.
 
