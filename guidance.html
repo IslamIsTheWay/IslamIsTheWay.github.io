@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608301027" />
+  <link rel="stylesheet" href="css/style.css?v=202608301955" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -84,6 +84,8 @@
           <span class="ar-only" dir="rtl">الزكاة — كم ومتى</span></a>
         <a href="#basics">🧭 <span class="en-only">The basics, step by step</span>
           <span class="ar-only" dir="rtl">الأساسيات خطوةً خطوة</span></a>
+        <a href="#grave">⚰️ <span class="en-only">The grave — the first stop</span>
+          <span class="ar-only" dir="rtl">القبر — أوّلُ منزل</span></a>
         <a href="#prayer">🕌 <span class="en-only">The prayer, in practice</span>
           <span class="ar-only" dir="rtl">الصلاة عملًا</span></a>
         <a href="#marriage">💍 <span class="en-only">Marriage, and what you agree to</span>
@@ -190,6 +192,12 @@
   <section id="basics">
     <div class="container">
       <div id="basicsBox"></div>
+    </div>
+  </section>
+
+  <section id="grave">
+    <div class="container">
+      <div id="graveBox"></div>
     </div>
   </section>
 
@@ -405,59 +413,61 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608301027"></script>
+  <script src="js/data.js?v=202608301955"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608301027"></script>
+  <script src="js/sunnah.js?v=202608301955"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608301027"></script>
+  <script src="js/adhkar.js?v=202608301955"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608301027"></script>
+  <script src="js/scholars.js?v=202608301955"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608301027"></script>
+  <script src="js/scholars-books.js?v=202608301955"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608301027"></script>
+  <script src="js/revival.js?v=202608301955"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608301027"></script>
+  <script src="js/bidah.js?v=202608301955"></script>
   <!-- The five pillars, the six of faith, and the zakat arithmetic. The
        most basic thing this site can carry, and it was missing until now. -->
-  <script src="js/pillars.js?v=202608301027"></script>
-  <script src="js/basics.js?v=202608301027"></script>
-  <script src="js/morals.js?v=202608301027"></script>
-  <script src="js/marriage.js?v=202608301027"></script>
-  <script src="js/standard.js?v=202608301027"></script>
-  <script src="js/hearts.js?v=202608301027"></script>
-  <script src="js/inheritance.js?v=202608301027"></script>
-  <script src="js/sins.js?v=202608301027"></script>
-  <script src="js/prayer.js?v=202608301027"></script>
+  <script src="js/cards.js?v=202608301955"></script>
+  <script src="js/pillars.js?v=202608301955"></script>
+  <script src="js/basics.js?v=202608301955"></script>
+  <script src="js/morals.js?v=202608301955"></script>
+  <script src="js/marriage.js?v=202608301955"></script>
+  <script src="js/standard.js?v=202608301955"></script>
+  <script src="js/hearts.js?v=202608301955"></script>
+  <script src="js/inheritance.js?v=202608301955"></script>
+  <script src="js/sins.js?v=202608301955"></script>
+  <script src="js/prayer.js?v=202608301955"></script>
+  <script src="js/grave.js?v=202608301955"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608301027"></script>
-  <script src="js/endmap.js?v=202608301027"></script>
+  <script src="js/misunderstood.js?v=202608301955"></script>
+  <script src="js/endmap.js?v=202608301955"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608301027"></script>
+  <script src="js/terms.js?v=202608301955"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608301027"></script>
+  <script src="js/figures.js?v=202608301955"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608301027"></script>
+  <script src="js/signs.js?v=202608301955"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -1334,6 +1344,92 @@
                "shisha", "hookah", "vape", "vaping", "nicotine", "quit smoking", "cigar"],
         words: ["التدخين", "الدخان", "السجائر", "الشيشة", "التبغ", "الضرر", "الصحة",
                 "smoking", "smoke", "cigarette", "tobacco", "shisha", "vape", "harm", "health"] },
+
+      /* ---------- THE GRAVE (js/grave.js) ----------
+         Rendered on this page AND on judgement.html from one dataset, so
+         these targets resolve on both. */
+      { id: "gr-t-what", need: 1, target: "#gr-what",
+        must: ["البرزخ", "ماذا بعد الموت", "بعد الموت", "بين الموت والقيامة", "الحياة في القبر",
+               "رب ارجعون", "هل الموت نهاية", "ماذا يحدث بعد الموت", "عالم البرزخ",
+               "barzakh", "what happens after death", "after you die", "between death and judgement",
+               "life in the grave", "send me back", "is death the end", "what happens when you die"],
+        words: ["البرزخ", "الموت", "القبر", "القيامة", "ارجعون", "الروح",
+                "barzakh", "death", "die", "grave", "after", "back", "soul"] },
+      { id: "gr-t-questions", need: 1, target: "#gr-questions",
+        must: ["اسئلة القبر", "الاسئلة الثلاثة", "منكر ونكير", "من ربك", "ما دينك", "سؤال القبر",
+               "الملكان في القبر", "هل اقدر اجاوب",
+               "three questions in the grave", "questions of the grave", "munkar and nakir",
+               "who is your lord", "what is your religion", "two angels", "will i be able to answer"],
+        words: ["اسئلة", "الثلاثة", "منكر", "نكير", "ربك", "دينك", "الملكان", "القبر", "الجواب",
+                "questions", "angels", "grave", "lord", "religion", "answer", "asked"] },
+      { id: "gr-t-good", need: 1, target: "#gr-widen",
+        must: ["قبر المؤمن", "يوسع قبره", "باب الى الجنة", "ريح الجنة", "نومة العروس", "صدق عبدي",
+               "يعرض عليه مقعده", "بشرى في القبر", "المؤمن في قبره",
+               "grave of a believer", "grave widen", "grave is widened", "widened for him",
+               "door to paradise", "smell of paradise",
+               "sleep of the bridegroom", "seat shown morning and evening", "good news in the grave",
+               "what happens to a believer"],
+        words: ["المؤمن", "يوسع", "الجنة", "باب", "مقعده", "نومة", "روضة",
+                "believer", "widen", "paradise", "door", "seat", "sleep", "garden"] },
+      { id: "gr-t-protect", need: 1, target: "#gr-protect",
+        must: ["الحماية من عذاب القبر", "دعاء عذاب القبر", "كيف انجو من عذاب القبر", "صدقة جارية",
+               "علم ينتفع به", "ولد صالح", "ما ينجيك في القبر", "اعوذ بك من عذاب القبر",
+               "protection from grave punishment", "dua for the grave", "avoid punishment of the grave",
+               "avoid the punishment", "protect me from the grave", "save me from the grave",
+               "sadaqah jariyah", "ongoing charity", "what saves you in the grave"],
+        words: ["الحماية", "دعاء", "اعوذ", "صدقة", "جارية", "علم", "ولد", "ينجي", "انجو", "اتجنب",
+                "عذاب", "القبر", "الوقاية",
+                "protection", "protect", "dua", "refuge", "charity", "knowledge", "child", "save",
+                "avoid", "punishment", "grave"] },
+      { id: "gr-t-torment", need: 1, target: "#gr-door",
+        must: ["عذاب القبر", "باب الى النار", "النار في القبر", "هل عذاب القبر حق", "يعرضون عليها غدوا وعشيا",
+               "حر جهنم في القبر", "عذاب في القبر",
+               "punishment of the grave", "torture in the grave", "adhab al qabr", "door to hell",
+               "fire in the grave", "is grave punishment real", "will i be punished in the grave"],
+        words: ["عذاب", "القبر", "النار", "باب", "حر", "سموم", "يعذب",
+                "punishment", "torture", "grave", "fire", "hell", "door", "heat"] },
+      { id: "gr-t-squeeze", need: 1, target: "#gr-squeeze",
+        must: ["ضمة القبر", "ضيق القبر", "تختلف اضلاعه", "يضيق عليه قبره", "معيشة ضنكا",
+               "هل يضيق القبر", "الاضلاع",
+               "grave squeezing", "grave gets tight", "ribs crushed", "grave closes in",
+               "pressure of the grave", "narrow grave", "constricted life"],
+        words: ["ضمة", "ضيق", "اضلاعه", "الصدر", "ضنكا", "يضيق",
+                "squeeze", "tight", "ribs", "narrow", "crush", "pressure", "constricted"] },
+      { id: "gr-t-hammer", need: 1, target: "#gr-hammer",
+        must: ["مرزبة من حديد", "مطرقة من حديد", "يضرب في قبره", "صيحة في القبر", "كيف يعذب في القبر",
+               "هل يتكرر العذاب", "اعمى ابكم",
+               "iron hammer", "iron mallet", "beaten in the grave", "scream in the grave",
+               "how are you tortured in the grave", "does the punishment repeat", "blind and mute"],
+        words: ["مرزبة", "مطرقة", "حديد", "ضربة", "صيحة", "تراب", "الروح",
+                "hammer", "mallet", "iron", "blow", "scream", "dust", "repeat"] },
+      { id: "gr-t-said", need: 1, target: "#gr-said",
+        must: ["ماذا يقول الكافر", "يا ليتني كنت ترابا", "رب لولا اخرتني", "الندم بعد الموت",
+               "فات الاوان", "ماذا يقولون عند الموت", "اتمنى لو كنت ترابا",
+               "what will the disbeliever say", "i wish i was dust", "give me more time",
+               "regret after death", "too late to repent", "what do they say when they die"],
+        words: ["يقول", "الكافر", "ترابا", "اخرتني", "الندم", "الاوان", "ارجعون",
+                "say", "disbeliever", "dust", "time", "regret", "late", "wish"] },
+      { id: "gr-t-levels", need: 1, target: "#gr-levels",
+        must: ["هل عذاب القبر اشد", "اشد العذاب", "العذاب الادنى", "مراتب العذاب", "ماذا بعد القبر",
+               "قبل يوم القيامة",
+               "is the grave worse than hell", "levels of punishment", "lesser punishment",
+               "what comes after the grave", "before the day of judgement"],
+        words: ["اشد", "الادنى", "مراتب", "العذاب", "جهنم", "بعد",
+                "worse", "lesser", "levels", "punishment", "hell", "after", "before"] },
+      { id: "gr-t-small", need: 1, target: "#gr-small",
+        must: ["قبران يعذبان", "النميمة والبول", "وما يعذبان في كبير", "الذنوب الصغيرة في القبر",
+               "هل العذاب للكافر فقط", "هل انا في امان",
+               "two graves", "punished for small things", "urine and gossip", "minor sins grave",
+               "is it only for kafir", "am i safe from the grave"],
+        words: ["قبران", "النميمة", "البول", "كبير", "الصغائر", "امان",
+                "graves", "small", "urine", "gossip", "minor", "safe", "only"] },
+      { id: "gr-t-ready", need: 1, target: "#gr-choice",
+        must: ["هل انا مستعد للموت", "لو مت اليوم", "كيف استعد للموت", "اخاف من القبر", "اخاف من الموت",
+               "اريد ان اتغير", "اي الرجلين اكون",
+               "am i ready to die", "what if i died today", "how do i prepare for death",
+               "i am scared of the grave", "i am afraid of death", "i want to change", "where do i start"],
+        words: ["مستعد", "الموت", "اخاف", "اتغير", "استعد", "ابدا",
+                "ready", "die", "died", "scared", "afraid", "prepare", "change", "start"] },
 
       /* ---------- THE PRAYER IN PRACTICE (js/prayer.js) ----------
          These sit ahead of the pillars deliberately: "how late can I pray
@@ -2464,6 +2560,7 @@
       if (typeof INHERITANCE !== "undefined") out.push(INHERITANCE.groups);
       if (typeof SINS     !== "undefined") out.push(SINS.groups);
       if (typeof PRAYER   !== "undefined") out.push(PRAYER.groups);
+      if (typeof GRAVE    !== "undefined") out.push(GRAVE.groups);
       return out.filter(Boolean);
     }
     /* EVERY CARD ON THIS PAGE AS ONE FLAT, SEARCHABLE LIST.
@@ -2488,7 +2585,8 @@
         [typeof MORALS      !== "undefined" ? MORALS      : null, "groups",   "#morals"],
         [typeof HEARTS      !== "undefined" ? HEARTS      : null, "groups",   "#hearts"],
         [typeof SINS        !== "undefined" ? SINS        : null, "groups",   "#sins"],
-        [typeof PRAYER      !== "undefined" ? PRAYER      : null, "groups",   "#prayer"]
+        [typeof PRAYER      !== "undefined" ? PRAYER      : null, "groups",   "#prayer"],
+        [typeof GRAVE       !== "undefined" ? GRAVE       : null, "groups",   "#grave"]
       ];
       named.forEach(([D, prop, sectionHref]) => {
         if (!D) return;
@@ -2577,7 +2675,7 @@
       /* Every bs- topic names either a CARD id or a SECTION id, and the two
          are told apart by looking for each in turn. Answers are built from
          the data, never restated here. */
-      if (/^(bs|mo|mg|sd|hv|ih|sn|pr)-/.test(topicId)) {
+      if (/^(bs|mo|mg|sd|hv|ih|sn|pr|gr)-/.test(topicId)) {
         const c = iitwPillarCard(target.replace("#", ""));
         if (c) {
           return Object.assign({
@@ -2715,7 +2813,7 @@
          answered by scoring the individual words of the sentence. Every
          answer below is built FROM js/pillars.js rather than restated here,
          so the two can never drift apart. */
-      if (intent.topic && /^(pl|bs|mo|mg|sd|hv|ih|sn|pr)-/.test(intent.topic.id) &&
+      if (intent.topic && /^(pl|bs|mo|mg|sd|hv|ih|sn|pr|gr)-/.test(intent.topic.id) &&
           iitwSets().length) {
         const ans = iitwPillarAnswer(intent.topic.id, intent.topic.target);
         if (ans) { out.innerHTML = iitwDirectAnswerHtml(ans); return; }
@@ -3897,47 +3995,10 @@
        printed straight into the template ships literal asterisks, and
        that has now happened on this site twice.
        ============================================================ */
-    function plBold(t) { return String(t || "").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
-    function plParas(t, rtl) {
-      return String(t || "").split(/\n\s*\n/).filter(Boolean)
-        .map(b => `<p${rtl ? ' dir="rtl"' : ""}>${plBold(b)}</p>`).join("");
-    }
-    function plPair(en, ar) {
-      return `${en ? `<div class="en-only">${plParas(en)}</div>` : ""}` +
-             `${ar ? `<div class="ar-only pl-ar" dir="rtl">${plParas(ar, true)}</div>` : ""}`;
-    }
-    /* A proof block. Arabic first and always shown, because the wording
-       IS the evidence; the English rendering is a translation of it. */
-    function plProof(o, p, pa, r, ra, st, sta) {
-      const ar = o[pa], en = o[p], ref = o[r], refAr = o[ra], str = o[st], strAr = o[sta];
-      if (!ar && !en) return "";
-      return `<div class="pl-proof">
-        ${ar ? `<div class="pl-proof-ar" dir="rtl">${ar}</div>` : ""}
-        ${en ? `<p class="en-only pl-proof-en">${en}</p>` : ""}
-        ${(ref || refAr) ? `<div class="pl-ref"><span class="en-only">${ref || ""}</span><span class="ar-only" dir="rtl">${refAr || ref || ""}</span></div>` : ""}
-        ${(str || strAr) ? `<div class="pl-grade"><span class="en-only">${str || ""}</span><span class="ar-only" dir="rtl">${strAr || str || ""}</span></div>` : ""}
-      </div>`;
-    }
-    function plCard(it) {
-      return `<div class="pl-card" id="${it.id}">
-        <div class="pl-card-head">
-          <span class="pl-num">${it.icon || ""}${it.num ? " " + it.num : ""}</span>
-          <span class="en-only">${it.title}</span>
-          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${it.titleAr}</span>
-        </div>
-        <div class="pl-plain">
-          <div class="pl-plain-label"><span class="en-only">In plain words</span><span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>
-          ${plPair(it.plain, it.plainAr)}
-        </div>
-        ${(it.example || it.exampleAr) ? `<div class="pl-eg">
-          <div class="pl-eg-label"><span class="en-only">For example</span><span class="ar-only" dir="rtl">مثال</span></div>
-          ${plPair(it.example, it.exampleAr)}
-        </div>` : ""}
-        ${plProof(it, "proof", "proofAr", "ref", "refAr", "strength", "strengthAr")}
-        ${plProof(it, "extraProof", "extraProofAr", "extraRef", "extraRefAr", "strength", "strengthAr")}
-        ${it.link ? `<a class="pl-go" href="${it.link}"><span class="en-only">${it.linkEn}</span><span class="ar-only" dir="rtl">${it.linkAr}</span></a>` : ""}
-      </div>`;
-    }
+    /* plBold, plParas, plPair, plProof, plCard and renderGrouped now live
+       in js/cards.js, because judgement.html renders the grave section from
+       the same dataset and two copies of a renderer drift. */
+
     function renderPillars() {
       const host = document.getElementById("pillarsBox");
       if (!host || typeof PILLARS === "undefined") return;
@@ -4032,22 +4093,7 @@
        one argument in order, and letting a reader open the third group
        before the first would break it.
        ============================================================ */
-    function renderGrouped(hostId, D, icon) {
-      const host = document.getElementById(hostId);
-      if (!host || !D) return;
-      const M = D;
-      host.innerHTML = `
-        <h2 class="section-title"><span class="en-only">${icon} ${M.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${icon} ${M.titleAr}</span></h2>
-        <div class="rv-intro">${plPair(M.intro, M.introAr)}</div>
-        ${M.groups.map(g => `
-          <div class="pl-group" id="${g.id}">
-            <h3 class="rv-head"><span class="en-only">${g.icon} ${g.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${g.icon} ${g.titleAr}</span></h3>
-            <div class="pl-lead">${plPair(g.lead, g.leadAr)}</div>
-            ${g.items.map(it => plCard(it) + ((it.note || it.noteAr)
-              ? `<div class="pl-note pl-note-tight">${plPair(it.note, it.noteAr)}</div>` : "")).join("")}
-          </div>`).join("")}
-        <div class="pl-closing">${plPair(M.closing, M.closingAr)}</div>`;
-    }
+
 
     /* ---- the zakat arithmetic, its own section ---- */
     function renderZakat() {
@@ -4186,6 +4232,7 @@
     renderGrouped("inheritanceBox", typeof INHERITANCE !== "undefined" ? INHERITANCE : null, "📜");
     renderGrouped("sinsBox",     typeof SINS     !== "undefined" ? SINS     : null, "⛔");
     renderGrouped("prayerBox",   typeof PRAYER   !== "undefined" ? PRAYER   : null, "🕌");
+    renderGrouped("graveBox",    typeof GRAVE    !== "undefined" ? GRAVE    : null, "⚰️");
     renderBidah();
 
     /* ================= The hardest questions asked about Islam =========
@@ -4767,9 +4814,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608301027"></script>
+  <script src="js/wordlens.js?v=202608301955"></script>
 
-  <script src="js/main.js?v=202608301027"></script>
-  <script src="js/i18n.js?v=202608301027"></script>
+  <script src="js/main.js?v=202608301955"></script>
+  <script src="js/i18n.js?v=202608301955"></script>
 </body>
 </html>

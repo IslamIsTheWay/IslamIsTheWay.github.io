@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608301027" />
+  <link rel="stylesheet" href="css/style.css?v=202608301955" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -103,6 +103,18 @@
        with its evidence AND a plain-words box, "so normal people can open
        the page and understand without having to search". Rendered from
        js/journey.js. -->
+  <!-- ===== THE GRAVE, IN FULL =====
+       Rendered from js/grave.js, the SAME dataset guidance.html#grave uses.
+       The j-grave stage inside #stages above is the two-paragraph version;
+       this is the long one, and neither restates the other. One file, two
+       pages — which is how "never write the same words twice" is obeyed for
+       something the owner asked for on both. -->
+  <section class="pattern-bg" id="grave">
+    <div class="container">
+      <div id="jGraveBox"></div>
+    </div>
+  </section>
+
   <section id="journey">
     <div class="container">
       <!-- BOTH of these must carry en-only / ar-only. Without it the English
@@ -246,21 +258,23 @@
   </footer>
 
   
-  <script src="js/data.js?v=202608301027"></script>
-  <script src="js/angels.js?v=202608301027"></script>
+  <script src="js/data.js?v=202608301955"></script>
+  <script src="js/angels.js?v=202608301955"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202608301027"></script>
-  <script src="js/endmap.js?v=202608301027"></script>
-  <script src="js/judgement.js?v=202608301027"></script>
+  <script src="js/signs.js?v=202608301955"></script>
+  <script src="js/endmap.js?v=202608301955"></script>
+  <script src="js/judgement.js?v=202608301955"></script>
+  <script src="js/cards.js?v=202608301955"></script>
+  <script src="js/grave.js?v=202608301955"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202608301027"></script>
+  <script src="js/judgement-closing.js?v=202608301955"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202608301027"></script>
-  <script src="js/journey.js?v=202608301027"></script>
+  <script src="js/rise.js?v=202608301955"></script>
+  <script src="js/journey.js?v=202608301955"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -580,6 +594,8 @@
     }
 
     renderAlone();
+    if (typeof renderGrouped === "function")
+      renderGrouped("jGraveBox", typeof GRAVE !== "undefined" ? GRAVE : null, "⚰️");
     if (typeof iitwRenderRise === "function") iitwRenderRise("riseBox");
   </script>
   <script>
@@ -965,9 +981,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608301027"></script>
+  <script src="js/wordlens.js?v=202608301955"></script>
 
-  <script src="js/main.js?v=202608301027"></script>
-  <script src="js/i18n.js?v=202608301027"></script>
+  <script src="js/main.js?v=202608301955"></script>
+  <script src="js/i18n.js?v=202608301955"></script>
 </body>
 </html>

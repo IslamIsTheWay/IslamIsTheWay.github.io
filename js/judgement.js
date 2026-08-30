@@ -65,8 +65,8 @@ const JUDGEMENT_STAGES = [
         quran: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ",
         ref: "Sahih al-Bukhari, Book of Adhan, Hadith 832 — Sahih, agreed upon" }
     ],
-    note: "The names Munkar and Nakir for the two angels come from a narration of at-Tirmidhi, not from al-Bukhari or Muslim. The questioning itself is firmly established in the two Sahihs; the two names are not. Both facts are stated here as they are.",
-    noteAr: "أما تسمية المَلَكين «منكرًا ونكيرًا» فمن رواية الترمذي لا من البخاري ومسلم. والسؤال نفسه ثابتٌ في الصحيحين، وأما الاسمان فلا. ونذكر الأمرين كما هما."
+    note: "The names Munkar and Nakir for the two angels come from a narration of at-Tirmidhi, not from al-Bukhari or Muslim. The questioning itself is firmly established in the two Sahihs; the two names are not. Both facts are stated here as they are.\n\nThe full account of it — the three questions, what the believer is given, and what is done to the one who cannot answer — is set out at length in the section below this one on this page.",
+    noteAr: "أما تسمية المَلَكين «منكرًا ونكيرًا» فمن رواية الترمذي لا من البخاري ومسلم. والسؤال نفسه ثابتٌ في الصحيحين، وأما الاسمان فلا. ونذكر الأمرين كما هما.\n\nوبسطُ الأمر كلّه — الأسئلةُ الثلاثة، وما يُعطاه المؤمن، وما يُفعل بمن لم يستطع جوابًا — في القسم الذي يلي هذا في هذه الصفحة."
   },
 
   {
