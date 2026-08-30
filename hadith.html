@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608292252" />
+  <link rel="stylesheet" href="css/style.css?v=202608301006" />
   <style>
     .collection-tabs { display:flex; gap:12px; justify-content:center; margin-bottom:28px; flex-wrap:wrap; }
     .collection-tabs button { padding:12px 28px; border:2px solid var(--green); background:transparent; color:var(--green); border-radius:10px; font-size:1rem; font-weight:600; cursor:pointer; transition:all .2s; }
@@ -154,7 +154,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608292252"></script>
+  <script src="js/data.js?v=202608301006"></script>
   <script>
     const API_BASE = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions";
     const contentArea = document.getElementById("contentArea");
@@ -421,6 +421,25 @@
        be far too slow. Lookahead only — a look-BEHIND breaks older Safari at
        parse time and would take the whole page down with it. */
     const _reCache = new Map();
+    /* THE TOPIC TAG WAS ENGLISH-ONLY ON EVERY CURATED CARD, so all 55 of
+       them leaked English in Arabic mode — the defect this repo records as
+       its commonest. One map fixes every card. */
+    const TOPIC_AR = {
+      "Accountability": "المحاسبة", "Brotherhood": "الأخوّة", "Character": "الخُلُق",
+      "Concealing Faults": "ستر العيوب", "Consistency": "المداومة", "Contentment": "القناعة",
+      "Debt": "الدَّين", "Discipline": "ضبط النفس", "Dress & Imitation": "اللباس والتشبّه",
+      "Ease": "التيسير", "Family Ties": "صلة الرحم", "Friendship": "الصحبة",
+      "Generosity": "الكرم", "Guarding the Tongue": "حفظ اللسان", "Harming Others": "أذى الناس",
+      "Helping Others": "إعانة الناس", "Honesty in Trade": "الصدق في المعاملة",
+      "Intoxicants": "المسكرات", "Kindness": "الرفق", "Knowledge": "العلم",
+      "Marriage & Family": "النكاح والأهل", "Mercy": "الرحمة", "Modesty": "الحياء",
+      "Neighbors": "الجيران", "Oppression": "الظلم", "Parents": "الوالدان",
+      "Patience": "الصبر", "Quran": "القرآن", "Repentance & Character": "التوبة والخُلُق",
+      "Self-Control": "ملك النفس", "Service": "نفع الناس", "Sincere Advice": "النصيحة",
+      "Sincerity": "الإخلاص", "Speech": "الكلام", "Time": "الوقت", "Worldliness": "الدنيا"
+    };
+    const topicAr = t => TOPIC_AR[t] || t;
+
     function termRe(term) {
       let re = _reCache.get(term);
       if (re) return re;
@@ -433,9 +452,34 @@
       _reCache.set(term, re);
       return re;
     }
+    /* NOBODY SPELLS A DOUBLED LETTER THE SAME WAY TWICE.
+
+       He reported it on this page specifically: searching for a hadith about
+       tattoos found nothing, and "we usually write t-a-t-o, maybe an extra
+       o". Measured here before this: `tattoo` returned 21 results and
+       `tatoo` returned NOTHING.
+
+       Collapsing runs of the same letter makes every guess meet in one
+       place — tattoo, tatoo, tatto and tato all become "tato" — and it does
+       the same for transliterated Arabic: haraam -> haram, halaal -> halal.
+       Five characters and not four, because at four "good" becomes "god".
+
+       The Guidance page and the Sunnah page carry the same rule. Three
+       matchers on this site, and all three now agree what one word is. */
+    const SQUEEZE_MIN = 5;
+    function squeeze(w) {
+      return (w.length >= SQUEEZE_MIN && /^[a-z]+$/.test(w))
+        ? w.replace(/([a-z])\1+/g, "$1") : w;
+    }
     function hasWord(hay, hayAr, term) {
       if (!term || term.length < 3) return false;
-      return /[؀-ۿ]/.test(term) ? termRe(term).test(hayAr) : termRe(term).test(hay);
+      if (/[؀-ۿ]/.test(term)) return termRe(term).test(hayAr);
+      if (termRe(term).test(hay)) return true;
+      /* Try the collapsed form against the collapsed haystack, so a doubled
+         letter guessed wrongly on either side still lands. */
+      const sq = squeeze(term);
+      if (sq === term) return false;
+      return termRe(sq).test(hay.replace(/([a-z])\1+/g, "$1"));
     }
 
     // How well does a hadith text match the query words? Returns a score.
@@ -547,12 +591,19 @@
         const curHtml = curatedScored.map(({ h }) => {
           const isSahih = h.strength.startsWith("Sahih");
           return `<div class="hadith-card">
-            ${h.title ? `<div style="font-weight:700;color:var(--green-dark);font-size:1.02rem;margin-bottom:8px;">${h.title}</div>` : ""}
-            <span class="topic-tag">${h.topic}</span>
+            ${h.title ? `<div style="font-weight:700;color:var(--green-dark);font-size:1.02rem;margin-bottom:8px;">
+              <span class="en-only">${h.title}</span>
+              <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${h.titleAr || h.title}</span></div>` : ""}
+            <span class="topic-tag"><span class="en-only">${h.topic}</span><span class="ar-only" dir="rtl">${topicAr(h.topic)}</span></span>
             <span class="topic-tag" style="background:${isSahih ? '#e6f4ea' : '#fff8e1'};color:${isSahih ? '#1e7e45' : '#b8860b'};">${h.strength}</span>
             ${h.arabic ? `<p style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2;direction:rtl;text-align:right;color:var(--green-dark);margin:8px 0;">${h.arabic} <button class="speak-btn" data-lang="ar" style="border:none;background:none;cursor:pointer;font-size:1.05rem;" title="Listen in Arabic">🔊</button></p>` : ""}
             <p class="hadith-text en-only">"${h.text}" <button class="speak-btn" data-lang="en" style="border:none;background:none;cursor:pointer;font-size:1.05rem;" title="Listen in English">🔊</button></p>
-            <div class="hadith-meta">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</div>
+            ${(h.explain || h.explainAr) ? `<div class="h-explain">
+              <div class="h-explain-label">\u{1F4A1} <span class="en-only">What it means</span><span class="ar-only" dir="rtl">ما معناه</span></div>
+              ${h.explain ? `<p class="en-only">${h.explain}</p>` : ""}
+              ${h.explainAr ? `<p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${h.explainAr}</p>` : ""}
+            </div>` : ""}
+            <div class="hadith-meta"><span class="en-only">Narrated by <strong>${h.narrator}</strong><br>${h.ref}</span><span class="ar-only" dir="rtl">${h.ref}</span></div>
           </div>`;
         }).join("");
         results.unshift({ _curatedHtml: curHtml, _count: curatedScored.length });
@@ -626,8 +677,8 @@
 
     renderCurated();
   </script>
-  <script src="js/wordlens.js?v=202608292252"></script>
-  <script src="js/main.js?v=202608292252"></script>
-  <script src="js/i18n.js?v=202608292252"></script>
+  <script src="js/wordlens.js?v=202608301006"></script>
+  <script src="js/main.js?v=202608301006"></script>
+  <script src="js/i18n.js?v=202608301006"></script>
 </body>
 </html>

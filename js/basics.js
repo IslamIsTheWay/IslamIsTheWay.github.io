@@ -184,7 +184,32 @@ const BASICS = {
           extraRef: "Surah al-Maidah (5:90)",
           extraRefAr: "سورة المائدة (٥:٩٠)",
           keys: ["alcohol", "drinking", "is alcohol haram", "beer", "wine", "drunk", "drugs", "weed", "cannabis", "smoking", "gambling", "betting", "casino", "lottery",
-                 "الخمر", "الكحول", "الشرب", "المسكر", "المخدرات", "الحشيش", "التدخين", "القمار", "الميسر", "الرهان", "اليانصيب", "هل الخمر حرام"]
+                 "الخمر", "الكحول", "الشرب", "المسكر", "المخدرات", "الحشيش", "التدخين", "القمار", "الميسر", "الرهان", "اليانصيب", "هل الخمر حرام",
+                 "smoke weed", "smoking weed", "smoke a joint", "smoke hash", "smoking cannabis", "ادخن حشيش", "تدخين الحشيش", "المخدرات"]
+        },
+        {
+          id: "bh-smoking", num: "", icon: "🚬",
+          title: "Smoking — and being honest about how the ruling is reached",
+          titleAr: "التدخين — والصدقُ في بيان كيف استُنبط الحكم",
+          plain: "No verse and no hadith mentions tobacco. It reached the Muslim world around a thousand years after the revelation, so nothing in the texts names it, and anybody who tells you a hadith forbids smoking by name is mistaken.\n\nWhat the scholars did instead was apply general principles to it. And on that basis the great majority of contemporary scholars and fatwa bodies — al-Azhar, the Permanent Committee in Saudi Arabia, and others — hold that it is forbidden.",
+          plainAr: "ليس في القرآن ولا في السنّة ذكرٌ للتبغ. فقد وصل بلاد المسلمين بعد الوحي بنحو ألف سنة، فلا يسمّيه نصّ، ومن أخبرك أنّ حديثًا يحرّم التدخين باسمه فقد وهم.\n\nوإنما صنع أهلُ العلم أن طبّقوا عليه القواعد العامّة. وعلى هذا ذهب جمهورُ المعاصرين وهيئاتُ الفتوى — كالأزهر واللجنة الدائمة وغيرهما — إلى تحريمه.",
+          example: "The principles they applied, so you can weigh the reasoning yourself rather than take the conclusion on trust:\n\n1. Do not throw yourselves into destruction with your own hands (2:195), and do not kill yourselves (4:29). Smoking's harm is no longer disputed by anybody, including the companies that sell it.\n\n2. He makes lawful for them the good things and forbids them the foul (7:157) — and the scholars class it with the khaba'ith on the strength of what it does to the body.\n\n3. \"No harm and no reciprocating harm\" — and the harm reaches other people in the room, which was not even known when the earlier scholars first discussed it.\n\n4. Wasting wealth on something with no benefit.",
+          exampleAr: "والقواعدُ التي طبّقوها، لتزن أنت الاستدلال ولا تأخذ النتيجة تقليدًا:\n\n١. ﴿وَلَا تُلْقُوا۟ بِأَيْدِيكُمْ إِلَى ٱلتَّهْلُكَةِ﴾ [البقرة ١٩٥]، و﴿وَلَا تَقْتُلُوٓا۟ أَنفُسَكُمْ﴾ [النساء ٢٩]. وضررُه اليوم لا ينازع فيه أحد، ولا الشركاتُ التي تبيعه.\n\n٢. ﴿وَيُحِلُّ لَهُمُ ٱلطَّيِّبَٰتِ وَيُحَرِّمُ عَلَيْهِمُ ٱلْخَبَٰٓئِثَ﴾ [الأعراف ١٥٧] — وألحقوه بالخبائث لما يصنعه بالبدن.\n\n٣. «لا ضرر ولا ضرار» — وضررُه يتعدّى إلى من في الغرفة، وهذا لم يكن معلومًا حين تكلّم فيه المتقدّمون.\n\n٤. إضاعةُ المال فيما لا نفع فيه.",
+          proof: "And do not throw yourselves with your own hands into destruction. And do good; indeed, Allah loves the doers of good.",
+          proofAr: "وَلَا تُلْقُوا۟ بِأَيْدِيكُمْ إِلَى ٱلتَّهْلُكَةِ ۛ وَأَحْسِنُوٓا۟ ۛ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ",
+          ref: "Surah Al-Baqarah (2:195)",
+          refAr: "سورة البقرة (٢:١٩٥)",
+          strength: "The Quran",
+          strengthAr: "القرآن الكريم",
+          extraProof: "There should be no causing of harm, nor reciprocating harm.",
+          extraProofAr: "لَا ضَرَرَ وَلَا ضِرَارَ",
+          extraRef: "Sunan Ibn Majah, Chapters on Rulings, Hadith 2340",
+          extraRefAr: "سنن ابن ماجه، كتاب الأحكام، حديث ٢٣٤٠",
+          note: "SAY WHICH PART IS WHICH, because that is what makes the ruling usable. The verses and the hadith above are TEXT. \"Therefore smoking is forbidden\" is the scholars' APPLICATION of them to a substance the texts never mention. That application is held by the overwhelming majority today — and some earlier scholars, writing when the harm was genuinely unknown, said only that it was disliked. Knowing that is not a loophole; it is the difference between following a ruling and understanding it.",
+          noteAr: "وبيِّن أيُّ الأمرين هو الأمر، فبه يصير الحكمُ نافعًا: فالآياتُ والحديثُ المتقدّمة نصّ. وأمّا قولُهم «فالتدخينُ حرام» فهو تطبيقُ أهل العلم لها على شيءٍ لم تسمّه النصوص. وعلى هذا التطبيق جمهورُ المعاصرين الساحق — وقال بعضُ المتقدّمين ممّن كتبوا والضررُ يومئذٍ مجهول: إنه مكروه. ومعرفةُ هذا ليست مخرجًا، وإنما هي الفرقُ بين أن تتّبع حكمًا وأن تفهمه.",
+          keys: ["smoking", "cigarettes", "is smoking haram", "tobacco", "shisha", "hookah", "vape", "vaping", "nicotine", "quit smoking", "smoke", "cigar",
+                 "التدخين", "الدخان", "السجائر", "سيجارة", "حكم التدخين", "الشيشة", "النرجيلة", "المعسل", "الفيب", "التبغ", "اقلع عن التدخين",
+                 "i smoke cigarettes", "i smoke every day", "i want to quit", "quit the cigarettes", "trying to stop smoking", "a pack a day", "vaping instead", "بدخن", "بدي اترك التدخين", "احاول اوقف", "علبة باليوم", "الفيب بدل السجاير"]
         },
         {
           id: "bh-earning", num: "", icon: "💵",

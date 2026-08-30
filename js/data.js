@@ -1594,6 +1594,8 @@ const HADITHS = [
     topic: "Self-Control",
     title: "True strength is controlling yourself when angry",
     strength: "Sahih — Narrated by al-Bukhari",
+    explain: "He redefines a word his listeners thought they knew. The strong man is not the one who wins a wrestling match; he is the one who controls himself at the moment of anger. And notice the moment specified — not who never gets angry, but who holds himself AT the moment. The feeling is not the sin; what is done in the next ten seconds is.",
+    explainAr: "أعاد ﷺ حدَّ لفظٍ ظنّ سامعوه أنهم يعرفونه: فليس الشديدُ بالصُّرَعة، وإنما الشديدُ الذي يملك نفسه عند الغضب. وتأمّل الموضع المذكور: لم يقل من لا يغضب، وإنما من يملك نفسه عندها. فليس الوِجدانُ هو الذنب، وإنما ما يُصنع في العشر الثواني التالية.",
     /* Added because "أنا كثير الغضب" was returning the ruling on backbiting
        instead of this. With no keys, an Arabic question could only reach this
        entry through the hadith wording itself, which carries harakat and is
@@ -1649,6 +1651,8 @@ const HADITHS = [
     topic: "Patience",
     title: "Mixing with people and bearing their harm with patience",
     strength: "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani",
+    explain: "This corrects an assumption people reach naturally: that the safest religion is the one lived away from everybody. He ﷺ says the opposite — the Muslim who mixes and endures what people do is better than the one who withdraws to avoid it. For example: staying in a difficult workplace and behaving well in it is worth more than leaving it to keep your peace.",
+    explainAr: "هذا تصحيحٌ لظنٍّ يبلغه الناسُ بطباعهم: أنّ أسلم الدين ما عُوش بعيدًا عنهم. وقال ﷺ بخلافه: إنّ المسلم الذي يخالط الناسَ ويصبر على أذاهم خيرٌ من الذي يعتزلهم اتّقاءً لذلك. مثال: بقاؤك في عملٍ شاقٍّ وحُسنُ خلقك فيه أعظمُ أجرًا من تركه حفظًا لراحتك.",
     keys: ["patience","patient","people","mixing with people","society","harm","difficult people","tolerate","put up with","isolation","withdraw","alone","الصبر","مخالطة الناس","الناس","الأذى","العزلة","الاختلاط","التحمل","أذاني","يزعجونني","أعتزل","أبتعد عن الناس"]
   },
   {
@@ -1679,6 +1683,8 @@ const HADITHS = [
     topic: "Time",
     title: "Use five before five: youth, health, wealth, free time, life",
     strength: "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani",
+    explain: "The structure is the lesson: each pair is a thing you have now and will not notice losing until it is gone. Nobody plans to stop being young. For example — the free time a student has before a job and children is the largest block of usable hours most people ever get, and it is the one almost everyone spends without noticing they had it.",
+    explainAr: "البناءُ نفسه هو الدرس: فكلُّ قرينةٍ شيءٌ عندك الآن ولا تشعر بفقده حتى يذهب. وليس أحدٌ يخطّط لأن يكفّ عن الشباب. مثال: فراغُ الطالب قبل العمل والولد أكبرُ كتلةِ ساعاتٍ صالحةٍ يملكها أكثرُ الناس في أعمارهم، وهو الذي يُنفقه عامّتُهم دون أن ينتبهوا أنه كان عندهم.",
     keys: ["time","free time","wasting time","youth","young","health","wealth","life","death","procrastination","before it is too late","five before five","الوقت","الفراغ","الشباب","الصحة","الغنى","الحياة","الموت","اغتنم","التسويف","وقتي","فراغي","شبابي","صحتي","أضيع وقتي"]
   },
   {
@@ -1729,6 +1735,8 @@ const HADITHS = [
     topic: "Worldliness",
     title: "Live in this world like a stranger or a traveller",
     strength: "Sahih — Narrated by al-Bukhari",
+    explain: "A stranger owns little where he is staying and does not decorate a room he is leaving. It is not an instruction to be poor or joyless — Ibn Umar, who narrated it, was wealthy. It is about what you consider PERMANENT. A traveller still eats well and sleeps comfortably; he simply does not confuse the hotel with home.",
+    explainAr: "الغريبُ لا يملك في موضع إقامته كثيرًا، ولا يزيّن غرفةً هو خارجٌ منها. وليس هذا أمرًا بالفقر ولا بترك الطيّبات — فابنُ عمر راويه كان موسرًا. وإنما هو في: ما الذي تعدّه دائمًا؟ فالمسافرُ يأكل طيّبًا وينام مستريحًا، غير أنه لا يخلط بين النُّزل والبيت.",
     keys: ["world","dunya","worldliness","attachment","stranger","traveller","traveler","passing through","materialism","detachment","hereafter","الدنيا","الزهد","غريب","عابر سبيل","التعلق بالدنيا","الآخرة"]
   },
   {
@@ -1779,6 +1787,8 @@ const HADITHS = [
     topic: "Friendship",
     title: "Choose your friends carefully — you follow their way",
     strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi",
+    explain: "The wording is about a person's DEEN — his way of living — not about liking or disliking anybody. It is a statement of fact rather than a command: over time a person's standards move toward the standards of the four or five people he spends most hours with. So the practical question is not “are my friends bad?” but “in which direction have I moved since I met them?”",
+    explainAr: "اللفظُ في دين الرجل — أي طريقته في العيش — لا في محبّة أحدٍ أو بغضه. وهو خبرٌ لا أمر: فمعاييرُ الإنسان تنتقل مع الزمن إلى معايير الأربعة أو الخمسة الذين يقضي معهم أكثر ساعاته. فالسؤالُ العمليّ ليس «أأصحابي أشرار؟» وإنما «إلى أين تحرّكتُ منذ عرفتهم؟»",
     keys: ["friend","friends","friendship","company","bad company","peer pressure","who you sit with","influence","choose friends","bad influence","الصديق","الأصدقاء","الصحبة","الخليل","جليس","رفقة السوء","اختيار الصاحب","أصدقائي","صاحبي","رفاقي","أصحابي"]
   },
   {
@@ -1799,6 +1809,8 @@ const HADITHS = [
     topic: "Contentment",
     title: "True richness is the contentment of the heart",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "He is defining a word, not praising poverty. Richness is being measured by what a person no longer needs rather than by what he holds — which is why a man can own a great deal and feel poor every day. The test is simple: if a number went up, would the feeling change, or would a new number appear?",
+    explainAr: "هو يحدُّ لفظًا، لا يمدح فقرًا. فالغنى يُقاس بما استغنى عنه المرءُ لا بما في يده — ولذلك يملك الرجلُ الكثيرَ ويجد نفسه فقيرًا كلَّ يوم. والاختبارُ يسير: لو ارتفع الرقم، أيتغيّر الشعور، أم يظهر رقمٌ جديد؟",
     keys: ["rich","richness","wealth","money","contentment","content","satisfied","greed","poor","possessions","happiness","never enough","الغنى","غنى النفس","القناعة","الرضا","المال","الطمع","الفقر","مالي","راتبي","لا يكفيني","أريد أكثر"]
   },
   {
@@ -1809,6 +1821,8 @@ const HADITHS = [
     topic: "Discipline",
     title: "Part of good Islam is leaving what does not concern you",
     strength: "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi",
+    explain: "“Does not concern you” is narrower than people assume: it means what is not your responsibility and not your right to know. The everyday case is a family argument you were not part of, a neighbour's income, or a message forwarded to you about somebody's private business. Leaving it is not coldness — it is declining to become a link in a chain that carries harm.",
+    explainAr: "قولُه «ما لا يعنيه» أضيقُ ممّا يُظنّ: وهو ما ليس من مسؤوليّتك ولا من حقّك أن تعلمه. والصورةُ اليوميّة خصومةٌ في أهلٍ لم تكن طرفًا فيها، أو دخلُ جار، أو رسالةٌ تُحوَّل إليك في شأنٍ خاصٍّ بأحد. وتركُه ليس جفاءً، وإنما هو امتناعٌ عن أن تصير حلقةً في سلسلةٍ تنقل الأذى.",
     keys: ["mind your own business","not your business","interfering","nosy","gossip","waste of time","focus","discipline","curiosity","ما لا يعنيه","ترك ما لا يعني","الفضول","التدخل","حسن الإسلام","أتدخل","فضولي","شؤون الناس","لا يعنيني"]
   },
   {
@@ -1943,6 +1957,8 @@ const HADITHS = [
     topic: "Repentance & Character",
     title: "Erasing a bad deed with a good deed",
     strength: "Strong — Narrated by at-Tirmidhi; graded Strong by at-Tirmidhi",
+    explain: "The instruction is immediate, not eventual: follow the bad deed with a good one straight away. The reason is practical — a sin left standing becomes a mood, the mood becomes a day written off, and a day written off becomes a habit. For example: if you missed a prayer, the answer is to pray the next one on time, not to spend the afternoon feeling like a failure.",
+    explainAr: "الأمرُ على الفور لا على التراخي: أن تُتبع السيّئةَ الحسنةَ من ساعتها. والعلّةُ عمليّة: فالذنبُ إذا تُرك قائمًا صار حالًا، والحالُ صار يومًا مطروحًا، واليومُ المطروحُ صار عادة. مثال: إن فاتتك صلاةٌ فالجواب أن تصلّي التي تليها في وقتها، لا أن تُنفق ما بقي من النهار في الشعور بالسقوط.",
     keys: ["bad deed","mistake","sin","fix","make up","redeem","erase","guilt","character","سيئة","حسنة","ذنب","تكفير","إصلاح","خلق"]
   },
   {
@@ -1974,6 +1990,174 @@ const HADITHS = [
     title: "Owing money and repaying debts",
     strength: "Strong — Narrated by at-Tirmidhi; graded Strong by al-Albani",
     keys: ["debt","owe","owed","borrow","borrowed","loan","money i owe","repay","pay back","دين","ديون","اقتراض","سداد","استدانة"]
+  },
+  {
+    arabic: "لَعَنَ اللَّهُ الْوَاشِمَاتِ وَالْمُسْتَوْشِمَاتِ، وَالْمُتَنَمِّصَاتِ وَالْمُتَفَلِّجَاتِ لِلْحُسْنِ، الْمُغَيِّرَاتِ خَلْقَ اللَّهِ",
+    text: "Allah has cursed those who tattoo and those who have themselves tattooed, those who pluck eyebrows and those who file their teeth for beauty — those who alter the creation of Allah.",
+    narrator: "Abdullah ibn Mas'ud",
+    ref: "Sahih al-Bukhari, Book of Dress, Hadith 5948",
+    topic: "Dress & Imitation",
+    title: "Tattoos, eyebrows, and altering the creation",
+    titleAr: "الوشم والنمص وتغيير خلق الله",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "The last phrase is the reason for all of it: those who ALTER THE CREATION OF ALLAH. The objection is not to ink or to wanting to look well — it is to permanently changing the body as though what you were given were a first draft. Notice it names the one who does it and the one who asks for it: the tattooist and the customer both. For example: someone who already had a tattoo before becoming Muslim owes nothing for it, and does not have to remove it if that means real harm or scarring — what is asked is that it not be added to.",
+    explainAr: "الجملةُ الأخيرة هي علّةُ ذلك كلِّه: «المغيّراتِ خلقَ الله». فليس الإنكارُ على الحبر ولا على إرادة الحُسن، وإنما على تغيير البدن تغييرًا لازمًا كأنّ الذي أُعطيتَه مسوّدةٌ أولى. وتأمّل أنه ذكر الفاعلة والطالبة جميعًا: الواشمَ والمستوشم. مثال: من كان عليه وشمٌ قبل إسلامه فلا شيء عليه فيه، ولا يلزمه نزعُه إن كان فيه ضررٌ أو تشويه — وإنما المطلوب ألّا يُزاد عليه.",
+    keys: ["tattoo","tattoos","tatoo","tato","tatto","tattooing","eyebrows","plucking eyebrows","threading","altering creation","permanent makeup","microblading","is a tattoo haram",
+           "الوشم","وشم","الوشوم","التاتو","تاتو","النمص","الحواجب","نتف الحاجب","تغيير خلق الله","حكم الوشم"]
+  },
+  {
+    arabic: "اجْتَنِبُوا السَّبْعَ الْمُوبِقَاتِ: الشِّرْكُ بِاللَّهِ، وَالسِّحْرُ، وَقَتْلُ النَّفْسِ الَّتِي حَرَّمَ اللَّهُ إِلَّا بِالْحَقِّ، وَأَكْلُ الرِّبَا، وَأَكْلُ مَالِ الْيَتِيمِ، وَالتَّوَلِّي يَوْمَ الزَّحْفِ، وَقَذْفُ الْمُحْصَنَاتِ الْمُؤْمِنَاتِ الْغَافِلَاتِ",
+    text: "Avoid the seven destroyers: associating others with Allah, magic, killing a soul which Allah has forbidden except by right, consuming interest, consuming an orphan's property, fleeing on the day of battle, and slandering chaste, believing, unaware women.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih al-Bukhari, Book of Wills, Hadith 2766",
+    topic: "Accountability",
+    title: "The seven destroyers, listed by name",
+    titleAr: "الموبقات السبع، مسمّاةً",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "\"Mubiqat\" comes from the word for ruin, not from disapproval — these are the things that destroy a man. Notice what is in the list: TWO of the seven are about money (interest, and an orphan's inheritance), and one is about a single sentence said about a woman with no proof. People expect a list of major sins to be about wine and adultery; most of this one is about what you take from other people and what you say about them.",
+    explainAr: "«الموبقات» من الهلاك لا من مجرّد الكراهة — فهي المهلكات. وتأمّل ما في العدّ: فاثنتان من السبع في المال (الربا وميراث اليتيم)، وواحدةٌ في جملةٍ تُقال عن امرأةٍ بغير بيّنة. ويتوقّع الناسُ أن يكون عدُّ الكبائر في الخمر والزنا، وأكثرُ هذا فيما تأخذه من الناس وما تقوله فيهم.",
+    keys: ["major sins","biggest sins","seven destructive sins","kabair","list of major sins","worst sins","mubiqat","what are the major sins",
+           "الكبائر","اكبر الكبائر","الموبقات","السبع الموبقات","اعظم الذنوب","ما هي الكبائر"]
+  },
+  {
+    arabic: "أَتَدْرُونَ مَا الْغِيبَةُ؟ قَالُوا: اللَّهُ وَرَسُولُهُ أَعْلَمُ. قَالَ: ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ. قِيلَ: أَفَرَأَيْتَ إِنْ كَانَ فِي أَخِي مَا أَقُولُ؟ قَالَ: إِنْ كَانَ فِيهِ مَا تَقُولُ فَقَدِ اغْتَبْتَهُ، وَإِنْ لَمْ يَكُنْ فِيهِ فَقَدْ بَهَتَّهُ",
+    text: "Do you know what backbiting is? They said: Allah and His Messenger know best. He said: mentioning your brother with what he dislikes. It was said: what if what I say of him is true? He said: if it is in him you have backbitten him, and if it is not in him you have slandered him.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Book of Virtue (Kitab al-Birr)",
+    topic: "Guarding the Tongue",
+    title: "What backbiting is — and the answer to \"but it's true\"",
+    titleAr: "ما الغيبة — وجواب «لكنّه صِدق»",
+    strength: "Sahih — Narrated by Muslim",
+    explain: "He defined it himself rather than leaving it to be argued over, and then closed the only exit. The usual defence — \"I'm not lying, he really does do that\" — is precisely the case the hadith calls backbiting. There is no third option where you are safe. For example: telling a colleague that a third man is always late is backbiting even when he is always late. The scholars do allow it where there is a genuine need and no other way — warning someone about a business partner or a proposal, or reporting a wrong to someone who can stop it.",
+    explainAr: "حدَّها بنفسه ولم يدعها للنزاع، ثم أغلق المخرج الوحيد. فالعذرُ المعتاد — «لستُ كاذبًا، هو يفعل ذلك حقًّا» — هو بعينه ما سمّاه الحديثُ غيبة، وليس ثَمَّ وجهٌ ثالث تسلم فيه. مثال: أن تخبر زميلًا أنّ ثالثًا يتأخّر دائمًا غيبةٌ وإن كان يتأخّر دائمًا. وقد استثنى أهلُ العلم موضع الحاجة إذا لم يكن عنها بدّ: كتحذيرٍ من شريكٍ أو خاطب، أو رفعِ ظلامةٍ إلى من يقدر على تغييرها.",
+    keys: ["backbiting","gheebah","ghibah","behind his back","talking about people","but its true","gossip about someone","is it haram to talk about",
+           "الغيبة","غيبة","الاغتياب","وراء ظهره","الكلام عن الناس","لكنه صحيح","البهتان"]
+  },
+  {
+    arabic: "أَلَا أُنَبِّئُكُمْ بِأَكْبَرِ الْكَبَائِرِ؟ الْإِشْرَاكُ بِاللَّهِ، وَعُقُوقُ الْوَالِدَيْنِ. وَكَانَ مُتَّكِئًا فَجَلَسَ فَقَالَ: أَلَا وَقَوْلُ الزُّورِ وَشَهَادَةُ الزُّورِ",
+    text: "Shall I not inform you of the greatest of the major sins? Associating others with Allah, and disobedience to parents. And he had been reclining, so he sat up and said: and false speech, and false testimony.",
+    narrator: "Abu Bakrah",
+    ref: "Sahih al-Bukhari, Book of Witnesses, Hadith 2654",
+    topic: "Accountability",
+    title: "False testimony — and the moment he sat up",
+    titleAr: "شهادة الزور — واللحظة التي جلس فيها",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "The narrators kept a detail that is the whole explanation: he had been RECLINING, and he sat upright before saying the third one, and then repeated it until they wished he would stop. A man who sits up before speaking is doing what any of us does when the next sentence matters more than the last. And notice how ordinary the sin is — \"false speech\" is not only perjury in a court. It covers signing what you did not check, backing a relative's version because he is a relative, and letting a lie stand in a dispute because correcting it is awkward.",
+    explainAr: "حفظ الرواةُ قرينةً هي البيانُ كلُّه: أنه كان متّكئًا فاستوى جالسًا قبل أن يذكر الثالثة، ثم كرّرها حتى تمنّوا لو سكت. والمتّكئُ إذا جلس قبل الكلام فإنما يصنع ما يصنعه أحدُنا إذا كانت الجملةُ التالية أثقل. وتأمّل كم هي عاديّة: فقولُ الزور ليس الشهادةَ أمام قاضٍ فحسب، بل يشمل أن توقّع على ما لم تتحقّق منه، وأن تؤيّد رواية قريبك لأنه قريبك، وأن تدع الكذبةَ قائمةً في خصومةٍ لأنّ تصحيحها ثقيل.",
+    keys: ["false testimony","false witness","perjury","lying in court","greatest sins","disobeying parents","bearing false witness","signed something untrue",
+           "شهادة الزور","قول الزور","الزور","اكبر الكبائر","عقوق الوالدين","الشهادة الكاذبة"]
+  },
+  {
+    arabic: "لَا يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ. قَالَ رَجُلٌ: إِنَّ الرَّجُلَ يُحِبُّ أَنْ يَكُونَ ثَوْبُهُ حَسَنًا وَنَعْلُهُ حَسَنَةً. قَالَ: إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ، الْكِبْرُ بَطَرُ الْحَقِّ وَغَمْطُ النَّاسِ",
+    text: "No one with an atom's weight of arrogance in his heart will enter Paradise. A man said: but a man likes his clothes to be good and his shoes to be good. He said: Allah is beautiful and loves beauty. Arrogance is rejecting the truth and belittling people.",
+    narrator: "Abdullah ibn Mas'ud",
+    ref: "Sahih Muslim, Book of Faith (Kitab al-Iman)",
+    topic: "Character",
+    title: "What arrogance actually is — and what it is not",
+    titleAr: "ما الكبر على الحقيقة — وما ليس هو",
+    strength: "Sahih — Narrated by Muslim",
+    explain: "This is one of the most useful hadith on the site, because a man objected on the spot and got a definition. Two tests, and both are behaviour rather than a feeling. Rejecting the truth: you were shown you were wrong and did not accept it — not because the evidence was weak, but because accepting it would cost you something in front of people. Belittling people: the reflex that prices a person from his job, his accent or his village. So the man with good shoes is not being warned. The man who cannot say \"you were right\" is.",
+    explainAr: "هذا من أنفع ما في الموقع، لأنّ رجلًا اعترض من فوره فجاءه الحدُّ. اختباران، وكلاهما عملٌ لا وِجدان. بطرُ الحقّ: أن يُبيَّن لك أنك مخطئ فلا تقبل — لا لضعف الدليل، بل لأنّ القبول يكلّفك شيئًا أمام الناس. وغَمطُ الناس: الردُّ الذي يقدّر الإنسان من عمله ولهجته وقريته. فصاحبُ النعل الحسنة ليس هو المحذَّر، وإنما المحذَّرُ من لا يستطيع أن يقول: «كنتَ على حقّ».",
+    keys: ["arrogance","pride","kibr","looking down on people","cant admit im wrong","showing off","condescending","nice clothes","he thinks hes better",
+           "الكبر","التكبر","الغرور","احتقار الناس","بطر الحق","لا اعترف بخطئي","متكبر"]
+  },
+  {
+    arabic: "مَرَّ عَلَى صُبْرَةِ طَعَامٍ فَأَدْخَلَ يَدَهُ فِيهَا فَنَالَتْ أَصَابِعُهُ بَلَلًا، فَقَالَ: مَا هَذَا يَا صَاحِبَ الطَّعَامِ؟ قَالَ: أَصَابَتْهُ السَّمَاءُ يَا رَسُولَ اللَّهِ. قَالَ: أَفَلَا جَعَلْتَهُ فَوْقَ الطَّعَامِ كَيْ يَرَاهُ النَّاسُ؟ مَنْ غَشَّ فَلَيْسَ مِنِّي",
+    text: "He passed a heap of food and put his hand into it, and his fingers met wetness. He said: what is this, owner of the food? He said: rain fell on it. He said: then why did you not put it above the food so that people could see it? Whoever cheats is not of me.",
+    narrator: "Abu Hurairah",
+    ref: "Sahih Muslim, Book of Faith (Kitab al-Iman)",
+    topic: "Honesty in Trade",
+    title: "The wet grain under the dry",
+    titleAr: "البلل تحت الطعام",
+    strength: "Sahih — Narrated by Muslim",
+    explain: "Three things at once. The wet grain was REAL — the man had not lied, he had arranged. An omission is therefore a lie: nothing false was said, the bad simply went where it would not be seen. And the price is being told \"not of me\" by the one you follow. The modern shapes are identical: the fault the seller does not mention, the mileage, the photograph taken from the good angle, the term buried on page nine.",
+    explainAr: "ثلاثةٌ في وقتٍ واحد: أنّ البلل كان حقًّا — فالرجلُ لم يكذب وإنما رتّب. وأنّ الكتمان كذبٌ إذًا: فلم يُقل باطل، وإنما وُضع الرديءُ حيث لا يُرى. وأنّ الثمن أن يقول لك من تتبعه: «فليس منّي». وصورُه اليوم هي هي: عيبٌ لا يذكره البائع، وعدّادُ سيّارة، وصورةٌ من الزاوية الحسنة، وشرطٌ مدفونٌ في الصفحة التاسعة.",
+    keys: ["cheating","cheating in business","hiding a fault","dishonest trade","ghish","scam","faulty car","cheating customers","exam cheating",
+           "الغش","غش في البيع","كتم العيب","التدليس","خداع الزبون","الغش في الامتحان"]
+  },
+  {
+    arabic: "لَعَنَ رَسُولُ اللَّهِ ﷺ الرَّاشِيَ وَالْمُرْتَشِيَ",
+    text: "The Messenger of Allah ﷺ cursed the one who gives a bribe and the one who takes it.",
+    narrator: "Abdullah ibn Amr",
+    ref: "Jami' at-Tirmidhi, Chapters on Judgements, Hadith 1337",
+    topic: "Oppression",
+    title: "Bribery — both hands are named",
+    titleAr: "الرشوة — وقد سُمّيت اليدان",
+    strength: "Outside the two Sahihs — narrated by at-Tirmidhi, who graded it hasan sahih",
+    explain: "Two people are cursed, not one — which answers the excuse everybody in our countries has ready: \"I didn't want to, that is just how things work here.\" The giver is named as well as the taker. The scholars do discuss the man who can obtain a right that is genuinely HIS by no other means, and many hold the sin then falls on the taker alone — but that is a narrow exception for something you already own, not for jumping a queue, winning a contract or getting a grade.",
+    explainAr: "لُعن اثنان لا واحد — وفي هذا جوابُ العذر المُعدّ في بلادنا: «لم أُرد ذلك، ولكن هكذا تجري الأمور». فسُمّي الدافعُ كما سُمّي الآخذ. وقد بحث أهلُ العلم حالَ من لا يصل إلى حقٍّ هو حقُّه إلا بذلك، وذهب كثيرون إلى أنّ الإثم حينئذٍ على الآخذ وحده — وهو استثناءٌ ضيّقٌ في حقٍّ تملكه، لا في تقدّمٍ على صفٍّ ولا ظفرٍ بعقدٍ ولا درجةٍ في امتحان.",
+    keys: ["bribery","bribe","baksheesh","backhander","kickback","under the table","is a bribe haram","corruption","wasta",
+           "الرشوة","رشوة","الراشي","المرتشي","بخشيش","اكرامية","الواسطة","الفساد"]
+  },
+  {
+    arabic: "لَا يَدْخُلُ الْجَنَّةَ نَمَّامٌ",
+    text: "No tale-carrier will enter Paradise.",
+    narrator: "Hudhayfah",
+    ref: "Sahih Muslim, Book of Faith (Kitab al-Iman)",
+    topic: "Guarding the Tongue",
+    title: "Carrying tales between people",
+    titleAr: "نقل الكلام بين الناس",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "This is not backbiting. Backbiting is speaking ill of somebody absent; nameemah is taking what one person said and carrying it to another to set them against each other. The concrete case is a phone call beginning \"I don't want to cause problems, but you should know what he said about you.\" Nothing in it is invented, nothing is even exaggerated — and a friendship of fifteen years ends that evening. The words were true. Moving them was the crime.",
+    explainAr: "وليست هي الغيبة: فالغيبةُ ذكرُ الغائب بما يكره، والنميمةُ نقلُ كلام أحدهم إلى الآخر ليُفسد ما بينهما. والصورةُ الواقعة اتّصالٌ يبدأ بـ«ما أريد أن أفسد شيئًا، ولكن ينبغي أن تعرف ما قاله فيك». ليس فيه شيءٌ مخترع ولا مبالغة — وتنتهي صحبةُ خمس عشرة سنةً تلك الليلة. كان الكلامُ صدقًا، وكان نقلُه هو الجناية.",
+    keys: ["nameemah","namima","tale carrying","stirring trouble","he told me what you said","causing problems between people","two faced","gossip",
+           "النميمة","نميمة","نقل الكلام","الوشاية","يفسد بين الناس","قال لي عنك","ذو الوجهين"]
+  },
+  {
+    arabic: "لَا يَحْتَكِرُ إِلَّا خَاطِئٌ",
+    text: "No one hoards except a sinner.",
+    narrator: "Ma'mar ibn Abdullah",
+    ref: "Sahih Muslim, Book of Musaqah",
+    topic: "Honesty in Trade",
+    title: "Holding goods back to make the price rise",
+    titleAr: "حبس السلعة حتى يرتفع السعر",
+    strength: "Sahih — Narrated by Muslim",
+    explain: "The Arabic word used for sinner here — khati' — is stronger than \"mistaken\"; it is the word for one deliberately at fault. And hoarding is not owning stock or keeping a warehouse: it is buying up what people need and withholding it so that scarcity lifts the price. It is one of the few sins treated as a crime against a whole population rather than one person — thousands each pay a little more, and none of them can point at what happened. Most scholars restrict it to necessities in a market that is genuinely short.",
+    explainAr: "و«الخاطئ» في العربية أشدُّ من المخطئ؛ فهو المتعمّد للإثم. وليس الاحتكارُ أن تملك بضاعةً أو تحفظ مخزنًا، وإنما أن تشتري ما يحتاجه الناسُ فتحبسه حتى يرفع الشحُّ السعر. وهو من قليلٍ من الذنوب التي تُعامل جنايةً على جماعةٍ لا على شخص: يدفع ألوفٌ زيادةً يسيرة، ولا يستطيع أحدُهم أن يشير إلى ما جرى. وقصره أكثرُ أهل العلم على أقوات الناس في سوقٍ فيها ضِيقٌ حقيقيّ.",
+    keys: ["hoarding","monopoly","ihtikar","raising prices","price gouging","holding back stock","profiteering","crisis prices",
+           "الاحتكار","احتكار","رفع الاسعار","حبس البضاعة","استغلال الازمة","الغلاء"]
+  },
+  {
+    arabic: "مَنْ أَتَى عَرَّافًا فَسَأَلَهُ عَنْ شَيْءٍ لَمْ تُقْبَلْ لَهُ صَلَاةٌ أَرْبَعِينَ لَيْلَةً",
+    text: "Whoever comes to a fortune teller and asks him about anything, his prayer will not be accepted for forty nights.",
+    narrator: "One of the wives of the Prophet ﷺ",
+    ref: "Sahih Muslim, Book of Greetings (Kitab as-Salam)",
+    topic: "Sincerity",
+    title: "Going to a fortune teller \"just for fun\"",
+    titleAr: "إتيان العرّاف «مزحًا»",
+    strength: "Sahih — Narrated by Muslim",
+    explain: "You do not have to practise anything or even believe it — the wording is \"comes to him AND ASKS him about anything.\" Reading and asking is the whole action. So the horoscope at the end of a magazine, the app that tells you what your week holds, and the woman the family visits when someone is ill are not a separate, lighter category. \"Not accepted\" does not mean stop praying or make the prayers up: the scholars explain it as the reward being withheld while the obligation is still discharged.",
+    explainAr: "لستَ محتاجًا إلى أن تعمل شيئًا ولا أن تصدّق — واللفظ: «من أتى عرّافًا فسأله عن شيء». فالإتيانُ والسؤالُ هو الفعلُ كلُّه. فالحظُّ في آخر المجلّة، والتطبيقُ الذي يخبرك بما في أسبوعك، والمرأةُ التي يقصدها الأهلُ إذا مرض أحدٌ — ليست بابًا أخفّ. وقولُه «لم تُقبل» ليس معناه أن تدع الصلاة ولا أنها تُقضى؛ وإنما فسّره أهلُ العلم بحرمان الثواب مع سقوط الفرض.",
+    keys: ["fortune teller","fortune telling","horoscope","astrology","psychic","tarot","palm reading","star sign","coffee cup","is astrology haram",
+           "العراف","عراف","الكهانة","قراءة الفنجان","قراءة الكف","الابراج","برجي","حظي اليوم","المشعوذ"]
+  },
+  {
+    arabic: "إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ، وَإِذَا سَرَقَ فِيهِمُ الضَّعِيفُ أَقَامُوا عَلَيْهِ الْحَدَّ. وَايْمُ اللَّهِ، لَوْ أَنَّ فَاطِمَةَ بِنْتَ مُحَمَّدٍ سَرَقَتْ لَقَطَعْتُ يَدَهَا",
+    text: "Those before you were destroyed only because when a noble person among them stole they left him, and when a weak person among them stole they carried out the punishment on him. By Allah, if Fatimah the daughter of Muhammad were to steal, I would cut off her hand.",
+    narrator: "Aishah",
+    ref: "Sahih al-Bukhari, Book of Maghazi, Hadith 4304; Sahih Muslim, Book of Legal Punishments",
+    topic: "Oppression",
+    title: "The day he named his own daughter",
+    titleAr: "اليوم الذي سمّى فيه ابنته",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "A woman from a noble Makkan family had stolen, and her people sent Usama ibn Zayd — whom he loved — to ask him to let it go. His face changed colour: are you interceding in one of the limits set by Allah? Then he stood and said this. He named his own daughter, in public, to a crowd that had just watched a powerful family try to buy an exemption. The hadith is not really about theft. It is about whether the law bends for the well-connected, and no verse could have made the answer as clear as that sentence did.",
+    explainAr: "سرقت امرأةٌ من بيتٍ شريفٍ بمكّة، فأرسل قومُها أسامة بن زيدٍ حِبَّه ليكلّمه في تركها، فتلوّن وجهُه ﷺ وقال: «أتشفع في حدٍّ من حدود الله؟» ثم قام فقال هذا. سمّى ابنته، على المنبر، أمام قومٍ رأوا لتوّهم بيتًا ذا شرفٍ يحاول أن يشتري استثناءً. وليس الحديثُ في السرقة على الحقيقة، وإنما هو في: أتلين الأحكامُ لأصحاب الجاه؟ وما كانت آيةٌ لتُبيّن الجواب كما بيّنته تلك الجملة.",
+    keys: ["stealing","theft","stole","thief","is stealing haram","cutting the hand","hadd for theft","law for the rich","favouritism","shoplifting",
+           "السرقة","سرقة","سرقت","قطع اليد","حد السرقة","الواسطة في الحدود","العدل","الشريف والضعيف"]
+  },
+  {
+    arabic: "إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ، وَإِنَّ الرَّجُلَ لَيَصْدُقُ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ صِدِّيقًا. وَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ، وَإِنَّ الْفُجُورَ يَهْدِي إِلَى النَّارِ، وَإِنَّ الرَّجُلَ لَيَكْذِبُ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ كَذَّابًا",
+    text: "Truthfulness leads to righteousness, and righteousness leads to Paradise; a man keeps telling the truth until he is written with Allah as truthful. And lying leads to wickedness, and wickedness leads to the Fire; a man keeps lying until he is written with Allah as a liar.",
+    narrator: "Abdullah ibn Mas'ud",
+    ref: "Sahih al-Bukhari, Book of Good Manners, Hadith 6094",
+    topic: "Honesty in Trade",
+    title: "Lying is a road, not a single act",
+    titleAr: "الكذب طريقٌ لا فعلةً واحدة",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    explain: "The phrase to sit with is \"UNTIL HE IS WRITTEN DOWN as a liar.\" It stops being something a man does and becomes something he is — and nobody chooses that day. It arrives after enough small ones: the excuse to a boss, the price inflated a little, the story improved because it was flat. Which is also the good news in the first half: the road runs both ways, and it is built out of the same size of step.",
+    explainAr: "والموضعُ الذي يُوقف عنده: «حتى يُكتب عند الله كذّابًا» — فينتقل الأمرُ من شيءٍ يفعله إلى شيءٍ هو إيّاه، ولا يختار أحدٌ ذلك اليوم. وإنما يأتي بعد صغائرَ كثيرة: عذرٌ لصاحب العمل، وثمنٌ يُزاد قليلًا، وحكايةٌ تُحسَّن لأنها جاءت باردة. وفي الشطر الأوّل البشارة: فالطريقُ يجري في الوجهتين، وهو مبنيٌّ من خطوةٍ بهذا الحجم نفسه.",
+    keys: ["lying","lies","liar","is lying haram","white lie","telling lies","honesty","truthfulness","dishonest","small lie",
+           "الكذب","كذب","الصدق","كذاب","الكذبة البيضاء","حكم الكذب","الصدق ينجي"]
   }
 ];
 

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202608292252" />
+  <link rel="stylesheet" href="css/style.css?v=202608301006" />
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -86,12 +86,16 @@
           <span class="ar-only" dir="rtl">الأساسيات خطوةً خطوة</span></a>
         <a href="#marriage">💍 <span class="en-only">Marriage, and what you agree to</span>
           <span class="ar-only" dir="rtl">النكاح وما تلتزمه</span></a>
+        <a href="#inheritance">📜 <span class="en-only">Inheritance — the shares, with the sums</span>
+          <span class="ar-only" dir="rtl">المواريث — الأنصبة والحساب</span></a>
         <a href="#standard">⚖️ <span class="en-only">"Argue without religion" — by what, then?</span>
           <span class="ar-only" dir="rtl">«حاجِجْ بلا دين» — فبأيِّ شيء؟</span></a>
         <a href="#morals">🪞 <span class="en-only">Morals — where they went</span>
           <span class="ar-only" dir="rtl">الأخلاق — أين ذهبت</span></a>
         <a href="#hearts">🕳️ <span class="en-only">"What do I get out of it?" — and envy</span>
           <span class="ar-only" dir="rtl">«وأنا ما لي؟» — والحسد</span></a>
+        <a href="#sins">⛔ <span class="en-only">The major sins, named</span>
+          <span class="ar-only" dir="rtl">الكبائر مسمّاةً</span></a>
         <a href="#misunderstood" class="gd-jump-hot">🛡️ <span class="en-only">The hardest questions about Islam</span>
           <span class="ar-only" dir="rtl">أصعبُ ما يُسأل عنه الإسلام</span></a>
         <a href="#mis-double">⚖️ <span class="en-only">"None of your business" — and the double standard</span>
@@ -193,7 +197,13 @@
     </div>
   </section>
 
-  <section class="pattern-bg" id="standard">
+  <section class="pattern-bg" id="inheritance">
+    <div class="container">
+      <div id="inheritanceBox"></div>
+    </div>
+  </section>
+
+  <section id="standard">
     <div class="container">
       <div id="standardBox"></div>
     </div>
@@ -208,6 +218,12 @@
   <section class="pattern-bg" id="hearts">
     <div class="container">
       <div id="heartsBox"></div>
+    </div>
+  </section>
+
+  <section id="sins">
+    <div class="container">
+      <div id="sinsBox"></div>
     </div>
   </section>
 
@@ -381,56 +397,58 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202608292252"></script>
+  <script src="js/data.js?v=202608301006"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202608292252"></script>
+  <script src="js/sunnah.js?v=202608301006"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202608292252"></script>
+  <script src="js/adhkar.js?v=202608301006"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202608292252"></script>
+  <script src="js/scholars.js?v=202608301006"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202608292252"></script>
+  <script src="js/scholars-books.js?v=202608301006"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202608292252"></script>
+  <script src="js/revival.js?v=202608301006"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202608292252"></script>
+  <script src="js/bidah.js?v=202608301006"></script>
   <!-- The five pillars, the six of faith, and the zakat arithmetic. The
        most basic thing this site can carry, and it was missing until now. -->
-  <script src="js/pillars.js?v=202608292252"></script>
-  <script src="js/basics.js?v=202608292252"></script>
-  <script src="js/morals.js?v=202608292252"></script>
-  <script src="js/marriage.js?v=202608292252"></script>
-  <script src="js/standard.js?v=202608292252"></script>
-  <script src="js/hearts.js?v=202608292252"></script>
+  <script src="js/pillars.js?v=202608301006"></script>
+  <script src="js/basics.js?v=202608301006"></script>
+  <script src="js/morals.js?v=202608301006"></script>
+  <script src="js/marriage.js?v=202608301006"></script>
+  <script src="js/standard.js?v=202608301006"></script>
+  <script src="js/hearts.js?v=202608301006"></script>
+  <script src="js/inheritance.js?v=202608301006"></script>
+  <script src="js/sins.js?v=202608301006"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202608292252"></script>
-  <script src="js/endmap.js?v=202608292252"></script>
+  <script src="js/misunderstood.js?v=202608301006"></script>
+  <script src="js/endmap.js?v=202608301006"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202608292252"></script>
+  <script src="js/terms.js?v=202608301006"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202608292252"></script>
+  <script src="js/figures.js?v=202608301006"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202608292252"></script>
+  <script src="js/signs.js?v=202608301006"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -699,7 +717,18 @@
       ["wife","husband","spouse","marriage","married","divorce","زوجة","زوج","زواج","طلاق"],
       ["child","children","son","daughter","kids","ولد","أولاد","ابن","ابنة","أطفال"],
       ["exam","study","school","university","test","fail","failed","امتحان","دراسة","جامعة","مدرسة","رسوب"],
-      ["death","died","dead","funeral","loss","lost someone","موت","وفاة","مات","جنازة","فقد"]
+      ["death","died","dead","funeral","loss","lost someone","موت","وفاة","مات","جنازة","فقد","توفي","المتوفى"],
+      /* Added after a battery of sentences phrased the way people speak.
+         Each pair is one thing a reader calls by several names. */
+      ["work","job","office","boss","employer","salary","wages","shift","عمل","شغل","وظيفة","راتب","المدير"],
+      ["shout","shouted","shouting","yell","yelled","screamed","raised my voice","صراخ","زعقت","صرخت","رفعت صوتي"],
+      ["brother","sister","sibling","siblings","أخي","أختي","إخوتي","أخوي","اخواتي"],
+      ["pray","prayer","prayers","praying","salah","salat","صلاة","أصلي","الصلوات"],
+      ["estate","inheritance","legacy","what he left","تركة","ميراث","مواريث","الورثة"],
+      ["share","portion","cut","نصيب","حصة","سهم"],
+      ["cheat","cheated","cheating","copied","copy","fraud","fake","غش","غشيت","تزوير","نسخت"],
+      ["pay","paid","payment","bribe","fee","دفعت","رشوة","مبلغ","عمولة"],
+      ["watch","watching","videos","films","movies","screen","phone","أشاهد","أفلام","فيديو","الشاشة","الجوال"]
     ];
     const CONCEPT = Object.create(null);
     CONCEPT_GROUPS.forEach(group => {
@@ -822,6 +851,28 @@
       return w;
     }
 
+    /* NOBODY SPELLS A DOUBLED LETTER THE SAME WAY TWICE.
+
+       He reported this precisely: searching for a ruling on tattoos found
+       nothing, and "we usually write t-a-t-o, maybe an extra o". Collapsing
+       runs of the same letter makes every guess meet in one place:
+
+           tattoo -> tato     tatoo -> tato     tatto -> tato
+
+       And it fixes the same problem in transliterated Arabic, which is the
+       other half of how people type: haraam -> haram, halaal -> halal,
+       zinaa -> zina, duaaa -> dua.
+
+       FIVE CHARACTERS, not four: at four, "good" collapses onto "god".
+       Latin only — Arabic doubling is a shadda and normalize() already
+       removed it. And it is an EXTRA form on both sides, never a
+       replacement, so it can add a match and can never remove one. */
+    const SQUEEZE_MIN = 5;
+    function iitwSqueeze(w) {
+      return (w.length >= SQUEEZE_MIN && /^[a-z]+$/.test(w))
+        ? w.replace(/([a-z])\1+/g, "$1") : w;
+    }
+
     /* Every form of every word in the text, so a lookup is O(1) per key. */
     function iitwWordSet(text) {
       const set = new Set();
@@ -829,6 +880,8 @@
         if (!w) return;
         set.add(w);
         set.add(stem(w));
+        set.add(iitwSqueeze(w));
+        set.add(iitwSqueeze(stem(w)));
         if (/[؀-ۿ]/.test(w)) set.add(iitwArStrip(w));
       });
       return set;
@@ -841,6 +894,7 @@
       if (!parts.length) return false;
       return parts.every(p =>
         hayWords.has(p) || hayWords.has(stem(p)) ||
+        hayWords.has(iitwSqueeze(p)) || hayWords.has(iitwSqueeze(stem(p))) ||
         (/[؀-ۿ]/.test(p) && hayWords.has(iitwArStrip(p))));
     }
 
@@ -1079,6 +1133,265 @@
        at 2 for the vaguer ones is what stops a single ordinary word from
        deciding the answer. */
     const GUIDANCE_TOPICS = [
+      /* ---------- THE MAJOR SINS (js/sins.js) ----------
+         Every sin gets its OWN topic and its OWN target, because he asked
+         for exactly that: "make sure that other situations don't come out
+         in the same output... such important sins should be mentioned BY
+         NAME." A shared fallback is what produced 27 generic answers on the
+         battery that found this gap. */
+      { id: "sn-t-major", need: 1, target: "#sn-mubiqat",
+        must: ["الكبائر", "كبائر", "اكبر الكبائر", "الموبقات", "السبع الموبقات", "اعظم الذنوب",
+               "اكبر الذنوب", "الذنوب الكبيرة",
+               "major sins", "biggest sins", "greatest sins", "worst sins", "seven destructive",
+               "deadly sins", "list of sins", "what are the major sins"],
+        words: ["الكبائر", "الذنوب", "الموبقات", "المهلكات", "اعظم", "اكبر",
+                "sins", "major", "biggest", "worst", "greatest", "destroy", "seven"] },
+      { id: "sn-t-magic", need: 1, target: "#sn-sihr",
+        must: ["السحر", "سحر", "مسحور", "الشعوذة", "العراف", "عراف", "الكهانة", "كاهن",
+               "قراءة الفنجان", "قراءة الكف", "الابراج", "برجي", "حظي اليوم", "المشعوذ",
+               "magic", "black magic", "sihr", "witchcraft", "witch", "fortune teller",
+               "fortune telling", "horoscope", "astrology", "star sign", "psychic", "tarot",
+               "palm reading", "spell", "curse on me"],
+        words: ["السحر", "الشعوذة", "العراف", "الكاهن", "الابراج", "الفنجان", "الطالع",
+                "magic", "sihr", "fortune", "teller", "horoscope", "zodiac", "psychic", "spell"] },
+      { id: "sn-t-kill", need: 1, target: "#sn-qatl",
+        must: ["القتل", "قتل النفس", "جريمة قتل", "قتل انسان", "حكم القتل", "الاجهاض",
+               "killing", "murder", "took a life", "is killing haram", "manslaughter",
+               "abortion", "killed someone"],
+        words: ["القتل", "قتل", "النفس", "دم", "الاجهاض",
+                "kill", "killing", "murder", "life", "soul", "blood", "abortion"] },
+      { id: "sn-t-qadhf", need: 1, target: "#sn-qadhf",
+        must: ["القذف", "قذف المحصنات", "اتهام امراه", "الافتراء", "التشهير", "نشر الاشاعات",
+               "اربعة شهداء", "شوهوا سمعتها",
+               "accusing a woman", "slander", "qadhf", "false accusation", "ruined her reputation",
+               "spreading rumours", "spreading rumors", "four witnesses", "defamation",
+               "they said she"],
+        words: ["القذف", "الاتهام", "المحصنات", "السمعة", "العرض", "الاشاعة", "شهداء",
+                "accuse", "slander", "reputation", "rumour", "rumor", "witnesses", "defame"] },
+      { id: "sn-t-gheeba", need: 1, target: "#sn-gheebah",
+        must: ["الغيبة", "غيبة", "الاغتياب", "اغتاب", "وراء ظهره", "الكلام عن الناس",
+               "نتكلم على الناس", "لكنه صحيح",
+               "backbiting", "back biting", "gheebah", "ghibah", "behind his back",
+               "behind her back", "talking about people", "talk about someone", "but its true",
+               "is it haram to talk about"],
+        words: ["الغيبة", "الاغتياب", "الكلام", "الناس", "ظهره", "صحيح",
+                "backbiting", "gossip", "behind", "talking", "people", "true"] },
+      { id: "sn-t-nameema", need: 1, target: "#sn-nameemah",
+        must: ["النميمة", "نميمة", "نقل الكلام", "الوشاية", "يفسد بين الناس", "قال لي عنك",
+               "ذو الوجهين",
+               "nameemah", "namima", "tale carrying", "carrying tales", "stirring trouble",
+               "he told me what you said", "causing problems between", "two faced"],
+        words: ["النميمة", "النقل", "الوشاية", "الفساد", "الكلام", "الوجهين",
+                "tales", "carrying", "stirring", "trouble", "between", "faced"] },
+      { id: "sn-t-lie", need: 1, target: "#sn-kadhib",
+        must: ["الكذب", "كذب", "اكذب", "كذاب", "الكذبة البيضاء", "حكم الكذب", "كذبت",
+               "lying", "is lying haram", "white lie", "telling lies", "i lied", "liar",
+               "dishonest", "small lie", "can i lie"],
+        words: ["الكذب", "الصدق", "كذبة", "كاذب",
+                "lie", "lying", "lies", "liar", "truth", "honest", "dishonest"] },
+      { id: "sn-t-zoor", need: 1, target: "#sn-zoor",
+        must: ["شهادة الزور", "قول الزور", "الزور", "الشهادة الكاذبة", "اشهد زورا",
+               "الكذب في المحكمة", "التوقيع على باطل", "شهد كذبا",
+               "false testimony", "false witness", "bearing false witness", "perjury",
+               "lying in court", "lied under oath", "signed something untrue", "backing a lie"],
+        words: ["الزور", "الشهادة", "المحكمة", "التوقيع", "الكذب", "شهد",
+                "testimony", "witness", "perjury", "court", "false", "sign", "oath"] },
+      { id: "sn-t-mock", need: 1, target: "#sn-sukhriyah",
+        must: ["السخرية", "الاستهزاء", "التنابز", "الالقاب", "الضحك على الناس", "اللمز",
+               "المزاح الجارح", "التنمر", "يسخرون مني",
+               "mocking", "making fun of", "make fun of him", "nicknames", "insulting",
+               "bullying", "teasing", "laughing at people", "banter", "they mock me"],
+        words: ["السخرية", "الاستهزاء", "الالقاب", "الضحك", "التنمر", "المزاح",
+                "mock", "fun", "nickname", "insult", "bully", "tease", "laugh"] },
+
+      /* THE ONE HE SEARCHED FOR AND FOUND NOTHING. Every spelling anybody
+         actually types is here, and iitwSqueeze() catches the rest. */
+      { id: "sn-t-tattoo", need: 1, target: "#sn-washm",
+        must: ["الوشم", "وشم", "الوشوم", "وشوم", "حكم الوشم", "التاتو", "تاتو", "تاتوو",
+               "الرسم على الجسم", "عندي وشم", "ازالة الوشم", "الوشم حرام", "وشم دائم",
+               "tattoo", "tattoos", "tatoo", "tatoos", "tato", "tatto", "tattos", "tattooing",
+               "tattoed", "tattooed", "ink on my body", "permanent makeup", "microblading",
+               "i have a tattoo", "remove my tattoo", "getting a tattoo"],
+        words: ["الوشم", "الوشوم", "التاتو", "الجسم", "الجلد", "رسم", "ازالة", "حرام",
+                "tattoo", "tato", "ink", "body", "skin", "permanent", "remove", "haram"] },
+      { id: "sn-t-brows", need: 1, target: "#sn-nams",
+        must: ["النمص", "نمص", "الحواجب", "نتف الحاجب", "تنظيف الحواجب", "رسم الحواجب",
+               "الوصل", "وصل الشعر", "الباروكة", "الشعر المستعار", "الرموش", "حكم النمص",
+               "plucking eyebrows", "eyebrow", "eyebrows", "threading", "namas", "nams",
+               "shaping my eyebrows", "hair extensions", "wig", "false hair", "false lashes",
+               "lash extensions", "eyelash"],
+        words: ["النمص", "الحواجب", "الشعر", "الوصل", "الباروكة", "الرموش", "التزين",
+                "eyebrow", "eyebrows", "pluck", "thread", "hair", "extension", "wig", "lash"] },
+      { id: "sn-t-tashabbuh", need: 1, target: "#sn-tashabbuh",
+        must: ["التشبه", "تشبه الرجال بالنساء", "تشبه النساء بالرجال", "المتشبهين",
+               "حكم التشبه", "لبس الرجال", "لبس النساء",
+               "imitating women", "imitating men", "tashabbuh", "cross dressing",
+               "men wearing womens", "women wearing mens", "effeminate", "is it haram for a man to wear"],
+        words: ["التشبه", "الرجال", "النساء", "اللباس", "الهيئة",
+                "imitate", "imitating", "men", "women", "clothes", "wearing", "dress"] },
+      { id: "sn-t-bribe", need: 1, target: "#sn-rishwah",
+        must: ["الرشوة", "رشوة", "رشوه", "الراشي", "المرتشي", "حكم الرشوة", "دفعت له عمولة",
+               "بخشيش", "اكرامية", "الواسطة",
+               "bribery", "bribe", "bribes", "baksheesh", "backhander", "kickback",
+               "under the table", "paying someone to get it done", "is a bribe haram",
+               "had to pay to get"],
+        words: ["الرشوة", "الراشي", "المرتشي", "المال", "الموظف", "الحاكم",
+                "bribe", "bribery", "pay", "official", "corruption", "money"] },
+      { id: "sn-t-cheat", need: 1, target: "#sn-ghish",
+        must: ["الغش", "غش", "غش في البيع", "كتم العيب", "بيع سيارة معيبة", "التدليس",
+               "خداع الزبون", "الغش في الامتحان", "غشيت",
+               "cheating", "cheat", "cheated", "cheating in business", "cheating customers",
+               "hiding a fault", "faulty car", "dishonest trade", "ghish", "scam",
+               "cheating in exams", "exam cheating", "copied in the exam"],
+        words: ["الغش", "العيب", "البيع", "الزبون", "الامتحان", "التدليس",
+                "cheat", "cheating", "fault", "hide", "sell", "customer", "exam", "scam"] },
+      { id: "sn-t-hoard", need: 1, target: "#sn-ihtikar",
+        must: ["الاحتكار", "احتكار", "رفع الاسعار", "حبس البضاعة", "استغلال الازمة",
+               "التلاعب بالسوق", "المحتكر",
+               "hoarding", "hoard", "monopoly", "ihtikar", "price gouging", "raising prices",
+               "holding back stock", "market manipulation", "profiteering"],
+        words: ["الاحتكار", "الاسعار", "البضاعة", "السوق", "الازمة", "القوت",
+                "hoard", "monopoly", "price", "stock", "market", "crisis"] },
+      { id: "sn-t-oath", need: 1, target: "#sn-ghamoos",
+        must: ["اليمين الغموس", "الغموس", "الحلف كذبا", "حلفت بالله", "يمين كاذبة",
+               "والله ما اخذت", "حلف على مال",
+               "false oath", "swearing falsely", "swore by allah", "lying under oath",
+               "ghamoos", "he swore and took", "oath to take money"],
+        words: ["اليمين", "الغموس", "الحلف", "كاذبة", "المال", "النزاع",
+                "oath", "swear", "swore", "falsely", "property", "dispute"] },
+      { id: "sn-t-parents", need: 1, target: "#sn-uquq",
+        must: ["عقوق الوالدين", "العقوق", "اعق والدي", "بر الوالدين", "حق الوالدين",
+               "اسات لامي", "قاطع امي", "لا اكلم ابي", "اهملت والدي",
+               "disobeying parents", "uquq", "rude to my mother", "not speaking to my father",
+               "parents rights", "argue with my mother", "my mother is difficult",
+               "i shouted at my dad", "honour your parents"],
+        words: ["العقوق", "الوالدين", "امي", "ابي", "البر", "الطاعة",
+                "parents", "mother", "father", "disobey", "rude", "honour", "obey"] },
+      { id: "sn-t-ties", need: 1, target: "#sn-qatia",
+        must: ["قطيعة الرحم", "صلة الرحم", "مقاطع اخي", "خصام العائلة", "لا اكلم اهلي",
+               "هجر الاقارب", "قاطعت اختي", "الواصل",
+               "cutting family ties", "cut off my family", "not speaking to my brother",
+               "estranged", "family fallout", "silat al rahim", "should i call him first",
+               "she doesnt speak to me", "reconcile with family"],
+        words: ["القطيعة", "الرحم", "الصلة", "اخي", "اختي", "الاقارب", "العائلة",
+                "ties", "family", "cut", "brother", "sister", "relatives", "estranged"] },
+      { id: "sn-t-pride", need: 1, target: "#sn-kibr",
+        must: ["الكبر", "التكبر", "الكبرياء", "احتقار الناس", "الغرور", "بطر الحق",
+               "لا اعترف بخطئي", "استعلاء", "متكبر",
+               "arrogance", "arrogant", "pride", "kibr", "looking down on people",
+               "cant admit im wrong", "showing off", "condescending", "he thinks hes better"],
+        words: ["الكبر", "الغرور", "احتقار", "الحق", "الناس", "التواضع",
+                "arrogance", "arrogant", "pride", "proud", "admit", "wrong", "humble"] },
+      { id: "sn-t-prayer", need: 1, target: "#sn-salah",
+        must: ["ترك الصلاة", "تارك الصلاة", "لا اصلي", "ما اصلي", "فاتتني صلوات",
+               "قضاء الصلاة", "سنوات بلا صلاة", "حكم تارك الصلاة", "تركت الصلاة",
+               "missing prayer", "not praying", "i dont pray", "stopped praying",
+               "abandoning salah", "years of missed prayers", "make up prayers",
+               "qada prayers", "is not praying kufr"],
+        words: ["الصلاة", "ترك", "تارك", "القضاء", "الفوائت", "الكفر",
+                "prayer", "praying", "pray", "missed", "abandon", "kufr", "start"] },
+      { id: "sn-t-zina", need: 1, target: "#sn-zina",
+        must: ["الزنا", "زنا", "الفاحشة", "علاقة محرمة", "الاباحية", "افلام اباحية",
+               "بورن", "لا استطيع التوقف", "العادة السرية", "قبل الزواج", "صاحبتي",
+               "zina", "zinaa", "adultery", "fornication", "sex before marriage",
+               "pornography", "porn", "watching porn", "i cant stop watching",
+               "masturbation", "haram relationship", "girlfriend", "boyfriend"],
+        words: ["الزنا", "الفاحشة", "الاباحية", "العلاقة", "الشهوة", "الحرام",
+                "zina", "adultery", "porn", "pornography", "relationship", "stop", "addiction"] },
+      { id: "sn-t-tawbah", need: 1, target: "#sn-tawbah",
+        must: ["هل يغفر الله لي", "ذنوبي كثيرة", "ارجع للذنب", "اليأس", "القنوط",
+               "لا تقنطوا", "فعلت شيئا فظيعا", "تبت ثم عدت", "ذنبي كبير",
+               "can allah forgive me", "my sins are too many", "i keep going back",
+               "despair", "hopeless", "will i be forgiven", "i did something terrible",
+               "repented and went back", "too far gone"],
+        words: ["التوبة", "المغفرة", "الذنوب", "اليأس", "الرحمة", "استغفر",
+                "forgive", "forgiveness", "sins", "despair", "mercy", "repent", "again"] },
+
+      { id: "sn-t-theft", need: 1, target: "#sn-sariqah",
+        must: ["السرقة", "سرقة", "سرقت", "حكم السرقة", "قطع اليد", "حد السرقة",
+               "اخذت بغير اذن", "الاختلاس", "سرقت من الشركة", "سارق",
+               "stealing", "steal", "stole", "theft", "thief", "shoplifting",
+               "is stealing haram", "cutting the hand", "hadd for theft", "embezzlement",
+               "took money from work", "taking without permission"],
+        words: ["السرقة", "سرق", "المال", "اليد", "الحد", "التوبة", "رد المال",
+                "steal", "stealing", "theft", "thief", "hand", "money", "return"] },
+      { id: "bs-t-smoking", need: 1, target: "#bh-smoking",
+        must: ["التدخين", "الدخان", "السجائر", "سيجارة", "حكم التدخين", "الشيشة",
+               "النرجيلة", "المعسل", "الفيب", "التبغ", "ادخن",
+               /* "smoke" alone REMOVED: "can i smoke weed" is a question about
+                  drugs and belongs at #bh-drink, and the bare verb took it
+                  here instead. "i smoke" as a phrase is in the card keys. */
+               "smoking", "cigarette", "cigarettes", "is smoking haram", "tobacco",
+               "shisha", "hookah", "vape", "vaping", "nicotine", "quit smoking", "cigar"],
+        words: ["التدخين", "الدخان", "السجائر", "الشيشة", "التبغ", "الضرر", "الصحة",
+                "smoking", "smoke", "cigarette", "tobacco", "shisha", "vape", "harm", "health"] },
+
+      /* ---------- INHERITANCE (js/inheritance.js) ---------- */
+      { id: "ih-t-general", need: 1, target: "#ih-fixed",
+        must: ["الميراث", "المواريث", "ميراث", "التركة", "الفرائض", "انصبة الميراث",
+               "نصيب الزوجة", "نصيب البنت", "نصيب الام", "نصيب الزوج", "كم ترث", "من يرث",
+               "inheritance", "inheritence", "inherit", "inherits", "estate", "faraid",
+               "shares of inheritance", "who inherits", "how much does the wife get",
+               "how much does the daughter get", "share of the mother"],
+        words: ["الميراث", "التركة", "الفرائض", "نصيب", "الورثة", "يرث", "الزوجة", "البنت",
+                "inheritance", "estate", "share", "shares", "heirs", "inherit", "wife", "daughter"] },
+      { id: "ih-t-order", need: 1, target: "#ih-order",
+        must: ["ترتيب التركة", "ماذا يخرج اولا", "ديون الميت", "تجهيز الميت", "قبل القسمة",
+               "من يسدد الدين", "دين المتوفى",
+               "what comes first", "debts of the deceased", "funeral costs",
+               "before dividing the estate", "who pays the debt", "his debts"],
+        words: ["الدين", "الديون", "التجهيز", "الترتيب", "التركة", "القسمة",
+                "debt", "debts", "funeral", "before", "dividing", "order", "pay"] },
+      { id: "ih-t-will", need: 1, target: "#ih-wasiyya",
+        must: ["الوصية", "الوصية الشرعية", "كم اوصي", "الثلث", "اوصي لابني", "لا وصية لوارث",
+               "اكتب وصية", "اترك كل مالي",
+               "islamic will", "wasiyyah", "wasiya", "how much can i leave in my will",
+               "one third", "leave money to my son", "bequest", "write a will",
+               "leave everything to"],
+        words: ["الوصية", "الثلث", "وارث", "اوصي", "المال", "اكتب",
+                "will", "bequest", "third", "leave", "heir", "write"] },
+      { id: "ih-t-example", need: 1, target: "#ih-ex1",
+        must: ["مثال ميراث", "كيف نقسم التركة", "حساب الميراث", "مات ابي كيف نقسم",
+               "قسمة التركة", "زوجة وابنان وبنت", "كيف تحسب",
+               "how to calculate inheritance", "inheritance calculation", "example of dividing",
+               "divide the estate", "my father died what do we get", "worked example",
+               "how do we split"],
+        words: ["مثال", "حساب", "القسمة", "نقسم", "التركة", "الورثة",
+                "calculate", "calculation", "example", "divide", "split", "estate"] },
+      { id: "ih-t-sister", need: 1, target: "#ih-ex3",
+        must: ["ميراث اختي", "نصيب الاخت", "بنت صغيرة وميراث", "الاخ يمسك المال",
+               "متى ادفع لها", "مال اختي", "حصة اختي",
+               "my sisters inheritance", "sisters share", "young daughter inheritance",
+               "holding her money", "she is too young", "when do i give it to her",
+               "brother keeping the money"],
+        words: ["اختي", "الاخت", "صغيرة", "المال", "امسك", "ادفع", "نصيبها",
+                "sister", "young", "money", "hold", "give", "share", "her"] },
+      { id: "ih-t-twotoone", need: 1, target: "#ih-twotoone",
+        must: ["لماذا للذكر مثل حظ الانثيين", "للذكر مثل حظ الانثيين", "نصيب المراه من الميراث",
+               "ظلم المراه في الميراث", "لماذا نصف", "حق البنت في الميراث", "البنت ترث نصف",
+               "why does the male get double", "two to one", "male gets twice",
+               "unfair to women inheritance", "is inheritance sexist", "daughter gets half",
+               "why less for women"],
+        words: ["الذكر", "الانثيين", "المراه", "نصف", "ضعف", "ظلم", "العدل",
+                "male", "female", "double", "twice", "half", "women", "unfair", "sexist"] },
+      { id: "ih-t-denied", need: 1, target: "#ih-denied",
+        must: ["لم يعطوني نصيبي", "لا نورث البنات", "حرمان البنت من الميراث", "وقعت على تنازل",
+               "التنازل عن الميراث", "اخذوا الارض", "اخوتي اخذوا كل شيء", "حرموني",
+               "didnt give me my share", "they took my share", "daughters not given",
+               "custom not to give women", "made me sign", "waiver", "family took the land",
+               "my brothers took everything", "cut me out"],
+        words: ["نصيبي", "البنات", "الحرمان", "التنازل", "الارض", "اخوتي", "اعطوني",
+                "share", "denied", "daughters", "sign", "waiver", "land", "brothers", "took"] },
+      { id: "ih-t-ask", need: 1, target: "#ih-ask",
+        must: ["من اسأل في الميراث", "المحكمة الشرعية", "متخصص فرائض", "ميراث معقد",
+               "يرث الحفيد", "العول", "الرد في الفرائض", "وارث غير مسلم", "الحمل في الميراث",
+               "الحجب",
+               "inheritance lawyer", "who do i ask about inheritance", "sharia court",
+               "faraid specialist", "complicated inheritance", "grandchildren inherit",
+               "non muslim heir", "pregnant widow", "awl", "radd", "hajb"],
+        words: ["اسأل", "المحكمة", "متخصص", "معقد", "الحفيد", "الجد", "العول", "الحجب",
+                "ask", "lawyer", "court", "specialist", "complicated", "grandchild", "heir"] },
+
       /* ---------- MARRIAGE AND AGREEMENTS (js/marriage.js) ---------- */
       { id: "mg-choosing", need: 1, target: "#mg-choose",
         must: ["كيف اختار زوجة", "كيف اختار زوج", "صفات الزوجة", "صفات الزوج",
@@ -1536,11 +1849,18 @@
                    a muslim". Both were found by running the battery. */
                 "أدخل في الإسلام", "الدخول في الإسلام", "أدخل الإسلام", "كيف أسلم",
                 "أريد أن أسلم", "أسلم", "أعتنق", "اعتناق", "نطق الشهادة",
-                "shahada", "shahadah", "testimony", "become a muslim", "become muslim",
+                /* "testimony" REMOVED. It is the English homograph that sent
+                   "false testimony" to the pillar of faith — measured. The
+                   declaration is searched for as "shahada", never as the
+                   bare English word. False testimony is at #sn-zoor. */
+                "shahada", "shahadah", "become a muslim", "become muslim",
                 "becoming muslim", "convert", "revert", "accept islam",
                 "enter islam", "embrace islam", "tawheed", "tawhid"] },
       { id: "pl-qadar", need: 1, target: "#pm-qadar",
-        words: ["القدر", "قدر", "القضاء والقدر", "المكتوب", "مكتوب علي", "النصيب", "الجبر",
+        words: [/* "النصيب" REMOVED — it means a share of an estate as often as it
+                   means a lot in life, and it sent "نصيب البنت من الميراث" to
+                   the section on destiny. It lives in the inheritance topics. */
+                "القدر", "قدر", "القضاء والقدر", "المكتوب", "مكتوب علي", "الجبر",
                 "كل شيء مكتوب", "مكتوب", "فلماذا أسعى", "لماذا أسعى", "الاختيار",
                 "qadar", "qadr", "destiny", "fate", "predestination", "decree",
                 /* The objection is almost never phrased with the word qadar.
@@ -1818,7 +2138,17 @@
            needs one entry that actually names a subject; the generic ones
            still count toward `hits` once it is open, which is the same
            split js/verify.js already makes. */
-        if (t.must && !t.must.some(w => hasWord(w) && !iitwIsGeneric(w))) return { t, hits: 0 };
+        /* THE TARGET CARD'S OWN `keys` COUNT AS `must` ENTRIES.
+           They are the sentences people type — "i shouted at my dad",
+           "years of missed prayers", "copied in the exam" — and writing them
+           twice, once on the card and once in the topic, is how the two
+           drift apart. Measured: 27 of 56 natural phrasings landed before
+           this; the topics held the names of subjects and not the
+           situations. The generic guard still applies, so a card key like
+           "people" cannot open a gate by itself. */
+        const cardKeys = iitwTopicKeys(t);
+        const gate = t.must ? t.must.concat(cardKeys) : null;
+        if (gate && !gate.some(w => hasWord(w) && !iitwIsGeneric(w))) return { t, hits: 0 };
         /* COUNT THE `must` WORDS TOO. A `must` entry is by definition the
            strongest signal a topic has — it is what gates the whole topic —
            and counting it only as a gate and not as a hit meant a sentence
@@ -1826,7 +2156,7 @@
            folds to "اريد نتوب", نتوب is in `must`, the gate opened, and the
            hit count came back 0 because نتوب was not also in `words`. Eight
            of a thirty-question battery failed this way. */
-        const pool = t.must ? t.words.concat(t.must) : t.words;
+        const pool = (t.must ? t.words.concat(t.must) : t.words).concat(cardKeys);
         return { t, hits: new Set(pool.filter(hasWord).map(canonWord)).size };
       }).filter(x => x.hits >= x.t.need).sort((a, b) => b.hits - a.hits);
 
@@ -1864,7 +2194,10 @@
        pattern below names an intention toward oneself. */
     const SELF_HARM = [
       /\bkill(ing)?\s+(myself|my\s*self)\b/i,
-      /\bend(ing)?\s+(my|it\s+all|my\s+own)\s*(life|existence)?\b/i,
+      /* THE OBJECT IS REQUIRED. It was optional — (life|existence)? — so
+         "i want to end my phone contract" and "end my subscription" both
+         opened the crisis box. Measured. */
+      /\bend(ing)?\s+(my\s+(own\s+)?life|my\s+existence|it\s+all)\b/i,
       /\b(want|wanna|going|plan(ning)?|thinking about|thought about)\s+to\s+die\b/i,
       /\bi\s+(want|wish)\s+to\s+(die|disappear|not\s+exist)\b/i,
       /\bsuicid(e|al)\b/i,
@@ -1872,6 +2205,20 @@
       /\b(harm|hurt|cut)\s+(myself|my\s*self)\b/i,
       /\bno\s+(reason|point)\s+(to|in)\s+(live|living|go\s+on)\b/i,
       /\bbetter\s+off\s+dead\b/i,
+      /* FOUND BY A BATTERY, and this is the one gate where a miss is not a
+         search defect but a safety one. "i am going to end it" did not fire:
+         the pattern above required "end my life" or "end it ALL". Requiring
+         an intention verb in front of "end it" keeps it clear of a sentence
+         about ending a call or a relationship. */
+      /\b(going|want|wanna|ready|about|plan|planning)\s+to\s+end\s+it\b/i,
+      /\bdon'?t\s+want\s+to\s+(be\s+here|wake\s+up|live|carry\s+on)\b/i,
+      /\bcan'?t\s+(go|carry)\s+on\b(?!\s+(this|that|the|a|an|with|to|for|any\s+longer\s+with))/i,
+      /\bcan'?t\s+(keep\s+going|do\s+this\s+any\s*more|take\s+this\s+any\s*more)\b/i,
+      /\bwish\s+i\s+(was|were)\s+(dead|not\s+here|never\s+born)\b/i,
+      /ما\s*(بقدر|اقدر|استطيع)\s*اكمل/,
+      /خلص\s*حياتي|اخلص\s*من\s*حياتي/,
+      /تعبت\s*من\s*الحياة|مليت\s*من\s*الحياة/,
+      /ما\s*بدي\s*اعيش|ما\s*ابغى\s*اعيش/,
       /\u0623\u0642\u062a\u0644\s*\u0646\u0641\u0633\u064a/,        /* أقتل نفسي */
       /\u0642\u062a\u0644\s*\u0646\u0641\u0633\u064a/,
       /\u0627\u0646\u062a\u062d\u0627\u0631/,                    /* انتحار */
@@ -2008,8 +2355,88 @@
       if (typeof STANDARD !== "undefined") out.push(STANDARD.groups);
       if (typeof MORALS   !== "undefined") out.push(MORALS.groups);
       if (typeof HEARTS   !== "undefined") out.push(HEARTS.groups);
+      if (typeof INHERITANCE !== "undefined") out.push(INHERITANCE.groups);
+      if (typeof SINS     !== "undefined") out.push(SINS.groups);
       return out.filter(Boolean);
     }
+    /* EVERY CARD ON THIS PAGE AS ONE FLAT, SEARCHABLE LIST.
+
+       The scored fallback searched the hadith, the themes, the rulings, the
+       adhkar, the sunnah, the prophets and the companions — and none of the
+       card sections. About 180 cards carrying the site's most specific
+       answers were unreachable unless a hand-written topic pointed at them,
+       which is why "i shouted at my mum yesterday" and "i havent prayed in
+       years" returned nothing while the cards answering both sat on the
+       page. Built once and cached. */
+    var IITW_ALL_CARDS = null;
+    function iitwAllCards() {
+      if (IITW_ALL_CARDS) return IITW_ALL_CARDS;
+      const list = [];
+      const named = [
+        [typeof PILLARS     !== "undefined" ? PILLARS     : null, "groups",   "#pillars"],
+        [typeof BASICS      !== "undefined" ? BASICS      : null, "sections", "#basics"],
+        [typeof MARRIAGE    !== "undefined" ? MARRIAGE    : null, "groups",   "#marriage"],
+        [typeof INHERITANCE !== "undefined" ? INHERITANCE : null, "groups",   "#inheritance"],
+        [typeof STANDARD    !== "undefined" ? STANDARD    : null, "groups",   "#standard"],
+        [typeof MORALS      !== "undefined" ? MORALS      : null, "groups",   "#morals"],
+        [typeof HEARTS      !== "undefined" ? HEARTS      : null, "groups",   "#hearts"],
+        [typeof SINS        !== "undefined" ? SINS        : null, "groups",   "#sins"]
+      ];
+      named.forEach(([D, prop, sectionHref]) => {
+        if (!D) return;
+        (D[prop] || []).forEach(g => (g.items || []).forEach(it => {
+          if (it && it.id) list.push({
+            it, sectionTitle: D.title, sectionTitleAr: D.titleAr, sectionHref
+          });
+        }));
+      });
+      IITW_ALL_CARDS = list;
+      return list;
+    }
+
+    /* CARD ID -> ITS `keys`, BUILT ONCE.
+
+       Every card already carries the sentences people actually type; until
+       now only the section renderers ever looked at them. Precomputed rather
+       than walked per query, because iitwIntent runs this for every topic on
+       every keystroke. */
+    var IITW_CARD_KEYS = null;
+    function iitwCardKeys() {
+      if (IITW_CARD_KEYS) return IITW_CARD_KEYS;
+      const m = Object.create(null);
+      iitwSets().forEach(set => (set || []).forEach(g => (g.items || []).forEach(it => {
+        if (it && it.id && it.keys && it.keys.length) m[it.id] = it.keys;
+      })));
+      IITW_CARD_KEYS = m;
+      return m;
+    }
+    const IITW_NO_KEYS = [];
+    /* The keys of whatever card a topic points at, or an empty list. */
+    function iitwTopicKeys(t) {
+      if (!t || !t.target || t.target.charAt(0) !== "#") return IITW_NO_KEYS;
+      return iitwCardKeys()[t.target.slice(1)] || IITW_NO_KEYS;
+    }
+
+    /* A card, rendered as a search result: what it says in plain words, the
+       reference underneath it, and a link into the section it belongs to.
+       Short on purpose — this is a pointer to the card, not the card. */
+    function iitwCardResultHtml(c) {
+      const it = c.it;
+      const cut = (t, n) => !t ? "" : (t.split("\n")[0].length > n
+        ? t.split("\n")[0].slice(0, n).replace(/\s+\S*$/, "") + "…" : t.split("\n")[0]);
+      return `<div class="gd-card-hit">
+        <div class="gd-card-hit-head">${it.icon || "•"}
+          <span class="en-only">${it.title}</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${it.titleAr || it.title}</span></div>
+        ${it.plain ? `<p class="en-only">${cut(it.plain, 240)}</p>` : ""}
+        ${it.plainAr ? `<p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${cut(it.plainAr, 240)}</p>` : ""}
+        ${(it.ref || it.refAr) ? `<div class="gd-card-hit-ref"><span class="en-only">${it.ref || ""}</span><span class="ar-only" dir="rtl">${it.refAr || it.ref || ""}</span></div>` : ""}
+        <a class="pl-go" href="#${it.id}">
+          <span class="en-only">Read it in full — ${c.sectionTitle}</span>
+          <span class="ar-only" dir="rtl">اقرأه كاملًا — ${c.sectionTitleAr || c.sectionTitle}</span></a>
+      </div>`;
+    }
+
     function iitwPillarCard(id) {
       let found = null;
       iitwSets().forEach(set => (set || []).forEach(g => (g.items || []).forEach(it => {
@@ -2042,7 +2469,7 @@
       /* Every bs- topic names either a CARD id or a SECTION id, and the two
          are told apart by looking for each in turn. Answers are built from
          the data, never restated here. */
-      if (/^(bs|mo|mg|sd|hv)-/.test(topicId)) {
+      if (/^(bs|mo|mg|sd|hv|ih|sn)-/.test(topicId)) {
         const c = iitwPillarCard(target.replace("#", ""));
         if (c) {
           return Object.assign({
@@ -2180,7 +2607,7 @@
          answered by scoring the individual words of the sentence. Every
          answer below is built FROM js/pillars.js rather than restated here,
          so the two can never drift apart. */
-      if (intent.topic && /^(pl|bs|mo|mg|sd|hv)-/.test(intent.topic.id) &&
+      if (intent.topic && /^(pl|bs|mo|mg|sd|hv|ih|sn)-/.test(intent.topic.id) &&
           iitwSets().length) {
         const ans = iitwPillarAnswer(intent.topic.id, intent.topic.target);
         if (ans) { out.innerHTML = iitwDirectAnswerHtml(ans); return; }
@@ -2411,6 +2838,25 @@
           .sort((a, b) => b.s - a.s);
       }
 
+      /* 0) THE PAGE'S OWN CARDS. Everything the site has actually written
+            about a situation, with the proof already attached — searched by
+            its plain words, its example, its note and its keys, in both
+            languages. This corpus did not exist until the battery showed
+            that a sentence like "i copied in my exam" reached nothing while
+            the card on cheating sat two screens further down. */
+      const cards = scoreAll(
+        iitwAllCards(),
+        /* TITLE AND KEYS, NOT THE WHOLE CARD. Scoring the full prose —
+           plain, example, note and proof — buried the signal: a card runs to
+           two thousand characters, so a rare word anywhere in it outweighed
+           the curated keys of the card that was actually about the question.
+           Measured: "i had to pay someone to get my papers done" ranked the
+           inheritance ORDER card above the one on bribery. The keys are the
+           sentences people type; the title is the subject. Nothing else on a
+           card is evidence about what it answers. */
+        c => [c.it.title, c.it.titleAr, (c.it.keys || []).join(" ")].filter(Boolean).join(" "),
+        c => c.it.keys || null, 5).slice(0, 4);
+
       // 1) The Prophet's ﷺ own words — shown first, as the clearest guidance.
       const hadiths = scoreAll(
         (typeof HADITHS !== "undefined" ? HADITHS : []),
@@ -2478,14 +2924,18 @@
 
       const companions = scorePeople(typeof COMPANIONS !== "undefined" ? COMPANIONS : [], "c");
 
-      const total = rulings.length + worship.length + hadiths.length + themes.length + sunnah.length + prophets.length + companions.length;
+      const total = cards.length + rulings.length + worship.length + hadiths.length + themes.length + sunnah.length + prophets.length + companions.length;
 
       /* A RULING QUESTION MAY ONLY BE ANSWERED BY A RULING.
          If someone asks "حكم كذا" and no ruling and no worship step matched,
          everything left in the pile is a verse or a hadith about some other
          subject — which is exactly how a question about the Mawlid came back
          as "with hardship comes ease". Say there is no answer instead. */
-      if (intent.ruling && rulings.length === 0 && worship.length === 0) {
+      /* A CARD COUNTS AS AN ANSWER TO A RULING QUESTION. Each one carries
+         its own proof and its own grading, so "is a tattoo haram" being sent
+         to the honest empty box while the card on tattoos exists would be
+         the same failure this guard was written to prevent, inverted. */
+      if (intent.ruling && cards.length === 0 && rulings.length === 0 && worship.length === 0) {
         out.innerHTML = iitwNoRulingHtml(raw);
         return;
       }
@@ -2526,6 +2976,7 @@
          one is he who controls himself in anger" sat underneath it. So the
          rulings keep the top slot unless a hadith beats the best ruling by a
          clear margin. A near-tie still goes to the scholars. */
+      const bestCard = cards.length ? cards[0].s : 0;
       const bestRuling = rulings.length ? rulings[0].s : 0;
       const bestHadith = hadiths.length ? hadiths[0].s : 0;
       const hadithLeads = bestHadith > bestRuling * 1.35;
@@ -2540,7 +2991,20 @@
           + hadiths.map(({ h }) => hadithCardHtml(h)).join("")
         : "";
 
+      const cardsBlock = cards.length
+        ? `<h3 style="margin:8px 0 12px;color:var(--green-dark);"><span class="en-only">🧭 On this page — written for exactly this</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">في هذه الصفحة — مكتوبٌ لهذا بعينه</span></h3>`
+          + cards.map(({ item }) => iitwCardResultHtml(item)).join("")
+        : "";
+
+      /* Cards lead when they score at least as high as the best ruling, and
+         sit under the rulings otherwise — the same rule that already governs
+         rulings against hadith, so a question that turns on what the
+         scholars set out is still answered by them first. */
+      if (bestCard >= bestRuling) html += cardsBlock;
+
       html += hadithLeads ? hadithsBlock : rulingsBlock;
+
+      if (bestCard < bestRuling) html += cardsBlock;
 
       // The exact wording comes next — it answers the question directly.
       if (worship.length) {
@@ -3611,6 +4075,8 @@
     renderGrouped("standardBox", typeof STANDARD !== "undefined" ? STANDARD : null, "⚖️");
     renderGrouped("moralsBox",   typeof MORALS   !== "undefined" ? MORALS   : null, "🪞");
     renderGrouped("heartsBox",   typeof HEARTS   !== "undefined" ? HEARTS   : null, "🕳️");
+    renderGrouped("inheritanceBox", typeof INHERITANCE !== "undefined" ? INHERITANCE : null, "📜");
+    renderGrouped("sinsBox",     typeof SINS     !== "undefined" ? SINS     : null, "⛔");
     renderBidah();
 
     /* ================= The hardest questions asked about Islam =========
@@ -4192,9 +4658,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202608292252"></script>
+  <script src="js/wordlens.js?v=202608301006"></script>
 
-  <script src="js/main.js?v=202608292252"></script>
-  <script src="js/i18n.js?v=202608292252"></script>
+  <script src="js/main.js?v=202608301006"></script>
+  <script src="js/i18n.js?v=202608301006"></script>
 </body>
 </html>
