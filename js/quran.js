@@ -246,6 +246,12 @@ async function openSurah(surah) {
              when a surah has not been written yet. -->
         <button onclick="iitwToggleTadabbur()" class="rq-btn rq-tad${tad ? "" : " rq-tad-empty"}" id="rqTadBtn"
                 title="Why is this verse here? Why this word?"><span class="en-only">🧠 Tadabbur</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🧠 تدبّر</span></button>
+        <!-- Drawn ONLY where a story exists. Unlike the Tadabbur button,
+             which is drawn everywhere because it always has something real
+             to say, a "Full explanation" button that opens onto "not written
+             yet" breaks the promise twice. Ten surahs so far. -->
+        ${iitwStoryFor(surah.n) ? `<button onclick="iitwToggleStory()" class="rq-btn rq-story" id="rqStoryBtn"
+                title="What is this surah doing, from beginning to end?"><span class="en-only">📖 Full explanation</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">📖 الشرح الكامل</span></button>` : ""}
       </div>
     </div>
     <div class="rq-save-note" id="rqSaveNote"></div>
@@ -256,6 +262,7 @@ async function openSurah(surah) {
         — في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}
       </span>
     </div>
+    ${iitwSurahStoryHtml(surah.n)}
     ${tad ? iitwTadabburSurahHtml(tad, surah) : iitwTadabburEmptyHtml(surah)}`;
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
@@ -622,6 +629,105 @@ function iitwConceptHtml(surahNum) {
     '</div>';
 }
 
+/* ============================================================
+   THE STORY OF THE SURAH — قصّةُ السورة
+   The "Full explanation" button, beside Tadabbur. Data in
+   js/surah-story.js.
+
+   WHY IT IS A SECOND BUTTON AND NOT MORE TADABBUR. Tadabbur is
+   written verse by verse and answers "why THIS word, and not the
+   one beside it". Measured across js/tadabbur.js: 380 explained
+   verses over 114 surahs, a median of THREE per surah. Stitching
+   three word-notes together does not produce the story of a
+   surah — it produces a lumpy list.
+
+   So this is written the other way round: top-down, from the
+   surah's own shape, in MOVEMENTS that each name the verses they
+   cover. The verse numbers in a movement heading are BUTTONS —
+   they open the surah at that verse, so the story and the text
+   stay connected.
+
+   The panel closes by pointing at Tadabbur for the detail. The
+   two answer different questions and neither replaces the other.
+   ============================================================ */
+function iitwStoryFor(surahNum) {
+  if (typeof SURAH_STORY === "undefined") return null;
+  return SURAH_STORY[String(surahNum)] || SURAH_STORY[surahNum] || null;
+}
+
+function iitwSurahStoryHtml(surahNum) {
+  const d = iitwStoryFor(surahNum);
+  if (!d) return "";
+  const num = function (n) {
+    return (typeof toArabicDigits === "function") ? toArabicDigits(n) : n;
+  };
+  let h = '<div class="tad-surah story-panel tad-hidden" id="storyPanel">';
+
+  h += '<div class="story-head">📖 <span class="en-only">' + d.title + '</span>' +
+       '<span class="ar-only" dir="rtl">' + d.titleAr + '</span></div>';
+
+  h += '<div class="story-oneline"><span class="en-only">' + d.oneLine + '</span>' +
+       '<span class="ar-only" dir="rtl">' + d.oneLineAr + '</span></div>';
+
+  h += '<div class="story-when">' +
+       '<span class="en-only"><strong>When and where:</strong> ' + d.when + '</span>' +
+       '<span class="ar-only" dir="rtl"><strong>متى وأين:</strong> ' + d.whenAr + '</span></div>';
+
+  (d.movements || []).forEach(function (m, i) {
+    const range = (m.from === m.to)
+      ? '<button type="button" class="tad-jump" onclick="iitwJumpToTadabburVerse(' + m.from + ')">' +
+        '<span class="en-only">' + m.from + '</span><span class="ar-only" dir="rtl">' + num(m.from) + '</span></button>'
+      : '<button type="button" class="tad-jump" onclick="iitwJumpToTadabburVerse(' + m.from + ')">' +
+        '<span class="en-only">' + m.from + '\u2013' + m.to + '</span>' +
+        '<span class="ar-only" dir="rtl">' + num(m.from) + '\u2013' + num(m.to) + '</span></button>';
+    h += '<div class="story-move">' +
+         '<div class="story-move-head">' +
+           '<span class="story-move-n">' + (i + 1) + '</span>' +
+           '<span class="en-only">' + m.h + '</span>' +
+           '<span class="ar-only" dir="rtl">' + m.hAr + '</span></div>' +
+         '<div class="story-range">' +
+           '<span class="en-only">verses </span><span class="ar-only" dir="rtl">الآيات </span>' + range +
+           '<span class="en-only"> — tap to open the surah there</span>' +
+           '<span class="ar-only" dir="rtl"> — انقُر لتفتح السورة عندها</span></div>' +
+         '<div class="en-only">' + tadPara(m.en) + '</div>' +
+         '<div class="ar-only">' + tadPara(m.ar, true) + '</div>' +
+         '</div>';
+  });
+
+  h += '<div class="story-thread">' +
+       '<div class="story-thread-label">🧵 <span class="en-only">The thread that runs through it</span>' +
+         '<span class="ar-only" dir="rtl">الخيطُ الجاري فيها</span></div>' +
+       '<div class="en-only">' + tadPara(d.thread) + '</div>' +
+       '<div class="ar-only">' + tadPara(d.threadAr, true) + '</div></div>';
+
+  h += '<div class="story-foot">' +
+       '<span class="en-only">This is the shape of the whole surah. For why a particular WORD was chosen ' +
+         'over the one beside it, open Tadabbur — the two answer different questions.</span>' +
+       '<span class="ar-only" dir="rtl">هذا بناءُ السورة كلِّها. وأمّا لِمَ اختيرت كلمةٌ بعينها دون أختها ' +
+         'فافتح التدبّر — فهما يجيبان عن سؤالين مختلفين.</span></div>';
+
+  h += '</div>';
+  return h;
+}
+
+/* Its own toggle, independent of Tadabbur — a reader may want the
+   shape without the word notes, or the other way round. */
+function iitwToggleStory() {
+  const open = !window._storyOpen;
+  window._storyOpen = open;
+  const p = document.getElementById("storyPanel");
+  if (p) p.classList.toggle("tad-hidden", !open);
+  const btn = document.getElementById("rqStoryBtn");
+  if (btn) {
+    btn.classList.toggle("armed", open);
+    btn.innerHTML =
+      '<span class="en-only">📖 ' + (open ? "Hide the story" : "Full explanation") + '</span>' +
+      '<span class="ar-only" dir="rtl" style="font-family:\'Amiri\',serif;">📖 ' +
+        (open ? "إخفاء القصّة" : "الشرح الكامل") + '</span>';
+  }
+  if (open && window.applyI18n) window.applyI18n();
+}
+
 /* The panel under the surah title: why the Quran opens here, why
    seven verses, and — when only part of a surah is covered — a
    plain statement of exactly which verses have tadabbur. */
@@ -941,6 +1047,8 @@ function iitwJumpToTadabburVerse(n) {
 
 /* One button shows and hides every tadabbur block in the open
    surah, including the surah panel. */
+function iitwResetStoryState() { window._storyOpen = false; }
+
 function iitwToggleTadabbur() {
   const open = !window._tadOpen;
   window._tadOpen = open;
