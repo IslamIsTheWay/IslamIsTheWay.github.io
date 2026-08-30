@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 29 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 23 first, then PART 22, then PART 21.** PART 23 is the marriage / "judge by what" / envy sections AND two bugs in the search that was already live - a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, and a generic word that could open a `must` gate on its own. Read its search half before touching any matching code anywhere on this site. PART 22 is the morals section and the text-versus-application rule that governs it. PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 30 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 24 first, then PART 23, then PART 22.** PART 24 is the major-sins and inheritance sections AND the deepest search fault found so far - the scored fallback never searched the card sections at all, so about 180 cards were unreachable. Read its "DEEP CAUSE" section before touching any matcher. PART 23 carries the stemmer rules and the generic-gate guard. PART 22 is the morals section and the text-versus-application rule. PART 23 is the marriage / "judge by what" / envy sections AND two bugs in the search that was already live - a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, and a generic word that could open a `must` gate on its own. Read its search half before touching any matching code anywhere on this site. PART 22 is the morals section and the text-versus-application rule that governs it. PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
 
 ## The rules that matter most
 
@@ -5080,4 +5080,198 @@ above - no new claim" - and all 21 entries say what kind of claim they are.
 5. `js/basics.js` `keys` are still not read by any scored search.
 6. ~77 English strings still leaking in Arabic mode on `judgement.html`.
 7. Everything still open from PART 21.
+
+---
+
+# PART 24 - The major sins, inheritance, and the corpus the search never read
+
+*Added 30 August 2026, after PART 23.*
+
+## What he reported, and it was exact
+
+> "when I searched for a hadith regarding the tattoos, I didn't find any. And
+> also, the word tattoos usually we don't write like this. We usually write
+> t-a-t-o, maybe an extra o... So the guidance page is still missing some
+> points, critical points actually."
+
+And then the instruction that shaped the whole round:
+
+> "not just for this situation... I want you to put other situations and make
+> sure that other situations don't come out in the same output. Make sure that
+> such critical points and such important sins that we should avoid are
+> mentioned BY NAME."
+
+Plus: inheritance **with examples**, and **short explanations on hadith**,
+"because some hadiths are hard to understand based on just the words."
+
+## MEASURE FIRST. The number that justified everything below
+
+68 questions about ordinary sins and inheritance, run before a line was
+written:
+
+| Result | Count |
+|---|---|
+| Returned NOTHING | **21** |
+| Returned the generic scored fallback | **27** |
+| Answered directly | 20 |
+
+And several of the twenty were **wrong**:
+
+```
+شهادة الزور  (false testimony)     -> #pi-shahada   the PILLAR of faith
+نصيب البنت من الميراث              -> #pm-qadar     the section on DESTINY
+is a tattoo haram                  -> #misunderstood
+```
+
+Both wrong answers came from one over-broad entry each — `"testimony"` on
+the shahada topic and `"النصيب"` on the qadar topic. Two words, each a
+homograph, each removed. **After: 68/68 direct, 0 nothing, 0 generic.**
+
+## THE DEEP CAUSE — read this before touching the matcher
+
+The topic lists were a symptom. The fault was that **`findGuidance` never
+searched the card sections at all.**
+
+When a question does not match a routed topic it falls back to scoring the
+site's content, and the corpora it scored were HADITHS, THEMES, RULINGS,
+WORSHIP_STEPS, SUNNAH, PROPHETS and COMPANIONS. Not the pillars, not the
+basics, not marriage, inheritance, standard, morals, hearts or sins. **About
+180 cards — the most specific writing on the site — were unreachable unless
+a hand-written topic happened to point at one.**
+
+Measured on 56 sentences phrased the way people speak:
+
+```
+"i shouted at my mum yesterday"    -> NOTHING
+"i havent prayed in years"         -> NOTHING
+"i copied in my exam"              -> NOTHING
+"my dad died and we dont know how to split the house" -> NOTHING
+```
+
+Every one had a card written for it, with the proof attached.
+
+`iitwAllCards()` now flattens every section into one searchable list, scored
+by **title and `keys` only** — not the prose. Scoring the full card buried
+the signal: a card runs to two thousand characters, so a rare word anywhere
+in it outranked the curated keys of the card that was actually on the
+subject. Measured: "i had to pay someone to get my papers done" ranked the
+inheritance ORDER card above the one on bribery until the prose came out.
+
+**27/56 before. 53/54 after.**
+
+Cards lead the results when they outscore the best scholars' ruling and sit
+under the rulings otherwise — the same rule that already governs rulings
+against hadith, so "what actually counts as hijab" is still answered by the
+scholars.
+
+## iitwSqueeze — the misspelling rule, in all three matchers
+
+Nobody spells a doubled letter the same way twice. Collapsing runs of the
+same letter makes every guess meet:
+
+```
+tattoo -> tato    tatoo -> tato    tatto -> tato    tato -> tato
+haraam -> haram   halaal -> halal  zinaa -> zina
+```
+
+Latin words of **five** characters or more, as an EXTRA form on both sides,
+so it can add a match and never remove one. Five and not four, because at
+four `good` collapses onto `god`.
+
+It is in `guidance.html`, `hadith.html` and `sunnah.html`. Three matchers on
+this site and all three now agree what counts as one word.
+
+## What shipped
+
+| Where | What |
+|---|---|
+| `js/sins.js` -> `#sins` | 24 cards, 6 groups, every sin named |
+| `js/inheritance.js` -> `#inheritance` | 11 cards including 4 worked estates |
+| `js/basics.js` | smoking added to halal-and-haram |
+| `js/data.js` | 12 curated hadith added; 20 now carry `explain` |
+| `hadith.html` | squeeze, the explanation block, the topic-tag Arabic map |
+
+### Why smoking is NOT in the major sins
+
+`sn-notlist` gives the definition: a kabirah is a sin with a fixed penalty, a
+curse, a threat of the Fire or a stated exclusion attached to it in the text.
+Smoking has none — no text names it, because it reached the Muslim world
+about a thousand years after the revelation. Putting it in that list would be
+a claim the texts do not make. It went into the basics, and the card states
+which part is text (2:195, 4:29, 7:157, "no harm") and which part is the
+scholars' application of them.
+
+### Theft IS in the major sins, and its card is a story
+
+al-Bukhari 4304: a woman of a noble Makkan family stole, and her people sent
+Usama — whom he loved — to ask him to let it go. His face changed colour. He
+stood and said the nations before were destroyed because when a noble stole
+they left him and when a weak man stole they punished him, and then: **by
+Allah, if Fatimah bint Muhammad stole, I would cut off her hand.**
+
+That card is not really about theft. Neither is the hadith.
+
+## Two safety fixes, and the lesson is the SECOND direction
+
+The self-harm gate has to be measured both ways, and the second way is the
+one that gets skipped.
+
+- **A miss:** "i am going to end it" did not open the crisis box — the
+  pattern required "end my life" or "end it ALL".
+- **A false fire, and it was pre-existing:** `end(ing)? (my|it all|my own)
+  *(life|existence)?` made the object OPTIONAL, so "i want to end my phone
+  contract" and "end my subscription" opened the crisis box. The object is
+  now required.
+- And one of my own: "can't go on" fired on "i cant go on this trip".
+
+**Now 12/12 fires and 6/6 stays quiet.** Never ship a change to that gate
+without running both halves.
+
+## Explanations on hadith, and what makes a good one
+
+He asked for "at least a short explanation. And an example." Twenty hadith
+now carry `explain` / `explainAr`, rendered in a `.h-explain` block. The ones
+that work share a shape: **say what the words mean, then give a case.**
+
+- The wet grain under the dry (Muslim, Iman): the grain really WAS wet — the
+  man did not lie, he arranged. An omission is a lie.
+- False testimony (al-Bukhari 2654): the narrators kept his POSTURE. He was
+  reclining and he sat up before saying it.
+- Arrogance (Muslim, Iman): a man objected on the spot about liking good
+  shoes, and got a definition — rejecting the truth and belittling people.
+
+A hadith quoted with no explanation is a hadith most readers cannot use.
+
+## Also fixed in passing
+
+The curated hadith card printed its **title and topic tag in English with no
+Arabic twin**, so all 55 leaked in Arabic mode. A `TOPIC_AR` map of the 36
+topic names fixed every card at once; titles fall back to English where an
+entry has no `titleAr` yet (12 have one).
+
+## Measured, at the end
+
+- **48/48** direct terms · **53/54** natural phrasings · **19/19** regression
+- **12/12** self-harm fires · **6/6** self-harm stays quiet
+- **Zero** English visible in Arabic mode across eight sections
+- No horizontal overflow at a real 375px viewport — and note that
+  `clientWidth` read **0** in the preview pane first, which is the
+  zero-width artifact PART 21 records. Always resize to a real viewport
+  before believing an overflow reading.
+- Verified again on the live URL: 15/15, no console errors
+
+## Open work as of 30 August 2026
+
+1. **Prayer fiqh** beyond `#worship` and `#rulings` — what breaks it, making
+   it up, joining and shortening. `sn-salah` sends people to ask, which is
+   correct but thin.
+2. **Business and work** beyond riba: wages, partnerships, what invalidates a
+   sale. `mg-write` and `sn-ghish` open the door and stop there.
+3. **43 of the 55 curated hadith still have no `titleAr`**, so their titles
+   fall back to English in Arabic mode. The topic tags are fixed; the titles
+   are a translation job.
+4. Maghrebi negation circumfixes (ما...ش) are still unhandled, and the verb
+   folds are a hand-written list rather than morphology.
+5. ~77 English strings still leaking in Arabic mode on `judgement.html`.
+6. Everything still open from PART 21.
 

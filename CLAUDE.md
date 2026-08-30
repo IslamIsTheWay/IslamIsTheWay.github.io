@@ -1015,3 +1015,99 @@ it caught al-Bukhari 50 listing five items and not six. The rule is unchanged
 and it keeps paying: **search the collection by wording, never cite from
 memory, and read what the compiler said underneath the hadith.**
 
+## Check what the search CAN reach before adding words to make it reach
+
+The topic lists on `guidance.html` looked like the problem for months. They
+were not. `findGuidance` scored HADITHS, THEMES, RULINGS, WORSHIP_STEPS,
+SUNNAH, PROPHETS and COMPANIONS — and **not one of the card sections**. About
+180 cards, the most specific writing on the site, were invisible to search
+unless a hand-written topic pointed at one. "i shouted at my mum yesterday",
+"i havent prayed in years" and "i copied in my exam" all returned NOTHING
+while the card answering each sat on the page.
+
+Adding phrases to topic lists would have fixed those three sentences and left
+the fault alive. `iitwAllCards()` fixed all of them and every section written
+in future.
+
+**So before writing another keyword: enumerate the corpora the matcher
+actually reads, and check the thing you are trying to reach is in one.**
+
+## Score a card on its title and keys, never on its prose
+
+A card runs to two thousand characters. Feeding `plain`, `example`, `note`
+and `proof` into the haystack means a rare word anywhere in a long card
+outranks the curated keys of the card that is actually about the question —
+measured: "i had to pay someone to get my papers done" ranked the inheritance
+ORDER card above the one on bribery, until the prose came out of the hay.
+
+`keys` is the field for what people type. The title is the subject. Nothing
+else on a card is evidence about what it answers.
+
+## Doubled letters: nobody spells them the same way twice
+
+`iitwSqueeze` collapses runs of the same letter so every guess meets:
+tattoo / tatoo / tatto / tato all become "tato", and haraam→haram,
+halaal→halal, zinaa→zina. **Latin words of five characters or more**, as an
+extra form on both sides so it can only add a match. Five and not four —
+at four, "good" collapses onto "god".
+
+It lives in `guidance.html`, `hadith.html` and `sunnah.html`. If you touch
+one, touch all three.
+
+## Test a safety gate in BOTH directions, every time
+
+The self-harm box was measured for firing and never for staying quiet, and
+both halves were broken:
+
+- **Missed:** "i am going to end it" — the pattern needed "end my life".
+- **False-fired:** "i want to end my phone contract" — because
+  `end (my|it all) *(life|existence)?` made the object OPTIONAL. Pre-existing,
+  and it had been opening a crisis box for people cancelling subscriptions.
+
+A gate that fires 12/12 is half-tested until it also stays quiet 6/6. Write
+the negative battery in the same commit as the positive one.
+
+## Two words caused two wrong answers, and both were homographs
+
+`"testimony"` on the shahada topic sent **false testimony** to the pillar of
+faith. `"النصيب"` on the qadar topic sent **نصيب البنت من الميراث** to the
+section on destiny. Each word has two unrelated meanings and neither belongs
+in a list on its own.
+
+When a list entry is a word that means two different things in two different
+subjects, it is not a keyword — it is a trap. Give it a companion word or
+drop it.
+
+## A hadith without an explanation is a hadith most readers cannot use
+
+His words: "some hadiths are hard to understand based on just the words
+because it is using old Arabic words." The `explain` / `explainAr` field on a
+curated hadith exists for that, and the ones that work share a shape:
+**say what the words mean, then give a concrete case.**
+
+- the wet grain under the dry: the grain really WAS wet — the man did not
+  lie, he arranged; an omission is a lie
+- false testimony: the narrators kept his POSTURE — he was reclining, and he
+  sat up before saying it
+- arrogance: a man objected on the spot about liking good shoes, and got a
+  definition
+
+## Say why a ruling is NOT in a list, when it is not
+
+Smoking is not in the major sins section, and the reason is written down: a
+kabirah is defined by a fixed penalty, a curse, a threat of the Fire or a
+stated exclusion in the text, and smoking has none — no text names it,
+because it arrived a thousand years after the revelation. It went into the
+basics instead, with the card stating which part is text and which is the
+scholars' application.
+
+Putting it in the list would have been a claim the texts do not make. The
+category a thing is placed in is itself a claim.
+
+## And believe an overflow reading only at a real viewport
+
+`document.documentElement.clientWidth` read **0** in the preview pane, which
+made every element on the page look like it was overflowing. Resize to a real
+viewport — `resize_window` with preset "mobile" — before believing any width
+measurement. This is the third time this artifact has cost a wrong report.
+
