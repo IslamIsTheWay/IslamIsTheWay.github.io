@@ -5353,3 +5353,89 @@ console errors.
 3. 43 of 55 curated hadith still have no `titleAr`.
 4. Everything still open from PART 24.
 
+---
+
+# PART 26 - The grave, on two pages from one file
+
+*Added 30 August 2026.*
+
+He asked for the two grave sections on the Judgement page AND the Guidance
+page. His standing rule is never to write the same words twice. Both are
+obeyed by **one dataset rendered in two places**: `js/grave.js`, drawn at
+`guidance.html#grave` and `judgement.html#grave`. The `j-grave` STAGE inside
+`#stages` stays as the short version and now hands over to the long one.
+
+**That required extracting the renderer.** `plBold`, `plParas`, `plPair`,
+`plProof`, `plCard` and `renderGrouped` moved from inline in guidance.html
+into **`js/cards.js`**, loaded by both pages. Two copies of a renderer drift
+the first time one is corrected - the same reason the stemmer had to be fixed
+in two files at once in PART 23.
+
+## The section
+
+14 cards, 5 groups. The disbeliever's group is the longest **on purpose**,
+because that is what he asked for, and every image in it is quoted:
+"haah, haah, I do not know"; al-Bukhari's "I used to say what the people
+said"; the door opened onto the Fire with its heat and samum; the grave
+closing until the ribs interlace; the blind and mute one with the iron mallet
+that would turn a mountain to dust; becoming dust and having the soul
+returned. Sources: al-Bukhari 1338, 1374, 1378, 1379 and Abu Dawud 4753.
+
+**40:46 is the load-bearing verse** and it is worth knowing why: it puts the
+Fire "morning and evening" BEFORE "the Day the Hour appears", which is what
+establishes that the grave is the lesser punishment and the Fire the severest.
+That single verse carries his "beginner level / end level" point.
+
+## ONE DETAIL DELIBERATELY LEFT UNQUOTED, and the rule it illustrates
+
+He asked specifically for the deeds coming to a man in human form - beautiful
+or hideous. That is in the LONGER narration of al-Bara' in **Musnad Ahmad**,
+which the hadith API this site verifies against does not carry. So both cards
+**name it, say where it is, and print no Arabic for it.**
+
+The rule: **when a famous detail cannot be checked against a copy, name it and
+quote nothing.** Do not quote from memory because the owner asked for it - a
+page written to frighten needs MORE care with sources than one written to
+comfort, not less.
+
+## The simple box
+
+`.pl-simple`, his request: "add a simple box... because some as you have are
+somehow complicated." Two or three very short sentences at the top of a card,
+before its full explanation. Optional - `plCard` renders it only when a card
+has `simple`, so no existing card changed.
+
+## AND THE `
+` FAILURE, FOR THE FOURTH TIME
+
+The j-grave handover was first written through a **bash heredoc**, and the
+two-character `
+` escapes arrived in judgement.js as REAL newlines. That
+split a JS string across four lines and took the whole page down with a
+SyntaxError - `JUDGEMENT_STAGES is not defined`, nothing rendered.
+
+**Never let a `
+` pass through a shell quoting layer.** Write the patch
+script with the Write tool and build the escape as `chr(92) + "n"`. The
+redone script prints its own odd-quote-line check before finishing, and that
+check is worth copying into any script that touches a JS string.
+
+## Measured
+
+31/31 on the grave battery across English and Arabic - 14/14 regression -
+self-harm 2/2 fires and 4/4 stays quiet on death questions (important here:
+"what happens after i die" must NOT trigger the crisis panel) - zero
+Arabic-mode leaks across all eight Guidance sections - no overflow at a real
+375px viewport on both pages - verified live: 12/12, no console errors.
+
+## Open work as of 30 August 2026
+
+1. **The Quran full-explanation button he asked about.** Measured before
+   answering: 114 surahs, **380 explained verses total, median 3 per surah**,
+   38 surahs with 2 or fewer. Stitching 3 word-notes does not make the story
+   of a surah - it has to be written top-down as movements, with the existing
+   notes hanging off it. Recommended doing ~25-30 surahs people actually read
+   rather than all 114. **Awaiting his decision.**
+2. Business and work beyond riba.
+3. Congregation and the mosque (al-Bukhari 645 and 900 already verified).
+4. Everything still open from PART 25.

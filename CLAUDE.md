@@ -1140,3 +1140,54 @@ That framing is what makes an unresolved difference usable instead of
 paralysing. What actually stops people here is the arithmetic — nine years
 computed into the thousands, concluded impossible, nothing prayed — and
 neither position asks for it up front. Say that.
+
+## Never let a `
+` pass through a shell quoting layer
+
+Fourth time recorded. The j-grave handover was patched through a bash
+heredoc; the two-character `
+` escapes arrived in judgement.js as REAL
+newlines, split a JS string across four lines, and took the entire Judgement
+page down - `JUDGEMENT_STAGES is not defined`, nothing rendered at all.
+
+Write the patch script with the **Write tool**, and build the escape
+explicitly:
+
+```python
+NL = chr(92) + "n"      # backslash + n, and it cannot become a newline
+```
+
+Then make the script prove itself before it finishes:
+
+```python
+BS = chr(92)
+bad = [n for n, l in enumerate(s.split("
+"), 1)
+       if (l.count('"') - l.count(BS + '"')) % 2 == 1]
+```
+
+An odd number of unescaped quotes on a line means a string literal spans a
+line break, which is always fatal. Print that check at the end of any script
+that edits a JS string.
+
+## When a famous detail cannot be checked against a copy, name it and quote nothing
+
+The owner asked by name for the deeds meeting a man in human form in the
+grave. It is in the longer narration of al-Bara' in Musnad Ahmad, which the
+hadith API this site verifies against does not carry. The cards name it, say
+where it is, and print **no Arabic** for it.
+
+Being asked for something is not a reason to quote it from memory. A page
+written to frighten needs more care with its sources than one written to
+comfort, not less - if it is caught inventing one line, every other line on
+it stops working.
+
+## One dataset, two pages - never two copies
+
+The grave section was asked for on the Judgement page and the Guidance page.
+The answer is `js/grave.js` rendered twice, not written twice, which needed
+the card renderer extracted into `js/cards.js` so both pages could load it.
+
+Whenever the same content is wanted in two places: move the data to a file,
+move the renderer to a file, and let the shorter existing treatment hand over
+to the long one. Two copies drift the first time one is corrected.
