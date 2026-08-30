@@ -511,8 +511,11 @@ const SINS = {
           refAr: "صحيح مسلم، كتاب الإيمان",
           strength: "Sahih — narrated by Muslim",
           strengthAr: "صحيح — رواه مسلم",
-          keys: ["missing prayer", "not praying", "i dont pray", "left the prayer", "abandoning salah", "years of missed prayers", "make up prayers", "qada prayers", "is not praying kufr",
-                 "ترك الصلاة", "لا اصلي", "تارك الصلاة", "فاتتني صلوات", "قضاء الصلاة", "سنوات بلا صلاة", "حكم تارك الصلاة",
+          link: "#pr-years",
+          linkEn: "And what to do about the years behind you →",
+          linkAr: "وما يُصنع في السنين التي خلفك ←",
+          keys: ["missing prayer", "not praying", "i dont pray", "left the prayer", "abandoning salah", "is not praying kufr",
+                 "ترك الصلاة", "لا اصلي", "تارك الصلاة", "حكم تارك الصلاة",
                  "havent prayed", "haven't prayed in", "stopped praying", "gave up praying", "dont pray anymore", "came back to prayer", "start praying again", "ما اصلي", "صار لي سنين", "تركت الصلاة من", "بطلت اصلي", "ارجع للصلاة", "ابدا اصلي"]
         },
         {

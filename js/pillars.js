@@ -84,8 +84,11 @@ const PILLARS = {
           link: "#rulings",
           linkEn: "Missed years of prayer? Read the ruling written for that",
           linkAr: "تركتَ الصلاةَ سنين؟ اقرأ الفتوى المكتوبة في ذلك",
-          keys: ["prayer", "pray", "praying", "salah", "salat", "namaz", "five prayers", "how many prayers", "fajr", "dhuhr", "asr", "maghrib", "isha", "prayer times", "when to pray", "missed prayers",
-                 "الصلاة", "الصلوات", "أصلي", "كم صلاة", "الصلوات الخمس", "الفجر", "الظهر", "العصر", "المغرب", "العشاء", "أوقات الصلاة", "متى أصلي", "تركت الصلاة"]
+          link: "#prayer",
+          linkEn: "The prayer in practice — times, what breaks it, missed ones, travelling →",
+          linkAr: "الصلاة عملًا — المواقيت والمبطلات والفوائت والسفر ←",
+          keys: ["prayer", "pray", "praying", "salah", "salat", "namaz", "five prayers", "how many prayers", "fajr", "dhuhr", "asr", "maghrib", "isha", "when to pray", "missed prayers",
+                 "الصلاة", "الصلوات", "أصلي", "كم صلاة", "الصلوات الخمس", "الفجر", "الظهر", "العصر", "المغرب", "العشاء", ]
         },
         {
           id: "pi-zakat", num: "3", icon: "💰",
