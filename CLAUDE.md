@@ -1191,3 +1191,44 @@ the card renderer extracted into `js/cards.js` so both pages could load it.
 Whenever the same content is wanted in two places: move the data to a file,
 move the renderer to a file, and let the shorter existing treatment hand over
 to the long one. Two copies drift the first time one is corrected.
+
+## When he asks for detail, detail includes saying where it runs out
+
+Two examples from the same session, and both would have been easy to fudge:
+
+- The ranked ladder of "seven named levels of Paradise" you find online is a
+  **later arrangement**. The hundred degrees, the seven gates, the lowest
+  depth and al-Firdaws as the highest are all texts. The ordered list of
+  Quranic names FOR Paradise assigned to rungs is not.
+- The number ninety-nine is in al-Bukhari. The **printed list** of the
+  ninety-nine names is a compilation from a narration scholars have discussed
+  at length, and the names differ between versions.
+
+Both are stated on the card. A section that gives a reader more certainty
+than the evidence carries is not being generous - it is spending credibility
+it will need on the next card.
+
+## A bare transliteration in a `must` list is a collision waiting to happen
+
+`"nams"` sat in the eyebrow-plucking topic's `must`. The query "names of
+paradise" landed there instead of on the Paradise card.
+
+Transliterated Arabic terms (nams, hasad, kibr, ghish) are short, and short
+tokens collide with English words after stemming. Put them in `words` where
+they are weak evidence, or spell them the long way ("namas"), and keep `must`
+for phrases that could not belong to any other subject.
+
+## A story of a surah is written top-down, never stitched from verse notes
+
+Measured before answering him: `js/tadabbur.js` holds 380 explained verses
+across 114 surahs - a **median of three per surah**. Stitching three
+word-level notes produces a lumpy list, not a story.
+
+A surah's story comes from the surah's own SHAPE: where it turns, what it
+does first and last, the thread running its length. Written as MOVEMENTS,
+each naming its verse range, with the existing tadabbur notes hanging inside
+the movement they belong to.
+
+And **verify the coverage programmatically**: movement one must begin at
+verse 1, the last must end on the surah's last verse, and no range may skip
+anything. A "full explanation" with a hole in it is not one.

@@ -5439,3 +5439,88 @@ Arabic-mode leaks across all eight Guidance sections - no overflow at a real
 2. Business and work beyond riba.
 3. Congregation and the mosque (al-Bukhari 645 and 900 already verified).
 4. Everything still open from PART 25.
+
+---
+
+# PART 27 - Who Allah is, the two destinations, and the surah stories
+
+*Added 30 August 2026.*
+
+Three deliveries in one stretch, all from him.
+
+## 1. `js/surah-story.js` - the "Full explanation" button
+
+He asked whether a second button on quran.html could give a surah as ONE
+connected piece, and asked for my answer before I built it. **I measured
+first**: js/tadabbur.js holds 380 explained verses over 114 surahs, a median
+of THREE per surah, 38 surahs at two or fewer. Three word-notes stitched
+together is a list, not a story. He then picked the sample: **the first ten**
+- which is the hardest possible one (al-Baqarah 286 verses, al-A'raf 206).
+
+Written top-down from each surah's own shape, in MOVEMENTS naming the verses
+they cover. **Verified programmatically that every surah is covered start to
+finish with no gaps.** A long surah gets a map, a short one four lines -
+al-Fatihah has 4 movements, al-Baqarah has 7, neither padded to match.
+
+The verse ranges are BUTTONS (they open the surah there). The button is drawn
+only on the ten that have a story, because a "Full explanation" that opens
+onto "not written yet" breaks the promise twice.
+
+## 2. `js/who.js` -> `#who`, 12 cards
+
+He gave the reason himself: *"why were the prophets so faithful after all
+that happened to them - because they understood who is Allah and what He's
+capable of."* So it is not a theology lesson; it answers what people who held
+on under torture knew that we do not.
+
+Al-Ikhlas (defines by ruling pictures OUT) - Ayat al-Kursi read line by line
+- the 99 names with what ihsa means - **Khabbab, al-Bukhari 6943**, the saw
+and the iron combs and "but you are being hasty" - 2:214 where the MESSENGER
+says "when is the help of Allah" - istidraj and the test for which one you
+are in - both love lists - intention (al-Bukhari 1295) - mercy vs deeds
+(Muslim 7122) - and his own wooden-hut-or-palace image as the closer.
+
+## 3. `js/destination.js` -> `#destination`, 11 cards
+
+He asked for LEVELS specifically, so that is the organising question rather
+than "what is it like". A hundred degrees and al-Firdaws; al-Waqi'ah's three
+classes; the four rivers each described by the fault it lacks; and the
+greatest thing in it not being in it (Muslim, Book of Faith). Then the seven
+gates; the LIGHTEST punishment (Muslim, Book of Faith); 4:56 and the closed
+exit of 14:17; the lowest depth and who is in it, with the seventy-year stone
+for scale. It ends on the gates of Paradise standing already open.
+
+## RULES THIS ROUND EARNED
+
+**Say where the detail runs out.** He asked for detail, and detail includes
+the boundary. The ranked ladder of "seven named levels of Paradise" is a
+later arrangement - the degrees, gates, lowest depth and highest garden are
+texts, the ordered list of names as rungs is not. Same for the printed list
+of 99 names: the NUMBER is in al-Bukhari, the list is a compilation. Both are
+stated on the card rather than quietly passed on.
+
+**A bare transliteration in a `must` list is a collision waiting.** `"nams"`
+sat on the eyebrow-plucking topic, and "names of paradise" landed there.
+Transliterations of Arabic terms (nams, hasad, kibr) belong in `words`, or
+spelled the long way - never as a short bare token in `must`.
+
+**Fourth `\n` failure, and this time it broke bash's parser.** A topics
+script pushed through a heredoc failed at parse time. Write these with the
+Write tool, always.
+
+## Measured
+
+Surah stories: 10/10 load, every movement range valid and gapless, button on
+1-10 and absent on 11 and 36. Who/Destination: 61/61 across English and
+Arabic, 16/16 regression, self-harm 2/2 fires and 4/4 stays quiet on "who is
+allah" and "how hot is hell", zero Arabic-mode leaks across all TEN Guidance
+sections, no overflow at 375px, verified live 16/16 with 161 cards on the
+page.
+
+## Open work as of 30 August 2026
+
+1. **Surah stories 11-114.** He approved the sample shape; ask before
+   continuing, and confirm whether he wants the movements longer or shorter.
+2. Business and work beyond riba - still the largest content gap.
+3. Congregation and the mosque (al-Bukhari 645 and 900 already verified).
+4. Everything still open from PART 25 and 26.
