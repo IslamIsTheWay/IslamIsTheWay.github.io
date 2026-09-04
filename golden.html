@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609042256" />
+  <link rel="stylesheet" href="css/style.css?v=202609042303" />
   <!-- Installable as an app (PWA). The service worker is network-first and
        cannot cause a stale page — see the note at the top of sw.js. -->
   <link rel="manifest" href="manifest.webmanifest" />
@@ -57,8 +57,8 @@
   <div class="page-hero ph-photo ph-golden">
     <div class="container">
       <h1>The Golden Age of Islam</h1>
-      <p>Algebra, optics, surgery, the hospital, the university — who built them, what Europe did with them, and whose name ended up on them.</p>
-      <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;margin-top:10px;">الجبر والبصريات والجراحة والبيمارستان والجامعة — من بناها، وماذا صنعت بها أوروبا، وباسم مَن قُيِّدت.</p>
+      <p class="en-only">Algebra, optics, surgery, the hospital, the university — who built them, what Europe did with them, and whose name ended up on them.</p>
+      <p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;margin-top:10px;">الجبر والبصريات والجراحة والبيمارستان والجامعة — من بناها، وماذا صنعت بها أوروبا، وباسم مَن قُيِّدت.</p>
     </div>
   </div>
 
@@ -191,9 +191,9 @@
     <div class="container">
       <div class="gold-next">
         <h3>So what happened to us — and how do we go back?</h3>
-        <p>That question deserves more than a page of pride. The answer is on the Guidance page, in the words of the Quran, the Sunnah and the scholars: why the ummah is in the state it is in, what the Prophet ﷺ said would cause exactly this, and the way back that he named.</p>
-        <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">وهذا السؤال أكبر من أن تُجاب عنه صفحةُ افتخار. والجواب في صفحة التوجيه، من الكتاب والسنة وكلام أهل العلم: لماذا صارت الأمة إلى ما صارت إليه، وما الذي أخبر النبي ﷺ أنه يورث هذا بعينه، والطريق الذي سمّاه للرجوع.</p>
-        <a class="btn btn-primary" href="guidance.html#revival">Why we fell, and the way back <span dir="rtl" style="font-family:'Amiri',serif;">— لماذا سقطنا وكيف نعود</span></a>
+        <p class="en-only">That question deserves more than a page of pride. The answer is on the Guidance page, in the words of the Quran, the Sunnah and the scholars: why the ummah is in the state it is in, what the Prophet ﷺ said would cause exactly this, and the way back that he named.</p>
+        <p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:2;">وهذا السؤال أكبر من أن تُجاب عنه صفحةُ افتخار. والجواب في صفحة التوجيه، من الكتاب والسنة وكلام أهل العلم: لماذا صارت الأمة إلى ما صارت إليه، وما الذي أخبر النبي ﷺ أنه يورث هذا بعينه، والطريق الذي سمّاه للرجوع.</p>
+        <a class="btn btn-primary" href="guidance.html#revival"><span class="en-only">Why we fell, and the way back</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لماذا سقطنا وكيف نعود</span></a>
       </div>
     </div>
   </section>
@@ -237,18 +237,18 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202609042256"></script>
-  <script src="js/golden.js?v=202609042256"></script>
+  <script src="js/data.js?v=202609042303"></script>
+  <script src="js/golden.js?v=202609042303"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
   <!-- Full lives of the figures, and the women comparison. -->
-  <script src="js/golden-lives.js?v=202609042256"></script>
+  <script src="js/golden-lives.js?v=202609042303"></script>
   <!-- Before you are dazzled: both sides, honestly. -->
-  <script src="js/golden-mirror.js?v=202609042256"></script>
-  <script src="js/golden-closing.js?v=202609042256"></script>
+  <script src="js/golden-mirror.js?v=202609042303"></script>
+  <script src="js/golden-closing.js?v=202609042303"></script>
   <!-- Will we rise again? Shared with judgement.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202609042256"></script>
+  <script src="js/rise.js?v=202609042303"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -834,9 +834,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202609042256"></script>
+  <script src="js/wordlens.js?v=202609042303"></script>
 
-  <script src="js/main.js?v=202609042256"></script>
-  <script src="js/i18n.js?v=202609042256"></script>
+  <script src="js/main.js?v=202609042303"></script>
+  <script src="js/i18n.js?v=202609042303"></script>
 </body>
 </html>
