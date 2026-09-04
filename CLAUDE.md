@@ -226,6 +226,47 @@ bilingual.
 JS, so a new `<script>` tag will not appear locally until the document itself
 is reloaded past the cache. Add a throwaway query string when testing.
 
+## A LATIN SWEEP CANNOT SEE A DUPLICATED SENTENCE — SWEEP FOR BOTH
+
+There are **three** shapes of the bilingual fault, not one, and the sweep this
+file has been describing only catches the first two.
+
+1. Bare English beside a `dir="rtl"` span with no `.ar-only` — English shows
+   in Arabic mode. A Latin sweep finds it.
+2. Prose inside a `ref`/`strength` field — half-translates. A Latin sweep
+   finds it.
+3. **An English node the `AR` dictionary DOES translate, sitting beside a
+   hard-coded Arabic twin.** Both render, so the Arabic reader gets the same
+   sentence twice — and **there is no Latin text on the page to find**, which
+   is why every previous sweep passed straight over it. Five of these were
+   live on golden, index and guidance; on one photo band the duplicate was a
+   VERSE, printed once vocalised in `.band-arabic` and again unvocalised as
+   the heading beneath it.
+
+So run a second sweep that compares **sibling text** after stripping harakat
+and punctuation, and report any two children of one parent that normalise to
+the same string. Run it in **both** languages — the English half of a pair is
+just as able to duplicate.
+
+## A DECORATION POSITIONED LOGICALLY NEEDS PADDING THAT IS ALSO LOGICAL
+
+`.tl-row` set a physical `padding-left: 22px` while its dot sat at
+`inset-inline-start: -4px`. In RTL the dot flipped to the right and the gap
+did not, so **the dot printed on top of the first characters of all 22 Arabic
+year labels** — `قبل الهجرة بـ ١٣ سنة` read `ـل الهجرة بـ ١٣ سنة`, `١٣٣ هـ`
+read `١٣ هـ`. Nothing was truncated; it was covered, which is why it looked
+like a text bug and was not one.
+
+**Mixing physical and logical in one box is the bug.** If any part of a
+component uses `inset-inline-*` / `padding-inline-*`, all of it must.
+
+**And check the stylesheet in the BROWSER, not with grep.** Twelve accent
+borders had an `html.lang-ar` override and twelve did not, but a
+comma-separated selector split across lines hides an override from `grep`, so
+the static count said `.gold-card` was broken when it was fine. Measure
+`getComputedStyle` on the rendered page: in RTL, an accent border whose left
+width is 3px or more and wider than its right did not mirror.
+
 ## A RARE WORD IS NOT AUTOMATICALLY THE SUBJECT
 
 The mirror image of the rule above, and it empties the page instead of
