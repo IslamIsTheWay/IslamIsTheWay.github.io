@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609011131" />
+  <link rel="stylesheet" href="css/style.css?v=202609042256" />
   <!-- Installable as an app (PWA). The service worker is network-first and
        cannot cause a stale page — see the note at the top of sw.js. -->
   <link rel="manifest" href="manifest.webmanifest" />
@@ -100,17 +100,17 @@
   <div class="photo-band" style="background-image:url('img/mosque-night.jpg');">
     <div class="band-inner reveal">
       <div class="band-arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</div>
-      <h2>“And say: My Lord, increase me in knowledge”</h2>
-      <p>Surah Ta-Ha (20:114) — the only thing in the Quran a believer is told to ask for more of.</p>
-      <p style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">سورة طه (٢٠:١١٤) — وهو الشيء الوحيد الذي أُمر النبي ﷺ أن يسأل الله المزيد منه.</p>
+      <h2 class="en-only">“And say: My Lord, increase me in knowledge”</h2>
+      <p class="en-only">Surah Ta-Ha (20:114) — the only thing in the Quran a believer is told to ask for more of.</p>
+      <p class="ar-only" style="direction:rtl;font-family:'Amiri',serif;font-size:1.12rem;margin-top:10px;">سورة طه (٢٠:١١٤) — وهو الشيء الوحيد الذي أُمر النبي ﷺ أن يسأل الله المزيد منه.</p>
     </div>
   </div>
 
   <section id="why">
     <div class="container">
       <div class="context-note">
-        <strong>How strong is each claim?</strong> This site states the grading of every hadith, and the same rule is applied here to history. Every card says whether it rests on the man's own surviving book, on his book plus the Latin translation made from it, on later historians only, or whether it is famous but not established. The achievement is large enough that it does not need helping — and stating it exactly is what makes it impossible to answer.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">درجة كلّ خبر: هذا الموقع يذكر درجة كلّ حديث، وقد طُبّقت القاعدة نفسها هنا على التاريخ. فكلّ بطاقةٍ تبيّن هل الخبر من كتاب الرجل الباقي، أم من كتابه وترجمته اللاتينية، أم من المؤرّخين بعده، أم أنه مشهورٌ غير ثابت. والمنجز أعظم من أن يحتاج إلى عون، وضبطُه على وجهه هو الذي يجعله لا يُدفَع.</span>
+        <span class="en-only"><strong>How strong is each claim?</strong> This site states the grading of every hadith, and the same rule is applied here to history. Every card says whether it rests on the man's own surviving book, on his book plus the Latin translation made from it, on later historians only, or whether it is famous but not established. The achievement is large enough that it does not need helping — and stating it exactly is what makes it impossible to answer.</span>
+        <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">درجة كلّ خبر: هذا الموقع يذكر درجة كلّ حديث، وقد طُبّقت القاعدة نفسها هنا على التاريخ. فكلّ بطاقةٍ تبيّن هل الخبر من كتاب الرجل الباقي، أم من كتابه وترجمته اللاتينية، أم من المؤرّخين بعده، أم أنه مشهورٌ غير ثابت. والمنجز أعظم من أن يحتاج إلى عون، وضبطُه على وجهه هو الذي يجعله لا يُدفَع.</span>
       </div>
 
       <!-- ===== Why it happened ===== -->
@@ -121,9 +121,9 @@
   <!-- ===== The figures ===== -->
   <section class="pattern-bg" id="figures">
     <div class="container">
-      <h2 class="section-title">🏛️ Who Built It <span dir="rtl" style="font-family:'Amiri',serif;">— من بناه</span></h2>
-      <p class="section-sub">Each card carries the name Europe used for him, because a student can study his subject for years under that name and never learn he was a Muslim.</p>
-      <p class="section-sub" dir="rtl" style="font-family:'Amiri',serif;">في كلّ بطاقةٍ الاسم الذي دعته به أوروبا، لأنّ الطالب قد يدرس فنّه سنين بذلك الاسم ولا يعلم قطّ أنه مسلم.</p>
+      <h2 class="section-title"><span class="en-only">🏛️ Who Built It</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🏛️ من بناه</span></h2>
+      <p class="section-sub en-only">Each card carries the name Europe used for him, because a student can study his subject for years under that name and never learn he was a Muslim.</p>
+      <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">في كلّ بطاقةٍ الاسم الذي دعته به أوروبا، لأنّ الطالب قد يدرس فنّه سنين بذلك الاسم ولا يعلم قطّ أنه مسلم.</p>
 
       <div class="gold-search-wrap">
         <input type="text" id="goldSearch" dir="auto" placeholder="Search — algebra, surgery, optics, the moon…  |  ابحث: الجبر، الجراحة، البصريات، القمر…" />
@@ -131,7 +131,7 @@
 
       <div class="adhkar-tabs" id="goldTabs"></div>
       <div id="goldList" class="gold-list"></div>
-      <p id="goldEmpty" class="no-results" style="display:none;">Nothing matches those words. <span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد ما يطابق هذه الكلمات.</span></p>
+      <p id="goldEmpty" class="no-results" style="display:none;"><span class="en-only">Nothing matches those words.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لا يوجد ما يطابق هذه الكلمات.</span></p>
     </div>
   </section>
 
@@ -237,18 +237,18 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202609011131"></script>
-  <script src="js/golden.js?v=202609011131"></script>
+  <script src="js/data.js?v=202609042256"></script>
+  <script src="js/golden.js?v=202609042256"></script>
   <!-- The closing discussion. Its own file because it is long, and because
        it is prose rather than the data the rest of the page is built from. -->
   <!-- Full lives of the figures, and the women comparison. -->
-  <script src="js/golden-lives.js?v=202609011131"></script>
+  <script src="js/golden-lives.js?v=202609042256"></script>
   <!-- Before you are dazzled: both sides, honestly. -->
-  <script src="js/golden-mirror.js?v=202609011131"></script>
-  <script src="js/golden-closing.js?v=202609011131"></script>
+  <script src="js/golden-mirror.js?v=202609042256"></script>
+  <script src="js/golden-closing.js?v=202609042256"></script>
   <!-- Will we rise again? Shared with judgement.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202609011131"></script>
+  <script src="js/rise.js?v=202609042256"></script>
   <script>
     // Blank lines in the written text become real paragraphs, the same way
     // the stories page does it.
@@ -295,7 +295,7 @@
           </div>
         </article>
 
-        <h3 class="gold-harvest-head">✨ ${o.harvestTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${o.harvestTitleAr}</span></h3>
+        <h3 class="gold-harvest-head"><span class="en-only">✨ ${o.harvestTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">✨ ${o.harvestTitleAr}</span></h3>
         <div class="gold-harvest">
           ${o.harvest.map(h => `<div class="gold-harvest-item">
             <span class="gold-harvest-icon">${h.icon}</span>
@@ -334,12 +334,12 @@
           <div class="tl-what">
             <span class="en-only">${t.en}</span>
             <span class="tl-ar" dir="rtl">${t.ar}</span>
-            ${t.note ? `<div class="tl-note en-only">${t.note}</div>` : ""}
+            ${t.note ? `<div class="tl-note"><span class="en-only">${t.note}</span><span class="ar-only" dir="rtl">${t.noteAr}</span></div>` : ""}
           </div>
         </div>`;
       });
       document.getElementById("timelineBox").innerHTML = `
-        <h2 class="section-title">🗓️ ${o.timelineTitle} <span dir="rtl" style="font-family:'Amiri',serif;">— ${o.timelineTitleAr}</span></h2>
+        <h2 class="section-title"><span class="en-only">🗓️ ${o.timelineTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🗓️ ${o.timelineTitleAr}</span></h2>
         <div class="tl">${rows}</div>
         <div class="gold-ov-close">
           <p class="en-only">${o.close}</p>
@@ -391,7 +391,8 @@
         </div>
 
         <div class="gold-meta">
-          <span>${f.years}<span class="ar-only" dir="rtl"> · ${f.yearsAr}</span></span>
+          <span class="en-only">${f.years}</span>
+          <span class="ar-only" dir="rtl">${f.yearsAr}</span>
           <span class="en-only">${f.place}</span>
           <span class="ar-only" dir="rtl">${f.placeAr}</span>
         </div>
@@ -514,7 +515,7 @@
     function renderTaken() {
       const t = GOLDEN_TAKEN;
       document.getElementById("takenBox").innerHTML = `
-        <h2 class="section-title">⚖️ ${t.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${t.titleAr}</span></h2>
+        <h2 class="section-title"><span class="en-only">⚖️ ${t.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">⚖️ ${t.titleAr}</span></h2>
         <div class="gold-taken-intro">
           <p class="en-only">${t.intro}</p>
           <p dir="rtl" style="font-family:'Amiri',serif;line-height:2.1;">${t.introAr}</p>
@@ -650,7 +651,7 @@
       if (!host || typeof GOLDEN_CLOSING === "undefined") return;
       const c = GOLDEN_CLOSING;
       host.innerHTML = `
-        <h2 class="section-title">🕯️ ${c.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${c.titleAr}</span></h2>
+        <h2 class="section-title"><span class="en-only">🕯️ ${c.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🕯️ ${c.titleAr}</span></h2>
         <div class="gc-lead">
           <div class="en-only">${paras(c.lead)}</div>
           <div class="gold-body-ar" dir="rtl">${paras(c.leadAr)}</div>
@@ -833,9 +834,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202609011131"></script>
+  <script src="js/wordlens.js?v=202609042256"></script>
 
-  <script src="js/main.js?v=202609011131"></script>
-  <script src="js/i18n.js?v=202609011131"></script>
+  <script src="js/main.js?v=202609042256"></script>
+  <script src="js/i18n.js?v=202609042256"></script>
 </body>
 </html>

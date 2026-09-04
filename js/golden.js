@@ -145,7 +145,8 @@ const GOLDEN_OVERVIEW = {
     { year: "1258 CE", yearAr: "٦٥٦ هـ", era: "break",
       en: "The Mongols destroy Baghdad. This is the date usually given for the end — and it is where the usual telling stops being accurate.",
       ar: "المغول يدمّرون بغداد. وهذا هو التاريخ الذي يُجعل نهايةً عادةً — وعنده تكفّ الرواية المعتادة عن الدقّة.",
-      note: "The science did not stop here. Everything below happened after Baghdad fell." },
+      note: "The science did not stop here. Everything below happened after Baghdad fell.",
+      noteAr: "ولم يقف العلم عند هذا الحدّ؛ فكلّ ما تحته إنما كان بعد سقوط بغداد." },
     { year: "1259 CE", yearAr: "٦٥٧ هـ", era: "after",
       en: "The observatory at Maragha is founded — the year AFTER Baghdad falls. At-Tusi's work there produces the geometry Copernicus would use.",
       ar: "إنشاء مرصد مراغة — في السنة التالية لسقوط بغداد. ومن عمل الطوسي فيه خرجت الهندسة التي استعملها كوبرنيكوس." },
@@ -221,13 +222,13 @@ const GOLDEN_ROOT = {
       ref: "Sahih al-Bukhari, Book of Medicine, Hadith 5678 — Sahih" },
     { en: "The prayer must face one point on the earth, five times a day, from wherever a Muslim happens to be. Working out that direction from any city on a sphere is a problem in spherical trigonometry — so Muslims solved spherical trigonometry.",
       ar: "والصلاة تستقبل نقطةً واحدةً من الأرض، خمس مراتٍ في اليوم، من أيّ موضعٍ كان المسلم فيه. واستخراج هذا الاتجاه من أيّ مدينةٍ على كرةٍ مسألةٌ في حساب المثلثات الكرويّة — فحلّ المسلمون حساب المثلثات الكرويّة.",
-      ref: "The qibla — Surah Al-Baqarah (2:144)" },
+      ref: "Surah Al-Baqarah (2:144)" },
     { en: "The prayer times, Ramadan and the Hajj all run on precise observation of the sun and the moon: “It is He who made the sun a shining light and the moon a derived light, and determined for it phases, that you may know the number of years and the reckoning.”",
       ar: "ومواقيت الصلاة ورمضان والحجّ كلّها قائمةٌ على رصدٍ دقيقٍ للشمس والقمر: ﴿هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا وَقَدَّرَهُ مَنَازِلَ لِتَعْلَمُوا عَدَدَ السِّنِينَ وَالْحِسَابَ﴾.",
       ref: "Surah Yunus (10:5)" },
     { en: "And the fixed inheritance shares of Surah An-Nisa cannot be settled by guesswork — halves, quarters, eighths, sixths and thirds of one estate among named heirs. Al-Khwarizmi states in the preface of the book that founded algebra that he wrote it for exactly this: what people need in inheritance, legacies, partition, lawsuits and trade. Algebra was written to divide an estate correctly.",
       ar: "وفرائض المواريث في سورة النساء لا تُضبط بالتخمين: نصفٌ وربعٌ وثمنٌ وسدسٌ وثلثٌ من تركةٍ واحدةٍ بين ورثةٍ مسمّين. وقد نصّ الخوارزمي في مقدّمة الكتاب الذي تأسّس به علم الجبر أنه صنّفه لهذا بعينه: ما يحتاجه الناس في المواريث والوصايا والقسمة والمعاملات والتجارة. فالجبر إنما كُتب ليُقسم الميراث على وجهه.",
-      ref: "Surah An-Nisa (4:11-12); al-Khwarizmi, Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala — his own preface" }
+      ref: "Surah An-Nisa (4:11-12); al-Khwarizmi, Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala" }
   ],
   close: "So the question “how did they achieve that?” has a plain answer: they were told to read, told to look, and given acts of worship that would not work without mathematics. The peak was not an accident, and it was not in spite of the religion. It grew out of it.",
   closeAr: "فسؤال «كيف بلغوا ذلك؟» جوابه ظاهر: أُمروا بالقراءة، وأُمروا بالنظر، وكُلّفوا عباداتٍ لا تستقيم إلا بالحساب. فلم يكن العلوّ مصادفةً، ولا كان رغم الدين، بل نبت منه."
