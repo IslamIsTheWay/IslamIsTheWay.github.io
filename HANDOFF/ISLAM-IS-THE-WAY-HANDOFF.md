@@ -9,7 +9,22 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 30 August 2026.** The site is now called **IslamBasics**; the URLs are unchanged. **Read PART 24 first, then PART 25, then PART 23.** PART 24 is the major-sins and inheritance sections AND the deepest search fault found so far - the scored fallback never searched the card sections at all, so about 180 cards were unreachable. Read its "DEEP CAUSE" section before touching any matcher. PART 23 carries the stemmer rules and the generic-gate guard. PART 22 is the morals section and the text-versus-application rule. PART 23 is the marriage / "judge by what" / envy sections AND two bugs in the search that was already live - a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, and a generic word that could open a `must` gate on its own. Read its search half before touching any matching code anywhere on this site. PART 22 is the morals section and the text-versus-application rule that governs it. PART 22 is the morals section and the rule about text-versus-application that governs it; PART 21 carries the dialect layer and two measurements I got wrong. PART 21 is the one to read before touching the Guidance matcher or the home page — it carries the dialect layer, the two-level basics, and two measurements I got wrong. PART 20 adds the pillars and the zakat arithmetic — the largest content gap the site had. PART 19 is a search audit of every box on the site and it found a wrong hadith number sitting under a Sahih grading, so read its first two sections before touching any matching code. PART 17's THIRD, FOURTH and FIFTH ROUNDS are still the most recent CONTENT work.
+> **Last updated: 1 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+>
+> ### Read in this order
+>
+> 1. **The rules below this box** — the six that have each cost real time.
+> 2. **PART 27** (most recent) — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
+> 3. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
+> 4. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
+> 5. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
+>
+> ### The current shape of the site
+>
+> `guidance.html` carries **161 cards**. Ten of its sections are drawn by **`renderGrouped` in `js/cards.js`** from one data file each: `who` · `prayer` · `marriage` · `inheritance` · `grave` · `destination` · `standard` · `morals` · `hearts` · `sins`. Three older ones keep their own renderers in the page: the pillars, the zakat arithmetic, and the basics (which has level tabs). `js/grave.js` is also rendered on `judgement.html` — same dataset, two pages.
+>
+> **To add a section:** write `js/<name>.js` in the dataset shape documented at the top of `js/cards.js`, then add a script tag, a `<div>`, one `renderGrouped` call, one line in `iitwSets`, one line in the card corpus, the id prefix to two regexes, and its search topics. Nothing else.
+
 
 ## The rules that matter most
 
