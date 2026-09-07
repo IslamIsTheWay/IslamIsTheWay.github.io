@@ -358,6 +358,41 @@ const AR = {
    "Surah Al-Baqarah (2:25)" are built from a few repeating pieces. Translating
    those pieces covers every reference on the site without listing them all. */
 const AR_PARTS = [
+  /* Narrators, graders and collections that were still rendering in Latin
+     inside an otherwise Arabic citation. Measured across eight pages in
+     Arabic mode. Longest form first, per the rule above. */
+  [/\bShu'ayb al-Arna'ut\b/g, "شعيب الأرناؤوط"],
+  [/\bSunan al-Bayhaqi\b/g, "سنن البيهقي"],
+  [/\bShu'ab al-Iman\b/g, "شعب الإيمان"],
+  [/\bFatimah bint Qays\b/g, "فاطمة بنت قيس"],
+  [/\bMu'adh ibn Jabal\b/g, "معاذ بن جبل"],
+  [/\bShaddad ibn Aws\b/g, "شداد بن أوس"],
+  [/\bZayd ibn Arqam\b/g, "زيد بن أرقم"],
+  [/\bUqbah ibn Amir\b/g, "عقبة بن عامر"],
+  [/\bal-Bayhaqi\b/g, "البيهقي"],
+
+  /* ---- LONGEST FIRST: these were being masked by a shorter entry below ----
+     AR_PARTS is applied in order and the first match wins, so a SHORT pattern
+     that is a substring of a LONGER one silently eats it and leaves the tail in
+     English: "Book of Food and Drink" came out as "كتاب الأطعمة و Drink", and
+     "narrated from Thawban" as "narrated عن ثوبان". This repo has recorded that
+     trap twice and it came back both times, because the fix was to ADD the long
+     form rather than to place it above the short one. These 17 are hoisted here
+     so the rule holds by construction. scratchpad/arparts.py re-checks it. */
+  ["both also narrated by Muslim", "وأخرجهما مسلمٌ أيضًا"],
+  [/\bAbdullah ibn Amr ibn al-As\b/g, "عبد الله بن عمرو بن العاص"],
+  [/\bHudhayfah ibn Usayd al-Ghifari\b/g, "حذيفة بن أسيد الغفاري"],
+  [/\bthe incident is from historical sira accounts\b/g, "الخبر من روايات السيرة التاريخية"],
+  [/\bhistorical sira accounts\b/g, "روايات السيرة التاريخية"],
+  [/\bhistorical sira, not hadith\b/g, "سيرة تاريخية لا حديث"],
+  [/Book of Food and Drink/g, "كتاب الأطعمة والأشربة"],
+  [/Book of Dress and Adornment/g, "كتاب اللباس والزينة"],
+  [/\bnarrated from Ibn Umar\b/g, "من حديث ابن عمر"],
+  [/\bnarrated from Thawban\b/g, "من حديث ثوبان"],
+  [/\bnarrated from\b/g, "من حديث"],
+  [/Book of Remembrance and Supplication/g, "كتاب الذكر والدعاء"],
+
+
   /* Reference and grading lines from js/journey.js. The owner reported that
      names and references were still showing in English in Arabic mode.
      Longest first — the first match wins. */
@@ -424,7 +459,6 @@ const AR_PARTS = [
   ["the angels guarding Madinah in", "وحراسة الملائكة للمدينة في"],
   ["also narrated by Muslim in", "وأخرجه مسلمٌ أيضًا في"],
   ["also narrated by Muslim", "وأخرجه مسلمٌ أيضًا"],
-  ["both also narrated by Muslim", "وأخرجهما مسلمٌ أيضًا"],
   ["both also in Sahih Muslim", "وكلاهما في صحيح مسلم"],
   ["also Sahih Muslim", "وكذا صحيح مسلم"],
   ["also narrated by", "وأخرجه أيضًا"],
@@ -483,7 +517,6 @@ const AR_PARTS = [
      site's data by the owner's instruction, so the AR_PARTS entries keyed on
      `Umar`/`Uthman` never matched them — "رواه Omar ibn al-Khattab".
      Longest first, as everywhere in this array. */
-  [/\bAbdullah ibn Amr ibn al-As\b/g, "عبد الله بن عمرو بن العاص"],
   [/\bAbu Barzah al-Aslami\b/g, "أبو برزة الأسلمي"],
   [/\bAbu Dharr al-Ghifari\b/g, "أبو ذرّ الغفاري"],
   [/\bOmar ibn al-Khattab\b/g, "عمر بن الخطاب"],
@@ -500,7 +533,6 @@ const AR_PARTS = [
   [/\bIbn Omar\b/g, "ابن عمر"],
   [/\bby at-Tabarani\b/g, "الطبراني"],
 
-  [/\bHudhayfah ibn Usayd al-Ghifari\b/g, "حذيفة بن أسيد الغفاري"],
   [/\bAbu Sa'id al-Khudri\b/g, "أبو سعيد الخدري"],
   [/\bAbdullah ibn Umar\b/g, "عبد الله بن عمر"],
   [/\bUbayy ibn Ka'b\b/g, "أُبيّ بن كعب"],
@@ -556,15 +588,12 @@ const AR_PARTS = [
      the tail stranded in English — "سيرة تاريخية accounts", 24 times on the
      companions page alone. Longest first, the same discipline as everywhere
      else in this array. */
-  [/\bthe incident is from historical sira accounts\b/g, "الخبر من روايات السيرة التاريخية"],
   [/\bhistorical and biographical accounts\b/g, "روايات تاريخية وكتب تراجم"],
   [/\bhistorical and Israiliyyat accounts\b/g, "روايات تاريخية وإسرائيليات"],
   [/\btafsir and historical accounts\b/g, "تفسير وروايات تاريخية"],
-  [/\bhistorical sira accounts\b/g, "روايات السيرة التاريخية"],
   [/\bhistorical accounts differ\b/g, "تختلف الروايات التاريخية"],
   [/\bhistorical accounts only\b/g, "روايات تاريخية فقط"],
   [/\bthe accounts differ\b/g, "تختلف الروايات"],
-  [/\bhistorical sira, not hadith\b/g, "سيرة تاريخية لا حديث"],
   [/\bhistorical sira\b/g, "سيرة تاريخية"],
   [/\boutside the two Sahihs\b/g, "خارج الصحيحين"],
   // The full phrase must come before the bare "the two Sahihs" below it,
@@ -609,7 +638,6 @@ const AR_PARTS = [
   [/Book of Remembrance and Supplication/g, "كتاب الذكر والدعاء"],
   [/Book of Dress and Adornment/g, "كتاب اللباس والزينة"],
   [/Book of Dress \(Al-Libas\)/g, "كتاب اللباس"],
-  [/Book of Food and Drink/g, "كتاب الأطعمة والأشربة"],
   /* Books cited by the bid'ah section. Longest first, as always. */
   [/Book of the Prayer at Night in Ramadan/g, "كتاب صلاة التراويح"],
   [/Book of Judicial Decisions/g, "كتاب الأقضية"],
@@ -670,7 +698,6 @@ const AR_PARTS = [
   [/Book of Belief \(Kitab al-Iman\)/g, "كتاب الإيمان"],
   [/Book of Funerals \(al-Jana'iz\)/g, "كتاب الجنائز"],
   [/Book of Battles \(al-Malahim\)/g, "كتاب الملاحم"],
-  [/Book of Dress and Adornment/g, "كتاب اللباس والزينة"],
   [/Book of Marriage \(an-Nikah\)/g, "كتاب النكاح"],
   [/Book of Manners \(al-Adab\)/g, "كتاب الأدب"],
   [/Book of the Call to Prayer/g, "كتاب الأذان"],
@@ -681,9 +708,6 @@ const AR_PARTS = [
   [/Book of Oaths/g, "كتاب الأيمان"],
   [/Book of Adhan/g, "كتاب الأذان"],
   // Trailing narrator and grading phrases that appear on the same lines.
-  [/\bnarrated from Ibn Umar\b/g, "من حديث ابن عمر"],
-  [/\bnarrated from Thawban\b/g, "من حديث ثوبان"],
-  [/\bnarrated from\b/g, "من حديث"],
   [/\balso narrated by\b/g, "ورواه أيضًا"],
   [/\bnarrated by Ahmad\b/g, "رواه أحمد"],
   [/\bnarrated by\b/g, "رواه"],
@@ -695,9 +719,7 @@ const AR_PARTS = [
   [/Book of Good Manners \(Al-Adab\)/g, "كتاب الأدب"],
   [/Book of Merits of the Companions/g, "كتاب فضائل الصحابة"],
   [/Book of Travellers' Prayer/g, "كتاب صلاة المسافرين"],
-  [/Book of Remembrance and Supplication/g, "كتاب الذكر والدعاء"],
   [/Book of Heart Softeners/g, "كتاب الرقاق"],
-  [/Book of Food and Drink/g, "كتاب الأطعمة والأشربة"],
   [/Book of Good Manners/g, "كتاب الأدب"],
   [/Book of Supplications/g, "كتاب الدعوات"],
   [/Book of Righteousness/g, "كتاب البر والصلة"],
