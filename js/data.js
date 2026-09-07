@@ -4171,6 +4171,105 @@ const PROPHET_STORIES = [
     ref: "Sahih al-Bukhari, Book of Zakat, Hadith 1442",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["charity","spending","money","wealth","stingy","withhold","angels","morning","provision","الصدقة","الإنفاق","المال","البخل","الإمساك","الملائكة","الصباح","الخلف","التلف","الرزق"]
+  },
+
+  /* ================= ADDED SEPTEMBER 2026 =================
+     Five stories for the thinnest sections: knowledge had TWO and
+     signs had TWO, against nine for mercy. Every one was located
+     and READ in the text of Sahih al-Bukhari at the number cited
+     before it was written, and checked against the 42 numbers this
+     array already uses so nothing is told twice.
+
+     Verified: 79, 3231, 3461, 3583, 7089.
+
+     NOTE FOR WHOEVER ADDS THE NEXT ONE: paras() in stories.html
+     does NOT convert bold markers. Asterisks would ship raw. There are
+     none here, and there should be none in what you add.
+     ======================================================== */
+  {
+    id: "taif-angel-mountains",
+    section: "forgiveness",
+    title: "The day he was offered the destruction of a city, and refused it",
+    titleAr: "يوم عُرض عليه إهلاك قريةٍ فأبى",
+    theme: "The hardest day of his life, and what he did with the power he was given in it",
+    themeAr: "أشدُّ يومٍ مرّ به، وماذا صنع بالقدرة التي أُعطيها فيه",
+    story: "Aishah رضي الله عنها asked the Prophet ﷺ whether a day had ever come upon him harder than the day of Uhud. He said: \"I have met from your people what I have met, and the hardest of it was the day of al-Aqabah, when I offered myself to Ibn Abd Yalil ibn Abd Kulal and he did not respond to what I wanted.\"\n\nHe set off with his face full of grief, and did not come to himself until he was at Qarn ath-Tha'alib. He raised his head and there was a cloud shading him. He looked, and Jibril was in it, and called to him: \"Allah has heard what your people said to you and how they answered you, and He has sent you the Angel of the Mountains, for you to command him what you wish concerning them.\"\n\nThe Angel of the Mountains greeted him and said: \"O Muhammad — that is as you wish. If you wish, I will fold the two mountains over them.\"\n\nHe said: \"Rather, I hope that Allah will bring out of their loins those who worship Allah alone and associate nothing with Him.\"",
+    storyAr: "سألت عائشةُ رضي الله عنها النبيَّ ﷺ: هل أتى عليك يومٌ كان أشدَّ من يوم أُحد؟ فقال: «لقد لقيتُ من قومك ما لقيتُ، وكان أشدُّ ما لقيتُ منهم يومَ العقبة، إذ عرضتُ نفسي على ابن عبد ياليل بن عبد كُلال، فلم يُجبني إلى ما أردتُ».\n\nفانطلق وهو مهمومٌ على وجهه، فلم يستفق إلا وهو بقَرن الثعالب. فرفع رأسه فإذا سحابةٌ قد أظلّته، فنظر فإذا فيها جبريلُ عليه السلام فناداه: إنّ الله قد سمع قولَ قومك لك وما ردّوا عليك، وقد بعث إليك ملَكَ الجبال لتأمره بما شئتَ فيهم.\n\nفناداه ملَكُ الجبال فسلّم عليه ثم قال: يا محمد، ذلك فيما شئتَ، إن شئتَ أن أُطبق عليهم الأخشبين — أي الجبلين المحيطين بمكة.\n\nفقال ﷺ: «بل أرجو أن يُخرج اللهُ من أصلابهم من يعبد اللهَ وحده لا يُشرك به شيئًا».",
+    arabic: "بَلْ أَرْجُو أَنْ يُخْرِجَ اللَّهُ مِنْ أَصْلاَبِهِمْ مَنْ يَعْبُدُ اللَّهَ وَحْدَهُ لاَ يُشْرِكُ بِهِ شَيْئًا",
+    lesson: "Notice what he was not asked to do. He was not asked to forgive them in his heart while staying powerless; the power was real, it was offered, and an angel was standing there waiting for the word. That is the only situation in which mercy costs anything.\n\nAnd notice what he hoped for. Not that they would apologise, and not that he would be vindicated in front of them — but that their grandchildren would worship Allah. He was answering the worst day of his life by thinking about people who had not been born yet.\n\nIf you are holding a grudge against someone who genuinely wronged you, the question this story puts is not whether you are entitled to it. It is what you are hoping for.",
+    lessonAr: "تأمّل ما لم يُطلب منه. لم يُطلب منه أن يعفوَ بقلبه وهو عاجز، بل كانت القدرةُ حاضرةً معروضةً، وملَكٌ واقفٌ ينتظر الكلمة. وعند ذلك وحده يكون للرحمة ثمن.\n\nوتأمّل ما رجاه. لم يرجُ اعتذارَهم، ولا أن يظهر عليهم — وإنما رجا أن يعبد أحفادُهم اللهَ وحده. فأجاب عن أشدّ أيام عمره بالتفكير في أناسٍ لم يُولدوا بعد.\n\nفإن كنتَ تحمل ضِغنًا على من ظلمك حقًّا، فليس السؤالُ الذي تضعه هذه القصّةُ: هل من حقّك ذلك؟ وإنما: ماذا ترجو أنت؟",
+    ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3231",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["taif","angel of the mountains","forgiveness","revenge","power","uhud","aqabah","grief","mercy",
+           "الطائف","ملك الجبال","العفو","الانتقام","القدرة","أحد","العقبة","الهم","الرحمة","الأخشبين"]
+  },
+  {
+    id: "rain-and-knowledge",
+    section: "knowledge",
+    title: "Three kinds of ground, and the same rain falling on all of them",
+    titleAr: "ثلاثةُ أنواعٍ من الأرض، والمطرُ واحد",
+    theme: "Why the same teaching changes one person and not another",
+    themeAr: "لماذا يُغيّر العلمُ الواحد إنسانًا ولا يُغيّر آخر",
+    story: "The Prophet ﷺ said: \"The likeness of the guidance and knowledge with which Allah sent me is like abundant rain falling on land.\n\nPart of it was good ground: it took in the water and brought up grass and herbage in plenty.\n\nPart of it was hard ground: it held the water, and Allah benefited people by it — they drank, and watered their animals, and irrigated their crops.\n\nAnd part of it was flat and bare: it neither held water nor brought up grass.\n\nThat is the likeness of the one who understands the religion of Allah and is benefited by what Allah sent me with, so he learns and teaches — and the likeness of the one who does not raise his head to it, and does not accept the guidance of Allah I was sent with.\"",
+    storyAr: "قال النبيُّ ﷺ: «مَثَلُ ما بعثني اللهُ به من الهدى والعلم كمَثَل الغيث الكثير أصاب أرضًا.\n\nفكان منها نَقِيّةٌ — أي طيّبةٌ طاهرة — قبِلت الماءَ فأنبتت الكلأَ والعشبَ الكثير.\n\nوكانت منها أجادِبُ — أي أرضٌ صُلبةٌ لا تشرب — أمسكت الماءَ فنفع اللهُ بها الناس، فشربوا وسقَوا وزرعوا.\n\nوأصابت منها طائفةً أخرى إنما هي قِيعان — أي أرضٌ مستويةٌ ملساء — لا تُمسك ماءً ولا تُنبت كلأً.\n\nفذلك مَثَلُ من فقِه في دين الله ونفعه ما بعثني اللهُ به، فعلِم وعلَّم؛ ومَثَلُ من لم يرفع بذلك رأسًا، ولم يقبل هدى الله الذي أُرسلتُ به».",
+    arabic: "مَثَلُ مَا بَعَثَنِي اللَّهُ بِهِ مِنَ الْهُدَى وَالْعِلْمِ كَمَثَلِ الْغَيْثِ الْكَثِيرِ أَصَابَ أَرْضًا",
+    lesson: "The rain is the same in all three cases. What differs is the ground. So when a lesson moves one person and leaves another cold, the explanation is not always in the lesson.\n\nAnd there are two useful kinds of ground here, not one. The first grows something of its own. The second grows nothing itself — it only holds the water so that others can drink. A person who memorises and transmits accurately without being a scholar is the second kind of ground, and the hadith counts him among those Allah benefited people through.\n\nThe third is not condemned for being stupid. It is described as not raising its head to it. That is a decision, not a capacity.",
+    lessonAr: "المطرُ واحدٌ في الأحوال الثلاثة، وإنما اختلفت الأرض. فإذا حرّك الدرسُ رجلًا وترك آخر باردًا، فليس التفسيرُ دائمًا في الدرس.\n\nوههنا نوعان نافعان لا نوعٌ واحد. فالأولى تُنبت من نفسها، والثانية لا تُنبت شيئًا — إنما تُمسك الماءَ ليشرب منه غيرُها. فالذي يحفظ وينقل بأمانةٍ من غير أن يكون عالمًا هو الأرضُ الثانية، وقد عدّه الحديثُ ممّن نفع اللهُ بهم الناس.\n\nوالثالثةُ لم تُذمّ لبلادتها، وإنما وُصفت بأنها لم ترفع بذلك رأسًا. وهذا قرارٌ لا طاقة.",
+    ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 79",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["knowledge","rain","parable","teaching","learning","understanding","fiqh","scholar",
+           "العلم","الغيث","المطر","المثل","التعليم","التعلم","الفقه","العالم","الهدى"]
+  },
+  {
+    id: "convey-one-verse",
+    section: "knowledge",
+    title: "Pass it on, even if it is one verse",
+    titleAr: "بلّغوا عنّي ولو آية",
+    theme: "You do not need to be a scholar to be responsible for what you know",
+    themeAr: "لست محتاجًا أن تكون عالمًا لتكون مسؤولًا عمّا تعلم",
+    story: "The Prophet ﷺ said: \"Convey from me, even if it is one verse. And relate from the Children of Israel, and there is no harm in it. But whoever lies about me deliberately, let him take his seat in the Fire.\"",
+    storyAr: "قال النبيُّ ﷺ: «بلّغوا عنّي ولو آية، وحدّثوا عن بني إسرائيل ولا حرج، ومن كذب عليّ متعمّدًا فليتبوّأ مقعده من النار».",
+    arabic: "بَلِّغُوا عَنِّي وَلَوْ آيَةً، وَحَدِّثُوا عَنْ بَنِي إِسْرَائِيلَ وَلاَ حَرَجَ، وَمَنْ كَذَبَ عَلَىَّ مُتَعَمِّدًا فَلْيَتَبَوَّأْ مَقْعَدَهُ مِنَ النَّارِ",
+    lesson: "Three instructions in one breath, and the third one is what makes the first two safe.\n\nThe first removes the excuse. Nobody is waiting for you to qualify. If you know one verse, you are the person who can pass on one verse.\n\nThe second gives permission to relate what is worth relating from those who came before.\n\nThe third draws the line, and draws it at the one place it matters: do not put words in his mouth. Not exaggerating a hadith to make a point land, not attaching his name to a saying because it sounds like something he would say. The permission to speak is wide open; the permission to invent is closed with a threat.\n\nThat is worth remembering every time something arrives on a phone attributed to him with no source on it.",
+    lessonAr: "ثلاثُ وصايا في نفَسٍ واحد، والثالثةُ هي التي تُؤمّن الأُوليين.\n\nفالأولى ترفع العذر: ليس أحدٌ ينتظر منك أن تتأهّل. فإن كنتَ تعرف آيةً واحدة فأنت من يستطيع أن يُبلّغ آيةً واحدة.\n\nوالثانية إذنٌ بأن يُحدَّث عمّن قبلنا بما يستحقّ أن يُحدَّث به.\n\nوالثالثة تضع الحدّ، وتضعه في الموضع الذي يهمّ: لا تنسب إليه ما لم يقُل. لا تُضخّم حديثًا ليقع كلامُك موقعه، ولا تُلحق اسمه بقولٍ لأنه يشبه ما كان يقوله. فالإذنُ بالتبليغ مفتوحٌ على سعته، والإذنُ بالاختلاق مسدودٌ بالوعيد.\n\nوهذا ممّا ينبغي تذكّره كلّما وصلك في الهاتف كلامٌ منسوبٌ إليه ﷺ بلا مرجع.",
+    ref: "Sahih al-Bukhari, Book of the Prophets, Hadith 3461",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["knowledge","conveying","teaching","one verse","lying","forwarding","sharing","source",
+           "العلم","التبليغ","بلغوا عني","ولو آية","الكذب","النشر","المرجع","الوعيد"]
+  },
+  {
+    id: "ask-me-anything",
+    section: "knowledge",
+    title: "The day he said: ask me, and I will tell you",
+    titleAr: "يوم قال: لا تسألوني عن شيءٍ إلا بيّنتُه لكم",
+    theme: "What happened when people pressed him with questions",
+    themeAr: "ماذا جرى حين أكثر الناسُ عليه السؤال",
+    story: "Anas رضي الله عنه said: they asked the Prophet ﷺ until they pressed him hard with questions. So one day he climbed the minbar and said: \"You will not ask me about anything except that I will make it clear to you.\"\n\nAnas said: I began to look right and left, and every man had his head in his garment, weeping.\n\nThen a man stood — one who, when he was quarrelled with, used to be called after other than his father — and said: O Prophet of Allah, who is my father? He said: \"Your father is Hudhafah.\"\n\nThen Omar stood and said: we are pleased with Allah as Lord, with Islam as religion, and with Muhammad as Messenger. We seek refuge with Allah from the evil of trials.\n\nAnd the Prophet ﷺ said: \"I have never seen anything like today, in good and in evil. Paradise and the Fire were pictured for me until I saw them against that wall.\"",
+    storyAr: "قال أنسٌ رضي الله عنه: سألوا النبيَّ ﷺ حتى أحفَوه بالمسألة — أي ألحّوا عليه وأكثروا. فصعِد النبيُّ ﷺ ذات يومٍ المنبرَ فقال: «لا تسألوني عن شيءٍ إلا بيّنتُ لكم».\n\nقال أنس: فجعلتُ أنظر يمينًا وشمالًا، فإذا كلُّ رجلٍ رأسُه في ثوبه يبكي.\n\nفأنشأ رجلٌ كان إذا لاحى — أي إذا خاصم — يُدعى إلى غير أبيه، فقال: يا نبيَّ الله، من أبي؟ قال: «أبوك حُذافة».\n\nثم أنشأ عمرُ رضي الله عنه فقال: رضِينا بالله ربًّا، وبالإسلام دينًا، وبمحمدٍ رسولًا، نعوذ بالله من سوء الفتن.\n\nفقال النبيُّ ﷺ: «ما رأيتُ في الخير والشرّ كاليوم قطّ، إنه صُوّرت لي الجنّةُ والنار حتى رأيتُهما دون الحائط».",
+    arabic: "لاَ تَسْأَلُونِي عَنْ شَىْءٍ إِلاَّ بَيَّنْتُ لَكُمْ",
+    lesson: "They had been asking and asking, and he gave them exactly what they had been pressing for — and the room filled with weeping. They understood immediately that an answer is not always a gift.\n\nThe man who asked about his father got a true answer. Read the story again and notice that nothing in it says the answer helped him. He had been taunted about it in arguments; he wanted it settled publicly; and the whole gathering wept because they could see what a settled answer might cost.\n\nOmar's sentence is the way out, and it is worth learning: we are pleased with Allah as Lord, with Islam as religion, with Muhammad as Messenger. It is not a refusal to learn. It is a person saying that his peace does not depend on being told everything.\n\nThere are questions people carry today with the same shape — about what someone said behind their back, about a test result they are not ready for, about what somebody really thinks of them. Getting the answer is not always the mercy.",
+    lessonAr: "كانوا يسألون ويُلحّون، فأعطاهم عين ما ألحّوا في طلبه — فامتلأ المجلسُ بالبكاء. فأدركوا في الحال أنّ الجواب ليس دائمًا عطيّة.\n\nوالرجلُ الذي سأل عن أبيه ناله جوابٌ صادق. فأعِد قراءة الخبر، وانظر: ليس فيه أنّ الجواب نفعه. كان يُعيَّر به في الخصومة، فأراد أن يُقطع الأمرُ على رؤوس الناس، وبكى المجلسُ كلُّه لأنهم أبصروا ما قد يُكلّفه الجوابُ المقطوع.\n\nوكلمةُ عمرَ رضي الله عنه هي المخرج، وهي جديرةٌ بأن تُحفظ: رضِينا بالله ربًّا، وبالإسلام دينًا، وبمحمدٍ رسولًا. وليست امتناعًا عن التعلّم، وإنما هي رجلٌ يقول إنّ طمأنينته لا تتوقّف على أن يُخبَر بكلّ شيء.\n\nوللناس اليوم أسئلةٌ على هذه الصورة نفسها — عمّا قيل فيهم في غيبتهم، وعن نتيجةٍ لم يستعدّوا لها بعد، وعمّا يُضمره لهم فلان. وليس بلوغُ الجواب دائمًا هو الرحمة.",
+    ref: "Sahih al-Bukhari, Book of Tribulations, Hadith 7089",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["knowledge","questions","asking","curiosity","omar","fitnah","content","paradise","fire",
+           "العلم","السؤال","الإلحاف","الفضول","عمر","الفتنة","الرضا","الجنة","النار"]
+  },
+  {
+    id: "weeping-trunk",
+    section: "signs",
+    title: "The trunk that cried when he left it",
+    titleAr: "الجذعُ الذي حنّ حين فارقه",
+    theme: "A sign that everyone in the mosque heard, and what he did about it",
+    themeAr: "آيةٌ سمعها كلُّ من في المسجد، وماذا صنع بها",
+    story: "Ibn Umar رضي الله عنهما said: the Prophet ﷺ used to give the sermon leaning against a trunk of a date-palm. When the minbar was made for him, he moved to it — and the trunk moaned. So he came to it and passed his hand over it.\n\nIn Jabir's narration of the same event, the sound is described: they heard from the trunk something like the crying of a pregnant she-camel, until the Prophet ﷺ came down and put his hand on it.",
+    storyAr: "قال ابنُ عمر رضي الله عنهما: كان النبيُّ ﷺ يخطب إلى جِذعٍ — أي ساق نخلةٍ — فلمّا اتّخذ المنبرَ تحوّل إليه، فحنّ الجذعُ، فأتاه فمسح يدَه عليه.\n\nوفي رواية جابرٍ رضي الله عنه وصفٌ للصوت: سمعوا للجذع مثل أصوات العِشار — أي النوق الحوامل — حتى نزل النبيُّ ﷺ فوضع يده عليه.",
+    arabic: "كَانَ النَّبِيُّ صلى الله عليه وسلم يَخْطُبُ إِلَى جِذْعٍ فَلَمَّا اتَّخَذَ الْمِنْبَرَ تَحَوَّلَ إِلَيْهِ، فَحَنَّ الْجِذْعُ فَأَتَاهُ فَمَسَحَ يَدَهُ عَلَيْهِ",
+    lesson: "This is one of the few miracles that a whole congregation heard at once, in an ordinary mosque, on an ordinary Friday. It was not shown to a delegation demanding proof; it happened because a piece of wood was used to him standing against it, and then he stood somewhere else.\n\nBut the part worth sitting with is what he did next. He did not use it. He did not turn to the people and say: look at what has just happened. He came down from the minbar and put his hand on it until it settled — the way you would quiet a frightened animal or a crying child.\n\nA dead trunk grieved at being left by him. The obvious question the story leaves is what our own attachment to him looks like beside it.",
+    lessonAr: "هذه من المعجزات القليلة التي سمعتها جماعةٌ كاملةٌ في وقتٍ واحد، في مسجدٍ عاديّ، في جمعةٍ عاديّة. ولم تُعرض على وفدٍ يطلب البرهان، وإنما وقعت لأنّ خشبةً كانت قد اعتادت وقوفه إليها، ثم وقف في مكانٍ آخر.\n\nغير أنّ الذي يستحقّ الوقوف هو ما صنعه بعدها: لم يستعملها. لم يلتفت إلى الناس فيقول: انظروا ما جرى الآن. بل نزل من المنبر ووضع يده عليه حتى سكن — كما تُسكّن دابّةً فزِعة أو طفلًا يبكي.\n\nجذعٌ ميّتٌ حزِن لفراقه ﷺ. والسؤال الظاهر الذي تتركه القصّةُ: كيف يبدو تعلُّقنا نحن به إلى جانب ذلك؟",
+    ref: "Sahih al-Bukhari, Book of the Virtues of the Prophet ﷺ, Hadith 3583",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["signs","miracle","trunk","palm","minbar","pulpit","weeping","love of the prophet","mosque",
+           "الآيات","المعجزة","الجذع","النخلة","المنبر","الحنين","حب النبي","المسجد","علامات النبوة"]
   }
 
 ];
