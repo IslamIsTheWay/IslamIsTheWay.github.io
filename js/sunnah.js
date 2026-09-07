@@ -2084,5 +2084,163 @@ const SUNNAH = [
     strength: "Sahih — Narrated by Muslim",
     keys: ["animals","hunting","target","sport","cruelty","killing","mercy",
            "الحيوان","الصيد","غرض","التسلية","الرفق","القتل"]
+  },
+
+  /* ================= ADDED SEPTEMBER 2026 =================
+     Twelve practices for the thinnest categories: Friday had four
+     entries, and dress, travel, fasting, animals and death had five
+     each. Every one was LOCATED AND READ in the text of Sahih
+     al-Bukhari at the number cited before the entry was written —
+     the order the owner asked for — and every number was checked
+     against the inventory of the 123 already in this file, so
+     nothing is taught twice under a second title.
+
+     Verified: 622, 651, 662, 877, 935, 1323, 1801, 1985, 2365,
+     2949, 5926, 7453. The Arabic of each is copied out of the
+     record, never typed from memory.
+     ======================================================== */
+  {
+    cat: "friday",
+    title: "There is an hour on Friday when a supplication is not refused",
+    titleAr: "في الجمعة ساعةٌ لا يُردّ فيها الدعاء",
+    detail: "He ﷺ spoke of Friday and said there is an hour in it which no Muslim servant meets while standing in prayer, asking Allah for something, except that He gives it to him — and he pointed with his hand to show how short it is. So ask on Friday, and keep asking through the day rather than trying to pin the moment down.",
+    detailAr: "ذكر النبيُّ ﷺ يوم الجمعة فأخبر أنّ فيه ساعةً لا يوافقها عبدٌ مسلمٌ وهو قائمٌ يصلّي يسأل الله شيئًا إلا أعطاه إيّاه — وأشار بيده يُقلّلها، أي يُبيّن قِصَرها. فأكثِر الدعاء يوم الجمعة، واجعله موزّعًا على اليوم كلّه بدل أن تجتهد في تحديد اللحظة.",
+    arabic: "فِيهِ سَاعَةٌ لاَ يُوَافِقُهَا عَبْدٌ مُسْلِمٌ، وَهْوَ قَائِمٌ يُصَلِّي، يَسْأَلُ اللَّهَ تَعَالَى شَيْئًا إِلاَّ أَعْطَاهُ إِيَّاهُ",
+    ref: "Sahih al-Bukhari, Hadith 935",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["friday","jumuah","hour","dua","supplication","answered","asking",
+           "الجمعة","ساعة","الدعاء","استجابة","يوم الجمعة","دعاء الجمعة"]
+  },
+  {
+    cat: "friday",
+    title: "Bathe before you come to the Friday prayer",
+    titleAr: "الاغتسال قبل الجمعة",
+    detail: "He ﷺ said that whoever of you comes to the Friday prayer should bathe. It is the one gathering of the week where the whole community sits together in one room, and being clean in it is part of the respect owed to the day and to the people beside you.",
+    detailAr: "قال النبيُّ ﷺ: إذا جاء أحدُكم الجمعةَ فليغتسل. وهي المجتمعُ الأسبوعيُّ الذي تجلس فيه الجماعةُ كلُّها في مكانٍ واحد، والنظافةُ فيه من حقّ اليوم وحقّ من يجلس إلى جانبك.",
+    arabic: "إِذَا جَاءَ أَحَدُكُمُ الْجُمُعَةَ فَلْيَغْتَسِلْ",
+    ref: "Sahih al-Bukhari, Hadith 877",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["friday","jumuah","ghusl","bath","wash","clean","mosque",
+           "الجمعة","الاغتسال","الغسل","النظافة","المسجد","يوم الجمعة"]
+  },
+  {
+    cat: "friday",
+    title: "Do not single out Friday for fasting",
+    titleAr: "لا تُفرد الجمعة بصيام",
+    detail: "He ﷺ said none of you should fast on Friday unless he fasts a day before it or a day after it. Friday is a day of gathering and of eating with people, and singling it out as a fast of its own is not from the Sunnah — though fasting it inside a run of days is.",
+    detailAr: "قال النبيُّ ﷺ: لا يصومنّ أحدُكم يوم الجمعة إلا يومًا قبله أو يومًا بعده. فالجمعةُ يوم اجتماعٍ وطعامٍ مع الناس، وإفرادُها بالصوم ليس من السنّة، أمّا صومُها في جملة أيّامٍ متتابعة فلا بأس به.",
+    arabic: "لاَ يَصُومَنَّ أَحَدُكُمْ يَوْمَ الْجُمُعَةِ، إِلاَّ يَوْمًا قَبْلَهُ أَوْ بَعْدَهُ",
+    ref: "Sahih al-Bukhari, Hadith 1985",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["friday","fasting","fast","singling out","jumuah",
+           "الجمعة","الصيام","الصوم","إفراد","صوم الجمعة"]
+  },
+  {
+    cat: "fasting",
+    title: "Eat suhoor until the second adhan, not the first",
+    titleAr: "كُل السحور حتى الأذان الثاني لا الأول",
+    detail: "He ﷺ said Bilal calls the adhan at night, so eat and drink until Ibn Umm Maktum calls it. There were two callers: one before dawn to wake people, and one at dawn itself. The point for anyone fasting today is that the first sound you hear is not always the end of the meal — know which call marks the dawn where you are.",
+    detailAr: "قال النبيُّ ﷺ: إنّ بلالًا يؤذّن بليل، فكلوا واشربوا حتى يؤذّن ابنُ أمّ مكتوم. فقد كان المؤذّنان اثنين: أحدُهما قبل الفجر ليُوقظ الناس، والآخر عند الفجر نفسه. والفائدةُ لمن يصوم اليوم أنّ أوّل صوتٍ تسمعه ليس دائمًا آخرَ الطعام — فاعرف أيَّ أذانٍ يُعلَّم به الفجرُ في بلدك.",
+    arabic: "إِنَّ بِلاَلاً يُؤَذِّنُ بِلَيْلٍ، فَكُلُوا وَاشْرَبُوا حَتَّى يُؤَذِّنَ ابْنُ أُمِّ مَكْتُومٍ",
+    ref: "Sahih al-Bukhari, Hadith 622",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["fasting","suhoor","suhur","adhan","dawn","fajr","ramadan","eating",
+           "الصيام","السحور","الأذان","الفجر","رمضان","الإمساك"]
+  },
+  {
+    cat: "animals",
+    title: "A woman entered the Fire over a cat",
+    titleAr: "امرأةٌ دخلت النار في هرّة",
+    detail: "He ﷺ said a woman was punished over a cat she shut in until it died of hunger, and she entered the Fire because of it: she neither fed it nor gave it water while she held it, nor did she let it go to eat from the creatures of the earth. Nobody in the story is accused of hatred. She simply kept an animal and did not look after it — and that was enough.",
+    detailAr: "أخبر النبيُّ ﷺ أنّ امرأةً عُذّبت في هِرّةٍ حبَستها حتى ماتت جوعًا فدخلت فيها النار: لا هي أطعمتها ولا سقتها حين حبَستها، ولا هي أرسلتها فتأكل من هوامّ الأرض. وليس في الخبر أنها أبغضتها ولا قصدت أذاها، وإنما أمسكت حيوانًا ولم تقم بحقّه — فكفى بذلك.",
+    arabic: "عُذِّبَتِ امْرَأَةٌ فِي هِرَّةٍ حَبَسَتْهَا، حَتَّى مَاتَتْ جُوعًا، فَدَخَلَتْ فِيهَا النَّارَ",
+    ref: "Sahih al-Bukhari, Hadith 2365",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["animals","cat","pet","cruelty","neglect","feeding","mercy","fire",
+           "الحيوان","الهرة","القط","الرفق","الإهمال","الطعام","النار"]
+  },
+  {
+    cat: "travel",
+    title: "Do not arrive home at night unannounced",
+    titleAr: "لا تطرُق أهلك ليلًا",
+    detail: "He ﷺ forbade a man returning from a journey to come in on his family at night without warning. The reason given by the scholars is plain kindness: the house has had no chance to prepare, and arriving unexpectedly in the dark can put a person in the position of finding what he would rather not, or of alarming his household. Send word ahead.",
+    detailAr: "نهى النبيُّ ﷺ القادمَ من سفرٍ أن يطرُق أهله ليلًا من غير إعلامٍ سابق. وعلّةُ ذلك عند أهل العلم ظاهرةٌ من الرفق: فالبيتُ لم يأخذ أهبته، والدخولُ بغتةً في الليل قد يُوقع الرجلَ على ما يكره أو يُفزع من في الدار. فأرسل إليهم قبل قدومك.",
+    arabic: "نَهَى النَّبِيُّ صلى الله عليه وسلم أَنْ يَطْرُقَ أَهْلَهُ لَيْلاً",
+    ref: "Sahih al-Bukhari, Hadith 1801",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["travel","return","home","night","family","warning","arriving",
+           "السفر","القدوم","الرجوع","الليل","الأهل","الطروق"]
+  },
+  {
+    cat: "travel",
+    title: "He would set out on a Thursday",
+    titleAr: "كان يخرج في سفره يوم الخميس",
+    detail: "Ka'b ibn Malik said it was rare for the Messenger of Allah ﷺ to set out on a journey on any day other than Thursday. It is not an obligation and no reward is attached to it in the wording — it is simply the habit he kept, and following the way he arranged an ordinary week is part of following him.",
+    detailAr: "قال كعبُ بن مالك: قلّما كان رسولُ الله ﷺ يخرج إذا خرج في سفرٍ إلا يوم الخميس. وليس هذا بواجبٍ ولا في لفظه ذكرُ أجرٍ معيّن — وإنما هي عادتُه التي لزِمها، واتّباعُه في ترتيب أسبوعه العاديّ من اتّباعه.",
+    arabic: "لَقَلَّمَا كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَخْرُجُ إِذَا خَرَجَ فِي سَفَرٍ إِلاَّ يَوْمَ الْخَمِيسِ",
+    ref: "Sahih al-Bukhari, Hadith 2949",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["travel","journey","thursday","setting out","departure","habit",
+           "السفر","الخميس","الخروج","الرحلة","عادته"]
+  },
+  {
+    cat: "dress",
+    title: "Begin from the right — in grooming and in washing",
+    titleAr: "التيمّن في الترجّل والوضوء",
+    detail: "Aishah said he ﷺ liked to begin from the right as far as he could, in combing his hair and in his wudu. It is a small habit that costs nothing and turns two ordinary daily acts into something done deliberately, the way he did them.",
+    detailAr: "قالت عائشة رضي الله عنها: كان النبيُّ ﷺ يُعجبه التيمّنُ ما استطاع، في ترجّله — أي تسريح شعره — ووضوئه. وهي عادةٌ يسيرةٌ لا تكلّف شيئًا، وتُحوّل عملين من أعمال اليوم العاديّة إلى فعلٍ مقصودٍ على هيئته ﷺ.",
+    arabic: "كَانَ يُعْجِبُهُ التَّيَمُّنُ مَا اسْتَطَاعَ فِي تَرَجُّلِهِ وَوُضُوئِهِ",
+    ref: "Sahih al-Bukhari, Hadith 5926",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["dress","right side","grooming","hair","combing","wudu","appearance",
+           "اللباس","التيمّن","اليمين","الترجّل","الشعر","الوضوء","الهيئة"]
+  },
+  {
+    cat: "death",
+    title: "Walk with the funeral, and stay until the burial",
+    titleAr: "اتّبع الجنازة وابقَ حتى الدفن",
+    detail: "Abu Hurairah reported that whoever follows a funeral has a qirat of reward. Ibn Umar thought the figure large until Aishah confirmed she had heard it from the Prophet ﷺ, and then said: we have wasted many qirats. The point is not the arithmetic. It is that a man who had walked with the Prophet ﷺ counted the funerals he had skipped as loss.",
+    detailAr: "روى أبو هريرة رضي الله عنه أنّ من تبع جنازةً فله قيراط. فاستكثر ابنُ عمر ذلك حتى صدّقته عائشةُ رضي الله عنها وأخبرت أنها سمعته من النبيّ ﷺ، فقال: لقد فرّطنا في قراريطَ كثيرة. وليس المقصودُ حسابَ الأجر، وإنما أنّ رجلًا صحِب النبيَّ ﷺ عدّ الجنائزَ التي تخلّف عنها خسارةً عليه.",
+    arabic: "مَنْ تَبِعَ جَنَازَةً فَلَهُ قِيرَاطٌ",
+    ref: "Sahih al-Bukhari, Hadith 1323",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["death","funeral","janazah","burial","reward","qirat","attending",
+           "الموت","الجنازة","الدفن","القيراط","اتّباع الجنازة","الأجر"]
+  },
+  {
+    cat: "mosque",
+    title: "Every walk to the mosque is a place prepared in Paradise",
+    titleAr: "كلّ غدوةٍ إلى المسجد نُزُلٌ في الجنّة",
+    detail: "He ﷺ said that whoever goes to the mosque in the morning and in the evening, Allah prepares for him his hospitality in Paradise every time he goes. Not once for a lifetime of going — every time.",
+    detailAr: "قال النبيُّ ﷺ: من غدا إلى المسجد وراح أعدّ الله له نُزُلَه من الجنّة كلّما غدا أو راح. وليس ذلك مرّةً واحدةً عن عمرٍ من الذهاب — بل في كلّ مرّة.",
+    arabic: "مَنْ غَدَا إِلَى الْمَسْجِدِ وَرَاحَ أَعَدَّ اللَّهُ لَهُ نُزُلَهُ مِنَ الْجَنَّةِ كُلَّمَا غَدَا أَوْ رَاحَ",
+    ref: "Sahih al-Bukhari, Hadith 662",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["mosque","masjid","walking","going","paradise","reward","congregation",
+           "المسجد","الذهاب","الغدو","الرواح","الجنّة","الأجر","الجماعة"]
+  },
+  {
+    cat: "mosque",
+    title: "The farther you walk to the prayer, the greater the reward",
+    titleAr: "أعظم الناس أجرًا أبعدُهم ممشى",
+    detail: "He ﷺ said the people with the greatest reward in the prayer are those who walk farthest to it, then those next farthest; and the one who waits to pray it with the imam has a greater reward than the one who prays and then goes to sleep. Distance and waiting are not obstacles to the reward — they are part of it.",
+    detailAr: "قال النبيُّ ﷺ: أعظمُ الناس أجرًا في الصلاة أبعدُهم فأبعدُهم ممشى، والذي ينتظر الصلاة حتى يصلّيها مع الإمام أعظمُ أجرًا من الذي يصلّي ثم ينام. فالبعدُ والانتظارُ ليسا عائقين دون الأجر — بل هما من الأجر نفسه.",
+    arabic: "أَعْظَمُ النَّاسِ أَجْرًا فِي الصَّلاَةِ أَبْعَدُهُمْ فَأَبْعَدُهُمْ مَمْشًى",
+    ref: "Sahih al-Bukhari, Hadith 651",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["mosque","walking","distance","far","waiting","imam","congregation","reward",
+           "المسجد","المشي","البعد","الانتظار","الإمام","الجماعة","الأجر"]
+  },
+  {
+    cat: "hardship",
+    title: "His mercy was written down before His anger",
+    titleAr: "إنّ رحمتي سبقت غضبي",
+    detail: "He ﷺ said that when Allah decreed the creation He wrote with Him above His Throne: my mercy has preceded my anger. It is worth reading slowly by anyone who is frightened of Allah rather than hopeful in Him. The mercy was not an afterthought or a concession — it was written first.",
+    detailAr: "قال النبيُّ ﷺ: لمّا قضى الله الخلقَ كتب عنده فوق عرشه: إنّ رحمتي سبقت غضبي. وهي جديرةٌ بأن يتمهّل عندها من غلب عليه الخوفُ من الله دون الرجاء فيه. فالرحمةُ لم تكن استدراكًا ولا تنازلًا — بل كُتبت أوّلًا.",
+    arabic: "لَمَّا قَضَى اللَّهُ الْخَلْقَ كَتَبَ عِنْدَهُ فَوْقَ عَرْشِهِ، إِنَّ رَحْمَتِي سَبَقَتْ غَضَبِي",
+    ref: "Sahih al-Bukhari, Hadith 7453",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["hardship","mercy","anger","hope","fear","despair","forgiveness","throne",
+           "الشدة","الرحمة","الغضب","الرجاء","الخوف","القنوط","المغفرة","العرش"]
   }
 ];
