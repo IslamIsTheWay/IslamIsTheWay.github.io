@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609071525" />
+  <link rel="stylesheet" href="css/style.css?v=202609072114" />
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -81,6 +81,7 @@
         <a href="#journey"><span class="en-only">The whole journey, in detail</span><span class="ar-only" dir="rtl">الرحلة كاملةً بالتفصيل</span></a>
         <a href="#endmap"><span class="en-only">The map, and where we are</span><span class="ar-only" dir="rtl">الخريطة وأين نحن</span></a>
         <a href="#signs"><span class="en-only">How the world ends</span><span class="ar-only" dir="rtl">كيف تنتهي الدنيا</span></a>
+        <a href="#places"><span class="en-only">The three places he asked about</span><span class="ar-only" dir="rtl">المواضع الثلاثة</span></a>
         <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
         <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
         <a href="#rise"><span class="en-only">Will we rise again?</span><span class="ar-only" dir="rtl">هل نعود؟</span></a>
@@ -112,6 +113,24 @@
   <section class="pattern-bg" id="grave">
     <div class="container">
       <div id="jGraveBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== THE THREE PLACES THE DAJJAL ASKED ABOUT =====
+       Rendered from js/places.js. The HADITH itself is not here — it is in
+       PROPHET_STORIES on stories.html, in full, and is not retold. This
+       section answers only: where are those three places, and what is
+       measured there now.
+
+       It sits directly under #signs and #grave because the Dajjal sign is
+       above it; a reader meets the sign, then the three places it names.
+
+       READ THE FIVE RULES AT THE TOP OF js/places.js BEFORE EDITING. The
+       first of them is the one that matters: no date, ever — which is
+       SIGNS_INTRO's own rule for this whole page. -->
+  <section id="places">
+    <div class="container">
+      <div id="jPlacesBox"></div>
     </div>
   </section>
 
@@ -258,23 +277,24 @@
   </footer>
 
   
-  <script src="js/data.js?v=202609071525"></script>
-  <script src="js/angels.js?v=202609071525"></script>
+  <script src="js/data.js?v=202609072114"></script>
+  <script src="js/angels.js?v=202609072114"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202609071525"></script>
-  <script src="js/endmap.js?v=202609071525"></script>
-  <script src="js/judgement.js?v=202609071525"></script>
-  <script src="js/cards.js?v=202609071525"></script>
-  <script src="js/grave.js?v=202609071525"></script>
+  <script src="js/signs.js?v=202609072114"></script>
+  <script src="js/endmap.js?v=202609072114"></script>
+  <script src="js/judgement.js?v=202609072114"></script>
+  <script src="js/cards.js?v=202609072114"></script>
+  <script src="js/grave.js?v=202609072114"></script>
+  <script src="js/places.js?v=202609072114"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202609071525"></script>
+  <script src="js/judgement-closing.js?v=202609072114"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202609071525"></script>
-  <script src="js/journey.js?v=202609071525"></script>
+  <script src="js/rise.js?v=202609072114"></script>
+  <script src="js/journey.js?v=202609072114"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -596,6 +616,8 @@
     renderAlone();
     if (typeof renderGrouped === "function")
       renderGrouped("jGraveBox", typeof GRAVE !== "undefined" ? GRAVE : null, "⚰️");
+    if (typeof renderGrouped === "function")
+      renderGrouped("jPlacesBox", typeof PLACES !== "undefined" ? PLACES : null, "🗺️");
     if (typeof iitwRenderRise === "function") iitwRenderRise("riseBox");
   </script>
   <script>
@@ -981,9 +1003,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202609071525"></script>
+  <script src="js/wordlens.js?v=202609072114"></script>
 
-  <script src="js/main.js?v=202609071525"></script>
-  <script src="js/i18n.js?v=202609071525"></script>
+  <script src="js/main.js?v=202609072114"></script>
+  <script src="js/i18n.js?v=202609072114"></script>
 </body>
 </html>
