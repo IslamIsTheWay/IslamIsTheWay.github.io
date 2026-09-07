@@ -221,7 +221,7 @@ const PROPHETS = [
     titleAr: "ابن أخي إبراهيم الصالح",
     category: "prophet",
     summary: "A nephew and follower of Ibrahim, Lut was sent to the people of Sodom, who committed grave sins. When they refused to repent, Allah sent angels to rescue Lut and his believing family, then destroyed the cities with a rain of stones.",
-    summaryAr: "ابنُ أخي إبراهيمَ عليه السلام ومن اتّبعه على دينه. أُرسل إلى أهل سدومَ وقد أتوا كبائرَ الفواحش، فلمّا أبَوا أن يتوبوا أرسل الله ملائكةً أنجَت لوطًا ومن آمن من أهله، ثم دمّر قُراهم وأمطر عليها حجارةً من سِجّيل.",
+    summaryAr: "ابنُ أخي إبراهيمَ عليه السلام ومن اتّبعه على دينه. أُرسل إلى أهل سدومَ وقد أتوا كبائرَ الفواحش، فلمّا أبَوا أن يتوبوا أرسل الله ملائكةً أنجَت لوطًا ومن آمن من أهله، ثم دمّر قُراهم وأمطر عليها حجارةً من سِجّيل (أي طينٍ متحجّر).",
     refs: [
       "Surah Hud (11:77-83) — the angels' visit and the cities' destruction",
       "Surah Al-A'raf (7:80-84) — Lut's warning to his people",
@@ -265,7 +265,7 @@ const PROPHETS = [
     titleAr: "إسرائيل",
     category: "prophet",
     summary: "The son of Ishaq and father of twelve sons including Yusuf, Yaqub (also called Israel) endured years of grief over the loss of his son Yusuf, yet never lost hope in Allah's mercy, and was eventually reunited with him in Egypt.",
-    summaryAr: "ابنُ إسحاق عليه السلام، وأبو الأسباط الاثني عشر ومنهم يوسف، ويُسمّى إسرائيل. قاسى سنينَ من الحزن على فقد ابنه يوسف، وما قنَط من رحمة الله قطّ، حتى جمع الله بينهما في مصر.",
+    summaryAr: "ابنُ إسحاق عليه السلام، وأبو الأسباط الاثني عشر ومنهم يوسف، ويُسمّى إسرائيل. قاسى سنينَ من الحزن على فقد ابنه يوسف، وما يئس من رحمة الله قطّ، حتى جمع الله بينهما في مصر.",
     refs: [
       "Surah Yusuf (12) — Yaqub's patience throughout his son's story",
       "Surah Al-Baqarah (2:132-133) — his advice to his sons before passing away"
@@ -279,7 +279,7 @@ const PROPHETS = [
     titleAr: "الصدّيق الأمين",
     category: "prophet",
     summary: "Sold into slavery by his jealous brothers, Yusuf rose from a prison cell to become a trusted minister in Egypt. His story — described as 'the best of stories' — illustrates patience, forgiveness, and unwavering trust in Allah's plan.",
-    summaryAr: "ألقاه إخوتُه في الجُبِّ حسدًا ثم بِيع رقيقًا في مصر، فرفعه الله من ظلمة السجن إلى أن صار وزيرًا مؤتمَنًا على خزائن الأرض. وقصّتُه هي «أحسنُ القصص»، وفيها الصبرُ والعفوُ وتمامُ الثقة بتدبير الله.",
+    summaryAr: "ألقاه إخوتُه في الجُبِّ (أي البئر) حسدًا ثم بِيع رقيقًا في مصر، فرفعه الله من ظلمة السجن إلى أن صار وزيرًا مؤتمَنًا على خزائن الأرض. وقصّتُه هي «أحسنُ القصص»، وفيها الصبرُ والعفوُ وتمامُ الثقة بتدبير الله.",
     refs: [
       "Surah Yusuf (12) — the complete narrative, called 'the best of stories' (12:3)",
       "Surah Yusuf (12:90) — forgiveness of his brothers"
@@ -753,7 +753,7 @@ const COMPANIONS = [
     titleAr: "حواريّ النبيّ ﷺ، وأحد العشرة المبشّرين بالجنة",
     category: "companion",
     summary: "A cousin of the Prophet صلى الله عليه وسلم and one of the first to embrace Islam, Az-Zubayr was called the disciple of the Prophet. He was known for his bravery at Badr, Uhud and beyond, and was one of the ten companions given glad tidings of Paradise during their lifetimes.",
-    summaryAr: "ابنُ عمّة النبيِّ ﷺ ومن أوائل من أسلم، وسمّاه النبيُّ ﷺ حَوارِيَّه. عُرف بشجاعته في بدرٍ وأُحدٍ وغيرهما، وهو أحدُ العشرة الذين بُشِّروا بالجنّة وهم أحياء.",
+    summaryAr: "ابنُ عمّة النبيِّ ﷺ ومن أوائل من أسلم، وسمّاه النبيُّ ﷺ حَوارِيَّه (أي ناصرَه وخاصّتَه). عُرف بشجاعته في بدرٍ وأُحدٍ وغيرهما، وهو أحدُ العشرة الذين بُشِّروا بالجنّة وهم أحياء.",
     refs: [
       "Sahih al-Bukhari — narrations on his courage and dedication",
       "Sira accounts of his role in the Battles of Badr, Uhud, and beyond"
@@ -781,7 +781,7 @@ const COMPANIONS = [
     titleAr: "فاتح فارس، وأحد العشرة المبشّرين بالجنة",
     category: "companion",
     summary: "One of the earliest Muslims and one of the ten promised Paradise, Sa'd was the military commander who led the decisive Battle of Al-Qadisiyyah, opening Persia to Islam. The Prophet ﷺ prayed that his supplications would always be answered.",
-    summaryAr: "من السابقين الأوّلين إلى الإسلام، وأحدُ العشرة المبشَّرين بالجنّة. قاد المسلمين في معركة القادسية الفاصلة ففُتحت بها بلادُ فارس، ودعا له النبيُّ ﷺ أن يُستجاب دعاؤه فكان مُجابَ الدعوة.",
+    summaryAr: "من السابقين الأوّلين إلى الإسلام، وأحدُ العشرة المبشَّرين بالجنّة. قاد المسلمين في معركة القادسية الفاصلة ففُتحت بها بلادُ فارس، ودعا له النبيُّ ﷺ أن يُستجاب دعاؤه فكان مُجابَ الدعوة (أي لا يكاد يدعو إلا استُجيب له).",
     refs: [
       "Sahih Muslim — the Prophet's prayer for Sa'd's supplication to be answered",
       "Historical accounts of the Battle of Al-Qadisiyyah (636 CE)"
@@ -1019,7 +1019,7 @@ const COMPANIONS = [
     titleAr: "سيّد الخزرج",
     category: "companion",
     summary: "The leader of the Khazraj tribe in Madinah and one of the chiefs of the Ansar who pledged allegiance to the Prophet ﷺ at Aqabah. He was known for his extraordinary generosity — his family would call out invitations to travelers every evening.",
-    summaryAr: "سيّدُ قبيلة الخزرج بالمدينة، وأحدُ نقباء الأنصار الذين بايعوا النبيَّ ﷺ ليلةَ العقبة. اشتُهر بكرمٍ عظيمٍ خارجٍ عن المألوف، حتى كان أهلُ بيته ينادون كلَّ مساءٍ عابري السبيل إلى الطعام.",
+    summaryAr: "سيّدُ قبيلة الخزرج بالمدينة، وأحدُ نقباء الأنصار (أي كبرائهم) الذين بايعوا النبيَّ ﷺ ليلةَ العقبة. اشتُهر بكرمٍ عظيمٍ خارجٍ عن المألوف، حتى كان أهلُ بيته ينادون كلَّ مساءٍ عابري السبيل إلى الطعام.",
     refs: [
       "Sahih al-Bukhari — narrations on his generosity and leadership",
       "Sira accounts of the Pledge of Aqabah and his role among the Ansar"
@@ -1103,7 +1103,7 @@ const COMPANIONS = [
     titleAr: "كاتب الوحي وجامع القرآن",
     category: "companion",
     summary: "The Prophet's ﷺ chief scribe of revelation, who learned Hebrew and Syriac on his command. He led the compilation of the Quran under Abu Bakr and again under Osman, and was a leading scholar of inheritance law.",
-    summaryAr: "كاتبُ الوحي الأوّل للنبيِّ ﷺ، وتعلّم العبرانيّةَ والسريانيّةَ بأمره. تولّى جمعَ القرآن في عهد أبي بكرٍ ثم في عهد عثمانَ رضي الله عنهما، وكان من أعلم الصحابة بالفرائض.",
+    summaryAr: "كاتبُ الوحي الأوّل للنبيِّ ﷺ، وتعلّم العبرانيّةَ والسريانيّةَ بأمره. تولّى جمعَ القرآن في عهد أبي بكرٍ ثم في عهد عثمانَ رضي الله عنهما، وكان من أعلم الصحابة بالفرائض (أي قسمة المواريث).",
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Quran — the compilation of the Quran",
       "Historical accounts of the standardization of the Mushaf under Osman"
@@ -1174,7 +1174,7 @@ const COMPANIONS = [
     titleAr: "معلّم القرآن وشاهد البيعتين",
     category: "companion",
     summary: "One of the leaders of the Ansar who witnessed all the pledges of Aqabah and Badr. He taught the Quran to the People of the Suffa and later spread Quranic learning in Syria.",
-    summaryAr: "أحدُ نقباء الأنصار، شهد بيعتَي العقبة كلتيهما وشهد بدرًا. علّم أهلَ الصُّفَّة القرآن، ثم نشر تعليمَ القرآن في بلاد الشام.",
+    summaryAr: "أحدُ نقباء الأنصار (أي كبرائهم الذين اختارهم النبيُّ ﷺ عليهم)، شهد بيعتَي العقبة كلتيهما وشهد بدرًا. علّم أهلَ الصُّفَّة القرآن، ثم نشر تعليمَ القرآن في بلاد الشام.",
     refs: [
       "Sahih al-Bukhari — his narrations of the pledge of Aqabah",
       "Sahih Muslim — his hadith on the virtue of teaching the Quran"
@@ -1244,7 +1244,7 @@ const COMPANIONS = [
     titleAr: "أمّ أنس، من نساء أهل الجنة",
     category: "companion",
     summary: "The mother of Anas ibn Malik, who made her son's service to the Prophet ﷺ her gift, and whose dowry from Abu Talha was his acceptance of Islam. The Prophet ﷺ said he heard her footsteps in Paradise.",
-    summaryAr: "أمُّ أنسِ بن مالك، أهدت ابنَها لخدمة النبيِّ ﷺ فكانت تلك هديّتَها إليه. وكان مهرُها من أبي طلحة أن يُسلم فأسلم، وقال النبيُّ ﷺ إنه سمع خَشْفَ قدميها بين يديه في الجنّة.",
+    summaryAr: "أمُّ أنسِ بن مالك، أهدت ابنَها لخدمة النبيِّ ﷺ فكانت تلك هديّتَها إليه. وكان مهرُها من أبي طلحة أن يُسلم فأسلم، وقال النبيُّ ﷺ إنه سمع خَشْفَ قدميها (أي صوتَ مشيها) بين يديه في الجنّة.",
     refs: [
       "Sahih Muslim — the Prophet heard her footsteps in Paradise",
       "Sahih al-Bukhari — her patience at the death of her child"
@@ -1258,7 +1258,7 @@ const COMPANIONS = [
     titleAr: "نسيبة، مجاهدة أُحُد",
     category: "companion",
     summary: "A woman of the Ansar who fought with sword and shield to defend the Prophet ﷺ at Uhud when others fled, suffering many wounds. The Prophet ﷺ said that wherever he turned that day, he saw her defending him.",
-    summaryAr: "امرأةٌ من الأنصار قاتلت بالسيف والتُّرس دفاعًا عن النبيِّ ﷺ يوم أُحدٍ حين انكشف عنه الناس، فأصابتها جراحٌ كثيرة. فقال ﷺ: ما التفتُّ يمينًا ولا شمالًا يومئذٍ إلا وأراها تقاتل دوني.",
+    summaryAr: "امرأةٌ من الأنصار قاتلت بالسيف والتُّرس (أي الدرع الذي يُتّقى به) دفاعًا عن النبيِّ ﷺ يوم أُحدٍ حين انكشف عنه الناس، فأصابتها جراحٌ كثيرة. فقال ﷺ: ما التفتُّ يمينًا ولا شمالًا يومئذٍ إلا وأراها تقاتل دوني.",
     refs: [
       "Sira accounts of the Battle of Uhud and her defense of the Prophet ﷺ",
       "Historical accounts of her role at the Battle of Yamamah"
@@ -1272,7 +1272,7 @@ const COMPANIONS = [
     titleAr: "ذات النطاقين",
     category: "companion",
     summary: "The daughter of Abu Bakr who secretly carried food to the Prophet ﷺ and her father in the cave during the Hijrah, tearing her belt in two to tie the provisions — earning her famous title from the Prophet ﷺ.",
-    summaryAr: "بنتُ أبي بكرٍ رضي الله عنهما، حملت الطعامَ سرًّا إلى النبيِّ ﷺ وأبيها في غار ثورٍ أيّام الهجرة، وشقّت نطاقَها نصفين لتربط به الزاد — فسمّاها النبيُّ ﷺ ذاتَ النطاقين.",
+    summaryAr: "بنتُ أبي بكرٍ رضي الله عنهما، حملت الطعامَ سرًّا إلى النبيِّ ﷺ وأبيها في غار ثورٍ أيّام الهجرة، وشقّت نِطاقَها (أي حزامَها) نصفين لتربط به الزاد — فسمّاها النبيُّ ﷺ ذاتَ النطاقين.",
     refs: [
       "Sahih al-Bukhari — the story of the two belts during the Hijrah",
       "Sira accounts of her long life and firmness upon truth"
@@ -3892,7 +3892,7 @@ const PROPHET_STORIES = [
     storyAr: "قال أنس بن مالك رضي الله عنه: إن كان النبي ﷺ ليُخالطنا حتى يقول لأخٍ لي صغير: يا أبا عُمير، ما فعل النُّغَير؟\n\nوكان للصبيّ طائرٌ صغير يلعب به فمات، فكان النبي ﷺ — مع كلّ ما يحمله — يسأل الصبيّ عنه، ويُكنّيه وهو يسأله.",
     arabic: "يَا أَبَا عُمَيْرٍ، مَا فَعَلَ النُّغَيْرُ",
     lesson: "Scholars drew a remarkable amount from this one line: that you may joke, that you may address a child by a title of respect, and that a small person's small sorrow is worth the time of the greatest of people.",
-    lessonAr: "استنبط أهل العلم من هذا السطر الواحد شيئًا كثيرًا: جواز المزاح، وتكنية الصغير إكرامًا له، وأن حزن الصغير الصغير يستحقّ وقت أعظم الناس.",
+    lessonAr: "استنبط أهل العلم من هذا السطر الواحد شيئًا كثيرًا: جواز المزاح، وتكنية الصغير إكرامًا له، وأنّ حزنَ الصغيرِ، على صِغَرِه، يستحقّ وقتَ أعظمِ الناس.",
     ref: "Sahih al-Bukhari, Book of Good Manners, Hadith 6129 — and Sahih Muslim",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["child", "children", "bird", "kindness", "joke", "abu umayr", "play",
