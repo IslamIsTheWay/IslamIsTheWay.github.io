@@ -252,6 +252,12 @@ async function openSurah(surah) {
              yet" breaks the promise twice. Ten surahs so far. -->
         ${iitwStoryFor(surah.n) ? `<button onclick="iitwToggleStory()" class="rq-btn rq-story" id="rqStoryBtn"
                 title="What is this surah doing, from beginning to end?"><span class="en-only">📖 Full explanation</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">📖 الشرح الكامل</span></button>` : ""}
+        <!-- Drawn ONLY where a card exists, for the same reason as the story
+             button. Ten surahs. Read the six rules at the top of
+             js/miracles.js before touching anything here: every card is
+             GRADED, and one of them is graded not-established on purpose. -->
+        ${iitwMiraclesFor(surah.n) ? `<button onclick="iitwToggleMiracle()" class="rq-btn rq-mir" id="rqMirBtn"
+                title="What this verse said before anyone could check it"><span class="en-only">🔬 The verse and what was found</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🔬 الآية وما اكتُشف بعدها</span></button>` : ""}
       </div>
     </div>
     <div class="rq-save-note" id="rqSaveNote"></div>
@@ -262,7 +268,7 @@ async function openSurah(surah) {
         — في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}
       </span>
     </div>
-    ${iitwSurahStoryHtml(surah.n)}
+    ${iitwSurahStoryHtml(surah.n) + iitwMiraclesHtml(surah.n)}
     ${tad ? iitwTadabburSurahHtml(tad, surah) : iitwTadabburEmptyHtml(surah)}`;
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
@@ -724,6 +730,119 @@ function iitwToggleStory() {
       '<span class="en-only">📖 ' + (open ? "Hide the story" : "Full explanation") + '</span>' +
       '<span class="ar-only" dir="rtl" style="font-family:\'Amiri\',serif;">📖 ' +
         (open ? "إخفاء القصّة" : "الشرح الكامل") + '</span>';
+  }
+  if (open && window.applyI18n) window.applyI18n();
+}
+
+/* ============================================================
+   THE 🔬 PANEL — الآية وما اكتُشف بعدها
+   Data and the SIX RULES are in js/miracles.js. Read them before
+   editing anything here; the grading is the reason the section
+   can be quoted at all.
+
+   WHY IT IS A THIRD BUTTON. Tadabbur answers "why THIS word".
+   The story answers "what is this surah doing". Neither answers
+   "the verse describes the physical world — was it right, and
+   when could anyone first have known?" That is a different
+   question with a different burden of proof, so it gets its own
+   panel and its own honesty apparatus.
+
+   EVERY CARD RENDERS ITS GRADE AND ITS `classical` READING. Those
+   are not optional decoration. A card that showed the science
+   without showing how the mufassirun read the verse would be an
+   argument with the other side deleted.
+   ============================================================ */
+function iitwMiraclesFor(surahNum) {
+  if (typeof MIRACLES === "undefined") return null;
+  var list = MIRACLES[String(surahNum)] || MIRACLES[surahNum] || null;
+  return (list && list.length) ? list : null;
+}
+
+function iitwMirGrade(g) {
+  var G = (typeof MIRACLES_INTRO !== "undefined" && MIRACLES_INTRO.grades) || {};
+  var d = G[g] || { en: g, ar: g };
+  return '<span class="mir-grade mir-' + g + '">' +
+         '<span class="en-only">' + d.en + '</span>' +
+         '<span class="ar-only" dir="rtl">' + d.ar + '</span></span>';
+}
+
+function iitwMirBlock(icon, enLabel, arLabel, en, ar, cls) {
+  if (!en && !ar) return "";
+  return '<div class="mir-block ' + (cls || "") + '">' +
+         '<div class="mir-block-head">' + icon +
+           '<span class="en-only">' + enLabel + '</span>' +
+           '<span class="ar-only" dir="rtl">' + arLabel + '</span></div>' +
+         '<div class="en-only">' + tadPara(en) + '</div>' +
+         '<div class="ar-only">' + tadPara(ar, true) + '</div></div>';
+}
+
+function iitwMiraclesHtml(surahNum) {
+  var list = iitwMiraclesFor(surahNum);
+  if (!list) return "";
+  var I = (typeof MIRACLES_INTRO !== "undefined") ? MIRACLES_INTRO : {};
+  var num = function (n) {
+    return (typeof toArabicDigits === "function") ? toArabicDigits(n) : n;
+  };
+
+  var h = '<div class="tad-surah mir-panel tad-hidden" id="mirPanel">';
+
+  h += '<div class="mir-head">🔬 <span class="en-only">' + (I.title || "") + '</span>' +
+       '<span class="ar-only" dir="rtl">' + (I.titleAr || "") + '</span></div>';
+  h += '<div class="mir-lead"><span class="en-only">' + (I.lead || "") + '</span>' +
+       '<span class="ar-only" dir="rtl">' + (I.leadAr || "") + '</span></div>';
+  h += '<div class="mir-notice"><span class="en-only">' + (I.notice || "") + '</span>' +
+       '<span class="ar-only" dir="rtl">' + (I.noticeAr || "") + '</span></div>';
+
+  list.forEach(function (c) {
+    h += '<div class="mir-card mir-card-' + c.grade + '" id="' + c.id + '">';
+
+    h += '<div class="mir-card-head">' +
+           '<span class="en-only">' + c.title + '</span>' +
+           '<span class="ar-only" dir="rtl">' + c.titleAr + '</span>' +
+           iitwMirGrade(c.grade) + '</div>';
+
+    h += '<div class="mir-which">' +
+         '<button type="button" class="tad-jump" onclick="iitwJumpToTadabburVerse(' + c.ayah + ')">' +
+           '<span class="en-only">verse ' + c.ayah + '</span>' +
+           '<span class="ar-only" dir="rtl">الآية ' + num(c.ayah) + '</span></button>' +
+         '<span class="en-only"> — tap to open the surah there</span>' +
+         '<span class="ar-only" dir="rtl"> — انقُر لتفتح السورة عندها</span></div>';
+
+    h += '<div class="mir-verse" dir="rtl" data-speak>' + c.verse + '</div>';
+    h += '<div class="mir-verse-en en-only">' + c.verseEn + '</div>';
+
+    h += iitwMirBlock("📖 ", "What the verse says", "ما تقوله الآية", c.says, c.saysAr, "mir-says");
+    h += iitwMirBlock("🕰️ ", "How it was read before any of this was known",
+                      "كيف قُرئت قبل أن يُعرف شيءٌ من هذا", c.classical, c.classicalAr, "mir-classical");
+    h += iitwMirBlock("🔬 ", "What is established now", "ما ثبت اليوم", c.science, c.scienceAr, "mir-science");
+    h += iitwMirBlock("📅 ", "When it became checkable", "متى صار ممكنَ التحقّق", c.when, c.whenAr, "mir-when");
+    if (c.caution || c.cautionAr) {
+      h += iitwMirBlock("⚠️ ", "Before you quote it", "قبل أن تنقلها", c.caution, c.cautionAr, "mir-caution");
+    }
+    h += '</div>';
+  });
+
+  h += '<div class="mir-foot">' +
+       '<span class="en-only">Nothing here is offered as proof that the Quran is a science book — it is not, and it does not ask to be read as one. The claim is narrower and harder to answer: this is what the words say, and this is the date anyone could first have checked them.</span>' +
+       '<span class="ar-only" dir="rtl">وليس شيءٌ ممّا ههنا مقدَّمًا على أنّ القرآن كتابُ علومٍ تجريبيّة — فليس كذلك، ولا يطلب أن يُقرأ كذلك. وإنما الدعوى أضيقُ من ذلك وأعسرُ على الردّ: هذا ما تقوله الألفاظ، وهذا تاريخُ أوّلِ يومٍ صار فيه التحقّقُ ممكنًا.</span></div>';
+
+  h += '</div>';
+  return h;
+}
+
+/* Its own toggle, independent of the other two panels. */
+function iitwToggleMiracle() {
+  var open = !window._mirOpen;
+  window._mirOpen = open;
+  var p = document.getElementById("mirPanel");
+  if (p) p.classList.toggle("tad-hidden", !open);
+  var btn = document.getElementById("rqMirBtn");
+  if (btn) {
+    btn.classList.toggle("armed", open);
+    btn.innerHTML =
+      '<span class="en-only">🔬 ' + (open ? "Hide" : "The verse and what was found") + '</span>' +
+      '<span class="ar-only" dir="rtl" style="font-family:\'Amiri\',serif;">🔬 ' +
+        (open ? "إخفاء" : "الآية وما اكتُشف بعدها") + '</span>';
   }
   if (open && window.applyI18n) window.applyI18n();
 }

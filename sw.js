@@ -85,7 +85,8 @@ const PRECACHE_CONTENT = [
   "./js/terms.js", "./js/figures.js", "./js/revival.js", "./js/bidah.js",
   "./js/judgement.js", "./js/judgement-closing.js", "./js/angels.js",
   "./js/signs.js", "./js/rise.js", "./js/golden.js", "./js/golden-lives.js",
-  "./js/golden-mirror.js", "./js/golden-closing.js"
+  "./js/golden-mirror.js", "./js/golden-closing.js",
+  "./js/surah-story.js", "./js/miracles.js"
 ];
 
 /* Hosts handled specially. */
