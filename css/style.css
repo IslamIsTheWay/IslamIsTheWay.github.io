@@ -7148,3 +7148,9 @@ html.lang-ar .mir-verse-en { font-style: normal; }
   .mir-head { font-size: 1.18rem; }
   .mir-verse { font-size: 1.3rem; line-height: 2.05; padding: 12px 14px; }
 }
+
+/* The reader's three panels are scrolled to when opened; without this the
+   sticky header covers their first line. 90px matches the rest of the site. */
+#modalBody .tad-surah,
+#modalBody .story-panel,
+#modalBody .mir-panel { scroll-margin-top: 90px; }

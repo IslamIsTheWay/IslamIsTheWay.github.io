@@ -722,7 +722,7 @@ function iitwToggleStory() {
   const open = !window._storyOpen;
   window._storyOpen = open;
   const p = document.getElementById("storyPanel");
-  if (p) p.classList.toggle("tad-hidden", !open);
+  if (p) { p.classList.toggle("tad-hidden", !open); if (open) iitwRevealPanel(p); }
   const btn = document.getElementById("rqStoryBtn");
   if (btn) {
     btn.classList.toggle("armed", open);
@@ -752,6 +752,22 @@ function iitwToggleStory() {
    without showing how the mufassirun read the verse would be an
    argument with the other side deleted.
    ============================================================ */
+/* Opening a panel that sits below another open one used to leave the reader
+   staring at whatever was already on screen, with the thing he asked for
+   thousands of pixels further down. Measured: opening the story pushed the
+   miracles panel from y=475 to y=3069 on a 900px viewport. So whichever panel
+   is opened is brought to the top of the view. Honours reduced-motion. */
+function iitwRevealPanel(el) {
+  if (!el || !el.scrollIntoView) return;
+  var reduce = window.matchMedia &&
+               window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  try {
+    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  } catch (e) {
+    el.scrollIntoView(true);
+  }
+}
+
 function iitwMiraclesFor(surahNum) {
   if (typeof MIRACLES === "undefined") return null;
   var list = MIRACLES[String(surahNum)] || MIRACLES[surahNum] || null;
@@ -835,7 +851,7 @@ function iitwToggleMiracle() {
   var open = !window._mirOpen;
   window._mirOpen = open;
   var p = document.getElementById("mirPanel");
-  if (p) p.classList.toggle("tad-hidden", !open);
+  if (p) { p.classList.toggle("tad-hidden", !open); if (open) iitwRevealPanel(p); }
   var btn = document.getElementById("rqMirBtn");
   if (btn) {
     btn.classList.toggle("armed", open);
@@ -1172,13 +1188,20 @@ function iitwToggleTadabbur() {
   const open = !window._tadOpen;
   window._tadOpen = open;
 
-  document.querySelectorAll("#modalBody .tad-surah, #modalBody .tad-ayah")
+  document.querySelectorAll(
+    /* NOT .story-panel and NOT .mir-panel. They carry .tad-surah for
+       their styling, but they belong to their own buttons. Before this
+       they were dragged open and shut by the Tadabbur button, so the
+       three buttons fought and their flags desynced from the screen. */
+    "#modalBody .tad-surah:not(.story-panel):not(.mir-panel), #modalBody .tad-ayah")
     .forEach(function (el) { el.classList.toggle("tad-hidden", !open); });
 
   /* The label is rebuilt as .en-only / .ar-only spans rather than as one
      string with the Arabic appended. Written as a single string it showed
      "🧠 Tadabbur — تدبّر" in Arabic mode, leaking the English word onto an
      Arabic page. */
+  if (open) iitwRevealPanel(document.getElementById("tadSurahPanel") ||
+                            document.querySelector("#modalBody .tad-ayah"));
   const btn = document.getElementById("rqTadBtn");
   if (btn) {
     btn.classList.toggle("armed", open);
