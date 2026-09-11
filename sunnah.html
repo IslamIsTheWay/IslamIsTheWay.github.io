@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609091106" />
+  <link rel="stylesheet" href="css/style.css?v=202609111733" />
+  <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
   <meta property="og:type" content="website" />
@@ -31,7 +32,7 @@
 </head>
 <body>
 
-  <div class="topbar">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ<span class="en-only"> — In the name of Allah, the Most Gracious, the Most Merciful</span></div>
+  <div class="topbar"><span class="q-hafs">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</span><span class="en-only"> — In the name of Allah, the Most Gracious, the Most Merciful</span></div>
 
   <header class="site-header">
     <div class="nav-wrap">
@@ -141,8 +142,8 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202609091106"></script>
-  <script src="js/sunnah.js?v=202609091106"></script>
+  <script src="js/data.js?v=202609111733"></script>
+  <script src="js/sunnah.js?v=202609111733"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -151,7 +152,7 @@
 
     /* ---------- text helpers (Arabic-aware) ---------- */
     function normAr(s) {
-      return s.replace(/[ً-ْٰـۖ-ۭ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+      return s.replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "").replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
     }
     function norm(s) {
       return normAr(String(s || "").toLowerCase()).replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim();
@@ -383,8 +384,8 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/wordlens.js?v=202609091106"></script>
-  <script src="js/main.js?v=202609091106"></script>
-  <script src="js/i18n.js?v=202609091106"></script>
+  <script src="js/wordlens.js?v=202609111733"></script>
+  <script src="js/main.js?v=202609111733"></script>
+  <script src="js/i18n.js?v=202609111733"></script>
 </body>
 </html>

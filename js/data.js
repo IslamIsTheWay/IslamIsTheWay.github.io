@@ -1089,7 +1089,7 @@ const COMPANIONS = [
     titleAr: "الرابح في تجارته",
     category: "companion",
     summary: "A Roman-raised Arab who gave up all his wealth to the Quraysh in exchange for being allowed to migrate to Madinah. When the Prophet ﷺ heard of this, he said 'Suhayb has profited! Suhayb has profited!' — and the verse 'And among people is he who sells himself seeking the pleasure of Allah' was revealed about him.",
-    summaryAr: "عربيٌّ نشأ في بلاد الروم، بذل مالَه كلَّه لقريشٍ ثمنًا لأن يُؤذَن له بالهجرة إلى المدينة. فلمّا بلغ ذلك النبيَّ ﷺ قال: «رَبِحَ صُهيبٌ، رَبِحَ صُهيبٌ»، ونزل فيه قوله تعالى: ﴿وَمِنَ النَّاسِ مَن يَشْرِي نَفْسَهُ ابْتِغَاءَ مَرْضَاتِ اللَّهِ﴾.",
+    summaryAr: "عربيٌّ نشأ في بلاد الروم، بذل مالَه كلَّه لقريشٍ ثمنًا لأن يُؤذَن له بالهجرة إلى المدينة. فلمّا بلغ ذلك النبيَّ ﷺ قال: «رَبِحَ صُهيبٌ، رَبِحَ صُهيبٌ»، ونزل فيه قوله تعالى: ﴿وَمِنَ ٱلنَّاسِ مَن يَشۡرِي نَفۡسَهُ ٱبۡتِغَآءَ مَرۡضَاتِ ٱللَّهِۚ﴾.",
     refs: [
       "Sahih Muslim — the account of his migration and sacrifice",
       "Surah Al-Baqarah (2:207) — 'sells himself seeking the pleasure of Allah' (identified as referring to Suhayb in tafsir)"
@@ -1230,7 +1230,7 @@ const COMPANIONS = [
     titleAr: "الجواد المدافع يوم أُحُد",
     category: "companion",
     summary: "A skilled archer who shielded the Prophet ﷺ at Uhud, and one of the wealthiest of the Ansar. When the verse 'You will never attain righteousness until you spend from what you love' was revealed, he gave away his most beloved garden.",
-    summaryAr: "راميٌ ماهرٌ وقى النبيَّ ﷺ بنفسه يوم أُحد، وكان من أغنى الأنصار. فلمّا نزل قولُه تعالى: ﴿لَن تَنَالُوا الْبِرَّ حَتَّىٰ تُنفِقُوا مِمَّا تُحِبُّونَ﴾ تصدّق بأحبِّ أمواله إليه، بستانِ بَيرَحاء.",
+    summaryAr: "راميٌ ماهرٌ وقى النبيَّ ﷺ بنفسه يوم أُحد، وكان من أغنى الأنصار. فلمّا نزل قولُه تعالى: ﴿لَن تَنَالُواْ ٱلۡبِرَّ حَتَّىٰ تُنفِقُواْ مِمَّا تُحِبُّونَۚ﴾ تصدّق بأحبِّ أمواله إليه، بستانِ بَيرَحاء.",
     refs: [
       "Sahih al-Bukhari — the story of the garden of Bayruha",
       "Sahih Muslim — his defense of the Prophet ﷺ at Uhud"
@@ -1468,67 +1468,67 @@ const ALL_PEOPLE = [...PROPHETS, ...COMPANIONS];
 // ---------- Featured Quran Verses (for homepage rotating quotes) ----------
 const QURAN_QUOTES = [
   {
-    arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+    arabic: "فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا",
     text: "So verily, with hardship comes ease.",
     ref: "Surah Ash-Sharh (94:6)"
   },
   {
-    arabic: "وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+    arabic: "وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ",
     text: "And whoever relies upon Allah — then He is sufficient for him.",
     ref: "Surah At-Talaq (65:3)"
   },
   {
-    arabic: "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+    arabic: "أَلَا بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ",
     text: "Verily, in the remembrance of Allah do hearts find rest.",
     ref: "Surah Ar-Ra'd (13:28)"
   },
   {
-    arabic: "وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ",
+    arabic: "وَقَالَ رَبُّكُمُ ٱدۡعُونِيٓ أَسۡتَجِبۡ لَكُمۡۚ",
     text: "And your Lord says: Call upon Me, I will respond to you.",
     ref: "Surah Ghafir (40:60)"
   },
   {
-    arabic: "فَاذْكُرُونِي أَذْكُرْكُمْ",
+    arabic: "فَٱذۡكُرُونِيٓ أَذۡكُرۡكُمۡ",
     text: "So remember Me; I will remember you.",
     ref: "Surah Al-Baqarah (2:152)"
   },
   {
-    arabic: "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+    arabic: "إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ",
     text: "Indeed, Allah is with the patient.",
     ref: "Surah Al-Baqarah (2:153)"
   },
   {
-    arabic: "وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ",
+    arabic: "وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ",
     text: "And your Lord is going to give you, and you will be satisfied.",
     ref: "Surah Ad-Duha (93:5)"
   },
   {
-    arabic: "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+    arabic: "إِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرٗا",
     text: "Indeed, with hardship comes ease.",
     ref: "Surah Ash-Sharh (94:5)"
   },
   {
-    arabic: "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ",
+    arabic: "وَمَآ أَرۡسَلۡنَٰكَ إِلَّا رَحۡمَةٗ لِّلۡعَٰلَمِينَ",
     text: "And We have not sent you except as a mercy to the worlds.",
     ref: "Surah Al-Anbiya (21:107)"
   },
   {
-    arabic: "رَبِّ زِدْنِي عِلْمًا",
+    arabic: "رَّبِّ زِدۡنِي عِلۡمٗا",
     text: "My Lord, increase me in knowledge.",
     ref: "Surah Ta-Ha (20:114)"
   },
   {
-    arabic: "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+    arabic: "لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ",
     text: "Allah does not burden a soul beyond that it can bear.",
     ref: "Surah Al-Baqarah (2:286)"
   },
   {
-    arabic: "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ",
+    arabic: "وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ",
     text: "And We are closer to him than his jugular vein.",
     ref: "Surah Qaf (50:16)"
   },
   {
-    arabic: "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ",
+    arabic: "إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡۗ",
     text: "Indeed, Allah will not change the condition of a people until they change what is in themselves.",
     ref: "Surah Ar-Ra'd (13:11)"
   }
@@ -2702,7 +2702,7 @@ const WORSHIP_STEPS = [
     titleAr: "آية الكرسي بعد كل صلاة",
     when: "After the obligatory prayer, and before sleeping.",
     whenAr: "عقب الصلاة المكتوبة، وعند النوم.",
-    arabic: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
+    arabic: "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلۡحَيُّ ٱلۡقَيُّومُۚ لَا تَأۡخُذُهُۥ سِنَةٞ وَلَا نَوۡمٞۚ",
     meaning: "The reading of Ayat al-Kursi (Surah Al-Baqarah 2:255) after every obligatory prayer is widely practised on the strength of a narration of an-Nasa'i, graded authentic by al-Albani. It is NOT in al-Bukhari or Muslim, and this site says so rather than implying otherwise. What IS in al-Bukhari is that reciting it before sleeping brings a guard from Allah and no devil comes near until morning.",
     meaningAr: "قراءة آية الكرسي عقب كل صلاة مكتوبة مشهورةٌ عند الناس، ومستندها حديثٌ عند النسائي صحّحه الألباني، وليست في الصحيحين — ونُبيِّن ذلك ولا نوهم خلافه. وأما الثابت في البخاري فهو قراءتها عند النوم، وأن من قرأها لم يزل عليه من الله حافظ ولا يقربه شيطان حتى يصبح.",
     ref: "Before sleeping: Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5010. After the prayer: Sunan an-Nasa'i, authenticated by al-Albani — not in the two Sahihs", refAr: "قبل النوم: صحيح البخاري، كتاب فضائل القرآن، حديث ٥٠١٠. وبعد الصلاة: سنن النسائي، صحّحه الألباني — خارج الصحيحين",
@@ -3633,8 +3633,8 @@ const PROPHET_STORIES = [
     theme: "Preferring someone else over yourself",
     themeAr: "الإيثار",
     story: "A hungry man came to the Prophet ﷺ, who found nothing in his own houses to give him and asked who would host him. A man of the Ansar took him home. He had only his children's food, so he told his wife to put the children to sleep, bring the food, and put out the lamp — so the guest would not see that his hosts were not eating. In the morning the Prophet ﷺ told him Allah had marvelled at what they did, and the verse was revealed: \"they give preference over themselves, even though they are in need.\"",
-    storyAr: "جاء رجلٌ جائعٌ إلى النبي ﷺ فلم يجد في بيوته ما يُطعمه، فقال: من يُضيف هذا؟ فانطلق به رجلٌ من الأنصار، وليس عنده إلا قوت صبيانه، فقال لامرأته: نوِّمي الصبيان، وقرِّبي الطعام، وأطفئي السراج — لئلا يرى الضيف أنهما لا يأكلان. فلما أصبح أخبره النبي ﷺ أن الله عجب من صنيعهما، ونزلت: ﴿وَيُؤْثِرُونَ عَلَىٰ أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ﴾.",
-    arabic: "وَيُؤْثِرُونَ عَلَىٰ أَنْفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ",
+    storyAr: "جاء رجلٌ جائعٌ إلى النبي ﷺ فلم يجد في بيوته ما يُطعمه، فقال: من يُضيف هذا؟ فانطلق به رجلٌ من الأنصار، وليس عنده إلا قوت صبيانه، فقال لامرأته: نوِّمي الصبيان، وقرِّبي الطعام، وأطفئي السراج — لئلا يرى الضيف أنهما لا يأكلان. فلما أصبح أخبره النبي ﷺ أن الله عجب من صنيعهما، ونزلت: ﴿وَيُؤۡثِرُونَ عَلَىٰٓ أَنفُسِهِمۡ وَلَوۡ كَانَ بِهِمۡ خَصَاصَةٞۚ﴾.",
+    arabic: "وَيُؤۡثِرُونَ عَلَىٰٓ أَنفُسِهِمۡ وَلَوۡ كَانَ بِهِمۡ خَصَاصَةٞۚ",
     lesson: "They put the lamp out so the guest would not feel the weight of what it cost them. Real generosity hides its own price — the moment the receiver feels indebted, something in the gift is spoiled.",
     lessonAr: "أطفآ السراج لئلا يشعر الضيف بثقل ما بذلاه. والكرم الحقّ يخفي ثمنه؛ فإذا أحسّ الآخذ بالمِنّة فسد شيءٌ من العطاء.",
     ref: "Sahih al-Bukhari, Book of the Virtues of the Ansar, Hadith 3798",

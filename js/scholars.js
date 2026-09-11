@@ -73,10 +73,10 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "And tell the believing women to lower their gaze and guard their chastity, and not to display their adornment except what appears of it, and to draw their head-coverings over their chests.",
-        ar: "وَقُل لِّلْمُؤْمِنَاتِ يَغْضُضْنَ مِنْ أَبْصَارِهِنَّ وَيَحْفَظْنَ فُرُوجَهُنَّ وَلَا يُبْدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنْهَا وَلْيَضْرِبْنَ بِخُمُرِهِنَّ عَلَىٰ جُيُوبِهِنَّ",
+        ar: "وَقُل لِّلۡمُؤۡمِنَٰتِ يَغۡضُضۡنَ مِنۡ أَبۡصَٰرِهِنَّ وَيَحۡفَظۡنَ فُرُوجَهُنَّ وَلَا يُبۡدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنۡهَاۖ وَلۡيَضۡرِبۡنَ بِخُمُرِهِنَّ عَلَىٰ جُيُوبِهِنَّۖ",
         ref: "Surah An-Nur (24:31)", refAr: "سورة النور (٢٤:٣١)" },
       { en: "O Prophet, tell your wives and your daughters and the women of the believers to draw their outer garments over themselves. That is more likely that they will be known and not be abused.",
-        ar: "يَا أَيُّهَا النَّبِيُّ قُل لِّأَزْوَاجِكَ وَبَنَاتِكَ وَنِسَاءِ الْمُؤْمِنِينَ يُدْنِينَ عَلَيْهِنَّ مِن جَلَابِيبِهِنَّ ۚ ذَٰلِكَ أَدْنَىٰ أَن يُعْرَفْنَ فَلَا يُؤْذَيْنَ",
+        ar: "يَٰٓأَيُّهَا ٱلنَّبِيُّ قُل لِّأَزۡوَٰجِكَ وَبَنَاتِكَ وَنِسَآءِ ٱلۡمُؤۡمِنِينَ يُدۡنِينَ عَلَيۡهِنَّ مِن جَلَٰبِيبِهِنَّۚ ذَٰلِكَ أَدۡنَىٰٓ أَن يُعۡرَفۡنَ فَلَا يُؤۡذَيۡنَۗ",
         ref: "Surah Al-Ahzab (33:59)", refAr: "سورة الأحزاب (٣٣:٥٩)" },
       { en: "Two kinds of the people of the Fire I have not seen… and women who are clothed yet naked, inclining and inclining others, their heads like the humps of camels — they will not enter Paradise nor find its fragrance.",
         ar: "صِنْفَانِ مِنْ أَهْلِ النَّارِ لَمْ أَرَهُمَا… وَنِسَاءٌ كَاسِيَاتٌ عَارِيَاتٌ مَائِلَاتٌ مُمِيلَاتٌ، رُءُوسُهُنَّ كَأَسْنِمَةِ الْبُخْتِ الْمَائِلَةِ، لَا يَدْخُلْنَ الْجَنَّةَ وَلَا يَجِدْنَ رِيحَهَا",
@@ -123,11 +123,11 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "And when you ask them for something, ask them from behind a screen. That is purer for your hearts and for theirs.",
-        ar: "وَإِذَا سَأَلْتُمُوهُنَّ مَتَاعًا فَاسْأَلُوهُنَّ مِن وَرَاءِ حِجَابٍ ۚ ذَٰلِكُمْ أَطْهَرُ لِقُلُوبِكُمْ وَقُلُوبِهِنَّ",
+        ar: "وَإِذَا سَأَلۡتُمُوهُنَّ مَتَٰعٗا فَسۡـَٔلُوهُنَّ مِن وَرَآءِ حِجَابٖۚ ذَٰلِكُمۡ أَطۡهَرُ لِقُلُوبِكُمۡ وَقُلُوبِهِنَّۚ",
         ref: "Surah Al-Ahzab (33:53) — those who hold it obligatory argue from this and from 33:59", refAr: "سورة الأحزاب (٣٣:٥٣) — ويستدلّ بها القائلون بالوجوب مع (٣٣:٥٩)" },
       { en: "…and not to display their adornment except what appears of it.",
-        ar: "وَلَا يُبْدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنْهَا",
-        ref: "Surah An-Nur (24:31) — those who hold it not obligatory argue that Ibn Abbas رضي الله عنهما explained 'what appears of it' as the face and the hands", refAr: "سورة النور (٢٤:٣١) — ويستدلّ القائلون بعدم الوجوب بأنّ ابن عباس رضي الله عنهما فسّر ﴿مَا ظَهَرَ مِنْهَا﴾ بالوجه والكفّين" }
+        ar: "وَلَا يُبۡدِينَ زِينَتَهُنَّ إِلَّا مَا ظَهَرَ مِنۡهَاۖ",
+        ref: "Surah An-Nur (24:31) — those who hold it not obligatory argue that Ibn Abbas رضي الله عنهما explained 'what appears of it' as the face and the hands", refAr: "سورة النور (٢٤:٣١) — ويستدلّ القائلون بعدم الوجوب بأنّ ابن عباس رضي الله عنهما فسّر ﴿مَا ظَهَرَ مِنۡهَاۖ﴾ بالوجه والكفّين" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
@@ -295,7 +295,7 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "Those who consume interest will not stand except as one stands who is being beaten by Satan into insanity… Allah has permitted trade and forbidden interest.",
-        ar: "الَّذِينَ يَأْكُلُونَ الرِّبَا لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ الَّذِي يَتَخَبَّطُهُ الشَّيْطَانُ مِنَ الْمَسِّ ۚ … وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا",
+        ar: "ٱلَّذِينَ يَأۡكُلُونَ ٱلرِّبَوٰاْ لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ ٱلَّذِي يَتَخَبَّطُهُ ٱلشَّيۡطَٰنُ مِنَ ٱلۡمَسِّۚ … وَأَحَلَّ ٱللَّهُ ٱلۡبَيۡعَ وَحَرَّمَ ٱلرِّبَوٰاْۚ",
         ref: "Surah Al-Baqarah (2:275)", refAr: "سورة البقرة (٢:٢٧٥)" },
       { en: "The Messenger of Allah ﷺ cursed the one who consumes interest, the one who pays it, the one who writes it down, and its two witnesses — and said: they are all the same.",
         ar: "لَعَنَ رَسُولُ اللَّهِ ﷺ آكِلَ الرِّبَا وَمُوكِلَهُ وَكَاتِبَهُ وَشَاهِدَيْهِ، وَقَالَ: هُمْ سَوَاءٌ",
@@ -341,7 +341,7 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "And cooperate in righteousness and piety, but do not cooperate in sin and transgression.",
-        ar: "وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ",
+        ar: "وَتَعَاوَنُواْ عَلَى ٱلۡبِرِّ وَٱلتَّقۡوَىٰۖ وَلَا تَعَاوَنُواْ عَلَى ٱلۡإِثۡمِ وَٱلۡعُدۡوَٰنِۚ",
         ref: "Surah Al-Ma'idah (5:2)", refAr: "سورة المائدة (٥:٢)" },
       { en: "Whoever gives up something for the sake of Allah, Allah replaces it with something better.",
         ar: "إِنَّكَ لَنْ تَدَعَ شَيْئًا لِلَّهِ عَزَّ وَجَلَّ إِلَّا بَدَّلَكَ اللَّهُ بِهِ مَا هُوَ خَيْرٌ لَكَ مِنْهُ",
@@ -385,7 +385,7 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "And if they strive to make you associate with Me that of which you have no knowledge, do not obey them — but accompany them in this world with kindness.",
-        ar: "وَإِن جَاهَدَاكَ عَلَىٰ أَن تُشْرِكَ بِي مَا لَيْسَ لَكَ بِهِ عِلْمٌ فَلَا تُطِعْهُمَا ۖ وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا",
+        ar: "وَإِن جَٰهَدَاكَ عَلَىٰٓ أَن تُشۡرِكَ بِي مَا لَيۡسَ لَكَ بِهِۦ عِلۡمٞ فَلَا تُطِعۡهُمَاۖ وَصَاحِبۡهُمَا فِي ٱلدُّنۡيَا مَعۡرُوفٗاۖ",
         ref: "Surah Luqman (31:15)", refAr: "سورة لقمان (٣١:١٥)" },
       { en: "Obedience is only in what is right.",
         ar: "إِنَّمَا الطَّاعَةُ فِي الْمَعْرُوفِ",
@@ -432,8 +432,8 @@ const FIQH_RULINGS = [
         ar: "لَيَكُونَنَّ مِنْ أُمَّتِي أَقْوَامٌ يَسْتَحِلُّونَ الْحِرَ وَالْحَرِيرَ وَالْخَمْرَ وَالْمَعَازِفَ",
         ref: "Sahih al-Bukhari, Book of Drinks, Hadith 5590 — Sahih. This is the central proof of those who forbid it.", refAr: "صحيح البخاري، كتاب الأشربة، حديث ٥٥٩٠ — صحيح. وهو عمدةُ من قال بالتحريم." },
       { en: "And of the people is he who buys the diversion of speech to mislead from the way of Allah.",
-        ar: "وَمِنَ النَّاسِ مَن يَشْتَرِي لَهْوَ الْحَدِيثِ لِيُضِلَّ عَن سَبِيلِ اللَّهِ",
-        ref: "Surah Luqman (31:6) — Ibn Mas'ud رضي الله عنه explained 'the diversion of speech' as singing; that explanation is from a companion, not a text of the Quran itself", refAr: "سورة لقمان (٣١:٦) — فسّر ابن مسعود رضي الله عنه ﴿لَهْوَ ٱلْحَدِيثِ﴾ بالغناء، وهو تفسيرُ صحابيٍّ لا نصُّ القرآن نفسِه" }
+        ar: "وَمِنَ ٱلنَّاسِ مَن يَشۡتَرِي لَهۡوَ ٱلۡحَدِيثِ لِيُضِلَّ عَن سَبِيلِ ٱللَّهِ",
+        ref: "Surah Luqman (31:6) — Ibn Mas'ud رضي الله عنه explained 'the diversion of speech' as singing; that explanation is from a companion, not a text of the Quran itself", refAr: "سورة لقمان (٣١:٦) — فسّر ابن مسعود رضي الله عنه ﴿لَهۡوَ ٱلۡحَدِيثِ﴾ بالغناء، وهو تفسيرُ صحابيٍّ لا نصُّ القرآن نفسِه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",
@@ -473,7 +473,7 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "And do not backbite one another. Would one of you like to eat the flesh of his dead brother? You would hate it.",
-        ar: "وَلَا يَغْتَب بَّعْضُكُم بَعْضًا ۚ أَيُحِبُّ أَحَدُكُمْ أَن يَأْكُلَ لَحْمَ أَخِيهِ مَيْتًا فَكَرِهْتُمُوهُ",
+        ar: "وَلَا يَغۡتَب بَّعۡضُكُم بَعۡضًاۚ أَيُحِبُّ أَحَدُكُمۡ أَن يَأۡكُلَ لَحۡمَ أَخِيهِ مَيۡتٗا فَكَرِهۡتُمُوهُۚ",
         ref: "Surah Al-Hujurat (49:12)", refAr: "سورة الحجرات (٤٩:١٢)" },
       { en: "Do you know what backbiting is? — Allah and His Messenger know best. — Your mentioning your brother with what he dislikes.",
         ar: "أَتَدْرُونَ مَا الْغِيبَةُ؟ قَالُوا: اللَّهُ وَرَسُولُهُ أَعْلَمُ. قَالَ: ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ",
@@ -521,7 +521,7 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins.",
-        ar: "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا",
+        ar: "قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ",
         ref: "Surah Az-Zumar (39:53)", refAr: "سورة الزمر (٣٩:٥٣)" },
       { en: "A servant committed a sin and said: my Lord, forgive me my sin. His Lord said: My servant knew that he has a Lord who forgives sin and takes for it — I have forgiven My servant. (Repeated three times in the hadith.)",
         ar: "أَذْنَبَ عَبْدٌ ذَنْبًا فَقَالَ: رَبِّ اغْفِرْ لِي ذَنْبِي. فَقَالَ: عَلِمَ عَبْدِي أَنَّ لَهُ رَبًّا يَغْفِرُ الذَّنْبَ وَيَأْخُذُ بِهِ، غَفَرْتُ لِعَبْدِي",
@@ -567,7 +567,7 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "\"And when you travel throughout the land, there is no blame upon you for shortening the prayer.\"",
-        ar: "﴿وَإِذَا ضَرَبْتُمْ فِي الْأَرْضِ فَلَيْسَ عَلَيْكُمْ جُنَاحٌ أَن تَقْصُرُوا مِنَ الصَّلَاةِ﴾",
+        ar: "﴿وَإِذَا ضَرَبۡتُمۡ فِي ٱلۡأَرۡضِ فَلَيۡسَ عَلَيۡكُمۡ جُنَاحٌ أَن تَقۡصُرُواْ مِنَ ٱلصَّلَوٰةِ﴾",
         ref: "Surah An-Nisa (4:101)", refAr: "سورة النساء (٤:١٠١)" },
       { en: "Ibn Umar said: I accompanied the Prophet ﷺ and he did not pray more than two rak'ahs on a journey, and Abu Bakr, Umar and Uthman likewise.",
         ar: "قال ابن عمر: صحبتُ النبي ﷺ فكان لا يزيد في السفر على ركعتين، وأبو بكر وعمر وعثمان كذلك.",
@@ -703,7 +703,7 @@ const FIQH_RULINGS = [
     answerAr: "في كلّ صفحةٍ من هذا الباب تقريبًا يُعرض اختلاف أهل العلم، وفي هذه لا يختلفون. فاليأس من رحمة الله ليس تواضعًا ولا هو خوف الصالحين، بل سمّاه القرآن من صفات الضالّين، ونصوص سَعة المغفرة من أشدّ ما في الدين توكيدًا.",
     points: [
       { en: "The verse is addressed to those who went furthest, and it uses the word ALL: \"Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins.\"",
-        ar: "والآية خطابٌ لمن بلغ أقصى ما يُبلغ، وفيها لفظ العموم: ﴿قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا﴾." },
+        ar: "والآية خطابٌ لمن بلغ أقصى ما يُبلغ، وفيها لفظ العموم: ﴿قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾." },
       { en: "The repentance is between you and Allah. There is no requirement in Islam to confess a past sin to any human being, and the scholars are agreed that concealing what Allah concealed is what should be done.",
         ar: "والتوبة بينك وبين الله. وليس في الإسلام أن يُقرّ المرء بذنبٍ ماضٍ لبشر، واتفق أهل العلم على أنّ الستر بما ستر الله هو المطلوب." },
       { en: "It does not require a feeling. It requires stopping, regretting, and resolving not to return — and if a right of another person is involved, returning it or seeking their pardon.",
@@ -713,10 +713,10 @@ const FIQH_RULINGS = [
     ],
     evidence: [
       { en: "\"Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed Allah forgives all sins. Indeed it is He who is the Forgiving, the Merciful.\"",
-        ar: "﴿قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ﴾",
+        ar: "﴿قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ﴾",
         ref: "Surah Az-Zumar (39:53)", refAr: "سورة الزمر (٣٩:٥٣)" },
       { en: "\"And who despairs of the mercy of his Lord except those astray?\"",
-        ar: "﴿وَمَن يَقْنَطُ مِن رَّحْمَةِ رَبِّهِ إِلَّا الضَّالُّونَ﴾",
+        ar: "﴿وَمَن يَقۡنَطُ مِن رَّحۡمَةِ رَبِّهِۦٓ إِلَّا ٱلضَّآلُّونَ﴾",
         ref: "Surah Al-Hijr (15:56)", refAr: "سورة الحجر (١٥:٥٦)" },
       { en: "The Prophet ﷺ said Allah says: \"O son of Adam, were your sins to reach the clouds of the sky, then you sought My forgiveness, I would forgive you and I would not mind.\"",
         ar: "قال ﷺ فيما يرويه عن ربه: «يَا ابْنَ آدَمَ، لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلَا أُبَالِي»",

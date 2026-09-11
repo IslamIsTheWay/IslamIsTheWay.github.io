@@ -1352,8 +1352,13 @@ done
 # 2. Search the ENGLISH for the story, then copy the ARABIC from the same
 #    record. Never type the Arabic from memory.
 
-# 3. For Quranic material, fetch the whole Quran once and search it:
-curl -s -o quran-uthmani.json "https://api.alquran.cloud/v1/quran/quran-uthmani"
+# 3. For Quranic material, use js/quran-text.js - it IS the Madinah Mushaf's
+#    text (KFGQPC Hafs, PART 28). Parse after "QURAN_TEXT = " and cut the
+#    verse words by (surah, ayah, word range). If you need a separate copy,
+#    this is the same text (strip the verse number at the end of each line):
+curl -s -o qpc_hafs.json "https://api.quran.com/api/v4/quran/verses/qpc_hafs"
+#    NEVER alquran.cloud "quran-uthmani" (Tanzil): a different encoding that
+#    the Mushaf font draws wrongly. ./check-quran.sh catches it.
 ```
 
 **Story** (`PROPHET_STORIES` in data.js) — `id, title, titleAr, theme, themeAr,
@@ -5539,3 +5544,166 @@ page.
 2. Business and work beyond riba - still the largest content gap.
 3. Congregation and the mosque (al-Bukhari 645 and 900 already verified).
 4. Everything still open from PART 25 and 26.
+
+
+---
+---
+
+
+<!-- ============================================================ -->
+# PART 28 - The Quran in the Madinah Mushaf's own text and font
+<!-- ============================================================ -->
+
+*Added 11 September 2026.*
+
+He wrote: the Quran on the site looked like "Iranian writing, not the Othmani
+writing we use in our Muslim countries - the origin of the Quran", and he
+wanted it changed everywhere, including where an explanation quotes a verse,
+without having to check page by page himself.
+
+## What was actually wrong
+
+The text was Tanzil's Uthmani (alquran.cloud `quran-uthmani`) drawn in Amiri.
+The letters were Uthmani, but four things made it read as "another mushaf":
+
+1. **The sukun was a circle.** The Madinah Mushaf draws it as the small head
+   of a kha (U+06E1); in the Madinah text a circle means a SILENT letter.
+2. **The open tanween was marked with a small meem** (tanween + U+06ED/U+06E2)
+   where the Mushaf staggers the two strokes.
+3. **The basmala was glued onto verse 1 of 112 surahs** - Al-Baqarah's first
+   verse read "In the name of Allah... Alif Lam Mim". It is not verse 1.
+4. **Amiri** is a Bulaq-style face, not the Madinah hand.
+
+## What the site uses now
+
+* **Text:** the King Fahd Glorious Quran Printing Complex's Uthmanic Hafs
+  text, version 18 (`hafsData_v18.json`, from the Complex's developer
+  release). Checked against quran.com's `text_qpc_hafs`: 6,236 of 6,236
+  verses identical (2:72 differs only in the kind of space before its
+  number). Against the old Tanzil text the letter skeleton agrees on every
+  verse except 16, all of them the Mushaf's own hamza seats (تِلۡقَآيِٕ,
+  ٱمۡرِيٕٖ). `js/quran-text.js` was regenerated from it (`a` only; `e` and `p`
+  untouched) - see the file header.
+* **Font:** KFGQPC HAFS Uthmanic Script v18, `fonts/UthmanicHafs_V18.woff2`
+  (+ `.ttf`), byte-identical to the copies quran.com serves (hashes in
+  fonts/README.txt and check-quran.sh). Licence, embedded in the font: free
+  to use, copy and distribute; never sell, modify, subset or convert.
+* **Page numbers:** NOT taken from the KFGQPC data - its `page` field puts
+  56 verses on a different page from the printed Madinah Mushaf and from
+  quran.com. `p` stays as it was.
+
+## How it is drawn
+
+The KFGQPC text writes the open tanween with U+0657, U+065E and U+0656 -
+code points every other font (Amiri included) draws as a DIFFERENT MARK. So
+the text and the font must travel together:
+
+* `.ayah-block .arabic-text`, `.reader-basmala`, `.tad-w` use the face
+  directly; static HTML verses (the top-bar basmala on every page, the photo
+  bands, the index's tafsir cards) carry `<span class="q-hafs">`.
+* Everything rendered from the data files is wrapped at run time by
+  `iitwMarkQuran()` (main.js): every `﴿…﴾` - tracked across markup inside
+  the quotation - and every unbracketed run of Arabic that carries a
+  Madinah-only mark. A MutationObserver runs it before paint, so a verse is
+  never shown in Amiri first. It never touches a node i18n has translated.
+* `font-display: block` (the fallback would draw wrong vowels), a preload
+  link on every page, and the font is in sw.js's shell precache - a Quran
+  that opens offline without it would open with wrong marks.
+* **Copying out:** `iitwQuranPortable()` re-spells Madinah words in the
+  ordinary Unicode marks when a verse is copied off the page (and in the
+  Guidance "copy this answer" button), because the chat it is pasted into
+  has no Mushaf font.
+* The reader draws the basmala on its own line above verse 1 - not for
+  al-Fatihah (where it is verse 1) or at-Tawbah. Its words come from 1:1 of
+  the shipped text. The API fallback now fetches quran.com `qpc_hafs`.
+
+## Every quotation on the site was converted - how
+
+3,190 quotations in 53 files, each rebuilt from whole KFGQPC words. The
+method, so it can be repeated:
+
+1. **Locate** a quotation by a letter skeleton that drops every alef, every
+   hamza seat and every mark (so the Imlaei الصلاة and the Uthmani ٱلصَّلَوٰة,
+   العالمين and ٱلۡعَٰلَمِين, meet), reading a waw that carries the dagger alef,
+   and a mid-word alef maqsura that carries it, as alef (يتوفّاكم / يَتَوَفَّىٰكُم).
+2. **Align to whole words** - a match must start and end on KFGQPC word
+   boundaries. A dropped proclitic is allowed (لِتَطۡمَئِنَّ from
+   وَلِتَطۡمَئِنَّ, رَبِّ ٱلنَّاسِ from بِرَبِّ ٱلنَّاسِ).
+3. **Choose the verse** when the words occur in several: the harakat the
+   site wrote first (the skeleton cannot tell إِنَّا لِلَّهِ from إِنَّ ٱللَّهَ),
+   then the long vowels (مَلِكِ 114:2 is not مَٰلِكِ 1:4 - the author was
+   CONTRASTING them), then the reference printed beside the quotation, then
+   the surah the section is about, then the closest spelling.
+4. **Rebuild** from the KFGQPC words, keeping the site's own `**bold**` inside
+   the quotation, and never cutting a Mushaf word in two with a space
+   (يَٰٓأَيُّهَا stays one word).
+5. **Refuse** what is not a quotation: a one- or two-word phrase whose vowels
+   differ from the verse (a lemma like بَرۡزَخ, a counterfactual like
+   نَعۡبُدُكَ that the author wrote to show what the verse did NOT say), and
+   any dhikr or hadith that happens to contain Quranic words - those keep
+   their own spelling. A guided fuzzy match was allowed only where a verse
+   reference is printed, for three words or more, with every word close.
+
+Found and fixed by hand along the way:
+
+* **Three hadith sentences inside Quran brackets** - «فِي أَخْمَصِ قَدَمَيْهِ»
+  (destination.js), «وَأَبُوءُ لَكَ بِذَنْبِي» (judgement-closing.js), «وَآخِرُ
+  ذَلِكَ نَارٌ» (signs.js). ﴿﴾ on a hadith presents it as Quran.
+* **Four "quotations" in Quran brackets that were not the verse's words** -
+  «فاقتلوهم حيث وجدتموهم» (not verbatim anywhere; now 4:89's words in the
+  title and 9:5's in the Tawbah paragraph), «لِعِبَادِيَ الذين أسرفوا» (39:53 is
+  يَٰعِبَادِيَ), «والليل لباسًا» (78:10 is وَجَعَلۡنَا ٱلَّيۡلَ لِبَاسٗا), «واصبر نفسك
+  معهم» (18:28 is مَعَ ٱلَّذِينَ يَدۡعُونَ رَبَّهُم).
+* **50 rub'-al-hizb stars used as verse separators** in tadabbur.js - ۞ marks
+  a quarter-hizb; between verses the sign is ۝.
+* **A verse written as \uXXXX escapes** in guidance.html's self-harm panel -
+  invisible to every scan that looks for Arabic characters.
+* **30 word-study headwords** re-spelled in the Madinah marks.
+* **12 Arabic search normalisers** stopped at U+0652 and would have left the
+  Madinah sukun and open tanween inside words; all now strip
+  U+0610-061A, U+064B-065F, U+0670, U+06D6-06ED, U+0640, and fold ٱ.
+
+## RULES THIS ROUND EARNED
+
+**Cut every verse from js/quran-text.js; never from alquran.cloud or
+tanzil.net.** `./check-quran.sh` fails on the old spelling's fingerprints.
+
+**﴿…﴾ is for the Quran and nothing else.** A hadith is «…». A verse quoted
+inside a hadith gets ﴿﴾ inside the «» (tadabbur.js, the Seven Oft-Repeated).
+
+**Never put a human sentence in the same unbracketed run as a Madinah-spelled
+verse.** The wrapper would draw the sentence in the Mushaf's face. A verse
+field with a note after it brackets the verse (misunderstood.js, 24:31).
+
+**Never a round sukun in a headword or in brackets.** In this face U+0652 is
+the silent-letter circle.
+
+**Arabic can hide as \uXXXX.** Decode string literals before concluding a
+file holds no Arabic.
+
+**Never `taskkill /IM python.exe`.** It killed his two local video apps
+(ports 8765/8766) along with the script it was meant to stop; they were
+restarted with his own `Start Video Apps.vbs`. Stop a background task by
+its ID.
+
+## Measured
+
+* 6,236/6,236 verses KFGQPC; basmala on its own line on 112 surahs, absent
+  on 1 and 9.
+* 1,795 bracketed quotations: every word a KFGQPC word form, except four
+  grammar words the author discusses (إنّ, يَرۡزُقۡ, لِبَاس, أَنۢبَتَ).
+* In Edge (desktop and 390px), every text node on 12 pages that carries a
+  Madinah mark or ﴿ is drawn in the KFGQPC face (quran 469, guidance 416,
+  judgement 170, golden 48, ...); 51 JS files parse; 18 pages load with no
+  page error. Copying 1:2 off the reader puts U+0652 on the clipboard, not
+  U+06E1. **Not yet seen on his iPhone** - quran.com serves the same font to
+  iOS Safari, but his device is the test.
+
+## Open work as of 11 September 2026
+
+1. Look at the reader and a tadabbur panel on his iPhone and confirm the
+   sukun, the staggered tanween and the basmala line look as in his Mushaf.
+2. `js/judgement.js` keeps a hadith (al-Bukhari 7563) in a field named
+   `quran` - it renders in Amiri with its hadith reference, but the field
+   name invites the next mistake.
+3. Everything still open from PART 27.

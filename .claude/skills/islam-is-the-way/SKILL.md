@@ -116,7 +116,13 @@ js/account.js              reader sign-in + saved verse   (quran.html)
 js/quran-text.js           THE WHOLE QURAN — 114 surahs, 6,236 verses, the
                            English translation and the Mushaf page of every
                            ayah. openSurah() reads THIS, not the API. 2.2MB.
-                           This is what makes a surah open with no connection
+                           This is what makes a surah open with no connection.
+                           The Arabic is the MADINAH MUSHAF's own text (KFGQPC
+                           Hafs v18) and needs fonts/UthmanicHafs_V18 - every
+                           verse quoted anywhere is cut from here (PART 28,
+                           ./check-quran.sh)
+fonts/UthmanicHafs_V18.*   the King Fahd Complex's Mushaf font. Licence: use
+                           and share, NEVER modify or subset (fonts/README.txt)
 js/bidah.js                BIDAH — adding to the religion   (guidance.html#bidah)
 js/misunderstood.js        MISUNDERSTOOD — the six things said about Islam and
                            what the texts say: the fighting verses with the

@@ -74,10 +74,10 @@ const REVIVAL = {
       title: "At Uhud, He told them whose fault it was",
       titleAr: "في أُحُد، بيَّن لهم ممّن أُتوا",
       body: "The generation that fought at Uhud was the best generation this ummah has had, led by the Prophet ﷺ himself. They were defeated. And when they asked how that could have happened, the answer came down in the Quran — and it did not blame Quraish.\n\n\"And when a disaster struck you, although you had struck them with one twice as great, you said: from where is this? Say: it is from yourselves.\"\n\nIf that is what was said to the companions, on the battlefield, with the Messenger of Allah ﷺ among them, then it settles the method for everyone after them. When something goes wrong with this ummah, the first place to look is inward.",
-      bodyAr: "الجيل الذي قاتل يوم أُحُد خيرُ جيلٍ في هذه الأمّة، وعلى رأسه رسول الله ﷺ نفسه. ثم هُزموا. فلمّا سألوا: أنّى هذا؟ نزل الجواب في القرآن، ولم يكن فيه لومٌ لقريش.\n\n﴿أَوَلَمَّا أَصَابَتْكُم مُّصِيبَةٌ قَدْ أَصَبْتُم مِّثْلَيْهَا قُلْتُمْ أَنَّىٰ هَٰذَا ۖ قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ﴾.\n\nفإذا كان هذا ما قيل للصحابة، في ساحة المعركة، ورسول الله ﷺ بين أظهرهم، فقد استقرّت الطريقة لمن بعدهم: إذا أصاب هذه الأمّة شيء، فأول ما يُنظر فيه هو الداخل.",
-      arabic: "قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ",
+      bodyAr: "الجيل الذي قاتل يوم أُحُد خيرُ جيلٍ في هذه الأمّة، وعلى رأسه رسول الله ﷺ نفسه. ثم هُزموا. فلمّا سألوا: أنّى هذا؟ نزل الجواب في القرآن، ولم يكن فيه لومٌ لقريش.\n\n﴿أَوَلَمَّآ أَصَٰبَتۡكُم مُّصِيبَةٞ قَدۡ أَصَبۡتُم مِّثۡلَيۡهَا قُلۡتُمۡ أَنَّىٰ هَٰذَاۖ قُلۡ هُوَ مِنۡ عِندِ أَنفُسِكُمۡۗ﴾.\n\nفإذا كان هذا ما قيل للصحابة، في ساحة المعركة، ورسول الله ﷺ بين أظهرهم، فقد استقرّت الطريقة لمن بعدهم: إذا أصاب هذه الأمّة شيء، فأول ما يُنظر فيه هو الداخل.",
+      arabic: "قُلۡ هُوَ مِنۡ عِندِ أَنفُسِكُمۡۗ",
       note: "And at Hunayn the lesson was the reverse of Uhud and pointed the same way: \"and on the day of Hunayn, when your great numbers pleased you but availed you nothing.\" Defeat when they were few, and defeat when they were many — so that nobody could conclude the issue was ever the numbers.",
-      noteAr: "وكان الدرس يوم حنين عكس أُحُد ويدلّ على المعنى نفسه: ﴿وَيَوْمَ حُنَيْنٍ إِذْ أَعْجَبَتْكُمْ كَثْرَتُكُمْ فَلَمْ تُغْنِ عَنكُمْ شَيْئًا﴾. هُزموا وهم قِلّة، وابتُلوا وهم كثرة، حتى لا يظنّ أحدٌ أنّ المسألة كانت في العدد قطّ.",
+      noteAr: "وكان الدرس يوم حنين عكس أُحُد ويدلّ على المعنى نفسه: ﴿وَيَوۡمَ حُنَيۡنٍ إِذۡ أَعۡجَبَتۡكُمۡ كَثۡرَتُكُمۡ فَلَمۡ تُغۡنِ عَنكُمۡ شَيۡـٔٗا﴾. هُزموا وهم قِلّة، وابتُلوا وهم كثرة، حتى لا يظنّ أحدٌ أنّ المسألة كانت في العدد قطّ.",
       ref: "Surah Aal-Imran (3:165); Surah At-Tawbah (9:25)", refAr: "سورة آل عمران (٣:١٦٥)؛ سورة التوبة (٩:٢٥)",
       strength: "The Quran", strengthAr: "من القرآن",
       strengthAr: "القرآن الكريم"
@@ -87,10 +87,10 @@ const REVIVAL = {
       title: "And the one He named as the cause of losing your strength",
       titleAr: "والذي سمّاه سببًا لذهاب قوّتكم",
       body: "\"And obey Allah and His Messenger, and do not dispute with one another, or you will fail and your strength will depart. And be patient — indeed Allah is with the patient.\"\n\nThe word used is rih — literally the wind: the force that carries a ship, the momentum of a people. Allah did not say disputing is unpleasant, or that it slows you down. He said your strength goes.\n\nAnyone who has watched Muslims argue with each other over the last century, while the things that were built in Baghdad and Cordoba stand in other people's museums, has watched this verse being demonstrated.",
-      bodyAr: "﴿وَأَطِيعُوا اللَّهَ وَرَسُولَهُ وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رِيحُكُمْ ۖ وَاصْبِرُوا ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾.\n\nواللفظ «ريحكم»، وهي القوّة التي تجري بها السفينة، ودولة القوم ونفاذ أمرهم. ولم يقل سبحانه إنّ التنازع مكروهٌ أو مُبطئ، بل قال: تذهب ريحكم.\n\nومن رأى تنازع المسلمين في القرن الأخير، وما بُني في بغداد وقرطبة قائمٌ في متاحف غيرهم، فقد رأى هذه الآية تُقام أمام عينيه.",
-      arabic: "وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رِيحُكُمْ",
+      bodyAr: "﴿وَأَطِيعُواْ ٱللَّهَ وَرَسُولَهُۥ وَلَا تَنَٰزَعُواْ فَتَفۡشَلُواْ وَتَذۡهَبَ رِيحُكُمۡۖ وَٱصۡبِرُوٓاْۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ﴾.\n\nواللفظ «ريحكم»، وهي القوّة التي تجري بها السفينة، ودولة القوم ونفاذ أمرهم. ولم يقل سبحانه إنّ التنازع مكروهٌ أو مُبطئ، بل قال: تذهب ريحكم.\n\nومن رأى تنازع المسلمين في القرن الأخير، وما بُني في بغداد وقرطبة قائمٌ في متاحف غيرهم، فقد رأى هذه الآية تُقام أمام عينيه.",
+      arabic: "وَلَا تَنَٰزَعُواْ فَتَفۡشَلُواْ وَتَذۡهَبَ رِيحُكُمۡۖ",
       note: "And beside it: \"And hold firmly to the rope of Allah, all together, and do not become divided.\" The command is to hold to the rope — not to each other's opinions. Unity was ordered around a thing, and the thing was named.",
-      noteAr: "وإلى جانبها: ﴿وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا﴾. فالأمر بالاعتصام بالحبل، لا بآراء بعضنا بعضًا. فقد أُمر بالاجتماع على شيء، وسُمّي ذلك الشيء.",
+      noteAr: "وإلى جانبها: ﴿وَٱعۡتَصِمُواْ بِحَبۡلِ ٱللَّهِ جَمِيعٗا وَلَا تَفَرَّقُواْۚ﴾. فالأمر بالاعتصام بالحبل، لا بآراء بعضنا بعضًا. فقد أُمر بالاجتماع على شيء، وسُمّي ذلك الشيء.",
       ref: "Surah Al-Anfal (8:46); Surah Aal-Imran (3:103)", refAr: "سورة الأنفال (٨:٤٦)؛ سورة آل عمران (٣:١٠٣)",
       strength: "The Quran", strengthAr: "من القرآن",
       strengthAr: "القرآن الكريم"
@@ -104,19 +104,19 @@ const REVIVAL = {
   lawIntroAr: "آيتان في سورتين تقولان الشيء نفسه من جهتين متقابلتين: إحداهما في رفع الحال، والأخرى في زوال النعمة. وهما جميعًا تُغلقان المسألة إغلاقًا: لا يتغيّر شيءٌ في الخارج حتى يتغيّر شيءٌ في الداخل.",
   law: [
     { en: "\"Indeed, Allah will not change the condition of a people until they change what is in themselves.\"",
-      ar: "﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾",
+      ar: "﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡۗ﴾",
       ref: "Surah Ar-Ra'd (13:11)", refAr: "سورة الرعد (١٣:١١)" },
     { en: "\"That is because Allah would not change a favour which He had bestowed upon a people until they change what is in themselves.\"",
-      ar: "﴿ذَٰلِكَ بِأَنَّ اللَّهَ لَمْ يَكُ مُغَيِّرًا نِّعْمَةً أَنْعَمَهَا عَلَىٰ قَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾",
+      ar: "﴿ذَٰلِكَ بِأَنَّ ٱللَّهَ لَمۡ يَكُ مُغَيِّرٗا نِّعۡمَةً أَنۡعَمَهَا عَلَىٰ قَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡ﴾",
       ref: "Surah Al-Anfal (8:53)", refAr: "سورة الأنفال (٨:٥٣)" },
     { en: "\"O you who believe — if you support Allah, He will support you and plant your feet firmly.\"",
-      ar: "﴿يَا أَيُّهَا الَّذِينَ آمَنُوا إِن تَنصُرُوا اللَّهَ يَنصُرْكُمْ وَيُثَبِّتْ أَقْدَامَكُمْ﴾",
+      ar: "﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِن تَنصُرُواْ ٱللَّهَ يَنصُرۡكُمۡ وَيُثَبِّتۡ أَقۡدَامَكُمۡ﴾",
       ref: "Surah Muhammad (47:7)", refAr: "سورة محمد (٤٧:٧)" },
     { en: "\"Allah has promised those among you who believe and do righteous deeds that He will surely make them successors in the land, as He made successors those before them, and that He will surely establish for them their religion which He has approved for them, and that He will surely exchange their fear for security — they worship Me, associating nothing with Me.\" The promise is there. So is the condition, in the last clause.",
-      ar: "﴿وَعَدَ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَعَمِلُوا الصَّالِحَاتِ لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ كَمَا اسْتَخْلَفَ الَّذِينَ مِن قَبْلِهِمْ وَلَيُمَكِّنَنَّ لَهُمْ دِينَهُمُ الَّذِي ارْتَضَىٰ لَهُمْ وَلَيُبَدِّلَنَّهُم مِّن بَعْدِ خَوْفِهِمْ أَمْنًا ۚ يَعْبُدُونَنِي لَا يُشْرِكُونَ بِي شَيْئًا﴾ — فالوعد ثابت، والشرط في آخرها.",
+      ar: "﴿وَعَدَ ٱللَّهُ ٱلَّذِينَ ءَامَنُواْ مِنكُمۡ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ لَيَسۡتَخۡلِفَنَّهُمۡ فِي ٱلۡأَرۡضِ كَمَا ٱسۡتَخۡلَفَ ٱلَّذِينَ مِن قَبۡلِهِمۡ وَلَيُمَكِّنَنَّ لَهُمۡ دِينَهُمُ ٱلَّذِي ٱرۡتَضَىٰ لَهُمۡ وَلَيُبَدِّلَنَّهُم مِّنۢ بَعۡدِ خَوۡفِهِمۡ أَمۡنٗاۚ يَعۡبُدُونَنِي لَا يُشۡرِكُونَ بِي شَيۡـٔٗاۚ﴾ — فالوعد ثابت، والشرط في آخرها.",
       ref: "Surah An-Nur (24:55)", refAr: "سورة النور (٢٤:٥٥)" },
     { en: "\"You are the best nation produced for mankind: you enjoin what is right, and forbid what is wrong, and believe in Allah.\" It is worth reading slowly. The description is not a title held regardless of conduct — the three verbs after it are what the description is FOR.",
-      ar: "﴿كُنتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ تَأْمُرُونَ بِالْمَعْرُوفِ وَتَنْهَوْنَ عَنِ الْمُنكَرِ وَتُؤْمِنُونَ بِاللَّهِ﴾ — وحقُّها أن تُقرأ على مهل: فليست الخيريّة لقبًا يُحمل مع أيّ حال، وإنما الأفعال الثلاثة بعدها هي عِلّتها.",
+      ar: "﴿كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَتَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَتُؤۡمِنُونَ بِٱللَّهِۗ﴾ — وحقُّها أن تُقرأ على مهل: فليست الخيريّة لقبًا يُحمل مع أيّ حال، وإنما الأفعال الثلاثة بعدها هي عِلّتها.",
       ref: "Surah Aal-Imran (3:110)", refAr: "سورة آل عمران (٣:١١٠)" }
   ],
   malik: {
@@ -138,10 +138,10 @@ const REVIVAL = {
       title: "The prayer, before anything else",
       titleAr: "الصلاة قبل كلّ شيء",
       body: "Nothing else on this list will hold without it. Allah described the generations that came after the prophets and lost their way with one clause: \"But there came after them successors who neglected the prayer and followed desires — so they are going to meet evil.\" The neglect of the prayer is named first, and everything else followed from it.\n\nThis is where a revival starts, and it is measurable tonight: five prayers, on time, in the mosque for the men who can reach it.",
-      bodyAr: "لا يثبت شيءٌ ممّا في هذه القائمة بدونها. وقد وصف الله الأجيال التي جاءت بعد الأنبياء فضلّت بجملةٍ واحدة: ﴿فَخَلَفَ مِن بَعْدِهِمْ خَلْفٌ أَضَاعُوا الصَّلَاةَ وَاتَّبَعُوا الشَّهَوَاتِ ۖ فَسَوْفَ يَلْقَوْنَ غَيًّا﴾. فقُدِّم ذكر إضاعة الصلاة، وتبعها ما تبعها.\n\nومن هنا يبدأ الإصلاح، وهو ممّا يُقاس هذه الليلة: خمس صلواتٍ في وقتها، وفي المسجد لمن قدر عليه من الرجال.",
+      bodyAr: "لا يثبت شيءٌ ممّا في هذه القائمة بدونها. وقد وصف الله الأجيال التي جاءت بعد الأنبياء فضلّت بجملةٍ واحدة: ﴿فَخَلَفَ مِنۢ بَعۡدِهِمۡ خَلۡفٌ أَضَاعُواْ ٱلصَّلَوٰةَ وَٱتَّبَعُواْ ٱلشَّهَوَٰتِۖ فَسَوۡفَ يَلۡقَوۡنَ غَيًّا﴾. فقُدِّم ذكر إضاعة الصلاة، وتبعها ما تبعها.\n\nومن هنا يبدأ الإصلاح، وهو ممّا يُقاس هذه الليلة: خمس صلواتٍ في وقتها، وفي المسجد لمن قدر عليه من الرجال.",
       evidence: [
         { en: "\"But there came after them successors who neglected the prayer and followed desires — so they are going to meet evil.\"",
-          ar: "﴿فَخَلَفَ مِن بَعْدِهِمْ خَلْفٌ أَضَاعُوا الصَّلَاةَ وَاتَّبَعُوا الشَّهَوَاتِ فَسَوْفَ يَلْقَوْنَ غَيًّا﴾",
+          ar: "﴿فَخَلَفَ مِنۢ بَعۡدِهِمۡ خَلۡفٌ أَضَاعُواْ ٱلصَّلَوٰةَ وَٱتَّبَعُواْ ٱلشَّهَوَٰتِۖ فَسَوۡفَ يَلۡقَوۡنَ غَيًّا﴾",
           ref: "Surah Maryam (19:59) — the Quran", refAr: "سورة مريم (١٩:٥٩) — من القرآن" }
       ]
     },
@@ -151,10 +151,10 @@ const REVIVAL = {
       title: "Learn something, properly, and do not stop",
       titleAr: "تعلَّم شيئًا على وجهه ولا تقف",
       body: "The first word revealed was \"Read.\" The men on the Golden Age page were not scientists who happened to be Muslim; they were students of this religion who took its command to look at the creation seriously, and the sciences came out of that.\n\nSo the way back includes actually knowing something: your religion first, and then whatever field you are in, to a standard nobody can dismiss. A Muslim who is the best engineer in the room is doing something for this ummah that a Muslim who is merely loud about it is not.",
-      bodyAr: "أول ما نزل: ﴿اقْرَأْ﴾. والرجال الذين في صفحة العصر الذهبي لم يكونوا علماء طبيعةٍ اتّفق أنهم مسلمون، بل كانوا طلبة هذا الدين، أخذوا أمره بالنظر في الخلق مأخذ الجدّ، فخرجت العلوم من ذلك.\n\nفمن طريق الرجوع أن تعلم شيئًا حقًّا: دينك أولًا، ثم فنّك الذي أنت فيه، على درجةٍ لا يستطيع أحدٌ أن يزدريها. فالمسلم الذي هو أمهر مهندسٍ في المجلس يصنع لهذه الأمّة ما لا يصنعه من يُحسن الكلام عنها فقط.",
+      bodyAr: "أول ما نزل: ﴿ٱقۡرَأۡ﴾. والرجال الذين في صفحة العصر الذهبي لم يكونوا علماء طبيعةٍ اتّفق أنهم مسلمون، بل كانوا طلبة هذا الدين، أخذوا أمره بالنظر في الخلق مأخذ الجدّ، فخرجت العلوم من ذلك.\n\nفمن طريق الرجوع أن تعلم شيئًا حقًّا: دينك أولًا، ثم فنّك الذي أنت فيه، على درجةٍ لا يستطيع أحدٌ أن يزدريها. فالمسلم الذي هو أمهر مهندسٍ في المجلس يصنع لهذه الأمّة ما لا يصنعه من يُحسن الكلام عنها فقط.",
       evidence: [
         { en: "\"Read, in the name of your Lord who created… who taught by the pen, taught man what he did not know.\"",
-          ar: "﴿اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ … الَّذِي عَلَّمَ بِالْقَلَمِ • عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ﴾",
+          ar: "﴿ٱقۡرَأۡ بِٱسۡمِ رَبِّكَ ٱلَّذِي خَلَقَ … ٱلَّذِي عَلَّمَ بِٱلۡقَلَمِ • عَلَّمَ ٱلۡإِنسَٰنَ مَا لَمۡ يَعۡلَمۡ﴾",
           ref: "Surah Al-Alaq (96:1-5) — the Quran", refAr: "سورة العلق (٩٦:١-٥) — من القرآن" },
         { en: "\"Whoever travels a path seeking knowledge, Allah makes easy for him by it a path to Paradise.\"",
           ar: "«مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا، سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ»",
@@ -173,7 +173,7 @@ const REVIVAL = {
           ar: "«إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ»",
           ref: "Narrated by al-Bayhaqi in Shu'ab al-Iman and by Abu Ya'la — OUTSIDE the two Sahihs. Graded Sahih by al-Albani in Sahih al-Jami'; some scholars considered its chain weak. Its meaning is agreed upon and supported by the Quran's command to give full measure.", refAr: "رواه البيهقي في «شعب الإيمان» وأبو يعلى — خارج الصحيحين. صحّحه الألباني في «صحيح الجامع»، وضعّف إسنادَه بعضُ أهل العلم. ومعناه متّفقٌ عليه، يشهد له أمرُ القرآن بإيفاء الكيل." },
         { en: "\"O you who believe, why do you say what you do not do? It is greatly hateful in the sight of Allah that you say what you do not do.\"",
-          ar: "﴿يَا أَيُّهَا الَّذِينَ آمَنُوا لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ • كَبُرَ مَقْتًا عِندَ اللَّهِ أَن تَقُولُوا مَا لَا تَفْعَلُونَ﴾",
+          ar: "﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لِمَ تَقُولُونَ مَا لَا تَفۡعَلُونَ • كَبُرَ مَقۡتًا عِندَ ٱللَّهِ أَن تَقُولُواْ مَا لَا تَفۡعَلُونَ﴾",
           ref: "Surah As-Saff (61:2-3) — the Quran", refAr: "سورة الصف (٦١:٢-٣) — من القرآن" }
       ]
     },
@@ -186,7 +186,7 @@ const REVIVAL = {
       bodyAr: "قالت آية الأنفال إنّ القوّة تذهب إذا وقع التنازع، وهذه أثقلها على النفس وأشدّها على الكِبْر.\n\nوليس معناها التظاهر بأن لا خلاف. ففي هذا الموقع بابٌ كامل يُعرض فيه اختلاف العلماء بأسمائهم، مع بيان وجه الدليل عند كلّ فريق، لأنّ هذا صنيع أهل العلم أنفسهم. وإنما معناها ألّا يُجعل كلّ خلافٍ حربًا، وألّا يُعامَل المسلم المخالف في مسألةٍ فرعيّةٍ معاملة العدوّ.",
       evidence: [
         { en: "\"And hold firmly to the rope of Allah, all together, and do not become divided.\"",
-          ar: "﴿وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا﴾",
+          ar: "﴿وَٱعۡتَصِمُواْ بِحَبۡلِ ٱللَّهِ جَمِيعٗا وَلَا تَفَرَّقُواْۚ﴾",
           ref: "Surah Aal-Imran (3:103) — the Quran", refAr: "سورة آل عمران (٣:١٠٣) — من القرآن" },
         { en: "\"The believer to the believer is like a building, each part strengthening the other\" — and he interlocked his fingers.",
           ar: "«الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا» — وشبّك بين أصابعه",
@@ -202,7 +202,7 @@ const REVIVAL = {
       bodyAr: "انظر إلى الأعمار في البداية. عليٌّ آمن وهو ابن نحو عشر. ومصعب بن عمير — أول معلّمٍ أُرسل إلى المدينة — كان شابًّا. وأُسامة بن زيد أُمِّر على جيشٍ وهو في مطلع شبابه. وابن سينا حفظ القرآن وهو ابن عشر، وأتى على طبّ زمانه وهو ابن ستّ عشرة. ومحمد الفاتح كان ابن إحدى وعشرين عند القسطنطينية.\n\nفما كان هذا الدين قطّ دينًا يحمله الشيوخ ويُطيقه الشباب على مضض. وكلّ نهضةٍ في تاريخه إنما قامت على من دون الثلاثين، أُسند إليهم أمرٌ جادّ وأُوتمنوا عليه. وهذه هي الوصيّة العمليّة هنا: حمِّلوا الشباب المسؤوليّة والعلم الحقيقيّ والمطالبة الجادّة — وإن كنتَ شابًّا فلا تنتظر أن تُعطاها.",
       evidence: [
         { en: "\"They were young men who believed in their Lord, and We increased them in guidance.\"",
-          ar: "﴿إِنَّهُمْ فِتْيَةٌ آمَنُوا بِرَبِّهِمْ وَزِدْنَاهُمْ هُدًى﴾",
+          ar: "﴿إِنَّهُمۡ فِتۡيَةٌ ءَامَنُواْ بِرَبِّهِمۡ وَزِدۡنَٰهُمۡ هُدٗى﴾",
           ref: "Surah Al-Kahf (18:13) — the Quran", refAr: "سورة الكهف (١٨:١٣) — من القرآن" },
         { en: "Among the seven whom Allah shades on the Day when there is no shade but His: \"a young man who grew up in the worship of Allah.\"",
           ar: "من السبعة الذين يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه: «وَشَابٌّ نَشَأَ فِي عِبَادَةِ اللَّهِ»",
@@ -215,10 +215,10 @@ const REVIVAL = {
       title: "Begin with the one person you actually control",
       titleAr: "ابدأ بالذي تملكه حقًّا",
       body: "The most common way this subject is wasted is that it stays a conversation about the ummah — a thing other people are failing at, discussed at length by someone who has not changed anything about their own week.\n\n\"Until they change what is in themselves\" is not addressed to a committee. Umar ibn al-Khattab رضي الله عنه wrote to Sa'd ibn Abi Waqqas as he sent him to Persia and told him that he feared the sins of the army more than he feared their enemy, and that if their sins became equal to their enemy's, the enemy would beat them by numbers. That is reported in the books of history rather than as a hadith — but it is exactly the reading of 13:11 that this whole page rests on.\n\nSo: one prayer you were missing. One habit you know is wrong. One skill learned properly. One person you were unjust to. Start there. That is what changing what is in ourselves actually looks like, and there is no other route — the verse leaves none.",
-      bodyAr: "وأكثر ما يُهدَر به هذا الباب أن يبقى حديثًا عن «الأمّة» — شيءٌ يقصّر فيه غيرك، يُطيل الكلام فيه من لم يغيّر في أسبوعه شيئًا.\n\nوقوله: ﴿حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾ ليس خطابًا للجان. وقد كتب عمر بن الخطاب رضي الله عنه إلى سعد بن أبي وقّاص وهو يوجّهه إلى فارس، فأخبره أنه يخاف على الجيش من ذنوبهم أكثر ممّا يخاف عليهم من عدوّهم، وأنهم إن استوَوا معهم في المعصية غلبوهم بالعدد. وهذا مرويٌّ في كتب التاريخ لا على أنه حديث — لكنه بعينه فهم آية الرعد التي تقوم عليها هذه الصفحة كلّها.\n\nفإذًا: صلاةٌ كنت تضيّعها. وعادةٌ تعلم أنها خطأ. وعلمٌ تُتقنه. وإنسانٌ ظلمتَه. ابدأ من هناك. فهذا هو تغيير ما بالأنفس على الحقيقة، وليس ثمّة طريقٌ آخر — فالآية لم تُبقِ طريقًا.",
+      bodyAr: "وأكثر ما يُهدَر به هذا الباب أن يبقى حديثًا عن «الأمّة» — شيءٌ يقصّر فيه غيرك، يُطيل الكلام فيه من لم يغيّر في أسبوعه شيئًا.\n\nوقوله: ﴿حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡۗ﴾ ليس خطابًا للجان. وقد كتب عمر بن الخطاب رضي الله عنه إلى سعد بن أبي وقّاص وهو يوجّهه إلى فارس، فأخبره أنه يخاف على الجيش من ذنوبهم أكثر ممّا يخاف عليهم من عدوّهم، وأنهم إن استوَوا معهم في المعصية غلبوهم بالعدد. وهذا مرويٌّ في كتب التاريخ لا على أنه حديث — لكنه بعينه فهم آية الرعد التي تقوم عليها هذه الصفحة كلّها.\n\nفإذًا: صلاةٌ كنت تضيّعها. وعادةٌ تعلم أنها خطأ. وعلمٌ تُتقنه. وإنسانٌ ظلمتَه. ابدأ من هناك. فهذا هو تغيير ما بالأنفس على الحقيقة، وليس ثمّة طريقٌ آخر — فالآية لم تُبقِ طريقًا.",
       evidence: [
         { en: "\"Indeed, Allah will not change the condition of a people until they change what is in themselves.\"",
-          ar: "﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾",
+          ar: "﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡۗ﴾",
           ref: "Surah Ar-Ra'd (13:11) — the Quran", refAr: "سورة الرعد (١٣:١١) — من القرآن" },
         { en: "Umar's letter to Sa'd ibn Abi Waqqas: \"I fear for you your sins more than I fear your enemy… if our sins equal theirs, they will overcome us by their numbers.\"",
           ar: "من كتاب عمر إلى سعد بن أبي وقّاص: «فإني أخاف عليكم من ذنوبكم أشدّ ممّا أخاف عليكم من عدوّكم… فإن استوينا في المعصية كان لهم الفضل علينا في القوّة»",

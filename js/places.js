@@ -92,7 +92,7 @@ const PLACES = {
           note: "Nobody knows the time — not an angel and not a prophet. That is stated in the Quran twice over, and it is the frame this whole section sits inside.",
           noteAr: "ولا يعلم الوقتَ أحد — لا ملَكٌ ولا نبيّ. وقد نصّ القرآن على ذلك مرّتين، وهو الإطارُ الذي يقوم عليه هذا القسم كلُّه.",
           extraProof: "“They ask you about the Hour, when will it come to pass? Say: knowledge of it is only with my Lord.” — “Indeed, Allah has knowledge of the Hour.”",
-          extraProofAr: "﴿يَسْـَٔلُونَكَ عَنِ ٱلسَّاعَةِ أَيَّانَ مُرْسَىٰهَا ۖ قُلْ إِنَّمَا عِلْمُهَا عِندَ رَبِّى﴾ — ﴿إِنَّ ٱللَّهَ عِندَهُۥ عِلْمُ ٱلسَّاعَةِ﴾",
+          extraProofAr: "﴿يَسۡـَٔلُونَكَ عَنِ ٱلسَّاعَةِ أَيَّانَ مُرۡسَىٰهَاۖ قُلۡ إِنَّمَا عِلۡمُهَا عِندَ رَبِّيۖ﴾ — ﴿إِنَّ ٱللَّهَ عِندَهُۥ عِلۡمُ ٱلسَّاعَةِ﴾",
           extraRef: "Surah Al-A'raf (7:187); Surah Luqman (31:34)",
           extraRefAr: "سورة الأعراف (٧:١٨٧)؛ سورة لقمان (٣١:٣٤)",
           keys: ["condition", "when", "prediction", "hour", "شرط", "متى", "تنبؤ", "الساعة", "الدجال"]

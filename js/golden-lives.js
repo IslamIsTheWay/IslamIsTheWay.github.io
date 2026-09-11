@@ -197,7 +197,7 @@ const GOLDEN_WOMEN = {
       h: "Inheritance: a fixed share, named in the text",
       hAr: "الميراث: نصيبٌ مفروضٌ منصوصٌ عليه",
       en: "Surah An-Nisa fixes shares for daughters, wives, mothers and sisters — “for men a share of what the parents and near relatives leave, and for women a share” (4:7).\n\nThe significance is not the size of any particular share; it is that it is a legal entitlement she does not have to be granted. And it arrives alongside the rule above: what she inherits stays hers, and her maintenance remains her husband's obligation, not a charge on her property.",
-      ar: "فرضت سورة النساء أنصبةً للبنات والزوجات والأمّهات والأخوات: ﴿لِّلرِّجَالِ نَصِيبٌۭ مِّمَّا تَرَكَ ٱلْوَٰلِدَانِ وَٱلْأَقْرَبُونَ وَلِلنِّسَآءِ نَصِيبٌۭ﴾ (٤:٧).\n\nوليست العبرة في مقدار نصيبٍ بعينه، وإنما في أنه حقٌّ لازمٌ لا مِنّةَ فيه. وجاء مقترنًا بالقاعدة قبله: فما ورثته يبقى لها، ونفقتُها على زوجها لا في مالها.",
+      ar: "فرضت سورة النساء أنصبةً للبنات والزوجات والأمّهات والأخوات: ﴿لِّلرِّجَالِ نَصِيبٞ مِّمَّا تَرَكَ ٱلۡوَٰلِدَانِ وَٱلۡأَقۡرَبُونَ وَلِلنِّسَآءِ نَصِيبٞ﴾ (٤:٧).\n\nوليست العبرة في مقدار نصيبٍ بعينه، وإنما في أنه حقٌّ لازمٌ لا مِنّةَ فيه. وجاء مقترنًا بالقاعدة قبله: فما ورثته يبقى لها، ونفقتُها على زوجها لا في مالها.",
       rank: "quran"
     },
     {

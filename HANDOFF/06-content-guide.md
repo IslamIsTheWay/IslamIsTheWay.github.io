@@ -170,8 +170,13 @@ done
 # 2. Search the ENGLISH for the story, then copy the ARABIC from the same
 #    record. Never type the Arabic from memory.
 
-# 3. For Quranic material, fetch the whole Quran once and search it:
-curl -s -o quran-uthmani.json "https://api.alquran.cloud/v1/quran/quran-uthmani"
+# 3. For Quranic material, use js/quran-text.js - it IS the Madinah Mushaf's
+#    text (KFGQPC Hafs, PART 28). Parse after "QURAN_TEXT = " and cut the
+#    verse words by (surah, ayah, word range). If you need a separate copy,
+#    this is the same text (strip the verse number at the end of each line):
+curl -s -o qpc_hafs.json "https://api.quran.com/api/v4/quran/verses/qpc_hafs"
+#    NEVER alquran.cloud "quran-uthmani" (Tanzil): a different encoding that
+#    the Mushaf font draws wrongly. ./check-quran.sh catches it.
 ```
 
 **Story** (`PROPHET_STORIES` in data.js) — `id, title, titleAr, theme, themeAr,

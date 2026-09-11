@@ -1021,14 +1021,21 @@ section {
   border-bottom: none;
 }
 
+/* The verse itself, in the Madinah Mushaf's own typeface — see "THE QURAN IN
+   THE MUSHAF'S OWN TYPEFACE" at the end of this file before changing the
+   family. The face runs a little smaller than Amiri at the same size, so the
+   size is set about an eighth larger than the old 1.5rem to read the same. */
 .ayah-block .arabic-text {
-  font-family: 'Amiri', serif;
-  font-size: 1.5rem;
+  font-family: "KFGQPC Hafs", 'Amiri', serif;
+  font-size: 1.72rem;
   text-align: right;
   direction: rtl;
   color: var(--text-dark);
   margin-bottom: 8px;
-  line-height: 2;
+  line-height: 2.2;
+}
+@media (max-width: 620px) {
+  .ayah-block .arabic-text { font-size: 1.55rem; line-height: 2.15; }
 }
 
 .ayah-block .translation-text {
@@ -4743,11 +4750,17 @@ html.lang-ar .page-toc a { font-family: 'Amiri', serif; font-size: 1.05rem; }
   margin: 0 0 12px;
 }
 .tad-word-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+/* The word under study is a word of the Quran, so it is drawn in the
+   Mushaf's face like the verse above it. Its marks are in the Madinah
+   spelling (see the note at the end of this file) — never put a round sukun
+   in a headword: in this face U+0652 is the SILENT-letter circle. The face
+   has one weight; bold would be synthesized and smear the marks. */
 .tad-w {
-  font-family: 'Amiri', serif;
-  font-size: 1.5rem;
+  font-family: "KFGQPC Hafs", 'Amiri', serif;
+  font-size: 1.68rem;
   color: var(--green-dark);
-  font-weight: 700;
+  font-weight: normal;
+  font-synthesis: none;
 }
 .tad-translit { font-size: .9rem; color: var(--text-muted); font-style: italic; }
 .tad-word-body p { line-height: 1.95; margin: 0 0 10px; }
@@ -4834,7 +4847,7 @@ html.lang-ar .page-toc a { font-family: 'Amiri', serif; font-size: 1.05rem; }
   .tad-surah, .tad-ayah { padding: 16px 14px; }
   .tad-word, .tad-link, .tad-differ { padding: 12px 14px; }
   .tad-verse-ar { font-size: 1.35rem; }
-  .tad-w { font-size: 1.3rem; }
+  .tad-w { font-size: 1.46rem; }
 }
 
 /* ============================================================
@@ -7154,3 +7167,74 @@ html.lang-ar .mir-verse-en { font-style: normal; }
 #modalBody .tad-surah,
 #modalBody .story-panel,
 #modalBody .mir-panel { scroll-margin-top: 90px; }
+
+/* ============================================================
+   THE QURAN IN THE MUSHAF'S OWN TYPEFACE
+   ============================================================
+   Every verse on this site is the King Fahd Complex's Hafs text — the
+   Madinah Mushaf, word for word and mark for mark (js/quran-text.js, and
+   every quotation in the data files). The owner asked for exactly this: the
+   earlier text looked like "a different script" to someone raised on the
+   Madinah Mushaf.
+
+   THAT TEXT IS ONLY CORRECT IN THE COMPLEX'S OWN FONT. It writes the open
+   (staggered) tanween with U+0657, U+065E and U+0656, which every other font
+   — Amiri included — draws as a DIFFERENT MARK. A verse in the wrong font is
+   a verse with the wrong vowel. So nothing Quranic may be left to fall back
+   to Amiri, and:
+
+     * the reader's verse lines use the face directly (.ayah-block
+       .arabic-text above) and so do the reader's basmala and the static
+       verses in the HTML pages (<span class="q-hafs">);
+     * everything rendered from the data files is wrapped at run time by
+       iitwMarkQuran() in main.js: every ﴿…﴾, and any run of Arabic carrying
+       the Madinah sukun or open tanween, gets <span class="q-hafs">.
+
+   font-display: block, deliberately. "swap" would paint the fallback first,
+   and for a moment the verse would carry the wrong vowels. The font is 88KB,
+   preloaded on every page and precached by sw.js, so the wait is short and
+   happens once. The licence (use and share freely, never modify) is in
+   fonts/README.txt — never subset or re-save the file. */
+@font-face {
+  font-family: "KFGQPC Hafs";
+  src: url("../fonts/UthmanicHafs_V18.woff2") format("woff2"),
+       url("../fonts/UthmanicHafs_V18.ttf") format("truetype");
+  font-display: block;
+}
+.q-hafs,
+.reader-basmala {
+  font-family: "KFGQPC Hafs", 'Amiri', serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0;
+  word-spacing: normal;
+  font-synthesis: none;
+}
+/* Inline, the face sits a little smaller than Amiri at the same size; 1.12em
+   brings the two to the same height. line-height 1 keeps a line that holds a
+   quotation from standing taller than the lines around it — the paragraph's
+   own line-height already leaves the room the marks need. */
+.q-hafs { font-size: 1.12em; line-height: 1; }
+.q-hafs .q-hafs { font-size: 1em; }
+/* The font has one weight, and a synthesized bold smears the small marks. A
+   word the author bolded inside a verse is marked by colour instead. */
+strong .q-hafs, b .q-hafs, .q-hafs strong, .q-hafs b { font-weight: normal; }
+.q-hafs strong, .q-hafs b, strong > .q-hafs, b > .q-hafs { color: #8a6712; }
+/* The basmala in the top bar sits on a dark green band. */
+.topbar .q-hafs { font-size: 1.18em; color: inherit; }
+/* A surah (other than al-Fatihah, where it IS the first verse, and
+   at-Tawbah, which has none) opens with the basmala on its own line, as the
+   Mushaf prints it: centred, unnumbered, before verse 1. */
+.reader-basmala {
+  text-align: center;
+  direction: rtl;
+  font-size: 1.9rem;
+  line-height: 2.2;
+  color: var(--green-dark);
+  margin: 4px 0 10px;
+  padding: 6px 0 10px;
+  border-bottom: 1px solid var(--border, #e4e4e4);
+}
+@media (max-width: 620px) {
+  .reader-basmala { font-size: 1.62rem; }
+}

@@ -245,7 +245,7 @@ const TERMS = [
    it on others, and a stale cached copy of either must not break the render. */
 function iitwTermIndex() {
   if (iitwTermIndex._cache) return iitwTermIndex._cache;
-  const strip = s => String(s || "").replace(/[ً-ْٰـ]/g, "");
+  const strip = s => String(s || "").replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "");
   const idx = TERMS.map(t => ({
     t,
     // Longest first, so "Permanent Committee" is matched before "Committee".
@@ -266,7 +266,7 @@ function iitwTermIndex() {
    prefixes (و ف ب ك ل and the definite article) and a trailing ta marbuta are
    peeled off before comparing. */
 function iitwArabicWords(text) {
-  const stripped = String(text || "").replace(/[ً-ْٰـ]/g, "");
+  const stripped = String(text || "").replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "");
   const out = new Set();
   stripped.split(/[^ء-ي]+/).filter(Boolean).forEach(w => {
     out.add(w);

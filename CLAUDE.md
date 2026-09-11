@@ -13,6 +13,39 @@ every feature, the owner's rules, open work, credentials, and content templates.
 Read it before starting non-trivial work. (The same content is also split into
 seven numbered files in `HANDOFF/`.)
 
+## THE QURAN ON THIS SITE IS THE MADINAH MUSHAF'S OWN TEXT, IN ITS OWN FONT
+
+He asked for this in September 2026: the Quran looked to him like "Iranian
+writing, not the Othmani writing we use in our countries". The old text
+(Tanzil's Uthmani via alquran.cloud) drew the sukun as a circle, marked the
+open tanween with a small meem, glued the basmala onto verse 1 of 112 surahs,
+and was drawn in Amiri. Full account: HANDOFF PART 28. The rules:
+
+* **Every verse is KFGQPC Hafs text (King Fahd Complex, v18).** Cut it from
+  `js/quran-text.js` by (surah, ayah) and word range — never type it, never
+  copy it from alquran.cloud `quran-uthmani`, tanzil.net or an old commit.
+  `./check-quran.sh` fails on the old spelling's fingerprints (`ٱلْ` with a
+  round sukun, tanween + small meem, U+06DF).
+* **It is only correct in the KFGQPC HAFS font** (`fonts/UthmanicHafs_V18.*`,
+  licence: use and share, never modify — `fonts/README.txt`). The text writes
+  the open tanween with U+0657/U+065E/U+0656, which Amiri draws as a
+  DIFFERENT MARK. `iitwMarkQuran()` in main.js wraps every `﴿…﴾` and every
+  unbracketed run carrying a Madinah-only mark in `<span class="q-hafs">`.
+* **Hence three writing rules.** A verse quoted inside Arabic prose goes in
+  `﴿…﴾`. A hadith goes in `«…»` — NEVER `﴿﴾`: three hadith sentences were
+  sitting in Quran brackets and have been fixed. And no string may hold an
+  unbracketed Madinah-spelled verse and a human sentence in the same run of
+  Arabic, or the sentence is drawn in the Mushaf's face.
+* **A word-study headword (`w:`) uses the Madinah marks** — never a round
+  sukun: in that face U+0652 is the SILENT-letter circle.
+* **Every Arabic search normaliser strips the full mark class**
+  `[ؐ-ًؚ-ٰٟۖ-ۭـ]` and folds `ٱ` with
+  the other alefs. Twelve of them stopped at U+0652 and would have left the
+  Madinah sukun and open tanween inside every word.
+* **The Mushaf page numbers are NOT the KFGQPC data's `page` field** — 56
+  verses differ from the printed Madinah Mushaf (and from quran.com). `p` in
+  quran-text.js stays as it was.
+
 ## FIX THE CLASS, NOT THE INSTANCE — he asked for this in these words
 
 > "when I mention any problem I am not just asking to fix this one sentence,
@@ -342,6 +375,7 @@ grep -oE '^  "([^"]+)":' js/i18n.js | sort | uniq -d   # duplicate AR keys
 git fetch -q origin && git checkout origin/main -- data/site-config.json
 ./check-images.sh
 ./check-counts.sh       # home page numbers vs the data behind them
+./check-quran.sh        # every verse still the Madinah (KFGQPC) text, font unmodified
 ./bump-version.sh
 git add -A && git commit -m "..." && git push origin main
 ```
@@ -935,7 +969,11 @@ immediately.
 
 `js/quran-text.js` (2.2MB) holds all 114 surahs, all 6,236 verses, the English
 translation and the Mushaf page of every ayah. `openSurah()` reads it; the API
-is only a fallback if that file fails to parse.
+is only a fallback if that file fails to parse. Its Arabic is the King Fahd
+Complex's Hafs text (the rule at the top of this file); the fallback fetches
+the same text from quran.com (`text_qpc_hafs`), never alquran.cloud's
+`quran-uthmani`. The basmala is drawn by the reader on its own line above
+verse 1 (not for al-Fatihah, where it IS verse 1, nor at-Tawbah).
 
 **Do not put the reader back on api.alquran.cloud.** The owner reported twice
 that a surah would not open without a connection, and no amount of

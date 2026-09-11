@@ -68,7 +68,12 @@ const PRECACHE_SHELL = [
   /* The Quran itself. 2.2MB, and the single most important file here —
      without it a surah cannot open offline, which is the exact failure
      this whole arrangement exists to prevent. */
-  "./js/quran-text.js"
+  "./js/quran-text.js",
+  /* ...and the only typeface that draws it correctly. The text is the
+     Madinah Mushaf's own (KFGQPC Hafs), which writes the open tanween with
+     code points any other font renders as a different mark — so a Quran
+     that opens offline WITHOUT this font opens with wrong vowels. 88KB. */
+  "./fonts/UthmanicHafs_V18.woff2"
 ];
 
 /* Fetched after activation, from the page. Everything a reader needs for the
@@ -89,8 +94,10 @@ const PRECACHE_CONTENT = [
   "./js/surah-story.js", "./js/miracles.js"
 ];
 
-/* Hosts handled specially. */
-const QURAN_API = "api.alquran.cloud";     // the text — immutable, cache-first
+/* Hosts handled specially. The reader's fallback (used only if
+   js/quran-text.js failed to load) takes the Arabic from quran.com and the
+   English from alquran.cloud; both are immutable, so both are cache-first. */
+const QURAN_APIS = ["api.alquran.cloud", "api.quran.com"];
 const AUDIO_HOSTS = ["everyayah.com", "cdn.islamic.network"];   // never cached
 
 /* Fetch the list in small batches rather than all at once.
@@ -163,7 +170,7 @@ self.addEventListener("fetch", event => {
   // ---- The Quran text: CACHE FIRST ----
   /* Safe precisely because the Quran does not change. This is what makes the
      reader work with no connection, which is the point of the whole file. */
-  if (url.hostname.indexOf(QURAN_API) !== -1) {
+  if (QURAN_APIS.some(h => url.hostname.indexOf(h) !== -1)) {
     event.respondWith(
       caches.open(QURAN_CACHE).then(cache =>
         cache.match(req).then(hit => {

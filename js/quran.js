@@ -193,8 +193,14 @@ async function openSurah(surah) {
         text: t
       }));
     } else {
+      /* The fallback fetches the SAME Madinah text the local file carries —
+         quran.com's text_qpc_hafs, which is the King Fahd Complex's Hafs
+         text. It used to fetch alquran.cloud's quran-uthmani (Tanzil), which
+         in this typeface would draw its sukun as the Mushaf's "silent letter"
+         circle. The English and the Mushaf page still come from
+         alquran.cloud; each verse there carries its page. */
       const [arabicRes, translationRes] = await Promise.all([
-        fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/quran-uthmani`),
+        fetch(`https://api.quran.com/api/v4/quran/verses/qpc_hafs?chapter_number=${surah.n}`),
         fetch(`https://api.alquran.cloud/v1/surah/${surah.n}/en.sahih`)
       ]);
 
@@ -203,8 +209,13 @@ async function openSurah(surah) {
       const arabicData = await arabicRes.json();
       const translationData = await translationRes.json();
 
-      arabicAyahs = arabicData.data.ayahs;
       translationAyahs = translationData.data.ayahs;
+      arabicAyahs = arabicData.verses.map((v, i) => ({
+        numberInSurah: i + 1,
+        // the source ends each verse with its number; the reader draws its own
+        text: String(v.text_qpc_hafs || "").replace(/[  ]*[٠-٩]+$/, ""),
+        page: translationAyahs[i] ? translationAyahs[i].page : undefined
+      }));
     }
 
     const current = RECITERS.find(r => r.id === getReciter()) || RECITERS[0];
@@ -270,6 +281,17 @@ async function openSurah(surah) {
     </div>
     ${iitwSurahStoryHtml(surah.n) + iitwMiraclesHtml(surah.n)}
     ${tad ? iitwTadabburSurahHtml(tad, surah) : iitwTadabburEmptyHtml(surah)}`;
+
+    /* THE BASMALA, ON ITS OWN LINE, AS THE MUSHAF PRINTS IT.
+       Every surah but at-Tawbah opens with it — centred, above verse 1, with
+       no number, because it is not verse 1. The text the site used to ship
+       glued it onto the front of verse 1 in 112 surahs, so Al-Baqarah's first
+       verse read "In the name of Allah… Alif Lam Mim". In al-Fatihah it IS
+       the first verse, so it is not repeated there. The words are taken from
+       1:1 of the shipped text, never typed. */
+    if (surah.n !== 1 && surah.n !== 9 && typeof QURAN_TEXT !== "undefined" && QURAN_TEXT["1"]) {
+      html += `<div class="reader-basmala" dir="rtl" lang="ar">${QURAN_TEXT["1"].a[0]}</div>`;
+    }
 
     // Per-ayah audio URLs are built directly from the chosen reciter.
     window._ayahAudios  = arabicAyahs.map(a => ayahAudioUrl(surah.n, a.numberInSurah));

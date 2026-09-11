@@ -123,7 +123,7 @@ let _iitwQuranPromise = null;
 
 function iitwNormQuran(s) {
   return String(s || "")
-    .replace(/[ً-ْٰـۖ-ۭ]/g, "")   // harakat, waqf marks
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "")   // harakat, waqf marks
     .replace(/[أإآٱ]/g, "ا")            // hamza forms -> alif
     .replace(/ى/g, "ي").replace(/ة/g, "ه")   // alif maqsura, ta marbuta
     .replace(/[^ء-ي ]/g, " ")
@@ -250,7 +250,7 @@ const IITW_SURAH_MARKER = /^(surah|surat|surah|sura|suratul|surahs|سورة|سو
 
 function iitwNormWord(s) {
   let t = String(s || "").toLowerCase()
-    .replace(/[ً-ٰٟـ]/g, "")                       // Arabic harakat + tatweel
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "")                       // Arabic harakat + tatweel
     .replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه")
     .replace(/[^a-zء-ي ]+/g, " ")
     .replace(/\s+/g, " ").trim();
@@ -263,7 +263,7 @@ function iitwNormWord(s) {
 // Split a title into comparable words, keeping Arabic and Latin separately.
 function iitwWords(text) {
   return String(text || "")
-    .replace(/[ً-ٰٟـ]/g, "")
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "")
     .split(/[^A-Za-zء-ي]+/)
     .filter(Boolean);
 }
@@ -1180,8 +1180,8 @@ function runPersonSearch(query) {
   const wordRe = new RegExp("(^|[^a-z])" + qLatin + "([^a-z]|$)", "i");
   const startsRe = new RegExp("(^|[^a-z])" + qLatin, "i");
 
-  const stripAr = s => String(s || "").replace(/[ً-ْٰـ]/g, "")
-    .replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+  const stripAr = s => String(s || "").replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "")
+    .replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
   const arWords = txt => new Set(stripAr(txt).split(/[^ء-ي]+/).filter(Boolean));
 
   /* The Arabic query must be split into WORDS the same way the text is.
@@ -1941,3 +1941,185 @@ function iitwWarmOfflineCache() {
 
 /* Deliberately late: the reader's own page finishes loading first. */
 window.addEventListener("load", () => setTimeout(iitwWarmOfflineCache, 2500));
+
+/* -------------------------------------------------------------
+   THE QURAN IN THE MUSHAF'S OWN TYPEFACE — wherever it appears
+   -------------------------------------------------------------
+   Every verse on the site is the King Fahd Complex's Hafs text (the Madinah
+   Mushaf). It is only correct in the Complex's own font: it writes the open
+   tanween with U+0657 / U+065E / U+0656, which Amiri and every other font
+   draw as a DIFFERENT mark. The owner asked for the Mushaf he knows, and a
+   verse in the wrong font is a verse with the wrong vowel.
+
+   The verses live in two thousand strings across fifty data files and are
+   rendered by dozens of different templates, so no single template can be
+   trusted to add the class. Instead this watches the page and wraps them as
+   they appear:
+
+     1. everything between ﴿ and ﴾ — the site's mark for a quotation of the
+        Quran — including across a bolded word inside the quotation;
+     2. any run of Arabic that carries a mark ONLY the Madinah text uses (the
+        head-of-khah sukun ۡ, the three open tanween). That is how a verse
+        field rendered in its own box is found: no human sentence on this
+        site is written with those marks.
+
+   A hadith is written «…», never ﴿…﴾, and in the ordinary spelling, so it is
+   never drawn in the Mushaf's face — which is right: the two must not look
+   the same. The check that keeps (2) honest is in the handoff: no data
+   string may put a human sentence and a Madinah-spelled verse in the same
+   unbracketed run.
+
+   It never touches text i18n.js has translated (it remembers the English of
+   each node on `_iitwEn`), and it runs inside the MutationObserver callback —
+   before the browser paints — so a verse is never shown in the wrong face
+   first. */
+const IITW_Q_MARK = /[\u06E1\u0656\u0657\u065E]/;
+const IITW_Q_OPEN = "\uFD3F";   // ﴿
+const IITW_Q_CLOSE = "\uFD3E";  // ﴾
+const IITW_Q_DONE = ".q-hafs, .ayah-block .arabic-text, .reader-basmala, .tad-w";
+const IITW_Q_SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|SELECT|OPTION|CODE|PRE|NOSCRIPT|TITLE)$/;
+const IITW_Q_INLINE = /^(SPAN|STRONG|B|EM|I|U|A|MARK|SMALL|SUB|SUP|ABBR|CITE|Q|BDI|BDO|S|DFN|KBD|TIME|DATA|FONT)$/;
+const IITW_Q_ARUN = /[\u0600-\u06FF\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+(?:[ \u00A0]+[\u0600-\u06FF\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+)*/g;
+
+function iitwQBlockOf(node) {
+  let el = node.parentElement;
+  while (el && IITW_Q_INLINE.test(el.tagName)) el = el.parentElement;
+  return el;
+}
+
+/* Split one text node into plain and Quranic pieces. `inside` says whether a
+   ﴿ opened earlier in the same block is still open. Returns the state after
+   this node. */
+function iitwQWrapNode(node, inside) {
+  const text = node.nodeValue;
+  const pieces = [];
+  let start = 0, q = inside;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (!q && ch === IITW_Q_OPEN) {
+      if (i > start) pieces.push([start, i, false]);
+      start = i; q = true;
+    } else if (q && ch === IITW_Q_CLOSE) {
+      pieces.push([start, i + 1, true]);
+      start = i + 1; q = false;
+    }
+  }
+  if (start < text.length) pieces.push([start, text.length, q]);
+
+  const out = [];
+  pieces.forEach(([a, b, isQ]) => {
+    if (isQ) { out.push([a, b, true]); return; }
+    const part = text.slice(a, b);
+    if (!IITW_Q_MARK.test(part)) { out.push([a, b, false]); return; }
+    let last = 0, m;
+    IITW_Q_ARUN.lastIndex = 0;
+    while ((m = IITW_Q_ARUN.exec(part))) {
+      if (!IITW_Q_MARK.test(m[0])) continue;
+      if (m.index > last) out.push([a + last, a + m.index, false]);
+      out.push([a + m.index, a + m.index + m[0].length, true]);
+      last = m.index + m[0].length;
+    }
+    if (last < part.length) out.push([a + last, b, false]);
+  });
+
+  if (!out.some(p => p[2] && text.slice(p[0], p[1]).trim())) return q;
+  // A node i18n has translated is left alone: replacing it would lose the
+  // English it restores on the language switch.
+  if (node._iitwEn !== undefined && node._iitwEn !== node.nodeValue) return q;
+
+  const frag = document.createDocumentFragment();
+  out.forEach(([a, b, isQ]) => {
+    const s = text.slice(a, b);
+    if (!s) return;
+    if (isQ && s.trim()) {
+      const span = document.createElement("span");
+      span.className = "q-hafs";
+      span.textContent = s;
+      frag.appendChild(span);
+    } else {
+      frag.appendChild(document.createTextNode(s));
+    }
+  });
+  node.parentNode.replaceChild(frag, node);
+  return q;
+}
+
+function iitwMarkQuran(root) {
+  if (!root) return;
+  if (root.nodeType === 3) root = root.parentElement;
+  if (!root || root.nodeType !== 1 || !root.isConnected) return;
+  if (root.closest(IITW_Q_DONE)) return;
+  const all = root.textContent || "";
+  if (all.indexOf(IITW_Q_OPEN) < 0 && !IITW_Q_MARK.test(all)) return;
+
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const p = n.parentElement;
+      if (!p || IITW_Q_SKIP.test(p.tagName) || p.isContentEditable) return NodeFilter.FILTER_REJECT;
+      if (p.closest(IITW_Q_DONE)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes = [];
+  let n;
+  while ((n = walker.nextNode())) nodes.push(n);
+
+  let block = null, inside = false;
+  nodes.forEach(node => {
+    const b = iitwQBlockOf(node);
+    if (b !== block) { block = b; inside = false; }
+    inside = iitwQWrapNode(node, inside);
+  });
+}
+
+function iitwWatchQuran() {
+  iitwMarkQuran(document.body);
+  if (!("MutationObserver" in window)) return;
+  new MutationObserver(records => {
+    const seen = new Set();
+    records.forEach(r => r.addedNodes.forEach(node => {
+      const el = node.nodeType === 3 ? node.parentElement : node;
+      if (el && el.nodeType === 1 && !seen.has(el)) {
+        seen.add(el);
+        iitwMarkQuran(el);
+      }
+    }));
+  }).observe(document.body, { childList: true, subtree: true });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", iitwWatchQuran);
+} else {
+  iitwWatchQuran();
+}
+
+/* WHAT LEAVES THE PAGE MUST READ CORRECTLY WHERE IT LANDS.
+   The same three open-tanween code points that need the Mushaf font on this
+   page need it everywhere else too — pasted into a message or a note, where
+   that font is not installed, "هُدٗى" would show the wrong mark. So a verse
+   copied off the page is re-spelled in the ordinary Unicode Quranic marks
+   every font draws (the same vowels; only the drawn shape of the tanween and
+   the sukun changes): open tanween -> tanween, the Madinah sukun -> sukun,
+   the Madinah silent-letter circle -> U+06DF. Only words written in the
+   Madinah spelling are touched; a hadith or a sentence copied alongside
+   keeps its own marks. */
+function iitwQuranPortable(text) {
+  return String(text || "").replace(/[^\s]+/g, w => {
+    if (!IITW_Q_MARK.test(w)) return w;
+    return w.replace(/\u0652/g, "\u06DF")
+            .replace(/\u06E1/g, "\u0652")
+            .replace(/\u0657/g, "\u064B")
+            .replace(/\u065E/g, "\u064C")
+            .replace(/\u0656/g, "\u064D");
+  });
+}
+window.iitwQuranPortable = iitwQuranPortable;
+
+document.addEventListener("copy", e => {
+  const sel = document.getSelection ? document.getSelection() : null;
+  if (!sel || sel.isCollapsed || !e.clipboardData) return;
+  const text = sel.toString();
+  if (!IITW_Q_MARK.test(text)) return;
+  e.clipboardData.setData("text/plain", iitwQuranPortable(text));
+  e.preventDefault();
+});

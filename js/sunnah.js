@@ -523,8 +523,8 @@ const SUNNAH = [
     title: "The dua when setting out and mounting a ride",
     titleAr: "دعاء السفر والركوب",
     detail: "When mounting his ride he ﷺ would say 'Glory to Him who has subjected this to us,' then ask Allah for righteousness and ease in the journey, and for protection over his family.",
-    detailAr: "كان ﷺ إذا استوى على دابته قال: «سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا»، ثم سأل الله البرّ والتقوى وأن يُهوّن عليه السفر ويحفظ أهله.",
-    arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ",
+    detailAr: "كان ﷺ إذا استوى على دابته قال: ﴿سُبۡحَٰنَ ٱلَّذِي سَخَّرَ لَنَا هَٰذَا﴾، ثم سأل الله البرّ والتقوى وأن يُهوّن عليه السفر ويحفظ أهله.",
+    arabic: "سُبۡحَٰنَ ٱلَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُۥ مُقۡرِنِينَ",
     ref: "Sahih Muslim, Book of Hajj, Hadith 1342",
     strength: "Sahih — Narrated by Muslim",
     keys: ["travel","journey","car","plane","riding","dua","السفر","الركوب","دعاء السفر","سبحان الذي سخر"]
@@ -1090,8 +1090,8 @@ const SUNNAH = [
     title: "The dua of Yunus for every difficulty",
     titleAr: "دعوة ذي النون",
     detail: "The Prophet ﷺ said the supplication of Yunus in the belly of the whale — 'There is no god but You, glory to You, indeed I was among the wrongdoers' — is such that no Muslim supplicates with it for anything except that Allah answers him.",
-    detailAr: "قال النبي ﷺ إن دعوة ذي النون في بطن الحوت: «لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ» ما دعا بها مسلم في شيء إلا استجاب الله له.",
-    arabic: "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+    detailAr: "قال النبي ﷺ إن دعوة ذي النون في بطن الحوت: ﴿لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبۡحَٰنَكَ إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ﴾ ما دعا بها مسلم في شيء إلا استجاب الله له.",
+    arabic: "لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبۡحَٰنَكَ إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ",
     ref: "Jami at-Tirmidhi, Hadith 3505; Musnad Ahmad",
     strength: "Sahih — authenticated by al-Albani",
     keys: ["yunus","dua","difficulty","answered","trouble","problem","help","ذو النون","يونس","الدعاء","الاستجابة","الشدة","المشكلة"]
