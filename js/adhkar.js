@@ -190,7 +190,9 @@ const ADHKAR = [
     countAr: "مئة في المجموع عند النوم",
     virtue: "Fatimah رضي الله عنها came to her father asking for a servant to help her, and he offered her this instead: \"Shall I not tell you of what is better for you than a servant?\" Ali رضي الله عنه said he never left it after that — and when he was asked, \"not even on the night of Siffin?\", he said: not even on the night of Siffin. The narrations differ over which of the three is the thirty-four; both wordings are in al-Bukhari.",
     virtueAr: "أتت فاطمة رضي الله عنها أباها تسأله خادمًا، فدلّها على ما هو خيرٌ لها منه: «ألا أخبرك بما هو خيرٌ لك منه؟» قال عليٌّ رضي الله عنه: فما تركتها بعد، فقيل: ولا ليلة صِفّين؟ قال: ولا ليلة صِفّين. واختلفت الروايات في أيّها تكون أربعًا وثلاثين، وكلا اللفظين في البخاري.",
-    ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 5362; and Book of Supplications, Hadith 6318", refAr: "صحيح البخاري، كتاب فضائل الصحابة، حديث ٥٣٦٢؛ وكتاب الدعوات، حديث ٦٣١٨",
+    /* 5362 is in the Book of Supporting the Family (an-Nafaqat), not the
+       Virtues of the Companions — that book has the same story at 3705. */
+    ref: "Sahih al-Bukhari, Book of Supporting the Family, Hadith 5362; and Book of Supplications, Hadith 6318", refAr: "صحيح البخاري، كتاب النفقات، حديث ٥٣٦٢؛ وكتاب الدعوات، حديث ٦٣١٨",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["tasbih", "fatimah", "sleep", "servant", "تسبيح فاطمة", "النوم", "الخادم", "التسبيح"]
   },

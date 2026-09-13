@@ -389,7 +389,7 @@ const FIQH_RULINGS = [
         ref: "Surah Luqman (31:15)", refAr: "سورة لقمان (٣١:١٥)" },
       { en: "Obedience is only in what is right.",
         ar: "إِنَّمَا الطَّاعَةُ فِي الْمَعْرُوفِ",
-        ref: "Sahih al-Bukhari, Book of Holding Fast to the Book, Hadith 7257 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب الاعتصام بالكتاب والسنّة، حديث ٧٢٥٧ — صحيح، متفق عليه" }
+        ref: "Sahih al-Bukhari, Book of Reports of Single Narrators (Akhbar al-Ahad), Hadith 7257 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب أخبار الآحاد، حديث ٧٢٥٧ — صحيح، متفق عليه" }
     ],
     scholars: [
       { name: "Ibn Baz", nameAr: "الشيخ عبد العزيز بن باز",

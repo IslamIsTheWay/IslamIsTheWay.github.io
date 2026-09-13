@@ -138,8 +138,10 @@ const SUNNAH = [
     detail: "The Prophet ﷺ said that were it not for fear of burdening people, he would have commanded the miswak at every prayer. He used it on waking, before prayer, and on entering his home.",
     detailAr: "قال النبي ﷺ: لولا أن أشقّ على أمتي لأمرتهم بالسواك عند كل صلاة. وكان يستاك عند الاستيقاظ وقبل الصلاة وعند دخوله بيته.",
     arabic: "لَوْلَا أَنْ أَشُقَّ عَلَى أُمَّتِي لَأَمَرْتُهُمْ بِالسِّوَاكِ عِنْدَ كُلِّ صَلَاةٍ",
-    ref: "Sahih al-Bukhari, Book of Jumu'ah, Hadith 887",
-    strength: "Sahih — Narrated by al-Bukhari",
+    /* "عند كل صلاة" is Muslim's wording; al-Bukhari 887 says "مع كل صلاة". */
+    ref: "Sahih al-Bukhari, Book of Jumu'ah, Hadith 887; Sahih Muslim, Book of Purification, Hadith 252 (this wording is Muslim's)",
+    refAr: "صحيح البخاري، كتاب الجمعة، حديث ٨٨٧؛ وصحيح مسلم، كتاب الطهارة، حديث ٢٥٢ (واللفظ لمسلم)",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["miswak","siwak","teeth","brush","clean mouth","before prayer","سواك","مسواك","أسنان","نظافة الفم","قبل الصلاة"]
   },
   {
@@ -469,7 +471,7 @@ const SUNNAH = [
     titleAr: "النهي عن إسبال الثوب خيلاء",
     detail: "The Prophet ﷺ warned against letting the garment drag below the ankles out of arrogance, and praised simple, clean, modest dress. He said white garments are among the best to wear.",
     detailAr: "حذّر النبي ﷺ من إسبال الثوب أسفل الكعبين خيلاء، وحبّب اللباس النظيف المتواضع، وقال إن خير الثياب البياض.",
-    ref: "Sahih al-Bukhari, Hadith 5787; Jami at-Tirmidhi, Hadith 994 (on white)",
+    ref: "Sahih al-Bukhari, Hadith 5787; Jami at-Tirmidhi, Hadith 994 (on white)", refAr: "صحيح البخاري، حديث ٥٧٨٧؛ جامع الترمذي، حديث ٩٩٤ (في لبس البياض)",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["isbal","garment","ankles","pride","white clothes","modest dress","الإسبال","الثوب","الكعبين","الخيلاء","البياض"]
   },
@@ -491,7 +493,7 @@ const SUNNAH = [
     titleAr: "كان يعمل في بيته ﷺ",
     detail: "Asked what the Prophet ﷺ did at home, Aisha رضي الله عنها said he would mend his sandals, patch his garment and work as any of you works in his house — and he was always in service of his family.",
     detailAr: "سُئلت عائشة رضي الله عنها ما كان النبي ﷺ يصنع في بيته؟ قالت: كان يخصف نعله، ويرقع ثوبه، ويعمل كما يعمل أحدكم في بيته — وكان في خدمة أهله.",
-    ref: "Musnad Ahmad; Sahih al-Bukhari, Book of Adhan (on being asked)",
+    ref: "Musnad Ahmad; Sahih al-Bukhari, Book of Adhan (on being asked)", refAr: "مسند أحمد؛ صحيح البخاري، كتاب الأذان (جوابُ عائشة لمّا سُئلت عمّا كان يصنع في بيته)",
     strength: "Sahih — authenticated in the collections",
     keys: ["housework","home","helping wife","chores","family","خدمة الأهل","البيت","مساعدة الزوجة","الأعمال المنزلية"]
   },
@@ -568,7 +570,7 @@ const SUNNAH = [
     titleAr: "صيام النبي ﷺ التطوعي",
     detail: "He ﷺ frequently fasted Mondays and Thursdays, encouraged the six days of Shawwal after Ramadan, the Day of Arafah for non-pilgrims, and the Day of Ashura.",
     detailAr: "كان ﷺ يكثر صيام الاثنين والخميس، وحثّ على ست من شوال بعد رمضان، ويوم عرفة لغير الحاج، ويوم عاشوراء.",
-    ref: "Sahih Muslim, Hadith 1162 (Arafah, Ashura) and 1164 (Shawwal); Jami at-Tirmidhi (Mon/Thu)",
+    ref: "Sahih Muslim, Hadith 1162 (Arafah, Ashura) and 1164 (Shawwal); Jami at-Tirmidhi (Mon/Thu)", refAr: "صحيح مسلم، حديث ١١٦٢ (عرفة وعاشوراء) و١١٦٤ (ستٌّ من شوّال)؛ جامع الترمذي (الاثنين والخميس)",
     strength: "Sahih — Narrated by Muslim",
     keys: ["monday","thursday","shawwal","arafah","ashura","voluntary fast","الاثنين","الخميس","شوال","عرفة","عاشوراء","صيام التطوع"]
   },
@@ -602,7 +604,7 @@ const SUNNAH = [
     titleAr: "قراءة الكهف يوم الجمعة والملك بالليل",
     detail: "Reciting Surah Al-Kahf on Friday is reported to bring light for the believer, and the Prophet ﷺ would not sleep until he had recited Surah Al-Mulk.",
     detailAr: "وردت فضيلة قراءة سورة الكهف يوم الجمعة وأنها نور للمؤمن، وكان النبي ﷺ لا ينام حتى يقرأ سورة الملك.",
-    ref: "Sunan an-Nasa'i / al-Bayhaqi (Al-Kahf); Jami at-Tirmidhi, Hadith 2892 (Al-Mulk)",
+    ref: "Sunan an-Nasa'i / al-Bayhaqi (Al-Kahf); Jami at-Tirmidhi, Hadith 2892 (Al-Mulk)", refAr: "سنن النسائي / البيهقي (الكهف)؛ جامع الترمذي، حديث ٢٨٩٢ (الملك)",
     strength: "Strong — graded Strong by the scholars of hadith",
     keys: ["kahf","mulk","friday","night reading","surah","الكهف","الملك","الجمعة","قراءة الليل"]
   },
@@ -624,7 +626,7 @@ const SUNNAH = [
     titleAr: "الفزع إلى الصلاة عند الشدة",
     detail: "Whenever a matter distressed the Prophet ﷺ he would turn to prayer, and he was commanded to seek help through patience and prayer. He also taught the prayer of seeking guidance (istikharah) when facing a decision.",
     detailAr: "كان النبي ﷺ إذا حزبه أمر فزع إلى الصلاة، وأُمر بالاستعانة بالصبر والصلاة. وعلّم صلاة الاستخارة عند الحاجة إلى قرار.",
-    ref: "Sunan Abu Dawud, Hadith 1319; Sahih al-Bukhari, Hadith 1162 (istikharah)",
+    ref: "Sunan Abu Dawud, Hadith 1319; Sahih al-Bukhari, Hadith 1162 (istikharah)", refAr: "سنن أبي داود، حديث ١٣١٩؛ صحيح البخاري، حديث ١١٦٢ (الاستخارة)",
     strength: "Sahih — established in the collections",
     keys: ["prayer in hardship","istikharah","decision","confused","guidance","patience","الصلاة عند الشدة","الاستخارة","قرار","حيرة","الصبر"]
   },
@@ -636,7 +638,7 @@ const SUNNAH = [
     titleAr: "الرقية بالقرآن",
     detail: "The Prophet ﷺ would place his hand on the place of pain and say: 'In the name of Allah' three times, then a dua seeking refuge from the harm. He approved ruqyah with Al-Fatihah and the Quran.",
     detailAr: "كان ﷺ يضع يده على موضع الألم ويقول: «بسم الله» ثلاثاً، ثم يدعو بالاستعاذة من الشر. وأقرّ الرقية بالفاتحة والقرآن.",
-    ref: "Sahih Muslim, Hadith 2202; Sahih al-Bukhari, Hadith 5736 (Al-Fatihah)",
+    ref: "Sahih Muslim, Hadith 2202; Sahih al-Bukhari, Hadith 5736 (Al-Fatihah)", refAr: "صحيح مسلم، حديث ٢٢٠٢؛ صحيح البخاري، حديث ٥٧٣٦ (الرقية بالفاتحة)",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["ruqyah","healing","sick","pain","fatihah","cure","الرقية","الشفاء","المرض","الألم","الفاتحة"]
   },
@@ -796,7 +798,7 @@ const SUNNAH = [
     titleAr: "إعطاء الأجير أجره",
     detail: "The Prophet ﷺ commanded that a worker be given his wage before his sweat dries, and warned severely against withholding the pay of one who has laboured.",
     detailAr: "أمر النبي ﷺ أن يُعطى الأجير أجره قبل أن يجف عرقه، وحذّر بشدة من منع أجر من عمل.",
-    ref: "Sunan Ibn Majah, Hadith 2443; Sahih al-Bukhari, Hadith 2270 (on withholding)",
+    ref: "Sunan Ibn Majah, Hadith 2443; Sahih al-Bukhari, Hadith 2270 (on withholding)", refAr: "سنن ابن ماجه، حديث ٢٤٤٣؛ صحيح البخاري، حديث ٢٢٧٠ (في إثم من منع الأجير أجره)",
     strength: "Sahih — authenticated by al-Albani",
     keys: ["worker","wage","salary","pay","employee","delay","الأجير","الأجرة","الراتب","العامل","تأخير"]
   },
@@ -885,7 +887,10 @@ const SUNNAH = [
     titleAr: "العسل والحبة السوداء والتداوي",
     detail: "The Prophet ﷺ encouraged seeking treatment, saying Allah has not sent down a disease without sending down its cure. He mentioned honey as healing and black seed (habbat as-sawda) as a remedy for many ailments.",
     detailAr: "حثّ النبي ﷺ على التداوي وقال: ما أنزل الله داءً إلا أنزل له شفاءً. وذكر العسل شفاءً، والحبة السوداء دواءً لكثير من الأمراض.",
-    ref: "Sahih al-Bukhari, Hadith 5678 (cure), 5684 (black seed), 5683 (honey)",
+    /* 5684 is the man told "give him honey"; the black seed is 5688. They
+       had been labelled the other way about. */
+    ref: "Sahih al-Bukhari, Hadith 5678 (cure), 5684 (honey), 5688 (black seed)",
+    refAr: "صحيح البخاري، حديث ٥٦٧٨ (الدواء)، و٥٦٨٤ (العسل)، و٥٦٨٨ (الحبة السوداء)",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["honey","black seed","medicine","treatment","cure","doctor","remedy","العسل","الحبة السوداء","التداوي","الدواء","الشفاء","الطبيب"]
   },
@@ -895,7 +900,7 @@ const SUNNAH = [
     titleAr: "القوة والاعتدال",
     detail: "The Prophet ﷺ said the strong believer is more beloved to Allah than the weak one, encouraged teaching children swimming, riding and archery, and himself raced and wrestled.",
     detailAr: "قال النبي ﷺ: المؤمن القوي أحب إلى الله من المؤمن الضعيف، وحثّ على تعليم الأبناء السباحة والرمي والفروسية، وكان يسابق ويصارع.",
-    ref: "Sahih Muslim, Hadith 2664; Sunan al-Bayhaqi (on teaching children)",
+    ref: "Sahih Muslim, Hadith 2664; Sunan al-Bayhaqi (on teaching children)", refAr: "صحيح مسلم، حديث ٢٦٦٤؛ سنن البيهقي (في تعليم الأولاد)",
     strength: "Sahih — Narrated by Muslim",
     keys: ["strength","strong","exercise","sport","swimming","archery","health","fitness","القوة","الرياضة","السباحة","الرمي","الصحة","اللياقة"]
   },
@@ -1049,7 +1054,7 @@ const SUNNAH = [
     titleAr: "التوكل مع الأخذ بالأسباب",
     detail: "The Prophet ﷺ taught genuine reliance on Allah joined with practical effort — a man was told to tie his camel and then trust, and he ﷺ said that if people relied on Allah truly, they would be provided like the birds.",
     detailAr: "علّم النبي ﷺ التوكل الحق مع الأخذ بالأسباب — فقيل للرجل: اعقلها وتوكّل، وقال ﷺ: لو أنكم توكلتم على الله حق توكله لرزقكم كما يرزق الطير.",
-    ref: "Jami at-Tirmidhi, Hadith 2517 (tie it) and 2344 (the birds)",
+    ref: "Jami at-Tirmidhi, Hadith 2517 (tie it) and 2344 (the birds)", refAr: "جامع الترمذي، حديث ٢٥١٧ (اعقلها وتوكّل) و٢٣٤٤ (رزق الطير)",
     strength: "Strong — authenticated by al-Albani",
     keys: ["trust","tawakkul","effort","provision","rizq","worry about money","التوكل","الأسباب","الرزق","القلق","العمل"]
   },
@@ -1112,7 +1117,7 @@ const SUNNAH = [
     titleAr: "من يبدأ بالسلام",
     detail: "The Prophet ﷺ taught the order of greeting: the rider greets the one walking, the walker greets the one sitting, and the smaller group greets the larger.",
     detailAr: "علّم النبي ﷺ ترتيب السلام: يسلّم الراكب على الماشي، والماشي على القاعد، والقليل على الكثير.",
-    ref: "Sahih al-Bukhari, Book of Manners, Hadith 6233",
+    ref: "Sahih al-Bukhari, Book of Asking Permission, Hadith 6233",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["greeting order","salam","rider","walking","elder","young","group","السلام","الراكب","الماشي","القاعد","الكثير"]
   },
@@ -1152,7 +1157,7 @@ const SUNNAH = [
     titleAr: "من طعامه ﷺ",
     detail: "Among the foods he ﷺ liked were dates, milk, honey, barley bread and vinegar with oil. He said a house without dates is a hungry house, and he praised simple wholesome food.",
     detailAr: "من الطعام الذي أحبه ﷺ: التمر واللبن والعسل وخبز الشعير والخل والزيت. وقال: بيت لا تمر فيه جياع أهله، وأثنى على الطعام البسيط الطيب.",
-    ref: "Sahih Muslim, Hadith 2046 (dates); Sahih al-Bukhari, Book of Food and Drink",
+    ref: "Sahih Muslim, Hadith 2046 (dates); Sahih al-Bukhari, Book of Food and Drink", refAr: "صحيح مسلم، حديث ٢٠٤٦ (التمر)؛ صحيح البخاري، كتاب الأطعمة",
     strength: "Sahih — established in the collections",
     keys: ["dates","milk","honey","bread","food he ate","simple","التمر","اللبن","العسل","الخبز","طعامه","البسيط"]
   },
@@ -1162,7 +1167,7 @@ const SUNNAH = [
     titleAr: "القيلولة",
     detail: "A brief midday rest was part of the practice of the Prophet ﷺ and his Companions, taken after Dhuhr, and it was a means of strength for worship at night.",
     detailAr: "كانت القيلولة من هدي النبي ﷺ وأصحابه، تُؤخذ بعد الظهر، وكانت عوناً على قيام الليل والعبادة.",
-    ref: "Sahih al-Bukhari, Book of Permission (on the midday rest); established in the Sunnah",
+    ref: "Sahih al-Bukhari, Book of Permission (on the midday rest); established in the Sunnah", refAr: "صحيح البخاري، كتاب الاستئذان (في القائلة)؛ وهي ثابتةٌ في السنّة",
     strength: "Sahih — established in the collections",
     keys: ["nap","qaylulah","rest","midday","afternoon","tired","القيلولة","النوم نهارا","الراحة","بعد الظهر"]
   },
@@ -1172,7 +1177,7 @@ const SUNNAH = [
     titleAr: "المضمضة بعد اللبن والطعام",
     detail: "After drinking milk the Prophet ﷺ rinsed his mouth, saying it has fat in it. He also washed his hands before and after eating.",
     detailAr: "شرب النبي ﷺ لبناً ثم تمضمض وقال: إن له دسماً. وكان يغسل يديه قبل الطعام وبعده.",
-    ref: "Sahih al-Bukhari, Hadith 211; Jami at-Tirmidhi (washing hands)",
+    ref: "Sahih al-Bukhari, Hadith 211; Jami at-Tirmidhi (washing hands)", refAr: "صحيح البخاري، حديث ٢١١؛ جامع الترمذي (في غسل اليدين)",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["rinse mouth","milk","wash hands","after eating","clean","المضمضة","اللبن","غسل اليدين","بعد الطعام","النظافة"]
   },
@@ -1232,7 +1237,7 @@ const SUNNAH = [
     titleAr: "المكافأة على الهدية والدعاء للمُهدي",
     detail: "The Prophet ﷺ accepted gifts and would repay them. He said whoever is given a favour and cannot repay it should pray for the giver, saying 'JazakAllahu khayran' — for he has then fully thanked him.",
     detailAr: "كان النبي ﷺ يقبل الهدية ويكافئ عليها. وقال: من صُنع إليه معروف فلم يستطع المكافأة فليدعُ لصاحبه ويقل: «جزاك الله خيراً»، فقد أبلغ في الثناء.",
-    ref: "Jami at-Tirmidhi, Hadith 2035; Sahih al-Bukhari, Hadith 2585 (accepting gifts)",
+    ref: "Jami at-Tirmidhi, Hadith 2035; Sahih al-Bukhari, Hadith 2585 (accepting gifts)", refAr: "جامع الترمذي، حديث ٢٠٣٥؛ صحيح البخاري، حديث ٢٥٨٥ (قبول الهدية والإثابة عليها)",
     strength: "Sahih — authenticated by al-Albani",
     keys: ["gift","thank","favour","jazakallah","gratitude","repay","الهدية","الشكر","المعروف","جزاك الله خيرا","المكافأة"]
   },
@@ -1376,7 +1381,7 @@ const SUNNAH = [
     titleAr: "دعوة المسافر مستجابة",
     detail: "The Prophet ﷺ mentioned that three supplications are not refused: that of a parent, of a fasting person, and of a traveller. He also urged appointing a leader among a travelling group.",
     detailAr: "ذكر النبي ﷺ أن ثلاث دعوات لا تُرد: دعوة الوالد، ودعوة الصائم، ودعوة المسافر. وأمر بتأمير أحدهم إذا خرج جماعة في سفر.",
-    ref: "Sunan al-Bayhaqi; Sunan Abu Dawud, Hadith 2608 (appointing a leader)",
+    ref: "Sunan al-Bayhaqi; Sunan Abu Dawud, Hadith 2608 (appointing a leader)", refAr: "سنن البيهقي؛ سنن أبي داود، حديث ٢٦٠٨ (في تأمير أحدهم في السفر)",
     strength: "Strong — established in the collections",
     keys: ["traveller dua","journey","answered dua","group travel","leader","دعاء المسافر","السفر","الاستجابة","الرفقة","الأمير"]
   },
@@ -1427,7 +1432,7 @@ const SUNNAH = [
     titleAr: "إهداء الطعام للجار",
     detail: "The Prophet ﷺ told Abu Dharr that when he cooks a stew, he should add extra water and give some to his neighbour. He warned that one is not a believer who sleeps full while his neighbour beside him is hungry.",
     detailAr: "قال النبي ﷺ لأبي ذر: إذا طبخت مرقة فأكثر ماءها وتعاهد جيرانك. وحذّر: ليس المؤمن الذي يشبع وجاره جائع إلى جنبه.",
-    ref: "Sahih Muslim, Hadith 2625; al-Bayhaqi (the second narration)",
+    ref: "Sahih Muslim, Hadith 2625; al-Bayhaqi (the second narration)", refAr: "صحيح مسلم، حديث ٢٦٢٥؛ البيهقي (الرواية الثانية)",
     strength: "Sahih — Narrated by Muslim",
     keys: ["neighbour","food","share","hungry","cooking","الجار","الطعام","المشاركة","الجائع","الطبخ"]
   },
@@ -1742,7 +1747,7 @@ const SUNNAH = [
     detail: "The Prophet ﷺ said that whoever eats of this plant — meaning garlic — should not come near us, or should not pray with us, because the angels are harmed by what harms people.",
     detailAr: "قال النبي ﷺ: من أكل من هذه الشجرة — يعني الثوم — فلا يقربنا، أو: فلا يصلِّينَّ معنا؛ فإن الملائكة تتأذى مما يتأذى منه بنو آدم.",
     arabic: "مَنْ أَكَلَ مِنْ هَذِهِ الشَّجَرَةِ فَلَا يَقْرَبْنَا، أَوْ لَا يُصَلِّيَنَّ مَعَنَا",
-    ref: "Sahih al-Bukhari, Book of Salat, Hadith 856",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 856",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["garlic","onion","smell","breath","mosque","congregation","consideration","الثوم","البصل","الرائحة","المسجد","الجماعة","الأذى"]
   },
@@ -1753,7 +1758,7 @@ const SUNNAH = [
     detail: "The Prophet ﷺ said that if your women ask your permission to go to the mosque at night, give them permission.",
     detailAr: "قال النبي ﷺ: إذا استأذنكم نساؤكم بالليل إلى المسجد فأْذنوا لهنّ.",
     arabic: "إِذَا اسْتَأْذَنَكُمْ نِسَاؤُكُمْ بِاللَّيْلِ إِلَى الْمَسْجِدِ فَأْذَنُوا لَهُنَّ",
-    ref: "Sahih al-Bukhari, Book of Salat, Hadith 865",
+    ref: "Sahih al-Bukhari, Book of Adhan, Hadith 865",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["women","wife","mosque","permission","prevent","night","النساء","الزوجة","المسجد","الإذن","المنع","الليل"]
   },
@@ -1996,7 +2001,10 @@ const SUNNAH = [
     detail: "A practical instruction for the end of the day: shut the doors and mention Allah's name, cover the water and food vessels even if only by laying something across them, and put out the lamp before sleeping. He ﷺ gave a reason for the last one — a house has burned down over a lamp left lit.",
     detailAr: "أمرٌ عمليٌّ لآخر النهار: أن تُغلق الأبواب وتُسمّي الله، وأن تُخمّر الأواني ولو أن تعرض عليها عودًا، وأن يُطفأ السراج عند النوم. وعلّل النبيّ ﷺ الأخير بأنّ الفويسقة ربما جرّت الفتيلة فأحرقت أهل البيت.",
     arabic: "أَطْفِئُوا الْمَصَابِيحَ إِذَا رَقَدْتُمْ، وَغَلِّقُوا الْأَبْوَابَ، وَأَوْكُوا الْأَسْقِيَةَ",
-    ref: "Sahih al-Bukhari, Hadith 5623; Sahih Muslim, Hadith 2012",
+    /* The words above are 5624's; 5623 is the longer instruction with
+       "and mention Allah's name" after each. */
+    ref: "Sahih al-Bukhari, Hadith 5624 and 5623; Sahih Muslim, Hadith 2012",
+    refAr: "صحيح البخاري، حديث ٥٦٢٤ و٥٦٢٣؛ وصحيح مسلم، حديث ٢٠١٢",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["home","night","doors","lamp","fire","safety","vessels","covering","sleep",
            "البيت","الليل","الأبواب","السراج","الأواني","النوم","الحريق"]

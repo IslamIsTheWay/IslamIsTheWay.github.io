@@ -122,8 +122,15 @@ function vSkel(s) {
 
 /* Latin skeleton — letters only, so punctuation and spelling of names
    ("Bukhari" / "Bukhaari") do not decide a match. */
+/* A contraction is spelled out first, on both sides alike, so that "don't",
+   "dont" and "do not" are one thing — otherwise "don't get angry" leaves the
+   stub "don" behind as though it were a word of the claim. */
 function vSkelEn(s) {
-  return (s || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  return (s || "").toLowerCase()
+    .replace(/[‘’ʼ`´]/g, "'")
+    .replace(/\bcan'?t\b/g, "cannot").replace(/\bwon't\b/g, "will not")
+    .replace(/\b(do|does|did|is|are|was|were|has|have|had|should|would|could|must|need)n'?t\b/g, "$1 not")
+    .replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 }
 
 /* ---------------- how a match is actually measured ----------------
@@ -161,7 +168,8 @@ const V_BOILER = [
   "صلى الله عليه وسلم", "صلى الله عليه و سلم", "عليه الصلاة والسلام",
   "قال رسول الله", "قال النبي", "عن رسول الله", "عن النبي",
   "رضي الله عنه", "رضي الله عنها", "رضي الله عنهم", "رضي الله عنهما",
-  "عليه السلام", "حدثنا", "أخبرنا", "اخبرنا", "قال صلى الله عليه وسلم"
+  "عليه السلام", "حدثنا", "أخبرنا", "اخبرنا", "قال صلى الله عليه وسلم",
+  "صلى الله عليه وسلم قال"
 ].map(function (p) { return [vSkel(p), vSkelWord(p)]; })
  .reduce(function (a, b) { return a.concat(b); }, [])
  .filter(function (s) { return s.length >= 4; })
@@ -176,6 +184,121 @@ function vStripBoiler(skel) {
     }
   }
   return s.replace(/\s+/g, " ").trim();
+}
+
+/* WHAT A FORWARDED MESSAGE WRAPS AROUND THE TEXT IS CUT OFF FIRST.
+
+   Measured in September 2026 — each of these came back "we did not find
+   this", although every one is a hadith this site carries:
+
+     The Prophet (peace be upon him) said: Actions are judged by intentions
+     Prophet Muhammad (saw) said smiling at your brother is charity. Please share
+     قال رسول الله ﷺ إنما الأعمال بالنيات انشرها ولك الأجر
+
+   That is how a hadith actually arrives: an attribution in front, a plea to
+   share or a copied source line behind. Those words were being counted as
+   words of the claim, so the hadith accounted for too little of it. The
+   formula list above only ever reached Arabic, and only the formula itself
+   — never the narrator in front of it or the "انشرها" behind it.
+
+   So before anything is compared:
+     · everything up to the LAST "the Prophet ﷺ said" goes, and the narrator
+       and chain in front of it with it;
+     · failing that, a narrator's "عن فلان قال" or an "Allah says" at the
+       very start goes;
+     · a trailing plea to share, "رواه البخاري", "صدق الله العظيم", a verse
+       number, or a copied source line ("الراوي: … | المحدث: …",
+       "Reference : …") goes.
+   Each cut is made only if a real text is left after it, and each is a
+   whole-word pattern, never a substring — "أرسل" alone would have cut
+   "إنا أرسلناك" in half. */
+const V_MARKS_ALL = new RegExp(V_MARKS.source, "g");
+
+const V_CUT_AR_PROPHET = new RegExp(
+  "(?:^|\\s)(?:(?:و?قال|يقول|و?عن|أن|ان|إن|سمعت|سمعنا)\\s+(?:رسول\\s*الله|النب[يى]|نب[يى]\\s*الله)" +
+  "(?:\\s*(?:\\(?ﷺ\\)?|صل[ىي]\\s*الله\\s*عليه\\s*و\\s*سلم|عليه\\s*الصلاة\\s*و\\s*السلام))?" +
+  "(?:\\s*(?:أنه\\s+قال|انه\\s+قال|قال|يقول))?" +
+  "|قال\\s*(?:\\(?ﷺ\\)?|صل[ىي]\\s*الله\\s*عليه\\s*و\\s*سلم))" +
+  "[\\s:،,.«»\"'()]*", "g");
+const V_CUT_AR_NARRATOR = /^\s*(?:و?عن|روى|روت)\s+[^:،,\n]{2,60}?\s(?:قال|قالت)[\s:،,.«»"']*/;
+const V_CUT_AR_ALLAH = /^\s*(?:و?قال|يقول)\s+(?:الله|ربنا|ربكم)(?:\s+(?:تعالى|تعالي|عز\s+وجل|سبحانه\s+وتعال[ىي]|جل\s+جلاله))?(?:\s+في\s+كتابه(?:\s+(?:العزيز|الكريم))?)?[\s:،,.«»"'﴿]*/;
+const V_CUT_AR_TAIL = new RegExp(
+  "(?:^|[\\s(\\[«\"'])(?:رواه|أخرجه|اخرجه|متفق\\s+عليه|الراوي|المحدث|المصدر|خلاصة\\s+حكم|" +
+  "انشرها|انشروها|أرسلها|ارسلها|شاركها|انشر\\s+تؤجر|لا\\s+تجعلها|لا\\s+تدعها|" +
+  "صدق\\s+الله\\s+العظيم|صدق\\s+رسول\\s+الله)(?=[\\s:،,.()\\[\\]»\"']|$)[\\s\\S]*$");
+/* "(البقرة: 153)" or "[سورة البقرة ١٥٣]" closing a verse */
+const V_CUT_AR_VERSE_NO = /[(\[]\s*(?:سورة\s+)?[ء-ي\s]{2,24}[:：]?\s*[0-9٠-٩]+\s*[)\]]\s*$/;
+
+function vCutAr(claim) {
+  let s = String(claim || "").normalize("NFC").replace(V_MARKS_ALL, "");
+  const left = function (t) { return vSkel(t).length >= 6; };
+  let m, end = -1;
+  V_CUT_AR_PROPHET.lastIndex = 0;
+  while ((m = V_CUT_AR_PROPHET.exec(s))) {
+    end = m.index + m[0].length;
+    if (!m[0].length) V_CUT_AR_PROPHET.lastIndex++;
+  }
+  if (end > 0 && left(s.slice(end))) {
+    s = s.slice(end);
+  } else {
+    const n = s.match(V_CUT_AR_NARRATOR) || s.match(V_CUT_AR_ALLAH);
+    if (n && left(s.slice(n[0].length))) s = s.slice(n[0].length);
+  }
+  const t = s.match(V_CUT_AR_TAIL);
+  if (t && left(s.slice(0, t.index))) s = s.slice(0, t.index);
+  const v = s.match(V_CUT_AR_VERSE_NO);
+  if (v && left(s.slice(0, v.index))) s = s.slice(0, v.index);
+  return s;
+}
+
+/* The English side works on the Latin skeleton, so every pattern here is
+   lower-case words and single spaces. */
+const V_EN_HONOUR = new RegExp(" (?:" + [
+  "peace and blessings of allah be upon him", "peace and blessings be upon him",
+  "may allah bless him and grant him peace", "may allah s peace and blessings be upon him",
+  "may peace be upon him", "peace be upon him",
+  "sal{1,2}a ?l{1,2}ahu? ?(?:alayhi|alaihi|alaihe|alehi|alyhi) ?wa ?s{1,2}al{1,2}am",
+  "pbuh", "p b u h", "saws", "s a w s", "s a w",
+  "may allah be pleased with (?:him|her|them|both of them)",
+  "radh?iy?a? ?allahu? ?anh(?:u|a|um|uma)"
+].join("|") + ")(?= )", "g");
+const V_EN_SAW = / (prophet|muhammad|messenger of allah|allah s messenger|allah s apostle) (?:saw|sws)(?= )/g;
+const V_EN_PROPHET = / (?:the )?(?:holy )?(?:prophet|messenger of allah|messenger of god|allah s messenger|allah s apostle|apostle of allah|rasulullah|rasul allah|rasool allah|rasoolullah|rasulallah)(?: [a-z0-9]+){0,6}? (?:said|says|stated|declared|replied)(?= )/g;
+const V_EN_ALLAH = /^ (?:and )?(?:allah|god) (?:the almighty |almighty |the most high |most high |the exalted |exalted |subhanahu wa ta ?ala |swt )?(?:says|said)(?: in the (?:holy |noble )?quran)?(?= )/;
+const V_EN_QURAN = /^ in the (?:holy |noble )?quran(?: allah (?:says|said))?(?= )/;
+const V_EN_LEAD = /^ (?:hadith|narrated|reported)(?: [0-9]+)?(?= )/;
+const V_EN_TAIL = new RegExp(" (?:" + [
+  "please share", "share this", "share it", "pass it on", "forward this", "forward it",
+  "copy and paste", "send this to", "send it to", "narrated by", "reported by", "recorded by",
+  "in book reference", "reference", "sahih al bukhari", "sahih bukhari", "sahih muslim",
+  "al bukhari", "bukhari", "at tirmidhi", "tirmidhi", "abu dawud", "abu dawood", "abu daud",
+  "ibn majah", "an nasai", "nasai", "muwatta", "musnad ahmad", "agreed upon",
+  "grade sahih", "grade hasan", "quran [0-9]+", "surah?(?: [a-z]+){1,3} [0-9]+"
+].join("|") + ")(?= ).*$");
+
+function vCutEn(skel) {
+  let s = " " + skel + " ";
+  const left = function (t) { return t.trim().length >= 12; };
+  s = s.replace(V_EN_HONOUR, " ").replace(/\s+/g, " ").replace(V_EN_SAW, " $1");
+  let m, end = -1;
+  V_EN_PROPHET.lastIndex = 0;
+  while ((m = V_EN_PROPHET.exec(s))) end = m.index + m[0].length;
+  if (end > 0 && left(s.slice(end))) {
+    s = s.slice(end);
+  } else {
+    const n = s.match(V_EN_ALLAH) || s.match(V_EN_QURAN) || s.match(V_EN_LEAD);
+    if (n && left(s.slice(n[0].length))) s = s.slice(n[0].length);
+  }
+  const t = s.match(V_EN_TAIL);
+  if (t && left(s.slice(0, t.index))) s = s.slice(0, t.index);
+  const d = s.match(/(?: [0-9]+)+ *$/);          // "(2:153)" left behind as "2 153"
+  if (d && left(s.slice(0, d.index))) s = s.slice(0, d.index);
+  return s.replace(/\s+/g, " ").trim();
+}
+
+/* The claim as every matcher compares it. */
+function vClaimSkel(claim, ar) {
+  return ar ? vStripBoiler(vSkel(vCutAr(claim))) : vCutEn(vSkelEn(claim));
 }
 
 function vGrams(s) {
@@ -265,6 +388,7 @@ function vLongestRun(a, b) {
    Measured on the case above: coverage 0.25, comfortably rejected, while
    every true positive in the battery stays at 1.00. */
 function vWordCover(shortSkel, longSkel) {
+  if (vIsLatin(shortSkel)) return vEnCover(shortSkel, longSkel).cover;
   const words = shortSkel.split(" ").filter(function (w) { return w.length >= 3; });
   if (!words.length) return 1;
   let n = 0;
@@ -274,13 +398,83 @@ function vWordCover(shortSkel, longSkel) {
   return n / words.length;
 }
 
+/* ENGLISH FUNCTION WORDS CARRY NO SIGNAL, AND WERE BEING COUNTED AS IF THEY
+   DID. Measured on the page: "hello how are you" came back as
+   "📖 This is the Quran" — 6:95 in translation ends "so how are you
+   deluded?", the run "how are you" was long enough, and three of the four
+   words (how, are, you) were "present". None of those three says anything
+   about WHICH text a claim is. So in English only the content words are
+   counted, each as a WHOLE word (never a substring: "are" sits inside
+   "prepared"), with a plural folded onto its singular. */
+const V_EN_STOP = new Set((
+  "a an the and or but if then than so of to in on at by for with from into onto upon about " +
+  "is are was were be been being am do does did done doing has have had having will would shall " +
+  "should can could may might must it its this that these those there here he him his she her hers " +
+  "they them their theirs we us our ours you your yours i me my mine who whom whose which what when " +
+  "where why how not no nor all any some each every one ones as up down out over under again very just " +
+  "also only too such own same other more most much many hello hi hey ok okay yes please thanks thank " +
+  "get gets got become becomes became make makes made let lets said"
+).split(" "));
+
+/* One word for one thing, where a forwarded wording and this site's
+   translation habitually differ: "recites" / "says", "100" / "a hundred",
+   "jannah" / "paradise". Kept short on purpose — every fold is a claim that
+   two words mean the same, and a wrong one would join two subjects. */
+const V_EN_FOLD = {
+  recite: "say", recites: "say", recited: "say", reciting: "say", reads: "say", says: "say",
+  saying: "say", utter: "say", utters: "say",
+  forgiven: "forgive", forgives: "forgive", forgiveness: "forgive", pardoned: "forgive",
+  jannah: "paradise", heaven: "paradise",
+  salah: "prayer", salat: "prayer", pray: "prayer",
+  mom: "mother", mum: "mother",
+  angry: "anger", angered: "anger",
+  "100": "hundred", "1000": "thousand", "10": "ten", "70": "seventy", "40": "forty"
+};
+
+function vIsLatin(s) {
+  return /[a-z]/.test(s) && !/[ء-ي]/.test(s);
+}
+
+function vEnWord(w) {
+  if (V_EN_FOLD.hasOwnProperty(w)) return V_EN_FOLD[w];
+  if (w.length > 4 && /ies$/.test(w)) return w.slice(0, -3) + "y";     // families -> family
+  if (w.length > 4 && /(ches|shes|sses|xes)$/.test(w)) return w.slice(0, -2);
+  if (w.length > 3 && /s$/.test(w) && !/ss$/.test(w)) return w.slice(0, -1);   // prayers -> prayer
+  return w;
+}
+
+/* { cover, n }: the share of the shorter side's content words found, whole,
+   in the longer side, and how many content words the shorter side has. */
+function vEnCover(shortSkel, longSkel) {
+  const words = shortSkel.split(" ")
+    .filter(function (w) { return (w.length >= 3 || V_EN_FOLD.hasOwnProperty(w)) && !V_EN_STOP.has(w); })
+    .map(vEnWord);
+  if (!words.length) return { cover: 0, n: 0 };
+  const longSet = new Set(longSkel.split(" ").map(vEnWord));
+  let hit = 0;
+  for (let i = 0; i < words.length; i++) if (longSet.has(words[i])) hit++;
+  return { cover: hit / words.length, n: words.length };
+}
+
+/* The content words of an English skeleton, as a set of folded words. */
+function vEnContent(skel) {
+  return new Set(String(skel || "").split(" ")
+    .filter(function (w) { return (w.length >= 3 || V_EN_FOLD.hasOwnProperty(w)) && !V_EN_STOP.has(w); })
+    .map(vEnWord));
+}
+
 const V_MIN_COVER = 0.70;
 
 /* 0 when the two do not share enough, otherwise 0..1. */
 function vScore(claimSkel, textSkel, gramSet) {
   if (!claimSkel || !textSkel) return 0;
   if (textSkel.length < 8) return 0;
-  if (gramSet && !vSharesGram(textSkel, gramSet)) return 0;
+  /* An EMPTY gram set means the claim is shorter than one gram — "لا تغضب"
+     is six letters of skeleton — and such a claim could never share a gram
+     with anything, so every short hadith came back "not found", including
+     ones this site carries. The cheap filter is skipped for it instead; the
+     exact check below still decides. */
+  if (gramSet && gramSet.size && !vSharesGram(textSkel, gramSet)) return 0;
   const run = vLongestRun(claimSkel, textSkel);
   /* A short claim can never produce a long run, so the floor cannot be a
      fixed number: "الدين النصيحة" is nine consonants of skeleton and was
@@ -296,7 +490,83 @@ function vScore(claimSkel, textSkel, gramSet) {
   const shorter = claimSkel.length <= textSkel.length ? claimSkel : textSkel;
   const longer  = claimSkel.length <= textSkel.length ? textSkel : claimSkel;
   if (vWordCover(shorter, longer) < V_MIN_COVER) return 0;   // both already match-level
+  /* In English a single shared content word is not an identification unless
+     the two texts are nearly the same length and line up almost entirely. */
+  if (vIsLatin(shorter) && vEnCover(shorter, longer).n < 2 && share < 0.85) return 0;
   return share;
+}
+
+/* ================= WHAT A MATCH ACTUALLY COVERS ===========================
+   A score says two texts share a long run. It does not say WHICH side the
+   run is — and the verdict depends entirely on that. Measured, September
+   2026, all printed with the verdict that certifies the words:
+
+     "من قال سبحان الله وبحمده عشر مرات دخل الجنة" — a reward nobody
+       narrated, attached to a real dhikr — came back
+       "✅ This site carries this, and it is graded — al-Bukhari 6405",
+       because the dhikr it quotes is on the site.
+     "من قرأ قل هو الله أحد عشر مرات بنى الله له بيتا في الجنة" — a
+       hadith claim that quotes 112:1 — came back "📖 This is the Quran …
+       if it reached you called a hadith, that was wrong".
+     "سبحان الله" came back "This is the Quran" four times over, with the
+       same correction, as if nobody may say it outside a verse.
+
+   So every hit is classified by how much of EACH side the run accounts for:
+     full    the claim is (a part of) this text — the verdict as before;
+     occurs  a short phrase that sits inside a longer text: the words are
+             there, and nothing more is claimed;
+     quote   this text sits inside a LONGER claim: only these words were
+             found, and whatever the claim adds — a number, a reward, a
+             promise — was not found with them;
+     ""      only a phrase in common (بنى الله له بيتا في الجنة is in
+             al-Bukhari 450, which is about building a mosque): dropped.
+   A text that repeats itself ("لا تغضب" three times) is measured once. */
+function vRunIn(claim, text) {
+  const a = claim, b = text;
+  if (!a.length || !b.length) return { len: 0, end: 0 };
+  let prev = new Uint16Array(a.length + 1);
+  let cur = new Uint16Array(a.length + 1);
+  let best = 0, end = 0;
+  for (let j = 1; j <= b.length; j++) {
+    for (let i = 1; i <= a.length; i++) {
+      cur[i] = (a[i - 1] === b[j - 1]) ? prev[i - 1] + 1 : 0;
+      if (cur[i] > best) { best = cur[i]; end = i; }
+    }
+    const t = prev; prev = cur; cur = t;
+    cur.fill(0);
+  }
+  return { len: best, end: end };
+}
+
+function vDistinctLen(skel) {
+  const seen = new Set();
+  let n = 0;
+  String(skel || "").split(" ").forEach(function (w) {
+    if (w && !seen.has(w)) { seen.add(w); n += w.length + 1; }
+  });
+  return Math.max(1, n - 1);
+}
+
+const V_PART_RANK = { full: 0, meaning: 1, occurs: 2, quote: 3 };
+
+function vPart(claimSkel, textSkel) {
+  const r = vRunIn(claimSkel, textSkel);
+  const out = { part: "", len: r.len, end: r.end };
+  if (!r.len) return out;
+  const k = vIsLatin(claimSkel) ? 1.5 : 1;        // Latin runs are longer for the same words
+  const cc = r.len / claimSkel.length;
+  const tc = Math.min(1, r.len / vDistinctLen(textSkel));
+  /* "full" needs the claim to be nearly all of the text, or a run of three
+     or four whole words at least (إنما الأعمال بالنيات is twelve). Two words
+     that make up half of a three-word verse — سبحان الله in 37:159 — are
+     words that occur there, not "the Quran" as against a hadith. */
+  if (cc >= 0.6) out.part = (tc >= 0.8 || r.len >= 12 * k) ? "full" : "occurs";
+  else if (tc >= 0.8 || r.len >= 25 * k) out.part = "quote";
+  return out;
+}
+
+function vByPart(a, b) {
+  return (V_PART_RANK[a.part] - V_PART_RANK[b.part]) || (b.score - a.score);
 }
 
 /* ---------- 1. the Quran, which ships with the site ---------- */
@@ -334,7 +604,7 @@ function vQuranSkel() {
 function vSearchQuran(claim) {
   if (typeof QURAN_TEXT === "undefined") return [];
   const ar = vIsArabic(claim);
-  const cs = ar ? vStripBoiler(vSkel(claim)) : vSkelEn(claim);
+  const cs = vClaimSkel(claim, ar);
   if (cs.length < 6) return [];
   const gs = vGrams(cs);
   const hits = [];
@@ -344,10 +614,60 @@ function vSearchQuran(claim) {
     const skel = ar ? r.arSkel : r.enSkel;
     if (!skel) continue;
     const sc = vScore(cs, skel, gs);
-    if (sc) hits.push({ kind: "quran", surah: r.surah, ayah: r.ayah, score: sc,
-                        ar: r.ar, en: r.en });
+    if (!sc) continue;
+    const p = vPart(cs, skel);
+    hits.push({ kind: "quran", surah: r.surah, ayah: r.ayah, score: sc, part: p.part,
+                skel: skel, ar: r.ar, en: r.en });
   }
-  return hits.sort(function (a, b) { return b.score - a.score; }).slice(0, 4);
+  /* SEVERAL VERSES AT ONCE. "فإن مع العسر يسرا إن مع العسر يسرا" quotes
+     94:5 and 94:6, and each alone accounts for half of it — so each alone
+     looked like a verse inside a longer claim. The claim is covered greedily,
+     verse by verse: if what is left at the end is small, the pieces ARE the
+     claim. Consecutive verses of one surah are then simply "the Quran"; the
+     pieces of different surahs are only words that occur in it — "لا إله
+     إلا الله محمد رسول الله" is 47:19 and 48:29, and it is not a verse. */
+  let rest = cs;
+  const used = [];
+  for (let step = 0; step < 4 && rest.length >= 6; step++) {
+    let best = null, bestRun = null;
+    for (let i = 0; i < hits.length; i++) {
+      if (used.indexOf(hits[i]) >= 0) continue;
+      const rr = vRunIn(rest, hits[i].skel);
+      if (!bestRun || rr.len > bestRun.len) { best = hits[i]; bestRun = rr; }
+    }
+    if ((!best || bestRun.len < Math.min(V_MIN_RUN, rest.length)) && used.length) {
+      /* What is left may be a verse the WHOLE claim was too long to find:
+         لا إله إلا الله is a small part of the shahada, so 47:19 failed the
+         word-cover test against all of it. Look for the rest on its own. */
+      const gr = vGrams(rest);
+      let add = null, addSc = 0;
+      for (let i = 0; i < rows.length; i++) {
+        const sk = ar ? rows[i].arSkel : rows[i].enSkel;
+        if (!sk) continue;
+        const sc2 = vScore(rest, sk, gr);
+        if (sc2 > addSc) { addSc = sc2; add = rows[i]; }
+      }
+      if (add) {
+        best = { kind: "quran", surah: add.surah, ayah: add.ayah, score: addSc, part: "",
+                 skel: ar ? add.arSkel : add.enSkel, ar: add.ar, en: add.en };
+        bestRun = vRunIn(rest, best.skel);
+        if (hits.every(function (h) { return h.surah !== add.surah || h.ayah !== add.ayah; })) hits.push(best);
+      }
+    }
+    if (!best || bestRun.len < Math.min(V_MIN_RUN, rest.length)) break;
+    used.push(best);
+    rest = (rest.slice(0, bestRun.end - bestRun.len) + " " + rest.slice(bestRun.end))
+      .replace(/\s+/g, " ").trim();
+  }
+  if (used.length > 1 && rest.length <= cs.length * 0.4) {
+    const seq = used.slice().sort(function (a, b) { return (a.surah - b.surah) || (a.ayah - b.ayah); });
+    let consecutive = true;
+    for (let i = 1; i < seq.length; i++) {
+      if (seq[i].surah !== seq[0].surah || seq[i].ayah !== seq[i - 1].ayah + 1) consecutive = false;
+    }
+    used.forEach(function (h) { h.part = consecutive ? "full" : "occurs"; });
+  }
+  return hits.filter(function (h) { return h.part; }).sort(vByPart).slice(0, 4);
 }
 
 /* ---------- 2. what this site itself carries, already graded ---------- */
@@ -390,15 +710,18 @@ function vSearchQuran(claim) {
    test — read what the answer actually says. */
 function vSearchSite(claim) {
   const ar = vIsArabic(claim);
-  const cs = ar ? vStripBoiler(vSkel(claim)) : vSkelEn(claim);
+  const cs = vClaimSkel(claim, ar);
   if (cs.length < 6) return [];
   const gs = vGrams(cs);
   const hits = [];
 
   function tryOne(text, entry, prose) {
     if (!text) return;
-    const sc = vScore(cs, ar ? vSkel(text) : vSkelEn(text), gs);
-    if (sc) hits.push(Object.assign({ kind: "site", score: sc, prose: !!prose }, entry));
+    const ts = ar ? vSkel(text) : vSkelEn(text);
+    const sc = vScore(cs, ts, gs);
+    if (!sc) return;
+    const p = vPart(cs, ts);
+    if (p.part) hits.push(Object.assign({ kind: "site", score: sc, prose: !!prose, part: p.part }, entry));
   }
 
   if (typeof HADITHS !== "undefined") {
@@ -408,7 +731,7 @@ function vSearchSite(claim) {
          about it. This is the one collection where that is true. */
       tryOne(ar ? h.arabic : (h.text + " " + (h.title || "")), {
         title: h.title || h.topic, ar: h.arabic, en: h.text,
-        ref: h.ref, strength: h.strength, where: "hadith.html"
+        ref: h.ref, refAr: h.refAr, strength: h.strength, strengthAr: h.strengthAr, where: "hadith.html"
       }, false);
     });
   }
@@ -416,7 +739,7 @@ function vSearchSite(claim) {
     SUNNAH.forEach(function (s) {
       tryOne(ar ? (s.arabic || "") : (s.detail + " " + (s.title || "")), {
         title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
-        ref: s.ref, strength: s.strength, where: "sunnah.html"
+        ref: s.ref, refAr: s.refAr, strength: s.strength, strengthAr: s.strengthAr, where: "sunnah.html"
       }, !ar);          // the Arabic side is the narration; the English is our summary
     });
   }
@@ -424,7 +747,7 @@ function vSearchSite(claim) {
     PROPHET_STORIES.forEach(function (p) {
       tryOne(ar ? (p.arabic || "") : (p.story || ""), {
         title: p.title, titleAr: p.titleAr, ar: p.arabic, en: p.lesson,
-        ref: p.ref, strength: p.strength, where: "stories.html"
+        ref: p.ref, refAr: p.refAr, strength: p.strength, strengthAr: p.strengthAr, where: "stories.html"
       }, !ar);
     });
   }
@@ -432,14 +755,108 @@ function vSearchSite(claim) {
     ADHKAR.forEach(function (d) {
       tryOne(ar ? d.arabic : (d.en + " " + (d.title || "")), {
         title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
-        ref: d.ref, strength: d.strength, where: "guidance.html#adhkar"
+        ref: d.ref, refAr: d.refAr, strength: d.strength, strengthAr: d.strengthAr, where: "guidance.html#adhkar"
       }, false);        // `en` is a translation of the dhikr, not prose about it
+      /* THE REWARD IS A HADITH TOO, and it is what forwarded messages quote.
+         Where the entry gives it as the Prophet's own words ("قال النبي ﷺ:
+         من قال سبحان الله وبحمده في يوم مئة مرة…" is al-Bukhari 6405, the
+         entry's own reference), it is matched as a narration; where it is
+         this site's explanation, it is prose and is flagged as such. */
+      const said = /^قال النبي ﷺ/.test(d.virtueAr || "");
+      if (ar ? d.virtueAr : d.virtue) {
+        tryOne(ar ? d.virtueAr : d.virtue, {
+          title: d.title, titleAr: d.titleAr, ar: d.virtueAr, en: d.virtue,
+          ref: d.ref, refAr: d.refAr, strength: d.strength, strengthAr: d.strengthAr, where: "guidance.html#adhkar"
+        }, !said);
+      }
     });
   }
-  /* A narration always outranks a summary, however long the shared run was. */
-  return hits.sort(function (a, b) {
+
+  /* THE SAME HADITH IN OTHER ENGLISH WORDS. There is no single English
+     wording of a hadith, and a forwarded message rarely uses this site's.
+     "The best of you are those who are best to their families" was answered
+     "we did not find this" while the site carries it — its translation reads
+     "the best of you is the one who is best to his family". The run of shared
+     letters was a third of the claim, below the floor, because the grammar
+     around the two words that matter is different.
+
+     So, in English only and only against a TRANSLATION of a narration (never
+     against this site's prose), the content words are compared as a set: at
+     least two in common, three quarters of the claim's, and half of the
+     text's. A hit here is labelled a match in MEANING, and the card says so
+     and prints the real wording — it never certifies the words that were
+     pasted. A narration found only as a QUOTE inside the claim does not stop
+     this: the claim says more than it, and the more may be this. */
+  if (!ar && !hits.some(function (h) { return !h.prose && h.part !== "quote"; })) {
+    const mine = vEnContent(cs);
+    /* Content words alone cannot see a "not": "I am angry" and "do not be
+       angry" share their one content word, as would a claim that turned a
+       hadith on its head. So the two sides must also agree on negation. */
+    const NEG = /\b(not|no|never|nor|cannot|without)\b/;
+    const myNeg = NEG.test(cs);
+    /* The whole translation, and each thing QUOTED inside it: in "A man said,
+       'Advise me.' He said, 'Do not become angry'", what the Prophet ﷺ said
+       is the quotation, and a claim repeating it in other words is compared
+       with that — not with the man and his question around it. */
+    const pieces = function (text) {
+      const out = [text];
+      const re = /[“"]([^”"]{6,})[”"]/g;
+      let m;
+      while ((m = re.exec(text))) out.push(m[1]);
+      return out;
+    };
+    const tryMeaning = function (text, entry) {
+      if (!text || !mine.size) return;
+      let best = 0;
+      pieces(text).forEach(function (piece) {
+        const ts = vCutEn(vSkelEn(piece));           // "The Prophet ﷺ said" is not a word of it
+        if (NEG.test(ts) !== myNeg) return;
+        const theirs = vEnContent(ts);
+        let o = 0;
+        mine.forEach(function (w) { if (theirs.has(w)) o++; });
+        /* ...or a one-word claim against a one-word text: "do not get angry"
+           and "do not become angry" share exactly one content word, and it
+           is the whole of both. */
+        const single = mine.size === 1 && theirs.size === 1 && o === 1;
+        if (single || (o >= 2 && o / mine.size >= 0.75 && o / theirs.size >= 0.5)) best = Math.max(best, o);
+      });
+      if (best) {
+        hits.push(Object.assign({ kind: "site", score: 0.3 + 0.1 * (best / mine.size), prose: false,
+                                  meaning: true, part: "meaning" }, entry));
+      }
+    };
+    if (typeof HADITHS !== "undefined") {
+      HADITHS.forEach(function (h) {
+        tryMeaning(h.text, { title: h.title || h.topic, ar: h.arabic, en: h.text,
+                             ref: h.ref, refAr: h.refAr, strength: h.strength, strengthAr: h.strengthAr, where: "hadith.html" });
+      });
+    }
+    if (typeof ADHKAR !== "undefined") {
+      ADHKAR.forEach(function (d) {
+        tryMeaning(d.en, { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
+                           ref: d.ref, refAr: d.refAr, strength: d.strength, strengthAr: d.strengthAr, where: "guidance.html#adhkar" });
+        /* "whoever says subhan allah a hundred times, his sins are wiped
+           away…" is the REWARD, and only the reward says it. */
+        if (/^قال النبي ﷺ/.test(d.virtueAr || "")) {
+          tryMeaning(d.virtue, { title: d.title, titleAr: d.titleAr, ar: d.virtueAr, en: d.virtue,
+                                 ref: d.ref, refAr: d.refAr, strength: d.strength, strengthAr: d.strengthAr, where: "guidance.html#adhkar" });
+        }
+      });
+    }
+  }
+  /* A narration always outranks a summary, however long the shared run was;
+     among narrations, what identifies the claim outranks what it quotes. One
+     entry is shown once — a dhikr and its reward are one entry. */
+  hits.sort(function (a, b) {
     if (!!a.prose !== !!b.prose) return a.prose ? 1 : -1;
-    return b.score - a.score;
+    return vByPart(a, b);
+  });
+  const seen = {};
+  return hits.filter(function (h) {
+    const k = (h.title || "") + "|" + (h.ref || "");
+    if (seen[k]) return false;
+    seen[k] = true;
+    return true;
   }).slice(0, 5);
 }
 
@@ -490,9 +907,11 @@ async function vLoad(col) {
 
 function vSearchLoaded(claim, cols) {
   const ar = vIsArabic(claim);
-  const cs = ar ? vStripBoiler(vSkel(claim)) : vSkelEn(claim);
+  const cs = vClaimSkel(claim, ar);
   if (cs.length < 6) return [];
-  const gl = vGramList(cs);
+  /* A claim shorter than one gram ("لا تغضب") is ranked by containing the
+     whole of it, instead of by grams it cannot have. */
+  const gl = cs.length >= V_GRAM ? vGramList(cs) : [cs];
   if (!gl.length) return [];
 
   // stage 1 — rank cheaply
@@ -515,10 +934,12 @@ function vSearchLoaded(claim, cols) {
   for (let i = 0; i < top.length; i++) {
     const c = top[i];
     const sc = vScore(cs, c.skel, null);
-    if (sc) hits.push({ kind: "collection", col: c.col, n: c.h.n,
-                        ar: c.h.ar, en: c.h.en, score: sc });
+    if (!sc) continue;
+    const p = vPart(cs, c.skel);
+    if (p.part) hits.push({ kind: "collection", col: c.col, n: c.h.n, part: p.part,
+                            ar: c.h.ar, en: c.h.en, score: sc });
   }
-  return hits.sort(function (a, b) { return b.score - a.score; }).slice(0, 6);
+  return hits.sort(vByPart).slice(0, 6);
 }
 
 /* ---------- 4. what IS established on the same subject ----------
@@ -792,7 +1213,7 @@ function vEachEntry(fn) {
       fn(h.arabic + " " + (h.topic || "") + vKeyText(h.keys, true),
          h.text + " " + (h.title || "") + " " + (h.topic || "") + vKeyText(h.keys, false),
          { title: h.title || h.topic, ar: h.arabic, en: h.text,
-           ref: h.ref, strength: h.strength, where: "hadith.html" },
+           ref: h.ref, refAr: h.refAr, strength: h.strength, strengthAr: h.strengthAr, where: "hadith.html" },
          (h.topic || "") + vKeyText(h.keys, true),
          (h.title || "") + " " + (h.topic || "") + vKeyText(h.keys, false));
     });
@@ -802,7 +1223,7 @@ function vEachEntry(fn) {
       fn((s.arabic || "") + " " + (s.titleAr || "") + " " + (s.detailAr || "") + vKeyText(s.keys, true),
          s.title + " " + s.detail + vKeyText(s.keys, false),
          { title: s.title, titleAr: s.titleAr, ar: s.arabic, en: s.detail,
-           ref: s.ref, strength: s.strength, where: "sunnah.html" },
+           ref: s.ref, refAr: s.refAr, strength: s.strength, strengthAr: s.strengthAr, where: "sunnah.html" },
          (s.titleAr || "") + vKeyText(s.keys, true),
          (s.title || "") + vKeyText(s.keys, false));
     });
@@ -812,7 +1233,7 @@ function vEachEntry(fn) {
       fn(d.arabic + " " + (d.titleAr || "") + vKeyText(d.keys, true),
          d.en + " " + (d.title || "") + vKeyText(d.keys, false),
          { title: d.title, titleAr: d.titleAr, ar: d.arabic, en: d.en,
-           ref: d.ref, strength: d.strength, where: "guidance.html#adhkar" },
+           ref: d.ref, refAr: d.refAr, strength: d.strength, strengthAr: d.strengthAr, where: "guidance.html#adhkar" },
          (d.titleAr || "") + vKeyText(d.keys, true),
          (d.title || "") + vKeyText(d.keys, false));
     });
@@ -822,7 +1243,7 @@ function vEachEntry(fn) {
       fn((p.arabic || "") + " " + (p.titleAr || "") + " " + (p.lessonAr || "") + vKeyText(p.keys, true),
          (p.title || "") + " " + (p.lesson || "") + vKeyText(p.keys, false),
          { title: p.title, titleAr: p.titleAr, ar: p.arabic, en: p.lesson,
-           ref: p.ref, strength: p.strength, where: "stories.html" },
+           ref: p.ref, refAr: p.refAr, strength: p.strength, strengthAr: p.strengthAr, where: "stories.html" },
          (p.titleAr || "") + vKeyText(p.keys, true),
          (p.title || "") + vKeyText(p.keys, false));
     });

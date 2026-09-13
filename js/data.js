@@ -1543,6 +1543,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Revelation, Hadith 1",
     topic: "Sincerity",
     title: "Every deed depends on its intention (Niyyah)",
+    titleAr: "كلُّ عملٍ بحسب نيّته",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["intention","intentions","niyyah","sincerity","sincere","showing off","riya","why i do it","deeds","actions","reward","النية","النيات","نية","الإخلاص","إخلاص","الرياء","الأعمال","العمل","الأجر"]
   },
@@ -1553,6 +1554,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
     topic: "Brotherhood",
     title: "Loving for your brother what you love for yourself",
+    titleAr: "أن تحبّ لأخيك ما تحبّ لنفسك",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["brother","brotherhood","love","loving others","wish well","envy","jealousy","selfish","أخي","الأخوة","المحبة","حب","يحب لأخيه","الحسد","الأنانية","jealous","envious","resent","happy for others","حسدت","أحسد","غيرة","أخيك","لأخيك","أخاك","نفسك","لنفسك","أخوك"]
   },
@@ -1563,6 +1565,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Character",
     title: "The best people are those with the best manners",
+    titleAr: "مِن خيارِكم أحسنُكم أخلاقًا",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["manners","good manners","character","behaviour","how to behave","akhlaq","best people","politeness","kindness","الأخلاق","حسن الخلق","الخلق","الأدب","المعاملة","السلوك","أحسن الناس"]
   },
@@ -1573,6 +1576,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Sahih Muslim",
     topic: "Speech",
     title: "Say something good or stay silent",
+    titleAr: "قل خيرًا أو اصمت",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["speech","speak","talking","silence","stay silent","keep quiet","words","gossip","say good","watch your words","tongue","الكلام","الصمت","السكوت","اللسان","الغيبة","قل خيرا","حفظ اللسان","أسكت","اسكت","أتكلم","تكلم","لا تتكلم","الصمت خير","أرد أو أسكت"]
   },
@@ -1580,10 +1584,16 @@ const HADITHS = [
     arabic: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
     text: "Smiling at your brother is an act of charity.",
     narrator: "Abu Dharr al-Ghifari",
-    ref: "Sahih Muslim, Book of Zakat, Hadith 1009; also in Jami at-Tirmidhi",
+    /* This wording is at-Tirmidhi's ALONE (1956, from Abu Dharr). It was
+       cited to Sahih Muslim 1009 — which is "every joint of a person owes a
+       charity", and has no smile in it — and graded as Muslim's. Checked
+       against the collections, September 2026. */
+    ref: "Jami at-Tirmidhi, Hadith 1956", refAr: "جامع الترمذي، حديث ١٩٥٦",
     topic: "Kindness",
     title: "Smiling at others is an act of charity",
-    strength: "Sahih — Narrated by Muslim; also at-Tirmidhi",
+    titleAr: "التبسّم في وجه أخيك صدقة",
+    strength: "Sahih — Narrated by at-Tirmidhi (outside the two Sahihs); authenticated by al-Albani",
+    strengthAr: "صحيح — رواه الترمذي (خارج الصحيحين)، وصحّحه الألباني",
     keys: ["smile","smiling","charity","sadaqah","kindness","cheerful","good deed","easy good deeds","face","الابتسامة","ابتسم","التبسم","صدقة","الصدقة","المعروف","البشاشة","اللطف"]
   },
   {
@@ -1593,6 +1603,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab)",
     topic: "Self-Control",
     title: "True strength is controlling yourself when angry",
+    titleAr: "القوّة الحقّة أن تملك نفسك عند الغضب",
     strength: "Sahih — Narrated by al-Bukhari",
     explain: "He redefines a word his listeners thought they knew. The strong man is not the one who wins a wrestling match; he is the one who controls himself at the moment of anger. And notice the moment specified — not who never gets angry, but who holds himself AT the moment. The feeling is not the sin; what is done in the next ten seconds is.",
     explainAr: "أعاد ﷺ حدَّ لفظٍ ظنّ سامعوه أنهم يعرفونه: فليس الشديدُ بالصُّرَعة، وإنما الشديدُ الذي يملك نفسه عند الغضب. وتأمّل الموضع المذكور: لم يقل من لا يغضب، وإنما من يملك نفسه عندها. فليس الوِجدانُ هو الذنب، وإنما ما يُصنع في العشر الثواني التالية.",
@@ -1607,9 +1618,13 @@ const HADITHS = [
     arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِجَارِهِ مَا يُحِبُّ لِنَفْسِهِ",
     text: "None of you will believe until he loves for his neighbor what he loves for himself.",
     narrator: "Anas ibn Malik",
-    ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
+    /* "لجاره" is Muslim's (45, with the narrator's doubt "or his brother");
+       al-Bukhari 13 has only "لأخيه" — the entry above this one. */
+    ref: "Sahih Muslim, Book of Faith (this wording, “for his neighbour”); Sahih al-Bukhari, Book of Faith, Hadith 13 (“for his brother”)",
+    refAr: "صحيح مسلم، كتاب الإيمان (بلفظ «لجاره»)؛ وصحيح البخاري، كتاب الإيمان، حديث ١٣ (بلفظ «لأخيه»)",
     topic: "Neighbors",
     title: "Wanting good for your neighbour",
+    titleAr: "أن تحبّ لجارك ما تحبّ لنفسك",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["neighbour","neighbor","neighbours","neighbors","next door","love for your neighbour","الجار","الجيران","جاري","حق الجار","جيراني","بيت الجيران"]
   },
@@ -1617,21 +1632,35 @@ const HADITHS = [
     arabic: "أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
     text: "The most beloved deeds to Allah are those done consistently, even if they are small.",
     narrator: "Aisha bint Abu Bakr",
-    ref: "Sahih al-Bukhari, Book of Faith; Sahih Muslim",
+    /* The Book of Faith has the meaning in other words ("the religion he
+       loved most was what its doer kept up"); these words are Muslim's, and
+       al-Bukhari's closest are in ar-Riqaq, 6464. */
+    ref: "Sahih al-Bukhari, Book of Softening of the Hearts (ar-Riqaq), Hadith 6464; Sahih Muslim, Book of Prayer of Travellers",
+    refAr: "صحيح البخاري، كتاب الرقاق، حديث ٦٤٦٤؛ وصحيح مسلم، كتاب صلاة المسافرين",
     topic: "Consistency",
     title: "Small, consistent deeds are the most beloved to Allah",
+    titleAr: "أحبُّ الأعمال إلى الله أدومها وإن قلّ",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["consistency","consistent","regular","little and often","small deeds","habit","routine","keep going","daily","beloved deeds","give up","المداومة","الاستمرار","أحب الأعمال","الدوام","ولو قل","الاستقامة","عادة","القليل","العمل القليل","الدائم","المستمر","أدومه","أفضل العمل أدومه","انقطعت"]
   },
   {
-    arabic: "خَيْرُ النَّاسِ مَنْ أَطْعَمَ الطَّعَامَ",
-    text: "He who eats and drinks moderately and shares with others is among the best of people.",
-    narrator: "Abdullah ibn Omar",
-    ref: "Sahih al-Bukhari, Book of Food and Drink",
+    /* REPLACED, September 2026. This entry read "خير الناس من أطعم الطعام",
+       translated as "he who eats and drinks moderately and shares with others
+       is among the best of people", cited to al-Bukhari's Book of Food and
+       graded Sahih. Neither sentence is in al-Bukhari, and the English was
+       not a translation of the Arabic at all. What al-Bukhari DOES carry on
+       feeding people is this — three times (12, 28, 6236), and Muslim too. */
+    arabic: "أَيُّ الإِسْلَامِ خَيْرٌ؟ قَالَ: «تُطْعِمُ الطَّعَامَ، وَتَقْرَأُ السَّلَامَ عَلَى مَنْ عَرَفْتَ وَمَنْ لَمْ تَعْرِفْ»",
+    text: "A man asked the Prophet ﷺ which part of Islam is best. He said: “That you feed people, and greet with peace those you know and those you do not know.”",
+    narrator: "Abdullah ibn Amr",
+    ref: "Sahih al-Bukhari, Book of Faith, Hadith 12; Sahih Muslim, Book of Faith",
+    refAr: "صحيح البخاري، كتاب الإيمان، حديث ١٢؛ وصحيح مسلم، كتاب الإيمان",
     topic: "Generosity",
-    title: "Sharing food, eating in moderation",
-    strength: "Sahih — Narrated by al-Bukhari",
-    keys: ["food","eating","eat","share food","sharing","generosity","generous","moderation","overeating","greed","hospitality","الطعام","الأكل","المشاركة","الكرم","الاعتدال","الشبع","الإسراف","الضيافة"]
+    title: "Feeding people, and greeting those you do not know",
+    titleAr: "إطعام الطعام، وإلقاء السلام على من لا تعرف",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    keys: ["food","feed","feeding","feed people","share food","sharing","generosity","generous","hospitality","guests","greeting","salam","say salam","strangers",
+           "الطعام","إطعام الطعام","أطعم","المشاركة","الكرم","الضيافة","الضيف","السلام","إفشاء السلام","من لا تعرف"]
   },
   {
     arabic: "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
@@ -1640,6 +1669,7 @@ const HADITHS = [
     ref: "Sunan Ibn Majah, Book of the Sunnah",
     topic: "Knowledge",
     title: "Seeking knowledge is a duty on every Muslim",
+    titleAr: "طلب العلم فريضةٌ على كلّ مسلم",
     strength: "Sahih — Narrated by Ibn Majah; authenticated by as-Suyuti and al-Albani",
     keys: ["knowledge","seek knowledge","learn","learning","study","student","school","obligation","duty","education","ilm","العلم","طلب العلم","التعلم","الدراسة","فريضة","طالب علم","التعليم","studying","obligatory","compulsory","must learn","التعلم واجب","أتعلم","أدرس"]
   },
@@ -1650,6 +1680,7 @@ const HADITHS = [
     ref: "Sunan Ibn Majah, Book of Asceticism; Musnad Ahmad",
     topic: "Patience",
     title: "Mixing with people and bearing their harm with patience",
+    titleAr: "مخالطة الناس والصبر على أذاهم",
     strength: "Sahih — Narrated by Ibn Majah and Ahmad; authenticated by al-Albani",
     explain: "This corrects an assumption people reach naturally: that the safest religion is the one lived away from everybody. He ﷺ says the opposite — the Muslim who mixes and endures what people do is better than the one who withdraws to avoid it. For example: staying in a difficult workplace and behaving well in it is worth more than leaving it to keep your peace.",
     explainAr: "هذا تصحيحٌ لظنٍّ يبلغه الناسُ بطباعهم: أنّ أسلم الدين ما عُوش بعيدًا عنهم. وقال ﷺ بخلافه: إنّ المسلم الذي يخالط الناسَ ويصبر على أذاهم خيرٌ من الذي يعتزلهم اتّقاءً لذلك. مثال: بقاؤك في عملٍ شاقٍّ وحُسنُ خلقك فيه أعظمُ أجرًا من تركه حفظًا لراحتك.",
@@ -1662,6 +1693,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Limits and Punishments",
     topic: "Guarding the Tongue",
     title: "Guard your tongue and chastity, and earn Paradise",
+    titleAr: "احفظ لسانك وفرجك تُضمَن لك الجنة",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["tongue","guard your tongue","speech","chastity","private parts","zina","desire","temptation","paradise","jannah","self control","اللسان","حفظ اللسان","الفرج","العفة","الزنا","الشهوة","الجنة","ضبط النفس","لساني","أتكلم كثيرا","شهوتي"]
   },
@@ -1672,6 +1704,7 @@ const HADITHS = [
     ref: "Al-Mu'jam al-Awsat by at-Tabarani",
     topic: "Service",
     title: "The best people are those who benefit others most",
+    titleAr: "خير الناس أنفعهم للناس",
     strength: "Strong — Narrated by at-Tabarani; graded Strong by al-Albani",
     keys: ["benefit others","help","helping","useful","service","best people","volunteer","community","giving","نفع الناس","أنفع","خدمة الناس","المساعدة","خير الناس","الخير"]
   },
@@ -1682,6 +1715,7 @@ const HADITHS = [
     ref: "Mustadrak al-Hakim",
     topic: "Time",
     title: "Use five before five: youth, health, wealth, free time, life",
+    titleAr: "اغتنم خمسًا قبل خمس",
     strength: "Sahih — Narrated by al-Hakim; authenticated by al-Hakim and al-Albani",
     explain: "The structure is the lesson: each pair is a thing you have now and will not notice losing until it is gone. Nobody plans to stop being young. For example — the free time a student has before a job and children is the largest block of usable hours most people ever get, and it is the one almost everyone spends without noticing they had it.",
     explainAr: "البناءُ نفسه هو الدرس: فكلُّ قرينةٍ شيءٌ عندك الآن ولا تشعر بفقده حتى يذهب. وليس أحدٌ يخطّط لأن يكفّ عن الشباب. مثال: فراغُ الطالب قبل العمل والولد أكبرُ كتلةِ ساعاتٍ صالحةٍ يملكها أكثرُ الناس في أعمارهم، وهو الذي يُنفقه عامّتُهم دون أن ينتبهوا أنه كان عندهم.",
@@ -1694,6 +1728,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Righteousness",
     topic: "Sincerity",
     title: "Allah looks at your heart and deeds, not your looks or wealth",
+    titleAr: "الله ينظر إلى القلوب والأعمال، لا إلى الصور والأموال",
     strength: "Sahih — Narrated by Muslim",
     keys: ["heart","hearts","appearance","looks","beauty","wealth","money","rich","poor","judging people","showing off","sincerity","insecure","القلب","القلوب","المظهر","الشكل","الصور","المال","الغنى","الفقر","الإخلاص","قلبي","شكلي","مالي","أقارن نفسي"]
   },
@@ -1704,6 +1739,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Knowledge; Sahih Muslim",
     topic: "Ease",
     title: "Make matters easy, do not make them hard",
+    titleAr: "يسّروا ولا تعسّروا",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["easy","ease","make it easy","hard","difficult","strict","harsh","gentle","good news","put people off","teaching","dawah","التيسير","يسروا","السهولة","التشديد","العسر","الرفق","التبشير","التنفير"]
   },
@@ -1714,6 +1750,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Remembrance, Hadith 2699",
     topic: "Knowledge",
     title: "Seeking knowledge is a path to Paradise",
+    titleAr: "طلب العلم طريقٌ إلى الجنة",
     strength: "Sahih — Narrated by Muslim",
     keys: ["knowledge","seek knowledge","learn","learning","study","student","path to paradise","paradise","reward of learning","ilm","العلم","طلب العلم","التعلم","طريق الجنة","الجنة","الدراسة","طالب علم"]
   },
@@ -1721,10 +1758,16 @@ const HADITHS = [
     arabic: "لَيْسَ الْمُؤْمِنُ بِالطَّعَّانِ وَلَا اللَّعَّانِ وَلَا الْفَاحِشِ وَلَا الْبَذِيءِ",
     text: "The Muslim does not slander, curse, speak obscenely, or speak rudely.",
     narrator: "Abdullah ibn Mas'ud",
-    ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab); Jami at-Tirmidhi",
+    /* Not in Sahih al-Bukhari. It is at-Tirmidhi 1977, and it is in
+       al-Bukhari's al-Adab al-Mufrad — a different book of his, which is
+       almost certainly where "al-Bukhari, Book of Good Manners" came from. */
+    ref: "Jami at-Tirmidhi, Hadith 1977; also in al-Bukhari's al-Adab al-Mufrad (a separate book, not his Sahih)",
+    refAr: "جامع الترمذي، حديث ١٩٧٧؛ وهو في «الأدب المفرد» للبخاري أيضًا (وهو كتابٌ آخر غير صحيحه)",
     topic: "Speech",
     title: "A believer does not slander, curse, or speak obscenely",
-    strength: "Sahih — Narrated by al-Bukhari and at-Tirmidhi",
+    titleAr: "ليس المؤمن بالطعّان ولا اللعّان ولا الفاحش ولا البذيء",
+    strength: "Sahih — Narrated by at-Tirmidhi (outside the two Sahihs); authenticated by al-Albani",
+    strengthAr: "صحيح — رواه الترمذي (خارج الصحيحين)، وصحّحه الألباني",
     keys: ["slander","curse","cursing","swearing","obscene","bad language","rude","insult","speech","tongue","abuse","الطعن","اللعن","السب","الشتم","الفحش","الكلام البذيء","اللسان","الإساءة"]
   },
   {
@@ -1734,6 +1777,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Heart Softeners",
     topic: "Worldliness",
     title: "Live in this world like a stranger or a traveller",
+    titleAr: "كن في الدنيا كأنك غريبٌ أو عابر سبيل",
     strength: "Sahih — Narrated by al-Bukhari",
     explain: "A stranger owns little where he is staying and does not decorate a room he is leaving. It is not an instruction to be poor or joyless — Ibn Umar, who narrated it, was wealthy. It is about what you consider PERMANENT. A traveller still eats well and sleeps comfortably; he simply does not confuse the hotel with home.",
     explainAr: "الغريبُ لا يملك في موضع إقامته كثيرًا، ولا يزيّن غرفةً هو خارجٌ منها. وليس هذا أمرًا بالفقر ولا بترك الطيّبات — فابنُ عمر راويه كان موسرًا. وإنما هو في: ما الذي تعدّه دائمًا؟ فالمسافرُ يأكل طيّبًا وينام مستريحًا، غير أنه لا يخلط بين النُّزل والبيت.",
@@ -1746,6 +1790,7 @@ const HADITHS = [
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Mercy",
     title: "Show mercy to those on earth and you will be shown mercy",
+    titleAr: "ارحموا مَن في الأرض يرحمكم مَن في السماء",
     strength: "Sahih — Narrated by Abu Dawud and at-Tirmidhi; authenticated by al-Albani",
     keys: ["mercy","merciful","compassion","kindness","harsh","animals","children","show mercy","gentle","الرحمة","ارحموا","الرحماء","الشفقة","اللين","القسوة","الرفق","الحيوان","الحيوانات","الأطفال","أطفالي"]
   },
@@ -1756,6 +1801,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Remembrance and Supplication, Hadith 2699",
     topic: "Helping Others",
     title: "Relieving a fellow believer's hardship",
+    titleAr: "تفريج كربة المؤمن",
     strength: "Sahih — Narrated by Muslim",
     keys: ["help","helping","hardship","difficulty","trouble","relieve","support","someone in need","favour","day of judgement","reward","debt","الكربة","تفريج الكرب","المساعدة","العون","الشدة","الضيق","قضاء الحوائج","أساعد","محتاج","مكروب","في ضيق"]
   },
@@ -1766,6 +1812,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Monotheism; Sahih Muslim, Book of Virtues",
     topic: "Mercy",
     title: "Allah does not show mercy to those who show no mercy",
+    titleAr: "لا يرحم الله من لا يرحم الناس",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["mercy","no mercy","harsh","cruel","hard hearted","kindness","people","الرحمة","لا يرحم","القسوة","قسوة القلب","الرفق","الشفقة"]
   },
@@ -1776,6 +1823,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5027",
     topic: "Quran",
     title: "The best of you learns the Quran and teaches it",
+    titleAr: "خيركم من تعلّم القرآن وعلّمه",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["quran","learn quran","teach quran","memorise","memorize","hifz","recitation","recite","teacher","student","القرآن","تعلم القرآن","تعليم القرآن","حفظ القرآن","التلاوة","المعلم","أحفظ القرآن","أتعلم القرآن","حفظي","المصحف"]
   },
@@ -1786,6 +1834,7 @@ const HADITHS = [
     ref: "Sunan Abu Dawud; Jami at-Tirmidhi",
     topic: "Friendship",
     title: "Choose your friends carefully — you follow their way",
+    titleAr: "المرء على دين خليله — فاختر من تصاحب",
     strength: "Strong — Narrated by Abu Dawud and at-Tirmidhi; graded Strong by an-Nawawi",
     explain: "The wording is about a person's DEEN — his way of living — not about liking or disliking anybody. It is a statement of fact rather than a command: over time a person's standards move toward the standards of the four or five people he spends most hours with. So the practical question is not “are my friends bad?” but “in which direction have I moved since I met them?”",
     explainAr: "اللفظُ في دين الرجل — أي طريقته في العيش — لا في محبّة أحدٍ أو بغضه. وهو خبرٌ لا أمر: فمعاييرُ الإنسان تنتقل مع الزمن إلى معايير الأربعة أو الخمسة الذين يقضي معهم أكثر ساعاته. فالسؤالُ العمليّ ليس «أأصحابي أشرار؟» وإنما «إلى أين تحرّكتُ منذ عرفتهم؟»",
@@ -1798,6 +1847,7 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Book of the Description of the Day of Judgment",
     topic: "Accountability",
     title: "You will be questioned about your life, knowledge, wealth and body",
+    titleAr: "ستُسأل عن عمرك وعلمك ومالك وجسمك",
     strength: "Sahih — Narrated by at-Tirmidhi; graded Sahih by at-Tirmidhi and al-Albani",
     keys: ["accountability","questioned","day of judgement","judgement day","life","time","knowledge","wealth","money","body","health","how you spent it","الحساب","يوم القيامة","السؤال","العمر","الوقت","العلم","المال","الجسد","عمري","وقتي","مالي","سأسأل","محاسبة النفس"]
   },
@@ -1808,6 +1858,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Heart Softeners; Sahih Muslim, Book of Zakat",
     topic: "Contentment",
     title: "True richness is the contentment of the heart",
+    titleAr: "الغنى غنى النفس",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     explain: "He is defining a word, not praising poverty. Richness is being measured by what a person no longer needs rather than by what he holds — which is why a man can own a great deal and feel poor every day. The test is simple: if a number went up, would the feeling change, or would a new number appear?",
     explainAr: "هو يحدُّ لفظًا، لا يمدح فقرًا. فالغنى يُقاس بما استغنى عنه المرءُ لا بما في يده — ولذلك يملك الرجلُ الكثيرَ ويجد نفسه فقيرًا كلَّ يوم. والاختبارُ يسير: لو ارتفع الرقم، أيتغيّر الشعور، أم يظهر رقمٌ جديد؟",
@@ -1820,18 +1871,23 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Book of Asceticism; Muwatta Imam Malik",
     topic: "Discipline",
     title: "Part of good Islam is leaving what does not concern you",
+    titleAr: "من حسن إسلام المرء تركه ما لا يعنيه",
     strength: "Strong — Narrated by at-Tirmidhi and Malik; graded Strong by at-Tirmidhi and an-Nawawi",
     explain: "“Does not concern you” is narrower than people assume: it means what is not your responsibility and not your right to know. The everyday case is a family argument you were not part of, a neighbour's income, or a message forwarded to you about somebody's private business. Leaving it is not coldness — it is declining to become a link in a chain that carries harm.",
     explainAr: "قولُه «ما لا يعنيه» أضيقُ ممّا يُظنّ: وهو ما ليس من مسؤوليّتك ولا من حقّك أن تعلمه. والصورةُ اليوميّة خصومةٌ في أهلٍ لم تكن طرفًا فيها، أو دخلُ جار، أو رسالةٌ تُحوَّل إليك في شأنٍ خاصٍّ بأحد. وتركُه ليس جفاءً، وإنما هو امتناعٌ عن أن تصير حلقةً في سلسلةٍ تنقل الأذى.",
     keys: ["mind your own business","not your business","interfering","nosy","gossip","waste of time","focus","discipline","curiosity","ما لا يعنيه","ترك ما لا يعني","الفضول","التدخل","حسن الإسلام","أتدخل","فضولي","شؤون الناس","لا يعنيني"]
   },
   {
-    arabic: "لَا تَغْضَبْ، لَا تَغْضَبْ، لَا تَغْضَبْ",
-    text: "Do not be angry, do not be angry, do not be angry.",
+    /* Printed as the narration has it. It had been "لا تغضب" three times in
+       a row, which is not what al-Bukhari 6116 says: the man kept asking,
+       and the same two words came back each time. */
+    arabic: "أَوْصِنِي. قَالَ: «لَا تَغْضَبْ». فَرَدَّدَ مِرَارًا، قَالَ: «لَا تَغْضَبْ»",
+    text: "A man said to the Prophet ﷺ, “Advise me.” He said, “Do not become angry.” The man asked again several times, and each time he said, “Do not become angry.”",
     narrator: "Abu Hurairah",
     ref: "Sahih al-Bukhari, Book of Good Manners (Al-Adab), Hadith 6116",
     topic: "Self-Control",
     title: "Do not become angry",
+    titleAr: "لا تغضب",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["anger","angry","temper","rage","lose my temper","control anger","calm","self control","advice","shouting","الغضب","لا تغضب","العصبية","الانفعال","ضبط النفس","الحلم","الهدوء","غضبي","أغضب","تغضب","عصبي","انفعالي","أنفعل","سريع الغضب"]
   },
@@ -1842,6 +1898,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Good Manners; Sahih Muslim, Book of Faith",
     topic: "Modesty",
     title: "Modesty brings nothing but good",
+    titleAr: "الحياء لا يأتي إلا بخير",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["modesty","shy","shyness","haya","shame","decency","bashful","embarrassed","الحياء","الحياء خير","الخجل","الاحتشام","العفة","الأدب","أستحي","خجول","حيائي"]
   },
@@ -1852,6 +1909,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Book of Dress (Al-Libas), Hadith 5885",
     topic: "Dress & Imitation",
     title: "Men imitating women, and women imitating men",
+    titleAr: "تشبّه الرجال بالنساء والنساء بالرجال",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["imitate","imitating","imitation","resemble","men wearing women","woman clothes","women's clothes","man wearing","dress like","clothing","clothes","dress","attire","garment","cross dress","تشبه","المتشبهين","لبس","ملابس","ثياب","زي","رجل يلبس","تشبه بالنساء"]
   },
@@ -1862,6 +1920,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Hadith 5971; Sahih Muslim, Hadith 2548",
     topic: "Parents",
     title: "Your mother, then your mother, then your mother, then your father",
+    titleAr: "أمّك ثم أمّك ثم أمّك ثم أبوك",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["mother","father","parents","parent","family","mom","dad","dutiful","obey parents","أم","أمي","أب","والدين","بر الوالدين","عقوق","أهل"]
   },
@@ -1872,6 +1931,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Faith, Hadith 102",
     topic: "Honesty in Trade",
     title: "Cheating in business or selling",
+    titleAr: "الغشّ في البيع والمعاملة",
     strength: "Sahih — Narrated by Muslim",
     /* "work", "job", "exam" and "copy" used to sit here as bare words, so
        "I lost my job and cannot pay the rent" matched this hadith and told a
@@ -1886,6 +1946,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Hadith 5984; Sahih Muslim, Hadith 2556",
     topic: "Family Ties",
     title: "Cutting off relatives and family ties",
+    titleAr: "قطيعة الرحم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["family","relative","relatives","kinship","brother","sister","uncle","aunt","cousin","cut off","not speaking","estranged","quarrel","قطيعة","رحم","صلة الرحم","أقارب","أخي","أختي","خصام","هجر"]
   },
@@ -1896,6 +1957,7 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Hadith 3895; Sunan Ibn Majah",
     topic: "Marriage & Family",
     title: "Treating your wife and family well",
+    titleAr: "الإحسان إلى الزوجة والأهل",
     strength: "Sahih — Narrated by at-Tirmidhi; authenticated by al-Albani",
     keys: ["wife","husband","marriage","married","spouse","family","home","argue with wife","divorce","زوجة","زوج","زواج","أهلي","بيت","طلاق","خلاف"]
   },
@@ -1906,6 +1968,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Hadith 10; Sahih Muslim, Hadith 40",
     topic: "Harming Others",
     title: "Not harming people with your tongue or hand",
+    titleAr: "المسلم من سلم المسلمون من لسانه ويده",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["harm","hurt","hit","fight","fighting","bully","abuse","insult","violence","shout","swear","لسان","أذى","ضرب","شتم","سب","عنف","إيذاء","خصام"]
   },
@@ -1916,6 +1979,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Drinks, Hadith 2003",
     topic: "Intoxicants",
     title: "Alcohol, drugs and every intoxicant",
+    titleAr: "الخمر والمخدّرات وكلّ مُسكِر",
     strength: "Sahih — Narrated by Muslim",
     keys: ["alcohol","drink","drinking","drunk","wine","beer","drug","drugs","weed","smoking","intoxicant","addiction","خمر","مسكر","شرب","مخدرات","إدمان","تدخين"]
   },
@@ -1926,6 +1990,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Hadith 2447; Sahih Muslim, Hadith 2579",
     topic: "Oppression",
     title: "Wronging or oppressing another person",
+    titleAr: "الظلم ظلماتٌ يوم القيامة",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["oppress","oppression","wrong someone","unfair","injustice","abuse","tyrant","took my right","ظلم","اعتداء","حق","جور","استبداد"]
   },
@@ -1936,6 +2001,7 @@ const HADITHS = [
     ref: "Sahih al-Bukhari, Hadith 6018; Sahih Muslim, Hadith 47",
     topic: "Neighbors",
     title: "How to treat your neighbour",
+    titleAr: "كيف تعامل جارك",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["neighbour","neighbor","neighbours","next door","building","jar","جار","جيران","سكن","بيت الجيران"]
   },
@@ -1946,6 +2012,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Hadith 2699",
     topic: "Concealing Faults",
     title: "Covering someone's fault instead of exposing it",
+    titleAr: "ستر عيب المسلم بدل فضحه",
     strength: "Sahih — Narrated by Muslim",
     keys: ["expose","exposing","secret","scandal","shame someone","spread","reveal","conceal","cover fault","ستر","فضح","سر","عيب","نشر","تشهير"]
   },
@@ -1956,6 +2023,7 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Hadith 1987",
     topic: "Repentance & Character",
     title: "Erasing a bad deed with a good deed",
+    titleAr: "أتبِع السيئة الحسنة تمحها",
     strength: "Strong — Narrated by at-Tirmidhi; graded Strong by at-Tirmidhi",
     explain: "The instruction is immediate, not eventual: follow the bad deed with a good one straight away. The reason is practical — a sin left standing becomes a mood, the mood becomes a day written off, and a day written off becomes a habit. For example: if you missed a prayer, the answer is to pray the next one on time, not to spend the afternoon feeling like a failure.",
     explainAr: "الأمرُ على الفور لا على التراخي: أن تُتبع السيّئةَ الحسنةَ من ساعتها. والعلّةُ عمليّة: فالذنبُ إذا تُرك قائمًا صار حالًا، والحالُ صار يومًا مطروحًا، واليومُ المطروحُ صار عادة. مثال: إن فاتتك صلاةٌ فالجواب أن تصلّي التي تليها في وقتها، لا أن تُنفق ما بقي من النهار في الشعور بالسقوط.",
@@ -1968,6 +2036,7 @@ const HADITHS = [
     ref: "Sunan Ibn Majah, Hadith 2341; Muwatta Imam Malik",
     topic: "Harming Others",
     title: "No harming, and no answering harm with harm",
+    titleAr: "لا ضرر ولا ضرار",
     strength: "Strong — Narrated by Ibn Majah and Malik; authenticated by al-Albani",
     keys: ["revenge","payback","harm","damage","retaliate","get back at","dispute","ضرر","انتقام","إضرار","خصومة","ثأر"]
   },
@@ -1978,6 +2047,7 @@ const HADITHS = [
     ref: "Sahih Muslim, Book of Faith, Hadith 55",
     topic: "Sincere Advice",
     title: "Advising others sincerely, not exposing them",
+    titleAr: "النصيحة الصادقة، لا الفضيحة",
     strength: "Sahih — Narrated by Muslim",
     keys: ["advice","advise","counsel","correct someone","friend doing wrong","help friend","نصيحة","نصح","إرشاد","توجيه","صديق"]
   },
@@ -1988,6 +2058,7 @@ const HADITHS = [
     ref: "Jami at-Tirmidhi, Hadith 1078",
     topic: "Debt",
     title: "Owing money and repaying debts",
+    titleAr: "الدَّين وقضاؤه",
     strength: "Strong — Narrated by at-Tirmidhi; graded Strong by al-Albani",
     keys: ["debt","owe","owed","borrow","borrowed","loan","money i owe","repay","pay back","دين","ديون","اقتراض","سداد","استدانة"]
   },
@@ -2037,7 +2108,10 @@ const HADITHS = [
     arabic: "أَلَا أُنَبِّئُكُمْ بِأَكْبَرِ الْكَبَائِرِ؟ الْإِشْرَاكُ بِاللَّهِ، وَعُقُوقُ الْوَالِدَيْنِ. وَكَانَ مُتَّكِئًا فَجَلَسَ فَقَالَ: أَلَا وَقَوْلُ الزُّورِ وَشَهَادَةُ الزُّورِ",
     text: "Shall I not inform you of the greatest of the major sins? Associating others with Allah, and disobedience to parents. And he had been reclining, so he sat up and said: and false speech, and false testimony.",
     narrator: "Abu Bakrah",
-    ref: "Sahih al-Bukhari, Book of Witnesses, Hadith 2654",
+    /* The wording above ("وكان متكئا فجلس … وشهادة الزور") is 5976's; 2654
+       is the same hadith with "ألا وقول الزور" alone. Both are cited. */
+    ref: "Sahih al-Bukhari, Book of Good Manners, Hadith 5976; and Book of Witnesses, Hadith 2654",
+    refAr: "صحيح البخاري، كتاب الأدب، حديث ٥٩٧٦؛ وكتاب الشهادات، حديث ٢٦٥٤",
     topic: "Accountability",
     title: "False testimony — and the moment he sat up",
     titleAr: "شهادة الزور — واللحظة التي جلس فيها",
@@ -2083,7 +2157,7 @@ const HADITHS = [
     topic: "Oppression",
     title: "Bribery — both hands are named",
     titleAr: "الرشوة — وقد سُمّيت اليدان",
-    strength: "Outside the two Sahihs — narrated by at-Tirmidhi, who graded it hasan sahih",
+    strength: "Outside the two Sahihs — narrated by at-Tirmidhi, who graded it hasan sahih", strengthAr: "خارج الصحيحين — رواه الترمذي وقال: حسنٌ صحيح",
     explain: "Two people are cursed, not one — which answers the excuse everybody in our countries has ready: \"I didn't want to, that is just how things work here.\" The giver is named as well as the taker. The scholars do discuss the man who can obtain a right that is genuinely HIS by no other means, and many hold the sin then falls on the taker alone — but that is a narrow exception for something you already own, not for jumping a queue, winning a contract or getting a grade.",
     explainAr: "لُعن اثنان لا واحد — وفي هذا جوابُ العذر المُعدّ في بلادنا: «لم أُرد ذلك، ولكن هكذا تجري الأمور». فسُمّي الدافعُ كما سُمّي الآخذ. وقد بحث أهلُ العلم حالَ من لا يصل إلى حقٍّ هو حقُّه إلا بذلك، وذهب كثيرون إلى أنّ الإثم حينئذٍ على الآخذ وحده — وهو استثناءٌ ضيّقٌ في حقٍّ تملكه، لا في تقدّمٍ على صفٍّ ولا ظفرٍ بعقدٍ ولا درجةٍ في امتحان.",
     keys: ["bribery","bribe","baksheesh","backhander","kickback","under the table","is a bribe haram","corruption","wasta",
@@ -3046,8 +3120,10 @@ const PROPHET_STORIES = [
     theme: "The warning every prophet gave",
     themeAr: "التحذير الذي حذَّره كلُّ نبيّ",
     story: "Fatimah bint Qays رضي الله عنها said the Prophet ﷺ called the people to the mosque, sat on the pulpit smiling, and said: \"By Allah, I have not gathered you for exhortation or a warning, but because Tamim ad-Dari — a Christian who came and accepted Islam — told me something that agrees with what I have been telling you about the Dajjal.\"\n\nTamim said he sailed with thirty men of Lakhm and Judham and the waves tossed them for a month, until they landed at sunset on an island in the sea. There a beast met them, so thickly haired they could not tell its face from its back. They said: what are you? It said: \"I am al-Jassasah. Go to that man in the monastery — he is desperate for news of you.\"\n\nThey hurried to the monastery and found a huge man, his hands bound to his neck and iron shackles from his knees to his ankles. He asked them about three things: the date-palms of Baysan — do they still bear fruit? The lake of Tiberias — is there still water in it? The spring of Zughar — does it still water the land? To each they answered yes. Of the palms he said they were about to bear no fruit, and of the lake that its water was about to go. About the spring of Zughar he said nothing at all, and moved straight to his next question.\n\nThen he asked about the unlettered Prophet: what has he done? They said he has left Makkah and settled in Yathrib. He asked: do the Arabs fight him? They said yes. He asked how he dealt with them, and they told him he had overcome those around him and they had submitted. He said: \"That is better for them, that they obey him.\"\n\nThen he said: \"I will tell you about myself. I am the Dajjal. I shall soon be permitted to come out, and I will travel the earth and leave no town where I do not stay forty nights — except Makkah and Taybah. Both are forbidden to me. Every time I try to enter one of them an angel meets me with a drawn sword and turns me back, and there are angels guarding every road into them.\"\n\nThe Prophet ﷺ struck the pulpit with his staff and said: \"This is Taybah — this is Madinah.\" Then: \"Did I not tell you this before?\" The people said yes. He said Tamim's account pleased him because it matched what he had told them about the Dajjal, and about Makkah and Madinah. Then he pointed east and said three times: \"He is in the east — he is in the east — he is in the east.\"",
-    storyAr: "قالت فاطمة بنت قيس رضي الله عنها: نادى النبيُّ ﷺ الناس إلى المسجد، فجلس على المنبر وهو يضحك فقال: «والله ما جمعتكم لرغبةٍ ولا لرهبة، ولكن جمعتكم لأنّ تميمًا الداريَّ — رجلًا نصرانيًّا فجاء فأسلم — حدَّثني حديثًا وافق الذي كنت أحدِّثكم عن المسيح الدجّال».\n\nحدَّث تميمٌ أنه ركب في سفينةٍ مع ثلاثين رجلًا من لَخْمٍ وجُذام، فلعب بهم الموج شهرًا، حتى أَرْفَؤوا عند غروب الشمس إلى جزيرةٍ في البحر. فلقيتهم دابّةٌ أهلبُ كثيرُ الشعر لا يُدرى ما قُبُله من دُبُره، فقالوا: ما أنتِ؟ قالت: «أنا الجسّاسة، انطلقوا إلى هذا الرجل في الدَّير فإنه إلى خبركم بالأشواق».\n\nفانطلقوا سراعًا حتى دخلوا الدَّير، فإذا فيه أعظمُ إنسانٍ رأوه، يداه مجموعتان إلى عنقه، وما بين ركبتيه إلى كعبيه بالحديد. فسألهم عن ثلاث: نخل بَيْسان، هل يُثمر؟ وبُحيرة الطبرية، هل فيها ماء؟ وعين زُغَر، هل فيها ماء وهل يزرع أهلها بمائها؟ فأجابوه بنعم في كلٍّ. فقال في النخل: يوشك أن لا يُثمر، وفي البحيرة: يوشك ماؤها أن يذهب. وأمّا عين زُغَر فلم يقل فيها شيئًا، ومضى إلى سؤاله التّالي.\n\nثم سأل عن النبيِّ الأمّيِّ: ما فعل؟ قالوا: قد خرج من مكة ونزل يثرب. قال: أقاتله العرب؟ قالوا: نعم. قال: كيف صنع بهم؟ فأخبروه أنه قد ظهر على من يليه من العرب وأطاعوه. قال: «قد كان ذلك؟ فإن ذاك خيرٌ لهم أن يُطيعوه».\n\nثم قال: «إني مُخبركم عني: أنا المسيح الدجّال، وإني أوشك أن يُؤذَن لي في الخروج، فأخرج فأسير في الأرض فلا أدع قريةً إلا هبطتها في أربعين ليلة، غير مكة وطَيْبة، فهما محرَّمتان عليّ كلتاهما، كلما أردت أن أدخل واحدةً منهما استقبلني ملَكٌ بيده السيف صَلْتًا يصدُّني عنها، وإنّ على كلِّ نَقْبٍ منها ملائكةً يحرسونها».\n\nفطعن النبيُّ ﷺ بمِخصرته في المنبر وقال: «هذه طَيْبة، هذه طَيْبة، هذه طَيْبة — يعني المدينة». ثم قال: «ألا هل كنت حدَّثتكم ذلك؟» فقال الناس: نعم. وأخبر أن حديث تميمٍ أعجبه لأنه وافق ما كان يحدِّثهم عن الدجّال وعن المدينة ومكة. ثم أشار بيده إلى المشرق وقال: «ألا إنه في بحر الشام أو بحر اليمن، لا بل من قِبَل المشرق، ما هو من قِبَل المشرق، ما هو من قِبَل المشرق».",
-    arabic: "أَنَا الْمَسِيحُ الدَّجَّالُ، وَإِنِّي أُوشِكُ أَنْ يُؤْذَنَ لِي فِي الْخُرُوجِ",
+    storyAr: "قالت فاطمة بنت قيس رضي الله عنها: نادى النبيُّ ﷺ الناس إلى المسجد، فجلس على المنبر وهو يضحك فقال: «والله ما جمعتكم لرغبةٍ ولا لرهبة، ولكن جمعتكم لأنّ تميمًا الداريَّ — رجلًا نصرانيًّا فجاء فأسلم — حدَّثني حديثًا وافق الذي كنت أحدِّثكم عن المسيح الدجّال».\n\nحدَّث تميمٌ أنه ركب في سفينةٍ مع ثلاثين رجلًا من لَخْمٍ وجُذام، فلعب بهم الموج شهرًا، حتى أَرْفَؤوا عند غروب الشمس إلى جزيرةٍ في البحر. فلقيتهم دابّةٌ أهلبُ كثيرُ الشعر لا يُدرى ما قُبُله من دُبُره، فقالوا: ما أنتِ؟ قالت: «أنا الجسّاسة، انطلقوا إلى هذا الرجل في الدَّير فإنه إلى خبركم بالأشواق».\n\nفانطلقوا سراعًا حتى دخلوا الدَّير، فإذا فيه أعظمُ إنسانٍ رأوه، يداه مجموعتان إلى عنقه، وما بين ركبتيه إلى كعبيه بالحديد. فسألهم عن ثلاث: نخل بَيْسان، هل يُثمر؟ وبُحيرة الطبرية، هل فيها ماء؟ وعين زُغَر، هل فيها ماء وهل يزرع أهلها بمائها؟ فأجابوه بنعم في كلٍّ. فقال في النخل: يوشك أن لا يُثمر، وفي البحيرة: يوشك ماؤها أن يذهب. وأمّا عين زُغَر فلم يقل فيها شيئًا، ومضى إلى سؤاله التّالي.\n\nثم سأل عن النبيِّ الأمّيِّ: ما فعل؟ قالوا: قد خرج من مكة ونزل يثرب. قال: أقاتله العرب؟ قالوا: نعم. قال: كيف صنع بهم؟ فأخبروه أنه قد ظهر على من يليه من العرب وأطاعوه. قال: «قد كان ذلك؟ فإن ذاك خيرٌ لهم أن يُطيعوه».\n\nثم قال: «إني مُخبركم عني: إني أنا المسيح، وإني أوشك أن يُؤذَن لي في الخروج، فأخرج فأسير في الأرض فلا أدع قريةً إلا هبطتها في أربعين ليلة، غير مكة وطَيْبة، فهما محرَّمتان عليّ كلتاهما، كلما أردت أن أدخل واحدةً منهما استقبلني ملَكٌ بيده السيف صَلْتًا يصدُّني عنها، وإنّ على كلِّ نَقْبٍ منها ملائكةً يحرسونها».\n\nفطعن النبيُّ ﷺ بمِخصرته في المنبر وقال: «هذه طَيْبة، هذه طَيْبة، هذه طَيْبة — يعني المدينة». ثم قال: «ألا هل كنت حدَّثتكم ذلك؟» فقال الناس: نعم. وأخبر أن حديث تميمٍ أعجبه لأنه وافق ما كان يحدِّثهم عن الدجّال وعن المدينة ومكة. ثم أشار بيده إلى المشرق وقال: «ألا إنه في بحر الشام أو بحر اليمن، لا بل من قِبَل المشرق، ما هو من قِبَل المشرق، ما هو من قِبَل المشرق».",
+    /* Muslim's words are "إني أنا المسيح" — "الدجال" is not in his mouth in
+       the narration, and a quotation must not add to it. */
+    arabic: "إِنِّي أَنَا الْمَسِيحُ، وَإِنِّي أُوشِكُ أَنْ يُؤْذَنَ لِي فِي الْخُرُوجِ",
     lesson: "The Prophet ﷺ described the Dajjal in ways that can be checked: he is blind in one eye — \"and your Lord is not one-eyed\" — and between his eyes is written kafir, which every believer will read. No prophet was sent who did not warn his people about him, and the Prophet ﷺ said he would say about him what no prophet had said before: that plain fact about his eye. That is the point of the warning. He will come with wonders, and the test is not whether the wonders are impressive but whether you are willing to see the defect the wonders are meant to distract you from. Madinah and Makkah are closed to him, guarded at every road. Notice also what the Prophet ﷺ did with Tamim's account: he did not hide that it came from a man who had been a Christian, nor claim it as revelation. He weighed it against what he already knew and told the people plainly where it came from.",
     lessonAr: "وصف النبيُّ ﷺ الدجّال بما يمكن التحقّق منه: إنه أعورُ العين، «وإنّ ربَّكم ليس بأعور»، وبين عينيه مكتوبٌ كافر يقرؤه كلُّ مؤمن. وما بُعث نبيٌّ إلا أنذر أمّته إياه، وقال ﷺ إنه سيقول فيه قولًا لم يقله نبيٌّ لقومه: تلك الحقيقة الظاهرة في عينه. وهذا هو مقصود التحذير؛ فإنه سيأتي بالعجائب، والامتحان ليس في عظمة العجائب بل في استعدادك أن ترى النقص الذي سِيقت العجائب لتصرفك عنه. والمدينة ومكة محرَّمتان عليه، على كلِّ نَقْبٍ منهما ملائكة. وتأمَّل ما صنعه ﷺ بخبر تميم: لم يُخفِ أنه من رجلٍ كان نصرانيًّا، ولم يجعله وحيًا، بل وزنه بما عنده وأخبر الناس بمصدره صريحًا.",
     plain: {
@@ -3200,7 +3276,7 @@ const PROPHET_STORIES = [
           ] }
       ]
     },
-    ref: "Sahih al-Bukhari, Book of the Virtues of the Prophet ﷺ, Hadith 3450",
+    ref: "Sahih al-Bukhari, Book of the Stories of the Prophets, Hadith 3450",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["dajjal","fire","water","illusion","deception","trap","appearance","trust","الدجال","نار","ماء","خداع","الظاهر","الفتنة","الثبات"]
   },
@@ -3242,7 +3318,7 @@ const PROPHET_STORIES = [
       ]
     },
     ref: "Sahih Muslim, Book of Prayer of Travellers (the ten verses); Sahih al-Bukhari, Book of Adhan, Hadith 832 (the supplication in prayer)", refAr: "صحيح مسلم، كتاب صلاة المسافرين (العشر الآيات)؛ وصحيح البخاري، كتاب الأذان، حديث ٨٣٢ (الدعاء في الصلاة)",
-    strength: "Sahih — Narrated by Muslim; the supplication is agreed upon (al-Bukhari and Muslim)",
+    strength: "Sahih — Narrated by Muslim; the supplication is agreed upon (al-Bukhari and Muslim)", strengthAr: "صحيح — رواه مسلم؛ والدعاء في الصلاة متّفقٌ عليه (البخاري ومسلم)",
     keys: ["dajjal","protection","kahf","memorise","dua","refuge","prayer","friday","حماية","الكهف","حفظ","دعاء","الاستعاذة","الصلاة","الجمعة","عذاب القبر"]
   },
   {
@@ -3413,7 +3489,7 @@ const PROPHET_STORIES = [
     },
     lesson: "This is the part of the description that is least talked about and hardest to face. The Dajjal does not only frighten people into following him — he rewards them, visibly and immediately, in the one currency everyone understands: rain, crops, fat livestock, treasure out of the ground. And those who refuse are not martyred dramatically; they are simply left poor while their neighbours prosper. That is the shape of the trial. It is not asking whether you can endure torture. It is asking whether you can watch someone else be paid for the thing you refused, and still refuse it.",
     lessonAr: "هذا أقلُّ ما يُتحدَّث عنه من الوصف، وأشقُّه على النفس. فالدجّال لا يُخوّف الناس ليتبعوه فحسب، بل يعطيهم عطاءً ظاهرًا عاجلًا بالعملة التي يفهمها كلُّ أحد: مطرٌ وزرعٌ وماشيةٌ سِمانٌ وكنوزٌ تخرج من الأرض. وأمّا من ردّه فلا يُقتلون قتلةً ظاهرة، وإنّما يُتركون في جدبٍ وجيرانهم في رخاء. فهذه صورة الفتنة: ليست سؤالًا عن احتمال العذاب، بل عن أن ترى غيرك يُعطى ثمن ما رفضتَه ثمّ تثبت على رفضه.",
-    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the hadith of an-Nawwas ibn Sam'an; the seventy thousand of Isfahan is in Sahih Muslim, the same book, from Anas ibn Malik",
+    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the hadith of an-Nawwas ibn Sam'an; the seventy thousand of Isfahan is in Sahih Muslim, the same book, from Anas ibn Malik", refAr: "صحيح مسلم، كتاب الفتن وأشراط الساعة — حديث النوّاس بن سمعان؛ والسبعون ألفًا من يهود أصبهان في صحيح مسلم، الكتاب نفسه، عن أنس بن مالك",
     strength: "Sahih — Narrated by Muslim",
     keys: ["dajjal","antichrist","rain","crops","wealth","treasure","followers","isfahan","seventy thousand","drought","trial","الدجال","المطر","الزرع","الكنوز","أصبهان","سبعون ألفًا","الفتنة","الرخاء","آخر الزمان"]
   },
@@ -3446,7 +3522,7 @@ const PROPHET_STORIES = [
           ] }
       ]
     },
-    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the followers of Isfahan, and the descent of Isa and Ludd in the hadith of an-Nawwas ibn Sam'an",
+    ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the followers of Isfahan, and the descent of Isa and Ludd in the hadith of an-Nawwas ibn Sam'an", refAr: "صحيح مسلم، كتاب الفتن وأشراط الساعة — أتباعه من أصبهان، ونزول عيسى وباب لُدّ في حديث النوّاس بن سمعان",
     strength: "Sahih — Narrated by Muslim",
     keys: ["dajjal","isa","jesus","damascus","ludd","end","killed","isfahan","followers","gog","magog","الدجال","عيسى","دمشق","لد","النهاية","أصبهان","أتباع","يأجوج","مأجوج","المنارة البيضاء"]
   },
@@ -3825,7 +3901,7 @@ const PROPHET_STORIES = [
     arabic: "اللَّهُمَّ إِنْ كُنْتُ فَعَلْتُ ذَلِكَ ابْتِغَاءَ وَجْهِكَ فَافْرُجْ عَنَّا مَا نَحْنُ فِيهِ",
     lesson: "Not one of the three named a public deed. A cup of milk held all night, a temptation refused when nobody would have known, and a wage returned in full to a man who had given up on it. On the day the rock came down, those were the only things any of them had that were worth mentioning.",
     lessonAr: "لم يذكر أحدٌ من الثلاثة عملًا ظاهرًا. قدحُ لبنٍ حُمل ليلةً كاملة، ومعصيةٌ تُركت حين لا يعلم بها أحد، وأجرٌ رُدّ كاملًا إلى رجلٍ يئس منه. ويوم أطبقت الصخرة لم يكن عند أحدهم ما يستحقّ الذكر سوى ذلك.",
-    ref: "Sahih al-Bukhari, Book of Cultivation and Sharecropping, Hadith 2272; also Hadith 2215 and 5974 — and Sahih Muslim",
+    ref: "Sahih al-Bukhari, Book of Hiring, Hadith 2272; also Hadith 2215 and 5974 — and Sahih Muslim", refAr: "صحيح البخاري، كتاب الإجارة، حديث ٢٢٧٢؛ وكذا الحديثان ٢٢١٥ و٥٩٧٤ — وصحيح مسلم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["cave", "rock", "three men", "sincerity", "parents", "wage", "temptation", "trapped", "dua",
            "الغار", "الصخرة", "الثلاثة", "الإخلاص", "بر الوالدين", "الأجرة", "الفرج"]
@@ -3859,7 +3935,7 @@ const PROPHET_STORIES = [
     arabic: "غُفِرَ لِامْرَأَةٍ مُومِسَةٍ مَرَّتْ بِكَلْبٍ عَلَى رَأْسِ رَكِيٍّ يَلْهَثُ، قَالَ: كَادَ يَقْتُلُهُ الْعَطَشُ، فَنَزَعَتْ خُفَّهَا فَأَوْثَقَتْهُ بِخِمَارِهَا، فَنَزَعَتْ لَهُ مِنَ الْمَاءِ، فَغُفِرَ لَهَا بِذَلِكَ",
     lesson: "Nobody was watching. The one she helped could not thank her, could not tell anyone, and was not even a person. And it was enough.",
     lessonAr: "لم يرها أحد. والذي أعانته لا يشكرها ولا يُخبر عنها، وليس من الناس أصلًا. وكان ذلك كافيًا.",
-    ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3321; the reward in every living thing: Hadith 2363 — and Sahih Muslim",
+    ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3321; the reward in every living thing: Hadith 2363 — and Sahih Muslim", refAr: "صحيح البخاري، كتاب بدء الخلق، حديث ٣٣٢١؛ و«في كلّ ذات كبدٍ رطبةٍ أجر»: حديث ٢٣٦٣ — وصحيح مسلم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["dog", "thirst", "mercy", "animals", "forgiven", "well", "kindness",
            "الكلب", "العطش", "الرحمة", "الحيوان", "المغفرة", "البئر"]
@@ -3944,7 +4020,7 @@ const PROPHET_STORIES = [
     arabic: "فَأَخَذَهَا النَّبِيُّ ﷺ فَمَضَغَهَا، ثُمَّ أَخَذَ مِنْ فِيهِ فَجَعَلَهَا فِي فِي الصَّبِيِّ، وَحَنَّكَهُ بِهِ، وَسَمَّاهُ عَبْدَ اللَّهِ",
     lesson: "A family had buried a child, and the first thing done for the next one was done by his own hand and out of his own mouth. He did not send instructions. He did it himself.",
     lessonAr: "أسرةٌ دفنت ولدًا، فكان أول ما صُنع للمولود بعده بيده ﷺ ومن فيه. لم يُرسل بأمرٍ يُفعل، بل فعله بنفسه.",
-    ref: "Sahih al-Bukhari, Book of Marriage, Hadith 5470 — and Sahih Muslim",
+    ref: "Sahih al-Bukhari, Book of Aqiqah, Hadith 5470 — and Sahih Muslim",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["newborn", "baby", "tahnik", "dates", "umm sulaym", "abu talha", "grief", "child died",
            "المولود", "التحنيك", "التمر", "أم سليم", "أبو طلحة", "موت الولد"]
@@ -3995,7 +4071,7 @@ const PROPHET_STORIES = [
     arabic: "إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ، وَإِذَا سَرَقَ فِيهِمُ الضَّعِيفُ أَقَامُوا عَلَيْهِ الْحَدَّ",
     lesson: "He named the exact mechanism by which a society rots, and it is not the theft. It is one law for the connected and another for the weak. Notice also who he refused: Usamah was not a stranger, he was the person most beloved to him, and he was told plainly that closeness to the Prophet ﷺ buys nothing here. And notice the example he chose to make the point unanswerable — not a distant relative, but his own daughter, by name.\n\nThis is worth reading beside the Golden Age of this ummah and beside its decline. A civilisation is not destroyed from outside first. It is destroyed when its own people stop believing the law applies upward as well as downward.",
     lessonAr: "سمّى ﷺ العلّة التي تتعفّن بها المجتمعات على وجه التحديد، وليست هي السرقة، بل أن يكون للشريف حكمٌ وللضعيف حكمٌ آخر. وتأمّل من ردّه: فأسامة ليس غريبًا، بل هو أحبّ الناس إليه، وقيل له صريحًا إنّ القرب من رسول الله ﷺ لا يشتري في هذا الباب شيئًا. وتأمّل المثال الذي ضربه ليقطع كلّ جواب: لم يذكر قريبًا بعيدًا، بل ذكر ابنته باسمها.\n\nويحسن أن يُقرأ هذا مع العصر الذهبي لهذه الأمّة ومع انحدارها. فالحضارة لا تُهدم من خارجٍ أولًا، وإنما تُهدم حين يكفّ أهلها عن الإيمان بأنّ الحكم يجري على من فوق كما يجري على من دون.",
-    ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 3475; also narrated by Muslim in the Book of Prescribed Punishments",
+    ref: "Sahih al-Bukhari, Book of the Stories of the Prophets, Hadith 3475; also narrated by Muslim in the Book of Prescribed Punishments",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["justice", "law", "theft", "stealing", "makhzum", "usamah", "fatimah", "corruption", "favouritism", "equal before the law", "wasta",
            "العدل", "الحدود", "السرقة", "المخزومية", "أسامة", "فاطمة", "المحسوبية", "الواسطة", "الشريف والضعيف"]
@@ -4063,7 +4139,7 @@ const PROPHET_STORIES = [
     arabic: "إِنَّمَا الصَّبْرُ عِنْدَ الصَّدْمَةِ الأُولَى",
     lesson: "Three things are in this and each is worth taking on its own.\n\nShe told the Prophet ﷺ to go away, in her grief, and he did not rebuke her for it. He let her say it.\n\nWhen she came to his house there were no doorkeepers — that detail is in the hadith deliberately. The head of the state had no one at his door to keep a grieving woman out.\n\nAnd then the answer: patience is at the first stroke. Anyone can be calm a month later when the shock has worn off; that is not patience, it is time doing the work. What is counted is the first moment, before you have adjusted to it, when the news has just landed. If you are in that moment now, this hadith was recorded for you.",
     lessonAr: "في هذا الخبر ثلاثة أمور، كلٌّ منها يستحقّ أن يُفرد.\n\nقالت للنبيّ ﷺ في حال حزنها: إليك عنّي، فلم يزجرها على ذلك، بل تركها تقولها.\n\nولمّا أتت بيته لم تجد عنده بوّابين، وهذه اللفظة في الحديث مقصودة: رئيس الدولة ليس على بابه من يردّ امرأةً مفجوعة.\n\nثم الجواب: «إنما الصبر عند الصدمة الأولى». فكلُّ أحدٍ يهدأ بعد شهرٍ حين يخفّ وقع المصيبة، وليس ذلك صبرًا، وإنما هو فعل الزمان. وإنما يُحسب لك الموضع الأول، قبل أن تتعوّد، وقد جاءك الخبر توًّا. فإن كنت في تلك اللحظة الآن، فإنّ هذا الحديث إنما دُوّن لك.",
-    ref: "Sahih al-Bukhari, Book of Funerals (al-Jana'iz), Hadith 1283; the wording alone also at Hadith 1302, and narrated by Muslim in the Book of Funerals",
+    ref: "Sahih al-Bukhari, Book of Funerals (al-Jana'iz), Hadith 1283; the wording alone also at Hadith 1302, and narrated by Muslim in the Book of Funerals", refAr: "صحيح البخاري، كتاب الجنائز، حديث ١٢٨٣؛ واللفظ وحده أيضًا في حديث ١٣٠٢، ورواه مسلم في كتاب الجنائز",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["grief", "patience", "death", "loss", "grave", "mourning", "sabr", "calamity", "bereaved",
            "الحزن", "الصبر", "الموت", "الفقد", "القبر", "المصيبة", "الصدمة الأولى", "العزاء"]
@@ -4097,7 +4173,7 @@ const PROPHET_STORIES = [
     arabic: "هَذَا جِبْرِيلُ جَاءَ يُعَلِّمُ النَّاسَ دِينَهُمْ",
     lesson: "Look at the method, not only the content. The religion was not left to be pieced together from scattered remarks. It was set out in public, in front of witnesses, as answers to plain questions, and then explicitly labelled at the end so that nobody would be in any doubt about what had just happened: this was Jibril, and he came so that the religion would be taught.\n\nThat is where the whole scholarly tradition of this ummah begins — the isnad, the collections, the checking of one narration against another, and eventually the men who measured the earth and mapped the sky. A religion that opens with \"Read\" and whose foundational lesson is a public question-and-answer session was always going to produce people who ask questions and write down the answers.",
     lessonAr: "انظر إلى الطريقة لا إلى المضمون وحده. فلم يُترك الدين ليُجمع من كلامٍ متفرّق، بل بُيِّن على رؤوس الناس، بحضرة شهود، جوابًا عن أسئلةٍ ظاهرة، ثم صُرّح في آخره بما جرى حتى لا يبقى في الأمر شكّ: هذا جبريل، وإنما جاء ليُعلَّم الدين.\n\nومن هنا ابتدأ صرح العلم في هذه الأمّة كلّه: الإسناد، والدواوين، وعرض الرواية على الرواية، وانتهى الأمر إلى رجالٍ قاسوا الأرض ورسموا السماء. فدينٌ أوّل ما نزل فيه «اقرأ»، ودرسه التأسيسيّ سؤالٌ وجوابٌ بين الناس، كان لا بدّ أن يُخرج قومًا يسألون ويُقيّدون الجواب.",
-    ref: "Sahih al-Bukhari, Book of Belief (Kitab al-Iman), Hadith 50; also narrated by Muslim in the Book of Faith, from Umar ibn al-Khattab with additional wording",
+    ref: "Sahih al-Bukhari, Book of Belief (Kitab al-Iman), Hadith 50; also narrated by Muslim in the Book of Faith, from Umar ibn al-Khattab with additional wording", refAr: "صحيح البخاري، كتاب الإيمان، حديث ٥٠؛ ورواه مسلم في كتاب الإيمان عن عمر بن الخطاب بزيادةٍ في اللفظ",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["jibril", "gabriel", "iman", "islam", "ihsan", "faith", "religion", "teaching", "knowledge", "hour",
            "جبريل", "الإيمان", "الإسلام", "الإحسان", "الدين", "التعليم", "العلم", "الساعة", "حديث جبريل"]

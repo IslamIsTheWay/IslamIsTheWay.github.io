@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609111733" />
+  <link rel="stylesheet" href="css/style.css?v=202609131301" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -144,18 +144,18 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609111733"></script>
-  <script src="js/sunnah.js?v=202609111733"></script>
-  <script src="js/adhkar.js?v=202609111733"></script>
+  <script src="js/data.js?v=202609131301"></script>
+  <script src="js/sunnah.js?v=202609131301"></script>
+  <script src="js/adhkar.js?v=202609131301"></script>
   <!-- The site's own EXPLANATIONS. Somebody typing a question — "ما هي
        البدعة؟" — is not quoting a hadith, and answering "we did not find
        this" is useless when the site has a whole section on it. -->
-  <script src="js/terms.js?v=202609111733"></script>
-  <script src="js/scholars.js?v=202609111733"></script>
-  <script src="js/bidah.js?v=202609111733"></script>
-  <script src="js/misunderstood.js?v=202609111733"></script>
-  <script src="js/quran-text.js?v=202609111733"></script>
-  <script src="js/verify.js?v=202609111733"></script>
+  <script src="js/terms.js?v=202609131301"></script>
+  <script src="js/scholars.js?v=202609131301"></script>
+  <script src="js/bidah.js?v=202609131301"></script>
+  <script src="js/misunderstood.js?v=202609131301"></script>
+  <script src="js/quran-text.js?v=202609131301"></script>
+  <script src="js/verify.js?v=202609131301"></script>
   <script>
   /* ============================================================
      The page logic. The engine is in js/verify.js; this file only
@@ -181,33 +181,80 @@
       return t ? `<p class="vf-ar" dir="rtl">${esc(t)}</p>` : "";
     }
 
+    /* A source line or grading that carries its own Arabic is printed as a
+       pair. One without is left to the translator, which handles the
+       canonical citations — and only those: "(the ten verses)" inside a
+       reference, or "the supplication is agreed upon" inside a grading,
+       reached the Arabic page in English. */
+    function srcLine(h) {
+      if (!h.ref) return "";
+      return `<div class="vf-src">${h.refAr ? pair(esc(h.ref), esc(h.refAr)) : esc(h.ref)}</div>`;
+    }
+    function gradeLine(h) {
+      if (!h.strength) return "";
+      return `<div class="vf-grade">${h.strengthAr ? pair(esc(h.strength), esc(h.strengthAr)) : esc(h.strength)}</div>`;
+    }
+
     /* ---- a Quran hit. Rendered first and loudest, because mistaking a
        hadith for a verse is the error this whole site was built around. --- */
     function quranCard(h) {
-      const name = (typeof SURAHS !== "undefined" &&
-        (SURAHS.find(s => s.number === h.surah) || {}).name) || ("Surah " + h.surah);
-      const nameAr = (typeof SURAHS !== "undefined" &&
-        (SURAHS.find(s => s.number === h.surah) || {}).arabic) || "";
+      /* SURAHS keys each surah as `n`. This read `s.number` for months, so it
+         never found one and printed "Surah Surah 112" — and, in Arabic,
+         "سورة Surah 112". */
+      const meta = (typeof SURAHS !== "undefined" &&
+        SURAHS.find(s => s.n === h.surah)) || {};
+      /* WHAT the match is decides what may be said about it — see vPart in
+         js/verify.js. Only a claim that IS the verse gets the correction "if
+         it reached you called a hadith, that was wrong": a hadith that
+         quotes a verse, or a phrase like سبحان الله that a verse contains,
+         was being told it had been misattributed. */
+      const say = {
+        full: ["This is the Quran", "هذا قرآن",
+          "If it reached you called a hadith, that was wrong — it is a verse of the Quran. Keeping the two apart matters more than almost anything else on this subject.",
+          "فإن وصلتك على أنها حديث فذلك خطأ — بل هي آيةٌ من القرآن. والتفريقُ بينهما أهمُّ ما في هذا الباب."],
+        occurs: ["These words occur in the Quran", "هذه الألفاظ واردةٌ في القرآن",
+          "They are part of the verse below. A short phrase like this is also said in hadith and in ordinary speech — so this tells you the words are Quranic, not where the text you were sent came from.",
+          "وهي جزءٌ من الآية المكتوبة أدناه. والعبارةُ القصيرة مثلُها تَرِد في الحديث وفي كلام الناس أيضًا — فهذا يدلّك على أنّ الألفاظ قرآنية، لا على مصدر النصّ الذي وصلك."],
+        quote: ["Your text quotes the Quran", "نصُّك يقتبس من القرآن",
+          "The verse below is inside what you pasted — but the rest of your text is not Quran. If that rest is attributed to the Prophet ﷺ, it is a separate claim, and it has to be checked on its own (see below).",
+          "الآيةُ المكتوبة أدناه موجودةٌ فيما ألصقتَه، أمّا باقي نصِّك فليس من القرآن. فإن كان ذلك الباقي منسوبًا إلى النبيّ ﷺ فهو دعوى أخرى تحتاج إلى تحقّقٍ مستقلّ (انظر أدناه)."]
+      }[h.part] || null;
+      const s = say || ["This is the Quran", "هذا قرآن", "", ""];
       return `<div class="vf-card vf-quran">
-        <div class="vf-verdict">📖 ${pair("This is the Quran", "هذا قرآن")}</div>
+        <div class="vf-verdict">📖 ${pair(s[0], s[1])}</div>
         ${arabicLine(h.ar)}
         <p class="en-only">${esc(h.en)}</p>
         <div class="vf-src">${pair(
-          `Surah ${esc(name)} (${h.surah}:${h.ayah})`,
-          `سورة ${esc(nameAr || name)} (${h.surah}:${h.ayah})`)}</div>
-        <div class="vf-note">${pair(
-          "If it reached you called a hadith, that was wrong — it is a verse of the Quran. Keeping the two apart matters more than almost anything else on this subject.",
-          "فإن وصلتك على أنها حديث فذلك خطأ — بل هي آيةٌ من القرآن. والتفريقُ بينهما أهمُّ ما في هذا الباب.")}</div>
+          meta.name ? `Surah ${esc(meta.name)} (${h.surah}:${h.ayah})` : `Quran ${h.surah}:${h.ayah}`,
+          meta.arabic ? `سورة ${esc(meta.arabic)} (${h.surah}:${h.ayah})` : `القرآن ${h.surah}:${h.ayah}`)}</div>
+        ${s[2] ? `<div class="vf-note">${pair(s[2], s[3])}</div>` : ""}
         <a class="vf-go" href="quran.html">${pair("Open it on the Quran page", "افتحها في صفحة القرآن")}</a>
       </div>`;
     }
 
+    /* The one note a QUOTE carries wherever it is shown: the words below were
+       found; what the claim adds to them was not. */
+    const QUOTE_NOTE = pair(
+      "Only the words below were found, with their grading. What your text adds to them — a number, a reward, a promise, a story — was not found with them, so do not forward the whole of it under this reference.",
+      "إنما وُجدت الألفاظ المكتوبة أدناه بدرجتها. أمّا ما زاده نصُّك عليها — من عددٍ أو ثوابٍ أو وعدٍ أو قصّة — فلم يوجد معها، فلا تُرسِل النصَّ كلَّه معزوًّا إلى هذا المرجع.");
+
     /* ---- something this site already carries, with the grading it was
        written with. This is the best possible answer: a human graded it. -- */
     function siteCard(h) {
+      /* A match in MEANING (the same hadith in other English words — see
+         vSearchSite) must not claim the pasted words were found. It says so,
+         and the real wording printed below is what to forward. */
+      const verdict = h.meaning
+        ? pair("This site carries a hadith with this meaning — the wording below is the real one",
+               "في الموقع حديثٌ بهذا المعنى — واللفظُ الصحيح هو المكتوب أدناه")
+        : h.part === "quote"
+        ? pair("Part of what you pasted is here — not all of it", "جزءٌ مما ألصقتَه موجودٌ هنا — لا كلُّه")
+        : h.part === "occurs"
+        ? pair("These words are in a narration this site carries", "هذه الألفاظ في حديثٍ يحمله هذا الموقع")
+        : pair("This site carries this, and it is graded", "هذا موجودٌ في الموقع بدرجته");
       return `<div class="vf-card vf-site">
-        <div class="vf-verdict">✅ ${pair("This site carries this, and it is graded",
-                                          "هذا موجودٌ في الموقع بدرجته")}</div>
+        <div class="vf-verdict">✅ ${verdict}</div>
+        ${h.part === "quote" ? `<div class="vf-note">${QUOTE_NOTE}</div>` : ""}
         ${!h.title ? "" : (h.titleAr
             ? `<div class="vf-title">${pair(esc(h.title), esc(h.titleAr))}</div>`
             /* The 43 curated hadith carry an English title with no Arabic
@@ -217,8 +264,8 @@
             : `<div class="vf-title en-only">${esc(h.title)}</div>`)}
         ${arabicLine(h.ar)}
         ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
-        ${h.ref ? `<div class="vf-src">${esc(h.ref)}</div>` : ""}
-        ${h.strength ? `<div class="vf-grade">${esc(h.strength)}</div>` : ""}
+        ${srcLine(h)}
+        ${gradeLine(h)}
         <a class="vf-go" href="${esc(h.where || "hadith.html")}">${pair("See it in context", "انظرها في موضعها")}</a>
       </div>`;
     }
@@ -258,8 +305,22 @@
         ? pair(`${h.col.en} ${h.n}`, `${h.col.ar} ${h.n}`)
         : pair(`${h.col.en} — cited by book, not by number`,
                `${h.col.ar} — يُعزى بالكتاب لا بالرقم`);
+      const verdict = h.part === "quote"
+        ? pair("Part of what you pasted is in this narration — not all of it", "جزءٌ مما ألصقتَه في هذا الحديث — لا كلُّه")
+        : h.part === "occurs"
+        ? pair("These words are in this narration", "هذه الألفاظ في هذا الحديث")
+        : pair("Found in the collections", "وُجد في الكتب");
+      /* A few words inside a long narration may be spoken by someone else in
+         it — "so do not get angry" is a Bedouin speaking to the Prophet ﷺ in
+         al-Bukhari 63. The narration is printed whole; this says to read it. */
+      const note = h.part === "quote" ? QUOTE_NOTE
+        : h.part === "occurs" ? pair(
+            "Read it whole: in a narration, these words may be spoken by someone other than the Prophet ﷺ.",
+            "اقرأه كاملًا: فقد يكون قائلُ هذه الألفاظ في الرواية غيرَ النبيّ ﷺ.")
+        : "";
       return `<div class="vf-card vf-col">
-        <div class="vf-verdict">✅ ${pair("Found in the collections", "وُجد في الكتب")}</div>
+        <div class="vf-verdict">✅ ${verdict}</div>
+        ${note ? `<div class="vf-note">${note}</div>` : ""}
         ${arabicLine(h.ar)}
         ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
         <div class="vf-src">${cite}</div>
@@ -318,17 +379,24 @@
             : `<div class="vf-title en-only">${esc(h.title)}</div>`)}
           ${arabicLine(h.ar)}
           ${h.en ? `<p class="en-only">${esc(h.en)}</p>` : ""}
-          ${h.ref ? `<div class="vf-src">${esc(h.ref)}</div>` : ""}
-          ${h.strength ? `<div class="vf-grade">${esc(h.strength)}</div>` : ""}
+          ${srcLine(h)}
+          ${gradeLine(h)}
           <a class="vf-go" href="${esc(h.where || "hadith.html")}">${pair("See it in context", "انظرها في موضعها")}</a>
         </div>`).join("")}
       </div>`;
     }
 
     /* ---- nothing found. The most important branch on the page. ---------- */
-    function notFound(searched) {
+    /* `partial`: something INSIDE the claim was found (a verse it quotes, a
+       dhikr it attaches a reward to), and the rest of it was not. Saying only
+       the first half of that would let the found part vouch for the rest. */
+    function notFound(searched, partial) {
       return `<div class="vf-card vf-none">
-        <div class="vf-verdict">⚠️ ${pair("We did not find this", "لم نجد هذا")}</div>
+        <div class="vf-verdict">⚠️ ${partial
+          ? pair("The rest of what you pasted — we did not find it", "أمّا باقي ما ألصقتَه — فلم نجده")
+          : pair("We did not find this", "لم نجد هذا")}</div>
+        ${partial ? `<p class="en-only">What is shown above is only a part of your text. The rest of it — the words around that part — we did not find anywhere we searched.</p>
+        <p class="ar-only" dir="rtl">ما في الأعلى جزءٌ من نصِّك فقط، أمّا باقيه — أي الألفاظ المحيطة بذلك الجزء — فلم نجده في شيءٍ مما بحثنا فيه.</p>` : ""}
         <p class="en-only"><strong>This is not the same as saying it is fabricated, and this page will not say that.</strong> It means only that we did not find these words in what we searched.</p>
         <p class="ar-only" dir="rtl"><strong>وليس هذا كقولنا إنه موضوع، ولن تقوله هذه الصفحة.</strong> وإنما معناه أننا لم نجد هذه الألفاظ فيما بحثنا فيه.</p>
         <p class="en-only">Three ordinary reasons a real hadith is not found here: the wording you were sent is a <strong>paraphrase</strong> rather than the exact text; it is in a collection this site does not carry; or a word was mistyped.</p>
@@ -348,15 +416,19 @@
     /* ONE VERDICT, WHICH UPDATES. See the note in the commit: printing a
        second identical not-found card under the first made the deep-search
        button look broken. State lives here and the panel is re-rendered. */
-    const vfState = { claim: "", hits: "", searchedEn: [], searchedAr: [], done: {} };
+    const vfState = { claim: "", hits: "", identified: false, searchedEn: [], searchedAr: [], done: {} };
 
     function vfRender(changed) {
       const exp = explainBlock(vfState.explain || [], vfState.isQuestion);
-      const miss = notFound({ en: vfState.searchedEn.join("; "), ar: vfState.searchedAr.join("؛ ") });
+      const searched = { en: vfState.searchedEn.join("; "), ar: vfState.searchedAr.join("؛ ") };
+      const miss = notFound(searched, false);
       /* A QUESTION gets its answer first and the wording note second, in a
-         quieter form. A claimed quotation still gets the verdict first. */
+         quieter form. A claimed quotation still gets the verdict first. When
+         only a PART of the claim was found, the verdict on the rest follows
+         it — with everything the not-found answer normally brings. */
       const body = vfState.hits
-        ? (vfState.hits + exp)
+        ? (vfState.hits + (vfState.identified ? exp
+            : notFound(searched, true) + (vfState.mentions || "") + exp + relatedBlock(vfState.related || [])))
         : (vfState.isQuestion && exp
              ? exp + `<p class="vf-hint vf-quiet">${pair(
                  "You asked a question rather than pasting a quotation, so nothing was checked as wording.",
@@ -399,19 +471,27 @@
            and the note above vSearchSite. */
         const narrations = s.filter(function (h) { return !h.prose; });
         const mentions   = s.filter(function (h) { return  h.prose; });
-        let html = "";
-        if (q.length) html += q.slice(0, 2).map(quranCard).join("");
-        if (narrations.length) html += narrations.slice(0, 3).map(siteCard).join("");
+        /* What identifies the claim first, whatever its kind; at equal
+           standing the Quran first, loudest, as rule 4 says. */
+        const shown = q.slice(0, 2).concat(narrations.slice(0, 3)).sort(function (a, b) {
+          return (V_PART_RANK[a.part] - V_PART_RANK[b.part]) ||
+                 ((a.kind === "quran" ? 0 : 1) - (b.kind === "quran" ? 0 : 1));
+        });
+        const html = shown.map(function (h) { return h.kind === "quran" ? quranCard(h) : siteCard(h); }).join("");
         vfState.hits = html;
+        /* Found only as QUOTES — a verse or a dhikr inside a longer claim —
+           is not an identification of the claim. */
+        vfState.identified = shown.some(function (h) { return h.part !== "quote"; });
+        const open = !vfState.identified;
         /* Shown only when nothing was actually identified, and always under
            the not-found card rather than in place of it. */
-        vfState.mentions = html ? "" : mentions.slice(0, 2).map(mentionCard).join("");
+        vfState.mentions = open ? mentions.slice(0, 2).map(mentionCard).join("") : "";
         /* Only when the wording itself was not found — offering "related"
            beside an exact hit would just be noise. */
-        vfState.related = html ? [] : vSearchRelated(claim);
+        vfState.related = open ? vSearchRelated(claim) : [];
         /* Beside a verdict the explanation must be about the subject, not
            merely contain one of its words — see the note on vSearchExplain. */
-        vfState.explain = vSearchExplain(claim, !!html);
+        vfState.explain = vSearchExplain(claim, !open);
         /* Detected, not guessed at: an explicit question mark, or one of the
            ordinary ways a person opens a question in either language. */
         vfState.isQuestion = !html && (/[?؟]/.test(claim) ||
@@ -442,8 +522,13 @@
         vfState.searchedEn.push(ready.map(c => c.en).join(", "));
         vfState.searchedAr.push(ready.map(c => c.ar).join("، "));
         /* A hit REPLACES the not-found verdict. Leaving "we did not find
-           this" sitting above a hit would simply be wrong. */
-        if (hits.length) vfState.hits = (vfState.hits || "") + hits.map(colCard).join("");
+           this" sitting above a hit would simply be wrong — unless all it
+           found is a part of the claim, in which case the rest is still
+           unanswered and says so. */
+        if (hits.length) {
+          vfState.hits = (vfState.hits || "") + hits.map(colCard).join("");
+          if (hits.some(h => h.part !== "quote")) vfState.identified = true;
+        }
         vfRender(true);
       }
       const b1 = document.getElementById("vfDeep1");
@@ -498,9 +583,9 @@
   })();
   </script>
 
-  <script src="js/wordlens.js?v=202609111733"></script>
+  <script src="js/wordlens.js?v=202609131301"></script>
 
-  <script src="js/main.js?v=202609111733"></script>
-  <script src="js/i18n.js?v=202609111733"></script>
+  <script src="js/main.js?v=202609131301"></script>
+  <script src="js/i18n.js?v=202609131301"></script>
 </body>
 </html>

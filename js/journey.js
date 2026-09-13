@@ -695,7 +695,7 @@ const JOURNEY = [
       hAr: "الموازين، ووزن مثقال الذرّة",
       en: "<em>“And We place the scales of justice for the Day of Resurrection, so no soul will be treated unjustly at all. And if there is the weight of a mustard seed, We will bring it forth. And sufficient are We as accountant.”</em> (21:47)\n\n<em>“So whoever does an atom's weight of good will see it, and whoever does an atom's weight of evil will see it.”</em> (99:7–8)\n\nAnd the Prophet ﷺ said: <em>“Two words light on the tongue, heavy on the Scale, beloved to the Most Merciful: Subhan Allahi wa bihamdih, Subhan Allahi'l-Azim.”</em>",
       ar: "﴿وَنَضَعُ ٱلۡمَوَٰزِينَ ٱلۡقِسۡطَ لِيَوۡمِ ٱلۡقِيَٰمَةِ فَلَا تُظۡلَمُ نَفۡسٞ شَيۡـٔٗاۖ وَإِن كَانَ مِثۡقَالَ حَبَّةٖ مِّنۡ خَرۡدَلٍ أَتَيۡنَا بِهَاۗ وَكَفَىٰ بِنَا حَٰسِبِينَ﴾ [الأنبياء: ٤٧].\n\n﴿فَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَيۡرٗا يَرَهُۥ • وَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٖ شَرّٗا يَرَهُۥ﴾ [الزلزلة: ٧–٨].\n\nوقال ﷺ: «كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن: سبحان الله وبحمده، سبحان الله العظيم».",
-      ref: "Surah Al-Anbiya 21:47; Surah Az-Zalzalah 99:7–8; the hadith is Sahih al-Bukhari, Book of Invocations, Hadith 6682, and Sahih Muslim 2694",
+      ref: "Surah Al-Anbiya 21:47; Surah Az-Zalzalah 99:7–8; the hadith is Sahih al-Bukhari, Book of Invocations, Hadith 6406, and Sahih Muslim 2694",
       strength: "The verses are Quran; the hadith is agreed upon (al-Bukhari and Muslim)" }
   ],
   plain: {
@@ -864,7 +864,7 @@ const JOURNEY = [
       hAr: "القنطرة بعد الصراط",
       en: "The Prophet ﷺ said: <em>“The believers will be delivered from the Fire, and they will be detained on a bridge between Paradise and the Fire. There they will settle with one another the wrongs done between them in the world, until when they are cleaned and purified they will be permitted to enter Paradise.”</em>",
       ar: "قال النبيُّ ﷺ: «يخلص المؤمنون من النار، فيُحبَسون على قنطرةٍ بين الجنّة والنار، فيُقتصّ لبعضهم من بعضٍ مظالم كانت بينهم في الدنيا، حتى إذا هُذّبوا ونُقّوا أُذن لهم بدخول الجنّة».",
-      ref: "Sahih al-Bukhari, Book of Oppressions, Hadith 6535 — from Abu Sa'id al-Khudri",
+      ref: "Sahih al-Bukhari, Book of Oppressions, Hadith 2440 — from Abu Sa'id al-Khudri",
       strength: "Sahih — Narrated by al-Bukhari" },
     { h: "The one who is bankrupt",
       hAr: "المُفلِس",
@@ -927,7 +927,7 @@ const JOURNEY = [
       hAr: "ثمانية أبواب — ومنهم من يُدعى من أكثر من باب",
       en: "The Prophet ﷺ said: <em>“Whoever spends a pair of anything in the way of Allah will be called from the gates of Paradise: O servant of Allah, this is good. So whoever was of the people of prayer will be called from the gate of prayer; whoever was of the people of jihad, from the gate of jihad; whoever was of the people of fasting, from the gate of Ar-Rayyan; whoever was of the people of charity, from the gate of charity.”</em>\n\nAbu Bakr رضي الله عنه asked whether anyone would be called from all of them, and he ﷺ said yes — and that he hoped Abu Bakr would be one of them.\n\nAnd he ﷺ said: <em>“In Paradise there are eight gates, among them a gate called Ar-Rayyan, which none enters but those who fast.”</em>",
       ar: "قال النبيُّ ﷺ: «من أنفق زوجين في سبيل الله نُودي من أبواب الجنّة: يا عبد الله، هذا خير. فمن كان من أهل الصلاة دُعي من باب الصلاة، ومن كان من أهل الجهاد دُعي من باب الجهاد، ومن كان من أهل الصيام دُعي من باب الريّان، ومن كان من أهل الصدقة دُعي من باب الصدقة».\n\nفسأل أبو بكر رضي الله عنه: هل يُدعى أحدٌ من تلك الأبواب كلّها؟ قال: «نعم، وأرجو أن تكون منهم».\n\nوقال ﷺ: «في الجنّة ثمانية أبواب، فيها بابٌ يُسمّى الريّان لا يدخله إلا الصائمون».",
-      ref: "Sahih al-Bukhari, Book of Jihad, Hadith 3666 and Book of Fasting, Hadith 1896–1897; also narrated by Muslim",
+      ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 3666 and Book of Fasting, Hadith 1896–1897; also narrated by Muslim",
       strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" },
     { h: "The first thing eaten",
       hAr: "أوّل ما يُؤكَل",

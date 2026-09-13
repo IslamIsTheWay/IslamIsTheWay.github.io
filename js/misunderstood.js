@@ -132,8 +132,8 @@ const MISUNDERSTOOD = {
       bodyAr: "وهذه آخر الخطوات، وهي وحدها لا تحتاج نصًّا البتّة: يجني جانٍ، وينطق وهو يجني بكلمةٍ عربية، فيُطالَب بجنايته قريبٌ من ملياري إنسان.\n\nوميزانُ كون ذلك حجّةً حقيقيّة أن يقبله قائله على نفسه. فما من أمّةٍ ولا ملّةٍ إلا وفيها من فعل الفظائع باسمها. وما لم يُطبَّق إلا في جهةٍ واحدة فليس قاعدةً، وإنما هو هوًى لبس ثوب القاعدة.\n\nوالجوابُ من داخل الدين أشدُّ من كلّ نقدٍ من خارجه: فقد وصف النبي ﷺ قومًا يقتلون أهل الإسلام وهم يقرؤون القرآن، فقال فيهم: **«يَمْرُقُونَ مِنَ الدِّينِ كَمَا يَمْرُقُ السَّهْمُ مِنَ الرَّمِيَّةِ»**. وهو في الصحيحين، وفي هذه الصفحة قسمٌ في شأنهم.",
       plain: "In plain words: judging a religion by its worst follower is a rule nobody accepts about their own. And the harshest words ever said about those people were said inside Islam, not outside it.",
       plainAr: "بعبارة أخرى: الحكم على دينٍ بأسوأ أتباعه قاعدةٌ لا يرضاها أحدٌ على نفسه. وأشدُّ ما قيل في أولئك إنما قيل في داخل الإسلام لا خارجه.",
-      ref: "Sahih al-Bukhari, Book of the Merits of the Ansar, Hadith 3610; Sahih Muslim, Book of Zakat",
-      refAr: "صحيح البخاري، كتاب مناقب الأنصار، حديث ٣٦١٠؛ صحيح مسلم، كتاب الزكاة",
+      ref: "Sahih al-Bukhari, Book of Virtues (al-Manaqib), Hadith 3610; Sahih Muslim, Book of Zakat",
+      refAr: "صحيح البخاري، كتاب المناقب، حديث ٣٦١٠؛ صحيح مسلم، كتاب الزكاة",
       strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
       strengthAr: "صحيح — متفق عليه (البخاري ومسلم)"
     }

@@ -255,7 +255,7 @@ const FULL_LIVES = {
     sources: [
       "The first revelation and her answer: Sahih al-Bukhari, Book of Revelation, Hadith 3 — Sahih",
       "Best of the women of this nation: Sahih al-Bukhari, Book of the Prophets, Hadith 3432 — Sahih",
-      "Aishah's words about her: Sahih al-Bukhari, Book of the Companions, Hadith 3816 — Sahih",
+      "Aishah's words about her: Sahih al-Bukhari, Book of the Merits of the Ansar, Hadith 3816 — Sahih",
       "Her trade, her titles and the Year of Sorrow: Ibn Ishaq and Ibn Sa'd — historical sira"
     ]
   },

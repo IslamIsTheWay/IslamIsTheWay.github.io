@@ -513,6 +513,11 @@ function iitwRecitationRefAr(r) {
    wrapped in try/catch so a counter outage can never break the site. */
 (function () {
   const NS = "iitw-islamistheway-2026";
+  /* ONLY THE REAL SITE COUNTS. A copy opened from the repo on a developer's
+     machine (localhost), a preview, or a file:// page was counting as a
+     visitor — every test run of the site added its page loads to the
+     numbers the owner reads in the staff panel. */
+  if (location.hostname !== "islamistheway.github.io") return;
   function bump(key) {
     try { fetch("https://abacus.jasoncameron.dev/hit/" + NS + "/" + key).catch(() => {}); } catch (e) {}
   }

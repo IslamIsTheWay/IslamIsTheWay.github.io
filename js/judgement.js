@@ -421,7 +421,7 @@ const JUDGEMENT_STAGES = [
       { en: "The Prophet ﷺ said his pulpit is upon his Basin, and described it as one from which whoever drinks will never thirst again. He said he would be at it before them, and would drive away those who changed after him.",
         ar: "قال النبي ﷺ: منبري على حوضي، ووصفه بأن من شرب منه لم يظمأ بعده أبدًا، وأنه فَرَطهم عليه، وأنه يُذاد عنه من بدّل بعده.",
         quran: "مِنْبَرِي عَلَى حَوْضِي",
-        ref: "Sahih al-Bukhari, Book of the Virtues of Madinah, Hadith 1196 — Sahih; the Basin is described in many places in the two Sahihs" },
+        ref: "Sahih al-Bukhari, Book of the Virtues of Madinah, Hadith 1888 — Sahih; the Basin is described in many places in the two Sahihs" },
       { en: "Every one of you will pass over it. Allah says that not one of you is left out of it, then those who feared Him are saved and the wrongdoers are left in it on their knees.",
         ar: "وكلٌّ سيَرِدها؛ قال الله: وإن منكم إلا واردها، ثم يُنجّي الذين اتّقوا ويُترك الظالمون فيها جِثيًّا.",
         quran: "وَإِن مِّنكُمۡ إِلَّا وَارِدُهَاۚ كَانَ عَلَىٰ رَبِّكَ حَتۡمٗا مَّقۡضِيّٗا ۝ ثُمَّ نُنَجِّي ٱلَّذِينَ ٱتَّقَواْ وَّنَذَرُ ٱلظَّٰلِمِينَ فِيهَا جِثِيّٗا",

@@ -358,6 +358,64 @@ const AR = {
    "Surah Al-Baqarah (2:25)" are built from a few repeating pieces. Translating
    those pieces covers every reference on the site without listing them all. */
 const AR_PARTS = [
+  /* BOOK NAMES THAT WERE COMING OUT HALF-ENGLISH, measured September 2026 by
+     running every "Book of …" phrase in the data through this function: 82 of
+     159 left English behind — "كتاب الفضائل of the قرآن", "كتاب Wills",
+     "كتاب Loans و Settling Debts". Each is a whole name with a word boundary
+     at both ends, the long form always above any name that is its prefix
+     ("Book of Virtue and Good Manners" above "Book of Virtue"). A name that
+     carries its own transliteration in brackets is matched WITH it where the
+     bracket says something the English does not (al-Manaqib, an-Nafaqat). */
+  [/\bBook of Virtues \(al-Manaqib\)/g, "كتاب المناقب"],
+  [/\bBook of Supporting the Family \(an-Nafaqat\)/g, "كتاب النفقات"],
+  [/\bBook of Transactions \(Kitab al-Musaqah\)/g, "كتاب المساقاة"],
+  [/\bBook of Suckling \(Kitab ar-Rida'\)/g, "كتاب الرضاع"],
+  [/\bBook of Government \(al-Imarah\)/g, "كتاب الإمارة"],
+  [/\bSahih Muslim, Book of Transactions\b/g, "صحيح مسلم، كتاب المساقاة"],
+  [/\bBook of Knowledge of Ingenious Mechanical Devices\b/g, "كتاب الجامع بين العلم والعمل النافع في صناعة الحيل"],
+  [/\b(?:the )?Book of (?:the )?Virtues of the Companions\b/g, "كتاب فضائل الصحابة"],
+  [/\b(?:the )?Book of (?:the )?Virtues of the Qur'?an\b/g, "كتاب فضائل القرآن"],
+  [/\bBook of Mosques and Places of Prayer\b/g, "كتاب المساجد ومواضع الصلاة"],
+  [/\bBook of Paradise and its Description\b/g, "كتاب الجنّة وصفة نعيمها وأهلها"],
+  [/\bBook of Righteousness and Good Manners\b/g, "كتاب البرّ والصلة والآداب"],
+  [/\bBook of Virtue and Good Manners\b/g, "كتاب البرّ والصلة والآداب"],
+  [/\bBook of Loans and Settling Debts\b/g, "كتاب الاستقراض وأداء الديون"],
+  [/\bBook of Jihad and Expeditions\b/g, "كتاب الجهاد والسير"],
+  [/\bBook of Sales and Trade\b/g, "كتاب البيوع"],
+  [/\bBook of Reports of Single Narrators(?: \(Akhbar al-Ahad\))?/g, "كتاب أخبار الآحاد"],
+  [/\bBook of Softening of the Hearts\b/g, "كتاب الرقاق"],
+  [/\bBook of Softening the Heart\b/g, "كتاب الرقاق"],
+  [/\bBook of Heart Softeners\b/g, "كتاب الرقاق"],
+  [/\bBook of Supporting the Family\b/g, "كتاب النفقات"],
+  [/\bBook of Shortening the Prayer\b/g, "كتاب تقصير الصلاة"],
+  [/\bBook of Asking Permission\b/g, "كتاب الاستئذان"],
+  [/\bBook of General Behaviou?r\b/g, "كتاب الأدب"],
+  [/\bBook of (?:Legal|Prescribed) Punishments\b/g, "كتاب الحدود"],
+  [/\bBook of Limits and Punishments\b/g, "كتاب الحدود"],
+  [/\bBook of (?:the )?Military Expeditions\b/g, "كتاب المغازي"],
+  [/\bBook of Maghazi\b/g, "كتاب المغازي"],
+  [/\bBook of Ablutions\b/g, "كتاب الوضوء"],
+  [/\bBook of Aqiqah\b/g, "كتاب العقيقة"],
+  [/\bBook of Battles\b/g, "كتاب الملاحم"],
+  [/\bBook of Coercion\b/g, "كتاب الإكراه"],
+  [/\bBook of Conditions\b/g, "كتاب الشروط"],
+  [/\bBook of Government\b/g, "كتاب الإمارة"],
+  [/\bBook of Hiring\b/g, "كتاب الإجارة"],
+  [/\bBook of Inheritance\b/g, "كتاب الفرائض"],
+  [/\bBook of Judge?ments\b/g, "كتاب الأحكام"],
+  [/\bBook of Musaqah\b/g, "كتاب المساقاة"],
+  [/\bBook of Pilgrimage\b/g, "كتاب الحج"],
+  [/\bBook of Suckling\b/g, "كتاب الرضاع"],
+  [/\bBook of Virtue\b/g, "كتاب البرّ"],
+  [/\bBook of Wills\b/g, "كتاب الوصايا"],
+  [/\bBook of Witnesses\b/g, "كتاب الشهادات"],
+  [/\bBook of Zuhd\b/g, "كتاب الزهد"],
+  [/\bBook of Optics\b/g, "كتاب المناظر"],
+  [/\bChapters on (?:Judge?ments|Rulings)\b/g, "أبواب الأحكام"],
+  [/\bChapters on Virtues\b/g, "أبواب المناقب"],
+  [/\bChapters on Zuhd\b/g, "أبواب الزهد"],
+  [/\bthe Book of Allah\b/g, "كتاب الله"],
+
   /* Narrators, graders and collections that were still rendering in Latin
      inside an otherwise Arabic citation. Measured across eight pages in
      Arabic mode. Longest form first, per the rule above. */
@@ -799,7 +857,16 @@ const AR_PARTS = [
   [/\bSahih\b/g, "صحيح"],
   [/\bQuran\b/g, "قرآن"],
   [/\bsira\b/g, "سيرة"],
-  [/\band\b/g, "و"]
+  [/\band\b/g, "و"],
+  /* Tidying after the book names have become Arabic. A transliteration in
+     brackets straight after an Arabic book name only repeats it in Latin —
+     "كتاب الإيمان (Kitab al-Iman)" — and an English "the" or "in" left in
+     front of one reads "the كتاب الحدود". Anchored on كتاب, so a bracket like
+     "(al-Bukhari and Muslim)" after a grading is never touched. */
+  [/(كتاب [^()؛;,،—]+?)\s*\((?:Kitab\s[^)]*|(?:al|an|ar|as|at|ad|adh|ash|az|Al)-[^)]*)\)/g, "$1"],
+  [/\bin the\s+(?=كتاب)/g, "في "],
+  [/\bthe\s+(?=كتاب)/g, ""],
+  [/\bin\s+(?=كتاب)/g, "في "]
 ];
 
 /* ---------- Surah names, generated from the data ----------

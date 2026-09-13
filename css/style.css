@@ -708,12 +708,19 @@ section {
   background: var(--white);
   border: 2px solid var(--green-light);
   border-radius: 999px;
-  padding: 6px 6px 6px 22px;
+  /* Logical, so the roomy side is the text's side in Arabic too. */
+  padding-block: 6px;
+  padding-inline: 22px 6px;
   box-shadow: var(--shadow);
 }
 
+/* min-width: 0 — a flex item never shrinks below its own content width by
+   default, and an input's content width is its placeholder. On a phone in
+   Arabic the placeholder alone was wider than the box, so the Search button
+   was pushed 64px off the screen. */
 .search-box input {
   flex: 1;
+  min-width: 0;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -732,6 +739,7 @@ section {
   cursor: pointer;
   font-family: inherit;
   transition: background 0.2s;
+  flex-shrink: 0;
 }
 
 .search-box button:hover {
