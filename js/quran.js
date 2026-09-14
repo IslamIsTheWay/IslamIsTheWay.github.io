@@ -256,6 +256,11 @@ async function openSurah(surah) {
        could ever load quran.js. */
     const tad = (typeof iitwTadabburFor === "function") ? iitwTadabburFor(surah.n) : null;
     window._tadOpen = false;
+    /* Ar-Raghib al-Isfahani (js/raghib.js): drawn only where his tafsir or
+       his al-Mufradat has something on this surah. Its boxes are built on
+       the first press, so the reader opens exactly as fast as before. */
+    const rg = (typeof iitwRaghibFor === "function") ? iitwRaghibFor(surah.n) : null;
+    window._rgOpen = false;
 
     let html = `<div class="reciter-bar">
       <div class="reciter-now">🎧 <span class="en-only">Reciter: <strong>${current.name}</strong> </span><span dir="rtl" style="font-family:'Amiri',serif;"><span class="ar-only">القارئ: </span>${current.ar}</span></div>
@@ -286,6 +291,8 @@ async function openSurah(surah) {
              GRADED, and one of them is graded not-established on purpose. -->
         ${iitwMiraclesFor(surah.n) ? `<button onclick="iitwToggleMiracle()" class="rq-btn rq-mir" id="rqMirBtn"
                 title="What this verse said before anyone could check it"><span class="en-only">🔬 The verse and what was found</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🔬 الآية وما اكتُشف بعدها</span></button>` : ""}
+        ${rg ? `<button onclick="iitwToggleRaghib()" class="rq-btn rq-rg" id="rqRgBtn"
+                title="Ar-Raghib al-Isfahani: his explanation of these verses and the verses he connects them with"><span class="en-only">📜 Ar-Raghib's explanation</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">📜 تفسير الراغب الأصفهاني</span></button>` : ""}
       </div>
     </div>
     <div class="rq-save-note" id="rqSaveNote"></div>

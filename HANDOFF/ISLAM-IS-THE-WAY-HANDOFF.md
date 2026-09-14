@@ -6048,3 +6048,84 @@ answered with comfort first.
   reward in the Sahihs is Muslim 2568: «مَنْ عَادَ مَرِيضًا لَمْ يَزَلْ فِي خُرْفَةِ
   الْجَنَّةِ حَتَّى يَرْجِعَ». The entry now says that, with all three references
   (and refAr / strengthAr).
+
+# PART 31 - Ar-Raghib al-Isfahani on the Quran page (the 📜 button)
+
+## What the owner asked, and why it is its own button
+
+He asked in August ("get the first ten surahs' explanations from the book of
+الراغب الأصفهاني — why the verses are there, how they are connected with
+another verse") and again on 14 September, remembering the name as "Al-Qasim
+As-Sulaymani" (he is **Abu al-Qasim al-Husayn ibn Muhammad al-Raghib
+al-Isfahani, d. 502 AH**): "I don't think you added them properly … all
+scholars say he is very good at making connections … use that man's books".
+He was right: the tadabbur panel quoted his *al-Mufradat* a few times and his
+tafsir not once.
+
+The 📜 button in the surah reader ("تفسير الراغب الأصفهاني") is separate from
+Tadabbur on purpose: it is one named scholar's book, and the reader must
+always know whose words they are reading. Drawn only where RAGHIB_INDEX has
+the surah.
+
+## The sources (all in the scratchpad `raghib/` folder of that session; re-fetch from OpenITI)
+
+* Tafsir: OpenITI `0502RaghibIsbahani.Tafsir.Shamela0009231-ara1` — the
+  PRE-CLEAN file (keeps the page markers). Shamela book 9231. It survives
+  from al-Fatihah to the end of al-Ma'idah (5 volumes as Shamela numbers them).
+* al-Mufradat (Shamela 23636), al-Dhari'a ila Makarim al-Shari'a (1390),
+  Tafsil al-Nash'atayn (21562) — same OpenITI author folder.
+* PAGE CONVENTION: a `PageVxxPyyy` marker CLOSES page yyy — the text before
+  it is page yyy. Shamela's link id for (vol, page) = (1-based position of
+  that marker in the file, counting PageV00P000) − 1. Checked against
+  shamela.ws: id 50 = vol 1 p. 49, id 700 = vol 2 p. 498, id 1400 = vol 3
+  p. 1199.
+
+## The pipeline (scripts in the same folder)
+
+1. `segment3.py` — cuts the tafsir into per-verse passages. A lemma is a
+   paragraph that opens with «قوله …: {…}» (vols 1-2) or «قوله …: (…)»
+   (vols 3-5); the quotation is looked up WHOLE in the KFGQPC text, which
+   gives the verses it covers; typing errors are handled by matching the
+   opening and closing words separately, and by the edition's «الآية (N)»
+   labels. Then the heaviest chain in verse order (a phrase re-quoted in
+   passing must not open a new passage). `gen_full.py` attaches a verse he
+   treats inside the passage beside it (by its words, or — eight of them —
+   found by reading, listed in the script with his words).
+   **Result: 786 of the 789 verses of surahs 1-5 have his words. Nothing of his
+   survives on 3:31 (referred to on 3:32, but the passage is not in the
+   text), 4:52 and 5:92 — and the reader says so under those verses.**
+2. `gen_full.py` — writes js/raghib/full/<s>-<k>.js: everything he wrote on
+   each verse, every quotation of the Quran replaced by the Mushaf's words
+   (qquote.py) with its reference when it occurs in one place; a quotation
+   that cannot be found is shown in «…», never in ﴿…﴾; page turns kept as
+   ⟦v:p⟧ and drawn as page tags. ~2.7MB in ~24 chunks, fetched only when
+   "Everything he wrote on this verse" is pressed.
+3. `build_raghib.py N` — the NOTES for surah N from notes/N.txt (format at
+   the top of the script): heading, his words (`said`), plain English and
+   plain Arabic, and the verses he connects it with. It FAILS unless every
+   excerpt of `said` is found in the book (letters compared without marks
+   and hamza spelling; a typing error of the digitisation may be corrected —
+   each correction is printed "book→mine" to be read), and it READS the
+   volume/page from where the excerpt sits (never typed). Every verse is
+   written plainly in {…} in the notes and cut from the KFGQPC text here; a
+   ﴿ typed into a note is refused.
+4. `index_raghib.py` — js/raghib-index.js (always loaded; content hash per
+   file so a changed file beats the cache).
+
+qquote.py knows the Imla'i/Uthmani spellings that differ in some places only
+(إبراهيم in al-Baqarah, النبيين, الليل, يحيي, داوود, يستحيي, ووري, تحيي,
+يبسط, and a feminine ة the Mushaf writes ت: امرأت، نعمت، رحمت …) and tries
+them only when the quotation is not found as written.
+
+check-quran.sh now proves every ﴿…﴾ under js/raghib/ is a run of whole
+words of one verse of js/quran-text.js (4,550 of them at first build).
+
+## Status
+
+* Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
+  (1:3's two names are explained by him under the Basmala; the note says so).
+* His full text: every verse of surahs 1-5.
+* Still to write: notes for al-Baqarah → al-Ma'idah (from his tafsir),
+  surahs 6-10 from al-Mufradat, the panel on his method (his Muqaddima) and
+  on how he teaches us to see the religion (al-Dhari'a, Tafsil
+  al-Nash'atayn).

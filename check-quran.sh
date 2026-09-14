@@ -74,6 +74,41 @@ if bad:
 PY
 fi
 
+# Ar-Raghib's tafsir on the Quran page (js/raghib/, HANDOFF PART 31): every
+# ﴿…﴾ in those files was cut from js/quran-text.js by the builders. Prove it
+# stays so: each quotation, verse by verse (a quotation running over several
+# verses is joined with " ۝ "), must be a run of whole words of one verse.
+if [ -d js/raghib ] && command -v python >/dev/null 2>&1; then
+  python - <<'PY' || fail=1
+import json, re, os, sys
+sys.stdout.reconfigure(encoding="utf-8")
+qt = open("js/quran-text.js", encoding="utf-8").read()
+qt = json.loads(qt[qt.index("const QURAN_TEXT = ") + 19: qt.rindex("}") + 1])
+# (a verse opening with ۞ has a no-break space after it)
+verses = [" " + a.replace(chr(160), " ") + " " for s in qt.values() for a in s["a"]]
+by_word = {}
+for i, v in enumerate(verses):
+    for w in set(v.split()):
+        by_word.setdefault(w, []).append(i)
+bad, n = [], 0
+for root, _, files in os.walk("js/raghib"):
+    for f in files:
+        t = open(os.path.join(root, f), encoding="utf-8").read()
+        for q in re.findall("﴿([^﴾]*)﴾", t):
+            for part in q.split(" ۝ "):
+                part = part.strip()
+                n += 1
+                w0 = part.split()[0] if part.split() else ""
+                if not any((" " + part + " ") in verses[i] for i in by_word.get(w0, [])):
+                    bad.append("%s: %s" % (f, part[:60]))
+if bad:
+    print("A QUOTATION IN js/raghib IS NOT THE MUSHAF'S TEXT (%d of %d) - rebuild it, never type a verse:" % (len(bad), n))
+    print("\n".join(bad[:8]))
+    sys.exit(1)
+print("  js/raghib: %d quotations, every one the Mushaf's words" % n)
+PY
+fi
+
 check_hash() {   # file expected-sha256
   if [ ! -f "$1" ]; then echo "MISSING: $1"; fail=1; return; fi
   got=$(sha256sum "$1" | cut -d' ' -f1)

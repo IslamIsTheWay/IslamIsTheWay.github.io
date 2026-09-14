@@ -102,7 +102,10 @@ const PRECACHE_CONTENT = [
   "./js/inheritance.js", "./js/journey.js", "./js/marriage.js",
   "./js/misunderstood.js", "./js/morals.js", "./js/pillars.js",
   "./js/places.js", "./js/prayer.js", "./js/sins.js", "./js/standard.js",
-  "./js/tadabbur-tense.js", "./js/verify.js", "./js/who.js", "./js/wordlens.js"
+  "./js/tadabbur-tense.js", "./js/verify.js", "./js/who.js", "./js/wordlens.js",
+  /* Ar-Raghib's 📜 button. The notes and his full text (js/raghib/) are
+     fetched when a reader opens them and cached then, like any page. */
+  "./js/raghib-index.js", "./js/raghib.js"
 ];
 
 /* Hosts handled specially. The reader's fallback (used only if
