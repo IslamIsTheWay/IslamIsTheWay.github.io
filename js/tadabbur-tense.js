@@ -77,7 +77,7 @@ const TADABBUR_TENSE = {
     ifOther: "Suppose it had been put in the past: **\"I have withheld the measure from you.\"** Then there is nothing to do, nothing to bring, and no reason to return — and the entire rest of the surah does not happen. The brothers only come back because a condition was left open. **The whole plot turns on the verb being conditional and not past.**",
     ifOtherAr: "فلو قيل بلفظ الماضي: «قد منعتُ عنكم الكيل» لما بقي عملٌ يُعمل، ولا أخٌ يُؤتى به، ولا داعٍ إلى الرجوع — ولانقطعت السورةُ كلُّها عمّا بعد. وإنما رجع الإخوةُ لأنّ الشرط تُرك مفتوحًا. **فمدارُ القصّة كلّها على كون الفعل شرطًا لا ماضيًا.**",
     plain: "In plain words: Yusuf said \"IF you don't bring him, THEN there'll be no more grain.\" That is a door with a key in it. He is telling them exactly how to come back.",
-    plainAr: "بعبارة أخرى: قال يوسف: «إنْ لم تأتوني به فلا كيل لكم». وهذا بابٌ في قفله مفتاحه، فهو يدلّهم على طريق الرجوع.",
+    plainAr: "بعبارة أخرى: قال يوسف: ﴿إِن لَّمۡ تَأۡتُونِي بِهِۦ فَلَا كَيۡلَ لَكُمۡ﴾. وهذا بابٌ في قفله مفتاحه، فهو يدلّهم على طريق الرجوع.",
     pair: {
       ref: "Surah Yusuf (12:63)", refAr: "سورة يوسف (١٢:٦٣)",
       ar: "فَلَمَّا رَجَعُوٓاْ إِلَىٰٓ أَبِيهِمۡ قَالُواْ يَٰٓأَبَانَا مُنِعَ مِنَّا ٱلۡكَيۡلُ فَأَرۡسِلۡ مَعَنَآ أَخَانَا نَكۡتَلۡ",
@@ -100,7 +100,7 @@ const TADABBUR_TENSE = {
     ifOther: "Say it back in Yusuf's own form — **\"the Aziz will give us no measure unless we bring Binyamin with us\"** — and the father is looking at a request, not a report. He can weigh it, refuse it, propose something else. He does none of those, because what he was handed was not a request.\n\nAnd he had refused this before. Compare 12:11-14: when they asked for Yusuf, they asked openly — **send him with us tomorrow** — and Ya'qub said plainly that he feared the wolf. **They had already learned that an open request from them gets refused.**",
     ifOtherAr: "ولو أُعيدت على صورة كلام يوسف: «لا يكيل لنا العزيز حتى نأتيَه ببنيامين» لكان الأبُ أمام طلبٍ لا أمام خبر، فيَزِنُه ويردُّه ويعرض غيره. ولم يفعل شيئًا من ذلك، لأنّ الذي عُرض عليه لم يكن طلبًا.\n\nوقد ردّ عليهم مثلها من قبل: انظر (١٢:١١-١٤)، إذ سألوا يوسفَ صراحةً: ﴿أَرۡسِلۡهُ مَعَنَا غَدٗا﴾، فصرّح يعقوب بخوفه من الذئب. **فقد جرّبوا أنّ الطلب الصريح منهم يُردّ.**",
     plain: "In plain words: Yusuf said \"if you don't bring him, no more grain.\" The brothers told their father \"the grain has been stopped\" — past, finished, and with nobody named as having stopped it. They turned a condition their father could argue with into a fact he could only react to. Not one word of it is a lie. The tense did the work.",
-    plainAr: "بعبارة أخرى: قال يوسف: «إنْ لم تأتوني به فلا كيل لكم». فقال الإخوةُ لأبيهم: «مُنِع منّا الكيل» — ماضيًا منقضيًا، ولم يُسمّوا من منعه. فحوّلوا شرطًا كان لأبيهم أن يُناقشه إلى واقعٍ لا يملك إلا أن يستجيب له. وليس في كلامهم كذبةٌ واحدة، وإنما فعل الزمنُ ذلك.",
+    plainAr: "بعبارة أخرى: قال يوسف: ﴿إِن لَّمۡ تَأۡتُونِي بِهِۦ فَلَا كَيۡلَ لَكُمۡ﴾. فقال الإخوةُ لأبيهم: «مُنِع منّا الكيل» — ماضيًا منقضيًا، ولم يُسمّوا من منعه. فحوّلوا شرطًا كان لأبيهم أن يُناقشه إلى واقعٍ لا يملك إلا أن يستجيب له. وليس في كلامهم كذبةٌ واحدة، وإنما فعل الزمنُ ذلك.",
     pair: {
       ref: "Surah Yusuf (12:60)", refAr: "سورة يوسف (١٢:٦٠)",
       ar: "فَإِن لَّمۡ تَأۡتُونِي بِهِۦ فَلَا كَيۡلَ لَكُمۡ عِندِي وَلَا تَقۡرَبُونِ",
@@ -169,13 +169,13 @@ const TADABBUR_TENSE = {
     head: "\"We have granted you a clear victory\" — said before the victory",
     headAr: "﴿إِنَّا فَتَحۡنَا لَكَ فَتۡحٗا مُّبِينٗا﴾ — قيلت قبل الفتح",
     form: "**إِنَّا فَتَحۡنَا لَكَ فَتۡحٗا مُّبِينٗا** — **إِنَّ** for emphasis, then a **perfect** verb: We **have** granted**. Not **we will grant.",
-    formAr: "﴿**إِنَّا فَتَحۡنَا لَكَ فَتۡحٗا مُّبِينٗا**﴾ — ﴿إنّ﴾ للتوكيد، ثم فعلٌ **ماضٍ**: ﴿فَتَحۡنَا﴾، لا «سنفتح».",
+    formAr: "﴿**إِنَّا فَتَحۡنَا لَكَ فَتۡحٗا مُّبِينٗا**﴾ — «إنّ» للتوكيد، ثم فعلٌ **ماضٍ**: ﴿فَتَحۡنَا﴾، لا «سنفتح».",
     why: "Surah Al-Fath came down on the return from Hudaybiyyah. What had happened there did not look like a victory to the people who had lived it: they were turned back from the House without performing the umrah, and they signed terms that several of them found bitter — Umar رضي الله عنه went to the Prophet ﷺ and asked, \"Are we not upon the truth and they upon falsehood?\" (al-Bukhari 2731-2732).\n\nInto that, in the perfect tense: **We have granted you a clear victory.** The verb is a statement about how the thing is to be counted, made at the moment nobody could see it. The conquest of Makkah followed about two years later, and the historians note what those two years of peace did — more people entered Islam in them than in all the years of fighting before.\n\nThe perfect is therefore doing something a future could not: it is not promising a victory later, it is telling them **this, here, that you are calling a setback, is already the victory.**",
     whyAr: "نزلت سورةُ الفتح مرجِعَه ﷺ من الحديبية. والذي جرى هناك لم يكن في أعين من عاشه فتحًا: صُدّوا عن البيت فلم يعتمروا، وكُتبت شروطٌ وجد منها بعضُهم في نفسه، حتى أتى عمرُ رضي الله عنه النبيَّ ﷺ فقال: «أَلَسْنَا عَلَى الْحَقِّ وَهُمْ عَلَى الْبَاطِلِ؟» (البخاري ٢٧٣١-٢٧٣٢).\n\nفنزل في ذلك بلفظ الماضي: **﴿إِنَّا فَتَحۡنَا لَكَ فَتۡحٗا مُّبِينٗا﴾**. فالفعلُ حكمٌ على وجه احتساب الأمر، قيل في اللحظة التي لا يراه فيها أحد. ثم كان فتحُ مكّة بعد نحو سنتين، وقد ذكر أهل السير ما صنعته هاتان السنتان من السلم: دخل في الإسلام فيهما أكثرُ ممّا دخل في سنيّ القتال قبلهما.\n\nفالماضي يصنع ما لا يصنعه المستقبل: فليس وعدًا بفتحٍ يأتي، وإنما إخبارٌ بأنّ **هذا الذي تسمّونه ردًّا هو الفتحُ بعينه.**",
     ifOther: "**\"We will grant you a clear victory\"** consoles them about the future and concedes their reading of the present: today was a defeat, tomorrow will be better. The perfect refuses the concession. It corrects not their patience but their **arithmetic** — they have miscounted what just happened.",
     ifOtherAr: "ولو قيل «سنفتح لك فتحًا مبينًا» لكان تعزيةً بالمستقبل وتسليمًا بقراءتهم للحاضر: هُزمتم اليوم وستُنصرون غدًا. وأمّا الماضي فيأبى هذا التسليم، ولا يصحّح صبرهم وإنما يصحّح **حسابهم**: فقد أخطؤوا في تقدير ما وقع الساعة.",
     plain: "In plain words: this came down on the way back from Hudaybiyyah, which the companions experienced as a defeat — they had been turned away from Makkah. The verse says \"We HAVE given you a clear victory,\" past tense, about the thing they were upset about. It is not promising a victory later. It is telling them the setback they just lived through was the victory.",
-    plainAr: "بعبارة أخرى: نزلت هذه في الرجوع من الحديبية، وقد وجدها الصحابةُ هزيمةً إذ صُدّوا عن مكّة. فقالت الآيةُ بالماضي: «إنّا فتحنا لك فتحًا مبينًا» في الأمر الذي اغتمّوا منه. فليست وعدًا بفتحٍ آتٍ، وإنما إخبارٌ بأنّ الذي عدّوه ردًّا هو الفتح.",
+    plainAr: "بعبارة أخرى: نزلت هذه في الرجوع من الحديبية، وقد وجدها الصحابةُ هزيمةً إذ صُدّوا عن مكّة. فقالت الآيةُ بالماضي: ﴿إِنَّا فَتَحۡنَا لَكَ فَتۡحٗا مُّبِينٗا﴾ في الأمر الذي اغتمّوا منه. فليست وعدًا بفتحٍ آتٍ، وإنما إخبارٌ بأنّ الذي عدّوه ردًّا هو الفتح.",
     ref: "Surah Al-Fath (48:1); Sahih al-Bukhari, Book of Conditions, Hadith 2731-2732 — the treaty of Hudaybiyyah and Umar's question; Ibn Kathir and az-Zamakhshari on 48:1",
     refAr: "سورة الفتح (٤٨:١)؛ صحيح البخاري، كتاب الشروط، حديث ٢٧٣١-٢٧٣٢ — صلح الحديبية وسؤال عمر؛ وابن كثير والزمخشري عند الآية",
     strength: "quran"
@@ -211,7 +211,7 @@ const TADABBUR_TENSE = {
     ifOther: "In the perfect — **ٱللَّهُ ٱسْتَهْزَأَ بِهِم** — the reply becomes one act, done and over, and the reader looks for the moment it happened. There is no such moment; that is the whole warning. What is described is a state they are inside right now, which they experience as being left alone and getting away with it.",
     ifOtherAr: "ولو جاء بالماضي: «الله استهزأ بهم» لصار الجوابُ فعلةً واحدةً انقضت، فيلتمس القارئ وقتَها. ولا وقت لها، وهذا هو التحذيرُ كلُّه. فالموصوفُ حالٌ هم فيها الآن، يجدونها في أنفسهم تركًا وسلامةً وإمهالًا.",
     plain: "In plain words: they said \"we are only mocking\" — a statement about what they are. The reply uses a verb form that means something ongoing, not something that happened once: the answer to them is still running. And the next line says what it looks like — they are left to carry on. Being left alone is the reply.",
-    plainAr: "بعبارة أخرى: قالوا «إنما نحن مستهزئون» — خبرًا عمّا هم عليه. وجاء الجوابُ بصيغةٍ تفيد الاستمرار لا المرّة الواحدة: فالجوابُ عليهم جارٍ. وبيّنت الجملةُ التي بعدها صورتَه: أن يُتركوا يمضون. فالتركُ هو الجواب.",
+    plainAr: "بعبارة أخرى: قالوا ﴿إِنَّمَا نَحۡنُ مُسۡتَهۡزِءُونَ﴾ — خبرًا عمّا هم عليه. وجاء الجوابُ بصيغةٍ تفيد الاستمرار لا المرّة الواحدة: فالجوابُ عليهم جارٍ. وبيّنت الجملةُ التي بعدها صورتَه: أن يُتركوا يمضون. فالتركُ هو الجواب.",
     ref: "Surah Al-Baqarah (2:14-15); az-Zamakhshari, Al-Kashshaf; Ibn Ashur, At-Tahrir wat-Tanwir",
     refAr: "سورة البقرة (٢:١٤-١٥)؛ والزمخشري في «الكشاف»؛ وابن عاشور في «التحرير والتنوير»",
     strength: "tafsir"
@@ -227,7 +227,7 @@ const TADABBUR_TENSE = {
     ifOther: "Both in the perfect — **أنزل … فأصبحت الأرض مخضرة** — and it is a report: it rained once and the ground turned green once. True, and worth nothing as a sign. A sign has to be repeatable, and the imperfect is what makes it so.",
     ifOtherAr: "ولو جُعلا ماضيين: «أنزل... فأصبحت الأرضُ مخضرّة» لكان خبرًا: أمطرت مرّةً فاخضرّت مرّة. وهو صدقٌ لا يصلح آيةً. فالآيةُ لا بدّ أن تتكرّر، وبالمضارع صارت كذلك.",
     plain: "In plain words: \"He sent down water\" is past — it happened. \"The earth becomes green\" is a form that means it keeps happening, every time. In one sentence the Quran moves from a single rainfall to every spring there has ever been, and the change of tense is what does it.",
-    plainAr: "بعبارة أخرى: «أنزل من السماء ماءً» ماضٍ، أي وقع. و«فتصبح الأرض مخضرّة» صيغةٌ معناها أنه يقع دائمًا في كلّ مرّة. فانتقل القرآنُ في جملةٍ واحدة من غيثةٍ واحدة إلى كلّ ربيعٍ كان، وإنما نقله تغييرُ الزمن.",
+    plainAr: "بعبارة أخرى: «أنزل من السماء ماءً» ماضٍ، أي وقع. و﴿فَتُصۡبِحُ ٱلۡأَرۡضُ مُخۡضَرَّةًۚ﴾ صيغةٌ معناها أنه يقع دائمًا في كلّ مرّة. فانتقل القرآنُ في جملةٍ واحدة من غيثةٍ واحدة إلى كلّ ربيعٍ كان، وإنما نقله تغييرُ الزمن.",
     ref: "Surah Al-Hajj (22:63); Ibn Ashur, At-Tahrir wat-Tanwir, on the shift of tense here",
     refAr: "سورة الحج (٢٢:٦٣)؛ وابن عاشور في «التحرير والتنوير» في نقلة الزمن ههنا",
     strength: "tafsir"
@@ -263,7 +263,7 @@ const TADABBUR_TENSE = {
     ifOther: "Say it in the active — **and Allah created man weak** — and every word is still true, but the sentence now points at the weakness and puts a name beside it. The passive keeps the reader's attention where the verse wants it: not on who made him weak, but on what is being done about it.",
     ifOtherAr: "ولو قيل بالبناء للمعلوم: «وخلق اللهُ الإنسانَ ضعيفًا» لكان كلُّ لفظٍ فيه صدقًا، غير أنّ الجملة تصير مشيرةً إلى الضعف قارنةً به اسمًا. والبناءُ للمجهول يُبقي نظرَ القارئ حيث تريده الآية: لا في مَن خلقه ضعيفًا، بل فيما يُصنع بضعفه.",
     plain: "In plain words: \"Allah wants to lighten things for you\" names Him. \"Man was created weak\" does not — the sentence has no doer in it, even though everyone knows who it is. Mercy is signed; the weakness is left unsigned. And the weakness is not a complaint about you — it is the reason the burden was lightened.",
-    plainAr: "بعبارة أخرى: «يريد الله أن يخفّف عنكم» فيها اسمُه. و﴿خُلِقَ ٱلۡإِنسَٰنُ ضَعِيفٗا﴾ ليس فيها فاعل، مع علم كلّ أحدٍ بمن هو. فوُقّعت الرحمةُ، وتُرك الضعفُ بلا توقيع. وليس الضعفُ عتبًا عليك، وإنما هو علّةُ التخفيف.",
+    plainAr: "بعبارة أخرى: ﴿يُرِيدُ ٱللَّهُ أَن يُخَفِّفَ عَنكُمۡۚ﴾ فيها اسمُه. و﴿خُلِقَ ٱلۡإِنسَٰنُ ضَعِيفٗا﴾ ليس فيها فاعل، مع علم كلّ أحدٍ بمن هو. فوُقّعت الرحمةُ، وتُرك الضعفُ بلا توقيع. وليس الضعفُ عتبًا عليك، وإنما هو علّةُ التخفيف.",
     ref: "Surah An-Nisa (4:28); the pattern is discussed in the balaghah works and by Ibn Ashur in At-Tahrir wat-Tanwir",
     refAr: "سورة النساء (٤:٢٨)؛ وهذا الأسلوب مبحوثٌ في كتب البلاغة، وذكره ابن عاشور في «التحرير والتنوير»",
     strength: "tafsir"
@@ -382,7 +382,7 @@ const TADABBUR_TENSE = {
     ifOther: "Give the first two a verb — **كان الله أحدًا**, \"Allah **was** One\" — and you have put Him inside time, and opened a question the surah exists to close: was, and then what? The verbless sentence does not admit the question. It is not that the answer is \"always\"; it is that the sentence has no place to put a \"when\".",
     ifOtherAr: "فلو أُعطيت الأوليان فعلًا: «كان اللهُ أحدًا» لأُدخل سبحانه في الزمان، وانفتح السؤالُ الذي جاءت السورةُ لتسدّه: كان، ثم ماذا؟ والجملةُ الخالية من الفعل لا تقبل السؤال، وليس الجوابُ أنه «دائمًا»، بل إنّ الجملة لا موضع فيها لـ«متى».",
     plain: "In plain words: an Arabic sentence with a verb has a time in it. The first two verses of Surah Al-Ikhlas have no verb at all, so there is no time in them — nothing that started, nothing that will stop. The only verbs in the surah are the negative ones: He did not beget, He was not begotten, there has never been anyone like Him.",
-    plainAr: "بعبارة أخرى: الجملةُ العربية إذا كان فيها فعلٌ كان فيها زمان. وأوّلُ آيتين من سورة الإخلاص لا فعل فيهما، فلا زمان فيهما: لا شيء ابتدأ ولا شيء ينقطع. وليس في السورة من الأفعال إلا المنفيّ: لم يلد، ولم يولد، ولم يكن له كفوًا أحد.",
+    plainAr: "بعبارة أخرى: الجملةُ العربية إذا كان فيها فعلٌ كان فيها زمان. وأوّلُ آيتين من سورة الإخلاص لا فعل فيهما، فلا زمان فيهما: لا شيء ابتدأ ولا شيء ينقطع. وليس في السورة من الأفعال إلا المنفيّ: ﴿لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ ۝ وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ﴾.",
     ref: "Surah Al-Ikhlas (112:1-4); the Prophet ﷺ called it equal to a third of the Quran — Sahih al-Bukhari, Book of the Virtues of the Quran, Hadith 5013",
     refAr: "سورة الإخلاص (١١٢:١-٤)؛ وقد جعلها النبي ﷺ تعدل ثلث القرآن — صحيح البخاري، كتاب فضائل القرآن، حديث ٥٠١٣",
     strength: "quran"
@@ -457,7 +457,7 @@ const TADABBUR_TENSE = {
     ifOther: "Drop the middle clause and keep you did not throw, but Allah threw, and the Prophet ﷺ becomes a bystander to his own action — which would make the command to fight meaningless. Drop the first and keep you threw, and the handful of dust becomes a weapon, which it is not. **The sentence needs all three, and needs them in that order.**",
     ifOtherAr: "فلو حُذف الوسطُ وبقي: «وما رميتَ ولكنّ الله رمى» لصار النبيُّ ﷺ متفرّجًا على فعل نفسه، ولبطل معنى الأمر بالقتال. ولو حُذف الأوّل وبقي «إذ رميتَ» لصارت قبضةُ الترابِ سلاحًا، وليست كذلك. **فالجملةُ محتاجةٌ إلى الثلاثة، وعلى هذا الترتيب.**",
     plain: "In plain words: \"you did not throw when you threw, but Allah threw.\" Both halves are true. He ﷺ really threw the dust — that was his hand and his action. But a handful of dust cannot reach an army; the effect was not his. The deed belongs to you and you answer for it. The result belongs to Allah.",
-    plainAr: "بعبارة أخرى: «وما رميتَ إذ رميتَ ولكنّ الله رمى». والشطران صدقٌ جميعًا: فقد رمى ﷺ الترابَ حقًّا، فاليدُ يدُه والفعلُ فعلُه. غير أنّ قبضة ترابٍ لا تبلغ جيشًا، فالأثرُ ليس له. فالعملُ لك وأنت مسؤولٌ عنه، والنتيجةُ لله.",
+    plainAr: "بعبارة أخرى: ﴿وَمَا رَمَيۡتَ إِذۡ رَمَيۡتَ وَلَٰكِنَّ ٱللَّهَ رَمَىٰ﴾. والشطران صدقٌ جميعًا: فقد رمى ﷺ الترابَ حقًّا، فاليدُ يدُه والفعلُ فعلُه. غير أنّ قبضة ترابٍ لا تبلغ جيشًا، فالأثرُ ليس له. فالعملُ لك وأنت مسؤولٌ عنه، والنتيجةُ لله.",
     ref: "Surah Al-Anfal (8:17); the occasion is Badr — Sahih Muslim, Book of Jihad and Expeditions, in the long hadith of Umar on the day of Badr",
     refAr: "سورة الأنفال (٨:١٧)؛ وسببُه يومُ بدر — صحيح مسلم، كتاب الجهاد والسير، في حديث عمر الطويل في يوم بدر",
     strength: "quran"
@@ -473,7 +473,7 @@ const TADABBUR_TENSE = {
     ifOther: "Say **وَمَا قَلَاكَ** and the meaning is identical and the effect is not. The harsh verb now has him attached to it, and a person in the state he was in has to hear the two words together in order to hear them denied. Leaving the pronoun off denies the thing without ever putting it beside him.",
     ifOtherAr: "فلو قيل «وَمَا قَلَاكَ» لكان المعنى واحدًا والأثرُ غير واحد: فقد لصق اللفظُ الغليظ به، ومن كان في حاله يسمع اللفظين مقترنين قبل أن يسمع النفي. وأمّا حذفُ الضمير فينفي الأمر ولا يُجاوره به قطّ.",
     plain: "In plain words: \"Your Lord has not forsaken YOU, and has not detested…\" — and the sentence stops. The word for hating is there, but the word \"you\" is not attached to it. It is denied without ever being placed next to him. That was said to a man who had just been told his Lord had abandoned him.",
-    plainAr: "بعبارة أخرى: «ما ودّعك ربّك وما قلى» — فتقف الجملة. ولفظُ البغض موجود، والكافُ ليست ملصقةً به. فنُفي الأمرُ ولم يُجاوَر به قطّ. وقيل هذا لرجلٍ قيل له لتوّه إنّ ربّه تركه.",
+    plainAr: "بعبارة أخرى: ﴿مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ﴾ — فتقف الجملة. ولفظُ البغض موجود، والكافُ ليست ملصقةً به. فنُفي الأمرُ ولم يُجاوَر به قطّ. وقيل هذا لرجلٍ قيل له لتوّه إنّ ربّه تركه.",
     ref: "Surah Ad-Duha (93:1-3); the occasion — Sahih al-Bukhari, Book of Tafsir, Hadith 4950, and Sahih Muslim, Book of Jihad; az-Zamakhshari and ar-Razi on the dropped object",
     refAr: "سورة الضحى (٩٣:١-٣)؛ وسببُ النزول — صحيح البخاري، كتاب التفسير، حديث ٤٩٥٠، وصحيح مسلم، كتاب الجهاد؛ والزمخشري والرازي في حذف المفعول",
     strength: "tafsir"
@@ -489,7 +489,7 @@ const TADABBUR_TENSE = {
     ifOther: "Written as two separate statements — whoever fears Allah, Allah will make a way out for him — the sentence still says a true thing, and it says it as a promise, which is something you hold on to while you wait. The conditional binds it instead: the two are one grammatical unit, and the second is not a promise about the first, it is the other half of it.",
     ifOtherAr: "فلو صيغت جملتين منفصلتين: «من اتّقى الله فإنّ الله سيجعل له مخرجًا» لبقي الخبرُ صدقًا، وصار وعدًا يُتعلَّق به في الانتظار. وأمّا الشرطُ فيربط: فالجملتان وحدةٌ نحويّةٌ واحدة، وليست الثانيةُ وعدًا بالأولى، بل هي شطرُها الآخر.",
     plain: "In plain words: Arabic ties a condition and its answer together by putting both verbs in the same form. \"Whoever fears Allah — He makes a way out for him\" is one grammatical unit, not a promise attached to a condition. And notice the wording: a way OUT of the difficulty, not the removal of it. And provision from a direction he was not watching.",
-    plainAr: "بعبارة أخرى: تربط العربيةُ الشرطَ بجوابه بجزم الفعلين. فـ«من يتّق الله يجعل له مخرجًا» وحدةٌ نحويّةٌ واحدة، لا وعدٌ عُلّق على شرط. وتأمّل اللفظ: مخرجًا **من** الضيق لا رفعًا له. ورزقًا من جهةٍ لم يكن يرقبها.",
+    plainAr: "بعبارة أخرى: تربط العربيةُ الشرطَ بجوابه بجزم الفعلين. فـ﴿مَن يَتَّقِ ٱللَّهَ يَجۡعَل لَّهُۥ مَخۡرَجٗا﴾ وحدةٌ نحويّةٌ واحدة، لا وعدٌ عُلّق على شرط. وتأمّل اللفظ: مخرجًا **من** الضيق لا رفعًا له. ورزقًا من جهةٍ لم يكن يرقبها.",
     ref: "Surah At-Talaq (65:2-3)",
     refAr: "سورة الطلاق (٦٥:٢-٣)",
     strength: "quran"
@@ -537,7 +537,7 @@ const TADABBUR_TENSE = {
     ifOther: "Leave the second clause in the ordinary order — تطمئن القلوب بذكر الله — and it says that remembrance settles hearts, which is true and leaves every other remedy standing beside it. Fronting removes them. The verse is not recommending one thing among several; it is saying where the rest is and is not to be found.",
     ifOtherAr: "فلو أُبقيت الثانيةُ على الأصل: «تطمئنّ القلوبُ بذكر الله» لأفادت أنّ الذكر يُسكّن القلوب، وهو صدقٌ يُبقي كلَّ دواءٍ آخر إلى جانبه. والتقديمُ يرفعها. فالآيةُ لا تُرشّح واحدًا من علاجات، وإنما تقول أين يُوجد السكونُ وأين لا يُوجد.",
     plain: "In plain words: the verse says \"their hearts find rest by the remembrance of Allah\", and then says it again with the words in a different order — \"by the remembrance of Allah do hearts find rest.\" In Arabic, moving something to the front means \"this one and nothing else.\" And the second time it says \"hearts\", not \"their hearts\" — it has gone from describing some people to stating how the heart works.",
-    plainAr: "بعبارة أخرى: تقول الآية «تطمئنّ قلوبهم بذكر الله»، ثم تُعيدها بترتيبٍ آخر: «ألا بذكر الله تطمئنّ القلوب». والتقديمُ في العربية معناه: بهذا لا بغيره. وقالت في الثانية «القلوب» لا «قلوبهم»، فانتقلت من وصف قومٍ إلى بيان شأن القلب.",
+    plainAr: "بعبارة أخرى: تقول الآية ﴿تَطۡمَئِنُّ قُلُوبُهُم بِذِكۡرِ ٱللَّهِۗ﴾، ثم تُعيدها بترتيبٍ آخر: ﴿أَلَا بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ﴾. والتقديمُ في العربية معناه: بهذا لا بغيره. وقالت في الثانية «القلوب» لا «قلوبهم»، فانتقلت من وصف قومٍ إلى بيان شأن القلب.",
     ref: "Surah Ar-Ra'd (13:28)",
     refAr: "سورة الرعد (١٣:٢٨)",
     strength: "quran"
@@ -553,7 +553,7 @@ const TADABBUR_TENSE = {
     ifOther: "ٱدْعُونِى فَسَأَسْتَجِيبُ لَكُمْ — call upon Me and I shall respond — is a promise, and a promise has a gap in it that the person waiting has to stand in. The jussive removes the gap by grammar: the answer is the second half of the same construction as the asking.",
     ifOtherAr: "و«ادعوني فسأستجيب لكم» وعدٌ، وفي الوعد فُرجةٌ يقف فيها المنتظر. والجزمُ يرفع الفُرجة نحوًا: فالإجابةُ شطرُ التركيب الذي السؤالُ شطرُه الآخر.",
     plain: "In plain words: \"Call upon Me — I answer you.\" In Arabic these are not two sentences but one construction; the answer is tied to the asking by the grammar itself, with no gap between them. And it says \"I answer\", not \"I give you what you asked\" — an answer can be the thing, or something better, or later, or being spared it. Then the verse names what breaks it: not sin, but being too proud to ask.",
-    plainAr: "بعبارة أخرى: «ادعوني أستجب لكم». وليستا في العربية جملتين بل تركيبًا واحدًا، فالإجابةُ مربوطةٌ بالسؤال بالنحو نفسِه، لا فاصل بينهما. وقالت «أستجب» لا «أُعطكم ما سألتم»، والإجابةُ قد تكون العينَ، أو خيرًا منها، أو تأخيرًا، أو صرفًا لشرٍّ سألتَه. ثم سمّت الآيةُ ما ينقض ذلك: وليس المعصية، بل الكِبْرَ عن السؤال.",
+    plainAr: "بعبارة أخرى: ﴿ٱدۡعُونِيٓ أَسۡتَجِبۡ لَكُمۡۚ﴾. وليستا في العربية جملتين بل تركيبًا واحدًا، فالإجابةُ مربوطةٌ بالسؤال بالنحو نفسِه، لا فاصل بينهما. وقالت «أستجب» لا «أُعطكم ما سألتم»، والإجابةُ قد تكون العينَ، أو خيرًا منها، أو تأخيرًا، أو صرفًا لشرٍّ سألتَه. ثم سمّت الآيةُ ما ينقض ذلك: وليس المعصية، بل الكِبْرَ عن السؤال.",
     ref: "Surah Ghafir (40:60)",
     refAr: "سورة غافر (٤٠:٦٠)",
     strength: "quran"

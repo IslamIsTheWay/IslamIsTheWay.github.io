@@ -44,7 +44,7 @@
        needs a connection, and the page says so.
    ============================================================ */
 
-const CACHE_VERSION = "iitw-v2";
+const CACHE_VERSION = "iitw-v3";
 const QURAN_CACHE   = "iitw-quran-v1";   // separate: immutable, never purged with the rest
 
 /* SPLIT IN TWO, AND THE SPLIT MATTERS.
@@ -91,7 +91,7 @@ const PRECACHE_CONTENT = [
   "./js/judgement.js", "./js/judgement-closing.js", "./js/angels.js",
   "./js/signs.js", "./js/rise.js", "./js/golden.js", "./js/golden-lives.js",
   "./js/golden-mirror.js", "./js/golden-closing.js",
-  "./js/surah-story.js", "./js/miracles.js"
+  "./js/surah-story.js", "./js/miracles.js", "./js/sitesearch.js"
 ];
 
 /* Hosts handled specially. The reader's fallback (used only if

@@ -105,8 +105,9 @@ const MORALS = {
           plainAr: "الأمُّ التي تربّي ابنتَها اليومَ ربّتها أمٌّ كان عندها من هذا أكثرُ ممّا عندها هي، فتُورِث أقلَّ ممّا وَرِثت، وتُورِث ابنتُها أقلَّ من ذلك. ولم يقصد أحدٌ في السلسلة ذلك، وإنما أعطت كلُّ حلقةٍ ما عندها — وكان عند كلِّ حلقةٍ أقلُّ ممّا كان عند التي قبلها.",
           example: "Which is the real answer to \"why is it getting worse so quickly?\" It is not that people became worse. It is that a loss compounds: what one generation merely stops teaching, the next does not know exists. And it is also the good news, because a compounding chain can be interrupted at any single link — by one person deciding to hand on more than they were given.",
           exampleAr: "وهذا هو الجوابُ الحقيقيّ عن قولهم: «لِمَ يزداد الأمرُ سوءًا بهذه السرعة؟» فليس الناسُ ازدادوا سوءًا، وإنما النقصُ يتراكم: فما يكفّ جيلٌ عن تعليمه لا يعرف الذي بعده أنه كان موجودًا. وفي هذا بشارةٌ أيضًا، فالسلسلةُ المتراكمة تنقطع عند أيِّ حلقةٍ واحدة، بأن يعزم رجلٌ أو امرأةٌ على أن يُورِث أكثر ممّا وَرِث.",
-          keys: ["getting worse", "every generation worse", "why so fast", "decline", "grandparents", "my mother", "passed down", "cycle", "break the cycle",
-                 "يزداد سوءا", "كل جيل أسوأ", "الانحدار", "جدتي", "أمي", "التوريث", "الحلقة", "أكسر الحلقة"]
+          keys: ["getting worse", "every generation worse", "why so fast", "decline", "passed down", "cycle",
+                 "break the cycle", "يزداد سوءا", "كل جيل أسوأ", "الانحدار", "التوريث", "الحلقة", "أكسر الحلقة",
+                 "what my mother passed on", "my grandmother had more", "ما ورثته من أمي", "جدتي كانت"]
         }
       ]
     },
@@ -125,7 +126,7 @@ const MORALS = {
           plain: "The command is to guard your family from the Fire, and the house is where that starts or fails. A child who grows up watching his parents shout — or worse, watching hands raised — does not simply witness it and move on. It settles in as fear that does not switch off, and it teaches him what a marriage is before anyone gets to tell him otherwise. He will carry that picture into his own house.",
           plainAr: "الأمرُ أن تقيَ أهلك النار، والبيتُ هو موضعُ ابتداءِ ذلك أو فشلِه. والولدُ ينشأ يرى أبويه يتصايحان — أو ما هو أشدّ، يرى الأيدي تُرفع — فلا يمرّ ذلك به مرورًا، بل يستقرّ فيه خوفًا لا ينطفئ، ويعلّمه ما الزواجُ قبل أن يعلّمه أحدٌ غيرَ ذلك، ثم يحمل تلك الصورة إلى بيته هو.",
           example: "And the Quran describes the marriage it intends in one line — that He placed between you affection and mercy, and that you find rest in one another. Rest is the word. A house that is not restful is not merely an unhappy house; it is a house producing the next generation's idea of normal.",
-          exampleAr: "وقد وصف القرآنُ الزواجَ المقصود في سطرٍ واحد: أن جعل بينكم مودّةً ورحمة، وأن تسكنوا إليها. والسكنُ هو اللفظ. فالبيتُ الذي لا سكنَ فيه ليس بيتًا شقيًّا فحسب، بل هو بيتٌ يصنع تصوّرَ الجيل القادم عن المألوف.",
+          exampleAr: "وقد وصف القرآنُ الزواجَ المقصود في سطرٍ واحد: أن جعل ﴿بَيۡنَكُم مَّوَدَّةٗ وَرَحۡمَةًۚ﴾، وأن تسكنوا إليها. والسكنُ هو اللفظ. فالبيتُ الذي لا سكنَ فيه ليس بيتًا شقيًّا فحسب، بل هو بيتٌ يصنع تصوّرَ الجيل القادم عن المألوف.",
           proof: "O you who have believed, protect yourselves and your families from a Fire whose fuel is people and stones.",
           proofAr: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ قُوٓاْ أَنفُسَكُمۡ وَأَهۡلِيكُمۡ نَارٗا وَقُودُهَا ٱلنَّاسُ وَٱلۡحِجَارَةُ",
           ref: "Surah at-Tahrim (66:6)",
@@ -136,8 +137,10 @@ const MORALS = {
           extraProofAr: "وَمِنۡ ءَايَٰتِهِۦٓ أَنۡ خَلَقَ لَكُم مِّنۡ أَنفُسِكُمۡ أَزۡوَٰجٗا لِّتَسۡكُنُوٓاْ إِلَيۡهَا وَجَعَلَ بَيۡنَكُم مَّوَدَّةٗ وَرَحۡمَةًۚ",
           extraRef: "Surah ar-Rum (30:21)",
           extraRefAr: "سورة الروم (٣٠:٢١)",
-          keys: ["parents fighting", "arguing in front of children", "shouting at home", "domestic violence", "hitting", "anxiety", "broken home", "my parents fight", "scared at home",
-                 "خصام الوالدين", "الشجار أمام الأولاد", "الصراخ في البيت", "الضرب", "القلق", "بيت مضطرب", "أبي وأمي يتشاجران"]
+          keys: ["parents fighting", "arguing in front of children", "shouting at home", "domestic violence",
+                 "broken home", "my parents fight", "scared at home", "خصام الوالدين", "الشجار أمام الأولاد",
+                 "الصراخ في البيت", "بيت مضطرب", "أبي وأمي يتشاجران", "anxious because my parents fight",
+                 "خائف من شجار والدي", "hitting at home", "hitting in front of the children", "الضرب في البيت"]
         },
         {
           id: "mo-luqman", icon: "👨‍👦",
@@ -195,7 +198,7 @@ const MORALS = {
           title: "It begins with the men — and Allah says so first",
           titleAr: "يبدأ بالرجال — وقد بدأ اللهُ بهم",
           plain: "Two verses come one after the other. The first is addressed to the believing MEN: lower your gaze and guard yourselves. Only then comes the same instruction to the believing women. So before a single word is said about what anyone else is wearing, the man has already been given his own instruction, and it does not depend on her at all.",
-          plainAr: "آيتان جاءت إحداهما إثر الأخرى: أولاهما خطابٌ للمؤمنين: أن يغضّوا من أبصارهم ويحفظوا فروجهم، ثم جاء الأمرُ نفسُه للمؤمنات بعدها. فقبل أن يُقال حرفٌ واحدٌ في لباس أحد، يكون الرجلُ قد أُخذ عليه أمرُه، وهو أمرٌ لا يتعلّق بها البتّة.",
+          plainAr: "آيتان جاءت إحداهما إثر الأخرى: أولاهما خطابٌ للمؤمنين: أن ﴿يَغُضُّواْ مِنۡ أَبۡصَٰرِهِمۡ وَيَحۡفَظُواْ فُرُوجَهُمۡۚ﴾، ثم جاء الأمرُ نفسُه للمؤمنات بعدها. فقبل أن يُقال حرفٌ واحدٌ في لباس أحد، يكون الرجلُ قد أُخذ عليه أمرُه، وهو أمرٌ لا يتعلّق بها البتّة.",
           example: "Which settles the commonest argument on this subject before it starts. \"She was dressed like that\" is not an answer, because your instruction arrived first and was not conditional. Your eyes are yours. That is the part you will be asked about.",
           exampleAr: "وبهذا تنقطع أشهرُ المنازعات في هذا الباب قبل أن تبدأ. فقولك «هي التي لبست كذا» ليس جوابًا، لأنّ أمرك سبق ولم يكن معلَّقًا بها. بصرُك بصرُك، وهو الذي تُسأل عنه.",
           proof: "Tell the believing men to lower their gaze and guard their private parts. That is purer for them. Indeed, Allah is Acquainted with what they do. — And tell the believing women to lower their gaze and guard their private parts …",
@@ -231,7 +234,7 @@ const MORALS = {
           plain: "Two things, and they are not the same in strength. The first is a text: a man and a woman who are not related do not sit alone together — the hadith is explicit. The second is the scholars' application of it to ordinary life: when there IS a reason to speak — work, study, a transaction — the conversation stays inside that reason. The task, the assignment, the matter at hand.",
           plainAr: "أمران، وليسا في القوّة سواء. الأوّل نصّ: لا يخلو رجلٌ بامرأةٍ ليست منه بمحرم، والحديثُ صريح. والثاني تطبيقُ أهل العلم له في المعاش: فإذا وُجد سببٌ للكلام — عملٌ أو دراسةٌ أو معاملة — بقي الكلامُ في ذلك السبب: في المسألة، وفي المهمّة، وفي الأمر الذي بينكما.",
           example: "What falls outside it is the part people find hard to hear, and it is small and specific: how was your day, what did you do at the weekend, your perfume is nice, that suits you. None of that is the work. And the Quran's own guidance on manner — do not be soft in speech, so that one in whose heart is a sickness should not be moved — is about HOW something is said, not only what. The safest position, and the one this site takes, is that where there is no reason, there is no conversation.",
-          exampleAr: "والذي يخرج عن ذلك هو ما يثقل على الناس سماعُه، وهو يسيرٌ معيَّن: كيف كان يومك، وماذا صنعتَ في العطلة، وعطرك طيّب، وهذا يليق بك. وليس شيءٌ من ذلك من العمل. وتوجيهُ القرآن في الهيئة — «فلا تخضعن بالقول فيطمع الذي في قلبه مرض» — إنما هو في كيفيّة القول لا في مادّته وحدها. والأحوطُ، وهو الذي يقوله هذا الموقع: حيث لا سببَ فلا كلام.",
+          exampleAr: "والذي يخرج عن ذلك هو ما يثقل على الناس سماعُه، وهو يسيرٌ معيَّن: كيف كان يومك، وماذا صنعتَ في العطلة، وعطرك طيّب، وهذا يليق بك. وليس شيءٌ من ذلك من العمل. وتوجيهُ القرآن في الهيئة — ﴿فَلَا تَخۡضَعۡنَ بِٱلۡقَوۡلِ فَيَطۡمَعَ ٱلَّذِي فِي قَلۡبِهِۦ مَرَضٞ﴾ — إنما هو في كيفيّة القول لا في مادّته وحدها. والأحوطُ، وهو الذي يقوله هذا الموقع: حيث لا سببَ فلا كلام.",
           proof: "No man is alone with a woman except that the third of them is Shaytan.",
           proofAr: "لَا يَخْلُوَنَّ رَجُلٌ بِامْرَأَةٍ إِلَّا كَانَ ثَالِثَهُمَا الشَّيْطَانُ",
           ref: "Jami at-Tirmidhi, Hadith 1171",

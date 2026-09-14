@@ -112,7 +112,22 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchesQuery && matchesPlace;
     });
 
+    /* The surah that IS the word first: "nas" listed An-Nasr (110) above
+       An-Nas (114), because the grid kept Mushaf order for every match. */
+    const bare = s => s.name.toLowerCase().replace(/^(al|an|ar|as|at|ad|ash|az|ad)-/, "").replace(/[^a-z]/g, "");
+    const rank = s => (!q ? 0
+      : (bare(s) === q.replace(/[^a-z]/g, "") || s.arabic === rawQ || String(s.n) === q) ? 0
+      : (bare(s).startsWith(q.replace(/[^a-z]/g, "")) && q.replace(/[^a-z]/g, "")) ? 1 : 2);
+    filtered.sort((a, b) => rank(a) - rank(b) || a.n - b.n);
+
     renderSurahGrid(filtered);
+  }
+
+  /* quran.html#surah-18 opens that surah — the site search links here. */
+  const hm = (location.hash || "").match(/^#surah-(\d{1,3})$/);
+  if (hm) {
+    const s = SURAHS.find(x => x.n === +hm[1]);
+    if (s) openSurah(s);
   }
 
   searchInput.addEventListener("input", applyFilters);
@@ -132,7 +147,7 @@ function renderSurahGrid(surahs) {
   grid.innerHTML = "";
 
   if (surahs.length === 0) {
-    grid.innerHTML = `<div class="no-results">No surahs match your search.</div>`;
+    grid.innerHTML = `<div class="no-results"><span class="en-only">No surahs match your search.</span><span class="ar-only" dir="rtl">لا توجد سورةٌ بهذا الاسم.</span></div>`;
     return;
   }
 
@@ -161,9 +176,12 @@ async function openSurah(surah) {
   const body = document.getElementById("modalBody");
 
   window._openSurah = surah;
-  title.textContent = `${surah.n}. ${surah.name} — ${surah.meaning}`;
+  /* The Arabic name is printed under it (modalArabicTitle); on the Arabic
+     page the English line gives way to the surah's number and place. */
+  title.innerHTML = `<span class="en-only">${surah.n}. ${surah.name} — ${surah.meaning}</span>` +
+    `<span class="ar-only" dir="rtl">السورة ${toArabicDigits(surah.n)} — ${surah.place === "Meccan" ? "مكية" : "مدنية"}</span>`;
   arabicTitle.textContent = surah.arabic;
-  body.innerHTML = `<div class="loading">Loading verses…</div>`;
+  body.innerHTML = `<div class="loading"><span class="en-only">Loading verses…</span><span class="ar-only" dir="rtl">جارٍ تحميل الآيات…</span></div>`;
   overlay.classList.add("open");
 
   try {
@@ -240,15 +258,14 @@ async function openSurah(surah) {
     window._tadOpen = false;
 
     let html = `<div class="reciter-bar">
-      <div class="reciter-now">🎧 Reciter: <strong>${current.name}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">${current.ar}</span></div>
+      <div class="reciter-now">🎧 <span class="en-only">Reciter: <strong>${current.name}</strong> </span><span dir="rtl" style="font-family:'Amiri',serif;"><span class="ar-only">القارئ: </span>${current.ar}</span></div>
       <div>
         <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ Play Full Surah</button>
         <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ Stop</button>
         <!-- Sits beside Stop, as asked. It stays disabled until a verse's
              audio has finished, and then names the verse it will save. -->
         <button onclick="iitwSaveHere()" class="rq-btn rq-save" id="rqSaveBtn" disabled
-                title="Play a verse, then save where you stopped">💾 Save my place
-          <span dir="rtl" style="font-family:'Amiri',serif;">— احفظ موضعي</span></button>
+                title="Play a verse, then save where you stopped">💾 <span class="en-only">Save my place — </span><span dir="rtl" style="font-family:'Amiri',serif;">احفظ موضعي</span></button>
         <!-- Shown on EVERY surah, never conditionally. It used to be drawn
              only where tadabbur existed, which meant it was simply absent on
              106 of the 114 surahs — and an absent button reads as a broken
@@ -273,11 +290,8 @@ async function openSurah(surah) {
     </div>
     <div class="rq-save-note" id="rqSaveNote"></div>
     <div class="mushaf-info">
-      📖 <strong>${pageCount}</strong> ${pageCount === 1 ? "page" : "pages"} in the Mushaf — ${pageRange}
-      &nbsp;·&nbsp; ${arabicAyahs.length} ${arabicAyahs.length === 1 ? "verse" : "verses"}
-      <span dir="rtl" style="font-family:'Amiri',serif;">
-        — في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}
-      </span>
+      📖 <span class="en-only"><strong>${pageCount}</strong> ${pageCount === 1 ? "page" : "pages"} in the Mushaf — ${pageRange}
+      &nbsp;·&nbsp; ${arabicAyahs.length} ${arabicAyahs.length === 1 ? "verse" : "verses"} — </span><span dir="rtl" style="font-family:'Amiri',serif;">في المصحف <strong>${toArabicDigits(pageCount)}</strong> ${pageCount === 1 ? "صفحة" : "صفحات"}، ${pageRangeAr}، وعدد آياتها ${toArabicDigits(arabicAyahs.length)}</span>
     </div>
     ${iitwSurahStoryHtml(surah.n) + iitwMiraclesHtml(surah.n)}
     ${tad ? iitwTadabburSurahHtml(tad, surah) : iitwTadabburEmptyHtml(surah)}`;
@@ -310,7 +324,7 @@ async function openSurah(surah) {
         <div class="ayah-block" id="ayah-${ayah.numberInSurah}">
           <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}', ${ayah.numberInSurah})" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
           <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
-          <div class="ayah-cite">Surah ${surah.name} — <strong>${cite}</strong> <span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
+          <div class="ayah-cite"><span class="en-only">Surah ${surah.name} — <strong>${cite}</strong> </span><span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
           ${tad ? iitwTadabburAyahHtml(tad, ayah.numberInSurah) : ""}
         </div>
       `;
@@ -324,8 +338,8 @@ async function openSurah(surah) {
         const n = pages.indexOf(ayah.page) + 1;
         html += `<div class="page-break">
           <span class="page-break-label">
-            End of page ${ayah.page}
-            <span class="page-break-sub">— ${n} of ${pageCount} in this surah</span>
+            <span class="en-only">End of page ${ayah.page}
+            <span class="page-break-sub">— ${n} of ${pageCount} in this surah</span></span>
             <span dir="rtl" style="font-family:'Amiri',serif;">نهاية الصفحة ${toArabicDigits(ayah.page)} — ${toArabicDigits(n)} من ${toArabicDigits(pageCount)}</span>
           </span>
         </div>`;
@@ -336,8 +350,10 @@ async function openSurah(surah) {
   } catch (err) {
     body.innerHTML = `
       <div class="error-msg">
-        Unable to load this surah right now. Please check your internet connection and try again.<br><br>
-        <em>Surah ${surah.name} (${surah.meaning}) — ${surah.verses} verses, ${surah.place}.</em>
+        <span class="en-only">Unable to load this surah right now. Please check your internet connection and try again.<br><br>
+        <em>Surah ${surah.name} (${surah.meaning}) — ${surah.verses} verses, ${surah.place}.</em></span>
+        <span class="ar-only" dir="rtl">تعذّر فتح هذه السورة الآن. تحقّق من الاتصال بالإنترنت وأعد المحاولة.<br><br>
+        <em>سورة ${surah.arabic} — ${toArabicDigits(surah.verses)} آية، ${surah.place === "Meccan" ? "مكية" : "مدنية"}.</em></span>
       </div>
     `;
   }
@@ -413,9 +429,11 @@ window.iitwArmSaveButton = function (ayahNum) {
   const reader = (typeof iitwReader === "function") ? iitwReader() : null;
   btn.disabled = false;
   btn.classList.add("armed");
+  /* English and Arabic side by side on the English page; the Arabic page
+     shows only the Arabic (en-only), the rule for every bilingual label. */
   btn.innerHTML = reader
-    ? `💾 Save here — verse ${ayahNum} <span dir="rtl" style="font-family:'Amiri',serif;">— احفظ عند الآية ${toArabicDigits(ayahNum)}</span>`
-    : `💾 Sign in to save verse ${ayahNum} <span dir="rtl" style="font-family:'Amiri',serif;">— سجّل الدخول لتحفظ</span>`;
+    ? `💾 <span class="en-only">Save here — verse ${ayahNum} — </span><span dir="rtl" style="font-family:'Amiri',serif;">احفظ عند الآية ${toArabicDigits(ayahNum)}</span>`
+    : `💾 <span class="en-only">Sign in to save verse ${ayahNum} — </span><span dir="rtl" style="font-family:'Amiri',serif;">سجّل الدخول لتحفظ</span>`;
 };
 
 function iitwSaveHere() {
@@ -428,9 +446,9 @@ function iitwSaveHere() {
   if (!reader) {
     if (note) {
       note.className = "rq-save-note warn";
-      note.innerHTML = `You need to sign in first — the place is saved under your username.
+      note.innerHTML = `<span class="en-only">You need to sign in first — the place is saved under your username.
         <a href="#readerBox" onclick="closeModal()">Sign in at the top of this page.</a>
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">سجّل الدخول أولًا، فالموضع يُحفظ باسم المستخدم.
+        <br></span><span dir="rtl" style="font-family:'Amiri',serif;">سجّل الدخول أولًا، فالموضع يُحفظ باسم المستخدم.
         <a href="#readerBox" onclick="closeModal()">سجّل من أعلى الصفحة.</a></span>`;
     }
     return;
@@ -446,10 +464,10 @@ function iitwSaveHere() {
   if (note) {
     note.className = ok ? "rq-save-note ok" : "rq-save-note warn";
     note.innerHTML = ok
-      ? `Saved. Surah ${surah.name}, verse ${ayah} — you will be brought straight back here.
-         <br><span dir="rtl" style="font-family:'Amiri',serif;">حُفظ. سورة ${surah.arabic}، الآية ${toArabicDigits(ayah)} — وستُعاد إلى هنا مباشرةً.</span>`
-      : `Could not save on this browser.
-         <br><span dir="rtl" style="font-family:'Amiri',serif;">تعذّر الحفظ في هذا المتصفح.</span>`;
+      ? `<span class="en-only">Saved. Surah ${surah.name}, verse ${ayah} — you will be brought straight back here.
+         <br></span><span dir="rtl" style="font-family:'Amiri',serif;">حُفظ. سورة ${surah.arabic}، الآية ${toArabicDigits(ayah)} — وستُعاد إلى هنا مباشرةً.</span>`
+      : `<span class="en-only">Could not save on this browser.
+         <br></span><span dir="rtl" style="font-family:'Amiri',serif;">تعذّر الحفظ في هذا المتصفح.</span>`;
   }
   if (typeof renderReaderBox === "function") renderReaderBox();
 }
@@ -489,23 +507,22 @@ function renderReaderBox() {
     box.innerHTML = `
       <div class="reader-in">
         <div class="reader-who">
-          <span class="reader-hi">Signed in as <strong>${iitwEsc(reader.name)}</strong></span>
+          <span class="reader-hi en-only">Signed in as <strong>${iitwEsc(reader.name)}</strong></span>
           <span dir="rtl" style="font-family:'Amiri',serif;">مسجَّل الدخول باسم <strong>${iitwEsc(reader.name)}</strong></span>
         </div>
         ${p ? `
           <button class="btn btn-primary reader-continue" onclick="iitwGoToSavedPlace()">
-            ↩ Continue where you stopped — Surah ${iitwEsc(p.surahName)}, verse ${p.ayah}
-            <span dir="rtl" style="font-family:'Amiri',serif;">— تابع من حيث وقفت: سورة ${iitwEsc(p.surahArabic || "")} الآية ${toArabicDigits(p.ayah)}</span>
+            ↩ <span class="en-only">Continue where you stopped — Surah ${iitwEsc(p.surahName)}, verse ${p.ayah} — </span><span dir="rtl" style="font-family:'Amiri',serif;">تابع من حيث وقفت: سورة ${iitwEsc(p.surahArabic || "")} الآية ${toArabicDigits(p.ayah)}</span>
           </button>
-          <div class="reader-meta">Saved ${new Date(p.at).toLocaleString()}
-            · <a href="#" onclick="iitwForgetPlace(event)">forget it</a></div>
+          <div class="reader-meta"><span class="en-only">Saved</span><span class="ar-only">حُفظ في</span> ${new Date(p.at).toLocaleString()}
+            · <a href="#" onclick="iitwForgetPlace(event)"><span class="en-only">forget it</span><span class="ar-only">احذفه</span></a></div>
         ` : `
           <div class="reader-meta">
-            Nothing saved yet. Open a surah, play a verse, and the <strong>Save my place</strong> button beside Stop will remember it.
-            <br><span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد موضعٌ محفوظ بعد. افتح سورة وشغّل آية، ثم احفظ بزرّ «احفظ موضعي» بجانب زر الإيقاف.</span>
+            <span class="en-only">Nothing saved yet. Open a surah, play a verse, and the <strong>Save my place</strong> button beside Stop will remember it.
+            <br></span><span dir="rtl" style="font-family:'Amiri',serif;">لا يوجد موضعٌ محفوظ بعد. افتح سورة وشغّل آية، ثم احفظ بزرّ «احفظ موضعي» بجانب زر الإيقاف.</span>
           </div>
         `}
-        <button class="btn btn-outline btn-small" onclick="iitwDoSignOut()">Sign out <span dir="rtl" style="font-family:'Amiri',serif;">— خروج</span></button>
+        <button class="btn btn-outline btn-small" onclick="iitwDoSignOut()"><span class="en-only">Sign out — </span><span dir="rtl" style="font-family:'Amiri',serif;">خروج</span></button>
       </div>`;
     return;
   }
@@ -513,27 +530,27 @@ function renderReaderBox() {
   box.innerHTML = `
     <div class="reader-out">
       <div class="reader-lead">
-        <strong>Save the verse you stopped at.</strong>
+        <span class="en-only"><strong>Save the verse you stopped at.</strong>
         Choose a username and a password, and the exact surah and verse you reach will be kept for you.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">احفظ الآية التي وقفت عندها. اختر اسم مستخدم وكلمة مرور، ويُحفظ لك موضعك بالسورة والآية بالضبط.</span>
+        <br></span><span dir="rtl" style="font-family:'Amiri',serif;">احفظ الآية التي وقفت عندها. اختر اسم مستخدم وكلمة مرور، ويُحفظ لك موضعك بالسورة والآية بالضبط.</span>
       </div>
 
       <div class="reader-form">
         <input type="text" id="rdUser" autocomplete="username" placeholder="Username — اسم المستخدم" dir="auto" />
         <input type="password" id="rdPass" autocomplete="current-password" placeholder="Password — كلمة المرور" />
-        <button class="btn btn-primary btn-small" onclick="iitwDoSignIn()">Sign in <span dir="rtl" style="font-family:'Amiri',serif;">— دخول</span></button>
-        <button class="btn btn-outline btn-small" onclick="iitwDoSignUp()">Create <span dir="rtl" style="font-family:'Amiri',serif;">— إنشاء</span></button>
+        <button class="btn btn-primary btn-small" onclick="iitwDoSignIn()"><span class="en-only">Sign in — </span><span dir="rtl" style="font-family:'Amiri',serif;">دخول</span></button>
+        <button class="btn btn-outline btn-small" onclick="iitwDoSignUp()"><span class="en-only">Create — </span><span dir="rtl" style="font-family:'Amiri',serif;">إنشاء</span></button>
       </div>
 
       <div class="reader-rules">
-        Username: 3–20 characters, starting with a letter — letters, numbers, dot or underscore. Capitals are fine, and it does <strong>not</strong> have to be an email.
+        <span class="en-only">Username: 3–20 characters, starting with a letter — letters, numbers, dot or underscore. Capitals are fine, and it does <strong>not</strong> have to be an email.
         Password: 6 characters or more, anything you like.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">اسم المستخدم: من ٣ إلى ٢٠ خانة يبدأ بحرف — حروف أو أرقام أو نقطة أو شَرطة سفلية، والحروف الكبيرة مقبولة، و<strong>ليس</strong> بريدًا إلكترونيًا. وكلمة المرور: ستة أحرف فأكثر، وما شئت.</span>
+        <br></span><span dir="rtl" style="font-family:'Amiri',serif;">اسم المستخدم: من ٣ إلى ٢٠ خانة يبدأ بحرف — حروف أو أرقام أو نقطة أو شَرطة سفلية، والحروف الكبيرة مقبولة، و<strong>ليس</strong> بريدًا إلكترونيًا. وكلمة المرور: ستة أحرف فأكثر، وما شئت.</span>
       </div>
 
       <div class="reader-honest">
-        ⚠️ <strong>Read this once.</strong> This website has no server, so the account and your saved verse live in <strong>this browser on this device</strong>. They will not appear on another phone or computer, and clearing the browser's data erases them. Your password is stored only as a scrambled hash, never as text — but do not reuse an important password here.
-        <br><span dir="rtl" style="font-family:'Amiri',serif;">تنبيه يُقرأ مرة: هذا الموقع بلا خادم، فالحساب والموضع المحفوظ في <strong>هذا المتصفح على هذا الجهاز</strong> فقط. ولن يظهرا على هاتفٍ أو حاسوبٍ آخر، ومسح بيانات المتصفح يمحوهما. وكلمة المرور تُخزَّن مشفَّرةً لا نصًّا — ومع ذلك لا تستعمل هنا كلمة مرورٍ مهمة.</span>
+        ⚠️ <span class="en-only"><strong>Read this once.</strong> This website has no server, so the account and your saved verse live in <strong>this browser on this device</strong>. They will not appear on another phone or computer, and clearing the browser's data erases them. Your password is stored only as a scrambled hash, never as text — but do not reuse an important password here.
+        <br></span><span dir="rtl" style="font-family:'Amiri',serif;">تنبيه يُقرأ مرة: هذا الموقع بلا خادم، فالحساب والموضع المحفوظ في <strong>هذا المتصفح على هذا الجهاز</strong> فقط. ولن يظهرا على هاتفٍ أو حاسوبٍ آخر، ومسح بيانات المتصفح يمحوهما. وكلمة المرور تُخزَّن مشفَّرةً لا نصًّا — ومع ذلك لا تستعمل هنا كلمة مرورٍ مهمة.</span>
       </div>
 
       <div id="rdMsg" class="reader-msg" style="display:none;"></div>
@@ -553,7 +570,7 @@ async function iitwDoSignIn() {
   const p = document.getElementById("rdPass").value;
   const r = await iitwSignIn(u, p);
   if (r.ok) { renderReaderBox(); return; }
-  iitwReaderMsg(r.msg.en + `<br><span dir="rtl" style="font-family:'Amiri',serif;">${r.msg.ar}</span>`, false);
+  iitwReaderMsg(`<span class="en-only">${r.msg.en}<br></span><span dir="rtl" style="font-family:'Amiri',serif;">${r.msg.ar}</span>`, false);
 }
 
 async function iitwDoSignUp() {
@@ -561,7 +578,7 @@ async function iitwDoSignUp() {
   const p = document.getElementById("rdPass").value;
   const r = await iitwSignUp(u, p);
   if (r.ok) { renderReaderBox(); return; }
-  iitwReaderMsg(r.msg.en + `<br><span dir="rtl" style="font-family:'Amiri',serif;">${r.msg.ar}</span>`, false);
+  iitwReaderMsg(`<span class="en-only">${r.msg.en}<br></span><span dir="rtl" style="font-family:'Amiri',serif;">${r.msg.ar}</span>`, false);
 }
 
 function iitwDoSignOut() {
@@ -1036,8 +1053,14 @@ function iitwTadabburAyahHtml(tad, n) {
   /* Why THIS word and not the one beside it — the thing the whole
      feature was asked for. */
   (a.words || []).forEach(function (w) {
+    /* Five headings are a concept, not a word of the verse ("The sentence
+       has no verb"); they carry their Arabic in wAr, drawn in Amiri — it is
+       a human sentence, not the Mushaf's text. */
+    const head = w.wAr
+      ? '<span class="en-only">' + w.w + '</span><span class="ar-only tad-w-concept">' + w.wAr + '</span>'
+      : w.w;
     h += '<div class="tad-word">' +
-         '<div class="tad-word-head"><span class="tad-w" dir="rtl">' + w.w + '</span>' +
+         '<div class="tad-word-head"><span class="tad-w" dir="rtl">' + head + '</span>' +
            /* English-only: a transliteration exists for a reader who cannot
               read the Arabic word, and in Arabic mode that word is printed
               right beside it. Some of these slots also hold a short English

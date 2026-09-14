@@ -4162,8 +4162,9 @@ answered:
 > **Sahih al-Bukhari, Hadith 1129; Sunan Abu Dawud, Hadith 495**
 > Sahih — established in the collections
 
-Every part of that is wrong. al-Bukhari 1129 is the Prophet ﷺ rousing Ali and
-Fatimah for the night prayer; Abu Dawud 495 is the command to teach children
+Every part of that is wrong. al-Bukhari 1129 is Aisha on the night prayer in
+Ramadan (rousing Ali and Fatimah — what the entry meant — is 1127; the entry
+was corrected in September 2026); Abu Dawud 495 is the command to teach children
 the prayer at seven. Neither carries those words. The wording is **خيركم
 خيركم لأهله — at-Tirmidhi 3895 and Ibn Majah 1977**, and BOTH were read out
 of the collection text before this note was written, not recalled. Worse:
@@ -5707,3 +5708,165 @@ its ID.
    `quran` - it renders in Amiri with its hadith reference, but the field
    name invites the next mistake.
 3. Everything still open from PART 27.
+
+<!-- ============================================================ -->
+# PART 29 - Every page checked: search, verify, the verses in prose, Arabic mode
+<!-- ============================================================ -->
+
+*Added 14 September 2026.*
+
+He asked for every page to work, every search box to find what a person
+means without "complicated words" (the Verify page above all), every verse
+quoted on another page to be the Quran page's own writing, and nothing
+missing or misleading. Answer in Arabic.
+
+## Verify page (commit 98dfa4b)
+
+* A hadith pasted the way it arrives is cleaned first: "The Prophet (peace be
+  upon him) said: …", "(saw)", "انشرها ولك الأجر", «عن أبي هريرة … قال رسول الله ﷺ:»,
+  a dorar.net line, «رواه مسلم». (`vCutAr` / `vCutEn` / `vClaimSkel` in js/verify.js.)
+* Every match is classified by how much of the claim it covers: `full`,
+  `occurs` (the words are inside a longer narration), `quote` (a verse or dhikr
+  QUOTED inside a longer claim — it certifies nothing), `meaning`. A verse
+  inside a claim no longer turns the whole claim into "this is the Quran".
+* English said in other words: negation must agree ("I am angry" is not "do
+  not be angry"), contractions are spelled out, and what the Prophet ﷺ is
+  quoted as saying is compared on its own.
+* **Sahih Muslim numbers:** the hadith-api's `hadithnumber` is sequential; the
+  STANDARD number is its `arabicnumber` (1830 -> 783). Al-Bukhari's
+  `hadithnumber` is the standard one.
+
+## Search
+
+* **js/sitesearch.js** (new): one index over prophets, companions, hadith,
+  sunnah, adhkar, stories, the Quran's surah names and `SS_SECTIONS` — a
+  hand-written list of the sections that answer a SUBJECT (zakat, hajj,
+  fasting, the decree, inheritance, the grave …) with the plain words people
+  use for each, in both languages. **A section is only reachable if it is in
+  that list.** "hajj" found only the surah's name until #pi-hajj was added.
+* People pages score whole names first (`iitwScorePeople`), fold ئ/ؤ, and never
+  match a stop word.
+* Sunnah keys match whole words — الأب is not inside الابتسامة.
+
+## Every verse quoted in prose is now the Mushaf's text
+
+PART 28 converted verse FIELDS and bracketed quotations; verses woven into
+sentences were only reported. This round converted them: **375 edits** —
+every one a human read in context, from a machine plan of 503.
+
+What the plan got wrong, and why no such plan may be applied unread:
+
+* **Hadith and dhikr that share words with a verse** — «مَنْ كَانَ يُؤْمِنُ بِاللَّهِ
+  وَالْيَوْمِ الْآخِرِ» (a hadith, not 65:2), «لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ» in a dhikr,
+  «وَخُلِقَ الْجَانُّ» (a hadith's passive against 55:15's active), the dua
+  «فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ». Bracketing them presents the Prophet's ﷺ words
+  as Quran. 24 of these were refused.
+* **The author's own paraphrase**, in his own grammar: «وجوهًا مسفرةً» (object of
+  وصف), «أبت السماواتُ» (the verse has them in the genitive), «رُدّ عليه أهلُه».
+* **Hypothetical rewrites** on the tenses page ("if the word were …").
+* **Garbage the letter skeleton cannot see** — it drops every alef, so «الإيمان
+  بالله» met «لَا يُؤۡمِنُ بِٱللَّهِ» (the opposite meaning), «لله» met «لَآ إِلَٰهَ»,
+  «به» met «بِهَا», «إليهما» met «إِلَيۡهِمۡ». The final check (qfinal, below)
+  aligns word by word with the alef and hamza KEPT and refuses a pronoun,
+  number or hamza change.
+* **A quotation broken into pieces** by the author's commas became one
+  bracket; consecutive verses are joined with ` ۝ ` (the site's separator).
+  A trailing «من / عند / قال / ثم» that the author's sentence continues from
+  is given back to the sentence.
+
+37 quotations were rewritten by hand from the verse (never typed — cut from
+the KFGQPC words): e.g. 3:173 in the virtue of حسبنا الله, 6:151-152 as a list
+of nine brackets, 13:11 «فَلَا مَرَدَّ لَهُۥ» where the author had misquoted «فلا رادّ
+له», 98:5 with the words the author had skipped, «لَا يَنفَعُ» where «لم ينفع» had
+been written.
+
+**Cards that print a verse and under it an Arabic line** (Judgement, the
+prophets' "one religion" cards): where the Arabic line is nothing but the
+same verse in ordinary spelling, it now carries `arSame: true` and is not
+printed — the reader saw one verse written two ways, one under the other.
+Where it quotes the verse inside a sentence, the quotation is bracketed.
+
+## Arabic mode
+
+* The Quran reader: title, reciter, page count, verse citations and page
+  breaks are en-only / Arabic pairs; all 114 surahs swept with every panel
+  open — nothing English left but the English translation (content, kept).
+* The Tadabbur headings that are concepts, not words of the verse, carry
+  `wAr` (five).
+* The reader's 83 source lines: AR_PARTS rules for "read with", "and again
+  at", "Tafsir at-Tabari"; a surah name may start with an apostrophe
+  ('Abasa); `iitwNormSurah` drops a final h (Al-Mujadilah / Al-Mujadila).
+* **«…» is never translated inside a source line** — an Arabic line quoting
+  an English report title came out «Our Epidemic of Loneliness و Isolation».
+  (The `.ar-only` half can NOT simply be skipped: Hadith and Home put the
+  English of a reference with no Arabic twin there.)
+* Full lives: the 377 "<what it supports>:" labels have Arabic in
+  `LIFE_LABELS_AR` (end of js/lives.js), keyed by the exact English label.
+  Written as descriptions, never as a verse in ordinary spelling.
+* Seventeen companions are women: the headings said "How he entered Islam /
+  كيف أسلم" over Khadijah (`COMPANION_WOMEN` in companions.html).
+* Courses, the Quran sign-in box, the Golden Age and Judgement source lines.
+
+## Citations corrected this round (all read in the collection text)
+
+* The forty-year width of Paradise's gate is **Muslim 2967, Book of Zuhd** —
+  the words of Utbah ibn Ghazwan, not the Prophet ﷺ.
+* «وعلّمه التأويل» for Ibn Abbas is **Musnad Ahmad**, not Sahih Muslim (Muslim
+  2477 has only «اللهم فقّهه»).
+* Maymunah at Sarif: her death there is **al-Bukhari 4258**, her funeral
+  **al-Bukhari 5067 / Muslim 1465**; that the marriage was at Sarif is **Abu
+  Dawud 1843**. Al-Bukhari 1837 (cited before) does not mention Sarif.
+* The hadith of Jibril in al-Bukhari (50) is from **Abu Hurairah**; Muslim 8 is
+  from Umar.
+
+## Guidance
+
+* **A card's `keys` are gate words for the quick answer that points at it**
+  (`iitwTopicKeys`), and a bare everyday word there sends a whole sentence to
+  the wrong answer: «أشعر بالقلق» -> "A child raised inside a fight" (القلق),
+  "my mother is sick" -> fasting (sick), «أمي مريضة» -> disobeying parents
+  (امي), "I lost my job" -> halal earnings (my job), «الدين» -> the debt verse
+  (it is also الدِّين, the religion). Those keys are now phrases.
+* «أستطيع / أقدر» are GENERIC: «لا أستطيع النوم» was answered with Hajj ("if
+  you are able").
+* **Someone being hurt at home** gets a safety-first box (`ABUSE`, like
+  `SELF_HARM`, phrases only): "my husband hits me" had been answered with the
+  apologetic on 4:34, «زوجي يضربني» with "settlement first, then two
+  arbiters". A question ABOUT the ruling («هل يجوز ضرب الزوجة») still reaches
+  the full answer.
+
+## RULES THIS ROUND EARNED
+
+**A machine's verse plan is a list of suspects, not of edits.** Read every
+one in its sentence; one in six was wrong, and some inverted the meaning.
+
+**Words a hadith shares with a verse do not make it a verse.** Only a verse
+the speaker is RECITING («ثم قرأ …», the Prophet ﷺ on the minbar) is bracketed
+inside a hadith.
+
+**Never compare Arabic for an edit by the skeleton alone.** The skeleton finds;
+the alef-and-hamza comparison decides.
+
+**A card key is a sentence someone types, never one bare word** — it opens a
+direct answer by itself.
+
+**An `.ar-only` half is not proof of Arabic.** Protect «…», do not skip the half.
+
+## Measured
+
+* Arabic mode: 0 English strings on Quran, Prophets, Companions, Hadith,
+  Sunnah, Stories, Judgement, Guidance, Courses, Search, Verify; the reader
+  clean on all 114 surahs; every full life open on both people pages clean.
+  Left on purpose: Latin names on the Golden Age page (Avicenna, Algoritmi …),
+  YouTube channel names on Home, the English verse translation in the reader.
+* 2,185 brackets on the site: none runs across a verse boundary without ۝.
+* 52 JS files parse; 18 pages load with no page error.
+
+## Open work as of 14 September 2026
+
+1. The reader shows the English translation under each verse in Arabic mode
+   too. An Arabic tafsir (al-Muyassar) would serve an Arabic reader better —
+   his decision.
+2. Guidance ranking for a few everyday Arabic sentences is weak rather than
+   wrong («خسرت عملي» leads with the card on halal earnings).
+3. Everything still open from PART 28.

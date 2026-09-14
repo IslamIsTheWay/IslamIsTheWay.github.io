@@ -1311,3 +1311,28 @@ the movement they belong to.
 And **verify the coverage programmatically**: movement one must begin at
 verse 1, the last must end on the surah's last verse, and no range may skip
 anything. A "full explanation" with a hole in it is not one.
+
+## A verse plan from a script is a list of suspects, not of edits
+
+Converting the verses woven into prose (HANDOFF PART 29), one planned edit in
+six was wrong: a hadith that shares words with a verse («مَنْ كَانَ يُؤْمِنُ بِاللَّهِ
+وَالْيَوْمِ الْآخِرِ» is not 65:2), the author's own paraphrase in his own
+grammar, a hypothetical rewrite — and some the letter skeleton simply cannot
+see, because it drops every alef: «الإيمان بالله» matched «لَا يُؤۡمِنُ بِٱللَّهِ».
+Read every edit in its sentence, and let the skeleton FIND but never DECIDE:
+compare with the alef and hamza kept before writing a verse into a sentence.
+Only a verse someone is RECITING is bracketed inside a hadith.
+
+## A card key is a sentence someone types, never one bare word
+
+On Guidance a card's `keys` open the quick answer that points at the card.
+A bare «القلق», "sick", «امي», "my job" or «الدين» there sent «أشعر بالقلق», "my
+mother is sick", «أمي مريضة», "I lost my job" to answers about other things —
+and «الدين» is also الدِّين, the religion. Keys are phrases.
+
+## An `.ar-only` half is not proof that it is Arabic
+
+Hadith and Home put the ENGLISH of a reference with no Arabic twin in the
+`.ar-only` half, for the reference translator to translate — so that half
+cannot be skipped. What IS protected is «…»: a title quoted inside a source
+line is never run through AR_PARTS («Our Epidemic of Loneliness و Isolation»).

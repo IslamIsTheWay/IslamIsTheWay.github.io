@@ -131,11 +131,16 @@ const PROPHETS = [
     titleAr: "أبو البشر",
     category: "prophet",
     summary: "The first human being and the first prophet of Islam, created by Allah from clay and honoured with the breath of life, and before whom Allah commanded the angels to prostrate. He and his wife Hawwa (Eve) were placed in Paradise, then sent down to Earth, where Adam became the first to receive revelation and divine guidance.",
-    summaryAr: "أبو البشر وأولُ الأنبياء، خلقه الله من طينٍ ونفخ فيه من روحه، وأمر الملائكةَ فسجدت له. أُسكن هو وزوجُه حوّاءُ الجنّة ثم أُهبطا إلى الأرض، فكان أوّلَ من نزل عليه الوحيُ والهدى.",
+    summaryAr: "أبو البشر وأولُ الأنبياء، خلقه الله من طينٍ ﴿وَنَفَخَ فِيهِ مِن رُّوحِهِۦۖ﴾، وأمر الملائكةَ فسجدت له. أُسكن هو وزوجُه حوّاءُ الجنّة ثم أُهبطا إلى الأرض، فكان أوّلَ من نزل عليه الوحيُ والهدى.",
     refs: [
       "Surah Al-Baqarah (2:30-39) — the creation of Adam and the angels' prostration",
       "Surah Al-A'raf (7:11-25) — the story of Adam, Iblis, and the Garden",
       "Surah Ta-Ha (20:115-123) — Adam's repentance and Allah's forgiveness"
+    ],
+    refsAr: [
+      "سورة البقرة (٢:٣٠–٣٩) — خلق آدم وسجود الملائكة له",
+      "سورة الأعراف (٧:١١–٢٥) — قصّة آدم وإبليس والجنّة",
+      "سورة طه (٢٠:١١٥–١٢٣) — توبة آدم ومغفرة الله له"
     ]
   },
   {
@@ -150,6 +155,10 @@ const PROPHETS = [
     refs: [
       "Surah Maryam (19:56-57) — Idris was a man of truth, raised to a high station",
       "Surah Al-Anbiya (21:85) — mentioned among the patient ones"
+    ],
+    refsAr: [
+      "سورة مريم (١٩:٥٦–٥٧) — كان إدريس صدّيقًا نبيًّا، ورُفع مكانًا عليًّا",
+      "سورة الأنبياء (٢١:٨٥) — ذُكر في الصابرين"
     ]
   },
   {
@@ -165,6 +174,11 @@ const PROPHETS = [
       "Surah Nuh (71) — an entire chapter devoted to his story and supplication",
       "Surah Hud (11:25-49) — the flood and the ark",
       "Surah Al-Ankabut (29:14) — he remained among his people 1,000 years less fifty"
+    ],
+    refsAr: [
+      "سورة نوح (٧١) — سورةٌ كاملة في قصّته ودعائه",
+      "سورة هود (١١:٢٥–٤٩) — الطوفان والسفينة",
+      "سورة العنكبوت (٢٩:١٤) — لبث في قومه ألف سنةٍ إلا خمسين عامًا"
     ]
   },
   {
@@ -175,11 +189,16 @@ const PROPHETS = [
     titleAr: "نبيّ قوم عاد",
     category: "prophet",
     summary: "Hud was sent to the ancient people of 'Ad, a powerful civilization in southern Arabia, who worshipped idols and were proud of their strength. When they rejected his call, Allah destroyed them with a furious wind that lasted for days.",
-    summaryAr: "أُرسل إلى قوم عادٍ الأقدمين، وكانوا حضارةً قويّةً في جنوب جزيرة العرب، يعبدون الأصنام ويفخرون بقوّتهم. فلمّا ردّوا دعوته أهلكهم الله بريحٍ صرصرٍ عاتيةٍ سُخِّرت عليهم أيّامًا.",
+    summaryAr: "أُرسل إلى قوم عادٍ الأقدمين، وكانوا حضارةً قويّةً في جنوب جزيرة العرب، يعبدون الأصنام ويفخرون بقوّتهم. فلمّا ردّوا دعوته أهلكهم الله ﴿بِرِيحٖ صَرۡصَرٍ عَاتِيَةٖ﴾ سُخِّرت عليهم أيّامًا.",
     refs: [
       "Surah Hud (11:50-60) — Hud's call and the fate of 'Ad",
       "Surah Al-A'raf (7:65-72) — his warning and their rejection",
       "Surah Al-Haqqah (69:6-8) — the howling wind that destroyed them"
+    ],
+    refsAr: [
+      "سورة هود (١١:٥٠–٦٠) — دعوة هود ومصير عاد",
+      "سورة الأعراف (٧:٦٥–٧٢) — إنذاره لقومه وتكذيبهم",
+      "سورة الحاقة (٦٩:٦–٨) — الريح الصرصر العاتية التي أهلكتهم"
     ]
   },
   {
@@ -195,6 +214,11 @@ const PROPHETS = [
       "Surah Hud (11:61-68) — Salih and the she-camel",
       "Surah Ash-Shams (91:11-15) — the hamstringing and the punishment",
       "Surah Al-A'raf (7:73-79) — the sign of the she-camel"
+    ],
+    refsAr: [
+      "سورة هود (١١:٦١–٦٨) — صالح والناقة",
+      "سورة الشمس (٩١:١١–١٥) — عقر الناقة والعقوبة",
+      "سورة الأعراف (٧:٧٣–٧٩) — آية الناقة"
     ]
   },
   {
@@ -211,6 +235,12 @@ const PROPHETS = [
       "Surah As-Saffat (37:99-111) — the trial of sacrificing his son",
       "Surah Al-Baqarah (2:124-129) — raising the foundations of the Kaaba",
       "Surah Ibrahim (14) — named after him, containing his supplications"
+    ],
+    refsAr: [
+      "سورة الأنبياء (٢١:٥١–٧٣) — إبراهيم والأصنام",
+      "سورة الصافات (٣٧:٩٩–١١١) — ابتلاؤه بذبح ابنه",
+      "سورة البقرة (٢:١٢٤–١٢٩) — رفع قواعد الكعبة",
+      "سورة إبراهيم (١٤) — سُمّيت باسمه، وفيها دعواته"
     ]
   },
   {
@@ -221,11 +251,16 @@ const PROPHETS = [
     titleAr: "ابن أخي إبراهيم الصالح",
     category: "prophet",
     summary: "A nephew and follower of Ibrahim, Lut was sent to the people of Sodom, who committed grave sins. When they refused to repent, Allah sent angels to rescue Lut and his believing family, then destroyed the cities with a rain of stones.",
-    summaryAr: "ابنُ أخي إبراهيمَ عليه السلام ومن اتّبعه على دينه. أُرسل إلى أهل سدومَ وقد أتوا كبائرَ الفواحش، فلمّا أبَوا أن يتوبوا أرسل الله ملائكةً أنجَت لوطًا ومن آمن من أهله، ثم دمّر قُراهم وأمطر عليها حجارةً من سِجّيل (أي طينٍ متحجّر).",
+    summaryAr: "ابنُ أخي إبراهيمَ عليه السلام ومن اتّبعه على دينه. أُرسل إلى أهل سدومَ وقد أتوا كبائرَ الفواحش، فلمّا أبَوا أن يتوبوا أرسل الله ملائكةً أنجَت لوطًا ومن آمن من أهله، ثم دمّر قُراهم وأمطر ﴿عَلَيۡهَا حِجَارَةٗ مِّن سِجِّيلٖ﴾ (أي طينٍ متحجّر).",
     refs: [
       "Surah Hud (11:77-83) — the angels' visit and the cities' destruction",
       "Surah Al-A'raf (7:80-84) — Lut's warning to his people",
       "Surah Ash-Shu'ara (26:160-175) — his mission and the punishment"
+    ],
+    refsAr: [
+      "سورة هود (١١:٧٧–٨٣) — مجيء الملائكة وهلاك القرى",
+      "سورة الأعراف (٧:٨٠–٨٤) — إنذار لوطٍ قومَه",
+      "سورة الشعراء (٢٦:١٦٠–١٧٥) — رسالته والعقوبة"
     ]
   },
   {
@@ -241,6 +276,11 @@ const PROPHETS = [
       "Surah As-Saffat (37:101-107) — Ismail's submission and the ransom",
       "Surah Al-Baqarah (2:127) — raising the foundations of the House",
       "Surah Maryam (19:54) — described as true to his promise"
+    ],
+    refsAr: [
+      "سورة الصافات (٣٧:١٠١–١٠٧) — تسليم إسماعيل والفداء",
+      "سورة البقرة (٢:١٢٧) — رفع قواعد البيت",
+      "سورة مريم (١٩:٥٤) — وُصف بأنه كان صادق الوعد"
     ]
   },
   {
@@ -255,6 +295,10 @@ const PROPHETS = [
     refs: [
       "Surah As-Saffat (37:112-113) — the glad tidings of Ishaq's birth",
       "Surah Hud (11:71-73) — the angels' announcement to Ibrahim and Sarah"
+    ],
+    refsAr: [
+      "سورة الصافات (٣٧:١١٢–١١٣) — البشارة بإسحاق",
+      "سورة هود (١١:٧١–٧٣) — بشارة الملائكة لإبراهيم وسارة"
     ]
   },
   {
@@ -269,6 +313,10 @@ const PROPHETS = [
     refs: [
       "Surah Yusuf (12) — Yaqub's patience throughout his son's story",
       "Surah Al-Baqarah (2:132-133) — his advice to his sons before passing away"
+    ],
+    refsAr: [
+      "سورة يوسف (١٢) — صبر يعقوب طوال قصّة ابنه",
+      "سورة البقرة (٢:١٣٢–١٣٣) — وصيّته لبنيه عند الموت"
     ]
   },
   {
@@ -282,7 +330,11 @@ const PROPHETS = [
     summaryAr: "ألقاه إخوتُه في الجُبِّ (أي البئر) حسدًا ثم بِيع رقيقًا في مصر، فرفعه الله من ظلمة السجن إلى أن صار وزيرًا مؤتمَنًا على خزائن الأرض. وقصّتُه هي «أحسنُ القصص»، وفيها الصبرُ والعفوُ وتمامُ الثقة بتدبير الله.",
     refs: [
       "Surah Yusuf (12) — the complete narrative, called 'the best of stories' (12:3)",
-      "Surah Yusuf (12:90) — forgiveness of his brothers"
+      "Surah Yusuf (12:90-92) — forgiveness of his brothers"
+    ],
+    refsAr: [
+      "سورة يوسف (١٢) — القصّة كاملة، وقد سمّاها الله «أحسن القصص» (١٢:٣)",
+      "سورة يوسف (١٢:٩٠–٩٢) — عفوه عن إخوته"
     ]
   },
   {
@@ -297,6 +349,10 @@ const PROPHETS = [
     refs: [
       "Surah Al-Anbiya (21:83-84) — his supplication and Allah's healing",
       "Surah Sad (38:41-44) — his patience under affliction"
+    ],
+    refsAr: [
+      "سورة الأنبياء (٢١:٨٣–٨٤) — دعاؤه وكشفُ الله ضرَّه",
+      "سورة ص (٣٨:٤١–٤٤) — صبره على البلاء"
     ]
   },
   {
@@ -311,6 +367,10 @@ const PROPHETS = [
     refs: [
       "Surah Al-A'raf (7:85-93) — Shuayb's call to the people of Madyan",
       "Surah Hud (11:84-95) — honesty in trade and measures"
+    ],
+    refsAr: [
+      "سورة الأعراف (٧:٨٥–٩٣) — دعوة شعيب أهلَ مدين",
+      "سورة هود (١١:٨٤–٩٥) — الوفاء في الكيل والميزان"
     ]
   },
   {
@@ -326,6 +386,11 @@ const PROPHETS = [
       "Surah Al-Baqarah (2:49-57) — the Exodus and miracles",
       "Surah Ta-Ha (20:9-98) — his calling and confrontation with Pharaoh",
       "Surah Al-Qasas (28:1-43) — his early life and journey to Madyan"
+    ],
+    refsAr: [
+      "سورة البقرة (٢:٤٩–٥٧) — النجاة من فرعون والآيات",
+      "سورة طه (٢٠:٩–٩٨) — تكليم الله له ومواجهته فرعون",
+      "سورة القصص (٢٨:١–٤٣) — نشأته ورحلته إلى مدين"
     ]
   },
   {
@@ -340,6 +405,10 @@ const PROPHETS = [
     refs: [
       "Surah Ta-Ha (20:29-36) — Musa's request for Harun as a helper",
       "Surah Al-Anbiya (21:48) — Musa and Harun given the Scripture"
+    ],
+    refsAr: [
+      "سورة طه (٢٠:٢٩–٣٦) — سؤال موسى أن يكون هارون وزيرًا له",
+      "سورة الأنبياء (٢١:٤٨) — إيتاء موسى وهارون الفرقان"
     ]
   },
   {
@@ -350,11 +419,16 @@ const PROPHETS = [
     titleAr: "الملك الشكور",
     category: "prophet",
     summary: "Dawud was given kingship, wisdom, and the ability to recite the Zabur (Psalms) with such beauty that even mountains and birds joined his praise. He was also granted skill in crafting iron armor.",
-    summaryAr: "آتاه الله المُلكَ والحكمةَ والزَّبور، وكان يرتّله بصوتٍ من الحسن بحيث تسبّح معه الجبالُ والطير. وعلّمه صنعةَ الدروع وألان له الحديد.",
+    summaryAr: "﴿ءَاتَىٰهُ ٱللَّهُ ٱلۡمُلۡكَ وَٱلۡحِكۡمَةَ﴾ والزَّبور، وكان يرتّله بصوتٍ من الحسن بحيث تسبّح معه الجبالُ والطير. وعلّمه صنعةَ الدروع وألان له الحديد.",
     refs: [
       "Surah Al-Anbiya (21:78-80) — wisdom in judgment and armor-making",
       "Surah Saba (34:10-11) — softening of iron and praise alongside the birds",
       "Surah Al-Isra (17:55) — the giving of the Zabur"
+    ],
+    refsAr: [
+      "سورة الأنبياء (٢١:٧٨–٨٠) — الحكمة في القضاء وصنعة الدروع",
+      "سورة سبأ (٣٤:١٠–١١) — إلانة الحديد، وتسبيح الجبال والطير معه",
+      "سورة الإسراء (١٧:٥٥) — إيتاؤه الزبور"
     ]
   },
   {
@@ -370,6 +444,11 @@ const PROPHETS = [
       "Surah An-Naml (27:15-44) — Sulaiman, the hoopoe bird, and the Queen of Sheba",
       "Surah Saba (34:12-14) — dominion over the jinn and the wind",
       "Surah Sad (38:30-40) — his repentance and restored kingdom"
+    ],
+    refsAr: [
+      "سورة النمل (٢٧:١٥–٤٤) — سليمان والهدهد وملكة سبأ",
+      "سورة سبأ (٣٤:١٢–١٤) — تسخير الريح والجنّ له",
+      "سورة ص (٣٨:٣٠–٤٠) — إنابته ومُلكه"
     ]
   },
   {
@@ -384,6 +463,10 @@ const PROPHETS = [
     refs: [
       "Surah As-Saffat (37:123-132) — Ilyas and the worship of Baal",
       "Surah Al-An'am (6:85) — listed among the righteous"
+    ],
+    refsAr: [
+      "سورة الصافات (٣٧:١٢٣–١٣٢) — إلياس وعبادة بَعل",
+      "سورة الأنعام (٦:٨٥) — ذُكر في الصالحين"
     ]
   },
   {
@@ -398,6 +481,10 @@ const PROPHETS = [
     refs: [
       "Surah Sad (38:48) — mentioned alongside Ismail and Dhul-Kifl among the best",
       "Surah Al-An'am (6:86) — listed among those favored above all people"
+    ],
+    refsAr: [
+      "سورة ص (٣٨:٤٨) — ذُكر مع إسماعيل وذي الكفل من الأخيار",
+      "سورة الأنعام (٦:٨٦) — ذُكر فيمن فضّلهم الله على العالمين"
     ]
   },
   {
@@ -412,6 +499,10 @@ const PROPHETS = [
     refs: [
       "Surah Al-Anbiya (21:85-86) — mentioned alongside Ismail and Idris among the patient",
       "Surah Sad (38:48) — mentioned among the best and chosen"
+    ],
+    refsAr: [
+      "سورة الأنبياء (٢١:٨٥–٨٦) — ذُكر مع إسماعيل وإدريس من الصابرين",
+      "سورة ص (٣٨:٤٨) — ذُكر من الأخيار"
     ]
   },
   {
@@ -427,6 +518,11 @@ const PROPHETS = [
       "Surah As-Saffat (37:139-148) — Yunus and the great fish",
       "Surah Al-Anbiya (21:87-88) — his supplication 'La ilaha illa Anta...'",
       "Surah Al-Qalam (68:48-50) — lessons in patience"
+    ],
+    refsAr: [
+      "سورة الصافات (٣٧:١٣٩–١٤٨) — يونس والحوت",
+      "سورة الأنبياء (٢١:٨٧–٨٨) — دعاؤه في بطن الحوت",
+      "سورة القلم (٦٨:٤٨–٥٠) — دروسٌ في الصبر"
     ]
   },
   {
@@ -441,6 +537,10 @@ const PROPHETS = [
     refs: [
       "Surah Maryam (19:2-15) — Zakariya's prayer and the glad tidings of Yahya",
       "Surah Ali 'Imran (3:37-41) — his guardianship of Maryam"
+    ],
+    refsAr: [
+      "سورة مريم (١٩:٢–١٥) — دعاء زكريا والبشارة بيحيى",
+      "سورة آل عمران (٣:٣٧–٤١) — كفالته مريم"
     ]
   },
   {
@@ -455,6 +555,10 @@ const PROPHETS = [
     refs: [
       "Surah Maryam (19:12-15) — Yahya's wisdom, mercy, and purity",
       "Surah Al-Anbiya (21:90) — mentioned alongside Zakariya"
+    ],
+    refsAr: [
+      "سورة مريم (١٩:١٢–١٥) — حكمة يحيى وحنانه وزكاته",
+      "سورة الأنبياء (٢١:٩٠) — ذُكر مع زكريا"
     ]
   },
   {
@@ -470,6 +574,11 @@ const PROPHETS = [
       "Surah Maryam (19:16-34) — the miraculous birth of Isa",
       "Surah Al-Imran (3:45-49) — his miracles by Allah's leave",
       "Surah An-Nisa (4:157-158) — Allah raised him to Himself"
+    ],
+    refsAr: [
+      "سورة مريم (١٩:١٦–٣٤) — مولد عيسى المعجز",
+      "سورة آل عمران (٣:٤٥–٤٩) — معجزاته بإذن الله",
+      "سورة النساء (٤:١٥٧–١٥٨) — رفعه الله إليه"
     ]
   },
   {
@@ -482,8 +591,12 @@ const PROPHETS = [
     summary: "Shith is identified in Islamic tradition as a son of Adam and a prophet who received scriptures from Allah. After the death of Adam, Shith continued to guide humanity according to the teachings of his father.",
     summaryAr: "يُذكر في الأخبار الإسلامية أنه ابنُ آدم عليه السلام، وأنه نبيٌّ أنزل الله عليه صحفًا. ولمّا تُوفّي آدمُ عليه السلام واصل هدايةَ الناس على ما كان يعلّمهم به أبوه.",
     refs: [
-      "Ibn Kathir, Al-Bidaya wan-Nihaya — the story of Shith after Adam",
-      "Mentioned in the hadith of the Night Journey (Isra and Mi'raj) — Sahih al-Bukhari"
+      "Ibn Kathir, Al-Bidaya wan-Nihaya — the story of Shith after Adam (historical account, not hadith)",
+      "Not named in the Quran or in the two Sahihs — that scrolls were revealed to him is in the long hadith of Abu Dharr (Sahih Ibn Hibban), which the hadith scholars graded weak"
+    ],
+    refsAr: [
+      "ابن كثير، البداية والنهاية — خبر شيث بعد آدم (خبرٌ تاريخي، لا حديث)",
+      "لم يُسمَّ في القرآن ولا في الصحيحين — وأمّا أنه أُنزلت عليه صحف فمن حديث أبي ذرّ الطويل (صحيح ابن حبان)، وقد ضعّفه أهل الحديث"
     ]
   },
   {
@@ -497,7 +610,11 @@ const PROPHETS = [
     summaryAr: "فتى موسى عليه السلام المذكور في القرآن في قصّته مع الخَضِر. وجاء في السنّة أنه خلَف موسى في قيادة بني إسرائيل وفي النبوّة، ودخل بهم الأرضَ المقدّسة.",
     refs: [
       "Surah Al-Kahf (18:60-62) — 'his young attendant' (identified as Yusha in hadith)",
-      "Sahih Muslim, Book of Jihad — the Prophet ﷺ identified the young man of Musa as Yusha ibn Nun"
+      "Sahih al-Bukhari, Book of Knowledge, Hadith 122 (also 3401 and 4725), and Sahih Muslim, Book of Virtues — Musa's young man named as Yusha ibn Nun"
+    ],
+    refsAr: [
+      "سورة الكهف (١٨:٦٠–٦٢) — «فتاه»، وقد سُمّي في الحديث يوشع",
+      "صحيح البخاري، كتاب العلم، حديث ١٢٢ (وكذا ٣٤٠١ و٤٧٢٥)، وصحيح مسلم، كتاب الفضائل — تسمية فتى موسى يوشعَ بن نون"
     ]
   },
   {
@@ -512,6 +629,10 @@ const PROPHETS = [
     refs: [
       "Surah Al-Baqarah (2:246-251) — the prophet who appointed Talut as king",
       "Ibn Kathir, Stories of the Prophets — identified as Shamwil (Samuel)"
+    ],
+    refsAr: [
+      "سورة البقرة (٢:٢٤٦–٢٥١) — النبيّ الذي بعث لهم طالوت ملكًا",
+      "ابن كثير، قصص الأنبياء — تسميته شمويل (خبرٌ تاريخي)"
     ]
   },
   {
@@ -526,6 +647,10 @@ const PROPHETS = [
     refs: [
       "Musannaf Ibn Abi Shaybah — account of the discovery of Danyal's body during Omar's caliphate",
       "Ibn Kathir, Al-Bidaya wan-Nihaya — his mention among the prophets of Israel"
+    ],
+    refsAr: [
+      "مصنّف ابن أبي شيبة — خبر العثور على جسد دانيال في خلافة عمر",
+      "ابن كثير، البداية والنهاية — ذكره في أنبياء بني إسرائيل"
     ]
   },
   {
@@ -542,6 +667,12 @@ const PROPHETS = [
       "Surah Al-Anbiya (21:107) — sent as a mercy to all worlds",
       "Surah Al-Alaq (96:1-5) — the first verses revealed in the cave of Hira",
       "Surah Al-Isra (17:1) — the Night Journey (Isra and Mi'raj)"
+    ],
+    refsAr: [
+      "سورة الأحزاب (٣٣:٤٠) — خاتم النبيّين",
+      "سورة الأنبياء (٢١:١٠٧) — أُرسل رحمةً للعالمين",
+      "سورة العلق (٩٦:١–٥) — أوّل ما نزل، في غار حراء",
+      "سورة الإسراء (١٧:١) — الإسراء والمعراج"
     ]
   }
 ];
@@ -561,6 +692,11 @@ const COMPANIONS = [
       "Surah At-Tawbah (9:40) — companionship in the cave during the migration",
       "Sahih al-Bukhari — narrations on his unwavering belief and leadership",
       "Historical sira accounts of the first Caliphate (632-634 CE)"
+    ],
+    refsAr: [
+      "سورة التوبة (٩:٤٠) — صحبته في الغار في الهجرة",
+      "صحيح البخاري — أحاديث في ثبات إيمانه وقيادته",
+      "روايات السيرة التاريخية عن الخلافة الأولى (٦٣٢–٦٣٤م)"
     ]
   },
   {
@@ -575,6 +711,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — numerous narrations on his justice and piety",
       "Historical accounts of the Caliphate (634-644 CE) and administrative reforms"
+    ],
+    refsAr: [
+      "صحيح البخاري وصحيح مسلم — أحاديث كثيرة في عدله وورعه",
+      "الأخبار التاريخية عن خلافته (٦٣٤–٦٤٤م) وتنظيماته الإدارية"
     ]
   },
   {
@@ -589,6 +729,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — narrations on the compilation of the Quran",
       "Historical accounts of the Caliphate (644-656 CE)"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث جمع القرآن",
+      "الأخبار التاريخية عن خلافته (٦٤٤–٦٥٦م)"
     ]
   },
   {
@@ -603,6 +747,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — narrations on his knowledge and courage",
       "Historical accounts of the Caliphate (656-661 CE)"
+    ],
+    refsAr: [
+      "صحيح البخاري وصحيح مسلم — أحاديث في علمه وشجاعته",
+      "الأخبار التاريخية عن خلافته (٦٥٦–٦٦١م)"
     ]
   },
   {
@@ -616,7 +764,11 @@ const COMPANIONS = [
     summaryAr: "تاجرةٌ ناجحةٌ ذاتُ مكانةٍ في مكة، وأولُ من آمن برسالة النبيِّ ﷺ. ثبّتته وواسته بعد نزول الوحي الأوّل، وبذلت له مالَها ونفسها. وبقيت زوجتَه الوفيّة حتى ماتت، وظلّ ﷺ يذكرها بالحبّ والتكريم بعدها.",
     refs: [
       "Sahih al-Bukhari — the account of the first revelation and Khadijah's support",
-      "Sira accounts describing her as one of the four greatest women in Islam"
+      "Jami at-Tirmidhi, Hadith 3878 — 'Sufficient for you among the women of the world: Maryam, Khadijah, Fatimah and Asiyah' (outside the two Sahihs)"
+    ],
+    refsAr: [
+      "صحيح البخاري — خبر بدء الوحي ومؤازرة خديجة",
+      "جامع الترمذي، حديث ٣٨٧٨ — «حسبك من نساء العالمين: مريم ابنة عمران، وخديجة بنت خويلد، وفاطمة بنت محمد، وآسية امرأة فرعون» (خارج الصحيحين)"
     ]
   },
   {
@@ -629,8 +781,12 @@ const COMPANIONS = [
     summary: "The daughter of Abu Bakr and wife of the Prophet ﷺ, Aisha became one of the most important sources of hadith and Islamic jurisprudence, narrating thousands of traditions and teaching both men and women after the Prophet's death.",
     summaryAr: "أمُّ المؤمنين بنتُ أبي بكرٍ الصدّيق وزوجُ النبيِّ ﷺ. صارت من أهمّ مصادر الحديث والفقه في الإسلام، روت آلافَ الأحاديث، وتصدّرت لتعليم الرجال والنساء بعد وفاة النبيِّ ﷺ.",
     refs: [
-      "Sahih al-Bukhari & Sahih Muslim — thousands of hadith narrated through her",
+      "Sahih al-Bukhari & Sahih Muslim — she is among the companions who narrated the most hadith",
       "Historical accounts of her role as a teacher and jurist in Madinah"
+    ],
+    refsAr: [
+      "صحيح البخاري وصحيح مسلم — وهي من أكثر الصحابة روايةً للحديث",
+      "الأخبار التاريخية عن مكانتها معلّمةً وفقيهةً في المدينة"
     ]
   },
   {
@@ -645,6 +801,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — narrations describing her status and closeness to the Prophet ﷺ",
       "Sira accounts of her life in Madinah"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث في منزلتها وقربها من النبي ﷺ",
+      "روايات السيرة عن حياتها في المدينة"
     ]
   },
   {
@@ -659,6 +819,10 @@ const COMPANIONS = [
     refs: [
       "Sira accounts of his persecution and steadfastness in early Makkah",
       "Sahih al-Bukhari — narrations on his role as the Prophet's muezzin"
+    ],
+    refsAr: [
+      "روايات السيرة عن تعذيبه وثباته في مكة أوّل الإسلام",
+      "صحيح البخاري — أحاديث في أذانه للنبي ﷺ"
     ]
   },
   {
@@ -673,6 +837,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the title 'Sword of Allah' given by the Prophet ﷺ",
       "Historical accounts of the Battles of Mu'tah, Yamamah, and the conquests of Syria and Iraq"
+    ],
+    refsAr: [
+      "صحيح البخاري — تسمية النبي ﷺ له «سيفًا من سيوف الله»",
+      "الأخبار التاريخية عن مؤتة واليمامة وفتوح الشام والعراق"
     ]
   },
   {
@@ -685,8 +853,12 @@ const COMPANIONS = [
     summary: "Despite accepting Islam relatively late, Abu Hurairah devoted himself to staying close to the Prophet ﷺ to memorize his sayings, becoming the most prolific narrator of hadith in Islamic history.",
     summaryAr: "أسلم متأخّرًا نسبيًّا، فوقف نفسه على ملازمة النبيِّ ﷺ ليحفظ حديثه وأقواله، فصار أكثرَ الصحابة روايةً للحديث في تاريخ الإسلام كلِّه.",
     refs: [
-      "Sahih al-Bukhari & Sahih Muslim — thousands of hadith attributed to him",
+      "Sahih al-Bukhari & Sahih Muslim — the companion who narrated more hadith than any other",
       "Biographical accounts of his dedication to learning from the Prophet ﷺ"
+    ],
+    refsAr: [
+      "صحيح البخاري وصحيح مسلم — أكثر الصحابة روايةً للحديث",
+      "كتب التراجم عن ملازمته النبيَّ ﷺ لطلب العلم"
     ]
   },
   {
@@ -701,6 +873,10 @@ const COMPANIONS = [
     refs: [
       "Sira accounts of his long journey to find the truth before meeting the Prophet ﷺ",
       "Historical accounts of the Battle of the Trench (Khandaq), 5 AH"
+    ],
+    refsAr: [
+      "روايات السيرة عن رحلته الطويلة في طلب الحقّ قبل لقاء النبي ﷺ",
+      "الأخبار التاريخية عن غزوة الخندق (سنة ٥ هـ)"
     ]
   },
   {
@@ -715,6 +891,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — narrations highlighting his closeness to the Prophet ﷺ and knowledge",
       "Classical tafsir literature, much of which traces back to his explanations"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث في قربه من النبي ﷺ وفي علمه",
+      "كتب التفسير الأولى، وكثيرٌ مما فيها يرجع إلى تفسيره"
     ]
   },
   {
@@ -729,6 +909,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — her advice during the events of Hudaybiyyah",
       "Sira accounts of her early migration to Abyssinia and later to Madinah"
+    ],
+    refsAr: [
+      "صحيح البخاري — مشورتها يوم الحديبية",
+      "روايات السيرة عن هجرتها إلى الحبشة ثم إلى المدينة"
     ]
   },
   {
@@ -743,6 +927,10 @@ const COMPANIONS = [
     refs: [
       "Historical accounts of the Battle of Uhud (3 AH) and his martyrdom",
       "Sira accounts of his acceptance of Islam and defense of the Muslims in Makkah"
+    ],
+    refsAr: [
+      "الأخبار التاريخية عن غزوة أحد (سنة ٣ هـ) واستشهاده",
+      "روايات السيرة عن إسلامه ونصرته المسلمين في مكة"
     ]
   },
   {
@@ -757,6 +945,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — narrations on his courage and dedication",
       "Sira accounts of his role in the Battles of Badr, Uhud, and beyond"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث في شجاعته وبذله",
+      "روايات السيرة عن مشاهده في بدر وأحد وما بعدهما"
     ]
   },
   {
@@ -771,6 +963,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — narrations on his sacrifices at Uhud",
       "Historical accounts of his generosity in spending for the sake of Islam"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث في فدائه النبيَّ ﷺ يوم أحد",
+      "الأخبار التاريخية عن جوده وإنفاقه في سبيل الله"
     ]
   },
   {
@@ -783,8 +979,12 @@ const COMPANIONS = [
     summary: "One of the earliest Muslims and one of the ten promised Paradise, Sa'd was the military commander who led the decisive Battle of Al-Qadisiyyah, opening Persia to Islam. The Prophet ﷺ prayed that his supplications would always be answered.",
     summaryAr: "من السابقين الأوّلين إلى الإسلام، وأحدُ العشرة المبشَّرين بالجنّة. قاد المسلمين في معركة القادسية الفاصلة ففُتحت بها بلادُ فارس، ودعا له النبيُّ ﷺ أن يُستجاب دعاؤه فكان مُجابَ الدعوة (أي لا يكاد يدعو إلا استُجيب له).",
     refs: [
-      "Sahih Muslim — the Prophet's prayer for Sa'd's supplication to be answered",
+      "Jami at-Tirmidhi, Hadith 3751 — 'O Allah, answer Sa'd when he calls on You' (outside the two Sahihs)",
       "Historical accounts of the Battle of Al-Qadisiyyah (636 CE)"
+    ],
+    refsAr: [
+      "جامع الترمذي، حديث ٣٧٥١ — «اللهم استجب لسعدٍ إذا دعاك» (خارج الصحيحين)",
+      "الأخبار التاريخية عن معركة القادسية (٦٣٦م)"
     ]
   },
   {
@@ -799,6 +999,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the title 'Trustee of the Nation'",
       "Historical accounts of the conquest of Syria and his governance"
+    ],
+    refsAr: [
+      "صحيح البخاري — «أمين هذه الأمة»",
+      "الأخبار التاريخية عن فتح الشام وولايته عليها"
     ]
   },
   {
@@ -813,6 +1017,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — his generosity and his brotherhood with Sa'd ibn ar-Rabi",
       "Sira accounts of his donations during the expedition of Tabuk"
+    ],
+    refsAr: [
+      "صحيح البخاري — جوده، ومؤاخاته سعدَ بن الربيع",
+      "روايات السيرة عن نفقته في غزوة تبوك"
     ]
   },
   {
@@ -827,6 +1035,10 @@ const COMPANIONS = [
     refs: [
       "Jami at-Tirmidhi — the hadith listing the ten promised Paradise",
       "Sira accounts of his early acceptance of Islam"
+    ],
+    refsAr: [
+      "جامع الترمذي — حديث العشرة المبشّرين بالجنة",
+      "روايات السيرة عن إسلامه المبكّر"
     ]
   },
   {
@@ -841,6 +1053,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the account of his burial at Uhud",
       "Sira accounts of his role as the first envoy to Madinah"
+    ],
+    refsAr: [
+      "صحيح البخاري — خبر تكفينه يوم أحد",
+      "روايات السيرة عن كونه أوّل سفيرٍ إلى المدينة"
     ]
   },
   {
@@ -855,6 +1071,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari, Book of the Merits of the Ansar, Hadith 3803 — the Throne shaking at his death",
       "Ibn Ishaq and Ibn Sa'd — his acceptance of Islam through Mus'ab and his words at Badr"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب مناقب الأنصار، حديث ٣٨٠٣ — اهتزاز العرش لموته",
+      "ابن إسحاق وابن سعد — إسلامه على يد مصعب، وكلمته يوم بدر (سيرة تاريخية)"
     ]
   },
   {
@@ -867,8 +1087,12 @@ const COMPANIONS = [
     summary: "Ammar and his parents Yasir and Sumayya were among the first to accept Islam and the first to endure persecution. His mother Sumayya was the first martyr in Islam. The Prophet ﷺ said that Paradise yearns for Ammar.",
     summaryAr: "كان هو وأبواه ياسرٌ وسميّةُ من أوائل من أسلم، وأولَ من نالهم العذابُ في مكة. وأمُّه سميّةُ أولُ شهيدةٍ في الإسلام. وقال النبيُّ ﷺ إنّ الجنّة تشتاق إلى عمّار.",
     refs: [
-      "Sahih al-Bukhari — 'Paradise yearns for three: Ali, Ammar, and Salman'",
+      "Sahih al-Bukhari, Hadith 447 — 'Ammar will be killed by the transgressing party; he calls them to Paradise and they call him to the Fire'",
       "Sira accounts of the persecution of the family of Yasir"
+    ],
+    refsAr: [
+      "صحيح البخاري، حديث ٤٤٧ — «ويح عمار، تقتله الفئة الباغية، يدعوهم إلى الجنة ويدعونه إلى النار»",
+      "روايات السيرة عن تعذيب آل ياسر"
     ]
   },
   {
@@ -881,8 +1105,12 @@ const COMPANIONS = [
     summary: "One of the earliest converts to Islam outside Makkah, Abu Dharr was known for his extreme truthfulness and ascetic lifestyle. The Prophet ﷺ compared his truthfulness to that of Isa ibn Maryam in his community.",
     summaryAr: "من أوائل من أسلم من خارج مكة، اشتُهر بشدّة صدقه وبزهده في الدنيا. وشبّه النبيُّ ﷺ صدقَه بصدق عيسى ابن مريمَ عليه السلام في قومه.",
     refs: [
-      "Sahih Muslim — 'The earth has not carried nor the sky covered a man more truthful than Abu Dharr'",
+      "Jami at-Tirmidhi, Hadith 3801, and Sunan Ibn Majah, Hadith 156 — 'The sky has not shaded, nor the earth carried, a man more truthful than Abu Dharr' (outside the two Sahihs)",
       "Sira accounts of his early conversion and asceticism"
+    ],
+    refsAr: [
+      "جامع الترمذي، حديث ٣٨٠١، وسنن ابن ماجه، حديث ١٥٦ — «ما أظلّت الخضراء ولا أقلّت الغبراء أصدق من أبي ذرّ» (خارج الصحيحين)",
+      "روايات السيرة عن إسلامه المبكّر وزهده"
     ]
   },
   {
@@ -897,6 +1125,10 @@ const COMPANIONS = [
     refs: [
       "Surah Al-Ahzab (33:37) — the only companion named in the Quran",
       "Historical accounts of the Battle of Mu'tah (629 CE) and his martyrdom"
+    ],
+    refsAr: [
+      "سورة الأحزاب (٣٣:٣٧) — الصحابيّ الوحيد المسمّى في القرآن",
+      "الأخبار التاريخية عن مؤتة (٦٢٩م) واستشهاده"
     ]
   },
   {
@@ -911,6 +1143,10 @@ const COMPANIONS = [
     refs: [
       "Sira accounts of his speech before the Negus of Abyssinia",
       "Sahih al-Bukhari — his martyrdom at Mu'tah and the title 'the Flyer'"
+    ],
+    refsAr: [
+      "روايات السيرة عن كلمته بين يدي النجاشي",
+      "صحيح البخاري — استشهاده في مؤتة، ولقبه «ذو الجناحين»"
     ]
   },
   {
@@ -925,6 +1161,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — his appointment as judge of Yemen",
       "Jami at-Tirmidhi — 'the most knowledgeable of halal and haram'"
+    ],
+    refsAr: [
+      "صحيح البخاري — بعثه إلى اليمن",
+      "جامع الترمذي — «وأعلمهم بالحلال والحرام معاذ بن جبل»"
     ]
   },
   {
@@ -939,6 +1179,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the Quran manuscript entrusted to Hafsa",
       "Sira accounts of her dedication to fasting and night prayer"
+    ],
+    refsAr: [
+      "صحيح البخاري — الصحف التي حُفظت عند حفصة",
+      "روايات السيرة عن صيامها وقيامها"
     ]
   },
   {
@@ -952,7 +1196,11 @@ const COMPANIONS = [
     summaryAr: "أمُّ عمّار بن ياسر، وأولُ من بذل نفسه في سبيل الإسلام. أبَت أن تترك دينها تحت التعذيب الشديد حتى قتلها أبو جهل، فكانت أولَ شهيدةٍ في تاريخ الإسلام.",
     refs: [
       "Sira accounts of the early persecution in Makkah",
-      "The Prophet ﷺ passed by the family of Yasir and said 'Patience, O family of Yasir, for your appointment is Paradise'"
+      "The Prophet ﷺ passed by the family of Yasir and said 'Patience, O family of Yasir, for your appointment is Paradise' — reported by al-Hakim and at-Tabarani (outside the six collections)"
+    ],
+    refsAr: [
+      "روايات السيرة عن التعذيب في مكة أوّل الإسلام",
+      "مرّ النبيُّ ﷺ بآل ياسر فقال: «صبرًا آل ياسر، فإنّ موعدكم الجنة» — رواه الحاكم والطبراني (خارج الكتب الستة)"
     ]
   },
   {
@@ -966,7 +1214,11 @@ const COMPANIONS = [
     summaryAr: "خدم النبيَّ ﷺ من عمر العاشرة نحوَ عشر سنين، فما عاتبه النبيُّ ﷺ على شيءٍ قطّ. وصار من أكثر الصحابة روايةً للحديث، وعُمِّر حتى جاوز المئة سنة.",
     refs: [
       "Sahih al-Bukhari — 'He never said to me \"why did you do this\" or \"why didn't you do that\"'",
-      "Sahih Muslim — thousands of hadith narrated through him"
+      "Sahih Muslim — among the companions who narrated the most hadith"
+    ],
+    refsAr: [
+      "صحيح البخاري — «ما قال لي: لِمَ صنعتَ؟ ولا: ألّا صنعتَ؟»",
+      "صحيح مسلم — من أكثر الصحابة روايةً للحديث"
     ]
   },
   {
@@ -979,8 +1231,12 @@ const COMPANIONS = [
     summary: "The Prophet صلى الله عليه وسلم said that Ubayy was the best reciter of the Quran among the companions, and told him that Allah had commanded that the Quran be recited to him. He was one of the scribes of revelation and a leading scholar of the Quran in Madinah.",
     summaryAr: "قال النبيُّ ﷺ إنّ أُبيًّا أقرأُ أصحابه للقرآن، وأخبره أنّ الله أمره أن يقرأ عليه القرآن. وكان من كتبة الوحي، ومن كبار علماء القرآن بالمدينة.",
     refs: [
-      "Sahih al-Bukhari, Book of Virtues of the Quran — 'The best reciter among you is Ubayy ibn Ka'b'",
+      "Sahih al-Bukhari, Book of Virtues of the Quran, Hadith 5005 — Umar said: 'Ubayy is the best reciter among us'",
       "Sahih Muslim — his status as a leading Quranic authority"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب فضائل القرآن، حديث ٥٠٠٥ — قال عمر: «أُبيٌّ أقرؤنا»",
+      "صحيح مسلم — مكانته في القرآن وإقرائه"
     ]
   },
   {
@@ -995,6 +1251,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Quran — 'given a flute from the flutes of Dawud'",
       "Sahih Muslim — his role as governor and judge"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب فضائل القرآن — «لقد أوتيتَ مزمارًا من مزامير آل داود»",
+      "صحيح مسلم — ولايته وقضاؤه"
     ]
   },
   {
@@ -1009,6 +1269,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — numerous hadith narrated through him",
       "Sahih Muslim — his narrations on prayer, charity, and the Day of Judgment"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث كثيرة مرويّةٌ عنه",
+      "صحيح مسلم — مرويّاته في الصلاة والصدقة ويوم القيامة"
     ]
   },
   {
@@ -1023,6 +1287,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — narrations on his generosity and leadership",
       "Sira accounts of the Pledge of Aqabah and his role among the Ansar"
+    ],
+    refsAr: [
+      "صحيح البخاري — أحاديث في جوده وسيادته",
+      "روايات السيرة عن بيعة العقبة ومكانته في الأنصار"
     ]
   },
   {
@@ -1037,6 +1305,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the Prophet's arrival and stay at his home",
       "Historical accounts of his participation in battles until the siege of Constantinople"
+    ],
+    refsAr: [
+      "صحيح البخاري — نزول النبي ﷺ في داره عند قدومه المدينة",
+      "الأخبار التاريخية عن جهاده حتى حصار القسطنطينية"
     ]
   },
   {
@@ -1051,6 +1323,10 @@ const COMPANIONS = [
     refs: [
       "Sahih Muslim — the Prophet's love and respect for Umm Ayman",
       "Sira accounts of her care for the Prophet ﷺ from childhood"
+    ],
+    refsAr: [
+      "صحيح مسلم — حبّ النبي ﷺ لأمّ أيمن وبرّه بها",
+      "روايات السيرة عن حضانتها النبيَّ ﷺ منذ صغره"
     ]
   },
   {
@@ -1065,6 +1341,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Companions — 'Learn the Quran from four: Abdullah ibn Mas'ud...'",
       "Sahih Muslim — his deep knowledge and early conversion"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب فضائل الصحابة — «استقرئوا القرآن من أربعة: من عبد الله بن مسعود…»",
+      "صحيح مسلم — علمه، وسبقه إلى الإسلام"
     ]
   },
   {
@@ -1079,6 +1359,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari, Book of Merits of the Companions — his complaint of suffering and the Prophet's response",
       "Sira accounts of the persecution of early Muslims in Makkah"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب المناقب — شكواه ما لقي، وجواب النبي ﷺ",
+      "روايات السيرة عن تعذيب المسلمين الأوّلين في مكة"
     ]
   },
   {
@@ -1091,8 +1375,12 @@ const COMPANIONS = [
     summary: "A Roman-raised Arab who gave up all his wealth to the Quraysh in exchange for being allowed to migrate to Madinah. When the Prophet ﷺ heard of this, he said 'Suhayb has profited! Suhayb has profited!' — and the verse 'And among people is he who sells himself seeking the pleasure of Allah' was revealed about him.",
     summaryAr: "عربيٌّ نشأ في بلاد الروم، بذل مالَه كلَّه لقريشٍ ثمنًا لأن يُؤذَن له بالهجرة إلى المدينة. فلمّا بلغ ذلك النبيَّ ﷺ قال: «رَبِحَ صُهيبٌ، رَبِحَ صُهيبٌ»، ونزل فيه قوله تعالى: ﴿وَمِنَ ٱلنَّاسِ مَن يَشۡرِي نَفۡسَهُ ٱبۡتِغَآءَ مَرۡضَاتِ ٱللَّهِۚ﴾.",
     refs: [
-      "Sahih Muslim — the account of his migration and sacrifice",
+      "Sahih Muslim — 'How wonderful is the affair of the believer' is narrated through him",
       "Surah Al-Baqarah (2:207) — 'sells himself seeking the pleasure of Allah' (identified as referring to Suhayb in tafsir)"
+    ],
+    refsAr: [
+      "صحيح مسلم — حديث «عجبًا لأمر المؤمن» من روايته",
+      "سورة البقرة (٢:٢٠٧) — في من يبذل نفسه ابتغاء مرضاة الله، وذكر المفسّرون أنها في صهيب"
     ]
   },
   {
@@ -1107,6 +1395,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari, Book of Virtues of the Quran — the compilation of the Quran",
       "Historical accounts of the standardization of the Mushaf under Osman"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب فضائل القرآن — جمع القرآن",
+      "الأخبار التاريخية عن جمع الناس على مصحفٍ واحد في عهد عثمان"
     ]
   },
   {
@@ -1121,6 +1413,10 @@ const COMPANIONS = [
     refs: [
       "Sahih Muslim — narrations on his acceptance of Islam",
       "Historical accounts of the conquest of Egypt (640-642 CE)"
+    ],
+    refsAr: [
+      "صحيح مسلم — خبر إسلامه",
+      "الأخبار التاريخية عن فتح مصر (٦٤٠–٦٤٢م)"
     ]
   },
   {
@@ -1135,6 +1431,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the Prophet's love for Usama and his appointment as commander",
       "Sira accounts of the expedition of Usama"
+    ],
+    refsAr: [
+      "صحيح البخاري — حبّ النبي ﷺ لأسامة وتأميره",
+      "روايات السيرة عن بعث أسامة"
     ]
   },
   {
@@ -1148,7 +1448,11 @@ const COMPANIONS = [
     summaryAr: "ائتمنه النبيُّ ﷺ وحده على أسماء المنافقين، فسُمّي صاحبَ سرِّ رسول الله ﷺ. وكان يسأله عن الشرّ والفتن بينما يسأله الناسُ عن الخير، ليقيَ نفسَه ويقيَ الأمّةَ ما هو آتٍ.",
     refs: [
       "Sahih al-Bukhari, Book of Tribulations — his questions about evil and trials",
-      "Sahih Muslim — his role as keeper of the secret"
+      "Sahih al-Bukhari, Hadith 3743 — Abu ad-Darda called him 'the keeper of the secret that no one else knows'"
+    ],
+    refsAr: [
+      "صحيح البخاري، كتاب الفتن — سؤاله عن الشرّ مخافةَ أن يدركه",
+      "صحيح البخاري، حديث ٣٧٤٣ — قال عنه أبو الدرداء: «صاحب السرّ الذي لا يعلمه غيره»"
     ]
   },
 
@@ -1164,6 +1468,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — his brotherhood with Salman al-Farisi and lessons in balance",
       "Sira accounts of his role as judge and teacher in Damascus"
+    ],
+    refsAr: [
+      "صحيح البخاري — مؤاخاته سلمانَ الفارسيّ، ونصيحة سلمان له في الاعتدال",
+      "روايات السيرة عن قضائه وتعليمه في دمشق"
     ]
   },
   {
@@ -1177,7 +1485,11 @@ const COMPANIONS = [
     summaryAr: "أحدُ نقباء الأنصار (أي كبرائهم الذين اختارهم النبيُّ ﷺ عليهم)، شهد بيعتَي العقبة كلتيهما وشهد بدرًا. علّم أهلَ الصُّفَّة القرآن، ثم نشر تعليمَ القرآن في بلاد الشام.",
     refs: [
       "Sahih al-Bukhari — his narrations of the pledge of Aqabah",
-      "Sahih Muslim — his hadith on the virtue of teaching the Quran"
+      "Sahih al-Bukhari, Hadith 756, and Sahih Muslim — 'There is no prayer for one who does not recite al-Fatihah' is narrated through him"
+    ],
+    refsAr: [
+      "صحيح البخاري — روايته بيعة العقبة",
+      "صحيح البخاري، حديث ٧٥٦، وصحيح مسلم — حديث «لا صلاة لمن لم يقرأ بفاتحة الكتاب» من روايته"
     ]
   },
   {
@@ -1192,6 +1504,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — 'O Allah, support him with the Holy Spirit'",
       "Sira accounts of his poetry in defense of Islam"
+    ],
+    refsAr: [
+      "صحيح البخاري — «اللهم أيّده بروح القدس»",
+      "روايات السيرة عن شعره في الذبّ عن الإسلام"
     ]
   },
   {
@@ -1206,6 +1522,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the account of the three commanders of Mu'tah",
       "Sira accounts of his poetry and martyrdom"
+    ],
+    refsAr: [
+      "صحيح البخاري — خبر الأمراء الثلاثة في مؤتة",
+      "روايات السيرة عن شعره واستشهاده"
     ]
   },
   {
@@ -1220,6 +1540,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari & Sahih Muslim — the full story of his repentance",
       "Surah At-Tawbah (9:118) — the acceptance of the repentance of the three"
+    ],
+    refsAr: [
+      "صحيح البخاري وصحيح مسلم — قصّة توبته كاملة",
+      "سورة التوبة (٩:١١٨) — توبة الله على الثلاثة الذين خُلّفوا"
     ]
   },
   {
@@ -1234,6 +1558,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the story of the garden of Bayruha",
       "Sahih Muslim — his defense of the Prophet ﷺ at Uhud"
+    ],
+    refsAr: [
+      "صحيح البخاري — قصّة بستان بيرحاء",
+      "صحيح مسلم — ذبّه عن النبي ﷺ يوم أحد"
     ]
   },
   {
@@ -1248,6 +1576,10 @@ const COMPANIONS = [
     refs: [
       "Sahih Muslim — the Prophet heard her footsteps in Paradise",
       "Sahih al-Bukhari — her patience at the death of her child"
+    ],
+    refsAr: [
+      "صحيح مسلم — سمع النبيُّ ﷺ خَشْفتها في الجنة",
+      "صحيح البخاري — صبرها عند موت ابنها"
     ]
   },
   {
@@ -1262,6 +1594,10 @@ const COMPANIONS = [
     refs: [
       "Sira accounts of the Battle of Uhud and her defense of the Prophet ﷺ",
       "Historical accounts of her role at the Battle of Yamamah"
+    ],
+    refsAr: [
+      "روايات السيرة عن أحد وذبّها عن النبي ﷺ",
+      "الأخبار التاريخية عن شهودها اليمامة"
     ]
   },
   {
@@ -1276,6 +1612,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the story of the two belts during the Hijrah",
       "Sira accounts of her long life and firmness upon truth"
+    ],
+    refsAr: [
+      "صحيح البخاري — قصّة النطاقين في الهجرة",
+      "روايات السيرة عن طول عمرها وثباتها على الحقّ"
     ]
   },
   {
@@ -1290,6 +1630,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the joy of the Muslims at his birth",
       "Historical accounts of his worship and courage"
+    ],
+    refsAr: [
+      "صحيح البخاري — فرح المسلمين بمولده",
+      "الأخبار التاريخية عن عبادته وشجاعته"
     ]
   },
   {
@@ -1304,6 +1648,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the Prophet's words at his death",
       "Sira accounts of his asceticism and early conversion"
+    ],
+    refsAr: [
+      "صحيح البخاري — ما قاله النبي ﷺ عند موته",
+      "روايات السيرة عن زهده وسبقه إلى الإسلام"
     ]
   },
   {
@@ -1318,6 +1666,10 @@ const COMPANIONS = [
     refs: [
       "Sunan Abu Dawud — permission to write the hadith (As-Sahifa as-Sadiqa)",
       "Sahih al-Bukhari — the Prophet's guidance to him on moderation in worship"
+    ],
+    refsAr: [
+      "سنن أبي داود — الإذن له بكتابة الحديث (الصحيفة الصادقة)",
+      "صحيح البخاري — توجيه النبي ﷺ له إلى الاعتدال في العبادة"
     ]
   },
   {
@@ -1332,6 +1684,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — the glad tidings given to Thabit",
       "Sahih Muslim — 'He is from the people of Paradise'"
+    ],
+    refsAr: [
+      "صحيح البخاري — بشارة النبي ﷺ لثابت",
+      "صحيح مسلم — «بل هو من أهل الجنة»"
     ]
   },
   {
@@ -1346,6 +1702,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — 'Take the Quran from four: ... and Salim'",
       "Sira accounts of his leading the prayer and martyrdom at Yamamah"
+    ],
+    refsAr: [
+      "صحيح البخاري — «استقرئوا القرآن من أربعة…»، وفيهم سالم",
+      "روايات السيرة عن إمامته الصلاة واستشهاده في اليمامة"
     ]
   },
   {
@@ -1360,6 +1720,10 @@ const COMPANIONS = [
     refs: [
       "Surah Al-Ahzab (33:37) — her marriage decreed by Allah",
       "Sahih Muslim — Aisha's praise of her piety and charity"
+    ],
+    refsAr: [
+      "سورة الأحزاب (٣٣:٣٧) — زواجها الذي قضاه الله",
+      "صحيح مسلم — ثناء عائشة على دينها وصدقتها"
     ]
   },
   {
@@ -1374,6 +1738,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — her marriage to the Prophet ﷺ after Khaybar",
       "Jami at-Tirmidhi — 'You are the daughter of a prophet, your uncle is a prophet...'"
+    ],
+    refsAr: [
+      "صحيح البخاري — زواجها من النبي ﷺ بعد خيبر",
+      "جامع الترمذي — «إنكِ لابنةُ نبيّ، وإنّ عمّكِ لنبيّ…»"
     ]
   },
   {
@@ -1388,6 +1756,10 @@ const COMPANIONS = [
     refs: [
       "Sunan Abu Dawud — the freeing of her people upon her marriage",
       "Sahih Muslim — her long remembrance of Allah after Fajr"
+    ],
+    refsAr: [
+      "سنن أبي داود — عتق قومها بزواجها",
+      "صحيح مسلم — ذكرها الطويل بعد الفجر"
     ]
   },
   {
@@ -1402,6 +1774,10 @@ const COMPANIONS = [
     refs: [
       "Sahih al-Bukhari — her giving her day to Aisha",
       "Sira accounts of her early Islam and migration to Abyssinia"
+    ],
+    refsAr: [
+      "صحيح البخاري — هبتها يومها لعائشة",
+      "روايات السيرة عن إسلامها المبكّر وهجرتها إلى الحبشة"
     ]
   },
   {
@@ -1416,6 +1792,10 @@ const COMPANIONS = [
     refs: [
       "Sahih Muslim — narrations of her piety",
       "Sira accounts of her marriage in the year of Qada' Umrah"
+    ],
+    refsAr: [
+      "صحيح مسلم — أخبار في دينها",
+      "روايات السيرة عن زواجها في عمرة القضاء"
     ]
   },
   {
@@ -1430,6 +1810,10 @@ const COMPANIONS = [
     refs: [
       "Sahih Muslim — taking the sword of the Prophet ﷺ with its right",
       "Sira accounts of his red band and bravery at Uhud"
+    ],
+    refsAr: [
+      "صحيح مسلم — أخذه سيف النبي ﷺ بحقّه",
+      "روايات السيرة عن عصابته الحمراء وشجاعته يوم أحد"
     ]
   },
   {
@@ -1444,6 +1828,10 @@ const COMPANIONS = [
     refs: [
       "Sahih Muslim — narrations transmitted through her",
       "Sira accounts of the migration to Abyssinia and her marriage to the Prophet ﷺ"
+    ],
+    refsAr: [
+      "صحيح مسلم — أحاديث مرويّةٌ عنها",
+      "روايات السيرة عن الهجرة إلى الحبشة وزواجها من النبي ﷺ"
     ]
   },
   {
@@ -1458,6 +1846,10 @@ const COMPANIONS = [
     refs: [
       "Sira accounts of her generosity and title 'Umm al-Masakin'",
       "Historical accounts of the Mothers of the Believers"
+    ],
+    refsAr: [
+      "روايات السيرة عن جودها ولقبها «أمّ المساكين»",
+      "الأخبار التاريخية عن أمّهات المؤمنين"
     ]
   }
 ];
@@ -1922,13 +2314,15 @@ const HADITHS = [
     title: "Your mother, then your mother, then your mother, then your father",
     titleAr: "أمّك ثم أمّك ثم أمّك ثم أبوك",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
-    keys: ["mother","father","parents","parent","family","mom","dad","dutiful","obey parents","أم","أمي","أب","والدين","بر الوالدين","عقوق","أهل"]
+    keys: ["mother","father","parents","parent","family","mom","dad","dutiful","obey parents","أم","الأم","أمي","امي","أمك","الوالدة","أب","الأب","أبي","والدين","الوالدين","بر الوالدين","بر الأم","عقوق","أهل"]
   },
   {
     arabic: "مَنْ غَشَّنَا فَلَيْسَ مِنَّا",
     text: "Whoever cheats us is not one of us.",
     narrator: "Abu Hurairah",
-    ref: "Sahih Muslim, Book of Faith, Hadith 102",
+    /* "من غشنا فليس منا" is Muslim 101, where it follows "من حمل علينا السلاح";
+       102 is the grain story, whose words are "من غش فليس مني". */
+    ref: "Sahih Muslim, Book of Faith, Hadith 101",
     topic: "Honesty in Trade",
     title: "Cheating in business or selling",
     titleAr: "الغشّ في البيع والمعاملة",
@@ -2243,7 +2637,7 @@ const PARADISE_THEMES = [
     title: "Faith and Righteous Deeds",
     titleAr: "الإيمان والعمل الصالح",
     description: "Those who believe and do righteous deeds are promised gardens beneath which rivers flow, to dwell therein forever.",
-    descriptionAr: "الذين آمنوا وعملوا الصالحات وُعدوا بجنات تجري من تحتها الأنهار خالدين فيها أبداً.",
+    descriptionAr: "﴿ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ﴾ وُعدوا بجنات ﴿تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۖ﴾.",
     keys: ["faith","belief","iman","good deeds","righteous","paradise","jannah","reward","إيمان","عمل صالح","الصالحات","الجنة","أجر","ثواب"],
     refs: ["Surah Al-Baqarah (2:25)", "Surah Al-Kahf (18:107-108)"]
   },
@@ -2259,7 +2653,7 @@ const PARADISE_THEMES = [
     title: "Humility and Good Character",
     titleAr: "التواضع وحسن الخلق",
     description: "The 'servants of the Most Merciful' are described as walking humbly, responding to ill-treatment with peace, spending the night in prayer, and avoiding excess — their reward is the highest chambers of Paradise.",
-    descriptionAr: "عباد الرحمن يمشون على الأرض هوناً، وإذا خاطبهم الجاهلون قالوا سلاماً، ويقومون الليل، ولا يسرفون — وجزاؤهم الغرف العالية في الجنة.",
+    descriptionAr: "عباد الرحمن ﴿يَمۡشُونَ عَلَى ٱلۡأَرۡضِ هَوۡنٗا وَإِذَا خَاطَبَهُمُ ٱلۡجَٰهِلُونَ قَالُواْ سَلَٰمٗا﴾، ويقومون الليل، ولا يسرفون — وجزاؤهم الغرف العالية في الجنة.",
     keys: ["humility","humble","character","manners","akhlaq","gentle","insult","ill-treatment","argue","moderation","تواضع","أخلاق","حسن الخلق","لين","سفه","جدال","اعتدال","إسراف"],
     refs: ["Surah Al-Furqan (25:63-76)"]
   },
@@ -2283,7 +2677,7 @@ const PARADISE_THEMES = [
     title: "Remembrance of Allah and Prayer",
     titleAr: "ذكر الله والصلاة",
     description: "Regular remembrance of Allah (dhikr) and establishing prayer are described as the means by which hearts find rest and souls find protection from indecency and wrongdoing.",
-    descriptionAr: "بذكر الله تطمئن القلوب، وإقامة الصلاة تنهى عن الفحشاء والمنكر وتحفظ النفس.",
+    descriptionAr: "﴿بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ﴾، وإقامة الصلاة تنهى عن الفحشاء والمنكر وتحفظ النفس.",
     keys: ["prayer","salah","salat","dhikr","remembrance","anxious","anxiety","worried","worry","sad","sadness","depressed","depression","fear","lonely","peace","heart","صلاة","ذكر","قلق","خوف","حزن","اكتئاب","وحدة","طمأنينة","قلب","راحة"],
     refs: ["Surah Ar-Ra'd (13:28)", "Surah Al-Ankabut (29:45)"]
   },
@@ -2291,7 +2685,7 @@ const PARADISE_THEMES = [
     title: "Justice and Fairness",
     titleAr: "العدل والإنصاف",
     description: "Standing firmly for justice, even against oneself or one's own family, is commanded as a fundamental duty of the believer.",
-    descriptionAr: "القيام بالقسط شهادةً لله ولو على النفس أو الوالدين والأقربين، واجب أصيل على المؤمن.",
+    descriptionAr: "القيام بالقسط شهادةً لله ولو على النفس ﴿أَوِ ٱلۡوَٰلِدَيۡنِ وَٱلۡأَقۡرَبِينَۚ﴾، واجب أصيل على المؤمن.",
     keys: ["justice","just","fair","fairness","testimony","witness","dispute","conflict","court","rights","bias","عدل","إنصاف","قسط","شهادة","خصومة","نزاع","حق","حقوق","محاباة","ظلم"],
     refs: ["Surah An-Nisa (4:135)", "Surah Al-Ma'idah (5:8)"]
   },
@@ -2307,7 +2701,7 @@ const PARADISE_THEMES = [
     title: "Kindness to Parents",
     titleAr: "الإحسان إلى الوالدين",
     description: "Allah joins worship of Him with kindness to parents — commanding that they never be spoken to harshly, and that one lower the wing of humility and mercy to them in their old age.",
-    descriptionAr: "قرن الله عبادته بالإحسان إلى الوالدين، ونهى عن التأفف منهما، وأمر بخفض جناح الذل من الرحمة لهما عند الكبر.",
+    descriptionAr: "قرن الله عبادته بالإحسان إلى الوالدين، ونهى عن التأفف منهما، وأمر بخفض ﴿جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحۡمَةِ﴾ لهما عند الكبر.",
     keys: ["parents","parent","mother","father","mom","dad","family","old age","elderly","obey","disobey","ungrateful","والدين","أم","أب","بر","عقوق","كبر","أهل"],
     refs: ["Surah Al-Isra (17:23-24)", "Surah Luqman (31:14)"]
   },
@@ -2339,7 +2733,7 @@ const PARADISE_THEMES = [
     title: "Ease After Hardship",
     titleAr: "إنّ مع العسر يسراً",
     description: "Allah does not burden a soul beyond what it can bear. With hardship comes ease — stated twice — and Allah will bring about ease after difficulty.",
-    descriptionAr: "لا يكلّف الله نفساً إلا وسعها. وإنّ مع العسر يسراً، وقد تكرّرت البشرى مرتين، وسيجعل الله بعد عسرٍ يسراً.",
+    descriptionAr: "﴿لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ﴾. وإنّ مع العسر يسراً، وقد تكرّرت البشرى مرتين، و﴿سَيَجۡعَلُ ٱللَّهُ بَعۡدَ عُسۡرٖ يُسۡرٗا﴾.",
     keys: ["hardship","difficulty","difficult","struggle","struggling","suffering","distress","crisis","stuck","trapped","overwhelmed","cannot cope","exhausted","tired","burden","too much","relief","ease","hope","hopeless","give up","way out","worried","worry","anxious","scared","afraid","fear","sick","illness","pain","problem","problems","عسر","يسر","شدة","ضيق","كرب","مصيبة","تعب","إرهاق","فرج","مخرج","أمل","يأس","صعوبة","قلق","خوف","مرض","ألم","مشكلة"],
     refs: ["Surah Ash-Sharh (94:5-6)", "Surah Al-Baqarah (2:286)", "Surah At-Talaq (65:7)"]
   },
@@ -2358,7 +2752,7 @@ const WARNING_THEMES = [
     title: "Consuming Wealth Unjustly",
     titleAr: "أكل الأموال بالباطل",
     description: "Those who wrongfully consume the property of orphans are warned of a severe consequence in the Hereafter.",
-    descriptionAr: "الذين يأكلون أموال اليتامى ظلماً حُذّروا من عاقبة شديدة في الآخرة.",
+    descriptionAr: "﴿ٱلَّذِينَ يَأۡكُلُونَ أَمۡوَٰلَ ٱلۡيَتَٰمَىٰ ظُلۡمًا﴾ حُذّروا من عاقبة شديدة في الآخرة.",
     keys: ["orphan","orphans","wealth","money","property","inheritance","steal","unjust","cheat","يتيم","يتامى","مال","أموال","ميراث","سرقة","ظلم","غش","باطل"],
     refs: ["Surah An-Nisa (4:10)"]
   },
@@ -2406,7 +2800,7 @@ const WARNING_THEMES = [
     title: "Hoarding and Withholding Charity",
     titleAr: "كنز المال ومنع الزكاة",
     description: "Those who hoard gold and silver and do not spend in the path of Allah are warned of a painful punishment on the Day of Judgment.",
-    descriptionAr: "الذين يكنزون الذهب والفضة ولا ينفقونها في سبيل الله تُوعّدوا بعذاب أليم يوم القيامة.",
+    descriptionAr: "﴿ٱلَّذِينَ يَكۡنِزُونَ ٱلذَّهَبَ وَٱلۡفِضَّةَ وَلَا يُنفِقُونَهَا فِي سَبِيلِ ٱللَّهِ﴾ تُوعّدوا بعذاب أليم يوم القيامة.",
     keys: ["hoard","hoarding","stingy","greed","greedy","miser","zakat","withhold","selfish","كنز","بخل","شح","طمع","زكاة","منع","أنانية"],
     refs: ["Surah At-Tawbah (9:34-35)"]
   },
@@ -2414,7 +2808,7 @@ const WARNING_THEMES = [
     title: "Intoxicants and Gambling",
     titleAr: "الخمر والميسر",
     description: "Intoxicants and gambling are described as defilement from the work of Satan, which sow enmity and hatred and turn people away from the remembrance of Allah and from prayer.",
-    descriptionAr: "الخمر والميسر رجس من عمل الشيطان، يوقعان العداوة والبغضاء ويصدّان عن ذكر الله وعن الصلاة.",
+    descriptionAr: "الخمر والميسر ﴿رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ﴾، يوقعان العداوة والبغضاء ويصدّان ﴿عَن ذِكۡرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِۖ﴾.",
     keys: ["alcohol","drink","drunk","wine","beer","drug","drugs","gambling","bet","betting","lottery","casino","addiction","smoking","خمر","مسكر","شرب","ميسر","قمار","مراهنة","مخدرات","إدمان"],
     refs: ["Surah Al-Ma'idah (5:90-91)"]
   },
@@ -2422,7 +2816,7 @@ const WARNING_THEMES = [
     title: "Cheating in Weights and Measures",
     titleAr: "التطفيف في الكيل والميزان",
     description: "Woe is declared to those who take full measure from people but give less when they measure or weigh for them — a warning against every form of cheating in dealings.",
-    descriptionAr: "ويلٌ للمطففين الذين يستوفون حقهم من الناس ويبخسونهم إذا كالوهم أو وزنوهم — تحذير من كل صور الغش في المعاملات.",
+    descriptionAr: "﴿وَيۡلٞ لِّلۡمُطَفِّفِينَ﴾ الذين يستوفون حقهم من الناس ويبخسونهم ﴿إِذَا كَالُوهُمۡ أَو وَّزَنُوهُمۡ﴾ — تحذير من كل صور الغش في المعاملات.",
     keys: ["cheat","cheating","fraud","scam","short change","weigh","measure","business","trade","customer","deceive","exam","copy","تطفيف","غش","كيل","ميزان","خداع","تجارة","بخس","نصب"],
     refs: ["Surah Al-Mutaffifin (83:1-3)", "Surah Ar-Rahman (55:9)"]
   }

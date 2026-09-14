@@ -212,8 +212,8 @@ const FIQH_RULINGS = [
         ar: "ويُستحبّ الإكثار من النوافل بعد ذلك، جبرًا للنقص الذي لا يمكن قضاؤه عددًا." }
     ],
     evidence: [
-      { en: "Whoever sleeps through a prayer or forgets it, let him pray it when he remembers it — there is no expiation for it but that.",
-        ar: "مَنْ نَامَ عَنْ صَلَاةٍ أَوْ نَسِيَهَا فَلْيُصَلِّهَا إِذَا ذَكَرَهَا، لَا كَفَّارَةَ لَهَا إِلَّا ذَٰلِكَ",
+      { en: "Whoever forgets a prayer, let him pray it when he remembers it — there is no expiation for it but that. (In Muslim's narration: \"whoever forgets a prayer or sleeps through it\".)",
+        ar: "مَنْ نَسِيَ صَلَاةً فَلْيُصَلِّ إِذَا ذَكَرَهَا، لَا كَفَّارَةَ لَهَا إِلَّا ذَلِكَ",
         ref: "Sahih al-Bukhari, Book of the Times of Prayer, Hadith 597 — Sahih, agreed upon", refAr: "صحيح البخاري، كتاب مواقيت الصلاة، حديث ٥٩٧ — صحيح، متفق عليه" }
     ],
     scholars: [

@@ -84,7 +84,7 @@ const SURAH_CONCEPTS = {
   11: { c: "Holding on when nothing is changing",
         cAr: "الثبات حين لا يتغيّر شيء",
         w: "Nuh preached 950 years to almost no one. This is the surah of the long haul — which is why the Prophet ﷺ said Hud and its sisters turned his hair grey.",
-        wAr: "لبث نوحٌ ألف سنةٍ إلا خمسين عامًا ولم يؤمن معه إلا قليل. فهي سورة الطريق الطويل، ولذلك قال ﷺ: «شيّبتني هودٌ وأخواتها».",
+        wAr: "لبث نوحٌ ﴿أَلۡفَ سَنَةٍ إِلَّا خَمۡسِينَ عَامٗا﴾ ولم يؤمن معه إلا قليل. فهي سورة الطريق الطويل، ولذلك قال ﷺ: «شيّبتني هودٌ وأخواتها».",
         a: "11:112" },
 
   12: { c: "What looks like the disaster is the road",
@@ -102,7 +102,7 @@ const SURAH_CONCEPTS = {
   14: { c: "Thanking, and what happens when you stop",
         cAr: "الشكر، وما يقع إذا انقطع",
         w: "“If you are grateful I will surely increase you” — and the town that was secure and safe until it denied the favours of Allah.",
-        wAr: "﴿لَئِن شَكَرۡتُمۡ لَأَزِيدَنَّكُمۡۖ﴾ — والقريةُ كانت آمنةً مطمئنّةً حتى كفرت بأنعم الله.",
+        wAr: "﴿لَئِن شَكَرۡتُمۡ لَأَزِيدَنَّكُمۡۖ﴾ — والقريةُ كانت آمنةً مطمئنّةً حتى ﴿كَفَرَتۡ بِأَنۡعُمِ ٱللَّهِ﴾.",
         a: "14:7" },
 
   15: { c: "This Book will not be lost",
@@ -216,7 +216,7 @@ const SURAH_CONCEPTS = {
   33: { c: "Pressure separates people — and shows who was who all along",
         cAr: "الضغطُ يفرز الناس، ويكشف من كان كلٌّ منهم من البداية",
         w: "This is the clearest case of it in the Quran. Madinah is besieged at the Trench: armies from above and below, eyes turning aside, hearts reaching the throats. In that exact moment two sentences are recorded — the believers saying “this is what Allah and His Messenger promised us”, and the others saying “Allah and His Messenger promised us nothing but delusion.”\n\nSame siege, same trench, same hunger. The pressure did not create the difference; it made an existing one visible. That is the surah's subject — everything else in it, the Confederates, the household, the adoption ruling, sits around that discovery.",
-        wAr: "وهذا أظهر مواضعه في القرآن. حوصرت المدينة يوم الخندق: جاؤوهم من فوقهم ومن أسفل منهم، وزاغت الأبصار، وبلغت القلوبُ الحناجر. وفي تلك اللحظة بعينها سُجّلت جملتان: قولُ المؤمنين ﴿هَٰذَا مَا وَعَدَنَا ٱللَّهُ وَرَسُولُهُۥ﴾، وقولُ الآخرين ﴿مَّا وَعَدَنَا ٱللَّهُ وَرَسُولُهُۥٓ إِلَّا غُرُورٗا﴾.\n\nالحصار واحد، والخندق واحد، والجوع واحد. فما أنشأ الضغطُ الفرق، وإنما أظهر فرقًا كان قائمًا. وهذا موضوع السورة، وسائرُ ما فيها — الأحزاب، وبيت النبوّة، وحكم التبنّي — قائمٌ حول هذا الكشف.",
+        wAr: "وهذا أظهر مواضعه في القرآن. حوصرت المدينة يوم الخندق: جاؤوهم من فوقهم ومن أسفل منهم، وزاغت الأبصار، ﴿وَبَلَغَتِ ٱلۡقُلُوبُ ٱلۡحَنَاجِرَ﴾. وفي تلك اللحظة بعينها سُجّلت جملتان: قولُ المؤمنين ﴿هَٰذَا مَا وَعَدَنَا ٱللَّهُ وَرَسُولُهُۥ﴾، وقولُ الآخرين ﴿مَّا وَعَدَنَا ٱللَّهُ وَرَسُولُهُۥٓ إِلَّا غُرُورٗا﴾.\n\nالحصار واحد، والخندق واحد، والجوع واحد. فما أنشأ الضغطُ الفرق، وإنما أظهر فرقًا كان قائمًا. وهذا موضوع السورة، وسائرُ ما فيها — الأحزاب، وبيت النبوّة، وحكم التبنّي — قائمٌ حول هذا الكشف.",
         a: "33:10",
         careful: "It is read as a war chapter. The battle is the setting, not the subject: the surah is interested in what the siege revealed about people, which is why it moves straight from the trench to how a household and a community should conduct themselves.",
         carefulAr: "تُقرأ على أنها سورةُ غزوة. والغزوةُ ظرفٌ لا موضوع: فالسورة معنيّةٌ بما كشفه الحصار عن الناس، ولذلك انتقلت من الخندق إلى آداب البيت والجماعة." },
@@ -260,7 +260,7 @@ const SURAH_CONCEPTS = {
   40: { c: "One person can be right while everyone is wrong",
         cAr: "قد يكون الواحد على الحقّ والناس كلّهم على خلافه",
         w: "A believer in Pharaoh's own court, hiding his faith, who stood up and argued. The surah is named Ghafir but is known by him.",
-        wAr: "مؤمنٌ من آل فرعون يكتم إيمانه، ثم قام يُحاجّ. وتُسمّى السورة غافر، وتُعرف به.",
+        wAr: "﴿مُّؤۡمِنٞ مِّنۡ ءَالِ فِرۡعَوۡنَ يَكۡتُمُ إِيمَٰنَهُۥٓ﴾، ثم قام يُحاجّ. وتُسمّى السورة غافر، وتُعرف به.",
         a: "40:28" },
 
   41: { c: "Your own body will testify",
@@ -290,7 +290,7 @@ const SURAH_CONCEPTS = {
   45: { c: "The evidence was never the part that was missing",
         cAr: "لم يكن الدليل هو الناقص قطّ",
         w: "Sign after sign is listed — the heavens, your own creation, the animals spread out, the rain that revives dead ground, the ships. Then every nation is shown kneeling, and its record read back to it. The surah is not answering a shortage of proof.",
-        wAr: "تُعدّ الآياتُ واحدةً بعد واحدة: السماوات، وخلقُكم أنفسكم، والدوابُّ المبثوثة، والمطرُ يُحيي الأرض بعد موتها، والفُلك. ثم تُرى كلُّ أمّةٍ جاثية، ويُقرأ عليها كتابها. فليست السورةُ جوابًا عن قلّة دليل.",
+        wAr: "تُعدّ الآياتُ واحدةً بعد واحدة: السماوات، وخلقُكم أنفسكم، والدوابُّ المبثوثة، والمطرُ يُحيي الأرض بعد موتها، والفُلك. ثم ﴿تَرَىٰ كُلَّ أُمَّةٖ جَاثِيَةٗۚ﴾، ويُقرأ عليها كتابها. فليست السورةُ جوابًا عن قلّة دليل.",
         a: "45:23",
         careful: "It is easy to read this as a complaint that people did not think hard enough. The surah names the cause itself, and it is not the intellect: a man who takes his own desire as his god, and whom Allah then leaves astray upon knowledge — he had the knowledge and it stopped helping him.",
         carefulAr: "يسهل أن تُقرأ شكوى من قلّة النظر. والسورة تُسمّي السبب بنفسها، وليس هو العقل: ﴿أَفَرَءَيۡتَ مَنِ ٱتَّخَذَ إِلَٰهَهُۥ هَوَىٰهُ وَأَضَلَّهُ ٱللَّهُ عَلَىٰ عِلۡمٖ﴾ — فالعلم كان عنده، ثم لم يعد ينفعه." },
@@ -316,13 +316,13 @@ const SURAH_CONCEPTS = {
   49: { c: "How to behave with each other",
         cAr: "كيف يعامل بعضكم بعضًا",
         w: "Verify news before repeating it, do not mock, do not use nicknames, do not spy, do not backbite — and the line that ends every claim to superiority: the noblest of you is the most God-conscious.",
-        wAr: "تبيّنوا الخبر قبل نقله، ولا تسخروا، ولا تنابزوا، ولا تجسّسوا، ولا يغتب بعضكم بعضًا — والجملةُ التي تُنهي كلّ دعوى تفاضل: ﴿إِنَّ أَكۡرَمَكُمۡ عِندَ ٱللَّهِ أَتۡقَىٰكُمۡۚ﴾.",
+        wAr: "تبيّنوا الخبر قبل نقله، ولا تسخروا، ولا تنابزوا، ﴿وَلَا تَجَسَّسُواْ وَلَا يَغۡتَب بَّعۡضُكُم بَعۡضًاۚ﴾ — والجملةُ التي تُنهي كلّ دعوى تفاضل: ﴿إِنَّ أَكۡرَمَكُمۡ عِندَ ٱللَّهِ أَتۡقَىٰكُمۡۚ﴾.",
         a: "49:13" },
 
   50: { c: "He is closer than the person beside you",
         cAr: "هو أقرب إليك ممّن بجانبك",
         w: "Nearer than the jugular vein, with two recorders writing. The surah puts God's closeness and death's closeness side by side.",
-        wAr: "أقربُ من حبل الوريد، وعن اليمين وعن الشمال قعيد. فقرنت السورة بين قرب الله وقرب الموت.",
+        wAr: "أقربُ من حبل الوريد، و﴿عَنِ ٱلۡيَمِينِ وَعَنِ ٱلشِّمَالِ قَعِيدٞ﴾. فقرنت السورة بين قرب الله وقرب الموت.",
         a: "50:16" },
 
   51: { c: "You were made for one thing, and it is stated outright",
@@ -404,7 +404,7 @@ const SURAH_CONCEPTS = {
   63: { c: "The danger inside, not outside",
         cAr: "الخطر من الداخل لا من الخارج",
         w: "A whole surah on the hypocrite — impressive to look at, pleasant to listen to, and hollow. “They are the enemy, so beware of them.”",
-        wAr: "سورةٌ كاملةٌ في المنافق: تُعجبك أجسامهم، وإن يقولوا تسمع لقولهم، وهم خُشُبٌ مسنّدة. ﴿هُمُ ٱلۡعَدُوُّ فَٱحۡذَرۡهُمۡۚ﴾.",
+        wAr: "سورةٌ كاملةٌ في المنافق: ﴿تُعۡجِبُكَ أَجۡسَامُهُمۡۖ وَإِن يَقُولُواْ تَسۡمَعۡ لِقَوۡلِهِمۡۖ﴾، وهم خُشُبٌ مسنّدة. ﴿هُمُ ٱلۡعَدُوُّ فَٱحۡذَرۡهُمۡۚ﴾.",
         a: "63:4" },
 
   64: { c: "The day everyone finds out what the trade was worth",
@@ -556,7 +556,7 @@ const SURAH_CONCEPTS = {
   88: { c: "Look at the camel",
         cAr: "انظر إلى الإبل",
         w: "After the two faces on that Day — one downcast and toiling, one content — the argument turns to what is standing right in front of them: the camel, the sky, the mountains, the earth. The evidence offered is deliberately ordinary.",
-        wAr: "بعد الوجهين يومئذٍ — ﴿خَٰشِعَةٌ عَامِلَةٞ نَّاصِبَةٞ﴾ و﴿نَّاعِمَةٞ﴾ — تنصرف الحجّة إلى ما هو قائمٌ أمامهم: ﴿أَفَلَا يَنظُرُونَ إِلَى ٱلۡإِبِلِ كَيۡفَ خُلِقَتۡ﴾، والسماء، والجبال، والأرض. والدليلُ المعروض مألوفٌ عن قصد.",
+        wAr: "بعد الوجهين يومئذٍ — ﴿خَٰشِعَةٌ ۝ عَامِلَةٞ نَّاصِبَةٞ﴾ و﴿نَّاعِمَةٞ﴾ — تنصرف الحجّة إلى ما هو قائمٌ أمامهم: ﴿أَفَلَا يَنظُرُونَ إِلَى ٱلۡإِبِلِ كَيۡفَ خُلِقَتۡ﴾، والسماء، والجبال، والأرض. والدليلُ المعروض مألوفٌ عن قصد.",
         a: "88:17" },
 
   89: { c: "Wealth was never the sign that He was pleased",
@@ -568,7 +568,7 @@ const SURAH_CONCEPTS = {
   90: { c: "The uphill road is the one nobody takes",
         cAr: "العقبةُ هي التي لا يقتحمها أحد",
         w: "Freeing a neck, feeding on a day of hunger, an orphan or a poor person in the dust. The surah calls it the steep path — and says he did not attempt it.",
-        wAr: "فكُّ رقبة، أو إطعامٌ في يوم مسغبة، يتيمًا ذا مقربةٍ أو مسكينًا ذا متربة. سمّتها السورة العقبة، وقالت: ﴿فَلَا ٱقۡتَحَمَ ٱلۡعَقَبَةَ﴾.",
+        wAr: "فكُّ رقبة، أو إطعامٌ في يوم مسغبة، ﴿يَتِيمٗا ذَا مَقۡرَبَةٍ ۝ أَوۡ مِسۡكِينٗا ذَا مَتۡرَبَةٖ﴾. سمّتها السورة العقبة، وقالت: ﴿فَلَا ٱقۡتَحَمَ ٱلۡعَقَبَةَ﴾.",
         a: "90:11" },
 
   91: { c: "The soul was shown both roads, then handed to you",
@@ -696,7 +696,7 @@ const SURAH_CONCEPTS = {
   111: { c: "A prophecy his enemy could have destroyed by pretending",
          cAr: "نبوءةٌ كان عدوُّه يستطيع نقضها بالتظاهر",
          w: "It declares that Abu Lahab will enter a blazing fire — and it was recited while the man was alive, free, wealthy and looking for any way to discredit it. For roughly ten years all he had to do was say the words I accept, truthfully or not, and the Quran would have been broken in public. He never did.",
-         wAr: "أعلنت أنّ أبا لهبٍ سيصلى نارًا ذات لهب — وتُليت والرجلُ حيٌّ طليقٌ موسرٌ يتلمّس أيَّ سبيلٍ لإبطالها. وكان يكفيه نحوَ عشر سنين أن يقول: أسلمتُ، صادقًا أو كاذبًا، فيُنقض القرآن على رؤوس الناس. فما فعل.",
+         wAr: "أعلنت أنّ أبا لهبٍ ﴿سَيَصۡلَىٰ نَارٗا ذَاتَ لَهَبٖ﴾ — وتُليت والرجلُ حيٌّ طليقٌ موسرٌ يتلمّس أيَّ سبيلٍ لإبطالها. وكان يكفيه نحوَ عشر سنين أن يقول: أسلمتُ، صادقًا أو كاذبًا، فيُنقض القرآن على رؤوس الناس. فما فعل.",
          a: "111:1" },
 
   112: { c: "Who He is, with every comparison taken away",

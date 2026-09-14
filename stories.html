@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609131301" />
+  <link rel="stylesheet" href="css/style.css?v=202609140852" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -141,7 +141,9 @@
   </footer>
 
   
-  <script src="js/data.js?v=202609131301"></script>
+  <script src="js/data.js?v=202609140852"></script>
+  <!-- The site search's matcher, used by the search box below. -->
+  <script src="js/sitesearch.js?v=202609140852"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -392,10 +394,23 @@
         .replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
     }
     function searchStories() {
-      const q = normalise(document.getElementById("storySearch").value.trim());
+      const rawQ = document.getElementById("storySearch").value.trim();
+      const q = normalise(rawQ);
       // An empty box falls back to the grouped view rather than a flat list,
       // so clearing a search returns you to the sections you came from.
       if (!q) { renderGrouped(); return; }
+      /* The site search's own matcher (js/sitesearch.js), limited to the
+         stories: whole words, the Arabic particles tried on and off, and the
+         English names folded onto the site's (Moses → Musa). The substring
+         search below it found "علي" inside every "على", had "moses" find
+         nothing, and let a single word of a longer question decide. */
+      if (typeof ssSearch === "function") {
+        const byId = {};
+        PROPHET_STORIES.forEach(s => { byId[s.id] = s; });
+        renderStories(ssSearch(rawQ, { kinds: ["story"], weak: true })
+          .map(h => byId[h.entry.id]).filter(Boolean));
+        return;
+      }
       const words = q.split(/\s+/).filter(w => w.length >= 2);
       // The section name is part of the haystack, so searching "mercy" or
       // "الرحمة" finds the whole section as well as the individual stories.
@@ -414,10 +429,24 @@
 
     renderStoryTabs();
     renderGrouped();
+    /* stories.html#<story-id> — the site search links to a single story. The
+       page opens on one section, so a story in any other section is not in
+       the page at all until its section is opened; open it, then go to it. */
+    (function () {
+      let id = "";
+      try { id = decodeURIComponent((location.hash || "").slice(1)); } catch (e) { return; }
+      const s = id && PROPHET_STORIES.find(x => x.id === id);
+      if (!s) return;
+      storySection = s.section;
+      renderStoryTabs();
+      renderGrouped();
+      const el = document.getElementById(id);
+      if (el) setTimeout(() => el.scrollIntoView({ block: "start" }), 80);
+    })();
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/wordlens.js?v=202609131301"></script>
-  <script src="js/main.js?v=202609131301"></script>
-  <script src="js/i18n.js?v=202609131301"></script>
+  <script src="js/wordlens.js?v=202609140852"></script>
+  <script src="js/main.js?v=202609140852"></script>
+  <script src="js/i18n.js?v=202609140852"></script>
 </body>
 </html>

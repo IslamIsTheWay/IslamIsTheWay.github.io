@@ -684,8 +684,9 @@ function vSearchQuran(claim) {
           Sahih al-Bukhari, Hadith 1129; Sunan Abu Dawud, Hadith 495
           Sahih — established in the collections
 
-   Every part of that is wrong. al-Bukhari 1129 is the Prophet ﷺ rousing Ali
-   and Fatimah for the night prayer; Abu Dawud 495 is the command to teach
+   Every part of that is wrong. al-Bukhari 1129 is Aisha on the night prayer
+   in Ramadan (rousing Ali and Fatimah, which the entry meant, is 1127, and
+   the entry now says so); Abu Dawud 495 is the command to teach
    children the prayer at seven. Neither carries those words. The wording is
    خيركم خيركم لأهله — at-Tirmidhi 3895 and Ibn Majah 1977, both read out of
    the collections before this note was written — and THIS SITE ALREADY

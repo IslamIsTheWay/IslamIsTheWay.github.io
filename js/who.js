@@ -36,7 +36,7 @@
    himself: "we all go to heaven by the mercy of God, of course.
    But you need to do good deeds to reach the level to be able to
    get the mercy." That is exactly right and it is exactly what
-   Muslim 7122 says — no one's deeds admit him, and the Prophet ﷺ
+   Muslim 2818 says — no one's deeds admit him, and the Prophet ﷺ
    included himself. wh-mercy states both halves so neither can
    be used to cancel the other.
 
@@ -258,7 +258,7 @@ const WHO = {
           simple: "The Quran states both lists directly. You do not have to guess which one you are on — you can read it and check.",
           simpleAr: "نصَّ القرآنُ على القائمتين. فلستَ محتاجًا أن تظنّ في أيّهما أنت — بل تقرأ وتقيس.",
           plain: "HE LOVES: those who do good (2:195) · those who keep turning back to Him and those who keep themselves clean (2:222) · those who fear Him (3:76) · those who are patient (3:146) · those who rely on Him (3:159) · those who are just (5:42) · those who fight in His way in ranks, as though a solid structure (61:4).\n\nHE DOES NOT LOVE: those who transgress limits (2:190) · the wrongdoers (3:57) · the corrupters (5:64) · the arrogant (16:23) · the treacherous (8:58) · the wasteful (6:141) · the self-deluded and boastful (31:18) · every ungrateful sinner (2:276).",
-          plainAr: "يحبّ: المحسنين [البقرة ١٩٥] · التوّابين والمتطهّرين [البقرة ٢٢٢] · المتّقين [آل عمران ٧٦] · الصابرين [آل عمران ١٤٦] · المتوكّلين [آل عمران ١٥٩] · المقسطين [المائدة ٤٢] · الذين يقاتلون في سبيله صفًّا كأنهم بنيانٌ مرصوص [الصفّ ٤].\n\nولا يحبّ: المعتدين [البقرة ١٩٠] · الظالمين [آل عمران ٥٧] · المفسدين [المائدة ٦٤] · المستكبرين [النحل ٢٣] · الخائنين [الأنفال ٥٨] · المسرفين [الأنعام ١٤١] · كلَّ مختالٍ فخور [لقمان ١٨] · كلَّ كفّارٍ أثيم [البقرة ٢٧٦].",
+          plainAr: "يحبّ: المحسنين [البقرة ١٩٥] · التوّابين والمتطهّرين [البقرة ٢٢٢] · المتّقين [آل عمران ٧٦] · الصابرين [آل عمران ١٤٦] · المتوكّلين [آل عمران ١٥٩] · المقسطين [المائدة ٤٢] · ﴿ٱلَّذِينَ يُقَٰتِلُونَ فِي سَبِيلِهِۦ صَفّٗا كَأَنَّهُم بُنۡيَٰنٞ مَّرۡصُوصٞ﴾ [الصفّ ٤].\n\nولا يحبّ: المعتدين [البقرة ١٩٠] · الظالمين [آل عمران ٥٧] · المفسدين [المائدة ٦٤] · المستكبرين [النحل ٢٣] · الخائنين [الأنفال ٥٨] · المسرفين [الأنعام ١٤١] · كلَّ مختالٍ فخور [لقمان ١٨] · كلَّ كفّارٍ أثيم [البقرة ٢٧٦].",
           example: "Two things worth noticing about those lists.\n\nFIRST, almost every item is a HABIT, not a single act. Tawwabin does not mean somebody who repented once; the form means one who repeats it. Sabirin, muhsinin, muqsitin — all of them describe a pattern. Which is good news: one bad day does not move you between lists.\n\nSECOND, look at the second list again. Transgressing limits, wronging others, arrogance, treachery, waste, boasting. Almost every entry is something you do TO OTHER PEOPLE. Very little of it is about ritual.\n\nA man can be praying five times a day and be on the second list. That is worth sitting with.",
           exampleAr: "وأمران في العدّين يستحقّان الانتباه.\n\nالأوّل: أنّ عامّتها أوصافُ عادةٍ لا أفعالٍ مفردة. فـ«التوّابين» ليس من تاب مرّة، وإنما الصيغةُ للتكرار. وكذلك الصابرون والمحسنون والمقسطون، كلُّها تصف نسقًا. وفي هذا بشارة: فيومٌ سيّئ لا ينقلك من قائمةٍ إلى قائمة.\n\nوالثاني: أعد النظر في القائمة الثانية: الاعتداءُ والظلمُ والاستكبارُ والخيانةُ والإسرافُ والفخر. عامّتُها ممّا تفعله بالناس، وقليلٌ منها في العبادة.\n\nفقد يصلّي الرجلُ الخمسَ وهو في القائمة الثانية. وهذا حقُّه أن يُوقف عنده.",
           proof: "Indeed, Allah loves those who are constantly repentant and loves those who purify themselves.",

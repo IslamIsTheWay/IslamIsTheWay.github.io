@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609131301" />
+  <link rel="stylesheet" href="css/style.css?v=202609140852" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -278,24 +278,24 @@
   </footer>
 
   
-  <script src="js/data.js?v=202609131301"></script>
-  <script src="js/angels.js?v=202609131301"></script>
+  <script src="js/data.js?v=202609140852"></script>
+  <script src="js/angels.js?v=202609140852"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202609131301"></script>
-  <script src="js/endmap.js?v=202609131301"></script>
-  <script src="js/judgement.js?v=202609131301"></script>
-  <script src="js/cards.js?v=202609131301"></script>
-  <script src="js/grave.js?v=202609131301"></script>
-  <script src="js/places.js?v=202609131301"></script>
+  <script src="js/signs.js?v=202609140852"></script>
+  <script src="js/endmap.js?v=202609140852"></script>
+  <script src="js/judgement.js?v=202609140852"></script>
+  <script src="js/cards.js?v=202609140852"></script>
+  <script src="js/grave.js?v=202609140852"></script>
+  <script src="js/places.js?v=202609140852"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202609131301"></script>
+  <script src="js/judgement-closing.js?v=202609140852"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202609131301"></script>
-  <script src="js/journey.js?v=202609131301"></script>
+  <script src="js/rise.js?v=202609140852"></script>
+  <script src="js/journey.js?v=202609140852"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -511,11 +511,24 @@
       if (window.applyI18n) window.applyI18n();
     }
 
+    /* `quran` is a verse and `hadith` is a hadith — kept apart, and a hadith
+       printed in «» the way the site writes one. Two hadith (the Israfil
+       supplication, "two words light on the tongue") had been stored in the
+       `quran` field, the field every verse on this page uses. */
+    /* The field holds eleven more hadith besides those two, so the rule is
+       read from the TEXT: every verse on this site is the Madinah Mushaf's
+       own spelling, which carries marks no hadith text has (the Mushaf
+       sukun, the open tanween). Anything without them is not a verse and is
+       printed as a hadith — in «», never in the Mushaf's face. */
+    const MUSHAF_MARK = /[\u06E1\u06E2\u06ED\u0656\u0657\u065E]/;
     function pointHtml(p) {
+      const verse = p.quran && MUSHAF_MARK.test(p.quran) ? p.quran : "";
+      const hadith = p.hadith || (p.quran && !verse ? p.quran : "");
       return `<div class="judge-point">
-        ${p.quran ? `<p class="judge-arabic" dir="rtl" data-speak>${p.quran} <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
+        ${verse ? `<p class="judge-arabic" dir="rtl" data-speak>${verse} <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
+        ${hadith ? `<p class="judge-arabic judge-hadith" dir="rtl" data-speak>«${hadith}» <button class="speak-btn" data-lang="ar" title="Listen — استمع">&#128266;</button></p>` : ""}
         <p class="en-only">${p.en}</p>
-        <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${p.ar}</p>
+        ${p.arSame ? "" : `<p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${p.ar}</p>`}
         ${p.items ? `<ol class="judge-items">${p.items.map(it =>
             `<li><span class="ji-ar" dir="rtl">${it.ar}</span><span class="ji-en en-only">${it.en}</span></li>`
           ).join("")}</ol>` : ""}
@@ -1004,9 +1017,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202609131301"></script>
+  <script src="js/wordlens.js?v=202609140852"></script>
 
-  <script src="js/main.js?v=202609131301"></script>
-  <script src="js/i18n.js?v=202609131301"></script>
+  <script src="js/main.js?v=202609140852"></script>
+  <script src="js/i18n.js?v=202609140852"></script>
 </body>
 </html>

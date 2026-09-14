@@ -1154,17 +1154,19 @@ function iitwPersonTextKeys(person) {
    Used on search.html. Searches PROPHETS + COMPANIONS (from data.js)
    by name, title, or summary text and renders result cards with refs.
 ------------------------------------------------------- */
-function runPersonSearch(query) {
-  const resultsEl = document.getElementById("searchResults");
-  if (!resultsEl) return;
-
-  const q = query.trim().toLowerCase();
-  resultsEl.innerHTML = "";
-
-  if (!q) {
-    resultsEl.innerHTML = "";
-    return;
-  }
+/* THE ONE PERSON SCORER. It lived inside runPersonSearch, so only
+   search.html had it; the Prophets and Companions pages filtered with a bare
+   `includes()` and got none of it. Measured on those two pages, September
+   2026: "umar", "uthman", "abubakr", "ابو بكر", "ابراهيم" and "عايشة" all
+   returned NOTHING, "isa" put Ishaq (Isaac) above Isa, and "ali" put Abu
+   Bakr first. Returns [{ person, score, why }], best first. */
+function iitwScorePeople(query, people) {
+  const q = String(query || "").trim().toLowerCase();
+  if (!q) return [];
+  /* A query of nothing but function words names nobody: "the" listed Yahya
+     (John the Baptist), Idris and Nuh as matches. */
+  if (!/[ء-ي]/.test(q) &&
+      q.split(/[^a-z']+/).filter(Boolean).every(w => /^(?:the|a|an|of|and|or|in|on|to|is|al)$/.test(w))) return [];
 
   /* ---------- Matching ----------
      This used to be a bare `includes()` on every field, which had two bad
@@ -1186,8 +1188,17 @@ function runPersonSearch(query) {
   const startsRe = new RegExp("(^|[^a-z])" + qLatin, "i");
 
   const stripAr = s => String(s || "").replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "")
-    .replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
-  const arWords = txt => new Set(stripAr(txt).split(/[^ء-ي]+/).filter(Boolean));
+    .replace(/[أإآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه")
+    .replace(/ئ/g, "ي").replace(/ؤ/g, "و");      // "عايشة" is how many people type عائشة
+  /* Folding ى to ي makes the preposition على into the NAME علي, so "علي"
+     reported twenty-four people as "mentioned in this person's story" for
+     every "على" in their summaries. The few particles that collide are
+     dropped from the TEXT before it is folded; a name is never one of them. */
+  const AR_PARTICLES = new Set(["على", "إلى", "الى", "حتى", "متى", "لدى", "سوى"]);
+  const arWords = txt => new Set(String(txt || "")
+    .replace(/[ؐ-ًؚ-ٰٟۖ-ۭـ]/g, "")
+    .split(/[^ء-ي]+/).filter(w => w && !AR_PARTICLES.has(w))
+    .map(stripAr));
 
   /* The Arabic query must be split into WORDS the same way the text is.
      It was previously kept whole — so "أبو بكر" was compared, space and all,
@@ -1229,7 +1240,7 @@ function runPersonSearch(query) {
     return qWords.length === 1 && qJoined.length >= 6 && keys.joined.startsWith(qJoined);
   };
 
-  const scored = ALL_PEOPLE.map(person => {
+  return people.map(person => {
     let score = 0;
     let why = "";
     const name = person.name.toLowerCase();
@@ -1256,16 +1267,48 @@ function runPersonSearch(query) {
 
     return { person, score, why };
   }).filter(x => x.score > 0).sort((a, b) => b.score - a.score);
+}
 
+/* The reason a person is in a list, said on the card — a cross-reference
+   must never look like an answer (see runPersonSearch). */
+function iitwMatchBadge(why, query) {
+  const qh = escapeHtml(query);
+  return why === "mention"
+    ? `<span class="match-why match-mention">
+         <span class="en-only">Not a name match — "${qh}" appears in this person's story</span>
+         <span class="ar-only" dir="rtl">ليست مطابقة اسم — «${qh}» مذكورٌ في سيرة هذا الشخص</span>
+       </span>`
+    : why === "title"
+    ? `<span class="match-why match-title">
+         <span class="en-only">Matched their title, not their name</span>
+         <span class="ar-only" dir="rtl">مطابقةٌ في اللقب لا في الاسم</span>
+       </span>`
+    : "";
+}
+
+function runPersonSearch(query) {
+  const resultsEl = document.getElementById("searchResults");
+  if (!resultsEl) return;
+
+  const q = query.trim().toLowerCase();
+  resultsEl.innerHTML = "";
+
+  if (!q) {
+    resultsEl.innerHTML = "";
+    return;
+  }
+
+  const scored = iitwScorePeople(query, ALL_PEOPLE);
   const matches = scored.map(x => x.person);
   const reasonOf = {};
   scored.forEach(x => { reasonOf[x.person.id] = x.why; });
 
   if (matches.length === 0) {
     resultsEl.innerHTML = `<div class="no-results">
-      No results found for "<strong>${escapeHtml(query)}</strong>". This page searches <em>people</em> — try a name like "Musa", "Ibrahim", "Abu Bakr", "عائشة".
-      <br><br>Describing a <strong>situation</strong> instead? The <a href="guidance.html" style="color:var(--green);text-decoration:underline;">Guidance page</a> matches your situation to verses and hadith.
-      <br><span dir="rtl" style="font-family:'Amiri',serif;">هذه الصفحة للبحث عن الأشخاص. إن كنت تصف حالة، فصفحة التوجيه تعرض لك الآيات والأحاديث المتعلقة بها.</span>
+      <span class="en-only">Nothing found for "<strong>${escapeHtml(query)}</strong>". Try a name — "Musa", "Abu Bakr", "Aisha" — or a subject in a word or two — "patience", "zakat", "sleep".
+      <br><br>Describing a <strong>situation</strong> instead? The <a href="guidance.html" style="color:var(--green);text-decoration:underline;">Guidance page</a> matches your situation to verses and hadith.</span>
+      <span class="ar-only" dir="rtl">لم نجد شيئًا عن «<strong>${escapeHtml(query)}</strong>». جرّب اسمًا — موسى، أبو بكر، عائشة — أو موضوعًا بكلمة أو كلمتين — الصبر، الزكاة، النوم.
+      <br><br>أتصف <strong>حالةً</strong> تمرّ بها؟ <a href="guidance.html" style="color:var(--green);text-decoration:underline;">صفحة التوجيه</a> تعرض لك الآيات والأحاديث المتعلقة بها.</span>
     </div>`;
     return;
   }
@@ -1280,18 +1323,7 @@ function runPersonSearch(query) {
        like an answer: searching "Yusuf" surfaces his father Yaqub because
        Yusuf is named in Yaqub's story, and without this badge that reads as
        though the site thinks Yaqub is Yusuf. */
-    const reason = reasonOf[person.id];
-    const badge = reason === "mention"
-      ? `<span class="match-why match-mention">
-           <span class="en-only">Not a name match — "${escapeHtml(query)}" appears in this person's story</span>
-           <span class="ar-only" dir="rtl">ليست مطابقة اسم — «${escapeHtml(query)}» مذكورٌ في سيرة هذا الشخص</span>
-         </span>`
-      : reason === "title"
-      ? `<span class="match-why match-title">
-           <span class="en-only">Matched their title, not their name</span>
-           <span class="ar-only" dir="rtl">مطابقةٌ في اللقب لا في الاسم</span>
-         </span>`
-      : "";
+    const badge = iitwMatchBadge(reasonOf[person.id], query);
 
     /* The full life, where one is written. The summary alone was the whole
        result before, so someone searching a name got three lines about a
@@ -1338,7 +1370,9 @@ function runPersonSearch(query) {
       ${fullLife}
       <div class="refs">
         <strong>References:</strong>
-        <ul>${person.refs.map(r => `<li>${r}</li>`).join("")}</ul>
+        <ul>${person.refs.map((r, i) => (person.refsAr && person.refsAr[i])
+          ? `<li><span class="en-only">${r}</span><span class="ar-only" dir="rtl">${person.refsAr[i]}</span></li>`
+          : `<li>${r}</li>`).join("")}</ul>
       </div>
     `;
     resultsEl.appendChild(card);

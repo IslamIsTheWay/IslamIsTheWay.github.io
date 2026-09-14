@@ -325,7 +325,7 @@ const ADHKAR = [
     countEn: "Said when you are outnumbered or afraid",
     countAr: "يُقال عند الخوف وكثرة العدو",
     virtue: "Ibn Abbas رضي الله عنهما said: Ibrahim عليه السلام said it when he was thrown into the fire, and Muhammad ﷺ said it when the people said to him, \"the people have gathered against you, so fear them\" — and it only increased them in faith.",
-    virtueAr: "قال ابن عباس رضي الله عنهما: قالها إبراهيم عليه السلام حين أُلقي في النار، وقالها محمد ﷺ حين قالوا: إنّ الناس قد جمعوا لكم فاخشوهم، فزادهم إيمانًا وقالوا: حسبنا الله ونعم الوكيل.",
+    virtueAr: "قال ابن عباس رضي الله عنهما: قالها إبراهيم عليه السلام حين أُلقي في النار، وقالها محمد ﷺ حين قالوا: ﴿إِنَّ ٱلنَّاسَ قَدۡ جَمَعُواْ لَكُمۡ فَٱخۡشَوۡهُمۡ فَزَادَهُمۡ إِيمَٰنٗا وَقَالُواْ حَسۡبُنَا ٱللَّهُ وَنِعۡمَ ٱلۡوَكِيلُ﴾.",
     ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4563; the words are Surah Al-Imran (3:173)", refAr: "صحيح البخاري، كتاب التفسير، حديث ٤٥٦٣؛ واللفظ من سورة آل عمران (٣:١٧٣)",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["fear", "enough", "trust", "tawakkul", "حسبنا الله", "الخوف", "التوكل", "الشدة"]

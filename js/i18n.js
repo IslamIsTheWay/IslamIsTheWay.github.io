@@ -346,6 +346,288 @@ const AR = {
   "Strong — Narrated by an-Nasa'i, authenticated by al-Albani; not in the two Sahihs":
     "قويّ — رواه النسائي وصحّحه الألباني، وليس في الصحيحين",
 
+  /* The Judgement Day page's source lines and gradings, September 2026. They
+     carry notes the reference translator cannot reach ("the two blasts",
+     "the forty between them"), and 48 of them reached the Arabic page half
+     English. Keyed by the exact English: change one, change both. */
+  "Not found in the Quran or the two Sahihs":
+    "لم يَرِد في القرآن ولا في الصحيحين",
+  "Sahih Muslim, Book of the Prayer of Travellers (his name); Surah Az-Zumar (39:68) and Surah Ya-Sin (36:49-53) (the two blasts); Sahih al-Bukhari 4935 (the forty between them)":
+    "صحيح مسلم، كتاب صلاة المسافرين (اسمه)؛ سورة الزمر (٣٩:٦٨) وسورة يس (٣٦:٤٩–٥٣) (النفختان)؛ صحيح البخاري ٤٩٣٥ (الأربعون بينهما)",
+  "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3232; also 4856 and 4857 — Sahih":
+    "صحيح البخاري، كتاب بدء الخلق، حديث ٣٢٣٢؛ وكذا ٤٨٥٦ و٤٨٥٧ — صحيح",
+  "Reported in tafsir and in narrations from the companions and later — outside the two Sahihs":
+    "مرويٌّ في كتب التفسير وفي آثارٍ عن الصحابة ومن بعدهم — خارج الصحيحين",
+  "Sahih al-Bukhari, Book of Prayer, Hadith 349 — narrated by Abu Dharr رضي الله عنه":
+    "صحيح البخاري، كتاب الصلاة، حديث ٣٤٩ — من رواية أبي ذرّ رضي الله عنه",
+  "Surah Al-Haqqah (69:17). The description of their size: Sunan Abu Dawud — outside the two Sahihs":
+    "سورة الحاقة (٦٩:١٧). ووصف عِظَم خَلقهم: سنن أبي داود — خارج الصحيحين",
+  "Sahih al-Bukhari, Book of the Times of Prayer, Hadith 555 — Sahih, agreed upon":
+    "صحيح البخاري، كتاب مواقيت الصلاة، حديث ٥٥٥ — صحيح، متّفقٌ عليه",
+  "Surah As-Sajdah (32:11) for the description. The name: not found in the Quran or the two Sahihs":
+    "سورة السجدة (٣٢:١١) في وصفه. أمّا الاسم فلم يَرِد في القرآن ولا في الصحيحين",
+  "Surah Az-Zumar (39:73). The name: not found in the Quran or the two Sahihs":
+    "سورة الزمر (٣٩:٧٣). أمّا الاسم فلم يَرِد في القرآن ولا في الصحيحين",
+  "The questioning: Sahih al-Bukhari, Hadith 1369 — Sahih. The two names: Jami' at-Tirmidhi — outside the two Sahihs":
+    "السؤال: صحيح البخاري، حديث ١٣٦٩ — صحيح. والاسمان: جامع الترمذي — خارج الصحيحين",
+  "Not found in the Quran or the two Sahihs; parts of it are traced to Israiliyyat":
+    "لم يَرِد في القرآن ولا في الصحيحين، وبعضه راجعٌ إلى الإسرائيليات",
+  "The hadith of al-Bara ibn Azib — Musnad Ahmad 18534, Sunan Abu Dawud 4753":
+    "حديث البراء بن عازب — مسند أحمد ١٨٥٣٤، سنن أبي داود ٤٧٥٣",
+  "The same hadith; the verses are Surah Al-A'raf 7:40 and Surah Al-Hajj 22:31":
+    "الحديث نفسه؛ والآيتان: سورة الأعراف ٧:٤٠ وسورة الحج ٢٢:٣١",
+  "The hadith of al-Bara ibn Azib — Musnad Ahmad 18534, Sunan Abu Dawud 4753; the questioning is also in Sahih al-Bukhari, Book of Funerals, Hadith 1338":
+    "حديث البراء بن عازب — مسند أحمد ١٨٥٣٤، سنن أبي داود ٤٧٥٣؛ والسؤال في صحيح البخاري أيضًا، كتاب الجنائز، حديث ١٣٣٨",
+  "Strong — graded hasan by at-Tirmidhi and authenticated by al-Albani":
+    "قويّ — حسّنه الترمذيّ وصحّحه الألبانيّ",
+  "Sunan Abu Dawud 4742 and Jami at-Tirmidhi 2430 (\"a horn that is blown into\"); the description of its size is in the sunan collections":
+    "سنن أبي داود ٤٧٤٢ وجامع الترمذي ٢٤٣٠ («قرنٌ يُنفخ فيه»)؛ ووصف عِظَمه في كتب السنن",
+  "Surah Al-Qari'ah 101:5; An-Naba 78:20; Al-Infitar 82:2–3; At-Takwir 81:6; Ar-Rahman 55:37; Al-Qiyamah 75:8–9; Az-Zalzalah 99:1–3":
+    "سورة القارعة ١٠١:٥؛ النبأ ٧٨:٢٠؛ الانفطار ٨٢:٢–٣؛ التكوير ٨١:٦؛ الرحمن ٥٥:٣٧؛ القيامة ٧٥:٨–٩؛ الزلزلة ٩٩:١–٣",
+  "Surah Az-Zumar 39:68; Surah Ghafir 40:16":
+    "سورة الزمر ٣٩:٦٨؛ سورة غافر ٤٠:١٦",
+  "Surah Al-Ma'arij 70:4; Sahih Muslim, Book of Zakat, Hadith 987 (the fifty thousand years); the lightening upon the believer: Musnad Ahmad 11114 — from Abu Sa'id al-Khudri":
+    "سورة المعارج ٧٠:٤؛ صحيح مسلم، كتاب الزكاة، حديث ٩٨٧ (الخمسون ألف سنة)؛ وتخفيفه على المؤمن: مسند أحمد ١١١١٤ — عن أبي سعيد الخدريّ",
+  "The verse is Quran; the Muslim hadith is Sahih. The report about it being made light is authenticated by al-Albani, and is outside the two Sahihs":
+    "الآية من القرآن، وحديث مسلم صحيح. وحديث التخفيف صحّحه الألبانيّ، وهو خارج الصحيحين",
+  "Surah Al-Inshiqaq 84:7–12; Surah Al-Kahf 18:49":
+    "سورة الانشقاق ٨٤:٧–١٢؛ سورة الكهف ١٨:٤٩",
+  "Surah Al-Anbiya 21:47; Surah Az-Zalzalah 99:7–8; the hadith is Sahih al-Bukhari, Book of Invocations, Hadith 6406, and Sahih Muslim 2694":
+    "سورة الأنبياء ٢١:٤٧؛ سورة الزلزلة ٩٩:٧–٨؛ والحديث في صحيح البخاري، كتاب الدعوات، حديث ٦٤٠٦، وصحيح مسلم ٢٦٩٤",
+  "Sahih al-Bukhari, Book of Oppressions, Hadith 2441; also narrated by Muslim in the Book of Repentance — the verse is Surah Hud 11:18":
+    "صحيح البخاري، كتاب المظالم، حديث ٢٤٤١؛ وأخرجه مسلمٌ في كتاب التوبة — والآية: سورة هود ١١:١٨",
+  "The first is Sahih — agreed upon. The report about their age is in at-Tirmidhi and is authenticated by al-Albani; it is outside the two Sahihs":
+    "الأوّل صحيح — متّفقٌ عليه. وخبر أعمارهم عند الترمذي، وصحّحه الألبانيّ، وهو خارج الصحيحين",
+  "Musnad Ahmad and the sunan collections (the strength of a hundred and the sweat); Surah At-Tur 52:22; Surah Al-Waqi'ah 56:33":
+    "مسند أحمد وكتب السنن (قوّة مئة رجل، والعَرَق)؛ سورة الطور ٥٢:٢٢؛ سورة الواقعة ٥٦:٣٣",
+  "The hadith is authenticated by al-Albani and sits outside the two Sahihs. The two verses are Quran":
+    "الحديث صحّحه الألبانيّ، وهو خارج الصحيحين. والآيتان من القرآن",
+  "Surah Muhammad 47:15; Surah Al-Waqi'ah 56:25–26; Surah Yunus 10:10; Surah Al-Hijr 15:47":
+    "سورة محمد ٤٧:١٥؛ سورة الواقعة ٥٦:٢٥–٢٦؛ سورة يونس ١٠:١٠؛ سورة الحجر ١٥:٤٧",
+  "Sahih Muslim, Book of Faith, Hadith 181 — from Suhayb ar-Rumi; Surah Al-Qiyamah 75:22–23; Surah Yunus 10:26":
+    "صحيح مسلم، كتاب الإيمان، حديث ١٨١ — عن صهيب الروميّ؛ سورة القيامة ٧٥:٢٢–٢٣؛ سورة يونس ١٠:٢٦",
+  "Surah Al-An'am (6:94); and “Every one of them will come to Him on the Day of Resurrection alone” — Maryam (19:95); and Abasa (80:34-37)":
+    "سورة الأنعام (٦:٩٤)؛ وسورة مريم (١٩:٩٥) في أنّ كلًّا يأتيه يوم القيامة فردًا؛ وسورة عبس (٨٠:٣٤–٣٧)",
+  "The Quran":
+    "القرآن",
+  "Surah Az-Zumar (39:53); the man who killed a hundred is in Sahih al-Bukhari, Hadith 3470, and in Muslim":
+    "سورة الزمر (٣٩:٥٣)؛ وخبر قاتل المئة في صحيح البخاري، حديث ٣٤٧٠، وفي مسلم",
+  "The Quran; and the story is Sahih — agreed upon":
+    "القرآن؛ والقصّة صحيحة — متّفقٌ عليها",
+  "Jami at-Tirmidhi, Book of Qadar, Hadith 2140; also Ahmad and Ibn Majah":
+    "جامع الترمذي، أبواب القدر، حديث ٢١٤٠؛ ورواه أحمد وابن ماجه",
+  "Surah Aal-Imran (3:8) — the prayer of those firm in knowledge, asking not to be turned away AFTER being guided":
+    "سورة آل عمران (٣:٨) — دعاء الراسخين في العلم ألّا تزيغ قلوبهم بعد أن هُدوا",
+  "Surah Ibrahim (14:27) — and the Prophet ﷺ said this verse was revealed about the questioning in the grave: Sahih al-Bukhari, Book of Funerals, Hadith 1369":
+    "سورة إبراهيم (١٤:٢٧) — وقد أخبر النبي ﷺ أنها نزلت في سؤال القبر: صحيح البخاري، كتاب الجنائز، حديث ١٣٦٩",
+  "Surah Al-Baqarah (2:97); his form filling the horizon: Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3234 — Sahih; the six hundred wings: Sahih al-Bukhari, Hadith 3232 and Sahih Muslim — Sahih":
+    "سورة البقرة (٢:٩٧)؛ وخَلقه سادًّا الأفق: صحيح البخاري، كتاب بدء الخلق، حديث ٣٢٣٤ — صحيح؛ والستّمئة جناح: صحيح البخاري، حديث ٣٢٣٢، وصحيح مسلم — صحيح",
+  "The questioning: Sahih al-Bukhari, Book of Funerals, Hadith 1369 — Sahih. The two names: Jami' at-Tirmidhi — outside the two Sahihs":
+    "السؤال: صحيح البخاري، كتاب الجنائز، حديث ١٣٦٩ — صحيح. والاسمان: جامع الترمذي — خارج الصحيحين",
+  "Surah Al-Muddaththir (74:30); Surah At-Tahrim (66:6); the Zabaniyah in Surah Al-'Alaq (96:18)":
+    "سورة المدثر (٧٤:٣٠)؛ سورة التحريم (٦٦:٦)؛ والزبانية في سورة العلق (٩٦:١٨)",
+  "Surah 'Abasa (80:38-39)":
+    "سورة عبس (٨٠:٣٨–٣٩)",
+  "Surah 'Abasa (80:40-42)":
+    "سورة عبس (٨٠:٤٠–٤٢)",
+  "Sahih al-Bukhari, Book of the Virtues of Madinah, Hadith 1888 — Sahih; the Basin is described in many places in the two Sahihs":
+    "صحيح البخاري، كتاب فضائل المدينة، حديث ١٨٨٨ — صحيح؛ ووصف الحوض في مواضع كثيرة من الصحيحين",
+  "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3257 — Sahih; and the gate of Ar-Rayyan also in Hadith 1896":
+    "صحيح البخاري، كتاب بدء الخلق، حديث ٣٢٥٧ — صحيح؛ وباب الريّان أيضًا في حديث ١٨٩٦",
+  "Surah Az-Zukhruf (43:77); and the nineteen in Surah Al-Muddaththir (74:30)":
+    "سورة الزخرف (٤٣:٧٧)؛ والتسعة عشر في سورة المدثر (٧٤:٣٠)",
+  "Surah Az-Zumar (39:71) compared with (39:73)":
+    "سورة الزمر (٣٩:٧١) مقارنةً بالآية (٣٩:٧٣)",
+  "Sahih Muslim, Book of Faith (Kitab al-Iman), in the hadith of the intercession — Sahih. The forty-year wording: Sahih Muslim, Book of Zuhd, Hadith 2967 — Sahih, but in the words of Utbah ibn Ghazwan رضي الله عنه, not the Prophet ﷺ":
+    "صحيح مسلم، كتاب الإيمان، في حديث الشفاعة — صحيح. ولفظ الأربعين سنة: صحيح مسلم، كتاب الزهد والرقائق، حديث ٢٩٦٧ — صحيح، ولكنه من كلام عتبة بن غزوان رضي الله عنه لا من كلام النبي ﷺ",
+  "Surah 'Abasa (80:34-37)":
+    "سورة عبس (٨٠:٣٤–٣٧)",
+  "Sahih Muslim, Book of the Travellers' Prayer":
+    "صحيح مسلم، كتاب صلاة المسافرين",
+  "Sahih al-Bukhari, Book of Tafsir — Ibn Mas'ud; Sahih Muslim, Book of Tribulations — the hadith of the ten":
+    "صحيح البخاري، كتاب التفسير — عن ابن مسعود؛ صحيح مسلم، كتاب الفتن — حديث العشر",
+  "Sahih Muslim, Book of Tribulations — Hudhayfah ibn Usayd, the hadith of the ten":
+    "صحيح مسلم، كتاب الفتن — حذيفة بن أسيد، حديث العشر",
+  "Sahih Muslim, Book of Tribulations — the hadith of the ten":
+    "صحيح مسلم، كتاب الفتن — حديث العشر",
+  "Sahih Muslim, Book of Tribulations — Hudhayfah ibn Usayd, the hadith of the ten; Sahih Muslim, Book of Faith — the sun and the beast":
+    "صحيح مسلم، كتاب الفتن — حذيفة بن أسيد، حديث العشر؛ صحيح مسلم، كتاب الإيمان — الشمس والدابّة",
+  "Jami at-Tirmidhi, Book of the Description of the Day of Judgement — outside the two Sahihs, graded Strong":
+    "جامع الترمذي، أبواب صفة القيامة — خارج الصحيحين، وإسناده قويّ",
+  "Surah Al-Qamar (54:1); also al-Bukhari and Muslim":
+    "سورة القمر (٥٤:١)؛ وفي البخاري ومسلم أيضًا",
+  "Sahih Muslim, Book of Faith — Umar ibn al-Khattab; also Sahih al-Bukhari 50":
+    "صحيح مسلم، كتاب الإيمان — عن عمر بن الخطاب؛ وصحيح البخاري ٥٠ أيضًا",
+  "Musnad Ahmad — Hudhayfah ibn al-Yaman. OUTSIDE THE TWO SAHIHS; graded Sahih by al-Albani (as-Silsilah as-Sahihah). NOTE: unlike every al-Bukhari and Muslim citation on this site, the wording here could not be checked against a primary text file, so it is given as the widely transmitted wording and is cited by collection rather than by a number":
+    "مسند أحمد — عن حذيفة بن اليمان. خارج الصحيحين؛ وصحّحه الألبانيّ (السلسلة الصحيحة). تنبيه: بخلاف أحاديث البخاري ومسلم في هذا الموقع، لم يُتحقَّق من هذا اللفظ في نسخةٍ أصلية، فهو مذكورٌ باللفظ المشهور، ويُعزى إلى مصدره دون رقم",
+
+  /* The Quran page's sign-in box: its labels are en-only/Arabic pairs, and
+     these two placeholders are attributes, which only this dictionary reaches. */
+  /* The Golden Age page's source lines that have no Arabic twin of their own.
+     Keyed by the exact English. */
+  "Surah An-Nisa (4:11-12); al-Khwarizmi, Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala":
+    "سورة النساء (٤:١١–١٢)؛ الخوارزمي، «الكتاب المختصر في حساب الجبر والمقابلة»",
+  "Surah Aal-Imran (3:165) — said to the companions themselves, after Uhud":
+    "سورة آل عمران (٣:١٦٥) — قيلت للصحابة أنفسهم بعد أُحُد",
+  "Surah Al-A'raf (7:179); the same image again at Al-Furqan (25:44)":
+    "سورة الأعراف (٧:١٧٩)؛ والصورة نفسها في سورة الفرقان (٢٥:٤٤)",
+  "Surah An-Nur (24:30), and then (24:31); “Modesty is a branch of faith” — Sahih al-Bukhari, Hadith 9, and Muslim":
+    "سورة النور (٢٤:٣٠)، ثم (٢٤:٣١)؛ و«الحياء شعبةٌ من الإيمان» — صحيح البخاري، حديث ٩، ومسلم",
+  "The Quran; and the hadith on modesty is Sahih — agreed upon":
+    "القرآن؛ وحديث الحياء صحيح — متّفقٌ عليه",
+  "Narrated by al-Bayhaqi in Shu'ab al-Iman and by Abu Ya'la":
+    "رواه البيهقي في «شعب الإيمان»، وأبو يعلى",
+  "Outside the two Sahihs — graded Sahih by al-Albani in Sahih al-Jami'; some scholars considered its chain weak. Its meaning is supported by the Quran's command to give full measure.":
+    "خارج الصحيحين — صحّحه الألبانيّ في «صحيح الجامع»، وضعّف بعضُ العلماء إسناده. ومعناه يشهد له أمرُ القرآن بإيفاء الكيل.",
+  "Jami at-Tirmidhi, Book of Qadar, Hadith 2140; also narrated by Ahmad and Ibn Majah":
+    "جامع الترمذي، أبواب القدر، حديث ٢١٤٠؛ ورواه أحمد وابن ماجه",
+  "Outside the two Sahihs — narrated by at-Tirmidhi; graded Sahih by al-Albani":
+    "خارج الصحيحين — رواه الترمذي، وصحّحه الألبانيّ",
+  "Surah An-Nur (24:55) — the promise, and its condition in the final clause":
+    "سورة النور (٢٤:٥٥) — الوعد، وشرطه في آخر الآية",
+
+  /* The full lives' citations that carry an English comment of their own
+     ("— NOT established", "historical sira, not hadith"), which the
+     reference translator can only half translate. Exact English keys. */
+  "historical and Israiliyyat accounts — NOT established, and not relied on here":
+    "روايات تاريخية وإسرائيليات — غير ثابتة، ولا يُعتمد عليها هنا",
+  "Surah An-Nisa (4:164); asking to see Him: Surah Al-A'raf (7:143) — Quran":
+    "سورة النساء (٤:١٦٤)؛ وسؤاله رؤيةَ ربّه: سورة الأعراف (٧:١٤٣) — قرآن",
+  "Israiliyyat and later histories — NOT established": "إسرائيليات وتواريخ متأخّرة — غير ثابتة",
+  "Israiliyyat — NOT established": "إسرائيليات — غير ثابتة",
+  "not in the Quran or the two Sahihs — NOT established": "ليس في القرآن ولا في الصحيحين — غير ثابت",
+  "historical accounts, e.g. Ibn Kathir, Al-Bidaya wan-Nihaya — historical sira, NOT hadith":
+    "روايات تاريخية، منها ابن كثير في «البداية والنهاية» — سيرةٌ تاريخيّة، لا حديث",
+  "tafsir and historical accounts — NOT part of the hadith itself":
+    "التفسير والروايات التاريخية — وليس من الحديث نفسه",
+  "appoint for us a king: Surah Al-Baqarah (2:246) — Quran": "طلبُهم مَلِكًا: سورة البقرة (٢:٢٤٦) — قرآن",
+  "historical accounts, e.g. Ibn Kathir — historical sira, NOT hadith":
+    "روايات تاريخية، منها ابن كثير — سيرةٌ تاريخيّة، لا حديث",
+  "Musannaf Ibn Abi Shaybah and historical accounts — historical sira, NOT hadith":
+    "مصنّف ابن أبي شيبة وروايات تاريخية — سيرةٌ تاريخيّة، لا حديث",
+  "historical accounts only — NOT established in the Quran or the two Sahihs":
+    "روايات تاريخية فقط — لم يثبت في القرآن ولا في الصحيحين",
+  "historical sira accounts (Ibn Ishaq, Ibn Kathir) — historical sira, NOT hadith":
+    "روايات السيرة التاريخية (ابن إسحاق، ابن كثير) — سيرةٌ تاريخيّة، لا حديث",
+  "historical sira accounts — historical sira, NOT hadith; his forbearance that day is established in the two Sahihs in other wordings":
+    "روايات السيرة التاريخية — سيرةٌ تاريخيّة، لا حديث؛ وحِلمُه ﷺ يومئذٍ ثابتٌ في الصحيحين بألفاظٍ أخرى",
+  "Have I conveyed? Sahih al-Bukhari, Book of Hajj, Hadith 1741 — Sahih, agreed upon":
+    "«ألا هل بلّغت؟» صحيح البخاري، كتاب الحج، حديث ١٧٤١ — صحيح، متّفقٌ عليه",
+  "recorded in the histories of at-Tabari and Ibn Sa'd — historical":
+    "مذكورٌ في تاريخ الطبري وطبقات ابن سعد — تاريخيّ",
+  "Ibn Sa'd, Tabaqat — historical": "ابن سعد، «الطبقات» — تاريخيّ",
+  "Ibn Ishaq and Ibn Sa'd — historical sira, not in the two Sahihs":
+    "ابن إسحاق وابن سعد — سيرةٌ تاريخيّة، ليست في الصحيحين",
+  "Musnad Ahmad, and Ibn Ishaq (in Ibn Hisham) — historical sira, reported at length from Salman himself":
+    "مسند أحمد، وابن إسحاق (في سيرة ابن هشام) — سيرةٌ تاريخيّة، مرويّةٌ مطوّلةً عن سلمان نفسه",
+  "Sahih al-Bukhari, Book of the Military Expeditions, Hadith 4101 — Sahih for the events of the Trench; the attribution of the idea to Salman is from the sira":
+    "صحيح البخاري، كتاب المغازي، حديث ٤١٠١ — صحيحٌ في وقائع الخندق؛ ونسبة الفكرة إلى سلمان من كتب السيرة",
+  "Sahih al-Bukhari, Hadith 143 — Sahih; 'and teach him the interpretation' is in Musnad Ahmad — outside the two Sahihs, graded Sahih by al-Albani":
+    "صحيح البخاري، حديث ١٤٣ — صحيح؛ وزيادة «وعلّمه التأويل» في مسند أحمد — خارج الصحيحين، وصحّحها الألبانيّ",
+  "Musnad Ahmad and others — outside the two Sahihs": "مسند أحمد وغيره — خارج الصحيحين",
+  "Sahih Muslim, Book of the Merits of the Companions — Sahih; the verse is Surah Luqman (31:15)":
+    "صحيح مسلم، كتاب فضائل الصحابة — صحيح؛ والآية من سورة لقمان (٣١:١٥)",
+  "the verse is Surah Al-Mujadila (58:22) — Quran; the incident is from historical sira accounts, not hadith":
+    "الآية من سورة المجادلة (٥٨:٢٢) — قرآن؛ والحادثة من روايات السيرة التاريخية، لا حديث",
+  "Sahih al-Bukhari, Book of the Merits of the Ansar, Hadith 3803 — Sahih, and also in Muslim":
+    "صحيح البخاري، كتاب مناقب الأنصار، حديث ٣٨٠٣ — صحيح، وهو في مسلم أيضًا",
+  "reported outside the two Sahihs; stated here as such and not relied upon":
+    "مرويٌّ خارج الصحيحين؛ ذُكر هنا على هذا الوصف ولا يُعتمد عليه",
+  "the verse is Surah An-Nahl (16:106) — Quran; the account is reported in tafsir and sira — outside the two Sahihs":
+    "الآية من سورة النحل (١٦:١٠٦) — قرآن؛ والخبر مرويٌّ في التفسير والسيرة — خارج الصحيحين",
+  "historical and hadith sources outside the two Sahihs": "مصادر تاريخية وحديثية خارج الصحيحين",
+  "Sunan Abu Dawud and at-Tirmidhi — outside the two Sahihs; scholars have discussed its chain":
+    "سنن أبي داود والترمذي — خارج الصحيحين؛ وقد تكلّم العلماء في إسناده",
+  "reported outside the two Sahihs": "مرويٌّ خارج الصحيحين",
+  "historical sira accounts (Ibn Ishaq, Ibn Sa'd, Ibn Kathir) — historical sira, NOT hadith":
+    "روايات السيرة التاريخية (ابن إسحاق، ابن سعد، ابن كثير) — سيرةٌ تاريخيّة، لا حديث",
+  "Sahih al-Bukhari, Hadith 2880-2881 mentions the women carrying water — Sahih":
+    "صحيح البخاري، حديث ٢٨٨٠–٢٨٨١، وفيه ذكر النساء يحملن الماء — صحيح",
+  "Musnad Ahmad — outside the two Sahihs, graded authentic by scholars of hadith":
+    "مسند أحمد — خارج الصحيحين، وصحّحه أهل الحديث",
+  "reported in tafsir and the biographical works — outside the two Sahihs; the verse is Surah Al-Baqarah (2:207) — Quran":
+    "مرويٌّ في التفسير وكتب التراجم — خارج الصحيحين؛ والآية من سورة البقرة (٢:٢٠٧) — قرآن",
+  "reported in the biographical works and tafsir — outside the two Sahihs":
+    "مرويٌّ في كتب التراجم والتفسير — خارج الصحيحين",
+  "Sunan Abu Dawud and at-Tirmidhi — outside the two Sahihs, authenticated by al-Albani; the meaning is supported in Sahih al-Bukhari, Hadith 3212":
+    "سنن أبي داود والترمذي — خارج الصحيحين، وصحّحه الألبانيّ؛ ويشهد لمعناه صحيح البخاري، حديث ٣٢١٢",
+  "Sahih al-Bukhari, Hadith 1461 — Sahih; the verse is Surah Al-Imran (3:92) — Quran":
+    "صحيح البخاري، حديث ١٤٦١ — صحيح؛ والآية من سورة آل عمران (٣:٩٢) — قرآن",
+  "reported in the biographical and historical works — historical sira, not hadith":
+    "مرويٌّ في كتب التراجم والتاريخ — سيرةٌ تاريخيّة، لا حديث",
+  "Sahih al-Bukhari, Hadith 3613 and 4846 and Sahih Muslim — Sahih, agreed upon; the verse is Surah Al-Hujurat (49:2)":
+    "صحيح البخاري، حديث ٣٦١٣ و٤٨٤٦، وصحيح مسلم — صحيح، متّفقٌ عليه؛ والآية من سورة الحجرات (٤٩:٢)",
+  "historical accounts — historical sira, not hadith; the verse is Surah Al-Imran (3:146)":
+    "روايات تاريخية — سيرةٌ تاريخيّة، لا حديث؛ والآية من سورة آل عمران (٣:١٤٦)",
+  "reported with the account of her marriage — outside the two Sahihs": "مرويٌّ مع خبر زواجها — خارج الصحيحين",
+  "her death at Sarif — Sahih al-Bukhari, Hadith 4258; her funeral there — Sahih al-Bukhari, Hadith 5067, and Sahih Muslim, Hadith 1465 — Sahih; that the marriage itself was at Sarif — Sunan Abu Dawud, Hadith 1843 — outside the two Sahihs; her asking to be buried there — historical accounts":
+    "وفاتها بسَرِف — صحيح البخاري، حديث ٤٢٥٨؛ وجنازتها هناك — صحيح البخاري، حديث ٥٠٦٧، وصحيح مسلم، حديث ١٤٦٥ — صحيح؛ وكونُ الزواج نفسه بسَرِف — سنن أبي داود، حديث ١٨٤٣ — خارج الصحيحين؛ ووصيّتها أن تُدفن هناك — روايات تاريخية",
+  "very little about her is established in the two Sahihs, and this entry does not pretend otherwise":
+    "القليل جدًّا من خبرها ثابتٌ في الصحيحين، ولا تدّعي هذه الترجمة غير ذلك",
+
+  /* The Quran reader's composite source lines ("verse · the hadith that goes
+     with it: collection — narrator"), too mixed for the part translator. */
+  "Sahih al-Bukhari, Book of Tafsir, on Surah Al-Baqarah — the Prophet ﷺ explaining wasatan as 'adlan":
+    "صحيح البخاري، كتاب التفسير، في سورة البقرة — تفسير النبي ﷺ «وسطًا» بـ«عدلًا»",
+  "Surah Al-Baqarah (2:152) · The qudsi narration: Sahih al-Bukhari 7405 and Sahih Muslim — Abu Hurairah":
+    "سورة البقرة (٢:١٥٢) · والحديث القدسيّ: صحيح البخاري ٧٤٠٥ وصحيح مسلم — عن أبي هريرة",
+  "Surah Al-Baqarah (2:261) · The sheep: at-Tirmidhi 2470 — outside the two Sahihs, authenticated by al-Albani":
+    "سورة البقرة (٢:٢٦١) · وحديث الشاة: الترمذي ٢٤٧٠ — خارج الصحيحين، وصحّحه الألبانيّ",
+  "Surah Aal-Imran (3:92) · Abu Talhah and Bayruha: Sahih al-Bukhari 1461 and Sahih Muslim — Anas ibn Malik":
+    "سورة آل عمران (٣:٩٢) · وأبو طلحة وبَيرُحاء: صحيح البخاري ١٤٦١ وصحيح مسلم — عن أنس بن مالك",
+  "Surah An-Nisa (4:34) · “He never struck a woman or a servant”: Sahih Muslim, Book of Virtues — Aishah · “The best of you are the best to their wives”: at-Tirmidhi 3895 — outside the two Sahihs, authenticated by al-Albani · Al-Mufradat, Ar-Raghib al-Isfahani, entry q-w-m":
+    "سورة النساء (٤:٣٤) · و«ما ضرب امرأةً ولا خادمًا»: صحيح مسلم، كتاب الفضائل — عن عائشة · و«خيركم خيركم لأهله»: الترمذي ٣٨٩٥ — خارج الصحيحين، وصحّحه الألبانيّ · «المفردات» للراغب الأصفهاني، مادّة (ق و م)",
+  "Surah An-Nisa (4:58) · The key of the Ka'bah: reported in the books of tafsir and sira — historical report, not in the two Sahihs":
+    "سورة النساء (٤:٥٨) · ومفتاح الكعبة: مرويٌّ في كتب التفسير والسيرة — خبرٌ تاريخيّ، ليس في الصحيحين",
+  "Surah Al-A'raf (7:172) · The fitrah: Sahih al-Bukhari 1385 and Sahih Muslim — Abu Hurairah":
+    "سورة الأعراف (٧:١٧٢) · والفطرة: صحيح البخاري ١٣٨٥ وصحيح مسلم — عن أبي هريرة",
+  "Surah Hud (11:112) · “Hud and its sisters turned my hair white”: at-Tirmidhi 3297 — outside the two Sahihs":
+    "سورة هود (١١:١١٢) · و«شيّبتني هودٌ وأخواتها»: الترمذي ٣٢٩٧ — خارج الصحيحين",
+  "Ar-Raghib al-Isfahani, Al-Mufradat, entries و د د and ر ح م":
+    "الراغب الأصفهاني، «المفردات»، مادّتا (و د د) و(ر ح م)",
+  "Surah Al-Ahqaf (46:15), read with Al-Baqarah (2:233) and Luqman (31:14)":
+    "سورة الأحقاف (٤٦:١٥)، وتُقرأ مع سورة البقرة (٢:٢٣٣) وسورة لقمان (٣١:١٤)",
+  "Surah Al-Hujurat (49:12) · The definition of backbiting: Sahih Muslim, Book of Righteousness — Abu Hurairah":
+    "سورة الحجرات (٤٩:١٢) · وتعريف الغيبة: صحيح مسلم، كتاب البرّ والصلة — عن أبي هريرة",
+  "Surah Ar-Rahman (55:13) · The recitation to the jinn: at-Tirmidhi 3291 — outside the two Sahihs":
+    "سورة الرحمن (٥٥:١٣) · وقراءتها على الجنّ: الترمذي ٣٢٩١ — خارج الصحيحين",
+  "Surah Ar-Rahman (55:60) · Ihsan defined: Sahih al-Bukhari 50 (from Abu Hurairah) and Sahih Muslim 8 (from Umar ibn al-Khattab)":
+    "سورة الرحمن (٥٥:٦٠) · وتعريف الإحسان: صحيح البخاري ٥٠ (عن أبي هريرة)، وصحيح مسلم ٨ (عن عمر بن الخطاب)",
+  "Surah Al-Hadid (57:16), read with 57:17 · Ibn Mas'ud's report: Sahih Muslim, Book of Tafsir":
+    "سورة الحديد (٥٧:١٦)، وتُقرأ مع ٥٧:١٧ · وخبر ابن مسعود: صحيح مسلم، كتاب التفسير",
+  "Surah Al-Mumtahanah (60:8) · Asma's mother: Sahih al-Bukhari 2620 and Sahih Muslim — Asma bint Abi Bakr":
+    "سورة الممتحنة (٦٠:٨) · وأمّ أسماء: صحيح البخاري ٢٦٢٠ وصحيح مسلم — عن أسماء بنت أبي بكر",
+  "Surah Al-Qalam (68:4) · “His character was the Quran”: Sahih Muslim, Book of the Prayer of Travellers — Aishah":
+    "سورة القلم (٦٨:٤) · و«كان خُلُقه القرآن»: صحيح مسلم، كتاب صلاة المسافرين — عن عائشة",
+  "Surah Al-Qiyamah (75:22-23) · “You will see your Lord”: Sahih al-Bukhari 554 and Sahih Muslim — Jarir ibn Abdullah":
+    "سورة القيامة (٧٥:٢٢–٢٣) · و«إنكم سترون ربكم»: صحيح البخاري ٥٥٤ وصحيح مسلم — عن جرير بن عبد الله",
+  "Surah Al-Mutaffifin (83:14) · The black spot: at-Tirmidhi 3334 — outside the two Sahihs, authenticated by al-Albani":
+    "سورة المطففين (٨٣:١٤) · والنكتة السوداء: الترمذي ٣٣٣٤ — خارج الصحيحين، وصحّحه الألبانيّ",
+  "Surah Al-Layl (92:5-10) · Sahih al-Bukhari 4949 and Sahih Muslim — Ali ibn Abi Talib":
+    "سورة الليل (٩٢:٥–١٠) · صحيح البخاري ٤٩٤٩ وصحيح مسلم — عن عليّ بن أبي طالب",
+  "Surah Ad-Duha (93:3), read with 93:6-8 · The pause in revelation: Sahih al-Bukhari 4950 and Sahih Muslim — Jundub ibn Sufyan":
+    "سورة الضحى (٩٣:٣)، وتُقرأ مع ٩٣:٦–٨ · وفترة الوحي: صحيح البخاري ٤٩٥٠ وصحيح مسلم — عن جندب بن سفيان",
+  "Surah Al-Qadr (97:3) · The date being lifted: Sahih al-Bukhari 49 — Ubadah ibn as-Samit":
+    "سورة القدر (٩٧:٣) · ورفعُ العلم بتعيين ليلتها: صحيح البخاري ٤٩ — عن عبادة بن الصامت",
+  "Surah Al-Qari'ah (101:6-9) · The hadith of the card: at-Tirmidhi 2639 — outside the two Sahihs, authenticated by al-Albani":
+    "سورة القارعة (١٠١:٦–٩) · وحديث البطاقة: الترمذي ٢٦٣٩ — خارج الصحيحين، وصحّحه الألبانيّ",
+  "Surah At-Takathur (102:8) · The dates and water: Sahih Muslim, Book of Drinks — Abu Hurairah":
+    "سورة التكاثر (١٠٢:٨) · والتمر والماء: صحيح مسلم، كتاب الأشربة — عن أبي هريرة",
+  "A statement of Imam ash-Shafi'i, reported in the tafsir works — the words of a scholar, NOT a hadith":
+    "قولٌ للإمام الشافعي، منقولٌ في كتب التفسير — كلامُ عالمٍ، لا حديث",
+  "Reported in the works on the Quranic sciences — historical report, outside the two Sahihs":
+    "مرويٌّ في كتب علوم القرآن — خبرٌ تاريخيّ، خارج الصحيحين",
+  "The wording of the verse; nothing further on their description is established in the two Sahihs":
+    "لفظ الآية؛ ولم يثبت في الصحيحين شيءٌ زائد في وصفها",
+  "Surah An-Nasr (110:3) · Umar and Ibn Abbas: Sahih al-Bukhari 4970":
+    "سورة النصر (١١٠:٣) · وخبر عمر وابن عباس: صحيح البخاري ٤٩٧٠",
+  "Surah Al-Falaq (113:1-5) · Reciting them in his final illness: Sahih al-Bukhari 5735 — Aishah":
+    "سورة الفلق (١١٣:١–٥) · وقراءته ﷺ إيّاها في مرض موته: صحيح البخاري ٥٧٣٥ — عن عائشة",
+
+  "Username — اسم المستخدم": "اسم المستخدم",
+  "Password — كلمة المرور": "كلمة المرور",
+  "Access code — رمز الدخول": "رمز الدخول",
+
   "before sleeping": "قبل النوم",
   "how to make wudu": "كيف أتوضأ",
   "eating": "الطعام",
@@ -358,6 +640,20 @@ const AR = {
    "Surah Al-Baqarah (2:25)" are built from a few repeating pieces. Translating
    those pieces covers every reference on the site without listing them all. */
 const AR_PARTS = [
+  /* THE QURAN READER'S SOURCE LINES. Measured by opening all 114 surahs in
+     Arabic mode: 83 of them came out half-English — "سورة يونس (10:62), read
+     with 10:63", "Tafsir الطبري". These run first: the surah-name step that
+     follows needs the سورة put in front of a name after "read with". */
+  [/,\s*read with\s+(?=['’A-Z])/g, "، وتُقرأ مع سورة "],
+  [/,\s*read with\s+/g, "، وتُقرأ مع "],
+  [/,\s*and again at\s+/g, "، وتكرّرت في "],
+  [/\s+with\s+(?=Surah\b|سورة)/g, " مع "],
+  [/\bTafsir at-Tabari\b/g, "تفسير الطبري"],
+  [/^The wording of the verse$/g, "لفظ الآية"],
+  [/\bThe Uthmani text\b/g, "الرسم العثماني"],
+  [/^Reported from\s+/g, "مرويٌّ عن "],
+  [/\s*—\s*quoted in his own words/g, " — منقولٌ بلفظه"],
+
   /* BOOK NAMES THAT WERE COMING OUT HALF-ENGLISH, measured September 2026 by
      running every "Book of …" phrase in the data through this function: 82 of
      159 left English behind — "كتاب الفضائل of the قرآن", "كتاب Wills",
@@ -901,7 +1197,8 @@ function iitwNormSurah(name) {
   return String(name || "")
     .toLowerCase()
     .replace(/[^a-z]/g, "")
-    .replace(/(.)\1+/g, "$1");
+    .replace(/(.)\1+/g, "$1")
+    .replace(/h$/, "");       // "Al-Mujadilah" and SURAHS' "Al-Mujadila"
 }
 
 let iitwSurahMap = null;
@@ -914,15 +1211,24 @@ function iitwGetSurahMap() {
 }
 
 function iitwTranslateReference(text) {
-  let out = text;
-  AR_PARTS.forEach(([re, rep]) => { out = out.replace(re, rep); });
+  /* A title quoted in «» is left exactly as written: an Arabic source line
+     that names an English report came out as «Our Epidemic of Loneliness و
+     Isolation». (Hadith and Home put the English of a reference with no
+     Arabic twin in the .ar-only half, so the .ar-only half cannot simply be
+     skipped.) */
+  let out = text.split(/(«[^«»]*»)/).map(part => {
+    if (part.charAt(0) === "«") return part;
+    AR_PARTS.forEach(([re, rep]) => { part = part.replace(re, rep); });
+    return part;
+  }).join("");
 
   /* By this point [/\bSurah\b/ → "سورة"] has already fired, so the Arabic
      word is the anchor: only a name that is actually part of a citation is
      touched, never one that happens to appear in ordinary prose. The name
      runs up to the opening bracket of the verse number, or to the end. */
   const map = iitwGetSurahMap();
-  out = out.replace(/سورة\s+([A-Za-z][A-Za-z'’’\- ]*?)\s*(?=\(|$|[،,;—])/g,
+  // a name may open with an apostrophe ('Abasa) and be followed by " · "
+  out = out.replace(/سورة\s+(['’‘]?[A-Za-z][A-Za-z'’‘\- ]*?)\s*(?=\(|$|[،,;—·])/g,
     (whole, name) => {
       const ar = map[iitwNormSurah(name)];
       return ar ? "سورة " + ar + " " : whole;

@@ -114,7 +114,7 @@ const SINS = {
           title: "Killing a soul — and how wide the Quran draws the circle",
           titleAr: "قتلُ النفس — وسَعَةُ الدائرة في القرآن",
           plain: "Third on the list, and the Quran states the weight of it in a way no other scripture does: whoever kills one soul, unless for a soul or for corruption in the land, it is as though he killed all of mankind.\n\nOne life is placed on the scale against every life there is. Which is also why the second half of the verse is there — and whoever saves one life, it is as though he saved all of mankind.",
-          plainAr: "الثالثةُ في العدّ، وقد قرّر القرآنُ ثِقَلها تقريرًا لا نظير له: أنّ من قتل نفسًا بغير نفسٍ أو فسادٍ في الأرض فكأنما قتل الناس جميعًا.\n\nفوُضعت نفسٌ واحدة في الميزان بإزاء الأنفس كلِّها. ولذلك جاء شطرُ الآية الآخر: ﴿وَمَنۡ أَحۡيَاهَا فَكَأَنَّمَآ أَحۡيَا ٱلنَّاسَ جَمِيعٗاۚ﴾.",
+          plainAr: "الثالثةُ في العدّ، وقد قرّر القرآنُ ثِقَلها تقريرًا لا نظير له: أنّ ﴿مَن قَتَلَ نَفۡسَۢا بِغَيۡرِ نَفۡسٍ أَوۡ فَسَادٖ فِي ٱلۡأَرۡضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعٗا﴾.\n\nفوُضعت نفسٌ واحدة في الميزان بإزاء الأنفس كلِّها. ولذلك جاء شطرُ الآية الآخر: ﴿وَمَنۡ أَحۡيَاهَا فَكَأَنَّمَآ أَحۡيَا ٱلنَّاسَ جَمِيعٗاۚ﴾.",
           example: "And the circle includes yourself. Taking your own life is inside this ruling, not outside it — 4:29 forbids consuming wealth unjustly and then adds, in the same breath, \"and do not kill yourselves; indeed Allah is Merciful to you.\" The verse ends on His mercy, which is not an accident. If that is where you are right now, the section at the top of this page is written for you and it asks you to tell a person today.",
           exampleAr: "والدائرةُ تشملك أنت: فقتلُ المرء نفسَه داخلٌ في هذا لا خارجٌ عنه — نهت آيةُ النساء عن أكل المال بالباطل ثم أتبعت في نفس النَّفَس: ﴿وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ إِنَّ ٱللَّهَ كَانَ بِكُمۡ رَحِيمٗا﴾. وخُتمت برحمته، وليس ذلك اتفاقًا. فإن كنتَ في هذا الموضع الآن فالقسمُ في أعلى الصفحة مكتوبٌ لك، وهو يسألك أن تخبر إنسانًا اليوم.",
           proof: "Whoever kills a soul unless for a soul or for corruption in the land - it is as if he had slain mankind entirely. And whoever saves one - it is as if he had saved mankind entirely.",
@@ -145,7 +145,7 @@ const SINS = {
           extraRef: "Surah An-Nur (24:19)",
           extraRefAr: "سورة النور (٢٤:١٩)",
           note: "24:19 widens it past the person who invented the story to everyone who enjoyed passing it on. \"Those who LIKE that it should spread\" — not those who started it. Forwarding a message counts.",
-          noteAr: "وآيةُ ﴿يُحِبُّونَ أَن تَشِيعَ﴾ توسّع الأمر من المخترع للخبر إلى كلِّ من طاب له نقلُه. فهي في «الذين يحبّون أن تشيع» لا في الذين ابتدأوها. وإعادةُ إرسال الرسالة داخلةٌ في هذا.",
+          noteAr: "وآيةُ ﴿يُحِبُّونَ أَن تَشِيعَ﴾ توسّع الأمر من المخترع للخبر إلى كلِّ من طاب له نقلُه. فهي في ﴿ٱلَّذِينَ يُحِبُّونَ أَن تَشِيعَ﴾ لا في الذين ابتدأوها. وإعادةُ إرسال الرسالة داخلةٌ في هذا.",
           keys: ["accusing a woman", "slander", "qadhf", "false accusation", "reputation", "spreading rumours", "rumors about her", "four witnesses", "defamation",
                  "القذف", "قذف المحصنات", "اتهام امراه", "الافتراء", "السمعة", "نشر الاشاعات", "اربعة شهود", "التشهير"]
         }
@@ -453,9 +453,13 @@ const SINS = {
           strengthAr: "صحيح — متفق عليه (البخاري ومسلم)",
           note: "And the one limit, because it is asked constantly: obedience is not owed in disobedience to Allah — 31:15 orders a son whose parents push him to shirk to refuse, and in the same breath to accompany them in this world with kindness. Refusing the instruction and keeping the kindness are both commanded, in one verse.",
           noteAr: "وثَمَّ حدٌّ واحدٌ يُسأل عنه كثيرًا: فلا طاعة في معصية الخالق — أمرت آيةُ لقمان الابنَ الذي يُجاهده أبواه على الشرك ألّا يطيعهما، وأمرته في النَّفَس نفسه: ﴿وَصَاحِبۡهُمَا فِي ٱلدُّنۡيَا مَعۡرُوفٗاۖ﴾. فرَدُّ الأمر وحفظُ الصحبة مأمورٌ بهما جميعًا، في آيةٍ واحدة.",
-          keys: ["disobeying parents", "uquq", "my parents", "rude to my mother", "not speaking to my father", "parents rights", "is it a sin to argue with my mother", "my mother is difficult",
-                 "عقوق الوالدين", "العقوق", "بر الوالدين", "امي", "ابي", "قاطع اهلي", "اسات لامي", "حق الوالدين", "اعق والدي",
-                 "shouted at my mum", "shouted at my mother", "screamed at my dad", "raised my voice at my", "slammed the door on", "ignored my mother", "hung up on my dad", "زعقت على امي", "صرخت على ابوي", "رفعت صوتي على", "سكرت بوجه امي", "ما رديت على ابوي"]
+          keys: ["disobeying parents", "uquq", "rude to my mother", "not speaking to my father",
+                 "parents rights", "is it a sin to argue with my mother", "my mother is difficult",
+                 "عقوق الوالدين", "العقوق", "بر الوالدين", "قاطع اهلي", "اسات لامي", "حق الوالدين", "اعق والدي",
+                 "shouted at my mum", "shouted at my mother", "screamed at my dad", "raised my voice at my",
+                 "slammed the door on", "ignored my mother", "hung up on my dad", "زعقت على امي",
+                 "صرخت على ابوي", "رفعت صوتي على", "سكرت بوجه امي", "ما رديت على ابوي",
+                 "i disobeyed my parents", "عصيت والدي", "عققت والدي"]
         },
         {
           id: "sn-qatia", icon: "✂️",

@@ -153,7 +153,7 @@ const BASICS = {
           title: "The food that is forbidden",
           titleAr: "المحرَّم من الطعام",
           plain: "Allah names them: an animal that died by itself, blood, the flesh of swine, and anything slaughtered in a name other than Allah's. That is the list. Everything else — every vegetable, every fish, every properly slaughtered animal — is yours.",
-          plainAr: "سمّاها اللهُ بنفسه: الميتةُ، والدمُ، ولحمُ الخنزير، وما أُهلّ لغير الله به. هذه هي القائمة. وما عداها — من كلّ نباتٍ وكلّ سمكٍ وكلّ ذبيحةٍ ذُكّيت — فهو لك.",
+          plainAr: "سمّاها اللهُ بنفسه: ﴿ٱلۡمَيۡتَةُ وَٱلدَّمُ وَلَحۡمُ ٱلۡخِنزِيرِ وَمَآ أُهِلَّ لِغَيۡرِ ٱللَّهِ بِهِۦ﴾. هذه هي القائمة. وما عداها — من كلّ نباتٍ وكلّ سمكٍ وكلّ ذبيحةٍ ذُكّيت — فهو لك.",
           example: "So pork is out, and so is anything made from it — gelatine from pork, lard, and bacon under any other name. And if you are genuinely starving with nothing else, the same verse says you are not sinning by eating to survive.",
           exampleAr: "فالخنزيرُ محرَّمٌ وما اتُّخذ منه: الجيلاتينُ الخنزيريّ، والشحمُ، والمقدَّدُ بأيِّ اسمٍ سُمِّي. وإن اضطُررتَ اضطرارًا حقيقيًّا ولم تجد سواه، فالآيةُ نفسها ترفع عنك الإثم في أكلِ ما تُبقي به نفسك.",
           proof: "Prohibited to you are dead animals, blood, the flesh of swine, and that which has been dedicated to other than Allah … But whoever is forced by severe hunger with no inclination to sin — then indeed, Allah is Forgiving and Merciful.",
@@ -228,8 +228,10 @@ const BASICS = {
           link: "#rulings",
           linkEn: "Interest, and working somewhere that deals in what is forbidden",
           linkAr: "الربا، والعمل فيما يتعامل بالحرام",
-          keys: ["haram money", "haram income", "my job", "work", "salary", "is my job halal", "earning", "stealing", "cheating at work", "bribe", "interest", "riba",
-                 "المال الحرام", "الكسب الحرام", "عملي", "وظيفتي", "راتبي", "هل عملي حلال", "السرقة", "الرشوة", "الربا", "الغش في العمل"]
+          keys: ["haram money", "haram income", "is my job halal", "earning", "stealing", "cheating at work",
+                 "bribe", "interest", "riba", "المال الحرام", "الكسب الحرام", "هل عملي حلال", "السرقة",
+                 "الرشوة", "الربا", "الغش في العمل", "is my work halal", "is my salary halal", "هل وظيفتي حلال",
+                 "هل راتبي حلال"]
         }
       ]
     },
@@ -331,7 +333,7 @@ const BASICS = {
           title: "However bad it was",
           titleAr: "مهما كان",
           plain: "The verse is addressed to the people who went furthest — those who wasted themselves — and it tells them not to give up hope, because Allah forgives sins, all of them. Not most of them. All.",
-          plainAr: "الآيةُ خطابٌ لأبعد الناس ذهابًا — الذين أسرفوا على أنفسهم — تنهاهم عن القنوط، لأنّ اللهَ يغفر الذنوب جميعًا. لا أكثرَها، بل جميعَها.",
+          plainAr: "الآيةُ خطابٌ لأبعد الناس ذهابًا — ﴿ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ﴾ — تنهاهم عن القنوط، لأنّ اللهَ ﴿يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾. لا أكثرَها، بل جميعَها.",
           example: "Read who it is addressed to before you decide it is not for you. It is not addressed to the nearly-good. It is addressed to the person who thinks he has ruined it.",
           exampleAr: "فانظر إلى من وُجّه الخطاب قبل أن تحكم أنه ليس لك. فليس خطابًا لمن كاد يُحسن، وإنما هو خطابٌ لمن يظنّ أنه أفسد كلَّ شيء.",
           proof: "Say: O My servants who have transgressed against themselves, do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.",
@@ -520,7 +522,7 @@ const BASICS = {
           title: "The promise attached to it, in this life",
           titleAr: "الوعدُ المقرون به في الدنيا",
           plain: "Whoever acts rightly, man or woman, while believing — Allah promises them a good life. Not necessarily an easy one or a rich one. A good one: settled, with something solid under it.",
-          plainAr: "من عمل صالحًا من ذكرٍ أو أنثى وهو مؤمن، وعده اللهُ حياةً طيّبة. لا يسيرةً بالضرورة ولا غنيّة، بل طيّبةً: مستقرّةً لها أرضٌ تقف عليها.",
+          plainAr: "﴿مَنۡ عَمِلَ صَٰلِحٗا مِّن ذَكَرٍ أَوۡ أُنثَىٰ وَهُوَ مُؤۡمِنٞ﴾، وعده اللهُ حياةً طيّبة. لا يسيرةً بالضرورة ولا غنيّة، بل طيّبةً: مستقرّةً لها أرضٌ تقف عليها.",
           example: "And the verse says \"male or female\" explicitly — the promise is not addressed to half the people. It is worth noticing where the Quran goes out of its way to say that.",
           exampleAr: "وقالت الآيةُ «من ذكرٍ أو أنثى» تصريحًا، فليس الوعدُ لنصف الناس. ومواضعُ تنصيص القرآن على ذلك جديرةٌ بالتأمّل.",
           proof: "Whoever does righteousness, whether male or female, while he is a believer — We will surely cause him to live a good life.",

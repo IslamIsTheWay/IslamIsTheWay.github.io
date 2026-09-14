@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609131301" />
+  <link rel="stylesheet" href="css/style.css?v=202609140852" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/search.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -64,8 +64,9 @@
 
   <div class="page-hero ph-photo ph-search">
     <div class="container">
-      <h1>Search a Prophet or Companion</h1>
-      <p>Type a name below — such as "Musa", "Ibrahim", "Abu Bakr", or "Aisha" — to get a summary and references for further study.</p>
+      <h1><span class="en-only">Search the site</span><span class="ar-only" dir="rtl">ابحث في الموقع</span></h1>
+      <p class="en-only">Type a name or a subject, the way you would say it — Musa, Aisha, patience, zakat, the Dajjal, sleep. People come first; everything else the site carries on it is listed underneath.</p>
+      <p class="ar-only" dir="rtl">اكتب اسمًا أو موضوعًا كما تقوله — موسى، عائشة، الصبر، الزكاة، الدجال، النوم. يظهر الأشخاص أوّلًا، ثم كلُّ ما في الموقع عن الموضوع تحتهم.</p>
     </div>
   </div>
 
@@ -76,16 +77,19 @@
         <button type="submit" id="searchBtn">Search</button>
       </form>
 
+      <!-- Each chip in both languages: the names were bare English, so the
+           Arabic page showed "Aisha", "Bilal" and "Khalid ibn al-Walid". -->
       <div class="search-tags">
-        Try:
-        <span onclick="quickSearch('Muhammad')">Muhammad ﷺ</span>
-        <span onclick="quickSearch('Ibrahim')">Ibrahim</span>
-        <span onclick="quickSearch('Musa')">Musa</span>
-        <span onclick="quickSearch('Yusuf')">Yusuf</span>
-        <span onclick="quickSearch('Abu Bakr')">Abu Bakr</span>
-        <span onclick="quickSearch('Aisha')">Aisha</span>
-        <span onclick="quickSearch('Khalid')">Khalid ibn al-Walid</span>
-        <span onclick="quickSearch('Bilal')">Bilal</span>
+        <span class="en-only" style="background:none;cursor:default;padding:0;">Try:</span><span class="ar-only" dir="rtl" style="background:none;cursor:default;padding:0;">جرّب:</span>
+        <span onclick="quickSearch('Muhammad')"><span class="en-only">Muhammad ﷺ</span><span class="ar-only">محمد ﷺ</span></span>
+        <span onclick="quickSearch('Ibrahim')"><span class="en-only">Ibrahim</span><span class="ar-only">إبراهيم</span></span>
+        <span onclick="quickSearch('Musa')"><span class="en-only">Musa</span><span class="ar-only">موسى</span></span>
+        <span onclick="quickSearch('Abu Bakr')"><span class="en-only">Abu Bakr</span><span class="ar-only">أبو بكر</span></span>
+        <span onclick="quickSearch('Aisha')"><span class="en-only">Aisha</span><span class="ar-only">عائشة</span></span>
+        <span onclick="quickSearch('Bilal')"><span class="en-only">Bilal</span><span class="ar-only">بلال</span></span>
+        <span onclick="quickSearch('patience')"><span class="en-only">Patience</span><span class="ar-only">الصبر</span></span>
+        <span onclick="quickSearch('Dajjal')"><span class="en-only">The Dajjal</span><span class="ar-only">الدجال</span></span>
+        <span onclick="quickSearch('sleep')"><span class="en-only">Before sleep</span><span class="ar-only">النوم</span></span>
       </div>
 
       <div id="searchResults"></div>
@@ -127,26 +131,53 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609131301"></script>
+  <script src="js/data.js?v=202609140852"></script>
   <!-- The full biographies. Without this a search result showed only the
        three-line summary, even for the 94 people this site has a complete
        life written for. main.js reads FULL_LIVES when building a card, so
        this must load before it. -->
-  <script src="js/lives.js?v=202609131301"></script>
-  <script src="js/wordlens.js?v=202609131301"></script>
-  <script src="js/main.js?v=202609131301"></script>
-  <script src="js/i18n.js?v=202609131301"></script>
+  <script src="js/lives.js?v=202609140852"></script>
+  <!-- The rest of the site, for the search under the people: the Sunnah
+       practices and the adhkar live in their own files. -->
+  <script src="js/sunnah.js?v=202609140852"></script>
+  <script src="js/adhkar.js?v=202609140852"></script>
+  <script src="js/sitesearch.js?v=202609140852"></script>
+  <script src="js/wordlens.js?v=202609140852"></script>
+  <script src="js/main.js?v=202609140852"></script>
+  <script src="js/i18n.js?v=202609140852"></script>
   <script>
     const input = document.getElementById("searchInput");
     const form = document.getElementById("searchForm");
+    const results = document.getElementById("searchResults");
 
-    form.addEventListener("submit", () => runPersonSearch(input.value));
-    input.addEventListener("input", () => runPersonSearch(input.value));
+    /* People first, exactly as before; then the rest of the site. When no
+       person matches but the site has the subject, the "no results" answer
+       would be wrong — it becomes a one-line note above what was found. */
+    function runSearch(q) {
+      runPersonSearch(q);
+      if (!q.trim()) return;
+      const shown = typeof ssRender === "function" ? ssRender(q, results) : 0;
+      const none = results.querySelector(".no-results");
+      if (none && shown) {
+        none.outerHTML = `<p class="ss-nobody"><span class="en-only">No prophet or companion by that name — here is what the site has on it:</span><span class="ar-only" dir="rtl">لا نبيَّ ولا صحابيَّ بهذا الاسم — وهذا ما في الموقع عنه:</span></p>`;
+      }
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    form.addEventListener("submit", () => runSearch(input.value));
+    input.addEventListener("input", () => runSearch(input.value));
 
     function quickSearch(term) {
       input.value = term;
-      runPersonSearch(term);
+      runSearch(term);
     }
+
+    /* search.html?q=… — other pages send a search here when they have
+       nothing on it themselves. */
+    try {
+      const q0 = new URLSearchParams(location.search).get("q");
+      if (q0) { input.value = q0; runSearch(q0); }
+    } catch (e) {}
   </script>
 </body>
 </html>

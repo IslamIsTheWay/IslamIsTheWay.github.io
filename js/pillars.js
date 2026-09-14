@@ -128,15 +128,18 @@ const PILLARS = {
           extraProofAr: "مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
           extraRef: "Sahih al-Bukhari, Hadith 38",
           extraRefAr: "صحيح البخاري، حديث ٣٨",
-          keys: ["fasting", "fast", "sawm", "siyam", "ramadan", "ramadhan", "who does not fast", "sick", "travelling", "pregnant", "period", "make up fasts", "broke my fast", "fidya",
-                 "الصيام", "الصوم", "أصوم", "رمضان", "من لا يصوم", "المريض", "المسافر", "الحامل", "الحيض", "القضاء", "أفطرت", "الفدية"]
+          keys: ["fasting", "fast", "sawm", "siyam", "ramadan", "ramadhan", "who does not fast",
+                 "make up fasts", "broke my fast", "fidya", "الصيام", "الصوم", "أصوم", "رمضان", "من لا يصوم",
+                 "القضاء", "أفطرت", "الفدية", "fasting while sick", "sick in ramadan",
+                 "fasting while travelling", "fasting while pregnant", "fasting on my period", "صيام المريض",
+                 "المريض في رمضان", "صيام المسافر", "صيام الحامل", "الحائض في رمضان"]
         },
         {
           id: "pi-hajj", num: "5", icon: "🕋",
           title: "Hajj — once in a lifetime, if you are able",
           titleAr: "الحج — مرّةً في العمر لمن استطاع",
           plain: "Once in your life, if you are able, you travel to the Kaaba in Makkah for the Hajj. Once — not every year. And \"if you are able\" is part of the command itself, not an excuse people invented.",
-          plainAr: "مرّةً واحدةً في العمر، إن استطعتَ، تحجُّ إلى بيت الله الحرام بمكة. مرّةً لا كلَّ عام. و«من استطاع إليه سبيلًا» جزءٌ من الأمر نفسه، لا عذرٌ اخترعه الناس.",
+          plainAr: "مرّةً واحدةً في العمر، إن استطعتَ، تحجُّ إلى بيت الله الحرام بمكة. مرّةً لا كلَّ عام. و﴿مَنِ ٱسۡتَطَاعَ إِلَيۡهِ سَبِيلٗاۚ﴾ جزءٌ من الأمر نفسه، لا عذرٌ اخترعه الناس.",
           example: "Being \"able\" is a real condition with a plain meaning: you have the money for the journey AND enough left for the people you support while you are away, after your debts are settled; you are physically able to make it; and the road is safe. If you are not able, Hajj is not owed by you and you are not sinning by not going. Save for it — do not borrow for it.",
           exampleAr: "والاستطاعةُ شرطٌ حقيقيٌّ ظاهرُ المعنى: أن تملك نفقةَ الطريق ونفقةَ من تعولهم في غيابك بعد قضاء دَينك، وأن تقدر ببدنك، وأن يكون الطريق آمنًا. فإن لم تستطع فليس الحجُّ واجبًا عليك ولا إثمَ عليك في تركه. وادَّخر له، ولا تستدِنْ من أجله.",
           proof: "And [due] to Allah from the people is a pilgrimage to the House - for whoever is able to find thereto a way.",
@@ -149,8 +152,10 @@ const PILLARS = {
           extraProofAr: "وَالْحَجُّ الْمَبْرُورُ لَيْسَ لَهُ جَزَاءٌ إِلَّا الْجَنَّةُ",
           extraRef: "Sahih al-Bukhari, Hadith 1773",
           extraRefAr: "صحيح البخاري، حديث ١٧٧٣",
-          keys: ["hajj", "haj", "pilgrimage", "mecca", "makkah", "kaaba", "kabah", "umrah", "how many times hajj", "cannot afford hajj", "able", "istitaah",
-                 "الحج", "أحج", "مكة", "الكعبة", "البيت الحرام", "العمرة", "كم مرة الحج", "لا أستطيع الحج", "الاستطاعة"]
+          keys: ["hajj", "haj", "pilgrimage", "mecca", "makkah", "kaaba", "kabah", "umrah",
+                 "how many times hajj", "cannot afford hajj", "istitaah", "الحج", "أحج", "مكة", "الكعبة",
+                 "البيت الحرام", "العمرة", "كم مرة الحج", "لا أستطيع الحج", "able to go to hajj",
+                 "الاستطاعة في الحج", "من استطاع إليه سبيلا"]
         }
       ]
     },
@@ -187,7 +192,7 @@ const PILLARS = {
           title: "Belief in the angels",
           titleAr: "الإيمان بالملائكة",
           plain: "They are real creatures Allah made from light. They do not eat, do not sleep, do not have children, and never once disobey Him. Jibril brought the revelation; two angels write what you do; one is charged with the rain, one with the mountains, and one takes the soul at death.",
-          plainAr: "خلقٌ حقيقيٌّ خلقهم الله من نور، لا يأكلون ولا ينامون ولا يتوالدون ولا يعصون اللهَ ما أمرهم. جبريلُ صاحبُ الوحي، وملكان يكتبان عملك، وملكٌ موكَّلٌ بالقَطر، وملكٌ بالجبال، وملكُ الموت يقبض الروح.",
+          plainAr: "خلقٌ حقيقيٌّ خلقهم الله من نور، لا يأكلون ولا ينامون ولا يتوالدون و﴿لَّا يَعۡصُونَ ٱللَّهَ مَآ أَمَرَهُمۡ﴾. جبريلُ صاحبُ الوحي، وملكان يكتبان عملك، وملكٌ موكَّلٌ بالقَطر، وملكٌ بالجبال، وملكُ الموت يقبض الروح.",
           example: "The practical weight of this is simple: you are never alone in a room. Two are writing. That is meant to change what a person does when nobody human is watching.",
           exampleAr: "وأثرُ هذا بيّنٌ: ما أنتَ في غرفةٍ وحدك قطُّ، فثَمّ كاتبان. وهذا وحده يغيّر ما يصنعه المرءُ إذا خلا من أعين الناس.",
           keys: ["angels", "angel", "malaika", "jibril", "gabriel", "angel of death", "do angels exist", "recording angels", "two angels",
@@ -415,11 +420,11 @@ const PILLARS = {
           ref: "Surah al-Baqarah (2:276)", refAr: "سورة البقرة (٢:٢٧٦)",
           strength: "The Quran", strengthAr: "القرآن الكريم" },
         { en: "**Multiplied like a seed.** One grain grows seven ears, each ear a hundred grains — \"and Allah multiplies for whom He wills.\"",
-          ar: "**وتُضاعَف كالحبّة.** حبّةٌ أنبتت سبعَ سنابل في كلِّ سنبلةٍ مئةُ حبّة ﴿وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُۚ﴾.",
+          ar: "**وتُضاعَف كالحبّة.** ﴿حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ فِي كُلِّ سُنۢبُلَةٖ مِّاْئَةُ حَبَّةٖۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُۚ﴾.",
           ref: "Surah al-Baqarah (2:261)", refAr: "سورة البقرة (٢:٢٦١)",
           strength: "The Quran", strengthAr: "القرآن الكريم" },
         { en: "**The road is made easier for you.** \"As for he who gives and fears Allah and believes in the best reward — We will ease him toward ease.\"",
-          ar: "**ويُيسَّر لك الطريق.** ﴿فَأَمَّا مَنۡ أَعۡطَىٰ وَٱتَّقَىٰ وَصَدَّقَ بِٱلۡحُسۡنَىٰ فَسَنُيَسِّرُهُۥ لِلۡيُسۡرَىٰ﴾.",
+          ar: "**ويُيسَّر لك الطريق.** ﴿فَأَمَّا مَنۡ أَعۡطَىٰ وَٱتَّقَىٰ ۝ وَصَدَّقَ بِٱلۡحُسۡنَىٰ ۝ فَسَنُيَسِّرُهُۥ لِلۡيُسۡرَىٰ﴾.",
           ref: "Surah al-Layl (92:5-7)", refAr: "سورة الليل (٩٢:٥-٧)",
           strength: "The Quran", strengthAr: "القرآن الكريم" },
         { en: "**And the word itself tells you what it does.** \"Zakat\" means both *purification* and *growth* — it cleans the wealth of what is owed out of it, and it is called growth, not loss.",

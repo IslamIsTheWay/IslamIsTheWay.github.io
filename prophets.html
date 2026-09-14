@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609131301" />
+  <link rel="stylesheet" href="css/style.css?v=202609140852" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/prophets.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -114,16 +114,28 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609131301"></script>
-  <script src="js/lives.js?v=202609131301"></script>
+  <script src="js/data.js?v=202609140852"></script>
+  <script src="js/lives.js?v=202609140852"></script>
   <script>
     const grid = document.getElementById("prophetsGrid");
+    /* Searched with the site's one person scorer (iitwScorePeople in
+       main.js), which the Search page already used: whole words, spelling
+       variants (Musa/Moosa, Ibrahim/Ibraheem), hamza folded (ابراهيم), and a
+       name match always above a passing mention — which the card says. This
+       filter was a bare includes(): "ابراهيم" found nothing and "isa" put
+       Ishaq (Isaac) above Isa. */
     function renderProphets(filter = "") {
       grid.innerHTML = "";
-      const q = filter.toLowerCase();
-      const raw = filter.trim();
-      PROPHETS.filter(p => !q || p.name.toLowerCase().includes(q) || p.arabic.includes(raw) || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q) || (p.summaryAr && p.summaryAr.includes(raw)))
-        .forEach(p => {
+      const query = filter.trim();
+      const list = !query ? PROPHETS.map(p => ({ person: p, why: "" }))
+        : (typeof iitwScorePeople === "function" ? iitwScorePeople(query, PROPHETS) : []);
+      if (query && !list.length) {
+        grid.innerHTML = `<div class="no-results" style="grid-column:1/-1;">
+          <span class="en-only">No prophet matches "${query.replace(/[<>&"]/g, "")}". Try a name — Musa, Ibrahim, Isa, Yusuf, Nuh — in English or Arabic.</span>
+          <span class="ar-only" dir="rtl">لا يوجد نبيٌّ بهذا الاسم. جرّب اسمًا مثل: موسى، إبراهيم، عيسى، يوسف، نوح.</span></div>`;
+        return;
+      }
+      list.forEach(({ person: p, why }) => {
           const card = document.createElement("div");
           card.className = "person-card";
           card.innerHTML = `
@@ -132,20 +144,24 @@
               <div class="arabic-name">${p.arabic}</div>
               <div class="title-tag en-only">${p.title}</div>
               ${p.titleAr ? `<div class="title-tag ar-only" dir="rtl">${p.titleAr}</div>` : ""}
+              ${why && typeof iitwMatchBadge === "function" ? iitwMatchBadge(why, query) : ""}
             </div>
             <div class="person-body">
               <p class="en-only">${p.summary}</p>
               ${p.summaryAr ? `<p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.08rem;line-height:1.9;color:var(--green-dark);text-align:right;background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:14px;">${p.summaryAr}</p>` : ""}
               ${fullLifeHtml(p.id)}
               <div class="refs">
-                <strong>References:</strong>
-                <ul>${p.refs.map(r => `<li>${r}</li>`).join("")}</ul>
+                <strong><span class="en-only">References:</span><span class="ar-only" dir="rtl">المراجع:</span></strong>
+                <ul>${p.refs.map((r, i) => (p.refsAr && p.refsAr[i])
+                  ? `<li><span class="en-only">${r}</span><span class="ar-only" dir="rtl">${p.refsAr[i]}</span></li>`
+                  : `<li>${r}</li>`).join("")}</ul>
               </div>
             </div>
           `;
           grid.appendChild(card);
         });
       wireLifeButtons();
+      if (window.applyI18n) window.applyI18n();
     }
 
     /* Same folded full-life panel as the Companions page, with one addition:
@@ -154,9 +170,14 @@
     function fullLifeHtml(id) {
       if (typeof FULL_LIVES === "undefined" || !FULL_LIVES[id]) return "";
       const L = FULL_LIVES[id];
+      /* Each heading is a PAIR, one half per language. It was "Before Islam
+         <span dir=rtl>— قبل الإسلام</span>" with no ar-only, so every heading
+         of every full life printed in English on the Arabic page. */
+      const head = (icon, enHead, arHead) =>
+        `<div class="life-head">${icon} <span class="en-only">${enHead}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${arHead}</span></div>`;
       const part = (icon, enHead, arHead, en, ar) => (en || ar) ? `
         <div class="life-part">
-          <div class="life-head">${icon} ${enHead} <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${arHead}</span></div>
+          ${head(icon, enHead, arHead)}
           ${en ? `<p class="en-only">${en}</p>` : ""}
           ${ar ? `<p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${ar}</p>` : ""}
         </div>` : "";
@@ -164,7 +185,7 @@
         <button type="button" class="life-toggle" data-life="${id}"><span class="en-only">📖 Read the full story</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">📖 اقرأ القصة كاملة</span></button>
         <div class="life-full" id="life-${id}" hidden>
           ${L.message ? `<div class="life-message">
-              <div class="life-head">📣 His message <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— رسالته</span></div>
+              ${head("📣", "His message", "رسالته")}
               <p class="en-only">${L.message}</p>
               <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${L.messageAr}</p>
             </div>` : ""}
@@ -174,7 +195,7 @@
           ${part("⭐", "What he is most remembered for", "أعظم ما يُذكر به", L.greatest, L.greatestAr)}
           ${part("🤲", "How it ended", "خاتمته", L.death, L.deathAr)}
           <div class="life-sources">
-            <div class="life-head">📚 Where each part comes from <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— مصادر ما سبق</span></div>
+            ${head("📚", "Where each part comes from", "مصادر ما سبق")}
             <!-- Each source reads "<what it supports>: <the citation>". Only the
                  CITATION may be handed to the reference translator: run the whole
                  line through it and the English label is mangled word by word —
@@ -190,10 +211,17 @@
               const i = s.indexOf(": ");
               return i === -1
                 ? `<li><span class="tad-ref">${s}</span></li>`
-                : `<li><span class="ls-what">${s.slice(0, i + 1)}</span> <span class="tad-ref">${s.slice(i + 2)}</span></li>`;
+                : `<li><span class="ls-what">${lsWhat(s.slice(0, i + 1))}</span> <span class="tad-ref">${s.slice(i + 2)}</span></li>`;
             }).join("")}</ul>
           </div>
         </div>`;
+    }
+
+    /* "<what it supports>:" was printed in English on the Arabic page; its
+       Arabic is LIFE_LABELS_AR at the end of js/lives.js. */
+    function lsWhat(en) {
+      const ar = (typeof LIFE_LABELS_AR !== "undefined" && LIFE_LABELS_AR[en]) || "";
+      return `<span class="en-only">${en}</span>` + (ar ? `<span class="ar-only" dir="rtl">${ar}</span>` : "");
     }
 
     function wireLifeButtons() {
@@ -216,31 +244,35 @@
     (function renderOneReligion() {
       const host = document.getElementById("oneReligion");
       if (!host || typeof ONE_RELIGION === "undefined") return;
+      /* Every English/Arabic pair here is split into .en-only / .ar-only —
+         they were "English <span dir=rtl>Arabic</span>", which leaves the
+         English showing on the Arabic page (87 strings on this page). */
       host.innerHTML = `
-        <h2 class="section-title">${ONE_RELIGION.title} <span dir="rtl" style="font-family:'Amiri',serif;">— ${ONE_RELIGION.titleAr}</span></h2>
+        <h2 class="section-title"><span class="en-only">${ONE_RELIGION.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">${ONE_RELIGION.titleAr}</span></h2>
         <div class="divider"></div>
-        <p class="section-sub" style="margin-top:18px;">${ONE_RELIGION.intro}
-          <br><span dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">${ONE_RELIGION.introAr}</span></p>
+        <p class="section-sub" style="margin-top:18px;"><span class="en-only">${ONE_RELIGION.intro}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-size:1.05rem;">${ONE_RELIGION.introAr}</span></p>
         <div class="one-religion-points">
           ${ONE_RELIGION.points.map(p => `<div class="judge-point">
-            <p class="judge-arabic" dir="rtl" data-speak>${p.quran} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
+            <p class="judge-arabic${/[\u06E1\u06E2\u06ED\u0656\u0657\u065E]/.test(p.quran) ? "" : " judge-hadith"}" dir="rtl" data-speak>${
+              /* a verse carries the Mushaf's own marks; "الأنبياء إخوة لعلات"
+                 is a hadith and is printed as one, in «» */
+              /[\u06E1\u06E2\u06ED\u0656\u0657\u065E]/.test(p.quran) ? p.quran : "«" + p.quran + "»"} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
             <p class="en-only">${p.en}</p>
-            <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${p.ar}</p>
+            ${p.arSame ? "" : `<p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${p.ar}</p>`}
             <div class="refs"><span>${p.ref}</span></div>
           </div>`).join("")}
         </div>
 
         <div class="declarations">
-          <h3 class="decl-head">${ONE_RELIGION.declarationsTitle}
-            <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${ONE_RELIGION.declarationsTitleAr}</span></h3>
+          <h3 class="decl-head"><span class="en-only">${ONE_RELIGION.declarationsTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${ONE_RELIGION.declarationsTitleAr}</span></h3>
           <p class="en-only">${ONE_RELIGION.declarationsIntro}</p>
           <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${ONE_RELIGION.declarationsIntroAr}</p>
           <div class="decl-grid">
             ${ONE_RELIGION.declarations.map(d => `<div class="decl-card">
-              <div class="decl-who">${d.who} <span dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">— ${d.whoAr}</span></div>
+              <div class="decl-who"><span class="en-only">${d.who}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${d.whoAr}</span></div>
               <p class="decl-arabic" dir="rtl" data-speak>${d.quran} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
               <p class="en-only">${d.en}</p>
-              <p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${d.ar}</p>
+              ${d.arSame ? "" : `<p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${d.ar}</p>`}
               <div class="refs"><span>${d.ref}</span></div>
             </div>`).join("")}
           </div>
@@ -251,8 +283,8 @@
     if (window.applyI18n) window.applyI18n();
     document.getElementById("prophetSearch").addEventListener("input", e => renderProphets(e.target.value));
   </script>
-  <script src="js/wordlens.js?v=202609131301"></script>
-  <script src="js/main.js?v=202609131301"></script>
-  <script src="js/i18n.js?v=202609131301"></script>
+  <script src="js/wordlens.js?v=202609140852"></script>
+  <script src="js/main.js?v=202609140852"></script>
+  <script src="js/i18n.js?v=202609140852"></script>
 </body>
 </html>

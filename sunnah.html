@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609131301" />
+  <link rel="stylesheet" href="css/style.css?v=202609140852" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -142,8 +142,8 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202609131301"></script>
-  <script src="js/sunnah.js?v=202609131301"></script>
+  <script src="js/data.js?v=202609140852"></script>
+  <script src="js/sunnah.js?v=202609140852"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -226,6 +226,41 @@
       return norm(s).split(" ").filter(w => w.length >= 3 && !STOP.has(w));
     }
 
+    /* ARABIC, WORD BY WORD, WITH THE ATTACHED PARTICLES OFF — AND ON.
+       Measured September 2026: "اكل" found nothing and "نوم" found 3 where
+       "النوم" found 12, because an Arabic word was only ever compared whole,
+       article and all, while the keys are written with it (الأكل، النوم).
+       Every word is kept in each form it may be written in — as it stands,
+       without وال/بال/فال/كال/لل/ال, and without a single و ف ب ك ل — and a
+       query word matches if any of its forms is one of them. The bare word
+       is always kept too: بلال is not "ب + لال". Whole words only; nothing
+       here is a substring test. */
+    function arVariants(w) {
+      w = w.replace(/ئ/g, "ي").replace(/ؤ/g, "و");
+      const out = [w];
+      let m = w.match(/^(?:وال|فال|بال|كال|لل|ال)(.{2,})$/);
+      if (m) out.push(m[1]);
+      m = w.match(/^[وفبكل](.{3,})$/);
+      if (m) { out.push(m[1]); const m2 = m[1].match(/^ال(.{2,})$/); if (m2) out.push(m2[1]); }
+      return out;
+    }
+    function arSetOf(text) {
+      const s = new Set();
+      norm(text).split(" ").forEach(w => { if (/[ء-ي]/.test(w)) arVariants(w).forEach(v => s.add(v)); });
+      return s;
+    }
+    function arSets(entry) {
+      if (!entry._ar) {
+        const c = catLabel(entry.cat);
+        entry._ar = {
+          keys: arSetOf((entry.keys || []).join(" ") + " " + c.ar),
+          head: arSetOf(entry.titleAr || ""),
+          body: arSetOf([entry.detailAr, entry.arabic].join(" "))
+        };
+      }
+      return entry._ar;
+    }
+
     function scoreEntry(entry, qTokens, rawQuery) {
       const c = catLabel(entry.cat);
       // The category name is searchable too, so "I want to pray" reaches
@@ -244,7 +279,11 @@
         const kn = norm(k);
         if (kn.length < 3) return;
         const phrase = kn.includes(" ");
-        if (rawN.includes(kn)) score += phrase ? 10 : 6;
+        /* WHOLE WORDS: the key must sit in the query between spaces. As a
+           bare substring, the key الأب ("father") was found inside الابتسامة
+           and put "Raising daughters" under a search for smiling, and ألم
+           ("pain") inside المطر put a ruqyah under a search for rain. */
+        if ((" " + rawN + " ").includes(" " + kn + " ")) score += phrase ? 10 : 6;
         else if (!phrase && qTokens.some(q => expand(q).includes(stem(kn)) || expand(q).includes(kn))) score += 5;
         else if (phrase) {
           // Ignore filler words inside the phrase ("before prayer" -> "prayer"),
@@ -257,12 +296,24 @@
       });
 
       qTokens.forEach(q => {
+        if (/[ء-ي]/.test(q)) return;          // Arabic is scored word by word, below
         let hit = false;
         for (const form of expand(q)) {
           if (form.length < 3) continue;
           if (hay.includes(" " + form + " ") || hayStem.includes(" " + form + " ")) { score += 2; hit = true; break; }
         }
         if (!hit && hay.includes(stem(q))) score += 1;
+      });
+
+      /* The Arabic words of the query — see arVariants. A key names what the
+         entry is ABOUT and scores as a key; the title next; the text last. */
+      const sets = arSets(entry);
+      qTokens.forEach(q => {
+        if (!/[ء-ي]/.test(q)) return;
+        const vs = arVariants(q);
+        if (vs.some(v => sets.keys.has(v))) score += 5;
+        else if (vs.some(v => sets.head.has(v))) score += 4;
+        else if (vs.some(v => sets.body.has(v))) score += 2;
       });
 
       return score;
@@ -295,17 +346,22 @@
       </article>`;
     }
 
+    let lastQuery = "";
     function render(list, note) {
       if (!list.length) {
+        /* Not a dead end: the rest of the site may have it (a ruling, a
+           story, a hadith), and the site search looks there. */
+        const more = lastQuery ? `<br><br><a href="search.html?q=${encodeURIComponent(lastQuery)}" style="color:var(--green);text-decoration:underline;">
+            <span class="en-only">Search the whole site for "${lastQuery.replace(/[<>&"]/g, "")}"</span><span class="ar-only" dir="rtl">ابحث عن «${lastQuery.replace(/[<>&"]/g, "")}» في الموقع كلّه</span></a>` : "";
         listEl.innerHTML = `<div class="no-results">
           <span class="en-only">Nothing found for that yet. Try simpler words — for example: <em>sleep, wudu, eating, mosque, travel, sad, friday, fasting</em>.</span>
-          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة. جرّب كلمات أبسط — مثل: النوم، الوضوء، الطعام، المسجد، السفر، الحزن، الجمعة، الصيام.</span>
+          <span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة. جرّب كلمات أبسط — مثل: النوم، الوضوء، الطعام، المسجد، السفر، الحزن، الجمعة، الصيام.</span>${more}
         </div>`;
       } else {
         listEl.innerHTML = `<div class="sunnah-grid">${list.map(cardHtml).join("")}</div>`;
       }
       infoEl.style.display = note ? "block" : "none";
-      infoEl.textContent = note || "";
+      infoEl.innerHTML = note || "";
       if (window.applyI18n) window.applyI18n();
     }
 
@@ -315,13 +371,17 @@
 
     function runSearch() {
       const raw = searchEl.value.trim();
-      if (raw.length < 2) { render(currentList(), ""); return; }
+      lastQuery = raw;
+      if (raw.length < 2) { lastQuery = ""; render(currentList(), ""); return; }
       const qt = tokens(raw);
       const scored = SUNNAH.map(s => ({ s, v: scoreEntry(s, qt, raw) }))
         .filter(x => x.v >= 4)
         .sort((a, b) => b.v - a.v);
-      render(scored.map(x => x.s),
-        `Found ${scored.length} practice${scored.length !== 1 ? "s" : ""} for "${raw}"`);
+      /* The count line in both languages — it was English on the Arabic page. */
+      const safe = raw.replace(/[<>&"]/g, "");
+      render(scored.map(x => x.s), !scored.length ? "" :
+        `<span class="en-only">Found ${scored.length} practice${scored.length !== 1 ? "s" : ""} for "${safe}"</span>` +
+        `<span class="ar-only" dir="rtl">${scored.length} ${scored.length === 1 ? "سنّة" : scored.length === 2 ? "سنّتان" : scored.length <= 10 ? "سنن" : "سنّة"} عن «${safe}»</span>`);
     }
 
     function quickSunnah(q) {
@@ -387,8 +447,8 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/wordlens.js?v=202609131301"></script>
-  <script src="js/main.js?v=202609131301"></script>
-  <script src="js/i18n.js?v=202609131301"></script>
+  <script src="js/wordlens.js?v=202609140852"></script>
+  <script src="js/main.js?v=202609140852"></script>
+  <script src="js/i18n.js?v=202609140852"></script>
 </body>
 </html>

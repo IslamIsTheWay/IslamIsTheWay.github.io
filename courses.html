@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609131301" />
+  <link rel="stylesheet" href="css/style.css?v=202609140852" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/courses.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -65,7 +65,10 @@
   <div class="page-hero ph-photo ph-courses">
     <div class="container">
       <h1>Learning Paths &amp; Courses</h1>
-      <p>Structured educational courses designed to guide you from foundational Arabic to a deeper comprehension of the Quranic and Islamic sciences. Enroll to get started with live sessions and guided study.</p>
+      <!-- It used to end "Enroll to get started" while nothing was open for
+           enrolment (the notice below says so). It now says what the courses
+           are without inviting anyone to a door that is not open yet. -->
+      <p><span class="en-only">Structured courses, from foundational Arabic to a deeper understanding of the Quranic and Islamic sciences, taught in live sessions with guided study.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">دوراتٌ منظّمة، من أساسيات العربية إلى فهمٍ أعمق لعلوم القرآن والعلوم الإسلامية، تُدرَّس في جلساتٍ مباشرة مع دراسةٍ موجَّهة.</span></p>
     </div>
   </div>
 
@@ -77,9 +80,9 @@
            the courses and the buttons below appear. -->
       <div id="noCoursesYet" class="courses-soon">
         <div class="courses-soon-icon">🎓</div>
-        <h2>Courses are on the way</h2>
+        <h2 class="en-only">Courses are on the way</h2>
         <div class="courses-soon-ar" dir="rtl">الدورات قادمة قريبًا بإذن الله</div>
-        <p>
+        <p class="en-only">
           We are preparing them now. Nothing is open for enrolment yet, and nothing is being charged for.
           When the first course is ready it will appear here with what it covers, who it is for, and what it costs.
         </p>
@@ -88,15 +91,15 @@
           فإذا جهزت أول دورة ظهرت هنا بموضوعها، ولمن هي، وكم قيمتها.
         </p>
         <p class="courses-soon-meanwhile">
-          Meanwhile everything else on this site stays free — the Quran, the Hadith, the Sunnah, the Stories, the Day of Judgement and the Guidance.
-          <br><span dir="rtl" style="font-family:'Amiri',serif;">وسائر ما في الموقع مجاني كما هو — القرآن والحديث والسنة والقصص ويوم القيامة والتوجيه.</span>
+          <span class="en-only">Meanwhile everything else on this site stays free — the Quran, the Hadith, the Sunnah, the Stories, the Day of Judgement and the Guidance.
+          <br></span><span dir="rtl" style="font-family:'Amiri',serif;">وسائر ما في الموقع مجاني كما هو — القرآن والحديث والسنة والقصص ويوم القيامة والتوجيه.</span>
         </p>
       </div>
 
       <div id="courseIntro" style="display:none;">
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn btn-primary" id="trialBtn" href="mailto:ammarwalidyounis@gmail.com?subject=Course%20Enquiry&body=Assalamu%20alaikum%2C%20I%20would%20like%20to%20ask%20about%20a%20course.">✉ Ask about a course</a>
-          <a class="btn btn-outline" id="demoBtn" href="#" target="_blank" rel="noopener" style="display:none;">🎥 Watch a Demo Lesson</a>
+          <a class="btn btn-primary" id="trialBtn" href="mailto:ammarwalidyounis@gmail.com?subject=Course%20Enquiry&body=Assalamu%20alaikum%2C%20I%20would%20like%20to%20ask%20about%20a%20course.">✉ <span class="en-only">Ask about a course</span><span class="ar-only" dir="rtl">استفسر عن دورة</span></a>
+          <a class="btn btn-outline" id="demoBtn" href="#" target="_blank" rel="noopener" style="display:none;">🎥 <span class="en-only">Watch a Demo Lesson</span><span class="ar-only" dir="rtl">شاهد درسًا تجريبيًّا</span></a>
         </div>
         <p id="contactLine" style="margin-top:16px;color:var(--text-muted);font-size:.95rem;text-align:center;"></p>
       </div>
@@ -112,13 +115,13 @@
 
   <section class="pattern-bg" id="videosSection" style="display:none;">
     <div class="container">
-      <h2 class="section-title">🎬 Premium Video Lessons</h2>
-      <p class="section-sub">Recorded lessons by our teachers. Pay for a video, receive its access code, and watch any time.</p>
+      <h2 class="section-title">🎬 <span class="en-only">Premium Video Lessons</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">دروسٌ مرئية مدفوعة</span></h2>
+      <p class="section-sub"><span class="en-only">Recorded lessons by our teachers. Pay for a video, receive its access code, and watch any time.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">دروسٌ مسجَّلة لمعلّمينا: ادفع ثمن الدرس، واستلم رمز الدخول إليه، وشاهده متى شئت.</span></p>
       <div class="divider"></div>
       <br>
       <div class="grid" id="videoGrid"></div>
       <div id="paymentInfo" style="max-width:640px;margin:36px auto 0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:var(--shadow);display:none;">
-        <h3 style="color:var(--green-dark);margin-bottom:10px;">💳 How to Pay</h3>
+        <h3 style="color:var(--green-dark);margin-bottom:10px;">💳 <span class="en-only">How to Pay</span><span class="ar-only" dir="rtl">طريقة الدفع</span></h3>
         <p id="payAccountLine" style="margin-bottom:8px;"></p>
         <p id="payInstructionsLine" style="color:var(--text-muted);font-size:.92rem;margin-bottom:12px;"></p>
         <img id="payQrImg" src="" alt="Payment QR code" style="max-width:200px;border-radius:10px;display:none;" />
@@ -128,8 +131,8 @@
 
   <section>
     <div class="container" style="max-width:640px;text-align:center;">
-      <h2 class="section-title">📹 Join a Live Class</h2>
-      <p class="section-sub">Enrolled in a course? Your teacher gave you a meeting code — enter it to join your live session with recording and live translated captions (Arabic, English, Urdu, Indonesian, Bengali).</p>
+      <h2 class="section-title">📹 <span class="en-only">Join a Live Class</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">الانضمام إلى درسٍ مباشر</span></h2>
+      <p class="section-sub"><span class="en-only">Enrolled in a course? Your teacher gave you a meeting code — enter it to join your live session with recording and live translated captions (Arabic, English, Urdu, Indonesian, Bengali).</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">مسجَّلٌ في دورة؟ أعطاك معلّمك رمزَ اللقاء — أدخله لتنضمّ إلى درسك المباشر، مع التسجيل والترجمة المكتوبة الفورية (العربية، الإنجليزية، الأردية، الإندونيسية، البنغالية).</span></p>
       <div class="divider"></div>
       <br>
       <div style="display:flex;gap:10px;max-width:420px;margin:0 auto;">
@@ -148,7 +151,7 @@
     <div class="container" style="text-align:center;">
       <h2 class="section-title">Not Ready to Enroll?</h2>
       <div class="divider"></div>
-      <p class="section-sub" style="margin-top:18px;">All of our free resources — the Quran Library, Prophet and Companion profiles, Hadith collection, and Guidance pages — remain open to everyone, no account required.</p>
+      <p class="section-sub" style="margin-top:18px;"><span class="en-only">All of our free resources — the Quran Library, Prophet and Companion profiles, Hadith collection, and Guidance pages — remain open to everyone, no account required.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">وجميع مواردنا المجانية — مكتبة القرآن، وتراجم الأنبياء والصحابة، ومجموعة الأحاديث، وصفحات التوجيه — مفتوحةٌ للجميع بلا حساب.</span></p>
       <a href="index.html" class="btn btn-outline">Explore Free Resources</a>
     </div>
   </section>
@@ -188,9 +191,9 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609131301"></script>
+  <script src="js/data.js?v=202609140852"></script>
   <!-- Course sign-up and the request that actually reaches the staff. -->
-  <script src="js/enrol.js?v=202609131301"></script>
+  <script src="js/enrol.js?v=202609140852"></script>
   <script>
     const grid = document.getElementById("courseGrid");
 
@@ -275,7 +278,12 @@
         const contactParts = [];
         if (contact.phone) contactParts.push("📞 " + contact.phone);
         if (contact.whatsapp) contactParts.push("WhatsApp: +" + contact.whatsapp);
-        if (contactParts.length) document.getElementById("contactLine").textContent = "Contact us: " + contactParts.join("  •  ");
+        if (contactParts.length) {
+          // the numbers come from the staff's config, so they go in as text
+          const line = document.getElementById("contactLine");
+          line.innerHTML = '<span class="en-only">Contact us: </span><span class="ar-only" dir="rtl">تواصل معنا: </span>';
+          line.appendChild(document.createTextNode(contactParts.join("  •  ")));
+        }
 
         const videos = cfg.videos || [];
         if (videos.length > 0) {
@@ -290,8 +298,8 @@
               <p>${v.description || ""}</p>
               <p style="font-weight:700;color:var(--gold);font-size:1.1rem;margin:10px 0;">${v.price}</p>
               <div style="display:flex;gap:8px;">
-                <input type="text" id="vc${idx}" placeholder="Access code" style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;" />
-                <button class="btn btn-primary btn-small" onclick="unlockVideo(${idx})">Watch</button>
+                <input type="text" id="vc${idx}" placeholder="Access code — رمز الدخول" style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;" />
+                <button class="btn btn-primary btn-small" onclick="unlockVideo(${idx})"><span class="en-only">Watch</span><span class="ar-only" dir="rtl">شاهد</span></button>
               </div>
               <p id="vmsg${idx}" style="font-size:.82rem;color:#8a3d1f;min-height:1.2em;margin-top:6px;"></p>
             `;
@@ -320,9 +328,9 @@
       const msg = document.getElementById("vmsg" + idx);
       if (entered && v.code && entered === v.code.toUpperCase()) {
         if (v.url) { window.open(v.url, "_blank"); msg.textContent = ""; }
-        else msg.textContent = "Video link not set yet — please contact the staff.";
+        else msg.innerHTML = '<span class="en-only">Video link not set yet — please contact the staff.</span><span class="ar-only" dir="rtl">لم يُضَف رابط الدرس بعد — تواصل مع القائمين على الموقع.</span>';
       } else {
-        msg.textContent = "Wrong code. Pay for this video and the staff will send you the code.";
+        msg.innerHTML = '<span class="en-only">Wrong code. Pay for this video and the staff will send you the code.</span><span class="ar-only" dir="rtl">الرمز غير صحيح. ادفع ثمن الدرس ويُرسل إليك القائمون على الموقع رمزه.</span>';
       }
     }
 
@@ -470,9 +478,9 @@
     document.addEventListener("DOMContentLoaded", renderEnrolBox);
   </script>
 
-  <script src="js/wordlens.js?v=202609131301"></script>
+  <script src="js/wordlens.js?v=202609140852"></script>
 
-  <script src="js/main.js?v=202609131301"></script>
-  <script src="js/i18n.js?v=202609131301"></script>
+  <script src="js/main.js?v=202609140852"></script>
+  <script src="js/i18n.js?v=202609140852"></script>
 </body>
 </html>

@@ -461,7 +461,7 @@ const SUNNAH = [
     titleAr: "البدء باليمنى في الانتعال",
     detail: "The Prophet ﷺ said: when you put on your shoes begin with the right, and when you remove them begin with the left — so the right is first to be put on and last to be taken off.",
     detailAr: "قال النبي ﷺ: إذا انتعلتم فابدؤوا باليمنى، وإذا خلعتم فابدؤوا باليسرى، فتكون اليمنى أولهما تُنعل وآخرهما تُنزع.",
-    ref: "Sahih Muslim, Hadith 2097; Sahih al-Bukhari, Hadith 5856",
+    ref: "Sahih Muslim, Hadith 2097; Sahih al-Bukhari, Hadith 5855", refAr: "صحيح مسلم، حديث ٢٠٩٧؛ صحيح البخاري، حديث ٥٨٥٥",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["shoes","sandals","right foot","dressing","clothes","النعال","الانتعال","اليمنى","اللباس"]
   },
@@ -694,7 +694,7 @@ const SUNNAH = [
     detailAr: "وصفه أصحابه بأنه أكثر الناس تبسّماً وألينهم عِشرة. وقال جرير رضي الله عنه: ما لقيني النبي ﷺ إلا تبسّم في وجهي.",
     ref: "Sahih al-Bukhari, Hadith 3035; Jami at-Tirmidhi, Book of Virtues",
     strength: "Sahih — Narrated by al-Bukhari",
-    keys: ["smile","cheerful","kindness","company","gentle","التبسم","البشاشة","اللين","المعاملة"]
+    keys: ["smile","smiling","cheerful","kindness","company","gentle","التبسم","الابتسامة","ابتسامة","يبتسم","البشاشة","اللين","المعاملة"]
   },
 
   /* ================= DEATH & THE GRAVE ================= */
@@ -1127,8 +1127,9 @@ const SUNNAH = [
     titleAr: "لا يجلس بين اثنين إلا بإذنهما",
     detail: "The Prophet ﷺ said it is not permitted for a man to separate two people already sitting together except with their permission, and that no one should be made to stand so another may sit in his place.",
     detailAr: "قال النبي ﷺ لا يحل لرجل أن يفرّق بين اثنين إلا بإذنهما، ولا يُقام أحد من مجلسه ليجلس فيه غيره.",
-    ref: "Sunan Abu Dawud, Hadith 4844; Sahih al-Bukhari, Hadith 6269",
-    strength: "Sahih — established in the collections",
+    ref: "Sunan Abu Dawud, Hadith 4844 and 4845; Sahih al-Bukhari, Hadith 6269", refAr: "سنن أبي داود، حديث ٤٨٤٤ و٤٨٤٥؛ صحيح البخاري، حديث ٦٢٦٩",
+    strength: "Sahih — al-Bukhari for not making a man stand from his seat; the two Abu Dawud narrations are outside the two Sahihs",
+    strengthAr: "صحيح — في البخاري ألّا يُقام الرجل من مجلسه؛ وروايتا أبي داود خارج الصحيحين",
     keys: ["sitting","gathering","seat","majlis","manners","permission","المجلس","الجلوس","المكان","الأدب","الإذن"]
   },
   {
@@ -1217,8 +1218,9 @@ const SUNNAH = [
     titleAr: "التداوي بلا تعليق أو تطيّر",
     detail: "The Prophet ﷺ commanded seeking treatment but forbade amulets, charms and superstition, saying there is no contagion in the way people imagined it and no evil omens — and he liked a good word.",
     detailAr: "أمر النبي ﷺ بالتداوي ونهى عن التمائم والتعليق والتطيّر، وقال: لا عدوى ولا طيرة، وكان يعجبه الفأل الحسن.",
-    ref: "Sahih al-Bukhari, Hadith 5707; Sahih Muslim, Hadith 2220",
-    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
+    ref: "Sahih al-Bukhari, Hadith 5707; Sahih Muslim, Hadith 2220; on charms and amulets: Sunan Abu Dawud, Hadith 3883", refAr: "صحيح البخاري، حديث ٥٧٠٧؛ صحيح مسلم، حديث ٢٢٢٠؛ وفي الرقى المحرّمة والتمائم: سنن أبي داود، حديث ٣٨٨٣",
+    strength: "Sahih — agreed upon for no contagion and no evil omen; the hadith on charms and amulets is outside the two Sahihs, authenticated by al-Albani",
+    strengthAr: "صحيح — متّفقٌ عليه في نفي العدوى والطيرة؛ وحديث الرقى والتمائم خارج الصحيحين، وصحّحه الألباني",
     keys: ["amulet","charm","superstition","evil eye","treatment","medicine","omen","التمائم","التطير","الحسد","العدوى","التداوي","الفأل"]
   },
   {
@@ -1227,8 +1229,9 @@ const SUNNAH = [
     titleAr: "تعليم الأهل والصلاة معهم",
     detail: "The Prophet ﷺ would wake his family for prayer in the night, taught them the Quran and adhkar, and said the best of you are those best to their families. He instructed teaching children the prayer as they grow.",
     detailAr: "كان النبي ﷺ يوقظ أهله لصلاة الليل، ويعلّمهم القرآن والأذكار، وقال: خيركم خيركم لأهله. وأمر بتعليم الأولاد الصلاة عند بلوغهم سنّها.",
-    ref: "Sahih al-Bukhari, Hadith 1129; Sunan Abu Dawud, Hadith 495",
-    strength: "Sahih — established in the collections",
+    ref: "Sahih al-Bukhari, Hadith 1127 (waking Ali and Fatimah); Jami at-Tirmidhi, Hadith 3895 (the best of you to his family); Sunan Abu Dawud, Hadith 495 (teaching children the prayer)", refAr: "صحيح البخاري، حديث ١١٢٧ (إيقاظه عليًّا وفاطمة)؛ جامع الترمذي، حديث ٣٨٩٥ (خيركم خيركم لأهله)؛ سنن أبي داود، حديث ٤٩٥ (تعليم الأولاد الصلاة)",
+    strength: "Sahih — al-Bukhari for waking them; the other two are outside the two Sahihs, authenticated by al-Albani",
+    strengthAr: "صحيح — في البخاري إيقاظهما؛ والحديثان الآخران خارج الصحيحين، وصحّحهما الألباني",
     keys: ["family","teach","children prayer","wake up","tarbiyah","upbringing","الأهل","التعليم","تعليم الصلاة","الإيقاظ","التربية"]
   },
   {
@@ -1444,7 +1447,7 @@ const SUNNAH = [
     detailAr: "قال النبي ﷺ: كل معروف صدقة — تبسّمك في وجه أخيك، وإماطة الأذى عن الطريق، وإرشاد التائه، والكلمة الطيبة.",
     ref: "Jami at-Tirmidhi, Hadith 1956; Sahih al-Bukhari, Hadith 2989",
     strength: "Sahih — established in the collections",
-    keys: ["smile","good word","charity","kindness","help","road","small deeds","التبسم","الكلمة الطيبة","الصدقة","المعروف","إماطة الأذى"]
+    keys: ["smile","smiling","good word","charity","kindness","help","road","small deeds","التبسم","الابتسامة","ابتسامة","الكلمة الطيبة","الصدقة","المعروف","إماطة الأذى"]
   },
   {
     cat: "character",
@@ -2016,8 +2019,8 @@ const SUNNAH = [
     detail: "He ﷺ forbade urinating into water that does not flow, and then bathing in it. It is one of the clearest statements in the Sunnah about not fouling what other people will use.",
     detailAr: "نهى النبيّ ﷺ أن يُبال في الماء الدائم الذي لا يجري ثم يُغتسل منه. وهو من أصرح ما في السنة في ألّا يُفسد المرءُ ما ينتفع به الناس.",
     arabic: "لَا يَبُولَنَّ أَحَدُكُمْ فِي الْمَاءِ الدَّائِمِ الَّذِي لَا يَجْرِي ثُمَّ يَغْتَسِلُ فِيهِ",
-    ref: "Sahih Muslim, Hadith 281",
-    strength: "Sahih — Narrated by Muslim",
+    ref: "Sahih al-Bukhari, Hadith 239 (this wording); Sahih Muslim, Hadith 281 and 282", refAr: "صحيح البخاري، حديث ٢٣٩ (بهذا اللفظ)؛ صحيح مسلم، حديث ٢٨١ و٢٨٢",
+    strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["water","clean","pollution","public","purity","hygiene","river","well",
            "الماء","الراكد","الطهارة","النظافة","التلويث"]
   },

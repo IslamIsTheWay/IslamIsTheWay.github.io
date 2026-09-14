@@ -169,7 +169,7 @@ const JOURNEY = [
           { en: "For the other: <strong>it does not open at all.</strong> The verse the Prophet ﷺ recited says the gates of the sky are not opened for them.",
             ar: "وأمّا الآخر <strong>فلا يُفتح له</strong>؛ والآية التي تلاها النبيُّ ﷺ: لا تُفتَّح لهم أبواب السماء." },
           { en: "The believer's record is written in Illiyyun. The other's is written in Sijjin, and <strong>his soul is thrown back down</strong> — the Quran compares it to falling from the sky and being snatched by birds.",
-            ar: "فيُكتب كتاب المؤمن في عِلِّيّين، ويُكتب كتاب الآخر في سِجِّين، <strong>وتُطرح روحه</strong> — وشبّه القرآن ذلك بمن خرّ من السماء فتخطفه الطير." },
+            ar: "فيُكتب كتاب المؤمن في عِلِّيّين، ويُكتب كتاب الآخر في سِجِّين، <strong>وتُطرح روحه</strong> — وشبّه القرآن ذلك بمن ﴿خَرَّ مِنَ ٱلسَّمَآءِ فَتَخۡطَفُهُ ٱلطَّيۡرُ﴾." },
           { en: "Then <strong>both are returned to the body in the grave.</strong> This is the point most people do not realise: the soul goes up and <strong>comes back</strong>.",
             ar: "ثمّ <strong>تُعاد كلتاهما إلى الجسد في القبر</strong>. وهذا ما يغيب عن أكثر الناس: تصعد الروح <strong>ثمّ ترجع</strong>." }
         ] }
@@ -309,7 +309,7 @@ const JOURNEY = [
       en: "The Prophet ﷺ said: <em>“How can I be at ease when the one with the Horn has put the Horn to his mouth, inclined his forehead and is listening, waiting to be commanded to blow?”</em> The Companions said: what shall we say? He said: <em>“Say: Allah is sufficient for us, and the best Disposer of affairs. Upon Allah we rely.”</em>",
       ar: "قال النبيُّ ﷺ: «كيف أنعم وصاحب القرن قد التقم القرن وحنى جبهته وأصغى سمعه ينتظر أن يُؤمر فينفخ؟» قالوا: كيف نقول؟ قال: «قولوا: حسبنا الله ونعم الوكيل، على الله توكّلنا».",
       ref: "Jami at-Tirmidhi, Hadith 2431 — from Abu Sa'id al-Khudri",
-      strength: "Hasan — graded hasan by at-Tirmidhi and authenticated by al-Albani" },
+      strength: "Strong — graded hasan by at-Tirmidhi and authenticated by al-Albani" },
     { h: "The Horn itself",
       hAr: "الصور نفسه",
       en: "The Prophet ﷺ was asked what the Sur is, and said: <em>“A horn that is blown into.”</em> In another report, describing its size: <em>“By the One in whose hand is my soul, the circumference of its opening is like the breadth of the heavens and the earth.”</em>",
@@ -394,7 +394,7 @@ const JOURNEY = [
         headAr: "ثمّ السؤال الذي لا مجيب له",
         points: [
           { en: "Everyone in the heavens and the earth <strong>falls dead</strong> — except whom Allah wills.",
-            ar: "يصعق <strong>من في السماوات ومن في الأرض</strong> إلا من شاء الله." },
+            ar: "يصعق ﴿<strong>مَن فِي ٱلسَّمَٰوَٰتِ وَمَن فِي ٱلۡأَرۡضِ</strong> إِلَّا مَن شَآءَ ٱللَّهُۖ﴾." },
           { en: "Then the question is asked: <strong>“To whom belongs the sovereignty this Day?”</strong> — and <strong>nobody is alive to reply</strong>. So Allah answers Himself: <strong>“To Allah, the One, the Subduer.”</strong>",
             ar: "ثمّ يُنادى: <strong>﴿لِّمَنِ ٱلۡمُلۡكُ ٱلۡيَوۡمَۖ﴾</strong> <strong>فلا يبقى حيٌّ يجيب</strong>، فيجيب سبحانه: <strong>﴿لِلَّهِ ٱلۡوَٰحِدِ ٱلۡقَهَّارِ﴾</strong>." }
         ] }
@@ -714,7 +714,7 @@ const JOURNEY = [
           { en: "So the manner of the handover <strong>is the verdict</strong> — and everyone around you can see which it was.",
             ar: "فطريقة تسليم الكتاب <strong>هي الحكم نفسه</strong> — ومن حولك يرى بأيّ يدٍ أخذتَه." },
           { en: "What is in it: <strong>everything</strong>. The criminals themselves say it — <em>it leaves nothing small or great except that it has counted it.</em>",
-            ar: "وما فيه: <strong>كلُّ شيء</strong>؛ ويقولها المجرمون أنفسهم: <em>لا يغادر صغيرةً ولا كبيرةً إلا أحصاها</em>." },
+            ar: "وما فيه: <strong>كلُّ شيء</strong>؛ ويقولها المجرمون أنفسهم: <em>﴿لَا يُغَادِرُ صَغِيرَةٗ وَلَا كَبِيرَةً إِلَّآ أَحۡصَىٰهَاۚ﴾</em>." },
           { en: "And they <strong>find what they did actually present in front of them</strong> — not a description of it. The deed itself.",
             ar: "و<strong>يجدون ما عملوا حاضرًا</strong> بين أيديهم، لا وصفًا له، بل العمل نفسه." }
         ] },
@@ -724,7 +724,7 @@ const JOURNEY = [
           { en: "They are set up <strong>so that nobody is wronged by even a little</strong> — that is what the verse says they are for.",
             ar: "تُوضع <strong>لئلّا تُظلم نفسٌ شيئًا</strong>، وهذا ما نصّت عليه الآية في الغرض منها." },
           { en: "How sensitive is it? The Quran gives two measures. <strong>The weight of a mustard seed</strong> — mustard seed is one of the smallest seeds there is, the size of a pinhead. And <strong>the weight of a dharrah</strong>: <strong>dharrah means a speck of dust, or the smallest ant</strong> — the thing you can barely see floating in a beam of sunlight.",
-            ar: "وما مقدار دقّتها؟ ذكر القرآن مقياسين. <strong>مثقال حبّةٍ من خَردل</strong> — و<strong>الخَردل</strong> من <strong>أصغر البذور</strong>، حبّته في حجم رأس الدبّوس. و<strong>مثقال ذرّة</strong> — و<strong>الذرّة</strong> هي <strong>الهباءة الصغيرة جدًّا</strong> التي تراها تسبح في شعاع الشمس، أو النملة الصغيرة." },
+            ar: "وما مقدار دقّتها؟ ذكر القرآن مقياسين. <strong>﴿مِثۡقَالَ حَبَّةٖ مِّنۡ خَرۡدَلٍ﴾</strong> — و<strong>الخَردل</strong> من <strong>أصغر البذور</strong>، حبّته في حجم رأس الدبّوس. و<strong>مثقال ذرّة</strong> — و<strong>الذرّة</strong> هي <strong>الهباءة الصغيرة جدًّا</strong> التي تراها تسبح في شعاع الشمس، أو النملة الصغيرة." },
           { en: "Both are chosen to say the same thing: <strong>there is no amount too small to be counted</strong> — of good, or of bad.",
             ar: "والمقياسان معًا يقولان شيئًا واحدًا: <strong>ليس هناك مقدارٌ أصغر من أن يُحسَب</strong>، لا في الخير ولا في الشرّ." },
           { en: "So <strong>nothing is too small to count</strong> — which cuts both ways, and is meant to.",
@@ -754,7 +754,7 @@ const JOURNEY = [
       hAr: "ويكلّمه ربُّه ليس بينهما ترجمان",
       en: "The Prophet ﷺ said: <em>“There is not one of you but his Lord will speak to him, with no interpreter between them. He will look to his right and see nothing but what he sent ahead. He will look to his left and see nothing but what he sent ahead. He will look in front of him and see nothing but the Fire facing him. So protect yourselves from the Fire, even with half a date.”</em>",
       ar: "قال النبيُّ ﷺ: «ما منكم من أحدٍ إلا سيُكلّمه ربُّه ليس بينه وبينه ترجمان، فينظر أيمن منه فلا يرى إلا ما قدّم، وينظر أشأم منه فلا يرى إلا ما قدّم، وينظر بين يديه فلا يرى إلا النار تلقاء وجهه؛ فاتّقوا النار ولو بشقّ تمرة».",
-      ref: "Sahih al-Bukhari, Book of Zakat, Hadith 1413; also narrated by Muslim — from Adiy ibn Hatim",
+      ref: "Sahih al-Bukhari, Book of Tawhid, Hadith 7512, and Book of Zakat, Hadith 1413; also narrated by Muslim — from Adiy ibn Hatim",
       strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" }
   ],
   plain: {
@@ -864,7 +864,7 @@ const JOURNEY = [
       hAr: "القنطرة بعد الصراط",
       en: "The Prophet ﷺ said: <em>“The believers will be delivered from the Fire, and they will be detained on a bridge between Paradise and the Fire. There they will settle with one another the wrongs done between them in the world, until when they are cleaned and purified they will be permitted to enter Paradise.”</em>",
       ar: "قال النبيُّ ﷺ: «يخلص المؤمنون من النار، فيُحبَسون على قنطرةٍ بين الجنّة والنار، فيُقتصّ لبعضهم من بعضٍ مظالم كانت بينهم في الدنيا، حتى إذا هُذّبوا ونُقّوا أُذن لهم بدخول الجنّة».",
-      ref: "Sahih al-Bukhari, Book of Oppressions, Hadith 2440 — from Abu Sa'id al-Khudri",
+      ref: "Sahih al-Bukhari, Book of Softening the Hearts, Hadith 6535, and Book of Oppressions, Hadith 2440 — from Abu Sa'id al-Khudri",
       strength: "Sahih — Narrated by al-Bukhari" },
     { h: "The one who is bankrupt",
       hAr: "المُفلِس",
@@ -927,7 +927,7 @@ const JOURNEY = [
       hAr: "ثمانية أبواب — ومنهم من يُدعى من أكثر من باب",
       en: "The Prophet ﷺ said: <em>“Whoever spends a pair of anything in the way of Allah will be called from the gates of Paradise: O servant of Allah, this is good. So whoever was of the people of prayer will be called from the gate of prayer; whoever was of the people of jihad, from the gate of jihad; whoever was of the people of fasting, from the gate of Ar-Rayyan; whoever was of the people of charity, from the gate of charity.”</em>\n\nAbu Bakr رضي الله عنه asked whether anyone would be called from all of them, and he ﷺ said yes — and that he hoped Abu Bakr would be one of them.\n\nAnd he ﷺ said: <em>“In Paradise there are eight gates, among them a gate called Ar-Rayyan, which none enters but those who fast.”</em>",
       ar: "قال النبيُّ ﷺ: «من أنفق زوجين في سبيل الله نُودي من أبواب الجنّة: يا عبد الله، هذا خير. فمن كان من أهل الصلاة دُعي من باب الصلاة، ومن كان من أهل الجهاد دُعي من باب الجهاد، ومن كان من أهل الصيام دُعي من باب الريّان، ومن كان من أهل الصدقة دُعي من باب الصدقة».\n\nفسأل أبو بكر رضي الله عنه: هل يُدعى أحدٌ من تلك الأبواب كلّها؟ قال: «نعم، وأرجو أن تكون منهم».\n\nوقال ﷺ: «في الجنّة ثمانية أبواب، فيها بابٌ يُسمّى الريّان لا يدخله إلا الصائمون».",
-      ref: "Sahih al-Bukhari, Book of the Virtues of the Companions, Hadith 3666 and Book of Fasting, Hadith 1896–1897; also narrated by Muslim",
+      ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3257, Book of Fasting, Hadith 1896–1897, and Book of the Virtues of the Companions, Hadith 3666; also narrated by Muslim",
       strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" },
     { h: "The first thing eaten",
       hAr: "أوّل ما يُؤكَل",
@@ -1024,7 +1024,7 @@ const JOURNEY = [
           { en: "The Companions asked this exact question — <em>do we eat in Paradise?</em> — and the answer was <strong>yes</strong>.",
             ar: "سأل الصحابة هذا السؤال بعينه — <em>أنأكل في الجنّة؟</em> — فكان الجواب: <strong>نعم</strong>." },
           { en: "<strong>Fruit and meat, whatever you want</strong> — and the fruit is <em>never cut off and never withheld</em>: no season, no shortage, nothing out of reach.",
-            ar: "<strong>فاكهةٌ ولحمٌ ممّا تشتهي</strong>، وثمرها <em>لا مقطوعةٍ ولا ممنوعة</em>: لا فصلَ لها ولا انقطاع ولا مانع." },
+            ar: "<strong>فاكهةٌ ولحمٌ ممّا تشتهي</strong>، وثمرها <em>﴿لَّا مَقۡطُوعَةٖ وَلَا مَمۡنُوعَةٖ﴾</em>: لا فصلَ لها ولا انقطاع ولا مانع." },
           { en: "<strong>Four kinds of rivers</strong>, named in the Quran: <strong>water</strong> that never goes stale, <strong>milk</strong> whose taste never turns, <strong>wine</strong> that is a pleasure to those who drink it — and there is no drunkenness or headache in it — and <strong>purified honey</strong>.",
             ar: "و<strong>أنهارٌ أربعة</strong> سمّاها القرآن: <strong>ماءٌ</strong> غير آسن، و<strong>لبنٌ</strong> لم يتغيّر طعمه، و<strong>خمرٌ</strong> لذّةٌ للشاربين لا سُكر فيها ولا صُداع، و<strong>عسلٌ</strong> مُصفّى." }
         ] },
@@ -1032,9 +1032,9 @@ const JOURNEY = [
         headAr: "مع من تكون، وكيف يكون اليوم",
         points: [
           { en: "<strong>Nobody there dislikes anybody.</strong> Allah says He <em>removes whatever was in their breasts of resentment</em> — so old grudges are not merely forgiven, they are <strong>taken out of you</strong>.",
-            ar: "<strong>لا يبغض أحدٌ أحدًا هناك</strong>؛ قال الله إنّه <em>ينزع ما في صدورهم من غِلّ</em> — فليست الأحقاد تُغفر فحسب، بل <strong>تُنزع منك</strong>." },
+            ar: "<strong>لا يبغض أحدٌ أحدًا هناك</strong>؛ قال الله إنّه <em>ينزع ﴿مَا فِي صُدُورِهِم مِّنۡ غِلٍّ﴾</em> — فليست الأحقاد تُغفر فحسب، بل <strong>تُنزع منك</strong>." },
           { en: "They sit <strong>facing one another</strong> — the Quran's own picture of it is brothers on couches, looking at each other.",
-            ar: "ويجلسون <strong>متقابلين</strong>؛ وصورة القرآن لذلك: إخوانٌ على سُررٍ متقابلين." },
+            ar: "ويجلسون <strong>متقابلين</strong>؛ وصورة القرآن لذلك: ﴿إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ﴾." },
           { en: "<strong>You hear nothing ugly.</strong> No pointless talk, no insult, no lie — the Quran says the only thing said is <em>peace, peace</em>.",
             ar: "و<strong>لا تسمع قبيحًا</strong>: لا لغو ولا تأثيم ولا كذب؛ قال القرآن إنّ الذي يُقال فيها: <em>سلامًا سلامًا</em>." },
           { en: "And what they say themselves: they begin with <em>Glory to You, O Allah</em>, they greet one another with <em>peace</em>, and <strong>the last of it is: praise be to Allah, Lord of the worlds</strong>.",
