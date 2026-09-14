@@ -260,8 +260,8 @@ async function openSurah(surah) {
     let html = `<div class="reciter-bar">
       <div class="reciter-now">🎧 <span class="en-only">Reciter: <strong>${current.name}</strong> </span><span dir="rtl" style="font-family:'Amiri',serif;"><span class="ar-only">القارئ: </span>${current.ar}</span></div>
       <div>
-        <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ Play Full Surah</button>
-        <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ Stop</button>
+        <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ <span class="en-only">Play Full Surah</span><span class="ar-only" dir="rtl">تشغيل السورة كاملة</span></button>
+        <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ <span class="en-only">Stop</span><span class="ar-only" dir="rtl">إيقاف</span></button>
         <!-- Sits beside Stop, as asked. It stays disabled until a verse's
              audio has finished, and then names the verse it will save. -->
         <button onclick="iitwSaveHere()" class="rq-btn rq-save" id="rqSaveBtn" disabled
@@ -323,7 +323,7 @@ async function openSurah(surah) {
       html += `
         <div class="ayah-block" id="ayah-${ayah.numberInSurah}">
           <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}', ${ayah.numberInSurah})" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
-          <div class="translation-text"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
+          <div class="translation-text" dir="ltr"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
           <div class="ayah-cite"><span class="en-only">Surah ${surah.name} — <strong>${cite}</strong> </span><span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
           ${tad ? iitwTadabburAyahHtml(tad, ayah.numberInSurah) : ""}
         </div>
@@ -347,6 +347,10 @@ async function openSurah(surah) {
     });
 
     body.innerHTML = html;
+    /* The panels that open later call this themselves; the reader itself
+       did not, so anything it left to the dictionary stayed English on the
+       Arabic page until a panel was opened. */
+    if (window.applyI18n) window.applyI18n();
   } catch (err) {
     body.innerHTML = `
       <div class="error-msg">

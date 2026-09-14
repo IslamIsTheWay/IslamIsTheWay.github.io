@@ -1068,6 +1068,9 @@ section {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
+/* The English line stays English on the Arabic page: laid out right to
+   left it printed "[All] praise is …" and ".any deviance". */
+.ayah-block .translation-text[dir="ltr"] { text-align: left; }
 
 /* ===== The Day of Judgement ===== */
 .page-hero.ph-judgement {
