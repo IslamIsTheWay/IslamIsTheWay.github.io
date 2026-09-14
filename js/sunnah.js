@@ -427,10 +427,15 @@ const SUNNAH = [
     cat: "manners",
     title: "Visit the sick",
     titleAr: "زيارة المريض",
-    detail: "Visiting the sick is a right of a Muslim upon a Muslim. The Prophet ﷺ said one who visits a sick person walks in the mercy of Allah, and taught the dua asking Allah, Lord of the Mighty Throne, to cure him.",
-    detailAr: "زيارة المريض حق للمسلم على المسلم. وقال النبي ﷺ إن عائد المريض يخوض في رحمة الله، وعلّم أن يُدعى: «أسأل الله العظيم رب العرش العظيم أن يشفيك».",
-    ref: "Sahih al-Bukhari, Hadith 1240; Jami at-Tirmidhi, Hadith 2083",
-    strength: "Sahih — Narrated by al-Bukhari; the dua graded Strong",
+    /* "walks in the mercy of Allah" was cited to al-Bukhari 1240 and
+       at-Tirmidhi 2083; neither says it (1240 is the five rights, 2083 the
+       du'a). The reward in the Sahihs is Muslim 2568 — read in the text. */
+    detail: "Visiting the sick is a right of a Muslim upon a Muslim. The Prophet ﷺ said that whoever visits a sick person remains in the harvest of Paradise until he returns, and he taught the dua asking Allah, Lord of the Mighty Throne, to cure him.",
+    detailAr: "زيارة المريض حقٌّ للمسلم على المسلم. وقال النبي ﷺ: «مَنْ عَادَ مَرِيضًا لَمْ يَزَلْ فِي خُرْفَةِ الْجَنَّةِ حَتَّى يَرْجِعَ»، وعلّم أن يُدعى للمريض: «أسأل الله العظيم رب العرش العظيم أن يشفيك».",
+    ref: "Sahih al-Bukhari, Hadith 1240 (the right); Sahih Muslim, Hadith 2568 (the harvest of Paradise); Jami at-Tirmidhi, Hadith 2083 (the dua)",
+    refAr: "صحيح البخاري، حديث ١٢٤٠ (الحقّ)؛ صحيح مسلم، حديث ٢٥٦٨ (خُرفة الجنة)؛ جامع الترمذي، حديث ٢٠٨٣ (الدعاء)",
+    strength: "Sahih — al-Bukhari and Muslim; the dua graded Strong",
+    strengthAr: "صحيح — في البخاري ومسلم؛ والدعاء إسناده قويّ",
     keys: ["visiting sick","illness","hospital","dua for sick","زيارة المريض","المرض","دعاء الشفاء","عيادة"]
   },
   {

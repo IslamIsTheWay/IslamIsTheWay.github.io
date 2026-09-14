@@ -6039,3 +6039,12 @@ answered with comfort first.
 3. staff.html is English-only (the owner's tool).
 4. Guidance is only as good as its keys: new content needs its everyday
    phrasings as keys, in both languages and both genders.
+
+## Also corrected (read in the collection text)
+
+* Sunnah "Visit the sick" said the visitor "walks in the mercy of Allah",
+  cited to al-Bukhari 1240 and at-Tirmidhi 2083 — 1240 is the five rights of
+  a Muslim, 2083 the du'a said seven times; neither has that wording. The
+  reward in the Sahihs is Muslim 2568: «مَنْ عَادَ مَرِيضًا لَمْ يَزَلْ فِي خُرْفَةِ
+  الْجَنَّةِ حَتَّى يَرْجِعَ». The entry now says that, with all three references
+  (and refAr / strengthAr).
