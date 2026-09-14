@@ -100,9 +100,11 @@ const FIQH_RULINGS = [
     differenceAr: "يختلف أهل العلم في الوجه والكفّين، وله مدخلٌ مستقل. وأما الشروط المتقدمة — الصفاقة والسعة وألّا يكون زينةً في نفسه — فمحلّ اتفاقٍ بين المذاهب.",
     verify: "Read the scholars' own wording at binbaz.org.sa and binothaimeen.net before relying on any of it.",
     verifyAr: "راجع كلام العلماء بنصّه في موقعي binbaz.org.sa و binothaimeen.net قبل الاعتماد على شيء منه.",
-    keys: ["hijab", "veil", "cover", "covering", "women clothes", "womens clothing", "dress", "tight clothes", "transparent",
+    /* No bare ضيق / ستر / cover: ضيق is also distress («أشعر بضيق»), ستر is
+       also concealing a fault, "cover" is also covering a debt. */
+    keys: ["hijab", "veil", "cover my hair", "covering my hair", "women clothes", "womens clothing", "dress", "tight clothes", "transparent",
            "see through", "abaya", "khimar", "jilbab", "modest", "modesty", "what is hijab", "conditions of hijab",
-           "حجاب", "الحجاب", "لباس المرأة", "ملابس النساء", "ستر", "ضيق", "شفاف", "عباءة", "خمار", "جلباب", "شروط الحجاب", "ما هو الحجاب"]
+           "حجاب", "الحجاب", "لباس المرأة", "ملابس النساء", "لباس ضيق", "ملابس ضيقة", "شفاف", "عباءة", "خمار", "جلباب", "شروط الحجاب", "ما هو الحجاب"]
   },
   {
     id: "fq-niqab",
@@ -147,7 +149,7 @@ const FIQH_RULINGS = [
     differenceAr: "وخلاصةٌ منصفة: القول بأن الوجه ليس من العورة الواجب سترها هو الأشهر نقلًا في المذاهب الأربعة — وهو المعروف عند الحنفية والمالكية والشافعية عند أمن الفتنة، والمذهب الحنبلي يميل إلى خلافه. وأما علماء العصر فابن باز وابن عثيمين على الوجوب، والألباني على خلافه. فالمسألة مما يُقلَّد فيه من تثق بعلمه، ولا تُنكَر فيها على من أخذ بالقول الآخر. والذي لم يقل به أحدٌ قط: كشف الشعر أو العنق أو الذراعين أو الساقين.",
     verify: "Read each scholar in his own words — binbaz.org.sa, binothaimeen.net, and al-Albani's Jilbab al-Mar'ah al-Muslimah — rather than relying on this summary.",
     verifyAr: "اقرأ كلام كل عالمٍ بنصّه — binbaz.org.sa و binothaimeen.net وكتاب «جلباب المرأة المسلمة» للألباني — ولا تكتفِ بهذا التلخيص.",
-    keys: ["niqab", "face veil", "cover face", "face", "hands", "burqa", "must i cover my face",
+    keys: ["niqab", "face veil", "cover face", "face and hands", "burqa", "must i cover my face",   // not bare "face": "wash my face"
            "نقاب", "ستر الوجه", "كشف الوجه", "الوجه والكفين", "الخلاف في النقاب"]
   },
   {
@@ -271,8 +273,10 @@ const FIQH_RULINGS = [
     differenceAr: null,
     verify: "binothaimeen.net and binbaz.org.sa. If the doubt is severe and constant, both the scholars' advice and ordinary sense point to also seeking medical help — obsessive doubt is a recognised condition.",
     verifyAr: "binothaimeen.net و binbaz.org.sa. وإذا اشتدّ الوسواس ولازم صاحبه، فمقتضى كلام أهل العلم والعقل معًا أن يُستعان بالطبيب أيضًا، فالوسواس القهري مرضٌ معروف.",
-    keys: ["waswas", "doubt", "obsessive", "repeat wudu", "did i break wudu", "how many rakah", "doubts in prayer", "ocd",
-           "وسواس", "شك", "الوسواس القهري", "إعادة الوضوء", "الشك في الصلاة", "عدد الركعات"]
+    /* Not bare "doubt" / شك: "I have doubts about Islam" is a different
+       question, and it was being handed the ruling on doubts in wudu. */
+    keys: ["waswas", "doubt in wudu", "doubts in wudu", "obsessive", "repeat wudu", "did i break wudu", "how many rakah", "doubts in prayer", "ocd",
+           "وسواس", "الشك في الوضوء", "اشك في وضوئي", "اشك في صلاتي", "الوسواس القهري", "إعادة الوضوء", "الشك في الصلاة", "عدد الركعات"]
   },
 
   /* ================= MONEY ================= */
@@ -319,8 +323,10 @@ const FIQH_RULINGS = [
     differenceAr: "وذهب نفرٌ قليل من المعاصرين إلى أن فوائد البنوك المنظَّمة ليست ربا القرآن، وهو قولٌ ردّه جمهور أهل العلم والمجامع الفقهية، وليس قول أحدٍ من العلماء المذكورين هنا.",
     verify: "binbaz.org.sa, binothaimeen.net, and the published rulings of the Permanent Committee.",
     verifyAr: "binbaz.org.sa و binothaimeen.net وفتاوى اللجنة الدائمة المنشورة.",
-    keys: ["riba", "interest", "bank", "loan", "mortgage", "usury", "investment", "savings account", "haram money",
-           "ربا", "فوائد", "البنك", "قرض", "فائدة بنكية", "مال حرام", "التخلص من الفوائد"]
+    /* Not bare "interest" / فوائد: "I lost interest in praying" and «فوائد
+       الصلاة» (the benefits of prayer) were answered with this ruling. */
+    keys: ["riba", "bank interest", "interest rate", "interest on", "bank", "loan", "mortgage", "usury", "investment", "savings account", "haram money",
+           "ربا", "فوائد بنكية", "فوائد البنك", "البنك", "قرض", "فائدة بنكية", "مال حرام", "التخلص من الفوائد"]
   },
   {
     id: "fq-haram-job",
@@ -361,8 +367,10 @@ const FIQH_RULINGS = [
     differenceAr: null,
     verify: "binbaz.org.sa and binothaimeen.net — and put your own case to a scholar, because this one turns entirely on the details of the job.",
     verifyAr: "binbaz.org.sa و binothaimeen.net — واعرض حالتك بعينها على أهل العلم، فالمسألة تدور على تفاصيل العمل.",
-    keys: ["job", "work", "haram job", "salary", "employment", "working in bank", "selling alcohol", "quit my job",
-           "العمل", "الوظيفة", "راتب", "العمل في البنك", "بيع الخمر", "ترك العمل", "كسب حرام"]
+    /* Not bare "job" / العمل: "I lost my job" and «خسرت عملي» were answered
+       with the ruling on working somewhere forbidden. The job AND its doubt. */
+    keys: ["haram job", "is my job haram", "is my job halal", "my job is haram", "haram salary", "working in bank", "work in a bank", "selling alcohol", "quit my job",
+           "عملي حرام", "هل عملي حلال", "وظيفتي حرام", "راتب حرام", "العمل في البنك", "بيع الخمر", "ترك العمل", "كسب حرام"]
   },
 
   /* ================= FAMILY ================= */
@@ -405,8 +413,10 @@ const FIQH_RULINGS = [
     differenceAr: null,
     verify: "binbaz.org.sa and binothaimeen.net. Where there is real abuse or danger, this is not a fatwa question alone — protect yourself and seek help.",
     verifyAr: "binbaz.org.sa و binothaimeen.net. وإذا كان هناك أذًى حقيقيّ أو خطر فليست المسألة فتوى فحسب — احفظ نفسك واطلب المعونة.",
-    keys: ["parents", "mother", "father", "obey parents", "disobey", "harsh father", "family problem", "birr",
-           "الوالدين", "الأم", "الأب", "طاعة الوالدين", "عقوق", "برّ الوالدين", "الأب القاسي"]
+    /* Not bare "mother" / الأم: "my mother is sick" was answered with the
+       ruling on parents who ask you to disobey Allah. */
+    keys: ["obey parents", "obey my parents", "disobey", "harsh father", "strict parents", "my parents want me to", "my parents forbid", "family problem", "birr",
+           "طاعة الوالدين", "عقوق", "برّ الوالدين", "بر الوالدين", "الأب القاسي", "أبي يمنعني", "أمي تمنعني", "والداي يأمرانني"]
   },
 
   /* ================= CONDUCT ================= */
@@ -494,7 +504,7 @@ const FIQH_RULINGS = [
     verify: "An-Nawawi's Riyad as-Salihin, the chapter on forbidden speech; and binothaimeen.net.",
     verifyAr: "رياض الصالحين للنووي، باب تحريم الغيبة؛ و binothaimeen.net.",
     keys: ["backbiting", "gheebah", "gossip", "talking about people", "slander", "warn someone", "is it backbiting",
-           "غيبة", "نميمة", "الكلام في الناس", "بهتان", "تحذير", "هل هذه غيبة"]
+           "غيبة", "نميمة", "الكلام في الناس", "بهتان", "التحذير من شخص", "هل هذه غيبة"]
   },
 
   /* ================= REPENTANCE ================= */
@@ -634,8 +644,10 @@ const FIQH_RULINGS = [
     differenceAr: "وقصر بعض المتقدّمين المسح على الخفّ الجلديّ وأوجبوا الغسل فيما سواه، وبه قال جماعةٌ داخل عدّة مذاهب. ويقابله أنّ المسح على الجوارب مرويٌّ عن عددٍ من الصحابة، وأفتى بجوازه المعاصرون المذكورون. والأكثرون على الجواز بشرط الصفاقة، ومن اختار غسل القدمين احتياطًا فلم يأتِ منكرًا، وقد أخذ بالأحوط.",
     verify: "binbaz.org.sa and binothaimeen.net.",
     verifyAr: "binbaz.org.sa و binothaimeen.net.",
-    keys: ["socks", "khuff", "wipe", "wiping", "feet", "wudu", "ablution", "leather", "masah",
-           "الجوربين", "الخف", "المسح", "مسح على الجوارب", "القدمين", "الوضوء", "الطهارة"]
+    /* Not bare "wudu" / الوضوء: «كيف أتوضأ» — how do I make wudu — reached
+       this ruling on wiping over socks before the steps of wudu. */
+    keys: ["socks", "khuff", "wipe", "wiping", "wipe over socks", "leather", "masah",
+           "الجوربين", "الجوارب", "الخف", "المسح", "مسح على الجوارب", "المسح على الجوربين"]
   },
 
   /* ================= FAMILY ================= */
@@ -687,8 +699,10 @@ const FIQH_RULINGS = [
     differenceAr: "الأكثرون على اشتراط الوليّ بوضوح: ثلاثةٌ من المذاهب الأربعة، والشيخان المعاصران الأكثر نقلًا في هذا الموقع. وقول الحنفيّة ليس قولًا شاذًّا، وعليه خلقٌ كثيرٌ من المسلمين. والذي لا يجوز أن يُصنع أن يُقال لأحدٍ إنّ نكاحه القائم باطل، فذلك حكمٌ على عقدٍ بعينه، وهو إلى عالمٍ أو قاضٍ يعرف التفاصيل، لا إلى موقعٍ على الشبكة.",
     verify: "This is a question for a scholar who knows your situation and your country's law — not for a summary. binbaz.org.sa and binothaimeen.net for the wording of the positions above.",
     verifyAr: "هذه مسألةٌ تُسأل عنها عالمًا يعرف حالك وقانون بلدك، لا يُكتفى فيها بملخّص. وراجع نصّ الأقوال المتقدّمة في binbaz.org.sa و binothaimeen.net.",
-    keys: ["wali", "guardian", "marriage", "nikah", "father refuses", "marry without", "consent", "forced marriage", "revert",
-           "الولي", "الزواج", "النكاح", "بغير ولي", "العضل", "الإكراه", "رضا المرأة", "زوجت نفسها"]
+    /* Not bare "marriage" / "revert" / الإكراه: every marriage question, every
+       revert's question, and «لا إكراه في الدين» reached this ruling. */
+    keys: ["wali", "guardian", "marriage without wali", "nikah without wali", "father refuses", "marry without", "consent", "forced marriage", "revert woman marriage",
+           "الولي", "زواج بدون ولي", "بغير ولي", "بدون ولي", "العضل", "الإكراه على الزواج", "رضا المرأة", "زوجت نفسها"]
   },
 
   /* ================= REPENTANCE ================= */

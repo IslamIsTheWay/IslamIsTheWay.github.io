@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
@@ -469,9 +469,9 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202609140907"></script>
-  <script src="js/wordlens.js?v=202609140907"></script>
-  <script src="js/main.js?v=202609140907"></script>
+  <script src="js/data.js?v=202609141459"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
+  <script src="js/main.js?v=202609141459"></script>
   <script>
     const STAFF_USER = iitwStaffUser();
     if (!STAFF_USER) window.location.href = "login.html";
@@ -959,7 +959,7 @@
       renderTitleSuggestions();
 
       // Offer the verse's own translation as the English title.
-      const t = await fetchVerseTranslation(v.surah, v.ayah);
+      const [t, hafs] = await Promise.all([fetchVerseTranslation(v.surah, v.ayah), fetchVerseHafs(v.surah, v.ayah)]);
       if (t) {
         const host = document.getElementById("recTitleSuggestions");
         const chip = document.createElement("button");
@@ -967,13 +967,27 @@
         chip.className = "rec-chip";
         chip.style.borderColor = "var(--gold)";
         chip.innerHTML = `<strong>From the verse itself:</strong> ${iitwEsc(t)}`;
+        /* The Arabic title is the verse as the Mushaf writes it (quran.com's
+           qpc_hafs, the King Fahd Complex text). `v.arabic` is the plain
+           text the title was MATCHED against — right for finding a verse,
+           wrong for showing one: it put a verse on the home page in a
+           spelling that is not the Madinah Mushaf's. */
         chip.onclick = () => {
           document.getElementById("recTitle").value = t;
-          document.getElementById("recTitleAr").value = v.arabic;
+          if (hafs) document.getElementById("recTitleAr").value = hafs;
         };
         host.insertBefore(chip, host.children[1] || null);
         if (!document.getElementById("recTitle").value) document.getElementById("recTitle").value = t;
       }
+    }
+
+    async function fetchVerseHafs(surah, ayah) {
+      try {
+        const r = await fetch(`https://api.quran.com/api/v4/quran/verses/qpc_hafs?verse_key=${surah}:${ayah}`);
+        const j = await r.json();
+        // quran.com ends each verse with its number
+        return String((j.verses && j.verses[0] && j.verses[0].text_qpc_hafs) || "").replace(/[  ]*[٠-٩]+$/, "");
+      } catch (e) { return ""; }
     }
 
     async function fetchVerseTranslation(surah, ayah) {
@@ -1602,6 +1616,6 @@
     loadConfig();
     fbAdminRefresh();
   </script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
 </body>
 </html>

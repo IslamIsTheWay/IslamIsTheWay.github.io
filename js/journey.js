@@ -167,7 +167,7 @@ const JOURNEY = [
           { en: "For the believer: <strong>it opens every time</strong>, and the angels of each heaven escort it to the next — all the way to the seventh.",
             ar: "فأمّا المؤمن <strong>فيُفتح له في كلّ مرّة</strong>، ويشيّعه من كلّ سماءٍ مقرّبوها إلى التي تليها، حتى السابعة." },
           { en: "For the other: <strong>it does not open at all.</strong> The verse the Prophet ﷺ recited says the gates of the sky are not opened for them.",
-            ar: "وأمّا الآخر <strong>فلا يُفتح له</strong>؛ والآية التي تلاها النبيُّ ﷺ: لا تُفتَّح لهم أبواب السماء." },
+            ar: "وأمّا الآخر <strong>فلا يُفتح له</strong>؛ والآية التي تلاها النبيُّ ﷺ: ﴿لَا تُفَتَّحُ لَهُمۡ أَبۡوَٰبُ ٱلسَّمَآءِ﴾." },
           { en: "The believer's record is written in Illiyyun. The other's is written in Sijjin, and <strong>his soul is thrown back down</strong> — the Quran compares it to falling from the sky and being snatched by birds.",
             ar: "فيُكتب كتاب المؤمن في عِلِّيّين، ويُكتب كتاب الآخر في سِجِّين، <strong>وتُطرح روحه</strong> — وشبّه القرآن ذلك بمن ﴿خَرَّ مِنَ ٱلسَّمَآءِ فَتَخۡطَفُهُ ٱلطَّيۡرُ﴾." },
           { en: "Then <strong>both are returned to the body in the grave.</strong> This is the point most people do not realise: the soul goes up and <strong>comes back</strong>.",
@@ -777,7 +777,7 @@ const JOURNEY = [
         headAr: "وما يقع للآخر",
         points: [
           { en: "There is <strong>no screen</strong>. The witnesses announce it <strong>in front of everyone</strong>: these are the ones who lied against their Lord.",
-            ar: "<strong>لا سِتر</strong>؛ ويقول الأشهاد <strong>على رؤوس الخلائق</strong>: هؤلاء الذين كذبوا على ربّهم." }
+            ar: "<strong>لا سِتر</strong>؛ ويقول الأشهاد <strong>على رؤوس الخلائق</strong>: ﴿هَٰٓؤُلَآءِ ٱلَّذِينَ كَذَبُواْ عَلَىٰ رَبِّهِمۡۚ﴾." }
         ] },
       { head: "And this happens to every single person",
         headAr: "وهذا واقعٌ بكلّ أحد",

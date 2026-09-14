@@ -1317,7 +1317,13 @@ function runPersonSearch(query) {
     const card = document.createElement("div");
     card.className = "result-card";
 
-    const categoryLabel = person.category === "prophet" ? "Prophet" : "Companion (Sahabi)";
+    /* Seventeen of the companions are women (WOMEN_IDS, js/data.js). This
+       card called Khadijah «صحابيّ» and offered «اقرأ سيرته كاملة … ووفاته». */
+    const she = typeof WOMEN_IDS !== "undefined" && WOMEN_IDS.has(person.id);
+    const categoryLabel = person.category === "prophet"
+      ? `<span class="en-only">Prophet</span><span class="ar-only" dir="rtl">نبيّ</span>`
+      : she ? `<span class="en-only">Companion (Sahabiyyah)</span><span class="ar-only" dir="rtl">صحابيّة</span>`
+            : `<span class="en-only">Companion (Sahabi)</span><span class="ar-only" dir="rtl">صحابيّ</span>`;
 
     /* Say WHY this person is in the list. A cross-reference must never look
        like an answer: searching "Yusuf" surfaces his father Yaqub because
@@ -1339,22 +1345,39 @@ function runPersonSearch(query) {
         ${ar ? `<p class="life-ar" dir="rtl">${ar}</p>` : ""}
       </div>`;
 
+    /* Each source reads "<what it supports>: <the citation>". Only the
+       citation may reach the reference translator (the tad-ref class): the
+       whole line went through it here, and the English label came out
+       mangled word by word — «Take the قرآن عن four», «Harun و his speech».
+       The label's Arabic is LIFE_LABELS_AR (js/lives.js), as on the
+       Prophets and Companions pages. */
+    const srcLine = s => {
+      const i = s.indexOf(": ");
+      if (i === -1) return `<li><span class="tad-ref">${s}</span></li>`;
+      const en = s.slice(0, i + 1);
+      const ar = (typeof LIFE_LABELS_AR !== "undefined" && LIFE_LABELS_AR[en]) || "";
+      return `<li><span class="ls-what"><span class="en-only">${en}</span>${ar ? `<span class="ar-only" dir="rtl">${ar}</span>` : ""}</span> <span class="tad-ref">${s.slice(i + 2)}</span></li>`;
+    };
+
     const fullLife = !life ? "" : `
       <details class="full-life">
         <summary>
-          <span class="en-only">📖 Read his full life — before Islam, the moment he believed, what changed, his greatest hour, and his death</span>
-          <span class="ar-only" dir="rtl">📖 اقرأ سيرته كاملة — قبل الإسلام، ولحظة الإيمان، وما تغيّر، وأعظم مواقفه، ووفاته</span>
+          ${she
+            ? `<span class="en-only">📖 Read her full life — before Islam, the moment she believed, what changed, her greatest hour, and her death</span>
+               <span class="ar-only" dir="rtl">📖 اقرأ سيرتها كاملة — قبل الإسلام، ولحظة الإيمان، وما تغيّر، وأعظم مواقفها، ووفاتها</span>`
+            : `<span class="en-only">📖 Read his full life — before Islam, the moment he believed, what changed, his greatest hour, and his death</span>
+               <span class="ar-only" dir="rtl">📖 اقرأ سيرته كاملة — قبل الإسلام، ولحظة الإيمان، وما تغيّر، وأعظم مواقفه، ووفاته</span>`}
         </summary>
         <div class="full-life-body">
           ${lifePart(life.message, life.messageAr, "The message he was sent with", "الرسالة التي أُرسل بها")}
           ${lifePart(life.before, life.beforeAr, "Before", "قبل ذلك")}
-          ${lifePart(life.islam, life.islamAr, "The moment he believed", "لحظة الإيمان")}
-          ${lifePart(life.change, life.changeAr, "What changed in him", "ما تغيّر فيه")}
-          ${lifePart(life.greatest, life.greatestAr, "His greatest hour", "أعظم مواقفه")}
-          ${lifePart(life.death, life.deathAr, "His death", "وفاته")}
-          ${(life.sources && life.sources.length) ? `<div class="refs">
+          ${lifePart(life.islam, life.islamAr, she ? "The moment she believed" : "The moment he believed", "لحظة الإيمان")}
+          ${lifePart(life.change, life.changeAr, she ? "What changed in her" : "What changed in him", she ? "ما تغيّر فيها" : "ما تغيّر فيه")}
+          ${lifePart(life.greatest, life.greatestAr, she ? "Her greatest hour" : "His greatest hour", she ? "أعظم مواقفها" : "أعظم مواقفه")}
+          ${lifePart(life.death, life.deathAr, she ? "Her death" : "His death", she ? "وفاتها" : "وفاته")}
+          ${(life.sources && life.sources.length) ? `<div class="refs life-sources">
             <strong><span class="en-only">Sources — each with its rank</span><span class="ar-only" dir="rtl">المصادر ودرجة كلٍّ منها</span></strong>
-            <ul>${life.sources.map(s => `<li>${s}</li>`).join("")}</ul>
+            <ul>${life.sources.map(srcLine).join("")}</ul>
           </div>` : ""}
         </div>
       </details>`;

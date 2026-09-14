@@ -75,7 +75,10 @@ const INHERITANCE = {
           strengthAr: "القرآن الكريم",
           keys: ["inheritance order", "what comes first inheritance", "debts of the deceased", "funeral costs", "before dividing the estate", "estate", "who pays the debt",
                  "ترتيب التركة", "ماذا يخرج اولا", "ديون الميت", "تجهيز الميت", "قبل القسمة", "التركة", "من يسدد الدين",
-                 "dad died", "father died", "my father passed away", "he passed away and left", "dont know how to split", "how do we split the house", "what do we do with the house", "ابوي توفى", "ابي مات", "توفي والدي", "ما نعرف نقسم", "نقسم البيت", "شو نعمل بالبيت"]
+                 /* Not "father died" on its own: that sentence is grief before
+                    it is an estate, and it opened this card as the answer to
+                    "my father died" / «مات أبي». The death plus what was LEFT. */
+                 "father died and left", "my father passed away and left", "he passed away and left", "died and left debts", "dont know how to split", "how do we split the house", "what do we do with the house", "مات ابي وترك", "توفي والدي وترك", "مات وعليه دين", "ما نعرف نقسم", "نقسم البيت", "شو نعمل بالبيت"]
         },
         {
           id: "ih-wasiyya", icon: "✍️",
@@ -230,7 +233,7 @@ const INHERITANCE = {
         {
           id: "ih-twotoone", icon: "⚖️",
           title: "\"Why does the male take twice the female's share?\"",
-          titleAr: "«ولماذا للذكر مثلُ حظّ الأنثيين؟»",
+          titleAr: "«ولماذا ﴿لِلذَّكَرِ مِثۡلُ حَظِّ ٱلۡأُنثَيَيۡنِۚ﴾؟»",
           plain: "Three things, and the first two are facts about the text that most people arguing about this have never checked.\n\nFIRST, the ratio is not universal. It applies where children inherit together, and where full or paternal siblings inherit together. It is not the rule of the whole system.\n\nSECOND, the Quran itself assigns EQUAL shares elsewhere. The mother and the father each take a sixth when there is a child — the same fraction, in the same verse. And in kalalah, a maternal brother and a maternal sister take a sixth EACH, explicitly, male and female alike: \"for each one of them is a sixth.\"\n\nTHIRD, where the ratio does apply, the larger share arrives attached to an obligation the smaller one does not carry: the mahr, the housing, the maintenance of a wife and children, and support of relatives in need. Her share is hers to keep; a portion of his is already committed before he receives it.",
           plainAr: "ثلاثةُ أمور، وأوّلان منها خبرٌ عن النصّ لم يتحقّق منه أكثرُ المتنازعين فيه.\n\nالأوّل: أنّ هذه النسبة ليست عامّة. وإنما هي حيث يرث الأولادُ معًا، وحيث يرث الإخوةُ الأشقّاء أو لأبٍ معًا. وليست هي قاعدةَ النظام كلِّه.\n\nالثاني: أنّ القرآن نفسه سوّى بينهما في مواضع. فالأمُّ والأبُ لكلٍّ منهما السدسُ إذا كان ولد — الكسرُ نفسه في الآية نفسها. وفي الكلالة: الأخُ لأمٍّ والأختُ لأمٍّ لكلِّ واحدٍ منهما السدس، بالنصّ، الذكرُ والأنثى سواء: ﴿فَلِكُلِّ وَٰحِدٖ مِّنۡهُمَا ٱلسُّدُسُۚ﴾.\n\nالثالث: أنّ النصيب الأكبر حيث ثبتت النسبةُ يأتي معلَّقًا بتكليفٍ لا يحمله الأصغر: المهرُ والسكنى ونفقةُ الزوجة والولد والقرابةِ المحتاجة. فنصيبُها لها تُمسكه، وبعضُ نصيبه مصروفٌ عنه قبل أن يقبضه.",
           example: "And there is a fourth thing, which is not an argument but a check. The Quran opens this whole subject by establishing that women inherit AT ALL, and it does so in a society where they did not: \"For men is a share of what the parents and close relatives leave, and FOR WOMEN is a share of what the parents and close relatives leave, be it little or much — an obligatory share.\"\n\nRead that against what preceded it and the direction of travel is unmistakable. Which makes the honest complaint in most of our families not the ratio at all. It is that the daughters are given nothing, and the verse forbidding that is the same verse people quote the ratio from.",

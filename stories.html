@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -141,9 +141,9 @@
   </footer>
 
   
-  <script src="js/data.js?v=202609140907"></script>
+  <script src="js/data.js?v=202609141459"></script>
   <!-- The site search's matcher, used by the search box below. -->
-  <script src="js/sitesearch.js?v=202609140907"></script>
+  <script src="js/sitesearch.js?v=202609141459"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -348,7 +348,19 @@
     // just get in the way of the ranking.
     function renderStories(list) {
       document.getElementById("storyList").innerHTML = list.map(storyCard).join("");
-      document.getElementById("storyEmpty").style.display = list.length ? "none" : "";
+      const empty = document.getElementById("storyEmpty");
+      empty.style.display = list.length ? "none" : "";
+      /* Not a dead end. These are stories from the Prophet's ﷺ life and
+         teaching; the Quran's own stories (the People of the Cave, the
+         Elephant, the prophets) live on the Quran and Prophets pages, and
+         «أصحاب الكهف» typed here found nothing and said only that. */
+      const q = ((document.getElementById("storySearch") || {}).value || "").trim();
+      const safeQ = q.replace(/[<>&"]/g, "");
+      const link = document.getElementById("storyEmptyLink");
+      if (link) link.remove();
+      if (!list.length && safeQ) {
+        empty.insertAdjacentHTML("beforeend", `<span id="storyEmptyLink"><br><br><a href="search.html?q=${encodeURIComponent(q)}" style="color:var(--green);text-decoration:underline;"><span class="en-only">Search the whole site for "${safeQ}" — the Quran's stories and the prophets' lives are there</span><span class="ar-only" dir="rtl">ابحث عن «${safeQ}» في الموقع كلّه — ففيه قصص القرآن وسِيَر الأنبياء</span></a></span>`);
+      }
       if (window.applyI18n) window.applyI18n();
     }
 
@@ -445,8 +457,8 @@
     })();
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/wordlens.js?v=202609140907"></script>
-  <script src="js/main.js?v=202609140907"></script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
+  <script src="js/main.js?v=202609141459"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
 </body>
 </html>

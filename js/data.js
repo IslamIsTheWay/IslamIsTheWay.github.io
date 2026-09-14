@@ -513,7 +513,7 @@ const PROPHETS = [
     titleAr: "ذو النُّون",
     category: "prophet",
     summary: "Yunus left his people in frustration before receiving Allah's permission and was swallowed by a great fish. In the darkness of the whale's belly, he called out in repentance, and Allah saved him, after which his people came to believe.",
-    summaryAr: "صاحب الحوت، خرج من قومه مغاضباً فالتقمه الحوت، فنادى في الظلمات: لا إله إلا أنت سبحانك إني كنت من الظالمين، فنجّاه الله وآمن قومه.",
+    summaryAr: "صاحب الحوت، خرج من قومه مغاضباً فالتقمه الحوت، ﴿فَنَادَىٰ فِي ٱلظُّلُمَٰتِ أَن لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبۡحَٰنَكَ إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ﴾، فنجّاه الله وآمن قومه.",
     refs: [
       "Surah As-Saffat (37:139-148) — Yunus and the great fish",
       "Surah Al-Anbiya (21:87-88) — his supplication 'La ilaha illa Anta...'",
@@ -1543,7 +1543,7 @@ const COMPANIONS = [
     ],
     refsAr: [
       "صحيح البخاري وصحيح مسلم — قصّة توبته كاملة",
-      "سورة التوبة (٩:١١٨) — توبة الله على الثلاثة الذين خُلّفوا"
+      "سورة التوبة (٩:١١٨) — توبة الله ﴿عَلَى ٱلثَّلَٰثَةِ ٱلَّذِينَ خُلِّفُواْ﴾"
     ]
   },
   {
@@ -1857,6 +1857,13 @@ const COMPANIONS = [
 // Combine for global search
 const ALL_PEOPLE = [...PROPHETS, ...COMPANIONS];
 
+/* The women among them. Every page that speaks ABOUT a person needs this —
+   the Companions page had it to itself, so the Search page still labelled
+   Khadijah and Fatimah «صحابيّ» and offered «اقرأ سيرته كاملة … ووفاته». */
+const WOMEN_IDS = new Set(["aisha", "asma", "fatimah", "hafsa", "juwayriya", "khadijah",
+  "maymuna", "safiyya", "sawda", "sumayya", "umm-ammara", "umm-ayman", "umm-habibah",
+  "umm-salamah", "umm-sulaym", "zaynab-jahsh", "zaynab-khuzaymah"]);
+
 // ---------- Featured Quran Verses (for homepage rotating quotes) ----------
 const QURAN_QUOTES = [
   {
@@ -1937,7 +1944,8 @@ const HADITHS = [
     title: "Every deed depends on its intention (Niyyah)",
     titleAr: "كلُّ عملٍ بحسب نيّته",
     strength: "Sahih — Narrated by al-Bukhari",
-    keys: ["intention","intentions","niyyah","sincerity","sincere","showing off","riya","why i do it","deeds","actions","reward","النية","النيات","نية","الإخلاص","إخلاص","الرياء","الأعمال","العمل","الأجر"]
+    // not bare العمل — it is also "my job": «خسرت عملي» opened this hadith
+    keys: ["intention","intentions","niyyah","sincerity","sincere","showing off","riya","why i do it","deeds","actions","reward","النية","النيات","نية","الإخلاص","إخلاص","الرياء","الأعمال","العمل الصالح","الأجر"]
   },
   {
     arabic: "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
@@ -2454,7 +2462,8 @@ const HADITHS = [
     title: "Owing money and repaying debts",
     titleAr: "الدَّين وقضاؤه",
     strength: "Strong — Narrated by at-Tirmidhi; graded Strong by al-Albani",
-    keys: ["debt","owe","owed","borrow","borrowed","loan","money i owe","repay","pay back","دين","ديون","اقتراض","سداد","استدانة"]
+    // not bare دين — it is also الدِّين: «ما هو الدين» (what is the religion) opened this
+    keys: ["debt","owe","owed","borrow","borrowed","loan","money i owe","repay","pay back","ديون","عندي دين","علي دين","الدين علي","مديون","قضاء الدين","اقتراض","سداد","استدانة"]
   },
   {
     arabic: "لَعَنَ اللَّهُ الْوَاشِمَاتِ وَالْمُسْتَوْشِمَاتِ، وَالْمُتَنَمِّصَاتِ وَالْمُتَفَلِّجَاتِ لِلْحُسْنِ، الْمُغَيِّرَاتِ خَلْقَ اللَّهِ",
@@ -2629,6 +2638,24 @@ const HADITHS = [
   }
 ];
 
+/* The Arabic of each hadith's topic tag. One list for every page that prints
+   the tag: it lived inside hadith.html, so the Guidance page's hadith cards
+   showed "Parents" and "Debt" in English on the Arabic page. */
+const HADITH_TOPIC_AR = {
+  "Accountability": "المحاسبة", "Brotherhood": "الأخوّة", "Character": "الخُلُق",
+  "Concealing Faults": "ستر العيوب", "Consistency": "المداومة", "Contentment": "القناعة",
+  "Debt": "الدَّين", "Discipline": "ضبط النفس", "Dress & Imitation": "اللباس والتشبّه",
+  "Ease": "التيسير", "Family Ties": "صلة الرحم", "Friendship": "الصحبة",
+  "Generosity": "الكرم", "Guarding the Tongue": "حفظ اللسان", "Harming Others": "أذى الناس",
+  "Helping Others": "إعانة الناس", "Honesty in Trade": "الصدق في المعاملة",
+  "Intoxicants": "المسكرات", "Kindness": "الرفق", "Knowledge": "العلم",
+  "Marriage & Family": "النكاح والأهل", "Mercy": "الرحمة", "Modesty": "الحياء",
+  "Neighbors": "الجيران", "Oppression": "الظلم", "Parents": "الوالدان",
+  "Patience": "الصبر", "Quran": "القرآن", "Repentance & Character": "التوبة والخُلُق",
+  "Self-Control": "ملك النفس", "Service": "نفع الناس", "Sincere Advice": "النصيحة",
+  "Sincerity": "الإخلاص", "Speech": "الكلام", "Time": "الوقت", "Worldliness": "الدنيا"
+};
+
 // ---------- Guidance: Deeds & Consequences according to the Quran ----------
 // Presented for informational and reflective purposes. Readers are encouraged
 // to study each verse in its full surah context, alongside trusted tafsir.
@@ -2677,8 +2704,9 @@ const PARADISE_THEMES = [
     title: "Remembrance of Allah and Prayer",
     titleAr: "ذكر الله والصلاة",
     description: "Regular remembrance of Allah (dhikr) and establishing prayer are described as the means by which hearts find rest and souls find protection from indecency and wrongdoing.",
-    descriptionAr: "﴿بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ﴾، وإقامة الصلاة تنهى عن الفحشاء والمنكر وتحفظ النفس.",
-    keys: ["prayer","salah","salat","dhikr","remembrance","anxious","anxiety","worried","worry","sad","sadness","depressed","depression","fear","lonely","peace","heart","صلاة","ذكر","قلق","خوف","حزن","اكتئاب","وحدة","طمأنينة","قلب","راحة"],
+    descriptionAr: "﴿بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ﴾، وإقامة الصلاة ﴿تَنۡهَىٰ عَنِ ٱلۡفَحۡشَآءِ وَٱلۡمُنكَرِۗ﴾ وتحفظ النفس.",
+    // the adjectives too: «أنا خائفة» and «أنا وحيد» met خوف / وحدة nowhere and found nothing
+    keys: ["prayer","salah","salat","dhikr","remembrance","anxious","anxiety","worried","worry","sad","sadness","depressed","depression","fear","scared","afraid","lonely","alone","peace","heart","صلاة","ذكر","قلق","خوف","خائف","خائفة","حزن","حزين","حزينة","اكتئاب","وحدة","وحيد","وحيدة","أشعر بالوحدة","طمأنينة","قلب","راحة"],
     refs: ["Surah Ar-Ra'd (13:28)", "Surah Al-Ankabut (29:45)"]
   },
   {
@@ -2725,8 +2753,12 @@ const PARADISE_THEMES = [
     title: "Provision Is From Allah — Rizq and Reliance",
     titleAr: "الرزق بيد الله والتوكل عليه",
     description: "There is no creature on the earth but that its provision is upon Allah. Whoever is mindful of Allah, He makes a way out for him and provides for him from where he never expected — and whoever relies upon Allah, He is sufficient for him.",
-    descriptionAr: "ما من دابّة في الأرض إلا على الله رزقها. ومن يتّقِ الله يجعل له مخرجاً ويرزقه من حيث لا يحتسب، ومن يتوكّل على الله فهو حسبه.",
-    keys: ["money","provision","rizq","sustenance","income","salary","wage","job","work","unemployed","bills","rent","expenses","afford","poverty","poor","need","worried about money","financial","reliance","tawakkul","depend","sufficient","رزق","مال","معيشة","راتب","وظيفة","عمل","فقر","فقير","حاجة","ضيق","مصاريف","إيجار","توكل","كفاية","قلق من المال","ضيق مالي"],
+    descriptionAr: "﴿وَمَا مِن دَآبَّةٖ فِي ٱلۡأَرۡضِ إِلَّا عَلَى ٱللَّهِ رِزۡقُهَا﴾. ﴿وَمَن يَتَّقِ ٱللَّهَ يَجۡعَل لَّهُۥ مَخۡرَجٗا ۝ وَيَرۡزُقۡهُ مِنۡ حَيۡثُ لَا يَحۡتَسِبُۚ وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ﴾.",
+    keys: ["money","provision","rizq","sustenance","income","salary","wage","job","work","unemployed","bills","rent","expenses","afford","poverty","poor","need","worried about money","financial","reliance","tawakkul","depend","sufficient","رزق","مال","معيشة","راتب","وظيفة","عمل","فقر","فقير","حاجة","ضيق","مصاريف","إيجار","توكل","كفاية","قلق من المال","ضيق مالي",
+           /* losing work, the way it is said: "I got fired" had met only the
+              Sunnah on putting out FIRES (fired -> fire) */
+           "lost my job","got fired","i was fired","laid off","no job","cant find work","can't find a job",
+           "خسرت عملي","فقدت عملي","فقدت وظيفتي","خسرت وظيفتي","طردوني","طردوني من العمل","فصلوني","بلا عمل","عاطل عن العمل","بطالة","لا اجد عملا","لا أجد عملا","لا أجد عمل"],
     refs: ["Surah Hud (11:6)", "Surah At-Talaq (65:2-3)", "Surah Al-Ankabut (29:60)"]
   },
   {
@@ -2741,7 +2773,7 @@ const PARADISE_THEMES = [
     title: "Contentment, and Not Envying What Others Have",
     titleAr: "القناعة وعدم النظر إلى ما مُتِّع به الآخرون",
     description: "Do not strain your eyes toward the enjoyment We have given to some of them — the provision of your Lord is better and more lasting. Let neither wealth nor children distract you from the remembrance of Allah.",
-    descriptionAr: "لا تمدّنّ عينيك إلى ما متّعنا به أزواجاً منهم، ورزقُ ربك خيرٌ وأبقى. ولا تُلهِكم أموالكم ولا أولادكم عن ذكر الله.",
+    descriptionAr: "﴿وَلَا تَمُدَّنَّ عَيۡنَيۡكَ إِلَىٰ مَا مَتَّعۡنَا بِهِۦٓ أَزۡوَٰجٗا مِّنۡهُمۡ﴾ … ﴿وَرِزۡقُ رَبِّكَ خَيۡرٞ وَأَبۡقَىٰ﴾. و﴿لَا تُلۡهِكُمۡ أَمۡوَٰلُكُمۡ وَلَآ أَوۡلَٰدُكُمۡ عَن ذِكۡرِ ٱللَّهِۚ﴾.",
     keys: ["envy","jealous","jealousy","compare","comparing","rich","richer","wealthy","show off","social media","content","contentment","satisfied","enough","greed","want more","ungrateful","حسد","غيرة","مقارنة","قناعة","رضا","غنى","ثراء","طمع","كفاف","تباهي"],
     refs: ["Surah Ta-Ha (20:131)", "Surah Al-Munafiqun (63:9)", "Surah At-Takathur (102:1-2)"]
   }
@@ -2761,7 +2793,10 @@ const WARNING_THEMES = [
     titleAr: "التعامل بالربا",
     description: "Those who persist in dealing with riba after guidance has come to them are given a strong warning in the Quran.",
     descriptionAr: "من أصرّ على التعامل بالربا بعد أن جاءه البيان، جاء في حقه وعيد شديد في القرآن.",
-    keys: ["riba","interest","usury","loan","bank","mortgage","credit","debt","ربا","فائدة","قرض","بنك","دين","قرض ربوي","تمويل"],
+    /* Not bare debt / دين / فائدة / "interest": a reader saying "I am in debt"
+       was handed a warning against usury, «ما فائدة الصلاة» (what is the
+       use of prayer) reached it on فائدة, and "I lost interest" on interest. */
+    keys: ["riba","bank interest","interest rate","interest on","usury","loan with interest","bank","mortgage","credit card","ربا","الربا","فوائد بنكية","فائدة البنك","قرض ربوي","قرض بفائدة","بنك","تمويل"],
     refs: ["Surah Al-Baqarah (2:275-276)"]
   },
   {
@@ -3029,7 +3064,8 @@ const WORSHIP_STEPS = [
     meaningAr: "شكا رجلٌ أنه يُخيَّل إليه الشيء في الصلاة، فقال النبي ﷺ: لا ينصرف حتى يسمع صوتًا أو يجد ريحًا — فاليقين لا يزول بالشك.",
     ref: "Sahih al-Bukhari, Book of Wudu, Hadith 137 and 177",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
-    keys: ["doubt","waswas","unsure","broke wudu","leave prayer","certainty","شك","وسواس","انتقاض","اليقين","قطع الصلاة"]
+    // not bare doubt / شك: "I have doubts about Islam" was handed this, as "the words to say"
+    keys: ["doubt about wudu","doubt in wudu","doubt in prayer","waswas","unsure if my wudu","broke wudu","leave prayer","certainty","الشك في الوضوء","اشك في وضوئي","وسواس","انتقاض","اليقين","قطع الصلاة"]
   },
 
   /* ---------------- INSIDE THE PRAYER ---------------- */
@@ -3143,7 +3179,7 @@ const WORSHIP_STEPS = [
     meaningAr: "استعاذةٌ من عذاب القبر، ومن فتنة المسيح الدجّال، ومن فتنة المحيا والممات، ومن المأثم والمغرم.",
     ref: "Sahih al-Bukhari, Book of Adhan, Hadith 832",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
-    keys: ["before salam","refuge","grave","dajjal","debt","protection","قبل السلام","الاستعاذة","عذاب القبر","الدجال","المغرم","الدين"]
+    keys: ["before salam","refuge","grave","dajjal","debt","protection","قبل السلام","الاستعاذة","عذاب القبر","الدجال","المغرم","ديون"]
   },
 
   /* ---------------- AFTER THE PRAYER ---------------- */
@@ -3362,7 +3398,28 @@ const WORSHIP_STEPS = [
     meaningAr: "وتأمّل أنه ليس فيه سؤالٌ البتّة، وإنما هو تعظيمٌ محضٌ لمن تدعوه — وهذا هو المقصود: في أضعف ما تكون، تُذكَّر بعظمة من تخاطبه.",
     ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6346 — narrated from Ibn Abbas; also Sahih Muslim", refAr: "صحيح البخاري، كتاب الدعوات، حديث ٦٣٤٦ — عن ابن عباس، ورواه مسلم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
-    keys: ["distress","karb","anxiety","panic","crisis","hardship","worry","الكرب","الهمّ","الضيق","الشدة","القلق","دعاء الكرب"]
+    keys: ["distress","karb","anxiety","panic","crisis","hardship","worry","scared","afraid","الكرب","الهمّ","الضيق","الشدة","القلق","دعاء الكرب","خائف","خائفة","أشعر بالخوف"]
+  },
+  /* Added for the reader in debt. "I am in debt", «عندي ديون» and «الدين
+     علي» found nothing to SAY — they were answered with the order of an
+     estate and the verse on writing a contract. The wording and the number
+     were read in the collection text (al-Bukhari 6369, Book of Invocations).
+     No bare دين among the keys: it is also الدِّين, the religion. */
+  {
+    id: "w-hamm",
+    stage: "mercy", stageEn: "When you are asking for mercy", stageAr: "حين تسأل الرحمة",
+    title: "What he asked for against worry, grief and the weight of debt",
+    titleAr: "ما كان يستعيذ به من الهمّ والحزن وثِقَل الدَّين",
+    when: "When worry, grief, or a debt you cannot see your way out of is sitting on you.",
+    whenAr: "حين يثقل عليك همٌّ أو حزنٌ، أو دَينٌ لا ترى منه مخرجًا.",
+    arabic: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْجُبْنِ وَالْبُخْلِ، وَضَلَعِ الدَّيْنِ، وَغَلَبَةِ الرِّجَالِ",
+    meaning: "O Allah, I seek refuge in You from worry and grief, from helplessness and laziness, from cowardice and miserliness, from the weight of debt and from being overpowered by men. Anas ibn Malik reported that the Prophet ﷺ used to say it. It names the debt that bends a man's back — and it names it in the same breath as worry and grief, because that is how debt is carried.",
+    meaningAr: "رواه أنسُ بن مالك: كان النبيُّ ﷺ يقوله. و«ضَلَعُ الدَّين» ثِقَلُه الذي يُحني الظهر؛ وقد ذكره في نفَسٍ واحدٍ مع الهمّ والحزن، لأنّ الدَّين هكذا يُحمَل.",
+    ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6369 — narrated from Anas ibn Malik", refAr: "صحيح البخاري، كتاب الدعوات، حديث ٦٣٦٩ — عن أنس بن مالك",
+    strength: "Sahih — Narrated by al-Bukhari",
+    keys: ["debt","debts","in debt","owe money","loan","can't pay","worry","grief","sad","sadness","sorrow","laziness",
+           "ديون","عندي ديون","عندي دين","علي دين","الدين علي","مديون","مديونة","قرض","سداد الدين","قضاء الدين",
+           "الهم","الحزن","حزين","حزينة","مهموم","مهمومة","الكسل"]
   }
 ];
 

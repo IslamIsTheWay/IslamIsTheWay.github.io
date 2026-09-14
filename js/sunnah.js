@@ -1232,7 +1232,10 @@ const SUNNAH = [
     ref: "Sahih al-Bukhari, Hadith 1127 (waking Ali and Fatimah); Jami at-Tirmidhi, Hadith 3895 (the best of you to his family); Sunan Abu Dawud, Hadith 495 (teaching children the prayer)", refAr: "صحيح البخاري، حديث ١١٢٧ (إيقاظه عليًّا وفاطمة)؛ جامع الترمذي، حديث ٣٨٩٥ (خيركم خيركم لأهله)؛ سنن أبي داود، حديث ٤٩٥ (تعليم الأولاد الصلاة)",
     strength: "Sahih — al-Bukhari for waking them; the other two are outside the two Sahihs, authenticated by al-Albani",
     strengthAr: "صحيح — في البخاري إيقاظهما؛ والحديثان الآخران خارج الصحيحين، وصحّحهما الألباني",
-    keys: ["family","teach","children prayer","wake up","tarbiyah","upbringing","الأهل","التعليم","تعليم الصلاة","الإيقاظ","التربية"]
+    keys: ["family","teach","children prayer","wake up","tarbiyah","upbringing","الأهل","التعليم","تعليم الصلاة","الإيقاظ","التربية",
+           // a parent asking about a child who does not pray found tahiyyat al-masjid and witr
+           "my son does not pray","my son doesnt pray","my daughter does not pray","my children dont pray","teach my son to pray",
+           "ابني لا يصلي","ابنتي لا تصلي","بنتي لا تصلي","أولادي لا يصلون","اولادي ما يصلون","كيف أعلم ابني الصلاة"]
   },
   {
     cat: "manners",

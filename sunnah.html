@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -80,15 +80,18 @@
       </div>
       <div id="sunnahMicStatus" class="mic-status" style="text-align:center;"></div>
 
+      <!-- Each example is a pair and searches in the reader's language. The
+           English ones were translated on the Arabic page but still searched
+           the English words: «كيف أتوضأ» filled the box with "how to make
+           wudu" and answered «20 سنّة عن «how to make wudu»». -->
       <div class="sunnah-examples">
-        <span>Try:</span>
-        <button type="button" onclick="quickSunnah('before sleeping')">before sleeping</button>
-        <button type="button" onclick="quickSunnah('how to make wudu')">how to make wudu</button>
-        <button type="button" onclick="quickSunnah('eating')">eating</button>
-        <button type="button" onclick="quickSunnah('entering the mosque')">entering the mosque</button>
-        <button type="button" onclick="quickSunnah('when I am sad')">when I am sad</button>
-        <button type="button" onclick="quickSunnah('قبل النوم')">قبل النوم</button>
-        <button type="button" onclick="quickSunnah('السفر')">السفر</button>
+        <span class="en-only">Try:</span><span class="ar-only" dir="rtl">جرّب:</span>
+        <button type="button" onclick="quickSunnah('before sleeping', 'قبل النوم')"><span class="en-only">before sleeping</span><span class="ar-only" dir="rtl">قبل النوم</span></button>
+        <button type="button" onclick="quickSunnah('how to make wudu', 'كيف أتوضأ')"><span class="en-only">how to make wudu</span><span class="ar-only" dir="rtl">كيف أتوضأ</span></button>
+        <button type="button" onclick="quickSunnah('eating', 'الطعام')"><span class="en-only">eating</span><span class="ar-only" dir="rtl">الطعام</span></button>
+        <button type="button" onclick="quickSunnah('entering the mosque', 'دخول المسجد')"><span class="en-only">entering the mosque</span><span class="ar-only" dir="rtl">دخول المسجد</span></button>
+        <button type="button" onclick="quickSunnah('when I am sad', 'عند الحزن')"><span class="en-only">when I am sad</span><span class="ar-only" dir="rtl">عند الحزن</span></button>
+        <button type="button" onclick="quickSunnah('travel', 'السفر')"><span class="en-only">travel</span><span class="ar-only" dir="rtl">السفر</span></button>
       </div>
 
       <div id="arVoiceBar"></div>
@@ -142,8 +145,8 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202609140907"></script>
-  <script src="js/sunnah.js?v=202609140907"></script>
+  <script src="js/data.js?v=202609141459"></script>
+  <script src="js/sunnah.js?v=202609141459"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -384,7 +387,8 @@
         `<span class="ar-only" dir="rtl">${scored.length} ${scored.length === 1 ? "سنّة" : scored.length === 2 ? "سنّتان" : scored.length <= 10 ? "سنن" : "سنّة"} عن «${safe}»</span>`);
     }
 
-    function quickSunnah(q) {
+    function quickSunnah(q, qAr) {
+      if (qAr && document.documentElement.classList.contains("lang-ar")) q = qAr;
       searchEl.value = q;
       activeCat = "all";
       buildChips();
@@ -447,8 +451,8 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/wordlens.js?v=202609140907"></script>
-  <script src="js/main.js?v=202609140907"></script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
+  <script src="js/main.js?v=202609141459"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
 </body>
 </html>

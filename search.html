@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/search.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -81,15 +81,18 @@
            Arabic page showed "Aisha", "Bilal" and "Khalid ibn al-Walid". -->
       <div class="search-tags">
         <span class="en-only" style="background:none;cursor:default;padding:0;">Try:</span><span class="ar-only" dir="rtl" style="background:none;cursor:default;padding:0;">جرّب:</span>
-        <span onclick="quickSearch('Muhammad')"><span class="en-only">Muhammad ﷺ</span><span class="ar-only">محمد ﷺ</span></span>
-        <span onclick="quickSearch('Ibrahim')"><span class="en-only">Ibrahim</span><span class="ar-only">إبراهيم</span></span>
-        <span onclick="quickSearch('Musa')"><span class="en-only">Musa</span><span class="ar-only">موسى</span></span>
-        <span onclick="quickSearch('Abu Bakr')"><span class="en-only">Abu Bakr</span><span class="ar-only">أبو بكر</span></span>
-        <span onclick="quickSearch('Aisha')"><span class="en-only">Aisha</span><span class="ar-only">عائشة</span></span>
-        <span onclick="quickSearch('Bilal')"><span class="en-only">Bilal</span><span class="ar-only">بلال</span></span>
-        <span onclick="quickSearch('patience')"><span class="en-only">Patience</span><span class="ar-only">الصبر</span></span>
-        <span onclick="quickSearch('Dajjal')"><span class="en-only">The Dajjal</span><span class="ar-only">الدجال</span></span>
-        <span onclick="quickSearch('sleep')"><span class="en-only">Before sleep</span><span class="ar-only">النوم</span></span>
+        <!-- ...and each searches in the reader's language: the Arabic chip
+             searched the English name, filled the box with "Ibrahim" and
+             echoed «Ibrahim» back on the Arabic page. -->
+        <span onclick="quickSearch('Muhammad', 'محمد')"><span class="en-only">Muhammad ﷺ</span><span class="ar-only">محمد ﷺ</span></span>
+        <span onclick="quickSearch('Ibrahim', 'إبراهيم')"><span class="en-only">Ibrahim</span><span class="ar-only">إبراهيم</span></span>
+        <span onclick="quickSearch('Musa', 'موسى')"><span class="en-only">Musa</span><span class="ar-only">موسى</span></span>
+        <span onclick="quickSearch('Abu Bakr', 'أبو بكر')"><span class="en-only">Abu Bakr</span><span class="ar-only">أبو بكر</span></span>
+        <span onclick="quickSearch('Aisha', 'عائشة')"><span class="en-only">Aisha</span><span class="ar-only">عائشة</span></span>
+        <span onclick="quickSearch('Bilal', 'بلال')"><span class="en-only">Bilal</span><span class="ar-only">بلال</span></span>
+        <span onclick="quickSearch('patience', 'الصبر')"><span class="en-only">Patience</span><span class="ar-only">الصبر</span></span>
+        <span onclick="quickSearch('Dajjal', 'الدجال')"><span class="en-only">The Dajjal</span><span class="ar-only">الدجال</span></span>
+        <span onclick="quickSearch('sleep', 'النوم')"><span class="en-only">Before sleep</span><span class="ar-only">النوم</span></span>
       </div>
 
       <div id="searchResults"></div>
@@ -131,20 +134,20 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609140907"></script>
+  <script src="js/data.js?v=202609141459"></script>
   <!-- The full biographies. Without this a search result showed only the
        three-line summary, even for the 94 people this site has a complete
        life written for. main.js reads FULL_LIVES when building a card, so
        this must load before it. -->
-  <script src="js/lives.js?v=202609140907"></script>
+  <script src="js/lives.js?v=202609141459"></script>
   <!-- The rest of the site, for the search under the people: the Sunnah
        practices and the adhkar live in their own files. -->
-  <script src="js/sunnah.js?v=202609140907"></script>
-  <script src="js/adhkar.js?v=202609140907"></script>
-  <script src="js/sitesearch.js?v=202609140907"></script>
-  <script src="js/wordlens.js?v=202609140907"></script>
-  <script src="js/main.js?v=202609140907"></script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/sunnah.js?v=202609141459"></script>
+  <script src="js/adhkar.js?v=202609141459"></script>
+  <script src="js/sitesearch.js?v=202609141459"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
+  <script src="js/main.js?v=202609141459"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
   <script>
     const input = document.getElementById("searchInput");
     const form = document.getElementById("searchForm");
@@ -167,7 +170,8 @@
     form.addEventListener("submit", () => runSearch(input.value));
     input.addEventListener("input", () => runSearch(input.value));
 
-    function quickSearch(term) {
+    function quickSearch(term, termAr) {
+      if (termAr && document.documentElement.classList.contains("lang-ar")) term = termAr;
       input.value = term;
       runSearch(term);
     }

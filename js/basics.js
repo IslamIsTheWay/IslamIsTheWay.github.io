@@ -229,7 +229,8 @@ const BASICS = {
           linkEn: "Interest, and working somewhere that deals in what is forbidden",
           linkAr: "الربا، والعمل فيما يتعامل بالحرام",
           keys: ["haram money", "haram income", "is my job halal", "earning", "stealing", "cheating at work",
-                 "bribe", "interest", "riba", "المال الحرام", "الكسب الحرام", "هل عملي حلال", "السرقة",
+                 // "bank interest", not bare "interest": "I lost interest in praying" opened this card
+                 "bribe", "bank interest", "interest on money", "riba", "المال الحرام", "الكسب الحرام", "هل عملي حلال", "السرقة",
                  "الرشوة", "الربا", "الغش في العمل", "is my work halal", "is my salary halal", "هل وظيفتي حلال",
                  "هل راتبي حلال"]
         }

@@ -81,7 +81,7 @@ const PRECACHE_SHELL = [
 const PRECACHE_CONTENT = [
   "./prophets.html", "./companions.html", "./hadith.html", "./sunnah.html",
   "./stories.html", "./judgement.html", "./golden.html", "./guidance.html",
-  "./courses.html", "./search.html",
+  "./courses.html", "./search.html", "./verify.html",
   "./img/icon-512.png",
 
   "./js/data.js", "./js/quran.js", "./js/tadabbur.js", "./js/concepts.js",
@@ -91,7 +91,18 @@ const PRECACHE_CONTENT = [
   "./js/judgement.js", "./js/judgement-closing.js", "./js/angels.js",
   "./js/signs.js", "./js/rise.js", "./js/golden.js", "./js/golden-lives.js",
   "./js/golden-mirror.js", "./js/golden-closing.js",
-  "./js/surah-story.js", "./js/miracles.js", "./js/sitesearch.js"
+  "./js/surah-story.js", "./js/miracles.js", "./js/sitesearch.js",
+  "./js/theme-verses.js",
+  /* Every other script the pages above load. The list used to stop here,
+     so a page never opened online (Guidance above all, and Verify) opened
+     offline as an empty shell: the page was cached, the files that fill it
+     were not — and parts of Home, the Quran reader and Judgement with it. */
+  "./js/basics.js", "./js/cards.js", "./js/daily.js", "./js/destination.js",
+  "./js/endmap.js", "./js/enrol.js", "./js/grave.js", "./js/hearts.js",
+  "./js/inheritance.js", "./js/journey.js", "./js/marriage.js",
+  "./js/misunderstood.js", "./js/morals.js", "./js/pillars.js",
+  "./js/places.js", "./js/prayer.js", "./js/sins.js", "./js/standard.js",
+  "./js/tadabbur-tense.js", "./js/verify.js", "./js/who.js", "./js/wordlens.js"
 ];
 
 /* Hosts handled specially. The reader's fallback (used only if

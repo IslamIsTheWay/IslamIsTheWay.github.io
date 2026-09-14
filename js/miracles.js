@@ -185,7 +185,7 @@ const MIRACLES = {
     id: "mi-36-38",
     ayah: 38,
     title: "The sun runs to an appointed place",
-    titleAr: "والشمسُ تجري لمستقرٍّ لها",
+    titleAr: "﴿وَٱلشَّمۡسُ تَجۡرِي لِمُسۡتَقَرّٖ لَّهَاۚ﴾",
     verse: "وَٱلشَّمۡسُ تَجۡرِي لِمُسۡتَقَرّٖ لَّهَاۚ ذَٰلِكَ تَقۡدِيرُ ٱلۡعَزِيزِ ٱلۡعَلِيمِ",
     verseEn: "And the sun runs [on course] toward its stopping point. That is the determination of the Exalted in Might, the Knowing.",
     says: "The sun runs — تَجۡرِي, a continuous motion of its own — toward a مُسْتَقَرّ, a place or time of settling. Two verses later: each of them, in an orbit, is swimming. The sun is given its own travel, not merely a nightly circuit around the earth.",

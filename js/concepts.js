@@ -208,7 +208,7 @@ const SURAH_CONCEPTS = {
         a: "31:13" },
 
   32: { c: "The ones who leave their beds",
-        cAr: "الذين تتجافى جنوبهم عن المضاجع",
+        cAr: "الذين ﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ﴾",
         w: "A short surah about who actually gets up at night, and the reward nobody has been told the size of — no soul knows what is hidden for them.",
         wAr: "سورةٌ قصيرةٌ فيمن يقوم بالليل حقًّا، وفي أجرٍ لم يُطلع أحدٌ على قدره: ﴿فَلَا تَعۡلَمُ نَفۡسٞ مَّآ أُخۡفِيَ لَهُم مِّن قُرَّةِ أَعۡيُنٖ﴾.",
         a: "32:17" },
@@ -568,7 +568,7 @@ const SURAH_CONCEPTS = {
   90: { c: "The uphill road is the one nobody takes",
         cAr: "العقبةُ هي التي لا يقتحمها أحد",
         w: "Freeing a neck, feeding on a day of hunger, an orphan or a poor person in the dust. The surah calls it the steep path — and says he did not attempt it.",
-        wAr: "فكُّ رقبة، أو إطعامٌ في يوم مسغبة، ﴿يَتِيمٗا ذَا مَقۡرَبَةٍ ۝ أَوۡ مِسۡكِينٗا ذَا مَتۡرَبَةٖ﴾. سمّتها السورة العقبة، وقالت: ﴿فَلَا ٱقۡتَحَمَ ٱلۡعَقَبَةَ﴾.",
+        wAr: "﴿فَكُّ رَقَبَةٍ ۝ أَوۡ إِطۡعَٰمٞ فِي يَوۡمٖ ذِي مَسۡغَبَةٖ ۝ يَتِيمٗا ذَا مَقۡرَبَةٍ ۝ أَوۡ مِسۡكِينٗا ذَا مَتۡرَبَةٖ﴾. سمّتها السورة العقبة، وقالت: ﴿فَلَا ٱقۡتَحَمَ ٱلۡعَقَبَةَ﴾.",
         a: "90:11" },
 
   91: { c: "The soul was shown both roads, then handed to you",

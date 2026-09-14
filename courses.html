@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/courses.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -191,9 +191,9 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609140907"></script>
+  <script src="js/data.js?v=202609141459"></script>
   <!-- Course sign-up and the request that actually reaches the staff. -->
-  <script src="js/enrol.js?v=202609140907"></script>
+  <script src="js/enrol.js?v=202609141459"></script>
   <script>
     const grid = document.getElementById("courseGrid");
 
@@ -250,7 +250,7 @@
           series[name].sort((a, b) => (a.order || 0) - (b.order || 0));
           const head = document.createElement("h2");
           head.className = "course-series-head";
-          head.innerHTML = `🔗 ${name} <span class="course-series-sub">a connected series — سلسلة مترابطة</span>`;
+          head.innerHTML = `🔗 ${name} <span class="course-series-sub"><span class="en-only">a connected series</span><span class="ar-only" dir="rtl">سلسلةٌ مترابطة</span></span>`;
           grid.appendChild(head);
           series[name].forEach(renderCourse);
         });
@@ -406,7 +406,7 @@
         document.getElementById("enEmail").value,
         document.getElementById("enPass").value);
       if (r.ok) { renderEnrolBox(); return; }
-      enrolMsg("enrolMsg", r.msg.en + '<br><span dir="rtl" style="font-family:\'Amiri\',serif;">' + r.msg.ar + "</span>", false);
+      enrolMsg("enrolMsg", enrolPair(r.msg), false);
     }
 
     async function iitwDoEnrolSignIn() {
@@ -414,7 +414,13 @@
         document.getElementById("enEmail").value,
         document.getElementById("enPass").value);
       if (r.ok) { renderEnrolBox(); return; }
-      enrolMsg("enrolMsg", r.msg.en + '<br><span dir="rtl" style="font-family:\'Amiri\',serif;">' + r.msg.ar + "</span>", false);
+      enrolMsg("enrolMsg", enrolPair(r.msg), false);
+    }
+
+    /* One language at a time, like every other line on the page: the English
+       sentence was printed on the Arabic page too, above its Arabic. */
+    function enrolPair(msg) {
+      return '<span class="en-only">' + msg.en + '</span><span class="ar-only" dir="rtl" style="font-family:\'Amiri\',serif;">' + msg.ar + "</span>";
     }
 
     /* Pressing "Request this course" on a card. If not signed in, send them
@@ -478,9 +484,9 @@
     document.addEventListener("DOMContentLoaded", renderEnrolBox);
   </script>
 
-  <script src="js/wordlens.js?v=202609140907"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
 
-  <script src="js/main.js?v=202609140907"></script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/main.js?v=202609141459"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
 </body>
 </html>

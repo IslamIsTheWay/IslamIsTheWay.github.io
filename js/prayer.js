@@ -95,7 +95,7 @@ const PRAYER = {
           example: "A concrete way to test yourself, and it takes a week: write down the time you actually prayed each one. Most people discover it is not the prayer they think it is. Fajr is usually fine because it is tied to waking. Asr is where the pattern shows, because it lands in the middle of a working afternoon and there is always a reason to finish one more thing.\n\nThe fix is almost never willpower. It is moving the decision earlier — praying at the beginning of a time you can control rather than at the end of one you cannot.",
           exampleAr: "واختبارٌ عمليٌّ لنفسك يكفي فيه أسبوع: أن تكتب الوقت الذي صلّيتَ فيه كلَّ صلاة. فيتبيّن لأكثر الناس أنها ليست الصلاةَ التي كانوا يظنّون. والفجرُ في الغالب سليمٌ لأنه معلَّقٌ بالاستيقاظ، وإنما ينكشف الأمرُ في العصر، فإنه يقع في وسط نهار العمل، ولا يزال ثَمَّ سببٌ لإتمام شيءٍ آخر.\n\nوالعلاجُ قلّ أن يكون بالعزيمة، وإنما هو بتقديم القرار: أن تصلّي في أوّل وقتٍ تملكه، لا في آخر وقتٍ لا تملكه.",
           proof: "So woe to those who pray — those who are heedless of their prayer.",
-          proofAr: "فَوَيۡلٞ لِّلۡمُصَلِّينَ ٱلَّذِينَ هُمۡ عَن صَلَاتِهِمۡ سَاهُونَ",
+          proofAr: "فَوَيۡلٞ لِّلۡمُصَلِّينَ ۝ ٱلَّذِينَ هُمۡ عَن صَلَاتِهِمۡ سَاهُونَ",
           ref: "Surah Al-Ma'un (107:4-5)",
           refAr: "سورة الماعون (١٠٧:٤-٥)",
           strength: "The Quran",
@@ -286,7 +286,7 @@ const PRAYER = {
           example: "Four things the scholars name, and they are practical rather than spiritual advice:\n\n1. ARRIVE EARLY. Khushu' does not start at the takbir. Rushing in and starting immediately is asking your attention to change direction in one second.\n\n2. KNOW WHAT YOU ARE SAYING. Most people who feel nothing are reciting sounds. Learn the meaning of al-Fatihah first — it is seven lines, and it is a conversation in which He answers each one.\n\n3. SLOW DOWN. The rulings on stillness (tuma'ninah) are not decoration; a prayer performed at speed cannot be attended to at all.\n\n4. REMOVE WHAT IS IN FRONT OF YOU. Phone face down and out of reach. Not because it will ring — because you know it might.",
           exampleAr: "وأربعةٌ يذكرها أهلُ العلم، وهي عمليّةٌ لا وعظيّة:\n\n١. أن تحضر مبكّرًا. فالخشوعُ لا يبدأ عند التكبير، ومن دخل مسرعًا فكبّر من فوره فقد كلّف انتباهه أن ينقلب في ثانية.\n\n٢. أن تعلم ما تقول. فأكثرُ من لا يجد شيئًا إنما يردّد أصواتًا. فابدأ بمعنى الفاتحة، فهي سبعُ آياتٍ وهي محاورةٌ يجيبك فيها سبحانه عن كلِّ آية.\n\n٣. أن تتمهّل. فأحكامُ الطمأنينة ليست زينة؛ وصلاةٌ تُؤدّى على عجلٍ لا يمكن أن تُشهد أصلًا.\n\n٤. أن تُبعد ما بين يديك: الهاتفُ مقلوبٌ وبعيد. لا لأنه سيرنّ، بل لأنك تعلم أنه قد يرنّ.",
           proof: "Certainly will the believers have succeeded: they who are during their prayer humbly submissive.",
-          proofAr: "قَدۡ أَفۡلَحَ ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ هُمۡ فِي صَلَاتِهِمۡ خَٰشِعُونَ",
+          proofAr: "قَدۡ أَفۡلَحَ ٱلۡمُؤۡمِنُونَ ۝ ٱلَّذِينَ هُمۡ فِي صَلَاتِهِمۡ خَٰشِعُونَ",
           ref: "Surah Al-Mu'minun (23:1-2)",
           refAr: "سورة المؤمنون (٢٣:١-٢)",
           strength: "The Quran",
@@ -298,7 +298,11 @@ const PRAYER = {
           note: "And he ﷺ did not describe prayer as a duty discharged. When it was time he would say to Bilal: \"give us rest with it, Bilal\" — rest WITH it, not rest from it. (Sunan Abu Dawud 4985, Book of General Behaviour.)",
           noteAr: "ولم يصفها ﷺ بأنها كلفةٌ تُؤدّى: بل كان يقول لبلالٍ إذا حان الوقت: «أرِحْنا بها يا بلال» — الراحةُ بها لا منها. [سنن أبي داود ٤٩٨٥، كتاب الأدب]",
           keys: ["i feel nothing when i pray", "khushu", "concentration in prayer", "my mind wanders", "prayer feels empty", "how to focus in prayer", "distracted in salah", "praying like a robot", "no connection",
-                 "لا اخشع في الصلاة", "الخشوع", "شرود في الصلاة", "لا احس بشيء", "التركيز في الصلاة", "صلاتي بلا روح", "اصلي بسرعة", "الوسواس في الصلاة"]
+                 "i feel empty", "empty inside", "spiritually empty",
+                 "لا اخشع في الصلاة", "الخشوع", "شرود في الصلاة", "لا احس بشيء", "التركيز في الصلاة", "صلاتي بلا روح", "اصلي بسرعة", "الوسواس في الصلاة",
+                 /* فراغ alone is also "free time" — «أشعر بالفراغ» met the hadith on
+                    making use of free time; the feeling is named in full here */
+                 "اشعر بالفراغ", "أشعر بالفراغ", "فراغ روحي", "فراغ داخلي"]
         },
         {
           id: "pr-first", icon: "⚖️",

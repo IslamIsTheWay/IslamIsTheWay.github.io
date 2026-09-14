@@ -5870,3 +5870,172 @@ direct answer by itself.
 2. Guidance ranking for a few everyday Arabic sentences is weak rather than
    wrong («خسرت عملي» leads with the card on halal earnings).
 3. Everything still open from PART 28.
+
+
+<!-- ============================================================ -->
+# PART 30 - Used the way a reader uses it: clicked, typed, in Arabic
+<!-- ============================================================ -->
+
+*Added 14 September 2026, the same day as PART 29.*
+
+PART 29 measured "0 English strings" in Arabic mode — and the reader's own
+"▶ Play Full Surah" was English on the live site. The sweeps had called
+`applyI18n()` themselves after opening each panel, which translated
+everything the page had forgotten to. This part is what a sweep finds when
+it does only what a person does.
+
+## How the site is tested now (scratchpad scripts, reusable)
+
+* **clicksweep.py** — Arabic mode, every button, card, tab and toggle on a
+  page clicked in turn (a hidden target reloads the page and retries), and
+  after each click the English still visible is recorded with what was
+  clicked. Page errors too. **The test never calls applyI18n.**
+* **typesweep.py** — every search box typed into with plain words in both
+  languages and submitted the way a person submits (Enter / the button).
+* **guidtest.py / guidall.py / guidrulings.py / guidintent.py** — the
+  Guidance battery (now ~90 everyday sentences) and the tools that say WHY
+  a sentence got its answer: score, distinct words, keys met, the words
+  found, and which intent topic opened.
+
+## Arabic mode — what the clicking found, all fixed
+
+* **Reader**: Play/Stop were English (openSurah never ran the dictionary);
+  the English translation line was laid out right to left (commit 9630186).
+* **Hadith search**: "Loading Sahih Muslim for search…", "Best Matches —
+  Curated Highlights", "From the Full Collections", the result counts — all
+  English, for as long as the collections took to download. Now pairs, and
+  applyI18n runs after the first (curated) render too.
+* **Guidance**: "🌿 A path of good — طريق خير" printed both languages;
+  the theme verses printed their English translation and "Surah Al-Ankaboot"
+  on the Arabic page; hadith cards showed "Parents" and "Your mother, then
+  your mother…"; the deep-search box and the empty box printed English.
+  `HADITH_TOPIC_AR` moved from hadith.html to js/data.js so both pages use it.
+  The Guidance Sunnah cards ignored `refAr` (the Sunnah page uses it).
+* **Search**: a person's sources went through the reference translator
+  WHOLE and came out «Take the قرآن عن four» — now label (LIFE_LABELS_AR) and
+  citation (tad-ref) separately, as on the people pages. Khadijah was
+  «صحابيّ» with «اقرأ سيرته … ووفاته»: `WOMEN_IDS` (js/data.js) is now shared by
+  Companions and Search.
+* **Quick chips** on Search and Sunnah searched their ENGLISH word on the
+  Arabic page and echoed it back («20 سنّة عن «how to make wudu»»); each now
+  searches in the reader's language.
+* **Courses** enrol messages, **Login** (three paragraphs), **Meeting** (the
+  whole live-class page, reached from Courses → «انضم»), the stories empty
+  state (now links to a whole-site search for the words typed).
+
+## The Quran text: a FETCH is a source too
+
+* The Guidance theme cards fetched their verses from **alquran.cloud's
+  quran-uthmani (Tanzil)** at run time — the old text PART 28 removed from
+  every file, and check-quran.sh could not see it because it only reads
+  files. Now **js/theme-verses.js**: the 65 verses the themes cite, cut from
+  js/quran-text.js by gen_themeverses.py and asserted equal to the KFGQPC
+  release; quran.com's qpc_hafs is the fallback for a ref added later.
+* **check-quran.sh** now fails on any `alquran.cloud/…quran-(uthmani|simple)`
+  fetch (main.js's title matcher excepted — it only MATCHES), and checks
+  theme-verses.js against quran-text.js verse by verse.
+* Staff: "From the verse itself" put the plain matching text (quran-simple)
+  into the recitation's Arabic title, which the home page shows. It now puts
+  the verse's qpc_hafs text there.
+
+## Verses in prose, round two (qround2.py, 34 edits)
+
+The first converter refused any vocalised run "whose vowels differ from the
+verse" — and counted a tanween written ً instead of the Mushaf's ٗ as a
+different vowel. So whole quotations stayed in ordinary spelling. All 170
+remaining runs were read; converted: the prophets' own words in their lives
+(Hud 7:65, Salih 11:61, Ilyas 37:124-126, Sarah 11:72-73, Ibrahim 14:39,
+Lut 51:35-36, Adam 2:35 + 20:121, Isa 5:116-117 and 4:157-158, Yunus 21:87 in
+his summary), three Guidance theme descriptions (11:6, 65:2-3, 20:131, 63:9,
+29:45), 90:13-16 (which had dropped «ذي»), 7:40 and 11:18 in Journey, titles
+(36:38, 4:11, 32:16, 69:7), four Tadabbur word lists, and two proof fields
+joined with ۝. Left alone, on purpose: hadith wording, dhikr formulas,
+search keys, the author's paraphrase, lines hidden by arSame.
+
+**Angels** (on the Judgement page) had the pattern PART 29 fixed on the
+Judgement cards: the verse in the Mushaf box and, under it, the same verse in
+ordinary spelling. Three cards now carry `arSame` (13:23-24, 19:17-19,
+97:4-5), and two role lines are the Mushaf's words.
+
+Brackets: 2,224, none across a verse boundary; the 66 the checker flags are
+the older • / … formats it cannot parse (67 before).
+
+## Guidance — why ordinary sentences got the wrong answer
+
+Found with guidall.py, each a class, each fixed in the matcher or the data:
+
+* **ة**: «أمي مريضة» never met مريض. `iitwArFem` — the bare form as an extra form.
+* **"my …" and the accusative**: عملي، وظيفتي، عملا met عمل nowhere.
+  `iitwArMine`, on the READER's words only (never the content's, where عمليّ
+  means "practical").
+* **Negation inside phrase keys**: short words were dropped, so «لا أصلي» (I do
+  not pray) answered «كيف أصلي». A key that says not never meets a sentence
+  that does not (`IITW_NEG`).
+* **Two-letter subject words**: a length filter dropped غش from «غش في العمل»,
+  and العمل alone "matched" "they fired me from work". `IITW_PHRASE_FILLER`
+  drops only fillers.
+* **والدين is parents**: stripped as و+الدين it met الدين. `iitwArStrip` leaves
+  والد and its endings whole.
+* **"feel"** was scored as a subject ("I feel anxious" → the dhikr after the
+  salam). GENERIC now.
+* **A claim needs evidence**: "written for exactly this" (cards), "what the
+  scholars explained" (rulings), "the words to say" (worship) and the hadith
+  block now need a key met in full or two distinct rare words. One shared
+  word is how «عندي ديون» got the order of an estate, «لا أستطيع النوم» what
+  breaks wudu, "I lost my job" the conditions of hijab.
+* **Ambiguous bare keys** removed — عمل (work / deed), الدين (debt / religion),
+  فراغ (emptiness / free time), فائدة/فوائد (benefit / interest), ضيق
+  (distress / tight), ستر, "interest", "cover", "face", "doubt"/شك, "mother"/الأم,
+  "job"/العمل, "wudu"/الوضوء, "marriage", "revert", الإكراه, تحذير — and the
+  one-word intent gates (`fq-*` topics) that jumped straight to a ruling on
+  such a word; fq-waswas and fq-haram-job now have a `must`.
+* **Someone who has just lost a person** ("my father died", «مات أبي») was
+  given the order of an estate as "the answer". `iitwIsBereaved` →
+  `iitwGriefHtml`: what the Prophet ﷺ taught for that moment (Muslim 918) and
+  his tears for Ibrahim (al-Bukhari 1303), both READ from the entries already
+  on the site; the inheritance cards wait until the estate is mentioned.
+* **Added**: the du'a against worry, grief and debt (al-Bukhari 6369, read in
+  the collection text first) as `w-hamm`; "what is the religion / what is
+  Islam" → the pillars answer; «نسيت صلاة الفجر» → the forgotten-prayer card;
+  job-loss, fear, loneliness and "my son does not pray" phrasings as keys.
+* **Deep search** printed Sahih Muslim's running `hadithnumber` as the
+  reference ("#1830" is Muslim 783) — now `arabicnumber`, or "cited by book".
+
+Battery (English mode, 42 sentences + 38 + 12): every change from the
+morning's run was an improvement; «I have doubts about Islam» now honestly
+finds nothing (there is no section for it) instead of the dhikr for doubt in
+wudu.
+
+## Offline
+
+`PRECACHE_CONTENT` in sw.js listed the pages but not 22 of the scripts they
+load (Guidance's cards, Verify, Journey, the Home daily list …) — a page never
+opened online came up empty offline. Added, with verify.html.
+
+## RULES THIS ROUND EARNED
+
+**A test that calls the translator cannot find a page that forgets to.**
+Click and type the way a reader does, and look at what is on the screen.
+
+**Every fetch of Quran text is a Quran source.** A file check cannot see it;
+check-quran.sh now greps for the fetches.
+
+**A word with two meanings is never a bare key** — عمل، الدين، فراغ، فائدة،
+ضيق، interest, fired. Put it in the phrase that fixes its meaning.
+
+**A heading that claims — "written for exactly this", "the answer", "the
+words to say" — needs a key met, not a word shared.**
+
+**Grief before estate.** A death named with nothing about the estate is
+answered with comfort first.
+
+## Open work as of 14 September 2026 (evening)
+
+1. The reader still shows the English translation under each verse in
+   Arabic mode (content, deliberate) — an Arabic tafsir would serve an Arabic
+   reader better; his decision.
+2. No section answers "I have doubts about Islam"; the page now says so
+   rather than guessing.
+3. staff.html is English-only (the owner's tool).
+4. Guidance is only as good as its keys: new content needs its everyday
+   phrasings as keys, in both languages and both genders.

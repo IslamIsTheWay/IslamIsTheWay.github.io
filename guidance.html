@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -149,7 +149,7 @@
             <option value="ar-SA">🎤 أتحدث بالعربية</option>
             <option value="en-US">🎤 I speak English</option>
           </select>
-          <button class="btn btn-primary" type="button" onclick="findGuidance()">Find Guidance — ابحث عن التوجيه</button>
+          <button class="btn btn-primary" type="button" onclick="findGuidance()"><span class="en-only">Find Guidance</span><span class="ar-only" dir="rtl">ابحث عن التوجيه</span></button>
           <button class="btn btn-outline btn-small" type="button" onclick="clearGuidance()">Clear</button>
         </div>
         <div id="micStatus" class="mic-status"></div>
@@ -430,63 +430,66 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609140907"></script>
+  <script src="js/data.js?v=202609141459"></script>
+  <!-- The verses behind "A path of good" / "A warning to reflect on", in the
+       Mushaf's own text (cut from js/quran-text.js). -->
+  <script src="js/theme-verses.js?v=202609141459"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202609140907"></script>
+  <script src="js/sunnah.js?v=202609141459"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202609140907"></script>
+  <script src="js/adhkar.js?v=202609141459"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202609140907"></script>
+  <script src="js/scholars.js?v=202609141459"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202609140907"></script>
+  <script src="js/scholars-books.js?v=202609141459"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202609140907"></script>
+  <script src="js/revival.js?v=202609141459"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202609140907"></script>
+  <script src="js/bidah.js?v=202609141459"></script>
   <!-- The five pillars, the six of faith, and the zakat arithmetic. The
        most basic thing this site can carry, and it was missing until now. -->
-  <script src="js/cards.js?v=202609140907"></script>
-  <script src="js/pillars.js?v=202609140907"></script>
-  <script src="js/basics.js?v=202609140907"></script>
-  <script src="js/morals.js?v=202609140907"></script>
-  <script src="js/marriage.js?v=202609140907"></script>
-  <script src="js/standard.js?v=202609140907"></script>
-  <script src="js/hearts.js?v=202609140907"></script>
-  <script src="js/inheritance.js?v=202609140907"></script>
-  <script src="js/sins.js?v=202609140907"></script>
-  <script src="js/prayer.js?v=202609140907"></script>
-  <script src="js/grave.js?v=202609140907"></script>
-  <script src="js/who.js?v=202609140907"></script>
-  <script src="js/destination.js?v=202609140907"></script>
+  <script src="js/cards.js?v=202609141459"></script>
+  <script src="js/pillars.js?v=202609141459"></script>
+  <script src="js/basics.js?v=202609141459"></script>
+  <script src="js/morals.js?v=202609141459"></script>
+  <script src="js/marriage.js?v=202609141459"></script>
+  <script src="js/standard.js?v=202609141459"></script>
+  <script src="js/hearts.js?v=202609141459"></script>
+  <script src="js/inheritance.js?v=202609141459"></script>
+  <script src="js/sins.js?v=202609141459"></script>
+  <script src="js/prayer.js?v=202609141459"></script>
+  <script src="js/grave.js?v=202609141459"></script>
+  <script src="js/who.js?v=202609141459"></script>
+  <script src="js/destination.js?v=202609141459"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202609140907"></script>
-  <script src="js/endmap.js?v=202609140907"></script>
+  <script src="js/misunderstood.js?v=202609141459"></script>
+  <script src="js/endmap.js?v=202609141459"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202609140907"></script>
+  <script src="js/terms.js?v=202609141459"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202609140907"></script>
+  <script src="js/figures.js?v=202609141459"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202609140907"></script>
+  <script src="js/signs.js?v=202609141459"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -783,7 +786,8 @@
     function expandQuery(queryTokens) {
       const out = new Set();
       queryTokens.forEach(q => {
-        const rel = CONCEPT[stem(q)];
+        const rel = CONCEPT[stem(q)] || (iitwArFem(q) && CONCEPT[stem(iitwArFem(q))]) ||
+                    iitwArMine(q).map(m => CONCEPT[stem(m)] || (iitwArFem(m) && CONCEPT[stem(iitwArFem(m))])).find(Boolean);
         if (rel) rel.forEach(r => out.add(r));
       });
       queryTokens.forEach(q => out.delete(stem(q)));   // keep only the additions
@@ -882,12 +886,68 @@
       return /[\u0600-\u06ff]/.test(p) ? iitwArStrip(p) : stem(p);
     }
 
+    /* والدين is "parents", not و + الدين: stripped, it became دين and met
+       الدين — so «ما هو الدين» (what is the religion) reached the verses on
+       kindness to parents, and "parents" reached debt. The word والد with
+       its own endings is left whole; والدنيا and the rest still strip. */
     function iitwArStrip(w) {
+      // (a literal here, not a const above: this runs while the page script is still loading)
+      if (/^والد(ين|ان|ي|ه|ة|تي|ته|تها|يه|يها|يك|يكم|يهم|ك|كم|نا|اه|يا)?$/.test(w)) return w;
       for (const p of AR_PREFIXES) {
         if (w.length > p.length + 2 && w.startsWith(p)) return w.slice(p.length);
       }
       return w;
     }
+
+    /* THE FEMININE ENDING. normalize() folds ة onto ه, and nothing then
+       joined مريضة to مريض, حزينة to حزين, خائفة to خائف — so a woman
+       describing herself, or anyone describing their mother, matched none of
+       the content written in the masculine. «أمي مريضة» reached nothing about
+       the sick and was answered with the inheritance shares, on أمي alone.
+       The bare form is an EXTRA form, like iitwArStrip's: it can add a match
+       and never remove one. (الله is left alone.) */
+    function iitwArFem(w) {
+      return (w && w.length >= 4 && w.endsWith("ه") && w !== "الله" && /[؀-ۿ]/.test(w))
+        ? w.slice(0, -1) : "";
+    }
+
+    /* "MY" — THE ENDING PEOPLE TYPE AND THE CONTENT NEVER USES. A reader
+       writes عملي، وظيفتي، زوجي، ابني (my work, my job, my husband, my son);
+       the keys and the text say عمل، وظيفة، زوج، ابن. So «خسرت عملي» met the
+       word عمل nowhere — and met عمليّ ("practical") in a Sunnah entry about
+       putting out lamps. The bare forms are tried for the READER'S words
+       only, never for the content's, which would turn every عمليّ and
+       النبيّ into something else. وظيفتي gives both وظيفت→وظيفه and
+       وظيفت; بيتي gives بيت. Extra forms: they add a match, never remove one. */
+    function iitwArMine(w) {
+      if (!w || w.length < 4 || !/[؀-ۿ]/.test(w)) return [];
+      /* …and the indefinite accusative a reader types after a verb: «لا أجد
+         عملًا» normalises to عملا, which met nothing and found nothing. */
+      if (w.endsWith("ا")) return [w.slice(0, -1)];
+      if (!w.endsWith("ي")) return [];
+      const out = [w.slice(0, -1)];
+      if (w.endsWith("تي") && w.length >= 5) out.push(w.slice(0, -2) + "ه");
+      return out;
+    }
+
+    /* A PHRASE KEY THAT SAYS "NOT" MUST MEET A SENTENCE THAT SAYS "NOT".
+       Phrase keys were compared on their words of three letters or more, so
+       لا/ما/لم fell away and «لا أصلي» (I do not pray) became «أصلي»: «كيف
+       أصلي» — how do I pray — was answered with "Leaving the prayer — the
+       heaviest wording in this whole section". The same trap the Verify page
+       closed for English ("I am angry" is not "do not be angry"). */
+    const IITW_NEG = new Set(["لا", "ما", "لم", "لن", "ليس", "لست", "مش", "مو", "مب",
+                              "not", "no", "never", "cannot", "t"]);   // "don't" normalises to "don t"
+    function iitwNegated(text) {
+      return normalize(text).split(" ").some(w => IITW_NEG.has(w));
+    }
+
+    /* Words under three letters that carry no subject — the rest of the
+       short words (غش، أب، أم، دم، حج، حق) are the subject. Normalised forms. */
+    const IITW_PHRASE_FILLER = new Set(["في", "من", "عن", "ما", "لا", "لم", "لن", "يا", "او", "ان",
+      "ثم", "قد", "بل", "هل", "كم", "لي", "له", "لك", "به", "بي", "هو", "هي", "ال", "و", "ف", "ب", "ل", "ك",
+      "a", "an", "i", "in", "on", "at", "to", "of", "my", "me", "is", "am", "be", "it", "do", "we", "he",
+      "so", "or", "if", "as", "by", "up", "no", "t", "s"]);
 
     /* NOBODY SPELLS A DOUBLED LETTER THE SAME WAY TWICE.
 
@@ -920,7 +980,13 @@
         set.add(stem(w));
         set.add(iitwSqueeze(w));
         set.add(iitwSqueeze(stem(w)));
-        if (/[؀-ۿ]/.test(w)) set.add(iitwArStrip(w));
+        if (/[؀-ۿ]/.test(w)) {
+          const s = iitwArStrip(w);
+          set.add(s);
+          const f = iitwArFem(w), fs = iitwArFem(s);   // مريضة -> مريض, see iitwArFem
+          if (f) set.add(f);
+          if (fs) set.add(fs);
+        }
       });
       return set;
     }
@@ -951,7 +1017,14 @@
       let expScore = 0;
 
       // Whole words of the query, built once and reused for every key below.
+      // With the bare form of every "my …" word the reader typed (iitwArMine).
       const qWords = iitwWordSet(rawQuery);
+      normalize(rawQuery).split(" ").forEach(w => {
+        iitwArMine(w).concat(iitwArMine(iitwArStrip(w))).forEach(m => {
+          qWords.add(m); qWords.add(iitwArStrip(m));
+          const f = iitwArFem(m); if (f) qWords.add(f);
+        });
+      });
 
       /* Distinct SUBJECTS matched through the curated keys, by stem.
          A keyword hit is the most deliberate match on this page -- `keys`
@@ -960,28 +1033,43 @@
          moment the query reached three words. Stems, not raw hits, so
          anger/angry/angrily is one subject and not three. */
       const keyHitStems = new Set();
+      /* How many curated keys the sentence actually met — see lastKeyHits. */
+      let keyHits = 0;
+      const queryNegated = iitwNegated(rawQuery);
 
       (keys || []).forEach(k => {
         const kn = normalize(k);
         if (kn.length < 3) return;
         const isPhrase = kn.includes(" ");
         // WORD match, never a substring — see the note above iitwHasWord.
-        if (iitwHasWord(qWords, kn)) {
+        // A key in the feminine meets the sentence in the masculine too.
+        if (iitwHasWord(qWords, kn) || (!isPhrase && iitwArFem(kn) && iitwHasWord(qWords, iitwArFem(kn)))) {
           score += isPhrase ? 8 : 5;                 // the query contains the keyword
+          keyHits++;
           if (!GENERIC.has(kn) && !GENERIC.has(stem(kn))) keyHitStems.add(stem(kn));
         } else if (!isPhrase) {
           const ks = stem(kn);
-          if (queryTokens.some(q => stem(q) === ks)) {
+          if (queryTokens.some(q => stem(q) === ks || (iitwArFem(q) && stem(iitwArFem(q)) === ks))) {
             score += 4;
+            keyHits++;
             if (!GENERIC.has(kn) && !GENERIC.has(ks)) keyHitStems.add(ks);
           }
           // Reached through a related word rather than the word itself.
           else if (exp.has(ks)) expScore += 2.5;
         } else {
-          // phrase keyword: count how many of its words the query has
-          const parts = kn.split(" ").filter(p => p.length >= 3);
-          const got = parts.filter(p => queryTokens.some(q => stem(q) === stem(p))).length;
-          if (parts.length && got === parts.length) score += 6;
+          // A key that says "not" never meets a sentence that does not.
+          if (!queryNegated && iitwNegated(kn)) return;
+          /* phrase keyword: count how many of its words the query has. The
+             words that do not count are the FUNCTION words, not the short
+             ones: a length filter threw away غش from «غش في العمل» (cheating
+             at work), and what was left — العمل — "matched" "they fired me
+             from work" in full. */
+          /* (Only the short fillers: a question word in a key — «لماذا الدين»,
+             "why pray" — is part of what the key means, and dropping it
+             turned «لماذا الدين» into الدين.) */
+          const parts = kn.split(" ").filter(p => p.length >= 3 || (p.length === 2 && !IITW_PHRASE_FILLER.has(p)));
+          const got = parts.filter(p => qWords.has(p) || queryTokens.some(q => stem(q) === stem(p))).length;
+          if (parts.length && got === parts.length) { score += 6; keyHits++; }
           else if (got >= 2) score += 3;
         }
       });
@@ -995,8 +1083,22 @@
         /* `hay.includes(qs)` used to be the third arm of this test, and it is
            the same substring bug as above — it let a query word match inside
            an unrelated longer word. Word sets only. */
-        const hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") ||
+        let hit = hay.includes(" " + q + " ") || hayStem.includes(" " + qs + " ") ||
                     iitwHasWord(hayWords, q);
+        /* مريضة typed, مريض written: met through the bare form, and then
+           WEIGHED as the bare form — the feminine is absent from the corpus,
+           and absence would otherwise score as the rarest word there is. */
+        let wq = q;
+        if (!hit) {
+          const f = iitwArFem(q);
+          if (f && iitwHasWord(hayWords, f)) { hit = true; wq = f; }
+        }
+        // عملي typed, عمل written — the same, weighed as the bare word
+        if (!hit) {
+          for (const m of iitwArMine(q)) {
+            if (iitwHasWord(hayWords, m)) { hit = true; wq = m; break; }
+          }
+        }
         if (!hit) return;
         /* Test the Arabic prefix-stripped form as well. Every Arabic word
            in GENERIC was written bare — شيء, ناس, امر — while a reader types
@@ -1004,8 +1106,9 @@
            الامر, and only the middle one was ever in the list, so most of the
            Arabic half of GENERIC never fired. */
         const qStrip = /[؀-ۿ]/.test(q) ? iitwArStrip(q) : q;
-        const generic = GENERIC.has(qs) || GENERIC.has(q) || GENERIC.has(qStrip);
-        const w = generic ? 0.2 : idf(q);
+        const generic = GENERIC.has(qs) || GENERIC.has(q) || GENERIC.has(qStrip) ||
+                        (wq !== q && (GENERIC.has(wq) || GENERIC.has(iitwArStrip(wq))));
+        const w = generic ? 0.2 : idf(wq);
         score += w * 1.6;
         if (!generic && w >= 2.5) { distinctHits++; if (w > bestRarity) bestRarity = w; }
       });
@@ -1015,6 +1118,7 @@
          entry could score 17 and report 0, and the NEEDS_TWO guard dropped
          it -- see the note beside keyHitStems above. */
       lastDistinctHits = distinctHits + keyHitStems.size;
+      lastKeyHits = keyHits;
       // Related words only count for something that already matched directly,
       // and they are capped so they can refine an order but never dominate it.
       return score > 0 ? score + Math.min(expScore, 4) : 0;
@@ -1030,6 +1134,11 @@
       "prophet","messenger","allah","god","islam","muslim","muslims","said","say","says","told",
       "came","come","went","give","given","took","take","made","make","day","days","time","year",
       "years","life","live","world","great","good","bad","very","also","first","second","story",
+      /* "I feel …" is how half of all English sentences here begin, and
+         "feel" was scored as a subject: "I feel anxious" put the dhikr after
+         the salam under "the words to say" on that word alone. (اشعر, its
+         Arabic twin, is below and always was.) */
+      "feel","feels","feeling","feelings","felt",
 
       /* The Arabic half of the same list. Down-weighted rather than dropped:
          these carry a little meaning, but not enough to decide which entry
@@ -1065,6 +1174,11 @@
     // Set by the last scoreContent call.
     let lastBestRarity = 0;
     let lastDistinctHits = 0;
+    /* Curated keys met by the last scoreContent call. A card printed under
+       "written for exactly this" must have met one of its keys — the
+       sentences people type — or two distinct rare words; one word shared
+       with its title is not that. See the cards block in findGuidance. */
+    let lastKeyHits = 0;
     const EMPTY_SET = new Set();
 
     /* ---------- Is the reader suffering something, or admitting to it? -------
@@ -1101,13 +1215,18 @@
       </div>`;
     }
 
+    /* The same pairs the Hadith page prints: a title or topic with no Arabic
+       showed English on the Arabic page ("Your mother, then your mother…",
+       "Parents"). A grading without its own Arabic is left to i18n.js, which
+       translates the canonical gradings by exact string. */
     function hadithCardHtml(h) {
       const isSahih = (h.strength || "").startsWith("Sahih");
+      const topicAr = (typeof HADITH_TOPIC_AR !== "undefined" && HADITH_TOPIC_AR[h.topic]) || h.topic;
       return `<div class="theme-card" style="margin-bottom:14px;border-left-color:var(--gold);">
-        ${h.title ? `<h3>${h.title}</h3>` : ""}
+        ${h.title ? `<h3><span class="en-only">${h.title}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${h.titleAr || h.title}</span></h3>` : ""}
         <div style="margin-bottom:8px;">
-          <span class="topic-tag">${h.topic}</span>
-          <span class="topic-tag" style="background:${isSahih ? "#e6f4ea" : "#fff8e1"};color:${isSahih ? "#1e7e45" : "#b8860b"};">${h.strength}</span>
+          <span class="topic-tag"><span class="en-only">${h.topic}</span><span class="ar-only" dir="rtl">${topicAr}</span></span>
+          <span class="topic-tag" style="background:${isSahih ? "#e6f4ea" : "#fff8e1"};color:${isSahih ? "#1e7e45" : "#b8860b"};">${h.strengthAr ? `<span class="en-only">${h.strength}</span><span class="ar-only" dir="rtl">${h.strengthAr}</span>` : h.strength}</span>
         </div>
         ${h.arabic ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${h.arabic} <button class="speak-btn" data-lang="ar" style="border:none;background:none;cursor:pointer;font-size:1rem;" title="Listen">🔊</button></p>` : ""}
         <p class="en-only" style="font-style:italic;">"${h.text}" <button class="speak-btn" data-lang="en" style="border:none;background:none;cursor:pointer;font-size:1rem;" title="Listen">🔊</button></p>
@@ -1663,9 +1782,12 @@
       { id: "pr-t-qada", need: 1, target: "#pr-qada",
         must: ["نمت عن الفجر", "فاتني الفجر", "استيقظت متاخرا", "نسيت الصلاة", "فاتتني صلاة",
                "المنبه ما صحاني", "ليس في النوم تفريط", "قضاء الفائتة",
+               /* «نسيت صلاة الفجر» (no ال on صلاة) missed every phrase here and
+                  was answered with how many prayers there are in a day */
+               "نسيت صلاة", "نسيت صلاه", "نسيت الفجر", "نمت عن صلاة",
                "slept through fajr", "missed fajr", "woke up late", "i forgot to pray",
                "missed a prayer", "make up a missed prayer", "alarm didnt wake me",
-               "overslept", "pray it later"],
+               "overslept", "pray it later", "forgot fajr", "forgot to pray", "forgot the prayer"],
         words: ["نمت", "النوم", "فاتني", "فاتتني", "نسيت", "الفجر", "القضاء", "المنبه",
                 "slept", "sleep", "missed", "forgot", "overslept", "alarm", "later", "fajr"] },
       { id: "pr-t-years", need: 1, target: "#pr-years",
@@ -2296,7 +2418,13 @@
                "ما يجب علي المسلم", "يجب علي المسلم", "المسلم يجب", "لازم اعمله",
                "واجبات المسلم", "ما يلزم المسلم",
                "what do i have to do", "what must a muslim do", "what does islam require",
-               "what am i supposed to do", "basics of islam", "what do muslims do"],
+               "what am i supposed to do", "basics of islam", "what do muslims do",
+               /* "What is the religion?" — asked in those words, it reached the
+                  hadith on DEBT (الدَّين and الدِّين are one spelling). The answer
+                  is what Islam is built on. Phrases only. */
+               "ما هو الدين", "ما هو ديننا", "ما هو دين الاسلام", "ما هو الاسلام", "ما الاسلام",
+               "عرفني بالاسلام", "ما هو الإسلام",
+               "what is islam", "what is the religion", "what is our religion", "explain islam"],
         words: ["أركان", "الأركان", "ركن", "أركان الإسلام", "خمسة", "خمس", "المباني",
                 "pillars", "pillar", "arkan", "five pillars", "pillars of islam",
                 "basics", "fundamentals", "what is islam built on"] },
@@ -2305,12 +2433,20 @@
                 "mawlid", "birthday", "innovation", "bidah", "celebrate", "celebrating"],
         en: "Adding to the religion — and celebrating the Prophet's ﷺ birthday",
         ar: "الزيادة في الدين — والاحتفال بالمولد النبوي" },
+      /* ONE WORD OPENS THESE (need: 1), SO NO WORD HERE MAY MEAN TWO THINGS.
+         Taken out, each for a sentence it sent to the wrong ruling: ستر (also
+         covering a fault), cover/covering/modest ("cover my mistakes"),
+         الوجه («غسل الوجه» in wudu went to the niqab), فائدة/فوائد («ما فائدة
+         الصلاة» went to bank interest), "interest" ("I lost interest in
+         praying"), مسح (wiping the head in wudu), شك/doubt ("I have doubts
+         about Islam" went to doubts in wudu). */
       { id: "fq-hijab-conditions", need: 1, target: "#rulings",
-        words: ["حجاب", "الحجاب", "خمار", "ستر", "hijab", "khimar", "cover", "covering", "modest"] },
+        words: ["حجاب", "الحجاب", "خمار", "hijab", "khimar"] },
       { id: "fq-niqab", need: 1, target: "#rulings",
-        words: ["نقاب", "النقاب", "الوجه", "niqab", "face veil"] },
+        words: ["نقاب", "النقاب", "تغطية الوجه", "ستر الوجه", "niqab", "face veil"] },
       { id: "fq-bank-interest", need: 1, target: "#rulings",
-        words: ["ربا", "الربا", "فائدة", "فوائد", "البنك", "riba", "interest", "usury", "bank"] },
+        words: ["ربا", "الربا", "فوائد البنك", "فائدة البنك", "فوائد بنكية", "البنك", "riba", "usury", "bank",
+                "bank interest", "interest rate", "interest on"] },
       { id: "fq-music", need: 1, target: "#rulings",
         words: ["موسيقى", "الموسيقى", "غناء", "أغاني", "music", "song", "songs", "singing"] },
       { id: "fq-missed-prayers", need: 2, target: "#rulings",
@@ -2320,7 +2456,7 @@
       { id: "fq-backbiting", need: 1, target: "#rulings",
         words: ["غيبة", "الغيبة", "نميمة", "backbiting", "gossip", "slander"] },
       { id: "fq-wiping-socks", need: 1, target: "#rulings",
-        words: ["مسح", "الخفين", "الجوارب", "wiping", "socks", "khuff"] },
+        words: ["المسح على", "مسح الجوارب", "الخفين", "الجوارب", "الجوربين", "socks", "khuff"] },
       /* `صلاة` added. "ما حكم صلاة المسافر؟" hit only مسافر, one short of
          `need`, so the topic never matched - and because a worship step DID
          match on the word صلاة, the no-ruling guard further down was skipped
@@ -2336,11 +2472,19 @@
          clearing `topicIsStrong`. It has to clear it: this is the one
          question on the page where the wrong answer can make the reader's
          condition worse, and it is recorded in the handoff as such. */
+      /* …and a `must`, because وضوء alone opened it: «ما فرائض الوضوء» — a
+         plain question about wudu — was answered with obsessive doubt. */
       { id: "fq-waswas", need: 1, target: "#rulings",
-        words: ["وسواس", "الوسواس", "شك", "وضوء", "الوضوء", "waswas", "doubt", "doubting", "ocd"] },
+        must: ["وسواس", "الوسواس", "waswas", "ocd", "obsessive", "doubt in wudu", "doubts in wudu",
+               "doubt in prayer", "doubts in prayer", "الشك في الوضوء", "الشك في الصلاة", "اشك في"],
+        words: ["وسواس", "الوسواس", "وضوء", "الوضوء", "waswas", "ocd", "wudu", "prayer", "صلاتي", "وضوئي"] },
       { id: "fq-parents", need: 2, target: "#rulings",
         words: ["والدي", "أمي", "أبي", "الوالدين", "parents", "mother", "father", "obey"] },
+      /* `must`: the job AND what makes it doubtful. "why did I lose my job
+         at work" carried job + work, cleared need 2, and as a question was
+         answered with the ruling on working somewhere forbidden. */
       { id: "fq-haram-job", need: 2, target: "#rulings",
+        must: ["حرام", "حلال", "خمر", "ربا", "البنك", "بنك", "haram", "halal", "alcohol", "bank", "forbidden", "riba"],
         words: ["عملي", "وظيفة", "راتب", "خمر", "job", "work", "salary", "workplace", "sells"] },
       { id: "fq-wali-marriage", need: 2, target: "#rulings",
         words: ["زواج", "ولي", "نكاح", "marriage", "wali", "guardian"] },
@@ -2699,6 +2843,64 @@
       </div>`;
     }
 
+    /* ============================================================
+       SOMEONE WHO HAS JUST LOST A PERSON
+       ============================================================
+       "my father died" and «مات أبي» were answered, under "the answer to
+       what you asked", with the order in which an estate is divided —
+       correct content, and the wrong first thing to put in front of a
+       grieving person. When a death of someone close is named and nothing
+       about the estate is, the page opens with what the Prophet ﷺ taught
+       for that moment and what he did when his own son died — both
+       already on this site with their sources, read from there — and the
+       inheritance cards wait until they are asked for. Phrases only, never
+       the bare word "died". */
+    const IITW_KIN_EN = "father|dad|mother|mom|mum|son|daughter|baby|child|wife|husband|brother|sister|grandfather|grandmother|grandpa|grandma|grandad|friend|uncle|aunt";
+    const IITW_KIN_AR = "ابي|أبي|ابوي|أبوي|والدي|امي|أمي|والدتي|ابني|ابنتي|بنتي|طفلي|طفلتي|زوجي|زوجتي|اخي|أخي|اختي|أختي|جدي|جدتي|صديقي|صديقتي|عمي|خالي|عمتي|خالتي";
+    const IITW_DIED_AR = "مات|ماتت|توفي|توفيت|توفى|تُوفي|تُوفيت|رحل|رحلت|فقدت|فقدنا";
+    const BEREAVED = [
+      // not bare "passed": "my son passed his exam"
+      new RegExp("\\b(my|our)\\s+(" + IITW_KIN_EN + ")\\s+(has\\s+|just\\s+)*(died|passed\\s+away|is\\s+dead|was\\s+killed)\\b", "i"),
+      // not "lost my father's watch"
+      new RegExp("\\b(lost|losing)\\s+(my|our)\\s+(" + IITW_KIN_EN + ")\\b(?!['’]s)", "i"),
+      new RegExp("(" + IITW_DIED_AR + ")\\s*(" + IITW_KIN_AR + ")"),
+      new RegExp("(" + IITW_KIN_AR + ")\\s*(" + IITW_DIED_AR + ")")
+    ];
+    const IITW_ESTATE = /inherit|estate|split|divid|share|\bwill\b|debt|house|money|land|property|ميراث|تركة|نقسم|قسمة|نصيب|وصية|وصيه|دين|ديون|البيت|المال|الارض|الأرض|ورث|يرث/i;
+    function iitwIsBereaved(s) {
+      return BEREAVED.some(r => r.test(s)) && !IITW_ESTATE.test(s);
+    }
+
+    function iitwGriefHtml() {
+      const dua = (typeof SUNNAH !== "undefined") ? SUNNAH.find(s => /Hadith 918\b/.test(s.ref || "")) : null;
+      const son = (typeof PROPHET_STORIES !== "undefined") ? PROPHET_STORIES.find(s => s.id === "death-of-ibrahim") : null;
+      return `<div class="gd-selfharm gd-grief">
+        <div class="gd-sh-label">🤲 <span class="en-only">May Allah have mercy on the one you have lost</span>
+          <span class="ar-only" dir="rtl">رحم الله فقيدكم، وأعظم أجركم</span></div>
+        <p class="gd-sh-lead en-only">This is what the Prophet ﷺ taught for this moment — and what he did himself when his son died.</p>
+        <p class="gd-sh-lead ar-only" dir="rtl">هذا ما علّمه النبيّ ﷺ لهذه الساعة — وما صنعه هو حين مات ابنه.</p>
+        ${dua ? `<div class="gd-grief-part">
+          <h4><span class="en-only">${dua.title}</span><span class="ar-only" dir="rtl">${dua.titleAr}</span></h4>
+          <p class="en-only">${dua.detail}</p>
+          <p class="ar-only" dir="rtl">${dua.detailAr}</p>
+          <div class="refs"><span>${dua.ref}</span></div>
+        </div>` : ""}
+        ${son ? `<div class="gd-grief-part">
+          <h4><span class="en-only">${son.title}</span><span class="ar-only" dir="rtl">${son.titleAr}</span></h4>
+          <p dir="rtl" class="gd-sh-ar">${son.arabic}</p>
+          <p class="en-only">${son.lesson}</p>
+          <p class="ar-only" dir="rtl">${son.lessonAr}</p>
+          <div class="refs"><span>${son.ref}</span></div>
+        </div>` : ""}
+        <div class="gd-empty-links">
+          <div class="gd-empty-head"><span class="en-only">Later, when you are ready</span>
+            <span class="ar-only" dir="rtl">وفيما بعد، حين تستطيع</span></div>
+          <a href="#ih-order"><span class="en-only">1️⃣ What comes first: the burial, then any debts, then the will, then the shares</span>
+            <span class="ar-only" dir="rtl">1️⃣ ما يُقدَّم: التجهيز، ثم الدَّين، ثم الوصيّة، ثم الأنصبة</span></a>
+        </div>
+      </div>`;
+    }
+
     function iitwSelfHarmHtml() {
       return `<div class="gd-selfharm">
         <div class="gd-sh-label">\u2764\ufe0f <span class="en-only">Please read this first</span>
@@ -3027,7 +3229,7 @@
       const raw = document.getElementById("situationInput").value.trim();
       const out = document.getElementById("guidanceResults");
       if (raw.length < 3) {
-        out.innerHTML = `<div class="no-results">Please describe your situation first. — من فضلك اكتب حالتك أولاً.</div>`;
+        out.innerHTML = `<div class="no-results"><span class="en-only">Please describe your situation first.</span><span class="ar-only" dir="rtl">من فضلك اكتب حالتك أولًا.</span></div>`;
         return;
       }
 
@@ -3055,9 +3257,15 @@
         return;
       }
 
+      /* Someone who has just lost a person: the comfort box goes first, no
+         authored "answer" may pre-empt it, and the results that follow it
+         leave out the inheritance cards (see iitwIsBereaved). */
+      const bereaved = iitwIsBereaved(raw) || iitwIsBereaved(rawStd);
+
       /* READ THE SENTENCE BEFORE SCORING ANY WORD IN IT — and read it in
          the dialect the reader actually wrote it in. */
-      const intent = iitwIntent(raw + " " + rawStd);
+      const intent = bereaved ? { ruling: false, howto: false, question: false, topic: null, topicHits: 0 }
+                              : iitwIntent(raw + " " + rawStd);
 
       /* ---------- A PILLARS QUESTION GOES STRAIGHT TO THE PILLAR ----------
          These are the plainest questions anyone asks — "how many prayers",
@@ -3202,8 +3410,14 @@
              [r.title, r.titleAr, r.question, r.questionAr, r.answer, r.answerAr,
               (r.points || []).map(p => p.en + " " + p.ar).join(" ")].join(" "), qx);
         /* Captured immediately: `scoreContent` leaves these on the last call. */
-        return { r, s: sc, distinct: lastDistinctHits };
-      }).filter(x => x.s >= 4).sort((a, b) => b.s - a.s).slice(0, 3);
+        return { r, s: sc, distinct: lastDistinctHits, keyHits: lastKeyHits };
+      })
+      /* The same bar as the cards: a ruling is printed FIRST, under "what the
+         scholars explained", so it has to have met one of its keys or two
+         distinct rare words. "I lost my job" was led by the conditions of
+         hijab, which merely mention a job. */
+      .filter(x => x.s >= 4 && (x.keyHits >= 1 || x.distinct >= 2))
+      .sort((a, b) => b.s - a.s).slice(0, 3);
 
       /* A LONE RULING MUST EARN IT ON MORE THAN ONE WORD.
          The `rulingIsGeneric` guard below compares the top two rulings, so it
@@ -3291,7 +3505,7 @@
       function scoreAll(list, hayOf, keysOf, min) {
         return list.map(item => {
           const sc = scoreContent(qt, raw, keysOf(item), hayOf(item), qx);
-          return { item, s: sc, distinct: lastDistinctHits };
+          return { item, s: sc, distinct: lastDistinctHits, keyHits: lastKeyHits };
         }).filter(x => x.s >= min && (!NEEDS_TWO || x.distinct >= MIN_DISTINCT_ANY))
           .sort((a, b) => b.s - a.s);
       }
@@ -3313,13 +3527,32 @@
            sentences people type; the title is the subject. Nothing else on a
            card is evidence about what it answers. */
         c => [c.it.title, c.it.titleAr, (c.it.keys || []).join(" ")].filter(Boolean).join(" "),
-        c => c.it.keys || null, 5).slice(0, 4);
+        c => c.it.keys || null, 5)
+        /* "WRITTEN FOR EXACTLY THIS" IS A CLAIM, and a card has to earn it:
+           one of its keys — the sentences it was written for — met in full,
+           or two distinct rare words. ONE word shared with a card is how
+           «أمي مريضة» was answered with the inheritance shares (أمي), «عندي
+           ديون» with the order of the estate (ديون), «لا أستطيع النوم» with
+           what breaks wudu (النوم) and "I lost my job" with where your money
+           comes from — each printed under that heading. (Keys only, with no
+           second route, was measured too: it lost "I missed many prayers" →
+           years of missed prayers and «هل يصوم المريض» → the fasting card.)
+           The Sunnah, hadith and verses below carry no such claim. */
+        .filter(x => x.keyHits >= 1 || x.distinct >= 2)
+        // a death named with nothing about the estate: not the estate yet
+        .filter(x => !(bereaved && /^ih-/.test((x.item.it && x.item.it.id) || "")))
+        .slice(0, 4);
 
       // 1) The Prophet's ﷺ own words — shown first, as the clearest guidance.
       const hadiths = scoreAll(
         (typeof HADITHS !== "undefined" ? HADITHS : []),
         h => [h.title, h.text, h.topic, h.arabic, h.narrator].join(" "),
-        h => h.keys, 4).slice(0, 6).map(x => ({ h: x.item, s: x.s }));
+        h => h.keys, 4)
+        /* Printed above the verses and the Sunnah, so the same bar as the
+           cards: "my son is sick" was answered first with "you will be
+           questioned about your life" — on "son", in "the son of Adam". */
+        .filter(x => x.keyHits >= 1 || x.distinct >= 2)
+        .slice(0, 6).map(x => ({ h: x.item, s: x.s }));
 
       // 2) Quranic themes — same guard.
       const themes = [];
@@ -3345,7 +3578,13 @@
         (typeof WORSHIP_STEPS !== "undefined" ? WORSHIP_STEPS : []),
         w => [w.title, w.titleAr, w.when, w.whenAr, w.meaning, w.meaningAr,
               w.arabic, w.stageEn, w.stageAr].join(" "),
-        w => w.keys, 5).slice(0, 4).map(x => ({ w: x.item, s: x.s }));
+        w => w.keys, 5)
+        /* "The words to say" is printed near the top as THE answer, so it
+           takes the cards' bar: a key met, or two distinct words. One word
+           of its long explanation was enough before — «خسرت عملي» got the
+           hundred tasbihs, on عمل ("a deed") in their meaning. */
+        .filter(x => x.keyHits >= 1 || x.distinct >= 2)
+        .slice(0, 4).map(x => ({ w: x.item, s: x.s }));
 
       /* 2b) What the Prophet ﷺ actually DID about it. Someone describing a
          situation wants the practice, not only the principle — so all the
@@ -3409,16 +3648,21 @@
         return;
       }
 
+      if (total === 0 && bereaved) {
+        out.innerHTML = iitwGriefHtml();
+        return;
+      }
+
       if (total === 0) {
         out.innerHTML = `<div class="no-results"><span class="en-only">We could not find anything matching those words yet. Try describing the action or feeling more simply — for example: <em>anger, anxiety, debt, backbiting, alcohol, parents, neighbour, cheating, imitating women, repentance</em>.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لم نجد نتيجة بعد. جرّب وصف الفعل أو الشعور ببساطة — مثل: غضب، قلق، دين، غيبة، خمر، الوالدين، الجار، غش، تشبه، توبة.</span>
-          <br><br>You can also search the complete Sahih al-Bukhari and Sahih Muslim below.
-          <br><button class="btn btn-outline btn-small" style="margin-top:10px;" onclick="deepSearch()">🔍 Search all of Bukhari &amp; Muslim — ابحث في البخاري ومسلم كاملين</button>
+          <br><br><span class="en-only">You can also search the complete Sahih al-Bukhari and Sahih Muslim below.</span><span class="ar-only" dir="rtl">ويمكنك أيضًا البحث في صحيحَي البخاري ومسلم كاملين من هنا.</span>
+          <br><button class="btn btn-outline btn-small" style="margin-top:10px;" onclick="deepSearch()">🔍 <span class="en-only">Search all of Bukhari &amp; Muslim</span><span class="ar-only" dir="rtl">ابحث في البخاري ومسلم كاملين</span></button>
           <div id="deepResults"></div>
         </div>`;
         return;
       }
 
-      let html = `<div class="guidance-results-head">
+      let html = (bereaved ? iitwGriefHtml() : "") + `<div class="guidance-results-head">
         <h3><span class="en-only">Guidance related to your situation</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">توجيه يتعلق بحالتك</span></h3>
         <p><span class="en-only">Read each verse in its full surah and each hadith with its reference. These are pointers for reflection, not rulings.</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">اقرأ كل آية في سورتها كاملة وكل حديث بمرجعه. هذه إشارات للتدبر لا أحكام.</span></p>
       </div>`;
@@ -3478,7 +3722,8 @@
           const warn = kind === "warning";
           html += `<div class="theme-card ${warn ? "warning" : ""}" style="margin-bottom:14px;">
             <div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:${warn ? "#8a3d1f" : "var(--green)"};margin-bottom:6px;">
-              ${warn ? "⚠️ A warning to reflect on — تحذير للتدبر" : "🌿 A path of good — طريق خير"}
+              ${warn ? `⚠️ <span class="en-only">A warning to reflect on</span><span class="ar-only" dir="rtl" style="letter-spacing:0;">تحذيرٌ للتدبّر</span>`
+                     : `🌿 <span class="en-only">A path of good</span><span class="ar-only" dir="rtl" style="letter-spacing:0;">طريقُ خير</span>`}
             </div>
             ${themeCardHtml(t, warn)}
             <div class="verse-slot" data-refs='${JSON.stringify(t.refs).replace(/'/g, "&#39;")}'></div>
@@ -3521,24 +3766,36 @@
         ${s.arabic ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.12rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;" data-speak>${s.arabic} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>` : ""}
         <p class="en-only">${s.detail}</p>
         ${s.detailAr ? `<p dir="rtl" style="font-family:'Amiri',serif;line-height:1.95;">${s.detailAr}</p>` : ""}
-        <div class="refs"><span>${s.ref}</span><span>${s.strength}</span></div>
+        <div class="refs">${s.refAr ? `<span class="en-only">${s.ref}</span><span class="ar-only" dir="rtl">${s.refAr}</span>` : `<span>${s.ref}</span>`}${s.strengthAr ? `<span class="en-only">${s.strength}</span><span class="ar-only" dir="rtl">${s.strengthAr}</span>` : `<span>${s.strength}</span>`}</div>
       </div>`;
     }
 
     /* ---------- The actual verses behind each theme reference ----------
        A theme card used to show only "Surah Hud (11:6)". That is a pointer, not
        guidance — the reader still had to go and look it up. The verse itself is
-       fetched here, in Arabic and English, and shown with its full surah:ayah
-       reference so it is never read detached from where it belongs. */
+       shown here, in Arabic and English, with its full surah:ayah reference so
+       it is never read detached from where it belongs.
+
+       THE ARABIC IS THE MUSHAF'S. It comes from js/theme-verses.js, cut from
+       js/quran-text.js — the reader's own King Fahd Complex text. It used to
+       be fetched from alquran.cloud's quran-uthmani (Tanzil), which is not
+       the Madinah writing the owner asked for everywhere. A verse missing
+       from that file is fetched from quran.com's qpc_hafs, the same text. */
     const verseCache = {};
     async function fetchVerse(surah, ayah) {
       const key = surah + ":" + ayah;
       if (verseCache[key] !== undefined) return verseCache[key];
+      const local = (typeof THEME_VERSES !== "undefined") ? THEME_VERSES[key] : null;
+      if (local) return (verseCache[key] = { ar: local.a, en: local.e });
       try {
-        const r = await fetch(`https://api.alquran.cloud/v1/ayah/${surah}:${ayah}/editions/quran-uthmani,en.sahih`);
-        const j = await r.json();
-        if (j.code !== 200 || !j.data || !j.data.length) throw new Error("no data");
-        verseCache[key] = { ar: j.data[0].text, en: j.data[1].text, surahName: j.data[0].surah.englishName, surahAr: j.data[0].surah.name };
+        const [q, t] = await Promise.all([
+          fetch(`https://api.quran.com/api/v4/quran/verses/qpc_hafs?verse_key=${key}`).then(r => r.json()),
+          fetch(`https://api.alquran.cloud/v1/ayah/${key}/en.sahih`).then(r => r.json())
+        ]);
+        // quran.com ends each verse with its number; the reference says it
+        const ar = String((q.verses && q.verses[0] && q.verses[0].text_qpc_hafs) || "").replace(/[  ]*[٠-٩]+$/, "");
+        if (!ar || t.code !== 200 || !t.data) throw new Error("no data");
+        verseCache[key] = { ar, en: t.data.text };
       } catch (e) {
         verseCache[key] = null;      // offline or blocked — the reference still shows
       }
@@ -3565,10 +3822,11 @@
           for (const { s, a } of parseRef(ref)) {
             const v = await fetchVerse(s, a);
             if (!v) continue;
+            const su = (typeof SURAHS !== "undefined") ? SURAHS.find(x => x.n === s) : null;
             pieces.push(`<div style="margin-bottom:10px;">
-              <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.15rem;line-height:2.1;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:12px 15px;margin:0 0 6px;" data-speak>${v.ar} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
-              <p style="font-style:italic;margin:0 0 4px;">"${v.en}"</p>
-              <div class="refs"><span>Surah ${v.surahName} (${s}:${a})</span></div>
+              <p dir="rtl" style="font-size:1.15rem;line-height:2.1;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:12px 15px;margin:0 0 6px;" data-speak><span class="q-hafs">${v.ar}</span> <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
+              <p class="en-only" style="font-style:italic;margin:0 0 4px;">"${v.en}"</p>
+              <div class="refs"><span><span class="en-only">Surah ${su ? su.name : ""} (${s}:${a})</span><span class="ar-only" dir="rtl">سورة ${su ? su.arabic : ""} (${s}:${a})</span></span></div>
             </div>`);
           }
         }
@@ -3604,9 +3862,14 @@
           ]);
           const arMapB = {}; ba.hadiths.forEach(h => arMapB[h.hadithnumber] = h.text);
           const arMapM = {}; ma.hadiths.forEach(h => arMapM[h.hadithnumber] = h.text);
+          /* Muslim's `hadithnumber` in this data is a running count that
+             matches no printed edition ("#1830" is Muslim 783), and this box
+             printed it as the reference. The standard number is the data's
+             `arabicnumber` (783.02 = the second narration under 783) — the
+             Hadith page's rule; with none, no number rather than a wrong one. */
           deepCache = [
-            ...be.hadiths.map(h => ({ n: h.hadithnumber, en: h.text, ar: arMapB[h.hadithnumber] || "", src: "Sahih al-Bukhari" })),
-            ...me.hadiths.map(h => ({ n: h.hadithnumber, en: h.text, ar: arMapM[h.hadithnumber] || "", src: "Sahih Muslim" }))
+            ...be.hadiths.map(h => ({ n: String(h.hadithnumber), en: h.text, ar: arMapB[h.hadithnumber] || "", muslim: false })),
+            ...me.hadiths.map(h => ({ n: String(h.arabicnumber || "").split(".")[0], en: h.text, ar: arMapM[h.hadithnumber] || "", muslim: true }))
           ];
         }
 
@@ -3626,17 +3889,20 @@
         hits.sort((a, b) => b.s - a.s || a.h.en.length - b.h.en.length);
 
         if (!hits.length) {
-          box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);">Nothing found in the full collections for those words. — لم نجد شيئاً في المجموعات الكاملة.</p>`;
+          box.innerHTML = `<p style="margin-top:14px;color:var(--text-muted);"><span class="en-only">Nothing found in the full collections for those words.</span><span class="ar-only" dir="rtl">لم نجد شيئًا بهذه الكلمات في الصحيحين كاملين.</span></p>`;
           return;
         }
+        const cite = h => h.muslim
+          ? `<span class="en-only">Sahih Muslim${h.n ? " — Hadith " + h.n : " — cited by book"}</span><span class="ar-only" dir="rtl">صحيح مسلم${h.n ? " — حديث " + h.n : " — يُعزى بالكتاب"}</span>`
+          : `<span class="en-only">Sahih al-Bukhari — Hadith ${h.n}</span><span class="ar-only" dir="rtl">صحيح البخاري — حديث ${h.n}</span>`;
         box.innerHTML = `<h3 style="margin:24px 0 12px;color:var(--green-dark);text-align:left;"><span class="en-only">📚 From the complete collections</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">من المجموعات الكاملة</span></h3>` +
           hits.slice(0, 12).map(({ h }) => `<div class="theme-card" style="margin-bottom:14px;text-align:left;">
-            <div style="font-size:.8rem;color:var(--gold);font-weight:700;margin-bottom:6px;">${h.src} — Hadith #${h.n}</div>
+            <div style="font-size:.8rem;color:var(--gold);font-weight:700;margin-bottom:6px;">${cite(h)}</div>
             ${h.ar ? `<p dir="rtl" style="font-family:'Amiri',serif;font-size:1.12rem;line-height:2;color:var(--green-dark);background:var(--green-pale);border-radius:8px;padding:10px 14px;margin-bottom:10px;">${h.ar}</p>` : ""}
-            <p>${h.en}</p>
+            <p${h.ar ? ' class="en-only"' : ""}>${h.en}</p>
           </div>`).join("");
       } catch (e) {
-        box.innerHTML = `<p style="margin-top:14px;color:#8a3d1f;">Could not load the full collections. Please check your connection and try again. — تعذّر تحميل المجموعات، تحقق من الاتصال.</p>`;
+        box.innerHTML = `<p style="margin-top:14px;color:#8a3d1f;"><span class="en-only">Could not load the full collections. Please check your connection and try again.</span><span class="ar-only" dir="rtl">تعذّر تحميل الصحيحين. تحقّق من الاتصال ثم أعد المحاولة.</span></p>`;
       }
     }
 
@@ -5084,9 +5350,9 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202609140907"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
 
-  <script src="js/main.js?v=202609140907"></script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/main.js?v=202609141459"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
 </body>
 </html>

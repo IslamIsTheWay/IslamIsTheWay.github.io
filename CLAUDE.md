@@ -1336,3 +1336,30 @@ Hadith and Home put the ENGLISH of a reference with no Arabic twin in the
 `.ar-only` half, for the reference translator to translate — so that half
 cannot be skipped. What IS protected is «…»: a title quoted inside a source
 line is never run through AR_PARTS («Our Epidemic of Loneliness و Isolation»).
+
+## A test that calls applyI18n cannot find a page that forgets to
+
+PART 29's sweeps opened each panel and then called `applyI18n()` themselves,
+so "0 English strings" was measured while the live reader still said "▶ Play
+Full Surah". Test Arabic mode the way a reader uses it: click every button
+and type into every search box, and never call the translator from the test
+(clicksweep.py / typesweep.py, HANDOFF PART 30). A page that renders after
+load must either print en-only/ar-only pairs or call `window.applyI18n()`.
+
+## Every fetch of Quran text is a Quran source
+
+The Guidance page fetched Tanzil's quran-uthmani at run time for months after
+every FILE was converted — check-quran.sh reads files and could not see it.
+Verse text for display comes from js/quran-text.js (or js/theme-verses.js,
+cut from it), or quran.com's qpc_hafs. check-quran.sh now greps for the
+fetches. Never add an alquran.cloud `quran-uthmani` / `quran-simple` fetch
+that ends on screen.
+
+## On Guidance, a word with two meanings is never a bare key
+
+عمل (work / a deed), الدين (debt / the religion), فراغ (emptiness / free time),
+فائدة (benefit / bank interest), ضيق (distress / tight), "interest", "fired" —
+each of these sent an everyday sentence to the wrong answer. Put the word in
+the phrase that fixes its meaning. And a block that CLAIMS ("written for
+exactly this", "the words to say", "what the scholars explained") needs a key
+met in full or two distinct rare words — see the filters in findGuidance.

@@ -45,6 +45,35 @@ if grep -qF 'ٱلْ' js/quran-text.js; then
   fail=1
 fi
 
+# ...and no page may FETCH the old text to show it. The fingerprints above
+# only see what is written in the files; the Guidance page fetched Tanzil's
+# quran-uthmani from alquran.cloud at run time and printed it under every
+# theme card until September 2026 (PART 30). Verse text for display comes
+# from js/quran-text.js / js/theme-verses.js, or quran.com's qpc_hafs.
+# (main.js fetches quran-simple only to MATCH a video title to a verse.)
+hits=$(grep -nE "alquran\.cloud/v1/[^\"'\` ]*quran-(uthmani|simple)" ./*.html js/*.js 2>/dev/null | grep -v '^js/main.js:')
+if [ -n "$hits" ]; then
+  echo "A PAGE FETCHES NON-MADINAH QURAN TEXT - take it from js/quran-text.js or quran.com's qpc_hafs:"
+  echo "$hits" | cut -c1-160 | head -8
+  fail=1
+fi
+
+# the Guidance theme verses must be the reader's text, verse for verse
+if [ -f js/theme-verses.js ] && command -v python >/dev/null 2>&1; then
+  python - <<'PY' || fail=1
+import json, re, sys
+qt = open("js/quran-text.js", encoding="utf-8").read()
+qt = json.loads(qt[qt.index("const QURAN_TEXT = ") + 19: qt.rindex("}") + 1])
+tv = open("js/theme-verses.js", encoding="utf-8").read()
+tv = json.loads(tv[tv.index("const THEME_VERSES = ") + 21: tv.rindex("}") + 1])
+bad = [k for k, v in tv.items()
+       if v["a"] != qt[k.split(":")[0]]["a"][int(k.split(":")[1]) - 1]]
+if bad:
+    print("js/theme-verses.js differs from js/quran-text.js at:", ", ".join(bad[:8]))
+    sys.exit(1)
+PY
+fi
+
 check_hash() {   # file expected-sha256
   if [ ! -f "$1" ]; then echo "MISSING: $1"; fail=1; return; fi
   got=$(sha256sum "$1" | cut -d' ' -f1)

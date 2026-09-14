@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609140907" />
+  <link rel="stylesheet" href="css/style.css?v=202609141459" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     .meeting-wrap { display:grid; grid-template-columns: 1fr 340px; gap:20px; align-items:start; }
@@ -74,8 +74,10 @@
 
   <div class="page-hero">
     <div class="container">
-      <h1 id="meetingTitle">Live Meeting</h1>
-      <p id="meetingSub">Enter your meeting code to join.</p>
+      <!-- Every line a student reads is a pair: this page was English only,
+           and it is where the Courses page sends someone who presses «انضم». -->
+      <h1 id="meetingTitle"><span class="en-only">Live Meeting</span><span class="ar-only" dir="rtl">الدرس المباشر</span></h1>
+      <p id="meetingSub"><span class="en-only">Enter your meeting code to join.</span><span class="ar-only" dir="rtl">أدخل رمز الدرس لتنضمّ إليه.</span></p>
     </div>
   </div>
 
@@ -85,10 +87,10 @@
       <!-- Code gate (for students) -->
       <div class="gate-card" id="gateCard">
         <div class="icon-circle" style="width:64px;height:64px;border-radius:50%;background:var(--green-light);font-size:1.8rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">🔑</div>
-        <h3 style="color:var(--green-dark);">Enter Meeting Code</h3>
-        <p style="color:var(--text-muted);font-size:.92rem;">Your teacher gave you a code like <strong>IITW-XXXXXX</strong>. Enter it to join the live class.</p>
+        <h3 style="color:var(--green-dark);"><span class="en-only">Enter Meeting Code</span><span class="ar-only" dir="rtl">أدخل رمز الدرس</span></h3>
+        <p style="color:var(--text-muted);font-size:.92rem;"><span class="en-only">Your teacher gave you a code like <strong>IITW-XXXXXX</strong>. Enter it to join the live class.</span><span class="ar-only" dir="rtl">أعطاك المعلّم رمزًا مثل <strong dir="ltr">IITW-XXXXXX</strong>، فأدخله لتنضمّ إلى الدرس المباشر.</span></p>
         <input type="text" id="codeInput" placeholder="IITW-______" maxlength="14" />
-        <button class="btn btn-primary" style="width:100%;" onclick="checkCode()">Join Meeting</button>
+        <button class="btn btn-primary" style="width:100%;" onclick="checkCode()"><span class="en-only">Join Meeting</span><span class="ar-only" dir="rtl">انضمّ إلى الدرس</span></button>
         <div class="gate-msg" id="gateMsg"></div>
       </div>
 
@@ -98,33 +100,34 @@
         <!-- Host bar (staff only) -->
         <div class="host-bar" id="hostBar" style="display:none;">
           <div>
-            <div style="font-size:.8rem;opacity:.85;">You are the host. Share this code with your students:</div>
+            <div style="font-size:.8rem;opacity:.85;"><span class="en-only">You are the host. Share this code with your students:</span><span class="ar-only" dir="rtl">أنت المضيف. أرسل هذا الرمز إلى طلابك:</span></div>
             <span class="code-big" id="hostCode"></span>
           </div>
-          <button class="copy-btn" onclick="copyHostCode()">📋 Copy Code</button>
-          <button class="rec-btn" id="recBtn" onclick="toggleRecording()">⏺ Record Class</button>
+          <button class="copy-btn" onclick="copyHostCode()">📋 <span class="en-only">Copy Code</span><span class="ar-only" dir="rtl">انسخ الرمز</span></button>
+          <button class="rec-btn" id="recBtn" onclick="toggleRecording()">⏺ <span class="en-only">Record Class</span><span class="ar-only" dir="rtl">سجّل الدرس</span></button>
           <span id="recStatus" style="font-size:.85rem;"></span>
         </div>
 
         <!-- Student note -->
         <div class="user-note" id="userNote">
-          ✅ You're in. When the video loads, click <strong>"Join meeting"</strong> and allow your <strong>camera 🎥</strong> and <strong>microphone 🎤</strong> when the browser asks. You can turn them on or off any time using the buttons at the bottom of the video.
+          <span class="en-only">✅ You're in. When the video loads, click <strong>"Join meeting"</strong> and allow your <strong>camera 🎥</strong> and <strong>microphone 🎤</strong> when the browser asks. You can turn them on or off any time using the buttons at the bottom of the video.</span>
+          <span class="ar-only" dir="rtl">✅ دخلت. حين يظهر الفيديو اضغط <strong>«Join meeting»</strong>، واسمح <strong>بالكاميرا 🎥</strong> <strong>والميكروفون 🎤</strong> حين يسألك المتصفّح. ويمكنك تشغيلهما أو إيقافهما متى شئت من الأزرار أسفل الفيديو.</span>
         </div>
 
         <div class="meeting-wrap">
           <div>
             <div class="meeting-frame"><iframe id="jitsiFrame" allow="camera; microphone; fullscreen; display-capture; autoplay"></iframe></div>
-            <div class="rec-note" id="hostRecNote" style="display:none;"><strong>Recording tip:</strong> when you press "⏺ Record Class", choose to share <strong>"This Tab"</strong> and tick <strong>"Share tab audio"</strong> so the students' voices are captured too. When you stop, the video downloads to your computer — then upload it in the staff dashboard as a paid video.</div>
+            <div class="rec-note" id="hostRecNote" style="display:none;"><span class="en-only"><strong>Recording tip:</strong> when you press "⏺ Record Class", choose to share <strong>"This Tab"</strong> and tick <strong>"Share tab audio"</strong> so the students' voices are captured too. When you stop, the video downloads to your computer — then upload it in the staff dashboard as a paid video.</span><span class="ar-only" dir="rtl"><strong>تنبيه للتسجيل:</strong> حين تضغط «⏺ سجّل الدرس» اختر مشاركة <strong>«This Tab»</strong> وفعّل <strong>«Share tab audio»</strong> ليُسجَّل صوت الطلاب أيضًا. وحين تتوقّف يُحفظ الفيديو على جهازك، ثم ارفعه من لوحة الفريق فيديوًا مدفوعًا.</span></div>
           </div>
           <div class="caption-panel">
-            <h3>🌐 Live Translated Captions</h3>
-            <p class="small">Turn this on and it listens through your microphone and translates each sentence instantly.</p>
-            <label>Language being spoken</label>
+            <h3>🌐 <span class="en-only">Live Translated Captions</span><span class="ar-only" dir="rtl">ترجمةٌ فوريّةٌ مكتوبة</span></h3>
+            <p class="small"><span class="en-only">Turn this on and it listens through your microphone and translates each sentence instantly.</span><span class="ar-only" dir="rtl">شغّلها فتسمع عبر الميكروفون وتترجم كلّ جملةٍ في الحال.</span></p>
+            <label><span class="en-only">Language being spoken</span><span class="ar-only" dir="rtl">اللغة المنطوقة</span></label>
             <select id="srcLang">
               <option value="ar-SA" data-mm="ar">Arabic — العربية</option>
               <option value="en-US" data-mm="en">English</option>
             </select>
-            <label>Translate into</label>
+            <label><span class="en-only">Translate into</span><span class="ar-only" dir="rtl">الترجمة إلى</span></label>
             <select id="dstLang">
               <option value="en">English</option>
               <option value="ar">Arabic — العربية</option>
@@ -132,8 +135,8 @@
               <option value="id">Indonesian — Bahasa (Indonesia)</option>
               <option value="bn">Bengali — বাংলা</option>
             </select>
-            <button class="btn btn-primary btn-small" id="capBtn" onclick="toggleCaptions()">▶ Start Captions</button>
-            <div id="captionBox"><em style="color:var(--text-muted);font-size:.85rem;">Captions will appear here...</em></div>
+            <button class="btn btn-primary btn-small" id="capBtn" onclick="toggleCaptions()">▶ <span class="en-only">Start Captions</span><span class="ar-only" dir="rtl">ابدأ الترجمة</span></button>
+            <div id="captionBox"><em style="color:var(--text-muted);font-size:.85rem;"><span class="en-only">Captions will appear here...</span><span class="ar-only" dir="rtl">ستظهر الترجمة هنا…</span></em></div>
           </div>
         </div>
       </div>
@@ -150,6 +153,11 @@
   <script>
     let meetings = [];
     let currentMeeting = null;
+    /* Every line this script writes is in the reader's language: a pair for
+       the page, and for alert/prompt (which cannot carry markup) the
+       language the page is showing. */
+    const bi = (en, ar) => `<span class="en-only">${en}</span><span class="ar-only" dir="rtl">${ar}</span>`;
+    const isAr = () => document.documentElement.classList.contains("lang-ar");
     const params = new URLSearchParams(location.search);
     const isHost = params.get("host") === "1";
 
@@ -170,9 +178,13 @@
     function checkCode() {
       const code = document.getElementById("codeInput").value.trim().toUpperCase();
       const msg = document.getElementById("gateMsg");
+      if (!code) {
+        msg.innerHTML = bi("Enter the code your teacher gave you.", "أدخل الرمز الذي أعطاك إيّاه المعلّم.");
+        return;
+      }
       const m = meetings.find(x => x.code.toUpperCase() === code);
       if (!m) {
-        msg.textContent = "Invalid code. Please check with your teacher and try again.";
+        msg.innerHTML = bi("Invalid code. Please check with your teacher and try again.", "رمزٌ غير صحيح. تأكّد منه مع معلّمك ثم أعد المحاولة.");
         return;
       }
       openRoom(m, false);
@@ -182,8 +194,11 @@
       currentMeeting = m;
       document.getElementById("gateCard").style.display = "none";
       document.getElementById("meetingRoom").style.display = "block";
-      document.getElementById("meetingTitle").textContent = m.title || "Live Class";
-      document.getElementById("meetingSub").textContent = (m.course ? m.course + " — " : "") + (m.time ? new Date(m.time).toLocaleString() : (asHost ? "You are hosting" : "Live now"));
+      const title = document.getElementById("meetingTitle");
+      if (m.title) title.textContent = m.title; else title.innerHTML = bi("Live Class", "درسٌ مباشر");
+      const sub = document.getElementById("meetingSub");
+      if (m.course || m.time) sub.textContent = (m.course ? m.course + " — " : "") + (m.time ? new Date(m.time).toLocaleString() : "");
+      else sub.innerHTML = asHost ? bi("You are hosting", "أنت المضيف") : bi("Live now", "مباشرٌ الآن");
 
       if (asHost) {
         document.getElementById("hostBar").style.display = "flex";
@@ -192,7 +207,7 @@
         document.getElementById("hostCode").textContent = m.code;
       }
 
-      const displayName = asHost ? "Teacher (Host)" : "Student";
+      const displayName = asHost ? (isAr() ? "المعلّم (المضيف)" : "Teacher (Host)") : (isAr() ? "طالب" : "Student");
       const room = "IslamIsTheWay-" + m.code;
       // prejoinPageEnabled shows a camera/mic preview before entering the room.
       document.getElementById("jitsiFrame").src =
@@ -205,8 +220,8 @@
     function copyHostCode() {
       const code = document.getElementById("hostCode").textContent;
       navigator.clipboard.writeText(code).then(
-        () => { document.getElementById("recStatus").textContent = "Code copied!"; setTimeout(() => document.getElementById("recStatus").textContent = "", 2000); },
-        () => prompt("Copy this code:", code)
+        () => { document.getElementById("recStatus").innerHTML = bi("Code copied!", "نُسخ الرمز!"); setTimeout(() => document.getElementById("recStatus").textContent = "", 2000); },
+        () => prompt(isAr() ? "انسخ هذا الرمز:" : "Copy this code:", code)
       );
     }
 
@@ -227,7 +242,7 @@
         return;
       }
       if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
-        alert("Recording needs a desktop Chrome or Edge browser.");
+        alert(isAr() ? "التسجيل يحتاج متصفّح Chrome أو Edge على الحاسوب." : "Recording needs a desktop Chrome or Edge browser.");
         return;
       }
       try {
@@ -244,8 +259,8 @@
         mediaRecorder.onstop = () => {
           recording = false;
           btn.classList.remove("recording");
-          btn.textContent = "⏺ Record Class";
-          status.textContent = "Saving...";
+          btn.innerHTML = "⏺ " + bi("Record Class", "سجّل الدرس");
+          status.innerHTML = bi("Saving...", "جارٍ الحفظ…");
           const blob = new Blob(recordedChunks, { type: recordedChunks[0] ? recordedChunks[0].type : "video/webm" });
           const url = URL.createObjectURL(blob);
           const a = document.createElement("a");
@@ -254,7 +269,7 @@
           document.body.appendChild(a); a.click(); a.remove();
           setTimeout(() => URL.revokeObjectURL(url), 4000);
           screen.getTracks().forEach(t => t.stop());
-          status.textContent = "✓ Recording saved to your Downloads.";
+          status.innerHTML = "✓ " + bi("Recording saved to your Downloads.", "حُفظ التسجيل في مجلّد التنزيلات.");
         };
         // If the host stops sharing from the browser bar, stop cleanly.
         screen.getVideoTracks()[0].addEventListener("ended", () => {
@@ -263,10 +278,10 @@
         mediaRecorder.start();
         recording = true;
         btn.classList.add("recording");
-        btn.textContent = "⏹ Stop Recording";
-        status.textContent = "● Recording...";
+        btn.innerHTML = "⏹ " + bi("Stop Recording", "أوقف التسجيل");
+        status.innerHTML = "● " + bi("Recording...", "جارٍ التسجيل…");
       } catch (e) {
-        status.textContent = "Recording cancelled.";
+        status.innerHTML = bi("Recording cancelled.", "أُلغي التسجيل.");
       }
     }
 
@@ -279,16 +294,16 @@
       if (capsOn) {
         capsOn = false;
         if (recognition) recognition.stop();
-        btn.textContent = "▶ Start Captions";
+        btn.innerHTML = "▶ " + bi("Start Captions", "ابدأ الترجمة");
         return;
       }
       const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
       if (!SR) {
-        alert("Live captions need Chrome or Edge. Please open this page in one of those browsers.");
+        alert(isAr() ? "الترجمة الفوريّة تحتاج متصفّح Chrome أو Edge، فافتح هذه الصفحة في أحدهما." : "Live captions need Chrome or Edge. Please open this page in one of those browsers.");
         return;
       }
       capsOn = true;
-      btn.textContent = "⏸ Stop Captions";
+      btn.innerHTML = "⏸ " + bi("Stop Captions", "أوقف الترجمة");
       startRecognition(SR);
     }
 
@@ -310,8 +325,8 @@
       recognition.onerror = (e) => {
         if (e.error === "not-allowed") {
           capsOn = false;
-          document.getElementById("capBtn").textContent = "▶ Start Captions";
-          alert("Microphone access was blocked. Please allow the microphone to use captions.");
+          document.getElementById("capBtn").innerHTML = "▶ " + bi("Start Captions", "ابدأ الترجمة");
+          alert(isAr() ? "مُنع الوصول إلى الميكروفون. اسمح به لتعمل الترجمة." : "Microphone access was blocked. Please allow the microphone to use captions.");
         }
       };
       recognition.start();
@@ -327,7 +342,7 @@
           const r = await fetch("https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=" + src + "|" + dst);
           const j = await r.json();
           if (j.responseData && j.responseData.translatedText) translated = j.responseData.translatedText;
-        } catch (e) { translated = text + " (translation unavailable)"; }
+        } catch (e) { translated = text + (isAr() ? " (الترجمة غير متاحة)" : " (translation unavailable)"); }
       }
       const box = document.getElementById("captionBox");
       if (box.querySelector("em")) box.innerHTML = "";
@@ -339,8 +354,8 @@
 
     loadMeetings();
   </script>
-  <script src="js/wordlens.js?v=202609140907"></script>
-  <script src="js/main.js?v=202609140907"></script>
-  <script src="js/i18n.js?v=202609140907"></script>
+  <script src="js/wordlens.js?v=202609141459"></script>
+  <script src="js/main.js?v=202609141459"></script>
+  <script src="js/i18n.js?v=202609141459"></script>
 </body>
 </html>
