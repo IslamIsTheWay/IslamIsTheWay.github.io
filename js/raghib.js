@@ -138,19 +138,20 @@ function rgNoteHtml(n) {
    the box carries data-rg-part so rgWatchParts can fetch it. */
 function rgVerseHtml(s, a, notes, chunk, none, part) {
   var sm = rgSurah(s);
+  var hasNotes = notes === null || notes.length > 0;     // a part still loading has notes
   var h = '<div class="rg-ayah" data-rg="' + a + '"' + (notes === null ? ' data-rg-part="' + part + '"' : '') + '>';
   h += '<div class="rg-ayah-head">📜 <span class="en-only">Ar-Raghib al-Isfahani on ' + (sm ? sm.name + " " : "") + s + ':' + a + '</span>' +
        '<span class="ar-only" dir="rtl">الراغب الأصفهاني على الآية ' + rgDigits(a) + (sm ? ' من سورة ' + sm.arabic : '') + '</span></div>';
   if (notes === null) {
     h += '<div class="rg-wait"><span class="en-only">Loading his notes on this verse…</span>' +
          '<span class="ar-only" dir="rtl">جارٍ تحميل شرحه لهذه الآية…</span></div>';
-    notes = [];
+  } else {
+    notes.forEach(function (n) { h += rgNoteHtml(n); });
   }
-  notes.forEach(function (n) { h += rgNoteHtml(n); });
   if (chunk) {
     h += '<button type="button" class="rg-full-btn" onclick="iitwRaghibFull(this,' + s + ',' + a + ')">' +
-         '📖 <span class="en-only">' + (notes.length ? "Everything he wrote on this verse" : "Read what he wrote on this verse") + ' (Arabic)</span>' +
-         '<span class="ar-only" dir="rtl">' + (notes.length ? "كلّ ما كتبه على هذه الآية" : "اقرأ ما كتبه على هذه الآية") + '</span></button>' +
+         '📖 <span class="en-only">' + (hasNotes ? "Everything he wrote on this verse" : "Read what he wrote on this verse") + ' (Arabic)</span>' +
+         '<span class="ar-only" dir="rtl">' + (hasNotes ? "كلّ ما كتبه على هذه الآية" : "اقرأ ما كتبه على هذه الآية") + '</span></button>' +
          '<div class="rg-full" hidden></div>';
   } else if (none) {
     h += '<div class="rg-none"><span class="en-only">Nothing of Ar-Raghib\'s commentary on this verse survives in the printed text of his tafsir.</span>' +
@@ -349,22 +350,26 @@ function rgFillPart(s, idx, name) {
     var r = el.getBoundingClientRect();
     was.push({ el: el, above: !!scroller && r.top < edge, h: r.height });
   });
+  /* Only the "loading" line is replaced — the box itself stays, so his full
+     text, if the reader opened it while the notes were on their way, stays
+     open (a box redrawn whole closed it under his eyes). */
   was.forEach(function (x) {
     var a = +x.el.getAttribute("data-rg");
     if (_rgObserver) _rgObserver.unobserve(x.el);
-    x.el.insertAdjacentHTML("afterend", rgVerseHtml(s, a, rgNotesFor(idx, a) || [],
-      (idx.chunkOf || {})[a], (idx.none || []).indexOf(a) >= 0));
-    x.nu = x.el.nextElementSibling;
-    x.el.parentNode.removeChild(x.el);
-    if (!window._rgOpen) x.nu.hidden = true;
+    x.el.removeAttribute("data-rg-part");
+    var wait = x.el.querySelector(".rg-wait");
+    if (wait) {
+      wait.insertAdjacentHTML("afterend", (rgNotesFor(idx, a) || []).map(rgNoteHtml).join(""));
+      wait.parentNode.removeChild(wait);
+    }
     /* main.js puts every ﴿…﴾ into the Mushaf's font from a MutationObserver,
        i.e. AFTER this function — and the font changes the height. Do it now,
        so what is measured below is the final height (it was 20px out). */
-    if (typeof iitwMarkQuran === "function") iitwMarkQuran(x.nu);
+    if (typeof iitwMarkQuran === "function") iitwMarkQuran(x.el);
   });
   if (window.applyI18n) window.applyI18n();
   var grew = 0;
-  was.forEach(function (x) { if (x.above) grew += x.nu.getBoundingClientRect().height - x.h; });
+  was.forEach(function (x) { if (x.above) grew += x.el.getBoundingClientRect().height - x.h; });
   if (grew) scroller.scrollTop += grew;
 }
 

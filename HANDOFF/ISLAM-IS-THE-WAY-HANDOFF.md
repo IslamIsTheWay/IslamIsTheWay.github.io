@@ -6152,10 +6152,17 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
 
 * Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
   (1:3's two names are explained by him under the Basmala; the note says so).
-  Al-Baqarah 1-130 done — 186 notes (notes/2.txt and notes/2-<first verse>.txt,
-  one file per batch of verses read). Continue from 2:131: `python show3.py 2
-  131 137` prints his passages; write notes/2-131.txt; `python
+  Al-Baqarah 1-137 done — 195 notes (notes/2.txt and notes/2-<first verse>.txt,
+  one file per batch of verses read). Continue from 2:138: `python show3.py 2
+  138 144` prints his passages; write notes/2-138.txt; `python
   build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
+  A verse he quotes in ( ) inside `said` is written { } like any other, so it
+  shows as the Mushaf's text (paren_q.py lists any left) — EXCEPT where he is
+  giving another reading than Hafs (2:119 «ولا تسئل», Nafi'): the Mushaf's
+  text would then show the opposite of what he says; leave it in ( ).
+* A box whose notes are still loading keeps its full-text button; when the
+  notes arrive only the "loading" line is replaced, so a full text the reader
+  opened meanwhile stays open (test_fullopen.py).
 * His full text: every verse of surahs 1-5.
 * Still to write: notes for al-Baqarah → al-Ma'idah (from his tafsir),
   surahs 6-10 from al-Mufradat, the panel on his method (his Muqaddima) and
