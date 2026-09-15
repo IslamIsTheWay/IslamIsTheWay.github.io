@@ -6174,10 +6174,13 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
 
 * Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
   (1:3's two names are explained by him under the Basmala; the note says so).
-  Al-Baqarah 1-201 done — 285 notes (notes/2.txt and notes/2-<first verse>.txt,
-  one file per batch of verses read). Continue from 2:202: `python show3.py 2
-  202 208` prints his passages; write notes/2-202.txt; `python
+  Al-Baqarah 1-215 done — 302 notes (notes/2.txt and notes/2-<first verse>.txt,
+  one file per batch of verses read). Continue from 2:216: `python show3.py 2
+  216 222` prints his passages; write notes/2-216.txt; `python
   build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
+  The book's typos are corrected in `said` only when certain (the build prints
+  each book→mine difference: 2:214 «بمنحة»→«بمحنة», «أثر النحل»→«إبر النحل»,
+  al-Mutanabbi's line); anything doubtful stays as printed.
   In the plain-language fields, restate only what holds: where his science is
   of his age (e.g. the arithmetic at 2:196), keep it to his words in `said`.
   A verse he quotes in ( ) inside `said` is written { } like any other, so it
