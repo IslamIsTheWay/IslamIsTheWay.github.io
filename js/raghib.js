@@ -129,8 +129,57 @@ function rgNoteHtml(n) {
     });
     h += '</div>';
   }
-  h += rgSrcHtml(n.v, n.p, n.pe, n.sid);
+  h += n.book ? rgIntroSrcHtml(n) : rgSrcHtml(n.v, n.p, n.pe, n.sid);
   return h + '</div>';
+}
+
+/* ---------- how he teaches us to see the religion (js/raghib/intro.js) ----------
+   The owner asked for "how we should view Islam" from this scholar's books,
+   not only his tafsir: fifteen passages from al-Dhari'a ila Makarim
+   al-Shari'a and Tafsil al-Nash'atayn — what a human being is for, reason and
+   revelation, worship, a pure soul, work — each checked against the book like
+   the notes (build_intro.py), with its page and a link to read it. */
+var RG_BOOKS = {
+  D: { en: "al-Dhari'a ila Makarim al-Shari'a", ar: "الذريعة إلى مكارم الشريعة", shamela: 1390 },
+  T: { en: "Tafsil al-Nash'atayn wa-Tahsil al-Sa'adatayn", ar: "تفصيل النشأتين وتحصيل السعادتين", shamela: 21562 }
+};
+
+function rgIntroSrcHtml(n) {
+  var b = RG_BOOKS[n.book] || { en: n.book, ar: n.book, shamela: 0 };
+  var two = n.pe && n.pe !== n.p;
+  var link = (n.sid && b.shamela) ? ' <a href="https://shamela.ws/book/' + b.shamela + '/' + n.sid + '" target="_blank" rel="noopener">' +
+    '<span class="en-only">read the page ↗</span><span class="ar-only">اقرأ الصفحة ↗</span></a>' : "";
+  return '<div class="rg-src">📚 ' +
+    '<span class="en-only">Ar-Raghib al-Isfahani, <em>' + b.en + '</em>, ' + (two ? "pp. " + n.p + "–" + n.pe : "p. " + n.p) + ' (al-Maktaba al-Shamela)</span>' +
+    '<span class="ar-only" dir="rtl">الراغب الأصفهاني، «' + b.ar + '»، ص' + (two ? rgDigits(n.p) + "–" + rgDigits(n.pe) : rgDigits(n.p)) + ' (المكتبة الشاملة)</span>' +
+    link + '</div>';
+}
+
+function rgIntroHtml(list) {
+  var h = '<div class="rg-intro-lead">' +
+    '<p class="en-only">Ar-Raghib did not only explain verses. In two short books — <em>al-Dhari\'a ila Makarim al-Shari\'a</em> ("The Way to the Noble Traits of the Law") and <em>Tafsil al-Nash\'atayn</em> ("The Two Lives Set Out") — he explains what a human being is for, how reason and revelation work together, what worship does to the soul, and why ordinary work matters. These are his own words from those books, checked against them, with the plain meaning and the verses he builds on.</p>' +
+    '<p class="ar-only" dir="rtl">لم يقتصر الراغب على تفسير الآيات؛ ففي كتابيه «الذريعة إلى مكارم الشريعة» و«تفصيل النشأتين وتحصيل السعادتين» بيّن لماذا خُلق الإنسان، وكيف يتعاضد العقل والشرع، وما تفعله العبادة بالنفس، ولماذا للعمل في الدنيا شأن. وهذه كلماته بنصّها من الكتابين، مطابَقةً عليهما، مع معناها بكلامٍ بسيط والآيات التي بنى عليها.</p>' +
+    '</div>';
+  list.forEach(function (n) { h += rgNoteHtml(n); });
+  return h;
+}
+
+function iitwRaghibIntro(btn) {
+  var box = document.getElementById("rgIntro");
+  if (!box) return;
+  if (!box.hidden) { box.hidden = true; btn.classList.remove("armed"); return; }
+  if (typeof RAGHIB_INTRO_HASH === "undefined" || !RAGHIB_INTRO_HASH) return;
+  btn.classList.add("rg-busy");
+  rgLoad("js/raghib/intro.js?h=" + RAGHIB_INTRO_HASH).then(function () {
+    if (!box.firstChild) box.innerHTML = rgIntroHtml(window.RAGHIB_INTRO || []);
+    box.hidden = false;
+    btn.classList.add("armed");
+    if (window.applyI18n) window.applyI18n();
+  }).catch(function () {
+    alert(document.documentElement.classList.contains("lang-ar")
+      ? "تعذّر التحميل. تحقّق من الاتصال ثم أعد المحاولة."
+      : "It could not be loaded. Check your connection and try again.");
+  }).then(function () { btn.classList.remove("rg-busy"); });
 }
 
 /* ---------- the box under one verse ----------
@@ -179,6 +228,12 @@ function rgPanelHtml(s, idx) {
       ? '<p>وقد وصلنا تفسيره من أول القرآن إلى آخر سورة المائدة. وتجد تحت كل آية: كلامه بنصّه منقولًا من كتابه ومطابَقًا عليه حرفًا حرفًا، ثم المعنى نفسه بكلامٍ بسيط، ثم الآيات التي ربطها بها بخطّ المصحف، ثم الجزء والصفحة من الطبعة مع رابطٍ تقرأ منه الصفحة بنفسك. وزرّ <strong>«كلّ ما كتبه على هذه الآية»</strong> يفتح كلامه عليها كاملًا.</p>'
       : '<p>وقد انتهى تفسيره عند آخر سورة المائدة، فما تجده تحت آيات هذه السورة من كتابه «المفردات»: حيث يشرح لفظًا من ألفاظ القرآن ويستشهد بهذه الآية، والآياتِ الأخرى التي يفسّره بها.</p>') +
     '</div>';
+  if (typeof RAGHIB_INTRO_HASH !== "undefined" && RAGHIB_INTRO_HASH) {
+    h += '<button type="button" class="rg-intro-btn" onclick="iitwRaghibIntro(this)">🧭 ' +
+         '<span class="en-only">How he teaches us to see the religion</span>' +
+         '<span class="ar-only" dir="rtl">كيف يعلّمنا أن ننظر إلى الدين</span></button>' +
+         '<div class="rg-intro" id="rgIntro" hidden></div>';
+  }
   if (noteVerses.length) {
     var jump = noteVerses.map(function (v) {
       return '<button type="button" class="tad-jump" onclick="iitwJumpToRaghibVerse(' + v + ')">' +

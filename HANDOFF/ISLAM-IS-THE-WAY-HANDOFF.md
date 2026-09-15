@@ -6118,6 +6118,28 @@ the surah.
    file so a changed file beats the cache). notes.parts = [[name, hash,
    first verse, last verse], …].
 
+## "How he teaches us to see the religion" (js/raghib/intro.js)
+
+The owner's words: "his explanations and his connections and how we should
+view Islam". The 🧭 button in the panel opens fifteen passages from al-Dhari'a
+ila Makarim al-Shari'a (D, Shamela 1390, ed. al-'Ajami, Dar al-Salam 2007) and
+Tafsil al-Nash'atayn (T, Shamela 21562, Beirut 1983): what a human being was
+created for (building the earth, worship, vicegerency), between the beast and
+the angel, human to the degree one worships (and why ar-Rahman puts "taught the
+Quran" before "created man"), what worship is and why Allah asks it, reason as
+revelation from within, two messengers, knowledge planted in the soul, the law
+as medicine/water/light, purity of soul, governing oneself first, duties
+before the noble traits, the work given to humans alone, earning a living as
+worship, why people love different trades, and life as a journey.
+`build_intro.py` from notes/intro.txt ("@@ D" / "@@ T" blocks) — the same
+letter-by-letter check as the notes. PAGE CONVENTION, checked on shamela.ws:
+in both files a PageVxxPyyy marker CLOSES page yyy; Shamela id = marker
+position + 1 in D (1390/20 = p.78, 1390/82 = p.141), position − 1 in T
+counting its PageV00P000 (21562/10 = p.31). scratchpad dh.py prints a
+chapter: `python dh.py D "ما لأجله أوجد الإنسان" 7`.
+The panel exists only where RAGHIB_INDEX has the surah (1-5 until the
+al-Mufradat entries for 6-10 are built); test_intro.py checks it.
+
 ## How the notes reach the reader (js/raghib.js)
 
 Pressing 📜 draws every box at once; a box whose part has not arrived shows
@@ -6164,7 +6186,7 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
   notes arrive only the "loading" line is replaced, so a full text the reader
   opened meanwhile stays open (test_fullopen.py).
 * His full text: every verse of surahs 1-5.
-* Still to write: notes for al-Baqarah → al-Ma'idah (from his tafsir),
-  surahs 6-10 from al-Mufradat, the panel on his method (his Muqaddima) and
-  on how he teaches us to see the religion (al-Dhari'a, Tafsil
-  al-Nash'atayn).
+* "How he teaches us to see the religion": done — 15 sections (above).
+* Still to write: notes for al-Baqarah 161 → al-Ma'idah (from his tafsir),
+  surahs 6-10 from al-Mufradat, a section on his method in the tafsir
+  (his Muqaddima, vol. 1).
