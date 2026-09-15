@@ -6164,8 +6164,9 @@ the scratchpad's test_parts.py (run it after any change here):
 
 qquote.py knows the Imla'i/Uthmani spellings that differ in some places only
 (إبراهيم in al-Baqarah, النبيين, الليل, يحيي, داوود, يستحيي, ووري, تحيي,
-يبسط, and a feminine ة the Mushaf writes ت: امرأت، نعمت، رحمت …) and tries
-them only when the quotation is not found as written.
+يبسط, and a feminine ة the Mushaf writes ت: امرأت، نعمت، رحمت …, and a
+hamza after alif the Mushaf writes on a ya: وراي، وإيتاي، تلقاي، آناي، لقاي)
+and tries them only when the quotation is not found as written.
 
 check-quran.sh now proves every ﴿…﴾ under js/raghib/ is a run of whole
 words of one verse of js/quran-text.js (4,550 of them at first build).
@@ -6174,9 +6175,9 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
 
 * Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
   (1:3's two names are explained by him under the Basmala; the note says so).
-  Al-Baqarah 1-215 done — 302 notes (notes/2.txt and notes/2-<first verse>.txt,
-  one file per batch of verses read). Continue from 2:216: `python show3.py 2
-  216 222` prints his passages; write notes/2-216.txt; `python
+  Al-Baqarah 1-222 done — 313 notes (notes/2.txt and notes/2-<first verse>.txt,
+  one file per batch of verses read). Continue from 2:223: `python show3.py 2
+  223 229` prints his passages; write notes/2-223.txt; `python
   build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
   The book's typos are corrected in `said` only when certain (the build prints
   each book→mine difference: 2:214 «بمنحة»→«بمحنة», «أثر النحل»→«إبر النحل»,
