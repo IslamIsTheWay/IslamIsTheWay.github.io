@@ -6175,9 +6175,12 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
 
 * Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
   (1:3's two names are explained by him under the Basmala; the note says so).
-  Al-Baqarah 1-243 done — 339 notes (notes/2.txt and notes/2-<first verse>.txt,
-  one file per batch of verses read). Continue from 2:244: `python show3.py 2
-  244 250` prints his passages; write notes/2-244.txt; `python
+  Al-Baqarah 1-243 done verse by verse — then, at the user's request
+  (2026-09-15: "too much time … concentrate on the important verses without
+  explaining each and every one"), KEY VERSES ONLY: 245, 249, 255-260 so far
+  (347 notes). Next key verses: 261-262, 264, 267-268, 271-274, 275-276, 278-
+  280, 282 (one note), 284-286. `python show3.py 2 <v> <v>` prints a passage;
+  write notes/2-<v>.txt; `python
   build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
   The book's typos are corrected in `said` only when certain (the build prints
   each book→mine difference: 2:214 «بمنحة»→«بمحنة», «أثر النحل»→«إبر النحل»,
