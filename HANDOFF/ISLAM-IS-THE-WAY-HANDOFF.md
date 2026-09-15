@@ -6175,15 +6175,22 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
 
 * Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
   (1:3's two names are explained by him under the Basmala; the note says so).
-  Al-Baqarah 1-222 done — 313 notes (notes/2.txt and notes/2-<first verse>.txt,
-  one file per batch of verses read). Continue from 2:223: `python show3.py 2
-  223 229` prints his passages; write notes/2-223.txt; `python
+  Al-Baqarah 1-229 done — 322 notes (notes/2.txt and notes/2-<first verse>.txt,
+  one file per batch of verses read). Continue from 2:230: `python show3.py 2
+  230 236` prints his passages; write notes/2-230.txt; `python
   build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
   The book's typos are corrected in `said` only when certain (the build prints
   each book→mine difference: 2:214 «بمنحة»→«بمحنة», «أثر النحل»→«إبر النحل»,
   al-Mutanabbi's line); anything doubtful stays as printed.
   In the plain-language fields, restate only what holds: where his science is
   of his age (e.g. the arithmetic at 2:196), keep it to his words in `said`.
+  Where his reasoning is his age's and not the verse's — the humoral medicine
+  at 2:219/2:222/2:223, the philosophers' "the female is the passive power"
+  at 2:228 — leave it out of the note altogether and give the verse's points.
+  A report the hadith scholars judged weak (the "greater jihad", 2:218) is
+  not restated as the Prophet's words; the note says it is weak and gives the
+  authentic hadith. Where his order of events differs from an authentic
+  report (the stages of the wine ruling, 2:219), the note names the report.
   A verse he quotes in ( ) inside `said` is written { } like any other, so it
   shows as the Mushaf's text (paren_q.py lists any left) — EXCEPT where he is
   giving another reading than Hafs (2:119 «ولا تسئل», Nafi'): the Mushaf's
