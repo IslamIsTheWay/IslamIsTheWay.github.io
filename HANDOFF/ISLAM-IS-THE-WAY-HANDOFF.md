@@ -6109,8 +6109,36 @@ the surah.
    volume/page from where the excerpt sits (never typed). Every verse is
    written plainly in {…} in the notes and cut from the KFGQPC text here; a
    ﴿ typed into a note is refused.
+   A surah's notes are written in PARTS of at most 160KB (`PART_BYTES`):
+   js/raghib/<s>.js when it fits in one, else <s>-1.js, <s>-2.js … A part
+   never splits a verse, and parts are cut greedily from the start, so adding
+   notes at the end leaves the earlier files (and readers' cached copies)
+   unchanged. Al-Baqarah's notes alone will run to ~2MB.
 4. `index_raghib.py` — js/raghib-index.js (always loaded; content hash per
-   file so a changed file beats the cache).
+   file so a changed file beats the cache). notes.parts = [[name, hash,
+   first verse, last verse], …].
+
+## How the notes reach the reader (js/raghib.js)
+
+Pressing 📜 draws every box at once; a box whose part has not arrived shows
+"Loading his notes on this verse…" and carries `data-rg-part`. The part the
+reader will reach first is fetched at once; the rest by an
+IntersectionObserver whose root is the MODAL (it is `.modal` that scrolls,
+not the page) with a 2500px margin. Measured traps, all fixed and covered by
+the scratchpad's test_parts.py (run it after any change here):
+* the first verse's box sits ~1,500px below the panel's own text, so an
+  observer alone loaded nothing until the reader scrolled;
+* a SMOOTH jump from the coverage list crossed parts that filled in behind it
+  and stopped 8,700px short — the jump is instant now;
+* a part filling in above the screen pushed the verse being read down by
+  ~5,000px wherever the browser does no scroll anchoring (Safari). rgFillPart
+  scrolls on by exactly the growth of boxes that START above the modal's top;
+  the modal has `overflow-anchor: none` so Chrome does not move it a second
+  time. And main.js wraps ﴿…﴾ in the Mushaf font from a MutationObserver —
+  AFTER the fill — which changed the heights by 20px: rgFillPart calls
+  iitwMarkQuran itself before measuring. Result: the verse moves 0.1px.
+* The Browser pane of the desktop app draws no frames while hidden (rAF and
+  IntersectionObserver never fire there): test in Playwright, not the pane.
 
 qquote.py knows the Imla'i/Uthmani spellings that differ in some places only
 (إبراهيم in al-Baqarah, النبيين, الليل, يحيي, داوود, يستحيي, ووري, تحيي,
@@ -6124,6 +6152,10 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
 
 * Notes (plain words + connections): al-Fatihah done — 23 notes, every verse
   (1:3's two names are explained by him under the Basmala; the note says so).
+  Al-Baqarah 1-130 done — 186 notes (notes/2.txt and notes/2-<first verse>.txt,
+  one file per batch of verses read). Continue from 2:131: `python show3.py 2
+  131 137` prints his passages; write notes/2-131.txt; `python
+  build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
 * His full text: every verse of surahs 1-5.
 * Still to write: notes for al-Baqarah → al-Ma'idah (from his tafsir),
   surahs 6-10 from al-Mufradat, the panel on his method (his Muqaddima) and

@@ -13,7 +13,12 @@
      js/raghib/<n>.js        the notes for surah n: his own words (checked
                              against the book letter by letter), the point in
                              plain words (EN + AR), the verses he connects it
-                             with (cut from the KFGQPC text), volume and page
+                             with (cut from the KFGQPC text), volume and page.
+     js/raghib/<n>-<k>.js    …or, for a long surah, the same notes in PARTS
+                             by verse range. Al-Baqarah alone runs to
+                             megabytes, so a part is fetched only when its
+                             verses come near the screen (rgWatchParts); until
+                             then the verse shows a "loading" line.
      js/raghib/full/<n>-<k>.js  EVERYTHING he wrote on each verse, loaded
                              only when a reader asks for it
    Nothing is fetched until the button is pressed.
@@ -128,12 +133,19 @@ function rgNoteHtml(n) {
   return h + '</div>';
 }
 
-/* ---------- the box under one verse ---------- */
-function rgVerseHtml(s, a, notes, chunk, none) {
+/* ---------- the box under one verse ----------
+   `notes` null = its part is not loaded yet: a "loading" line stands in, and
+   the box carries data-rg-part so rgWatchParts can fetch it. */
+function rgVerseHtml(s, a, notes, chunk, none, part) {
   var sm = rgSurah(s);
-  var h = '<div class="rg-ayah" data-rg="' + a + '">';
+  var h = '<div class="rg-ayah" data-rg="' + a + '"' + (notes === null ? ' data-rg-part="' + part + '"' : '') + '>';
   h += '<div class="rg-ayah-head">📜 <span class="en-only">Ar-Raghib al-Isfahani on ' + (sm ? sm.name + " " : "") + s + ':' + a + '</span>' +
        '<span class="ar-only" dir="rtl">الراغب الأصفهاني على الآية ' + rgDigits(a) + (sm ? ' من سورة ' + sm.arabic : '') + '</span></div>';
+  if (notes === null) {
+    h += '<div class="rg-wait"><span class="en-only">Loading his notes on this verse…</span>' +
+         '<span class="ar-only" dir="rtl">جارٍ تحميل شرحه لهذه الآية…</span></div>';
+    notes = [];
+  }
   notes.forEach(function (n) { h += rgNoteHtml(n); });
   if (chunk) {
     h += '<button type="button" class="rg-full-btn" onclick="iitwRaghibFull(this,' + s + ',' + a + ')">' +
@@ -205,33 +217,36 @@ function iitwToggleRaghib() {
     iitwRevealPanel(ready);
     return;
   }
-  var p = idx.notes ? rgLoad("js/raghib/" + s + ".js?h=" + idx.notes.h) : Promise.resolve();
-  if (btn) btn.classList.add("rg-busy");
-  p.then(function () { rgRender(s, idx); })
-   .catch(function () {
-     window._rgOpen = false;
-     if (btn) btn.classList.remove("armed");
-     alert(document.documentElement.classList.contains("lang-ar")
-       ? "تعذّر تحميل تفسير الراغب. تحقّق من الاتصال ثم أعد المحاولة."
-       : "Ar-Raghib's explanation could not be loaded. Check your connection and try again.");
-   })
-   .then(function () { if (btn) btn.classList.remove("rg-busy"); });
+  rgRender(s, idx);
+}
+
+/* ---------- the notes, one part at a time ---------- */
+function rgPartOf(idx, a) {
+  var ps = (idx.notes && idx.notes.parts) || [];
+  for (var i = 0; i < ps.length; i++) if (a >= ps[i][2] && a <= ps[i][3]) return ps[i];
+  return null;
+}
+
+/* The notes on verse a — or null while its part has not arrived. */
+function rgNotesFor(idx, a) {
+  var p = rgPartOf(idx, a);
+  var arr = p && window.RAGHIB && window.RAGHIB[p[0]];
+  if (!arr) return null;
+  return arr.filter(function (n) { return a >= n.a[0] && a <= n.a[1]; });
 }
 
 function rgRender(s, idx) {
   if (!window._openSurah || window._openSurah.n !== s || !window._rgOpen) return;
-  var notes = (window.RAGHIB && window.RAGHIB[s]) || [];
-  var byVerse = {};
-  notes.forEach(function (n) {
-    for (var a = n.a[0]; a <= n.a[1]; a++) (byVerse[a] = byVerse[a] || []).push(n);
-  });
+  var hasNotes = {};
+  ((idx.notes && idx.notes.verses) || []).forEach(function (a) { hasNotes[a] = true; });
   var chunkOf = {};
   (idx.full || []).forEach(function (c) { c[2].forEach(function (a) { chunkOf[a] = c; }); });
+  idx.chunkOf = chunkOf;
   var sm = rgSurah(s);
   var total = sm ? sm.verses : 0;
   var none = [];
   if (s <= 5) {
-    for (var a = 1; a <= total; a++) if (!chunkOf[a] && !byVerse[a]) none.push(a);
+    for (var a = 1; a <= total; a++) if (!chunkOf[a] && !hasNotes[a]) none.push(a);
   }
   idx.none = none;
 
@@ -240,21 +255,127 @@ function rgRender(s, idx) {
   for (var v = 1; v <= total; v++) {
     var block = document.getElementById("ayah-" + v);
     if (!block) continue;
-    var ns = byVerse[v] || [];
     var isNone = none.indexOf(v) >= 0;
-    if (!ns.length && !chunkOf[v] && !isNone) continue;
-    block.insertAdjacentHTML("beforeend", rgVerseHtml(s, v, ns, chunkOf[v], isNone));
+    if (!hasNotes[v] && !chunkOf[v] && !isNone) continue;
+    var p = hasNotes[v] ? rgPartOf(idx, v) : null;
+    block.insertAdjacentHTML("beforeend",
+      rgVerseHtml(s, v, hasNotes[v] ? rgNotesFor(idx, v) : [], chunkOf[v], isNone, p && p[0]));
   }
   document.querySelectorAll("#modalBody .rg-panel, #modalBody .rg-ayah").forEach(function (el) { el.hidden = false; });
   if (window.applyI18n) window.applyI18n();
   iitwRevealPanel(document.getElementById("rgPanel"));
+  rgWatchParts(s, idx);
 }
 
+/* Fetch a part when one of its verses comes within reach of the screen.
+   The observer's root is the modal itself — it is the modal that scrolls —
+   so the margin reaches ahead of what is on screen and a part is usually in
+   before its verses are. */
+var _rgObserver = null;
+function rgWatchParts(s, idx) {
+  if (_rgObserver) { _rgObserver.disconnect(); _rgObserver = null; }
+  var waiting = document.querySelectorAll("#modalBody .rg-ayah[data-rg-part]");
+  if (!waiting.length) return;
+  if (!("IntersectionObserver" in window)) {         // old browsers: all of them, in order
+    var names = [];
+    waiting.forEach(function (el) {
+      var n = el.getAttribute("data-rg-part");
+      if (names.indexOf(n) < 0) names.push(n);
+    });
+    names.reduce(function (pr, n) {
+      return pr.then(function () { return rgLoadPart(s, idx, n); });
+    }, Promise.resolve());
+    return;
+  }
+  var body = document.getElementById("modalBody");
+  var scroller = (body && body.closest(".modal")) || null;
+  _rgObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) rgLoadPart(s, idx, e.target.getAttribute("data-rg-part"));
+    });
+  }, { root: scroller, rootMargin: "2500px 0px" });
+  waiting.forEach(function (el) { _rgObserver.observe(el); });
+  /* …and the part the reader will reach first, now: the panel's own text
+     stands between the top of the surah and verse 1, often further than the
+     margin above reaches. */
+  var edge = scroller ? scroller.getBoundingClientRect().top : 0;
+  for (var i = 0; i < waiting.length; i++) {
+    if (waiting[i].getBoundingClientRect().bottom > edge) {
+      rgLoadPart(s, idx, waiting[i].getAttribute("data-rg-part"));
+      break;
+    }
+  }
+}
+
+function rgLoadPart(s, idx, name) {
+  var p = ((idx.notes && idx.notes.parts) || []).filter(function (x) { return x[0] === name; })[0];
+  if (!p) return Promise.resolve();
+  return rgLoad("js/raghib/" + name + ".js?h=" + p[1]).then(function () {
+    rgFillPart(s, idx, name);
+  }, function () {
+    document.querySelectorAll('#modalBody .rg-ayah[data-rg-part="' + name + '"] .rg-wait').forEach(function (el) {
+      el.innerHTML = '<button type="button" class="rg-retry" onclick="iitwRaghibRetry(\'' + name + '\')">' +
+        '<span class="en-only">Could not load his notes — tap to try again</span>' +
+        '<span class="ar-only" dir="rtl">تعذّر تحميل الشرح — اضغط لإعادة المحاولة</span></button>';
+    });
+    if (window.applyI18n) window.applyI18n();
+  });
+}
+
+function iitwRaghibRetry(name) {
+  var s = window._openSurah && window._openSurah.n;
+  var idx = iitwRaghibFor(s);
+  if (idx) rgLoadPart(s, idx, name);
+}
+
+/* Put a part's notes in place of its "loading" lines.
+   A box that STARTS above the top of the modal would push everything the
+   reader is looking at down by its growth — thousands of pixels, measured —
+   so the modal is scrolled on by exactly that much: the box grows upward, out
+   of sight. A box that starts on screen or below grows in place, so a verse
+   jumped to shows its notes where its "loading" line was. The modal has
+   `overflow-anchor: none` (style.css): with the browser's own anchoring on as
+   well, Chrome would move it twice, and Safari has none, so this is the one
+   mechanism, the same on every phone. */
+function rgFillPart(s, idx, name) {
+  if (!window._openSurah || window._openSurah.n !== s) return;
+  var boxes = document.querySelectorAll('#modalBody .rg-ayah[data-rg-part="' + name + '"]');
+  if (!boxes.length) return;
+  var body = document.getElementById("modalBody");
+  var scroller = body && body.closest(".modal");
+  var edge = scroller ? scroller.getBoundingClientRect().top : 0;
+  var was = [];
+  boxes.forEach(function (el) {                    // measure all first: one layout
+    var r = el.getBoundingClientRect();
+    was.push({ el: el, above: !!scroller && r.top < edge, h: r.height });
+  });
+  was.forEach(function (x) {
+    var a = +x.el.getAttribute("data-rg");
+    if (_rgObserver) _rgObserver.unobserve(x.el);
+    x.el.insertAdjacentHTML("afterend", rgVerseHtml(s, a, rgNotesFor(idx, a) || [],
+      (idx.chunkOf || {})[a], (idx.none || []).indexOf(a) >= 0));
+    x.nu = x.el.nextElementSibling;
+    x.el.parentNode.removeChild(x.el);
+    if (!window._rgOpen) x.nu.hidden = true;
+    /* main.js puts every ﴿…﴾ into the Mushaf's font from a MutationObserver,
+       i.e. AFTER this function — and the font changes the height. Do it now,
+       so what is measured below is the final height (it was 20px out). */
+    if (typeof iitwMarkQuran === "function") iitwMarkQuran(x.nu);
+  });
+  if (window.applyI18n) window.applyI18n();
+  var grew = 0;
+  was.forEach(function (x) { if (x.above) grew += x.nu.getBoundingClientRect().height - x.h; });
+  if (grew) scroller.scrollTop += grew;
+}
+
+/* An instant jump, not a smooth one: on the way down a smooth scroll crosses
+   parts that are still loading, and each one filled in behind it cut the
+   scroll short (measured: the jump to 2:130 stopped 8,700px above it). */
 function iitwJumpToRaghibVerse(n) {
   var el = document.getElementById("ayah-" + n);
   if (!el) return;
   var box = el.querySelector(".rg-ayah") || el;
-  box.scrollIntoView({ behavior: "smooth", block: "start" });
+  box.scrollIntoView({ behavior: "auto", block: "start" });
   el.classList.add("ayah-flash");
   setTimeout(function () { el.classList.remove("ayah-flash"); }, 2200);
 }
