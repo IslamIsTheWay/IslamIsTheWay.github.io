@@ -6181,7 +6181,14 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
   267, 275, 286 — al-Baqarah finished (352 notes). Al 'Imran: 7, 19, 64,
   103, 110, 134, 159, 191, 200 (9 notes). An-Nisa': 1, 36, 58, 59, 82
   (5 notes). Al-Ma'idah: 2, 3, 8, 32, 48 (5 notes) — the tafsir ends at
-  5:120, so surahs 6-10 need al-Mufradat entries and their own build.
+  5:120. Surahs 6-10 are explained from his dictionary instead, by
+  `python build_mufradat.py SURAH [--write]`: it imports build_raghib,
+  swaps in al-Mufradat as the book (so every `said` is still checked
+  letter by letter and the page is read, not typed), and marks each note
+  book:"M" — RG_BOOKS.M in js/raghib.js prints «المفردات في غريب القرآن، ص N»
+  with no link, since that digitisation has no page ids. Done so far:
+  6:59, 6:122, 7:199, 8:2, 8:29, 9:128, 10:57. `python mf.py "phrase"`
+  prints the entry around a phrase, as printed.
   Vols 2-5 print Quran quotes in ( ): write them { } in `said`.
   A heredoc longer than ~12KB is truncated by the shell: write a notes
   file one note at a time (`cat > f <<'X'` then `cat >> f <<'X'`). `python show3.py <s> <v> <v>`

@@ -141,7 +141,11 @@ function rgNoteHtml(n) {
    the notes (build_intro.py), with its page and a link to read it. */
 var RG_BOOKS = {
   D: { en: "al-Dhari'a ila Makarim al-Shari'a", ar: "الذريعة إلى مكارم الشريعة", shamela: 1390 },
-  T: { en: "Tafsil al-Nash'atayn wa-Tahsil al-Sa'adatayn", ar: "تفصيل النشأتين وتحصيل السعادتين", shamela: 21562 }
+  T: { en: "Tafsil al-Nash'atayn wa-Tahsil al-Sa'adatayn", ar: "تفصيل النشأتين وتحصيل السعادتين", shamela: 21562 },
+  /* The surahs his tafsir does not reach (6-10) are explained from his
+     dictionary of the Quran; this digitisation carries no page ids, so the
+     source line names the book and page with no link. */
+  M: { en: "al-Mufradat fi Gharib al-Quran", ar: "المفردات في غريب القرآن", shamela: 0 }
 };
 
 function rgIntroSrcHtml(n) {
