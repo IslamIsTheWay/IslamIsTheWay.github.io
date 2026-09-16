@@ -123,11 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSurahGrid(filtered);
   }
 
-  /* quran.html#surah-18 opens that surah — the site search links here. */
-  const hm = (location.hash || "").match(/^#surah-(\d{1,3})$/);
+  /* quran.html#surah-18 opens that surah — the site search links here, and
+     so does the home page. #surah-18-45 opens it AT verse 45, which is what
+     "continue where you left off" and the word search need. */
+  const hm = (location.hash || "").match(/^#surah-(\d{1,3})(?:[-:](\d{1,3}))?$/);
   if (hm) {
     const s = SURAHS.find(x => x.n === +hm[1]);
-    if (s) openSurah(s);
+    if (s && hm[2] && typeof iitwOpenAt === "function") iitwOpenAt(s.n, +hm[2]);
+    else if (s) openSurah(s);
   }
 
   searchInput.addEventListener("input", applyFilters);
@@ -176,6 +179,11 @@ async function openSurah(surah) {
   const body = document.getElementById("modalBody");
 
   window._openSurah = surah;
+  /* Remembered for the home page's "continue where you left off" — no
+     account, nothing sent anywhere (js/resume.js). */
+  if (typeof iitwResumeRemember === "function") {
+    iitwResumeRemember("quran", { id: surah.n, s: surah.n, name: surah.name, arabic: surah.arabic });
+  }
   /* The Arabic name is printed under it (modalArabicTitle); on the Arabic
      page the English line gives way to the surah's number and place. */
   title.innerHTML = `<span class="en-only">${surah.n}. ${surah.name} — ${surah.meaning}</span>` +
@@ -397,6 +405,9 @@ window._lastFinishedAyah = null;
 
 function iitwMarkFinished(ayahNum) {
   window._lastFinishedAyah = ayahNum;
+  if (typeof iitwResumeRemember === "function" && window._openSurah) {
+    iitwResumeRemember("quran", { id: window._openSurah.n, a: ayahNum });
+  }
   if (typeof window.iitwArmSaveButton === "function") window.iitwArmSaveButton(ayahNum);
 }
 
