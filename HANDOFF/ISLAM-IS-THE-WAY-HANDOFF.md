@@ -6215,6 +6215,70 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
   opened meanwhile stays open (test_fullopen.py).
 * His full text: every verse of surahs 1-5.
 * "How he teaches us to see the religion": done — 15 sections (above).
-* Still to write: notes for al-Baqarah 161 → al-Ma'idah (from his tafsir),
-  surahs 6-10 from al-Mufradat, a section on his method in the tafsir
-  (his Muqaddima, vol. 1).
+* Done since: al-Baqarah to the end, then Al 'Imran, an-Nisa' and
+  al-Ma'idah by KEY VERSES (the owner, 2026-09-15: "concentrate on the
+  important verses without explaining each and every one"), and surahs
+  6-10 from al-Mufradat — so all ten surahs now carry his explanation.
+* Still to write: a section on his method in the tafsir (his Muqaddima,
+  vol. 1); more key verses in 3-10 whenever there is time.
+
+
+# PART 32 - Two things a reader asked for, and a check that runs itself
+
+## The reading size (A− / A+ in the surah reader)
+
+The Mushaf line is 1.72rem. On a phone held at arm's length, and for older
+eyes, that is small — and the site had no way to make it bigger. Two buttons
+beside Stop set ONE number, `--rq-scale`, on `#modalBody`; the CSS multiplies
+by it in four places (the verse, the basmala, the translation, and the modal's
+own font-size, which carries it down through every panel, since the panels are
+all sized in em). Steps 0.85 → 1.75, kept in `localStorage` under
+`iitw-quran-scale`, every read and write guarded so a private window just
+opens the reader at its normal size. The toolbar buttons are sized in rem, so
+they stay put while the reading text grows.
+
+## Searching the Quran's own words (js/quran-search.js)
+
+The page could find a surah by name or number; a reader arrives with a word.
+The whole Mushaf text is already in the page (js/quran-text.js), so the search
+needs no network call. What it took to make it right:
+
+* **Whole words, never a bare substring.** على inside فعلى, ألم inside الألم:
+  that trap has produced four live bugs on this site already. Each verse is
+  split into words, and a word matches only after the attached prefixes
+  (وبالـ، فالـ، لل، ال …) and the attached pronouns (ـه، ـها، ـهم، ـكم …) are
+  peeled.
+* **The dagger alef is an alef, not a mark.** Deleting it (which is right when
+  matching quotations against the book) turns ٱلۡيَتَٰمَىٰ into اليتمى, which
+  nobody types. It is turned into ا before the marks are stripped.
+* **The Mushaf's spelling is not the spelling people type.** ٱلصَّلَوٰةَ is
+  الصلواة with the marks off; ٱلرَّحۡمَٰنِ is الرحمان. So when the strict
+  search finds NOTHING, and only then, the three weak letters ا و ي are
+  dropped from both sides. That alone was too generous — الربا and لرب come
+  down to the same skeleton — so the fallback also demands the same opening
+  two letters and about the same length. الصلاة → 58 verses, الرحمن → 54,
+  الربا → 5 (starting at 2:275), and محمد → 4, which is the right number.
+* A Latin query searches the translation instead, by words, with no regex
+  built from what the reader typed (an unescaped bracket would throw).
+
+`iitwOpenAt(s, a)` opens the surah and waits for the verse to be drawn before
+scrolling to it — the reader builds asynchronously — and marks it for two and
+a half seconds so the eye can find it.
+
+## The weekly check (.github/workflows/weekly-check.yml)
+
+Mondays, and by hand from the Actions tab. It runs the same three scripts that
+run before every commit (images, home-page numbers, every ﴿verse﴾ against the
+Mushaf text) and then fetches from the LIVE site every file the Quran page
+needs, plus the version stamp on quran.html — so a half-finished deploy, or a
+path that changed, is caught when nobody is looking. A failure mails the owner.
+
+## A trap in this environment, for whoever works here next
+
+A heredoc longer than about 12KB is TRUNCATED before the shell sees its end,
+and the error looks like an unclosed quote on a line in the middle of the
+file. Write long files one piece at a time (`cat > f <<'X'` … then
+`cat >> f <<'X'`). Worse, backslashes inside a heredoc are not passed through:
+`` arrives as ``'s single form and `ؐ` arrives as the character —
+which produced an "Invalid regular expression" on the live page once. Write
+JavaScript that needs no backslashes, or patch the file afterwards with Python.
