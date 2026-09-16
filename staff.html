@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161535" />
+  <link rel="stylesheet" href="css/style.css?v=202609161931" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* The dashboard is the owner's own page and it follows the theme like
        every other page: these were #fff and a pale red, which left white
        panels and a glowing delete button in the dark. */
-    :root { --del-bg: #fbe9e0; --del-ink: #8a3d1f; --warn-bg: #fff4e5; }
-    :root[data-theme="dark"] { --del-bg: #3a201a; --del-ink: #f0b39a; --warn-bg: #2b2413; }
+    :root { --del-bg: #fbe9e0; --del-ink: #8a3d1f; --warn-bg: #fff4e5; --warn-ink: #8a5a00; }
+    :root[data-theme="dark"] { --del-bg: #3a201a; --del-ink: #f0b39a; --warn-bg: #2b2413; --warn-ink: #e8c46a; }
     .staff-panel { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
     .staff-panel .panel-sub { color:var(--text-muted); font-size:.9rem; margin-bottom:18px; }
@@ -37,7 +37,7 @@
     .staff-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
     .staff-tabs button { border:1px solid var(--border); background:var(--card); color:var(--text-dark); border-radius:999px; padding:10px 18px; font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer; transition:all .2s; }
     .staff-tabs button:hover { border-color:var(--green); background:var(--green-pale); }
-    .staff-tabs button.active { background:var(--green); color:#fff; border-color:var(--green); }
+    .staff-tabs button.active { background:var(--green-fill); color:#fff; border-color:var(--green); }
     .staff-section { display:none; }
     .staff-section.active { display:block; }
     /* Recitations: mic + suggestion chips */
@@ -109,7 +109,7 @@
 
       <!-- Shown whenever something has been added but not yet published. -->
       <div id="unpublishedBanner" style="display:none;background:var(--warn-bg);border:2px solid var(--gold);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
-        <strong style="color:#8a5a00;">⚠ You have changes that are NOT on the website yet.</strong>
+        <strong style="color:var(--warn-ink);">⚠ You have changes that are NOT on the website yet.</strong>
         <div style="font-size:.88rem;margin-top:4px;">
           They are saved in this browser, so you can leave this page and come back — but visitors will not see them until you press
           <strong>Publish Changes</strong> at the bottom with your GitHub token.
@@ -480,9 +480,9 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202609161535"></script>
-  <script src="js/wordlens.js?v=202609161535"></script>
-  <script src="js/main.js?v=202609161535"></script>
+  <script src="js/data.js?v=202609161931"></script>
+  <script src="js/wordlens.js?v=202609161931"></script>
+  <script src="js/main.js?v=202609161931"></script>
   <script>
     /* ---------- The dashboard speaks the reader's language too ----------
        js/i18n.js translates what is IN the page when it runs. Everything
@@ -1715,8 +1715,8 @@
       }
     });
   </script>
-  <script src="js/reading.js?v=202609161535"></script>
-  <script src="js/nav.js?v=202609161535"></script>
-  <script src="js/i18n.js?v=202609161535"></script>
+  <script src="js/reading.js?v=202609161931"></script>
+  <script src="js/nav.js?v=202609161931"></script>
+  <script src="js/i18n.js?v=202609161931"></script>
 </body>
 </html>

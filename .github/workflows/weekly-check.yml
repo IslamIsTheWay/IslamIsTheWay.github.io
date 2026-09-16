@@ -47,6 +47,16 @@ jobs:
           python3 tools/lightscan.py --check
           python3 tools/textscan.py --check
 
+      - name: Every piece of text is readable, in both themes and both languages
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+          python3 -m http.server 8791 >/dev/null 2>&1 &
+          sleep 3
+          pip install --quiet pillow
+          IITW_BROWSER=chromium python3 tools/contrastaudit.py
+          IITW_BROWSER=chromium python3 tools/photoaudit.py
+
       - name: The Quran is all there, and the pictures are within budget
         run: |
           python3 quran-parts.py --check

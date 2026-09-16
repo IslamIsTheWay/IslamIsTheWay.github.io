@@ -14,12 +14,13 @@
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 2. **PART 34** (most recent) — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
-> 3. **PART 33** — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
-> 4. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
-> 5. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
-> 6. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
-> 7. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
+> 2. **PART 35** (most recent) — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
+> 3. **PART 34** — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
+> 4. **PART 33** — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
+> 5. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
+> 6. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
+> 7. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
+> 8. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
 >
 > ### The current shape of the site
 >
@@ -6520,3 +6521,72 @@ darkaudit, leakaudit (a browser and a local server) — each with what it can
 and cannot see written at the top. Between them they cover the two bugs this
 site produces most: something light in the dark theme, and something English
 in Arabic.
+
+# PART 35 - Contrast, measured: every text on every page against what is really under it
+
+The owner's next screenshot: the footer in the dark theme, every link dark
+green on dark green. `footer { color: var(--green-light) }` — a token that is
+pale in the light theme and DARK in the dark one, used as ink on a surface
+that is dark in both. darkaudit.py had called the page clean, because it
+compared an element's ink with the element's OWN background, and a footer link
+has none; its ground belongs to <footer>, three levels up.
+
+So contrast is now measured, not guessed.
+
+## tools/contrastaudit.py — every text, in both themes and both languages
+
+For every element that holds text it walks up to the first ancestor that
+actually paints (a solid colour, or every stop of a gradient — the worst stop
+counts), composites translucent layers on the way, and computes the WCAG
+ratio. It also opens what a load-time audit never sees: the Quran reader with
+al-Fatihah and al-Baqarah, the Tadabbur, ar-Raghib and miracles panels, the
+navigation's More menu and the header search. `--weak` shows 3–4.5:1 too.
+
+The first full run: **2,122 pieces of text below 3:1, 77 distinct causes.**
+Now: **0.** What they were, by class:
+
+* **A flipping token as ink on a surface that does not flip** — the footer
+  (1.06:1), the ayah banner's reference line, the course head's level. Those
+  surfaces are dark in both themes, so their ink is a literal light colour.
+* **White text on `--green` in the dark theme** — every primary button, the
+  login button, active tabs and chips, numbered badges: 2.97:1. `--green` is
+  an ACCENT and must be light on a dark page; a FILLED surface under white
+  text is a different job. New token **`--green-fill`** (#1e7e45 light,
+  #2b7a4b dark, 5.3:1 with white); all 32 filled-green backgrounds and the
+  button gradients use it. In the light theme nothing changed.
+* **Gold as the ink of small text on white** — references, "For example",
+  counts, surah page counts, story themes: 2.3–2.4:1. New token
+  **`--gold-ink`** (#8a6d10 light, #d7b551 dark). Gold on a dark surface
+  (the modal header, the footer hover, the course price) stays `--gold`.
+  Four near-identical literal ambers (#8a6508, #8a6d1a, #8a6a12, #8a6d12),
+  each right on cream and 3:1 on the same box in the dark, are `--gold-ink`
+  now; the tense notes' blue is `--blue-ink`.
+* **White on gold** (the title badge on every prophet and companion):
+  1.98–2.4:1 → dark brown ink.
+* **Literal ink the generator cannot flip** — the grading lines on the
+  Judgement page, the voice-bar warning, the "this part is unexpected" box,
+  the Tadabbur "and if it said the other?" line, the Guidance warning box
+  (now `--warn-soft-bg/ink`), the dashboard's unpublished warning.
+
+## tools/photoaudit.py — text over a photograph, from the pixels
+
+contrastaudit.py has to skip text over a photograph: the colour under the
+words depends on the picture, the scrim, and the crop at this screen size.
+So each such text is made transparent, its box is photographed, and the
+pixels under it are measured — the median for the typical ratio, the 90th
+percentile toward the ink for the worst patch. Desktop and phone, both themes.
+
+It found: the verse on the Guidance beach band at 2.6:1 (the band scrim was
+42% in the middle — now 56%), the home hero's outline buttons at 2.3:1 where
+they crossed bright marble (they have a translucent backing now), and the
+Courses hero line at 3.9:1 (brightest photograph; deeper scrim, full-strength
+ink). Now 0.
+
+Both run in the weekly workflow on the bundled Chromium
+(`IITW_BROWSER=chromium`), against `python -m http.server 8791`.
+
+**The rule these add, for whoever writes the next colour:** a token that
+flips may only be used on a surface that flips with it. Ink on a surface that
+is dark in both themes is a literal light colour; a filled surface under white
+text is `--green-fill`; small text in gold is `--gold-ink`. Then run
+contrastaudit.py — it will say so if not.
