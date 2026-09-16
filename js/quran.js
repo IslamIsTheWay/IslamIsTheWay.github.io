@@ -267,6 +267,16 @@ async function openSurah(surah) {
       <div>
         <button onclick="playAllAyahs()" class="rq-btn rq-play">▶ <span class="en-only">Play Full Surah</span><span class="ar-only" dir="rtl">تشغيل السورة كاملة</span></button>
         <button onclick="stopAudio()" class="rq-btn rq-stop">⏹ <span class="en-only">Stop</span><span class="ar-only" dir="rtl">إيقاف</span></button>
+        <!-- READING SIZE. The Mushaf line is 1.72rem, which is small on a
+             phone held at arm's length and for older eyes; the two buttons
+             scale the verse, its translation and every panel under it, and
+             the size is remembered for the next surah and the next visit. -->
+        <span class="rq-zoom" role="group" aria-label="Reading size">
+          <button onclick="iitwQuranZoom(-1)" class="rq-btn rq-zoom-btn" id="rqZoomOut"
+                  title="Smaller text — تصغير الخطّ" aria-label="Smaller text">A−</button>
+          <button onclick="iitwQuranZoom(1)" class="rq-btn rq-zoom-btn" id="rqZoomIn"
+                  title="Larger text — تكبير الخطّ" aria-label="Larger text">A+</button>
+        </span>
         <!-- Sits beside Stop, as asked. It stays disabled until a verse's
              audio has finished, and then names the verse it will save. -->
         <button onclick="iitwSaveHere()" class="rq-btn rq-save" id="rqSaveBtn" disabled
@@ -354,6 +364,7 @@ async function openSurah(surah) {
     });
 
     body.innerHTML = html;
+    iitwApplyQuranZoom();
     /* The panels that open later call this themselves; the reader itself
        did not, so anything it left to the dictionary stayed English on the
        Arabic page until a panel was opened. */
@@ -1406,3 +1417,35 @@ document.addEventListener("DOMContentLoaded", () => {
   renderTadabburIntro();
   if (window.applyI18n) window.applyI18n();
 });
+
+/* ===== READING SIZE =====
+   One number, --rq-scale, set on the reader itself: the CSS multiplies the
+   verse, the translation and the text of every panel by it, so nothing has
+   to know about anything else. It is kept in localStorage, which can throw
+   or come back empty (a private window, cleared site data), so every read
+   and write is guarded and the reader simply opens at its normal size. */
+var RQ_STEPS = [0.85, 1, 1.15, 1.3, 1.5, 1.75];
+
+function iitwQuranScale() {
+  var v = null;
+  try { v = parseFloat(localStorage.getItem("iitw-quran-scale")); } catch (e) {}
+  return (v && RQ_STEPS.indexOf(v) >= 0) ? v : 1;
+}
+
+function iitwApplyQuranZoom() {
+  var body = document.getElementById("modalBody");
+  if (!body) return;
+  var s = iitwQuranScale();
+  body.style.setProperty("--rq-scale", s);
+  var i = RQ_STEPS.indexOf(s);
+  var out = document.getElementById("rqZoomOut"), inn = document.getElementById("rqZoomIn");
+  if (out) out.disabled = i <= 0;
+  if (inn) inn.disabled = i >= RQ_STEPS.length - 1;
+}
+
+function iitwQuranZoom(dir) {
+  var i = RQ_STEPS.indexOf(iitwQuranScale()) + dir;
+  if (i < 0 || i >= RQ_STEPS.length) return;
+  try { localStorage.setItem("iitw-quran-scale", String(RQ_STEPS[i])); } catch (e) {}
+  iitwApplyQuranZoom();
+}

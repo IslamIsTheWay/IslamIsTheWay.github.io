@@ -1057,7 +1057,7 @@ section {
    size is set about an eighth larger than the old 1.5rem to read the same. */
 .ayah-block .arabic-text {
   font-family: "KFGQPC Hafs", 'Amiri', serif;
-  font-size: 1.72rem;
+  font-size: calc(1.72rem * var(--rq-scale, 1));
   text-align: right;
   direction: rtl;
   color: var(--text-dark);
@@ -1065,13 +1065,25 @@ section {
   line-height: 2.2;
 }
 @media (max-width: 620px) {
-  .ayah-block .arabic-text { font-size: 1.55rem; line-height: 2.15; }
+  .ayah-block .arabic-text { font-size: calc(1.55rem * var(--rq-scale, 1)); line-height: 2.15; }
 }
 
 .ayah-block .translation-text {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--rq-scale, 1));
 }
+
+/* ===== READING SIZE =====
+   A− / A+ in the reader set --rq-scale on #modalBody (js/quran.js). The
+   verse and its translation are sized in rem, so each is multiplied above;
+   everything inside the panels is sized in em, so ONE rule here — the
+   modal's own font-size — carries the size down through all of them. The
+   toolbar is inside the modal too, but its buttons are sized in rem, so
+   they stay put while the reading text grows. */
+#modalBody { font-size: calc(1rem * var(--rq-scale, 1)); }
+.rq-zoom { display: inline-flex; gap: 4px; }
+.rq-zoom-btn { min-width: 42px; font-weight: 700; letter-spacing: .5px; }
+.rq-zoom-btn:disabled { opacity: .45; cursor: default; }
 /* The English line stays English on the Arabic page: laid out right to
    left it printed "[All] praise is …" and ".any deviance". */
 .ayah-block .translation-text[dir="ltr"] { text-align: left; }
@@ -7281,7 +7293,7 @@ strong .q-hafs, b .q-hafs, .q-hafs strong, .q-hafs b { font-weight: normal; }
 .reader-basmala {
   text-align: center;
   direction: rtl;
-  font-size: 1.9rem;
+  font-size: calc(1.9rem * var(--rq-scale, 1));
   line-height: 2.2;
   color: var(--green-dark);
   margin: 4px 0 10px;
@@ -7289,7 +7301,7 @@ strong .q-hafs, b .q-hafs, .q-hafs strong, .q-hafs b { font-weight: normal; }
   border-bottom: 1px solid var(--border, #e4e4e4);
 }
 @media (max-width: 620px) {
-  .reader-basmala { font-size: 1.62rem; }
+  .reader-basmala { font-size: calc(1.62rem * var(--rq-scale, 1)); }
 }
 
 /* ============================================================
