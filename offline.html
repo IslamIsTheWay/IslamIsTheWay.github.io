@@ -6,8 +6,12 @@
   <title>Offline | IslamBasics</title>
   <meta name="robots" content="noindex" />
   <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161215" />
+  <link rel="stylesheet" href="css/style.css?v=202609161230" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- The theme is stamped on <html> BEFORE anything is painted: without
+       this the page flashes white and then turns dark, which reads as a
+       fault. A reader who has not chosen follows the phone (js/reading.js). -->
+  <script>(function(){try{var t=localStorage.getItem("iitw-theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("iitw-text-scale"));if(s>1&&s<1.6){document.documentElement.style.fontSize=(s*100)+"%";}}catch(e){}})();</script>
 </head>
 <body>
   <div class="topbar"><span class="q-hafs">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</span><span class="en-only"> — In the name of Allah, the Most Gracious, the Most Merciful</span></div>

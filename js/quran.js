@@ -281,9 +281,9 @@ async function openSurah(surah) {
              the size is remembered for the next surah and the next visit. -->
         <span class="rq-zoom" role="group" aria-label="Reading size">
           <button onclick="iitwQuranZoom(-1)" class="rq-btn rq-zoom-btn" id="rqZoomOut"
-                  title="Smaller text — تصغير الخطّ" aria-label="Smaller text">A−</button>
+                  dir="ltr" title="Smaller Mushaf line — تصغير خطّ المصحف" aria-label="Smaller Mushaf text">A−</button>
           <button onclick="iitwQuranZoom(1)" class="rq-btn rq-zoom-btn" id="rqZoomIn"
-                  title="Larger text — تكبير الخطّ" aria-label="Larger text">A+</button>
+                  dir="ltr" title="Larger Mushaf line — تكبير خطّ المصحف" aria-label="Larger Mushaf text">A+</button>
         </span>
         <!-- Sits beside Stop, as asked. It stays disabled until a verse's
              audio has finished, and then names the verse it will save. -->

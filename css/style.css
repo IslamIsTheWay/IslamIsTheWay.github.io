@@ -14,6 +14,16 @@
   --text-muted: #5b6b61;
   --border: #d8e8dd;
   --text: #2d3b33;
+  /* ===== SURFACES AND INK (added with the dark theme) =====
+     --green-dark is the site's INK for headings in 176 places and a
+     background in only 15, so in the dark theme it becomes a LIGHT green and
+     the few backgrounds use --green-deep, which stays dark in both themes.
+     Nothing else has to move. */
+  --bg: #fafcfb;              /* the page behind everything */
+  --card: #ffffff;            /* every raised surface: cards, modals, inputs */
+  --cream: #fffdf3;           /* the parchment of the reference boxes */
+  --cream-line: #f0e4bd;
+  --green-deep: #14532d;      /* dark green as a BACKGROUND, in both themes */
   --shadow: 0 4px 24px rgba(20, 83, 45, 0.07);
   --shadow-lg: 0 16px 48px rgba(20, 83, 45, 0.12);
   --shadow-hover: 0 20px 40px rgba(20, 83, 45, 0.16);
@@ -21,6 +31,74 @@
   --max-width: 1200px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ============================================================
+   THE DARK THEME — الوضع الليلي
+   ============================================================
+   Set as data-theme="dark" on <html> by the small script in every page's
+   <head>, so the page is never painted white first and then turned dark.
+   A reader who has not chosen follows the phone's own setting.
+
+   IT IS NOT AN INVERSION. Reading Arabic on pure black with pure white text
+   is tiring; the ground is a very dark green-black and the ink is a warm
+   off-white, and the greens are lifted until they carry their contrast on a
+   dark ground (the pale greens become dark tints, not light ones).
+
+   Everything below is a token. A component only needs its own rule here when
+   it hard-codes a colour — those are gathered at the bottom, each with the
+   reason it could not be a token. */
+:root[data-theme="dark"] {
+  --bg: #0e1512;
+  --card: #16211c;
+  --cream: #1b2119;            /* the parchment boxes, as a dark tint */
+  --cream-line: #3a3a22;
+  --green-dark: #a8d8bb;       /* the INK of every heading — light on dark */
+  --green-deep: #0b2317;       /* the few dark-green BACKGROUNDS */
+  --green: #46a86b;
+  --green-light: #1e3227;
+  --green-pale: #17221c;
+  --gold: #d7b551;
+  --white: #ffffff;            /* still white where it is text on green */
+  --text-dark: #e6efe9;
+  --text: #dbe7df;
+  --text-muted: #a4b8ac;
+  --border: #27392f;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
+/* The sticky header and the hero's scrim are translucent WHITE — a pane of
+   frosted glass over a dark page reads as a bug, so both are restated. */
+:root[data-theme="dark"] header.site-header { background: rgba(14, 21, 18, 0.92); border-bottom-color: var(--border); }
+:root[data-theme="dark"] header.site-header.is-scrolled { background: rgba(14, 21, 18, 0.97); }
+:root[data-theme="dark"] .hero::before {
+  background: linear-gradient(180deg, rgba(10, 16, 13, 0.72) 0%, rgba(10, 16, 13, 0.62) 45%, rgba(14, 21, 18, 0.82) 100%);
+}
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .hero p.lead { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.75); }
+:root[data-theme="dark"] .topbar { background: var(--green-deep); }
+
+/* The photographs are lit for a white page; on a dark one they glare. */
+:root[data-theme="dark"] .photo-band,
+:root[data-theme="dark"] .hero { filter: brightness(.72) saturate(.9); }
+
+/* Form fields and the search boxes: the browser's own white would shine. */
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea {
+  background: var(--card);
+  color: var(--text-dark);
+  border-color: var(--border);
+}
+:root[data-theme="dark"] ::placeholder { color: var(--text-muted); }
+
+/* The Mushaf page and every quotation of it: a warm paper tint rather than
+   the white of the printed page, which is a lamp in a dark room. */
+:root[data-theme="dark"] .ayah-block .arabic-text,
+:root[data-theme="dark"] .reader-basmala,
+:root[data-theme="dark"] .q-hafs { color: #f1e9d8; }
 
 * {
   margin: 0;
@@ -35,7 +113,7 @@ html {
 body {
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   color: var(--text-dark);
-  background: #fafcfb;
+  background: var(--bg);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,7 +150,7 @@ img {
 
 /* ============ Top bar ============ */
 .topbar {
-  background: var(--green-dark);
+  background: var(--green-deep);
   color: var(--white);
   font-size: 0.85rem;
   text-align: center;
@@ -310,7 +388,7 @@ nav.main-nav a.nav-login {
 }
 
 nav.main-nav a.nav-login:hover {
-  background: var(--green-dark);
+  background: var(--green-deep);
   color: var(--white) !important;
 }
 
@@ -331,7 +409,7 @@ nav.main-nav a.nav-login.active::after {
 .nav-toggle span {
   width: 24px;
   height: 2px;
-  background: var(--green-dark);
+  background: var(--green-deep);
   display: block;
 }
 
@@ -356,7 +434,7 @@ nav.main-nav a.nav-login.active::after {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  background: linear-gradient(135deg, var(--green-deep), var(--green));
   border-color: var(--green-dark);
   box-shadow: 0 6px 20px rgba(30,126,69,0.35);
   transform: translateY(-1px);
@@ -440,7 +518,7 @@ nav.main-nav a.nav-login.active::after {
 }
 
 .page-hero {
-  background: linear-gradient(135deg, #0d3a1a 0%, var(--green-dark) 40%, #1a5c32 100%);
+  background: linear-gradient(135deg, #0d3a1a 0%, var(--green-deep) 40%, #1a5c32 100%);
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -537,7 +615,7 @@ section {
 }
 
 .card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid rgba(216,232,221,0.5);
   border-radius: var(--radius);
   padding: 32px;
@@ -606,7 +684,7 @@ section {
 }
 
 .person-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid rgba(216,232,221,0.4);
   border-radius: var(--radius);
   overflow: hidden;
@@ -705,7 +783,7 @@ section {
   margin: 0 auto 10px;
   display: flex;
   gap: 10px;
-  background: var(--white);
+  background: var(--card);
   border: 2px solid var(--green-light);
   border-radius: 999px;
   /* Logical, so the roomy side is the text's side in Arabic too. */
@@ -743,7 +821,7 @@ section {
 }
 
 .search-box button:hover {
-  background: var(--green-dark);
+  background: var(--green-deep);
 }
 
 .search-tags {
@@ -779,7 +857,7 @@ section {
 }
 
 .result-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--green);
   border-radius: var(--radius);
@@ -833,7 +911,7 @@ section {
 .ss-nobody { text-align: center; color: var(--text-muted); margin: 6px 0 0; }
 .ss-wrap { margin-top: 8px; }
 .ss-title { font-size: 1.25rem; color: var(--green-dark); margin: 6px 0 14px; text-align: center; }
-.ss-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+.ss-block { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 16px 18px; margin-bottom: 16px; box-shadow: var(--shadow); }
 .ss-head { font-size: 1.02rem; color: var(--green-dark); margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
 .ss-count { margin-inline-start: auto; font-size: .78rem; font-weight: 700; color: var(--green);
@@ -863,7 +941,7 @@ section {
   border-radius: 8px;
   font-family: inherit;
   font-size: 0.95rem;
-  background: var(--white);
+  background: var(--card);
 }
 
 .surah-toolbar input {
@@ -911,11 +989,11 @@ section {
   color: #fff;
 }
 
-.rq-play:hover { background: var(--green-dark); }
+.rq-play:hover { background: var(--green-deep); }
 
 .rq-stop {
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--card);
   color: var(--text-muted);
   margin-left: 8px;
 }
@@ -929,7 +1007,7 @@ section {
 }
 
 .surah-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid rgba(216,232,221,0.5);
   border-radius: var(--radius);
   padding: 18px 20px;
@@ -995,7 +1073,7 @@ section {
 }
 
 .modal {
-  background: var(--white);
+  background: var(--card);
   border-radius: var(--radius);
   max-width: 720px;
   width: 100%;
@@ -1009,7 +1087,7 @@ section {
 }
 
 .modal-header {
-  background: var(--green-dark);
+  background: var(--green-deep);
   color: var(--white);
   padding: 20px 28px;
   display: flex;
@@ -1103,7 +1181,7 @@ section {
 .judge-step {
   display: flex; align-items: center; gap: 10px;
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--card);
   border-radius: 10px;
   padding: 10px 12px;
   font-family: inherit;
@@ -1131,7 +1209,7 @@ section {
 
 .judge-card {
   position: relative;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-top: 5px solid var(--green);
   border-radius: var(--radius);
@@ -1165,8 +1243,8 @@ section {
   font-size: 1.35rem;
   line-height: 2.35;
   color: var(--green-dark);
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 10px;
   padding: 15px 19px;
   margin-bottom: 12px;
@@ -1233,7 +1311,7 @@ html.lang-ar .judge-items { list-style-type: arabic-indic; }
   width: 100%;
   margin: 4px 0 14px;
   border: 1px solid var(--gold);
-  background: #fffdf3;
+  background: var(--cream);
   color: #8a6a12;
   border-radius: 999px;
   padding: 10px 16px;
@@ -1283,7 +1361,7 @@ html.lang-ar .judge-items { list-style-type: arabic-indic; }
   margin-top: 20px;
 }
 .decl-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 4px solid var(--gold);
   border-radius: 10px;
@@ -1295,7 +1373,7 @@ html.lang-ar .judge-items { list-style-type: arabic-indic; }
   font-size: 1.25rem;
   line-height: 2.2;
   color: var(--green-dark);
-  background: #fffdf3;
+  background: var(--cream);
   border-radius: 8px;
   padding: 12px 15px;
   margin-bottom: 10px;
@@ -1348,7 +1426,7 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
 }
 .worship-tab {
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--card);
   color: var(--text-dark);
   border-radius: 999px;
   padding: 9px 16px;
@@ -1364,7 +1442,7 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
 .worship-list { display: grid; gap: 22px; max-width: 900px; margin: 0 auto; }
 
 .worship-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--green);
   border-radius: var(--radius);
@@ -1395,8 +1473,8 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
   font-size: 1.42rem;
   line-height: 2.3;
   color: var(--green-dark);
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 10px;
   padding: 16px 20px;
   margin-bottom: 14px;
@@ -1413,7 +1491,7 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
 }
 .adhkar-tab {
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--card);
   color: var(--text-dark);
   border-radius: 999px;
   padding: 9px 16px;
@@ -1430,7 +1508,7 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
 .adhkar-list { display: grid; gap: 22px; max-width: 900px; margin: 0 auto; }
 
 .dhikr-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--gold);
   border-radius: var(--radius);
@@ -1449,8 +1527,8 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
   font-size: 1.45rem;
   line-height: 2.35;
   color: var(--green-dark);
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 10px;
   padding: 17px 21px;
   margin-bottom: 12px;
@@ -1478,13 +1556,13 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
   cursor: pointer;
   transition: transform .09s, background .2s;
 }
-.dhikr-counter:hover { background: var(--green-dark); }
+.dhikr-counter:hover { background: var(--green-deep); }
 .dhikr-counter:active { transform: scale(.94); }
 .dhikr-of { font-size: .82rem; opacity: .8; margin-inline-start: 3px; }
 .dhikr-when { flex: 1; font-size: .86rem; line-height: 1.75; min-width: 160px; }
 .dhikr-reset {
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--card);
   color: var(--text-muted);
   border-radius: 999px;
   width: 38px; height: 38px;
@@ -1529,7 +1607,7 @@ html.lang-ar .life-sources ul { padding-left: 0; padding-right: 20px; }
 .story-list { display: grid; gap: 26px; max-width: 880px; margin: 0 auto; }
 
 .story-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--gold);
   border-radius: var(--radius);
@@ -1674,8 +1752,8 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 }
 
 .story-lesson {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 10px;
   padding: 16px 20px;
   margin-bottom: 14px;
@@ -1708,7 +1786,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 @media (max-width: 640px)  { .recitations-grid { grid-template-columns: 1fr; gap: 20px; } }
 
 .rec-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -1788,7 +1866,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
   transition: transform .2s ease, background .2s ease;
   pointer-events: none;
 }
-.rec-player:hover .rec-play { transform: translate(-50%, -50%) scale(1.09); background: #fff; }
+.rec-player:hover .rec-play { transform: translate(-50%, -50%) scale(1.09); background: var(--card); }
 .rec-player:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
 /* Shorts are tall. When the row holds them, the players become 9:16 and the
@@ -1854,8 +1932,8 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
   font-weight: 700;
   letter-spacing: .3px;
   color: #8a6a12;
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 999px;
   padding: 5px 15px;
   display: flex;
@@ -1987,7 +2065,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 }
 
 .hadith-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid rgba(216,232,221,0.4);
   border-radius: var(--radius);
   padding: 28px;
@@ -2069,7 +2147,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 }
 
 .theme-card {
-  background: var(--white);
+  background: var(--card);
   border-left: 5px solid var(--green);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -2202,7 +2280,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 .situation-box {
   max-width: 860px;
   margin: 0 auto;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 34px;
@@ -2289,7 +2367,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
   border-radius: 10px;
   font-family: inherit;
   font-size: 0.92rem;
-  background: #fff;
+  background: var(--card);
 }
 
 .mic-status {
@@ -2344,7 +2422,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 }
 
 .course-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid rgba(216,232,221,0.4);
   border-radius: var(--radius);
   overflow: hidden;
@@ -2360,7 +2438,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 }
 
 .course-card .course-head {
-  background: linear-gradient(135deg, #0d3a1a, var(--green-dark) 40%, #1a5c32);
+  background: linear-gradient(135deg, #0d3a1a, var(--green-deep) 40%, #1a5c32);
   color: var(--white);
   padding: 28px;
   position: relative;
@@ -2443,7 +2521,7 @@ html.lang-ar .story-plain-list li { font-family: 'Amiri', serif; font-size: 1.08
 }
 
 .login-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
@@ -2579,7 +2657,7 @@ footer {
   font-family: inherit;
   font-size: 0.86rem;
   max-width: 260px;
-  background: #fff;
+  background: var(--card);
 }
 
 .voice-bar .voice-test {
@@ -2593,7 +2671,7 @@ footer {
   cursor: pointer;
 }
 
-.voice-bar .voice-test:hover { background: var(--green-dark); }
+.voice-bar .voice-test:hover { background: var(--green-deep); }
 .voice-bar .voice-hint { color: var(--text-muted); font-size: 0.8rem; }
 
 .voice-bar-warn {
@@ -2671,7 +2749,7 @@ footer {
 
 .cat-chips .chip {
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--card);
   color: var(--text-dark);
   border-radius: 999px;
   padding: 8px 16px;
@@ -2691,7 +2769,7 @@ footer {
 }
 
 .sunnah-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid rgba(216,232,221,.6);
   border-left: 5px solid var(--gold);
   border-radius: var(--radius);
@@ -2862,7 +2940,7 @@ html.lang-ar .en-only { display: none !important; }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: var(--card);
     flex-direction: column;
     align-items: flex-start;
     padding: 16px 24px;
@@ -2892,7 +2970,7 @@ html.lang-ar .en-only { display: none !important; }
   padding: 54px 0 58px;
 }
 .fb-form {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 26px;
@@ -2939,7 +3017,7 @@ html.lang-ar .en-only { display: none !important; }
   border-radius: 8px;
   font-family: inherit;
   font-size: .92rem;
-  background: #fff;
+  background: var(--card);
 }
 .fb-form input:focus,
 .fb-form textarea:focus { outline: 2px solid var(--green); outline-offset: 1px; }
@@ -2967,7 +3045,7 @@ html.lang-ar .en-only { display: none !important; }
 .fb-admin-count { font-size: .84rem; color: var(--text-muted); margin-bottom: 10px; }
 .fb-admin-list { display: grid; gap: 12px; }
 .fb-admin-item {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 4px solid var(--green);
   border-radius: 10px;
@@ -2986,7 +3064,7 @@ html.lang-ar .en-only { display: none !important; }
 
 /* ============ What the scholars explained ============ */
 .ruling-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--green-dark);
   border-radius: var(--radius);
@@ -3017,8 +3095,8 @@ html.lang-ar .en-only { display: none !important; }
   font-family: 'Amiri', serif;
   font-size: 1.2rem; line-height: 2.15;
   color: var(--green-dark);
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 9px;
   padding: 13px 16px;
   margin-bottom: 7px;
@@ -3077,7 +3155,7 @@ html.lang-ar .en-only { display: none !important; }
 /* ============ The scholars and their books ============ */
 .scholar-list { display: grid; gap: 18px; max-width: 900px; margin: 22px auto 0; }
 .scholar-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--gold);
   border-radius: var(--radius);
@@ -3126,7 +3204,7 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 /* ============ Reader sign-in, and the saved verse ============ */
 .reader-box { max-width: 900px; margin: 0 auto 6px; }
 .reader-out, .reader-in {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--green);
   border-radius: var(--radius);
@@ -3186,7 +3264,7 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 .courses-soon {
   max-width: 720px;
   margin: 0 auto;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -3277,7 +3355,7 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 }
 
 .rv-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid #b5541f;
   border-radius: var(--radius);
@@ -3294,8 +3372,8 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
   font-size: 1.3rem;
   line-height: 2.2;
   color: var(--green-dark);
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 10px;
   padding: 15px 18px;
   margin: 14px 0;
@@ -3327,8 +3405,8 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 
 /* The law — the Quran, so it gets the gold. */
 .rv-law {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: var(--radius);
   padding: 22px 26px;
   margin-bottom: 20px;
@@ -3353,7 +3431,7 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 /* Imam Malik's sentence, with the warning that it is HIS and not a hadith —
    it is quoted as a hadith constantly, so the warning is not a footnote. */
 .rv-malik {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--gold);
   border-radius: var(--radius);
@@ -3373,7 +3451,7 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 /* The steps — the part meant to be acted on. */
 .rv-steps { display: grid; gap: 18px; }
 .rv-step {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--green);
   border-radius: var(--radius);
@@ -3520,7 +3598,7 @@ html.lang-ar .rv-malik { border-left: 1px solid var(--border); border-right: 5px
   gap: 14px;
 }
 .fig-col {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 11px;
   padding: 15px 17px;
@@ -3566,7 +3644,7 @@ html.lang-ar .rv-malik { border-left: 1px solid var(--border); border-right: 5px
 .fig-table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
+  background: var(--card);
   border-radius: 11px;
   overflow: hidden;
   font-size: .9rem;
@@ -3604,8 +3682,8 @@ html.lang-ar .rv-malik { border-left: 1px solid var(--border); border-right: 5px
 .fig-num-fixed .fig-note { color: #8a3d1f; }
 
 .fig-footnote {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 10px;
   padding: 12px 15px;
   margin-top: 14px;
@@ -3669,7 +3747,7 @@ html.lang-ar .rv-malik { border-left: 1px solid var(--border); border-right: 5px
 .full-life > summary:hover { background: var(--green-light); }
 .full-life > summary .ar-only { font-family: 'Amiri', serif; font-size: 1.04rem; }
 .full-life[open] > summary { border-bottom: 1px solid var(--border); background: var(--green-light); }
-.full-life-body { padding: 16px 18px; background: #fff; }
+.full-life-body { padding: 16px 18px; background: var(--card); }
 .life-part { margin-bottom: 16px; }
 .life-part:last-of-type { margin-bottom: 0; }
 .life-part-head {
@@ -3754,7 +3832,7 @@ html.lang-ar .terms-head { font-family: 'Amiri', serif; font-size: 1.05rem; }
 
 /* ---- The summary: what / when / where ---- */
 .gold-overview {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--green-dark);
   border-radius: var(--radius);
@@ -3795,8 +3873,8 @@ html.lang-ar .terms-head { font-family: 'Amiri', serif; font-size: 1.05rem; }
   display: flex;
   gap: 13px;
   align-items: flex-start;
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 12px;
   padding: 15px 17px;
   line-height: 1.8;
@@ -3908,8 +3986,8 @@ html.lang-ar .gold-overview { border-left: 1px solid var(--border); border-right
 
 /* ---- Why the peak happened ---- */
 .gold-root {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-left: 5px solid var(--gold);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -3962,7 +4040,7 @@ html.lang-ar .gold-overview { border-left: 1px solid var(--border); border-right
 
 .gold-list { display: grid; gap: 22px; }
 .gold-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--gold);
   border-radius: var(--radius);
@@ -4095,7 +4173,7 @@ html.lang-ar .gold-today-list { line-height: 2; }
   line-height: 1.95;
 }
 .gold-taken {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--green-dark);
   border-radius: var(--radius);
@@ -4106,8 +4184,8 @@ html.lang-ar .gold-today-list { line-height: 2; }
 .gold-taken h3 { color: var(--green-dark); font-size: 1.18rem; margin: 0 0 2px; line-height: 1.45; }
 .gold-taken .ar-head { font-size: 1.28rem; margin-bottom: 14px; }
 .gold-taken-close {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: var(--radius);
   padding: 24px 26px;
   font-weight: 500;
@@ -4129,7 +4207,7 @@ html.lang-ar .gold-today-list { line-height: 2; }
 .gc-lead .gold-body-ar p { font-size: 1.16rem; line-height: 2.25; }
 
 .gc-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-left: 5px solid var(--green-dark);
   border-radius: var(--radius);
@@ -4157,8 +4235,8 @@ html.lang-ar .gold-today-list { line-height: 2; }
 
 /* A verse or hadith lifted out of the paragraph. */
 .gc-quote {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-inline-start: 5px solid var(--gold);
   border-radius: 12px;
   padding: 20px 24px;
@@ -4343,7 +4421,7 @@ html.lang-ar .gc-card { border-left: 1px solid var(--border); border-right: 5px 
 
 /* ---- The link onward to the way back ---- */
 .gold-next {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -4358,7 +4436,7 @@ html.lang-ar .gc-card { border-left: 1px solid var(--border); border-right: 5px 
 html.lang-ar .gold-card,
 html.lang-ar .gold-root { border-left: 1px solid var(--border); border-right: 5px solid var(--gold); }
 html.lang-ar .gold-taken { border-left: 1px solid var(--border); border-right: 5px solid var(--green-dark); }
-html.lang-ar .gold-root { border-left-color: #f0e4bd; }
+html.lang-ar .gold-root { border-left-color: var(--cream-line); }
 
 @media (max-width: 640px) {
   .gold-card, .gold-taken, .gold-root, .gold-next { padding: 22px 18px; }
@@ -4452,7 +4530,7 @@ html.lang-ar .gold-root { border-left-color: #f0e4bd; }
 
 /* --- The numbered steps on the revival section. --- */
 .rv-step-num {
-  background: linear-gradient(145deg, var(--green), var(--green-dark));
+  background: linear-gradient(145deg, var(--green), var(--green-deep));
   box-shadow: 0 2px 8px rgba(20,83,45,.28);
 }
 
@@ -4520,7 +4598,7 @@ html.lang-ar .rv-ar p {
 
 /* ---- The opening section on the page ---- */
 .tad-intro {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 30px 32px;
@@ -4791,7 +4869,7 @@ html.lang-ar .page-toc a { font-family: 'Amiri', serif; font-size: 1.05rem; }
 
 /* ---- One word ---- */
 .tad-word {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 9px;
   padding: 14px 18px;
@@ -4907,7 +4985,7 @@ html.lang-ar .page-toc a { font-family: 'Amiri', serif; font-size: 1.05rem; }
    border-inline-start so it follows the text direction in Arabic.
    ============================================================ */
 .enrol-box {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 4px solid var(--green);
   border-radius: var(--radius);
@@ -5091,7 +5169,7 @@ html.lang-ar .page-toc a { font-family: 'Amiri', serif; font-size: 1.05rem; }
 }
 .stat:hover,
 .stat:focus-visible {
-  background: var(--white);
+  background: var(--card);
   border-color: var(--border);
   box-shadow: var(--shadow);
   transform: translateY(-3px);
@@ -5124,7 +5202,7 @@ html.lang-ar .stat-label { font-family: 'Amiri', serif; font-size: .95rem; }
 .tadabbur-feature {
   background:
     radial-gradient(1200px 400px at 50% -10%, rgba(30,126,69,.07), transparent 70%),
-    var(--white);
+    var(--card);
   padding: 68px 0;
 }
 .tf-head { text-align: center; max-width: 880px; margin: 0 auto 32px; }
@@ -5178,7 +5256,7 @@ html.lang-ar .tf-example-label { text-transform: none; letter-spacing: 0; }
   margin-bottom: 16px;
 }
 .tf-why {
-  background: var(--white);
+  background: var(--card);
   border-radius: 10px;
   padding: 16px 18px;
   border: 1px solid var(--border);
@@ -5247,7 +5325,7 @@ html[dir="rtl"] .iitw-progress-fill { transform-origin: right center; }
   height: 46px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: var(--white);
+  background: var(--card);
   color: var(--green-dark);
   font-size: 1.25rem;
   line-height: 1;
@@ -5558,7 +5636,7 @@ html.lang-ar .gd-answer-label { text-transform: none; letter-spacing: 0; font-si
 .gd-answer-main { font-size: 1.06rem; line-height: 1.95; margin: 0 0 12px; }
 html.lang-ar .gd-answer-main { font-family: 'Amiri', serif; font-size: 1.16rem; line-height: 2.1; }
 .gd-answer-more {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px 16px;
@@ -5592,7 +5670,7 @@ html.lang-ar .gd-answer-more { font-family: 'Amiri', serif; line-height: 2.1; }
   max-width: 560px;
   margin-inline: auto;
   padding: 14px 16px;
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-xl);
@@ -5654,7 +5732,7 @@ html.lang-ar .iitw-install-sub { font-family: 'Amiri', serif; font-size: .95rem;
   font-size: .85rem;
   font-weight: 600;
   color: var(--green);
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 5px 13px;
@@ -5664,7 +5742,7 @@ html.lang-ar .wird-streak { font-family: 'Amiri', serif; font-size: .98rem; }
 .wird-head h2 { color: var(--green-dark); margin: 12px 0 8px; font-size: 1.5rem; }
 .wird-head p { line-height: 1.9; margin: 0 0 8px; }
 .wird-hadith {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 12px 15px;
@@ -5737,7 +5815,7 @@ html.lang-ar .wird-progress-t { font-family: 'Amiri', serif; font-size: .95rem; 
   flex-direction: column;
   gap: 3px;
   text-align: start;
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 16px;
@@ -5822,7 +5900,7 @@ html.lang-ar .iitw-ios-steps li { font-family: 'Amiri', serif; font-size: 1rem; 
 .offline-box {
   max-width: 760px;
   margin: 14px auto 0;
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 18px;
@@ -5931,7 +6009,7 @@ html.lang-ar .wird-streak-box.tier-4 .wird-ms-t { font-size: 1.5rem; }
   width: 34px; height: 34px;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   font-size: 1.05rem;
   cursor: default;
@@ -5950,7 +6028,7 @@ html.lang-ar .wird-streak-box.tier-4 .wird-ms-t { font-size: 1.5rem; }
 .daily-card {
   max-width: 760px;
   margin-inline: auto;
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-inline-start: 5px solid var(--green);
   border-radius: var(--radius);
@@ -5974,7 +6052,7 @@ html.lang-ar .wird-streak-box.tier-4 .wird-ms-t { font-size: 1.5rem; }
 }
 .daily-dash.tier-3 { background: linear-gradient(160deg, #f6fbf7, #dff0e5); }
 .daily-dash.tier-4 {
-  background: linear-gradient(160deg, #fffdf3, #f8efd0);
+  background: linear-gradient(160deg, var(--cream), #f8efd0);
   border-color: #e8d9a4;
 }
 
@@ -6006,7 +6084,7 @@ html.lang-ar .daily-hero-n { font-family: 'Amiri', serif; font-size: 3.6rem; }
   width: 34px; height: 34px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  background: var(--white);
+  background: var(--card);
   border: 2px solid var(--border);
   color: var(--white);
   font-size: .95rem;
@@ -6085,7 +6163,7 @@ html.lang-ar .daily-streak-l { font-family: 'Amiri', serif; font-size: .88rem; }
   transition: var(--transition);
 }
 .daily-item:hover { border-color: var(--green); box-shadow: var(--shadow-sm); }
-.daily-item.is-checked { background: var(--white); opacity: .72; }
+.daily-item.is-checked { background: var(--card); opacity: .72; }
 .daily-item.is-checked .daily-what { text-decoration: line-through; }
 
 /* The tick. Big enough to hit with a thumb. */
@@ -6094,7 +6172,7 @@ html.lang-ar .daily-streak-l { font-family: 'Amiri', serif; font-size: .88rem; }
   width: 30px; height: 30px;
   border-radius: 9px;
   border: 2px solid var(--green);
-  background: var(--white);
+  background: var(--card);
   color: var(--white);
   font-size: 1rem; font-weight: 700; line-height: 1;
   cursor: pointer;
@@ -6148,7 +6226,7 @@ html.lang-ar .daily-niyyah, html.lang-ar .daily-all { font-family: 'Amiri', seri
 .jr-phase {
   margin: 34px 0 16px;
   padding: 16px 20px;
-  background: var(--green-dark);
+  background: var(--green-deep);
   color: #fff;
   border-radius: 12px;
 }
@@ -6158,7 +6236,7 @@ html.lang-ar .jr-phase p { font-size: 1.05rem; line-height: 1.95; }
 .jr-phase-ico { font-size: 1.3rem; }
 
 .jr-card {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px 26px;
@@ -6276,8 +6354,8 @@ html.lang-ar .mis-claim-label {
 
 /* The context strip: before / quoted / after. */
 .mis-ctx {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 11px;
   padding: 14px 17px;
   margin: 14px 0 4px;
@@ -6425,7 +6503,7 @@ html.lang-ar .tad-tense p { font-family: 'Amiri', serif; font-size: 1.1rem; line
 
 /* The form itself — the Arabic in it is the subject of the sentence, so it
    is set larger than the prose around it. */
-.tad-tense-form { background: #fff; border-radius: 9px; padding: 11px 14px; }
+.tad-tense-form { background: var(--card); border-radius: 9px; padding: 11px 14px; }
 .tad-tense-form p { font-size: .96rem; }
 html.lang-ar .tad-tense-form p { font-size: 1.14rem; }
 
@@ -6441,8 +6519,8 @@ html.lang-ar .tad-tense-form p { font-size: 1.14rem; }
 
 /* The matching verse, where the point IS the pair. */
 .tad-tense-pair {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 9px;
   padding: 12px 15px;
 }
@@ -6492,7 +6570,7 @@ html.lang-ar .gd-jump-head {
 .gd-jump-links { display: flex; flex-wrap: wrap; gap: 8px 10px; }
 .gd-jump-links a {
   display: inline-block;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 7px 15px;
@@ -6506,7 +6584,7 @@ html.lang-ar .gd-jump-head {
 .gd-jump-links a:hover { background: var(--green-light); border-color: var(--green); }
 html.lang-ar .gd-jump-links a { font-family: 'Amiri', serif; font-size: 1.02rem; }
 .gd-jump-links a.gd-jump-hot {
-  background: var(--green-dark);
+  background: var(--green-deep);
   border-color: var(--green-dark);
   color: #fff;
 }
@@ -6520,7 +6598,7 @@ html.lang-ar .gd-jump-links a { font-family: 'Amiri', serif; font-size: 1.02rem;
 /* The section list inside the honest empty answer. */
 .gd-empty-links {
   margin-top: 14px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 11px;
   padding: 13px 16px;
@@ -6598,8 +6676,8 @@ html.lang-ar .gd-sh-lead { font-family: 'Amiri', serif; font-size: 1.3rem; line-
 html.lang-ar .gd-selfharm p { font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2.15; }
 
 .gd-sh-verse {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 11px;
   padding: 15px 18px;
   margin: 16px 0;
@@ -6619,8 +6697,8 @@ html.lang-ar .gd-selfharm p { font-family: 'Amiri', serif; font-size: 1.1rem; li
    the two texts it carries set apart like the verse in the box above. */
 .gd-grief { margin-bottom: 22px; }
 .gd-grief-part {
-  background: #fffdf3;
-  border: 1px solid #f0e4bd;
+  background: var(--cream);
+  border: 1px solid var(--cream-line);
   border-radius: 11px;
   padding: 13px 16px 8px;
   margin: 14px 0;
@@ -6666,7 +6744,7 @@ html.lang-ar .gd-grief-part h4 { font-family: 'Amiri', serif; font-size: 1.15rem
   border: 1px solid var(--line, #e3e8e3);
   border-inline-start: 5px solid var(--green, #2f7d4f);
   border-radius: 14px; padding: 20px 22px; margin: 0 0 22px;
-  background: #fff;
+  background: var(--card);
 }
 .em-phase.em-ind { border-inline-start-color: #b8860b; }
 .em-phase.em-unk { border-inline-start-color: #8a8f8a; }
@@ -6717,7 +6795,7 @@ html.lang-ar .gd-grief-part h4 { font-family: 'Amiri', serif; font-size: 1.15rem
 
 .em-life, .em-hold, .em-closing {
   border: 1px solid var(--line, #e3e8e3); border-radius: 14px;
-  padding: 20px 22px; margin: 26px 0 0; background: #fff;
+  padding: 20px 22px; margin: 26px 0 0; background: var(--card);
 }
 .em-hold { background: #f2f8f3; border-color: #cfe3d4; }
 .em-closing { background: var(--soft, #f7faf7); }
@@ -6756,7 +6834,7 @@ html.lang-ar .gd-grief-part h4 { font-family: 'Amiri', serif; font-size: 1.15rem
 /* ---------- Verify: the authenticity checker ---------- */
 .vf-intro { max-width: 780px; margin: 0 auto 22px; text-align: center; color: var(--text-muted, #55605a); }
 .vf-intro p { margin: 0 0 10px; line-height: 1.75; }
-.vf-box { max-width: 780px; margin: 0 auto 26px; background: #fff;
+.vf-box { max-width: 780px; margin: 0 auto 26px; background: var(--card);
   border: 1px solid #dfe8e2; border-radius: 14px; padding: 18px 18px 14px;
   box-shadow: 0 2px 10px rgba(20,60,40,.06); }
 .vf-label { display: block; font-weight: 700; color: var(--green-dark, #14532d); margin-bottom: 8px; }
@@ -6773,10 +6851,10 @@ html.lang-ar #vfInput { font-family: 'Amiri', serif; font-size: 1.18rem; directi
   padding: 5px 12px; cursor: pointer; font-family: 'Amiri', serif; font-size: 1rem; }
 .vf-ex:hover { background: #e0ece5; }
 .vf-card { max-width: 780px; margin: 0 auto 16px; border-radius: 14px; padding: 17px 19px;
-  border: 1px solid #dfe8e2; background: #fff; }
+  border: 1px solid #dfe8e2; background: var(--card); }
 .vf-quran { border-inline-start: 5px solid #b8860b; background: #fffdf5; }
 .vf-site  { border-inline-start: 5px solid var(--green, #2f7d4f); background: #f4faf6; }
-.vf-col   { border-inline-start: 5px solid var(--green, #2f7d4f); background: #fff; }
+.vf-col   { border-inline-start: 5px solid var(--green, #2f7d4f); background: var(--card); }
 .vf-none  { border-inline-start: 5px solid #b06a2c; background: #fdf7f1; }
 /* Words found in a summary this site wrote — deliberately NOT green. It is
    not an identification, and it must not look like one. */
@@ -6834,7 +6912,7 @@ html.lang-ar #vfInput { font-family: 'Amiri', serif; font-size: 1.18rem; directi
    the whole page sideways, which is the documented scrollbar trap. */
 .wl-pop {
   position: absolute; z-index: 9000; max-width: min(340px, calc(100vw - 20px));
-  background: #fff; border: 1px solid #cfe0d5; border-radius: 12px;
+  background: var(--card); border: 1px solid #cfe0d5; border-radius: 12px;
   box-shadow: 0 8px 26px rgba(16,48,32,.18);
   padding: 13px 15px 12px; font-size: .95rem; line-height: 1.8;
 }
@@ -6894,7 +6972,7 @@ html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
 .pl-lead { color: var(--text-muted); margin-bottom: 14px; }
 .pl-ar { font-family: 'Amiri', serif; font-size: 1.08rem; line-height: 1.95;
   color: var(--green-dark); }
-.pl-card { background: #fff; border: 1px solid var(--border); border-radius: 14px;
+.pl-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
   padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow); }
 .pl-card-head { font-weight: 700; font-size: 1.06rem; color: var(--green-dark);
   margin-bottom: 10px; display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
@@ -6921,7 +6999,7 @@ html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
 
 /* the zakat arithmetic */
 .pl-sub { font-size: 1.1rem; color: var(--green-dark); margin: 0 0 11px; font-weight: 700; }
-.pl-block { background: #fff; border: 1px solid var(--border); border-radius: 14px;
+.pl-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px;
   padding: 18px 20px; margin-bottom: 16px; }
 /* The correction leads the section and must not look like a normal card —
    it is the part the reader most likely has wrong. */
@@ -7040,7 +7118,7 @@ html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
    hand-written topic pointed at one.
    ============================================================ */
 .gd-card-hit {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border, #e3ece6);
   border-radius: 14px;
   padding: 16px 18px;
@@ -7091,7 +7169,7 @@ html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
    Deliberately distinct from the tadabbur panel beside it: numbered
    movements down the left, so a reader can see at a glance that this is
    the surah in order rather than notes on scattered verses. */
-.rq-btn.rq-story.armed { background: var(--green-dark, #1f6b3a); color: #fff; }
+.rq-btn.rq-story.armed { background: var(--green-deep, #1f6b3a); color: #fff; }
 .story-panel { border-inline-start: 4px solid var(--gold, #b8892b); }
 .story-head {
   font-family: 'Amiri', serif; font-size: 1.35rem; font-weight: 700;
@@ -7114,7 +7192,7 @@ html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
 }
 .story-move-n {
   flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%;
-  background: var(--green-dark, #1f6b3a); color: #fff;
+  background: var(--green-deep, #1f6b3a); color: #fff;
   font-size: .8rem; line-height: 24px; text-align: center; font-weight: 700;
 }
 .story-range { font-size: .87rem; opacity: .8; margin-bottom: 8px; }
@@ -7159,7 +7237,7 @@ html.lang-ar .mis-say-body { font-family: 'Amiri', serif; font-size: 1.16rem; }
 }
 
 .mir-card {
-  background: #fff; border: 1px solid var(--border, #e4e4e4);
+  background: var(--card); border: 1px solid var(--border, #e4e4e4);
   border-inline-start: 5px solid #2f7d8c;
   border-radius: var(--radius, 12px);
   padding: 20px 22px; margin-bottom: 20px;
@@ -7390,7 +7468,7 @@ html.lang-ar .rg-full-btn { font-family: 'Amiri', serif; font-size: 1.05rem; }
 .rg-full-btn.armed { background: #8a5a1a; color: #fff; }
 .rg-full {
   margin-top: 12px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid #eadfc8;
   border-radius: 9px;
   padding: 14px 18px;
@@ -7465,13 +7543,13 @@ html.lang-ar .rg-intro-lead p { font-family: 'Amiri', serif; font-size: 1.1rem; 
   border-radius: 10px;
   font-size: 1rem;
   font-family: inherit;
-  background: #fff;
+  background: var(--card);
 }
 .qsearch-btn {
   padding: 11px 22px;
   border: none;
   border-radius: 10px;
-  background: var(--green-dark);
+  background: var(--green-deep);
   color: #fff;
   font-size: .95rem;
   font-weight: 600;
@@ -7482,7 +7560,7 @@ html.lang-ar .rg-intro-lead p { font-family: 'Amiri', serif; font-size: 1.1rem; 
 .qs-count { font-size: .9rem; color: var(--green-dark); margin-bottom: 10px; }
 .qs-note  { font-size: .95rem; color: var(--text-muted); }
 .qs-row {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border, #e4e4e4);
   border-radius: 12px;
   padding: 12px 14px;
@@ -7520,7 +7598,7 @@ html.lang-ar .rg-intro-lead p { font-family: 'Amiri', serif; font-size: 1.1rem; 
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 13px 15px;
@@ -7532,7 +7610,7 @@ html.lang-ar .rg-intro-lead p { font-family: 'Amiri', serif; font-size: 1.1rem; 
 .resume-chip:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
 /* The verse a signed-in reader chose on purpose, marked apart from the ones
    the site remembered by itself. */
-.resume-chip-saved { border-color: var(--gold); background: #fffdf3; }
+.resume-chip-saved { border-color: var(--gold); background: var(--cream); }
 .resume-ico { font-size: 1.5rem; line-height: 1; flex: 0 0 auto; }
 .resume-txt { display: flex; flex-direction: column; min-width: 0; }
 .resume-kind { font-size: .78rem; color: var(--text-muted); letter-spacing: .2px; }
@@ -7544,3 +7622,241 @@ html[dir="rtl"] .resume-go { transform: scaleX(-1); }
   .resume-row { grid-template-columns: 1fr; }
   #resume .container { padding-top: 18px; }
 }
+
+/* ============================================================
+   READING COMFORT — the two controls in the navigation (js/reading.js)
+   ============================================================ */
+.reading-tools { display: inline-flex; align-items: center; gap: 6px; margin-inline-end: 6px; }
+.reading-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--green-dark);
+  border-radius: 9px;
+  padding: 6px 10px;
+  font-size: .85rem;
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.reading-btn:hover { border-color: var(--green); background: var(--green-pale); }
+.reading-btn:disabled { opacity: .4; cursor: default; }
+.reading-theme { font-size: 1rem; padding: 5px 9px; }
+@media (max-width: 900px) {
+  /* In the phone's drawer the nav is a column; the three controls stay on
+     one line so they do not take three rows of it. */
+  .reading-tools { margin: 6px 0; }
+}
+
+/* The reading controls sit in the header bar itself, so they are reachable
+   on a phone without opening the menu. On a wide screen they go to the end
+   of the row, after the navigation. */
+.nav-wrap .reading-tools { margin-inline-start: auto; }
+@media (min-width: 901px) {
+  .nav-wrap .reading-tools { order: 3; margin-inline-start: 10px; }
+  .nav-wrap nav.main-nav { order: 2; }
+}
+
+/* The grading chip on a hadith: green when it is in the two Sahihs, amber
+   otherwise. These were written as inline styles, where no theme can reach
+   them; they are classes now (hadith.html, guidance.html). */
+.topic-tag.tag-sahih { background: #e6f4ea; color: #1e7e45; }
+.topic-tag.tag-other { background: #fff8e1; color: #b8860b; }
+:root[data-theme="dark"] .topic-tag.tag-sahih { background: #16301f; color: #7fc99b; }
+:root[data-theme="dark"] .topic-tag.tag-other { background: #2e2713; color: #e0bb5c; }
+/* The play button over a recitation thumbnail is a white disc. */
+:root[data-theme="dark"] .rec-play { background: rgba(22, 33, 28, 0.92); color: var(--green-dark); }
+
+/* The floating table of contents on the long pages is frosted white. */
+:root[data-theme="dark"] .page-toc { background: rgba(22, 33, 28, 0.96); border-color: var(--border); }
+
+/* ===== GENERATED: dark tints for the stylesheet's pale surfaces ===== */
+/* Written by scratchpad/gen_dark.py from the LIGHT rules above, so a pale
+   box added later is one run away from having its dark twin. Each rule keeps
+   the original hue and drops its lightness: a cream proof box stays cream, a
+   red warning stays red, and the ink on them is lifted to match. Rules
+   inside @media blocks are deliberately skipped — a width-specific colour
+   must not become the colour at every width. */
+:root[data-theme="dark"] :is(.rq-stop:hover) { background: #1f1c1c; }
+:root[data-theme="dark"] :is(.judge-note) { background: #261c15; }
+:root[data-theme="dark"] :is(.judge-note-head) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.life-toggle:hover) { background: #262215; }
+:root[data-theme="dark"] :is(.life-full) { background: #262115; }
+:root[data-theme="dark"] :is(.dhikr-strength) { background: #15261a; }
+:root[data-theme="dark"] :is(/* Classical words explained, sitting above the lesson. */ .story-gloss) { background: #17241a; }
+:root[data-theme="dark"] :is(/* The number inside the traditional end-of-ayah rosette, on the Arabic line. */ .ayah-end) { background: #262215; }
+:root[data-theme="dark"] :is(.themes-col.warning h2) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.theme-card.warning h3) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.theme-card.warning .refs) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.theme-card.warning .refs span) { background: #261b15; }
+:root[data-theme="dark"] :is(.voice-bar-warn) { background: #262215; }
+:root[data-theme="dark"] :is(.fb-note) { background: #15261a; }
+:root[data-theme="dark"] :is(/* ============ Staff: the feedback panel ============ */ .fb-admin-note) { background: #261c15; }
+:root[data-theme="dark"] :is(.ruling-scholar) { background: #17241b; }
+:root[data-theme="dark"] :is(.ruling-diff) { background: #261c15; }
+:root[data-theme="dark"] :is(.ruling-diff-head) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.scholar-books li) { background: #17241b; }
+:root[data-theme="dark"] :is(.reader-honest) { background: #261c15; }
+:root[data-theme="dark"] :is(.reader-msg.warn) { background: #261a15; color: #e0bcae; }
+:root[data-theme="dark"] :is(.reader-msg.ok) { background: #15261a; }
+:root[data-theme="dark"] :is(/* The Save button in the reciter bar */ .rq-btn.rq-save) { background: #262215; color: #e0d2ae; }
+:root[data-theme="dark"] :is(.rq-save-note.ok) { background: #15261a; }
+:root[data-theme="dark"] :is(.rq-save-note.warn) { background: #261a15; color: #e0bcae; }
+:root[data-theme="dark"] :is(/* ============ Staff: the course editor ============ */ .staff-panel .req) { background: #261a15; color: #e0bcae; }
+:root[data-theme="dark"] :is(.course-row-series.standalone) { background: #1f1c1c; }
+:root[data-theme="dark"] :is(.rv-malik-warn) { background: #261d15; }
+:root[data-theme="dark"] :is(.rv-malik-warn p) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.story-section-count) { color: #e0d2ae; }
+:root[data-theme="dark"] :is(.fig-col-bad .fig-col-head, .fig-col-worse .fig-col-head) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.fig-num-fixed) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.fig-num-fixed .fig-note) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.match-mention) { background: #261d15; color: #e0bcae; }
+:root[data-theme="dark"] :is(/* ============ Words explained ============    A vocabulary box on every ruling. Styled to read as a helpful aside    rather than as part of the ruling itself — the definitions describe what    a word means, they are never the ruling. */ .terms-box) { background: #181526; }
+:root[data-theme="dark"] :is(.terms-head) { color: #b8b0dd; }
+:root[data-theme="dark"] :is(.term-word .en-only) { color: #b8b0dd; }
+:root[data-theme="dark"] :is(.tl-turn .tl-year) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.tl-note) { background: #261d15; color: #e0bcae; }
+:root[data-theme="dark"] :is(/* The Latinised name is given its own badge because it IS the point of the    page: the knowledge crossed over and the man's identity did not. */ .gold-latin) { background: #262115; color: #e0d2ae; }
+:root[data-theme="dark"] :is(.gold-latin strong) { color: #e0d2ae; }
+:root[data-theme="dark"] :is(/* "What happened to it" is the sentence the reader came for, so it is boxed    rather than buried at the end of a paragraph. */ /* "What you still use today" — the concrete answer on every Golden Age card.    Green like the plain-words box, because it does the same job: it is the part    a reader who is not a historian is actually looking for. */ .gold-today) { background: #15261a; }
+:root[data-theme="dark"] :is(.gold-after) { background: #261d15; }
+:root[data-theme="dark"] :is(.gold-after-head) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.gc-recite-head) { color: #e0d2ae; }
+:root[data-theme="dark"] :is(/* --- The Latinised-name badge is the point of the Golden Age        cards, so it earns a touch of warmth on hover. --- */ @media (hover: hover)) { background: #262115; }
+:root[data-theme="dark"] :is(/* ---- The button in the reader bar ---- */ .rq-btn.rq-tad) { background: #1b1526; color: #bfb5d9; }
+:root[data-theme="dark"] :is(.tad-covered) { background: #1b1526; }
+:root[data-theme="dark"] :is(/* ---- Inside the surah reader ---- */ .tad-surah) { background: #1b1526; }
+:root[data-theme="dark"] :is(.tad-surah-head, .tad-ayah-head) { color: #bfb5d9; }
+:root[data-theme="dark"] :is(/* Which surah and verse this panel belongs to. Sits directly under the panel    heading, in the tadabbur purple rather than the site green, so it reads as    a locator for the box and not as another piece of content. */ .tad-which) { background: #1b1526; color: #bfb5d9; }
+:root[data-theme="dark"] :is(.sg-happened) { background: #15261a; color: #aee0bd; }
+:root[data-theme="dark"] :is(.sg-notyet) { background: #261c15; color: #e0c3ae; }
+:root[data-theme="dark"] :is(.sg-mixed) { background: #151926; color: #aeb6e0; }
+:root[data-theme="dark"] :is(.sg-disputed) { background: #1c1526; color: #c3b5d9; }
+:root[data-theme="dark"] :is(/* The dating line. Its own box because the date is a HISTORICAL claim even    when the hadith above it is in the two Sahihs — the reader has to be able    to see that the two rest on different kinds of evidence. */ .sg-when) { background: #181526; }
+:root[data-theme="dark"] :is(.sg-ten .sg-ten-mark) { background: #1b1526; }
+:root[data-theme="dark"] :is(.page-toc a) { background: #1b1526; }
+:root[data-theme="dark"] :is(/* The verse numbers in the coverage line are buttons that jump to the    verse. Sized to stay comfortably tappable on a phone — this is the    control that makes a verse like 2:255 reachable at all, so it must    not become a 10px target. */ .tad-jump) { background: #1b1526; }
+:root[data-theme="dark"] :is(.tad-ayah) { background: #1a1526; }
+:root[data-theme="dark"] :is(/* ---- The verse that completes this one ---- */ .tad-link) { background: #262215; }
+:root[data-theme="dark"] :is(/* ---- Where the scholars differed ---- */ .tad-differ) { background: #261515; }
+:root[data-theme="dark"] :is(.tad-differ-head) { color: #ddb1b1; }
+:root[data-theme="dark"] :is(.tad-badge.t-hadith) { background: #151d26; color: #aec9e0; }
+:root[data-theme="dark"] :is(.tad-badge.t-lugha) { background: #1b1526; color: #bfb5d9; }
+:root[data-theme="dark"] :is(.tad-badge.t-tafsir) { background: #261e15; color: #e0cbae; }
+:root[data-theme="dark"] :is(.tad-badge.t-qiraah) { background: #262215; color: #e0d2ae; }
+:root[data-theme="dark"] :is(.tad-badge.t-ikhtilaf) { background: #261515; color: #ddb1b1; }
+:root[data-theme="dark"] :is(.tad-badge.t-note) { background: #1b1f1d; }
+:root[data-theme="dark"] :is(/* The password warning. Deliberately loud — the owner asked that it be    unmistakable that this is NOT the reader's email password. */ .enrol-warn) { background: #262015; color: #e0d2ae; }
+:root[data-theme="dark"] :is(.tad-careful) { background: #261515; }
+:root[data-theme="dark"] :is(.tad-careful-label) { color: #ddb1b1; }
+:root[data-theme="dark"] :is(/* ---- "In plain words" — the ordinary-language box ----    Visually distinct from the sourced material above it so a reader can tell    at a glance that this is the explanation, not another citation. */ .tad-plain) { background: #151f26; }
+:root[data-theme="dark"] :is(.tad-plain-label) { color: #aecee0; }
+:root[data-theme="dark"] :is(/* ---- "What people get wrong here" ----    Louder than the other boxes on purpose: this is the reason the Tadabbur    section exists — a verse that corrects something the reader was taught    and never questioned. Not a footnote. */ .tad-misread) { background: #261c15; }
+:root[data-theme="dark"] :is(.tad-misread-label) { color: #e0c4ae; }
+:root[data-theme="dark"] :is(/* The honest empty answer: gold rather than green, because it is telling the    reader the site does not have this — not giving them something. */ .gd-answer-empty) { background: #262215; }
+:root[data-theme="dark"] :is(/* The intention. Gold, above the buttons, and never collapsed into small    print — it is the point of the whole feature. */ .wird-niyyah) { background: #262215; color: #e0d5ae; }
+:root[data-theme="dark"] :is(.wird-streak-box.tier-2 .wird-milestone) { background: #15261a; }
+:root[data-theme="dark"] :is(.daily-niyyah) { background: #262215; color: #e0d5ae; }
+:root[data-theme="dark"] :is(/* "This part is not what you would expect" — the callout the owner asked for:    when something works the opposite way to how it does in this world (sweat    rising instead of running down, the verdict known from which hand the book    arrives in), say so explicitly instead of leaving the reader to notice. */ .jr-odd) { background: #262015; }
+:root[data-theme="dark"] :is(.jr-odd p) { color: #e0cfae; }
+:root[data-theme="dark"] :is(/* The claim, in the reader's own words. */ .mis-claim) { background: #261515; }
+:root[data-theme="dark"] :is(.mis-claim-label) { color: #e0b5ae; }
+:root[data-theme="dark"] :is(.mis-claim p) { color: #e0b5ae; }
+:root[data-theme="dark"] :is(/* ============ Why it is in this tense — لِمَ جاء بهذه الصيغة ============    guidance for the eye, on the Quran page's tadabbur panel.     The owner asked for this feature by name, and for one part of it in    particular: "what will change if we mentioned it in another phase?"    That question gets its own box (.tad-tense-if) with its own colour,    because it is the half that turns a grammar label into something a    reader can feel — and it is the half a skimming eye would otherwise    skip as more of the same paragraph.     Blue, deliberately: the plain-words box is green, the misread box is    amber, the differ box is grey. A fourth device needs a fourth colour    or the panel stops having any hierarchy at all. */ .tad-tense) { background: #151d26; }
+:root[data-theme="dark"] :is(.tad-tense-label) { color: #aec7e0; }
+:root[data-theme="dark"] :is(.tad-tense-head) { color: #aec6e0; }
+:root[data-theme="dark"] :is(/* "And if it said the other?" — the half the owner asked for by name. */ .tad-tense-if) { background: #262015; }
+:root[data-theme="dark"] :is(.tad-tense-if p) { color: #e0cfae; }
+:root[data-theme="dark"] :is(/* ============ Someone saying they want to harm themselves ============    The one box on this site that must not look like the others. Warm rather    than institutional, the human instruction first and largest, the verse    below it rather than above it, and no grading badge — a person in that    state is not being handed a citation to evaluate. */ .gd-selfharm) { background: #261a15; }
+:root[data-theme="dark"] :is(.gd-sh-label) { color: #e0bbae; }
+:root[data-theme="dark"] :is(.gd-sh-lead) { color: #e0bbae; }
+:root[data-theme="dark"] :is(.em-legend) { background: #172417; }
+:root[data-theme="dark"] :is(.em-when) { background: #172317; }
+:root[data-theme="dark"] :is(.em-ordnote) { background: #172417; }
+:root[data-theme="dark"] :is(.em-means) { background: #152618; }
+:root[data-theme="dark"] :is(.em-here) { background: #262115; }
+:root[data-theme="dark"] :is(.em-hold) { background: #152618; }
+:root[data-theme="dark"] :is(.em-closing) { background: #172417; }
+:root[data-theme="dark"] :is(/* The plain-words box on every part of the map. Same green family as the    plain boxes elsewhere on the site, so a reader who has learned to look    for the green box finds it here too. Placed at the TOP of each phase:    somebody who reads only these boxes still gets the whole map, in order. */ .em-plain) { background: #152619; }
+:root[data-theme="dark"] :is(/* ---------- Verify: the authenticity checker ---------- */ .vf-intro) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-label) { color: #aee0c2; }
+:root[data-theme="dark"] :is(.vf-mic-status) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-examples) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-ex) { background: #17241b; }
+:root[data-theme="dark"] :is(.vf-ex:hover) { background: #16241c; }
+:root[data-theme="dark"] :is(.vf-quran) { background: #262215; }
+:root[data-theme="dark"] :is(.vf-site) { background: #15261b; }
+:root[data-theme="dark"] :is(.vf-none) { background: #261d15; }
+:root[data-theme="dark"] :is(/* Words found in a summary this site wrote — deliberately NOT green. It is    not an identification, and it must not look like one. */ .vf-mention) { background: #171b24; }
+:root[data-theme="dark"] :is(.vf-verdict) { color: #aee0c2; }
+:root[data-theme="dark"] :is(.vf-none .vf-verdict) { color: #e0c4ae; }
+:root[data-theme="dark"] :is(.vf-mention .vf-verdict) { color: #c2c6cc; }
+:root[data-theme="dark"] :is(.vf-quran .vf-verdict) { color: #e0d3ae; }
+:root[data-theme="dark"] :is(.vf-ar) { color: #aee0c2; }
+:root[data-theme="dark"] :is(.vf-grade) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-note) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-searched) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-hint) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-deeprow p) { color: #c3cac7; }
+:root[data-theme="dark"] :is(/* The verdict is ONE card that updates as more collections are searched.    Printing a second identical not-found card underneath made the deep-search    button look broken — see the note in verify.html. A change to the same    block has to be visible, hence the brief highlight. */ .vf-searched) { background: #261f15; color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-searched strong) { color: #e0c4ae; }
+:root[data-theme="dark"] :is(.vf-related-head) { color: #aee0c2; }
+:root[data-theme="dark"] :is(.vf-related-note) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-card.vf-rel) { background: #15261b; }
+:root[data-theme="dark"] :is(.wl-x:hover) { color: #cac4c4; }
+:root[data-theme="dark"] :is(.wl-word) { color: #aee0c2; }
+:root[data-theme="dark"] :is(.wl-ar) { color: #becfc6; }
+:root[data-theme="dark"] :is(.wl-en) { color: #c3cbc6; }
+:root[data-theme="dark"] :is(.wl-quran) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.wl-none) { color: #c3cac7; }
+:root[data-theme="dark"] :is(.vf-explain-head) { color: #aec8e0; }
+:root[data-theme="dark"] :is(.vf-card.vf-exp) { background: #151e26; }
+:root[data-theme="dark"] :is(/* "If you have sixty seconds — say this." The section read as a page; this    is the version a person can actually use mid-conversation, so it sits at    the TOP of each subject and can be copied out of the page. */ .mis-say) { background: #262115; }
+:root[data-theme="dark"] :is(.mis-say-ar) { color: #aee0c2; }
+:root[data-theme="dark"] :is(.pl-proof) { background: #262215; }
+:root[data-theme="dark"] :is(.pl-note) { background: #171b24; }
+:root[data-theme="dark"] :is(/* The correction leads the section and must not look like a normal card —    it is the part the reader most likely has wrong. */ .pl-correct) { background: #261d15; }
+:root[data-theme="dark"] :is(.pl-correct .pl-sub) { color: #e0c4ae; }
+:root[data-theme="dark"] :is(.bs-tab:hover:not(.active)) { background: #15261a; }
+:root[data-theme="dark"] :is(/* ============================================================    WHAT IT MEANS — the explanation block on a curated hadith card.    Added because he asked for it: "some hadiths are hard to understand    based on just the words because it is using old Arabic words... make    sure that there's at least a short explanation. And an example."    Deliberately quieter than the hadith itself: the text is the evidence,    this is help with reading it.    ============================================================ */ .h-explain) { background: #152619; }
+:root[data-theme="dark"] :is(.h-explain p) { color: #cac4c4; }
+:root[data-theme="dark"] :is(.gd-card-hit p) { color: #cac4c4; }
+:root[data-theme="dark"] :is(/* ===== THE SHORT VERSION, at the top of a card =====    His request, in his words: "add a simple box... because some as you have    are somehow complicated and not easy to understand." So a card can open    with two or three very short sentences before its full explanation.    Warmer and heavier than .pl-plain so the eye lands on it first. */ .pl-simple) { background: #15261b; }
+:root[data-theme="dark"] :is(.pl-simple-label) { color: #aee0c0; }
+:root[data-theme="dark"] :is(.story-head) { color: #aee0c0; }
+:root[data-theme="dark"] :is(.story-move-head) { color: #aee0c0; }
+:root[data-theme="dark"] :is(.story-thread) { background: #15261b; }
+:root[data-theme="dark"] :is(.story-thread-label) { color: #aee0c0; }
+:root[data-theme="dark"] :is(/* ---- The 🔬 panel: the verse and what was found after it ----    Modelled on .story-panel. Logical properties only, so RTL needs    no separate rules — the trap that put the timeline dots on top    of the Arabic dates. The grade pill is the load-bearing piece    of design here: a reader must see "not established" before he    reads the card, not after. */ .rq-btn.rq-mir) { background: #152326; color: #aed8e0; }
+:root[data-theme="dark"] :is(.mir-head) { color: #aed8e0; }
+:root[data-theme="dark"] :is(.mir-notice) { background: #262115; color: #e0d1ae; }
+:root[data-theme="dark"] :is(.mir-card-not-established) { background: #261b15; }
+:root[data-theme="dark"] :is(.mir-card-head) { color: #aee0c0; }
+:root[data-theme="dark"] :is(.mir-strong) { background: #15261a; color: #aee0c0; }
+:root[data-theme="dark"] :is(.mir-partial) { background: #262015; }
+:root[data-theme="dark"] :is(.mir-not-established) { background: #261b15; color: #e0bcae; }
+:root[data-theme="dark"] :is(.mir-verse) { background: #15261b; color: #aee0c0; }
+:root[data-theme="dark"] :is(.mir-verse-en) { color: #cac4c4; }
+:root[data-theme="dark"] :is(.mir-block-head) { color: #aed8e0; }
+:root[data-theme="dark"] :is(.mir-classical) { background: #1a1526; }
+:root[data-theme="dark"] :is(.mir-classical .mir-block-head) { color: #bfb5d9; }
+:root[data-theme="dark"] :is(.mir-caution) { background: #261d15; color: #e0bcae; }
+:root[data-theme="dark"] :is(.mir-caution .mir-block-head) { color: #e0bcae; }
+:root[data-theme="dark"] :is(.mir-foot) { color: #cac4c4; }
+:root[data-theme="dark"] :is(/* ============================================================    AR-RAGHIB AL-ISFAHANI — the 📜 button in the surah reader (js/raghib.js)    ============================================================    Parchment and brown, so it never reads as the Tadabbur panel (purple) or    the story panel (green): this box is one named scholar's book, and the    reader should always know whose words they are reading. */ .rq-btn.rq-rg) { background: #262015; color: #e0caae; }
+:root[data-theme="dark"] :is(.rg-panel) { background: #262015; }
+:root[data-theme="dark"] :is(.rg-panel-head, .rg-ayah-head) { color: #e0caae; }
+:root[data-theme="dark"] :is(.rg-ayah) { background: #262115; }
+:root[data-theme="dark"] :is(.rg-h) { color: #e0caae; }
+:root[data-theme="dark"] :is(.rg-label) { color: #e0cbae; }
+:root[data-theme="dark"] :is(.rg-said) { background: #262015; }
+:root[data-theme="dark"] :is(.rg-plain) { background: #151f26; }
+:root[data-theme="dark"] :is(.rg-plain .rg-label) { color: #aecee0; }
+:root[data-theme="dark"] :is(.rg-link) { background: #262215; }
+:root[data-theme="dark"] :is(.rg-src a, .rg-full-page a) { color: #e0cbae; }
+:root[data-theme="dark"] :is(.rg-full-btn) { background: #262015; color: #e0caae; }
+:root[data-theme="dark"] :is(.rg-pg) { background: #262015; color: #e0cbae; }
+:root[data-theme="dark"] :is(.rg-retry) { background: #262015; color: #e0caae; }
+:root[data-theme="dark"] :is(.rg-full-note) { color: #e0caae; }
+:root[data-theme="dark"] :is(/* The verse the reader was sent to, marked for a moment so the eye finds    it — the reader scrolls it to the top, but a long verse can still leave    a person hunting for which one it was. */ .ayah-block.qs-hit) { background: #262215; }
+/* ===== END GENERATED ===== */

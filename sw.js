@@ -64,7 +64,7 @@ const PRECACHE_SHELL = [
   "./css/style.css",
   "./manifest.webmanifest",
   "./img/icon-192.png", "./img/favicon.png", "./img/logo-emblem.png",
-  "./js/main.js", "./js/i18n.js",
+  "./js/main.js", "./js/i18n.js", "./js/reading.js",
   /* The Quran itself. 2.2MB, and the single most important file here —
      without it a surah cannot open offline, which is the exact failure
      this whole arrangement exists to prevent. */
@@ -105,7 +105,10 @@ const PRECACHE_CONTENT = [
   "./js/tadabbur-tense.js", "./js/verify.js", "./js/who.js", "./js/wordlens.js",
   /* Ar-Raghib's 📜 button. The notes and his full text (js/raghib/) are
      fetched when a reader opens them and cached then, like any page. */
-  "./js/raghib-index.js", "./js/raghib.js"
+  "./js/raghib-index.js", "./js/raghib.js",
+  /* "Continue where you left off" on the home page, and searching the
+     Quran's words — both are useless offline if they are not here. */
+  "./js/resume.js", "./js/quran-search.js"
 ];
 
 /* Hosts handled specially. The reader's fallback (used only if
