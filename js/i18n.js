@@ -80,6 +80,174 @@ const AR = {
     "التفسير، واختبار الحفظ، وتعليم القرآن فرديًا، وشرح الحديث بسياقه، والفقه، والعربية، ودروس خاصة.",
 
   // ---- Home: recently added ----
+  "🎓 Add a Course": "🎓 أضِف دورة",
+  "The Courses page shows": "صفحة الدورات لا تعرض",
+  "only what you add here": "إلّا ما تضيفه هنا",
+  ". While this list is empty the page tells visitors that courses are on the way — so nothing is advertised before it exists. Fill in what you know, press Add, then press": ". وما دامت القائمة فارغة فالصفحة تخبر الزوّار أنّ الدورات في الطريق — فلا يُعلَن عن شيءٍ قبل وجوده. املأ ما تعرفه، واضغط «أضِف الدورة»، ثمّ اضغط",
+  "at the bottom.": "في الأسفل.",
+  "Course title": "عنوان الدورة",
+  "required": "مطلوب",
+  "Level": "المستوى",
+  "Price": "السعر",
+  "Description — what the course covers": "الوصف — ماذا تتناول الدورة",
+  "What is included (one line each)": "ما الذي تشمله (سطرٌ لكلّ بند)",
+  "Intro video link (optional)": "رابط الفيديو التعريفيّ (اختياري)",
+  "This course is": "هذه الدورة",
+  "part of a series": "جزءٌ من سلسلة",
+  "— it follows on from another one": "— تأتي بعد دورةٍ أخرى",
+  "Leave it unticked and the course stands on its own. Tick it and give the series a name, and every course with that same name is grouped together on the Courses page, in the order you set.": "اتركه دون تحديد فتقوم الدورة وحدها. وإن حدّدته وسمّيت السلسلة، جُمعت كلّ دورةٍ تحمل الاسم نفسه في صفحة الدورات، بالترتيب الذي تضعه.",
+  "Series name": "اسم السلسلة",
+  "Position in the series (1, 2, 3…)": "ترتيبها في السلسلة (١، ٢، ٣…)",
+  "Add Course": "أضِف الدورة",
+  "Cancel edit": "ألغِ التعديل",
+  "Clear the form": "أفرغ الحقول",
+  "🎬 Add a Paid Video Lesson": "🎬 أضِف درسًا مرئيًّا مدفوعًا",
+  "Users see the title and price; they get the video link after they pay and you confirm.": "يرى المستخدم العنوان والسعر، ولا يصله رابط الفيديو إلّا بعد أن يدفع وتؤكّد أنت.",
+  "Video title": "عنوان الفيديو",
+  "Description": "الوصف",
+  "Upload the video file from your laptop (up to ~45 MB)": "ارفع ملفّ الفيديو من حاسوبك (حتى ٤٥ ميغابايت تقريبًا)",
+  "⬆ Upload Video File": "⬆ ارفع ملفّ الفيديو",
+  "Tip: paste your GitHub token in the bar at the bottom first — the upload uses it. For videos larger than 45 MB, upload to YouTube (unlisted) instead and paste the link below.": "تنبيه: ألصِق رمز GitHub في الشريط الأسفل أوّلًا، فالرفع يستعمله. وإن كان الفيديو أكبر من ٤٥ ميغابايت فارفعه على يوتيوب (غير مُدرَج) وألصِق رابطه أدناه.",
+  "OR paste a video link (YouTube unlisted / Google Drive — kept hidden from users)": "أو ألصِق رابط فيديو (يوتيوب غير مُدرَج / جوجل درايف — يبقى محجوبًا عن المستخدمين)",
+  "Access code (you give this to users after they pay)": "رمز الدخول (تعطيه للمستخدم بعد الدفع)",
+  "Add Video": "أضِف الفيديو",
+  "📹 Live Meetings & Class Recording": "📹 اللقاءات المباشرة وتسجيل الدرس",
+  "1) Fill the meeting title below and press": "١) اكتب عنوان اللقاء أدناه واضغط",
+  "Create Meeting": "إنشاء لقاء",
+  "— the site makes a unique code.   2) Press": "— فيصنع الموقع رمزًا خاصًّا به. ٢) اضغط",
+  "at the bottom so the code becomes active.   3) Send the code to your students.   4) When it's time, press": "في الأسفل ليصير الرمز فعّالًا. ٣) أرسل الرمز إلى طلّابك. ٤) وفي موعده اضغط",
+  "▶ Start & Host": "▶ ابدأ واستضِف",
+  "to open the room yourself first — students then join with the code. You can record the class and turn on live translated captions inside the room.": "لتفتح الغرفة أنت أوّلًا، ثمّ ينضمّ الطلّاب بالرمز. ويمكنك تسجيل الدرس وتشغيل الترجمة الفوريّة داخل الغرفة.",
+  "Meeting title": "عنوان اللقاء",
+  "Related course (optional)": "الدورة المرتبطة (اختياري)",
+  "Date & time (optional)": "التاريخ والوقت (اختياري)",
+  "Create Meeting & Generate Code": "أنشئ اللقاء وولّد الرمز",
+  "Just want to record a lesson (no students)?": "تريد تسجيل درسٍ فقط، بلا طلّاب؟",
+  "Create a meeting named e.g. \"Recording — Tafsir 1\", publish, press ▶ Start & Host, use the": "أنشئ لقاءً باسمٍ مثل «تسجيل — تفسير ١»، وانشُر، واضغط ▶ ابدأ واستضِف، ثمّ استعمل زرّ",
+  "⏺ Record": "⏺ تسجيل",
+  "button in the room, then upload the saved file in the \"Add a Paid Video\" panel above.": "داخل الغرفة، وارفع الملفّ المحفوظ في لوحة «أضِف درسًا مرئيًّا مدفوعًا» أعلاه.",
+  "Copy Code": "انسخ الرمز",
+  "Delete": "احذف",
+  "code:": "الرمز:",
+  "💬 User Feedback": "💬 رسائل الزوّار",
+  "Every page of the site now carries a feedback form. When a visitor sends one, two things happen: it opens their mail app addressed to": "في كلّ صفحةٍ من الموقع نموذج رسالة. فإذا أرسل زائرٌ رسالةً وقع أمران: يُفتح تطبيق بريده على العنوان",
+  "— that is what delivers it to you — and a copy is kept on": "— وهذا هو الذي يوصلها إليك — وتُحفظ نسخةٌ على",
+  "their own device": "جهازه هو",
+  "Read this once.": "اقرأ هذا مرّةً واحدة.",
+  "This website has no server. A page on GitHub Pages cannot receive and store a message from someone else's phone — there is nowhere for it to be written. So the list below shows only the messages sent": "هذا الموقع بلا خادم. وصفحةٌ على GitHub Pages لا تستطيع أن تستقبل رسالةً من هاتف شخصٍ آخر وتخزّنها — فليس ثَمّ مكانٌ تُكتب فيه. ولذلك لا تعرض القائمة أدناه إلّا الرسائل المُرسَلة",
+  "from this device": "من هذا الجهاز",
+  ", which in practice means the ones you sent yourself while testing.": "، وهي عمليًّا ما أرسلته أنت أثناء التجربة.",
+  "The real inbox is your email.": "صندوق الوارد الحقيقيّ هو بريدك.",
+  "If you want every visitor's message collected in one place here instead, that needs either a small backend or a free form service connected to your address — say the word and it can be wired up.": "وإن أردت أن تُجمَع رسائل الزوّار كلّها هنا في مكانٍ واحد، فذلك يحتاج خادمًا صغيرًا أو خدمة نماذج مجّانيّة موصولة بعنوانك — قُل الكلمة وتُوصَل.",
+  "📧 Open the feedback in Gmail": "📧 افتح الرسائل في Gmail",
+  "↻ Refresh": "↻ تحديث",
+  "📋 Copy all": "📋 انسخ الكلّ",
+  "🗑 Clear this device": "🗑 امسح ما في هذا الجهاز",
+  "🎧 Recommended Recitations on the Home Page": "🎧 التلاوات المختارة في الصفحة الرئيسية",
+  "Paste a video link,": "ألصِق رابط الفيديو،",
+  "watch the preview to be sure it is the right one": "وشاهد المعاينة لتتأكّد أنّه الفيديو الصحيح",
+  ", then fill in the details and add it. Nothing appears on the website until you press": "، ثمّ املأ التفاصيل وأضِفه. ولا يظهر شيءٌ في الموقع حتى تضغط",
+  "at the bottom. They show three across, just above the “Get in Touch” section on the home page.": "في الأسفل. وتُعرَض ثلاثًا في الصفّ، فوق قسم «تواصل معنا» في الصفحة الرئيسية مباشرة.",
+  "1) Video link — YouTube (normal or Shorts) or a direct .mp4 link": "١) رابط الفيديو — يوتيوب (عاديّ أو Shorts) أو رابط mp4 مباشر",
+  "👁 Check this video": "👁 افحص هذا الفيديو",
+  "Is this the video you want?": "أهذا هو الفيديو الذي تريده؟",
+  "2) Title — what these verses are about": "٢) العنوان — عمّاذا تتحدّث هذه الآيات",
+  "🎤 Speak": "🎤 تكلَّم",
+  "3) Reciter": "٣) القارئ",
+  "4) Surah": "٤) السورة",
+  "Surah number": "رقم السورة",
+  "From verse": "من آية",
+  "To verse": "إلى آية",
+  "5) A short note for the listener": "٥) كلمةٌ قصيرة للمستمع",
+  "Video shape": "شكل الفيديو",
+  "Detect automatically (Shorts links become tall)": "اكتشِفه تلقائيًّا (روابط Shorts تُعرَض طوليّة)",
+  "Tall — a Short / vertical video": "طوليّ — فيديو قصير/عموديّ",
+  "Wide — a normal video": "عَرْضيّ — فيديو عاديّ",
+  "✔ Put it on the home page now": "✔ ضَعه في الصفحة الرئيسية الآن",
+  "Add to the list only": "أضِفه إلى القائمة فقط",
+  "✕ Wrong video": "✕ الفيديو خطأ",
+  "On the home page now": "الموجود في الصفحة الرئيسية الآن",
+  "The order here is the order visitors see. Three fit on a row, so three or six looks best.": "الترتيب هنا هو الترتيب الذي يراه الزوّار. وثلاثةٌ تتّسع في الصفّ، فالثلاثة أو الستّة أجمل.",
+  "💾 Save these to the website": "💾 احفظ هذه في الموقع",
+  "Same as “Publish Changes” at the bottom — nothing appears on the site until you press it.": "هو نفسه «نشر التغييرات» في الأسفل — لا يظهر شيءٌ في الموقع حتى تضغطه.",
+  "✓ token remembered": "✓ الرمز محفوظ",
+  "forget it": "انسَه",
+  "Language you will speak": "اللغة التي ستتحدّث بها",
+  "Say it once — both boxes are filled": "قُلها مرّةً واحدة — ويُملأ الحقلان",
+  "Say the name once": "قُل الاسم مرّةً واحدة",
+  "Say the surah name": "قُل اسم السورة",
+  "e.g. Tafsir class — Tuesday": "مثال: درس تفسير — الثلاثاء",
+  "e.g. Bank account, Vodafone Cash, PayPal...": "مثال: حساب بنكيّ، فودافون كاش، باي بال…",
+  "e.g. After paying, send your receipt on WhatsApp +20... to receive access.": "مثال: بعد الدفع، أرسل الإيصال على واتساب ‎+20…‎ ليصلك الدخول.",
+  "e.g. +20 10 1234 5678": "مثال: ‎+20 10 1234 5678‎",
+  "e.g. 201012345678": "مثال: 201012345678",
+  "e.g. Tajweed from the beginning": "مثال: التجويد من البداية",
+  "e.g. Beginner, or Beginner → Advanced": "مثال: مبتدئ، أو من المبتدئ إلى المتقدّم",
+  "e.g. $30 per month, or: ask us": "مثال: ٣٠ دولارًا شهريًّا، أو: اسألنا",
+  "A few plain sentences about what someone will actually learn.": "جملٌ قليلة واضحة عمّا سيتعلّمه الدارس فعلًا.",
+  "https://… shown to everyone as a free preview": "‎https://…‎ يُعرَض للجميع معاينةً مجّانيّة",
+  "e.g. Quran Recitation Path": "مثال: مسار تلاوة القرآن",
+  "e.g. Tafsir of Surah Al-Kahf — Part 1": "مثال: تفسير سورة الكهف — الجزء الأوّل",
+  "What the video explains...": "ما الذي يشرحه الفيديو…",
+  "e.g. $5": "مثال: ٥ دولارات",
+  "https://... (filled automatically after upload)": "‎https://…‎ (يُملأ تلقائيًّا بعد الرفع)",
+  "e.g. TAFSIR18-A": "مثال: TAFSIR18-A",
+  "e.g. Quran Recitation Class — Group A": "مثال: حلقة تلاوة — المجموعة أ",
+  "e.g. Quran Recitation A to Z": "مثال: تلاوة القرآن من الألف إلى الياء",
+  "English — e.g. The verses describing the Day of Judgement": "بالإنجليزيّة — مثال: الآيات التي تصف يوم القيامة",
+  "English — e.g. Islam Sobhi": "بالإنجليزيّة — مثال: إسلام صبحي",
+  "English — e.g. Al-Haqqah": "بالإنجليزيّة — مثال: الحاقّة",
+  "English — a sentence or two inviting people to reflect": "بالإنجليزيّة — جملةٌ أو جملتان تدعو إلى التدبّر",
+  "GitHub token — paste once, it is remembered on this computer": "رمز GitHub — ألصِقه مرّةً واحدة، ويُحفظ على هذا الحاسوب",
+  "Staff dashboard": "لوحة الإدارة",
+  "Live meetings": "اللقاءات المباشرة",
+  "Angels (redirect)": "الملائكة (تحويل)",
+  "Edit": "تعديل",
+  "Surah": "سورة",
+  /* ---- The staff dashboard (staff.html). It is behind a login, so it was
+     never seen by the Arabic audit and stayed entirely in English. ---- */
+  "Staff Dashboard": "لوحة إدارة الموقع",
+  "Manage courses, paid videos, payment details, and live meetings. Changes go live for all visitors after you click \"Publish Changes\".": "من هنا تُدار الدورات، والدروس المدفوعة، وبيانات الدفع، واللقاءات المباشرة. ولا يرى الزوّار أيّ تغييرٍ حتى تضغط «نشر التغييرات».",
+  "How it works:": "كيف تعمل:",
+  "Pick a section below, fill it in, then press": "اختر قسمًا ممّا يلي، واملأه، ثمّ اضغط",
+  "Publish Changes": "نشر التغييرات",
+  "at the bottom with your GitHub token. Everything is saved to the live website for all users.": "في الأسفل ومعك رمز GitHub. عندها يُحفظ كلّ شيء في الموقع المنشور ويراه الجميع.",
+  "⚠ You have changes that are NOT on the website yet.": "⚠ عندك تغييراتٌ لم تصل إلى الموقع بعد.",
+  "They are saved in this browser, so you can leave this page and come back — but visitors will not see them until you press": "هي محفوظةٌ في هذا المتصفّح، فلك أن تغادر الصفحة وتعود — لكنّ الزوّار لن يروها حتى تضغط",
+  "at the bottom with your GitHub token.": "في الأسفل ومعك رمز GitHub.",
+  "📹 Meetings": "📹 اللقاءات",
+  "🎓 Courses": "🎓 الدورات",
+  "🎬 Videos": "🎬 الدروس المرئيّة",
+  "💳 Payment": "💳 الدفع",
+  "📞 Contact": "📞 التواصل",
+  "💬 Feedback": "💬 رسائل الزوّار",
+  "🎧 Recitations": "🎧 التلاوات",
+  "📊 Analytics": "📊 الإحصاءات",
+  "▶ Start a Meeting Right Now": "▶ ابدأ لقاءً الآن",
+  "One click: the site creates the code, activates it for your students, and opens the room with you as host. Use this when you just want to teach or record straight away.": "بضغطةٍ واحدة: يُنشئ الموقع الرمز، ويفعّله لطلّابك، ويفتح الغرفة وأنت مضيفها. استعمل هذا حين تريد أن تدرّس أو تسجّل على الفور.",
+  "Meeting name (optional)": "اسم اللقاء (اختياري)",
+  "▶ Start Meeting Now": "▶ ابدأ اللقاء الآن",
+  "Give this code to your students:": "أعطِ طلّابك هذا الرمز:",
+  "📋 Copy Code": "📋 انسخ الرمز",
+  "▶ Open the Room": "▶ افتح الغرفة",
+  "Needs your GitHub token in the bar at the bottom, so the code can be activated for students.": "يحتاج إلى رمز GitHub في الشريط الأسفل، حتى يُفعَّل الرمز للطلّاب.",
+  "📊 Website Analytics": "📊 إحصاءات الموقع",
+  "Admin only": "للمشرف وحده",
+  "How many people opened the website, which pages they visited, and which sections they clicked. Counts every visitor across the whole site (updates live).": "كم شخصًا فتح الموقع، وأيّ الصفحات زاروا، وأيّ الأقسام ضغطوا. يَعُدّ كلّ زائرٍ في الموقع كلّه، ويتحدّث لحظةً بلحظة.",
+  "Total visits to the website": "مجموع الزيارات للموقع",
+  "Pages opened": "الصفحات المفتوحة",
+  "Sections clicked": "الأقسام المضغوطة",
+  "🔄 Refresh Numbers": "🔄 حدِّث الأرقام",
+  "💳 Payment Details": "💳 بيانات الدفع",
+  "Shown to users when they want to unlock a paid video or enroll in a course.": "تُعرَض للمستخدم حين يريد فتح درسٍ مدفوع أو التسجيل في دورة.",
+  "Account number / IBAN / payment address": "رقم الحساب / الآيبان / عنوان الدفع",
+  "QR code image link (optional — upload your QR image anywhere and paste its link)": "رابط صورة رمز الاستجابة (اختياري — ارفع الصورة في أيّ مكان وألصق رابطها)",
+  "Payment instructions for users": "تعليمات الدفع للمستخدمين",
+  "📞 Contact Numbers, Demo & Free Trial": "📞 أرقام التواصل، والدرس التعريفيّ، والتجربة المجّانيّة",
+  "Shown to users on the Courses page. The Free Trial button opens WhatsApp (or email if no WhatsApp number is set), and the Demo button plays your demo lesson.": "تُعرَض للمستخدمين في صفحة الدورات. زرّ التجربة المجّانيّة يفتح واتساب (أو البريد إن لم يكن هناك رقم واتساب)، وزرّ الدرس التعريفيّ يشغّل درسك التعريفيّ.",
+  "Phone number (with country code)": "رقم الهاتف (مع رمز الدولة)",
+  "WhatsApp number (digits only, with country code)": "رقم واتساب (أرقامًا فقط، مع رمز الدولة)",
+  "Demo lesson video link (YouTube etc. — leave empty to hide the Demo button)": "رابط الدرس التعريفيّ (يوتيوب أو غيره — اتركه فارغًا ليختفي الزرّ)",
   "Recently Added": "أحدث الإضافات",
   "Ar-Raghib al-Isfahani on the Quran": "الراغب الأصفهاني على القرآن",
   "His own explanation under the verses of the first ten surahs — from his tafsir where it survives, and from his dictionary of the Quran where it does not. Every word of his is checked letter by letter against the printed book, every verse he connects is in the Mushaf's own text, and the page he said it on is printed with it.": "شرحه بنصّه تحت آيات السور العشر الأولى — من تفسيره حيث وصلنا، ومن «المفردات» حيث لم يصلنا. كلّ كلمةٍ من كلامه مطابَقةٌ على الكتاب المطبوع حرفًا حرفًا، وكلّ آيةٍ يربط بها بخطّ المصحف، ومعها الصفحة التي قالها فيها.",
@@ -1306,13 +1474,28 @@ const IITW_REF_SELECTOR =
   ".refs, .hadith-meta, .ayah-ref, .sunnah-card .refs, .tad-ref, " +
   ".rv-ev-ref, .gold-ref, .vf-src";
 
+/* The same sentence, whatever the editor did with it.
+   A paragraph written across four lines in the HTML arrives here with the
+   newlines and the indentation inside it, and did not match a dictionary key
+   written on one line — so it stayed in English, silently, and looked like a
+   missing translation rather than a whitespace difference. Every key is also
+   indexed with its spaces collapsed. */
+const AR_LOOSE = {};
+(function () {
+  const flat = s => s.replace(/\s+/g, " ").trim();
+  for (const k in AR) {
+    const f = flat(k);
+    if (!(f in AR_LOOSE)) AR_LOOSE[f] = AR[k];
+  }
+})();
+
 function iitwTranslateDom(lang) {
   iitwCollectNodes().forEach(node => {
     if (node._iitwEn === undefined) node._iitwEn = node.nodeValue;
     const original = node._iitwEn;
     const key = original.trim();
     if (lang === "ar") {
-      const t = AR[key];
+      const t = AR[key] || AR_LOOSE[key.replace(/\s+/g, " ")];
       if (t) {
         node.nodeValue = original.replace(key, t);
       } else if (node.parentElement.closest(IITW_REF_SELECTOR)) {
@@ -1327,7 +1510,8 @@ function iitwTranslateDom(lang) {
   // Placeholders, titles and button labels
   document.querySelectorAll("[placeholder]").forEach(el => {
     if (el._iitwPh === undefined) el._iitwPh = el.getAttribute("placeholder");
-    const t = lang === "ar" ? AR[el._iitwPh.trim()] : null;
+    const ph = el._iitwPh.trim();
+    const t = lang === "ar" ? (AR[ph] || AR_LOOSE[ph.replace(/\s+/g, " ")]) : null;
     el.setAttribute("placeholder", t || el._iitwPh);
   });
 }

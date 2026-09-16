@@ -24,6 +24,7 @@
   --cream: #fffdf3;           /* the parchment of the reference boxes */
   --cream-line: #f0e4bd;
   --green-deep: #14532d;      /* dark green as a BACKGROUND, in both themes */
+  --flash: #fff3c4;            /* the flash on a verse the reader was sent to */
   --shadow: 0 4px 24px rgba(20, 83, 45, 0.07);
   --shadow-lg: 0 16px 48px rgba(20, 83, 45, 0.12);
   --shadow-hover: 0 20px 40px rgba(20, 83, 45, 0.16);
@@ -63,6 +64,7 @@
   --text: #dbe7df;
   --text-muted: #a4b8ac;
   --border: #27392f;
+  --flash: #3b3418;             /* the verse-found flash, in the dark */
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
   --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.55);
@@ -3275,7 +3277,7 @@ html.lang-ar .angel-points { list-style-type: arabic-indic; }
 /* The verse you were brought back to */
 .ayah-flash { animation: ayahFlash 2.2s ease-out; }
 @keyframes ayahFlash {
-  0%   { background: #fff3c4; }
+  0%   { background: var(--flash); }
   100% { background: transparent; }
 }
 @media (max-width: 560px) {
@@ -7898,6 +7900,63 @@ html[dir="rtl"] .resume-go { transform: scaleX(-1); }
 :root[data-theme="dark"] :is(.rg-full-note) { color: #e0caae; }
 :root[data-theme="dark"] :is(/* The verse the reader was sent to, marked for a moment so the eye finds    it — the reader scrolls it to the top, but a long verse can still leave    a person hunting for which one it was. */ .ayah-block.qs-hit) { background: #262215; }
 /* ===== END GENERATED ===== */
+
+/* ============================================================
+   DARK: THE SURFACES THE GENERATOR CANNOT SEE
+   ============================================================
+   gen_dark.py turns a pale SINGLE colour into a dark tint. It cannot read a
+   gradient, a shadow ring, or a colour written inside a keyframe — so every
+   one of these was still glowing white in the dark theme, and one of them
+   (the numbers strip under the hero) faded from the dark page into a sheet
+   of white with unreadable labels on it, on the home page, for everyone.
+
+   scratchpad/lightscan.py finds them: it walks every rule, looks for a
+   colour lighter than 0.62 luminance in any background or shadow, and prints
+   the ones with no `[data-theme="dark"]` rule of their own. Run it after
+   adding a gradient. */
+:root[data-theme="dark"] .stats-strip {
+  background: linear-gradient(180deg, var(--green-pale) 0%, var(--bg) 100%);
+}
+:root[data-theme="dark"] .story-section-head {
+  background: linear-gradient(180deg, var(--card) 0%, var(--green-pale) 100%);
+}
+:root[data-theme="dark"] .tad-concept {
+  background: linear-gradient(180deg, #1a2721 0%, var(--card) 100%);
+}
+:root[data-theme="dark"] .wird-card {
+  background: linear-gradient(180deg, var(--green-pale) 0%, var(--card) 62%);
+}
+/* The icon tile on every card on the site — a pale mint square on a dark
+   page until now. */
+:root[data-theme="dark"] .card .icon {
+  background: linear-gradient(135deg, var(--green-light), #2a4133);
+}
+:root[data-theme="dark"] .card:hover .icon {
+  background: linear-gradient(135deg, #2a4133, var(--green-light));
+}
+/* The streak dashboard and its milestone, at the tiers a reader reaches
+   after a week and after a month. */
+:root[data-theme="dark"] .daily-dash.tier-3 {
+  background: linear-gradient(160deg, #16211c, #1d3326);
+}
+:root[data-theme="dark"] .daily-dash.tier-4 {
+  background: linear-gradient(160deg, var(--cream), #2b2413);
+  border-color: #4a3f1c;
+}
+:root[data-theme="dark"] .wird-streak-box.tier-2 .wird-milestone {
+  background: #1a2721;
+  border-color: var(--border);
+}
+:root[data-theme="dark"] .wird-streak-box.tier-3 .wird-milestone {
+  background: linear-gradient(135deg, #241f14, #17231b);
+  border-color: #4a3f1c;
+}
+:root[data-theme="dark"] .wird-streak-box.tier-4 .wird-milestone {
+  background: linear-gradient(135deg, #2b2413, #241f14);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, .45);
+}
+/* The turning point on a timeline: a rust dot in a pale ring. */
+:root[data-theme="dark"] .tl-turn::before { box-shadow: 0 0 0 2px #402b22; }
 
 /* ============================================================
    THE NAVIGATION'S "MORE", AND THE SITE-WIDE SEARCH (js/nav.js)

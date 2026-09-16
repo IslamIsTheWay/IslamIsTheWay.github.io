@@ -9,10 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161447" />
+  <link rel="stylesheet" href="css/style.css?v=202609161535" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
-    .staff-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
+    /* The dashboard is the owner's own page and it follows the theme like
+       every other page: these were #fff and a pale red, which left white
+       panels and a glowing delete button in the dark. */
+    :root { --del-bg: #fbe9e0; --del-ink: #8a3d1f; --warn-bg: #fff4e5; }
+    :root[data-theme="dark"] { --del-bg: #3a201a; --del-ink: #f0b39a; --warn-bg: #2b2413; }
+    .staff-panel { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:28px; box-shadow:var(--shadow); }
     .staff-panel h3 { color:var(--green-dark); margin-bottom:6px; }
     .staff-panel .panel-sub { color:var(--text-muted); font-size:.9rem; margin-bottom:18px; }
     .staff-panel label { display:block; font-size:.85rem; font-weight:600; margin:12px 0 4px; color:var(--text-dark); }
@@ -21,16 +26,16 @@
     .staff-panel .btn { margin-top:14px; }
     .item-list { margin-top:16px; }
     .item-row { display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--green-pale); border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin-bottom:8px; font-size:.9rem; }
-    .item-row .del { background:#fbe9e0; color:#8a3d1f; border:none; border-radius:6px; padding:6px 12px; cursor:pointer; font-weight:600; }
+    .item-row .del { background:var(--del-bg); color:var(--del-ink); border:none; border-radius:6px; padding:6px 12px; cursor:pointer; font-weight:600; }
     .meeting-code { font-family:monospace; font-weight:700; color:var(--green-dark); background:var(--green-light); padding:2px 8px; border-radius:6px; }
-    .publish-bar { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--green); padding:16px 24px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; box-shadow:0 -4px 20px rgba(0,0,0,.08); z-index:50; }
+    .publish-bar { position:sticky; bottom:0; background:var(--card); border-top:2px solid var(--green); padding:16px 24px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; box-shadow:0 -4px 20px rgba(0,0,0,.08); z-index:50; }
     .publish-bar input { flex:1; min-width:220px; padding:11px 14px; border:1px solid var(--border); border-radius:8px; }
     #publishMsg { font-size:.9rem; font-weight:600; }
     #publishMsg.ok { color:var(--green-dark); }
     #publishMsg.err { color:#8a3d1f; }
     .status-note { background:var(--green-light); border-radius:8px; padding:12px 16px; font-size:.85rem; margin-bottom:20px; }
     .staff-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
-    .staff-tabs button { border:1px solid var(--border); background:#fff; color:var(--text-dark); border-radius:999px; padding:10px 18px; font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer; transition:all .2s; }
+    .staff-tabs button { border:1px solid var(--border); background:var(--card); color:var(--text-dark); border-radius:999px; padding:10px 18px; font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer; transition:all .2s; }
     .staff-tabs button:hover { border-color:var(--green); background:var(--green-pale); }
     .staff-tabs button.active { background:var(--green); color:#fff; border-color:var(--green); }
     .staff-section { display:none; }
@@ -44,8 +49,10 @@
     .rec-mic.listening { background:#b3261e; color:#fff; border-color:#b3261e; }
     .rec-hint { font-size:.79rem; color:var(--text-muted); margin-top:5px; min-height:1em; }
     .rec-hint.warn { color:#8a3d1f; font-weight:600; }
+    .rec-empty { background:var(--del-bg); border:2px solid #e0a090; border-radius:8px; padding:12px 16px; color:var(--del-ink); font-weight:600; }
+:root[data-theme="dark"] .rec-empty { border-color:#6a4034; }
     .rec-suggestions { display:flex; flex-wrap:wrap; gap:7px; margin:8px 0 4px; }
-    .rec-chip { border:1px solid var(--border); background:#fff; color:var(--text-dark); border-radius:8px; padding:7px 11px; font-family:inherit; font-size:.79rem; cursor:pointer; text-align:left; max-width:100%; line-height:1.45; }
+    .rec-chip { border:1px solid var(--border); background:var(--card); color:var(--text-dark); border-radius:8px; padding:7px 11px; font-family:inherit; font-size:.79rem; cursor:pointer; text-align:left; max-width:100%; line-height:1.45; }
     .rec-chip:hover { border-color:var(--green); background:var(--green-pale); }
     .rec-chip small { display:block; color:var(--text-muted); font-family:'Amiri',serif; font-size:.85rem; direction:rtl; }
   </style>
@@ -101,7 +108,7 @@
       </div>
 
       <!-- Shown whenever something has been added but not yet published. -->
-      <div id="unpublishedBanner" style="display:none;background:#fff4e5;border:2px solid #c9a227;border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+      <div id="unpublishedBanner" style="display:none;background:var(--warn-bg);border:2px solid var(--gold);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
         <strong style="color:#8a5a00;">⚠ You have changes that are NOT on the website yet.</strong>
         <div style="font-size:.88rem;margin-top:4px;">
           They are saved in this browser, so you can leave this page and come back — but visitors will not see them until you press
@@ -146,7 +153,7 @@
       <!-- Admin-only analytics (visible only to the main admin account) -->
       <div class="staff-section" data-sec="analytics">
       <div class="staff-panel" id="analyticsPanel" style="display:none;border:2px solid var(--green);">
-        <h3>📊 Website Analytics <span style="font-size:.7rem;background:var(--gold);color:#fff;padding:2px 8px;border-radius:999px;vertical-align:middle;">Admin only</span></h3>
+        <h3>📊 Website Analytics <span style="font-size:.7rem;background:var(--gold);color:#3a2d05;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:middle;">Admin only</span></h3>
         <p class="panel-sub">How many people opened the website, which pages they visited, and which sections they clicked. Counts every visitor across the whole site (updates live).</p>
         <div style="text-align:center;background:linear-gradient(135deg,#0d3a1a,#1a5c32);color:#fff;border-radius:12px;padding:22px;margin-bottom:16px;">
           <div style="font-size:2.6rem;font-weight:800;" id="statTotal">…</div>
@@ -354,7 +361,7 @@
           <div style="font-weight:700;color:var(--green-dark);margin-bottom:10px;">Is this the video you want?</div>
           <div id="recPreview" style="max-width:520px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#0d2b1c;"></div>
 
-          <div id="recFromVideo" style="display:none;background:#fff;border:1px dashed var(--green);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:.88rem;"></div>
+          <div id="recFromVideo" style="display:none;background:var(--card);border:1px dashed var(--green);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:.88rem;"></div>
 
           <div class="rec-field-head">
             <label style="margin:0;">2) Title — what these verses are about</label>
@@ -473,10 +480,23 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202609161447"></script>
-  <script src="js/wordlens.js?v=202609161447"></script>
-  <script src="js/main.js?v=202609161447"></script>
+  <script src="js/data.js?v=202609161535"></script>
+  <script src="js/wordlens.js?v=202609161535"></script>
+  <script src="js/main.js?v=202609161535"></script>
   <script>
+    /* ---------- The dashboard speaks the reader's language too ----------
+       js/i18n.js translates what is IN the page when it runs. Everything
+       below draws itself afterwards — the lists, the counts, the messages —
+       so a panel rendered here stayed English however complete the
+       dictionary was. Two small things fix that class of bug:
+         ar(en, arabic)  picks the wording for the language now showing;
+         reI18n()        runs the dictionary over what was just drawn, which
+                         is what translates the plain labels (Delete, Edit,
+                         Home, Quran …) that already live in js/i18n.js. */
+    function iitwIsAr() { return document.documentElement.lang === "ar"; }
+    function ar(en, arabic) { return iitwIsAr() ? arabic : en; }
+    function reI18n() { if (window.applyI18n) window.applyI18n(); }
+
     const STAFF_USER = iitwStaffUser();
     if (!STAFF_USER) window.location.href = "login.html";
     document.getElementById("logoutLink").addEventListener("click", e => {
@@ -513,7 +533,7 @@
         if (!seen.has(key)) seen.set(key, label);
       });
       // Pages with no nav link of their own.
-      [["staff", "Staff dashboard"], ["meeting", "Meetings"], ["angels", "Angels (redirect)"]]
+      [["staff", "Staff dashboard"], ["meeting", "Live meetings"], ["angels", "Angels (redirect)"]]
         .forEach(([k, l]) => { if (!seen.has(k)) seen.set(k, l); });
       return seen;
     }
@@ -582,6 +602,10 @@
       document.getElementById("statClicks").innerHTML = clickRows
         .sort((a, b) => b.n - a.n)
         .map(r => `<div style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--border);padding:4px 0;"><span>${r.label}</span><strong>${r.n.toLocaleString()}</strong></div>`).join("");
+      /* The labels are the navigation's own words, read before i18n ran over
+         the page — so in Arabic mode they came out English. The dictionary
+         has every one of them; run it over what was just drawn. */
+      reI18n();
     }
 
     /* ---------- Never lose unpublished work ----------
@@ -668,29 +692,31 @@
             `<div class="item-row course-row">
                <span class="course-row-main">
                  <strong>${iitwEsc(c.title)}</strong>
-                 <span class="course-row-meta">${iitwEsc(c.level || "")}${c.price ? " Â· " + iitwEsc(c.price) : ""}</span>
-                 ${c.series ? `<span class="course-row-series">🔗 ${iitwEsc(c.series)} â part ${c.order || "?"}</span>`
-                            : `<span class="course-row-series standalone">stands on its own</span>`}
+                 <span class="course-row-meta">${iitwEsc(c.level || "")}${c.price ? " · " + iitwEsc(c.price) : ""}</span>
+                 ${c.series ? `<span class="course-row-series">🔗 ${iitwEsc(c.series)} — ${ar("part", "الجزء")} ${c.order || "?"}</span>`
+                            : `<span class="course-row-series standalone">${ar("stands on its own", "قائمةٌ بذاتها")}</span>`}
                </span>
                <span style="display:flex;gap:6px;flex-wrap:wrap;">
-                 <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="editCourse(${i})">Edit</button>
-                 <button class="del" onclick="deleteCourse(${i})">Delete</button>
+                 <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="editCourse(${i})">${ar("Edit", "تعديل")}</button>
+                 <button class="del" onclick="deleteCourse(${i})">${ar("Delete", "حذف")}</button>
                </span>
              </div>`).join("")
-        : `<p class="panel-sub" style="margin-top:10px;">No courses yet â the Courses page is showing the
-             âcourses are on the wayâ notice to visitors.</p>`;
+        : `<p class="panel-sub" style="margin-top:10px;">${ar(
+             "No courses yet — the Courses page is showing the “courses are on the way” notice to visitors.",
+             "لا دورات بعد — وصفحة الدورات تُخبر الزوّار أنّ الدورات في الطريق.")}</p>`;
       document.getElementById("videoList").innerHTML = cfg.videos.map((v, i) =>
-        `<div class="item-row"><span>${v.title} — ${v.price} — code: <span class="meeting-code">${v.code}</span></span><button class="del" onclick="cfg.videos.splice(${i},1);renderLists()">Delete</button></div>`).join("");
+        `<div class="item-row"><span>${v.title} — ${v.price} — ${ar("code:", "الرمز:")} <span class="meeting-code">${v.code}</span></span><button class="del" onclick="cfg.videos.splice(${i},1);renderLists()">${ar("Delete", "حذف")}</button></div>`).join("");
       document.getElementById("meetingList").innerHTML = cfg.meetings.map((m, i) =>
         `<div class="item-row" style="flex-wrap:wrap;">
-           <span style="flex:1;min-width:160px;">${m.title}${m.time ? " — " + new Date(m.time).toLocaleString() : ""}<br>code: <span class="meeting-code">${m.code}</span></span>
+           <span style="flex:1;min-width:160px;">${m.title}${m.time ? " — " + new Date(m.time).toLocaleString(iitwIsAr() ? "ar-EG" : "en-GB") : ""}<br>${ar("code:", "الرمز:")} <span class="meeting-code">${m.code}</span></span>
            <span style="display:flex;gap:6px;flex-wrap:wrap;">
              <a class="btn btn-primary btn-small" style="text-decoration:none;" href="meeting.html?code=${encodeURIComponent(m.code)}&host=1" target="_blank" rel="noopener">▶ Start &amp; Host</a>
-             <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="copyCode('${m.code}')">Copy Code</button>
-             <button class="del" onclick="cfg.meetings.splice(${i},1);renderLists()">Delete</button>
+             <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="copyCode('${m.code}')">${ar("Copy Code", "انسخ الرمز")}</button>
+             <button class="del" onclick="cfg.meetings.splice(${i},1);renderLists()">${ar("Delete", "حذف")}</button>
            </span>
          </div>`).join("");
       renderRecitationList();
+      reI18n();             // the dictionary, over what was just drawn
       saveDraft();          // keep the work safe on every change
     }
 
@@ -740,7 +766,7 @@
       const host = document.getElementById(f.alts);
       if (!host) return;
       if (!alternatives.length) { host.innerHTML = ""; return; }
-      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">Not what you said? Pick the right one:</span>` +
+      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">${ar("Not what you said? Pick the right one:", "ليس هذا ما قلته؟ اختر الصواب:")}</span>` +
         alternatives.map((a, i) => `<button type="button" class="rec-chip" onclick="pickAlternative('${which}', ${spokeArabic}, ${i})">${iitwEsc(a)}</button>`).join("");
       host._alts = alternatives;
     }
@@ -844,7 +870,7 @@
       const host = document.getElementById("recNoteSuggestions");
       const num = parseInt(document.getElementById("recSurahNum").value, 10);
       const list = iitwSuggestNotes(num).slice(0, 5);
-      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">Suggestions — click one to use it, then edit freely:</span>` +
+      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">${ar("Suggestions — click one to use it, then edit freely:", "اقتراحات — اضغط واحدًا لتستعمله، ثمّ عدّله كما تشاء:")}</span>` +
         list.map((n, i) => `<button type="button" class="rec-chip" onclick="useNoteSuggestion(${i})">
             ${iitwEsc(n.en)}<small>${iitwEsc(n.ar)}</small>
           </button>`).join("");
@@ -857,7 +883,7 @@
       const num = document.getElementById("recSurahNum").value;
       const list = iitwSuggestTitles(num, document.getElementById("recSurah").value,
                                      document.getElementById("recSurahAr").value).slice(0, 5);
-      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">Suggestions — click one, then change it freely:</span>` +
+      host.innerHTML = `<span style="font-size:.79rem;color:var(--text-muted);width:100%;">${ar("Suggestions — click one, then change it freely:", "اقتراحات — اضغط واحدًا ثمّ غيّره كما تشاء:")}</span>` +
         list.map((t, i) => `<button type="button" class="rec-chip" onclick="useTitleSuggestion(${i})">
             ${iitwEsc(t.en)}<small>${iitwEsc(t.ar)}</small>
           </button>`).join("");
@@ -882,7 +908,8 @@
       document.getElementById("recNoteAr").value = n.ar;
       const hint = document.getElementById("noteHint");
       hint.className = "rec-hint";
-      hint.textContent = "Filled from a suggestion — change any of it to suit the video.";
+      hint.textContent = ar("Filled from a suggestion — change any of it to suit the video.",
+                            "مُلئ من اقتراح — غيّر منه ما شئت ليناسب الفيديو.");
     }
 
     /* Read what the video says about itself and offer it. YouTube gives us the
@@ -892,14 +919,15 @@
     async function loadVideoSuggestions(url) {
       const box = document.getElementById("recFromVideo");
       box.style.display = "";
-      box.innerHTML = "Reading the video's details…";
+      box.innerHTML = ar("Reading the video's details…", "جارٍ قراءة تفاصيل الفيديو…");
       const info = await iitwFetchVideoInfo(url);
       if (!info) {
-        box.innerHTML = `<strong>Could not read the video's own details.</strong> Fill the boxes in yourself — everything below still works.`;
+        box.innerHTML = ar(`<strong>Could not read the video's own details.</strong> Fill the boxes in yourself — everything below still works.`,
+                           `<strong>تعذّرت قراءة تفاصيل الفيديو.</strong> املأ الحقول بنفسك — وكلّ ما تحته يعمل كما هو.`);
         return;
       }
-      const bits = [`<div style="margin-bottom:8px;"><strong>The video calls itself:</strong> “${iitwEsc(info.title)}”${info.author ? ` &nbsp;·&nbsp; channel: <strong>${iitwEsc(info.author)}</strong>` : ""}</div>`];
-      box.innerHTML = bits.join("") + `<div style="color:var(--text-muted);">Looking these words up in the Quran…</div>`;
+      const bits = [`<div style="margin-bottom:8px;"><strong>${ar("The video calls itself:", "الفيديو يسمّي نفسه:")}</strong> “${iitwEsc(info.title)}”${info.author ? ` &nbsp;·&nbsp; ${ar("channel:", "القناة:")} <strong>${iitwEsc(info.author)}</strong>` : ""}</div>`];
+      box.innerHTML = bits.join("") + `<div style="color:var(--text-muted);">${ar("Looking these words up in the Quran…", "جارٍ البحث عن هذه الكلمات في القرآن…")}</div>`;
 
       /* Two ways to identify the passage, in order of certainty:
          1. The title quotes the verse — search the Quran text for it. This
@@ -915,28 +943,28 @@
       bits.push(`<div class="rec-suggestions">`);
 
       if (verse) {
-        const label = verse.exact ? "Found the verse" : "Probably this verse";
+        const label = verse.exact ? ar("Found the verse", "وُجدت الآية") : ar("Probably this verse", "الأرجح أنّها هذه الآية");
         bits.push(`<button type="button" class="rec-chip" onclick="applyVerse(${JSON.stringify(verse).replace(/"/g, "&quot;")})">
           ${label}: <strong>${iitwEsc(verse.surahName)} ${verse.surah}:${verse.ayah}</strong>
           <small dir="rtl">${iitwEsc(verse.arabic.slice(0, 70))}</small></button>`);
       }
-      bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('titleAr', ${JSON.stringify(info.title).replace(/"/g, "&quot;")})">Use the video's own words as the Arabic title</button>`);
-      if (reciterFromTitle) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('reciterAr', ${JSON.stringify(reciterFromTitle).replace(/"/g, "&quot;")})">Reciter: <strong dir="rtl">${iitwEsc(reciterFromTitle)}</strong></button>`);
-      if (info.author) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('reciterAr', ${JSON.stringify(info.author).replace(/"/g, "&quot;")})">Channel: <span dir="rtl">${iitwEsc(info.author)}</span></button>`);
-      if (surah && !verse) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('surah', ${JSON.stringify(surah).replace(/"/g, "&quot;")})">Set surah: <strong>${iitwEsc(surah.name)}</strong> (${surah.n})</button>`);
-      if (ayahs && !verse) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('ayahs', ${JSON.stringify(ayahs).replace(/"/g, "&quot;")})">Set verses: <strong>${ayahs.from}${ayahs.to !== ayahs.from ? "-" + ayahs.to : ""}</strong></button>`);
+      bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('titleAr', ${JSON.stringify(info.title).replace(/"/g, "&quot;")})">${ar("Use the video's own words as the Arabic title", "اجعل كلام الفيديو نفسه عنوانًا عربيًّا")}</button>`);
+      if (reciterFromTitle) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('reciterAr', ${JSON.stringify(reciterFromTitle).replace(/"/g, "&quot;")})">${ar("Reciter:", "القارئ:")} <strong dir="rtl">${iitwEsc(reciterFromTitle)}</strong></button>`);
+      if (info.author) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('reciterAr', ${JSON.stringify(info.author).replace(/"/g, "&quot;")})">${ar("Channel:", "القناة:")} <span dir="rtl">${iitwEsc(info.author)}</span></button>`);
+      if (surah && !verse) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('surah', ${JSON.stringify(surah).replace(/"/g, "&quot;")})">${ar("Set surah:", "اضبط السورة:")} <strong>${iitwEsc(surah.name)}</strong> (${surah.n})</button>`);
+      if (ayahs && !verse) bits.push(`<button type="button" class="rec-chip" onclick="applySuggestion('ayahs', ${JSON.stringify(ayahs).replace(/"/g, "&quot;")})">${ar("Set verses:", "اضبط الآيات:")} <strong>${ayahs.from}${ayahs.to !== ayahs.from ? "-" + ayahs.to : ""}</strong></button>`);
       bits.push(`</div>`);
 
       if (verse && verse.exact) {
-        bits.push(`<div style="color:var(--green-dark);font-size:.82rem;">Surah and verse number filled in from the words in the title — please still check them.</div>`);
+        bits.push(`<div style="color:var(--green-dark);font-size:.82rem;">${ar("Surah and verse number filled in from the words in the title — please still check them.", "مُلئت السورة ورقم الآية من كلمات العنوان — ومع ذلك تحقّق منهما.")}</div>`);
       } else if (verse) {
-        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">Those words appear in more than one place (${iitwEsc([verse.surah + ":" + verse.ayah].concat(verse.alsoIn || []).join(", "))}). Nothing was filled in — please choose.</div>`);
+        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">${ar("Those words appear in more than one place", "هذه الكلمات ترد في أكثر من موضع")} (${iitwEsc([verse.surah + ":" + verse.ayah].concat(verse.alsoIn || []).join(", "))}). ${ar("Nothing was filled in — please choose.", "فلم يُملأ شيء — اختر أنت.")}</div>`);
       } else if (!surah) {
-        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">The title neither names a surah nor quotes a verse I could find, so please type it in yourself.</div>`);
+        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">${ar("The title neither names a surah nor quotes a verse I could find, so please type it in yourself.", "العنوان لا يسمّي سورةً ولا يقتبس آيةً وجدتُها، فاكتبها بنفسك.")}</div>`);
       } else if (surah.confident && !surah.ambiguous) {
-        bits.push(`<div style="color:var(--green-dark);font-size:.82rem;">Surah filled in from the title — the verse number is not given, so please add it.</div>`);
+        bits.push(`<div style="color:var(--green-dark);font-size:.82rem;">${ar("Surah filled in from the title — the verse number is not given, so please add it.", "مُلئت السورة من العنوان — ورقم الآية غير مذكور، فأضِفه.")}</div>`);
       } else {
-        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">Not certain which surah — nothing was filled in. Use the button above only if it is right.</div>`);
+        bits.push(`<div style="color:#8a3d1f;font-size:.82rem;font-weight:600;">${ar("Not certain which surah — nothing was filled in. Use the button above only if it is right.", "السورة غير مؤكّدة — فلم يُملأ شيء. لا تستعمل الزرّ أعلاه إلّا إن كان صوابًا.")}</div>`);
       }
       box.innerHTML = bits.join("");
 
@@ -970,7 +998,7 @@
         chip.type = "button";
         chip.className = "rec-chip";
         chip.style.borderColor = "var(--gold)";
-        chip.innerHTML = `<strong>From the verse itself:</strong> ${iitwEsc(t)}`;
+        chip.innerHTML = `<strong>${ar("From the verse itself:", "من الآية نفسها:")}</strong> ${iitwEsc(t)}`;
         /* The Arabic title is the verse as the Mushaf writes it (quran.com's
            qpc_hafs, the King Fahd Complex text). `v.arabic` is the plain
            text the title was MATCHED against — right for finding a verse,
@@ -1185,13 +1213,19 @@
       const host = document.getElementById("recList");
       if (!host) return;
       if (!cfg.recitations || !cfg.recitations.length) {
-        host.innerHTML = `<p style="background:#fdece7;border:2px solid #e0a090;border-radius:8px;padding:12px 16px;color:#8a3d1f;font-weight:600;">
-          The list is EMPTY — nothing will appear on the home page.<br>
-          <span style="font-weight:400;font-size:.88rem;">A video playing in the box above is only a preview. It counts only once it appears here in this list.</span>
+        host.innerHTML = `<p class="rec-empty">
+          ${ar("The list is EMPTY — nothing will appear on the home page.",
+               "القائمة فارغة — لن يظهر شيءٌ في الصفحة الرئيسية.")}<br>
+          <span style="font-weight:400;font-size:.88rem;">${ar(
+            "A video playing in the box above is only a preview. It counts only once it appears here in this list.",
+            "الفيديو الذي يعمل في الصندوق أعلاه معاينةٌ فقط، ولا يُحتسب حتى يظهر هنا في هذه القائمة.")}</span>
         </p>`;
         return;
       }
-      host.innerHTML = `<p style="color:var(--green-dark);font-weight:700;margin-bottom:10px;">${cfg.recitations.length} recitation(s) will be on the home page:</p>`
+      host.innerHTML = `<p style="color:var(--green-dark);font-weight:700;margin-bottom:10px;">${ar(
+          cfg.recitations.length + " recitation(s) will be on the home page:",
+          "ستظهر " + iitwArNum(cfg.recitations.length) + " " + iitwPlural(cfg.recitations.length,
+            "تلاوة", "تلاوتان", "تلاوات") + " في الصفحة الرئيسية:")}</p>`
         + cfg.recitations.map((r, i) => {
         const v = iitwParseVideo(r.url);
         const ref = iitwRecitationRef(r);
@@ -1201,18 +1235,30 @@
           <span style="flex:1;min-width:200px;">
             <strong>${iitwEsc(r.title)}</strong><br>
             <span style="color:var(--text-muted);font-size:.86rem;">🎙 ${iitwEsc(r.reciter)}${ref ? " · " + iitwEsc(ref) : ""}</span><br>
-            <a href="${iitwEsc(v ? v.watch : r.url)}" target="_blank" rel="noopener" style="font-size:.8rem;">open the video ↗</a>
-            <span style="font-size:.8rem;color:var(--text-muted);"> · showing ${isTall ? "tall (9:16)" : "wide (16:9)"}</span>
-            ${v ? "" : `<span style="color:#b3261e;font-size:.8rem;"> — this link can no longer be played</span>`}
+            <a href="${iitwEsc(v ? v.watch : r.url)}" target="_blank" rel="noopener" style="font-size:.8rem;">${ar("open the video ↗", "افتح الفيديو ↗")}</a>
+            <span style="font-size:.8rem;color:var(--text-muted);"> · ${ar("showing ", "يُعرَض ")}${isTall ? ar("tall (9:16)", "طوليًّا (٩:١٦)") : ar("wide (16:9)", "عَرْضيًّا (١٦:٩)")}</span>
+            ${v ? "" : `<span style="color:#b3261e;font-size:.8rem;"> — ${ar("this link can no longer be played", "لم يعد هذا الرابط يعمل")}</span>`}
           </span>
           <span style="display:flex;gap:6px;flex-wrap:wrap;">
-            <button class="del" style="background:var(--gold);color:#fff;" onclick="toggleTall(${i})">${isTall ? "↔ Make wide" : "↕ Make tall"}</button>
+            <button class="del" style="background:var(--gold);color:#fff;" onclick="toggleTall(${i})">${isTall ? ar("↔ Make wide", "↔ اجعله عَرْضيًّا") : ar("↕ Make tall", "↕ اجعله طوليًّا")}</button>
             <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="moveRecitation(${i},-1)" ${i === 0 ? "disabled" : ""}>↑</button>
             <button class="del" style="background:var(--green-light);color:var(--green-dark);" onclick="moveRecitation(${i},1)" ${i === cfg.recitations.length - 1 ? "disabled" : ""}>↓</button>
-            <button class="del" onclick="if(confirm('Remove this recitation from the home page?')){cfg.recitations.splice(${i},1);renderLists();}">Delete</button>
+            <button class="del" onclick="if(confirm(ar('Remove this recitation from the home page?','أتحذف هذه التلاوة من الصفحة الرئيسية؟'))){cfg.recitations.splice(${i},1);renderLists();}">${ar("Delete", "حذف")}</button>
           </span>
         </div>`;
       }).join("");
+      reI18n();
+    }
+
+    /* Arabic counts by the number, not by adding an "s": one تلاوة, two
+       تلاوتان, three to ten تلاوات. The same rule the search results use. */
+    function iitwPlural(n, one, two, few) {
+      if (n === 1) return one;
+      if (n === 2) return two;
+      return n >= 3 && n <= 10 ? few : one;
+    }
+    function iitwArNum(n) {
+      return String(n).replace(/[0-9]/g, c => String.fromCharCode(0x0660 + Number(c)));
     }
 
     /* ---------- Courses: add, edit, delete ----------
@@ -1475,7 +1521,8 @@
       const s = document.getElementById("tokenSaved");
       if (s) s.style.display = "none";
       const msg = document.getElementById("publishMsg");
-      msg.textContent = "Token forgotten. You will need to paste it again next time.";
+      msg.textContent = ar("Token forgotten. You will need to paste it again next time.",
+                           "نُسي الرمز. ستحتاج إلى لصقه مرّةً أخرى في المرّة القادمة.");
       msg.className = "";
     }
 
@@ -1483,7 +1530,8 @@
       const msg = document.getElementById("publishMsg");
       const token = document.getElementById("ghToken").value.trim();
       if (!token) {
-        msg.innerHTML = "<strong>No GitHub token.</strong> Paste it in the box to the left — you only have to do this once, it is remembered afterwards.";
+        msg.innerHTML = ar("<strong>No GitHub token.</strong> Paste it in the box to the left — you only have to do this once, it is remembered afterwards.",
+                           "<strong>لا يوجد رمز GitHub.</strong> ألصِقه في المربّع المجاور — مرّةً واحدة فقط، ثمّ يُحفظ.");
         msg.className = "err";
         document.getElementById("ghToken").focus();
         return false;
@@ -1504,17 +1552,24 @@
          an empty list and claim success — which is exactly what happened three
          times. Stop and say so. */
       if (recPending && document.getElementById("recPreviewWrap").style.display !== "none") {
-        const warn = "The video in the form has NOT been added to the list yet.\n\n" +
-                     "Press “✔ Put it on the home page now” instead — that adds it and saves it in one go.\n\n" +
-                     "Publishing right now would save the website WITHOUT that video.";
-        msg.innerHTML = "<strong>Stopped.</strong> The video in the form was never added — press “✔ Put it on the home page now”.";
+        const warn = ar(
+          "The video in the form has NOT been added to the list yet.\n\n" +
+          "Press “✔ Put it on the home page now” instead — that adds it and saves it in one go.\n\n" +
+          "Publishing right now would save the website WITHOUT that video.",
+          "الفيديو الذي في النموذج لم يُضَف إلى القائمة بعد.\n\n" +
+          "اضغط «✔ ضَعه في الصفحة الرئيسية الآن» — فهو يضيفه ويحفظه معًا.\n\n" +
+          "والنشر الآن سيحفظ الموقع بدون هذا الفيديو.");
+        msg.innerHTML = ar("<strong>Stopped.</strong> The video in the form was never added — press “✔ Put it on the home page now”.",
+                           "<strong>تُوقّف.</strong> الفيديو الذي في النموذج لم يُضَف قطّ — اضغط «✔ ضَعه في الصفحة الرئيسية الآن».");
         msg.className = "err";
         alert(warn);
         return false;
       }
 
       const nRec = (cfg.recitations || []).length;
-      msg.textContent = "Publishing " + nRec + " recitation(s)…"; msg.className = "";
+      msg.textContent = ar("Publishing " + nRec + " recitation(s)…",
+                           "جارٍ نشر " + iitwArNum(nRec) + " " + iitwPlural(nRec, "تلاوة", "تلاوتين", "تلاوات") + "…");
+      msg.className = "";
       try {
         const headers = { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" };
         const getResp = await fetch(REPO_API, { headers });
@@ -1530,11 +1585,15 @@
           // Say exactly what GitHub objected to, in plain words.
           let detail = "";
           try { detail = (await putResp.json()).message || ""; } catch (e) {}
-          const plain = putResp.status === 401 ? "GitHub rejected the token. It may be expired, or copied incompletely."
-            : putResp.status === 403 ? "GitHub refused. Fine-grained tokens do not work on this organisation — you need a CLASSIC token with the 'repo' box ticked."
-            : putResp.status === 404 ? "GitHub could not find the file. The token probably has no access to this repository."
-            : putResp.status === 409 ? "Someone else changed the file at the same time. Reload this page and publish again."
-            : "GitHub returned error " + putResp.status + ".";
+          const plain = putResp.status === 401 ? ar("GitHub rejected the token. It may be expired, or copied incompletely.",
+                "رفض GitHub الرمز. لعلّه انتهت صلاحيته أو نُسخ ناقصًا.")
+            : putResp.status === 403 ? ar("GitHub refused. Fine-grained tokens do not work on this organisation — you need a CLASSIC token with the 'repo' box ticked.",
+                "رفض GitHub. الرموز الدقيقة (fine-grained) لا تعمل على هذه المنظّمة — تحتاج رمزًا تقليديًّا (classic) مع تحديد خانة repo.")
+            : putResp.status === 404 ? ar("GitHub could not find the file. The token probably has no access to this repository.",
+                "لم يجد GitHub الملفّ. الأرجح أنّ الرمز لا يملك صلاحيةً على هذا المستودع.")
+            : putResp.status === 409 ? ar("Someone else changed the file at the same time. Reload this page and publish again.",
+                "غيّر أحدٌ الملفّ في الوقت نفسه. أعِد تحميل الصفحة وانشُر مرّةً أخرى.")
+            : ar("GitHub returned error " + putResp.status + ".", "أرجع GitHub الخطأ " + putResp.status + ".");
           throw new Error(plain + (detail ? " (" + detail + ")" : ""));
         }
 
@@ -1545,24 +1604,35 @@
         publishedSnapshot = JSON.stringify(cfg);
         try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
         updateUnpublishedBanner();
-        msg.innerHTML = "<strong>✓ Saved " + nRec + " recitation(s) to the website.</strong> Wait about a minute, then " +
+        msg.innerHTML = ar(
+          "<strong>✓ Saved " + nRec + " recitation(s) to the website.</strong> Wait about a minute, then " +
           "<a href='index.html' target='_blank' rel='noopener' style='text-decoration:underline;'>open the home page</a>. " +
           "Your token is remembered — you will not be asked for it again." +
-          (nRec === 0 ? "<br><strong style='color:#8a3d1f;'>Note: the list was empty, so no video was saved.</strong>" : "");
+          (nRec === 0 ? "<br><strong style='color:#8a3d1f;'>Note: the list was empty, so no video was saved.</strong>" : ""),
+          "<strong>✓ حُفظت " + iitwArNum(nRec) + " " + iitwPlural(nRec, "تلاوة", "تلاوتان", "تلاوات") + " في الموقع.</strong> انتظر دقيقةً تقريبًا، ثمّ " +
+          "<a href='index.html' target='_blank' rel='noopener' style='text-decoration:underline;'>افتح الصفحة الرئيسية</a>. " +
+          "ورمزك محفوظ — فلن يُطلب منك مرّةً أخرى." +
+          (nRec === 0 ? "<br><strong style='color:var(--del-ink);'>تنبيه: كانت القائمة فارغة، فلم يُحفظ أيّ فيديو.</strong>" : ""));
         msg.className = "ok";
         if (nRec === 0) {
-          alert("WARNING: the recitation list was empty, so nothing was added to the home page.\n\n" +
+          alert(ar("WARNING: the recitation list was empty, so nothing was added to the home page.\n\n" +
                 "Paste the video link, press “Check this video”, fill the boxes, then press\n" +
-                "“✔ Put it on the home page now”.");
+                "“✔ Put it on the home page now”.",
+                "تنبيه: كانت قائمة التلاوات فارغة، فلم يُضَف شيءٌ إلى الصفحة الرئيسية.\n\n" +
+                "ألصِق رابط الفيديو، واضغط «افحص هذا الفيديو»، واملأ الحقول، ثمّ اضغط\n" +
+                "«✔ ضَعه في الصفحة الرئيسية الآن»."));
         }
         return true;
       } catch (err) {
         // A failure must be impossible to miss — this is what went wrong before.
-        msg.innerHTML = "<strong>✕ NOT saved.</strong> " + iitwEsc(err.message) +
-          "<br>Nothing was lost — your work is still here. Fix the token and press Publish again.";
+        msg.innerHTML = ar("<strong>✕ NOT saved.</strong> ", "<strong>✕ لم يُحفظ.</strong> ") + iitwEsc(err.message) +
+          ar("<br>Nothing was lost — your work is still here. Fix the token and press Publish again.",
+             "<br>لم يضع شيء — عملك ما يزال هنا. صحّح الرمز واضغط النشر مرّةً أخرى.");
         msg.className = "err";
-        alert("Publishing FAILED — nothing was saved to the website.\n\n" + err.message +
-              "\n\nYour work is still in the dashboard. Nothing has been lost.");
+        alert(ar("Publishing FAILED — nothing was saved to the website.\n\n",
+                 "فشل النشر — لم يُحفظ شيءٌ في الموقع.\n\n") + err.message +
+              ar("\n\nYour work is still in the dashboard. Nothing has been lost.",
+                 "\n\nعملك ما يزال في اللوحة. لم يضع شيء."));
         return false;
       }
     }
@@ -1576,14 +1646,17 @@
       if (!list) return;
       const all = (typeof iitwFeedbackAll === "function") ? iitwFeedbackAll() : [];
 
-      count.textContent = all.length === 1
-        ? "1 message stored on this device."
-        : all.length + " messages stored on this device.";
+      count.textContent = ar(
+        all.length === 1 ? "1 message stored on this device."
+                         : all.length + " messages stored on this device.",
+        all.length === 0 ? "لا رسائل محفوظة على هذا الجهاز."
+          : "على هذا الجهاز " + iitwArNum(all.length) + " " +
+            iitwPlural(all.length, "رسالة محفوظة", "رسالتان محفوظتان", "رسائل محفوظة") + ".");
 
       if (!all.length) {
-        list.innerHTML = `<div class="fb-admin-empty">
-          Nothing stored on this device yet. This is expected — visitors' messages
-          reach you by <strong>email</strong>, not here. Use the Gmail button above.
+        list.innerHTML = `<div class="fb-admin-empty">${ar(
+          "Nothing stored on this device yet. This is expected — visitors' messages reach you by <strong>email</strong>, not here. Use the Gmail button above.",
+          "لا شيء محفوظ على هذا الجهاز بعد، وهذا هو المتوقَّع — فرسائل الزوّار تصلك <strong>بالبريد</strong> لا هنا. استعمل زرّ Gmail أعلاه.")}
         </div>`;
         return;
       }
@@ -1591,7 +1664,7 @@
       list.innerHTML = all.map(f => `
         <article class="fb-admin-item">
           <div class="fb-admin-meta">
-            <strong>${iitwEsc(f.name || "Anonymous")}</strong>
+            <strong>${iitwEsc(f.name || ar("Anonymous", "بلا اسم"))}</strong>
             <span>· ${iitwEsc(f.page || "")}</span>
             <span>· ${new Date(f.at).toLocaleString()}</span>
           </div>
@@ -1601,17 +1674,22 @@
 
     function fbAdminCopy() {
       const all = (typeof iitwFeedbackAll === "function") ? iitwFeedbackAll() : [];
-      if (!all.length) { alert("There is nothing stored on this device to copy."); return; }
+      if (!all.length) { alert(ar("There is nothing stored on this device to copy.",
+                                  "لا شيء على هذا الجهاز لنسخه.")); return; }
       const text = all.map(f =>
         "— " + (f.name || "Anonymous") + " · " + (f.page || "") + " · " +
         new Date(f.at).toLocaleString() + "\n" + (f.msg || "")).join("\n\n");
       navigator.clipboard.writeText(text)
-        .then(() => alert("Copied " + all.length + " message(s)."))
-        .catch(() => alert("Could not copy automatically. Select the text and copy it by hand."));
+        .then(() => alert(ar("Copied " + all.length + " message(s).",
+                             "نُسخت " + iitwArNum(all.length) + " " +
+                             iitwPlural(all.length, "رسالة", "رسالتان", "رسائل") + ".")))
+        .catch(() => alert(ar("Could not copy automatically. Select the text and copy it by hand.",
+                              "تعذّر النسخ تلقائيًّا. حدّد النصّ وانسخه بنفسك.")));
     }
 
     function fbAdminClear() {
-      if (!confirm("Delete the feedback stored on THIS device?\n\nThis does not touch anything in your email — those messages are safe.")) return;
+      if (!confirm(ar("Delete the feedback stored on THIS device?\n\nThis does not touch anything in your email — those messages are safe.",
+                      "أتحذف الرسائل المحفوظة على هذا الجهاز؟\n\nهذا لا يمسّ شيئًا في بريدك — تلك الرسائل في أمان."))) return;
       try { localStorage.removeItem("iitw-feedback"); } catch (e) {}
       fbAdminRefresh();
     }
@@ -1619,9 +1697,26 @@
     loadSavedToken();
     loadConfig();
     fbAdminRefresh();
+
+    /* These three drew themselves before js/i18n.js had even run — it is the
+       last script on the page — so in Arabic mode they came out English and
+       stayed that way. Draw them again once everything has loaded. */
+    window.addEventListener("load", () => {
+      renderLists();
+      fbAdminRefresh();
+      reI18n();
+    });
+
+    /* The language switch redraws nothing by itself: these panels were drawn
+       by the code above. Draw them again when the reader changes language. */
+    document.addEventListener("click", e => {
+      if (e.target && e.target.id === "langToggle") {
+        setTimeout(() => { renderLists(); fbAdminRefresh(); if (typeof IS_ADMIN !== "undefined" && IS_ADMIN) loadAnalytics(); }, 30);
+      }
+    });
   </script>
-  <script src="js/reading.js?v=202609161447"></script>
-  <script src="js/nav.js?v=202609161447"></script>
-  <script src="js/i18n.js?v=202609161447"></script>
+  <script src="js/reading.js?v=202609161535"></script>
+  <script src="js/nav.js?v=202609161535"></script>
+  <script src="js/i18n.js?v=202609161535"></script>
 </body>
 </html>

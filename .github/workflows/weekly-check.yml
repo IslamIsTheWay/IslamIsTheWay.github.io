@@ -42,6 +42,11 @@ jobs:
         run: |
           python3 build-recent.py --check
 
+      - name: Nothing pale in the dark theme, nothing mangled in the text
+        run: |
+          python3 tools/lightscan.py --check
+          python3 tools/textscan.py --check
+
       - name: The Quran is all there, and the pictures are within budget
         run: |
           python3 quran-parts.py --check
