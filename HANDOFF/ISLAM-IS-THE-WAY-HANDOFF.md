@@ -9,15 +9,16 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 1 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 16 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 2. **PART 27** (most recent) — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
-> 3. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
-> 4. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
-> 5. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
+> 2. **PART 33** (most recent) — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
+> 3. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
+> 4. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
+> 5. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
+> 6. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
 >
 > ### The current shape of the site
 >
@@ -6282,3 +6283,168 @@ file. Write long files one piece at a time (`cat > f <<'X'` … then
 `` arrives as ``'s single form and `ؐ` arrives as the character —
 which produced an "Invalid regular expression" on the live page once. Write
 JavaScript that needs no backslashes, or patch the file afterwards with Python.
+
+# PART 33 - Five things: coming back, reading at night, finding, and weight
+
+The owner asked for five in one go: continue where you left off, a dark mode
+and a text size that hold everywhere, one search and a navigation that fits,
+a "Recently Added" that cannot go stale, and a lighter site. They are done and
+each one is verified on the live URL, not locally only.
+
+## 1. Continue where you left off (js/resume.js, `#resume` on the home page)
+
+`localStorage["iitw-resume"]`, nothing sent anywhere, kept 60 days. The home
+page opens with at most three chips: the saved place first (💾), then the last
+surah (📖), the last story (📜), the last page (📂). The Quran page writes its
+entry in `openSurah` and again in `iitwMarkFinished`; stories are watched with
+an IntersectionObserver at `rootMargin: "-45% 0px -45% 0px"` so the card in the
+MIDDLE of the screen is the one remembered, and the watcher retries six times
+because those cards are rendered after the page loads.
+
+The page name in a chip is read from the navigation link's own label, not
+typed — that is what makes it translate in Arabic mode with everything else.
+The title and the Arabic title of a story are read from `.story-title` and
+`.story-title-ar` separately, for the same reason.
+
+The top of the home page was reordered to match: hero → `#resume` → the daily
+plan → the situations. A reader who has been here before now lands on their
+own place; a first-time reader sees exactly what they saw before, because the
+box renders nothing (`hidden`) until there is something to show.
+
+## 2. Night reading and the text size, on every page (js/reading.js)
+
+Three buttons — A−, A+, 🌙 — injected into `header .nav-wrap` BEFORE
+`.nav-toggle`. Not into the nav itself: the nav is behind the hamburger on a
+phone, and a control you cannot reach is not a control. They carry
+`dir="ltr"` so A− and A+ do not swap in Arabic.
+
+* **Theme** in `localStorage["iitw-theme"]`, on `:root[data-theme]`. Until the
+  reader chooses, the phone's own setting is followed. Every page has a tiny
+  script in `<head>` that stamps the attribute BEFORE the first paint —
+  without it the page flashes white and then turns dark, which reads as a
+  fault.
+* **Size** in `localStorage["iitw-text-scale"]`, steps 1 → 1.35, applied as
+  `document.documentElement.style.fontSize`. It is the site's text; the surah
+  reader keeps its own `--rq-scale` (PART 32) on top of it.
+
+**The token sweep that made dark mode possible.** `--green-dark` was the INK
+in 176 places and the BACKGROUND in 15. One variable cannot be both in a dark
+theme, so: `--green-deep` for the dark-green surfaces, `--bg`, `--card`,
+`--cream`, `--cream-line` for the paper, and then 83 hard-coded white
+backgrounds and every cream pair were moved onto them. What remained is
+generated: 182 dark overrides between guard comments at the end of
+css/style.css, written by scratchpad `gen_dark.py`, and `scratchpad/darkaudit.py`
+walks EVERY element of every page looking for a light surface or dark-on-dark
+ink. It comes back empty on all 18 pages; run it again after touching colour.
+
+## 3. One search, and a header a reader can scan (js/nav.js)
+
+Eleven links in the header meant nobody read any of them. The nav is now five
+— Quran, Hadith, Sunnah, Stories, Guidance — and a **More ▾** dropdown holding
+the rest in two named groups ("Read and learn", "Check and find"), with
+`aria-expanded`, Escape, and click-outside.
+
+The 🔎 in the header opens one overlay that sends the query to
+`search.html?q=` — the site already had a search page, and readers were not
+finding it. "/" and Ctrl-K open it from the keyboard.
+
+Two things this broke and how they were fixed: the overlay had `hidden` AND
+`display:flex`, so an invisible box swallowed every click on the page (the fix
+is the global `[hidden] { display: none !important; }` — keep it); and the
+hamburger did not appear until 1500px while the new controls needed room at
+1280px, so the breakpoint moved to 1100px and the header compacts below 620px,
+dropping the brand name below 430px. Re-measured at 1101 / 1280 / 1440 and at
+390, both languages, no overflow anywhere.
+
+## 4. "Recently Added" is written from git (build-recent.py → js/recent.js)
+
+That section was seven cards typed into index.html. They said "recently" for
+as long as nobody edited them — months. Now `build-recent.py` asks git when
+each part of the site last had real work done on it, sorts the areas newest
+first and writes `js/recent.js`; the page renders the newest six into
+`<div class="grid" id="recentGrid">`, each with the day it was last worked on.
+
+What counts as real work is the whole difficulty, and it is all in that file:
+
+* `bump-version.sh` rewrites `?v=` in every HTML file on every commit, so the
+  stamp is stripped from a line before the line is judged.
+* A commit that touches **eight or more** HTML files is a site-wide pass (a
+  header, a script tag, the brand): for such a commit only an area's own data
+  files count.
+* The shell filter (`<script`, `data-theme`, `nav.js` …) runs over **HTML
+  only**. js/reading.js is ABOUT `data-theme`; filtering its own source would
+  make the work that built it read as no work at all.
+* The stories, the hadith, the lives and the worship steps are four sections
+  of ONE 500KB js/data.js, so those areas name their own array
+  (`symbols=[("js/data.js", "PROPHET_STORIES")]`) and only changes INSIDE the
+  array count. The array's line range is read from the file as it was at that
+  commit, and hunk positions are compared against it.
+* Uncommitted work in the tree is dated today, so the commit that ships a
+  section is the one that dates it.
+* An area with no content change in the last 250 commits gets NO date and
+  sorts last, rather than borrowing the date of a site-wide pass.
+
+The wording lives in the AREAS table in English on purpose: js/i18n.js carries
+the Arabic for every title, blurb and button, exactly as for the rest of the
+site. Add an area → add its Arabic, or the card will be English in Arabic
+mode. `bump-version.sh` regenerates the file before every commit and the
+weekly workflow fails if it is out of date.
+
+## 5. The weight
+
+**The pictures (shrink-images.py, phone-photos.py).** A 97KB logo was drawn 46
+pixels wide in the header of every page, the app icon was 280KB, and a 340KB
+photograph stood behind a heading that a phone shows 390px wide.
+
+* Every JPEG is re-encoded progressive, long edge capped at 1500, quality
+  stepped down until it is inside a 200KB budget. It only rewrites for a
+  saving of 5% or more, so running it twice does not cost quality twice.
+* The logo, the three app icons and the favicon are flat artwork with no
+  partial transparency: as 128-colour PNGs they are indistinguishable at the
+  size they are drawn. 482KB → 31KB for the icons, 97KB → 10KB for the logo.
+* A `-sm` copy of every background photograph at 820px, served by a GENERATED
+  block at the end of css/style.css (`@media (max-width: 820px)`), written by
+  `phone-photos.py` from the rules already in the stylesheet — add a
+  background tomorrow and re-run it. The four photo bands that carried their
+  photograph in an inline `style=` now carry a class (`.pb-night` …), because
+  a media query cannot reach an inline style.
+* The home page on a phone: **1026KB of pictures → 290KB.**
+* `check-images.sh` still demands ≥1000px for a full-width background and now
+  demands ≥700px for a `-sm` copy. `shrink-images.py --check` fails if any
+  image is over budget or a phone copy is missing.
+
+**The Quran (quran-parts.py, js/quran-text/, the loader).** The text is 2.2MB
+and quran.html downloaded and parsed ALL of it before it could show one verse.
+It is now one file per surah in `js/quran-text/<n>.js`, and `js/quran-text.js`
+is the loader:
+
+* `iitwQuranNeed(n)` — one surah, awaited at the top of `openSurah` (surah 1
+  too: verse 1 of it is the basmala above every other surah). 2KB for
+  al-Fatihah, 172KB for al-Baqarah, instead of 2.2MB.
+* `iitwQuranAll()` / `iitwQuranReady()` — the whole text, in batches of six.
+  The word search, the Verify page and the word panel WAIT for it: half a
+  Quran would give real-looking answers that are wrong. The search says
+  "Loading the Quran's words…" and re-runs itself; the panel omits the count
+  and warms the rest for the next word.
+* The parts are asked for with the same `?v=` stamp the loader itself was
+  asked for — read off `document.currentScript.src` — so a new reader never
+  gets an old surah out of the browser cache.
+* The rest is fetched when the reader FOCUSES the search box, not on load. A
+  reader who opened one surah pays for one surah.
+* **Offline is unchanged and was tested, not assumed.** All 114 files are in
+  the service worker's CONTENT list, where js/quran.js and js/data.js already
+  were — not in the install list, because install is killed if it takes too
+  long (see the scar in sw.js). `CACHE_VERSION` went to `iitw-v4`. With the
+  network off: Ya-Sin, al-Kahf, ar-Rahman and al-Falaq all open and the word
+  search still answers.
+* `quran-parts.py --check` proves the 114 files are there and hold 6,236
+  verses with a translation and a page for every one. **check-quran.sh reads
+  the parts now** — any tool that used to read the one big file must read
+  `js/quran-text/<n>.js` (there is a five-line reader in check-quran.sh).
+
+**What is still heavy, and is the next thing to do.** js/tadabbur.js is
+**1.3MB** and quran.html loads all of it on every visit. It is keyed by surah
+(`TADABBUR[2] = {…}`), so it splits the same way the Quran text did — the work
+is that `TADABBUR_INTRO`'s box counts verses across all 114 surahs at first
+paint, so that count has to be generated into a small file first. After that,
+js/data.js (482KB, loaded on every page) is the next one.
