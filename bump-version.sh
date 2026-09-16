@@ -8,6 +8,12 @@ cd "$(dirname "$0")"
 # the generator reads the working tree to date today's own work.
 python build-recent.py || python3 build-recent.py || echo "build-recent.py did not run"
 
+# The phone copies of the background photographs are served by a generated
+# block in css/style.css. Regenerated here so a background added today is
+# not still costing a phone 1500 pixels tomorrow. (The copies themselves are
+# written by ./shrink-images.py, which is run by hand when a photo is added.)
+python phone-photos.py || python3 phone-photos.py || echo "phone-photos.py did not run"
+
 V=$(date +%Y%m%d%H%M)
 for f in *.html; do
   sed -i -E 's#(href="css/style\.css)(\?v=[0-9]+)?"#\1?v='"$V"'"#g' "$f"

@@ -40,8 +40,8 @@ for pat in 'ٱلْ' 'ًۭ' 'ٌۭ' 'ٍۭ' 'ًۢ' 'ٌۢ' 'ٍۢ' '۟'; do
 done
 
 # the reader's own text must be the Madinah text too
-if grep -qF 'ٱلْ' js/quran-text.js; then
-  echo "js/quran-text.js carries the old Tanzil text - it must be KFGQPC Hafs (PART 28)"
+if grep -qF 'ٱلْ' js/quran-text/*.js; then
+  echo "js/quran-text/ carries the old Tanzil text - it must be KFGQPC Hafs (PART 28)"
   fail=1
 fi
 
@@ -62,8 +62,17 @@ fi
 if [ -f js/theme-verses.js ] && command -v python >/dev/null 2>&1; then
   python - <<'PY' || fail=1
 import json, re, sys
-qt = open("js/quran-text.js", encoding="utf-8").read()
-qt = json.loads(qt[qt.index("const QURAN_TEXT = ") + 19: qt.rindex("}") + 1])
+def read_parts():
+    """The Quran is one file per surah since it was split for the reader
+    (js/quran-text/<n>.js, loaded on demand). Read them back as one map."""
+    out = {}
+    for n in range(1, 115):
+        t = open("js/quran-text/%d.js" % n, encoding="utf-8").read()
+        i = t.index("QURAN_TEXT[")
+        out[str(n)] = json.loads(t[t.index("=", i) + 1: t.rindex("}") + 1])
+    return out
+
+qt = read_parts()
 tv = open("js/theme-verses.js", encoding="utf-8").read()
 tv = json.loads(tv[tv.index("const THEME_VERSES = ") + 21: tv.rindex("}") + 1])
 bad = [k for k, v in tv.items()
@@ -82,8 +91,17 @@ if [ -d js/raghib ] && command -v python >/dev/null 2>&1; then
   python - <<'PY' || fail=1
 import json, re, os, sys
 sys.stdout.reconfigure(encoding="utf-8")
-qt = open("js/quran-text.js", encoding="utf-8").read()
-qt = json.loads(qt[qt.index("const QURAN_TEXT = ") + 19: qt.rindex("}") + 1])
+def read_parts():
+    """The Quran is one file per surah since it was split for the reader
+    (js/quran-text/<n>.js, loaded on demand). Read them back as one map."""
+    out = {}
+    for n in range(1, 115):
+        t = open("js/quran-text/%d.js" % n, encoding="utf-8").read()
+        i = t.index("QURAN_TEXT[")
+        out[str(n)] = json.loads(t[t.index("=", i) + 1: t.rindex("}") + 1])
+    return out
+
+qt = read_parts()
 # (a verse opening with ۞ has a no-break space after it)
 verses = [" " + a.replace(chr(160), " ") + " " for s in qt.values() for a in s["a"]]
 by_word = {}

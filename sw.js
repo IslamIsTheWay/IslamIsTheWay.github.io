@@ -44,7 +44,7 @@
        needs a connection, and the page says so.
    ============================================================ */
 
-const CACHE_VERSION = "iitw-v3";
+const CACHE_VERSION = "iitw-v4";   // v4: the Quran is 114 files now, not one
 const QURAN_CACHE   = "iitw-quran-v1";   // separate: immutable, never purged with the rest
 
 /* SPLIT IN TWO, AND THE SPLIT MATTERS.
@@ -66,9 +66,11 @@ const PRECACHE_SHELL = [
   "./img/icon-192.png", "./img/favicon.png", "./img/logo-emblem.png",
   "./js/main.js", "./js/i18n.js", "./js/reading.js", "./js/nav.js",
   "./js/recent.js",
-  /* The Quran itself. 2.2MB, and the single most important file here —
-     without it a surah cannot open offline, which is the exact failure
-     this whole arrangement exists to prevent. */
+  /* The Quran's loader. The 114 surah files it fetches are in the CONTENT
+     list below, not here: install is killed if it takes too long, and the
+     page that reads them (js/quran.js, js/data.js) is in that list too, so
+     putting 2.2MB in front of the install would buy nothing and risk the
+     whole thing. */
   "./js/quran-text.js",
   /* ...and the only typeface that draws it correctly. The text is the
      Madinah Mushaf's own (KFGQPC Hafs), which writes the open tanween with
@@ -111,6 +113,14 @@ const PRECACHE_CONTENT = [
      Quran's words — both are useless offline if they are not here. */
   "./js/resume.js", "./js/quran-search.js"
 ];
+
+/* The Quran itself, one file per surah (js/quran-text/1.js …) — 2.2MB in
+   all. Every one of them, because "a surah opens with no connection" is the
+   promise this whole file exists to keep and it was broken twice before: the
+   reader who goes offline must have all 114, not the ones he happened to
+   open. Added in a loop rather than written out; 114 lines of the same thing
+   would hide what they are. */
+for (let qs = 1; qs <= 114; qs++) PRECACHE_CONTENT.push("./js/quran-text/" + qs + ".js");
 
 /* Hosts handled specially. The reader's fallback (used only if
    js/quran-text.js failed to load) takes the Arabic from quran.com and the

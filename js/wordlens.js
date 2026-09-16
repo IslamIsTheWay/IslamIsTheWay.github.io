@@ -164,6 +164,13 @@
      the line is simply omitted rather than guessed at. */
   function quranCount(key) {
     if (typeof QURAN_TEXT === "undefined" || key.length < 3) return null;
+    /* Half the Quran would give a real-looking count that is simply wrong.
+       js/quran-text.js loads the rest in the background on the pages that
+       carry it, so this is true a second or two after the page opens. */
+    if (typeof iitwQuranReady === "function" && !iitwQuranReady()) {
+      if (typeof iitwQuranAll === "function") iitwQuranAll();   /* for the next word */
+      return null;
+    }
     var n = 0, keys = Object.keys(QURAN_TEXT), i, j, arr;
     for (i = 0; i < keys.length; i++) {
       arr = QURAN_TEXT[keys[i]].a;

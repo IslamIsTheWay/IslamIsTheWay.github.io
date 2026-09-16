@@ -1,0 +1,4 @@
+/* Surah 107 — 7 verses. Written by quran-parts.py; the text is the
+   King Fahd Complex's Hafs (the Madinah Mushaf). Loaded on demand by
+   js/quran-text.js — never edit a verse here by hand. */
+QURAN_TEXT["107"]={"a":["أَرَءَيۡتَ ٱلَّذِي يُكَذِّبُ بِٱلدِّينِ","فَذَٰلِكَ ٱلَّذِي يَدُعُّ ٱلۡيَتِيمَ","وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلۡمِسۡكِينِ","فَوَيۡلٞ لِّلۡمُصَلِّينَ","ٱلَّذِينَ هُمۡ عَن صَلَاتِهِمۡ سَاهُونَ","ٱلَّذِينَ هُمۡ يُرَآءُونَ","وَيَمۡنَعُونَ ٱلۡمَاعُونَ"],"e":["Have you seen the one who denies the Recompense?","For that is the one who drives away the orphan","And does not encourage the feeding of the poor.","So woe to those who pray","[But] who are heedless of their prayer -","Those who make show [of their deeds]","And withhold [simple] assistance."],"p":[602,602,602,602,602,602,602]};

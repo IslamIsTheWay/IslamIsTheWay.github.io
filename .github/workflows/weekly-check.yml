@@ -42,6 +42,12 @@ jobs:
         run: |
           python3 build-recent.py --check
 
+      - name: The Quran is all there, and the pictures are within budget
+        run: |
+          python3 quran-parts.py --check
+          python3 shrink-images.py --check
+          python3 phone-photos.py --check
+
       - name: Every file the Quran page needs is being served
         run: |
           set -u
@@ -49,6 +55,8 @@ jobs:
           fail=0
           # the page itself, its data, and one notes part of every surah that has them
           files="quran.html js/quran.js js/quran-text.js js/raghib.js js/raghib-index.js
+                 js/quran-text/1.js js/quran-text/2.js js/quran-text/114.js
+                 img/mosque-night-sm.jpg js/recent.js
                  js/raghib/intro.js js/raghib/1.js js/raghib/2-1.js js/raghib/3.js
                  js/raghib/4.js js/raghib/5.js js/raghib/6.js js/raghib/10.js
                  css/style.css js/i18n.js"

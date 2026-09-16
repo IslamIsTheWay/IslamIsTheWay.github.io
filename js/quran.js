@@ -206,6 +206,17 @@ async function openSurah(surah) {
 
        The API is kept only as a fallback for the case where the local file
        has not loaded, so nothing is lost if a browser fails to parse it. */
+    /* The text arrives one surah at a time (js/quran-text.js). This is the
+       whole page's critical path: 2KB for al-Fatihah instead of the 2.2MB
+       that used to be downloaded and parsed before anything could be shown.
+       Surah 1 comes too - verse 1 of it is the basmala printed above every
+       other surah. If either fails, the API fallback below still answers. */
+    if (typeof iitwQuranNeed === "function") {
+      try {
+        await Promise.all([iitwQuranNeed(surah.n), iitwQuranNeed(1)]);
+      } catch (e) { /* the fallback handles it */ }
+    }
+
     const local = (typeof QURAN_TEXT !== "undefined") ? QURAN_TEXT[String(surah.n)] : null;
 
     if (local && local.a && local.a.length) {

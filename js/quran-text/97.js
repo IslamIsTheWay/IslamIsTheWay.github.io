@@ -1,0 +1,4 @@
+/* Surah 97 — 5 verses. Written by quran-parts.py; the text is the
+   King Fahd Complex's Hafs (the Madinah Mushaf). Loaded on demand by
+   js/quran-text.js — never edit a verse here by hand. */
+QURAN_TEXT["97"]={"a":["إِنَّآ أَنزَلۡنَٰهُ فِي لَيۡلَةِ ٱلۡقَدۡرِ","وَمَآ أَدۡرَىٰكَ مَا لَيۡلَةُ ٱلۡقَدۡرِ","لَيۡلَةُ ٱلۡقَدۡرِ خَيۡرٞ مِّنۡ أَلۡفِ شَهۡرٖ","تَنَزَّلُ ٱلۡمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذۡنِ رَبِّهِم مِّن كُلِّ أَمۡرٖ","سَلَٰمٌ هِيَ حَتَّىٰ مَطۡلَعِ ٱلۡفَجۡرِ"],"e":["Indeed, We sent the Qur'an down during the Night of Decree.","And what can make you know what is the Night of Decree?","The Night of Decree is better than a thousand months.","The angels and the Spirit descend therein by permission of their Lord for every matter.","Peace it is until the emergence of dawn."],"p":[598,598,598,598,598]};

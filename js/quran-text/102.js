@@ -1,0 +1,4 @@
+/* Surah 102 — 8 verses. Written by quran-parts.py; the text is the
+   King Fahd Complex's Hafs (the Madinah Mushaf). Loaded on demand by
+   js/quran-text.js — never edit a verse here by hand. */
+QURAN_TEXT["102"]={"a":["أَلۡهَىٰكُمُ ٱلتَّكَاثُرُ","حَتَّىٰ زُرۡتُمُ ٱلۡمَقَابِرَ","كـَلَّا سَوۡفَ تَعۡلَمُونَ","ثُمَّ كـَلَّا سَوۡفَ تَعۡلَمُونَ","كـَلَّا لَوۡ تَعۡلَمُونَ عِلۡمَ ٱلۡيَقِينِ","لَتَرَوُنَّ ٱلۡجَحِيمَ","ثُمَّ لَتَرَوُنَّهَا عَيۡنَ ٱلۡيَقِينِ","ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ"],"e":["Competition in [worldly] increase diverts you","Until you visit the graveyards.","No! You are going to know.","Then no! You are going to know.","No! If you only knew with knowledge of certainty...","You will surely see the Hellfire.","Then you will surely see it with the eye of certainty.","Then you will surely be asked that Day about pleasure."],"p":[600,600,600,600,600,600,600,600]};

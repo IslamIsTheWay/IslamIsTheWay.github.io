@@ -1,0 +1,4 @@
+/* Surah 94 — 8 verses. Written by quran-parts.py; the text is the
+   King Fahd Complex's Hafs (the Madinah Mushaf). Loaded on demand by
+   js/quran-text.js — never edit a verse here by hand. */
+QURAN_TEXT["94"]={"a":["أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ","وَوَضَعۡنَا عَنكَ وِزۡرَكَ","ٱلَّذِيٓ أَنقَضَ ظَهۡرَكَ","وَرَفَعۡنَا لَكَ ذِكۡرَكَ","فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا","إِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرٗا","فَإِذَا فَرَغۡتَ فَٱنصَبۡ","وَإِلَىٰ رَبِّكَ فَٱرۡغَب"],"e":["Did We not expand for you, [O Muhammad], your breast?","And We removed from you your burden","Which had weighed upon your back","And raised high for you your repute.","For indeed, with hardship [will be] ease.","Indeed, with hardship [will be] ease.","So when you have finished [your duties], then stand up [for worship].","And to your Lord direct [your] longing."],"p":[596,596,596,596,596,596,596,596]};

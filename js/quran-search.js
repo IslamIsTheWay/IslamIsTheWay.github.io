@@ -191,6 +191,16 @@
     var box = document.getElementById("qWordResults");
     var inp = document.getElementById("qWordSearch");
     if (!box || !inp) return;
+    /* The Quran now arrives surah by surah (js/quran-text.js), and this
+       searches all of it. Answering from the part that happens to have
+       loaded would quietly miss verses, so wait for the rest. */
+    if (typeof iitwQuranReady === "function" && !iitwQuranReady()) {
+      box.innerHTML = '<div class="qs-note"><span class="en-only">Loading the Quran’s words…</span>' +
+        '<span class="ar-only" dir="rtl">جارٍ تحميل نصّ القرآن…</span></div>';
+      if (window.applyI18n) window.applyI18n();
+      iitwQuranAll().then(function () { IDX = null; iitwQuranWordSearch(); });
+      return;
+    }
     var raw = inp.value.trim();
     if (raw.length < 2) {
       box.innerHTML = '<div class="qs-note"><span class="en-only">Type at least two letters.</span>' +
