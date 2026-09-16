@@ -81,6 +81,22 @@ const AR = {
 
   // ---- Home: recently added ----
   "Recently Added": "أحدث الإضافات",
+  "Ar-Raghib al-Isfahani on the Quran": "الراغب الأصفهاني على القرآن",
+  "His own explanation under the verses of the first ten surahs — from his tafsir where it survives, and from his dictionary of the Quran where it does not. Every word of his is checked letter by letter against the printed book, every verse he connects is in the Mushaf's own text, and the page he said it on is printed with it.": "شرحه بنصّه تحت آيات السور العشر الأولى — من تفسيره حيث وصلنا، ومن «المفردات» حيث لم يصلنا. كلّ كلمةٍ من كلامه مطابَقةٌ على الكتاب المطبوع حرفًا حرفًا، وكلّ آيةٍ يربط بها بخطّ المصحف، ومعها الصفحة التي قالها فيها.",
+  "Night reading, bigger text, and one search": "قراءةٌ ليليّة، وخطٌّ أكبر، وبحثٌ واحد",
+  "A dark theme for reading at night, a text size that holds across the whole site, one search in the header of every page — and the home page now opens on what you were last reading.": "وضعٌ ليليٌّ للقراءة في الليل، وحجم خطٍّ يثبت في الموقع كلّه، وبحثٌ واحد في أعلى كلّ صفحة — والصفحة الرئيسية تفتح الآن على ما كنت تقرؤه.",
+  "See for yourself": "جرّبها بنفسك",
+  "Words of the Prophet": "من كلام النبيّ ﷺ",
+  "Hadith from the two Sahihs, each with its book, its number and the grading the scholars gave it, and the Arabic beside the English.": "أحاديث من الصحيحين، لكلّ حديثٍ كتابه ورقمه ودرجته التي حكم بها أهل العلم، والعربيّة إلى جانب الإنجليزيّة.",
+  "Read the Hadith": "اقرأ الأحاديث",
+  "The Prophet's practice through an ordinary day — waking, eating, dressing, entering and leaving, sleeping — each with the hadith it comes from and its grading.": "هديُه ﷺ في اليوم المعتاد — الاستيقاظ والطعام واللباس والدخول والخروج والنوم — مع الحديث الذي جاءت منه كلّ سنّة ودرجته.",
+  "The worship reference: how each act of worship is performed, what is said in it, and what to do when something goes wrong — with the evidence beside every ruling.": "مرجع العبادة: كيف تُؤدّى كلّ عبادة، وماذا يُقال فيها، وماذا تصنع إذا وقع الخلل — والدليل بجانب كلّ حكم.",
+  "Check what you were told": "تحقَّق ممّا قيل لك",
+  "Paste a hadith, a claim or a quotation and see whether this site can find it in the sources it carries, and how strong it is.": "الصق حديثًا أو دعوى أو نقلًا، وانظر هل يجده هذا الموقع في مصادره التي يحملها، وما درجته.",
+  "Check something": "تحقَّق من شيء",
+  "Today's reading": "وِرد اليوم",
+  "A small daily plan on the home page — read from the Quran, a moment from his life, a sunnah to act on, and what you have started to forget — with the run of days you have kept.": "خطّةٌ يوميّةٌ صغيرة في الصفحة الرئيسية — اقرأ من القرآن، وموقفًا من سيرته، وسنّةً تعمل بها، وما بدأت تنساه — مع سلسلة الأيام التي حافظت عليها.",
+  "Start today": "ابدأ اليوم",
   "The newest additions to the site — each one written from the source, with its reference and its grading.":
     "أحدث ما أُضيف إلى الموقع — كلُّ مادةٍ مكتوبة من أصلها، ومعها مرجعها ودرجتها.",
   "57 stories, every one found in the text of Sahih al-Bukhari or Sahih Muslim before it was written here — none from memory. The classical Arabic words in each story are explained in plain modern Arabic and English, and the eight stories about the Dajjal are linked together as one series, each with its own plain-words box.":

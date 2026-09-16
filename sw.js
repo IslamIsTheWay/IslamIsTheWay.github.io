@@ -65,6 +65,7 @@ const PRECACHE_SHELL = [
   "./manifest.webmanifest",
   "./img/icon-192.png", "./img/favicon.png", "./img/logo-emblem.png",
   "./js/main.js", "./js/i18n.js", "./js/reading.js", "./js/nav.js",
+  "./js/recent.js",
   /* The Quran itself. 2.2MB, and the single most important file here —
      without it a surah cannot open offline, which is the exact failure
      this whole arrangement exists to prevent. */

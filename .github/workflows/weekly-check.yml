@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # build-recent.py reads the history, not just the tip
 
       - name: The repo's own checks
         run: |
@@ -35,6 +37,10 @@ jobs:
           ./check-images.sh
           ./check-counts.sh
           ./check-quran.sh
+
+      - name: The Recently Added section still matches git
+        run: |
+          python3 build-recent.py --check
 
       - name: Every file the Quran page needs is being served
         run: |
