@@ -234,7 +234,7 @@
     var shown = hits.slice(0, LIMIT);
     var head = '<div class="qs-count"><span class="en-only"><strong>' + hits.length + '</strong> verse' + (hits.length === 1 ? "" : "s") +
       (hits.length > LIMIT ? " — the first " + LIMIT + " are shown" : "") + '</span>' +
-      '<span class="ar-only" dir="rtl"><strong>' + digits(hits.length) + '</strong> ' + ayahWord(hits.length) +
+      '<span class="ar-only" dir="rtl">' + (hits.length === 1 ? "آيةٌ واحدة" : '<strong>' + digits(hits.length) + '</strong> ' + ayahWord(hits.length)) +
       (hits.length > LIMIT ? " — هذه أوّل " + digits(LIMIT) + " منها" : "") + '</span></div>';
     box.innerHTML = head + shown.map(rowHtml).join("");
     if (window.applyI18n) window.applyI18n();
