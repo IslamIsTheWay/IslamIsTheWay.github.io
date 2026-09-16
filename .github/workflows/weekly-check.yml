@@ -1,0 +1,57 @@
+# ============================================================
+#  weekly-check.yml — the live site, checked every week
+# ============================================================
+#
+#  The site is static and deploys itself from main, so nothing here builds
+#  anything. What it catches is the two ways this site has broken before:
+#
+#    * a page or a data file that stopped matching the rest of the repo —
+#      a home-page number gone stale, a missing image, a ﴿verse﴾ that is no
+#      longer the Mushaf's words (the three check-*.sh scripts, which are
+#      the same ones run before every commit);
+#    * a file that is in the repo but NOT being served — a deploy that
+#      half-finished, or a path that changed. Every asset the Quran page
+#      pulls in is fetched from the live site and must come back 200.
+#
+#  It runs on Mondays and can be started by hand from the Actions tab.
+#  A failure mails the repository owner, which is the point: nobody has to
+#  remember to look.
+name: Weekly site check
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"        # Mondays, 06:17 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The repo's own checks
+        run: |
+          chmod +x ./check-images.sh ./check-counts.sh ./check-quran.sh
+          ./check-images.sh
+          ./check-counts.sh
+          ./check-quran.sh
+
+      - name: Every file the Quran page needs is being served
+        run: |
+          set -u
+          BASE=https://islamistheway.github.io
+          fail=0
+          # the page itself, its data, and one notes part of every surah that has them
+          files="quran.html js/quran.js js/quran-text.js js/raghib.js js/raghib-index.js
+                 js/raghib/intro.js js/raghib/1.js js/raghib/2-1.js js/raghib/3.js
+                 js/raghib/4.js js/raghib/5.js js/raghib/6.js js/raghib/10.js
+                 css/style.css js/i18n.js"
+          for f in $files; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/$f")
+            echo "$code  $f"
+            [ "$code" = "200" ] || fail=1
+          done
+          # the live page must carry a version stamp — an unstamped deploy
+          # means bump-version.sh did not run and readers get cached files
+          curl -s "$BASE/quran.html" | grep -qE 'raghib\.js\?v=[0-9]{12}' || { echo "no version stamp on the live quran.html"; fail=1; }
+          exit $fail
