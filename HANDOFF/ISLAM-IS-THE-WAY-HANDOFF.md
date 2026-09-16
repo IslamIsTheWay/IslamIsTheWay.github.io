@@ -6179,9 +6179,12 @@ words of one verse of js/quran-text.js (4,550 of them at first build).
   (2026-09-15: "too much time … concentrate on the important verses without
   explaining each and every one"), KEY VERSES ONLY: 245, 249, 255-261, 264,
   267, 275, 286 — al-Baqarah finished (352 notes). Al 'Imran: 7, 19, 64,
-  103, 110, 134, 159, 191, 200 (9 notes). Next: an-Nisa' (tafsir covers
-  4:1-176) and al-Ma'idah (5:1-120) — key verses only, about eight each.
-  Vols 2-5 print Quran quotes in ( ): write them { } in `said`. `python show3.py <s> <v> <v>`
+  103, 110, 134, 159, 191, 200 (9 notes). An-Nisa': 1, 36, 58, 59, 82
+  (5 notes). Al-Ma'idah: 2, 3, 8, 32, 48 (5 notes) — the tafsir ends at
+  5:120, so surahs 6-10 need al-Mufradat entries and their own build.
+  Vols 2-5 print Quran quotes in ( ): write them { } in `said`.
+  A heredoc longer than ~12KB is truncated by the shell: write a notes
+  file one note at a time (`cat > f <<'X'` then `cat >> f <<'X'`). `python show3.py <s> <v> <v>`
   prints a passage; write notes/<s>-<v>.txt; `python
   build_raghib.py 2` until "problems: 0"; then `--write`, index_raghib.py.
   The book's typos are corrected in `said` only when certain (the build prints
