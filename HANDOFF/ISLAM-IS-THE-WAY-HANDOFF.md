@@ -14,11 +14,12 @@
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 2. **PART 33** (most recent) — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
-> 3. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
-> 4. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
-> 5. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
-> 6. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
+> 2. **PART 34** (most recent) — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
+> 3. **PART 33** — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
+> 4. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
+> 5. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
+> 6. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
+> 7. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
 >
 > ### The current shape of the site
 >
@@ -6448,3 +6449,74 @@ is the loader:
 is that `TADABBUR_INTRO`'s box counts verses across all 114 surahs at first
 paint, so that count has to be generated into a small file first. After that,
 js/data.js (482KB, loaded on every page) is the next one.
+
+# PART 34 - Two faults from the owner's own screen, and the class behind each
+
+He sent two screenshots: the staff dashboard's analytics panel entirely in
+English while the site was in Arabic, and the numbers strip under the home
+page hero fading into a sheet of WHITE in the dark theme, with labels on it
+that could not be read. Neither was one missed line; each was a class.
+
+## The dark theme could not see gradients
+
+`gen_dark.py` rewrites a pale SINGLE colour into a dark tint, and
+`tools/darkaudit.py` reads an element's computed background-COLOR. Neither
+of them can see a colour written inside a **gradient**, a **shadow ring**, or
+a **keyframe**. Twelve surfaces were therefore still light in the dark theme,
+and one of them — `.card .icon`, the tile behind the icon on every card — is
+on every page of the site.
+
+* All twelve now have a `:root[data-theme="dark"]` rule of their own, in a
+  hand-written block after the generated one (the generator would overwrite
+  them, and it cannot produce them).
+* The verse-found flash became a token, `--flash`, because a keyframe cannot
+  be overridden per theme any other way.
+* **`tools/lightscan.py`** walks every rule for a colour lighter than 0.62
+  luminance in any background or shadow and fails if it has no dark rule.
+  `--check` runs in the weekly workflow. Run it after adding a gradient.
+* `tools/darkaudit.py` now reads gradient stops as well as flat colours.
+
+The staff dashboard had the same fault from its own `<style>` block: white
+panels, white tab buttons, a glowing delete button. It uses `var(--card)` and
+two new tokens (`--del-bg`, `--del-ink`) now, so it follows the theme.
+
+## English in Arabic mode, on a page no audit could open
+
+staff.html redirects to login.html when there is no session, so every audit
+this site has ever run saw the login page and reported it clean. Behind the
+login, **all 219 strings were English**. To audit it, set the session first:
+
+```js
+localStorage.setItem("iitw-staff-session",
+  JSON.stringify({ user: "Islam.younis.2026", at: Date.now() }));
+```
+
+`tools/leakaudit.py` does exactly that and walks every text node. Three
+things had to be fixed before the translations could work at all:
+
+1. **A sentence wrapped across lines did not match its key.** A paragraph
+   written over four lines in the HTML arrives as one text node WITH the
+   newlines and indentation inside it, and `AR["…"]` missed it — silently, so
+   it looked like a missing translation. js/i18n.js now also indexes every
+   key with its spaces collapsed (`AR_LOOSE`) and looks there second. Beware
+   the trap in that code: index the flattened key even when it equals the
+   original, or the map is empty for exactly the keys that need it.
+2. **Everything the dashboard draws, it draws after i18n has run** — i18n.js
+   is the last script on the page. Lists, counts and messages therefore
+   stayed English however complete the dictionary was. The page now has
+   `ar(en, arabic)` for strings it builds itself, `reI18n()` to run the
+   dictionary over what was just drawn, and it redraws its panels on `load`
+   and when the language is switched.
+3. **Mangled text.** "No courses yet â the Courses page…" — the file had
+   been read once in the wrong encoding. **`tools/textscan.py`** fails on
+   Ã, Â, â€ or U+FFFD anywhere in the repo, and runs weekly.
+
+Smaller things the same sweep found: the Verify page's footer was written
+differently from every other page's, so it alone stayed English; "Admin only"
+was white on gold (1.9:1).
+
+**tools/** now holds the four audits — lightscan, textscan (both CI-safe) and
+darkaudit, leakaudit (a browser and a local server) — each with what it can
+and cannot see written at the top. Between them they cover the two bugs this
+site produces most: something light in the dark theme, and something English
+in Arabic.
