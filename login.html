@@ -9,11 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161931" />
+  <link rel="stylesheet" href="css/style.css?v=202609171727" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- The theme is stamped on <html> BEFORE anything is painted: without
        this the page flashes white and then turns dark, which reads as a
        fault. A reader who has not chosen follows the phone (js/reading.js). -->
+  <script>/* Storage blocked (private browsing, strict settings) must not break the site: every page reads its
+     language, theme and progress from localStorage, and an unguarded read THREW — i18n stopped, the Arabic page
+     stayed English, the language switch did nothing. A reader with no storage gets one that lasts the visit. */
+  (function(){function mem(){var d={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(d,k)?d[k]:null},setItem:function(k,v){d[k]=String(v)},removeItem:function(k){delete d[k]},clear:function(){d={}},key:function(i){return Object.keys(d)[i]||null},get length(){return Object.keys(d).length}}}["localStorage","sessionStorage"].forEach(function(n){try{window[n].getItem("iitw")}catch(e){try{Object.defineProperty(window,n,{value:mem(),configurable:true,writable:true})}catch(e2){}}})})();</script>
   <script>(function(){try{var t=localStorage.getItem("iitw-theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("iitw-text-scale"));if(s>1&&s<1.6){document.documentElement.style.fontSize=(s*100)+"%";}}catch(e){}})();</script>
 </head>
 <body>
@@ -123,36 +127,58 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609161931"></script>
+  <script src="js/data.js?v=202609171727"></script>
   <script>
+    /* THE PASSWORDS ARE NOT IN THIS FILE. They used to be, in plain text, in
+       the source of a public page. What is kept is a salted SHA-256 of each
+       one; the password typed is hashed the same way in the browser and the
+       two hashes are compared. To set a new password, compute
+       sha256(salt + ":" + password) with a fresh salt and replace the pair.
+       This page is a door, not a lock — publishing anything still needs the
+       GitHub token — but a password must never be readable by a visitor. */
     const STAFF_ACCOUNTS = [
-      { username: "Islam.younis.2026", password: "NoorAmmarTamimA'sem" },
-      { username: "Teacher.IITW.2026", password: "Bayan#Huda_2026!Teach" }
+      { username: "Islam.younis.2026", salt: "b186fbf1a0c50bbca9831b5e", hash: "b5833adc01fa957cf297d70817243018af98f41a688641a0985dfb1e232c8c2d" },
+      { username: "Teacher.IITW.2026", salt: "db313bac4d314261adaf902c", hash: "900a3c1f88eb568c450ed0f98ec6712a0625040671f0db805d3fd08b6342891a" }
     ];
 
-    document.getElementById("staffForm").addEventListener("submit", e => {
+    async function iitwSha256(text) {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+      return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    document.getElementById("staffForm").addEventListener("submit", async e => {
       e.preventDefault();
       const msg = document.getElementById("staffMessage");
       const user = document.getElementById("staffUser").value.trim();
       const pass = document.getElementById("staffPass").value;
+      /* Both languages, in the message itself: this is written after i18n.js
+         has run, so a plain English sentence here stayed English on the
+         Arabic page. */
+      const say = (en, arabic, cls) => {
+        msg.innerHTML = '<span class="en-only">' + en + '</span><span class="ar-only" dir="rtl">' + arabic + '</span>';
+        msg.className = "login-message " + cls;
+      };
 
-      if (STAFF_ACCOUNTS.some(a => a.username === user && a.password === pass)) {
-        msg.textContent = "Welcome back! Redirecting to the staff area...";
-        msg.className = "login-message success";
+      const acct = STAFF_ACCOUNTS.find(a => a.username === user);
+      let ok = false;
+      if (acct) {
+        try { ok = (await iitwSha256(acct.salt + ":" + pass)) === acct.hash; } catch (err) { ok = false; }
+      }
+      if (ok) {
+        say("Welcome back! Redirecting to the staff area...", "أهلًا بعودتك! جارٍ الانتقال إلى لوحة الإدارة…", "success");
         // Kept in localStorage so leaving the dashboard and coming back does
         // not throw the staff member out and lose everything they typed.
         iitwStaffLogin(user);
         setTimeout(() => { window.location.href = "staff.html"; }, 800);
       } else {
-        msg.textContent = "Incorrect username or password. Please try again.";
-        msg.className = "login-message error";
+        say("Incorrect username or password. Please try again.", "اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرّةً أخرى.", "error");
       }
     });
   </script>
-  <script src="js/wordlens.js?v=202609161931"></script>
-  <script src="js/main.js?v=202609161931"></script>
-  <script src="js/reading.js?v=202609161931"></script>
-  <script src="js/nav.js?v=202609161931"></script>
-  <script src="js/i18n.js?v=202609161931"></script>
+  <script src="js/wordlens.js?v=202609171727"></script>
+  <script src="js/main.js?v=202609171727"></script>
+  <script src="js/reading.js?v=202609171727"></script>
+  <script src="js/nav.js?v=202609171727"></script>
+  <script src="js/i18n.js?v=202609171727"></script>
 </body>
 </html>

@@ -46,6 +46,17 @@ STATES = {
         ("reader: al-Baqarah", "openSurah(SURAHS[1])"),
         ("reader: miracles panel", "if (window.iitwToggleMiracle) iitwToggleMiracle()"),
     ],
+    "hadith.html": [
+        # the chapter view drew white cards from the page's own style block
+        ("al-Bukhari: the books", "document.querySelector(\"#collectionTabs button[data-col='bukhari']\").click()"),
+        ("al-Bukhari: Book 1", "var c = document.querySelector('.chapter-btn'); if (c) c.click()"),
+    ],
+    "guidance.html": [
+        ("an answer to a situation", "document.getElementById('situationInput').value = 'I feel anxious'; findGuidance()"),
+    ],
+    "verify.html": [
+        ("a checked claim", "document.getElementById('vfInput').value = 'إنما الأعمال بالنيات'; document.getElementById('vfGo').click()"),
+    ],
     "index.html": [
         ("the More menu", "var b = document.querySelector('.nav-more-btn'); if (b) b.click()"),
         ("the header search", "var s = document.querySelector('.nav-search-btn'); if (s) s.click()"),
@@ -154,7 +165,7 @@ with sync_playwright() as p:
                             pg.wait_for_timeout(700)
                         else:
                             pg.evaluate("() => { " + action + " }")
-                            pg.wait_for_timeout(1800)
+                            pg.wait_for_timeout(4500 if "Bukhari" in label or "claim" in label else 1800)
                         rows = pg.evaluate(JS, show_weak)
                     except Exception as e:
                         # A page that did not load was not audited — that is a

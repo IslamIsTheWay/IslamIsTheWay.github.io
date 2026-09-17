@@ -9,18 +9,19 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 16 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 17 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 2. **PART 35** (most recent) — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
-> 3. **PART 34** — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
-> 4. **PART 33** — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
-> 5. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
-> 6. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
-> 7. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
-> 8. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
+> 2. **PART 36** (most recent) — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
+> 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
+> 4. **PART 34** — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
+> 5. **PART 33** — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
+> 6. **PART 27** — who Allah is, Paradise and the Fire with their levels, and the surah stories on the Quran page.
+> 7. **PART 26** — the grave section, and why it is ONE dataset rendered on two pages.
+> 8. **PART 23 and 24 — the SEARCH halves of both.** Read these before touching any matching code anywhere on the site. Between them they record a stemmer that answered "i want to be a better muslim" with the ruling on alcohol, a generic word that could open a topic gate on its own, and the `must`-phrase rule that fixes most near-misses.
+> 9. Everything else as needed. PART 25 is prayer, 22 is morals, 21 is the dialect layer, 19 is a full search audit.
 >
 > ### The current shape of the site
 >
@@ -6590,3 +6591,102 @@ flips may only be used on a surface that flips with it. Ink on a surface that
 is dark in both themes is a literal light colour; a filled surface under white
 text is `--green-fill`; small text in gold is `--gold-ink`. Then run
 contrastaudit.py — it will say so if not.
+
+# PART 36 - The whole site debugged: two new test tools, and what they found
+
+Asked to "debug the entire website and make sure mistakes are not there at
+all". Two tools now do that on demand, and between them they found eleven real
+faults. Everything below is fixed and was re-tested after the fix.
+
+## tools/sitecheck.py — every page, loaded as a reader loads it
+
+All 18 pages × Arabic and English × desktop and phone, scrolled top to bottom
+so everything drawn on arrival is drawn, reporting: JavaScript and console
+errors; failed requests and 4xx/5xx answers; images that did not load; ids used
+twice; template text that leaked (undefined, NaN, [object Object], ${); a page
+wider than the screen; links and buttons with no readable name; links to files
+that do not exist and #anchors with no target. It also writes the external
+links it saw to tools/.external-links.json.
+
+Scroll with `behavior: 'instant'`: the site sets `scroll-behavior: smooth`, and
+a scripted scroll then waits for its own animation — the Golden Age page (147,000
+pixels tall) took a minute and a half per pass and looked like a hang.
+
+## tools/functest.py — 29 features, used and checked
+
+It does things and checks the RESULT: the language switch (and that it carries
+to the next page), theme and text size, the header search and "/", the More
+menu, the phone menu; the Quran grid and name search, opening a surah (110
+verses of al-Kahf, the basmala, none on at-Tawbah), the reciter choice reaching
+the audio request, the Tadabbur and ar-Raghib panels, the word search, a deep
+link and the home page's resume chip, the word lens; al-Bukhari's books and
+paging; Sunnah categories and search; Stories tabs and search; people search and
+full lives; Golden Age and Judgement; the home page's sections, daily plan and
+recitation player; the feedback form; Guidance's situation search, worship tabs
+and dhikr counter; Verify on its own examples; the search page; course and
+meeting codes; login refusing a wrong password in Arabic; the dashboard's tabs
+and its refusal to publish without a token. One scenario plays al-Ikhlas for
+real, verse by verse. Run it after any change to a page's behaviour.
+
+## What was wrong
+
+1. **The dashboard could erase the live site.** If neither GitHub's API nor the
+   site's own copy of the settings loaded (GitHub allows 60 anonymous calls an
+   hour; offline), `cfg` stayed the EMPTY default — and Publish would have
+   replaced every recitation, course and payment detail with nothing. It now
+   refuses (`CFG_LOADED`), and loads with the saved token so the limit does not
+   apply.
+   **And a race that made the same loss likely, introduced the day before**
+   (PART 34's "redraw the panels on load"): the page's `load` event can come
+   before GitHub answers, the redraw saved the EMPTY starting config as the
+   draft, and the load then restored that draft over the real settings — an
+   empty dashboard, a banner saying there were unpublished changes, and a
+   Publish button that would have wiped the site. Proved on the old code (0 of
+   5 recitations shown with the settings slowed down) and on the fix (5 of 5).
+   Now: no draft is saved before the settings load, the redraw waits for them,
+   and an empty draft is discarded rather than restored over real content.
+   `staff_dashboard_never_loses_the_live_settings` forces both halves.
+2. **The staff passwords were in plain text in login.html** — a public page.
+   Now a salted SHA-256 per account; both real accounts were proved to still log
+   in (the test read them from the previous commit and never printed them).
+   **They are still in the repository's history: change them** with
+   `python tools/staff-password.py <username>`. The login is a door, not a lock —
+   anyone can set the session in the browser — publishing still needs the token.
+3. **With browser storage blocked** (private browsing, strict settings) every
+   page threw, i18n stopped, the Arabic page stayed English and the language
+   switch did nothing. Every page now installs an in-memory stand-in at the top
+   of <head> when storage is unavailable.
+4. **Audio that could not play was silent and threw.** No connection, or
+   everyayah.com down: 🔊 did nothing. The reader now says so. The player is also
+   ONE reused audio element (a new Audio() per verse started from the previous
+   verse's "ended" is not a tap, which iOS may refuse). NOT verified on an
+   iPhone — say so if it is ever reported.
+5. **A #surah- link on the Quran page itself did nothing** (only the hash
+   changed). `hashchange` is followed now.
+6. **Worship search only searched the open tab** — "sujud" on the "Before the
+   prayer" tab found nothing. When the words are only in another stage it widens
+   to all of them.
+7. **The Hadith chapter view and the meeting page** drew white cards from their
+   own `<style>` blocks, invisible to lightscan — which now reads page style
+   blocks too. Gold small text on those pages (book numbers, hadith numbers,
+   citations, prices) moved to `--gold-ink`.
+8. **Login messages were English on the Arabic page.**
+9. **A YouTube Short cost every visitor a 404** (Shorts have no maxres
+   thumbnail); **two sections shared the id `j-trumpet`** (the journey's is
+   `j-israfil` now); **three cards had `id=""`**.
+
+## Checked and found right
+
+Every outside service answers (the hadith collections, quran.com and
+alquran.cloud, everyayah.com, Jitsi, the caption translator, Shamela); all 16
+reciters have the Quran's first and last verse; the Quran text fallback opens a
+surah from quran.com when the local file fails, in the Madinah spelling; all 17
+arithmetic statements written in the site's text are correct; the Verify page
+answers its examples correctly and never calls something fabricated merely for
+not finding it.
+
+## Not done here
+
+Safari itself: Playwright's WebKit is not installed on this machine (about
+100 MB from Microsoft's Playwright servers). With it, functest.py could run in
+the engine the owner's iPhone uses.

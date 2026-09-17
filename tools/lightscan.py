@@ -75,6 +75,40 @@ for sel, decls, inside in rules(body):
             continue
         miss.append((s[:64], l[:96], " ".join(inside)[:26]))
 
+# ---- the same fault, hiding in a page's own <style> block -----------------
+# hadith.html's chapter view drew its cards from a style block inside the
+# page with background:#fff — white cards under light text in the dark theme,
+# and this scan could not see them because it only read css/style.css.
+import glob
+for page in sorted(glob.glob(os.path.join(HERE, "*.html"))):
+    html = io.open(page, encoding="utf-8").read()
+    name = os.path.basename(page)
+    own_dark = chr(10).join(l for l in html.splitlines() if DARKSEL in l)
+    pos = 0
+    while True:
+        a = html.find("<style>", pos)
+        if a < 0:
+            break
+        b = html.find("</style>", a)
+        block = html[a + 7:b]
+        pos = b + 8
+        for sel, decls, inside in rules(block):
+            if sel.startswith(":root") or DARKSEL in sel:
+                continue
+            s = strip_comments(sel)
+            for line in decls.split(";"):
+                l = strip_comments(line)
+                prop = l.split(":")[0].strip().lower()
+                if not prop.startswith("background"):
+                    continue
+                pale = [h for h in HEX.findall(l) if lum(h) > 0.62] + PALE_WORDS.findall(l)
+                if not pale:
+                    continue
+                parts = [x.strip() for x in s.split(",") if x.strip()]
+                if any(x in dark_lines or x in own_dark for x in parts):
+                    continue
+                miss.append((name + ": " + s[:52], l[:96], ""))
+
 for sel, decl, at in sorted(miss):
     print("%-64s %s %s" % (sel, decl, ("[" + at + "]") if at else ""))
 print("%d pale declarations with no dark rule" % len(miss))

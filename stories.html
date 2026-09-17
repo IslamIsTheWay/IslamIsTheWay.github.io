@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161931" />
+  <link rel="stylesheet" href="css/style.css?v=202609171727" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -36,6 +36,10 @@
   <!-- The theme is stamped on <html> BEFORE anything is painted: without
        this the page flashes white and then turns dark, which reads as a
        fault. A reader who has not chosen follows the phone (js/reading.js). -->
+  <script>/* Storage blocked (private browsing, strict settings) must not break the site: every page reads its
+     language, theme and progress from localStorage, and an unguarded read THREW — i18n stopped, the Arabic page
+     stayed English, the language switch did nothing. A reader with no storage gets one that lasts the visit. */
+  (function(){function mem(){var d={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(d,k)?d[k]:null},setItem:function(k,v){d[k]=String(v)},removeItem:function(k){delete d[k]},clear:function(){d={}},key:function(i){return Object.keys(d)[i]||null},get length(){return Object.keys(d).length}}}["localStorage","sessionStorage"].forEach(function(n){try{window[n].getItem("iitw")}catch(e){try{Object.defineProperty(window,n,{value:mem(),configurable:true,writable:true})}catch(e2){}}})})();</script>
   <script>(function(){try{var t=localStorage.getItem("iitw-theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("iitw-text-scale"));if(s>1&&s<1.6){document.documentElement.style.fontSize=(s*100)+"%";}}catch(e){}})();</script>
 </head>
 <body>
@@ -145,9 +149,9 @@
   </footer>
 
   
-  <script src="js/data.js?v=202609161931"></script>
+  <script src="js/data.js?v=202609171727"></script>
   <!-- The site search's matcher, used by the search box below. -->
-  <script src="js/sitesearch.js?v=202609161931"></script>
+  <script src="js/sitesearch.js?v=202609171727"></script>
   <script>
     // Longer stories are written with blank lines between paragraphs; HTML
     // would collapse those into one block of text, so they become real
@@ -461,11 +465,11 @@
     })();
     document.getElementById("storySearch").addEventListener("input", searchStories);
   </script>
-  <script src="js/wordlens.js?v=202609161931"></script>
-  <script src="js/resume.js?v=202609161931"></script>
-  <script src="js/main.js?v=202609161931"></script>
-  <script src="js/reading.js?v=202609161931"></script>
-  <script src="js/nav.js?v=202609161931"></script>
-  <script src="js/i18n.js?v=202609161931"></script>
+  <script src="js/wordlens.js?v=202609171727"></script>
+  <script src="js/resume.js?v=202609171727"></script>
+  <script src="js/main.js?v=202609171727"></script>
+  <script src="js/reading.js?v=202609171727"></script>
+  <script src="js/nav.js?v=202609171727"></script>
+  <script src="js/i18n.js?v=202609171727"></script>
 </body>
 </html>

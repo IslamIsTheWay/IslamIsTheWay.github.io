@@ -13,6 +13,10 @@
   <!-- The theme is stamped on <html> BEFORE anything is painted: without
        this the page flashes white and then turns dark, which reads as a
        fault. A reader who has not chosen follows the phone (js/reading.js). -->
+  <script>/* Storage blocked (private browsing, strict settings) must not break the site: every page reads its
+     language, theme and progress from localStorage, and an unguarded read THREW — i18n stopped, the Arabic page
+     stayed English, the language switch did nothing. A reader with no storage gets one that lasts the visit. */
+  (function(){function mem(){var d={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(d,k)?d[k]:null},setItem:function(k,v){d[k]=String(v)},removeItem:function(k){delete d[k]},clear:function(){d={}},key:function(i){return Object.keys(d)[i]||null},get length(){return Object.keys(d).length}}}["localStorage","sessionStorage"].forEach(function(n){try{window[n].getItem("iitw")}catch(e){try{Object.defineProperty(window,n,{value:mem(),configurable:true,writable:true})}catch(e2){}}})})();</script>
   <script>(function(){try{var t=localStorage.getItem("iitw-theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("iitw-text-scale"));if(s>1&&s<1.6){document.documentElement.style.fontSize=(s*100)+"%";}}catch(e){}})();</script>
 </head>
 <body>

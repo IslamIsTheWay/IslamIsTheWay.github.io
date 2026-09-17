@@ -73,8 +73,10 @@ function iitwParseVideo(url) {
          logo in the control bar cannot be removed — that is YouTube's. */
       embed: "https://www.youtube-nocookie.com/embed/" + id +
              "?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&color=white",
-      // maxres is sharp when it exists; the caller falls back to hq on error.
-      thumb: "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg",
+      /* maxres is sharp when it exists; the caller falls back to hq on error.
+         A Short never has one, so asking for it cost every visitor a 404 in
+         the console before the fallback loaded — a Short asks for hq first. */
+      thumb: "https://i.ytimg.com/vi/" + id + (/youtube\.com\/shorts\//i.test(raw) ? "/hqdefault.jpg" : "/maxresdefault.jpg"),
       thumbFallback: "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg",
       watch: "https://www.youtube.com/watch?v=" + id
     };

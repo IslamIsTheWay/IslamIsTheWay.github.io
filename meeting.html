@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161931" />
+  <link rel="stylesheet" href="css/style.css?v=202609171727" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     .meeting-wrap { display:grid; grid-template-columns: 1fr 340px; gap:20px; align-items:start; }
     @media (max-width: 900px) { .meeting-wrap { grid-template-columns: 1fr; } }
     .meeting-frame { width:100%; height:70vh; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); background:#000; }
     .meeting-frame iframe { width:100%; height:100%; border:none; }
-    .caption-panel { background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); }
+    .caption-panel { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); }
     .caption-panel h3 { color:var(--green-dark); margin-bottom:6px; font-size:1.1rem; }
     .caption-panel p.small { font-size:.8rem; color:var(--text-muted); margin-bottom:12px; }
     .caption-panel label { display:block; font-size:.8rem; font-weight:600; margin:10px 0 4px; }
@@ -33,15 +33,21 @@
     .host-bar { background:linear-gradient(135deg,#0d3a1a,#1a5c32); color:#fff; border-radius:var(--radius); padding:16px 20px; margin-bottom:16px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
     .host-bar .code-big { font-family:monospace; font-size:1.3rem; font-weight:800; background:rgba(255,255,255,.15); padding:6px 14px; border-radius:8px; letter-spacing:1px; }
     .host-bar button { border:none; border-radius:8px; padding:9px 16px; font-weight:600; cursor:pointer; font-family:inherit; }
-    .host-bar .copy-btn { background:#fff; color:var(--green-dark); }
+    .host-bar .copy-btn { background:#fff; color:#14532d; }   /* a white button on the green bar in both themes: --green-dark turns light in the dark */
     .host-bar .rec-btn { background:#c0392b; color:#fff; }
     .host-bar .rec-btn.recording { background:#7a1c12; }
-    .user-note { background:#e6f4ea; border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:.88rem; margin-bottom:16px; color:var(--green-dark); }
+    .user-note { background:var(--green-light); border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:.88rem; margin-bottom:16px; color:var(--green-dark); }
     .rec-note { background:#fff8e1; border:1px solid #e8d48a; border-radius:8px; padding:10px 14px; font-size:.8rem; margin-top:12px; color:#7a6210; }
+    :root[data-theme="dark"] .host-bar .copy-btn { background:#fff; }   /* stays white on the green bar, on purpose */
+    :root[data-theme="dark"] .rec-note { background:#262215; border-color:#5a4b1c; color:#e8d08a; }
   </style>
   <!-- The theme is stamped on <html> BEFORE anything is painted: without
        this the page flashes white and then turns dark, which reads as a
        fault. A reader who has not chosen follows the phone (js/reading.js). -->
+  <script>/* Storage blocked (private browsing, strict settings) must not break the site: every page reads its
+     language, theme and progress from localStorage, and an unguarded read THREW — i18n stopped, the Arabic page
+     stayed English, the language switch did nothing. A reader with no storage gets one that lasts the visit. */
+  (function(){function mem(){var d={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(d,k)?d[k]:null},setItem:function(k,v){d[k]=String(v)},removeItem:function(k){delete d[k]},clear:function(){d={}},key:function(i){return Object.keys(d)[i]||null},get length(){return Object.keys(d).length}}}["localStorage","sessionStorage"].forEach(function(n){try{window[n].getItem("iitw")}catch(e){try{Object.defineProperty(window,n,{value:mem(),configurable:true,writable:true})}catch(e2){}}})})();</script>
   <script>(function(){try{var t=localStorage.getItem("iitw-theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("iitw-text-scale"));if(s>1&&s<1.6){document.documentElement.style.fontSize=(s*100)+"%";}}catch(e){}})();</script>
 </head>
 <body>
@@ -358,11 +364,11 @@
 
     loadMeetings();
   </script>
-  <script src="js/wordlens.js?v=202609161931"></script>
-  <script src="js/resume.js?v=202609161931"></script>
-  <script src="js/main.js?v=202609161931"></script>
-  <script src="js/reading.js?v=202609161931"></script>
-  <script src="js/nav.js?v=202609161931"></script>
-  <script src="js/i18n.js?v=202609161931"></script>
+  <script src="js/wordlens.js?v=202609171727"></script>
+  <script src="js/resume.js?v=202609171727"></script>
+  <script src="js/main.js?v=202609171727"></script>
+  <script src="js/reading.js?v=202609171727"></script>
+  <script src="js/nav.js?v=202609171727"></script>
+  <script src="js/i18n.js?v=202609171727"></script>
 </body>
 </html>

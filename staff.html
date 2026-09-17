@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609161931" />
+  <link rel="stylesheet" href="css/style.css?v=202609171727" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* The dashboard is the owner's own page and it follows the theme like
@@ -59,6 +59,10 @@
   <!-- The theme is stamped on <html> BEFORE anything is painted: without
        this the page flashes white and then turns dark, which reads as a
        fault. A reader who has not chosen follows the phone (js/reading.js). -->
+  <script>/* Storage blocked (private browsing, strict settings) must not break the site: every page reads its
+     language, theme and progress from localStorage, and an unguarded read THREW — i18n stopped, the Arabic page
+     stayed English, the language switch did nothing. A reader with no storage gets one that lasts the visit. */
+  (function(){function mem(){var d={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(d,k)?d[k]:null},setItem:function(k,v){d[k]=String(v)},removeItem:function(k){delete d[k]},clear:function(){d={}},key:function(i){return Object.keys(d)[i]||null},get length(){return Object.keys(d).length}}}["localStorage","sessionStorage"].forEach(function(n){try{window[n].getItem("iitw")}catch(e){try{Object.defineProperty(window,n,{value:mem(),configurable:true,writable:true})}catch(e2){}}})})();</script>
   <script>(function(){try{var t=localStorage.getItem("iitw-theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("iitw-text-scale"));if(s>1&&s<1.6){document.documentElement.style.fontSize=(s*100)+"%";}}catch(e){}})();</script>
 </head>
 <body>
@@ -480,9 +484,9 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202609161931"></script>
-  <script src="js/wordlens.js?v=202609161931"></script>
-  <script src="js/main.js?v=202609161931"></script>
+  <script src="js/data.js?v=202609171727"></script>
+  <script src="js/wordlens.js?v=202609171727"></script>
+  <script src="js/main.js?v=202609171727"></script>
   <script>
     /* ---------- The dashboard speaks the reader's language too ----------
        js/i18n.js translates what is IN the page when it runs. Everything
@@ -616,6 +620,12 @@
     let publishedSnapshot = "";
 
     function saveDraft() {
+      /* Never before the live settings have been read. A redraw that ran
+         first (the page's load event can come before GitHub answers) saved
+         the EMPTY starting config as the draft — which the load then restored
+         over the real one, showing an empty dashboard that Publish would have
+         written over the live site. */
+      if (!CFG_LOADED) return;
       try { localStorage.setItem(DRAFT_KEY, JSON.stringify(cfg)); } catch (e) {}
       updateUnpublishedBanner();
     }
@@ -634,23 +644,35 @@
 
     const REPO_API = "https://api.github.com/repos/IslamIsTheWay/IslamIsTheWay.github.io/contents/data/site-config.json";
     let cfg = { payment: { account: "", instructions: "", qrUrl: "" }, contact: { phone: "", whatsapp: "", demoUrl: "" }, videos: [], meetings: [], extraCourses: [] };
+    /* False until the live settings have actually been read. If neither
+       GitHub nor the site's own copy could be reached, `cfg` above is the
+       EMPTY default — and publishing it would replace every recitation,
+       course and payment detail on the live site with nothing. */
+    let CFG_LOADED = false;
 
     async function loadConfig() {
       // Load from the GitHub API (always the latest saved version) so we never
       // overwrite recent changes with a stale cached copy. Falls back to the
       // public file if the API is unreachable.
+      /* With the saved token the request is authenticated: GitHub allows an
+         anonymous visitor 60 API calls an hour, and a dashboard reloaded a few
+         times during an evening of edits runs straight into that — it came
+         back 403 in testing. */
+      const headers = { "Accept": "application/vnd.github+json" };
+      try { const tk = localStorage.getItem("iitw-gh-token"); if (tk) headers.Authorization = "Bearer " + tk; } catch (e) {}
       try {
-        const r = await fetch(REPO_API + "?t=" + Date.now(), { headers: { "Accept": "application/vnd.github+json" } });
+        const r = await fetch(REPO_API + "?t=" + Date.now(), { headers });
         if (r.ok) {
           const j = await r.json();
           cfg = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, "")))));
+          CFG_LOADED = true;
         } else {
           throw new Error("api unavailable");
         }
       } catch (e) {
         try {
           const r2 = await fetch("data/site-config.json?t=" + Date.now());
-          if (r2.ok) cfg = await r2.json();
+          if (r2.ok) { cfg = await r2.json(); CFG_LOADED = true; }
         } catch (e2) {}
       }
       if (!cfg.payment) cfg.payment = {};
@@ -668,7 +690,15 @@
         const draft = localStorage.getItem(DRAFT_KEY);
         if (draft) {
           const d = JSON.parse(draft);
-          if (d && JSON.stringify(d) !== publishedSnapshot) {
+          /* A draft with nothing in it is not work to restore: it is what the
+             redraw race above left behind. Restoring it over settings that DO
+             have content is the one thing this dashboard must never do. */
+          const empty = x => !x || (!(x.recitations || []).length && !(x.extraCourses || []).length &&
+            !(x.videos || []).length && !(x.meetings || []).length &&
+            !((x.payment || {}).account) && !((x.contact || {}).phone) && !((x.contact || {}).whatsapp));
+          if (d && empty(d) && !empty(cfg)) {
+            localStorage.removeItem(DRAFT_KEY);
+          } else if (d && JSON.stringify(d) !== publishedSnapshot) {
             cfg = d;
             if (!cfg.recitations) cfg.recitations = [];
           }
@@ -1528,6 +1558,13 @@
 
     async function publishChanges(quiet) {
       const msg = document.getElementById("publishMsg");
+      if (!CFG_LOADED) {
+        msg.innerHTML = ar(
+          "<strong>Not published.</strong> The current settings could not be loaded, so publishing now would erase what is on the website. Check the connection and reload this page.",
+          "<strong>لم يُنشر شيء.</strong> تعذّر تحميل الإعدادات الحاليّة، فالنشر الآن سيمحو ما في الموقع. تحقّق من الاتّصال وأعِد تحميل الصفحة.");
+        msg.className = "err";
+        return false;
+      }
       const token = document.getElementById("ghToken").value.trim();
       if (!token) {
         msg.innerHTML = ar("<strong>No GitHub token.</strong> Paste it in the box to the left — you only have to do this once, it is remembered afterwards.",
@@ -1702,7 +1739,7 @@
        last script on the page — so in Arabic mode they came out English and
        stayed that way. Draw them again once everything has loaded. */
     window.addEventListener("load", () => {
-      renderLists();
+      if (CFG_LOADED) renderLists();   // if not yet, loadConfig draws them when it is
       fbAdminRefresh();
       reI18n();
     });
@@ -1711,12 +1748,12 @@
        by the code above. Draw them again when the reader changes language. */
     document.addEventListener("click", e => {
       if (e.target && e.target.id === "langToggle") {
-        setTimeout(() => { renderLists(); fbAdminRefresh(); if (typeof IS_ADMIN !== "undefined" && IS_ADMIN) loadAnalytics(); }, 30);
+        setTimeout(() => { if (CFG_LOADED) renderLists(); fbAdminRefresh(); if (typeof IS_ADMIN !== "undefined" && IS_ADMIN) loadAnalytics(); }, 30);
       }
     });
   </script>
-  <script src="js/reading.js?v=202609161931"></script>
-  <script src="js/nav.js?v=202609161931"></script>
-  <script src="js/i18n.js?v=202609161931"></script>
+  <script src="js/reading.js?v=202609171727"></script>
+  <script src="js/nav.js?v=202609171727"></script>
+  <script src="js/i18n.js?v=202609171727"></script>
 </body>
 </html>

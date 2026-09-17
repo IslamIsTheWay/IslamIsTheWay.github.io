@@ -126,12 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
   /* quran.html#surah-18 opens that surah — the site search links here, and
      so does the home page. #surah-18-45 opens it AT verse 45, which is what
      "continue where you left off" and the word search need. */
-  const hm = (location.hash || "").match(/^#surah-(\d{1,3})(?:[-:](\d{1,3}))?$/);
-  if (hm) {
+  function iitwOpenFromHash() {
+    const hm = (location.hash || "").match(/^#surah-(\d{1,3})(?:[-:](\d{1,3}))?$/);
+    if (!hm) return;
     const s = SURAHS.find(x => x.n === +hm[1]);
     if (s && hm[2] && typeof iitwOpenAt === "function") iitwOpenAt(s.n, +hm[2]);
     else if (s) openSurah(s);
   }
+  iitwOpenFromHash();
+  /* A link to #surah-… from THIS page (or the browser's back button between
+     two of them) changes only the hash, which does not reload the page — so it
+     did nothing at all. */
+  window.addEventListener("hashchange", iitwOpenFromHash);
 
   searchInput.addEventListener("input", applyFilters);
   placeFilter.addEventListener("change", applyFilters);
@@ -405,8 +411,53 @@ function closeModal() {
   document.getElementById("surahModal").classList.remove("open");
 }
 
+/* ONE audio element, reused for every verse.
+   It used to be a new Audio() per verse, created inside the previous verse's
+   "ended" handler. iOS Safari only lets a page start sound from a tap, and a
+   brand-new element started from an event handler is not a tap — so "Play
+   Full Surah" can stop after the first verse on an iPhone. Changing the src of
+   an element the reader already started is allowed.
+
+   And a verse that cannot be played now SAYS so. play() was called with no
+   catch and nothing listened for an error: offline (the text of the Quran works
+   offline; the recitation cannot) or with everyayah.com down, pressing 🔊 did
+   nothing at all, and threw an uncaught error. */
 let currentAudioEl = null;
 let ayahPlayIndex = 0;
+
+function iitwAudioEl() {
+  if (!currentAudioEl) {
+    currentAudioEl = new Audio();
+    currentAudioEl.preload = "auto";
+    currentAudioEl.addEventListener("error", function () {
+      if (currentAudioEl && currentAudioEl.getAttribute("src")) iitwAudioFailed();
+    });
+  }
+  return currentAudioEl;
+}
+
+function iitwAudioPlay(url, onEnded) {
+  const el = iitwAudioEl();
+  el.onended = onEnded;
+  el.src = url;
+  let p;
+  try { p = el.play(); } catch (e) { iitwAudioFailed(); return; }
+  if (p && typeof p.catch === "function") {
+    p.catch(err => {
+      // a newer play() replaced this one — not a failure
+      if (err && err.name === "AbortError") return;
+      iitwAudioFailed();
+    });
+  }
+}
+
+function iitwAudioFailed() {
+  const note = document.getElementById("rqSaveNote");
+  if (!note) return;
+  note.className = "rq-save-note warn";
+  note.innerHTML = `<span class="en-only">The recitation could not be played. It needs an internet connection — the text of the Quran works without one, the audio does not.</span>` +
+    `<span class="ar-only" dir="rtl">تعذّر تشغيل التلاوة. الصوت يحتاج إلى اتّصالٍ بالإنترنت — أمّا نصّ القرآن فيعمل بدونه.</span>`;
+}
 
 /* The verse whose audio last finished. This is what the "Save my place"
    button beside Stop offers to save — the reader asked for the save to
@@ -424,37 +475,33 @@ function iitwMarkFinished(ayahNum) {
 
 function playAyah(url, ayahNum) {
   stopAudio();
-  currentAudioEl = new Audio(url);
-  currentAudioEl.addEventListener("ended", () => iitwMarkFinished(ayahNum));
-  currentAudioEl.play();
+  iitwAudioPlay(url, () => iitwMarkFinished(ayahNum));
 }
 
 function playAllAyahs() {
   if (!window._ayahAudios || window._ayahAudios.length === 0) return;
+  stopAudio();
   ayahPlayIndex = 0;
   playNextAyah();
 }
 
 function playNextAyah() {
   if (ayahPlayIndex >= window._ayahAudios.length) return;
-  stopAudio();
   const num = window._ayahNumbers ? window._ayahNumbers[ayahPlayIndex] : ayahPlayIndex + 1;
-  currentAudioEl = new Audio(window._ayahAudios[ayahPlayIndex]);
-  currentAudioEl.addEventListener("ended", () => {
+  iitwAudioPlay(window._ayahAudios[ayahPlayIndex], () => {
     // Each verse of a full-surah reading also arms the save, so stopping
     // part-way through still leaves the right verse ready to save.
     iitwMarkFinished(num);
     ayahPlayIndex++;
     playNextAyah();
   });
-  currentAudioEl.play();
 }
 
 function stopAudio() {
   if (currentAudioEl) {
+    currentAudioEl.onended = null;     // a stopped surah must not carry on to the next verse
     currentAudioEl.pause();
-    currentAudioEl.currentTime = 0;
-    currentAudioEl = null;
+    try { currentAudioEl.currentTime = 0; } catch (e) {}
   }
   window.speechSynthesis && window.speechSynthesis.cancel();
 }

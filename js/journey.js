@@ -296,7 +296,7 @@ const JOURNEY = [
 }
 ,
 {
-  id: "j-trumpet",
+  id: "j-israfil",   /* was j-trumpet — the fifteen stages use that id for their own card */
   phase: "end",
   icon: "📯",
   title: "Israfil and the Trumpet — the angel who has not blinked since the day he was given it",
