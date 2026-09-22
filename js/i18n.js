@@ -273,6 +273,10 @@ const AR = {
   "Fifteen stages in the order they happen: death and the soul, the grave and its questions, the Trumpet, the standing, the seven under the shade, the settling of what people owe each other, the Records, the Scales, the Bridge, and the gates. 64 referenced points and 54 passages of the Quran.":
     "خمس عشرة مرحلة بترتيب وقوعها: الموت والروح، والقبر وسؤاله، والنفخ في الصور، والموقف، والسبعة الذين يُظلّهم الله، والقصاص بين الناس، والصحف، والموازين، والصراط، والأبواب. أربعٌ وستون مسألة موثّقة، وأربعةٌ وخمسون موضعًا من القرآن.",
   "See the Stages": "اطّلع على المراحل",
+  "The mountain of gold": "جبلُ الذهب",
+  "What the Prophet ﷺ said about the Euphrates uncovering a mountain of gold; where it could be — the river itself, or the melting ice of the North; why the whole world would fight over it even knowing the hadith; and what we are told to do. The hadith is marked as certain, and every reading is marked as a reading.":
+    "ما قاله النبيّ ﷺ في حَسْر الفرات عن جبلٍ من ذهب؛ وأين قد يكون — النهرُ نفسُه، أو الجليدُ الذائب في الشمال؛ ولماذا يقتتل العالمُ كلُّه عليه وهو يعرف الحديث؛ وما الذي أُمرنا به. الحديثُ موسومٌ بأنه ثابت، وكلُّ قراءةٍ موسومةٌ بأنها قراءة.",
+  "Read it": "اقرأه",
   "199 Sunnah Practices": "مئة وتسعٌ وتسعون سنة",
   "How the Prophet ﷺ actually lived, across 18 areas of ordinary life — waking, wudu, prayer, food, dress, the mosque, travel, Friday, illness, hardship and the treatment of family, neighbours and animals. Ask a question in Arabic or English and the right practice is found for you.":
     "كيف عاش النبي ﷺ فعلاً، في ثمانية عشر بابًا من أبواب الحياة اليومية — الاستيقاظ والوضوء والصلاة والطعام واللباس والمسجد والسفر والجمعة والمرض والشدّة، ومعاملة الأهل والجيران والحيوان. اسأل بالعربية أو الإنجليزية ويُعرض لك ما يناسبك.",
