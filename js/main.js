@@ -623,8 +623,8 @@ const _AR_LOCALE_TIER = {
 };
 
 const _AR_LOCALE_NAME = {
-  "ar-sa": "فصحى — Classical (Saudi)", "ar-xa": "فصحى — Classical (Google)",
-  "ar-001": "فصحى — Classical", "ar": "فصحى — Classical",
+  "ar-sa": "Classical (Saudi)", "ar-xa": "Classical (Google)",
+  "ar-001": "Classical", "ar": "Classical",
   "ar-ae": "Gulf (UAE)", "ar-kw": "Gulf (Kuwait)", "ar-qa": "Gulf (Qatar)",
   "ar-bh": "Gulf (Bahrain)", "ar-om": "Gulf (Oman)", "ar-jo": "Jordanian",
   "ar-ye": "Yemeni", "ar-iq": "Iraqi dialect", "ar-sd": "Sudanese dialect",
@@ -633,6 +633,28 @@ const _AR_LOCALE_NAME = {
   "ar-lb": "Lebanese dialect — ق becomes ء", "ar-tn": "Tunisian dialect",
   "ar-dz": "Algerian dialect", "ar-ma": "Moroccan dialect"
 };
+
+/* The same names for a reader in Arabic. An <option> cannot hold an en-only
+   and an ar-only span, so the picker is built in one language and rebuilt
+   when the reader switches (the "iitw-lang" event from i18n.js). */
+const _AR_LOCALE_NAME_AR = {
+  "ar-sa": "فصحى (السعودية)", "ar-xa": "فصحى (Google)", "ar-001": "فصحى", "ar": "فصحى",
+  "ar-ae": "خليجية (الإمارات)", "ar-kw": "خليجية (الكويت)", "ar-qa": "خليجية (قطر)",
+  "ar-bh": "خليجية (البحرين)", "ar-om": "خليجية (عُمان)", "ar-jo": "أردنية",
+  "ar-ye": "يمنية", "ar-iq": "لهجة عراقية", "ar-sd": "لهجة سودانية",
+  "ar-ly": "لهجة ليبية", "ar-eg": "لهجة مصرية — يتغيّر فيها القاف والجيم",
+  "ar-ps": "لهجة فلسطينية", "ar-sy": "لهجة سورية",
+  "ar-lb": "لهجة لبنانية — القاف فيها همزة", "ar-tn": "لهجة تونسية",
+  "ar-dz": "لهجة جزائرية", "ar-ma": "لهجة مغربية"
+};
+/* "Microsoft Hamed Online (Natural) - Arabic (Saudi Arabia)" is the system's
+   name, in English, and so long the picker showed only its tail. The label
+   keeps the voice's own name and says the rest in the reader's language. */
+const _iitwShortVoiceName = v => (v.name || "")
+  .replace(/^Microsoft\s+/i, "")
+  .replace(/\s+Online\s*\(Natural\)/i, "")
+  .replace(/\s*-\s*Arabic\b.*$/i, "")
+  .trim() || v.name || "";
 
 const _iitwArLocale = v => (v.lang || "").toLowerCase().replace(/_/g, "-");
 const _iitwArTier   = v => _AR_LOCALE_TIER[_iitwArLocale(v)] ?? 45;
@@ -699,6 +721,44 @@ function _iitwPickVoice(langPrefix) {
   return voices.slice().sort((a, b) => score(b) - score(a))[0];
 }
 
+/* ============================================================
+   ONE LANGUAGE AT A TIME — even in a status line
+   ============================================================
+   The microphone's status lines were written "English — Arabic" in one
+   string, so an Arabic reader saw "Listening — click the mic again to stop"
+   beside the Arabic (the owner's screenshot, 22 September 2026). A line the
+   page writes for a reader goes through iitwSay as two spans; the en-only /
+   ar-only rules then show one. Plain text only — the reader's own words
+   never pass through here as HTML. tools/mixscan.py fails the commit if a
+   string holding both languages is written straight into the page again. */
+function iitwSay(el, en, ar) {
+  if (!el) return;
+  el.textContent = "";
+  const a = document.createElement("span");
+  a.className = "en-only"; a.textContent = en;
+  const b = document.createElement("span");
+  b.className = "ar-only"; b.dir = "rtl"; b.textContent = ar;
+  el.appendChild(a); el.appendChild(b);
+}
+
+/* Which language the reader has chosen, read from the stored choice: i18n.js
+   loads after this file, so the lang-ar class is not on <html> yet when the
+   early builders run. */
+function iitwArabicUI() {
+  try { return localStorage.getItem("iitw-lang") === "ar"; }
+  catch (e) { return document.documentElement.classList.contains("lang-ar"); }
+}
+
+/* A speech recogniser punctuates in ITS language: an English sentence heard
+   by the Arabic recogniser came back "The mountain of gold at، the end of the
+   time." A comma belongs to the words around it, so a transcript with no
+   Arabic letters in it gets Latin punctuation. */
+function iitwCleanDictation(t) {
+  t = String(t || "");
+  if (!/[A-Za-z]/.test(t) || /[\u0621-\u064A]/.test(t)) return t;
+  return t.replace(/\s*\u060C\s*/g, ", ").replace(/\s*\u061B\s*/g, "; ").replace(/\s*\u061F/g, "?");
+}
+
 /* A small panel letting the reader choose which Arabic voice is used, and
    telling them plainly what to do if their device has none. Browser speech
    cannot recite classical Arabic the way a qualified reciter does — this at
@@ -729,21 +789,23 @@ function iitwBuildVoiceBar() {
   const dialect   = voices.filter(v => !_iitwIsClassical(v)).sort(byBest);
   const hasClassical = classical.length > 0;
 
+  const ar = iitwArabicUI();
   const label = v => {
-    const bits = [_iitwArDialectName(v)];
-    if (_iitwIsNatural(v)) bits.push("best quality");
-    if (_iitwIsMale(v, true)) bits.push("male");
-    else if (_iitwIsFemale(v)) bits.push("female");
-    return v.name + " — " + bits.join(", ");
+    const bits = [ar ? (_AR_LOCALE_NAME_AR[_iitwArLocale(v)] || v.lang || "") : _iitwArDialectName(v)];
+    if (_iitwIsNatural(v)) bits.push(ar ? "جودة عالية" : "best quality");
+    if (_iitwIsMale(v, true)) bits.push(ar ? "صوت رجل" : "male");
+    else if (_iitwIsFemale(v)) bits.push(ar ? "صوت امرأة" : "female");
+    return _iitwShortVoiceName(v) + " — " + bits.join(ar ? "، " : ", ");
   };
-  const opt = v => `<option value="${v.name.replace(/"/g, "&quot;")}"${current && v.name === current.name ? " selected" : ""}>${label(v)}</option>`;
+  const q = s => String(s).replace(/"/g, "&quot;");
+  const opt = v => `<option value="${q(v.name)}" title="${q(v.name)}"${current && v.name === current.name ? " selected" : ""}>${label(v)}</option>`;
   const group = (name, list) => list.length ? `<optgroup label="${name}">${list.map(opt).join("")}</optgroup>` : "";
 
   host.innerHTML = `<div class="voice-bar">
     <label for="arVoiceSelect">🎙 <span class="en-only">Arabic voice</span><span class="ar-only" dir="rtl">الصوت العربي</span>:</label>
     <select id="arVoiceSelect">
-      ${group("Classical Arabic (فصحى) — recommended", classical)}
-      ${group("Regional dialects — some letters change", dialect)}
+      ${group(ar ? "الفصحى — المستحسَن" : "Classical Arabic (fusha) — recommended", classical)}
+      ${group(ar ? "اللهجات — تتغيّر فيها بعض الحروف" : "Regional dialects — some letters change", dialect)}
     </select>
     <button type="button" class="voice-test">▶ <span class="en-only">Test the letters</span><span class="ar-only" dir="rtl">جرّب الحروف</span></button>
     <span class="voice-hint">${hasClassical
@@ -768,6 +830,7 @@ function iitwBuildVoiceBar() {
 
 document.addEventListener("DOMContentLoaded", () => {
   iitwBuildVoiceBar();
+  document.addEventListener("iitw-lang", iitwBuildVoiceBar);
   // Voices often arrive after first paint.
   if (window.speechSynthesis) {
     window.speechSynthesis.addEventListener("voiceschanged", () => {
@@ -1509,8 +1572,8 @@ function iitwInjectFeedback() {
         <label for="iitwFbMsg">Your message</label>
         <div class="fb-mic-wrap">
           <textarea id="iitwFbMsg" required dir="auto"
-            placeholder="Describe the problem or your suggestion…  |  اكتب الملاحظة أو الاقتراح…"></textarea>
-          <button type="button" id="iitwFbMic" class="mic-btn" title="Speak instead of typing — تحدث بدل الكتابة">🎤</button>
+            placeholder="Describe the problem or your suggestion…"></textarea>
+          <button type="button" id="iitwFbMic" class="mic-btn" title="Speak instead of typing">🎤</button>
         </div>
         <div class="fb-mic-row">
           <select id="iitwFbMicLang" aria-label="Speaking language">
@@ -1579,8 +1642,8 @@ function iitwWireFeedbackMic() {
     iitwLang = document.documentElement.classList.contains("lang-ar") ? "ar" : "en"; }
   langSel.value = iitwLang === "ar" ? "ar-SA" : "en-US";
 
-  const SAY_LISTENING =
-    "● Listening — take your time, click the mic again to stop  ·  أستمع إليك — خذ وقتك، واضغط الميكروفون ثانيةً للإيقاف";
+  const SAY_LISTENING = ["● Listening — take your time, click the mic again to stop",
+                         "● أستمع إليك — خذ وقتك، واضغط الميكروفون ثانيةً للإيقاف"];
 
   let rec = null, listening = false, wants = false;
 
@@ -1590,7 +1653,7 @@ function iitwWireFeedbackMic() {
       listening = false;
       if (rec) rec.stop();
       btn.classList.remove("listening");
-      status.textContent = "■ Microphone off — أُغلق الميكروفون";
+      iitwSay(status, "■ Microphone off", "■ أُغلق الميكروفون");
       return;
     }
 
@@ -1603,7 +1666,7 @@ function iitwWireFeedbackMic() {
     rec.onstart = () => {
       listening = true;
       btn.classList.add("listening");
-      status.textContent = SAY_LISTENING;
+      iitwSay(status, SAY_LISTENING[0], SAY_LISTENING[1]);
     };
 
     rec.onresult = e => {
@@ -1612,10 +1675,12 @@ function iitwWireFeedbackMic() {
         if (e.results[i].isFinal) fresh += e.results[i][0].transcript;
         else interim += e.results[i][0].transcript;
       }
-      if (fresh.trim()) {
-        box.value = (box.value ? box.value.trim() + " " : "") + fresh.trim();
+      fresh = iitwCleanDictation(fresh.trim());
+      if (fresh) {
+        box.value = (box.value ? box.value.trim() + " " : "") + fresh;
       }
-      status.textContent = interim.trim() ? "● " + interim.trim() : SAY_LISTENING;
+      if (interim.trim()) status.textContent = "● " + iitwCleanDictation(interim.trim());
+      else iitwSay(status, SAY_LISTENING[0], SAY_LISTENING[1]);
     };
 
     rec.onerror = e => {
@@ -1623,9 +1688,8 @@ function iitwWireFeedbackMic() {
       wants = false;
       listening = false;
       btn.classList.remove("listening");
-      status.textContent = e.error === "not-allowed"
-        ? "Microphone blocked. Please allow it in your browser. — تم منع الميكروفون، اسمح به من المتصفح."
-        : "The microphone stopped. Click it to start again. — توقف الميكروفون، اضغطه لتشغيله من جديد.";
+      if (e.error === "not-allowed") iitwSay(status, "Microphone blocked. Please allow it in your browser.", "تم منع الميكروفون، اسمح به من المتصفح.");
+      else iitwSay(status, "The microphone stopped. Click it to start again.", "توقف الميكروفون، اضغطه لتشغيله من جديد.");
     };
 
     // Chrome closes the session itself after a stretch of silence.
@@ -1689,8 +1753,8 @@ function iitwInjectReadingAids() {
   top.id = "iitwToTop";
   top.className = "iitw-to-top";
   top.type = "button";
-  top.setAttribute("aria-label", "Back to top — عودة إلى الأعلى");
-  top.title = "Back to top — عودة إلى الأعلى";
+  top.setAttribute("aria-label", "Back to top");
+  top.title = "Back to top";
   top.textContent = "↑";
 
   document.body.appendChild(bar);

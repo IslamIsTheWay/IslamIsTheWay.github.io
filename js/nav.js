@@ -115,7 +115,7 @@
     btn.type = "button";
     btn.className = "reading-btn nav-search-btn";
     btn.textContent = "🔎";
-    btn.setAttribute("title", "Search the site — ابحث في الموقع");
+    btn.setAttribute("title", "Search the site");
     btn.setAttribute("aria-label", "Search the site");
     btn.addEventListener("click", openSearch);
 
@@ -134,7 +134,7 @@
       '<div class="site-search-card" role="dialog" aria-modal="true" aria-label="Search the site">' +
       '<div class="site-search-row">' +
       '<input type="text" id="siteSearchInput" dir="auto" autocomplete="off" ' +
-      'placeholder="يوسف · الزكاة · patience · Khalid" />' +
+      'placeholder="Yusuf · zakat · patience · Khalid" />' +
       '<button type="button" id="siteSearchGo" class="qsearch-btn">' +
       '<span class="en-only">Search</span><span class="ar-only" dir="rtl">ابحث</span></button>' +
       '</div>' +

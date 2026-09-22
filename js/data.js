@@ -2836,7 +2836,7 @@ const WARNING_THEMES = [
     titleAr: "كنز المال ومنع الزكاة",
     description: "Those who hoard gold and silver and do not spend in the path of Allah are warned of a painful punishment on the Day of Judgment.",
     descriptionAr: "﴿ٱلَّذِينَ يَكۡنِزُونَ ٱلذَّهَبَ وَٱلۡفِضَّةَ وَلَا يُنفِقُونَهَا فِي سَبِيلِ ٱللَّهِ﴾ تُوعّدوا بعذاب أليم يوم القيامة.",
-    keys: ["hoard","hoarding","stingy","greed","greedy","miser","zakat","withhold","selfish","كنز","بخل","شح","طمع","زكاة","منع","أنانية"],
+    keys: ["hoard","hoarding","stingy","greed","greedy","miser","zakat","withhold","selfish","كنز المال","يكنزون","بخل","شح","طمع","زكاة","منع الزكاة","أنانية"],
     refs: ["Surah At-Tawbah (9:34-35)"]
   },
   {

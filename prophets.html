@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609221849" />
+  <link rel="stylesheet" href="css/style.css?v=202609222329" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/prophets.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -81,7 +81,7 @@
     <div class="container">
       <div id="oneReligion" style="max-width:900px;margin:0 auto 44px;"></div>
       <div class="search-row" style="max-width:600px;margin:0 auto 32px;">
-        <input type="text" id="prophetSearch" placeholder="ابحث بالعربية أو Search by name (e.g. Musa, إبراهيم)..." dir="auto" style="width:100%;padding:14px 20px;border:1px solid #ddd;border-radius:10px;font-size:1rem;">
+        <input type="text" id="prophetSearch" placeholder="Search by name (e.g. Musa, Ibrahim) — Arabic works too" dir="auto" style="width:100%;padding:14px 20px;border:1px solid #ddd;border-radius:10px;font-size:1rem;">
       </div>
       <div class="people-grid" id="prophetsGrid"></div>
     </div>
@@ -122,8 +122,8 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609221849"></script>
-  <script src="js/lives.js?v=202609221849"></script>
+  <script src="js/data.js?v=202609222329"></script>
+  <script src="js/lives.js?v=202609222329"></script>
   <script>
     const grid = document.getElementById("prophetsGrid");
     /* Searched with the site's one person scorer (iitwScorePeople in
@@ -264,7 +264,7 @@
             <p class="judge-arabic${/[\u06E1\u06E2\u06ED\u0656\u0657\u065E]/.test(p.quran) ? "" : " judge-hadith"}" dir="rtl" data-speak>${
               /* a verse carries the Mushaf's own marks; "الأنبياء إخوة لعلات"
                  is a hadith and is printed as one, in «» */
-              /[\u06E1\u06E2\u06ED\u0656\u0657\u065E]/.test(p.quran) ? p.quran : "«" + p.quran + "»"} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
+              /[\u06E1\u06E2\u06ED\u0656\u0657\u065E]/.test(p.quran) ? p.quran : "«" + p.quran + "»"} <button class="speak-btn" data-lang="ar" title="Listen">🔊</button></p>
             <p class="en-only">${p.en}</p>
             ${p.arSame ? "" : `<p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${p.ar}</p>`}
             <div class="refs"><span>${p.ref}</span></div>
@@ -278,7 +278,7 @@
           <div class="decl-grid">
             ${ONE_RELIGION.declarations.map(d => `<div class="decl-card">
               <div class="decl-who"><span class="en-only">${d.who}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;font-weight:400;">${d.whoAr}</span></div>
-              <p class="decl-arabic" dir="rtl" data-speak>${d.quran} <button class="speak-btn" data-lang="ar" title="Listen — استمع">🔊</button></p>
+              <p class="decl-arabic" dir="rtl" data-speak>${d.quran} <button class="speak-btn" data-lang="ar" title="Listen">🔊</button></p>
               <p class="en-only">${d.en}</p>
               ${d.arSame ? "" : `<p dir="rtl" style="font-family:'Amiri',serif;line-height:2;">${d.ar}</p>`}
               <div class="refs"><span>${d.ref}</span></div>
@@ -291,11 +291,11 @@
     if (window.applyI18n) window.applyI18n();
     document.getElementById("prophetSearch").addEventListener("input", e => renderProphets(e.target.value));
   </script>
-  <script src="js/wordlens.js?v=202609221849"></script>
-  <script src="js/resume.js?v=202609221849"></script>
-  <script src="js/main.js?v=202609221849"></script>
-  <script src="js/reading.js?v=202609221849"></script>
-  <script src="js/nav.js?v=202609221849"></script>
-  <script src="js/i18n.js?v=202609221849"></script>
+  <script src="js/wordlens.js?v=202609222329"></script>
+  <script src="js/resume.js?v=202609222329"></script>
+  <script src="js/main.js?v=202609222329"></script>
+  <script src="js/reading.js?v=202609222329"></script>
+  <script src="js/nav.js?v=202609222329"></script>
+  <script src="js/i18n.js?v=202609222329"></script>
 </body>
 </html>

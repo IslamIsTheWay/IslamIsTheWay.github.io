@@ -540,6 +540,29 @@ def home_sections_render(ctx):
     check(pg.evaluate("!!document.querySelector('#recitationsGrid iframe, #recitationsGrid video')"), "pressing a recitation did not start the player")
     return pg
 
+@scenario
+def home_suggested_reading(ctx):
+    """The owner, 22 September 2026: the best sections are deep inside the
+    pages and the home page never named them. Eight doors, each into a
+    section that exists — and the two Quran ones open the surah's story."""
+    pg = open_page(ctx, "index.html")
+    links = pg.evaluate("[...document.querySelectorAll('#suggested .suggest-card')].map(a => a.getAttribute('href'))")
+    check(len(links) == 8, "Suggested reading shows %d cards, not 8" % len(links))
+    doors = pg.evaluate("[...document.querySelectorAll('#situations .card')].map(a => a.getAttribute('href'))")
+    check(not set(links) & set(doors), "a suggestion repeats a door of 'Start from where you are'")
+    for href in links:
+        page, frag = href.split("#")
+        t = ctx.new_page()
+        t.goto(BASE + href, wait_until="networkidle")
+        if frag.startswith("story-"):
+            t.wait_for_timeout(2500)
+            check(t.evaluate("(() => { const p = document.getElementById('storyPanel'); return !!p && !p.classList.contains('tad-hidden'); })()"),
+                  href + " did not open the surah's story")
+        else:
+            check(t.evaluate("f => !!document.getElementById(f)", frag), href + " points at nothing")
+        t.close()
+    return pg
+
 
 @scenario
 def feedback_form_is_kept_and_mailed(ctx):
@@ -604,6 +627,85 @@ def guidance_finds_the_mountain_of_gold(ctx):
         check(not any("#tr-" in x for x in h), "%r was answered with the mountain of gold: %s" % (query, h))
     check(pg.evaluate("!!document.querySelector('#endPrepBox a[href=\"judgement.html#treasure\"]')"),
           "the end-of-time section does not point to the mountain of gold")
+    return pg
+
+# ---- the owner's screenshots of 22 September 2026, one scenario per fault class
+@scenario
+def guidance_no_fragment_answers(ctx):
+    """"The mountain of gold at، the end of the time." (dictated, Arabic comma
+    and all) was followed by hoarding gold (on "gold"), the funeral's qirat "like
+    two mountains" (on "mountain") and five Sunnah entries on "end". A card that
+    met a phrase of the sentence sets the bar for everything under it; "end" and
+    "time" are generic; and the end of time as a subject has its own answer."""
+    pg = open_page(ctx, "guidance.html")
+    def ask(q):
+        pg.fill("#situationInput", q)
+        pg.click("button[onclick='findGuidance()']")
+        pg.wait_for_timeout(1500)
+        return pg.inner_text("#guidanceResults")
+    out = ask("The mountain of gold at\u060c the end of the time.")
+    check("take nothing from it" in out, "the owner's question did not reach the mountain of gold")
+    for junk in ("Hoarding and Withholding Charity", "two qirat", "End the night with Witr", "Feeding animals"):
+        check(junk not in out, "a one-word match is back under the answer: " + junk)
+    out = ask("جبل الذهب في آخر الزمان")
+    check("take nothing from it" in out or "فلا يأخذ منه شيئًا" in out, "the Arabic of the question lost the mountain of gold")
+    for q in ("what happens at the end of time", "علامات آخر الزمان"):
+        out = ask(q)
+        check("The map of the end of time" in out, "%r did not get the map of the end of time" % q)
+    return pg
+
+
+@scenario
+def arabic_mode_ranges_read_left_to_right(ctx):
+    """"سورة التوبة (9:34-35)" showed as "(35-9:34)": after Arabic letters the
+    bidi rules treat Latin digits as Arabic numbers and the hyphen stops joining
+    them. i18n.js isolates every such range in Arabic mode; this measures it."""
+    pg = open_page(ctx, "guidance.html", lang="ar")
+    pg.fill("#situationInput", "كنز المال")
+    pg.click("button[onclick='findGuidance()']")
+    pg.wait_for_timeout(1800)
+    r = pg.evaluate(r"""() => {
+      const w = document.createTreeWalker(document.getElementById('guidanceResults'), NodeFilter.SHOW_TEXT);
+      let n; while ((n = w.nextNode())) { if (/\d+:\d+-\d+/.test(n.nodeValue)) break; }
+      if (!n) return null;
+      n.parentElement.scrollIntoView({block: 'center'});
+      const s = n.nodeValue, m = s.match(/\d+:\d+-\d+/), a = m.index, z = a + m[0].length - 1;
+      const at = i => { const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1); return r.getBoundingClientRect().left; };
+      return at(a) < at(z);
+    }""")
+    check(r is not None, "no verse range was rendered to measure")
+    check(r, "a verse range reads backwards in Arabic mode")
+    return pg
+
+
+FAKE_VOICES = """(() => { const V = [
+  { name: "Microsoft Hamed Online (Natural) - Arabic (Saudi Arabia)", lang: "ar-SA", localService: false, voiceURI: "h" },
+  { name: "Microsoft Hoda - Arabic (Egypt)", lang: "ar-EG", localService: true, voiceURI: "d" } ];
+  try { Object.defineProperty(window.speechSynthesis, "getVoices", { value: () => V }); } catch (e) {} })();"""
+
+@scenario
+def statuses_and_labels_in_one_language(ctx):
+    """The microphone said "Listening — click the mic again to stop" beside
+    the Arabic; the voice picker said "…dialect, best quality". Every status
+    goes through iitwSay, the picker is rebuilt in the reader's language, and
+    tooltips are translated by i18n.js (tools/mixscan.py guards the source)."""
+    ctx.add_init_script(FAKE_VOICES)
+    pg = open_page(ctx, "guidance.html", lang="ar")
+    pg.evaluate("iitwSay(document.getElementById('micStatus'), '● Listening — click the mic again to stop', '● أستمع — اضغط الميكروفون ثانيةً للإيقاف')")
+    seen = pg.inner_text("#micStatus")
+    check("Listening" not in seen and "أستمع" in seen, "the microphone status is not Arabic-only in Arabic: " + seen)
+    opts = " ".join(pg.evaluate("[...document.querySelectorAll('#arVoiceSelect option, #arVoiceSelect optgroup')].map(o => o.textContent + ' ' + (o.label || ''))"))
+    check(opts.strip(), "the voice picker did not build")
+    for en in ("best quality", "male", "dialect", "Classical", "recommended"):
+        check(en not in opts, "English in the Arabic voice picker: " + en)
+    check(pg.evaluate("iitwCleanDictation('gold at\u060c the end')") == "gold at, the end",
+          "an Arabic comma dictated into English is not cleaned")
+    tip = pg.evaluate("(document.querySelector('.speak-btn') || {}).title || ''")
+    check(tip == "" or tip == "استمع", "a tooltip is not Arabic in Arabic mode: " + tip)
+    pg.click("#langToggle")
+    pg.wait_for_timeout(500)
+    opts = " ".join(pg.evaluate("[...document.querySelectorAll('#arVoiceSelect option')].map(o => o.textContent)"))
+    check("best quality" in opts and "جودة" not in opts, "the voice picker did not switch to English: " + opts[:80])
     return pg
 
 

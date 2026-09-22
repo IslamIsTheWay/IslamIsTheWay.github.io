@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609221849" />
+  <link rel="stylesheet" href="css/style.css?v=202609222329" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/courses.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -199,9 +199,9 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202609221849"></script>
+  <script src="js/data.js?v=202609222329"></script>
   <!-- Course sign-up and the request that actually reaches the staff. -->
-  <script src="js/enrol.js?v=202609221849"></script>
+  <script src="js/enrol.js?v=202609222329"></script>
   <script>
     const grid = document.getElementById("courseGrid");
 
@@ -306,7 +306,7 @@
               <p>${v.description || ""}</p>
               <p style="font-weight:700;color:var(--gold-ink);font-size:1.1rem;margin:10px 0;">${v.price}</p>
               <div style="display:flex;gap:8px;">
-                <input type="text" id="vc${idx}" placeholder="Access code — رمز الدخول" style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;" />
+                <input type="text" id="vc${idx}" placeholder="Access code" style="flex:1;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:monospace;" />
                 <button class="btn btn-primary btn-small" onclick="unlockVideo(${idx})"><span class="en-only">Watch</span><span class="ar-only" dir="rtl">شاهد</span></button>
               </div>
               <p id="vmsg${idx}" style="font-size:.82rem;color:#8a3d1f;min-height:1.2em;margin-top:6px;"></p>
@@ -389,9 +389,9 @@
           </div>
 
           <div class="enrol-fields">
-            <input type="text"     id="enName"  placeholder="Your full name — اسمك الكامل" />
-            <input type="email"    id="enEmail" placeholder="Your email — بريدك الإلكتروني" />
-            <input type="password" id="enPass"  placeholder="A NEW password (not your email password) — كلمة مرور جديدة" />
+            <input type="text"     id="enName"  placeholder="Your full name" />
+            <input type="email"    id="enEmail" placeholder="Your email" />
+            <input type="password" id="enPass"  placeholder="A NEW password (not your email password)" />
           </div>
           <div class="enrol-actions">
             <button class="btn btn-primary btn-small" onclick="iitwDoEnrolSignUp()">
@@ -448,9 +448,9 @@
           <div class="enrol-head">✉ <span class="en-only">Request: <strong>${courseTitle}</strong></span>
             <span class="ar-only" dir="rtl">طلب: <strong>${courseTitle}</strong></span></div>
           <div class="enrol-fields">
-            <input type="text" id="enPhone" placeholder="Phone / WhatsApp (optional) — الهاتف أو واتساب (اختياري)" />
-            <input type="text" id="enWhen"  placeholder="Times that suit you — الأوقات المناسبة لك" />
-            <textarea id="enNote" rows="3" placeholder="Anything you want the teacher to know — ما تودّ أن يعلمه المعلّم"></textarea>
+            <input type="text" id="enPhone" placeholder="Phone / WhatsApp (optional)" />
+            <input type="text" id="enWhen"  placeholder="Times that suit you" />
+            <textarea id="enNote" rows="3" placeholder="Anything you want the teacher to know"></textarea>
           </div>
           <div class="enrol-actions">
             <button class="btn btn-primary btn-small" onclick="iitwSendRequest('${String(courseTitle).replace(/'/g, "\\'")}')">
@@ -492,12 +492,12 @@
     document.addEventListener("DOMContentLoaded", renderEnrolBox);
   </script>
 
-  <script src="js/wordlens.js?v=202609221849"></script>
+  <script src="js/wordlens.js?v=202609222329"></script>
 
-  <script src="js/resume.js?v=202609221849"></script>
-  <script src="js/main.js?v=202609221849"></script>
-  <script src="js/reading.js?v=202609221849"></script>
-  <script src="js/nav.js?v=202609221849"></script>
-  <script src="js/i18n.js?v=202609221849"></script>
+  <script src="js/resume.js?v=202609222329"></script>
+  <script src="js/main.js?v=202609222329"></script>
+  <script src="js/reading.js?v=202609222329"></script>
+  <script src="js/nav.js?v=202609222329"></script>
+  <script src="js/i18n.js?v=202609222329"></script>
 </body>
 </html>

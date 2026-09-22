@@ -45,9 +45,11 @@
     var b = document.getElementById("themeToggle");
     if (b) {
       b.textContent = t === "dark" ? "☀️" : "🌙";
-      b.setAttribute("title", t === "dark" ? "Daylight — الوضع النهاري" : "Night reading — الوضع الليلي");
+      b.setAttribute("title", t === "dark" ? "Daylight" : "Night reading");
       b.setAttribute("aria-label", t === "dark" ? "Switch to the light theme" : "Switch to the dark theme");
       b.setAttribute("aria-pressed", t === "dark" ? "true" : "false");
+      // its title and label just changed: put them back in the reader's language
+      if (window.applyI18n) window.applyI18n();
     }
   }
 
@@ -101,7 +103,7 @@
     var wrap = document.createElement("span");
     wrap.className = "reading-tools";
     wrap.setAttribute("role", "group");
-    wrap.setAttribute("aria-label", "Reading comfort — راحة القراءة");
+    wrap.setAttribute("aria-label", "Reading comfort");
 
     wrap.appendChild(button("textSmaller", "A−", "Smaller text — تصغير النصّ",
       function () { stepSize(-1); }, "reading-btn reading-size"));

@@ -50,7 +50,7 @@ const AR = {
   "Ask About Your Situation": "اسأل عن حالتك",
   "Search a Person": "ابحث عن شخص",
   "Or browse by subject": "أو تصفَّح بحسب الموضوع",
-  "The doors above are arranged by what is happening to you. These are arranged by what the material is.": "الأبواب فوق مرتّبة بحسب حالك، وهذه مرتّبة بحسب موضوع المادّة.",
+  "The doors above start from you, or from something worth reading. These are arranged by what the material is.": "الأبوابُ فوق تبدأ منك، أو ممّا يستحقّ القراءة؛ وهذه مرتّبةٌ بحسب مادّتها.",
   "The Holy Quran": "القرآن الكريم",
   "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 496 verses — at least two in every surah — open into a full explanation of why they are worded as they are.":
     "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة، وأربعمئة وستٌّ وتسعون آية — في كلّ سورةٍ منها آيتان فأكثر — تُفتح على شرحٍ كاملٍ لسبب ورودها بهذا اللفظ.",
@@ -277,6 +277,49 @@ const AR = {
   "What the Prophet ﷺ said about the Euphrates uncovering a mountain of gold; where it could be — the river itself, or the melting ice of the North; why the whole world would fight over it even knowing the hadith; and what we are told to do. The hadith is marked as certain, and every reading is marked as a reading.":
     "ما قاله النبيّ ﷺ في حَسْر الفرات عن جبلٍ من ذهب؛ وأين قد يكون — النهرُ نفسُه، أو الجليدُ الذائب في الشمال؛ ولماذا يقتتل العالمُ كلُّه عليه وهو يعرف الحديث؛ وما الذي أُمرنا به. الحديثُ موسومٌ بأنه ثابت، وكلُّ قراءةٍ موسومةٌ بأنها قراءة.",
   "Read it": "اقرأه",
+  /* Tooltips and screen-reader labels. They were written "English — Arabic"
+     in the markup, which showed both; iitwTranslateDom now translates the
+     title and aria-label attributes as it does placeholders. */
+  "Listen": "استمع",
+  "Speak instead of typing": "تحدث بدل الكتابة",
+  "Toward a complete Quran": "نحو ختمة كاملة",
+  "Smaller Mushaf line": "تصغير خطّ المصحف",
+  "Larger Mushaf line": "تكبير خطّ المصحف",
+  "Reset": "تصفير",
+  "Mark as done": "علّم كمُنجز",
+  "Days in a row": "أيام متتابعة",
+  "Choose your reciter": "اختر القارئ",
+  "Search the site": "ابحث في الموقع",
+  "Daylight": "الوضع النهاري",
+  "Night reading": "الوضع الليلي",
+  "Switch to the light theme": "التبديل إلى الوضع النهاري",
+  "Switch to the dark theme": "التبديل إلى الوضع الليلي",
+  /* Placeholders and labels that were written in both languages at once —
+     one language each now (tools/mixscan.py keeps it so). */
+  "Search by name (e.g. Khalid, Aisha) — Arabic works too": "ابحث بالاسم (مثل: خالد، عائشة) — والإنجليزية تصلح أيضًا",
+  "Access code": "رمز الدخول",
+  "Your full name": "اسمك الكامل",
+  "Your email": "بريدك الإلكتروني",
+  "A NEW password (not your email password)": "كلمة مرور جديدة (لا كلمة مرور بريدك)",
+  "Phone / WhatsApp (optional)": "الهاتف أو واتساب (اختياري)",
+  "Times that suit you": "الأوقات المناسبة لك",
+  "Anything you want the teacher to know": "ما تودّ أن يعلمه المعلّم",
+  "Search — algebra, surgery, optics, the moon…": "ابحث: الجبر، الجراحة، البصريات، القمر…",
+  "e.g. I am struggling with anger and I hurt someone I love…": "مثال: أشعر بالقلق ولا أستطيع النوم…",
+  "What do I say in sujud? · after prayer? · to ask forgiveness?": "ماذا أقول في السجود؟ بعد الصلاة؟ للاستغفار؟",
+  "Count this dhikr": "عُدّ هذا الذكر",
+  "Search in English or Arabic…": "ابحث بالعربية أو بالإنجليزية…",
+  "Describe the problem or your suggestion…": "اكتب الملاحظة أو الاقتراح…",
+  "Back to top": "عودة إلى الأعلى",
+  "Yusuf · zakat · patience · Khalid": "يوسف · الزكاة · الصبر · خالد",
+  "Reading comfort": "راحة القراءة",
+  "Search by name (e.g. Musa, Ibrahim) — Arabic works too": "ابحث بالاسم (مثل: موسى، إبراهيم) — والإنجليزية تصلح أيضًا",
+  "Search (e.g. Yusuf, Light, 36) — Arabic works too": "ابحث (مثل: يوسف، النور، 36) — والإنجليزية تصلح أيضًا",
+  "orphan · patience — Arabic works too": "الصبر · اليتامى — والإنجليزية تصلح أيضًا",
+  "Search (e.g. Yusuf, Khalid) — Arabic works too": "ابحث (مثل: يوسف، خالد) — والإنجليزية تصلح أيضًا",
+  "Search the stories — mercy, forgiveness, children, anger…": "ابحث: الرحمة، العفو، الأطفال، الغضب…",
+  "Ask anything — e.g. what did the Prophet ﷺ do before sleeping?": "اسأل عن أيّ شيء — مثل: ماذا كان يفعل النبي ﷺ قبل النوم؟",
+  "Paste the text here…": "الصق النص هنا…",
   "199 Sunnah Practices": "مئة وتسعٌ وتسعون سنة",
   "How the Prophet ﷺ actually lived, across 18 areas of ordinary life — waking, wudu, prayer, food, dress, the mosque, travel, Friday, illness, hardship and the treatment of family, neighbours and animals. Ask a question in Arabic or English and the right practice is found for you.":
     "كيف عاش النبي ﷺ فعلاً، في ثمانية عشر بابًا من أبواب الحياة اليومية — الاستيقاظ والوضوء والصلاة والطعام واللباس والمسجد والسفر والجمعة والمرض والشدّة، ومعاملة الأهل والجيران والحيوان. اسأل بالعربية أو الإنجليزية ويُعرض لك ما يناسبك.",
@@ -352,8 +395,6 @@ const AR = {
   "💬 Tell Us What You Think": "💬 قل لنا رأيك",
   "Found a mistake in a reference, a word translated wrongly, or something that would make this site better? Tell us — every message is read.":
     "وجدتَ خطأً في مرجع، أو ترجمةً غير دقيقة، أو عندك فكرة تُحسّن الموقع؟ اكتب لنا — كل رسالة تُقرأ.",
-  "Describe the problem or your suggestion…  |  اكتب الملاحظة أو الاقتراح…":
-    "اكتب الملاحظة أو الاقتراح…",
   "Knowledge That Brings Peace to the Heart": "علمٌ تطمئن به القلوب",
   "Indeed, With Hardship Comes Ease": "إنّ مع العسر يسرًا",
 
@@ -812,9 +853,6 @@ const AR = {
   "Surah Al-Falaq (113:1-5) · Reciting them in his final illness: Sahih al-Bukhari 5735 — Aishah":
     "سورة الفلق (١١٣:١–٥) · وقراءته ﷺ إيّاها في مرض موته: صحيح البخاري ٥٧٣٥ — عن عائشة",
 
-  "Username — اسم المستخدم": "اسم المستخدم",
-  "Password — كلمة المرور": "كلمة المرور",
-  "Access code — رمز الدخول": "رمز الدخول",
 
   "before sleeping": "قبل النوم",
   "how to make wudu": "كيف أتوضأ",
@@ -1493,6 +1531,19 @@ const AR_LOOSE = {};
   }
 })();
 
+/* A RANGE OF LATIN DIGITS INSIDE ARABIC TEXT READS BACKWARDS.
+   After Arabic letters the Unicode bidi rules treat the digits as Arabic
+   numbers, and a hyphen does not join Arabic numbers: "سورة التوبة (9:34-35)"
+   came out on screen as "(35-9:34)" — the owner's screenshot, 22 September
+   2026. A left-to-right isolate (LRI … PDI, both invisible) keeps the range
+   in one piece. Applied to every text node in Arabic mode, so it holds for
+   references, data and anything rendered later, not one field at a time. */
+function iitwIsolateRanges(s) {
+  if (!/\d\s*[-\u2013]\s*\d/.test(s)) return s;
+  return s.replace(/\d+(?::\d+)?\s*[-\u2013]\s*\d+(?::\d+)?/g, (m, off, str) =>
+    str.charAt(off - 1) === "\u2066" ? m : "\u2066" + m + "\u2069");
+}
+
 function iitwTranslateDom(lang) {
   iitwCollectNodes().forEach(node => {
     if (node._iitwEn === undefined) node._iitwEn = node.nodeValue;
@@ -1509,6 +1560,10 @@ function iitwTranslateDom(lang) {
     } else {
       node.nodeValue = original;
     }
+    if (lang === "ar") {
+      const v = node.nodeValue, iso = iitwIsolateRanges(v);
+      if (iso !== v) node.nodeValue = iso;
+    }
   });
 
   // Placeholders, titles and button labels
@@ -1518,10 +1573,26 @@ function iitwTranslateDom(lang) {
     const t = lang === "ar" ? (AR[ph] || AR_LOOSE[ph.replace(/\s+/g, " ")]) : null;
     el.setAttribute("placeholder", t || el._iitwPh);
   });
+
+  /* Titles and screen-reader labels, the same way. A script may rewrite one
+     after this has run (the theme button does, on every switch), so a value
+     that is neither the stored English nor its Arabic is the new English. */
+  ["title", "aria-label"].forEach(attr => {
+    const k = "_iitw_" + attr, kAr = k + "_ar";
+    document.querySelectorAll("[" + attr + "]").forEach(el => {
+      const cur = el.getAttribute(attr);
+      if (el[k] === undefined || (cur !== el[k] && cur !== el[kAr])) el[k] = cur;
+      const en = el[k].trim();
+      const t = lang === "ar" ? (AR[en] || AR_LOOSE[en.replace(/\s+/g, " ")]) : null;
+      el[kAr] = t || null;
+      if (cur !== (t || el[k])) el.setAttribute(attr, t || el[k]);
+    });
+  });
 }
 
 function iitwApply(lang) {
   const root = document.documentElement;
+  const was = root.classList.contains("lang-ar") ? "ar" : "en";
   root.lang = lang === "ar" ? "ar" : "en";
   root.dir = lang === "ar" ? "rtl" : "ltr";
   root.classList.toggle("lang-ar", lang === "ar");
@@ -1531,6 +1602,14 @@ function iitwApply(lang) {
   if (btn) {
     btn.textContent = lang === "ar" ? "English" : "العربية";
     btn.setAttribute("title", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
+  }
+
+  /* Text a script builds where two spans cannot go — an <option>, a
+     title — is rebuilt on this. Only on a real change (and once at load):
+     applyI18n runs after every dynamic render. */
+  if (was !== lang || !iitwApply.ran) {
+    iitwApply.ran = true;
+    document.dispatchEvent(new CustomEvent("iitw-lang", { detail: lang }));
   }
 }
 

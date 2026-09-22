@@ -14,7 +14,8 @@
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 2. **PART 37** (most recent) — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
+> 1b. **PART 38** (most recent) — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
+> 2. **PART 37** — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
 > 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
 > 4. **PART 34** — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
@@ -6802,3 +6803,88 @@ functest.py gained judgement_mountain_of_gold, golden_mountain_of_gold_card and
 guidance_finds_the_mountain_of_gold - the last includes seven questions that
 must NOT reach the section ("what should I do…", the rain prayer, gold for men,
 أشعر بالوحدة…). 33 of 33 pass.
+
+---
+
+# PART 38 - Two screenshots from the owner: four fault classes, and "Suggested reading"
+
+Screenshot 1 (Guidance, Arabic, dark): he dictated "the mountain of gold at، the
+end of the time". The right card came first, but under it sat hoarding gold (on
+the word "gold"), and its reference read "(35-9:34)". Screenshot 2: the
+microphone's status line in both languages at once, a cut-off English voice
+label, and an Arabic comma inside an English sentence. Each was a sample of a
+class; each class is fixed at its root and has a test.
+
+## 1. One word of a phrase is a fragment, not a subject (guidance.html)
+
+- "end" (ends, ending, ended) and نهاية، اخر، اخرى، زمان، زمن joined GENERIC
+  ("time" was already there): "end" alone had put witr, travel and sleep under
+  the answer.
+- `answeredByPhrase`: once a card met a key of two or more words in full, the
+  verses and the Sunnah take the cards' bar (a key of theirs met, or two
+  distinct real words); hadith and worship always had it. Words are counted
+  with `tokens()`, NOT the GENERIC list - it holds ذهب as the verb "went", and
+  «جبل ذهب» shrank to one word, so the Arabic of his own question lost its
+  answer until that was changed.
+- New topic `end-times`, gated on whole phrases only, answered from
+  js/endmap.js (the map's title, the first paragraph of its lead, the four
+  phases, links to #endprep and judgement.html#treasure). A card that met its
+  own phrase ("the mountain of gold at the end of time") takes precedence.
+- The hoarding theme's one-word keys: منع became منع الزكاة ("منع الحمل" is
+  contraception), كنز became كنز المال / يكنزون. tr-when's keys were narrowed
+  to the Euphrates so general "when is the Hour" questions reach the map.
+- Measured on 46 natural questions before and after: 8 answers changed, every
+  one for the better; the other 38 are identical.
+
+## 2. Text written in both languages at once
+
+- `iitwSay(el, en, ar)` in main.js writes a status as two spans. Every
+  microphone status (Guidance, Sunnah, the feedback form) goes through it.
+- i18n.js now translates `title` and `aria-label` as it does placeholders: 26
+  tooltips and 27 placeholders and labels are English in the markup with their
+  Arabic in the dictionary.
+- An `<option>` cannot hold two spans, so a select is BUILT in the reader's
+  language and rebuilt on the new `iitw-lang` event (i18n.js fires it on a
+  real change, and once at load): the Arabic voice picker (main.js), the
+  reciter picker (quran.js), the meeting's language pickers.
+- **tools/mixscan.py** reads the SOURCE, so it sees states a DOM walk never
+  reaches (the microphone's lines appear only while it listens): strings with
+  English and Arabic words written by textContent / alert / placeholder / the
+  toast, title / aria-label / placeholder / optgroup-label attributes, and
+  literal option text. `--check` is now in the pre-commit list
+  (06-content-guide.md). leakaudit.py remains for text built from data.
+- Still English in Arabic mode, and not the site's text: recitation titles
+  entered in the staff dashboard with no Arabic title.
+
+## 3. A Latin-digit range inside Arabic reads backwards
+
+After Arabic letters the bidi rules treat Latin digits as Arabic numbers, and a
+hyphen does not join Arabic numbers: "سورة التوبة (9:34-35)" showed as
+"(35-9:34)". `iitwIsolateRanges()` in i18n.js wraps every such range in an
+invisible left-to-right isolate, in every text node in Arabic mode. Measured
+on the page: the "9" now sits left of the "35". Arabic-Indic ranges are left
+alone - they already read correctly right to left.
+
+## 4. The recogniser punctuates in its own language
+
+`iitwCleanDictation()`: a transcript with no Arabic letters gets Latin
+punctuation. Guidance, Sunnah, the feedback form, Verify, Meeting captions.
+
+## Suggested reading (index.html#suggested)
+
+His idea: the best sections are deep in the pages and the home page never
+named them. Eight doors, each written as the question that makes a reader want
+the answer: the mountain of gold; al-Fatihah and al-Baqarah read as one story
+(quran.html#story-1 / #story-2 - new: opens the surah AND its story panel);
+why we fell; will we rise again; the three places; what is in your hand;
+Paradise's hundred degrees. Rules in the comment above it: few, every promise
+matched to what its section says, no door repeated from "Start from where you
+are". From that grid, "Why are Muslims behind today?" went (the "why did we
+fall" door opens it), and the Mahdi door, which pointed at the top of
+#misunderstood, now opens #mis-waiting.
+
+## Tests
+
+functest.py gained guidance_no_fragment_answers,
+arabic_mode_ranges_read_left_to_right, statuses_and_labels_in_one_language and
+home_suggested_reading.

@@ -68,9 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Build the reciter dropdown
   const recSel = document.getElementById("reciterSelect");
   if (recSel) {
-    recSel.innerHTML = RECITERS
-      .map(r => `<option value="${r.id}">${r.name} — ${r.ar}</option>`)
-      .join("");
+    /* ONE LANGUAGE PER OPTION. An <option> cannot hold an en-only and an
+       ar-only span, and "Mishary Rashid Alafasy — مشاري راشد العفاسي" showed
+       the English to an Arabic reader (leakaudit, 22 September 2026). Built
+       in the reader's language, rebuilt on "iitw-lang" from i18n.js. */
+    const fillReciters = () => {
+      const ar = typeof iitwArabicUI === "function" && iitwArabicUI();
+      const keep = recSel.value || getReciter();
+      recSel.innerHTML = RECITERS
+        .map(r => `<option value="${r.id}">${ar ? r.ar : r.name}</option>`)
+        .join("");
+      recSel.value = keep;
+    };
+    fillReciters();
+    document.addEventListener("iitw-lang", fillReciters);
     recSel.value = getReciter();
     recSel.addEventListener("change", () => {
       localStorage.setItem(RECITER_KEY, recSel.value);
@@ -127,11 +138,24 @@ document.addEventListener("DOMContentLoaded", () => {
      so does the home page. #surah-18-45 opens it AT verse 45, which is what
      "continue where you left off" and the word search need. */
   function iitwOpenFromHash() {
-    const hm = (location.hash || "").match(/^#surah-(\d{1,3})(?:[-:](\d{1,3}))?$/);
+    const hm = (location.hash || "").match(/^#(surah|story)-(\d{1,3})(?:[-:](\d{1,3}))?$/);
     if (!hm) return;
-    const s = SURAHS.find(x => x.n === +hm[1]);
-    if (s && hm[2] && typeof iitwOpenAt === "function") iitwOpenAt(s.n, +hm[2]);
+    const s = SURAHS.find(x => x.n === +hm[2]);
+    if (s && hm[3] && typeof iitwOpenAt === "function") iitwOpenAt(s.n, +hm[3]);
     else if (s) openSurah(s);
+    /* #story-2 opens the surah AND its full explanation: the home page's
+       suggested reading links straight into the story of al-Fatihah and
+       al-Baqarah, which a reader otherwise finds only by pressing 📖. The
+       surah's text loads on demand, so wait for the panel to exist. */
+    if (s && hm[1] === "story") {
+      let tries = 0;
+      const t = setInterval(() => {
+        const p = document.getElementById("storyPanel");
+        if (!p && ++tries < 60) return;
+        clearInterval(t);
+        if (p && p.classList.contains("tad-hidden")) { window._storyOpen = false; iitwToggleStory(); }
+      }, 100);
+    }
   }
   iitwOpenFromHash();
   /* A link to #surah-… from THIS page (or the browser's back button between
@@ -298,9 +322,9 @@ async function openSurah(surah) {
              the size is remembered for the next surah and the next visit. -->
         <span class="rq-zoom" role="group" aria-label="Reading size">
           <button onclick="iitwQuranZoom(-1)" class="rq-btn rq-zoom-btn" id="rqZoomOut"
-                  dir="ltr" title="Smaller Mushaf line — تصغير خطّ المصحف" aria-label="Smaller Mushaf text">A−</button>
+                  dir="ltr" title="Smaller Mushaf line" aria-label="Smaller Mushaf text">A−</button>
           <button onclick="iitwQuranZoom(1)" class="rq-btn rq-zoom-btn" id="rqZoomIn"
-                  dir="ltr" title="Larger Mushaf line — تكبير خطّ المصحف" aria-label="Larger Mushaf text">A+</button>
+                  dir="ltr" title="Larger Mushaf line" aria-label="Larger Mushaf text">A+</button>
         </span>
         <!-- Sits beside Stop, as asked. It stays disabled until a verse's
              audio has finished, and then names the verse it will save. -->
@@ -627,8 +651,8 @@ function renderReaderBox() {
       </div>
 
       <div class="reader-form">
-        <input type="text" id="rdUser" autocomplete="username" placeholder="Username — اسم المستخدم" dir="auto" />
-        <input type="password" id="rdPass" autocomplete="current-password" placeholder="Password — كلمة المرور" />
+        <input type="text" id="rdUser" autocomplete="username" placeholder="Username" dir="auto" />
+        <input type="password" id="rdPass" autocomplete="current-password" placeholder="Password" />
         <button class="btn btn-primary btn-small" onclick="iitwDoSignIn()"><span class="en-only">Sign in — </span><span dir="rtl" style="font-family:'Amiri',serif;">دخول</span></button>
         <button class="btn btn-outline btn-small" onclick="iitwDoSignUp()"><span class="en-only">Create — </span><span dir="rtl" style="font-family:'Amiri',serif;">إنشاء</span></button>
       </div>
@@ -646,6 +670,8 @@ function renderReaderBox() {
 
       <div id="rdMsg" class="reader-msg" style="display:none;"></div>
     </div>`;
+  // rebuilt after i18n ran: put its placeholders in the reader's language
+  if (window.applyI18n) window.applyI18n();
 }
 
 function iitwReaderMsg(text, ok) {

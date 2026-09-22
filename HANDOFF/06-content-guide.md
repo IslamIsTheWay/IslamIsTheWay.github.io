@@ -129,6 +129,10 @@ grep -c '^    keys:' js/sunnah.js
 # 4. images valid
 ./check-images.sh
 
+# 4b. no text written in both languages at once (a status line, a tooltip,
+#     a placeholder, an <option>) - HANDOFF PART 38
+python tools/mixscan.py --check
+
 # 5. list markup balance after any bulk sed edit
 for f in *.html; do
   o=$(grep -o '<li>' "$f" | wc -l); c=$(grep -o '</li>' "$f" | wc -l)

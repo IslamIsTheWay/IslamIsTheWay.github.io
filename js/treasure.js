@@ -386,14 +386,10 @@ const TREASURE = {
           "strength": "Quran",
           "strengthAr": "قرآن",
           "keys": [
-            "when will it happen",
-            "when is the hour",
-            "is the hour near",
             "when will the euphrates",
-            "متى الساعة",
-            "هل قربت الساعة",
+            "when will the gold appear",
             "متى يحسر الفرات",
-            "متى يقع"
+            "متى يظهر جبل الذهب"
           ]
         }
       ]

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609221849" />
+  <link rel="stylesheet" href="css/style.css?v=202609222329" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     .meeting-wrap { display:grid; grid-template-columns: 1fr 340px; gap:20px; align-items:start; }
@@ -133,17 +133,21 @@
             <h3>🌐 <span class="en-only">Live Translated Captions</span><span class="ar-only" dir="rtl">ترجمةٌ فوريّةٌ مكتوبة</span></h3>
             <p class="small"><span class="en-only">Turn this on and it listens through your microphone and translates each sentence instantly.</span><span class="ar-only" dir="rtl">شغّلها فتسمع عبر الميكروفون وتترجم كلّ جملةٍ في الحال.</span></p>
             <label><span class="en-only">Language being spoken</span><span class="ar-only" dir="rtl">اللغة المنطوقة</span></label>
+            <!-- Each language is shown in the reader's language, with its own name
+                 beside it where that differs ("Urdu — اردو" / "الأردية — اردو"):
+                 the text is filled by iitwFillLangOptions() below, because an
+                 <option> cannot hold an en-only and an ar-only span. -->
             <select id="srcLang">
-              <option value="ar-SA" data-mm="ar">Arabic — العربية</option>
-              <option value="en-US" data-mm="en">English</option>
+              <option value="ar-SA" data-mm="ar" data-own="العربية" data-ar="العربية">Arabic</option>
+              <option value="en-US" data-mm="en" data-own="English" data-ar="الإنجليزية">English</option>
             </select>
             <label><span class="en-only">Translate into</span><span class="ar-only" dir="rtl">الترجمة إلى</span></label>
             <select id="dstLang">
-              <option value="en">English</option>
-              <option value="ar">Arabic — العربية</option>
-              <option value="ur">Urdu — اردو (Pakistan)</option>
-              <option value="id">Indonesian — Bahasa (Indonesia)</option>
-              <option value="bn">Bengali — বাংলা</option>
+              <option value="en" data-own="English" data-ar="الإنجليزية">English</option>
+              <option value="ar" data-own="العربية" data-ar="العربية">Arabic</option>
+              <option value="ur" data-own="اردو" data-ar="الأردية (باكستان)">Urdu (Pakistan)</option>
+              <option value="id" data-own="Bahasa Indonesia" data-ar="الإندونيسية">Indonesian</option>
+              <option value="bn" data-own="বাংলা" data-ar="البنغالية">Bengali</option>
             </select>
             <button class="btn btn-primary btn-small" id="capBtn" onclick="toggleCaptions()">▶ <span class="en-only">Start Captions</span><span class="ar-only" dir="rtl">ابدأ الترجمة</span></button>
             <div id="captionBox"><em style="color:var(--text-muted);font-size:.85rem;"><span class="en-only">Captions will appear here...</span><span class="ar-only" dir="rtl">ستظهر الترجمة هنا…</span></em></div>
@@ -326,7 +330,7 @@
       recognition.onresult = async (e) => {
         for (let i = e.resultIndex; i < e.results.length; i++) {
           if (e.results[i].isFinal) {
-            const text = e.results[i][0].transcript.trim();
+            const text = (typeof iitwCleanDictation === "function" ? iitwCleanDictation(e.results[i][0].transcript) : e.results[i][0].transcript).trim();
             if (text) await addCaption(text);
           }
         }
@@ -364,11 +368,23 @@
 
     loadMeetings();
   </script>
-  <script src="js/wordlens.js?v=202609221849"></script>
-  <script src="js/resume.js?v=202609221849"></script>
-  <script src="js/main.js?v=202609221849"></script>
-  <script src="js/reading.js?v=202609221849"></script>
-  <script src="js/nav.js?v=202609221849"></script>
-  <script src="js/i18n.js?v=202609221849"></script>
+  <script src="js/wordlens.js?v=202609222329"></script>
+  <script src="js/resume.js?v=202609222329"></script>
+  <script>
+    function iitwFillLangOptions() {
+      const ar = typeof iitwArabicUI === "function" && iitwArabicUI();
+      document.querySelectorAll("#srcLang option, #dstLang option").forEach(o => {
+        if (o.dataset.en === undefined) o.dataset.en = o.textContent;
+        const name = ar ? o.dataset.ar : o.dataset.en, own = o.dataset.own;
+        o.textContent = own && own !== name && own !== o.dataset.en ? name + " — " + own : name;
+      });
+    }
+    document.addEventListener("DOMContentLoaded", iitwFillLangOptions);
+    document.addEventListener("iitw-lang", iitwFillLangOptions);
+  </script>
+  <script src="js/main.js?v=202609222329"></script>
+  <script src="js/reading.js?v=202609222329"></script>
+  <script src="js/nav.js?v=202609222329"></script>
+  <script src="js/i18n.js?v=202609222329"></script>
 </body>
 </html>

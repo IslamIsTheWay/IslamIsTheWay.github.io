@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609221849" />
+  <link rel="stylesheet" href="css/style.css?v=202609222329" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Social sharing. Title and description are taken from this
        page's own tags so they cannot drift from what it says. -->
@@ -83,8 +83,8 @@
 
       <div class="sunnah-search-wrap">
         <input type="text" id="sunnahSearch" dir="auto"
-          placeholder="Ask anything — e.g. what did the Prophet ﷺ do before sleeping?  |  ماذا كان يفعل النبي ﷺ قبل النوم؟" />
-        <button type="button" id="sunnahMic" class="mic-btn" title="Speak instead of typing — تحدث بدل الكتابة">🎤</button>
+          placeholder="Ask anything — e.g. what did the Prophet ﷺ do before sleeping?" />
+        <button type="button" id="sunnahMic" class="mic-btn" title="Speak instead of typing">🎤</button>
       </div>
       <div id="sunnahMicStatus" class="mic-status" style="text-align:center;"></div>
 
@@ -153,8 +153,8 @@
        translations from it, and without it every "Surah Al-Baqarah (2:170)"
        on this page renders half in Arabic and half in English. Every other
        content page already loads it, so it is almost always cached. -->
-  <script src="js/data.js?v=202609221849"></script>
-  <script src="js/sunnah.js?v=202609221849"></script>
+  <script src="js/data.js?v=202609222329"></script>
+  <script src="js/sunnah.js?v=202609222329"></script>
   <script>
     const listEl = document.getElementById("sunnahList");
     const infoEl = document.getElementById("sunnahInfo");
@@ -432,25 +432,25 @@
       const btn = document.getElementById("sunnahMic");
       const status = document.getElementById("sunnahMicStatus");
       const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-      if (!SR) { status.textContent = "Voice input needs Chrome or Edge — الإدخال الصوتي يحتاج Chrome أو Edge"; return; }
+      if (!SR) { iitwSay(status, "Voice input needs Chrome or Edge", "الإدخال الصوتي يحتاج Chrome أو Edge"); return; }
       if (listening) { listening = false; rec && rec.stop(); return; }
       rec = new SR();
       // Accept either language; Arabic first since the content is Arabic-rich.
       rec.lang = /[؀-ۿ]/.test(searchEl.value) ? "ar-SA" : "ar-SA";
       rec.interimResults = false;
-      rec.onstart = () => { listening = true; btn.classList.add("listening"); status.textContent = "● Listening… — أستمع إليك…"; };
+      rec.onstart = () => { listening = true; btn.classList.add("listening"); iitwSay(status, "● Listening…", "● أستمع إليك…"); };
       rec.onresult = e => {
         let said = "";
         for (let i = 0; i < e.results.length; i++) said += e.results[i][0].transcript;
-        searchEl.value = said.trim();
-        status.textContent = "✓ " + said.trim();
+        said = iitwCleanDictation(said.trim());
+        searchEl.value = said;
+        status.textContent = "✓ " + said;
         runSearch();
       };
       rec.onerror = e => {
         listening = false; btn.classList.remove("listening");
-        status.textContent = e.error === "not-allowed"
-          ? "Microphone blocked — تم منع الميكروفون"
-          : "Did not catch that, please try again — لم نسمع، حاول مرة أخرى";
+        if (e.error === "not-allowed") iitwSay(status, "Microphone blocked", "تم منع الميكروفون");
+        else iitwSay(status, "Did not catch that, please try again", "لم نسمع، حاول مرة أخرى");
       };
       rec.onend = () => { listening = false; btn.classList.remove("listening"); };
       rec.start();
@@ -459,11 +459,11 @@
     buildChips();
     render(SUNNAH, "");
   </script>
-  <script src="js/wordlens.js?v=202609221849"></script>
-  <script src="js/resume.js?v=202609221849"></script>
-  <script src="js/main.js?v=202609221849"></script>
-  <script src="js/reading.js?v=202609221849"></script>
-  <script src="js/nav.js?v=202609221849"></script>
-  <script src="js/i18n.js?v=202609221849"></script>
+  <script src="js/wordlens.js?v=202609222329"></script>
+  <script src="js/resume.js?v=202609222329"></script>
+  <script src="js/main.js?v=202609222329"></script>
+  <script src="js/reading.js?v=202609222329"></script>
+  <script src="js/nav.js?v=202609222329"></script>
+  <script src="js/i18n.js?v=202609222329"></script>
 </body>
 </html>
