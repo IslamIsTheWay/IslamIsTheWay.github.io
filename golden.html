@@ -144,6 +144,12 @@
     </div>
   </section>
 
+  <section id="lives">
+    <div class="container">
+      <div id="livesBox"></div>
+    </div>
+  </section>
+
   <!-- ===== What was taken ===== -->
   <section id="taken">
     <div class="container">
@@ -157,12 +163,6 @@
        reader is far more likely to be a young Muslim who already feels
        behind than someone who needs telling off. -->
   <!-- ===== Full lives — same shape as the prophets' full lives ===== -->
-  <section id="lives">
-    <div class="container">
-      <div id="livesBox"></div>
-    </div>
-  </section>
-
   <!-- ===== How women were treated, with dates on both sides ===== -->
   <section class="pattern-bg" id="women">
     <div class="container">
@@ -195,13 +195,24 @@
     </div>
   </section>
 
-  <!-- ===== And now? ===== -->
+  <!-- ===== The closing, part two: what we do now =====
+       The last parts of "So why did we fall" (the Mahdi, how a person comes
+       back, how it ends) are drawn here, AFTER what was promised: built, lost,
+       promised — then what you do. They came before the promise, which put
+       "And how it ends" in the middle of the page. -->
+  <section id="closing-end">
+    <div class="container">
+      <div id="closingEndBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== Going further (the Guidance page) ===== -->
   <section class="pattern-bg">
     <div class="container">
       <div class="gold-next">
-        <h3>So what happened to us — and how do we go back?</h3>
-        <p class="en-only">That question deserves more than a page of pride. The answer is on the Guidance page, in the words of the Quran, the Sunnah and the scholars: why the ummah is in the state it is in, what the Prophet ﷺ said would cause exactly this, and the way back that he named.</p>
-        <p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:2;">وهذا السؤال أكبر من أن تُجاب عنه صفحةُ افتخار. والجواب في صفحة التوجيه، من الكتاب والسنة وكلام أهل العلم: لماذا صارت الأمة إلى ما صارت إليه، وما الذي أخبر النبي ﷺ أنه يورث هذا بعينه، والطريق الذي سمّاه للرجوع.</p>
+        <h3><span class="en-only">Going further — the way back, from the texts themselves</span><span class="ar-only" dir="rtl">للاستزادة — طريقُ العودة من النصوص نفسها</span></h3>
+        <p class="en-only">This page has told it from our side: what was built, how it was lost, and what was promised. The Guidance page answers the same question from the Quran, the Sunnah and the scholars: why the ummah is in the state it is in, what the Prophet ﷺ said would cause exactly this, and the way back that he named.</p>
+        <p class="ar-only" dir="rtl" style="font-family:'Amiri',serif;line-height:2;">حكت هذه الصفحةُ القصّةَ من جهتنا: ما بُني، وكيف ضاع، وما وُعدنا به. وصفحةُ التوجيه تجيب عن السؤال نفسه من الكتاب والسنة وكلام أهل العلم: لماذا صارت الأمة إلى ما صارت إليه، وما الذي أخبر النبي ﷺ أنه يورث هذا بعينه، والطريق الذي سمّاه للرجوع.</p>
         <a class="btn btn-primary" href="guidance.html#revival"><span class="en-only">Why we fell, and the way back</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">لماذا سقطنا وكيف نعود</span></a>
       </div>
     </div>
@@ -665,7 +676,32 @@
           <div class="en-only">${paras(c.lead)}</div>
           <div class="gold-body-ar" dir="rtl">${paras(c.leadAr)}</div>
         </div>
-        ${c.sections.map(s => `<article class="gc-card" id="${s.id}">
+        ${c.sections.filter(s => s.part !== "end").map(closingCard).join("")}`;
+      /* The last parts are drawn after "Will we rise again?" — built, lost,
+         promised, and then what you do. The close and the note end the page. */
+      const endHost = document.getElementById("closingEndBox");
+      const ends = c.sections.filter(s => s.part === "end");
+      const tail = `
+        <div class="gc-close">
+          <p class="en-only">${c.close}</p>
+          <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2.1;">${c.closeAr}</p>
+        </div>
+        <div class="context-note" style="margin-top:20px;">
+          <span class="en-only">${c.note}</span>
+          <span dir="rtl" style="font-family:'Amiri',serif;">${c.noteAr}</span>
+        </div>`;
+      if (endHost && ends.length) {
+        endHost.innerHTML = `
+        <h2 class="section-title"><span class="en-only">🕯️ ${c.endTitle}</span><span class="ar-only" dir="rtl" style="font-family:'Amiri',serif;">🕯️ ${c.endTitleAr}</span></h2>
+        ${ends.map(closingCard).join("")}` + tail;
+      } else {
+        host.innerHTML += tail;
+      }
+      if (window.applyI18n) window.applyI18n();
+    }
+
+    function closingCard(s) {
+      return `<article class="gc-card" id="${s.id}">
           <div class="gc-card-head">
             <span class="gc-icon">${s.icon}</span>
             <div>
@@ -682,16 +718,7 @@
             <div class="ar-only" dir="rtl">${paras(s.plainAr)}</div></div>` : ""}
           ${closingQuote(s.quote)}
           ${closingDua(s.dua)}
-        </article>`).join("")}
-        <div class="gc-close">
-          <p class="en-only">${c.close}</p>
-          <p dir="rtl" style="font-family:'Amiri',serif;font-size:1.2rem;line-height:2.1;">${c.closeAr}</p>
-        </div>
-        <div class="context-note" style="margin-top:20px;">
-          <span class="en-only">${c.note}</span>
-          <span dir="rtl" style="font-family:'Amiri',serif;">${c.noteAr}</span>
-        </div>`;
-      if (window.applyI18n) window.applyI18n();
+        </article>`;
     }
 
     renderOverview();

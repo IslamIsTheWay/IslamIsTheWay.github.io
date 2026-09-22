@@ -1451,21 +1451,21 @@ function renderTadabburIntro() {
   if (!isFinite(fewest)) fewest = 0;
 
   const enWhere = allCovered
-    ? 'open any surah below and press the <strong>🧠 Tadabbur</strong> button beside Stop. ' +
+    ? 'open any surah in the list above and press the <strong>🧠 Tadabbur</strong> button beside Stop. ' +
       '<strong>Every one of the ' + totalSurahs + ' surahs has it</strong> — ' + verseCount +
       ' verses explained, at least ' + fewest + ' in every surah. Inside each surah, a line names ' +
       'exactly which of its verses are written, and those numbers are buttons that take you ' +
       'straight there.'
-    : 'open any surah below and press the <strong>🧠 Tadabbur</strong> button beside Stop. ' +
+    : 'open any surah in the list above and press the <strong>🧠 Tadabbur</strong> button beside Stop. ' +
       'It is written so far for ' + names.join(" · ") +
       ' — and the button only appears on a surah that has it.';
 
   const arWhere = allCovered
-    ? 'افتح أيّ سورةٍ أدناه واضغط زرّ <strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. ' +
+    ? 'افتح أيّ سورةٍ من القائمة أعلاه واضغط زرّ <strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. ' +
       '<strong>وقد كُتب لكلّ سورةٍ من السور الـ' + toArabicDigits(totalSurahs) + '</strong> — ' +
       arCountAyah(verseCount) + ' مشروحة، وأقلُّ سورةٍ فيها ' + arCountAyah(fewest) +
       '. وفي كلّ سورةٍ سطرٌ يُبيّن أيّ آياتها كُتبت، وأرقامُه أزرارٌ تنقلك إليها.'
-    : 'افتح أيّ سورةٍ أدناه واضغط زرّ <strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. وقد كُتب إلى الآن لِ' +
+    : 'افتح أيّ سورةٍ من القائمة أعلاه واضغط زرّ <strong>🧠 تدبّر</strong> بجانب زرّ الإيقاف. وقد كُتب إلى الآن لِ' +
       namesAr.join(" · ") + '، ولا يظهر الزرّ إلا على سورةٍ كُتب لها.';
 
   h += '<div class="tad-covered">' +

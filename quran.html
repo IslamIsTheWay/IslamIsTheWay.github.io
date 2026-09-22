@@ -97,18 +97,9 @@
     </div>
   </section>
 
-  <!-- ===== Tadabbur — why ponder at all =====
-       Sits above the surah grid on purpose: the question it asks is
-       meant to be read BEFORE a surah is opened, not found afterwards.
-       Filled by renderTadabburIntro() from TADABBUR_INTRO. -->
-  <section class="pattern-bg">
-    <div class="container">
-      <div id="tadabburIntro"></div>
-    </div>
-  </section>
-
   <section>
     <div class="container">
+      <p class="tad-pointer"><a href="#tadabbur">🧠 <span class="en-only">Before you open a surah — five questions that change how you read it</span><span class="ar-only" dir="rtl">قبل أن تفتح سورة — خمسة أسئلة تغيّر طريقة قراءتك لها</span> ↓</a></p>
       <div class="surah-toolbar">
         <input type="text" id="surahSearch" placeholder="ابحث بالعربية أو Search (e.g. Yusuf, يوسف, Light, 36)..." dir="auto" />
         <select id="reciterSelect" title="Choose your reciter — اختر القارئ" aria-label="Choose reciter"></select>
@@ -137,6 +128,19 @@
         <div id="qWordResults" class="qsearch-results"></div>
       </div>
       <div class="surah-grid" id="surahGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Tadabbur — why ponder at all =====
+       BELOW the surah list now. Above it, the list began 4.6 screens down on
+       a computer and 8.6 on a phone, and choosing a surah is what most
+       people open this page to do. The intent it was placed above for — that
+       the questions are met BEFORE a surah is opened — is kept by the
+       one-line pointer at the top of the list, which jumps here.
+       Filled by renderTadabburIntro() from TADABBUR_INTRO. -->
+  <section class="pattern-bg" id="tadabbur">
+    <div class="container">
+      <div id="tadabburIntro"></div>
     </div>
   </section>
 

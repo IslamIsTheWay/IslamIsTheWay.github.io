@@ -87,13 +87,14 @@
       <nav class="page-toc" aria-label="On this page">
         <span class="page-toc-label"><span class="en-only">On this page</span><span class="ar-only" dir="rtl">في هذه الصفحة</span></span>
         <a href="#stages"><span class="en-only">The 15 stages</span><span class="ar-only" dir="rtl">المراحل الخمس عشرة</span></a>
+        <a href="#grave"><span class="en-only">The grave, in full</span><span class="ar-only" dir="rtl">القبر كاملًا</span></a>
         <a href="#journey"><span class="en-only">The whole journey, in detail</span><span class="ar-only" dir="rtl">الرحلة كاملةً بالتفصيل</span></a>
+        <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
         <a href="#endmap"><span class="en-only">The map, and where we are</span><span class="ar-only" dir="rtl">الخريطة وأين نحن</span></a>
         <a href="#signs"><span class="en-only">How the world ends</span><span class="ar-only" dir="rtl">كيف تنتهي الدنيا</span></a>
         <a href="#places"><span class="en-only">The three places he asked about</span><span class="ar-only" dir="rtl">المواضع الثلاثة</span></a>
-        <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
-        <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
         <a href="#rise"><span class="en-only">Will we rise again?</span><span class="ar-only" dir="rtl">هل نعود؟</span></a>
+        <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
         <a href="#alone"><span class="en-only">Standing alone</span><span class="ar-only" dir="rtl">تقف وحدك</span></a>
       </nav>
 
@@ -107,12 +108,6 @@
     </div>
   </section>
 
-  <!-- ===== الرحلة — the whole journey, step by step =====
-       The owner asked for this to be the detailed spine of the page: what
-       happens from the moment you die to the gate of Paradise, every stage
-       with its evidence AND a plain-words box, "so normal people can open
-       the page and understand without having to search". Rendered from
-       js/journey.js. -->
   <!-- ===== THE GRAVE, IN FULL =====
        Rendered from js/grave.js, the SAME dataset guidance.html#grave uses.
        The j-grave stage inside #stages above is the two-paragraph version;
@@ -122,6 +117,68 @@
   <section class="pattern-bg" id="grave">
     <div class="container">
       <div id="jGraveBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== الرحلة — the whole journey, step by step =====
+       The owner asked for this to be the detailed spine of the page: what
+       happens from the moment you die to the gate of Paradise, every stage
+       with its evidence AND a plain-words box, "so normal people can open
+       the page and understand without having to search". Rendered from
+       js/journey.js. -->
+
+  <section id="journey">
+    <div class="container">
+      <!-- BOTH of these must carry en-only / ar-only. Without it the English
+           shows in Arabic mode AND renders inside an RTL block, which throws
+           the full stop to the front of the line. Reported from the live
+           site. -->
+      <h2 class="section-title">
+        <span class="en-only">From your death to your final home — step by step</span>
+        <span class="ar-only" dir="rtl">من موتك إلى مستقرّك — خطوةً خطوة</span>
+      </h2>
+      <p class="section-sub en-only">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
+      <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما يقع بترتيبه، ومع كلّ مرحلةٍ دليلها من القرآن أو السنّة، ثمّ شرحها بكلماتٍ بسيطة.</p>
+      <div class="divider"></div>
+      <div id="journeyTabs" class="adhkar-tabs"></div>
+      <div id="journeyBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== The detail: how long, what is asked first, the crossing =====
+       Below the fifteen stages because it expands on them rather than
+       replacing them: the Bridge stage says a bridge is crossed, this
+       says what is under it, what reaches up, and how fast people go. -->
+  <section id="detail">
+    <div class="container">
+      <div id="detailBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== The map: one ordered chain, and where we are on it =====
+       Placed BEFORE the signs section on purpose. It is the overview that
+       organises everything after it, and reading the detail first is what
+       made the subject feel like a pile of disconnected events. Ordering is
+       LABELLED at every phase: fixed by text, strongly indicated, or
+       unknown. Where it is unknown the map says so instead of inventing a
+       sequence -- see the three rules at the top of js/endmap.js. -->
+  <section id="endmap">
+    <div class="container">
+      <p class="section-lead-switch"><span class="en-only">Everything above follows <strong>one person</strong>, from death to their final home. From here the page follows <strong>the world itself</strong>: the signs before the Hour, where we stand among them now, and how it ends.</span><span class="ar-only" dir="rtl">كلُّ ما سبق يتتبّع <strong>إنسانًا واحدًا</strong> من موته إلى مستقرّه. ومن هنا تتتبّع الصفحةُ <strong>الدنيا نفسها</strong>: العلاماتِ قبل الساعة، وأين نقف منها الآن، وكيف تنتهي.</span></p>
+      <div id="endMapBox"></div>
+    </div>
+  </section>
+
+  <!-- ===== How the world ends =====
+       NOTE: this comment used to claim the section was placed ABOVE the
+       fifteen stages. It is not, and has not been — it renders after them.
+       That is defensible: the stages open at "when you die", which happens
+       to a person before the Hour arrives, so a reader meets his own death
+       first and the end of the world second. Corrected rather than moved,
+       because the order on the page is the one that reads correctly. -->
+  <section class="pattern-bg" id="signs">
+    <div class="container">
+      <div id="signsBox"></div>
     </div>
   </section>
 
@@ -143,63 +200,22 @@
     </div>
   </section>
 
-  <section id="journey">
+  <!-- ===== Will we rise again? =====
+       Placed BEFORE "standing alone" on purpose: this page has just
+       walked a reader through the end of the world and the Day itself,
+       and the owner's point was that people finish that and lose hope.
+       The answer to "is it over for us" belongs before the closing, not
+       after it. Same data as golden.html — js/rise.js is the single
+       source, so the two pages cannot drift. -->
+  <section class="pattern-bg" id="rise">
     <div class="container">
-      <!-- BOTH of these must carry en-only / ar-only. Without it the English
-           shows in Arabic mode AND renders inside an RTL block, which throws
-           the full stop to the front of the line. Reported from the live
-           site. -->
-      <h2 class="section-title">
-        <span class="en-only">From your death to your final home — step by step</span>
-        <span class="ar-only" dir="rtl">من موتك إلى مستقرّك — خطوةً خطوة</span>
-      </h2>
-      <p class="section-sub en-only">What happens, in order, with the verse or the hadith for each stage — and every one explained in plain words underneath.</p>
-      <p class="section-sub ar-only" dir="rtl" style="font-family:'Amiri',serif;">ما يقع بترتيبه، ومع كلّ مرحلةٍ دليلها من القرآن أو السنّة، ثمّ شرحها بكلماتٍ بسيطة.</p>
-      <div class="divider"></div>
-      <div id="journeyTabs" class="adhkar-tabs"></div>
-      <div id="journeyBox"></div>
-    </div>
-  </section>
-
-
-  <!-- ===== The map: one ordered chain, and where we are on it =====
-       Placed BEFORE the signs section on purpose. It is the overview that
-       organises everything after it, and reading the detail first is what
-       made the subject feel like a pile of disconnected events. Ordering is
-       LABELLED at every phase: fixed by text, strongly indicated, or
-       unknown. Where it is unknown the map says so instead of inventing a
-       sequence -- see the three rules at the top of js/endmap.js. -->
-  <section id="endmap">
-    <div class="container">
-      <div id="endMapBox"></div>
-    </div>
-  </section>
-
-  <!-- ===== How the world ends =====
-       NOTE: this comment used to claim the section was placed ABOVE the
-       fifteen stages. It is not, and has not been — it renders after them.
-       That is defensible: the stages open at "when you die", which happens
-       to a person before the Hour arrives, so a reader meets his own death
-       first and the end of the world second. Corrected rather than moved,
-       because the order on the page is the one that reads correctly. -->
-  <section class="pattern-bg" id="signs">
-    <div class="container">
-      <div id="signsBox"></div>
+      <div id="riseBox"></div>
     </div>
   </section>
 
   <!-- ===== The angels, in full, on this page =====
        Same data as angels.html — js/angels.js is the single source, so
        the two pages can never drift apart. -->
-  <!-- ===== The detail: how long, what is asked first, the crossing =====
-       Below the fifteen stages because it expands on them rather than
-       replacing them: the Bridge stage says a bridge is crossed, this
-       says what is under it, what reaches up, and how fast people go. -->
-  <section id="detail">
-    <div class="container">
-      <div id="detailBox"></div>
-    </div>
-  </section>
 
   <section class="pattern-bg" id="angels">
     <div class="container">
@@ -231,18 +247,6 @@
        to do if I know I am on the wrong path, and what to do if I am on the
        right one and afraid of slipping. A frightened person does not
        reform, so no section here ends on the fear. -->
-  <!-- ===== Will we rise again? =====
-       Placed BEFORE "standing alone" on purpose: this page has just
-       walked a reader through the end of the world and the Day itself,
-       and the owner's point was that people finish that and lose hope.
-       The answer to "is it over for us" belongs before the closing, not
-       after it. Same data as golden.html — js/rise.js is the single
-       source, so the two pages cannot drift. -->
-  <section class="pattern-bg" id="rise">
-    <div class="container">
-      <div id="riseBox"></div>
-    </div>
-  </section>
 
   <section id="alone">
     <div class="container">

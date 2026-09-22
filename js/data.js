@@ -144,6 +144,24 @@ const PROPHETS = [
     ]
   },
   {
+    id: "shith",
+    name: "Shith (Seth)",
+    arabic: "شيث",
+    title: "Son of Adam",
+    titleAr: "ابن آدم",
+    category: "prophet",
+    summary: "Shith is identified in Islamic tradition as a son of Adam and a prophet who received scriptures from Allah. After the death of Adam, Shith continued to guide humanity according to the teachings of his father.",
+    summaryAr: "يُذكر في الأخبار الإسلامية أنه ابنُ آدم عليه السلام، وأنه نبيٌّ أنزل الله عليه صحفًا. ولمّا تُوفّي آدمُ عليه السلام واصل هدايةَ الناس على ما كان يعلّمهم به أبوه.",
+    refs: [
+      "Ibn Kathir, Al-Bidaya wan-Nihaya — the story of Shith after Adam (historical account, not hadith)",
+      "Not named in the Quran or in the two Sahihs — that scrolls were revealed to him is in the long hadith of Abu Dharr (Sahih Ibn Hibban), which the hadith scholars graded weak"
+    ],
+    refsAr: [
+      "ابن كثير، البداية والنهاية — خبر شيث بعد آدم (خبرٌ تاريخي، لا حديث)",
+      "لم يُسمَّ في القرآن ولا في الصحيحين — وأمّا أنه أُنزلت عليه صحف فمن حديث أبي ذرّ الطويل (صحيح ابن حبان)، وقد ضعّفه أهل الحديث"
+    ]
+  },
+  {
     id: "idris",
     name: "Idris",
     arabic: "إدريس",
@@ -412,6 +430,42 @@ const PROPHETS = [
     ]
   },
   {
+    id: "yusha",
+    name: "Yusha ibn Nun (Joshua)",
+    arabic: "يوشع بن نون",
+    title: "Successor of Musa",
+    titleAr: "خليفة موسى عليه السلام",
+    category: "prophet",
+    summary: "Yusha ibn Nun was the young attendant of Musa mentioned in the Quran in the story of Al-Khidr. In hadith tradition, he succeeded Musa as leader and prophet of the Children of Israel and led them into the Holy Land.",
+    summaryAr: "فتى موسى عليه السلام المذكور في القرآن في قصّته مع الخَضِر. وجاء في السنّة أنه خلَف موسى في قيادة بني إسرائيل وفي النبوّة، ودخل بهم الأرضَ المقدّسة.",
+    refs: [
+      "Surah Al-Kahf (18:60-62) — 'his young attendant' (identified as Yusha in hadith)",
+      "Sahih al-Bukhari, Book of Knowledge, Hadith 122 (also 3401 and 4725), and Sahih Muslim, Book of Virtues — Musa's young man named as Yusha ibn Nun"
+    ],
+    refsAr: [
+      "سورة الكهف (١٨:٦٠–٦٢) — «فتاه»، وقد سُمّي في الحديث يوشع",
+      "صحيح البخاري، كتاب العلم، حديث ١٢٢ (وكذا ٣٤٠١ و٤٧٢٥)، وصحيح مسلم، كتاب الفضائل — تسمية فتى موسى يوشعَ بن نون"
+    ]
+  },
+  {
+    id: "samuel",
+    name: "Shamwil (Samuel)",
+    arabic: "شمويل",
+    title: "The Prophet Who Appointed Talut (Saul)",
+    titleAr: "النبيّ الذي ملَّك طالوت",
+    category: "prophet",
+    summary: "Shamwil is the prophet referenced in the Quran who was asked by the Children of Israel to appoint a king to lead them in battle. He appointed Talut (Saul) by Allah's command and foretold the Ark of the Covenant as a sign of his kingship.",
+    summaryAr: "النبيُّ المذكور في القرآن الذي سأله بنو إسرائيل أن يبعث لهم ملكًا يقاتلون تحت رايته. فعيّن لهم طالوتَ بأمر الله، وأخبرهم أنّ آيةَ مُلْكِه أن يأتيَهم التابوت.",
+    refs: [
+      "Surah Al-Baqarah (2:246-251) — the prophet who appointed Talut as king",
+      "Ibn Kathir, Stories of the Prophets — identified as Shamwil (Samuel)"
+    ],
+    refsAr: [
+      "سورة البقرة (٢:٢٤٦–٢٥١) — النبيّ الذي بعث لهم طالوت ملكًا",
+      "ابن كثير، قصص الأنبياء — تسميته شمويل (خبرٌ تاريخي)"
+    ]
+  },
+  {
     id: "dawud",
     name: "Dawud (David)",
     arabic: "داود",
@@ -526,6 +580,24 @@ const PROPHETS = [
     ]
   },
   {
+    id: "danyal",
+    name: "Danyal (Daniel)",
+    arabic: "دانيال",
+    title: "The Prophet of Babylon",
+    titleAr: "نبيّ بابل",
+    category: "prophet",
+    summary: "Danyal is mentioned in Islamic tradition as a prophet among the Children of Israel who lived during the Babylonian exile. When his grave was discovered during the conquest of Tustar, the Caliph Omar ordered that he be reburied in a hidden location to prevent veneration.",
+    summaryAr: "يُذكر في الأخبار الإسلامية أنه نبيٌّ من أنبياء بني إسرائيل عاش في زمن السبي البابليّ. ولمّا اكتُشف قبرُه في فتوح تُستَر أمر الخليفةُ عمرُ رضي الله عنه بإعادة دفنه في موضعٍ خفيٍّ لئلّا يُعظَّم قبرُه ويُفتتن به الناس.",
+    refs: [
+      "Musannaf Ibn Abi Shaybah — account of the discovery of Danyal's body during Omar's caliphate",
+      "Ibn Kathir, Al-Bidaya wan-Nihaya — his mention among the prophets of Israel"
+    ],
+    refsAr: [
+      "مصنّف ابن أبي شيبة — خبر العثور على جسد دانيال في خلافة عمر",
+      "ابن كثير، البداية والنهاية — ذكره في أنبياء بني إسرائيل"
+    ]
+  },
+  {
     id: "zakariya",
     name: "Zakariya (Zechariah)",
     arabic: "زكريا",
@@ -579,78 +651,6 @@ const PROPHETS = [
       "سورة مريم (١٩:١٦–٣٤) — مولد عيسى المعجز",
       "سورة آل عمران (٣:٤٥–٤٩) — معجزاته بإذن الله",
       "سورة النساء (٤:١٥٧–١٥٨) — رفعه الله إليه"
-    ]
-  },
-  {
-    id: "shith",
-    name: "Shith (Seth)",
-    arabic: "شيث",
-    title: "Son of Adam",
-    titleAr: "ابن آدم",
-    category: "prophet",
-    summary: "Shith is identified in Islamic tradition as a son of Adam and a prophet who received scriptures from Allah. After the death of Adam, Shith continued to guide humanity according to the teachings of his father.",
-    summaryAr: "يُذكر في الأخبار الإسلامية أنه ابنُ آدم عليه السلام، وأنه نبيٌّ أنزل الله عليه صحفًا. ولمّا تُوفّي آدمُ عليه السلام واصل هدايةَ الناس على ما كان يعلّمهم به أبوه.",
-    refs: [
-      "Ibn Kathir, Al-Bidaya wan-Nihaya — the story of Shith after Adam (historical account, not hadith)",
-      "Not named in the Quran or in the two Sahihs — that scrolls were revealed to him is in the long hadith of Abu Dharr (Sahih Ibn Hibban), which the hadith scholars graded weak"
-    ],
-    refsAr: [
-      "ابن كثير، البداية والنهاية — خبر شيث بعد آدم (خبرٌ تاريخي، لا حديث)",
-      "لم يُسمَّ في القرآن ولا في الصحيحين — وأمّا أنه أُنزلت عليه صحف فمن حديث أبي ذرّ الطويل (صحيح ابن حبان)، وقد ضعّفه أهل الحديث"
-    ]
-  },
-  {
-    id: "yusha",
-    name: "Yusha ibn Nun (Joshua)",
-    arabic: "يوشع بن نون",
-    title: "Successor of Musa",
-    titleAr: "خليفة موسى عليه السلام",
-    category: "prophet",
-    summary: "Yusha ibn Nun was the young attendant of Musa mentioned in the Quran in the story of Al-Khidr. In hadith tradition, he succeeded Musa as leader and prophet of the Children of Israel and led them into the Holy Land.",
-    summaryAr: "فتى موسى عليه السلام المذكور في القرآن في قصّته مع الخَضِر. وجاء في السنّة أنه خلَف موسى في قيادة بني إسرائيل وفي النبوّة، ودخل بهم الأرضَ المقدّسة.",
-    refs: [
-      "Surah Al-Kahf (18:60-62) — 'his young attendant' (identified as Yusha in hadith)",
-      "Sahih al-Bukhari, Book of Knowledge, Hadith 122 (also 3401 and 4725), and Sahih Muslim, Book of Virtues — Musa's young man named as Yusha ibn Nun"
-    ],
-    refsAr: [
-      "سورة الكهف (١٨:٦٠–٦٢) — «فتاه»، وقد سُمّي في الحديث يوشع",
-      "صحيح البخاري، كتاب العلم، حديث ١٢٢ (وكذا ٣٤٠١ و٤٧٢٥)، وصحيح مسلم، كتاب الفضائل — تسمية فتى موسى يوشعَ بن نون"
-    ]
-  },
-  {
-    id: "samuel",
-    name: "Shamwil (Samuel)",
-    arabic: "شمويل",
-    title: "The Prophet Who Appointed Talut (Saul)",
-    titleAr: "النبيّ الذي ملَّك طالوت",
-    category: "prophet",
-    summary: "Shamwil is the prophet referenced in the Quran who was asked by the Children of Israel to appoint a king to lead them in battle. He appointed Talut (Saul) by Allah's command and foretold the Ark of the Covenant as a sign of his kingship.",
-    summaryAr: "النبيُّ المذكور في القرآن الذي سأله بنو إسرائيل أن يبعث لهم ملكًا يقاتلون تحت رايته. فعيّن لهم طالوتَ بأمر الله، وأخبرهم أنّ آيةَ مُلْكِه أن يأتيَهم التابوت.",
-    refs: [
-      "Surah Al-Baqarah (2:246-251) — the prophet who appointed Talut as king",
-      "Ibn Kathir, Stories of the Prophets — identified as Shamwil (Samuel)"
-    ],
-    refsAr: [
-      "سورة البقرة (٢:٢٤٦–٢٥١) — النبيّ الذي بعث لهم طالوت ملكًا",
-      "ابن كثير، قصص الأنبياء — تسميته شمويل (خبرٌ تاريخي)"
-    ]
-  },
-  {
-    id: "danyal",
-    name: "Danyal (Daniel)",
-    arabic: "دانيال",
-    title: "The Prophet of Babylon",
-    titleAr: "نبيّ بابل",
-    category: "prophet",
-    summary: "Danyal is mentioned in Islamic tradition as a prophet among the Children of Israel who lived during the Babylonian exile. When his grave was discovered during the conquest of Tustar, the Caliph Omar ordered that he be reburied in a hidden location to prevent veneration.",
-    summaryAr: "يُذكر في الأخبار الإسلامية أنه نبيٌّ من أنبياء بني إسرائيل عاش في زمن السبي البابليّ. ولمّا اكتُشف قبرُه في فتوح تُستَر أمر الخليفةُ عمرُ رضي الله عنه بإعادة دفنه في موضعٍ خفيٍّ لئلّا يُعظَّم قبرُه ويُفتتن به الناس.",
-    refs: [
-      "Musannaf Ibn Abi Shaybah — account of the discovery of Danyal's body during Omar's caliphate",
-      "Ibn Kathir, Al-Bidaya wan-Nihaya — his mention among the prophets of Israel"
-    ],
-    refsAr: [
-      "مصنّف ابن أبي شيبة — خبر العثور على جسد دانيال في خلافة عمر",
-      "ابن كثير، البداية والنهاية — ذكره في أنبياء بني إسرائيل"
     ]
   },
   {

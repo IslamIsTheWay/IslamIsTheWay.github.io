@@ -147,7 +147,7 @@ const AR = {
   "Paste a video link,": "ألصِق رابط الفيديو،",
   "watch the preview to be sure it is the right one": "وشاهد المعاينة لتتأكّد أنّه الفيديو الصحيح",
   ", then fill in the details and add it. Nothing appears on the website until you press": "، ثمّ املأ التفاصيل وأضِفه. ولا يظهر شيءٌ في الموقع حتى تضغط",
-  "at the bottom. They show three across, just above the “Get in Touch” section on the home page.": "في الأسفل. وتُعرَض ثلاثًا في الصفّ، فوق قسم «تواصل معنا» في الصفحة الرئيسية مباشرة.",
+  "at the bottom. They show three across, as the last section of the home page.": "في الأسفل. وتُعرَض ثلاثًا في الصفّ، في آخر الصفحة الرئيسية.",
   "1) Video link — YouTube (normal or Shorts) or a direct .mp4 link": "١) رابط الفيديو — يوتيوب (عاديّ أو Shorts) أو رابط mp4 مباشر",
   "👁 Check this video": "👁 افحص هذا الفيديو",
   "Is this the video you want?": "أهذا هو الفيديو الذي تريده؟",
@@ -372,8 +372,8 @@ const AR = {
 
   // ---- Prophets / Companions ----
   "Companions of Prophet Muhammad ﷺ": "صحابة النبي محمد ﷺ",
-  "Allah sent many prophets throughout history to guide humanity. Below are the prophets named in the Quran, with brief biographies and references for deeper study.":
-    "أرسل الله أنبياء كثيرين على مدى التاريخ لهداية البشرية. وفيما يلي الأنبياء المذكورون في القرآن مع نبذة عن سِيَرهم ومراجع للاستزادة.",
+  "Allah sent many prophets throughout history to guide humanity. Below are the twenty-five named in the Quran, and four more known from the Sunnah and the scholars — in the order they were sent, from Adam to Muhammad ﷺ — with brief biographies and references for deeper study.":
+    "أرسل الله أنبياء كثيرين على مدى التاريخ لهداية البشرية. وفيما يلي الخمسة والعشرون المذكورون في القرآن، وأربعةٌ غيرهم عُرفوا من السنّة وكلام العلماء — على ترتيب بعثتهم، من آدم إلى محمد ﷺ — مع نبذة عن سِيَرهم ومراجع للاستزادة.",
   "The Sahaba were the men and women who accompanied, supported, and learned directly from the Prophet ﷺ. Their lives remain a model of faith, sacrifice, and character.":
     "الصحابة هم الرجال والنساء الذين صحبوا النبي ﷺ ونصروه وتعلّموا منه مباشرة. وسِيَرهم نموذج في الإيمان والتضحية والأخلاق.",
   "References:": "المراجع:",
