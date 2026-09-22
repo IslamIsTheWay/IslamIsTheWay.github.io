@@ -2754,7 +2754,7 @@ const PARADISE_THEMES = [
     titleAr: "الرزق بيد الله والتوكل عليه",
     description: "There is no creature on the earth but that its provision is upon Allah. Whoever is mindful of Allah, He makes a way out for him and provides for him from where he never expected — and whoever relies upon Allah, He is sufficient for him.",
     descriptionAr: "﴿وَمَا مِن دَآبَّةٖ فِي ٱلۡأَرۡضِ إِلَّا عَلَى ٱللَّهِ رِزۡقُهَا﴾. ﴿وَمَن يَتَّقِ ٱللَّهَ يَجۡعَل لَّهُۥ مَخۡرَجٗا ۝ وَيَرۡزُقۡهُ مِنۡ حَيۡثُ لَا يَحۡتَسِبُۚ وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ﴾.",
-    keys: ["money","provision","rizq","sustenance","income","salary","wage","job","work","unemployed","bills","rent","expenses","afford","poverty","poor","need","worried about money","financial","reliance","tawakkul","depend","sufficient","رزق","مال","معيشة","راتب","وظيفة","عمل","فقر","فقير","حاجة","ضيق","مصاريف","إيجار","توكل","كفاية","قلق من المال","ضيق مالي",
+    keys: ["money","provision","rizq","sustenance","income","salary","wage","job","work","unemployed","bills","rent","expenses","afford","poverty","poor","worried about money","financial","reliance","tawakkul","depend","sufficient","رزق","مال","معيشة","راتب","وظيفة","عمل","فقر","فقير","حاجة","ضيق","مصاريف","إيجار","توكل","كفاية","قلق من المال","ضيق مالي",
            /* losing work, the way it is said: "I got fired" had met only the
               Sunnah on putting out FIRES (fired -> fire) */
            "lost my job","got fired","i was fired","laid off","no job","cant find work","can't find a job",

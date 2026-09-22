@@ -164,6 +164,8 @@ const SS_SECTIONS = [
    "adhkar dhikr remembrance morning evening tasbih الأذكار الذكر الصباح المساء التسبيح"],
   ["judgement.html", "The Day of Judgement, stage by stage", "يوم القيامة، مرحلةً مرحلة",
    "judgement judgment qiyamah resurrection scale mizan sirat bridge intercession hawd القيامة البعث الميزان الصراط الشفاعة الحوض"],
+  ["judgement.html#treasure", "The mountain of gold — the Euphrates, the ice, and what we are told to do", "جبل الذهب — الفرات والجليد وما أُمرنا به",
+   "euphrates furat gold mountain treasure arctic greenland ice melting oil nuclear unity الفرات فرات جبل ذهب الذهب كنز القطب غرينلاند الجليد ذوبان النفط نووية نووي"],
   ["judgement.html#angels", "The angels", "الملائكة",
    "angel angels jibril mikail israfil الملائكة ملك جبريل ميكائيل إسرافيل"],
   ["golden.html", "The Golden Age of Islam — the scholars and what they built", "العصر الذهبي للإسلام — العلماء وما بنوا",

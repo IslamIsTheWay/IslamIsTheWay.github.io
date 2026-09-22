@@ -95,7 +95,7 @@ const PLACES = {
           extraProofAr: "﴿يَسۡـَٔلُونَكَ عَنِ ٱلسَّاعَةِ أَيَّانَ مُرۡسَىٰهَاۖ قُلۡ إِنَّمَا عِلۡمُهَا عِندَ رَبِّيۖ﴾ — ﴿إِنَّ ٱللَّهَ عِندَهُۥ عِلۡمُ ٱلسَّاعَةِ﴾",
           extraRef: "Surah Al-A'raf (7:187); Surah Luqman (31:34)",
           extraRefAr: "سورة الأعراف (٧:١٨٧)؛ سورة لقمان (٣١:٣٤)",
-          keys: ["condition", "when", "prediction", "hour", "شرط", "متى", "تنبؤ", "الساعة", "الدجال"]
+          keys: ["condition", "when will the dajjal come", "prediction", "hour", "شرط", "متى", "تنبؤ", "الساعة", "الدجال"]
         }
       ]
     },
@@ -193,7 +193,7 @@ const PLACES = {
           refAr: "صحيح البخاري، كتاب الإيمان، حديث ٥٠؛ صحيح مسلم، كتاب الإيمان",
           strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
           strengthAr: "صحيح — متفق عليه (البخاري ومسلم)",
-          keys: ["date", "when", "prediction", "year", "timing", "تاريخ", "متى", "تنبؤ", "سنة", "توقيت"]
+          keys: ["date", "when is the hour", "prediction", "year", "timing", "تاريخ", "متى", "تنبؤ", "سنة", "توقيت"]
         }
       ]
     }

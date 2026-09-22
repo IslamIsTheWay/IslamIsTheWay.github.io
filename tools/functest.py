@@ -449,6 +449,18 @@ def golden_list_and_search(ctx):
     check(pg.evaluate("document.querySelectorAll('#goldList .gold-card').length") >= 1, "searching الجبر found nobody")
     return pg
 
+@scenario
+def golden_mountain_of_gold_card(ctx):
+    """The gc-treasure card: second under "So what do we do now?", after the
+    card on the builders who believed in the end times, linking to the full
+    section on the Judgement page."""
+    pg = open_page(ctx, "golden.html")
+    ids = pg.evaluate("[...document.querySelectorAll('#closingEndBox article.gc-card')].map(a => a.id)")
+    check(ids[:3] == ["gc-waiting", "gc-treasure", "gc-return"], "the closing cards are in this order: %s" % ids)
+    check(pg.evaluate("!!document.querySelector('#gc-treasure .more-link a[href=\"judgement.html#treasure\"]')"),
+          "the card does not link to judgement.html#treasure")
+    return pg
+
 
 # =============================================================== the Day of Judgement
 @scenario
@@ -467,6 +479,35 @@ def judgement_stages_and_journey(ctx):
     pg.wait_for_timeout(1200)
     inview = pg.evaluate("(() => { const r = document.getElementById('j-scales').getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; })()")
     check(inview, "jumping to the Scales did not bring that stage on screen")
+    return pg
+
+@scenario
+def judgement_mountain_of_gold(ctx):
+    """js/treasure.js: ten cards between the signs and the three places; the
+    Euphrates sign and the Euphrates map node each point down to it in one
+    line; a link from another page lands on the card; Arabic shows Arabic."""
+    pg = open_page(ctx, "judgement.html")
+    n = pg.evaluate("document.querySelectorAll('#jTreasureBox .pl-card').length")
+    check(n == 10, "the mountain-of-gold section shows %d cards, not 10" % n)
+    ids = pg.evaluate("[...document.querySelectorAll('section[id]')].map(s => s.id)")
+    check("treasure" in ids and ids.index("signs") < ids.index("treasure") < ids.index("places"),
+          "the section is not between the signs and the three places: %s" % ids)
+    check(pg.evaluate("!!document.querySelector('.page-toc a[href=\"#treasure\"]')"), "no contents link to it")
+    hrefs = pg.evaluate("[...document.querySelectorAll('.more-link a')].map(a => a.getAttribute('href'))")
+    check(hrefs.count("#treasure") == 2, "expected the sign and the map node to point to it, got %s" % hrefs)
+    pg.click("#signsBox .more-link a")
+    pg.wait_for_timeout(1200)
+    top = pg.evaluate("document.getElementById('treasure').getBoundingClientRect().top")
+    check(-5 < top < 400, "the pointer on the Euphrates sign did not bring the section on screen (top %d)" % top)
+    pg.goto(BASE + "judgement.html#tr-ice", wait_until="networkidle")
+    pg.wait_for_timeout(900)
+    top = pg.evaluate("document.getElementById('tr-ice').getBoundingClientRect().top")
+    check(-5 < top < 400, "a link to judgement.html#tr-ice did not land on the card (top %d)" % top)
+    pg.click("#langToggle")
+    pg.wait_for_timeout(500)
+    txt = pg.inner_text("#jTreasureBox")
+    check("جبلُ الذهب" in txt and "The mountain of gold" not in txt and "In plain words" not in txt,
+          "the section is not in Arabic after switching: " + txt[:80])
     return pg
 
 
@@ -538,6 +579,31 @@ def guidance_situation_search(ctx):
     pg.wait_for_timeout(400)
     check(len(pg.inner_text("#guidanceResults").strip()) < 5, "Clear did not clear the answer")
     check(pg.input_value("#situationInput") == "", "Clear did not empty the question")
+    return pg
+
+@scenario
+def guidance_finds_the_mountain_of_gold(ctx):
+    """The Guidance search reaches the cards on judgement.html#treasure — and
+    their keys are specific enough not to claim questions they were not
+    written for (a single common key such as "gold", "weak" or الوحدة,
+    which also means loneliness, would)."""
+    pg = open_page(ctx, "guidance.html")
+    def hits(query):
+        pg.fill("#situationInput", query)
+        pg.click("button[onclick='findGuidance()']")
+        pg.wait_for_timeout(1500)
+        return pg.evaluate("[...document.querySelectorAll('#guidanceResults a.pl-go')].map(a => a.getAttribute('href'))")
+    for query in ("the euphrates will uncover a mountain of gold", "هل سيحسر الفرات عن جبل من ذهب",
+                  "will there be a nuclear war"):
+        h = hits(query)
+        check(any(x.startswith("judgement.html#tr-") for x in h), "%r did not reach the mountain of gold: %s" % (query, h))
+    for query in ("what should i do my mother is angry with me", "the prayer for rain in a drought",
+                  "i feel weak in my faith", "is gold allowed for men", "أشعر بالوحدة",
+                  "does passing gas break wudu", "when should i pray witr"):
+        h = hits(query)
+        check(not any("#tr-" in x for x in h), "%r was answered with the mountain of gold: %s" % (query, h))
+    check(pg.evaluate("!!document.querySelector('#endPrepBox a[href=\"judgement.html#treasure\"]')"),
+          "the end-of-time section does not point to the mountain of gold")
     return pg
 
 

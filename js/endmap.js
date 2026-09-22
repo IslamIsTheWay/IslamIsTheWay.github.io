@@ -205,7 +205,10 @@ const END_MAP = {
           ref: "Sahih al-Bukhari 7119 — Abu Hurairah; Sahih Muslim, Book of Tribulations and the Portents of the Last Hour",
           refAr: "صحيح البخاري ٧١١٩ — عن أبي هريرة؛ وصحيح مسلم، كتاب الفتن وأشراط الساعة",
           strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
-          strengthAr: "صحيح — متّفقٌ عليه (البخاري ومسلم)" },
+          strengthAr: "صحيح — متّفقٌ عليه (البخاري ومسلم)",
+          more: { href: "#treasure",
+            en: "Where it may be, why the whole world would fight over it, and what we are told to do — a closer look further down this page",
+            ar: "أين قد يكون، ولماذا يقتتل العالمُ كلُّه عليه، وما أُمرنا به — نظرةٌ أقرب أسفلَ هذه الصفحة" } },
 
         { t: "The Mahdi — and the honest state of the evidence",
           tAr: "المهديّ — وتحريرُ درجة الأدلّة",

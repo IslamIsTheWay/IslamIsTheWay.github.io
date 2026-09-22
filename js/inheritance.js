@@ -96,7 +96,7 @@ const INHERITANCE = {
           strengthAr: "صحيح — متفق عليه (البخاري ومسلم)",
           note: "\"No bequest to an heir\" is narrated by at-Tirmidhi (2120), Abu Dawud, Ibn Majah and an-Nasa'i. Its chains have been discussed, but it is acted upon by the four schools and is treated as established because it was reported from him ﷺ in the Farewell Pilgrimage by several routes. The practical rule is unanimous: give to a non-heir if you wish, within the third — never to an heir.",
           noteAr: "وحديث «لا وصيّة لوارث» رواه الترمذي (٢١٢٠) وأبو داود وابن ماجه والنسائي. وقد تُكلّم في أسانيده، غير أنّ المذاهب الأربعة عاملةٌ به، وهو مقبولٌ عندهم لوروده عنه ﷺ في حجّة الوداع من طرق. والعملُ عليه بالاتفاق: أن تُوصي لغير وارثٍ في حدود الثلث، ولا تُوصي لوارثٍ أصلًا.",
-          keys: ["will", "islamic will", "wasiyyah", "how much can i leave in my will", "one third", "leave money to my son", "bequest", "can i write a will", "leave everything to",
+          keys: ["islamic will", "write my will", "making a will", "last will", "will and testament", "ruling on wills", "wasiyyah", "how much can i leave in my will", "one third", "leave money to my son", "bequest", "can i write a will", "leave everything to",
                  "الوصية", "الوصية الشرعية", "كم اوصي", "الثلث", "اوصي لابني", "لا وصية لوارث", "اكتب وصية", "اترك كل مالي",
                  "leave everything to one son", "leave it all to", "give the house to my son before i die", "write it in my name", "transfer it before", "اوصي لولدي", "اترك كل شي لابني", "اكتب البيت باسم ولدي", "انقله قبل ما اموت"]
         }

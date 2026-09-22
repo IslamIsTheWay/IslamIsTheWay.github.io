@@ -9,12 +9,13 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 17 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 22 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 2. **PART 36** (most recent) — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
+> 2. **PART 37** (most recent) — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
+> 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
 > 4. **PART 34** — the dark theme's blind spot (gradients, shadows, keyframes), and the staff dashboard, which no audit could open and which was entirely in English.
 > 5. **PART 33** — continue where you left off, night reading and text size, one search, "Recently Added" written from git, and the weight of the pictures and of the Quran text.
@@ -6690,3 +6691,114 @@ not finding it.
 Safari itself: Playwright's WebKit is not installed on this machine (about
 100 MB from Microsoft's Playwright servers). With it, functest.py could run in
 the engine the owner's iPhone uses.
+
+---
+
+# PART 37 - Pages put in reading order, and the mountain of gold
+
+The owner (September 2026): the pages were "not organized as much as required" -
+information came in the wrong order. His example: the Golden Age page argued why
+a faith site talks about data centres BEFORE saying the site already covers that
+subject. Then: add the hadith of the Euphrates uncovering a mountain of gold,
+with his reading of it and every point he made, "simple, easy to understand,
+with evidence" - on the Judgement page, the Golden Age page, and findable from
+Guidance.
+
+## The ordering pass (commit 9eeb833, and four more in the next commit)
+
+The rule used on every page: a reader meets a thing before anything refers to
+it, and a page tells one story before it changes subject - and says so when it
+does.
+
+- **judgement.html**: stages, grave, journey, detail, endmap, signs, treasure,
+  places, rise, angels, alone. One person's road from death to their final home
+  first; then the world's - the signs, where we stand among them, how it ends. A
+  bridging paragraph (`.section-lead-switch`) marks the change. TOC rebuilt.
+- **guidance.html**: worship and adhkar first (daily use), then what Islam is
+  built on, the standards, hearts, the hardest questions, family law, sins and
+  rulings, revival and bid'ah, then the road to the hereafter. The contents box
+  has group labels (`.gd-jump-group`).
+- **golden.html**: the closing is split. The three things happening now stay
+  before #rise; "So what do we do now?" (gc-waiting, gc-treasure, gc-return,
+  gc-win) comes after it (`part: "end"` in js/golden-closing.js, rendered into
+  #closing-end). gc-united now opens by naming the Guidance section it builds
+  on - the owner's example, fixed at its root.
+- **prophets.html**: in the order they were sent, Adam to Muhammad ﷺ.
+- **quran.html**: the surah list first, the five tadabbur questions after it,
+  with a one-line pointer above the list (`.tad-pointer`).
+- **index.html**: the numbers strip directly under "continue where you left off".
+- **NOT changed, on purpose**: stories.html opens on the Dajjal story, and the
+  recitations are the home page's last section - both at the owner's request,
+  both marked by a comment in the page. CHECK FOR AN OWNER-INSTRUCTION COMMENT
+  BEFORE MOVING ANYTHING.
+
+**Four references the first pass missed**, found by sweeping every data file the
+Judgement page loads for position words (above / below / further down / أعلاه /
+أدناه / تحته / المتقدّمة): the Trumpet sign still said the signs sat "above the
+fifteen stages"; the last card of "the end" still said "from here, the rest of
+this page" (its en/ar had been corrected, its title and plain words had not);
+the Mahdi card's "the section below" (it meant #rise, no longer next); and a
+stage note pointing to "the angels above" (they are near the end). All four now
+name where the thing is. **When a section moves, sweep EVERY field, plain words
+included** - an outline reads titles and leads, and that is how these survived.
+
+## The mountain of gold (js/treasure.js, rendered at judgement.html#treasure)
+
+Ten cards in four steps. (1) The two narrations the sign's own card leaves out:
+the instruction "whoever is present, let him take nothing from it" (al-Bukhari
+7119, and Muslim), and Ubayy ibn Ka'b's narration of why they fight - "if we
+leave the people to take from it, they will take all of it" (Muslim). (2) Where
+it could be: the river, shrinking to record lows; and his reading - furat in the
+Quran is sweet fresh water (25:53, 35:12, 77:27), and the fresh-water ice of the
+North is melting over about a fifth of the world's undiscovered oil and gas
+(USGS 2008). (3) Why the whole world would fight even knowing the hadith: the
+cost of staying out; ninety-nine of every hundred, and the nuclear inference.
+(4) What we are told to do: stay out (the fitnah hadith); you can only stay out
+if you are strong (8:60, the strong believer); strength is unity under Islam,
+not race, money or looks (3:103, 8:46, 49:13; the EU, the fifty states, $9.2
+trillion - SESRIC 2025); and no date (7:187).
+
+SIX RULES at the top of js/treasure.js. The ones most easily broken: the hadith
+is certain, the ice reading is HIS reading and says so; the nuclear war is an
+inference and says so; no date; the Arabic was cut, never typed - verses by word
+position from js/quran-text (all 8 proved to be whole-word runs of the verse
+cited), hadith from the fawazahmed0 hadith-api editions of al-Bukhari and Muslim.
+The file was generated by a script that cut those texts; if a quotation changes,
+re-cut it.
+
+The Abu Hurairah narration and "a low river is not the sign" are NOT in this
+file: they are on the sign's own card (js/signs.js) directly above, and a first
+draft that repeated them was cut back. The sign card, the end-map node,
+golden.html's gc-treasure and guidance.html's end-of-time note each carry a
+sentence or two and a link (`.more-link`; `jMore()` on judgement.html) - never
+a second copy.
+
+He said the Euphrates is 30-40 metres deep. It is not - it is shallow and at
+record lows, which if anything supports the plain reading. The page states the
+river's real condition and sets out both readings fairly.
+
+## Search
+
+The Guidance search now covers the treasure cards (iitwAllCards, with `page`
+from `TREASURE.searchPage`): a hit links to judgement.html#<card>, and the
+heading says "On the site" instead of "On this page" when a hit lives
+elsewhere. Deliberately NOT in iitwSets(): topics and the pillar lookup build
+same-page links. Site search: judgement.html#treasure is in SS_SECTIONS, and
+sw.js precaches js/treasure.js.
+
+**A card key that is one common word claims every sentence containing it**,
+under the heading "written for exactly this". Found because "the Euphrates will
+uncover a mountain of gold" was answered with the card on writing a will: its
+keys had "will". The whole site was then swept for bare function words used as
+keys - "will" (the will card), "need" (the provision theme), "which" twice and
+"going" (Sunnah), "when" twice (places.js) - and each became a phrase of TWO
+content words. The matcher drops fillers (my, a, in, to), so "my will" is still
+only "will". The treasure cards' keys follow the same rule: no "gold",
+"drought", "weak", "gas", or الوحدة (which also means loneliness).
+
+## Tests
+
+functest.py gained judgement_mountain_of_gold, golden_mountain_of_gold_card and
+guidance_finds_the_mountain_of_gold - the last includes seven questions that
+must NOT reach the section ("what should I do…", the rain prayer, gold for men,
+أشعر بالوحدة…). 33 of 33 pass.

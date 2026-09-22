@@ -1591,7 +1591,7 @@ const SUNNAH = [
     arabic: "اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ، فَإِنَّكَ تَقْدِرُ وَلَا أَقْدِرُ، وَتَعْلَمُ وَلَا أَعْلَمُ، وَأَنْتَ عَلَّامُ الْغُيُوبِ، اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاقْدُرْهُ لِي، وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ، وَاقْدُرْ لِيَ الْخَيْرَ حَيْثُ كَانَ، ثُمَّ رَضِّنِي بِهِ",
     ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6382; and Book of Tahajjud, Hadith 1166",
     strength: "Sahih — Narrated by al-Bukhari",
-    keys: ["istikhara","decision","choose","confused","guidance","marriage","job","which","استخارة","قرار","حيرة","اختيار","الزواج","العمل","المشورة"]
+    keys: ["istikhara","decision","choose","confused","guidance","marriage","job","which one should i choose","which job should i take","استخارة","قرار","حيرة","اختيار","الزواج","العمل","المشورة"]
   },
 
   /* ---- Second batch, worked through the books of al-Bukhari in order ----
@@ -1826,7 +1826,7 @@ const SUNNAH = [
     arabic: "إِلَى أَقْرَبِهِمَا مِنْكِ بَابًا",
     ref: "Sahih al-Bukhari, Book of Gifts, Hadith 2595",
     strength: "Sahih — Narrated by al-Bukhari",
-    keys: ["neighbour","neighbor","gift","which","nearest","door","الجار","الهدية","الأقرب","الباب","أيهما"]
+    keys: ["neighbour","neighbor","gift","which neighbour","which neighbor","nearest","door","الجار","الهدية","الأقرب","الباب","أيهما"]
   },
   {
     cat: "manners",
@@ -2235,7 +2235,7 @@ const SUNNAH = [
     arabic: "مَنْ غَدَا إِلَى الْمَسْجِدِ وَرَاحَ أَعَدَّ اللَّهُ لَهُ نُزُلَهُ مِنَ الْجَنَّةِ كُلَّمَا غَدَا أَوْ رَاحَ",
     ref: "Sahih al-Bukhari, Hadith 662",
     strength: "Sahih — Narrated by al-Bukhari",
-    keys: ["mosque","masjid","walking","going","paradise","reward","congregation",
+    keys: ["mosque","masjid","walking","going to the mosque","going to the masjid","paradise","reward","congregation",
            "المسجد","الذهاب","الغدو","الرواح","الجنّة","الأجر","الجماعة"]
   },
   {

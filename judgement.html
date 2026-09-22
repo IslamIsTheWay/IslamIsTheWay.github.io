@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202609171727" />
+  <link rel="stylesheet" href="css/style.css?v=202609221842" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/judgement.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -92,6 +92,7 @@
         <a href="#detail"><span class="en-only">The details</span><span class="ar-only" dir="rtl">التفاصيل</span></a>
         <a href="#endmap"><span class="en-only">The map, and where we are</span><span class="ar-only" dir="rtl">الخريطة وأين نحن</span></a>
         <a href="#signs"><span class="en-only">How the world ends</span><span class="ar-only" dir="rtl">كيف تنتهي الدنيا</span></a>
+        <a href="#treasure"><span class="en-only">The mountain of gold — a closer look</span><span class="ar-only" dir="rtl">جبل الذهب — نظرةٌ أقرب</span></a>
         <a href="#places"><span class="en-only">The three places he asked about</span><span class="ar-only" dir="rtl">المواضع الثلاثة</span></a>
         <a href="#rise"><span class="en-only">Will we rise again?</span><span class="ar-only" dir="rtl">هل نعود؟</span></a>
         <a href="#angels"><span class="en-only">The angels</span><span class="ar-only" dir="rtl">الملائكة</span></a>
@@ -182,14 +183,30 @@
     </div>
   </section>
 
+  <!-- ===== THE MOUNTAIN OF GOLD — a closer look at one sign =====
+       Rendered from js/treasure.js. The sign's own card in #signs above
+       carries the Abu Hurairah narration and the warning that a low river
+       is not the sign; this section adds only what that card does not: the
+       two other narrations, the two readings of where, why the whole world
+       would fight over it, and what we are told to do.
+       Placed BEFORE #places because the Euphrates comes before the Dajjal
+       among the signs, so the two closer looks follow the signs' own order.
+       READ THE SIX RULES AT THE TOP OF js/treasure.js BEFORE EDITING. -->
+  <section id="treasure">
+    <div class="container">
+      <div id="jTreasureBox"></div>
+    </div>
+  </section>
+
   <!-- ===== THE THREE PLACES THE DAJJAL ASKED ABOUT =====
        Rendered from js/places.js. The HADITH itself is not here — it is in
        PROPHET_STORIES on stories.html, in full, and is not retold. This
        section answers only: where are those three places, and what is
        measured there now.
 
-       It sits directly under #signs and #grave because the Dajjal sign is
-       above it; a reader meets the sign, then the three places it names.
+       It sits under #signs because the Dajjal sign is above it; a reader
+       meets the sign, then the three places it names. #treasure comes
+       first only because the Euphrates comes before the Dajjal.
 
        READ THE FIVE RULES AT THE TOP OF js/places.js BEFORE EDITING. The
        first of them is the one that matters: no date, ever — which is
@@ -290,24 +307,25 @@
   </footer>
 
   
-  <script src="js/data.js?v=202609171727"></script>
-  <script src="js/angels.js?v=202609171727"></script>
+  <script src="js/data.js?v=202609221842"></script>
+  <script src="js/angels.js?v=202609221842"></script>
   <!-- The signs of the Hour and the end of the world. Loads before
        judgement.js so the sections render above the fifteen stages,
        which is the actual order events happen in. -->
-  <script src="js/signs.js?v=202609171727"></script>
-  <script src="js/endmap.js?v=202609171727"></script>
-  <script src="js/judgement.js?v=202609171727"></script>
-  <script src="js/cards.js?v=202609171727"></script>
-  <script src="js/grave.js?v=202609171727"></script>
-  <script src="js/places.js?v=202609171727"></script>
+  <script src="js/signs.js?v=202609221842"></script>
+  <script src="js/endmap.js?v=202609221842"></script>
+  <script src="js/judgement.js?v=202609221842"></script>
+  <script src="js/cards.js?v=202609221842"></script>
+  <script src="js/grave.js?v=202609221842"></script>
+  <script src="js/places.js?v=202609221842"></script>
+  <script src="js/treasure.js?v=202609221842"></script>
   <!-- The closing discussion: standing alone, and what to do about it. Its
        own file because it is prose rather than stage data. -->
-  <script src="js/judgement-closing.js?v=202609171727"></script>
+  <script src="js/judgement-closing.js?v=202609221842"></script>
   <!-- Will we rise again? Shared with golden.html — one file, two pages,
        and it carries its own renderer so the two cannot drift. -->
-  <script src="js/rise.js?v=202609171727"></script>
-  <script src="js/journey.js?v=202609171727"></script>
+  <script src="js/rise.js?v=202609221842"></script>
+  <script src="js/journey.js?v=202609221842"></script>
   <script>
     /* ---------- الرحلة — the journey, phase by phase ----------
        Same two-layer shape the owner asked for everywhere: the detail with
@@ -644,6 +662,8 @@
     if (typeof renderGrouped === "function")
       renderGrouped("jGraveBox", typeof GRAVE !== "undefined" ? GRAVE : null, "⚰️");
     if (typeof renderGrouped === "function")
+      renderGrouped("jTreasureBox", typeof TREASURE !== "undefined" ? TREASURE : null, "⛰️");
+    if (typeof renderGrouped === "function")
       renderGrouped("jPlacesBox", typeof PLACES !== "undefined" ? PLACES : null, "🗺️");
     if (typeof iitwRenderRise === "function") iitwRenderRise("riseBox");
   </script>
@@ -658,6 +678,14 @@
        publish — no subject attracts more invented material than this one. */
     /* Same **bold** conversion as closingParas above — see the note there.
        The signs section is where most of the markers on this page live. */
+    /* A short card that has a full section elsewhere on this page says so
+       in one line, instead of growing into a second copy of that section.
+       Used by the Euphrates sign and the Euphrates map node (#treasure). */
+    function jMore(m) {
+      if (!m) return "";
+      return `<p class="more-link"><a href="${m.href}"><span class="en-only">${m.en}</span>` +
+        `<span class="ar-only" dir="rtl">${m.ar}</span> ${m.up ? "↑" : "↓"}</a></p>`;
+    }
     function sgParas(t) {
       return String(t || "").split(/\n\s*\n/)
         .map(p => `<p>${p.replace(/\n/g, " ")
@@ -803,6 +831,7 @@
             ${emPair(emParas(n.detail), emParas(n.detailAr), "em-node-d")}
             <div class="em-means">${emPair(emParas(n.means), emParas(n.meansAr), "em-means-t")}</div>
             ${emSrc(n.ref, n.refAr, n.strength, n.strengthAr)}
+            ${jMore(n.more)}
           </li>`;
         }).join("") + `</ol>`;
 
@@ -957,6 +986,7 @@
               <div class="tad-ref ar-only" dir="rtl">${i.refAr}</div>`
               : `<div class="tad-ref" dir="auto">${i.ref}</div>`}${sgBadge(i.strength)}
             ${sgPlain(i.plain, i.plainAr)}
+            ${jMore(i.more)}
             <!-- A minor sign may carry its own "what is NOT established" list.
                  Only the whole block had one before, and the Mahdi entry needs
                  its own: the number, the country and the date attached to him
@@ -981,7 +1011,8 @@
             ${(s.verses || []).map(sgVerse).join("")}
             ${sgNotEstablished(s.notEstablished, s.notEstablishedAr)}
             ${sgPlain(s.plain, s.plainAr)}
-            ${sgBadge(s.strength)}</div>`;
+            ${sgBadge(s.strength)}
+            ${jMore(s.more)}</div>`;
         });
       }
 
@@ -1030,12 +1061,12 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202609171727"></script>
+  <script src="js/wordlens.js?v=202609221842"></script>
 
-  <script src="js/resume.js?v=202609171727"></script>
-  <script src="js/main.js?v=202609171727"></script>
-  <script src="js/reading.js?v=202609171727"></script>
-  <script src="js/nav.js?v=202609171727"></script>
-  <script src="js/i18n.js?v=202609171727"></script>
+  <script src="js/resume.js?v=202609221842"></script>
+  <script src="js/main.js?v=202609221842"></script>
+  <script src="js/reading.js?v=202609221842"></script>
+  <script src="js/nav.js?v=202609221842"></script>
+  <script src="js/i18n.js?v=202609221842"></script>
 </body>
 </html>

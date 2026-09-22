@@ -88,8 +88,8 @@ const JUDGEMENT_STAGES = [
         quran: "كَمَا بَدَأۡنَآ أَوَّلَ خَلۡقٖ نُّعِيدُهُۥۚ",
         ref: "Sahih al-Bukhari, Book of Ar-Riqaq, Hadith 6527 — Sahih; and Surah Al-Anbiya (21:104)" }
     ],
-    note: "The angel who blows the Trumpet is Israfil, and his name is established — it appears in Sahih Muslim, in the supplication the Prophet ﷺ used to open his night prayer with: O Allah, Lord of Jibril and Mika'il and Israfil. See the section on the angels above for the full wording.",
-    noteAr: "والملَك الموكَّل بالنفخ هو إسرافيل، واسمه ثابت؛ فقد جاء في صحيح مسلم في دعاء استفتاح النبي ﷺ لقيام الليل: اللهم ربَّ جبريل وميكائيل وإسرافيل. وانظر قسم الملائكة أعلاه للنصّ كاملًا."
+    note: "The angel who blows the Trumpet is Israfil, and his name is established — it appears in Sahih Muslim, in the supplication the Prophet ﷺ used to open his night prayer with: O Allah, Lord of Jibril and Mika'il and Israfil. See the section on the angels, further down this page, for the full wording.",
+    noteAr: "والملَك الموكَّل بالنفخ هو إسرافيل، واسمه ثابت؛ فقد جاء في صحيح مسلم في دعاء استفتاح النبي ﷺ لقيام الليل: اللهم ربَّ جبريل وميكائيل وإسرافيل. وانظر قسم الملائكة أسفلَ هذه الصفحة للنصّ كاملًا."
   },
 
   {
