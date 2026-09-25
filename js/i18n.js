@@ -52,7 +52,7 @@ const AR = {
   "Or browse by subject": "أو تصفَّح بحسب الموضوع",
   "The doors above start from you, or from something worth reading. These are arranged by what the material is.": "الأبوابُ فوق تبدأ منك، أو ممّا يستحقّ القراءة؛ وهذه مرتّبةٌ بحسب مادّتها.",
   "The Holy Quran": "القرآن الكريم",
-  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 496 verses — at least two in every surah — open into a full explanation of why they are worded as they are.":
+  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 546 verses — at least two in every surah — open into a full explanation of why they are worded as they are.":
     "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة، وأربعمئة وستٌّ وتسعون آية — في كلّ سورةٍ منها آيتان فأكثر — تُفتح على شرحٍ كاملٍ لسبب ورودها بهذا اللفظ.",
   "Hadith Collection": "مجموعة الأحاديث",
   "Complete Sahih al-Bukhari and Sahih Muslim — 15,000+ hadith in Arabic and English, plus 43 chosen ones. Every grading names the scholar behind it.":

@@ -9,12 +9,13 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 22 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 24 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 1b. **PART 38** (most recent) — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
+> 1a. **PART 39** (most recent) — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
+> 1b. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
 > 2. **PART 37** — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
 > 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
@@ -6888,3 +6889,73 @@ fall" door opens it), and the Mahdi door, which pointed at the top of
 functest.py gained guidance_no_fragment_answers,
 arabic_mode_ranges_read_left_to_right, statuses_and_labels_in_one_language and
 home_suggested_reading.
+
+---
+
+# PART 39 - Fifty more verses explained, seven in each of the seven long surahs
+
+The owner, 24 September 2026: keep going with the explanations and the
+connections on the Quran page — "fifty verses, explained, and connected",
+concentrating on the seven biggest surahs, "and if there is any scientific
+information that was discovered lately, point that up".
+
+## What was added
+
+js/tadabbur.js went from 380 verse entries to 430. The seven long surahs were
+the thinnest part of the file and are now the thickest after al-Fatihah:
+
+| surah | was | now |
+|---|---|---|
+| 2 al-Baqarah | 25 | 33 |
+| 3 Aal-Imran | 6 | 13 |
+| 4 an-Nisa | 4 | 11 |
+| 5 al-Ma'idah | 2 | 9 |
+| 6 al-An'am | 3 | 10 |
+| 7 al-A'raf | 4 | 11 |
+| 9 at-Tawbah | 2 | 9 |
+
+Each entry carries the same shape the file already used: why the verse sits
+where it does, one or two words with what they add (`strength` on every
+claim), and one or two **links** — the verse elsewhere that completes the
+thought, with its own text and a line saying how the two meet. Several carry
+a `misunderstood` block where a verse is commonly misread (2:22 and the flat
+earth; 2:219 and "no benefit at all"; 3:110 and "we are the best nation";
+2:275 and profit).
+
+## Five science cards (js/miracles.js, 10 -> 15)
+
+New surah keys 2, 4 and 7. Every card obeys the six rules at the head of that
+file — graded, with the classical reading beside it, and a date and a name on
+the science:
+
+- **2:22** the sky as a building and a guarded roof — ozone (Hartley 1881,
+  Fabry and Buisson 1913) and the magnetosphere (Van Allen, 1958). PARTIAL,
+  because the Quran itself says what the roof is guarded from, and it is not
+  meteors.
+- **2:26** "a mosquito, or what is above it" — the old reading "smaller than
+  it", and the microscope (Hooke 1665, Leeuwenhoek 1674-1676). PARTIAL.
+- **2:29** the seven heavens as the layers of the atmosphere. NOT-ESTABLISHED,
+  and on the page refuted: the Quran puts the stars in the nearest heaven, and
+  the standard layer count is five, not seven.
+- **4:56** skins replaced so the punishment is tasted — nociceptors in the
+  skin, and the numb centre of a full-thickness burn (Blix 1882, Goldscheider
+  1884, von Frey). PARTIAL: the classical reading already said renewed skin
+  means renewed pain.
+- **7:54** the night pursuing the day rapidly — the terminator sweeping west
+  at about 1,670 km/h (rotation: Copernicus 1543, Foucault 1851). PARTIAL.
+
+## How it was written, and the check that kept it honest
+
+No Arabic of the Quran was typed — not in the verse field, not inside the
+prose, not in the links. **tools/quran-cut.py** cuts every quotation out of
+js/quran-text by word POSITION (`part(2, 22, 4, 6)`), because a typed word
+differs from the Mushaf's in a mark and the difference is invisible on screen.
+**tools/checkcuts.py** then re-reads the file and proves every ﴿…﴾, every
+link verse and every quoted word is a run of whole words of a real verse, and
+flags any cut left dangling on a conjunction. It caught four typed quotations
+that looked right and were not, and a dozen spans that ended mid-sentence.
+
+One entry was rewritten after it was written: 9:6 repeated the sword-verse
+argument that the 9:5 card already makes. It now points at that card and adds
+only what it does not say. **Before writing a verse, open the neighbouring
+entries** — al-Baqarah alone has 33.

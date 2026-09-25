@@ -450,6 +450,31 @@ def golden_list_and_search(ctx):
     return pg
 
 @scenario
+def quran_tadabbur_covers_the_long_surahs(ctx):
+    """The owner asked for fifty more verses explained and connected, seven in
+    each of the seven long surahs (HANDOFF PART 39). This holds the count, and
+    proves a new panel renders with its links and its science card."""
+    pg = open_page(ctx, "quran.html")
+    counts = pg.evaluate("[2,3,4,5,6,7,9].map(k => (TADABBUR[k].ayat || []).length)")
+    check(min(counts) >= 9, "a long surah has fallen below nine explained verses: %s" % counts)
+    total = pg.evaluate("Object.keys(TADABBUR).reduce((n,k) => n + (TADABBUR[k].ayat||[]).length, 0)")
+    check(total >= 430, "the tadabbur file has %d verse entries, fewer than the 430 written" % total)
+    sci = pg.evaluate("Object.keys(MIRACLES).length")
+    check(sci >= 13, "the science panel covers %d surahs, fewer than the 13 written" % sci)
+    # a new entry, drawn in full: its own words and the verse it links to
+    pg.goto(BASE + "quran.html#surah-9", wait_until="networkidle")
+    pg.wait_for_timeout(2500)
+    shown = pg.evaluate("""() => {
+      const p = [...document.querySelectorAll('.tad-ayah')].find(x => /ablighhu|أبلِغه/.test(x.innerText));
+      if (!p) return null;
+      p.classList.remove('tad-hidden');
+      return { links: p.querySelectorAll('.tad-link').length, words: p.querySelectorAll('.tad-word').length };
+    }""")
+    check(shown, "the new entry on at-Tawbah 6 did not render")
+    check(shown["links"] >= 1 and shown["words"] >= 2, "it rendered without its links or its words: %s" % shown)
+    return pg
+
+@scenario
 def golden_mountain_of_gold_card(ctx):
     """The gc-treasure card: second under "So what do we do now?", after the
     card on the builders who believed in the end times, linking to the full

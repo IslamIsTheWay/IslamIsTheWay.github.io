@@ -526,7 +526,16 @@ const TADABBUR = {
         why: "The verse opens by taking something away: righteousness is NOT which direction you turn your face. It was revealed around the change of qiblah, when people were arguing about exactly that.\n\nThen it rebuilds the definition from scratch, and the order is the lesson. Belief first — Allah, the Last Day, the angels, the Book, the prophets. Then, before prayer is even mentioned, GIVING WEALTH — and the wording is 'ala hubbih, while still loving it. Then the recipients are listed by name so nobody can define the duty down to whoever is convenient.\n\nOnly after that come prayer and zakah, then keeping your word, then patience in hardship. A definition of righteousness that most people would have started and ended with ritual is given here with ritual in the middle and money and honesty around it.",
         whyAr: "افتُتحت الآيةُ بنفي: ليس البرُّ أن تُوجّه وجهك شرقًا أو غربًا. ونزلت حول تحويل القبلة، حين كان الناس يتنازعون في هذا بعينه.\n\nثم أعادت بناء الحدّ من أوّله، وفي الترتيب الدرس: الإيمانُ أوّلًا — ﴿بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ وَٱلۡمَلَٰٓئِكَةِ وَٱلۡكِتَٰبِ وَٱلنَّبِيِّـۧنَ﴾. ثم — قبل أن تُذكر الصلاة — **إيتاءُ المال**، وباللفظ: ﴿عَلَىٰ حُبِّهِۦ﴾، أي وهو يحبّه. ثم عُدّت المصارف بأسمائها لئلّا يُضيَّق الواجب على من يسهل.\n\nولم تأتِ الصلاةُ والزكاةُ إلا بعد ذلك، ثم الوفاءُ بالعهد، ثم الصبرُ في البأساء والضرّاء. فحدُّ البرّ الذي كان أكثر الناس سيبدؤه ويختمه بالشعائر جُعلت الشعائر فيه في الوسط، والمالُ والصدقُ حوله.",
         ref: "Surah Al-Baqarah (2:177)",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:60)",
+            ar: "إِنَّمَا ٱلصَّدَقَٰتُ لِلۡفُقَرَآءِ وَٱلۡمَسَٰكِينِ وَٱلۡعَٰمِلِينَ عَلَيۡهَا وَٱلۡمُؤَلَّفَةِ قُلُوبُهُمۡ وَفِي ٱلرِّقَابِ وَٱلۡغَٰرِمِينَ وَفِي سَبِيلِ ٱللَّهِ وَٱبۡنِ ٱلسَّبِيلِۖ فَرِيضَةٗ مِّنَ ٱللَّهِۗ",
+            en: "“Zakat is only for the poor, the needy, those who work on it, those whose hearts are to be reconciled, for freeing slaves, for those in debt, in the way of Allah, and for the traveller — an obligation from Allah.”",
+            how: "The giving described here as a mark of the person who truly believes becomes, in at-Tawbah, eight named categories fixed as an obligation — and the two lists overlap without being the same.",
+            howAr: "العطاءُ الموصوفُ ههنا علامةً على من آمن حقًّا صار في التوبة ثمانيةَ أصنافٍ مسمّاةٍ مفروضة — وبين القائمتين اشتراكٌ لا تطابق."
+          }
+        ]
       },
       {
         n: 256,
@@ -1050,6 +1059,336 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Baqarah (2:23)",
         strength: "quran"
+      },
+      {
+        n: 11,
+        ar: "وَإِذَا قِيلَ لَهُمۡ لَا تُفۡسِدُواْ فِي ٱلۡأَرۡضِ قَالُوٓاْ إِنَّمَا نَحۡنُ مُصۡلِحُونَ",
+        why: "The passage that begins at verse 8 is describing the hypocrites, and this is the sentence that gives them away. Notice what they do not say. They do not say “we are not corrupting”. They say: **only we are the reformers**. The charge is not denied — it is inverted.\n\nAnd the verse straight after it adds the part that makes it frightening: they are the corrupters, **but they do not perceive it**. This is not a lie they are telling the believers. It is a description they believe about themselves.",
+        whyAr: "السياقُ من الآية الثامنة في المنافقين، وهذه الجملةُ هي التي تكشفهم. وتأمّل ما لم يقولوه: لم يقولوا «ما نحن بمفسدين»، وإنما قالوا: ﴿إِنَّمَا نَحۡنُ مُصۡلِحُونَ﴾ — **نحن لا غيرُنا المصلحون**. فما دُفعت التهمةُ، وإنما قُلبت.\n\nوالآيةُ التي تليها تزيد ما يُفزع: أنهم هم المفسدون ﴿وَلَٰكِن لَّا يَشۡعُرُونَ﴾ — فليس هذا كذبًا يقولونه للمؤمنين، بل وصفٌ يعتقدونه في أنفسهم.",
+        ref: "Surah Al-Baqarah (2:11), read with (2:12)",
+        strength: "quran",
+        plain: "The one who ruins something almost never says “I am ruining it.” He says “I am fixing it.” The Quran's first portrait of hypocrisy includes the man's sincerity about his own goodness — which is why the cure starts with asking whether what I call reform really is one.",
+        plainAr: "الذي يُفسد لا يكاد يقول: «أنا أُفسد»، وإنما يقول: «أنا أُصلح». وفي أوّل ما وصف به القرآنُ النفاقَ صدقُ صاحبه في ظنّه بنفسه — ولذلك يبدأ العلاجُ بسؤال المرء نفسه: أإصلاحٌ ما أسمّيه إصلاحًا؟",
+        words: [
+          {
+            w: "إِنَّمَا",
+            t: "innama — “only”",
+            meaning: "A particle of restriction: it fences the sentence so that what follows applies to the speaker and to nobody else. “We are reformers” would have been a claim. “Only we are the reformers” is a monopoly — the reforming is ours, and what you are calling corruption is what reform looks like.",
+            meaningAr: "أداةُ حصر: تقصر الحكمَ على المتكلّم دون غيره. فلو قالوا «نحن مصلحون» لكانت دعوى؛ أمّا ﴿إِنَّمَا نَحۡنُ مُصۡلِحُونَ﴾ فحصرٌ: الإصلاحُ لنا وحدنا، وما تسمّونه إفسادًا هو صورةُ الإصلاح عندنا.",
+            source: "A settled point of Arabic grammar: إنّما restricts what comes after it",
+            strength: "lugha"
+          },
+          {
+            w: "مُصۡلِحُونَ",
+            t: "muslihun — reformers",
+            meaning: "An active participle, not a verb. A verb would have said what they were doing at that moment; the participle says what they **are**. They have not claimed an act. They have claimed an identity.",
+            meaningAr: "اسمُ فاعلٍ لا فعل. والفعلُ يُخبر عمّا يصنعونه في تلك الحال، وأمّا اسمُ الفاعل فيُخبر عمّا **هم عليه**. فلم يدّعوا عملًا، وإنما ادّعوا صفةً لازمة.",
+            instead: "Put the verb in its place and hear the difference. “We are fixing things” can be answered: show me the thing you fixed. “We are reformers” is about no particular act at all — which is why the next verse answers it with a description of them too (“it is they who are the corrupters”), and not with an argument about any single deed.",
+            insteadAr: "ضَعِ الفعلَ موضعه تسمع الفرق: فـ«نُصلح» يُطالَب صاحبُها: أرِني ما أصلحت. وأمّا «مصلحون» فليست في عملٍ بعينه، ولذلك جاء الجوابُ في الآية بعدها وصفًا لهم أيضًا: ﴿إِنَّهُمۡ هُمُ ٱلۡمُفۡسِدُونَ﴾، لا محاجّةً في عملٍ واحد.",
+            source: "Arabic morphology: the ism fa'il describes a settled state, the verb an act in time",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Kahf (18:104)",
+            ar: "ٱلَّذِينَ ضَلَّ سَعۡيُهُمۡ فِي ٱلۡحَيَوٰةِ ٱلدُّنۡيَا وَهُمۡ يَحۡسَبُونَ أَنَّهُمۡ يُحۡسِنُونَ صُنۡعًا",
+            en: "“Those whose effort is lost in the life of this world, while they think they are doing well in work.”",
+            how: "The same person, drawn at the end of the account rather than at the start of it: the loss is not that he knowingly did wrong, but that he was certain he was doing good.",
+            howAr: "هو الرجلُ نفسُه، مرسومًا عند الحساب لا عند البداية: فالخُسرانُ ليس أنه أساء وهو يعلم، بل أنه كان موقنًا أنه يُحسن."
+          }
+        ]
+      },
+      {
+        n: 22,
+        ar: "ٱلَّذِي جَعَلَ لَكُمُ ٱلۡأَرۡضَ فِرَٰشٗا وَٱلسَّمَآءَ بِنَآءٗ وَأَنزَلَ مِنَ ٱلسَّمَآءِ مَآءٗ فَأَخۡرَجَ بِهِۦ مِنَ ٱلثَّمَرَٰتِ رِزۡقٗا لَّكُمۡۖ فَلَا تَجۡعَلُواْ لِلَّهِ أَندَادٗا وَأَنتُمۡ تَعۡلَمُونَ",
+        why: "Verse 21 gives the first command in the whole Book — worship your Lord — and this verse is the evidence attached to it. Read the two together and it is an argument, not an announcement: worship the One who made the earth a bed for you and the sky a building over you, and sent water down from it, and brought fruit out of it for you.\n\nEvery item on the list is something you are standing inside while you read it. Then the sentence closes: do not set up rivals to Allah **while you know**. The case is not built on anything a person has to be taught.",
+        whyAr: "في الآية الحادية والعشرين أوّلُ أمرٍ في الكتاب كلِّه: أن اعبدوا ربّكم؛ وهذه الآيةُ دليلُه الملحق به. واقرأهما معًا تجدها حجّةً لا إخبارًا: اعبدوا الذي ﴿جَعَلَ لَكُمُ ٱلۡأَرۡضَ فِرَٰشٗا وَٱلسَّمَآءَ بِنَآءٗ﴾، وأنزل من السماء ماءً فأخرج به من الثمرات رزقًا لكم.\n\nوكلُّ ما عُدّ في الآية أنت قائمٌ فيه وأنت تقرؤها. ثم خُتمت: ﴿فَلَا تَجۡعَلُواْ لِلَّهِ أَندَادٗا وَأَنتُمۡ تَعۡلَمُونَ﴾ — **وأنتم تعلمون**. فليست الحجّةُ مبنيّةً على شيءٍ يحتاج المرءُ أن يُعلَّمه.",
+        ref: "Surah Al-Baqarah (2:22), read with (2:21)",
+        strength: "quran",
+        words: [
+          {
+            w: "فِرَٰشٗا",
+            t: "firashan — a bed, something spread to rest on",
+            meaning: "The word is bedding. It is what you spread out and lie on, and the Quran uses the same root for the furnishings of Paradise. The claim is about the earth being **furnished** — made restful, made fit to live on — not about its shape.",
+            meaningAr: "اللفظُ من الفراش، وهو ما يُبسط ليُضطجع عليه، وبه جاء وصفُ فُرُش الجنّة في القرآن. فالمقصودُ أنّ الأرض **مُهيّأة**: جُعلت قرارًا يُستراح عليه ويُعاش فيه، لا الإخبارُ عن شكلها.",
+            instead: "And hear the pair the verse makes: a **bed** below, a **building** above. The lower thing is soft and made for rest; the upper is raised and holds together. Two words, and between them the picture of a house made ready for someone.",
+            insteadAr: "وتأمّل المقابلة: **فراشٌ** من تحت، و**بناءٌ** من فوق. فالأسفلُ ليّنٌ للراحة، والأعلى مرفوعٌ ممسَك. كلمتان، وبينهما صورةُ دارٍ هُيّئت لساكن.",
+            source: "Quranic usage of the root ف ر ش (56:34 among others)",
+            strength: "lugha"
+          },
+          {
+            w: "بِنَآءٗ",
+            t: "bina'an — a built structure",
+            meaning: "Not merely a roof and not merely “sky”: a bina' is something constructed — raised, joined, held together. The sky is described here as a building; elsewhere it is called a **guarded ceiling**. The 🔬 panel on this surah takes that description up with what is now known about the air above us.",
+            meaningAr: "ليس سقفًا فحسب ولا سماءً مجرّدة: فالبناءُ ما رُفع وأُحكم ووُصل بعضُه ببعض. فوُصفت السماءُ ههنا بأنها بناء، ووُصفت في موضعٍ آخر بأنها **سقفٌ محفوظ**. وفي لوحة 🔬 في هذه السورة بسطُ ذلك مع ما عُرف اليوم عن الهواء فوقنا.",
+            source: "Quranic usage of the root ب ن ي, and 21:32",
+            strength: "lugha"
+          }
+        ],
+        misunderstood: "THE CLAIM: that calling the earth a “bed” means the Quran teaches a flat earth.\n\nWHAT THE WORD SAYS: a bed is named for what it is **for**, not for its geometry. A bed on a hillside is still a bed. The verse is saying the ground was made restful and usable for you, and it pairs that with the sky being built over you.\n\nAND THE SCHOLARS ARE NOT SILENT ON THIS. Ibn Hazm (d. 456 AH) wrote that the leading scholars of Islam held the earth to be round, and Ibn Taymiyyah (d. 728 AH) reported the same as the position of the scholars — both writing centuries before any telescope. Whatever one makes of that, it settles one thing: nobody reading this verse in Arabic, in the classical period, took it as a statement about the shape of the earth.",
+        misunderstoodAr: "الدعوى: أنّ وصف الأرض بأنها «فراش» يعني أنّ القرآن يقول بأنّ الأرض مسطّحة.\n\nوالذي يقوله اللفظ: أنّ الفراش سُمّي بما هو **له**، لا بهندسته. فالفراشُ على سفح جبلٍ فراش. والآيةُ تخبر أنّ الأرض جُعلت قرارًا صالحًا لك، وقرنت ذلك ببناء السماء فوقك.\n\nوليس أهلُ العلم ساكتين عن هذا: فقد ذكر ابنُ حزم (ت ٤٥٦هـ) أنّ أئمّة الإسلام على أنّ الأرض كُرَويّة، ونقل ابنُ تيمية (ت ٧٢٨هـ) نحو ذلك عن أهل العلم — وكلاهما قبل المراصد الحديثة بقرون. ومهما يكن من أمرٍ فهذا يحسم أمرًا واحدًا: أنّ أحدًا ممّن قرأ الآية بالعربية في القرون الأولى لم يفهم منها خبرًا عن شكل الأرض.",
+        links: [
+          {
+            ref: "Surah Nuh (71:19-20)",
+            ar: "وَٱللَّهُ جَعَلَ لَكُمُ ٱلۡأَرۡضَ بِسَاطٗا ۝ لِّتَسۡلُكُواْ مِنۡهَا سُبُلٗا فِجَاجٗا",
+            en: "“And Allah has made for you the earth an expanse, that you may follow therein roads and pathways.”",
+            how: "The same image with its purpose attached: spread out **so that** you can travel it. Again the earth is described by what it does for you.",
+            howAr: "الصورةُ نفسُها ومعها غايتُها: بُسطت **لتسلكوا** فيها. فالأرضُ موصوفةٌ بما تصنعه لك مرّةً أخرى."
+          },
+          {
+            ref: "Surah Al-Anbiya (21:32)",
+            ar: "وَجَعَلۡنَا ٱلسَّمَآءَ سَقۡفٗا مَّحۡفُوظٗاۖ",
+            en: "“And We made the sky a protected ceiling.”",
+            how: "Built here, guarded there. Put the two words together and the sky is not scenery: it is a structure with a job.",
+            howAr: "بناءٌ ههنا، ومحفوظٌ هناك. فإذا جمعت الوصفين لم تكن السماءُ منظرًا، بل بناءً له وظيفة."
+          }
+        ]
+      },
+      {
+        n: 26,
+        ar: "۞ إِنَّ ٱللَّهَ لَا يَسۡتَحۡيِۦٓ أَن يَضۡرِبَ مَثَلٗا مَّا بَعُوضَةٗ فَمَا فَوۡقَهَاۚ فَأَمَّا ٱلَّذِينَ ءَامَنُواْ فَيَعۡلَمُونَ أَنَّهُ ٱلۡحَقُّ مِن رَّبِّهِمۡۖ وَأَمَّا ٱلَّذِينَ كَفَرُواْ فَيَقُولُونَ مَاذَآ أَرَادَ ٱللَّهُ بِهَٰذَا مَثَلٗاۘ يُضِلُّ بِهِۦ كَثِيرٗا وَيَهۡدِي بِهِۦ كَثِيرٗاۚ وَمَا يُضِلُّ بِهِۦٓ إِلَّا ٱلۡفَٰسِقِينَ",
+        why: "The two parables before this (the man who kindled a fire, and the people caught in the storm) were met with mockery: what kind of revelation talks about gnats and spiders? The verse answers the objection without apologising for it — Allah is not ashamed to strike a parable of a mosquito, or of what is above it.\n\nThen it turns the objection into a test. One parable, two results: the believers know it is the truth from their Lord; the others ask what He could have meant by it. **He misguides many by it and guides many by it.** What a person takes out of a verse turns out to be a measurement of what he brought to it.",
+        whyAr: "المثلان قبلها — الذي استوقد نارًا، وأصحابُ الصيّب — قوبلا بالاستهزاء: أيُّ وحيٍ هذا يضرب المثل بالبعوض والعنكبوت؟ فجاء الجوابُ غيرَ معتذر: ﴿إِنَّ ٱللَّهَ لَا يَسۡتَحۡيِۦٓ أَن يَضۡرِبَ مَثَلٗا مَّا بَعُوضَةٗ فَمَا فَوۡقَهَاۚ﴾.\n\nثم حوّلت الآيةُ الاعتراضَ نفسه إلى امتحان: مثلٌ واحد ونتيجتان؛ فالذين آمنوا يعلمون أنه الحقّ من ربّهم، والآخرون يقولون ماذا أراد الله بهذا مثلًا. ﴿يُضِلُّ بِهِۦ كَثِيرٗا وَيَهۡدِي بِهِۦ كَثِيرٗاۚ﴾. فما يخرج به المرءُ من الآية ميزانٌ لما دخل به إليها.",
+        ref: "Surah Al-Baqarah (2:26)",
+        strength: "quran",
+        plain: "Someone laughed at the Quran for mentioning an insect. The answer was not to stop mentioning insects. It was: the size of the example was never the point — and the fact that you stumbled over it is itself part of the test.",
+        plainAr: "سخر قومٌ من القرآن أن ضرب المثل بحشرة، فما كان الجوابُ تركَ الحشرات، وإنما: أنّ صِغَر المثل لم يكن قطُّ موضعَ النظر — وأنّ تعثّرك فيه هو نفسه من الامتحان.",
+        words: [
+          {
+            w: "بَعُوضَةٗ",
+            t: "ba'udah — a mosquito",
+            meaning: "The smallest biting thing in the listener's world, and it is indefinite: *a* mosquito, any one of them. The argument is deliberately built on the least impressive creature to hand.",
+            meaningAr: "أصغرُ ما يلسع في دنيا السامع، وجاءت نكرةً: **بعوضةً** ما، أيَّ بعوضةٍ كانت. فبُنيت الحجّةُ عمدًا على أهون خلقٍ حاضر.",
+            source: "Quranic usage",
+            strength: "quran"
+          }
+        ],
+        differ: {
+          title: "“And what is above it” — above in what?",
+          titleAr: "﴿فَمَا فَوۡقَهَاۚ﴾ — فوقها في ماذا؟",
+          views: [
+            {
+              who: "The first reading, held by a number of the early mufassirun",
+              whoAr: "القول الأوّل، وبه قال جماعةٌ من المفسّرين الأوائل",
+              view: "Above it in size: the parable may be of a mosquito or of anything larger than it. On this reading the verse is saying that no creature, small or large, is beneath being used as a proof.",
+              viewAr: "فوقها في الكِبَر: فيضرب المثلَ بالبعوضة وبما هو أكبر منها. وعلى هذا فالآيةُ تقول إنه لا يُستصغَر خلقٌ أن يُضرب به المثل، صغيرًا كان أو كبيرًا."
+            },
+            {
+              who: "The second reading, also reported from the early mufassirun",
+              whoAr: "القول الثاني، وهو مرويٌّ عن المتقدّمين أيضًا",
+              view: "Above it in smallness — “above” in the sense of “beyond”, the way one thing surpasses another in a quality. So: a mosquito, or something smaller still.",
+              viewAr: "فوقها في الصِّغَر — و«فوق» ههنا بمعنى التجاوز، كما يُقال: فلانٌ فوق فلانٍ في كذا. فالمعنى: بعوضةً فما هو أصغر منها."
+            }
+          ],
+          weight: "Both readings are old and the classical tafsirs carry them side by side, so a reader should hold both. The verse's argument works either way: it is about what can carry a proof, not about the size of anything. What is worth noticing is the second reading's reach — for a thousand years after it was written down, “smaller than a mosquito” named creatures nobody could see. The 🔬 panel on this surah takes that up as a fit, and says plainly that it is not a proof.",
+          weightAr: "القولان قديمان، وكتبُ التفسير تحملهما جميعًا، فحقُّ القارئ أن يستحضرهما. وحجّةُ الآية قائمةٌ على كلا الوجهين، فإنها في ما يصلح أن يكون دليلًا لا في حجم شيء. والذي يستحقّ الالتفات سَعةُ القول الثاني: فقد ظلّ «ما هو أصغر من البعوضة» ألفَ سنةٍ يُشير إلى خلقٍ لا يراه أحد. وفي لوحة 🔬 في هذه السورة بيانُ ذلك، ومعه التصريحُ بأنه موافقةٌ لا برهان.",
+          strength: "ikhtilaf"
+        },
+        links: [
+          {
+            ref: "Surah Al-Hajj (22:73)",
+            ar: "إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابٗا وَلَوِ ٱجۡتَمَعُواْ لَهُۥۖ",
+            en: "“Indeed, those you invoke besides Allah will never create a fly, even if they gathered together for it.”",
+            how: "The same method, used against the same objection: the argument is built on the smallest creature to hand, because the smallest is enough to settle it.",
+            howAr: "الطريقةُ نفسُها في وجه الاعتراض نفسه: تُبنى الحجّةُ على أصغر خلقٍ حاضر، لأنّ الأصغر كافٍ في الحسم."
+          }
+        ]
+      },
+      {
+        n: 164,
+        ar: "إِنَّ فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَٱخۡتِلَٰفِ ٱلَّيۡلِ وَٱلنَّهَارِ وَٱلۡفُلۡكِ ٱلَّتِي تَجۡرِي فِي ٱلۡبَحۡرِ بِمَا يَنفَعُ ٱلنَّاسَ وَمَآ أَنزَلَ ٱللَّهُ مِنَ ٱلسَّمَآءِ مِن مَّآءٖ فَأَحۡيَا بِهِ ٱلۡأَرۡضَ بَعۡدَ مَوۡتِهَا وَبَثَّ فِيهَا مِن كُلِّ دَآبَّةٖ وَتَصۡرِيفِ ٱلرِّيَٰحِ وَٱلسَّحَابِ ٱلۡمُسَخَّرِ بَيۡنَ ٱلسَّمَآءِ وَٱلۡأَرۡضِ لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ",
+        why: "Verse 163 states it in seven words: your God is one God. This verse is the evidence — and the evidence is the weather.\n\nEight signs, and not one of them is a miracle: the heavens and the earth; night and day taking turns; the ships that run on the sea with what benefits people; water sent down; dead ground brought back to life; animals scattered through it; the steering of the winds; the cloud held between sky and earth. The list travels from the furthest thing to the nearest — it ends directly above your head — and then names who it is for: **a people who use their minds**.",
+        whyAr: "قالت الآيةُ قبلها كلمتها: وإلهكم إلهٌ واحد. وهذه الآيةُ دليلُها — ودليلُها هو الطقس.\n\nثماني آياتٍ ليس فيها خارقةٌ واحدة: خلقُ السماوات والأرض، واختلافُ الليل والنهار، والفُلكُ التي تجري في البحر بما ينفع الناس، وماءٌ يُنزَل، وأرضٌ تحيا بعد موتها، ودوابُّ تُبثّ فيها، وتصريفُ الرياح، والسحابُ المسخَّر بين السماء والأرض. يسير العدُّ من الأبعد إلى الأقرب حتى ينتهي فوق رأسك، ثم يُسمّي لمن هي: ﴿لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ﴾.",
+        ref: "Surah Al-Baqarah (2:164), read with (2:163)",
+        strength: "quran",
+        plain: "If someone asks what the evidence for God is, this verse does not reach for a miracle. It points at rain, wind, a cloud that stays up, ships that float, and the fact that anything grows at all — and then says these are signs for people who think.",
+        plainAr: "إذا سُئلت: ما الدليل؟ فهذه الآيةُ لا تطلب خارقة. تُشير إلى المطر، والريح، وسحابةٍ تثبت في الهواء، وسفنٍ تطفو، وإلى أنّ شيئًا ينبت أصلًا — ثم تقول: إنّ في ذلك لآياتٍ لقومٍ يعقلون.",
+        words: [
+          {
+            w: "وَتَصۡرِيفِ",
+            t: "tasrif — the turning about",
+            meaning: "A verbal noun of the doubled form (sarrafa), and that form in Arabic carries repetition and variety. Not one movement of the wind: its constant changing — direction, strength, heat and cold, season after season.",
+            meaningAr: "مصدرٌ على وزن التفعيل من «صرّف»، وهذا البناءُ في العربية للتكثير والتنويع. فليست حركةً واحدةً للريح، بل تقلّبُها الدائم: جهةً وقوّةً وحرًّا وبردًا، فصلًا بعد فصل.",
+            source: "Arabic morphology (form II, tafʿīl, for repetition)",
+            strength: "lugha"
+          },
+          {
+            w: "ٱلۡمُسَخَّرِ",
+            t: "al-musakhkhar — pressed into service",
+            meaning: "A passive participle: the cloud does not hold itself there. Taskhir is being made to serve — without wages and without a choice. The Quran uses the same word of the sun, the moon, the sea and the rivers: everything in the list is on duty.",
+            meaningAr: "اسمُ مفعول: فالسحابُ لا يُمسك نفسَه. والتسخيرُ: أن يُجعل الشيءُ خادمًا بلا أجرٍ ولا اختيار. وبه وُصفت الشمسُ والقمرُ والبحرُ والأنهارُ في القرآن: فكلُّ ما في العدّ موظَّف.",
+            source: "Quranic usage of the root س خ ر (14:32-33, 16:14 among others)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Ar-Rum (30:48)",
+            ar: "ٱللَّهُ ٱلَّذِي يُرۡسِلُ ٱلرِّيَٰحَ فَتُثِيرُ سَحَابٗا فَيَبۡسُطُهُۥ فِي ٱلسَّمَآءِ كَيۡفَ يَشَآءُ وَيَجۡعَلُهُۥ كِسَفٗا فَتَرَى ٱلۡوَدۡقَ يَخۡرُجُ مِنۡ خِلَٰلِهِۦۖ",
+            en: "“It is Allah who sends the winds, and they stir the clouds, and He spreads them in the sky however He wills, and makes them fragments — and you see the rain emerge from within them.”",
+            how: "Here the wind and the cloud are named side by side; there the order of operations is given — the wind raises it, spreads it, breaks it into pieces, and the drops come out of the gaps. Two verses, one process.",
+            howAr: "ههنا ذُكرت الريحُ والسحابُ مقترنين، وهناك ذُكر الترتيب: الريحُ تُثير السحاب، ثم يُبسط، ثم يُجعل كِسَفًا، ثم يخرج الودقُ من خلاله. آيتان وعمليّةٌ واحدة."
+          },
+          {
+            ref: "Surah Aal-Imran (3:191)",
+            ar: "ٱلَّذِينَ يَذۡكُرُونَ ٱللَّهَ قِيَٰمٗا وَقُعُودٗا وَعَلَىٰ جُنُوبِهِمۡ وَيَتَفَكَّرُونَ فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ",
+            en: "“Those who remember Allah standing, sitting and on their sides, and reflect upon the creation of the heavens and the earth.”",
+            how: "This verse lists the signs; that one describes the people who can read them — and says what reading them properly ends in: not a conclusion, but words addressed upward.",
+            howAr: "هذه الآيةُ تعدّ الآيات، وتلك تصف من يقرؤها — وتذكر إلامَ ينتهي النظرُ الصحيح: لا إلى نتيجة، بل إلى كلامٍ يُوجَّه إلى فوق."
+          }
+        ]
+      },
+      {
+        n: 219,
+        ar: "۞ يَسۡـَٔلُونَكَ عَنِ ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِۖ قُلۡ فِيهِمَآ إِثۡمٞ كَبِيرٞ وَمَنَٰفِعُ لِلنَّاسِ وَإِثۡمُهُمَآ أَكۡبَرُ مِن نَّفۡعِهِمَاۗ وَيَسۡـَٔلُونَكَ مَاذَا يُنفِقُونَۖ قُلِ ٱلۡعَفۡوَۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمُ ٱلۡأٓيَٰتِ لَعَلَّكُمۡ تَتَفَكَّرُونَ",
+        why: "Two questions, one answer each — and the first answer is the Quran's whole method in a line. It does not deny the benefit: **in them is great sin, and benefits for people**. Then it weighs: **and their sin is greater than their benefit**.\n\nThis is also the middle step of a prohibition that came in stages: first this weighing, then “do not come near prayer while intoxicated” (4:43), then the final word (5:90). A people was taught to let go of something woven into its life, over years, one step at a time.",
+        whyAr: "سؤالان، ولكلٍّ جوابُه — وفي الجواب الأوّل منهجُ القرآن كلُّه في سطر: فلم يُنكر المنفعة: ﴿فِيهِمَآ إِثۡمٞ كَبِيرٞ وَمَنَٰفِعُ لِلنَّاسِ﴾، ثم وزن: ﴿وَإِثۡمُهُمَآ أَكۡبَرُ مِن نَّفۡعِهِمَاۗ﴾.\n\nوهذه أيضًا الخطوةُ الوسطى في تحريمٍ جاء على مراحل: هذا الوزنُ أوّلًا، ثم النهيُ عن قربان الصلاة في حال السُّكر (٤:٤٣)، ثم الكلمةُ الأخيرة (٥:٩٠). فرُبّي قومٌ على ترك شيءٍ داخلٍ في نسيج حياتهم، على سنين، درجةً درجة.",
+        ref: "Surah Al-Baqarah (2:219), read with (4:43) and (5:90)",
+        strength: "quran",
+        misunderstood: "TWO MISREADINGS, pulling in opposite directions.\n\nThe first: that Islam pretends there is nothing good in wine or gambling at all. The verse itself says there are benefits in them, and says it before it says anything else.\n\nThe second: that because the verse concedes benefits, the matter is open. The same sentence answers that — the sin is **greater** than the benefit, and the weighing did not stop here. The final ruling came later, in Surah Al-Ma'idah.\n\nThe method is worth keeping for other questions: name what is good in a thing, name what is harmful, and rule by the weight of them — rather than pretending one side of the scale is empty.",
+        misunderstoodAr: "خطآن في الفهم، يشدّان إلى جهتين متقابلتين.\n\nالأوّل: أنّ الإسلام يزعم أن لا خير في الخمر والميسر البتّة. والآيةُ نفسُها تُثبت فيهما منافع، وتُثبتها قبل كلّ شيء.\n\nوالثاني: أنّ إقرار الآية بالمنافع يجعل الأمر مفتوحًا. والجملةُ نفسُها تردّه: فالإثم **أكبر** من النفع، ثم لم يقف الوزنُ عند هذه الآية، بل جاء الحكمُ الأخير في سورة المائدة.\n\nوالمنهجُ جديرٌ أن يُحمل إلى غير هذه المسألة: يُسمّى ما في الشيء من خير، ويُسمّى ما فيه من ضرر، ثم يُحكم بالراجح — لا بادّعاء أنّ إحدى الكفّتين فارغة.",
+        words: [
+          {
+            w: "أَكۡبَرُ",
+            t: "akbar — greater",
+            meaning: "A comparative, and a comparative concedes the other side. If the point had been that there is no good in them at all, the word could not have been “greater **than** their benefit”. The ruling is a weighing, and the reader is shown both pans.",
+            meaningAr: "اسمُ تفضيل، واسمُ التفضيل يُقرّ بالطرف الآخر. فلو كان المرادُ أن لا نفع فيهما أصلًا لما استقام أن يُقال: أكبر **من** نفعهما. فالحكمُ وزنٌ، والقارئُ يرى الكفّتين جميعًا.",
+            source: "Arabic grammar: the comparative presupposes what it is compared with",
+            strength: "lugha"
+          },
+          {
+            w: "ٱلۡعَفۡوَۗ",
+            t: "al-'afw — what is spare",
+            meaning: "The answer to “what should we spend?” is not a number. Al-'afw is the surplus: what is beyond your need, what your hand can let go of without injuring you. The same root gives pardon — releasing what you had the right to hold.",
+            meaningAr: "جوابُ «ماذا ننفق؟» ليس عددًا. والعفوُ: الفضلُ، ما زاد على الحاجة وما تستطيع اليدُ أن تُرسله من غير ضرر. ومن المادّة نفسها العفوُ عن الذنب: إرسالُ ما كان لك أن تُمسكه.",
+            source: "The classical lexicons on ع ف و: al-'afw is the surplus, the excess beyond need",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:90)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِنَّمَا ٱلۡخَمۡرُ وَٱلۡمَيۡسِرُ وَٱلۡأَنصَابُ وَٱلۡأَزۡلَٰمُ رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ فَٱجۡتَنِبُوهُ لَعَلَّكُمۡ تُفۡلِحُونَ",
+            en: "“O you who believe: intoxicants, gambling, idols and divining arrows are an abomination from the work of Satan, so avoid it, that you may be successful.”",
+            how: "The end of the road this verse started. Notice that even the final prohibition does not argue about benefits — it changes the category: this is filth from Satan's work, so keep away from it.",
+            howAr: "منتهى الطريق الذي ابتدأته هذه الآية. وتأمّل أنّ التحريم الأخير لم يُجادل في المنافع، وإنما نقل الشيء إلى بابٍ آخر: رجسٌ من عمل الشيطان، فاجتنبوه."
+          }
+        ]
+      },
+      {
+        n: 233,
+        ar: "۞ وَٱلۡوَٰلِدَٰتُ يُرۡضِعۡنَ أَوۡلَٰدَهُنَّ حَوۡلَيۡنِ كَامِلَيۡنِۖ لِمَنۡ أَرَادَ أَن يُتِمَّ ٱلرَّضَاعَةَۚ وَعَلَى ٱلۡمَوۡلُودِ لَهُۥ رِزۡقُهُنَّ وَكِسۡوَتُهُنَّ بِٱلۡمَعۡرُوفِۚ لَا تُكَلَّفُ نَفۡسٌ إِلَّا وُسۡعَهَاۚ لَا تُضَآرَّ وَٰلِدَةُۢ بِوَلَدِهَا وَلَا مَوۡلُودٞ لَّهُۥ بِوَلَدِهِۦۚ وَعَلَى ٱلۡوَارِثِ مِثۡلُ ذَٰلِكَۗ فَإِنۡ أَرَادَا فِصَالًا عَن تَرَاضٖ مِّنۡهُمَا وَتَشَاوُرٖ فَلَا جُنَاحَ عَلَيۡهِمَاۗ وَإِنۡ أَرَدتُّمۡ أَن تَسۡتَرۡضِعُوٓاْ أَوۡلَٰدَكُمۡ فَلَا جُنَاحَ عَلَيۡكُمۡ إِذَا سَلَّمۡتُم مَّآ ءَاتَيۡتُم بِٱلۡمَعۡرُوفِۗ وَٱتَّقُواْ ٱللَّهَ وَٱعۡلَمُوٓاْ أَنَّ ٱللَّهَ بِمَا تَعۡمَلُونَ بَصِيرٞ",
+        why: "A ruling about milk — and look at what it is careful with.\n\nTwo complete years, **for whoever wishes to complete the nursing**: a right to be completed, not a duty laid on every mother. The father provides her food and clothing as is reasonable. No soul is burdened beyond its capacity. Then the sentence that is not about the baby at all: **no mother is to be harmed through her child, and no father through his**. Weaning earlier is allowed — if both agree, and after they consult each other.\n\nRead the clauses in order and you are reading a fence built around a separated couple, so that the one thing neither of them can use as a weapon is the child.",
+        whyAr: "حكمٌ في الرضاع — وانظر بماذا احتاط.\n\nحولان كاملان، ﴿لِمَنۡ أَرَادَ أَن يُتِمَّ ٱلرَّضَاعَةَۚ﴾: حقٌّ يُتمّ، لا فرضٌ يُلزَم به كلُّ أمّ. وعلى الأب رزقُهنّ وكسوتُهنّ بالمعروف. ولا تُكلَّف نفسٌ إلا وسعها. ثم الجملةُ التي ليست في الطفل أصلًا: ﴿لَا تُضَآرَّ وَٰلِدَةُۢ بِوَلَدِهَا وَلَا مَوۡلُودٞ لَّهُۥ بِوَلَدِهِۦۚ﴾. ثم الفصالُ قبل ذلك جائز — إن تراضيا وتشاورا.\n\nاقرأ الجُمل على ترتيبها تجدها سياجًا يُبنى حول زوجين افترقا، حتى لا يكون الولدُ هو السلاح.",
+        ref: "Surah Al-Baqarah (2:233)",
+        strength: "quran",
+        plain: "Two years of nursing is the full term, and it belongs to whoever wants to complete it. Stopping earlier is allowed when the parents agree and talk it through. And in the middle of a ruling about feeding a baby, both parents are told: do not use the child to hurt the other one.",
+        plainAr: "الحولان تمامُ الرضاعة، وهما لمن أراد أن يُتمّ. والفطامُ قبلهما جائزٌ إذا تراضى الوالدان وتشاورا. وفي وسط حكمٍ في إرضاع طفلٍ يُقال للأبوين: لا يجعل أحدُكما الولدَ سبيلًا إلى أذى الآخر.",
+        words: [
+          {
+            w: "حَوۡلَيۡنِ كَامِلَيۡنِۖ",
+            t: "hawlayni kamilayn — two complete years",
+            meaning: "“Complete” adds nothing to the arithmetic — it closes the argument about part-years before it starts. And the clause that follows it turns the number into an entitlement rather than an order: for whoever wishes to complete the nursing.",
+            meaningAr: "«كاملين» لا تزيد في الحساب شيئًا، وإنما تقطع النزاع في الكسور قبل أن يقع. والجملةُ بعدها تجعل العددَ حقًّا يُستوفى لا أمرًا يُفرض: لمن أراد أن يتمّ الرضاعة.",
+            source: "Quranic wording, read with 31:14 and 46:15",
+            strength: "quran"
+          },
+          {
+            w: "وَتَشَاوُرٖ",
+            t: "tashawur — consulting each other",
+            meaning: "Form VI: the pattern of a thing done **between** two people, each way. The verse does not merely permit early weaning; it names the procedure — mutual agreement, and mutual consultation. A ruling with a method attached.",
+            meaningAr: "على وزن «تفاعُل»: بناءُ ما يجري **بين** اثنين، من الجهتين جميعًا. فالآيةُ لم تُجِز الفطام المبكّر فحسب، بل سمّت طريقه: تراضٍ وتشاور. حكمٌ معه إجراؤه.",
+            source: "Arabic morphology (form VI, tafāʿul, for a mutual act)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Ahqaf (46:15)",
+            ar: "وَحَمۡلُهُۥ وَفِصَٰلُهُۥ ثَلَٰثُونَ شَهۡرًاۚ",
+            en: "“And his bearing and his weaning are thirty months.”",
+            how: "Put beside the two complete years here, this is where the jurists derived the shortest possible pregnancy: thirty months less twenty-four leaves six. The derivation is reported from Ali and from Ibn Abbas, and it is a reading of two verses together — not a separate text.",
+            howAr: "إذا وُضعت إلى جانب الحولين الكاملين ههنا خرج منها ما استنبطه الفقهاء في أقلّ مدّة الحمل: ثلاثون شهرًا إلا أربعةً وعشرين تبقى ستّة. والاستنباطُ مرويٌّ عن عليٍّ وعن ابن عباس، وهو جمعٌ بين آيتين لا نصٌّ مستقلّ."
+          },
+          {
+            ref: "Surah Luqman (31:14)",
+            ar: "وَفِصَٰلُهُۥ فِي عَامَيۡنِ",
+            en: "“And his weaning is in two years.”",
+            how: "The same period again, in a verse about what a mother bore for the child — which is why the Quran attaches the command to thank the parents to it.",
+            howAr: "المدّةُ نفسُها مرّةً أخرى، في آيةٍ سياقُها ما حملته الأمُّ من أجل الولد — ولذلك قُرن بها الأمرُ بشكر الوالدين."
+          }
+        ]
+      },
+      {
+        n: 275,
+        ar: "ٱلَّذِينَ يَأۡكُلُونَ ٱلرِّبَوٰاْ لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ ٱلَّذِي يَتَخَبَّطُهُ ٱلشَّيۡطَٰنُ مِنَ ٱلۡمَسِّۚ ذَٰلِكَ بِأَنَّهُمۡ قَالُوٓاْ إِنَّمَا ٱلۡبَيۡعُ مِثۡلُ ٱلرِّبَوٰاْۗ وَأَحَلَّ ٱللَّهُ ٱلۡبَيۡعَ وَحَرَّمَ ٱلرِّبَوٰاْۚ فَمَن جَآءَهُۥ مَوۡعِظَةٞ مِّن رَّبِّهِۦ فَٱنتَهَىٰ فَلَهُۥ مَا سَلَفَ وَأَمۡرُهُۥٓ إِلَى ٱللَّهِۖ وَمَنۡ عَادَ فَأُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
+        why: "The verse opens with a picture rather than a rule: those who devour riba do not stand except as one stands whom Satan has knocked senseless by his touch. Then it quotes their argument in their own words — **trade is just like riba** — and answers by separating the two things they had joined: Allah has permitted trade and forbidden riba.\n\nNotice the direction of their comparison. They did not say riba is like trade. They said trade is like riba: the thing already accepted is dragged over to cover the thing that is not. The answer does not argue economics with them at all. It states the ruling, and leaves the two apart.",
+        whyAr: "افتتحت الآيةُ بصورةٍ لا بحكم: ﴿ٱلَّذِينَ يَأۡكُلُونَ ٱلرِّبَوٰاْ لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ ٱلَّذِي يَتَخَبَّطُهُ ٱلشَّيۡطَٰنُ مِنَ ٱلۡمَسِّۚ﴾. ثم حكت حجّتهم بلفظهم: ﴿إِنَّمَا ٱلۡبَيۡعُ مِثۡلُ ٱلرِّبَوٰاْۗ﴾، فأجابت بالتفريق بين ما جمعوه: ﴿وَأَحَلَّ ٱللَّهُ ٱلۡبَيۡعَ وَحَرَّمَ ٱلرِّبَوٰاْۚ﴾.\n\nوتأمّل جهة التشبيه عندهم: لم يقولوا إنّ الربا مثل البيع، بل قالوا إنّ البيع مثل الربا — فجُرّ المقبولُ ليُغطّي غير المقبول. ولم يُجادلهم الجوابُ في التجارة، وإنما أثبت الحكم وترك الأمرين مفترقين.",
+        ref: "Surah Al-Baqarah (2:275)",
+        strength: "quran",
+        plain: "The Quran's picture of a man who lives on interest is a man who cannot stand up straight. And the verse that forbids riba is the same verse that declares trade lawful — profit is not the problem.",
+        plainAr: "صورةُ آكل الربا في القرآن رجلٌ لا يستطيع أن يستوي قائمًا. والآيةُ التي حرّمت الربا هي نفسُها التي أحلّت البيع — فليست المشكلةُ في الربح.",
+        words: [
+          {
+            w: "يَتَخَبَّطُهُ",
+            t: "yatakhabbatuhu — knocks him about",
+            meaning: "Takhabbut is being struck this way and that — the verb is used of a beast thrashing and of a man floundering with no footing. The form (tafaʿʿul) carries repetition: not one blow, but continual staggering.",
+            meaningAr: "التخبّطُ: أن يُضرب الشيءُ من غير جهةٍ واحدة — ويُقال في البهيمة تخبط بيدها، وفي الرجل يتخبّط لا يستقرّ له قدم. وبناءُ «التفعّل» فيه للتكرار: لا ضربةً واحدة، بل ترنّحًا متّصلًا.",
+            source: "Arabic usage of the root خ ب ط, and the form tafaʿʿul for repetition",
+            strength: "lugha"
+          }
+        ],
+        misunderstood: "THE COMMON IDEA: that Islam is suspicious of profit, or that riba and ordinary trade are near-relatives with a thin line between them.\n\nWHAT THE VERSE DOES: it puts the two in different categories in a single breath — trade permitted, riba forbidden — and it does so **in answer to** the people who claimed they were alike. The Quran is not weighing a percentage here. It is refusing a comparison.",
+        misunderstoodAr: "الفكرةُ الشائعة: أنّ الإسلام يتحفّظ على الربح، أو أنّ الربا والبيع متقاربان يفصل بينهما خيطٌ رفيع.\n\nوالذي صنعته الآية: أنها جعلتهما في بابين في نفَسٍ واحد — بيعٌ حلال وربًا حرام — وجاء ذلك **جوابًا** لمن زعم أنهما سواء. فليست الآيةُ في وزن نسبةٍ مئويّة، وإنما في ردّ تشبيهٍ من أصله.",
+        links: [
+          {
+            ref: "Surah Ar-Rum (30:39)",
+            ar: "وَمَآ ءَاتَيۡتُم مِّن رِّبٗا لِّيَرۡبُوَاْ فِيٓ أَمۡوَٰلِ ٱلنَّاسِ فَلَا يَرۡبُواْ عِندَ ٱللَّهِۖ",
+            en: "“And whatever you give in riba to increase within the wealth of people will not increase with Allah.”",
+            how: "The word riba means increase. This verse takes the name and turns it over: the thing called “increase” does not increase with Allah — and the verse beside this one says it plainly, that He wipes out riba and makes charity grow.",
+            howAr: "الربا في اللغة الزيادة، وهذه الآيةُ تأخذ الاسم فتقلبه: فالذي سُمّي زيادةً لا يزيد عند الله — والآيةُ التي تلي آيتنا تُصرّح: يمحق الله الربا ويُربي الصدقات."
+          }
+        ]
+      },
+      {
+        n: 282,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِذَا تَدَايَنتُم بِدَيۡنٍ إِلَىٰٓ أَجَلٖ مُّسَمّٗى فَٱكۡتُبُوهُۚ وَلۡيَكۡتُب بَّيۡنَكُمۡ كَاتِبُۢ بِٱلۡعَدۡلِۚ وَلَا يَأۡبَ كَاتِبٌ أَن يَكۡتُبَ كَمَا عَلَّمَهُ ٱللَّهُۚ",
+        arNote: "The verse is the longest in the Quran; its opening is quoted here, and the whole of it is above.",
+        arNoteAr: "هي أطولُ آيةٍ في القرآن، ومطلعُها مذكورٌ ههنا، وهي كاملةٌ أعلاه.",
+        why: "This is the longest verse in the Quran. It is not about prayer, or fasting, or the hereafter. It is about writing down a loan.\n\nRead what it insists on. Write it. Let a scribe write it justly. Let **the one who owes** dictate — so the record is in the debtor's own words — and let him fear Allah and not diminish anything of it. If he cannot dictate, his guardian dictates justly. Two witnesses. Do not be too weary to write it, small or large, to its term. That is more just with Allah, more upright for testimony, and **nearer to your not doubting each other**.\n\nA Book that spends its longest verse on paperwork is telling you what it thinks of people's money — and of the quarrels that start when nothing was written down.",
+        whyAr: "هذه أطولُ آيةٍ في القرآن، وليست في صلاةٍ ولا صيامٍ ولا آخرة، وإنما في كتابة دَين.\n\nوانظر فيمَ شدّدت: اكتبوه، وليكتب بينكم كاتبٌ بالعدل، ﴿وَلۡيُمۡلِلِ ٱلَّذِي عَلَيۡهِ ٱلۡحَقُّ﴾ — فيكون السجلُّ بلفظ المَدين نفسِه — وليتّق الله ربّه ولا يبخس منه شيئًا. فإن كان لا يستطيع أن يُملّ فليُملل وليُّه بالعدل. وشهيدان. ﴿وَلَا تَسۡـَٔمُوٓاْ أَن تَكۡتُبُوهُ صَغِيرًا أَوۡ كَبِيرًا إِلَىٰٓ أَجَلِهِۦۚ﴾. ذلكم أقسطُ عند الله وأقومُ للشهادة و﴿وَأَدۡنَىٰٓ أَلَّا تَرۡتَابُوٓاْ﴾.\n\nوكتابٌ يُنفق أطولَ آيةٍ فيه على التوثيق يقول لك كيف ينظر إلى أموال الناس — وإلى الخصومات التي تبدأ حين لا يُكتب شيء.",
+        ref: "Surah Al-Baqarah (2:282)",
+        strength: "quran",
+        plain: "Write down what you lend and what you owe — even between brothers, even a small amount, even when you trust each other. The longest verse in the Quran is a contract, and the reason it gives is not suspicion: it is so that you will not end up doubting one another.",
+        plainAr: "اكتب ما أقرضتَ وما عليك — ولو بين إخوة، ولو كان قليلًا، ولو كان بينكما ثقة. فأطولُ آيةٍ في القرآن عقدٌ مكتوب، وعلّتُها ليست سوء الظنّ، بل ألّا تنتهيا إلى الارتياب.",
+        words: [
+          {
+            w: "تَدَايَنتُم",
+            t: "tadayantum — you deal in debt with one another",
+            meaning: "Form VI again — the form for something done **between** two parties. Not “when you lend” and not “when you borrow”, but when the two of you enter a debt together. The whole shape of the verse follows from that word: it protects both sides at once, and it gives the pen to the weaker one.",
+            meaningAr: "على وزن «تفاعَل» — بناءُ ما يقع **بين** اثنين. فليست «إذا أقرضتم» ولا «إذا استدنتم»، بل إذا دخلتما في الدَّين جميعًا. ومن هذه الكلمة جاءت صورةُ الآية كلِّها: تحفظ الطرفين معًا، وتجعل الإملاء لمن عليه الحقّ.",
+            source: "Arabic morphology (form VI, tafāʿul, for a mutual act)",
+            strength: "lugha"
+          },
+          {
+            w: "تَسۡـَٔمُوٓاْ",
+            t: "la tas'amu — do not grow weary",
+            meaning: "The verse names the real reason people skip the writing, and it is not dishonesty. It is tiredness — the loan is small, we know each other, we will remember. Small or large, says the verse, to its term.",
+            meaningAr: "سمّت الآيةُ السببَ الحقيقيّ لترك الكتابة، وليس هو الخيانة، وإنما السآمة: المبلغُ يسير، ونحن نعرف بعضنا، وسنذكر. فقالت: صغيرًا أو كبيرًا إلى أجله.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:283)",
+            ar: "وَإِن كُنتُمۡ عَلَىٰ سَفَرٖ وَلَمۡ تَجِدُواْ كَاتِبٗا فَرِهَٰنٞ مَّقۡبُوضَةٞۖ",
+            en: "“And if you are on a journey and cannot find a scribe, then a pledge taken in hand.”",
+            how: "The exception that shows how serious the rule is: when writing is impossible, something else must stand in its place — and the verse then goes straight to the case where the two do trust each other, and tells the trusted one to fear Allah and discharge the trust.",
+            howAr: "الاستثناءُ يدلّ على شدّة الأصل: فإذا تعذّرت الكتابةُ قام غيرُها مقامها — ثم انتقلت الآيةُ إلى حال الائتمان، فأمرت المؤتمَن أن يتّقي الله وأن يؤدّي الأمانة."
+          }
+        ]
       }
     ]
   },
@@ -1095,7 +1434,16 @@ const TADABBUR = {
         why: "The surah of the cave ends by cutting off the road every previous nation went down. He is a man. The line between the created and the Creator is drawn by the messenger himself, about himself, and it is placed at the end where it is remembered.\n\nThen the definition of an accepted deed, in two conditions that must both hold. Let him do a RIGHTEOUS deed — it must match what was legislated, not what he found moving. AND let him not associate anyone in the worship of his Lord — it must be for Allah alone.\n\nSo an act can fail in two directions. Sincere but invented, or correct in form but done to be seen. The verse closes both, and it does so in a single sentence, which is why the scholars took it as the summary of what makes an action count.",
         whyAr: "خُتمت سورةُ الكهف بقطع الطريق التي سلكتها الأمم قبلُ: ﴿إِنَّمَآ أَنَا۠ بَشَرٞ مِّثۡلُكُمۡ﴾. فالحدُّ بين المخلوق والخالق رسمه الرسولُ نفسه في نفسه، وجُعل في الخاتمة حيث يُحفظ.\n\nثم حدُّ العمل المقبول في شرطين لا بدّ منهما جميعًا: ﴿فَلۡيَعۡمَلۡ عَمَلٗا **صَٰلِحٗا**﴾ — أي موافقًا لما شُرع لا لما استحسنه. ﴿**وَلَا يُشۡرِكۡ** بِعِبَادَةِ رَبِّهِۦٓ أَحَدَۢا﴾ — أي خالصًا له وحده.\n\nفالعمل يسقط من جهتين: أن يكون خالصًا مبتدَعًا، أو موافقًا مصنوعًا للناس. وقد سدّت الآيةُ البابين في جملةٍ واحدة، ولذلك جعلها أهل العلم جامعةً لشرطَي القبول.",
         ref: "Surah Al-Kahf (18:110)",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:105)",
+            ar: "وَقُلِ ٱعۡمَلُواْ فَسَيَرَى ٱللَّهُ عَمَلَكُمۡ وَرَسُولُهُۥ وَٱلۡمُؤۡمِنُونَۖ",
+            en: "“And say: work. Allah will see your work, and His Messenger, and the believers.”",
+            how: "Hope for the meeting, then work — and there the same pair in the other order: work, and know that it is being watched while you do it.",
+            howAr: "رجاءُ اللقاء ثم العمل ههنا، وهناك الاقترانُ نفسُه معكوسًا: اعملوا، واعلموا أنّ العمل يُرى وأنتم فيه."
+          }
+        ]
       }
     ]
   },
@@ -1192,7 +1540,16 @@ const TADABBUR = {
         why: "The sentence is built as a restriction — a negation followed by an exception — and that structure is what carries the weight. Not: We sent you, and mercy was among the results. Rather: We sent you for nothing except this.\n\nThen the scope. Not a mercy to the believers, and not a mercy to the Arabs. LIL-'ALAMIN — to all the worlds. The wording is wider than the people who accepted him, which is why the scholars noted that the mercy reached those who rejected him too: the nations before were destroyed outright when they refused, and this one was not.\n\nAnd the verse is a standard a Muslim can be measured against. Anyone who claims to follow a man sent as mercy, and whose following of him produces cruelty, has not misunderstood a detail. He has inverted the stated purpose of the whole thing.",
         whyAr: "بُنيت الجملةُ على القصر: نفيٌ ثم استثناء، وهذا البناءُ هو الحامل للمعنى. فليس المراد: أرسلناك وكانت الرحمة من آثار ذلك؛ وإنما: ما أرسلناك لشيءٍ إلا لهذا.\n\nثم السعة: لا رحمةً للمؤمنين، ولا للعرب، بل ﴿لِّلۡعَٰلَمِينَ﴾. واللفظ أوسع ممّن آمن به، ولذلك نبّه أهل العلم على أنّ الرحمة بلغت من ردّه أيضًا: فالأمم قبله كانت تُستأصل إذا كذّبت، وهذه الأمّة لم تُستأصل.\n\nوفي الآية ميزانٌ يُوزن به المسلم: فمن ادّعى اتّباع رجلٍ أُرسل رحمةً ثم أثمر اتّباعُه قسوةً، فما أخطأ في فرع، وإنما قلب المقصد المنصوص للأمر كلّه.",
         ref: "Surah Al-Anbiya (21:107)",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:128)",
+            ar: "لَقَدۡ جَآءَكُمۡ رَسُولٞ مِّنۡ أَنفُسِكُمۡ عَزِيزٌ عَلَيۡهِ مَا عَنِتُّمۡ حَرِيصٌ عَلَيۡكُم بِٱلۡمُؤۡمِنِينَ رَءُوفٞ رَّحِيمٞ",
+            en: "“There has come to you a messenger from among yourselves; grievous to him is what you suffer, concerned over you, and to the believers kind and merciful.”",
+            how: "This verse says what he was sent as; that one says how he actually was with the people in front of him — and gives him two of the names of Allah.",
+            howAr: "هذه الآيةُ تقول بماذا أُرسل، وتلك تقول كيف كان مع من بين يديه — وتُعطيه اسمين من أسماء الله."
+          }
+        ]
       },
       {
         n: 87,
@@ -1733,6 +2090,232 @@ const TADABBUR = {
         ],
         ref: "Surah Ali 'Imran (3:18)",
         strength: "quran"
+      },
+      {
+        n: 26,
+        ar: "قُلِ ٱللَّهُمَّ مَٰلِكَ ٱلۡمُلۡكِ تُؤۡتِي ٱلۡمُلۡكَ مَن تَشَآءُ وَتَنزِعُ ٱلۡمُلۡكَ مِمَّن تَشَآءُ وَتُعِزُّ مَن تَشَآءُ وَتُذِلُّ مَن تَشَآءُۖ بِيَدِكَ ٱلۡخَيۡرُۖ إِنَّكَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ",
+        why: "Four verbs, in two pairs, and each pair moves in both directions: You give dominion to whom You will and You take dominion from whom You will; You honour whom You will and You humble whom You will.\n\nThen the line that does not match the pattern. After naming the taking and the humbling, the verse does not say “in Your hand is good and evil”. It says: **in Your hand is the good**. The sentence had four movements and two of them were losses, and still only good is placed in the hand.",
+        whyAr: "أربعةُ أفعالٍ في زوجين، وكلُّ زوجٍ يمضي في الجهتين: ﴿تُؤۡتِي ٱلۡمُلۡكَ مَن تَشَآءُ وَتَنزِعُ ٱلۡمُلۡكَ مِمَّن تَشَآءُ﴾، ﴿وَتُعِزُّ مَن تَشَآءُ وَتُذِلُّ مَن تَشَآءُۖ﴾.\n\nثم يأتي ما لا يجري على النسق: فبعد ذكر النزع والإذلال لم تقل الآيةُ «بيدك الخير والشرّ»، وإنما قالت: ﴿بِيَدِكَ ٱلۡخَيۡرُۖ﴾. أربعُ حركاتٍ اثنتان منها سلبٌ، ولم يُوضع في اليد إلا الخير.",
+        ref: "Surah Aal-Imran (3:26)",
+        strength: "quran",
+        plain: "Kingdoms are given and taken, people are raised and lowered — and after saying all four, the verse puts only good in His hand. What looks like loss from inside it is not, in the end, anything but His wisdom.",
+        plainAr: "المُلكُ يُعطى ويُنزع، والناسُ يُعزّون ويُذلّون — وبعد الأربع كلِّها لم تضع الآيةُ في يده إلا الخير. فما يبدو من داخله سلبًا ليس في عاقبته إلا حكمةً منه.",
+        words: [
+          {
+            w: "بِيَدِكَ ٱلۡخَيۡرُۖ",
+            t: "bi-yadika-l-khayr — in Your hand is the good",
+            meaning: "The good is named; its opposite is not. The Prophet ﷺ said the same thing in his own words when he opened the night prayer: “all good is in Your hands, and evil is not attributed to You.” Not because anything escapes His power — the verse ends by saying He is over all things capable — but because what proceeds from Him is named by what it is for.",
+            meaningAr: "سُمّي الخيرُ ولم يُسمَّ مقابلُه. وقد قال النبيُّ ﷺ نحوه في استفتاح قيام الليل: «والخيرُ كلُّه في يديك، والشرُّ ليس إليك». وليس ذلك لأنّ شيئًا يخرج عن قدرته — فالآيةُ تختم بأنه على كلّ شيءٍ قدير — وإنما لأنّ ما يصدر عنه يُسمّى بما هو له.",
+            source: "Sahih Muslim, the opening supplication of the night prayer — Ali ibn Abi Talib",
+            strength: "hadith"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Aal-Imran (3:27)",
+            ar: "تُولِجُ ٱلَّيۡلَ فِي ٱلنَّهَارِ وَتُولِجُ ٱلنَّهَارَ فِي ٱلَّيۡلِۖ",
+            en: "“You cause the night to enter the day, and You cause the day to enter the night.”",
+            how: "The verse straight after it moves the same argument from history to the sky: the One who turns kingdoms over is the One who turns the day into night, and you can watch that one happen.",
+            howAr: "الآيةُ التي تليها تنقل الحجّة نفسها من التاريخ إلى السماء: فالذي يُقلّب الدولَ هو الذي يُولج الليل في النهار، وهذا تراه بعينك."
+          }
+        ]
+      },
+      {
+        n: 54,
+        ar: "وَمَكَرُواْ وَمَكَرَ ٱللَّهُۖ وَٱللَّهُ خَيۡرُ ٱلۡمَٰكِرِينَ",
+        why: "Six words, and one of them has troubled readers for centuries: makr — scheming — is used of Allah.\n\nRead where it sits. It does not come first. They schemed, **and then** Allah schemed. In Arabic this is a known way of answering: the reply is put in the words of the thing it answers, so that the answer lands as an answer. Their plan was secret and clever; what met it was better hidden and better made.\n\nAnd the Quran keeps this rule. The verb is used of Allah in exactly two places — here and in Surah Al-Anfal — and in both it comes immediately after the plotting of the people who are being answered, in the same sentence.",
+        whyAr: "ستُّ كلماتٍ، واحدةٌ منها أشكلت على القرّاء قرونًا: المكرُ يُسنَد إلى الله.\n\nفانظر أين وقعت: لم تأتِ ابتداءً، بل ﴿وَمَكَرُواْ وَمَكَرَ ٱللَّهُۖ﴾ — مكروا **ثم** مكر الله. وهذا في العربية بابٌ معروف: يُخرَج الجوابُ في لفظ ما أُجيب عنه ليقع موقعَه. فكان كيدُهم خفيًّا محكمًا، فقُوبل بما هو أخفى وأحكم.\n\nوالقرآنُ مطّردٌ في هذا: فلم يُسنَد الفعلُ إلى الله إلا في موضعين — ههنا وفي الأنفال — وفي كليهما جاء عقب مكر القوم في الجملة نفسها.",
+        ref: "Surah Aal-Imran (3:54), read with Surah Al-Anfal (8:30)",
+        strength: "quran",
+        misunderstood: "THE OBJECTION: how can deceit be attributed to God?\n\nWHAT THE WORD IS DOING: Arabic answers a deed in the deed's own words — the Quran does the same with mockery (“Allah mocks them”), with forgetting (“so they forgot Him, and He forgot them”), and with recompense generally: “the recompense of an evil is an evil like it”. In every case the second word takes its meaning from the first, and names a just answer, not a matching sin.\n\nAND THE PLACEMENT PROVES IT. Search the Quran: the verb is never used of Allah at the start of a sentence. Twice it is used of Him, and both times it is the second half of a pair whose first half is theirs.",
+        misunderstoodAr: "الاعتراض: كيف يُنسب المكرُ إلى الله؟\n\nوالذي يصنعه اللفظ: أنّ العربية تُجيب الفعلَ بلفظه — وقد جرى القرآنُ على ذلك في الاستهزاء ﴿ٱللَّهُ يَسۡتَهۡزِئُ بِهِمۡ﴾، وفي النسيان ﴿نَسُواْ ٱللَّهَ فَنَسِيَهُمۡۚ﴾، وفي الجزاء عامّةً ﴿وَجَزَٰٓؤُاْ سَيِّئَةٖ سَيِّئَةٞ مِّثۡلُهَاۖ﴾. وفي كلّ ذلك يأخذ الثاني معناه من الأوّل، فيكون جزاءً عدلًا لا ذنبًا مماثلًا.\n\nوموضعُ الكلمة يقطع النزاع: فتّش القرآن كلَّه لا تجد الفعلَ مُسنَدًا إليه سبحانه في ابتداء كلام. أُسند إليه مرّتين، وفي كلتيهما هو الشطرُ الثاني من مقابلةٍ شطرُها الأوّل لهم.",
+        words: [
+          {
+            w: "خَيۡرُ ٱلۡمَٰكِرِينَ",
+            t: "khayru-l-makirin — the best of planners",
+            meaning: "“Best” here is about the plan, not about the morality of scheming: no plan laid against Him is ever the stronger one. The people in this passage had arranged a killing; what they got instead was a rescue, and their arrangement carried them into it.",
+            meaningAr: "«خيرُ» ههنا في إحكام التدبير لا في تزكية المكر: فما نُصب له كيدٌ قطُّ إلا كان كيدُه أقوى. وهؤلاء دبّروا قتلًا، فكانت العاقبةُ نجاةً، وساقهم تدبيرُهم إليها.",
+            source: "Quranic usage of م ك ر (3:54, 8:30, 7:99, 14:46)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:30)",
+            ar: "وَيَمۡكُرُونَ وَيَمۡكُرُ ٱللَّهُۖ وَٱللَّهُ خَيۡرُ ٱلۡمَٰكِرِينَ",
+            en: "“And they plan, and Allah plans — and Allah is the best of planners.”",
+            how: "The same sentence, in the same order, about the night they surrounded his house to kill him. Their plan is described first, in detail, and then answered in one clause.",
+            howAr: "الجملةُ نفسُها بالترتيب نفسِه، في ليلة أحاطوا ببيته ليقتلوه. فذُكر مكرُهم أوّلًا مفصَّلًا، ثم أُجيب في جملةٍ واحدة."
+          }
+        ]
+      },
+      {
+        n: 103,
+        ar: "وَٱعۡتَصِمُواْ بِحَبۡلِ ٱللَّهِ جَمِيعٗا وَلَا تَفَرَّقُواْۚ وَٱذۡكُرُواْ نِعۡمَتَ ٱللَّهِ عَلَيۡكُمۡ إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا وَكُنتُمۡ عَلَىٰ شَفَا حُفۡرَةٖ مِّنَ ٱلنَّارِ فَأَنقَذَكُم مِّنۡهَاۗ",
+        why: "A command and a prohibition in one breath: hold fast to the rope of Allah **all together**, and do not split. Then, instead of an argument, a memory: remember when you were enemies and He joined your hearts, so that by His favour you became brothers — and you were on the edge of a pit of fire and He saved you from it.\n\nThe proof offered for unity is not a theory about unity. It is their own recent history: two tribes who had fought for generations, now praying in one row. The people being addressed had watched it happen to themselves.",
+        whyAr: "أمرٌ ونهيٌ في نفَسٍ واحد: ﴿وَٱعۡتَصِمُواْ بِحَبۡلِ ٱللَّهِ جَمِيعٗا وَلَا تَفَرَّقُواْۚ﴾. ثم لم تأتِ حجّةٌ نظريّة، بل ذكرى: ﴿وَٱذۡكُرُواْ نِعۡمَتَ ٱللَّهِ عَلَيۡكُمۡ إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا﴾ — وكنتم على شفا حفرةٍ من النار فأنقذكم منها.\n\nفالدليلُ على الاجتماع ليس كلامًا في الاجتماع، وإنما تاريخُهم القريب: قبيلتان اقتتلتا أجيالًا، ثم صارتا في صفٍّ واحد. والمخاطَبون رأوا ذلك في أنفسهم.",
+        ref: "Surah Aal-Imran (3:103)",
+        strength: "quran",
+        plain: "Hold on to Allah's rope together, and do not break apart. The reason given is not an argument — it is a reminder: you used to be enemies, and He put your hearts together.",
+        plainAr: "اعتصموا بحبل الله مجتمعين ولا تفرّقوا. والعلّةُ المذكورة ليست حجّةً نظريّة، بل تذكيرٌ: كنتم أعداءً فألّف بين قلوبكم.",
+        words: [
+          {
+            w: "وَٱعۡتَصِمُواْ",
+            t: "wa'tasimu — take hold and hold on",
+            meaning: "The root means to grip a thing in order to be protected by it — a man clings to a rock in a torrent. It is not “be united” as an idea; it is a hand closing on something outside itself. And what is gripped is named: the rope of Allah, not one another.",
+            meaningAr: "أصلُ المادّة الإمساكُ بالشيء طلبًا للنجاة به — كمن يتشبّث بصخرةٍ في سيل. فليس المرادُ «كونوا متّحدين» فكرةً، بل يدٌ تنطبق على شيءٍ خارجَها. وقد سُمّي المُمسَك به: حبلُ الله، لا بعضُكم بعضًا.",
+            source: "Arabic usage of the root ع ص م (whence عصمة, protection)",
+            strength: "lugha"
+          },
+          {
+            w: "جَمِيعٗا",
+            t: "jami'an — all together",
+            meaning: "One word, and it changes the command. Holding the rope is required; holding it **as a body** is required too. A person can be gripping the rope alone, with his back to everyone else, and still be outside what this verse asks for.",
+            meaningAr: "كلمةٌ واحدةٌ غيّرت الأمر: فالاعتصامُ مطلوب، والاعتصامُ **مجتمعين** مطلوبٌ أيضًا. وقد يكون المرءُ ممسكًا بالحبل وحده مُوليًا ظهرَه للناس، وهو خارجٌ عمّا طلبته الآية.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:46)",
+            ar: "وَلَا تَنَٰزَعُواْ فَتَفۡشَلُواْ وَتَذۡهَبَ رِيحُكُمۡۖ وَٱصۡبِرُوٓاْۚ",
+            en: "“And do not dispute with one another, lest you lose heart and your strength depart.”",
+            how: "The same prohibition with its consequence spelled out: disputing does not merely divide, it drains — first the courage, then the force.",
+            howAr: "النهيُ نفسُه ومعه أثرُه: فالتنازع لا يُفرّق فحسب، بل يُذهب — أوّلًا العزيمة، ثم القوّة."
+          },
+          {
+            ref: "Surah Al-Hujurat (49:10)",
+            ar: "إِنَّمَا ٱلۡمُؤۡمِنُونَ إِخۡوَةٞ فَأَصۡلِحُواْ بَيۡنَ أَخَوَيۡكُمۡۚ",
+            en: "“The believers are but brothers, so make peace between your two brothers.”",
+            how: "Brotherhood in 3:103 is a favour that was given; here it is a standing fact with a duty attached — when two of them fall out, the rest are to repair it.",
+            howAr: "الأخوّةُ في آية آل عمران نعمةٌ امتُنّ بها، وههنا حقيقةٌ قائمةٌ يتبعها واجب: فإذا وقع بين اثنين شيءٌ فعلى الباقين الإصلاح."
+          }
+        ]
+      },
+      {
+        n: 110,
+        ar: "كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَتَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَتُؤۡمِنُونَ بِٱللَّهِۗ وَلَوۡ ءَامَنَ أَهۡلُ ٱلۡكِتَٰبِ لَكَانَ خَيۡرٗا لَّهُمۚ مِّنۡهُمُ ٱلۡمُؤۡمِنُونَ وَأَكۡثَرُهُمُ ٱلۡفَٰسِقُونَ",
+        why: "The sentence everyone quotes is the first four words. The rest of it is the part that decides what those four words mean.\n\n“You were the best nation **brought out for people**” — and then, immediately, three present-tense verbs: you enjoin what is right, you forbid what is wrong, you believe in Allah. The description is not a title handed over once; it is attached to work that is going on. And the phrase “for people” points outward: the nation is described by what it is for, not by what it possesses.\n\nAnd the verse does not flatter. It ends by dividing the People of the Book into believers and a majority who are defiantly disobedient — right after saying that if they believed it would be better for them. A verse about being best that refuses to let anyone sit inside it comfortably.",
+        whyAr: "الجملةُ التي يُكثر الناسُ من نقلها أربعُ كلمات، وبقيّةُ الآية هي التي تُحدّد معناها.\n\n﴿كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ﴾ — ثم في الحال ثلاثةُ أفعالٍ مضارعة: ﴿تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَتَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَتُؤۡمِنُونَ بِٱللَّهِۗ﴾. فليست الخيريّةُ لقبًا سُلّم مرّةً، وإنما وصفٌ معلّقٌ بعملٍ قائم. وقولُه «للناس» يُخرج الوصفَ إلى غيرها: فالأمّةُ موصوفةٌ بما هي **له**، لا بما تملكه.\n\nوليس في الآية مجاملة: فقد ختمت بقسمة أهل الكتاب إلى مؤمنين وأكثرَ فاسقين، بعد أن قالت إنّ إيمانهم خيرٌ لهم. آيةٌ في الخيريّة لا تدع أحدًا يستريح داخلها.",
+        ref: "Surah Aal-Imran (3:110), read with (3:104)",
+        strength: "quran",
+        misunderstood: "THE COMMON READING: “we are the best nation” — a rank this ummah holds by belonging to it.\n\nWHAT THE VERSE ATTACHES: the description arrives with three verbs in the present tense, and the earliest commentators read them as the reason for it, not as decoration. Ten verses earlier the same surah has already told the community to produce from among itself a group calling to good and enjoining what is right — so the duty is named twice in one page.\n\nAnd the grammar keeps the door open both ways: كنتم is past tense. Whatever weight one gives that, nobody reading the whole verse can take the first four words as a possession.",
+        misunderstoodAr: "القراءةُ الشائعة: «نحن خيرُ أمّة» — رتبةٌ تثبت لهذه الأمّة بالانتساب إليها.\n\nوالذي علّقت به الآيةُ الوصف: ثلاثةُ أفعالٍ مضارعة جاءت بعده، وقد قرأها المتقدّمون تعليلًا لا زينة. وقبل هذه الآية بعشرٍ في السورة نفسها الأمرُ بأن تكون من الأمّة جماعةٌ تدعو إلى الخير وتأمر بالمعروف — فذُكر الواجبُ مرّتين في صفحةٍ واحدة.\n\nواللفظُ يُبقي البابَ مفتوحًا من الجهتين: فـ«كنتم» ماضٍ. ومهما يكن من وزن ذلك، فليس لقارئ الآية كاملةً أن يأخذ الكلماتِ الأربعَ الأولى ملكًا.",
+        words: [
+          {
+            w: "أُخۡرِجَتۡ",
+            t: "ukhrijat — brought out",
+            meaning: "A passive verb: the nation did not bring itself out. And it was brought out **for people** — the preposition sends it outward. A community that keeps its good to itself has not answered the description; the description is about what it does for those outside it.",
+            meaningAr: "فعلٌ مبنيٌّ للمجهول: فالأمّةُ لم تُخرِج نفسها. وأُخرجت **للناس** — واللامُ تُخرج الوصفَ إلى غيرها. فالأمّةُ التي تحبس خيرها في نفسها لم تُحقّق الوصف، فإنّ الوصفَ في ما تصنعه لمن سواها.",
+            source: "Arabic morphology (the passive), and the wording للناس",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Aal-Imran (3:104)",
+            ar: "وَلۡتَكُن مِّنكُمۡ أُمَّةٞ يَدۡعُونَ إِلَى ٱلۡخَيۡرِ وَيَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَيَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِۚ وَأُوْلَٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ",
+            en: "“And let there be from among you a community calling to good, enjoining what is right and forbidding what is wrong — and it is those who are the successful.”",
+            how: "Six verses earlier, the same duty is put as a command rather than a description. Read together: what verse 104 orders you to build is what verse 110 says you were named for.",
+            howAr: "قبلها بستّ آياتٍ جاء الواجبُ نفسُه أمرًا لا وصفًا. واقرأهما معًا: فالذي أمرت الآيةُ (١٠٤) ببنائه هو الذي قالت الآيةُ (١١٠) إنّ الأمّة سُمّيت به."
+          }
+        ]
+      },
+      {
+        n: 139,
+        ar: "وَلَا تَهِنُواْ وَلَا تَحۡزَنُواْ وَأَنتُمُ ٱلۡأَعۡلَوۡنَ إِن كُنتُم مُّؤۡمِنِينَ",
+        why: "This was said after Uhud — after seventy of them had been killed, after the rumour went round that the Prophet ﷺ himself was dead, and after they came back to Madinah carrying their wounded.\n\nAnd the order of the words is the order a person actually needs. First the body: do not grow weak. Then the heart: do not grieve. Then the verdict that contradicts everything they could see: **you are the uppermost**. And last, the condition on which the whole sentence rests: if you are believers.\n\nIt is not a promise that the next battle will be won. It is a statement about where a believer stands even on the day he is carrying his dead.",
+        whyAr: "قيلت بعد أُحُد — بعد أن قُتل منهم سبعون، وبعد أن شاع أنّ النبيّ ﷺ قُتل، وبعد أن رجعوا إلى المدينة يحملون جرحاهم.\n\nوترتيبُ الألفاظ هو الترتيبُ الذي يحتاجه المرءُ حقًّا: فالبدنُ أوّلًا: ﴿وَلَا تَهِنُواْ﴾. ثم القلب: ﴿وَلَا تَحۡزَنُواْ﴾. ثم حكمٌ يُخالف كلَّ ما يرونه: ﴿وَأَنتُمُ ٱلۡأَعۡلَوۡنَ﴾. ثم الشرطُ الذي تقوم عليه الجملةُ كلُّها: ﴿إِن كُنتُم مُّؤۡمِنِينَ﴾.\n\nفليست وعدًا بأنّ المعركة القادمة تُكسب، وإنما خبرٌ عن موضع المؤمن حتى في اليوم الذي يحمل فيه قتلاه.",
+        ref: "Surah Aal-Imran (3:139)",
+        strength: "quran",
+        plain: "Said to people who had just lost a battle: do not go weak, do not grieve, you are the higher ones — if you are believers. The height is not in the result of the day; it is in what you are standing on.",
+        plainAr: "قيلت لقومٍ خرجوا من هزيمة: لا تضعفوا، ولا تحزنوا، أنتم الأعلون — إن كنتم مؤمنين. فليست العلوّ في نتيجة اليوم، وإنما فيما تقف عليه.",
+        words: [
+          {
+            w: "تَهِنُواْ",
+            t: "tahinu — grow weak, slacken",
+            meaning: "Wahn is weakness in the thing itself — the Quran uses it of bone growing frail and of the spider's house. It is not fear; it is the strength going out of something that was holding. The first instruction after a defeat addresses that, before it addresses feeling.",
+            meaningAr: "الوهنُ ضعفٌ في الشيء نفسه — وبه وُصف العظمُ في القرآن وبيتُ العنكبوت. وليس هو الخوف، وإنما ذهابُ القوّة ممّا كان ممسِكًا. فأوّلُ ما خوطبوا به بعد الهزيمة هذا، قبل الشعور.",
+            source: "Quranic usage of و ه ن (19:4, 29:41)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Muhammad (47:35)",
+            ar: "فَلَا تَهِنُواْ وَتَدۡعُوٓاْ إِلَى ٱلسَّلۡمِ وَأَنتُمُ ٱلۡأَعۡلَوۡنَ",
+            en: "“So do not weaken and call for peace while you are the uppermost.”",
+            how: "The same two words — do not weaken, you are the uppermost — in the opposite situation: there, the danger is asking for terms out of weakness rather than out of judgement. Together they mark the line: weakness may not be the reason for either despair or a settlement.",
+            howAr: "الكلمتان نفسُهما — لا تهنوا، وأنتم الأعلون — في حالٍ مقابلة: فالخطرُ هناك طلبُ الصلح عن ضعفٍ لا عن رأي. وبهما يتبيّن الحدّ: لا يكون الضعفُ سببًا ليأسٍ ولا لمصالحة."
+          }
+        ]
+      },
+      {
+        n: 191,
+        ar: "ٱلَّذِينَ يَذۡكُرُونَ ٱللَّهَ قِيَٰمٗا وَقُعُودٗا وَعَلَىٰ جُنُوبِهِمۡ وَيَتَفَكَّرُونَ فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ رَبَّنَا مَا خَلَقۡتَ هَٰذَا بَٰطِلٗا سُبۡحَٰنَكَ فَقِنَا عَذَابَ ٱلنَّارِ",
+        why: "The verse before it says the signs are for people of understanding. This verse tells you what those people actually do, and it is two things joined.\n\nFirst, remembrance in every posture a human body has: standing, sitting, and on their sides. That last one is a person lying down — the list is built so that no state is left out. Then thinking, and the object of the thinking is named: the creation of the heavens and the earth.\n\nAnd notice where it lands. The thinking does not end in a conclusion about physics. It ends in speech, addressed upward: **our Lord, You did not create this in vain.** Reflection that never turns into a word said to Him is only half of what the verse describes.",
+        whyAr: "قالت الآيةُ قبلها إنّ الآيات لأولي الألباب، وهذه الآيةُ تُخبر بما يصنعه هؤلاء، وهما أمران مقترنان.\n\nأوّلًا: ذكرٌ في كلّ هيئةٍ للبدن: ﴿قِيَٰمٗا وَقُعُودٗا وَعَلَىٰ جُنُوبِهِمۡ﴾ — والأخيرةُ حالُ المضطجع، فبُني العدُّ على ألّا تبقى حالٌ خارجه. ثم تفكّرٌ، وسُمّي متعلَّقُه: ﴿فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ﴾.\n\nوانظر أين انتهى: فالتفكّرُ لم ينتهِ إلى نتيجةٍ في طبائع الأشياء، وإنما انتهى إلى كلامٍ موجَّهٍ إلى فوق: ﴿رَبَّنَا مَا خَلَقۡتَ هَٰذَا بَٰطِلٗا﴾. فالتفكّرُ الذي لا يصير كلمةً تُقال له نصفُ ما وصفته الآية.",
+        ref: "Surah Aal-Imran (3:191), read with (3:190)",
+        strength: "quran",
+        plain: "The people the Quran calls understanding do two things at once: they remember Allah in every position — standing, sitting, lying down — and they think hard about what He made. And their thinking ends in talking to Him, not in a theory.",
+        plainAr: "أولو الألباب في القرآن يجمعون أمرين: ذكرٌ لله في كلّ حال — قيامًا وقعودًا وعلى جنوبهم — وتفكّرٌ في خلقه. وينتهي تفكّرُهم إلى خطابه، لا إلى نظريّة.",
+        words: [
+          {
+            w: "وَيَتَفَكَّرُونَ",
+            t: "yatafakkarun — they think it through",
+            meaning: "Form V, which in Arabic is the form of a thing taken on gradually and with effort — the same pattern as tadabbur and ta'ammul. Not a thought that crosses the mind: a turning of it over, kept up.",
+            meaningAr: "على وزن «تفعّل»، وهو في العربية بناءُ ما يُتكلَّف ويُتدرَّج فيه — كالتدبّر والتأمّل. فليس خاطرًا يمرّ، وإنما تقليبٌ للنظر يُستدام.",
+            source: "Arabic morphology (form V, tafaʿʿul)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:164)",
+            ar: "إِنَّ فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَٱخۡتِلَٰفِ ٱلَّيۡلِ وَٱلنَّهَارِ",
+            en: "“Indeed, in the creation of the heavens and the earth, and the alternation of night and day… are signs.”",
+            how: "There the signs are listed; here the people who can read them are described. Put the two together and you have both halves: what to look at, and what looking is supposed to do to you.",
+            howAr: "هناك عُدّت الآيات، وههنا وُصف من يقرؤها. فإذا جمعتهما اجتمع الشطران: ما يُنظر فيه، وما ينبغي أن يصنعه النظرُ بصاحبه."
+          }
+        ]
+      },
+      {
+        n: 200,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱصۡبِرُواْ وَصَابِرُواْ وَرَابِطُواْ وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُفۡلِحُونَ",
+        why: "The last verse of the surah, and it is four commands in a rising line.\n\n**Be patient** — the ordinary word, patience with what happens to you. **And out-patient them** — the form changes to the one Arabic uses for a contest between two parties, so this is patience measured against someone else's: outlast them. **And stay tied to your posts** — ribat, the word for being stationed at a frontier and for the tethering of horses there. Then: **and be mindful of Allah**, so that you may be successful.\n\nThe order is not decoration. Private endurance, then endurance in a contest, then holding a position that other people are depending on — and the whole chain is fastened at the end to taqwa, without which it is merely stubbornness.",
+        whyAr: "خاتمةُ السورة، وهي أربعةُ أوامر في تصاعد.\n\n﴿ٱصۡبِرُواْ﴾ — وهو الصبرُ المعروف على ما يُصيبك. ﴿وَصَابِرُواْ﴾ — وتحوّل البناءُ إلى «فاعَلَ»، وهو في العربية للمغالبة بين اثنين، فصار صبرًا مقيسًا بصبر غيرك: كن أبقى منهم. ﴿وَرَابِطُواْ﴾ — والرباطُ لزومُ الثغر، ومنه ربطُ الخيل عليه. ثم ﴿وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُفۡلِحُونَ﴾.\n\nوالترتيبُ ليس زينة: صبرٌ في نفسك، ثم صبرٌ في مغالبة، ثم لزومُ موضعٍ يعتمد عليك فيه غيرُك — ثم شُدّت السلسلةُ كلُّها في آخرها بالتقوى، وبدونها لا تكون إلا عنادًا.",
+        ref: "Surah Aal-Imran (3:200)",
+        strength: "quran",
+        plain: "Bear it; outlast the other side; hold your post; and keep Allah in view. Four words at the end of the surah, and each one is harder than the one before it.",
+        plainAr: "اصبر؛ وكن أبقى من خصمك؛ والزم موضعك؛ واتّقِ الله. أربعُ كلماتٍ في خاتمة السورة، كلُّ واحدةٍ أشدُّ من التي قبلها.",
+        words: [
+          {
+            w: "وَصَابِرُواْ",
+            t: "sabiru — outdo them in patience",
+            meaning: "Form III, the form of doing a thing **against** someone: qatala (fight), jadala (argue), sabara (out-endure). The command is not merely to be patient but to be more patient than the one facing you — which turns endurance into a contest you are told to win.",
+            meaningAr: "على وزن «فاعَلَ»، وهو بناءُ ما يكون **مع** الغير ومغالبةً له: قاتل، جادل، صابر. فليس الأمرُ بالصبر فحسب، بل بأن تكون أصبر ممّن يُقابلك — فصار الاحتمالُ مغالبةً أُمرت أن تغلب فيها.",
+            source: "Arabic morphology (form III, mufāʿala, for a contested act)",
+            strength: "lugha"
+          },
+          {
+            w: "وَرَابِطُواْ",
+            t: "rabitu — hold the line",
+            meaning: "From the root that gives “tying”: the ribat is the place where the horses are tethered at the frontier, and the man who stays there is murabit. The word carries both the staying and the readiness — you are tied to the post, and the animal beside you is saddled.",
+            meaningAr: "من مادّة الربط: والرباطُ موضعُ ربط الخيل في الثغر، ومن لزمه فهو مرابط. وفي اللفظ اللزومُ والاستعدادُ معًا: أنت مشدودٌ إلى الموضع، والدابّةُ إلى جانبك مُعَدّة.",
+            source: "Arabic usage of ر ب ط, and 8:60 (رِبَاطِ ٱلۡخَيۡلِ)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:60)",
+            ar: "وَأَعِدُّواْ لَهُم مَّا ٱسۡتَطَعۡتُم مِّن قُوَّةٖ وَمِن رِّبَاطِ ٱلۡخَيۡلِ",
+            en: "“And prepare against them whatever you are able of power, and of tethered horses.”",
+            how: "The same root, used of the preparation rather than the posting: there the horses are tied ready; here the people are. Between the two verses the word covers both halves of being ready — the material and the human.",
+            howAr: "المادّةُ نفسُها في الإعداد لا في الملازمة: فالخيلُ هناك مربوطةٌ مُعدّة، والناسُ ههنا كذلك. وبين الآيتين يستوعب اللفظُ شطرَي الاستعداد: العُدّة والرجال."
+          }
+        ]
       }
     ]
   },
@@ -1760,7 +2343,16 @@ const TADABBUR = {
         why: "The verse anticipates every excuse before it is made, and closes them one at a time.\n\nEven against yourselves — so self-interest is not a reason. Or your parents and relatives — so loyalty is not a reason, and it names the two relationships hardest to testify against. Whether one is rich or poor, Allah is more worthy of both — so neither siding with power nor siding with the weak out of pity is justice; both are the same fault pointed in different directions.\n\nThen the mechanism: do not follow desire, lest you deviate. Note that injustice is traced to HAWA, not to ignorance. A man usually knows what is fair. What moves him off it is that he wants something.",
         whyAr: "تستبق الآيةُ كلَّ عذرٍ قبل أن يُقال، وتُغلقه بابًا بابًا.\n\n﴿وَلَوۡ عَلَىٰٓ أَنفُسِكُمۡ﴾ — فالمصلحةُ ليست عذرًا. ﴿أَوِ ٱلۡوَٰلِدَيۡنِ وَٱلۡأَقۡرَبِينَۚ﴾ — فالولاءُ ليس عذرًا، وقد سُمّيت أشقُّ صلتين تُشهَد عليهما. ﴿إِن يَكُنۡ غَنِيًّا أَوۡ فَقِيرٗا فَٱللَّهُ أَوۡلَىٰ بِهِمَاۖ﴾ — فلا مجاملةُ القويّ عدل، ولا محاباةُ الضعيف رحمةً عدل؛ وهما خطأٌ واحدٌ في جهتين.\n\nثم العلّة: ﴿فَلَا تَتَّبِعُواْ ٱلۡهَوَىٰٓ أَن تَعۡدِلُواْۚ﴾. فرُدّ الظلمُ إلى **الهوى** لا إلى الجهل. فالرجلُ في الغالب يعلم أين الإنصاف، وإنما يُزيحه عنه أنه يريد شيئًا.",
         ref: "Surah An-Nisa (4:135)",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah Al-An'am (6:152)",
+            ar: "وَإِذَا قُلۡتُمۡ فَٱعۡدِلُواْ وَلَوۡ كَانَ ذَا قُرۡبَىٰۖ",
+            en: "“And when you speak, be just, even if it concerns a relative.”",
+            how: "The same command, in the ten instructions at the end of al-An'am, and there it is attached to speech: not only standing for justice as a witness, but being just in what you say about your own people.",
+            howAr: "الأمرُ نفسُه في الوصايا العشر في خاتمة الأنعام، وهو هناك معلّقٌ بالقول: لا القيامَ بالقسط شهادةً فحسب، بل العدلَ فيما تقوله في أهلك."
+          }
+        ]
       },
       {
         n: 34,
@@ -1793,6 +2385,243 @@ const TADABBUR = {
         ],
         ref: "Surah An-Nisa (4:69)",
         strength: "quran"
+      },
+      {
+        n: 1,
+        ar: "يَٰٓأَيُّهَا ٱلنَّاسُ ٱتَّقُواْ رَبَّكُمُ ٱلَّذِي خَلَقَكُم مِّن نَّفۡسٖ وَٰحِدَةٖ وَخَلَقَ مِنۡهَا زَوۡجَهَا وَبَثَّ مِنۡهُمَا رِجَالٗا كَثِيرٗا وَنِسَآءٗۚ وَٱتَّقُواْ ٱللَّهَ ٱلَّذِي تَسَآءَلُونَ بِهِۦ وَٱلۡأَرۡحَامَۚ إِنَّ ٱللَّهَ كَانَ عَلَيۡكُمۡ رَقِيبٗا",
+        why: "This is the surah of family law — inheritance shares, orphans' property, marriage, divorce, what a household owes its weakest members. Look at how it opens.\n\nNot with a rule. With an origin: **O people** — not “O you who believe” — fear your Lord who created you from a single soul, and created from it its mate, and spread from the two of them many men and women.\n\nEverything the surah is about to divide up between people is introduced by the fact that the people were never separate to begin with. And then the last thing it names before the rules start is the wombs: be mindful of Allah, **and of the wombs** — the ties of kinship are placed beside the name of Allah in a single command.",
+        whyAr: "هذه سورةُ أحكام الأسرة — المواريث، وأموال اليتامى، والنكاح، والطلاق، وما يجب للضعيف في البيت. فانظر بمَ افتُتحت.\n\nلا بحكم، وإنما بأصلٍ: ﴿يَٰٓأَيُّهَا ٱلنَّاسُ﴾ — لا «يا أيها الذين آمنوا» — ﴿ٱتَّقُواْ رَبَّكُمُ ٱلَّذِي خَلَقَكُم مِّن نَّفۡسٖ وَٰحِدَةٖ وَخَلَقَ مِنۡهَا زَوۡجَهَا وَبَثَّ مِنۡهُمَا رِجَالٗا كَثِيرٗا وَنِسَآءٗۚ﴾.\n\nفكلُّ ما ستقسمه السورةُ بين الناس مُقدَّمٌ عليه أنّ الناس لم يكونوا مفترقين في الأصل. ثم آخرُ ما سُمّي قبل أن تبدأ الأحكام: الأرحام — ﴿وَٱتَّقُواْ ٱللَّهَ ٱلَّذِي تَسَآءَلُونَ بِهِۦ وَٱلۡأَرۡحَامَۚ﴾، فقُرنت صلةُ الرحم باسم الله في أمرٍ واحد.",
+        ref: "Surah An-Nisa (4:1)",
+        strength: "quran",
+        plain: "Before a single rule about inheritance or marriage, the surah reminds everyone that they came from one soul — and tells them to fear Allah, and to fear the ties of blood between them.",
+        plainAr: "قبل حكمٍ واحدٍ في ميراثٍ أو نكاح، تُذكّر السورةُ الناس أنهم من نفسٍ واحدة — وتأمرهم بتقوى الله، وبالأرحام التي بينهم.",
+        words: [
+          {
+            w: "يَٰٓأَيُّهَا ٱلنَّاسُ",
+            t: "ya ayyuha-n-nas — O people",
+            meaning: "The address is to humanity, not to the believers. The Quran uses “O you who believe” when the ground of the command is faith; here the ground is being human at all — everyone in the address shares the one origin the verse is about to name.",
+            meaningAr: "الخطابُ للناس كافّةً لا للمؤمنين. والقرآنُ يقول «يا أيها الذين آمنوا» حين يكون مناطُ الأمر الإيمانَ؛ ومناطُه ههنا أصلُ الإنسانيّة — فكلُّ من في الخطاب يشترك في الأصل الذي ستذكره الآية.",
+            source: "Quranic usage of the two forms of address",
+            strength: "quran"
+          },
+          {
+            w: "وَٱلۡأَرۡحَامَۚ",
+            t: "wa-l-arham — and the wombs",
+            meaning: "It is joined to the command before it: be mindful of Allah — and of the wombs. Kinship is not offered as a sentiment here; it is put into the same sentence as taqwa, at the head of a surah that is about to tell families how to divide money.",
+            meaningAr: "معطوفةٌ على ما قبلها: اتّقوا الله — والأرحام. فليست الرحمُ ههنا عاطفةً تُستجدى، وإنما وُضعت في جملة التقوى نفسِها، على رأس سورةٍ ستُخبر الأسرَ كيف تقتسم المال.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Hujurat (49:13)",
+            ar: "يَٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقۡنَٰكُم مِّن ذَكَرٖ وَأُنثَىٰ وَجَعَلۡنَٰكُمۡ شُعُوبٗا وَقَبَآئِلَ لِتَعَارَفُوٓاْۚ إِنَّ أَكۡرَمَكُمۡ عِندَ ٱللَّهِ أَتۡقَىٰكُمۡۚ",
+            en: "“O people, We created you from a male and a female and made you peoples and tribes that you may know one another. Indeed, the most noble of you in the sight of Allah is the most righteous of you.”",
+            how: "The same address and the same origin, used for a different question: there it settles rank between peoples, here it settles duty inside a household. One fact, two applications.",
+            howAr: "الخطابُ نفسُه والأصلُ نفسُه في مسألةٍ أخرى: فهناك حُسمت المفاضلةُ بين الشعوب، وههنا حُسم الواجبُ داخل البيت. حقيقةٌ واحدةٌ وتنزيلان."
+          }
+        ]
+      },
+      {
+        n: 29,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ إِنَّ ٱللَّهَ كَانَ بِكُمۡ رَحِيمٗا",
+        why: "Two prohibitions in one verse, and at first they look unrelated: do not consume one another's wealth wrongfully — and do not kill yourselves.\n\nBut read the exception in between. The only opening left for taking another person's property is **trade out of mutual consent**. Everything else is batil: false, void, with no ground under it. Then the killing clause arrives, and the classical readings of it run both ways — do not kill each other, and do not destroy yourselves — because in Arabic “yourselves” carries both.\n\nEither way the verse has put the two together: a society that eats itself financially is a society killing itself, and it is addressed as one crime with two faces.",
+        whyAr: "نهيان في آيةٍ واحدة، يبدوان في أوّل النظر غير متّصلين: ﴿لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ﴾، و﴿وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ﴾.\n\nفانظر الاستثناء بينهما: لم يبقَ لأخذ مال الغير إلا ﴿تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ﴾. وما عداه باطلٌ: لا أصل تحته. ثم جاء النهيُ عن القتل، وكلامُ المفسّرين فيه على الوجهين — لا يقتل بعضُكم بعضًا، ولا يُهلك أحدُكم نفسه — فاللفظُ في العربية يحتملهما.\n\nوعلى الوجهين فقد جُمع بين الأمرين: فالمجتمعُ الذي يأكل نفسه بالمال مجتمعٌ يقتل نفسه، وخوطب بهما جريمةً واحدةً ذات وجهين.",
+        ref: "Surah An-Nisa (4:29)",
+        strength: "quran",
+        words: [
+          {
+            w: "عَن تَرَاضٖ",
+            t: "'an tarad — out of mutual consent",
+            meaning: "The condition is not a signature or a price. It is consent **from both**, and the form of the word (tarad) is the pattern of a thing happening between two parties. A sale where one side did not truly agree — because he did not know, or could not refuse — is not inside the exception.",
+            meaningAr: "الشرطُ ليس توقيعًا ولا ثمنًا، وإنما رضًا **من الطرفين**، وبناءُ اللفظ (تَراضٍ) بناءُ ما يقع بين اثنين. فبيعٌ لم يرضَ فيه أحدُ الطرفين حقًّا — لأنه لم يعلم أو لم يستطع الامتناع — خارجٌ عن الاستثناء.",
+            source: "Arabic morphology (form VI), and the wording منكم",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:188)",
+            ar: "وَلَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ",
+            en: "“And do not consume one another's wealth unjustly.”",
+            how: "The same prohibition, and there it is followed by the way people make theft look lawful: taking it to the judges to have a portion of others' property awarded to you knowingly.",
+            howAr: "النهيُ نفسُه، وقد أُتبع هناك بالطريق الذي يُلبس به الأخذُ ثوبَ الحقّ: الإدلاءُ به إلى الحكّام لأكل فريقٍ من أموال الناس بالإثم وأنت تعلم."
+          }
+        ]
+      },
+      {
+        n: 56,
+        ar: "إِنَّ ٱلَّذِينَ كَفَرُواْ بِـَٔايَٰتِنَا سَوۡفَ نُصۡلِيهِمۡ نَارٗا كُلَّمَا نَضِجَتۡ جُلُودُهُم بَدَّلۡنَٰهُمۡ جُلُودًا غَيۡرَهَا لِيَذُوقُواْ ٱلۡعَذَابَۗ إِنَّ ٱللَّهَ كَانَ عَزِيزًا حَكِيمٗا",
+        why: "A verse about the Fire, and the detail it chooses is strange enough to stop at. Not the heat, not the size of it: the **skin**.\n\nWhenever their skins are burned away, We will replace them with other skins — and the reason is given in the verse itself: **so that they may taste the punishment**. The replacement is not cruelty for its own sake; it is what makes the punishment continue to be felt.\n\nSo the verse rests on a claim about where pain happens: renew the skin and the tasting begins again. The 🔬 panel on this surah takes that up with what is now known about where the nerve endings are, and grades it honestly.",
+        whyAr: "آيةٌ في النار، والتفصيلُ الذي اختارته يستوقف: لا الحرّ ولا السَّعة، وإنما **الجلد**.\n\n﴿كُلَّمَا نَضِجَتۡ جُلُودُهُم بَدَّلۡنَٰهُمۡ جُلُودًا غَيۡرَهَا﴾ — والعلّةُ منصوصةٌ في الآية: ﴿لِيَذُوقُواْ ٱلۡعَذَابَۗ﴾. فليس التبديلُ تشفّيًا، وإنما هو الذي يُبقي العذابَ محسوسًا.\n\nفالآيةُ قائمةٌ على خبرٍ عن موضع الألم: يُجدَّد الجلدُ فيعود الذوق. وفي لوحة 🔬 في هذه السورة بسطُ ذلك مع ما عُرف اليوم عن مواضع النهايات العصبيّة، ومعه درجتُه بأمانة.",
+        ref: "Surah An-Nisa (4:56)",
+        strength: "quran",
+        words: [
+          {
+            w: "لِيَذُوقُواْ ٱلۡعَذَابَۗ",
+            t: "li-yadhuqu-l-'adhab — so that they may taste the punishment",
+            meaning: "The purpose clause is the key to the whole image. The skins are not replaced because skin is the thing being punished, but because tasting is what would otherwise stop. Burn a surface away and the sensation goes with it — so it is given back.",
+            meaningAr: "لامُ التعليل هي مفتاحُ الصورة كلِّها: فما بُدّلت الجلودُ لأنّ الجلدَ هو المعذَّب، وإنما لأنّ الذوقَ هو الذي ينقطع لولا ذلك. فإذا احترق السطحُ ذهب معه الإحساس، فيُعاد.",
+            source: "Quranic wording (the lam of purpose)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-An'am (6:125)",
+            ar: "وَمَن يُرِدۡ أَن يُضِلَّهُۥ يَجۡعَلۡ صَدۡرَهُۥ ضَيِّقًا حَرَجٗا كَأَنَّمَا يَصَّعَّدُ فِي ٱلسَّمَآءِۚ",
+            en: "“He makes his breast tight and constricted as though he were climbing into the sky.”",
+            how: "Another verse that reaches for a bodily fact to carry a meaning — and the 🔬 panel treats that one too. In both cases the picture only works if bodies really behave that way.",
+            howAr: "آيةٌ أخرى استعارت حقيقةً في البدن لتحمل معنًى — ولها في لوحة 🔬 موضع. وفي الحالين لا تستقيم الصورةُ إلا إذا كانت الأبدانُ كذلك حقًّا."
+          }
+        ]
+      },
+      {
+        n: 82,
+        ar: "أَفَلَا يَتَدَبَّرُونَ ٱلۡقُرۡءَانَۚ وَلَوۡ كَانَ مِنۡ عِندِ غَيۡرِ ٱللَّهِ لَوَجَدُواْ فِيهِ ٱخۡتِلَٰفٗا كَثِيرٗا",
+        why: "Most scriptures ask to be believed. This verse hands the reader a test and invites him to run it: **do they not reflect upon the Quran? Had it been from other than Allah, they would have found in it much discrepancy.**\n\nThink about what is being risked. The Book came down over some twenty-three years, in pieces, into changing circumstances — victory and defeat, private grief and public law, answers to questions asked on the day. The man delivering it could not go back and edit what had already been memorised and recited by thousands. A work produced that way should contradict itself, and the verse says: go and look.\n\nAnd notice where the invitation sits. The verses around it are about people who spread whatever news reaches them without checking it (verse 83). The call to examine the Book carefully is made to a community being told to stop repeating things carelessly.",
+        whyAr: "أكثرُ الكتب تطلب أن تُصدَّق، وهذه الآيةُ تُعطي القارئ اختبارًا وتدعوه إلى إجرائه: ﴿أَفَلَا يَتَدَبَّرُونَ ٱلۡقُرۡءَانَۚ وَلَوۡ كَانَ مِنۡ عِندِ غَيۡرِ ٱللَّهِ لَوَجَدُواْ فِيهِ ٱخۡتِلَٰفٗا كَثِيرٗا﴾.\n\nوتأمّل ما وُضع في الخطر: فالكتابُ نزل في نحو ثلاثٍ وعشرين سنة، مفرَّقًا، في أحوالٍ متغيّرة — نصرٍ وهزيمة، وحزنٍ خاصّ وتشريعٍ عامّ، وأجوبةٍ عن أسئلة يومها. ولم يكن للمبلِّغ ﷺ أن يعود إلى ما حُفظ وتُلي على ألوف الألسنة فيُصلحه. وعملٌ يُصنع على هذا الوجه حقُّه أن يتناقض، فقالت الآية: انظروا.\n\nوانظر أين وقعت الدعوة: فما حولها في قومٍ يُذيعون ما يبلغهم من غير تثبّت (الآية ٨٣). فالأمرُ بإمعان النظر في الكتاب خوطب به مجتمعٌ يُنهى عن ترديد الكلام بلا تحقّق.",
+        ref: "Surah An-Nisa (4:82)",
+        strength: "quran",
+        plain: "The Quran offers a way to test it: read it closely and look for contradictions. It is a strange offer for a book delivered piece by piece over twenty-three years, with no chance to go back and correct the earlier parts.",
+        plainAr: "يعرض القرآنُ طريقةً لاختباره: اقرأه متمعّنًا وابحث فيه عن التناقض. وهو عرضٌ عجيبٌ من كتابٍ نزل مفرَّقًا في ثلاثٍ وعشرين سنة، ولا سبيل إلى العودة إلى أوّله فيُصحَّح.",
+        words: [
+          {
+            w: "يَتَدَبَّرُونَ",
+            t: "yatadabbarun — do they not follow it through",
+            meaning: "The root is dubur — the back or the end of a thing. To do tadabbur is to look at where something ends up, to follow it to its last consequence. It is not admiring a verse; it is pursuing it until you see what it entails — which is exactly what testing a book for contradiction requires.",
+            meaningAr: "المادّةُ من الدُّبُر، وهو آخرُ الشيء وعاقبتُه. والتدبّرُ: النظرُ في ما يؤول إليه الأمر، وتتبّعُه إلى منتهاه. فليس استحسانًا لآية، وإنما اتّباعٌ لها حتى تُبصر ما تُوجبه — وهو عينُ ما يحتاجه من يمتحن كتابًا في تناقضه.",
+            source: "Arabic usage of the root د ب ر, and the form tafaʿʿul",
+            strength: "lugha"
+          },
+          {
+            w: "ٱخۡتِلَٰفٗا كَثِيرٗا",
+            t: "ikhtilafan kathiran — much discrepancy",
+            meaning: "The standard the verse sets is not “a single difficult passage”. It is **much** discrepancy — the ordinary state of a long book written by a man across decades. The test is deliberately set where a forgery would fail without needing an expert to prove it.",
+            meaningAr: "المعيارُ الذي وضعته الآيةُ ليس «موضعًا مشكلًا»، وإنما اختلافٌ **كثير** — وهو حالُ الكتاب الطويل يكتبه رجلٌ على عقود. فوُضع الامتحانُ حيث يسقط المُفترى من غير حاجةٍ إلى خبيرٍ يُثبت سقوطه.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Furqan (25:32)",
+            ar: "وَقَالَ ٱلَّذِينَ كَفَرُواْ لَوۡلَا نُزِّلَ عَلَيۡهِ ٱلۡقُرۡءَانُ جُمۡلَةٗ وَٰحِدَةٗۚ كَذَٰلِكَ لِنُثَبِّتَ بِهِۦ فُؤَادَكَۖ",
+            en: "“And those who disbelieve say: why was the Quran not sent down to him all at once? Thus, that We may strengthen your heart by it.”",
+            how: "Their objection and this verse's challenge are the same fact seen from two sides: it came piecemeal — which they called a weakness, and which makes the absence of contradiction in it the harder thing to explain.",
+            howAr: "اعتراضُهم وتحدّي هذه الآية حقيقةٌ واحدةٌ من وجهين: أنه نزل مفرَّقًا — عدّوه نقصًا، وهو الذي يجعل انتفاء الاختلاف فيه أعسرَ على التعليل."
+          },
+          {
+            ref: "Surah Muhammad (47:24)",
+            ar: "أَفَلَا يَتَدَبَّرُونَ ٱلۡقُرۡءَانَ أَمۡ عَلَىٰ قُلُوبٍ أَقۡفَالُهَآ",
+            en: "“Then do they not reflect upon the Quran, or are there locks upon their hearts?”",
+            how: "The same question in the same words, with the other half of the answer: when the reading changes nothing, the problem may not be in the Book.",
+            howAr: "السؤالُ نفسُه باللفظ نفسِه، ومعه الشطرُ الآخر من الجواب: فإذا لم تُغيّر القراءةُ شيئًا فقد لا تكون العلّةُ في الكتاب."
+          }
+        ]
+      },
+      {
+        n: 86,
+        ar: "وَإِذَا حُيِّيتُم بِتَحِيَّةٖ فَحَيُّواْ بِأَحۡسَنَ مِنۡهَآ أَوۡ رُدُّوهَآۗ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَيۡءٍ حَسِيبًا",
+        why: "A whole rule of manners in eleven words, and it has a floor and a ceiling.\n\nWhen you are greeted, greet with **better** than it — or return it. Better is the instruction; returning the same is the minimum. Below that there is nothing: not answering is outside the verse.\n\nAnd then the closing: Allah is over all things a Reckoner — the word for one who counts and settles accounts. A greeting at a door is put on the same ledger as everything else.",
+        whyAr: "أدبٌ كاملٌ في إحدى عشرة كلمة، وله سقفٌ وأرض.\n\n﴿وَإِذَا حُيِّيتُم بِتَحِيَّةٖ فَحَيُّواْ بِأَحۡسَنَ مِنۡهَآ أَوۡ رُدُّوهَآۗ﴾ — فالأحسنُ هو المأمور، والمِثلُ أدنى ما يُجزئ. وليس دون ذلك شيء: فتركُ الردّ خارجٌ عن الآية.\n\nثم الختام: ﴿إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَيۡءٍ حَسِيبًا﴾ — والحسيبُ من يُحصي ويُحاسب. فوُضعت تحيّةٌ على بابٍ في الدفتر الذي يُوضع فيه كلُّ شيء.",
+        ref: "Surah An-Nisa (4:86)",
+        strength: "quran",
+        plain: "If someone greets you, answer with something better — and if not better, then at least the same. Saying less, or nothing, is not one of the options the verse leaves open.",
+        plainAr: "إذا حيّاك أحدٌ فردَّ بأحسن منها — فإن لم يكن أحسن فبمثلها. وأمّا أن تنقص أو تسكت فليس ممّا تركته الآيةُ مفتوحًا.",
+        words: [
+          {
+            w: "بِأَحۡسَنَ",
+            t: "bi-ahsan — with better than it",
+            meaning: "A comparative again, and here it sets the default upward. The ordinary human instinct is to match what we are given — the verse makes matching the **lower** bound and puts the aim above it.",
+            meaningAr: "اسمُ تفضيلٍ آخر، وهو ههنا يرفع الأصل: فطبعُ الناس أن يُقابلوا بالمثل، فجعلت الآيةُ المِثلَ **أدنى** الحدّين، ووضعت المقصد فوقه.",
+            source: "Arabic grammar: the comparative sets the higher term",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-An'am (6:160)",
+            ar: "مَن جَآءَ بِٱلۡحَسَنَةِ فَلَهُۥ عَشۡرُ أَمۡثَالِهَاۖ",
+            en: "“Whoever comes with a good deed will have ten times the like of it.”",
+            how: "The same principle, run in the other direction: you are told to answer a greeting with more than its like, by the One who answers a good deed with ten times its like.",
+            howAr: "المبدأُ نفسُه في الجهة المقابلة: أُمرت أن تردّ التحيّة بأحسن منها، والذي أمرك يجزي الحسنة بعشر أمثالها."
+          }
+        ]
+      },
+      {
+        n: 128,
+        ar: "وَإِنِ ٱمۡرَأَةٌ خَافَتۡ مِنۢ بَعۡلِهَا نُشُوزًا أَوۡ إِعۡرَاضٗا فَلَا جُنَاحَ عَلَيۡهِمَآ أَن يُصۡلِحَا بَيۡنَهُمَا صُلۡحٗاۚ وَٱلصُّلۡحُ خَيۡرٞۗ وَأُحۡضِرَتِ ٱلۡأَنفُسُ ٱلشُّحَّۚ وَإِن تُحۡسِنُواْ وَتَتَّقُواْ فَإِنَّ ٱللَّهَ كَانَ بِمَا تَعۡمَلُونَ خَبِيرٗا",
+        why: "A marriage has gone cold — the verse names the two things a woman may fear from a husband: nushuz (his turning against her) or plain iʿrad (turning away, indifference). And the ruling is not a sentence passed on anyone. It is permission: there is no blame on the two of them in making terms between themselves. She may give up part of what is hers to keep the marriage; he may give ground; whatever they settle on is theirs.\n\nThen the verse states the principle in two words — **and settlement is better** — and, immediately after it, the reason such settlements are hard: **souls have been made prone to withholding**.\n\nThat last clause is not a rebuke. It is a description of what both of them will be feeling while they try, put there so that neither mistakes the difficulty for a sign that the marriage is beyond saving.",
+        whyAr: "زواجٌ فتر — وسمّت الآيةُ ما تخافه المرأةُ من زوجها: ﴿نُشُوزًا أَوۡ إِعۡرَاضٗا﴾. والحكمُ ليس قضاءً على أحد، وإنما إذن: ﴿فَلَا جُنَاحَ عَلَيۡهِمَآ أَن يُصۡلِحَا بَيۡنَهُمَا صُلۡحٗاۚ﴾. فلها أن تترك بعض حقّها إبقاءً على النكاح، وله أن ينزل عن شيء، وما اصطلحا عليه فهو لهما.\n\nثم قرّرت الآيةُ الأصل في كلمتين — ﴿وَٱلصُّلۡحُ خَيۡرٞۗ﴾ — وأتبعته في الحال بسبب عُسر الصلح: ﴿وَأُحۡضِرَتِ ٱلۡأَنفُسُ ٱلشُّحَّۚ﴾.\n\nوليست الجملةُ الأخيرة تقريعًا، وإنما وصفٌ لما يجده الطرفان وهما يحاولان، وُضع لئلّا يحسب أحدُهما أنّ الصعوبة دليلٌ على أنّ الأمر انتهى.",
+        ref: "Surah An-Nisa (4:128)",
+        strength: "quran",
+        plain: "When a marriage goes cold, the Quran's first move is not separation: it allows the two of them to make their own terms, says plainly that a settlement is better, and then warns that both of them will feel the pull to hold on to every right they have. Knowing that in advance is half the work.",
+        plainAr: "إذا فتر الزواج فليست أوّلُ خطوةٍ في القرآن الفراق: بل أُذن لهما أن يصطلحا على ما يريان، وقيل صريحًا: الصلحُ خير، ثم نُبِّها إلى أنّ كلًّا منهما سيجد في نفسه شحًّا بحقّه. ومعرفةُ ذلك قبل البدء نصفُ الطريق.",
+        words: [
+          {
+            w: "ٱلشُّحَّۚ",
+            t: "ash-shuhh — grasping, holding back",
+            meaning: "Shuhh is stronger than plain miserliness: the lexicons put greed and refusal together in it — wanting what is not yours and clinging to what is. The verse does not command against it here. It states that it is **present** in souls, as a fact the two of them will have to work around.",
+            meaningAr: "الشحُّ أشدُّ من البخل: تجمع فيه المعاجمُ الحرصَ والمنع — طلبَ ما ليس لك وإمساكَ ما هو لك. ولم تنهَ الآيةُ عنه ههنا، وإنما أخبرت أنه **حاضرٌ** في النفوس، حقيقةً عليهما أن يعملا معها.",
+            source: "The classical lexicons on ش ح ح: greed together with withholding",
+            strength: "lugha"
+          },
+          {
+            w: "وَأُحۡضِرَتِ",
+            t: "uhdirat — has been made present",
+            meaning: "A passive verb: it was brought and placed there. The Quran is describing the raw material of a human being, not accusing a particular wife or husband — which is why the sentence sits in the middle of a ruling rather than in a warning.",
+            meaningAr: "فعلٌ مبنيٌّ للمجهول: أُتي به فوُضع. فالقرآنُ يصف مادّة الإنسان لا يتّهم زوجةً بعينها ولا زوجًا — ولذلك جاءت الجملةُ في وسط حكمٍ لا في وعيد.",
+            source: "Arabic morphology (the passive)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Hashr (59:9)",
+            ar: "وَمَن يُوقَ شُحَّ نَفۡسِهِۦ فَأُوْلَٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ",
+            en: "“And whoever is protected from the stinginess of his own soul — it is those who are the successful.”",
+            how: "The same word, named as the thing a person needs to be **protected from**, and success attached to escaping it. Here it is a fact about souls; there it is the obstacle a successful person got past.",
+            howAr: "اللفظُ نفسُه، مذكورًا على أنه ما يُحتاج أن يُوقاه المرء، وعُلّق الفلاحُ بالنجاة منه. فهو ههنا خبرٌ عن النفوس، وهناك العقبةُ التي جاوزها المفلح."
+          }
+        ]
+      },
+      {
+        n: 171,
+        ar: "يَٰٓأَهۡلَ ٱلۡكِتَٰبِ لَا تَغۡلُواْ فِي دِينِكُمۡ وَلَا تَقُولُواْ عَلَى ٱللَّهِ إِلَّا ٱلۡحَقَّۚ إِنَّمَا ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ رَسُولُ ٱللَّهِ وَكَلِمَتُهُۥٓ أَلۡقَىٰهَآ إِلَىٰ مَرۡيَمَ وَرُوحٞ مِّنۡهُۖ فَـَٔامِنُواْ بِٱللَّهِ وَرُسُلِهِۦۖ وَلَا تَقُولُواْ ثَلَٰثَةٌۚ ٱنتَهُواْ خَيۡرٗا لَّكُمۡۚ",
+        arNote: "The opening of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا صدرُ الآية، وهي كاملةٌ أعلاه.",
+        why: "The command is not to believe more. It is: **do not go beyond the limit in your religion**.\n\nThat is worth sitting with, because the people addressed were not being accused of neglecting a prophet. They were being corrected for raising one too high. Excess in religion is put in the same sentence as saying about Allah what is not true — as though they were the same offence, which in this case they had become.\n\nThen the verse states the position exactly, without shaving anything off it: the Messiah, Isa son of Maryam, is the Messenger of Allah, and His word which He cast to Maryam, and a spirit from Him. Believe in Allah and His messengers, and do not say “three”. Every clause is both an affirmation and a fence.",
+        whyAr: "ليس الأمرُ بأن يزدادوا إيمانًا، وإنما: ﴿لَا تَغۡلُواْ فِي دِينِكُمۡ﴾.\n\nوهذا موضعُ وقوف: فالمخاطَبون لم يُعابوا بتقصيرٍ في نبيّ، وإنما بأنهم رفعوه فوق قدره. فقُرن الغلوُّ في الدين بالقول على الله بغير الحقّ في جملةٍ واحدة — كأنهما شيءٌ واحد، وقد صارا ههنا كذلك.\n\nثم قرّرت الآيةُ المقام تقريرًا لا نقص فيه: ﴿إِنَّمَا ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ رَسُولُ ٱللَّهِ وَكَلِمَتُهُۥٓ أَلۡقَىٰهَآ إِلَىٰ مَرۡيَمَ وَرُوحٞ مِّنۡهُۖ﴾. ثم: آمنوا بالله ورسله ولا تقولوا ثلاثة. فكلُّ جملةٍ إثباتٌ وحدٌّ في آن.",
+        ref: "Surah An-Nisa (4:171)",
+        strength: "quran",
+        words: [
+          {
+            w: "تَغۡلُواْ",
+            t: "taghlu — go past the limit",
+            meaning: "Ghuluww is exceeding the proper bound of a thing — Arabic uses it of a price that has gone beyond what the goods are worth. Applied to religion it names a specific failure: not too little devotion, but devotion pushed past where the evidence stops.",
+            meaningAr: "الغلوُّ مجاوزةُ الحدّ في الشيء — ومنه غلا السعرُ إذا جاوز قيمة السلعة. فإذا قيل في الدين سمّى خللًا بعينه: لا نقصَ في التعظيم، بل تعظيمٌ دُفع إلى ما وراء ما قام عليه الدليل.",
+            source: "Arabic usage of غ ل و; and the Prophet ﷺ warned against al-ghuluww in religion (Sunan an-Nasa'i and Sunan Ibn Majah — graded Sahih)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:77)",
+            ar: "قُلۡ يَٰٓأَهۡلَ ٱلۡكِتَٰبِ لَا تَغۡلُواْ فِي دِينِكُمۡ غَيۡرَ ٱلۡحَقِّ",
+            en: "“Say: O People of the Book, do not go beyond the limit in your religion, other than the truth.”",
+            how: "The same prohibition, with two additions: not beyond **the truth** — so the limit is not a matter of taste — and a warning against following people who were themselves led astray and led many astray with them.",
+            howAr: "النهيُ نفسُه بزيادتين: ﴿غَيۡرَ ٱلۡحَقِّ﴾ — فالحدُّ ليس ذوقًا — وتحذيرٌ من اتّباع قومٍ ضلّوا وأضلّوا كثيرًا."
+          },
+          {
+            ref: "Surah Al-Ma'idah (5:116)",
+            ar: "ءَأَنتَ قُلۡتَ لِلنَّاسِ ٱتَّخِذُونِي وَأُمِّيَ إِلَٰهَيۡنِ مِن دُونِ ٱللَّهِۖ قَالَ سُبۡحَٰنَكَ مَا يَكُونُ لِيٓ أَنۡ أَقُولَ مَا لَيۡسَ لِي بِحَقٍّۚ",
+            en: "“Did you say to the people: take me and my mother as two gods besides Allah? He said: glory be to You — it is not for me to say what I have no right to.”",
+            how: "The excess forbidden here is answered there by the man it was committed over — and his answer begins by glorifying Allah before it defends himself.",
+            howAr: "الغلوُّ المنهيُّ عنه ههنا يُجيب عنه هناك الذي غُلي فيه — ويبدأ جوابُه بتنزيه الله قبل الدفاع عن نفسه."
+          }
+        ]
       }
     ]
   },
@@ -1808,7 +2637,16 @@ const TADABBUR = {
         why: "Read the words the quotation usually starts after: BECAUSE OF THAT. Because of what? The verse before it is the story of the two sons of Adam — one killed the other, and the killer then did not even know how to bury the body. This ruling is placed immediately after the first murder in human history, as the conclusion drawn from it.\n\nThat is why one soul equals all of mankind here. Cain did not kill a population; he killed one man, and with him he killed the whole of what that man would have become. The verse is generalising from a single grave.\n\nTwo things are worth being exact about. It says WE DECREED UPON THE CHILDREN OF ISRAEL — the wording is honest that this was a prior legislation, and the Quran is reporting it as binding testimony, not inventing it. And critics who quote only the killing clause always drop the second half, which is in the same breath and is the point being made: whoever saves one life, it is as if he saved all of mankind.",
         whyAr: "اقرأ الكلمات التي يبدأ النقلُ بعدها عادةً: ﴿**مِنۡ أَجۡلِ ذَٰلِكَ**﴾. من أجل ماذا؟ الآيةُ قبلها خبرُ ابنَي آدم: قتل أحدهما أخاه، ثم لم يُحسن مواراة جسده. فوُضع هذا الحكم عقب أوّل قتلٍ في تاريخ البشر، نتيجةً مستخرجةً منه.\n\nولهذا صارت النفس الواحدة هنا كالناس جميعًا: فما قتل قابيلُ أمّةً، وإنما قتل رجلًا واحدًا، وقتل معه كلَّ ما كان سيكون منه. فالآية تُعمّم من قبرٍ واحد.\n\nوأمران يُضبطان: قوله ﴿كَتَبۡنَا عَلَىٰ بَنِيٓ إِسۡرَٰٓءِيلَ﴾ تصريحٌ بأنّ هذا تشريعٌ سابق، والقرآن يُخبر به شهادةً مُلزِمة لا يبتدعه. والذين ينقلون شطر القتل وحده يُسقطون دائمًا الشطر الثاني، وهو في النَّفَس نفسه وهو المقصود: ﴿وَمَنۡ أَحۡيَاهَا فَكَأَنَّمَآ أَحۡيَا ٱلنَّاسَ جَمِيعٗاۚ﴾.",
         ref: "Surah Al-Ma'idah (5:32), read with 5:27-31",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:31)",
+            ar: "فَبَعَثَ ٱللَّهُ غُرَابٗا يَبۡحَثُ فِي ٱلۡأَرۡضِ لِيُرِيَهُۥ كَيۡفَ يُوَٰرِي سَوۡءَةَ أَخِيهِۚ",
+            en: "“Then Allah sent a crow, scratching in the ground, to show him how to hide the body of his brother.”",
+            how: "The verse immediately before this one is where the ruling comes from: one killing, one body, and a man who had to be taught by a bird how to bury it. Then: whoever kills one soul, it is as if he killed mankind.",
+            howAr: "الآيةُ التي قبل هذه هي مصدرُ الحكم: قتيلٌ واحدٌ وجسدٌ واحد، ورجلٌ احتاج أن يُعلّمه طائرٌ كيف يُواريه. ثم: من قتل نفسًا فكأنما قتل الناس جميعًا."
+          }
+        ]
       },
       {
         n: 8,
@@ -1828,7 +2666,249 @@ const TADABBUR = {
           }
         ],
         plain: "In plain words: you are not told to stop disliking anyone. You are told that your dislike is not allowed to make you unfair — and that being fair to them is closer to fearing Allah.",
-        plainAr: "بعبارة أخرى: لم يُطلب منك أن تكفّ عن بُغض أحد، وإنما ألّا يحملك بغضك على الجور، وأنّ عدلك معهم أقرب لتقوى الله."
+        plainAr: "بعبارة أخرى: لم يُطلب منك أن تكفّ عن بُغض أحد، وإنما ألّا يحملك بغضك على الجور، وأنّ عدلك معهم أقرب لتقوى الله.",
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:2)",
+            ar: "وَلَا يَجۡرِمَنَّكُمۡ شَنَـَٔانُ قَوۡمٍ أَن صَدُّوكُمۡ عَنِ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ أَن تَعۡتَدُواْۘ",
+            en: "“And do not let the hatred of a people — because they barred you from the Sacred Mosque — lead you to transgress.”",
+            how: "Six verses earlier the same rule is given with the grievance named: these are the people who turned you away from the Kaaba. Here it is put positively — be just — and there it is put at its hardest.",
+            howAr: "قبلها بستّ آياتٍ جاء الحكمُ نفسُه ومعه سببُ البغض مسمًّى: هؤلاء هم الذين صدّوكم عن البيت. فههنا جاء إيجابًا: اعدلوا، وهناك جاء في أشدّ مواضعه."
+          }
+        ]
+      },
+      {
+        n: 2,
+        ar: "وَلَا يَجۡرِمَنَّكُمۡ شَنَـَٔانُ قَوۡمٍ أَن صَدُّوكُمۡ عَنِ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ أَن تَعۡتَدُواْۘ وَتَعَاوَنُواْ عَلَى ٱلۡبِرِّ وَٱلتَّقۡوَىٰۖ وَلَا تَعَاوَنُواْ عَلَى ٱلۡإِثۡمِ وَٱلۡعُدۡوَٰنِۚ وَٱتَّقُواْ ٱللَّهَۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلۡعِقَابِ",
+        arNote: "The second half of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا شطرُ الآية الثاني، وهي كاملةٌ أعلاه.",
+        why: "Read the two halves of this in order, because the second one is only remarkable because of the first.\n\n**First:** do not let the hatred of a people **who barred you from the Sacred Mosque** carry you into transgressing. These are not strangers. They are the ones who turned the Muslims away from the Kaaba at Hudaybiyah — the specific injury is named in the verse, and the verse still refuses to let it license anything.\n\n**Then:** cooperate upon righteousness and God-consciousness, and do not cooperate upon sin and aggression.\n\nThe famous half is the second. The first half is what makes it a law rather than a slogan: the rule holds even towards the people with the best claim on your anger.",
+        whyAr: "اقرأ شطريها على الترتيب، فإنّ الثاني لا يُعرف قدرُه إلا بالأوّل.\n\n**أوّلًا:** ﴿وَلَا يَجۡرِمَنَّكُمۡ شَنَـَٔانُ قَوۡمٍ أَن صَدُّوكُمۡ عَنِ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ أَن تَعۡتَدُواْۘ﴾. وليس هؤلاء غرباء، وإنما هم الذين صدّوا المسلمين عن البيت عام الحديبية — فسمّت الآيةُ الأذى بعينه، ثم أبت أن تجعله مسوّغًا لشيء.\n\n**ثم:** ﴿وَتَعَاوَنُواْ عَلَى ٱلۡبِرِّ وَٱلتَّقۡوَىٰۖ وَلَا تَعَاوَنُواْ عَلَى ٱلۡإِثۡمِ وَٱلۡعُدۡوَٰنِۚ﴾.\n\nوالشطرُ المشهور هو الثاني، وإنما صار الأوّلُ هو الذي يجعله قانونًا لا شعارًا: فالحكمُ قائمٌ حتى مع من لهم أوفى حقٍّ في غضبك.",
+        ref: "Surah Al-Ma'idah (5:2)",
+        strength: "quran",
+        plain: "Do not let your hatred of people who wronged you push you into wronging them. Help each other towards good, and never towards sin. The first sentence is what gives the second one its weight.",
+        plainAr: "لا يحملنّك بغضُ من ظلمك على أن تظلمه. وتعاونوا على الخير، ولا تتعاونوا على الإثم أبدًا. والجملةُ الأولى هي التي تُعطي الثانية ثقلها.",
+        words: [
+          {
+            w: "شَنَـَٔانُ",
+            t: "shana'an — settled hatred",
+            meaning: "Not a flash of anger: shana'an is a standing enmity, the kind that has a history behind it. The verse picks the strongest word for the feeling, states the real grievance that produced it, and then still forbids the one thing it would push you towards.",
+            meaningAr: "ليس غضبةً عارضة: فالشنآنُ بغضٌ مستقرٌّ له تاريخٌ خلفه. فاختارت الآيةُ أقوى لفظٍ للشعور، وذكرت السببَ الحقيقيّ الذي ولّده، ثم نهت مع ذلك عن الشيء الوحيد الذي يدفع إليه.",
+            source: "Arabic usage of ش ن أ",
+            strength: "lugha"
+          },
+          {
+            w: "وَتَعَاوَنُواْ",
+            t: "ta'awanu — help one another",
+            meaning: "Form VI, the mutual pattern: not “do good” but “give each other a hand towards it”. The prohibition takes the same form — and that is what makes it reach the person who never committed the sin himself but made it possible for someone else.",
+            meaningAr: "على وزن «تفاعل» للمشاركة: فليس «افعلوا الخير»، بل «ليُعن بعضُكم بعضًا عليه». وجاء النهيُ على البناء نفسِه — وبه يبلغ الحكمُ من لم يُباشر الإثم ولكنه هيّأه لغيره.",
+            source: "Arabic morphology (form VI)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:8)",
+            ar: "وَلَا يَجۡرِمَنَّكُمۡ شَنَـَٔانُ قَوۡمٍ عَلَىٰٓ أَلَّا تَعۡدِلُواْۚ ٱعۡدِلُواْ هُوَ أَقۡرَبُ لِلتَّقۡوَىٰۖ",
+            en: "“And do not let the hatred of a people prevent you from being just. Be just — that is nearer to righteousness.”",
+            how: "Six verses later the same rule is given again, and the second time the positive duty is named: not merely “do not transgress” but **be just**, towards the people you have every reason to hate.",
+            howAr: "بعدها بستّ آياتٍ يعود الحكمُ نفسُه، وفي الثانية سُمّي الواجبُ الإيجابيّ: لا «لا تعتدوا» فحسب، بل **اعدلوا** مع من لك كلُّ سببٍ أن تبغضهم."
+          }
+        ]
+      },
+      {
+        n: 3,
+        ar: "ٱلۡيَوۡمَ يَئِسَ ٱلَّذِينَ كَفَرُواْ مِن دِينِكُمۡ فَلَا تَخۡشَوۡهُمۡ وَٱخۡشَوۡنِۚ ٱلۡيَوۡمَ أَكۡمَلۡتُ لَكُمۡ دِينَكُمۡ وَأَتۡمَمۡتُ عَلَيۡكُمۡ نِعۡمَتِي وَرَضِيتُ لَكُمُ ٱلۡإِسۡلَٰمَ دِينٗاۚ",
+        arNote: "The middle of the verse is quoted here; the whole of it — the forbidden foods — is above.",
+        arNoteAr: "المقتبسُ ههنا وسطُ الآية، وهي كاملةٌ أعلاه بما فيها المحرَّمات.",
+        why: "The most weighty sentence in the surah sits in the middle of a list of forbidden foods. **This day I have perfected your religion for you, completed My favour upon you, and approved Islam for you as a religion.**\n\nIt was recited at Arafah, on a Friday, on the farewell pilgrimage — a place and a day the reader can date. A man from the People of the Book said to Umar: there is a verse in your book which, had it come down to us, we would have taken that day as a festival. Umar answered that he knew the day and the place it came down.\n\nAnd the placement is the lesson. The completion of a religion is announced inside a ruling about what may be eaten — because a religion is completed in its ordinary detail, not only in its declarations.",
+        whyAr: "أثقلُ جملةٍ في السورة جاءت في وسط تعداد المحرَّمات: ﴿ٱلۡيَوۡمَ أَكۡمَلۡتُ لَكُمۡ دِينَكُمۡ وَأَتۡمَمۡتُ عَلَيۡكُمۡ نِعۡمَتِي وَرَضِيتُ لَكُمُ ٱلۡإِسۡلَٰمَ دِينٗاۚ﴾.\n\nنزلت بعرفة، يوم جمعة، في حجّة الوداع — موضعٌ ويومٌ يستطيع القارئُ أن يؤرّخهما. وقال رجلٌ من أهل الكتاب لعمر: آيةٌ في كتابكم لو علينا نزلت لاتّخذنا ذلك اليوم عيدًا. فأجابه عمرُ بأنه يعلم اليوم الذي نزلت فيه والمكان.\n\nوفي الموضع درسُها: فقد أُعلن كمالُ الدين داخلَ حكمٍ في المطعوم — لأنّ الدين يكمل في تفاصيله العاديّة، لا في إعلاناته وحدها.",
+        ref: "Surah Al-Ma'idah (5:3); the exchange with Umar is in Sahih al-Bukhari (Book of Iman) and Sahih Muslim",
+        strength: "hadith",
+        plain: "“Today I have perfected your religion for you” was revealed at Arafah on the farewell pilgrimage — and it was revealed in the middle of a verse about which meat is lawful. The religion was completed in the details, not in a ceremony.",
+        plainAr: "﴿ٱلۡيَوۡمَ أَكۡمَلۡتُ لَكُمۡ دِينَكُمۡ﴾ نزلت بعرفة في حجّة الوداع — ونزلت في وسط آيةٍ في لحومٍ تحلّ وتحرم. فكمل الدينُ في التفاصيل، لا في احتفال.",
+        words: [
+          {
+            w: "أَكۡمَلۡتُ",
+            t: "akmaltu — I have perfected",
+            meaning: "Kamal is completeness in quality — a thing having everything it should have. It is paired in the same sentence with atmamtu, from tamam, which is completeness in quantity: nothing left out. The religion is declared both whole and finished, in two different words, in one breath.",
+            meaningAr: "الكمالُ تمامٌ في الوصف: أن يكون للشيء كلُّ ما ينبغي له. وقُرن في الجملة نفسِها بـ«أتممتُ» من التمام، وهو تمامٌ في المقدار: ألّا يبقى شيءٌ ناقصًا. فوُصف الدينُ بالكمال والتمام بلفظين في نفَسٍ واحد.",
+            source: "Arabic usage of ك م ل and ت م م, as the verse pairs them",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:3) — the end of the same verse",
+            ar: "فَمَنِ ٱضۡطُرَّ فِي مَخۡمَصَةٍ غَيۡرَ مُتَجَانِفٖ لِّإِثۡمٖ فَإِنَّ ٱللَّهَ غَفُورٞ رَّحِيمٞ",
+            en: "“But whoever is forced by severe hunger, with no inclination to sin — then indeed, Allah is Forgiving and Merciful.”",
+            how: "The sentence that follows the announcement of perfection is an exemption for the starving. A religion described as complete immediately makes room for the person who cannot keep it.",
+            howAr: "الجملةُ التي تلي إعلان الكمال رخصةٌ للمضطرّ. فدينٌ وُصف بالكمال يفتح في الحال بابًا لمن لا يستطيع."
+          }
+        ]
+      },
+      {
+        n: 31,
+        ar: "فَبَعَثَ ٱللَّهُ غُرَابٗا يَبۡحَثُ فِي ٱلۡأَرۡضِ لِيُرِيَهُۥ كَيۡفَ يُوَٰرِي سَوۡءَةَ أَخِيهِۚ قَالَ يَٰوَيۡلَتَىٰٓ أَعَجَزۡتُ أَنۡ أَكُونَ مِثۡلَ هَٰذَا ٱلۡغُرَابِ فَأُوَٰرِيَ سَوۡءَةَ أَخِيۖ فَأَصۡبَحَ مِنَ ٱلنَّٰدِمِينَ",
+        why: "The first death among the children of Adam, and the killer is standing over a body he does not know what to do with.\n\nSo Allah sent a crow, scratching in the ground, **to show him** how to hide his brother's corpse. And the man says the sentence that is the whole scene: *woe to me — am I unable to be like this crow, and hide my brother's body?*\n\nRead what he is ashamed of. Not the murder, at first: the incompetence. The first lesson a human being received about burial came from a bird, and the Quran records the man's humiliation at having to learn it that way. Then, at the very end of the verse, the other thing arrives: **so he became of the regretful**.",
+        whyAr: "أوّلُ موتٍ في بني آدم، والقاتلُ واقفٌ على جسدٍ لا يدري ما يصنع به.\n\n﴿فَبَعَثَ ٱللَّهُ غُرَابٗا يَبۡحَثُ فِي ٱلۡأَرۡضِ لِيُرِيَهُۥ كَيۡفَ يُوَٰرِي سَوۡءَةَ أَخِيهِۚ﴾. فقال الكلمةَ التي هي المشهدُ كلُّه: ﴿يَٰوَيۡلَتَىٰٓ أَعَجَزۡتُ أَنۡ أَكُونَ مِثۡلَ هَٰذَا ٱلۡغُرَابِ فَأُوَٰرِيَ سَوۡءَةَ أَخِيۖ﴾.\n\nوانظر ممّ خجل: ليس من القتل في أوّل الأمر، بل من العجز. فأوّلُ ما تعلّمه الإنسانُ في الدفن تعلّمه من طائر، وسجّل القرآنُ انكسارَه أن يتعلّمه هكذا. ثم في آخر الآية يجيء الأمرُ الآخر: ﴿فَأَصۡبَحَ مِنَ ٱلنَّٰدِمِينَ﴾.",
+        ref: "Surah Al-Ma'idah (5:31)",
+        strength: "quran",
+        plain: "After the first murder, the killer did not know how to bury the body. A crow scratching the ground taught him — and his first words were not about the killing but about being outdone by a bird.",
+        plainAr: "بعد أوّل قتلٍ لم يعرف القاتلُ كيف يُوارى الجسد، فعلّمه غرابٌ يبحث في الأرض — وكان أوّلُ ما قاله ليس في القتل، بل في أن سبقه طائر.",
+        words: [
+          {
+            w: "يَبۡحَثُ",
+            t: "yabhathu — scratching, digging into",
+            meaning: "The verb is to search by turning something over — the same root as “research”. The crow is not simply digging; it is rummaging in the earth, and the man is watching a search that answers a question he had not managed to ask properly.",
+            meaningAr: "البحثُ إثارةُ الشيء طلبًا لما فيه — ومن المادّة نفسها البحثُ في العلم. فالغرابُ لا يحفر فحسب، وإنما يُقلّب الأرض، والرجلُ ينظر إلى طلبٍ يُجيب سؤالًا لم يُحسن هو أن يسأله.",
+            source: "Arabic usage of ب ح ث",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:32)",
+            ar: "بَنِيٓ إِسۡرَٰٓءِيلَ أَنَّهُۥ مَن قَتَلَ نَفۡسَۢا بِغَيۡرِ نَفۡسٍ أَوۡ فَسَادٖ فِي ٱلۡأَرۡضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعٗا وَمَنۡ أَحۡيَاهَا فَكَأَنَّمَآ أَحۡيَا ٱلنَّاسَ جَمِيعٗاۚ",
+            en: "“Whoever kills a soul — unless for a soul or for corruption in the land — it is as if he had slain mankind entirely; and whoever saves one, it is as if he had saved mankind entirely.”",
+            how: "The verse immediately after the burial is the ruling drawn from it: the story of one killing is turned into the value of one life, and the Quran says explicitly that this is why it was prescribed for the Children of Israel.",
+            howAr: "الآيةُ التي تلي الدفن هي الحكمُ المستخرَج منه: تُحوّل قصّةُ قتلٍ واحدٍ إلى قيمة النفس الواحدة، وقد صرّح القرآنُ أنّ من أجل ذلك كُتب على بني إسرائيل."
+          }
+        ]
+      },
+      {
+        n: 48,
+        ar: "لِكُلّٖ جَعَلۡنَا مِنكُمۡ شِرۡعَةٗ وَمِنۡهَاجٗاۚ وَلَوۡ شَآءَ ٱللَّهُ لَجَعَلَكُمۡ أُمَّةٗ وَٰحِدَةٗ وَلَٰكِن لِّيَبۡلُوَكُمۡ فِي مَآ ءَاتَىٰكُمۡۖ فَٱسۡتَبِقُواْ ٱلۡخَيۡرَٰتِۚ",
+        arNote: "The second part of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا الشطرُ الثاني من الآية، وهي كاملةٌ أعلاه.",
+        why: "The verse says something people often assume the Quran denies: the differences between the communities were **intended**.\n\nFor each of you We made a law and a way. And had Allah willed, He could have made you one single community — but in order to test you in what He gave you. The plurality is not a failure of the plan; the verse says it is the plan, and then names what it is for.\n\nAnd look at the instruction that follows, because it decides what to do with difference: **so race one another to the good things.** Not “argue until one of you is left”. The competition the verse orders is a race in doing good, and the verdict on what you differed about is deferred to the only One who can give it: to Allah is your return, all of you, and He will inform you concerning that over which you used to differ.",
+        whyAr: "تقول الآيةُ ما يظنّ كثيرون أنّ القرآن يُنكره: أنّ اختلاف الشرائع بين الأمم **مقصود**.\n\n﴿لِكُلّٖ جَعَلۡنَا مِنكُمۡ شِرۡعَةٗ وَمِنۡهَاجٗاۚ﴾. ﴿وَلَوۡ شَآءَ ٱللَّهُ لَجَعَلَكُمۡ أُمَّةٗ وَٰحِدَةٗ وَلَٰكِن لِّيَبۡلُوَكُمۡ فِي مَآ ءَاتَىٰكُمۡۖ﴾. فليست الكثرةُ خللًا في التدبير، بل قالت الآيةُ إنها التدبير، ثم سمّت الغاية.\n\nوانظر الأمرَ بعدها، فهو الذي يُحدّد ما يُصنع بالاختلاف: ﴿فَٱسۡتَبِقُواْ ٱلۡخَيۡرَٰتِۚ﴾. لا «تخاصموا حتى يبقى أحدُكم»، وإنما مسابقةٌ في الخير؛ وأمّا الحكمُ في موضع الخلاف فمردودٌ إلى من يملكه وحده: إلى الله مرجعُكم جميعًا فيُنبّئكم بما كنتم فيه تختلفون.",
+        ref: "Surah Al-Ma'idah (5:48)",
+        strength: "quran",
+        plain: "Different communities were given different laws on purpose, as a test. The Quran's instruction about that difference is not to win the argument but to outrun each other in doing good — and to leave the verdict to Allah.",
+        plainAr: "جُعلت للأمم شرائعُ مختلفةٌ عن قصد، ابتلاءً. وأمرُ القرآن في هذا الاختلاف ليس أن تغلب في الجدل، بل أن تسابق غيرك إلى الخير — وأن يُترك الحكمُ لله.",
+        words: [
+          {
+            w: "شِرۡعَةٗ وَمِنۡهَاجٗاۚ",
+            t: "shir'atan wa minhajan — a law and an open way",
+            meaning: "Two words, not one. A shir'a is the place you come down to the water — the point of access; a minhaj is a road that is clear and trodden. Together: what you are given to drink from, and the path you walk to reach it. The verse grants both to every community named in the passage.",
+            meaningAr: "كلمتان لا واحدة. فالشِّرعةُ مورد الماء الذي يُنحدر إليه، والمنهاجُ الطريقُ الواضحُ المسلوك. وهما معًا: ما تشرب منه، والطريقُ الذي تسلكه إليه. ومنحت الآيةُ كلَّ أمّةٍ في السياق كليهما.",
+            source: "Arabic usage of ش ر ع and ن ه ج",
+            strength: "lugha"
+          },
+          {
+            w: "فَٱسۡتَبِقُواْ",
+            t: "fastabiqu — so race one another",
+            meaning: "Form VIII of the root for outstripping, and the pattern is competitive: get there before the other. Difference is not answered with tolerance alone, nor with argument — it is answered with a race, and the finish line is named: **the good things**.",
+            meaningAr: "على وزن «افتعل» من السبق، وفيه معنى المغالبة: أن تبلغ قبل غيرك. فلم يُقابَل الاختلافُ بالاحتمال وحده، ولا بالجدل، وإنما بمسابقةٍ سُمّيت غايتُها: **الخيرات**.",
+            source: "Arabic morphology (form VIII), and the wording الخيرات",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Hud (11:118-119)",
+            ar: "وَلَوۡ شَآءَ رَبُّكَ لَجَعَلَ ٱلنَّاسَ أُمَّةٗ وَٰحِدَةٗۖ وَلَا يَزَالُونَ مُخۡتَلِفِينَ ۝ إِلَّا مَن رَّحِمَ رَبُّكَۚ",
+            en: "“And had your Lord willed, He could have made mankind one community — but they will not cease to differ, except those on whom your Lord has mercy.”",
+            how: "The same statement with the outcome added: not only was the difference willed, it will continue. Which is why the instruction here is a way to live with it rather than a plan to end it.",
+            howAr: "الخبرُ نفسُه ومعه المآل: فالاختلافُ لم يُرَد فحسب، بل هو باقٍ. ولذلك كان الأمرُ ههنا طريقةً للعيش معه، لا خطّةً لإنهائه."
+          }
+        ]
+      },
+      {
+        n: 54,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ مَن يَرۡتَدَّ مِنكُمۡ عَن دِينِهِۦ فَسَوۡفَ يَأۡتِي ٱللَّهُ بِقَوۡمٖ يُحِبُّهُمۡ وَيُحِبُّونَهُۥٓ أَذِلَّةٍ عَلَى ٱلۡمُؤۡمِنِينَ أَعِزَّةٍ عَلَى ٱلۡكَٰفِرِينَ يُجَٰهِدُونَ فِي سَبِيلِ ٱللَّهِ وَلَا يَخَافُونَ لَوۡمَةَ لَآئِمٖۚ ذَٰلِكَ فَضۡلُ ٱللَّهِ يُؤۡتِيهِ مَن يَشَآءُۚ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ",
+        why: "A warning and a portrait in one verse. Whoever among you turns back from his religion — Allah will bring a people He loves and who love Him.\n\nThe warning is not that Islam will be lost. It is that **you** may be replaced, and the work will go on without you. And then the replacements are described, and every item is worth stopping at:\n\n· **He loves them and they love Him** — the love is named from His side first.\n· **Humble towards the believers, mighty against the disbelievers** — the same person, two faces, and the gentleness is turned inward.\n· **They strive in the way of Allah** — it is not a description of feeling; there is work in it.\n· **And they do not fear the blame of any blamer** — the last item is about what other people say, which is the thing that stops most people doing the first four.",
+        whyAr: "وعيدٌ وصورةٌ في آيةٍ واحدة: ﴿مَن يَرۡتَدَّ مِنكُمۡ عَن دِينِهِۦ فَسَوۡفَ يَأۡتِي ٱللَّهُ بِقَوۡمٖ﴾ ﴿يُحِبُّهُمۡ وَيُحِبُّونَهُۥٓ﴾.\n\nفليس الوعيدُ أنّ الإسلام يضيع، وإنما أنّك **أنت** قد تُستبدل، ويمضي الأمرُ من دونك. ثم وُصف القومُ البدلاء، وكلُّ وصفٍ موضعُ وقوف:\n\n· ﴿يُحِبُّهُمۡ وَيُحِبُّونَهُۥٓ﴾ — فبُدئ بالحبّ من جهته سبحانه.\n· ﴿أَذِلَّةٍ عَلَى ٱلۡمُؤۡمِنِينَ أَعِزَّةٍ عَلَى ٱلۡكَٰفِرِينَ﴾ — الرجلُ نفسُه بوجهين، واللينُ مصروفٌ إلى الداخل.\n· ﴿يُجَٰهِدُونَ فِي سَبِيلِ ٱللَّهِ﴾ — فليس وصفَ شعور، وفيه عمل.\n· ﴿وَلَا يَخَافُونَ لَوۡمَةَ لَآئِمٖۚ﴾ — وآخرُ الأوصاف في كلام الناس، وهو الذي يمنع أكثرَ الناس من الأربعة قبله.",
+        ref: "Surah Al-Ma'idah (5:54)",
+        strength: "quran",
+        plain: "If people abandon the religion, Allah will replace them with others: people He loves and who love Him, gentle with the believers, firm against those who fight the truth, working hard — and not afraid of what anyone says about them.",
+        plainAr: "إن ترك الناسُ الدين أتى الله بغيرهم: قومٌ يحبّهم ويحبّونه، ألينَ ما يكونون مع المؤمنين، أشدَّ ما يكونون على من يُحاربون الحقّ، يعملون — ولا يخافون قول أحدٍ فيهم.",
+        words: [
+          {
+            w: "أَذِلَّةٍ عَلَى ٱلۡمُؤۡمِنِينَ",
+            t: "adhillatin 'ala-l-mu'minin — humble towards the believers",
+            meaning: "The word is from dhull — lowness — and it is used here as praise: they lower themselves to the believers, the way a wing is lowered. Arabic could have said “gentle”; it chose the stronger word, and then set the opposite word beside it for the other direction.",
+            meaningAr: "اللفظُ من الذلّ، وجاء ههنا مدحًا: يخفضون أنفسهم للمؤمنين خفضَ الجناح. وقد كان في العربية «رفقاء»، فاختير الأشدّ، ثم وُضع مقابلُه إلى الجهة الأخرى.",
+            source: "Quranic wording, and the pairing with أعزّة",
+            strength: "quran"
+          },
+          {
+            w: "لَوۡمَةَ لَآئِمٖۚ",
+            t: "lawmata la'im — the blame of any blamer",
+            meaning: "The indefinite is doing the work: not “the blame of the enemy”, but of **any** blamer at all — including a friend, a relative, a person whose opinion you value. The description ends here because this is where most people stop.",
+            meaningAr: "التنكيرُ هو المقصود: فليست لومةَ العدوّ، بل لومةَ **أيّ** لائمٍ كان — ومنه الصديقُ والقريبُ ومن يهمّك رأيُه. وخُتم الوصفُ بهذا لأنّ عنده يقف أكثرُ الناس.",
+            source: "Arabic grammar: the indefinite in a negative context is general",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Muhammad (47:38)",
+            ar: "وَإِن تَتَوَلَّوۡاْ يَسۡتَبۡدِلۡ قَوۡمًا غَيۡرَكُمۡ ثُمَّ لَا يَكُونُوٓاْ أَمۡثَٰلَكُم",
+            en: "“And if you turn away, He will replace you with another people, then they will not be the likes of you.”",
+            how: "The same warning with one extra clause: the replacements will not be like you. The Quran says this twice, in two surahs, to two audiences — and both times it is said to people who assumed they were indispensable.",
+            howAr: "الوعيدُ نفسُه بزيادة: أنّ البدلاء لا يكونون أمثالكم. قاله القرآنُ مرّتين في سورتين لمخاطَبين، وفي المرّتين قيل لقومٍ حسبوا أنّ الأمر لا يقوم بغيرهم."
+          }
+        ]
+      },
+      {
+        n: 90,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِنَّمَا ٱلۡخَمۡرُ وَٱلۡمَيۡسِرُ وَٱلۡأَنصَابُ وَٱلۡأَزۡلَٰمُ رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ فَٱجۡتَنِبُوهُ لَعَلَّكُمۡ تُفۡلِحُونَ",
+        why: "This is the end of the road that began in Surah Al-Baqarah with a weighing — “in them is great sin, and benefits for people, and their sin is greater”.\n\nHere the argument about benefit is not continued. The category is changed instead: these are **filth, from the work of Satan** — and the command is one word, avoid it. Then the verse after it gives the reason, and it is social before it is personal: Satan only wants to place enmity and hatred between you through wine and gambling, and to turn you away from the remembrance of Allah and from prayer. **So will you not desist?**\n\nThat closing question is how the prohibition ends: not with a threat, but with a question put to people who already knew the answer.",
+        whyAr: "هذا منتهى الطريق الذي ابتدأ في البقرة بالموازنة: فيهما إثمٌ كبيرٌ ومنافعُ للناس وإثمُهما أكبرُ من نفعهما.\n\nوههنا لم تُستأنف المحاجّةُ في المنافع، وإنما نُقل البابُ: ﴿رِجۡسٞ مِّنۡ عَمَلِ ٱلشَّيۡطَٰنِ﴾، والأمرُ كلمةٌ واحدة: ﴿فَٱجۡتَنِبُوهُ﴾. ثم جاءت العلّةُ في الآية بعدها، وهي اجتماعيّةٌ قبل أن تكون فرديّة: ﴿إِنَّمَا يُرِيدُ ٱلشَّيۡطَٰنُ أَن يُوقِعَ بَيۡنَكُمُ ٱلۡعَدَٰوَةَ وَٱلۡبَغۡضَآءَ فِي ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِ وَيَصُدَّكُمۡ عَن ذِكۡرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِۖ﴾. ثم: ﴿فَهَلۡ أَنتُم مُّنتَهُونَ﴾.\n\nوبهذا السؤال خُتم التحريم: لا بوعيد، بل بسؤالٍ يُلقى على قومٍ يعرفون جوابه.",
+        ref: "Surah Al-Ma'idah (5:90), read with (5:91) and (2:219)",
+        strength: "quran",
+        words: [
+          {
+            w: "فَٱجۡتَنِبُوهُ",
+            t: "fajtanibuhu — so keep away from it",
+            meaning: "Not “do not drink it”. The verb is from janb, the side: put it to one side of you, keep your distance from the whole area. A prohibition of an act would have named the act; this one draws a circle and tells you to stay outside it.",
+            meaningAr: "ليس «لا تشربوه». والفعلُ من الجَنْب: اجعله في جانبٍ وابتعد عن حِماه كلِّه. ولو كان نهيًا عن فعلٍ لسُمّي الفعل؛ وأمّا هذا فخطٌّ حول الشيء وأمرٌ بأن تبقى خارجه.",
+            source: "Arabic usage of ج ن ب",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:219)",
+            ar: "يَسۡـَٔلُونَكَ عَنِ ٱلۡخَمۡرِ وَٱلۡمَيۡسِرِۖ قُلۡ فِيهِمَآ إِثۡمٞ كَبِيرٞ وَمَنَٰفِعُ لِلنَّاسِ وَإِثۡمُهُمَآ أَكۡبَرُ مِن نَّفۡعِهِمَاۗ",
+            en: "“They ask you about wine and gambling. Say: in them is great sin, and benefits for people — and their sin is greater than their benefit.”",
+            how: "The first step. Between that verse and this one came the prohibition on approaching prayer while intoxicated (4:43) — three stages, spread over years, ending in one word: avoid it.",
+            howAr: "الخطوةُ الأولى. وبين تلك الآية وهذه جاء النهيُ عن قربان الصلاة في حال السُّكر (٤:٤٣) — ثلاثُ مراحلَ على سنين، انتهت بكلمةٍ واحدة: فاجتنبوه."
+          }
+        ]
+      },
+      {
+        n: 116,
+        ar: "وَإِذۡ قَالَ ٱللَّهُ يَٰعِيسَى ٱبۡنَ مَرۡيَمَ ءَأَنتَ قُلۡتَ لِلنَّاسِ ٱتَّخِذُونِي وَأُمِّيَ إِلَٰهَيۡنِ مِن دُونِ ٱللَّهِۖ قَالَ سُبۡحَٰنَكَ مَا يَكُونُ لِيٓ أَنۡ أَقُولَ مَا لَيۡسَ لِي بِحَقٍّۚ",
+        arNote: "The opening of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا صدرُ الآية، وهي كاملةٌ أعلاه.",
+        why: "A conversation on the Day of Resurrection, and the Quran chooses to record it in direct speech.\n\nAllah asks: did **you** say to people, take me and my mother as two gods besides Allah? And Isa does not begin with “no”. He begins with **glory be to You** — he clears his Lord before he clears himself. Then: it is not for me to say what I have no right to. If I had said it, You would have known it. You know what is in my self and I do not know what is in Yours.\n\nRead the last clause again. The prophet who is being worshipped by millions answers by saying that his Lord's knowledge reaches into him, and his does not reach into his Lord's. That single sentence settles the question the whole surah has been circling.",
+        whyAr: "حوارٌ يوم القيامة، اختار القرآنُ أن يحكيه بلفظه.\n\nيسأل الله: ﴿ءَأَنتَ قُلۡتَ لِلنَّاسِ ٱتَّخِذُونِي وَأُمِّيَ إِلَٰهَيۡنِ مِن دُونِ ٱللَّهِۖ﴾. فلم يبدأ عيسى بـ«لا»، وإنما بدأ بـ﴿سُبۡحَٰنَكَ﴾ — فنزّه ربَّه قبل أن يُنزّه نفسه. ثم: ﴿مَا يَكُونُ لِيٓ أَنۡ أَقُولَ مَا لَيۡسَ لِي بِحَقٍّۚ﴾.\n\nثم اقرأ آخر الحوار: ﴿تَعۡلَمُ مَا فِي نَفۡسِي وَلَآ أَعۡلَمُ مَا فِي نَفۡسِكَۚ﴾. فالنبيُّ الذي يعبده الملايين يُجيب بأنّ علم ربّه ينفذ إليه، وعلمَه لا ينفذ إلى ربّه. وبهذه الجملة وحدها تُحسم المسألةُ التي دارت حولها السورة.",
+        ref: "Surah Al-Ma'idah (5:116)",
+        strength: "quran",
+        plain: "On the Day of Judgement, Isa is asked whether he told people to worship him and his mother. His answer begins by glorifying Allah, not by defending himself — and ends by saying that Allah knows what is inside him, while he knows nothing of what is with Allah.",
+        plainAr: "يوم القيامة يُسأل عيسى: أأنت قلت للناس اتّخذوني وأمّي إلهين؟ فيبدأ جوابه بتنزيه الله لا بالدفاع عن نفسه — وينتهي بأنّ الله يعلم ما في نفسه، وهو لا يعلم ما عند الله.",
+        words: [
+          {
+            w: "سُبۡحَٰنَكَ",
+            t: "subhanaka — glory be to You",
+            meaning: "The answer to a charge of being worshipped begins by declaring Allah free of every fault — including the fault implied by the question. The order of the reply is itself the doctrine: his Lord first, himself second.",
+            meaningAr: "جوابُ من نُسب إليه أنه عُبد يبدأ بتنزيه الله عن كلّ نقص — ومنه ما تضمّنه السؤال. فترتيبُ الجواب نفسُه هو العقيدة: ربُّه أوّلًا، ثم نفسُه.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah An-Nisa (4:171)",
+            ar: "لَا تَغۡلُواْ فِي دِينِكُمۡ وَلَا تَقُولُواْ عَلَى ٱللَّهِ إِلَّا ٱلۡحَقَّۚ",
+            en: "“Do not go beyond the limit in your religion, and do not say about Allah except the truth.”",
+            how: "The command in An-Nisa and the scene here are the same subject from two ends: there, the living are told not to exceed; here, the man they exceeded over answers for it in front of them.",
+            howAr: "الأمرُ في النساء وهذا المشهدُ مسألةٌ واحدةٌ من طرفين: فهناك يُنهى الأحياءُ عن الغلوّ، وههنا يُجيب الذي غُلي فيه بين أيديهم."
+          }
+        ]
       }
     ]
   },
@@ -1909,6 +2989,233 @@ const TADABBUR = {
         ],
         ref: "Surah Al-An'am (6:162-163)",
         strength: "quran"
+      },
+      {
+        n: 12,
+        ar: "قُل لِّمَن مَّا فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۖ قُل لِّلَّهِۚ كَتَبَ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَۚ",
+        arNote: "The first half of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا شطرُ الآية الأوّل، وهي كاملةٌ أعلاه.",
+        why: "A question is put to them — to whom belongs whatever is in the heavens and the earth? — and then the Quran does something it does rarely: it does not wait for their answer. **Say: to Allah.** The question is asked and answered by the same speaker, in the same verse, because the answer was never in dispute; they knew it and lived as though they did not.\n\nThen, immediately, the sentence that has no parallel in the languages of power: **He has decreed upon Himself mercy.** Not “He is merciful”. He wrote it upon Himself — an obligation, taken on from the inside, by the One who cannot be obliged by anything outside Him.",
+        whyAr: "سؤالٌ يُلقى عليهم: ﴿قُل لِّمَن مَّا فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۖ﴾ — ثم يصنع القرآنُ ما يقلّ أن يصنعه: لا ينتظر جوابهم، بل ﴿قُل لِّلَّهِۚ﴾. فسأل وأجاب في الآية نفسها، لأنّ الجواب لم يكن موضعَ نزاعٍ قطّ: يعرفونه ويعيشون على خلافه.\n\nثم في الحال الجملةُ التي لا نظير لها في ألسنة الملوك: ﴿كَتَبَ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَۚ﴾. لا «هو رحيم»، وإنما كتبها على نفسه — إيجابٌ من داخله، ممّن لا يُوجب عليه شيءٌ من خارجه.",
+        ref: "Surah Al-An'am (6:12)",
+        strength: "quran",
+        plain: "Who owns everything in the heavens and the earth? The Quran asks and then answers itself: Allah. And the next thing it says about Him is that He has written mercy upon Himself — not that He happens to be merciful, but that He bound Himself to it.",
+        plainAr: "لمن ما في السماوات والأرض؟ يسأل القرآنُ ثم يُجيب بنفسه: لله. وأوّلُ ما قاله بعدها أنه كتب على نفسه الرحمة — لا أنه رحيمٌ فحسب، بل أنه أوجبها على نفسه.",
+        words: [
+          {
+            w: "كَتَبَ عَلَىٰ نَفۡسِهِ",
+            t: "kataba 'ala nafsihi — He has written it upon Himself",
+            meaning: "Kataba here is the word for binding a thing as a duty — the same verb used when fasting is “prescribed” upon the believers. What makes this sentence extraordinary is the object: upon **Himself**. Mercy is not described as His habit; it is placed on Him as an obligation He created.",
+            meaningAr: "«كتب» ههنا بمعنى الإيجاب والفرض — وهو الفعلُ نفسُه في ﴿كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ﴾. والذي يجعل الجملة عجيبةً متعلَّقُها: على **نفسه**. فما وُصفت الرحمةُ عادةً له، وإنما وُضعت عليه إيجابًا أوجبه هو.",
+            source: "Quranic usage of ك ت ب for what is made obligatory (2:183)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-An'am (6:54)",
+            ar: "كَتَبَ رَبُّكُمۡ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَ",
+            en: "“Your Lord has decreed upon Himself mercy.”",
+            how: "The same sentence again, forty-two verses later in the same surah — and there it is attached to a specific case: whoever of you does evil in ignorance, then repents after it and puts things right.",
+            howAr: "الجملةُ نفسُها بعد اثنتين وأربعين آيةً في السورة نفسِها — وقد عُلّقت هناك بحالٍ بعينها: من عمل منكم سوءًا بجهالةٍ ثم تاب من بعده وأصلح."
+          }
+        ]
+      },
+      {
+        n: 76,
+        ar: "فَلَمَّا جَنَّ عَلَيۡهِ ٱلَّيۡلُ رَءَا كَوۡكَبٗاۖ قَالَ هَٰذَا رَبِّيۖ فَلَمَّآ أَفَلَ قَالَ لَآ أُحِبُّ ٱلۡأٓفِلِينَ",
+        why: "Ibrahim is arguing with a people who worship what is in the sky, and look at the method he uses. He does not begin by denying. He begins by **granting**: night covers him, he sees a star, and says — this is my Lord.\n\nThen the star sets, and he draws the conclusion: I do not love those that set. He repeats the move with the moon, and then with the sun, which is the greatest thing they had. Each time he concedes the claim, waits, and lets the object itself refute it.\n\nThe argument rests on one property: **uful** — the disappearing of a thing below the horizon. Whatever goes out of existence for you cannot be the one who holds existence together. And notice that the conclusion is stated as love, not as logic: I do not **love** those that set. The heart is where the argument lands.",
+        whyAr: "إبراهيم يُحاجّ قومًا يعبدون ما في السماء، فانظر طريقته: لم يبدأ بالإنكار، وإنما بدأ بالتسليم: ﴿فَلَمَّا جَنَّ عَلَيۡهِ ٱلَّيۡلُ رَءَا كَوۡكَبٗاۖ قَالَ هَٰذَا رَبِّيۖ﴾.\n\nثم أفل الكوكب فأخرج النتيجة: ﴿قَالَ لَآ أُحِبُّ ٱلۡأٓفِلِينَ﴾. ثم أعاد الصنيع في القمر، ثم في الشمس وهي أعظمُ ما عندهم. في كلّ مرّةٍ يُسلّم بالدعوى، ثم ينتظر، فيدع الشيءَ نفسَه يُبطلها.\n\nوالحجّةُ قائمةٌ على وصفٍ واحد: **الأُفول**، وهو غيبةُ الشيء. فما غاب عنك لا يكون هو الممسكَ للوجود. وتأمّل أنّ النتيجة جاءت بلفظ المحبّة لا بلفظ المنطق: **لا أحبّ** الآفلين. فالقلبُ هو الذي وقعت فيه الحجّة.",
+        ref: "Surah Al-An'am (6:76), read with (6:77-79)",
+        strength: "quran",
+        plain: "Ibrahim did not argue by contradicting his people. He agreed with them out loud — “this is my Lord” — and then waited for the star to set, and for the moon, and for the sun. Each one disappeared, and the argument made itself.",
+        plainAr: "لم يُحاجّ إبراهيمُ قومَه بالمناقضة، وإنما وافقهم جهرًا: «هذا ربّي»، ثم انتظر الكوكب حتى أفل، ثم القمر، ثم الشمس. فغاب كلُّ واحدٍ منها، وقامت الحجّةُ بنفسها.",
+        words: [
+          {
+            w: "أَفَلَ",
+            t: "afala — it set, it went out of sight",
+            meaning: "Uful is not simply “setting”. Arabic uses it for a thing that goes away and is hidden after having been present. The whole argument turns on it: what is absent from you cannot be the one sustaining you while it is gone.",
+            meaningAr: "الأفولُ ليس الغروب فحسب، وإنما في العربية غيبةُ الشيء واستتارُه بعد ظهور. وعليه مدارُ الحجّة كلِّها: فالغائبُ عنك لا يكون هو الممسك لك في غيبته.",
+            source: "Arabic usage of أ ف ل",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-An'am (6:79)",
+            ar: "إِنِّي وَجَّهۡتُ وَجۡهِيَ لِلَّذِي فَطَرَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ حَنِيفٗاۖ وَمَآ أَنَا۠ مِنَ ٱلۡمُشۡرِكِينَ",
+            en: "“Indeed, I have turned my face towards the One who created the heavens and the earth, inclining to the truth, and I am not of those who associate others with Him.”",
+            how: "The end of the same argument: after three objects have failed the test, he does not name a fourth. He turns to the One who made all three — the maker of the things, not one of the things.",
+            howAr: "منتهى الحجّة نفسِها: فبعد أن سقط الثلاثةُ في الامتحان لم يُسمِّ رابعًا، وإنما وجّه وجهه إلى الذي فطرها — صانعِ الأشياء لا واحدٍ منها."
+          }
+        ]
+      },
+      {
+        n: 97,
+        ar: "وَهُوَ ٱلَّذِي جَعَلَ لَكُمُ ٱلنُّجُومَ لِتَهۡتَدُواْ بِهَا فِي ظُلُمَٰتِ ٱلۡبَرِّ وَٱلۡبَحۡرِۗ قَدۡ فَصَّلۡنَا ٱلۡأٓيَٰتِ لِقَوۡمٖ يَعۡلَمُونَ",
+        why: "Three verses in a row name three ordinary systems and what each is for: the dawn splitting (95-96), the sun and the moon as a reckoning, and here the stars — **so that you may find your way by them in the darknesses of the land and the sea**.\n\nThe word is plural: *darknesses*. Night at sea is not one darkness but many — no landmark, no horizon, no road. Into that the verse puts a fixed set of points that do not move relative to each other, and says they were placed there for you to steer by.\n\nIt closes by naming its audience: **for a people who know**. The stars guide only the one who has learned them; the verse hands you a tool and tells you that the tool requires knowledge.",
+        whyAr: "ثلاثُ آياتٍ متتابعةٍ تُسمّي ثلاثة أنظمةٍ معتادة وما جُعل كلٌّ منها له: فَلْقُ الإصباح (٩٥-٩٦)، والشمسُ والقمرُ حسبانًا، وههنا النجوم: ﴿وَهُوَ ٱلَّذِي جَعَلَ لَكُمُ ٱلنُّجُومَ لِتَهۡتَدُواْ بِهَا فِي ظُلُمَٰتِ ٱلۡبَرِّ وَٱلۡبَحۡرِۗ﴾.\n\nواللفظُ جمع: **ظلمات**. فليل البحر ليس ظلمةً واحدة، بل ظلماتٌ: لا علامةَ ولا أفقَ ولا طريق. فوُضع في ذلك نسقٌ ثابتٌ من النقاط لا يتغيّر بعضُها عن بعض، وقيل إنها جُعلت لك لتهتدي بها.\n\nثم خُتمت بذكر أهلها: ﴿لِقَوۡمٖ يَعۡلَمُونَ﴾. فالنجومُ لا تهدي إلا من تعلّمها؛ فناولتك الآيةُ أداةً وأخبرتك أنّ الأداة تحتاج علمًا.",
+        ref: "Surah Al-An'am (6:97)",
+        strength: "quran",
+        plain: "The stars were put there to be navigated by, in the darkness of land and sea — and the verse ends by saying the signs are detailed for people who know. A map is only useful to someone who has learned to read it.",
+        plainAr: "جُعلت النجومُ ليُهتدى بها في ظلمات البرّ والبحر — وخُتمت الآيةُ بأنّ الآيات مفصَّلةٌ لقومٍ يعلمون. فالخريطةُ لا تنفع إلا من تعلّم قراءتها.",
+        words: [
+          {
+            w: "ظُلُمَٰتِ",
+            t: "zulumat — darknesses, in the plural",
+            meaning: "The Quran keeps darkness plural and light singular, all through the Book: out of the darknesses into the light. Here the plural is doing physical work as well — the dark of the sea is not one condition but many, and every one of them takes a landmark away from you.",
+            meaningAr: "يُبقي القرآنُ الظلماتِ جمعًا والنورَ مفردًا في كتابه كلِّه: من الظلمات إلى النور. والجمعُ ههنا يحمل معنًى محسوسًا أيضًا: فظلمةُ البحر ليست حالًا واحدة، بل أحوالٌ، كلُّ واحدةٍ منها تسلبك علامة.",
+            source: "Quranic usage (2:257 and elsewhere: الظلمات plural, النور singular)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah An-Nahl (16:16)",
+            ar: "وَعَلَٰمَٰتٖۚ وَبِٱلنَّجۡمِ هُمۡ يَهۡتَدُونَ",
+            en: "“And landmarks; and by the star they are guided.”",
+            how: "The same fact stated twice, and in the shorter verse the two tools are put side by side: marks on the ground for the land, and the star for where there are none.",
+            howAr: "الخبرُ نفسُه مرّتين، وفي الآية القصيرة قُرنت الأداتان: علاماتٌ في الأرض للبرّ، والنجمُ حيث لا علامة."
+          }
+        ]
+      },
+      {
+        n: 99,
+        ar: "وَهُوَ ٱلَّذِيٓ أَنزَلَ مِنَ ٱلسَّمَآءِ مَآءٗ فَأَخۡرَجۡنَا بِهِۦ نَبَاتَ كُلِّ شَيۡءٖ فَأَخۡرَجۡنَا مِنۡهُ خَضِرٗا نُّخۡرِجُ مِنۡهُ حَبّٗا مُّتَرَاكِبٗا وَمِنَ ٱلنَّخۡلِ مِن طَلۡعِهَا قِنۡوَانٞ دَانِيَةٞ وَجَنَّٰتٖ مِّنۡ أَعۡنَابٖ وَٱلزَّيۡتُونَ وَٱلرُّمَّانَ مُشۡتَبِهٗا وَغَيۡرَ مُتَشَٰبِهٍۗ ٱنظُرُوٓاْ إِلَىٰ ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَيَنۡعِهِۦٓۚ",
+        arNote: "Most of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا أكثرُ الآية، وهي كاملةٌ أعلاه.",
+        why: "One sentence, and it follows a plant from water to fruit without skipping a step.\n\nWater sent down → the growth of **everything** that grows → out of that, **green** → out of the green, **grain packed in layers** → and from the palm's spathe, clusters hanging low → and gardens of grapes, and the olive and the pomegranate, resembling and not resembling.\n\nThe order is the order a farmer sees: the shoot is green before there is any grain in it, and the grain arrives stacked one on another inside the ear. And then the instruction, which is the point of the whole verse: **look at its fruit when it bears, and at its ripening**. Not “know”, not “believe” — look. Twice: at the moment it fruits, and at the slower business of ripening.",
+        whyAr: "جملةٌ واحدة، تتبع النبتة من الماء إلى الثمرة ولا تُسقط منزلة.\n\nماءٌ يُنزَل ← نباتُ **كلّ** شيء ← ثم يخرج منه **الخَضِر** ← ثم يخرج من الخضِر **حبٌّ متراكب** ← ومن طلع النخل قِنوانٌ دانية ← وجنّاتٌ من أعناب، والزيتونُ والرمّان، مشتبهًا وغير متشابه.\n\nوالترتيبُ ترتيبُ ما يراه الزارع: فالزرعُ يخضرّ قبل أن يكون فيه حبّ، ثم يجيء الحبُّ مركوبًا بعضُه على بعضٍ في السنبلة. ثم الأمرُ الذي هو مقصودُ الآية: ﴿ٱنظُرُوٓاْ إِلَىٰ ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَيَنۡعِهِۦٓۚ﴾. لا «اعلموا» ولا «صدّقوا» — بل انظروا. مرّتين: عند الإثمار، وفي الإيناع وهو أبطأ.",
+        ref: "Surah Al-An'am (6:99)",
+        strength: "quran",
+        plain: "Water comes down, everything green comes out of it, grain comes out of the green stacked in layers, and dates hang in low clusters. Then the verse says: look at the fruit when it appears, and look at it ripening. The evidence it asks for is the kind you can stand in a field and watch.",
+        plainAr: "ينزل الماء، فيخرج منه كلُّ نبت، ويخرج من الأخضر حبٌّ مركوبٌ بعضُه فوق بعض، وتتدلّى من النخل قنوانٌ قريبة. ثم تقول الآية: انظروا إلى الثمر حين يُثمر، وإلى نضجه. فالدليلُ المطلوب ممّا تقف في الحقل فتراه.",
+        words: [
+          {
+            w: "حَبّٗا مُّتَرَاكِبٗا",
+            t: "habban mutarakiban — grain riding on grain",
+            meaning: "The word is from rakiba, to mount or ride: grain stacked one upon another. Open an ear of wheat and that is exactly the arrangement — the grains are not scattered, they are packed in rows against each other. The Quran describes the inside of an ear of corn with the word for a rider on a mount.",
+            meaningAr: "اللفظُ من الركوب: حبٌّ ركب بعضُه بعضًا. وافتح سنبلةً تجد هذا الترتيب بعينه — فالحبُّ ليس متناثرًا، وإنما مرصوصٌ صفوفًا يركب بعضُها بعضًا. فوصف القرآنُ جوفَ السنبلة بلفظ الراكب على مركوب.",
+            source: "Arabic usage of ر ك ب",
+            strength: "lugha"
+          },
+          {
+            w: "مُشۡتَبِهٗا وَغَيۡرَ مُتَشَٰبِهٍۗ",
+            t: "mushtabihan wa ghayra mutashabih — alike and not alike",
+            meaning: "Said of the olive and the pomegranate in the same breath: alike in one respect, unlike in another. Leaves that resemble each other and fruit that does not; a single water and a single soil, and out of them things that share a great deal and still come out different.",
+            meaningAr: "قيل في الزيتون والرمّان في نفَسٍ واحد: متشابهٌ من وجه، مختلفٌ من وجه. ورقٌ يُشبه ورقًا وثمرٌ لا يُشبه ثمرًا؛ ماءٌ واحدٌ وتربةٌ واحدة، ويخرج منهما ما يشترك في كثيرٍ ثم يفترق.",
+            source: "Quranic wording, and the parallel in 13:4",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Ar-Ra'd (13:4)",
+            ar: "وَفِي ٱلۡأَرۡضِ قِطَعٞ مُّتَجَٰوِرَٰتٞ وَجَنَّٰتٞ مِّنۡ أَعۡنَٰبٖ وَزَرۡعٞ وَنَخِيلٞ صِنۡوَانٞ وَغَيۡرُ صِنۡوَانٖ يُسۡقَىٰ بِمَآءٖ وَٰحِدٖ وَنُفَضِّلُ بَعۡضَهَا عَلَىٰ بَعۡضٖ فِي ٱلۡأُكُلِۚ",
+            en: "“And within the land are neighbouring plots, and gardens of grapevines and crops and palm trees… watered with one water, and We make some of them exceed others in taste.”",
+            how: "The same argument pressed one step further: same ground, same water — and the produce differs. The difference cannot be coming from the inputs, which is exactly what the verse wants you to notice.",
+            howAr: "الحجّةُ نفسُها مدفوعةً خطوةً أبعد: أرضٌ واحدة وماءٌ واحد — والثمرُ مختلف. فالاختلافُ لا يجيء من المادّة، وهو عينُ ما تريد الآيةُ أن تلحظه."
+          }
+        ]
+      },
+      {
+        n: 141,
+        ar: "كُلُواْ مِن ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَءَاتُواْ حَقَّهُۥ يَوۡمَ حَصَادِهِۦۖ وَلَا تُسۡرِفُوٓاْۚ إِنَّهُۥ لَا يُحِبُّ ٱلۡمُسۡرِفِينَ",
+        arNote: "The end of the verse is quoted here; the whole of it — the gardens and the crops — is above.",
+        arNoteAr: "المقتبسُ ههنا آخرُ الآية، وهي كاملةٌ أعلاه بذكر الجنّات والزرع.",
+        why: "Three commands in a row, and the third one is the surprise.\n\n**Eat of its fruit when it bears** — permission, first, and without conditions attached to the eating itself. **And give its due on the day of its harvest** — the right of the poor is tied to the day the crop comes in, not to the end of the year when the owner has had time to grow attached to it. **And do not be wasteful** — placed immediately after permission and charity, and aimed at the owner's own consumption.\n\nSo the verse permits, obliges, and limits, in that order. Extravagance is not forbidden here because the thing is unlawful; it is forbidden in the middle of something entirely lawful, which is where it usually happens.",
+        whyAr: "ثلاثةُ أوامرٍ متتابعة، وثالثُها هو المفاجئ.\n\n﴿كُلُواْ مِن ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ﴾ — إذنٌ أوّلًا، بلا شرطٍ في الأكل نفسه. ﴿وَءَاتُواْ حَقَّهُۥ يَوۡمَ حَصَادِهِۦۖ﴾ — فحقُّ الفقير مربوطٌ بيوم دخول الغلّة، لا بآخر العام بعد أن يكون صاحبُها قد تعلّق بها. ﴿وَلَا تُسۡرِفُوٓاْۚ﴾ — جاء عقب الإذن والصدقة، وهو موجَّهٌ إلى إنفاق المالك على نفسه.\n\nفأذنت الآيةُ، ثم أوجبت، ثم حدّت، على هذا الترتيب. ولم يُنهَ عن الإسراف ههنا لأنّ الشيء حرام، وإنما نُهي عنه في وسط الحلال المحض — وهو موضعُه في العادة.",
+        ref: "Surah Al-An'am (6:141)",
+        strength: "quran",
+        plain: "Eat from your harvest, give the poor their share on the day you gather it, and do not overdo it. The warning against waste comes attached to something completely lawful — which is where waste actually happens.",
+        plainAr: "كُل من زرعك، وأعطِ الفقير حقّه يوم تحصده، ولا تُسرف. وجاء التحذيرُ من الإسراف ملحقًا بحلالٍ محض — وهناك يقع الإسراف في الحقيقة.",
+        words: [
+          {
+            w: "تُسۡرِفُوٓاْۚ",
+            t: "tusrifu — go past the measure",
+            meaning: "Israf is exceeding the proper amount in anything — it is not a word for luxury as such, but for passing the limit of what the case calls for. That is why it can be said of a lawful harvest, of water in wudu, and of speech.",
+            meaningAr: "الإسرافُ مجاوزةُ القدر في كلّ شيء — وليس لفظًا للترف بعينه، وإنما لتعدّي الحدّ الذي يقتضيه الحال. ولذلك قيل في غَلّةٍ حلال، وفي ماء الوضوء، وفي الكلام.",
+            source: "Arabic usage of س ر ف",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-A'raf (7:31)",
+            ar: "عِندَ كُلِّ مَسۡجِدٖ وَكُلُواْ وَٱشۡرَبُواْ وَلَا تُسۡرِفُوٓاْۚ إِنَّهُۥ لَا يُحِبُّ ٱلۡمُسۡرِفِينَ",
+            en: "“And eat and drink, and do not be wasteful — indeed, He does not love the wasteful.”",
+            how: "The same pair of words, and the same closing sentence, said about food and drink in general rather than about a harvest. Twice the Quran grants and then measures, in the same breath.",
+            howAr: "اللفظان نفسُهما والخاتمةُ نفسُها، قيلا في الطعام والشراب عامّةً لا في غلّةٍ بعينها. فالقرآنُ يأذن ثم يُقدّر، في نفَسٍ واحد، مرّتين."
+          }
+        ]
+      },
+      {
+        n: 152,
+        ar: "وَلَا تَقۡرَبُواْ مَالَ ٱلۡيَتِيمِ إِلَّا بِٱلَّتِي هِيَ أَحۡسَنُ حَتَّىٰ يَبۡلُغَ أَشُدَّهُۥۚ وَأَوۡفُواْ ٱلۡكَيۡلَ وَٱلۡمِيزَانَ بِٱلۡقِسۡطِۖ لَا نُكَلِّفُ نَفۡسًا إِلَّا وُسۡعَهَاۖ وَإِذَا قُلۡتُمۡ فَٱعۡدِلُواْ وَلَوۡ كَانَ ذَا قُرۡبَىٰۖ وَبِعَهۡدِ ٱللَّهِ أَوۡفُواْۚ ذَٰلِكُمۡ وَصَّىٰكُم بِهِۦ لَعَلَّكُمۡ تَذَكَّرُونَ",
+        why: "This is inside the passage the early Muslims called the will of the Prophet ﷺ — ten commands set out one after another at the end of this surah. Four of them are in this verse, and they move from money to speech.\n\n**Do not approach the orphan's property except in the way that is best, until he reaches his full strength.** Not “do not steal it” — do not come near it, except by the better of two lawful ways.\n\n**Give full measure and weight in justice** — and then, immediately, the mercy clause: *We do not burden a soul beyond its capacity*. The command to be exact is followed at once by the acknowledgement that exactness has a human limit.\n\n**And when you speak, be just, even if it concerns a relative.** The hardest of the four. The others can be done with a scale and a ledger; this one is done with your tongue, in the moment, against your own family.",
+        whyAr: "هذه الآيةُ في السياق الذي سمّاه السلفُ وصيّة النبيّ ﷺ — عشرُ وصايا متتابعةٍ في آخر السورة. أربعٌ منها في هذه الآية، وهي تنتقل من المال إلى اللسان.\n\n﴿وَلَا تَقۡرَبُواْ مَالَ ٱلۡيَتِيمِ إِلَّا بِٱلَّتِي هِيَ أَحۡسَنُ حَتَّىٰ يَبۡلُغَ أَشُدَّهُۥۚ﴾ — لا «لا تأخذوه»، بل لا تقربوه إلا بالأحسن من الوجهين الجائزين.\n\n﴿وَأَوۡفُواْ ٱلۡكَيۡلَ وَٱلۡمِيزَانَ بِٱلۡقِسۡطِۖ﴾ — ثم في الحال جملةُ الرحمة: ﴿لَا نُكَلِّفُ نَفۡسًا إِلَّا وُسۡعَهَاۖ﴾. فأُتبع الأمرُ بالدقّة إقرارًا بأنّ للدقّة حدًّا إنسانيًّا.\n\n﴿وَإِذَا قُلۡتُمۡ فَٱعۡدِلُواْ وَلَوۡ كَانَ ذَا قُرۡبَىٰۖ﴾ — وهي أشقُّ الأربع: فالثلاثُ تُؤدّى بميزانٍ ودفتر، وهذه تُؤدّى بلسانك، في حينها، على أهلك.",
+        ref: "Surah Al-An'am (6:152)",
+        strength: "quran",
+        plain: "Do not go near an orphan's money except in the best way; give full measure; and when you speak, be just — even when the person it goes against is your own relative. The last one is the hardest, and it is about your tongue.",
+        plainAr: "لا تقرب مال اليتيم إلا بالتي هي أحسن؛ وأوفِ الكيل والميزان؛ وإذا قلتَ فاعدل — ولو كان الذي يقع عليه القولُ قريبَك. وآخرُها أشقُّها، وهي في لسانك.",
+        words: [
+          {
+            w: "وَلَا تَقۡرَبُواْ",
+            t: "la taqrabu — do not come near",
+            meaning: "The prohibition is not on taking but on **approaching**. Arabic has this in a handful of places — do not approach unlawful intimacy, do not approach the orphan's property — and in each the law is drawn around the outside of the act, so that a person is stopped at the boundary rather than at the deed.",
+            meaningAr: "النهيُ ليس عن الأخذ بل عن **القرب**. وهو في العربية في مواضع قليلة — لا تقربوا الزنى، ولا تقربوا مال اليتيم — وفي كلٍّ منها يُرسم الحكمُ حول الفعل من خارجه، فيُوقَف المرءُ عند الحدّ لا عند الفعل.",
+            source: "Quranic usage of لا تقربوا (17:32 and here)",
+            strength: "quran"
+          },
+          {
+            w: "فَٱعۡدِلُواْ",
+            t: "fa'dilu — then be just",
+            meaning: "The command attaches to speech, not to judging: whenever you say something. And the clause that follows removes the only excuse anyone ever uses — even if it is a relative. Justice in a sentence spoken about your own family is where most people's fairness quietly ends.",
+            meaningAr: "الأمرُ معلَّقٌ بالقول لا بالقضاء: كلّما قلت. ثم جاءت الجملةُ بعده فسدّت العذر الوحيد الذي يُعتذر به: ولو كان ذا قربى. والعدلُ في كلمةٍ تُقال في أهلك هو الموضعُ الذي ينتهي عنده إنصافُ أكثر الناس في صمت.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah An-Nisa (4:135)",
+            ar: "۞ يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُونُواْ قَوَّٰمِينَ بِٱلۡقِسۡطِ شُهَدَآءَ لِلَّهِ وَلَوۡ عَلَىٰٓ أَنفُسِكُمۡ أَوِ ٱلۡوَٰلِدَيۡنِ وَٱلۡأَقۡرَبِينَۚ",
+            en: "“O you who believe, be persistently standing firm in justice, witnesses for Allah, even if it be against yourselves or parents and relatives.”",
+            how: "The same command with the circle drawn wider: after relatives it adds **yourselves**, and after that it adds the rich and the poor, so that no category is left that justice can be suspended for.",
+            howAr: "الأمرُ نفسُه والدائرةُ أوسع: فبعد الأقربين زاد **أنفسكم**، ثم زاد الغنيّ والفقير، حتى لا يبقى صنفٌ يُعلَّق العدلُ من أجله."
+          }
+        ]
+      },
+      {
+        n: 164,
+        ar: "وَلَا تَكۡسِبُ كُلُّ نَفۡسٍ إِلَّا عَلَيۡهَاۚ وَلَا تَزِرُ وَازِرَةٞ وِزۡرَ أُخۡرَىٰۚ",
+        arNote: "The middle of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا وسطُ الآية، وهي كاملةٌ أعلاه.",
+        why: "Two clauses that between them end an entire way of thinking about guilt.\n\n**No soul earns anything except against itself** — responsibility does not spread sideways. **And no bearer of burdens will bear the burden of another** — and it does not pass down, either.\n\nThis is said in a world where a man could inherit a feud, where a child could be held for a father's crime, and where whole tribes were answerable for one man's blood. The Quran repeats the sentence in five places, which is how it treats a principle it intends to be quoted.\n\nAnd it cuts both ways: nobody else's sin is written against you, and nobody else's good deed is written for you either.",
+        whyAr: "جملتان تُنهيان بينهما طريقةً كاملةً في النظر إلى الذنب.\n\n﴿وَلَا تَكۡسِبُ كُلُّ نَفۡسٍ إِلَّا عَلَيۡهَاۚ﴾ — فالمسؤوليّةُ لا تمتدّ عرضًا. ﴿وَلَا تَزِرُ وَازِرَةٞ وِزۡرَ أُخۡرَىٰۚ﴾ — ولا تنتقل بالوراثة كذلك.\n\nقيل هذا في دنيا يرث فيها الرجلُ الثأر، ويُؤخذ فيها الولدُ بجريرة أبيه، وتُطالَب القبيلةُ كلُّها بدم واحد. وقد كرّر القرآنُ الجملة في خمسة مواضع، وهكذا يصنع بأصلٍ يُراد أن يُحفظ ويُنقل.\n\nوهي تعمل في الجهتين: فلا يُكتب عليك ذنبُ غيرك، ولا يُكتب لك حسنةُ غيرك.",
+        ref: "Surah Al-An'am (6:164)",
+        strength: "quran",
+        plain: "Nobody carries anyone else's sin. Not a child for a parent, not a people for their ancestors. And the same rule means nobody else's good deeds are written in your account either.",
+        plainAr: "لا يحمل أحدٌ ذنب أحد: لا ولدٌ عن والده، ولا قومٌ عن آبائهم. والحكمُ نفسُه يعني أنّ حسنات غيرك لا تُكتب في صحيفتك.",
+        words: [
+          {
+            w: "تَزِرُ وَازِرَةٞ",
+            t: "taziru waziratun — a bearer bears",
+            meaning: "The root is wizr: a heavy load carried on the back. The sentence puts the word twice — a bearer of a load will not bear the load of another — so the image is two people, each already carrying something, and neither able to take the other's.",
+            meaningAr: "المادّةُ من الوِزر، وهو الحِملُ الثقيل على الظهر. وكرّرت الجملةُ اللفظَ: لا تزر وازرةٌ وزر أخرى — فالصورةُ رجلان، كلٌّ منهما حاملٌ ما عليه، ولا يقدر أحدُهما أن يأخذ حِمل الآخر.",
+            source: "Arabic usage of و ز ر",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Fatir (35:18)",
+            ar: "وَلَا تَزِرُ وَازِرَةٞ وِزۡرَ أُخۡرَىٰۚ وَإِن تَدۡعُ مُثۡقَلَةٌ إِلَىٰ حِمۡلِهَا لَا يُحۡمَلۡ مِنۡهُ شَيۡءٞ وَلَوۡ كَانَ ذَا قُرۡبَىٰٓۗ",
+            en: "“And no bearer of burdens will bear the burden of another. And if a heavily laden soul calls another to carry it, nothing of it will be carried — even if he should be a close relative.”",
+            how: "The same sentence with the scene attached: on that day someone will ask for help with the load, and the answer is no — and the Quran adds the detail that makes it final: even if the one asked is family.",
+            howAr: "الجملةُ نفسُها ومعها المشهد: يُستغاث يومئذٍ بمن يحمل، فلا يُحمل شيء — وزاد القرآنُ ما يقطع الرجاء: ولو كان ذا قربى."
+          }
+        ]
       }
     ]
   },
@@ -1994,6 +3301,237 @@ const TADABBUR = {
         ],
         ref: "Surah Al-A'raf (7:156)",
         strength: "quran"
+      },
+      {
+        n: 26,
+        ar: "يَٰبَنِيٓ ءَادَمَ قَدۡ أَنزَلۡنَا عَلَيۡكُمۡ لِبَاسٗا يُوَٰرِي سَوۡءَٰتِكُمۡ وَرِيشٗاۖ وَلِبَاسُ ٱلتَّقۡوَىٰ ذَٰلِكَ خَيۡرٞۚ ذَٰلِكَ مِنۡ ءَايَٰتِ ٱللَّهِ لَعَلَّهُمۡ يَذَّكَّرُونَ",
+        why: "Three garments in one verse, and they are not the same kind of thing.\n\n**A garment that covers what should not be seen** — the necessity. **And rish** — plumage: the word for a bird's feathers, used here for what a person wears for beauty. The Quran names adornment as a favour, not a concession.\n\nThen the third: **and the garment of God-consciousness — that is better.** The image is carried all the way: taqwa is not described as a state or a feeling but as something you put on, over the other two.\n\nAnd notice the verb at the start: clothing was **sent down**. Not made, not invented — the whole chain behind a shirt (rain, plant, animal, wool, cotton) begins above you.",
+        whyAr: "ثلاثةُ ألبسةٍ في آيةٍ واحدة، وليست من بابٍ واحد.\n\n﴿لِبَاسٗا يُوَٰرِي سَوۡءَٰتِكُمۡ﴾ — وهذه الضرورة. ﴿وَرِيشٗاۖ﴾ — والريشُ في الأصل ريشُ الطائر، استُعير لما يُتزيّن به. فسُمّيت الزينةُ نعمةً، لا رخصةً مُتجاوَزًا عنها.\n\nثم الثالث: ﴿وَلِبَاسُ ٱلتَّقۡوَىٰ ذَٰلِكَ خَيۡرٞۚ﴾. والصورةُ ممتدّةٌ إلى آخرها: فالتقوى لم تُوصف حالًا ولا شعورًا، وإنما لباسًا يُلبَس فوق الاثنين.\n\nوتأمّل الفعل في أوّلها: ﴿قَدۡ أَنزَلۡنَا عَلَيۡكُمۡ لِبَاسٗا﴾. لا «صنعنا» ولا «علّمناكم» — فالسلسلةُ كلُّها وراء القميص (مطرٌ ونباتٌ وحيوانٌ وصوفٌ وقطن) تبدأ من فوقك.",
+        ref: "Surah Al-A'raf (7:26)",
+        strength: "quran",
+        plain: "Clothing is named in the Quran as three things: what covers you, what beautifies you, and the garment of taqwa — which is called the best of them. Beauty is not treated as a weakness to be excused.",
+        plainAr: "سُمّي اللباسُ في القرآن ثلاثةً: ما يستر، وما يُزيّن، ولباسُ التقوى — وقيل إنه خيرها. ولم تُعدَّ الزينةُ ضعفًا يُلتمس له العذر.",
+        words: [
+          {
+            w: "وَرِيشٗاۖ",
+            t: "rishan — plumage, finery",
+            meaning: "Rish is the feathers of a bird — the part that is not needed for the bird to survive and is the reason you look at it. Applied to human clothing it means what is worn beyond the necessary. The Quran uses the bird's ornament as the word for yours.",
+            meaningAr: "الريشُ ريشُ الطائر — وهو ما لا تقوم به حياتُه، وبه ينظر الناسُ إليه. فإذا قيل في لباس الإنسان فهو ما زاد على ما تدعو إليه الضرورة. فاستعار القرآنُ زينةَ الطائر اسمًا لزينتك.",
+            source: "Arabic usage of ر ي ش",
+            strength: "lugha"
+          },
+          {
+            w: "وَلِبَاسُ ٱلتَّقۡوَىٰ",
+            t: "libasu-t-taqwa — the garment of God-consciousness",
+            meaning: "The metaphor is exact, which is why it is worth unpacking: a garment is put on deliberately, is worn in front of people, covers what you would rather not show, and can be taken off. Every one of those is true of taqwa, and each is a separate thought.",
+            meaningAr: "الاستعارةُ دقيقة، ولذلك تستحقّ البسط: فاللباسُ يُلبَس عن قصد، ويُرى منك بين الناس، ويستر ما تكره أن يظهر، ويمكن أن يُخلع. وكلُّ واحدةٍ من هذه صادقةٌ في التقوى، وكلُّ واحدةٍ منها معنًى مستقلّ.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah An-Nahl (16:81)",
+            ar: "وَجَعَلَ لَكُمۡ سَرَٰبِيلَ تَقِيكُمُ ٱلۡحَرَّ وَسَرَٰبِيلَ تَقِيكُم بَأۡسَكُمۡۚ",
+            en: "“And He made for you garments that protect you from the heat, and garments that protect you in your violence.”",
+            how: "Clothing named a third way: not covering and not adornment but protection — from the weather, and from each other. Between the two verses the Quran has described the shirt, the coat and the armour.",
+            howAr: "ذُكر اللباسُ على وجهٍ ثالث: لا سترًا ولا زينة، بل وقاية — من الحرّ، ومن بأس بعضكم بعضًا. فبين الآيتين وصف القرآنُ القميصَ والمعطفَ والدرع."
+          }
+        ]
+      },
+      {
+        n: 54,
+        ar: "إِنَّ رَبَّكُمُ ٱللَّهُ ٱلَّذِي خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ فِي سِتَّةِ أَيَّامٖ ثُمَّ ٱسۡتَوَىٰ عَلَى ٱلۡعَرۡشِۖ يُغۡشِي ٱلَّيۡلَ ٱلنَّهَارَ يَطۡلُبُهُۥ حَثِيثٗا وَٱلشَّمۡسَ وَٱلۡقَمَرَ وَٱلنُّجُومَ مُسَخَّرَٰتِۭ بِأَمۡرِهِۦٓۗ أَلَا لَهُ ٱلۡخَلۡقُ وَٱلۡأَمۡرُۗ تَبَارَكَ ٱللَّهُ رَبُّ ٱلۡعَٰلَمِينَ",
+        why: "In the middle of a verse about creation there is a small picture that repays stopping: **He covers the night with the day, seeking it rapidly.**\n\nOne of them is chasing the other. The verb is talab — to pursue, to be after something — and hathith means quickly, without slackening. Not “night follows day” as an arrangement, but a pursuit that never catches up and never stops.\n\nThen the sentence that closes the list: the sun, the moon and the stars, **subjected by His command**; and after them — **His is the creation and the command**. Two words that the surah then spends its remaining verses explaining: He made it, and He runs it. A maker who does not govern is not what the verse is describing.",
+        whyAr: "في وسط آيةٍ في الخلق صورةٌ صغيرةٌ تستحقّ الوقوف: ﴿يُغۡشِي ٱلَّيۡلَ ٱلنَّهَارَ يَطۡلُبُهُۥ حَثِيثٗا﴾.\n\nأحدُهما يطلب الآخر. والطلبُ في اللغة السعيُ وراء الشيء، و«حثيثًا» بسرعةٍ لا فتور فيها. فليست «يعقب الليلُ النهار» ترتيبًا، وإنما مطاردةٌ لا تُدرَك ولا تنقطع.\n\nثم الجملةُ التي تختم العدّ: الشمسُ والقمرُ والنجومُ ﴿مُسَخَّرَٰتِۭ بِأَمۡرِهِۦٓۗ﴾؛ ثم ﴿أَلَا لَهُ ٱلۡخَلۡقُ وَٱلۡأَمۡرُۗ﴾. كلمتان تُنفق السورةُ بقيّةَ آياتها في بيانهما: خلقه وتدبيرُه. فصانعٌ لا يُدبّر ليس هو الذي تصفه الآية.",
+        ref: "Surah Al-A'raf (7:54)",
+        strength: "quran",
+        plain: "The verse pictures night and day as a chase: the night covers the day, pursuing it rapidly and never resting. And it ends by saying that making and running the world are both His.",
+        plainAr: "تُصوّر الآيةُ الليلَ والنهار مطاردة: يُغشي الليلُ النهار يطلبه حثيثًا لا يفتر. وتختم بأنّ الخلق والأمر له سبحانه.",
+        words: [
+          {
+            w: "يَطۡلُبُهُۥ حَثِيثٗا",
+            t: "yatlubuhu hathithan — pursuing it rapidly",
+            meaning: "Talab is pursuit — the word used of a man chasing what he wants. Hathith is urgency with no let-up. Put together they make the turning of night and day into a single continuous motion, always in the same direction, never arriving. The 🔬 panel on this surah takes up what that sentence describes on a turning earth.",
+            meaningAr: "الطلبُ سعيٌ وراء الشيء — يُقال في الرجل يطلب حاجته. و«الحثيث» المُسرعُ الذي لا يفتر. فاجتمع منهما أنّ تعاقب الليل والنهار حركةٌ واحدةٌ متّصلة، في جهةٍ واحدة، لا تبلغ غايتها. وفي لوحة 🔬 في هذه السورة بيانُ ما تصفه هذه الجملة على أرضٍ تدور.",
+            source: "Arabic usage of ط ل ب and ح ث ث",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Az-Zumar (39:5)",
+            ar: "يُكَوِّرُ ٱلَّيۡلَ عَلَى ٱلنَّهَارِ وَيُكَوِّرُ ٱلنَّهَارَ عَلَى ٱلَّيۡلِۖ",
+            en: "“He wraps the night over the day and wraps the day over the night.”",
+            how: "The same alternation described with a different verb — takwir, the winding of a turban around a head. Here it is a chase; there it is a wrapping. Both are motions, and neither is a switch being flipped.",
+            howAr: "التعاقبُ نفسُه بفعلٍ آخر — التكوير، وهو لَيُّ العمامة على الرأس. فهو ههنا طلبٌ، وهناك تكوير. وكلاهما حركة، وليس واحدٌ منهما إطفاءً وإشعالًا."
+          }
+        ]
+      },
+      {
+        n: 57,
+        ar: "وَهُوَ ٱلَّذِي يُرۡسِلُ ٱلرِّيَٰحَ بُشۡرَۢا بَيۡنَ يَدَيۡ رَحۡمَتِهِۦۖ حَتَّىٰٓ إِذَآ أَقَلَّتۡ سَحَابٗا ثِقَالٗا سُقۡنَٰهُ لِبَلَدٖ مَّيِّتٖ فَأَنزَلۡنَا بِهِ ٱلۡمَآءَ فَأَخۡرَجۡنَا بِهِۦ مِن كُلِّ ٱلثَّمَرَٰتِۚ كَذَٰلِكَ نُخۡرِجُ ٱلۡمَوۡتَىٰ لَعَلَّكُمۡ تَذَكَّرُونَ",
+        why: "Follow the order of the sentence, because it is a sequence and not a list.\n\nThe winds are sent **as heralds before His mercy** — and “mercy” here means the rain; the Quran names the thing by what it is for. Until, when they have lifted **heavy clouds**, We drive it to a dead land, and send down water, and bring out fruits of every kind.\n\nThen the turn that the whole verse was built for: **thus do We bring out the dead** — so that you may remember.\n\nThe argument for resurrection is not made from power in the abstract. It is made from something the listener has already watched happen: ground that was finished, and then was not.",
+        whyAr: "اتبع ترتيب الجملة، فإنها تسلسلٌ لا تعداد.\n\nتُرسل الرياحُ ﴿بُشۡرَۢا بَيۡنَ يَدَيۡ رَحۡمَتِهِۦۖ﴾ — والرحمةُ ههنا المطر، سمّى القرآنُ الشيءَ بما هو له. حتى إذا أقلّت ﴿سَحَابٗا ثِقَالٗا﴾ سُقناه لبلدٍ ميّت، فأنزلنا به الماء، فأخرجنا به من كلّ الثمرات.\n\nثم الالتفاتةُ التي بُنيت الآيةُ كلُّها لها: ﴿كَذَٰلِكَ نُخۡرِجُ ٱلۡمَوۡتَىٰ لَعَلَّكُمۡ تَذَكَّرُونَ﴾.\n\nفالحجّةُ على البعث لم تُبنَ على قدرةٍ مجرّدة، وإنما على شيءٍ رآه السامعُ بعينه: أرضٌ انتهت، ثم لم تنتهِ.",
+        ref: "Surah Al-A'raf (7:57)",
+        strength: "quran",
+        plain: "Winds go ahead of the rain like messengers, lift heavy clouds, and water dead ground until it brings out every kind of fruit. And then the verse says: that is how We bring out the dead.",
+        plainAr: "تسبق الرياحُ المطرَ كالمبشّرين، فتُقلّ سحابًا ثقالًا، فيُسقى بلدٌ ميّتٌ حتى يُخرج من كلّ الثمرات. ثم تقول الآية: كذلك نُخرج الموتى.",
+        words: [
+          {
+            w: "بُشۡرَۢا",
+            t: "bushran — as bringers of good news",
+            meaning: "Bushra is the announcement that arrives **before** the thing itself, and the word for the messenger who carries it. The wind is not the rain; it is what tells you the rain is coming. A herald has no value except that something is behind it.",
+            meaningAr: "البُشرى خبرٌ يسبق الشيءَ نفسه، ومنه المبشّر الذي يحمله. فالريحُ ليست المطر، وإنما هي التي تُخبرك أنه قادم. والمبشّرُ لا قيمة له إلا بما وراءه.",
+            source: "Arabic usage of ب ش ر",
+            strength: "lugha"
+          },
+          {
+            w: "أَقَلَّتۡ سَحَابٗا ثِقَالٗا",
+            t: "aqallat sahaban thiqalan — carried heavy clouds",
+            meaning: "Aqalla is to lift and carry a weight — and the clouds are called **heavy**, which is what a cloud full of water is. The verse has the wind lifting a load, and then the load being driven somewhere: a cloud is described as freight, and the wind as what carries it.",
+            meaningAr: "أقلَّ الشيءَ: حمله ورفعه — ووُصف السحابُ بأنه **ثقال**، وهو وصفُ السحاب المملوء ماءً. فالريحُ ترفع حِملًا، ثم يُساق الحِملُ إلى موضعٍ: فالسحابُ محمولٌ، والريحُ حاملة.",
+            source: "Arabic usage of ق ل ل (أقلّ: to lift a load)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Qaf (50:9-11)",
+            ar: "وَنَزَّلۡنَا مِنَ ٱلسَّمَآءِ مَآءٗ مُّبَٰرَكٗا فَأَنۢبَتۡنَا بِهِۦ جَنَّٰتٖ وَحَبَّ ٱلۡحَصِيدِ",
+            en: "“And We sent down blessed water from the sky, and produced with it gardens and grain of the harvest.”",
+            how: "The same sequence, and there it ends with the same conclusion in three words: “thus is the coming out” — the resurrection argued from the same rain, in a different surah.",
+            howAr: "التسلسلُ نفسُه، وقد خُتم هناك بالنتيجة نفسِها في كلمتين: ﴿كَذَٰلِكَ ٱلۡخُرُوجُ﴾ — فالبعثُ محتجٌّ له بالمطر نفسِه في سورةٍ أخرى."
+          }
+        ]
+      },
+      {
+        n: 96,
+        ar: "وَلَوۡ أَنَّ أَهۡلَ ٱلۡقُرَىٰٓ ءَامَنُواْ وَٱتَّقَوۡاْ لَفَتَحۡنَا عَلَيۡهِم بَرَكَٰتٖ مِّنَ ٱلسَّمَآءِ وَٱلۡأَرۡضِ وَلَٰكِن كَذَّبُواْ فَأَخَذۡنَٰهُم بِمَا كَانُواْ يَكۡسِبُونَ",
+        why: "A conditional sentence about towns, not about individuals: **if the people of the towns had believed and been mindful, We would have opened upon them blessings from the sky and the earth.**\n\nTwo directions are named, and between them they cover everything a settled people lives on: what comes down (rain) and what comes up (crops, water, what the ground holds). The verb is *fatahna* — We would have **opened** — the word for unlocking a door or a gate, not for handing something over.\n\nThe verse sits at the end of a passage about town after town that was warned and refused. So it is not a promise of wealth to the pious individual; it is a statement about what a community's honesty and fear of Allah are worth to its land — and the second half says plainly what happened instead.",
+        whyAr: "جملةٌ شرطيّةٌ في القرى لا في الأفراد: ﴿وَلَوۡ أَنَّ أَهۡلَ ٱلۡقُرَىٰٓ ءَامَنُواْ وَٱتَّقَوۡاْ لَفَتَحۡنَا عَلَيۡهِم بَرَكَٰتٖ مِّنَ ٱلسَّمَآءِ وَٱلۡأَرۡضِ﴾.\n\nوسُمّيت جهتان يجتمع فيهما كلُّ ما يعيش عليه قومٌ مستقرّون: ما ينزل (المطر)، وما يخرج (الزرع والماء وما في الأرض). والفعلُ «فتحنا» — وهو لفظُ فتح الباب، لا لفظُ الإعطاء.\n\nوموضعُ الآية في خاتمة سياقٍ في قريةٍ بعد قرية أُنذرت فأبت. فليست وعدًا بالمال للتقيّ الواحد، وإنما خبرٌ عمّا يساوي صدقُ الجماعة وتقواها في أرضها — والشطرُ الثاني يقول صريحًا ما الذي وقع بدل ذلك.",
+        ref: "Surah Al-A'raf (7:96)",
+        strength: "quran",
+        plain: "If the people of a town believed and kept from wrong, the sky and the ground would be opened up for them. It is said of a whole community, not of one person — and the verse then says what actually happened: they denied, and were seized by what they had earned.",
+        plainAr: "لو آمن أهلُ القرية واتّقوا لفُتحت عليهم السماءُ والأرض. قيل ذلك في جماعةٍ لا في رجلٍ واحد — ثم قالت الآيةُ ما وقع فعلًا: كذّبوا فأُخذوا بما كانوا يكسبون.",
+        words: [
+          {
+            w: "لَفَتَحۡنَا",
+            t: "lafatahna — We would have opened",
+            meaning: "Fath is opening what was shut — a gate, a lock, a besieged city. The blessings are not described as being sent but as being **released**: the picture is of something already there, held behind a door, and the door is what belief and taqwa move.",
+            meaningAr: "الفتحُ إزالةُ الإغلاق — عن بابٍ أو قُفلٍ أو بلدٍ محصور. فلم تُوصف البركاتُ بأنها تُرسَل، وإنما بأنها **تُطلَق**: والصورةُ شيءٌ موجودٌ محبوسٌ خلف باب، والذي يُحرّك البابَ هو الإيمانُ والتقوى.",
+            source: "Arabic usage of ف ت ح",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Nuh (71:10-12)",
+            ar: "فَقُلۡتُ ٱسۡتَغۡفِرُواْ رَبَّكُمۡ إِنَّهُۥ كَانَ غَفَّارٗا ۝ يُرۡسِلِ ٱلسَّمَآءَ عَلَيۡكُم مِّدۡرَارٗا ۝ وَيُمۡدِدۡكُم بِأَمۡوَٰلٖ وَبَنِينَ وَيَجۡعَل لَّكُمۡ جَنَّٰتٖ وَيَجۡعَل لَّكُمۡ أَنۡهَٰرٗا",
+            en: "“Seek forgiveness of your Lord; indeed He is ever Forgiving. He will send the sky upon you in showers, and increase you in wealth and children, and make for you gardens and rivers.”",
+            how: "Nuh makes the same connection to his people, and puts it the other way round: not what would have been opened, but what will be — rain, wealth, children, gardens — attached to one act, seeking forgiveness.",
+            howAr: "عقد نوحٌ الصلةَ نفسها مع قومه، وأخرجها في الجهة الأخرى: لا ما كان يُفتح، بل ما سيكون — مطرٌ ومالٌ وبنونٌ وجنّات — معلَّقًا بعملٍ واحد: الاستغفار."
+          }
+        ]
+      },
+      {
+        n: 143,
+        ar: "وَلَمَّا جَآءَ مُوسَىٰ لِمِيقَٰتِنَا وَكَلَّمَهُۥ رَبُّهُۥ قَالَ رَبِّ أَرِنِيٓ أَنظُرۡ إِلَيۡكَۚ قَالَ لَن تَرَىٰنِي وَلَٰكِنِ ٱنظُرۡ إِلَى ٱلۡجَبَلِ فَإِنِ ٱسۡتَقَرَّ مَكَانَهُۥ فَسَوۡفَ تَرَىٰنِيۚ فَلَمَّا تَجَلَّىٰ رَبُّهُۥ لِلۡجَبَلِ جَعَلَهُۥ دَكّٗا وَخَرَّ مُوسَىٰ صَعِقٗاۚ",
+        arNote: "The first part of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا أوّلُ الآية، وهي كاملةٌ أعلاه.",
+        why: "Musa has just been spoken to directly by his Lord. And the request that comes out of him is the most human sentence in the passage: **my Lord, show me — let me look at You.**\n\nThe answer is not only “no”. It is a demonstration. **You will not see Me. But look at the mountain: if it stays firm in its place, then you will see Me.** The test is handed to something stronger than a man.\n\nWhen his Lord manifested to the mountain, He made it crumble, and Musa fell down thunderstruck. The mountain did not stay in its place. And when he came round, the first thing he said was **glory be to You — I turn to You** — the answer of a man who has just been shown what he was asking for.",
+        whyAr: "قد كلّم اللهُ موسى قبل هذا، فخرجت منه أشدُّ الجُمل إنسانيّةً في السياق: ﴿قَالَ رَبِّ أَرِنِيٓ أَنظُرۡ إِلَيۡكَۚ﴾.\n\nولم يكن الجوابُ «لا» فحسب، بل كان بيانًا: ﴿قَالَ لَن تَرَىٰنِي وَلَٰكِنِ ٱنظُرۡ إِلَى ٱلۡجَبَلِ فَإِنِ ٱسۡتَقَرَّ مَكَانَهُۥ فَسَوۡفَ تَرَىٰنِيۚ﴾. فأُحيل الامتحانُ إلى ما هو أقوى من الرجل.\n\n﴿فَلَمَّا تَجَلَّىٰ رَبُّهُۥ لِلۡجَبَلِ جَعَلَهُۥ دَكّٗا وَخَرَّ مُوسَىٰ صَعِقٗاۚ﴾. فلم يستقرّ الجبلُ مكانه. فلمّا أفاق كان أوّلَ ما قال: ﴿سُبۡحَٰنَكَ تُبۡتُ إِلَيۡكَ﴾ — جوابُ رجلٍ رأى ما كان يسأل عنه.",
+        ref: "Surah Al-A'raf (7:143)",
+        strength: "quran",
+        plain: "Musa asked to see his Lord. The answer was: you will not — but watch the mountain. The mountain was levelled, Musa collapsed, and when he woke the first words out of him were of glorification and turning back.",
+        plainAr: "سأل موسى أن يرى ربّه. فكان الجواب: لن تراني — ولكن انظر إلى الجبل. فدُكّ الجبل، وخرّ موسى، فلمّا أفاق كان أوّلُ كلامه تسبيحًا وتوبة.",
+        words: [
+          {
+            w: "تَجَلَّىٰ",
+            t: "tajalla — manifested",
+            meaning: "The verb is from jala': clearing away what covers a thing so that it shows. It is not described as an arrival or a descent; it is the removal of a veil, and the verse does not say how much was removed — only what it did to a mountain.",
+            meaningAr: "الفعلُ من الجلاء: كشفُ ما يستر الشيءَ حتى يظهر. فلم يُوصف بمجيءٍ ولا نزول، وإنما رفعُ حجاب، ولم تذكر الآيةُ مقدارَ ما رُفع — وإنما ذكرت ما صنع بجبل.",
+            source: "Arabic usage of ج ل و",
+            strength: "lugha"
+          },
+          {
+            w: "دَكّٗا",
+            t: "dakkan — flattened, crushed level",
+            meaning: "Dakk is to level a thing with the ground by breaking it down — the word used of a wall being knocked flat. The mountain was not moved or split; it was brought down to the ground. And the same word names what happens to the earth on the Day: it is struck dakkatan wahida, a single levelling blow.",
+            meaningAr: "الدكُّ تسويةُ الشيء بالأرض بهدمه — ويُقال في الحائط يُدكّ. فلم يُنقل الجبلُ ولم يُشقّ، وإنما سُوّي بالأرض. وباللفظ نفسِه سُمّي ما يقع للأرض يوم القيامة: ﴿وَحُمِلَتِ ٱلۡأَرۡضُ وَٱلۡجِبَالُ فَدُكَّتَا دَكَّةٗ وَٰحِدَةٗ﴾.",
+            source: "Arabic usage of د ك ك, and 69:14",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-An'am (6:103)",
+            ar: "لَّا تُدۡرِكُهُ ٱلۡأَبۡصَٰرُ وَهُوَ يُدۡرِكُ ٱلۡأَبۡصَٰرَۖ",
+            en: "“Vision does not grasp Him, and He grasps all vision.”",
+            how: "The principle behind the answer given to Musa, stated without a scene: not that He is too far to be seen, but that sight is the thing being encompassed, and what encompasses it cannot be inside it.",
+            howAr: "الأصلُ الذي عليه جوابُ موسى، مجرّدًا عن المشهد: فليس أنه بعيدٌ عن أن يُرى، وإنما البصرُ هو المُحاط، والمحيطُ به لا يكون داخله."
+          }
+        ]
+      },
+      {
+        n: 179,
+        ar: "لَهُمۡ قُلُوبٞ لَّا يَفۡقَهُونَ بِهَا وَلَهُمۡ أَعۡيُنٞ لَّا يُبۡصِرُونَ بِهَا وَلَهُمۡ ءَاذَانٞ لَّا يَسۡمَعُونَ بِهَآۚ أُوْلَٰٓئِكَ كَٱلۡأَنۡعَٰمِ بَلۡ هُمۡ أَضَلُّۚ أُوْلَٰٓئِكَ هُمُ ٱلۡغَٰفِلُونَ",
+        arNote: "The description is quoted here; the whole verse is above.",
+        arNoteAr: "المقتبسُ ههنا موضعُ الوصف، والآيةُ كاملةٌ أعلاه.",
+        why: "Three organs, and each one is given with its function removed: **hearts they do not understand with, eyes they do not see with, ears they do not hear with.**\n\nNothing is missing from them. The equipment is listed as present — that is the point of repeating “they have” three times. What is absent is the use.\n\nThen the comparison, and then the correction of the comparison: **they are like cattle — no, they are further astray**. The reason it is worse is in the sentence itself: cattle were never given the organs for it. An animal that does not reflect is doing what it was made for. A human being who does not is refusing an instrument he was handed.",
+        whyAr: "ثلاثةُ أعضاء، كلُّ واحدٍ منها مذكورٌ منزوعةً عنه وظيفتُه: ﴿لَهُمۡ قُلُوبٞ لَّا يَفۡقَهُونَ بِهَا وَلَهُمۡ أَعۡيُنٞ لَّا يُبۡصِرُونَ بِهَا وَلَهُمۡ ءَاذَانٞ لَّا يَسۡمَعُونَ بِهَآۚ﴾.\n\nفليس فيهم نقصٌ في الآلة. والآلةُ معدودةٌ حاضرة — ولهذا كُرّر «ولهم» ثلاثًا. وإنما الغائبُ استعمالُها.\n\nثم التشبيه، ثم استدراكٌ عليه: ﴿أُوْلَٰٓئِكَ كَٱلۡأَنۡعَٰمِ بَلۡ هُمۡ أَضَلُّۚ﴾. والعلّةُ في الجملة نفسِها: فالأنعامُ لم تُعطَ هذه الآلات. والبهيمةُ التي لا تتفكّر تفعل ما خُلقت له، وأمّا الإنسانُ فيردّ أداةً وُضعت في يده.",
+        ref: "Surah Al-A'raf (7:179)",
+        strength: "quran",
+        plain: "They have hearts, eyes and ears — and use none of them for what they are for. The Quran says they are like cattle, then corrects itself: worse, because cattle were never given the instruments in the first place.",
+        plainAr: "لهم قلوبٌ وأعينٌ وآذان — ولا يستعملون واحدًا منها فيما هو له. يقول القرآن: هم كالأنعام، ثم يستدرك: بل أضلّ، لأنّ الأنعام لم تُعطَ هذه الآلات أصلًا.",
+        words: [
+          {
+            w: "يَفۡقَهُونَ",
+            t: "yafqahun — understand deeply",
+            meaning: "Fiqh is not knowing a fact; it is understanding a thing to the point of grasping what follows from it — which is why the science of deriving rulings is called fiqh. The verse does not say they have hearts that do not **know**. It says they do not reach the meaning under what they know.",
+            meaningAr: "الفقهُ ليس علمًا بالخبر، وإنما إدراكٌ للشيء يبلغ ما يترتّب عليه — ولذلك سُمّي علمُ استنباط الأحكام فقهًا. ولم تقل الآيةُ: قلوبٌ لا **تعلم** بها، وإنما لا تبلغ المعنى الذي تحت ما تعلم.",
+            source: "Arabic usage of ف ق ه",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:171)",
+            ar: "صُمُّۢ بُكۡمٌ عُمۡيٞ فَهُمۡ لَا يَعۡقِلُونَ",
+            en: "“Deaf, dumb, blind — so they do not reason.”",
+            how: "The same three senses, and there the verse has already given the image that explains them: a man shouting at an animal that hears only a noise and a call. Sound reaches it; meaning does not.",
+            howAr: "الحواسُّ الثلاثُ نفسُها، وقد سبق في الآية المثلُ الذي يُفسّرها: رجلٌ ينعق بما لا يسمع إلا دعاءً ونداء. فالصوتُ يبلغه، والمعنى لا يبلغه."
+          }
+        ]
+      },
+      {
+        n: 204,
+        ar: "وَإِذَا قُرِئَ ٱلۡقُرۡءَانُ فَٱسۡتَمِعُواْ لَهُۥ وَأَنصِتُواْ لَعَلَّكُمۡ تُرۡحَمُونَ",
+        why: "Eight words, and two commands that are not the same command.\n\n**Listen to it** — istima', which in Arabic is deliberate listening, the ear turned towards something on purpose; the ordinary hearing that happens to you is sami'a. **And be silent** — a separate instruction, because a person can be quiet and not listening, or listening while still talking over it in his head.\n\nAnd the reason attached is not “so that you understand” or “so that you learn”. It is: **that you may be shown mercy**. Silence in front of the recitation is placed on the side of the things that bring mercy down, not on the side of good manners.",
+        whyAr: "ثمانُ كلمات، وأمران ليسا أمرًا واحدًا.\n\n﴿فَٱسۡتَمِعُواْ لَهُۥ﴾ — والاستماعُ في العربية إصغاءٌ بقصد، والأذنُ مصروفةٌ إليه عمدًا؛ وأمّا السماعُ فيقع بغير قصد. ﴿وَأَنصِتُواْ﴾ — أمرٌ آخر، لأنّ المرء قد يسكت ولا يُصغي، وقد يُصغي وهو يُزاحم الصوتَ في نفسه.\n\nوالعلّةُ الملحقةُ ليست «لتفهموا» ولا «لتتعلّموا»، وإنما ﴿لَعَلَّكُمۡ تُرۡحَمُونَ﴾. فجُعل الإنصاتُ عند التلاوة في باب ما تُستنزل به الرحمة، لا في باب الأدب.",
+        ref: "Surah Al-A'raf (7:204)",
+        strength: "quran",
+        plain: "When the Quran is recited, two things are asked: listen to it on purpose, and be quiet. And the reason given is not that you will learn something — it is that you may be shown mercy.",
+        plainAr: "إذا قُرئ القرآن فأمران: استمع إليه قاصدًا، وأنصت. والعلّةُ ليست أن تتعلّم شيئًا، وإنما لعلّكم تُرحمون.",
+        words: [
+          {
+            w: "فَٱسۡتَمِعُواْ",
+            t: "fastami'u — so listen for it",
+            meaning: "Form VIII of the root for hearing, and the added letters carry effort and intent: to seek the sound out rather than to receive it. Arabic marks the difference exactly — sami'a is what happens to your ear; istama'a is what you do with it.",
+            meaningAr: "على وزن «افتعل» من السمع، وزيادةُ المبنى فيه للقصد والتكلّف: طلبُ الصوت لا مجرّد وقوعه. والعربيّةُ تُفرّق بينهما تفريقًا دقيقًا: فـ«سمِع» ما يقع لأذنك، و«استمع» ما تصنعه أنت بها.",
+            source: "Arabic morphology (form VIII), and the pairing with أنصتوا",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Isra (17:82)",
+            ar: "وَنُنَزِّلُ مِنَ ٱلۡقُرۡءَانِ مَا هُوَ شِفَآءٞ وَرَحۡمَةٞ",
+            en: "“And We send down of the Quran that which is a healing and a mercy for the believers.”",
+            how: "The same word — mercy — attached to the Quran itself. Here mercy is the reason for listening; there it is what is being sent down while you do.",
+            howAr: "اللفظُ نفسُه — الرحمة — معلّقًا بالقرآن ذاته. فهي ههنا علّةُ الاستماع، وهناك هي النازلةُ بما تستمع إليه."
+          }
+        ]
       }
     ]
   },
@@ -2011,7 +3549,23 @@ const TADABBUR = {
         why: "The word people build on is TURHIBUN — from r-h-b, fear. It is the word an opponent points at to say the Book commands terrorising, and the word a militant points at to justify it. Both are reading it as a licence for an ACT. It is not describing an act at all; it is describing the effect of a state of readiness.\n\nRead what is actually commanded: prepare. The command is to be strong. What follows — that the enemy is deterred — is the result of the preparation, not a separate instruction to go and frighten people. A state that maintains a capable army deters attack by having it, and that is the plain sense here.\n\nAnd the passage does not stop where the quotation stops. The very next verse: and if they incline to peace, then incline to it, and rely upon Allah. Strength is commanded, and then peace is commanded the moment it is offered — which is the opposite of what both readings need the verse to say.",
         whyAr: "اللفظ الذي يُبنى عليه ﴿تُرۡهِبُونَ﴾، من (ر ه ب) وهو الخوف. وهو اللفظ الذي يُشير إليه الخصم ليقول إنّ الكتاب يأمر بالإرهاب، وهو اللفظ نفسه الذي يتعلّق به من يستبيح الدماء. وكلاهما يقرؤه إذنًا في **فعل**. وليس فيه وصفُ فعلٍ أصلًا، وإنما وصفُ **أثرٍ** لحالٍ من الاستعداد.\n\nانظر إلى المأمور به: ﴿وَأَعِدُّواْ﴾. فالأمر أن تكون قويًّا. وما بعده — ارتهابُ العدوّ — نتيجةُ الإعداد، لا أمرًا آخر بترويع الناس. والدولةُ التي تُقيم جيشًا قادرًا تمنع العدوان بوجوده، وهذا هو الظاهر هنا.\n\nولا يقف السياق حيث يقف النقل. فالآية التي تليها مباشرةً: ﴿وَإِن جَنَحُواْ لِلسَّلۡمِ فَٱجۡنَحۡ لَهَا وَتَوَكَّلۡ عَلَى ٱللَّهِۚ﴾. فأُمر بالقوّة، ثم أُمر بالسلم في اللحظة التي يُعرض فيها — وهو ضدّ ما تحتاجه القراءتان جميعًا.",
         ref: "Surah Al-Anfal (8:60), read with 8:61",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah Aal-Imran (3:200)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱصۡبِرُواْ وَصَابِرُواْ وَرَابِطُواْ وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُفۡلِحُونَ",
+            en: "“O you who believe: be patient, outdo others in patience, hold your posts, and be mindful of Allah — that you may be successful.”",
+            how: "Here the horses are tied ready at the frontier; there the people are. The same root covers both halves of being ready: the equipment, and the men who stay with it.",
+            howAr: "ههنا الخيلُ مربوطةٌ في الثغر، وهناك الرجال. فالمادّةُ الواحدة تستوعب شطرَي الاستعداد: العُدّة، ومن يلزمها."
+          },
+          {
+            ref: "Surah At-Tawbah (9:122)",
+            ar: "وَمَا كَانَ ٱلۡمُؤۡمِنُونَ لِيَنفِرُواْ كَآفَّةٗۚ فَلَوۡلَا نَفَرَ مِن كُلِّ فِرۡقَةٖ مِّنۡهُمۡ طَآئِفَةٞ لِّيَتَفَقَّهُواْ فِي ٱلدِّينِ وَلِيُنذِرُواْ قَوۡمَهُمۡ إِذَا رَجَعُوٓاْ إِلَيۡهِمۡ",
+            en: "“The believers should not all go out. So why does not a party from every group among them go out to gain understanding in the religion?”",
+            how: "Preparation is commanded here; the surah after it restrains the same duty — not everyone marches, because a community also has to keep the people who understand why it is marching.",
+            howAr: "أُمر بالإعداد ههنا، وقيّدت السورةُ التي تليها الواجبَ نفسَه: لا ينفر الجميع، فإنّ الجماعة تحتاج أيضًا أن تُبقي من يفهم لماذا تنفر."
+          }
+        ]
       },
 
       {
@@ -2071,7 +3625,14 @@ const TADABBUR = {
           en: "“Did He not make their plan into misguidance?”",
           how: "The same pattern on a larger scale: “did He not make their plot go astray?” Abrahah's plan against the House and Quraysh's plan against the Prophet ﷺ are both allowed to proceed to the last moment and then made worthless. Neither is blocked at the start, which is what makes the failure a demonstration rather than an obstacle.",
           howAr: "النسقُ نفسه على مقياسٍ أكبر: ﴿أَلَمۡ يَجۡعَلۡ كَيۡدَهُمۡ فِي تَضۡلِيلٖ﴾. فكيدُ أبرهة بالبيت وكيدُ قريشٍ بالنبيّ ﷺ أُذن لهما أن يمضيا إلى آخر لحظةٍ ثم أُبطلا. ولم يُمنع واحدٌ منهما في أوّله، وبه صار الإخفاقُ بيانًا لا حائلًا."
-        }
+        },
+          {
+            ref: "Surah Aal-Imran (3:54)",
+            ar: "وَمَكَرُواْ وَمَكَرَ ٱللَّهُۖ وَٱللَّهُ خَيۡرُ ٱلۡمَٰكِرِينَ",
+            en: "“And they planned, and Allah planned — and Allah is the best of planners.”",
+            how: "The same two clauses in the story of Isa, and in the same order: theirs first, then the answer in its words. Twice in the Quran the verb is used of Allah, and both times it is second.",
+            howAr: "الجملتان نفسُهما في خبر عيسى، وبالترتيب نفسِه: مكرُهم أوّلًا، ثم الجوابُ بلفظه. وأُسند الفعلُ إلى الله في القرآن مرّتين، وفي كلتيهما جاء ثانيًا."
+          }
         ],
         ref: "Surah Al-Anfal (8:30)",
         strength: "quran"
@@ -2150,6 +3711,237 @@ const TADABBUR = {
         ],
         plain: "In plain words: at the most dangerous moment of his life he did not offer a plan. He said do not grieve — and he said Allah is with US, not with me.",
         plainAr: "بعبارة أخرى: في أخطر ساعات حياته لم يعرض تدبيرًا، وإنما قال: لا تحزن، وقال ﴿مَعَنَا﴾ لا «معي»."
+      },
+      {
+        n: 6,
+        ar: "وَإِنۡ أَحَدٞ مِّنَ ٱلۡمُشۡرِكِينَ ٱسۡتَجَارَكَ فَأَجِرۡهُ حَتَّىٰ يَسۡمَعَ كَلَٰمَ ٱللَّهِ ثُمَّ أَبۡلِغۡهُ مَأۡمَنَهُۥۚ ذَٰلِكَ بِأَنَّهُمۡ قَوۡمٞ لَّا يَعۡلَمُونَ",
+        why: "The card on verse 5, just above this one, deals with how that verse is quoted with its two ends cut off. This one stays inside verse 6 and reads what it obliges, clause by clause.\n\n**If any one of the idolaters seeks your protection** — the request comes from the other side, in wartime, from the party being fought. **Then grant him protection** — not merely spare him: take him into your safekeeping. **Until he hears the speech of Allah** — the protection lasts at least that long. **Then deliver him to his place of safety** — and here the duty outlives the preaching: when he has heard and not accepted, you are still responsible for getting him out safely.\n\nThen the reason, and it is the whole temper of the verse: **that is because they are a people who do not know.** Ignorance is treated as a thing to be answered, not punished.",
+        whyAr: "في بطاقة الآية الخامسة فوق هذه بيانُ كيف تُنقل تلك الآيةُ مقطوعةَ الطرفين. وهذه البطاقةُ تلزم الآية السادسة نفسَها، وتقرأ ما أوجبته جملةً جملة.\n\n﴿وَإِنۡ أَحَدٞ مِّنَ ٱلۡمُشۡرِكِينَ ٱسۡتَجَارَكَ﴾ — فالطلبُ من الجهة الأخرى، في حال حرب، وممّن يُقاتَل. ﴿فَأَجِرۡهُ﴾ — لا كفَّ الأذى فحسب، بل أخذُه في ذمّتك. ﴿حَتَّىٰ يَسۡمَعَ كَلَٰمَ ٱللَّهِ﴾ — فالجوارُ يمتدّ إلى هذا الحدّ على الأقلّ. ﴿ثُمَّ أَبۡلِغۡهُ مَأۡمَنَهُۥۚ﴾ — وههنا يبقى الواجبُ بعد انتهاء البلاغ: فإذا سمع ولم يقبل فأنت مسؤولٌ عن إخراجه آمنًا.\n\nثم العلّة، وفيها مزاجُ الآية كلِّه: ﴿ذَٰلِكَ بِأَنَّهُمۡ قَوۡمٞ لَّا يَعۡلَمُونَ﴾. فجُعل الجهلُ أمرًا يُجاب عنه لا يُعاقَب عليه.",
+        ref: "Surah At-Tawbah (9:6), read with (9:5)",
+        strength: "quran",
+        plain: "A man from the enemy side asks for safety: you must protect him, keep protecting him until he has heard the Quran, and then take him to where he is safe — even if he refuses everything he heard. The reason the verse gives is that they do not know.",
+        plainAr: "رجلٌ من جهة العدوّ يطلب الأمان: عليك أن تُجيره، وأن يبقى الجوارُ حتى يسمع القرآن، ثم أن توصله إلى مأمنه — ولو ردّ كلَّ ما سمع. والعلّةُ التي ذكرتها الآية أنهم لا يعلمون.",
+        words: [
+          {
+            w: "فَأَجِرۡهُ",
+            t: "fa-ajirhu — then grant him protection",
+            meaning: "Ijara is the Arabs' institution of protection: a man takes another into his safekeeping, and his own honour then stands behind that person's safety. The Quran takes a custom of tribal Arabia and makes it binding — towards an enemy, in wartime, at the request of the enemy.",
+            meaningAr: "الإجارةُ عُرفٌ عربيٌّ معروف: يأخذ الرجلُ الرجلَ في ذمّته، فيصير عِرضُه ضامنًا لسلامته. فأخذ القرآنُ عادةً من عادات العرب فجعلها واجبًا — نحو عدوٍّ، في حال حرب، بطلبٍ من العدوّ.",
+            source: "Arabic usage of ج و ر (أجار: to give protection)",
+            strength: "lugha"
+          },
+          {
+            w: "أَبۡلِغۡهُ مَأۡمَنَهُۥۚ",
+            t: "ablighhu ma'manahu — deliver him to his place of safety",
+            meaning: "Not “let him go” but **deliver him** — the verb of conveying something to its destination. And the destination is named from his side, not yours: *his* place of safety. The duty is measured by when he is safe, not by when you are finished with him.",
+            meaningAr: "ليست «خلِّ سبيله»، بل **أبلِغه** — وهو فعلُ الإيصال إلى الغاية. والغايةُ مسمّاةٌ من جهته لا من جهتك: **مأمنه** هو. فالواجبُ مقدَّرٌ بأمنه، لا بفراغك منه.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:7)",
+            ar: "فَمَا ٱسۡتَقَٰمُواْ لَكُمۡ فَٱسۡتَقِيمُواْ لَهُمۡۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلۡمُتَّقِينَ",
+            en: "So as long as they are upright towards you, be upright towards them. Indeed, Allah loves the righteous.",
+            how: "The verse after the escort clause sets the standing rule for the ones who did keep their word: their treaty holds as long as they keep it. Verses 5, 6 and 7 read together are a war, an exit, and a peace — in that order, on one page.",
+            howAr: "الآيةُ التي تلي أمرَ التبليغ إلى المأمن تُقرّر الحكمَ الثابت فيمن وفَّى: فعهدُه قائمٌ ما أقام عليه. والآياتُ الخامسةُ والسادسةُ والسابعةُ مقروءةً معًا: حربٌ، ومخرج، وسِلم — على هذا الترتيب في صفحةٍ واحدة."
+          }
+        ]
+      },
+      {
+        n: 36,
+        ar: "إِنَّ عِدَّةَ ٱلشُّهُورِ عِندَ ٱللَّهِ ٱثۡنَا عَشَرَ شَهۡرٗا فِي كِتَٰبِ ٱللَّهِ يَوۡمَ خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ مِنۡهَآ أَرۡبَعَةٌ حُرُمٞۚ ذَٰلِكَ ٱلدِّينُ ٱلۡقَيِّمُۚ فَلَا تَظۡلِمُواْ فِيهِنَّ أَنفُسَكُمۡۚ",
+        arNote: "The first part of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا أوّلُ الآية، وهي كاملةٌ أعلاه.",
+        why: "The number of months is twelve **in the decree of Allah, on the day He created the heavens and the earth** — the calendar is tied back to the beginning, not to a ruler's decision. Four of them are sacred, and that, says the verse, is **the upright religion**.\n\nThen the instruction inside the sacred months: **so do not wrong yourselves during them.** Not “do not fight” — the wording is wider than that, and it is turned inward: the wrong you are warned against in the months of truce is the wrong you do to yourselves.\n\nThe passage is about the calendar being tampered with — the pre-Islamic practice of shifting a sacred month to suit a campaign, which the next verse calls an increase in disbelief. A people that can move its sacred days to fit its plans has already decided which of the two is serving the other.",
+        whyAr: "عِدّةُ الشهور اثنا عشر ﴿فِي كِتَٰبِ ٱللَّهِ يَوۡمَ خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ﴾ — فالتقويمُ مردودٌ إلى البدء، لا إلى قرار حاكم. ومنها أربعةٌ حُرُم، وذلك — تقول الآية — ﴿ذَٰلِكَ ٱلدِّينُ ٱلۡقَيِّمُۚ﴾.\n\nثم الأمرُ في داخل الأشهر الحُرُم: ﴿فَلَا تَظۡلِمُواْ فِيهِنَّ أَنفُسَكُمۡۚ﴾. لا «فلا تقاتلوا» — واللفظُ أوسع، وهو مصروفٌ إلى الداخل: فالظلمُ المحذَّرُ منه في شهور الهدنة هو ظلمُك نفسَك.\n\nوالسياقُ في العبث بالتقويم — وهو النسيءُ الذي كانوا يؤخّرون به الشهرَ الحرام ليوافق غزوهم، وسمّته الآيةُ التي بعدها زيادةً في الكفر. وأمّةٌ تُزحزح أيّامها المقدّسة لتوافق خططها فقد قرّرت أيُّهما يخدم الآخر.",
+        ref: "Surah At-Tawbah (9:36), read with (9:37)",
+        strength: "quran",
+        plain: "Twelve months, fixed since the heavens and the earth were made, four of them sacred. And the command inside them is not only about fighting: do not wrong yourselves in them.",
+        plainAr: "اثنا عشر شهرًا، مُثبتةً منذ خُلقت السماواتُ والأرض، أربعةٌ منها حُرُم. والأمرُ فيها ليس في القتال وحده: فلا تظلموا فيهنّ أنفسكم.",
+        words: [
+          {
+            w: "ٱلدِّينُ ٱلۡقَيِّمُۚ",
+            t: "ad-dinu-l-qayyim — the upright religion",
+            meaning: "Qayyim is from qama — what stands straight and makes other things stand. Said of a calendar, it means a religion that is not bent to fit a season's convenience. The word is used again of Islam as “the straight religion” elsewhere — here it is applied to a question of dates.",
+            meaningAr: "القيّمُ من القيام: المستقيمُ في نفسه المُقيمُ لغيره. وإذا قيل في تقويمٍ فمعناه دينٌ لا يُلوى ليوافق مصلحة موسم. واللفظُ نفسُه وُصف به الدينُ في مواضع أُخر — وقد جاء ههنا في مسألة تواريخ.",
+            source: "Arabic usage of ق و م; and 30:30, 98:5",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:37)",
+            ar: "إِنَّمَا ٱلنَّسِيٓءُ زِيَادَةٞ فِي ٱلۡكُفۡرِۖ",
+            en: "“Postponing a sacred month is only an increase in disbelief.”",
+            how: "The verse that names the practice this ruling was answering: they did not deny the sacred months — they moved them. The Quran treats rearranging the calendar to suit a war as a matter of belief, not of administration.",
+            howAr: "الآيةُ التي سمّت الصنيع الذي جاء الحكمُ من أجله: فما أنكروا الأشهر الحُرُم، وإنما أزاحوها. فجعل القرآنُ تحريكَ التقويم لمصلحة حربٍ مسألةَ اعتقادٍ لا مسألةَ تنظيم."
+          }
+        ]
+      },
+      {
+        n: 60,
+        ar: "۞ إِنَّمَا ٱلصَّدَقَٰتُ لِلۡفُقَرَآءِ وَٱلۡمَسَٰكِينِ وَٱلۡعَٰمِلِينَ عَلَيۡهَا وَٱلۡمُؤَلَّفَةِ قُلُوبُهُمۡ وَفِي ٱلرِّقَابِ وَٱلۡغَٰرِمِينَ وَفِي سَبِيلِ ٱللَّهِ وَٱبۡنِ ٱلسَّبِيلِۖ فَرِيضَةٗ مِّنَ ٱللَّهِۗ وَٱللَّهُ عَلِيمٌ حَكِيمٞ",
+        why: "Eight categories, named and closed. The verse opens with **innama** — the particle of restriction — so this is not a list of good places for zakat; it is the list.\n\nAnd look at who is on it. The poor and the needy first. Then **those who work on it** — the collectors are paid from the fund itself, so administration is neither unpaid nor taken out of the poor's share by a side door. Then those whose hearts are to be reconciled; those in bondage; the debt-ridden; the way of Allah; and the traveller cut off from his money — a man who may be rich at home and has nothing where he is standing.\n\nThe sentence ends: **an obligation imposed by Allah** — the categories are not the collector's to widen or narrow, and the verse closes by naming Him as Knowing and Wise, which is the answer to anyone who thinks a ninth category could be added.",
+        whyAr: "ثمانيةُ أصنافٍ مسمّاةٍ مقفَلة. وافتُتحت الآيةُ بـ﴿إِنَّمَا﴾ — وهي أداةُ الحصر — فليست عدًّا لمواضع حسنةٍ للزكاة، بل هي المواضع.\n\nوانظر من فيها: الفقراءُ والمساكين أوّلًا. ثم ﴿وَٱلۡعَٰمِلِينَ عَلَيۡهَا﴾ — فالعاملون يُعطَون من المال نفسِه، فلا يكون العملُ بلا أجرٍ ولا يُؤخذ من سهم الفقراء من بابٍ خلفيّ. ثم المؤلَّفةُ قلوبهم، وفي الرقاب، والغارمون، وفي سبيل الله، وابنُ السبيل — ورجلٌ قد يكون غنيًّا في بلده وليس معه في موضعه شيء.\n\nوخُتمت: ﴿فَرِيضَةٗ مِّنَ ٱللَّهِۗ﴾ — فليست الأصنافُ للجابي يُوسّعها أو يُضيّقها، وخُتمت الآيةُ باسمَي العليم الحكيم، وفيهما جوابُ من يظنّ أنّ صنفًا تاسعًا يُزاد.",
+        ref: "Surah At-Tawbah (9:60)",
+        strength: "quran",
+        plain: "Zakat has eight named recipients and the verse begins with a word that means “only these”. Among them are the people who collect and administer it — paid from the fund, not from the poor's share — and the traveller who is stranded, even if he has money at home.",
+        plainAr: "للزكاة ثمانيةُ أصنافٍ مسمّاة، وافتُتحت الآيةُ بما معناه «هؤلاء لا غيرهم». ومنهم العاملون عليها — يُعطَون من المال لا من سهم الفقراء — وابنُ السبيل المنقطع، ولو كان له مالٌ في بلده.",
+        words: [
+          {
+            w: "وَٱلۡعَٰمِلِينَ عَلَيۡهَا",
+            t: "al-'amilina 'alayha — those who work on it",
+            meaning: "A whole administrative principle in two words: the people who collect, record and distribute zakat are themselves one of the eight. Their wage is not charity to them and not a deduction from the poor; it is a category of its own, fixed in the same verse as the poor.",
+            meaningAr: "أصلٌ إداريٌّ كاملٌ في كلمتين: فالذين يجبون الزكاة ويُحصونها ويقسمونها صنفٌ من الثمانية. فأجرُهم ليس صدقةً عليهم ولا خصمًا من الفقراء، وإنما سهمٌ مستقلٌّ مفروضٌ في الآية التي فُرض فيها سهمُ الفقير.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:177)",
+            ar: "وَءَاتَى ٱلۡمَالَ عَلَىٰ حُبِّهِۦ ذَوِي ٱلۡقُرۡبَىٰ وَٱلۡيَتَٰمَىٰ وَٱلۡمَسَٰكِينَ وَٱبۡنَ ٱلسَّبِيلِ وَٱلسَّآئِلِينَ وَفِي ٱلرِّقَابِ",
+            en: "“And gives wealth, in spite of love for it, to relatives, orphans, the needy, the traveller, those who ask, and for freeing slaves.”",
+            how: "The obligatory list here, and the voluntary giving there — and the two overlap but are not the same. What 9:60 makes a fixed duty, 2:177 describes as a mark of the person who has actually believed.",
+            howAr: "القائمةُ الواجبةُ ههنا، والعطاءُ التطوّعيُّ هناك — وبينهما اشتراكٌ لا تطابق. فالذي جعلته آيةُ التوبة فرضًا مقدَّرًا جعلته آيةُ البقرة علامةً على من آمن حقًّا."
+          }
+        ]
+      },
+      {
+        n: 105,
+        ar: "وَقُلِ ٱعۡمَلُواْ فَسَيَرَى ٱللَّهُ عَمَلَكُمۡ وَرَسُولُهُۥ وَٱلۡمُؤۡمِنُونَۖ وَسَتُرَدُّونَ إِلَىٰ عَٰلِمِ ٱلۡغَيۡبِ وَٱلشَّهَٰدَةِ فَيُنَبِّئُكُم بِمَا كُنتُمۡ تَعۡمَلُونَ",
+        why: "One word of command, and then three watchers.\n\n**Say: work.** That is the whole instruction — not “say: repent”, though the passage is about men who had stayed behind and then confessed. Their repentance was accepted in the verses just before this one, and what is asked of them next is not remorse but work.\n\nThen: **Allah will see your work, and His Messenger, and the believers.** Three, in that order, and the third is the one that changes how a day feels: the people around you will see it too. Then you will be returned to the Knower of the unseen and the seen, and He will tell you what you were doing.\n\nSo the verse puts a deed in front of three audiences and a final report — and still the command itself is one word long.",
+        whyAr: "أمرٌ في كلمة، ثم ثلاثةُ نُظّار.\n\n﴿وَقُلِ ٱعۡمَلُواْ﴾. هذا هو الأمرُ كلُّه — لا «قل توبوا»، والسياقُ في قومٍ تخلّفوا ثم اعترفوا. فقد قُبلت توبتُهم في الآيات قبلها، والذي طُلب منهم بعدها ليس الندم، وإنما العمل.\n\nثم: ﴿فَسَيَرَى ٱللَّهُ عَمَلَكُمۡ وَرَسُولُهُۥ وَٱلۡمُؤۡمِنُونَۖ﴾. ثلاثةٌ على هذا الترتيب، والثالثُ هو الذي يُغيّر إحساسك باليوم: فالناسُ من حولك سيرونه أيضًا. ثم ﴿وَسَتُرَدُّونَ إِلَىٰ عَٰلِمِ ٱلۡغَيۡبِ وَٱلشَّهَٰدَةِ فَيُنَبِّئُكُم بِمَا كُنتُمۡ تَعۡمَلُونَ﴾.\n\nفوضعت الآيةُ العملَ أمام ثلاثة نُظّارٍ وتقريرٍ أخير — وبقي الأمرُ نفسُه كلمةً واحدة.",
+        ref: "Surah At-Tawbah (9:105)",
+        strength: "quran",
+        plain: "After their repentance was accepted, what they were told was one word: work. Allah will see it, the Messenger will see it, and the believers will see it — and at the end you will be told exactly what you did.",
+        plainAr: "بعد قبول توبتهم كان المطلوب كلمةً واحدة: اعملوا. يرى اللهُ العمل، ويراه رسولُه، ويراه المؤمنون — وفي الآخر تُنبَّأ بما كنت تعمل.",
+        words: [
+          {
+            w: "فَسَيَرَى",
+            t: "fa-sayara — He will see",
+            meaning: "The future particle is attached to seeing, not to judging: *He will see it*. The sentence is not a threat of the reckoning — that comes at the end of the verse in its own clause. This is about the deed being watched while it is being done.",
+            meaningAr: "دخلت السينُ على الرؤية لا على الجزاء: **فسيرى**. فليست الجملةُ وعيدًا بالحساب — وذاك في آخر الآية في جملةٍ مستقلّة. وإنما هي في أنّ العمل مرئيٌّ وهو يُعمل.",
+            source: "Quranic wording",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Kahf (18:110)",
+            ar: "كَانَ يَرۡجُواْ لِقَآءَ رَبِّهِۦ فَلۡيَعۡمَلۡ عَمَلٗا صَٰلِحٗا وَلَا يُشۡرِكۡ بِعِبَادَةِ رَبِّهِۦٓ",
+            en: "“So whoever hopes for the meeting with his Lord — let him do righteous work and associate none in the worship of his Lord.”",
+            how: "The same pairing in the other order: there, hope first and then work; here, work first and then the meeting. Neither verse leaves the wanting without the working.",
+            howAr: "الاقترانُ نفسُه معكوسَ الترتيب: هناك الرجاءُ ثم العمل، وههنا العملُ ثم اللقاء. ولم تدع واحدةٌ منهما الإرادةَ بغير عمل."
+          }
+        ]
+      },
+      {
+        n: 111,
+        ar: "إِنَّ ٱللَّهَ ٱشۡتَرَىٰ مِنَ ٱلۡمُؤۡمِنِينَ أَنفُسَهُمۡ وَأَمۡوَٰلَهُم بِأَنَّ لَهُمُ ٱلۡجَنَّةَۚ يُقَٰتِلُونَ فِي سَبِيلِ ٱللَّهِ فَيَقۡتُلُونَ وَيُقۡتَلُونَۖ وَعۡدًا عَلَيۡهِ حَقّٗا فِي ٱلتَّوۡرَىٰةِ وَٱلۡإِنجِيلِ وَٱلۡقُرۡءَانِۚ",
+        arNote: "The first part of the verse is quoted here; the whole of it is above.",
+        arNoteAr: "المقتبسُ ههنا أوّلُ الآية، وهي كاملةٌ أعلاه.",
+        why: "The whole verse is written in the vocabulary of a contract, and every part of a sale is named.\n\n**Allah has purchased** — the buyer. **From the believers** — the seller. **Their selves and their wealth** — the goods. **That for them is the Garden** — the price. Then the terms of delivery: they fight in the way of Allah, killing and being killed. Then the guarantee: **a promise binding upon Him in truth** — and the three deeds in which it is recorded: the Torah, the Gospel and the Quran.\n\nThen the question that no other party to a contract could ask: **and who is more faithful to his covenant than Allah?**\n\nAnd the closing instruction is the one nobody expects in a verse about being killed: **so rejoice in the transaction you have made.** Not “endure it”. Congratulate yourselves on the deal.",
+        whyAr: "الآيةُ كلُّها مكتوبةٌ بلغة العقود، وكلُّ ركنٍ من أركان البيع مسمًّى فيها.\n\n﴿إِنَّ ٱللَّهَ ٱشۡتَرَىٰ﴾ — المشتري. ﴿مِنَ ٱلۡمُؤۡمِنِينَ﴾ — البائع. ﴿أَنفُسَهُمۡ وَأَمۡوَٰلَهُم﴾ — المبيع. ﴿بِأَنَّ لَهُمُ ٱلۡجَنَّةَۚ﴾ — الثمن. ثم صفةُ التسليم: يقاتلون في سبيل الله فيَقتلون ويُقتَلون. ثم التوثيق: ﴿وَعۡدًا عَلَيۡهِ حَقّٗا﴾، ومواضعُ قيده: ﴿فِي ٱلتَّوۡرَىٰةِ وَٱلۡإِنجِيلِ وَٱلۡقُرۡءَانِۚ﴾.\n\nثم السؤالُ الذي لا يستطيعه طرفٌ في عقد: ﴿وَمَنۡ أَوۡفَىٰ بِعَهۡدِهِۦ مِنَ ٱللَّهِۚ﴾.\n\nوالأمرُ في الختام هو الذي لا يتوقّعه أحدٌ في آيةٍ فيها القتل: ﴿فَٱسۡتَبۡشِرُواْ بِبَيۡعِكُمُ ٱلَّذِي بَايَعۡتُم بِهِۦۚ﴾. لا «فاصبروا عليه»، بل اهنؤوا بالصفقة.",
+        ref: "Surah At-Tawbah (9:111)",
+        strength: "quran",
+        plain: "The verse is written like a contract: Allah is the buyer, the believers are the sellers, what is sold is their lives and property, and the price is Paradise. It ends by telling them to be glad about the deal they have made.",
+        plainAr: "الآيةُ مكتوبةٌ كالعقد: اللهُ المشتري، والمؤمنون البائعون، والمبيعُ أنفسُهم وأموالُهم، والثمنُ الجنّة. وتختم بأن يستبشروا بالبيع الذي بايعوا به.",
+        words: [
+          {
+            w: "ٱشۡتَرَىٰ",
+            t: "ishtara — has purchased",
+            meaning: "The verb is a real purchase, not a metaphor stretched thin: the Quran keeps the whole structure of a sale around it — seller, goods, price, terms, written record, guarantor. What makes it strange is that the buyer already owns the goods, and buys them anyway.",
+            meaningAr: "الفعلُ شراءٌ حقيقيٌّ في بنائه لا استعارةٌ رقيقة: فقد أبقى القرآنُ حوله أركانَ البيع كلَّها — بائعًا ومبيعًا وثمنًا وشرطًا وقيدًا وضامنًا. والعجبُ أنّ المشتري مالكٌ للمبيع أصلًا، ثم اشتراه.",
+            source: "Quranic wording, and the parallel in 61:10-11",
+            strength: "quran"
+          },
+          {
+            w: "فَٱسۡتَبۡشِرُواْ",
+            t: "fastabshiru — so rejoice",
+            meaning: "The final command in a verse about killing and being killed is to be glad. Istibshar is form X: to seek out the good news in a thing and take it. The believer is not told to accept the price; he is told to consider himself fortunate in it.",
+            meaningAr: "آخرُ أمرٍ في آيةٍ فيها القتلُ والقتال أن يفرحوا. والاستبشارُ على وزن «استفعل»: طلبُ البشرى في الشيء وأخذُها. فلم يُؤمر المؤمنُ بقبول الثمن، وإنما بأن يعدّ نفسه رابحًا فيه.",
+            source: "Arabic morphology (form X)",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah As-Saff (61:10-11)",
+            ar: "أَدُلُّكُمۡ عَلَىٰ تِجَٰرَةٖ تُنجِيكُم مِّنۡ عَذَابٍ ۝ تُؤۡمِنُونَ بِٱللَّهِ وَرَسُولِهِۦ وَتُجَٰهِدُونَ فِي سَبِيلِ ٱللَّهِ بِأَمۡوَٰلِكُمۡ وَأَنفُسِكُمۡۚ",
+            en: "“Shall I guide you to a transaction that will save you from a painful punishment? You believe in Allah and His Messenger, and strive in the cause of Allah with your wealth and your lives.”",
+            how: "The same trade offered as a question, with the goods listed in the same two items — wealth and selves — and the profit named as rescue from punishment rather than as the Garden.",
+            howAr: "التجارةُ نفسُها معروضةً سؤالًا، والمبيعُ في الأمرين نفسِهما — الأموالُ والأنفس — والربحُ مسمًّى نجاةً من العذاب لا جنّةً."
+          }
+        ]
+      },
+      {
+        n: 122,
+        ar: "۞ وَمَا كَانَ ٱلۡمُؤۡمِنُونَ لِيَنفِرُواْ كَآفَّةٗۚ فَلَوۡلَا نَفَرَ مِن كُلِّ فِرۡقَةٖ مِّنۡهُمۡ طَآئِفَةٞ لِّيَتَفَقَّهُواْ فِي ٱلدِّينِ وَلِيُنذِرُواْ قَوۡمَهُمۡ إِذَا رَجَعُوٓاْ إِلَيۡهِمۡ لَعَلَّهُمۡ يَحۡذَرُونَ",
+        why: "The surah has spent a hundred verses on people who stayed behind from a campaign. Then this: **the believers should not go out, all of them.**\n\nIt is a restraint on the very thing the surah has been demanding. If everyone marches, something else dies. So: let a party from every group of them go out **to gain understanding in the religion, and to warn their people when they return to them.**\n\nThe grammar is worth noticing, because it is read both ways: the ones who go out may be the ones who go to study, or the ones who march while a party stays to study. Either way the principle stands, and it is the same principle: a community that puts all of itself into one task, however urgent, has no one left who understands why it was doing it.\n\nAnd the aim is not only knowledge. It is knowledge **that comes back**: to warn their people when they return.",
+        whyAr: "أنفقت السورةُ مئةَ آيةٍ في المتخلّفين عن الغزو، ثم جاء هذا: ﴿وَمَا كَانَ ٱلۡمُؤۡمِنُونَ لِيَنفِرُواْ كَآفَّةٗۚ﴾.\n\nوهو كفٌّ عن عين ما كانت السورةُ تطلبه. فإذا نفر الجميعُ مات شيءٌ آخر. فـ﴿فَلَوۡلَا نَفَرَ مِن كُلِّ فِرۡقَةٖ مِّنۡهُمۡ طَآئِفَةٞ﴾ ﴿لِّيَتَفَقَّهُواْ فِي ٱلدِّينِ وَلِيُنذِرُواْ قَوۡمَهُمۡ إِذَا رَجَعُوٓاْ إِلَيۡهِمۡ﴾.\n\nوفي الإعراب ما يستحقّ اللحظ، فقد قُرئت على وجهين: أن يكون النافرون هم الطالبين للعلم، أو أن يكون النافرون هم الغزاة وتبقى طائفةٌ للتفقّه. وعلى الوجهين يبقى الأصلُ واحدًا: أنّ أمّةً تدفع نفسها كلَّها في عملٍ واحد، مهما كان عاجلًا، لا يبقى فيها من يفهم لماذا كانت تعمله.\n\nوالغايةُ ليست العلمَ وحده، بل علمٌ **يعود**: ولينذروا قومهم إذا رجعوا إليهم.",
+        ref: "Surah At-Tawbah (9:122)",
+        strength: "quran",
+        plain: "In the middle of a surah about people avoiding a campaign, this verse says the believers should not all march out. Some must stay to understand the religion deeply — and then bring it back to their people.",
+        plainAr: "في وسط سورةٍ في المتخلّفين عن الغزو تقول هذه الآية: لا ينبغي أن ينفر المؤمنون كافّة. بل تبقى طائفةٌ تتفقّه في الدين — ثم ترجع به إلى قومها.",
+        words: [
+          {
+            w: "لِّيَتَفَقَّهُواْ",
+            t: "liyatafaqqahu — to gain deep understanding",
+            meaning: "Form V of fiqh — the pattern of something acquired little by little, with effort. Not “to learn the religion” but to work at understanding it until the understanding is theirs. The verse makes that a duty of the same weight as the march it is exempting them from.",
+            meaningAr: "على وزن «تفعّل» من الفقه — وهو بناءُ ما يُتحصَّل بالتدرّج والمعاناة. فليس «ليتعلّموا الدين»، بل أن يُعالجوا فهمه حتى يصير فهمًا لهم. وجعلت الآيةُ ذلك واجبًا في وزن النفير الذي أعفتهم منه.",
+            source: "Arabic morphology (form V), and the root ف ق ه",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:60)",
+            ar: "وَأَعِدُّواْ لَهُم مَّا ٱسۡتَطَعۡتُم مِّن قُوَّةٖ",
+            en: "“And prepare against them whatever you are able of power.”",
+            how: "Preparation is commanded in one surah and study in the next, and both are the same instruction in different currencies: what a community needs before the day it needs it.",
+            howAr: "أُمر بالإعداد في سورة وبالتفقّه في التي تليها، وهما أمرٌ واحدٌ بعملتين: ما تحتاجه الجماعةُ قبل اليوم الذي تحتاجه فيه."
+          }
+        ]
+      },
+      {
+        n: 128,
+        ar: "لَقَدۡ جَآءَكُمۡ رَسُولٞ مِّنۡ أَنفُسِكُمۡ عَزِيزٌ عَلَيۡهِ مَا عَنِتُّمۡ حَرِيصٌ عَلَيۡكُم بِٱلۡمُؤۡمِنِينَ رَءُوفٞ رَّحِيمٞ",
+        why: "Near the end of the harshest surah in the Quran — a surah of treaties broken, hypocrites named, a campaign in the heat — comes this description of the Messenger ﷺ, and every word of it is tender.\n\n**A messenger from among yourselves** — one of you, not sent down from elsewhere. **Grievous to him is what you suffer** — your hardship weighs on **him**. **Concerned over you** — hariṣ: the word for wanting something intensely. **To the believers, kind and merciful.**\n\nAnd the last two words are the ones to stop at: ra'uf and rahim are two of the names of Allah, and here they are given to a human being. The Quran does that with no one else.",
+        whyAr: "قرب خاتمة أشدّ سور القرآن — سورةِ نقض العهود وتسمية المنافقين والغزو في الحرّ — يجيء هذا الوصفُ للرسول ﷺ، وكلُّ لفظةٍ فيه رحمة.\n\n﴿جَآءَكُمۡ رَسُولٞ مِّنۡ أَنفُسِكُمۡ﴾ — واحدٌ منكم، لم يُنزَل من غيركم. ﴿عَزِيزٌ عَلَيۡهِ مَا عَنِتُّمۡ﴾ — فمشقّتُكم ثقيلةٌ **عليه**. ﴿حَرِيصٌ عَلَيۡكُم﴾ — والحرصُ شدّةُ الإرادة للشيء. ﴿بِٱلۡمُؤۡمِنِينَ رَءُوفٞ رَّحِيمٞ﴾.\n\nوآخرُ كلمتين هما موضعُ الوقوف: فالرؤوفُ الرحيم اسمان من أسماء الله، أُعطيا ههنا لبشر. ولم يصنع القرآنُ ذلك مع أحدٍ غيره.",
+        ref: "Surah At-Tawbah (9:128)",
+        strength: "quran",
+        plain: "At the end of the sternest surah in the Quran, the Prophet ﷺ is described: one of you, pained by what pains you, anxious for you, kind and merciful — and the last two words are names of Allah, given here to a man.",
+        plainAr: "في خاتمة أشدّ سور القرآن يُوصف النبيّ ﷺ: واحدٌ منكم، يشقّ عليه ما يشقّ عليكم، حريصٌ عليكم، رؤوفٌ رحيم — والكلمتان الأخيرتان اسمان لله، أُعطيا ههنا لرجل.",
+        words: [
+          {
+            w: "عَزِيزٌ عَلَيۡهِ مَا عَنِتُّمۡ",
+            t: "'azizun 'alayhi ma 'anittum — grievous to him is what you suffer",
+            meaning: "'Anat is hardship that wears a person down. The sentence does not say he sympathises with it: it says your hardship is **heavy upon him** — the difficulty is transferred, and it lands on him.",
+            meaningAr: "العَنَتُ المشقّةُ التي تُرهق صاحبها. ولم تقل الجملةُ إنه يُشفق ممّا تجدون، وإنما قالت إنّ مشقّتكم **عزيزةٌ عليه**: فالمشقّةُ منقولةٌ، وموقعُها هو.",
+            source: "Arabic usage of ع ن ت and عزيز عليه",
+            strength: "lugha"
+          },
+          {
+            w: "رَءُوفٞ رَّحِيمٞ",
+            t: "ra'ufun rahim — kind, merciful",
+            meaning: "Two of the names by which the Quran names Allah, placed on the Prophet ﷺ in one phrase. Ra'fa is the finer of the two — mercy at its most careful, the kind that anticipates the hurt before it arrives; rahma is the wider. The verse ends the surah of the sword on those two words.",
+            meaningAr: "اسمان ممّا سمّى القرآنُ به الله، وُضعا على النبيّ ﷺ في عبارةٍ واحدة. والرأفةُ ألطفُهما — وهي أرقُّ الرحمة وأسبقُها إلى دفع الأذى قبل وقوعه؛ والرحمةُ أوسع. فخُتمت سورةُ السيف بهاتين الكلمتين.",
+            source: "Quranic usage (the two names of Allah, e.g. 2:143)",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Anbiya (21:107)",
+            ar: "وَمَآ أَرۡسَلۡنَٰكَ إِلَّا رَحۡمَةٗ لِّلۡعَٰلَمِينَ",
+            en: "“And We have not sent you except as a mercy to the worlds.”",
+            how: "The description here is of how he was with **them**; that verse states what he was sent as, for everyone. Read together, the mercy is not a mood he had — it is the errand he was on.",
+            howAr: "الوصفُ ههنا في حاله معهم، وتلك الآيةُ في ما أُرسل به للعالمين. فإذا جُمعتا لم تكن الرحمةُ خُلقًا عارضًا فيه، بل هي الأمرُ الذي أُرسل به."
+          }
+        ]
       }
     ]
   },
@@ -2479,7 +4271,16 @@ const TADABBUR = {
         why: "ITHAR is a rank above charity. Sadaqah is giving from what you have; ithar is giving the thing you need, to someone whose need you have decided is greater. The verse describes the Ansar doing it while KHASASAH — need, a gap — was on them.\n\nAnd the sentence before it is what makes it extraordinary: they find in their breasts no want for what the emigrants were given. Not merely that they gave, but that they were not resentful about the giving. The interior state is included in the description, which is the harder half.\n\nThen the general rule is drawn out: whoever is protected from the SHUHH of his own soul — those are the successful. Note the verb: protected, as something done TO him. Shuhh is not simple miserliness; it is the grasping that comes with wanting. And treating it as something a person needs protection FROM implies it is the default and the generosity is the rescue.",
         whyAr: "**الإيثار** فوق الصدقة: فالصدقةُ أن تُعطي ممّا عندك، والإيثارُ أن تُعطي ما تحتاجه أنت لمن رأيتَ حاجته أشدّ. ووصفت الآيةُ الأنصارَ يفعلون ذلك و﴿خَصَاصَةٞ﴾ بهم، وهي الحاجةُ والخَلّة.\n\nوالذي قبلها هو الذي يجعله عجيبًا: ﴿وَلَا يَجِدُونَ فِي صُدُورِهِمۡ حَاجَةٗ مِّمَّآ أُوتُواْ﴾. فليس أنهم أعطوا فحسب، بل لم يجدوا في أنفسهم على العطاء غضاضة. فأُدخلت الحالُ الباطنة في الوصف، وهي الشطرُ الأشقّ.\n\nثم استُخرجت القاعدة: ﴿وَمَن **يُوقَ** شُحَّ نَفۡسِهِۦ فَأُوْلَٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ﴾. وانظر الفعل: ﴿يُوقَ﴾ مبنيًّا لما لم يُسمّ فاعله، أي أنه شيءٌ يُصنع به. و**الشحّ** ليس مجرّد البخل، وإنما هو الحرصُ المقترن بالطلب. وجعلُه ممّا يُوقاه العبد يفيد أنه الأصل، وأنّ السخاء هو النجاة منه.",
         ref: "Surah Al-Hashr (59:9)",
-        strength: "quran"
+        strength: "quran",
+        links: [
+          {
+            ref: "Surah An-Nisa (4:128)",
+            ar: "وَٱلصُّلۡحُ خَيۡرٞۗ وَأُحۡضِرَتِ ٱلۡأَنفُسُ ٱلشُّحَّۚ",
+            en: "“And settlement is better. And souls have been made prone to withholding.”",
+            how: "The shuhh a person is saved from here is named there as a fact about every soul — placed in the middle of a ruling on a marriage going cold, so that neither party mistakes the difficulty for a verdict.",
+            howAr: "الشحُّ الذي يُوقاه المرءُ ههنا مذكورٌ هناك خبرًا عن كلّ نفس — وُضع في وسط حكمٍ في زواجٍ فتر، لئلّا يحسب أحدُ الطرفين الصعوبةَ حكمًا."
+          }
+        ]
       },
       {
         n: 18,
@@ -3375,6 +5176,13 @@ const TADABBUR = {
             en: "and to parents, good treatment",
             how: "Luqman explains why. Al-Isra puts the same duty directly beside the command to worship none but Him, which is where its weight comes from.",
             howAr: "لقمان يذكر العلّة. والإسراء يضع الحقَّ نفسه إلى جنب الأمر بألّا تعبد إلا إيّاه، ومن هناك ثِقَلُه."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:233)",
+            ar: "وَٱلۡوَٰلِدَٰتُ يُرۡضِعۡنَ أَوۡلَٰدَهُنَّ حَوۡلَيۡنِ كَامِلَيۡنِۖ لِمَنۡ أَرَادَ أَن يُتِمَّ ٱلرَّضَاعَةَۚ",
+            en: "“Mothers may nurse their children two complete years, for whoever wishes to complete the nursing.”",
+            how: "The same two years, and there they are a ruling rather than a description: a right the mother may complete, with the father's duty of provision attached to it.",
+            howAr: "الحولان نفسُهما، وهما هناك حكمٌ لا وصف: حقٌّ للأمّ أن تُتمّه، ومعه ما على الأب من الرزق والكسوة."
           }
         ],
         ref: "Surah Luqman (31:14-15)",
@@ -4093,7 +5901,16 @@ const TADABBUR = {
         why: "The command is to BOTH parents, and then the reasoning given is entirely about the mother — she carried him in hardship and delivered him in hardship. The verse does not divide the duty; it explains why the weight of it leans, and it does so by naming physical facts rather than sentiment.\n\nAli and Ibn Abbas took the thirty months together with the two years of suckling named in 2:233 and 31:14, and concluded that the shortest possible pregnancy is six months. It is a famous case of a ruling in law drawn from putting two verses side by side, and Uthman is reported to have accepted the argument and released a woman who had been judged on the assumption it was impossible.\n\nThen the second half: the man who reaches forty asks for three things — to be enabled to give thanks, to do work that is accepted, and to be put right IN HIS OFFSPRING. By that age the thing he most needs help with is no longer himself alone. And the prayer ends with repentance, which is where the surah places the mature man: still turning back.",
         whyAr: "الوصيّةُ بالوالدين معًا، ثم جاء التعليلُ كلُّه في الأمّ: ﴿حَمَلَتۡهُ أُمُّهُۥ كُرۡهٗا وَوَضَعَتۡهُ كُرۡهٗاۖ﴾. فلم تقسم الآيةُ الحقَّ، وإنما بيّنت لِمَ يميل ثِقَله، وبيّنته بذكر أمرٍ حسّيٍّ لا بعاطفة.\n\nوأخذ عليٌّ وابن عبّاس ﴿ثَلَٰثُونَ شَهۡرًاۚ﴾ مع الحولين المذكورين في البقرة ولقمان، فاستنبطا أنّ أقلّ الحمل ستّة أشهر. وهي من أشهر ما استُنبط من ضمّ آيةٍ إلى آية، ورُوي أنّ عثمان قبل الحجّة فدرأ عن امرأةٍ كان قد حُكم عليها بناءً على استحالة ذلك.\n\nثم الشطر الثاني: ابنُ الأربعين يسأل ثلاثًا — أن يُوزَع شكرَ النعمة، وأن يعمل صالحًا يُرضي، وأن يُصلح له **في ذرّيّته**. فقد صار في هذا السنّ أحوجَ ما يكون إلى العون في غير نفسه وحدها. وخُتم الدعاءُ بالتوبة، وهناك وضعت السورةُ الرجلَ الكامل: راجعًا بعدُ.",
         ref: "Surah Al-Ahqaf (46:15), read with Al-Baqarah (2:233) and Luqman (31:14)",
-        strength: "tafsir"
+        strength: "tafsir",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:233)",
+            ar: "وَٱلۡوَٰلِدَٰتُ يُرۡضِعۡنَ أَوۡلَٰدَهُنَّ حَوۡلَيۡنِ كَامِلَيۡنِۖ لِمَنۡ أَرَادَ أَن يُتِمَّ ٱلرَّضَاعَةَۚ",
+            en: "“Mothers may nurse their children two complete years, for whoever wishes to complete the nursing.”",
+            how: "Thirty months here, two complete years there. The jurists put the two verses together and took the difference — six months — as the shortest a pregnancy can be; the derivation is reported from Ali and from Ibn Abbas.",
+            howAr: "ثلاثون شهرًا ههنا، وحولان كاملان هناك. فجمع الفقهاءُ بين الآيتين وأخذوا الفرق — ستّة أشهر — أقلَّ مدّة الحمل؛ والاستنباطُ مرويٌّ عن عليٍّ وعن ابن عباس."
+          }
+        ]
       },
 
       {
@@ -4256,6 +6073,13 @@ const TADABBUR = {
             en: "Whoever does righteousness, whether male or female, while he is a believer",
             how: "Al-Hujurat removes lineage from the reckoning; An-Nahl removes sex from it. Between them almost every ranking people actually use is gone.",
             howAr: "الحجرات تُسقط النسب من الميزان، والنحل تُسقط الذكورة والأنوثة. وبينهما يسقط أكثرُ ما يتفاضل به الناس."
+          },
+          {
+            ref: "Surah An-Nisa (4:1)",
+            ar: "يَٰٓأَيُّهَا ٱلنَّاسُ ٱتَّقُواْ رَبَّكُمُ ٱلَّذِي خَلَقَكُم مِّن نَّفۡسٖ وَٰحِدَةٖ وَخَلَقَ مِنۡهَا زَوۡجَهَا وَبَثَّ مِنۡهُمَا رِجَالٗا كَثِيرٗا وَنِسَآءٗۚ",
+            en: "“O people, fear your Lord, who created you from one soul and created from it its mate, and spread from the two of them many men and women.”",
+            how: "The same address to all people and the same single origin, used there to open a surah of family law: before a word about inheritance, everyone in the room is told they came from one place.",
+            howAr: "الخطابُ نفسُه للناس كافّةً والأصلُ نفسُه، استُفتحت بهما هناك سورةُ أحكام الأسرة: فقبل كلمةٍ في الميراث قيل للجميع إنهم من أصلٍ واحد."
           }
         ],
         ref: "Surah Al-Hujurat (49:13)",
@@ -4690,7 +6514,16 @@ const TADABBUR = {
         why: "Nuh had preached for nine hundred and fifty years. Here he reports what he told them, and the striking thing is what follows it in the next two verses: seek forgiveness, and He will send the sky upon you in showers, and increase you in wealth and children, and make for you gardens and rivers.\n\nRain, money, children, land. These are worldly, material things, and they are attached to ISTIGHFAR — a private act between a man and Allah with no obvious connection to agriculture or income. The scholars took this as an explicit statement that sin constricts provision and that seeking forgiveness opens it, and al-Hasan al-Basri is reported to have answered several different complaints — drought, poverty, childlessness — with this one verse.\n\nAnd the name given is GHAFFARA, the intensive form: not one who forgives, but one who forgives repeatedly and habitually. The word itself is an invitation to come back more than once.",
         whyAr: "لبث نوحٌ في قومه ﴿أَلۡفَ سَنَةٍ إِلَّا خَمۡسِينَ عَامٗا﴾. وها هو يُخبر بما قاله لهم، واللافتُ ما جاء بعده في الآيتين التاليتين: ﴿يُرۡسِلِ ٱلسَّمَآءَ عَلَيۡكُم مِّدۡرَارٗا ۝ وَيُمۡدِدۡكُم بِأَمۡوَٰلٖ وَبَنِينَ وَيَجۡعَل لَّكُمۡ جَنَّٰتٖ وَيَجۡعَل لَّكُمۡ أَنۡهَٰرٗا﴾.\n\nمطرٌ ومالٌ وولدٌ وأرض. وهي أمورٌ دنيويّةٌ حسّيّة، عُلّقت بـ**الاستغفار**، وهو عملٌ بين العبد وربّه لا صلة ظاهرة بينه وبين الزرع ولا الرزق. وأخذ أهل العلم من هذا التصريحَ بأنّ الذنب يُضيّق الرزق وأنّ الاستغفار يفتحه، ورُوي أنّ الحسن البصريّ أجاب عن شكاوى مختلفة — جدبٍ وفقرٍ وعقم — بهذه الآية وحدها.\n\nوالاسمُ المذكور ﴿غَفَّارٗا﴾ على المبالغة: لا غافرًا، بل كثيرَ المغفرة على الدوام. فاللفظُ نفسه دعوةٌ إلى أن تعود أكثر من مرّة.",
         ref: "Surah Nuh (71:10), read with 71:11-12",
-        strength: "tafsir"
+        strength: "tafsir",
+        links: [
+          {
+            ref: "Surah Al-A'raf (7:96)",
+            ar: "وَلَوۡ أَنَّ أَهۡلَ ٱلۡقُرَىٰٓ ءَامَنُواْ وَٱتَّقَوۡاْ لَفَتَحۡنَا عَلَيۡهِم بَرَكَٰتٖ مِّنَ ٱلسَّمَآءِ وَٱلۡأَرۡضِ",
+            en: "“And if the people of the towns had believed and been mindful, We would have opened upon them blessings from the sky and the earth.”",
+            how: "Nuh's promise and that condition are one statement from two sides: there, what would have been opened for a people who put themselves right; here, what will be opened for a people who seek forgiveness.",
+            howAr: "وعدُ نوحٍ وذلك الشرطُ خبرٌ واحدٌ من وجهين: فهناك ما كان يُفتح لقومٍ استقاموا، وههنا ما يُفتح لقومٍ استغفروا."
+          }
+        ]
       },
 
       {
