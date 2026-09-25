@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 24 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 25 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
@@ -6959,3 +6959,24 @@ One entry was rewritten after it was written: 9:6 repeated the sword-verse
 argument that the 9:5 card already makes. It now points at that card and adds
 only what it does not say. **Before writing a verse, open the neighbouring
 entries** — al-Baqarah alone has 33.
+
+## The sixteen return links (a link is never one-way)
+
+The fifty entries added links that pointed at verses which said nothing back.
+`./check-counts.sh` refuses that: **"every link is stated from both sides."**
+So each of the sixteen targets now carries the return link, written from its
+own side rather than copied — 46:15 and 31:14 back to 2:233 (the six-month
+pregnancy, derived by putting the thirty months beside the two years), 8:30 to
+3:54, 2:164 to 3:191, 8:60 to both 3:200 and 9:122, 49:13 to 4:1, 59:9 to
+4:128, 5:8 to 5:2, 5:32 to 5:31, 4:171 to 5:116, 4:135 to 6:152, 71:10 to
+7:96, 2:177 to 9:60, 18:110 to 9:105, and 21:107 to 9:128.
+
+**The trap, if you ever script this.** Inserting a `links:` array into an
+existing entry by slicing "from this entry to the next" writes the array
+*after* the entry's closing brace — the file becomes `}, {, links: [ … ]`,
+`TADABBUR is not defined`, and eleven scenarios fail with no clue why. Find
+the entry's **own** braces: seek back to the `{` before its `n:` line, then
+walk forward counting depth to its matching `}`, and insert before that. And
+write such a script with the editor, never a shell heredoc — this shell eats
+backslashes inside heredocs, so `"\n"` arrives as a real newline and the
+script dies on an unterminated string.
