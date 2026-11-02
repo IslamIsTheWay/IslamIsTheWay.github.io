@@ -24,6 +24,19 @@ PHONE = "@media (max-width: 820px)"
 text = io.open(CSS, encoding="utf-8").read()
 body = text.split(START)[0].rstrip() + "\n"     # the stylesheet without the block
 
+# Everything after the generated block is DISCARDED by this script, and
+# ./bump-version.sh runs it on every release - so a rule appended to the END
+# of the stylesheet disappears silently. It happened once (the THUMB SIZE
+# block, HANDOFF PART 40). Refuse, rather than delete somebody's work.
+if END in text:
+    trailing = text.split(END, 1)[1].strip()
+    if trailing:
+        print("css/style.css has %d characters AFTER the generated block." % len(trailing))
+        print("This script would delete them. Move them ABOVE this line in the file:")
+        print("   " + START)
+        print("the first of them: " + trailing.splitlines()[0][:70])
+        sys.exit(1)
+
 # --- read the rules --------------------------------------------------------
 rules, skipped = [], []
 i, depth, at_depth = 0, 0, None
