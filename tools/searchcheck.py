@@ -76,8 +76,13 @@ CASES = [
     ("guidance.html", "#worshipSearch", "#worshipList", None,
      "السجود", "السجوده",
      "سجود", "ar"),
+    # The verify page echoes the claim while it checks, so the expected word
+    # must NOT be one of the words typed - that was a false pass. This claim is
+    # one the page answers from al-Bukhari.
     ("verify.html", "#vfInput", "#vfResults", "#vfGo",
-     "islam spread by the sword", "islam spred by the sword", "sword", "en"),
+     "إنما الأعمال بالنيات",
+     "انما الاعمال بالنيات",
+     "bukhari", "en"),
 ]
 
 # The rendered Arabic carries harakat (النِّية), so a bare substring
@@ -114,6 +119,12 @@ def ask(page, box, submit, q):
     page.wait_for_timeout(1000)
     # The hadith page downloads Sahih al-Bukhari and Sahih Muslim before it can
     # finish; wait for it to stop saying so rather than reading a half-done page.
+    # The verify page says "Checking…" until the Quran text has loaded.
+    for _ in range(40):
+        box = page.evaluate("() => (document.querySelector('#vfResults') || {}).innerText || ''")
+        if "Checking" not in box and "جار" not in box:
+            break
+        page.wait_for_timeout(500)
     for _ in range(30):
         info = page.evaluate("() => (document.querySelector('#searchInfo') || {}).innerText || ''")
         if "Loading" not in info and "تحميل" not in info:

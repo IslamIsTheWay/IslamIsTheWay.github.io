@@ -7124,10 +7124,20 @@ then with one letter damaged. It found 7 failures of 18; there are now 0.
    page downloads al-Bukhari and Muslim before it can answer, so the check
    waits for it to stop saying so.
 
-It also caught a flaw in itself: the rendered Arabic carries harakat, so a
-substring test for نية failed on text that plainly contained النِّيَّة. The
-check now folds the marks off both sides. **Before believing a search is
-broken, check that the test is not.**
+It caught two flaws in itself, and both are worth knowing before trusting any
+search test on this site:
+
+* The rendered Arabic carries harakat, so a substring test for نية failed on
+  text that plainly contained النِّيَّة. The check folds the marks off both
+  sides now.
+* **A page that echoes the query defeats the assertion.** The verify page
+  prints the claim while it is checking it, so a case expecting the word
+  "sword" in the results passed on the echo — it would have passed with the
+  search completely broken. The expected word must never be one of the words
+  typed. That case now asks for a claim the page answers from al-Bukhari and
+  looks for the reference.
+
+**Before believing a search is broken, check that the test is not.**
 
 ## The rule: iitwNearWord, in js/main.js
 
