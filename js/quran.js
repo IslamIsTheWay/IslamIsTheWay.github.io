@@ -111,17 +111,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const translitOK = typeof iitwTranslitWords === "function" && !/[ء-ي]/.test(rawQ);
     const qSkel = translitOK ? iitwTranslitWords(q).join("") : "";
 
-    const filtered = SURAHS.filter(s => {
-      const matchesQuery =
-        !q ||
-        s.name.toLowerCase().includes(q) ||
-        s.meaning.toLowerCase().includes(q) ||
-        String(s.n) === q ||
-        s.arabic.includes(rawQ) ||
-        (qSkel.length >= 3 && iitwTranslitWords(s.name).join("").includes(qSkel));
-      const matchesPlace = place === "all" || s.place === place;
-      return matchesQuery && matchesPlace;
-    });
+    const exactQuery = s =>
+      !q ||
+      s.name.toLowerCase().includes(q) ||
+      s.meaning.toLowerCase().includes(q) ||
+      String(s.n) === q ||
+      s.arabic.includes(rawQ) ||
+      (qSkel.length >= 3 && iitwTranslitWords(s.name).join("").includes(qSkel));
+
+    /* ONE LETTER WRONG — "bakarah" for "baqarah", «الكهفي» for «الكهف». Only
+       tried when the exact pass matched no surah at all, so a reader who
+       spelled it right never sees a near match pushed in beside his. */
+    const nearQuery = s =>
+      typeof iitwNearIn === "function" &&
+      (iitwNearIn(rawQ, s.name) || iitwNearIn(rawQ, s.meaning) || iitwNearIn(rawQ, s.arabic));
+
+    const byPlace = s => place === "all" || s.place === place;
+    let filtered = SURAHS.filter(s => exactQuery(s) && byPlace(s));
+    if (!filtered.length && q) filtered = SURAHS.filter(s => nearQuery(s) && byPlace(s));
 
     /* The surah that IS the word first: "nas" listed An-Nasr (110) above
        An-Nas (114), because the grid kept Mushaf order for every match. */

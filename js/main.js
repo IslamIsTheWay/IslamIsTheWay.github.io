@@ -1119,6 +1119,101 @@ function iitwTranslitWord(w) {
     .replace(/h$/, "");        // Aishah → Aisha, Hamzah → Hamza
 }
 
+/* ============================================================
+   ONE LETTER WRONG — tools/searchcheck.py
+   A reader types from memory, on a phone keyboard, in a language whose
+   spelling in Latin letters was never standardised. He writes "compainons",
+   "intension", "algibra", "ibrahem", «الصحابه». Every search on this site
+   matched exact text, so each of those answered "nothing found" — which a
+   reader does not read as "you mistyped". He reads it as "it isn't here".
+
+   iitwNearWord(a, b) is true when two words are within a typing slip of each
+   other. The distance is Damerau-Levenshtein — it counts a SWAP of two
+   neighbouring letters as one mistake, not two, because that is the single
+   commonest thing a thumb does ("compainons" for "companions").
+
+   How much slack a word gets depends on its length, because one letter
+   changed in a three-letter word is a different word:
+       up to 3 letters   exact only      (نار is not دار)
+       4 to 7            one mistake
+       8 or more         two mistakes
+   ============================================================ */
+function iitwFoldForMatch(s) {
+  return String(s || "").toLowerCase()
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "")   // harakat, tatweel
+    .replace(/[\u0623\u0625\u0622\u0671]/g, "\u0627")                        // أ إ آ ٱ -> ا
+    .replace(/\u0649/g, "\u064A").replace(/\u0629/g, "\u0647")               // ى -> ي, ة -> ه
+    .replace(/\u0626/g, "\u064A").replace(/\u0624/g, "\u0648")               // ئ -> ي, ؤ -> و
+    .trim();
+}
+
+function iitwSlack(w) {
+  const n = w.length;
+  if (n <= 3) return 0;
+  if (n <= 7) return 1;
+  return 2;
+}
+
+/* Damerau-Levenshtein, stopped as soon as it passes `max` — the words here
+   are short, and giving up early keeps a filter that runs on every keystroke
+   cheap enough to do on a phone. */
+function iitwEditDistance(a, b, max) {
+  if (a === b) return 0;
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  const prev2 = [], prev = [], cur = [];
+  for (let j = 0; j <= b.length; j++) prev[j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    cur[0] = i;
+    let best = cur[0];
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      let v = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+        v = Math.min(v, prev2[j - 2] + 1);          // the two letters were swapped
+      }
+      cur[j] = v;
+      if (v < best) best = v;
+    }
+    if (best > max) return max + 1;                  // no cell can improve later
+    for (let j = 0; j <= b.length; j++) { prev2[j] = prev[j]; prev[j] = cur[j]; }
+  }
+  return prev[b.length];
+}
+
+/* True when `b` is `a` with at most a typing slip in it. */
+function iitwNearWord(a, b) {
+  const x = iitwFoldForMatch(a), y = iitwFoldForMatch(b);
+  if (!x || !y) return false;
+  if (x === y) return true;
+  const max = Math.min(iitwSlack(x), iitwSlack(y));
+  if (!max) return false;
+  return iitwEditDistance(x, y, max) <= max;
+}
+
+/* True when any word of `text` is the query word, contains it, or is within a
+   slip of it. This is the one call the searches make. */
+function iitwNearIn(queryWord, text) {
+  const q = iitwFoldForMatch(queryWord);
+  if (!q) return false;
+  const words = iitwFoldForMatch(text).split(/[^a-z0-9\u0621-\u064A]+/).filter(Boolean);
+  for (const w of words) {
+    if (w === q || w.indexOf(q) >= 0) return true;
+    if (iitwNearWord(q, w)) return true;
+    /* A long word only has to START near the query: "forgivness" should find
+       "forgiveness" inside "forgiving" as well. */
+    if (w.length > q.length && q.length >= 5 && iitwNearWord(q, w.slice(0, q.length))) return true;
+  }
+  return false;
+}
+
+/* Every word of the query has to be found, each of them allowed its own slip.
+   Words of one or two letters are ignored, as they are everywhere else. */
+function iitwNearAll(query, text) {
+  const qs = iitwFoldForMatch(query).split(/[^a-z0-9\u0621-\u064A]+/).filter(w => w.length > 2);
+  if (!qs.length) return false;
+  return qs.every(w => iitwNearIn(w, text));
+}
+
 function iitwTranslitWords(text) {
   return String(text || "")
     .toLowerCase()

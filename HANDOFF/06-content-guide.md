@@ -142,6 +142,10 @@ python tools/arabicease.py --check
 #     (needs a local server running)
 python tools/phonecheck.py --check
 
+# 4e. every search still finds it when one letter is wrong, on every page
+#     and in both languages - HANDOFF PART 41 (needs a local server)
+python tools/searchcheck.py --check
+
 # 5. list markup balance after any bulk sed edit
 for f in *.html; do
   o=$(grep -o '<li>' "$f" | wc -l); c=$(grep -o '</li>' "$f" | wc -l)

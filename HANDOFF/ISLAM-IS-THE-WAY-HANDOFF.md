@@ -14,9 +14,10 @@
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 1a. **PART 40** (most recent) — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
-> 1b. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
-> 1c. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
+> 1a. **PART 41** (most recent) — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
+> 1b. **PART 40** — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
+> 1c. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
+> 1d. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
 > 2. **PART 37** — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
 > 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
@@ -7095,3 +7096,95 @@ the card is worse than no summary.
   or hadith — would modernise the look further. It was NOT done: it is a large
   change the owner did not ask for, and vowels do help a weaker reader sound a
   word out. Ask him before doing it.
+
+---
+
+# PART 41 — One letter wrong, and the search said "nothing found"
+
+The owner: *"when you search, you get what you search for. You don't actually
+— let's say if I put one letter wrong, it might not give me the answer that I
+need. So make sure that the search, all pages are fine."*
+
+Every search on the site matched exact text. A reader typing from memory on a
+phone keyboard writes "compainons", "intension", "algibra", "ibrahem",
+«الصحابه» — and every one of those answered **nothing found**, which he does
+not read as *you mistyped*. He reads it as *it isn't here*.
+
+**tools/searchcheck.py** drives all eight search boxes twice: once correctly,
+then with one letter damaged. It found 7 failures of 18; there are now 0.
+
+## Two things that make the check honest
+
+1. **It reads the RESULTS container, not the page.** The first version read
+   `document.body.innerText` and reported almost everything as passing —
+   because guidance.html already contains the words "prayer" and "zakat" in
+   its own headings, whatever the search did.
+2. **It asserts the correct spelling works first.** A typo "passing" because
+   the box ignored input entirely is not a pass. This caught that the hadith
+   page downloads al-Bukhari and Muslim before it can answer, so the check
+   waits for it to stop saying so.
+
+It also caught a flaw in itself: the rendered Arabic carries harakat, so a
+substring test for نية failed on text that plainly contained النِّيَّة. The
+check now folds the marks off both sides. **Before believing a search is
+broken, check that the test is not.**
+
+## The rule: iitwNearWord, in js/main.js
+
+One shared helper, so every page forgives the same way. The distance is
+**Damerau-Levenshtein** — a swap of two neighbouring letters counts as ONE
+mistake, not two, because that is the commonest thing a thumb does
+("compainons" for "companions" is one swap but two ordinary edits).
+
+How much slack depends on length, because one letter changed in a short word
+is a different word:
+
+| length | slack | why |
+|---|---|---|
+| up to 3 | none | نار is not دار |
+| 4 to 7 | one | prey / pray, khaled / khalid |
+| 8 or more | two | compainons / companions |
+
+## Where it was wired, and the pattern used everywhere
+
+**Always two passes: exact first, near only if the exact search found
+nothing.** A reader who spells it right gets exactly what he got before, at
+the same speed, and nobody pays for edit distance unless it is needed. It also
+keeps fuzzy results from diluting good ones.
+
+- **js/sitesearch.js** `ssSearch` — covers search.html AND stories.html, which
+  delegates to it.
+- **hadith.html** — a `hadithNear` flag read by both scorers, and the curated
+  set scored twice.
+- **golden.html** — `currentFigures` scores twice.
+- **guidance.html** — a different and better mechanism, below.
+
+## guidance.html corrects the WORD, not the match
+
+This page has an IDF corpus of everything it searches. So a word with **df =
+0 — one the site has never used anywhere — is either a typo or a subject the
+site does not cover**, and those are the only words corrected. A word that
+occurs in the content is left exactly as typed.
+
+That also closes the df = 0 trap this file already records, from the other
+side: a misspelling carries the MAXIMUM rarity the formula can return, so
+"prey" in *how do I prey* was scored as the rarest and most decisive word in
+the question, matched nothing with it, and the page answered nothing at all.
+
+Two safeguards: the replacement must be a word the site uses in **at least two
+places**, so one stray spelling cannot capture a question; and the reader is
+**told** — `#gdSpellNote` prints "Searched for prey → pray — no page here uses
+the word you typed." A search that quietly answers a different question from
+the one asked is worse than one that finds nothing.
+
+## Two other things this work turned up
+
+- **Enter did not ask the question.** The guidance box is a `<textarea>` and
+  only Ctrl+Enter submitted — undiscoverable, and impossible on a phone
+  keyboard. A reader typed his question, pressed the key that means "go"
+  everywhere else, got a blank line, and concluded the page was broken. Enter
+  now asks; Shift+Enter still makes a new line.
+- **«النية» found none of the hadith about intention**, because stripping
+  prefixes leaves نيه on one side and نيات on the other and nothing joined
+  them. `arVariants` in hadith.html now relates the sound feminine plural to
+  its singular in both directions, with a three-letter minimum stem.

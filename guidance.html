@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202611021732" />
+  <link rel="stylesheet" href="css/style.css?v=202611021916" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://islamistheway.github.io/guidance.html" />
   <!-- Social sharing. Title and description are taken from this
@@ -167,7 +167,7 @@
             <option value="ar-SA">🎤 أتحدث بالعربية</option>
             <option value="en-US">🎤 I speak English</option>
           </select>
-          <button class="btn btn-primary" type="button" onclick="findGuidance()"><span class="en-only">Find Guidance</span><span class="ar-only" dir="rtl">ابحث عن التوجيه</span></button>
+          <button class="btn btn-primary" type="button" id="gdGo" onclick="findGuidance()"><span class="en-only">Find Guidance</span><span class="ar-only" dir="rtl">ابحث عن التوجيه</span></button>
           <button class="btn btn-outline btn-small" type="button" onclick="clearGuidance()">Clear</button>
         </div>
         <div id="micStatus" class="mic-status"></div>
@@ -176,6 +176,10 @@
         </div>
 
         <div id="arVoiceBar"></div>
+        <!-- Says which word was read as which, when the page corrected a
+             spelling. Written whichever branch of findGuidance answers, which
+             is why it is its own element and not part of any of them. -->
+        <div id="gdSpellNote" class="gd-spell-note" hidden></div>
         <div id="guidanceResults"></div>
       </div>
     </div>
@@ -450,69 +454,69 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202611021732"></script>
+  <script src="js/data.js?v=202611021916"></script>
   <!-- The verses behind "A path of good" / "A warning to reflect on", in the
        Mushaf's own text (cut from js/quran-text.js). -->
-  <script src="js/theme-verses.js?v=202611021732"></script>
+  <script src="js/theme-verses.js?v=202611021916"></script>
   <!-- The Sunnah belongs in guidance too: someone describing a situation needs
        the Quran, the hadith AND what the Prophet ﷺ actually did about it. -->
-  <script src="js/sunnah.js?v=202611021732"></script>
+  <script src="js/sunnah.js?v=202611021916"></script>
   <!-- The adhkar of the day: morning and evening, sleeping and waking,
        after the prayer, tasbih, and distress. -->
-  <script src="js/adhkar.js?v=202611021732"></script>
+  <script src="js/adhkar.js?v=202611021916"></script>
   <!-- The scholars' explanations. Guidance has to explain a situation, not
        only quote a text at it — "what counts as hijab" is answered here, not
        by a hadith of warning. Loaded before the page script uses it. -->
-  <script src="js/scholars.js?v=202611021732"></script>
+  <script src="js/scholars.js?v=202611021916"></script>
   <!-- Who wrote what, and which book to open. -->
-  <script src="js/scholars-books.js?v=202611021732"></script>
+  <script src="js/scholars-books.js?v=202611021916"></script>
   <!-- Why the ummah is in the state it is in, and the way back — from the
        Quran, from graded narrations, and from what the scholars said.
        Linked to from the end of the Golden Age page. -->
-  <script src="js/revival.js?v=202611021732"></script>
+  <script src="js/revival.js?v=202611021916"></script>
   <!-- Adding to the religion. Every hadith number in it was checked against
        the text of al-Bukhari first; anything from Muslim is cited by book
        and never by a number. Both scholarly positions on the Mawlid are in
        the file, with names, and so is what is NOT meant by the word. -->
-  <script src="js/bidah.js?v=202611021732"></script>
+  <script src="js/bidah.js?v=202611021916"></script>
   <!-- The five pillars, the six of faith, and the zakat arithmetic. The
        most basic thing this site can carry, and it was missing until now. -->
-  <script src="js/cards.js?v=202611021732"></script>
-  <script src="js/pillars.js?v=202611021732"></script>
-  <script src="js/basics.js?v=202611021732"></script>
-  <script src="js/morals.js?v=202611021732"></script>
-  <script src="js/marriage.js?v=202611021732"></script>
-  <script src="js/standard.js?v=202611021732"></script>
-  <script src="js/hearts.js?v=202611021732"></script>
-  <script src="js/inheritance.js?v=202611021732"></script>
-  <script src="js/sins.js?v=202611021732"></script>
-  <script src="js/prayer.js?v=202611021732"></script>
-  <script src="js/grave.js?v=202611021732"></script>
-  <script src="js/who.js?v=202611021732"></script>
-  <script src="js/destination.js?v=202611021732"></script>
+  <script src="js/cards.js?v=202611021916"></script>
+  <script src="js/pillars.js?v=202611021916"></script>
+  <script src="js/basics.js?v=202611021916"></script>
+  <script src="js/morals.js?v=202611021916"></script>
+  <script src="js/marriage.js?v=202611021916"></script>
+  <script src="js/standard.js?v=202611021916"></script>
+  <script src="js/hearts.js?v=202611021916"></script>
+  <script src="js/inheritance.js?v=202611021916"></script>
+  <script src="js/sins.js?v=202611021916"></script>
+  <script src="js/prayer.js?v=202611021916"></script>
+  <script src="js/grave.js?v=202611021916"></script>
+  <script src="js/who.js?v=202611021916"></script>
+  <script src="js/destination.js?v=202611021916"></script>
   <!-- The verses and words that get quoted at Muslims — the fighting verses,
        jihad, compulsion, the hijab, women, and the Khawarij. Every Quranic
        quotation in it was copied out of js/quran-text.js and every hadith
        number was checked against the collection. It labels the famous
        "greater jihad" narration as WEAK, which is the standard this site
        holds itself to even when the weak one would be more useful. -->
-  <script src="js/misunderstood.js?v=202611021732"></script>
-  <script src="js/endmap.js?v=202611021732"></script>
+  <script src="js/misunderstood.js?v=202611021916"></script>
+  <script src="js/endmap.js?v=202611021916"></script>
   <!-- Rendered on judgement.html#treasure; loaded here only so the search
        below can find it and send the reader there (TREASURE.searchPage). -->
-  <script src="js/treasure.js?v=202611021732"></script>
+  <script src="js/treasure.js?v=202611021916"></script>
   <!-- Plain-language explanations of the technical words the scholars use.
        Loaded before the page script, which calls iitwFindTerms while
        building every ruling card. -->
-  <script src="js/terms.js?v=202611021732"></script>
+  <script src="js/terms.js?v=202611021916"></script>
   <!-- Labelled diagrams for the rulings that are hard to hold in words.
        Drawn as inline SVG rather than fetched from the web: no copyright
        risk, nothing to go dead, no photograph of a real person, and a
        diagram shows the RULE where a photo would show only one outfit. -->
-  <script src="js/figures.js?v=202611021732"></script>
+  <script src="js/figures.js?v=202611021916"></script>
   <!-- The moment of meeting Allah, from js/signs.js. Same file the
        Judgement page uses, so the two can never drift apart. -->
-  <script src="js/signs.js?v=202611021732"></script>
+  <script src="js/signs.js?v=202611021916"></script>
   <script>
     /* ---------- Render the two theme columns (English + Arabic) ---------- */
     function themeCardHtml(t, isWarning) {
@@ -872,6 +876,81 @@
       return Math.log((IDF.N + 1) / (d + 1));   // common word -> near 0
     }
 
+    /* ---------- ONE LETTER WRONG ----------
+       A word this page has never seen anywhere - df = 0 - is either a typo or
+       a subject the site does not cover. Those are the only words corrected,
+       which is what makes the correction safe: a word that occurs in the
+       content is left exactly as the reader typed it.
+
+       It also closes the df = 0 trap described above from the other side. A
+       misspelling carries the MAXIMUM rarity the formula can return, so
+       "how do I prey" scored `prey` as the rarest and most decisive word in
+       the question, matched nothing with it, and answered nothing at all.
+
+       The replacement must be a word the site uses in at least two places, so
+       a single stray spelling in one entry cannot capture a question. */
+    function iitwNearestKnown(word) {
+      if (typeof iitwEditDistance !== "function") return null;
+      if (!IDF) buildIdf();
+      const w = stem(normalize(word));
+      if (!w || w.length < 4) return null;
+      if (IDF.df[w]) return null;                       // the site knows it
+
+      /* A DOUBLED VOWEL IS NOT A TYPO, it is the other accepted spelling of
+         the same word: sujood / sujud, salaah / salah, duaa / dua. Those are
+         two edits apart, so the distance rule below rightly refuses them -
+         and the site already has the right tool, the transliteration
+         skeleton used by the person search (iitwTranslitWord in main.js),
+         which folds oo and ou to u, ee to i, aa to a. Tried first. */
+      if (typeof iitwTranslitWord === "function" && /^[a-z]+$/.test(w)) {
+        const skel = iitwTranslitWord(w);
+        if (skel !== w && IDF.df[skel] >= 2) return skel;
+        for (const k in IDF.df) {
+          if (IDF.df[k] >= 2 && k.length >= 4 && /^[a-z]+$/.test(k) &&
+              iitwTranslitWord(k) === skel) return k;
+        }
+      }
+
+      const max = w.length <= 7 ? 1 : 2;
+      let best = null, bestD = max + 1, bestDf = 0;
+      for (const k in IDF.df) {
+        if (IDF.df[k] < 2) continue;
+        if (Math.abs(k.length - w.length) > max) continue;
+        const d = iitwEditDistance(w, k, max);
+        if (d > max) continue;
+        if (d < bestD || (d === bestD && IDF.df[k] > bestDf)) { best = k; bestD = d; bestDf = IDF.df[k]; }
+      }
+      return best;
+    }
+
+    /* Tell the reader what was changed. A search that quietly answers a
+       different question from the one asked is worse than one that finds
+       nothing, so the swap is always stated. */
+    function iitwShowSpellNote(changes) {
+      const box = document.getElementById("gdSpellNote");
+      if (!box) return;
+      if (!changes || !changes.length) { box.hidden = true; box.innerHTML = ""; return; }
+      const esc = t => String(t).replace(/[<>&"]/g, "");
+      const pairs = changes.map(c => esc(c[0]) + " → " + esc(c[1])).join("، ");
+      box.hidden = false;
+      box.innerHTML =
+        '<span class="en-only">Searched for <strong>' + pairs + '</strong> — no page here uses the word you typed.</span>' +
+        '<span class="ar-only" dir="rtl">بحثنا عن <strong>' + pairs + '</strong> — فالكلمة التي كتبتها لا ترد في الموقع.</span>';
+    }
+
+    /* Returns the query's tokens with any unknown word swapped for the nearest
+       one the site actually uses. Logged on the page as "searched for X". */
+    function iitwCorrectTokens(qt) {
+      const fixed = [];
+      const changes = [];
+      qt.forEach(w => {
+        const near = iitwNearestKnown(w);
+        if (near && near !== w) { fixed.push(near); changes.push([w, near]); }
+        else fixed.push(w);
+      });
+      return { tokens: fixed, changes: changes };
+    }
+
     /* Score a query against a piece of content.
        - an explicit keyword from `keys` is the strongest signal
        - a multi-word keyword phrase counts more than a single word
@@ -1003,6 +1082,16 @@
         set.add(stem(w));
         set.add(iitwSqueeze(w));
         set.add(iitwSqueeze(stem(w)));
+        /* The transliteration skeleton as well, which squeezing alone does
+           not reach: sujood and sujud both fold to sujud, salaah and salah
+           to salah, Yaseen and Ya-Sin to yasin. Both spellings are in the
+           site's own text, so without this a reader was answered or not
+           depending on which one an entry happened to use. Another EXTRA
+           form - it can add a match and can never remove one. */
+        if (typeof iitwTranslitWord === "function" && /^[a-z]{4,}$/.test(w)) {
+          set.add(iitwTranslitWord(w));
+          set.add(iitwTranslitWord(stem(w)));
+        }
         if (/[؀-ۿ]/.test(w)) {
           const s = iitwArStrip(w);
           set.add(s);
@@ -1022,6 +1111,8 @@
       return parts.every(p =>
         hayWords.has(p) || hayWords.has(stem(p)) ||
         hayWords.has(iitwSqueeze(p)) || hayWords.has(iitwSqueeze(stem(p))) ||
+        (typeof iitwTranslitWord === "function" && /^[a-z]{4,}$/.test(p) &&
+          (hayWords.has(iitwTranslitWord(p)) || hayWords.has(iitwTranslitWord(stem(p))))) ||
         (/[؀-ۿ]/.test(p) && hayWords.has(iitwArStrip(p))));
     }
 
@@ -3300,8 +3391,14 @@
          everything shown back to the reader, and for the self-harm branch,
          which is matched on both — see IITW_DIALECT above. */
       const rawStd = iitwDialect(raw);
-      const qt = tokens(raw).concat(tokens(rawStd))
-                   .filter((w, i, a) => a.indexOf(w) === i);
+      let qt = tokens(raw).concat(tokens(rawStd))
+                 .filter((w, i, a) => a.indexOf(w) === i);
+      /* A word the site has never used is corrected to the nearest one it
+         does use, before anything is scored — see iitwNearestKnown. The
+         reader is told, under the answer, which word was read as which. */
+      const spell = iitwCorrectTokens(qt);
+      qt = spell.tokens.filter((w, i, a) => a.indexOf(w) === i);
+      iitwShowSpellNote(spell.changes);
       const qx = expandQuery(qt);
       const distress = isDistress(qt, raw + " " + rawStd);
 
@@ -4100,8 +4197,15 @@
       sitRecognition.start();
     });
 
+    /* ENTER ASKS THE QUESTION. It used to need Ctrl+Enter, which nobody
+       discovers and no phone keyboard can send - so a reader typed his
+       question, pressed the key that means "go" on every other site, got a
+       blank line, and concluded the page was broken. Shift+Enter still makes
+       a new line for anyone writing a longer situation. */
     document.getElementById("situationInput").addEventListener("keydown", e => {
-      if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) findGuidance();
+      if (e.key !== "Enter" || e.shiftKey) return;
+      e.preventDefault();
+      findGuidance();
     });
 
     /* ================= What to say, and when =================
@@ -4161,7 +4265,10 @@
       if (typeof WORSHIP_STEPS === "undefined") return;
       const raw = document.getElementById("worshipSearch").value.trim();
       const match = pool => {
-        const qt = tokens(raw);
+        /* The same correction the main search uses: a word this page has
+           never seen is swapped for the nearest one it has, so "sujood"
+           reaches sujud. A word that occurs in the content is untouched. */
+        const qt = iitwCorrectTokens(tokens(raw)).tokens;
         const qx = expandQuery(qt);
         return pool.map(w => ({
           w, s: scoreContent(qt, raw, w.keys,
@@ -5489,12 +5596,12 @@
     });
   </script>
 
-  <script src="js/wordlens.js?v=202611021732"></script>
+  <script src="js/wordlens.js?v=202611021916"></script>
 
-  <script src="js/resume.js?v=202611021732"></script>
-  <script src="js/main.js?v=202611021732"></script>
-  <script src="js/reading.js?v=202611021732"></script>
-  <script src="js/nav.js?v=202611021732"></script>
-  <script src="js/i18n.js?v=202611021732"></script>
+  <script src="js/resume.js?v=202611021916"></script>
+  <script src="js/main.js?v=202611021916"></script>
+  <script src="js/reading.js?v=202611021916"></script>
+  <script src="js/nav.js?v=202611021916"></script>
+  <script src="js/i18n.js?v=202611021916"></script>
 </body>
 </html>

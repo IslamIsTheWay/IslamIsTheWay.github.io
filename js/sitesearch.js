@@ -242,19 +242,38 @@ function ssIndex() {
    own stories with this); opts.weak lets a match stand on the text alone,
    which is right INSIDE one page, where the reader has already chosen the
    subject, and wrong across the whole site. */
-function ssSearch(query, opts) {
-  opts = opts || {};
-  const q = ssWords(query).map(ssForms).filter(function (f) { return f.length; });
-  if (!q.length) return [];
-  const need = q.length <= 2 ? q.length : Math.ceil(q.length * 0.6);
+/* Is one of the query's spellings within a typing slip of a word in this
+   set? Only asked when an exact search found nothing, and only for words long
+   enough that a slip does not turn them into a different word. */
+function ssNearIn(set, forms) {
+  if (typeof iitwNearWord !== "function") return false;
+  for (let i = 0; i < forms.length; i++) {
+    const f = forms[i];
+    if (f.length < 4) continue;
+    for (const w of set) {
+      if (w.length < 4) continue;
+      if (iitwNearWord(f, w)) return true;
+    }
+  }
+  return false;
+}
+
+function ssPass(q, need, opts, near) {
   const out = [];
   ssIndex().forEach(function (e) {
     if (opts.kinds && opts.kinds.indexOf(e.kind) < 0) return;
     let score = 0, hit = 0, strong = opts.weak ? 1 : 0;
     q.forEach(function (forms) {
-      const inK = forms.some(function (f) { return e.kSet.has(f); });
-      const inH = !inK && forms.some(function (f) { return e.hSet.has(f); });
-      const inB = !inK && !inH && forms.some(function (f) { return e.bSet.has(f); });
+      let inK = forms.some(function (f) { return e.kSet.has(f); });
+      let inH = !inK && forms.some(function (f) { return e.hSet.has(f); });
+      let inB = !inK && !inH && forms.some(function (f) { return e.bSet.has(f); });
+      if (near && !inK && !inH && !inB) {
+        /* A near match is worth less than the real thing, so it is found in
+           the same three places but scored one tier down by the caller. */
+        inK = ssNearIn(e.kSet, forms);
+        inH = !inK && ssNearIn(e.hSet, forms);
+        inB = !inK && !inH && ssNearIn(e.bSet, forms);
+      }
       if (inK) { score += 6; hit++; strong++; }
       else if (inH) { score += 4; hit++; strong++; }
       else if (inB) { score += 1; hit++; }
@@ -262,6 +281,21 @@ function ssSearch(query, opts) {
     if (hit >= need && strong > 0) out.push({ entry: e, score: score });
   });
   return out.sort(function (a, b) { return b.score - a.score; });
+}
+
+/* ONE LETTER WRONG. The exact search runs first and is unchanged, so a reader
+   who spells it right gets exactly what he got before, at the same speed.
+   Only when that finds NOTHING does the search run again allowing a slip -
+   "compainons", "intension", «الصحابه» - which is the moment the old search
+   said "nothing found" to someone whose question the site can answer. */
+function ssSearch(query, opts) {
+  opts = opts || {};
+  const q = ssWords(query).map(ssForms).filter(function (f) { return f.length; });
+  if (!q.length) return [];
+  const need = q.length <= 2 ? q.length : Math.ceil(q.length * 0.6);
+  const exact = ssPass(q, need, opts, false);
+  if (exact.length) return exact;
+  return ssPass(q, need, opts, true);
 }
 
 const SS_KINDS = [

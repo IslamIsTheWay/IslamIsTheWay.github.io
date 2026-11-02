@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202611021732" />
+  <link rel="stylesheet" href="css/style.css?v=202611021916" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     .collection-tabs { display:flex; gap:12px; justify-content:center; margin-bottom:28px; flex-wrap:wrap; }
@@ -164,7 +164,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=202611021732"></script>
+  <script src="js/data.js?v=202611021916"></script>
   <script>
     const API_BASE = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions";
     const contentArea = document.getElementById("contentArea");
@@ -461,10 +461,23 @@
       const w = normAr(word);
       const out = new Set([w]);
       const stripped = w.replace(/^(وال|فال|بال|كال|لل|ال|و|ف|ب|ك|ل)/, "");
-      if (stripped.length >= 3) {
-        out.add(stripped);
-        out.add("ال" + stripped);
-      }
+      const forms = [w];
+      if (stripped.length >= 3) forms.push(stripped);
+      forms.slice().forEach(f => {
+        /* The sound feminine plural, both ways. «النية» never reached
+           «إنما الأعمال بالنيات» before this, because stripping prefixes
+           leaves نيه on one side and نيات on the other and nothing joins
+           them. normAr has already folded ة to ه, so the singular ends in ه
+           here. Three letters of stem are required, so this cannot turn a
+           short word into an unrelated one. */
+        if (f.endsWith("ات") && f.length >= 5) forms.push(f.slice(0, -2) + "ه");
+        else if (f.endsWith("ه") && f.length >= 4) forms.push(f.slice(0, -1) + "ات");
+      });
+      forms.forEach(f => {
+        if (f.length < 3) return;
+        out.add(f);
+        if (!f.startsWith("ال")) out.add("ال" + f);
+      });
       return [...out];
     }
 
@@ -538,6 +551,12 @@
     }
 
     // How well does a hadith text match the query words? Returns a score.
+    /* Set for the second pass only: an exact search that found nothing is run
+       again with a letter of slack allowed. Kept as a flag rather than an
+       argument because both scorers and their callers would otherwise all
+       need threading through, and only this file uses them. */
+    let hadithNear = false;
+
     function scoreMatch(haystackLower, queryWords) {
       // Normalised twin of the haystack, so an Arabic word matches whether or
       // not the source carries harakat and whichever prefix the reader typed.
@@ -548,7 +567,10 @@
         if (w.endsWith("s")) terms.push(w.slice(0, -1));
         if (SYN[w]) terms.push(...SYN[w]);
         if (terms.some(t => hasWord(haystackLower, hayAr, t))) { score++; continue; }
-        if (/[؀-ۿ]/.test(w) && arVariants(w).some(v => hasWord(haystackLower, hayAr, v))) score++;
+        if (/[؀-ۿ]/.test(w) && arVariants(w).some(v => hasWord(haystackLower, hayAr, v))) { score++; continue; }
+        /* ONE LETTER WRONG. Only reached on the second pass, when the exact
+           search found nothing at all - see searchHadith below. */
+        if (hadithNear && typeof iitwNearIn === "function" && iitwNearIn(w, haystackLower)) score++;
       }
       return score;
     }
@@ -627,7 +649,18 @@
       let results = [];
 
       // --- Curated highlights (searched by text, title, topic, narrator) ---
-      const curatedScored = HADITHS.map(h => {
+      /* Two passes, the exact one first: a reader who spelled it right gets
+         exactly what he got before, and nobody pays for the edit distance
+         unless the exact search came back with nothing. */
+      hadithNear = false;
+      let curatedScored = scoreCurated();
+      if (!curatedScored.length) {
+        hadithNear = true;
+        curatedScored = scoreCurated();
+        hadithNear = false;
+      }
+
+      function scoreCurated() { return HADITHS.map(h => {
         // The keyword list is included so natural phrasings like
         // "a man wearing women's clothes" reach the right hadith.
         const hay = (h.text + " " + (h.title || "") + " " + h.topic + " " + h.narrator + " " + (h.keys || []).join(" ")).toLowerCase();
@@ -640,7 +673,7 @@
         return { h, s, w };
       /* Everything that matched a word is kept; the rare word decides the
          order — see the note above wordRarity. */
-      }).filter(x => x.s > 0).sort((a, b) => b.w - a.w || b.s - a.s);
+      }).filter(x => x.s > 0).sort((a, b) => b.w - a.w || b.s - a.s); }
 
       if (curatedScored.length > 0) {
         const curHtml = curatedScored.map(({ h }) => {
@@ -748,11 +781,11 @@
 
     renderCurated();
   </script>
-  <script src="js/wordlens.js?v=202611021732"></script>
-  <script src="js/resume.js?v=202611021732"></script>
-  <script src="js/main.js?v=202611021732"></script>
-  <script src="js/reading.js?v=202611021732"></script>
-  <script src="js/nav.js?v=202611021732"></script>
-  <script src="js/i18n.js?v=202611021732"></script>
+  <script src="js/wordlens.js?v=202611021916"></script>
+  <script src="js/resume.js?v=202611021916"></script>
+  <script src="js/main.js?v=202611021916"></script>
+  <script src="js/reading.js?v=202611021916"></script>
+  <script src="js/nav.js?v=202611021916"></script>
+  <script src="js/i18n.js?v=202611021916"></script>
 </body>
 </html>
