@@ -1971,7 +1971,7 @@ const SUNNAH = [
     title: "Whoever Allah wants good for, He gives him understanding of the religion",
     titleAr: "من يُرد الله به خيرًا يُفقّهه في الدين",
     detail: "Mu'awiyah رضي الله عنه heard the Prophet ﷺ say: whoever Allah wishes good for, He gives him understanding in the religion. Note the wording — not simply knowledge, but fiqh, understanding: the sign of Allah's good intention towards a person is that he is given comprehension, not merely information.",
-    detailAr: "سمع معاوية رضي الله عنه النبيَّ ﷺ يقول: «من يُرد الله به خيرًا يُفقّهه في الدين». وتأمّل اللفظ: لم يقل «يُعلّمه» بل «يُفقّهه»، فعلامةُ إرادة الخير بالعبد أن يُرزق الفهم، لا مجرّد الخبر.",
+    detailAr: "سمع معاوية رضي الله عنه النبيَّ ﷺ يقول: «من يُرد الله به خيرًا يُفقّهه في الدين». وانظر اللفظ: لم يقل «يُعلّمه» بل «يُفقّهه»، فعلامةُ إرادة الخير بالعبد أن يُرزق الفهم، لا مجرّد الخبر.",
     arabic: "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ",
     ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 71",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",

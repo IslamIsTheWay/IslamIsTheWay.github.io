@@ -412,7 +412,7 @@ const FIQH_RULINGS = [
     difference: null,
     differenceAr: null,
     verify: "binbaz.org.sa and binothaimeen.net. Where there is real abuse or danger, this is not a fatwa question alone — protect yourself and seek help.",
-    verifyAr: "binbaz.org.sa و binothaimeen.net. وإذا كان هناك أذًى حقيقيّ أو خطر فليست المسألة فتوى فحسب — احفظ نفسك واطلب المعونة.",
+    verifyAr: "binbaz.org.sa و binothaimeen.net. وإذا كان هناك أذًى حقيقيّ أو خطر فليست المسألة فتوى فقط — احفظ نفسك واطلب المعونة.",
     /* Not bare "mother" / الأم: "my mother is sick" was answered with the
        ruling on parents who ask you to disobey Allah. */
     keys: ["obey parents", "obey my parents", "disobey", "harsh father", "strict parents", "my parents want me to", "my parents forbid", "family problem", "birr",

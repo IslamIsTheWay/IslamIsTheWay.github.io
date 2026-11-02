@@ -531,7 +531,7 @@ const FULL_LIVES = {
     message: "He was a messenger and a prophet, and the Quran singles out one quality above the rest: he was true to his promise.",
     messageAr: "كان رسولًا نبيًّا، وخصّه القرآن بصفةٍ قبل غيرها: إنه كان صادق الوعد.",
     islam: "His mother asked Ibrahim as he walked away whether Allah had commanded this. He said yes. She said: then He will not abandon us. She ran between Safa and Marwah looking for water, and Zamzam came up at the child's feet. Muslims repeat her running to this day.",
-    islamAr: "سألت أمّه إبراهيم وهو ينصرف: آللهُ أمرك بهذا؟ قال: نعم. قالت: إذًا لا يُضيّعنا. ثم سعت بين الصفا والمروة تطلب الماء، فانبجست زمزم عند قدمي الغلام. ولا يزال المسلمون يسعون سعيها إلى اليوم.",
+    islamAr: "سألت أمّه إبراهيم وهو ينصرف: آللهُ أمرك بهذا؟ قال: نعم. قالت: إذن لا يُضيّعنا. ثم سعت بين الصفا والمروة تطلب الماء، فانبجست زمزم عند قدمي الغلام. ولا يزال المسلمون يسعون سعيها إلى اليوم.",
     change: "When he was old enough to work alongside his father, Ibrahim told him he had seen in a dream that he was slaughtering him, and asked what he thought. His answer is why he is remembered: O my father, do as you are commanded — you will find me, if Allah wills, of the patient.",
     changeAr: "﴿فَلَمَّا بَلَغَ مَعَهُ ٱلسَّعۡيَ﴾ قال له إبراهيم: ﴿إِنِّيٓ أَرَىٰ فِي ٱلۡمَنَامِ أَنِّيٓ أَذۡبَحُكَ فَٱنظُرۡ مَاذَا تَرَىٰۚ﴾. فكان جوابه هو الذي خُلّد به: ﴿يَٰٓأَبَتِ ٱفۡعَلۡ مَا تُؤۡمَرُۖ سَتَجِدُنِيٓ إِن شَآءَ ٱللَّهُ مِنَ ٱلصَّٰبِرِينَ﴾.",
     greatest: "He was ransomed with a great sacrifice, and he and his father raised the foundations of the House together, saying as they built: our Lord, accept from us — You are the Hearing, the Knowing.",
@@ -578,7 +578,7 @@ const FULL_LIVES = {
     islam: "He knew what Yusuf's dream meant the moment he heard it, and told him not to relate it to his brothers lest they plot against him.",
     islamAr: "عرف معنى رؤيا يوسف حين سمعها، وقال له: ﴿لَا تَقۡصُصۡ رُءۡيَاكَ عَلَىٰٓ إِخۡوَتِكَ فَيَكِيدُواْ لَكَ كَيۡدًاۖ﴾.",
     change: "He lost Yusuf, and then lost Binyamin, and went blind from grief — and never once complained to anyone but Allah: I only complain of my anguish and my grief to Allah. His patience is named in the Quran by its own word: beautiful patience.",
-    changeAr: "فقد يوسف ثم فقد بنيامين ﴿وَٱبۡيَضَّتۡ عَيۡنَاهُ مِنَ ٱلۡحُزۡنِ﴾ — ولم يشكُ إلى أحدٍ قطّ إلا إلى الله: ﴿إِنَّمَآ أَشۡكُواْ بَثِّي وَحُزۡنِيٓ إِلَى ٱللَّهِ﴾. وسمّى القرآن صبره باسمه: فصبرٌ جميل.",
+    changeAr: "فقد يوسف ثم فقد بنيامين ﴿وَٱبۡيَضَّتۡ عَيۡنَاهُ مِنَ ٱلۡحُزۡنِ﴾ — ولم يشكُ إلى أحدٍ أبدًا إلا إلى الله: ﴿إِنَّمَآ أَشۡكُواْ بَثِّي وَحُزۡنِيٓ إِلَى ٱللَّهِ﴾. وسمّى القرآن صبره باسمه: فصبرٌ جميل.",
     greatest: "Holding on to hope when there was no reason left for it: O my sons, go and seek news of Yusuf and his brother, and do not despair of the mercy of Allah — none despairs of the mercy of Allah except the disbelieving people. And he had said, years before, when everyone had given up: perhaps Allah will bring them all to me.",
     greatestAr: "تمسّكه بالرجاء حين لم يبقَ ما يدعو إليه: ﴿يَٰبَنِيَّ ٱذۡهَبُواْ فَتَحَسَّسُواْ مِن يُوسُفَ وَأَخِيهِ وَلَا تَاْيۡـَٔسُواْ مِن رَّوۡحِ ٱللَّهِۖ إِنَّهُۥ لَا يَاْيۡـَٔسُ مِن رَّوۡحِ ٱللَّهِ إِلَّا ٱلۡقَوۡمُ ٱلۡكَٰفِرُونَ﴾. وقد قال قبل ذلك بسنين وقد يئس الناس: ﴿عَسَى ٱللَّهُ أَن يَأۡتِيَنِي بِهِمۡ جَمِيعًاۚ﴾.",
     death: "He lived to see the dream fulfilled: Yusuf raised his parents upon the throne, and they fell down before him in prostration. And at his death he gathered his sons and asked them the only question that mattered: what will you worship after me?",
@@ -693,7 +693,7 @@ const FULL_LIVES = {
     islam: "He killed Jalut, and Allah gave him kingship and wisdom and taught him of what He willed. The Quran states the principle in the same breath: were it not that Allah checks the people, some by means of others, the earth would be corrupted.",
     islamAr: "فقتل جالوت، ﴿وَءَاتَىٰهُ ٱللَّهُ ٱلۡمُلۡكَ وَٱلۡحِكۡمَةَ وَعَلَّمَهُۥ مِمَّا يَشَآءُۗ﴾. وقرّر القرآن القاعدة في السياق نفسه: ﴿وَلَوۡلَا دَفۡعُ ٱللَّهِ ٱلنَّاسَ بَعۡضَهُم بِبَعۡضٖ لَّفَسَدَتِ ٱلۡأَرۡضُ﴾.",
     change: "The mountains and the birds were made to join him in glorifying Allah — and iron was made soft for him, so he worked it himself. The Prophet ﷺ said: the best food a man eats is from the work of his own hand, and the prophet of Allah Dawud used to eat from the work of his own hand.",
-    changeAr: "وسُخّرت معه الجبال والطير يُسبّحن، وأُلين له الحديد فكان يعمل بيده. وقال النبي ﷺ: ما أكل أحدٌ طعامًا قطّ خيرًا من أن يأكل من عمل يده، وإنّ نبيّ الله داود كان يأكل من عمل يده.",
+    changeAr: "وسُخّرت معه الجبال والطير يُسبّحن، وأُلين له الحديد فكان يعمل بيده. وقال النبي ﷺ: ما أكل أحدٌ طعامًا أبدًا خيرًا من أن يأكل من عمل يده، وإنّ نبيّ الله داود كان يأكل من عمل يده.",
     greatest: "The two disputants who climbed the wall of his private chamber, and the judgement he gave before hearing the other side — and then realised he had been tested. He asked forgiveness of his Lord and fell down bowing, and turned in repentance. The Quran does not dwell on the fault; it dwells on the returning.",
     greatestAr: "الخصمان اللذان تسوّرا المحراب، والحكم الذي حكمه قبل أن يسمع من الآخر — ثم علم أنما فتنّاه، ﴿فَٱسۡتَغۡفَرَ رَبَّهُۥ وَخَرَّۤ رَاكِعٗاۤ وَأَنَابَ۩﴾. ولم يُطِل القرآن في الزلّة، وإنما أطال في الأوبة.",
     death: "His worship is the standard the Prophet ﷺ pointed to: the most beloved prayer to Allah is the prayer of Dawud, and the most beloved fasting is the fasting of Dawud — he used to sleep half the night, stand a third of it, and sleep a sixth; and he used to fast a day and not fast a day.",
@@ -849,7 +849,7 @@ const FULL_LIVES = {
     greatest: "That he was confirmed before he was born — named by Allah, described by Allah, and given the Book as a boy. He was not asked to become worthy of the task; he was made for it.",
     greatestAr: "أنه أُثبت قبل أن يُولد — سمّاه الله ووصفه الله وآتاه الكتاب صبيًّا. فلم يُطلب منه أن يصير أهلًا للأمر، بل جُعل له.",
     death: "He was killed. The Quran does not narrate the killing, and this page does not narrate what the Quran does not — but the salutation Allah gave him covers the day he dies, and that is where his account is left.",
-    deathAr: "قُتل. ولم يقصّ القرآن خبر قتله، ولا نقصّ ما لم يقصّه — غير أن السلام الذي أعطاه الله إياه شمل يوم يموت، وعند هذا يُترك خبره.",
+    deathAr: "قُتل. ولم يقصّ القرآن خبر قتله، ولا نقصّ ما لم يقصّه — لكن السلام الذي أعطاه الله إياه شمل يوم يموت، وعند هذا يُترك خبره.",
     sources: [
       "Take the Scripture with strength; judgement as a boy: Surah Maryam (19:12) — Quran",
       "Tenderness, purity, dutiful to his parents: Surah Maryam (19:13-14) — Quran",
@@ -924,7 +924,7 @@ const FULL_LIVES = {
 
   "danyal": {
     before: "He is not mentioned in the Quran at all, and not in the two Sahihs. He is known from the histories as a prophet among the Children of Israel in the time of the Babylonian exile.",
-    beforeAr: "لم يُذكر في القرآن البتّة، ولا في الصحيحين. وإنما عُرف من كتب التاريخ نبيًّا في بني إسرائيل زمن السبي البابلي.",
+    beforeAr: "لم يُذكر في القرآن أبدًا، ولا في الصحيحين. وإنما عُرف من كتب التاريخ نبيًّا في بني إسرائيل زمن السبي البابلي.",
     message: "Worship Allah alone — the message of every prophet.",
     messageAr: "عبادة الله وحده — رسالة كل نبيّ.",
     islam: "The account most often given about him in Muslim sources is not about his life at all but about what happened long after his death, in the time of the Caliph Omar رضي الله عنه.",
@@ -944,7 +944,7 @@ const FULL_LIVES = {
 
   "muhammad": {
     before: "He was born in Makkah, an orphan before he was born and motherless at six. He never worshipped an idol, never drank, never lied — and his people, who later fought him, called him Al-Amin, the trustworthy one, before he ever claimed anything. When the Kaaba was rebuilt and the tribes nearly went to war over who would place the Black Stone, they accepted his judgement: he laid it on a cloak and had every tribe carry a corner.",
-    beforeAr: "وُلد بمكة يتيمًا قبل أن يُولد، وماتت أمّه وله ستّ سنين. لم يعبد صنمًا قطّ، ولم يشرب خمرًا، ولم يكذب — وقد سمّاه قومه الذين قاتلوه بعدُ «الأمين» قبل أن يدّعي شيئًا. ولمّا أعادت قريش بناء الكعبة وكادوا يقتتلون في وضع الحجر الأسود رضوا بحكمه، فبسط رداءه ووضعه فيه وأمر كل قبيلةٍ أن تأخذ بطرف.",
+    beforeAr: "وُلد بمكة يتيمًا قبل أن يُولد، وماتت أمّه وله ستّ سنين. لم يعبد صنمًا أبدًا، ولم يشرب خمرًا، ولم يكذب — وقد سمّاه قومه الذين قاتلوه بعدُ «الأمين» قبل أن يدّعي شيئًا. ولمّا أعادت قريش بناء الكعبة وكادوا يقتتلون في وضع الحجر الأسود رضوا بحكمه، فبسط رداءه ووضعه فيه وأمر كل قبيلةٍ أن تأخذ بطرف.",
     message: "That there is no god but Allah, and that he is His Messenger — and that this is not a new religion but the same one Nuh, Ibrahim, Musa and Isa were sent with. Say: I am not something new among the messengers.",
     messageAr: "أن لا إله إلا الله وأنه رسول الله — وأن هذا ليس دينًا جديدًا، بل هو دين نوحٍ وإبراهيم وموسى وعيسى. قل: ما كنتُ بِدْعًا من الرسل.",
     islam: "It began in the cave of Hira at forty, with an angel who seized him and said: read. He said: I am not a reader. Three times, until the first five verses came down. He came home shaking and said to Khadijah: cover me, cover me — and she answered with the sentence that steadied him: never — by Allah, Allah will never disgrace you. You keep the ties of kinship, you carry the burden of others, you give to the poor, you honour the guest and you help against the calamities of truth.",
@@ -1113,7 +1113,7 @@ const FULL_LIVES = {
     islam: "At Badr his own father fought on the other side and kept seeking him out. He avoided him until he could not, and then he killed him. Allah revealed about men like him: you will not find a people who believe in Allah and the Last Day loving those who oppose Allah and His Messenger, even if they were their fathers.",
     islamAr: "ويوم بدرٍ كان أبوه في الصفّ الآخر وجعل يتصدّى له، فتحيّد عنه حتى لم يجد بُدًّا فقتله. فأنزل الله في أمثاله: ﴿لَّا تَجِدُ قَوۡمٗا يُؤۡمِنُونَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ يُوَآدُّونَ مَنۡ حَآدَّ ٱللَّهَ وَرَسُولَهُۥ وَلَوۡ كَانُوٓاْ ءَابَآءَهُمۡ﴾.",
     change: "At Uhud, when two rings of the Prophet's ﷺ helmet drove into his cheek, Abu Ubaidah pulled them out with his teeth — and lost two front teeth doing it. Abu Bakr رضي الله عنه, who was there, said no man's gap-toothed mouth was ever more beautiful.",
-    changeAr: "ويوم أُحد لمّا دخلت حلقتان من المِغفر في وجنة النبي ﷺ نزعهما أبو عبيدة بأسنانه — فسقطت ثنيّتاه. قال أبو بكرٍ رضي الله عنه وكان حاضرًا: فما رأيتُ هَتْمًا قطّ أحسن منه.",
+    changeAr: "ويوم أُحد لمّا دخلت حلقتان من المِغفر في وجنة النبي ﷺ نزعهما أبو عبيدة بأسنانه — فسقطت ثنيّتاه. قال أبو بكرٍ رضي الله عنه وكان حاضرًا: فما رأيتُ هَتْمًا أبدًا أحسن منه.",
     greatest: "The Prophet ﷺ named him: every nation has a trustworthy one, and the trustworthy one of this nation is Abu Ubaidah ibn al-Jarrah. And when Omar رضي الله عنه was dying and was asked whom he would appoint, he said: if Abu Ubaidah were alive I would appoint him.",
     greatestAr: "سمّاه النبي ﷺ فقال: إن لكل أمّةٍ أمينًا، وأمين هذه الأمة أبو عبيدة بن الجرّاح. ولمّا حُضر عمر رضي الله عنه وسُئل عمّن يستخلف قال: لو كان أبو عبيدة حيًّا لاستخلفته.",
     death: "He commanded the armies in Syria, and when the plague of Amwas came he stayed with his men and refused to leave them. He died in it. He was one of the ten given the news of Paradise.",
@@ -1303,7 +1303,7 @@ const FULL_LIVES = {
     before: "Anas ibn Malik was ten years old when the Prophet ﷺ came to Madinah. His mother, Umm Sulaym, brought him and offered him as a servant — she had nothing else to give.",
     beforeAr: "كان أنس بن مالكٍ ابن عشر سنين حين قدِم النبي ﷺ المدينة. فجاءت به أمّه أمّ سليمٍ فأهدته خادمًا — ولم يكن عندها ما تُهدي غيره.",
     islam: "He served him for ten years. His testimony about those ten years is the most quoted description of the Prophet's ﷺ manners: he never once said uff to me, and never said of anything I did why did you do it, or of anything I did not do why did you not do it.",
-    islamAr: "فخدمه عشر سنين. وشهادته عن تلك السنين أشهر ما وُصفت به أخلاق النبي ﷺ: ما قال لي أفٍّ قطّ، ولا قال لشيءٍ فعلته: لِمَ فعلتَ كذا؟ ولا لشيءٍ تركته: لِمَ تركتَ كذا؟",
+    islamAr: "فخدمه عشر سنين. وشهادته عن تلك السنين أشهر ما وُصفت به أخلاق النبي ﷺ: ما قال لي أفٍّ أبدًا، ولا قال لشيءٍ فعلته: لِمَ فعلتَ كذا؟ ولا لشيءٍ تركته: لِمَ تركتَ كذا؟",
     change: "His mother asked the Prophet ﷺ to pray for him, and he did: O Allah, increase his wealth and his children, and bless him in what You give him. Anas said afterwards that he was among the wealthiest of the Ansar and had buried more than a hundred of his descendants.",
     changeAr: "وسألت أمّه النبي ﷺ أن يدعو له فدعا: اللهم أكثر ماله وولده وبارك له فيما أعطيته. قال أنس بعدُ: فإني لمن أكثر الأنصار مالًا، ولقد دفنتُ من صُلبي أكثر من مئة.",
     greatest: "That he became the channel through which an enormous amount of the Sunnah reached the nation — because he was in the house, watching, for a decade. Much of what Muslims know about how the Prophet ﷺ prayed, ate and treated people comes through this boy.",
@@ -1451,7 +1451,7 @@ const FULL_LIVES = {
 
   "khabbab": {
     before: "Khabbab ibn al-Aratt was a slave, a blacksmith by trade, and among the first six or seven to declare Islam — with no protector at all.",
-    beforeAr: "هو خبّاب بن الأرتّ، كان عبدًا حدّادًا، ومن أول ستةٍ أو سبعةٍ أظهروا الإسلام — ولا مانع له البتّة.",
+    beforeAr: "هو خبّاب بن الأرتّ، كان عبدًا حدّادًا، ومن أول ستةٍ أو سبعةٍ أظهروا الإسلام — ولا مانع له أبدًا.",
     islam: "His owner used to heat iron in the fire and press it on his back until the fire was put out by the fat of his flesh. Years later, when Omar رضي الله عنه asked to see his back, he wept at the sight of it.",
     islamAr: "كانت مولاته تُحمي الحديد بالنار ثم تضعه على ظهره حتى يُطفئه ودَك ظهره. ولمّا سأله عمر رضي الله عنه أن يُريه ظهره بعد سنين بكى لمّا رآه.",
     change: "He came to the Prophet ﷺ while he was resting in the shade of the Kaaba and said: will you not ask Allah to help us? Will you not make supplication for us? The Prophet ﷺ sat up, his face red, and told him of those before them who were sawn in two and combed with iron combs down to the bone and did not leave their religion — then said: but you are people in a hurry.",
@@ -1644,7 +1644,7 @@ const FULL_LIVES = {
     islam: "He stayed behind from Tabuk with no excuse. He kept meaning to prepare and kept not doing it, until the army had gone.",
     islamAr: "تخلّف عن تبوك بغير عذر. كان يهمّ بالتجهّز فلا يفعل، حتى مضى الجيش.",
     change: "When the army returned, the men who had stayed behind came with excuses and were accepted at face value. Ka'b decided to tell the truth. He said: by Allah, I have no excuse — I was never stronger or better off than when I stayed behind. The Prophet ﷺ said: this one has told the truth. Get up until Allah decides about you.",
-    changeAr: "فلمّا رجع الجيش جاء المتخلّفون يعتذرون فقُبلت عللهم في الظاهر. وأمّا كعبٌ فعزم على الصدق فقال: والله ما كان لي عذر، والله ما كنتُ قطّ أقوى ولا أيسر مني حين تخلّفت. فقال النبي ﷺ: أمّا هذا فقد صدق، قُم حتى يقضي الله فيك.",
+    changeAr: "فلمّا رجع الجيش جاء المتخلّفون يعتذرون فقُبلت عللهم في الظاهر. وأمّا كعبٌ فعزم على الصدق فقال: والله ما كان لي عذر، والله ما كنتُ أبدًا أقوى ولا أيسر مني حين تخلّفت. فقال النبي ﷺ: أمّا هذا فقد صدق، قُم حتى يقضي الله فيك.",
     greatest: "Fifty nights of being cut off. Nobody in Madinah spoke to him or the two men with him. The earth became strange to him, his own cousin would not answer him, and when an offer of protection came from a foreign king he burned the letter. Then his wife was told to leave him. Then the mercy came, and a man shouted the news from the top of a mountain, and Ka'b gave away his whole wealth in thanks — until the Prophet ﷺ told him to keep some of it.",
     greatestAr: "خمسون ليلةً من الهجر. لا يُكلّمه أحدٌ بالمدينة هو وصاحباه. فضاقت عليه الأرض بما رحُبت، وردّ عليه ابن عمّه فلم يُكلّمه، ولمّا جاءه كتابٌ من ملكٍ يعرض عليه الحماية أحرقه. ثم أُمرت امرأته أن تعتزله. ثم جاء الفرج، وصرخ رجلٌ بالبشارة من ذروة جبل، فأراد كعبٌ أن يتصدّق بماله كلّه حتى قال له النبي ﷺ: أمسِك عليك بعض مالك.",
     death: "Allah revealed his story in the Quran: and upon the three who were left behind, until the earth became narrow for them despite its vastness. Ka'b said afterwards: Allah did not bless me with anything after guiding me to Islam greater than my truthfulness to the Messenger of Allah ﷺ that day.",
@@ -1836,7 +1836,7 @@ const FULL_LIVES = {
     greatest: "Her giving. The Prophet ﷺ told his wives that the first of them to follow him would be the one with the longest hand. They began measuring their hands against a wall — and it turned out to mean the one who gave the most in charity, which was Zaynab. She worked with her own hands, tanning and sewing, and gave away what she earned.",
     greatestAr: "عطاؤها. قال النبي ﷺ لأزواجه: أسرعكنّ لحاقًا بي أطولكنّ يدًا. فجعلن يتطاولن بأيديهنّ على الجدار — فإذا هي أكثرهنّ صدقة، وهي زينب. كانت تعمل بيدها وتدبغ وتخرز وتتصدّق بما تكسب.",
     death: "She was the first of the Mothers of the Believers to die after him, exactly as the hadith indicated. Aishah رضي الله عنها said of her: I never saw a woman better in religion, more fearing of Allah, more truthful in speech, more giving of kinship or more generous in charity than Zaynab.",
-    deathAr: "وكانت أول أزواجه لحوقًا به كما دلّ الحديث. وقالت عائشة رضي الله عنها: ما رأيتُ امرأةً قطّ خيرًا في الدين من زينب، وأتقى لله، وأصدق حديثًا، وأوصل للرحم، وأعظم صدقة.",
+    deathAr: "وكانت أول أزواجه لحوقًا به كما دلّ الحديث. وقالت عائشة رضي الله عنها: ما رأيتُ امرأةً أبدًا خيرًا في الدين من زينب، وأتقى لله، وأصدق حديثًا، وأوصل للرحم، وأعظم صدقة.",
     sources: [
       "Her marriage revealed in the Quran: Surah Al-Ahzab (33:37) — Quran",
       "Allah married me from above the seven heavens: Sahih al-Bukhari, Hadith 7420 — Sahih",

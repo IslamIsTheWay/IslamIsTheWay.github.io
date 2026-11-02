@@ -114,7 +114,7 @@ const SURAH_CONCEPTS = {
   16: { c: "Count what you never notice",
         cAr: "عُدّ ما لا تنتبه له",
         w: "The bee, the cattle, the milk, the shade, the ships, the stars for direction. Ordinary things, listed until the reader realises he has never once thanked for any of them.",
-        wAr: "النحل والأنعام واللبن والظلال والفُلك والنجوم للاهتداء. أشياء عاديّة تُعدّ حتى يفطن القارئ أنه ما شكر على واحدةٍ منها قطّ.",
+        wAr: "النحل والأنعام واللبن والظلال والفُلك والنجوم للاهتداء. أشياء عاديّة تُعدّ حتى يفطن القارئ أنه ما شكر على واحدةٍ منها أبدًا.",
         a: "16:18" },
 
   17: { c: "A human being has a weight, so behave like it",
@@ -288,7 +288,7 @@ const SURAH_CONCEPTS = {
         a: "44:38" },
 
   45: { c: "The evidence was never the part that was missing",
-        cAr: "لم يكن الدليل هو الناقص قطّ",
+        cAr: "لم يكن الدليل هو الناقص أبدًا",
         w: "Sign after sign is listed — the heavens, your own creation, the animals spread out, the rain that revives dead ground, the ships. Then every nation is shown kneeling, and its record read back to it. The surah is not answering a shortage of proof.",
         wAr: "تُعدّ الآياتُ واحدةً بعد واحدة: السماوات، وخلقُكم أنفسكم، والدوابُّ المبثوثة، والمطرُ يُحيي الأرض بعد موتها، والفُلك. ثم ﴿تَرَىٰ كُلَّ أُمَّةٖ جَاثِيَةٗۚ﴾، ويُقرأ عليها كتابها. فليست السورةُ جوابًا عن قلّة دليل.",
         a: "45:23",
@@ -434,7 +434,7 @@ const SURAH_CONCEPTS = {
   68: { c: "They called him mad; he was the measure",
         cAr: "رمَوه بالجنون، وهو الميزان",
         w: "The answer to the accusation is not a defence or an argument. It is a description, and it is enormous: you are upon a great moral character. Then a story about landowners who set out at dawn to harvest so that no poor person would see them and ask.",
-        wAr: "لم يكن جوابُ التهمة دفاعًا ولا حجاجًا، وإنما وصفٌ عظيم: ﴿وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٖ﴾. ثم قصّةُ أصحاب الجنّة، غدَوا مبكّرين ليجُدّوها ﴿وَلَا يَسۡتَثۡنُونَ﴾ لئلّا يراهم مسكينٌ فيسأل.",
+        wAr: "لم يكن جوابُ التهمة دفاعًا ولا حجاجًا، وإنما وصفٌ عظيم: ﴿وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٖ﴾. ثم قصّةُ أصحاب الجنّة، غدَوا مبكّرين ليجُدّوها ﴿وَلَا يَسۡتَثۡنُونَ﴾ حتى لا يراهم مسكينٌ فيسأل.",
         a: "68:4" },
 
   69: { c: "If he had made any of it up",

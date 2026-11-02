@@ -311,7 +311,7 @@ const PILLARS = {
       ref: "Sunan Abu Dawud, Hadith 1573",
       refAr: "سنن أبي داود، حديث ١٥٧٣",
       strength: "Outside the two Sahihs — it is in the Sunan, and being in that book does not by itself make it authentic. The 2.5% rate itself, however, is agreed upon by the scholars, and the threshold is also established in al-Bukhari 1405.",
-      strengthAr: "خارج الصحيحين — هو في السنن، ووجودُه فيها لا يجعله صحيحًا بنفسه. غير أن نسبة ربع العشر متّفقٌ عليها بين أهل العلم، والنِّصابُ ثابتٌ أيضًا في صحيح البخاري (١٤٠٥)."
+      strengthAr: "خارج الصحيحين — هو في السنن، ووجودُه فيها لا يجعله صحيحًا بنفسه. لكن نسبة ربع العشر متّفقٌ عليها بين أهل العلم، والنِّصابُ ثابتٌ أيضًا في صحيح البخاري (١٤٠٥)."
     },
 
     threshold: {
@@ -363,7 +363,7 @@ const PILLARS = {
           a: "Almost certainly not. If 85 grams of gold costs, say, 20,000 in your currency, then the threshold is 20,000 and 1,000 is far below it. No zakat is owed by you this year.",
           aAr: "الظاهرُ أنه لا شيء عليك. فإن كان ثمنُ خمسةٍ وثمانين جرامًا من الذهب — مثلًا — عشرين ألفًا بعملتك، فالنِّصابُ عشرون ألفًا، والألفُ دونه بكثير، فلا زكاة عليك هذا العام.",
           sum: "But ordinary charity (sadaqah) is never closed to you, at any amount, and the reward for a small amount given by someone who has little is not small."
-          , sumAr: "غير أن بابَ الصدقة مفتوحٌ لك أبدًا بأيِّ قدر، وأجرُ القليل ممّن قلَّ مالُه ليس بقليل."
+          , sumAr: "لكن بابَ الصدقة مفتوحٌ لك أبدًا بأيِّ قدر، وأجرُ القليل ممّن قلَّ مالُه ليس بقليل."
         },
         {
           q: "\"What exactly do I count?\"",

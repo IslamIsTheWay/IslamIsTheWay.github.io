@@ -177,7 +177,7 @@ const HEARTS = {
           strength: "Sahih — narrated by Muslim",
           strengthAr: "صحيح — رواه مسلم",
           note: "Notice where the list starts. \"Do not envy one another\" comes first, before hatred and before turning away — because it is what produces them. And notice where he pointed. Not at the hands. At the chest.",
-          noteAr: "وتأمّل مبدأ العدّ: فقد بُدئ بـ«لا تحاسدوا» قبل التباغض وقبل التدابر، لأنه هو الذي يولّدهما. وتأمّل إلى أين أشار: لم يُشِر إلى اليد، وإنما إلى الصدر.",
+          noteAr: "وانظر مبدأ العدّ: فقد بُدئ بـ«لا تحاسدوا» قبل التباغض وقبل التدابر، لأنه هو الذي يولّدهما. وانظر إلى أين أشار: لم يُشِر إلى اليد، وإنما إلى الصدر.",
           keys: ["family envy", "my uncle", "relatives jealous", "cousins", "in laws", "family problems money", "extended family",
                  "حسد الأقارب", "عمي", "خالي", "أولاد عمي", "مشاكل العائلة", "الأهل يحسدوني", "حسد الأهل"]
         },
@@ -242,7 +242,7 @@ const HEARTS = {
           strength: "The Quran",
           strengthAr: "القرآن الكريم",
           example: "And there is a second cost that people do not think about until it lands. Envy is invisible until it is not — and it usually comes out at the worst possible moment, in one sentence, in front of others. After that, the person knows. And nobody stays close to someone they have learned would prefer them to have less. You do not lose a friendship over it. You lose it and are never told why.",
-          exampleAr: "وثَمَّ ثمنٌ ثانٍ لا يخطر ببال أحدٍ حتى يقع: فالحسدُ مستورٌ إلى أن ينكشف، وهو ينكشف في أسوأ لحظةٍ غالبًا، في جملةٍ واحدةٍ أمام الناس. فيعلم الرجلُ حينئذٍ، ولا يبقى أحدٌ قريبًا ممّن عَلِم أنه يودّ لو كان عنده أقلّ. ولستَ تخسر الصحبةَ بهذا فحسب، وإنما تخسرها ولا يُقال لك لماذا.",
+          exampleAr: "وثَمَّ ثمنٌ ثانٍ لا يخطر ببال أحدٍ حتى يقع: فالحسدُ مستورٌ إلى أن ينكشف، وهو ينكشف في أسوأ لحظةٍ غالبًا، في جملةٍ واحدةٍ أمام الناس. فيعلم الرجلُ عندها، ولا يبقى أحدٌ قريبًا ممّن عَلِم أنه يودّ لو كان عنده أقلّ. ولستَ تخسر الصحبةَ بهذا فقط، وإنما تخسرها ولا يُقال لك لماذا.",
           keys: ["hidden envy", "evil eye", "ayn", "someone envied me", "protect from envy", "falaq", "they smile but", "fake friends",
                  "الحسد الخفي", "العين", "حسدوني", "الحماية من الحسد", "الفلق", "يبتسم لي ولكن", "أصدقاء مزيفون"]
         },
@@ -272,7 +272,7 @@ const HEARTS = {
           title: "So what do you actually do about it tonight",
           titleAr: "فماذا تصنع الليلة؟",
           plain: "Envy is a feeling, and you are not judged for a feeling that crosses you uninvited. You are judged for what you do with it. So the way out is a set of actions, not a mood you are supposed to summon.\n\nFirst: look downward, deliberately. He ﷺ gave this as a direct instruction — look at those below you and not at those above you, so that you do not belittle Allah's favour on you.\n\nSecond: turn the wish. There is a permitted form of this feeling: wanting the same good for yourself without wanting it removed from him. That is not envy at all, and he ﷺ named the two things worth wanting that way.\n\nThird: ask for him. Make dua for the person you envy, by name, and say what a Muslim says on seeing something good. It is almost impossible to keep resenting a man you are asking Allah to bless.\n\nFourth: work. If what he has is earned, it is available. Go and earn it. Envy is the substitute for effort, and it is a poor one — it costs more and returns nothing.",
-          plainAr: "الحسدُ وِجدان، ولستَ تُؤاخذ على خاطرٍ طرأ عليك من غير استدعاء، وإنما تُؤاخذ بما تصنع به. فالمخرجُ أعمالٌ لا حالٌ تُكلَّف استحضارَها.\n\nالأوّل: انظر إلى أسفلَ قصدًا. وقد أمر بهذا ﷺ أمرًا صريحًا: أن تنظر إلى من هو أسفل منك ولا تنظر إلى من فوقك، فذلك أجدرُ أن لا تزدري نعمة الله عليك.\n\nالثاني: اقلب التمنّي. فثَمَّ صورةٌ مأذون فيها من هذا الشعور: أن تتمنّى مثل الخير لنفسك من غير أن تريده زائلًا عنه. وليست تلك حسدًا أصلًا، وقد سمّى ﷺ الاثنتين اللتين يحسن أن يُتمنّى فيهما.\n\nالثالث: ادعُ له. ادعُ لمن تحسده باسمه، وقل ما يقوله المسلم إذا رأى ما يُعجبه. فإنه يكاد يستحيل أن تبقى ساخطًا على رجلٍ تسأل الله أن يبارك له.\n\nالرابع: اعمل. فإن كان ما عنده مكتسبًا فهو متاحٌ لك؛ فانزل واكسبه. فالحسدُ بدلٌ من الجهد، وهو بدلٌ رديء: أغلى ثمنًا ولا يعود بشيء.",
+          plainAr: "الحسدُ وِجدان، ولستَ تُؤاخذ على خاطرٍ طرأ عليك من غير استدعاء، وإنما تُؤاخذ بما تصنع به. فالمخرجُ أعمالٌ لا حالٌ تُكلَّف استحضارَها.\n\nالأوّل: انظر إلى أسفلَ قصدًا. وقد أمر بهذا ﷺ أمرًا صريحًا: أن تنظر إلى من هو أسفل منك ولا تنظر إلى من فوقك، فذلك أجدرُ أن لا تزدري نعمة الله عليك.\n\nالثاني: اقلب التمنّي. فثَمَّ صورةٌ مأذون فيها من هذا الشعور: أن تتمنّى مثل الخير لنفسك من لكن تريده زائلًا عنه. وليست تلك حسدًا أصلًا، وقد سمّى ﷺ الاثنتين اللتين يحسن أن يُتمنّى فيهما.\n\nالثالث: ادعُ له. ادعُ لمن تحسده باسمه، وقل ما يقوله المسلم إذا رأى ما يُعجبه. فإنه يكاد يستحيل أن تبقى ساخطًا على رجلٍ تسأل الله أن يبارك له.\n\nالرابع: اعمل. فإن كان ما عنده مكتسبًا فهو متاحٌ لك؛ فانزل واكسبه. فالحسدُ بدلٌ من الجهد، وهو بدلٌ رديء: أغلى ثمنًا ولا يعود بشيء.",
           proof: "Look at those below you and do not look at those above you, for that is more fitting that you do not belittle Allah's favour upon you.",
           proofAr: "انْظُرُوا إِلَى مَنْ أَسْفَلَ مِنْكُمْ وَلَا تَنْظُرُوا إِلَى مَنْ هُوَ فَوْقَكُمْ، فَهُوَ أَجْدَرُ أَنْ لَا تَزْدَرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ",
           ref: "Sahih Muslim, Book of Zuhd",

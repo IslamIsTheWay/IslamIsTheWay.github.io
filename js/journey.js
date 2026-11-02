@@ -88,7 +88,7 @@ const JOURNEY = [
   ],
   plain: {
     lead: "This is the first thing that happens, and it has already been decided by how you lived. Nothing new is being judged yet — <strong>what arrives simply matches what you were</strong>.",
-    leadAr: "هذا أوّل ما يقع، وقد استقرّ أمره بما عشتَ عليه. فليس ثمّة حكمٌ جديدٌ بعدُ، <strong>وإنّما جاء ما يوافق ما كنتَ عليه</strong>.",
+    leadAr: "هذا أوّل ما يقع، وقد استقرّ أمره بما عشتَ عليه. فليس هناك حكمٌ جديدٌ بعدُ، <strong>وإنّما جاء ما يوافق ما كنتَ عليه</strong>.",
     groups: [
       { head: "If you were a believer",
         headAr: "إن كنتَ مؤمنًا",
@@ -1007,7 +1007,7 @@ const JOURNEY = [
       { head: "The body you live in there",
         headAr: "البدن الذي تعيش به",
         note: "The strange detail worth naming: there is NO WASTE in Paradise at all. No spitting, no blowing the nose, no toilet. You still eat and drink — with the strength of a hundred men — but what you eat leaves the body as a light sweat that smells of musk, and a breath. Nothing about the body there is unpleasant to be near.",
-        noteAr: "والتفصيل اللافت الذي يحسن التصريح به: <strong>لا فضلات في الجنّة البتّة</strong>؛ لا بُصاق ولا مُخاط (أي ما يخرج من الأنف) ولا <strong>خلاء</strong> (أي لا حاجةَ إلى دخول الحمّام). ومع ذلك تأكل وتشرب — بقوّة مئة رجل — ولكن ما تأكله يخرج <strong>عَرَقًا لطيفًا ريحه المسك ونَفَسًا</strong>. فليس في البدن هناك ما يُستكره منه شيء.",
+        noteAr: "والتفصيل اللافت الذي يحسن التصريح به: <strong>لا فضلات في الجنّة أبدًا</strong>؛ لا بُصاق ولا مُخاط (أي ما يخرج من الأنف) ولا <strong>خلاء</strong> (أي لا حاجةَ إلى دخول الحمّام). ومع ذلك تأكل وتشرب — بقوّة مئة رجل — ولكن ما تأكله يخرج <strong>عَرَقًا لطيفًا ريحه المسك ونَفَسًا</strong>. فليس في البدن هناك ما يُستكره منه شيء.",
         points: [
           { en: "The first group enters <strong>looking like the full moon</strong>.",
             ar: "تدخل أوّل زمرةٍ <strong>على صورة القمر ليلة البدر</strong>." },
@@ -1061,7 +1061,7 @@ const JOURNEY = [
   ],
   plain: {
     lead: "Read the order of this carefully, because it is the whole point of the page.",
-    leadAr: "تأمّل ترتيب هذا المشهد، فإنّ فيه مقصود الصفحة كلّها.",
+    leadAr: "انظر ترتيب هذا المشهد، فإنّ فيه مقصود الصفحة كلّها.",
     groups: [
       { points: [
           { en: "They are <strong>already inside</strong>. Everything on the previous card has already been given to them.",

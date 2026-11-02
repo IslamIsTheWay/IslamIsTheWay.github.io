@@ -1132,6 +1132,19 @@ function iitwTadabburAyahHtml(tad, n) {
          '<span class="ar-only" dir="rtl">' + a.arNoteAr + '</span></div>';
   }
 
+  /* THE PLAIN SENTENCE COMES FIRST.
+     It used to sit fourth, under the long explanation, the tense block and
+     the misreading — so the reader who needed one ordinary sentence had to
+     get through the hardest writing on the page before reaching it. Summary
+     first; the detail follows, for whoever wants it. */
+  if (a.plain) {
+    h += '<div class="tad-plain tad-plain-first">' +
+         '<div class="tad-plain-label">💬 <span class="en-only">In plain words</span>' +
+           '<span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>' +
+         '<div class="en-only">' + tadPara(a.plain) + '</div>' +
+         '<div class="ar-only" dir="rtl">' + tadPara(a.plainAr, true) + '</div></div>';
+  }
+
   if (a.why) {
     h += '<div class="tad-sec"><div class="en-only">' + tadPara(a.why) + '</div>' +
          '<div class="ar-only">' + tadPara(a.whyAr, true) + '</div>' +
@@ -1157,15 +1170,8 @@ function iitwTadabburAyahHtml(tad, n) {
          '<div class="ar-only" dir="rtl">' + tadPara(a.misunderstoodAr, true) + '</div></div>';
   }
 
-  /* The plain-language box. Same one used on the Judgement and Golden Age
-     pages: ordinary words, for a reader who is not a student of knowledge. */
-  if (a.plain) {
-    h += '<div class="tad-plain">' +
-         '<div class="tad-plain-label">💬 <span class="en-only">In plain words</span>' +
-           '<span class="ar-only" dir="rtl">بكلامٍ بسيط</span></div>' +
-         '<div class="en-only">' + tadPara(a.plain) + '</div>' +
-         '<div class="ar-only" dir="rtl">' + tadPara(a.plainAr, true) + '</div></div>';
-  }
+  /* (The plain-language box used to be printed here, in fourth place. It is
+     now the first thing under the verse — see the block above.) */
 
   /* Why THIS word and not the one beside it — the thing the whole
      feature was asked for. */

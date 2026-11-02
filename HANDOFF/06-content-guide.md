@@ -133,6 +133,15 @@ grep -c '^    keys:' js/sunnah.js
 #     a placeholder, an <option>) - HANDOFF PART 38
 python tools/mixscan.py --check
 
+# 4c. the Arabic reads like the site, not like a printed tafsir - HANDOFF
+#     PART 40. --fix rewrites the safe words; it never touches a verse or a
+#     hadith (anything in the quoted fields, or between the brackets).
+python tools/arabicease.py --check
+
+# 4d. nothing on a phone is too small for a thumb, in either language
+#     (needs a local server running)
+python tools/phonecheck.py --check
+
 # 5. list markup balance after any bulk sed edit
 for f in *.html; do
   o=$(grep -o '<li>' "$f" | wc -l); c=$(grep -o '</li>' "$f" | wc -l)

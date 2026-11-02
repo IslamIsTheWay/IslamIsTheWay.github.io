@@ -162,7 +162,16 @@
       out.push(chip("📂", pg.href, "Where you were", "حيث كنت", pg.label, pg.label));
     }
 
-    if (!out.length) { box.innerHTML = ""; box.hidden = true; return; }
+    /* Hide the SECTION, not only the box: the section's container carries the
+       top padding, so hiding the box alone left a blank band under the hero on
+       a first visit - which is the one reader this section has nothing for. */
+    var sec = box.closest ? box.closest("section") : null;
+    if (!out.length) {
+      box.innerHTML = ""; box.hidden = true;
+      if (sec) sec.hidden = true;
+      return;
+    }
+    if (sec) sec.hidden = false;
     box.hidden = false;
     box.innerHTML =
       '<div class="resume-head">↩️ <span class="en-only">Continue where you left off</span>' +

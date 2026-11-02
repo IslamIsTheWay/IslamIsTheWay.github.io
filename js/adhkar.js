@@ -309,7 +309,7 @@ const ADHKAR = [
     countEn: "Said at the moment of distress",
     countAr: "يُقال عند الكرب",
     virtue: "Ibn Abbas رضي الله عنهما reported that the Prophet ﷺ used to say this at a time of distress. Notice that it is not a request — it is the naming of who Allah is, said by someone in trouble.",
-    virtueAr: "روى ابن عباس رضي الله عنهما أن النبي ﷺ كان يقول هذا عند الكرب. وتأمّل أنه ليس سؤالًا، وإنما هو تعظيمٌ لله وذكرٌ لأسمائه يقوله المكروب.",
+    virtueAr: "روى ابن عباس رضي الله عنهما أن النبي ﷺ كان يقول هذا عند الكرب. وانظر أنه ليس سؤالًا، وإنما هو تعظيمٌ لله وذكرٌ لأسمائه يقوله المكروب.",
     ref: "Sahih al-Bukhari, Book of Supplications, Hadith 6346 — and Sahih Muslim",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["distress", "worry", "anxiety", "hardship", "الكرب", "الهم", "الضيق", "القلق"]

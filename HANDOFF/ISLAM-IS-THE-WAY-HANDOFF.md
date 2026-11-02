@@ -9,13 +9,14 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 25 September 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 2 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 1a. **PART 39** (most recent) — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
-> 1b. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
+> 1a. **PART 40** (most recent) — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
+> 1b. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
+> 1c. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
 > 2. **PART 37** — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
 > 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
@@ -6980,3 +6981,117 @@ walk forward counting depth to its matching `}`, and insert before that. And
 write such a script with the editor, never a shell heredoc — this shell eats
 backslashes inside heredocs, so `"\n"` arrives as a real newline and the
 script dies on an unterminated string.
+
+---
+
+# PART 40 — Making it readable: the Arabic, the thumb, and the plain sentence
+
+The owner's words: *"check that if the explanation is too complicated, make
+sure that it's not, and it's explained easily so anyone can understand. And be
+able to navigate and actually extract the information without having to be a
+special teacher in whatever language, especially in Arabic, because in Arabic
+there are very old Arabic words that are used."*
+
+He was right on every count. What follows is what was wrong and what was done.
+
+## 1. The Arabic had drifted into the register of the commentaries
+
+The English on this site was kept plain from the first day. The Arabic had
+not: it had collected ههنا, البتّة, فحسب, وتأمّل, قطّ, حينئذٍ, غير أنّ — the
+vocabulary of a printed tafsir, which reads as old-fashioned and shuts out
+exactly the reader each page was written for.
+
+**tools/arabicease.py** counts them and rewrites the safe ones. 698 words were
+replaced across 38 files.
+
+**What it will never touch**, and this is the whole safety of it: Quran is
+quoted between ﴿ ﴾ and hadith between « », and the fields that hold a verse or
+a hadith on their own are listed in `QUOTED`. All of it is skipped. The proof
+that it worked is in `./check-quran.sh` — 7,616 quotations still the Mushaf's
+words, unchanged — and in one diff worth remembering: a line carrying Imam
+Malik's words with يومئذٍ *inside* the guillemets came through untouched while
+وتأمّل in the prose around it became وانظر.
+
+**The SAFE / WATCH split matters.** A word only goes in SAFE if the short word
+means the same thing in every place this site uses it. Words whose short form
+is right in one sentence and wrong in the next are listed in WATCH and
+reported for a human, never rewritten:
+
+- **إذ** — "when", "because", "since"; the replacement changes with the clause
+- **لمّا** — "when", but also لِمَ "why"
+- **أجل** — "yes" in old prose, but الأجل is the appointed TERM
+- **نحو** — "about" before a number, "like" before a noun
+- **شطر** — "half", and also "towards" (شطر المسجد الحرام)
+- **يومئذ** — "on that Day" on the Judgement pages, "at that time" in a
+  historical sentence; and every reader knows it from the Quran anyway
+
+يومئذ was in SAFE for one run and produced *"the harm was unknown on that day"*
+where the sentence meant *at that time*. It was reverted and moved to WATCH.
+**When a replacement is reverted, revert the files and re-run `--fix` rather
+than reverse-replacing the phrase** — a reverse replacement also hits the text
+that legitimately said it.
+
+The tool now also guards new writing: five old words slipped into the plain
+summaries written in this same session, and `--check` caught every one.
+
+## 2. Everything on a phone was too small to hit
+
+Most of this site is read on a phone, and the controls people use most were
+the smallest things on it: the menu button 36x26, the text-size buttons 32x26,
+the listen buttons 22x21, the footer links 25px tall. Apple asks for 44x44.
+
+**tools/phonecheck.py** loads every page at 375px in both languages and reports
+two faults a laptop never shows: a block wider than the screen, and a control
+too small for a thumb. It found **336 problems; there are now 0.** (No page
+slid sideways, in either language — the layout itself was sound.)
+
+The fix is the **THUMB SIZE** block at the end of `css/style.css`, and it
+changes how nothing looks. Inside `@media (pointer: coarse)` each control gets
+an invisible `::after` layer of at least 40x44 — the button keeps its size on
+the page and the finger gets a bigger thing to hit. Text links in lists get
+real padding instead, because that also separates the lines, and in-text links
+get `padding-block`, which grows the hit box of an inline box without moving
+the line it sits on.
+
+**Two traps if you touch this check.** `elementFromPoint` only sees what is on
+screen, so hit-testing a point called every control below the fold unreachable
+— the check reads the computed `::after` size instead. And the context needs
+`has_touch=True`, or `pointer: coarse` never matches and the rules are not in
+play at all.
+
+## 3. The plain sentence was fourth on the page
+
+Every tadabbur entry has a `plain` / `plainAr` — one ordinary sentence for a
+reader who is not a student of knowledge. It was printed **fourth**: under the
+long explanation, the tense block and the misreading. The reader who needed it
+most had to get through the hardest writing on the page to reach it.
+
+It is now the first thing under the verse (`.tad-plain-first`), with the
+detail after it for whoever wants it. The ten major signs on judgement.html
+now open the same way.
+
+## 4. 164 entries had no plain sentence at all
+
+266 of the 430 entries had one. The 164 that did not included **al-Fatihah
+(all seven), Ayat al-Kursi, al-Ikhlas (all four), al-Ma'un (all seven),
+al-Fil, Quraysh, al-Asr, al-Kawthar, al-Falaq and an-Nas** — the verses most
+read on the whole site. Every one of the 164 was written in this session, in
+both languages. **All 430 entries now have one.**
+
+They were written from what each entry actually says, not from the verse in
+general: `scratchpad/dump.py` printed the entry's own `why` first. Keep that
+order if more are ever added — a summary of the verse that does not summarise
+the card is worse than no summary.
+
+## What is still open
+
+- **303 sentences are over 30 words** (`tools/arabicease.py` lists the worst).
+  Many are not prose at all — reference lists joined with · , and English
+  `story` fields — but the genuine ones in the detailed sections are still
+  long. The plain summary now carries the reader, so this is no longer urgent.
+- **Prose tashkeel.** The site's own sentences carry full case endings
+  (الآيةُ، نفسُهما), which is a classical-book signal; ordinary Arabic on the
+  web has none. Stripping the harakat from prose only — never from the Quran
+  or hadith — would modernise the look further. It was NOT done: it is a large
+  change the owner did not ask for, and vowels do help a weaker reader sound a
+  word out. Ask him before doing it.

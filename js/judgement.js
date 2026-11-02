@@ -164,9 +164,9 @@ const JUDGEMENT_STAGES = [
     title: "The angels — their names, what they look like, and what each one does",
     titleAr: "الملائكة — أسماؤهم وصفاتهم ووظيفة كلٍّ منهم",
     lead: "Angels are named in the Quran and in the two Sahihs, and each has an assigned task. Some names people use every day are firmly established; others are not established at all. Both are marked here.",
-    leadAr: "الملائكة مُسمَّون في القرآن والصحيحين، ولكلٍّ منهم وظيفةٌ موكَّلٌ بها. وبعض الأسماء التي يتداولها الناس ثابتة، وبعضها غير ثابتٍ البتّة — ونُبيّن الأمرين.",
+    leadAr: "الملائكة مُسمَّون في القرآن والصحيحين، ولكلٍّ منهم وظيفةٌ موكَّلٌ بها. وبعض الأسماء التي يتداولها الناس ثابتة، وبعضها غير ثابتٍ أبدًا — ونُبيّن الأمرين.",
     plain: "In plain words: angels are real created beings with assigned jobs, and some of them are named in the Quran and in the two Sahihs.\n\nBut several names people use every day are not established at all. This page marks which is which instead of mixing them together — because saying something about the unseen with no evidence behind it is not a small matter.",
-    plainAr: "بكلامٍ بسيط: الملائكة خلقٌ حقيقيّون لكلٍّ منهم عملٌ موكَّلٌ به، وقد سُمّي بعضهم في القرآن وفي الصحيحين.\n\nولكنّ أسماءً يستعملها الناس كلَّ يومٍ ليست ثابتةً البتّة. وهذه الصفحة تُميّز هذا من هذا ولا تخلطهما — لأنّ القول في الغيب بلا دليلٍ ليس بالأمر الهيّن.",
+    plainAr: "بكلامٍ بسيط: الملائكة خلقٌ حقيقيّون لكلٍّ منهم عملٌ موكَّلٌ به، وقد سُمّي بعضهم في القرآن وفي الصحيحين.\n\nولكنّ أسماءً يستعملها الناس كلَّ يومٍ ليست ثابتةً أبدًا. وهذه الصفحة تُميّز هذا من هذا ولا تخلطهما — لأنّ القول في الغيب بلا دليلٍ ليس بالأمر الهيّن.",
     points: [
       { en: "JIBRIL (Gabriel) — the angel of revelation, who brought the Quran down upon the heart of the Prophet ﷺ. As for his shape: Aishah رضي الله عنها said the Prophet ﷺ saw Jibril in the form in which he was created, and his creation filled the whole horizon. He is also described as having six hundred wings.",
         ar: "جبريل عليه السلام — مَلَك الوحي، نزل بالقرآن على قلب النبي ﷺ. وأما صورته فقالت عائشة رضي الله عنها: رأى جبريل في صورته، وخَلقه سادٌّ ما بين الأفق. ووُصف أيضًا بأن له ستمائة جناح.",
@@ -258,7 +258,7 @@ const JUDGEMENT_STAGES = [
     title: "Seven under the shade of Allah — when there is no other shade",
     titleAr: "سبعةٌ يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه",
     lead: "On a day when the sun is brought near and there is no shade at all, the Prophet ﷺ named seven kinds of people whom Allah shades. He named them precisely, so that anyone can look at the list and ask which of them he could still become.",
-    leadAr: "في يومٍ تُدنى فيه الشمس ولا ظلّ فيه البتّة، سمّى النبي ﷺ سبعةً يُظلّهم الله في ظلّه. وسمّاهم تسميةً دقيقة، حتى ينظر كلُّ أحدٍ في القائمة فيسأل نفسه: أيّهم يمكن أن أكون؟",
+    leadAr: "في يومٍ تُدنى فيه الشمس ولا ظلّ فيه أبدًا، سمّى النبي ﷺ سبعةً يُظلّهم الله في ظلّه. وسمّاهم تسميةً دقيقة، حتى ينظر كلُّ أحدٍ في القائمة فيسأل نفسه: أيّهم يمكن أن أكون؟",
     plain: "In plain words: there is no shade at all that day except the shade Allah gives, and he ﷺ named seven kinds of people who are given it.\n\nRead the list slowly, because it is not seven famous men. It is seven ordinary situations: a young man who grew up worshipping, a man whose heart is attached to the mosque, two who loved one another for Allah, a man who refused a woman of position and beauty, a man who gave charity so secretly that his left hand did not know, and a man who remembered Allah alone until his eyes overflowed.\n\nEvery one of them is reachable. That is why he named them instead of describing them vaguely.",
     plainAr: "بكلامٍ بسيط: لا ظلَّ يومئذٍ إلا ظلُّه، وقد سمّى ﷺ سبعةً يُظلّهم الله فيه.\n\nواقرأ العدد على مهلٍ، فليسوا سبعةً من المشاهير، وإنما هي سبعُ حالاتٍ عاديّة: شابٌّ نشأ في عبادة ربّه، ورجلٌ قلبه معلَّقٌ بالمساجد، ورجلان تحابّا في الله، ورجلٌ دعته امرأةٌ ذات منصبٍ وجمالٍ فقال إني أخاف الله، ورجلٌ تصدّق بصدقةٍ فأخفاها حتى لا تعلم شماله ما تنفق يمينه، ورجلٌ ذكر الله خاليًا ففاضت عيناه.\n\nوكلُّها في متناول الناس. ولهذا سمّاها تسميةً ولم يصفها وصفًا مبهمًا.",
     points: [
@@ -300,7 +300,7 @@ const JUDGEMENT_STAGES = [
     title: "Two kinds of faces — and how the Day feels from inside each",
     titleAr: "وجهان يومئذٍ — وكيف يمرّ اليوم على كلٍّ منهما",
     lead: "The Quran describes the Day not only from the outside but from inside the person living it. Two sets of faces, and two completely different experiences of the same length of time.",
-    leadAr: "وصف القرآن ذلك اليوم لا من خارجه فحسب، بل من داخل من يعيشه: وجهان، وشعوران مختلفان تمامًا بالمدّة نفسها.",
+    leadAr: "وصف القرآن ذلك اليوم لا من خارجه فقط، بل من داخل من يعيشه: وجهان، وشعوران مختلفان تمامًا بالمدّة نفسها.",
     plain: "In plain words: the same day is not the same length for everyone living it.\n\nThe Quran describes two kinds of faces — some bright and laughing, some covered in dust and darkness — and describes the day itself as heavy on one group and light on the other. The difference is not in the day. It is in who is standing in it.",
     plainAr: "بكلامٍ بسيط: اليومُ الواحد ليس واحدًا عند من يعيشونه.\n\nوصف القرآن وجهين: وجوهًا مسفرةً ضاحكةً مستبشرة، ووجوهًا ﴿عَلَيۡهَا غَبَرَةٞ ۝ تَرۡهَقُهَا قَتَرَةٌ﴾. ووصف اليوم نفسه بأنه ثقيلٌ على قومٍ يسيرٌ على آخرين. فالفرقُ ليس في اليوم، وإنما فيمن يقف فيه.",
     points: [
@@ -390,7 +390,7 @@ const JUDGEMENT_STAGES = [
     lead: "Scales of justice are set, and nothing is wronged in the slightest.",
     leadAr: "وتُوضع الموازين القسط فلا تُظلم نفسٌ شيئًا.",
     plain: "In plain words: deeds are weighed, and the weighing is exact down to the smallest thing there is.\n\nAnd weight is not the same as amount. A small thing done sincerely can outweigh a pile of things done to be seen. That is the whole reason the Scales are mentioned — so that nobody assumes a long record is automatically a heavy one.",
-    plainAr: "بكلامٍ بسيط: تُوزن الأعمال، والوزنُ دقيقٌ إلى أصغر شيء.\n\nوليس الوزنُ هو الكثرة: فقد يرجح القليلُ الخالصُ كومًا عُمل رياءً. وهذا هو سببُ ذكر الموازين أصلًا: لئلّا يظنّ أحدٌ أنّ طول الصحيفة يعني ثِقَلها.",
+    plainAr: "بكلامٍ بسيط: تُوزن الأعمال، والوزنُ دقيقٌ إلى أصغر شيء.\n\nوليس الوزنُ هو الكثرة: فقد يرجح القليلُ الخالصُ كومًا عُمل رياءً. وهذا هو سببُ ذكر الموازين أصلًا: حتى لا يظنّ أحدٌ أنّ طول الصحيفة يعني ثِقَلها.",
     points: [
       { en: "Not the weight of a mustard seed is lost.",
         ar: "ولا يضيع ﴿مِثۡقَالَ حَبَّةٖ مِّنۡ خَرۡدَلٍ﴾.",

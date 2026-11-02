@@ -327,7 +327,7 @@ const PROPHETS = [
     titleAr: "إسرائيل",
     category: "prophet",
     summary: "The son of Ishaq and father of twelve sons including Yusuf, Yaqub (also called Israel) endured years of grief over the loss of his son Yusuf, yet never lost hope in Allah's mercy, and was eventually reunited with him in Egypt.",
-    summaryAr: "ابنُ إسحاق عليه السلام، وأبو الأسباط الاثني عشر ومنهم يوسف، ويُسمّى إسرائيل. قاسى سنينَ من الحزن على فقد ابنه يوسف، وما يئس من رحمة الله قطّ، حتى جمع الله بينهما في مصر.",
+    summaryAr: "ابنُ إسحاق عليه السلام، وأبو الأسباط الاثني عشر ومنهم يوسف، ويُسمّى إسرائيل. قاسى سنينَ من الحزن على فقد ابنه يوسف، وما يئس من رحمة الله أبدًا، حتى جمع الله بينهما في مصر.",
     refs: [
       "Surah Yusuf (12) — Yaqub's patience throughout his son's story",
       "Surah Al-Baqarah (2:132-133) — his advice to his sons before passing away"
@@ -587,7 +587,7 @@ const PROPHETS = [
     titleAr: "نبيّ بابل",
     category: "prophet",
     summary: "Danyal is mentioned in Islamic tradition as a prophet among the Children of Israel who lived during the Babylonian exile. When his grave was discovered during the conquest of Tustar, the Caliph Omar ordered that he be reburied in a hidden location to prevent veneration.",
-    summaryAr: "يُذكر في الأخبار الإسلامية أنه نبيٌّ من أنبياء بني إسرائيل عاش في زمن السبي البابليّ. ولمّا اكتُشف قبرُه في فتوح تُستَر أمر الخليفةُ عمرُ رضي الله عنه بإعادة دفنه في موضعٍ خفيٍّ لئلّا يُعظَّم قبرُه ويُفتتن به الناس.",
+    summaryAr: "يُذكر في الأخبار الإسلامية أنه نبيٌّ من أنبياء بني إسرائيل عاش في زمن السبي البابليّ. ولمّا اكتُشف قبرُه في فتوح تُستَر أمر الخليفةُ عمرُ رضي الله عنه بإعادة دفنه في موضعٍ خفيٍّ حتى لا يُعظَّم قبرُه ويُفتتن به الناس.",
     refs: [
       "Musannaf Ibn Abi Shaybah — account of the discovery of Danyal's body during Omar's caliphate",
       "Ibn Kathir, Al-Bidaya wan-Nihaya — his mention among the prophets of Israel"
@@ -833,7 +833,7 @@ const COMPANIONS = [
     titleAr: "سيف الله المسلول",
     category: "companion",
     summary: "A brilliant military commander who, after embracing Islam, led Muslim armies to numerous victories without ever losing a battle. The Prophet ﷺ gave him the title 'Sword of Allah'.",
-    summaryAr: "قائدٌ عسكريٌّ فذّ، قاد جيوش المسلمين بعد إسلامه إلى انتصاراتٍ كثيرة، ولم يُهزم في معركةٍ قطّ. ولقّبه النبيُّ ﷺ بسيفِ الله المسلول.",
+    summaryAr: "قائدٌ عسكريٌّ فذّ، قاد جيوش المسلمين بعد إسلامه إلى انتصاراتٍ كثيرة، ولم يُهزم في معركةٍ أبدًا. ولقّبه النبيُّ ﷺ بسيفِ الله المسلول.",
     refs: [
       "Sahih al-Bukhari — the title 'Sword of Allah' given by the Prophet ﷺ",
       "Historical accounts of the Battles of Mu'tah, Yamamah, and the conquests of Syria and Iraq"
@@ -1211,7 +1211,7 @@ const COMPANIONS = [
     titleAr: "خادم رسول الله ﷺ",
     category: "companion",
     summary: "Anas served the Prophet ﷺ from the age of ten for about ten years, and the Prophet ﷺ never once scolded him. He became one of the most prolific narrators of hadith and lived to be over one hundred years old.",
-    summaryAr: "خدم النبيَّ ﷺ من عمر العاشرة نحوَ عشر سنين، فما عاتبه النبيُّ ﷺ على شيءٍ قطّ. وصار من أكثر الصحابة روايةً للحديث، وعُمِّر حتى جاوز المئة سنة.",
+    summaryAr: "خدم النبيَّ ﷺ من عمر العاشرة نحوَ عشر سنين، فما عاتبه النبيُّ ﷺ على شيءٍ أبدًا. وصار من أكثر الصحابة روايةً للحديث، وعُمِّر حتى جاوز المئة سنة.",
     refs: [
       "Sahih al-Bukhari — 'He never said to me \"why did you do this\" or \"why didn't you do that\"'",
       "Sahih Muslim — among the companions who narrated the most hadith"
@@ -2006,7 +2006,7 @@ const HADITHS = [
     titleAr: "القوّة الحقّة أن تملك نفسك عند الغضب",
     strength: "Sahih — Narrated by al-Bukhari",
     explain: "He redefines a word his listeners thought they knew. The strong man is not the one who wins a wrestling match; he is the one who controls himself at the moment of anger. And notice the moment specified — not who never gets angry, but who holds himself AT the moment. The feeling is not the sin; what is done in the next ten seconds is.",
-    explainAr: "أعاد ﷺ حدَّ لفظٍ ظنّ سامعوه أنهم يعرفونه: فليس الشديدُ بالصُّرَعة، وإنما الشديدُ الذي يملك نفسه عند الغضب. وتأمّل الموضع المذكور: لم يقل من لا يغضب، وإنما من يملك نفسه عندها. فليس الوِجدانُ هو الذنب، وإنما ما يُصنع في العشر الثواني التالية.",
+    explainAr: "أعاد ﷺ حدَّ لفظٍ ظنّ سامعوه أنهم يعرفونه: فليس الشديدُ بالصُّرَعة، وإنما الشديدُ الذي يملك نفسه عند الغضب. وانظر الموضع المذكور: لم يقل من لا يغضب، وإنما من يملك نفسه عندها. فليس الوِجدانُ هو الذنب، وإنما ما يُصنع في العشر الثواني التالية.",
     /* Added because "أنا كثير الغضب" was returning the ruling on backbiting
        instead of this. With no keys, an Arabic question could only reach this
        entry through the hadith wording itself, which carries harakat and is
@@ -2475,7 +2475,7 @@ const HADITHS = [
     titleAr: "الوشم والنمص وتغيير خلق الله",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     explain: "The last phrase is the reason for all of it: those who ALTER THE CREATION OF ALLAH. The objection is not to ink or to wanting to look well — it is to permanently changing the body as though what you were given were a first draft. Notice it names the one who does it and the one who asks for it: the tattooist and the customer both. For example: someone who already had a tattoo before becoming Muslim owes nothing for it, and does not have to remove it if that means real harm or scarring — what is asked is that it not be added to.",
-    explainAr: "الجملةُ الأخيرة هي علّةُ ذلك كلِّه: «المغيّراتِ خلقَ الله». فليس الإنكارُ على الحبر ولا على إرادة الحُسن، وإنما على تغيير البدن تغييرًا لازمًا كأنّ الذي أُعطيتَه مسوّدةٌ أولى. وتأمّل أنه ذكر الفاعلة والطالبة جميعًا: الواشمَ والمستوشم. مثال: من كان عليه وشمٌ قبل إسلامه فلا شيء عليه فيه، ولا يلزمه نزعُه إن كان فيه ضررٌ أو تشويه — وإنما المطلوب ألّا يُزاد عليه.",
+    explainAr: "الجملةُ الأخيرة هي علّةُ ذلك كلِّه: «المغيّراتِ خلقَ الله». فليس الإنكارُ على الحبر ولا على إرادة الحُسن، وإنما على تغيير البدن تغييرًا لازمًا كأنّ الذي أُعطيتَه مسوّدةٌ أولى. وانظر أنه ذكر الفاعلة والطالبة جميعًا: الواشمَ والمستوشم. مثال: من كان عليه وشمٌ قبل إسلامه فلا شيء عليه فيه، ولا يلزمه نزعُه إن كان فيه ضررٌ أو تشويه — وإنما المطلوب ألّا يُزاد عليه.",
     keys: ["tattoo","tattoos","tatoo","tato","tatto","tattooing","eyebrows","plucking eyebrows","threading","altering creation","permanent makeup","microblading","is a tattoo haram",
            "الوشم","وشم","الوشوم","التاتو","تاتو","النمص","الحواجب","نتف الحاجب","تغيير خلق الله","حكم الوشم"]
   },
@@ -2489,7 +2489,7 @@ const HADITHS = [
     titleAr: "الموبقات السبع، مسمّاةً",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     explain: "\"Mubiqat\" comes from the word for ruin, not from disapproval — these are the things that destroy a man. Notice what is in the list: TWO of the seven are about money (interest, and an orphan's inheritance), and one is about a single sentence said about a woman with no proof. People expect a list of major sins to be about wine and adultery; most of this one is about what you take from other people and what you say about them.",
-    explainAr: "«الموبقات» من الهلاك لا من مجرّد الكراهة — فهي المهلكات. وتأمّل ما في العدّ: فاثنتان من السبع في المال (الربا وميراث اليتيم)، وواحدةٌ في جملةٍ تُقال عن امرأةٍ بغير بيّنة. ويتوقّع الناسُ أن يكون عدُّ الكبائر في الخمر والزنا، وأكثرُ هذا فيما تأخذه من الناس وما تقوله فيهم.",
+    explainAr: "«الموبقات» من الهلاك لا من مجرّد الكراهة — فهي المهلكات. وانظر ما في العدّ: فاثنتان من السبع في المال (الربا وميراث اليتيم)، وواحدةٌ في جملةٍ تُقال عن امرأةٍ بغير بيّنة. ويتوقّع الناسُ أن يكون عدُّ الكبائر في الخمر والزنا، وأكثرُ هذا فيما تأخذه من الناس وما تقوله فيهم.",
     keys: ["major sins","biggest sins","seven destructive sins","kabair","list of major sins","worst sins","mubiqat","what are the major sins",
            "الكبائر","اكبر الكبائر","الموبقات","السبع الموبقات","اعظم الذنوب","ما هي الكبائر"]
   },
@@ -2520,7 +2520,7 @@ const HADITHS = [
     titleAr: "شهادة الزور — واللحظة التي جلس فيها",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     explain: "The narrators kept a detail that is the whole explanation: he had been RECLINING, and he sat upright before saying the third one, and then repeated it until they wished he would stop. A man who sits up before speaking is doing what any of us does when the next sentence matters more than the last. And notice how ordinary the sin is — \"false speech\" is not only perjury in a court. It covers signing what you did not check, backing a relative's version because he is a relative, and letting a lie stand in a dispute because correcting it is awkward.",
-    explainAr: "حفظ الرواةُ قرينةً هي البيانُ كلُّه: أنه كان متّكئًا فاستوى جالسًا قبل أن يذكر الثالثة، ثم كرّرها حتى تمنّوا لو سكت. والمتّكئُ إذا جلس قبل الكلام فإنما يصنع ما يصنعه أحدُنا إذا كانت الجملةُ التالية أثقل. وتأمّل كم هي عاديّة: فقولُ الزور ليس الشهادةَ أمام قاضٍ فحسب، بل يشمل أن توقّع على ما لم تتحقّق منه، وأن تؤيّد رواية قريبك لأنه قريبك، وأن تدع الكذبةَ قائمةً في خصومةٍ لأنّ تصحيحها ثقيل.",
+    explainAr: "حفظ الرواةُ قرينةً هي البيانُ كلُّه: أنه كان متّكئًا فاستوى جالسًا قبل أن يذكر الثالثة، ثم كرّرها حتى تمنّوا لو سكت. والمتّكئُ إذا جلس قبل الكلام فإنما يصنع ما يصنعه أحدُنا إذا كانت الجملةُ التالية أثقل. وانظر كم هي عاديّة: فقولُ الزور ليس الشهادةَ أمام قاضٍ فقط، بل يشمل أن توقّع على ما لم تتحقّق منه، وأن تؤيّد رواية قريبك لأنه قريبك، وأن تدع الكذبةَ قائمةً في خصومةٍ لأنّ تصحيحها ثقيل.",
     keys: ["false testimony","false witness","perjury","lying in court","greatest sins","disobeying parents","bearing false witness","signed something untrue",
            "شهادة الزور","قول الزور","الزور","اكبر الكبائر","عقوق الوالدين","الشهادة الكاذبة"]
   },
@@ -2548,7 +2548,7 @@ const HADITHS = [
     titleAr: "البلل تحت الطعام",
     strength: "Sahih — Narrated by Muslim",
     explain: "Three things at once. The wet grain was REAL — the man had not lied, he had arranged. An omission is therefore a lie: nothing false was said, the bad simply went where it would not be seen. And the price is being told \"not of me\" by the one you follow. The modern shapes are identical: the fault the seller does not mention, the mileage, the photograph taken from the good angle, the term buried on page nine.",
-    explainAr: "ثلاثةٌ في وقتٍ واحد: أنّ البلل كان حقًّا — فالرجلُ لم يكذب وإنما رتّب. وأنّ الكتمان كذبٌ إذًا: فلم يُقل باطل، وإنما وُضع الرديءُ حيث لا يُرى. وأنّ الثمن أن يقول لك من تتبعه: «فليس منّي». وصورُه اليوم هي هي: عيبٌ لا يذكره البائع، وعدّادُ سيّارة، وصورةٌ من الزاوية الحسنة، وشرطٌ مدفونٌ في الصفحة التاسعة.",
+    explainAr: "ثلاثةٌ في وقتٍ واحد: أنّ البلل كان حقًّا — فالرجلُ لم يكذب وإنما رتّب. وأنّ الكتمان كذبٌ إذن: فلم يُقل باطل، وإنما وُضع الرديءُ حيث لا يُرى. وأنّ الثمن أن يقول لك من تتبعه: «فليس منّي». وصورُه اليوم هي هي: عيبٌ لا يذكره البائع، وعدّادُ سيّارة، وصورةٌ من الزاوية الحسنة، وشرطٌ مدفونٌ في الصفحة التاسعة.",
     keys: ["cheating","cheating in business","hiding a fault","dishonest trade","ghish","scam","faulty car","cheating customers","exam cheating",
            "الغش","غش في البيع","كتم العيب","التدليس","خداع الزبون","الغش في الامتحان"]
   },
@@ -2562,7 +2562,7 @@ const HADITHS = [
     titleAr: "الرشوة — وقد سُمّيت اليدان",
     strength: "Outside the two Sahihs — narrated by at-Tirmidhi, who graded it hasan sahih", strengthAr: "خارج الصحيحين — رواه الترمذي وقال: حسنٌ صحيح",
     explain: "Two people are cursed, not one — which answers the excuse everybody in our countries has ready: \"I didn't want to, that is just how things work here.\" The giver is named as well as the taker. The scholars do discuss the man who can obtain a right that is genuinely HIS by no other means, and many hold the sin then falls on the taker alone — but that is a narrow exception for something you already own, not for jumping a queue, winning a contract or getting a grade.",
-    explainAr: "لُعن اثنان لا واحد — وفي هذا جوابُ العذر المُعدّ في بلادنا: «لم أُرد ذلك، ولكن هكذا تجري الأمور». فسُمّي الدافعُ كما سُمّي الآخذ. وقد بحث أهلُ العلم حالَ من لا يصل إلى حقٍّ هو حقُّه إلا بذلك، وذهب كثيرون إلى أنّ الإثم حينئذٍ على الآخذ وحده — وهو استثناءٌ ضيّقٌ في حقٍّ تملكه، لا في تقدّمٍ على صفٍّ ولا ظفرٍ بعقدٍ ولا درجةٍ في امتحان.",
+    explainAr: "لُعن اثنان لا واحد — وفي هذا جوابُ العذر المُعدّ في بلادنا: «لم أُرد ذلك، ولكن هكذا تجري الأمور». فسُمّي الدافعُ كما سُمّي الآخذ. وقد بحث أهلُ العلم حالَ من لا يصل إلى حقٍّ هو حقُّه إلا بذلك، وذهب كثيرون إلى أنّ الإثم عندها على الآخذ وحده — وهو استثناءٌ ضيّقٌ في حقٍّ تملكه، لا في تقدّمٍ على صفٍّ ولا ظفرٍ بعقدٍ ولا درجةٍ في امتحان.",
     keys: ["bribery","bribe","baksheesh","backhander","kickback","under the table","is a bribe haram","corruption","wasta",
            "الرشوة","رشوة","الراشي","المرتشي","بخشيش","اكرامية","الواسطة","الفساد"]
   },
@@ -3305,7 +3305,7 @@ const WORSHIP_STEPS = [
     whenAr: "عقب فراغ المؤذّن، بعد أن تردّد معه.",
     arabic: "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
     meaning: "O Allah, Lord of this perfect call and the prayer about to be established — grant Muhammad the wasilah and the excellence, and raise him to the praised station You promised him. He ﷺ said whoever says this on hearing the call, his intercession becomes due for him on the Day of Resurrection. Note what it asks for: it asks nothing for yourself. You ask for HIM — and the reward is his intercession for you.",
-    meaningAr: "وقال ﷺ: مَن قالها حين يسمع النداء حلّت له شفاعته يوم القيامة. وتأمّل ما فيها: لا تسأل لنفسك شيئًا، وإنما تسأل له ﷺ — فيكون الجزاء شفاعته لك.",
+    meaningAr: "وقال ﷺ: مَن قالها حين يسمع النداء حلّت له شفاعته يوم القيامة. وانظر ما فيها: لا تسأل لنفسك شيئًا، وإنما تسأل له ﷺ — فيكون الجزاء شفاعته لك.",
     ref: "Sahih al-Bukhari, Book of the Call to Prayer, Hadith 614 — narrated from Jabir ibn Abdullah", refAr: "صحيح البخاري، كتاب الأذان، حديث ٦١٤ — عن جابر بن عبد الله",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["adhan","after adhan","wasilah","intercession","shafaah","الأذان","دعاء الأذان","الوسيلة","الشفاعة","المقام المحمود"]
@@ -3335,7 +3335,7 @@ const WORSHIP_STEPS = [
     count: "the istighfar three times",
     countAr: "الاستغفار ثلاثًا",
     meaning: "I seek Allah's forgiveness — three times — then: O Allah, You are Peace and from You is peace; blessed are You, Owner of Majesty and Honour. Sit with the order of it: he finishes the prayer and the first thing he does is ask forgiveness. If he ﷺ ended a prayer by seeking forgiveness for it, nobody else should walk away from theirs feeling it was owed.",
-    meaningAr: "وتأمّل ترتيبها: يفرغ من الصلاة فيكون أول ما يصنع الاستغفار. فإذا كان ﷺ يختم صلاته بالاستغفار منها، فليس لأحدٍ أن ينصرف من صلاته وهو يرى له بها فضلًا.",
+    meaningAr: "وانظر ترتيبها: يفرغ من الصلاة فيكون أول ما يصنع الاستغفار. فإذا كان ﷺ يختم صلاته بالاستغفار منها، فليس لأحدٍ أن ينصرف من صلاته وهو يرى له بها فضلًا.",
     ref: "Sahih Muslim, Book of Mosques and Places of Prayer — narrated from Thawban", refAr: "صحيح مسلم، كتاب المساجد ومواضع الصلاة — عن ثوبان",
     strength: "Sahih — Narrated by Muslim",
     keys: ["after prayer","salam","istighfar","as-salam","بعد الصلاة","السلام","الاستغفار","اللهم أنت السلام","أذكار بعد الصلاة"]
@@ -3365,7 +3365,7 @@ const WORSHIP_STEPS = [
     whenAr: "في دُبُر كلّ صلاة.",
     arabic: "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
     meaning: "O Allah, help me to remember You, to thank You, and to worship You well. He ﷺ took Mu'adh ibn Jabal by the hand, told him twice that he loved him, and then gave him this. Notice the third request — not merely to worship, but to worship WELL. And notice that all three are requests for HELP: even remembering Him is something you ask His help to do.",
-    meaningAr: "أخذ ﷺ بيد معاذ بن جبل وأخبره مرّتين أنه يحبّه ثم أوصاه بهذا. وتأمّل الطلب الثالث: ليس أن يعبد فحسب بل أن يُحسن العبادة. وتأمّل أنّ الثلاثة كلَّها سؤالُ عون: حتى ذكرُه سبحانه تسأله العون عليه.",
+    meaningAr: "أخذ ﷺ بيد معاذ بن جبل وأخبره مرّتين أنه يحبّه ثم أوصاه بهذا. وانظر الطلب الثالث: ليس أن يعبد فقط بل أن يُحسن العبادة. وانظر أنّ الثلاثة كلَّها سؤالُ عون: حتى ذكرُه سبحانه تسأله العون عليه.",
     ref: "Sunan Abu Dawud, Book of Prayer, Hadith 1522 — narrated from Mu'adh ibn Jabal", refAr: "سنن أبي داود، كتاب الصلاة، حديث ١٥٢٢ — عن معاذ بن جبل",
     strength: "Outside the two Sahihs — narrated by Abu Dawud; graded Sahih by al-Albani and by Shu'ayb al-Arna'ut", strengthAr: "خارج الصحيحين — رواه أبو داود، وصحّحه الألباني وشعيب الأرناؤوط",
     keys: ["muadh","after prayer","help me","dhikr","gratitude","worship well","معاذ","دبر كل صلاة","أعني على ذكرك","الشكر","حسن العبادة"]
@@ -3395,7 +3395,7 @@ const WORSHIP_STEPS = [
     whenAr: "عند الكرب الحقيقي: الخبر الذي كنت تخشاه، والأمر الذي لا تملك له حيلة.",
     arabic: "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ",
     meaning: "There is no god but Allah, the Magnificent, the Forbearing. There is no god but Allah, Lord of the Mighty Throne. There is no god but Allah, Lord of the heavens and Lord of the earth and Lord of the Noble Throne. Notice that it contains no request at all. It is pure declaration of who He is — and that is the point: at the moment you are smallest, you are reminded of the size of the One you are speaking to.",
-    meaningAr: "وتأمّل أنه ليس فيه سؤالٌ البتّة، وإنما هو تعظيمٌ محضٌ لمن تدعوه — وهذا هو المقصود: في أضعف ما تكون، تُذكَّر بعظمة من تخاطبه.",
+    meaningAr: "وانظر أنه ليس فيه سؤالٌ أبدًا، وإنما هو تعظيمٌ محضٌ لمن تدعوه — وهذا هو المقصود: في أضعف ما تكون، تُذكَّر بعظمة من تخاطبه.",
     ref: "Sahih al-Bukhari, Book of Invocations, Hadith 6346 — narrated from Ibn Abbas; also Sahih Muslim", refAr: "صحيح البخاري، كتاب الدعوات، حديث ٦٣٤٦ — عن ابن عباس، ورواه مسلم",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["distress","karb","anxiety","panic","crisis","hardship","worry","scared","afraid","الكرب","الهمّ","الضيق","الشدة","القلق","دعاء الكرب","خائف","خائفة","أشعر بالخوف"]
@@ -3524,7 +3524,7 @@ const STORY_SECTIONS = [
   { id: "forgiveness", order: 2, icon: "🕊️",
     en: "Forgiveness when he had the power", ar: "العفو عند المقدرة",
     leadEn: "Every one of these is a moment when he could have taken revenge and did not — which is the only time forgiveness means anything.",
-    leadAr: "كلُّ موقفٍ منها ساعةٌ كان يقدر فيها على الانتقام فلم ينتقم — وحينئذٍ فقط يكون للعفو معنى." },
+    leadAr: "كلُّ موقفٍ منها ساعةٌ كان يقدر فيها على الانتقام فلم ينتقم — وعندها فقط يكون للعفو معنى." },
   { id: "justice",     order: 3, icon: "🛡️",
     en: "Justice, anger and ruling yourself", ar: "العدل والغضب وملك النفس",
     leadEn: "What he did when the guilty person was well-connected, and what he told a man who asked for one piece of advice.",
@@ -3808,7 +3808,7 @@ const PROPHET_STORIES = [
       ]
     },
     lesson: "The Dajjal is given the most frightening thing on the list — killing and restoring a life in public — and it fails on the one man who already knew what he was. That is the whole logic of the warning. He ﷺ did not tell his people that the wonders would be small or fake-looking; he told them what the man's defect is, and that Allah has no such defect. The believer is not asked to out-argue the display. He is asked to have learnt the description beforehand. Notice too where it happens: outside Madinah, because he cannot enter it — the man walks out to him. He is not tricked into it, and he is not hiding from it.",
-    lessonAr: "يُعطى الدجّال أفظع ما في الباب — أن يقتل نفسًا ثمّ يردّها على أعين الناس — فتخيب هذه في الرجل الذي كان يعرف قبل ذلك من هو. وهذا هو منطق التحذير كلّه: فما أخبر ﷺ أمّته أنّ خوارقه ستكون صغيرةً أو ظاهرةَ الزيف، وإنّما أخبرهم بنقصه، وأنّ الله منزّهٌ عن ذلك النقص. فليس المطلوب من المؤمن أن يغلب العجيبة بالحجّة، بل أن يكون قد تعلّم الوصف قبل أن يراها. وتأمّل مكان الحادثة: خارج المدينة، لأنّه لا يدخلها؛ فالرجل هو الذي خرج إليه، ما خُدع إليه ولا اختبأ منه.",
+    lessonAr: "يُعطى الدجّال أفظع ما في الباب — أن يقتل نفسًا ثمّ يردّها على أعين الناس — فتخيب هذه في الرجل الذي كان يعرف قبل ذلك من هو. وهذا هو منطق التحذير كلّه: فما أخبر ﷺ أمّته أنّ خوارقه ستكون صغيرةً أو ظاهرةَ الزيف، وإنّما أخبرهم بنقصه، وأنّ الله منزّهٌ عن ذلك النقص. فليس المطلوب من المؤمن أن يغلب العجيبة بالحجّة، بل أن يكون قد تعلّم الوصف قبل أن يراها. وانظر مكان الحادثة: خارج المدينة، لأنّه لا يدخلها؛ فالرجل هو الذي خرج إليه، ما خُدع إليه ولا اختبأ منه.",
     ref: "Sahih al-Bukhari, Book of Afflictions (Kitab al-Fitan), Hadith 7132; also narrated by Muslim in the Book of Tribulations and the Portents of the Last Hour — from Abu Sa'id al-Khudri",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["dajjal","antichrist","young man","kills","raises","resurrect","miracle","madinah","insight","martyr","الدجال","المسيح الدجال","الشاب","يقتله","يحييه","بصيرة","المدينة","خوارق","آخر الزمان"]
@@ -3931,7 +3931,7 @@ const PROPHET_STORIES = [
               ar: "ويخرج معه <strong>سبعون ألفًا</strong> من يهود أصبهان عليهم الطيالسة." }
           ] },
         { head: "So what is the test?",
-          headAr: "فما الامتحان إذًا؟",
+          headAr: "فما الامتحان إذن؟",
           points: [
             { en: "Not <strong>“will you be brave enough”</strong> — but <strong>“will you refuse the one who is feeding you”</strong>, while the neighbours who accepted him watch their fields grow.",
               ar: "ليس <strong>«أتصبر على البأس»</strong>، بل <strong>«أتردّ على من يطعمك»</strong> وجيرانك الذين استجابوا له ينظرون إلى زروعهم تنبت." }
@@ -3939,7 +3939,7 @@ const PROPHET_STORIES = [
       ]
     },
     lesson: "This is the part of the description that is least talked about and hardest to face. The Dajjal does not only frighten people into following him — he rewards them, visibly and immediately, in the one currency everyone understands: rain, crops, fat livestock, treasure out of the ground. And those who refuse are not martyred dramatically; they are simply left poor while their neighbours prosper. That is the shape of the trial. It is not asking whether you can endure torture. It is asking whether you can watch someone else be paid for the thing you refused, and still refuse it.",
-    lessonAr: "هذا أقلُّ ما يُتحدَّث عنه من الوصف، وأشقُّه على النفس. فالدجّال لا يُخوّف الناس ليتبعوه فحسب، بل يعطيهم عطاءً ظاهرًا عاجلًا بالعملة التي يفهمها كلُّ أحد: مطرٌ وزرعٌ وماشيةٌ سِمانٌ وكنوزٌ تخرج من الأرض. وأمّا من ردّه فلا يُقتلون قتلةً ظاهرة، وإنّما يُتركون في جدبٍ وجيرانهم في رخاء. فهذه صورة الفتنة: ليست سؤالًا عن احتمال العذاب، بل عن أن ترى غيرك يُعطى ثمن ما رفضتَه ثمّ تثبت على رفضه.",
+    lessonAr: "هذا أقلُّ ما يُتحدَّث عنه من الوصف، وأشقُّه على النفس. فالدجّال لا يُخوّف الناس ليتبعوه فقط، بل يعطيهم عطاءً ظاهرًا عاجلًا بالعملة التي يفهمها كلُّ أحد: مطرٌ وزرعٌ وماشيةٌ سِمانٌ وكنوزٌ تخرج من الأرض. وأمّا من ردّه فلا يُقتلون قتلةً ظاهرة، وإنّما يُتركون في جدبٍ وجيرانهم في رخاء. فهذه صورة الفتنة: ليست سؤالًا عن احتمال العذاب، بل عن أن ترى غيرك يُعطى ثمن ما رفضتَه ثمّ تثبت على رفضه.",
     ref: "Sahih Muslim, Book of Tribulations and the Portents of the Last Hour — the hadith of an-Nawwas ibn Sam'an; the seventy thousand of Isfahan is in Sahih Muslim, the same book, from Anas ibn Malik", refAr: "صحيح مسلم، كتاب الفتن وأشراط الساعة — حديث النوّاس بن سمعان؛ والسبعون ألفًا من يهود أصبهان في صحيح مسلم، الكتاب نفسه، عن أنس بن مالك",
     strength: "Sahih — Narrated by Muslim",
     keys: ["dajjal","antichrist","rain","crops","wealth","treasure","followers","isfahan","seventy thousand","drought","trial","الدجال","المطر","الزرع","الكنوز","أصبهان","سبعون ألفًا","الفتنة","الرخاء","آخر الزمان"]
@@ -4160,10 +4160,10 @@ const PROPHET_STORIES = [
     theme: "Preferring someone else over yourself",
     themeAr: "الإيثار",
     story: "A hungry man came to the Prophet ﷺ, who found nothing in his own houses to give him and asked who would host him. A man of the Ansar took him home. He had only his children's food, so he told his wife to put the children to sleep, bring the food, and put out the lamp — so the guest would not see that his hosts were not eating. In the morning the Prophet ﷺ told him Allah had marvelled at what they did, and the verse was revealed: \"they give preference over themselves, even though they are in need.\"",
-    storyAr: "جاء رجلٌ جائعٌ إلى النبي ﷺ فلم يجد في بيوته ما يُطعمه، فقال: من يُضيف هذا؟ فانطلق به رجلٌ من الأنصار، وليس عنده إلا قوت صبيانه، فقال لامرأته: نوِّمي الصبيان، وقرِّبي الطعام، وأطفئي السراج — لئلا يرى الضيف أنهما لا يأكلان. فلما أصبح أخبره النبي ﷺ أن الله عجب من صنيعهما، ونزلت: ﴿وَيُؤۡثِرُونَ عَلَىٰٓ أَنفُسِهِمۡ وَلَوۡ كَانَ بِهِمۡ خَصَاصَةٞۚ﴾.",
+    storyAr: "جاء رجلٌ جائعٌ إلى النبي ﷺ فلم يجد في بيوته ما يُطعمه، فقال: من يُضيف هذا؟ فانطلق به رجلٌ من الأنصار، وليس عنده إلا قوت صبيانه، فقال لامرأته: نوِّمي الصبيان، وقرِّبي الطعام، وأطفئي السراج — حتى لا يرى الضيف أنهما لا يأكلان. فلما أصبح أخبره النبي ﷺ أن الله عجب من صنيعهما، ونزلت: ﴿وَيُؤۡثِرُونَ عَلَىٰٓ أَنفُسِهِمۡ وَلَوۡ كَانَ بِهِمۡ خَصَاصَةٞۚ﴾.",
     arabic: "وَيُؤۡثِرُونَ عَلَىٰٓ أَنفُسِهِمۡ وَلَوۡ كَانَ بِهِمۡ خَصَاصَةٞۚ",
     lesson: "They put the lamp out so the guest would not feel the weight of what it cost them. Real generosity hides its own price — the moment the receiver feels indebted, something in the gift is spoiled.",
-    lessonAr: "أطفآ السراج لئلا يشعر الضيف بثقل ما بذلاه. والكرم الحقّ يخفي ثمنه؛ فإذا أحسّ الآخذ بالمِنّة فسد شيءٌ من العطاء.",
+    lessonAr: "أطفآ السراج حتى لا يشعر الضيف بثقل ما بذلاه. والكرم الحقّ يخفي ثمنه؛ فإذا أحسّ الآخذ بالمِنّة فسد شيءٌ من العطاء.",
     ref: "Sahih al-Bukhari, Book of the Virtues of the Ansar, Hadith 3798",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["generous","generosity","guest","hospitality","hungry","give","sacrifice","poor","كرم","إيثار","ضيف","ضيافة","جوع","عطاء","إنفاق","فقر"]
@@ -4203,11 +4203,11 @@ const PROPHET_STORIES = [
     id: "never-struck-anyone",
     section: "mercy",
     title: "He never struck anyone with his hand",
-    titleAr: "ما ضرب بيده شيئًا قطّ",
+    titleAr: "ما ضرب بيده شيئًا أبدًا",
     theme: "Power that is never used on the weak",
     themeAr: "قوّةٌ لا تُستعمل على الضعيف",
     story: "Aishah رضي الله عنها reported that the Messenger of Allah ﷺ never struck anyone with his hand — not a woman, not a servant — except when fighting in the cause of Allah. And he never took revenge for anything done to him personally; only if a sacred limit of Allah was violated did he act, and then for Allah's sake.",
-    storyAr: "قالت عائشة رضي الله عنها: ما ضرب رسول الله ﷺ شيئًا قطّ بيده، ولا امرأةً ولا خادمًا، إلا أن يجاهد في سبيل الله. وما نِيل منه شيءٌ قطّ فينتقم من صاحبه، إلا أن يُنتهك شيءٌ من محارم الله فينتقم لله عزّ وجلّ.",
+    storyAr: "قالت عائشة رضي الله عنها: ما ضرب رسول الله ﷺ شيئًا أبدًا بيده، ولا امرأةً ولا خادمًا، إلا أن يجاهد في سبيل الله. وما نِيل منه شيءٌ أبدًا فينتقم من صاحبه، إلا أن يُنتهك شيءٌ من محارم الله فينتقم لله عزّ وجلّ.",
     lesson: "He had every kind of power over the people around him and never once used it on someone who could not answer back. Anger about your own dignity, and anger about what is sacred, are not the same thing — he acted on the second and let the first go.",
     lessonAr: "كانت له كلُّ سلطةٍ على من حوله فما استعملها مرّةً على من لا يستطيع ردًّا. والغضب لنفسك غير الغضب لحرمات الله؛ فأمضى الثاني وترك الأول.",
     ref: "Sahih Muslim, Book of Virtues (Kitab al-Fada'il)", refAr: "صحيح مسلم، كتاب الفضائل",
@@ -4504,7 +4504,7 @@ const PROPHET_STORIES = [
     storyAr: "بينما رجلٌ يمشي بطريقٍ وجد غصن شوكٍ على الطريق فأخّره، فشكر الله له فغفر له.",
     arabic: "بَيْنَمَا رَجُلٌ يَمْشِي بِطَرِيقٍ وَجَدَ غُصْنَ شَوْكٍ عَلَى الطَّرِيقِ فَأَخَّرَهُ، فَشَكَرَ اللَّهُ لَهُ فَغَفَرَ لَهُ",
     lesson: "He was not on his way to do anything religious. He saw something that would hurt a stranger he would never meet, and moved it. The wording is worth stopping at: Allah thanked HIM.",
-    lessonAr: "لم يكن خارجًا لعبادة، وإنما رأى ما يؤذي عابر سبيلٍ لا يعرفه فأزاحه. وتأمّل اللفظ: فشكر اللهُ له.",
+    lessonAr: "لم يكن خارجًا لعبادة، وإنما رأى ما يؤذي عابر سبيلٍ لا يعرفه فأزاحه. وانظر اللفظ: فشكر اللهُ له.",
     ref: "Sahih al-Bukhari, Book of Adhan, Hadith 652 — and Sahih Muslim",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["thorn", "road", "small deed", "charity", "forgiven", "removing harm",
@@ -4521,7 +4521,7 @@ const PROPHET_STORIES = [
     storyAr: "سرقت امرأةٌ من بني مخزوم — وهم من بيوتات قريش الشريفة — فأهمّ قريشًا شأنها أن يقع الحدّ على واحدةٍ منهم، فأخذوا يلتمسون من يكلّم النبيَّ ﷺ في أمرها. فقالوا: ومن يجترئ عليه؟ فقالوا: ما من أحدٍ إلا أسامة بن زيد، حِبُّ رسول الله ﷺ.\n\nفكلّمه أسامة، فقال رسول الله ﷺ: «أتشفع في حدٍّ من حدود الله؟»\n\nثم قام فاختطب في الناس فقال: «إنما أهلك الذين قبلكم أنهم كانوا إذا سرق فيهم الشريف تركوه، وإذا سرق فيهم الضعيف أقاموا عليه الحدّ. وايمُ الله، لو أنّ فاطمة ابنة محمدٍ سرقت لقطعتُ يدها».",
     arabic: "إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ، وَإِذَا سَرَقَ فِيهِمُ الضَّعِيفُ أَقَامُوا عَلَيْهِ الْحَدَّ",
     lesson: "He named the exact mechanism by which a society rots, and it is not the theft. It is one law for the connected and another for the weak. Notice also who he refused: Usamah was not a stranger, he was the person most beloved to him, and he was told plainly that closeness to the Prophet ﷺ buys nothing here. And notice the example he chose to make the point unanswerable — not a distant relative, but his own daughter, by name.\n\nThis is worth reading beside the Golden Age of this ummah and beside its decline. A civilisation is not destroyed from outside first. It is destroyed when its own people stop believing the law applies upward as well as downward.",
-    lessonAr: "سمّى ﷺ العلّة التي تتعفّن بها المجتمعات على وجه التحديد، وليست هي السرقة، بل أن يكون للشريف حكمٌ وللضعيف حكمٌ آخر. وتأمّل من ردّه: فأسامة ليس غريبًا، بل هو أحبّ الناس إليه، وقيل له صريحًا إنّ القرب من رسول الله ﷺ لا يشتري في هذا الباب شيئًا. وتأمّل المثال الذي ضربه ليقطع كلّ جواب: لم يذكر قريبًا بعيدًا، بل ذكر ابنته باسمها.\n\nويحسن أن يُقرأ هذا مع العصر الذهبي لهذه الأمّة ومع انحدارها. فالحضارة لا تُهدم من خارجٍ أولًا، وإنما تُهدم حين يكفّ أهلها عن الإيمان بأنّ الحكم يجري على من فوق كما يجري على من دون.",
+    lessonAr: "سمّى ﷺ العلّة التي تتعفّن بها المجتمعات على وجه التحديد، وليست هي السرقة، بل أن يكون للشريف حكمٌ وللضعيف حكمٌ آخر. وانظر من ردّه: فأسامة ليس غريبًا، بل هو أحبّ الناس إليه، وقيل له صريحًا إنّ القرب من رسول الله ﷺ لا يشتري في هذا الباب شيئًا. وانظر المثال الذي ضربه ليقطع كلّ جواب: لم يذكر قريبًا بعيدًا، بل ذكر ابنته باسمها.\n\nويحسن أن يُقرأ هذا مع العصر الذهبي لهذه الأمّة ومع انحدارها. فالحضارة لا تُهدم من خارجٍ أولًا، وإنما تُهدم حين يكفّ أهلها عن الإيمان بأنّ الحكم يجري على من فوق كما يجري على من دون.",
     ref: "Sahih al-Bukhari, Book of the Stories of the Prophets, Hadith 3475; also narrated by Muslim in the Book of Prescribed Punishments",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["justice", "law", "theft", "stealing", "makhzum", "usamah", "fatimah", "corruption", "favouritism", "equal before the law", "wasta",
@@ -4572,7 +4572,7 @@ const PROPHET_STORIES = [
     storyAr: "قال المعرور: لقيتُ أبا ذرٍّ رضي الله عنه بالرَّبَذة وعليه حُلّة وعلى غلامه حُلّةٌ مثلها، فسألته عن ذلك.\n\nفقال: إني ساببتُ رجلًا فعيّرتُه بأمّه. فقال لي النبيُّ ﷺ: «يا أبا ذرٍّ، أعيّرتَه بأمّه؟ إنك امرؤٌ فيك جاهليّة. إخوانكم خَوَلُكم، جعلهم الله تحت أيديكم، فمن كان أخوه تحت يده فليُطعمه ممّا يأكل، وليُلبسه ممّا يلبس، ولا تُكلّفوهم ما يغلبهم، فإن كلّفتموهم فأعينوهم».",
     arabic: "إِخْوَانُكُمْ خَوَلُكُمْ، جَعَلَهُمُ اللَّهُ تَحْتَ أَيْدِيكُمْ، فَمَنْ كَانَ أَخُوهُ تَحْتَ يَدِهِ فَلْيُطْعِمْهُ مِمَّا يَأْكُلُ، وَلْيُلْبِسْهُ مِمَّا يَلْبَسُ",
     lesson: "The best part of this story is not the instruction. It is the garment. Al-Ma'rur met Abu Dharr years later, in a different town, and the first thing he noticed was that the servant was dressed exactly as well as the master — so he asked. That is what it looks like when a correction is actually accepted: not an apology, but a habit visible to a stranger long afterwards.\n\nAnd note what the Prophet ﷺ called the fault. Not rudeness — jahiliyyah, the thing Islam came to end, still sitting inside one of his own companions. He named it in one sentence and then gave the practical remedy in the next: your food, your clothing, and do not load them beyond what they can carry.",
-    lessonAr: "وأحسن ما في هذا الخبر ليس الوصيّة، بل الحُلّة. فقد لقي المعرورُ أبا ذرٍّ بعد سنين في بلدٍ آخر، فكان أول ما لفته أنّ الغلام يلبس مثل ما يلبس سيّده سواءً بسواء، فسأله. وهكذا تكون التوبة من الخطأ حقًّا: ليست اعتذارًا يُقال، بل عادةً يراها الغريب بعد حين.\n\nوتأمّل بمَ سمّى النبيُّ ﷺ الخطأ: لم يسمّه سوء أدب، بل سمّاه جاهليّةً — وهي التي جاء الإسلام ليمحوها — باقيةً في رجلٍ من أصحابه. سمّاها في جملة، ثم أعطى الدواء العمليّ في التي تليها: من طعامك، ومن لباسك، ولا تحمّلهم فوق طاقتهم.",
+    lessonAr: "وأحسن ما في هذا الخبر ليس الوصيّة، بل الحُلّة. فقد لقي المعرورُ أبا ذرٍّ بعد سنين في بلدٍ آخر، فكان أول ما لفته أنّ الغلام يلبس مثل ما يلبس سيّده سواءً بسواء، فسأله. وهكذا تكون التوبة من الخطأ حقًّا: ليست اعتذارًا يُقال، بل عادةً يراها الغريب بعد حين.\n\nوانظر بمَ سمّى النبيُّ ﷺ الخطأ: لم يسمّه سوء أدب، بل سمّاه جاهليّةً — وهي التي جاء الإسلام ليمحوها — باقيةً في رجلٍ من أصحابه. سمّاها في جملة، ثم أعطى الدواء العمليّ في التي تليها: من طعامك، ومن لباسك، ولا تحمّلهم فوق طاقتهم.",
     ref: "Sahih al-Bukhari, Book of Belief (Kitab al-Iman), Hadith 30; also narrated by Muslim in the Book of Oaths",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["servant", "worker", "employee", "slave", "abu dharr", "insult", "racism", "dignity", "staff", "boss",
@@ -4606,7 +4606,7 @@ const PROPHET_STORIES = [
     storyAr: "قال عبد الله بن عمرو بن العاص رضي الله عنهما: قال لي رسول الله ﷺ: «يا عبد الله، ألم أُخبَر أنك تصوم النهار وتقوم الليل؟» قلت: بلى يا رسول الله.\n\nقال: «فلا تفعل. صُمْ وأفطِر، وقُمْ ونَمْ، فإنّ لجسدك عليك حقًّا، وإنّ لعينك عليك حقًّا، وإنّ لزوجك عليك حقًّا».",
     arabic: "فَإِنَّ لِجَسَدِكَ عَلَيْكَ حَقًّا، وَإِنَّ لِعَيْنِكَ عَلَيْكَ حَقًّا، وَإِنَّ لِزَوْجِكَ عَلَيْكَ حَقًّا",
     lesson: "The man was not doing anything forbidden. He was fasting and praying — and he was told to stop. That is worth sitting with, because it cuts against the instinct that more is always better.\n\nAnd notice the word he used: haqq, a right. Not a concession, not a permission, not \"it is alright to rest sometimes\". Your body has a claim on you that you owe, your eyes have a claim on you, and the person you married has a claim on you. Neglecting them is not extra piety; it is a debt going unpaid. A religion that produced the hospitals, the observatories and the libraries of the Golden Age was never going to be a religion that told a man to ruin his body.",
-    lessonAr: "لم يكن الرجل يصنع محرَّمًا، وإنما كان يصوم ويصلّي، ومع ذلك قيل له: لا تفعل. وهذا موضع تأمّل، فإنه يخالف ما تنزع إليه النفوس من أنّ الزيادة خيرٌ أبدًا.\n\nوتأمّل اللفظ الذي استعمله: «حقًّا». لا رخصةً ولا إذنًا ولا أنه «لا بأس أن تستريح أحيانًا»، بل لبدنك عليك حقٌّ تؤدّيه، ولعينك عليك حقٌّ، ولمن تزوّجتَ عليك حقّ. فإضاعتها ليست زيادةً في التقوى، بل هي دَينٌ لم يُقضَ. ودينٌ أنشأ بيمارستانات العصر الذهبي ومراصده وخزائن كتبه ما كان ليأمر رجلًا أن يُتلف بدنه.",
+    lessonAr: "لم يكن الرجل يصنع محرَّمًا، وإنما كان يصوم ويصلّي، ومع ذلك قيل له: لا تفعل. وهذا موضع انظر، فإنه يخالف ما تنزع إليه النفوس من أنّ الزيادة خيرٌ أبدًا.\n\nوانظر اللفظ الذي استعمله: «حقًّا». لا رخصةً ولا إذنًا ولا أنه «لا بأس أن تستريح أحيانًا»، بل لبدنك عليك حقٌّ تؤدّيه، ولعينك عليك حقٌّ، ولمن تزوّجتَ عليك حقّ. فإضاعتها ليست زيادةً في التقوى، بل هي دَينٌ لم يُقضَ. ودينٌ أنشأ بيمارستانات العصر الذهبي ومراصده وخزائن كتبه ما كان ليأمر رجلًا أن يُتلف بدنه.",
     ref: "Sahih al-Bukhari, Book of Marriage (an-Nikah), Hadith 5199; also narrated by Muslim in the Book of Fasting",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["balance", "moderation", "overdoing", "burnout", "rest", "sleep", "body", "wife", "fasting", "night prayer", "health",
@@ -4646,7 +4646,7 @@ const PROPHET_STORIES = [
     storyAr: "عن أبي هريرة رضي الله عنه أنّ رجلًا تقاضى رسول الله ﷺ دَينًا له فأغلظ له، حتى همّ به أصحابه.\n\nفمنعهم النبي ﷺ وقال: «دعوه، فإنّ لصاحب الحقّ مقالًا».\n\nثم قال: «اشتروا له بعيرًا فأعطوه إياه». فطلبوا فلم يجدوا إلا بعيرًا أفضل من سنّه، فقالوا: لا نجد إلا أفضل من سنّه. قال: «اشتروه فأعطوه إياه، فإنّ خيركم أحسنكم قضاءً».",
     arabic: "دَعُوهُ، فَإِنَّ لِصَاحِبِ الْحَقِّ مَقَالًا … فَإِنَّ خَيْرَكُمْ أَحْسَنُكُمْ قَضَاءً",
     lesson: "Two things are settled here at once. First, a man who is owed something is allowed to speak, and being rude while asking for what is yours does not cancel that you are owed it — the Prophet ﷺ defended the creditor's right to complain against his own companions, while the creditor was in the middle of being rude to him. Second, the debt was not simply repaid: it was repaid with something better, and the reason given was that the best of people are the best at settling what they owe. The rudeness was answered with a better camel. Notice also what is NOT here: he did not lecture the man on his manners first, and he did not make the repayment conditional on an apology.",
-    lessonAr: "قُضي هنا في أمرين معًا. الأوّل: أنّ لصاحب الحقّ أن يتكلّم، وأنّ إغلاظه في طلب حقّه لا يُسقط أنّ الحقّ له — فقد دفع النبي ﷺ عن حقّ الغريم في الشكوى أمام أصحابه، والغريم يُغلظ عليه في تلك الساعة. والثاني: أنّ الدَّين لم يُقضَ بمثله، بل بخيرٍ منه، والعلّة المذكورة أنّ خير الناس أحسنهم قضاءً. فأُجيبت الغِلظة ببعيرٍ أفضل. وتأمّل ما ليس في الخبر: لم يبدأ بتعليمه الأدب، ولم يعلّق القضاء على اعتذار.",
+    lessonAr: "قُضي هنا في أمرين معًا. الأوّل: أنّ لصاحب الحقّ أن يتكلّم، وأنّ إغلاظه في طلب حقّه لا يُسقط أنّ الحقّ له — فقد دفع النبي ﷺ عن حقّ الغريم في الشكوى أمام أصحابه، والغريم يُغلظ عليه في تلك الساعة. والثاني: أنّ الدَّين لم يُقضَ بمثله، بل بخيرٍ منه، والعلّة المذكورة أنّ خير الناس أحسنهم قضاءً. فأُجيبت الغِلظة ببعيرٍ أفضل. وانظر ما ليس في الخبر: لم يبدأ بتعليمه الأدب، ولم يعلّق القضاء على اعتذار.",
     ref: "Sahih al-Bukhari, Book of Loans and Settling Debts, Hadith 2390",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["debt","loan","money","owed","creditor","rudeness","anger","justice","repay","الدين","القرض","المال","الغريم","الإغلاظ","العدل","القضاء","حسن القضاء"]
@@ -4662,7 +4662,7 @@ const PROPHET_STORIES = [
     storyAr: "عن أبي هريرة رضي الله عنه عن النبي ﷺ قال: «إنّ الدين يسر، ولن يُشادّ الدين أحدٌ إلا غلبه، فسدِّدوا وقارِبوا وأبشِروا، واستعينوا بالغدوة والرَّوحة وشيءٍ من الدُّلجة».",
     arabic: "إِنَّ الدِّينَ يُسْرٌ، وَلَنْ يُشَادَّ الدِّينَ أَحَدٌ إِلَّا غَلَبَهُ، فَسَدِّدُوا وَقَارِبُوا وَأَبْشِرُوا",
     lesson: "The image at the end is of travel. A traveller who rides at the cool of the morning, the cool of the evening and a stretch of the night arrives; one who rides through the heat of the day exhausts his mount and does not. That is the whole counsel: the distance is covered by keeping a pace, not by a burst.\n\nAnd read the three commands in the middle carefully, because they are in order. SADDIDU — aim exactly right, which is the target. QARIBU — and if you cannot, come close to it, which is the concession. ABSHIRU — and expect good, which is what stops the concession from becoming despair. The person who cannot hit the mark exactly is not told to give up and not told to pretend. He is told to get near and to be glad.\n\nThis is not permission to do little. `Yushadd` is to strain against, to contend with — the warning is against treating the religion as an opponent to be wrestled, because the wrestler always loses that match eventually. The Prophet ﷺ himself stood at night until his feet swelled. What he forbade was the pace nobody can hold.",
-    lessonAr: "الصورة في آخره صورة سفر: فالمسافر الذي يسير في الغدوة والرَّوحة وشيءٍ من آخر الليل يبلغ، والذي يسير في هجير النهار يُنضي دابّته ولا يبلغ. وهذا تمام الوصيّة: تُقطع المسافة بالمداومة لا بالوثبة.\n\nوتأمّل الأوامر الثلاثة في وسطه، فهي على ترتيب: «سدِّدوا» أي أصيبوا الحقّ، وهو المطلوب. «وقارِبوا» فإن لم تُصيبوه فادنوا منه، وهي الرخصة. «وأبشِروا» وهو ما يمنع الرخصة أن تصير قنوطًا. فمن لم يبلغ الإصابة لم يُؤمر بالترك ولا بالتكلّف، بل بالمقاربة والبشرى.\n\nوليس هذا إذنًا في التقصير، فالمشادّة المغالبة والمعاندة، والتحذير من أن يُتّخذ الدين خصمًا يُصارَع، لأنّ المصارع مغلوبٌ في آخر الأمر. وقد قام النبي ﷺ حتى تورّمت قدماه، وإنما نهى عن وتيرةٍ لا يقوى عليها أحد.",
+    lessonAr: "الصورة في آخره صورة سفر: فالمسافر الذي يسير في الغدوة والرَّوحة وشيءٍ من آخر الليل يبلغ، والذي يسير في هجير النهار يُنضي دابّته ولا يبلغ. وهذا تمام الوصيّة: تُقطع المسافة بالمداومة لا بالوثبة.\n\nوانظر الأوامر الثلاثة في وسطه، فهي على ترتيب: «سدِّدوا» أي أصيبوا الحقّ، وهو المطلوب. «وقارِبوا» فإن لم تُصيبوه فادنوا منه، وهي الرخصة. «وأبشِروا» وهو ما يمنع الرخصة أن تصير قنوطًا. فمن لم يبلغ الإصابة لم يُؤمر بالترك ولا بالتكلّف، بل بالمقاربة والبشرى.\n\nوليس هذا إذنًا في التقصير، فالمشادّة المغالبة والمعاندة، والتحذير من أن يُتّخذ الدين خصمًا يُصارَع، لأنّ المصارع مغلوبٌ في آخر الأمر. وقد قام النبي ﷺ حتى تورّمت قدماه، وإنما نهى عن وتيرةٍ لا يقوى عليها أحد.",
     ref: "Sahih al-Bukhari, Book of Faith, Hadith 39",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["easy","ease","moderation","burnout","extreme","overburden","consistency","balance","worship","اليسر","الدين يسر","المشادة","الغلو","الاعتدال","المداومة","العبادة","الفتور"]
@@ -4694,7 +4694,7 @@ const PROPHET_STORIES = [
     storyAr: "عن أبي هريرة رضي الله عنه أنّ النبي ﷺ قال: «ما من يومٍ يُصبح العباد فيه إلا ملَكان ينزلان، فيقول أحدهما: اللهم أعطِ منفقًا خلفًا، ويقول الآخر: اللهم أعطِ ممسكًا تلفًا».",
     arabic: "مَا مِنْ يَوْمٍ يُصْبِحُ الْعِبَادُ فِيهِ إِلَّا مَلَكَانِ يَنْزِلَانِ، فَيَقُولُ أَحَدُهُمَا: اللَّهُمَّ أَعْطِ مُنْفِقًا خَلَفًا، وَيَقُولُ الْآخَرُ: اللَّهُمَّ أَعْطِ مُمْسِكًا تَلَفًا",
     lesson: "Both angels are asking for the same thing to happen to the money — for it to leave. The difference is only in how. KHALAF is what replaces a thing that has gone; TALAF is a thing going with nothing put in its place. So the one who gives and the one who holds on will both see wealth leave their hands. One of them gets it back.\n\nThat reframes the ordinary fear. A man withholds because he is afraid of losing what he has; the hadith says the withholding is itself the losing, and that it is being prayed for over his head every single morning while he sleeps.\n\nIt is worth noticing how routine this is. Not on a special night, not in Ramadan — every morning the servants wake into. And note the wording carefully: `munfiqan` and `mumsikan` are indefinite. It is not two named men. It is whoever is doing the spending and whoever is doing the withholding on that particular morning, which means the same person can be under either prayer depending on the day.",
-    lessonAr: "الملَكان كلاهما يسأل للمال شيئًا واحدًا: أن يذهب. وإنما الفرق في الكيفيّة. فالخلَف ما يعقُب الذاهب عوضًا عنه، والتلَف ذهابٌ لا عوض معه. فالمنفق والممسك كلاهما يرى المال يخرج من يده، غير أنّ أحدهما يعود إليه.\n\nوهذا يقلب الخوف المعتاد: فالرجل يُمسك خشية أن يفقد ما عنده، والحديث يخبر أنّ الإمساك نفسه هو الفقد، وأنه يُدعى به فوق رأسه كلّ صباحٍ وهو نائم.\n\nوتأمّل أنّ هذا في المعتاد لا في المخصوص: ليس في ليلةٍ بعينها ولا في رمضان، وإنما في كلّ يومٍ يُصبح العباد فيه. وتأمّل التنكير في «منفقًا» و«ممسكًا»: فليسا رجلين معيّنين، وإنما مَن كان في ذلك الصباح منفقًا ومن كان ممسكًا — فقد يكون الرجل الواحد تحت هذا الدعاء يومًا وتحت الآخر يومًا.",
+    lessonAr: "الملَكان كلاهما يسأل للمال شيئًا واحدًا: أن يذهب. وإنما الفرق في الكيفيّة. فالخلَف ما يعقُب الذاهب عوضًا عنه، والتلَف ذهابٌ لا عوض معه. فالمنفق والممسك كلاهما يرى المال يخرج من يده، لكن أحدهما يعود إليه.\n\nوهذا يقلب الخوف المعتاد: فالرجل يُمسك خشية أن يفقد ما عنده، والحديث يخبر أنّ الإمساك نفسه هو الفقد، وأنه يُدعى به فوق رأسه كلّ صباحٍ وهو نائم.\n\nوانظر أنّ هذا في المعتاد لا في المخصوص: ليس في ليلةٍ بعينها ولا في رمضان، وإنما في كلّ يومٍ يُصبح العباد فيه. وانظر التنكير في «منفقًا» و«ممسكًا»: فليسا رجلين معيّنين، وإنما مَن كان في ذلك الصباح منفقًا ومن كان ممسكًا — فقد يكون الرجل الواحد تحت هذا الدعاء يومًا وتحت الآخر يومًا.",
     ref: "Sahih al-Bukhari, Book of Zakat, Hadith 1442",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["charity","spending","money","wealth","stingy","withhold","angels","morning","provision","الصدقة","الإنفاق","المال","البخل","الإمساك","الملائكة","الصباح","الخلف","التلف","الرزق"]
@@ -4724,7 +4724,7 @@ const PROPHET_STORIES = [
     storyAr: "سألت عائشةُ رضي الله عنها النبيَّ ﷺ: هل أتى عليك يومٌ كان أشدَّ من يوم أُحد؟ فقال: «لقد لقيتُ من قومك ما لقيتُ، وكان أشدُّ ما لقيتُ منهم يومَ العقبة، إذ عرضتُ نفسي على ابن عبد ياليل بن عبد كُلال، فلم يُجبني إلى ما أردتُ».\n\nفانطلق وهو مهمومٌ على وجهه، فلم يستفق إلا وهو بقَرن الثعالب. فرفع رأسه فإذا سحابةٌ قد أظلّته، فنظر فإذا فيها جبريلُ عليه السلام فناداه: إنّ الله قد سمع قولَ قومك لك وما ردّوا عليك، وقد بعث إليك ملَكَ الجبال لتأمره بما شئتَ فيهم.\n\nفناداه ملَكُ الجبال فسلّم عليه ثم قال: يا محمد، ذلك فيما شئتَ، إن شئتَ أن أُطبق عليهم الأخشبين — أي الجبلين المحيطين بمكة.\n\nفقال ﷺ: «بل أرجو أن يُخرج اللهُ من أصلابهم من يعبد اللهَ وحده لا يُشرك به شيئًا».",
     arabic: "بَلْ أَرْجُو أَنْ يُخْرِجَ اللَّهُ مِنْ أَصْلاَبِهِمْ مَنْ يَعْبُدُ اللَّهَ وَحْدَهُ لاَ يُشْرِكُ بِهِ شَيْئًا",
     lesson: "Notice what he was not asked to do. He was not asked to forgive them in his heart while staying powerless; the power was real, it was offered, and an angel was standing there waiting for the word. That is the only situation in which mercy costs anything.\n\nAnd notice what he hoped for. Not that they would apologise, and not that he would be vindicated in front of them — but that their grandchildren would worship Allah. He was answering the worst day of his life by thinking about people who had not been born yet.\n\nIf you are holding a grudge against someone who genuinely wronged you, the question this story puts is not whether you are entitled to it. It is what you are hoping for.",
-    lessonAr: "تأمّل ما لم يُطلب منه. لم يُطلب منه أن يعفوَ بقلبه وهو عاجز، بل كانت القدرةُ حاضرةً معروضةً، وملَكٌ واقفٌ ينتظر الكلمة. وعند ذلك وحده يكون للرحمة ثمن.\n\nوتأمّل ما رجاه. لم يرجُ اعتذارَهم، ولا أن يظهر عليهم — وإنما رجا أن يعبد أحفادُهم اللهَ وحده. فأجاب عن أشدّ أيام عمره بالتفكير في أناسٍ لم يُولدوا بعد.\n\nفإن كنتَ تحمل ضِغنًا على من ظلمك حقًّا، فليس السؤالُ الذي تضعه هذه القصّةُ: هل من حقّك ذلك؟ وإنما: ماذا ترجو أنت؟",
+    lessonAr: "انظر ما لم يُطلب منه. لم يُطلب منه أن يعفوَ بقلبه وهو عاجز، بل كانت القدرةُ حاضرةً معروضةً، وملَكٌ واقفٌ ينتظر الكلمة. وعند ذلك وحده يكون للرحمة ثمن.\n\nوانظر ما رجاه. لم يرجُ اعتذارَهم، ولا أن يظهر عليهم — وإنما رجا أن يعبد أحفادُهم اللهَ وحده. فأجاب عن أشدّ أيام عمره بالتفكير في أناسٍ لم يُولدوا بعد.\n\nفإن كنتَ تحمل ضِغنًا على من ظلمك حقًّا، فليس السؤالُ الذي تضعه هذه القصّةُ: هل من حقّك ذلك؟ وإنما: ماذا ترجو أنت؟",
     ref: "Sahih al-Bukhari, Book of the Beginning of Creation, Hadith 3231",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["taif","angel of the mountains","forgiveness","revenge","power","uhud","aqabah","grief","mercy",
@@ -4741,7 +4741,7 @@ const PROPHET_STORIES = [
     storyAr: "قال النبيُّ ﷺ: «مَثَلُ ما بعثني اللهُ به من الهدى والعلم كمَثَل الغيث الكثير أصاب أرضًا.\n\nفكان منها نَقِيّةٌ — أي طيّبةٌ طاهرة — قبِلت الماءَ فأنبتت الكلأَ والعشبَ الكثير.\n\nوكانت منها أجادِبُ — أي أرضٌ صُلبةٌ لا تشرب — أمسكت الماءَ فنفع اللهُ بها الناس، فشربوا وسقَوا وزرعوا.\n\nوأصابت منها طائفةً أخرى إنما هي قِيعان — أي أرضٌ مستويةٌ ملساء — لا تُمسك ماءً ولا تُنبت كلأً.\n\nفذلك مَثَلُ من فقِه في دين الله ونفعه ما بعثني اللهُ به، فعلِم وعلَّم؛ ومَثَلُ من لم يرفع بذلك رأسًا، ولم يقبل هدى الله الذي أُرسلتُ به».",
     arabic: "مَثَلُ مَا بَعَثَنِي اللَّهُ بِهِ مِنَ الْهُدَى وَالْعِلْمِ كَمَثَلِ الْغَيْثِ الْكَثِيرِ أَصَابَ أَرْضًا",
     lesson: "The rain is the same in all three cases. What differs is the ground. So when a lesson moves one person and leaves another cold, the explanation is not always in the lesson.\n\nAnd there are two useful kinds of ground here, not one. The first grows something of its own. The second grows nothing itself — it only holds the water so that others can drink. A person who memorises and transmits accurately without being a scholar is the second kind of ground, and the hadith counts him among those Allah benefited people through.\n\nThe third is not condemned for being stupid. It is described as not raising its head to it. That is a decision, not a capacity.",
-    lessonAr: "المطرُ واحدٌ في الأحوال الثلاثة، وإنما اختلفت الأرض. فإذا حرّك الدرسُ رجلًا وترك آخر باردًا، فليس التفسيرُ دائمًا في الدرس.\n\nوههنا نوعان نافعان لا نوعٌ واحد. فالأولى تُنبت من نفسها، والثانية لا تُنبت شيئًا — إنما تُمسك الماءَ ليشرب منه غيرُها. فالذي يحفظ وينقل بأمانةٍ من غير أن يكون عالمًا هو الأرضُ الثانية، وقد عدّه الحديثُ ممّن نفع اللهُ بهم الناس.\n\nوالثالثةُ لم تُذمّ لبلادتها، وإنما وُصفت بأنها لم ترفع بذلك رأسًا. وهذا قرارٌ لا طاقة.",
+    lessonAr: "المطرُ واحدٌ في الأحوال الثلاثة، وإنما اختلفت الأرض. فإذا حرّك الدرسُ رجلًا وترك آخر باردًا، فليس التفسيرُ دائمًا في الدرس.\n\nوهنا نوعان نافعان لا نوعٌ واحد. فالأولى تُنبت من نفسها، والثانية لا تُنبت شيئًا — إنما تُمسك الماءَ ليشرب منه غيرُها. فالذي يحفظ وينقل بأمانةٍ من لكن يكون عالمًا هو الأرضُ الثانية، وقد عدّه الحديثُ ممّن نفع اللهُ بهم الناس.\n\nوالثالثةُ لم تُذمّ لبلادتها، وإنما وُصفت بأنها لم ترفع بذلك رأسًا. وهذا قرارٌ لا طاقة.",
     ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 79",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["knowledge","rain","parable","teaching","learning","understanding","fiqh","scholar",
@@ -4792,7 +4792,7 @@ const PROPHET_STORIES = [
     storyAr: "قال ابنُ عمر رضي الله عنهما: كان النبيُّ ﷺ يخطب إلى جِذعٍ — أي ساق نخلةٍ — فلمّا اتّخذ المنبرَ تحوّل إليه، فحنّ الجذعُ، فأتاه فمسح يدَه عليه.\n\nوفي رواية جابرٍ رضي الله عنه وصفٌ للصوت: سمعوا للجذع مثل أصوات العِشار — أي النوق الحوامل — حتى نزل النبيُّ ﷺ فوضع يده عليه.",
     arabic: "كَانَ النَّبِيُّ صلى الله عليه وسلم يَخْطُبُ إِلَى جِذْعٍ فَلَمَّا اتَّخَذَ الْمِنْبَرَ تَحَوَّلَ إِلَيْهِ، فَحَنَّ الْجِذْعُ فَأَتَاهُ فَمَسَحَ يَدَهُ عَلَيْهِ",
     lesson: "This is one of the few miracles that a whole congregation heard at once, in an ordinary mosque, on an ordinary Friday. It was not shown to a delegation demanding proof; it happened because a piece of wood was used to him standing against it, and then he stood somewhere else.\n\nBut the part worth sitting with is what he did next. He did not use it. He did not turn to the people and say: look at what has just happened. He came down from the minbar and put his hand on it until it settled — the way you would quiet a frightened animal or a crying child.\n\nA dead trunk grieved at being left by him. The obvious question the story leaves is what our own attachment to him looks like beside it.",
-    lessonAr: "هذه من المعجزات القليلة التي سمعتها جماعةٌ كاملةٌ في وقتٍ واحد، في مسجدٍ عاديّ، في جمعةٍ عاديّة. ولم تُعرض على وفدٍ يطلب البرهان، وإنما وقعت لأنّ خشبةً كانت قد اعتادت وقوفه إليها، ثم وقف في مكانٍ آخر.\n\nغير أنّ الذي يستحقّ الوقوف هو ما صنعه بعدها: لم يستعملها. لم يلتفت إلى الناس فيقول: انظروا ما جرى الآن. بل نزل من المنبر ووضع يده عليه حتى سكن — كما تُسكّن دابّةً فزِعة أو طفلًا يبكي.\n\nجذعٌ ميّتٌ حزِن لفراقه ﷺ. والسؤال الظاهر الذي تتركه القصّةُ: كيف يبدو تعلُّقنا نحن به إلى جانب ذلك؟",
+    lessonAr: "هذه من المعجزات القليلة التي سمعتها جماعةٌ كاملةٌ في وقتٍ واحد، في مسجدٍ عاديّ، في جمعةٍ عاديّة. ولم تُعرض على وفدٍ يطلب البرهان، وإنما وقعت لأنّ خشبةً كانت قد اعتادت وقوفه إليها، ثم وقف في مكانٍ آخر.\n\nلكن الذي يستحقّ الوقوف هو ما صنعه بعدها: لم يستعملها. لم يلتفت إلى الناس فيقول: انظروا ما جرى الآن. بل نزل من المنبر ووضع يده عليه حتى سكن — كما تُسكّن دابّةً فزِعة أو طفلًا يبكي.\n\nجذعٌ ميّتٌ حزِن لفراقه ﷺ. والسؤال الظاهر الذي تتركه القصّةُ: كيف يبدو تعلُّقنا نحن به إلى جانب ذلك؟",
     ref: "Sahih al-Bukhari, Book of the Virtues of the Prophet ﷺ, Hadith 3583",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["signs","miracle","trunk","palm","minbar","pulpit","weeping","love of the prophet","mosque",
