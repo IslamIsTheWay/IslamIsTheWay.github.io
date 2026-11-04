@@ -149,6 +149,68 @@ def files():
     return [os.path.join(d, f) for f in sorted(os.listdir(d)) if f.endswith(".js")]
 
 
+def html_files():
+    """The pages themselves. 12,000 Arabic words live in the HTML rather than
+    in js/ - guidance.html alone holds 6,900 - and this tool could not see a
+    single one of them until it was pointed here as well."""
+    return [os.path.join(REPO, f) for f in sorted(os.listdir(REPO)) if f.endswith(".html")]
+
+
+# An element whose class says it holds the Mushaf's words, a hadith or a dua.
+# Everything from its opening tag to the next closing tag is left alone, on top
+# of the ﴿ ﴾ and « » protection, because Quran inside the page is not always
+# bracketed.
+HTML_QURAN = re.compile(
+    r"<([a-z]+)[^>]*class=\"[^\"]*(?:verse-ar|tad-verse|quran|ayah|dhikr|dua-ar"
+    r"|arabic-name|matn|hadith-ar|arabic-text|gc-dua)[^\"]*\"[^>]*>.*?</>",
+    re.S)
+
+
+def html_protected_spans(text):
+    spans = [(m.start(), m.end()) for m in PROTECT.finditer(text)]
+    spans += [(m.start(), m.end()) for m in HTML_QURAN.finditer(text)]
+    return spans
+
+
+def scan_html(fix, hits, watch, longs, pairs):
+    """Report, and optionally rewrite, the Arabic written straight into a page."""
+    changed = 0
+    for path in html_files():
+        raw = io.open(path, encoding="utf-8").read()
+        skip = html_protected_spans(raw)
+        def protected(i):
+            return any(a <= i < b for a, b in skip)
+        name = os.path.basename(path)
+        for w in SAFE:
+            for m in re.finditer(r"(?<![ؠ-يّ])" + re.escape(w) + r"(?![ؠ-ي])", raw):
+                if not protected(m.start()):
+                    hits[w] += 1
+        for w in WATCH:
+            for m in re.finditer(r"(?<![ؠ-ي])" + re.escape(w) + r"(?![ؠ-ي])", raw):
+                if not protected(m.start()):
+                    watch[w] += 1
+        if fix:
+            out, n = [], 0
+            last = 0
+            for word, better in pairs:
+                pat = re.compile(r"(?<![ؠ-يّ])" + re.escape(word) + r"(?![ؠ-ي])")
+                pieces, last, changed_here = [], 0, 0
+                for m in pat.finditer(raw):
+                    if protected(m.start()):
+                        continue
+                    pieces.append(raw[last:m.start()]); pieces.append(better)
+                    last = m.end(); changed_here += 1
+                if changed_here:
+                    pieces.append(raw[last:])
+                    raw = "".join(pieces)
+                    n += changed_here
+                    skip = html_protected_spans(raw)
+            if n:
+                io.open(path, "w", encoding="utf-8", newline="").write(raw)
+                changed += 1
+    return changed
+
+
 def report(fix=False):
     hits = collections.Counter()
     watch = collections.Counter()
@@ -186,6 +248,9 @@ def report(fix=False):
                 raw = raw[:a] + new + raw[b:]
             io.open(path, "w", encoding="utf-8", newline="").write(raw)
             changed_files += 1
+
+    html_changed = scan_html(fix, hits, watch, longs, pairs)
+    changed_files += html_changed
 
     total = sum(hits.values())
     if fix:

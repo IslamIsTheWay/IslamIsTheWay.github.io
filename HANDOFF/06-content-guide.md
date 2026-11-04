@@ -146,6 +146,11 @@ python tools/phonecheck.py --check
 #     and in both languages - HANDOFF PART 41 (needs a local server)
 python tools/searchcheck.py --check
 
+# 4f. which pages give a reader a short version and which only a label,
+#     and where the long Arabic sentences are - HANDOFF PART 42 (a report,
+#     not a gate: read it before adding a long explanation anywhere)
+python tools/plainscan.py
+
 # 5. list markup balance after any bulk sed edit
 for f in *.html; do
   o=$(grep -o '<li>' "$f" | wc -l); c=$(grep -o '</li>' "$f" | wc -l)

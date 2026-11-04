@@ -9,15 +9,16 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 2 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 4 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 1a. **PART 41** (most recent) — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
-> 1b. **PART 40** — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
-> 1c. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
-> 1d. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
+> 1a. **PART 42** (most recent) — the science section 15 cards to 25 (including the embryo with Galen stated against it, the bee, and three famous claims refuted on their own cards), twelve more verses explained and connected, and what "understandable" turned out to mean: the Arabic tool now reads the PAGES too, a label is not a summary, and the long-sentence count was counting the Quran.
+> 1b. **PART 41** — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
+> 1c. **PART 40** — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
+> 1d. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
+> 1e. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
 > 2. **PART 37** — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
 > 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
@@ -7198,3 +7199,95 @@ the one asked is worse than one that finds nothing.
   prefixes leaves نيه on one side and نيات on the other and nothing joined
   them. `arVariants` in hadith.html now relates the sound feminine plural to
   its singular in both directions, with a three-letter minimum stem.
+
+---
+
+# PART 42 — Ten more science cards, twelve more verses, and what "understandable" turned out to mean
+
+The owner: *"add more explanations and connections and real miracles of things
+that we just found out about and it was mentioned before, and make sure that
+the explanations in every page are understandable and not just old Arabic
+(for all pages, check that it is understandable)."*
+
+## 1. The science section, 15 cards to 25
+
+New cards, each obeying the six rules at the head of js/miracles.js — graded,
+carrying the classical reading, with a date and a name on the science, and no
+verse typed (every `verse` is cut with tools/quran-cut.py):
+
+**Partial** — the stages of the embryo (23:13-14), the bee and the healing in
+honey (16:68-69), pairs in what grows and in what they do not know (36:36),
+the sky as smoke (41:11), the fingertip (75:3-4), the fertilising winds
+(15:22), the heaped cloud and its hail (24:43).
+
+**Not established, and refuted on their own cards** — "the sky of return" as
+radio waves (86:11), mountains passing like clouds as plate tectonics
+(27:88), and the sun as ضياء against the moon as نور (10:5).
+
+**The three that were hardest to write are the three that make the section
+trustworthy.** Each had to carry the argument against itself:
+
+- **23:13-14** names **Galen**, who taught a staged embryo around 170 CE, and
+  whose work reached the physicians of the region. A card that presents a
+  staged description as impossible in the seventh century without answering
+  Galen is an argument with one side removed. The claim is narrowed to what
+  Galen does NOT have: the word for clinging, the chewed look of the fourth
+  week, and bones clothed in flesh in that order. It also warns against
+  leaning on Keith Moore, because a card resting on one man's endorsement
+  falls when he is disputed.
+- **16:68-69** states that the healing in honey is the CLASSICAL reading, not
+  a modern discovery — at-Tabari has it — so what science added is only
+  *why*. And it kills the feminine-verb argument outright: نحل is a
+  collective and Arabic treats it as feminine by ordinary grammar, so the
+  feminine imperatives prove nothing about forager bees being female.
+  Quoting that argument hands the other side an easy win.
+- **10:5** is graded not-established precisely because the fact was NOT out of
+  reach: **Anaxagoras said the moon shines by reflected light around 450 BCE**
+  — a thousand years BEFORE the revelation. The two Arabic words are a real
+  and beautiful feature of the language; they are not information nobody had.
+
+That is the test for every future card: **the gap between what the verse says
+and when anyone could first have checked it.** If there is no gap, there is no
+card, however nice the fit.
+
+## 2. Twelve more verses explained and connected
+
+al-Baqarah 44, 83, 148, 168, 195, 249, 269; al-Kahf 23 and 109; Luqman 27;
+al-Isra 36; al-Hujurat 6. The Quran page now explains **558 verses in 442
+entries, every one of them opening with a plain sentence.**
+
+Two of the connections are written as PAIRS, each side in its own words —
+18:109 with 31:27 (the same measurement at two sizes, one sea against seven),
+and 17:36 with 49:6 (the rule, and the procedure that keeps you out of
+trouble). The other eight needed return links, which `./check-counts.sh`
+found and named exactly: 61:2, 41:34, 5:48, 5:3, 4:29, 3:139, 62:2, 81:29.
+
+## 3. What "understandable" turned out to mean
+
+Three findings, and two of them corrected the measuring tool rather than the
+site. **Before writing content to satisfy a metric, check the metric.**
+
+**(a) 12,109 Arabic words live in the HTML, not in js/** — guidance.html alone
+holds 6,933 — and tools/arabicease.py had never looked there. It now scans the
+pages too, with the same protection plus a class-based guard (`HTML_QURAN`)
+for elements that hold a verse or a dua without brackets. Six words of the old
+register were found and replaced; check-quran.sh still passes unchanged.
+
+**(b) A label is not a summary.** tools/plainscan.py reports, per file, how
+many long blocks have a real short SENTENCE and how many have only a title.
+Read as one thing, it first reported sunnah.js, revival.js and scholars.js as
+having nothing for an ordinary reader — they have titles — and made every
+other file look finished when a title is all it has. The columns are separate
+now. The one genuine gap was **revival.js: ten blocks of 300 words each, with
+a label and no summary.** Each now opens with one line (`short` / `shortAr`,
+rendered in both places guidance.html draws a block). sunnah.js and
+scholars.js were left alone on purpose: a Sunnah entry's title already says
+what to do and the detail says how, and a scholars entry leads with the
+question.
+
+**(c) The long-sentence count was counting the Quran.** The longest "sentence"
+in js/tadabbur.js is 2:233. With the quoted fields excluded the real figure is
+305, and the worst of those are comma-lists (the loanwords paragraph in
+golden.js) and companions' narrations quoted in the site's own words. **Those
+should not be split** — the number is not a to-do list, and chopping a
+narration to satisfy it would make the page worse.
