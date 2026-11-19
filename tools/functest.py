@@ -947,6 +947,39 @@ def staff_dashboard_never_loses_the_live_settings(ctx):
     return pg
 
 
+
+@scenario
+def verse_pages_and_share_card(ctx):
+    """A verse has a page of its own (tools/build-verse-pages.py), the home
+    page's verses lead to one, and "Share as a picture" hands the phone's share
+    sheet ONE png with the page's address — or saves the picture when sharing
+    is refused. The sheet is stubbed: a real one never closes in a test."""
+    stub = ("window.__shared=null;navigator.canShare=()=>true;"
+            "navigator.share=(d)=>{window.__shared={n:d.files.length,type:d.files[0].type,"
+            "size:d.files[0].size,text:d.text};return Promise.resolve();};")
+    pg = open_page(ctx, "index.html", extra=stub)
+    href = pg.get_attribute(".hero-verse-more", "href")
+    check(href == "verse/59-19.html", "the home page's verses do not lead to their page (%r)" % href)
+    pg.wait_for_timeout(1500)
+    pg.click(".hero-verse .share-verse")
+    pg.wait_for_timeout(2500)
+    sh = pg.evaluate("() => window.__shared")
+    check(sh and sh["n"] == 1 and sh["type"] == "image/png" and sh["size"] > 20000,
+          "the share sheet did not receive one picture: %r" % (sh,))
+    check(sh and sh["text"].endswith("/verse/59-19.html"), "the picture is not shared with its page's address")
+    pg.close()
+    # a verse page: its own title, the verse, the plain sentence first, a way back to the reader
+    pg = open_page(ctx, "verse/2-255.html", lang="ar")
+    check("Ayat al-Kursi" in pg.title(), "verse/2-255.html does not carry the verse's name in its title")
+    first = pg.evaluate("() => document.querySelector('.vp-entry').firstElementChild.className")
+    check("tad-plain" in first, "the plain sentence is not the first thing in the explanation (%s)" % first)
+    check(pg.evaluate("() => !!document.querySelector('.vp-verse .q-hafs')"), "the verse is not in the Mushaf font")
+    check(pg.evaluate("() => !!document.querySelector('a.vp-reader[href=\"quran.html#surah-2-255\"]')"),
+          "the verse page has no way back to the reader")
+    check(not pg._errors, "errors on the verse page: %s" % pg._errors[:2])
+    return pg
+
+
 def main():
     want = [a for a in sys.argv[1:] if not a.startswith("--")]
     passed, failed = [], []

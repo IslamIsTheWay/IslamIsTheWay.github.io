@@ -7387,3 +7387,32 @@ links the site itself uses into these pages land on target; 38/38 scenarios.
 
 **Rule for anyone touching this:** test links, not just loads. The freeze
 measurement was the same before and after; only a link test showed the damage.
+
+## 4. Share as a picture — js/share.js
+
+A button on the verses at the top of the home page and on every verse page
+turns the verse, its reference and its plain sentence into a 1080 x 1350
+picture (sized for WhatsApp and Instagram) carrying the address of the verse's
+own page, and hands it to the phone's share sheet. Three rules are written at
+the head of the file:
+
+1. **The verse is never cut short.** If it does not fit at the smallest size,
+   the card carries the reference and the plain sentence and says where to read
+   the verse. 2:282, the longest verse in the Quran, is the test case. Only the
+   site's own plain sentence may ever be shortened (with an ellipsis).
+2. The verse is drawn in the KFGQPC font, and the card waits for the font.
+3. The sentence is in the reader's language.
+
+**The iPhone trap, and the fix.** Safari only lets a page open the share sheet
+for about a second after the tap; drawing the card and waiting for its fonts
+can take longer on a phone, and the sheet is then refused. So each card is
+drawn while the page is idle, once its button is on screen, and the tap only
+hands it over. A browser that REFUSES to share gets the file saved instead; a
+reader who CLOSES the sheet gets nothing (AbortError), which is what closing
+it means.
+
+**Testing it:** a real share sheet never closes in a test browser — on Windows,
+Edge supports file sharing, so the first test simply hung. The scenario
+`verse_pages_and_share_card` stubs navigator.share and checks the sheet gets
+ONE png with the page's address. All four paths (shared, refused, unavailable,
+cancelled) were checked by hand on the home page and a verse page.

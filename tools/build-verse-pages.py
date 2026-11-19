@@ -244,7 +244,7 @@ def shell():
     return head, header, footer, stamp
 
 
-SCRIPTS = ["main.js", "reading.js", "nav.js", "i18n.js"]
+SCRIPTS = ["share.js", "main.js", "reading.js", "nav.js", "i18n.js"]
 
 
 def page(title, desc, url, header, footer, head, body, stamp, self_path):
@@ -300,6 +300,15 @@ def build():
                 nav += ('<a href="verse/%d-%d.html"><span class="en-only">Verse %d →</span>'
                         '<span class="ar-only" dir="rtl">← الآية %s</span></a>' % (sn, next_a, next_a, ar_digits(next_a)))
             nav += "</nav>"
+            # Share as a picture (js/share.js): the verse is read from the page
+            # itself, so its Arabic is never written twice.
+            nav += ('<div class="vp-share"><button type="button" class="share-verse" data-surah="%d" data-ayah="%d"'
+                    ' data-verse-from=".vp-verse .q-hafs" data-ref="%s" data-ref-ar="%s" data-plain="%s" data-plain-ar="%s">'
+                    '<span class="en-only">Share as a picture</span><span class="ar-only" dir="rtl">شارك صورة</span></button></div>'
+                    % (sn, n, html.escape("%s %d:%d" % (meta["name"], sn, n), quote=True),
+                       html.escape("سورة %s، الآية %s" % (meta["arabic"], ar_digits(n)), quote=True),
+                       html.escape(plain_text(a.get("plain"), 2000), quote=True),
+                       html.escape(plain_text(a.get("plainAr"), 2000), quote=True)))
             body = (
                 '<section class="verse-page"><div class="container">\n'
                 '<nav class="vp-crumbs"><a href="quran.html"><span class="en-only">Quran Library</span>'
