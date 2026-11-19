@@ -9,16 +9,17 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 4 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 19 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 1a. **PART 42** (most recent) — the science section 15 cards to 25 (including the embryo with Galen stated against it, the bee, and three famous claims refuted on their own cards), twelve more verses explained and connected, and what "understandable" turned out to mean: the Arabic tool now reads the PAGES too, a label is not a summary, and the long-sentence count was counting the Quran.
-> 1b. **PART 41** — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
-> 1c. **PART 40** — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
-> 1d. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
-> 1e. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
+> 1a. **PART 43** (most recent) — the verses at the top of the home page (59:19–20, the owner's choice), a page of its own for every explained verse (tools/build-verse-pages.py: the sitemap went from 13 URLs to 458), and the long pages' freezes cut from 3.7s to about 1s with content-visibility — which first broke 42 section links, and how both arrival and in-page jumps were made to land.
+> 1b. **PART 42** — the science section 15 cards to 25 (including the embryo with Galen stated against it, the bee, and three famous claims refuted on their own cards), twelve more verses explained and connected, and what "understandable" turned out to mean: the Arabic tool now reads the PAGES too, a label is not a summary, and the long-sentence count was counting the Quran.
+> 1c. **PART 41** — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
+> 1d. **PART 40** — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
+> 1e. **PART 39** — fifty more verses explained and connected on the Quran page, seven in each of the seven long surahs, and five science cards: how the quotations are cut from the Mushaf and proved (tools/quran-cut.py and tools/checkcuts.py).
+> 1f. **PART 38** — two screenshots from the owner and the four classes behind them: fragment matches in the search, text in both languages at once (tools/mixscan.py), Latin-digit ranges reading backwards in Arabic, dictation punctuation — and the home page's Suggested reading.
 > 2. **PART 37** — every page put in reading order (and the owner-instruction comments that must be checked before moving anything), and the mountain of gold: js/treasure.js, its six rules, and why a one-word search key is a bug.
 > 2b. **PART 36** — the whole site debugged: tools/sitecheck.py and tools/functest.py, the eleven faults they found, and the staff passwords that must be changed.
 > 3. **PART 35** — contrast measured on every text of every page, in both themes: the tokens `--green-fill` and `--gold-ink`, and the two audits that keep it true.
@@ -7291,3 +7292,98 @@ in js/tadabbur.js is 2:233. With the quoted fields excluded the real figure is
 golden.js) and companions' narrations quoted in the site's own words. **Those
 should not be split** — the number is not a to-do list, and chopping a
 narration to satisfy it would make the page worse.
+
+---
+
+# PART 43 — The verses at the top, a page for every explanation, and the freezes
+
+After a research brief (what keeps readers on a site; how this one measured
+against it), the owner asked for the recommendations to be built. Three are in
+this part. What was measured on the live site first, on a mid-range phone:
+first paint was fine (1–2s), but guidance.html froze for **3.7 seconds in one
+block** (13,800 elements, 515 KB of text laid out at once), judgement.html for
+3.7s and golden.html for 2.3s; and Google could list at most **13 pages** of
+the site, because every explanation lived behind a #link.
+
+## 1. The verses at the top of the home page — al-Hashr 59:19–20
+
+Chosen by the owner, and corrected by him once: he wanted the whole passage,
+not the first half of 59:19. Both verses are now whole, cut from js/quran-text
+by tools/quran-cut.py and joined with " ۝ " (the site's form for consecutive
+verses, which check-quran.sh understands). Sahih International's English, a
+plain sentence in both languages, and a button to the full explanation.
+
+**He describes it as three verses; in the Mushaf it is two** (59:19 ends with
+«أولئك هم الفاسقون», and 59:20 holds both sentences about the Fire and
+Paradise). The text is exactly what he described. 59:19 and 59:20 now both
+have full explanations, linked to 59:18 and 20:124 and to each other.
+
+**check-quran.sh now proves the home page's verses too.** It checked
+quotations only in js/raghib; the hero is the one place a verse sits in
+hand-edited HTML. Proved by corrupting one word (ٱللَّهَ → الله): it fails and
+names the line.
+
+## 2. One page per explained verse — verse/*.html
+
+**tools/build-verse-pages.py** writes verse/<surah>-<ayah>.html for every entry
+in js/tadabbur.js (444) and verse/index.html, with the explanation in the HTML
+itself in both languages, its own title (with the verse's name where it has
+one — Ayat al-Kursi), description, canonical URL and social-preview tags. It
+also owns the verse part of **sitemap.xml: 13 URLs became 458.** It runs from
+./bump-version.sh, AFTER the stamping, because it copies the ?v= stamp from
+the root pages.
+
+How the pages reuse the site from one folder down: **`<base href="../">`**.
+Header, footer, styles and scripts come along unchanged. The trap with <base>
+is that a bare "#x" link then points at the HOME page; the footer's
+#feedback is rewritten to name the page itself, and no shared script creates
+"#" links at runtime (checked).
+
+The markup mirrors iitwTadabburAyahHtml in js/quran.js — the same classes, the
+plain sentence first. **Change one renderer, change the other.**
+
+Two guards, both proved able to fail before they were trusted:
+- `build-verse-pages.py --check` — every page and the sitemap match the
+  generator's output, so a hand edit or a forgotten run is caught.
+- **tools/versecheck.py** — loads every verse page in Arabic at 375px and
+  reports a missing file, a script error, a page sliding sideways, the
+  stylesheet or the Mushaf font not applying, or Arabic not switching on.
+  Proved by deleting one page's <base> tag: four faults reported at once.
+
+**Important: check-quran.sh does NOT validate the verse pages' text** — that
+was tested, not assumed (a corrupted word in verse/2-255.html passed it). The
+pages are safe because they are generated from js/quran-text and --check keeps
+them identical to the generator. Never hand-edit a verse page.
+
+Every explanation in the reader now links to its own page, the Quran page links
+to the index, and analytics counts the 444 pages as one key, "verse", with a
+row in the staff dashboard.
+
+## 3. The freezes — content-visibility, and what it broke first
+
+The profile said one function took 3.17s of the guidance page's load: the
+header's scroll check. It was innocent — reading scrollY simply forced the
+browser to lay out all 13,800 elements at once. The fix is CSS:
+`content-visibility: auto` on the long pages' sections (body[data-long-page]),
+so off-screen sections are not laid out until approached. **Worst freeze:
+guidance 3.7s → 1.1s, judgement 3.7s → 1.1s, golden 2.3s → 1.2s.**
+
+**It broke 42 section links before it was fixed — and was only caught because
+links were tested.** With stand-in heights (1,400px against a real 77,000px for
+#signs), a jump to #section landed thousands of pixels off. The fix has two
+paths, and both are measured:
+- **Arriving on a #link**, the first script in <body> sets `cv-off` and the
+  page is laid out in full — exactly the old behaviour, no regression. Then
+  the jump is made instant (a browser does that on arrival anyway; my first
+  correction glided 2.5 seconds across 348,000px).
+- **A click inside the page** goes straight to its target — gliding when it is
+  close (the stylesheet's own design note: "Anchors glide"), jumping when it is
+  more than two screens away. An early version laid out every section above
+  the target first; that moved the page tens of thousands of pixels mid-glide
+  and failed the mountain-of-gold scenario. Removed.
+
+Verified: all 47 section links on arrival, 35 in-page jumps, and all 38 deep
+links the site itself uses into these pages land on target; 38/38 scenarios.
+
+**Rule for anyone touching this:** test links, not just loads. The freeze
+measurement was the same before and after; only a link test showed the damage.

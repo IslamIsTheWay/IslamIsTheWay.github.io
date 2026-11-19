@@ -17,7 +17,9 @@ CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
 BLOCK = ("abacus.jasoncameron.dev", "everyayah.com", "cdn.islamic.network")
 PAGES = ["index.html", "quran.html", "guidance.html", "judgement.html", "golden.html",
          "sunnah.html", "hadith.html", "stories.html", "prophets.html", "companions.html",
-         "search.html", "courses.html", "verify.html", "angels.html"]
+         "search.html", "courses.html", "verify.html", "angels.html",
+         # two of the generated verse pages: the index, and a long entry
+         "verse/index.html", "verse/2-255.html"]
 WIDTH = 375
 MIN_TAP = 36          # CSS px of hit area. Apple asks 44 and the stylesheet
                       # gives 44 to every control it can; 36 is the floor a

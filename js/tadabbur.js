@@ -4860,6 +4860,50 @@ const TADABBUR = {
             en: "“And whoever turns away from My remembrance — indeed, he will have a constricted life.”",
             how: "The same cause, and what it costs here, in this world. Al-Hashr says the person loses himself; Ta-Ha says his life closes in on him. Two descriptions of one condition.",
             howAr: "السببُ نفسُه، وما يكلّفه هنا في الدنيا. تقول الحشرُ إنّ الإنسان يفقد نفسه، وتقول طه إنّ حياته تضيق عليه. وصفان لحالٍ واحدة."
+          },
+          {
+            ref: "Surah Al-Hashr (59:20)",
+            ar: "لَا يَسۡتَوِيٓ أَصۡحَٰبُ ٱلنَّارِ وَأَصۡحَٰبُ ٱلۡجَنَّةِۚ أَصۡحَٰبُ ٱلۡجَنَّةِ هُمُ ٱلۡفَآئِزُونَ",
+            en: "“Not equal are the companions of the Fire and the companions of Paradise. The companions of Paradise — they are the attainers of success.”",
+            how: "The verse after this one gives the answer to “does it matter?”. The person who forgets Allah and the person who remembers Him do not end up in the same place.",
+            howAr: "تُجيب الآيةُ التي بعد هذه عن سؤال «هل يهمّ ذلك؟». فمن نسي الله ومن ذكره لا ينتهيان إلى مكانٍ واحد."
+          }
+        ]
+      },
+      {
+        n: 20,
+        ar: "لَا يَسۡتَوِيٓ أَصۡحَٰبُ ٱلنَّارِ وَأَصۡحَٰبُ ٱلۡجَنَّةِۚ أَصۡحَٰبُ ٱلۡجَنَّةِ هُمُ ٱلۡفَآئِزُونَ",
+        why: "The verse after the warning, and it answers the question the warning leaves behind: does it really matter? From inside a busy life, forgetting Allah can look like nothing at all — the days go on the same. This verse says the two roads do not end in the same place: **Not equal are the companions of the Fire and the companions of Paradise.**\n\nIt is stated as a plain fact, and then the sentence chooses a side and names it: **the companions of Paradise — they are the winners.**\n\nNotice the order. The Fire is named first, and the verse ends on Paradise: the passage closes on the outcome it wants you to choose.\n\nRead the three verses together and they are one short lesson: look at what you have sent ahead for tomorrow (59:18); do not forget Allah, or you will forget yourself (59:19); and the two ends are not the same (59:20).",
+        whyAr: "الآيةُ التي بعد التحذير، وهي تُجيب عن السؤال الذي يتركه: هل يهمّ ذلك حقًّا؟ فمن داخل حياةٍ مشغولة قد يبدو نسيانُ الله كأنه لا شيء، والأيامُ تمضي كما هي. وتقول هذه الآية إنّ الطريقين لا ينتهيان إلى مكانٍ واحد: ﴿لَا يَسۡتَوِيٓ أَصۡحَٰبُ ٱلنَّارِ وَأَصۡحَٰبُ ٱلۡجَنَّةِۚ﴾.\n\nقيلت خبرًا واضحًا، ثم اختارت الجملةُ جهةً وسمّتها: ﴿أَصۡحَٰبُ ٱلۡجَنَّةِ هُمُ ٱلۡفَآئِزُونَ﴾.\n\nوانظر الترتيب: ذُكرت النارُ أوّلًا، وخُتمت الآيةُ بالجنّة. فالمقطعُ ينتهي على المصير الذي يريد منك أن تختاره.\n\nواقرأ الآيات الثلاث معًا تجدها درسًا قصيرًا واحدًا: انظر ما قدّمتَ لغد (٥٩:١٨)، ولا تنسَ الله فتنسى نفسك (٥٩:١٩)، والنهايتان ليستا سواء (٥٩:٢٠).",
+        ref: "Surah Al-Hashr (59:20), read with 59:18-19",
+        strength: "quran",
+        plain: "The people of the Fire and the people of Paradise are not the same, and they do not end up in the same place. The people of Paradise are the ones who have won.",
+        plainAr: "أصحابُ النار وأصحابُ الجنّة ليسوا سواء، ولا ينتهون إلى مكانٍ واحد. وأصحابُ الجنّة هم الفائزون.",
+        words: [
+          {
+            w: "ٱلۡفَآئِزُونَ",
+            t: "al-fā'izūn — the winners",
+            meaning: "From ف و ز: to escape what is feared and reach what is hoped for. The lexicons record that the Arabs called the open desert al-mafāzah — the place of winning — as a good omen for crossing it safely. The word is the Quran's word for the final success: not a good day, the outcome.",
+            meaningAr: "من (ف و ز): النجاةُ ممّا يُخاف، والظفرُ بما يُرجى. وتذكر كتبُ اللغة أنّ العرب سمّت الصحراءَ «المفازة» تفاؤلًا بالسلامة في قطعها. وهي كلمةُ القرآن للنجاح الأخير: لا يومٌ طيّب، بل العاقبة.",
+            source: "The classical lexicons on ف و ز, including the entry on al-mafāzah",
+            strength: "lugha"
+          },
+          {
+            w: "يَسۡتَوِيٓ",
+            t: "lā yastawī — are not equal",
+            meaning: "The Quran uses this construction again and again to set two things side by side and refuse the comparison: the blind and the seeing, darkness and light, shade and heat (35:19-21). It does not argue that they differ; it states it, and leaves the reader to see it.",
+            meaningAr: "يتكرّر هذا الأسلوب في القرآن ليضع شيئين متجاورين ويرفض التسوية بينهما: الأعمى والبصير، والظلمات والنور، والظلّ والحَرور (٣٥:١٩-٢١). فلا يحتجّ على أنهما مختلفان، بل يُقرّر ذلك ويترك القارئ يراه.",
+            source: "The Quran's own usage: 35:19-21 and the passages like it",
+            strength: "quran"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Hashr (59:19)",
+            ar: "وَلَا تَكُونُواْ كَٱلَّذِينَ نَسُواْ ٱللَّهَ فَأَنسَىٰهُمۡ أَنفُسَهُمۡۚ أُوْلَٰٓئِكَ هُمُ ٱلۡفَٰسِقُونَ",
+            en: "“And be not like those who forgot Allah, so He made them forget themselves. Those are the defiantly disobedient.”",
+            how: "The verse before names the danger; this one names where each road ends. Forgetting Allah is not a private matter with no result — it decides which of the two groups a person belongs to.",
+            howAr: "تسمّي الآيةُ التي قبلها الخطر، وتسمّي هذه أين ينتهي كلُّ طريق. فنسيانُ الله ليس أمرًا خاصًّا بلا نتيجة، بل هو الذي يحدّد إلى أيّ الفريقين ينتمي الإنسان."
           }
         ]
       }

@@ -526,6 +526,9 @@ function iitwRecitationRefAr(r) {
   try {
     let page = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     page = page.replace(".html", "") || "index";
+    /* The 444 pages under verse/ are counted together as one, "verse" —
+       otherwise every explained verse would become its own counter. */
+    if (window.location.pathname.indexOf("/verse/") >= 0) page = "verse";
     // Count each visitor once per browser session to reflect real people.
     if (!sessionStorage.getItem("iitw-session")) {
       bump("total");
@@ -1906,6 +1909,74 @@ document.addEventListener("DOMContentLoaded", () => {
   // After the feedback section and any page render, so the height is real.
   setTimeout(iitwInjectReadingAids, 0);
 });
+
+/* ---- A link to a section on a long page lands ON that section ----
+   guidance.html, judgement.html and golden.html carry data-long-page, and the
+   stylesheet lets the browser skip laying out their off-screen sections
+   (content-visibility — it took a 3.7-second freeze down to about one). The
+   cost: the browser's own jump to #section aims at the stand-in heights of
+   the sections above it, and on judgement.html and golden.html 21 of 24
+   section links landed thousands of pixels away from their section.
+
+   scrollIntoView makes the browser render the target before it scrolls, so it
+   lands. This runs on load, on hashchange, and after a click on a same-page
+   link (the browser fires no hashchange when the hash is already that one).
+   A second pass after the sections around the target have rendered settles
+   it — unless the reader has touched, scrolled or typed in the meantime, so it
+   can never pull anyone back to a place they chose to leave. Guarded on
+   distance, so it does nothing when the jump already arrived. */
+(function () {
+  if (!document.body || !document.body.hasAttribute("data-long-page")) return;
+
+  function target() {
+    const id = decodeURIComponent((location.hash || "").slice(1));
+    if (!id) return null;
+    try { return document.getElementById(id); } catch (e) { return null; }
+  }
+
+  /* ARRIVING on a #link jumps instantly — that is what a browser does with a
+     fresh page anyway, and gliding across a 300,000-pixel page took 2.5
+     seconds. A CLICK inside the page keeps the glide the stylesheet asks for
+     ("Anchors glide"), redirected to where the target really is. */
+  function go(el, instant) {
+    const root = document.documentElement;
+    if (!instant) { el.scrollIntoView(); return; }
+    const was = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    el.scrollIntoView();
+    requestAnimationFrame(() => { root.style.scrollBehavior = was; });
+  }
+
+  /* Arriving: the whole page is laid out (cv-off), so the jump is exact.
+     In the page: no laying-out of everything above — that moved the page by
+     tens of thousands of pixels mid-glide — just go to the target, gliding if
+     it is close (the stylesheet's "Anchors glide"), and jumping if it is more
+     than two screens away, where a glide is a multi-second blur anyway. */
+  function land(arriving) {
+    const el = target();
+    if (!el) return;
+    const dist = Math.abs(el.getBoundingClientRect().top);
+    const instant = arriving || dist > window.innerHeight * 2;
+    if (dist > 8) go(el, instant);
+    let moved = false;
+    const mark = () => { moved = true; };
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(t =>
+      window.addEventListener(t, mark, { once: true, passive: true }));
+    setTimeout(() => {
+      if (!moved && el.isConnected && Math.abs(el.getBoundingClientRect().top) > 8) go(el, instant);
+    }, instant ? 700 : 1600);
+  }
+
+  window.addEventListener("load", () => land(true));
+  window.addEventListener("hashchange", () => land(false));
+  document.addEventListener("click", e => {
+    const a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const h = a.getAttribute("href");
+    if (!h || h.length < 2) return;                 // "#" placeholders run their own code
+    setTimeout(() => { if (location.hash === h) land(false); }, 0);
+  });
+})();
 
 /* ---- The header reacts to being scrolled ----
    At the top of a page the bar sits nearly transparent so the hero photograph

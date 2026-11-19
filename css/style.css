@@ -8341,6 +8341,154 @@ body.search-open { overflow: hidden; }
   .hero-verse { padding: 18px 16px 14px; margin-bottom: 24px; }
 }
 
+
+/* ============================================================
+   THE THREE LONG PAGES DO NOT LAY OUT WHAT NOBODY IS LOOKING AT
+   guidance.html builds 13,800 elements and 515 KB of text on load, and the
+   first thing that read a layout value (the header's scroll check) forced
+   the browser to lay out ALL of it at once: 3.2 seconds frozen on a
+   mid-range phone, during which a tap does nothing. judgement.html and
+   golden.html were 3.7s and 2.3s for the same reason.
+
+   content-visibility: auto lets the browser skip layout and paint for a
+   section that is off-screen, and do it as the reader approaches. Nothing
+   is removed: the text is still in the page for search, find-in-page and
+   links to #sections. contain-intrinsic-size gives a skipped section a
+   stand-in height so the page does not collapse, and `auto` makes the
+   browser remember the real height once it has seen it. Browsers that do
+   not know the property ignore it and behave as before.
+   ============================================================ */
+body[data-long-page]:not(.cv-off) > section[id] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1400px;
+}
+/* A visit that arrives on a #link turns this off for the whole page
+   (cv-off, set by the first script in <body>): a stand-in height cannot be
+   jumped past accurately — judgement.html's #signs section alone is 77,000px
+   against a 1,400px stand-in — so those visits get the page laid out in full,
+   exactly as before. Ordinary visits keep the fast path. */
+
+
+/* ============================================================
+   ONE PAGE PER EXPLAINED VERSE (verse/*.html, tools/build-verse-pages.py)
+   The explanation markup is the reader's own (.tad-*), so these rules only
+   frame it: breadcrumb, title, the verse, and the pager at the bottom.
+   ============================================================ */
+.verse-page { padding: 34px 0 54px; }
+.verse-page .container { max-width: 860px; }
+.vp-crumbs {
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.9;
+}
+.vp-crumbs a {
+  color: var(--green-dark);
+  /* thumb-sized: a breadcrumb is a row of short words, and "البقرة" was 25px wide */
+  display: inline-block;
+  padding: 8px 4px;
+}
+.vp-title {
+  font-size: clamp(1.5rem, 4.4vw, 2.2rem);
+  color: var(--green-dark);
+  line-height: 1.35;
+  margin: 0 0 18px;
+}
+.vp-verse {
+  display: block;
+  margin: 0 0 14px;
+  padding: 20px 18px;
+  border-radius: 14px;
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  font-size: clamp(1.45rem, 4vw, 1.9rem);
+  line-height: 2.15;
+  text-align: center;
+}
+.vp-verse .q-hafs { font-size: 1em; line-height: inherit; }
+.vp-en {
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+.vp-entry { margin-top: 6px; }
+.vp-lead { color: var(--text-muted); line-height: 1.85; margin-bottom: 24px; }
+.vp-linkpage {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.vp-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.vp-pager a {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--green-dark);
+  font-weight: 600;
+}
+.vp-pager a.vp-reader { background: var(--green-fill); color: #fff; border-color: transparent; }
+.vp-index-surah {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.vp-index-surah h2 { font-size: 1.15rem; color: var(--green-dark); margin: 0 0 8px; }
+.vp-index-verses { display: flex; flex-wrap: wrap; gap: 8px; }
+.vp-index-verses a {
+  display: inline-block;
+  min-width: 44px;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--green-dark);
+  font-weight: 600;
+}
+:root[data-theme="dark"] .vp-verse { background: #16211c; border-color: #2a3a31; }
+:root[data-theme="dark"] .vp-title,
+:root[data-theme="dark"] .vp-crumbs a,
+:root[data-theme="dark"] .vp-linkpage,
+:root[data-theme="dark"] .vp-index-surah h2 { color: #cfe6d6; }
+:root[data-theme="dark"] .vp-pager a,
+:root[data-theme="dark"] .vp-index-verses a { background: #16211c; color: #cfe6d6; border-color: #2a3a31; }
+:root[data-theme="dark"] .vp-pager a.vp-reader { background: var(--green-fill); color: #fff; }
+
+
+/* The link from an explanation in the reader to its own page, and from the
+   Quran page to the index of all of them. */
+.tad-ownpage {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--green-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tad-allpages { margin-top: 18px; text-align: center; }
+.tad-allpages a {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: var(--green-fill);
+  color: #fff;
+  font-weight: 700;
+}
+:root[data-theme="dark"] .tad-ownpage { color: #cfe6d6; }
+
 /* ==== GENERATED by phone-photos.py — do not edit by hand ==== */
 /* The same background photographs, at the size a phone actually draws them.
    Written from the rules above by ./phone-photos.py; the small copies are

@@ -151,6 +151,16 @@ python tools/searchcheck.py --check
 #     not a gate: read it before adding a long explanation anywhere)
 python tools/plainscan.py
 
+# 4g. the 444 verse pages and the sitemap match js/tadabbur.js exactly
+#     (./bump-version.sh regenerates them; this catches a hand edit or a
+#     forgotten run) - HANDOFF PART 43
+python tools/build-verse-pages.py --check
+
+# 4h. a sample of the verse pages loads clean on a phone: no missing file,
+#     no script error, the stylesheet and the Mushaf font applied, Arabic
+#     switching on (needs a local server; run without a number for all 445)
+python tools/versecheck.py 40 --check
+
 # 5. list markup balance after any bulk sed edit
 for f in *.html; do
   o=$(grep -o '<li>' "$f" | wc -l); c=$(grep -o '</li>' "$f" | wc -l)

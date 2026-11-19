@@ -28,7 +28,7 @@
 cd "$(dirname "$0")" || exit 2
 fail=0
 
-files=$(ls ./*.html js/*.js data/*.json 2>/dev/null | grep -v 'js/quran-text.js')
+files=$(ls ./*.html verse/*.html js/*.js data/*.json 2>/dev/null | grep -v 'js/quran-text.js')
 
 for pat in 'ٱلْ' 'ًۭ' 'ٌۭ' 'ٍۭ' 'ًۢ' 'ٌۢ' 'ٍۢ' '۟'; do
   hits=$(grep -nF -- "$pat" $files 2>/dev/null)
@@ -109,9 +109,15 @@ for i, v in enumerate(verses):
     for w in set(v.split()):
         by_word.setdefault(w, []).append(i)
 bad, n = [], 0
-for root, _, files in os.walk("js/raghib"):
-    for f in files:
-        t = open(os.path.join(root, f), encoding="utf-8").read()
+# js/raghib, and the home page: its verses at the top (59:19-20, HANDOFF PART
+# 43) are the one place a verse sits in hand-edited HTML, so they are proved
+# here too. (verse/*.html are generated from js/quran-text and kept identical
+# to the generator's output by tools/build-verse-pages.py --check.)
+targets = [os.path.join(r, f) for r, _, fs in os.walk("js/raghib") for f in fs] + ["index.html"]
+for path in targets:
+    if True:
+        f = path
+        t = open(path, encoding="utf-8").read()
         for q in re.findall("﴿([^﴾]*)﴾", t):
             for part in q.split(" ۝ "):
                 part = part.strip()
@@ -120,10 +126,10 @@ for root, _, files in os.walk("js/raghib"):
                 if not any((" " + part + " ") in verses[i] for i in by_word.get(w0, [])):
                     bad.append("%s: %s" % (f, part[:60]))
 if bad:
-    print("A QUOTATION IN js/raghib IS NOT THE MUSHAF'S TEXT (%d of %d) - rebuild it, never type a verse:" % (len(bad), n))
+    print("A QUOTATION IS NOT THE MUSHAF'S TEXT (%d of %d) - rebuild it, never type a verse:" % (len(bad), n))
     print("\n".join(bad[:8]))
     sys.exit(1)
-print("  js/raghib: %d quotations, every one the Mushaf's words" % n)
+print("  js/raghib + index.html: %d quotations, every one the Mushaf's words" % n)
 PY
 fi
 

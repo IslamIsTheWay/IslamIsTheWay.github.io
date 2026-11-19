@@ -25,3 +25,8 @@ for f in *.html; do
   sed -i -E 's#(src="js/[a-z0-9-]+\.js)(\?v=[0-9]+)?"#\1?v='"$V"'"#g' "$f"
 done
 echo "assets stamped v=$V"
+
+# One page per explained verse (verse/*.html). Written AFTER the stamp above,
+# because the generator copies the stamp from the root pages — run it before
+# and every verse page would point at the previous version's files.
+python tools/build-verse-pages.py || python3 tools/build-verse-pages.py || echo "build-verse-pages.py did not run"

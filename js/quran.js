@@ -1245,6 +1245,14 @@ function iitwTadabburAyahHtml(tad, n) {
          tadBadge(df.strength || "ikhtilaf") + '</div>';
   }
 
+  /* Its own page (verse/<surah>-<ayah>.html, tools/build-verse-pages.py):
+     the address to share, and the one search engines can list. */
+  if (tad.num) {
+    h += '<a class="tad-ownpage" href="verse/' + tad.num + '-' + n + '.html">' +
+         '<span class="en-only">This explanation on its own page — to share or keep</span>' +
+         '<span class="ar-only" dir="rtl">هذا الشرح في صفحةٍ مستقلّة — للمشاركة أو الحفظ</span></a>';
+  }
+
   h += '</div>';
   return h;
 }
