@@ -980,6 +980,109 @@ def verse_pages_and_share_card(ctx):
     return pg
 
 
+@scenario
+def staff_stats_say_when_the_counter_fails(ctx):
+    """The statistics panel reads its numbers back from a free counting
+    service. On 19 November 2026 that service hung for ~50 s on every request
+    and then answered 500, and the panel showed "…" and then empty lists —
+    which the owner read as a broken update. A failure must be SAID, in the
+    reader's language, and never shown as 0; the last numbers read are kept.
+    The service also refuses (429) more than 30 requests from one address in
+    10 seconds, and the panel reads 31 — the old panel showed the refused rows
+    as 0. The service is played by a stand-in with that same limit — nothing
+    is sent to the real one: first working, then hanging (the panel must give
+    up by itself), then refusing with nothing kept, in Arabic."""
+    import json, time
+    mode = {"m": "working", "asked": 0, "refused": 0}
+    hung, sent = [], []
+    def stand_in(route):
+        url = route.request.url
+        if "/get/" not in url:
+            return route.abort()
+        mode["asked"] += 1
+        if mode["m"] == "hang":
+            hung.append(route)   # never answered, like the real service that day
+            return
+        cors = {"Access-Control-Allow-Origin": "*"}
+        if mode["m"] == "refuse":
+            return route.fulfill(status=500, headers=cors, content_type="application/json",
+                                 body='{"error":"Failed to get data. Try again later."}')
+        # the real service's limit: 30 requests per address every 10 seconds
+        now = time.time()
+        sent[:] = [t for t in sent if now - t < 10] + [now]
+        if len(sent) > 30:
+            mode["refused"] += 1
+            return route.fulfill(status=429, headers=cors, content_type="application/json",
+                                 body='{"error":"Too many requests. Try again in 2s"}')
+        key = url.rstrip("/").split("/")[-1]
+        n = {"total": 5123, "page-index": 2100, "page-verse": 77}.get(key, 12)
+        return route.fulfill(status=200, headers=cors, content_type="application/json",
+                             body=json.dumps({"value": n}))
+    ctx.route("**abacus.jasoncameron.dev/**", stand_in)   # registered last, so it answers first
+    admin = ("localStorage.setItem('iitw-staff-session', JSON.stringify({user:'Islam.younis.2026', at:Date.now()}));"
+             "localStorage.removeItem('iitw-gh-token');localStorage.removeItem('iitw-staff-draft');"
+             "localStorage.removeItem('iitw-staff-stats');")
+    pg = open_page(ctx, "staff.html", extra=admin)
+    pg.click("#staffTabs button[data-sec='analytics']")
+    status = lambda: pg.inner_text("#statStatus")
+    # working: every number (31 reads against a limit of 30 in 10 s — the panel
+    # must pace itself, not be refused), the time they were read, and they are kept
+    pg.wait_for_function("() => /Numbers read on|could not be read|not answering/.test(document.getElementById('statStatus').innerText)", timeout=40000)
+    check("Numbers read on" in status(), "a working service, and the panel said: %r (%d requests refused for asking too fast)"
+          % (status()[:90], mode["refused"]))
+    check(pg.inner_text("#statTotal") == "5,123", "the total was not shown: %r" % pg.inner_text("#statTotal"))
+    rows = pg.inner_text("#statPages")
+    check("Verse pages" in rows and "—" not in rows and "…" not in rows, "the page rows are wrong: %r" % rows[:200])
+    check("Logout" not in rows, "the Logout link is listed as a page")
+    check(mode["refused"] == 0, "the panel asked too fast: %d requests refused" % mode["refused"])
+    check(pg.evaluate("() => !!localStorage.getItem('iitw-staff-stats')"), "a complete read was not kept on the device")
+    # switching the language redraws what was read; it does not ask the service again
+    asked = mode["asked"]
+    pg.click("#langToggle")
+    pg.wait_for_timeout(500)
+    # every row label is in the dictionary: "Verse pages" stayed English in
+    # Arabic, and no audit saw it — the rows are only drawn when the service answers
+    shown = pg.inner_text("#statPages") + "\n" + pg.inner_text("#statClicks") + "\n" + pg.inner_text("#statStatus")
+    leaks = [l for l in shown.split("\n") if re.search("[A-Za-z]", l)]
+    check(not leaks, "English in the Arabic statistics: %r" % leaks[:4])
+    check(re.search("[٠-٩]", pg.inner_text("#statStatus")), "the Arabic date is not in Arabic digits")
+    pg.click("#langToggle")
+    pg.wait_for_timeout(500)
+    check(mode["asked"] == asked, "a language switch asked the counting service %d more times" % (mode["asked"] - asked))
+    check(pg.inner_text("#statTotal") == "5,123", "the numbers were lost on a language switch")
+    # hanging: the panel gives up by itself, says so, and shows the kept numbers
+    mode["m"] = "hang"
+    pg.click("#statRefresh")
+    t0 = time.time()
+    pg.wait_for_function("() => /not answering/.test(document.getElementById('statStatus').innerText)", timeout=25000)
+    waited = time.time() - t0
+    check(waited < 14, "the panel took %.0f s to say the service is not answering" % waited)
+    s = status()
+    check("last numbers read on this device" in s, "the kept numbers were not offered: %r" % s)
+    check(pg.inner_text("#statTotal") == "5,123", "the kept total was not shown: %r" % pg.inner_text("#statTotal"))
+    check(pg.evaluate("() => !document.getElementById('statRefresh').disabled"), "Refresh stayed disabled after the failure")
+    check(len(hung) == 1, "with the total unanswered, the panel still asked for %d more numbers" % (len(hung) - 1))
+    for r in hung:              # release them, or closing the test prints a traceback
+        try:
+            r.abort()
+        except Exception:
+            pass
+    # refusing, nothing kept, in Arabic: the Arabic sentence alone, and no zeros
+    mode["m"] = "refuse"
+    pg.evaluate("() => { localStorage.removeItem('iitw-staff-stats'); localStorage.setItem('iitw-lang', 'ar'); }")
+    pg.reload(wait_until="load")
+    pg.wait_for_timeout(600)
+    pg.click("#staffTabs button[data-sec='analytics']")
+    pg.wait_for_function("() => /لا تستجيب/.test(document.getElementById('statStatus').innerText)", timeout=15000)
+    s = status()
+    check(not re.search("[A-Za-z]", s), "English showed in the Arabic status line: %r" % s)
+    check(pg.inner_text("#statTotal") == "—", "a failed read was shown as a number: %r" % pg.inner_text("#statTotal"))
+    lists = pg.inner_text("#statPages") + pg.inner_text("#statClicks")
+    check("0" not in lists and "غير متاح" in lists, "the lists did not say the numbers are unavailable: %r" % lists[:120])
+    pg.evaluate("() => { localStorage.removeItem('iitw-staff-draft'); localStorage.removeItem('iitw-staff-stats'); }")
+    return pg
+
+
 def main():
     want = [a for a in sys.argv[1:] if not a.startswith("--")]
     passed, failed = [], []

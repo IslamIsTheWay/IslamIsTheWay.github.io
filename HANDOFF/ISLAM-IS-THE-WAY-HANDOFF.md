@@ -7416,3 +7416,92 @@ Edge supports file sharing, so the first test simply hung. The scenario
 `verse_pages_and_share_card` stubs navigator.share and checks the sheet gets
 ONE png with the page's address. All four paths (shared, refused, unavailable,
 cancelled) were checked by hand on the home page and a verse page.
+
+
+# PART 44 — The statistics panel: silent when the counter failed, and zeros that may have been refusals
+
+The owner sent a screenshot of the staff statistics panel (إحصاءات الموقع):
+"…" where the total should be, both lists empty, and asked what had been done.
+The last change to the panel (PART 43) had only added one row, "Verse pages".
+What had actually happened, measured that day (19 November 2026):
+
+- **The counting service was down.** abacus.jasoncameron.dev — the free
+  counter the site uses (js/main.js counts, staff.html reads back) — hung on
+  every request for about 50 seconds and then answered HTTP 500
+  `{"error":"Failed to get data. Try again later."}`. Its own front page took
+  17 seconds. github.io and google answered in half a second from the same
+  machine, so it was the service, not the connection.
+- **The panel could not say so.** readCount() had no time limit and turned
+  every failure into 0. So the owner saw "…" for nearly a minute, and then
+  either nothing or a dashboard of zeros — which reads as "nobody visited" or
+  "the update broke it". Neither was true. With a stand-in service that
+  answers, the panel (and the new row) drew correctly.
+
+Two more faults turned up on the way, both older than this session:
+
+- **Zeros that were refusals.** The service's documentation
+  (v2.jasoncameron.dev/abacus) limits each address to **30 requests every 10
+  seconds** and answers the rest `429 {"error":"Too many requests. Try again
+  in 2s"}`. The panel reads 31 numbers (it read 32 — see the next point), and
+  opening staff.html on the live site counts a visit or two from the same
+  address. The old panel sent them all at once, so a few could be refused,
+  and it showed those rows as **0** — some zeros the owner saw before may not
+  have been real. (Not confirmed against the real service: it was down the
+  whole time. The limit is from its documentation.)
+- **"Logout" was listed as a page.** trackedFromNav() took every nav href, and
+  the Logout link is `href="#"`: a page called "#", read back as the counter
+  "page-" that nobody writes. "#" and "?" are now cut off first, as the nav
+  counter already did.
+
+## What the panel does now (staff.html, "Reading the numbers back")
+
+1. **It keeps inside the limit:** at most 25 requests in any 10.5 seconds
+   (room is left for the page's own visit count). The 31 reads take about 11
+   seconds: the total and most rows at once, the last six after the window.
+   A 429 that happens anyway (another tab of the site open) is waited out —
+   the wait is read from the service's own message — and asked again, up to
+   three times. A refusal is never shown as a number.
+2. Every read gives up after **10 seconds** (AbortController); the wait for a
+   turn inside the limit does not count against it.
+3. **A failed read is `null`, never 0.** A counter that was never hit answers
+   404 `{"error":"Key not found"}` (documented), and that one IS a real 0.
+4. If the total cannot be read, nothing else is asked for; after three failed
+   rows the rest are not asked for either. Rows are read eight at a time.
+5. The rows **fill in as they arrive** ("…" until then) and a **status line**
+   under the total says what is happening, in the reader's language (iitwSay,
+   two spans): "Reading the numbers… 25 of 31", "Numbers read on <date>"
+   (Arabic digits in Arabic), "Some numbers could not be read (they show —)",
+   or — when the service does not answer — that it is the service's fault, not
+   the website's, and that **visits made while it is down are not counted**
+   (they are not: main.js counts once per session and does not retry).
+6. The last **complete** read is kept on the device (localStorage
+   `iitw-staff-stats`) and shown during an outage, marked with the date it was
+   read. A partial read is never kept.
+7. Switching the language **redraws** what was read; it used to ask the
+   service for every number again (31 more requests, inside the same limit).
+8. The panel's description said "(updates live)". It never did — the numbers
+   are read when the panel opens and when Refresh is pressed — and it now says
+   that.
+
+The "Verse pages" row label was English in Arabic mode: it was not in the
+dictionary, and no audit saw it, because the rows are only drawn when the
+service answers. The label also lost its number ("all 444 together" would go
+stale as pages are added): "Verse pages (all together)" / "صفحات الآيات (كلّها
+معًا)".
+
+**The test:** `staff_stats_say_when_the_counter_fails` (functest.py) plays the
+service with a stand-in — nothing reaches the real one — that has the real
+limit (the 31st request in 10 seconds gets 429). Working: every number read,
+none refused, no "Logout" row, kept on the device, and a language switch asks
+nothing again. Hanging: the panel gives up by itself in under 14 s, shows the
+kept numbers, and asks for nothing more. Refusing with nothing kept, in
+Arabic: the Arabic sentence alone, "—", no zeros. In Arabic mode it fails on
+ANY row label or status text with Latin letters — the class, not just the
+verse row. It was shown to fail on the old staff.html, on a dictionary
+without the new entry, and with the pacing switched off ("3 requests refused
+for asking too fast").
+
+**If the service stays down:** the replacement would be a counter the owner
+signs up for himself (GoatCounter is free for a site like this). Never create
+the account for him; once he has one, the counting in main.js and the reading
+in staff.html are the two places to change.

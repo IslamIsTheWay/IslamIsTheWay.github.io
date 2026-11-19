@@ -202,6 +202,7 @@ const AR = {
   "Staff dashboard": "لوحة الإدارة",
   "Live meetings": "اللقاءات المباشرة",
   "Angels (redirect)": "الملائكة (تحويل)",
+  "Verse pages (all together)": "صفحات الآيات (كلّها معًا)",
   "Edit": "تعديل",
   "Surah": "سورة",
   /* ---- The staff dashboard (staff.html). It is behind a login, so it was
@@ -233,7 +234,7 @@ const AR = {
   "Needs your GitHub token in the bar at the bottom, so the code can be activated for students.": "يحتاج إلى رمز GitHub في الشريط الأسفل، حتى يُفعَّل الرمز للطلّاب.",
   "📊 Website Analytics": "📊 إحصاءات الموقع",
   "Admin only": "للمشرف وحده",
-  "How many people opened the website, which pages they visited, and which sections they clicked. Counts every visitor across the whole site (updates live).": "كم شخصًا فتح الموقع، وأيّ الصفحات زاروا، وأيّ الأقسام ضغطوا. يَعُدّ كلّ زائرٍ في الموقع كلّه، ويتحدّث لحظةً بلحظة.",
+  "How many people opened the website, which pages they visited, and which sections they clicked. Counts visits across the whole site; the numbers are read when this panel opens and when you press Refresh Numbers.": "كم شخصًا فتح الموقع، وأيّ الصفحات زاروا، وأيّ الأقسام ضغطوا. يَعُدّ الزيارات في الموقع كلّه، وتُقرأ الأرقام عند فتح هذه اللوحة وعند الضغط على «حدِّث الأرقام».",
   "Total visits to the website": "مجموع الزيارات للموقع",
   "Pages opened": "الصفحات المفتوحة",
   "Sections clicked": "الأقسام المضغوطة",
