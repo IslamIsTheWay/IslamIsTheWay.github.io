@@ -1893,6 +1893,13 @@ const TADABBUR = {
             en: "Unquestionably, by the remembrance of Allah hearts are assured",
             how: "Ta-Ha names the constricted life; Ar-Ra'd names what that same life would have had. One word, ذكر, decides between them.",
             howAr: "طه تسمّي الضَّنك، والرعد تسمّي ما كان يكون لتلك الحياة نفسها. وكلمةٌ واحدة — الذكر — تفصل بينهما."
+          },
+          {
+            ref: "Surah Al-Hashr (59:19)",
+            ar: "وَلَا تَكُونُواْ كَٱلَّذِينَ نَسُواْ ٱللَّهَ فَأَنسَىٰهُمۡ أَنفُسَهُمۡۚ",
+            en: "“And be not like those who forgot Allah, so He made them forget themselves.”",
+            how: "Ta-Ha says turning from Allah's remembrance makes a life constricted. Al-Hashr says what is lost inside that life: the person himself — his own good and what he was made for.",
+            howAr: "تقول طه إنّ الإعراض عن ذكر الله يُضيّق الحياة. وتقول الحشرُ ما الذي يضيع داخل تلك الحياة: الإنسانُ نفسُه — خيرُه، وما خُلق له."
           }
         ],
         ref: "Surah Ta-Ha (20:124), read with 20:125-126",
@@ -4798,10 +4805,63 @@ const TADABBUR = {
             en: "Does man think that he will be left neglected?",
             how: "Al-Hashr tells you to inspect what you have sent ahead. Al-Qiyamah removes the alternative: nobody is left unattended, so there is something ahead to inspect.",
             howAr: "الحشرُ يأمر بالنظر فيما قدّمت. والقيامةُ ترفع البديل: لا يُترك أحدٌ سدًى، فثمّ غدٌ يُنظر فيه."
+          },
+          {
+            ref: "Surah Al-Hashr (59:19)",
+            ar: "وَلَا تَكُونُواْ كَٱلَّذِينَ نَسُواْ ٱللَّهَ فَأَنسَىٰهُمۡ أَنفُسَهُمۡۚ",
+            en: "“And be not like those who forgot Allah, so He made them forget themselves.”",
+            how: "This verse tells a believer to look at what he has sent ahead for tomorrow. The very next verse says what makes that impossible: forget Allah, and you are made to forget yourself.",
+            howAr: "تأمرُ هذه الآيةُ المؤمنَ أن ينظر فيما قدّم لغد. وتقول الآيةُ التي بعدها ما الذي يجعل ذلك مستحيلًا: من نسي الله أُنسي نفسه."
           }
         ],
         plain: "In plain words: you are told to check what you have sent ahead — and the Day it is sent to is called simply \"tomorrow\".",
         plainAr: "بعبارة أخرى: أُمرت أن تنظر فيما قدّمت، واليوم الذي قُدّم إليه سُمّي «غدًا»."
+      },
+      {
+        n: 19,
+        ar: "وَلَا تَكُونُواْ كَٱلَّذِينَ نَسُواْ ٱللَّهَ فَأَنسَىٰهُمۡ أَنفُسَهُمۡۚ أُوْلَٰٓئِكَ هُمُ ٱلۡفَٰسِقُونَ",
+        why: "Read the verse before it first. 59:18 says: fear Allah, and **let every soul look at what it has sent ahead for tomorrow**. That is a person looking at himself — his record, his tomorrow. This verse names what stops him from doing it.\n\nAnd the result is shaped exactly like the cause. They forgot Allah, so **He made them forget themselves**. Not *He forgot them* — a different verse says that of the hypocrites (9:67). Here the loss lands on the person himself: he loses sight of his own good, of what he was made for, of where he is going.\n\nIbn Kathir gives the rule behind it: the reward is of the same kind as the deed. Forget the remembrance of Allah, and you are made to forget the work that would have benefited you on your return.\n\nThe verse does not name one sin. It names a direction. Anything that fills a life so completely that Allah is never remembered — work, entertainment, a screen, a game, an endless argument — leads to the same place: a person who no longer knows what he is doing with himself.",
+        whyAr: "اقرأ الآية التي قبلها أوّلًا. ففيها: اتّقوا الله، ﴿وَلۡتَنظُرۡ نَفۡسٞ مَّا قَدَّمَتۡ لِغَدٖۖ﴾. وهذا إنسانٌ ينظر في نفسه: في صحيفته، وفي غده. وهذه الآية تسمّي ما يمنعه من ذلك.\n\nوالنتيجةُ على صورة السبب تمامًا: نسوا الله، ﴿فَأَنسَىٰهُمۡ أَنفُسَهُمۡۚ﴾. لم تقل «فنسيهم» — فتلك جاءت في المنافقين في سورة التوبة (٩:٦٧). وإنما وقعت الخسارةُ هنا على الإنسان نفسه: يغيب عنه خيرُه، وما خُلق له، وإلى أين يمضي.\n\nويذكر ابنُ كثير القاعدةَ التي وراء ذلك: الجزاءُ من جنس العمل. فمن نسي ذكرَ الله أُنسي العملَ الذي كان ينفعه في معاده.\n\nولا تسمّي الآيةُ ذنبًا واحدًا، بل تسمّي اتّجاهًا. فكلُّ ما يملأ الحياة حتى لا يُذكر الله فيها — عملٌ، أو لهو، أو شاشة، أو لعبة، أو جدالٌ لا ينتهي — يؤدّي إلى المكان نفسه: إنسانٌ لم يعد يعرف ماذا يصنع بنفسه.",
+        ref: "Surah Al-Hashr (59:19), read with 59:18; Ibn Kathir on the verse",
+        strength: "tafsir",
+        plain: "Do not be like people who forgot Allah — because the result was that they forgot themselves: their own good, their tomorrow, and what they were made for.",
+        plainAr: "لا تكونوا مثل قومٍ نسوا الله — فكانت النتيجةُ أنهم نسوا أنفسهم: خيرَهم، وغدَهم، وما خُلقوا من أجله.",
+        misunderstood: "Read as a description of other people — atheists, or people far from religion.\n\nLook at who it is said to. The verse before begins **O you who believe**. This is a warning to Muslims, about something that happens to Muslims: a life so busy that Allah is never in it, by people who would never say they had forgotten Him.",
+        misunderstoodAr: "تُقرأ كأنها وصفٌ لغيرنا: للملحدين، أو للبعيدين عن الدين.\n\nوانظر لمن قيلت. فالآيةُ التي قبلها تبدأ بـ﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ﴾. فهي تحذيرٌ للمسلمين، من شيءٍ يقع للمسلمين: حياةٌ مشغولةٌ حتى لا يكون الله فيها، يعيشها من لا يقول أبدًا إنه نسيه.",
+        words: [
+          {
+            w: "فَأَنسَىٰهُمۡ",
+            t: "fa-ansāhum — so He made them forget",
+            meaning: "Form IV of ن س ي, the causative: not that He forgot them, but that He caused them to forget. And the fa at the start is the fa of consequence — because they forgot. The forgetting of themselves is presented as the result of the first forgetting, not as a separate misfortune.",
+            meaningAr: "صيغةُ (أفعل) من (ن س ي)، وهي للتعدية: لم يقل إنه نسيهم، بل إنه جعلهم ينسون. والفاءُ في أوّلها فاءُ السببيّة: لأنهم نسوا. فنسيانُ النفس جاء نتيجةً للنسيان الأوّل، لا مصيبةً منفصلة.",
+            source: "Arabic morphology: form IV (af'ala) is causative; the fā' of consequence",
+            strength: "lugha"
+          },
+          {
+            w: "نَسُواْ",
+            t: "nasū — they forgot",
+            meaning: "Forgetting Allah in the Quran is not a lapse of memory — nobody is blamed for what slips his mind. The commentators read it as leaving aside: knowing, and setting it to one side. That is why it is blamed, and why it can be undone.",
+            meaningAr: "نسيانُ الله في القرآن ليس سهوًا في الذاكرة — فلا يُلام أحدٌ على ما غاب عن ذهنه. وحمله المفسّرون على الترك: أن تعلم ثم تضعه جانبًا. ولذلك ذُمّ، ولذلك يمكن الرجوعُ عنه.",
+            source: "The classical commentaries on 59:19 and 9:67: nisyān here as tark",
+            strength: "tafsir"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Hashr (59:18)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ وَلۡتَنظُرۡ نَفۡسٞ مَّا قَدَّمَتۡ لِغَدٖۖ",
+            en: "“O you who believe, fear Allah, and let every soul look at what it has sent ahead for tomorrow.”",
+            how: "The verse before is the remedy, and this one is the warning. 59:18 tells you to look at yourself; 59:19 tells you what happens to the person who stops looking at Allah — he stops being able to look at himself.",
+            howAr: "الآيةُ التي قبلها هي الدواء، وهذه هي التحذير. تأمرك تلك أن تنظر في نفسك، وتُخبرك هذه بما يحدث لمن توقّف عن ذكر الله: يفقد القدرةَ على النظر في نفسه."
+          },
+          {
+            ref: "Surah Ta-Ha (20:124)",
+            ar: "وَمَنۡ أَعۡرَضَ عَن ذِكۡرِي فَإِنَّ لَهُۥ مَعِيشَةٗ ضَنكٗا",
+            en: "“And whoever turns away from My remembrance — indeed, he will have a constricted life.”",
+            how: "The same cause, and what it costs here, in this world. Al-Hashr says the person loses himself; Ta-Ha says his life closes in on him. Two descriptions of one condition.",
+            howAr: "السببُ نفسُه، وما يكلّفه هنا في الدنيا. تقول الحشرُ إنّ الإنسان يفقد نفسه، وتقول طه إنّ حياته تضيق عليه. وصفان لحالٍ واحدة."
+          }
+        ]
       }
     ]
   },
