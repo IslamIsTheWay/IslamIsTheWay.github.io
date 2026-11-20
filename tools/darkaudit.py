@@ -38,6 +38,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(channel="msedge", headless=True)
     pg = b.new_page(viewport={"width": 390, "height": 900}, is_mobile=True, has_touch=True)
     pg.route("**abacus.jasoncameron.dev**", lambda r: r.abort())
+    pg.route("**countapi.mileshilliard.com**", lambda r: r.abort())
     pg.goto(B + "index.html", wait_until="load")
     pg.evaluate("try{localStorage.setItem('iitw-theme','dark')}catch(e){}")
     for page in PAGES:

@@ -94,6 +94,7 @@ with sync_playwright() as p:
             ctx = b.new_context(viewport={"width": vw, "height": vh}, service_workers="block",
                                 reduced_motion="reduce")
             ctx.route("**abacus.jasoncameron.dev**", lambda r: r.abort())
+            ctx.route("**countapi.mileshilliard.com**", lambda r: r.abort())
             ctx.add_init_script("localStorage.setItem('iitw-theme','%s');localStorage.setItem('iitw-lang','ar');" % theme)
             for page in PAGES:
                 pg = ctx.new_page()

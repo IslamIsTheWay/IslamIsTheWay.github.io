@@ -203,6 +203,7 @@ const AR = {
   "Live meetings": "اللقاءات المباشرة",
   "Angels (redirect)": "الملائكة (تحويل)",
   "Verse pages (all together)": "صفحات الآيات (كلّها معًا)",
+  "Counted since 20 November 2026, when the site moved to a new counting service because the old one stopped working. Visits before that day are not in these numbers.": "تُعَدّ الزيارات هنا منذ ٢٠ نوفمبر ٢٠٢٦، حين انتقل الموقع إلى خدمة عدٍّ جديدة لأن السابقة توقّفت عن العمل. الزيارات التي قبل ذلك اليوم ليست في هذه الأرقام.",
   "Edit": "تعديل",
   "Surah": "سورة",
   /* ---- The staff dashboard (staff.html). It is behind a login, so it was

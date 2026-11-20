@@ -17,7 +17,7 @@ from playwright.sync_api import sync_playwright
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.environ.get("IITW_BASE", "http://localhost:8791/")
 CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
-BLOCK = ("abacus.jasoncameron.dev", "everyayah.com", "cdn.islamic.network")
+BLOCK = ("abacus.jasoncameron.dev", "countapi.mileshilliard.com", "everyayah.com", "cdn.islamic.network")
 
 
 def pages(limit=None):

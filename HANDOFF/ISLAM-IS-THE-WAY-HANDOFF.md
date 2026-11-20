@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 19 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 20 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
@@ -7505,3 +7505,59 @@ for asking too fast").
 signs up for himself (GoatCounter is free for a site like this). Never create
 the account for him; once he has one, the counting in main.js and the reading
 in staff.html are the two places to change.
+
+## The next day: the site moved to another counting service (20 November 2026)
+
+abacus was still down the next day (its /healthcheck and every read timed out
+at 20 seconds), with no word of when it would return, and the owner asked for
+the counting to be moved. What was tried, that day, from this machine:
+
+| Service | Result |
+|---|---|
+| counterapi.dev | v1 retired (410); v2 needs an account (a "workspace") |
+| countapi.xyz | dead |
+| counterapi.com | **counted wrong**: two hits gave 1, and a read straight after gave 0 |
+| hits.sh | badge pictures only, no numbers |
+| keyvalue.immanuel.co | a key-value store, not a counter (no safe +1) |
+| GoatCounter | real analytics, but needs an account — the owner's to create |
+| **countapi.mileshilliard.com** | hit 1 → 2, get without counting, 404 for an unknown key, answers this site's browser requests (CORS), ~0.5 s, 62 quick reads all answered |
+
+**Chosen: countapi.mileshilliard.com.** A revival of the old CountAPI, run by
+one person (Miles Hilliard) on an Ubuntu server with Redis. Its own page
+shows 99.99% uptime over 90 days; there is no guarantee. Its weaknesses,
+known and accepted: no namespaces (every key carries the prefix
+`iitw-islamistheway-2026-`); **anyone who knows a key can `set` it** (there is
+no secret — and the keys are readable in main.js); how its data is kept is
+not documented. It says it has a rate limit, "extremely generous", without
+numbers; the panel keeps the 25-per-10.5-seconds pace from above.
+
+**Where it lives:** `IITW_COUNTER` in js/main.js builds every address — hit
+and get, with the prefix. staff.html reads through `IITW_COUNTER.get`. To
+switch again: change that object; the "Counted since …" line in the panel
+and its dictionary entry; the stand-in's host in functest.py; and the BLOCK
+lists of the test tools (every one now blocks both services).
+
+**The numbers started again from zero** on 20 November 2026, and the panel
+says so under the total ("Counted since 20 November 2026 …"). The kept-numbers
+key became `iitw-staff-stats-2`, so a number kept from abacus can never be
+shown as this service's last read.
+
+**The old numbers are still on abacus**, namespace `iitw-islamistheway-2026`
+(keys `total`, `page-<page>`, `nav-<section>`). If it comes back, they can be
+brought over — with the owner's yes, since it changes his numbers: read each
+one (`https://abacus.jasoncameron.dev/get/iitw-islamistheway-2026/<key>`),
+add it to the new count, and write the sum with
+`https://countapi.mileshilliard.com/api/v1/set/iitw-islamistheway-2026-<key>?value=<sum>`;
+then change the "Counted since" line to say the numbers include the old ones.
+
+**Checking the counting itself — tools/countcheck.py.** main.js counts only
+on the real address, so no local test ever saw a count request. The new tool
+opens the real address (`local`: the repo's files served under it, before
+deploying; `live`: the live site, after), opens the home page, clicks Quran,
+opens a verse page, and expects exactly five counts — total, page-index,
+nav-quran, page-quran, page-verse — all to the service IITW_COUNTER names.
+Every count request is caught and stopped before it leaves the browser, so
+the check never adds a visit to the owner's numbers. Run it after any change
+to the counting. The local panel was also run against the REAL new service:
+it read all 31 counters (reads never count), all 0, as nothing had counted
+yet.

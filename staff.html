@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202611192258" />
+  <link rel="stylesheet" href="css/style.css?v=202611202259" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* The dashboard is the owner's own page and it follows the theme like
@@ -163,6 +163,7 @@
           <div style="font-size:2.6rem;font-weight:800;" id="statTotal">…</div>
           <div style="font-size:.85rem;opacity:.85;">Total visits to the website</div>
         </div>
+        <p class="stat-since">Counted since 20 November 2026, when the site moved to a new counting service because the old one stopped working. Visits before that day are not in these numbers.</p>
         <p id="statStatus" class="stat-status" role="status" hidden></p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div>
@@ -485,9 +486,9 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202611192258"></script>
-  <script src="js/wordlens.js?v=202611192258"></script>
-  <script src="js/main.js?v=202611192258"></script>
+  <script src="js/data.js?v=202611202259"></script>
+  <script src="js/wordlens.js?v=202611202259"></script>
+  <script src="js/main.js?v=202611202259"></script>
   <script>
     /* ---------- The dashboard speaks the reader's language too ----------
        js/i18n.js translates what is IN the page when it runs. Everything
@@ -514,7 +515,7 @@
 
     // Analytics panel is only for the main admin account.
     const ADMIN_USER = "Islam.younis.2026";
-    const ANALYTICS_NS = "iitw-islamistheway-2026";
+    // The counting service's addresses (and key prefix) are built in ONE place: IITW_COUNTER, js/main.js.
     /* ---------- What analytics reports on ----------
        js/main.js already counts EVERY page automatically — it derives the
        counter key from the filename, so golden.html, judgement.html,
@@ -614,12 +615,20 @@
          - the last COMPLETE set of numbers read on this device is kept, and
            shown during an outage with the date it was read.
        tools/functest.py "staff_stats_say_when_the_counter_fails" holds this,
-       with a stand-in that refuses the 31st request in 10 seconds. */
+       with a stand-in that refuses the 31st request in 10 seconds.
+
+       THE SERVICE CHANGED on 20 November 2026: abacus stayed down, and the
+       site now counts with countapi.mileshilliard.com (IITW_COUNTER in
+       js/main.js — the one place the addresses are built). Its page says it
+       has a limit, "extremely generous", without numbers; the pace above is
+       kept as the safe default — it costs the last few rows ten seconds. */
     const STAT_TIMEOUT_MS = 10000;
     const STAT_WINDOW_MS = 10500;
     const STAT_WINDOW_MAX = 25;
     const STAT_PARALLEL = 8;
-    const STAT_CACHE_KEY = "iitw-staff-stats";
+    /* "-2": numbers from the new service only. Anything kept from abacus is
+       a different count and must never be shown as this one's last read. */
+    const STAT_CACHE_KEY = "iitw-staff-stats-2";
     const statSent = [];      // when each recent request was sent
     let statRun = 0;          // a newer load wins; an older one draws nothing
     let statShown = null;     // what the panel is showing now
@@ -644,13 +653,14 @@
         const timer = ctl ? setTimeout(() => ctl.abort(), STAT_TIMEOUT_MS) : 0;
         let wait = 5000;
         try {
-          const r = await fetch("https://abacus.jasoncameron.dev/get/" + ANALYTICS_NS + "/" + key,
-                                ctl ? { signal: ctl.signal } : undefined);
+          const r = await fetch(IITW_COUNTER.get(key), ctl ? { signal: ctl.signal } : undefined);
           if (r.status === 404) return 0;
           if (r.status !== 429) {
             if (!r.ok) return null;
             const j = await r.json();
-            return (typeof j.value === "number") ? j.value : null;
+            // a number — or, as this service's own page shows it, a string of digits
+            if (typeof j.value === "number") return j.value;
+            return (typeof j.value === "string" && /^\d+$/.test(j.value)) ? parseInt(j.value, 10) : null;
           }
           // refused for asking too fast: "Too many requests. Try again in 2s"
           try {
@@ -1950,8 +1960,8 @@
       }
     });
   </script>
-  <script src="js/reading.js?v=202611192258"></script>
-  <script src="js/nav.js?v=202611192258"></script>
-  <script src="js/i18n.js?v=202611192258"></script>
+  <script src="js/reading.js?v=202611202259"></script>
+  <script src="js/nav.js?v=202611202259"></script>
+  <script src="js/i18n.js?v=202611202259"></script>
 </body>
 </html>

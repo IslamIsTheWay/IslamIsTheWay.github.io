@@ -508,20 +508,39 @@ function iitwRecitationRefAr(r) {
   return name + (single ? " — الآية " + ar(from) : " — الآيات " + ar(from) + "-" + ar(r.ayahTo));
 }
 
+/* ---------- The counting service — ONE place ----------
+   Visits are counted by a free public counter service: the block below adds
+   one (hit), and the staff panel (staff.html) reads the numbers back (get).
+   Both build their addresses HERE, so moving to another service is a change
+   to this object and nothing else.
+
+   abacus.jasoncameron.dev counted until 19 November 2026, when it went down
+   (every request hung ~50 s, then answered 500) and stayed down. Since 20
+   November 2026: countapi.mileshilliard.com — no account, answers browser
+   requests from this site, {"value": N}, and 404 "Key not found" for a
+   counter never hit. It has no namespaces, so every key carries the prefix.
+   The old numbers stay on abacus; see PART 44 of the handoff. */
+const IITW_COUNTER = {
+  host: "countapi.mileshilliard.com",
+  since: "2026-11-20",
+  prefix: "iitw-islamistheway-2026-",
+  hit(key) { return "https://countapi.mileshilliard.com/api/v1/hit/" + this.prefix + encodeURIComponent(key); },
+  get(key) { return "https://countapi.mileshilliard.com/api/v1/get/" + this.prefix + encodeURIComponent(key); }
+};
+
 /* ---------- Anonymous visit analytics ----------
    Counts total visits, per-page visits, and which nav sections are clicked,
-   using a free public counter service. No personal data is collected. The
+   using the counting service above. No personal data is collected. The
    numbers are read back only inside the admin analytics panel. Everything is
    wrapped in try/catch so a counter outage can never break the site. */
 (function () {
-  const NS = "iitw-islamistheway-2026";
   /* ONLY THE REAL SITE COUNTS. A copy opened from the repo on a developer's
      machine (localhost), a preview, or a file:// page was counting as a
      visitor — every test run of the site added its page loads to the
      numbers the owner reads in the staff panel. */
   if (location.hostname !== "islamistheway.github.io") return;
   function bump(key) {
-    try { fetch("https://abacus.jasoncameron.dev/hit/" + NS + "/" + key).catch(() => {}); } catch (e) {}
+    try { fetch(IITW_COUNTER.hit(key)).catch(() => {}); } catch (e) {}
   }
   try {
     let page = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();

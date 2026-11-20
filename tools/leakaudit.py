@@ -39,6 +39,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(channel="msedge", headless=True)
     ctx = b.new_context(viewport={"width": 900, "height": 900}, service_workers="block")
     ctx.route("**abacus.jasoncameron.dev**", lambda r: r.abort())
+    ctx.route("**countapi.mileshilliard.com**", lambda r: r.abort())
     for page in PAGES:
         pg = ctx.new_page()
         pg.add_init_script("localStorage.setItem('iitw-lang','ar');localStorage.setItem('iitw-staff-session', JSON.stringify({user:'Islam.younis.2026', at:Date.now()}))")

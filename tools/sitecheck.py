@@ -12,8 +12,9 @@ and reports:
   * links and buttons with no name a screen reader could read
   * links to a page or file that does not exist, and #anchors with no target
 
-The analytics counter (abacus.jasoncameron.dev) is blocked, as in every test
-here, so testing never inflates the owner's visitor numbers.
+The analytics counters (abacus.jasoncameron.dev, and since 20 November 2026
+countapi.mileshilliard.com) are blocked, as in every test here, so testing
+never inflates the owner's visitor numbers.
 
 usage (a local server must be running):
     python tools/sitecheck.py                    every page
@@ -30,7 +31,7 @@ PAGES = ["index.html", "quran.html", "hadith.html", "sunnah.html", "stories.html
          "guidance.html", "companions.html", "prophets.html", "judgement.html",
          "golden.html", "verify.html", "courses.html", "search.html", "login.html",
          "meeting.html", "offline.html", "staff.html", "angels.html"]
-BLOCKED = "abacus.jasoncameron.dev"
+BLOCKED = ("abacus.jasoncameron.dev", "countapi.mileshilliard.com")
 
 # Answers that are expected and handled, not faults. GitHub allows 60 anonymous
 # API calls an hour; a test run loads the staff dashboard many times and runs
@@ -86,7 +87,8 @@ with sync_playwright() as p:
                                 ("phone", {"width": 390, "height": 844}, True)):
         for lang in ("ar", "en"):
             ctx = b.new_context(viewport=vp, is_mobile=mobile, has_touch=mobile, service_workers="block")
-            ctx.route("**" + BLOCKED + "**", lambda r: r.abort())
+            for host in BLOCKED:
+                ctx.route("**" + host + "**", lambda r: r.abort())
             ctx.add_init_script(
                 "localStorage.setItem('iitw-lang','%s');"
                 "localStorage.setItem('iitw-staff-session', JSON.stringify({user:'Islam.younis.2026', at:Date.now()}));" % lang)
@@ -95,9 +97,9 @@ with sync_playwright() as p:
                 errs = []
                 pg.on("pageerror", lambda e: errs.append("JS error: " + str(e)[:170]))
                 pg.on("console", lambda m: errs.append("console: " + m.text[:170])
-                      if m.type == "error" and BLOCKED not in m.text and "ERR_FAILED" not in m.text else None)
+                      if m.type == "error" and not any(h in m.text for h in BLOCKED) and "ERR_FAILED" not in m.text else None)
                 pg.on("requestfailed", lambda r: errs.append("request failed: " + r.url[:120] + " " + str(r.failure or ""))
-                      if BLOCKED not in r.url else None)
+                      if not any(h in r.url for h in BLOCKED) else None)
                 pg.on("response", lambda r: errs.append("HTTP %d %s" % (r.status, r.url[:120])) if r.status >= 400 else None)
                 d = None
                 try:

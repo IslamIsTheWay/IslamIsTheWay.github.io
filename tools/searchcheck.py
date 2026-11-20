@@ -24,7 +24,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get("IITW_BASE", "http://localhost:8791/")
 CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
-BLOCK = ("abacus.jasoncameron.dev", "everyayah.com", "cdn.islamic.network")
+BLOCK = ("abacus.jasoncameron.dev", "countapi.mileshilliard.com", "everyayah.com", "cdn.islamic.network")
 
 # page, box, results container, how to submit (None = typing is enough, or a
 # selector to click), the query, the same query with one letter wrong, a word

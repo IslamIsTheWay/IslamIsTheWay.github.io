@@ -14,7 +14,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get("IITW_BASE", "http://localhost:8791/")
 CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
-BLOCK = ("abacus.jasoncameron.dev", "everyayah.com", "cdn.islamic.network")
+BLOCK = ("abacus.jasoncameron.dev", "countapi.mileshilliard.com", "everyayah.com", "cdn.islamic.network")
 PAGES = ["index.html", "quran.html", "guidance.html", "judgement.html", "golden.html",
          "sunnah.html", "hadith.html", "stories.html", "prophets.html", "companions.html",
          "search.html", "courses.html", "verify.html", "angels.html",

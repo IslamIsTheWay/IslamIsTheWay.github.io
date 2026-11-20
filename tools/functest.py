@@ -19,7 +19,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get("IITW_BASE", "http://localhost:8791/")
 CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
-BLOCK = ("abacus.jasoncameron.dev", "everyayah.com", "cdn.islamic.network")
+BLOCK = ("abacus.jasoncameron.dev", "countapi.mileshilliard.com", "everyayah.com", "cdn.islamic.network")
 
 SCENARIOS = []
 def scenario(fn):
@@ -1014,14 +1014,14 @@ def staff_stats_say_when_the_counter_fails(ctx):
             mode["refused"] += 1
             return route.fulfill(status=429, headers=cors, content_type="application/json",
                                  body='{"error":"Too many requests. Try again in 2s"}')
-        key = url.rstrip("/").split("/")[-1]
+        key = url.rstrip("/").split("/")[-1].replace("iitw-islamistheway-2026-", "", 1)
         n = {"total": 5123, "page-index": 2100, "page-verse": 77}.get(key, 12)
         return route.fulfill(status=200, headers=cors, content_type="application/json",
                              body=json.dumps({"value": n}))
-    ctx.route("**abacus.jasoncameron.dev/**", stand_in)   # registered last, so it answers first
+    ctx.route("**countapi.mileshilliard.com/**", stand_in)   # registered last, so it answers first
     admin = ("localStorage.setItem('iitw-staff-session', JSON.stringify({user:'Islam.younis.2026', at:Date.now()}));"
              "localStorage.removeItem('iitw-gh-token');localStorage.removeItem('iitw-staff-draft');"
-             "localStorage.removeItem('iitw-staff-stats');")
+             "localStorage.removeItem('iitw-staff-stats-2');")
     pg = open_page(ctx, "staff.html", extra=admin)
     pg.click("#staffTabs button[data-sec='analytics']")
     status = lambda: pg.inner_text("#statStatus")
@@ -1035,14 +1035,14 @@ def staff_stats_say_when_the_counter_fails(ctx):
     check("Verse pages" in rows and "—" not in rows and "…" not in rows, "the page rows are wrong: %r" % rows[:200])
     check("Logout" not in rows, "the Logout link is listed as a page")
     check(mode["refused"] == 0, "the panel asked too fast: %d requests refused" % mode["refused"])
-    check(pg.evaluate("() => !!localStorage.getItem('iitw-staff-stats')"), "a complete read was not kept on the device")
+    check(pg.evaluate("() => !!localStorage.getItem('iitw-staff-stats-2')"), "a complete read was not kept on the device")
     # switching the language redraws what was read; it does not ask the service again
     asked = mode["asked"]
     pg.click("#langToggle")
     pg.wait_for_timeout(500)
     # every row label is in the dictionary: "Verse pages" stayed English in
     # Arabic, and no audit saw it — the rows are only drawn when the service answers
-    shown = pg.inner_text("#statPages") + "\n" + pg.inner_text("#statClicks") + "\n" + pg.inner_text("#statStatus")
+    shown = "\n".join(pg.inner_text(s) for s in ("#statPages", "#statClicks", "#statStatus", ".stat-since"))
     leaks = [l for l in shown.split("\n") if re.search("[A-Za-z]", l)]
     check(not leaks, "English in the Arabic statistics: %r" % leaks[:4])
     check(re.search("[٠-٩]", pg.inner_text("#statStatus")), "the Arabic date is not in Arabic digits")
@@ -1069,7 +1069,7 @@ def staff_stats_say_when_the_counter_fails(ctx):
             pass
     # refusing, nothing kept, in Arabic: the Arabic sentence alone, and no zeros
     mode["m"] = "refuse"
-    pg.evaluate("() => { localStorage.removeItem('iitw-staff-stats'); localStorage.setItem('iitw-lang', 'ar'); }")
+    pg.evaluate("() => { localStorage.removeItem('iitw-staff-stats-2'); localStorage.setItem('iitw-lang', 'ar'); }")
     pg.reload(wait_until="load")
     pg.wait_for_timeout(600)
     pg.click("#staffTabs button[data-sec='analytics']")
@@ -1079,7 +1079,7 @@ def staff_stats_say_when_the_counter_fails(ctx):
     check(pg.inner_text("#statTotal") == "—", "a failed read was shown as a number: %r" % pg.inner_text("#statTotal"))
     lists = pg.inner_text("#statPages") + pg.inner_text("#statClicks")
     check("0" not in lists and "غير متاح" in lists, "the lists did not say the numbers are unavailable: %r" % lists[:120])
-    pg.evaluate("() => { localStorage.removeItem('iitw-staff-draft'); localStorage.removeItem('iitw-staff-stats'); }")
+    pg.evaluate("() => { localStorage.removeItem('iitw-staff-draft'); localStorage.removeItem('iitw-staff-stats-2'); }")
     return pg
 
 
@@ -1094,7 +1094,7 @@ def main():
             if want and not any(w in fn.__name__ for w in want):
                 continue
             ctx = b.new_context(viewport={"width": 1280, "height": 900}, service_workers="block")
-            blocked = BLOCK if not getattr(fn, "needs_network", False) else ("abacus.jasoncameron.dev",)
+            blocked = BLOCK if not getattr(fn, "needs_network", False) else ("abacus.jasoncameron.dev", "countapi.mileshilliard.com")
             for host in blocked:
                 ctx.route("**" + host + "**", lambda r: r.abort())
             try:

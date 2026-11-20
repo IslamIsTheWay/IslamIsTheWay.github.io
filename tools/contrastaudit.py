@@ -151,6 +151,7 @@ with sync_playwright() as p:
         for lang in ("ar", "en"):
             ctx = b.new_context(viewport={"width": 1280, "height": 900}, service_workers="block")
             ctx.route("**abacus.jasoncameron.dev**", lambda r: r.abort())
+            ctx.route("**countapi.mileshilliard.com**", lambda r: r.abort())
             ctx.add_init_script(
                 "localStorage.setItem('iitw-theme','%s');localStorage.setItem('iitw-lang','%s');"
                 "localStorage.setItem('iitw-staff-session', JSON.stringify({user:'Islam.younis.2026', at:Date.now()}));"
