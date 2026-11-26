@@ -115,7 +115,7 @@ const PRAYER = {
       title: "Inside the prayer — when something goes wrong",
       titleAr: "داخل الصلاة — إذا عرض ما يفسدها أو يشكّك",
       lead: "The three things that actually happen to people, and what to do about each without starting your life again.",
-      leadAr: "ثلاثةٌ تقع للناس حقًّا، وما يُصنع في كلٍّ منها من لكن تستأنف كلَّ شيء.",
+      leadAr: "ثلاثةٌ تقع للناس حقًّا، وما يُصنع في كلٍّ منها من غير أن تستأنف كلَّ شيء.",
       items: [
         {
           id: "pr-breaks", icon: "🚫",

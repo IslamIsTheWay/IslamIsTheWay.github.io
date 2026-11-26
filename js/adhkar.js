@@ -57,7 +57,7 @@ const ADHKAR = [
     countEn: "Once — in the evening say \"amsayna\" (we have entered the evening) in place of \"asbahna\"",
     countAr: "مرّة واحدة — ويُقال في المساء: أمسينا وأمسى الملك لله",
     virtue: "This is what the Prophet ﷺ himself said when he entered the morning, and the same when he entered the evening.",
-    virtueAr: "هذا ما كان يقوله النبي ﷺ إذا أصبح، وكان يقول مثله إذا أمسى.",
+    virtueAr: "هذا ما كان يقوله النبي ﷺ إذا أصبح، وكان يقول مثله إذا جاء المساء.",
     ref: "Sahih Muslim, Book of Remembrance and Supplication (Kitab adh-Dhikr wa'd-Du'a)", refAr: "صحيح مسلم، كتاب الذكر والدعاء",
     strength: "Sahih — Narrated by Muslim",
     keys: ["morning", "evening", "dominion", "أصبحنا", "أمسينا", "الملك لله", "الصباح", "المساء"]

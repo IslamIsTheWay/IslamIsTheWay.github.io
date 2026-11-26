@@ -136,6 +136,10 @@ python tools/mixscan.py --check
 # 4c. the Arabic reads like the site, not like a printed tafsir - HANDOFF
 #     PART 40. --fix rewrites the safe words; it never touches a verse or a
 #     hadith (anything in the quoted fields, or between the brackets).
+#     --check also runs its SELFTEST: the sentences an earlier --fix broke
+#     («من غير أن» -> «من لكن», «يُتأمّل» -> «يُانظر», قطّ in quotations) must
+#     come out unharmed. Read what --fix changed before committing it -
+#     HANDOFF PART 45.
 python tools/arabicease.py --check
 
 # 4d. nothing on a phone is too small for a thumb, in either language

@@ -1083,6 +1083,112 @@ def staff_stats_say_when_the_counter_fails(ctx):
     return pg
 
 
+# The phone's audio, stubbed: play() records what it was asked to play and
+# resolves (or refuses, with ?refuse), and the element is kept so a test can
+# end the verse. Nothing is downloaded — everyayah.com is blocked anyway.
+AUDIO_STUB = ("window.__played=[];window.__el=null;"
+              "HTMLMediaElement.prototype.play=function(){window.__played.push(this.src);window.__el=this;"
+              "return (window.__refuse?Promise.reject(Object.assign(new Error('no'),{name:'NotAllowedError'})):Promise.resolve());};"
+              "HTMLMediaElement.prototype.pause=function(){};")
+
+
+@scenario
+def verse_page_listen_and_reciter(ctx):
+    """Most readers arrive on a verse page (53 of the first 76 visits counted),
+    and could not hear the verse. js/listen.js plays it from everyayah.com in
+    the reader's reciter — the same setting as the Quran reader, from the
+    one list in js/reciters.js."""
+    pg = open_page(ctx, "verse/2-255.html", extra="localStorage.removeItem('iitw-reciter');")
+    # on this page now, and on every page this tab opens next (open_page's own
+    # init script runs its extras once per tab only)
+    pg.evaluate("() => {" + AUDIO_STUB + "}")
+    pg.add_init_script(AUDIO_STUB)
+    check(visible_count(pg, ".vp-listen.ready") == 1, "the Listen block is not shown on a verse page")
+    n = pg.evaluate("() => document.querySelectorAll('.vp-reciter-pick option').length")
+    check(n == 16, "the reciter list has %d reciters, not the reader's 16" % n)
+    pg.click(".vp-listen-btn")
+    pg.wait_for_timeout(200)
+    played = pg.evaluate("() => window.__played")
+    check(played == ["https://everyayah.com/data/Alafasy_128kbps/002255.mp3"], "Listen played %r" % played)
+    check(pg.get_attribute(".vp-listen-btn", "aria-pressed") == "true" and "Stop" in pg.inner_text(".vp-listen-btn"),
+          "the button does not offer Stop while playing")
+    pg.click(".vp-listen-btn")
+    check(pg.get_attribute(".vp-listen-btn", "aria-pressed") == "false", "Stop did not stop")
+    # a reciter chosen here is the reader's reciter everywhere
+    pg.select_option(".vp-reciter-pick", "Husary_128kbps")
+    pg.click(".vp-listen-btn")
+    pg.wait_for_timeout(200)
+    check(pg.evaluate("() => window.__played[window.__played.length - 1]") ==
+          "https://everyayah.com/data/Husary_128kbps/002255.mp3", "the chosen reciter was not the one played")
+    pg.goto(BASE + "quran.html", wait_until="networkidle")
+    pg.wait_for_timeout(400)
+    check(pg.evaluate("() => getReciter()") == "Husary_128kbps", "the Quran reader did not keep the reciter chosen on a verse page")
+    check(pg.evaluate("() => typeof ayahAudioUrl === 'function' && RECITERS.length === 16"),
+          "the Quran reader lost its reciters when they moved to js/reciters.js")
+    # the home page plays both of its verses, one after the other
+    pg.goto(BASE + "index.html", wait_until="networkidle")
+    pg.wait_for_timeout(400)
+    pg.evaluate("() => { window.__played = []; }")
+    pg.click(".hero-verse-listen .vp-listen-btn")
+    pg.wait_for_timeout(200)
+    pg.evaluate("() => window.__el.onended && window.__el.onended()")
+    pg.wait_for_timeout(200)
+    played = pg.evaluate("() => window.__played")
+    check(played == ["https://everyayah.com/data/Husary_128kbps/059019.mp3",
+                     "https://everyayah.com/data/Husary_128kbps/059020.mp3"], "the home page played %r" % played)
+    # in Arabic: the reciters in Arabic, and a recitation that cannot play says so in Arabic
+    pg.evaluate("() => { localStorage.setItem('iitw-lang', 'ar'); }")
+    pg.goto(BASE + "verse/2-255.html", wait_until="networkidle")
+    pg.wait_for_timeout(400)
+    names = pg.evaluate("() => [...document.querySelectorAll('.vp-reciter-pick option')].map(o => o.textContent)")
+    check("محمود خليل الحصري" in names and not any(re.search("[A-Za-z]", x) for x in names),
+          "the reciter names are not Arabic in Arabic mode: %r" % names[:3])
+    pg.evaluate("() => { window.__refuse = true; }")
+    pg.click(".vp-listen-btn")
+    pg.wait_for_timeout(300)
+    msg = pg.inner_text(".vp-listen-msg")
+    check("تعذّر تشغيل التلاوة" in msg and not re.search("[A-Za-z]", msg), "a recitation that cannot play did not say so: %r" % msg)
+    check(pg.get_attribute(".vp-listen-btn", "aria-pressed") == "false", "the button stayed on Stop after a failure")
+    pg.evaluate("() => { localStorage.removeItem('iitw-reciter'); }")
+    return pg
+
+
+@scenario
+def every_source_line_reads_in_arabic(ctx):
+    """In Arabic mode a source line must be Arabic. Two faults made 387 verse
+    pages fail this (25 November 2026): the verse pages had no surah names
+    (data.js is not loaded there — js/surah-names.js now is), and 114 source
+    lines were prose no translator can do (they now carry refAr/sourceAr).
+    This runs the site's own translator over EVERY source line in
+    js/tadabbur.js, so a new entry written in English prose fails here."""
+    pg = open_page(ctx, "quran.html", lang="ar")
+    bad = pg.evaluate("""() => {
+      const out = [];
+      const latin = t => /[A-Za-z]{2,}/.test(String(t).replace(/«[^«»]*»/g, ""));
+      const test = (en, ar, where) => {
+        if (!en) return;
+        const shown = ar ? ar : iitwTranslateReference(en);
+        if (latin(shown)) out.push(where + ": " + shown.slice(0, 80));
+      };
+      Object.keys(TADABBUR).forEach(s => (TADABBUR[s].ayat || []).forEach(a => {
+        const w = s + ":" + a.n;
+        test(a.ref, a.refAr, w + " ref");
+        (a.words || []).forEach(x => test(x.source, x.sourceAr, w + " word"));
+        (a.links || []).forEach(x => test(x.ref, x.refAr, w + " link"));
+      }));
+      return out;
+    }""")
+    check(not bad, "%d source lines would show English in Arabic mode, e.g. %r" % (len(bad), bad[:3]))
+    # and on the verse pages themselves, where data.js is not loaded
+    for page in ("verse/59-19.html", "verse/2-195.html", "verse/2-164.html", "verse/17-36.html"):
+        pg.goto(BASE + page, wait_until="networkidle")
+        pg.wait_for_timeout(300)
+        shown = pg.evaluate("() => [...document.querySelectorAll('.tad-ref')].filter(e => e.getClientRects().length)"
+                            ".map(e => e.innerText).filter(t => /[A-Za-z]{2,}/.test(t.replace(/«[^«»]*»/g, '')))")
+        check(not shown, "%s shows a source line in English in Arabic mode: %r" % (page, shown[:2]))
+    return pg
+
+
 def main():
     want = [a for a in sys.argv[1:] if not a.startswith("--")]
     passed, failed = [], []

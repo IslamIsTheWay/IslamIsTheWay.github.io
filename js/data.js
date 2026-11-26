@@ -2632,7 +2632,7 @@ const HADITHS = [
     titleAr: "الكذب طريقٌ لا فعلةً واحدة",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     explain: "The phrase to sit with is \"UNTIL HE IS WRITTEN DOWN as a liar.\" It stops being something a man does and becomes something he is — and nobody chooses that day. It arrives after enough small ones: the excuse to a boss, the price inflated a little, the story improved because it was flat. Which is also the good news in the first half: the road runs both ways, and it is built out of the same size of step.",
-    explainAr: "والموضعُ الذي يُوقف عنده: «حتى يُكتب عند الله كذّابًا» — فينتقل الأمرُ من شيءٍ يفعله إلى شيءٍ هو إيّاه، ولا يختار أحدٌ ذلك اليوم. وإنما يأتي بعد صغائرَ كثيرة: عذرٌ لصاحب العمل، وثمنٌ يُزاد قليلًا، وحكايةٌ تُحسَّن لأنها جاءت باردة. وفي الشطر الأوّل البشارة: فالطريقُ يجري في الوجهتين، وهو مبنيٌّ من خطوةٍ بهذا الحجم نفسه.",
+    explainAr: "والموضعُ الذي يُوقف عنده: «حتى يُكتب عند الله كذّابًا» — فينتقل الأمرُ من شيءٍ يفعله إلى شيءٍ هو إيّاه، ولا يختار أحدٌ ذلك اليوم. وإنما يأتي بعد صغائرَ كثيرة: عذرٌ لصاحب العمل، وثمنٌ يُزاد قليلًا، وحكايةٌ تُحسَّن لأنها جاءت باردة. وفي الجزء الأوّل البشارة: فالطريقُ يجري في الوجهتين، وهو مبنيٌّ من خطوةٍ بهذا الحجم نفسه.",
     keys: ["lying","lies","liar","is lying haram","white lie","telling lies","honesty","truthfulness","dishonest","small lie",
            "الكذب","كذب","الصدق","كذاب","الكذبة البيضاء","حكم الكذب","الصدق ينجي"]
   }
@@ -3591,11 +3591,11 @@ const PROPHET_STORIES = [
             { en: "They find a huge man in chains — hands bound to his neck, irons from his knees to his ankles.",
               ar: "فوجدوا رجلًا عظيم الخِلقة موثَقًا، يداه إلى عنقه، وما بين ركبتيه إلى كعبيه بالحديد." },
             { en: "He asks about three places: the palms of Baysan, the lake of Tiberias, and the spring of Zughar — and says each will soon fail.",
-              ar: "فسألهم عن ثلاثة مواضع: نخل بَيْسان، وبحيرة الطبريّة، وعين زُغَر — وأخبر أنّ كلًّا منها يوشك أن ينقطع." },
+              ar: "فسألهم عن ثلاثة مواضع: نخل بَيْسان، وبحيرة الطبريّة، وعين زُغَر — وأخبر أنّ كلًّا منها سينقطع قريبًا." },
             { en: "He asks whether the unlettered Prophet has appeared, and how the Arabs answered him.",
               ar: "وسألهم عن النبيّ الأمّيّ: هل خرج؟ وكيف صنع العرب معه؟" },
             { en: "Then he says it outright: <strong>“I am the Dajjal”</strong> — and that he will be allowed out, and will enter every town on earth except two.",
-              ar: "ثمّ صرّح: <strong>«إنّي أنا المسيح الدجّال»</strong>، وأنّه يوشك أن يُؤذن له بالخروج، فيطأ الأرض كلّها إلا بلدتين." },
+              ar: "ثمّ صرّح: <strong>«إنّي أنا المسيح الدجّال»</strong>، وأنّه سيُؤذن له بالخروج قريبًا، فيطأ الأرض كلّها إلا بلدتين." },
             { en: "The Prophet ﷺ struck the pulpit and said: <strong>this is Taybah</strong> — this is Madinah. Makkah and Madinah are closed to him; an angel with a drawn sword turns him back at every road in.",
               ar: "فطعن النبيُّ ﷺ بمِخصرته المنبر وقال: <strong>هذه طَيْبة</strong> — يعني المدينة. فمكّة والمدينة محرّمتان عليه، على كلّ نَقْبٍ منهما ملائكةٌ تحرسها." }
           ] },
@@ -3723,7 +3723,7 @@ const PROPHET_STORIES = [
             { en: "The Prophet's ﷺ instruction to anyone who reaches that day: <strong>go into the one that looks like fire</strong>, because it is water.",
               ar: "ووصيّة النبيّ ﷺ لمن أدرك ذلك: <strong>فليقع في الذي يراها نارًا</strong>، فإنّها ماءٌ عذبٌ بارد." },
             { en: "Which means the safe choice will <strong>look</strong> like the ruinous one, and the ruinous one will look like rescue.",
-              ar: "ومعناه أنّ النجاة يومئذٍ <strong>تبدو</strong> هلاكًا، وأنّ الهلاك يبدو نجاةً." }
+              ar: "ومعناه أنّ النجاة في ذلك الوقت <strong>تبدو</strong> هلاكًا، وأنّ الهلاك يبدو نجاةً." }
           ] }
       ]
     },
@@ -4207,7 +4207,7 @@ const PROPHET_STORIES = [
     theme: "Power that is never used on the weak",
     themeAr: "قوّةٌ لا تُستعمل على الضعيف",
     story: "Aishah رضي الله عنها reported that the Messenger of Allah ﷺ never struck anyone with his hand — not a woman, not a servant — except when fighting in the cause of Allah. And he never took revenge for anything done to him personally; only if a sacred limit of Allah was violated did he act, and then for Allah's sake.",
-    storyAr: "قالت عائشة رضي الله عنها: ما ضرب رسول الله ﷺ شيئًا أبدًا بيده، ولا امرأةً ولا خادمًا، إلا أن يجاهد في سبيل الله. وما نِيل منه شيءٌ أبدًا فينتقم من صاحبه، إلا أن يُنتهك شيءٌ من محارم الله فينتقم لله عزّ وجلّ.",
+    storyAr: "قالت عائشة رضي الله عنها: ما ضرب رسول الله ﷺ شيئًا قطّ بيده، ولا امرأةً ولا خادمًا، إلا أن يجاهد في سبيل الله. وما نِيل منه شيءٌ أبدًا فينتقم من صاحبه، إلا أن يُنتهك شيءٌ من محارم الله فينتقم لله عزّ وجلّ.",
     lesson: "He had every kind of power over the people around him and never once used it on someone who could not answer back. Anger about your own dignity, and anger about what is sacred, are not the same thing — he acted on the second and let the first go.",
     lessonAr: "كانت له كلُّ سلطةٍ على من حوله فما استعملها مرّةً على من لا يستطيع ردًّا. والغضب لنفسك غير الغضب لحرمات الله؛ فأمضى الثاني وترك الأول.",
     ref: "Sahih Muslim, Book of Virtues (Kitab al-Fada'il)", refAr: "صحيح مسلم، كتاب الفضائل",
@@ -4678,7 +4678,7 @@ const PROPHET_STORIES = [
     storyAr: "قال معاوية رضي الله عنه وهو يخطب: سمعت النبي ﷺ يقول: «من يُرد الله به خيرًا يُفقّهه في الدين، وإنما أنا قاسمٌ والله يُعطي».",
     arabic: "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ، وَإِنَّمَا أَنَا قَاسِمٌ وَاللَّهُ يُعْطِي",
     lesson: "The word is FIQH, not 'ilm. In Arabic they are not the same: 'ilm is to know a thing, and fiqh is to understand it — to see why it is so, and what follows from it. The sign named here is comprehension, not the quantity of what someone has memorised.\n\nAnd the second half is the part usually left off, though it changes the first. \"I am only one who distributes, and Allah is the One who gives.\" The Prophet ﷺ says of himself that he hands out; the giving is not his. So a student who sits with a teacher has come to the distributor — and must ask the Giver.\n\nThere is also a plain consequence in it that is easy to miss: if being given understanding is the sign that good is intended for someone, then the effort to understand is not a career and not a hobby. It is being reached for.",
-    lessonAr: "اللفظ «يُفقّهه» لا «يُعلّمه»، وليسا في العربية سواءً: فالعلم إدراك الشيء، والفقه فهمه — أن تعرف لِمَ كان كذلك وما يترتّب عليه. فالعلامة المذكورة هي الفهم، لا مقدار المحفوظ.\n\nوالشطر الثاني هو الذي يُترك عادةً، وهو يغيّر الأوّل: «وإنما أنا قاسمٌ والله يُعطي». فأخبر ﷺ عن نفسه أنه يقسم، وأنّ العطاء ليس إليه. فمن جلس إلى معلّمٍ فقد أتى القاسم، وعليه أن يسأل المعطي.\n\nوفيه لازمٌ ظاهر يفوت كثيرًا: إذا كان رزقُ الفهم علامةَ إرادة الخير بالعبد، فليس طلبُ الفهم حرفةً ولا هواية، وإنما هو طلبٌ لأن تُنال.",
+    lessonAr: "اللفظ «يُفقّهه» لا «يُعلّمه»، وليسا في العربية سواءً: فالعلم إدراك الشيء، والفقه فهمه — أن تعرف لِمَ كان كذلك وما يترتّب عليه. فالعلامة المذكورة هي الفهم، لا مقدار المحفوظ.\n\nوالجزء الثاني هو الذي يُترك عادةً، وهو يغيّر الأوّل: «وإنما أنا قاسمٌ والله يُعطي». فأخبر ﷺ عن نفسه أنه يقسم، وأنّ العطاء ليس إليه. فمن جلس إلى معلّمٍ فقد أتى القاسم، وعليه أن يسأل المعطي.\n\nوفيه لازمٌ ظاهر يفوت كثيرًا: إذا كان رزقُ الفهم علامةَ إرادة الخير بالعبد، فليس طلبُ الفهم حرفةً ولا هواية، وإنما هو طلبٌ لأن تُنال.",
     ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 71",
     strength: "Sahih — Agreed upon (al-Bukhari and Muslim)",
     keys: ["knowledge","learning","study","understanding","fiqh","student","teacher","scholar","العلم","التعلم","الفقه","الفهم","طلب العلم","المعلم","العالم"]
@@ -4741,7 +4741,7 @@ const PROPHET_STORIES = [
     storyAr: "قال النبيُّ ﷺ: «مَثَلُ ما بعثني اللهُ به من الهدى والعلم كمَثَل الغيث الكثير أصاب أرضًا.\n\nفكان منها نَقِيّةٌ — أي طيّبةٌ طاهرة — قبِلت الماءَ فأنبتت الكلأَ والعشبَ الكثير.\n\nوكانت منها أجادِبُ — أي أرضٌ صُلبةٌ لا تشرب — أمسكت الماءَ فنفع اللهُ بها الناس، فشربوا وسقَوا وزرعوا.\n\nوأصابت منها طائفةً أخرى إنما هي قِيعان — أي أرضٌ مستويةٌ ملساء — لا تُمسك ماءً ولا تُنبت كلأً.\n\nفذلك مَثَلُ من فقِه في دين الله ونفعه ما بعثني اللهُ به، فعلِم وعلَّم؛ ومَثَلُ من لم يرفع بذلك رأسًا، ولم يقبل هدى الله الذي أُرسلتُ به».",
     arabic: "مَثَلُ مَا بَعَثَنِي اللَّهُ بِهِ مِنَ الْهُدَى وَالْعِلْمِ كَمَثَلِ الْغَيْثِ الْكَثِيرِ أَصَابَ أَرْضًا",
     lesson: "The rain is the same in all three cases. What differs is the ground. So when a lesson moves one person and leaves another cold, the explanation is not always in the lesson.\n\nAnd there are two useful kinds of ground here, not one. The first grows something of its own. The second grows nothing itself — it only holds the water so that others can drink. A person who memorises and transmits accurately without being a scholar is the second kind of ground, and the hadith counts him among those Allah benefited people through.\n\nThe third is not condemned for being stupid. It is described as not raising its head to it. That is a decision, not a capacity.",
-    lessonAr: "المطرُ واحدٌ في الأحوال الثلاثة، وإنما اختلفت الأرض. فإذا حرّك الدرسُ رجلًا وترك آخر باردًا، فليس التفسيرُ دائمًا في الدرس.\n\nوهنا نوعان نافعان لا نوعٌ واحد. فالأولى تُنبت من نفسها، والثانية لا تُنبت شيئًا — إنما تُمسك الماءَ ليشرب منه غيرُها. فالذي يحفظ وينقل بأمانةٍ من لكن يكون عالمًا هو الأرضُ الثانية، وقد عدّه الحديثُ ممّن نفع اللهُ بهم الناس.\n\nوالثالثةُ لم تُذمّ لبلادتها، وإنما وُصفت بأنها لم ترفع بذلك رأسًا. وهذا قرارٌ لا طاقة.",
+    lessonAr: "المطرُ واحدٌ في الأحوال الثلاثة، وإنما اختلفت الأرض. فإذا حرّك الدرسُ رجلًا وترك آخر باردًا، فليس التفسيرُ دائمًا في الدرس.\n\nوهنا نوعان نافعان لا نوعٌ واحد. فالأولى تُنبت من نفسها، والثانية لا تُنبت شيئًا — إنما تُمسك الماءَ ليشرب منه غيرُها. فالذي يحفظ وينقل بأمانةٍ من غير أن يكون عالمًا هو الأرضُ الثانية، وقد عدّه الحديثُ ممّن نفع اللهُ بهم الناس.\n\nوالثالثةُ لم تُذمّ لبلادتها، وإنما وُصفت بأنها لم ترفع بذلك رأسًا. وهذا قرارٌ لا طاقة.",
     ref: "Sahih al-Bukhari, Book of Knowledge, Hadith 79",
     strength: "Sahih — Narrated by al-Bukhari",
     keys: ["knowledge","rain","parable","teaching","learning","understanding","fiqh","scholar",

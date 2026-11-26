@@ -1433,8 +1433,17 @@ let iitwSurahMap = null;
 function iitwGetSurahMap() {
   if (iitwSurahMap) return iitwSurahMap;
   iitwSurahMap = {};
-  if (typeof SURAHS === "undefined") return iitwSurahMap;
-  SURAHS.forEach(s => { iitwSurahMap[iitwNormSurah(s.name)] = s.arabic; });
+  /* SURAHS lives in data.js, which the verse pages do not load — and with no
+     names the map was empty there: 387 of 444 verse pages read «سورة
+     Al-Hashr» in Arabic. js/surah-names.js (generated from data.js by
+     tools/build-verse-pages.py) carries the names on those pages. */
+  if (typeof SURAHS !== "undefined") {
+    SURAHS.forEach(s => { iitwSurahMap[iitwNormSurah(s.name)] = s.arabic; });
+  } else if (window.IITW_SURAH_NAMES) {
+    Object.keys(window.IITW_SURAH_NAMES).forEach(n => {
+      iitwSurahMap[iitwNormSurah(n)] = window.IITW_SURAH_NAMES[n];
+    });
+  }
   return iitwSurahMap;
 }
 

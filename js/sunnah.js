@@ -530,7 +530,7 @@ const SUNNAH = [
     title: "The dua when setting out and mounting a ride",
     titleAr: "دعاء السفر والركوب",
     detail: "When mounting his ride he ﷺ would say 'Glory to Him who has subjected this to us,' then ask Allah for righteousness and ease in the journey, and for protection over his family.",
-    detailAr: "كان ﷺ إذا استوى على دابته قال: ﴿سُبۡحَٰنَ ٱلَّذِي سَخَّرَ لَنَا هَٰذَا﴾، ثم سأل الله البرّ والتقوى وأن يُهوّن عليه السفر ويحفظ أهله.",
+    detailAr: "كان ﷺ إذا ركب دابّته واستقرّ عليها قال: ﴿سُبۡحَٰنَ ٱلَّذِي سَخَّرَ لَنَا هَٰذَا﴾، ثم سأل الله البرّ والتقوى وأن يُهوّن عليه السفر ويحفظ أهله.",
     arabic: "سُبۡحَٰنَ ٱلَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُۥ مُقۡرِنِينَ",
     ref: "Sahih Muslim, Book of Hajj, Hadith 1342",
     strength: "Sahih — Narrated by Muslim",

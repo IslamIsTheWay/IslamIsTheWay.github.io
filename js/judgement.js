@@ -111,7 +111,7 @@ const JUDGEMENT_STAGES = [
         quran: "",
         ref: "Sahih Muslim, Book of Paradise (Kitab al-Jannah) — Sahih" },
       { en: "Every human being will stand there, and the Quran says plainly that on that Day none will speak except by permission.",
-        ar: "ويقف الخلق كلّهم، وقد قال الله إنه يومئذٍ ﴿لَا تَكَلَّمُ نَفۡسٌ إِلَّا بِإِذۡنِهِۦۚ﴾.",
+        ar: "ويقف الخلق كلّهم، وقد قال الله إنه في ذلك اليوم ﴿لَا تَكَلَّمُ نَفۡسٌ إِلَّا بِإِذۡنِهِۦۚ﴾.",
         quran: "يَوۡمَ يَأۡتِ لَا تَكَلَّمُ نَفۡسٌ إِلَّا بِإِذۡنِهِۦۚ",
         ref: "Surah Hud (11:105)" }
     ],
@@ -155,7 +155,7 @@ const JUDGEMENT_STAGES = [
         ref: "Surah Al-Isra (17:79); and Sahih al-Bukhari, Book of Adhan, Hadith 614 — Sahih" }
     ],
     note: "Every prophet named above declines, and each one gives a reason from his own life. The scholars note that this is not a criticism of any of them — it is the point of the narration: on that Day nobody stands on his own record, and the one who is finally permitted to speak is permitted BY Allah, not by his own right. The intercession itself belongs to Allah, and happens only for whom He permits and is pleased with.",
-    noteAr: "كلُّ نبيٍّ ذُكر أعلاه يعتذر، ويذكر سببًا من أمره. ونبّه أهل العلم على أن هذا ليس قدحًا في أحدٍ منهم، بل هو مقصود الحديث: أن أحدًا لا يقوم يومئذٍ بنفسه، وأن الذي يُؤذن له إنما يُؤذن له بإذن الله لا بحقٍّ لنفسه. والشفاعة لله وحده، ولا تكون إلا لمن أذن له ورضي."
+    noteAr: "كلُّ نبيٍّ ذُكر أعلاه يعتذر، ويذكر سببًا من أمره. ونبّه أهل العلم على أن هذا ليس قدحًا في أحدٍ منهم، بل هو مقصود الحديث: أن أحدًا لا يقوم في ذلك اليوم بنفسه، وأن الذي يُؤذن له إنما يُؤذن له بإذن الله لا بحقٍّ لنفسه. والشفاعة لله وحده، ولا تكون إلا لمن أذن له ورضي."
   },
 
   {
@@ -232,7 +232,7 @@ const JUDGEMENT_STAGES = [
         quran: "وَقِفُوهُمۡۖ إِنَّهُم مَّسۡـُٔولُونَ",
         ref: "Surah As-Saffat (37:24)" },
       { en: "Then you will surely be asked that Day about the blessings — the health you had, the food, the safety, the water, the time. Not only about the great sins, but about what you were given and what you did with it.",
-        ar: "﴿ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ﴾ — الصحة والطعام والأمن والماء والوقت. فليس السؤال عن كبائر الذنوب فحسب، بل عمّا أُعطيتَ وما صنعتَ به.",
+        ar: "﴿ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ﴾ — الصحة والطعام والأمن والماء والوقت. فليس السؤال عن كبائر الذنوب فقط، بل عمّا أُعطيتَ وما صنعتَ به.",
         quran: "ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ",
         ref: "Surah At-Takathur (102:8)" },
       { en: "The hearing, the sight and the heart — each of these will be asked about. What you listened to, what you looked at, and what you let settle in your heart.",
@@ -240,7 +240,7 @@ const JUDGEMENT_STAGES = [
         quran: "إِنَّ ٱلسَّمۡعَ وَٱلۡبَصَرَ وَٱلۡفُؤَادَ كُلُّ أُوْلَٰٓئِكَ كَانَ عَنۡهُ مَسۡـُٔولٗا",
         ref: "Surah Al-Isra (17:36)" },
       { en: "Your own limbs testify. On that Day their tongues, their hands and their feet will bear witness against them for what they used to do — a person is not only asked, he is shown.",
-        ar: "وتشهد عليك جوارحك؛ ﴿يَوۡمَ تَشۡهَدُ عَلَيۡهِمۡ أَلۡسِنَتُهُمۡ وَأَيۡدِيهِمۡ وَأَرۡجُلُهُم بِمَا كَانُواْ يَعۡمَلُونَ﴾ — فالمرء لا يُسأل فحسب، بل يُشهَد عليه.",
+        ar: "وتشهد عليك جوارحك؛ ﴿يَوۡمَ تَشۡهَدُ عَلَيۡهِمۡ أَلۡسِنَتُهُمۡ وَأَيۡدِيهِمۡ وَأَرۡجُلُهُم بِمَا كَانُواْ يَعۡمَلُونَ﴾ — فالمرء لا يُسأل فقط، بل يُشهَد عليه.",
         quran: "يَوۡمَ تَشۡهَدُ عَلَيۡهِمۡ أَلۡسِنَتُهُمۡ وَأَيۡدِيهِمۡ وَأَرۡجُلُهُم بِمَا كَانُواْ يَعۡمَلُونَ",
         ref: "Surah An-Nur (24:24)" },
       { en: "And the mouth is sealed. On that Day We seal over their mouths, and their hands speak to Us, and their feet testify to what they used to earn.",
@@ -260,7 +260,7 @@ const JUDGEMENT_STAGES = [
     lead: "On a day when the sun is brought near and there is no shade at all, the Prophet ﷺ named seven kinds of people whom Allah shades. He named them precisely, so that anyone can look at the list and ask which of them he could still become.",
     leadAr: "في يومٍ تُدنى فيه الشمس ولا ظلّ فيه أبدًا، سمّى النبي ﷺ سبعةً يُظلّهم الله في ظلّه. وسمّاهم تسميةً دقيقة، حتى ينظر كلُّ أحدٍ في القائمة فيسأل نفسه: أيّهم يمكن أن أكون؟",
     plain: "In plain words: there is no shade at all that day except the shade Allah gives, and he ﷺ named seven kinds of people who are given it.\n\nRead the list slowly, because it is not seven famous men. It is seven ordinary situations: a young man who grew up worshipping, a man whose heart is attached to the mosque, two who loved one another for Allah, a man who refused a woman of position and beauty, a man who gave charity so secretly that his left hand did not know, and a man who remembered Allah alone until his eyes overflowed.\n\nEvery one of them is reachable. That is why he named them instead of describing them vaguely.",
-    plainAr: "بكلامٍ بسيط: لا ظلَّ يومئذٍ إلا ظلُّه، وقد سمّى ﷺ سبعةً يُظلّهم الله فيه.\n\nواقرأ العدد على مهلٍ، فليسوا سبعةً من المشاهير، وإنما هي سبعُ حالاتٍ عاديّة: شابٌّ نشأ في عبادة ربّه، ورجلٌ قلبه معلَّقٌ بالمساجد، ورجلان تحابّا في الله، ورجلٌ دعته امرأةٌ ذات منصبٍ وجمالٍ فقال إني أخاف الله، ورجلٌ تصدّق بصدقةٍ فأخفاها حتى لا تعلم شماله ما تنفق يمينه، ورجلٌ ذكر الله خاليًا ففاضت عيناه.\n\nوكلُّها في متناول الناس. ولهذا سمّاها تسميةً ولم يصفها وصفًا مبهمًا.",
+    plainAr: "بكلامٍ بسيط: لا ظلَّ في ذلك اليوم إلا ظلُّه، وقد سمّى ﷺ سبعةً يُظلّهم الله فيه.\n\nواقرأ العدد على مهلٍ، فليسوا سبعةً من المشاهير، وإنما هي سبعُ حالاتٍ عاديّة: شابٌّ نشأ في عبادة ربّه، ورجلٌ قلبه معلَّقٌ بالمساجد، ورجلان تحابّا في الله، ورجلٌ دعته امرأةٌ ذات منصبٍ وجمالٍ فقال إني أخاف الله، ورجلٌ تصدّق بصدقةٍ فأخفاها حتى لا تعلم شماله ما تنفق يمينه، ورجلٌ ذكر الله خاليًا ففاضت عيناه.\n\nوكلُّها في متناول الناس. ولهذا سمّاها تسميةً ولم يصفها وصفًا مبهمًا.",
     points: [
       { en: "He listed them one by one. Each line below is his wording, not a summary of it.",
         ar: "عدّهم النبي ﷺ واحدًا واحدًا. وكلُّ سطرٍ ممّا يلي لفظ الحديث لا اختصاره.",
@@ -286,7 +286,7 @@ const JUDGEMENT_STAGES = [
         ],
         ref: "Sahih al-Bukhari, Book of Adhan, Hadith 660 — Sahih, agreed upon" },
       { en: "Read the seven again and notice what they are not. Only the first is an office a person is appointed to; the other six are within the reach of anyone. And six of the seven happen where no one is looking — the young person's worship, the heart that keeps returning to the mosque, two friends holding one another to the truth, the man who refuses a woman of rank and beauty who has called him and whom no one would ever have known about, the charity hidden even from his own left hand, and the tears of a man sitting alone. These are deeds of secrecy, made public on the one day that counts.",
-        ar: "أعِد النظر في السبعة وتأمّل ما ليست هي. فليس فيها ولايةٌ يُولّاها المرء إلا الأولى، وسائرها في مقدور كلِّ أحد. وستٌّ من السبع تقع حيث لا يراها أحد: عبادةُ الشابّ، وقلبٌ يعود إلى المسجد، وصاحبان يتعاهدان على الحق، ورجلٌ طلبته امرأةٌ ذات منصبٍ وجمالٍ فأبى ولم يكن ليعلم به أحد، وصدقةٌ أخفاها حتى عن شماله، ودمعةُ رجلٍ خالٍ بنفسه. فهي أعمال السرّ، تُعلَن يوم لا ينفع سواها.",
+        ar: "أعِد النظر في السبعة وانظر ما ليست هي. فليس فيها ولايةٌ يُولّاها المرء إلا الأولى، وسائرها في مقدور كلِّ أحد. وستٌّ من السبع تقع حيث لا يراها أحد: عبادةُ الشابّ، وقلبٌ يعود إلى المسجد، وصاحبان يتعاهدان على الحق، ورجلٌ طلبته امرأةٌ ذات منصبٍ وجمالٍ فأبى ولم يكن ليعلم به أحد، وصدقةٌ أخفاها حتى عن شماله، ودمعةُ رجلٍ خالٍ بنفسه. فهي أعمال السرّ، تُعلَن يوم لا ينفع سواها.",
         quran: "",
         ref: "The meaning of the hadith above" }
     ],
@@ -298,7 +298,7 @@ const JUDGEMENT_STAGES = [
     id: "j-faces",
     order: 9,
     title: "Two kinds of faces — and how the Day feels from inside each",
-    titleAr: "وجهان يومئذٍ — وكيف يمرّ اليوم على كلٍّ منهما",
+    titleAr: "وجهان يوم القيامة — وكيف يمرّ اليوم على كلٍّ منهما",
     lead: "The Quran describes the Day not only from the outside but from inside the person living it. Two sets of faces, and two completely different experiences of the same length of time.",
     leadAr: "وصف القرآن ذلك اليوم لا من خارجه فقط، بل من داخل من يعيشه: وجهان، وشعوران مختلفان تمامًا بالمدّة نفسها.",
     plain: "In plain words: the same day is not the same length for everyone living it.\n\nThe Quran describes two kinds of faces — some bright and laughing, some covered in dust and darkness — and describes the day itself as heavy on one group and light on the other. The difference is not in the day. It is in who is standing in it.",
@@ -462,7 +462,7 @@ const JUDGEMENT_STAGES = [
         quran: "وَسِيقَ ٱلَّذِينَ ٱتَّقَوۡاْ رَبَّهُمۡ إِلَى ٱلۡجَنَّةِ زُمَرًاۖ حَتَّىٰٓ إِذَا جَآءُوهَا وَفُتِحَتۡ أَبۡوَٰبُهَا وَقَالَ لَهُمۡ خَزَنَتُهَا سَلَٰمٌ عَلَيۡكُمۡ طِبۡتُمۡ فَٱدۡخُلُوهَا خَٰلِدِينَ",
         ref: "Surah Az-Zumar (39:73)" },
       { en: "Notice the difference in the two verses. Those driven to the Fire come to it and its gates are opened as they arrive — fututihat. Those taken to Paradise come to it and its gates are ALREADY open — wa futihat, with the waw. The scholars of tafsir noted this: the Fire is opened for them when they get there; Paradise is standing open, waiting.",
-        ar: "وتأمّل الفرق بين الآيتين: أهل النار يأتونها فتُفتح أبوابها عند مجيئهم — «فُتِحت». وأهل الجنة يأتونها وأبوابها مفتوحةٌ من قبل — «وفُتِحت» بالواو. وقد نبّه المفسّرون على ذلك: النار تُفتح لهم عند وصولهم، والجنة مفتوحةٌ تنتظرهم.",
+        ar: "وانظر الفرق بين الآيتين: أهل النار يأتونها فتُفتح أبوابها عند مجيئهم — «فُتِحت». وأهل الجنة يأتونها وأبوابها مفتوحةٌ من قبل — «وفُتِحت» بالواو. وقد نبّه المفسّرون على ذلك: النار تُفتح لهم عند وصولهم، والجنة مفتوحةٌ تنتظرهم.",
         quran: "وَسِيقَ ٱلَّذِينَ كَفَرُوٓاْ إِلَىٰ جَهَنَّمَ زُمَرًاۖ حَتَّىٰٓ إِذَا جَآءُوهَا فُتِحَتۡ أَبۡوَٰبُهَا",
         ref: "Surah Az-Zumar (39:71) compared with (39:73)" },
       { en: "The width of a single gate of Paradise. In the hadith of the intercession the Prophet ﷺ swore to it: By Him in whose hand is the soul of Muhammad, the distance between the two door-posts of a gate of Paradise is as the distance between Makkah and Hajar — or as between Makkah and Busra. The figure people quote more often, a forty-year journey, with the words that a day will come when that gate is packed with the crowd, is also in Sahih Muslim — but it comes in the sermon of the companion Utbah ibn Ghazwan رضي الله عنه, who introduces it with \"it has been mentioned to us\". So it is not quoted here as the Prophet's ﷺ own wording, and the wording above is.",
@@ -489,7 +489,7 @@ const JUDGEMENT_STAGES = [
     plainAr: "بكلامٍ بسيط: تمرّ بهذا وحدك.\n\nفأقربُ الناس إليك — الوالدان والزوج والولد — يشغلهم أمرُهم عن أن يُغنوا عنك شيئًا، وبعضهم واقفٌ يطلب حقًّا له عندك. قال القرآن ذلك صريحًا ولم يُلطّفه.\n\nولم يُقل هذا ليدفع أحدًا إلى القنوط، وإنما ليكفّ المرء عن أن يبني أمره كلَّه على من لا يقدرون أن يقفوا معه، ويبني على ما يقف معه.",
     points: [
       { en: "A man will flee from his brother, and his mother and his father, and his wife and his children — because on that Day every man has a matter that is enough to occupy him entirely. Read the words: he flees from his own mother.",
-        ar: "﴿يَفِرُّ ٱلۡمَرۡءُ مِنۡ أَخِيهِ ۝ وَأُمِّهِۦ وَأَبِيهِ ۝ وَصَٰحِبَتِهِۦ وَبَنِيهِ﴾؛ لأن ﴿لِكُلِّ ٱمۡرِيٕٖ مِّنۡهُمۡ يَوۡمَئِذٖ شَأۡنٞ يُغۡنِيهِ﴾. وتأمّل اللفظ: يفرّ من أمّه.",
+        ar: "﴿يَفِرُّ ٱلۡمَرۡءُ مِنۡ أَخِيهِ ۝ وَأُمِّهِۦ وَأَبِيهِ ۝ وَصَٰحِبَتِهِۦ وَبَنِيهِ﴾؛ لأن ﴿لِكُلِّ ٱمۡرِيٕٖ مِّنۡهُمۡ يَوۡمَئِذٖ شَأۡنٞ يُغۡنِيهِ﴾. وانظر اللفظ: يفرّ من أمّه.",
         quran: "يَوۡمَ يَفِرُّ ٱلۡمَرۡءُ مِنۡ أَخِيهِ ۝ وَأُمِّهِۦ وَأَبِيهِ ۝ وَصَٰحِبَتِهِۦ وَبَنِيهِ ۝ لِكُلِّ ٱمۡرِيٕٖ مِّنۡهُمۡ يَوۡمَئِذٖ شَأۡنٞ يُغۡنِيهِ",
         ref: "Surah 'Abasa (80:34-37)" },
       { en: "No one carries anyone else's burden. Even if a heavily laden soul calls another to carry some of it, nothing of it will be carried — not even by a close relative.",
@@ -501,7 +501,7 @@ const JUDGEMENT_STAGES = [
         quran: "وَٱخۡشَوۡاْ يَوۡمٗا لَّا يَجۡزِي وَالِدٌ عَن وَلَدِهِۦ وَلَا مَوۡلُودٌ هُوَ جَازٍ عَن وَالِدِهِۦ شَيۡـًٔاۚ",
         ref: "Surah Luqman (31:33)" },
       { en: "The Prophet ﷺ made it personal to his own family so nobody could imagine lineage would save them. He called them by name — Fatimah, daughter of Muhammad — and said: ask me of my wealth what you wish, but I cannot avail you anything against Allah.",
-        ar: "وقد خصّ النبي ﷺ أهله بالنداء لئلا يظنّ أحدٌ أن النسب يُغني، فنادى: يا فاطمة بنت محمد، سليني من مالي ما شئتِ، لا أُغني عنك من الله شيئًا.",
+        ar: "وقد خصّ النبي ﷺ أهله بالنداء حتى لا يظنّ أحدٌ أن النسب يُغني، فنادى: يا فاطمة بنت محمد، سليني من مالي ما شئتِ، لا أُغني عنك من الله شيئًا.",
         quran: "يَا فَاطِمَةُ بِنْتَ مُحَمَّدٍ، سَلِينِي مِنْ مَالِي مَا شِئْتِ، لَا أُغْنِي عَنْكِ مِنَ اللَّهِ شَيْئًا",
         ref: "Sahih al-Bukhari, Book of Tafsir, Hadith 4771 — Sahih, agreed upon" },
       { en: "So what does remain with you? The one thing you brought — a sound heart. On the Day when neither wealth nor children benefit anyone, except one who comes to Allah with a sound heart.",

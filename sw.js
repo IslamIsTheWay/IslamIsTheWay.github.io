@@ -44,7 +44,7 @@
        needs a connection, and the page says so.
    ============================================================ */
 
-const CACHE_VERSION = "iitw-v4";   // v4: the Quran is 114 files now, not one
+const CACHE_VERSION = "iitw-v5";   // v5: reciters.js (the reader needs it), listen.js, share.js
 const QURAN_CACHE   = "iitw-quran-v1";   // separate: immutable, never purged with the rest
 
 /* SPLIT IN TWO, AND THE SPLIT MATTERS.
@@ -112,7 +112,13 @@ const PRECACHE_CONTENT = [
   "./js/raghib-index.js", "./js/raghib.js",
   /* "Continue where you left off" on the home page, and searching the
      Quran's words — both are useless offline if they are not here. */
-  "./js/resume.js", "./js/quran-search.js"
+  "./js/resume.js", "./js/quran-search.js",
+  /* The reciters list, moved out of quran.js on 25 November 2026: the
+     reader cannot start without it, so it is here beside quran.js's own
+     entry. listen.js plays a verse on the verse pages; share.js draws the
+     verse picture on the home page and the verse pages — it was missing
+     from this list since it was written. */
+  "./js/reciters.js", "./js/listen.js", "./js/share.js", "./js/surah-names.js"
 ];
 
 /* The Quran itself, one file per surah (js/quran-text/1.js …) — 2.2MB in

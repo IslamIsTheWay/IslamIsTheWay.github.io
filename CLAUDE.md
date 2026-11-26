@@ -259,6 +259,17 @@ bilingual.
 JS, so a new `<script>` tag will not appear locally until the document itself
 is reloaded past the cache. Add a throwaway query string when testing.
 
+**A source line in prose needs its own Arabic.** i18n.js translates a
+citation ("Surah X (a:b)", "Sahih al-Bukhari 1461 — Anas") and nothing else.
+114 tadabbur source lines were prose ("The classical lexicons on ق ف و",
+"read with 59:18; Ibn Kathir on the verse") and showed half-English in Arabic
+mode on the Quran reader and 91 verse pages. Write `refAr` / `sourceAr`
+beside any such line — iitwTadRef() in quran.js and tad_ref() in
+build-verse-pages.py show it — and the functest scenario
+`every_source_line_reads_in_arabic` fails the day one is missing. And a page
+without data.js has no surah names unless it loads js/surah-names.js
+(generated from data.js): without it 387 verse pages read «سورة Al-Hashr».
+
 ## A LATIN SWEEP CANNOT SEE A DUPLICATED SENTENCE — SWEEP FOR BOTH
 
 There are **three** shapes of the bilingual fault, not one, and the sweep this
@@ -313,6 +324,24 @@ vocabulary, not subject matter, however rare it is.** Only a concept some
 entry DECLARES may set the bar (`vClaimTop`). And keep the function-word
 lists complete in both scripts — the attached pronouns عليك، إليك، منك، بك،
 عندك were simply missing.
+
+## AN AUTOMATIC ARABIC REWRITE IS PROVEN ON ITS WORST SENTENCE, NOT ITS BEST
+
+A list of "safe" word swaps broke thirty sentences of the live site, and
+nobody saw it for weeks (found 25 November 2026, HANDOFF PART 45):
+«غير أن» → «لكن» turned «من غير أن» ("without") into «من لكن» 19 times;
+«تأمّل» → «انظر» cut «يُتأمّل» into «يُانظر» because a vowel mark was not
+counted as part of the word; «قطّ» → «أبدًا» rewrote seven QUOTATIONS of the
+Prophet ﷺ and his companions. So:
+
+* A swap is safe only if it is safe in every sentence the word appears in —
+  check the word BEFORE it (من غير أن) and whether it sits in someone's
+  quoted words (قال …:), not only the word itself.
+* A word's edges include its vowel marks.
+* Quoted words are never plained, bracketed or not.
+* `tools/arabicease.py --check` runs a self-test of these sentences; add the
+  next broken sentence to `SELFTEST` the day it is found. And read what
+  `--fix` changed, word by word, before committing it.
 
 ## The rules that matter most
 

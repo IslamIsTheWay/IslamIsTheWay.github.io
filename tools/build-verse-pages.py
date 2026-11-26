@@ -146,6 +146,19 @@ NAMED = {
 }
 
 
+def tad_ref(en, ar):
+    """A source line in the reader's language — the same as iitwTadRef() in
+    js/quran.js (keep them together). A line with its own Arabic (refAr /
+    sourceAr) is written out twice, one per language; a canonical citation
+    is left to i18n.js to translate."""
+    if not en:
+        return ""
+    if not ar:
+        return '<div class="tad-ref" dir="auto">' + en + '</div>'
+    return ('<div class="tad-ref en-only">' + en + '</div>'
+            '<div class="tad-ref ar-only" dir="rtl">' + ar + '</div>')
+
+
 def entry_html(surah, a, explained, meta):
     h = []
     if a.get("plain"):
@@ -157,7 +170,7 @@ def entry_html(surah, a, explained, meta):
     if a.get("why"):
         h.append('<div class="tad-sec"><div class="en-only">' + para(a["why"]) + '</div>'
                  '<div class="ar-only">' + para(a.get("whyAr"), True) + '</div>' +
-                 ('<div class="tad-ref" dir="auto">' + a["ref"] + '</div>' if a.get("ref") else "") +
+                 tad_ref(a.get("ref"), a.get("refAr")) +
                  (badge(a["strength"]) if a.get("strength") else "") + '</div>')
     if a.get("misunderstood"):
         h.append('<div class="tad-misread">'
@@ -177,7 +190,7 @@ def entry_html(surah, a, explained, meta):
                   '<span class="ar-only" dir="rtl">لِمَ هذه الكلمة دون غيرها</span></div>'
                   '<div class="en-only">' + para(w["instead"]) + '</div>'
                   '<div class="ar-only">' + para(w.get("insteadAr"), True) + '</div></div>')
-        x += (('<div class="tad-ref" dir="auto">' + w["source"] + '</div>' if w.get("source") else "") +
+        x += (tad_ref(w.get("source"), w.get("sourceAr")) +
               (badge(w["strength"]) if w.get("strength") else "") + '</div></div>')
         h.append(x)
     for l in a.get("links") or []:
@@ -187,7 +200,7 @@ def entry_html(surah, a, explained, meta):
             x += '<div class="tad-link-ar" dir="rtl">' + l["ar"] + '</div>'
         if l.get("en"):
             x += '<div class="tad-link-en en-only">' + l["en"] + '</div>'
-        x += ('<div class="tad-ref" dir="auto">' + l["ref"] + '</div>'
+        x += ((tad_ref(l.get("ref"), l.get("refAr")) or '<div class="tad-ref" dir="auto"></div>') +
               '<div class="en-only">' + para(l.get("how")) + '</div>'
               '<div class="ar-only">' + para(l.get("howAr"), True) + '</div>')
         m = REF.search(l.get("ref", ""))
@@ -244,7 +257,22 @@ def shell():
     return head, header, footer, stamp
 
 
-SCRIPTS = ["share.js", "main.js", "reading.js", "nav.js", "i18n.js"]
+# reciters.js + listen.js: the "Listen" under the verse. After main.js
+# (listen.js says its failures through iitwSay), before i18n.js (which fires
+# "iitw-lang", on which listen.js rebuilds the reciter names).
+# surah-names.js: BEFORE i18n.js, which reads it to translate "Surah X".
+SCRIPTS = ["share.js", "main.js", "reciters.js", "listen.js", "reading.js", "nav.js",
+           "surah-names.js", "i18n.js"]
+
+# Hear the verse (js/listen.js). Hidden by CSS until listen.js has filled the
+# reciter list and marked it ready, so a reader never sees a button that
+# does nothing.
+LISTEN = ('<div class="vp-listen" data-surah="%d" data-ayah="%d">'
+          '<button type="button" class="vp-listen-btn"><span aria-hidden="true">▶</span> '
+          '<span class="en-only">Listen</span><span class="ar-only" dir="rtl">استمع</span></button>'
+          '<label class="vp-reciter"><span class="en-only">Reciter</span><span class="ar-only" dir="rtl">القارئ</span> '
+          '<select class="vp-reciter-pick" aria-label="Reciter"></select></label>'
+          '<p class="vp-listen-msg" role="status" hidden></p></div>\n')
 
 
 def page(title, desc, url, header, footer, head, body, stamp, self_path):
@@ -319,6 +347,7 @@ def build():
                 '<span class="ar-only" dir="rtl">%s</span></h1>\n'
                 '<div class="tad-verse-ar vp-verse" dir="rtl" lang="ar"><span class="q-hafs">﴿%s﴾</span></div>\n'
                 '%s'
+                '%s'
                 '<div class="tad-ayah vp-entry" style="display:block;">%s</div>\n'
                 '%s\n'
                 '</div></section>'
@@ -326,6 +355,7 @@ def build():
                  meta["name"], sn, n, (" — " + name[0]) if name else "",
                  ttl_ar,
                  verse,
+                 LISTEN % (sn, n),
                  ('<p class="vp-en en-only">“' + en + '”</p>\n') if en else "",
                  entry_html(sn, a, explained, meta),
                  nav)
@@ -373,9 +403,29 @@ def sitemap_text(files):
     return NL.join(keep + rows + ["</urlset>"]) + NL
 
 
+NAMES_JS = os.path.join(REPO, "js", "surah-names.js")
+
+
+def surah_names_js():
+    """js/surah-names.js — the 114 names, generated from SURAHS in js/data.js.
+
+    i18n.js turns "Surah Al-Hashr" into «سورة الحشر» with a map it builds from
+    SURAHS — and the verse pages do not load data.js (half a megabyte), so the
+    map was EMPTY there: 387 of the 444 verse pages said «سورة Al-Hashr» in
+    Arabic (found 25 November 2026). This file gives i18n.js the names on any
+    page without data.js. Generated, never typed: data.js stays the one list."""
+    surahs = load_const(os.path.join(REPO, "js", "data.js"), "SURAHS")
+    names = {s["name"]: s["arabic"] for s in sorted(surahs, key=lambda s: s["n"])}
+    return ("/* GENERATED by tools/build-verse-pages.py from SURAHS in js/data.js - do not edit.\n"
+            "   For i18n.js on pages that do not load data.js (the verse pages): without it\n"
+            "   a reference read «سورة Al-Hashr» in Arabic. See surah_names_js(). */\n"
+            "window.IITW_SURAH_NAMES = " + json.dumps(names, ensure_ascii=False) + ";\n")
+
+
 def main():
     files = build()
     sm = sitemap_text(files)
+    names_js = surah_names_js()
     if "--check" in sys.argv:
         stale = []
         for name, content in files.items():
@@ -384,6 +434,8 @@ def main():
                 stale.append(name)
         if io.open(os.path.join(REPO, "sitemap.xml"), encoding="utf-8").read() != sm:
             stale.append("sitemap.xml")
+        if not os.path.exists(NAMES_JS) or io.open(NAMES_JS, encoding="utf-8").read() != names_js:
+            stale.append("js/surah-names.js")
         if stale:
             print("verse pages out of date (%d): run python tools/build-verse-pages.py" % len(stale))
             return 1
@@ -397,7 +449,9 @@ def main():
     for name, content in files.items():
         io.open(os.path.join(OUT, name), "w", encoding="utf-8", newline="").write(content)
     io.open(os.path.join(REPO, "sitemap.xml"), "w", encoding="utf-8", newline="").write(sm)
-    print("wrote %d verse pages and the index, and %d sitemap entries" % (len(files) - 1, len(files)))
+    io.open(NAMES_JS, "w", encoding="utf-8", newline="").write(names_js)
+    print("wrote %d verse pages and the index, %d sitemap entries, and js/surah-names.js"
+          % (len(files) - 1, len(files)))
     return 0
 
 

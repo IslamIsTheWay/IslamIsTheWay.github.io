@@ -46,6 +46,9 @@ jobs:
         run: |
           python3 tools/lightscan.py --check
           python3 tools/textscan.py --check
+          # the plain-Arabic rewriter must leave the sentences it once broke
+          # unharmed (HANDOFF PART 45)
+          python3 tools/arabicease.py --selftest
 
       - name: Every piece of text is readable, in both themes and both languages
         run: |

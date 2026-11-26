@@ -80,7 +80,7 @@ const PLACES = {
           title: "“When they dry up he comes out” is a reading, not a text",
           titleAr: "«إذا جفّت خرج» قراءةٌ لا نصّ",
           simple: "The hadith puts two things next to each other: a warning about the places, and that he is about to be allowed out. It does not join them with “when”.",
-          simpleAr: "وضع الحديثُ أمرين متجاورين: تحذيرًا في المواضع، وأنه يوشك أن يُؤذَن له في الخروج. ولم يربط بينهما بـ«إذا».",
+          simpleAr: "وضع الحديثُ أمرين متجاورين: تحذيرًا في المواضع، وأنه سيُؤذَن له في الخروج قريبًا. ولم يربط بينهما بـ«إذا».",
           plain: "A few lines after the three questions he says: **“I am the Masih ad-Dajjal, and I am about to be permitted to come out.”** Those two statements sit near each other in one conversation. Nothing in the wording makes the first the condition of the second.\n\nThe difference matters in practice. If the drying is a **condition**, then measuring a lake tells you where you are in the timetable. If it is not, then the measurements are exactly what they look like — a description of three places that has held up for fourteen centuries — and they tell you nothing about the hour.\n\nScholars have long read the questions as connected to his coming, and that reading is reasonable: he asked about them, and about nothing else in the earth, in the same breath as telling them who he was. But **a reasonable reading is not a text**, and this site does not print a scholar's inference in the same weight of type as a narration. So the page gives the warning as narration, the connection as a reading, and the date as unknown to everyone.",
           plainAr: "بعد الأسئلة الثلاثة بأسطرٍ يسيرة يقول: **«إِنِّي أَنَا الْمَسِيحُ الدَّجَّالُ، وَإِنِّي أُوشِكُ أَنْ يُؤْذَنَ لِي فِي الْخُرُوجِ».** فهاتان جملتان متجاورتان في مجلسٍ واحد. وليس في اللفظ ما يجعل الأولى شرطًا للثانية.\n\nوالفرقُ بينهما عمليٌّ لا لفظيّ. فإن كان الجفافُ **شرطًا** فقياسُ منسوب بحيرةٍ يدلّك أين أنت من الجدول. وإن لم يكن شرطًا فالقياساتُ هي ما تبدو عليه تمامًا — وصفٌ لثلاثة مواضعَ ثبت بعد أربعة عشر قرنًا — ولا تدلّك على الساعة في شيء.\n\nوقد قرأ أهلُ العلم قديمًا هذه الأسئلة على أنها متّصلةٌ بخروجه، وهي قراءةٌ لها وجهُها: فإنه سأل عنها هي دون سائر الأرض، في السياق الذي أخبرهم فيه من هو. لكن **القراءة المعقولة ليست نصًّا**، وهذا الموقعُ لا يطبع استنباطَ عالمٍ بخطِّ الرواية نفسه. فالتحذيرُ في الصفحة روايةٌ، والربطُ قراءةٌ، والوقتُ لا يعلمه أحد.",
           proof: "“Indeed I am the Masih ad-Dajjal, and I am about to be permitted to come out.”",
@@ -165,7 +165,7 @@ const PLACES = {
       title: "Third: how fast — and why this page gives no date",
       titleAr: "ثالثًا: ما سرعة ذلك — ولماذا لا تعطي هذه الصفحةُ تاريخًا",
       lead: "A rate is a measurement. A date is a claim. The first can be given honestly; the second cannot be given at all.",
-      leadAr: "المعدَّلُ قياس، والتاريخُ دعوى. فالأوّل يمكن أن يُعطى بصدق، والثاني لا يُعطى ألبتّة.",
+      leadAr: "المعدَّلُ قياس، والتاريخُ دعوى. فالأوّل يمكن أن يُعطى بصدق، والثاني لا يُعطى إطلاقًا.",
       items: [
         {
           id: "pq-rate",

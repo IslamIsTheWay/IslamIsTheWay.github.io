@@ -194,7 +194,7 @@ const JOURNEY = [
     { h: "The shroud, and the one exception",
       hAr: "الكفن، والاستثناء الوحيد",
       en: "Aishah رضي الله عنها said the Prophet ﷺ was shrouded in <strong>three white Yemeni cloths of cotton</strong>, among which there was neither a shirt nor a turban.\n\nThere is one case where the ordinary washing and shrouding is <strong>forbidden</strong>: the one who dies in ihram. Of a man who fell from his mount and died, the Prophet ﷺ said: <em>“Wash him with water and lotus leaves, and shroud him in his two garments. Do not perfume him and do not cover his head — for he will be raised on the Day of Resurrection saying the talbiyah.”</em>",
-      ar: "عن عائشة رضي الله عنها أنّ النبيّ ﷺ كُفِّن في <strong>ثلاثة أثوابٍ بيضٍ سَحُوليّة</strong> من كُرسُف، ليس فيها قميصٌ ولا عمامة.\n\nوثمّة حالةٌ واحدةٌ يُمنع فيها ذلك: المُحرِم؛ قال ﷺ في الذي وقصته راحلته: «اغسلوه بماءٍ وسِدر، وكفّنوه في ثوبيه، ولا تُحنّطوه ولا تُخمّروا رأسه؛ فإنّه يُبعث يوم القيامة مُلبّيًا».",
+      ar: "عن عائشة رضي الله عنها أنّ النبيّ ﷺ كُفِّن في <strong>ثلاثة أثوابٍ بيضٍ سَحُوليّة</strong> من كُرسُف، ليس فيها قميصٌ ولا عمامة.\n\nوهناك حالةٌ واحدةٌ يُمنع فيها ذلك: المُحرِم؛ قال ﷺ في الذي وقصته راحلته: «اغسلوه بماءٍ وسِدر، وكفّنوه في ثوبيه، ولا تُحنّطوه ولا تُخمّروا رأسه؛ فإنّه يُبعث يوم القيامة مُلبّيًا».",
       ref: "Sahih al-Bukhari, Book of Funerals, Hadith 1264 (the shroud) and Hadith 1265–1266 (the one in ihram); also narrated by Muslim",
       strength: "Sahih — Agreed upon (al-Bukhari and Muslim)" },
     { h: "Carried quickly, and the reward for those who stay",
@@ -374,7 +374,7 @@ const JOURNEY = [
           { en: "A man has lifted food to his mouth — <strong>he never eats it</strong>.",
             ar: "ورجلٌ رفع لقمته إلى فيه، <strong>فلا يأكلها</strong>." },
           { en: "So there is <strong>no warning at the end</strong>. The warnings all came earlier.",
-            ar: "فليس ثمّة <strong>إنذارٌ في آخر لحظة</strong>؛ فقد مضت النُّذُر كلّها قبل ذلك." }
+            ar: "فليس هناك <strong>إنذارٌ في آخر لحظة</strong>؛ فقد مضت النُّذُر كلّها قبل ذلك." }
         ] },
       { head: "What happens to the world (all of this is Quran)",
         headAr: "ما يقع للكون (وكلّه قرآن)",
@@ -486,7 +486,7 @@ const JOURNEY = [
         headAr: "أين تقف",
         points: [
           { en: "You are standing on <strong>open, flat ground</strong> with no hills, no trees and <strong>no shade of any kind</strong> — nothing to stand behind or under.",
-            ar: "تقف في <strong>أرضٍ مستويةٍ مكشوفة</strong>، لا جبل فيها ولا شجر و<strong>لا ظلَّ البتّة</strong>، ليس فيها ما تستتر به أو تستظلّ." },
+            ar: "تقف في <strong>أرضٍ مستويةٍ مكشوفة</strong>، لا جبل فيها ولا شجر و<strong>لا ظلَّ إطلاقًا</strong>، ليس فيها ما تستتر به أو تستظلّ." },
           { en: "You are <strong>barefoot, with nothing on you, and uncircumcised</strong> — created new, exactly as you were first made. Aishah رضي الله عنها asked whether men and women would look at one another, and he ﷺ said the matter is <strong>far too serious for that to occur to anyone</strong>.",
             ar: "وتُبعث <strong>حافيًا عاريًا أغرل</strong> — و<strong>حافيًا</strong>: بلا نعل، و<strong>عاريًا</strong>: بلا ثوب، و<strong>أغرل</strong>: غير مختون، أي <strong>كما خُلقت أوّل مرّة تمامًا</strong>. وسألت عائشة رضي الله عنها: أينظر بعضنا إلى بعض؟ فقال ﷺ إنّ <strong>الأمر أشدّ من أن يُهِمَّهم ذلك</strong>." },
           { en: "The sun is brought down to <strong>about a mile away</strong>. The narrator himself said he did not know whether the Prophet ﷺ meant the distance or the little rod used to put kohl on the eye — <strong>and he admitted that rather than guess</strong>.",
@@ -497,7 +497,7 @@ const JOURNEY = [
       { head: "The sweat — and read this part slowly, because it is not what you expect",
         headAr: "العرق — واقرأ هذا على مهل، فإنّه ليس كما تتوقّع",
         note: "This is the detail people miss. Sweat in this world runs DOWNWARD — off your forehead, down your back, towards the ground. On that Day it does the opposite: it RISES. It gathers on the ground and comes UP the body — first the ankles, then the knees, then the waist, until for some it reaches the mouth. That is why the hadith measures it by how HIGH it has reached on a person, which would make no sense for sweat that runs down and drains away.",
-        noteAr: "هذا ما يغفل عنه الناس. فعرق الدنيا ينزل إلى <strong>أسفل</strong>: عن الجبين، وعلى الظهر، إلى الأرض. وأمّا يومئذٍ فبالعكس: <strong>يعلو</strong>؛ يجتمع في الأرض ثمّ يرتفع في البدن — إلى الكعبين، فالركبتين، فالحَقْوين، حتى يبلغ الفم في بعضهم. ولهذا قدّره الحديث بـ<strong>مبلغه ارتفاعًا</strong> في الإنسان، وهذا لا يستقيم في عرقٍ ينحدر ويذهب.",
+        noteAr: "هذا ما يغفل عنه الناس. فعرق الدنيا ينزل إلى <strong>أسفل</strong>: عن الجبين، وعلى الظهر، إلى الأرض. وأمّا يوم القيامة فبالعكس: <strong>يعلو</strong>؛ يجتمع في الأرض ثمّ يرتفع في البدن — إلى الكعبين، فالركبتين، فالحَقْوين، حتى يبلغ الفم في بعضهم. ولهذا قدّره الحديث بـ<strong>مبلغه ارتفاعًا</strong> في الإنسان، وهذا لا يستقيم في عرقٍ ينحدر ويذهب.",
         points: [
           { en: "Everyone sweats — but <strong>not the same amount</strong>. The measure is <strong>your own deeds</strong>, not the heat.",
             ar: "يعرق الجميع، ولكن <strong>لا بقدرٍ واحد</strong>؛ والمقياس <strong>عملك أنت</strong> لا شدّة الحرّ." },
@@ -579,7 +579,7 @@ const JOURNEY = [
           { en: "They reach the Prophet Muhammad ﷺ, and he says: <strong>“I am for it.”</strong>",
             ar: "فينتهون إلى النبيّ محمّدٍ ﷺ فيقول: <strong>«أنا لها»</strong>." },
           { en: "He does not argue or negotiate. He <strong>goes and prostrates beneath the Throne</strong> and stays there praising Allah — with words he is given on the spot and had never known.",
-            ar: "فلا يجادل ولا يشترط، بل <strong>ينطلق فيسجد تحت العرش</strong>، ويظلّ يحمد الله بمحامد يُفتح بها عليه حينئذٍ لم يكن يعرفها." },
+            ar: "فلا يجادل ولا يشترط، بل <strong>ينطلق فيسجد تحت العرش</strong>، ويظلّ يحمد الله بمحامد يُفتح بها عليه عندها لم يكن يعرفها." },
           { en: "Then he is told: <strong>raise your head; ask and you will be given; intercede and it will be accepted.</strong>",
             ar: "ثمّ يُقال له: <strong>ارفع رأسك، وسَل تُعطَه، واشفع تُشفَّع</strong>." },
           { en: "<strong>This is the moment the reckoning begins.</strong> Everything after it on this page happens because of it.",
@@ -722,7 +722,7 @@ const JOURNEY = [
         headAr: "ثمّ: الموازين",
         points: [
           { en: "They are set up <strong>so that nobody is wronged by even a little</strong> — that is what the verse says they are for.",
-            ar: "تُوضع <strong>لئلّا تُظلم نفسٌ شيئًا</strong>، وهذا ما نصّت عليه الآية في الغرض منها." },
+            ar: "تُوضع <strong>حتى لا تُظلم نفسٌ شيئًا</strong>، وهذا ما نصّت عليه الآية في الغرض منها." },
           { en: "How sensitive is it? The Quran gives two measures. <strong>The weight of a mustard seed</strong> — mustard seed is one of the smallest seeds there is, the size of a pinhead. And <strong>the weight of a dharrah</strong>: <strong>dharrah means a speck of dust, or the smallest ant</strong> — the thing you can barely see floating in a beam of sunlight.",
             ar: "وما مقدار دقّتها؟ ذكر القرآن مقياسين. <strong>﴿مِثۡقَالَ حَبَّةٖ مِّنۡ خَرۡدَلٍ﴾</strong> — و<strong>الخَردل</strong> من <strong>أصغر البذور</strong>، حبّته في حجم رأس الدبّوس. و<strong>مثقال ذرّة</strong> — و<strong>الذرّة</strong> هي <strong>الهباءة الصغيرة جدًّا</strong> التي تراها تسبح في شعاع الشمس، أو النملة الصغيرة." },
           { en: "Both are chosen to say the same thing: <strong>there is no amount too small to be counted</strong> — of good, or of bad.",
@@ -844,7 +844,7 @@ const JOURNEY = [
           { en: "He crosses <strong>first, with his nation</strong>.",
             ar: "يجوز <strong>أوّلًا بأمّته</strong>." },
           { en: "<strong>Nobody speaks that Day except the messengers</strong> — and what they say is two words, repeated: <strong>اللهم سلّم سلّم</strong> — “O Allah, save them, save them.”",
-            ar: "و<strong>لا يتكلّم يومئذٍ إلا الرسل</strong>، وكلمتهم مكرّرة: <strong>اللهمّ سلّم سلّم</strong>." },
+            ar: "و<strong>لا يتكلّم هناك إلا الرسل</strong>، وكلمتهم مكرّرة: <strong>اللهمّ سلّم سلّم</strong>." },
           { en: "So he is <strong>already across</strong>, and he is still asking for you.",
             ar: "فهو <strong>قد جاز</strong>، ولا يزال يسأل لك." }
         ] }
@@ -966,7 +966,7 @@ const JOURNEY = [
           { en: "The first food is <strong>زيادة كبد الحوت</strong> — the <strong>extra lobe of the fish's liver</strong>, the choicest part of it.",
             ar: "أوّل الطعام <strong>زيادة كبد الحوت</strong>، وهي أطيب ما فيه." },
           { en: "And the bread: the Prophet ﷺ said <strong>the earth itself becomes one loaf</strong> on that Day — a welcome-gift for the people of Paradise.",
-            ar: "وأمّا الخبز فقال ﷺ إنّ <strong>الأرض تكون خُبزةً واحدة</strong> يومئذٍ، نُزُلًا لأهل الجنّة." }
+            ar: "وأمّا الخبز فقال ﷺ إنّ <strong>الأرض تكون خُبزةً واحدة</strong> يوم القيامة، نُزُلًا لأهل الجنّة." }
         ] }
     ]
   }
@@ -1032,7 +1032,7 @@ const JOURNEY = [
         headAr: "مع من تكون، وكيف يكون اليوم",
         points: [
           { en: "<strong>Nobody there dislikes anybody.</strong> Allah says He <em>removes whatever was in their breasts of resentment</em> — so old grudges are not merely forgiven, they are <strong>taken out of you</strong>.",
-            ar: "<strong>لا يبغض أحدٌ أحدًا هناك</strong>؛ قال الله إنّه <em>ينزع ﴿مَا فِي صُدُورِهِم مِّنۡ غِلٍّ﴾</em> — فليست الأحقاد تُغفر فحسب، بل <strong>تُنزع منك</strong>." },
+            ar: "<strong>لا يبغض أحدٌ أحدًا هناك</strong>؛ قال الله إنّه <em>ينزع ﴿مَا فِي صُدُورِهِم مِّنۡ غِلٍّ﴾</em> — فليست الأحقاد تُغفر فقط، بل <strong>تُنزع منك</strong>." },
           { en: "They sit <strong>facing one another</strong> — the Quran's own picture of it is brothers on couches, looking at each other.",
             ar: "ويجلسون <strong>متقابلين</strong>؛ وصورة القرآن لذلك: ﴿إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ﴾." },
           { en: "<strong>You hear nothing ugly.</strong> No pointless talk, no insult, no lie — the Quran says the only thing said is <em>peace, peace</em>.",

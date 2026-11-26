@@ -266,7 +266,7 @@ const SURAH_CONCEPTS = {
   41: { c: "Your own body will testify",
         cAr: "جوارحك تشهد عليك",
         w: "Hearing, sight and skin speak on that Day, and the person asks his own skin why it testified against him. Nothing is more private than what you did alone — and that is exactly what speaks.",
-        wAr: "يشهد السمع والبصر والجلود يومئذٍ، فيقول المرء لجلده: لِمَ شهدتَ عليّ؟ ولا شيء أخفى ممّا صنعتَه وحدك، وهو الذي ينطق.",
+        wAr: "يشهد السمع والبصر والجلود يوم القيامة، فيقول المرء لجلده: لِمَ شهدتَ عليّ؟ ولا شيء أخفى ممّا صنعتَه وحدك، وهو الذي ينطق.",
         a: "41:21" },
 
   42: { c: "Decide together",
@@ -398,7 +398,7 @@ const SURAH_CONCEPTS = {
   62: { c: "Carrying knowledge is not the same as having it",
         cAr: "حَمْلُ العلم ليس هو العلم",
         w: "The image is deliberately humiliating: those who were given the Torah and then did not carry it are like a donkey carrying volumes. Then Friday — leave the trade, come to the reminder, and afterwards go back out and seek His bounty. Neither half is dropped.",
-        wAr: "الصورةُ مقصودةُ الإخجال: ﴿مَثَلُ ٱلَّذِينَ حُمِّلُواْ ٱلتَّوۡرَىٰةَ ثُمَّ لَمۡ يَحۡمِلُوهَا كَمَثَلِ ٱلۡحِمَارِ يَحۡمِلُ أَسۡفَارَۢاۚ﴾. ثم الجمعة: ذَرِ البيع واحضُر الذكر، فإذا قُضيت فانتشر وابتغِ من فضل الله. ولم يُسقَط أحدُ الشطرين.",
+        wAr: "الصورةُ مقصودةُ الإخجال: ﴿مَثَلُ ٱلَّذِينَ حُمِّلُواْ ٱلتَّوۡرَىٰةَ ثُمَّ لَمۡ يَحۡمِلُوهَا كَمَثَلِ ٱلۡحِمَارِ يَحۡمِلُ أَسۡفَارَۢاۚ﴾. ثم الجمعة: ذَرِ البيع واحضُر الذكر، فإذا قُضيت فانتشر وابتغِ من فضل الله. ولم يُسقَط أحدُ النصفين.",
         a: "62:5" },
 
   63: { c: "The danger inside, not outside",
@@ -464,7 +464,7 @@ const SURAH_CONCEPTS = {
   73: { c: "Before the message went out, the night was built",
         cAr: "قبل أن يخرج البلاغ، بُني الليل",
         w: "The first thing said to a man about to carry the heaviest weight ever placed on a human being was not a plan and not a strategy. It was: stand at night, nearly all of it, or half, and recite deliberately. The private half was constructed before the public half.",
-        wAr: "أوّلُ ما قيل لرجلٍ سيحمل أثقل ما حُمِّله بشرٌ لم يكن خطّةً ولا تدبيرًا، وإنما: ﴿قُمِ ٱلَّيۡلَ إِلَّا قَلِيلٗا ۝ نِّصۡفَهُۥٓ﴾ و﴿رَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلًا﴾. فبُني الشطر الخفيّ قبل الشطر الظاهر.",
+        wAr: "أوّلُ ما قيل لرجلٍ سيحمل أثقل ما حُمِّله بشرٌ لم يكن خطّةً ولا تدبيرًا، وإنما: ﴿قُمِ ٱلَّيۡلَ إِلَّا قَلِيلٗا ۝ نِّصۡفَهُۥٓ﴾ و﴿رَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلًا﴾. فبُني الجانب الخفيّ قبل الجانب الظاهر.",
         a: "73:20" },
 
   74: { c: "Now get up, and warn",
@@ -482,7 +482,7 @@ const SURAH_CONCEPTS = {
   76: { c: "They gave away the food they wanted for themselves",
         cAr: "أطعموا الطعام وهم يشتهونه",
         w: "The people of the Garden are identified by one act, and the wording is exact: they give food, despite loving it, to the needy, the orphan and the captive. Not surplus. The thing they wanted. And the captive at that time was not a Muslim.",
-        wAr: "عُرّف أهلُ الجنّة بفعلٍ واحد، واللفظ دقيق: ﴿وَيُطۡعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسۡكِينٗا وَيَتِيمٗا وَأَسِيرًا﴾. لا من الفضل، بل ممّا يشتهون. والأسيرُ يومئذٍ لم يكن مسلمًا.",
+        wAr: "عُرّف أهلُ الجنّة بفعلٍ واحد، واللفظ دقيق: ﴿وَيُطۡعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسۡكِينٗا وَيَتِيمٗا وَأَسِيرًا﴾. لا من الفضل، بل ممّا يشتهون. والأسيرُ في ذلك الزمان لم يكن مسلمًا.",
         a: "76:8" },
 
   77: { c: "The same sentence, ten times, after ten different proofs",
@@ -556,7 +556,7 @@ const SURAH_CONCEPTS = {
   88: { c: "Look at the camel",
         cAr: "انظر إلى الإبل",
         w: "After the two faces on that Day — one downcast and toiling, one content — the argument turns to what is standing right in front of them: the camel, the sky, the mountains, the earth. The evidence offered is deliberately ordinary.",
-        wAr: "بعد الوجهين يومئذٍ — ﴿خَٰشِعَةٌ ۝ عَامِلَةٞ نَّاصِبَةٞ﴾ و﴿نَّاعِمَةٞ﴾ — تنصرف الحجّة إلى ما هو قائمٌ أمامهم: ﴿أَفَلَا يَنظُرُونَ إِلَى ٱلۡإِبِلِ كَيۡفَ خُلِقَتۡ﴾، والسماء، والجبال، والأرض. والدليلُ المعروض مألوفٌ عن قصد.",
+        wAr: "بعد ذكر الوجهين يوم القيامة — ﴿خَٰشِعَةٌ ۝ عَامِلَةٞ نَّاصِبَةٞ﴾ و﴿نَّاعِمَةٞ﴾ — تنصرف الحجّة إلى ما هو قائمٌ أمامهم: ﴿أَفَلَا يَنظُرُونَ إِلَى ٱلۡإِبِلِ كَيۡفَ خُلِقَتۡ﴾، والسماء، والجبال، والأرض. والدليلُ المعروض مألوفٌ عن قصد.",
         a: "88:17" },
 
   89: { c: "Wealth was never the sign that He was pleased",

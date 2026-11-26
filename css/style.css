@@ -8511,6 +8511,30 @@ body[data-long-page]:not(.cv-off) > section[id] {
 :root[data-theme="dark"] .share-verse { color: #cfe6d6; border-color: #3d7a57; }
 :root[data-theme="dark"] .share-verse:hover { background: #16211c; }
 
+/* "Listen" under the verse (js/listen.js) — verse pages and the home page's
+   verses. Hidden until listen.js has filled the reciter list and marked it
+   .ready, so a reader without the script never sees a button that does
+   nothing. The button matches "Share as a picture" beside it. */
+.vp-listen { display: none; }
+.vp-listen.ready { display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 10px 14px; margin: 14px 0 16px; }
+.vp-listen-btn {
+  padding: 10px 20px; border-radius: 999px; border: 1px solid var(--green-fill);
+  background: var(--green-fill); color: #fff; font: inherit; font-weight: 700;
+  font-size: .98rem; cursor: pointer; min-height: 44px;
+}
+.vp-listen-btn:hover { filter: brightness(1.08); }
+.vp-listen-btn[aria-pressed="true"] { background: transparent; color: var(--green-dark); }
+.vp-reciter { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem;
+  color: var(--text-muted); }
+.vp-reciter-pick { font: inherit; font-size: .9rem; padding: 8px 10px; min-height: 40px;
+  border-radius: 10px; border: 1px solid var(--border); background: var(--card-bg, #fff);
+  color: var(--text); max-width: 62vw; }
+.vp-listen-msg { flex-basis: 100%; margin: 4px 0 0; text-align: center; font-size: .9rem;
+  background: var(--warn-soft-bg); color: var(--warn-soft-ink); border-radius: 10px; padding: 8px 12px; }
+:root[data-theme="dark"] .vp-listen-btn[aria-pressed="true"] { color: #cfe6d6; border-color: #3d7a57; }
+:root[data-theme="dark"] .vp-reciter-pick { background: #16211c; color: #e6efe9; border-color: #3d7a57; }
+
 /* The staff statistics panel's status line: what was read, and when — or,
    when the counting service is not answering, that it is not (warn). */
 .stat-status { margin: 0 0 14px; font-size: .9rem; color: var(--text-muted); line-height: 1.7; }

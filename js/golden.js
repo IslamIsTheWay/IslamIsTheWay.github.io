@@ -36,7 +36,7 @@ const GOLDEN_FIELDS = [
   { id: "engineering",  en: "Engineering & machines",   ar: "الهندسة والآلات",        icon: "⚙️" },
   { id: "earth",        en: "The earth, maps & travel", ar: "الأرض والخرائط والرحلة", icon: "🧭" },
   { id: "society",      en: "History & society",        ar: "التاريخ والعمران",       icon: "🏛️" },
-  { id: "institutions", en: "What was built, not only written", ar: "ما بُني لا ما كُتب فحسب", icon: "🏥" }
+  { id: "institutions", en: "What was built, not only written", ar: "ما بُني لا ما كُتب فقط", icon: "🏥" }
 ];
 
 /* ============================================================
@@ -64,7 +64,7 @@ const GOLDEN_OVERVIEW = {
   whenAr: "التاريخ الذي يُذكر عادةً هو من سنة ١٣٢هـ إلى ٦٥٦هـ (٧٥٠–١٢٥٨م) — من قيام الدولة العباسية وبناء بغداد، إلى إسقاط المغول لها.\n\nلكنّ هذا جوابٌ مقيسٌ على بغداد وحدها، وهو أنعم ممّا ينبغي. فالأندلس جرت على ساعتها من سنة ١٣٨هـ إلى ٨٩٧هـ. ولم يقف العلم سنة ٦٥٦هـ: فمرصد مراغة أُنشئ في السنة التالية لسقوط بغداد، وابن الشاطر يعيد بناء علم الهيئة بدمشق في القرن الثامن الهجري، وابن خلدون يكتب المقدّمة سنة ٧٧٩هـ، ومرصد أُلُغ بك بسمرقند يفهرس النجوم في العشرينيات من القرن التاسع الهجري، وتقيّ الدين يصف العنفة البخارية بإسطنبول في القرن العاشر.\n\nفالجواب المنصف: أنّ الذروة كانت من القرن الثاني إلى السابع الهجري تقريبًا، وأنّ الانحدار كان تدرّجًا لا كارثةً واحدة، وأنّ العمل الرفيع استمرّ في مواضع ثلاثمئة سنةٍ أخرى.",
 
   where: "Baghdad — the House of Wisdom, founded with the city in 762. Cordoba — whose library under al-Hakam II held hundreds of thousands of volumes when the largest in Christian Europe held a few hundred. Cairo — al-Azhar from 970. Damascus. Fez — al-Qarawiyyin from 859. And later Maragha, Samarkand and Istanbul.",
-  whereAr: "بغداد — وبيت الحكمة قام مع المدينة سنة ١٤٥هـ. وقرطبة — التي ضمّت خزانتها في عهد الحكم المستنصر مئات الآلاف من المجلّدات، وأكبر خزائن أوروبا النصرانية يومئذٍ بضع مئات. والقاهرة — والأزهر من سنة ٣٥٩هـ. ودمشق. وفاس — والقرويّون من سنة ٢٤٥هـ. ثم مراغة وسمرقند وإسطنبول.",
+  whereAr: "بغداد — وبيت الحكمة قام مع المدينة سنة ١٤٥هـ. وقرطبة — التي ضمّت خزانتها في عهد الحكم المستنصر مئات الآلاف من المجلّدات، وأكبر خزائن أوروبا النصرانية في ذلك الوقت بضع مئات. والقاهرة — والأزهر من سنة ٣٥٩هـ. ودمشق. وفاس — والقرويّون من سنة ٢٤٥هـ. ثم مراغة وسمرقند وإسطنبول.",
 
   /* ---------- The one-line summary of what came out of it ----------
      Everything here is proved in detail further down the page. This is
@@ -218,7 +218,7 @@ const GOLDEN_ROOT = {
       ar: "وقال النبي ﷺ: «مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا، سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ».",
       ref: "Sahih Muslim, Book of Dhikr and Supplication, Hadith 2699 — Sahih" },
     { en: "And he ﷺ said: “Allah has not sent down a disease without sending down a cure for it.” Medicine was pursued as something commanded, not merely permitted.",
-      ar: "وقال ﷺ: «مَا أَنْزَلَ اللَّهُ دَاءً إِلَّا أَنْزَلَ لَهُ شِفَاءً». فطُلب الطبّ باعتباره مأمورًا به لا مباحًا فحسب.",
+      ar: "وقال ﷺ: «مَا أَنْزَلَ اللَّهُ دَاءً إِلَّا أَنْزَلَ لَهُ شِفَاءً». فطُلب الطبّ باعتباره مأمورًا به لا مباحًا فقط.",
       ref: "Sahih al-Bukhari, Book of Medicine, Hadith 5678 — Sahih" },
     { en: "The prayer must face one point on the earth, five times a day, from wherever a Muslim happens to be. Working out that direction from any city on a sphere is a problem in spherical trigonometry — so Muslims solved spherical trigonometry.",
       ar: "والصلاة تستقبل نقطةً واحدةً من الأرض، خمس مراتٍ في اليوم، من أيّ موضعٍ كان المسلم فيه. واستخراج هذا الاتجاه من أيّ مدينةٍ على كرةٍ مسألةٌ في حساب المثلثات الكرويّة — فحلّ المسلمون حساب المثلثات الكرويّة.",
@@ -1381,7 +1381,7 @@ const GOLDEN_FIGURES = [
     headline: "Called the Second Teacher — the first being Aristotle.",
     headlineAr: "لُقّب بالمعلّم الثاني — والأول أرسطو.",
     detail: "Al-Farabi organised logic in Arabic so thoroughly that everyone after him, including Ibn Sina, learned it from his arrangement. His book On the Virtuous City asks what a society is FOR, and answers that a city is virtuous when its people cooperate toward what actually perfects them, and corrupt when it organises itself around wealth, honour or pleasure alone — a question worth putting next to any modern city.\n\nHe also wrote the largest work on music theory of the medieval world, the Great Book of Music, dealing with the mathematics of sound, the tuning of instruments and their construction. Ibn Sina said he learned metaphysics only after reading al-Farabi's short treatise on it, having read Aristotle forty times without understanding.",
-    detailAr: "رتّب الفارابي المنطق بالعربية ترتيبًا استقرّ عليه من بعده، حتى تعلّمه منه ابن سينا نفسه. وسأل في «آراء أهل المدينة الفاضلة»: لأيّ شيءٍ يكون الاجتماع؟ فأجاب أنّ المدينة تفضل إذا تعاون أهلها على ما به كمالهم حقًّا، وتفسد إذا انتظمت على المال وحده أو الجاه وحده أو اللذّة وحدها — وهو سؤالٌ يحسن أن يُوضع بإزاء أيّ مدينةٍ حديثة.\n\nوصنّف أيضًا أكبر كتب نظريّة الموسيقى في العصر الوسيط، وهو «كتاب الموسيقى الكبير»، في رياضيّات الصوت وضبط الآلات وصناعتها. وقال ابن سينا إنه لم يفهم ما بعد الطبيعة حتى قرأ رسالة الفارابي فيها، بعد أن قرأ أرسطو أربعين مرّةً فلم يفهم.",
+    detailAr: "رتّب الفارابي المنطق بالعربية ترتيبًا استقرّ عليه من بعده، حتى تعلّمه منه ابن سينا نفسه. وسأل في «آراء أهل المدينة الفاضلة»: لأيّ شيءٍ يكون الاجتماع؟ فأجاب أنّ المدينة تفضل إذا تعاون أهلها على ما به كمالهم حقًّا، وتفسد إذا انتظمت على المال وحده أو الجاه وحده أو اللذّة وحدها — وهو سؤالٌ يحسن أن يُوضع مقابل أيّ مدينةٍ حديثة.\n\nوصنّف أيضًا أكبر كتب نظريّة الموسيقى في العصر الوسيط، وهو «كتاب الموسيقى الكبير»، في رياضيّات الصوت وضبط الآلات وصناعتها. وقال ابن سينا إنه لم يفهم ما بعد الطبيعة حتى قرأ رسالة الفارابي فيها، بعد أن قرأ أرسطو أربعين مرّةً فلم يفهم.",
     works: [
       { t: "Ara Ahl al-Madinah al-Fadilah", tAr: "آراء أهل المدينة الفاضلة", d: "What a society is for, and what makes one corrupt.", dAr: "لأيّ شيءٍ يكون الاجتماع، وبمَ تفسد المدينة." },
       { t: "Kitab al-Musiqa al-Kabir", tAr: "كتاب الموسيقى الكبير", d: "The mathematics of sound and the construction of instruments.", dAr: "رياضيّات الصوت وصناعة الآلات." },
@@ -1484,7 +1484,7 @@ const GOLDEN_TAKEN = {
       title: "Toledo: the doorway, and what went through it",
       titleAr: "طليطلة: الباب، وما عبر منه",
       what: "When Toledo fell in 1085 its libraries fell with it, and for the next century Europeans came to translate. Gerard of Cremona alone rendered some eighty-seven works from Arabic into Latin, including Ibn Sina's Canon, az-Zahrawi's surgery, ar-Razi, al-Khwarizmi, and Ptolemy's Almagest.\n\nThat last one is worth pausing on. Europe did not have the Almagest. It got it back from Arabic — which is why it is called the Almagest at all: al-majisti is an Arabic word. Europe recovered a large part of its own Greek inheritance through Muslim hands, translated, corrected and expanded, and the standard telling of the Renaissance moves straight from the Greeks to Italy as though the intervening five hundred years and the language they happened in were a corridor rather than a workshop.",
-      whatAr: "لمّا سقطت طليطلة سنة ٤٧٨هـ سقطت خزائن كتبها معها، فأقبل الأوروبيون قرنًا كاملًا يترجمون. وقد نقل جيرارد الكريموني وحده نحو سبعةٍ وثمانين كتابًا من العربية إلى اللاتينية، منها «القانون» لابن سينا، وجراحة الزهراوي، وكتب الرازي، والخوارزمي، و«المجسطي» لبطليموس.\n\nوهذا الأخير موضع وقوف. فلم يكن «المجسطي» عند أوروبا، وإنما استردّته من العربية — ولذلك سُمّي «المجسطي» أصلًا، فهي لفظةٌ عربية. فقد استعادت أوروبا شطرًا كبيرًا من ميراثها اليوناني نفسه على أيدي المسلمين، مترجَمًا مصحَّحًا مَزيدًا فيه. ثم إنّ الرواية المعتادة لعصر النهضة تنتقل من اليونان إلى إيطاليا رأسًا، كأنّ الخمسمئة سنةٍ الواقعة بينهما واللغة التي جرت بها ممرٌّ لا مَشْغَل.",
+      whatAr: "لمّا سقطت طليطلة سنة ٤٧٨هـ سقطت خزائن كتبها معها، فأقبل الأوروبيون قرنًا كاملًا يترجمون. وقد نقل جيرارد الكريموني وحده نحو سبعةٍ وثمانين كتابًا من العربية إلى اللاتينية، منها «القانون» لابن سينا، وجراحة الزهراوي، وكتب الرازي، والخوارزمي، و«المجسطي» لبطليموس.\n\nوهذا الأخير موضع وقوف. فلم يكن «المجسطي» عند أوروبا، وإنما استردّته من العربية — ولذلك سُمّي «المجسطي» أصلًا، فهي لفظةٌ عربية. فقد استعادت أوروبا جزءًا كبيرًا من ميراثها اليوناني نفسه على أيدي المسلمين، مترجَمًا مصحَّحًا مَزيدًا فيه. ثم إنّ الرواية المعتادة لعصر النهضة تنتقل من اليونان إلى إيطاليا رأسًا، كأنّ الخمسمئة سنةٍ الواقعة بينهما واللغة التي جرت بها ممرٌّ لا مَشْغَل.",
       strength: "Documented — the translations survive with their translators named on them",
       strengthAr: "موثّق — الترجمات باقيةٌ وعليها أسماء ناقليها"
     },

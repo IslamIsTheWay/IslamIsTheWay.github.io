@@ -25,6 +25,29 @@ AR = re.compile(r"[ؠ-ي]")
 QUOTED = {"ar", "w", "arText", "arabic", "verse", "text", "hadithAr", "quoteAr",
           "dua", "duaAr", "dhikrAr", "matn", "matnAr", "arCut", "cutAr", "keys"}
 
+# `ar` IS NOT ALWAYS A QUOTATION. On golden.js, journey.js, judgement.js,
+# signs.js, rise.js and others it is the site's own Arabic sentence (the
+# Arabic of an English point) — and skipping every `ar` field hid البتّة,
+# فحسب, ههنا and يومئذٍ in those sentences from this tool for months (found
+# by hand on 25 November 2026). A quotation is written fully vowelled, the
+# site's own sentence is not: measured that day over 1,688 `ar` fields, the
+# site's sentences sat under 0.4 vowel marks per letter (most under 0.2) and
+# the quotations over 0.7, with three fields between. So an `ar` field is a
+# quotation when 0.6 or more of its letters (outside ﴿ ﴾ and « ») carry a
+# mark. A vowelled hadith inside a sentence stays safe either way: a word
+# written with its vowels never equals the bare word in SAFE.
+MARKS = re.compile(r"[ً-ْٰۖ-ۭ]")
+
+
+def quoted(key, val):
+    if key not in QUOTED:
+        return False
+    if key != "ar":
+        return True
+    bare = PROTECT.sub(" ", val)
+    letters = len(AR.findall(bare))
+    return letters == 0 or len(MARKS.findall(bare)) / letters >= 0.6
+
 # Replaced automatically: the meaning is the same in every context on this
 # site, and the second word is the one an ordinary reader uses.
 SAFE = {
@@ -40,11 +63,17 @@ SAFE = {
     "لئلّا": "حتى لا",
     "لئلا": "حتى لا",
     "غير أنّ": "لكن",
-    "غير أن": "لكن",
+    # NOT "غير أن" (no shadda): «من غير أن» is "WITHOUT", and replacing it
+    # wrote «من لكن» — nonsense — into 19 sentences of the live site
+    # (tadabbur, golden-mirror, grave, hearts, prayer…), found and undone on
+    # 25 November 2026. It is in WATCH now; see GUARD below for غير أنّ.
     "وتأمّل": "وانظر",
     "فتأمّل": "وانظر",
     "تأمّل": "انظر",
-    "قطّ": "أبدًا",
+    # NOT "قطّ": it sits inside quoted words more than anywhere — «فما قال
+    # لي أفٍّ قطّ», «ما ضرب … شيئًا قطّ», «ما أكل أحدٌ طعامًا قطّ» — and the
+    # automatic run turned seven quotations of the Prophet ﷺ and his
+    # companions into «أبدًا». A quotation is never plained. In WATCH now.
     "إذًا": "إذن",
     "إذاً": "إذن",
     "آنفًا": "قبل قليل",
@@ -71,7 +100,6 @@ SAFE = {
     # the same words carrying the و of connection, which the word-boundary
     # rule correctly refuses to cut into
     "وغير أنّ": "ولكن",
-    "وغير أن": "ولكن",
     "وههنا": "وهنا",
     "فههنا": "فهنا",
     "وثمّة": "وهناك",
@@ -80,6 +108,30 @@ SAFE = {
     "وحينئذٍ": "وعندها",
     "وحينئذ": "وعندها",
 }
+
+# Never replaced when the word just before is one of these: «من غير أنّ» and
+# «على غير أنّ» are not "however".
+GUARD = {"غير أنّ": ("من", "على", "بلا"), "وغير أنّ": ()}
+
+# THE WORD'S EDGES INCLUDE ITS VOWEL MARKS. The edges were letters only, so a
+# word whose prefix carried a vowel was cut in half: «يُتأمّل» — the ُ is not
+# a letter — matched تأمّل and became «يُانظر», in four tadabbur sentences.
+# And a SAFE word with a mark after it (تأمّلٌ) is a different word.
+EDGE_BEFORE = r"(?<![ؠ-ْٰ])"
+EDGE_AFTER = r"(?![ؠ-ْٰ])"
+
+
+def guarded(text, start, word):
+    """True if the word before `start` is one that changes this word's meaning."""
+    words = GUARD.get(word)
+    if not words:
+        return False
+    before = text[:start].rstrip().split()
+    return bool(before) and before[-1] in words
+
+
+def word_rx(word):
+    return re.compile(EDGE_BEFORE + re.escape(word) + EDGE_AFTER)
 
 # Reported, never replaced: each one needs a human, because the short word is
 # right in one place and wrong in another.
@@ -94,9 +146,22 @@ SAFE = {
 #             the Quran's own question (3:165), so plaining it loses the echo
 #   يومئذ   - "on that Day" in the pages about the Judgement, but "at that
 #             time" in a historical sentence; and the reader knows the word
-#             from the Quran, so it is not the barrier the others are
+#             from the Quran, so it is not the barrier the others are.
+#             BUT on a site full of the Day of Judgement it was ambiguous:
+#             «والأسيرُ يومئذٍ لم يكن مسلمًا» reads as "on the Day". On 25
+#             November 2026, at the owner's request ("find hard Arabic words
+#             and fix them"), every one in the site's own sentences became
+#             يوم القيامة / في ذلك اليوم / في ذلك الوقت by its meaning. The
+#             ones left are inside a hadith or a companion's own words.
+#   شطر     - the same day, every شطر meaning "half" became نصف (same
+#             pattern, so vowels and case endings carry over), and those
+#             meaning "a part" became جزء — written out by hand. None meant
+#             "towards". Only vowelled ones, in quotations, are left.
+#   أنّى    - plained in two places that day; where the Quran's question was
+#             not quoted near it, it now IS quoted (cut from 3:165), with
+#             the plain meaning beside it, so the echo is kept.
 WATCH = ["أنّى", "يومئذ", "إذ", "لمّا", "أجل", "زعم", "نحو", "شطر", "بات", "أمسى", "غدا",
-         "يوشك", "استوى على", "دَرَج", "قِبَل", "مَرَدّ", "ديدن", "دأب"]
+         "يوشك", "استوى على", "دَرَج", "قِبَل", "مَرَدّ", "ديدن", "دأب", "قطّ", "غير أن"]
 
 MAXWORDS = 30          # a sentence longer than this is hard to follow aloud
 
@@ -129,10 +194,10 @@ def replace_outside(text, pairs):
         return any(a <= i < b for a, b in skip)
     out, n = text, 0
     for word, better in pairs:
-        pat = re.compile(r"(?<![ؠ-يّ])" + re.escape(word) + r"(?![ؠ-ي])")
+        pat = word_rx(word)
         pieces, last, changed = [], 0, 0
         for m in pat.finditer(out):
-            if protected(m.start()):
+            if protected(m.start()) or guarded(out, m.start(), word):
                 continue
             pieces.append(out[last:m.start()]); pieces.append(better)
             last = m.end(); changed += 1
@@ -182,21 +247,21 @@ def scan_html(fix, hits, watch, longs, pairs):
             return any(a <= i < b for a, b in skip)
         name = os.path.basename(path)
         for w in SAFE:
-            for m in re.finditer(r"(?<![ؠ-يّ])" + re.escape(w) + r"(?![ؠ-ي])", raw):
-                if not protected(m.start()):
+            for m in word_rx(w).finditer(raw):
+                if not protected(m.start()) and not guarded(raw, m.start(), w):
                     hits[w] += 1
         for w in WATCH:
-            for m in re.finditer(r"(?<![ؠ-ي])" + re.escape(w) + r"(?![ؠ-ي])", raw):
+            for m in word_rx(w).finditer(raw):
                 if not protected(m.start()):
                     watch[w] += 1
         if fix:
             out, n = [], 0
             last = 0
             for word, better in pairs:
-                pat = re.compile(r"(?<![ؠ-يّ])" + re.escape(word) + r"(?![ؠ-ي])")
+                pat = word_rx(word)
                 pieces, last, changed_here = [], 0, 0
                 for m in pat.finditer(raw):
-                    if protected(m.start()):
+                    if protected(m.start()) or guarded(raw, m.start(), word):
                         continue
                     pieces.append(raw[last:m.start()]); pieces.append(better)
                     last = m.end(); changed_here += 1
@@ -223,17 +288,16 @@ def report(fix=False):
         edits = []           # (start, end, new_raw)
         for m in re.finditer(r'([A-Za-z_][A-Za-z0-9_]*)(\s*:\s*)"((?:[^"\\]|\\.)*)"', raw):
             key, body = m.group(1), m.group(3)
-            if key in QUOTED:
-                continue
             val = unescape(body)
-            if val is None or not AR.search(val):
+            if val is None or not AR.search(val) or quoted(key, val):
                 continue
             bare = PROTECT.sub(" ", val)
             for w in SAFE:
-                for _ in re.finditer(r"(?<![ؠ-يّ])" + re.escape(w) + r"(?![ؠ-ي])", bare):
-                    hits[w] += 1
+                for hit in word_rx(w).finditer(bare):      # not `m`: m is the field
+                    if not guarded(bare, hit.start(), w):
+                        hits[w] += 1
             for w in WATCH:
-                watch[w] += len(re.findall(r"(?<![ؠ-ي])" + re.escape(w) + r"(?![ؠ-ي])", bare))
+                watch[w] += len(word_rx(w).findall(bare))
             for sent in re.split(r"[.!?؟]|\\n\\n", bare):
                 k = len(sent.split())
                 if k > MAXWORDS and AR.search(sent):
@@ -279,18 +343,60 @@ def main():
         want = sys.argv[sys.argv.index("--list") + 1]
         for path in files():
             for key, body, a, b, _ in js_strings(path):
-                if key in QUOTED:
-                    continue
                 val = unescape(body)
-                if val and want in PROTECT.sub(" ", val):
+                if not val or quoted(key, val):
+                    continue
+                if want in PROTECT.sub(" ", val):
                     i = val.index(want)
                     print("  %-20s %-12s …%s…" % (os.path.basename(path), key,
                           val[max(0, i - 45):i + 45].replace("\n", " ")))
         return 0
+    if "--selftest" in sys.argv:
+        return 1 if selftest() else 0
+    bad = selftest() if "--check" in sys.argv else 0
     n = report()
     if "--check" in sys.argv:
-        return 1 if n else 0
+        return 1 if (n or bad) else 0
     return 0
+
+
+# Sentences the rewriter has broken before, or could. Each must come out
+# exactly as written here. Run by --check and --selftest, and every week on
+# GitHub (weekly-check.yml), so no change to SAFE or to the word edges can
+# break them again without saying so.
+SELFTEST = [
+    # «من غير أن» is "without": the run of November 2026 made it «من لكن» in 19 sentences
+    ("وما يُصنع في كلٍّ منها من غير أن تستأنف كلَّ شيء.", None),
+    ("من غير أنّ ذلك يعني شيئًا", None),
+    # a vowel on the prefix is part of the word: «يُتأمّل» became «يُانظر»
+    ("وفي الصياغة ما يُتأمّل: كذا", None),
+    ("له تأمّلٌ طويل", None),
+    # «فحسبها» is "he counted it", not «فحسب»
+    ("لكنّ الفرغاني قاسها بالميل العربي فحسبها كولمبس بالميل الروماني", None),
+    # quoted words are never plained — قطّ is not replaced at all any more
+    ("شهادته: ما قال لي أفٍّ قطّ، ولا قال", None),
+    ("«ما ضرب رسول الله ﷺ شيئًا قطّ بيده»", None),
+    ("قال الله ﴿لَا رَيۡبَۛ فِيهِۛ﴾", None),
+    # and what it IS for
+    ("وتأمّل الفرق بين الآيتين", "وانظر الفرق بين الآيتين"),
+    ("هو كذلك، غير أنّ الأمر أوسع", "هو كذلك، لكن الأمر أوسع"),
+    ("ليس هذا فحسب، بل", "ليس هذا فقط، بل"),
+    ("ولا يُعدّ في موضعٍ البتّة.", "ولا يُعدّ في موضعٍ أبدًا."),
+    ("فهذا لا ريب فيه", "فهذا لا شكّ فيه"),
+]
+
+
+def selftest():
+    pairs = sorted(SAFE.items(), key=lambda kv: -len(kv[0]))
+    bad = 0
+    for text, want in SELFTEST:
+        want = text if want is None else want
+        got, _ = replace_outside(text, pairs)
+        if got != want:
+            bad += 1
+            print("SELFTEST FAILED\n  in:   %s\n  want: %s\n  got:  %s" % (text, want, got))
+    print("selftest: %d of %d sentences come out as they must" % (len(SELFTEST) - bad, len(SELFTEST)))
+    return bad
 
 
 if __name__ == "__main__":

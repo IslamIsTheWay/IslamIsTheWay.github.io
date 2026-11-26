@@ -7,36 +7,10 @@
    ============================================ */
 
 /* ---------- Reciters ----------
-   Per-ayah audio comes from everyayah.com, where each file is named
-   {surah3}{ayah3}.mp3 — e.g. 002255.mp3 is Ayat al-Kursi. Every folder below
-   was checked to be live before being listed here. */
-const RECITERS = [
-  { id: "Alafasy_128kbps",                    name: "Mishary Rashid Alafasy",   ar: "مشاري راشد العفاسي" },
-  { id: "Yasser_Ad-Dussary_128kbps",          name: "Yasser Al-Dossary",        ar: "ياسر الدوسري" },
-  { id: "Abdurrahmaan_As-Sudais_192kbps",     name: "Abdurrahman As-Sudais",    ar: "عبد الرحمن السديس" },
-  { id: "Maher_AlMuaiqly_64kbps",             name: "Maher Al-Muaiqly",         ar: "ماهر المعيقلي" },
-  { id: "Abdul_Basit_Murattal_64kbps",        name: "Abdul Basit (Murattal)",   ar: "عبد الباسط عبد الصمد" },
-  { id: "Husary_128kbps",                     name: "Mahmoud Al-Husary",        ar: "محمود خليل الحصري" },
-  { id: "Minshawy_Murattal_128kbps",          name: "Al-Minshawi (Murattal)",   ar: "محمد صديق المنشاوي" },
-  { id: "Saood_ash-Shuraym_128kbps",          name: "Saud Ash-Shuraim",         ar: "سعود الشريم" },
-  { id: "Ghamadi_40kbps",                     name: "Saad Al-Ghamdi",           ar: "سعد الغامدي" },
-  { id: "Hudhaify_128kbps",                   name: "Ali Al-Hudhaify",          ar: "علي الحذيفي" },
-  { id: "Abdullaah_3awwaad_Al-Juhaynee_128kbps", name: "Abdullah Al-Juhany",    ar: "عبد الله الجهني" },
-  { id: "Nasser_Alqatami_128kbps",            name: "Nasser Al-Qatami",         ar: "ناصر القطامي" },
-  { id: "Salah_Al_Budair_128kbps",            name: "Salah Al-Budair",          ar: "صلاح البدير" },
-  { id: "Muhammad_Ayyoub_128kbps",            name: "Muhammad Ayyoub",          ar: "محمد أيوب" },
-  { id: "Ali_Jaber_64kbps",                   name: "Ali Jaber",                ar: "علي جابر" },
-  { id: "Fares_Abbad_64kbps",                 name: "Fares Abbad",              ar: "فارس عباد" }
-];
-
-const RECITER_KEY = "iitw-reciter";
-
-function getReciter() {
-  const saved = localStorage.getItem(RECITER_KEY);
-  return RECITERS.some(r => r.id === saved) ? saved : RECITERS[0].id;
-}
-
-function pad3(n) { return String(n).padStart(3, "0"); }
+   RECITERS, RECITER_KEY, getReciter(), setReciter(), pad3() and
+   ayahAudioUrl() live in js/reciters.js, which quran.html loads before this
+   file — the verse pages play the same recitations, and one list serves
+   both. */
 
 // ١٢٣ — the ayah number as it appears in a printed mushaf.
 function toArabicDigits(n) {
@@ -54,10 +28,6 @@ function arCount(n, one, two, few, many) {
 }
 function arCountAyah(n) { return arCount(n, "آية واحدة", "آيتان", "آيات", "آية"); }
 function arCountPage(n) { return arCount(n, "صفحة واحدة", "صفحتان", "صفحات", "صفحة"); }
-
-function ayahAudioUrl(surahNum, ayahNumInSurah) {
-  return "https://everyayah.com/data/" + getReciter() + "/" + pad3(surahNum) + pad3(ayahNumInSurah) + ".mp3";
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("surahGrid");
@@ -1003,7 +973,7 @@ function iitwMiraclesHtml(surahNum) {
 
   h += '<div class="mir-foot">' +
        '<span class="en-only">Nothing here is offered as proof that the Quran is a science book — it is not, and it does not ask to be read as one. The claim is narrower and harder to answer: this is what the words say, and this is the date anyone could first have checked them.</span>' +
-       '<span class="ar-only" dir="rtl">وليس شيءٌ ممّا ههنا مقدَّمًا على أنّ القرآن كتابُ علومٍ تجريبيّة — فليس كذلك، ولا يطلب أن يُقرأ كذلك. وإنما الدعوى أضيقُ من ذلك وأعسرُ على الردّ: هذا ما تقوله الألفاظ، وهذا تاريخُ أوّلِ يومٍ صار فيه التحقّقُ ممكنًا.</span></div>';
+       '<span class="ar-only" dir="rtl">وليس شيءٌ ممّا هنا مقدَّمًا على أنّ القرآن كتابُ علومٍ تجريبيّة — فليس كذلك، ولا يطلب أن يُقرأ كذلك. وإنما الدعوى أضيقُ من ذلك وأعسرُ على الردّ: هذا ما تقوله الألفاظ، وهذا تاريخُ أوّلِ يومٍ صار فيه التحقّقُ ممكنًا.</span></div>';
 
   h += '</div>';
   return h;
@@ -1101,6 +1071,22 @@ function iitwTadabburEmptyHtml(surah) {
     '</div>';
 }
 
+/* A source line, in the reader's language. i18n.js translates a canonical
+   citation ("Surah X (a:b)", "Sahih al-Bukhari 1461") by itself — but 114
+   lines in js/tadabbur.js are prose ("The classical lexicons on ق ف و",
+   "Arabic morphology: form VIII…", "read with 59:18; Ibn Kathir on the
+   verse") that no translator can do, and they showed half-English in Arabic
+   mode (measured 25 November 2026). Those carry their own Arabic — refAr /
+   sourceAr — and then the two halves are written out, one per language.
+   tools/build-verse-pages.py writes the same thing (tad_ref) — keep them
+   together. */
+function iitwTadRef(en, ar) {
+  if (!en) return "";
+  if (!ar) return '<div class="tad-ref" dir="auto">' + en + '</div>';
+  return '<div class="tad-ref en-only">' + en + '</div>' +
+         '<div class="tad-ref ar-only" dir="rtl">' + ar + '</div>';
+}
+
 /* The block under one verse. Returns "" when this verse has no
    entry, so verses without tadabbur are simply left alone. */
 function iitwTadabburAyahHtml(tad, n) {
@@ -1155,7 +1141,7 @@ function iitwTadabburAyahHtml(tad, n) {
   if (a.why) {
     h += '<div class="tad-sec"><div class="en-only">' + tadPara(a.why) + '</div>' +
          '<div class="ar-only">' + tadPara(a.whyAr, true) + '</div>' +
-         (a.ref ? '<div class="tad-ref" dir="auto">' + a.ref + '</div>' : "") +
+         iitwTadRef(a.ref, a.refAr) +
          (a.strength ? tadBadge(a.strength) : "") + '</div>';
   }
 
@@ -1207,7 +1193,7 @@ function iitwTadabburAyahHtml(tad, n) {
            '<div class="en-only">' + tadPara(w.instead) + '</div>' +
            '<div class="ar-only">' + tadPara(w.insteadAr, true) + '</div></div>';
     }
-    h += (w.source ? '<div class="tad-ref" dir="auto">' + w.source + '</div>' : "") +
+    h += iitwTadRef(w.source, w.sourceAr) +
          (w.strength ? tadBadge(w.strength) : "") +
          '</div></div>';
   });
@@ -1219,7 +1205,7 @@ function iitwTadabburAyahHtml(tad, n) {
            '<span class="ar-only" dir="rtl">حيث يتمّ المعنى</span></div>';
     if (l.ar) h += '<div class="tad-link-ar" dir="rtl">' + l.ar + '</div>';
     if (l.en) h += '<div class="tad-link-en en-only">' + l.en + '</div>';
-    h += '<div class="tad-ref" dir="auto">' + l.ref + '</div>' +
+    h += (iitwTadRef(l.ref, l.refAr) || '<div class="tad-ref" dir="auto"></div>') +
          '<div class="en-only">' + tadPara(l.how) + '</div>' +
          '<div class="ar-only">' + tadPara(l.howAr, true) + '</div></div>';
   });
@@ -1287,7 +1273,7 @@ function iitwTenseBlockHtml(t) {
 
   h += '<div class="tad-tense-why">' +
     '<div class="tad-tense-sub"><span class="en-only">Why this one here</span>' +
-      '<span class="ar-only" dir="rtl">لِمَ هذه ههنا</span></div>' +
+      '<span class="ar-only" dir="rtl">لِمَ هذه هنا</span></div>' +
     '<div class="en-only">' + tadPara(t.why) + '</div>' +
     '<div class="ar-only" dir="rtl">' + tadPara(t.whyAr, true) + '</div></div>';
 

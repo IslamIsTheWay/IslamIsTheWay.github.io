@@ -464,7 +464,7 @@ const ANGELS = [
     group: "quran",
     order: 11,
     name: "The bearers of the Throne — eight on that Day",
-    nameAr: "حملة العرش — ثمانية يومئذٍ",
+    nameAr: "حملة العرش — ثمانيةٌ يوم القيامة",
     role: "Those who bear the Throne",
     roleAr: "الحاملون للعرش",
     detail: "And the angels will be on its edges, and eight will bear the Throne of your Lord above them on that Day. The Quran gives the number for that Day specifically. The descriptions of their size that circulate — the distance between the earlobe and the shoulder of one of them being a journey of seven hundred years — come from a narration of Abu Dawud, outside the two Sahihs.",

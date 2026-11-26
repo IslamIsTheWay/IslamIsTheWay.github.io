@@ -396,7 +396,7 @@ const IITW_NOTE_THEMES = [
       { en: "A story told for those who came after — read it looking for what it asks of you.",
         ar: "قصّة سيقت لمن بعدهم، فاقرأها متأملاً ما تطلبه منك." },
       { en: "Patience is the thread running through this passage. Notice how long it was tested.",
-        ar: "الصبر هو الخيط الجامع في هذه الآيات، وتأمّل كم طال الابتلاء." }
+        ar: "الصبر هو الخيط الجامع في هذه الآيات، وانظر كم طال الابتلاء." }
     ]
   }
 ];

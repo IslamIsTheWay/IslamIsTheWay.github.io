@@ -9,7 +9,7 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 20 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 26 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
@@ -7561,3 +7561,163 @@ the check never adds a visit to the owner's numbers. Run it after any change
 to the counting. The local panel was also run against the REAL new service:
 it read all 31 counters (reads never count), all 0, as nothing had counted
 yet.
+
+
+# PART 45 — Hard Arabic made plain, thirty broken sentences repaired, and "Listen" on every verse page
+
+The owner asked (25 November 2026): "if there is an improvement add it as
+well, and find mistakes and hard Arabic words and fix them."
+
+## 1. What the new counter showed first
+
+76 visits in the five days after the switch (PART 44), and **53 of them on a
+verse page** — 2 on the home page. Readers now arrive from a search, on one
+verse. That decided where the improvement went (section 4). abacus was still
+down.
+
+## 2. The hard words, in the site's own sentences
+
+**يومئذٍ** (40 places) became يوم القيامة / في ذلك اليوم / في ذلك الوقت by its
+meaning. Readers know the word from recitation, but on a site full of the Day
+of Judgement it was AMBIGUOUS: «والأسيرُ يومئذٍ لم يكن مسلمًا» reads as "on the
+Day". Left as they are: every one inside a hadith, a companion's own words or
+Malik's saying, and the two hidden `arSame` lines in judgement.js (the page
+shows the Mushaf's verse instead of them).
+
+**شطر** (133) became **نصف** where it means a half — the same pattern, so the
+vowels and case endings carry over letter for letter (شطرُها → نصفُها, الشطرين
+→ النصفين) — and **جزء**, written by hand, where it means a part (شطرٌ كبيرٌ من
+العمل → جزءٌ كبيرٌ). None meant "towards". A vowelled شَطْر is a quotation and
+was not touched.
+
+Also: فحسب → فقط · البتّة → إطلاقًا · ههنا/هاهنا → هنا · بإزاء → مقابل · تلقاء
+(facing) → مقابل · فُرجة → فجوة (all seven) · لا قِبَل لأحدٍ بقتالهم → لا يقدر
+أحدٌ على قتالهم · يوشك in the site's own words → سـ…قريبًا / على وشك · هلمّ
+(the site's suggested words) → تعالَوا · إذا أمسى → إذا جاء المساء · إذا استوى
+على دابّته → إذا ركب دابّته واستقرّ عليها · النفر → الثلاثة (the three men of
+Bukhari 5063) · انكشف الناس → تفرّق الناس · الخُلّة → الصداقة. In guidance.html:
+هاهنا, الشطر, إزاءه (→ تجاهه).
+
+Two needed more than a word: surah-story.js said «كان يومئذٍ رجلين في غار» —
+literally "he was two men in a cave" — now «كان في ذلك اليوم واحدًا من رجلين في
+غار». And أنّى in golden-closing.js was echoing the Quran's own question
+(3:165), which the checker's notes said to keep: it is now QUOTED — ﴿أَنَّىٰ
+هَٰذَاۖ﴾ cut from the Mushaf text by quran-cut.py — with «أي: من أين أصابنا
+هذا؟» beside it. In revival.js the whole verse already follows the plain
+question, so the echo was never lost there.
+
+## 3. Thirty sentences an automatic run had broken — on the live site
+
+The earlier plain-Arabic runs (0e9c625, c6a6d9e, November 2026) replaced
+words by a list, and three of the list's rules were wrong in some contexts:
+
+* **«غير أن» → «لكن».** «من غير أن» is "WITHOUT". **19 sentences** read «من
+  لكن» — nonsense — on tadabbur (13), golden-mirror, grave, hearts, prayer,
+  data and tadabbur-tense. Every one is followed by a verb, so «من غير أن» it
+  is again.
+* **«تأمّل» → «انظر» inside a longer word.** The word's edge was "a letter",
+  and a vowel mark is not a letter, so «يُتأمّل» became **«يُانظر»** in 4
+  tadabbur sentences. Now «يُلاحَظ».
+* **«قطّ» → «أبدًا» inside quoted words.** Seven quotations of the Prophet ﷺ
+  and his companions had their wording changed: Anas «فما قال لي أفٍّ قطّ»,
+  Aisha «ما ضرب … شيئًا قطّ بيده» (twice) and «ما رأيتُ امرأةً قطّ خيرًا في
+  الدين من زينب», «ما أكل أحدٌ طعامًا قطّ», Abu Bakr «فما رأيتُ هَتْمًا قطّ
+  أحسن منه», Ka'b «والله ما كنتُ قطّ أقوى ولا أيسر». All restored; each was
+  checked against git history (the text before the run said قطّ). The أبدًا
+  that are right were left: Khadijah's «ما يُخزيك اللهُ أبدًا», «فلا يظمأ
+  أبدًا», and the site's own sentences.
+
+**How they were found:** reading the checker's own word list against the
+places it would touch, then a fingerprint search of the whole site (من لكن,
+a vowel mark glued to a replacement word, قال …: followed by a replaced word),
+then each run's own word diff.
+
+## 4. The checker, fixed so it cannot do it again (tools/arabicease.py)
+
+* It skipped every field named `ar` as "a quotation" — but on golden.js,
+  journey.js, judgement.js, signs.js and rise.js `ar` is the site's own
+  sentence. Now an `ar` field counts as a quotation only if 0.6 or more of
+  its letters carry a vowel mark (measured over 1,688 fields: the site's
+  sentences under 0.4, quotations over 0.7). It found 39 more old words.
+* A word's edges include its vowel marks (no more «يُانظر»).
+* «غير أن» and «قطّ» left the automatic list for the judge-by-hand list;
+  «غير أنّ» is never replaced after من / على / بلا.
+* **`--selftest`**: thirteen sentences that must come out exactly so — the
+  broken ones above among them. `--check` runs it, and so does the weekly
+  GitHub check now. Shown to fail with the old rules put back.
+* The remaining 19 safe words were then fixed by it, and read one by one
+  first; آنفًا ("mentioned above", where قبل قليل would read "a little while
+  ago") was written by hand: «شاهين، المذكورُ أعلاه».
+
+## 5. "Listen" on every verse page and on the home page's verses
+
+* **js/reciters.js** — the 16 reciters, `getReciter()`, `setReciter()`,
+  `ayahAudioUrl()`. MOVED out of quran.js (not copied): quran.html loads it
+  before quran.js. One list, one setting (`iitw-reciter`): a reciter chosen
+  on a verse page is the reader's reciter, and the other way round.
+* **js/listen.js** — under the verse on all 444 verse pages (written by
+  build-verse-pages.py: ▶ Listen / استمع and the reciter list), and under the
+  home page's 59:19–20 (button only, both verses in turn — the top of the
+  home page stays simple). The reader's two rules are kept: ONE audio element
+  reused (iOS starts sound only from a tap; a new element for verse two would
+  never play), and a recitation that cannot play SAYS so, in the reader's
+  language, with the reader's own sentence. Nothing downloads until the tap.
+  The block is hidden until the script has filled it, so no reader sees a
+  button that does nothing.
+* **sw.js → iitw-v5**: reciters.js (the reader cannot start offline without
+  it), listen.js, and share.js, which had been missing from "every other
+  script the pages above load" since it was written.
+* Test: `verse_page_listen_and_reciter` (audio stubbed — nothing downloads):
+  the default reciter's file for 2:255, Stop, a chosen reciter carried to the
+  Quran reader, the home page playing 059019 then 059020, Arabic names in
+  Arabic, and a refused recitation saying so in Arabic. The ten Quran reader
+  tests, the real full-surah playback among them, pass with the list moved.
+
+## 6. The whole-site sweep that day
+
+sitecheck (every page, both languages, phone and desktop): 0 problems ·
+contrast: 0 below 3:1 · dark theme: clean · English in Arabic mode: only the
+deliberate ones (the Golden Age scholars' Latin names, binbaz.org.sa, CSIS and
+SESRIC in source lines, the browser's own button names quoted on the meeting
+page, and the owner's own English recitation titles) · check-quran,
+check-counts, check-images, textscan, lightscan, mixscan: clean.
+
+## 7. English in the source lines, in Arabic mode — 387 verse pages
+
+The last audit of the day — every verse page, in Arabic — found the site's
+commonest fault (CLAUDE.md, "SWEEP YOUR OWN NEW SECTION") in a new place,
+starting with the page the home page links to: 59:19 read «سورة Al-Hashr
+(59:19)، وتُقرأ مع 59:18; ابن كثير on the verse». Two causes:
+
+1. **No surah names on the verse pages.** i18n.js builds its surah map from
+   SURAHS in js/data.js, which the verse pages do not load (half a megabyte) —
+   so the map was EMPTY there, and 387 of 444 verse pages wrote «سورة» and the
+   English name. Now `tools/build-verse-pages.py` also writes
+   **js/surah-names.js** (generated from data.js; `--check` covers it), the
+   verse pages load it before i18n.js, and iitwGetSurahMap() falls back to it.
+2. **114 source lines were prose**, which no translator can do — word
+   sources ("The classical lexicons on ق ف و", "Arabic morphology: form VIII
+   (ifti'āl) of س ب ق carries mutual action", "Quranic usage of the root …")
+   and refs with prose in them ("· The pause in revelation: … — Jundub ibn
+   Sufyan"). They were found exactly by running the site's own translator
+   over all 643 source lines in js/tadabbur.js and keeping what still had
+   Latin. Each now has an Arabic twin — `sourceAr` / `refAr`, 124 fields —
+   written in the style of the site's other Arabic source lines (Arabic
+   digits, «— عن فلان رضي الله عنه», «خارج الصحيحين، صحّحه الألباني»). Every
+   hadith number and collection is the English line's; a hadith is quoted in
+   « » only where those are its own words («إنكم سترون ربكم», «خيركم خيركم
+   لأهله»), otherwise described («أنّ خُلقه ﷺ كان القرآن»). The renderers show
+   the twin in Arabic mode: iitwTadRef() in js/quran.js and tad_ref() in
+   build-verse-pages.py — the same rule, kept together.
+
+**A phrase of the Mushaf that was not the Mushaf's.** One English source line
+carried 8:60's «رِبَاطِ ٱلۡخَيۡلِ» in ordinary brackets — not ﴿ ﴾, so no check
+looked at it — and without the shadda the Mushaf has after «مِن»: «رِّبَاطِ».
+Both lines now carry the exact cut (quran-cut.py, words 7–8 of 8:60) in ﴿ ﴾.
+Every other Quran run inside a source line was checked against the Mushaf
+text: there were two, both now exact.
+
+**The test:** `every_source_line_reads_in_arabic` runs the translator over
+every source line in the browser (a line with no twin must come out with no
+Latin) and opens four verse pages in Arabic. With the data as it was that
+morning it fails on 124 lines; now it passes.
