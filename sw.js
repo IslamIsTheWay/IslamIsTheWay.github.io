@@ -44,7 +44,7 @@
        needs a connection, and the page says so.
    ============================================================ */
 
-const CACHE_VERSION = "iitw-v5";   // v5: reciters.js (the reader needs it), listen.js, share.js
+const CACHE_VERSION = "iitw-v6";   // v6: life.html and life/ (the Quran in Your Life); v5: reciters.js, listen.js, share.js
 const QURAN_CACHE   = "iitw-quran-v1";   // separate: immutable, never purged with the rest
 
 /* SPLIT IN TWO, AND THE SPLIT MATTERS.
@@ -128,6 +128,21 @@ const PRECACHE_CONTENT = [
    open. Added in a loop rather than written out; 114 lines of the same thing
    would hide what they are. */
 for (let qs = 1; qs <= 114; qs++) PRECACHE_CONTENT.push("./js/quran-text/" + qs + ".js");
+
+/* The Quran in Your Life: life.html and its sections, life/<id>.html. Each
+   page carries its verses and explanations in the page itself, so a section
+   that is not cached does not open at all offline. 2.2MB in all, far less
+   over the wire. The list below is WRITTEN BY tools/build-life-pages.py from
+   the sections it builds (and its --check fails when it is behind) — edit
+   js/life/, not this. */
+const LIFE_SECTIONS = [
+  "faith", "prayer", "repentance", "hardship", "self", "character", "tongue",
+  "mind", "health", "time", "parents", "marriage", "children", "questions",
+  "siblings", "giving", "money", "neighbours", "justice", "hurt", "weak",
+  "differ", "leadership", "nations", "earth", "hereafter"
+];
+PRECACHE_CONTENT.push("./life.html");
+for (const id of LIFE_SECTIONS) PRECACHE_CONTENT.push("./life/" + id + ".html");
 
 /* Hosts handled specially. The reader's fallback (used only if
    js/quran-text.js failed to load) takes the Arabic from quran.com and the

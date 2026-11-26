@@ -1189,6 +1189,103 @@ def every_source_line_reads_in_arabic(ctx):
     return pg
 
 
+@scenario
+def life_guide_sections_and_arabic(ctx):
+    """The Quran in Your Life (life.html, life/<id>.html — written by
+    tools/build-life-pages.py from js/life/). The menu and the home page lead
+    to the guide; the guide leads to all 26 areas; every card in a section
+    carries its verse in the Mushaf's own font, what it says, how to live it,
+    an example, and Listen; a verse chip jumps to its card; every link out of
+    the guide lands on a page that exists; and in Arabic mode not one English
+    word shows in any of the 27 pages."""
+    pg = open_page(ctx, "index.html", extra="localStorage.removeItem('iitw-reciter');")
+    pg.evaluate("() => {" + AUDIO_STUB + "}")
+    pg.add_init_script(AUDIO_STUB)
+    check(pg.evaluate("() => !!document.querySelector('header a[href=\"life.html\"]')"), "the menu does not lead to the guide")
+    check(pg.evaluate("() => !!document.querySelector('a.card[href=\"life.html\"]')"), "the home page has no card for the guide")
+    pg.click("a.card[href='life.html']")
+    pg.wait_for_load_state("networkidle")
+    pg.wait_for_timeout(400)
+    tiles = pg.evaluate("() => [...document.querySelectorAll('a.lq-tile')].map(a => "
+                        "[a.getAttribute('href'), parseInt(a.querySelector('.lq-tile-count .en-only').textContent)])")
+    check(len(tiles) == 26, "the guide lists %d areas of life, not 26" % len(tiles))
+    check(visible_count(pg, ".lq-intro .lq-card") == 8, "the guide's introduction does not show its 8 verses")
+    check(pg.evaluate("() => [...document.querySelectorAll('.lq-intro .lq-card')].every(c => c.querySelector('.q-hafs'))"),
+          "a verse in the introduction is not in the Mushaf's text")
+
+    # one area, opened from its tile: every card complete, and its count true
+    pg.click("a.lq-tile[href='life/money.html']")
+    pg.wait_for_load_state("networkidle")
+    pg.wait_for_timeout(400)
+    check(pg.url.endswith("/life/money.html"), "the money tile opened %s" % pg.url)
+    cards = pg.evaluate("""() => [...document.querySelectorAll('.lq-card')].map(c => {
+        const v = c.querySelector('.vp-listen');
+        const n = v ? (+(v.dataset.to || v.dataset.ayah) - +v.dataset.ayah + 1) : 0;
+        return {id: c.id, n, hafs: !!c.querySelector('.lq-verse .q-hafs'), say: !!c.querySelector('.lq-say p'),
+                live: !!c.querySelector('.lq-live p'), ex: !!c.querySelector('.lq-ex li'),
+                ref: !!c.querySelector('.lq-ref'), listen: !!(v && v.classList.contains('ready'))};
+      })""")
+    broken = [c["id"] for c in cards if not all(c[k] for k in ("hafs", "say", "live", "ex", "ref", "listen"))]
+    check(not broken, "cards missing their verse, meaning, way to live it, example or Listen: %r" % broken[:5])
+    want = dict(tiles)["life/money.html"]
+    check(sum(c["n"] for c in cards) == want, "money's tile says %d verses, its cards hold %d" % (want, sum(c["n"] for c in cards)))
+    font = pg.evaluate("() => getComputedStyle(document.querySelector('.lq-verse .q-hafs')).fontFamily")
+    check("KFGQPC Hafs" in font, "the verses are not set in the Mushaf's font (%s)" % font)
+    check(pg.evaluate("() => document.fonts.check('24px \"KFGQPC Hafs\"')"), "the Mushaf's font did not load")
+    # a verse chip jumps to its card, clear of the sticky header
+    target = pg.evaluate("() => document.querySelectorAll('.lq-chips a')[5].getAttribute('href').split('#')[1]")
+    pg.click(".lq-chips a >> nth=5")
+    # the site scrolls smoothly, and a long page takes a while: wait for the
+    # card to stop moving rather than for a fixed time
+    top = pg.evaluate("""async id => { let last = null;
+        for (let i = 0; i < 40; i++) {
+          await new Promise(r => setTimeout(r, 150));
+          const t = document.getElementById(id).getBoundingClientRect().top;
+          if (last !== null && Math.abs(t - last) < 0.5) return t;
+          last = t;
+        }
+        return last; }""", target)
+    head = pg.evaluate("() => document.querySelector('header').getBoundingClientRect().bottom")
+    check(head - 2 <= top <= 160, "the chip for %s left its card at %dpx (header ends at %dpx)" % (target, top, head))
+    # Listen plays the card's own verse
+    first = cards[0]["id"].split("-")
+    pg.evaluate("() => { window.__played = []; }")
+    pg.click(".lq-card >> nth=0 >> .vp-listen-btn")
+    pg.wait_for_timeout(200)
+    played = pg.evaluate("() => window.__played")
+    check(played and played[0] == "https://everyayah.com/data/Alafasy_128kbps/%03d%03d.mp3" % (int(first[1]), int(first[2])),
+          "Listen on the first card played %r" % played)
+
+    # every link out of the guide lands on a page that exists
+    hrefs = set()
+    for page in ["life.html"] + [t[0] for t in tiles]:
+        pg.goto(BASE + page, wait_until="domcontentloaded")
+        hrefs |= set(pg.evaluate("() => [...document.querySelectorAll('.lq-page a[href]')].map(a => a.href)"
+                                 ".filter(h => h.startsWith(location.origin)).map(h => h.split('#')[0])"))
+    dead = pg.evaluate("""async hs => { const out = [];
+        for (const h of hs) { const r = await fetch(h, {method: 'HEAD'}); if (!r.ok) out.push(h + ' ' + r.status); }
+        return out; }""", sorted(hrefs))
+    check(not dead, "%d links in the guide lead nowhere: %r" % (len(dead), dead[:3]))
+
+    # Arabic mode: all 27 pages, and the page itself in Arabic
+    pg.evaluate("() => { localStorage.setItem('iitw-lang', 'ar'); }")
+    for page in ["life.html"] + [t[0] for t in tiles]:
+        pg.goto(BASE + page, wait_until="domcontentloaded")
+        pg.wait_for_timeout(150)
+        leak = pg.evaluate("""() => {
+            const out = [], w = document.createTreeWalker(document.querySelector('.lq-page'), NodeFilter.SHOW_TEXT);
+            while (w.nextNode()) {
+              const t = w.currentNode, el = t.parentElement;
+              if (!/[A-Za-z]{2,}/.test(t.textContent) || !el.getClientRects().length) continue;
+              out.push(t.textContent.trim().slice(0, 60));
+            }
+            return out; }""")
+        check(not leak, "%s shows English in Arabic mode: %r" % (page, leak[:3]))
+        check(pg.evaluate("() => document.documentElement.lang === 'ar' && document.documentElement.dir === 'rtl'"),
+              "%s is not set to Arabic, right to left" % page)
+    return pg
+
+
 def main():
     want = [a for a in sys.argv[1:] if not a.startswith("--")]
     passed, failed = [], []

@@ -32,7 +32,8 @@ CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
 PAGES = ["index.html", "quran.html", "hadith.html", "sunnah.html", "stories.html",
          "guidance.html", "companions.html", "prophets.html", "judgement.html",
          "golden.html", "verify.html", "courses.html", "search.html", "login.html",
-         "meeting.html", "offline.html", "staff.html"]
+         "meeting.html", "offline.html", "staff.html",
+         "life.html", "life/money.html"]
 
 # A page is not only what it shows on load. The Quran reader, its three
 # panels, the navigation's "More" menu and the header search are all drawn

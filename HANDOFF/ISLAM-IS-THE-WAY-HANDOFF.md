@@ -7721,3 +7721,158 @@ text: there were two, both now exact.
 every source line in the browser (a line with no twin must come out with no
 Latin) and opens four verse pages in Arabic. With the data as it was that
 morning it fails on 124 lines; now it passes.
+
+# PART 46 — The Quran in Your Life: 26 areas of life, 688 verses, and a build that refuses typed Quran
+
+The owner asked (26 November 2026) for a page that teaches how to LIVE by the
+Quran and the Sunnah — "Muslims nowadays are treating the Quran like a holy
+thing, not as a holy thing that we need to understand and learn and think
+about to actually implement it in our lives" — by area of life (politics and
+nations, raising children and their questions about Allah, the soul, money
+and riba, improving yourself, المنّ والأذى, relationships, judging others,
+siblings, parents, your relationship with Allah), each verse with what it
+says, how to live it and simple examples, "everything has references", in
+simple words. He named a podcast for the introduction: «كيف يمكن فهمك للقرآن
+أن يغيّر حياتك بالكامل؟ | د. نايف بن نهار | بودكاست بدون ورق».
+
+## 1. What is on the page
+
+* **life.html** — the guide: why live by the Quran (8 verses: 17:9, 38:29,
+  47:24, 2:121, 62:5, 2:44, 25:30, 33:21, each a full card), how to use the
+  page, the contents in five parts, and the podcast as RECOMMENDED LISTENING
+  (its link checked against YouTube's own title and channel; nothing on the
+  page is attributed to it — it is described, not quoted).
+* **26 sections, life/<id>.html**, in five parts:
+  You and Allah (faith, prayer, repentance, hardship) · You and yourself
+  (self, character, tongue, mind, health, time) · You and your family
+  (parents, marriage, children, questions — children's questions about
+  Allah —, siblings) · You and other people (giving — المنّ والأذى is here,
+  2:262-264 —, money — riba —, neighbours, justice, hurt, weak, differ) ·
+  You and the world (leadership, nations, earth, hereafter).
+* **Every card**: the verse cut from the Mushaf text (never typed), its
+  English, the reference, ▶ Listen (js/listen.js, the reader's reciter),
+  💬 What it says, 🌱 Live it, ☕ For example (an ordinary day), 📜 From the
+  Sunnah (each hadith with its collection, number, narrator and grade), and a
+  link to the verse's own page where it has one, and to the reader. Verse
+  chips at the top of a section jump to their card; "More on this elsewhere"
+  and a pager at the bottom.
+* 471 cards hold **688 different verses** (four verses sit in two sections:
+  4:1, 12:100, 46:15, 89:17). The two companion explanations in the
+  introduction (at-Tabari on 38:29 and 2:121) carry the "a companion's
+  words" badge, not "hadith".
+
+## 2. Where it lives
+
+`js/life/_index.js` (the guide) and `js/life/<id>.js` (one per section) are
+the only files to edit. `tools/build-life-pages.py` writes life.html,
+life/*.html, their sitemap rows and sw.js's `LIFE_SECTIONS`; bump-version.sh
+runs it after the verse pages (it borrows their shell, so a nav change
+reaches it the same way). `--check` fails on a stale page, sitemap or sw.js;
+`--draft` builds what exists so far. CSS: the `lq-*` block in style.css.
+Linked from the menu and footer of every page, a home card, Recently Added
+(build-recent.py), and i18n.js for the Arabic of all three.
+
+## 3. Typed Quran — 193 places, and the guard that now stops it
+
+Reading the finished sections back, the "What it says" Arabic had retold
+verses in the Mushaf's own words — plainly spelled, so no ﴿﴾ and no Madinah
+mark for check-quran.sh to see. A verse typed by hand is exactly what this
+site never allows (CLAUDE.md, top section). All 193 were rewritten as
+explanations, and the build now compares every Arabic sentence of the site's
+own (sayAr and the rest, the hub's fields too) with the whole Mushaf, reduced
+to bare letters (no marks, no tatweel, no alef or hamza seats, ى→ي, ة→ه):
+**4 words in a row** of any verse stops the build; inside a hadith's Arabic
+**8** (the hadith «من كان يؤمن بالله واليوم الآخر» is 6 words of 2:232). The
+shahada and «أعوذ بالله من الشيطان الرجيم» (the Prophet's ﷺ words for anger,
+al-Bukhari 6115) are allowed only when the run lies wholly inside them — the
+first version let 47:19 through and was replaced. Hamza seats are dropped
+because سيئات and the Mushaf's سَيِّـَٔات hid a quotation from the first
+version. A real quotation inside prose is cut, not typed: `{q s:a i-j word}`.
+
+## 4. Every hadith reference checked against the books
+
+The fawazahmed0 hadith-api editions (jsDelivr), Arabic and English, for the
+four collections the pages cite (Muslim 150 times, al-Bukhari 128,
+at-Tirmidhi 12, Abu Dawud 5). Muslim is looked up by Abd al-Baqi's number,
+which the editions keep in `arabicnumber` — not by their own sequential
+`hadithnumber`.
+
+* **291 number lookups**: does the hadith at that number name the narrator
+  the card names, and carry its key words? Every low score was read. **One
+  number was wrong**: "whoever dies while deceiving those in his care" is
+  al-Bukhari **7151**, not 7150.
+* **177 «quotations»** (178 with the one added in section 7): each must be
+  the hadith's own words at that number.
+  **15 were not** — close paraphrases inside quotation marks — and now are:
+  «قل: آمنت بالله، فاستقم» (not «ثم استقم»), «إنّك ضعيف، وإنّها أمانة»
+  (Abu Dharr; the first words had been dropped), «إنّا والله لا نولّي على
+  هذا العمل أحدًا سأله», «فأحسنوا الذَّبح، وليُحِدّ أحدكم شفرته، فليُرِح
+  ذبيحته», «وما أدراك أنّها رقية؟», «لو أنّكم كنتم توكّلون على الله حقّ
+  توكّله، لرُزقتم كما تُرزق الطير», «باسمك أموت وأحيا» (al-Bukhari 6312 has
+  no اللهمّ), «أحبّ الأعمال إلى الله تعالى أدومها وإن قلّ», «من أحبّ أن
+  يُبسط له في رزقه، ويُنسأ له في أثره», «على وجوههم، أو على مناخرهم», and
+  five more; the English beside each was brought into line. Words left out
+  of a quotation are marked « ... ». Two spellings remain that are the same
+  word written two ways (مؤكله/موكله, بوائقه/بوايقه).
+* **`tools/hadithcheck.py`** does all of this again in one run (it downloads
+  the editions once into the temp folder) — quotations fail it, numbers that
+  do not exist fail it, low scores are printed to read. Its Muslim lookup
+  tries the neighbouring numbers and gives an unlabelled record (3006, Abu
+  al-Yasar, has none) to the numbers either side.
+
+## 5. Numbers, descriptions, offline
+
+* **Counts are verses, not cards.** The tiles said "17 verses" over cards
+  holding 23 (a card can hold a run: 59:22-24 is three), and the home card
+  said 471. Every count is now the verses; the home card, Recently Added and
+  their Arabic say 688, and `./check-counts.sh` runs
+  `build-life-pages.py --counts`, which reads those numbers out of index.html,
+  build-recent.py and i18n.js and fails on a mismatch (shown failing on 690).
+* The meta descriptions were sliced mid-word ("your chi", «وا») — now cut at
+  a word with "…", as the verse pages are.
+* **sw.js → iitw-v6**: life.html and all 26 sections are in the offline list
+  (2.2MB, far less over the wire); each page carries its own verses, so an
+  uncached section would not open at all offline.
+
+## 6. Tests
+
+`functest.py life_guide_sections_and_arabic`: the menu and home card lead to
+the guide; 26 tiles and the 8 introduction cards; on money (29 cards) every
+card has its verse in the KFGQPC font (and the font loads), its meaning, its
+way to live it, an example and a working Listen; the tile's count equals the
+verses its cards hold; a chip lands its card below the sticky header; Listen
+plays that card's verse; every link out of all 27 pages is answered; and in
+Arabic mode no English shows on any of them. The pages were added to the
+lists of sitecheck.py, phonecheck.py and contrastaudit.py.
+
+## 7. Found by the site's own checkers once they were pointed at it
+
+* **tools/arabicease.py never read js/life/** — it listed js/*.js only, and
+  read `key: "text"` fields only, so the examples (`exAr: [...]`, lists) were
+  invisible too. Now it reads js/life/, lists included (lists ONLY there:
+  elsewhere a list is usually `keys`, the search index, never to be
+  restyled). It found لئلّا six times and تأمّل once — now حتى لا and انظر إلى.
+* **Quran in hadith marks.** Six Quran phrases of two words sat in « »
+  instead of being cut from the Mushaf (too short for the 4-word guard):
+  «سمعنا وأطعنا» (2:285), «وإذا مرضت» (26:80), «سبيل الرشاد» (40:29),
+  «ميثاقًا غليظًا» (4:21), «من قريب» (4:17), «ما استطعتم» (64:16). All six are
+  now `{q …}` cuts, and two examples that merely echoed a verse in « »
+  (11:88, 17:74) were reworded. **The build now refuses the class**: a «…» of
+  two or three words that stand together in a verse, in the site's own
+  sentence (not a hadith's text), stops it — except what people say, listed
+  by hand in `SAID_IN_MARKS` (الحمد لله، سبحان الله، إن شاء الله…). Shown to
+  fail on each of the six old phrases and pass on those.
+* **The 4:34 note** quoted «خيركم خيركم لأهله» with no marks and no
+  reference, and said "he never struck a woman" with no source. The hadith
+  is now a card of its own: Aisha, «ما ضرب رسول الله ﷺ شيئًا قطّ بيده، ولا
+  امرأةً، ولا خادمًا، إلا أن يجاهد في سبيل الله», Sahih Muslim 2328, read at
+  that number first; the note points to it (above it, not "below").
+* **Long sentences**: the ten longest (38 to 51 words) were split at their
+  joints, same meaning; the longest is now 36. Rewording one of them, the
+  4-word guard stopped the build on «في سبيل الله، ثم لا» (2:262) — the
+  guard doing its job on its author.
+* **phonecheck**: the verse chips were 34px tall in Arabic, under the 36px
+  floor; now 40px.
+* **build-recent.py**: a section written entirely in NEW files had no date
+  (`git diff HEAD` cannot see an untracked file) and its card sorted last.
+  Untracked files under an area's paths now count as today's work.

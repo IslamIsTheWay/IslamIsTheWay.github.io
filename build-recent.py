@@ -22,6 +22,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "js", "recent.js")
 
 AREAS = [
+    dict(id="life", icon="🪴",
+         paths=["life.html", "life/", "js/life/", "tools/build-life-pages.py"],
+         title="The Quran in Your Life",
+         blurb="How to live by the Quran, one area of life at a time: 688 verses in 26 sections, each with what it says, how to live it, examples from an ordinary day, and the Sunnah beside it — every verse in the Mushaf's own text and every hadith with its reference.",
+         href="life.html", cta="Start reading"),
     dict(id="raghib", icon="📜",
          paths=["js/raghib.js", "js/raghib-index.js", "js/raghib/"],
          title="Ar-Raghib al-Isfahani on the Quran",
@@ -241,6 +246,12 @@ def pending_change(paths, symbols):
     """Work that is in the tree but not yet committed. Without this a card
     would carry the date of the PREVIOUS commit on the very day its section
     was rewritten — the newest work would look the oldest."""
+    # A file git has never seen is the newest work of all, and `git diff HEAD`
+    # cannot show it: the Quran in Your Life (26 November 2026) was written
+    # entirely in new files, and its card came out with no date at all and
+    # sorted LAST — below cards months old — until this line.
+    if paths and git("ls-files", "--others", "--exclude-standard", "--", *paths).strip():
+        return True
     dirty_html = [n for n in git("diff", "HEAD", "--name-only").split()
                   if n.endswith(".html")]
     html_paths = [p for p in paths if p.endswith(".html")]

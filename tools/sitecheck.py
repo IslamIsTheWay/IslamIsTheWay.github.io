@@ -30,7 +30,8 @@ CHANNEL = None if os.environ.get("IITW_BROWSER") == "chromium" else "msedge"
 PAGES = ["index.html", "quran.html", "hadith.html", "sunnah.html", "stories.html",
          "guidance.html", "companions.html", "prophets.html", "judgement.html",
          "golden.html", "verify.html", "courses.html", "search.html", "login.html",
-         "meeting.html", "offline.html", "staff.html", "angels.html"]
+         "meeting.html", "offline.html", "staff.html", "angels.html",
+         "life.html", "life/money.html"]
 BLOCKED = ("abacus.jasoncameron.dev", "countapi.mileshilliard.com")
 
 # Answers that are expected and handled, not faults. GitHub allows 60 anonymous

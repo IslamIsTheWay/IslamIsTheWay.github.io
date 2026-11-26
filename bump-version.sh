@@ -30,3 +30,7 @@ echo "assets stamped v=$V"
 # because the generator copies the stamp from the root pages — run it before
 # and every verse page would point at the previous version's files.
 python tools/build-verse-pages.py || python3 tools/build-verse-pages.py || echo "build-verse-pages.py did not run"
+
+# The Quran in Your Life (life.html, life/*.html) — built from js/life/*.js,
+# with the same shell and the same stamp, so it runs after the verse pages.
+python tools/build-life-pages.py || python3 tools/build-life-pages.py || echo "build-life-pages.py did not run"

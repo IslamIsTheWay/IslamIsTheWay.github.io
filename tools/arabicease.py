@@ -169,11 +169,33 @@ MAXWORDS = 30          # a sentence longer than this is hard to follow aloud
 PROTECT = re.compile(r"﴿[^﴾]*﴾|«[^»]*»")
 
 
+LIFE = os.path.join(REPO, "js", "life")
+FIELD = re.compile(r'([A-Za-z_][A-Za-z0-9_]*)(\s*:\s*)"((?:[^"\\]|\\.)*)"')
+LIST = re.compile(r'([A-Za-z_][A-Za-z0-9_]*)\s*:\s*\[((?:\s*"(?:[^"\\]|\\.)*"\s*,?)+)\s*\]')
+STR = re.compile(r'"((?:[^"\\]|\\.)*)"')
+
+
+def fields(s, path):
+    """(key, raw value, start, end) for every "key": "string" in a JS data
+    file — and, in js/life/, for every string of a "key": ["…", "…"] list as
+    well: the examples there (exAr) are lists, and they held hundreds of the
+    guide's Arabic sentences out of this tool's sight. Only there, because
+    elsewhere a list is usually `keys`, the search index, which has its own
+    rules (CLAUDE.md) and must never be rewritten for style."""
+    for m in FIELD.finditer(s):
+        yield m.group(1), m.group(3), m.start(3), m.end(3)
+    if os.path.dirname(os.path.abspath(path)) == os.path.abspath(LIFE):
+        for m in LIST.finditer(s):
+            for x in STR.finditer(m.group(2)):
+                a = m.start(2) + x.start(1)
+                yield m.group(1), x.group(1), a, a + len(x.group(1))
+
+
 def js_strings(path):
-    """(key, value, start, end) for every "key": "string" in a JS data file."""
+    """(key, value, start, end, text) for every string fields() finds."""
     s = io.open(path, encoding="utf-8").read()
-    for m in re.finditer(r'([A-Za-z_][A-Za-z0-9_]*)(\s*:\s*)"((?:[^"\\]|\\.)*)"', s):
-        yield m.group(1), m.group(3), m.start(3), m.end(3), s
+    for key, body, a, b in fields(s, path):
+        yield key, body, a, b, s
 
 
 def unescape(raw):
@@ -211,7 +233,12 @@ def replace_outside(text, pairs):
 
 def files():
     d = os.path.join(REPO, "js")
-    return [os.path.join(d, f) for f in sorted(os.listdir(d)) if f.endswith(".js")]
+    out = [os.path.join(d, f) for f in sorted(os.listdir(d)) if f.endswith(".js")]
+    # The Quran in Your Life keeps its 26 sections in js/life/ — the site's
+    # own Arabic, most of it written in one day (HANDOFF PART 46).
+    if os.path.isdir(LIFE):
+        out += [os.path.join(LIFE, f) for f in sorted(os.listdir(LIFE)) if f.endswith(".js")]
+    return out
 
 
 def html_files():
@@ -286,8 +313,7 @@ def report(fix=False):
     for path in files():
         raw = io.open(path, encoding="utf-8").read()
         edits = []           # (start, end, new_raw)
-        for m in re.finditer(r'([A-Za-z_][A-Za-z0-9_]*)(\s*:\s*)"((?:[^"\\]|\\.)*)"', raw):
-            key, body = m.group(1), m.group(3)
+        for key, body, a, b in fields(raw, path):
             val = unescape(body)
             if val is None or not AR.search(val) or quoted(key, val):
                 continue
@@ -306,9 +332,11 @@ def report(fix=False):
                 new, n = replace_outside(val, pairs)
                 if n:
                     enc = json.dumps(new, ensure_ascii=False)[1:-1]
-                    edits.append((m.start(3), m.end(3), enc))
+                    edits.append((a, b, enc))
         if fix and edits:
-            for a, b, new in reversed(edits):
+            # last first, so the earlier offsets stay true; fields() yields a
+            # file's lists after its plain fields, so sort rather than reverse
+            for a, b, new in sorted(edits, reverse=True):
                 raw = raw[:a] + new + raw[b:]
             io.open(path, "w", encoding="utf-8", newline="").write(raw)
             changed_files += 1

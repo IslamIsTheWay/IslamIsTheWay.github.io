@@ -1,0 +1,137 @@
+/* ============================================================
+   THE QURAN IN YOUR LIFE — the hub (life.html): its introduction, and the
+   order of the parts and sections. Each section is its own file in this
+   folder; tools/build-life-pages.py turns them into life/<id>.html.
+   The verses are never typed here: an item carries only its reference, and
+   the generator cuts the verse from js/quran-text.
+   ============================================================ */
+(window.LIFE = window.LIFE || {})["_index"] = {
+  title: "The Quran in Your Life",
+  titleAr: "القرآن في حياتك",
+  lead: "The Quran was not sent to sit on a shelf, or to be recited only for its blessing. It was sent to be understood and lived: in how you speak to your children, earn and spend your money, treat your parents, answer someone who hurt you, and even in how nations deal with each other.\n\nHere every area of life has its own verses. For each one: the verse, what it says in plain words, how to live it, and simple examples from an ordinary day. Choose the part of your life you are in today, and start there.",
+  leadAr: "لم ينزل القرآن ليوضع على الرفّ، ولا ليُقرأ للبركة وحدها. نزل ليُفهم ويُعاش: في طريقة كلامك مع أولادك، وفي كسبك المال وإنفاقه، وفي معاملتك والديك، وفي ردّك على من آذاك، بل وفي تعامل الدول بعضها مع بعض.\n\nهنا لكلّ باب من أبواب الحياة آياتُه. ومع كلّ آية: نصّها، وماذا تقول بكلام بسيط، وكيف تعيشها، وأمثلة سهلة من يوم عادي. اختر الباب الذي تعيشه اليوم، وابدأ منه.",
+
+  parts: [
+    { title: "You and Allah", titleAr: "أنت والله",
+      sections: ["faith", "prayer", "repentance", "hardship"] },
+    { title: "You and yourself", titleAr: "أنت ونفسك",
+      sections: ["self", "character", "tongue", "mind", "health", "time"] },
+    { title: "You and your family", titleAr: "أنت وأهلك",
+      sections: ["parents", "marriage", "children", "questions", "siblings"] },
+    { title: "You and other people", titleAr: "أنت والناس",
+      sections: ["giving", "money", "neighbours", "justice", "hurt", "weak", "differ"] },
+    { title: "You and the world", titleAr: "أنت والعالم",
+      sections: ["leadership", "nations", "earth", "hereafter"] }
+  ],
+
+  whyTitle: "Why live by the Quran? In its own words",
+  whyTitleAr: "لماذا نعيش بالقرآن؟ من كلامه هو",
+  why: [
+    { v: "17:9",
+      say: "The Quran describes itself as a guide to the most upright way — not in worship only, but in everything: the way you think, choose, deal with people and spend your days.",
+      sayAr: "يصف القرآن نفسه بأنه يهدي إلى الطريق الأقوم: لا في العبادة وحدها، بل في كلّ شيء: في طريقة تفكيرك، واختياراتك، ومعاملتك للناس، وكيف تقضي أيّامك.",
+      live: "When a decision is in front of you — big or small — make it a habit to ask: is there a verse about this? Then look for it before you decide.",
+      liveAr: "إذا كان أمامك قرار، كبيرًا كان أو صغيرًا، فاجعل من عادتك أن تسأل: هل في القرآن آيةٌ في هذا؟ ثم ابحث عنها قبل أن تقرّر.",
+      ex: ["You are deciding whether to lend money to a relative. Before you answer, you read the verses on lending and on giving the debtor time (2:280–282). Your answer is now calmer, and fairer to both of you."],
+      exAr: ["قريبٌ يطلب منك قرضًا. قبل أن تجيب تقرأ آيات الدَّين وإمهال المعسِر (البقرة ٢٨٠–٢٨٢). صار جوابك أهدأ، وأعدل لكما معًا."] },
+    { v: "38:29",
+      say: "This is why the Book was sent down: so that people reflect on its verses, and people of understanding remember. Its blessing is meant to reach you through understanding it.",
+      sayAr: "هذا سبب إنزال الكتاب: أن يتدبّر الناس آياته، وأن يتذكّر أصحاب العقول. فبركته تصل إليك حين تفهمه.",
+      live: "Read less, and understand more. Stop at one verse, ask what it asks of you today, and keep that one thing with you until night.",
+      liveAr: "اقرأ أقلّ، وافهم أكثر. قف عند آيةٍ واحدة، واسأل: ماذا تطلب منّي اليوم؟ واحمل هذا الشيء الواحد معك حتى الليل.",
+      ex: ["Instead of rushing through a whole juz' in Ramadan without understanding, you read one page each day with its meaning, and choose one verse from it to act on."],
+      exAr: ["بدل أن تُسرع في قراءة جزءٍ كاملٍ في رمضان دون فهم، تقرأ صفحةً كلّ يوم مع معناها، وتختار منها آيةً واحدة تعمل بها."],
+      hadith: [{
+        en: "Ibn Mas'ud said: when one of us learned ten verses, he did not go past them until he knew their meanings and how to act on them.",
+        ar: "قال ابن مسعود رضي الله عنه: كان الرجل منّا إذا تعلّم عشر آيات لم يتجاوزهنّ حتى يعرف معانيهنّ والعمل بهنّ.",
+        src: "Reported by at-Tabari in the introduction to his Tafsir — the words of a companion, not of the Prophet ﷺ",
+        srcAr: "رواه الطبري في مقدّمة تفسيره — وهو قول صحابيّ، لا حديثٌ عن النبي ﷺ",
+        s: "athar" }] },
+    { v: "47:24",
+      say: "Allah asks why people do not reflect on the Quran — or are there locks on their hearts? Reading without reflecting is something the Quran blames, not something it praises.",
+      sayAr: "يسأل الله: لماذا لا يتدبّر الناس القرآن، أم على قلوبهم أقفال؟ فالقراءة بلا تدبّر يلومها القرآن ولا يمدحها.",
+      live: "Treat every reading as a conversation: when a verse speaks of a quality — patience, honesty, mercy — ask yourself honestly where you stand from it.",
+      liveAr: "اجعل كلّ قراءةٍ حوارًا: إذا ذكرت الآيةُ صفةً، كالصبر أو الصدق أو الرحمة، فاسأل نفسك بصدق: أين أنا منها؟",
+      ex: ["You read about those who “restrain their anger and pardon people” (3:134). You stop, and remember the colleague you have been angry with for a week. You decide to speak to him kindly today."],
+      exAr: ["تقرأ عن {q 3:134 5-9 والكاظمين}، فتتوقّف وتتذكّر زميلك الذي أنت غاضبٌ منه منذ أسبوع. فتقرّر أن تكلّمه بلطفٍ اليوم."],
+      hadith: [{
+        en: "The Prophet ﷺ said: “…and the Quran is a proof for you or against you.”",
+        ar: "قال النبي ﷺ: «...والقرآنُ حُجّةٌ لك أو عليك».",
+        src: "Sahih Muslim 223 — from Abu Malik al-Ash'ari",
+        srcAr: "صحيح مسلم ٢٢٣ — عن أبي مالك الأشعري رضي الله عنه",
+        s: "hadith" }] },
+    { v: "2:121",
+      say: "Those who truly hold the Book “recite it with its true recital”. The companions explained true recital as following it: taking what it allows, leaving what it forbids, and reading it as it was revealed.",
+      sayAr: "الذين يحملون الكتاب حقًّا {q 2:121 3-5 يتلونه}. وفسّر الصحابة حقَّ التلاوة بالاتّباع: أن تأخذ بما أحلّ، وتترك ما حرّم، وتقرأه كما أُنزل.",
+      live: "Measure your reading by what changes after it. A verse you read and then obeyed is worth more than many you read and forgot.",
+      liveAr: "قِس قراءتك بما يتغيّر بعدها. فآيةٌ قرأتها ثم عملت بها خيرٌ من آياتٍ كثيرة قرأتها ثم نسيتها.",
+      ex: ["You read the verse forbidding mockery (49:11). That evening, when the group chat starts laughing at someone, you do not add to it — that was your recital of the verse."],
+      exAr: ["تقرأ آية النهي عن السخرية (الحجرات ١١). وفي المساء، حين يبدأ الضحك على شخصٍ في مجموعة المحادثة، لا تشارك فيه. هذه كانت تلاوتك للآية."],
+      hadith: [{
+        en: "Ibn Mas'ud explained “its true recital” as: to make lawful what it makes lawful, forbid what it forbids, and read it as Allah revealed it.",
+        ar: "فسّر ابن مسعود رضي الله عنه {q 2:121 4-5 حق} بأن يُحلّ حلاله، ويحرّم حرامه، ويقرأه كما أنزله الله.",
+        src: "Tafsir at-Tabari and Tafsir Ibn Kathir on 2:121 — a companion's explanation",
+        srcAr: "تفسير الطبري وتفسير ابن كثير عند هذه الآية — تفسيرُ صحابيّ",
+        s: "athar" }] },
+    { v: "62:5",
+      say: "Allah gives an image for people who were given a Book and did not carry it in their lives: a donkey carrying books. The load is real; the benefit is none.",
+      sayAr: "يضرب الله مثلًا لمن أُعطي كتابًا فلم يحمله في حياته: حمارٌ يحمل كتبًا. الحِمل حقيقيّ، والنفع لا شيء.",
+      live: "Do not let the Quran be only a beautiful copy in your house or an app on your phone. Let one of its lessons be visible in your week.",
+      liveAr: "لا تجعل القرآن نسخةً جميلةً في بيتك أو تطبيقًا في هاتفك فقط. اجعل درسًا من دروسه ظاهرًا في أسبوعك.",
+      ex: ["A father keeps an expensive mushaf in the living room, but shouts at his children every day. He decides to read Luqman's advice to his son (31:13–19) with them, and to lower his own voice first."],
+      exAr: ["أبٌ يضع مصحفًا غاليًا في صالة البيت، ويصرخ على أولاده كلّ يوم. يقرّر أن يقرأ معهم وصيّة لقمان لابنه (لقمان ١٣–١٩)، وأن يبدأ هو بخفض صوته."] },
+    { v: "2:44",
+      say: "Do you order people to do good and forget yourselves, while you read the Book? The Quran begins its reform with the one who reads it, before anyone else.",
+      sayAr: "أتأمرون الناس بالخير وتنسون أنفسكم وأنتم تقرؤون الكتاب؟ فالقرآن يبدأ الإصلاح بقارئه قبل أيّ أحد.",
+      live: "Before sharing a verse to correct someone else, apply it to yourself for a day.",
+      liveAr: "قبل أن تنشر آيةً لتصحّح بها غيرك، طبّقها على نفسك يومًا كاملًا.",
+      ex: ["You want to send a verse about backbiting to your brother. First you check your own last conversation — and you find you did it this morning. You start with yourself."],
+      exAr: ["تريد أن ترسل لأخيك آيةً عن الغيبة. فتراجع أوّلًا آخر حديثٍ لك، فتجد أنك وقعت فيها صباح اليوم. فتبدأ بنفسك."] },
+    { v: "25:30",
+      say: "The Messenger ﷺ complains to his Lord: my people have taken this Quran as something abandoned. Ibn Kathir explains that abandoning it includes not believing it, not listening to it, not reflecting on it, and not acting on it.",
+      sayAr: "يشكو الرسول ﷺ إلى ربّه أنّ قومه تركوا هذا القرآن وهجروه. وبيّن ابن كثير أنّ هجره يدخل فيه ترك الإيمان به، وترك سماعه، وترك تدبّره، وترك العمل به.",
+      live: "Check which kind of abandoning applies to you: not reading, not understanding, or not acting. Fix one this month.",
+      liveAr: "انظر أيّ نوعٍ من الهجر يصيبك: ترك القراءة، أو ترك الفهم، أو ترك العمل. وأصلح واحدًا منها هذا الشهر.",
+      ex: ["You read the Quran every day, but you never look at the meaning. Your fix: one verse a day with its meaning from this site."],
+      exAr: ["تقرأ القرآن كلّ يوم، لكنك لا تنظر في معناه أبدًا. علاجك: آيةٌ واحدة كلّ يوم مع معناها من هذا الموقع."],
+      note: "Source: Tafsir Ibn Kathir on 25:30.",
+      noteAr: "المصدر: تفسير ابن كثير عند هذه الآية." },
+    { v: "33:21",
+      say: "The Messenger of Allah ﷺ is the best example for anyone who hopes for Allah and the Last Day. He showed what a life lived by the Quran looks like.",
+      sayAr: "رسول الله ﷺ هو أفضل قدوةٍ لمن يرجو لقاء الله وثواب الآخرة. فقد أرانا كيف تكون حياةٌ يُعاش فيها القرآن.",
+      live: "When you are not sure how to apply a verse, look at how the Prophet ﷺ lived it — with his family, his neighbours and even his enemies.",
+      liveAr: "إذا لم تعرف كيف تطبّق آية، فانظر كيف عاشها النبي ﷺ: مع أهله، ومع جيرانه، بل ومع أعدائه.",
+      ex: ["You read “live with them in kindness” (4:19) and wonder what it looks like at home. Then you read that the Prophet ﷺ used to help with the work of his house, and when the prayer came he went out to it (Sahih al-Bukhari 676). Now the verse has a picture."],
+      exAr: ["تقرأ قوله تعالى {q 4:19 21-22 وعاشروهن} وتتساءل كيف يكون ذلك في البيت. ثم تقرأ أنّ النبي ﷺ كان يكون في مهنة أهله، أي يساعد في عمل بيته، فإذا حضرت الصلاة خرج إليها (صحيح البخاري ٦٧٦). فصار للآية صورةٌ أمامك."],
+      hadith: [{
+        en: "Aishah was asked about the character of the Prophet ﷺ. She said: his character was the Quran.",
+        ar: "سُئلت عائشة رضي الله عنها عن خُلق النبي ﷺ فقالت: «فإنّ خُلق نبيّ الله ﷺ كان القرآن».",
+        src: "Sahih Muslim 746 — from Sa'd ibn Hisham",
+        srcAr: "صحيح مسلم ٧٤٦ — عن سعد بن هشام",
+        s: "hadith" }] }
+  ],
+
+  howTitle: "How to use these pages",
+  howTitleAr: "كيف تستفيد من هذه الصفحات",
+  how: [
+    "Choose the area of life you are in today — your children, your money, a hard week, a difficult person.",
+    "Read the verse, then **What it says**, in plain words.",
+    "Read **Live it** and the examples, and pick **one** thing to do today.",
+    "Come back tomorrow for the next verse. One verse lived is better than a page read and forgotten.",
+    "To go deeper, the card links to the verse's full explanation and to the Quran reader."
+  ],
+  howAr: [
+    "اختر الباب الذي تعيشه اليوم: أولادك، أو مالك، أو أسبوعٌ صعب، أو شخصٌ يتعبك.",
+    "اقرأ الآية، ثم **ماذا تقول** بكلامٍ بسيط.",
+    "اقرأ **كيف تعيشها** والأمثلة، واختر **شيئًا واحدًا** تفعله اليوم.",
+    "عُد غدًا إلى الآية التالية. فآيةٌ تعيشها خيرٌ من صفحةٍ تقرؤها ثم تنساها.",
+    "وإن أردت المزيد، ففي كلّ بطاقة رابطٌ إلى شرح الآية كاملًا وإلى المصحف."
+  ],
+
+  listen: {
+    href: "https://www.youtube.com/watch?v=Pfj4niPP0DY",
+    title: "كيف يمكن فهمك للقرآن أن يغيّر حياتك بالكامل؟ | د. نايف بن نهار | بودكاست بدون ورق",
+    note: "A conversation in Arabic with Dr. Nayef bin Nahar, on the “Bidoun Waraq” podcast, about how understanding the Quran — not only reciting it — can change a whole life. It is the same idea this page is built on.",
+    noteAr: "حوارٌ مع د. نايف بن نهار في «بودكاست بدون ورق»، عن كيف يمكن لفهم القرآن، لا تلاوته فقط، أن يغيّر حياة الإنسان كلّها. وهي الفكرة نفسها التي بُنيت عليها هذه الصفحة."
+  }
+};

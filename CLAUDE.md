@@ -46,6 +46,37 @@ and was drawn in Amiri. Full account: HANDOFF PART 28. The rules:
   verses differ from the printed Madinah Mushaf (and from quran.com). `p` in
   quran-text.js stays as it was.
 
+## THE QURAN IN YOUR LIFE (`life.html`, `js/life/`) — what the build enforces
+
+26 areas of life, 471 cards, 688 different verses (HANDOFF PART 46). Write in
+`js/life/<id>.js` and `js/life/_index.js` only; `life.html`, `life/*.html`,
+their sitemap rows and `LIFE_SECTIONS` in sw.js are written by
+`tools/build-life-pages.py` (bump-version.sh runs it). It REFUSES to build if:
+
+* **a card's own sentences carry the Quran.** `sayAr` and every other Arabic
+  field of the site's own is checked against the whole Mushaf, letters only
+  (no marks, no alef or hamza seats): 4 words in a row of any verse stops the
+  build, 8 inside a hadith's `ar`. 193 such runs were found when it was
+  added — a verse "explained" by retelling it word for word. Say what it
+  means in your own words, or cut it: `{q 3:134 5-9 والكاظمين}` — words
+  5 to 9 of 3:134, counted from 0, the first of them written plainly as a
+  check (a verse may start with ۞ as word 0); `{q 109:6}` is the whole verse.
+* **a short Quran phrase sits in « »** — the hadith marks. Two or three
+  words that stand together in a verse, in « » in the site's own sentence,
+  stop the build too: six sat there until 26 November (HANDOFF PART 46 §7).
+  Cut them with `{q …}`. What people SAY (الحمد لله، إن شاء الله…) is listed
+  by hand in `SAID_IN_MARKS`.
+* **a verse reference is wrong** — every card's verse is cut from
+  js/quran-text by its reference; nothing is typed.
+
+Hadith: cite a number only when you have read the hadith at it; outside the
+two Sahihs say so and give al-Albani's grading; «…» only around its exact
+words. **`python tools/hadithcheck.py`** finds every quotation at its number
+(Muslim by Abd al-Baqi's number = the editions' `arabicnumber`) and prints
+the references to read by hand. Counts are VERSES, not cards (59:22-24 is
+three): `./check-counts.sh` runs `build-life-pages.py --counts` against the
+home card, the Recently Added blurb and their Arabic in i18n.js.
+
 ## FIX THE CLASS, NOT THE INSTANCE — he asked for this in these words
 
 > "when I mention any problem I am not just asking to fix this one sentence,
@@ -405,6 +436,7 @@ git fetch -q origin && git checkout origin/main -- data/site-config.json
 ./check-images.sh
 ./check-counts.sh       # home page numbers vs the data behind them
 ./check-quran.sh        # every verse still the Madinah (KFGQPC) text, font unmodified
+python tools/hadithcheck.py --quotes   # if a hadith in js/life/ changed
 ./bump-version.sh
 git add -A && git commit -m "..." && git push origin main
 ```
@@ -446,7 +478,9 @@ Load `ara-bukhari.json` and `eng-bukhari.json` from the jsdelivr edition and
 **search them first**, then write the entry around a hadith whose text you
 have already read at that number. Bukhari's numbering there matches the
 standard numbering; **Muslim's is sequential and does not**, so never cite
-Muslim by a number taken from it.
+Muslim by a number taken from it. Abd al-Baqi's number — the one to cite — is
+in each record's `arabicnumber` (it drifts by one in places, and a few
+records have none). `tools/hadithcheck.py` does this lookup for js/life/.
 
 - **Check which hadith are already cited, not just how many entries a category
   has.** Doing the second and not the first put five duplicate Sunnah

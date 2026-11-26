@@ -93,6 +93,15 @@ check "full lives"      "$(count_lives)"    "${claim_lives:-MISSING}"
 check "sunnah entries"  "$(count_sunnah)"   "${claim_sunnah:-MISSING}"
 check "golden figures"  "$(count_golden)"   "${claim_golden:-MISSING}"
 
+# The Quran in Your Life: its home card, its Recently Added blurb and their
+# Arabic in js/i18n.js state how many verses and areas of life it holds.
+# Counted by its own generator — VERSES, once each, not cards: a card can hold
+# a run of them (59:22-24 is three), and the first count said 471 when the
+# cards held 688.
+echo "Checking the Quran in Your Life numbers…"
+python tools/build-life-pages.py --counts | sed 's/^/  /'
+[ "${PIPESTATUS[0]}" -eq 0 ] || fail=1
+
 # ---- The same hadith taught twice -------------------------------------
 # Adding a batch of Sunnah practices, I checked how many entries each CATEGORY
 # had and never checked which hadith were already cited — so five of the

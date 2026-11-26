@@ -165,6 +165,15 @@ python tools/build-verse-pages.py --check
 #     switching on (needs a local server; run without a number for all 445)
 python tools/versecheck.py 40 --check
 
+# 4i. The Quran in Your Life (life.html, life/*.html from js/life/*.js) -
+#     HANDOFF PART 46. The build refuses typed Quran (4 words in a row of the
+#     Mushaf in the site's own sentences, 8 in a hadith's Arabic); --check
+#     catches a hand edit or a forgotten run, and sw.js's LIFE_SECTIONS; the
+#     hadith tool finds every «quotation» at the number it cites and prints
+#     the numbers to read by hand (downloads ~45MB once, into the temp folder).
+python tools/build-life-pages.py --check
+python tools/hadithcheck.py
+
 # 5. list markup balance after any bulk sed edit
 for f in *.html; do
   o=$(grep -o '<li>' "$f" | wc -l); c=$(grep -o '</li>' "$f" | wc -l)

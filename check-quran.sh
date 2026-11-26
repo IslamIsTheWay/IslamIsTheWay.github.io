@@ -28,7 +28,7 @@
 cd "$(dirname "$0")" || exit 2
 fail=0
 
-files=$(ls ./*.html verse/*.html js/*.js data/*.json 2>/dev/null | grep -v 'js/quran-text.js')
+files=$(ls ./*.html verse/*.html life/*.html js/*.js js/life/*.js data/*.json 2>/dev/null | grep -v 'js/quran-text.js')
 
 for pat in 'ٱلْ' 'ًۭ' 'ٌۭ' 'ٍۭ' 'ًۢ' 'ٌۢ' 'ٍۢ' '۟'; do
   hits=$(grep -nF -- "$pat" $files 2>/dev/null)
