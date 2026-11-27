@@ -25,7 +25,7 @@ AREAS = [
     dict(id="life", icon="🪴",
          paths=["life.html", "life/", "js/life/", "tools/build-life-pages.py"],
          title="The Quran in Your Life",
-         blurb="How to live by the Quran, one area of life at a time: 756 verses in 27 sections, each with what it says, how to live it, examples from an ordinary day, and the Sunnah beside it — every verse in the Mushaf's own text and every hadith with its reference.",
+         blurb="How to live by the Quran, one area of life at a time: 773 verses in 28 sections, each with what it says, how to live it, examples from an ordinary day, and the Sunnah beside it — every verse in the Mushaf's own text and every hadith with its reference.",
          href="life.html", cta="Start reading"),
     dict(id="raghib", icon="📜",
          paths=["js/raghib.js", "js/raghib-index.js", "js/raghib/"],

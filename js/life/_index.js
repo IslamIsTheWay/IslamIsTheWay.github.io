@@ -19,7 +19,7 @@
     { title: "You and your family", titleAr: "أنت وأهلك",
       sections: ["parents", "marriage", "children", "questions", "siblings"] },
     { title: "You and other people", titleAr: "أنت والناس",
-      sections: ["giving", "money", "neighbours", "justice", "hurt", "weak", "differ"] },
+      sections: ["giving", "money", "work", "neighbours", "justice", "hurt", "weak", "differ"] },
     { title: "You and the world", titleAr: "أنت والعالم",
       sections: ["community", "leadership", "nations", "earth", "hereafter"] }
   ],
