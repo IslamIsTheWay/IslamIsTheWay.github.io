@@ -138,9 +138,9 @@
       live: "Sincerity is the soul of every deed. Before you do good, ask: who is this for? And after you do it, do not wait for people's praise.",
       liveAr: "الإخلاص روح كلّ عمل. فقبل أن تفعل الخير اسأل: لمن أفعله؟ وبعد أن تفعله، لا تنتظر مدح الناس.",
       ex: ["You fixed the mosque's broken sound system in your own time. When the imam starts to thank you publicly, you ask him not to mention your name.",
-           "You post a photo of yourself handing out food to the poor, and the likes start to fill your heart. You delete it, and decide that your next charity will have no camera."],
+           "You are leading the prayer, and catch yourself making your recitation longer and more beautiful because an important guest is standing in the row. You notice it, and recite as you always do — for Allah alone."],
       exAr: ["أصلحت نظام الصوت المعطّل في المسجد في وقتك الخاصّ. وحين يبدأ الإمام بشكرك أمام الناس، تطلب منه ألّا يذكر اسمك.",
-             "تنشر صورةً لك وأنت توزّع الطعام على الفقراء، فتبدأ الإعجابات تشغل قلبك. فتحذفها، وتقرّر أن تكون صدقتك القادمة بلا كاميرا."],
+             "تؤمّ الناس في الصلاة، فتجد نفسك تطيل القراءة وتحسّن صوتك لأنّ ضيفًا مهمًّا يقف في الصفّ. فتنتبه، وتقرأ كعادتك، لله وحده."],
       hadith: [{
         en: "The Prophet ﷺ said that Allah says: “I am the One most free of need of any partner. Whoever does a deed in which he associates anyone else with Me, I leave him and his partner.”",
         ar: "قال النبي ﷺ: قال الله تعالى: «أنا أغنى الشركاء عن الشرك، من عمل عملًا أشرك فيه معي غيري تركته وشركه».",
