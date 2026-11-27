@@ -1203,6 +1203,12 @@ def life_guide_sections_and_arabic(ctx):
     pg.add_init_script(AUDIO_STUB)
     check(pg.evaluate("() => !!document.querySelector('header a[href=\"life.html\"]')"), "the menu does not lead to the guide")
     check(pg.evaluate("() => !!document.querySelector('a.card[href=\"life.html\"]')"), "the home page has no card for the guide")
+    # ...and its own section, first under the verses (the owner asked for it
+    # on 27 November 2026: "very crucial and important")
+    check(pg.evaluate("() => { const s = document.querySelector('#live-quran'); return !!s && "
+                      "s.querySelectorAll('a.live-tile').length >= 8 && !!s.querySelector('a[href=\"life.html\"]') && "
+                      "s.previousElementSibling && s.previousElementSibling.id === 'resume'; }"),
+          "the home page has no 'Live by the Quran' section right under the verses")
     # the number of areas the home card promises (check-counts.sh keeps it true)
     areas = int(pg.evaluate("() => (document.querySelector('a.card[href=\"life.html\"] p').textContent"
                             ".match(/across (\\d+) areas/) || [0, 0])[1]"))

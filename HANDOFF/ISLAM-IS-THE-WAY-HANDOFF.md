@@ -7936,3 +7936,18 @@ for today; and search for mistakes.
 * Helpers used (scratchpad, not in the repo): a hadith finder over the
   cached editions, a verse printer with word numbers for {q} cuts, the
   example inserter and the near-duplicate scan.
+
+## 4. The home page (later the same day)
+
+The owner: "you forgot to add the new page to the home page … there is no
+section for how to implement the Quran in your life — add it, it's very
+crucial and important." The guide had a card, but as the ninth of ten in
+"Or browse by subject", two thirds of the way down. It now has its own
+section, **#live-quran ("Live by the Quran" / «عِش بالقرآن»), the first one
+under the verses at the top**: a one-line explanation, ten doors (faith,
+prayer, parents, husband and wife, children, young people, money, work,
+community, leadership and politics) and "See every area of life". No
+numbers in it, so it cannot go stale; the subject card keeps the counts.
+functest checks it is there, right under #resume, with at least 8 doors.
+He also said the home page may have too many sections ("I'm not sure") —
+nothing was removed; that is his decision.
