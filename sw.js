@@ -138,8 +138,9 @@ for (let qs = 1; qs <= 114; qs++) PRECACHE_CONTENT.push("./js/quran-text/" + qs 
 const LIFE_SECTIONS = [
   "faith", "prayer", "repentance", "hardship", "self", "character", "tongue",
   "mind", "health", "time", "parents", "marriage", "children", "questions",
-  "siblings", "giving", "money", "work", "neighbours", "justice", "hurt",
-  "weak", "differ", "community", "leadership", "nations", "earth", "hereafter"
+  "siblings", "giving", "money", "work", "neighbours", "friends", "justice",
+  "hurt", "weak", "differ", "community", "leadership", "nations", "earth",
+  "hereafter"
 ];
 PRECACHE_CONTENT.push("./life.html");
 for (const id of LIFE_SECTIONS) PRECACHE_CONTENT.push("./life/" + id + ".html");
