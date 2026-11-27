@@ -351,8 +351,11 @@ def check_section(sec):
             if not it.get(k):
                 bad.append("%s: no %s" % (where, k))
         ex, exar = it.get("ex") or [], it.get("exAr") or []
-        if not ex or len(ex) != len(exar):
-            bad.append("%s: %d examples in English, %d in Arabic" % (where, len(ex), len(exar)))
+        # Two at least: the owner asked for two examples on every verse (27
+        # November 2026), "just in case that one isn't understandable".
+        if len(ex) < 2 or len(ex) != len(exar):
+            bad.append("%s: %d examples in English, %d in Arabic — every card needs two or more, "
+                       "the same number in both" % (where, len(ex), len(exar)))
         # the Arabic half must be Arabic (a quoted «title» may stay as written)
         for k in ("sayAr", "liveAr", "noteAr"):
             t = re.sub(r"«[^«»]*»", "", it.get(k) or "")
