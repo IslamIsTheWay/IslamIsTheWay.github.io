@@ -7876,3 +7876,63 @@ lists of sitecheck.py, phonecheck.py and contrastaudit.py.
 * **build-recent.py**: a section written entirely in NEW files had no date
   (`git diff HEAD` cannot see an untracked file) and its card sorted last.
   Untracked files under an area's paths now count as today's work.
+
+# PART 47 — The Quran in Your Life, round two: 32 areas, 856 verses, two examples on every card
+
+The owner, 27 November 2026, after trying the first version: more sections;
+"for one verse I would prefer two examples, just in case one isn't
+understandable"; many more verses — politics above all, and how a village,
+a town or a people deals with the others around it; everything practical
+for today; and search for mistakes.
+
+## 1. What was added
+
+* **Politics and peoples.** Leadership +9 (sovereignty is Allah's to give,
+  3:26; rank as a test, 6:165; public money and the official's "gift",
+  3:161 with al-Bukhari 7174; handing over a post, 7:142 with al-Bukhari
+  4416; inspecting and listening, 27:20-22; refusing a bribe, 27:36-37;
+  vanity projects and cruel punishment, 26:128-130; speaking up in
+  Pharaoh's court, 40:28; the promise of 24:55). Nations +11 (the ungrateful
+  town, 16:112; Saba's dam, 34:15-17; 7:96; the Romans, 30:2-5; Hudaybiyyah
+  as a victory, 48:1 with Muslim 1785; those who offer peace, 4:90; 8:62-63;
+  refugees and leaving oppression, 4:97-100 with al-Bukhari 10; human
+  dignity, 17:70 with al-Bukhari 1312; a safe city, 2:126 with at-Tirmidhi
+  2346; the end of tyrants, 89:6-14).
+* **Six new sections:** community (your town and the people around you,
+  16 cards), work (13), friends (10), young people (12), envy and
+  contentment (11), women and men (9).
+* **A second example on every card** — 1,140 in all, each in a different
+  everyday setting from the first. The build now refuses a card with fewer
+  than two (check_section).
+* Totals: 32 sections, 562 cards, 856 different verses (plus the 8
+  introduction cards).
+
+## 2. Mistakes found and fixed on the way
+
+* **Repeated examples.** Three cards told the same story (greeting the
+  security guard after a promotion); others were near-copies (two rak'ahs
+  with witr; a refugee family moving in; posting a photo of your charity).
+  Found by comparing every example with every other (word overlap ≥ 0.33);
+  the scan is clean now.
+* **Two drafts dropped before they were written:** competitors "making
+  peace" by agreeing prices (that is a cartel), and "no compulsion in
+  religion" applied to a duty inside the religion (the verse is about
+  entering it).
+* **The 4-word guard caught its author about twenty times** while the new
+  sections were written («يأكل الطعام ويمشي في الأسواق» from 25:7, «في سبيل
+  الله ثم لا» from 2:262, «لله ملك السماوات والأرض»…) — every one reworded.
+* **Hadith left out on purpose:** at-Tirmidhi 2416 on youth (at-Tirmidhi
+  himself names a weak narrator), Abu Dawud 236 «النساء شقائق الرجال»
+  (graded weak by some), and al-Bukhari 5186's "rib" wording (easily
+  misread without its explanation).
+
+## 3. Tooling
+
+* `build-life-pages.py --set-counts` writes the real numbers into the home
+  card, Recently Added and their Arabic (`--counts` checks them;
+  check-counts.sh runs it).
+* functest `life_guide_sections_and_arabic` counts the areas from the home
+  card instead of a fixed 26.
+* Helpers used (scratchpad, not in the repo): a hadith finder over the
+  cached editions, a verse printer with word numbers for {q} cuts, the
+  example inserter and the near-duplicate scan.

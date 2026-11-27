@@ -48,10 +48,18 @@ and was drawn in Amiri. Full account: HANDOFF PART 28. The rules:
 
 ## THE QURAN IN YOUR LIFE (`life.html`, `js/life/`) — what the build enforces
 
-26 areas of life, 471 cards, 688 different verses (HANDOFF PART 46). Write in
-`js/life/<id>.js` and `js/life/_index.js` only; `life.html`, `life/*.html`,
-their sitemap rows and `LIFE_SECTIONS` in sw.js are written by
-`tools/build-life-pages.py` (bump-version.sh runs it). It REFUSES to build if:
+32 areas of life and 856 verses on 27 November 2026 (HANDOFF PARTS 46–47).
+Write in `js/life/<id>.js` and `js/life/_index.js` only; `life.html`,
+`life/*.html`, their sitemap rows and `LIFE_SECTIONS` in sw.js are written by
+`tools/build-life-pages.py` (bump-version.sh runs it). After adding verses or
+a section, run `python tools/build-life-pages.py --set-counts` — it writes the
+real numbers into the home card, Recently Added and their Arabic. It REFUSES
+to build if:
+
+* **a card has fewer than two examples** (or a different number in English
+  and Arabic). The owner asked for two on every verse, "just in case one
+  isn't understandable". Each should be a different everyday situation from
+  every other example in the guide — compare before adding.
 
 * **a card's own sentences carry the Quran.** `sayAr` and every other Arabic
   field of the site's own is checked against the whole Mushaf, letters only
