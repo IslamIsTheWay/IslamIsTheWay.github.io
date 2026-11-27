@@ -32,6 +32,9 @@ js/tadabbur.js), the card links to it instead of repeating it.
                                                 Arabic state the wrong number
                                                 of verses or areas (run by
                                                 check-counts.sh)
+    python tools/build-life-pages.py --set-counts  write the real numbers into
+                                                those six places (after adding
+                                                verses or a section)
 
 Run by bump-version.sh after build-verse-pages.py (it borrows that file's
 shell, so a new nav link reaches these pages the same way).
@@ -614,7 +617,7 @@ def sw_text(sections):
     return SW_LIST.sub(lambda m: block, sw, count=1)
 
 
-def count_claims(sections):
+def count_claims(sections, fix=False):
     """The home card, the Recently Added blurb and their Arabic in js/i18n.js
     say how many verses and areas of life this guide holds. Typed numbers have
     gone stale on this site before (see check-counts.sh), so each one is read
@@ -633,6 +636,26 @@ def count_claims(sections):
               ("build-recent.py", r"(\d+) verses in (\d+) sections"),
               ("js/i18n.js", r"(\d+) verses in (\d+) sections"),
               ("js/i18n.js", r"([٠-٩]+) آيةً في ([٠-٩]+) قسمًا")]
+    if fix:
+        # Rewrite each claim with the real numbers — in Arabic digits where
+        # the claim is written in them. The English sentence is also the
+        # i18n.js KEY of its Arabic, so key and translation change together.
+        for path in sorted({p for p, _ in claims}):
+            full = os.path.join(REPO, path)
+            text = io.open(full, encoding="utf-8").read()
+            for p, rx in claims:
+                if p != path:
+                    continue
+                arabic = "٠-٩" in rx
+                num = (lambda n: AR_DIGITS(n)) if arabic else str
+                def put(m, num=num):
+                    s = m.group(0)
+                    s = s[:m.start(1) - m.start(0)] + num(want[0]) + s[m.end(1) - m.start(0):]
+                    shift = len(num(want[0])) - (m.end(1) - m.start(1))
+                    a, b = m.start(2) - m.start(0) + shift, m.end(2) - m.start(0) + shift
+                    return s[:a] + num(want[1]) + s[b:]
+                text = re.sub(rx, put, text)
+            io.open(full, "w", encoding="utf-8", newline="").write(text)
     bad = 0
     for path, rx in claims:
         found = re.findall(rx, io.open(os.path.join(REPO, path), encoding="utf-8").read())
@@ -649,8 +672,8 @@ def count_claims(sections):
 
 
 def main():
-    if "--counts" in sys.argv:
-        return count_claims(load()[1])
+    if "--counts" in sys.argv or "--set-counts" in sys.argv:
+        return count_claims(load()[1], fix="--set-counts" in sys.argv)
     files, sections = build()
     sm = sitemap_text(files)
     sw = sw_text(sections)

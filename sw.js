@@ -139,7 +139,7 @@ const LIFE_SECTIONS = [
   "faith", "prayer", "repentance", "hardship", "self", "character", "tongue",
   "mind", "health", "time", "parents", "marriage", "children", "questions",
   "siblings", "giving", "money", "neighbours", "justice", "hurt", "weak",
-  "differ", "leadership", "nations", "earth", "hereafter"
+  "differ", "community", "leadership", "nations", "earth", "hereafter"
 ];
 PRECACHE_CONTENT.push("./life.html");
 for (const id of LIFE_SECTIONS) PRECACHE_CONTENT.push("./life/" + id + ".html");

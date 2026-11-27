@@ -1203,12 +1203,16 @@ def life_guide_sections_and_arabic(ctx):
     pg.add_init_script(AUDIO_STUB)
     check(pg.evaluate("() => !!document.querySelector('header a[href=\"life.html\"]')"), "the menu does not lead to the guide")
     check(pg.evaluate("() => !!document.querySelector('a.card[href=\"life.html\"]')"), "the home page has no card for the guide")
+    # the number of areas the home card promises (check-counts.sh keeps it true)
+    areas = int(pg.evaluate("() => (document.querySelector('a.card[href=\"life.html\"] p').textContent"
+                            ".match(/across (\\d+) areas/) || [0, 0])[1]"))
     pg.click("a.card[href='life.html']")
     pg.wait_for_load_state("networkidle")
     pg.wait_for_timeout(400)
     tiles = pg.evaluate("() => [...document.querySelectorAll('a.lq-tile')].map(a => "
                         "[a.getAttribute('href'), parseInt(a.querySelector('.lq-tile-count .en-only').textContent)])")
-    check(len(tiles) == 26, "the guide lists %d areas of life, not 26" % len(tiles))
+    check(areas > 0 and len(tiles) == areas,
+          "the guide lists %d areas of life, the home card promises %d" % (len(tiles), areas))
     check(visible_count(pg, ".lq-intro .lq-card") == 8, "the guide's introduction does not show its 8 verses")
     check(pg.evaluate("() => [...document.querySelectorAll('.lq-intro .lq-card')].every(c => c.querySelector('.q-hafs'))"),
           "a verse in the introduction is not in the Mushaf's text")

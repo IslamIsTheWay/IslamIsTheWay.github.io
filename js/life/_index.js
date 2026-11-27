@@ -21,7 +21,7 @@
     { title: "You and other people", titleAr: "أنت والناس",
       sections: ["giving", "money", "neighbours", "justice", "hurt", "weak", "differ"] },
     { title: "You and the world", titleAr: "أنت والعالم",
-      sections: ["leadership", "nations", "earth", "hereafter"] }
+      sections: ["community", "leadership", "nations", "earth", "hereafter"] }
   ],
 
   whyTitle: "Why live by the Quran? In its own words",
