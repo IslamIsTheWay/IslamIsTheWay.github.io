@@ -26,10 +26,10 @@ const AR = {
   "Guidance": "التوجيه",
   "Quran in Life": "القرآن في حياتك",
   "The Quran in Your Life": "القرآن في حياتك",
-  "799 verses across 29 areas of life — faith, prayer, family, money, neighbours, justice, your tongue, the earth — each with what it says, how to live it, and examples from an ordinary day.":
-    "٧٩٩ آيةً في ٢٩ بابًا من أبواب الحياة — الإيمان، والصلاة، والأسرة، والمال، والجيران، والعدل، واللسان، والأرض — ولكلّ آيةٍ معناها، وكيف تعيشها، وأمثلةٌ من يومك العاديّ.",
-  "How to live by the Quran, one area of life at a time: 799 verses in 29 sections, each with what it says, how to live it, examples from an ordinary day, and the Sunnah beside it — every verse in the Mushaf's own text and every hadith with its reference.":
-    "كيف تعيش بالقرآن، بابًا بابًا من أبواب الحياة: ٧٩٩ آيةً في ٢٩ قسمًا، ولكلّ آيةٍ معناها، وكيف تعيشها، وأمثلةٌ من يومك العاديّ، والسنّة بجانبها — كلّ آيةٍ بنصّ المصحف نفسه، وكلّ حديثٍ بمرجعه.",
+  "817 verses across 30 areas of life — faith, prayer, family, money, neighbours, justice, your tongue, the earth — each with what it says, how to live it, and examples from an ordinary day.":
+    "٨١٧ آيةً في ٣٠ بابًا من أبواب الحياة — الإيمان، والصلاة، والأسرة، والمال، والجيران، والعدل، واللسان، والأرض — ولكلّ آيةٍ معناها، وكيف تعيشها، وأمثلةٌ من يومك العاديّ.",
+  "How to live by the Quran, one area of life at a time: 817 verses in 30 sections, each with what it says, how to live it, examples from an ordinary day, and the Sunnah beside it — every verse in the Mushaf's own text and every hadith with its reference.":
+    "كيف تعيش بالقرآن، بابًا بابًا من أبواب الحياة: ٨١٧ آيةً في ٣٠ قسمًا، ولكلّ آيةٍ معناها، وكيف تعيشها، وأمثلةٌ من يومك العاديّ، والسنّة بجانبها — كلّ آيةٍ بنصّ المصحف نفسه، وكلّ حديثٍ بمرجعه.",
   "Start reading": "ابدأ القراءة",
   "Verify": "تحقَّق",
   "Courses": "الدورات",

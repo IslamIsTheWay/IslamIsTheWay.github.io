@@ -15,7 +15,7 @@
     { title: "You and Allah", titleAr: "أنت والله",
       sections: ["faith", "prayer", "repentance", "hardship"] },
     { title: "You and yourself", titleAr: "أنت ونفسك",
-      sections: ["self", "character", "tongue", "mind", "health", "time"] },
+      sections: ["self", "youth", "character", "tongue", "mind", "health", "time"] },
     { title: "You and your family", titleAr: "أنت وأهلك",
       sections: ["parents", "marriage", "children", "questions", "siblings"] },
     { title: "You and other people", titleAr: "أنت والناس",
