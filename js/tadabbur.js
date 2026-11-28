@@ -2442,6 +2442,40 @@ const TADABBUR = {
         ref: "Surah Al-Baqarah (2:214), read with Al-'Ankabut (29:2) and Yusuf (12:110); Khabbab's complaint: Sahih al-Bukhari 3612",
         refAr: "سورة البقرة، الآية ٢١٤، مع سورة العنكبوت ٢ وسورة يوسف ١١٠؛ وشكوى خبّاب: صحيح البخاري ٣٦١٢",
         strength: "hadith"
+      },
+      {
+        n: 124,
+        ar: "۞ وَإِذِ ٱبۡتَلَىٰٓ إِبۡرَٰهِـۧمَ رَبُّهُۥ بِكَلِمَٰتٖ فَأَتَمَّهُنَّۖ قَالَ إِنِّي جَاعِلُكَ لِلنَّاسِ إِمَامٗاۖ قَالَ وَمِن ذُرِّيَّتِيۖ قَالَ لَا يَنَالُ عَهۡدِي ٱلظَّٰلِمِينَ",
+        why: "Ibrahim was tested by his Lord with words — commands — and he fulfilled them. The commentators differed over what they were: the rites of the Hajj, said some; the practices of natural cleanliness, said others; the trials of his life — the fire, the emigration, the son — said others. The verse does not list them. It says only that he completed them: fa-atammahunn.\n\nThen the reward: I will make you a leader — imam — for people. And at once Ibrahim asks it for his descendants: and of my offspring? The answer neither grants nor refuses the family; it names a condition: My covenant does not reach the wrongdoers. Leadership in religion is not inherited. It is earned again in each generation, and lost by wrongdoing.\n\nTwo verses later Ibrahim, having heard that, prays for the city's provision only for the believers among its people — and Allah widens it to the disbelievers too, for a little while (2:126). Bread is for everyone; the covenant is not. As-Saffat shows one of the tests in full: the dream, the son, and the words 'this was the clear trial' (37:102-106).",
+        whyAr: "﴿وَإِذِ ٱبۡتَلَىٰٓ إِبۡرَٰهِـۧمَ رَبُّهُۥ بِكَلِمَٰتٖ فَأَتَمَّهُنَّۖ﴾. واختلف المفسّرون في هذه الكلمات: فقيل مناسكُ الحجّ، وقيل خصالُ الفطرة، وقيل محنُ حياته — النارُ والهجرةُ والابن. والآيةُ لا تعدّها، بل تقول إنه أتمّها.\n\nثم الجزاء: ﴿قَالَ إِنِّي جَاعِلُكَ لِلنَّاسِ إِمَامٗاۖ﴾. وفي الحال يسأله إبراهيمُ لذرّيّته: ﴿قَالَ وَمِن ذُرِّيَّتِيۖ﴾، فلا يُعطى البيتُ ولا يُمنع، بل يُذكر شرط: ﴿قَالَ لَا يَنَالُ عَهۡدِي ٱلظَّٰلِمِينَ﴾. فالإمامةُ في الدين لا تُورَث، بل تُكتسب من جديدٍ في كلّ جيل، وتُفقد بالظلم.\n\nوبعد آيتين يدعو إبراهيمُ — وقد سمع ذلك — برزق البلد للمؤمنين من أهله فقط، فيوسّعه الله حتى على من كفر، متاعًا قليلًا. فالخبزُ للجميع، والعهدُ ليس كذلك. والصافّاتُ تُريك أحدَ الابتلاءات كاملًا: الرؤيا، والابن، ثم ﴿إِنَّ هَٰذَا لَهُوَ ٱلۡبَلَٰٓؤُاْ ٱلۡمُبِينُ﴾.",
+        plain: "Ibrahim fulfilled every test and was made a leader for people — and when he asked the same for his descendants, the answer named a condition: My covenant does not reach the wrongdoers. Leadership in religion is not inherited; it is earned again in each generation.",
+        plainAr: "أتمّ إبراهيمُ كلَّ ابتلاء فجُعل للناس إمامًا، وحين سأل ذلك لذرّيّته جاء الجوابُ بشرط: العهدُ لا يناله ظالم. فالإمامةُ في الدين لا تُورَث، بل تُكتسب من جديدٍ في كلّ جيل.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:126)",
+            ar: "وَإِذۡ قَالَ إِبۡرَٰهِـۧمُ رَبِّ ٱجۡعَلۡ هَٰذَا بَلَدًا ءَامِنٗا وَٱرۡزُقۡ أَهۡلَهُۥ مِنَ ٱلثَّمَرَٰتِ مَنۡ ءَامَنَ مِنۡهُم بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِۚ قَالَ وَمَن كَفَرَ فَأُمَتِّعُهُۥ قَلِيلٗا ثُمَّ أَضۡطَرُّهُۥٓ إِلَىٰ عَذَابِ ٱلنَّارِۖ وَبِئۡسَ ٱلۡمَصِيرُ",
+            en: "And [mention] when Abraham said, \"My Lord, make this a secure city and provide its people with fruits - whoever of them believes in Allah and the Last Day.\" [Allah] said. \"And whoever disbelieves - I will grant him enjoyment for a little; then I will force him to the punishment of the Fire, and wretched is the destination.\"",
+            how: "Two verses later Ibrahim, having heard that the covenant does not reach wrongdoers, limits his prayer for provision to the believers — and Allah widens it to everyone.",
+            howAr: "وبعد آيتين يقصر إبراهيمُ — وقد سمع أنّ العهد لا يناله الظالم — دعاءَه بالرزق على المؤمنين، فيوسّعه الله على الجميع: ﴿قَالَ وَمَن كَفَرَ فَأُمَتِّعُهُۥ قَلِيلٗا﴾."
+          },
+          {
+            ref: "Surah As-Saffat (37:102)",
+            ar: "فَلَمَّا بَلَغَ مَعَهُ ٱلسَّعۡيَ قَالَ يَٰبُنَيَّ إِنِّيٓ أَرَىٰ فِي ٱلۡمَنَامِ أَنِّيٓ أَذۡبَحُكَ فَٱنظُرۡ مَاذَا تَرَىٰۚ قَالَ يَٰٓأَبَتِ ٱفۡعَلۡ مَا تُؤۡمَرُۖ سَتَجِدُنِيٓ إِن شَآءَ ٱللَّهُ مِنَ ٱلصَّٰبِرِينَ",
+            en: "And when he reached with him [the age of] exertion, he said, \"O my son, indeed I have seen in a dream that I [must] sacrifice you, so see what you think.\" He said, \"O my father, do as you are commanded. You will find me, if Allah wills, of the steadfast.\"",
+            how: "As-Saffat shows one of the tests he fulfilled, in full: the dream, the son who said 'do as you are commanded', and the clear trial.",
+            howAr: "الصافّاتُ تُريك أحدَ الابتلاءات التي أتمّها كاملًا: ﴿يَٰبُنَيَّ إِنِّيٓ أَرَىٰ فِي ٱلۡمَنَامِ أَنِّيٓ أَذۡبَحُكَ فَٱنظُرۡ مَاذَا تَرَىٰۚ﴾."
+          },
+          {
+            ref: "Surah An-Nahl (16:120)",
+            ar: "إِنَّ إِبۡرَٰهِيمَ كَانَ أُمَّةٗ قَانِتٗا لِّلَّهِ حَنِيفٗا وَلَمۡ يَكُ مِنَ ٱلۡمُشۡرِكِينَ",
+            en: "Indeed, Abraham was a [comprehensive] leader, devoutly obedient to Allah, inclining toward truth, and he was not of those who associate others with Allah.",
+            how: "An-Nahl gives what the fulfilling made of him: Ibrahim was a nation in himself, devoutly obedient to Allah, inclining to the truth.",
+            howAr: "النحلُ تذكر ما صنعه به الإتمام: ﴿إِنَّ إِبۡرَٰهِيمَ كَانَ أُمَّةٗ قَانِتٗا لِّلَّهِ حَنِيفٗا﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:124), read with 2:126 and As-Saffat (37:102-106); what the words were: Tafsir Ibn Kathir on 2:124",
+        refAr: "سورة البقرة، الآية ١٢٤، مع الآية ١٢٦ وسورة الصافّات ١٠٢–١٠٦؛ والخلافُ في الكلمات: تفسير ابن كثير عند الآية",
+        strength: "tafsir"
       }
     ]
   },
@@ -2805,6 +2839,13 @@ const TADABBUR = {
             en: "Did We not expand for you, [O Muhammad], your breast?",
             how: "Musa asks: my Lord, expand my chest. Ash-Sharh tells the Prophet ﷺ: did We not expand your chest? The same gift — asked for by one messenger, given to the other before he asked.",
             howAr: "موسى يسأل: ﴿رَبِّ ٱشۡرَحۡ لِي صَدۡرِي﴾، والشرحُ تقول للنبيّ ﷺ: ﴿أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ﴾. العطيّةُ نفسُها: سألها رسول، وأُعطيها رسولٌ قبل أن يسأل."
+          },
+          {
+            ref: "Surah Al-An'am (6:125)",
+            ar: "فَمَن يُرِدِ ٱللَّهُ أَن يَهۡدِيَهُۥ يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ وَمَن يُرِدۡ أَن يُضِلَّهُۥ يَجۡعَلۡ صَدۡرَهُۥ ضَيِّقًا حَرَجٗا كَأَنَّمَا يَصَّعَّدُ فِي ٱلسَّمَآءِۚ كَذَٰلِكَ يَجۡعَلُ ٱللَّهُ ٱلرِّجۡسَ عَلَى ٱلَّذِينَ لَا يُؤۡمِنُونَ",
+            en: "So whoever Allah wants to guide - He expands his breast to [contain] Islam; and whoever He wants to misguide - He makes his breast tight and constricted as though he were climbing into the sky. Thus does Allah place defilement upon those who do not believe.",
+            how: "Musa asks for his breast to be expanded; Al-An'am says what that expanding is, and its opposite: a breast tight and constricted, as though climbing into the sky.",
+            howAr: "موسى يسأل أن يُشرح صدرُه، والأنعامُ تقول ما هذا الشرح وما ضدّه: ﴿يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ﴾."
           }
         ],
         ref: "Surah Ta-Ha (20:25-28), read with Ash-Sharh (94:1)",
@@ -2871,6 +2912,47 @@ const TADABBUR = {
         ref: "Surah Ta-Ha (20:131), read with Al-Hijr (15:88) and Al-A'la (87:17); 'Umar and the three hides: Sahih al-Bukhari 2468, from Ibn Abbas",
         refAr: "سورة طه، الآية ١٣١، مع سورة الحجر ٨٨ وسورة الأعلى ١٧؛ وعمرُ والأُهُبُ الثلاث: صحيح البخاري ٢٤٦٨، عن ابن عبّاس رضي الله عنهما",
         strength: "hadith"
+      },
+      {
+        n: 46,
+        ar: "قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ",
+        why: "Musa and Harun had been told to go to Pharaoh, and they said what anyone would say: our Lord, we fear that he will hasten to harm us, or that he will transgress (20:45). The answer does not tell them Pharaoh is weak, or that nothing will happen. It says: do not fear — I am with you both; I hear and I see.\n\nTwo prophets are allowed to say they are afraid. The fear is not rebuked; it is answered — with company, not with a guarantee about the outcome. Asma'u wa ara: I hear every word he will say to you, and I see every move he will make.\n\nIn the cave the Prophet ﷺ said the same to Abu Bakr: do not grieve; Allah is with us (9:40). The same two words close the case of the woman who argued about her husband: Allah hears your conversation; Allah is Hearing, Seeing (58:1). And Al-'Alaq puts the second of them to the man who tried to stop a servant from praying: does he not know that Allah sees? (96:14).",
+        whyAr: "أُمر موسى وهارون بالذهاب إلى فرعون، فقالا ما يقوله كلُّ أحد: ﴿قَالَا رَبَّنَآ إِنَّنَا نَخَافُ أَن يَفۡرُطَ عَلَيۡنَآ أَوۡ أَن يَطۡغَىٰ﴾. والجوابُ لا يقول لهما إنّ فرعون ضعيف، ولا إنه لن يحدث شيء، بل يقول: ﴿قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ﴾.\n\nنبيّان يُسمح لهما أن يقولا إنهما يخافان. فلا يُلامان على الخوف، بل يُجابان عنه بالمعيّة لا بضمانٍ للنتيجة: أسمعُ كلَّ كلمةٍ سيقولها لكما، وأرى كلَّ حركةٍ سيأتيها.\n\nوفي الغار قال النبيّ ﷺ لأبي بكر الشيءَ نفسه: ﴿لَا تَحۡزَنۡ إِنَّ ٱللَّهَ مَعَنَاۖ﴾. والكلمتان نفسهما تُختم بهما قضيّةُ المرأة التي جادلت في زوجها: ﴿وَٱللَّهُ يَسۡمَعُ تَحَاوُرَكُمَآۚ إِنَّ ٱللَّهَ سَمِيعُۢ بَصِيرٌ﴾. والعلقُ تضع الثانيةَ منهما أمام من حاول أن يمنع عبدًا من الصلاة: ﴿أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ﴾؟",
+        plain: "Two prophets told their Lord they were afraid of Pharaoh, and were not rebuked. The answer was not a promise that nothing would happen, but company: do not fear — I am with you both; I hear and I see.",
+        plainAr: "قال نبيّان لربّهما إنهما يخافان فرعون، فلم يُلاما. ولم يكن الجوابُ وعدًا بألّا يحدث شيء، بل معيّة: ﴿قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ﴾.",
+        links: [
+          {
+            ref: "Surah Al-Mujadila (58:1)",
+            ar: "قَدۡ سَمِعَ ٱللَّهُ قَوۡلَ ٱلَّتِي تُجَٰدِلُكَ فِي زَوۡجِهَا وَتَشۡتَكِيٓ إِلَى ٱللَّهِ وَٱللَّهُ يَسۡمَعُ تَحَاوُرَكُمَآۚ إِنَّ ٱللَّهَ سَمِيعُۢ بَصِيرٌ",
+            en: "Certainly has Allah heard the speech of the one who argues with you, [O Muhammad], concerning her husband and directs her complaint to Allah. And Allah hears your dialogue; indeed, Allah is Hearing and Seeing.",
+            how: "The same two words close the case of the woman who argued about her husband: Allah hears your conversation; Allah is Hearing, Seeing.",
+            howAr: "والكلمتان نفسهما تُختم بهما قضيّةُ المرأة التي جادلت في زوجها: ﴿وَٱللَّهُ يَسۡمَعُ تَحَاوُرَكُمَآۚ إِنَّ ٱللَّهَ سَمِيعُۢ بَصِيرٌ﴾."
+          },
+          {
+            ref: "Surah Al-Alaq (96:14)",
+            ar: "أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ",
+            en: "Does he not know that Allah sees?",
+            how: "Al-'Alaq puts the second of the two words to the man who tried to stop a servant from praying: does he not know that Allah sees?",
+            howAr: "العلقُ تضع الثانيةَ من الكلمتين أمام من حاول منع عبدٍ من الصلاة: ﴿أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ﴾؟"
+          },
+          {
+            ref: "Surah At-Tawbah (9:40)",
+            ar: "إِلَّا تَنصُرُوهُ فَقَدۡ نَصَرَهُ ٱللَّهُ إِذۡ أَخۡرَجَهُ ٱلَّذِينَ كَفَرُواْ ثَانِيَ ٱثۡنَيۡنِ إِذۡ هُمَا فِي ٱلۡغَارِ إِذۡ يَقُولُ لِصَٰحِبِهِۦ لَا تَحۡزَنۡ إِنَّ ٱللَّهَ مَعَنَاۖ فَأَنزَلَ ٱللَّهُ سَكِينَتَهُۥ عَلَيۡهِ وَأَيَّدَهُۥ بِجُنُودٖ لَّمۡ تَرَوۡهَا وَجَعَلَ كَلِمَةَ ٱلَّذِينَ كَفَرُواْ ٱلسُّفۡلَىٰۗ وَكَلِمَةُ ٱللَّهِ هِيَ ٱلۡعُلۡيَاۗ وَٱللَّهُ عَزِيزٌ حَكِيمٌ",
+            en: "If you do not aid the Prophet - Allah has already aided him when those who disbelieved had driven him out [of Makkah] as one of two, when they were in the cave and he said to his companion, \"Do not grieve; indeed Allah is with us.\" And Allah sent down his tranquillity upon him and supported him with angels you did not see and made the word of those who disbelieved the lowest, while the word of Allah - that is the highest. And Allah is Exalted in Might and Wise.",
+            how: "In the cave the Prophet ﷺ gave the same answer to Abu Bakr's fear: do not grieve; Allah is with us.",
+            howAr: "وفي الغار أجاب النبيّ ﷺ خوفَ أبي بكر بالجواب نفسه: ﴿لَا تَحۡزَنۡ إِنَّ ٱللَّهَ مَعَنَاۖ﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:45)",
+            ar: "قَالَا رَبَّنَآ إِنَّنَا نَخَافُ أَن يَفۡرُطَ عَلَيۡنَآ أَوۡ أَن يَطۡغَىٰ",
+            en: "They said, \"Our Lord, indeed we are afraid that he will hasten [punishment] against us or that he will transgress.\"",
+            how: "The verse before is the fear it answers, said openly by two prophets: our Lord, we fear that he will hasten to harm us, or that he will transgress.",
+            howAr: "والآيةُ التي قبلها هي الخوفُ الذي تجيب عنه، يقوله نبيّان صراحة: ﴿قَالَا رَبَّنَآ إِنَّنَا نَخَافُ أَن يَفۡرُطَ عَلَيۡنَآ أَوۡ أَن يَطۡغَىٰ﴾."
+          }
+        ],
+        ref: "Surah Ta-Ha (20:46), read with 20:45, At-Tawbah (9:40), Al-Mujadila (58:1) and Al-'Alaq (96:14)",
+        refAr: "سورة طه، الآية ٤٦، مع الآية ٤٥ وسورة التوبة ٤٠ وسورة المجادلة ١ وسورة العلق ١٤",
+        strength: "quran"
       }
     ]
   },
@@ -3144,6 +3226,40 @@ const TADABBUR = {
           }
         ],
         ref: "Surah Al-Hajj (22:38)",
+        strength: "quran"
+      },
+      {
+        n: 73,
+        ar: "يَٰٓأَيُّهَا ٱلنَّاسُ ضُرِبَ مَثَلٞ فَٱسۡتَمِعُواْ لَهُۥٓۚ إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابٗا وَلَوِ ٱجۡتَمَعُواْ لَهُۥۖ وَإِن يَسۡلُبۡهُمُ ٱلذُّبَابُ شَيۡـٔٗا لَّا يَسۡتَنقِذُوهُ مِنۡهُۚ ضَعُفَ ٱلطَّالِبُ وَٱلۡمَطۡلُوبُ",
+        why: "O people, an example is set forth, so listen to it: those you call on besides Allah will never create a fly, even if they all gathered together for it. And if the fly snatches something from them, they cannot recover it from it. Weak are the seeker and the sought.\n\nThe example is built on the smallest creature to hand, and it makes two claims. First, they cannot create one fly — not alone, not together. Second, and more humbling: if the fly takes something from them, they cannot take it back. Some commentators mentioned the perfume and food the idolaters would put on their idols, which flies would land on and carry off.\n\nThen the verdict: weak is the seeker and the sought — the one who calls and the one called upon. The next verse names the real fault: they have not estimated Allah with His true estimation (22:74). And Al-Baqarah had already said that Allah is not shy to strike an example even of a gnat (2:26).",
+        whyAr: "﴿يَٰٓأَيُّهَا ٱلنَّاسُ ضُرِبَ مَثَلٞ فَٱسۡتَمِعُواْ لَهُۥٓۚ﴾: ﴿إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابٗا وَلَوِ ٱجۡتَمَعُواْ لَهُۥۖ وَإِن يَسۡلُبۡهُمُ ٱلذُّبَابُ شَيۡـٔٗا لَّا يَسۡتَنقِذُوهُ مِنۡهُۚ﴾.\n\nوالمثلُ مبنيٌّ على أصغر مخلوقٍ في المتناول، وفيه دعويان: الأولى أنهم لا يخلقون ذبابةً واحدة، لا منفردين ولا مجتمعين. والثانيةُ أشدُّ إذلالًا: إن أخذت الذبابةُ منهم شيئًا لم يستردّوه. وذكر بعضُ المفسّرين الطيبَ والطعامَ الذي كان المشركون يضعونه على أصنامهم، فيقع عليه الذبابُ ويحمله.\n\nثم الحكم: ﴿ضَعُفَ ٱلطَّالِبُ وَٱلۡمَطۡلُوبُ﴾ — الداعي والمدعوّ. والآيةُ التي تليها تسمّي العيبَ الحقيقيّ: ﴿مَا قَدَرُواْ ٱللَّهَ حَقَّ قَدۡرِهِۦٓۚ﴾. والبقرةُ قالت قبل ذلك: ﴿إِنَّ ٱللَّهَ لَا يَسۡتَحۡيِۦٓ أَن يَضۡرِبَ مَثَلٗا مَّا بَعُوضَةٗ﴾.",
+        plain: "Everything called on besides Allah could not create a single fly, even all together — and if a fly took something from them, they could not get it back. Weak is the one who calls and the one called upon. The fault is not estimating Allah as He should be (22:74).",
+        plainAr: "كلُّ معبودٍ سوى الله لا يخلق ذبابةً ولو اجتمع، وإن أخذت الذبابةُ منه شيئًا لم يستردّه. ضعُف الداعي والمدعوّ. والعيبُ أنهم لم يقدّروا الله حقَّ تقديره.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:26)",
+            ar: "۞ إِنَّ ٱللَّهَ لَا يَسۡتَحۡيِۦٓ أَن يَضۡرِبَ مَثَلٗا مَّا بَعُوضَةٗ فَمَا فَوۡقَهَاۚ فَأَمَّا ٱلَّذِينَ ءَامَنُواْ فَيَعۡلَمُونَ أَنَّهُ ٱلۡحَقُّ مِن رَّبِّهِمۡۖ وَأَمَّا ٱلَّذِينَ كَفَرُواْ فَيَقُولُونَ مَاذَآ أَرَادَ ٱللَّهُ بِهَٰذَا مَثَلٗاۘ يُضِلُّ بِهِۦ كَثِيرٗا وَيَهۡدِي بِهِۦ كَثِيرٗاۚ وَمَا يُضِلُّ بِهِۦٓ إِلَّا ٱلۡفَٰسِقِينَ",
+            en: "Indeed, Allah is not timid to present an example - that of a mosquito or what is smaller than it. And those who have believed know that it is the truth from their Lord. But as for those who disbelieve, they say, \"What did Allah intend by this as an example?\" He misleads many thereby and guides many thereby. And He misleads not except the defiantly disobedient,",
+            how: "Al-Baqarah defends the method before it is used: Allah is not shy to strike an example even of a gnat, or what is above it.",
+            howAr: "البقرةُ تدافع عن الأسلوب قبل استعماله: ﴿إِنَّ ٱللَّهَ لَا يَسۡتَحۡيِۦٓ أَن يَضۡرِبَ مَثَلٗا مَّا بَعُوضَةٗ فَمَا فَوۡقَهَاۚ﴾."
+          },
+          {
+            ref: "Surah Al-Hajj (22:74)",
+            ar: "مَا قَدَرُواْ ٱللَّهَ حَقَّ قَدۡرِهِۦٓۚ إِنَّ ٱللَّهَ لَقَوِيٌّ عَزِيزٌ",
+            en: "They have not appraised Allah with true appraisal. Indeed, Allah is Powerful and Exalted in Might.",
+            how: "The next verse names the real fault behind the worship of what cannot make a fly: they have not estimated Allah with His true estimation.",
+            howAr: "والآيةُ التي تليها تسمّي العيبَ الحقيقيّ وراء عبادة العاجز عن خلق ذبابة: ﴿مَا قَدَرُواْ ٱللَّهَ حَقَّ قَدۡرِهِۦٓۚ إِنَّ ٱللَّهَ لَقَوِيٌّ عَزِيزٌ﴾."
+          },
+          {
+            ref: "Surah An-Nahl (16:17)",
+            ar: "أَفَمَن يَخۡلُقُ كَمَن لَّا يَخۡلُقُۚ أَفَلَا تَذَكَّرُونَ",
+            en: "Then is He who creates like one who does not create? So will you not be reminded?",
+            how: "An-Nahl puts the whole argument in one question: is the One who creates like one who does not create?",
+            howAr: "النحلُ تضع الحجّةَ كلَّها في سؤال: ﴿أَفَمَن يَخۡلُقُ كَمَن لَّا يَخۡلُقُۚ أَفَلَا تَذَكَّرُونَ﴾؟"
+          }
+        ],
+        ref: "Surah Al-Hajj (22:73), read with 22:74 and Al-Baqarah (2:26)",
+        refAr: "سورة الحجّ، الآية ٧٣، مع الآية ٧٤ وسورة البقرة ٢٦",
         strength: "quran"
       }
     ]
@@ -4338,6 +4454,13 @@ const TADABBUR = {
             en: "Indeed, Allah loves those who fight in His cause in a row as though they are a [single] structure joined firmly.",
             how: "Al 'Imran commands holding together; As-Saff gives the picture of it that Allah loves: a row like a solid structure.",
             howAr: "آلُ عمران تأمر بالاعتصام جميعًا، والصفُّ تعطي الصورةَ التي يحبّها الله منه: ﴿صَفّٗا كَأَنَّهُم بُنۡيَٰنٞ مَّرۡصُوصٞ﴾."
+          },
+          {
+            ref: "Surah Al-Anfal (8:63)",
+            ar: "وَأَلَّفَ بَيۡنَ قُلُوبِهِمۡۚ لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ وَلَٰكِنَّ ٱللَّهَ أَلَّفَ بَيۡنَهُمۡۚ إِنَّهُۥ عَزِيزٌ حَكِيمٞ",
+            en: "And brought together their hearts. If you had spent all that is in the earth, you could not have brought their hearts together; but Allah brought them together. Indeed, He is Exalted in Might and Wise.",
+            how: "Al 'Imran says He joined their hearts; Al-Anfal says what it would have cost any other way: had you spent all that is on earth, you could not have joined them.",
+            howAr: "آلُ عمران تقول إنه ألّف بين قلوبهم، والأنفالُ تقول كم كان سيكلّف ذلك بغيره: ﴿لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ﴾."
           }
         ]
       },
@@ -5896,6 +6019,67 @@ const TADABBUR = {
         ref: "Surah Al-An'am (6:160), read with Al-Baqarah (2:261); how good and bad deeds are written: Sahih al-Bukhari 6491, from Ibn Abbas",
         refAr: "سورة الأنعام، الآية ١٦٠، مع سورة البقرة ٢٦١؛ وكتابةُ الحسنات والسيّئات: صحيح البخاري ٦٤٩١، عن ابن عبّاس رضي الله عنهما",
         strength: "hadith"
+      },
+      {
+        n: 54,
+        ar: "وَإِذَا جَآءَكَ ٱلَّذِينَ يُؤۡمِنُونَ بِـَٔايَٰتِنَا فَقُلۡ سَلَٰمٌ عَلَيۡكُمۡۖ كَتَبَ رَبُّكُمۡ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَ أَنَّهُۥ مَنۡ عَمِلَ مِنكُمۡ سُوٓءَۢا بِجَهَٰلَةٖ ثُمَّ تَابَ مِنۢ بَعۡدِهِۦ وَأَصۡلَحَ فَأَنَّهُۥ غَفُورٞ رَّحِيمٞ",
+        why: "When those who believe in Our signs come to you, say: peace be upon you. Your Lord has written mercy upon Himself. The Prophet ﷺ is told to greet them before anything else — and the greeting is followed at once by the reason it can be said: mercy, written by Him on Himself.\n\nAnd the mercy is explained by what it covers: whoever of you does evil out of ignorance, then repents after it and makes amends — He is Forgiving, Merciful. Bi-jahalah, the commentators said, is not only not knowing; it is folly — the moment a person acts against what he knows. Every sin is jahalah in that sense, and the door is still open.\n\nThe Prophet ﷺ said that when Allah completed the creation, He wrote in His Book, which is with Him above the Throne: My mercy overpowers My anger (al-Bukhari 3194). Al-An'am says it twice: 'He has written mercy upon Himself' comes first in 6:12, and here again, with the greeting.",
+        whyAr: "﴿وَإِذَا جَآءَكَ ٱلَّذِينَ يُؤۡمِنُونَ بِـَٔايَٰتِنَا فَقُلۡ سَلَٰمٌ عَلَيۡكُمۡۖ كَتَبَ رَبُّكُمۡ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَ﴾. يُؤمر النبيّ ﷺ أن يبدأهم بالسلام قبل كلّ شيء، ثم يأتي في الحال ما يجعل السلامَ ممكنًا: رحمةٌ كتبها على نفسه.\n\nوتُبيَّن الرحمةُ بما تشمله: ﴿أَنَّهُۥ مَنۡ عَمِلَ مِنكُمۡ سُوٓءَۢا بِجَهَٰلَةٖ ثُمَّ تَابَ مِنۢ بَعۡدِهِۦ وَأَصۡلَحَ فَأَنَّهُۥ غَفُورٞ رَّحِيمٞ﴾. والجهالةُ — كما قال المفسّرون — ليست عدمَ العلم فقط، بل السفهُ، أي أن يعمل المرءُ بخلاف ما يعلم. فكلُّ معصيةٍ جهالةٌ بهذا المعنى، والبابُ مع ذلك مفتوح.\n\nوقال النبيّ ﷺ: حين قضى الله الخلقَ كتب في كتابه، فهو عنده فوق العرش: «إِنَّ رَحْمَتِي غَلَبَتْ غَضَبِي» (البخاري ٣١٩٤). والأنعامُ تقولها مرّتين: جاءت أوّلًا في الآية ١٢، وهنا مرّةً أخرى مع السلام.",
+        plain: "The believers are to be greeted first with 'peace be upon you' — and then told why: your Lord has written mercy upon Himself, so whoever does wrong in folly, then repents and makes amends, finds Him Forgiving. The Prophet ﷺ said 'My mercy overpowers My anger' is written above the Throne (al-Bukhari 3194).",
+        plainAr: "يُبدأ المؤمنون بالسلام، ثم يُقال لهم لماذا: رحمةٌ أوجبها ربُّهم على نفسه، فالمخطئُ في سفهه إذا رجع وأصلح وجده غفورًا. وقال النبيّ ﷺ إنّ «رحمتي غلبت غضبي» مكتوبٌ فوق العرش (البخاري ٣١٩٤).",
+        links: [
+          {
+            ref: "Surah Al-An'am (6:12)",
+            ar: "قُل لِّمَن مَّا فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۖ قُل لِّلَّهِۚ كَتَبَ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَۚ لَيَجۡمَعَنَّكُمۡ إِلَىٰ يَوۡمِ ٱلۡقِيَٰمَةِ لَا رَيۡبَ فِيهِۚ ٱلَّذِينَ خَسِرُوٓاْ أَنفُسَهُمۡ فَهُمۡ لَا يُؤۡمِنُونَ",
+            en: "Say, \"To whom belongs whatever is in the heavens and earth?\" Say, \"To Allah.\" He has decreed upon Himself mercy. He will surely assemble you for the Day of Resurrection, about which there is no doubt. Those who will lose themselves [that Day] do not believe.",
+            how: "The surah says it first in 6:12 — He has written mercy upon Himself — and says it again here, attached to the greeting of the believers.",
+            howAr: "تقولها السورةُ أوّلًا في الآية ١٢، ثم تعيدها هنا مقرونةً بالسلام على المؤمنين: ﴿كَتَبَ عَلَىٰ نَفۡسِهِ ٱلرَّحۡمَةَۚ﴾."
+          },
+          {
+            ref: "Surah An-Nisa (4:17)",
+            ar: "إِنَّمَا ٱلتَّوۡبَةُ عَلَى ٱللَّهِ لِلَّذِينَ يَعۡمَلُونَ ٱلسُّوٓءَ بِجَهَٰلَةٖ ثُمَّ يَتُوبُونَ مِن قَرِيبٖ فَأُوْلَٰٓئِكَ يَتُوبُ ٱللَّهُ عَلَيۡهِمۡۗ وَكَانَ ٱللَّهُ عَلِيمًا حَكِيمٗا",
+            en: "The repentance accepted by Allah is only for those who do wrong in ignorance [or carelessness] and then repent soon after. It is those to whom Allah will turn in forgiveness, and Allah is ever Knowing and Wise.",
+            how: "An-Nisa gives the same door in the same words: repentance accepted by Allah is for those who do evil in ignorance, then repent soon after.",
+            howAr: "النساءُ تذكر البابَ نفسه باللفظ نفسه: ﴿إِنَّمَا ٱلتَّوۡبَةُ عَلَى ٱللَّهِ لِلَّذِينَ يَعۡمَلُونَ ٱلسُّوٓءَ بِجَهَٰلَةٖ ثُمَّ يَتُوبُونَ مِن قَرِيبٖ﴾."
+          }
+        ],
+        ref: "Surah Al-An'am (6:54), read with 6:12 and An-Nisa (4:17); 'My mercy overpowers My anger': Sahih al-Bukhari 3194, from Abu Hurayrah",
+        refAr: "سورة الأنعام، الآية ٥٤، مع الآية ١٢ وسورة النساء ١٧؛ وإنّ رحمتي غلبت غضبي: صحيح البخاري ٣١٩٤، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
+      },
+      {
+        n: 125,
+        ar: "فَمَن يُرِدِ ٱللَّهُ أَن يَهۡدِيَهُۥ يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ وَمَن يُرِدۡ أَن يُضِلَّهُۥ يَجۡعَلۡ صَدۡرَهُۥ ضَيِّقًا حَرَجٗا كَأَنَّمَا يَصَّعَّدُ فِي ٱلسَّمَآءِۚ كَذَٰلِكَ يَجۡعَلُ ٱللَّهُ ٱلرِّجۡسَ عَلَى ٱلَّذِينَ لَا يُؤۡمِنُونَ",
+        why: "Whomever Allah wills to guide, He expands his breast to Islam; and whomever He wills to leave astray, He makes his breast tight and constricted, as though he were climbing up into the sky.\n\nBoth states are described in the chest. Guidance is a chest that opens — sharh, the word used for what was given to the Prophet ﷺ: did We not expand your breast for you? (94:1). Misguidance is a chest that closes: dayyiqan harajan, narrow and then narrower still — haraj is the Arabs' word for a thicket so dense that nothing can get through it. And the picture that finishes it: like someone forcing his way up into the sky, every step harder than the last. The 🔬 card on this verse looks at the bodily side of that comparison.\n\nMusa asked for the first state before he went to Pharaoh: my Lord, expand my breast for me (20:25). The verse tells you whom to ask.",
+        whyAr: "﴿فَمَن يُرِدِ ٱللَّهُ أَن يَهۡدِيَهُۥ يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ وَمَن يُرِدۡ أَن يُضِلَّهُۥ يَجۡعَلۡ صَدۡرَهُۥ ضَيِّقًا حَرَجٗا كَأَنَّمَا يَصَّعَّدُ فِي ٱلسَّمَآءِۚ كَذَٰلِكَ يَجۡعَلُ ٱللَّهُ ٱلرِّجۡسَ عَلَى ٱلَّذِينَ لَا يُؤۡمِنُونَ﴾.\n\nالحالان كلاهما يُوصفان في الصدر: فالهدايةُ صدرٌ ينشرح، وهو اللفظُ الذي وُصف به ما أُعطي النبيّ ﷺ: ﴿أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ﴾. والضلالُ صدرٌ ينغلق: ضيّقٌ ثم أضيق، والحرجُ عند العرب الشجرُ الملتفّ الذي لا يُنفذ فيه. ثم الصورةُ التي تتمّه: كمن يتكلّف الصعودَ في السماء، كلُّ خطوةٍ أشقُّ من التي قبلها. وبطاقةُ 🔬 على هذه الآية تنظر في الجانب البدنيّ من هذا التشبيه.\n\nوقد سأل موسى الحالَ الأولى قبل أن يذهب إلى فرعون: ﴿رَبِّ ٱشۡرَحۡ لِي صَدۡرِي﴾. فالآيةُ تدلّك على من تسأل.",
+        plain: "Guidance is a chest that opens; misguidance is a chest that closes — narrow, then narrower, like someone forcing his way up into the sky. Musa asked for the opening before facing Pharaoh: my Lord, expand my breast for me (20:25).",
+        plainAr: "الهدايةُ صدرٌ ينشرح، والضلالُ صدرٌ ينغلق — ضيّقٌ ثم أضيق، كمن يتكلّف الصعودَ في السماء. وقد سأل موسى الانشراحَ قبل أن يواجه فرعون.",
+        links: [
+          {
+            ref: "Surah An-Nisa (4:56)",
+            ar: "إِنَّ ٱلَّذِينَ كَفَرُواْ بِـَٔايَٰتِنَا سَوۡفَ نُصۡلِيهِمۡ نَارٗا كُلَّمَا نَضِجَتۡ جُلُودُهُم بَدَّلۡنَٰهُمۡ جُلُودًا غَيۡرَهَا لِيَذُوقُواْ ٱلۡعَذَابَۗ إِنَّ ٱللَّهَ كَانَ عَزِيزًا حَكِيمٗا",
+            en: "Indeed, those who disbelieve in Our verses - We will drive them into a Fire. Every time their skins are roasted through We will replace them with other skins so they may taste the punishment. Indeed, Allah is ever Exalted in Might and Wise.",
+            how: "An-Nisa reaches for a bodily fact to carry a meaning, as this verse does — the skin and the chest — and the 🔬 panel treats both.",
+            howAr: "النساءُ تستعمل حقيقةً بدنيّةً لتحمل معنًى، كما تفعل هذه الآية — الجلدُ والصدر — وبطاقاتُ 🔬 تنظر في الاثنين."
+          },
+          {
+            ref: "Surah Ash-Sharh (94:1)",
+            ar: "أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ",
+            en: "Did We not expand for you, [O Muhammad], your breast?",
+            how: "Al-An'am says guidance is a breast expanded; Ash-Sharh says it was given to the Prophet ﷺ: did We not expand your breast for you?",
+            howAr: "الأنعامُ تقول إنّ الهداية صدرٌ مشروح، والشرحُ تقول إنه أُعطي للنبيّ ﷺ: ﴿أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ﴾؟"
+          },
+          {
+            ref: "Surah Ta-Ha (20:25)",
+            ar: "قَالَ رَبِّ ٱشۡرَحۡ لِي صَدۡرِي",
+            en: "[Moses] said, \"My Lord, expand for me my breast [with assurance]",
+            how: "Musa asked for exactly this before facing Pharaoh: my Lord, expand my breast for me, and ease my task for me.",
+            howAr: "وموسى سأل هذا بعينه قبل أن يواجه فرعون: ﴿رَبِّ ٱشۡرَحۡ لِي صَدۡرِي﴾ ﴿وَيَسِّرۡ لِيٓ أَمۡرِي﴾."
+          }
+        ],
+        ref: "Surah Al-An'am (6:125), read with Ash-Sharh (94:1) and Ta-Ha (20:25); haraj: Tafsir Ibn Kathir on 6:125",
+        refAr: "سورة الأنعام، الآية ١٢٥، مع سورة الشرح ١ وسورة طه ٢٥؛ ومعنى الحرج: تفسير ابن كثير عند الآية",
+        strength: "lugha"
       }
     ]
   },
@@ -6399,6 +6583,40 @@ const TADABBUR = {
         ref: "Surah Al-A'raf (7:31), read with 7:26 and 7:32; the circumambulation without clothes: Sahih Muslim 3028, from Ibn Abbas",
         refAr: "سورة الأعراف، الآية ٣١، مع الآيتين ٢٦ و٣٢؛ والطوافُ عُريًا: صحيح مسلم ٣٠٢٨، عن ابن عبّاس رضي الله عنهما",
         strength: "hadith"
+      },
+      {
+        n: 201,
+        ar: "إِنَّ ٱلَّذِينَ ٱتَّقَوۡاْ إِذَا مَسَّهُمۡ طَٰٓئِفٞ مِّنَ ٱلشَّيۡطَٰنِ تَذَكَّرُواْ فَإِذَا هُم مُّبۡصِرُونَ",
+        why: "Those who fear Allah — when a passing touch from Satan reaches them, they remember, and at once they see. The verse does not describe people who are never touched. Ta'if is something that circles and passes by, like a visitor making his rounds; it reaches even the God-fearing.\n\nWhat separates them is what happens next, and it happens fast: tadhakkaru — they remember — fa-idha hum mubsirun — and suddenly they see. The idha of surprise: the sight comes back the moment the remembering happens. Remembrance is what clears the eyes.\n\nThe verse before gives the instruction for that moment: if an incitement from Satan provokes you, seek refuge in Allah — He is Hearing, Knowing (7:200). The verse after shows the other people: their brothers keep pulling them deeper into error, and never stop (7:202). And An-Nas names the one who does the touching: the whisperer who withdraws — who pulls back the moment Allah is remembered (114:4).",
+        whyAr: "﴿إِنَّ ٱلَّذِينَ ٱتَّقَوۡاْ إِذَا مَسَّهُمۡ طَٰٓئِفٞ مِّنَ ٱلشَّيۡطَٰنِ تَذَكَّرُواْ فَإِذَا هُم مُّبۡصِرُونَ﴾. والآيةُ لا تصف قومًا لا يمسّهم شيء؛ فالطائفُ ما يطوف ويمرّ، كزائرٍ يدور، وهو يصيب حتى المتّقين.\n\nوالفرقُ فيما يحدث بعده، وهو سريع: تذكّروا، ﴿فَإِذَا هُم مُّبۡصِرُونَ﴾. وإذا هنا للمفاجأة: يعود البصرُ في اللحظة التي يحدث فيها التذكّر. فالذكرُ هو الذي يجلو العين.\n\nوالآيةُ التي قبلها تذكر ما يُفعل في تلك اللحظة: ﴿وَإِمَّا يَنزَغَنَّكَ مِنَ ٱلشَّيۡطَٰنِ نَزۡغٞ فَٱسۡتَعِذۡ بِٱللَّهِۚ﴾. والتي بعدها تُريك القومَ الآخرين: ﴿وَإِخۡوَٰنُهُمۡ يَمُدُّونَهُمۡ فِي ٱلۡغَيِّ ثُمَّ لَا يُقۡصِرُونَ﴾. والناسُ تسمّي من يمسّ: ﴿مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ﴾، الذي يخنس ويتأخّر حين يُذكر الله.",
+        plain: "The God-fearing are not people Satan never touches. The difference is what happens next: they remember, and at once they see. The verse before gives the instruction for that moment — seek refuge in Allah — and the one after shows those who are pulled ever deeper.",
+        plainAr: "المتّقون ليسوا قومًا لا يمسّهم الشيطان، بل الفرقُ فيما يحدث بعد المسّ: يتذكّرون فيُبصرون في الحال. والآيةُ التي قبلها تذكر ما يُفعل في تلك اللحظة — الاستعاذة — والتي بعدها تُريك من يُجرّون إلى الغيّ أكثر فأكثر.",
+        links: [
+          {
+            ref: "Surah An-Nas (114:4)",
+            ar: "مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ",
+            en: "From the evil of the retreating whisperer -",
+            how: "An-Nas names the one who does the touching: the whisperer who withdraws — who pulls back when Allah is remembered.",
+            howAr: "الناسُ تسمّي من يمسّ: ﴿مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ﴾، الذي يتأخّر حين يُذكر الله."
+          },
+          {
+            ref: "Surah Al-A'raf (7:200)",
+            ar: "وَإِمَّا يَنزَغَنَّكَ مِنَ ٱلشَّيۡطَٰنِ نَزۡغٞ فَٱسۡتَعِذۡ بِٱللَّهِۚ إِنَّهُۥ سَمِيعٌ عَلِيمٌ",
+            en: "And if an evil suggestion comes to you from Satan, then seek refuge in Allah. Indeed, He is Hearing and Knowing.",
+            how: "The verse before gives the instruction for that moment: if an incitement from Satan provokes you, seek refuge in Allah.",
+            howAr: "والآيةُ التي قبلها تذكر ما يُفعل في تلك اللحظة: ﴿وَإِمَّا يَنزَغَنَّكَ مِنَ ٱلشَّيۡطَٰنِ نَزۡغٞ فَٱسۡتَعِذۡ بِٱللَّهِۚ إِنَّهُۥ سَمِيعٌ عَلِيمٌ﴾."
+          },
+          {
+            ref: "Surah Al-A'raf (7:202)",
+            ar: "وَإِخۡوَٰنُهُمۡ يَمُدُّونَهُمۡ فِي ٱلۡغَيِّ ثُمَّ لَا يُقۡصِرُونَ",
+            en: "But their brothers - the devils increase them in error; then they do not stop short.",
+            how: "The verse after shows the other people: their brothers keep pulling them deeper into error, and never stop.",
+            howAr: "والآيةُ التي تليها تُريك القومَ الآخرين: ﴿وَإِخۡوَٰنُهُمۡ يَمُدُّونَهُمۡ فِي ٱلۡغَيِّ ثُمَّ لَا يُقۡصِرُونَ﴾."
+          }
+        ],
+        ref: "Surah Al-A'raf (7:201), read with 7:200, 7:202 and An-Nas (114:4)",
+        refAr: "سورة الأعراف، الآية ٢٠١، مع الآيتين ٢٠٠ و٢٠٢ وسورة الناس ٤",
+        strength: "quran"
       }
     ]
   },
@@ -6603,6 +6821,40 @@ const TADABBUR = {
         ref: "Surah Al-Anfal (8:46), read with 8:45 and Al 'Imran (3:152); Al-Anfal and Badr: Sahih al-Bukhari 4645, from Ibn Abbas",
         refAr: "سورة الأنفال، الآية ٤٦، مع الآية ٤٥ وسورة آل عمران ١٥٢؛ ونزولُ الأنفال في بدر: صحيح البخاري ٤٦٤٥، عن ابن عبّاس رضي الله عنهما",
         strength: "quran"
+      },
+      {
+        n: 63,
+        ar: "وَأَلَّفَ بَيۡنَ قُلُوبِهِمۡۚ لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ وَلَٰكِنَّ ٱللَّهَ أَلَّفَ بَيۡنَهُمۡۚ إِنَّهُۥ عَزِيزٌ حَكِيمٞ",
+        why: "And He brought their hearts together. Had you spent all that is on the earth, you could not have brought their hearts together — but Allah brought them together. The commentators read it of the Aws and the Khazraj, the two tribes of Madinah, who had fought each other for generations. 'A'ishah said the day of Bu'ath — their last great battle — was a day Allah had prepared for His Messenger: by the time he arrived their old leaders had been killed and their ranks were divided, and they entered Islam (al-Bukhari 3777).\n\nThe verse names the one thing money cannot buy. A person can be paid to stand beside you; he cannot be paid to love you. Even all that is on the earth would not have done it.\n\nAl 'Imran reminds them of the same gift: you were enemies, and He joined your hearts, and by His favour you became brothers (3:103). And Maryam promises it beyond that generation: those who believe and do good — ar-Rahman will place love for them (19:96).",
+        whyAr: "﴿وَأَلَّفَ بَيۡنَ قُلُوبِهِمۡۚ لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ وَلَٰكِنَّ ٱللَّهَ أَلَّفَ بَيۡنَهُمۡۚ إِنَّهُۥ عَزِيزٌ حَكِيمٞ﴾. وحمله المفسّرون على الأوس والخزرج، قبيلتي المدينة اللتين اقتتلتا أجيالًا. وقالت عائشةُ إنّ يومَ بُعاث — آخرَ حروبهم الكبرى — كان يومًا قدّمه الله لرسوله ﷺ، فقدم وقد افترق ملؤهم وقُتلت سراتُهم، فدخلوا في الإسلام (البخاري ٣٧٧٧).\n\nوالآيةُ تسمّي الشيءَ الوحيد الذي لا يُشترى بالمال: قد تدفع لرجلٍ أن يقف بجانبك، لكنك لا تدفع له أن يحبّك. حتى كنوزُ الأرض كلُّها لم تكن لتفعل ذلك.\n\nوآلُ عمران تذكّرهم بالنعمة نفسها: ﴿إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا﴾. ومريمُ تَعِد بها بعد ذلك الجيل: ﴿إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ سَيَجۡعَلُ لَهُمُ ٱلرَّحۡمَٰنُ وُدّٗا﴾.",
+        plain: "Had you spent everything on earth, you could not have joined their hearts — but Allah joined them. It was said of two tribes of Madinah who had fought for generations (al-Bukhari 3777). A person can be paid to stand beside you; he cannot be paid to love you.",
+        plainAr: "لو بُذلت كنوزُ الأرض كلُّها لما اجتمعت القلوب، لكنّ الله جمعها. وقد قيلت في قبيلتين من المدينة اقتتلتا أجيالًا (البخاري ٣٧٧٧). فقد تدفع لرجلٍ أن يقف بجانبك، لكنك لا تدفع له أن يحبّك.",
+        links: [
+          {
+            ref: "Surah Maryam (19:96)",
+            ar: "إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ سَيَجۡعَلُ لَهُمُ ٱلرَّحۡمَٰنُ وُدّٗا",
+            en: "Indeed, those who have believed and done righteous deeds - the Most Merciful will appoint for them affection.",
+            how: "Al-Anfal says no amount of money could have joined their hearts; Maryam promises the same gift to all who believe and do good: ar-Rahman will place love for them.",
+            howAr: "الأنفالُ تقول إنّ المال كلَّه لا يؤلّف القلوب، ومريمُ تَعِد بالعطاء نفسه كلَّ مؤمنٍ يعمل الصالحات: ﴿سَيَجۡعَلُ لَهُمُ ٱلرَّحۡمَٰنُ وُدّٗا﴾."
+          },
+          {
+            ref: "Surah Ali 'Imran (3:103)",
+            ar: "وَٱعۡتَصِمُواْ بِحَبۡلِ ٱللَّهِ جَمِيعٗا وَلَا تَفَرَّقُواْۚ وَٱذۡكُرُواْ نِعۡمَتَ ٱللَّهِ عَلَيۡكُمۡ إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا وَكُنتُمۡ عَلَىٰ شَفَا حُفۡرَةٖ مِّنَ ٱلنَّارِ فَأَنقَذَكُم مِّنۡهَاۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمۡ ءَايَٰتِهِۦ لَعَلَّكُمۡ تَهۡتَدُونَ",
+            en: "And hold firmly to the rope of Allah all together and do not become divided. And remember the favor of Allah upon you - when you were enemies and He brought your hearts together and you became, by His favor, brothers. And you were on the edge of a pit of the Fire, and He saved you from it. Thus does Allah make clear to you His verses that you may be guided.",
+            how: "Al 'Imran reminds them of the same gift: you were enemies, and He joined your hearts, and by His favour you became brothers.",
+            howAr: "آلُ عمران تذكّرهم بالنعمة نفسها: ﴿إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا﴾."
+          },
+          {
+            ref: "Surah Al-Anfal (8:62)",
+            ar: "وَإِن يُرِيدُوٓاْ أَن يَخۡدَعُوكَ فَإِنَّ حَسۡبَكَ ٱللَّهُۚ هُوَ ٱلَّذِيٓ أَيَّدَكَ بِنَصۡرِهِۦ وَبِٱلۡمُؤۡمِنِينَ",
+            en: "But if they intend to deceive you - then sufficient for you is Allah. It is He who supported you with His help and with the believers",
+            how: "The verse before names who stands behind it: Allah is enough for you; He supported you with His help and with the believers.",
+            howAr: "والآيةُ التي قبلها تذكر من وراء ذلك: ﴿فَإِنَّ حَسۡبَكَ ٱللَّهُۚ هُوَ ٱلَّذِيٓ أَيَّدَكَ بِنَصۡرِهِۦ وَبِٱلۡمُؤۡمِنِينَ﴾."
+          }
+        ],
+        ref: "Surah Al-Anfal (8:63), read with Al 'Imran (3:103) and Maryam (19:96); the day of Bu'ath: Sahih al-Bukhari 3777, from 'A'ishah",
+        refAr: "سورة الأنفال، الآية ٦٣، مع سورة آل عمران ١٠٣ وسورة مريم ٩٦؛ ويومُ بُعاث: صحيح البخاري ٣٧٧٧، عن عائشة رضي الله عنها",
+        strength: "hadith"
       }
     ]
   },
@@ -6684,6 +6936,13 @@ const TADABBUR = {
             en: "It is He who sent down tranquillity into the hearts of the believers that they would increase in faith along with their [present] faith. And to Allah belong the soldiers of the heavens and the earth, and ever is Allah Knowing and Wise.",
             how: "At-Tawbah shows tranquillity sent down in the cave; Al-Fath says what it does: it is sent into believers' hearts so that they add faith to their faith.",
             howAr: "التوبةُ تُريك السكينةَ تنزل في الغار، والفتحُ تقول ماذا تفعل: ﴿أَنزَلَ ٱلسَّكِينَةَ فِي قُلُوبِ ٱلۡمُؤۡمِنِينَ لِيَزۡدَادُوٓاْ إِيمَٰنٗا مَّعَ إِيمَٰنِهِمۡۗ﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:46)",
+            ar: "قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ",
+            en: "[Allah] said, \"Fear not. Indeed, I am with you both; I hear and I see.",
+            how: "In the cave the Prophet ﷺ said 'Allah is with us'; Ta-Ha gives the same words to two prophets afraid of Pharaoh: do not fear — I am with you both; I hear and I see.",
+            howAr: "في الغار طمأن النبيّ ﷺ صاحبَه بمعيّة الله، وطه تذكر الكلماتِ نفسها لنبيّين يخافان فرعون: ﴿قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ﴾."
           }
         ],
         plain: "In plain words: at the most dangerous moment of his life he did not offer a plan. He said do not grieve — and he said Allah is with US, not with me.",
@@ -9550,6 +9809,33 @@ const TADABBUR = {
         ],
         plain: "In plain words: hearts were made to settle by one thing. Anything else quiets them for a while and then wears off.",
         plainAr: "بعبارة أخرى: القلوب مجبولةٌ على أن تسكن بشيءٍ واحد، وما سواه يُسكِتها حينًا ثم يزول أثره."
+      },
+      {
+        n: 4,
+        ar: "وَفِي ٱلۡأَرۡضِ قِطَعٞ مُّتَجَٰوِرَٰتٞ وَجَنَّٰتٞ مِّنۡ أَعۡنَٰبٖ وَزَرۡعٞ وَنَخِيلٞ صِنۡوَانٞ وَغَيۡرُ صِنۡوَانٖ يُسۡقَىٰ بِمَآءٖ وَٰحِدٖ وَنُفَضِّلُ بَعۡضَهَا عَلَىٰ بَعۡضٖ فِي ٱلۡأُكُلِۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ",
+        why: "And on the earth are neighbouring plots — gardens of grapes, crops, and date palms growing from one root or from separate roots — watered with one water, and We make some of them better than others in fruit. In that are signs for people who reason.\n\nThe argument removes every variable but one. The plots are neighbours: the same air, the same sun. The water is one water — yusqa bi-ma'in wahid. Some palms even share a root — sinwan, several trunks from one base. And still the fruit differs in taste and in quality. If the inputs are the same and the outputs are not, the difference is coming from somewhere else.\n\nAl-An'am builds the same argument from the rain: from it We bring out green growth, and grain heaped up, and gardens — look at its fruit when it bears fruit, and at its ripening (6:99). And the verse ends on who it is for: people who use their reason. It is offered as an argument, not as decoration.",
+        whyAr: "﴿وَفِي ٱلۡأَرۡضِ قِطَعٞ مُّتَجَٰوِرَٰتٞ وَجَنَّٰتٞ مِّنۡ أَعۡنَٰبٖ وَزَرۡعٞ وَنَخِيلٞ صِنۡوَانٞ وَغَيۡرُ صِنۡوَانٖ يُسۡقَىٰ بِمَآءٖ وَٰحِدٖ وَنُفَضِّلُ بَعۡضَهَا عَلَىٰ بَعۡضٖ فِي ٱلۡأُكُلِۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ﴾.\n\nوالحجّةُ تُسقط كلَّ عاملٍ إلا واحدًا: القطعُ متجاورة، فالهواءُ واحدٌ والشمسُ واحدة. والماءُ واحد: ﴿يُسۡقَىٰ بِمَآءٖ وَٰحِدٖ﴾. وبعضُ النخل يجمعه أصلٌ واحد — صنوان، جذوعٌ متعدّدة من أصلٍ واحد. ومع ذلك يختلف الثمرُ طعمًا وجودة. فإذا تساوت الأسبابُ واختلفت النتائج، فالفرقُ آتٍ من غيرها.\n\nوالأنعامُ تبني الحجّةَ نفسها من المطر: ﴿ٱنظُرُوٓاْ إِلَىٰ ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَيَنۡعِهِۦٓۚ﴾. وتُختم الآيةُ بمن هي له: ﴿إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ﴾. فهي تُقدَّم حجّةً، لا زينة.",
+        plain: "Neighbouring plots, the same water, palms that even share a root — and still the fruit differs. When everything that goes in is the same and what comes out is not, the difference is coming from somewhere else. The verse offers it to people who reason.",
+        plainAr: "قطعٌ متجاورة، وماءٌ واحد، ونخلٌ يجمعه أصلٌ واحد، ومع ذلك يختلف الثمر. فإذا تساوى كلُّ ما يدخل واختلف ما يخرج، فالفرقُ آتٍ من غيره. والآيةُ تقدّم ذلك لمن يعقل.",
+        links: [
+          {
+            ref: "Surah Al-An'am (6:99)",
+            ar: "وَهُوَ ٱلَّذِيٓ أَنزَلَ مِنَ ٱلسَّمَآءِ مَآءٗ فَأَخۡرَجۡنَا بِهِۦ نَبَاتَ كُلِّ شَيۡءٖ فَأَخۡرَجۡنَا مِنۡهُ خَضِرٗا نُّخۡرِجُ مِنۡهُ حَبّٗا مُّتَرَاكِبٗا وَمِنَ ٱلنَّخۡلِ مِن طَلۡعِهَا قِنۡوَانٞ دَانِيَةٞ وَجَنَّٰتٖ مِّنۡ أَعۡنَابٖ وَٱلزَّيۡتُونَ وَٱلرُّمَّانَ مُشۡتَبِهٗا وَغَيۡرَ مُتَشَٰبِهٍۗ ٱنظُرُوٓاْ إِلَىٰ ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَيَنۡعِهِۦٓۚ إِنَّ فِي ذَٰلِكُمۡ لَأٓيَٰتٖ لِّقَوۡمٖ يُؤۡمِنُونَ",
+            en: "And it is He who sends down rain from the sky, and We produce thereby the growth of all things. We produce from it greenery from which We produce grains arranged in layers. And from the palm trees - of its emerging fruit are clusters hanging low. And [We produce] gardens of grapevines and olives and pomegranates, similar yet varied. Look at [each of] its fruit when it yields and [at] its ripening. Indeed in that are signs for a people who believe.",
+            how: "Al-An'am builds the same argument from the rain: one water, and from it every kind of growth — look at its fruit when it bears fruit, and at its ripening.",
+            howAr: "الأنعامُ تبني الحجّةَ نفسها من المطر: ماءٌ واحد يخرج منه كلُّ نبات: ﴿ٱنظُرُوٓاْ إِلَىٰ ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَيَنۡعِهِۦٓۚ﴾."
+          },
+          {
+            ref: "Surah Fatir (35:27)",
+            ar: "أَلَمۡ تَرَ أَنَّ ٱللَّهَ أَنزَلَ مِنَ ٱلسَّمَآءِ مَآءٗ فَأَخۡرَجۡنَا بِهِۦ ثَمَرَٰتٖ مُّخۡتَلِفًا أَلۡوَٰنُهَاۚ وَمِنَ ٱلۡجِبَالِ جُدَدُۢ بِيضٞ وَحُمۡرٞ مُّخۡتَلِفٌ أَلۡوَٰنُهَا وَغَرَابِيبُ سُودٞ",
+            en: "Do you not see that Allah sends down rain from the sky, and We produce thereby fruits of varying colors? And in the mountains are tracts, white and red of varying shades and [some] extremely black.",
+            how: "Fatir gives the same argument in colour: from one rain, fruits of varying colours — and mountains with streaks of white and red.",
+            howAr: "فاطرٌ تذكر الحجّةَ نفسها في الألوان: ﴿فَأَخۡرَجۡنَا بِهِۦ ثَمَرَٰتٖ مُّخۡتَلِفًا أَلۡوَٰنُهَاۚ﴾."
+          }
+        ],
+        ref: "Surah Ar-Ra'd (13:4), read with Al-An'am (6:99) and Fatir (35:27)",
+        refAr: "سورة الرعد، الآية ٤، مع سورة الأنعام ٩٩ وسورة فاطر ٢٧",
+        strength: "quran"
       }
     ]
   },
@@ -14587,6 +14873,13 @@ const TADABBUR = {
             en: "[Moses] said, \"My Lord, expand for me my breast [with assurance] And ease for me my task And untie the knot from my tongue That they may understand my speech.",
             how: "Ash-Sharh says the chest was expanded; Ta-Ha shows Musa asking for exactly that before facing Pharaoh — and adding an easy task and an untied tongue, so that people understand him.",
             howAr: "الشرحُ تقول إنّ الصدر شُرح، وطه تُريك موسى يسأل ذلك بعينه قبل أن يلقى فرعون: ﴿رَبِّ ٱشۡرَحۡ لِي صَدۡرِي﴾، ثم يزيد تيسيرَ الأمر وحلَّ عقدة اللسان، ليفهم الناسُ قوله."
+          },
+          {
+            ref: "Surah Al-An'am (6:125)",
+            ar: "فَمَن يُرِدِ ٱللَّهُ أَن يَهۡدِيَهُۥ يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ وَمَن يُرِدۡ أَن يُضِلَّهُۥ يَجۡعَلۡ صَدۡرَهُۥ ضَيِّقًا حَرَجٗا كَأَنَّمَا يَصَّعَّدُ فِي ٱلسَّمَآءِۚ كَذَٰلِكَ يَجۡعَلُ ٱللَّهُ ٱلرِّجۡسَ عَلَى ٱلَّذِينَ لَا يُؤۡمِنُونَ",
+            en: "So whoever Allah wants to guide - He expands his breast to [contain] Islam; and whoever He wants to misguide - He makes his breast tight and constricted as though he were climbing into the sky. Thus does Allah place defilement upon those who do not believe.",
+            how: "Ash-Sharh says the Prophet's ﷺ breast was expanded; Al-An'am says what such an expanding is: whomever Allah wills to guide, He expands his breast to Islam.",
+            howAr: "الشرحُ تقول إنّ صدر النبيّ ﷺ شُرح، والأنعامُ تقول ما هذا الشرح: ﴿فَمَن يُرِدِ ٱللَّهُ أَن يَهۡدِيَهُۥ يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ﴾."
           }
         ],
         ref: "Surah Ash-Sharh (94:1)",
