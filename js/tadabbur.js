@@ -1401,7 +1401,14 @@ const TADABBUR = {
           en: "“Indeed, We sent it down during a blessed night. Indeed, We were to warn [mankind].”",
           how: "The same descent, dated to the night instead of the month. Al-Baqarah says WHICH MONTH; Ad-Dukhan says which NIGHT within it — a blessed night — and Al-Qadr names it. Three passages, three scales, one event.",
           howAr: "النزولُ نفسه مؤرَّخًا بالليلة لا بالشهر. فالبقرةُ تقول **أيُّ شهر**، والدخانُ تقول أيُّ **ليلةٍ** منه — ليلةٍ مباركة — والقدرُ تُسمّيها. ثلاثةُ مواضع، وثلاثةُ مقاييس، وحدثٌ واحد."
-        }
+        },
+          {
+            ref: "Surah Al-Baqarah (2:183)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ",
+            en: "O you who have believed, decreed upon you is fasting as it was decreed upon those before you that you may become righteous -",
+            how: "This verse names the month; two verses earlier the surah had given the purpose of the fast before any rule: so that you may attain taqwa.",
+            howAr: "هذه الآيةُ تسمّي الشهر، وقبلها بآيتين ذكرت السورةُ غايةَ الصيام قبل أيّ حكم: ﴿كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ﴾."
+          }
         ],
         ref: "Surah Al-Baqarah (2:185)",
         strength: "quran"
@@ -2179,6 +2186,60 @@ const TADABBUR = {
         ref: "Surah Al-Baqarah (2:285), read with 2:93 and 2:284; the occasion: Sahih Muslim 125, from Abu Hurayrah; the last two verses at night: Sahih al-Bukhari 5009, from Abu Mas'ud",
         refAr: "سورة البقرة، الآية ٢٨٥، مع الآيتين ٩٣ و٢٨٤. وسببُ نزولها: صحيح مسلم ١٢٥، عن أبي هريرة رضي الله عنه؛ وفضلُ الآيتين من آخرها: صحيح البخاري ٥٠٠٩، عن أبي مسعود رضي الله عنه",
         strength: "hadith"
+      },
+      {
+        n: 183,
+        ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ",
+        why: "Kutiba — it has been written for you — is the Quran's word for an obligation; in this surah the same word prescribes retaliation, the bequest and fighting (2:178, 2:180, 2:216). And the command comes with a companion before it is even finished: as it was written for those before you. You are not the first to be asked this, and you are not asked alone.\n\nThen the purpose, stated before a single rule is given: la'allakum tattaqun — so that you may attain taqwa. Taqwa is from w-q-y, to shield and protect oneself. The Prophet ﷺ said: fasting is a shield (al-Bukhari 1894). The verse names what the fast is for; the hadith names what it is.\n\nThe next verse immediately reduces the size of it: days that can be counted — ayyaman ma'dudat — with the sick and the traveller excused, to make up the days later (2:184). Ramadan itself is not named until 2:185. The surah gives the reason first, then the scale, and only then the month.",
+        whyAr: "﴿كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ﴾: والكتابةُ لفظُ القرآن للفرض، وفي هذه السورة نفسها يُفرض باللفظ نفسه القصاصُ والوصيّةُ والقتال. ويأتي الأمرُ ومعه مؤنسٌ قبل أن يتمّ: ﴿كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ﴾؛ فلستَ أوّلَ من طُلب منه هذا، ولستَ وحدك.\n\nثم الغاية، مذكورةً قبل أيّ حكم: ﴿لَعَلَّكُمۡ تَتَّقُونَ﴾. والتقوى من الوقاية، أي أن يحمي المرءُ نفسَه. وقال النبيّ ﷺ: الصيامُ جُنّة (البخاري ١٨٩٤). فالآيةُ تذكر ما الصيامُ له، والحديثُ يذكر ما هو.\n\nوالآيةُ التي تليها تُصغّر حجمَه فورًا: ﴿أَيَّامٗا مَّعۡدُودَٰتٖۚ﴾، ويُعذر المريضُ والمسافر فيقضيان بعدُ. ولا يُسمّى رمضانُ إلا في الآية ١٨٥. فالسورةُ تذكر السببَ أوّلًا، ثم المقدار، ثم الشهر.",
+        plain: "The fast is commanded with its purpose stated first — so that you may attain taqwa, from the root for shielding oneself — and the Prophet ﷺ called fasting a shield (al-Bukhari 1894). And you are not the first: it was written for those before you too.",
+        plainAr: "يُؤمر بالصيام وغايتُه مذكورةٌ أوّلًا: التقوى، وأصلُها من الوقاية، وقد سمّى النبيّ ﷺ الصيامَ جُنّة (البخاري ١٨٩٤). ولستَ أوّلَ من فُرض عليه، فقد فُرض على الأمم قبلنا.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:185)",
+            ar: "شَهۡرُ رَمَضَانَ ٱلَّذِيٓ أُنزِلَ فِيهِ ٱلۡقُرۡءَانُ هُدٗى لِّلنَّاسِ وَبَيِّنَٰتٖ مِّنَ ٱلۡهُدَىٰ وَٱلۡفُرۡقَانِۚ فَمَن شَهِدَ مِنكُمُ ٱلشَّهۡرَ فَلۡيَصُمۡهُۖ وَمَن كَانَ مَرِيضًا أَوۡ عَلَىٰ سَفَرٖ فَعِدَّةٞ مِّنۡ أَيَّامٍ أُخَرَۗ يُرِيدُ ٱللَّهُ بِكُمُ ٱلۡيُسۡرَ وَلَا يُرِيدُ بِكُمُ ٱلۡعُسۡرَ وَلِتُكۡمِلُواْ ٱلۡعِدَّةَ وَلِتُكَبِّرُواْ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمۡ وَلَعَلَّكُمۡ تَشۡكُرُونَ",
+            en: "The month of Ramadhan [is that] in which was revealed the Qur'an, a guidance for the people and clear proofs of guidance and criterion. So whoever sights [the new moon of] the month, let him fast it; and whoever is ill or on a journey - then an equal number of other days. Allah intends for you ease and does not intend for you hardship and [wants] for you to complete the period and to glorify Allah for that [to] which He has guided you; and perhaps you will be grateful.",
+            how: "Two verses later the surah finally names the month, and the reason it was chosen: the month of Ramadan, in which the Quran was sent down.",
+            howAr: "وبعد آيتين تسمّي السورةُ الشهرَ أخيرًا، وسببَ اختياره: ﴿شَهۡرُ رَمَضَانَ ٱلَّذِيٓ أُنزِلَ فِيهِ ٱلۡقُرۡءَانُ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:184)",
+            ar: "أَيَّامٗا مَّعۡدُودَٰتٖۚ فَمَن كَانَ مِنكُم مَّرِيضًا أَوۡ عَلَىٰ سَفَرٖ فَعِدَّةٞ مِّنۡ أَيَّامٍ أُخَرَۚ وَعَلَى ٱلَّذِينَ يُطِيقُونَهُۥ فِدۡيَةٞ طَعَامُ مِسۡكِينٖۖ فَمَن تَطَوَّعَ خَيۡرٗا فَهُوَ خَيۡرٞ لَّهُۥۚ وَأَن تَصُومُواْ خَيۡرٞ لَّكُمۡ إِن كُنتُمۡ تَعۡلَمُونَ",
+            en: "[Fasting for] a limited number of days. So whoever among you is ill or on a journey [during them] - then an equal number of days [are to be made up]. And upon those who are able [to fast, but with hardship] - a ransom [as substitute] of feeding a poor person [each day]. And whoever volunteers excess - it is better for him. But to fast is best for you, if you only knew.",
+            how: "The next verse gives the size of it: days that can be counted — and the sick and the traveller make them up later.",
+            howAr: "والآيةُ التي تليها تذكر مقدارَه: ﴿أَيَّامٗا مَّعۡدُودَٰتٖۚ فَمَن كَانَ مِنكُم مَّرِيضًا أَوۡ عَلَىٰ سَفَرٖ فَعِدَّةٞ مِّنۡ أَيَّامٍ أُخَرَۚ﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:183), read with 2:184-185; fasting is a shield: Sahih al-Bukhari 1894, from Abu Hurayrah",
+        refAr: "سورة البقرة، الآية ١٨٣، مع الآيتين ١٨٤–١٨٥؛ والصيامُ جُنّة: صحيح البخاري ١٨٩٤، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
+      },
+      {
+        n: 201,
+        ar: "وَمِنۡهُم مَّن يَقُولُ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ",
+        why: "The verse is the second half of a contrast. The one before it describes people at the end of the Hajj who say: our Lord, give us in this world — and stop there; they have no share in the Hereafter (2:200). Then this: and among them is one who says, our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.\n\nThe difference is not that one group asks for the world and the other gives it up. Both ask for this world. The second asks for it as hasanah — good — and does not stop at it. The prayer refuses the choice people think they have to make between the two.\n\nAnas said this was the supplication the Prophet ﷺ made most often (al-Bukhari 6389). And the next verse says what those who make it receive: they will have a share of what they earned — and Allah is swift in account.",
+        whyAr: "هذه الآيةُ النصفُ الثاني من مقابلة. فالتي قبلها تصف قومًا في آخر الحجّ يقولون: ﴿رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا﴾، ويقفون عند ذلك، ﴿وَمَا لَهُۥ فِي ٱلۡأٓخِرَةِ مِنۡ خَلَٰقٖ﴾. ثم هذه: ﴿وَمِنۡهُم مَّن يَقُولُ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ﴾.\n\nوليس الفرقُ أنّ فريقًا يطلب الدنيا وفريقًا يتركها؛ فكلاهما يطلب الدنيا. لكنّ الثاني يطلبها حسنةً، ولا يقف عندها. فالدعاءُ يرفض الاختيارَ الذي يظنّ الناسُ أنهم مضطرّون إليه بين الدارين.\n\nوقال أنسٌ: كان أكثرُ دعاء النبيّ ﷺ هذا الدعاء (البخاري ٦٣٨٩). والآيةُ التي تليها تذكر ما يناله أهلُه: ﴿أُوْلَٰٓئِكَ لَهُمۡ نَصِيبٞ مِّمَّا كَسَبُواْۚ وَٱللَّهُ سَرِيعُ ٱلۡحِسَابِ﴾.",
+        plain: "Both groups in this passage ask for this world. The difference is that one stops there, and the other asks for good in this world and good in the Hereafter, and protection from the Fire. Anas said it was the supplication the Prophet ﷺ made most often (al-Bukhari 6389).",
+        plainAr: "الفريقان في هذا المقطع كلاهما يطلب الدنيا، والفرقُ أنّ أحدهما يقف عندها، والآخرَ يطلب الحسنةَ في الدارين والوقايةَ من النار. وقال أنسٌ إنه كان أكثرَ دعاء النبيّ ﷺ (البخاري ٦٣٨٩).",
+        links: [
+          {
+            ref: "Surah Al-Qasas (28:77)",
+            ar: "وَٱبۡتَغِ فِيمَآ ءَاتَىٰكَ ٱللَّهُ ٱلدَّارَ ٱلۡأٓخِرَةَۖ وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنۡيَاۖ وَأَحۡسِن كَمَآ أَحۡسَنَ ٱللَّهُ إِلَيۡكَۖ وَلَا تَبۡغِ ٱلۡفَسَادَ فِي ٱلۡأَرۡضِۖ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلۡمُفۡسِدِينَ",
+            en: "But seek, through that which Allah has given you, the home of the Hereafter; and [yet], do not forget your share of the world. And do good as Allah has done good to you. And desire not corruption in the land. Indeed, Allah does not like corrupters.\"",
+            how: "Al-Qasas gives the same balance as advice: seek the home of the Hereafter with what Allah has given you — and do not forget your share of this world.",
+            howAr: "القصصُ تعطي الميزانَ نفسه نصيحةً: ﴿وَٱبۡتَغِ فِيمَآ ءَاتَىٰكَ ٱللَّهُ ٱلدَّارَ ٱلۡأٓخِرَةَۖ وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنۡيَاۖ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:200)",
+            ar: "فَإِذَا قَضَيۡتُم مَّنَٰسِكَكُمۡ فَٱذۡكُرُواْ ٱللَّهَ كَذِكۡرِكُمۡ ءَابَآءَكُمۡ أَوۡ أَشَدَّ ذِكۡرٗاۗ فَمِنَ ٱلنَّاسِ مَن يَقُولُ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا وَمَا لَهُۥ فِي ٱلۡأٓخِرَةِ مِنۡ خَلَٰقٖ",
+            en: "And when you have completed your rites, remember Allah like your [previous] remembrance of your fathers or with [much] greater remembrance. And among the people is he who says, \"Our Lord, give us in this world,\" and he will have in the Hereafter no share.",
+            how: "The verse before gives the other prayer, the one that stops halfway: our Lord, give us in this world — and he has no share in the Hereafter.",
+            howAr: "والآيةُ التي قبلها تذكر الدعاءَ الآخر، الذي يقف في منتصف الطريق: ﴿فَمِنَ ٱلنَّاسِ مَن يَقُولُ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا وَمَا لَهُۥ فِي ٱلۡأٓخِرَةِ مِنۡ خَلَٰقٖ﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:201), read with 2:200 and 2:202; the most frequent supplication: Sahih al-Bukhari 6389, from Anas",
+        refAr: "سورة البقرة، الآية ٢٠١، مع الآيتين ٢٠٠ و٢٠٢؛ وأكثرُ دعاء النبيّ ﷺ: صحيح البخاري ٦٣٨٩، عن أنس رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -2386,6 +2447,13 @@ const TADABBUR = {
             en: "And [mention] Zechariah, when he called to his Lord, \"My Lord, do not leave me alone [with no heir], while you are the best of inheritors.\" So We responded to him, and We gave to him John, and amended for him his wife. Indeed, they used to hasten to good deeds and supplicate Us in hope and fear, and they were to Us humbly submissive.",
             how: "Al-Anbiya tells the same prayer in a few words — my Lord, do not leave me alone — gives the answer, and names what that household was known for: they hastened to good deeds, and called on Us in hope and in fear.",
             howAr: "الأنبياءُ تذكر الدعاءَ نفسه بكلماتٍ قليلة: ﴿رَبِّ لَا تَذَرۡنِي فَرۡدٗا﴾، ثم الإجابة، ثم ما عُرف به ذلك البيت: ﴿إِنَّهُمۡ كَانُواْ يُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِ وَيَدۡعُونَنَا رَغَبٗا وَرَهَبٗاۖ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:24)",
+            ar: "فَسَقَىٰ لَهُمَا ثُمَّ تَوَلَّىٰٓ إِلَى ٱلظِّلِّ فَقَالَ رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ",
+            en: "So he watered [their flocks] for them; then he went back to the shade and said, \"My Lord, indeed I am, for whatever good You would send down to me, in need.\"",
+            how: "Zakariyya names his weakness before he asks; Musa, alone in the shade at Madyan, names his need the same way: my Lord, I am in need of whatever good You send down to me.",
+            howAr: "زكريّا يذكر ضعفَه قبل أن يسأل، وموسى وحيدًا في ظلّ مدين يذكر حاجتَه بالطريقة نفسها: ﴿رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ﴾."
           }
         ]
       }
@@ -2506,6 +2574,40 @@ const TADABBUR = {
         ref: "Surah Ta-Ha (20:25-28), read with Ash-Sharh (94:1)",
         refAr: "سورة طه، الآيات ٢٥–٢٨، مع سورة الشرح، الآية ١",
         strength: "quran"
+      },
+      {
+        n: 114,
+        ar: "فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۗ وَلَا تَعۡجَلۡ بِٱلۡقُرۡءَانِ مِن قَبۡلِ أَن يُقۡضَىٰٓ إِلَيۡكَ وَحۡيُهُۥۖ وَقُل رَّبِّ زِدۡنِي عِلۡمٗا",
+        why: "The verse sits inside an instruction about receiving the Quran itself: do not hasten with the recitation before its revelation to you is complete. Al-Qiyamah gives the same instruction more fully — do not move your tongue with it to hurry it; it is upon Us to gather it and to recite it (75:16-17). Ibn Abbas said the Prophet ﷺ used to move his lips with the revelation as it came, to hold on to it (al-Bukhari 4927).\n\nAnd at that point he is given a prayer: and say, my Lord, increase me in knowledge. It is the only 'increase me' in the Quran. He was not told to ask for more wealth, more years or more followers — only for more knowledge. Al-Bukhari heads the chapter on the virtue of knowledge with this verse.\n\nThe verse begins with the reason the request can be made at all: exalted is Allah, the King, the Truth. Knowledge is asked of the One who has it — and the prayer was given to the man who already had more of it than anyone.",
+        whyAr: "الآيةُ في وسط توجيهٍ يخصّ تلقّي القرآن نفسه: ﴿وَلَا تَعۡجَلۡ بِٱلۡقُرۡءَانِ مِن قَبۡلِ أَن يُقۡضَىٰٓ إِلَيۡكَ وَحۡيُهُۥۖ﴾. وسورةُ القيامة تذكر التوجيهَ نفسه بتفصيل: ﴿لَا تُحَرِّكۡ بِهِۦ لِسَانَكَ لِتَعۡجَلَ بِهِۦٓ﴾ ﴿إِنَّ عَلَيۡنَا جَمۡعَهُۥ وَقُرۡءَانَهُۥ﴾. وقال ابنُ عبّاس إنّ النبيّ ﷺ كان يحرّك شفتيه بالوحي حين ينزل ليحفظه (البخاري ٤٩٢٧).\n\nوعند هذا الموضع يُعطى دعاءً: ﴿وَقُل رَّبِّ زِدۡنِي عِلۡمٗا﴾. وليس في القرآن زدني غيرُها: لم يُؤمر أن يسأل الزيادةَ من مالٍ ولا عمرٍ ولا أتباع، بل من العلم وحده. وقد صدّر البخاريُّ بهذه الآية بابَ فضل العلم.\n\nوتبدأ الآيةُ بما يجعل الطلبَ ممكنًا أصلًا: ﴿فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۗ﴾. فالعلمُ يُطلب ممّن يملكه، والدعاءُ أُعطي لرجلٍ كان عنده منه أكثرُ ممّا عند أحد.",
+        plain: "It is the only 'increase me' in the Quran: the Prophet ﷺ was told to ask for more of one thing only — knowledge. It came while he was being taught not to rush the revelation, the same instruction as Al-Qiyamah 75:16-17.",
+        plainAr: "ليس في القرآن زدني غيرُها: أُمر النبيّ ﷺ أن يسأل المزيدَ من شيءٍ واحد فقط، هو العلم. وجاءت وهو يُعلَّم ألّا يستعجل الوحي، كما في سورة القيامة.",
+        links: [
+          {
+            ref: "Surah Al-Alaq (96:4-5)",
+            ar: "ٱلَّذِي عَلَّمَ بِٱلۡقَلَمِ ۝ عَلَّمَ ٱلۡإِنسَٰنَ مَا لَمۡ يَعۡلَمۡ",
+            en: "Who taught by the pen - Taught man that which he knew not.",
+            how: "The first revelation was about knowledge — He taught by the pen, taught man what he did not know; Ta-Ha gives the prayer for more of it.",
+            howAr: "أوّلُ الوحي كان عن العلم: ﴿ٱلَّذِي عَلَّمَ بِٱلۡقَلَمِ﴾ ﴿عَلَّمَ ٱلۡإِنسَٰنَ مَا لَمۡ يَعۡلَمۡ﴾، وسورةُ طه تعطي الدعاءَ بالمزيد منه."
+          },
+          {
+            ref: "Surah Fatir (35:28)",
+            ar: "وَمِنَ ٱلنَّاسِ وَٱلدَّوَآبِّ وَٱلۡأَنۡعَٰمِ مُخۡتَلِفٌ أَلۡوَٰنُهُۥ كَذَٰلِكَۗ إِنَّمَا يَخۡشَى ٱللَّهَ مِنۡ عِبَادِهِ ٱلۡعُلَمَٰٓؤُاْۗ إِنَّ ٱللَّهَ عَزِيزٌ غَفُورٌ",
+            en: "And among people and moving creatures and grazing livestock are various colors similarly. Only those fear Allah, from among His servants, who have knowledge. Indeed, Allah is Exalted in Might and Forgiving.",
+            how: "Fatir says what knowledge is for: only those of His servants who have knowledge truly fear Allah.",
+            howAr: "فاطرٌ تقول ما غايةُ العلم: ﴿إِنَّمَا يَخۡشَى ٱللَّهَ مِنۡ عِبَادِهِ ٱلۡعُلَمَٰٓؤُاْۗ﴾."
+          },
+          {
+            ref: "Surah Al-Qiyamah (75:16-17)",
+            ar: "لَا تُحَرِّكۡ بِهِۦ لِسَانَكَ لِتَعۡجَلَ بِهِۦٓ ۝ إِنَّ عَلَيۡنَا جَمۡعَهُۥ وَقُرۡءَانَهُۥ",
+            en: "Move not your tongue with it, [O Muhammad], to hasten with recitation of the Qur'an. Indeed, upon Us is its collection [in your heart] and [to make possible] its recitation.",
+            how: "Al-Qiyamah gives the same instruction about receiving the revelation: do not move your tongue with it to hurry it — upon Us is its gathering and its recitation.",
+            howAr: "القيامةُ تذكر التوجيهَ نفسه في تلقّي الوحي: ﴿لَا تُحَرِّكۡ بِهِۦ لِسَانَكَ لِتَعۡجَلَ بِهِۦٓ﴾ ﴿إِنَّ عَلَيۡنَا جَمۡعَهُۥ وَقُرۡءَانَهُۥ﴾."
+          }
+        ],
+        ref: "Surah Ta-Ha (20:114), read with Al-Qiyamah (75:16-17); moving his lips with the revelation: Sahih al-Bukhari 4927, from Ibn Abbas",
+        refAr: "سورة طه، الآية ١١٤، مع سورة القيامة ١٦–١٧؛ وتحريكُ شفتيه بالوحي: صحيح البخاري ٤٩٢٧، عن ابن عبّاس رضي الله عنهما",
+        strength: "quran"
       }
     ]
   },
@@ -2567,6 +2669,13 @@ const TADABBUR = {
             en: "Then has there not been a [single] city that believed so its faith benefited it except the people of Jonah? When they believed, We removed from them the punishment of disgrace in worldly life and gave them enjoyment for a time.",
             how: "Al-Anbiya shows Yunus calling from the darkness; Surah Yunus shows what happened to the people he had left: they believed, and the punishment was lifted from them.",
             howAr: "الأنبياءُ تُريك يونسَ ينادي في الظلمات، وسورةُ يونس تُريك ما جرى لقومه الذين تركهم: ﴿لَمَّآ ءَامَنُواْ كَشَفۡنَا عَنۡهُمۡ عَذَابَ ٱلۡخِزۡيِ﴾."
+          },
+          {
+            ref: "Surah Al-A'raf (7:23)",
+            ar: "قَالَا رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ",
+            en: "They said, \"Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.\"",
+            how: "Yunus says I have been of the wrongdoers; Adam and his wife had said the first form of it: our Lord, we have wronged ourselves.",
+            howAr: "يونسُ يعترف بظلمه لنفسه، وقد قال آدمُ وزوجُه أوّلَ صيغةٍ لهذا الاعتراف: ﴿رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ﴾."
           }
         ]
       },
@@ -2870,6 +2979,13 @@ const TADABBUR = {
             en: "O you who have believed, indeed, among your wives and your children are enemies to you, so beware of them. But if you pardon and overlook and forgive - then indeed, Allah is Forgiving and Merciful.",
             how: "The same pair of verbs — pardon and overlook — and At-Taghabun adds a third, forgive, about wives and children who act as enemies. Both verses end the same way: Allah is Forgiving, Merciful — the reward named after the deed.",
             howAr: "الفعلان نفسهما — العفوُ والصفح — وتزيد التغابنُ ثالثًا، المغفرة، في الأزواج والأولاد إذا كانوا أعداء. وتُختم الآيتان بخاتمةٍ واحدة: ﴿ٱللَّهَ غَفُورٞ رَّحِيمٌ﴾ — فالجزاءُ من جنس العمل."
+          },
+          {
+            ref: "Surah Ali 'Imran (3:134)",
+            ar: "ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ",
+            en: "Who spend [in the cause of Allah] during ease and hardship and who restrain anger and who pardon the people - and Allah loves the doers of good;",
+            how: "An-Nur asks Abu Bakr to pardon and overlook; Al 'Imran gives the whole ladder of it: holding in the anger, pardoning people — and the doing of good that Allah loves.",
+            howAr: "النورُ تطلب من أبي بكر العفوَ والصفح، وآلُ عمران تذكر السُّلّمَ كلَّه: ﴿وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ﴾."
           }
         ],
         ref: "Surah An-Nur (24:22); its occasion: Sahih al-Bukhari 4750, from Aishah",
@@ -3133,6 +3249,13 @@ const TADABBUR = {
             en: "He said, \"I was only given it because of knowledge I have.\" Did he not know that Allah had destroyed before him of generations those who were greater than him in power and greater in accumulation [of wealth]? But the criminals, about their sins, will not be asked.",
             how: "His answer to all of it was one sentence: I was only given it because of knowledge I have.",
             howAr: "وكان جوابُه عن ذلك كلّه جملةً واحدة: ﴿إِنَّمَآ أُوتِيتُهُۥ عَلَىٰ عِلۡمٍ عِندِيٓۚ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:201)",
+            ar: "وَمِنۡهُم مَّن يَقُولُ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ",
+            en: "But among them is he who says, \"Our Lord, give us in this world [that which is] good and in the Hereafter [that which is] good and protect us from the punishment of the Fire.\"",
+            how: "Al-Qasas gives the balance as advice to Qarun; Al-Baqarah gives it as a prayer: our Lord, give us good in this world and good in the Hereafter.",
+            howAr: "القصصُ تعطي الميزانَ نصيحةً لقارون، والبقرةُ تعطيه دعاءً: ﴿رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ﴾."
           }
         ],
         ref: "Surah Al-Qasas (28:77), read with 28:76-81",
@@ -3217,6 +3340,40 @@ const TADABBUR = {
           }
         ],
         ref: "Surah Al-Qasas (28:76)",
+        strength: "quran"
+      },
+      {
+        n: 24,
+        ar: "فَسَقَىٰ لَهُمَا ثُمَّ تَوَلَّىٰٓ إِلَى ٱلظِّلِّ فَقَالَ رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ",
+        why: "Musa had fled Egypt with Pharaoh's chiefs plotting to kill him (28:20), and walked to Madyan alone. At the water he found the shepherds crowding the well, and two women holding their flock back, waiting — their father was a very old man. He watered their flock for them, asked nothing, and turned aside to the shade.\n\nOnly then did he ask — and what he asked for was not specific: my Lord, I am in need of whatever good You send down to me. He names his poverty with the same word Fatir uses for every person before Allah (35:15), and leaves the choice of the good to the One who sends it. He had just given help; now he asks for it.\n\nThe answer is in the next verse, and it begins with fa — straight away: then one of the two came to him, walking shyly, and said, my father invites you, to reward you for watering for us. That walk led to safety, work and a marriage (28:25-27). Whatever good He sent down turned out to be all of it.",
+        whyAr: "كان موسى قد خرج من مصر والملأُ يأتمرون به ليقتلوه، ومشى إلى مدين وحده. فلمّا ورد الماءَ وجد الرعاةَ يزدحمون عليه، وامرأتين تمنعان غنمَهما تنتظران، وأبوهما شيخٌ كبير. فسقى لهما، ولم يطلب شيئًا، ثم انصرف إلى الظلّ.\n\nوعندئذٍ فقط سأل، ولم يُعيّن ما يسأل: ﴿رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ﴾. يسمّي فقرَه بالكلمة التي تصف بها فاطرٌ كلَّ إنسانٍ أمام الله، ويترك اختيارَ الخير لمن يُنزله. وقد أعان للتوّ، وهو الآن يطلب العون.\n\nوالجوابُ في الآية التي تليها، يبدأ بالفاء، أي في الحال: ﴿فَجَآءَتۡهُ إِحۡدَىٰهُمَا تَمۡشِي عَلَى ٱسۡتِحۡيَآءٖ قَالَتۡ إِنَّ أَبِي يَدۡعُوكَ لِيَجۡزِيَكَ أَجۡرَ مَا سَقَيۡتَ لَنَاۚ﴾. وكانت تلك المشيةُ بابَ الأمان والعمل والزواج. فالخيرُ الذي سأله كان كلَّ ذلك.",
+        plain: "A fugitive, alone, who had just helped two strangers and asked nothing for it, sat in the shade and said: my Lord, I am in need of whatever good You send down. He did not name the good. The next verse begins 'then she came' — and with her came safety, work and a marriage.",
+        plainAr: "طريدٌ وحيد، أعان امرأتين غريبتين ولم يطلب أجرًا، ثم جلس في الظلّ يسأل ربَّه أيَّ خيرٍ يُنزله، ولم يُسمِّ الخير. والآيةُ التالية تبدأ بمجيئها، ومعها جاء الأمانُ والعملُ والزواج.",
+        links: [
+          {
+            ref: "Surah Fatir (35:15)",
+            ar: "۞ يَٰٓأَيُّهَا ٱلنَّاسُ أَنتُمُ ٱلۡفُقَرَآءُ إِلَى ٱللَّهِۖ وَٱللَّهُ هُوَ ٱلۡغَنِيُّ ٱلۡحَمِيدُ",
+            en: "O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy.",
+            how: "Musa calls himself poor before his Lord; Fatir says it of every person: O people, you are the poor, in need of Allah — and Allah is the Free of need, the Praised.",
+            howAr: "موسى يسمّي نفسَه فقيرًا أمام ربّه، وفاطرٌ تقولها في كلّ إنسان: ﴿أَنتُمُ ٱلۡفُقَرَآءُ إِلَى ٱللَّهِۖ وَٱللَّهُ هُوَ ٱلۡغَنِيُّ ٱلۡحَمِيدُ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:25)",
+            ar: "فَجَآءَتۡهُ إِحۡدَىٰهُمَا تَمۡشِي عَلَى ٱسۡتِحۡيَآءٖ قَالَتۡ إِنَّ أَبِي يَدۡعُوكَ لِيَجۡزِيَكَ أَجۡرَ مَا سَقَيۡتَ لَنَاۚ فَلَمَّا جَآءَهُۥ وَقَصَّ عَلَيۡهِ ٱلۡقَصَصَ قَالَ لَا تَخَفۡۖ نَجَوۡتَ مِنَ ٱلۡقَوۡمِ ٱلظَّٰلِمِينَ",
+            en: "Then one of the two women came to him walking with shyness. She said, \"Indeed, my father invites you that he may reward you for having watered for us.\" So when he came to him and related to him the story, he said, \"Fear not. You have escaped from the wrongdoing people.\"",
+            how: "The answer, beginning with 'then': one of the two came to him walking shyly — my father invites you, to reward you for watering for us.",
+            howAr: "والجوابُ يبدأ بالفاء: ﴿فَجَآءَتۡهُ إِحۡدَىٰهُمَا تَمۡشِي عَلَى ٱسۡتِحۡيَآءٖ قَالَتۡ إِنَّ أَبِي يَدۡعُوكَ لِيَجۡزِيَكَ أَجۡرَ مَا سَقَيۡتَ لَنَاۚ﴾."
+          },
+          {
+            ref: "Surah Maryam (19:4)",
+            ar: "قَالَ رَبِّ إِنِّي وَهَنَ ٱلۡعَظۡمُ مِنِّي وَٱشۡتَعَلَ ٱلرَّأۡسُ شَيۡبٗا وَلَمۡ أَكُنۢ بِدُعَآئِكَ رَبِّ شَقِيّٗا",
+            en: "He said, \"My Lord, indeed my bones have weakened, and my head has filled with white, and never have I been in my supplication to You, my Lord, unhappy.",
+            how: "Zakariyya also names his weakness before he asks — my bones have grown feeble, and my head is white — and Musa names his need. Both put the state first and the request second.",
+            howAr: "وزكريّا أيضًا يذكر ضعفَه قبل أن يسأل: ﴿رَبِّ إِنِّي وَهَنَ ٱلۡعَظۡمُ مِنِّي وَٱشۡتَعَلَ ٱلرَّأۡسُ شَيۡبٗا﴾، وموسى يذكر حاجتَه. كلاهما يقدّم الحالَ على الطلب."
+          }
+        ],
+        ref: "Surah Al-Qasas (28:24), read with 28:20-27 and Fatir (35:15)",
+        refAr: "سورة القصص، الآية ٢٤، مع الآيات ٢٠–٢٧ وسورة فاطر ١٥",
         strength: "quran"
       }
     ]
@@ -3873,6 +4030,58 @@ const TADABBUR = {
         ],
         ref: "Surah Al 'Imran (3:173), read with 3:172 and 3:174; those who went out after Uhud: Sahih al-Bukhari 4077, from 'A'ishah; Ibrahim and Muhammad ﷺ: Sahih al-Bukhari 4563, from Ibn Abbas",
         refAr: "سورة آل عمران، الآية ١٧٣، مع الآيتين ١٧٢ و١٧٤. ومن خرجوا بعد أُحد: صحيح البخاري ٤٠٧٧، عن عائشة رضي الله عنها؛ وقولُ إبراهيم ومحمّد ﷺ: صحيح البخاري ٤٥٦٣، عن ابن عبّاس رضي الله عنهما",
+        strength: "hadith"
+      },
+      {
+        n: 134,
+        ar: "ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ",
+        why: "The verse before opens a race: hasten to forgiveness from your Lord and a garden as wide as the heavens and the earth, prepared for the God-fearing (3:133). This verse describes the people in it — and the description is not of devotions done alone, but of how a person handles money and people. Those who give in ease and in hardship; and then three things, all of which happen at the moment someone has wronged you.\n\nFirst, al-kazimina al-ghayz — those who hold in their rage. Kazm is to shut something in so that it cannot come out; Surah Yusuf uses the same word for Ya'qub holding in his grief (12:84). The anger is still there; it is not let out. Second, wal-'afina 'an an-nas — those who pardon people: the claim itself is dropped. Third, the verse ends: and Allah loves the muhsinin, those who do good.\n\nRead in order, it is a ladder: to hold the anger in, then to let the wrong go, then to do good to the one who did it. And the Prophet ﷺ said the strong man is not the one who overpowers others, but the one who controls himself when he is angry (al-Bukhari 6114).",
+        whyAr: "الآيةُ التي قبلها تفتح سباقًا: ﴿وَسَارِعُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا ٱلسَّمَٰوَٰتُ وَٱلۡأَرۡضُ أُعِدَّتۡ لِلۡمُتَّقِينَ﴾. وهذه الآيةُ تصف أهلَه، ووصفُها ليس لعباداتٍ يؤدّيها المرءُ وحده، بل لطريقته مع المال ومع الناس: ﴿ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ﴾، ثم ثلاثةُ أمورٍ تقع كلُّها في اللحظة التي يظلمك فيها أحد.\n\nأوّلُها ﴿وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ﴾، والكَظْمُ حبسُ الشيء فلا يخرج، وسورةُ يوسف تستعمل الكلمةَ نفسها ليعقوبَ وهو يحبس حزنه. فالغضبُ ما زال موجودًا، لكنه لا يُطلَق. وثانيها ﴿وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ﴾، فيُترك الحقُّ نفسه. وثالثُها ما تُختم به الآية: ﴿وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ﴾.\n\nوإذا قُرئت بترتيبها كانت سُلّمًا: أن تحبس الغضب، ثم أن تترك المظلمة، ثم أن تُحسن إلى من أساء. وقال النبيّ ﷺ إنّ الشديد ليس الذي يغلب الناسَ بقوّته، بل الذي يملك نفسَه عند الغضب (البخاري ٦١١٤).",
+        plain: "Three steps, all taken at the moment someone wrongs you: hold the rage in, then let the wrong go, then do good to the one who did it — and Allah loves those who do good. The strong man, the Prophet ﷺ said, is the one who controls himself when angry (al-Bukhari 6114).",
+        plainAr: "ثلاثُ درجاتٍ كلُّها في لحظة الإساءة: أن تحبس غضبك، ثم أن تعفو، ثم أن تُحسن إلى من أساء: ﴿وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ﴾. وقال النبيّ ﷺ إنّ الشديد هو الذي يملك نفسَه عند الغضب (البخاري ٦١١٤).",
+        words: [
+          {
+            w: "وَٱلۡكَٰظِمِينَ",
+            t: "wal-kazimin",
+            meaning: "Those who hold it in. Ar-Raghib explains kazm as the outlet of the breath, and kuzum as holding the breath in; so kazm of rage is to keep it shut in, the way a breath is held.",
+            meaningAr: "الذين يحبسونه. قال الراغب إنّ الكَظْم مخرجُ النفَس، والكُظوم احتباسُ النفَس، فكظمُ الغيظ حبسُه كما يُحبس النفَس.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ك ظ م",
+            sourceAr: "الراغب الأصفهاني، المفردات، مادّة ك ظ م",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah An-Nur (24:22)",
+            ar: "وَلَا يَأۡتَلِ أُوْلُواْ ٱلۡفَضۡلِ مِنكُمۡ وَٱلسَّعَةِ أَن يُؤۡتُوٓاْ أُوْلِي ٱلۡقُرۡبَىٰ وَٱلۡمَسَٰكِينَ وَٱلۡمُهَٰجِرِينَ فِي سَبِيلِ ٱللَّهِۖ وَلۡيَعۡفُواْ وَلۡيَصۡفَحُوٓاْۗ أَلَا تُحِبُّونَ أَن يَغۡفِرَ ٱللَّهُ لَكُمۡۚ وَٱللَّهُ غَفُورٞ رَّحِيمٌ",
+            en: "And let not those of virtue among you and wealth swear not to give [aid] to their relatives and the needy and the emigrants for the cause of Allah, and let them pardon and overlook. Would you not like that Allah should forgive you? And Allah is Forgiving and Merciful.",
+            how: "An-Nur asks for the same pardon at the hardest moment — of Abu Bakr, after the slander against his daughter: let them pardon and overlook; do you not love that Allah should forgive you?",
+            howAr: "النورُ تطلب العفوَ نفسه في أشدّ لحظة — من أبي بكر بعد الإفك على ابنته: ﴿وَلۡيَعۡفُواْ وَلۡيَصۡفَحُوٓاْۗ أَلَا تُحِبُّونَ أَن يَغۡفِرَ ٱللَّهُ لَكُمۡۚ﴾؟"
+          },
+          {
+            ref: "Surah Ash-Shuraa (42:37)",
+            ar: "وَٱلَّذِينَ يَجۡتَنِبُونَ كَبَٰٓئِرَ ٱلۡإِثۡمِ وَٱلۡفَوَٰحِشَ وَإِذَا مَا غَضِبُواْ هُمۡ يَغۡفِرُونَ",
+            en: "And those who avoid the major sins and immoralities, and when they are angry, they forgive,",
+            how: "Ash-Shura describes the same people in five words: and when they are angry, they forgive.",
+            howAr: "الشورى تصف القومَ أنفسهم بكلماتٍ قليلة: ﴿وَإِذَا مَا غَضِبُواْ هُمۡ يَغۡفِرُونَ﴾."
+          },
+          {
+            ref: "Surah Yusuf (12:84)",
+            ar: "وَتَوَلَّىٰ عَنۡهُمۡ وَقَالَ يَٰٓأَسَفَىٰ عَلَىٰ يُوسُفَ وَٱبۡيَضَّتۡ عَيۡنَاهُ مِنَ ٱلۡحُزۡنِ فَهُوَ كَظِيمٞ",
+            en: "And he turned away from them and said, \"Oh, my sorrow over Joseph,\" and his eyes became white from grief, for he was [of that] a suppressor.",
+            how: "Surah Yusuf uses the same word for Ya'qub holding in a grief that had taken his sight: and he was kazim.",
+            howAr: "سورةُ يوسف تستعمل الكلمةَ نفسها ليعقوبَ وهو يحبس حزنًا أذهب بصرَه: ﴿فَهُوَ كَظِيمٞ﴾."
+          },
+          {
+            ref: "Surah Ali 'Imran (3:133)",
+            ar: "۞ وَسَارِعُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا ٱلسَّمَٰوَٰتُ وَٱلۡأَرۡضُ أُعِدَّتۡ لِلۡمُتَّقِينَ",
+            en: "And hasten to forgiveness from your Lord and a garden as wide as the heavens and earth, prepared for the righteous",
+            how: "The verse before opens the race whose runners this verse describes: hasten to forgiveness from your Lord, and a garden as wide as the heavens and the earth.",
+            howAr: "والآيةُ التي قبلها تفتح السباقَ الذي تصف هذه الآيةُ أهلَه: ﴿وَسَارِعُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا ٱلسَّمَٰوَٰتُ وَٱلۡأَرۡضُ﴾."
+          }
+        ],
+        ref: "Surah Al 'Imran (3:134), read with 3:133 and Yusuf (12:84); kazm: Ar-Raghib al-Isfahani, Al-Mufradat; controlling oneself in anger: Sahih al-Bukhari 6114, from Abu Hurayrah",
+        refAr: "سورة آل عمران، الآية ١٣٤، مع الآية ١٣٣ وسورة يوسف ٨٤؛ ومعنى الكظم: الراغب الأصفهاني، المفردات؛ وملكُ النفس عند الغضب: صحيح البخاري ٦١١٤، عن أبي هريرة رضي الله عنه",
         strength: "hadith"
       }
     ]
@@ -5265,6 +5474,47 @@ const TADABBUR = {
             howAr: "اللفظُ نفسُه — الرحمة — معلّقًا بالقرآن ذاته. فهي هنا علّةُ الاستماع، وهناك هي النازلةُ بما تستمع إليه."
           }
         ]
+      },
+      {
+        n: 23,
+        ar: "قَالَا رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ",
+        why: "Two people, one sentence, and no one else blamed: our Lord, we have wronged ourselves. Not Satan, who had tempted them; not each other. The Quran tells this part of the story in the dual throughout — Satan whispered to them both, he led them both down by deception, their Lord called out to them both — and when the answer comes, it is in the dual too: they both said.\n\nSet it beside the answer of the other one who disobeyed in the same story. Iblis said: because You have led me astray, I will lie in wait for them on Your straight path (7:16). One blamed his Lord; the two blamed themselves. That is the whole difference between them, and everything after follows from it.\n\nMany of the early commentators — Mujahid, Sa'id ibn Jubayr, al-Hasan and Qatadah among them — said these were the words Adam received from his Lord in Al-Baqarah, after which He turned to him in forgiveness (2:37). And the same shape returns in the mouths of the prophets: Musa — my Lord, I have wronged myself, so forgive me, and He forgave him (28:16); Yunus — I have been of the wrongdoers (21:87).",
+        whyAr: "اثنان، وجملةٌ واحدة، ولا أحدَ غيرُهما يُلام: ﴿قَالَا رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا﴾. لا الشيطانُ الذي أغواهما، ولا أحدُهما الآخر. والقرآنُ يروي هذا الجزءَ من القصّة بالمثنّى من أوّله: ﴿فَوَسۡوَسَ لَهُمَا ٱلشَّيۡطَٰنُ﴾، ﴿فَدَلَّىٰهُمَا بِغُرُورٖۚ﴾، ﴿وَنَادَىٰهُمَا رَبُّهُمَآ﴾، فإذا جاء الجوابُ جاء بالمثنّى أيضًا: قالا.\n\nوضَعْه إلى جانب جواب الآخر الذي عصى في القصّة نفسها؛ قال إبليس: ﴿فَبِمَآ أَغۡوَيۡتَنِي لَأَقۡعُدَنَّ لَهُمۡ صِرَٰطَكَ ٱلۡمُسۡتَقِيمَ﴾. أحدُهما لام ربَّه، والآخران لاما نفسيهما، وهذا هو الفرقُ كلُّه بينهما، وما بعده يتبعه.\n\nوقال كثيرٌ من المفسّرين الأوائل — منهم مجاهد وسعيد بن جبير والحسن وقتادة — إنّ هذه هي الكلماتُ التي تلقّاها آدمُ في البقرة فتاب الله عليه. ويعود الشكلُ نفسه على ألسنة الأنبياء: موسى — ﴿رَبِّ إِنِّي ظَلَمۡتُ نَفۡسِي فَٱغۡفِرۡ لِي فَغَفَرَ لَهُۥٓۚ﴾، ويونس — ﴿إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ﴾.",
+        plain: "Adam and his wife blamed no one but themselves: our Lord, we have wronged ourselves. Iblis, in the same story, blamed his Lord: because You led me astray. That is the whole difference between them — and many early commentators said these were the words Adam received and was forgiven by (2:37).",
+        plainAr: "لم يلُم آدمُ وزوجُه إلا نفسيهما: ﴿رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا﴾، وإبليسُ في القصّة نفسها لام ربَّه: ﴿فَبِمَآ أَغۡوَيۡتَنِي﴾. وهذا هو الفرقُ كلُّه بينهما، وقال كثيرٌ من المفسّرين الأوائل إنها الكلماتُ التي تلقّاها آدمُ فتاب الله عليه.",
+        links: [
+          {
+            ref: "Surah Al-Anbiya (21:87)",
+            ar: "وَذَا ٱلنُّونِ إِذ ذَّهَبَ مُغَٰضِبٗا فَظَنَّ أَن لَّن نَّقۡدِرَ عَلَيۡهِ فَنَادَىٰ فِي ٱلظُّلُمَٰتِ أَن لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبۡحَٰنَكَ إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ",
+            en: "And [mention] the man of the fish, when he went off in anger and thought that We would not decree [anything] upon him. And he called out within the darknesses, \"There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.\"",
+            how: "Yunus in the darkness says the same thing in his own words — I have been of the wrongdoers — and is answered as Adam was.",
+            howAr: "يونسُ في الظلمات يقول الشيءَ نفسه بكلماته: ﴿إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ﴾، فيُجاب كما أُجيب آدم."
+          },
+          {
+            ref: "Surah Al-A'raf (7:16)",
+            ar: "قَالَ فَبِمَآ أَغۡوَيۡتَنِي لَأَقۡعُدَنَّ لَهُمۡ صِرَٰطَكَ ٱلۡمُسۡتَقِيمَ",
+            en: "[Satan] said, \"Because You have put me in error, I will surely sit in wait for them on Your straight path.",
+            how: "Iblis, in the same story, gives the opposite answer: he blames his Lord — because You have led me astray.",
+            howAr: "إبليسُ في القصّة نفسها يجيب الجوابَ المقابل، فيلوم ربَّه: ﴿فَبِمَآ أَغۡوَيۡتَنِي﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:37)",
+            ar: "فَتَلَقَّىٰٓ ءَادَمُ مِن رَّبِّهِۦ كَلِمَٰتٖ فَتَابَ عَلَيۡهِۚ إِنَّهُۥ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ",
+            en: "Then Adam received from his Lord [some] words, and He accepted his repentance. Indeed, it is He who is the Accepting of repentance, the Merciful.",
+            how: "Al-Baqarah says Adam received words from his Lord, and He turned to him; many of the early commentators said these were the words.",
+            howAr: "البقرةُ تقول إنّ آدم أُعطي كلماتٍ قالها فقُبلت توبتُه، وقال كثيرٌ من المفسّرين الأوائل إنها هذه الكلمات: ﴿فَتَلَقَّىٰٓ ءَادَمُ مِن رَّبِّهِۦ كَلِمَٰتٖ فَتَابَ عَلَيۡهِۚ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:16)",
+            ar: "قَالَ رَبِّ إِنِّي ظَلَمۡتُ نَفۡسِي فَٱغۡفِرۡ لِي فَغَفَرَ لَهُۥٓۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ",
+            en: "He said, \"My Lord, indeed I have wronged myself, so forgive me,\" and He forgave him. Indeed, He is the Forgiving, the Merciful.",
+            how: "Musa, after the man he struck fell dead, says the same: my Lord, I have wronged myself, so forgive me — and He forgave him.",
+            howAr: "وموسى بعد أن وكز الرجلَ فمات يقول الشيءَ نفسه: ﴿رَبِّ إِنِّي ظَلَمۡتُ نَفۡسِي فَٱغۡفِرۡ لِي فَغَفَرَ لَهُۥٓۚ﴾."
+          }
+        ],
+        ref: "Surah Al-A'raf (7:23), read with 7:16, 7:20-22, Al-Baqarah (2:37) and Al-Qasas (28:16); the words Adam received: Tafsir Ibn Kathir on 2:37",
+        refAr: "سورة الأعراف، الآية ٢٣، مع الآيات ١٦ و٢٠–٢٢، وسورة البقرة ٣٧، وسورة القصص ١٦؛ والكلماتُ التي تلقّاها آدم: تفسير ابن كثير عند آية البقرة",
+        strength: "tafsir"
       }
     ]
   },
@@ -7295,6 +7545,54 @@ const TADABBUR = {
             howAr: "التحريمُ تطلب من المؤمنين ﴿تُوبُوٓاْ إِلَى ٱللَّهِ تَوۡبَةٗ نَّصُوحًا﴾، والزمرُ تقول لمن أسرف أكثرَ من غيره إنّ البابَ ما زال مفتوحًا: ﴿إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾."
           }
         ]
+      },
+      {
+        n: 11,
+        ar: "وَضَرَبَ ٱللَّهُ مَثَلٗا لِّلَّذِينَ ءَامَنُواْ ٱمۡرَأَتَ فِرۡعَوۡنَ إِذۡ قَالَتۡ رَبِّ ٱبۡنِ لِي عِندَكَ بَيۡتٗا فِي ٱلۡجَنَّةِ وَنَجِّنِي مِن فِرۡعَوۡنَ وَعَمَلِهِۦ وَنَجِّنِي مِنَ ٱلۡقَوۡمِ ٱلظَّٰلِمِينَ",
+        why: "At-Tahrim ends with women set as examples. For those who disbelieve: the wives of Nuh and Lut, married to two righteous servants of Allah — and their husbands could not help them at all against Allah (66:10). For those who believe: the wife of Pharaoh, married to the man who said: I am your lord, the most high (79:24). Marriage to a prophet did not save the first two; marriage to a tyrant did not ruin the third. Every soul answers for itself.\n\nHer prayer has an order worth noticing: my Lord, build for me near You a house in Paradise. She asks for the nearness before the house — 'indaka, with You. An old saying sums it up: the neighbour before the house.\n\nThen she asks to be saved from Pharaoh and his deeds — not only from what he did to her, but from his deeds, from becoming part of them. This is the woman who had once looked at a baby taken from the river and said: a comfort of the eye for me and for you; do not kill him (28:9). The Prophet ﷺ named her, with Maryam the daughter of 'Imran, as the women who reached perfection (al-Bukhari 3411) — and the very next verse is about Maryam.",
+        whyAr: "تُختم سورةُ التحريم بنساءٍ يُضربن مثلًا. فللّذين كفروا: امرأةُ نوح وامرأةُ لوط، ﴿كَانَتَا تَحۡتَ عَبۡدَيۡنِ مِنۡ عِبَادِنَا صَٰلِحَيۡنِ﴾، ولم ينفعهما زوجاهما عند الله بشيء. وللّذين آمنوا: امرأةُ فرعون، زوجةُ الرجل الذي قال: ﴿أَنَا۠ رَبُّكُمُ ٱلۡأَعۡلَىٰ﴾. فالزواجُ من نبيٍّ لم يُنجِ الأوليين، والزواجُ من طاغيةٍ لم يُهلك الثالثة، وكلُّ نفسٍ مسؤولةٌ عن نفسها.\n\nودعاؤها مرتّبٌ ترتيبًا يستحقّ الوقوف: ﴿رَبِّ ٱبۡنِ لِي عِندَكَ بَيۡتٗا فِي ٱلۡجَنَّةِ﴾. قدّمت القربَ على البيت: عندك. وفي ذلك قيل قديمًا: الجارَ قبل الدار.\n\nثم سألت أن تنجو ﴿مِن فِرۡعَوۡنَ وَعَمَلِهِۦ﴾: لا ممّا فعله بها فقط، بل من عمله، من أن تصير جزءًا منه. وهي المرأةُ التي نظرت يومًا إلى رضيعٍ أُخرج من اليمّ فقالت: ﴿قُرَّتُ عَيۡنٖ لِّي وَلَكَۖ لَا تَقۡتُلُوهُ﴾. وقد ذكرها النبيّ ﷺ مع مريم بنت عمران في من كَمُل من النساء (البخاري ٣٤١١)، والآيةُ التي تليها مباشرةً عن مريم.",
+        plain: "The example for believers is a woman married to the worst man of her time; the example for disbelievers is two women married to prophets. Marriage saved no one and ruined no one. And she asked for the nearness before the house: my Lord, build me a house near You.",
+        plainAr: "المثلُ للمؤمنين امرأةٌ زوجُها أسوأُ رجلٍ في زمانه، والمثلُ للكافرين امرأتان زوجاهما نبيّان. فلم يُنجِ الزواجُ أحدًا ولم يُهلك أحدًا. وقد سألت القربَ قبل البيت: أن يبني لها ربُّها بيتًا عنده.",
+        links: [
+          {
+            ref: "Surah At-Tahrim (66:10)",
+            ar: "ضَرَبَ ٱللَّهُ مَثَلٗا لِّلَّذِينَ كَفَرُواْ ٱمۡرَأَتَ نُوحٖ وَٱمۡرَأَتَ لُوطٖۖ كَانَتَا تَحۡتَ عَبۡدَيۡنِ مِنۡ عِبَادِنَا صَٰلِحَيۡنِ فَخَانَتَاهُمَا فَلَمۡ يُغۡنِيَا عَنۡهُمَا مِنَ ٱللَّهِ شَيۡـٔٗا وَقِيلَ ٱدۡخُلَا ٱلنَّارَ مَعَ ٱلدَّٰخِلِينَ",
+            en: "Allah presents an example of those who disbelieved: the wife of Noah and the wife of Lot. They were under two of Our righteous servants but betrayed them, so those prophets did not avail them from Allah at all, and it was said, \"Enter the Fire with those who enter.\"",
+            how: "The verse before gives the opposite example: the wives of Nuh and Lut, married to righteous servants of Allah — and it did not help them at all.",
+            howAr: "والآيةُ التي قبلها تضرب المثلَ المقابل: ﴿ٱمۡرَأَتَ نُوحٖ وَٱمۡرَأَتَ لُوطٖۖ كَانَتَا تَحۡتَ عَبۡدَيۡنِ مِنۡ عِبَادِنَا صَٰلِحَيۡنِ فَخَانَتَاهُمَا فَلَمۡ يُغۡنِيَا عَنۡهُمَا مِنَ ٱللَّهِ شَيۡـٔٗا﴾."
+          },
+          {
+            ref: "Surah An-Naziat (79:24)",
+            ar: "فَقَالَ أَنَا۠ رَبُّكُمُ ٱلۡأَعۡلَىٰ",
+            en: "And said, \"I am your most exalted lord.\"",
+            how: "An-Nazi'at gives the claim of the man she was married to: I am your lord, the most high.",
+            howAr: "النازعاتُ تذكر دعوى الرجل الذي كانت زوجتَه: ﴿فَقَالَ أَنَا۠ رَبُّكُمُ ٱلۡأَعۡلَىٰ﴾."
+          },
+          {
+            ref: "Surah Al-Masad (111:4)",
+            ar: "وَٱمۡرَأَتُهُۥ حَمَّالَةَ ٱلۡحَطَبِ",
+            en: "And his wife [as well] - the carrier of firewood.",
+            how: "Al-Masad gives the wife who went the other way: married to an enemy of the Prophet ﷺ, she joined him in it — and is named with him in the Fire.",
+            howAr: "المسدُ تذكر الزوجةَ التي سارت في الطريق الآخر: زوجةُ عدوٍّ للنبيّ ﷺ شاركته عداوته، فذُكرت معه في النار: ﴿وَٱمۡرَأَتُهُۥ حَمَّالَةَ ٱلۡحَطَبِ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:9)",
+            ar: "وَقَالَتِ ٱمۡرَأَتُ فِرۡعَوۡنَ قُرَّتُ عَيۡنٖ لِّي وَلَكَۖ لَا تَقۡتُلُوهُ عَسَىٰٓ أَن يَنفَعَنَآ أَوۡ نَتَّخِذَهُۥ وَلَدٗا وَهُمۡ لَا يَشۡعُرُونَ",
+            en: "And the wife of Pharaoh said, \"[He will be] a comfort of the eye for me and for you. Do not kill him; perhaps he may benefit us, or we may adopt him as a son.\" And they perceived not.",
+            how: "Al-Qasas shows her years earlier, over a baby taken from the river: a comfort of the eye for me and for you — do not kill him.",
+            howAr: "القصصُ تُريها قبل ذلك بسنين، أمامَ رضيعٍ أُخرج من اليمّ: ﴿قُرَّتُ عَيۡنٖ لِّي وَلَكَۖ لَا تَقۡتُلُوهُ﴾."
+          },
+          {
+            ref: "Surah At-Tahrim (66:12)",
+            ar: "وَمَرۡيَمَ ٱبۡنَتَ عِمۡرَٰنَ ٱلَّتِيٓ أَحۡصَنَتۡ فَرۡجَهَا فَنَفَخۡنَا فِيهِ مِن رُّوحِنَا وَصَدَّقَتۡ بِكَلِمَٰتِ رَبِّهَا وَكُتُبِهِۦ وَكَانَتۡ مِنَ ٱلۡقَٰنِتِينَ",
+            en: "And [the example of] Mary, the daughter of 'Imran, who guarded her chastity, so We blew into [her garment] through Our angel, and she believed in the words of her Lord and His scriptures and was of the devoutly obedient.",
+            how: "The next verse is the second example for believers: Maryam the daughter of 'Imran — the two women the Prophet ﷺ named together.",
+            howAr: "والآيةُ التي تليها هي المثلُ الثاني للمؤمنين: ﴿وَمَرۡيَمَ ٱبۡنَتَ عِمۡرَٰنَ﴾ — والمرأتان ذكرهما النبيّ ﷺ معًا."
+          }
+        ],
+        ref: "Surah At-Tahrim (66:11), read with 66:10, 66:12 and Al-Qasas (28:9); the women who reached perfection: Sahih al-Bukhari 3411, from Abu Musa",
+        refAr: "سورة التحريم، الآية ١١، مع الآيتين ١٠ و١٢ وسورة القصص ٩؛ ومن كَمُل من النساء: صحيح البخاري ٣٤١١، عن أبي موسى رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -8687,6 +8985,13 @@ const TADABBUR = {
             en: "O you who have believed, when you are told, \"Space yourselves\" in assemblies, then make space; Allah will make space for you. And when you are told, \"Arise,\" then arise; Allah will raise those who have believed among you and those who were given knowledge, by degrees. And Allah is Acquainted with what you do.",
             how: "Fatir says it is the people of knowledge who truly fear Allah; Al-Mujadila says Allah raises those given knowledge by degrees. The fear and the rank grow from the same knowledge.",
             howAr: "فاطرٌ تقول إنّ الذين يخشون اللهَ حقًّا هم العلماء، والمجادلةُ تقول: ﴿يَرۡفَعِ ٱللَّهُ ٱلَّذِينَ ءَامَنُواْ مِنكُمۡ وَٱلَّذِينَ أُوتُواْ ٱلۡعِلۡمَ دَرَجَٰتٖۚ﴾. فالخشيةُ والرفعةُ ثمرتا علمٍ واحد."
+          },
+          {
+            ref: "Surah Ta-Ha (20:114)",
+            ar: "فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۗ وَلَا تَعۡجَلۡ بِٱلۡقُرۡءَانِ مِن قَبۡلِ أَن يُقۡضَىٰٓ إِلَيۡكَ وَحۡيُهُۥۖ وَقُل رَّبِّ زِدۡنِي عِلۡمٗا",
+            en: "So high [above all] is Allah, the Sovereign, the Truth. And, [O Muhammad], do not hasten with [recitation of] the Qur'an before its revelation is completed to you, and say, \"My Lord, increase me in knowledge.\"",
+            how: "Fatir says knowledge is what brings true fear of Allah; Ta-Ha gives the one request for more that the Prophet ﷺ was told to make: my Lord, increase me in knowledge.",
+            howAr: "فاطرٌ تقول إنّ العلم هو ما يورث خشيةَ الله، وسورةُ طه تذكر الطلبَ الوحيد للمزيد الذي أُمر به النبيّ ﷺ: ﴿وَقُل رَّبِّ زِدۡنِي عِلۡمٗا﴾."
           }
         ],
         ref: "Surah Fatir (35:28), read with 35:27",
@@ -10055,6 +10360,40 @@ const TADABBUR = {
             howAr: "الحجراتُ إجراءٌ في حالةٍ واحدة: خبرٌ يجيء ممّن لا يُوثق به. والإسراءُ هي القاعدةُ التي جاء منها، وهي أوسع: لا تتحرّك بشيءٍ لم تُثبته، جاء به من جاء."
           }
         ]
+      },
+      {
+        n: 10,
+        ar: "إِنَّمَا ٱلۡمُؤۡمِنُونَ إِخۡوَةٞ فَأَصۡلِحُواْ بَيۡنَ أَخَوَيۡكُمۡۚ وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُرۡحَمُونَ",
+        why: "The verse before speaks of two groups of believers who fight each other — and still calls them believers. It orders the others to make peace between them, and, if one keeps transgressing, to fight it until it returns to the command of Allah (49:9). Then this verse gives the reason the matter cannot be left alone: innama — the believers are nothing but brothers.\n\nSo the instruction that follows is not to take a side. It is: make peace between your two brothers. The word is dual — even two people quarrelling are the whole community's concern.\n\nThe Prophet ﷺ spelled out what the brotherhood forbids: the Muslim is the brother of the Muslim — he does not wrong him, does not abandon him, and does not look down on him; and, pointing to his chest three times: taqwa is here (Muslim 2564).\n\nAl 'Imran says where the brotherhood came from: you were enemies, and He joined your hearts, and by His favour you became brothers (3:103). It was given, not earned — which is why the verse ends: and fear Allah, so that you may receive mercy.",
+        whyAr: "الآيةُ التي قبلها تذكر فريقين من المؤمنين يقتتلان، ولا تزال تسمّيهما مؤمنين، وتأمر الباقين بالإصلاح بينهما، فإن تعدّى أحدُهما قوتل حتى يرجع إلى حكم الله. ثم تذكر هذه الآيةُ لماذا لا يُترك الأمر: ﴿إِنَّمَا ٱلۡمُؤۡمِنُونَ إِخۡوَةٞ﴾.\n\nفليس الأمرُ الذي يليها أن تنحاز إلى طرف، بل: ﴿فَأَصۡلِحُواْ بَيۡنَ أَخَوَيۡكُمۡۚ﴾. واللفظُ مثنّى: فحتى خصامُ اثنين همٌّ للجماعة كلّها.\n\nوبيّن النبيّ ﷺ ما تمنعه هذه الأخوّة: «الْمُسْلِمُ أَخُو الْمُسْلِمِ لاَ يَظْلِمُهُ وَلاَ يَخْذُلُهُ وَلاَ يَحْقِرُهُ»، وأشار إلى صدره ثلاثَ مرّات: «التَّقْوَى هَا هُنَا» (مسلم ٢٥٦٤).\n\nوآلُ عمران تذكر من أين جاءت الأخوّة: ﴿إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا﴾. فهي عطاءٌ لا كسب، ولهذا تُختم الآية: ﴿وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُرۡحَمُونَ﴾.",
+        plain: "Even believers who fight each other are still called believers — and the reason given for making peace between them is that believers are nothing but brothers. The instruction is not to take a side: make peace between your two brothers.",
+        plainAr: "حتى المؤمنون الذين يقتتلون لا يزالون يُسمَّون مؤمنين، وسببُ الأمر بالإصلاح بينهم أنهم إخوة. فليس المطلوبُ الانحيازَ إلى طرف، بل الإصلاحُ بين الأخوين.",
+        links: [
+          {
+            ref: "Surah Ali 'Imran (3:103)",
+            ar: "وَٱعۡتَصِمُواْ بِحَبۡلِ ٱللَّهِ جَمِيعٗا وَلَا تَفَرَّقُواْۚ وَٱذۡكُرُواْ نِعۡمَتَ ٱللَّهِ عَلَيۡكُمۡ إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا وَكُنتُمۡ عَلَىٰ شَفَا حُفۡرَةٖ مِّنَ ٱلنَّارِ فَأَنقَذَكُم مِّنۡهَاۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمۡ ءَايَٰتِهِۦ لَعَلَّكُمۡ تَهۡتَدُونَ",
+            en: "And hold firmly to the rope of Allah all together and do not become divided. And remember the favor of Allah upon you - when you were enemies and He brought your hearts together and you became, by His favor, brothers. And you were on the edge of a pit of the Fire, and He saved you from it. Thus does Allah make clear to you His verses that you may be guided.",
+            how: "Al-Hujurat says the believers are brothers; Al 'Imran says how they became so: you were enemies, and He joined your hearts, and by His favour you became brothers.",
+            howAr: "الحجراتُ تقول إنّ المؤمنين إخوة، وآلُ عمران تقول كيف صاروا كذلك: ﴿إِذۡ كُنتُمۡ أَعۡدَآءٗ فَأَلَّفَ بَيۡنَ قُلُوبِكُمۡ فَأَصۡبَحۡتُم بِنِعۡمَتِهِۦٓ إِخۡوَٰنٗا﴾."
+          },
+          {
+            ref: "Surah Al-Hujurat (49:9)",
+            ar: "وَإِن طَآئِفَتَانِ مِنَ ٱلۡمُؤۡمِنِينَ ٱقۡتَتَلُواْ فَأَصۡلِحُواْ بَيۡنَهُمَاۖ فَإِنۢ بَغَتۡ إِحۡدَىٰهُمَا عَلَى ٱلۡأُخۡرَىٰ فَقَٰتِلُواْ ٱلَّتِي تَبۡغِي حَتَّىٰ تَفِيٓءَ إِلَىٰٓ أَمۡرِ ٱللَّهِۚ فَإِن فَآءَتۡ فَأَصۡلِحُواْ بَيۡنَهُمَا بِٱلۡعَدۡلِ وَأَقۡسِطُوٓاْۖ إِنَّ ٱللَّهَ يُحِبُّ ٱلۡمُقۡسِطِينَ",
+            en: "And if two factions among the believers should fight, then make settlement between the two. But if one of them oppresses the other, then fight against the one that oppresses until it returns to the ordinance of Allah. And if it returns, then make settlement between them in justice and act justly. Indeed, Allah loves those who act justly.",
+            how: "The verse before is the case it rules on: two groups of believers who fight — still called believers — and the order to make peace between them with justice.",
+            howAr: "والآيةُ التي قبلها هي الحالُ التي تحكم فيها: فريقان من المؤمنين يقتتلان — ولا يزالان مؤمنَين — والأمرُ بالإصلاح بينهما بالعدل: ﴿فَأَصۡلِحُواْ بَيۡنَهُمَا بِٱلۡعَدۡلِ وَأَقۡسِطُوٓاْۖ﴾."
+          },
+          {
+            ref: "Surah Al-Hashr (59:10)",
+            ar: "وَٱلَّذِينَ جَآءُو مِنۢ بَعۡدِهِمۡ يَقُولُونَ رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ رَبَّنَآ إِنَّكَ رَءُوفٞ رَّحِيمٌ",
+            en: "And [there is a share for] those who came after them, saying, \"Our Lord, forgive us and our brothers who preceded us in faith and put not in our hearts [any] resentment toward those who have believed. Our Lord, indeed You are Kind and Merciful.\"",
+            how: "Al-Hashr gives the brotherhood across generations: our Lord, forgive us and our brothers who preceded us in faith.",
+            howAr: "الحشرُ تذكر الأخوّةَ عبر الأجيال: ﴿رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ﴾."
+          }
+        ],
+        ref: "Surah Al-Hujurat (49:10), read with 49:9 and Al 'Imran (3:103); the brother not wronged, abandoned or looked down on: Sahih Muslim 2564, from Abu Hurayrah",
+        refAr: "سورة الحجرات، الآية ١٠، مع الآية ٩ وسورة آل عمران ١٠٣؛ والمسلمُ أخو المسلم: صحيح مسلم ٢٥٦٤، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -11291,6 +11630,13 @@ const TADABBUR = {
             en: "And the heaven and earth wept not for them, nor were they reprieved.",
             how: "An-Nazi'at gives the claim; Ad-Dukhan gives how much it was worth when he drowned: neither heaven nor earth wept for them.",
             howAr: "النازعاتُ تذكر الدعوى، والدخانُ تذكر قيمتها حين غرق: ﴿فَمَا بَكَتۡ عَلَيۡهِمُ ٱلسَّمَآءُ وَٱلۡأَرۡضُ﴾."
+          },
+          {
+            ref: "Surah At-Tahrim (66:11)",
+            ar: "وَضَرَبَ ٱللَّهُ مَثَلٗا لِّلَّذِينَ ءَامَنُواْ ٱمۡرَأَتَ فِرۡعَوۡنَ إِذۡ قَالَتۡ رَبِّ ٱبۡنِ لِي عِندَكَ بَيۡتٗا فِي ٱلۡجَنَّةِ وَنَجِّنِي مِن فِرۡعَوۡنَ وَعَمَلِهِۦ وَنَجِّنِي مِنَ ٱلۡقَوۡمِ ٱلظَّٰلِمِينَ",
+            en: "And Allah presents an example of those who believed: the wife of Pharaoh, when she said, \"My Lord, build for me near You a house in Paradise and save me from Pharaoh and his deeds and save me from the wrongdoing people.\"",
+            how: "An-Nazi'at gives Pharaoh's claim; At-Tahrim gives his own wife's prayer to be saved from him and from his deeds.",
+            howAr: "النازعاتُ تذكر دعوى فرعون، والتحريمُ تذكر دعاءَ زوجته أن تنجو منه ومن عمله: ﴿رَبِّ ٱبۡنِ لِي عِندَكَ بَيۡتٗا فِي ٱلۡجَنَّةِ وَنَجِّنِي مِن فِرۡعَوۡنَ وَعَمَلِهِۦ﴾."
           }
         ],
         ref: "Surah An-Nazi'at (79:24)",
@@ -12653,6 +12999,13 @@ const TADABBUR = {
             en: "And He taught Adam the names - all of them. Then He showed them to the angels and said, \"Inform Me of the names of these, if you are truthful.\"",
             how: "Al-'Alaq says man was taught what he did not know; Al-Baqarah shows the first time it happened: He taught Adam the names, all of them.",
             howAr: "العلقُ تقول إنّ الإنسان عُلّم ما لم يعلم، والبقرةُ تُريك أوّلَ مرّةٍ حدث فيها ذلك: ﴿وَعَلَّمَ ءَادَمَ ٱلۡأَسۡمَآءَ كُلَّهَا﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:114)",
+            ar: "فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۗ وَلَا تَعۡجَلۡ بِٱلۡقُرۡءَانِ مِن قَبۡلِ أَن يُقۡضَىٰٓ إِلَيۡكَ وَحۡيُهُۥۖ وَقُل رَّبِّ زِدۡنِي عِلۡمٗا",
+            en: "So high [above all] is Allah, the Sovereign, the Truth. And, [O Muhammad], do not hasten with [recitation of] the Qur'an before its revelation is completed to you, and say, \"My Lord, increase me in knowledge.\"",
+            how: "Al-'Alaq gives the first lesson — He taught man what he did not know; Ta-Ha gives the prayer for more: my Lord, increase me in knowledge.",
+            howAr: "العلقُ تذكر أوّلَ درس: أنّ الإنسان تعلّم من ربّه ما كان يجهل، وسورةُ طه تذكر الدعاءَ بالمزيد: ﴿وَقُل رَّبِّ زِدۡنِي عِلۡمٗا﴾."
           }
         ],
         ref: "Surah Al-'Alaq (96:3-5)",
@@ -14108,6 +14461,15 @@ const TADABBUR = {
         whyAr: "لم تُختم السورةُ على الرجل. وإنما خُتمت على امرأته، وعلى صورةٍ بُنيت ممّا كانت تصنع.\n\n﴿وَٱمۡرَأَتُهُۥ حَمَّالَةَ ٱلۡحَطَبِ ۝ فِي جِيدِهَا حَبۡلٞ مِّن مَّسَدِۭ﴾.\n\nذكر المفسّرون وجه الوصف: أنها كانت تحمل الشوك والحطب فتطرحه في طريق النبيّ ﷺ. فأُخذت العقوبةُ من الجناية. حملت الحطب لتُؤذيه؛ فسُمّيت أبدًا حمّالة الحطب.\n\nوالحبلُ في جيدها هو المبدأ نفسُه أبعدَ من ذلك. وزاد بعضُ المفسّرين تفصيلًا آخر: أنّ لها قلادةً نفيسةً أقسمت لتُنفقنّها في عداوته. وعلى هذا فالحُليّ والحبلُ في موضعٍ واحدٍ من عنقٍ واحد.\n\nوالذي يستحقّ النظر في الجملة دقّةُ السورة في المُجازاة. فليس فيها شيءٌ اعتباطًا. فاليدان اللتان استُعملتا هما اللتان تبَّتا، والحطبُ الذي حُمل صار لقبًا، والجِيدُ الذي حُلّي حمل الحبل. فاسمُ الرجل أدّى عاقبته، وفعلُ المرأة صار وصفَها.",
         plain: "She used to scatter thorns in his path — so she is named forever as the carrier of wood. The punishment is drawn from the crime. Some scholars add that she had a fine necklace she swore to spend against him; the rope takes its place on the same neck.",
         plainAr: "كانت تطرح الشوك في طريقه — فسُمّيت أبدًا حمّالة الحطب. فأُخذت العقوبةُ من الجناية. وزاد بعضُ المفسّرين أنّ لها قلادةً نفيسةً أقسمت لتُنفقنّها في عداوته؛ فحلّ الحبلُ محلَّها من العنق نفسِه.",
+        links: [
+          {
+            ref: "Surah At-Tahrim (66:11)",
+            ar: "وَضَرَبَ ٱللَّهُ مَثَلٗا لِّلَّذِينَ ءَامَنُواْ ٱمۡرَأَتَ فِرۡعَوۡنَ إِذۡ قَالَتۡ رَبِّ ٱبۡنِ لِي عِندَكَ بَيۡتٗا فِي ٱلۡجَنَّةِ وَنَجِّنِي مِن فِرۡعَوۡنَ وَعَمَلِهِۦ وَنَجِّنِي مِنَ ٱلۡقَوۡمِ ٱلظَّٰلِمِينَ",
+            en: "And Allah presents an example of those who believed: the wife of Pharaoh, when she said, \"My Lord, build for me near You a house in Paradise and save me from Pharaoh and his deeds and save me from the wrongdoing people.\"",
+            how: "Al-Masad gives a wife who joined her husband in his hostility; At-Tahrim gives the wife of Pharaoh, who prayed to be saved from her husband and his deeds.",
+            howAr: "المسدُ تذكر زوجةً شاركت زوجَها عداوتَه، والتحريمُ تذكر امرأةَ فرعون التي دعت أن تنجو من زوجها وعمله: ﴿وَنَجِّنِي مِن فِرۡعَوۡنَ وَعَمَلِهِۦ﴾."
+          }
+        ],
         ref: "Surah Al-Masad (111:4-5)",
         strength: "quran"
       }
