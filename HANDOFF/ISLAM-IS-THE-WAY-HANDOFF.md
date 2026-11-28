@@ -8063,3 +8063,38 @@ to the file's six rules (28 cards in 21 surahs now):
   tries; orbit (1961) and the Moon (1969) are inside the heavens and the earth.
 * The panel's lead now says one verse "foretold how a war would end".
 * functest `miracles_romans_pharaoh_space`.
+
+
+# PART 49 — More explanations, and the verses connected to each other
+
+The owner, 28 November 2026: "when I say connections, I don't mean
+connections between pages, I mean connections between verses in the surah
+or in different surahs… continue adding connections and explanations."
+
+256 of the 444 explained verses had NO link to another verse, and pairs that
+answer each other were not joined. Batch 1 (written with a scratch script
+that uses tools/quran-cut.py; every quotation cut, never typed):
+
+* **36 new links**, each written from both sides: 87:14 ↔ 91:9 ↔ 23:1 (the
+  three "qad aflaha" of Allah; 87:14 also → 20:64, the fourth, Pharaoh's
+  camp: "success is whoever wins today"), 74:38 ↔ 52:21 (rahinah / rahin),
+  39:53 ↔ 12:87 (two words for despair) and 39:53 → 4:48 (the classical
+  reconciliation: repentance vs dying upon shirk), 41:34 ↔ 42:40, 50:16 ↔
+  56:85 and ↔ 2:186, 25:63 ↔ 31:18, 35:28 ↔ 58:11, 21:87 ↔ 68:48, 34:13 ↔
+  14:7, 113:1 ↔ 114:1, 38:29 ↔ 4:82, 29:2 → 2:214, 16:97 ↔ 20:124, and the
+  new entries' partners below.
+* **6 new explained verses** (450 now), each built around a pair the Quran
+  itself makes: **37:84** with 26:89 (qalbun salim — only these two places,
+  both Ibrahim: the prayer and the answer) and 2:10 (the diseased heart);
+  **47:24** with 4:82 and 38:29 (locks on hearts; tadabbur from dubur, Lisan
+  al-Arab); **24:22** (Abu Bakr and Mistah — al-Bukhari 4750, read at its
+  number: «بلى، والله إني أحب أن يغفر الله لي») with **64:14** (pardon,
+  overlook, forgive; Ibn Abbas's occasion — at-Tirmidhi 3317, hasan per
+  al-Albani); **39:23** with 8:2 and 13:28 (the shiver, then the softening);
+  **25:43** with 45:23 (ittakhadha ilahahu hawahu — only these two places).
+* Verified by search over the whole Mushaf text: qalbun salim (26:89, 37:84),
+  ilahahu hawahu (25:43, 45:23), qad aflaha (20:64, 23:1, 87:14, 91:9).
+* checkcuts.py: the only new flag (a one-word cut «مِنۡ») was widened; all
+  other flags in the touched entries were there before (bold inside ﴿﴾,
+  shortened cuts) — compared against the previous file. Note: checkcuts.py
+  crashes on surah 114 (the last block ends "\n  }\n};", not "\n  },").
