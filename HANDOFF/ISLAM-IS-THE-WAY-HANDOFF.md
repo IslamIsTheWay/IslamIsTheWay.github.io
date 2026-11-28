@@ -8098,3 +8098,27 @@ that uses tools/quran-cut.py; every quotation cut, never typed):
   other flags in the touched entries were there before (bold inside ﴿﴾,
   shortened cuts) — compared against the previous file. Note: checkcuts.py
   crashes on surah 114 (the last block ends "\n  }\n};", not "\n  },").
+
+**Batch 2 (the same day): 70 more links, all two-way, across 62 entries.**
+The three witnesses on the Day — the earth (99:4-5), the self (75:14-15),
+the noble recorders (82:10-12) — each linked to the other two; 89:27 ↔ 13:28
+(the reassured soul and hearts at rest, one root); 80:34-37 ↔ 82:19 and ↔
+43:67 (family and friends that Day); 104:3 ↔ 111:2 and 100:8 ↔ 89:17-20
+(wealth); 96:3-5 ↔ 68:1-3 (the pen); 93:3 ↔ 94:1; 105:5 ↔ 106:1; 108:3 ↔
+94:4; 110:3 ↔ 48:1 (victory and forgiveness); 76:8 ↔ 2:177 ('ala hubbihi);
+84:6 ↔ 90:4 (kadh, kabad); 84:7-9 ↔ 69:19; 86:9 ↔ 100:9-11; 99:6 ↔ 101:4-5;
+100:6 ↔ 14:34; 104:1 ↔ 49:12; 10:62 ↔ 46:13 ↔ 11:112 ↔ 72:16 (staying
+straight); 17:32 ↔ 24:30; 27:62 ↔ 2:186; 46:35 ↔ 68:48 ↔ 52:48 (be patient
+for your Lord's decision — 52:48 and 68:48 open with the same words); 57:16
+↔ 39:23; 69:44 ↔ 53:3-4; 96:6 ↔ 92:8-10 (istaghna); 102:5-6 ↔ 102:7, and
+102:7 → 56:95 (haqq al-yaqin, the third degree); 106:3 → 2:126 (Ibrahim's
+prayer for a safe land and provision, answered for Quraysh); 88:17 ↔ 80:24;
+39:10 ↔ 2:153; 31:17 ↔ 103:3. A link may carry a RUN ("Surah X (82:10-12)",
+its verses joined with " ۝ ") — L(s, a, how, howAr, a2) in the scratch helper.
+
+**tools/checkcuts.py, improved:** usage is `<surah> <verse> [<verse> …]`; a
+cut ending on a word with the Mushaf's own pause mark is not dangling; a
+run's " • " is split like " ۝ " (it was reporting every multi-verse entry's
+own text as "not a Mushaf run"); surah 114 no longer crashes it. Over the
+touched entries the flags fell from 54 to 37, every remaining one older
+than today (bold inside ﴿﴾, or a word quoted without its attached letter).

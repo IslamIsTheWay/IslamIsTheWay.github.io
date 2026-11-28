@@ -1,7 +1,16 @@
 # -*- coding: utf-8 -*-
 """Every Arabic quotation in the tadabbur entries I added must be (1) a run of
 whole words of some verse in js/quran-text, and (2) not left dangling on a
-conjunction or preposition. usage: python checkcuts.py 2 11 22 26 …"""
+conjunction or preposition.
+
+    usage: python checkcuts.py <surah> <verse> [<verse> …]
+
+A cut that ends on a word carrying one of the Mushaf's own pause marks
+(ۖ ۗ ۚ …) ends where the Mushaf itself pauses, so it is not dangling even when
+that word is a short one like لَهُمۡ. A run of verses is joined with " ۝ " in
+prose and with " • " in an entry's own `ar`; both are split before checking.
+(28 November 2026: the " • " runs were being reported as "not a Mushaf run",
+and the last surah, 114, crashed the script — its block ends "\\n  }\\n};".)"""
 import io, os, re, sys, unicodedata
 import importlib.util
 _here = os.path.dirname(os.path.abspath(__file__))
@@ -15,6 +24,9 @@ DANGLING = {"و", "وَ", "مِن", "مِنَ", "مِّن", "إِلَى", "إِ�
 
 def bare(x):
     return "".join(c for c in unicodedata.normalize("NFD", x) if not unicodedata.combining(c))
+
+DANGLING_BARE = {bare(d) for d in DANGLING}
+PAUSE = re.compile("[ۖ-ۜ]$")     # the Mushaf's own pause marks: a place to stop
 
 ALL = None
 def is_run(text):
@@ -31,7 +43,9 @@ def main():
     surah_num = int(sys.argv[1])
     nums = [int(x) for x in sys.argv[2:]]
     s = io.open(os.path.join(os.path.dirname(_here), "js", "tadabbur.js"), encoding="utf-8").read()
-    start = s.index("\n  %d: {" % surah_num); end = s.index("\n  },", start)
+    start = s.index("\n  %d: {" % surah_num)
+    close = re.compile(r"\n  \},?\n").search(s, start)     # 114 ends "\n  }\n};"
+    end = close.start() if close else len(s)
     seg = s[start:end]
     bad = 0
     for n in nums:
@@ -43,12 +57,12 @@ def main():
         quotes += re.findall(r'\n        ar: "([^"]+)"', block)          # the verse itself
         quotes += re.findall(r'\n            w: "([^"]+)"', block)       # the words
         for whole in quotes:
-          for qt in whole.split(" ۝ "):   # a quotation may span verses
+          for qt in re.split(r" [۝•] ", whole):   # a quotation may span verses
             where = is_run(qt)
             last = qt.split()[-1]
             if not where:
                 print("  %d:%d  NOT A MUSHAF RUN: %s" % (surah_num, n, qt[:60])); bad += 1
-            elif bare(last) in {bare(d) for d in DANGLING}:
+            elif bare(last) in DANGLING_BARE and not PAUSE.search(last):
                 print("  %d:%d  ends on a joining word (%s): …%s" % (surah_num, n, last, qt[-45:])); bad += 1
     print("surah %d: %d quotations checked in %d verses, %d to look at"
           % (surah_num, len(nums), len(nums), bad))
