@@ -927,6 +927,13 @@ const TADABBUR = {
             en: "And your Lord says, \"Call upon Me; I will respond to you.\" Indeed, those who disdain My worship will enter Hell [rendered] contemptible.",
             how: "Al-Baqarah says He is near and answers; Ghafir turns it into a command, and names the refusal to ask as arrogance.",
             howAr: "البقرةُ تقول إنه قريبٌ يجيب، وغافرٌ تجعل ذلك أمرًا، وتسمّي تركَ السؤال استكبارًا: ﴿إِنَّ ٱلَّذِينَ يَسۡتَكۡبِرُونَ عَنۡ عِبَادَتِي﴾."
+          },
+          {
+            ref: "Surah Maryam (19:4)",
+            ar: "قَالَ رَبِّ إِنِّي وَهَنَ ٱلۡعَظۡمُ مِنِّي وَٱشۡتَعَلَ ٱلرَّأۡسُ شَيۡبٗا وَلَمۡ أَكُنۢ بِدُعَآئِكَ رَبِّ شَقِيّٗا",
+            en: "He said, \"My Lord, indeed my bones have weakened, and my head has filled with white, and never have I been in my supplication to You, my Lord, unhappy.",
+            how: "Al-Baqarah says He is near and answers; Zakariyya, old and weak, says what a lifetime of asking had taught him: never was I disappointed in calling You, my Lord.",
+            howAr: "البقرةُ تقول إنه قريبٌ يجيب، وزكريّا — وقد كبر وضعف — يقول ما علّمه عمرٌ من الدعاء: ﴿وَلَمۡ أَكُنۢ بِدُعَآئِكَ رَبِّ شَقِيّٗا﴾."
           }
         ]
       },
@@ -2210,6 +2217,29 @@ const TADABBUR = {
         whyAr: "ليس الموعودُ ثوابَ الآخرة، وإنما ﴿وُدّٗا﴾ في الدنيا، يُوضع في قلوب الناس، والواضعُ ﴿ٱلرَّحۡمَٰنُ﴾.\n\nوانظر معناه في الواقع: فالمحبّةُ أعزُّ ما لا يستطيع المرء أن يصطنعه لنفسه بصدق. يقدر أن يشتري الأنظار، وأن يُهاب، وأن يُتبَع؛ ولا يقدر أن يُحبَّب — وكلّما اجتهد في طلبها قصدًا ظهر تكلّفه. فأسندتها الآيةُ إليه سبحانه، وعلّقتها بشيءٍ آخر بالكلّيّة: الإيمانِ والعمل الصالح يُصنعان لذاتهما.\n\nواختيارُ الاسم مقصود: لا العزيز ولا الجبّار، بل **الرحمن** — فجُعلت المودّةُ فيضًا من الرحمة نفسها التي تسير بها السورةُ من أوّل سطرٍ فيها، حيث نادى زكريّا ربَّه سرًّا فأُجيب.",
         plain: "The promise is not reward later — it is love, placed now, in the hearts of other people. A person can buy attention or be feared; he cannot make himself loved. So the verse assigns it to Allah and attaches it to belief and action done for their own sake.",
         plainAr: "ليس الوعدُ جزاءً مؤجَّلًا، بل وُدًّا يُوضع الآن في قلوب الناس. فالمرءُ يستطيع أن يشتري الانتباه وأن يُخاف، ولا يستطيع أن يجعل نفسه محبوبًا. فأسندت الآيةُ ذلك إلى الله، وعلّقته بإيمانٍ وعملٍ يُقصد بهما وجهُه.",
+        links: [
+          {
+            ref: "Surah Al-Buruj (85:14)",
+            ar: "وَهُوَ ٱلۡغَفُورُ ٱلۡوَدُودُ",
+            en: "And He is the Forgiving, the Affectionate,",
+            how: "Surah Maryam promises that ar-Rahman will place love — wudd — for those who believe and do good. Al-Buruj names Him from the same root: He is the Forgiving, al-Wadud, the Loving.",
+            howAr: "سورةُ مريم تَعِد المؤمنين العاملين بأنّ الرحمن ﴿سَيَجۡعَلُ لَهُمُ ٱلرَّحۡمَٰنُ وُدّٗا﴾، والبروجُ تسمّيه من الجذر نفسه: ﴿وَهُوَ ٱلۡغَفُورُ ٱلۡوَدُودُ﴾."
+          },
+          {
+            ref: "Surah Al-Anfal (8:63)",
+            ar: "وَأَلَّفَ بَيۡنَ قُلُوبِهِمۡۚ لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ وَلَٰكِنَّ ٱللَّهَ أَلَّفَ بَيۡنَهُمۡۚ إِنَّهُۥ عَزِيزٌ حَكِيمٞ",
+            en: "And brought together their hearts. If you had spent all that is in the earth, you could not have brought their hearts together; but Allah brought them together. Indeed, He is Exalted in Might and Wise.",
+            how: "Al-Anfal says why such love can only come from Him: had you spent all that is on earth, you could not have joined their hearts — but Allah joined them.",
+            howAr: "الأنفالُ تقول لماذا لا تأتي هذه المحبّةُ إلا منه: ﴿لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ وَلَٰكِنَّ ٱللَّهَ أَلَّفَ بَيۡنَهُمۡۚ﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:39)",
+            ar: "أَنِ ٱقۡذِفِيهِ فِي ٱلتَّابُوتِ فَٱقۡذِفِيهِ فِي ٱلۡيَمِّ فَلۡيُلۡقِهِ ٱلۡيَمُّ بِٱلسَّاحِلِ يَأۡخُذۡهُ عَدُوّٞ لِّي وَعَدُوّٞ لَّهُۥۚ وَأَلۡقَيۡتُ عَلَيۡكَ مَحَبَّةٗ مِّنِّي وَلِتُصۡنَعَ عَلَىٰ عَيۡنِيٓ",
+            en: "[Saying], 'Cast him into the chest and cast it into the river, and the river will throw it onto the bank; there will take him an enemy to Me and an enemy to him.' And I bestowed upon you love from Me that you would be brought up under My eye.",
+            how: "Ta-Ha shows it given to Musa as a baby, before he had done anything at all: I cast upon you love from Me.",
+            howAr: "سورةُ طه تُريكها تُعطى لموسى رضيعًا، قبل أن يعمل شيئًا: ﴿وَأَلۡقَيۡتُ عَلَيۡكَ مَحَبَّةٗ مِّنِّي﴾."
+          }
+        ],
         ref: "Surah Maryam (19:96)",
         strength: "quran"
       },
@@ -2231,7 +2261,23 @@ const TADABBUR = {
           }
         ],
         plain: "In plain words: he described how weak he had become before he asked for anything, and reminded his Lord that asking Him had never once let him down.",
-        plainAr: "بعبارة أخرى: وصف ضعفه قبل أن يسأل شيئًا، وذكّر ربّه أنّ دعاءه لم يخِب أبدًا."
+        plainAr: "بعبارة أخرى: وصف ضعفه قبل أن يسأل شيئًا، وذكّر ربّه أنّ دعاءه لم يخِب أبدًا.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:186)",
+            ar: "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌۖ أُجِيبُ دَعۡوَةَ ٱلدَّاعِ إِذَا دَعَانِۖ فَلۡيَسۡتَجِيبُواْ لِي وَلۡيُؤۡمِنُواْ بِي لَعَلَّهُمۡ يَرۡشُدُونَ",
+            en: "And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me [by obedience] and believe in Me that they may be [rightly] guided.",
+            how: "Zakariyya says he was never once left disappointed in calling his Lord. Al-Baqarah says why: I am near; I answer the call of the caller when he calls Me.",
+            howAr: "زكريّا يقول إنه لم يكن يومًا خائبًا في دعاء ربّه، والبقرةُ تقول لماذا: ﴿فَإِنِّي قَرِيبٌۖ أُجِيبُ دَعۡوَةَ ٱلدَّاعِ إِذَا دَعَانِۖ﴾."
+          },
+          {
+            ref: "Surah Al-Anbiya (21:89-90)",
+            ar: "وَزَكَرِيَّآ إِذۡ نَادَىٰ رَبَّهُۥ رَبِّ لَا تَذَرۡنِي فَرۡدٗا وَأَنتَ خَيۡرُ ٱلۡوَٰرِثِينَ ۝ فَٱسۡتَجَبۡنَا لَهُۥ وَوَهَبۡنَا لَهُۥ يَحۡيَىٰ وَأَصۡلَحۡنَا لَهُۥ زَوۡجَهُۥٓۚ إِنَّهُمۡ كَانُواْ يُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِ وَيَدۡعُونَنَا رَغَبٗا وَرَهَبٗاۖ وَكَانُواْ لَنَا خَٰشِعِينَ",
+            en: "And [mention] Zechariah, when he called to his Lord, \"My Lord, do not leave me alone [with no heir], while you are the best of inheritors.\" So We responded to him, and We gave to him John, and amended for him his wife. Indeed, they used to hasten to good deeds and supplicate Us in hope and fear, and they were to Us humbly submissive.",
+            how: "Al-Anbiya tells the same prayer in a few words — my Lord, do not leave me alone — gives the answer, and names what that household was known for: they hastened to good deeds, and called on Us in hope and in fear.",
+            howAr: "الأنبياءُ تذكر الدعاءَ نفسه بكلماتٍ قليلة: ﴿رَبِّ لَا تَذَرۡنِي فَرۡدٗا﴾، ثم الإجابة، ثم ما عُرف به ذلك البيت: ﴿إِنَّهُمۡ كَانُواْ يُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِ وَيَدۡعُونَنَا رَغَبٗا وَرَهَبٗاۖ﴾."
+          }
+        ]
       }
     ]
   },
@@ -2269,6 +2315,13 @@ const TADABBUR = {
             en: "Whoever does righteousness, whether male or female, while he is a believer - We will surely cause him to live a good life, and We will surely give them their reward [in the Hereafter] according to the best of what they used to do.",
             how: "Ta-Ha's narrow life is not poverty, and An-Nahl's good life is not wealth. What the two verses set against each other is the state of the person living it.",
             howAr: "المعيشةُ الضنك في طه ليست فقرًا، والحياةُ الطيّبة في النحل ليست غنى. والذي تُقابل الآيتان بينه هو حالُ صاحبها."
+          },
+          {
+            ref: "Surah Al-Hajj (22:46)",
+            ar: "أَفَلَمۡ يَسِيرُواْ فِي ٱلۡأَرۡضِ فَتَكُونَ لَهُمۡ قُلُوبٞ يَعۡقِلُونَ بِهَآ أَوۡ ءَاذَانٞ يَسۡمَعُونَ بِهَاۖ فَإِنَّهَا لَا تَعۡمَى ٱلۡأَبۡصَٰرُ وَلَٰكِن تَعۡمَى ٱلۡقُلُوبُ ٱلَّتِي فِي ٱلصُّدُورِ",
+            en: "So have they not traveled through the earth and have hearts by which to reason and ears by which to hear? For indeed, it is not eyes that are blinded, but blinded are the hearts which are within the breasts.",
+            how: "Ta-Ha says the one who turned away will be raised blind; Al-Hajj names the blindness that came first, in this world: it is the hearts within the breasts that go blind.",
+            howAr: "سورةُ طه تقول إنّ المُعرض يُحشر أعمى، وسورةُ الحجّ تسمّي العمى الذي سبقه في الدنيا: ﴿وَلَٰكِن تَعۡمَى ٱلۡقُلُوبُ ٱلَّتِي فِي ٱلصُّدُورِ﴾."
           }
         ],
         ref: "Surah Ta-Ha (20:124), read with 20:125-126",
@@ -2292,7 +2345,30 @@ const TADABBUR = {
           }
         ],
         plain: "In plain words: the first thing said to Musa was who Allah is, and the first thing asked of him was the prayer — and its stated reason is remembrance, not reward.",
-        plainAr: "بعبارة أخرى: أوّل ما قيل لموسى مَن الله، وأوّل ما طُلب منه الصلاة، وعلّتها المذكورة الذكر لا الجزاء."
+        plainAr: "بعبارة أخرى: أوّل ما قيل لموسى مَن الله، وأوّل ما طُلب منه الصلاة، وعلّتها المذكورة الذكر لا الجزاء.",
+        links: [
+          {
+            ref: "Surah Al-Ankabut (29:45)",
+            ar: "ٱتۡلُ مَآ أُوحِيَ إِلَيۡكَ مِنَ ٱلۡكِتَٰبِ وَأَقِمِ ٱلصَّلَوٰةَۖ إِنَّ ٱلصَّلَوٰةَ تَنۡهَىٰ عَنِ ٱلۡفَحۡشَآءِ وَٱلۡمُنكَرِۗ وَلَذِكۡرُ ٱللَّهِ أَكۡبَرُۗ وَٱللَّهُ يَعۡلَمُ مَا تَصۡنَعُونَ",
+            en: "Recite, [O Muhammad], what has been revealed to you of the Book and establish prayer. Indeed, prayer prohibits immorality and wrongdoing, and the remembrance of Allah is greater. And Allah knows that which you do.",
+            how: "Ta-Ha says prayer is established for His remembrance. Al-'Ankabut says what that remembrance is worth: the remembrance of Allah is greater.",
+            howAr: "سورةُ طه تقول إنّ الصلاة تُقام لذكره، والعنكبوتُ تقول ما قيمةُ هذا الذكر: ﴿وَلَذِكۡرُ ٱللَّهِ أَكۡبَرُۗ﴾."
+          },
+          {
+            ref: "Surah Al-Jumu'ah (62:9)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِذَا نُودِيَ لِلصَّلَوٰةِ مِن يَوۡمِ ٱلۡجُمُعَةِ فَٱسۡعَوۡاْ إِلَىٰ ذِكۡرِ ٱللَّهِ وَذَرُواْ ٱلۡبَيۡعَۚ ذَٰلِكُمۡ خَيۡرٞ لَّكُمۡ إِن كُنتُمۡ تَعۡلَمُونَ",
+            en: "O you who have believed, when [the adhan] is called for the prayer on the day of Jumu'ah [Friday], then proceed to the remembrance of Allah and leave trade. That is better for you, if you only knew.",
+            how: "Al-Jumu'ah calls the Friday prayer itself the remembrance of Allah: when the call is made, hasten to the remembrance of Allah.",
+            howAr: "الجمعةُ تسمّي صلاةَ الجمعة نفسها ذكرَ الله: ﴿فَٱسۡعَوۡاْ إِلَىٰ ذِكۡرِ ٱللَّهِ وَذَرُواْ ٱلۡبَيۡعَۚ﴾."
+          },
+          {
+            ref: "Surah Al-Anbiya (21:25)",
+            ar: "وَمَآ أَرۡسَلۡنَا مِن قَبۡلِكَ مِن رَّسُولٍ إِلَّا نُوحِيٓ إِلَيۡهِ أَنَّهُۥ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدُونِ",
+            en: "And We sent not before you any messenger except that We revealed to him that, \"There is no deity except Me, so worship Me.\"",
+            how: "Al-Anbiya says this first message to Musa was the message to every messenger: there is no god but Me, so worship Me.",
+            howAr: "الأنبياءُ تقول إنّ هذه الرسالةَ الأولى لموسى هي رسالةُ كلّ رسول: ﴿أَنَّهُۥ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدُونِ﴾."
+          }
+        ]
       },
       {
         n: 25,
@@ -2419,6 +2495,22 @@ const TADABBUR = {
         whyAr: "في الآية موضعان يُوقف عندهما.\n\nالأوّل: أنّ العقل أُسند إلى القلب: ﴿قُلُوبٞ **يَعۡقِلُونَ** بِهَآ﴾. فالقلبُ في القرآن ليس محلَّ العاطفة في مقابل العقل، وإنما هو موضع الفهم، وموضع تخلّفه. ولذلك يحمل الرجل الخبر ولا يتحرّك به: بلغته المعلومة، وتعطّلت الآلةُ التي كان ينبغي أن تعمل بها.\n\nوالثاني: قوله في الآخر ﴿ٱلَّتِي فِي ٱلصُّدُورِ﴾. وللسامع أن يقول: ومن أين تكون القلوبُ إن لم تكن في الصدور؟ فلِمَ قيل؟ لأنّ الجملة أطلقت العمى على ما لا عين له، فجاءت الزيادةُ تُثبت أنّ هذا ليس مجازًا يُلوَّح به. فالعمى موضوعٌ في عضوٍ حقيقيّ، في صدرٍ حقيقيّ، في المخاطَب نفسه.\n\nوقد قُدّم الدواءُ على التشخيص، وهو الحركة: ﴿أَفَلَمۡ يَسِيرُواْ فِي ٱلۡأَرۡضِ﴾ — اذهبوا فانظروا ما صار إليه من فعل هذا قبلكم.",
         plain: "Two things to stop at: the heart is given the job of reasoning — hearts by which they reason — and then the verse insists the blindness is in an actual organ in an actual chest, not a figure of speech. And the cure comes before the diagnosis: have they not travelled the earth.",
         plainAr: "موضعان للوقوف: جُعل العقلُ وظيفةً للقلب — «قلوبٌ يعقلون بها» — ثم أكّدت الآيةُ أنّ العمى في عضوٍ حقيقيّ في صدرٍ حقيقيّ، لا على سبيل المجاز. والدواءُ قبل التشخيص: أفلم يسيروا في الأرض.",
+        links: [
+          {
+            ref: "Surah Al-A'raf (7:179)",
+            ar: "وَلَقَدۡ ذَرَأۡنَا لِجَهَنَّمَ كَثِيرٗا مِّنَ ٱلۡجِنِّ وَٱلۡإِنسِۖ لَهُمۡ قُلُوبٞ لَّا يَفۡقَهُونَ بِهَا وَلَهُمۡ أَعۡيُنٞ لَّا يُبۡصِرُونَ بِهَا وَلَهُمۡ ءَاذَانٞ لَّا يَسۡمَعُونَ بِهَآۚ أُوْلَٰٓئِكَ كَٱلۡأَنۡعَٰمِ بَلۡ هُمۡ أَضَلُّۚ أُوْلَٰٓئِكَ هُمُ ٱلۡغَٰفِلُونَ",
+            en: "And We have certainly created for Hell many of the jinn and mankind. They have hearts with which they do not understand, they have eyes with which they do not see, and they have ears with which they do not hear. Those are like livestock; rather, they are more astray. It is they who are the heedless.",
+            how: "Al-Hajj says it is the hearts that go blind. Al-A'raf describes the same people: they have hearts with which they do not understand, and eyes with which they do not see.",
+            howAr: "سورةُ الحجّ تقول إنّ العمى عمى القلوب، والأعرافُ تصف القومَ أنفسهم: ﴿لَهُمۡ قُلُوبٞ لَّا يَفۡقَهُونَ بِهَا وَلَهُمۡ أَعۡيُنٞ لَّا يُبۡصِرُونَ بِهَا﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:124)",
+            ar: "وَمَنۡ أَعۡرَضَ عَن ذِكۡرِي فَإِنَّ لَهُۥ مَعِيشَةٗ ضَنكٗا وَنَحۡشُرُهُۥ يَوۡمَ ٱلۡقِيَٰمَةِ أَعۡمَىٰ",
+            en: "And whoever turns away from My remembrance - indeed, he will have a depressed life, and We will gather him on the Day of Resurrection blind.\"",
+            how: "The blindness of the heart in this world becomes the blindness of the eyes in the next: whoever turns away from My remembrance — We will raise him blind on the Day of Resurrection.",
+            howAr: "عمى القلب في الدنيا يصير عمى العين في الآخرة: ﴿وَنَحۡشُرُهُۥ يَوۡمَ ٱلۡقِيَٰمَةِ أَعۡمَىٰ﴾."
+          }
+        ],
         ref: "Surah Al-Hajj (22:46)",
         strength: "quran"
       },
@@ -2430,6 +2522,29 @@ const TADABBUR = {
         whyAr: "آيتان في الهَدي، والثانيةُ منهما من أحسم ما في القرآن في معنى النُّسك كلِّه.\n\nفالأولى تُقيم العمل: البُدنُ من شعائر الله، ﴿فَٱذۡكُرُواْ ٱسۡمَ ٱللَّهِ عَلَيۡهَا صَوَآفَّۖ فَإِذَا وَجَبَتۡ جُنُوبُهَا فَكُلُواْ مِنۡهَا وَأَطۡعِمُواْ ٱلۡقَانِعَ وَٱلۡمُعۡتَرَّۚ﴾.\n\nثم: ﴿لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ﴾.\n\nوإذا قُرئت في سياق ما كان حولها فهي هدم. فكلُّ نظام قربانٍ عرفته العربُ كان قائمًا على أنّ شيئًا يُوصَل — دمٌ يُلطَّخ به البيت، ولحمٌ يُقدَّم لمعبود. فقرّرت الآيةُ صراحةً أنه لا يصل شيءٌ من ذلك.\n\nثم لم تُبطل النُّسك. فالفعلُ مأمورٌ به، مضبوطٌ بأحكامه، مفعولٌ إلى اليوم. وإنما تغيّر ما هو **له**: فليست الذبيحةُ نقلًا، وإنما هي رياضة، والذي يُرفع حقًّا حالُ الرافع.\n\nوبه انعقدت قاعدةٌ على كلّ عبادة. فإذا كان لحمُ البَدَنة لا يبلغ الله، فكذلك رفعُ اليدين، وأيّامُ الجوع، والأميالُ التي تُمشى — إلا من الطريق نفسه.",
         plain: "“Their flesh will not reach Allah, nor their blood — but the taqwa from you reaches Him.” Nothing physical arrives. And yet the sacrifice is not abolished; it is still commanded. What changed is what it is FOR — it is a discipline, not a delivery.",
         plainAr: "﴿لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ﴾. فلا يصل شيءٌ محسوس. ومع ذلك لم يُبطل النُّسك، بل هو مأمورٌ به. وإنما تغيّر ما هو له: فهو رياضةٌ لا توصيل.",
+        links: [
+          {
+            ref: "Surah Al-Ma'idah (5:27)",
+            ar: "۞ وَٱتۡلُ عَلَيۡهِمۡ نَبَأَ ٱبۡنَيۡ ءَادَمَ بِٱلۡحَقِّ إِذۡ قَرَّبَا قُرۡبَانٗا فَتُقُبِّلَ مِنۡ أَحَدِهِمَا وَلَمۡ يُتَقَبَّلۡ مِنَ ٱلۡأٓخَرِ قَالَ لَأَقۡتُلَنَّكَۖ قَالَ إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ",
+            en: "And recite to them the story of Adam's two sons, in truth, when they both offered a sacrifice [to Allah], and it was accepted from one of them but was not accepted from the other. Said [the latter], \"I will surely kill you.\" Said [the former], \"Indeed, Allah only accepts from the righteous [who fear Him].",
+            how: "The first offering in history was accepted from one son of Adam and not from the other — by the same measure: Allah only accepts from those who fear Him.",
+            howAr: "أوّلُ قربانٍ في التاريخ تُقبّل من أحد ابنَي آدم ولم يُتقبّل من الآخر، بالميزان نفسه: ﴿إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ﴾."
+          },
+          {
+            ref: "Surah Al-Kawthar (108:2)",
+            ar: "فَصَلِّ لِرَبِّكَ وَٱنۡحَرۡ",
+            en: "So pray to your Lord and sacrifice [to Him alone].",
+            how: "Al-Kawthar joins prayer and sacrifice in one command, both for your Lord.",
+            howAr: "الكوثرُ تجمع الصلاةَ والنحرَ في أمرٍ واحد، وكلاهما لربّك: ﴿فَصَلِّ لِرَبِّكَ وَٱنۡحَرۡ﴾."
+          },
+          {
+            ref: "Surah Al-An'am (6:162)",
+            ar: "قُلۡ إِنَّ صَلَاتِي وَنُسُكِي وَمَحۡيَايَ وَمَمَاتِي لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ",
+            en: "Say, \"Indeed, my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.",
+            how: "Al-An'am gathers the whole of it: my prayer, my sacrifice, my living and my dying are for Allah, Lord of the worlds.",
+            howAr: "الأنعامُ تجمع ذلك كلَّه: ﴿قُلۡ إِنَّ صَلَاتِي وَنُسُكِي وَمَحۡيَايَ وَمَمَاتِي لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ﴾."
+          }
+        ],
         ref: "Surah Al-Hajj (22:36-37)",
         strength: "quran"
       },
@@ -2581,6 +2696,13 @@ const TADABBUR = {
             en: "And do not approach unlawful sexual intercourse. Indeed, it is ever an immorality and is evil as a way.",
             how: "An-Nur begins with the gaze; Al-Isra explains why the command starts so far from the act itself — the act is a road, and a road is closed at its beginning.",
             howAr: "النورُ تبدأ بالنظر، والإسراءُ تشرح لماذا يبدأ الأمرُ بعيدًا عن الفعل نفسه: إنه طريق — ﴿وَسَآءَ سَبِيلٗا﴾ — والطريقُ يُغلق من أوّله."
+          },
+          {
+            ref: "Surah Ghafir (40:19)",
+            ar: "يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ",
+            en: "He knows that which deceives the eyes and what the breasts conceal.",
+            how: "An-Nur commands the believers to lower their gaze; Ghafir says why the command reaches even a glance no one else saw: He knows the treachery of the eyes, and what the breasts conceal.",
+            howAr: "النورُ تأمر بغضّ البصر، وغافرٌ تقول لماذا يبلغ الأمرُ نظرةً لم يرها أحد: ﴿يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ﴾."
           }
         ],
         ref: "Surah An-Nur (24:30), read with 24:31",
@@ -2659,6 +2781,13 @@ const TADABBUR = {
             en: "And do not turn your cheek [in contempt] toward people and do not walk through the earth exultantly. Indeed, Allah does not like everyone self-deluded and boastful.",
             how: "Al-Furqan describes the servants of the Most Merciful by how they walk — gently on the earth. Luqman gives the same thing as a father's advice to his son: do not turn your cheek away from people, and do not walk proudly.",
             howAr: "الفرقانُ تصف عبادَ الرحمن بمشيتهم: ﴿ٱلَّذِينَ يَمۡشُونَ عَلَى ٱلۡأَرۡضِ هَوۡنٗا﴾، ولقمانُ يقولها نصيحةَ أبٍ لابنه: لا تُعرض بوجهك عن الناس، ﴿وَلَا تَمۡشِ فِي ٱلۡأَرۡضِ مَرَحًاۖ﴾."
+          },
+          {
+            ref: "Surah Luqman (31:19)",
+            ar: "وَٱقۡصِدۡ فِي مَشۡيِكَ وَٱغۡضُضۡ مِن صَوۡتِكَۚ إِنَّ أَنكَرَ ٱلۡأَصۡوَٰتِ لَصَوۡتُ ٱلۡحَمِيرِ",
+            en: "And be moderate in your pace and lower your voice; indeed, the most disagreeable of sounds is the voice of donkeys.\"",
+            how: "Al-Furqan says the servants of ar-Rahman walk gently; Luqman tells his son how: be moderate in your pace, and lower your voice.",
+            howAr: "الفرقانُ تقول إنّ عبادَ الرحمن يمشون هونًا، ولقمانُ يقول لابنه كيف: ﴿وَٱقۡصِدۡ فِي مَشۡيِكَ وَٱغۡضُضۡ مِن صَوۡتِكَۚ﴾."
           }
         ],
         ref: "Surah Al-Furqan (25:63) · Al-Mufradat, Ar-Raghib al-Isfahani, entry h-w-n",
@@ -2697,6 +2826,13 @@ const TADABBUR = {
             en: "And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought.",
             how: "Al-Furqan asks for spouses who are a comfort to the eye; Ar-Rum says that comfort is one of Allah's signs — spouses from among yourselves, that you find rest in them, with love and mercy put between you.",
             howAr: "الفرقانُ تسأل أزواجًا تقرّ بهم العين، والرومُ تقول إنّ ذلك من آيات الله: ﴿أَنۡ خَلَقَ لَكُم مِّنۡ أَنفُسِكُمۡ أَزۡوَٰجٗا لِّتَسۡكُنُوٓاْ إِلَيۡهَا وَجَعَلَ بَيۡنَكُم مَّوَدَّةٗ وَرَحۡمَةًۚ﴾."
+          },
+          {
+            ref: "Surah As-Sajdah (32:17)",
+            ar: "فَلَا تَعۡلَمُ نَفۡسٞ مَّآ أُخۡفِيَ لَهُم مِّن قُرَّةِ أَعۡيُنٖ جَزَآءَۢ بِمَا كَانُواْ يَعۡمَلُونَ",
+            en: "And no soul knows what has been hidden for them of comfort for eyes as reward for what they used to do.",
+            how: "Al-Furqan asks for a comfort of the eyes in this life; As-Sajdah uses the same phrase for what is kept hidden for the believers in the next: no soul knows what comfort of eyes is hidden for them.",
+            howAr: "الفرقانُ تسأل قرّةَ العين في الدنيا، والسجدةُ تستعمل العبارةَ نفسها لما خُبّئ للمؤمنين في الآخرة: ﴿فَلَا تَعۡلَمُ نَفۡسٞ مَّآ أُخۡفِيَ لَهُم مِّن قُرَّةِ أَعۡيُنٖ﴾."
           }
         ]
       },
@@ -2764,7 +2900,21 @@ const TADABBUR = {
           en: "“O mankind, there has to come to you instruction from your Lord and healing for what is in the breasts and guidance and mercy for the believers.”",
           how: "Ibrahim says that when he falls ill, He cures him. This verse names the other illness and the other cure: what has come is a healing for what is IN the breasts — doubt, envy, resentment. The body has a shifa and so does the chest, and both are attributed to the same One.",
           howAr: "يقول إبراهيم إنه إذا مرض فهو يشفيه. وهذه الآيةُ تُسمّي الداء الآخر والدواء الآخر: أنّ الذي جاء ﴿شِفَآءٞ لِّمَا فِي ٱلصُّدُورِ﴾ — من الشكّ والحسد والغِلّ. فللبدن شفاءٌ وللصدر شفاء، وكلاهما منسوبٌ إلى واحد."
-        }
+        },
+          {
+            ref: "Surah As-Saffat (37:96)",
+            ar: "وَٱللَّهُ خَلَقَكُمۡ وَمَا تَعۡمَلُونَ",
+            en: "While Allah created you and that which you do?\"",
+            how: "Ash-Shu'ara gives Ibrahim's argument that his Creator is his Guide; As-Saffat gives the same argument turned on the idols: Allah created you, and what you make.",
+            howAr: "الشعراءُ تذكر حجّةَ إبراهيم أنّ خالقه هو هاديه، والصافّاتُ تذكر الحجّةَ نفسها مسلّطةً على الأصنام: ﴿وَٱللَّهُ خَلَقَكُمۡ وَمَا تَعۡمَلُونَ﴾."
+          },
+          {
+            ref: "Surah Sad (38:41)",
+            ar: "وَٱذۡكُرۡ عَبۡدَنَآ أَيُّوبَ إِذۡ نَادَىٰ رَبَّهُۥٓ أَنِّي مَسَّنِيَ ٱلشَّيۡطَٰنُ بِنُصۡبٖ وَعَذَابٍ",
+            en: "And remember Our servant Job, when he called to his Lord, \"Indeed, Satan has touched me with hardship and torment.\"",
+            how: "Ibrahim gives the illness to himself and the cure to his Lord; Ayyub in Surah Sad keeps the same courtesy: Satan has touched me with hardship and pain — he does not say his Lord did it.",
+            howAr: "إبراهيمُ ينسب المرضَ إلى نفسه والشفاءَ إلى ربّه، وأيّوبُ في سورة ص يلتزم الأدبَ نفسه: ﴿أَنِّي مَسَّنِيَ ٱلشَّيۡطَٰنُ بِنُصۡبٖ وَعَذَابٍ﴾ — ولا يقول إنّ ربّه فعل ذلك به."
+          }
         ],
         ref: "Surah Ash-Shu'ara (26:78-82)",
         strength: "quran"
@@ -2804,6 +2954,29 @@ const TADABBUR = {
         whyAr: "نملةٌ تأمر، فيقف لها ملكٌ سُخّرت له الريحُ والجنّ بجيشه.\n\nواقرأ ما قالته، فليست صيحةَ فزع. أمرت النمل أن يدخلن مساكنهنّ، وسمّت الخطر — سليمانَ وجنودَه — ثم زادت الجملة التي بها قام المشهد كلُّه: ﴿وَهُمۡ لَا يَشۡعُرُونَ﴾.\n\nفاعتذرت عنه في الجملة التي حذّرت منه فيها. فما رمت جيشًا بقسوة، وإنما أخبرت أنهم لا ينتبهون. فحتى النملةُ تُحسن الظنّ بنبيّ.\n\nثم جوابُ سليمان هو الذي يستحقّ أطول وقفة. تبسّم — ثم سأل الله في الحال أن يُعينه على **الشكر**.\n\nرجلٌ في ذروة مُلكٍ لم يبلغه أحدٌ غيره، اكتشف للتوّ أنه يفقه قول نملة، فما كانت بديهتُه كِبرًا بل خوفًا من التقصير في الشكر. وانظر اللفظ: ﴿أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ﴾ — ألهمني وألزمني. فحتى الشكرُ سأله شيئًا لا يقدر عليه بنفسه.\n\nثم أدخل والديه في النعمة، وسأل أن يُدخله في عباده الصالحين — فالذي أُوتي المُلك لم يسأل إلا أن يُعدّ في الصفّ.",
         plain: "The ant warns about Sulayman's army and then excuses them in the same breath — “while they do not perceive.” And Sulayman, at the height of his power, hears it and immediately asks Allah to ENABLE him to be grateful. Even the gratitude he asks for as something he cannot produce alone.",
         plainAr: "حذّرت النملةُ من جيش سليمان ثم اعتذرت عنهم في النفَس نفسه: ﴿وَهُمۡ لَا يَشۡعُرُونَ﴾. وسمعها سليمانُ في ذروة مُلكه فسأل الله في الحال أن **يُوزعه** الشكر (أي يُلهمه ويُلزمه إيّاه). فحتى الشكر سأله شيئًا لا يقدر عليه وحده.",
+        links: [
+          {
+            ref: "Surah Al-Ahqaf (46:15)",
+            ar: "وَوَصَّيۡنَا ٱلۡإِنسَٰنَ بِوَٰلِدَيۡهِ إِحۡسَٰنًاۖ حَمَلَتۡهُ أُمُّهُۥ كُرۡهٗا وَوَضَعَتۡهُ كُرۡهٗاۖ وَحَمۡلُهُۥ وَفِصَٰلُهُۥ ثَلَٰثُونَ شَهۡرًاۚ حَتَّىٰٓ إِذَا بَلَغَ أَشُدَّهُۥ وَبَلَغَ أَرۡبَعِينَ سَنَةٗ قَالَ رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ وَأَصۡلِحۡ لِي فِي ذُرِّيَّتِيٓۖ إِنِّي تُبۡتُ إِلَيۡكَ وَإِنِّي مِنَ ٱلۡمُسۡلِمِينَ",
+            en: "And We have enjoined upon man, to his parents, good treatment. His mother carried him with hardship and gave birth to him with hardship, and his gestation and weaning [period] is thirty months. [He grows] until, when he reaches maturity and reaches [the age of] forty years, he says, \"My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents and to work righteousness of which You will approve and make righteous for me my offspring. Indeed, I have repented to You, and indeed, I am of the Muslims.\"",
+            how: "Sulayman's prayer — a king at the height of his power — and the prayer of a man who reaches forty are the same words: my Lord, enable me to be grateful for Your favour upon me and upon my parents, and to do good that pleases You.",
+            howAr: "دعاءُ سليمان — ملكٌ في أوج سلطانه — ودعاءُ رجلٍ بلغ الأربعين كلماتٌ واحدة: ﴿رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ﴾."
+          },
+          {
+            ref: "Surah Saba (34:13)",
+            ar: "يَعۡمَلُونَ لَهُۥ مَا يَشَآءُ مِن مَّحَٰرِيبَ وَتَمَٰثِيلَ وَجِفَانٖ كَٱلۡجَوَابِ وَقُدُورٖ رَّاسِيَٰتٍۚ ٱعۡمَلُوٓاْ ءَالَ دَاوُۥدَ شُكۡرٗاۚ وَقَلِيلٞ مِّنۡ عِبَادِيَ ٱلشَّكُورُ",
+            en: "They made for him what he willed of elevated chambers, statues, bowls like reservoirs, and stationary kettles. [We said], \"Work, O family of David, in gratitude.\" And few of My servants are grateful.",
+            how: "Surah Saba gives the command to his family: work, family of Dawud, in gratitude — and few of My servants are grateful.",
+            howAr: "سورةُ سبأ تعطي الأمرَ لأهل بيته: ﴿ٱعۡمَلُوٓاْ ءَالَ دَاوُۥدَ شُكۡرٗاۚ وَقَلِيلٞ مِّنۡ عِبَادِيَ ٱلشَّكُورُ﴾."
+          },
+          {
+            ref: "Surah An-Naml (27:40)",
+            ar: "قَالَ ٱلَّذِي عِندَهُۥ عِلۡمٞ مِّنَ ٱلۡكِتَٰبِ أَنَا۠ ءَاتِيكَ بِهِۦ قَبۡلَ أَن يَرۡتَدَّ إِلَيۡكَ طَرۡفُكَۚ فَلَمَّا رَءَاهُ مُسۡتَقِرًّا عِندَهُۥ قَالَ هَٰذَا مِن فَضۡلِ رَبِّي لِيَبۡلُوَنِيٓ ءَأَشۡكُرُ أَمۡ أَكۡفُرُۖ وَمَن شَكَرَ فَإِنَّمَا يَشۡكُرُ لِنَفۡسِهِۦۖ وَمَن كَفَرَ فَإِنَّ رَبِّي غَنِيّٞ كَرِيمٞ",
+            en: "Said one who had knowledge from the Scripture, \"I will bring it to you before your glance returns to you.\" And when [Solomon] saw it placed before him, he said, \"This is from the favor of my Lord to test me whether I will be grateful or ungrateful. And whoever is grateful - his gratitude is only for [the benefit of] himself. And whoever is ungrateful - then indeed, my Lord is Free of need and Generous.\"",
+            how: "Later in the same surah, when the throne is brought in the blink of an eye, he says it again: this is from my Lord's favour, to test me — will I be grateful or ungrateful?",
+            howAr: "وفي السورة نفسها، حين يُؤتى بالعرش في طرفة عين، يقولها مرّةً أخرى: ﴿هَٰذَا مِن فَضۡلِ رَبِّي لِيَبۡلُوَنِيٓ ءَأَشۡكُرُ أَمۡ أَكۡفُرُۖ﴾."
+          }
+        ],
         ref: "Surah An-Naml (27:18-19)",
         strength: "quran"
       }
@@ -2822,6 +2995,29 @@ const TADABBUR = {
         whyAr: "هذا قولُ قوم قارون له، يعظونه. ومعرفةُ القائل تحسم أكثر النزاع فيه.\n\nففريقٌ ينقل الجملة الوسطى وحدها — ﴿وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنۡيَاۖ﴾ — رخصةً في كلّ ما يشتهي. وفريقٌ يجعل كلَّ التفاتٍ إلى الدنيا نقصًا. واقرأ الجملة على ترتيبها لا يسلم واحدٌ منهما.\n\nفالأمرُ الأصليّ مقدَّم وهو الحاكم على ما بعده: ﴿وَٱبۡتَغِ **فِيمَآ ءَاتَىٰكَ ٱللَّهُ** ٱلدَّارَ ٱلۡأٓخِرَةَۖ﴾. فالمالُ لا يُترك، وإنما هو الآلة. ثم الجملةُ الوسطى قيدٌ على ذلك لا غايةٌ ثانية: لا تُهمل حظَّك المشروع هنا.\n\nوفسّر المتقدّمون النصيبَ بما يحتاجه الرجل حقًّا وبما يُقدّمه لنفسه. والآيةُ نفسها تسدّ باب القراءة النَّهِمة بعد جملتين: ﴿وَأَحۡسِن كَمَآ أَحۡسَنَ ٱللَّهُ إِلَيۡكَۖ وَلَا تَبۡغِ ٱلۡفَسَادَ فِي ٱلۡأَرۡضِۖ﴾. وقد أعرض الموعوظُ عن الأربع جميعًا، فخُسف به.",
         plain: "This is Qarun's own people advising him, and the order of the sentence settles the argument people have over it. The main command is first and governs the rest: seek the Hereafter through what Allah gave you. The famous middle clause is a limit on that, not a second goal.",
         plainAr: "هذا كلامُ قوم قارون له، وترتيبُ الجملة يحسم ما يختلفون فيه. فالأمرُ الأصلُ في أوّلها وهو الحاكم: ابتغِ بما آتاك الله الدار الآخرة. والجملةُ الوسطى المشهورة قيدٌ عليه، لا غايةٌ ثانية.",
+        links: [
+          {
+            ref: "Surah Al-Qasas (28:76)",
+            ar: "۞ إِنَّ قَٰرُونَ كَانَ مِن قَوۡمِ مُوسَىٰ فَبَغَىٰ عَلَيۡهِمۡۖ وَءَاتَيۡنَٰهُ مِنَ ٱلۡكُنُوزِ مَآ إِنَّ مَفَاتِحَهُۥ لَتَنُوٓأُ بِٱلۡعُصۡبَةِ أُوْلِي ٱلۡقُوَّةِ إِذۡ قَالَ لَهُۥ قَوۡمُهُۥ لَا تَفۡرَحۡۖ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلۡفَرِحِينَ",
+            en: "Indeed, Qarun was from the people of Moses, but he tyrannized them. And We gave him of treasures whose keys would burden a band of strong men; thereupon his people said to him, \"Do not exult. Indeed, Allah does not like the exultant.",
+            how: "The verse before is the first half of the same advice from his people: do not exult — Allah does not love the exultant.",
+            howAr: "الآيةُ التي قبلها نصفُ النصيحة نفسها من قومه: ﴿لَا تَفۡرَحۡۖ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلۡفَرِحِينَ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:83)",
+            ar: "تِلۡكَ ٱلدَّارُ ٱلۡأٓخِرَةُ نَجۡعَلُهَا لِلَّذِينَ لَا يُرِيدُونَ عُلُوّٗا فِي ٱلۡأَرۡضِ وَلَا فَسَادٗاۚ وَٱلۡعَٰقِبَةُ لِلۡمُتَّقِينَ",
+            en: "That home of the Hereafter We assign to those who do not desire exaltedness upon the earth or corruption. And the [best] outcome is for the righteous.",
+            how: "The surah closes on the same word: the home of the Hereafter is for those who want no exaltation in the land, and no corruption.",
+            howAr: "والسورةُ تُختم بالكلمة نفسها: ﴿تِلۡكَ ٱلدَّارُ ٱلۡأٓخِرَةُ نَجۡعَلُهَا لِلَّذِينَ لَا يُرِيدُونَ عُلُوّٗا فِي ٱلۡأَرۡضِ وَلَا فَسَادٗاۚ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:78)",
+            ar: "قَالَ إِنَّمَآ أُوتِيتُهُۥ عَلَىٰ عِلۡمٍ عِندِيٓۚ أَوَلَمۡ يَعۡلَمۡ أَنَّ ٱللَّهَ قَدۡ أَهۡلَكَ مِن قَبۡلِهِۦ مِنَ ٱلۡقُرُونِ مَنۡ هُوَ أَشَدُّ مِنۡهُ قُوَّةٗ وَأَكۡثَرُ جَمۡعٗاۚ وَلَا يُسۡـَٔلُ عَن ذُنُوبِهِمُ ٱلۡمُجۡرِمُونَ",
+            en: "He said, \"I was only given it because of knowledge I have.\" Did he not know that Allah had destroyed before him of generations those who were greater than him in power and greater in accumulation [of wealth]? But the criminals, about their sins, will not be asked.",
+            how: "His answer to all of it was one sentence: I was only given it because of knowledge I have.",
+            howAr: "وكان جوابُه عن ذلك كلّه جملةً واحدة: ﴿إِنَّمَآ أُوتِيتُهُۥ عَلَىٰ عِلۡمٍ عِندِيٓۚ﴾."
+          }
+        ],
         ref: "Surah Al-Qasas (28:77), read with 28:76-81",
         strength: "quran"
       },
@@ -2867,6 +3063,13 @@ const TADABBUR = {
             en: "And said, \"I am your most exalted lord.\"",
             how: "Al-Qasas keeps the home of the Hereafter for those who do not seek to be high in the land. An-Nazi'at shows the furthest end of that seeking — Pharaoh: I am your lord, the most high.",
             howAr: "القصصُ تجعل الدارَ الآخرة ﴿لِلَّذِينَ لَا يُرِيدُونَ عُلُوّٗا فِي ٱلۡأَرۡضِ وَلَا فَسَادٗاۚ﴾، والنازعاتُ تُريك أقصى ما يبلغه هذا الطلب: فرعونُ يقول: ﴿أَنَا۠ رَبُّكُمُ ٱلۡأَعۡلَىٰ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:77)",
+            ar: "وَٱبۡتَغِ فِيمَآ ءَاتَىٰكَ ٱللَّهُ ٱلدَّارَ ٱلۡأٓخِرَةَۖ وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنۡيَاۖ وَأَحۡسِن كَمَآ أَحۡسَنَ ٱللَّهُ إِلَيۡكَۖ وَلَا تَبۡغِ ٱلۡفَسَادَ فِي ٱلۡأَرۡضِۖ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلۡمُفۡسِدِينَ",
+            en: "But seek, through that which Allah has given you, the home of the Hereafter; and [yet], do not forget your share of the world. And do good as Allah has done good to you. And desire not corruption in the land. Indeed, Allah does not like corrupters.\"",
+            how: "The surah ends by giving the Hereafter to those who want no corruption; six verses earlier Qarun was told the same: do not seek corruption in the land.",
+            howAr: "تُختم السورةُ بأنّ الآخرة لمن لا يريد فسادًا، وقبلها بستّ آيات قيل لقارون الشيءُ نفسه: ﴿وَلَا تَبۡغِ ٱلۡفَسَادَ فِي ٱلۡأَرۡضِۖ﴾."
           }
         ],
         ref: "Surah Al-Qasas (28:83)",
@@ -2887,7 +3090,14 @@ const TADABBUR = {
           en: "“Say, \"In the bounty of Allah and in His mercy - in that let them rejoice; it is better than what they accumulate.\"”",
           how: "The same verb, commanded instead of forbidden. Qarun is told not to exult; Yunus tells the believers to rejoice — but names what in: the bounty of Allah and His mercy, and adds that it is better than what they accumulate. Same act, opposite verdict, and the only difference is what the joy was attached to.",
           howAr: "الفعلُ نفسه مأمورًا به لا منهيًّا عنه. فقيل لقارون: لا تفرح، وقالت يونسُ للمؤمنين: فليفرحوا — ثم سمّت بِمَ: ﴿بِفَضۡلِ ٱللَّهِ وَبِرَحۡمَتِهِۦ﴾، وزادت أنه ﴿خَيۡرٞ مِّمَّا يَجۡمَعُونَ﴾. الفعلُ واحد، والحكمُ متقابل، والفرقُ في متعلَّق الفرح لا غير."
-        }
+        },
+          {
+            ref: "Surah Al-Qasas (28:77)",
+            ar: "وَٱبۡتَغِ فِيمَآ ءَاتَىٰكَ ٱللَّهُ ٱلدَّارَ ٱلۡأٓخِرَةَۖ وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنۡيَاۖ وَأَحۡسِن كَمَآ أَحۡسَنَ ٱللَّهُ إِلَيۡكَۖ وَلَا تَبۡغِ ٱلۡفَسَادَ فِي ٱلۡأَرۡضِۖ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلۡمُفۡسِدِينَ",
+            en: "But seek, through that which Allah has given you, the home of the Hereafter; and [yet], do not forget your share of the world. And do good as Allah has done good to you. And desire not corruption in the land. Indeed, Allah does not like corrupters.\"",
+            how: "This verse tells Qarun not to exult; the next gives the rest of the advice: seek the home of the Hereafter with what Allah gave you, and do not forget your share of the world.",
+            howAr: "هذه الآيةُ تنهى قارونَ عن الفرح، والآيةُ التي تليها تتمّ النصيحة: ﴿وَٱبۡتَغِ فِيمَآ ءَاتَىٰكَ ٱللَّهُ ٱلدَّارَ ٱلۡأٓخِرَةَۖ وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنۡيَاۖ﴾."
+          }
         ],
         ref: "Surah Al-Qasas (28:76)",
         strength: "quran"
@@ -2959,6 +3169,13 @@ const TADABBUR = {
             en: "And establish prayer at the two ends of the day and at the approach of the night. Indeed, good deeds do away with misdeeds. That is a reminder for those who remember.",
             how: "Al-'Ankabut says prayer restrains from wrong; Surah Hud says what it does with the wrong already done: good deeds remove bad deeds.",
             howAr: "العنكبوتُ تقول إنّ الصلاة تنهى عن المنكر، وسورةُ هود تقول ماذا تفعل بالسيّئة التي وقعت: ﴿إِنَّ ٱلۡحَسَنَٰتِ يُذۡهِبۡنَ ٱلسَّيِّـَٔاتِۚ﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:14)",
+            ar: "إِنَّنِيٓ أَنَا ٱللَّهُ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدۡنِي وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ",
+            en: "Indeed, I am Allah. There is no deity except Me, so worship Me and establish prayer for My remembrance.",
+            how: "Al-'Ankabut says the remembrance of Allah is greater; Ta-Ha had given that as the very reason prayer was commanded: establish prayer for My remembrance.",
+            howAr: "العنكبوتُ تقول إنّ ذكر الله أكبر، وكانت سورةُ طه قد جعلته سببَ الأمر بالصلاة: ﴿وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ﴾."
           }
         ]
       },
@@ -3008,7 +3225,23 @@ const TADABBUR = {
         misunderstood: "THE WIDELY-HELD IDEA: that history is a ladder. Cavemen at the bottom, then bronze, then iron, then steadily upward, with us standing on the top rung — the most advanced people who have ever lived.\n\nWHAT THE VERSE SAYS: earlier peoples were stronger than these, and built the earth up MORE than these did. Not equal. More. The verse is an instruction to go and look at what they left.\n\nAnd the Quran gives examples rather than leaving it general:\n· 'Ad, of Iram “the like of which was never created in the land” (89:6-8)\n· Thamud, who “carved houses out of the mountains” — and the word used is farihin, skilfully, with ease and delight, not out of desperation (26:149)\n· A people who “take for themselves masani'” — great works — “that perhaps you may live forever” (26:129)\n\nSo the Quran's shape of history is not a ladder. It is a cycle: a people is given strength, builds, becomes arrogant, and is removed. The verse names the ending too — Allah did not wrong them; they wronged themselves.\n\nWHERE TO BE CAREFUL, and this matters. The verse is strong enough on its own and does not need help. Arguments that hang it on contested objects — an ancient battery, a carving read as a lamp, a claim that no engineer can explain a particular monument — put the verse at the mercy of the next archaeology paper. This site does not do that with hadith and will not do it here. What is solid: the Quran states plainly that earlier peoples surpassed the people it was addressing, and that they were destroyed anyway. That is the point, and it cannot be taken away.",
         misunderstoodAr: "الفكرة الشائعة: أنّ التاريخ سُلَّم. في أسفله إنسان الكهف، ثم البرونز، ثم الحديد، ثم صعودٌ مطّرد، ونحن على أعلى درجةٍ فيه: أكثر من عاش تقدّمًا.\n\nوالذي تقوله الآية: أنّ الأوّلين كانوا أشدّ من هؤلاء قوّة، وعمروا الأرض **أكثر** ممّا عمرها هؤلاء. لا مثلهم، بل أكثر. والآية أمرٌ بأن يُسار في الأرض ويُنظر فيما تركوه.\n\nوضرب القرآن أمثلةً ولم يترك الأمر مُجملًا:\n· عادٌ، ﴿إِرَمَ ذَاتِ ٱلۡعِمَادِ • ٱلَّتِي لَمۡ يُخۡلَقۡ مِثۡلُهَا فِي ٱلۡبِلَٰدِ﴾ (٨٩:٦-٨)\n· وثمودُ ﴿وَتَنۡحِتُونَ مِنَ ٱلۡجِبَالِ بُيُوتٗا فَٰرِهِينَ﴾ — واللفظ «فارهين»: بحذقٍ وبَطَرٍ ونعمة، لا عن اضطرار (٢٦:١٤٩)\n· وقومٌ ﴿وَتَتَّخِذُونَ مَصَانِعَ لَعَلَّكُمۡ تَخۡلُدُونَ﴾ (٢٦:١٢٩)\n\nفصورة التاريخ في القرآن ليست سُلَّمًا، وإنما دورة: قومٌ يُمكَّنون فيبنون فيستكبرون فيُزالون. وذكرت الآية الخاتمة أيضًا: ﴿فَمَا كَانَ ٱللَّهُ لِيَظۡلِمَهُمۡ وَلَٰكِن كَانُوٓاْ أَنفُسَهُمۡ يَظۡلِمُونَ﴾.\n\nوموضع الاحتياط، وهو مهمّ: الآية قويّةٌ بنفسها ولا تحتاج عونًا. والاستدلال الذي يُعلّقها بأشياء متنازَعٍ فيها — بطاريّةٍ قديمة، أو نقشٍ يُقرأ مصباحًا، أو دعوى أنّ المهندسين يعجزون عن تفسير بناءٍ بعينه — يجعل الآية رهينةَ أوّل بحثٍ أثريٍّ يصدر. وهذا الموقع لا يصنع ذلك في الحديث، ولن يصنعه هنا. والثابت: أنّ القرآن نصّ على أنّ أقوامًا سبقوا فاقوا من خُوطبوا بهم، وأنهم أُهلكوا مع ذلك. وهذا هو المقصود، ولا يُنتزع.",
         plain: "In plain words: we are taught that we are the peak — that everyone before us was more primitive, and the line only goes up. The verse says the opposite about the people it was addressing: those before you were stronger, and they built more than you have.\n\nAnd then it says go and look. Walk in the land and see what they left behind, and see how it ended for them.\n\nWhat to take from it: being advanced is not protection. Every one of those peoples was more capable than the ones being spoken to, and every one of them is gone. Strength was never the thing that kept a nation standing.",
-        plainAr: "بكلامٍ بسيط: عُلّمنا أنّنا القمّة — وأنّ كلّ من قبلنا كان أبدأ منّا، وأنّ الخطّ صاعدٌ لا غير. والآية تقول عكس ذلك لمن خوطبوا بها: الذين قبلكم كانوا أشدّ قوّة، وعمروا الأرض أكثر ممّا عمرتم.\n\nثم تقول: سيروا فانظروا. امشوا في الأرض وانظروا ما الذي تركوه، وكيف كانت نهايتهم.\n\nوالذي تأخذه: أنّ التقدّم ليس حصانة. كلُّ أولئك كانوا أقدر ممّن خوطبوا بهم، وكلُّهم ذهب. فما كانت القوّة يومًا هي التي تُبقي أمّة قائمة."
+        plainAr: "بكلامٍ بسيط: عُلّمنا أنّنا القمّة — وأنّ كلّ من قبلنا كان أبدأ منّا، وأنّ الخطّ صاعدٌ لا غير. والآية تقول عكس ذلك لمن خوطبوا بها: الذين قبلكم كانوا أشدّ قوّة، وعمروا الأرض أكثر ممّا عمرتم.\n\nثم تقول: سيروا فانظروا. امشوا في الأرض وانظروا ما الذي تركوه، وكيف كانت نهايتهم.\n\nوالذي تأخذه: أنّ التقدّم ليس حصانة. كلُّ أولئك كانوا أقدر ممّن خوطبوا بهم، وكلُّهم ذهب. فما كانت القوّة يومًا هي التي تُبقي أمّة قائمة.",
+        links: [
+          {
+            ref: "Surah Al-Fajr (89:6-8)",
+            ar: "أَلَمۡ تَرَ كَيۡفَ فَعَلَ رَبُّكَ بِعَادٍ ۝ إِرَمَ ذَاتِ ٱلۡعِمَادِ ۝ ٱلَّتِي لَمۡ يُخۡلَقۡ مِثۡلُهَا فِي ٱلۡبِلَٰدِ",
+            en: "Have you not considered how your Lord dealt with 'Aad - [With] Iram - who had lofty pillars, The likes of whom had never been created in the land?",
+            how: "Al-Fajr names one of those nations: 'Ad — Iram of the pillars, the like of which was never created in the lands.",
+            howAr: "الفجرُ تسمّي واحدةً من تلك الأمم: ﴿إِرَمَ ذَاتِ ٱلۡعِمَادِ﴾ ﴿ٱلَّتِي لَمۡ يُخۡلَقۡ مِثۡلُهَا فِي ٱلۡبِلَٰدِ﴾."
+          },
+          {
+            ref: "Surah Ghafir (40:82)",
+            ar: "أَفَلَمۡ يَسِيرُواْ فِي ٱلۡأَرۡضِ فَيَنظُرُواْ كَيۡفَ كَانَ عَٰقِبَةُ ٱلَّذِينَ مِن قَبۡلِهِمۡۚ كَانُوٓاْ أَكۡثَرَ مِنۡهُمۡ وَأَشَدَّ قُوَّةٗ وَءَاثَارٗا فِي ٱلۡأَرۡضِ فَمَآ أَغۡنَىٰ عَنۡهُم مَّا كَانُواْ يَكۡسِبُونَ",
+            en: "Have they not traveled through the land and observed how was the end of those before them? They were more numerous than themselves and greater in strength and in impression on the land, but they were not availed by what they used to earn.",
+            how: "Ghafir asks the same question and adds the detail: they were more numerous than them, stronger, and left more traces in the land — and what they earned did not help them.",
+            howAr: "غافرٌ تسأل السؤالَ نفسه وتزيد: ﴿كَانُوٓاْ أَكۡثَرَ مِنۡهُمۡ وَأَشَدَّ قُوَّةٗ وَءَاثَارٗا فِي ٱلۡأَرۡضِ﴾."
+          }
+        ]
       },
       {
         n: 21,
@@ -4254,7 +4487,14 @@ const TADABBUR = {
           en: "“So pray to your Lord and sacrifice [to Him alone].”",
           how: "The same two put together again, and in the same order — the prayer and the sacrifice, both directed to the Lord alone. Two acts the people of Makkah were performing for other than Allah.",
           howAr: "والقرينان نفسهما مجموعان مرّةً أخرى وعلى الترتيب نفسه: الصلاة والنحر، كلاهما للربّ وحده. وهما عملان كان أهل مكّة يصرفونهما لغير الله."
-        }
+        },
+          {
+            ref: "Surah Al-Hajj (22:37)",
+            ar: "لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ كَذَٰلِكَ سَخَّرَهَا لَكُمۡ لِتُكَبِّرُواْ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمۡۗ وَبَشِّرِ ٱلۡمُحۡسِنِينَ",
+            en: "Their meat will not reach Allah, nor will their blood, but what reaches Him is piety from you. Thus have We subjected them to you that you may glorify Allah for that [to] which He has guided you; and give good tidings to the doers of good.",
+            how: "Al-An'am says my sacrifice is for Allah; Al-Hajj says which part of a sacrifice actually reaches Him: the taqwa in it.",
+            howAr: "الأنعامُ تقول إنّ النسكَ لله، وسورةُ الحجّ تقول أيُّ شيءٍ منه يبلغه حقًّا: ﴿وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ﴾."
+          }
         ],
         ref: "Surah Al-An'am (6:162-163)",
         strength: "quran"
@@ -4814,6 +5054,13 @@ const TADABBUR = {
             en: "“Deaf, dumb, blind — so they do not reason.”",
             how: "The same three senses, and there the verse has already given the image that explains them: a man shouting at an animal that hears only a noise and a call. Sound reaches it; meaning does not.",
             howAr: "الحواسُّ الثلاثُ نفسُها، وقد سبق في الآية المثلُ الذي يُفسّرها: رجلٌ ينعق بما لا يسمع إلا دعاءً ونداء. فالصوتُ يبلغه، والمعنى لا يبلغه."
+          },
+          {
+            ref: "Surah Al-Hajj (22:46)",
+            ar: "أَفَلَمۡ يَسِيرُواْ فِي ٱلۡأَرۡضِ فَتَكُونَ لَهُمۡ قُلُوبٞ يَعۡقِلُونَ بِهَآ أَوۡ ءَاذَانٞ يَسۡمَعُونَ بِهَاۖ فَإِنَّهَا لَا تَعۡمَى ٱلۡأَبۡصَٰرُ وَلَٰكِن تَعۡمَى ٱلۡقُلُوبُ ٱلَّتِي فِي ٱلصُّدُورِ",
+            en: "So have they not traveled through the earth and have hearts by which to reason and ears by which to hear? For indeed, it is not eyes that are blinded, but blinded are the hearts which are within the breasts.",
+            how: "Al-A'raf says they have eyes that do not see; Al-Hajj says where the failure really is: it is not the eyes that are blind, but the hearts within the breasts.",
+            howAr: "الأعرافُ تقول إنّ لهم أعينًا لا تبصر، وسورةُ الحجّ تقول أين الخلل حقًّا: ﴿فَإِنَّهَا لَا تَعۡمَى ٱلۡأَبۡصَٰرُ وَلَٰكِن تَعۡمَى ٱلۡقُلُوبُ ٱلَّتِي فِي ٱلصُّدُورِ﴾."
           }
         ]
       },
@@ -5503,6 +5750,15 @@ const TADABBUR = {
         whyAr: "آيتان في خاتمة سورةٍ أنفقت نفسها في الأمم المُهلَكة، وهما معًا تُقرّران ما يحتاج المرءُ أن يحمله في كيفيّة فعل الله.\n\n﴿إِنَّا كُلَّ شَيۡءٍ خَلَقۡنَٰهُ بِقَدَرٖ﴾. كلَّ شيءٍ بلا استثناء، بقَدَر — بمقدارٍ معلومٍ وتقديرٍ وقضاء. فما جاء شيءٌ اتّفاقًا ولا جاء غيرَ مقدَّر.\n\nثم: ﴿وَمَآ أَمۡرُنَآ إِلَّا **وَٰحِدَةٞ** كَلَمۡحِۭ بِٱلۡبَصَرِ﴾.\n\nوضَعهما متجاورين ترَ عمّا يُجيبان. فالأولى قد تُوهم القارئ مداولةً طويلةً ووزنًا وإجراء. فنزعت الثانيةُ الزمن: فالأمرُ واحد، وشُبّه إنفاذُه بمقدار ما تتحرّك به العين.\n\nفالتقديرُ تامّ، والفعلُ آنيّ، ولا يُقيّد أحدهما الآخر.\n\nوهذه هي السورةُ التي أُهلكت فيها أمّةٌ بعد أمّة، وتتكرّر بعد كلّ واحدةٍ: ﴿وَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ﴾. فقالت الآيتان في خاتمتها ما كان ذلك الإهلاك: لا مغالبةً ولا حملة — بل أمرٌ واحد، ومقدارُ لمحة بصر.",
         plain: "Everything was created by a measure — nothing arrived by accident and nothing unmeasured. And then: Our command is but ONE, like the glance of an eye. The measuring is total; the doing is instant. Neither qualifies the other.",
         plainAr: "كلُّ شيءٍ خُلق بقَدَر — فما جاء شيءٌ اتّفاقًا ولا غيرَ مقدَّر. ثم: ﴿وَمَآ أَمۡرُنَآ إِلَّا **وَٰحِدَةٞ** كَلَمۡحِۭ بِٱلۡبَصَرِ﴾. فالتقديرُ تامّ والفعلُ آنيّ، ولا يُقيّد أحدهما الآخر.",
+        links: [
+          {
+            ref: "Surah Ya-Sin (36:82)",
+            ar: "إِنَّمَآ أَمۡرُهُۥٓ إِذَآ أَرَادَ شَيۡـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ",
+            en: "His command is only when He intends a thing that He says to it, \"Be,\" and it is.",
+            how: "Al-Qamar says His command is one, like a blink; Ya-Sin says what the command is: He says to it Be, and it is.",
+            howAr: "القمرُ تقول إنّ أمرَه واحدةٌ كلمح البصر، وسورةُ يس تقول ما هذا الأمر: ﴿أَن يَقُولَ لَهُۥ كُن فَيَكُونُ﴾."
+          }
+        ],
         ref: "Surah Al-Qamar (54:49-50)",
         strength: "quran"
       }
@@ -6081,6 +6337,15 @@ const TADABBUR = {
           strength: "lugha"
         }
         ],
+        links: [
+          {
+            ref: "Surah As-Saffat (37:164)",
+            ar: "وَمَا مِنَّآ إِلَّا لَهُۥ مَقَامٞ مَّعۡلُومٞ",
+            en: "[The angels say], \"There is not among us any except that he has a known position.",
+            how: "As-Saff says Allah loves a row like a solid structure, where every brick is exactly where it was put; the angels in As-Saffat say the same of themselves: there is none of us but has a known place.",
+            howAr: "الصفُّ تقول إنّ الله يحبّ صفًّا كالبنيان المرصوص، كلُّ لبنةٍ فيه حيث وُضعت، والملائكةُ في الصافّات تقول ذلك عن نفسها: ﴿وَمَا مِنَّآ إِلَّا لَهُۥ مَقَامٞ مَّعۡلُومٞ﴾."
+          }
+        ],
         ref: "Surah As-Saff (61:4)",
         strength: "quran"
       },
@@ -6157,6 +6422,15 @@ const TADABBUR = {
         whyAr: "جاء الأمرُ بلفظٍ يُفاجئ من يعرفه: ﴿فَٱسۡعَوۡاْ﴾. والسعي ليس المشي، وإنما هو لفظُ الحركة بالجدّ — وهي مادّة السعي بين الصفا والمروة.\n\nومع ذلك فالسنّةُ صريحةٌ أن يُؤتى الصلاةُ بالسكينة لا بالهرولة. فما المأمور به؟\n\nأجاب أهل العلم من اللغة نفسها: أنّ السعي في العربية للاجتهاد في طلب الشيء لا للإسراع بالبدن وحده — وسعيُ الرجل عملُه، كما في ﴿وَأَن لَّيۡسَ لِلۡإِنسَٰنِ إِلَّا مَا سَعَىٰ﴾. فالمطلوب أن تقصده قصدًا، لا أن تعدُو.\n\nثم النصف الثاني هو الذي يُكلّف: ﴿وَذَرُواْ ٱلۡبَيۡعَۚ﴾. لا: إذا فرغتم. بل: دعوه. فقطع الأمرُ صفقةً قائمة، في أزحم صباحات الأسبوع، في مدينة تُجّار.\n\nثم: ﴿ذَٰلِكُمۡ خَيۡرٞ لَّكُمۡ **إِن كُنتُمۡ تَعۡلَمُونَ**﴾. والخاتمةُ تُسلّم بالأمر: فإنه لا يبدو خيرًا. ولهذا احتيج إلى قوله.",
         plain: "Go after the Friday prayer in earnest — the word is about serious pursuit, not running, because the Sunnah says walk calmly. And leave the sale where it stands. Not finish it first. Leave it.",
         plainAr: "اقصد صلاة الجمعة بجدّ — واللفظ في الاجتهاد في الطلب لا في العَدْو، فإنّ السنّة أن تمشي بسكينة. ودع البيع حيث هو. لا أن تُتمّه أوّلًا. بل دعه.",
+        links: [
+          {
+            ref: "Surah Ta-Ha (20:14)",
+            ar: "إِنَّنِيٓ أَنَا ٱللَّهُ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدۡنِي وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ",
+            en: "Indeed, I am Allah. There is no deity except Me, so worship Me and establish prayer for My remembrance.",
+            how: "Al-Jumu'ah calls the Friday prayer the remembrance of Allah; Ta-Ha gives the reason behind the name, in the first command Musa received: establish prayer for My remembrance.",
+            howAr: "الجمعةُ تسمّي صلاةَ الجمعة ذكرَ الله، وسورةُ طه تذكر سببَ هذه التسمية في أوّل أمرٍ تلقّاه موسى: ﴿وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ﴾."
+          }
+        ],
         ref: "Surah Al-Jumu'ah (62:9)",
         strength: "quran"
       }
@@ -6309,6 +6583,13 @@ const TADABBUR = {
             en: "And in the heaven is your provision and whatever you are promised.",
             how: "At-Talaq says provision comes from where you do not expect; Adh-Dhariyat says where it is kept: in the heaven.",
             howAr: "الطلاقُ تقول إنّ الرزق يأتي من حيث لا تحتسب، والذارياتُ تقول أين يُحفظ: ﴿وَفِي ٱلسَّمَآءِ رِزۡقُكُمۡ﴾."
+          },
+          {
+            ref: "Surah Ghafir (40:44)",
+            ar: "فَسَتَذۡكُرُونَ مَآ أَقُولُ لَكُمۡۚ وَأُفَوِّضُ أَمۡرِيٓ إِلَى ٱللَّهِۚ إِنَّ ٱللَّهَ بَصِيرُۢ بِٱلۡعِبَادِ",
+            en: "And you will remember what I [now] say to you, and I entrust my affair to Allah. Indeed, Allah is Seeing of [His] servants.\"",
+            how: "At-Talaq promises that Allah is enough for whoever relies on Him; Ghafir shows a man who had just told a tyrant the truth saying it: I entrust my affair to Allah.",
+            howAr: "الطلاقُ تَعِد بأنّ الله حسبُ من توكّل عليه، وغافرٌ تُريك رجلًا قال الحقَّ لطاغيةٍ للتوّ ثم قال: ﴿وَأُفَوِّضُ أَمۡرِيٓ إِلَى ٱللَّهِۚ﴾."
           }
         ],
         ref: "Surah At-Talaq (65:2-3)",
@@ -7130,6 +7411,13 @@ const TADABBUR = {
             en: "And the servants of the Most Merciful are those who walk upon the earth easily, and when the ignorant address them [harshly], they say [words of] peace,",
             how: "Luqman forbids the proud walk; Al-Furqan shows the walk that replaces it, and puts it first in the description of the people Allah calls His servants.",
             howAr: "لقمانُ ينهى عن مشية المتكبّر، والفرقانُ تُريك المشيةَ التي تحلّ محلّها، وتجعلها أوّلَ صفات من سمّاهم ﴿وَعِبَادُ ٱلرَّحۡمَٰنِ﴾."
+          },
+          {
+            ref: "Surah Luqman (31:19)",
+            ar: "وَٱقۡصِدۡ فِي مَشۡيِكَ وَٱغۡضُضۡ مِن صَوۡتِكَۚ إِنَّ أَنكَرَ ٱلۡأَصۡوَٰتِ لَصَوۡتُ ٱلۡحَمِيرِ",
+            en: "And be moderate in your pace and lower your voice; indeed, the most disagreeable of sounds is the voice of donkeys.\"",
+            how: "This verse forbids the proud walk; the next completes the advice: be moderate in your pace, and lower your voice.",
+            howAr: "هذه الآيةُ تنهى عن مشية الكبر، والتي تليها تتمّ الوصيّة: ﴿وَٱقۡصِدۡ فِي مَشۡيِكَ وَٱغۡضُضۡ مِن صَوۡتِكَۚ﴾."
           }
         ]
       },
@@ -7208,6 +7496,29 @@ const TADABBUR = {
         whyAr: "آخرُ وصايا لقمان، وبعد الصلاة والأمر بالمعروف واحتمالِ ما يعقُبه، خُتم على كيف يمشي ابنُه وكم يرفع صوته.\n\n﴿وَٱقۡصِدۡ فِي مَشۡيِكَ وَٱغۡضُضۡ مِن صَوۡتِكَۚ﴾.\n\nوالنزولُ في المقياس هو التعليم. فقد يحمل الرجلُ الوصايا الأربع كلَّها ثم ينكشف في أصغر شيئين يصنعهما بين الناس: مِشيتِه وعُلوّ صوته. وختم لقمانُ بهما لأنهما موضعُ ظهور حال المرء من غير أن يقصد إظهارها.\n\nوالعلّةُ المذكورة أذكرُ سطرٍ في السورة: ﴿إِنَّ أَنكَرَ ٱلۡأَصۡوَٰتِ لَصَوۡتُ ٱلۡحَمِيرِ﴾.\n\nوالتشبيهُ مقصودٌ في ضِعته. فالرجلُ يرفع صوته ليُهاب، فيُقال له بِمَ يُشبه صوتُه، واختيرت الصورةُ بحيث لا تُنسى ولا تُلبَس ثناءً.\n\nوانظر لفظ الأمر الثاني: ﴿وَٱغۡضُضۡ **مِن** صَوۡتِكَۚ﴾ — اخفض بعضه. لا: اسكت. فـ«من» للتبعيض: أبقِ الصوت واحطط من أعلاه.",
         plain: "After prayer and enjoining good, Luqman ends on how his son walks and how loudly he speaks — the two smallest things, where a person shows himself without meaning to. And note: lower SOME of your voice. Not be silent.",
         plainAr: "بعد الصلاة والأمر بالمعروف، ختم لقمانُ على مِشية ابنه وعُلوّ صوته — أصغرِ شيئين، وفيهما ينكشف المرءُ من غير قصد. وانظر: ﴿وَٱغۡضُضۡ **مِن** صَوۡتِكَۚ﴾ — بعضَه. لا: اسكت.",
+        links: [
+          {
+            ref: "Surah Luqman (31:18)",
+            ar: "وَلَا تُصَعِّرۡ خَدَّكَ لِلنَّاسِ وَلَا تَمۡشِ فِي ٱلۡأَرۡضِ مَرَحًاۖ إِنَّ ٱللَّهَ لَا يُحِبُّ كُلَّ مُخۡتَالٖ فَخُورٖ",
+            en: "And do not turn your cheek [in contempt] toward people and do not walk through the earth exultantly. Indeed, Allah does not like everyone self-deluded and boastful.",
+            how: "The verse before is the other half of the same advice: do not turn your cheek away from people, and do not walk on the earth exultantly.",
+            howAr: "الآيةُ التي قبلها النصفُ الآخر من الوصيّة نفسها: ﴿وَلَا تُصَعِّرۡ خَدَّكَ لِلنَّاسِ وَلَا تَمۡشِ فِي ٱلۡأَرۡضِ مَرَحًاۖ﴾."
+          },
+          {
+            ref: "Surah Al-Furqan (25:63)",
+            ar: "وَعِبَادُ ٱلرَّحۡمَٰنِ ٱلَّذِينَ يَمۡشُونَ عَلَى ٱلۡأَرۡضِ هَوۡنٗا وَإِذَا خَاطَبَهُمُ ٱلۡجَٰهِلُونَ قَالُواْ سَلَٰمٗا",
+            en: "And the servants of the Most Merciful are those who walk upon the earth easily, and when the ignorant address them [harshly], they say [words of] peace,",
+            how: "Al-Furqan describes the servants of ar-Rahman by the same walk: they walk upon the earth gently.",
+            howAr: "الفرقانُ تصف عبادَ الرحمن بالمشية نفسها: ﴿ٱلَّذِينَ يَمۡشُونَ عَلَى ٱلۡأَرۡضِ هَوۡنٗا﴾."
+          },
+          {
+            ref: "Surah Al-Hujurat (49:3)",
+            ar: "إِنَّ ٱلَّذِينَ يَغُضُّونَ أَصۡوَٰتَهُمۡ عِندَ رَسُولِ ٱللَّهِ أُوْلَٰٓئِكَ ٱلَّذِينَ ٱمۡتَحَنَ ٱللَّهُ قُلُوبَهُمۡ لِلتَّقۡوَىٰۚ لَهُم مَّغۡفِرَةٞ وَأَجۡرٌ عَظِيمٌ",
+            en: "Indeed, those who lower their voices before the Messenger of Allah - they are the ones whose hearts Allah has tested for righteousness. For them is forgiveness and great reward.",
+            how: "Al-Hujurat uses the same verb for lowering the voice in the presence of the Messenger — and says those are the ones whose hearts Allah has tested for taqwa.",
+            howAr: "الحجراتُ تستعمل الفعلَ نفسه لخفض الصوت عند رسول الله: ﴿إِنَّ ٱلَّذِينَ يَغُضُّونَ أَصۡوَٰتَهُمۡ عِندَ رَسُولِ ٱللَّهِ أُوْلَٰٓئِكَ ٱلَّذِينَ ٱمۡتَحَنَ ٱللَّهُ قُلُوبَهُمۡ لِلتَّقۡوَىٰۚ﴾."
+          }
+        ],
         ref: "Surah Luqman (31:19)",
         strength: "quran"
       },
@@ -7276,6 +7587,22 @@ const TADABBUR = {
         whyAr: "وصف القرآنُ الجنّة في مواضع كثيرة: أنهارًا وجنّاتٍ وظلًّا وأزواجًا. وصنع ها هنا خلاف ذلك، فأخبر أنّ طائفةً منها أُخفيت عن الوصف قصدًا، وأنه ﴿فَلَا تَعۡلَمُ **نَفۡسٞ**﴾.\n\nوالتعبير ﴿قُرَّةِ أَعۡيُنٖ﴾، وهو من قرار العين بعد اضطرابها، وكانت العربُ تجعل دمعَ الفرح باردًا ودمعَ الحزن حارًّا. فليست العبارةُ في البريق والبهر، وإنما في **سكون العين أخيرًا**.\n\nواقرأ الآية قبلها لتعرف لمن وُعد: ﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا﴾. فقُوبل المخفيُّ بالمخفيّ: جزاءٌ غُيّب عن العيون لعبادةٍ غُيّبت عن العيون، بالليل، حيث لا يراهم أحد.",
         plain: "The Quran describes Paradise in detail elsewhere; here it says a part of it has been kept back on purpose, and no soul knows it. And the verse before names who it is for: those whose sides leave their beds at night. What was hidden is matched to worship that was hidden.",
         plainAr: "وصف القرآنُ الجنّةَ بالتفصيل في مواضع، وقال هنا إنّ شيئًا منها أُخفي عمدًا لا تعلمه نفس. والآيةُ قبلها تسمّي أصحابه: الذين تتجافى جنوبهم عن المضاجع بالليل. فقوبل المخفيُّ بعملٍ كان مخفيًّا.",
+        links: [
+          {
+            ref: "Surah As-Sajdah (32:16)",
+            ar: "تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ",
+            en: "They arise from [their] beds; they supplicate their Lord in fear and aspiration, and from what We have provided them, they spend.",
+            how: "The reward is hidden, and the verse before says what it rewards — a worship that was hidden too: their sides leave their beds as they call on their Lord in fear and in hope.",
+            howAr: "الجزاءُ مخفيّ، والآيةُ التي قبلها تذكر ما يُجزى — عبادةً مخفيّةً كذلك: ﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا﴾."
+          },
+          {
+            ref: "Surah Al-Furqan (25:74)",
+            ar: "وَٱلَّذِينَ يَقُولُونَ رَبَّنَا هَبۡ لَنَا مِنۡ أَزۡوَٰجِنَا وَذُرِّيَّٰتِنَا قُرَّةَ أَعۡيُنٖ وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا",
+            en: "And those who say, \"Our Lord, grant us from among our wives and offspring comfort to our eyes and make us an example for the righteous.\"",
+            how: "Al-Furqan's prayer asks for a comfort of the eyes in spouses and children. As-Sajdah uses the same words for what is hidden in Paradise: a comfort of eyes that no soul knows.",
+            howAr: "الفرقانُ تسأل قرّةَ العين في الأزواج والذرّيّة، والسجدةُ تستعمل اللفظَ نفسه لما أُخفي في الجنّة: ﴿مِّن قُرَّةِ أَعۡيُنٖ﴾."
+          }
+        ],
         ref: "Surah As-Sajdah (32:17), read with 32:16",
         strength: "quran"
       },
@@ -7297,7 +7624,30 @@ const TADABBUR = {
           }
         ],
         plain: "In plain words: it does not say they pray at night. It says their sides pull away from the bed — the effort is described where it is actually felt.",
-        plainAr: "بعبارة أخرى: لم يقل إنهم يصلّون بالليل، وإنما إنّ جنوبهم تتجافى عن الفراش، فوُصفت المشقّة حيث تُحسّ."
+        plainAr: "بعبارة أخرى: لم يقل إنهم يصلّون بالليل، وإنما إنّ جنوبهم تتجافى عن الفراش، فوُصفت المشقّة حيث تُحسّ.",
+        links: [
+          {
+            ref: "Surah As-Sajdah (32:17)",
+            ar: "فَلَا تَعۡلَمُ نَفۡسٞ مَّآ أُخۡفِيَ لَهُم مِّن قُرَّةِ أَعۡيُنٖ جَزَآءَۢ بِمَا كَانُواْ يَعۡمَلُونَ",
+            en: "And no soul knows what has been hidden for them of comfort for eyes as reward for what they used to do.",
+            how: "Their worship is hidden in the night, and the next verse says their reward is hidden too: no soul knows what has been kept back for them.",
+            howAr: "عبادتُهم مخفيّةٌ في الليل، والآيةُ التي تليها تقول إنّ جزاءهم مخفيٌّ كذلك: ﴿فَلَا تَعۡلَمُ نَفۡسٞ مَّآ أُخۡفِيَ لَهُم مِّن قُرَّةِ أَعۡيُنٖ﴾."
+          },
+          {
+            ref: "Surah Adh-Dhariyat (51:17-18)",
+            ar: "كَانُواْ قَلِيلٗا مِّنَ ٱلَّيۡلِ مَا يَهۡجَعُونَ ۝ وَبِٱلۡأَسۡحَارِ هُمۡ يَسۡتَغۡفِرُونَ",
+            en: "They used to sleep but little of the night, And in the hours before dawn they would ask forgiveness,",
+            how: "Adh-Dhariyat describes the same people: they slept little of the night, and before dawn they were asking forgiveness.",
+            howAr: "الذارياتُ تصف القومَ أنفسهم: ﴿كَانُواْ قَلِيلٗا مِّنَ ٱلَّيۡلِ مَا يَهۡجَعُونَ﴾ ﴿وَبِٱلۡأَسۡحَارِ هُمۡ يَسۡتَغۡفِرُونَ﴾."
+          },
+          {
+            ref: "Surah Al-Isra (17:79)",
+            ar: "وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ عَسَىٰٓ أَن يَبۡعَثَكَ رَبُّكَ مَقَامٗا مَّحۡمُودٗا",
+            en: "And from [part of] the night, pray with it as additional [worship] for you; it is expected that your Lord will resurrect you to a praised station.",
+            how: "Al-Isra gives the command to the Prophet ﷺ: and in part of the night, pray with it as an extra for you — perhaps your Lord will raise you to a praised station.",
+            howAr: "الإسراءُ تعطي الأمرَ للنبيّ ﷺ: ﴿وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ عَسَىٰٓ أَن يَبۡعَثَكَ رَبُّكَ مَقَامٗا مَّحۡمُودٗا﴾."
+          }
+        ]
       },
 
       {
@@ -7307,6 +7657,29 @@ const TADABBUR = {
         whyAr: "ثلاثُ آياتٍ تتتبّع من أين جاء الآدميّ، وأوّلُ لفظةٍ فيها تضبط نبرتها كلَّها.\n\n﴿ٱلَّذِيٓ **أَحۡسَنَ** كُلَّ شَيۡءٍ خَلَقَهُۥۖ﴾. أتقنه وأحسن صنعه. فقُدّمت الدعوى قبل تسمية المادّة، وهذا معتبَرٌ لِما تتبيّن عليه المادّة.\n\nثم: ﴿وَبَدَأَ خَلۡقَ ٱلۡإِنسَٰنِ مِن طِينٖ ۝ ثُمَّ جَعَلَ نَسۡلَهُۥ مِن سُلَٰلَةٖ مِّن مَّآءٖ مَّهِينٖ ۝ ثُمَّ سَوَّىٰهُ وَنَفَخَ فِيهِ مِن رُّوحِهِۦۖ﴾.\n\nفالمتوالية من طين، إلى ما سُمّي مهينًا صراحةً، إلى النفخ — وقد حُكم على ذلك كلِّه بالإحسان قبلُ. فالقرآنُ لا يُجامل المادّة ولا يدع القارئ يزدريها.\n\nثم لمّا بلغ المخلوقَ تامًّا سمّى ما أُعطيه: ﴿وَجَعَلَ لَكُمُ ٱلسَّمۡعَ وَٱلۡأَبۡصَٰرَ وَٱلۡأَفۡـِٔدَةَۚ﴾. ثلاثُ قوًى على هذا الترتيب: ما يدخل، وما يُحكم به.\n\nوالكلماتُ الأربع في الخاتمة هي مقصودُ السياق: ﴿قَلِيلٗا مَّا تَشۡكُرُونَ﴾. فبعد الطين والماء والتسوية والعطايا الثلاث — كان تلخيصُ الجواب أنه ضئيل.",
         plain: "“He PERFECTED everything He created” comes BEFORE the material is named — and the material is clay, then a fluid the verse itself calls contemptible. Then hearing, sight and hearts. And the summary of our response: little do you thank.",
         plainAr: "﴿أَحۡسَنَ كُلَّ شَيۡءٍ خَلَقَهُۥۖ﴾ قبل أن تُسمّى المادّة — والمادّةُ طينٌ ثم ماءٌ سمّته الآيةُ مهينًا. ثم ﴿ٱلسَّمۡعَ وَٱلۡأَبۡصَٰرَ وَٱلۡأَفۡـِٔدَةَۚ﴾. وتلخيصُ الجواب: ﴿قَلِيلٗا مَّا تَشۡكُرُونَ﴾.",
+        links: [
+          {
+            ref: "Surah Al-Hijr (15:29)",
+            ar: "فَإِذَا سَوَّيۡتُهُۥ وَنَفَخۡتُ فِيهِ مِن رُّوحِي فَقَعُواْ لَهُۥ سَٰجِدِينَ",
+            en: "And when I have proportioned him and breathed into him of My [created] soul, then fall down to him in prostration.\"",
+            how: "As-Sajdah and Al-Hijr use the same two words for the last step of the creation of man: He proportioned him, and breathed into him of His spirit.",
+            howAr: "السجدةُ والحِجرُ تستعملان الكلمتين نفسيهما لآخر مراحل خلق الإنسان، التسويةِ والنفخ: ﴿فَإِذَا سَوَّيۡتُهُۥ وَنَفَخۡتُ فِيهِ مِن رُّوحِي﴾."
+          },
+          {
+            ref: "Surah Al-Mursalat (77:20)",
+            ar: "أَلَمۡ نَخۡلُقكُّم مِّن مَّآءٖ مَّهِينٖ",
+            en: "Did We not create you from a liquid disdained?",
+            how: "As-Sajdah and Al-Mursalat use the same two words for the fluid man came from: a fluid of little worth.",
+            howAr: "السجدةُ والمرسلاتُ تستعملان اللفظين نفسيهما للماء الذي خُلق منه الإنسان: ﴿مِّن مَّآءٖ مَّهِينٖ﴾."
+          },
+          {
+            ref: "Surah At-Tin (95:4)",
+            ar: "لَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ فِيٓ أَحۡسَنِ تَقۡوِيمٖ",
+            en: "We have certainly created man in the best of stature;",
+            how: "As-Sajdah says He made excellent everything He created; At-Tin says it of man in particular: We created man in the best of forms.",
+            howAr: "السجدةُ تقول إنه أحسن كلَّ شيءٍ خلقه، والتينُ تقولها في الإنسان خاصّة: ﴿لَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ فِيٓ أَحۡسَنِ تَقۡوِيمٖ﴾."
+          }
+        ],
         ref: "Surah As-Sajdah (32:7-9)",
         strength: "quran"
       },
@@ -7461,6 +7834,20 @@ const TADABBUR = {
             en: "And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.' \"",
             how: "Saba says the grateful are few, and that gratitude is work; Ibrahim says what that work earns — increase, promised in Allah's own voice.",
             howAr: "سبأٌ تقول إنّ الشاكرين قليل، وإنّ الشكرَ عمل، وإبراهيمُ تقول ما يُثمره هذا العمل: ﴿لَئِن شَكَرۡتُمۡ لَأَزِيدَنَّكُمۡۖ﴾."
+          },
+          {
+            ref: "Surah An-Naml (27:19)",
+            ar: "فَتَبَسَّمَ ضَاحِكٗا مِّن قَوۡلِهَا وَقَالَ رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ وَأَدۡخِلۡنِي بِرَحۡمَتِكَ فِي عِبَادِكَ ٱلصَّٰلِحِينَ",
+            en: "So [Solomon] smiled, amused at her speech, and said, \"My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents and to do righteousness of which You approve. And admit me by Your mercy into [the ranks of] Your righteous servants.\"",
+            how: "Saba commands Dawud's family to work in gratitude; An-Naml shows his son Sulayman doing it — asking to be enabled to give thanks, at the moment of his greatest power.",
+            howAr: "سورةُ سبأ تأمر آلَ داود بالعمل شكرًا، والنملُ تُريك ابنَه سليمان يفعل ذلك، يسأل أن يُعان على الشكر في ذروة قوّته: ﴿رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ﴾."
+          },
+          {
+            ref: "Surah Saba (34:10)",
+            ar: "۞ وَلَقَدۡ ءَاتَيۡنَا دَاوُۥدَ مِنَّا فَضۡلٗاۖ يَٰجِبَالُ أَوِّبِي مَعَهُۥ وَٱلطَّيۡرَۖ وَأَلَنَّا لَهُ ٱلۡحَدِيدَ",
+            en: "And We certainly gave David from Us bounty. [We said], \"O mountains, repeat [Our] praises with him, and the birds [as well].\" And We made pliable for him iron,",
+            how: "This verse commands gratitude; the passage it closes began with the gifts being thanked for — the mountains and the birds glorifying with Dawud, and iron made soft for him.",
+            howAr: "هذه الآيةُ تأمر بالشكر، والمقطعُ الذي تختمه بدأ بالنعم التي يُشكر عليها: ﴿وَأَلَنَّا لَهُ ٱلۡحَدِيدَ﴾."
           }
         ],
         ref: "Surah Saba (34:13), read with 34:15-19",
@@ -7474,6 +7861,29 @@ const TADABBUR = {
         whyAr: "أُعطي داودُ ثلاثًا، والثالثةُ ليست كالأُوليين.\n\nأُمرت الجبالُ أن تُؤوّب معه بالتسبيح، والطيرُ معها. ثم أُلين له الحديد. وهذه آيات — خرقٌ لما عليه الأشياء.\n\nثم جاء الأمر، وهنا ينعطف السياق: ﴿أَنِ ٱعۡمَلۡ سَٰبِغَٰتٖ وَ**قَدِّرۡ فِي ٱلسَّرۡدِۖ**﴾.\n\nفالحديدُ لُيّن له، وأمّا الصنعةُ فلم تُلَن. فبقي مأمورًا أن يُحكم قياس الحَلَق. نبيٌّ يُمسك معدنًا لان في يده، ويُوصى بإتقان الصنعة.\n\nوهذا نسقٌ يعود إليه القرآن. فمريمُ في مخاضها تحت النخلة أُمرت أن تهزّ الجذع. وموسى أُمر أن يضرب البحر. فالآيةُ تكفي ما هو محال، وأمّا ما هو شاقٌّ فقط فيُترك حيث هو.\n\nوالخاتمةُ تُوسّعه على الجميع: ﴿وَٱعۡمَلُواْ صَٰلِحًاۖ إِنِّي بِمَا تَعۡمَلُونَ بَصِيرٞ﴾. فالتفت الخطابُ من النبيّ المفرد إلى الجمع. فمهما أُعطي هو، فالميزانُ على سائرهم واحد.",
         plain: "The iron was made soft for Dawud — and then he is told to get the gauge of the chain links right. The miracle covered the impossible part; the difficult part was left exactly where it was. The same pattern as Maryam being told to shake the palm trunk.",
         plainAr: "أُلين الحديدُ لداود — ثم أُمر أن يُقدّر في السَّرد (أي أن يُحكم قياس حَلَق الدرع). فالآيةُ كفت ما هو محال، وأمّا الشاقُّ فتُرك حيث هو. وهو نسقُ أمرِ مريمَ أن تهزّ جذع النخلة.",
+        links: [
+          {
+            ref: "Surah Saba (34:13)",
+            ar: "يَعۡمَلُونَ لَهُۥ مَا يَشَآءُ مِن مَّحَٰرِيبَ وَتَمَٰثِيلَ وَجِفَانٖ كَٱلۡجَوَابِ وَقُدُورٖ رَّاسِيَٰتٍۚ ٱعۡمَلُوٓاْ ءَالَ دَاوُۥدَ شُكۡرٗاۚ وَقَلِيلٞ مِّنۡ عِبَادِيَ ٱلشَّكُورُ",
+            en: "They made for him what he willed of elevated chambers, statues, bowls like reservoirs, and stationary kettles. [We said], \"Work, O family of David, in gratitude.\" And few of My servants are grateful.",
+            how: "The same passage ends with the command to Dawud's family: work, in gratitude.",
+            howAr: "والمقطعُ نفسه يُختم بالأمر لآل داود: ﴿ٱعۡمَلُوٓاْ ءَالَ دَاوُۥدَ شُكۡرٗاۚ﴾."
+          },
+          {
+            ref: "Surah Al-Anbiya (21:80)",
+            ar: "وَعَلَّمۡنَٰهُ صَنۡعَةَ لَبُوسٖ لَّكُمۡ لِتُحۡصِنَكُم مِّنۢ بَأۡسِكُمۡۖ فَهَلۡ أَنتُمۡ شَٰكِرُونَ",
+            en: "And We taught him the fashioning of coats of armor to protect you from your [enemy in] battle. So will you then be grateful?",
+            how: "Al-Anbiya names the craft and what it was for: We taught him the making of coats of mail for you, to protect you in your battles — so will you be grateful?",
+            howAr: "الأنبياءُ تسمّي الصنعةَ وغايتها: ﴿وَعَلَّمۡنَٰهُ صَنۡعَةَ لَبُوسٖ لَّكُمۡ لِتُحۡصِنَكُم مِّنۢ بَأۡسِكُمۡۖ فَهَلۡ أَنتُمۡ شَٰكِرُونَ﴾."
+          },
+          {
+            ref: "Surah Al-Hadid (57:25)",
+            ar: "لَقَدۡ أَرۡسَلۡنَا رُسُلَنَا بِٱلۡبَيِّنَٰتِ وَأَنزَلۡنَا مَعَهُمُ ٱلۡكِتَٰبَ وَٱلۡمِيزَانَ لِيَقُومَ ٱلنَّاسُ بِٱلۡقِسۡطِۖ وَأَنزَلۡنَا ٱلۡحَدِيدَ فِيهِ بَأۡسٞ شَدِيدٞ وَمَنَٰفِعُ لِلنَّاسِ وَلِيَعۡلَمَ ٱللَّهُ مَن يَنصُرُهُۥ وَرُسُلَهُۥ بِٱلۡغَيۡبِۚ إِنَّ ٱللَّهَ قَوِيٌّ عَزِيزٞ",
+            en: "We have already sent Our messengers with clear evidences and sent down with them the Scripture and the balance that the people may maintain [their affairs] in justice. And We sent down iron, wherein is great military might and benefits for the people, and so that Allah may make evident those who support Him and His messengers unseen. Indeed, Allah is Powerful and Exalted in Might.",
+            how: "Al-Hadid says iron itself was sent down, with great strength in it and benefits for people.",
+            howAr: "الحديدُ تقول إنّ الحديد نفسه أُنزل: ﴿وَأَنزَلۡنَا ٱلۡحَدِيدَ فِيهِ بَأۡسٞ شَدِيدٞ وَمَنَٰفِعُ لِلنَّاسِ﴾."
+          }
+        ],
         ref: "Surah Saba (34:10-11)",
         strength: "quran"
       },
@@ -7542,7 +7952,30 @@ const TADABBUR = {
           }
         ],
         plain: "In plain words: the word for poor comes from a broken backbone. It is not about how much you own — it is about not being able to stand without support.",
-        plainAr: "بعبارة أخرى: لفظ الفقير من فَقار الظهر المكسور، فليس في مقدار ما تملك، وإنما في عجزك عن القيام بغير سَند."
+        plainAr: "بعبارة أخرى: لفظ الفقير من فَقار الظهر المكسور، فليس في مقدار ما تملك، وإنما في عجزك عن القيام بغير سَند.",
+        links: [
+          {
+            ref: "Surah Al-Ikhlas (112:2)",
+            ar: "ٱللَّهُ ٱلصَّمَدُ",
+            en: "Allah, the Eternal Refuge.",
+            how: "Fatir calls people the poor, in need of Allah, and Him the Free of need. Al-Ikhlas gives Him the name that holds both at once: as-Samad — the One everyone turns to, who needs no one.",
+            howAr: "فاطرٌ تسمّي الناسَ فقراءَ إلى الله، وتسمّيه الغنيّ، والإخلاصُ تعطيه الاسمَ الذي يجمع الأمرين: ﴿ٱللَّهُ ٱلصَّمَدُ﴾ — الذي يقصده كلُّ أحد، ولا يحتاج إلى أحد."
+          },
+          {
+            ref: "Surah Muhammad (47:38)",
+            ar: "هَٰٓأَنتُمۡ هَٰٓؤُلَآءِ تُدۡعَوۡنَ لِتُنفِقُواْ فِي سَبِيلِ ٱللَّهِ فَمِنكُم مَّن يَبۡخَلُۖ وَمَن يَبۡخَلۡ فَإِنَّمَا يَبۡخَلُ عَن نَّفۡسِهِۦۚ وَٱللَّهُ ٱلۡغَنِيُّ وَأَنتُمُ ٱلۡفُقَرَآءُۚ وَإِن تَتَوَلَّوۡاْ يَسۡتَبۡدِلۡ قَوۡمًا غَيۡرَكُمۡ ثُمَّ لَا يَكُونُوٓاْ أَمۡثَٰلَكُم",
+            en: "Here you are - those invited to spend in the cause of Allah - but among you are those who withhold [out of greed]. And whoever withholds only withholds [benefit] from himself; and Allah is the Free of need, while you are the needy. And if you turn away, He will replace you with another people; then they will not be the likes of you.",
+            how: "Surah Muhammad says it the other way round, in the same words: Allah is the Rich, and you are the poor.",
+            howAr: "سورةُ محمد تقولها معكوسةً بالألفاظ نفسها: ﴿وَٱللَّهُ ٱلۡغَنِيُّ وَأَنتُمُ ٱلۡفُقَرَآءُۚ﴾."
+          },
+          {
+            ref: "Surah Al-Qasas (28:24)",
+            ar: "فَسَقَىٰ لَهُمَا ثُمَّ تَوَلَّىٰٓ إِلَى ٱلظِّلِّ فَقَالَ رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ",
+            en: "So he watered [their flocks] for them; then he went back to the shade and said, \"My Lord, indeed I am, for whatever good You would send down to me, in need.\"",
+            how: "Musa uses the same word about himself, and turns it into a prayer: my Lord, I am poor — in need of whatever good You send down to me.",
+            howAr: "موسى يستعمل الكلمةَ نفسها في نفسه، ويجعلها دعاءً: ﴿رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ﴾."
+          }
+        ]
       }
     ]
   },
@@ -7578,6 +8011,29 @@ const TADABBUR = {
         whyAr: "هذا جوابُ السؤال الذي سُئل قبل أربع آيات، حين فتّ رجلٌ عظمًا باليًا بيده وقال: ﴿مَن يُحۡيِ ٱلۡعِظَٰمَ وَهِيَ رَمِيمٞ﴾.\n\nولم يُجادل الجوابُ في أمرٍ طبيعيّ، وإنما نقل النظر: أنت تقيس بالجهد، ولا جهد ثمّ. فبين الإرادة ووجود الشيء لا شيء: لا طَورٌ ولا مادّةٌ ولا مُهلةٌ يُحتمل أن تتخلّف.\n\nوفي الصياغة ما يُلاحَظ: ﴿فَيَكُونُ﴾ لا «فكان». فلم تجعله العربيّةُ ماضيًا، فليس الخبرُ عن لحظةٍ من لحظات الخلق مضت، وإنما هو وصفٌ للأمر كيف يجري، دائمًا.\n\nولذلك كانت الآيةُ تسليةً كما هي حجّة: فمهما يكن الذي ينتظره العبد، فالمسافةُ بين حاله وضدِّها **كلمة**.",
         plain: "The answer to the man who crumbled an old bone and asked who would give life to bones. It does not argue about biology — it changes the frame: you are measuring by effort, and there is no effort. And the Arabic is not past tense, so it is describing how it works, not one moment.",
         plainAr: "جوابُ الرجل الذي فتّ عظمًا باليًا وقال: من يُحيي العظام وهي رميم؟ ولم تُجادل الآيةُ في الأحياء، بل نقلت الميزان: أنت تقيس بالجهد، ولا جهد هناك. والعربيةُ ليست على الماضي، فهي تصف كيف يكون الأمر، لا لحظةً بعينها.",
+        links: [
+          {
+            ref: "Surah Al-Qamar (54:50)",
+            ar: "وَمَآ أَمۡرُنَآ إِلَّا وَٰحِدَةٞ كَلَمۡحِۭ بِٱلۡبَصَرِ",
+            en: "And Our command is but one, like a glance of the eye.",
+            how: "Ya-Sin says His command, when He wills a thing, is only to say to it: Be — and it is. Al-Qamar says how long it takes: Our command is but one, like the blink of an eye.",
+            howAr: "سورةُ يس تقول: ﴿إِنَّمَآ أَمۡرُهُۥٓ إِذَآ أَرَادَ شَيۡـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ﴾، والقمرُ تقول كم يستغرق ذلك: ﴿وَمَآ أَمۡرُنَآ إِلَّا وَٰحِدَةٞ كَلَمۡحِۭ بِٱلۡبَصَرِ﴾."
+          },
+          {
+            ref: "Surah Ya-Sin (36:78-79)",
+            ar: "وَضَرَبَ لَنَا مَثَلٗا وَنَسِيَ خَلۡقَهُۥۖ قَالَ مَن يُحۡيِ ٱلۡعِظَٰمَ وَهِيَ رَمِيمٞ ۝ قُلۡ يُحۡيِيهَا ٱلَّذِيٓ أَنشَأَهَآ أَوَّلَ مَرَّةٖۖ وَهُوَ بِكُلِّ خَلۡقٍ عَلِيمٌ",
+            en: "And he presents for Us an example and forgets his [own] creation. He says, \"Who will give life to bones while they are disintegrated?\" Say, \"He will give them life who produced them the first time; and He is, of all creation, Knowing.\"",
+            how: "The question it answers comes four verses earlier: who will give life to bones once they have crumbled? Say: He who made them the first time.",
+            howAr: "والسؤالُ الذي تجيب عنه قبلها بأربع آيات: ﴿قَالَ مَن يُحۡيِ ٱلۡعِظَٰمَ وَهِيَ رَمِيمٞ﴾ ﴿قُلۡ يُحۡيِيهَا ٱلَّذِيٓ أَنشَأَهَآ أَوَّلَ مَرَّةٖۖ﴾."
+          },
+          {
+            ref: "Surah Ali 'Imran (3:59)",
+            ar: "إِنَّ مَثَلَ عِيسَىٰ عِندَ ٱللَّهِ كَمَثَلِ ءَادَمَۖ خَلَقَهُۥ مِن تُرَابٖ ثُمَّ قَالَ لَهُۥ كُن فَيَكُونُ",
+            en: "Indeed, the example of Jesus to Allah is like that of Adam. He created Him from dust; then He said to him, \"Be,\" and he was.",
+            how: "Al 'Imran uses the same word for the creation of 'Isa: like Adam, He created him from dust, then said to him Be, and he was.",
+            howAr: "آلُ عمران تستعمل الكلمةَ نفسها في خلق عيسى: ﴿إِنَّ مَثَلَ عِيسَىٰ عِندَ ٱللَّهِ كَمَثَلِ ءَادَمَۖ خَلَقَهُۥ مِن تُرَابٖ ثُمَّ قَالَ لَهُۥ كُن فَيَكُونُ﴾."
+          }
+        ],
         ref: "Surah Ya-Sin (36:82), read with 36:78",
         strength: "quran"
       }
@@ -7596,6 +8052,29 @@ const TADABBUR = {
         whyAr: "قالها إبراهيم لقومٍ يعبدون أصنامًا نحتوها بأيديهم. والمعنى القريب ظاهرٌ وهو الذي يقتضيه السياق: أنّ الله خلقكم وخلق ما تصنعون، فكيف تعبدون ما سوّته أيديكم من مادّةٍ خلقها هو؟\n\nولكنّ اللفظ يُفضي إلى أقدم مسألةٍ في هذا الباب، والإنصافُ أن يُقال إنّ العلماء اختلفوا فيه. فـ﴿مَا تَعۡمَلُونَ﴾ تُقرأ على **ما تنحتون**، أي المصنوعات، وهو ما تشهد له القصّة. وتُقرأ على **أعمالكم** أنفسها.\n\nوعلى الثاني صارت من عُمَد أدلّة القدر، احتجّ بها من قال إنّ أفعال العباد مخلوقةٌ لله، على من قال إنّ العبد يخلق فعل نفسه. والذي استقرّ عليه جمهور أهل السنّة أنّ الفعل مخلوقٌ لله مكسوبٌ للعبد: يختار حقيقةً، واختيارُه نفسه ليس خارجًا عمّا خلق الله.\n\nولن تدّعي هذه الصفحة أنّ الأمر هيّن ولا أنّ النزاع قد انقطع. وإنما تقول ما لا تتركه الآيةُ محتملًا: أنه على القراءتين جميعًا لا يوجد شيءٌ لم يخلقه، ولا يُظلم أحد.",
         plain: "Said by Ibrahim to people worshipping statues they had carved themselves: Allah made you, and He made what you are making. The scholars differed over whether “what you make” means the objects — which the story supports — or your actions, which became a key text on destiny.",
         plainAr: "قالها إبراهيم لقومٍ يعبدون تماثيلَ نحتوها بأيديهم: واللهُ خلقكم وما تعملون. واختلف العلماءُ: أهي ما تنحتون من الأصنام، وعليه يدلّ السياق، أم أعمالُكم أنفسُها — وصارت على هذا أصلًا في باب القدر.",
+        links: [
+          {
+            ref: "Surah As-Saffat (37:95)",
+            ar: "قَالَ أَتَعۡبُدُونَ مَا تَنۡحِتُونَ",
+            en: "He said, \"Do you worship that which you [yourselves] carve,",
+            how: "The verse before gives the question this answers: do you worship what you carve yourselves?",
+            howAr: "والآيةُ التي قبلها فيها السؤالُ الذي تجيب عنه: ﴿قَالَ أَتَعۡبُدُونَ مَا تَنۡحِتُونَ﴾؟"
+          },
+          {
+            ref: "Surah Ash-Shu'ara (26:78-79)",
+            ar: "ٱلَّذِي خَلَقَنِي فَهُوَ يَهۡدِينِ ۝ وَٱلَّذِي هُوَ يُطۡعِمُنِي وَيَسۡقِينِ",
+            en: "Who created me, and He [it is who] guides me. And it is He who feeds me and gives me drink.",
+            how: "Ash-Shu'ara gives Ibrahim's other argument from creation: the One who created me — He guides me; He feeds me and gives me drink.",
+            howAr: "الشعراءُ تذكر حجّةً أخرى لإبراهيم من الخلق: ﴿ٱلَّذِي خَلَقَنِي فَهُوَ يَهۡدِينِ﴾ ﴿وَٱلَّذِي هُوَ يُطۡعِمُنِي وَيَسۡقِينِ﴾."
+          },
+          {
+            ref: "Surah An-Nahl (16:17)",
+            ar: "أَفَمَن يَخۡلُقُ كَمَن لَّا يَخۡلُقُۚ أَفَلَا تَذَكَّرُونَ",
+            en: "Then is He who creates like one who does not create? So will you not be reminded?",
+            how: "An-Nahl puts the whole argument in one question: is the One who creates like one who does not create? Will you not remember?",
+            howAr: "النحلُ تضع الحجّةَ كلَّها في سؤالٍ واحد: ﴿أَفَمَن يَخۡلُقُ كَمَن لَّا يَخۡلُقُۚ أَفَلَا تَذَكَّرُونَ﴾؟"
+          }
+        ],
         ref: "Surah As-Saffat (37:96), read with 37:95",
         strength: "ikhtilaf"
       },
@@ -7619,6 +8098,29 @@ const TADABBUR = {
           strength: "quran"
         }
         ],
+        links: [
+          {
+            ref: "Surah As-Saffat (37:106-107)",
+            ar: "إِنَّ هَٰذَا لَهُوَ ٱلۡبَلَٰٓؤُاْ ٱلۡمُبِينُ ۝ وَفَدَيۡنَٰهُ بِذِبۡحٍ عَظِيمٖ",
+            en: "Indeed, this was the clear trial. And We ransomed him with a great sacrifice,",
+            how: "The passage names what this was: this was the clear trial — and We ransomed him with a great sacrifice.",
+            howAr: "والمقطعُ يسمّي ما كان: ﴿إِنَّ هَٰذَا لَهُوَ ٱلۡبَلَٰٓؤُاْ ٱلۡمُبِينُ﴾ ﴿وَفَدَيۡنَٰهُ بِذِبۡحٍ عَظِيمٖ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:124)",
+            ar: "۞ وَإِذِ ٱبۡتَلَىٰٓ إِبۡرَٰهِـۧمَ رَبُّهُۥ بِكَلِمَٰتٖ فَأَتَمَّهُنَّۖ قَالَ إِنِّي جَاعِلُكَ لِلنَّاسِ إِمَامٗاۖ قَالَ وَمِن ذُرِّيَّتِيۖ قَالَ لَا يَنَالُ عَهۡدِي ٱلظَّٰلِمِينَ",
+            en: "And [mention, O Muhammad], when Abraham was tried by his Lord with commands and he fulfilled them. [Allah] said, \"Indeed, I will make you a leader for the people.\" [Abraham] said, \"And of my descendants?\" [Allah] said, \"My covenant does not include the wrongdoers.\"",
+            how: "Al-Baqarah says Ibrahim was tried by his Lord with commands and fulfilled them — and was made a leader for people.",
+            howAr: "البقرةُ تقول إنّ إبراهيم ابتُلي فوفّى، فجعله الله إمامًا: ﴿وَإِذِ ٱبۡتَلَىٰٓ إِبۡرَٰهِـۧمَ رَبُّهُۥ بِكَلِمَٰتٖ فَأَتَمَّهُنَّۖ قَالَ إِنِّي جَاعِلُكَ لِلنَّاسِ إِمَامٗاۖ﴾."
+          },
+          {
+            ref: "Surah As-Saffat (37:84)",
+            ar: "إِذۡ جَآءَ رَبَّهُۥ بِقَلۡبٖ سَلِيمٍ",
+            en: "When he came to his Lord with a sound heart",
+            how: "Earlier in the same surah: he came to his Lord with a sound heart. This is what that heart did when the trial came.",
+            howAr: "وفي السورة نفسها قبل ذلك: ﴿إِذۡ جَآءَ رَبَّهُۥ بِقَلۡبٖ سَلِيمٍ﴾، وهذا ما فعله ذلك القلب حين جاء الابتلاء."
+          }
+        ],
         ref: "Surah As-Saffat (37:102)",
         strength: "quran"
       },
@@ -7630,6 +8132,29 @@ const TADABBUR = {
         whyAr: "هؤلاء ملائكةٌ تتكلّم عن نفسها، وما قالته ضدّ ما يقوله ذو قوّة.\n\n﴿وَمَا مِنَّآ إِلَّا لَهُۥ مَقَامٞ مَّعۡلُومٞ﴾. مقامٌ معيَّنٌ ثابتٌ معلوم. لا مختارٌ ولا متنازَعٌ عليه ولا يُبرح.\n\nفكلّ واحدٍ منهم يخبرك أنّ رتبته أُعطيها. خلقٌ من نور، يحملون العرش ويملؤون السماوات، يصفون موضعهم بأنه موضعٌ **وُضعوا** فيه.\n\nوبه سُمّيت السورة: الصافّات. والصفُّ هو الصورة الظاهرة للمعنى نفسه: كلٌّ في موضعه الذي أُعطيه، لا يتقدّم أحد.",
         plain: "The angels themselves say that each of them has a fixed place given to him. Not one of them asks for a higher one. If that is how the angels speak about rank, it is worth asking why we speak about it the way we do.",
         plainAr: "الملائكة أنفسُهم يقولون إنّ لكلّ واحدٍ منهم مقامًا (أي موضعًا) معلومًا أُعطيه. ولا يسأل أحدٌ منهم ما هو أعلى. فإذا كان هذا كلامَ الملائكة في المراتب، فينبغي أن نسأل: لِمَ كلامُنا نحن فيها على غير ذلك؟",
+        links: [
+          {
+            ref: "Surah As-Saff (61:4)",
+            ar: "إِنَّ ٱللَّهَ يُحِبُّ ٱلَّذِينَ يُقَٰتِلُونَ فِي سَبِيلِهِۦ صَفّٗا كَأَنَّهُم بُنۡيَٰنٞ مَّرۡصُوصٞ",
+            en: "Indeed, Allah loves those who fight in His cause in a row as though they are a [single] structure joined firmly.",
+            how: "The angels say each of them has a known place. As-Saff says Allah loves those who stand in a row like a solid structure. And the Prophet ﷺ asked his Companions to line up as the angels line up before their Lord — completing the front rows, and closing the gaps in the row (Muslim 430).",
+            howAr: "الملائكةُ تقول إنّ لكلٍّ منهم مقامًا معلومًا، والصفُّ تقول: ﴿إِنَّ ٱللَّهَ يُحِبُّ ٱلَّذِينَ يُقَٰتِلُونَ فِي سَبِيلِهِۦ صَفّٗا كَأَنَّهُم بُنۡيَٰنٞ مَّرۡصُوصٞ﴾. وقد سأل النبيُّ ﷺ أصحابَه أن يصفّوا كما تصفّ الملائكة عند ربّها، وقال: «يُتِمُّونَ الصُّفُوفَ الأُوَلَ وَيَتَرَاصُّونَ فِي الصَّفِّ» (مسلم ٤٣٠)."
+          },
+          {
+            ref: "Surah As-Saffat (37:165-166)",
+            ar: "وَإِنَّا لَنَحۡنُ ٱلصَّآفُّونَ ۝ وَإِنَّا لَنَحۡنُ ٱلۡمُسَبِّحُونَ",
+            en: "And indeed, we are those who line up [for prayer]. And indeed, we are those who exalt Allah.\"",
+            how: "The next two verses complete what they say: we are the ones ranged in rows, and we are the ones who glorify.",
+            howAr: "والآيتان بعدها تتمّان قولهم: ﴿وَإِنَّا لَنَحۡنُ ٱلصَّآفُّونَ﴾ ﴿وَإِنَّا لَنَحۡنُ ٱلۡمُسَبِّحُونَ﴾."
+          },
+          {
+            ref: "Surah Al-Anbiya (21:19-20)",
+            ar: "وَلَهُۥ مَن فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۚ وَمَنۡ عِندَهُۥ لَا يَسۡتَكۡبِرُونَ عَنۡ عِبَادَتِهِۦ وَلَا يَسۡتَحۡسِرُونَ ۝ يُسَبِّحُونَ ٱلَّيۡلَ وَٱلنَّهَارَ لَا يَفۡتُرُونَ",
+            en: "To Him belongs whoever is in the heavens and the earth. And those near Him are not prevented by arrogance from His worship, nor do they tire. They exalt [Him] night and day [and] do not slacken.",
+            how: "Al-Anbiya says the same of those who are with Him: they are not too proud to worship Him, nor do they tire; they glorify night and day without pause.",
+            howAr: "الأنبياءُ تقول الشيءَ نفسه عمّن عنده: ﴿وَمَنۡ عِندَهُۥ لَا يَسۡتَكۡبِرُونَ عَنۡ عِبَادَتِهِۦ وَلَا يَسۡتَحۡسِرُونَ﴾ ﴿يُسَبِّحُونَ ٱلَّيۡلَ وَٱلنَّهَارَ لَا يَفۡتُرُونَ﴾."
+          }
+        ],
         ref: "Surah As-Saffat (37:164)",
         strength: "quran"
       },
@@ -7654,6 +8179,13 @@ const TADABBUR = {
             en: "In their hearts is disease, so Allah has increased their disease; and for them is a painful punishment because they [habitually] used to lie.",
             how: "The opposite of a sound heart, named at the start of the Quran: a diseased one. Salim and marad are a pair — health and illness of the same organ.",
             howAr: "ضدُّ القلب السليم مذكورٌ في أوّل المصحف: القلبُ المريض. فالسليمُ والمرضُ زوجان: صحّةُ العضو نفسِه ومرضُه."
+          },
+          {
+            ref: "Surah As-Saffat (37:102)",
+            ar: "فَلَمَّا بَلَغَ مَعَهُ ٱلسَّعۡيَ قَالَ يَٰبُنَيَّ إِنِّيٓ أَرَىٰ فِي ٱلۡمَنَامِ أَنِّيٓ أَذۡبَحُكَ فَٱنظُرۡ مَاذَا تَرَىٰۚ قَالَ يَٰٓأَبَتِ ٱفۡعَلۡ مَا تُؤۡمَرُۖ سَتَجِدُنِيٓ إِن شَآءَ ٱللَّهُ مِنَ ٱلصَّٰبِرِينَ",
+            en: "And when he reached with him [the age of] exertion, he said, \"O my son, indeed I have seen in a dream that I [must] sacrifice you, so see what you think.\" He said, \"O my father, do as you are commanded. You will find me, if Allah wills, of the steadfast.\"",
+            how: "This verse says he came to his Lord with a sound heart; eighteen verses later the surah shows that heart under the hardest test it could be given.",
+            howAr: "هذه الآيةُ تقول إنه جاء ربَّه بقلبٍ سليم، وبعد ثماني عشرة آية تُريك السورةُ هذا القلبَ في أشدّ امتحان: ﴿يَٰبُنَيَّ إِنِّيٓ أَرَىٰ فِي ٱلۡمَنَامِ أَنِّيٓ أَذۡبَحُكَ فَٱنظُرۡ مَاذَا تَرَىٰۚ﴾."
           }
         ],
         ref: "Surah As-Saffat (37:84), read with Ash-Shu'ara (26:89)",
@@ -7702,6 +8234,29 @@ const TADABBUR = {
         whyAr: "قصّةُ أيّوب في أربع آيات، وما تُرك منها كالذي ذُكر في الفائدة.\n\nنادى ربَّه — وانظر لفظ الشكوى: ﴿أَنِّي مَسَّنِيَ ٱلشَّيۡطَٰنُ بِنُصۡبٖ وَعَذَابٍ﴾. فلم يقل: إنّ الله صنع بي هذا. وهو الأدبُ نفسه الذي صنعه إبراهيمُ في الشعراء، إذ أبقى الأذى في الجهة الأخرى من الجملة.\n\nثم الجواب، وهو عجيبٌ في صِغره: ﴿ٱرۡكُضۡ بِرِجۡلِكَۖ﴾. هذا كلّ ما فيه. لا موعظةَ ولا بيانَ لِمَ كانت تلك السنون. أمرٌ بتحريك قدم، فينبع ماء — ﴿مُغۡتَسَلُۢ بَارِدٞ وَشَرَابٞ﴾.\n\nثم رُدّ عليه أهلُه ومثلُهم معهم. والعلّةُ المذكورة: ﴿رَحۡمَةٗ مِّنَّا وَ**ذِكۡرَىٰ لِأُوْلِي ٱلۡأَلۡبَٰبِ**﴾.\n\nثم صنعت الآيةُ الرابعة والأربعون ما لا تصنعه قصّةٌ مُختلَقة. فقد كان حلف أن يضرب أحدًا، فقيل له: ﴿خُذۡ بِيَدِكَ ضِغۡثٗا فَٱضۡرِب بِّهِۦ وَلَا تَحۡنَثۡۗ﴾. فدخل في الفرَج مخرجٌ يبرّ به يمينه من غير أن يُؤذي — دقيقةٌ في وعد رجلٍ عولجت في الساعة التي عُوفي فيها.\n\nثم الحكم: ﴿إِنَّا وَجَدۡنَٰهُ صَابِرٗاۚ نِّعۡمَ ٱلۡعَبۡدُ إِنَّهُۥٓ أَوَّابٞ﴾.",
         plain: "Ayyub says Shaytan touched him with hardship — he does not say Allah did this to him. The answer is four words: strike with your foot. No explanation of the years. And his oath is solved too: take a bundle of grass and strike with that, so you do not break your word.",
         plainAr: "قال أيّوب إنّ الشيطان مسّه بنُصبٍ وعذاب — ولم يقل إنّ الله صنع به ذلك. وكان الجواب: اركض برجلك. بلا بيانٍ لِمَ كانت تلك السنون. وحُلّت يمينُه أيضًا: خذ ﴿ضِغۡثٗا فَٱضۡرِب بِّهِۦ وَلَا تَحۡنَثۡۗ﴾.",
+        links: [
+          {
+            ref: "Surah Al-Anbiya (21:83-84)",
+            ar: "۞ وَأَيُّوبَ إِذۡ نَادَىٰ رَبَّهُۥٓ أَنِّي مَسَّنِيَ ٱلضُّرُّ وَأَنتَ أَرۡحَمُ ٱلرَّٰحِمِينَ ۝ فَٱسۡتَجَبۡنَا لَهُۥ فَكَشَفۡنَا مَا بِهِۦ مِن ضُرّٖۖ وَءَاتَيۡنَٰهُ أَهۡلَهُۥ وَمِثۡلَهُم مَّعَهُمۡ رَحۡمَةٗ مِّنۡ عِندِنَا وَذِكۡرَىٰ لِلۡعَٰبِدِينَ",
+            en: "And [mention] Job, when he called to his Lord, \"Indeed, adversity has touched me, and you are the Most Merciful of the merciful.\" So We responded to him and removed what afflicted him of adversity. And We gave him [back] his family and the like thereof with them as mercy from Us and a reminder for the worshippers [of Allah].",
+            how: "Al-Anbiya gives his prayer in other words: harm has touched me, and You are the Most Merciful of the merciful. It asks for nothing outright — and it is answered.",
+            howAr: "الأنبياءُ تذكر دعاءه بلفظٍ آخر: ﴿أَنِّي مَسَّنِيَ ٱلضُّرُّ وَأَنتَ أَرۡحَمُ ٱلرَّٰحِمِينَ﴾ — لا يطلب شيئًا صراحةً، ثم تأتي الإجابة: ﴿فَٱسۡتَجَبۡنَا لَهُۥ فَكَشَفۡنَا مَا بِهِۦ مِن ضُرّٖۖ﴾."
+          },
+          {
+            ref: "Surah Ash-Shu'ara (26:80)",
+            ar: "وَإِذَا مَرِضۡتُ فَهُوَ يَشۡفِينِ",
+            en: "And when I am ill, it is He who cures me",
+            how: "Ibrahim keeps the same courtesy: when I fall ill, it is He who heals me — the illness he gives to himself, the cure to his Lord.",
+            howAr: "وإبراهيمُ يلتزم الأدبَ نفسه: ﴿وَإِذَا مَرِضۡتُ فَهُوَ يَشۡفِينِ﴾ — ينسب المرضَ إلى نفسه، والشفاءَ إلى ربّه."
+          },
+          {
+            ref: "Surah Al-Jinn (72:10)",
+            ar: "وَأَنَّا لَا نَدۡرِيٓ أَشَرٌّ أُرِيدَ بِمَن فِي ٱلۡأَرۡضِ أَمۡ أَرَادَ بِهِمۡ رَبُّهُمۡ رَشَدٗا",
+            en: "And we do not know [therefore] whether evil is intended for those on earth or whether their Lord intends for them a right course.",
+            how: "The jinn speak the same way: harm 'is intended' — no doer named — while good is something their Lord intends for them.",
+            howAr: "والجنُّ تتكلّم بالطريقة نفسها: ﴿وَأَنَّا لَا نَدۡرِيٓ أَشَرٌّ أُرِيدَ بِمَن فِي ٱلۡأَرۡضِ أَمۡ أَرَادَ بِهِمۡ رَبُّهُمۡ رَشَدٗا﴾ — الشرُّ بلا فاعلٍ مذكور، والرشدُ منسوبٌ إلى الربّ."
+          }
+        ],
         ref: "Surah Sad (38:41-44)",
         strength: "quran"
       }
@@ -7854,6 +8409,22 @@ const TADABBUR = {
           strength: "lugha"
         }
         ],
+        links: [
+          {
+            ref: "Surah An-Nur (24:30)",
+            ar: "قُل لِّلۡمُؤۡمِنِينَ يَغُضُّواْ مِنۡ أَبۡصَٰرِهِمۡ وَيَحۡفَظُواْ فُرُوجَهُمۡۚ ذَٰلِكَ أَزۡكَىٰ لَهُمۡۚ إِنَّ ٱللَّهَ خَبِيرُۢ بِمَا يَصۡنَعُونَ",
+            en: "Tell the believing men to reduce [some] of their vision and guard their private parts. That is purer for them. Indeed, Allah is Acquainted with what they do.",
+            how: "Ghafir says He knows the treacherous glance. An-Nur gives the command that answers it: tell the believing men to lower their gaze.",
+            howAr: "غافرٌ تقول إنه يعلم خائنةَ الأعين، والنورُ تعطي الأمرَ الذي يقابلها: ﴿قُل لِّلۡمُؤۡمِنِينَ يَغُضُّواْ مِنۡ أَبۡصَٰرِهِمۡ﴾."
+          },
+          {
+            ref: "Surah Qaf (50:16)",
+            ar: "وَلَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ",
+            en: "And We have already created man and know what his soul whispers to him, and We are closer to him than [his] jugular vein",
+            how: "Surah Qaf says He knows what a person's own self whispers to him — and is nearer to him than his jugular vein.",
+            howAr: "سورةُ ق تقول إنه يعلم حديثَ النفس: ﴿وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ﴾."
+          }
+        ],
         ref: "Surah Ghafir (40:19)",
         strength: "quran"
       },
@@ -7865,6 +8436,29 @@ const TADABBUR = {
         whyAr: "هذا قولُ مؤمن آل فرعون — رجلٍ كان يكتم إيمانه، ثم تكلّم جهرًا بين يدي ملكٍ يقتل على ما دون ذلك.\n\nنفدت حجّته ونفد أمانه، فقال: ﴿وَأُفَوِّضُ أَمۡرِيٓ إِلَى ٱللَّهِۚ﴾.\n\n**أُفوّض**: أُسلّم. لا أرجو، ولا أُدبّر. والفعل هو المستعمل في ردّ الأمر كلّه إلى من يقضي فيه.\n\nوانظر متى قالها: بعد أن تكلّم، لا بدلًا من أن يتكلّم. فقد جادل فرعون، وأنذر قومه، واحتمل الخطر تامًّا — ثم فوّض العاقبة. وفي هذا الترتيب الدرسُ كلّه: فالتفويض ليس بديلًا عمّا يلزمك فعلُه، وإنما هو صنيعُك في الجزء الذي لم يكن إليك أبدًا.",
         plain: "A man told the truth to a tyrant, knowing what it could cost him, and then said: I hand my situation over to Allah. He said it AFTER he had done what he had to do — not instead of doing it.",
         plainAr: "رجلٌ قال الحقّ لطاغيةٍ وهو يعلم ما قد يُكلّفه، ثم قال: ﴿أُفَوِّضُ أَمۡرِيٓ إِلَى ٱللَّهِۚ﴾ (أي أُسلّمه إليه ليقضي فيه). قالها **بعد** أن فعل ما يلزمه، لا بدلًا من أن يفعله.",
+        links: [
+          {
+            ref: "Surah Ghafir (40:45)",
+            ar: "فَوَقَىٰهُ ٱللَّهُ سَيِّـَٔاتِ مَا مَكَرُواْۖ وَحَاقَ بِـَٔالِ فِرۡعَوۡنَ سُوٓءُ ٱلۡعَذَابِ",
+            en: "So Allah protected him from the evils they plotted, and the people of Pharaoh were enveloped by the worst of punishment -",
+            how: "The next verse: so Allah protected him from the evils they plotted.",
+            howAr: "والآيةُ التي تليها: ﴿فَوَقَىٰهُ ٱللَّهُ سَيِّـَٔاتِ مَا مَكَرُواْۖ﴾."
+          },
+          {
+            ref: "Surah At-Talaq (65:3)",
+            ar: "وَيَرۡزُقۡهُ مِنۡ حَيۡثُ لَا يَحۡتَسِبُۚ وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ إِنَّ ٱللَّهَ بَٰلِغُ أَمۡرِهِۦۚ قَدۡ جَعَلَ ٱللَّهُ لِكُلِّ شَيۡءٖ قَدۡرٗا",
+            en: "And will provide for him from where he does not expect. And whoever relies upon Allah - then He is sufficient for him. Indeed, Allah will accomplish His purpose. Allah has already set for everything a [decreed] extent.",
+            how: "At-Talaq gives the promise behind his words: whoever relies on Allah, He is enough for him.",
+            howAr: "الطلاقُ تذكر الوعدَ الذي وراء كلمته: ﴿وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ﴾."
+          },
+          {
+            ref: "Surah Ali 'Imran (3:173)",
+            ar: "ٱلَّذِينَ قَالَ لَهُمُ ٱلنَّاسُ إِنَّ ٱلنَّاسَ قَدۡ جَمَعُواْ لَكُمۡ فَٱخۡشَوۡهُمۡ فَزَادَهُمۡ إِيمَٰنٗا وَقَالُواْ حَسۡبُنَا ٱللَّهُ وَنِعۡمَ ٱلۡوَكِيلُ",
+            en: "Those to whom hypocrites said, \"Indeed, the people have gathered against you, so fear them.\" But it [merely] increased them in faith, and they said, \"Sufficient for us is Allah, and [He is] the best Disposer of affairs.\"",
+            how: "Al 'Imran shows the same reliance said by people who had already answered the call despite their wounds: told that the enemy had gathered against them, they said: Allah is enough for us, and the best disposer of affairs.",
+            howAr: "آلُ عمران تُريك التوكّلَ نفسه من قومٍ استجابوا رغم جراحهم: ﴿حَسۡبُنَا ٱللَّهُ وَنِعۡمَ ٱلۡوَكِيلُ﴾."
+          }
+        ],
         ref: "Surah Ghafir (40:44)",
         strength: "quran"
       }
@@ -8238,6 +8832,13 @@ const TADABBUR = {
             en: "“Mothers may nurse their children two complete years, for whoever wishes to complete the nursing.”",
             how: "Thirty months here, two complete years there. The jurists put the two verses together and took the difference — six months — as the shortest a pregnancy can be; the derivation is reported from Ali and from Ibn Abbas.",
             howAr: "ثلاثون شهرًا هنا، وحولان كاملان هناك. فجمع الفقهاءُ بين الآيتين وأخذوا الفرق — ستّة أشهر — أقلَّ مدّة الحمل؛ والاستنباطُ مرويٌّ عن عليٍّ وعن ابن عباس."
+          },
+          {
+            ref: "Surah An-Naml (27:19)",
+            ar: "فَتَبَسَّمَ ضَاحِكٗا مِّن قَوۡلِهَا وَقَالَ رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ وَأَدۡخِلۡنِي بِرَحۡمَتِكَ فِي عِبَادِكَ ٱلصَّٰلِحِينَ",
+            en: "So [Solomon] smiled, amused at her speech, and said, \"My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents and to do righteousness of which You approve. And admit me by Your mercy into [the ranks of] Your righteous servants.\"",
+            how: "Al-Ahqaf gives the prayer of a man of forty; An-Naml puts the same words in the mouth of Sulayman, smiling at what an ant said: my Lord, enable me to be grateful for Your favour.",
+            howAr: "الأحقافُ تذكر دعاءَ ابن الأربعين، والنملُ تضع الكلماتِ نفسها على لسان سليمان وهو يبتسم من قول نملة: ﴿رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ﴾."
           }
         ]
       },
@@ -8577,6 +9178,13 @@ const TADABBUR = {
             en: "And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me [by obedience] and believe in Me that they may be [rightly] guided.",
             how: "Qaf says He knows what your soul whispers; Al-Baqarah turns that into an invitation — since He is that near, ask Him, and He answers.",
             howAr: "قافٌ تقول إنه يعلم ما توسوس به نفسُك، والبقرةُ تجعل ذلك دعوة: ما دام قريبًا هذا القرب فاسأله، فإنه يجيب: ﴿أُجِيبُ دَعۡوَةَ ٱلدَّاعِ إِذَا دَعَانِۖ﴾."
+          },
+          {
+            ref: "Surah Ghafir (40:19)",
+            ar: "يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ",
+            en: "He knows that which deceives the eyes and what the breasts conceal.",
+            how: "Surah Qaf says He knows what the self whispers; Ghafir adds the other thing no one else can see: the stolen glance.",
+            howAr: "سورةُ ق تقول إنه يعلم وسوسةَ النفس، وغافرٌ تضيف ما لا يراه أحدٌ غيره: ﴿يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ﴾."
           }
         ],
         ref: "Surah Qaf (50:16), read with 50:17-18",
@@ -8848,6 +9456,13 @@ const TADABBUR = {
             en: "And We did certainly create man out of clay from an altered black mud.",
             how: "Verse 29 is the breath; three verses earlier the surah names what it was breathed into: ringing clay, from altered black mud.",
             howAr: "الآيةُ ٢٩ هي النفخ، وقبلها بثلاث آيات تذكر السورةُ ما نُفخ فيه: ﴿مِن صَلۡصَٰلٖ مِّنۡ حَمَإٖ مَّسۡنُونٖ﴾."
+          },
+          {
+            ref: "Surah As-Sajdah (32:9)",
+            ar: "ثُمَّ سَوَّىٰهُ وَنَفَخَ فِيهِ مِن رُّوحِهِۦۖ وَجَعَلَ لَكُمُ ٱلسَّمۡعَ وَٱلۡأَبۡصَٰرَ وَٱلۡأَفۡـِٔدَةَۚ قَلِيلٗا مَّا تَشۡكُرُونَ",
+            en: "Then He proportioned him and breathed into him from His [created] soul and made for you hearing and vision and hearts; little are you grateful.",
+            how: "Al-Hijr gives the command to the angels at the breath; As-Sajdah describes the same step and then turns it to us: He gave you hearing, sight and hearts — little are you grateful.",
+            howAr: "الحِجرُ تذكر أمرَ الملائكة عند النفخ، والسجدةُ تصف المرحلةَ نفسها ثم تلتفت إلينا: ﴿وَجَعَلَ لَكُمُ ٱلسَّمۡعَ وَٱلۡأَبۡصَٰرَ وَٱلۡأَفۡـِٔدَةَۚ قَلِيلٗا مَّا تَشۡكُرُونَ﴾."
           }
         ],
         ref: "Surah Al-Hijr (15:29)",
@@ -9572,6 +10187,13 @@ const TADABBUR = {
             en: "So let man observe from what he was created. He was created from a fluid, ejected, Emerging from between the backbone and the ribs.",
             how: "Al-Mursalat calls the fluid you came from contemptible; At-Tariq asks you to look at it — gushing, from between the backbone and the ribs — as proof that the One who began you can bring you back.",
             howAr: "المرسلاتُ تسمّي الماءَ الذي خُلقت منه ﴿مَّهِينٖ﴾، والطارقُ تطلب منك أن تنظر فيه: ﴿خُلِقَ مِن مَّآءٖ دَافِقٖ﴾ — دليلًا على أنّ من بدأك قادرٌ على إعادتك."
+          },
+          {
+            ref: "Surah As-Sajdah (32:7-8)",
+            ar: "ٱلَّذِيٓ أَحۡسَنَ كُلَّ شَيۡءٍ خَلَقَهُۥۖ وَبَدَأَ خَلۡقَ ٱلۡإِنسَٰنِ مِن طِينٖ ۝ ثُمَّ جَعَلَ نَسۡلَهُۥ مِن سُلَٰلَةٖ مِّن مَّآءٖ مَّهِينٖ",
+            en: "Who perfected everything which He created and began the creation of man from clay. Then He made his posterity out of the extract of a liquid disdained.",
+            how: "Al-Mursalat calls the fluid one of little worth; As-Sajdah uses the same words — and puts them right after: He made excellent everything He created.",
+            howAr: "المرسلاتُ تسمّي الماءَ مهينًا، والسجدةُ تستعمل اللفظَ نفسه، وتضعه بعد قوله: ﴿ٱلَّذِيٓ أَحۡسَنَ كُلَّ شَيۡءٍ خَلَقَهُۥۖ﴾."
           }
         ],
         ref: "Surah Al-Mursalat (77:20)",
@@ -10061,6 +10683,15 @@ const TADABBUR = {
         whyAr: "انظر أين وقع هذا. فقد وصفت السورةُ للتوّ مؤمنين أُحرقوا في الأخدود لأنهم أبَوا أن يرجعوا عن دينهم، ووعدت الجناةَ ﴿عَذَابُ ٱلۡحَرِيقِ﴾. ثم جاء في الحال: ﴿وَهُوَ ٱلۡغَفُورُ ٱلۡوَدُودُ﴾.\n\nو**الودود** من الوُدّ، وبيّن أهل العلم أنّ البناء يحتمل الجهتين معًا: الذي يودّ عباده الصالحين، والذي يودّونه هم. فليس رضًا من بعيد، وإنما هي **مودّةٌ** ذُكرت وصفًا.\n\nوموضعُ الاسمين هو تفسيرهما: فلقومٍ رأوا أهلهم يموتون في النار لم يُذكر الاسمان المنتقمُ والجبّار وحدهما — وقد ذكرت السورةُ أنّ بطشه شديد — وإنما ذُكر **الغفور الودود**. فالذي أذن بوقوع ذلك يُوصف في السياق نفسه بأنه يودّهم. ولم تحلّ السورةُ هذا بأن تُخفّف إحدى الجهتين، وإنما وضعت الاثنتين بين يدي القارئ وتركتهما.",
         plain: "Look where it falls: right after believers are burned alive in a trench for refusing to give up their faith, and the persecutors are promised the Fire. Then, immediately: and He is the Forgiving, the Loving. Affection, named as an attribute.",
         plainAr: "انظر موضعها: بعد أن حُرّق المؤمنون في الأخدود لأنهم أبوا أن يتركوا دينهم، ووُعد المعذِّبون بالنار. ثم في الحال: وهو الغفورُ الودود. فالمحبّةُ مذكورةٌ صفةً.",
+        links: [
+          {
+            ref: "Surah Maryam (19:96)",
+            ar: "إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ سَيَجۡعَلُ لَهُمُ ٱلرَّحۡمَٰنُ وُدّٗا",
+            en: "Indeed, those who have believed and done righteous deeds - the Most Merciful will appoint for them affection.",
+            how: "Al-Buruj calls Him al-Wadud, the Loving; Surah Maryam shows that love reaching people: ar-Rahman will place love for those who believe and do good.",
+            howAr: "البروجُ تسمّيه الودود، وسورةُ مريم تُريك هذا الودَّ يبلغ الناس: ﴿سَيَجۡعَلُ لَهُمُ ٱلرَّحۡمَٰنُ وُدّٗا﴾."
+          }
+        ],
         ref: "Surah Al-Buruj (85:14), read with 85:4-12",
         strength: "quran"
       },
@@ -10820,6 +11451,13 @@ const TADABBUR = {
             en: "Indeed, they who have believed and done righteous deeds - those are the best of creatures.",
             how: "At-Tin gives man's best form and his fall; Al-Bayyinah names who keeps the height: those who believe and do good are the best of creation.",
             howAr: "التينُ تذكر أحسنَ تقويمٍ ثم السقوط، والبيّنةُ تسمّي من يبقى في العلوّ: ﴿إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ أُوْلَٰٓئِكَ هُمۡ خَيۡرُ ٱلۡبَرِيَّةِ﴾."
+          },
+          {
+            ref: "Surah As-Sajdah (32:7)",
+            ar: "ٱلَّذِيٓ أَحۡسَنَ كُلَّ شَيۡءٍ خَلَقَهُۥۖ وَبَدَأَ خَلۡقَ ٱلۡإِنسَٰنِ مِن طِينٖ",
+            en: "Who perfected everything which He created and began the creation of man from clay.",
+            how: "At-Tin says man was made in the best of forms; As-Sajdah widens it to everything: He made excellent everything He created — and began the creation of man from clay.",
+            howAr: "التينُ تقول إنّ الإنسان خُلق في أحسن تقويم، والسجدةُ توسّع ذلك إلى كلّ شيء: ﴿ٱلَّذِيٓ أَحۡسَنَ كُلَّ شَيۡءٍ خَلَقَهُۥۖ وَبَدَأَ خَلۡقَ ٱلۡإِنسَٰنِ مِن طِينٖ﴾."
           }
         ],
         ref: "Surah At-Tin (95:4-6)",
@@ -12291,6 +12929,13 @@ const TADABBUR = {
             en: "“Say: indeed my prayer, my rites of sacrifice, my living and my dying are for Allah, Lord of the worlds.”",
             how: "Al-Kawthar pairs prayer with sacrifice and assigns them to “your Lord”. Al-An'am takes the identical pair — salah and nusuk, prayer and sacrifice, in that order — and extends the same assignment over a person's living and dying as well.\n\nSo the short surah gives you the two acts; the longer verse shows they were only the opening of a list that ends with your whole life. This is the completing pattern working in the other direction: not a vague word made specific, but a small instruction shown to be part of something total.",
             howAr: "قرنت الكوثر الصلاة بالنحر وجعلتهما لربّك. وأخذت الأنعام القرينين أنفسهما — الصلاة والنسك على هذا الترتيب — فمدّت النسبة نفسها إلى المحيا والممات.\n\nفالسورة القصيرة تعطيك العملين، وتُريك الآية الأطول أنهما كانا مطلع تعدادٍ ينتهي بحياتك كلّها. وهذا نظم التتميم في الجهة الأخرى: لا لفظٌ مُبهم بُيّن، بل أمرٌ يسيرٌ تبيّن أنه بعض أمرٍ شامل."
+          },
+          {
+            ref: "Surah Al-Hajj (22:37)",
+            ar: "لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ كَذَٰلِكَ سَخَّرَهَا لَكُمۡ لِتُكَبِّرُواْ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمۡۗ وَبَشِّرِ ٱلۡمُحۡسِنِينَ",
+            en: "Their meat will not reach Allah, nor will their blood, but what reaches Him is piety from you. Thus have We subjected them to you that you may glorify Allah for that [to] which He has guided you; and give good tidings to the doers of good.",
+            how: "Al-Kawthar commands the sacrifice for your Lord; Al-Hajj says what of it reaches Him: not its flesh, nor its blood — but the taqwa from you.",
+            howAr: "الكوثرُ تأمر بالنحر لربّك، وسورةُ الحجّ تقول ما الذي يبلغه منه: ﴿لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ﴾."
           }
         ]
       },
@@ -12516,6 +13161,15 @@ const TADABBUR = {
             insteadAr: "فإذا ضُمّ المعنيان تبيّن دقّة الآية: كلُّ شيءٍ يقصده لحاجته، وهو لا حاجة له. فهو منتهى كلّ فقرٍ وليس فيه فقر. كلمةٌ من أربعة أحرف تحمل النصفين.",
             source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ص م د (Shamela ed., p. 474)",
             strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Fatir (35:15)",
+            ar: "۞ يَٰٓأَيُّهَا ٱلنَّاسُ أَنتُمُ ٱلۡفُقَرَآءُ إِلَى ٱللَّهِۖ وَٱللَّهُ هُوَ ٱلۡغَنِيُّ ٱلۡحَمِيدُ",
+            en: "O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy.",
+            how: "Al-Ikhlas names Him as-Samad; Fatir says what that means for us: O people, you are the poor, in need of Allah — and Allah is the Free of need, the Praised.",
+            howAr: "الإخلاصُ تسمّيه الصمد، وفاطرٌ تقول ماذا يعني ذلك لنا: ﴿يَٰٓأَيُّهَا ٱلنَّاسُ أَنتُمُ ٱلۡفُقَرَآءُ إِلَى ٱللَّهِۖ وَٱللَّهُ هُوَ ٱلۡغَنِيُّ ٱلۡحَمِيدُ﴾."
           }
         ]
       },
