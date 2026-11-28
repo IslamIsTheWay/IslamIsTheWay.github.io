@@ -88,6 +88,16 @@ home card, the Recently Added blurb and their Arabic in i18n.js.
 `js/life-index.js` is generated too (the reader's 🌱 "Live this verse" button
 and the staff panel read it) — never edit it.
 
+## ADDING EXPLAINED VERSES (js/tadabbur.js) — HANDOFF PART 50
+
+When the owner says "continue" for the Quran page he means **new explained
+verses**, not more links between old ones. Write them with
+`tools/tadabbur/` (copy `example_set.py`): every quotation through `QF`/`Q`,
+then `qscan.py` (typed Quran in your own Arabic) and `longsent.py` before
+`add_new` — it adds the return links and moves the home count in index.html
+and i18n.js, Arabic noun included. A new entry makes every existing one-way
+link into it two-way; cite Muslim by the edition's `arabicnumber`.
+
 ## THE VISIT NUMBERS (staff.html analytics, js/main.js) — HANDOFF PART 48
 
 One number per page; the owner called two lists of the same visits

@@ -14,7 +14,8 @@
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 0. **PART 48** (most recent) — the staff analytics made truthful (one number per page; robots and signed-in staff not counted; the Quran in Your Life added up), "Which surahs?" for the Quran reader, and the reader's 🌱 "Live this verse" button.
+> 0. **PART 50** (most recent) — "continue" on the Quran page means NEW explained verses, not links (the owner's correction); 56 new ones in seven sets, the tools in tools/tadabbur/, and the traps (Muslim's arabicnumber, typed-Quran scan, the Arabic count's noun, never git stash).
+> 0b. **PART 48** — the staff analytics made truthful (one number per page; robots and signed-in staff not counted; the Quran in Your Life added up), "Which surahs?" for the Quran reader, and the reader's 🌱 "Live this verse" button.
 > 1a. **PART 43** — the verses at the top of the home page (59:19–20, the owner's choice), a page of its own for every explained verse (tools/build-verse-pages.py: the sitemap went from 13 URLs to 458), and the long pages' freezes cut from 3.7s to about 1s with content-visibility — which first broke 42 section links, and how both arrival and in-page jumps were made to land.
 > 1b. **PART 42** — the science section 15 cards to 25 (including the embryo with Galen stated against it, the bee, and three famous claims refuted on their own cards), twelve more verses explained and connected, and what "understandable" turned out to mean: the Arabic tool now reads the PAGES too, a label is not a summary, and the long-sentence count was counting the Quran.
 > 1c. **PART 41** — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
@@ -8167,3 +8168,91 @@ Lesson: 65:7 and 44:3 were assumed unexplained because they were missing
 from the "entries without links" list — they had links. check-counts.sh
 caught both as one-way; each got its return link. Check targets against ALL
 entries (bvp.load_const over js/tadabbur.js), not against a filtered list.
+
+
+---
+
+# PART 50 — New explained verses (what "continue" means), and the tools that write them
+
+The owner, 28 November 2026, after three more rounds of links: **"the main
+reason I asked you to continue was continuing explanations for new verses,
+not connections… I didn't ask for new connections. I asked for new
+explanations."** On the Quran page, *continue* means **new explained verses**
+(new entries in js/tadabbur.js). Links are written inside them, never as the
+main job. Measure progress by the home number "verses explained in depth".
+
+**Before the correction (commits 421813d, 94fb30c, ab505d9):** 245 more links
+(74 + 86 + 85) gave every explained verse in surahs 1–73 at least one; the
+explained verses in 76–113 that still have none are listed by
+`python tools/tadabbur/nolinks.py`.
+
+**After it — seven sets of 8 new explained verses (459 → 515 entries; the home
+count 578 → 634, runs counted in full):**
+
+1. 2:126, 2:285, 3:173, 8:46, 9:100, 12:86, 31:34, 47:38
+2. 2:183, 2:201, 3:134, 7:23, 20:114, 28:24, 49:10, 66:11
+3. 9:51, 17:79, 24:37, 30:41, 33:56, 39:9, 89:24, 93:5
+4. 2:46, 3:8, 14:24, 17:24, 17:85, 18:65, 23:60, 59:10
+5. 7:205, 11:88, 21:83, 21:89, 33:70, 50:37, 57:22, 59:21
+6. 2:257, 6:122, 25:70, 35:45, 41:53, 51:21, 67:14, 96:14
+7. 2:197, 3:102, 9:119, 20:131, 39:42, 40:7, 42:38, 49:11
+
+Set 1 was chosen from verses that explained entries already pointed at
+(one-way); the rest are well-known verses with no explanation. Every hadith
+was read at its number in the cached editions before it was cited.
+
+## The tools (tools/tadabbur/)
+
+* **tad_lib.py** — `Q(s,a,i,j)` cuts words i..j (inclusive) from the Mushaf;
+  **`QF(s,a,"rough undotted spelling")`** finds the phrase among the verse's
+  words and returns the Mushaf's OWN letters (it fails loudly below 0.8
+  similarity, and `apply` prints any match under 0.97 for a human look) — the
+  rough spelling is only a locator, nothing typed reaches the file;
+  `L(s,a,how,howAr,a2)` builds a link (a2 = the end of a run); `apply(LINKS)`
+  adds links (skipping a target already linked); `--dry` checks without writing.
+* **tad_newlib.py** — `NEW(...)` builds an entry (the verse is `qc.V`), and
+  `add_new(ENTRIES, RETURNS)` writes them, checks each `ar` against the Mushaf,
+  adds the return links, and **moves the home count in index.html and i18n.js
+  with the Arabic noun agreeing** (`ar_phrase`: 601 وآية, 602 وآيتان, 603–610
+  … آيات, 611 and up … آية — "ستّمئة واثنتان آية" was wrong and was caught).
+* **qscan.py `<set file>`** — flags any run of three Mushaf words typed in my
+  own Arabic outside ﴿﴾ and «». It found something in every set; most were in
+  the short plain summaries ("الآخرةُ خيرٌ لك من الأولى", "ما في الأرحام",
+  "في البرّ والبحر"). Common phrases are flagged too — rephrase them anyway.
+* **longsent.py `<set file>`** — Arabic sentences over arabicease's 30 words,
+  including refAr (two source lines were over; split them with a full stop).
+* **runcuts.py --ref <HEAD copy> <surahs…>** — checkcuts over whole surahs,
+  marking OLD flags so only new ones show.
+* **cover.py** — which entry covers each verse, and each entry's links;
+  `nolinks.py`; `hq.py <book> <n> | find <words>` reads the cached hadith;
+  `wv.py s:a` prints a verse's words with their positions.
+* **example_set.py** — set 7 as written, the format to copy.
+
+Order for each set: write → `qscan` → `longsent` → `--dry` → run →
+check-counts.sh → runcuts against `git show HEAD:js/tadabbur.js` →
+arabicease (diff against the last run) → mixscan → check-quran.sh → the four
+functests → bump-version.sh → leakaudit on two new verse pages → commit/push.
+
+## Traps found the hard way
+
+* **A new entry turns every existing one-way link INTO it into a two-way
+  requirement.** Find them first (`cover.py`'s links, or the inbound list in
+  set 1) and put the return links in the new entry.
+* **Muslim's number:** the cached edition's `hadithnumber` is sequential, but
+  its **`arabicnumber` field is the standard number** (430.01 → Muslim 430).
+  Verified this way: 125, 190, 202, 408, 430, 746, 987, 2038, 2551, 2564,
+  2653, 2797, 2999, 3022.
+* **arabicease words** my Arabic kept using: تأمّل → انظر, لمّا → حين,
+  إذ → لأنّ, فحسب → فقط, لئلّا → حتى لا, نحو → إلى, and never قطّ or يومئذ.
+* **A word note needs `sourceAr`** — every_source_line_reads_in_arabic failed
+  on "Lisan al-Arab, b-th-th" until it had one.
+* **Never `git stash` in this repo.** core.autocrlf=true wrote js/tadabbur.js
+  back with CRLF and every "\n" pattern in the scripts stopped matching.
+  Compare with `git show HEAD:js/tadabbur.js > file` instead.
+* **check_written only handles single verses** — the new entries are all
+  single; a run needs its `ar` joined with " • " and a different check.
+* Claims were measured over the whole Mushaf before writing them: "Allah has
+  heard" opens only 3:181 and 58:1; "ahkam al-hakimin" only 11:45 and 95:8;
+  al-Wadud only 11:90 and 85:14; "rabbi zidni" only 20:114; "yastabdil
+  qawman ghayrakum" only 9:39 and 47:38; mutual pleasure only 5:119, 9:100,
+  58:22, 98:8; darkness never singular.
