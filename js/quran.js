@@ -186,6 +186,14 @@ async function openSurah(surah) {
   const body = document.getElementById("modalBody");
 
   window._openSurah = surah;
+  /* Counted for the staff panel's "Which surahs are opened most?" — once
+     per visit for each surah, like a page (iitwCountOnce in js/main.js, which
+     also decides whether this visit counts at all). main.js loads after this
+     file; a surah opened before it has loaded waits in IITW_COUNT_LATER. */
+  try {
+    if (typeof iitwCountOnce === "function") iitwCountOnce("surah-" + surah.n);
+    else (window.IITW_COUNT_LATER = window.IITW_COUNT_LATER || []).push("surah-" + surah.n);
+  } catch (e) {}
   /* Remembered for the home page's "continue where you left off" — no
      account, nothing sent anywhere (js/resume.js). */
   if (typeof iitwResumeRemember === "function") {
@@ -368,6 +376,7 @@ async function openSurah(surah) {
           <div class="arabic-text">${ayah.text} <span class="ayah-end" title="Verse ${ayah.numberInSurah}">${toArabicDigits(ayah.numberInSurah)}</span> <button onclick="playAyah('${audioUrl}', ${ayah.numberInSurah})" style="border:none;background:none;cursor:pointer;font-size:1.2rem;" title="Listen to this verse">🔊</button></div>
           <div class="translation-text" dir="ltr"><span class="ayah-num">${ayah.numberInSurah}</span>${translation}</div>
           <div class="ayah-cite"><span class="en-only">Surah ${surah.name} — <strong>${cite}</strong> </span><span dir="rtl" style="font-family:'Amiri',serif;">سورة ${surah.arabic || surah.name} — الآية ${toArabicDigits(ayah.numberInSurah)}</span></div>
+          ${iitwLiveBtnHtml(surah.n, ayah.numberInSurah)}
           ${tad ? iitwTadabburAyahHtml(tad, ayah.numberInSurah) : ""}
         </div>
       `;
@@ -1085,6 +1094,58 @@ function iitwTadRef(en, ar) {
   if (!ar) return '<div class="tad-ref" dir="auto">' + en + '</div>';
   return '<div class="tad-ref en-only">' + en + '</div>' +
          '<div class="tad-ref ar-only" dir="rtl">' + ar + '</div>';
+}
+
+/* ---------- 🌱 Live this verse ----------
+   The owner (28 November 2026): connect the verses "with how to implement
+   the Quran in your life... if this verse talks about this, put a button if
+   you want more details... go straight away to that page". Every verse the
+   Quran in Your Life holds (856 of them) gets a button under its reference.
+   It opens the card's "Live it" note in place, and a link to the card itself
+   on its life page, where its examples and hadith are. The notes come from
+   js/life-index.js, written by tools/build-life-pages.py from js/life/ — the
+   same notes as the verse pages' "Live this verse" box. A verse that is not
+   in the guide gets nothing: a button that opens onto nothing is a broken
+   one. */
+function iitwLiveCards(s, a) {
+  const L = window.LIFE_INDEX;
+  return (L && L.v && L.v[s + ":" + a]) || null;
+}
+
+function iitwLiveBtnHtml(s, a) {
+  if (!iitwLiveCards(s, a)) return "";
+  return `<div class="ayah-live"><button type="button" class="ayah-live-btn" aria-expanded="false"
+      onclick="iitwToggleLive(this, ${s}, ${a})"><span class="en-only">🌱 Live this verse</span><span class="ar-only" dir="rtl">🌱 كيف تعيش هذه الآية</span></button>
+      <div class="ayah-live-panel" hidden></div></div>`;
+}
+
+function iitwToggleLive(btn, s, a) {
+  const box = btn.parentElement && btn.parentElement.querySelector(".ayah-live-panel");
+  if (!box) return;
+  const opening = box.hidden;
+  if (opening && !box.innerHTML) box.innerHTML = iitwLivePanelHtml(s, a);
+  box.hidden = !opening;
+  btn.setAttribute("aria-expanded", opening ? "true" : "false");
+}
+
+function iitwLivePanelHtml(s, a) {
+  const L = window.LIFE_INDEX;
+  return (iitwLiveCards(s, a) || []).map(i => {
+    const c = L.c[i];
+    const sec = L.s[c[0]] || ["", c[0], c[0]];
+    const m = /^(\d+):(\d+)(?:-(\d+))?$/.exec(c[1]);
+    if (!m) return "";
+    const href = "life/" + c[0] + ".html#v-" + m[1] + "-" + m[2];
+    const joint = m[3]
+      ? `<p class="ayah-live-range"><span class="en-only">Read with verses ${m[2]}–${m[3]}, as one passage.</span><span class="ar-only" dir="rtl">تُقرأ مع الآيات ${toArabicDigits(m[2])}–${toArabicDigits(m[3])} مقطعًا واحدًا.</span></p>`
+      : "";
+    return `<div class="ayah-live-card">
+        <p class="ayah-live-sec"><span class="en-only">${sec[0]} From <a href="life/${c[0]}.html">${sec[1]}</a></span><span class="ar-only" dir="rtl">${sec[0]} من باب <a href="life/${c[0]}.html">${sec[2]}</a></span></p>
+        ${joint}
+        <div class="en-only"><p>${c[2]}</p></div><div class="ar-only" dir="rtl"><p>${c[3]}</p></div>
+        <a class="btn btn-primary ayah-live-more" href="${href}"><span class="en-only">Examples, hadith and more →</span><span class="ar-only" dir="rtl">أمثلة وأحاديث والمزيد ←</span></a>
+      </div>`;
+  }).join("");
 }
 
 /* The block under one verse. Returns "" when this verse has no

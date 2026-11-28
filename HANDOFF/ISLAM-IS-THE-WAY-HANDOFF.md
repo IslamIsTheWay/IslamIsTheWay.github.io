@@ -9,12 +9,13 @@
 > - **GitHub repo:** `IslamIsTheWay/IslamIsTheWay.github.io`
 > - **Deployment:** push to `main` -> live in 1-2 minutes (GitHub Pages, no build)
 >
-> **Last updated: 26 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
+> **Last updated: 28 November 2026.** The site is called **IslamBasics**; the URLs are unchanged.
 >
 > ### Read in this order
 >
 > 1. **The rules below this box** — the six that have each cost real time.
-> 1a. **PART 43** (most recent) — the verses at the top of the home page (59:19–20, the owner's choice), a page of its own for every explained verse (tools/build-verse-pages.py: the sitemap went from 13 URLs to 458), and the long pages' freezes cut from 3.7s to about 1s with content-visibility — which first broke 42 section links, and how both arrival and in-page jumps were made to land.
+> 0. **PART 48** (most recent) — the staff analytics made truthful (one number per page; robots and signed-in staff not counted; the Quran in Your Life added up), "Which surahs?" for the Quran reader, and the reader's 🌱 "Live this verse" button.
+> 1a. **PART 43** — the verses at the top of the home page (59:19–20, the owner's choice), a page of its own for every explained verse (tools/build-verse-pages.py: the sitemap went from 13 URLs to 458), and the long pages' freezes cut from 3.7s to about 1s with content-visibility — which first broke 42 section links, and how both arrival and in-page jumps were made to land.
 > 1b. **PART 42** — the science section 15 cards to 25 (including the embryo with Galen stated against it, the bee, and three famous claims refuted on their own cards), twelve more verses explained and connected, and what "understandable" turned out to mean: the Arabic tool now reads the PAGES too, a label is not a summary, and the long-sentence count was counting the Quran.
 > 1c. **PART 41** — one letter wrong: every search on the site now forgives a typing slip (tools/searchcheck.py, 7 failures of 18 to 0), the guidance page corrects the WORD against its own vocabulary and says so, and Enter finally asks the question.
 > 1d. **PART 40** — making it readable: the Arabic rewritten out of the register of the commentaries (tools/arabicease.py, 698 words, and the SAFE/WATCH rule), every control on a phone made thumb-sized (tools/phonecheck.py, 336 problems to 0), the plain sentence moved to the top of every explanation, and the 164 entries that had none — al-Fatihah, Ayat al-Kursi, al-Ikhlas among them — given one.
@@ -7951,3 +7952,114 @@ numbers in it, so it cannot go stale; the subject card keeps the counts.
 functest checks it is there, right under #resume, with at least 8 doors.
 He also said the home page may have too many sections ("I'm not sure") —
 nothing was removed; that is his decision.
+
+
+# PART 48 — Analytics that tell the truth, the surahs people open, and "Live this verse" in the reader
+
+## 1. The staff analytics panel (28 November 2026)
+
+The owner: the numbers are "not absolutely right… delusional". He named
+three things, and all three were real:
+
+* **Two lists counting the same visits.** "Pages opened" (once per visit per
+  page) and "Sections clicked" (every click on the menu). Every menu click
+  also opened a page, already in the first list — he read "Hadith 9" and
+  "Hadith 1" and asked whether that is 9 or 10. It is 9. Menu clicks are no
+  longer counted (js/main.js) or shown: **one number per page**.
+* **"Verse pages (all together)"** — the 444 pages that explain one verse
+  each, which most visitors reach from Google (62 on that day). He read it
+  as the Quran reader (3). Every row that could be misread now says what it
+  is, in both languages (STAT_LABEL in staff.html).
+* **He wanted the surahs**: "a button on the Quran… to know which surah did
+  people open the most". quran.js now counts each surah once per visit as it
+  opens (`surah-1` … `surah-114`, via `iitwCountOnce` in main.js; a surah
+  opened before main.js loads waits in `IITW_COUNT_LATER`). The Quran row has
+  "📖 Which surahs?": the 114 counters are read on demand and ranked. **Surahs
+  are counted from 28 November 2026**; nothing before that day says which
+  surah was read, and the panel says so.
+
+Found on the way, and fixed with them:
+
+* **The Quran in Your Life was invisible.** Its 32 section pages count under
+  their own ids (`page-faith`, `page-money`…), and the panel only read the
+  hub — it showed 4 when the guide's pages had been opened 50 times. The row
+  now adds the hub and every area (the area list comes from js/life-index.js,
+  so a new area needs no edit), and "🌱 Which areas?" lists them.
+* **Robots were counted as people.** A search engine reads a page by running
+  it, and every reading counted. main.js now counts nothing for a browser
+  that names itself a robot (`IITW_NOT_A_PERSON`: Googlebot, Bingbot, the
+  AI crawlers, link-preview fetchers, headless browsers…) or is driven
+  (`navigator.webdriver`). In-app browsers (Telegram, LinkedIn, Sogou) are
+  people and are NOT in the list.
+* **The staff counted themselves.** Nothing is counted on a device where a
+  staff member is signed in (read without refreshing the sign-in's clock),
+  and staff.html and login.html are never counted.
+
+The panel explains how to read the numbers (a visit counts once in the
+total and once on each page it opens; so the pages add up to more than the
+total), and says what is not counted since 28 November.
+
+**The pace.** The service's own source (github.com/syntaxerror019/countapi,
+api/index.py) limits reads to 10 a second per address (100 a minute is its
+general default). The panel reads at 8 a second; on any 429 it drops to 15
+every 10 seconds for the rest of the visit and asks again, with longer waits
+each time. The 114 surahs took 13 s against the real service, none refused.
+The kept-numbers key is now `iitw-staff-stats-3` (a different shape).
+
+**Tests.** functest `staff_stats_say_when_the_counter_fails` plays the
+service with the 10-a-second limit: one list, no "Sections clicked", the
+life row = hub + every area, the surahs ranked with ties by number, the
+never-opened summed up and not shown as failures, nothing refused, Arabic
+with no English, and the old hang/refuse cases. **tools/countcheck.py** now
+walks as a person (6 counts exactly: total, page-index, page-quran, surah-1,
+page-verse, page-faith — the menu click and a revisited page add nothing),
+as Googlebot (0) and as a signed-in staff member (0). It hides
+navigator.webdriver and uses an ordinary Edge name, because main.js rightly
+refuses to count a driven browser.
+
+## 2. 🌱 Live this verse — the reader and the verse pages
+
+The owner: "connect the verses itself with how to implement the Quran in
+your life… if this verse talks about this, put a button if you want more
+details… go straight away to that page."
+
+* **js/life-index.js** (generated by build-life-pages.py, checked by
+  `--check`): every verse in the guide → its card(s), each card's "Live it"
+  note in both languages (the {q} cuts rendered from the Mushaf), and each
+  section's icon and titles. 220 KB; precached by sw.js.
+* **The reader**: every verse the guide holds (856) has "🌱 Live this verse"
+  under its reference. It opens the note in place, says when the verse is
+  part of a passage ("Read with verses 22–24"), and "Examples, hadith and
+  more →" goes to the card itself (life/<id>.html#v-<s>-<a1>). A verse the
+  guide does not hold gets no button.
+* **The verse pages**: the same note and link (`life_block` in
+  build-verse-pages.py, from `life_links()` — the one reader of js/life/ that
+  both builders share; 231 verse pages have it).
+* functest `reader_live_this_verse`.
+
+## 3. Three more cards in "The verse and what was found" (js/miracles.js)
+
+The owner asked for more "miracles that were discovered". Three cards, held
+to the file's six rules (28 cards in 21 surahs now):
+
+* **30:2-4, the Romans — STRONG.** A prophecy with a named winner and a
+  deadline (بِضۡع = three to nine years), recited in Mecca (usually dated
+  614-616) when Persia had taken Damascus (613), Jerusalem (614) and was
+  about to take Egypt (618-619). Heraclius's counter-attack 622, Persia
+  invaded 624, Nineveh December 627, Khosrow deposed February 628, the Cross
+  back in Jerusalem March 630; Gibbon's remark (Decline and Fall, ch. 46)
+  paraphrased, not quoted. The wager reports (at-Tirmidhi 3191, 3193) are
+  graded weak by al-Albani and are NOT used; at-Tirmidhi 3192 (al-Albani:
+  sahih) carries "فنزلت" on the day of Badr — a different reading of the
+  verse — so it is not used either. The caution card says "lowest land" is a
+  fit at most and that the surah's year is a dating, not a record.
+* **10:92, Pharaoh's body — NOT ESTABLISHED.** The "his mummy is in Cairo"
+  claim: the Pharaoh is not named, the Exodus is not dated, neither mummy
+  (Ramesses II found 1881, Merneptah 1898) is shown to have drowned, and
+  every king was embalmed. The classical reading (the sea cast him up so the
+  Israelites saw him — Ibn Abbas, in at-Tabari) is what the verse says.
+* **55:33-35, "passing beyond the heavens" — NOT ESTABLISHED.** The "space
+  travel" reading: the verse says they CANNOT, and 55:35 sends fire on whoever
+  tries; orbit (1961) and the Moon (1969) are inside the heavens and the earth.
+* The panel's lead now says one verse "foretold how a war would end".
+* functest `miracles_romans_pharaoh_space`.

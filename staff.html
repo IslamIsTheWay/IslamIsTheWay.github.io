@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="img/logo-emblem.png" />
-  <link rel="stylesheet" href="css/style.css?v=202611271411" />
+  <link rel="stylesheet" href="css/style.css?v=202611281720" />
   <link rel="preload" href="fonts/UthmanicHafs_V18.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* The dashboard is the owner's own page and it follows the theme like
@@ -159,23 +159,29 @@
       <div class="staff-section" data-sec="analytics">
       <div class="staff-panel" id="analyticsPanel" style="display:none;border:2px solid var(--green);">
         <h3>📊 Website Analytics <span style="font-size:.7rem;background:var(--gold);color:#3a2d05;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:middle;">Admin only</span></h3>
-        <p class="panel-sub">How many people opened the website, which pages they visited, and which sections they clicked. Counts visits across the whole site; the numbers are read when this panel opens and when you press Refresh Numbers.</p>
+        <p class="panel-sub"><span class="en-only">How many people opened the website, and how many of them opened each page. The numbers are read when this panel opens and when you press Refresh Numbers.</span><span class="ar-only" dir="rtl">كم شخصًا فتح الموقع، وكم منهم فتح كلّ صفحة. تُقرأ الأرقام عند فتح هذه اللوحة وعند الضغط على «حدِّث الأرقام».</span></p>
         <div style="text-align:center;background:linear-gradient(135deg,#0d3a1a,#1a5c32);color:#fff;border-radius:12px;padding:22px;margin-bottom:16px;">
           <div style="font-size:2.6rem;font-weight:800;" id="statTotal">…</div>
           <div style="font-size:.85rem;opacity:.85;">Total visits to the website</div>
         </div>
         <p class="stat-since">Counted since 20 November 2026, when the site moved to a new counting service because the old one stopped working. Visits before that day are not in these numbers.</p>
-        <p id="statStatus" class="stat-status" role="status" hidden></p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div>
-            <strong style="color:var(--green-dark);">Pages opened</strong>
-            <div id="statPages" style="margin-top:8px;font-size:.88rem;"></div>
-          </div>
-          <div>
-            <strong style="color:var(--green-dark);">Sections clicked</strong>
-            <div id="statClicks" style="margin-top:8px;font-size:.88rem;"></div>
-          </div>
+        <!-- How to read the numbers. The owner read two lists as two counts of
+             the same visits ("Hadith 9" and "Hadith 1": 9 or 10?), and read
+             "Verse pages" as the Quran reader. Each number is now one thing,
+             and this says what. -->
+        <div class="stat-how">
+          <p><span class="en-only"><strong>How to read them.</strong> A visit is one person opening the site, until they close it. Each visit counts <strong>once</strong> in the total, and <strong>once</strong> on each page it opens — reloading a page, or coming back to it in the same visit, adds nothing. So a visit that opens three pages adds 1 to the total and 1 to each of the three, which is why the pages added together come to more than the total.</span><span class="ar-only" dir="rtl"><strong>كيف تُقرأ.</strong> الزيارة: شخصٌ يفتح الموقع حتى يغلقه. تُحسب كلّ زيارةٍ <strong>مرّةً واحدة</strong> في المجموع، و<strong>مرّةً واحدة</strong> في كلّ صفحةٍ تفتحها — فإعادة تحميل الصفحة، أو الرجوع إليها في الزيارة نفسها، لا تزيد شيئًا. فالزيارة التي تفتح ثلاث صفحات تزيد المجموع واحدًا، وتزيد كلّ صفحةٍ منها واحدًا؛ ولذلك يكون مجموع الصفحات أكبر من مجموع الزيارات.</span></p>
+          <p><span class="en-only"><strong>Not counted, since 28 November 2026:</strong> search engines and other robots that read the site by themselves, and any device signed in to this dashboard — so your own visits are left out. Clicks on the menu are no longer counted separately: they were the same visits as the pages they opened.</span><span class="ar-only" dir="rtl"><strong>لا يُحسب، منذ ٢٨ نوفمبر ٢٠٢٦:</strong> محرّكات البحث والبرامج الآليّة التي تقرأ الموقع وحدها، وأيّ جهازٍ مسجَّلٍ في هذه اللوحة — فزياراتك أنت لا تدخل في الأرقام. ولم تعُد ضغطات القائمة تُحسب وحدها، فقد كانت هي الزيارات نفسها التي فتحت تلك الصفحات.</span></p>
         </div>
+        <p id="statStatus" class="stat-status" role="status" hidden></p>
+        <div>
+          <strong style="color:var(--green-dark);"><span class="en-only">How many visits opened each page</span><span class="ar-only" dir="rtl">كم زيارةً فتحت كلّ صفحة</span></strong>
+          <div id="statPages" style="margin-top:8px;font-size:.88rem;"></div>
+        </div>
+        <!-- One page's own breakdown: the surahs of the Quran reader, or the
+             areas of the Quran in Your Life. Drawn here, under the list, so a
+             redraw of the list never closes it. -->
+        <div id="statMore" class="stat-more-box" hidden></div>
         <button class="btn btn-outline btn-small" id="statRefresh" type="button" style="margin-top:14px;" onclick="loadAnalytics()">🔄 Refresh Numbers</button>
       </div>
       </div>
@@ -487,9 +493,12 @@
        main.js first here: the dashboard uses its iitwParseVideo/iitwEsc helpers
        so the recitation preview matches exactly what the home page renders.
        Neither touches the DOM at load, so this order is safe. -->
-  <script src="js/data.js?v=202611271411"></script>
-  <script src="js/wordlens.js?v=202611271411"></script>
-  <script src="js/main.js?v=202611271411"></script>
+  <script src="js/data.js?v=202611281720"></script>
+  <!-- js/life-index.js: the areas of the Quran in Your Life, which the analytics
+       panel adds up (written by tools/build-life-pages.py). -->
+  <script src="js/life-index.js?v=202611281720"></script>
+  <script src="js/wordlens.js?v=202611281720"></script>
+  <script src="js/main.js?v=202611281720"></script>
   <script>
     /* ---------- The dashboard speaks the reader's language too ----------
        js/i18n.js translates what is IN the page when it runs. Everything
@@ -527,7 +536,14 @@
        So the list is no longer hand-written. It is derived from this page's
        own nav, which is the same nav every page carries, which means adding
        a nav link is now enough to get the page into analytics. The extras
-       below are the pages that are deliberately not in the nav. */
+       below are the pages that are deliberately not in the nav.
+
+       ONE NUMBER PER PAGE (28 November 2026). There used to be a second
+       list, "Sections clicked": clicks on the menu. Every one of those
+       clicks also opened a page, already in the first list — so the owner
+       read "Hadith 9" and "Hadith 1" and could not tell whether nine people
+       had come or ten. Menu clicks are no longer counted (js/main.js) or
+       shown. The dashboard and sign-in pages are not counted either. */
     function trackedFromNav() {
       const seen = new Map();
       document.querySelectorAll("nav.main-nav a").forEach(a => {
@@ -543,8 +559,7 @@
         if (!seen.has(key)) seen.set(key, label);
       });
       // Pages with no nav link of their own.
-      [["staff", "Staff dashboard"], ["meeting", "Live meetings"], ["angels", "Angels (redirect)"],
-       ["verse", "Verse pages (all together)"]]
+      [["meeting", "Live meetings"], ["angels", "Angels (redirect)"], ["verse", "verse"]]
         .forEach(([k, l]) => { if (!seen.has(k)) seen.set(k, l); });
       return seen;
     }
@@ -552,30 +567,25 @@
     const TRACKED_PAGE_LABELS = trackedFromNav();
     const TRACKED_PAGES = [...TRACKED_PAGE_LABELS.keys()];
 
-    /* The nav counter key is built in main.js from the link text with every
-       non-letter stripped — so "Judgement Day" becomes "judgementday" and
-       "Golden Age" becomes "goldenage". Build the same keys from the same
-       source rather than typing them out and getting one wrong. */
-    /* Key from the HREF, label from the text — and they must be derived the
-       same way main.js derives them, including the legacy aliases, or this
-       panel reads counters nobody is writing to.
+    /* Four rows say in words what they hold, in both languages. The owner
+       read "Verse pages (all together)" — the pages that explain one verse
+       each, which most visitors reach from Google — as the Quran reader. */
+    const STAT_LABEL = {
+      index: ["Home page", "الصفحة الرئيسية"],
+      quran: ["Quran — the reader, where the surahs are read", "القرآن — قارئ المصحف، وفيه تُقرأ السور"],
+      verse: ["Verse explanation pages — one page for each explained verse, all counted together (most people reach them from Google)",
+              "صفحات شرح الآيات — لكلّ آيةٍ مشروحةٍ صفحة، وتُحسب كلّها معًا (وأكثر زوّارها يصلون إليها من محرّكات البحث)"],
+      life: ["The Quran in Your Life — its main page and all its sections, added together",
+             "القرآن في حياتك — صفحته الرئيسية وأقسامه كلّها، مجموعةً"]
+    };
 
-       This used to build the key from the link text with /[^a-z]/g stripped,
-       which is what main.js did. Both were wrong the same way, so the panel
-       and the counter agreed while BOTH silently ignored every nav click made
-       in Arabic mode — Arabic letters are not in [a-z], so the key came out
-       empty. Fixed in both places together. */
-    const NAV_KEY_ALIASES = { judgement: "judgementday", golden: "goldenage" };
-    const TRACKED_NAV_LABELS = new Map();
-    document.querySelectorAll("nav.main-nav a").forEach(a => {
-      const href = (a.getAttribute("href") || "").split("#")[0].split("?")[0];
-      if (!href || href.indexOf("//") >= 0) return;
-      let key = href.replace(/\.html$/, "").toLowerCase() || "index";
-      key = NAV_KEY_ALIASES[key] || key;
-      const label = (a.textContent || "").trim() || key;
-      if (key && !TRACKED_NAV_LABELS.has(key)) TRACKED_NAV_LABELS.set(key, label);
-    });
-    const TRACKED_NAV = [...TRACKED_NAV_LABELS.keys()];
+    /* The Quran in Your Life has a page for each area of life
+       (life/<id>.html), and main.js counts each under its own id. The list of
+       areas comes from js/life-index.js, which the guide's own build writes —
+       so a new area is read here without anyone editing this page. */
+    const LIFE_AREAS = (window.LIFE_INDEX && window.LIFE_INDEX.s) ? Object.keys(window.LIFE_INDEX.s) : [];
+
+    const statTwo = (en, arT) => `<span class="en-only">${en}</span><span class="ar-only" dir="rtl">${arT}</span>`;
 
     // Analytics and the home-page recitations are for the main admin only.
     const IS_ADMIN = STAFF_USER === ADMIN_USER;
@@ -624,12 +634,22 @@
        has a limit, "extremely generous", without numbers; the pace above is
        kept as the safe default — it costs the last few rows ten seconds. */
     const STAT_TIMEOUT_MS = 10000;
-    const STAT_WINDOW_MS = 10500;
-    const STAT_WINDOW_MAX = 25;
+    /* THE PACE, from the service's own code (28 November 2026). Its source
+       (github.com/syntaxerror019/countapi, api/index.py) limits reads to 10
+       a second from one address, with 100 a minute as its general default.
+       The panel asks at most 8 a second. If the service refuses anyway — the
+       running copy may be set differently — the panel drops for the rest of
+       the visit to 15 every 10 seconds, which is inside even the 100 a
+       minute, and asks again. (The old pace, 25 every 10.5 seconds, was the
+       first service's limit; it would have made the 114 surahs a fifty-
+       second wait.) */
+    const STAT_FAST = { ms: 1000, max: 8 };
+    const STAT_SLOW = { ms: 10000, max: 15 };
+    let statPace = STAT_FAST;
     const STAT_PARALLEL = 8;
-    /* "-2": numbers from the new service only. Anything kept from abacus is
-       a different count and must never be shown as this one's last read. */
-    const STAT_CACHE_KEY = "iitw-staff-stats-2";
+    /* "-3": one number per page, and the areas of life. A set kept before
+       (with the menu clicks in it) is a different shape and is not shown. */
+    const STAT_CACHE_KEY = "iitw-staff-stats-3";
     const statSent = [];      // when each recent request was sent
     let statRun = 0;          // a newer load wins; an older one draws nothing
     let statShown = null;     // what the panel is showing now
@@ -641,18 +661,20 @@
     async function statTurn() {
       for (;;) {
         const now = Date.now();
-        while (statSent.length && now - statSent[0] >= STAT_WINDOW_MS) statSent.shift();
-        if (statSent.length < STAT_WINDOW_MAX) { statSent.push(now); return; }
-        await statPause(statSent[0] + STAT_WINDOW_MS - now + 50);
+        while (statSent.length && now - statSent[0] >= STAT_SLOW.ms) statSent.shift();
+        const recent = statSent.filter(t => now - t < statPace.ms);
+        if (recent.length < statPace.max) { statSent.push(now); return; }
+        await statPause(recent[0] + statPace.ms - now + 50);
       }
     }
 
     async function readCount(key) {
-      for (let tries = 0; tries < 3; tries++) {
+      const waits = [3000, 8000, 15000, 25000];   // after a refusal, longer each time
+      for (let tries = 0; tries <= waits.length; tries++) {
         await statTurn();
         const ctl = (typeof AbortController === "function") ? new AbortController() : null;
         const timer = ctl ? setTimeout(() => ctl.abort(), STAT_TIMEOUT_MS) : 0;
-        let wait = 5000;
+        let wait = waits[Math.min(tries, waits.length - 1)];
         try {
           const r = await fetch(IITW_COUNTER.get(key), ctl ? { signal: ctl.signal } : undefined);
           if (r.status === 404) return 0;
@@ -663,16 +685,18 @@
             if (typeof j.value === "number") return j.value;
             return (typeof j.value === "string" && /^\d+$/.test(j.value)) ? parseInt(j.value, 10) : null;
           }
-          // refused for asking too fast: "Too many requests. Try again in 2s"
+          // refused for asking too fast: slow down for good, and wait as told if it says how long
+          statPace = STAT_SLOW;
           try {
             const m = /(\d+(?:\.\d+)?)\s*s\b/.exec((await r.json()).error || "");
-            if (m) wait = Math.min(15000, parseFloat(m[1]) * 1000 + 500);
+            if (m) wait = Math.max(wait, Math.min(30000, parseFloat(m[1]) * 1000 + 500));
           } catch (e) {}
         } catch (e) {
           return null;               // gave up, offline, or blocked
         } finally {
           clearTimeout(timer);
         }
+        if (tries === waits.length) break;
         await statPause(wait);
       }
       return null;
@@ -719,38 +743,64 @@
     function loadStatCache() {
       try {
         const d = JSON.parse(localStorage.getItem(STAT_CACHE_KEY) || "null");
-        if (d && typeof d.at === "number" && typeof d.total === "number" && d.pages && d.nav) return d;
+        if (d && typeof d.at === "number" && typeof d.total === "number" && d.pages && d.life) return d;
       } catch (e) {}
       return statLast;
     }
 
-    /* A row is a number, "…" while it is still being read, or "—" if it
-       could not be read. Read numbers first, largest first. */
-    function statRows(labels, keys, values) {
-      const rank = n => (typeof n === "number") ? n : (n === undefined ? -1 : -2);
-      return keys.map(k => ({ label: labels.get(k) || k, n: values[k] }))
-        .sort((a, b) => rank(b.n) - rank(a.n))
-        .map(r => `<div style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--border);padding:4px 0;"><span>${r.label}</span><strong>${typeof r.n === "number" ? r.n.toLocaleString() : (r.n === undefined ? "…" : "—")}</strong></div>`).join("");
+    /* A number, "…" while it is still being read, or "—" if it could not be. */
+    const statNum = n => typeof n === "number" ? n.toLocaleString() : (n === undefined ? "…" : "—");
+    const statRank = n => (typeof n === "number") ? n : (n === undefined ? -1 : -2);
+
+    /* The Quran in Your Life's row: its main page and every area, added up.
+       undefined while any of them is still being read; null if one failed. */
+    function lifeTotal(d) {
+      const parts = [d.pages.life].concat(LIFE_AREAS.map(id => d.life[id]));
+      if (parts.some(n => n === undefined)) return undefined;
+      if (parts.some(n => n === null)) return null;
+      return parts.reduce((a, b) => a + b, 0);
+    }
+
+    function statLabelHtml(k) {
+      const t = STAT_LABEL[k];
+      // the nav's own words otherwise; reI18n() translates them
+      return t ? statTwo(t[0], t[1]) : iitwEsc(TRACKED_PAGE_LABELS.get(k) || k);
+    }
+
+    /* The list, read numbers first, largest first. Two rows open their own
+       breakdown underneath: the reader's surahs, and the areas of life. */
+    function statRows(d) {
+      const rows = TRACKED_PAGES.map(k => ({ k, n: k === "life" ? lifeTotal(d) : d.pages[k] }))
+        .sort((a, b) => statRank(b.n) - statRank(a.n));
+      const more = {
+        quran: ["surahs", "📖", "Which surahs?", "أيّ السور؟"],
+        life: ["life", "🌱", "Which areas?", "أيّ الأبواب؟"]
+      };
+      return rows.map(r => {
+        const m = more[r.k];
+        const btn = m ? ` <button type="button" class="btn btn-outline btn-small stat-more" data-more="${m[0]}"
+                  aria-expanded="${statMoreOpen === m[0]}" onclick="toggleStatMore('${m[0]}')">${m[1]} ${statTwo(m[2], m[3])}</button>` : "";
+        return `<div class="stat-row"><span class="stat-row-label">${statLabelHtml(r.k)}${btn}</span><strong>${statNum(r.n)}</strong></div>`;
+      }).join("");
     }
 
     /* d === null: nothing could be read and nothing was kept. */
     function drawAnalytics(d) {
       statShown = d;
-      const pages = document.getElementById("statPages"), clicks = document.getElementById("statClicks");
+      const pages = document.getElementById("statPages");
       if (!d) {
         document.getElementById("statTotal").textContent = "—";
-        [pages, clicks].forEach(el => {
-          el.textContent = "";
-          const p = document.createElement("p");
-          p.style.cssText = "color:var(--text-muted);margin:0;";
-          iitwSay(p, "Not available right now.", "غير متاح الآن.");
-          el.appendChild(p);
-        });
+        pages.textContent = "";
+        const p = document.createElement("p");
+        p.style.cssText = "color:var(--text-muted);margin:0;";
+        iitwSay(p, "Not available right now.", "غير متاح الآن.");
+        pages.appendChild(p);
+        drawStatMore();
         return;
       }
       document.getElementById("statTotal").textContent = d.total.toLocaleString();
-      pages.innerHTML = statRows(TRACKED_PAGE_LABELS, TRACKED_PAGES, d.pages);
-      clicks.innerHTML = statRows(TRACKED_NAV_LABELS, TRACKED_NAV, d.nav);
+      pages.innerHTML = statRows(d);
+      drawStatMore();
       /* The labels are the navigation's own words, read before i18n ran over
          the page — so in Arabic mode they came out English. The dictionary
          has every one of them; run it over what was just drawn. */
@@ -779,14 +829,17 @@
           }
           return;
         }
-        const keys = TRACKED_PAGES.map(p => "page-" + p).concat(TRACKED_NAV.map(c => "nav-" + c));
+        const keys = TRACKED_PAGES.map(p => "page-" + p).concat(LIFE_AREAS.map(id => "page-" + id));
         const all = keys.length + 1;
-        const d = { at: 0, total, pages: {}, nav: {} };     // a missing key: still being read
+        const d = { at: 0, total, pages: {}, life: {} };     // a missing key: still being read
         let done = 1, drawSoon = false;
         drawAnalytics(d);
-        const got = await readMany(keys, (i, n) => {
+        const put = (i, n) => {
           if (i < TRACKED_PAGES.length) d.pages[TRACKED_PAGES[i]] = n;
-          else d.nav[TRACKED_NAV[i - TRACKED_PAGES.length]] = n;
+          else d.life[LIFE_AREAS[i - TRACKED_PAGES.length]] = n;
+        };
+        const got = await readMany(keys, (i, n) => {
+          put(i, n);
           done++;
           if (drawSoon) return;
           drawSoon = true;
@@ -799,8 +852,7 @@
           }, 250);
         });
         if (run !== statRun) return;
-        TRACKED_PAGES.forEach((p, i) => { d.pages[p] = got[i]; });
-        TRACKED_NAV.forEach((c, i) => { d.nav[c] = got[TRACKED_PAGES.length + i]; });
+        got.forEach((n, i) => put(i, n));
         d.at = Date.now();
         drawAnalytics(d);
         if (got.some(n => n === null)) {
@@ -814,6 +866,111 @@
         if (run === statRun && btn) btn.disabled = false;
       }
     }
+
+    /* ---------- One page's breakdown ----------
+       "Which surahs are opened most?" — the owner asked for it for the Quran
+       page alone. quran.js counts each surah once per visit as it opens
+       (surah-1 … surah-114), from 28 November 2026; before that day the site
+       did not record which surah was read. The 114 numbers are read only
+       when the button is pressed, at the same pace as the rest.
+       The areas of life need no reading of their own: the list above
+       already read every one to add them up. */
+    let statMoreOpen = "";          // "surahs", "life" or ""
+    let statSurahs = null;          // { n: count } as they arrive; null before the first read
+    let statSurahsAt = 0;           // when the last read finished, 0 while reading
+    let surahRun = 0;
+
+    function toggleStatMore(which) {
+      statMoreOpen = statMoreOpen === which ? "" : which;
+      if (statMoreOpen === "surahs" && !statSurahs) loadSurahStats();
+      drawStatMore();
+      document.querySelectorAll(".stat-more").forEach(b =>
+        b.setAttribute("aria-expanded", String(b.dataset.more === statMoreOpen)));
+      if (statMoreOpen) {
+        const box = document.getElementById("statMore");
+        if (box && box.scrollIntoView) box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }
+
+    function statMoreRow(label, n) {
+      return `<div class="stat-row"><span class="stat-row-label">${label}</span><strong>${statNum(n)}</strong></div>`;
+    }
+
+    function drawStatMore() {
+      const box = document.getElementById("statMore");
+      if (!box) return;
+      box.hidden = !statMoreOpen;
+      if (!statMoreOpen) { box.innerHTML = ""; return; }
+      const close = `<button type="button" class="btn btn-outline btn-small" onclick="toggleStatMore('${statMoreOpen}')">${statTwo("Close", "إغلاق")}</button>`;
+      if (statMoreOpen === "life") {
+        const d = statShown;
+        const S = (window.LIFE_INDEX && window.LIFE_INDEX.s) || {};
+        const rows = d ? [{ label: statTwo("📘 The guide's main page", "📘 الصفحة الرئيسية للدليل"), n: d.pages.life }]
+          .concat(LIFE_AREAS.map(id => {
+            const m = S[id] || ["", id, id];
+            return { label: statTwo(m[0] + " " + m[1], m[0] + " " + m[2]), n: d.life[id] };
+          })) : [];
+        rows.sort((a, b) => statRank(b.n) - statRank(a.n));
+        box.innerHTML = `<h4>${statTwo("🌱 The Quran in Your Life — visits to each page", "🌱 القرآن في حياتك — زيارات كلّ صفحة")}</h4>` +
+          (rows.length ? rows.map(r => statMoreRow(r.label, r.n)).join("")
+                       : `<p class="stat-more-note">${statTwo("Not available right now.", "غير متاح الآن.")}</p>`) + close;
+        return;
+      }
+      // the surahs: the ones opened, most first; then how many were not opened at all
+      const names = n => {
+        const s = (typeof SURAHS !== "undefined") ? SURAHS.find(x => x.n === n) : null;
+        return s ? statTwo(n + ". " + iitwEsc(s.name), statDigitsAr(n) + ". " + iitwEsc(s.arabic))
+                 : statTwo(String(n), statDigitsAr(n));
+      };
+      const got = statSurahs || {};
+      const read = Object.keys(got).length;
+      const opened = Object.keys(got).map(Number).filter(n => got[n] > 0).sort((a, b) => got[b] - got[a] || a - b);
+      const failed = Object.keys(got).filter(n => got[n] === null).length;
+      const never = Object.keys(got).filter(n => got[n] === 0).length;
+      let h = `<h4>${statTwo("📖 Which surahs people open in the Quran reader", "📖 أيّ السور يفتحها الناس في قارئ المصحف")}</h4>` +
+        `<p class="stat-more-note">${statTwo("Each surah counts once per visit, from 28 November 2026 — before that day the site did not record which surah was opened.",
+                                             "تُحسب كلّ سورةٍ مرّةً واحدة في الزيارة، منذ ٢٨ نوفمبر ٢٠٢٦ — ولم يكن الموقع قبل ذلك اليوم يسجّل أيّ سورةٍ فُتحت.")}</p>`;
+      if (!statSurahsAt) {
+        h += `<p class="stat-more-note" role="status">${statTwo("Reading the surahs… " + read + " of 114", "جارٍ قراءة السور… " + statDigitsAr(read) + " من ١١٤")}</p>`;
+      }
+      h += opened.map((n, i) => statMoreRow(`<span class="stat-place">${statTwo(String(i + 1), statDigitsAr(i + 1))}</span> ${names(n)}`, got[n])).join("");
+      if (statSurahsAt && !opened.length && !failed) {
+        h += `<p class="stat-more-note">${statTwo("No surah has been opened in the reader yet since counting began.", "لم تُفتح أيّ سورةٍ في قارئ المصحف بعدُ منذ بدأ العدّ.")}</p>`;
+      }
+      if (statSurahsAt && never && opened.length) {
+        h += `<p class="stat-more-note">${statTwo("Not opened yet: " + never + (never === 1 ? " surah." : " surahs."), "لم تُفتح بعدُ: " + statDigitsAr(never) + " سورة.")}</p>`;
+      }
+      if (statSurahsAt && failed) {
+        h += `<p class="stat-more-note warn">${statTwo("Some surahs could not be read (" + failed + "). Press “Read again” in a few minutes.",
+                                                       "تعذّرت قراءة بعض السور (" + statDigitsAr(failed) + "). اضغط «اقرأ من جديد» بعد دقائق.")}</p>`;
+      }
+      if (statSurahsAt) {
+        h += `<button type="button" class="btn btn-outline btn-small" onclick="loadSurahStats()">🔄 ${statTwo("Read again", "اقرأ من جديد")}</button> `;
+      }
+      box.innerHTML = h + close;
+    }
+
+    async function loadSurahStats() {
+      const run = ++surahRun;
+      statSurahs = {};
+      statSurahsAt = 0;
+      drawStatMore();
+      const keys = Array.from({ length: 114 }, (_, i) => "surah-" + (i + 1));
+      let drawSoon = false;
+      const got = await readMany(keys, (i, n) => {
+        if (run !== surahRun) return;
+        statSurahs[i + 1] = n;
+        if (drawSoon) return;
+        drawSoon = true;
+        setTimeout(() => { drawSoon = false; if (run === surahRun && !statSurahsAt) drawStatMore(); }, 250);
+      });
+      if (run !== surahRun) return;
+      got.forEach((n, i) => { statSurahs[i + 1] = n; });
+      // readMany stops after three failures: the ones never asked for are failures too
+      statSurahsAt = Date.now();
+      drawStatMore();
+    }
+
     /* Here, not in the IS_ADMIN block above: loadAnalytics touches statRun
        before its first await, and above this point statRun does not exist
        yet (a `let` read early throws, and the whole dashboard script stops). */
@@ -1961,8 +2118,8 @@
       }
     });
   </script>
-  <script src="js/reading.js?v=202611271411"></script>
-  <script src="js/nav.js?v=202611271411"></script>
-  <script src="js/i18n.js?v=202611271411"></script>
+  <script src="js/reading.js?v=202611281720"></script>
+  <script src="js/nav.js?v=202611281720"></script>
+  <script src="js/i18n.js?v=202611281720"></script>
 </body>
 </html>

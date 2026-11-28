@@ -987,14 +987,19 @@ def staff_stats_say_when_the_counter_fails(ctx):
     and then answered 500, and the panel showed "…" and then empty lists —
     which the owner read as a broken update. A failure must be SAID, in the
     reader's language, and never shown as 0; the last numbers read are kept.
-    The service also refuses (429) more than 30 requests from one address in
-    10 seconds, and the panel reads 31 — the old panel showed the refused rows
-    as 0. The service is played by a stand-in with that same limit — nothing
-    is sent to the real one: first working, then hanging (the panel must give
-    up by itself), then refusing with nothing kept, in Arabic."""
+    The service refuses (429) what comes too fast — its own code allows 10
+    reads a second from one address — and the panel must never show a refused
+    row as 0. The service is played by a stand-in with that same limit —
+    nothing is sent to the real one: first working, then hanging (the panel
+    must give up by itself), then refusing with nothing kept, in Arabic.
+    ONE NUMBER PER PAGE (28 November 2026): the owner read "Hadith 9" in one
+    list and "Hadith 1" in another and asked whether that was 9 or 10. There
+    is one list now, the Quran in Your Life adds up all its pages, and the
+    reader's surahs are ranked when he asks."""
     import json, time
     mode = {"m": "working", "asked": 0, "refused": 0}
     hung, sent = [], []
+    surahs = {2: 14, 18: 9, 36: 5, 1: 9}
     def stand_in(route):
         url = route.request.url
         if "/get/" not in url:
@@ -1007,49 +1012,90 @@ def staff_stats_say_when_the_counter_fails(ctx):
         if mode["m"] == "refuse":
             return route.fulfill(status=500, headers=cors, content_type="application/json",
                                  body='{"error":"Failed to get data. Try again later."}')
-        # the real service's limit: 30 requests per address every 10 seconds
+        # the real service's limit, from its own code: 10 reads a second from one address
         now = time.time()
-        sent[:] = [t for t in sent if now - t < 10] + [now]
-        if len(sent) > 30:
+        sent[:] = [t for t in sent if now - t < 1] + [now]
+        if len(sent) > 10:
             mode["refused"] += 1
             return route.fulfill(status=429, headers=cors, content_type="application/json",
-                                 body='{"error":"Too many requests. Try again in 2s"}')
+                                 body='{"error":"Rate limit exceeded"}')
         key = url.rstrip("/").split("/")[-1].replace("iitw-islamistheway-2026-", "", 1)
-        n = {"total": 5123, "page-index": 2100, "page-verse": 77}.get(key, 12)
+        if key.startswith("surah-"):
+            n = surahs.get(int(key[6:]))
+            if n is None:        # a surah nobody opened: the service has never heard of it
+                return route.fulfill(status=404, headers=cors, content_type="application/json",
+                                     body='{"error":"Key not found"}')
+        else:
+            n = {"total": 5123, "page-index": 2100, "page-verse": 77, "page-life": 30, "page-hadith": 9}.get(key, 2)
         return route.fulfill(status=200, headers=cors, content_type="application/json",
-                             body=json.dumps({"value": n}))
+                             body=json.dumps({"key": key, "value": str(n)}))
     ctx.route("**countapi.mileshilliard.com/**", stand_in)   # registered last, so it answers first
     admin = ("localStorage.setItem('iitw-staff-session', JSON.stringify({user:'Islam.younis.2026', at:Date.now()}));"
              "localStorage.removeItem('iitw-gh-token');localStorage.removeItem('iitw-staff-draft');"
-             "localStorage.removeItem('iitw-staff-stats-2');")
+             "localStorage.removeItem('iitw-staff-stats-3');")
     pg = open_page(ctx, "staff.html", extra=admin)
     pg.click("#staffTabs button[data-sec='analytics']")
     status = lambda: pg.inner_text("#statStatus")
-    # working: every number (31 reads against a limit of 30 in 10 s — the panel
-    # must pace itself, not be refused), the time they were read, and they are kept
+    # working: every number (the panel must pace itself, not be refused), the
+    # time they were read, and they are kept
     pg.wait_for_function("() => /Numbers read on|could not be read|not answering/.test(document.getElementById('statStatus').innerText)", timeout=40000)
     check("Numbers read on" in status(), "a working service, and the panel said: %r (%d requests refused for asking too fast)"
           % (status()[:90], mode["refused"]))
     check(pg.inner_text("#statTotal") == "5,123", "the total was not shown: %r" % pg.inner_text("#statTotal"))
     rows = pg.inner_text("#statPages")
-    check("Verse pages" in rows and "—" not in rows and "…" not in rows, "the page rows are wrong: %r" % rows[:200])
+    nums = pg.evaluate("() => [...document.querySelectorAll('#statPages .stat-row > strong')].map(e => e.innerText)")
+    check("Verse explanation pages" in rows and nums and all(re.fullmatch(r"[\d,]+", x) for x in nums),
+          "the page rows are wrong: %r %r" % (rows[:200], nums))
     check("Logout" not in rows, "the Logout link is listed as a page")
+    check(pg.locator("#statClicks").count() == 0 and "Sections clicked" not in pg.inner_text("#analyticsPanel"),
+          "the menu clicks are still shown beside the pages — the same visits counted twice")
+    check("Staff dashboard" not in rows, "the dashboard's own page is listed (staff visits are not counted)")
+    areas = pg.evaluate("() => Object.keys((window.LIFE_INDEX || {}).s || {}).length")
+    check(areas >= 30, "the panel does not know the areas of life (js/life-index.js): %d" % areas)
+    life = pg.evaluate("""() => { const r = [...document.querySelectorAll('#statPages .stat-row')]
+        .find(x => /The Quran in Your Life/.test(x.innerText)); return r ? r.querySelector('strong').innerText : null; }""")
+    check(life == "{:,}".format(30 + 2 * areas), "the Quran in Your Life row is %r, not its main page and %d areas added up (%s)"
+          % (life, areas, "{:,}".format(30 + 2 * areas)))
     check(mode["refused"] == 0, "the panel asked too fast: %d requests refused" % mode["refused"])
-    check(pg.evaluate("() => !!localStorage.getItem('iitw-staff-stats-2')"), "a complete read was not kept on the device")
+    check(pg.evaluate("() => !!localStorage.getItem('iitw-staff-stats-3')"), "a complete read was not kept on the device")
+    # the areas of life: no reading of their own
+    asked = mode["asked"]
+    pg.click(".stat-more[data-more='life']")
+    pg.wait_for_timeout(300)
+    box = pg.inner_text("#statMore")
+    check("main page" in box and box.count("\n") >= areas, "the areas of life breakdown is wrong: %r" % box[:200])
+    check(mode["asked"] == asked, "the areas of life asked the service again (%d)" % (mode["asked"] - asked))
+    # the surahs: ranked, most first, from their own 114 counters
+    pg.click(".stat-more[data-more='surahs']")
+    t0 = time.time()
+    pg.wait_for_function("() => /Read again/.test(document.getElementById('statMore').innerText)", timeout=40000)
+    took = time.time() - t0
+    box = pg.inner_text("#statMore")
+    order = [x for x in ("Al-Baqarah", "Al-Fatihah", "Al-Kahf", "Ya-Sin") if x in box]
+    check(order == ["Al-Baqarah", "Al-Fatihah", "Al-Kahf", "Ya-Sin"] and box.index("Al-Baqarah") < box.index("Al-Fatihah")
+          < box.index("Al-Kahf") < box.index("Ya-Sin"), "the surahs are not ranked most-opened first: %r" % box[:300])
+    check("Not opened yet: 110 surahs" in box, "the surahs nobody opened are not summed up: %r" % box[-300:])
+    nums = pg.evaluate("() => [...document.querySelectorAll('#statMore .stat-row > strong')].map(e => e.innerText)")
+    check("could not be read" not in box and len(nums) == 4 and all(re.fullmatch(r"\d+", x) for x in nums),
+          "a surah was shown as a failure, or a never-opened one was listed: %r" % nums)
+    check(mode["refused"] == 0, "reading the surahs asked too fast: %d refused" % mode["refused"])
+    check(took < 30, "the 114 surahs took %.0f s to read" % took)
     # switching the language redraws what was read; it does not ask the service again
     asked = mode["asked"]
     pg.click("#langToggle")
     pg.wait_for_timeout(500)
     # every row label is in the dictionary: "Verse pages" stayed English in
     # Arabic, and no audit saw it — the rows are only drawn when the service answers
-    shown = "\n".join(pg.inner_text(s) for s in ("#statPages", "#statClicks", "#statStatus", ".stat-since"))
+    shown = "\n".join(pg.inner_text(s) for s in ("#statPages", "#statStatus", ".stat-since", ".stat-how", "#statMore"))
     leaks = [l for l in shown.split("\n") if re.search("[A-Za-z]", l)]
     check(not leaks, "English in the Arabic statistics: %r" % leaks[:4])
     check(re.search("[٠-٩]", pg.inner_text("#statStatus")), "the Arabic date is not in Arabic digits")
+    check("البقرة" in pg.inner_text("#statMore"), "the surah names are not Arabic in Arabic mode")
     pg.click("#langToggle")
     pg.wait_for_timeout(500)
     check(mode["asked"] == asked, "a language switch asked the counting service %d more times" % (mode["asked"] - asked))
     check(pg.inner_text("#statTotal") == "5,123", "the numbers were lost on a language switch")
+    check("Al-Baqarah" in pg.inner_text("#statMore"), "the surah list closed on a language switch")
     # hanging: the panel gives up by itself, says so, and shows the kept numbers
     mode["m"] = "hang"
     pg.click("#statRefresh")
@@ -1069,7 +1115,7 @@ def staff_stats_say_when_the_counter_fails(ctx):
             pass
     # refusing, nothing kept, in Arabic: the Arabic sentence alone, and no zeros
     mode["m"] = "refuse"
-    pg.evaluate("() => { localStorage.removeItem('iitw-staff-stats-2'); localStorage.setItem('iitw-lang', 'ar'); }")
+    pg.evaluate("() => { localStorage.removeItem('iitw-staff-stats-3'); localStorage.setItem('iitw-lang', 'ar'); }")
     pg.reload(wait_until="load")
     pg.wait_for_timeout(600)
     pg.click("#staffTabs button[data-sec='analytics']")
@@ -1077,9 +1123,103 @@ def staff_stats_say_when_the_counter_fails(ctx):
     s = status()
     check(not re.search("[A-Za-z]", s), "English showed in the Arabic status line: %r" % s)
     check(pg.inner_text("#statTotal") == "—", "a failed read was shown as a number: %r" % pg.inner_text("#statTotal"))
-    lists = pg.inner_text("#statPages") + pg.inner_text("#statClicks")
-    check("0" not in lists and "غير متاح" in lists, "the lists did not say the numbers are unavailable: %r" % lists[:120])
-    pg.evaluate("() => { localStorage.removeItem('iitw-staff-draft'); localStorage.removeItem('iitw-staff-stats-2'); }")
+    lists = pg.inner_text("#statPages")
+    check("0" not in lists and "غير متاح" in lists, "the list did not say the numbers are unavailable: %r" % lists[:120])
+    pg.evaluate("() => { localStorage.removeItem('iitw-staff-draft'); localStorage.removeItem('iitw-staff-stats-3'); }")
+    return pg
+
+
+@scenario
+def reader_live_this_verse(ctx):
+    """The owner (28 November 2026): connect each verse with how to live it —
+    "put a button if you want more details... go straight away to that page".
+    Every verse the Quran in Your Life holds gets 🌱 under it in the reader,
+    which opens its "Live it" note in place and links to the card; verse pages
+    show the same note. A verse the guide does not hold gets no button."""
+    pg = open_page(ctx, "quran.html#surah-2-255")
+    pg.wait_for_selector("#ayah-255 .ayah-live-btn", timeout=20000)
+    n = pg.evaluate("() => Object.keys(window.LIFE_INDEX.v).length")
+    check(n >= 800, "js/life-index.js holds %d verses" % n)
+    # a verse the guide does not hold: no button (2:1 is Alif Lam Mim)
+    pg.goto(BASE + "quran.html#surah-2-1", wait_until="networkidle")
+    pg.wait_for_selector("#ayah-1", timeout=20000)
+    check(pg.locator("#ayah-1 .ayah-live-btn").count() == 0, "a verse the guide does not hold has a Live button")
+    check(not pg.evaluate("() => !!LIFE_INDEX.v['2:1']"), "the index says the guide holds 2:1")
+    pg.goto(BASE + "quran.html#surah-2-255", wait_until="networkidle")
+    pg.wait_for_selector("#ayah-255 .ayah-live-btn", timeout=20000)
+    pg.click("#ayah-255 .ayah-live-btn")
+    pg.wait_for_timeout(200)
+    panel = pg.locator("#ayah-255 .ayah-live-panel")
+    check(panel.is_visible(), "the Live panel did not open")
+    t = panel.inner_text()
+    check("Read it after every prayer" in t and "From" in t, "the Live note is not the card's: %r" % t[:160])
+    href = pg.get_attribute("#ayah-255 .ayah-live-more", "href")
+    check(href == "life/faith.html#v-2-255", "the link goes to %r" % href)
+    check(pg.get_attribute("#ayah-255 .ayah-live-btn", "aria-expanded") == "true", "the button does not say it is open")
+    # a passage: the button is on each of its verses, and says it is one passage
+    pg.goto(BASE + "quran.html#surah-59-23", wait_until="networkidle")
+    pg.wait_for_selector("#ayah-23 .ayah-live-btn", timeout=20000)
+    pg.click("#ayah-23 .ayah-live-btn")
+    pg.wait_for_timeout(200)
+    t = pg.inner_text("#ayah-23 .ayah-live-panel")
+    check("verses 22–24" in t, "a verse of a passage does not say it is read with the others: %r" % t[:160])
+    check(pg.get_attribute("#ayah-23 .ayah-live-more", "href") == "life/faith.html#v-59-22",
+          "the passage's verse does not link to the passage's card")
+    # the link lands on the card
+    pg.click("#ayah-23 .ayah-live-more")
+    pg.wait_for_load_state("networkidle")
+    pg.wait_for_timeout(800)
+    check(pg.url.endswith("life/faith.html#v-59-22"), "the link did not open the card: %s" % pg.url)
+    check(pg.evaluate("() => { const r = document.getElementById('v-59-22').getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }"),
+          "the card is not on screen after following the link")
+    # in Arabic: the button and the note in Arabic, nothing English showing
+    pg.evaluate("() => localStorage.setItem('iitw-lang', 'ar')")
+    pg.goto(BASE + "quran.html#surah-2-255", wait_until="networkidle")
+    pg.wait_for_selector("#ayah-255 .ayah-live-btn", timeout=20000)
+    pg.click("#ayah-255 .ayah-live-btn")
+    pg.wait_for_timeout(200)
+    t = pg.inner_text("#ayah-255 .ayah-live")
+    check("كيف تعيش" in t and not re.search("[A-Za-z]{2,}", t), "the Arabic Live panel shows English: %r" % t[:200])
+    # the verse page says the same, and links to the same card
+    pg.evaluate("() => localStorage.setItem('iitw-lang', 'en')")
+    pg.goto(BASE + "verse/2-255.html", wait_until="networkidle")
+    check(visible_count(pg, ".vp-life") == 1, "the verse page has no Live this verse box")
+    check(pg.get_attribute(".vp-life-more", "href") == "life/faith.html#v-2-255", "the verse page links elsewhere")
+    check("Read it after every prayer" in pg.inner_text(".vp-life"), "the verse page's note is not the card's")
+    return pg
+
+
+@scenario
+def miracles_romans_pharaoh_space(ctx):
+    """Three cards added 28 November 2026 (HANDOFF PART 48): the Romans'
+    defeat and comeback (30:2-4, strong — a prophecy with a deadline), and two
+    popular claims refuted on their own cards: Pharaoh's mummy (10:92) and
+    space travel (55:33). Each surah shows the 🔬 button and draws its card
+    with its grade; in Arabic nothing English shows."""
+    pg = open_page(ctx, "quran.html#surah-30")
+    pg.wait_for_selector("#rqMirBtn", timeout=20000)
+    pg.click("#rqMirBtn")
+    pg.wait_for_timeout(400)
+    card = pg.locator("#mi-30-2")
+    check(card.count() == 1 and card.is_visible(), "the Romans card is not drawn on surah 30")
+    t = card.inner_text()
+    check("Heraclius" in t and "strong" in t.lower(), "the Romans card lost its history or its grade: %r" % t[:200])
+    for sn, cid, grade in ((10, "mi-10-92", "Not established"), (55, "mi-55-33", "Not established")):
+        pg.goto(BASE + "quran.html#surah-%d" % sn, wait_until="networkidle")
+        pg.wait_for_selector("#rqMirBtn", timeout=20000)
+        pg.click("#rqMirBtn")
+        pg.wait_for_timeout(400)
+        c = pg.locator("#" + cid)
+        check(c.count() == 1 and grade.lower() in c.inner_text().lower(), "%s is not drawn with its grade on surah %d" % (cid, sn))
+    pg.evaluate("() => localStorage.setItem('iitw-lang', 'ar')")
+    pg.goto(BASE + "quran.html#surah-30", wait_until="networkidle")
+    pg.reload(wait_until="networkidle")      # a change of # alone does not reload the page
+    pg.wait_for_selector("#rqMirBtn", timeout=20000)
+    pg.click("#rqMirBtn")
+    pg.wait_for_timeout(400)
+    t = pg.locator("#mi-30-2").inner_text()
+    check("هرقل" in t and not re.search("[A-Za-z]{3,}", t), "the Arabic Romans card shows English: %r"
+          % [w for w in re.findall("[A-Za-z]{3,}", t)][:5])
     return pg
 
 

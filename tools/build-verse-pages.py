@@ -233,6 +233,104 @@ def plain_text(s, limit):
     return s[:limit].rsplit(" ", 1)[0].rstrip(",;:—-") + "…"
 
 
+# ---------------------------------------------------------------- the life guide
+# The Quran in Your Life (js/life/, built by build-life-pages.py) holds 856
+# verses, each with how to live it. The owner asked (28 November 2026) that a
+# verse lead to it — "if this verse talks about this... put a button... go
+# straight away to that page". So every verse page whose verse is in the guide
+# shows its "Live it" note and a link to the card, and the Quran reader's 🌱
+# button reads the same notes from js/life-index.js, which build-life-pages.py
+# writes from life_links() below. It is read here and not imported from that
+# builder, because that builder imports this file.
+LIFE_DIR = os.path.join(REPO, "js", "life")
+LIFE_Q = re.compile(r"\{q (\d{1,3}):(\d{1,3})(?: (\d{1,3})-(\d{1,3}) ([^\s{}]+))?\}")
+LIFE_REF = re.compile(r"\s*(\d{1,3}):(\d{1,3})(?:\s*-\s*(\d{1,3}))?\s*")
+
+
+def life_entry(path, key):
+    """The object assigned in  (window.LIFE = window.LIFE || {})["key"] = {...}"""
+    s = io.open(path, encoding="utf-8").read()
+    m = re.search(r'\[\s*"%s"\s*\]\s*=\s*' % re.escape(key), s)
+    if not m:
+        raise SystemExit('%s: no ["%s"] = {...} in it' % (path, key))
+    return js_literal(s, m.end())
+
+
+_life_text = {}
+
+
+def life_html(t):
+    """A card's note as HTML: escaped, **bold**, and each {q s:a i-j word} cut
+    from the Mushaf's own text in its own face — the cut the life pages make
+    (build-life-pages.py checks each marker's word; this only renders)."""
+    def cut(m):
+        n = int(m.group(1))
+        if n not in _life_text:
+            _life_text[n] = surah_text(n)
+        w = _life_text[n]["a"][int(m.group(2)) - 1].replace(" ", " ").strip().split()
+        if m.group(3):
+            w = w[int(m.group(3)): int(m.group(4)) + 1]
+        return '<span class="q-hafs">﴿' + " ".join(w) + "﴾</span>"
+    t = html.escape(t or "", quote=False)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+    return LIFE_Q.sub(cut, t).replace("\n\n", "<br><br>").replace("\n", "<br>")
+
+
+def life_links():
+    """(surah, verse) -> the guide's cards that hold that verse, in the guide's
+    own order. A card is a dict: sec, icon, title, titleAr (escaped), s, a1,
+    a2, anchor (its id on life/<sec>.html) and live, liveAr (HTML)."""
+    if not os.path.isdir(LIFE_DIR):
+        return {}
+    index = life_entry(os.path.join(LIFE_DIR, "_index.js"), "_index")
+    out = {}
+    for part in index["parts"]:
+        for sid in part["sections"]:
+            path = os.path.join(LIFE_DIR, sid + ".js")
+            if not os.path.exists(path):
+                continue    # a section still being written: the life build refuses to publish it
+            sec = life_entry(path, sid)
+            for it in sec["items"]:
+                m = LIFE_REF.fullmatch(it["v"])
+                if not m:
+                    raise SystemExit("js/life/%s.js: not a verse reference: %r" % (sid, it["v"]))
+                s, a1 = int(m.group(1)), int(m.group(2))
+                a2 = int(m.group(3)) if m.group(3) else a1
+                card = dict(sec=sid, icon=sec.get("icon", ""), title=html.escape(sec["title"], quote=False),
+                            titleAr=html.escape(sec["titleAr"], quote=False), s=s, a1=a1, a2=a2,
+                            anchor="v-%d-%d" % (s, a1), live=life_html(it["live"]), liveAr=life_html(it["liveAr"]))
+                for a in range(a1, a2 + 1):
+                    out.setdefault((s, a), []).append(card)
+    return out
+
+
+def life_block(cards, n):
+    """The verse page's "Live this verse" box: each card's note, and the way
+    to the card itself, where its examples and hadith are."""
+    if not cards:
+        return ""
+    h = ['<aside class="vp-life" aria-labelledby="vp-life-h">',
+         '<h2 class="vp-life-h" id="vp-life-h"><span class="en-only">🌱 Live this verse</span>'
+         '<span class="ar-only" dir="rtl">🌱 كيف تعيش هذه الآية</span></h2>']
+    for c in cards:
+        joint = ""
+        if c["a2"] > c["a1"]:
+            joint = ('<p class="vp-life-range"><span class="en-only">Read with verses %d–%d, as one passage.</span>'
+                     '<span class="ar-only" dir="rtl">تُقرأ مع الآيات %s–%s مقطعًا واحدًا.</span></p>'
+                     % (c["a1"], c["a2"], ar_digits(c["a1"]), ar_digits(c["a2"])))
+        h.append('<div class="vp-life-card">'
+                 '<p class="vp-life-sec"><span class="en-only">%s From <a href="life/%s.html">%s</a></span>'
+                 '<span class="ar-only" dir="rtl">%s من باب <a href="life/%s.html">%s</a></span></p>%s'
+                 '<div class="en-only"><p>%s</p></div><div class="ar-only" dir="rtl"><p>%s</p></div>'
+                 '<a class="btn btn-primary vp-life-more" href="life/%s.html#%s">'
+                 '<span class="en-only">Examples, hadith and more →</span>'
+                 '<span class="ar-only" dir="rtl">أمثلة وأحاديث والمزيد ←</span></a></div>'
+                 % (c["icon"], c["sec"], c["title"], c["icon"], c["sec"], c["titleAr"], joint,
+                    c["live"], c["liveAr"], c["sec"], c["anchor"]))
+    h.append("</aside>\n")
+    return "".join(h)
+
+
 # ---------------------------------------------------------------- the page shell
 def shell():
     """Head, header and footer of verify.html, re-pointed for a page one
@@ -296,6 +394,7 @@ def build():
         for a in v.get("ayat", []):
             explained.add((int(k), a["n"]))
 
+    life = life_links()
     files = {}
     index_rows = []
     for sn in sorted(int(k) for k in tad):
@@ -349,6 +448,7 @@ def build():
                 '%s'
                 '%s'
                 '<div class="tad-ayah vp-entry" style="display:block;">%s</div>\n'
+                '%s'
                 '%s\n'
                 '</div></section>'
             ) % (sn, meta["name"], meta["arabic"], n, ar_digits(n),
@@ -358,6 +458,7 @@ def build():
                  LISTEN % (sn, n),
                  ('<p class="vp-en en-only">“' + en + '”</p>\n') if en else "",
                  entry_html(sn, a, explained, meta),
+                 life_block(life.get((sn, n)), n),
                  nav)
             files[fname] = page(title, desc, url, header, footer, head, body, stamp, "verse/" + fname)
             links_here.append('<a href="verse/%d-%d.html">%s</a>' % (sn, n, ar_digits(n) if False else n))

@@ -85,6 +85,19 @@ the references to read by hand. Counts are VERSES, not cards (59:22-24 is
 three): `./check-counts.sh` runs `build-life-pages.py --counts` against the
 home card, the Recently Added blurb and their Arabic in i18n.js.
 
+`js/life-index.js` is generated too (the reader's 🌱 "Live this verse" button
+and the staff panel read it) — never edit it.
+
+## THE VISIT NUMBERS (staff.html analytics, js/main.js) — HANDOFF PART 48
+
+One number per page; the owner called two lists of the same visits
+"delusional". Never count menu clicks again, and never show a number that
+another number already contains. Robots (`IITW_NOT_A_PERSON`, a driven
+browser) and devices signed in as staff are not counted. Surahs are counted
+once per visit (`iitwCountOnce("surah-N")`). After any change to the
+counting, run `python tools/countcheck.py local` (it must say OK: six counts
+as a person, none as Googlebot or as staff) — and `live` after deploying.
+
 ## FIX THE CLASS, NOT THE INSTANCE — he asked for this in these words
 
 > "when I mention any problem I am not just asking to fix this one sentence,

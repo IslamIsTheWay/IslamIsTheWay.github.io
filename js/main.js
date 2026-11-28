@@ -529,56 +529,103 @@ const IITW_COUNTER = {
 };
 
 /* ---------- Anonymous visit analytics ----------
-   Counts total visits, per-page visits, and which nav sections are clicked,
-   using the counting service above. No personal data is collected. The
-   numbers are read back only inside the admin analytics panel. Everything is
-   wrapped in try/catch so a counter outage can never break the site. */
+   Counts visits, and how many visits opened each page, using the counting
+   service above. No personal data is collected. The numbers are read back
+   only inside the admin analytics panel. Everything is wrapped in try/catch
+   so a counter outage can never break the site.
+
+   WHAT A NUMBER MEANS. A visit is one browser session. It counts ONCE in the
+   total, and once on each page it opens: reloading a page, or coming back to
+   it in the same visit, adds nothing. The reader's surahs are counted the
+   same way (iitwCountOnce, called by quran.js as each surah opens).
+
+   THREE THINGS MADE THE NUMBERS UNTRUE, and are gone (28 November 2026; the
+   owner called the panel "delusional"):
+     - MENU CLICKS were counted as well, under "Sections clicked". Every
+       click also opened a page, already counted under "Pages opened" — so
+       "Hadith 9" and "Hadith 1" were the same visits, not ten. The menu is
+       not counted any more: one number per page.
+     - ROBOTS. A search engine reads a page by running it in a browser, and
+       its readings counted as people. They are recognised by their own
+       name (IITW_NOT_A_PERSON) or by being a driven browser
+       (navigator.webdriver), and are not counted.
+     - THE STAFF. Checking the site while signed in to the dashboard counted
+       as a visitor. Nothing is counted on a device where a staff member is
+       signed in, and the sign-in and dashboard pages are never counted. */
+/* Plain names only — none holds a character a pattern treats specially, so
+   they are joined as they are. A name that is also part of an ordinary
+   browser's name (Sogou's browser, Telegram's or LinkedIn's in-app browser)
+   is left out: those are people. */
+const IITW_NOT_A_PERSON = new RegExp([
+  "googlebot", "google-inspectiontool", "googleother", "google-extended", "adsbot", "mediapartners",
+  "apis-google", "feedfetcher", "storebot-google", "bingbot", "bingpreview", "msnbot", "adidxbot",
+  "slurp", "duckduckbot", "duckassistbot", "baiduspider", "yandexbot", "yandexrenderresourcesbot",
+  "exabot", "facebookexternalhit", "facebot", "meta-externalagent", "meta-externalfetcher",
+  "ia_archiver", "applebot", "petalbot", "semrushbot", "ahrefsbot", "mj12bot", "dotbot", "rogerbot",
+  "seznambot", "qwantbot", "ccbot", "gptbot", "chatgpt-user", "oai-searchbot", "claudebot",
+  "claude-searchbot", "claude-user", "perplexitybot", "bytespider", "amazonbot", "twitterbot",
+  "linkedinbot", "telegrambot", "discordbot", "slackbot", "whatsapp/", "pinterestbot", "embedly",
+  "crawler", "spider", "headlesschrome", "phantomjs", "lighthouse", "pagespeed", "gtmetrix",
+  "python-requests", "curl/", "wget/"
+].join("|"), "i");
+
+function iitwSignedInStaff() {
+  /* Read without touching it: iitwStaffUser() also refreshes the sign-in's
+     clock, and an ordinary page visit must not keep a sign-in alive. */
+  try {
+    const s = JSON.parse(localStorage.getItem(IITW_STAFF_KEY) || "null");
+    if (s && s.user && Date.now() - s.at < IITW_STAFF_HOURS * 3600e3) return true;
+  } catch (e) {}
+  try { return sessionStorage.getItem("islamIsTheWayStaff") === "true"; } catch (e) { return false; }
+}
+
+/* Whether this page load may count at all. */
+function iitwMayCount() {
+  try {
+    /* ONLY THE REAL SITE COUNTS. A copy opened from the repo on a developer's
+       machine (localhost), a preview, or a file:// page was counting as a
+       visitor — every test run of the site added its page loads to the
+       numbers the owner reads in the staff panel. */
+    if (location.hostname !== "islamistheway.github.io") return false;
+    if (navigator.webdriver) return false;
+    if (IITW_NOT_A_PERSON.test(navigator.userAgent || "")) return false;
+    if (iitwSignedInStaff()) return false;
+    const page = (location.pathname.split("/").pop() || "").toLowerCase();
+    if (page === "staff.html" || page === "login.html") return false;
+    return true;
+  } catch (e) { return false; }
+}
+
+/* Count `key` once in this visit. `seen` is the session key that remembers
+   it — kept as it was for the total and the pages, so a visit that began
+   before this change does not count its pages a second time. */
+function iitwCountOnce(key, seen) {
+  try {
+    if (!iitwMayCount()) return;
+    seen = seen || "iitw-c-" + key;
+    if (sessionStorage.getItem(seen)) return;
+    sessionStorage.setItem(seen, "1");
+    fetch(IITW_COUNTER.hit(key)).catch(() => {});
+  } catch (e) {}
+}
+
 (function () {
-  /* ONLY THE REAL SITE COUNTS. A copy opened from the repo on a developer's
-     machine (localhost), a preview, or a file:// page was counting as a
-     visitor — every test run of the site added its page loads to the
-     numbers the owner reads in the staff panel. */
-  if (location.hostname !== "islamistheway.github.io") return;
-  function bump(key) {
-    try { fetch(IITW_COUNTER.hit(key)).catch(() => {}); } catch (e) {}
-  }
   try {
     let page = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     page = page.replace(".html", "") || "index";
     /* The 444 pages under verse/ are counted together as one, "verse" —
-       otherwise every explained verse would become its own counter. */
+       otherwise every explained verse would become its own counter. The
+       Quran-in-your-life pages (life/<id>.html) count under their own id,
+       and the panel adds them up under "The Quran in Your Life". */
     if (window.location.pathname.indexOf("/verse/") >= 0) page = "verse";
-    // Count each visitor once per browser session to reflect real people.
-    if (!sessionStorage.getItem("iitw-session")) {
-      bump("total");
-      sessionStorage.setItem("iitw-session", "1");
-    }
-    if (!sessionStorage.getItem("iitw-pv-" + page)) {
-      bump("page-" + page);
-      sessionStorage.setItem("iitw-pv-" + page, "1");
-    }
-    /* The counter key comes from the link's HREF, never from its text.
-       It used to be built from the text with /[^a-z]/g stripped — which
-       works in English and silently produces an EMPTY string in Arabic,
-       because i18n.js translates the nav and Arabic letters are not in
-       [a-z]. `if (label)` was then false, so every nav click made by a
-       reader in Arabic mode was dropped and never counted. The href is
-       the same in both languages, which is the whole point of using it.
-
-       Legacy keys are preserved on purpose: the old text-derived keys
-       ("judgementday", "goldenage") already hold months of counts, so
-       the href is mapped onto them rather than starting from zero. */
-    const NAV_KEY_ALIASES = { judgement: "judgementday", golden: "goldenage" };
-    document.addEventListener("click", function (e) {
-      const a = e.target.closest("nav.main-nav a");
-      if (!a) return;
-      const href = (a.getAttribute("href") || "").split("#")[0].split("?")[0];
-      if (!href || href.indexOf("//") >= 0) return;
-      let key = href.replace(/\.html$/, "").toLowerCase();
-      if (!key || key === "index") key = "index";
-      key = NAV_KEY_ALIASES[key] || key;
-      if (key) bump("nav-" + key);
-    });
+    iitwCountOnce("total", "iitw-session");
+    iitwCountOnce("page-" + page, "iitw-pv-" + page);
+  } catch (e) {}
+  /* quran.js can open a surah before this file has loaded (the scripts run
+     in order, and it comes first); what it asked for then is counted now. */
+  try {
+    (window.IITW_COUNT_LATER || []).forEach(k => iitwCountOnce(k));
+    window.IITW_COUNT_LATER = [];
   } catch (e) {}
 })();
 

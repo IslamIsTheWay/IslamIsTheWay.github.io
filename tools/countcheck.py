@@ -8,12 +8,22 @@ sees a count request. This opens that address:
                                         address (run BEFORE deploying)
     python tools/countcheck.py live     the live site itself (after deploying)
 
-It opens the home page, clicks Quran in the navigation, and opens a verse
-page, and expects five counts: total, page-index, nav-quran, page-quran,
-page-verse — all to the service IITW_COUNTER (js/main.js) names. Every
-request to a counting service is CAUGHT AND STOPPED before it leaves the
-browser, so nothing is ever added to the owner's numbers. Exit 1 if the
-counts are not exactly those five, or if a page error happens."""
+As a person: it opens the home page, clicks Quran in the navigation, opens
+Al-Fatihah in the reader, opens a verse page and a Quran-in-your-life page,
+then opens the verse page again, and expects exactly six counts — total,
+page-index, page-quran, surah-1, page-verse, page-faith — all to the service
+IITW_COUNTER (js/main.js) names. The menu click is NOT counted (it was the
+same visit as the page it opened — 28 November 2026), and opening a page
+again adds nothing.
+As a search engine (Googlebot's name), and as a person signed in to the staff
+dashboard: no count at all.
+
+Every request to a counting service is CAUGHT AND STOPPED before it leaves
+the browser, so nothing is ever added to the owner's numbers. A driven
+browser says so (navigator.webdriver), and main.js does not count one; this
+tool hides that, and gives the browser an ordinary Edge name, to be counted
+as a person would be. Exit 1 if any of the three is wrong, or a page error
+happens."""
 import mimetypes, os, sys
 from playwright.sync_api import sync_playwright
 
@@ -22,13 +32,13 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://islamistheway.github.io/"
 NEW = "https://countapi.mileshilliard.com/api/v1/hit/iitw-islamistheway-2026-"
 COUNTERS = ("countapi.mileshilliard.com", "abacus.jasoncameron.dev")
-EXPECTED = ["nav-quran", "page-index", "page-quran", "page-verse", "total"]
-caught = []
-
-
-def counter(route):
-    caught.append(route.request.url)
-    route.abort()
+EXPECTED = ["page-faith", "page-index", "page-quran", "page-verse", "surah-1", "total"]
+PERSON = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+          "Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0")
+GOOGLEBOT = ("Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) "
+             "Chrome/131.0.0.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)")
+NOT_DRIVEN = "Object.defineProperty(Navigator.prototype, 'webdriver', { get: () => false });"
+STAFF = "try{localStorage.setItem('iitw-staff-session', JSON.stringify({user:'someone', at:Date.now()}));}catch(e){}"
 
 
 def local_files(route):
@@ -43,34 +53,60 @@ def local_files(route):
         route.fulfill(status=200, body=fh.read(), headers={"Content-Type": ctype})
 
 
-with sync_playwright() as p:
-    br = p.chromium.launch(channel="msedge", headless=True)
-    ctx = br.new_context(service_workers="block", viewport={"width": 1280, "height": 900})
+def visit(br, ua, extra=""):
+    """One visitor's walk through the site; returns (count URLs caught, page errors)."""
+    caught, errs = [], []
+
+    def counter(route):
+        caught.append(route.request.url)
+        route.abort()
+
+    ctx = br.new_context(service_workers="block", viewport={"width": 1280, "height": 900}, user_agent=ua)
+    ctx.add_init_script(NOT_DRIVEN + extra)
     if MODE == "local":
         ctx.route(SITE + "**", local_files)
     for host in COUNTERS:
         ctx.route("**" + host + "**", counter)
     ctx.route("**everyayah.com**", lambda r: r.abort())
     pg = ctx.new_page()
-    errs = []
     pg.on("pageerror", lambda e: errs.append(str(e)[:150]))
     pg.goto(SITE + "index.html", wait_until="load")
     pg.wait_for_timeout(1500)
-    # a click on the navigation is counted as a section click, then the page it opens
+    # a click on the menu opens the Quran page; the click itself is not counted
     pg.click("nav.main-nav a[href='quran.html']")
     pg.wait_for_load_state("load")
     pg.wait_for_timeout(1500)
+    # a surah opened in the reader
+    pg.click(".surah-card")
+    pg.wait_for_selector("#ayah-1", timeout=20000)
+    pg.wait_for_timeout(800)
     pg.goto(SITE + "verse/2-255.html", wait_until="load")
     pg.wait_for_timeout(1500)
+    pg.goto(SITE + "life/faith.html", wait_until="load")
+    pg.wait_for_timeout(1500)
+    # the same verse page again, in the same visit: nothing more
+    pg.goto(SITE + "verse/2-255.html", wait_until="load")
+    pg.wait_for_timeout(1500)
+    ctx.close()
+    return caught, errs
+
+
+with sync_playwright() as p:
+    br = p.chromium.launch(channel="msedge", headless=True)
+    person, errs = visit(br, PERSON)
+    robot, errs2 = visit(br, GOOGLEBOT)
+    staff, errs3 = visit(br, PERSON, STAFF)
     br.close()
 
 print("mode:", MODE)
-for u in caught:
+for u in person:
     print("  ", u)
-new = [u for u in caught if u.startswith(NEW)]
+new = [u for u in person if u.startswith(NEW)]
 keys = sorted(u[len(NEW):] for u in new)
-print("to the service in main.js: %d of %d   keys: %s" % (len(new), len(caught), keys))
-print("page errors:", errs)
-ok = keys == EXPECTED and len(new) == len(caught) and not errs
+print("a person - to the service in main.js: %d of %d   keys: %s" % (len(new), len(person), keys))
+print("Googlebot - counts sent: %d %s" % (len(robot), robot[:3]))
+print("signed-in staff - counts sent: %d %s" % (len(staff), staff[:3]))
+print("page errors:", errs + errs2 + errs3)
+ok = keys == EXPECTED and len(new) == len(person) and not robot and not staff and not (errs + errs2 + errs3)
 print("OK" if ok else "PROBLEM")
 sys.exit(0 if ok else 1)

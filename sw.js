@@ -118,7 +118,10 @@ const PRECACHE_CONTENT = [
      entry. listen.js plays a verse on the verse pages; share.js draws the
      verse picture on the home page and the verse pages — it was missing
      from this list since it was written. */
-  "./js/reciters.js", "./js/listen.js", "./js/share.js", "./js/surah-names.js"
+  "./js/reciters.js", "./js/listen.js", "./js/share.js", "./js/surah-names.js",
+  /* The Quran in Your Life, verse by verse: the reader's 🌱 "Live this verse"
+     button reads its notes from here (written by tools/build-life-pages.py). */
+  "./js/life-index.js"
 ];
 
 /* The Quran itself, one file per surah (js/quran-text/1.js …) — 2.2MB in
