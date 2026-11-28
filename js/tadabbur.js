@@ -1258,6 +1258,13 @@ const TADABBUR = {
             en: "And obey Allah and His Messenger, and do not dispute and [thus] lose courage and [then] your strength would depart; and be patient. Indeed, Allah is with the patient.",
             how: "Al-Baqarah says Allah is with the patient; Al-Anfal places the same promise at the end of the command not to quarrel — patience is what keeps a row from splitting.",
             howAr: "البقرةُ تعد الصابرين بمعيّة الله، والأنفالُ تضع الوعدَ نفسه في آخر النهي عن التنازع، فالصبرُ هو ما يحفظ الصفَّ من التصدّع: ﴿وَلَا تَنَٰزَعُواْ فَتَفۡشَلُواْ وَتَذۡهَبَ رِيحُكُمۡۖ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:46)",
+            ar: "ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ وَأَنَّهُمۡ إِلَيۡهِ رَٰجِعُونَ",
+            en: "Who are certain that they will meet their Lord and that they will return to Him.",
+            how: "This verse gives the instruction again; the first time, the surah had said who finds it light: those certain that they will meet their Lord.",
+            howAr: "هذه الآيةُ تعيد الأمر، وفي المرّة الأولى قالت السورةُ من يخفّ عليه: ﴿ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ وَأَنَّهُمۡ إِلَيۡهِ رَٰجِعُونَ﴾."
           }
         ]
       },
@@ -2240,6 +2247,58 @@ const TADABBUR = {
         ref: "Surah Al-Baqarah (2:201), read with 2:200 and 2:202; the most frequent supplication: Sahih al-Bukhari 6389, from Anas",
         refAr: "سورة البقرة، الآية ٢٠١، مع الآيتين ٢٠٠ و٢٠٢؛ وأكثرُ دعاء النبيّ ﷺ: صحيح البخاري ٦٣٨٩، عن أنس رضي الله عنه",
         strength: "hadith"
+      },
+      {
+        n: 46,
+        ar: "ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ وَأَنَّهُمۡ إِلَيۡهِ رَٰجِعُونَ",
+        why: "The verse before gives the instruction and admits its difficulty: seek help through patience and prayer — and it is heavy, except for the humble (2:45). This verse says who the humble are: those who yazunnun that they will meet their Lord, and that to Him they will return.\n\nZann usually means supposing. Here it cannot: no one is praised for merely supposing he will meet his Lord. The commentators read it here as certainty — the firm knowledge of something not yet seen — and the Quran uses it so elsewhere: the one given his book in his right hand says, I was certain — zanantu — that I would meet my account (69:20).\n\nAnd the same verb is turned the other way in Al-Mutaffifin, about the man who shorts the measure: do they not even think — a-la yazunnu — that they will be raised? (83:4). The humble are certain of the meeting; the cheat does not even suppose it. Prayer is heavy for everyone who has not yet settled that one fact.",
+        whyAr: "الآيةُ التي قبلها تعطي الأمرَ وتعترف بثقله: ﴿وَٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى ٱلۡخَٰشِعِينَ﴾. وهذه الآيةُ تقول من الخاشعون: ﴿ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ وَأَنَّهُمۡ إِلَيۡهِ رَٰجِعُونَ﴾.\n\nوالظنُّ في الغالب ترجيحٌ لا قطع، ولا يصحّ ذلك هنا، فلا يُمدح أحدٌ لأنه رجّح أنه سيلقى ربّه. ولذلك فسّره المفسّرون هنا باليقين، أي العلمِ الجازم بما لم يُرَ بعد، والقرآنُ يستعمله كذلك في موضعٍ آخر، فصاحبُ اليمين يقول يومَ القيامة: ﴿إِنِّي ظَنَنتُ أَنِّي مُلَٰقٍ حِسَابِيَهۡ﴾.\n\nوالفعلُ نفسه يُقلب في المطفّفين على من يُنقص الكيل: ﴿أَلَا يَظُنُّ أُوْلَٰٓئِكَ أَنَّهُم مَّبۡعُوثُونَ﴾. فالخاشعون يستيقنون اللقاء، والمطفّفُ لا يخطر له. والصلاةُ ثقيلةٌ على كلّ من لم يحسم هذه الحقيقةَ الواحدة بعد.",
+        plain: "Prayer is heavy, the verse before admits, except for the humble — and this verse defines them: those who are certain they will meet their Lord. Zann here means certainty, as in 69:20; and Al-Mutaffifin uses the same verb for the cheat who does not even suppose he will be raised (83:4).",
+        plainAr: "الصلاةُ ثقيلة — كما تعترف الآيةُ التي قبلها — إلا على أهل الخشوع، وهذه الآيةُ تعرّفهم: الذين يستيقنون أنهم سيلقون ربَّهم. فالظنُّ هنا يقين، كما في سورة الحاقّة، والمطفّفين تستعمل الفعلَ نفسه في الغشّاش الذي لا يخطر له أنه سيُبعث.",
+        words: [
+          {
+            w: "يَظُنُّونَ",
+            t: "yazunnun",
+            meaning: "They are certain. Zann is usually a leaning towards one side without certainty, but the commentators read it here as firm knowledge: no one is praised for merely supposing he will meet his Lord.",
+            meaningAr: "يستيقنون. والظنُّ في الغالب ترجيحٌ بلا قطع، لكنّ المفسّرين فسّروه هنا بالعلم الجازم، لأنّ أحدًا لا يُمدح لمجرّد ترجيحه أنه سيلقى ربَّه.",
+            source: "Tafsir at-Tabari on 2:46",
+            sourceAr: "تفسير الطبري عند الآية",
+            strength: "tafsir"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:153)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ",
+            en: "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient.",
+            how: "Al-Baqarah repeats the same instruction later — seek help through patience and prayer — and adds the promise: Allah is with the patient.",
+            howAr: "البقرةُ تعيد الأمرَ نفسه بعد ذلك، وتزيد الوعد: ﴿ٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ﴾."
+          },
+          {
+            ref: "Surah Al-Haqqah (69:19-20)",
+            ar: "فَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ بِيَمِينِهِۦ فَيَقُولُ هَآؤُمُ ٱقۡرَءُواْ كِتَٰبِيَهۡ ۝ إِنِّي ظَنَنتُ أَنِّي مُلَٰقٍ حِسَابِيَهۡ",
+            en: "So as for he who is given his record in his right hand, he will say, \"Here, read my record! Indeed, I was certain that I would be meeting my account.\"",
+            how: "Al-Haqqah gives the same verb as certainty, in the mouth of the one given his book in his right hand: I was certain that I would meet my account.",
+            howAr: "الحاقّةُ تستعمل الفعلَ نفسه بمعنى اليقين، على لسان صاحب اليمين: ﴿إِنِّي ظَنَنتُ أَنِّي مُلَٰقٍ حِسَابِيَهۡ﴾."
+          },
+          {
+            ref: "Surah Al-Mutaffifin (83:4)",
+            ar: "أَلَا يَظُنُّ أُوْلَٰٓئِكَ أَنَّهُم مَّبۡعُوثُونَ",
+            en: "Do they not think that they will be resurrected",
+            how: "Al-Mutaffifin turns the same verb on the man who cheats the measure: do they not even think that they will be raised?",
+            howAr: "المطفّفين تقلب الفعلَ نفسه على من يغشّ في الكيل: ﴿أَلَا يَظُنُّ أُوْلَٰٓئِكَ أَنَّهُم مَّبۡعُوثُونَ﴾؟"
+          },
+          {
+            ref: "Surah Al-Baqarah (2:45)",
+            ar: "وَٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى ٱلۡخَٰشِعِينَ",
+            en: "And seek help through patience and prayer, and indeed, it is difficult except for the humbly submissive [to Allah]",
+            how: "The verse before gives the instruction this one completes: seek help through patience and prayer — and it is heavy, except for the humble.",
+            howAr: "والآيةُ التي قبلها فيها الأمرُ الذي تتمّه هذه: ﴿وَٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى ٱلۡخَٰشِعِينَ﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:46), read with 2:45, Al-Haqqah (69:20) and Al-Mutaffifin (83:4)",
+        refAr: "سورة البقرة، الآية ٤٦، مع الآية ٤٥ وسورة الحاقّة ٢٠ وسورة المطفّفين ٤",
+        strength: "lugha"
       }
     ]
   },
@@ -2372,6 +2431,40 @@ const TADABBUR = {
             howAr: "الصورةُ نفسُها مكبَّرةً عن قصد: عرضت الكهفُ بحرًا ومثله، وعرضت لقمانُ كلَّ شجرةٍ أقلامًا وسبعةَ أبحرٍ من بعده. محاولتان للقياس، وفشلت الثانيةُ بالوجه الذي فشلت به الأولى."
           }
         ]
+      },
+      {
+        n: 65,
+        ar: "فَوَجَدَا عَبۡدٗا مِّنۡ عِبَادِنَآ ءَاتَيۡنَٰهُ رَحۡمَةٗ مِّنۡ عِندِنَا وَعَلَّمۡنَٰهُ مِن لَّدُنَّا عِلۡمٗا",
+        why: "Musa had been asked who was the most learned of people and had answered, 'I am' — and Allah reproached him for not leaving that knowledge to Him, and told him of a servant at the meeting of the two seas who knew more (al-Bukhari 122). This is that servant, and the verse introduces him with two gifts in a deliberate order: We gave him mercy from Us, and We taught him knowledge from Our presence.\n\nMercy comes before knowledge. Everything he does in the story looks like harm — a boat holed, a boy killed, a wall rebuilt for a town that refused them food — and his explanation ends with the word: a mercy from your Lord (18:82). The knowledge was the instrument; the mercy was the reason.\n\nAnd Musa's request in the next verse is a model of how to ask a teacher: may I follow you, so that you teach me some of the right guidance you have been taught? (18:66). A prophet, asking permission to follow.",
+        whyAr: "سُئل موسى عن أعلم الناس فقال: أنا، فعتب الله عليه لأنه لم يردّ العلمَ إليه، وأخبره بعبدٍ عند مجمع البحرين هو أعلم منه (البخاري ١٢٢). وهذا هو ذلك العبد، والآيةُ تقدّمه بعطاءين في ترتيبٍ مقصود: ﴿ءَاتَيۡنَٰهُ رَحۡمَةٗ مِّنۡ عِندِنَا وَعَلَّمۡنَٰهُ مِن لَّدُنَّا عِلۡمٗا﴾.\n\nفالرحمةُ قبل العلم. وكلُّ ما يفعله في القصّة يبدو ضررًا: سفينةٌ تُخرق، وغلامٌ يُقتل، وجدارٌ يُقام لقريةٍ أبت أن تضيّفهما، ثم يُختم تفسيرُه بالكلمة: ﴿رَحۡمَةٗ مِّن رَّبِّكَۚ﴾. فالعلمُ كان الأداة، والرحمةُ كانت السبب.\n\nوطلبُ موسى في الآية التي تليها نموذجٌ لسؤال المعلّم: ﴿هَلۡ أَتَّبِعُكَ عَلَىٰٓ أَن تُعَلِّمَنِ مِمَّا عُلِّمۡتَ رُشۡدٗا﴾. نبيٌّ يستأذن أن يتّبع.",
+        plain: "The servant Musa was sent to learn from is introduced by two gifts — mercy first, then knowledge. Everything he did looked like harm, and his explanation ends: a mercy from your Lord (18:82). And Musa, a prophet, asks permission to follow him.",
+        plainAr: "العبدُ الذي أُرسل موسى ليتعلّم منه قُدّم بعطاءين: الرحمةُ أوّلًا، ثم العلم. وكلُّ ما فعله بدا ضررًا، ثم خُتم تفسيرُه بأنّه كان كلُّه رحمة. وموسى — وهو نبيّ — يستأذن أن يتّبعه.",
+        links: [
+          {
+            ref: "Surah Al-Isra (17:85)",
+            ar: "وَيَسۡـَٔلُونَكَ عَنِ ٱلرُّوحِۖ قُلِ ٱلرُّوحُ مِنۡ أَمۡرِ رَبِّي وَمَآ أُوتِيتُم مِّنَ ٱلۡعِلۡمِ إِلَّا قَلِيلٗا",
+            en: "And they ask you, [O Muhammad], about the soul. Say, \"The soul is of the affair of my Lord. And mankind have not been given of knowledge except a little.\"",
+            how: "Al-Isra says you have been given only a little knowledge; Al-Kahf shows a prophet sent to learn from a servant who had been given more.",
+            howAr: "الإسراءُ تقول إنّ ما أُوتيناه من العلم قليل، والكهفُ تُريك نبيًّا يُرسَل ليتعلّم من عبدٍ أُوتي أكثر: ﴿وَمَآ أُوتِيتُم مِّنَ ٱلۡعِلۡمِ إِلَّا قَلِيلٗا﴾."
+          },
+          {
+            ref: "Surah Al-Kahf (18:82)",
+            ar: "وَأَمَّا ٱلۡجِدَارُ فَكَانَ لِغُلَٰمَيۡنِ يَتِيمَيۡنِ فِي ٱلۡمَدِينَةِ وَكَانَ تَحۡتَهُۥ كَنزٞ لَّهُمَا وَكَانَ أَبُوهُمَا صَٰلِحٗا فَأَرَادَ رَبُّكَ أَن يَبۡلُغَآ أَشُدَّهُمَا وَيَسۡتَخۡرِجَا كَنزَهُمَا رَحۡمَةٗ مِّن رَّبِّكَۚ وَمَا فَعَلۡتُهُۥ عَنۡ أَمۡرِيۚ ذَٰلِكَ تَأۡوِيلُ مَا لَمۡ تَسۡطِع عَّلَيۡهِ صَبۡرٗا",
+            en: "And as for the wall, it belonged to two orphan boys in the city, and there was beneath it a treasure for them, and their father had been righteous. So your Lord intended that they reach maturity and extract their treasure, as a mercy from your Lord. And I did it not of my own accord. That is the interpretation of that about which you could not have patience.\"",
+            how: "The explanation of everything he did ends with the word this verse began with: a mercy from your Lord.",
+            howAr: "وتفسيرُ كلّ ما فعله يُختم بالكلمة التي بدأت بها هذه الآية: ﴿رَحۡمَةٗ مِّن رَّبِّكَۚ وَمَا فَعَلۡتُهُۥ عَنۡ أَمۡرِيۚ﴾."
+          },
+          {
+            ref: "Surah Al-Kahf (18:66)",
+            ar: "قَالَ لَهُۥ مُوسَىٰ هَلۡ أَتَّبِعُكَ عَلَىٰٓ أَن تُعَلِّمَنِ مِمَّا عُلِّمۡتَ رُشۡدٗا",
+            en: "Moses said to him, \"May I follow you on [the condition] that you teach me from what you have been taught of sound judgement?\"",
+            how: "The next verse is Musa's request, a model of how to ask a teacher: may I follow you, so that you teach me some of the right guidance you have been taught?",
+            howAr: "والآيةُ التي تليها طلبُ موسى، وهو نموذجٌ لسؤال المعلّم: ﴿هَلۡ أَتَّبِعُكَ عَلَىٰٓ أَن تُعَلِّمَنِ مِمَّا عُلِّمۡتَ رُشۡدٗا﴾؟"
+          }
+        ],
+        ref: "Surah Al-Kahf (18:65), read with 18:66 and 18:82; Musa and 'the most learned': Sahih al-Bukhari 122, from Ubayy ibn Ka'b",
+        refAr: "سورة الكهف، الآية ٦٥، مع الآيتين ٦٦ و٨٢؛ وقولُ موسى «أنا أعلم»: صحيح البخاري ١٢٢، عن أبيّ بن كعب رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -2897,6 +2990,33 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Mu'minun (23:14)",
         strength: "quran"
+      },
+      {
+        n: 60,
+        ar: "وَٱلَّذِينَ يُؤۡتُونَ مَآ ءَاتَواْ وَّقُلُوبُهُمۡ وَجِلَةٌ أَنَّهُمۡ إِلَىٰ رَبِّهِمۡ رَٰجِعُونَ",
+        why: "Those who give what they give, while their hearts tremble — because they are going back to their Lord. 'A'ishah asked the Prophet ﷺ whether these were people who drink and steal and are afraid. He said: no, daughter of as-Siddiq — they are those who fast, pray and give charity, and fear that it will not be accepted from them (at-Tirmidhi 3175; authenticated by al-Albani).\n\nSo the fear in the verse is not the fear of a sinner caught. It is the fear of a giver who knows the gift will be weighed, and who does not trust his own sincerity enough to relax. Wajilah — trembling — is the word Al-Anfal uses for the believers' hearts when Allah is mentioned (8:2).\n\nAnd the next verse gives the result, which is not paralysis but speed: those are the ones who hasten to good deeds, and they are foremost in them (23:61). The fear does not stop them giving; it keeps them giving more.",
+        whyAr: "﴿وَٱلَّذِينَ يُؤۡتُونَ مَآ ءَاتَواْ وَّقُلُوبُهُمۡ وَجِلَةٌ أَنَّهُمۡ إِلَىٰ رَبِّهِمۡ رَٰجِعُونَ﴾. سألت عائشةُ النبيَّ ﷺ: أهم الذين يشربون الخمرَ ويسرقون؟ قال: لا يا بنتَ الصدّيق، ولكنهم الذين يصومون ويصلّون ويتصدّقون، وهم يخافون ألّا يُقبل منهم (الترمذي ٣١٧٥، وصحّحه الألباني).\n\nفالخوفُ في الآية ليس خوفَ مذنبٍ ضُبط، بل خوفُ معطٍ يعلم أنّ عطاءه سيُوزن، ولا يأمن إخلاصَه حتى يطمئنّ. و**الوجل** هو اللفظُ الذي تصف به الأنفالُ قلوبَ المؤمنين عند ذكر الله: ﴿إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ﴾.\n\nوالآيةُ التي تليها تذكر النتيجة، وهي ليست شللًا بل سرعة: ﴿أُوْلَٰٓئِكَ يُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِ وَهُمۡ لَهَا سَٰبِقُونَ﴾. فالخوفُ لا يمنعهم من العطاء، بل يزيدهم منه.",
+        plain: "'A'ishah asked whether these trembling givers were sinners afraid of being caught. The Prophet ﷺ said no — they are people who fast, pray and give, and fear it will not be accepted from them (at-Tirmidhi 3175; authenticated by al-Albani). And the fear makes them hasten to good, not stop.",
+        plainAr: "سألت عائشةُ: أهؤلاء الخائفون مذنبون يخشون أن يُكشفوا؟ فقال النبيّ ﷺ: لا، بل هم الذين يصومون ويصلّون ويتصدّقون ويخافون ألّا يُقبل منهم (الترمذي ٣١٧٥، وصحّحه الألباني). والخوفُ يدفعهم إلى المسارعة، لا إلى التوقّف.",
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:2)",
+            ar: "إِنَّمَا ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ وَإِذَا تُلِيَتۡ عَلَيۡهِمۡ ءَايَٰتُهُۥ زَادَتۡهُمۡ إِيمَٰنٗا وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ",
+            en: "The believers are only those who, when Allah is mentioned, their hearts become fearful, and when His verses are recited to them, it increases them in faith; and upon their Lord they rely -",
+            how: "Al-Anfal uses the same word for the believers' hearts: when Allah is mentioned, their hearts tremble.",
+            howAr: "الأنفالُ تستعمل اللفظَ نفسه لقلوب المؤمنين: ﴿إِنَّمَا ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ﴾."
+          },
+          {
+            ref: "Surah Al-Mu'minun (23:61)",
+            ar: "أُوْلَٰٓئِكَ يُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِ وَهُمۡ لَهَا سَٰبِقُونَ",
+            en: "It is those who hasten to good deeds, and they outstrip [others] therein.",
+            how: "The next verse gives the result of the fear — not paralysis, but speed: those hasten to good deeds, and they are foremost in them.",
+            howAr: "والآيةُ التي تليها تذكر ثمرةَ الخوف، وهي سرعةٌ لا شلل: ﴿أُوْلَٰٓئِكَ يُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِ وَهُمۡ لَهَا سَٰبِقُونَ﴾."
+          }
+        ],
+        ref: "Surah Al-Mu'minun (23:60), read with 23:61 and Al-Anfal (8:2); 'Aishah's question: Jami' at-Tirmidhi 3175 — authenticated by al-Albani",
+        refAr: "سورة المؤمنون، الآية ٦٠، مع الآية ٦١ وسورة الأنفال ٢؛ وسؤالُ عائشة: جامع الترمذي ٣١٧٥ — وصحّحه الألباني",
+        strength: "hadith"
       }
     ]
   },
@@ -3767,7 +3887,14 @@ const TADABBUR = {
           en: "“There was certainly in their stories a lesson for those of understanding. Never was the Qur'an a narration invented, but a confirmation of what was before it and a detailed explanation of all things and guidance and mercy for a people who believe.”",
           how: "The other verse addressed to ulu al-albab. Here they are the ones who say we believe in it, all of it is from our Lord, while others chase what is unclear looking for discord. There they are the ones who cross from a story to its lesson — 'ibrah is from the root meaning to cross over. Both times understanding is defined by what a person DOES with a text, not by how much of it he holds.",
           howAr: "الآيةُ الأخرى الموجّهة إلى أولي الألباب. فهم هنا الذين يقولون ﴿ءَامَنَّا بِهِۦ كُلّٞ مِّنۡ عِندِ رَبِّنَاۗ﴾، وغيرُهم يتّبع ما تشابه ابتغاء الفتنة. وهم هناك الذين يعبرون من القصّة إلى عبرتها — والعبرةُ من مادّة العبور. وفي الموضعين حُدّ اللبُّ بما **يصنعه** المرء بالنصّ لا بمقدار ما يحفظ."
-        }
+        },
+          {
+            ref: "Surah Ali 'Imran (3:8)",
+            ar: "رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةًۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ",
+            en: "[Who say], \"Our Lord, let not our hearts deviate after You have guided us and grant us from Yourself mercy. Indeed, You are the Bestower.",
+            how: "This verse describes those firm in knowledge; the next gives their prayer — and the first thing they ask is not to swerve: our Lord, do not let our hearts deviate after You have guided us.",
+            howAr: "هذه الآيةُ تصف الراسخين في العلم، والتي تليها تذكر دعاءهم، وأوّلُ ما يسألونه ألّا يزيغوا: ﴿رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا﴾."
+          }
         ],
         ref: "Surah Aal-Imran (3:7)",
         strength: "quran"
@@ -4150,6 +4277,33 @@ const TADABBUR = {
         ],
         ref: "Surah Al 'Imran (3:134), read with 3:133 and Yusuf (12:84); kazm: Ar-Raghib al-Isfahani, Al-Mufradat; controlling oneself in anger: Sahih al-Bukhari 6114, from Abu Hurayrah",
         refAr: "سورة آل عمران، الآية ١٣٤، مع الآية ١٣٣ وسورة يوسف ٨٤؛ ومعنى الكظم: الراغب الأصفهاني، المفردات؛ وملكُ النفس عند الغضب: صحيح البخاري ٦١١٤، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
+      },
+      {
+        n: 8,
+        ar: "رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةًۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ",
+        why: "The verse before divides people by how they handle the verses that bear more than one reading: those with deviation — zaygh — in their hearts chase the ambiguous ones, seeking discord; those firm in knowledge say, we believe in it, all of it is from our Lord (3:7). Then the firm ones pray, and the first thing they ask is not to become the first group: our Lord, do not let our hearts deviate after You have guided us.\n\nTuzigh is from the same root as the zaygh of the verse before. The people firm in knowledge do not trust their own firmness; they ask for it to be kept.\n\nThe Prophet ﷺ himself used to pray often: O Turner of hearts, keep my heart firm upon Your religion. Anas asked whether he feared for them, and he said yes — the hearts are between two of the fingers of Allah; He turns them as He wills (at-Tirmidhi 2140; authenticated by al-Albani). And the verse ends by asking for what they cannot produce themselves: grant us mercy from Yourself — You are al-Wahhab, the Giver.",
+        whyAr: "الآيةُ التي قبلها تقسم الناسَ بحسب تعاملهم مع الآيات المتشابهات: ﴿فَأَمَّا ٱلَّذِينَ فِي قُلُوبِهِمۡ زَيۡغٞ فَيَتَّبِعُونَ مَا تَشَٰبَهَ مِنۡهُ ٱبۡتِغَآءَ ٱلۡفِتۡنَةِ﴾، ﴿وَٱلرَّٰسِخُونَ فِي ٱلۡعِلۡمِ يَقُولُونَ ءَامَنَّا بِهِۦ كُلّٞ مِّنۡ عِندِ رَبِّنَاۗ﴾. ثم يدعو الراسخون، وأوّلُ ما يسألونه ألّا يصيروا من الفريق الأوّل: ﴿رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا﴾.\n\nوتُزِغ من الجذر الذي منه الزيغُ في الآية التي قبلها. فالراسخون في العلم لا يأمنون رسوخَهم، بل يسألون أن يُحفظ لهم.\n\nوكان النبيّ ﷺ نفسه يُكثر أن يقول: «يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ»، فسأله أنسٌ: أتخاف علينا؟ قال: نعم، إنّ القلوب بين إصبعين من أصابع الله يقلّبها كيف يشاء (الترمذي ٢١٤٠، وصحّحه الألباني). وتُختم الآيةُ بطلب شيءٍ لا يملكون صنعه: ﴿وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةًۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ﴾.",
+        plain: "The people firm in knowledge do not trust their own firmness: the first thing they ask is that their hearts not swerve after being guided. The Prophet ﷺ often prayed, O Turner of hearts, keep my heart firm upon Your religion (at-Tirmidhi 2140; authenticated by al-Albani).",
+        plainAr: "أهلُ الرسوخ في العلم لا يأمنون رسوخَهم، فأوّلُ ما يسألونه ألّا تزيغ قلوبُهم بعد الهداية. وكان النبيّ ﷺ يُكثر أن يقول: يا مقلّبَ القلوب ثبّت قلبي على دينك (الترمذي ٢١٤٠، وصحّحه الألباني).",
+        links: [
+          {
+            ref: "Surah Ali 'Imran (3:7)",
+            ar: "هُوَ ٱلَّذِيٓ أَنزَلَ عَلَيۡكَ ٱلۡكِتَٰبَ مِنۡهُ ءَايَٰتٞ مُّحۡكَمَٰتٌ هُنَّ أُمُّ ٱلۡكِتَٰبِ وَأُخَرُ مُتَشَٰبِهَٰتٞۖ فَأَمَّا ٱلَّذِينَ فِي قُلُوبِهِمۡ زَيۡغٞ فَيَتَّبِعُونَ مَا تَشَٰبَهَ مِنۡهُ ٱبۡتِغَآءَ ٱلۡفِتۡنَةِ وَٱبۡتِغَآءَ تَأۡوِيلِهِۦۖ وَمَا يَعۡلَمُ تَأۡوِيلَهُۥٓ إِلَّا ٱللَّهُۗ وَٱلرَّٰسِخُونَ فِي ٱلۡعِلۡمِ يَقُولُونَ ءَامَنَّا بِهِۦ كُلّٞ مِّنۡ عِندِ رَبِّنَاۗ وَمَا يَذَّكَّرُ إِلَّآ أُوْلُواْ ٱلۡأَلۡبَٰبِ",
+            en: "It is He who has sent down to you, [O Muhammad], the Book; in it are verses [that are] precise - they are the foundation of the Book - and others unspecific. As for those in whose hearts is deviation [from truth], they will follow that of it which is unspecific, seeking discord and seeking an interpretation [suitable to them]. And no one knows its [true] interpretation except Allah. But those firm in knowledge say, \"We believe in it. All [of it] is from our Lord.\" And no one will be reminded except those of understanding.",
+            how: "The verse before describes the two groups — those with deviation in their hearts, and those firm in knowledge — and this is the prayer of the second, asking not to become the first.",
+            howAr: "الآيةُ التي قبلها تصف الفريقين — أهلَ الزيغ والراسخين في العلم — وهذا دعاءُ الفريق الثاني ألّا يصير من الأوّل: ﴿وَٱلرَّٰسِخُونَ فِي ٱلۡعِلۡمِ يَقُولُونَ ءَامَنَّا بِهِۦ كُلّٞ مِّنۡ عِندِ رَبِّنَاۗ﴾."
+          },
+          {
+            ref: "Surah As-Saff (61:5)",
+            ar: "وَإِذۡ قَالَ مُوسَىٰ لِقَوۡمِهِۦ يَٰقَوۡمِ لِمَ تُؤۡذُونَنِي وَقَد تَّعۡلَمُونَ أَنِّي رَسُولُ ٱللَّهِ إِلَيۡكُمۡۖ فَلَمَّا زَاغُوٓاْ أَزَاغَ ٱللَّهُ قُلُوبَهُمۡۚ وَٱللَّهُ لَا يَهۡدِي ٱلۡقَوۡمَ ٱلۡفَٰسِقِينَ",
+            en: "And [mention, O Muhammad], when Moses said to his people, \"O my people, why do you harm me while you certainly know that I am the messenger of Allah to you?\" And when they deviated, Allah caused their hearts to deviate. And Allah does not guide the defiantly disobedient people.",
+            how: "As-Saff gives the same root as cause and effect: when they deviated, Allah let their hearts deviate.",
+            howAr: "الصفُّ تذكر الجذرَ نفسه سببًا ونتيجة: ﴿فَلَمَّا زَاغُوٓاْ أَزَاغَ ٱللَّهُ قُلُوبَهُمۡۚ﴾."
+          }
+        ],
+        ref: "Surah Al 'Imran (3:8), read with 3:7; 'O Turner of hearts': Jami' at-Tirmidhi 2140, from Anas — authenticated by al-Albani",
+        refAr: "سورة آل عمران، الآية ٨، مع الآية ٧؛ ويا مقلّبَ القلوب: جامع الترمذي ٢١٤٠، عن أنس رضي الله عنه — وصحّحه الألباني",
         strength: "hadith"
       }
     ]
@@ -5654,6 +5808,13 @@ const TADABBUR = {
             en: "Allah has sent down the best statement: a consistent Book wherein is reiteration. The skins shiver therefrom of those who fear their Lord; then their skins and their hearts relax at the remembrance of Allah. That is the guidance of Allah by which He guides whom He wills. And one whom Allah leaves astray - for him there is no guide.",
             how: "Al-Anfal says the believers' hearts tremble when Allah is mentioned; Ar-Ra'd says hearts find rest in His remembrance. Az-Zumar puts the two in one verse, in order: first the shiver, then the softening.",
             howAr: "الأنفالُ تقول إنّ قلوب المؤمنين ﴿وَجِلَتۡ قُلُوبُهُمۡ﴾ إذا ذُكر الله، والرعدُ تقول إنها تطمئنّ بذكره. والزمرُ تجمع الحالين في آيةٍ واحدة، على ترتيب: القشعريرةُ أوّلًا، ثم اللين."
+          },
+          {
+            ref: "Surah Al-Mu'minun (23:60)",
+            ar: "وَٱلَّذِينَ يُؤۡتُونَ مَآ ءَاتَواْ وَّقُلُوبُهُمۡ وَجِلَةٌ أَنَّهُمۡ إِلَىٰ رَبِّهِمۡ رَٰجِعُونَ",
+            en: "And they who give what they give while their hearts are fearful because they will be returning to their Lord -",
+            how: "Al-Anfal says the believers' hearts tremble when Allah is mentioned; Al-Mu'minun shows them trembling even as they give — afraid that what they gave will not be accepted.",
+            howAr: "الأنفالُ تقول إنّ قلوب المؤمنين تَوجل عند ذكر الله، والمؤمنونَ تُريها تَوجل حتى وهي تعطي، تخاف ألّا يُقبل ما أعطت: ﴿وَٱلَّذِينَ يُؤۡتُونَ مَآ ءَاتَواْ وَّقُلُوبُهُمۡ وَجِلَةٌ﴾."
           }
         ],
         ref: "Surah Al-Anfal (8:2)",
@@ -6853,6 +7014,13 @@ const TADABBUR = {
             en: "And the first forerunners [in the faith] among the Muhajireen and the Ansar and those who followed them with good conduct - Allah is pleased with them and they are pleased with Him, and He has prepared for them gardens beneath which rivers flow, wherein they will abide forever. That is the great attainment.",
             how: "Al-Hashr describes the Ansar's love and preference; At-Tawbah names them among the first forerunners, of whom Allah is pleased, and who are pleased with Him.",
             howAr: "الحشرُ تصف محبّةَ الأنصار وإيثارهم، والتوبةُ تذكرهم في السابقين الأوّلين: ﴿رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُ﴾."
+          },
+          {
+            ref: "Surah Al-Hashr (59:10)",
+            ar: "وَٱلَّذِينَ جَآءُو مِنۢ بَعۡدِهِمۡ يَقُولُونَ رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ رَبَّنَآ إِنَّكَ رَءُوفٞ رَّحِيمٌ",
+            en: "And [there is a share for] those who came after them, saying, \"Our Lord, forgive us and our brothers who preceded us in faith and put not in our hearts [any] resentment toward those who have believed. Our Lord, indeed You are Kind and Merciful.\"",
+            how: "This verse is the Ansar; the next is everyone who came after, known by their prayer: forgive us and our brothers who preceded us in faith.",
+            howAr: "هذه الآيةُ في الأنصار، والتي تليها في كلّ من جاء بعدهم، ويُعرفون بدعائهم: ﴿رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ﴾."
           }
         ]
       },
@@ -6986,6 +7154,47 @@ const TADABBUR = {
             howAr: "تسمّي الآيةُ التي قبلها الخطر، وتسمّي هذه أين ينتهي كلُّ طريق. فنسيانُ الله ليس أمرًا خاصًّا بلا نتيجة، بل هو الذي يحدّد إلى أيّ الفريقين ينتمي الإنسان."
           }
         ]
+      },
+      {
+        n: 10,
+        ar: "وَٱلَّذِينَ جَآءُو مِنۢ بَعۡدِهِمۡ يَقُولُونَ رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ رَبَّنَآ إِنَّكَ رَءُوفٞ رَّحِيمٌ",
+        why: "Al-Hashr names three groups in three verses: the emigrants who left their homes and wealth (59:8), the Ansar who loved those who came to them (59:9), and then everyone after: those who came after them. Their description is not a deed; it is a prayer. They are known by what they say about the ones before them.\n\nOur Lord, forgive us and our brothers who preceded us in faith. They ask for themselves and for people they never met in one breath, and call them brothers. Then: and put no ghill in our hearts towards those who believed. Ghill is the rancour that settles inside unseen — the same word used for what Allah removes from the hearts of the people of Paradise before they sit as brothers on couches facing one another (15:47).\n\n'A'ishah said to her nephew 'Urwah: people were commanded to ask forgiveness for the Companions of the Prophet ﷺ, and they reviled them (Muslim 3022). This verse is that command — the way a later Muslim is meant to speak of the first ones.",
+        whyAr: "تذكر الحشرُ ثلاثَ فِرَقٍ في ثلاث آيات: المهاجرين الذين تركوا بيوتَهم وأموالهم، والأنصارَ الذين أحبّوا المهاجرين، ثم كلَّ من جاء بعدهم: ﴿وَٱلَّذِينَ جَآءُو مِنۢ بَعۡدِهِمۡ يَقُولُونَ﴾. ووصفُهم ليس عملًا بل دعاء، فهم يُعرفون بما يقولونه عمّن سبقهم.\n\n﴿رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ﴾: يسألون لأنفسهم ولقومٍ لم يلقوهم في نَفَسٍ واحد، ويسمّونهم إخوة. ثم: ﴿وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ﴾. والغِلّ الضغينةُ التي تستقرّ في الداخل خفيّة، وهو اللفظُ نفسه لما ينزعه الله من صدور أهل الجنّة قبل أن يجلسوا إخوةً متقابلين: ﴿وَنَزَعۡنَا مَا فِي صُدُورِهِم مِّنۡ غِلٍّ إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ﴾.\n\nوقالت عائشةُ لابن أختها عروة: أُمروا أن يستغفروا لأصحاب النبيّ ﷺ فسبّوهم (مسلم ٣٠٢٢). وهذه الآيةُ هي ذلك الأمر، والطريقةُ التي يُراد أن يتكلّم بها المسلمُ المتأخّر عن الأوّلين.",
+        plain: "Those who came after the first Muslims are described by a prayer, not a deed: forgive us and our brothers who preceded us in faith, and put no rancour in our hearts towards those who believed. 'A'ishah said people were commanded to ask forgiveness for the Companions, and reviled them instead (Muslim 3022).",
+        plainAr: "من جاؤوا بعد المسلمين الأوائل يُوصفون بدعاءٍ لا بعمل: أن يغفر لهم ربُّهم ولإخوانهم السابقين، وألّا يجعل في قلوبهم ضغينةً على المؤمنين. وقالت عائشةُ إنّ الناس أُمروا أن يستغفروا للصحابة فسبّوهم (مسلم ٣٠٢٢).",
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:100)",
+            ar: "وَٱلسَّٰبِقُونَ ٱلۡأَوَّلُونَ مِنَ ٱلۡمُهَٰجِرِينَ وَٱلۡأَنصَارِ وَٱلَّذِينَ ٱتَّبَعُوهُم بِإِحۡسَٰنٖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُ وَأَعَدَّ لَهُمۡ جَنَّٰتٖ تَجۡرِي تَحۡتَهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۚ ذَٰلِكَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ",
+            en: "And the first forerunners [in the faith] among the Muhajireen and the Ansar and those who followed them with good conduct - Allah is pleased with them and they are pleased with Him, and He has prepared for them gardens beneath which rivers flow, wherein they will abide forever. That is the great attainment.",
+            how: "At-Tawbah names the same three groups — the emigrants, the Ansar, and those who followed them in excellence; Al-Hashr gives the third group its words.",
+            howAr: "التوبةُ تذكر الفِرقَ الثلاث نفسها — المهاجرين والأنصار والتابعين بإحسان — والحشرُ تعطي الفرقةَ الثالثة كلماتِها: ﴿وَٱلَّذِينَ ٱتَّبَعُوهُم بِإِحۡسَٰنٖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُ﴾."
+          },
+          {
+            ref: "Surah Al-Hujurat (49:10)",
+            ar: "إِنَّمَا ٱلۡمُؤۡمِنُونَ إِخۡوَةٞ فَأَصۡلِحُواْ بَيۡنَ أَخَوَيۡكُمۡۚ وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُرۡحَمُونَ",
+            en: "The believers are but brothers, so make settlement between your brothers. And fear Allah that you may receive mercy.",
+            how: "Al-Hujurat says believers are brothers; Al-Hashr carries the brotherhood across the generations: our brothers who preceded us in faith.",
+            howAr: "الحجراتُ تقول إنّ المؤمنين إخوة، والحشرُ تمدّ الأخوّةَ عبر الأجيال: ﴿إِنَّمَا ٱلۡمُؤۡمِنُونَ إِخۡوَةٞ﴾."
+          },
+          {
+            ref: "Surah Al-Hijr (15:47)",
+            ar: "وَنَزَعۡنَا مَا فِي صُدُورِهِم مِّنۡ غِلٍّ إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ",
+            en: "And We will remove whatever is in their breasts of resentment, [so they will be] brothers, on thrones facing each other.",
+            how: "Al-Hijr uses the same word for what Allah removes in Paradise: We will remove whatever rancour is in their breasts — brothers, on couches facing one another.",
+            howAr: "الحِجرُ تستعمل اللفظَ نفسه لما ينزعه الله في الجنّة: ﴿وَنَزَعۡنَا مَا فِي صُدُورِهِم مِّنۡ غِلٍّ إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ﴾."
+          },
+          {
+            ref: "Surah Al-Hashr (59:9)",
+            ar: "وَٱلَّذِينَ تَبَوَّءُو ٱلدَّارَ وَٱلۡإِيمَٰنَ مِن قَبۡلِهِمۡ يُحِبُّونَ مَنۡ هَاجَرَ إِلَيۡهِمۡ وَلَا يَجِدُونَ فِي صُدُورِهِمۡ حَاجَةٗ مِّمَّآ أُوتُواْ وَيُؤۡثِرُونَ عَلَىٰٓ أَنفُسِهِمۡ وَلَوۡ كَانَ بِهِمۡ خَصَاصَةٞۚ وَمَن يُوقَ شُحَّ نَفۡسِهِۦ فَأُوْلَٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ",
+            en: "And [also for] those who were settled in al-Madinah and [adopted] the faith before them. They love those who emigrated to them and find not any want in their breasts of what the emigrants were given but give [them] preference over themselves, even though they are in privation. And whoever is protected from the stinginess of his soul - it is those who will be the successful.",
+            how: "The verse before is the second group: the Ansar, who loved those who emigrated to them and preferred them over themselves.",
+            howAr: "والآيةُ التي قبلها الفرقةُ الثانية: الأنصار، ﴿يُحِبُّونَ مَنۡ هَاجَرَ إِلَيۡهِمۡ وَلَا يَجِدُونَ فِي صُدُورِهِمۡ حَاجَةٗ مِّمَّآ أُوتُواْ﴾."
+          }
+        ],
+        ref: "Surah Al-Hashr (59:10), read with 59:8-9 and Al-Hijr (15:47); commanded to ask forgiveness for the Companions: Sahih Muslim 3022, from 'A'ishah",
+        refAr: "سورة الحشر، الآية ١٠، مع الآيتين ٨–٩ وسورة الحجر ٤٧؛ والأمرُ بالاستغفار للصحابة: صحيح مسلم ٣٠٢٢، عن عائشة رضي الله عنها",
+        strength: "hadith"
       }
     ]
   },
@@ -7923,6 +8132,13 @@ const TADABBUR = {
             en: "Then as for he who is given his record in his right hand, He will be judged with an easy account And return to his people in happiness.",
             how: "Al-Haqqah shows his joy; Al-Inshiqaq names what he is given — a reckoning that is easy, and a return to his people in happiness.",
             howAr: "الحاقّةُ تُريك فرحه، والانشقاقُ تسمّي ما أُعطي: ﴿فَسَوۡفَ يُحَاسَبُ حِسَابٗا يَسِيرٗا﴾، ثم ﴿وَيَنقَلِبُ إِلَىٰٓ أَهۡلِهِۦ مَسۡرُورٗا﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:46)",
+            ar: "ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ وَأَنَّهُمۡ إِلَيۡهِ رَٰجِعُونَ",
+            en: "Who are certain that they will meet their Lord and that they will return to Him.",
+            how: "Al-Haqqah's man says he was certain he would meet his account; Al-Baqarah praises the humble with the same verb: they are certain they will meet their Lord.",
+            howAr: "رجلُ الحاقّة يقول إنه استيقن لقاءَ حسابه، والبقرةُ تمدح الخاشعين بالفعل نفسه: ﴿ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ﴾."
           }
         ],
         ref: "Surah Al-Haqqah (69:19)",
@@ -10802,6 +11018,40 @@ const TADABBUR = {
             howAr: "سورةُ إبراهيم تقول إنّ النعم لا تُحصى، وسورةُ الرحمن تعدّ بعضها واحدةً واحدة، وتسأل بعد كلّ واحدة: ﴿فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ﴾؟"
           }
         ]
+      },
+      {
+        n: 24,
+        ar: "أَلَمۡ تَرَ كَيۡفَ ضَرَبَ ٱللَّهُ مَثَلٗا كَلِمَةٗ طَيِّبَةٗ كَشَجَرَةٖ طَيِّبَةٍ أَصۡلُهَا ثَابِتٞ وَفَرۡعُهَا فِي ٱلسَّمَآءِ",
+        why: "A good word is like a good tree: its root firm, its branches in the sky, giving its fruit at every season by its Lord's permission (14:24-25). The Prophet ﷺ once asked his Companions to name a tree that is like a Muslim — its leaves do not fall, and it gives its fruit at all times. Ibn Umar thought of the date palm but was too shy to speak before Abu Bakr and 'Umar; the Prophet ﷺ told them it was the palm (al-Bukhari 4698).\n\nRead the parts in the order the verse gives them. The root is fixed: what is believed does not move. The branches are in the sky: it rises, and is seen from far off. Fatir says the good word does rise: to Him ascends the good word (35:10). The fruit comes kulla hin, at every season: it keeps giving, not once. And all of it bi-idhni rabbiha, by its Lord's permission — even the good tree does not produce on its own.\n\nTwo verses later comes the other tree: a bad word is like a bad tree, uprooted from the surface of the earth, with no stability at all (14:26). One has a root that holds; the other has nothing under it.",
+        whyAr: "﴿ضَرَبَ ٱللَّهُ مَثَلٗا كَلِمَةٗ طَيِّبَةٗ كَشَجَرَةٖ طَيِّبَةٍ أَصۡلُهَا ثَابِتٞ وَفَرۡعُهَا فِي ٱلسَّمَآءِ﴾، ﴿تُؤۡتِيٓ أُكُلَهَا كُلَّ حِينِۭ بِإِذۡنِ رَبِّهَاۗ﴾. وقد سأل النبيّ ﷺ أصحابَه يومًا عن شجرةٍ تشبه المسلم، لا يتحاتّ ورقُها وتؤتي ثمرَها كلَّ حين. فوقع في نفس ابن عمر أنها النخلة، فاستحيا أن يتكلّم وأبو بكر وعمر ساكتان، فأخبرهم النبيّ ﷺ أنها النخلة (البخاري ٤٦٩٨).\n\nفاقرأ الأجزاءَ بالترتيب الذي تذكره الآية: الأصلُ ثابت، فما يُؤمن به لا يتزعزع. والفرعُ في السماء، فهو يعلو ويُرى من بعيد، وفاطرٌ تقول إنّ الكلمة الطيّبة تصعد فعلًا: ﴿إِلَيۡهِ يَصۡعَدُ ٱلۡكَلِمُ ٱلطَّيِّبُ﴾. والثمرُ كلَّ حين، فهو عطاءٌ دائم لا مرّةً واحدة. وكلُّ ذلك بإذن ربّها: فحتى الشجرةُ الطيّبة لا تُثمر بنفسها.\n\nوبعد آيتين تأتي الشجرةُ الأخرى: ﴿وَمَثَلُ كَلِمَةٍ خَبِيثَةٖ كَشَجَرَةٍ خَبِيثَةٍ ٱجۡتُثَّتۡ مِن فَوۡقِ ٱلۡأَرۡضِ مَا لَهَا مِن قَرَارٖ﴾. لهذه أصلٌ يُمسكها، وتلك لا شيءَ تحتها.",
+        plain: "A good word is a tree with a fixed root, branches in the sky, and fruit at every season — by its Lord's permission. The Prophet ﷺ said the tree like a Muslim is the date palm (al-Bukhari 4698). The bad word is a tree pulled out of the ground, with nothing holding it.",
+        plainAr: "الكلمةُ الطيّبة شجرةٌ جذرُها راسخ، وأغصانُها عالية، وثمرُها دائمٌ بإذن خالقها، وقد أخبر النبيّ ﷺ أنّ الشجرة التي تشبه المسلمَ النخلةُ (البخاري ٤٦٩٨). والكلمةُ الخبيثة شجرةٌ مقتلعة لا يُمسكها شيء.",
+        links: [
+          {
+            ref: "Surah Ibrahim (14:26)",
+            ar: "وَمَثَلُ كَلِمَةٍ خَبِيثَةٖ كَشَجَرَةٍ خَبِيثَةٍ ٱجۡتُثَّتۡ مِن فَوۡقِ ٱلۡأَرۡضِ مَا لَهَا مِن قَرَارٖ",
+            en: "And the example of a bad word is like a bad tree, uprooted from the surface of the earth, not having any stability.",
+            how: "Two verses later, the other tree: a bad word is like a bad tree, uprooted from the surface of the earth, with no stability.",
+            howAr: "وبعد آيتين، الشجرةُ الأخرى: ﴿وَمَثَلُ كَلِمَةٍ خَبِيثَةٖ كَشَجَرَةٍ خَبِيثَةٍ ٱجۡتُثَّتۡ مِن فَوۡقِ ٱلۡأَرۡضِ مَا لَهَا مِن قَرَارٖ﴾."
+          },
+          {
+            ref: "Surah Fatir (35:10)",
+            ar: "مَن كَانَ يُرِيدُ ٱلۡعِزَّةَ فَلِلَّهِ ٱلۡعِزَّةُ جَمِيعًاۚ إِلَيۡهِ يَصۡعَدُ ٱلۡكَلِمُ ٱلطَّيِّبُ وَٱلۡعَمَلُ ٱلصَّٰلِحُ يَرۡفَعُهُۥۚ وَٱلَّذِينَ يَمۡكُرُونَ ٱلسَّيِّـَٔاتِ لَهُمۡ عَذَابٞ شَدِيدٞۖ وَمَكۡرُ أُوْلَٰٓئِكَ هُوَ يَبُورُ",
+            en: "Whoever desires honor [through power] - then to Allah belongs all honor. To Him ascends good speech, and righteous work raises it. But they who plot evil deeds will have a severe punishment, and the plotting of those - it will perish.",
+            how: "Fatir says the good word really does rise, like the branches in the sky: to Him ascends the good word, and righteous action raises it.",
+            howAr: "فاطرٌ تقول إنّ الكلمة الطيّبة تعلو حقًّا كالفرع في السماء: ﴿إِلَيۡهِ يَصۡعَدُ ٱلۡكَلِمُ ٱلطَّيِّبُ وَٱلۡعَمَلُ ٱلصَّٰلِحُ يَرۡفَعُهُۥۚ﴾."
+          },
+          {
+            ref: "Surah Ibrahim (14:25)",
+            ar: "تُؤۡتِيٓ أُكُلَهَا كُلَّ حِينِۭ بِإِذۡنِ رَبِّهَاۗ وَيَضۡرِبُ ٱللَّهُ ٱلۡأَمۡثَالَ لِلنَّاسِ لَعَلَّهُمۡ يَتَذَكَّرُونَ",
+            en: "It produces its fruit all the time, by permission of its Lord. And Allah presents examples for the people that perhaps they will be reminded.",
+            how: "The next verse completes the picture: it gives its fruit at every season, by its Lord's permission.",
+            howAr: "والآيةُ التي تليها تتمّ الصورة: ﴿تُؤۡتِيٓ أُكُلَهَا كُلَّ حِينِۭ بِإِذۡنِ رَبِّهَاۗ﴾."
+          }
+        ],
+        ref: "Surah Ibrahim (14:24), read with 14:25-26 and Fatir (35:10); the tree like a Muslim: Sahih al-Bukhari 4698, from Ibn Umar",
+        refAr: "سورة إبراهيم، الآية ٢٤، مع الآيتين ٢٥–٢٦ وسورة فاطر ١٠؛ والشجرةُ التي تشبه المسلم: صحيح البخاري ٤٦٩٨، عن ابن عمر رضي الله عنهما",
+        strength: "hadith"
       }
     ]
   },
@@ -10927,7 +11177,14 @@ const TADABBUR = {
           en: "“And We will have removed whatever is within their breasts of resentment, [while] flowing beneath them are rivers. And they will say, \"Praise to Allah, who has guided us to this; and we would never have been guided if Allah had not guided us. Certainly the messengers of our Lord had come with the truth.\" And they will be called, \"This is Paradise, which you have been made to inherit for what you used to do.\"”",
           how: "The same removal, and there the Quran records what they SAY the moment it happens: praise to Allah who guided us to this, and we would never have been guided had He not guided us. Al-Hijr describes the result — brothers on couches facing one another; Al-A'raf gives the first sentence out of their mouths. Neither of them claims to have arrived by himself.",
           howAr: "النزعُ نفسه، وقد سجّل القرآنُ هناك ما **يقولونه** ساعة يقع: ﴿ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي هَدَىٰنَا لِهَٰذَا وَمَا كُنَّا لِنَهۡتَدِيَ لَوۡلَآ أَنۡ هَدَىٰنَا ٱللَّهُۖ﴾. فالحِجرُ تصف النتيجة — ﴿إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ﴾ — والأعرافُ تُعطي أوّل جملةٍ تخرج من أفواههم. ولا يدّعي أحدٌ منهم أنه بلغ بنفسه."
-        }
+        },
+          {
+            ref: "Surah Al-Hashr (59:10)",
+            ar: "وَٱلَّذِينَ جَآءُو مِنۢ بَعۡدِهِمۡ يَقُولُونَ رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ رَبَّنَآ إِنَّكَ رَءُوفٞ رَّحِيمٌ",
+            en: "And [there is a share for] those who came after them, saying, \"Our Lord, forgive us and our brothers who preceded us in faith and put not in our hearts [any] resentment toward those who have believed. Our Lord, indeed You are Kind and Merciful.\"",
+            how: "Al-Hijr says Allah removes the rancour from hearts in Paradise; Al-Hashr gives the prayer that asks for it now: put no rancour in our hearts towards those who believed.",
+            howAr: "الحِجرُ تقول إنّ الله ينزع الغلّ من الصدور في الجنّة، والحشرُ تذكر الدعاءَ الذي يطلب ذلك الآن: ﴿وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ﴾."
+          }
         ],
         ref: "Surah Al-Hijr (15:47)",
         strength: "quran"
@@ -11166,6 +11423,13 @@ const TADABBUR = {
             en: "And We have enjoined upon man [care] for his parents",
             how: "Al-Isra gives the COMMAND, placed beside worshipping Him alone. Luqman gives the REASON — the carrying, the weakness upon weakness, the years of nursing.",
             howAr: "في الإسراء **الأمر** مقرونًا بعبادته وحده. وفي لقمان **العلّة**: الحملُ ووهنٌ على وهنٍ وسنتا الفصال."
+          },
+          {
+            ref: "Surah Al-Isra (17:24)",
+            ar: "وَٱخۡفِضۡ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحۡمَةِ وَقُل رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا",
+            en: "And lower to them the wing of humility out of mercy and say, \"My Lord, have mercy upon them as they brought me up [when I was] small.\"",
+            how: "This verse sets the floor — not even 'uff'; the next gives the posture and the prayer: lower to them the wing of humility, and say, my Lord, have mercy on them as they raised me.",
+            howAr: "هذه الآيةُ تضع الحدَّ الأدنى — لا أفّ — والتي تليها تذكر الهيئةَ والدعاء: ﴿وَٱخۡفِضۡ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحۡمَةِ وَقُل رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا﴾."
           }
         ],
         plain: "In plain words: the line is not drawn at shouting. It is drawn at the small tired sound — and the words you use with them are supposed to be noble, not merely civil.",
@@ -11220,6 +11484,13 @@ const TADABBUR = {
             en: "“O you who believe, if a wrongdoer brings you news, verify it.”",
             how: "Al-Isra forbids acting on what you do not know; al-Hujurat gives the procedure that keeps you out of it — when news arrives, check before you move. One is the rule, the other is the method.",
             howAr: "نهت الإسراءُ عن اتّباع ما لا عِلم به، وأعطت الحجراتُ الإجراء الذي يَقيك منه: إذا جاءك خبرٌ فتبيّن قبل أن تتحرّك. فالأولى قاعدة، والثانيةُ طريقةُ العمل بها."
+          },
+          {
+            ref: "Surah Al-Isra (17:85)",
+            ar: "وَيَسۡـَٔلُونَكَ عَنِ ٱلرُّوحِۖ قُلِ ٱلرُّوحُ مِنۡ أَمۡرِ رَبِّي وَمَآ أُوتِيتُم مِّنَ ٱلۡعِلۡمِ إِلَّا قَلِيلٗا",
+            en: "And they ask you, [O Muhammad], about the soul. Say, \"The soul is of the affair of my Lord. And mankind have not been given of knowledge except a little.\"",
+            how: "This verse forbids following what you have no knowledge of; later the surah says how much has been given: you have been given of knowledge only a little.",
+            howAr: "هذه الآيةُ تنهى عن اتّباع ما لا علمَ لك به، وبعد ذلك تقول السورةُ كم أُعطينا: ﴿وَمَآ أُوتِيتُم مِّنَ ٱلۡعِلۡمِ إِلَّا قَلِيلٗا﴾."
           }
         ]
       },
@@ -11266,6 +11537,60 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Isra (17:79), read with 17:78; tahajjud: Ar-Raghib al-Isfahani, Al-Mufradat; the praised station: Sahih al-Bukhari 4718, from Ibn Umar",
         refAr: "سورة الإسراء، الآية ٧٩، مع الآية ٧٨؛ ومعنى التهجّد: الراغب الأصفهاني، المفردات؛ والمقامُ المحمود: صحيح البخاري ٤٧١٨، عن ابن عمر رضي الله عنهما",
+        strength: "hadith"
+      },
+      {
+        n: 24,
+        ar: "وَٱخۡفِضۡ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحۡمَةِ وَقُل رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا",
+        why: "The verse before forbids even 'uff' to parents in their old age and commands a noble word (17:23). This one goes further, into posture: lower to them the wing of humility, out of mercy. The image is a bird lowering its wing over its young — the gesture they once made over you, now made by you over them.\n\nMin ar-rahmah — out of mercy. The humility is not fear and not a show; it comes from mercy. Then the prayer, with its reason attached: my Lord, have mercy on them, as they raised me when I was small. The child asks for his parents what they gave him, and names the measure himself: as they did.\n\nThe Prophet ﷺ said three times: may his nose be rubbed in the dust — and when asked whom he meant, said: the one whose parents, one or both, reach old age with him, and he does not enter Paradise (Muslim 2551). Old parents are a door, and the verse shows how to walk through it.",
+        whyAr: "الآيةُ التي قبلها تنهى حتى عن كلمة أفٍّ للوالدين في كبرهما، وتأمر بالقول الكريم، وهذه تذهب أبعد، إلى هيئة الجسد: ﴿وَٱخۡفِضۡ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحۡمَةِ﴾. والصورةُ طائرٌ يخفض جناحَه على صغاره — الحركةُ التي صنعاها فوقك يومًا، تصنعها أنت الآن فوقهما.\n\nمن الرحمة: فليس الذلُّ هنا خوفًا ولا تظاهرًا، بل هو ثمرةُ الرحمة. ثم الدعاء، ومعه سببُه: ﴿وَقُل رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا﴾. يسأل الولدُ لوالديه ما أعطياه، ويذكر المقدارَ بنفسه: كما فعلا.\n\nوقال النبيّ ﷺ ثلاثًا: رَغِمَ أنفُه، فلمّا سُئل من هو؟ قال: من أدرك أبويه عند الكبر، أحدَهما أو كليهما، فلم يدخل الجنة (مسلم ٢٥٥١). فالوالدان في كبرهما بابٌ، والآيةُ تُريك كيف تدخل منه.",
+        plain: "Lower to them the wing of humility, out of mercy — a bird folding its wing over its young, the gesture they once made over you. And the prayer names its own measure: my Lord, have mercy on them as they raised me when I was small.",
+        plainAr: "أن تتواضع لهما رحمةً، كالطائر يخفض جناحَه على صغاره كما فعلا بك يومًا. والدعاءُ يذكر مقدارَه بنفسه: أن يرحمهما ربُّهما كما ربّياك صغيرًا.",
+        links: [
+          {
+            ref: "Surah Al-Isra (17:23)",
+            ar: "۞ وَقَضَىٰ رَبُّكَ أَلَّا تَعۡبُدُوٓاْ إِلَّآ إِيَّاهُ وَبِٱلۡوَٰلِدَيۡنِ إِحۡسَٰنًاۚ إِمَّا يَبۡلُغَنَّ عِندَكَ ٱلۡكِبَرَ أَحَدُهُمَآ أَوۡ كِلَاهُمَا فَلَا تَقُل لَّهُمَآ أُفّٖ وَلَا تَنۡهَرۡهُمَا وَقُل لَّهُمَا قَوۡلٗا كَرِيمٗا",
+            en: "And your Lord has decreed that you not worship except Him, and to parents, good treatment. Whether one or both of them reach old age [while] with you, say not to them [so much as], \"uff,\" and do not repel them but speak to them a noble word.",
+            how: "The verse before sets the floor — not even 'uff', and a noble word; this one gives the posture and the prayer that go above it.",
+            howAr: "الآيةُ التي قبلها تضع الحدَّ الأدنى — لا أفّ، وقولٌ كريم — وهذه تذكر الهيئةَ والدعاءَ اللذين فوقه: ﴿فَلَا تَقُل لَّهُمَآ أُفّٖ وَلَا تَنۡهَرۡهُمَا وَقُل لَّهُمَا قَوۡلٗا كَرِيمٗا﴾."
+          },
+          {
+            ref: "Surah Ash-Shu'ara (26:215)",
+            ar: "وَٱخۡفِضۡ جَنَاحَكَ لِمَنِ ٱتَّبَعَكَ مِنَ ٱلۡمُؤۡمِنِينَ",
+            en: "And lower your wing to those who follow you of the believers.",
+            how: "Ash-Shu'ara uses the same image for the Prophet ﷺ and the believers: lower your wing to those of the believers who follow you.",
+            howAr: "الشعراءُ تستعمل الصورةَ نفسها للنبيّ ﷺ مع المؤمنين: ﴿وَٱخۡفِضۡ جَنَاحَكَ لِمَنِ ٱتَّبَعَكَ مِنَ ٱلۡمُؤۡمِنِينَ﴾."
+          }
+        ],
+        ref: "Surah Al-Isra (17:24), read with 17:23; parents in old age: Sahih Muslim 2551, from Abu Hurayrah",
+        refAr: "سورة الإسراء، الآية ٢٤، مع الآية ٢٣؛ والوالدان عند الكبر: صحيح مسلم ٢٥٥١، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
+      },
+      {
+        n: 85,
+        ar: "وَيَسۡـَٔلُونَكَ عَنِ ٱلرُّوحِۖ قُلِ ٱلرُّوحُ مِنۡ أَمۡرِ رَبِّي وَمَآ أُوتِيتُم مِّنَ ٱلۡعِلۡمِ إِلَّا قَلِيلٗا",
+        why: "They ask you about the spirit. Ibn Mas'ud was with the Prophet ﷺ when some Jews passing by decided to put exactly this question to him, and the verse came down in answer (al-Bukhari 4721).\n\nThe answer does not describe the spirit. It places it: the spirit is of the command of my Lord — min amri rabbi. Then it turns to those asking: and you have been given of knowledge only a little. It is not a refusal to answer; it is the answer. Some things are known by knowing whose they are.\n\nAnd the next surah shows what 'a little' means even for a prophet: Musa, who spoke with Allah, is sent to learn from a servant who had been given knowledge from Allah's own presence (18:65-66). The little that has been given is enough to know that it is little.",
+        whyAr: "﴿وَيَسۡـَٔلُونَكَ عَنِ ٱلرُّوحِۖ﴾: كان ابنُ مسعود مع النبيّ ﷺ حين مرّ قومٌ من اليهود فقال بعضُهم لبعض: سلوه عن الروح، فسألوه، فنزلت الآية (البخاري ٤٧٢١).\n\nوالجوابُ لا يصف الروح، بل يحدّد موضعها: ﴿قُلِ ٱلرُّوحُ مِنۡ أَمۡرِ رَبِّي﴾، ثم يلتفت إلى السائلين: ﴿وَمَآ أُوتِيتُم مِّنَ ٱلۡعِلۡمِ إِلَّا قَلِيلٗا﴾. فليس هذا امتناعًا عن الجواب، بل هو الجواب. فبعضُ الأشياء تُعرف بمعرفة لمن هي.\n\nوالسورةُ التي تليها تُريك معنى القليل حتى في حقّ نبيّ: موسى، الذي كلّمه الله، يُرسَل ليتعلّم من عبدٍ أُوتي علمًا من لدن الله. والقليلُ الذي أُعطيناه يكفي لنعرف أنه قليل.",
+        plain: "Asked about the spirit, the Quran does not describe it — it says whose it is: the spirit is of my Lord's command, and you have been given only a little knowledge. That is not a refusal to answer; it is the answer (al-Bukhari 4721).",
+        plainAr: "سُئل القرآنُ عن الروح فلم يصفها، بل قال لمن هي: ﴿قُلِ ٱلرُّوحُ مِنۡ أَمۡرِ رَبِّي﴾، ثم ذكّر السائلين بقلّة ما أُعطوه من العلم. وليس هذا امتناعًا عن الجواب، بل هو الجواب (البخاري ٤٧٢١).",
+        links: [
+          {
+            ref: "Surah Al-Kahf (18:65)",
+            ar: "فَوَجَدَا عَبۡدٗا مِّنۡ عِبَادِنَآ ءَاتَيۡنَٰهُ رَحۡمَةٗ مِّنۡ عِندِنَا وَعَلَّمۡنَٰهُ مِن لَّدُنَّا عِلۡمٗا",
+            en: "And they found a servant from among Our servants to whom we had given mercy from us and had taught him from Us a [certain] knowledge.",
+            how: "Al-Kahf shows what 'a little' means even for a prophet: Musa is sent to learn from a servant given knowledge from Allah's own presence.",
+            howAr: "الكهفُ تُريك معنى القليل حتى في حقّ نبيّ: موسى يُرسَل ليتعلّم من عبدٍ ﴿وَعَلَّمۡنَٰهُ مِن لَّدُنَّا عِلۡمٗا﴾."
+          },
+          {
+            ref: "Surah Al-Isra (17:36)",
+            ar: "وَلَا تَقۡفُ مَا لَيۡسَ لَكَ بِهِۦ عِلۡمٌۚ إِنَّ ٱلسَّمۡعَ وَٱلۡبَصَرَ وَٱلۡفُؤَادَ كُلُّ أُوْلَٰٓئِكَ كَانَ عَنۡهُ مَسۡـُٔولٗا",
+            en: "And do not pursue that of which you have no knowledge. Indeed, the hearing, the sight and the heart - about all those [one] will be questioned.",
+            how: "Earlier in the same surah: do not follow what you have no knowledge of — the hearing, the sight and the heart will all be asked about.",
+            howAr: "وقبل ذلك في السورة نفسها: ﴿وَلَا تَقۡفُ مَا لَيۡسَ لَكَ بِهِۦ عِلۡمٌۚ إِنَّ ٱلسَّمۡعَ وَٱلۡبَصَرَ وَٱلۡفُؤَادَ كُلُّ أُوْلَٰٓئِكَ كَانَ عَنۡهُ مَسۡـُٔولٗا﴾."
+          }
+        ],
+        ref: "Surah Al-Isra (17:85), read with Al-Kahf (18:65-66); the question that occasioned it: Sahih al-Bukhari 4721, from Ibn Mas'ud",
+        refAr: "سورة الإسراء، الآية ٨٥، مع سورة الكهف ٦٥–٦٦؛ والسؤالُ الذي نزلت فيه: صحيح البخاري ٤٧٢١، عن ابن مسعود رضي الله عنه",
         strength: "hadith"
       }
     ]
@@ -12188,6 +12513,15 @@ const TADABBUR = {
         whyAr: "لمّا وصفت السورةُ رجلًا يُنقص الكيل لم تفرض عقوبة ولم تأمره بالردّ. وإنما سألت: أيظنّ أنه يُبعث؟\n\n﴿أَلَا يَظُنُّ أُوْلَٰٓئِكَ أَنَّهُم مَّبۡعُوثُونَ ۝ لِيَوۡمٍ عَظِيمٖ ۝ يَوۡمَ يَقُومُ ٱلنَّاسُ لِرَبِّ ٱلۡعَٰلَمِينَ﴾.\n\nوالقفزةُ في المقياس هي المنهجُ كلُّه: غراماتٌ في ميزان، ثم قيامُ الناس أجمعين. والوصلُ بينهما مصوغٌ سؤالًا في **الاعتقاد** لا في الأمانة: فالذي يحمل الرجل على اقتطاع الحافّة ليس جهلَه بأنه خطأ، وإنما أنه لا يعتقد في تلك اللحظة أنّ أحدًا يُحصي.\n\nفالدواءُ المعروض ليس قاعدةً أحكم، وإنما هو إحساسٌ مستردٌّ بأنه مرئيّ.\n\nوالآيةُ الأخيرة تُعطي المشهد صورته على التحديد: ﴿يَقُومُ ٱلنَّاسُ﴾ — يقومون. لا يُحاسَبون ولا يُسألون. يقومون لربّ العالمين. فتركت السورةُ الرجلَ الذي بخس أوقيّةً قائمًا بين يدي مالك كلّ شيء، ووكلت الباقيَ إلى الصورة.",
         plain: "For a man shorting a measure, the surah gives no penalty and no order to repay. It asks whether he thinks he will be raised. Because the reason a person shaves a margin is not that he thinks it is right — it is that at that moment he does not believe anyone is counting.",
         plainAr: "لمن يُنقص الكيل، لم تذكر السورةُ عقوبةً ولا أمرًا بالردّ. وإنما سألت: أيظنّ أنه مبعوث؟ لأنّ الذي يحمله على ذلك ليس اعتقادَه أنه صواب، بل أنه لا يعتقد في تلك اللحظة أنّ أحدًا يُحصي.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:46)",
+            ar: "ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ وَأَنَّهُمۡ إِلَيۡهِ رَٰجِعُونَ",
+            en: "Who are certain that they will meet their Lord and that they will return to Him.",
+            how: "Al-Mutaffifin asks whether the cheat does not even suppose he will be raised; Al-Baqarah uses the same verb for the humble: they are certain they will meet their Lord.",
+            howAr: "المطفّفين تسأل أما يخطر للغشّاش أنه سيُبعث، والبقرةُ تستعمل الفعلَ نفسه للخاشعين: ﴿ٱلَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَٰقُواْ رَبِّهِمۡ﴾."
+          }
+        ],
         ref: "Surah Al-Mutaffifin (83:4-6)",
         strength: "quran"
       }
