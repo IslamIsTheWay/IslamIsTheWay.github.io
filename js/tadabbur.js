@@ -2476,6 +2476,33 @@ const TADABBUR = {
         ref: "Surah Al-Baqarah (2:124), read with 2:126 and As-Saffat (37:102-106); what the words were: Tafsir Ibn Kathir on 2:124",
         refAr: "سورة البقرة، الآية ١٢٤، مع الآية ١٢٦ وسورة الصافّات ١٠٢–١٠٦؛ والخلافُ في الكلمات: تفسير ابن كثير عند الآية",
         strength: "tafsir"
+      },
+      {
+        n: 37,
+        ar: "فَتَلَقَّىٰٓ ءَادَمُ مِن رَّبِّهِۦ كَلِمَٰتٖ فَتَابَ عَلَيۡهِۚ إِنَّهُۥ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ",
+        why: "Then Adam received from his Lord words, and He turned to him in forgiveness — He is the Accepting of repentance, the Merciful. The words came from his Lord: Adam did not even have to find the words of repentance himself. They were given to him.\n\nMany of the early commentators said the words were the prayer Al-A'raf records from Adam and his wife: our Lord, we have wronged ourselves, and if You do not forgive us and have mercy on us, we will surely be among the losers (7:23). So the first repentance on earth was taught before it was said.\n\nAnd the verse ends with two names: at-Tawwab — the One who turns back to the one who turns, again and again — and ar-Rahim. Ta-Ha tells the same moment: Adam disobeyed his Lord and erred; then his Lord chose him, turned to him and guided him (20:121-122). The fall was not the end of the story; the choosing came after it.",
+        whyAr: "﴿فَتَلَقَّىٰٓ ءَادَمُ مِن رَّبِّهِۦ كَلِمَٰتٖ فَتَابَ عَلَيۡهِۚ إِنَّهُۥ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ﴾. فالكلماتُ جاءت من ربّه: لم يكن على آدم حتى أن يجد كلماتِ التوبة بنفسه، بل أُعطيها.\n\nوقال كثيرٌ من المفسّرين الأوائل إنّ الكلمات هي الدعاءُ الذي تحكيه الأعرافُ عن آدم وزوجه: ﴿قَالَا رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ﴾. فأوّلُ توبةٍ على الأرض عُلّمت قبل أن تُقال.\n\nوتُختم الآيةُ باسمين: ﴿إِنَّهُۥ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ﴾ — التوّابُ الذي يرجع على عبده كلّما رجع، والرحيم. وسورةُ طه تروي اللحظةَ نفسها: ﴿وَعَصَىٰٓ ءَادَمُ رَبَّهُۥ فَغَوَىٰ﴾ ﴿ثُمَّ ٱجۡتَبَٰهُ رَبُّهُۥ فَتَابَ عَلَيۡهِ وَهَدَىٰ﴾. فلم يكن السقوطُ نهايةَ القصّة، بل جاء الاجتباءُ بعده.",
+        plain: "Adam did not have to find the words of repentance himself — he received them from his Lord, and many early commentators said they were the prayer of 7:23. The first repentance on earth was taught before it was said, and Ta-Ha says the choosing came after the fall (20:122).",
+        plainAr: "لم يكن على آدم أن يجد كلماتِ التوبة بنفسه، بل تلقّاها من ربّه، وقال كثيرٌ من المفسّرين الأوائل إنها دعاءُ الأعراف. فأوّلُ توبةٍ عُلّمت قبل أن تُقال، وسورةُ طه تقول إنّ الاجتباء جاء بعد السقوط.",
+        links: [
+          {
+            ref: "Surah Al-A'raf (7:23)",
+            ar: "قَالَا رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ",
+            en: "They said, \"Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.\"",
+            how: "Al-A'raf gives the words themselves, as many early commentators said: our Lord, we have wronged ourselves — and if You do not forgive us and have mercy on us, we will be among the losers.",
+            howAr: "الأعرافُ تذكر الكلماتِ نفسها، كما قال كثيرٌ من المفسّرين الأوائل: ﴿قَالَا رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ﴾."
+          },
+          {
+            ref: "Surah Ta-Ha (20:121-122)",
+            ar: "فَأَكَلَا مِنۡهَا فَبَدَتۡ لَهُمَا سَوۡءَٰتُهُمَا وَطَفِقَا يَخۡصِفَانِ عَلَيۡهِمَا مِن وَرَقِ ٱلۡجَنَّةِۚ وَعَصَىٰٓ ءَادَمُ رَبَّهُۥ فَغَوَىٰ ۝ ثُمَّ ٱجۡتَبَٰهُ رَبُّهُۥ فَتَابَ عَلَيۡهِ وَهَدَىٰ",
+            en: "And Adam and his wife ate of it, and their private parts became apparent to them, and they began to fasten over themselves from the leaves of Paradise. And Adam disobeyed his Lord and erred. Then his Lord chose him and turned to him in forgiveness and guided [him].",
+            how: "Ta-Ha tells the same moment: Adam disobeyed his Lord and erred — then his Lord chose him, turned to him, and guided him.",
+            howAr: "سورةُ طه تروي اللحظةَ نفسها: ﴿وَعَصَىٰٓ ءَادَمُ رَبَّهُۥ فَغَوَىٰ﴾ ﴿ثُمَّ ٱجۡتَبَٰهُ رَبُّهُۥ فَتَابَ عَلَيۡهِ وَهَدَىٰ﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:37), read with Al-A'raf (7:23) and Ta-Ha (20:121-122); the words Adam received: Tafsir Ibn Kathir on 2:37",
+        refAr: "سورة البقرة، الآية ٣٧، مع سورة الأعراف ٢٣ وسورة طه ١٢١–١٢٢؛ والكلماتُ التي تلقّاها آدم: تفسير ابن كثير عند الآية",
+        strength: "tafsir"
       }
     ]
   },
@@ -4823,6 +4850,33 @@ const TADABBUR = {
         ref: "Surah Al 'Imran (3:169), read with 3:170 and Al-Baqarah (2:154); the souls in green birds: Sahih Muslim 1887, from Ibn Mas'ud",
         refAr: "سورة آل عمران، الآية ١٦٩، مع الآية ١٧٠ وسورة البقرة ١٥٤؛ وأرواحُهم في طيرٍ خضر: صحيح مسلم ١٨٨٧، عن ابن مسعود رضي الله عنه",
         strength: "hadith"
+      },
+      {
+        n: 133,
+        ar: "۞ وَسَارِعُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا ٱلسَّمَٰوَٰتُ وَٱلۡأَرۡضُ أُعِدَّتۡ لِلۡمُتَّقِينَ",
+        why: "Hasten to forgiveness from your Lord, and to a garden whose width is the heavens and the earth, prepared for the God-fearing. Sari'u — hurry — is the verb for something that can be lost if you are slow. And forgiveness comes first in the sentence, before the garden: the garden is entered through it.\n\nThe garden's width is the heavens and the earth. Al-Hadid says it with a different verb — race one another, sabiqu — and one word added: a garden whose width is like the width of the heaven and the earth (57:21). Only the width is given; the length is left to the imagination.\n\nThe next verse says who the runners are, and it is not a list of devotions done alone: those who give in ease and in hardship, hold in their anger, and pardon people — and Allah loves those who do good (3:134). The race to the garden is run in how you treat money and people.",
+        whyAr: "﴿۞ وَسَارِعُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا ٱلسَّمَٰوَٰتُ وَٱلۡأَرۡضُ أُعِدَّتۡ لِلۡمُتَّقِينَ﴾. والمسارعةُ تُقال في ما يفوت على البطيء. والمغفرةُ تأتي في الجملة قبل الجنّة: فالجنّةُ يُدخل إليها من بابها.\n\nوعرضُ الجنّة السماواتُ والأرض، والحديدُ تقولها بفعلٍ آخر — المسابقة — وبكلمةٍ زائدة: ﴿سَابِقُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا كَعَرۡضِ ٱلسَّمَآءِ وَٱلۡأَرۡضِ﴾. ولا يُذكر إلا العرض، ويُترك الطولُ للخيال.\n\nوالآيةُ التي تليها تقول من المتسابقون، وليس فيها قائمةُ عباداتٍ يؤدّيها المرءُ وحده: ﴿ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ﴾. فالسباقُ إلى الجنّة يجري في طريقة تعاملك مع المال والناس.",
+        plain: "Hurry — to forgiveness first, then to a garden whose width is the heavens and the earth. And the next verse says the runners are those who give in ease and hardship, hold in their anger and pardon people: the race is run in how you treat money and people.",
+        plainAr: "سارِعوا — إلى المغفرة أوّلًا، ثم إلى جنّةٍ واسعةٍ سعةَ الكون. والآيةُ التالية تقول إنّ المتسابقين هم من يعطون في اليسر والعسر، ويحبسون غضبهم، ويعفون عن الناس: فالسباقُ يجري في المعاملة.",
+        links: [
+          {
+            ref: "Surah Ali 'Imran (3:134)",
+            ar: "ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ",
+            en: "Who spend [in the cause of Allah] during ease and hardship and who restrain anger and who pardon the people - and Allah loves the doers of good;",
+            how: "The next verse names the runners: those who give in ease and in hardship, hold in their anger, and pardon people.",
+            howAr: "والآيةُ التي تليها تسمّي المتسابقين: ﴿ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ﴾."
+          },
+          {
+            ref: "Surah Al-Hadid (57:21)",
+            ar: "سَابِقُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا كَعَرۡضِ ٱلسَّمَآءِ وَٱلۡأَرۡضِ أُعِدَّتۡ لِلَّذِينَ ءَامَنُواْ بِٱللَّهِ وَرُسُلِهِۦۚ ذَٰلِكَ فَضۡلُ ٱللَّهِ يُؤۡتِيهِ مَن يَشَآءُۚ وَٱللَّهُ ذُو ٱلۡفَضۡلِ ٱلۡعَظِيمِ",
+            en: "Race toward forgiveness from your Lord and a Garden whose width is like the width of the heavens and earth, prepared for those who believed in Allah and His messengers. That is the bounty of Allah which He gives to whom He wills, and Allah is the possessor of great bounty.",
+            how: "Al-Hadid gives the same garden with another verb — race one another — and one word added: its width is like the width of the heaven and the earth.",
+            howAr: "الحديدُ تذكر الجنّةَ نفسها بفعلٍ آخر وكلمةٍ زائدة: ﴿سَابِقُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا كَعَرۡضِ ٱلسَّمَآءِ وَٱلۡأَرۡضِ﴾."
+          }
+        ],
+        ref: "Surah Al 'Imran (3:133), read with 3:134 and Al-Hadid (57:21)",
+        refAr: "سورة آل عمران، الآية ١٣٣، مع الآية ١٣٤ وسورة الحديد ٢١",
+        strength: "quran"
       }
     ]
   },
@@ -6079,6 +6133,40 @@ const TADABBUR = {
         ],
         ref: "Surah Al-An'am (6:125), read with Ash-Sharh (94:1) and Ta-Ha (20:25); haraj: Tafsir Ibn Kathir on 6:125",
         refAr: "سورة الأنعام، الآية ١٢٥، مع سورة الشرح ١ وسورة طه ٢٥؛ ومعنى الحرج: تفسير ابن كثير عند الآية",
+        strength: "lugha"
+      },
+      {
+        n: 1,
+        ar: "ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ وَجَعَلَ ٱلظُّلُمَٰتِ وَٱلنُّورَۖ ثُمَّ ٱلَّذِينَ كَفَرُواْ بِرَبِّهِمۡ يَعۡدِلُونَ",
+        why: "Al-An'am opens with praise and with creation: praise be to Allah, who created the heavens and the earth and made the darknesses and the light. Then a single word turns the verse: thumma — then, after all this — those who disbelieve set up equals to their Lord.\n\nYa'dilun — they make equal. It is the root of 'adl, justice, and of 'idl, the equal weight on the other side of a scale. They put something on the other pan of the scale from the Creator of the heavens and the earth. The thumma carries the astonishment: after creation, and darkness, and light — still this.\n\nAnd the numbers again: darknesses plural, light singular, as in Al-Baqarah: He brings them out of the darknesses into the light (2:257). Five surahs open with the words al-hamdu lillah — Al-Fatihah, Al-An'am, Al-Kahf, Saba and Fatir — and Al-Fatihah, the first of them, gives the praise with the title that answers this verse: the Lord of the worlds (1:2).",
+        whyAr: "تُفتتح الأنعامُ بالحمد والخلق: ﴿ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ وَجَعَلَ ٱلظُّلُمَٰتِ وَٱلنُّورَۖ﴾. ثم كلمةٌ واحدة تقلب الآية: ﴿ثُمَّ ٱلَّذِينَ كَفَرُواْ بِرَبِّهِمۡ يَعۡدِلُونَ﴾ — بعد هذا كلّه.\n\nيعدلون: يجعلون له عِدلًا، ومن الجذر نفسه العدلُ، والعِدلُ الحِملُ المساوي في الكفّة الأخرى. فهم يضعون شيئًا في الكفّة المقابلة لخالق الكون. وثمّ تحمل التعجّب: بعد الخلق والظلمات والنور، لا يزال هذا.\n\nوالعددُ مرّةً أخرى: الظلماتُ جمعٌ والنورُ مفرد، كما في البقرة: ﴿يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ﴾. وخمسُ سورٍ تُفتتح بالحمد لله: الفاتحة، والأنعام، والكهف، وسبأ، وفاطر، وأوّلُها الفاتحةُ تذكر الحمدَ بالوصف الذي يجيب هذه الآية: ﴿ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ﴾.",
+        plain: "Praise for the One who created the heavens and the earth and made darkness and light — and then, after all of that, some still set up equals to Him. Ya'dilun is to put a weight on the other pan of the scale. Five surahs open with al-hamdu lillah.",
+        plainAr: "الحمدُ لخالق الكون وجاعلِ الظلمة والضياء، ثم بعد هذا كلّه يجعل بعضُهم له أندادًا. والعَدلُ هنا أن يُوضع شيءٌ في الكفّة المقابلة. وخمسُ سورٍ تُفتتح بالحمد لله.",
+        links: [
+          {
+            ref: "Surah Al-Fatihah (1:2)",
+            ar: "ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ",
+            en: "[All] praise is [due] to Allah, Lord of the worlds -",
+            how: "Al-Fatihah, the first of the five surahs that open with praise, gives it the title that answers this verse: the Lord of the worlds.",
+            howAr: "الفاتحةُ، أولى السور الخمس المفتتحة بالحمد، تذكره بالوصف الذي يجيب هذه الآية: ﴿ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:257)",
+            ar: "ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ وَٱلَّذِينَ كَفَرُوٓاْ أَوۡلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخۡرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِۗ أُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
+            en: "Allah is the ally of those who believe. He brings them out from darknesses into the light. And those who disbelieve - their allies are Taghut. They take them out of the light into darknesses. Those are the companions of the Fire; they will abide eternally therein.",
+            how: "Al-Baqarah uses the same pair in the same numbers: He brings them out of the darknesses — plural — into the light — singular.",
+            howAr: "البقرةُ تستعمل الزوجَ نفسه بالعدد نفسه: ﴿يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ﴾."
+          },
+          {
+            ref: "Surah Al-Kahf (18:1)",
+            ar: "ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِيٓ أَنزَلَ عَلَىٰ عَبۡدِهِ ٱلۡكِتَٰبَ وَلَمۡ يَجۡعَل لَّهُۥ عِوَجَاۜ",
+            en: "[All] praise is [due] to Allah, who has sent down upon His Servant the Book and has not made therein any deviance.",
+            how: "Al-Kahf opens with the same words, praising Him for the Book instead of for creation: praise be to Allah, who sent down the Book to His servant.",
+            howAr: "الكهفُ تُفتتح بالكلمات نفسها، وتحمده على الكتاب بدل الخلق: ﴿ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِيٓ أَنزَلَ عَلَىٰ عَبۡدِهِ ٱلۡكِتَٰبَ﴾."
+          }
+        ],
+        ref: "Surah Al-An'am (6:1), read with Al-Fatihah (1:2) and Al-Baqarah (2:257)",
+        refAr: "سورة الأنعام، الآية ١، مع سورة الفاتحة ٢ وسورة البقرة ٢٥٧",
         strength: "lugha"
       }
     ]
@@ -9831,6 +9919,13 @@ const TADABBUR = {
             en: "Do you not see that Allah sends down rain from the sky, and We produce thereby fruits of varying colors? And in the mountains are tracts, white and red of varying shades and [some] extremely black.",
             how: "Fatir gives the same argument in colour: from one rain, fruits of varying colours — and mountains with streaks of white and red.",
             howAr: "فاطرٌ تذكر الحجّةَ نفسها في الألوان: ﴿فَأَخۡرَجۡنَا بِهِۦ ثَمَرَٰتٖ مُّخۡتَلِفًا أَلۡوَٰنُهَاۚ﴾."
+          },
+          {
+            ref: "Surah Adh-Dhariyat (51:20)",
+            ar: "وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ",
+            en: "And on the earth are signs for the certain [in faith]",
+            how: "Ar-Ra'd gives one sign of the earth in full; Adh-Dhariyat says whom such signs are for: on the earth are signs for those who are certain.",
+            howAr: "الرعدُ تذكر إحدى آيات الأرض كاملة، والذارياتُ تقول لمن هذه الآيات: ﴿وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ﴾."
           }
         ],
         ref: "Surah Ar-Ra'd (13:4), read with Al-An'am (6:99) and Fatir (35:27)",
@@ -10428,6 +10523,47 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Ahzab (33:70), read with 33:71; the sermon for needs: Sunan Abu Dawud 2118, from Ibn Mas'ud — authenticated by al-Albani",
         refAr: "سورة الأحزاب، الآية ٧٠، مع الآية ٧١؛ وخطبةُ الحاجة: سنن أبي داود ٢١١٨، عن ابن مسعود رضي الله عنه — وصحّحه الألباني",
+        strength: "hadith"
+      },
+      {
+        n: 43,
+        ar: "هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ وَكَانَ بِٱلۡمُؤۡمِنِينَ رَحِيمٗا",
+        why: "He it is who sends blessings upon you, and His angels, to bring you out of the darknesses into the light — and He is ever merciful to the believers. The verses before it say: remember Allah with much remembrance, and glorify Him morning and evening (33:41-42). This is what answers that remembrance.\n\nThe same verb is used thirteen verses later for the Prophet ﷺ: Allah and His angels send blessings upon the Prophet (33:56). What Allah does for His Prophet, He does — in its measure — for the believers. And its purpose is stated: to bring you out of the darknesses into the light, the movement Al-Baqarah describes as His alone (2:257).\n\nThe Prophet ﷺ said that Allah and His angels, and the people of the heavens and the earth — even the ant in its hole, and the fish — send blessings upon the one who teaches people good (at-Tirmidhi 2685; authenticated by al-Albani).",
+        whyAr: "﴿هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ وَكَانَ بِٱلۡمُؤۡمِنِينَ رَحِيمٗا﴾. والآيتان قبلها تقولان: ﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱذۡكُرُواْ ٱللَّهَ ذِكۡرٗا كَثِيرٗا﴾ ﴿وَسَبِّحُوهُ بُكۡرَةٗ وَأَصِيلًا﴾. وهذه الآيةُ هي جوابُ ذلك الذكر.\n\nوالفعلُ نفسه يُستعمل بعد ثلاث عشرة آية للنبيّ ﷺ: ﴿إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ﴾. فما يفعله الله لنبيّه يفعله — بقدره — للمؤمنين. وغايتُه مذكورة: الإخراجُ من العتمة إلى الضياء، وهي الحركةُ التي تجعلها البقرةُ له وحده.\n\nوقال النبيّ ﷺ: «إِنَّ اللَّهَ وَمَلاَئِكَتَهُ وَأَهْلَ السَّمَوَاتِ وَالأَرْضِ حَتَّى النَّمْلَةَ فِي جُحْرِهَا وَحَتَّى الْحُوتَ لَيُصَلُّونَ عَلَى مُعَلِّمِ النَّاسِ الْخَيْرَ» (الترمذي ٢٦٨٥، وصحّحه الألباني).",
+        plain: "Allah and His angels send blessings upon the believers — the same verb used thirteen verses later for the Prophet ﷺ (33:56) — to bring them out of the darknesses into the light. It answers the command just before it: remember Allah much (33:41).",
+        plainAr: "صلاةُ الله والملائكة تشمل المؤمنين — بالفعل نفسه الذي يُستعمل بعد ثلاث عشرة آية للنبيّ ﷺ — ليُخرجوهم من العتمة إلى الضياء. وهو جوابُ الأمر الذي قبلها مباشرةً بكثرة الذكر.",
+        links: [
+          {
+            ref: "Surah Al-Ahzab (33:56)",
+            ar: "إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ صَلُّواْ عَلَيۡهِ وَسَلِّمُواْ تَسۡلِيمًا",
+            en: "Indeed, Allah confers blessing upon the Prophet, and His angels [ask Him to do so]. O you who have believed, ask [Allah to confer] blessing upon him and ask [Allah to grant him] peace.",
+            how: "Thirteen verses later the same verb is used for the Prophet ﷺ: Allah and His angels send blessings upon the Prophet.",
+            howAr: "وبعد ثلاث عشرة آية يُستعمل الفعلُ نفسه للنبيّ ﷺ: ﴿إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:257)",
+            ar: "ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ وَٱلَّذِينَ كَفَرُوٓاْ أَوۡلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخۡرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِۗ أُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
+            en: "Allah is the ally of those who believe. He brings them out from darknesses into the light. And those who disbelieve - their allies are Taghut. They take them out of the light into darknesses. Those are the companions of the Fire; they will abide eternally therein.",
+            how: "Al-Baqarah names the same movement as His alone: Allah is the ally of those who believe; He brings them out of the darknesses into the light.",
+            howAr: "البقرةُ تجعل الحركةَ نفسها له وحده: ﴿ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ﴾."
+          },
+          {
+            ref: "Surah Ghafir (40:7)",
+            ar: "ٱلَّذِينَ يَحۡمِلُونَ ٱلۡعَرۡشَ وَمَنۡ حَوۡلَهُۥ يُسَبِّحُونَ بِحَمۡدِ رَبِّهِمۡ وَيُؤۡمِنُونَ بِهِۦ وَيَسۡتَغۡفِرُونَ لِلَّذِينَ ءَامَنُواْۖ رَبَّنَا وَسِعۡتَ كُلَّ شَيۡءٖ رَّحۡمَةٗ وَعِلۡمٗا فَٱغۡفِرۡ لِلَّذِينَ تَابُواْ وَٱتَّبَعُواْ سَبِيلَكَ وَقِهِمۡ عَذَابَ ٱلۡجَحِيمِ",
+            en: "Those [angels] who carry the Throne and those around it exalt [Allah] with praise of their Lord and believe in Him and ask forgiveness for those who have believed, [saying], \"Our Lord, You have encompassed all things in mercy and knowledge, so forgive those who have repented and followed Your way and protect them from the punishment of Hellfire.",
+            how: "Ghafir shows the angels' part in their own words: those who carry the Throne ask forgiveness for those who believe.",
+            howAr: "غافرٌ تُريك نصيبَ الملائكة بكلماتهم: ﴿ٱلَّذِينَ يَحۡمِلُونَ ٱلۡعَرۡشَ وَمَنۡ حَوۡلَهُۥ يُسَبِّحُونَ بِحَمۡدِ رَبِّهِمۡ وَيُؤۡمِنُونَ بِهِۦ وَيَسۡتَغۡفِرُونَ لِلَّذِينَ ءَامَنُواْۖ﴾."
+          },
+          {
+            ref: "Surah Al-Ahzab (33:41-42)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱذۡكُرُواْ ٱللَّهَ ذِكۡرٗا كَثِيرٗا ۝ وَسَبِّحُوهُ بُكۡرَةٗ وَأَصِيلًا",
+            en: "O you who have believed, remember Allah with much remembrance And exalt Him morning and afternoon.",
+            how: "The two verses before give the remembrance this answers: remember Allah with much remembrance, and glorify Him morning and evening.",
+            howAr: "والآيتان قبلها تذكران الذكرَ الذي يجيبه هذا: ﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱذۡكُرُواْ ٱللَّهَ ذِكۡرٗا كَثِيرٗا﴾ ﴿وَسَبِّحُوهُ بُكۡرَةٗ وَأَصِيلًا﴾."
+          }
+        ],
+        ref: "Surah Al-Ahzab (33:43), read with 33:41-42, 33:56 and Al-Baqarah (2:257); blessings upon the teacher of good: Jami' at-Tirmidhi 2685, from Abu Umamah — authenticated by al-Albani",
+        refAr: "سورة الأحزاب، الآية ٤٣، مع الآيات ٤١–٤٢ و٥٦ وسورة البقرة ٢٥٧. والصلاةُ على معلّم الخير: جامع الترمذي ٢٦٨٥، عن أبي أمامة رضي الله عنه — وصحّحه الألباني",
         strength: "hadith"
       }
     ]
@@ -11504,6 +11640,40 @@ const TADABBUR = {
         ref: "Surah Ash-Shura (42:38), read with 42:37 and Al 'Imran (3:159)",
         refAr: "سورة الشورى، الآية ٣٨، مع الآية ٣٧ وسورة آل عمران ١٥٩",
         strength: "quran"
+      },
+      {
+        n: 37,
+        ar: "وَٱلَّذِينَ يَجۡتَنِبُونَ كَبَٰٓئِرَ ٱلۡإِثۡمِ وَٱلۡفَوَٰحِشَ وَإِذَا مَا غَضِبُواْ هُمۡ يَغۡفِرُونَ",
+        why: "And those who avoid the major sins and the indecencies — and when they are angry, they forgive. The verse is part of Ash-Shura's portrait of the believers, between reliance on their Lord (42:36) and consultation among themselves (42:38).\n\nLook at how the second half is built: wa idha ma ghadibu hum yaghfirun. The pronoun hum is set before the verb — it is they who forgive — and the forgiving is placed at the moment of anger, not after it has cooled. It is not a description of people who never get angry. It is a description of what they do with it.\n\nA man asked the Prophet ﷺ for advice, and he said: do not become angry — and when the man asked again and again, he said each time: do not become angry (al-Bukhari 6116). Al 'Imran gives the ladder of it: holding in the rage, pardoning people, and the doing of good that Allah loves (3:134).",
+        whyAr: "﴿وَٱلَّذِينَ يَجۡتَنِبُونَ كَبَٰٓئِرَ ٱلۡإِثۡمِ وَٱلۡفَوَٰحِشَ وَإِذَا مَا غَضِبُواْ هُمۡ يَغۡفِرُونَ﴾. والآيةُ جزءٌ من صورة المؤمنين في الشورى، بين التوكّل على ربّهم والتشاور بينهم.\n\nوانظر إلى بناء شطرها الثاني: ﴿وَإِذَا مَا غَضِبُواْ هُمۡ يَغۡفِرُونَ﴾. قُدّم الضميرُ على الفعل — هم الذين يغفرون — ووُضعت المغفرةُ في لحظة الغضب لا بعد أن يبرد. فليست صفةَ قومٍ لا يغضبون، بل صفةُ ما يفعلونه بغضبهم.\n\nوقال رجلٌ للنبيّ ﷺ: أوصني، قال: لا تغضب، فردّد مرارًا، قال: لا تغضب (البخاري ٦١١٦). وآلُ عمران تذكر سُلَّمه: ﴿وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ﴾.",
+        plain: "Not people who never get angry — people who forgive at the moment of anger. The pronoun is set first: it is they who forgive. And when a man kept asking the Prophet ﷺ for advice, he kept answering: do not become angry (al-Bukhari 6116).",
+        plainAr: "ليسوا قومًا لا يغضبون، بل قومًا يغفرون في لحظة الغضب، وقُدّم الضميرُ: هم الذين يغفرون. ولمّا ألحّ رجلٌ على النبيّ ﷺ في طلب الوصيّة ظلّ يقول له: لا تغضب (البخاري ٦١١٦).",
+        links: [
+          {
+            ref: "Surah Ali 'Imran (3:134)",
+            ar: "ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ",
+            en: "Who spend [in the cause of Allah] during ease and hardship and who restrain anger and who pardon the people - and Allah loves the doers of good;",
+            how: "Al 'Imran gives the ladder of it: those who hold in their rage, pardon people — and Allah loves those who do good.",
+            howAr: "آلُ عمران تذكر سُلَّمه: ﴿وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ﴾."
+          },
+          {
+            ref: "Surah Ash-Shuraa (42:38)",
+            ar: "وَٱلَّذِينَ ٱسۡتَجَابُواْ لِرَبِّهِمۡ وَأَقَامُواْ ٱلصَّلَوٰةَ وَأَمۡرُهُمۡ شُورَىٰ بَيۡنَهُمۡ وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ",
+            en: "And those who have responded to their lord and established prayer and whose affair is [determined by] consultation among themselves, and from what We have provided them, they spend.",
+            how: "The next verse completes the portrait: those who answer their Lord, establish prayer, consult among themselves, and spend.",
+            howAr: "والآيةُ التي تليها تتمّ الصورة: ﴿وَٱلَّذِينَ ٱسۡتَجَابُواْ لِرَبِّهِمۡ وَأَقَامُواْ ٱلصَّلَوٰةَ وَأَمۡرُهُمۡ شُورَىٰ بَيۡنَهُمۡ﴾."
+          },
+          {
+            ref: "Surah Ash-Shuraa (42:36)",
+            ar: "فَمَآ أُوتِيتُم مِّن شَيۡءٖ فَمَتَٰعُ ٱلۡحَيَوٰةِ ٱلدُّنۡيَاۚ وَمَا عِندَ ٱللَّهِ خَيۡرٞ وَأَبۡقَىٰ لِلَّذِينَ ءَامَنُواْ وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ",
+            en: "So whatever thing you have been given - it is but [for] enjoyment of the worldly life. But what is with Allah is better and more lasting for those who have believed and upon their Lord rely",
+            how: "The verse before begins the portrait: what is with Allah is better and more lasting, for those who believe and rely on their Lord.",
+            howAr: "والآيةُ التي قبلها تبدأ الصورة: ﴿وَمَا عِندَ ٱللَّهِ خَيۡرٞ وَأَبۡقَىٰ لِلَّذِينَ ءَامَنُواْ وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ﴾."
+          }
+        ],
+        ref: "Surah Ash-Shura (42:37), read with 42:36, 42:38 and Al 'Imran (3:134); 'do not become angry': Sahih al-Bukhari 6116, from Abu Hurayrah",
+        refAr: "سورة الشورى، الآية ٣٧، مع الآيتين ٣٦ و٣٨ وسورة آل عمران ١٣٤؛ ولا تغضب: صحيح البخاري ٦١١٦، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -12029,10 +12199,51 @@ const TADABBUR = {
             en: "If you do not aid the Prophet - Allah has already aided him when those who disbelieved had driven him out [of Makkah] as one of two, when they were in the cave and he said to his companion, \"Do not grieve; indeed Allah is with us.\" And Allah sent down his tranquillity upon him and supported him with angels you did not see and made the word of those who disbelieved the lowest, while the word of Allah - that is the highest. And Allah is Exalted in Might and Wise.",
             how: "Al-Fath says Allah sends tranquillity into the hearts of believers so that their faith grows; At-Tawbah shows it sent down in the cave, on a hunted man who said: do not grieve, Allah is with us.",
             howAr: "الفتحُ تقول إنّ الله ﴿أَنزَلَ ٱلسَّكِينَةَ فِي قُلُوبِ ٱلۡمُؤۡمِنِينَ﴾، والتوبةُ تُريكها تنزل في الغار، على رجلٍ مطارَد قال: ﴿لَا تَحۡزَنۡ إِنَّ ٱللَّهَ مَعَنَاۖ﴾، ﴿فَأَنزَلَ ٱللَّهُ سَكِينَتَهُۥ عَلَيۡهِ﴾."
+          },
+          {
+            ref: "Surah Al-Fath (48:18)",
+            ar: "۞ لَّقَدۡ رَضِيَ ٱللَّهُ عَنِ ٱلۡمُؤۡمِنِينَ إِذۡ يُبَايِعُونَكَ تَحۡتَ ٱلشَّجَرَةِ فَعَلِمَ مَا فِي قُلُوبِهِمۡ فَأَنزَلَ ٱلسَّكِينَةَ عَلَيۡهِمۡ وَأَثَٰبَهُمۡ فَتۡحٗا قَرِيبٗا",
+            en: "Certainly was Allah pleased with the believers when they pledged allegiance to you, [O Muhammad], under the tree, and He knew what was in their hearts, so He sent down tranquillity upon them and rewarded them with an imminent conquest",
+            how: "This verse names the tranquillity and its purpose; fourteen verses later the surah shows it sent down at the pledge under the tree, after He knew what was in their hearts.",
+            howAr: "هذه الآيةُ تذكر السكينةَ وغايتَها، وبعد أربع عشرة آيةً تُريها السورةُ تنزل عند بيعة الشجرة بعد أن علم سرائرَ القلوب: ﴿فَعَلِمَ مَا فِي قُلُوبِهِمۡ فَأَنزَلَ ٱلسَّكِينَةَ عَلَيۡهِمۡ﴾."
           }
         ],
         ref: "Surah Al-Fath (48:4)",
         strength: "quran"
+      },
+      {
+        n: 18,
+        ar: "۞ لَّقَدۡ رَضِيَ ٱللَّهُ عَنِ ٱلۡمُؤۡمِنِينَ إِذۡ يُبَايِعُونَكَ تَحۡتَ ٱلشَّجَرَةِ فَعَلِمَ مَا فِي قُلُوبِهِمۡ فَأَنزَلَ ٱلسَّكِينَةَ عَلَيۡهِمۡ وَأَثَٰبَهُمۡ فَتۡحٗا قَرِيبٗا",
+        why: "Allah was pleased with the believers when they pledged allegiance to you under the tree. It was at Hudaybiyah, when — the biographers say — word came that 'Uthman, sent to negotiate in Makkah, had been killed, and the Companions pledged to stand with the Prophet ﷺ. Jabir said they were fourteen hundred, and that the Prophet ﷺ told them that day: you are the best people on earth (al-Bukhari 4154).\n\nThe verse gives the order of what happened: He knew what was in their hearts — fa-'alima ma fi qulubihim — then He sent down tranquillity upon them, then He rewarded them with a near victory. The pledge was given with hands; what was accepted was what was in the hearts.\n\nThe Prophet ﷺ said that, Allah willing, none of those who pledged under the tree would enter the Fire (Muslim 2496). And At-Tawbah names the same pleasure, running both ways, for the first forerunners: Allah is pleased with them, and they are pleased with Him (9:100).",
+        whyAr: "﴿لَّقَدۡ رَضِيَ ٱللَّهُ عَنِ ٱلۡمُؤۡمِنِينَ إِذۡ يُبَايِعُونَكَ تَحۡتَ ٱلشَّجَرَةِ﴾. وكان ذلك في الحديبية، حين بلغهم — كما يذكر أهلُ السِّيَر — أنّ عثمان، وقد بُعث إلى مكّة يفاوض، قد قُتل، فبايع الصحابةُ النبيَّ ﷺ على الثبات معه. وقال جابرٌ إنهم كانوا ألفًا وأربعمئة، وإنّ النبيّ ﷺ قال لهم في ذلك اليوم: أنتم خيرُ أهل الأرض (البخاري ٤١٥٤).\n\nوالآيةُ تذكر ترتيبَ ما جرى: ﴿فَعَلِمَ مَا فِي قُلُوبِهِمۡ فَأَنزَلَ ٱلسَّكِينَةَ عَلَيۡهِمۡ وَأَثَٰبَهُمۡ فَتۡحٗا قَرِيبٗا﴾. فالبيعةُ أُعطيت بالأيدي، والذي قُبل هو ما في القلوب.\n\nوقال النبيّ ﷺ: «لاَ يَدْخُلُ النَّارَ إِنْ شَاءَ اللَّهُ مِنْ أَصْحَابِ الشَّجَرَةِ أَحَدٌ»، يعني الذين بايعوا تحتها (مسلم ٢٤٩٦). والتوبةُ تذكر الرضا نفسه من الجهتين للسابقين الأوّلين: ﴿رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُ﴾.",
+        plain: "The pledge under the tree was given with hands; what Allah accepted was what was in the hearts — He knew it, then sent down tranquillity, then a near victory. The Prophet ﷺ called the fourteen hundred the best people on earth (al-Bukhari 4154).",
+        plainAr: "بيعةُ الشجرة أُعطيت بالأيدي، والذي قبله الله سرائرُ القلوب: علمه، ثم أنزل السكينة، ثم فتحًا قريبًا. وسمّى النبيّ ﷺ الألفَ والأربعمئة خيرَ أهل الأرض (البخاري ٤١٥٤).",
+        links: [
+          {
+            ref: "Surah At-Tawbah (9:100)",
+            ar: "وَٱلسَّٰبِقُونَ ٱلۡأَوَّلُونَ مِنَ ٱلۡمُهَٰجِرِينَ وَٱلۡأَنصَارِ وَٱلَّذِينَ ٱتَّبَعُوهُم بِإِحۡسَٰنٖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُ وَأَعَدَّ لَهُمۡ جَنَّٰتٖ تَجۡرِي تَحۡتَهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۚ ذَٰلِكَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ",
+            en: "And the first forerunners [in the faith] among the Muhajireen and the Ansar and those who followed them with good conduct - Allah is pleased with them and they are pleased with Him, and He has prepared for them gardens beneath which rivers flow, wherein they will abide forever. That is the great attainment.",
+            how: "At-Tawbah names the same pleasure, running both ways, for the first forerunners — and the people of the tree are one of the answers to who they were.",
+            howAr: "التوبةُ تذكر الرضا نفسه من الجهتين للسابقين الأوّلين، وأهلُ الشجرة أحدُ الأقوال فيهم: ﴿رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُ﴾."
+          },
+          {
+            ref: "Surah Al-Fath (48:29)",
+            ar: "مُّحَمَّدٞ رَّسُولُ ٱللَّهِۚ وَٱلَّذِينَ مَعَهُۥٓ أَشِدَّآءُ عَلَى ٱلۡكُفَّارِ رُحَمَآءُ بَيۡنَهُمۡۖ تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا يَبۡتَغُونَ فَضۡلٗا مِّنَ ٱللَّهِ وَرِضۡوَٰنٗاۖ سِيمَاهُمۡ فِي وُجُوهِهِم مِّنۡ أَثَرِ ٱلسُّجُودِۚ ذَٰلِكَ مَثَلُهُمۡ فِي ٱلتَّوۡرَىٰةِۚ وَمَثَلُهُمۡ فِي ٱلۡإِنجِيلِ كَزَرۡعٍ أَخۡرَجَ شَطۡـَٔهُۥ فَـَٔازَرَهُۥ فَٱسۡتَغۡلَظَ فَٱسۡتَوَىٰ عَلَىٰ سُوقِهِۦ يُعۡجِبُ ٱلزُّرَّاعَ لِيَغِيظَ بِهِمُ ٱلۡكُفَّارَۗ وَعَدَ ٱللَّهُ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ مِنۡهُم مَّغۡفِرَةٗ وَأَجۡرًا عَظِيمَۢا",
+            en: "Muhammad is the Messenger of Allah; and those with him are forceful against the disbelievers, merciful among themselves. You see them bowing and prostrating [in prayer], seeking bounty from Allah and [His] pleasure. Their mark is on their faces from the trace of prostration. That is their description in the Torah. And their description in the Gospel is as a plant which produces its offshoots and strengthens them so they grow firm and stand upon their stalks, delighting the sowers - so that Allah may enrage by them the disbelievers. Allah has promised those who believe and do righteous deeds among them forgiveness and a great reward.",
+            how: "The surah closes by describing the same men: firm against the disbelievers, merciful among themselves — you see them bowing and prostrating.",
+            howAr: "وتُختم السورةُ بوصف الرجال أنفسهم: ﴿أَشِدَّآءُ عَلَى ٱلۡكُفَّارِ رُحَمَآءُ بَيۡنَهُمۡۖ تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا﴾."
+          },
+          {
+            ref: "Surah Al-Fath (48:4)",
+            ar: "هُوَ ٱلَّذِيٓ أَنزَلَ ٱلسَّكِينَةَ فِي قُلُوبِ ٱلۡمُؤۡمِنِينَ لِيَزۡدَادُوٓاْ إِيمَٰنٗا مَّعَ إِيمَٰنِهِمۡۗ وَلِلَّهِ جُنُودُ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۚ وَكَانَ ٱللَّهُ عَلِيمًا حَكِيمٗا",
+            en: "It is He who sent down tranquillity into the hearts of the believers that they would increase in faith along with their [present] faith. And to Allah belong the soldiers of the heavens and the earth, and ever is Allah Knowing and Wise.",
+            how: "Earlier in the surah the same gift is named and its purpose given: He sent down tranquillity into the hearts of the believers, that they might add faith to their faith.",
+            howAr: "وقبل ذلك في السورة يُذكر العطاءُ نفسه وغايتُه: ﴿هُوَ ٱلَّذِيٓ أَنزَلَ ٱلسَّكِينَةَ فِي قُلُوبِ ٱلۡمُؤۡمِنِينَ لِيَزۡدَادُوٓاْ إِيمَٰنٗا مَّعَ إِيمَٰنِهِمۡۗ﴾."
+          }
+        ],
+        ref: "Surah Al-Fath (48:18), read with 48:4, 48:29 and At-Tawbah (9:100); 'the best people on earth': Sahih al-Bukhari 4154, from Jabir; the people of the tree: Sahih Muslim 2496, from Umm Mubashshir",
+        refAr: "سورة الفتح، الآية ١٨، مع الآيتين ٤ و٢٩ وسورة التوبة ١٠٠. وخيرُ أهل الأرض: صحيح البخاري ٤١٥٤، عن جابر رضي الله عنه؛ وأصحابُ الشجرة: صحيح مسلم ٢٤٩٦، عن أمّ مبشّر رضي الله عنها",
+        strength: "hadith"
       }
     ]
   },
@@ -12409,6 +12620,40 @@ const TADABBUR = {
         ],
         ref: "Surah Adh-Dhariyat (51:21), read with 51:20, Ar-Rum (30:8) and Fussilat (41:53)",
         refAr: "سورة الذاريات، الآية ٢١، مع الآية ٢٠ وسورة الروم ٨ وسورة فصّلت ٥٣",
+        strength: "quran"
+      },
+      {
+        n: 20,
+        ar: "وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ",
+        why: "And on the earth are signs for those who are certain. The verse does not say the signs are for everyone who looks; it says they are for the muqinin — those who have certainty. Certainty is not only what the signs produce; it is also what lets a person see them as signs.\n\nThe earth is not described. No list follows — no mountains, rivers or crops. The verse leaves the earth to be looked at, and moves straight to the second place: and in yourselves — do you not see? (51:21).\n\nFussilat gives the same two places as a promise: We will show them Our signs in the horizons and within themselves, until it becomes clear to them that it is the truth (41:53). And Ar-Ra'd gives one of the earth's signs in full: neighbouring plots, one water, different fruit (13:4).",
+        whyAr: "﴿وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ﴾. والآيةُ لا تقول إنّ الآيات لكلّ من نظر، بل للموقنين. فاليقينُ ليس ما تُنتجه الآياتُ فقط، بل هو أيضًا ما يجعل المرءَ يراها آيات.\n\nولا تصف الآيةُ الأرض، ولا تتبعها قائمة — لا جبالٌ ولا أنهارٌ ولا زروع. تترك الأرضَ لمن ينظر، وتنتقل مباشرةً إلى الموضع الثاني: ﴿وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ﴾؟\n\nوفصّلتْ تذكر الموضعين نفسيهما وعدًا: ﴿سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ﴾. والرعدُ تذكر إحدى آيات الأرض كاملة: قطعٌ متجاورة، وماءٌ واحد، وثمرٌ مختلف.",
+        plain: "The signs in the earth are for those who are certain — certainty is not only what the signs produce, but what lets you see them as signs. The verse lists nothing; it leaves the earth to be looked at, and turns at once to the self (51:21).",
+        plainAr: "آياتُ الأرض للموقنين، فاليقينُ ليس ما تُنتجه الآياتُ فقط، بل يجعلك أيضًا تراها آيات. ولا تعدّ الآيةُ شيئًا، بل تترك الأرضَ لمن ينظر، وتنتقل في الحال إلى النفس.",
+        links: [
+          {
+            ref: "Surah Adh-Dhariyat (51:21)",
+            ar: "وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ",
+            en: "And in yourselves. Then will you not see?",
+            how: "The next verse turns at once to the second place, and lists nothing there either: and in yourselves — do you not see?",
+            howAr: "والآيةُ التي تليها تنتقل في الحال إلى الموضع الثاني، ولا تعدّ فيه شيئًا أيضًا: ﴿وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ﴾؟"
+          },
+          {
+            ref: "Surah Fussilat (41:53)",
+            ar: "سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ أَوَلَمۡ يَكۡفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَيۡءٖ شَهِيدٌ",
+            en: "We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth. But is it not sufficient concerning your Lord that He is, over all things, a Witness?",
+            how: "Fussilat gives the same two places as a promise: in the horizons and within themselves, until it becomes clear that it is the truth.",
+            howAr: "فصّلتْ تذكر الموضعين نفسيهما وعدًا: ﴿سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ﴾."
+          },
+          {
+            ref: "Surah Ar-Ra'd (13:4)",
+            ar: "وَفِي ٱلۡأَرۡضِ قِطَعٞ مُّتَجَٰوِرَٰتٞ وَجَنَّٰتٞ مِّنۡ أَعۡنَٰبٖ وَزَرۡعٞ وَنَخِيلٞ صِنۡوَانٞ وَغَيۡرُ صِنۡوَانٖ يُسۡقَىٰ بِمَآءٖ وَٰحِدٖ وَنُفَضِّلُ بَعۡضَهَا عَلَىٰ بَعۡضٖ فِي ٱلۡأُكُلِۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ",
+            en: "And within the land are neighboring plots and gardens of grapevines and crops and palm trees, [growing] several from a root or otherwise, watered with one water; but We make some of them exceed others in [quality of] fruit. Indeed in that are signs for a people who reason.",
+            how: "Ar-Ra'd gives one of the earth's signs in full: neighbouring plots watered with one water, and yet different in their fruit.",
+            howAr: "الرعدُ تذكر إحدى آيات الأرض كاملة: ﴿وَفِي ٱلۡأَرۡضِ قِطَعٞ مُّتَجَٰوِرَٰتٞ﴾ … ﴿يُسۡقَىٰ بِمَآءٖ وَٰحِدٖ وَنُفَضِّلُ بَعۡضَهَا عَلَىٰ بَعۡضٖ فِي ٱلۡأُكُلِۚ﴾."
+          }
+        ],
+        ref: "Surah Adh-Dhariyat (51:20), read with 51:21, Fussilat (41:53) and Ar-Ra'd (13:4)",
+        refAr: "سورة الذاريات، الآية ٢٠، مع الآية ٢١ وسورة فصّلت ٥٣ وسورة الرعد ٤",
         strength: "quran"
       }
     ]
@@ -12828,6 +13073,40 @@ const TADABBUR = {
           }
         ],
         ref: "Surah An-Nahl (16:125)",
+        strength: "quran"
+      },
+      {
+        n: 17,
+        ar: "أَفَمَن يَخۡلُقُ كَمَن لَّا يَخۡلُقُۚ أَفَلَا تَذَكَّرُونَ",
+        why: "Is the One who creates like one who does not create? Will you not remember? The verse comes after a long list — the cattle, the rain, the crops, the night and the day, the sun and moon, the sea and what is taken from it (16:5-16) — and then puts the whole argument into one question.\n\nIt is a question nobody answers aloud with yes. And it is put as a question rather than a statement so that the listener has to answer it himself. The verse ends a-fa-la tadhakkarun — will you not remember? — because the answer is not new information; it is something already known that has been forgotten.\n\nThe next verse says why the list could never be finished: if you counted the favour of Allah, you could not number it (16:18). As-Saffat gives Ibrahim's form of the same argument: Allah created you and what you make (37:96). And Al-Hajj tests it on the smallest creature: those you call on besides Allah will never create a fly (22:73).",
+        whyAr: "﴿أَفَمَن يَخۡلُقُ كَمَن لَّا يَخۡلُقُۚ أَفَلَا تَذَكَّرُونَ﴾؟ تأتي الآيةُ بعد قائمةٍ طويلة — الأنعام، والمطر، والزرع، والليل والنهار، والشمس والقمر، والبحر وما يُستخرج منه — ثم تضع الحجّةَ كلَّها في سؤالٍ واحد.\n\nوهو سؤالٌ لا يجيبه أحدٌ بصوتٍ عالٍ بنعم. وجاء سؤالًا لا خبرًا ليجيب السامعُ عنه بنفسه. وتُختم الآيةُ بالتذكّر لأنّ الجوابَ ليس علمًا جديدًا، بل شيءٌ معلومٌ نُسي.\n\nوالآيةُ التي تليها تذكر لماذا لا تنتهي القائمة: ﴿وَإِن تَعُدُّواْ نِعۡمَةَ ٱللَّهِ لَا تُحۡصُوهَآۗ﴾. والصافّاتُ تذكر صيغةَ إبراهيم للحجّة نفسها: ﴿وَٱللَّهُ خَلَقَكُمۡ وَمَا تَعۡمَلُونَ﴾. والحجُّ تختبرها على أصغر مخلوق: ﴿إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابٗا﴾.",
+        plain: "After a long list of what He created, the whole argument is put as one question: is the One who creates like one who does not? It is a question — not a statement — so that you answer it yourself, and it ends 'will you not remember?' because the answer is already known.",
+        plainAr: "بعد قائمةٍ طويلةٍ ممّا خلق، تُوضع الحجّةُ كلُّها في سؤال: أيستوي الخالقُ ومن لا يخلق؟ وجاء سؤالًا لتجيب عنه بنفسك، وخُتم بالتذكّر لأنّ الجواب معلومٌ من قبل.",
+        links: [
+          {
+            ref: "Surah As-Saffat (37:96)",
+            ar: "وَٱللَّهُ خَلَقَكُمۡ وَمَا تَعۡمَلُونَ",
+            en: "While Allah created you and that which you do?\"",
+            how: "As-Saffat gives Ibrahim's form of the same argument, spoken to people carving their own gods: Allah created you, and what you make.",
+            howAr: "الصافّاتُ تذكر صيغةَ إبراهيم للحجّة نفسها، يقولها لقومٍ ينحتون آلهتهم: ﴿وَٱللَّهُ خَلَقَكُمۡ وَمَا تَعۡمَلُونَ﴾."
+          },
+          {
+            ref: "Surah Al-Hajj (22:73)",
+            ar: "يَٰٓأَيُّهَا ٱلنَّاسُ ضُرِبَ مَثَلٞ فَٱسۡتَمِعُواْ لَهُۥٓۚ إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابٗا وَلَوِ ٱجۡتَمَعُواْ لَهُۥۖ وَإِن يَسۡلُبۡهُمُ ٱلذُّبَابُ شَيۡـٔٗا لَّا يَسۡتَنقِذُوهُ مِنۡهُۚ ضَعُفَ ٱلطَّالِبُ وَٱلۡمَطۡلُوبُ",
+            en: "O people, an example is presented, so listen to it. Indeed, those you invoke besides Allah will never create [as much as] a fly, even if they gathered together for that purpose. And if the fly should steal away from them a [tiny] thing, they could not recover it from him. Weak are the pursuer and pursued.",
+            how: "Al-Hajj tests the argument on the smallest creature: those you call on besides Allah will never create a fly, even if they all gathered for it.",
+            howAr: "الحجُّ تختبر الحجّةَ على أصغر مخلوق: ﴿إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابٗا وَلَوِ ٱجۡتَمَعُواْ لَهُۥۖ﴾."
+          },
+          {
+            ref: "Surah An-Nahl (16:18)",
+            ar: "وَإِن تَعُدُّواْ نِعۡمَةَ ٱللَّهِ لَا تُحۡصُوهَآۗ إِنَّ ٱللَّهَ لَغَفُورٞ رَّحِيمٞ",
+            en: "And if you should count the favors of Allah, you could not enumerate them. Indeed, Allah is Forgiving and Merciful.",
+            how: "The next verse says why the list before it could never be finished: if you counted the favour of Allah, you could not number it.",
+            howAr: "والآيةُ التي تليها تذكر لماذا لا تنتهي القائمةُ التي قبلها: ﴿وَإِن تَعُدُّواْ نِعۡمَةَ ٱللَّهِ لَا تُحۡصُوهَآۗ إِنَّ ٱللَّهَ لَغَفُورٞ رَّحِيمٞ﴾."
+          }
+        ],
+        ref: "Surah An-Nahl (16:17), read with 16:5-18, As-Saffat (37:96) and Al-Hajj (22:73)",
+        refAr: "سورة النحل، الآية ١٧، مع الآيات ٥–١٨ وسورة الصافّات ٩٦ وسورة الحجّ ٧٣",
         strength: "quran"
       }
     ]

@@ -8186,8 +8186,8 @@ main job. Measure progress by the home number "verses explained in depth".
 explained verses in 76–113 that still have none are listed by
 `python tools/tadabbur/nolinks.py`.
 
-**After it — sets of 8 new explained verses (459 → 531 entries after set 9;
-the home count 578 → 650, runs counted in full):**
+**After it — sets of 8 new explained verses (459 → 539 entries after set 10;
+the home count 578 → 658, runs counted in full):**
 
 1. 2:126, 2:285, 3:173, 8:46, 9:100, 12:86, 31:34, 47:38
 2. 2:183, 2:201, 3:134, 7:23, 20:114, 28:24, 49:10, 66:11
@@ -8198,6 +8198,7 @@ the home count 578 → 650, runs counted in full):**
 7. 2:197, 3:102, 9:119, 20:131, 39:42, 40:7, 42:38, 49:11
 8. 2:188, 2:214, 3:104, 3:169, 4:48, 5:27, 6:160, 7:31 (seven of them already pointed at)
 9. 2:124, 6:54, 6:125, 7:201, 8:63, 13:4, 20:46, 22:73 (all already pointed at)
+10. 2:37, 3:133, 6:1, 16:17, 33:43, 42:37, 48:18, 51:20 (the most pointed-at)
 
 Set 1 was chosen from verses that explained entries already pointed at
 (one-way); the rest are well-known verses with no explanation. Every hadith
@@ -8229,6 +8230,8 @@ was read at its number in the cached editions before it was cited.
   `nolinks.py`; `hq.py <book> <n> | find <words>` reads the cached hadith;
   `wv.py s:a` prints a verse's words with their positions.
 * **example_set.py** — set 7 as written, the format to copy.
+* **hexact.py `<book> <n> <bare start> <bare end>`** — the hadith's own
+  diacritised wording between two undotted phrases, for a «» quotation.
 
 Order for each set: write → `qscan` → `longsent` → `--dry` → run →
 check-counts.sh → runcuts against `git show HEAD:js/tadabbur.js` →
