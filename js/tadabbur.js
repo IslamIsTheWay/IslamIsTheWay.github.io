@@ -671,7 +671,14 @@ const TADABBUR = {
           en: "“And had your Lord willed, those on earth would have believed - all of them entirely. Then, [O Muhammad], would you compel the people in order that they become believers?”",
           how: "The same ruling reached by argument instead of by decree. Al-Baqarah states it: there is no compulsion in religion. Yunus demonstrates it — had your Lord willed, everyone on earth would have believed; would YOU then compel people? He could have and did not, so a man who sets out to force belief is not completing Allah's work.",
           howAr: "الحكمُ نفسه بُلغ بالحجّة لا بالنصّ. فالبقرةُ تُقرّره: ﴿لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ﴾. ويونسُ تُبرهنه: ﴿وَلَوۡ شَآءَ رَبُّكَ لَأٓمَنَ مَن فِي ٱلۡأَرۡضِ كُلُّهُمۡ جَمِيعًاۚ أَفَأَنتَ تُكۡرِهُ ٱلنَّاسَ﴾. فقد قدر ولم يفعل، فمن نهض ليُكره لم يكن مُتمّمًا لعمل الله."
-        }
+        },
+          {
+            ref: "Surah Al-Baqarah (2:257)",
+            ar: "ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ وَٱلَّذِينَ كَفَرُوٓاْ أَوۡلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخۡرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِۗ أُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
+            en: "Allah is the ally of those who believe. He brings them out from darknesses into the light. And those who disbelieve - their allies are Taghut. They take them out of the light into darknesses. Those are the companions of the Fire; they will abide eternally therein.",
+            how: "This verse says there is no compulsion in religion; the next names the two allies the choice is between: Allah, who brings out of the darknesses into the light, and the taghut, who lead the other way.",
+            howAr: "هذه الآيةُ تنفي الإكراه، والتي تليها تسمّي الوليَّين اللذين يكون الاختيارُ بينهما: ﴿ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ﴾."
+          }
         ],
         ref: "Surah Al-Baqarah (2:256)",
         strength: "quran"
@@ -2306,6 +2313,47 @@ const TADABBUR = {
         ref: "Surah Al-Baqarah (2:46), read with 2:45, Al-Haqqah (69:20) and Al-Mutaffifin (83:4)",
         refAr: "سورة البقرة، الآية ٤٦، مع الآية ٤٥ وسورة الحاقّة ٢٠ وسورة المطفّفين ٤",
         strength: "lugha"
+      },
+      {
+        n: 257,
+        ar: "ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ وَٱلَّذِينَ كَفَرُوٓاْ أَوۡلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخۡرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِۗ أُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
+        why: "Allah is the ally of those who believe: He brings them out of the darknesses into the light. And those who disbelieve — their allies are the taghut, who bring them out of the light into the darknesses.\n\nLook at the number of each word. Az-zulumat is plural; an-nur is singular. In the Quran darkness is never singular and light is never plural — Al-An'am opens with the same pair: He made the darknesses and the light (6:1). Error comes in a thousand forms; the truth is one road.\n\nAnd both sides 'bring out'. Neither the believer nor the disbeliever stays where he is: one ally leads from darkness to light, the other from light to darkness. The question the verse puts to you is not whether you will be led, but by whom. It comes straight after the verse that says there is no compulsion in religion (2:256) — the choice of ally is the choice that verse leaves you.",
+        whyAr: "﴿ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ﴾، ﴿وَٱلَّذِينَ كَفَرُوٓاْ أَوۡلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخۡرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِۗ﴾.\n\nوانظر إلى عدد كلّ لفظ: الظلماتُ جمع، والنورُ مفرد. والظلمةُ لا تأتي في القرآن مفردةً، والنورُ لا يأتي مجموعًا، والأنعامُ تُفتتح بالزوج نفسه: ﴿وَجَعَلَ ٱلظُّلُمَٰتِ وَٱلنُّورَۖ﴾. فالضلالُ ألفُ صورة، والحقُّ طريقٌ واحد.\n\nوكلا الفريقين يُخرَج: فلا المؤمنُ ولا الكافرُ يبقى حيث هو؛ وليٌّ يقود من الظلمة إلى الضياء، ووليٌّ يقود من الضياء إلى الظلمة. فالسؤالُ الذي تضعه الآيةُ أمامك ليس هل ستُقاد، بل من يقودك. وهي تأتي بعد الآية التي تقول: ﴿لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ﴾، فاختيارُ الوليّ هو الاختيارُ الذي تتركه لك تلك الآية.",
+        plain: "Darkness is plural in this verse and light is singular — as everywhere in the Quran: error has many forms, the truth one road. And both sides are led somewhere; the only question is by whom. It comes right after 'no compulsion in religion' (2:256).",
+        plainAr: "الظلماتُ في الآية جمعٌ والنورُ مفرد، كما في القرآن كلّه: للضلال صورٌ كثيرة، وللحقّ طريقٌ واحد. وكلا الفريقين يُقاد إلى مكانٍ ما، والسؤالُ الوحيد من يقوده. وتأتي الآيةُ بعد نفي الإكراه في الدين مباشرة.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:256)",
+            ar: "لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ قَد تَّبَيَّنَ ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ فَمَن يَكۡفُرۡ بِٱلطَّٰغُوتِ وَيُؤۡمِنۢ بِٱللَّهِ فَقَدِ ٱسۡتَمۡسَكَ بِٱلۡعُرۡوَةِ ٱلۡوُثۡقَىٰ لَا ٱنفِصَامَ لَهَاۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+            en: "There shall be no compulsion in [acceptance of] the religion. The right course has become clear from the wrong. So whoever disbelieves in Taghut and believes in Allah has grasped the most trustworthy handhold with no break in it. And Allah is Hearing and Knowing.",
+            how: "The verse before says there is no compulsion in religion; this one says what the choice is between: the ally who leads out of the darknesses, and the allies who lead into them.",
+            howAr: "الآيةُ التي قبلها تنفي الإكراهَ في الدين، وهذه تقول بين ماذا يكون الاختيار: وليٌّ يُخرج من الظلمات، وأولياءُ يُدخلون فيها: ﴿فَمَن يَكۡفُرۡ بِٱلطَّٰغُوتِ وَيُؤۡمِنۢ بِٱللَّهِ فَقَدِ ٱسۡتَمۡسَكَ بِٱلۡعُرۡوَةِ ٱلۡوُثۡقَىٰ﴾."
+          },
+          {
+            ref: "Surah Al-An'am (6:122)",
+            ar: "أَوَمَن كَانَ مَيۡتٗا فَأَحۡيَيۡنَٰهُ وَجَعَلۡنَا لَهُۥ نُورٗا يَمۡشِي بِهِۦ فِي ٱلنَّاسِ كَمَن مَّثَلُهُۥ فِي ٱلظُّلُمَٰتِ لَيۡسَ بِخَارِجٖ مِّنۡهَاۚ كَذَٰلِكَ زُيِّنَ لِلۡكَٰفِرِينَ مَا كَانُواْ يَعۡمَلُونَ",
+            en: "And is one who was dead and We gave him life and made for him light by which to walk among the people like one who is in darkness, never to emerge therefrom? Thus it has been made pleasing to the disbelievers that which they were doing.",
+            how: "Al-An'am gives a single person who was led out: one who was dead, and We gave him life and a light to walk by among people — and the other, in the darknesses, never coming out.",
+            howAr: "الأنعامُ تُريك رجلًا واحدًا أُخرج: ﴿أَوَمَن كَانَ مَيۡتٗا فَأَحۡيَيۡنَٰهُ وَجَعَلۡنَا لَهُۥ نُورٗا يَمۡشِي بِهِۦ فِي ٱلنَّاسِ كَمَن مَّثَلُهُۥ فِي ٱلظُّلُمَٰتِ لَيۡسَ بِخَارِجٖ مِّنۡهَاۚ﴾؟"
+          },
+          {
+            ref: "Surah Al-An'am (6:1)",
+            ar: "ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ وَجَعَلَ ٱلظُّلُمَٰتِ وَٱلنُّورَۖ ثُمَّ ٱلَّذِينَ كَفَرُواْ بِرَبِّهِمۡ يَعۡدِلُونَ",
+            en: "[All] praise is [due] to Allah, who created the heavens and the earth and made the darkness and the light. Then those who disbelieve equate [others] with their Lord.",
+            how: "Al-An'am opens with the same pair, in the same numbers: He made the darknesses — plural — and the light — singular.",
+            howAr: "الأنعامُ تُفتتح بالزوج نفسه وبالعدد نفسه: ﴿وَجَعَلَ ٱلظُّلُمَٰتِ وَٱلنُّورَۖ﴾."
+          },
+          {
+            ref: "Surah Al-Ahzab (33:43)",
+            ar: "هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ وَكَانَ بِٱلۡمُؤۡمِنِينَ رَحِيمٗا",
+            en: "It is He who confers blessing upon you, and His angels [ask Him to do so] that He may bring you out from darknesses into the light. And ever is He, to the believers, Merciful.",
+            how: "Al-Ahzab names the means: He it is who sends blessings upon you, and His angels, to bring you out of the darknesses into the light.",
+            howAr: "الأحزابُ تذكر الوسيلة: ﴿هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:257), read with 2:256 and Al-An'am (6:1)",
+        refAr: "سورة البقرة، الآية ٢٥٧، مع الآية ٢٥٦ وسورة الأنعام ١",
+        strength: "quran"
       }
     ]
   },
@@ -3331,6 +3379,40 @@ const TADABBUR = {
         ref: "Surah Al-Furqan (25:43), read with Al-Jathiyah (45:23)",
         refAr: "سورة الفرقان، الآية ٤٣، مع سورة الجاثية، الآية ٢٣",
         strength: "quran"
+      },
+      {
+        n: 70,
+        ar: "إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلٗا صَٰلِحٗا فَأُوْلَٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتٖۗ وَكَانَ ٱللَّهُ غَفُورٗا رَّحِيمٗا",
+        why: "The verses before list three of the gravest sins — calling on another god with Allah, killing a soul Allah has made sacred, and adultery — and the doubled punishment for whoever does them (25:68-69). Then: except whoever repents, believes and does righteous work. For those, Allah will change their bad deeds into good deeds.\n\nNot erase — change. The sins are not only forgiven; they are turned. Muslim records the Prophet ﷺ describing a man brought on the Day: his small sins are laid before him one by one, he cannot deny them, and he is afraid of the great ones still to come — and he is told, in place of every bad deed you have a good one. Then he says: my Lord, I did things I do not see here. And the Prophet ﷺ laughed until his teeth showed (Muslim 190).\n\nThe next verse adds that the repentance itself is a real return: whoever repents and does good has truly turned to Allah (25:71). And Az-Zumar keeps the door open to the furthest of them: do not despair of the mercy of Allah — Allah forgives all sins (39:53).",
+        whyAr: "الآياتُ التي قبلها تذكر ثلاثًا من أعظم الذنوب — دعاءَ إلهٍ آخر مع الله، وقتلَ النفس المحرّمة بغير حقّ، والزنا — ومضاعفةَ العذاب لمن فعلها. ثم: ﴿إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلٗا صَٰلِحٗا فَأُوْلَٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتٖۗ﴾.\n\nلا يمحوها فقط، بل يبدّلها. فالذنوبُ لا تُغفر وحسب، بل تُقلب. وروى مسلمٌ أنّ النبيّ ﷺ وصف رجلًا يُحضَر يومَ الحساب. تُعرض عليه صغارُ ذنوبه واحدًا واحدًا، فلا يستطيع أن ينكر، وهو خائفٌ من كبارها أن تُعرض. فيُقال له: إنّ لك مكانَ كلّ سيّئةٍ حسنة. فيقول: ربِّ، قد عملتُ أشياءَ لا أراها هنا. فضحك النبيّ ﷺ حتى بدت نواجذه (مسلم ١٩٠).\n\nوالآيةُ التي تليها تقول إنّ التوبة نفسها رجوعٌ حقيقيّ: ﴿وَمَن تَابَ وَعَمِلَ صَٰلِحٗا فَإِنَّهُۥ يَتُوبُ إِلَى ٱللَّهِ مَتَابٗا﴾. والزمرُ تُبقي البابَ مفتوحًا لأبعدهم: ﴿لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾.",
+        plain: "For the one who repents, believes and does good, the bad deeds are not just erased — they are changed into good ones. The Prophet ﷺ described a man told 'in place of every bad deed you have a good one', who then asked about the sins he could not see (Muslim 190).",
+        plainAr: "التائبُ المؤمنُ العاملُ للصالحات لا تُمحى سيّئاتُه فقط، بل تُبدَّل حسنات. ووصف النبيّ ﷺ رجلًا قيل له إنّ له مكانَ كلّ سيّئةٍ حسنة، فسأل عن ذنوبٍ لا يراها (مسلم ١٩٠).",
+        links: [
+          {
+            ref: "Surah Hud (11:114)",
+            ar: "وَأَقِمِ ٱلصَّلَوٰةَ طَرَفَيِ ٱلنَّهَارِ وَزُلَفٗا مِّنَ ٱلَّيۡلِۚ إِنَّ ٱلۡحَسَنَٰتِ يُذۡهِبۡنَ ٱلسَّيِّـَٔاتِۚ ذَٰلِكَ ذِكۡرَىٰ لِلذَّٰكِرِينَ",
+            en: "And establish prayer at the two ends of the day and at the approach of the night. Indeed, good deeds do away with misdeeds. That is a reminder for those who remember.",
+            how: "Hud gives the everyday form of the same mercy: good deeds remove bad deeds. Al-Furqan goes further — for the one who repents, they are turned into good ones.",
+            howAr: "هودٌ تذكر الصورةَ اليوميّة للرحمة نفسها: ﴿إِنَّ ٱلۡحَسَنَٰتِ يُذۡهِبۡنَ ٱلسَّيِّـَٔاتِۚ﴾، والفرقانُ تذهب أبعد: من تاب بُدّلت سيّئاتُه حسنات."
+          },
+          {
+            ref: "Surah Az-Zumar (39:53)",
+            ar: "۞ قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ",
+            en: "Say, \"O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.\"",
+            how: "Az-Zumar keeps the door open for those who went furthest: do not despair of the mercy of Allah — Allah forgives all sins.",
+            howAr: "الزمرُ تُبقي البابَ مفتوحًا لمن أبعد: ﴿لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾."
+          },
+          {
+            ref: "Surah Al-Furqan (25:71)",
+            ar: "وَمَن تَابَ وَعَمِلَ صَٰلِحٗا فَإِنَّهُۥ يَتُوبُ إِلَى ٱللَّهِ مَتَابٗا",
+            en: "And he who repents and does righteousness does indeed turn to Allah with [accepted] repentance.",
+            how: "The next verse: whoever repents and does good has truly turned to Allah — a real turning.",
+            howAr: "والآيةُ التي تليها: ﴿وَمَن تَابَ وَعَمِلَ صَٰلِحٗا فَإِنَّهُۥ يَتُوبُ إِلَى ٱللَّهِ مَتَابٗا﴾."
+          }
+        ],
+        ref: "Surah Al-Furqan (25:70), read with 25:68-71 and Az-Zumar (39:53); the man whose sins were changed: Sahih Muslim 190, from Abu Dharr",
+        refAr: "سورة الفرقان، الآية ٧٠، مع الآيات ٦٨–٧١ وسورة الزمر ٥٣؛ والرجلُ الذي بُدّلت سيّئاتُه: صحيح مسلم ١٩٠، عن أبي ذرّ رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -5447,6 +5529,40 @@ const TADABBUR = {
             howAr: "الجملةُ نفسُها ومعها المشهد: يُستغاث يوم القيامة بمن يحمل، فلا يُحمل شيء — وزاد القرآنُ ما يقطع الرجاء: ولو كان ذا قربى."
           }
         ]
+      },
+      {
+        n: 122,
+        ar: "أَوَمَن كَانَ مَيۡتٗا فَأَحۡيَيۡنَٰهُ وَجَعَلۡنَا لَهُۥ نُورٗا يَمۡشِي بِهِۦ فِي ٱلنَّاسِ كَمَن مَّثَلُهُۥ فِي ٱلظُّلُمَٰتِ لَيۡسَ بِخَارِجٖ مِّنۡهَاۚ كَذَٰلِكَ زُيِّنَ لِلۡكَٰفِرِينَ مَا كَانُواْ يَعۡمَلُونَ",
+        why: "Is one who was dead, and We gave him life, and made for him a light by which he walks among people, like one whose likeness is that of someone in the darknesses, never coming out of them?\n\nTwo things are given, and the second is what makes the first useful: life, and then a light to walk by. And the light is used among people — yamshi bihi fi an-nas. Faith in this verse is not a lamp kept in a room; it is what a person carries when he goes out and deals with others.\n\nAl-Anfal calls the call of Allah and His Messenger the thing that gives you life (8:24). This verse shows the one who answered it: once dead, now walking with a light. And the other figure is not described as dead but as in the darknesses — plural, and not coming out — the same picture Al-Baqarah draws of those whose allies lead them from the light into the darknesses (2:257).",
+        whyAr: "﴿أَوَمَن كَانَ مَيۡتٗا فَأَحۡيَيۡنَٰهُ وَجَعَلۡنَا لَهُۥ نُورٗا يَمۡشِي بِهِۦ فِي ٱلنَّاسِ كَمَن مَّثَلُهُۥ فِي ٱلظُّلُمَٰتِ لَيۡسَ بِخَارِجٖ مِّنۡهَاۚ﴾؟\n\nيُعطى أمرين، والثاني هو ما يجعل الأوّلَ نافعًا: الحياة، ثم نورٌ يهتدي به في طريقه. والنورُ يُستعمل بين الناس: ﴿يَمۡشِي بِهِۦ فِي ٱلنَّاسِ﴾. فالإيمانُ في هذه الآية ليس سراجًا يُحفظ في غرفة، بل ما يحمله المرءُ إذا خرج وعامل الناس.\n\nوالأنفالُ تجعل الاستجابةَ لله ورسوله هي ما يُحيي: ﴿ٱسۡتَجِيبُواْ لِلَّهِ وَلِلرَّسُولِ إِذَا دَعَاكُمۡ لِمَا يُحۡيِيكُمۡۖ﴾، وهذه الآيةُ تُريك من استجاب: كان ميتًا فصار يمشي بنور. والآخرُ لا يُوصف بالموت، بل بأنه في الظلمات، جمعًا، لا يخرج منها، وهي الصورةُ التي ترسمها البقرةُ لمن يقودهم أولياؤهم إلى العتمة بعد الضياء.",
+        plain: "Two gifts, and the second makes the first useful: life, then a light to walk by among people. Faith here is not a lamp kept in a room; it is what you carry when you go out and deal with others. The other man is still in the darknesses, not coming out.",
+        plainAr: "عطاءان، والثاني يجعل الأوّلَ نافعًا: الحياة، ثم نورٌ يهتدي به المرءُ بين الناس. فالإيمانُ هنا ليس سراجًا في غرفة، بل ما تحمله حين تخرج وتعامل الناس. والآخرُ ما زال في الظلمات لا يخرج منها.",
+        links: [
+          {
+            ref: "Surah Al-Anfal (8:24)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱسۡتَجِيبُواْ لِلَّهِ وَلِلرَّسُولِ إِذَا دَعَاكُمۡ لِمَا يُحۡيِيكُمۡۖ وَٱعۡلَمُوٓاْ أَنَّ ٱللَّهَ يَحُولُ بَيۡنَ ٱلۡمَرۡءِ وَقَلۡبِهِۦ وَأَنَّهُۥٓ إِلَيۡهِ تُحۡشَرُونَ",
+            en: "O you who have believed, respond to Allah and to the Messenger when he calls you to that which gives you life. And know that Allah intervenes between a man and his heart and that to Him you will be gathered.",
+            how: "Al-Anfal says the call of Allah and His Messenger is what gives you life; Al-An'am shows the one who answered: once dead, now walking with a light.",
+            howAr: "الأنفالُ تقول إنّ دعوة الله ورسوله هي ما يُحيي، والأنعامُ تُريك من استجاب: كان ميتًا فصار يمشي بنور: ﴿إِذَا دَعَاكُمۡ لِمَا يُحۡيِيكُمۡۖ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:257)",
+            ar: "ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ وَٱلَّذِينَ كَفَرُوٓاْ أَوۡلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخۡرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِۗ أُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلنَّارِۖ هُمۡ فِيهَا خَٰلِدُونَ",
+            en: "Allah is the ally of those who believe. He brings them out from darknesses into the light. And those who disbelieve - their allies are Taghut. They take them out of the light into darknesses. Those are the companions of the Fire; they will abide eternally therein.",
+            how: "Al-Baqarah gives the same two figures as two allies: the One who brings out of the darknesses into the light, and those who bring out of the light into the darknesses.",
+            howAr: "البقرةُ تذكر الصورتين نفسيهما وليَّين: ﴿ٱللَّهُ وَلِيُّ ٱلَّذِينَ ءَامَنُواْ يُخۡرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۖ﴾."
+          },
+          {
+            ref: "Surah An-Nur (24:40)",
+            ar: "أَوۡ كَظُلُمَٰتٖ فِي بَحۡرٖ لُّجِّيّٖ يَغۡشَىٰهُ مَوۡجٞ مِّن فَوۡقِهِۦ مَوۡجٞ مِّن فَوۡقِهِۦ سَحَابٞۚ ظُلُمَٰتُۢ بَعۡضُهَا فَوۡقَ بَعۡضٍ إِذَآ أَخۡرَجَ يَدَهُۥ لَمۡ يَكَدۡ يَرَىٰهَاۗ وَمَن لَّمۡ يَجۡعَلِ ٱللَّهُ لَهُۥ نُورٗا فَمَا لَهُۥ مِن نُّورٍ",
+            en: "Or [they are] like darknesses within an unfathomable sea which is covered by waves, upon which are waves, over which are clouds - darknesses, some of them upon others. When one puts out his hand [therein], he can hardly see it. And he to whom Allah has not granted light - for him there is no light.",
+            how: "An-Nur gives the darkness he is left in, layer upon layer, and the reason: whoever Allah has not given light has no light.",
+            howAr: "النورُ تصف الظلمةَ التي بقي فيها طبقةً فوق طبقة، وتذكر السبب: ﴿وَمَن لَّمۡ يَجۡعَلِ ٱللَّهُ لَهُۥ نُورٗا فَمَا لَهُۥ مِن نُّورٍ﴾."
+          }
+        ],
+        ref: "Surah Al-An'am (6:122), read with Al-Anfal (8:24) and Al-Baqarah (2:257)",
+        refAr: "سورة الأنعام، الآية ١٢٢، مع سورة الأنفال ٢٤ وسورة البقرة ٢٥٧",
+        strength: "quran"
       }
     ]
   },
@@ -6000,6 +6116,13 @@ const TADABBUR = {
             en: "And We will turn away their hearts and their eyes just as they refused to believe in it the first time. And We will leave them in their transgression, wandering blindly.",
             how: "Al-An'am shows the danger the verse warns of — putting the answer off: We turn their hearts and their eyes, as they did not believe in it the first time.",
             howAr: "الأنعامُ تُريك الخطرَ الذي تحذّر منه الآية، وهو تأجيلُ الاستجابة: ﴿وَنُقَلِّبُ أَفۡـِٔدَتَهُمۡ وَأَبۡصَٰرَهُمۡ كَمَا لَمۡ يُؤۡمِنُواْ بِهِۦٓ أَوَّلَ مَرَّةٖ﴾."
+          },
+          {
+            ref: "Surah Al-An'am (6:122)",
+            ar: "أَوَمَن كَانَ مَيۡتٗا فَأَحۡيَيۡنَٰهُ وَجَعَلۡنَا لَهُۥ نُورٗا يَمۡشِي بِهِۦ فِي ٱلنَّاسِ كَمَن مَّثَلُهُۥ فِي ٱلظُّلُمَٰتِ لَيۡسَ بِخَارِجٖ مِّنۡهَاۚ كَذَٰلِكَ زُيِّنَ لِلۡكَٰفِرِينَ مَا كَانُواْ يَعۡمَلُونَ",
+            en: "And is one who was dead and We gave him life and made for him light by which to walk among the people like one who is in darkness, never to emerge therefrom? Thus it has been made pleasing to the disbelievers that which they were doing.",
+            how: "Al-Anfal calls the answered call life; Al-An'am shows the one who answered it: once dead, now walking with a light among people.",
+            howAr: "الأنفالُ تسمّي الاستجابةَ حياة، والأنعامُ تُريك من استجاب: ﴿أَوَمَن كَانَ مَيۡتٗا فَأَحۡيَيۡنَٰهُ وَجَعَلۡنَا لَهُۥ نُورٗا يَمۡشِي بِهِۦ فِي ٱلنَّاسِ﴾؟"
           }
         ],
         ref: "Surah Al-Anfal (8:24)",
@@ -8197,6 +8320,40 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Mulk (67:2), read with Al-Kahf (18:110)",
         strength: "tafsir"
+      },
+      {
+        n: 14,
+        ar: "أَلَا يَعۡلَمُ مَنۡ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ",
+        why: "The verse before says: whether you keep your words secret or say them aloud — He knows what is in the breasts (67:13). Then the argument, in one line: does He not know, the One who created? And He is the Subtle, the Aware.\n\nThe argument is from making. A maker knows what he made; the One who made the breast knows what is in it. It is the reasoning a craftsman would accept about his own work — and the verse leaves the listener to apply it to himself.\n\nAnd the two names chosen answer the doubt exactly. Al-Latif — the One whose knowledge reaches the finest and most hidden things. Al-Khabir — the One who knows the inner reality of a thing, not only its surface. Qaf says the same from the other side: We know what his own self whispers to him, and We are nearer to him than his jugular vein (50:16).",
+        whyAr: "الآيةُ التي قبلها تقول: ﴿وَأَسِرُّواْ قَوۡلَكُمۡ أَوِ ٱجۡهَرُواْ بِهِۦٓۖ إِنَّهُۥ عَلِيمُۢ بِذَاتِ ٱلصُّدُورِ﴾. ثم الحجّة في سطرٍ واحد: ﴿أَلَا يَعۡلَمُ مَنۡ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ﴾.\n\nوالحجّةُ من الصنع: الصانعُ يعلم ما صنع، ومن خلق الصدرَ يعلم ما فيه. وهي حجّةٌ يقبلها كلُّ صانعٍ في صنعته، والآيةُ تترك للسامع أن يطبّقها على نفسه.\n\nوالاسمان المختاران يجيبان عن الشكّ تمامًا: ﴿ٱللَّطِيفُ﴾ الذي يبلغ علمُه أدقَّ الأشياء وأخفاها، و﴿ٱلۡخَبِيرُ﴾ الذي يعلم حقيقةَ الشيء لا ظاهرَه فقط. وسورةُ ق تقول ذلك من الجهة الأخرى: ﴿وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ﴾.",
+        plain: "Does He not know, the One who created? A maker knows what he made — the One who made the heart knows what is in it, said aloud or kept secret. And the names chosen fit the argument: the Subtle, whose knowledge reaches the hidden; the Aware, who knows the inside of things.",
+        plainAr: "ألا يعلم الخالقُ ما خلق؟ الصانعُ يعلم ما صنع، ومن خلق القلبَ يعلم ما فيه، جُهر به أو أُسرّ. والاسمان المختاران يوافقان الحجّة: اللطيفُ الذي يبلغ علمُه الخفيّ، والخبيرُ الذي يعلم بواطنَ الأشياء.",
+        links: [
+          {
+            ref: "Surah Qaf (50:16)",
+            ar: "وَلَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ",
+            en: "And We have already created man and know what his soul whispers to him, and We are closer to him than [his] jugular vein",
+            how: "Qaf says the same from the other side: We created man, and We know what his own self whispers to him — and We are nearer to him than his jugular vein.",
+            howAr: "سورةُ ق تقول ذلك من الجهة الأخرى: ﴿وَلَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ﴾."
+          },
+          {
+            ref: "Surah Ghafir (40:19)",
+            ar: "يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ",
+            en: "He knows that which deceives the eyes and what the breasts conceal.",
+            how: "Ghafir names two of the hidden things the Subtle knows: the treachery of the eyes, and what the breasts conceal.",
+            howAr: "غافرٌ تسمّي اثنين من الخفايا التي يعلمها اللطيف: ﴿يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ﴾."
+          },
+          {
+            ref: "Surah Al-Mulk (67:13)",
+            ar: "وَأَسِرُّواْ قَوۡلَكُمۡ أَوِ ٱجۡهَرُواْ بِهِۦٓۖ إِنَّهُۥ عَلِيمُۢ بِذَاتِ ٱلصُّدُورِ",
+            en: "And conceal your speech or publicize it; indeed, He is Knowing of that within the breasts.",
+            how: "The verse before gives the claim this one proves: whether you keep your words secret or say them aloud, He knows what is in the breasts.",
+            howAr: "والآيةُ التي قبلها فيها الدعوى التي تُبرهن عليها هذه: ﴿وَأَسِرُّواْ قَوۡلَكُمۡ أَوِ ٱجۡهَرُواْ بِهِۦٓۖ إِنَّهُۥ عَلِيمُۢ بِذَاتِ ٱلصُّدُورِ﴾."
+          }
+        ],
+        ref: "Surah Al-Mulk (67:14), read with 67:13 and Qaf (50:16)",
+        refAr: "سورة الملك، الآية ١٤، مع الآية ١٣ وسورة ق ١٦",
+        strength: "quran"
       }
     ]
   },
@@ -9724,6 +9881,40 @@ const TADABBUR = {
             howAr: "موسى يستعمل الكلمةَ نفسها في نفسه، ويجعلها دعاءً: ﴿رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ﴾."
           }
         ]
+      },
+      {
+        n: 45,
+        ar: "وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِمَا كَسَبُواْ مَا تَرَكَ عَلَىٰ ظَهۡرِهَا مِن دَآبَّةٖ وَلَٰكِن يُؤَخِّرُهُمۡ إِلَىٰٓ أَجَلٖ مُّسَمّٗىۖ فَإِذَا جَآءَ أَجَلُهُمۡ فَإِنَّ ٱللَّهَ كَانَ بِعِبَادِهِۦ بَصِيرَۢا",
+        why: "If Allah were to take people to task for what they earn, He would not leave a single creature on the face of the earth. Not a single person — a single dabbah, anything that moves upon it. The sentence measures how much is being held back at every moment.\n\nBut He defers them to a named term. The delay is not forgetfulness; it is a term with a name, ajal musamma. And when the term comes — Allah has always been seeing of His servants. The verse ends not on punishment but on sight: nothing is lost in the waiting.\n\nAn-Nahl says the same in almost the same words, naming the cause as their wrongdoing (16:61). Ash-Shura gives the other half: whatever strikes you is from what your hands earned, and He pardons much (42:30). And Ar-Rum gives the purpose of the part that does arrive: so that He lets them taste some of what they did, that perhaps they will return (30:41).",
+        whyAr: "﴿وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِمَا كَسَبُواْ مَا تَرَكَ عَلَىٰ ظَهۡرِهَا مِن دَآبَّةٖ﴾: لا إنسانًا واحدًا فقط، بل دابّةً، أيَّ شيءٍ يدبّ عليها. فالجملةُ تقيس كم يُمسَك عنهم في كلّ لحظة.\n\nثم: ﴿وَلَٰكِن يُؤَخِّرُهُمۡ إِلَىٰٓ أَجَلٖ مُّسَمّٗىۖ﴾. فالتأخيرُ ليس نسيانًا، بل أجلٌ له اسم. فإذا جاء الأجل: ﴿فَإِنَّ ٱللَّهَ كَانَ بِعِبَادِهِۦ بَصِيرَۢا﴾. فالآيةُ لا تُختم بالعذاب بل بالبصر: لا يضيع شيءٌ في الانتظار.\n\nوالنحلُ تقول ذلك بلفظٍ قريبٍ جدًّا، وتجعل السببَ ظلمَهم: ﴿وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلۡمِهِم مَّا تَرَكَ عَلَيۡهَا مِن دَآبَّةٖ﴾. والشورى تذكر الشطرَ الآخر: ﴿وَمَآ أَصَٰبَكُم مِّن مُّصِيبَةٖ فَبِمَا كَسَبَتۡ أَيۡدِيكُمۡ وَيَعۡفُواْ عَن كَثِيرٖ﴾. والرومُ تذكر غايةَ ما يصل: ﴿لِيُذِيقَهُم بَعۡضَ ٱلَّذِي عَمِلُواْ لَعَلَّهُمۡ يَرۡجِعُونَ﴾.",
+        plain: "A full accounting would leave not one creature on the earth. What we see instead is a delay to a named term — and the verse ends not on punishment but on sight: Allah has always been seeing of His servants. Nothing is lost in the waiting.",
+        plainAr: "لو حوسب الناسُ على كلّ ما كسبوا لما بقيت على الأرض دابّة. والذي نراه بدلًا من ذلك تأخيرٌ إلى أجلٍ له اسم، والآيةُ لا تُختم بالعذاب بل بأنّ الله بصيرٌ بعباده، فلا يضيع شيءٌ في الانتظار.",
+        links: [
+          {
+            ref: "Surah Ash-Shuraa (42:30)",
+            ar: "وَمَآ أَصَٰبَكُم مِّن مُّصِيبَةٖ فَبِمَا كَسَبَتۡ أَيۡدِيكُمۡ وَيَعۡفُواْ عَن كَثِيرٖ",
+            en: "And whatever strikes you of disaster - it is for what your hands have earned; but He pardons much.",
+            how: "Fatir says a full accounting would leave nothing; Ash-Shura gives what does happen: whatever strikes you is from what your hands earned — and He pardons much.",
+            howAr: "فاطرٌ تقول إنّ الحساب التامّ لا يُبقي شيئًا، والشورى تذكر ما يقع فعلًا: ﴿فَبِمَا كَسَبَتۡ أَيۡدِيكُمۡ وَيَعۡفُواْ عَن كَثِيرٖ﴾."
+          },
+          {
+            ref: "Surah Ar-Rum (30:41)",
+            ar: "ظَهَرَ ٱلۡفَسَادُ فِي ٱلۡبَرِّ وَٱلۡبَحۡرِ بِمَا كَسَبَتۡ أَيۡدِي ٱلنَّاسِ لِيُذِيقَهُم بَعۡضَ ٱلَّذِي عَمِلُواْ لَعَلَّهُمۡ يَرۡجِعُونَ",
+            en: "Corruption has appeared throughout the land and sea by [reason of] what the hands of people have earned so He may let them taste part of [the consequence of] what they have done that perhaps they will return [to righteousness].",
+            how: "Ar-Rum gives the purpose of the part that is not held back: so that they taste some of what they did — that perhaps they will return.",
+            howAr: "الرومُ تذكر غايةَ ما لا يُمسَك: ﴿لِيُذِيقَهُم بَعۡضَ ٱلَّذِي عَمِلُواْ لَعَلَّهُمۡ يَرۡجِعُونَ﴾."
+          },
+          {
+            ref: "Surah An-Nahl (16:61)",
+            ar: "وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلۡمِهِم مَّا تَرَكَ عَلَيۡهَا مِن دَآبَّةٖ وَلَٰكِن يُؤَخِّرُهُمۡ إِلَىٰٓ أَجَلٖ مُّسَمّٗىۖ فَإِذَا جَآءَ أَجَلُهُمۡ لَا يَسۡتَـٔۡخِرُونَ سَاعَةٗ وَلَا يَسۡتَقۡدِمُونَ",
+            en: "And if Allah were to impose blame on the people for their wrongdoing, He would not have left upon the earth any creature, but He defers them for a specified term. And when their term has come, they will not remain behind an hour, nor will they precede [it].",
+            how: "An-Nahl says the same in almost the same words, and names the cause as their wrongdoing: if Allah were to take people to task for their wrongdoing, He would not leave a creature upon it.",
+            howAr: "النحلُ تقول ذلك بلفظٍ قريبٍ جدًّا، وتجعل السببَ الظلم: ﴿وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلۡمِهِم مَّا تَرَكَ عَلَيۡهَا مِن دَآبَّةٖ﴾."
+          }
+        ],
+        ref: "Surah Fatir (35:45), read with An-Nahl (16:61), Ash-Shura (42:30) and Ar-Rum (30:41)",
+        refAr: "سورة فاطر، الآية ٤٥، مع سورة النحل ٦١ وسورة الشورى ٣٠ وسورة الروم ٤١",
+        strength: "quran"
       }
     ]
   },
@@ -10051,6 +10242,13 @@ const TADABBUR = {
             en: "O you who have believed, repent to Allah with sincere repentance. Perhaps your Lord will remove from you your misdeeds and admit you into gardens beneath which rivers flow [on] the Day when Allah will not disgrace the Prophet and those who believed with him. Their light will proceed before them and on their right; they will say, \"Our Lord, perfect for us our light and forgive us. Indeed, You are over all things competent.\"",
             how: "Az-Zumar opens the door for those who wronged themselves; At-Tahrim says how to walk through it: a sincere repentance — nasuh, from the word for honest, pure advice.",
             howAr: "الزمرُ تفتح البابَ لمن ظلم نفسه، والتحريمُ تقول كيف يُدخل منه: ﴿تَوۡبَةٗ نَّصُوحًا﴾ — من النُّصح، أي الصدق الخالص."
+          },
+          {
+            ref: "Surah Al-Furqan (25:70)",
+            ar: "إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلٗا صَٰلِحٗا فَأُوْلَٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتٖۗ وَكَانَ ٱللَّهُ غَفُورٗا رَّحِيمٗا",
+            en: "Except for those who repent, believe and do righteous work. For them Allah will replace their evil deeds with good. And ever is Allah Forgiving and Merciful.",
+            how: "Az-Zumar says all sins are forgiven; Al-Furqan says what happens to them for the one who repents and does good: Allah changes their bad deeds into good deeds.",
+            howAr: "الزمرُ تقول إنّ الذنوب كلَّها تُغفر، والفرقانُ تقول ماذا يحدث لها عند التائب العامل للصالحات: ﴿فَأُوْلَٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتٖۗ﴾."
           }
         ],
         ref: "Surah Az-Zumar (39:53), read with 39:54",
@@ -10205,6 +10403,13 @@ const TADABBUR = {
             en: "And We have already created man and know what his soul whispers to him, and We are closer to him than [his] jugular vein",
             how: "Surah Qaf says He knows what a person's own self whispers to him — and is nearer to him than his jugular vein.",
             howAr: "سورةُ ق تقول إنه يعلم حديثَ النفس: ﴿وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ﴾."
+          },
+          {
+            ref: "Surah Al-Mulk (67:14)",
+            ar: "أَلَا يَعۡلَمُ مَنۡ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ",
+            en: "Does He who created not know, while He is the Subtle, the Acquainted?",
+            how: "Ghafir says He knows the hidden glance and what the breasts conceal; Al-Mulk gives the argument behind it: does He not know, the One who created?",
+            howAr: "غافرٌ تقول إنه يعلم النظرةَ الخفيّة وسرَّ الصدور، والملكُ تذكر الحجّةَ التي وراء ذلك: ﴿أَلَا يَعۡلَمُ مَنۡ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ﴾؟"
           }
         ],
         ref: "Surah Ghafir (40:19)",
@@ -10352,6 +10557,33 @@ const TADABBUR = {
         ref: "Surah Fussilat (41:30), read with Al-Ahqaf (46:13)",
         refAr: "سورة فصّلت، الآية ٣٠، مع سورة الأحقاف، الآية ١٣",
         strength: "quran"
+      },
+      {
+        n: 53,
+        ar: "سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ أَوَلَمۡ يَكۡفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَيۡءٖ شَهِيدٌ",
+        why: "We will show them Our signs in the horizons and within themselves, until it becomes clear to them that it is the truth. Two directions, and both are promised: outward — fi al-afaq, the far edges of the world — and inward — fi anfusihim, in their own selves. And the verb is sanurihim, We will show them: a promise that keeps running.\n\nThe early commentators read it of the lands that would open to the message and of what would happen to its opponents themselves; the words are wider than any single reading. The goal is stated either way: until it becomes clear to them that it is the truth. The signs are not decoration; they point. Adh-Dhariyat gives the same two directions as a question: in the earth are signs for those who are certain — and in yourselves; do you not see? (51:20-21).\n\nThen the verse ends on what should already be enough: is it not sufficient that your Lord is a witness over all things? The signs are for us. He does not need them to be true.",
+        whyAr: "﴿سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ﴾: جهتان، وكلتاهما موعودة: إلى الخارج في الآفاق، وإلى الداخل في الأنفس. والفعلُ سنُريهم، وعدٌ لا ينقطع.\n\nوحمله المفسّرون الأوائل على البلاد التي ستُفتح للدعوة، وعلى ما سيحلّ بخصومها أنفسهم، وألفاظُه أوسعُ من أيّ قولٍ واحد. والغايةُ مذكورةٌ على كلّ حال: ﴿حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ﴾، فالآياتُ ليست زينةً بل دلالة. والذارياتُ تذكر الجهتين نفسيهما سؤالًا: ﴿وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ﴾ ﴿وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ﴾؟\n\nثم تُختم الآيةُ بما ينبغي أن يكفي من قبل: ﴿أَوَلَمۡ يَكۡفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَيۡءٖ شَهِيدٌ﴾؟ فالآياتُ لنا، وهو لا يحتاج إليها ليكون الحقُّ حقًّا.",
+        plain: "Signs are promised in two directions — out in the horizons, and in your own self — until it is clear that this is the truth. The verb is 'We will show them': a promise that keeps running. And the verse ends on what should already be enough: your Lord is witness over all things.",
+        plainAr: "الآياتُ موعودةٌ في جهتين: في الآفاق، وفي نفسك، حتى يتبيّن أنه الحقّ. والفعلُ سنُريهم، وعدٌ لا ينقطع. وتُختم الآيةُ بما ينبغي أن يكفي من قبل: أنّ ربَّك يشهد كلَّ شيء.",
+        links: [
+          {
+            ref: "Surah Adh-Dhariyat (51:21)",
+            ar: "وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ",
+            en: "And in yourselves. Then will you not see?",
+            how: "Adh-Dhariyat gives the inward direction as a question with no list attached: and in yourselves — do you not see?",
+            howAr: "الذارياتُ تذكر الجهةَ الداخليّة سؤالًا بلا قائمة: ﴿وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ﴾؟"
+          },
+          {
+            ref: "Surah Adh-Dhariyat (51:20)",
+            ar: "وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ",
+            en: "And on the earth are signs for the certain [in faith]",
+            how: "And the outward direction just before it: in the earth are signs for those who are certain.",
+            howAr: "والجهةُ الخارجيّة قبلها مباشرة: ﴿وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ﴾."
+          }
+        ],
+        ref: "Surah Fussilat (41:53), read with Adh-Dhariyat (51:20-21); the early reading: Tafsir at-Tabari on 41:53",
+        refAr: "سورة فصّلت، الآية ٥٣، مع سورة الذاريات ٢٠–٢١؛ وقولُ المفسّرين الأوائل: تفسير الطبري عند الآية",
+        strength: "tafsir"
       }
     ]
   },
@@ -11150,6 +11382,13 @@ const TADABBUR = {
             en: "He knows that which deceives the eyes and what the breasts conceal.",
             how: "Surah Qaf says He knows what the self whispers; Ghafir adds the other thing no one else can see: the stolen glance.",
             howAr: "سورةُ ق تقول إنه يعلم وسوسةَ النفس، وغافرٌ تضيف ما لا يراه أحدٌ غيره: ﴿يَعۡلَمُ خَآئِنَةَ ٱلۡأَعۡيُنِ وَمَا تُخۡفِي ٱلصُّدُورُ﴾."
+          },
+          {
+            ref: "Surah Al-Mulk (67:14)",
+            ar: "أَلَا يَعۡلَمُ مَنۡ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ",
+            en: "Does He who created not know, while He is the Subtle, the Acquainted?",
+            how: "Qaf says He knows what the self whispers; Al-Mulk gives the reason in one line: does He not know, the One who created?",
+            howAr: "سورةُ ق تقول إنه يعلم وسوسةَ النفس، والملكُ تذكر السببَ في سطر: ﴿أَلَا يَعۡلَمُ مَنۡ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلۡخَبِيرُ﴾؟"
           }
         ],
         ref: "Surah Qaf (50:16), read with 50:17-18",
@@ -11279,6 +11518,40 @@ const TADABBUR = {
             howAr: "الذارياتُ تقول: ﴿وَفِي ٱلسَّمَآءِ رِزۡقُكُمۡ﴾ — لا حيث تبحث، والطلاقُ تقول إنه يصل المتّقي ﴿مِنۡ حَيۡثُ لَا يَحۡتَسِبُۚ﴾."
           }
         ]
+      },
+      {
+        n: 21,
+        ar: "وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ",
+        why: "Wa fi anfusikum, a-fa-la tubsirun — and in yourselves; do you not see? Two short phrases, after a verse about the earth: in the earth are signs for those who are certain (51:20). Then the verse turns inward, and it does not list the signs at all. It only asks why you are not looking.\n\nThe self is the one piece of evidence a person cannot leave behind. A man can avoid looking at the sky and never travel; he cannot get away from his own breath, his own sight, his own thought. The verse treats it as the nearest proof there is — and that is exactly why it is the most overlooked.\n\nAr-Rum asks the same: do they not reflect within themselves? (30:8). And Fussilat promises that the signs will keep coming in both places, the horizons and the self, until it becomes clear that it is the truth (41:53).",
+        whyAr: "﴿وَفِيٓ أَنفُسِكُمۡۚ أَفَلَا تُبۡصِرُونَ﴾: عبارتان قصيرتان بعد آيةٍ عن الأرض: ﴿وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ﴾. ثم تلتفت الآيةُ إلى الداخل، ولا تعدّ الآياتِ أصلًا، بل تسأل فقط: لماذا لا تنظر؟\n\nوالنفسُ هي الدليلُ الوحيد الذي لا يستطيع المرءُ أن يتركه وراءه. قد يتجنّب أن ينظر إلى السماء، وقد لا يسافر أبدًا، لكنه لا يفرّ من أنفاسه وبصره وفكره. والآيةُ تجعلها أقربَ دليلٍ موجود، ولهذا بالذات كانت أكثرَ ما يُغفَل عنه.\n\nوالرومُ تسأل السؤالَ نفسه: ﴿أَوَلَمۡ يَتَفَكَّرُواْ فِيٓ أَنفُسِهِمۗ﴾؟ وفصّلتْ تَعِد بأنّ الآيات ستتوالى في الموضعين، الآفاقِ والأنفس، ﴿حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ﴾.",
+        plain: "After the signs in the earth, the verse turns inward and lists nothing — it just asks: and in yourselves, do you not see? The self is the one piece of evidence you can never leave behind, which is exactly why it is the most overlooked.",
+        plainAr: "بعد آيات الأرض تلتفت الآيةُ إلى الداخل ولا تعدّ شيئًا، بل تسأل فقط: وفي أنفسكم، أفلا تبصرون؟ فالنفسُ هي الدليلُ الذي لا تتركه وراءك أبدًا، ولهذا كانت أكثرَ ما يُغفَل عنه.",
+        links: [
+          {
+            ref: "Surah Fussilat (41:53)",
+            ar: "سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ أَوَلَمۡ يَكۡفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَيۡءٖ شَهِيدٌ",
+            en: "We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth. But is it not sufficient concerning your Lord that He is, over all things, a Witness?",
+            how: "Fussilat promises the signs in both places — the horizons and the self — until it becomes clear that it is the truth.",
+            howAr: "فصّلتْ تَعِد بالآيات في الموضعين — الآفاقِ والأنفس — ﴿حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ﴾."
+          },
+          {
+            ref: "Surah Ar-Rum (30:8)",
+            ar: "أَوَلَمۡ يَتَفَكَّرُواْ فِيٓ أَنفُسِهِمۗ مَّا خَلَقَ ٱللَّهُ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ وَمَا بَيۡنَهُمَآ إِلَّا بِٱلۡحَقِّ وَأَجَلٖ مُّسَمّٗىۗ وَإِنَّ كَثِيرٗا مِّنَ ٱلنَّاسِ بِلِقَآيِٕ رَبِّهِمۡ لَكَٰفِرُونَ",
+            en: "Do they not contemplate within themselves? Allah has not created the heavens and the earth and what is between them except in truth and for a specified term. And indeed, many of the people, in [the matter of] the meeting with their Lord, are disbelievers.",
+            how: "Ar-Rum asks the same question in other words: do they not reflect within themselves?",
+            howAr: "الرومُ تسأل السؤالَ نفسه بلفظٍ آخر: ﴿أَوَلَمۡ يَتَفَكَّرُواْ فِيٓ أَنفُسِهِمۗ مَّا خَلَقَ ٱللَّهُ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ وَمَا بَيۡنَهُمَآ إِلَّا بِٱلۡحَقِّ﴾؟"
+          },
+          {
+            ref: "Surah Adh-Dhariyat (51:20)",
+            ar: "وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ",
+            en: "And on the earth are signs for the certain [in faith]",
+            how: "The verse before gives the outward half: in the earth are signs for those who are certain.",
+            howAr: "والآيةُ التي قبلها تذكر النصفَ الخارجيّ: ﴿وَفِي ٱلۡأَرۡضِ ءَايَٰتٞ لِّلۡمُوقِنِينَ﴾."
+          }
+        ],
+        ref: "Surah Adh-Dhariyat (51:21), read with 51:20, Ar-Rum (30:8) and Fussilat (41:53)",
+        refAr: "سورة الذاريات، الآية ٢١، مع الآية ٢٠ وسورة الروم ٨ وسورة فصّلت ٥٣",
+        strength: "quran"
       }
     ]
   },
@@ -14028,10 +14301,51 @@ const TADABBUR = {
             en: "Recite in the name of your Lord who created -",
             how: "The surah that began with 'read, in the name of your Lord' ends with 'prostrate and draw near'. Reading leads to prostration.",
             howAr: "السورةُ التي بدأت بـ﴿ٱقۡرَأۡ بِٱسۡمِ رَبِّكَ﴾ تنتهي بـ﴿وَٱسۡجُدۡۤ وَٱقۡتَرِب۩﴾. فالقراءةُ تقود إلى السجود."
+          },
+          {
+            ref: "Surah Al-Alaq (96:14)",
+            ar: "أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ",
+            en: "Does he not know that Allah sees?",
+            how: "The surah ends with the servant told to prostrate and draw near; five verses earlier it gave the fact that makes it possible: does he not know that Allah sees?",
+            howAr: "تُختم السورةُ بأمر العبد بالسجود والاقتراب، وقبلها بخمس آيات ذكرت الحقيقةَ التي تجعل ذلك ممكنًا: ﴿أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ﴾؟"
           }
         ],
         ref: "Surah Al-'Alaq (96:19)",
         strength: "quran"
+      },
+      {
+        n: 14,
+        ar: "أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ",
+        why: "The surah has been describing a man: have you seen the one who forbids a servant when he prays? (96:9-10). Muslim records who it was: Abu Jahl swore by al-Lat and al-'Uzza that if he saw Muhammad ﷺ prostrating he would tread on his neck; he came while the Prophet ﷺ was praying, then turned back on his heels, shielding himself with his hands, and said there was a trench of fire between them — and the report connects these verses to it (Muslim 2797).\n\nThe surah answers him with a single question: does he not know that Allah sees? Not a threat first, not an argument — a question about what he knows. Everything he did depended on not believing he was seen.\n\nIt is the question the whole surah turns on. It began with the command to read in the name of your Lord (96:1), and it ends with the servant told: do not obey him — prostrate, and draw near (96:19). Between the two stands one fact that changes what a person does: Allah sees.",
+        whyAr: "تصف السورةُ رجلًا: ﴿أَرَءَيۡتَ ٱلَّذِي يَنۡهَىٰ﴾ ﴿عَبۡدًا إِذَا صَلَّىٰٓ﴾. وروى مسلمٌ من هو. حلف أبو جهل باللات والعزّى لئن رأى محمّدًا ﷺ ساجدًا ليطأنّ عنقه. فجاءه وهو يصلّي، ثم رجع إلى الوراء يتّقي بيديه، وقال إنّ دونه خندقًا من نار، والروايةُ تربط هذه الآياتِ بذلك (مسلم ٢٧٩٧).\n\nوالسورةُ تجيبه بسؤالٍ واحد: ﴿أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ﴾؟ لا تهديدٌ أوّلًا ولا جدال، بل سؤالٌ عمّا يعلمه. فكلُّ ما فعله كان قائمًا على أنه لا يصدّق أنه يُرى.\n\nوهو السؤالُ الذي تدور عليه السورةُ كلُّها: بدأت بالأمر بالقراءة باسم ربّك، وتُختم بالعبد يُقال له: ﴿كـَلَّا لَا تُطِعۡهُ وَٱسۡجُدۡۤ وَٱقۡتَرِب۩﴾. وبين البداية والنهاية حقيقةٌ واحدة تغيّر ما يفعله الإنسان: أنّ الله يرى.",
+        plain: "Abu Jahl swore he would tread on the Prophet's ﷺ neck if he saw him prostrate, then turned back in terror (Muslim 2797). The surah answers him with one question — does he not know that Allah sees? — and ends by telling the servant: prostrate, and draw near.",
+        plainAr: "حلف أبو جهل ليطأنّ عنقَ النبيّ ﷺ إن رآه ساجدًا، ثم نكص مذعورًا (مسلم ٢٧٩٧). والسورةُ تجيبه بسؤالٍ واحد: ﴿أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ﴾؟ ثم تُختم بأمر العبد بالسجود والاقتراب.",
+        links: [
+          {
+            ref: "Surah Al-Alaq (96:19)",
+            ar: "كـَلَّا لَا تُطِعۡهُ وَٱسۡجُدۡۤ وَٱقۡتَرِب۩",
+            en: "No! Do not obey him. But prostrate and draw near [to Allah].",
+            how: "The surah's last verse is the servant's answer to the man who tried to stop him: do not obey him — prostrate, and draw near.",
+            howAr: "آخرُ آيةٍ في السورة جوابُ العبد على من حاول منعه: ﴿كـَلَّا لَا تُطِعۡهُ وَٱسۡجُدۡۤ وَٱقۡتَرِب۩﴾."
+          },
+          {
+            ref: "Surah Al-Alaq (96:9-10)",
+            ar: "أَرَءَيۡتَ ٱلَّذِي يَنۡهَىٰ ۝ عَبۡدًا إِذَا صَلَّىٰٓ",
+            en: "Have you seen the one who forbids A servant when he prays?",
+            how: "The verses before describe the man the question is put to: have you seen the one who forbids a servant when he prays?",
+            howAr: "والآياتُ التي قبلها تصف من يُوجَّه إليه السؤال: ﴿أَرَءَيۡتَ ٱلَّذِي يَنۡهَىٰ﴾ ﴿عَبۡدًا إِذَا صَلَّىٰٓ﴾؟"
+          },
+          {
+            ref: "Surah Ta-Ha (20:46)",
+            ar: "قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ",
+            en: "[Allah] said, \"Fear not. Indeed, I am with you both; I hear and I see.",
+            how: "Ta-Ha gives the same fact as comfort to two prophets before a tyrant: do not fear — I am with you both; I hear and I see.",
+            howAr: "سورةُ طه تجعل الحقيقةَ نفسها طمأنينةً لنبيّين أمام طاغية: ﴿لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ﴾."
+          }
+        ],
+        ref: "Surah Al-'Alaq (96:14), read with 96:9-10 and 96:19; Abu Jahl and the prayer: Sahih Muslim 2797, from Abu Hurayrah",
+        refAr: "سورة العلق، الآية ١٤، مع الآيتين ٩–١٠ والآية ١٩؛ وأبو جهل والصلاة: صحيح مسلم ٢٧٩٧، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
