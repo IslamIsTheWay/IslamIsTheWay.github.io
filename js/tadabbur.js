@@ -2991,6 +2991,40 @@ const TADABBUR = {
         ref: "Surah An-Nur (24:22); its occasion: Sahih al-Bukhari 4750, from Aishah",
         refAr: "سورة النور، الآية ٢٢؛ وسببُ نزولها: صحيح البخاري ٤٧٥٠، عن عائشة رضي الله عنها",
         strength: "hadith"
+      },
+      {
+        n: 37,
+        ar: "رِجَالٞ لَّا تُلۡهِيهِمۡ تِجَٰرَةٞ وَلَا بَيۡعٌ عَن ذِكۡرِ ٱللَّهِ وَإِقَامِ ٱلصَّلَوٰةِ وَإِيتَآءِ ٱلزَّكَوٰةِ يَخَافُونَ يَوۡمٗا تَتَقَلَّبُ فِيهِ ٱلۡقُلُوبُ وَٱلۡأَبۡصَٰرُ",
+        why: "Men whom neither trade nor sale distracts from the remembrance of Allah. The verse does not say they do not trade. It says trade does not distract them — and it names both, trade and sale, so that neither the larger business nor the single transaction is excused.\n\nThe verse before places them: in houses Allah has permitted to be raised, where His name is remembered, glorifying Him there morning and evening (24:36) — the mosques. And this verse gives their inner state: they fear a Day when hearts and eyes will turn about. It is that fear, not a lack of business, that keeps the market in its place.\n\nThe verse after gives the reward, and it is generous: that Allah may reward them for the best of what they did, and give them more from His bounty — and Allah provides for whom He wills without account (24:38). Men who would not let provision distract them are told who provides.",
+        whyAr: "﴿رِجَالٞ لَّا تُلۡهِيهِمۡ تِجَٰرَةٞ وَلَا بَيۡعٌ عَن ذِكۡرِ ٱللَّهِ﴾: والآيةُ لا تقول إنهم لا يتّجرون، بل تقول إنّ التجارة لا تلهيهم، وتذكر الأمرين معًا، التجارةَ والبيع، فلا يُعذر الكبيرُ من العمل ولا الصفقةُ الواحدة.\n\nوالآيةُ التي قبلها تذكر مكانهم: ﴿فِي بُيُوتٍ أَذِنَ ٱللَّهُ أَن تُرۡفَعَ وَيُذۡكَرَ فِيهَا ٱسۡمُهُۥ﴾، وهي المساجد. وهذه الآيةُ تذكر حالَ قلوبهم: ﴿يَخَافُونَ يَوۡمٗا تَتَقَلَّبُ فِيهِ ٱلۡقُلُوبُ وَٱلۡأَبۡصَٰرُ﴾. فذلك الخوفُ، لا قلّةُ العمل، هو الذي يُبقي السوقَ في موضعه.\n\nوالآيةُ التي بعدها تذكر الجزاء، وهو كريم: ﴿لِيَجۡزِيَهُمُ ٱللَّهُ أَحۡسَنَ مَا عَمِلُواْ وَيَزِيدَهُم مِّن فَضۡلِهِۦۗ وَٱللَّهُ يَرۡزُقُ مَن يَشَآءُ بِغَيۡرِ حِسَابٖ﴾. فرجالٌ لم يسمحوا للرزق أن يلهيهم يُذكَّرون بمن يرزق.",
+        plain: "The verse does not say they do not trade; it says trade and selling do not distract them from the remembrance of Allah, from prayer and from zakat. What keeps the market in its place is the fear of a Day when hearts and eyes turn about.",
+        plainAr: "الآيةُ لا تقول إنهم لا يتّجرون، بل إنّ التجارة والبيع لا يشغلانهم عن الذكر والصلاة والزكاة. والذي يُبقي السوقَ في موضعه خوفُهم: ﴿يَخَافُونَ يَوۡمٗا تَتَقَلَّبُ فِيهِ ٱلۡقُلُوبُ وَٱلۡأَبۡصَٰرُ﴾.",
+        links: [
+          {
+            ref: "Surah Al-Jumu'ah (62:9)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓاْ إِذَا نُودِيَ لِلصَّلَوٰةِ مِن يَوۡمِ ٱلۡجُمُعَةِ فَٱسۡعَوۡاْ إِلَىٰ ذِكۡرِ ٱللَّهِ وَذَرُواْ ٱلۡبَيۡعَۚ ذَٰلِكُمۡ خَيۡرٞ لَّكُمۡ إِن كُنتُمۡ تَعۡلَمُونَ",
+            en: "O you who have believed, when [the adhan] is called for the prayer on the day of Jumu'ah [Friday], then proceed to the remembrance of Allah and leave trade. That is better for you, if you only knew.",
+            how: "An-Nur describes the people; Al-Jumu'ah gives the hour when it is tested every week: when the call is made for the prayer on Friday, hasten to the remembrance of Allah and leave the sale.",
+            howAr: "النورُ تصف القوم، والجمعةُ تذكر الساعةَ التي يُمتحن فيها ذلك كلَّ أسبوع: ﴿إِذَا نُودِيَ لِلصَّلَوٰةِ مِن يَوۡمِ ٱلۡجُمُعَةِ فَٱسۡعَوۡاْ إِلَىٰ ذِكۡرِ ٱللَّهِ وَذَرُواْ ٱلۡبَيۡعَۚ﴾."
+          },
+          {
+            ref: "Surah Al-Munafiqun (63:9)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تُلۡهِكُمۡ أَمۡوَٰلُكُمۡ وَلَآ أَوۡلَٰدُكُمۡ عَن ذِكۡرِ ٱللَّهِۚ وَمَن يَفۡعَلۡ ذَٰلِكَ فَأُوْلَٰٓئِكَ هُمُ ٱلۡخَٰسِرُونَ",
+            en: "O you who have believed, let not your wealth and your children divert you from remembrance of Allah. And whoever does that - then those are the losers.",
+            how: "Al-Munafiqun gives the same warning for the whole of life: do not let your wealth or your children distract you from the remembrance of Allah.",
+            howAr: "المنافقونَ تذكر التحذيرَ نفسه للحياة كلّها: ﴿لَا تُلۡهِكُمۡ أَمۡوَٰلُكُمۡ وَلَآ أَوۡلَٰدُكُمۡ عَن ذِكۡرِ ٱللَّهِۚ﴾."
+          },
+          {
+            ref: "Surah An-Nur (24:36)",
+            ar: "فِي بُيُوتٍ أَذِنَ ٱللَّهُ أَن تُرۡفَعَ وَيُذۡكَرَ فِيهَا ٱسۡمُهُۥ يُسَبِّحُ لَهُۥ فِيهَا بِٱلۡغُدُوِّ وَٱلۡأٓصَالِ",
+            en: "[Such niches are] in mosques which Allah has ordered to be raised and that His name be mentioned therein; exalting Him within them in the morning and the evenings",
+            how: "The verse before places them in the mosques: houses Allah has permitted to be raised, where His name is remembered morning and evening.",
+            howAr: "والآيةُ التي قبلها تضعهم في المساجد: ﴿فِي بُيُوتٍ أَذِنَ ٱللَّهُ أَن تُرۡفَعَ وَيُذۡكَرَ فِيهَا ٱسۡمُهُۥ يُسَبِّحُ لَهُۥ فِيهَا بِٱلۡغُدُوِّ وَٱلۡأٓصَالِ﴾."
+          }
+        ],
+        ref: "Surah An-Nur (24:37), read with 24:36 and 24:38",
+        refAr: "سورة النور، الآية ٣٧، مع الآيتين ٣٦ و٣٨",
+        strength: "quran"
       }
     ]
   },
@@ -3566,6 +3600,40 @@ const TADABBUR = {
         ref: "Surah Ar-Rum (30:30); the hadith: Sahih al-Bukhari 1358 and Sahih Muslim 2658, from Abu Hurayrah",
         refAr: "سورة الروم، الآية ٣٠؛ والحديث: صحيح البخاري ١٣٥٨ وصحيح مسلم ٢٦٥٨، عن أبي هريرة رضي الله عنه",
         strength: "hadith"
+      },
+      {
+        n: 41,
+        ar: "ظَهَرَ ٱلۡفَسَادُ فِي ٱلۡبَرِّ وَٱلۡبَحۡرِ بِمَا كَسَبَتۡ أَيۡدِي ٱلنَّاسِ لِيُذِيقَهُم بَعۡضَ ٱلَّذِي عَمِلُواْ لَعَلَّهُمۡ يَرۡجِعُونَ",
+        why: "Corruption has appeared on land and sea because of what people's hands have earned. The verse makes the damage visible — zahara, it has come out into the open — and gives it one cause: what people themselves have done.\n\nThen two words turn the sentence into a mercy. Ba'd — so that He lets them taste some of what they did; not all of it. And la'allahum yarji'un — so that perhaps they will return. The taste is measured, and it has a purpose: return, not ruin.\n\nAsh-Shura says how much is held back: whatever strikes you is from what your hands have earned, and He pardons much (42:30). Fatir says what full accounting would mean: if Allah took people to task for all they earned, He would not leave a single creature on the face of the earth (35:45). And Al-A'raf gives the command that comes before all of it: do not cause corruption on the earth after it has been set right (7:56).",
+        whyAr: "﴿ظَهَرَ ٱلۡفَسَادُ فِي ٱلۡبَرِّ وَٱلۡبَحۡرِ بِمَا كَسَبَتۡ أَيۡدِي ٱلنَّاسِ﴾: الآيةُ تجعل الفسادَ ظاهرًا مكشوفًا، وتردّه إلى سببٍ واحد: ما صنعه الناسُ بأنفسهم.\n\nثم كلمتان تقلبان الجملةَ رحمة: ﴿لِيُذِيقَهُم بَعۡضَ ٱلَّذِي عَمِلُواْ﴾ — البعضَ لا الكلّ — و﴿لَعَلَّهُمۡ يَرۡجِعُونَ﴾. فالذَّوقُ بمقدار، وله غاية: الرجوعُ لا الهلاك.\n\nوالشورى تقول كم يُمسك عنهم: ﴿وَمَآ أَصَٰبَكُم مِّن مُّصِيبَةٖ فَبِمَا كَسَبَتۡ أَيۡدِيكُمۡ وَيَعۡفُواْ عَن كَثِيرٖ﴾، وفاطرٌ تقول ماذا يعني الحسابُ التامّ: ﴿وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِمَا كَسَبُواْ مَا تَرَكَ عَلَىٰ ظَهۡرِهَا مِن دَآبَّةٖ﴾. والأعرافُ تذكر الأمرَ الذي يسبق ذلك كلَّه: ﴿وَلَا تُفۡسِدُواْ فِي ٱلۡأَرۡضِ بَعۡدَ إِصۡلَٰحِهَا﴾.",
+        plain: "The damage on land and sea is laid at people's own hands — and then two words turn it into mercy: they are made to taste only some of what they did, and so that perhaps they will return. The purpose is return, not ruin.",
+        plainAr: "خرابُ اليابسة والبحار يُردّ إلى ما صنعه الناس، ثم تأتي كلمتان تجعلانه رحمة: يُذيقهم بعضَ ما عملوا لا كلَّه، لعلّهم يرجعون. فالغايةُ الرجوعُ لا الهلاك.",
+        links: [
+          {
+            ref: "Surah Ash-Shuraa (42:30)",
+            ar: "وَمَآ أَصَٰبَكُم مِّن مُّصِيبَةٖ فَبِمَا كَسَبَتۡ أَيۡدِيكُمۡ وَيَعۡفُواْ عَن كَثِيرٖ",
+            en: "And whatever strikes you of disaster - it is for what your hands have earned; but He pardons much.",
+            how: "Ar-Rum says people taste only some of what they did; Ash-Shura says how much is held back: whatever strikes you is from what your hands earned — and He pardons much.",
+            howAr: "الرومُ تقول إنهم يذوقون بعضَ ما عملوا، والشورى تقول كم يُمسك عنهم: ﴿فَبِمَا كَسَبَتۡ أَيۡدِيكُمۡ وَيَعۡفُواْ عَن كَثِيرٖ﴾."
+          },
+          {
+            ref: "Surah Fatir (35:45)",
+            ar: "وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِمَا كَسَبُواْ مَا تَرَكَ عَلَىٰ ظَهۡرِهَا مِن دَآبَّةٖ وَلَٰكِن يُؤَخِّرُهُمۡ إِلَىٰٓ أَجَلٖ مُّسَمّٗىۖ فَإِذَا جَآءَ أَجَلُهُمۡ فَإِنَّ ٱللَّهَ كَانَ بِعِبَادِهِۦ بَصِيرَۢا",
+            en: "And if Allah were to impose blame on the people for what they have earned, He would not leave upon the earth any creature. But He defers them for a specified term. And when their time comes, then indeed Allah has ever been, of His servants, Seeing.",
+            how: "Fatir says what a full accounting would mean: if Allah took people to task for all they earned, He would not leave a single creature on the earth.",
+            howAr: "فاطرٌ تقول ماذا يعني الحسابُ التامّ: ﴿وَلَوۡ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِمَا كَسَبُواْ مَا تَرَكَ عَلَىٰ ظَهۡرِهَا مِن دَآبَّةٖ﴾."
+          },
+          {
+            ref: "Surah Al-A'raf (7:56)",
+            ar: "وَلَا تُفۡسِدُواْ فِي ٱلۡأَرۡضِ بَعۡدَ إِصۡلَٰحِهَا وَٱدۡعُوهُ خَوۡفٗا وَطَمَعًاۚ إِنَّ رَحۡمَتَ ٱللَّهِ قَرِيبٞ مِّنَ ٱلۡمُحۡسِنِينَ",
+            en: "And cause not corruption upon the earth after its reformation. And invoke Him in fear and aspiration. Indeed, the mercy of Allah is near to the doers of good.",
+            how: "Al-A'raf gives the command behind it all: do not cause corruption on the earth after it has been set right — and call on Him in fear and hope.",
+            howAr: "الأعرافُ تذكر الأمرَ الذي وراء ذلك كلّه: ﴿وَلَا تُفۡسِدُواْ فِي ٱلۡأَرۡضِ بَعۡدَ إِصۡلَٰحِهَا وَٱدۡعُوهُ خَوۡفٗا وَطَمَعًاۚ﴾."
+          }
+        ],
+        ref: "Surah Ar-Rum (30:41), read with Ash-Shura (42:30), Fatir (35:45) and Al-A'raf (7:56)",
+        refAr: "سورة الروم، الآية ٤١، مع سورة الشورى ٣٠، وسورة فاطر ٤٥، وسورة الأعراف ٥٦",
+        strength: "quran"
       }
     ]
   },
@@ -6099,6 +6167,40 @@ const TADABBUR = {
         ref: "Surah At-Tawbah (9:100), read with Al-Hashr (59:8-10); the four places of mutual pleasure: 5:119, 9:100, 58:22, 98:8; who the forerunners were: Tafsir Ibn Kathir on 9:100",
         refAr: "سورة التوبة، الآية ١٠٠، مع سورة الحشر، الآيات ٨–١٠؛ ومواضعُ الرضا من الجهتين: المائدة ١١٩، والتوبة ١٠٠، والمجادلة ٢٢، والبيّنة ٨؛ والخلافُ في السابقين: تفسير ابن كثير عند الآية",
         strength: "quran"
+      },
+      {
+        n: 51,
+        ar: "قُل لَّن يُصِيبَنَآ إِلَّا مَا كَتَبَ ٱللَّهُ لَنَا هُوَ مَوۡلَىٰنَاۚ وَعَلَى ٱللَّهِ فَلۡيَتَوَكَّلِ ٱلۡمُؤۡمِنُونَ",
+        why: "The verse before describes the hypocrites watching the Prophet ﷺ: if good reaches you, it grieves them; if a calamity strikes you, they say, we took our precautions beforehand — and turn away rejoicing (9:50). This verse is the answer he is told to give.\n\nNothing will strike us except what Allah has written for us. The preposition carries the meaning: lana — for us — not 'alayna, against us. What is written for a believer is written in his favour, even when it arrives as a calamity. The Prophet ﷺ said it outright: the affair of the believer is all good — if something pleasing reaches him he is grateful, and that is good for him; if harm reaches him he is patient, and that is good for him (Muslim 2999).\n\nThen: He is our Mawla — our protector, the one in charge of us — and upon Allah let the believers rely. The hypocrites' boast was their precautions. The believers' answer does not mock precaution; it puts it under something larger.",
+        whyAr: "الآيةُ التي قبلها تصف المنافقين وهم يراقبون النبيَّ ﷺ: ﴿إِن تُصِبۡكَ حَسَنَةٞ تَسُؤۡهُمۡۖ وَإِن تُصِبۡكَ مُصِيبَةٞ يَقُولُواْ قَدۡ أَخَذۡنَآ أَمۡرَنَا مِن قَبۡلُ﴾، ويتولّون فرحين. وهذه الآيةُ هي الجوابُ الذي أُمر أن يقوله.\n\n﴿قُل لَّن يُصِيبَنَآ إِلَّا مَا كَتَبَ ٱللَّهُ لَنَا﴾: والحرفُ يحمل المعنى؛ لنا لا علينا. فما يُكتب للمؤمن يُكتب لصالحه، ولو جاء في صورة مصيبة. وقد قالها النبيّ ﷺ صراحةً: أمرُ المؤمن كلُّه خير، إن أصابته سرّاءُ شكر فكان خيرًا له، وإن أصابته ضرّاءُ صبر فكان خيرًا له (مسلم ٢٩٩٩).\n\nثم: ﴿هُوَ مَوۡلَىٰنَاۚ وَعَلَى ٱللَّهِ فَلۡيَتَوَكَّلِ ٱلۡمُؤۡمِنُونَ﴾. كان فخرُ المنافقين باحتياطهم، وجوابُ المؤمنين لا يسخر من الاحتياط، بل يضعه تحت ما هو أكبر منه.",
+        plain: "Nothing will strike us except what Allah has written for us — lana, for us, not against us. For a believer even a calamity is written in his favour: the Prophet ﷺ said all of the believer's affair is good (Muslim 2999).",
+        plainAr: "﴿لَّن يُصِيبَنَآ إِلَّا مَا كَتَبَ ٱللَّهُ لَنَا﴾ — لنا لا علينا. فحتى المصيبةُ تُكتب للمؤمن لصالحه، وقد قال النبيّ ﷺ إنّ أمر المؤمن كلَّه خير (مسلم ٢٩٩٩).",
+        links: [
+          {
+            ref: "Surah At-Taghabun (64:11)",
+            ar: "مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذۡنِ ٱللَّهِۗ وَمَن يُؤۡمِنۢ بِٱللَّهِ يَهۡدِ قَلۡبَهُۥۚ وَٱللَّهُ بِكُلِّ شَيۡءٍ عَلِيمٞ",
+            en: "No disaster strikes except by permission of Allah. And whoever believes in Allah - He will guide his heart. And Allah is Knowing of all things.",
+            how: "At-Taghabun says the same from the inside: no calamity strikes except by the permission of Allah — and whoever believes in Allah, He guides his heart.",
+            howAr: "التغابنُ تقول الشيءَ نفسه من الداخل: ﴿مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذۡنِ ٱللَّهِۗ وَمَن يُؤۡمِنۢ بِٱللَّهِ يَهۡدِ قَلۡبَهُۥۚ﴾."
+          },
+          {
+            ref: "Surah At-Tawbah (9:50)",
+            ar: "إِن تُصِبۡكَ حَسَنَةٞ تَسُؤۡهُمۡۖ وَإِن تُصِبۡكَ مُصِيبَةٞ يَقُولُواْ قَدۡ أَخَذۡنَآ أَمۡرَنَا مِن قَبۡلُ وَيَتَوَلَّواْ وَّهُمۡ فَرِحُونَ",
+            en: "If good befalls you, it distresses them; but if disaster strikes you, they say, \"We took our matter [in hand] before,\" and turn away while they are rejoicing.",
+            how: "The verse before gives what this answers: if good reaches you it grieves them, and if a calamity strikes you they say, we took our precautions beforehand.",
+            howAr: "والآيةُ التي قبلها تذكر ما يجيب عنه: ﴿إِن تُصِبۡكَ حَسَنَةٞ تَسُؤۡهُمۡۖ وَإِن تُصِبۡكَ مُصِيبَةٞ يَقُولُواْ قَدۡ أَخَذۡنَآ أَمۡرَنَا مِن قَبۡلُ﴾."
+          },
+          {
+            ref: "Surah Al-Hadid (57:22-23)",
+            ar: "مَآ أَصَابَ مِن مُّصِيبَةٖ فِي ٱلۡأَرۡضِ وَلَا فِيٓ أَنفُسِكُمۡ إِلَّا فِي كِتَٰبٖ مِّن قَبۡلِ أَن نَّبۡرَأَهَآۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٞ ۝ لِّكَيۡلَا تَأۡسَوۡاْ عَلَىٰ مَا فَاتَكُمۡ وَلَا تَفۡرَحُواْ بِمَآ ءَاتَىٰكُمۡۗ وَٱللَّهُ لَا يُحِبُّ كُلَّ مُخۡتَالٖ فَخُورٍ",
+            en: "No disaster strikes upon the earth or among yourselves except that it is in a register before We bring it into being - indeed that, for Allah, is easy - In order that you not despair over what has eluded you and not exult [in pride] over what He has given you. And Allah does not like everyone self-deluded and boastful -",
+            how: "Al-Hadid says it is all in a Book before it happens — so that you do not despair over what you missed, nor exult over what you were given.",
+            howAr: "الحديدُ تقول إنّ ذلك كلَّه في كتابٍ قبل وقوعه: ﴿لِّكَيۡلَا تَأۡسَوۡاْ عَلَىٰ مَا فَاتَكُمۡ وَلَا تَفۡرَحُواْ بِمَآ ءَاتَىٰكُمۡۗ﴾."
+          }
+        ],
+        ref: "Surah At-Tawbah (9:51), read with 9:50; all of the believer's affair is good: Sahih Muslim 2999, from Suhayb",
+        refAr: "سورة التوبة، الآية ٥١، مع الآية ٥٠؛ وأمرُ المؤمن كلُّه خير: صحيح مسلم ٢٩٩٩، عن صهيب رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -7205,6 +7307,13 @@ const TADABBUR = {
             en: "And spend [in the way of Allah] from what We have provided you before death approaches one of you and he says, \"My Lord, if only You would delay me for a brief term so I would give charity and be among the righteous.\"",
             how: "This verse warns against distraction; the next gives the moment it ends: spend before death comes and one says, my Lord, if only You would delay me a little, I would give charity and be among the righteous.",
             howAr: "هذه الآيةُ تحذّر من الإلهاء، والتي تليها تذكر لحظةَ انتهائه: ﴿رَبِّ لَوۡلَآ أَخَّرۡتَنِيٓ إِلَىٰٓ أَجَلٖ قَرِيبٖ فَأَصَّدَّقَ وَأَكُن مِّنَ ٱلصَّٰلِحِينَ﴾."
+          },
+          {
+            ref: "Surah An-Nur (24:37)",
+            ar: "رِجَالٞ لَّا تُلۡهِيهِمۡ تِجَٰرَةٞ وَلَا بَيۡعٌ عَن ذِكۡرِ ٱللَّهِ وَإِقَامِ ٱلصَّلَوٰةِ وَإِيتَآءِ ٱلزَّكَوٰةِ يَخَافُونَ يَوۡمٗا تَتَقَلَّبُ فِيهِ ٱلۡقُلُوبُ وَٱلۡأَبۡصَٰرُ",
+            en: "[Are] men whom neither commerce nor sale distracts from the remembrance of Allah and performance of prayer and giving of zakah. They fear a Day in which the hearts and eyes will [fearfully] turn about -",
+            how: "Al-Munafiqun warns against being distracted; An-Nur describes men who are not: neither trade nor sale distracts them from the remembrance of Allah.",
+            howAr: "المنافقونَ تحذّر من الإلهاء، والنورُ تصف رجالًا لا يُلهَون: ﴿رِجَالٞ لَّا تُلۡهِيهِمۡ تِجَٰرَةٞ وَلَا بَيۡعٌ عَن ذِكۡرِ ٱللَّهِ﴾."
           }
         ],
         ref: "Surah Al-Munafiqun (63:9), read with 63:10",
@@ -8702,6 +8811,13 @@ const TADABBUR = {
             en: "And from [part of] the night, pray with it as additional [worship] for you; it is expected that your Lord will resurrect you to a praised station.",
             how: "Al-Isra gives the command to the Prophet ﷺ: and in part of the night, pray with it as an extra for you — perhaps your Lord will raise you to a praised station.",
             howAr: "الإسراءُ تعطي الأمرَ للنبيّ ﷺ: ﴿وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ عَسَىٰٓ أَن يَبۡعَثَكَ رَبُّكَ مَقَامٗا مَّحۡمُودٗا﴾."
+          },
+          {
+            ref: "Surah Az-Zumar (39:9)",
+            ar: "أَمَّنۡ هُوَ قَٰنِتٌ ءَانَآءَ ٱلَّيۡلِ سَاجِدٗا وَقَآئِمٗا يَحۡذَرُ ٱلۡأٓخِرَةَ وَيَرۡجُواْ رَحۡمَةَ رَبِّهِۦۗ قُلۡ هَلۡ يَسۡتَوِي ٱلَّذِينَ يَعۡلَمُونَ وَٱلَّذِينَ لَا يَعۡلَمُونَۗ إِنَّمَا يَتَذَكَّرُ أُوْلُواْ ٱلۡأَلۡبَٰبِ",
+            en: "Is one who is devoutly obedient during periods of the night, prostrating and standing [in prayer], fearing the Hereafter and hoping for the mercy of his Lord, [like one who does not]? Say, \"Are those who know equal to those who do not know?\" Only they will remember [who are] people of understanding.",
+            how: "As-Sajdah gives the night prayer with fear and hope; Az-Zumar gives the same man — devout through the night, wary of the Hereafter, hoping for his Lord's mercy — and calls him one who knows.",
+            howAr: "السجدةُ تذكر قيامَ الليل بالخوف والرجاء، والزمرُ تذكر الرجلَ نفسه، وتسمّيه عالمًا: ﴿أَمَّنۡ هُوَ قَٰنِتٌ ءَانَآءَ ٱلَّيۡلِ سَاجِدٗا وَقَآئِمٗا يَحۡذَرُ ٱلۡأٓخِرَةَ وَيَرۡجُواْ رَحۡمَةَ رَبِّهِۦۗ﴾."
           }
         ]
       },
@@ -8788,6 +8904,13 @@ const TADABBUR = {
             en: "Say, [O Muhammad], \"If you should love Allah, then follow me, [so] Allah will love you and forgive you your sins. And Allah is Forgiving and Merciful.\"",
             how: "Al-Ahzab names the example; Al 'Imran says what following it proves: if you love Allah, follow me — Allah will love you.",
             howAr: "الأحزابُ تذكر القدوة، وآلُ عمران تقول ماذا يُثبت اتّباعُها: ﴿قُلۡ إِن كُنتُمۡ تُحِبُّونَ ٱللَّهَ فَٱتَّبِعُونِي يُحۡبِبۡكُمُ ٱللَّهُ﴾."
+          },
+          {
+            ref: "Surah Al-Ahzab (33:56)",
+            ar: "إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ صَلُّواْ عَلَيۡهِ وَسَلِّمُواْ تَسۡلِيمًا",
+            en: "Indeed, Allah confers blessing upon the Prophet, and His angels [ask Him to do so]. O you who have believed, ask [Allah to confer] blessing upon him and ask [Allah to grant him] peace.",
+            how: "Al-Ahzab names the Prophet ﷺ the example; later in the same surah it tells the believers to send blessings upon him, as Allah and His angels do.",
+            howAr: "الأحزابُ تسمّي النبيَّ ﷺ القدوة، وبعد ذلك في السورة نفسها تأمر المؤمنين بالصلاة عليه، كما يصلّي عليه الله وملائكتُه: ﴿إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ﴾."
           }
         ],
         ref: "Surah Al-Ahzab (33:21), read with 33:10",
@@ -8865,6 +8988,33 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Ahzab (33:72)",
         strength: "quran"
+      },
+      {
+        n: 56,
+        ar: "إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ صَلُّواْ عَلَيۡهِ وَسَلِّمُواْ تَسۡلِيمًا",
+        why: "The verse begins with what is already happening before anyone is asked to do anything: Allah and His angels send blessings upon the Prophet. The verb is in the present — yusalluna — ongoing. Then the believers are invited to join something already under way: O you who believe, send blessings upon him, and greet him with peace.\n\nThe Companions asked how. Ka'b ibn 'Ujrah reported that they said: we know how to greet you, but how do we send blessings upon you? He taught them: O Allah, send blessings upon Muhammad and the family of Muhammad, as You sent blessings upon the family of Ibrahim — You are Praiseworthy, Glorious (al-Bukhari 4797). It is the blessing said at the end of every prayer.\n\nAnd the same surah says the blessing runs the other way too: He it is who sends blessings upon you, and His angels, to bring you out of the darknesses into the light (33:43). The Prophet ﷺ said: whoever sends blessings upon me once, Allah sends blessings upon him ten times (Muslim 408).",
+        whyAr: "تبدأ الآيةُ بما يجري قبل أن يُطلب من أحدٍ شيء: ﴿إِنَّ ٱللَّهَ وَمَلَٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِيِّۚ﴾، والفعلُ مضارعٌ مستمرّ. ثم يُدعى المؤمنون إلى المشاركة في أمرٍ قائمٍ أصلًا: ﴿يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ صَلُّواْ عَلَيۡهِ وَسَلِّمُواْ تَسۡلِيمًا﴾.\n\nوسأل الصحابةُ كيف؛ فروى كعبُ بن عُجرة أنهم قالوا: قد عرفنا كيف نسلّم عليك، فكيف الصلاةُ عليك؟ فعلّمهم: «اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ» (البخاري ٤٧٩٧). وهي الصلاةُ التي تُقال في آخر كلّ صلاة.\n\nوالسورةُ نفسها تقول إنّ الصلاة تجري في الاتّجاه الآخر أيضًا: ﴿هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ﴾. وقال النبيّ ﷺ: من صلّى عليّ واحدةً صلّى الله عليه عشرًا (مسلم ٤٠٨).",
+        plain: "Allah and His angels are already sending blessings upon the Prophet; the believers are invited to join in. The Companions asked how, and he taught them the blessing said in every prayer (al-Bukhari 4797) — and said that whoever sends one blessing upon him receives ten from Allah (Muslim 408).",
+        plainAr: "صلاةُ الله والملائكة على النبيّ ﷺ جاريةٌ قبل أن يُطلب ذلك من أحد، والمؤمنون يُدعون إلى المشاركة. وسأل الصحابةُ كيف، فعلّمهم الصلاةَ التي تُقال في كلّ صلاة (البخاري ٤٧٩٧)، وأخبر أنّ من صلّى عليه واحدةً صلّى الله عليه عشرًا (مسلم ٤٠٨).",
+        links: [
+          {
+            ref: "Surah Al-Ahzab (33:43)",
+            ar: "هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ وَكَانَ بِٱلۡمُؤۡمِنِينَ رَحِيمٗا",
+            en: "It is He who confers blessing upon you, and His angels [ask Him to do so] that He may bring you out from darknesses into the light. And ever is He, to the believers, Merciful.",
+            how: "The same surah says the blessing runs the other way too: He it is who sends blessings upon you, and His angels, to bring you out of the darknesses into the light.",
+            howAr: "والسورةُ نفسها تقول إنّ الصلاة تجري في الاتّجاه الآخر أيضًا: ﴿هُوَ ٱلَّذِي يُصَلِّي عَلَيۡكُمۡ وَمَلَٰٓئِكَتُهُۥ لِيُخۡرِجَكُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِۚ﴾."
+          },
+          {
+            ref: "Surah Al-Ahzab (33:21)",
+            ar: "لَّقَدۡ كَانَ لَكُمۡ فِي رَسُولِ ٱللَّهِ أُسۡوَةٌ حَسَنَةٞ لِّمَن كَانَ يَرۡجُواْ ٱللَّهَ وَٱلۡيَوۡمَ ٱلۡأٓخِرَ وَذَكَرَ ٱللَّهَ كَثِيرٗا",
+            en: "There has certainly been for you in the Messenger of Allah an excellent pattern for anyone whose hope is in Allah and the Last Day and [who] remembers Allah often.",
+            how: "The same surah names him the example: in the Messenger of Allah you have an excellent model — the one the believers are told to send blessings upon.",
+            howAr: "والسورةُ نفسها تسمّيه القدوة: ﴿لَّقَدۡ كَانَ لَكُمۡ فِي رَسُولِ ٱللَّهِ أُسۡوَةٌ حَسَنَةٞ﴾، وهو الذي يُؤمر المؤمنون بالصلاة عليه."
+          }
+        ],
+        ref: "Surah Al-Ahzab (33:56), read with 33:43; how to send blessings: Sahih al-Bukhari 4797, from Ka'b ibn 'Ujrah; one blessing returned ten: Sahih Muslim 408, from Abu Hurayrah",
+        refAr: "سورة الأحزاب، الآية ٥٦، مع الآية ٤٣. وصفةُ الصلاة عليه: صحيح البخاري ٤٧٩٧، عن كعب بن عجرة رضي الله عنه؛ والواحدةُ بعشر: صحيح مسلم ٤٠٨، عن أبي هريرة رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -8992,6 +9142,13 @@ const TADABBUR = {
             en: "So high [above all] is Allah, the Sovereign, the Truth. And, [O Muhammad], do not hasten with [recitation of] the Qur'an before its revelation is completed to you, and say, \"My Lord, increase me in knowledge.\"",
             how: "Fatir says knowledge is what brings true fear of Allah; Ta-Ha gives the one request for more that the Prophet ﷺ was told to make: my Lord, increase me in knowledge.",
             howAr: "فاطرٌ تقول إنّ العلم هو ما يورث خشيةَ الله، وسورةُ طه تذكر الطلبَ الوحيد للمزيد الذي أُمر به النبيّ ﷺ: ﴿وَقُل رَّبِّ زِدۡنِي عِلۡمٗا﴾."
+          },
+          {
+            ref: "Surah Az-Zumar (39:9)",
+            ar: "أَمَّنۡ هُوَ قَٰنِتٌ ءَانَآءَ ٱلَّيۡلِ سَاجِدٗا وَقَآئِمٗا يَحۡذَرُ ٱلۡأٓخِرَةَ وَيَرۡجُواْ رَحۡمَةَ رَبِّهِۦۗ قُلۡ هَلۡ يَسۡتَوِي ٱلَّذِينَ يَعۡلَمُونَ وَٱلَّذِينَ لَا يَعۡلَمُونَۗ إِنَّمَا يَتَذَكَّرُ أُوْلُواْ ٱلۡأَلۡبَٰبِ",
+            en: "Is one who is devoutly obedient during periods of the night, prostrating and standing [in prayer], fearing the Hereafter and hoping for the mercy of his Lord, [like one who does not]? Say, \"Are those who know equal to those who do not know?\" Only they will remember [who are] people of understanding.",
+            how: "Fatir says only those with knowledge truly fear Allah; Az-Zumar shows what that looks like: a man devout through the night — and asks, are those who know equal to those who do not?",
+            howAr: "فاطرٌ تقول إنّ أهلَ العلم هم الذين يخشون الله، والزمرُ تُريك صورةَ ذلك: رجلٌ قانتٌ آناءَ الليل، ثم تسأل: ﴿هَلۡ يَسۡتَوِي ٱلَّذِينَ يَعۡلَمُونَ وَٱلَّذِينَ لَا يَعۡلَمُونَۗ﴾؟"
           }
         ],
         ref: "Surah Fatir (35:28), read with 35:27",
@@ -9430,6 +9587,33 @@ const TADABBUR = {
         ],
         ref: "Surah Az-Zumar (39:23), read with Al-Anfal (8:2) and Ar-Ra'd (13:28)",
         refAr: "سورة الزمر، الآية ٢٣، مع سورة الأنفال، الآية ٢، وسورة الرعد، الآية ٢٨",
+        strength: "quran"
+      },
+      {
+        n: 9,
+        ar: "أَمَّنۡ هُوَ قَٰنِتٌ ءَانَآءَ ٱلَّيۡلِ سَاجِدٗا وَقَآئِمٗا يَحۡذَرُ ٱلۡأٓخِرَةَ وَيَرۡجُواْ رَحۡمَةَ رَبِّهِۦۗ قُلۡ هَلۡ يَسۡتَوِي ٱلَّذِينَ يَعۡلَمُونَ وَٱلَّذِينَ لَا يَعۡلَمُونَۗ إِنَّمَا يَتَذَكَّرُ أُوْلُواْ ٱلۡأَلۡبَٰبِ",
+        why: "The question everyone quotes — are those who know equal to those who do not know? — is the second half of a sentence. The first half describes a man: one who is devout through the hours of the night, prostrating and standing, wary of the Hereafter and hoping for the mercy of his Lord. Then: say, are those who know equal to those who do not?\n\nSo the knowledge the verse has in mind is not information. It is the knowledge that gets a man up in the night, afraid and hopeful at once. Fatir says it plainly: it is only those of His servants who have knowledge who truly fear Allah (35:28).\n\nAnd notice the two things he carries together: wary of the Hereafter, hoping for the mercy of his Lord. Fear and hope in one line — the same pair As-Sajdah gives the people who leave their beds at night: they call on their Lord in fear and in hope (32:16). The verse closes: only people of understanding take heed.",
+        whyAr: "السؤالُ الذي يقتبسه الجميع — ﴿قُلۡ هَلۡ يَسۡتَوِي ٱلَّذِينَ يَعۡلَمُونَ وَٱلَّذِينَ لَا يَعۡلَمُونَۗ﴾ — هو الشطرُ الثاني من جملة، والشطرُ الأوّل يصف رجلًا: ﴿أَمَّنۡ هُوَ قَٰنِتٌ ءَانَآءَ ٱلَّيۡلِ سَاجِدٗا وَقَآئِمٗا يَحۡذَرُ ٱلۡأٓخِرَةَ وَيَرۡجُواْ رَحۡمَةَ رَبِّهِۦۗ﴾.\n\nفالعلمُ الذي تقصده الآيةُ ليس معلوماتٍ تُحفظ، بل العلمُ الذي يُقيم صاحبَه في الليل خائفًا راجيًا معًا. وفاطرٌ تقولها صريحة: ﴿إِنَّمَا يَخۡشَى ٱللَّهَ مِنۡ عِبَادِهِ ٱلۡعُلَمَٰٓؤُاْۗ﴾.\n\nوانظر إلى الأمرين اللذين يجمعهما: الحذرُ من الآخرة، ورجاءُ الرحمة. خوفٌ ورجاءٌ في سطرٍ واحد، وهما الزوجُ الذي تصف به السجدةُ من يهجرون فُرُشهم ليلًا: ﴿يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا﴾. وتُختم الآية: ﴿إِنَّمَا يَتَذَكَّرُ أُوْلُواْ ٱلۡأَلۡبَٰبِ﴾.",
+        plain: "The famous question — are those who know equal to those who do not? — comes after a description of a man praying through the night, afraid of the Hereafter and hoping for his Lord's mercy. The knowledge meant is the kind that gets you up at night, not information.",
+        plainAr: "السؤالُ المشهور ﴿هَلۡ يَسۡتَوِي ٱلَّذِينَ يَعۡلَمُونَ وَٱلَّذِينَ لَا يَعۡلَمُونَۗ﴾ يأتي بعد وصف رجلٍ يقوم الليلَ ساجدًا وقائمًا، خائفًا من الآخرة، راجيًا رحمةَ مولاه. فالعلمُ المقصود هو الذي يُقيمك في الليل، لا المعلوماتُ وحدها.",
+        links: [
+          {
+            ref: "Surah Fatir (35:28)",
+            ar: "وَمِنَ ٱلنَّاسِ وَٱلدَّوَآبِّ وَٱلۡأَنۡعَٰمِ مُخۡتَلِفٌ أَلۡوَٰنُهُۥ كَذَٰلِكَۗ إِنَّمَا يَخۡشَى ٱللَّهَ مِنۡ عِبَادِهِ ٱلۡعُلَمَٰٓؤُاْۗ إِنَّ ٱللَّهَ عَزِيزٌ غَفُورٌ",
+            en: "And among people and moving creatures and grazing livestock are various colors similarly. Only those fear Allah, from among His servants, who have knowledge. Indeed, Allah is Exalted in Might and Forgiving.",
+            how: "Az-Zumar sets those who know against those who do not; Fatir says what knowledge produces: it is only those of His servants who have knowledge who truly fear Allah.",
+            howAr: "الزمرُ تقابل بين العالم والجاهل، وفاطرٌ تقول ماذا يُثمر العلم: ﴿إِنَّمَا يَخۡشَى ٱللَّهَ مِنۡ عِبَادِهِ ٱلۡعُلَمَٰٓؤُاْۗ﴾."
+          },
+          {
+            ref: "Surah As-Sajdah (32:16)",
+            ar: "تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ",
+            en: "They arise from [their] beds; they supplicate their Lord in fear and aspiration, and from what We have provided them, they spend.",
+            how: "As-Sajdah describes the same night and the same pair of fear and hope: their sides forsake their beds as they call on their Lord in fear and in hope.",
+            howAr: "السجدةُ تصف الليلَ نفسه والزوجَ نفسه من الخوف والرجاء: ﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا﴾."
+          }
+        ],
+        ref: "Surah Az-Zumar (39:9), read with Fatir (35:28) and As-Sajdah (32:16)",
+        refAr: "سورة الزمر، الآية ٩، مع سورة فاطر ٢٨ وسورة السجدة ١٦",
         strength: "quran"
       }
     ]
@@ -11038,6 +11222,51 @@ const TADABBUR = {
             howAr: "نهت الإسراءُ عن اتّباع ما لا عِلم به، وأعطت الحجراتُ الإجراء الذي يَقيك منه: إذا جاءك خبرٌ فتبيّن قبل أن تتحرّك. فالأولى قاعدة، والثانيةُ طريقةُ العمل بها."
           }
         ]
+      },
+      {
+        n: 79,
+        ar: "وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ عَسَىٰٓ أَن يَبۡعَثَكَ رَبُّكَ مَقَامٗا مَّحۡمُودٗا",
+        why: "The verse before gives the obligatory prayers across the day: from the sun's decline to the darkness of the night, and the recitation of dawn — the dawn recitation is witnessed (17:78). Then this verse adds something on top, addressed to him: and in part of the night, pray tahajjud with it — as an extra for you.\n\nTahajjud is from hujud, sleep. Ar-Raghib explains the form as removing sleep — waking oneself out of it — and many of the scholars said the word means prayer after sleeping. It is the prayer of someone who went to bed and got up again.\n\nAnd it is joined to a promise: perhaps your Lord will raise you to a praised station. Ibn Umar explained the station: on the Day of Resurrection people will go, nation after nation, asking each prophet to intercede, until the intercession reaches the Prophet ﷺ — that is the day Allah raises him to the praised station (al-Bukhari 4718). The station all of mankind will need was promised in a verse about getting up in the night.",
+        whyAr: "الآيةُ التي قبلها تذكر الصلواتِ المفروضة في اليوم: ﴿أَقِمِ ٱلصَّلَوٰةَ لِدُلُوكِ ٱلشَّمۡسِ إِلَىٰ غَسَقِ ٱلَّيۡلِ وَقُرۡءَانَ ٱلۡفَجۡرِۖ إِنَّ قُرۡءَانَ ٱلۡفَجۡرِ كَانَ مَشۡهُودٗا﴾. ثم تزيد هذه الآيةُ شيئًا فوق ذلك، خطابًا له: ﴿وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ﴾.\n\nو**التهجّد** من الهجود، وهو النوم، وقال الراغب إنّ صيغته لإزالة النوم، أي أن يوقظ المرءُ نفسَه منه. وقال علماءُ كثيرون إنّ التهجّد الصلاةُ بعد النوم، فهو صلاةُ من نام ثم قام.\n\nويقترن به وعد: ﴿عَسَىٰٓ أَن يَبۡعَثَكَ رَبُّكَ مَقَامٗا مَّحۡمُودٗا﴾. وفسّر ابنُ عمر هذا المقام. قال: يأتي الناسُ يومَ القيامة أمّةً بعد أمّة، يسألون كلَّ نبيٍّ أن يشفع، حتى تنتهي الشفاعةُ إلى النبيّ ﷺ، فذلك يومَ يبعثه الله المقامَ المحمود (البخاري ٤٧١٨). فالمقامُ الذي سيحتاجه الناسُ كلُّهم وُعد به في آيةٍ عن القيام من النوم.",
+        plain: "Tahajjud means getting up out of sleep to pray — the prayer of someone who went to bed and rose again. And it is joined to a promise: the praised station, which Ibn Umar explained as the intercession on the Day of Resurrection (al-Bukhari 4718).",
+        plainAr: "التهجّدُ أن يقوم المرءُ من نومه ليصلّي، فهو صلاةُ من نام ثم قام. ويقترن به وعدٌ بالمقام المحمود، وفسّره ابنُ عمر بالشفاعة يومَ القيامة (البخاري ٤٧١٨).",
+        words: [
+          {
+            w: "فَتَهَجَّدۡ",
+            t: "fa-tahajjad",
+            meaning: "So rise from sleep and pray. Hujud is sleep; ar-Raghib explains this form as taking the sleep away — waking oneself out of it.",
+            meaningAr: "فقُم من نومك وصلِّ. والهجود النوم، وقال الراغب إنّ هذه الصيغة لإزالته، أي أن يوقظ المرءُ نفسَه منه.",
+            source: "Ar-Raghib al-Isfahani, Al-Mufradat, entry ه ج د",
+            sourceAr: "الراغب الأصفهاني، المفردات، مادّة ه ج د",
+            strength: "lugha"
+          }
+        ],
+        links: [
+          {
+            ref: "Surah As-Sajdah (32:16)",
+            ar: "تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ",
+            en: "They arise from [their] beds; they supplicate their Lord in fear and aspiration, and from what We have provided them, they spend.",
+            how: "As-Sajdah shows the same prayer from the side of the bed: their sides forsake their resting places as they call on their Lord in fear and hope.",
+            howAr: "السجدةُ تُريك الصلاةَ نفسها من جهة الفراش: ﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا﴾."
+          },
+          {
+            ref: "Surah Al-Muzzammil (73:1-2)",
+            ar: "يَٰٓأَيُّهَا ٱلۡمُزَّمِّلُ ۝ قُمِ ٱلَّيۡلَ إِلَّا قَلِيلٗا",
+            en: "O you who wraps himself [in clothing], Arise [to pray] the night, except for a little -",
+            how: "Al-Muzzammil gives the first command of the night prayer: O you wrapped in your garments, stand the night, except a little.",
+            howAr: "المزّمّلُ تذكر أوّلَ أمرٍ بقيام الليل: ﴿يَٰٓأَيُّهَا ٱلۡمُزَّمِّلُ﴾ ﴿قُمِ ٱلَّيۡلَ إِلَّا قَلِيلٗا﴾."
+          },
+          {
+            ref: "Surah Al-Isra (17:78)",
+            ar: "أَقِمِ ٱلصَّلَوٰةَ لِدُلُوكِ ٱلشَّمۡسِ إِلَىٰ غَسَقِ ٱلَّيۡلِ وَقُرۡءَانَ ٱلۡفَجۡرِۖ إِنَّ قُرۡءَانَ ٱلۡفَجۡرِ كَانَ مَشۡهُودٗا",
+            en: "Establish prayer at the decline of the sun [from its meridian] until the darkness of the night and [also] the Qur'an of dawn. Indeed, the recitation of dawn is ever witnessed.",
+            how: "The verse before gives the obligatory prayers from the sun's decline to the dark of night, and the dawn recitation, which is witnessed.",
+            howAr: "والآيةُ التي قبلها تذكر الصلواتِ المفروضة: ﴿أَقِمِ ٱلصَّلَوٰةَ لِدُلُوكِ ٱلشَّمۡسِ إِلَىٰ غَسَقِ ٱلَّيۡلِ وَقُرۡءَانَ ٱلۡفَجۡرِۖ﴾."
+          }
+        ],
+        ref: "Surah Al-Isra (17:79), read with 17:78; tahajjud: Ar-Raghib al-Isfahani, Al-Mufradat; the praised station: Sahih al-Bukhari 4718, from Ibn Umar",
+        refAr: "سورة الإسراء، الآية ٧٩، مع الآية ٧٨؛ ومعنى التهجّد: الراغب الأصفهاني، المفردات؛ والمقامُ المحمود: صحيح البخاري ٤٧١٨، عن ابن عمر رضي الله عنهما",
+        strength: "hadith"
       }
     ]
   },
@@ -11237,6 +11466,13 @@ const TADABBUR = {
             en: "Indeed, your Lord knows, [O Muhammad], that you stand [in prayer] almost two thirds of the night or half of it or a third of it, and [so do] a group of those with you. And Allah determines [the extent of] the night and the day. He has known that you [Muslims] will not be able to do it and has turned to you in forgiveness, so recite what is easy [for you] of the Qur'an. He has known that there will be among you those who are ill and others traveling throughout the land seeking [something] of the bounty of Allah and others fighting for the cause of Allah. So recite what is easy from it and establish prayer and give zakah and loan Allah a goodly loan. And whatever good you put forward for yourselves - you will find it with Allah. It is better and greater in reward. And seek forgiveness of Allah. Indeed, Allah is Forgiving and Merciful.",
             how: "The surah opens with the night prayer commanded; its last verse, revealed a year later, lightens it: so recite what is easy of the Quran.",
             howAr: "تُفتتح السورةُ بالأمر بقيام الليل، وآخرُ آيةٍ منها — وقد نزلت بعد حول — تخفّفه: ﴿فَٱقۡرَءُواْ مَا تَيَسَّرَ مِنَ ٱلۡقُرۡءَانِۚ﴾."
+          },
+          {
+            ref: "Surah Al-Isra (17:79)",
+            ar: "وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ عَسَىٰٓ أَن يَبۡعَثَكَ رَبُّكَ مَقَامٗا مَّحۡمُودٗا",
+            en: "And from [part of] the night, pray with it as additional [worship] for you; it is expected that your Lord will resurrect you to a praised station.",
+            how: "Al-Muzzammil commands the night prayer; Al-Isra gives the word for it — tahajjud, rising from sleep — and the praised station promised with it.",
+            howAr: "المزّمّلُ تأمر بقيام الليل، والإسراءُ تذكر اسمه — التهجّد، القيامَ من النوم — والمقامَ المحمودَ الموعودَ معه: ﴿وَمِنَ ٱلَّيۡلِ فَتَهَجَّدۡ بِهِۦ نَافِلَةٗ لَّكَ﴾."
           }
         ],
         ref: "Surah Al-Muzzammil (73:1-2)",
@@ -11554,6 +11790,15 @@ const TADABBUR = {
         whyAr: "وُصف العذابُ بأنه ﴿قَرِيبٗا﴾. وقد قرأ كلُّ جيلٍ منذئذٍ هذه الكلمة ثم نظر حوله فرأى الدنيا ماضية. وأجاب أهل العلم بأنّ كلَّ آتٍ قريب، وأنّ موت المرء أوّلُ ذلك، فالقربُ مقيسٌ بعمره لا بتاريخ الناس.\n\nثم ينظر الرجل ﴿مَا قَدَّمَتۡ يَدَاهُ﴾: لا ما صُنع به، ولا ما نواه، وإنما ما **أرسله** فهو ينتظره هناك قبل أن يصل.\n\nوالأمنيّةُ في الآخر أيأسُ جملةٍ في القرآن. لم يقل: يا ليتني آمنت، ولا: ردّوني. وإنما ﴿يَٰلَيۡتَنِي كُنتُ تُرَٰبَۢا﴾ — أي ليتني لم أُجعل إنسانًا أصلًا، فلا تكليف ولا صحيفة ولا نفسٌ أُسأل عنها. فهو طلبُ العدم، ويقوله من رأى للتوّ ما كلّفه الوجود.",
         plain: "The punishment is called near, and every generation since has looked around at a world that continued — but a man's own death is the beginning of it, so the nearness is measured against his life. Then he looks at what his own two hands sent ahead.",
         plainAr: "وُصف العذابُ بأنه قريب، وكلُّ جيلٍ بعدها ينظر فيرى الدنيا ماضية — لكن موت المرء أوّلُه، فالقربُ مقيسٌ بعمره هو. ثم ينظر إلى ما قدّمت يداه.",
+        links: [
+          {
+            ref: "Surah Al-Fajr (89:24)",
+            ar: "يَقُولُ يَٰلَيۡتَنِي قَدَّمۡتُ لِحَيَاتِي",
+            en: "He will say, \"Oh, I wish I had sent ahead [some good] for my life.\"",
+            how: "An-Naba shows a man looking at what his hands put forward; Al-Fajr gives what he says when he sees it: if only I had sent ahead for my life.",
+            howAr: "النبأُ تُريك رجلًا ينظر إلى عمله، والفجرُ تذكر ما يقوله حين يراه: ﴿يَقُولُ يَٰلَيۡتَنِي قَدَّمۡتُ لِحَيَاتِي﴾."
+          }
+        ],
         ref: "Surah An-Naba (78:40)",
         strength: "quran"
       },
@@ -12320,6 +12565,40 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Fajr (89:17-20)",
         strength: "quran"
+      },
+      {
+        n: 24,
+        ar: "يَقُولُ يَٰلَيۡتَنِي قَدَّمۡتُ لِحَيَاتِي",
+        why: "The Day has come and Hell is brought near, and the verse before says: on that Day man will remember — but how will the remembering help him then? (89:23). This is what he says: if only I had sent ahead for my life.\n\nFor my life — li-hayati. Not 'for my next life', not 'for the Hereafter'. Standing in it, he calls it simply his life, as if what came before had not been one. Al-'Ankabut says the same in its own words: this worldly life is nothing but diversion and play, and the home of the Hereafter — that is the life, if only they knew (29:64).\n\nAnd qaddamtu — I sent ahead — is the Quran's usual word for deeds: what your hands have put forward. An-Naba gives the same scene from the other side: the Day a man will look at what his hands have put forward, and the disbeliever will say, if only I were dust (78:40).",
+        whyAr: "جاء اليومُ وجيء بجهنّم، والآيةُ التي قبلها تقول: ﴿يَوۡمَئِذٖ يَتَذَكَّرُ ٱلۡإِنسَٰنُ وَأَنَّىٰ لَهُ ٱلذِّكۡرَىٰ﴾. وهذا ما يقوله: ﴿يَقُولُ يَٰلَيۡتَنِي قَدَّمۡتُ لِحَيَاتِي﴾.\n\nلحياتي: لم يقل لآخرتي، ولا لحياتي الأخرى. وهو واقفٌ فيها يسمّيها حياتَه، كأنّ ما قبلها لم يكن حياة. والعنكبوتُ تقول ذلك بلفظها: ﴿وَمَا هَٰذِهِ ٱلۡحَيَوٰةُ ٱلدُّنۡيَآ إِلَّا لَهۡوٞ وَلَعِبٞۚ وَإِنَّ ٱلدَّارَ ٱلۡأٓخِرَةَ لَهِيَ ٱلۡحَيَوَانُۚ لَوۡ كَانُواْ يَعۡلَمُونَ﴾.\n\nوالتقديمُ لفظُ القرآن المعتاد للأعمال: ما قدّمته اليدان. والنبأُ تعرض المشهدَ نفسه من الجهة الأخرى: ﴿يَوۡمَ يَنظُرُ ٱلۡمَرۡءُ مَا قَدَّمَتۡ يَدَاهُ وَيَقُولُ ٱلۡكَافِرُ يَٰلَيۡتَنِي كُنتُ تُرَٰبَۢا﴾.",
+        plain: "On the Day, a man says: if only I had sent ahead for my life. He calls the Hereafter simply 'my life' — as if what came before had not been one. Al-'Ankabut says the same: the home of the Hereafter, that is the life (29:64).",
+        plainAr: "يقول الإنسانُ في ذلك اليوم: ليتني قدّمتُ لحياتي، فيسمّي الآخرةَ حياتَه وحدها، كأنّ ما قبلها لم يكن حياة. والعنكبوتُ تقول ذلك: الدارُ الآخرة هي الحياةُ الحقّة.",
+        links: [
+          {
+            ref: "Surah An-Naba (78:40)",
+            ar: "إِنَّآ أَنذَرۡنَٰكُمۡ عَذَابٗا قَرِيبٗا يَوۡمَ يَنظُرُ ٱلۡمَرۡءُ مَا قَدَّمَتۡ يَدَاهُ وَيَقُولُ ٱلۡكَافِرُ يَٰلَيۡتَنِي كُنتُ تُرَٰبَۢا",
+            en: "Indeed, We have warned you of a near punishment on the Day when a man will observe what his hands have put forth and the disbeliever will say, \"Oh, I wish that I were dust!\"",
+            how: "An-Naba gives the same scene: the Day a man looks at what his hands have put forward — and the disbeliever says, if only I were dust.",
+            howAr: "النبأُ تعرض المشهدَ نفسه: ﴿يَوۡمَ يَنظُرُ ٱلۡمَرۡءُ مَا قَدَّمَتۡ يَدَاهُ وَيَقُولُ ٱلۡكَافِرُ يَٰلَيۡتَنِي كُنتُ تُرَٰبَۢا﴾."
+          },
+          {
+            ref: "Surah Al-Ankabut (29:64)",
+            ar: "وَمَا هَٰذِهِ ٱلۡحَيَوٰةُ ٱلدُّنۡيَآ إِلَّا لَهۡوٞ وَلَعِبٞۚ وَإِنَّ ٱلدَّارَ ٱلۡأٓخِرَةَ لَهِيَ ٱلۡحَيَوَانُۚ لَوۡ كَانُواْ يَعۡلَمُونَ",
+            en: "And this worldly life is not but diversion and amusement. And indeed, the home of the Hereafter - that is the [eternal] life, if only they knew.",
+            how: "Al-'Ankabut says in its own words what he finally understands: the home of the Hereafter — that is the life, if only they knew.",
+            howAr: "العنكبوتُ تقول بلفظها ما فهمه أخيرًا: ﴿وَإِنَّ ٱلدَّارَ ٱلۡأٓخِرَةَ لَهِيَ ٱلۡحَيَوَانُۚ لَوۡ كَانُواْ يَعۡلَمُونَ﴾."
+          },
+          {
+            ref: "Surah Al-Fajr (89:23)",
+            ar: "وَجِاْيٓءَ يَوۡمَئِذِۭ بِجَهَنَّمَۚ يَوۡمَئِذٖ يَتَذَكَّرُ ٱلۡإِنسَٰنُ وَأَنَّىٰ لَهُ ٱلذِّكۡرَىٰ",
+            en: "And brought [within view], that Day, is Hell - that Day, man will remember, but what good to him will be the remembrance?",
+            how: "The verse before: on that Day man will remember — and how will the remembering help him then?",
+            howAr: "والآيةُ التي قبلها: ﴿يَوۡمَئِذٖ يَتَذَكَّرُ ٱلۡإِنسَٰنُ وَأَنَّىٰ لَهُ ٱلذِّكۡرَىٰ﴾."
+          }
+        ],
+        ref: "Surah Al-Fajr (89:24), read with 89:23, Al-'Ankabut (29:64) and An-Naba (78:40)",
+        refAr: "سورة الفجر، الآية ٢٤، مع الآية ٢٣ وسورة العنكبوت ٦٤ وسورة النبأ ٤٠",
+        strength: "quran"
       }
     ]
   },
@@ -12514,6 +12793,15 @@ const TADABBUR = {
         whyAr: "خُتمت السورةُ بوصف الذي يُجنّبها، وحدّته بالنفي: ﴿وَمَا لِأَحَدٍ عِندَهُۥ مِن نِّعۡمَةٖ تُجۡزَىٰٓ﴾.\n\nفليس يُكافئ أحدًا. ولا صنع إليه أحدٌ صنيعًا هو يقضيه. فعطاؤه لا تاريخ وراءه ولا لزومَ تحته — وبه يُنزع أخفى ما يكون في البذل من الدواعي، وأعصاه على أن يراه المرء في نفسه.\n\nثم لم يبقَ بعد نزع ذلك إلا: ﴿إِلَّا ٱبۡتِغَآءَ وَجۡهِ رَبِّهِ ٱلۡأَعۡلَىٰ﴾. فالاستثناءُ هو مضمونُ نيّته كلُّها، وهو الوحيدُ الذي أبقته الآية.\n\nثم خواتيمُ السورة، وهي من ألطف ما خُتمت به سورة: ﴿وَلَسَوۡفَ **يَرۡضَىٰ**﴾.\n\nلا: يرضى اللهُ عنه — وهذا قيل في مواضع أخرى. وإنما هنا **هو** الذي يرضى. فالجزاءُ المذكور لرجلٍ أعطى ولا دَينَ عليه ولا انتظار، أنه سيرضى أخيرًا.",
         plain: "He is not paying anyone back — nobody did him a favour he is settling. That removes the commonest hidden motive in giving. And the last words are not that Allah will be pleased with him, but that HE will be pleased. The reward is contentment.",
         plainAr: "ليس يُكافئ أحدًا — فما صنع إليه أحدٌ صنيعًا يقضيه. وبه يُنزع أخفى الدواعي في البذل. وخاتمتُها ليست أنّ الله يرضى عنه، بل أنّ **هو** يرضى. فالجزاءُ الرِّضا.",
+        links: [
+          {
+            ref: "Surah Ad-Duhaa (93:5)",
+            ar: "وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ",
+            en: "And your Lord is going to give you, and you will be satisfied.",
+            how: "Al-Layl ends by promising the one who gives for his Lord's face that he will be pleased; Ad-Duha, the next surah, makes the same promise to the Prophet ﷺ in the same words.",
+            howAr: "الليلُ تُختم بوعد من أعطى لوجه ربّه بأنه سيرضى، والضحى — السورةُ التالية — تعد النبيَّ ﷺ بالوعد نفسه وباللفظ نفسه: ﴿وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ﴾."
+          }
+        ],
         ref: "Surah Al-Layl (92:19-21)",
         strength: "quran"
       }
@@ -12546,6 +12834,13 @@ const TADABBUR = {
             en: "By the morning brightness And [by] the night when it covers with darkness,",
             how: "The answer is shaped by the oaths before it: the morning light, and the night when it settles. The pause in revelation was a night, not an ending.",
             howAr: "الجوابُ تشكّله الأقسامُ التي قبله: ﴿وَٱلضُّحَىٰ﴾ ﴿وَٱلَّيۡلِ إِذَا سَجَىٰ﴾. فانقطاعُ الوحي كان ليلًا، لا نهاية."
+          },
+          {
+            ref: "Surah Ad-Duhaa (93:5)",
+            ar: "وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ",
+            en: "And your Lord is going to give you, and you will be satisfied.",
+            how: "This verse answers the pause in revelation; two verses later the surah gives the promise: your Lord is going to give you, and you will be pleased.",
+            howAr: "هذه الآيةُ تجيب عن فترة الوحي، وبعدها بآيتين يأتي الوعد: ﴿وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ﴾."
           }
         ],
         ref: "Surah Ad-Duha (93:3), read with 93:6-8 · The pause in revelation: Sahih al-Bukhari 4950 and Sahih Muslim — Jundub ibn Sufyan",
@@ -12652,6 +12947,40 @@ const TADABBUR = {
         ],
         ref: "Surah Ad-Duha (93:9-10)",
         strength: "quran"
+      },
+      {
+        n: 5,
+        ar: "وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ",
+        why: "Ad-Duha came after a pause in the revelation, when it was being said that his Lord had left him; the surah swears that his Lord has not abandoned him, nor is He displeased (93:3). Then two promises, in rising order. The Hereafter is better for you than the first (93:4). And then: your Lord is going to give you, and you will be pleased.\n\nWa la-sawfa — the la of emphasis joined to sawfa, the particle for what is certain but not yet. It is not now; it is coming, and it is sure.\n\nThe surah before it closes with the same promise, in the same words, about the man who gives his wealth seeking only the face of his Lord: and he will be pleased (92:21). And Muslim records what the promise came to mean for him: the Prophet ﷺ recited the prayers of Ibrahim and 'Isa for their peoples, raised his hands and wept, saying: my nation, my nation. Allah sent Jibril to tell him: We will please you concerning your nation, and We will not grieve you (Muslim 202).",
+        whyAr: "نزلت الضحى بعد فترةٍ من الوحي، حين قيل إنّ ربّه قد تركه، فأقسمت السورةُ: ﴿مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ﴾. ثم وعدان يتصاعدان: ﴿وَلَلۡأٓخِرَةُ خَيۡرٞ لَّكَ مِنَ ٱلۡأُولَىٰ﴾، ثم: ﴿وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ﴾.\n\nولسوف: لامُ التوكيد مع سوف، وهي لما هو آتٍ يقينًا لكنه لم يأتِ بعد. فليس الآن، لكنه قادم، ومؤكَّد.\n\nوالسورةُ التي قبلها تُختم بالوعد نفسه وباللفظ نفسه، في من أعطى مالَه لا يبتغي إلا وجهَ ربّه: ﴿وَلَسَوۡفَ يَرۡضَىٰ﴾. وروى مسلمٌ ما صار إليه هذا الوعدُ في حقّه ﷺ. تلا قولَ إبراهيم وقولَ عيسى في قومهما، ثم رفع يديه وبكى وقال: أمّتي أمّتي. فأرسل الله جبريلَ يقول له: «إِنَّا سَنُرْضِيكَ فِي أُمَّتِكَ وَلاَ نَسُوءُكَ» (مسلم ٢٠٢).",
+        plain: "Two promises in rising order: the Hereafter is better for you than the first, and your Lord will give you until you are pleased. Muslim records the Prophet ﷺ weeping for his nation, and Allah answering: We will please you concerning your nation (Muslim 202).",
+        plainAr: "وعدان يتصاعدان: ﴿وَلَلۡأٓخِرَةُ خَيۡرٞ لَّكَ مِنَ ٱلۡأُولَىٰ﴾، ثم ﴿وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ﴾. وروى مسلمٌ أنّ النبيّ ﷺ بكى لأمّته، فأجابه الله: إنّا سنرضيك في أمّتك (مسلم ٢٠٢).",
+        links: [
+          {
+            ref: "Surah Ad-Duhaa (93:3)",
+            ar: "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+            en: "Your Lord has not taken leave of you, [O Muhammad], nor has He detested [you].",
+            how: "Two verses earlier the surah answers the pause in revelation: your Lord has not abandoned you, nor is He displeased — and then comes the promise.",
+            howAr: "وقبلها بآيتين تجيب السورةُ عن فترة الوحي: ﴿مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ﴾، ثم يأتي الوعد."
+          },
+          {
+            ref: "Surah Al-Layl (92:21)",
+            ar: "وَلَسَوۡفَ يَرۡضَىٰ",
+            en: "And he is going to be satisfied.",
+            how: "The surah before closes with the same promise in the same words, about the one who gives seeking only the face of his Lord: and he will be pleased.",
+            howAr: "والسورةُ التي قبلها تُختم بالوعد نفسه وباللفظ نفسه، في من أعطى لا يبتغي إلا وجهَ ربّه: ﴿وَلَسَوۡفَ يَرۡضَىٰ﴾."
+          },
+          {
+            ref: "Surah Ad-Duhaa (93:4)",
+            ar: "وَلَلۡأٓخِرَةُ خَيۡرٞ لَّكَ مِنَ ٱلۡأُولَىٰ",
+            en: "And the Hereafter is better for you than the first [life].",
+            how: "The promise before it: the Hereafter is better for you than the first.",
+            howAr: "والوعدُ الذي قبله: ﴿وَلَلۡأٓخِرَةُ خَيۡرٞ لَّكَ مِنَ ٱلۡأُولَىٰ﴾."
+          }
+        ],
+        ref: "Surah Ad-Duha (93:5), read with 93:3-4 and Al-Layl (92:21); 'We will please you concerning your nation': Sahih Muslim 202, from 'Abdullah ibn 'Amr",
+        refAr: "سورة الضحى، الآية ٥، مع الآيتين ٣–٤ وسورة الليل ٢١؛ والإرضاءُ في الأمّة: صحيح مسلم ٢٠٢، عن عبد الله بن عمرو رضي الله عنهما",
+        strength: "hadith"
       }
     ]
   },
