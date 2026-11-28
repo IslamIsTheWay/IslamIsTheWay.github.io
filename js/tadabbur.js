@@ -699,6 +699,13 @@ const TADABBUR = {
             en: "Never will you attain the good [reward] until you spend [in the way of Allah] from that which you love",
             how: "Al-Baqarah tells you what the spending RETURNS — seven ears, a hundred grains each. Aal-Imran tells you what it must COST before it counts.",
             howAr: "البقرةُ تذكر ما **يعود** من النفقة: ﴿سَبۡعَ سَنَابِلَ فِي كُلِّ سُنۢبُلَةٖ مِّاْئَةُ حَبَّةٖۗ﴾. وآل عمران تذكر ما **يجب أن تكلّف** قبل أن تُقبل."
+          },
+          {
+            ref: "Surah Al-An'am (6:160)",
+            ar: "مَن جَآءَ بِٱلۡحَسَنَةِ فَلَهُۥ عَشۡرُ أَمۡثَالِهَاۖ وَمَن جَآءَ بِٱلسَّيِّئَةِ فَلَا يُجۡزَىٰٓ إِلَّا مِثۡلَهَا وَهُمۡ لَا يُظۡلَمُونَ",
+            en: "Whoever comes [on the Day of Judgement] with a good deed will have ten times the like thereof [to his credit], and whoever comes with an evil deed will not be recompensed except the like thereof; and they will not be wronged.",
+            how: "Al-Baqarah gives the upper reach of the multiplying; Al-An'am gives the floor of it, for every good deed: whoever comes with a good deed will have ten like it.",
+            howAr: "البقرةُ تذكر أعلى المضاعفة، والأنعامُ تذكر أدناها لكلّ حسنة: ﴿مَن جَآءَ بِٱلۡحَسَنَةِ فَلَهُۥ عَشۡرُ أَمۡثَالِهَاۖ﴾."
           }
         ],
         ref: "Surah Al-Baqarah (2:261) · The sheep: at-Tirmidhi 2470 — outside the two Sahihs, authenticated by al-Albani",
@@ -2380,6 +2387,60 @@ const TADABBUR = {
         ],
         ref: "Surah Al-Baqarah (2:197), read with Al-A'raf (7:26); Hajj without rafath or fusuq: Sahih al-Bukhari 1521, from Abu Hurayrah; the people of Yemen: Sahih al-Bukhari 1523, from Ibn Abbas",
         refAr: "سورة البقرة، الآية ١٩٧، مع سورة الأعراف ٢٦. والحجُّ بلا رفثٍ ولا فسوق: صحيح البخاري ١٥٢١، عن أبي هريرة رضي الله عنه؛ وأهلُ اليمن: صحيح البخاري ١٥٢٣، عن ابن عبّاس رضي الله عنهما",
+        strength: "hadith"
+      },
+      {
+        n: 188,
+        ar: "وَلَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ وَتُدۡلُواْ بِهَآ إِلَى ٱلۡحُكَّامِ لِتَأۡكُلُواْ فَرِيقٗا مِّنۡ أَمۡوَٰلِ ٱلنَّاسِ بِٱلۡإِثۡمِ وَأَنتُمۡ تَعۡلَمُونَ",
+        why: "Do not consume one another's wealth unjustly, and do not lower it down to the judges — wa tudlu biha ila al-hukkam — so that you may consume a portion of people's wealth in sin, while you know. Tudlu is the word for letting a bucket down into a well: the money, or the case, is lowered to the judge to draw up something that is not yours.\n\nThe last three words are the whole charge: wa antum ta'lamun — while you know. This is not about an honest dispute. It is about a person who knows the property is not his and uses the court to take it anyway.\n\nThe Prophet ﷺ said: I am only a human being; you bring your disputes to me, and one of you may present his case better than the other, and I judge by what I hear — so if I give anyone something of his brother's right, let him not take it, for I am only giving him a piece of the Fire (al-Bukhari 7169). A verdict in your favour does not make it yours.",
+        whyAr: "﴿وَلَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ وَتُدۡلُواْ بِهَآ إِلَى ٱلۡحُكَّامِ لِتَأۡكُلُواْ فَرِيقٗا مِّنۡ أَمۡوَٰلِ ٱلنَّاسِ بِٱلۡإِثۡمِ وَأَنتُمۡ تَعۡلَمُونَ﴾. والإدلاءُ إرسالُ الدلو في البئر: يُرسَل المالُ أو الخصومةُ إلى الحاكم ليُستخرج بها حقُّ غيرك.\n\nوالكلماتُ الثلاث الأخيرة هي التهمةُ كلُّها: ﴿وَأَنتُمۡ تَعۡلَمُونَ﴾. فليس الكلامُ عن نزاعٍ صادق، بل عن رجلٍ يعلم أنّ المال ليس له، ثم يستعمل القضاءَ ليأخذه.\n\nوقال النبيّ ﷺ إنه بشرٌ يقضي بحسب ما يسمع، وإنّ بعض الخصوم أقدرُ على الحجّة من بعض. فمن قضى له بحقّ أخيه فلا يأخذه، فإنما يقطع له قطعةً من النار (البخاري ٧١٦٩). فالحكمُ لصالحك لا يجعله لك.",
+        plain: "Do not lower your case to the judges to take what you know is not yours. The Prophet ﷺ said he judged by what he heard, and whoever was given his brother's right by a verdict was only being handed a piece of the Fire (al-Bukhari 7169). A verdict in your favour does not make it yours.",
+        plainAr: "لا تُدلِ بقضيّتك إلى الحكّام لتأخذ ما تعلم أنه ليس لك. وقال النبيّ ﷺ إنه يقضي بما يسمع، ومن قُضي له بحقّ أخيه فإنما يُقطع له قطعةٌ من النار (البخاري ٧١٦٩). فالحكمُ لصالحك لا يجعله لك.",
+        links: [
+          {
+            ref: "Surah An-Nisa (4:29)",
+            ar: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ وَلَا تَقۡتُلُوٓاْ أَنفُسَكُمۡۚ إِنَّ ٱللَّهَ كَانَ بِكُمۡ رَحِيمٗا",
+            en: "O you who have believed, do not consume one another's wealth unjustly but only [in lawful] business by mutual consent. And do not kill yourselves [or one another]. Indeed, Allah is to you ever Merciful.",
+            how: "An-Nisa gives the same prohibition with its one lawful door: unless it is trade by mutual consent among you.",
+            howAr: "النساءُ تذكر النهيَ نفسه ومعه البابُ الحلال الوحيد: ﴿لَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٖ مِّنكُمۡۚ﴾."
+          },
+          {
+            ref: "Surah An-Nisa (4:58)",
+            ar: "۞ إِنَّ ٱللَّهَ يَأۡمُرُكُمۡ أَن تُؤَدُّواْ ٱلۡأَمَٰنَٰتِ إِلَىٰٓ أَهۡلِهَا وَإِذَا حَكَمۡتُم بَيۡنَ ٱلنَّاسِ أَن تَحۡكُمُواْ بِٱلۡعَدۡلِۚ إِنَّ ٱللَّهَ نِعِمَّا يَعِظُكُم بِهِۦٓۗ إِنَّ ٱللَّهَ كَانَ سَمِيعَۢا بَصِيرٗا",
+            en: "Indeed, Allah commands you to render trusts to whom they are due and when you judge between people to judge with justice. Excellent is that which Allah instructs you. Indeed, Allah is ever Hearing and Seeing.",
+            how: "Al-Baqarah forbids using the judge to take what is not yours; An-Nisa commands the judge's own side: when you judge between people, judge with justice.",
+            howAr: "البقرةُ تنهى عن استعمال القاضي لأخذ حقّ غيرك، والنساءُ تأمر القاضيَ نفسه: ﴿وَإِذَا حَكَمۡتُم بَيۡنَ ٱلنَّاسِ أَن تَحۡكُمُواْ بِٱلۡعَدۡلِۚ﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:188), read with An-Nisa (4:29, 4:58); 'a piece of the Fire': Sahih al-Bukhari 7169, from Umm Salamah",
+        refAr: "سورة البقرة، الآية ١٨٨، مع سورة النساء ٢٩ و٥٨؛ وقطعةٌ من النار: صحيح البخاري ٧١٦٩، عن أمّ سلمة رضي الله عنها",
+        strength: "hadith"
+      },
+      {
+        n: 214,
+        ar: "أَمۡ حَسِبۡتُمۡ أَن تَدۡخُلُواْ ٱلۡجَنَّةَ وَلَمَّا يَأۡتِكُم مَّثَلُ ٱلَّذِينَ خَلَوۡاْ مِن قَبۡلِكُمۖ مَّسَّتۡهُمُ ٱلۡبَأۡسَآءُ وَٱلضَّرَّآءُ وَزُلۡزِلُواْ حَتَّىٰ يَقُولَ ٱلرَّسُولُ وَٱلَّذِينَ ءَامَنُواْ مَعَهُۥ مَتَىٰ نَصۡرُ ٱللَّهِۗ أَلَآ إِنَّ نَصۡرَ ٱللَّهِ قَرِيبٞ",
+        why: "Or did you think that you would enter Paradise while there has not yet come to you the like of what came to those who passed before you? Affliction and hardship touched them, and they were shaken — until the Messenger and those who believed with him said: when is the help of Allah?\n\nThat question is not doubt. It is said by the Messenger and the believers together, at the edge of their endurance, and the verse puts it in their mouths without blame. The answer comes in the same verse: unquestionably, the help of Allah is near.\n\nKhabbab ibn al-Aratt said they came to the Prophet ﷺ, persecuted, while he was resting in the shade of the Ka'bah, and asked him to pray for help. He told them that among those before them a man would be put in a pit and sawn in two, and it would not turn him from his religion — and that this matter would be completed, but they were in a hurry (al-Bukhari 3612). Al-'Ankabut asks the question of this verse in its own words: do people think they will be left to say 'we believe', and not be tested? (29:2).",
+        whyAr: "﴿أَمۡ حَسِبۡتُمۡ أَن تَدۡخُلُواْ ٱلۡجَنَّةَ وَلَمَّا يَأۡتِكُم مَّثَلُ ٱلَّذِينَ خَلَوۡاْ مِن قَبۡلِكُمۖ مَّسَّتۡهُمُ ٱلۡبَأۡسَآءُ وَٱلضَّرَّآءُ وَزُلۡزِلُواْ حَتَّىٰ يَقُولَ ٱلرَّسُولُ وَٱلَّذِينَ ءَامَنُواْ مَعَهُۥ مَتَىٰ نَصۡرُ ٱللَّهِۗ﴾.\n\nوليس هذا السؤالُ شكًّا، فقد قاله الرسولُ والمؤمنون معًا عند آخر طاقتهم، والآيةُ تضعه على ألسنتهم بلا لوم. والجوابُ في الآية نفسها: ﴿أَلَآ إِنَّ نَصۡرَ ٱللَّهِ قَرِيبٞ﴾.\n\nوقال خبّابُ بن الأرتّ إنهم أتوا النبيَّ ﷺ وهو متوسّدٌ بردةً في ظلّ الكعبة، وقد أُوذوا، فسألوه أن يستنصر لهم. فأخبرهم أنّ الرجل ممّن كان قبلهم كانت تُحفر له حفرة، ثم يُشقّ بالمنشار، فما يصدّه ذلك عن دينه، وأنّ هذا الأمر سيتمّ، ولكنهم يستعجلون (البخاري ٣٦١٢). والعنكبوتُ تسأل سؤالَ هذه الآية بلفظها: ﴿أَحَسِبَ ٱلنَّاسُ أَن يُتۡرَكُوٓاْ أَن يَقُولُوٓاْ ءَامَنَّا وَهُمۡ لَا يُفۡتَنُونَ﴾؟",
+        plain: "Paradise is not entered without what came to those before: hardship, and being shaken until even the Messenger and the believers asked, when is the help of Allah? The question is not blamed — and the answer is in the same verse: the help of Allah is near.",
+        plainAr: "لا تُدخل الجنّةُ دون أن يمرّ المرءُ بما مرّ به السابقون: شدّةٌ وزلزلةٌ حتى قال الرسولُ والمؤمنون: متى النصر؟ ولم يُلاموا على السؤال، والجوابُ في الآية نفسها: ﴿أَلَآ إِنَّ نَصۡرَ ٱللَّهِ قَرِيبٞ﴾.",
+        links: [
+          {
+            ref: "Surah Al-Ankabut (29:2)",
+            ar: "أَحَسِبَ ٱلنَّاسُ أَن يُتۡرَكُوٓاْ أَن يَقُولُوٓاْ ءَامَنَّا وَهُمۡ لَا يُفۡتَنُونَ",
+            en: "Do the people think that they will be left to say, \"We believe\" and they will not be tried?",
+            how: "Al-'Ankabut asks the same question in its own words: do people think they will be left to say 'we believe', and not be tested?",
+            howAr: "العنكبوتُ تسأل السؤالَ نفسه بلفظها: ﴿أَحَسِبَ ٱلنَّاسُ أَن يُتۡرَكُوٓاْ أَن يَقُولُوٓاْ ءَامَنَّا وَهُمۡ لَا يُفۡتَنُونَ﴾؟"
+          },
+          {
+            ref: "Surah Yusuf (12:110)",
+            ar: "حَتَّىٰٓ إِذَا ٱسۡتَيۡـَٔسَ ٱلرُّسُلُ وَظَنُّوٓاْ أَنَّهُمۡ قَدۡ كُذِبُواْ جَآءَهُمۡ نَصۡرُنَا فَنُجِّيَ مَن نَّشَآءُۖ وَلَا يُرَدُّ بَأۡسُنَا عَنِ ٱلۡقَوۡمِ ٱلۡمُجۡرِمِينَ",
+            en: "[They continued] until, when the messengers despaired and were certain that they had been denied, there came to them Our victory, and whoever We willed was saved. And Our punishment cannot be repelled from the people who are criminals.",
+            how: "Surah Yusuf gives the same edge, and what came at it: until, when the messengers gave up hope, Our help came to them.",
+            howAr: "سورةُ يوسف تذكر الحافّةَ نفسها وما جاء عندها: ﴿حَتَّىٰٓ إِذَا ٱسۡتَيۡـَٔسَ ٱلرُّسُلُ وَظَنُّوٓاْ أَنَّهُمۡ قَدۡ كُذِبُواْ جَآءَهُمۡ نَصۡرُنَا﴾."
+          }
+        ],
+        ref: "Surah Al-Baqarah (2:214), read with Al-'Ankabut (29:2) and Yusuf (12:110); Khabbab's complaint: Sahih al-Bukhari 3612",
+        refAr: "سورة البقرة، الآية ٢١٤، مع سورة العنكبوت ٢ وسورة يوسف ١١٠؛ وشكوى خبّاب: صحيح البخاري ٣٦١٢",
         strength: "hadith"
       }
     ]
@@ -4585,6 +4646,60 @@ const TADABBUR = {
         ref: "Surah Al 'Imran (3:102), read with At-Taghabun (64:16); the sermon for needs: Sunan Abu Dawud 2118, from Ibn Mas'ud — authenticated by al-Albani",
         refAr: "سورة آل عمران، الآية ١٠٢، مع سورة التغابن ١٦؛ وخطبةُ الحاجة: سنن أبي داود ٢١١٨، عن ابن مسعود رضي الله عنه — وصحّحه الألباني",
         strength: "hadith"
+      },
+      {
+        n: 104,
+        ar: "وَلۡتَكُن مِّنكُمۡ أُمَّةٞ يَدۡعُونَ إِلَى ٱلۡخَيۡرِ وَيَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَيَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِۚ وَأُوْلَٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ",
+        why: "Let there be from you a community — ummah — calling to good, commanding the right and forbidding the wrong; and those are the successful. Six verses later the surah calls the whole nation the best brought out for people, for doing exactly this (3:110). The scholars read the min of minkum, 'from you', two ways: some of you — a group that carries the duty for everyone — or 'from you' as a description of all of you. Either way, the duty does not disappear.\n\nThe order matters: calling to good comes first. The commanding and the forbidding are built on an invitation, not on policing.\n\nAnd the Prophet ﷺ gave the scale of it for each person: whoever of you sees a wrong, let him change it with his hand; if he cannot, then with his tongue; and if he cannot, then with his heart — and that is the weakest of faith (Muslim 49). No one is excused entirely. The heart's refusal is the last level, and it is still required.",
+        whyAr: "﴿وَلۡتَكُن مِّنكُمۡ أُمَّةٞ يَدۡعُونَ إِلَى ٱلۡخَيۡرِ وَيَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَيَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِۚ وَأُوْلَٰٓئِكَ هُمُ ٱلۡمُفۡلِحُونَ﴾. وبعد ستّ آيات تجعل السورةُ الأمّةَ كلَّها خيرَ الأمم لأنها تفعل هذا بعينه. واختلف العلماءُ في معنى حرف الجرّ في ﴿مِّنكُمۡ﴾: فقيل للتبعيض، أي طائفةٌ منكم تقوم بالواجب عن الجميع، وقيل لبيان الجنس، أي كونوا كلُّكم كذلك. وعلى القولين لا يسقط الواجب.\n\nوالترتيبُ مقصود: ﴿يَدۡعُونَ إِلَى ٱلۡخَيۡرِ﴾ أوّلًا. فالأمرُ والنهيُ مبنيّان على دعوة، لا على تعقّبٍ وتجسّس.\n\nوذكر النبيّ ﷺ مراتبَه لكلّ أحد: «مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ، وَذَلِكَ أَضْعَفُ الإِيمَانِ» (مسلم ٤٩). فلا يُعذر أحدٌ كلَّ العذر، وإنكارُ القلب آخرُ المراتب، وهو مطلوبٌ مع ذلك.",
+        plain: "A community that calls to good first, then commands the right and forbids the wrong — and the Prophet ﷺ gave everyone a level of it: with the hand, then the tongue, then at least the heart, which is the weakest of faith (Muslim 49). No one is excused entirely.",
+        plainAr: "جماعةٌ تدعو إلى الخير أوّلًا، ثم تأمر بالمعروف وتنهى عن المنكر. وأعطى النبيّ ﷺ كلَّ أحدٍ مرتبةً منه: باليد، ثم باللسان، ثم بالقلب على الأقلّ، وهو أضعفُ الإيمان (مسلم ٤٩). فلا يُعذر أحدٌ كلَّ العذر.",
+        links: [
+          {
+            ref: "Surah Ali 'Imran (3:110)",
+            ar: "كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَتَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَتُؤۡمِنُونَ بِٱللَّهِۗ وَلَوۡ ءَامَنَ أَهۡلُ ٱلۡكِتَٰبِ لَكَانَ خَيۡرٗا لَّهُمۚ مِّنۡهُمُ ٱلۡمُؤۡمِنُونَ وَأَكۡثَرُهُمُ ٱلۡفَٰسِقُونَ",
+            en: "You are the best nation produced [as an example] for mankind. You enjoin what is right and forbid what is wrong and believe in Allah. If only the People of the Scripture had believed, it would have been better for them. Among them are believers, but most of them are defiantly disobedient.",
+            how: "Six verses later the surah calls the whole nation the best brought out for people — for doing this very thing: commanding the right, forbidding the wrong, believing in Allah.",
+            howAr: "وبعد ستّ آيات تسمّي السورةُ الأمّةَ كلَّها خيرَ أمّة، لأنها تفعل هذا بعينه: ﴿كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَتَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ﴾."
+          },
+          {
+            ref: "Surah At-Tawbah (9:71)",
+            ar: "وَٱلۡمُؤۡمِنُونَ وَٱلۡمُؤۡمِنَٰتُ بَعۡضُهُمۡ أَوۡلِيَآءُ بَعۡضٖۚ يَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَيَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤۡتُونَ ٱلزَّكَوٰةَ وَيُطِيعُونَ ٱللَّهَ وَرَسُولَهُۥٓۚ أُوْلَٰٓئِكَ سَيَرۡحَمُهُمُ ٱللَّهُۗ إِنَّ ٱللَّهَ عَزِيزٌ حَكِيمٞ",
+            en: "The believing men and believing women are allies of one another. They enjoin what is right and forbid what is wrong and establish prayer and give zakah and obey Allah and His Messenger. Those - Allah will have mercy upon them. Indeed, Allah is Exalted in Might and Wise.",
+            how: "At-Tawbah makes it a mark of all the believers, men and women alike: they are allies of one another; they command the right and forbid the wrong.",
+            howAr: "التوبةُ تجعله علامةً للمؤمنين جميعًا، رجالًا ونساءً: ﴿وَٱلۡمُؤۡمِنُونَ وَٱلۡمُؤۡمِنَٰتُ بَعۡضُهُمۡ أَوۡلِيَآءُ بَعۡضٖۚ يَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَيَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ﴾."
+          }
+        ],
+        ref: "Surah Al 'Imran (3:104), read with 3:110 and At-Tawbah (9:71); changing a wrong by hand, tongue and heart: Sahih Muslim 49, from Abu Sa'id al-Khudri",
+        refAr: "سورة آل عمران، الآية ١٠٤، مع الآية ١١٠ وسورة التوبة ٧١؛ وتغييرُ المنكر: صحيح مسلم ٤٩، عن أبي سعيد الخدري رضي الله عنه",
+        strength: "hadith"
+      },
+      {
+        n: 169,
+        ar: "وَلَا تَحۡسَبَنَّ ٱلَّذِينَ قُتِلُواْ فِي سَبِيلِ ٱللَّهِ أَمۡوَٰتَۢاۚ بَلۡ أَحۡيَآءٌ عِندَ رَبِّهِمۡ يُرۡزَقُونَ",
+        why: "Do not think of those killed in the way of Allah as dead. Rather, they are alive with their Lord, receiving provision. The verse forbids a thought — la tahsabanna, do not even reckon it — because the thought is natural: the body is in front of you.\n\nMasruq said they asked 'Abdullah ibn Mas'ud about this verse, and he said they had asked the Prophet ﷺ about it, and he said: their souls are in the bodies of green birds, which have lamps hanging from the Throne; they roam Paradise wherever they wish, then return to those lamps (Muslim 1887).\n\nThe next verse gives their state in two words: rejoicing in what Allah has given them of His bounty, and taking glad tidings about those who have not yet joined them — that no fear will be on them, nor will they grieve (3:170). Part of their joy is for the people still on the road behind them. Al-Baqarah had said it first, more briefly: do not call those killed in the way of Allah dead — rather, they are alive, but you do not perceive it (2:154).",
+        whyAr: "﴿وَلَا تَحۡسَبَنَّ ٱلَّذِينَ قُتِلُواْ فِي سَبِيلِ ٱللَّهِ أَمۡوَٰتَۢاۚ بَلۡ أَحۡيَآءٌ عِندَ رَبِّهِمۡ يُرۡزَقُونَ﴾. والآيةُ تنهى عن ظنٍّ — لا تحسبنّ، لا يخطر لك — لأنّ الظنّ طبيعيّ: فالجسدُ أمامك.\n\nقال مسروقٌ: سألنا عبدَ الله بن مسعود عن هذه الآية، فقال: سألنا عنها النبيَّ ﷺ. فقال: أرواحُهم في جوف طيرٍ خضر، لها قناديلُ معلّقةٌ بالعرش، تسرح في الجنّة كيف شاءت، ثم تأوي إلى تلك القناديل (مسلم ١٨٨٧).\n\nوالآيةُ التي تليها تذكر حالَهم بكلمتين: ﴿فَرِحِينَ بِمَآ ءَاتَىٰهُمُ ٱللَّهُ مِن فَضۡلِهِۦ وَيَسۡتَبۡشِرُونَ بِٱلَّذِينَ لَمۡ يَلۡحَقُواْ بِهِم مِّنۡ خَلۡفِهِمۡ أَلَّا خَوۡفٌ عَلَيۡهِمۡ وَلَا هُمۡ يَحۡزَنُونَ﴾. فبعضُ فرحهم لمن لا يزالون على الطريق خلفهم. وقد قالت البقرةُ ذلك قبلها باختصار: ﴿وَلَا تَقُولُواْ لِمَن يُقۡتَلُ فِي سَبِيلِ ٱللَّهِ أَمۡوَٰتُۢۚ بَلۡ أَحۡيَآءٞ وَلَٰكِن لَّا تَشۡعُرُونَ﴾.",
+        plain: "Do not even think of them as dead — they are alive with their Lord, provided for. The Prophet ﷺ said their souls are in green birds that roam Paradise (Muslim 1887), and the next verse says they rejoice over those who have not yet joined them.",
+        plainAr: "لا تظنّهم أمواتًا، فهم أحياءٌ يُرزقون عند مولاهم. وقال النبيّ ﷺ إنّ أرواحهم في طيرٍ خضر تسرح في الجنّة (مسلم ١٨٨٧)، والآيةُ التالية تقول إنهم يستبشرون بمن لم يلحق بهم بعد.",
+        links: [
+          {
+            ref: "Surah Al-Baqarah (2:154)",
+            ar: "وَلَا تَقُولُواْ لِمَن يُقۡتَلُ فِي سَبِيلِ ٱللَّهِ أَمۡوَٰتُۢۚ بَلۡ أَحۡيَآءٞ وَلَٰكِن لَّا تَشۡعُرُونَ",
+            en: "And do not say about those who are killed in the way of Allah, \"They are dead.\" Rather, they are alive, but you perceive [it] not.",
+            how: "Al-Baqarah says it first, more briefly: do not call those killed in the way of Allah dead — rather, they are alive, but you do not perceive it.",
+            howAr: "البقرةُ تقولها قبلها باختصار: ﴿وَلَا تَقُولُواْ لِمَن يُقۡتَلُ فِي سَبِيلِ ٱللَّهِ أَمۡوَٰتُۢۚ بَلۡ أَحۡيَآءٞ وَلَٰكِن لَّا تَشۡعُرُونَ﴾."
+          },
+          {
+            ref: "Surah Ali 'Imran (3:170)",
+            ar: "فَرِحِينَ بِمَآ ءَاتَىٰهُمُ ٱللَّهُ مِن فَضۡلِهِۦ وَيَسۡتَبۡشِرُونَ بِٱلَّذِينَ لَمۡ يَلۡحَقُواْ بِهِم مِّنۡ خَلۡفِهِمۡ أَلَّا خَوۡفٌ عَلَيۡهِمۡ وَلَا هُمۡ يَحۡزَنُونَ",
+            en: "Rejoicing in what Allah has bestowed upon them of His bounty, and they receive good tidings about those [to be martyred] after them who have not yet joined them - that there will be no fear concerning them, nor will they grieve.",
+            how: "The next verse gives their state: rejoicing in His bounty, and taking glad tidings about those who have not yet joined them.",
+            howAr: "والآيةُ التي تليها تذكر حالَهم: ﴿فَرِحِينَ بِمَآ ءَاتَىٰهُمُ ٱللَّهُ مِن فَضۡلِهِۦ وَيَسۡتَبۡشِرُونَ بِٱلَّذِينَ لَمۡ يَلۡحَقُواْ بِهِم مِّنۡ خَلۡفِهِمۡ﴾."
+          }
+        ],
+        ref: "Surah Al 'Imran (3:169), read with 3:170 and Al-Baqarah (2:154); the souls in green birds: Sahih Muslim 1887, from Ibn Mas'ud",
+        refAr: "سورة آل عمران، الآية ١٦٩، مع الآية ١٧٠ وسورة البقرة ١٥٤؛ وأرواحُهم في طيرٍ خضر: صحيح مسلم ١٨٨٧، عن ابن مسعود رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -4610,6 +4725,13 @@ const TADABBUR = {
             en: "Indeed, Allah orders justice and good conduct and giving to relatives and forbids immorality and bad conduct and oppression. He admonishes you that perhaps you will be reminded.",
             how: "An-Nisa commands two things — return trusts to their owners, and judge between people with justice; An-Nahl puts justice first in the Quran's most comprehensive command, and adds excellence and giving to relatives.",
             howAr: "النساءُ تأمر بأمرين: أداءِ الأمانات إلى أهلها، والحكمِ بين الناس بالعدل، والنحلُ تجعل العدلَ أوّلَ الأمر الجامع: ﴿إِنَّ ٱللَّهَ يَأۡمُرُ بِٱلۡعَدۡلِ وَٱلۡإِحۡسَٰنِ وَإِيتَآيِٕ ذِي ٱلۡقُرۡبَىٰ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:188)",
+            ar: "وَلَا تَأۡكُلُوٓاْ أَمۡوَٰلَكُم بَيۡنَكُم بِٱلۡبَٰطِلِ وَتُدۡلُواْ بِهَآ إِلَى ٱلۡحُكَّامِ لِتَأۡكُلُواْ فَرِيقٗا مِّنۡ أَمۡوَٰلِ ٱلنَّاسِ بِٱلۡإِثۡمِ وَأَنتُمۡ تَعۡلَمُونَ",
+            en: "And do not consume one another's wealth unjustly or send it [in bribery] to the rulers in order that [they might aid] you [to] consume a portion of the wealth of the people in sin, while you know [it is unlawful].",
+            how: "An-Nisa commands the judge to judge with justice; Al-Baqarah forbids the other side of the courtroom: lowering your case to the judges to take what you know is not yours.",
+            howAr: "النساءُ تأمر القاضيَ بالعدل، والبقرةُ تنهى الجانبَ الآخر من المجلس: ﴿وَتُدۡلُواْ بِهَآ إِلَى ٱلۡحُكَّامِ لِتَأۡكُلُواْ فَرِيقٗا مِّنۡ أَمۡوَٰلِ ٱلنَّاسِ بِٱلۡإِثۡمِ وَأَنتُمۡ تَعۡلَمُونَ﴾."
           }
         ],
         ref: "Surah An-Nisa (4:58) · The key of the Ka'bah: reported in the books of tafsir and sira — historical report, not in the two Sahihs",
@@ -4966,6 +5088,40 @@ const TADABBUR = {
             howAr: "الغلوُّ المنهيُّ عنه هنا يُجيب عنه هناك الذي غُلي فيه — ويبدأ جوابُه بتنزيه الله قبل الدفاع عن نفسه."
           }
         ]
+      },
+      {
+        n: 48,
+        ar: "إِنَّ ٱللَّهَ لَا يَغۡفِرُ أَن يُشۡرَكَ بِهِۦ وَيَغۡفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَآءُۚ وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدِ ٱفۡتَرَىٰٓ إِثۡمًا عَظِيمًا",
+        why: "Allah does not forgive that partners be associated with Him, and He forgives what is less than that for whom He wills. The verse draws one line, and it is not drawn around sins in general — it is drawn around shirk.\n\nAnd it is said twice in the same surah, word for word, with only the ending changed: here, whoever associates partners with Allah has fabricated a tremendous sin (4:48); later, he has gone far astray (4:116). One ending names it as a lie against Allah; the other names where it leaves you. Luqman gives the reason it stands apart: shirk is a tremendous wrong (31:13).\n\nThe verse is about meeting Allah upon it. Az-Zumar opens the door to everyone who turns back while there is time: O My servants who have wronged themselves, do not despair of the mercy of Allah — Allah forgives all sins (39:53). The classical reconciliation is simple: 39:53 is for the one who repents, from shirk too; 4:48 is for the one who dies without having repented of it.",
+        whyAr: "﴿إِنَّ ٱللَّهَ لَا يَغۡفِرُ أَن يُشۡرَكَ بِهِۦ وَيَغۡفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَآءُۚ وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدِ ٱفۡتَرَىٰٓ إِثۡمًا عَظِيمًا﴾. فالآيةُ ترسم حدًّا واحدًا، ولا ترسمه حول الذنوب عامّة، بل حول الشرك.\n\nوتُقال مرّتين في السورة نفسها بالألفاظ ذاتها، ولا يتغيّر إلا آخرُها: هنا ﴿وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدِ ٱفۡتَرَىٰٓ إِثۡمًا عَظِيمًا﴾، وفيما بعد ﴿وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدۡ ضَلَّ ضَلَٰلَۢا بَعِيدًا﴾. فإحدى الخاتمتين تسمّيه افتراءً، والأخرى تسمّي المكانَ الذي يتركك فيه. ولقمانُ تذكر سببَ انفراده: ﴿إِنَّ ٱلشِّرۡكَ لَظُلۡمٌ عَظِيمٞ﴾.\n\nوالآيةُ في من لقي اللهَ عليه. والزمرُ تفتح البابَ لكلّ من رجع ما دام في الوقت: ﴿قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾. والجمعُ المعروف بينهما يسير: آيةُ الزمر لمن تاب، حتى من الشرك، وآيةُ النساء لمن مات عليه دون توبة.",
+        plain: "One line is drawn, and it is around shirk, not around sins in general. The verse is about dying upon it: Az-Zumar says Allah forgives all sins to the one who repents (39:53) — shirk included — while this verse is for the one who meets Allah without having repented.",
+        plainAr: "حدٌّ واحدٌ يُرسم، وهو حول الشرك لا حول الذنوب عامّة. والآيةُ في من مات عليه، فالزمرُ تَعِد التائبَ بمغفرة كلّ ذنب — والشركُ منها — وهذه الآيةُ لمن لقي الله دون توبة.",
+        links: [
+          {
+            ref: "Surah Az-Zumar (39:53)",
+            ar: "۞ قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ",
+            en: "Say, \"O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.\"",
+            how: "Az-Zumar opens the door to everyone who turns back while there is time: Allah forgives all sins. This verse is for the one who meets Him without having turned.",
+            howAr: "الزمرُ تفتح البابَ لكلّ من رجع ما دام في الوقت: ﴿إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ﴾، وهذه الآيةُ لمن لقيه دون رجوع."
+          },
+          {
+            ref: "Surah An-Nisa (4:116)",
+            ar: "إِنَّ ٱللَّهَ لَا يَغۡفِرُ أَن يُشۡرَكَ بِهِۦ وَيَغۡفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَآءُۚ وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدۡ ضَلَّ ضَلَٰلَۢا بَعِيدًا",
+            en: "Indeed, Allah does not forgive association with Him, but He forgives what is less than that for whom He wills. And he who associates others with Allah has certainly gone far astray.",
+            how: "Later in the same surah the verse comes again, word for word, with only the ending changed: he has gone far astray.",
+            howAr: "وفيما بعد في السورة نفسها تأتي الآيةُ مرّةً أخرى بالألفاظ ذاتها، ولا يتغيّر إلا آخرُها: ﴿وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدۡ ضَلَّ ضَلَٰلَۢا بَعِيدًا﴾."
+          },
+          {
+            ref: "Surah Luqman (31:13)",
+            ar: "وَإِذۡ قَالَ لُقۡمَٰنُ لِٱبۡنِهِۦ وَهُوَ يَعِظُهُۥ يَٰبُنَيَّ لَا تُشۡرِكۡ بِٱللَّهِۖ إِنَّ ٱلشِّرۡكَ لَظُلۡمٌ عَظِيمٞ",
+            en: "And [mention, O Muhammad], when Luqman said to his son while he was instructing him, \"O my son, do not associate [anything] with Allah. Indeed, association [with him] is great injustice.\"",
+            how: "Luqman gives the reason shirk stands apart: it is a tremendous wrong.",
+            howAr: "لقمانُ تذكر سببَ انفراد الشرك: ﴿يَٰبُنَيَّ لَا تُشۡرِكۡ بِٱللَّهِۖ إِنَّ ٱلشِّرۡكَ لَظُلۡمٌ عَظِيمٞ﴾."
+          }
+        ],
+        ref: "Surah An-Nisa (4:48), read with 4:116, Luqman (31:13) and Az-Zumar (39:53)",
+        refAr: "سورة النساء، الآية ٤٨، مع الآية ١١٦ وسورة لقمان ١٣ وسورة الزمر ٥٣",
+        strength: "quran"
       }
     ]
   },
@@ -4991,6 +5147,13 @@ const TADABBUR = {
             en: "“Then Allah sent a crow, scratching in the ground, to show him how to hide the body of his brother.”",
             how: "The verse immediately before this one is where the ruling comes from: one killing, one body, and a man who had to be taught by a bird how to bury it. Then: whoever kills one soul, it is as if he killed mankind.",
             howAr: "الآيةُ التي قبل هذه هي مصدرُ الحكم: قتيلٌ واحدٌ وجسدٌ واحد، ورجلٌ احتاج أن يُعلّمه طائرٌ كيف يُواريه. ثم: من قتل نفسًا فكأنما قتل الناس جميعًا."
+          },
+          {
+            ref: "Surah Al-Ma'idah (5:27)",
+            ar: "۞ وَٱتۡلُ عَلَيۡهِمۡ نَبَأَ ٱبۡنَيۡ ءَادَمَ بِٱلۡحَقِّ إِذۡ قَرَّبَا قُرۡبَانٗا فَتُقُبِّلَ مِنۡ أَحَدِهِمَا وَلَمۡ يُتَقَبَّلۡ مِنَ ٱلۡأٓخَرِ قَالَ لَأَقۡتُلَنَّكَۖ قَالَ إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ",
+            en: "And recite to them the story of Adam's two sons, in truth, when they both offered a sacrifice [to Allah], and it was accepted from one of them but was not accepted from the other. Said [the latter], \"I will surely kill you.\" Said [the former], \"Indeed, Allah only accepts from the righteous [who fear Him].",
+            how: "This verse makes the law; the story it comes from begins five verses earlier, with two offerings and one sentence: Allah only accepts from those who fear Him.",
+            howAr: "هذه الآيةُ تضع الحكم، والقصّةُ التي جاء منها تبدأ قبلها بخمس آيات، بقربانين وجملةٍ واحدة: ﴿إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ﴾."
           }
         ]
       },
@@ -5290,6 +5453,40 @@ const TADABBUR = {
             howAr: "الأمرُ في النساء وهذا المشهدُ مسألةٌ واحدةٌ من طرفين: فهناك يُنهى الأحياءُ عن الغلوّ، وهنا يُجيب الذي غُلي فيه بين أيديهم."
           }
         ]
+      },
+      {
+        n: 27,
+        ar: "۞ وَٱتۡلُ عَلَيۡهِمۡ نَبَأَ ٱبۡنَيۡ ءَادَمَ بِٱلۡحَقِّ إِذۡ قَرَّبَا قُرۡبَانٗا فَتُقُبِّلَ مِنۡ أَحَدِهِمَا وَلَمۡ يُتَقَبَّلۡ مِنَ ٱلۡأٓخَرِ قَالَ لَأَقۡتُلَنَّكَۖ قَالَ إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ",
+        why: "Recite to them the story of the two sons of Adam, in truth: each offered a sacrifice, and it was accepted from one of them and not from the other. The one rejected said: I will kill you. The other answered with the sentence the whole story turns on: Allah only accepts from those who fear Him.\n\nHe does not defend his offering or attack his brother's. He names the condition of acceptance, which is inside a person and not on the altar. And in the next verse he refuses to answer the threat in kind: if you stretch out your hand to kill me, I will not stretch out mine to kill you — I fear Allah, Lord of the worlds (5:28).\n\nThe Prophet ﷺ said that no soul is killed unjustly except that the first son of Adam bears a share of its blood, because he was the first to make killing a practice (al-Bukhari 3335). The first murder is still being charged. And Al-Hajj gives the rule of every sacrifice since: neither its flesh nor its blood reaches Allah — but the taqwa from you reaches Him (22:37).",
+        whyAr: "﴿وَٱتۡلُ عَلَيۡهِمۡ نَبَأَ ٱبۡنَيۡ ءَادَمَ بِٱلۡحَقِّ إِذۡ قَرَّبَا قُرۡبَانٗا فَتُقُبِّلَ مِنۡ أَحَدِهِمَا وَلَمۡ يُتَقَبَّلۡ مِنَ ٱلۡأٓخَرِ﴾. فقال المردود: ﴿لَأَقۡتُلَنَّكَۖ﴾، وأجاب الآخرُ بالجملة التي تدور عليها القصّة كلُّها: ﴿إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ﴾.\n\nلا يدافع عن قربانه ولا يطعن في قربان أخيه، بل يذكر شرطَ القبول، وهو في داخل الإنسان لا على المذبح. وفي الآية التي تليها يأبى أن يردّ التهديدَ بمثله: ﴿لَئِنۢ بَسَطتَ إِلَيَّ يَدَكَ لِتَقۡتُلَنِي مَآ أَنَا۠ بِبَاسِطٖ يَدِيَ إِلَيۡكَ لِأَقۡتُلَكَۖ إِنِّيٓ أَخَافُ ٱللَّهَ رَبَّ ٱلۡعَٰلَمِينَ﴾.\n\nوقال النبيّ ﷺ إنه لا تُقتل نفسٌ ظلمًا إلا كان على ابن آدم الأوّل كِفلٌ من دمها، لأنه أوّلُ من سنّ القتل (البخاري ٣٣٣٥). فالجريمةُ الأولى لا تزال تُحتسب. والحجُّ تذكر قاعدةَ كلّ قربانٍ بعدها: ﴿لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ﴾.",
+        plain: "The first offering in history was accepted from one brother and not the other, and the accepted one named the reason: Allah only accepts from those who fear Him. The Prophet ﷺ said the first son of Adam bears a share of every unjust killing since, because he began it (al-Bukhari 3335).",
+        plainAr: "أوّلُ قربانٍ في التاريخ قُبل من أخٍ ورُدّ على أخيه، وذكر المقبولُ السبب: ﴿إِنَّمَا يَتَقَبَّلُ ٱللَّهُ مِنَ ٱلۡمُتَّقِينَ﴾. وقال النبيّ ﷺ إنّ على ابن آدم الأوّل نصيبًا من كلّ نفسٍ تُقتل ظلمًا بعده، لأنه أوّلُ من سنّ القتل (البخاري ٣٣٣٥).",
+        links: [
+          {
+            ref: "Surah Al-Hajj (22:37)",
+            ar: "لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ كَذَٰلِكَ سَخَّرَهَا لَكُمۡ لِتُكَبِّرُواْ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمۡۗ وَبَشِّرِ ٱلۡمُحۡسِنِينَ",
+            en: "Their meat will not reach Allah, nor will their blood, but what reaches Him is piety from you. Thus have We subjected them to you that you may glorify Allah for that [to] which He has guided you; and give good tidings to the doers of good.",
+            how: "Al-Hajj gives the rule of every sacrifice since the first one: neither its flesh nor its blood reaches Allah — but the taqwa from you reaches Him.",
+            howAr: "الحجُّ تذكر قاعدةَ كلّ قربانٍ بعد الأوّل: ﴿لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَٰكِن يَنَالُهُ ٱلتَّقۡوَىٰ مِنكُمۡۚ﴾."
+          },
+          {
+            ref: "Surah Al-Ma'idah (5:32)",
+            ar: "مِنۡ أَجۡلِ ذَٰلِكَ كَتَبۡنَا عَلَىٰ بَنِيٓ إِسۡرَٰٓءِيلَ أَنَّهُۥ مَن قَتَلَ نَفۡسَۢا بِغَيۡرِ نَفۡسٍ أَوۡ فَسَادٖ فِي ٱلۡأَرۡضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعٗا وَمَنۡ أَحۡيَاهَا فَكَأَنَّمَآ أَحۡيَا ٱلنَّاسَ جَمِيعٗاۚ وَلَقَدۡ جَآءَتۡهُمۡ رُسُلُنَا بِٱلۡبَيِّنَٰتِ ثُمَّ إِنَّ كَثِيرٗا مِّنۡهُم بَعۡدَ ذَٰلِكَ فِي ٱلۡأَرۡضِ لَمُسۡرِفُونَ",
+            en: "Because of that, We decreed upon the Children of Israel that whoever kills a soul unless for a soul or for corruption [done] in the land - it is as if he had slain mankind entirely. And whoever saves one - it is as if he had saved mankind entirely. And our messengers had certainly come to them with clear proofs. Then indeed many of them, [even] after that, throughout the land, were transgressors.",
+            how: "A few verses later the story ends in a law for all mankind: whoever kills a soul unjustly, it is as if he had killed all of mankind.",
+            howAr: "وبعد آياتٍ تنتهي القصّةُ بحكمٍ للناس جميعًا: ﴿مَن قَتَلَ نَفۡسَۢا بِغَيۡرِ نَفۡسٍ أَوۡ فَسَادٖ فِي ٱلۡأَرۡضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعٗا﴾."
+          },
+          {
+            ref: "Surah Al-Ma'idah (5:28)",
+            ar: "لَئِنۢ بَسَطتَ إِلَيَّ يَدَكَ لِتَقۡتُلَنِي مَآ أَنَا۠ بِبَاسِطٖ يَدِيَ إِلَيۡكَ لِأَقۡتُلَكَۖ إِنِّيٓ أَخَافُ ٱللَّهَ رَبَّ ٱلۡعَٰلَمِينَ",
+            en: "If you should raise your hand against me to kill me - I shall not raise my hand against you to kill you. Indeed, I fear Allah, Lord of the worlds.",
+            how: "The next verse: he refuses to answer the threat in kind — I will not stretch out my hand to kill you; I fear Allah, Lord of the worlds.",
+            howAr: "والآيةُ التي تليها: يأبى أن يردّ التهديدَ بمثله: ﴿مَآ أَنَا۠ بِبَاسِطٖ يَدِيَ إِلَيۡكَ لِأَقۡتُلَكَۖ إِنِّيٓ أَخَافُ ٱللَّهَ رَبَّ ٱلۡعَٰلَمِينَ﴾."
+          }
+        ],
+        ref: "Surah Al-Ma'idah (5:27), read with 5:28, 5:32 and Al-Hajj (22:37); the first son of Adam's share: Sahih al-Bukhari 3335, from Ibn Mas'ud",
+        refAr: "سورة المائدة، الآية ٢٧، مع الآيتين ٢٨ و٣٢ وسورة الحجّ ٣٧؛ ونصيبُ ابن آدم الأوّل: صحيح البخاري ٣٣٣٥، عن ابن مسعود رضي الله عنه",
+        strength: "hadith"
       }
     ]
   },
@@ -5672,6 +5869,33 @@ const TADABBUR = {
         ref: "Surah Al-An'am (6:122), read with Al-Anfal (8:24) and Al-Baqarah (2:257)",
         refAr: "سورة الأنعام، الآية ١٢٢، مع سورة الأنفال ٢٤ وسورة البقرة ٢٥٧",
         strength: "quran"
+      },
+      {
+        n: 160,
+        ar: "مَن جَآءَ بِٱلۡحَسَنَةِ فَلَهُۥ عَشۡرُ أَمۡثَالِهَاۖ وَمَن جَآءَ بِٱلسَّيِّئَةِ فَلَا يُجۡزَىٰٓ إِلَّا مِثۡلَهَا وَهُمۡ لَا يُظۡلَمُونَ",
+        why: "Whoever comes with a good deed will have ten like it; and whoever comes with a bad deed will be recompensed only with its like — and they will not be wronged. The arithmetic is deliberately uneven. A good deed is multiplied; a bad one is only matched.\n\nThe Prophet ﷺ described how the writing works: whoever intends a good deed and does not do it, a full good deed is written for him; if he does it, from ten to seven hundred times, or many times more; whoever intends a bad deed and does not do it, a full good deed is written for him; and if he does it, one bad deed is written (al-Bukhari 6491). Even the bad intention left undone is written as good.\n\nThe verse says 'whoever comes with' — man ja'a bi — not 'whoever does'. What counts is what a person arrives with on the Day, after everything that wipes out and everything that multiplies. Al-Baqarah gives the upper reach of the multiplying: a grain that grows seven ears, in each ear a hundred grains (2:261).",
+        whyAr: "﴿مَن جَآءَ بِٱلۡحَسَنَةِ فَلَهُۥ عَشۡرُ أَمۡثَالِهَاۖ وَمَن جَآءَ بِٱلسَّيِّئَةِ فَلَا يُجۡزَىٰٓ إِلَّا مِثۡلَهَا وَهُمۡ لَا يُظۡلَمُونَ﴾. فالحسابُ غيرُ متساوٍ عمدًا: الحسنةُ تُضاعف، والسيّئةُ تُقابَل بمثلها فقط.\n\nووصف النبيّ ﷺ كيف تُكتب. من همّ بحسنةٍ فلم يعملها كُتبت له حسنةً كاملة، فإن عملها كُتبت له عشرًا إلى سبعمئة ضعفٍ إلى أضعافٍ كثيرة. ومن همّ بسيّئةٍ فلم يعملها كُتبت له حسنةً كاملة، فإن عملها كُتبت سيّئةً واحدة (البخاري ٦٤٩١). فحتى نيّةُ السوء المتروكة تُكتب حسنة.\n\nوالآيةُ تقول: ﴿مَن جَآءَ بِٱلۡحَسَنَةِ﴾، لا من عمل. فالعبرةُ بما يأتي به المرءُ يومَ القيامة، بعد كلّ ما يمحو وكلّ ما يُضاعف. والبقرةُ تذكر أعلى ما تبلغه المضاعفة: ﴿كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ فِي كُلِّ سُنۢبُلَةٖ مِّاْئَةُ حَبَّةٖۗ﴾.",
+        plain: "A good deed is multiplied by ten; a bad one is only matched. The Prophet ﷺ added that a good deed intended but not done is written as one, and a bad deed intended and left is written as a good one (al-Bukhari 6491). And the verse counts what you 'come with' on the Day.",
+        plainAr: "الحسنةُ بعشر أمثالها، والسيّئةُ بمثلها فقط. وزاد النبيّ ﷺ أنّ من همّ بحسنةٍ فلم يعملها كُتبت له حسنة، ومن همّ بسيّئةٍ فتركها كُتبت له حسنة (البخاري ٦٤٩١). والآيةُ تعدّ ما تحمله إلى يوم الحساب.",
+        links: [
+          {
+            ref: "Surah An-Nisa (4:86)",
+            ar: "وَإِذَا حُيِّيتُم بِتَحِيَّةٖ فَحَيُّواْ بِأَحۡسَنَ مِنۡهَآ أَوۡ رُدُّوهَآۗ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَيۡءٍ حَسِيبًا",
+            en: "And when you are greeted with a greeting, greet [in return] with one better than it or [at least] return it [in a like manner]. Indeed, Allah is ever, over all things, an Accountant.",
+            how: "An-Nisa applies the same uneven measure between people: when you are greeted, return a better greeting — or at least the same.",
+            howAr: "النساءُ تطبّق الميزانَ غيرَ المتساوي نفسه بين الناس: ﴿وَإِذَا حُيِّيتُم بِتَحِيَّةٖ فَحَيُّواْ بِأَحۡسَنَ مِنۡهَآ أَوۡ رُدُّوهَآۗ﴾."
+          },
+          {
+            ref: "Surah Al-Baqarah (2:261)",
+            ar: "مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمۡوَٰلَهُمۡ فِي سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ فِي كُلِّ سُنۢبُلَةٖ مِّاْئَةُ حَبَّةٖۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُۚ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ",
+            en: "The example of those who spend their wealth in the way of Allah is like a seed [of grain] which grows seven spikes; in each spike is a hundred grains. And Allah multiplies [His reward] for whom He wills. And Allah is all-Encompassing and Knowing.",
+            how: "Al-Baqarah gives the upper reach of the multiplying: a grain that grows seven ears, in each ear a hundred grains — and Allah multiplies for whom He wills.",
+            howAr: "البقرةُ تذكر أعلى ما تبلغه المضاعفة: ﴿كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ فِي كُلِّ سُنۢبُلَةٖ مِّاْئَةُ حَبَّةٖۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُۚ﴾."
+          }
+        ],
+        ref: "Surah Al-An'am (6:160), read with Al-Baqarah (2:261); how good and bad deeds are written: Sahih al-Bukhari 6491, from Ibn Abbas",
+        refAr: "سورة الأنعام، الآية ١٦٠، مع سورة البقرة ٢٦١؛ وكتابةُ الحسنات والسيّئات: صحيح البخاري ٦٤٩١، عن ابن عبّاس رضي الله عنهما",
+        strength: "hadith"
       }
     ]
   },
@@ -5827,6 +6051,13 @@ const TADABBUR = {
             en: "Hajj is [during] well-known months, so whoever has made Hajj obligatory upon himself therein [by entering the state of ihram], there is [to be for him] no sexual relations and no disobedience and no disputing during Hajj. And whatever good you do - Allah knows it. And take provisions, but indeed, the best provision is fear of Allah. And fear Me, O you of understanding.",
             how: "Al-A'raf says the garment of taqwa is best; Al-Baqarah says the same of provision, in the middle of the Hajj: and take provision — but the best provision is taqwa.",
             howAr: "الأعرافُ تقول إنّ لباس التقوى خير، والبقرةُ تقول ذلك في الزاد، في وسط الحجّ: ﴿وَتَزَوَّدُواْ فَإِنَّ خَيۡرَ ٱلزَّادِ ٱلتَّقۡوَىٰۖ﴾."
+          },
+          {
+            ref: "Surah Al-A'raf (7:31)",
+            ar: "۞ يَٰبَنِيٓ ءَادَمَ خُذُواْ زِينَتَكُمۡ عِندَ كُلِّ مَسۡجِدٖ وَكُلُواْ وَٱشۡرَبُواْ وَلَا تُسۡرِفُوٓاْۚ إِنَّهُۥ لَا يُحِبُّ ٱلۡمُسۡرِفِينَ",
+            en: "O children of Adam, take your adornment at every masjid, and eat and drink, but be not excessive. Indeed, He likes not those who commit excess.",
+            how: "This verse announces the gift of clothing; a few verses later the same address says where to wear it: take your adornment at every place of prayer.",
+            howAr: "هذه الآيةُ تعلن نعمةَ اللباس، وبعد آياتٍ يقول النداءُ نفسه أين تُلبس: ﴿يَٰبَنِيٓ ءَادَمَ خُذُواْ زِينَتَكُمۡ عِندَ كُلِّ مَسۡجِدٖ﴾."
           }
         ]
       },
@@ -6133,6 +6364,40 @@ const TADABBUR = {
         ],
         ref: "Surah Al-A'raf (7:205), read with 7:204 and 7:206; 'you are not calling one deaf or absent': Sahih al-Bukhari 2992, from Abu Musa al-Ash'ari",
         refAr: "سورة الأعراف، الآية ٢٠٥، مع الآيتين ٢٠٤ و٢٠٦؛ وإنكم لا تدعون أصمَّ ولا غائبًا: صحيح البخاري ٢٩٩٢، عن أبي موسى الأشعري رضي الله عنه",
+        strength: "hadith"
+      },
+      {
+        n: 31,
+        ar: "۞ يَٰبَنِيٓ ءَادَمَ خُذُواْ زِينَتَكُمۡ عِندَ كُلِّ مَسۡجِدٖ وَكُلُواْ وَٱشۡرَبُواْ وَلَا تُسۡرِفُوٓاْۚ إِنَّهُۥ لَا يُحِبُّ ٱلۡمُسۡرِفِينَ",
+        why: "O children of Adam, take your adornment at every place of prayer, and eat and drink, but do not be excessive — He does not love the excessive. Ibn Abbas said that before Islam women circumambulated the Ka'bah naked, and the verse came down about it (Muslim 3028). So the first command is about clothing in worship: what was once worn as a show of devotion is called the opposite of what Allah wants.\n\nAnd the address is to all the children of Adam — the same address used a few verses earlier for the gift of clothing itself (7:26). Dressing well for prayer is not vanity; it is taking the adornment He gave to where it belongs.\n\nThen three short commands: eat, drink, do not waste. The next verse asks who forbade the adornment Allah brought out for His servants, and the good things of provision (7:32). Self-denial is not made a virtue by forbidding what He made lawful; the limit is israf — excess.",
+        whyAr: "﴿۞ يَٰبَنِيٓ ءَادَمَ خُذُواْ زِينَتَكُمۡ عِندَ كُلِّ مَسۡجِدٖ وَكُلُواْ وَٱشۡرَبُواْ وَلَا تُسۡرِفُوٓاْۚ إِنَّهُۥ لَا يُحِبُّ ٱلۡمُسۡرِفِينَ﴾. وقال ابنُ عبّاس إنّ المرأة في الجاهليّة كانت تطوف بالبيت عريانة، فنزلت هذه الآية (مسلم ٣٠٢٨). فالأمرُ الأوّل في اللباس عند العبادة: ما كان يُفعل يومًا تقرّبًا يُسمّى ضدَّ ما يريده الله.\n\nوالنداءُ لبني آدم جميعًا، وهو النداءُ نفسه الذي جاء قبل آياتٍ في نعمة اللباس ذاتها: ﴿يَٰبَنِيٓ ءَادَمَ قَدۡ أَنزَلۡنَا عَلَيۡكُمۡ لِبَاسٗا يُوَٰرِي سَوۡءَٰتِكُمۡ وَرِيشٗاۖ﴾. فالتجمّلُ للصلاة ليس غرورًا، بل وضعٌ للزينة التي أعطاها في موضعها.\n\nثم ثلاثةُ أوامر قصيرة: كلوا، واشربوا، ولا تسرفوا. والآيةُ التي تليها تسأل: ﴿قُلۡ مَنۡ حَرَّمَ زِينَةَ ٱللَّهِ ٱلَّتِيٓ أَخۡرَجَ لِعِبَادِهِۦ وَٱلطَّيِّبَٰتِ مِنَ ٱلرِّزۡقِۚ﴾؟ فالزهدُ لا يصير فضيلةً بتحريم الحلال، والحدُّ هو الإسراف.",
+        plain: "Before Islam some circumambulated the Ka'bah naked; the verse came down: take your adornment at every place of prayer (Muslim 3028). Then eat and drink, but not to excess — and the next verse asks who forbade the adornment and good things Allah brought out for His servants.",
+        plainAr: "كان بعضُهم في الجاهليّة يطوف بالبيت عريانًا، فنزل الأمرُ بالتزيّن للصلاة (مسلم ٣٠٢٨). ثم الأكلُ والشربُ بلا إسراف، والآيةُ التالية تسأل من حرّم الزينةَ والطيّباتِ التي أخرجها الله لعباده.",
+        links: [
+          {
+            ref: "Surah Al-An'am (6:141)",
+            ar: "۞ وَهُوَ ٱلَّذِيٓ أَنشَأَ جَنَّٰتٖ مَّعۡرُوشَٰتٖ وَغَيۡرَ مَعۡرُوشَٰتٖ وَٱلنَّخۡلَ وَٱلزَّرۡعَ مُخۡتَلِفًا أُكُلُهُۥ وَٱلزَّيۡتُونَ وَٱلرُّمَّانَ مُتَشَٰبِهٗا وَغَيۡرَ مُتَشَٰبِهٖۚ كُلُواْ مِن ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَءَاتُواْ حَقَّهُۥ يَوۡمَ حَصَادِهِۦۖ وَلَا تُسۡرِفُوٓاْۚ إِنَّهُۥ لَا يُحِبُّ ٱلۡمُسۡرِفِينَ",
+            en: "And He it is who causes gardens to grow, [both] trellised and untrellised, and palm trees and crops of different [kinds of] food and olives and pomegranates, similar and dissimilar. Eat of [each of] its fruit when it yields and give its due [zakah] on the day of its harvest. And be not excessive. Indeed, He does not like those who commit excess.",
+            how: "Al-An'am gives the same pair of commands at harvest: eat of its fruit when it bears fruit, give its due on the day of its harvest — and do not be excessive.",
+            howAr: "الأنعامُ تذكر الأمرين نفسيهما عند الحصاد: ﴿كُلُواْ مِن ثَمَرِهِۦٓ إِذَآ أَثۡمَرَ وَءَاتُواْ حَقَّهُۥ يَوۡمَ حَصَادِهِۦۖ وَلَا تُسۡرِفُوٓاْۚ﴾."
+          },
+          {
+            ref: "Surah Al-A'raf (7:26)",
+            ar: "يَٰبَنِيٓ ءَادَمَ قَدۡ أَنزَلۡنَا عَلَيۡكُمۡ لِبَاسٗا يُوَٰرِي سَوۡءَٰتِكُمۡ وَرِيشٗاۖ وَلِبَاسُ ٱلتَّقۡوَىٰ ذَٰلِكَ خَيۡرٞۚ ذَٰلِكَ مِنۡ ءَايَٰتِ ٱللَّهِ لَعَلَّهُمۡ يَذَّكَّرُونَ",
+            en: "O children of Adam, We have bestowed upon you clothing to conceal your private parts and as adornment. But the clothing of righteousness - that is best. That is from the signs of Allah that perhaps they will remember.",
+            how: "A few verses earlier the same address announces the gift of clothing itself — and names the best garment: the garment of taqwa.",
+            howAr: "وقبل آياتٍ يُعلن النداءُ نفسه نعمةَ اللباس ذاتها، ويسمّي أفضله: ﴿وَلِبَاسُ ٱلتَّقۡوَىٰ ذَٰلِكَ خَيۡرٞۚ﴾."
+          },
+          {
+            ref: "Surah Al-A'raf (7:32)",
+            ar: "قُلۡ مَنۡ حَرَّمَ زِينَةَ ٱللَّهِ ٱلَّتِيٓ أَخۡرَجَ لِعِبَادِهِۦ وَٱلطَّيِّبَٰتِ مِنَ ٱلرِّزۡقِۚ قُلۡ هِيَ لِلَّذِينَ ءَامَنُواْ فِي ٱلۡحَيَوٰةِ ٱلدُّنۡيَا خَالِصَةٗ يَوۡمَ ٱلۡقِيَٰمَةِۗ كَذَٰلِكَ نُفَصِّلُ ٱلۡأٓيَٰتِ لِقَوۡمٖ يَعۡلَمُونَ",
+            en: "Say, \"Who has forbidden the adornment of Allah which He has produced for His servants and the good [lawful] things of provision?\" Say, \"They are for those who believe during the worldly life [but] exclusively for them on the Day of Resurrection.\" Thus do We detail the verses for a people who know.",
+            how: "The next verse asks who forbade the adornment Allah brought out for His servants, and the good things of provision.",
+            howAr: "والآيةُ التي تليها تسأل: ﴿قُلۡ مَنۡ حَرَّمَ زِينَةَ ٱللَّهِ ٱلَّتِيٓ أَخۡرَجَ لِعِبَادِهِۦ وَٱلطَّيِّبَٰتِ مِنَ ٱلرِّزۡقِۚ﴾؟"
+          }
+        ],
+        ref: "Surah Al-A'raf (7:31), read with 7:26 and 7:32; the circumambulation without clothes: Sahih Muslim 3028, from Ibn Abbas",
+        refAr: "سورة الأعراف، الآية ٣١، مع الآيتين ٢٦ و٣٢؛ والطوافُ عُريًا: صحيح مسلم ٣٠٢٨، عن ابن عبّاس رضي الله عنهما",
         strength: "hadith"
       }
     ]
@@ -9308,6 +9573,13 @@ const TADABBUR = {
             en: "Nor is there to Him any equivalent",
             how: "Luqman says why shirk is the great wrong; Al-Ikhlas says what it gets wrong. There is no equal to set beside Him, so setting one there misplaces everything.",
             howAr: "لقمانُ يقول لِمَ كان الشركُ ظلمًا عظيمًا، والإخلاصُ يقول أين موضعُ خطئه: لا كفءَ له يُجعل إلى جنبه، فجعلُه وضعٌ للشيء في غير موضعه."
+          },
+          {
+            ref: "Surah An-Nisa (4:48)",
+            ar: "إِنَّ ٱللَّهَ لَا يَغۡفِرُ أَن يُشۡرَكَ بِهِۦ وَيَغۡفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَآءُۚ وَمَن يُشۡرِكۡ بِٱللَّهِ فَقَدِ ٱفۡتَرَىٰٓ إِثۡمًا عَظِيمًا",
+            en: "Indeed, Allah does not forgive association with Him, but He forgives what is less than that for whom He wills. And he who associates others with Allah has certainly fabricated a tremendous sin.",
+            how: "Luqman calls shirk a tremendous wrong; An-Nisa says what follows from it: it is the one sin Allah does not forgive to the one who dies upon it.",
+            howAr: "لقمانُ تسمّي الشركَ ظلمًا عظيمًا، والنساءُ تقول ما يترتّب عليه: ﴿إِنَّ ٱللَّهَ لَا يَغۡفِرُ أَن يُشۡرَكَ بِهِۦ وَيَغۡفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَآءُۚ﴾."
           }
         ],
         ref: "Surah Luqman (31:13)",
