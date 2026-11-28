@@ -8142,3 +8142,28 @@ and 69:51).
 Before writing a new entry, check the verse against EVERY existing entry —
 the existence check here had simply left 8:53 off its list. check-counts.sh
 ("no verse is explained twice") is what caught it.
+
+**Batch 4: 74 more links (two-way, plus one-way to verses with no entry).**
+Purpose of creation (23:115 ↔ 51:56, ↔ 44:38); family and marriage (25:74 ↔
+66:6, ↔ 30:21); seeking to be high (28:83 ↔ 79:24 ↔ 44:29); prayer that
+restrains / heedless prayer (29:45 ↔ 107:5; 107:4 → 4:142); men and women
+alike (33:35 ↔ 16:97); call upon Me (40:60 ↔ 2:186); sakinah (48:4 ↔ 9:40);
+provision (51:22 ↔ 65:3); repentance (66:8 ↔ 39:53); 70:19-21 ↔ 70:22-23;
+77:20 ↔ 86:5-7; "wa ma adraka" (97:2 ↔ 101:10-11); justice (4:58 ↔ 16:90);
+the light (24:35 ↔ 61:8); reflect (34:46 ↔ 3:191); the covenant (36:60 ↔
+7:172); subservient / tamed (45:12-13 ↔ 67:15); striving and earning (53:39
+↔ 74:38); your food (56:63-64 ↔ 80:24); grown from and held by the earth
+(71:17 ↔ 77:25-26); the best form (82:6 ↔ 95:4 ↔ 98:7); witness against
+himself (100:7 ↔ 75:14-15); first and last verses (103:1 ↔ 103:3, 107:1 ↔
+107:7, 96:1 ↔ 96:19, 93:1-2 ↔ 93:3, 60:4 ↔ 60:7); ease (94:5 ↔ 65:7), the
+blessed night (97:3 ↔ 44:3). One-way, to identical or twin wording, all
+verified over the Mushaf text: 98:8 → 9:100 ("radiya Allahu 'anhum wa radu
+'anh" — only 5:119, 9:100, 58:22, 98:8); 1:2 → 6:1 and 18:1 (five surahs
+open with al-hamdu lillah: 1, 6, 18, 34, 35); 2:255 → 3:2 (3:2 is word for
+word the opening of Ayat al-Kursi; al-hayy al-qayyum a third time in
+20:111); 15:29 → 38:72 (identical); 114:4 → 7:201; 112:3 → 6:101.
+
+Lesson: 65:7 and 44:3 were assumed unexplained because they were missing
+from the "entries without links" list — they had links. check-counts.sh
+caught both as one-way; each got its return link. Check targets against ALL
+entries (bvp.load_const over js/tadabbur.js), not against a filtered list.
