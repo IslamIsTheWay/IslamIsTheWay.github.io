@@ -8122,3 +8122,23 @@ run's " • " is split like " ۝ " (it was reporting every multi-verse entry's
 own text as "not a Mushaf run"); surah 114 no longer crashes it. Over the
 touched entries the flags fell from 54 to 37, every remaining one older
 than today (bold inside ﴿﴾, or a word quoted without its attached letter).
+
+**Batch 3: nine more explained verses (459 now; 578 verses counting runs),
+each completing a pair, with the return links.** 20:25-28 (Musa: "expand my
+chest" — and 94:1 "did We not expand your chest?"; granted in 20:36); 41:30
+(the angels come down on those who stayed straight — the twin of 46:13);
+21:35 (harm AND good are the test — with 3:185, same opening words, and
+89:15-16, the man who reads the test as a verdict); 30:30 (the fitrah — with
+7:172; al-Bukhari 1358 / Muslim 2658, Abu Hurayrah recites the verse after
+the hadith); 57:20 (play, amusement, adornment, boasting, competing — the
+stages of a life; ends on the same words as 3:185; with 18:46); 29:69 (the
+surah's last verse answers its second, 29:2); 87:8 (ease towards ease — the
+same words as 92:5-7); 9:32 (with 61:8 — and 9:33 = 61:9 word for word,
+checked); 56:95 (haqq al-yaqin, the third degree after 102:5-7; only here
+and 69:51).
+
+**A mistake caught by check-counts:** an 8:53 entry was written although
+8:53 was already explained (with the same link to 13:11). It was removed.
+Before writing a new entry, check the verse against EVERY existing entry —
+the existence check here had simply left 8:53 off its list. check-counts.sh
+("no verse is explained twice") is what caught it.

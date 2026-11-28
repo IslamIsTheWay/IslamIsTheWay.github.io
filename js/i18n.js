@@ -59,8 +59,8 @@ const AR = {
   "Or browse by subject": "أو تصفَّح بحسب الموضوع",
   "The doors above start from you, or from something worth reading. These are arranged by what the material is.": "الأبوابُ فوق تبدأ منك، أو ممّا يستحقّ القراءة؛ وهذه مرتّبةٌ بحسب مادّتها.",
   "The Holy Quran": "القرآن الكريم",
-  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 566 verses — at least two in every surah — open into a full explanation of why they are worded as they are.":
-    "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة، وخمسمئة وستٌّ وستّون آية — في كلّ سورةٍ منها آيتان فأكثر — تُفتح على شرحٍ كاملٍ لسبب ورودها بهذا اللفظ.",
+  "All 114 surahs with Arabic text, English translation, and 16 reciters to choose from. Every verse carries its page in the 604-page Madani Mushaf, and 578 verses — at least two in every surah — open into a full explanation of why they are worded as they are.":
+    "جميع السور الـ114 بالنص العربي والترجمة الإنجليزية، مع ستة عشر قارئًا تختار بينهم. وكل آية مقرونة بصفحتها في المصحف المدني ذي الأربع والستمائة صفحة، وخمسمئة وثمانٍ وسبعون آية — في كلّ سورةٍ منها آيتان فأكثر — تُفتح على شرحٍ كاملٍ لسبب ورودها بهذا اللفظ.",
   "Hadith Collection": "مجموعة الأحاديث",
   "Complete Sahih al-Bukhari and Sahih Muslim — 15,000+ hadith in Arabic and English, plus 43 chosen ones. Every grading names the scholar behind it.":
     "صحيح البخاري وصحيح مسلم كاملين — أكثر من 15,000 حديث بالعربية والإنجليزية، ومعها ثلاثة وأربعون حديثًا مختارًا. وكل درجةٍ مذكورٌ معها اسم من صحّحها.",
